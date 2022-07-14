@@ -121,28 +121,7 @@ bool loadLiteLoader() {
 	return true;
 }
 
-void DelChakra()
-{
-    if (exists(path(TEXT(".\\Chakra.dll"))))
-    {
-        remove(path(TEXT(".\\Chakra.dll")));
-    }
-    if (exists(path(TEXT(".\\ChakraCore.dll"))))
-    {
-        remove(path(TEXT(".\\ChakraCore.dll")));
-    }
-}
-void loadLLAutoUpdate()
-{
-    if (exists(path(TEXT(".\\plugins\\LiteLoader\\LLAutoUpdate.dll"))))
-    {
-        loadLib(TEXT(".\\plugins\\LiteLoader\\LLAutoUpdate.dll"));
-    }
-}
-
 void loadDlls() {
-    loadLLAutoUpdate();
-    DelChakra();
 	if (exists(path(TEXT(".\\plugins\\preload.conf")))) {
 		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
 		if (dllList) {
@@ -155,9 +134,7 @@ void loadDlls() {
 
 				if (dllName.empty() || dllName.front() == TEXT('#'))
 					continue;
-				if (dllName.find(L"LiteLoader.dll") != std::wstring::npos ||
-					dllName.find(L"LLAutoUpdate.dll") != std::wstring::npos || 
-					dllName.find(L"LXLAutoUpdate.dll") != std::wstring::npos)
+				if (dllName.find(L"LiteLoader.dll") != std::wstring::npos)
 					continue;
 				loadLib(dllName.c_str());
                 preloadList.insert(wstr2str(dllName));
