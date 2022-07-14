@@ -86,6 +86,30 @@ Local<Value> DeviceClass::getAvgPacketLoss()
     CATCH("Fail in getAvgPacketLoss!")
 }
 
+Local<Value> DeviceClass::getLastPing()
+{
+    try {
+        Player* player = getPlayer();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->getLastPing());
+    }
+    CATCH("Fail in getAvgPing!")
+}
+
+Local<Value> DeviceClass::getLastPacketLoss()
+{
+    try {
+        Player* player = getPlayer();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->getLastPacketLoss());
+    }
+    CATCH("Fail in getAvgPacketLoss!")
+}
+
 Local<Value> DeviceClass::getOs()
 {
     try {
