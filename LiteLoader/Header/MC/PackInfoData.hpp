@@ -16,30 +16,28 @@ static_assert(offsetof(PackIdVersion, mType) == 0x80);
 struct PackInfoData {
 
 #define AFTER_EXTRA
-    PackIdVersion mPackIdVersion;//0
-    uint64_t mPackSize;//0x88
-    std::string mContentKey;//0x90
+    PackIdVersion mPackIdVersion; // 0
+    uint64_t mPackSize;           // 0x88
+    std::string mContentKey;      // 0x90
     std::string mSubpackName;
     ContentIdentity mContentIdentity;
     bool mHasScripts;
-    bool mForceServerPacks; 
+    bool mForceServerPacks;
     bool isRtxCapable;
-	
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINFODATA
 public:
-    struct PackInfoData& operator=(struct PackInfoData const &) = delete;
-    PackInfoData(struct PackInfoData const &) = delete;
+    struct PackInfoData& operator=(struct PackInfoData const&) = delete;
+    PackInfoData(struct PackInfoData const&) = delete;
     PackInfoData() = delete;
 #endif
 
 public:
-    MCAPI PackInfoData(class mce::UUID const &, class SemVersion const &, unsigned __int64, std::string const &, std::string const &, class ContentIdentity const &, bool, bool);
+    MCAPI PackInfoData(class mce::UUID const&, class SemVersion const&, unsigned __int64, std::string const&, std::string const&, class ContentIdentity const&, bool, bool);
     MCAPI ~PackInfoData();
 
 protected:
-
 private:
-
 };

@@ -22,7 +22,11 @@ namespace LL {
 struct CommandLineOption {
     bool noColorOption = false;
 };
-enum class LLServerStatus { Starting, Running, Stopping };
+enum class LLServerStatus {
+    Starting,
+    Running,
+    Stopping
+};
 struct LLConfig {
     bool debugMode = false;
     bool colorLog = true;

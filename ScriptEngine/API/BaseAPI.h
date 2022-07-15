@@ -10,7 +10,8 @@ extern ClassDefine<void> DamageCauseEnumBuilder;
 //////////////////// Classes ////////////////////
 class IntPos : public IntVec4, public ScriptClass {
 public:
-    explicit IntPos(const Local<Object>& scriptObj) : ScriptClass(scriptObj) {
+    explicit IntPos(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
     }
     static IntPos* create(const Arguments& args);
 
@@ -52,7 +53,8 @@ extern ClassDefine<IntPos> IntPosBuilder;
 
 class FloatPos : public FloatVec4, public ScriptClass {
 public:
-    explicit FloatPos(const Local<Object>& scriptObj) : ScriptClass(scriptObj) {
+    explicit FloatPos(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
     }
     static FloatPos* create(const Arguments& args);
 
@@ -96,7 +98,8 @@ class DirectionAngle : public ScriptClass {
 public:
     double pitch = 0, yaw = 0;
 
-    explicit DirectionAngle(const Local<Object>& scriptObj) : ScriptClass(scriptObj) {
+    explicit DirectionAngle(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
     }
     static DirectionAngle* create(const Arguments& args);
 

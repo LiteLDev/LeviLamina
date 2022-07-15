@@ -19,7 +19,9 @@ struct PatchHelper {
     constexpr bool operator!=(PatchHelper ref) const noexcept {
         return memcmp(data, ref.data, sizeof data) != 0;
     }
-    void operator=(ref_t ref) { memcpy(data, ref, sizeof data); }
+    void operator=(ref_t ref) {
+        memcpy(data, ref, sizeof data);
+    }
     void DoPatch(PatchHelper expected, PatchHelper patched) {
         if (*this == expected)
             *this = patched;
@@ -35,7 +37,7 @@ struct PatchHelper {
 
     std::string Dump() const noexcept {
         char buffer[2 * len + 1] = {};
-        char *ptr                = buffer;
+        char* ptr = buffer;
         for (auto ch : data)
             ptr += sprintf(ptr, "%02X", (unsigned)ch);
         return {buffer};
@@ -54,8 +56,10 @@ struct NopFiller {
 struct FailedToPatch : std::exception {
     std::string info;
     template <int len>
-    FailedToPatch(PatchHelper<len> const &current, PatchHelper<len> const &expected) {
+    FailedToPatch(PatchHelper<len> const& current, PatchHelper<len> const& expected) {
         info = "Failed to patch: expected " + expected.Dump() + ", but actual " + current.Dump();
     }
-    const char *what() const noexcept { return info.c_str(); }
+    const char* what() const noexcept {
+        return info.c_str();
+    }
 };

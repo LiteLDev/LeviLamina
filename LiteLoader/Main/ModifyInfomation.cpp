@@ -9,14 +9,9 @@ using namespace std;
 
 Logger serverLogger("Server");
 extern void CheckBetaVersion();
-THook(std::string,
-      "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ") {
+THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ") {
     CheckBetaVersion();
-    return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with " +
-           fmt::format(LL::globalConfig.colorLog
-                           ? fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic
-                           : fmt::text_style(),
-                       "LiteLoaderBDS " + LL::getLoaderVersion().toString(true));
+    return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with " + fmt::format(LL::globalConfig.colorLog ? fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic : fmt::text_style(), "LiteLoaderBDS " + LL::getLoaderVersion().toString(true));
 }
 
 
@@ -54,9 +49,7 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts) {
 }
 
 // Block BDS from adding LOG metadata
-THook(void,
-      "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@"
-      "@std@@V34@W4LogAreaID@@I1HH@Z",
+THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V34@W4LogAreaID@@I1HH@Z",
       void* a1, void* a2, void** a3, int a4, unsigned int a5, __int64 a6, unsigned int a7, unsigned int a8) {
     return;
 }
@@ -67,25 +60,20 @@ namespace ModifyInfomation {
 int telemetryText = 0;
 }
 THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
-      enum BedrockLog::LogCategory a1, class std::bitset<3> a2, enum BedrockLog::LogRule a3, enum LogAreaID a4,
-      unsigned int a5, char const* a6, int a7, char const* a8, ...) {
+      enum BedrockLog::LogCategory a1, class std::bitset<3> a2, enum BedrockLog::LogRule a3, enum LogAreaID a4, unsigned int a5, char const* a6, int a7, char const* a8, ...) {
     va_list va;
     auto text = (char*)a8;
     va_start(va, a8);
     if (string(text).find("= TELEMETRY MESSAGE =") != string(text).npos) {
         ModifyInfomation::telemetryText = 6;
-        return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7,
-                                  "To enable Server Telemetry, add the line 'emit-server-telemetry=true' to the "
-                                  "server.properties file in the bds directory",
-                                  va);
+        return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, "To enable Server Telemetry, add the line 'emit-server-telemetry=true' to the server.properties file in the bds directory", va);
     }
     if (ModifyInfomation::telemetryText > 0) {
         ModifyInfomation::telemetryText--;
         return;
     }
 
-    if (string(text).find("setting up server logging...") != string(text).npos ||
-        string(text).find("Server started") != string(text).npos) {
+    if (string(text).find("setting up server logging...") != string(text).npos || string(text).find("Server started") != string(text).npos) {
         return;
     }
     return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, a8, va);

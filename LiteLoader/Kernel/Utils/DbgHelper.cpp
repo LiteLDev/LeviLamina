@@ -151,8 +151,8 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 
         bool skipingPrintFunctionsStack = true;
 
-        while (StackWalk64(MACHINE_TYPE, hProcess, hThread, &stackFrame, pContext, NULL, SymFunctionTableAccess64,
-                           SymGetModuleBase64, NULL)) {
+        while (StackWalk64(MACHINE_TYPE, hProcess, hThread, &stackFrame, pContext,
+                           NULL, SymFunctionTableAccess64, SymGetModuleBase64, NULL)) {
             DWORD64 address = stackFrame.AddrPC.Offset;
 
             // Function
@@ -165,7 +165,8 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
                     continue;
                 }
 
-                debugLogger.error("at {} (0x{:X})  [{}]", wstr2str(info->Name), info->Address, moduleName);
+                debugLogger.error("at {} (0x{:X})  [{}]",
+                                  wstr2str(info->Name), info->Address, moduleName);
 
                 // Line
                 DWORD displacement = 0;
@@ -210,8 +211,7 @@ std::string GetCallerModuleFileName(unsigned long FramesToSkip) {
     return GetModuleName(GetCallerModule(FramesToSkip));
 }
 
-bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned short* ver2, unsigned short* ver3,
-                    unsigned short* ver4, unsigned int* flag) {
+bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned short* ver2, unsigned short* ver3, unsigned short* ver4, unsigned int* flag) {
 
     DWORD dwHandle = 0;
     DWORD dwLen = GetFileVersionInfoSizeW(filePath, &dwHandle);
@@ -249,8 +249,7 @@ bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned shor
     return true;
 }
 
-inline std::string VersionToString(unsigned short major_ver, unsigned short minor_ver, unsigned short revision_ver,
-                                   unsigned short build_ver, unsigned int flag = 0) {
+inline std::string VersionToString(unsigned short major_ver, unsigned short minor_ver, unsigned short revision_ver, unsigned short build_ver, unsigned int flag = 0) {
     std::string flagStr = "";
     if (flag & VS_FF_DEBUG)
         flagStr += " DEBUG";

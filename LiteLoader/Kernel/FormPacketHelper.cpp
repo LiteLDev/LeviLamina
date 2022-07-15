@@ -17,7 +17,13 @@ using namespace std;
 
 //////////////////////////////// Data ////////////////////////////////
 
-enum class FormType { SimpleFormBuilder, CustomFormBuilder, SimpleFormPacket, CustomFormPacket, ModalFormPacket };
+enum class FormType {
+    SimpleFormBuilder,
+    CustomFormBuilder,
+    SimpleFormPacket,
+    CustomFormPacket,
+    ModalFormPacket
+};
 
 unordered_map<unsigned, FormType> formTypes;
 
@@ -123,7 +129,7 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data) {
                 default:
                     break;
             }
-            nowIndex++;
+            ++nowIndex;
         }
 
         if (form->callback) {
@@ -160,9 +166,7 @@ Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id
     return (Player*)handler->getServerPlayer(*id, dAccess<char>(packet, 16));
 }
 
-TClasslessInstanceHook(void,
-                       "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@"
-                       "UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
                        NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
     try {
         Packet* packet = *(Packet**)pPacket;

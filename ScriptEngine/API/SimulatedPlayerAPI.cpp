@@ -500,8 +500,7 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args) {
                         LOG_WRONG_ARG_TYPE();
                         return Local<Value>();
                     }
-                    path.emplace_back(posArr.get(0).asNumber().toFloat(), posArr.get(1).asNumber().toFloat(),
-                                      posArr.get(2).asNumber().toFloat());
+                    path.emplace_back(posArr.get(0).asNumber().toFloat(), posArr.get(1).asNumber().toFloat(), posArr.get(2).asNumber().toFloat());
                 } else {
                     LOG_WRONG_ARG_TYPE();
                     return Local<Value>();
@@ -515,8 +514,7 @@ Local<Value> PlayerClass::simulateNavigateTo(const Arguments& args) {
             auto res = sp->simulateNavigateToEntity(**actor, speed);
             return NavigateResultToObject(res);
         } else if (IsInstanceOf<IntPos>(args[0]) || IsInstanceOf<FloatPos>(args[0])) {
-            Vec3 pos = IsInstanceOf<IntPos>(args[0]) ? IntPos::extractPos(args[0])->getBlockPos().bottomCenter()
-                                                     : FloatPos::extractPos(args[0])->getVec3();
+            Vec3 pos = IsInstanceOf<IntPos>(args[0]) ? IntPos::extractPos(args[0])->getBlockPos().bottomCenter() : FloatPos::extractPos(args[0])->getVec3();
             auto res = sp->simulateNavigateToLocation(pos, speed);
             return NavigateResultToObject(res);
         }

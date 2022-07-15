@@ -12,8 +12,7 @@
 //  if(pl)
 //      logger.setPlayer(pl);                   // Optional, also record log to a Player
 //  ......
-//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like
-//  this)
+//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like this)
 //
 //
 //  [Use Logger]
@@ -77,8 +76,7 @@ public:
         std::ostringstream os;
         bool locked = false; // Deprecated
 
-        LIAPI explicit OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat,
-                                    std::string&& playerFormat, fmt::text_style&& style, std::string&& mode);
+        LIAPI explicit OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat, std::string&& playerFormat, fmt::text_style&& style, std::string&& mode);
 
         template <typename T>
         OutputStream& operator<<(T t) {
@@ -183,7 +181,8 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    inline Logger() : Logger("") {
+    inline Logger()
+    : Logger("") {
     }
     LIAPI explicit Logger(const std::string& title);
 

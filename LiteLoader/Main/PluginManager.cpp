@@ -34,14 +34,14 @@ bool LL::PluginManager::registerPlugin(HMODULE handle, std::string name, std::st
     LL::Plugin plugin{name, desc, version, others};
     plugin.handle = handle;
     try {
-        plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin
-                                                                 : Plugin::PluginType::DllPlugin;
+        plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin : Plugin::PluginType::DllPlugin;
         others.erase("PluginType");
-    } catch (...) { plugin.type = handle ? Plugin::PluginType::DllPlugin : Plugin::PluginType::ScriptPlugin; }
+    } catch (...) {
+        plugin.type = handle ? Plugin::PluginType::DllPlugin : Plugin::PluginType::ScriptPlugin;
+    }
 
     try {
-        plugin.filePath =
-            UTF82String(filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
+        plugin.filePath = UTF82String(filesystem::path(str2wstr(others.at("PluginFilePath"))).lexically_normal().u8string());
         others.erase("PluginFilePath");
     } catch (...) {
         if (handle)
@@ -65,8 +65,7 @@ bool LL::PluginManager::unRegisterPlugin(std::string name) {
 // Helper
 LL::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
-        if (it.second.name == name ||
-            UTF82String(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
+        if (it.second.name == name || UTF82String(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
             if (!includeScriptPlugin && it.second.type == LL::Plugin::PluginType::ScriptPlugin)
                 continue;
             return &it.second;
@@ -140,8 +139,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
             return false;
         }
 
-        if (pluginFilePath.find("/") == string::npos && pluginFilePath.find("\\") == string::npos &&
-            loadPlugin("plugins/" + pluginFilePath)) {
+        if (pluginFilePath.find("/") == string::npos && pluginFilePath.find("\\") == string::npos && loadPlugin("plugins/" + pluginFilePath)) {
             if (outputResult)
                 logger.error("No valid plugin found at {}!", pluginFilePath);
             return false;
@@ -340,25 +338,24 @@ bool LL::PluginManager::callEventAtHotLoad(std::string pluginName) {
         Event::ServerStartedEvent().callToPlugin(pluginName); // ServerStartedEvent
     });
 
-    Schedule::delay(
-        [pluginName]() {
-            auto players = Level::getAllPlayers();
-            for (auto& pl : players) // PlayerPreJoinEvent
-            {
-                Event::PlayerPreJoinEvent ev;
-                ev.mPlayer = pl;
-                ev.mXUID = pl->getXuid();
-                ev.mIP = pl->getIP();
-                ev.callToPlugin(pluginName);
-            }
-            for (auto& pl : players) // PlayerJoinEvent
-            {
-                Event::PlayerJoinEvent ev;
-                ev.mPlayer = pl;
-                ev.callToPlugin(pluginName);
-            }
-        },
-        20);
+    Schedule::delay([pluginName]() {
+        auto players = Level::getAllPlayers();
+        for (auto& pl : players) // PlayerPreJoinEvent
+        {
+            Event::PlayerPreJoinEvent ev;
+            ev.mPlayer = pl;
+            ev.mXUID = pl->getXuid();
+            ev.mIP = pl->getIP();
+            ev.callToPlugin(pluginName);
+        }
+        for (auto& pl : players) // PlayerJoinEvent
+        {
+            Event::PlayerJoinEvent ev;
+            ev.mPlayer = pl;
+            ev.callToPlugin(pluginName);
+        }
+    },
+                    20);
     return true;
 }
 

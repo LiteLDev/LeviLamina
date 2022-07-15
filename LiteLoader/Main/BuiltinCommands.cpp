@@ -60,8 +60,8 @@ class TeleportDimensionCommand : public Command {
         auto dim = VanillaDimensions::toString((int)DimensionId);
         auto pos = getTargetPos(ori, actor);
         actor->teleport(pos, (int)DimensionId);
-        output.success(
-            fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})", actor->getNameTag(), dim, pos.x, pos.y, pos.z));
+        output.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
+                                   actor->getNameTag(), dim, pos.x, pos.y, pos.z));
         return true;
     }
 
@@ -115,30 +115,35 @@ public:
     }
 
     static void setup(CommandRegistry* registry) {
-        registry->registerCommand("tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters,
-                                  {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
-        registry->addEnum<DimensionType>("DimensionType", {
-                                                              {"overworld", DimensionType::OverWorld},
-                                                              {"o", DimensionType::OverWorld},
-                                                              {"nether", DimensionType::Nether},
-                                                              {"n", DimensionType::Nether},
-                                                              {"end", DimensionType::TheEnd},
-                                                              {"e", DimensionType::TheEnd},
-                                                          });
+        registry->registerCommand(
+            "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters,
+            {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+        registry->addEnum<DimensionType>("DimensionType",
+                                         {
+                                             {"overworld", DimensionType::OverWorld},
+                                             {"o", DimensionType::OverWorld},
+                                             {"nether", DimensionType::Nether},
+                                             {"n", DimensionType::Nether},
+                                             {"end", DimensionType::TheEnd},
+                                             {"e", DimensionType::TheEnd},
+                                         });
         auto dimensionTypeParam = makeMandatory<CommandParameterDataType::ENUM>(&TeleportDimensionCommand::DimensionId,
                                                                                 "Dimension", "DimensionType");
-        auto dimensionIdParam =
-            makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId");
-        auto victimParam =
-            makeMandatory(&TeleportDimensionCommand::Victim, "victim", &TeleportDimensionCommand::Victim_isSet);
-        auto positionParam = makeOptional(&TeleportDimensionCommand::CommandPos, "Position",
-                                          &TeleportDimensionCommand::CommandPos_isSet);
+        auto dimensionIdParam = makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId,
+                                              "DimensionId");
+        auto victimParam = makeMandatory(&TeleportDimensionCommand::Victim, "victim",
+                                         &TeleportDimensionCommand::Victim_isSet);
+        auto positionParam = makeOptional(&TeleportDimensionCommand::CommandPos,
+                                          "Position", &TeleportDimensionCommand::CommandPos_isSet);
 
-        registry->registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionTypeParam, positionParam);
-        registry->registerOverload<TeleportDimensionCommand>("tpdim", victimParam, dimensionIdParam, positionParam);
+        registry->registerOverload<TeleportDimensionCommand>(
+            "tpdim", victimParam, dimensionTypeParam, positionParam);
+        registry->registerOverload<TeleportDimensionCommand>(
+            "tpdim", victimParam, dimensionIdParam, positionParam);
         // registry->registerOverload<TeleportDimensionCommand>(
         //     "tpdim", dimensionTypeParam, positionParam);
-        registry->registerOverload<TeleportDimensionCommand>("tpdim", dimensionIdParam, positionParam);
+        registry->registerOverload<TeleportDimensionCommand>(
+            "tpdim", dimensionIdParam, positionParam);
     }
 };
 
@@ -156,7 +161,8 @@ void LLListPluginsCommand(CommandOutput& output) {
             desc = "§7" + desc;
 
         auto fileName = UTF82String(std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string());
-        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n", pluginName, plugin->version.toString(), fileName, desc);
+        oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n",
+                           pluginName, plugin->version.toString(), fileName, desc);
     }
     oss << "\n* Send command \"ll list <Plugin Name>\" for more information";
     output.success(oss.str());
@@ -245,7 +251,14 @@ void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool
 
 class LLCommand : public Command {
 
-    enum class Operation { Version, List, Help, Load, Unload, Reload };
+    enum class Operation {
+        Version,
+        List,
+        Help,
+        Load,
+        Unload,
+        Reload
+    };
 
     Operation operation;
     bool hasUpgradeOption, hasPluginNameSet;
@@ -256,8 +269,7 @@ public:
         std::string pluginName = "";
         if (hasPluginNameSet) {
             pluginName = pluginNameToDoOperation;
-            if (pluginName.size() > 1 && pluginName[0] == '"' && pluginName[pluginName.size() - 1] == '"' &&
-                pluginName[pluginName.size() - 2] != '\\') {
+            if (pluginName.size() > 1 && pluginName[0] == '"' && pluginName[pluginName.size() - 1] == '"' && pluginName[pluginName.size() - 2] != '\\') {
                 pluginName.erase(0, 1);
                 pluginName.pop_back();
             }
@@ -300,8 +312,8 @@ public:
 
     static void setup(CommandRegistry* registry) {
         // Register Cmd
-        registry->registerCommand("ll", "LiteLoaderBDS plugin operations", CommandPermissionLevel::Console,
-                                  {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+        registry->registerCommand("ll", "LiteLoaderBDS plugin operations",
+                                  CommandPermissionLevel::Console, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
 
         // Register softenum
         vector<string> pluginList;
@@ -311,10 +323,11 @@ public:
         registry->addSoftEnum("PluginName", pluginList);
 
         // ll version & help
-        registry->addEnum<Operation>("Operation_Common", {{"version", Operation::Version}, {"help", Operation::Help}});
+        registry->addEnum<Operation>("Operation_Common", {{"version", Operation::Version},
+                                                          {"help", Operation::Help}});
         registry->registerOverload<LLCommand>(
-            "ll", makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Common")
-                      .addOptions((CommandParameterOption)1));
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Common").addOptions((CommandParameterOption)1));
 
         // ll load
         registry->addEnum<Operation>("Operation_FreeFilePath", {
@@ -322,22 +335,17 @@ public:
                                                                });
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_FreeFilePath")
-                .addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&LLCommand::pluginNameToDoOperation, "pluginPath", nullptr,
-                                                            &LLCommand::hasPluginNameSet));
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_FreeFilePath").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::NORMAL>(&LLCommand::pluginNameToDoOperation, "pluginPath", nullptr, &LLCommand::hasPluginNameSet));
 
         // ll unload
         registry->addEnum<Operation>("Operation_MustPluginName", {
                                                                      {"unload", Operation::Unload},
                                                                  });
-        registry->registerOverload<LLCommand>("ll",
-                                              makeMandatory<CommandParameterDataType::ENUM>(
-                                                  &LLCommand::operation, "Operation", "Operation_MustPluginName")
-                                                  .addOptions((CommandParameterOption)1),
-                                              makeMandatory<CommandParameterDataType::SOFT_ENUM>(
-                                                  (std::string LLCommand::*)&LLCommand::pluginNameToDoOperation,
-                                                  "pluginName", "PluginName", &LLCommand::hasPluginNameSet));
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_MustPluginName").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::pluginNameToDoOperation, "pluginName", "PluginName", &LLCommand::hasPluginNameSet));
 
         // ll list & reload
         registry->addEnum<Operation>("Operation_OptionalPluginName", {
@@ -345,13 +353,10 @@ public:
                                                                          {"plugins", Operation::List},
                                                                          {"reload", Operation::Reload},
                                                                      });
-        registry->registerOverload<LLCommand>("ll",
-                                              makeMandatory<CommandParameterDataType::ENUM>(
-                                                  &LLCommand::operation, "Operation", "Operation_OptionalPluginName")
-                                                  .addOptions((CommandParameterOption)1),
-                                              makeOptional<CommandParameterDataType::SOFT_ENUM>(
-                                                  (std::string LLCommand::*)&LLCommand::pluginNameToDoOperation,
-                                                  "pluginName", "PluginName", &LLCommand::hasPluginNameSet));
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_OptionalPluginName").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::pluginNameToDoOperation, "pluginName", "PluginName", &LLCommand::hasPluginNameSet));
     }
 };
 
@@ -366,8 +371,8 @@ public:
     }
 
     static void setup(CommandRegistry* registry) {
-        registry->registerCommand("version", "Get the version of this server", CommandPermissionLevel::GameMasters,
-                                  {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+        registry->registerCommand("version", "Get the version of this server",
+                                  CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<VersionCommand>("version");
     }
 };

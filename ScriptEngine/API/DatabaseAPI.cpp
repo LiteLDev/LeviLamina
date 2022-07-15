@@ -28,7 +28,7 @@ using namespace DB;
     }
 
 //////////////////// Class Definition ////////////////////
-// clang-format off
+
 ClassDefine<KVDBClass> KVDBClassBuilder =
     defineClass<KVDBClass>("KVDatabase")
         .constructor(&KVDBClass::constructor)
@@ -65,7 +65,7 @@ ClassDefine<DBStmtClass> DBStmtClassBuilder =
         .instanceFunction("reexec", &DBStmtClass::reexec)
         .instanceFunction("clear", &DBStmtClass::clear)
         .build();
-// clang-format on
+
 
 //////////////////// Functions ////////////////////
 
@@ -183,13 +183,19 @@ Local<Value> RowToLocalValue(const Row& row) {
 
 // 生成函数
 KVDBClass::KVDBClass(const Local<Object>& scriptObj, const string& dir)
-: ScriptClass(scriptObj), kvdb(KVDB::create(dir)) {
-    unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) { kvdb.reset(); });
+: ScriptClass(scriptObj)
+, kvdb(KVDB::create(dir)) {
+    unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) {
+        kvdb.reset();
+    });
 }
 
 KVDBClass::KVDBClass(const string& dir)
-: ScriptClass(script::ScriptClass::ConstructFromCpp<KVDBClass>{}), kvdb(KVDB::create(dir)) {
-    unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) { kvdb.reset(); });
+: ScriptClass(script::ScriptClass::ConstructFromCpp<KVDBClass>{})
+, kvdb(KVDB::create(dir)) {
+    unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) {
+        kvdb.reset();
+    });
 }
 
 KVDBClass::~KVDBClass() {
@@ -282,11 +288,13 @@ Local<Value> KVDBClass::listKey(const Arguments& args) {
 
 // 生成函数
 DBSessionClass::DBSessionClass(const Local<Object>& scriptObj, const ConnParams& params)
-: ScriptClass(scriptObj), session(Session::create(params)) {
+: ScriptClass(scriptObj)
+, session(Session::create(params)) {
     session->setDebugOutput(true);
 }
 DBSessionClass::DBSessionClass(const ConnParams& params)
-: ScriptClass(script::ScriptClass::ConstructFromCpp<DBSessionClass>{}), session(Session::create(params)) {
+: ScriptClass(script::ScriptClass::ConstructFromCpp<DBSessionClass>{})
+, session(Session::create(params)) {
     session->setDebugOutput(true);
 }
 
@@ -388,11 +396,13 @@ Local<Value> DBSessionClass::isOpen(const Arguments& args) {
 
 // 生成函数
 DBStmtClass::DBStmtClass(const Local<Object>& scriptObj, const DB::SharedPointer<DB::Stmt>& stmt)
-: ScriptClass(scriptObj), stmt(stmt) {
+: ScriptClass(scriptObj)
+, stmt(stmt) {
 }
 
 DBStmtClass::DBStmtClass(const DB::SharedPointer<DB::Stmt>& stmt)
-: ScriptClass(script::ScriptClass::ConstructFromCpp<DBStmtClass>{}), stmt(stmt) {
+: ScriptClass(script::ScriptClass::ConstructFromCpp<DBStmtClass>{})
+, stmt(stmt) {
 }
 
 DBStmtClass::~DBStmtClass() {

@@ -19,7 +19,9 @@ static_assert(sizeof(ItemInstance) == 136);
 ItemStack* ItemStack::create() {
     try {
         return new ItemStack();
-    } catch (...) { return nullptr; }
+    } catch (...) {
+        return nullptr;
+    }
 }
 
 ItemStack* ItemStack::create(std::unique_ptr<CompoundTag> tag) {
@@ -50,7 +52,9 @@ ItemStack* ItemStack::create(std::string type, int count) {
 ItemStack ItemStack::fromItemInstance(ItemInstance const& ins) {
     try {
         return {ins};
-    } catch (...) { return ItemStack::EMPTY_ITEM; }
+    } catch (...) {
+        return ItemStack::EMPTY_ITEM;
+    }
 }
 
 ItemStack* ItemStack::clone_s() const {

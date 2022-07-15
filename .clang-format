@@ -15,16 +15,16 @@ AllowShortBlocksOnASingleLine : true
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Inline
 AllowShortIfStatementsOnASingleLine: false
-AllowShortLoopsOnASingleLine: false 
+AllowShortLoopsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: false
 AllowShortLambdasOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
 BinPackArguments: true
 BinPackParameters: true
-PackConstructorInitializers: BinPack
 ConstructorInitializerIndentWidth: 0
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
-ColumnLimit: 120
+ColumnLimit: 0
 CommentPragmas: '^ IWYU pragma:'
 PointerAlignment: Left
 IndentWidth: 4
@@ -38,7 +38,7 @@ IndentWrappedFunctionNames: true
 KeepEmptyLinesAtTheStartOfBlocks: true
 BreakConstructorInitializersBeforeComma: true
 SpaceAfterCStyleCast: false
-IndentCaseLabels: true 
+IndentCaseLabels: true
 TabWidth: 4
 UseTab: Never
 

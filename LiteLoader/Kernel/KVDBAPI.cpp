@@ -68,7 +68,8 @@ std::optional<std::string> KVDB::get(string_view key) {
 }
 
 bool KVDB::set(string_view key, string_view val) {
-    auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()), leveldb::Slice(val.data(), val.size()));
+    auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
+                     leveldb::Slice(val.data(), val.size()));
     if (!s.ok()) {
         levelDBLogger.error("put %s %s\n", dbpath.c_str(), s.ToString().c_str());
     }

@@ -19,7 +19,7 @@ enum TeleportationCause {
 class MovePlayerPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
     ActorRuntimeID runtimeId;
     Vec3 position;
@@ -32,18 +32,18 @@ public:
     TeleportationCause teleportationCause;
     int entityType;
     long tick;
-    
+
     inline std::string toDebugString() {
         return fmt::format("{}: pos: {}, mode: {}, cause: {}",
-            __super::toDebugString(), position.toString(), (int)mode, int(teleportationCause));
+                           __super::toDebugString(), position.toString(), (int)mode, int(teleportationCause));
     }
 
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEPLAYERPACKET
 public:
-    class MovePlayerPacket& operator=(class MovePlayerPacket const &) = delete;
-    MovePlayerPacket(class MovePlayerPacket const &) = delete;
+    class MovePlayerPacket& operator=(class MovePlayerPacket const&) = delete;
+    MovePlayerPacket(class MovePlayerPacket const&) = delete;
 #endif
 
 
@@ -51,14 +51,11 @@ public:
     /*0*/ virtual ~MovePlayerPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream &) const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /*3*/ virtual void write(class BinaryStream&) const;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEPLAYERPACKET
 #endif
-    MCAPI MovePlayerPacket(class Player const &, class Vec3 const &);
-    MCAPI MovePlayerPacket(class Player const &, enum Player::PositionMode, int, int);
+    MCAPI MovePlayerPacket(class Player const&, class Vec3 const&);
+    MCAPI MovePlayerPacket(class Player const&, enum Player::PositionMode, int, int);
     MCAPI MovePlayerPacket();
-
-
-
 };

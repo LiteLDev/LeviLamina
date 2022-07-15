@@ -12,7 +12,7 @@ using namespace std;
 
 
 //////////////////// Classes ////////////////////
-// clang-format off
+
 ClassDefine<void> LoggerClassBuilder =
     defineClass("logger")
         .function("log", &LoggerClass::log)
@@ -29,7 +29,7 @@ ClassDefine<void> LoggerClassBuilder =
         .function("setPlayer", &LoggerClass::setPlayer)
         .function("setLogLevel", &LoggerClass::setLogLevel)
         .build();
-// clang-format on
+
 
 ////////////////// Helper //////////////////
 string inline GetTimeStrHelper() {
@@ -202,8 +202,7 @@ Local<Value> LoggerClass::setLogLevel(const Arguments& args) {
 
     try {
         auto conf = ENGINE_OWN_DATA();
-        conf->maxLogLevel = conf->logger.consoleLevel = conf->logger.fileLevel = conf->logger.playerLevel =
-            args[0].toInt();
+        conf->maxLogLevel = conf->logger.consoleLevel = conf->logger.fileLevel = conf->logger.playerLevel = args[0].toInt();
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in SetLogLevel!")

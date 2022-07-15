@@ -189,8 +189,7 @@ using namespace std;
 #include <LoggerAPI.h>
 extern Logger logger;
 
-inline void OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat,
-                           std::string const& functionName) {
+inline void OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat, std::string const& functionName) {
     logger.error(errorMsg);
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In {}", functionName);
@@ -228,12 +227,12 @@ public:
     virtual ~BigEndianStringByteOutput() = default;
     ;
     virtual void* writeString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z", void*, void*,
-                       gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+        return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
     }
     virtual void* writeLongString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z", void*, void*,
-                       gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+        return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
     }
     virtual void writeFloat(float data) {
         writeBigEndianBytes((byte*)&data, 4);
@@ -254,8 +253,8 @@ public:
         writeBigEndianBytes((byte*)&data, 8);
     }
     virtual void* writeBytes(byte* bytes, size_t count) {
-        return SymCall("?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z", void*, void*, byte*, size_t)((void*)this, bytes,
-                                                                                                   count);
+        return SymCall("?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z",
+                       void*, void*, byte*, size_t)((void*)this, bytes, count);
     }
 };
 
@@ -1186,7 +1185,7 @@ void __appendPrettyString(std::ostringstream& oss, std::string const& str, Prett
 inline void __appendPrettySpace(std::ostringstream& oss, unsigned int level, PrettySnbtFormat const& format) {
     if (level > format.mMaxLevel)
         return;
-    for (unsigned i = 0; i < level; i++) {
+    for (unsigned i = 0; i < level; ++i) {
         oss << format.mIndent;
     }
 }
@@ -1199,57 +1198,41 @@ inline void __appendPrettyReturnSpace(std::ostringstream& oss, unsigned int leve
 }
 
 template <typename T>
-inline void __appendPrettySNBT(std::ostringstream& oss, T&, unsigned int level,
-                               PrettySnbtFormat const& format) = delete;
+inline void __appendPrettySNBT(std::ostringstream& oss, T&, unsigned int level, PrettySnbtFormat const& format) = delete;
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format);
+inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level, PrettySnbtFormat const& format);
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format);
+inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format);
 
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, EndTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, EndTag& tag, unsigned int level, PrettySnbtFormat const& format) {
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ByteTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Byte].mPrefix << (int)(signed char)tag.value()
-        << format.mValueFormats[Tag::Type::Byte].mSuffix;
+inline void __appendPrettySNBT(std::ostringstream& oss, ByteTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[Tag::Type::Byte].mPrefix << (int)(signed char)tag.value() << format.mValueFormats[Tag::Type::Byte].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ShortTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Short].mPrefix << tag.value()
-        << format.mValueFormats[Tag::Type::Short].mSuffix;
+inline void __appendPrettySNBT(std::ostringstream& oss, ShortTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[Tag::Type::Short].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Short].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, IntTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, IntTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     oss << format.mValueFormats[Tag::Type::Int].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Int].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, Int64Tag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Int64].mPrefix << tag.value()
-        << format.mValueFormats[Tag::Type::Int64].mSuffix;
+inline void __appendPrettySNBT(std::ostringstream& oss, Int64Tag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[Tag::Type::Int64].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Int64].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, FloatTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Float].mPrefix << tag.value()
-        << format.mValueFormats[Tag::Type::Float].mSuffix;
+inline void __appendPrettySNBT(std::ostringstream& oss, FloatTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[Tag::Type::Float].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Float].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, DoubleTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
-    oss << format.mValueFormats[Tag::Type::Double].mPrefix << tag.value()
-        << format.mValueFormats[Tag::Type::Double].mSuffix;
+inline void __appendPrettySNBT(std::ostringstream& oss, DoubleTag& tag, unsigned int level, PrettySnbtFormat const& format) {
+    oss << format.mValueFormats[Tag::Type::Double].mPrefix << tag.value() << format.mValueFormats[Tag::Type::Double].mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[Tag::Type::ByteArray];
     auto& elementFormat = format.mValueFormats[Tag::Type::Byte];
     auto& separator = format.mSeparator;
@@ -1270,8 +1253,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ByteArrayTag& tag, unsig
     oss << valueFormat.mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[Tag::Type::IntArray];
     auto& elementFormat = format.mValueFormats[Tag::Type::Int];
     auto& separator = format.mSeparator;
@@ -1293,8 +1275,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, IntArrayTag& tag, unsign
 }
 
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, StringTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, StringTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[Tag::Type::String];
     oss << valueFormat.mPrefix;
     __appendPrettyString(oss, tag.value(), format);
@@ -1302,8 +1283,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, StringTag& tag, unsigned
 }
 
 template <typename type>
-inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format, Tag::Type childrenType) {
+inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format, Tag::Type childrenType) {
     bool first = true;
     for (auto& child : tag) {
         if (!first) {
@@ -1317,8 +1297,7 @@ inline void __appendPrettyList(std::ostringstream& oss, ListTag& tag, unsigned i
 }
 
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[Tag::Type::List];
     if (tag.size() == 0) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;
@@ -1378,8 +1357,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, ListTag& tag, unsigned i
     oss << valueFormat.mSuffix;
 }
 template <>
-inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level,
-                               PrettySnbtFormat const& format) {
+inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsigned int level, PrettySnbtFormat const& format) {
     auto& valueFormat = format.mValueFormats[Tag::Type::Compound];
     if (tag.isEmpty()) {
         oss << valueFormat.mPrefix << valueFormat.mSuffix;

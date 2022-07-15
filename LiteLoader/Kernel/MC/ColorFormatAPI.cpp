@@ -28,30 +28,45 @@ std::unordered_map<std::string, const char*> const colorCodeToConsoleMap = {
     {"§r", "\x1b[0m"}, // RESET
 };
 
-std::unordered_map<std::string, mce::Color const> const colorCodeToColorMap =
-    std::unordered_map<std::string, mce::Color const>{
-        {"§0", mce::Color(0.0f, 0.0f, 0.0f)},
-        {"§1", mce::Color(0.0f, 0.0f, 0.666667f)},
-        {"§2", mce::Color(0.0f, 0.666667f, 0.0f)},
-        {"§3", mce::Color(0.0f, 0.666667f, 0.666667f)},
-        {"§4", mce::Color(0.666667f, 0.0f, 0.0f)},
-        {"§5", mce::Color(0.666667f, 0.0f, 0.666667f)},
-        {"§6", mce::Color(1.0f, 0.666667f, 0.0f)},
-        {"§7", mce::Color(0.666667f, 0.666667f, 0.666667f)},
-        {"§8", mce::Color(0.333333f, 0.333333f, 0.333333f)},
-        {"§9", mce::Color(0.333333f, 0.333333f, 1.0f)},
-        {"§a", mce::Color(0.333333f, 1.0f, 0.333333f)},
-        {"§b", mce::Color(0.333333f, 1.0f, 1.0f)},
-        {"§c", mce::Color(1.0f, 0.333333f, 0.333333f)},
-        {"§d", mce::Color(1.0f, 0.333333f, 1.0f)},
-        {"§e", mce::Color(1.0f, 1.0f, 0.333333f)},
-        {"§f", mce::Color(1.0f, 1.0f, 1.0f)},
-        {"§g", mce::Color(0.87f, 0.84f, 0.02f)},
-    };
+std::unordered_map<std::string, mce::Color const> const colorCodeToColorMap = std::unordered_map<std::string, mce::Color const>{
+    {"§0", mce::Color(0.0f, 0.0f, 0.0f)},
+    {"§1", mce::Color(0.0f, 0.0f, 0.666667f)},
+    {"§2", mce::Color(0.0f, 0.666667f, 0.0f)},
+    {"§3", mce::Color(0.0f, 0.666667f, 0.666667f)},
+    {"§4", mce::Color(0.666667f, 0.0f, 0.0f)},
+    {"§5", mce::Color(0.666667f, 0.0f, 0.666667f)},
+    {"§6", mce::Color(1.0f, 0.666667f, 0.0f)},
+    {"§7", mce::Color(0.666667f, 0.666667f, 0.666667f)},
+    {"§8", mce::Color(0.333333f, 0.333333f, 0.333333f)},
+    {"§9", mce::Color(0.333333f, 0.333333f, 1.0f)},
+    {"§a", mce::Color(0.333333f, 1.0f, 0.333333f)},
+    {"§b", mce::Color(0.333333f, 1.0f, 1.0f)},
+    {"§c", mce::Color(1.0f, 0.333333f, 0.333333f)},
+    {"§d", mce::Color(1.0f, 0.333333f, 1.0f)},
+    {"§e", mce::Color(1.0f, 1.0f, 0.333333f)},
+    {"§f", mce::Color(1.0f, 1.0f, 1.0f)},
+    {"§g", mce::Color(0.87f, 0.84f, 0.02f)},
+};
 
 std::unordered_map<unsigned char, const char*> const decorationToColorCodeMap = {
-    {0, "§r"},  {1, "§l"},  {3, "§o"},  {31, "§4"}, {32, "§2"}, {33, "§e"}, {34, "§1"}, {35, "§5"}, {36, "§3"},
-    {37, "§7"}, {90, "§8"}, {91, "§c"}, {92, "§a"}, {93, "§g"}, {94, "§9"}, {95, "§5"}, {96, "§b"}, {97, "§f"},
+    {0, "§r"},
+    {1, "§l"},
+    {3, "§o"},
+    {31, "§4"},
+    {32, "§2"},
+    {33, "§e"},
+    {34, "§1"},
+    {35, "§5"},
+    {36, "§3"},
+    {37, "§7"},
+    {90, "§8"},
+    {91, "§c"},
+    {92, "§a"},
+    {93, "§g"},
+    {94, "§9"},
+    {95, "§5"},
+    {96, "§b"},
+    {97, "§f"},
 };
 
 std::string nearestColorCodeFromColor(mce::Color const& color) {
@@ -59,16 +74,13 @@ std::string nearestColorCodeFromColor(mce::Color const& color) {
     std::string minCode = "";
     for (auto& [code, codeColor] : colorCodeToColorMap) {
         auto dst = color.distanceTo(codeColor);
-        // std::cout << code << color.toConsoleCode() << color.toHexString() << " - " << codeColor.toConsoleCode() <<
-        // codeColor.toHexString() << " - " << dst << std::endl;
+        // std::cout << code << color.toConsoleCode() << color.toHexString() << " - " << codeColor.toConsoleCode() << codeColor.toHexString() << " - " << dst << std::endl;
         if (dst < minDst) {
             minDst = dst;
             minCode = code;
         }
     }
-    // std::cout << minCode << color.toConsoleCode() << color.toHexString() << " - " <<
-    // colorCodeToColorMap.at(minCode).toConsoleCode() << colorCodeToColorMap.at(minCode).toHexString() << " - " <<
-    // minDst << std::endl;
+    // std::cout << minCode << color.toConsoleCode() << color.toHexString() << " - " << colorCodeToColorMap.at(minCode).toConsoleCode() << colorCodeToColorMap.at(minCode).toHexString() << " - " << minDst << std::endl;
     return minCode;
 }
 
@@ -290,11 +302,10 @@ void testAll() {
     }
 
 
-#define PrintAllColorCode(code)                                                                           \
-    std::string code_##code = "§"## #code;                                                                \
-    mce::Color color_##code = *ColorFromColorCode(code_##code);                                           \
-    std::cout << "{\"§" << #code << "\", mce::Color(" << color_##code.r << ", " << color_##code.g << ", " \
-              << color_##code.b << ")}," << std::endl;
+#define PrintAllColorCode(code)                                 \
+    std::string code_##code = "§"## #code;                      \
+    mce::Color color_##code = *ColorFromColorCode(code_##code); \
+    std::cout << "{\"§" << #code << "\", mce::Color(" << color_##code.r << ", " << color_##code.g << ", " << color_##code.b << ")}," << std::endl;
 
     PrintAllColorCode(0);
     PrintAllColorCode(1);
@@ -325,16 +336,13 @@ void testAll() {
     }
     std::string format;
     format = fmt::v8::detail::make_emphasis<char>(fmt::v8::emphasis::bold);
-    logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§l", Util::toHex(format.substr(0, 1)), format.substr(1),
-                '}');
+    logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§l", Util::toHex(format.substr(0, 1)), format.substr(1), '}');
     format = fmt::v8::detail::make_emphasis<char>(fmt::v8::emphasis::italic);
-    logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§o", Util::toHex(format.substr(0, 1)), format.substr(1),
-                '}');
+    logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§o", Util::toHex(format.substr(0, 1)), format.substr(1), '}');
     format = "";
     logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§k", "", "", '}');
     format = "\x1b[0m";
-    logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§r", Util::toHex(format.substr(0, 1)), format.substr(1),
-                '}');
+    logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§r", Util::toHex(format.substr(0, 1)), format.substr(1), '}');
 }
 }
 TClasslessInstanceHook2("TestColorFormat", void, "?startServerThread@ServerInstance@@QEAAXXZ") {

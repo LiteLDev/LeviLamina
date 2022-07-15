@@ -13,8 +13,7 @@ static_assert(sizeof(CommandRegistry::Overload) == 72);
 static_assert(offsetof(CommandRegistry::Signature, alt_symbol) == 96);
 static_assert(sizeof(CommandRegistry::Signature) == 120);
 /*
-void CommandRegistry::registerOverload(std::string const& name, Overload::FactoryFn factory,
-std::vector<CommandParameterData>&& args)
+void CommandRegistry::registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args)
 {
     Signature* signature = const_cast<Signature*>(findCommand(name));
     auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
@@ -23,8 +22,13 @@ std::vector<CommandParameterData>&& args)
 
 extern Logger logger;
 
-CommandRegistry::Overload::Overload(CommandVersion version, FactoryFn factory, std::vector<CommandParameterData>&& args)
-: version(version), factory(factory), params(std::forward<std::vector<CommandParameterData>>(args)), unk(255){};
+CommandRegistry::Overload::Overload(CommandVersion version,
+                                    FactoryFn factory,
+                                    std::vector<CommandParameterData>&& args)
+: version(version)
+, factory(factory)
+, params(std::forward<std::vector<CommandParameterData>>(args))
+, unk(255){};
 
 CommandRegistry::Overload::~Overload(){};
 
@@ -55,8 +59,7 @@ std::vector<std::string> CommandRegistry::getEnumValues(std::string const& name)
         return {};
     std::vector<std::string> results;
     auto& enums = Global<CommandRegistry>->mEnums;
-    auto iter =
-        std::find_if(enums.begin(), enums.end(), [&](CommandRegistry::Enum const& r) { return r.name == name; });
+    auto iter = std::find_if(enums.begin(), enums.end(), [&](CommandRegistry::Enum const& r) { return r.name == name; });
     if (iter == enums.end())
         return results;
     for (auto& i : iter->values)
@@ -71,8 +74,7 @@ std::vector<std::string> CommandRegistry::getSoftEnumValues(std::string const& n
         return {};
     std::vector<std::string> results;
     auto& enums = Global<CommandRegistry>->mSoftEnums;
-    auto iter =
-        std::find_if(enums.begin(), enums.end(), [&](CommandRegistry::SoftEnum const& r) { return r.name == name; });
+    auto iter = std::find_if(enums.begin(), enums.end(), [&](CommandRegistry::SoftEnum const& r) { return r.name == name; });
     if (iter != enums.end())
         return iter->list;
     return {};
@@ -114,8 +116,7 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
                 ++i;
             }
         }
-        auto aliasIter =
-            std::find_if(mEnums.begin(), mEnums.end(), [&aliasKey](Enum const& e) { return e.name == aliasKey; });
+        auto aliasIter = std::find_if(mEnums.begin(), mEnums.end(), [&aliasKey](Enum const& e) { return e.name == aliasKey; });
         if (aliasIter != mEnums.end()) {
             aliasIter->values.clear();
             mEnumLookup.erase(aliasIter->name);
@@ -125,23 +126,20 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
         if (sig == mSignatures.end())
             return false;
         {
-            auto iter = std::remove_if(mCommandSymbols.begin(), mCommandSymbols.end(), [&](Symbol const& r) {
-                return r == sig->second.main_symbol || r == sig->second.alt_symbol;
-            });
+            auto iter = std::remove_if(mCommandSymbols.begin(), mCommandSymbols.end(),
+                                       [&](Symbol const& r) { return r == sig->second.main_symbol || r == sig->second.alt_symbol; });
             if (iter != mCommandSymbols.end())
                 mCommandSymbols.erase(iter, mCommandSymbols.end());
         }
         //{
         //    auto iter = std::remove_if(mRules.begin(), mRules.end(),
-        //                               [&](ParseRule const& r) { return r.sym == sig->second.main_symbol || r.sym ==
-        //                               sig->second.alt_symbol; });
+        //                               [&](ParseRule const& r) { return r.sym == sig->second.main_symbol || r.sym == sig->second.alt_symbol; });
         //    if (iter == mRules.end())
         //        mRules.erase(iter, mRules.end());
         //};
         {
-            auto iter = std::remove_if(mFactorizations.begin(), mFactorizations.end(), [&](Factorization const& r) {
-                return r.sym == sig->second.main_symbol || r.sym == sig->second.alt_symbol;
-            });
+            auto iter = std::remove_if(mFactorizations.begin(), mFactorizations.end(),
+                                       [&](Factorization const& r) { return r.sym == sig->second.main_symbol || r.sym == sig->second.alt_symbol; });
             if (iter != mFactorizations.end())
                 mFactorizations.erase(iter, mFactorizations.end());
         };
@@ -149,7 +147,9 @@ bool CommandRegistry::unregisterCommand(std::string const& name) {
         mSignatures.erase(sig);
         mAliases.erase(command);
         return true;
-    } catch (...) { logger.error("Error in CommandRegistry::unregisterCommand"); }
+    } catch (...) {
+        logger.error("Error in CommandRegistry::unregisterCommand");
+    }
     return false;
 }
 
@@ -189,14 +189,29 @@ inline void CommandRegistry::printAll() const {
 }
 inline void CommandRegistry::printSize() const {
     static auto log = std::unordered_map<std::string, std::string>{
-        {"mRules                   ", ""}, {"mParseTableMap           ", ""}, {"mOptionals               ", ""},
-        {"mEnumValues              ", ""}, {"mEnums                   ", ""}, {"mFactorizations          ", ""},
-        {"mPostfixes               ", ""}, {"mEnumLookup              ", ""}, {"mEnumValueLookup         ", ""},
-        {"mCommandSymbols          ", ""}, {"mSignatures              ", ""}, {"mTypeLookup              ", ""},
-        {"unk376                   ", ""}, {"mAliases                 ", ""}, {"mSemanticConstraints     ", ""},
-        {"mSemanticConstraintLookup", ""}, {"mConstrainedValues       ", ""}, {"mConstrainedValueLookup  ", ""},
-        {"mSoftEnums               ", ""}, {"mSoftEnumLookup          ", ""}, {"mStateStack              ", ""},
-        {"mEnumsValues             ", ""}, {"mConstrainedValuesValues ", ""},
+        {"mRules                   ", ""},
+        {"mParseTableMap           ", ""},
+        {"mOptionals               ", ""},
+        {"mEnumValues              ", ""},
+        {"mEnums                   ", ""},
+        {"mFactorizations          ", ""},
+        {"mPostfixes               ", ""},
+        {"mEnumLookup              ", ""},
+        {"mEnumValueLookup         ", ""},
+        {"mCommandSymbols          ", ""},
+        {"mSignatures              ", ""},
+        {"mTypeLookup              ", ""},
+        {"unk376                   ", ""},
+        {"mAliases                 ", ""},
+        {"mSemanticConstraints     ", ""},
+        {"mSemanticConstraintLookup", ""},
+        {"mConstrainedValues       ", ""},
+        {"mConstrainedValueLookup  ", ""},
+        {"mSoftEnums               ", ""},
+        {"mSoftEnumLookup          ", ""},
+        {"mStateStack              ", ""},
+        {"mEnumsValues             ", ""},
+        {"mConstrainedValuesValues ", ""},
     };
     auto mEnumsValuesSize = ([&]() -> size_t {
         size_t size = 0;

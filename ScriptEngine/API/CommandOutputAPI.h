@@ -61,8 +61,8 @@ public:
     // Local<Value> getData() const;
     // MCAPI std::vector<class CommandOutputMessage> const& getMessages() const;
     // Local<Value> getMessages() const;
-    // MCAPI void load(enum CommandOutputType, int, std::vector<class CommandOutputMessage>&&, std::unique_ptr<class
-    // CommandPropertyBag>&&); Local<Value> load(const Arguments& args);
+    // MCAPI void load(enum CommandOutputType, int, std::vector<class CommandOutputMessage>&&, std::unique_ptr<class CommandPropertyBag>&&);
+    // Local<Value> load(const Arguments& args);
 
     Local<Value> toString(const Arguments& args);
 };

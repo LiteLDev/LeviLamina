@@ -85,11 +85,9 @@ inline bool PrettySnbtFormat::setValueColor(mce::Color const& color) {
     if constexpr (type == Tag::Type::String)
         mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>, DefaultSuffix<type> + getResetColorCode()};
     else if constexpr (type >= Tag::Type::ByteArray)
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type> + getResetColorCode(),
-                               getColorCode(color) + DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type> + getResetColorCode(), getColorCode(color) + DefaultSuffix<type> + getResetColorCode()};
     else
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>,
-                               getItalicCode() + DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>, getItalicCode() + DefaultSuffix<type> + getResetColorCode()};
     return true;
 }
 
@@ -105,10 +103,12 @@ inline bool PrettySnbtFormat::setExpand(bool expand) {
     return true;
 }
 
-#define DllExport_SetValueColor(type) template LIAPI bool PrettySnbtFormat::setValueColor<type>(mce::Color const& color)
+#define DllExport_SetValueColor(type) \
+    template LIAPI bool PrettySnbtFormat::setValueColor<type>(mce::Color const& color)
 #define DllExport_SetValueFormat(type) \
     template LIAPI bool PrettySnbtFormat::setValueFormat<type>(std::string const& prefix, std::string const& suffix)
-#define DllExport_SetExpand(type) template LIAPI bool PrettySnbtFormat::setExpand<type>(bool expand)
+#define DllExport_SetExpand(type) \
+    template LIAPI bool PrettySnbtFormat::setExpand<type>(bool expand)
 
 ForEachTagType(DllExport_SetValueColor);
 ForEachTagType(DllExport_SetValueFormat);

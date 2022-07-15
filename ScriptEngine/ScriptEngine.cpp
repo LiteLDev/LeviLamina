@@ -30,49 +30,42 @@ fifo_json globalConfig;
 
 extern void LoadDepends();
 extern void LoadMain();
-extern void BindAPIs(ScriptEngine *engine);
+extern void BindAPIs(ScriptEngine* engine);
 extern void LoadDebugEngine();
 
-void LoaderInfo()
-{
+void LoaderInfo() {
     logger.info(std::string("ScriptEngine for ") + LLSE_MODULE_TYPE + " loaded");
     logger.info(std::string("Version ") + LITELOADER_VERSION.toString());
 }
 
-void LoadConfigFile()
-{
+void LoadConfigFile() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
         if (content) {
             globalConfig = fifo_json::parse(*content, nullptr, true, true);
             return;
         }
-    }
-    catch (const nlohmann::json::exception& e) {
+    } catch (const nlohmann::json::exception& e) {
         logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
         logger.error("{}", TextEncoding::toUTF8(e.what()));
-    }
-    catch (...) {
+    } catch (...) {
         logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
     }
     globalConfig = fifo_json::object();
 }
 
-void entry()
-{
+void entry() {
     //设置全局SEH处理
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
-    //Register Myself
+    // Register Myself
     LL::registerPlugin(LLSE_LOADER_NAME, LLSE_LOADER_DESCRIPTION, LITELOADER_VERSION,
-    {
-        {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
-    });
+                       {{"GitHub", "github.com/LiteLDev/LiteLoaderBDS"}});
 
-    //Load Global Config
+    // Load Global Config
     LoadConfigFile();
 
-    //I18n
+    // I18n
     Translation::loadFromImpl(GetCurrentModule(), LL::getLoaderHandle());
 
     //初始化全局数据
@@ -81,8 +74,7 @@ void entry()
     InitSafeGuardRecord();
 
     //欢迎
-    if (localShareData->isFirstInstance)
-    {
+    if (localShareData->isFirstInstance) {
         logger.info("ScriptEngine initializing...");
     }
     LoaderInfo();
@@ -92,7 +84,7 @@ void entry()
 
     //预加载库
     LoadDepends();
-    
+
     //加载插件
     LoadMain();
 

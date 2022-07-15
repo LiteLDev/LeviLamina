@@ -2,13 +2,16 @@
 #include "../../Session.h"
 
 struct sqlite3;
-namespace DB {
+namespace DB
+{
 
-class SQLiteSession : public Session {
+class SQLiteSession : public Session
+{
 
     sqlite3* conn = nullptr;
 
 public:
+
     SQLiteSession();
     SQLiteSession(const ConnParams& params);
     ~SQLiteSession();

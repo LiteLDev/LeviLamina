@@ -14,7 +14,7 @@ using namespace std;
 
 
 //////////////////// Classes ////////////////////
-// clang-format off
+
 ClassDefine<void> LlClassBuilder =
     defineClass("ll")
         .function("version", &LlClass::version)
@@ -32,7 +32,7 @@ ClassDefine<void> LlClassBuilder =
         // For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
         .build();
-// clang-format on
+
 
 Local<Value> LlClass::registerPlugin(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
@@ -100,8 +100,8 @@ Local<Value> LlClass::registerPlugin(const Arguments& args) {
         }
 
         ENGINE_OWN_DATA()->pluginName = ENGINE_OWN_DATA()->logger.title = name;
-        return Boolean::newBoolean(
-            PluginManager::registerPlugin(ENGINE_OWN_DATA()->pluginFilePath, name, desc, ver, other));
+        return Boolean::newBoolean(PluginManager::registerPlugin(ENGINE_OWN_DATA()->pluginFilePath,
+                                                                 name, desc, ver, other));
     }
     CATCH("Fail in LLSERegisterPlugin!");
 }
@@ -164,9 +164,8 @@ Local<Value> LlClass::requireVersion(const Arguments& args) {
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
 
     try {
-        return Boolean::newBoolean(!IsVersionLess(
-            LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, args[0].toInt(),
-            (args.size() >= 2) ? args[1].toInt() : 0, (args.size() >= 3) ? args[2].toInt() : 0));
+        return Boolean::newBoolean(!IsVersionLess(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION,
+                                                  args[0].toInt(), (args.size() >= 2) ? args[1].toInt() : 0, (args.size() >= 3) ? args[2].toInt() : 0));
     }
     CATCH("Fail in LLSERequireVersion!")
 }

@@ -8,14 +8,28 @@ using namespace cyanray;
 
 //////////////////// Types ////////////////////
 
-enum class WSClientEvents : char { onTextReceived = 0, onBinaryReceived, onError, onLostConnection, EVENT_COUNT };
+enum class WSClientEvents : char {
+    onTextReceived = 0,
+    onBinaryReceived,
+    onError,
+    onLostConnection,
+    EVENT_COUNT
+};
 
 struct ListenerListType {
     ScriptEngine* engine;
     script::Global<Function> func;
 };
 
-enum class HttpRequestType : char { Get = 0, Post, Put, Delete, Options, Patch, Head };
+enum class HttpRequestType : char {
+    Get = 0,
+    Post,
+    Put,
+    Delete,
+    Options,
+    Patch,
+    Head
+};
 
 struct HttpServerCallback {
     ScriptEngine* engine;

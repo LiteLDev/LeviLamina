@@ -100,7 +100,8 @@ void PrintURL(const URL& url) {
 
 #pragma endregion
 
-ConnParams::ConnParams(const std::initializer_list<Any>& list) : std::unordered_map<std::string, Any>() {
+ConnParams::ConnParams(const std::initializer_list<Any>& list)
+: std::unordered_map<std::string, Any>() {
     bool key = true;
     std::string keyName;
     for (auto& item : list) {
@@ -136,7 +137,8 @@ ConnParams::ConnParams(const std::initializer_list<std::pair<std::string, Any>>&
         (*this)["port"] = std::stoi(port);
     }
 }
-ConnParams::ConnParams(const std::string& str) : std::unordered_map<std::string, Any>() {
+ConnParams::ConnParams(const std::string& str)
+: std::unordered_map<std::string, Any>() {
     raw = str;
     auto url = ParseURL(str);
 #if defined(LLDB_DEBUG_MODE)
@@ -165,7 +167,8 @@ ConnParams::ConnParams(const std::string& str) : std::unordered_map<std::string,
         insert({pair.first, Any::str2any(pair.second)});
     }
 }
-ConnParams::ConnParams(const char* str) : std::unordered_map<std::string, Any>() {
+ConnParams::ConnParams(const char* str)
+: std::unordered_map<std::string, Any>() {
     *this = ConnParams(std::string(str));
 }
 

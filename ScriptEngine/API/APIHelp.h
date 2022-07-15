@@ -246,7 +246,9 @@ struct EnumDefineBuilder {
                 arr.add(String::newString(name));
             }
             return arr;
-        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
+        } catch (const std::exception&) {
+            logger.error("Error in " __FUNCTION__);
+        }
         return Local<Value>();
     }
     inline static Local<Value> toObject() {
@@ -256,7 +258,9 @@ struct EnumDefineBuilder {
                 obj.set(String::newString(name), Number::newNumber((int)value));
             }
             return obj;
-        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
+        } catch (const std::exception&) {
+            logger.error("Error in " __FUNCTION__);
+        }
         return Local<Value>();
     }
     inline static Local<Value> getName(const Arguments& args) {
@@ -268,18 +272,21 @@ struct EnumDefineBuilder {
             if (args[0].isNumber())
                 return String::newString(magic_enum::enum_name(static_cast<Type>(args[0].toInt())));
             return Local<Value>();
-        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
+        } catch (const std::exception&) {
+            logger.error("Error in " __FUNCTION__);
+        }
         return Local<Value>();
     }
 
     inline static Local<Value> toString() {
         try {
             return String::newString(typeid(Type).name() + 5);
-        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
+        } catch (const std::exception&) {
+            logger.error("Error in " __FUNCTION__);
+        }
         return Local<Value>();
     }
-    template <Type val, std::enable_if_t<std::is_enum_v<Type>, char> max =
-                            static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
+    template <Type val, std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
     inline static void buildBuilder(script::ClassDefineBuilder<void>& builder) {
         if constexpr (static_cast<char>(val) > max)
             return;
@@ -289,8 +296,7 @@ struct EnumDefineBuilder {
         }
         buildBuilder<static_cast<Type>((static_cast<char>(val) + 1)), max>(builder);
     }
-    template <
-        std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
+    template <std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
     inline static ClassDefine<void> build(std::string const& enumName) {
         script::ClassDefineBuilder<void> builder = defineClass(enumName);
         // fmt::print("枚举 {} 可能取值：\n", enumName);
@@ -301,7 +307,9 @@ struct EnumDefineBuilder {
             builder.property(std::string(name), [=]() -> Local<Value> {
                 try {
                     return Number::newNumber(static_cast<int>(val));
-                } catch (const std::exception&) { logger.error("Error in get {}.{}", enumName, name); }
+                } catch (const std::exception&) {
+                    logger.error("Error in get {}.{}", enumName, name);
+                }
                 return Local<Value>();
             });
         }

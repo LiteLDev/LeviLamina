@@ -21,7 +21,11 @@
 namespace LL {
 
 struct Version {
-    enum Status { Dev, Beta, Release };
+    enum Status {
+        Dev,
+        Beta,
+        Release
+    };
 
     int major;
     int minor;
@@ -46,7 +50,10 @@ struct Plugin {
     std::string filePath;
     HMODULE handle;
 
-    enum class PluginType { DllPlugin, ScriptPlugin };
+    enum class PluginType {
+        DllPlugin,
+        ScriptPlugin
+    };
 
     PluginType type;
 
@@ -117,8 +124,8 @@ LIAPI std::string getDataPath(const std::string& pluginName);
  * @return bool     True if the plugin is registered successfully
  * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
  */
-inline bool registerPlugin(std::string name, std::string desc, LL::Version version, std::string git = "",
-                           std::string license = "", std::string website = "") {
+inline bool registerPlugin(std::string name, std::string desc, LL::Version version,
+                           std::string git = "", std::string license = "", std::string website = "") {
     std::map<std::string, std::string> others;
     if (!git.empty())
         others.emplace("Git", git);
@@ -187,7 +194,11 @@ LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 LIAPI HMODULE getLoaderHandle();
 
 /// Server Status
-enum class ServerStatus { Starting, Running, Stopping };
+enum class ServerStatus {
+    Starting,
+    Running,
+    Stopping
+};
 LIAPI ServerStatus getServerStatus();
 LIAPI bool isServerStarting();
 LIAPI bool isServerStopping();

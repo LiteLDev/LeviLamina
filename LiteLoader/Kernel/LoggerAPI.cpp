@@ -74,7 +74,8 @@ CsLock& Logger::getLocker() {
 Logger::OutputStream::OutputStream() = default;
 
 Logger::OutputStream::OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat,
-                                   std::string&& playerFormat, fmt::text_style&& style, std::string&& levelPrefix) {
+                                   std::string&& playerFormat,
+                                   fmt::text_style&& style, std::string&& levelPrefix) {
     this->logger = logger;
     this->level = level;
     this->consoleFormat = consoleFormat;
@@ -159,28 +160,27 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
             }
 
         if (checkLogLevel(o.logger->consoleLevel, o.level) && !filterBanned) {
-            fmt::print(o.consoleFormat,
-                       applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
-                                      fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
-                       applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix),
-                       applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
-                       applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), text));
+            fmt::print(
+                o.consoleFormat,
+                applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
+                               fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
+                applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix),
+                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
+                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), text));
         }
 
-        if (checkLogLevel(o.logger->fileLevel, o.level) &&
-            (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
+        if (checkLogLevel(o.logger->fileLevel, o.level) && (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
             if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE)) {
-                auto fileContent =
-                    fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text);
+                auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text);
                 if (o.logger->ofs.is_open())
                     o.logger->ofs << fileContent << std::flush;
                 else
-                    PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE) << fileContent << std::flush;
+                    PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
+                        << fileContent << std::flush;
             }
         }
 
-        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) &&
-            (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
+        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) && (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
             o.logger->player->sendTextPacket(
                 fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text));
         }

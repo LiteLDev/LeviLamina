@@ -5,7 +5,7 @@
 #include <vector>
 
 OperationCount::OperationCount(const string& name)
-    : name(name) {
+: name(name) {
 }
 
 OperationCount OperationCount::create(const string& name) {

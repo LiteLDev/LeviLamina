@@ -14,8 +14,8 @@ string GetLastErrorMessage(DWORD error_message_id) {
         return "";
 
     LPWSTR message_buffer = nullptr;
-    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM, nullptr,
-                  error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
+    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
+                  nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
     string res = wstr2str(wstring(message_buffer));
     LocalFree(message_buffer);
     return res;
@@ -27,8 +27,8 @@ string GetLastErrorMessage() {
         return "";
 
     LPWSTR message_buffer = nullptr;
-    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM, nullptr,
-                  error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
+    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
+                  nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
     string res = wstr2str(wstring(message_buffer));
     LocalFree(message_buffer);
     return res;
@@ -70,8 +70,8 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
     CloseHandle(hWrite);
     CloseHandle(pi.hThread);
 
-    std::thread([hRead{hRead}, hProcess{pi.hProcess}, callback{std::move(callback)}, timeLimit{timeLimit},
-                 wCmd{wCmd}]() {
+    std::thread([hRead{hRead}, hProcess{pi.hProcess},
+                 callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}]() {
         _set_se_translator(seh_exception::TranslateSEHtoCE);
         if (timeLimit == -1)
             WaitForSingleObject(hProcess, INFINITE);

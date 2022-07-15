@@ -24,8 +24,7 @@ std::string LL::getLoaderVersionString() {
 }
 
 LL::Version LL::getLoaderVersion() {
-    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION,
-                   (LL::Version::Status)LITELOADER_VERSION_STATUS);
+    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, (LL::Version::Status)LITELOADER_VERSION_STATUS);
 }
 
 bool LL::isDebugMode() {
