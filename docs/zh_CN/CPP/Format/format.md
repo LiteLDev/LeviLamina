@@ -221,7 +221,7 @@ std::cout << '\n' << std::flush;
 
 ## 代码审查
 
-&emsp;&emsp;开发者在对 LL 进行维护时，不可擅自提交至 beta ，尤其是 main 仓库，应当以 pull request 的形式，先对代码进行编译确认代码无编译错误，并由至少 2 名开发者审查后，才可合并到 beta 分支。
+&emsp;&emsp;开发者在对 LL 进行维护时，不可擅自提交至 beta ，尤其是 main 仓库，应当以 pull request 的形式，先对代码进行编译确认代码无编译错误，并由至少 2 名开发者审查后，才可合并到 beta 分支。详情见[Commit格式](../Commit/Commit.md)
 
 ## 单元测试
 
