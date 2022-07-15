@@ -3,7 +3,9 @@
 
 namespace DB {
 
-Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute) : parent(parent), autoExecute(autoExecute) {
+Stmt::Stmt(const std::weak_ptr<Session>& parent, bool autoExecute)
+: parent(parent)
+, autoExecute(autoExecute) {
 }
 
 

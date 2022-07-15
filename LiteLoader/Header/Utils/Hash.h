@@ -37,8 +37,7 @@ constexpr uint64_t do_hash(const char* x, int len) {
 constexpr uint64_t do_hash2(string_view x) {
     // ap hash
     uint64_t rval = 0;
-    for (size_t i = 0; i < x.size(); ++i)
-    {
+    for (size_t i = 0; i < x.size(); ++i) {
         rval *= 128;
         rval += x[i];
         rval += 4;

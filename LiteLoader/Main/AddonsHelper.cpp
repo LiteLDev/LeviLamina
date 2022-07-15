@@ -150,11 +150,9 @@ bool AddAddonToList(Addon& addon) {
         // Auto fix Addon List File
         if (!addonList.is_array()) {
             auto backupPath = UTF82String(filesystem::path(str2wstr(addonListFile)).stem().u8string()) + "_error.json";
-            addonLogger.error("Invalid Addon List File {}, backup to {} and reset to default", addonListFile,
-                              backupPath);
+            addonLogger.error("Invalid Addon List File {}, backup to {} and reset to default", addonListFile, backupPath);
             std::error_code ec;
-            std::filesystem::rename(str2wstr(addonListFile),
-                                    filesystem::path(addonListFile).remove_filename().append(str2wstr(backupPath)), ec);
+            std::filesystem::rename(str2wstr(addonListFile), filesystem::path(addonListFile).remove_filename().append(str2wstr(backupPath)), ec);
             addonList = "[]"_json;
         }
         for (auto& addonData : addonList) {
@@ -253,8 +251,7 @@ bool AddonsManager::install(std::string packPath) {
             addonLogger.error("Addon file \"{}\" not found!", packPath);
             return false;
         }
-        if (VALID_ADDON_FILE_EXTENSION.find(UTF82String(filesystem::path(str2wstr(packPath)).extension().u8string())) ==
-            VALID_ADDON_FILE_EXTENSION.end()) {
+        if (VALID_ADDON_FILE_EXTENSION.find(UTF82String(filesystem::path(str2wstr(packPath)).extension().u8string())) == VALID_ADDON_FILE_EXTENSION.end()) {
             addonLogger.error("Unsupported type of file found!");
             return false;
         }
@@ -281,9 +278,7 @@ bool AddonsManager::install(std::string packPath) {
         // filesystem::remove_all(ADDON_INSTALL_TEMP_DIR + name + "/", ec); //?
         // filesystem::create_directories(ADDON_INSTALL_TEMP_DIR + name + "/", ec);
 
-        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o{} -aoa", ZIP_PROGRAM_PATH, packPath,
-                                              "\"" ADDON_INSTALL_TEMP_DIR + name + "/\""),
-                                  ADDON_INSTALL_MAX_WAIT);
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o{} -aoa", ZIP_PROGRAM_PATH, packPath, "\"" ADDON_INSTALL_TEMP_DIR + name + "/\""), ADDON_INSTALL_MAX_WAIT);
         if (res.first != 0) {
             addonLogger.error("Fail to uncompress addon {}!", name);
             addonLogger.error("Exit Code: {}", res.first);
@@ -423,12 +418,10 @@ void ListAllAddons(CommandOutput& output) {
 
         std::string addonType = (addon.type == Addon::Type::ResourcePack ? "ResourcePack" : "BehaviorPack");
         if (addon.enable) {
-            output.success(
-                fmt::format("§e{:>2}§r: {} §a[v{}] §8({})", index + 1, addonName, addon.version.toString(), addonType));
+            output.success(fmt::format("§e{:>2}§r: {} §a[v{}] §8({})", index + 1, addonName, addon.version.toString(), addonType));
             output.success(fmt::format("    {}", desc));
         } else {
-            output.success(fmt::format("§e{:>2}§r: §8{} [v{}] ({})", index + 1, ColorFormat::removeColorCode(addonName),
-                                       addon.version.toString(), addonType));
+            output.success(fmt::format("§e{:>2}§r: §8{} [v{}] ({})", index + 1, ColorFormat::removeColorCode(addonName), addon.version.toString(), addonType));
             output.success(fmt::format("    §8Disabled"));
         }
     }
@@ -447,7 +440,13 @@ void ShowAddon(CommandOutput& output, Addon& addon) {
 }
 
 class AddonsCommand : public Command {
-    enum class Operation { List, Install, Uninstall, Enable, Disable };
+    enum class Operation {
+        List,
+        Install,
+        Uninstall,
+        Enable,
+        Disable
+    };
 
     Operation operation = static_cast<Operation>(-1);
     std::string target;
@@ -524,26 +523,18 @@ public:
         registry->addEnum<Operation>("Operation_Addons_List", {{"list", Operation::List}});
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation",
-                                                          "Operation_Addons_List")
-                .addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName",
-                                                              &AddonsCommand::target_isSet));
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName", &AddonsCommand::target_isSet));
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation",
-                                                          "Operation_Addons_List")
-                .addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr,
-                                                           &AddonsCommand::index_isSet));
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_List").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr, &AddonsCommand::index_isSet));
 
         // addons install
         registry->addEnum<Operation>("Operation_Addons_Install", {{"install", Operation::Install}});
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation",
-                                                          "Operation_Addons_Install")
-                .addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Install").addOptions((CommandParameterOption)1),
             makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::target, "addonName"));
 
         // addons uninstall
@@ -556,18 +547,12 @@ public:
                                                                 });
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation",
-                                                          "Operation_Addons_Others")
-                .addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName",
-                                                               &AddonsCommand::target_isSet));
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::SOFT_ENUM>(&AddonsCommand::target, "addonName", "AddonName", &AddonsCommand::target_isSet));
         registry->registerOverload<AddonsCommand>(
             "addons",
-            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation",
-                                                          "Operation_Addons_Others")
-                .addOptions((CommandParameterOption)1),
-            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr,
-                                                            &AddonsCommand::index_isSet));
+            makeMandatory<CommandParameterDataType::ENUM>(&AddonsCommand::operation, "operation", "Operation_Addons_Others").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::NORMAL>(&AddonsCommand::index, "addonIndex", nullptr, &AddonsCommand::index_isSet));
     }
 };
 
@@ -592,7 +577,9 @@ void FindAddons(string jsonPath, string packsDir) {
                 std::string pktid = addon["pack_id"];
                 validPackIDs.insert(pktid);
             }
-        } catch (const std::exception&) { addonLogger.error("Error in parse enabled addons list"); }
+        } catch (const std::exception&) {
+            addonLogger.error("Error in parse enabled addons list");
+        }
 
         filesystem::directory_iterator ent(str2wstr(packsDir));
         for (auto& dir : ent) {
@@ -605,7 +592,9 @@ void FindAddons(string jsonPath, string packsDir) {
                 addon->enable = true;
             addons.emplace_back(std::move(*addon));
         }
-    } catch (...) { return; }
+    } catch (...) {
+        return;
+    }
 }
 
 void BuildAddonsList() {
@@ -614,22 +603,22 @@ void BuildAddonsList() {
     FindAddons(levelPath + "/world_behavior_packs.json", levelPath + "/behavior_packs");
     FindAddons(levelPath + "/world_resource_packs.json", levelPath + "/resource_packs");
 
-    std::sort(addons.begin(), addons.end(), [](Addon const& _Left, Addon const& _Right) {
-        if (_Left.enable && !_Right.enable)
-            return true;
-        if (_Left.type == Addon::Type::ResourcePack && _Right.type == Addon::Type::BehaviorPack)
-            return true;
-        return false;
-    });
+    std::sort(addons.begin(), addons.end(),
+              [](Addon const& _Left, Addon const& _Right) {
+                  if (_Left.enable && !_Right.enable)
+                      return true;
+                  if (_Left.type == Addon::Type::ResourcePack && _Right.type == Addon::Type::BehaviorPack)
+                      return true;
+                  return false;
+              });
 }
 
 bool AutoInstallAddons(string path) {
     std::error_code ec;
     if (!filesystem::exists(str2wstr(path))) {
         filesystem::create_directories(str2wstr(path), ec);
-        addonLogger.warn(
-            "Directory created. You can move compressed Addon files to {} to get installed at next launch.",
-            LL::globalConfig.addonsInstallPath);
+        addonLogger.warn("Directory created. You can move compressed Addon files to {} to get installed at next launch.",
+                         LL::globalConfig.addonsInstallPath);
         return false;
     }
     std::vector<string> toInstallList;

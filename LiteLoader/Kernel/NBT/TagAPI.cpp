@@ -96,7 +96,9 @@ Tag::Type Tag::getTagType() const {
 void Tag::destroy() {
     try {
         this->~Tag();
-    } catch (...) { ; }
+    } catch (...) {
+        ;
+    }
 }
 
 //////////////////// To Json ////////////////////

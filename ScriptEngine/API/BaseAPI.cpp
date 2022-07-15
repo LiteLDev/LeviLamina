@@ -11,7 +11,7 @@
 ClassDefine<void> DamageCauseEnumBuilder = EnumDefineBuilder<ActorDamageCause>::build("DamageCause");
 
 //////////////////// Class Definition ////////////////////
-// clang-format off
+
 ClassDefine<IntPos> IntPosBuilder =
     defineClass<IntPos>("IntPos")
         .constructor(&IntPos::create)
@@ -47,7 +47,7 @@ ClassDefine<DirectionAngle> DirectionAngleBuilder =
         .instanceFunction("toString", &DirectionAngle::toString)
 
         .build();
-// clang-format on
+
 
 //////////////////// IntPos ////////////////////
 
@@ -61,7 +61,9 @@ IntPos* IntPos::create(const Arguments& args) {
         p->z = args[2].asNumber().toInt32();
         p->dim = args[3].asNumber().toInt32();
         return p;
-    } catch (...) { return nullptr; }
+    } catch (...) {
+        return nullptr;
+    }
 }
 
 Local<Object> IntPos::newPos(int x, int y, int z, int dim) {
@@ -114,7 +116,9 @@ FloatPos* FloatPos::create(const Arguments& args) {
         p->z = args[2].asNumber().toFloat();
         p->dim = args[3].asNumber().toInt32();
         return p;
-    } catch (...) { return nullptr; }
+    } catch (...) {
+        return nullptr;
+    }
 }
 
 Local<Object> FloatPos::newPos(double x, double y, double z, int dim) {
@@ -172,7 +176,9 @@ DirectionAngle* DirectionAngle::create(const Arguments& args) {
         pa->pitch = args[0].asNumber().toDouble();
         pa->yaw = args[1].asNumber().toDouble();
         return pa;
-    } catch (...) { return nullptr; }
+    } catch (...) {
+        return nullptr;
+    }
 }
 
 Local<Value> DirectionAngle::toString() {
@@ -228,8 +234,7 @@ Local<Value> McClass::newFloatPos(const Arguments& args) {
     CHECK_ARG_TYPE(args[3], ValueKind::kNumber)
 
     try {
-        return FloatPos::newPos(args[0].asNumber().toFloat(), args[1].asNumber().toFloat(),
-                                args[2].asNumber().toFloat(), args[3].toInt());
+        return FloatPos::newPos(args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt());
     }
     CATCH("Fail in NewFloatPos!")
 }

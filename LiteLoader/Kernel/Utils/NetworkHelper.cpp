@@ -26,8 +26,7 @@ bool HttpGet(const string& url, const function<void(int, string)>& callback, int
     return HttpGet(url, {}, callback, timeout);
 }
 
-bool HttpGet(const string& url, const httplib::Headers& headers, const function<void(int, string)>& callback,
-             int timeout) {
+bool HttpGet(const string& url, const httplib::Headers& headers, const function<void(int, string)>& callback, int timeout) {
     string host, path;
     SplitHttpUrl(url, host, path);
 
@@ -67,13 +66,13 @@ bool HttpGet(const string& url, const httplib::Headers& headers, const function<
     return true;
 }
 
-bool HttpPost(const string& url, const string& data, const string& type,
-              const std::function<void(int, string)>& callback, int timeout) {
+bool HttpPost(const string& url, const string& data, const string& type, const std::function<void(int, string)>& callback,
+              int timeout) {
     return HttpPost(url, {}, data, type, callback);
 }
 
-bool HttpPost(const string& url, const httplib::Headers& headers, const string& data, const string& type,
-              const std::function<void(int, string)>& callback, int timeout) {
+bool HttpPost(const string& url, const httplib::Headers& headers, const string& data, const string& type, const std::function<void(int, string)>& callback,
+              int timeout) {
     string host, path;
     SplitHttpUrl(url, host, path);
     auto* cli = new httplib::Client(host.c_str());

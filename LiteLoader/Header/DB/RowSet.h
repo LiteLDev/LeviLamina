@@ -4,9 +4,11 @@
 
 #undef max
 
-namespace DB {
+namespace DB
+{
 
-class RowSet : public std::vector<Row> {
+class RowSet : public std::vector<Row>
+{
 
     using Base = std::vector<Row>;
 
@@ -42,7 +44,7 @@ public:
     LIAPI void add(const Row& row);
     /**
      * @brief Get if the set is valid
-     *
+     * 
      * @return bool  True if valid
      */
     LIAPI bool valid();

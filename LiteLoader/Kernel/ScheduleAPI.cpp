@@ -16,7 +16,11 @@ atomic_uint nextTaskId = 0;
 
 class ScheduleTaskData {
 public:
-    enum class TaskType { Delay, Repeat, InfiniteRepeat };
+    enum class TaskType {
+        Delay,
+        Repeat,
+        InfiniteRepeat
+    };
     unsigned int taskId;
     TaskType type;
     long long leftTime, interval;
@@ -159,7 +163,9 @@ public:
                 }
                 pop();
             }
-        } catch (...) { logger.error("Exception occurred in ScheduleTask!"); }
+        } catch (...) {
+            logger.error("Exception occurred in ScheduleTask!");
+        }
     }
 
     bool has(unsigned int taskId) {
@@ -187,8 +193,8 @@ ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay,
 ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handle) {
     if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
-    ScheduleTaskData::TaskType type =
-        maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
+    ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
+                                                   : ScheduleTaskData::TaskType::Repeat;
     ScheduleTaskData sche(type, task, std::max(tickRepeat, 1ull), std::max(tickRepeat, 1ull), maxCount, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
@@ -196,12 +202,12 @@ ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepea
     return ScheduleTask(sche.getTaskId());
 }
 
-ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickRepeat,
-                         int maxCount, HMODULE handle) {
+ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
+                         unsigned long long tickRepeat, int maxCount, HMODULE handle) {
     if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
-    ScheduleTaskData::TaskType type =
-        maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
+    ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
+                                                   : ScheduleTaskData::TaskType::Repeat;
     ScheduleTaskData sche(type, task, tickDelay, std::max(tickRepeat, 1ull), maxCount, handle);
     locker.lock();
     pendingTaskList.push_back(sche);
@@ -220,7 +226,8 @@ ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
 }
 } // namespace Schedule
 
-THook(void, "?tick@ServerLevel@@UEAAXXZ", void* _this) {
+THook(void, "?tick@ServerLevel@@UEAAXXZ",
+      void* _this) {
     original(_this);
     taskQueue.tick();
 }
@@ -232,7 +239,8 @@ void EndScheduleSystem() {
 }
 
 
-ScheduleTask::ScheduleTask(unsigned int taskId) : taskId(taskId) {
+ScheduleTask::ScheduleTask(unsigned int taskId)
+: taskId(taskId) {
 }
 
 bool ScheduleTask::cancel() {

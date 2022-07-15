@@ -228,20 +228,31 @@ Encoding detectEncoding(const std::string& text, bool* isReliable) {
     bool temp;
     int bytes_consumed;
 
-    return DetectEncoding(text.c_str(), (int)text.size(), nullptr, nullptr, nullptr, UNKNOWN_ENCODING, UNKNOWN_LANGUAGE,
-                          CompactEncDet::WEB_CORPUS, false, &bytes_consumed, isReliable ? isReliable : &temp);
+    return DetectEncoding(
+        text.c_str(), (int)text.size(),
+        nullptr, nullptr, nullptr,
+        UNKNOWN_ENCODING,
+        UNKNOWN_LANGUAGE,
+        CompactEncDet::WEB_CORPUS,
+        false,
+        &bytes_consumed,
+        isReliable ? isReliable : &temp);
 }
 
 std::string fromUnicode(const std::wstring& text, Encoding encoding) {
     try {
         return wstr2str(text, Encoding_CodePage_Map.at(encoding));
-    } catch (...) { return ""; }
+    } catch (...) {
+        return "";
+    }
 }
 
 std::wstring toUnicode(const std::string& text, Encoding encoding) {
     try {
         return str2wstr(text, Encoding_CodePage_Map.at(encoding));
-    } catch (...) { return L""; }
+    } catch (...) {
+        return L"";
+    }
 }
 
 std::string toUTF8(const std::string& text) {

@@ -60,11 +60,12 @@ SharedPointer<Session> Session::create(DBType type) {
     return _Create(type);
 }
 SharedPointer<Session> Session::create(const ConnParams& params) {
-    static std::unordered_map<std::string, DBType> names{{"sqlite", DBType::SQLite},
-                                                         {"sqlite3", DBType::SQLite},
-                                                         {"file", DBType::SQLite},
-                                                         {"mysql", DBType::MySQL},
-                                                         {"mysqlc", DBType::MySQL}};
+    static std::unordered_map<std::string, DBType> names{
+        {"sqlite", DBType::SQLite},
+        {"sqlite3", DBType::SQLite},
+        {"file", DBType::SQLite},
+        {"mysql", DBType::MySQL},
+        {"mysqlc", DBType::MySQL}};
     ConnParams copy = params;
     auto scheme = copy.getScheme();
     std::transform(scheme.begin(), scheme.end(), scheme.begin(), ::tolower);
@@ -77,8 +78,7 @@ SharedPointer<Session> Session::create(const ConnParams& params) {
 SharedPointer<Session> Session::create(DBType type, const ConnParams& params) {
     return _Create(type, params);
 }
-SharedPointer<Session> Session::create(DBType type, const std::string& host, uint16_t port, const std::string& user,
-                                       const std::string& password, const std::string& database) {
+SharedPointer<Session> Session::create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database) {
     return _Create(type,
                    {{"host", host}, {"port", port}, {"user", user}, {"password", password}, {"database", database}});
 }

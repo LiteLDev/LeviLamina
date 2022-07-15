@@ -7,14 +7,10 @@
 bool isUnlockCmdEnabled = true;
 
 // ==> LiteLoader/Main/SimpleServerLogger.cpp
-void LogCommandRegistration(std::string const& name, char const* description, enum CommandPermissionLevel perm,
-                            short flag1, short flag2);
+void LogCommandRegistration(std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2);
 
-TInstanceHook(void,
-              "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
-              "PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
-              CommandRegistry, std::string const& name, char const* description, enum CommandPermissionLevel perm,
-              short flag1, short flag2) {
+TInstanceHook(void, "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
+              CommandRegistry, std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2) {
     if (LL::globalConfig.enableUnlockCmd)
         flag1 |= 0x80;
     if (LL::globalConfig.debugMode)
@@ -47,25 +43,21 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
 //    }
 //}
 //// allowlist
-// TInstanceHook(CommandRegistry::Overload*,
-// "??$_registerOverload@VAllowListCommand@@VCommandParameterData@@V2@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@2@Z",
-//               CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData const&
-//               operationParam, class CommandParameterData& nameParam)
+// TInstanceHook(CommandRegistry::Overload*, "??$_registerOverload@VAllowListCommand@@VCommandParameterData@@V2@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@2@Z",
+//               CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData const& operationParam, class CommandParameterData& nameParam)
 //{
 //     tryChangeStringToRawText(nameParam);
 //     return original(this, unk, version, operationParam, nameParam);
 // }
 //// op
-// TInstanceHook(CommandRegistry::Overload*,
-// "??$_registerOverload@VOpCommand@@VCommandParameterData@@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@@Z",
+// TInstanceHook(CommandRegistry::Overload*, "??$_registerOverload@VOpCommand@@VCommandParameterData@@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@@Z",
 //               CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData& nameParam)
 //{
 //     tryChangeStringToRawText(nameParam);
 //     return original(this, unk, version, nameParam);
 // }
 //// deop
-// TInstanceHook(CommandRegistry::Overload*,
-// "??$_registerOverload@VDeOpCommand@@VCommandParameterData@@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@@Z",
+// TInstanceHook(CommandRegistry::Overload*, "??$_registerOverload@VDeOpCommand@@VCommandParameterData@@@CommandRegistry@@AEAAPEAUOverload@0@PEBDVCommandVersion@@AEBVCommandParameterData@@@Z",
 //               CommandRegistry, char const* unk, class CommandVersion version, class CommandParameterData& nameParam)
 //{
 //     tryChangeStringToRawText(nameParam);
@@ -84,12 +76,8 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
 //{
 //     return;
 // }
-TClasslessInstanceHook(
-    void,
-    "?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
-    "AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_"
-    "traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z",
-    std::string const& enumName, std::vector<std::string> const& enumValues, SemanticConstraint constraint) {
+TClasslessInstanceHook(void, "?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z",
+                       std::string const& enumName, std::vector<std::string> const& enumValues, SemanticConstraint constraint) {
     if (!LL::globalConfig.enableUnlockCmd)
         return original(this, enumName, enumValues, constraint);
     if (constraint & SemanticConstraint::RequiresCheatsEnabled) {

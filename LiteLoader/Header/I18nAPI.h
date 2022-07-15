@@ -27,8 +27,8 @@
 //  string hello = TextEncoding::fromUnicode(L"Hello");                     // Convert Unicode wstring -> MBCS string
 //  wstring world = TextEncoding::toUnicode("World");                       // Convert MBCS string -> Unicode wstring
 //
-//  string tomorrow = TextEncoding::toUTF8("明天");                          // Convert MBCS string of any encoding to
-//  UTF8 string string tonight = TextEncoding::convert("今天晚上", Encoding::CHINESE_GB, Encoding::UTF8);
+//  string tomorrow = TextEncoding::toUTF8("明天");                          // Convert MBCS string of any encoding to UTF8 string
+//  string tonight = TextEncoding::convert("今天晚上", Encoding::CHINESE_GB, Encoding::UTF8);
 //                                                                          // Convert from one MBCS encoding to another
 //
 //////////////////////////////////////////////////////
@@ -77,9 +77,9 @@ public:
      */
     I18N(const std::string& filePath, const std::string& defaultLangCode = "en_US",
          const LangData& defaultLangData = {}, const HMODULE& hModule = nullptr)
-        : filePath(filePath)
-        , defaultLangCode(defaultLangCode)
-        , defaultLangData(defaultLangData) {
+    : filePath(filePath)
+    , defaultLangCode(defaultLangCode)
+    , defaultLangData(defaultLangData) {
         if (hModule)
             curModule = hModule;
         else
@@ -113,7 +113,8 @@ public:
 #endif
 
 namespace Translation {
-template <bool B, class T = void> using enable_if_t = typename std::enable_if<B, T>::type;
+template <bool B, class T = void>
+using enable_if_t = typename std::enable_if<B, T>::type;
 
 ///////////////// tr Impl /////////////////
 template <typename S, typename... Args, Translation::enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
@@ -242,7 +243,8 @@ inline std::string tr(const S& formatStr, const Args&... args) {
  * tr("There are {0} days before {1} to come back", 3, "alex");
  * @endcode
  */
-template <typename... Args> inline std::string tr(const char* formatStr, const Args&... args) {
+template <typename... Args>
+inline std::string tr(const char* formatStr, const Args&... args) {
     return tr(std::string(formatStr), args...);
 }
 
@@ -280,7 +282,8 @@ inline const char* trc(const S& formatStr, const Args&... args) {
  * trc("There are {0} days before {1} to come back", 3, "alex");
  * @endcode
  */
-template <typename... Args> inline const char* trc(const char* formatStr, const Args&... args) {
+template <typename... Args>
+inline const char* trc(const char* formatStr, const Args&... args) {
     return trc(std::string(formatStr), args...);
 }
 

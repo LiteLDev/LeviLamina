@@ -15,12 +15,13 @@ using namespace Form;
 
 //////////////////// Class Definition ////////////////////
 
-ClassDefine<SimpleFormClass> SimpleFormClassBuilder = defineClass<SimpleFormClass>("LLSE_SimpleForm")
-                                                          .constructor(nullptr)
-                                                          .instanceFunction("setTitle", &SimpleFormClass::setTitle)
-                                                          .instanceFunction("setContent", &SimpleFormClass::setContent)
-                                                          .instanceFunction("addButton", &SimpleFormClass::addButton)
-                                                          .build();
+ClassDefine<SimpleFormClass> SimpleFormClassBuilder =
+    defineClass<SimpleFormClass>("LLSE_SimpleForm")
+        .constructor(nullptr)
+        .instanceFunction("setTitle", &SimpleFormClass::setTitle)
+        .instanceFunction("setContent", &SimpleFormClass::setContent)
+        .instanceFunction("addButton", &SimpleFormClass::addButton)
+        .build();
 
 ClassDefine<CustomFormClass> CustomFormClassBuilder =
     defineClass<CustomFormClass>("LLSE_CustomForm")
@@ -36,7 +37,8 @@ ClassDefine<CustomFormClass> CustomFormClassBuilder =
 
 //////////////////// Simple Form ////////////////////
 
-SimpleFormClass::SimpleFormClass() : ScriptClass(ScriptClass::ConstructFromCpp<SimpleFormClass>{}), form("", "") {
+SimpleFormClass::SimpleFormClass()
+: ScriptClass(ScriptClass::ConstructFromCpp<SimpleFormClass>{}), form("", "") {
 }
 
 //生成函数
@@ -55,24 +57,24 @@ Form::SimpleForm* SimpleFormClass::extract(Local<Value> v) {
 bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::Local<Function>& callback) {
     script::Global<Function> callbackFunc{callback};
 
-    return form->sendTo(
-        player, [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, int chosen) {
-            if (LL::isServerStopping())
-                return;
-            if (!EngineManager::isValid(engine))
-                return;
-            if (callback.isEmpty())
-                return;
+    return form->sendTo(player,
+                        [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, int chosen) {
+                            if (LL::isServerStopping())
+                                return;
+                            if (!EngineManager::isValid(engine))
+                                return;
+                            if (callback.isEmpty())
+                                return;
 
-            EngineScope scope(engine);
-            try {
-                if (chosen < 0)
-                    callback.get().call({}, PlayerClass::newPlayer(pl), Local<Value>());
-                else
-                    callback.get().call({}, PlayerClass::newPlayer(pl), Number::newNumber(chosen));
-            }
-            CATCH_WITHOUT_RETURN("Fail in form callback!")
-        });
+                            EngineScope scope(engine);
+                            try {
+                                if (chosen < 0)
+                                    callback.get().call({}, PlayerClass::newPlayer(pl), Local<Value>());
+                                else
+                                    callback.get().call({}, PlayerClass::newPlayer(pl), Number::newNumber(chosen));
+                            }
+                            CATCH_WITHOUT_RETURN("Fail in form callback!")
+                        });
 }
 
 //成员函数
@@ -115,7 +117,8 @@ Local<Value> SimpleFormClass::addButton(const Arguments& args) {
 
 //////////////////// Custom Form ////////////////////
 
-CustomFormClass::CustomFormClass() : ScriptClass(ScriptClass::ConstructFromCpp<CustomFormClass>{}), form("") {
+CustomFormClass::CustomFormClass()
+: ScriptClass(ScriptClass::ConstructFromCpp<CustomFormClass>{}), form("") {
 }
 
 
@@ -136,21 +139,21 @@ CustomForm* CustomFormClass::extract(Local<Value> v) {
 bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::Local<Function>& callback) {
     script::Global<Function> callbackFunc{callback};
 
-    return form->sendToForRawJson(
-        player, [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, string data) {
-            if (LL::isServerStopping())
-                return;
-            if (!EngineManager::isValid(engine))
-                return;
-            if (callback.isEmpty())
-                return;
+    return form->sendToForRawJson(player,
+                                  [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, string data) {
+                                      if (LL::isServerStopping())
+                                          return;
+                                      if (!EngineManager::isValid(engine))
+                                          return;
+                                      if (callback.isEmpty())
+                                          return;
 
-            EngineScope scope(engine);
-            try {
-                callback.get().call({}, PlayerClass::newPlayer(pl), JsonToValue(data));
-            }
-            CATCH_WITHOUT_RETURN("Fail in form callback!")
-        });
+                                      EngineScope scope(engine);
+                                      try {
+                                          callback.get().call({}, PlayerClass::newPlayer(pl), JsonToValue(data));
+                                      }
+                                      CATCH_WITHOUT_RETURN("Fail in form callback!")
+                                  });
 }
 
 Local<Value> CustomFormClass::setTitle(const Arguments& args) {

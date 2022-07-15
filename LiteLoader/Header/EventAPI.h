@@ -4,14 +4,12 @@
 //
 //  [Examples]
 //
-//  Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {        //Common situation - Const parameter
-//  "ev"
+//  Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {        //Common situation - Const parameter "ev"
 //      ev.mPlayer->sendText("hello world~");
 //      return true;
 //  });
 //
-//  Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters
-//  - Reference parameter "ev"
+//  Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters - Reference parameter "ev"
 //      ev.mMessage = "[Plugin Modified] " + ev.mMessage;
 //      return true;
 //  });
@@ -67,7 +65,8 @@ namespace Event {
 constexpr bool Ok = true;
 constexpr bool Cancel = false;
 
-template <typename EVENT> class EventManager {
+template <typename EVENT>
+class EventManager {
 public:
     LIAPI static int addEventListener(std::string name, std::function<bool(EVENT)> callback);
     LIAPI static int addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback);
@@ -77,13 +76,15 @@ public:
     LIAPI static bool callToPlugin(std::string pluginName, EVENT& ev);
 };
 
-template <typename EVENT> class EventListener {
+template <typename EVENT>
+class EventListener {
 private:
     int listenerId;
     bool deleted = false;
 
 public:
-    EventListener(int id) : listenerId(id) {
+    EventListener(int id)
+    : listenerId(id) {
     }
 
     void remove() {
@@ -94,7 +95,8 @@ public:
     }
 };
 
-template <typename EVENT> class EventTemplate {
+template <typename EVENT>
+class EventTemplate {
 public:
     static EventListener<EVENT> subscribe(std::function<bool(EVENT)> callback) {
         auto plugin = LL::getPlugin(GetCurrentModule());
@@ -252,7 +254,11 @@ public:
 
 class PlayerEffectChangedEvent : public EventTemplate<PlayerEffectChangedEvent> {
 public:
-    enum class EventType { Add, Remove, Update };
+    enum class EventType {
+        Add,
+        Remove,
+        Update
+    };
     Player* mPlayer;
     EventType mEventType;
     MobEffectInstance* mEffect;
@@ -330,7 +336,10 @@ public:
 
 class PlayerUseFrameBlockEvent : public EventTemplate<PlayerUseFrameBlockEvent> {
 public:
-    enum class Type { Use, Attack };
+    enum class Type {
+        Use,
+        Attack
+    };
     Type mType;
     Player* mPlayer;
     BlockInstance mBlockInstance;
@@ -543,11 +552,14 @@ public:
 
 ///////////////////////////// Other Events /////////////////////////////
 
-class PostInitEvent : public EventTemplate<PostInitEvent> {};
+class PostInitEvent : public EventTemplate<PostInitEvent> {
+};
 
-class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {};
+class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {
+};
 
-class ServerStoppedEvent : public EventTemplate<ServerStoppedEvent> {};
+class ServerStoppedEvent : public EventTemplate<ServerStoppedEvent> {
+};
 
 class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent> {
 public:
@@ -572,7 +584,11 @@ public:
 
 class ScriptPluginManagerEvent : public EventTemplate<ScriptPluginManagerEvent> {
 public:
-    enum class Operation { Load, Unload, Reload };
+    enum class Operation {
+        Load,
+        Unload,
+        Reload
+    };
 
     Operation operation;
     std::string target;

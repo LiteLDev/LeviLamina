@@ -2,7 +2,8 @@
 
 namespace DB {
 
-RowHeader::RowHeader(const std::initializer_list<std::string>& list) : std::vector<std::string>(list) {
+RowHeader::RowHeader(const std::initializer_list<std::string>& list)
+: std::vector<std::string>(list) {
 }
 
 RowHeader::~RowHeader() {
@@ -87,45 +88,54 @@ std::string& RowHeader::operator[](size_t index) {
 }
 
 
-Row::Row(const std::shared_ptr<RowHeader>& header) : header(header) {
+Row::Row(const std::shared_ptr<RowHeader>& header)
+: header(header) {
 }
-Row::Row(const RowHeader& header) : header(new RowHeader(header)) {
+Row::Row(const RowHeader& header)
+: header(new RowHeader(header)) {
 }
 Row::Row(const std::initializer_list<Any>& list, const RowHeader& header)
-: std::vector<Any>(list), header(new RowHeader(header)) {
+: std::vector<Any>(list)
+, header(new RowHeader(header)) {
     if (!header.empty() && list.size() != header.size()) {
         throw std::invalid_argument("Row::Row: The row and the header mismatch");
     }
 }
 Row::Row(const std::initializer_list<Any>& list, const std::shared_ptr<RowHeader>& header)
-: std::vector<Any>(list), header(header) {
+: std::vector<Any>(list)
+, header(header) {
     if (header != nullptr && list.size() != header->size()) {
         throw std::invalid_argument("Row::Row: The row and the header mismatch");
     }
 }
 Row::Row(std::vector<Any>&& list, const RowHeader& header)
-: std::vector<Any>(std::move(list)), header(new RowHeader(header)) {
+: std::vector<Any>(std::move(list))
+, header(new RowHeader(header)) {
     if (size() != header.size()) {
         list = std::move(*this); // Restore
         throw std::invalid_argument("Row::Row: The row and the header mismatch");
     }
 }
 Row::Row(const std::vector<Any>& list, const RowHeader& header)
-: std::vector<Any>(list), header(new RowHeader(header)) {
+: std::vector<Any>(list)
+, header(new RowHeader(header)) {
     if (list.size() != header.size()) {
         throw std::invalid_argument("Row::Row: The row and the header mismatch");
     }
 }
-Row::Row(const std::initializer_list<std::pair<std::string, Any>>& list) : header(new RowHeader()) {
+Row::Row(const std::initializer_list<std::pair<std::string, Any>>& list)
+: header(new RowHeader()) {
     for (auto& pair : list) {
         header->add(pair.first);
         this->push_back(pair.second);
     }
 }
-Row::Row(Row&& row) noexcept : header(row.header) {
+Row::Row(Row&& row) noexcept
+: header(row.header) {
     *this = std::move(row);
 }
-Row::Row(const Row& row) : header(row.header) {
+Row::Row(const Row& row)
+: header(row.header) {
     *this = row;
 }
 

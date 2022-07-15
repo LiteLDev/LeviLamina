@@ -31,7 +31,8 @@ void MySQLSession::setSSL(const ConnParams& params) {
     if (key.empty() || cert.empty()) {
         return;
     }
-    mysql_ssl_set(conn, key.c_str(), cert.c_str(), (ca.empty() ? nullptr : ca.c_str()),
+    mysql_ssl_set(conn, key.c_str(), cert.c_str(),
+                  (ca.empty() ? nullptr : ca.c_str()),
                   (capath.empty() ? nullptr : capath.c_str()),
                   (cipher.empty() ? nullptr : cipher.c_str())); // Always returns 0
 }
@@ -54,17 +55,16 @@ void MySQLSession::open(const ConnParams& params) {
     // auto defaultCharset = mysql_character_set_name(conn);
     auto charset = p.get<std::string>({"charset", "char_set", "characterset", "character_set", "charsetname",
                                        "char_set_name", "charactersetname", "character_set_name"},
-                                      "true", "utf8");
+                                      "true",
+                                      "utf8");
     // IF_ENDBG dbLogger.debug("MySQLSession::open: MySQL default charset name: {}", defaultCharset);
     mysql_options(conn, MYSQL_SET_CHARSET_NAME, charset.c_str());
     auto res = mysql_real_connect(conn, p.getHost().c_str(), p.getUsername().c_str(), p.getPassword().c_str(),
                                   (db.empty() ? nullptr : db.c_str()), port, nullptr, 0);
     if (!res) {
-        throw std::runtime_error("MySQLSession::MySQLSession: Failed to open database: " +
-                                 std::string(mysql_error(conn)));
+        throw std::runtime_error("MySQLSession::MySQLSession: Failed to open database: " + std::string(mysql_error(conn)));
     }
-    IF_ENDBG dbLogger.debug("MySQLSession::open: Opened database: " + std::string(p.getHost()) + ":" +
-                            std::to_string(port) + "/" + db);
+    IF_ENDBG dbLogger.debug("MySQLSession::open: Opened database: " + std::string(p.getHost()) + ":" + std::to_string(port) + "/" + db);
 #if defined(LLDB_DEBUG_MODE)
     mysql_dump_debug_info(conn);
 #endif

@@ -15,7 +15,7 @@ namespace Json {
 class StaticString {
 public:
     explicit StaticString(const char* czstring)
-        : c_str_(czstring) {
+    : c_str_(czstring) {
     }
     operator const char*() const {
         return c_str_;
@@ -63,15 +63,17 @@ class Value {
 public:
     class CZString {
     public:
-        enum DuplicationPolicy { noDuplication = 0,
-                                 duplicate,
-                                 duplicateOnCopy };
+        enum DuplicationPolicy {
+            noDuplication = 0,
+            duplicate,
+            duplicateOnCopy
+        };
         inline CZString(ArrayIndex index)
-            : cstr_(nullptr)
-            , index_(index) {
+        : cstr_(nullptr)
+        , index_(index) {
         }
         CZString(char const* str, unsigned length, DuplicationPolicy allocate)
-            : cstr_(str) {
+        : cstr_(str) {
             storage_.policy_ = allocate & 0x3;
             storage_.length_ = length & 0x3FFFFFFF;
         }

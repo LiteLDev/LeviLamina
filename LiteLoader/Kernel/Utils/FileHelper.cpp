@@ -41,7 +41,8 @@ std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinar
     if (!fRead.is_open()) {
         return std::nullopt;
     }
-    std::string data((std::istreambuf_iterator<char>(fRead)), std::istreambuf_iterator<char>());
+    std::string data((std::istreambuf_iterator<char>(fRead)),
+                     std::istreambuf_iterator<char>());
     fRead.close();
     return data;
 }

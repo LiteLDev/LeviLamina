@@ -21,7 +21,7 @@ private:
 
 public:
     ModuleMessageResult()
-        : resultCount("") {
+    : resultCount("") {
     }
     ~ModuleMessageResult();
     operator bool();
@@ -80,11 +80,9 @@ public:
 
     static ModuleMessageResult broadcastLocal(MessageType type, std::string data, int64_t delay = 0);
     static ModuleMessageResult broadcastGlobal(MessageType type, std::string data, int64_t delay = 0);
-    static ModuleMessageResult broadcastTo(std::string toModuleType, MessageType type, std::string data,
-                                           int64_t delay = 0);
+    static ModuleMessageResult broadcastTo(std::string toModuleType, MessageType type, std::string data, int64_t delay = 0);
     static ModuleMessageResult sendTo(ScriptEngine* engine, MessageType type, std::string data, int64_t delay = 0);
-    static ModuleMessageResult sendToRandom(std::string toModuleType, MessageType type, std::string data,
-                                            int64_t delay = 0);
+    static ModuleMessageResult sendToRandom(std::string toModuleType, MessageType type, std::string data, int64_t delay = 0);
 
     bool sendResult(MessageType type, std::string data, int64_t delay = 0);
 

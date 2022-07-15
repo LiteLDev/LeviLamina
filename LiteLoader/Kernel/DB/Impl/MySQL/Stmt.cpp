@@ -259,7 +259,8 @@ Any ReceiverToAny(const Receiver& rec) {
 }
 
 MySQLStmt::MySQLStmt(MYSQL_STMT* stmt, const std::weak_ptr<Session>& parent, bool autoExecute)
-: Stmt(parent, autoExecute), stmt(stmt) {
+: Stmt(parent, autoExecute)
+, stmt(stmt) {
     this->parent = parent;
     totalParamsCount = mysql_stmt_param_count(stmt);
     if (totalParamsCount)
@@ -285,8 +286,7 @@ int MySQLStmt::getNextParamIndex() {
 void MySQLStmt::bindResult() {
     metadata = mysql_stmt_result_metadata(stmt); // Get the result metadata
     if (mysql_stmt_errno(stmt) && !metadata) {
-        throw std::runtime_error("MySQLStmt::bindResult: Failed to get result metadata" +
-                                 std::string(mysql_stmt_error(stmt)));
+        throw std::runtime_error("MySQLStmt::bindResult: Failed to get result metadata" + std::string(mysql_stmt_error(stmt)));
     }
     if (!metadata) {
         IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: No result metadata");
@@ -322,13 +322,11 @@ void MySQLStmt::bindResult() {
 
         rec.field = field;             // Save the field
         resultHeader->add(field.name); // Add the field name to the header
-        IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: Bind result {} (type {}) at index {}", field.name,
-                                (int)field.type, i);
+        IF_ENDBG dbLogger.debug("MySQLStmt::bindResult: Bind result {} (type {}) at index {}", field.name, (int)field.type, i);
     }
     auto res = mysql_stmt_bind_result(stmt, result.get());
     if (res) {
-        throw std::runtime_error("MySQLStmt::bindResult: Failed to bind result: " +
-                                 std::string(mysql_stmt_error(stmt)));
+        throw std::runtime_error("MySQLStmt::bindResult: Failed to bind result: " + std::string(mysql_stmt_error(stmt)));
     }
 }
 
@@ -392,7 +390,7 @@ Stmt& MySQLStmt::bind(const Any& value, int index) {
             auto sz = value.value.string->length(); // Don't +1 here!!!
             param.buffer.reset(new char[sz]);
             memcpy(param.buffer.get(), value.value.string->data(), sz); // No '\0'
-            param.length = sz; // Must set the length to the buffer size, otherwise it will be truncated
+            param.length = sz;                                          // Must set the length to the buffer size, otherwise it will be truncated
             params[index].buffer = param.buffer.get();
             params[index].buffer_length = sz;
             params[index].is_null = 0;
@@ -506,8 +504,9 @@ Row MySQLStmt::_Fetch() {
         col.length = length;
         auto v = ReceiverToAny(col);
         row.push_back(v);
-        IF_ENDBG dbLogger.debug("MySQLStmt::_Fetch: Fetched column `{}`, type {}, value {}", col.field.name,
-                                Any::type2str(v.type), v.get<std::string>());
+        IF_ENDBG dbLogger.debug(
+            "MySQLStmt::_Fetch: Fetched column `{}`, type {}, value {}",
+            col.field.name, Any::type2str(v.type), v.get<std::string>());
         i++;
     }
     return row;

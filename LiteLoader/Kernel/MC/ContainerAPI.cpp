@@ -40,8 +40,7 @@ LIAPI std::vector<const ItemStack*> Container::getAllSlots() {
 }
 
 LIAPI int Container::getSize() {
-    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA
-    // Container::getSlotCopies
+    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
     return getContainerSize();
 }
 

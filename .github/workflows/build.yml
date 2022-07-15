@@ -54,7 +54,7 @@ jobs:
 
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1.1
-        
+
       - name: Change LITELOADER_VERSION_STATUS_BETA
         working-directory: ${{env.GITHUB_WORKSPACE}}
         if: false == startsWith(github.ref, 'refs/tags/')

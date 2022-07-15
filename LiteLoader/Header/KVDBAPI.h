@@ -21,10 +21,8 @@ class KVDB {
     void _init(const char* path, bool create, bool read_cache, int cache_sz, int Bfilter_bit);
 
 public:
-    LIAPI static std::unique_ptr<KVDB> create(const std::string& path, bool read_cache = true, int cache_sz = 0,
-                                              int Bfilter_bit = 0);
-    LIAPI static std::unique_ptr<KVDB> open(const std::string& path, bool create = true, bool read_cache = true,
-                                            int cache_sz = 0, int Bfilter_bit = 0);
+    LIAPI static std::unique_ptr<KVDB> create(const std::string& path, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
+    LIAPI static std::unique_ptr<KVDB> open(const std::string& path, bool create = true, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
     LIAPI ~KVDB();
 
     KVDB() = default;

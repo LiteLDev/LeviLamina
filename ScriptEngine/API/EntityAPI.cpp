@@ -91,7 +91,9 @@ std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v) {
 void EntityClass::set(Actor* actor) {
     __try {
         id = actor->getUniqueID();
-    } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+        isValid = false;
+    }
 }
 
 Actor* EntityClass::get() {
@@ -377,8 +379,7 @@ Local<Value> EntityClass::getBlockStandingOn(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr),
-                                    (int)entity->getDimensionId()); //===========?
+        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr), (int)entity->getDimensionId()); //===========?
     }
     CATCH("Fail in getBlockStandingOn!");
 }
@@ -591,8 +592,7 @@ Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args) {
             CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
             fullOnly = args[3].asBoolean().value();
         }
-        auto blockInstance =
-            actor->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        auto blockInstance = actor->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
         if (blockInstance.isNull())
             return Local<Value>();
         return BlockClass::newBlock(std::move(blockInstance));
@@ -666,8 +666,7 @@ Local<Value> McClass::cloneMob(const Arguments& args) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
-            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(),
-                   args[4].toInt()};
+            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
@@ -720,8 +719,7 @@ Local<Value> McClass::spawnMob(const Arguments& args) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
-            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(),
-                   args[4].toInt()};
+            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
@@ -776,8 +774,7 @@ Local<Value> McClass::explode(const Arguments& args) {
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(),
-                   args[3].toInt()};
+            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
@@ -795,8 +792,7 @@ Local<Value> McClass::explode(const Arguments& args) {
         bool isDestroy = args[beginIndex + 3].asBoolean().value();
         bool isFire = args[beginIndex + 4].asBoolean().value();
 
-        return Boolean::newBoolean(
-            Level::createExplosion(pos.getVec3(), pos.dim, source, power, range, isDestroy, isFire));
+        return Boolean::newBoolean(Level::createExplosion(pos.getVec3(), pos.dim, source, power, range, isDestroy, isFire));
     }
     CATCH("Fail in Explode!");
 }

@@ -8,20 +8,20 @@
 #include <MC/CompoundTag.hpp>
 
 //////////////////// Class Definition ////////////////////
-// clang-format off
+
 ClassDefine<BlockEntityClass> BlockEntityClassBuilder =
-	defineClass<BlockEntityClass>("LLSE_BlockEntity")
-		.constructor(nullptr)
-		.instanceFunction("getRawPtr", &BlockEntityClass::getRawPtr)
+    defineClass<BlockEntityClass>("LLSE_BlockEntity")
+        .constructor(nullptr)
+        .instanceFunction("getRawPtr", &BlockEntityClass::getRawPtr)
 
-		.instanceProperty("pos", &BlockEntityClass::getPos)
-		.instanceProperty("type", &BlockEntityClass::getType)
+        .instanceProperty("pos", &BlockEntityClass::getPos)
+        .instanceProperty("type", &BlockEntityClass::getType)
 
-		.instanceFunction("setNbt", &BlockEntityClass::setNbt)
-		.instanceFunction("getNbt", &BlockEntityClass::getNbt)
-		.instanceFunction("getBlock", &BlockEntityClass::getBlock)
-		.build();
-// clang-format on
+        .instanceFunction("setNbt", &BlockEntityClass::setNbt)
+        .instanceFunction("getNbt", &BlockEntityClass::getNbt)
+        .instanceFunction("getBlock", &BlockEntityClass::getBlock)
+        .build();
+
 
 //////////////////// Classes ////////////////////
 

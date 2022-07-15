@@ -172,7 +172,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
 //////////////////// Classes ////////////////////
 
 //生成函数
-PlayerClass::PlayerClass(Player* p) : ScriptClass(ScriptClass::ConstructFromCpp<PlayerClass>{}) {
+PlayerClass::PlayerClass(Player* p)
+: ScriptClass(ScriptClass::ConstructFromCpp<PlayerClass>{}) {
     set(p);
 }
 Local<Object> PlayerClass::newPlayer(Player* p) {
@@ -257,7 +258,9 @@ Local<Value> McClass::broadcast(const Arguments& args) {
 void PlayerClass::set(Player* player) {
     __try {
         id = player->getUniqueID();
-    } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+        isValid = false;
+    }
 }
 
 Player* PlayerClass::get() {
@@ -1309,8 +1312,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args) {
                                          EngineScope scope(engine);
                                          try {
                                              callback.get().call({}, PlayerClass::newPlayer(pl),
-                                                                 chosen >= 0 ? Number::newNumber(chosen)
-                                                                             : Local<Value>());
+                                                                 chosen >= 0 ? Number::newNumber(chosen) : Local<Value>());
                                          }
                                          CATCH_IN_CALLBACK("sendSimpleForm")
                                      });
@@ -1348,8 +1350,7 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args) {
                                         EngineScope scope(engine);
                                         try {
                                             callback.get().call({}, PlayerClass::newPlayer(pl),
-                                                                chosen >= 0 ? Boolean::newBoolean(chosen)
-                                                                            : Local<Value>());
+                                                                chosen >= 0 ? Boolean::newBoolean(chosen) : Local<Value>());
                                         }
                                         CATCH_IN_CALLBACK("sendModalForm")
                                     });
@@ -1371,24 +1372,25 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args) {
 
         string data = fifo_json::parse(args[0].toStr()).dump();
 
-        player->sendCustomFormPacket(data, [id{player->getUniqueID()}, engine{EngineScope::currentEngine()},
-                                            callback{script::Global(args[1].asFunction())}](string result) {
-            if (LL::isServerStopping())
-                return;
-            if (!EngineManager::isValid(engine))
-                return;
+        player->sendCustomFormPacket(data,
+                                     [id{player->getUniqueID()}, engine{EngineScope::currentEngine()},
+                                      callback{script::Global(args[1].asFunction())}](string result) {
+                                         if (LL::isServerStopping())
+                                             return;
+                                         if (!EngineManager::isValid(engine))
+                                             return;
 
-            Player* pl = Global<Level>->getPlayer(id);
-            if (!pl)
-                return;
+                                         Player* pl = Global<Level>->getPlayer(id);
+                                         if (!pl)
+                                             return;
 
-            EngineScope scope(engine);
-            try {
-                callback.get().call({}, PlayerClass::newPlayer(pl),
-                                    result != "null" ? JsonToValue(result) : Local<Value>());
-            }
-            CATCH_IN_CALLBACK("sendCustomForm")
-        });
+                                         EngineScope scope(engine);
+                                         try {
+                                             callback.get().call({}, PlayerClass::newPlayer(pl),
+                                                                 result != "null" ? JsonToValue(result) : Local<Value>());
+                                         }
+                                         CATCH_IN_CALLBACK("sendCustomForm")
+                                     });
         return Number::newNumber(3);
     } catch (const fifo_json::exception& e) {
         logger.error("Fail to parse Json string in sendCustomForm!");
@@ -1703,7 +1705,9 @@ Local<Value> PlayerClass::getAbilities(const Arguments& args) {
         auto list = player->getNbt();
         try {
             return Tag2Value((Tag*)list->getCompoundTag("abilities"), true);
-        } catch (...) { return Object::newObject(); }
+        } catch (...) {
+            return Object::newObject();
+        }
     }
     CATCH("Fail in getAbilities!");
 }
@@ -1725,7 +1729,9 @@ Local<Value> PlayerClass::getAttributes(const Arguments& args) {
                 arr.add(Tag2Value(tag, true));
             }
             return arr;
-        } catch (...) { return Array::newArray(); }
+        } catch (...) {
+            return Array::newArray();
+        }
     }
     CATCH("Fail in getAttributes!");
 }
@@ -1775,8 +1781,7 @@ Local<Value> PlayerClass::getBlockFromViewVector(const Arguments& args) {
             CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
             fullOnly = args[3].asBoolean().value();
         }
-        auto blockInstance =
-            player->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        auto blockInstance = player->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
         if (blockInstance.isNull())
             return Local<Value>();
         return BlockClass::newBlock(std::move(blockInstance));

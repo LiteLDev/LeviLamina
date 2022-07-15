@@ -16,12 +16,11 @@
 
 //////////////////// Class Definition ////////////////////
 
-// clang-format off
 ClassDefine<BlockClass> BlockClassBuilder =
     defineClass<BlockClass>("LLSE_Block")
         .constructor(nullptr)
         .instanceFunction("getRawPtr", &BlockClass::getRawPtr)
-        
+
         .instanceProperty("name", &BlockClass::getName)
         .instanceProperty("type", &BlockClass::getType)
         .instanceProperty("id", &BlockClass::getId)
@@ -38,11 +37,11 @@ ClassDefine<BlockClass> BlockClassBuilder =
         .instanceFunction("removeBlockEntity", &BlockClass::removeBlockEntity)
         .instanceFunction("destroy", &BlockClass::destroyBlock)
 
-        //For Compatibility
+        // For Compatibility
         .instanceFunction("setTag", &BlockClass::setNbt)
         .instanceFunction("getTag", &BlockClass::getNbt)
         .build();
-// clang-format on
+
 
 //////////////////// Classes ////////////////////
 
@@ -180,8 +179,12 @@ Local<Value> BlockClass::getBlockState(const Arguments& args) {
         auto list = block->getNbt();
         try {
             return Tag2Value((Tag*)list->get<Tag>("states"), true);
-        } catch (...) { return Array::newArray(); }
-    } catch (const std::out_of_range& e) { return Object::newObject(); }
+        } catch (...) {
+            return Array::newArray();
+        }
+    } catch (const std::out_of_range& e) {
+        return Object::newObject();
+    }
     CATCH("Fail in getBlockState!")
 }
 
@@ -395,8 +398,7 @@ Local<Value> McClass::spawnParticle(const Arguments& args) {
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kString);
 
-            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(),
-                   args[3].toInt()};
+            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt()};
             type = args[4];
         } else {
             LOG_WRONG_ARGS_COUNT();

@@ -10,8 +10,7 @@ using namespace script;
 
 bool EngineManager::unRegisterEngine(ScriptEngine* toDelete) {
     SRWLockHolder lock(globalShareData->engineListLock);
-    for (auto engine = globalShareData->globalEngineList.begin(); engine != globalShareData->globalEngineList.end();
-         ++engine)
+    for (auto engine = globalShareData->globalEngineList.begin(); engine != globalShareData->globalEngineList.end(); ++engine)
         if (*engine == toDelete) {
             globalShareData->globalEngineList.erase(engine);
             return true;

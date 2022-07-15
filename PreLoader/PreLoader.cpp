@@ -63,8 +63,10 @@ bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
             Error("Can't load {} !", wstr2str(libName));
             Error("Error code: {} !", error_message_id);
             LPWSTR message_buffer = nullptr;
-            FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
-                          NULL, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, NULL);
+            FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS |
+                              FORMAT_MESSAGE_FROM_SYSTEM,
+                          NULL, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT),
+                          (LPWSTR)&message_buffer, 0, NULL);
             Error("{}", wstr2str(message_buffer));
             LocalFree(message_buffer);
         }
@@ -81,8 +83,7 @@ void loadPlugins() {
 
         auto& path = file.path();
         auto fileName = path.u8string();
-        if (fileName.find("LiteLoader.dll") != string::npos ||
-            fileName.find("LiteXLoader") != string::npos) // Skip Wrong file path
+        if (fileName.find("LiteLoader.dll") != string::npos || fileName.find("LiteXLoader") != string::npos) // Skip Wrong file path
             continue;
 
         string ext = path.extension().u8string();

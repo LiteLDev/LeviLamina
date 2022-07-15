@@ -17,7 +17,7 @@ using namespace std;
 
 
 //////////////////// Class Definition ////////////////////
-// clang-format off
+
 ClassDefine<void> DataClassBuilder =
     defineClass("data")
         .function("xuid2name", &DataClass::xuid2name)
@@ -53,7 +53,7 @@ ClassDefine<ConfJsonClass> ConfJsonClassBuilder =
         .instanceFunction("set", &ConfJsonClass::set)
         .instanceFunction("delete", &ConfJsonClass::del)
         .instanceFunction("reload", selectOverloadedFunc<Local<Value> (ConfJsonClass::*)(const Arguments&)>(&ConfJsonClass::reload))
-        .instanceFunction("close", selectOverloadedFunc<Local<Value>(ConfJsonClass::*)(const Arguments&)>(&ConfJsonClass::close))
+        .instanceFunction("close", selectOverloadedFunc<Local<Value> (ConfJsonClass::*)(const Arguments&)>(&ConfJsonClass::close))
         .instanceFunction("getPath", &ConfJsonClass::getPath)
         .instanceFunction("read", &ConfJsonClass::read)
         .instanceFunction("write", &ConfJsonClass::write)
@@ -69,17 +69,18 @@ ClassDefine<ConfIniClass> ConfIniClassBuilder =
         .instanceFunction("getFloat", &ConfIniClass::getFloat)
         .instanceFunction("getBool", &ConfIniClass::getBool)
         .instanceFunction("delete", &ConfIniClass::del)
-        .instanceFunction("reload", selectOverloadedFunc<Local<Value>(ConfIniClass::*)(const Arguments&)>(&ConfIniClass::reload))
-        .instanceFunction("close", selectOverloadedFunc<Local<Value>(ConfIniClass::*)(const Arguments&)>(&ConfIniClass::close))
+        .instanceFunction("reload", selectOverloadedFunc<Local<Value> (ConfIniClass::*)(const Arguments&)>(&ConfIniClass::reload))
+        .instanceFunction("close", selectOverloadedFunc<Local<Value> (ConfIniClass::*)(const Arguments&)>(&ConfIniClass::close))
         .instanceFunction("getPath", &ConfIniClass::getPath)
         .instanceFunction("read", &ConfIniClass::read)
         .instanceFunction("write", &ConfIniClass::write)
         .build();
-// clang-format on
+
 
 //////////////////// Classes ConfBase ////////////////////
 
-ConfBaseClass::ConfBaseClass(const string& dir) : confPath(dir) {
+ConfBaseClass::ConfBaseClass(const string& dir)
+: confPath(dir) {
 }
 
 Local<Value> ConfBaseClass::getPath(const Arguments& args) {
@@ -162,7 +163,9 @@ Local<Value> ConfJsonClass::get(const Arguments& args) {
         return JsonToValue(jsonConf.at(args[0].toStr()));
     } catch (const std::out_of_range& e) {
         return args.size() >= 2 ? args[1] : Local<Value>();
-    } catch (const fifo_json::exception& e) { return args.size() >= 2 ? args[1] : Local<Value>(); }
+    } catch (const fifo_json::exception& e) {
+        return args.size() >= 2 ? args[1] : Local<Value>();
+    }
     CATCH("Fail in confJsonGet!")
 }
 
@@ -173,7 +176,9 @@ Local<Value> ConfJsonClass::set(const Arguments& args) {
     try {
         jsonConf[args[0].toStr()] = fifo_json::parse(ValueToJson(args[1]));
         return Boolean::newBoolean(flush());
-    } catch (const fifo_json::exception& e) { return Boolean::newBoolean(false); }
+    } catch (const fifo_json::exception& e) {
+        return Boolean::newBoolean(false);
+    }
     CATCH("Fail in confJsonSet!");
 }
 
@@ -186,7 +191,9 @@ Local<Value> ConfJsonClass::del(const Arguments& args) {
             return Boolean::newBoolean(false);
 
         return Boolean::newBoolean(flush());
-    } catch (const fifo_json::exception& e) { return Boolean::newBoolean(false); }
+    } catch (const fifo_json::exception& e) {
+        return Boolean::newBoolean(false);
+    }
     CATCH("Fail in confJsonDelete!");
 }
 
@@ -415,8 +422,8 @@ Local<Value> ConfIniClass::getStr(const Arguments& args) {
         if (!isValid())
             return Local<Value>();
 
-        return String::newString(
-            iniConf->getString(args[0].toStr(), args[1].toStr(), args.size() >= 3 ? args[2].toStr() : ""));
+        return String::newString(iniConf->getString(args[0].toStr(), args[1].toStr(),
+                                                    args.size() >= 3 ? args[2].toStr() : ""));
     }
     CATCH("Fail in confIniGetStr!")
 }
@@ -432,8 +439,8 @@ Local<Value> ConfIniClass::getInt(const Arguments& args) {
         if (!isValid())
             return Local<Value>();
 
-        return Number::newNumber(
-            iniConf->getInt(args[0].toStr(), args[1].toStr(), args.size() >= 3 ? args[2].asNumber().toInt32() : 0));
+        return Number::newNumber(iniConf->getInt(args[0].toStr(), args[1].toStr(),
+                                                 args.size() >= 3 ? args[2].asNumber().toInt32() : 0));
     }
     CATCH("Fail in ConfIniGetInt!");
 }
@@ -466,8 +473,8 @@ Local<Value> ConfIniClass::getBool(const Arguments& args) {
         if (!isValid())
             return Local<Value>();
 
-        return Boolean::newBoolean(
-            iniConf->getBool(args[0].toStr(), args[1].toStr(), args.size() >= 3 ? args[2].asBoolean().value() : false));
+        return Boolean::newBoolean(iniConf->getBool(args[0].toStr(), args[1].toStr(),
+                                                    args.size() >= 3 ? args[2].asBoolean().value() : false));
     }
     CATCH("Fail in ConfIniGetBool");
 }
@@ -610,8 +617,8 @@ Local<Value> MoneyClass::trans(const Arguments& args) {
         string note = "";
         if (args.size() >= 4 && args[3].getKind() == ValueKind::kString)
             note = args[3].toStr();
-        return Boolean::newBoolean(
-            EconomySystem::transMoney(args[0].toStr(), args[1].toStr(), args[2].asNumber().toInt64(), note));
+        return Boolean::newBoolean(EconomySystem::transMoney(args[0].toStr(), args[1].toStr(),
+                                                             args[2].asNumber().toInt64(), note));
     } catch (const std::invalid_argument& e) {
         logger.error("Bad argument in MoneyTrans!");
         logger.error(TextEncoding::toUTF8(e.what()));
@@ -855,7 +862,10 @@ Local<Value> ConfIniClass::newConf(const string& path, const string& defContent)
 }
 
 Local<Value> DataClass::openConfig(const Arguments& args) {
-    enum GlobalConfType { json, ini };
+    enum GlobalConfType {
+        json,
+        ini
+    };
 
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);

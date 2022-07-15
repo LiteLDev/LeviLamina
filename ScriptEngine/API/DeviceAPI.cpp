@@ -8,20 +8,20 @@ using namespace std;
 
 
 //////////////////// Class Definition ////////////////////
-// clang-format off
+
 ClassDefine<DeviceClass> DeviceClassBuilder =
-	defineClass<DeviceClass>("LLSE_Device")
-		.constructor(nullptr)
+    defineClass<DeviceClass>("LLSE_Device")
+        .constructor(nullptr)
         .instanceProperty("ip", &DeviceClass::getIP)
-		.instanceProperty("avgPing", &DeviceClass::getAvgPing)
-		.instanceProperty("avgPacketLoss", &DeviceClass::getAvgPacketLoss)
-		.instanceProperty("lastPing", &DeviceClass::getLastPing)
-		.instanceProperty("lastPacketLoss", &DeviceClass::getLastPacketLoss)
+        .instanceProperty("avgPing", &DeviceClass::getAvgPing)
+        .instanceProperty("avgPacketLoss", &DeviceClass::getAvgPacketLoss)
+        .instanceProperty("lastPing", &DeviceClass::getLastPing)
+        .instanceProperty("lastPacketLoss", &DeviceClass::getLastPacketLoss)
         .instanceProperty("os", &DeviceClass::getOs)
         .instanceProperty("serverAddress", &DeviceClass::getServerAddress)
         .instanceProperty("clientId", &DeviceClass::getClientId)
-		.build();
-// clang-format on
+        .build();
+
 
 //////////////////// Classes ////////////////////
 
@@ -35,7 +35,9 @@ Local<Object> DeviceClass::newDevice(Player* p) {
 void DeviceClass::setPlayer(Player* player) {
     __try {
         id = player->getUniqueID();
-    } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+        isValid = false;
+    }
 }
 
 Player* DeviceClass::getPlayer() {

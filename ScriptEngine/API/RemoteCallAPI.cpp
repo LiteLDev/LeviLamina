@@ -59,8 +59,9 @@ RemoteCall::ValueType pack(Local<Object> value) {
 }
 RemoteCall::ValueType pack(Local<Array> value) {
     std::vector<RemoteCall::ValueType> result;
-    for (size_t index = 0; index < value.size(); index++)
+    for (size_t index = 0ULL, mEnd = value.size(); index < mEnd; ++index) {
         result.push_back(pack(value.get(index)));
+    }
     return std::move(result);
 }
 
@@ -227,13 +228,11 @@ Local<Value> MakeRemoteCall(const string& nameSpace, const string& funcName, con
     return extract(func(std::move(params)));
 }
 
-bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace,
-                    const string& funcName) {
+bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace, const string& funcName) {
     // Putting script::Global value into lambda capture list may cause crash
     // script::Global<Function> callback = script::Global<Function>(func);
     std::string identifier = nameSpace + "::" + funcName;
-    RemoteCall::CallbackFn cb = [engine, identifier /*, scriptCallback = std::move(callback)*/](
-                                    std::vector<RemoteCall::ValueType> params) -> RemoteCall::ValueType {
+    RemoteCall::CallbackFn cb = [engine, identifier /*, scriptCallback = std::move(callback)*/](std::vector<RemoteCall::ValueType> params) -> RemoteCall::ValueType {
         if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
             return "";
         EngineScope enter(engine);
@@ -254,8 +253,7 @@ bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const str
         return "";
     };
     if (RemoteCall::exportFunc(nameSpace, funcName, std::move(cb))) {
-        ENGINE_GET_DATA(engine)->exportFuncs.emplace(
-            identifier, RemoteCallData{nameSpace, funcName, script::Global<Function>(func)});
+        ENGINE_GET_DATA(engine)->exportFuncs.emplace(identifier, RemoteCallData{nameSpace, funcName, script::Global<Function>(func)});
         return true;
     }
     return false;
@@ -292,8 +290,7 @@ Local<Value> LlClass::exportFunc(const Arguments& args) {
             nameSpace = DEFAULT_REMOTE_CALL_NAME_SPACE;
             funcName = args[1].toStr();
         }
-        return Boolean::newBoolean(
-            LLSEExportFunc(EngineScope::currentEngine(), args[0].asFunction(), nameSpace, funcName));
+        return Boolean::newBoolean(LLSEExportFunc(EngineScope::currentEngine(), args[0].asFunction(), nameSpace, funcName));
     }
     CATCH("Fail in LLSEExport!");
 }

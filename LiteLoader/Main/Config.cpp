@@ -12,59 +12,34 @@ namespace LL {
 
 LLConfig globalConfig;
 LL::CommandLineOption commandLineOption;
-// clang-format off
-    void inline to_json(nlohmann::json& j, const LLConfig& conf)
-    {
-        j = nlohmann::json{
-                {"DebugMode", conf.debugMode},
-                {"ColorLog",  conf.colorLog},
-                {"LogLevel",  conf.logLevel},
-                {"Language",  conf.language},
-                {"ScriptEngine", {
-                    {"enabled", conf.enableScriptEngine},
-                    {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
-                }},
-                {"Modules", {
-                    {"CrashLogger", {
-                        {"enabled", conf.enableCrashLogger},
-                        {"path", conf.crashLoggerPath}
-                    }},
-                    {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
-                    {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
-                    {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
-                    {"AddonsHelper", {
-                        {"enabled", conf.enableAddonsHelper},
-                        {"autoInstallPath", conf.addonsInstallPath}
-                    }},
-                    {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
-                    {"AntiGive", {
-                        {"enabled", conf.enableAntiGive},
-                        {"command", conf.antiGiveCommand}
-                    }},
-                    {"ErrorStackTraceback", {
-                        {"enabled", conf.enableErrorStackTraceback},
-                        {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}
-                    }},
-                    {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
-                    {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
-                    {"WelcomeText", {{"enabled", conf.enableWelcomeText}}},
-                    {"FixMcBug", {{"enabled", conf.enableFixMcBug}}},
-                    {"OutputFilter", {
-                        {"enabled", conf.enableOutputFilter},
-                        {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput},
-                        {"filterRegex", conf.outputFilterRegex}
-                    }}, 
-                    {"EconomyCore", {
-                        {"enabled", conf.enableEconomyCore}
-                    }},
-                     {"ForceUtf8Input", {{"enabled", conf.enableForceUtf8Input}
-                    }},
-                   {"TpdimCommand", {{"enabled", conf.enableTpdimCommand}}},
-                }
-            }
-        };
-    }
-// clang-format on
+
+void inline to_json(nlohmann::json& j, const LLConfig& conf) {
+    j = nlohmann::json{
+        {"DebugMode", conf.debugMode},
+        {"ColorLog", conf.colorLog},
+        {"LogLevel", conf.logLevel},
+        {"Language", conf.language},
+        {"ScriptEngine", {{"enabled", conf.enableScriptEngine}, {"alwaysLaunch", conf.alwaysLaunchScriptEngine}}},
+        {"Modules", {
+                        {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}}},
+                        {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
+                        {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
+                        {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
+                        {"AddonsHelper", {{"enabled", conf.enableAddonsHelper}, {"autoInstallPath", conf.addonsInstallPath}}},
+                        {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
+                        {"AntiGive", {{"enabled", conf.enableAntiGive}, {"command", conf.antiGiveCommand}}},
+                        {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}, {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}}},
+                        {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
+                        {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
+                        {"WelcomeText", {{"enabled", conf.enableWelcomeText}}},
+                        {"FixMcBug", {{"enabled", conf.enableFixMcBug}}},
+                        {"OutputFilter", {{"enabled", conf.enableOutputFilter}, {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput}, {"filterRegex", conf.outputFilterRegex}}},
+                        {"EconomyCore", {{"enabled", conf.enableEconomyCore}}},
+                        {"ForceUtf8Input", {{"enabled", conf.enableForceUtf8Input}}},
+                        {"TpdimCommand", {{"enabled", conf.enableTpdimCommand}}},
+                    }}};
+}
+
 void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     conf.debugMode = j.value("DebugMode", false);
     if (LL::commandLineOption.noColorOption)
@@ -183,7 +158,8 @@ bool LL::LoadLLConfig() {
                 LL::globalConfig = out;
                 auto config = nlohmann::json(LL::globalConfig);
                 if (out != config) {
-                    logger.warn("LL Config File <{}> is outdated.", LITELOADER_CONFIG_FILE);
+                    logger.warn("LL Config File <{}> is outdated.",
+                                LITELOADER_CONFIG_FILE);
                     logger.warn("Updating configuration file...");
                     return SaveConfig(config);
                 }

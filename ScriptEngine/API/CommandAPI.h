@@ -19,7 +19,7 @@ class CommandClass : public ScriptClass {
         if (arr.size() == 0 || !arr.get(0).isString())
             return {};
         std::vector<std::string> strs;
-        for (size_t i = 0; i < arr.size(); i++) {
+        for (size_t i = 0; i < arr.size(); ++i) {
             strs.push_back(arr.get(i).toStr());
         }
         return std::move(strs);

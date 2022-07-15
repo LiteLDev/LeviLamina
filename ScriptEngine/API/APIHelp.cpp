@@ -79,8 +79,7 @@ void PrintValue(T& out, Local<Value> v) {
             // FloatPos
             FloatPos* floatpos = FloatPos::extractPos(v);
             if (floatpos != nullptr) {
-                out << fixed << setprecision(2) << DimId2Name(floatpos->dim) << "(" << floatpos->x << "," << floatpos->y
-                    << "," << floatpos->z << ")";
+                out << fixed << setprecision(2) << DimId2Name(floatpos->dim) << "(" << floatpos->x << "," << floatpos->y << "," << floatpos->z << ")";
                 break;
             }
 
@@ -198,7 +197,9 @@ std::string ValueToString(Local<Value> v) {
 bool CheckIsFloat(const Local<Value>& num) {
     try {
         return fabs(num.asNumber().toDouble() - num.asNumber().toInt64()) >= 1e-15;
-    } catch (...) { return false; }
+    } catch (...) {
+        return false;
+    }
 }
 
 ///////////////////// Json To Value /////////////////////

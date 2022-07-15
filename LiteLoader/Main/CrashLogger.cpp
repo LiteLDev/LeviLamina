@@ -32,10 +32,8 @@ bool LL::StartCrashLoggerProcess() {
     sa.nLength = sizeof(SECURITY_ATTRIBUTES);
 
     wchar_t daemonCmd[MAX_PATH];
-    std::string serverVersion =
-        fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
-    wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(),
-             str2wstr(serverVersion).c_str());
+    std::string serverVersion = fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
+    wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(), str2wstr(serverVersion).c_str());
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("Could not Create CrashLogger Daemon Process!");
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
@@ -81,8 +79,7 @@ void LL::InitCrashLogger(bool enableCrashLogger) {
     }
 
     if (noCrashLoggerReason != "") {
-        crashLogger.warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it",
-                         noCrashLoggerReason);
+        crashLogger.warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
         crashLogger.warn("There will be no crash log when unhandled exception occurs,");
         crashLogger.warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
         crashLogger.warn("");

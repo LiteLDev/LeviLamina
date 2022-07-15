@@ -10,7 +10,8 @@ private:
     bool isValid = true;
 
 public:
-    explicit EntityClass(Actor* p) : ScriptClass(ScriptClass::ConstructFromCpp<EntityClass>{}) {
+    explicit EntityClass(Actor* p)
+    : ScriptClass(ScriptClass::ConstructFromCpp<EntityClass>{}) {
         set(p);
     }
 

@@ -42,7 +42,8 @@ ClassDefine<CommandOriginClass> CommandOriginClassBuilder =
 //////////////////// APIs ////////////////////
 
 CommandOriginClass::CommandOriginClass(CommandOrigin const* p)
-: ScriptClass(ScriptClass::ConstructFromCpp<CommandOriginClass>{}), ptr(p){};
+: ScriptClass(ScriptClass::ConstructFromCpp<CommandOriginClass>{})
+, ptr(p){};
 
 Local<Object> CommandOriginClass::newCommandOrigin(CommandOrigin const* p) {
     auto newp = new CommandOriginClass(p);

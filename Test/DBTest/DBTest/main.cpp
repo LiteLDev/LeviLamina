@@ -15,10 +15,8 @@ namespace fs = std::filesystem;
 
 Logger logger("DBTest");
 
-void log_row(const Row& row)
-{
-    if (row.empty())
-    {
+void log_row(const Row& row) {
+    if (row.empty()) {
         logger.warn("Empty row!");
         return;
     }
@@ -29,27 +27,22 @@ void log_row(const Row& row)
     });
 }
 
-void log_result_set(const ResultSet& set)
-{
-    if (set.empty())
-    {
+void log_result_set(const ResultSet& set) {
+    if (set.empty()) {
         logger.warn("Empty result set!");
         return;
     }
     logger.info("ResultSet:");
     std::string line;
     auto iss = std::istringstream(set.toTableString());
-    while (getline(iss, line))
-    {
+    while (getline(iss, line)) {
         logger.info(line);
     }
 }
 
-std::pair<std::shared_ptr<char[]>, std::size_t> alloc_buf(const MYSQL_FIELD& field)
-{
+std::pair<std::shared_ptr<char[]>, std::size_t> alloc_buf(const MYSQL_FIELD& field) {
     std::size_t len = 0;
-    switch (field.type)
-    {
+    switch (field.type) {
         case MYSQL_TYPE_NULL:
             return {nullptr, 0};
         case MYSQL_TYPE_TINY:
@@ -103,8 +96,7 @@ std::pair<std::shared_ptr<char[]>, std::size_t> alloc_buf(const MYSQL_FIELD& fie
             logger.error("alloc_buf: unknown type: {}", (int)field.type);
             break;
     }
-    if (len)
-    {
+    if (len) {
         auto buffer = std::shared_ptr<char[]>(new char[len]);
 #if defined(LLDB_DEBUG_MODE)
         logger.debug("alloc_buf: Allocated! Buffer size: {}", len);
@@ -115,14 +107,12 @@ std::pair<std::shared_ptr<char[]>, std::size_t> alloc_buf(const MYSQL_FIELD& fie
 }
 
 
-struct MyStruct
-{
+struct MyStruct {
     std::string a;
     int b;
 };
 template <>
-MyStruct row_to(const Row& row)
-{
+MyStruct row_to(const Row& row) {
     MyStruct result;
     result.a = row["a"].get<std::string>();
     result.b = row["b"].get<int>();
@@ -130,8 +120,7 @@ MyStruct row_to(const Row& row)
 }
 
 
-void run_tests(SharedPointer<Session> sess)
-{
+void run_tests(SharedPointer<Session> sess) {
 #if defined(CATCH_EXCEPTION)
     try
 #endif
@@ -144,7 +133,7 @@ void run_tests(SharedPointer<Session> sess)
         sess << "INSERT INTO test VALUES(?, ?)", use(Row{"liteloader", 233333});
         sess << "INSERT INTO test VALUES(?, ?)", use("liteloader"), use(100);
         sess << "INSERT INTO test VALUES('听我说谢谢你', 128)";
-        //sess << "INSERT INTO test VALUES('$a\"', $b)", use(2147483647, "b");
+        // sess << "INSERT INTO test VALUES('$a\"', $b)", use(2147483647, "b");
         sess->prepare("INSERT INTO test VALUES(?, ?)")
             ->bind("liteloader")
             ->bind(2147483647)
@@ -187,31 +176,27 @@ void run_tests(SharedPointer<Session> sess)
         sess->prepare("SELECT * FROM test")
             ->execute()
             ->fetchAll(res1);
-        for (auto& s : res1)
-        {
+        for (auto& s : res1) {
             logger.info("- a: {}, b: {}", s.a, s.b);
         }
         Row res2;
         sess << "SELECT * FROM test WHERE a = ?"
-             << "听我说谢谢你"
-             >> res2;
+             << "听我说谢谢你" >>
+            res2;
 
         logger.info("FINALLY:");
         sess->query("SELECT * FROM test");
         sess->close();
     }
 #if defined(CATCH_EXCEPTION)
-    catch (std::exception e)
-    {
+    catch (std::exception e) {
         logger.error(e.what());
     }
 #endif
 }
 
-void test_sqlite()
-{
-    if (fs::exists("plugins/DBTest/dbs"))
-    {
+void test_sqlite() {
+    if (fs::exists("plugins/DBTest/dbs")) {
         fs::remove_all("plugins/DBTest/dbs");
     }
     fs::create_directories("plugins/DBTest/dbs");
@@ -220,12 +205,12 @@ void test_sqlite()
     Session::create("file:///plugins/DBTest/dbs/test_create_by_url.db");
 
     Session::create(DBType::SQLite)->open("file:///plugins/DBTest/dbs/test_create_by_url2.db");
-    
+
     auto s1 = Session::create(DBType::SQLite);
     s1->open("file:///plugins/DBTest/dbs/test_create_by_url3.db");
     s1->execute("CREATE TABLE IF NOT EXISTS test (a INTEGER)");
     s1->close();
-    
+
     auto sess = Session::create(DBType::SQLite);
     sess->setDebugOutput(true);
     sess->open({{"path", "plugins/DBTest/dbs/a.db"}});
@@ -239,11 +224,10 @@ constexpr const uint16_t port = 3306;
 constexpr const char* user = "root";
 constexpr const char* passwd = "root";
 constexpr const char* dbname = "lldbtest";
-void test_mysql()
-{
-    const std::string url = fmt::format("mysql://{}:{}@{}:{}/", 
-                            user, passwd, host, port);
-    
+void test_mysql() {
+    const std::string url = fmt::format("mysql://{}:{}@{}:{}/",
+                                        user, passwd, host, port);
+
     auto s1 = Session::create(url); // Test url
     s1->execute("CREATE DATABASE IF NOT EXISTS " + std::string(dbname));
     s1->close();
@@ -253,16 +237,13 @@ void test_mysql()
     run_tests(sess);
 }
 
-#define CHKRES_STMT(x) \
-    if (res) \
-    { \
+#define CHKRES_STMT(x)                                                      \
+    if (res) {                                                              \
         logger.error("MySQL CAPI Test: {}: {}", x, mysql_stmt_error(stmt)); \
-        return; \
+        return;                                                             \
     }
-void test_mysql_capi()
-{
-    struct Receiver
-    {
+void test_mysql_capi() {
+    struct Receiver {
         std::shared_ptr<char[]> buffer;
         unsigned long length = 0;
         bool is_null = false;
@@ -272,8 +253,7 @@ void test_mysql_capi()
     MYSQL* conn = nullptr;
     MYSQL_STMT* stmt = nullptr;
     conn = mysql_init(NULL);
-    if (!mysql_real_connect(conn, host, user, passwd, dbname, port, NULL, NULL))
-    {
+    if (!mysql_real_connect(conn, host, user, passwd, dbname, port, NULL, NULL)) {
         logger.error("MySQL CAPI Test: Error when connecting: {}", mysql_error(conn));
         return;
     }
@@ -282,20 +262,17 @@ void test_mysql_capi()
     int res = mysql_stmt_prepare(stmt, q1, strlen(q1));
     CHKRES_STMT("Error when preparing Query 1");
     res = mysql_stmt_execute(stmt);
-    if (res)
-    {
+    if (res) {
         logger.error("MySQL CAPI Test: Error when executing Query 1: {}", mysql_stmt_error(stmt));
         mysql_rollback(conn);
         return;
     }
     MYSQL_RES* metadata = mysql_stmt_result_metadata(stmt);
-    if (mysql_stmt_errno(stmt) && !metadata)
-    {
+    if (mysql_stmt_errno(stmt) && !metadata) {
         logger.error("MySQL CAPI Test: Failed to get result metadata: {}", mysql_stmt_error(stmt));
         return;
     }
-    if (!metadata)
-    {
+    if (!metadata) {
         logger.error("MySQL CAPI Test: No result metadata");
         return;
     }
@@ -307,8 +284,7 @@ void test_mysql_capi()
     logger.info("MySQL CAPI Test: mysql_num_fields: {}", num);
     auto fields = mysql_fetch_fields(metadata);
     MYSQL_BIND bind[2];
-    for (auto i = 0U; i < num; i++)
-    {
+    for (auto i = 0U; i < num; ++i) {
         logger.info("MySQL CAPI Test: Field name at {} is {}", i, fields[i].name);
         bind[i].length = &recs[i].length;
         bind[i].is_null = &recs[i].is_null;
@@ -323,12 +299,12 @@ void test_mysql_capi()
     }
     res = mysql_stmt_bind_result(stmt, bind);
     CHKRES_STMT("Error when binding result");
-    while (true)
-    {
+    while (true) {
         res = mysql_stmt_fetch(stmt);
-        if (res == MYSQL_NO_DATA) break;
+        if (res == MYSQL_NO_DATA)
+            break;
         CHKRES_STMT("Error when fetching");
-        //std::string a(recs[0].buffer.get());
+        // std::string a(recs[0].buffer.get());
         logger.debug("Fetched length: {} {}", recs[0].length, recs[1].length);
     }
     auto sess = Session::create(DBType::MySQL, host, port, user, passwd, dbname);
@@ -336,18 +312,15 @@ void test_mysql_capi()
     sess << q1, into(set);
 }
 
-void test_main()
-{
+void test_main() {
     logger.info("DBTest loaded!");
     test_sqlite();
     test_mysql();
-    //test_mysql_capi();
+    // test_mysql_capi();
 }
 
-BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
-{
-    switch (ul_reason_for_call)
-    {
+BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID) {
+    switch (ul_reason_for_call) {
         case DLL_PROCESS_ATTACH:
 #if defined(CATCH_EXCEPTION)
             try
@@ -357,8 +330,7 @@ BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
                 break;
             }
 #if defined(CATCH_EXCEPTION)
-            catch (std::exception e)
-            {
+            catch (std::exception e) {
                 logger.error(e.what());
             }
 #endif

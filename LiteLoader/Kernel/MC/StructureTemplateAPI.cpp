@@ -12,7 +12,8 @@ StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag const
     return st;
 }
 
-StructureTemplate::StructureTemplate(class StructureTemplate const& copy) : StructureTemplate(copy.getName()) {
+StructureTemplate::StructureTemplate(class StructureTemplate const& copy)
+: StructureTemplate(copy.getName()) {
     load(*copy.save());
 }
 
@@ -25,8 +26,7 @@ std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
     return save();
 }
 
-StructureTemplate StructureTemplate::fromWorld(std::string name, int dimID, BlockPos p1, BlockPos p2, bool ignoreBlocks,
-                                               bool ignoreEntities) {
+StructureTemplate StructureTemplate::fromWorld(std::string name, int dimID, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
     auto st = StructureTemplate(name);
     // st.getName();
     BlockPos start = {std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)};

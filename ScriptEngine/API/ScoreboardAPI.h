@@ -9,7 +9,8 @@ class ObjectiveClass : public ScriptClass {
     bool isValid = false;
 
 public:
-    explicit ObjectiveClass(Objective* obj) : ScriptClass(ScriptClass::ConstructFromCpp<ObjectiveClass>{}) {
+    explicit ObjectiveClass(Objective* obj)
+    : ScriptClass(ScriptClass::ConstructFromCpp<ObjectiveClass>{}) {
         set(obj);
     }
 

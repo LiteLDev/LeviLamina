@@ -85,8 +85,7 @@ string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
     }
-    auto map =
-        Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
+    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
     for (auto& iter : *map) {
         string s(iter.first.c_str());
         if (s.find("LanguageCode") != std::string::npos) {
@@ -100,8 +99,7 @@ string Player::getLanguageCode() {
 string Player::getServerAddress() {
     if (isSimulatedPlayer())
         return "unknown";
-    auto map =
-        Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
+    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
     for (auto iter = map->begin(); iter != map->end(); ++iter) {
         string s(iter->first.c_str());
         if (s.find("ServerAddress") != s.npos) {
@@ -405,7 +403,7 @@ int Player::getXpNeededForLevel(int nextLevel) {
 
 size_t Player::getTotalXpNeededForLevel(int level) {
     size_t result = 0;
-    for (int i = 1; i <= level; i++) {
+    for (int i = 1; i <= level; ++i) {
         result += getXpNeededForLevel(i);
     }
     return result;
@@ -420,8 +418,7 @@ bool Player::crashClient() {
     return true;
 }
 
-bool Player::setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data,
-                        ObjectiveSortOrder sortOrder) {
+bool Player::setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder) {
     sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
 
     vector<ScorePacketInfo> info;
@@ -531,8 +528,7 @@ bool Player::sendToastPacket(string title, string msg) {
     return true;
 }
 
-bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration,
-                             int FadeOutDuration) const {
+bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeVarInt((int)Type);
@@ -570,18 +566,15 @@ bool Player::sendNotePacket(unsigned int tone) {
     return true;
 }
 
-bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName,
-                                           int64_t EntityUniqueID) const {
+bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName, int64_t EntityUniqueID) const {
     BinaryStream wp;
     wp.writeUnsignedChar(dimID);
-    // If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity
-    // associated with this unique ID.
+    // If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
     wp.writeVarInt64(EntityUniqueID);
     wp.writeFloat(spawnPos.x);
     wp.writeFloat(spawnPos.y);
     wp.writeFloat(spawnPos.z);
-    // ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is
-    // built-in, or to one implemented by behaviour packs.
+    // ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
@@ -597,8 +590,7 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
 }
 
 // Bad?
-bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos,
-                                     vector<std::unique_ptr<DataItem>> dataItems) const {
+bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const {
     BinaryStream wp;
     wp.writeVarInt64(runtimeID);         // RuntimeId
     wp.writeUnsignedVarInt64(runtimeID); // EntityId
@@ -626,8 +618,7 @@ bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& i
     return true;
 }
 
-bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation,
-                                 float headYaw, vector<std::unique_ptr<DataItem>> dataItems) {
+bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems) {
     BinaryStream bs;
     bs.writeVarInt64(runtimeID);
     bs.writeUnsignedVarInt64(runtimeID);
@@ -650,8 +641,7 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     return true;
 }
 
-bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId, UpdateBlockFlags flag,
-                                   UpdateBlockLayer layer) {
+bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId, UpdateBlockFlags flag, UpdateBlockLayer layer) {
     BinaryStream wp;
     wp.writeVarInt(bpos.x);
     wp.writeUnsignedVarInt(bpos.y);
@@ -664,8 +654,7 @@ bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId,
     sendNetworkPacket(*pkt);
     return true;
 }
-bool Player::sendUpdateBlockPacket(BlockPos const& bpos, const Block& block, UpdateBlockFlags flag,
-                                   UpdateBlockLayer layer) {
+bool Player::sendUpdateBlockPacket(BlockPos const& bpos, const Block& block, UpdateBlockFlags flag, UpdateBlockLayer layer) {
     return sendUpdateBlockPacket(bpos, block.getRuntimeId(), flag, layer);
 }
 
@@ -777,8 +766,7 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data) const {
     return true;
 }
 
-bool Player::sendSimpleForm(const string& title, const string& content, const vector<string>& buttons,
-                            const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const {
+bool Player::sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const {
     nlohmann::json model = R"({"title": "","content":"","buttons":[],"type":"form"})"_json;
     model["title"] = title;
     model["content"] = content;
@@ -802,8 +790,7 @@ bool Player::sendSimpleForm(const string& title, const string& content, const ve
     return true;
 }
 
-bool Player::sendModalForm(const string& title, const string& content, const string& button1, const string& button2,
-                           std::function<void(Player*, bool)> callback) const {
+bool Player::sendModalForm(const string& title, const string& content, const string& button1, const string& button2, std::function<void(Player*, bool)> callback) const {
     nlohmann::json model = R"({"title":"","content":"","button1":"","button2":"","type":"modal"})"_json;
     model["title"] = title;
     model["content"] = content;
@@ -834,8 +821,7 @@ bool Player::isValid(Player* player) {
 }
 
 // For Compatibility
-bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons,
-                                  const std::vector<std::string>& images, std::function<void(int)> callback) const {
+bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const {
     return sendSimpleForm(title, content, buttons, images, [callback](Player* pl, int id) {
         if (!callback || !Player::isValid(pl))
             return;
@@ -847,8 +833,7 @@ bool Player::sendSimpleFormPacket(const string& title, const string& content, co
         }
     });
 }
-bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1,
-                                 const string& button2, std::function<void(bool)> callback) {
+bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback) {
     return sendModalForm(title, content, button1, button2, [callback](Player* pl, bool res) {
         if (!callback || !Player::isValid(pl))
             return;

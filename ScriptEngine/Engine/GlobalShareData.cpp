@@ -15,8 +15,7 @@ GlobalDataType* globalShareData;
 
 
 void InitGlobalShareData() {
-    HANDLE hGlobalData = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(GlobalDataType),
-                                           (LLSE_GLOBAL_DATA_NAME + to_wstring(GetCurrentProcessId())).c_str());
+    HANDLE hGlobalData = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(GlobalDataType), (LLSE_GLOBAL_DATA_NAME + to_wstring(GetCurrentProcessId())).c_str());
     if (hGlobalData == NULL) {
         logger.error(tr("init.fileMapping.fail"));
         localShareData->isFirstInstance = true;
