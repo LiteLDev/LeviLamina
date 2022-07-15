@@ -33,8 +33,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 }
 
 // Fix bug
-TClasslessInstanceHook(bool,
-                       "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
                        ReadOnlyBinaryStream* a2) {
     ReadOnlyBinaryStream pkt(a2->getData(), false);
     pkt.getUnsignedVarInt();
@@ -65,8 +64,7 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
             isFirstLog = false;
             original(this);
             endTime = clock();
-            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) +
-                                  "s)! For help, type \"help\" or \"?\"");
+            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"");
             return 1;
         }
         return 0;
@@ -74,8 +72,7 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
         original(this);
         if (!isFirstLog) {
             endTime = clock();
-            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) +
-                                  "s)! For help, type \"help\" or \"?\"");
+            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"");
         }
         isFirstLog = false;
         return 1;
@@ -108,8 +105,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                 for (auto& a : action.second) {
                     auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
                     auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
-                    if (!itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) ||
-                        !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
+                    if (!itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
                         if (mayFromReducer)
                             logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
                         if (!toDesc.isNull())
@@ -128,8 +124,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     return original(this, netid, pk);
 }
 
-TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-              PropertiesSettings, const std::string& file) {
+TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file) {
     auto out = original(this, file);
     if (LL::globalConfig.enableUnoccupyPort19132) {
         // logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
@@ -149,7 +144,8 @@ TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_t
 
 // Fix move view crash (ref PlayerAuthInput[MoveView])
 Player* movingViewPlayer = nullptr;
-TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player) {
+TInstanceHook(void, "?moveView@Player@@UEAAXXZ",
+              Player) {
     movingViewPlayer = this;
     original(this);
     movingViewPlayer = nullptr;
@@ -178,19 +174,14 @@ inline void fixPlayerPosition(Player* pl, bool kick = true) {
             pl->kick("error move");
     }
 }
-TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z", Player,
-              class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
+TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z",
+              Player, class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
     if (validPosition(pos))
         return original(this, pos, dimid);
     fixPlayerPosition(false);
 }
-TClasslessInstanceHook(
-    __int64,
-    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@"
-    "@@@V?$buffer_span@I@@@Z@std@@@Z",
-    BlockPos const& a1, int a2, bool a3,
-    std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>
-        a4) {
+TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+                       BlockPos const& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4) {
     if (validPosition(a1))
         return original(this, a1, a2, a3, a4);
     fixPlayerPosition(movingViewPlayer);
@@ -248,10 +239,8 @@ TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
     }
 }
 
-TClasslessInstanceHook(enum StartupResult,
-                       "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
-                       unsigned int maxConnections, class SocketDescriptor* socketDescriptors,
-                       unsigned socketDescriptorCount, int threadPriority) {
+TClasslessInstanceHook(enum StartupResult, "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
+                       unsigned int maxConnections, class SocketDescriptor* socketDescriptors, unsigned socketDescriptorCount, int threadPriority) {
     if (maxConnections > 0xFFFF) {
         maxConnections = 0xFFFF;
     }
@@ -259,22 +248,21 @@ TClasslessInstanceHook(enum StartupResult,
 }
 
 // Fix command crash when server is stopping
-TClasslessInstanceHook(void,
-                       "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$"
-                       "allocator@D@2@@std@@000@Z",
+TClasslessInstanceHook(void, "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z",
                        std::string const& a1, std::string const& a2, std::string const& a3, std::string const& a4) {
     if (LL::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
-TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z", class Player& a1) {
+TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z",
+                       class Player& a1) {
     if (LL::isServerStopping())
         return;
     original(this, a1);
 }
 
-TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z", class Player& a1,
-                       float a2) {
+TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z",
+                       class Player& a1, float a2) {
     if (LL::isServerStopping())
         return;
     original(this, a1, a2);

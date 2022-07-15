@@ -5,10 +5,10 @@
 // ===== Critical Section Locker =====
 // a simple lock which is much faster than std::mutex
 
-class CsLock
-{
+class CsLock {
     bool inited = false;
     CRITICAL_SECTION cslock;
+
 public:
     LIAPI CsLock();
     LIAPI ~CsLock();
@@ -17,10 +17,15 @@ public:
     LIAPI bool unlock();
 };
 
-class CsLockHolder
-{
-    CsLock &locker;
+class CsLockHolder {
+    CsLock& locker;
+
 public:
-    LIAPI CsLockHolder(CsLock &lock) :locker(lock) { locker.lock(); }
-    LIAPI ~CsLockHolder() { locker.unlock(); }
+    LIAPI CsLockHolder(CsLock& lock)
+    : locker(lock) {
+        locker.lock();
+    }
+    LIAPI ~CsLockHolder() {
+        locker.unlock();
+    }
 };

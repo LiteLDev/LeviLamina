@@ -66,9 +66,9 @@ public:
     }
 
     inline void forEachBlockInBox(const std::function<void(const BlockPos&)>& todo) {
-        for (int y = min.y; y <= max.y; y++)
-            for (int x = min.x; x <= max.x; x++)
-                for (int z = min.z; z <= max.z; z++) {
+        for (int y = min.y; y <= max.y; ++y)
+            for (int x = min.x; x <= max.x; ++x)
+                for (int z = min.z; z <= max.z; ++z) {
                     todo({x, y, z});
                 }
     }

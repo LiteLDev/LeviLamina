@@ -4,13 +4,25 @@
 //////////////////////////////// CONSTRUCTOR ////////////////////////////////
 
 StringReader::StringReader(const std::string& str)
-: str(str), len(str.length()), begin(str.begin()), end(str.end()), it(begin) {
+: str(str)
+, len(str.length())
+, begin(str.begin())
+, end(str.end())
+, it(begin) {
 }
 StringReader::StringReader(const char* cstr)
-: str(cstr), len(str.length()), begin(str.begin()), end(str.end()), it(begin) {
+: str(cstr)
+, len(str.length())
+, begin(str.begin())
+, end(str.end())
+, it(begin) {
 }
 StringReader::StringReader(const char* cstr, size_t len)
-: str(cstr, len), len(len), begin(str.begin()), end(str.end()), it(begin) {
+: str(cstr, len)
+, len(len)
+, begin(str.begin())
+, end(str.end())
+, it(begin) {
 }
 
 //////////////////////////////// GET ////////////////////////////////

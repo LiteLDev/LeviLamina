@@ -6,7 +6,8 @@
 namespace DB {
 
 SQLiteStmt::SQLiteStmt(sqlite3_stmt* stmt, const std::weak_ptr<Session> parent, bool autoExecute)
-: Stmt(parent, autoExecute), stmt(stmt) {
+: Stmt(parent, autoExecute)
+, stmt(stmt) {
     IF_ENDBG dbLogger.debug("SQLiteStmt::SQLiteStmt: Constructed! this: {}", (void*)this);
     totalParamsCount = sqlite3_bind_parameter_count(stmt);
     if (!totalParamsCount && autoExecute)
@@ -78,15 +79,14 @@ Stmt& SQLiteStmt::bind(const Any& value, int index) {
             res = sqlite3_bind_text(stmt, index, value.get<std::string>().c_str(), -1, SQLITE_TRANSIENT);
             break;
         case Any::Type::Blob:
-            res = sqlite3_bind_blob(stmt, index, value.get<ByteArray>().data(), (int)value.get<ByteArray>().size(),
-                                    SQLITE_TRANSIENT);
+            res = sqlite3_bind_blob(stmt, index, value.get<ByteArray>().data(), (int)value.get<ByteArray>().size(), SQLITE_TRANSIENT);
             break;
         default:
             throw std::runtime_error("SQLiteStmt::bind: Unsupported type");
     }
     if (res != SQLITE_OK) {
-        std::string e =
-            fmt::format("SQLiteStmt::bind: Failed to bind {} to parameter at index {}", Any::type2str(type), index);
+        std::string e = fmt::format("SQLiteStmt::bind: Failed to bind {} to parameter at index {}",
+                                    Any::type2str(type), index);
         if (auto s = parent.lock()) {
             e += ": " + s->getLastError();
         }
@@ -188,9 +188,10 @@ Row SQLiteStmt::_Fetch() {
                 break;
             }
             case SQLITE_BLOB: {
-                ByteArray arr(reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)),
-                              reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)) +
-                                  sqlite3_column_bytes(stmt, i));
+                ByteArray arr(
+                    reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)),
+                    reinterpret_cast<const uint8_t*>(sqlite3_column_blob(stmt, i)) +
+                        sqlite3_column_bytes(stmt, i));
                 IF_ENDBG {
                     std::string out = "SQLiteStmt::_Fetch: Fetched BLOB type column: " + std::to_string(i) + " ";
                     for (auto& byte : arr) {
@@ -296,8 +297,7 @@ DBType SQLiteStmt::getType() const {
     return DBType::SQLite;
 }
 
-SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, const std::string& sql,
-                                       bool autoExecute) {
+SharedPointer<Stmt> SQLiteStmt::create(const std::weak_ptr<Session>& session, const std::string& sql, bool autoExecute) {
     auto s = session.lock();
     if (!s || s->getType() != DBType::SQLite) {
         throw std::invalid_argument("SQLiteStmt::create: Session is invalid");

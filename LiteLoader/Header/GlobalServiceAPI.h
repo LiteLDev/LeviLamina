@@ -18,4 +18,5 @@ class PropertiesSettings;
 
 class LevelStorage;
 
-template <typename T> LIAPI inline T* Global = nullptr;
+template <typename T>
+LIAPI inline T* Global = nullptr;

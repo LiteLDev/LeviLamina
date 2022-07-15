@@ -102,8 +102,7 @@ void FixAllowList() {
                 logger.warn("allowlist.json is empty! Removing...");
                 filesystem::remove("allowlist.json");
             } else {
-                logger.warn(
-                    "Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
+                logger.warn("Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
                 return;
             }
         }
@@ -160,8 +159,8 @@ void CheckBetaVersion() {
 void CheckProtocolVersion() {
     auto currentProtocol = LL::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("Protocol version not match, target version: {}, current version: {}.", TARGET_BDS_PROTOCOL_VERSION,
-                    currentProtocol);
+        logger.warn("Protocol version not match, target version: {}, current version: {}.",
+                    TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
         logger.warn("This will most likely crash the server, please use the LiteLoader that matches the BDS version!");
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }

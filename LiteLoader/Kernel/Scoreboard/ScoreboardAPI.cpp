@@ -118,9 +118,7 @@ LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, Player* p
     if (!obj)
         return true;
     vector<ScorePacketInfo> info;
-    ScorePacketInfo i((ScoreboardId*)&identity, objname,
-                      Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(),
-                      obj->getPlayerScore(identity).getCount(), obj->getName());
+    ScorePacketInfo i((ScoreboardId*)&identity, objname, Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(), obj->getPlayerScore(identity).getCount(), obj->getName());
     info.emplace_back(i);
     for (auto sp : Level::getAllPlayers()) {
         sp->sendSetScorePacket(1, info);

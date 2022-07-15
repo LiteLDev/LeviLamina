@@ -62,9 +62,7 @@ inline static std::optional<std::string> getFakeSymbol(const std::string& fn) {
         return std::nullopt;
 
     SymbolNode* DemangledName = Demangler.demangleDeclarator(Name);
-    if (DemangledName == nullptr ||
-        (DemangledName->kind() != NodeKind::FunctionSymbol && DemangledName->kind() != NodeKind::VariableSymbol) ||
-        Demangler.Error)
+    if (DemangledName == nullptr || (DemangledName->kind() != NodeKind::FunctionSymbol && DemangledName->kind() != NodeKind::VariableSymbol) || Demangler.Error)
         return std::nullopt;
 
     if (DemangledName->kind() == NodeKind::FunctionSymbol) {

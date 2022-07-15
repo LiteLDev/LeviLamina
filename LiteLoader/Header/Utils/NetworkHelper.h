@@ -18,4 +18,4 @@ LIAPI bool HttpGet(const std::string& url, const std::function<void(int, std::st
 
 // Http Get (sync)
 // [return] {status, data}
-LIAPI bool HttpGetSync(const std::string& url, int *statusRtn = nullptr, std::string* dataRtn = nullptr, int timeout = -1);
+LIAPI bool HttpGetSync(const std::string& url, int* statusRtn = nullptr, std::string* dataRtn = nullptr, int timeout = -1);

@@ -11,7 +11,7 @@
 
 
 //////////////////// Class Definition ////////////////////
-// clang-format off
+
 ClassDefine<ItemClass> ItemClassBuilder =
     defineClass<ItemClass>("LLSE_Item")
         .constructor(nullptr)
@@ -32,15 +32,16 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceFunction("setNbt", &ItemClass::setNbt)
         .instanceFunction("getNbt", &ItemClass::getNbt)
 
-        //For Compatibility
+        // For Compatibility
         .instanceFunction("setTag", &ItemClass::setNbt)
         .instanceFunction("getTag", &ItemClass::getNbt)
         .build();
-// clang-format on
+
 
 //////////////////// Classes ////////////////////
 
-ItemClass::ItemClass(ItemStack* p) : ScriptClass(ScriptClass::ConstructFromCpp<ItemClass>{}), item(p) {
+ItemClass::ItemClass(ItemStack* p)
+: ScriptClass(ScriptClass::ConstructFromCpp<ItemClass>{}), item(p) {
     preloadData();
 }
 
@@ -280,8 +281,7 @@ Local<Value> McClass::spawnItem(const Arguments& args) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
-            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(),
-                   args[4].toInt()};
+            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();

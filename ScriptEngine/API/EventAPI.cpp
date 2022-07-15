@@ -354,8 +354,7 @@ Local<Value> McClass::listen(const Arguments& args) {
     CHECK_ARG_TYPE(args[1], ValueKind::kFunction);
 
     try {
-        return Boolean::newBoolean(
-            LLSEAddEventListener(EngineScope::currentEngine(), args[0].toStr(), args[1].asFunction()));
+        return Boolean::newBoolean(LLSEAddEventListener(EngineScope::currentEngine(), args[0].toStr(), args[1].asFunction()));
     }
     CATCH("Fail to Bind Listener!");
 }
@@ -381,7 +380,9 @@ bool LLSEAddEventListener(ScriptEngine* engine, const string& eventName, const L
 
 bool LLSERemoveAllEventListeners(ScriptEngine* engine) {
     for (auto& listeners : listenerList) {
-        listeners.remove_if([engine](auto& listener) { return listener.engine == engine; });
+        listeners.remove_if([engine](auto& listener) {
+            return listener.engine == engine;
+        });
     }
     return true;
 }
@@ -454,8 +455,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onChangeDim:
             Event::PlayerChangeDimEvent::subscribe([](const PlayerChangeDimEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onChangeDim) {
-                    CallEvent(EVENT_TYPES::onChangeDim, PlayerClass::newPlayer(ev.mPlayer),
-                              Number::newNumber(ev.mToDimensionId)); //======???
+                    CallEvent(EVENT_TYPES::onChangeDim, PlayerClass::newPlayer(ev.mPlayer), Number::newNumber(ev.mToDimensionId)); //======???
                 }
                 IF_LISTENED_END(EVENT_TYPES::onChangeDim);
             });
@@ -465,8 +465,7 @@ void EnableEventListener(int eventId) {
             Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onAttackEntity) {
                     if (ev.mTarget) {
-                        CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer),
-                                  EntityClass::newEntity(ev.mTarget));
+                        CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
                     }
                 }
                 IF_LISTENED_END(EVENT_TYPES::onAttackEntity);
@@ -476,7 +475,8 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onAttackBlock:
             Event::PlayerAttackBlockEvent::subscribe([](const PlayerAttackBlockEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onAttackBlock) {
-                    CallEvent(EVENT_TYPES::onAttackBlock, PlayerClass::newPlayer(ev.mPlayer),
+                    CallEvent(EVENT_TYPES::onAttackBlock,
+                              PlayerClass::newPlayer(ev.mPlayer),
                               BlockClass::newBlock(ev.mBlockInstance),
                               !ev.mItemStack->isNull() ? ItemClass::newItem(ev.mItemStack) : Local<Value>());
                 }
@@ -517,8 +517,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onDestroyBlock:
             Event::PlayerDestroyBlockEvent::subscribe([](const PlayerDestroyBlockEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onDestroyBlock) {
-                    CallEvent(EVENT_TYPES::onDestroyBlock, PlayerClass::newPlayer(ev.mPlayer),
-                              BlockClass::newBlock(ev.mBlockInstance));
+                    CallEvent(EVENT_TYPES::onDestroyBlock, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onDestroyBlock);
             });
@@ -527,8 +526,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onPlaceBlock:
             Event::PlayerPlaceBlockEvent::subscribe([](const PlayerPlaceBlockEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onPlaceBlock) {
-                    CallEvent(EVENT_TYPES::onPlaceBlock, PlayerClass::newPlayer(ev.mPlayer),
-                              BlockClass::newBlock(ev.mBlockInstance));
+                    CallEvent(EVENT_TYPES::onPlaceBlock, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onPlaceBlock);
             });
@@ -556,8 +554,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onDropItem:
             Event::PlayerDropItemEvent::subscribe([](const PlayerDropItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onDropItem) {
-                    CallEvent(EVENT_TYPES::onDropItem, PlayerClass::newPlayer(ev.mPlayer),
-                              ItemClass::newItem(ev.mItemStack)); //###### Q lost items ######
+                    CallEvent(EVENT_TYPES::onDropItem, PlayerClass::newPlayer(ev.mPlayer), ItemClass::newItem(ev.mItemStack)); //###### Q lost items ######
                 }
                 IF_LISTENED_END(EVENT_TYPES::onDropItem);
             });
@@ -567,8 +564,7 @@ void EnableEventListener(int eventId) {
             Event::PlayerPickupItemEvent::subscribe([](const PlayerPickupItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onTakeItem) {
                     CallEvent(EVENT_TYPES::onTakeItem, PlayerClass::newPlayer(ev.mPlayer),
-                              EntityClass::newEntity(ev.mItemEntity),
-                              ev.mItemStack ? ItemClass::newItem(ev.mItemStack) : Local<Value>());
+                              EntityClass::newEntity(ev.mItemEntity), ev.mItemStack ? ItemClass::newItem(ev.mItemStack) : Local<Value>());
                 }
                 IF_LISTENED_END(EVENT_TYPES::onTakeItem);
             });
@@ -577,8 +573,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onOpenContainer:
             Event::PlayerOpenContainerEvent::subscribe([](const PlayerOpenContainerEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onOpenContainer) {
-                    CallEvent(EVENT_TYPES::onOpenContainer, PlayerClass::newPlayer(ev.mPlayer),
-                              BlockClass::newBlock(ev.mBlockInstance));
+                    CallEvent(EVENT_TYPES::onOpenContainer, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onOpenContainer);
             });
@@ -587,8 +582,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onCloseContainer:
             Event::PlayerCloseContainerEvent::subscribe([](const PlayerCloseContainerEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onCloseContainer) {
-                    CallEvent(EVENT_TYPES::onCloseContainer, PlayerClass::newPlayer(ev.mPlayer),
-                              BlockClass::newBlock(ev.mBlockInstance));
+                    CallEvent(EVENT_TYPES::onCloseContainer, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onCloseContainer);
             });
@@ -607,8 +601,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onUseItem:
             Event::PlayerUseItemEvent::subscribe([](const PlayerUseItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onUseItem) {
-                    CallEvent(EVENT_TYPES::onUseItem, PlayerClass::newPlayer((Player*)ev.mPlayer),
-                              ItemClass::newItem(ev.mItemStack));
+                    CallEvent(EVENT_TYPES::onUseItem, PlayerClass::newPlayer((Player*)ev.mPlayer), ItemClass::newItem(ev.mItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onUseItem);
             });
@@ -628,9 +621,8 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onContainerChange:
             Event::ContainerChangeEvent::subscribe([](const ContainerChangeEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onContainerChange) {
-                    CallEvent(EVENT_TYPES::onContainerChange, PlayerClass::newPlayer(ev.mPlayer),
-                              BlockClass::newBlock(ev.mBlockInstance), ev.mSlot,
-                              ItemClass::newItem(ev.mPreviousItemStack), ItemClass::newItem(ev.mNewItemStack));
+                    CallEvent(EVENT_TYPES::onContainerChange, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance),
+                              ev.mSlot, ItemClass::newItem(ev.mPreviousItemStack), ItemClass::newItem(ev.mNewItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onContainerChange);
             });
@@ -659,8 +651,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onSneak:
             Event::PlayerSneakEvent::subscribe([](const PlayerSneakEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onSneak) {
-                    CallEvent(EVENT_TYPES::onSneak, PlayerClass::newPlayer(ev.mPlayer),
-                              Boolean::newBoolean(ev.mIsSneaking));
+                    CallEvent(EVENT_TYPES::onSneak, PlayerClass::newPlayer(ev.mPlayer), Boolean::newBoolean(ev.mIsSneaking));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onSneak);
             });
@@ -744,8 +735,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onRide:
             Event::EntityRideEvent::subscribe([](const EntityRideEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onRide) {
-                    CallEvent(EVENT_TYPES::onRide, EntityClass::newEntity(ev.mRider),
-                              EntityClass::newEntity(ev.mVehicle));
+                    CallEvent(EVENT_TYPES::onRide, EntityClass::newEntity(ev.mRider), EntityClass::newEntity(ev.mVehicle));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onRide);
             });
@@ -754,11 +744,10 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onEntityExplode:
             Event::EntityExplodeEvent::subscribe([](const EntityExplodeEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onEntityExplode) {
-                    CallEvent(EVENT_TYPES::onEntityExplode,
-                              ev.mActor ? EntityClass::newEntity(ev.mActor) : Local<Value>(),
-                              FloatPos::newPos(ev.mPos, ev.mDimension->getDimensionId()), Number::newNumber(ev.mRadius),
-                              Number::newNumber(ev.mMaxResistance), Boolean::newBoolean(ev.mBreaking),
-                              Boolean::newBoolean(ev.mFire));
+                    CallEvent(EVENT_TYPES::onEntityExplode, ev.mActor ? EntityClass::newEntity(ev.mActor) : Local<Value>(),
+                              FloatPos::newPos(ev.mPos, ev.mDimension->getDimensionId()),
+                              Number::newNumber(ev.mRadius), Number::newNumber(ev.mMaxResistance),
+                              Boolean::newBoolean(ev.mBreaking), Boolean::newBoolean(ev.mFire));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onEntityExplode);
             });
@@ -769,9 +758,9 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED(EVENT_TYPES::onBlockExplode) {
                     BlockInstance bl(ev.mBlockInstance);
                     CallEvent(EVENT_TYPES::onBlockExplode, BlockClass::newBlock(bl),
-                              IntPos::newPos(bl.getPosition(), bl.getDimensionId()), Number::newNumber(ev.mRadius),
-                              Number::newNumber(ev.mMaxResistance), Boolean::newBoolean(ev.mBreaking),
-                              Boolean::newBoolean(ev.mFire));
+                              IntPos::newPos(bl.getPosition(), bl.getDimensionId()),
+                              Number::newNumber(ev.mRadius), Number::newNumber(ev.mMaxResistance),
+                              Boolean::newBoolean(ev.mBreaking), Boolean::newBoolean(ev.mFire));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onBlockExplode);
             });
@@ -782,9 +771,9 @@ void EnableEventListener(int eventId) {
             Event::EntityExplodeEvent::subscribe([](const EntityExplodeEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onExplode) {
                     CallEvent(EVENT_TYPES::onExplode, ev.mActor ? EntityClass::newEntity(ev.mActor) : Local<Value>(),
-                              FloatPos::newPos(ev.mPos, ev.mDimension->getDimensionId()), Number::newNumber(ev.mRadius),
-                              Number::newNumber(ev.mMaxResistance), Boolean::newBoolean(ev.mBreaking),
-                              Boolean::newBoolean(ev.mFire));
+                              FloatPos::newPos(ev.mPos, ev.mDimension->getDimensionId()),
+                              Number::newNumber(ev.mRadius), Number::newNumber(ev.mMaxResistance),
+                              Boolean::newBoolean(ev.mBreaking), Boolean::newBoolean(ev.mFire));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onExplode);
             });
@@ -796,8 +785,8 @@ void EnableEventListener(int eventId) {
                 BlockInstance bl(ev.mBlockInstance);
                 if (bl.getBlock() == VanillaBlocks::mRespawnAnchor) {
                     IF_LISTENED(EVENT_TYPES::onRespawnAnchorExplode) {
-                        CallEvent(EVENT_TYPES::onRespawnAnchorExplode,
-                                  IntPos::newPos(bl.getPosition(), bl.getDimensionId()), Local<Value>());
+                        CallEvent(EVENT_TYPES::onRespawnAnchorExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()),
+                                  Local<Value>());
                     }
                     IF_LISTENED_END(EVENT_TYPES::onRespawnAnchorExplode);
                 } else {
@@ -852,8 +841,7 @@ void EnableEventListener(int eventId) {
                     AABB range = ev.mDestroyRange;
                     int dimId = ((Actor*)ev.mWitherBoss)->getDimensionId();
                     CallEvent(EVENT_TYPES::onWitherBossDestroy, EntityClass::newEntity((Actor*)ev.mWitherBoss),
-                              IntPos::newPos(range.min.toBlockPos(), dimId),
-                              IntPos::newPos(range.max.toBlockPos(), dimId));
+                              IntPos::newPos(range.min.toBlockPos(), dimId), IntPos::newPos(range.max.toBlockPos(), dimId));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onWitherBossDestroy);
             });
@@ -871,8 +859,8 @@ void EnableEventListener(int eventId) {
                     }
 
                     CallEvent(EVENT_TYPES::onMobHurt, EntityClass::newEntity(ev.mMob),
-                              source ? EntityClass::newEntity(source) : Local<Value>(), float(ev.mDamage),
-                              Number::newNumber((int)ev.mDamageSource->getCause()));
+                              source ? EntityClass::newEntity(source) : Local<Value>(),
+                              float(ev.mDamage), Number::newNumber((int)ev.mDamageSource->getCause()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobHurt)
             });
@@ -881,8 +869,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onStepOnPressurePlate:
             Event::EntityStepOnPressurePlateEvent::subscribe([](const EntityStepOnPressurePlateEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onStepOnPressurePlate) {
-                    CallEvent(EVENT_TYPES::onStepOnPressurePlate, EntityClass::newEntity(ev.mActor),
-                              BlockClass::newBlock(ev.mBlockInstance));
+                    CallEvent(EVENT_TYPES::onStepOnPressurePlate, EntityClass::newEntity(ev.mActor), BlockClass::newBlock(ev.mBlockInstance));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onStepOnPressurePlate);
             });
@@ -899,8 +886,7 @@ void EnableEventListener(int eventId) {
                     }
 
                     CallEvent(EVENT_TYPES::onMobDie, EntityClass::newEntity((Actor*)ev.mMob),
-                              (source ? EntityClass::newEntity(source) : Local<Value>()),
-                              Number::newNumber((int)ev.mDamageSource->getCause()));
+                              (source ? EntityClass::newEntity(source) : Local<Value>()), Number::newNumber((int)ev.mDamageSource->getCause()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobDie);
             });
@@ -909,8 +895,8 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onNpcCmd:
             Event::NpcCmdEvent::subscribe([](const NpcCmdEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onNpcCmd) {
-                    CallEvent(EVENT_TYPES::onNpcCmd, EntityClass::newEntity(ev.mNpc),
-                              PlayerClass::newPlayer(ev.mPlayer), String::newString(ev.mCommand));
+                    CallEvent(EVENT_TYPES::onNpcCmd, EntityClass::newEntity(ev.mNpc), PlayerClass::newPlayer(ev.mPlayer),
+                              String::newString(ev.mCommand));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onNpcCmd);
             });
@@ -919,8 +905,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onSpawnProjectile:
             Event::ProjectileSpawnEvent::subscribe([](const ProjectileSpawnEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onSpawnProjectile) {
-                    CallEvent(EVENT_TYPES::onSpawnProjectile, EntityClass::newEntity(ev.mShooter),
-                              String::newString(ev.mType));
+                    CallEvent(EVENT_TYPES::onSpawnProjectile, EntityClass::newEntity(ev.mShooter), String::newString(ev.mType));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onSpawnProjectile);
             });
@@ -929,8 +914,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onProjectileCreated:
             Event::ProjectileCreatedEvent::subscribe([](const ProjectileCreatedEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onProjectileCreated) {
-                    CallEvent(EVENT_TYPES::onProjectileCreated, EntityClass::newEntity(ev.mShooter),
-                              EntityClass::newEntity(ev.mProjectile));
+                    CallEvent(EVENT_TYPES::onProjectileCreated, EntityClass::newEntity(ev.mShooter), EntityClass::newEntity(ev.mProjectile));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onProjectileCreated);
             });
@@ -939,8 +923,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onProjectileHitEntity:
             Event::ProjectileHitEntityEvent::subscribe([](const ProjectileHitEntityEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onProjectileHitEntity) {
-                    CallEvent(EVENT_TYPES::onProjectileHitEntity, EntityClass::newEntity(ev.mTarget),
-                              EntityClass::newEntity(ev.mSource));
+                    CallEvent(EVENT_TYPES::onProjectileHitEntity, EntityClass::newEntity(ev.mTarget), EntityClass::newEntity(ev.mSource));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onProjectileHitEntity);
             });
@@ -949,9 +932,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onEntityTransformation:
             Event::EntityTransformEvent::subscribe([](const EntityTransformEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onEntityTransformation) {
-                    CallEvent(EVENT_TYPES::onEntityTransformation,
-                              String::newString(to_string(ev.mBeforeEntityUniqueId->id)),
-                              EntityClass::newEntity(ev.mAfterEntity));
+                    CallEvent(EVENT_TYPES::onEntityTransformation, String::newString(to_string(ev.mBeforeEntityUniqueId->id)), EntityClass::newEntity(ev.mAfterEntity));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onEntityTransformation);
             });
@@ -970,8 +951,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onLiquidFlow:
             Event::LiquidSpreadEvent::subscribe([](const LiquidSpreadEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onLiquidFlow) {
-                    CallEvent(EVENT_TYPES::onLiquidFlow, BlockClass::newBlock(ev.mBlockInstance),
-                              IntPos::newPos(ev.mTarget, ev.mDimensionId));
+                    CallEvent(EVENT_TYPES::onLiquidFlow, BlockClass::newBlock(ev.mBlockInstance), IntPos::newPos(ev.mTarget, ev.mDimensionId));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onLiquidFlow);
             });
@@ -1034,12 +1014,10 @@ void EnableEventListener(int eventId) {
             Event::HopperSearchItemEvent::subscribe([](const HopperSearchItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onHopperSearchItem) {
                     if (ev.isMinecart) {
-                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mMinecartPos, ev.mDimensionId),
-                                  ev.isMinecart);
+                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mMinecartPos, ev.mDimensionId), ev.isMinecart);
                     } else {
                         BlockInstance bl = ev.mHopperBlock;
-                        CallEvent(EVENT_TYPES::onHopperSearchItem,
-                                  FloatPos::newPos(bl.getPosition().toVec3(), ev.mDimensionId), ev.isMinecart);
+                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(bl.getPosition().toVec3(), ev.mDimensionId), ev.isMinecart);
                     }
                 }
                 IF_LISTENED_END(EVENT_TYPES::onHopperSearchItem);
@@ -1096,8 +1074,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onMobSpawn:
             Event::MobSpawnEvent::subscribe([](const MobSpawnEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onMobSpawn) {
-                    CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName),
-                              FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                    CallEvent(EVENT_TYPES::onMobSpawn, String::newString(ev.mTypeName), FloatPos::newPos(ev.mPos, ev.mDimensionId));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
             });
@@ -1238,7 +1215,8 @@ inline bool CallTickEvent() {
 }
 
 // 植入tick
-THook(void, "?tick@ServerLevel@@UEAAXXZ", void* _this) {
+THook(void, "?tick@ServerLevel@@UEAAXXZ",
+      void* _this) {
     try {
         std::list<ScriptEngine*> tmpList;
         {
@@ -1280,8 +1258,7 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVLecte
         bp->x = *((DWORD*)pkt + 15);
         bp->y = *((DWORD*)pkt + 16);
         bp->z = *((DWORD*)pkt + 17);
-        CallEventRtnVoid(EVENT_TYPES::onTurnLectern, PlayerClass::newPlayer(player), IntPos::newPos(bp,
-Raw_GetPlayerDimId(player)), page, totalPages, Boolean::newBoolean(shouldDropBook));
+        CallEventRtnVoid(EVENT_TYPES::onTurnLectern, PlayerClass::newPlayer(player), IntPos::newPos(bp, Raw_GetPlayerDimId(player)), page, totalPages, Boolean::newBoolean(shouldDropBook));
     }
     IF_LISTENED_END(EVENT_TYPES::onTurnLectern);
     original(handler,id,pkt);
@@ -1306,8 +1283,7 @@ bool MoneyBeforeEventCallback(LLMoneyEvent type, xuid_t from, xuid_t to, money_t
         }
         case LLMoneyEvent::Trans: {
             IF_LISTENED(EVENT_TYPES::beforeMoneyTrans) {
-                CallEvent(EVENT_TYPES::beforeMoneyTrans, String::newString(from), String::newString(to),
-                          Number::newNumber(value));
+                CallEvent(EVENT_TYPES::beforeMoneyTrans, String::newString(from), String::newString(to), Number::newNumber(value));
             }
             IF_LISTENED_END(EVENT_TYPES::beforeMoneyTrans);
             break;
@@ -1343,8 +1319,7 @@ bool MoneyEventCallback(LLMoneyEvent type, xuid_t from, xuid_t to, money_t value
         }
         case LLMoneyEvent::Trans: {
             IF_LISTENED(EVENT_TYPES::onMoneyTrans) {
-                CallEvent(EVENT_TYPES::onMoneyTrans, String::newString(from), String::newString(to),
-                          Number::newNumber(value));
+                CallEvent(EVENT_TYPES::onMoneyTrans, String::newString(from), String::newString(to), Number::newNumber(value));
             }
             IF_LISTENED_END(EVENT_TYPES::onMoneyTrans);
             break;

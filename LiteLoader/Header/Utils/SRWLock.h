@@ -2,8 +2,7 @@
 #include "../Global.h"
 #include <windows.h>
 
-class SRWLock
-{
+class SRWLock {
     bool inited = false;
     SRWLOCK srwlock{};
 
@@ -17,20 +16,29 @@ public:
     LIAPI void unlock_shared();
 };
 
-class SRWLockHolder
-{
-    SRWLock &locker;
+class SRWLockHolder {
+    SRWLock& locker;
+
 public:
-    LIAPI SRWLockHolder(SRWLock &lock) :locker(lock) { locker.lock(); }
-    LIAPI ~SRWLockHolder() { locker.unlock(); }
+    LIAPI SRWLockHolder(SRWLock& lock)
+    : locker(lock) {
+        locker.lock();
+    }
+    LIAPI ~SRWLockHolder() {
+        locker.unlock();
+    }
 };
 
 
+class SRWLockSharedHolder {
+    SRWLock& locker;
 
-class SRWLockSharedHolder
-{
-    SRWLock &locker;
 public:
-    LIAPI SRWLockSharedHolder(SRWLock &lock) :locker(lock) { locker.lock_shared(); }
-    LIAPI ~SRWLockSharedHolder() { locker.unlock_shared(); }
+    LIAPI SRWLockSharedHolder(SRWLock& lock)
+    : locker(lock) {
+        locker.lock_shared();
+    }
+    LIAPI ~SRWLockSharedHolder() {
+        locker.unlock_shared();
+    }
 };

@@ -12,7 +12,8 @@
 #include <tuple>
 
 namespace RegisterCommandHelper {
-template <typename Command, typename Type> static int getOffset(Type Command::*src) {
+template <typename Command, typename Type>
+static int getOffset(Type Command::*src) {
     union {
         Type Command::*src;
         int value;
@@ -21,8 +22,9 @@ template <typename Command, typename Type> static int getOffset(Type Command::*s
     return u.value;
 }
 
-using ParseFn = bool (CommandRegistry::*)(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int,
-                                          std::string&, std::vector<std::string>&) const;
+using ParseFn = bool (CommandRegistry::*)(
+    void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
+    std::vector<std::string>&) const;
 
 template <typename Command, typename Type>
 static CommandParameterData makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
@@ -39,8 +41,8 @@ static CommandParameterData makeMandatory(Type Command::*field, std::string name
     };
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
-static CommandParameterData makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr,
-                                          bool Command::*isSet = nullptr) {
+static CommandParameterData
+    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
     return {
         type_id<CommandRegistry, Type>(),
         CommandRegistry::getParseFn<Type>(),
@@ -68,8 +70,8 @@ static CommandParameterData makeOptional(Type Command::*field, std::string name,
     };
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
-static CommandParameterData makeOptional(Type Command::*field, std::string name, char const* desc = nullptr,
-                                         bool Command::*isSet = nullptr) {
+static CommandParameterData
+    makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
 
     return {
         type_id<CommandRegistry, Type>(),

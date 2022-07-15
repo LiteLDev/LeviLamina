@@ -13,7 +13,7 @@ bool IsVersionLess(int v1a, int v1b, int v1c, int v2a, int v2b, int v2c);
 unsigned long long GetCurrentTimeStampMS();
 wchar_t* str2cwstr(string str);
 
-// System
+//System
 std::string Raw_GetDateTimeStr();
 std::string Raw_RandomGuid();
 std::wstring Raw_RandomGuidW();

@@ -6,7 +6,10 @@
 void InitAddonsHelper();
 
 struct Addon {
-    enum class Type { ResourcePack, BehaviorPack };
+    enum class Type {
+        ResourcePack,
+        BehaviorPack
+    };
     std::string name;
     std::string description;
     Type type;

@@ -58,8 +58,7 @@ void ModuleMessage::cleanup(utils::Message& engineMsg) {
 
 /////////////////////////// Helper ///////////////////////////
 
-utils::Message PackEngineMessage(string toModuleType, ModuleMessage::MessageType type, string data,
-                                 int* messageId = nullptr) {
+utils::Message PackEngineMessage(string toModuleType, ModuleMessage::MessageType type, string data, int* messageId = nullptr) {
     auto& callbacks = globalShareData->messageSystemHandlers[toModuleType];
 
     utils::Message engineMsg(callbacks.handler, callbacks.cleaner);
@@ -118,9 +117,8 @@ ModuleMessageResult ModuleMessage::broadcastGlobal(MessageType type, string data
     auto engines = EngineManager::getGlobalEngines();
     for (auto& engine : engines) {
         try {
-            engine->messageQueue()->postMessage(
-                PackEngineMessage(EngineManager::getEngineType(engine), type, data, &msgId),
-                std::chrono::milliseconds(delay));
+            engine->messageQueue()->postMessage(PackEngineMessage(EngineManager::getEngineType(engine), type, data, &msgId),
+                                                std::chrono::milliseconds(delay));
             engineList.push_back(engine);
         } catch (const Exception& e) {
             EngineScope scope(engine);
@@ -177,8 +175,7 @@ ModuleMessageResult ModuleMessage::sendTo(ScriptEngine* engine, MessageType type
     return ModuleMessageResult(msgId, {});
 }
 
-ModuleMessageResult ModuleMessage::sendToRandom(std::string toModuleType, MessageType type, std::string data,
-                                                int64_t delay) {
+ModuleMessageResult ModuleMessage::sendToRandom(std::string toModuleType, MessageType type, std::string data, int64_t delay) {
     int msgId = -1;
 
     auto engines = EngineManager::getGlobalEngines();
@@ -213,7 +210,9 @@ bool ModuleMessage::sendResult(MessageType type, std::string data, int64_t delay
         EngineScope scope(engine);
         logger.error("Fail to post message to plugin {}", ENGINE_GET_DATA(engine)->pluginName);
         PrintException(e);
-    } catch (...) { logger.error("Fail to post message to plugin {}", ENGINE_GET_DATA(engine)->pluginName); }
+    } catch (...) {
+        logger.error("Fail to post message to plugin {}", ENGINE_GET_DATA(engine)->pluginName);
+    }
     return false;
 }
 
@@ -221,9 +220,7 @@ bool ModuleMessage::sendResult(MessageType type, std::string data, int64_t delay
 /////////////////////////// Module Message Result ///////////////////////////
 
 ModuleMessageResult::ModuleMessageResult(int messageId, std::vector<ScriptEngine*> engineList)
-    : msgId(messageId)
-    , engineList(engineList)
-    , resultCount(OperationCount::create(to_string(messageId))) {
+: msgId(messageId), engineList(engineList), resultCount(OperationCount::create(to_string(messageId))) {
 }
 
 ModuleMessageResult::operator bool() {
@@ -262,9 +259,8 @@ bool ModuleMessageResult::cancel() {
     for (auto& engine : engineList) {
         EngineScope scope(engine);
         engine->messageQueue()->removeMessageIf([id](utils::Message& message) {
-            return (GET_MESSAGE_HEADER(message))->id == id
-                       ? utils::MessageQueue::RemoveMessagePredReturnType::kRemoveAndContinue
-                       : utils::MessageQueue::RemoveMessagePredReturnType::kDontRemove;
+            return (GET_MESSAGE_HEADER(message))->id == id ? utils::MessageQueue::RemoveMessagePredReturnType::kRemoveAndContinue
+                                                           : utils::MessageQueue::RemoveMessagePredReturnType::kDontRemove;
         });
     }
     return true;

@@ -9,8 +9,7 @@ void ShellLinkFile::_Init() {
     }
 
     // Init IShellLink
-    res =
-        ::CoCreateInstance(CLSID_ShellLink, nullptr, CLSCTX_INPROC_SERVER, IID_IShellLinkW, (LPVOID*)&this->shellLink);
+    res = ::CoCreateInstance(CLSID_ShellLink, nullptr, CLSCTX_INPROC_SERVER, IID_IShellLinkW, (LPVOID*)&this->shellLink);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::ShellLinkFile:: Error when creating the IShellLink instance");
     }

@@ -13,7 +13,11 @@ using namespace std;
 
 //////////////////// Class Definition ////////////////////
 
-enum class FileOpenMode : int { ReadMode, WriteMode, AppendMode };
+enum class FileOpenMode : int {
+    ReadMode,
+    WriteMode,
+    AppendMode
+};
 
 ClassDefine<FileClass> FileClassBuilder =
     defineClass<FileClass>("File")
@@ -166,8 +170,7 @@ Local<Value> FileClass::readSync(const Arguments& args) {
         file.read(buf, cnt);
         size_t bytes = file.gcount();
 
-        Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue()
-                                    : String::newString(string_view(buf, bytes)).asValue();
+        Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf, bytes)).asValue();
         delete[] buf;
         return res;
     }
@@ -186,8 +189,7 @@ Local<Value> FileClass::readLineSync(const Arguments& args) {
 Local<Value> FileClass::readAllSync(const Arguments& args) {
     try {
         string res((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-        return isBinary ? ByteBuffer::newByteBuffer(res.data(), res.size()).asValue()
-                        : String::newString(res).asValue();
+        return isBinary ? ByteBuffer::newByteBuffer(res.data(), res.size()).asValue() : String::newString(res).asValue();
     }
     CATCH("Fail in readAllSync!");
 }
@@ -229,8 +231,8 @@ Local<Value> FileClass::read(const Arguments& args) {
         int cnt = args[0].toInt();
         script::Global<Function> callbackFunc{args[1].asFunction()};
 
-        pool.enqueue([cnt, fp{&file}, isBinary{isBinary}, lock{&lock}, callback{std::move(callbackFunc)},
-                      engine{EngineScope::currentEngine()}]() {
+        pool.enqueue([cnt, fp{&file}, isBinary{isBinary}, lock{&lock},
+                      callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -244,8 +246,7 @@ Local<Value> FileClass::read(const Arguments& args) {
 
             EngineScope scope(engine);
             try {
-                Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue()
-                                            : String::newString(string_view(buf, bytes)).asValue();
+                Local<Value> res = isBinary ? ByteBuffer::newByteBuffer(buf, bytes).asValue() : String::newString(string_view(buf, bytes)).asValue();
                 delete[] buf;
                 // dangerous
                 NewTimeout(callback.get(), {res}, 1);
@@ -264,24 +265,24 @@ Local<Value> FileClass::readLine(const Arguments& args) {
     try {
         script::Global<Function> callbackFunc{args[0].asFunction()};
 
-        pool.enqueue(
-            [fp{&file}, lock{&lock}, callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
-                if (LL::isServerStopping())
-                    return;
-                if (!EngineManager::isValid(engine))
-                    return;
+        pool.enqueue([fp{&file}, lock{&lock},
+                      callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
 
-                string buf;
-                lock->lock();
-                getline(*fp, buf);
-                lock->unlock();
+            string buf;
+            lock->lock();
+            getline(*fp, buf);
+            lock->unlock();
 
-                EngineScope scope(engine);
-                try {
-                    NewTimeout(callback.get(), {String::newString(buf)}, 1);
-                }
-                CATCH_IN_CALLBACK("FileReadLine")
-            });
+            EngineScope scope(engine);
+            try {
+                NewTimeout(callback.get(), {String::newString(buf)}, 1);
+            }
+            CATCH_IN_CALLBACK("FileReadLine")
+        });
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in readLine!");
@@ -294,8 +295,8 @@ Local<Value> FileClass::readAll(const Arguments& args) {
     try {
         script::Global<Function> callbackFunc{args[0].asFunction()};
 
-        pool.enqueue([fp{&file}, isBinary{isBinary}, lock{&lock}, callback{std::move(callbackFunc)},
-                      engine{EngineScope::currentEngine()}]() {
+        pool.enqueue([fp{&file}, isBinary{isBinary}, lock{&lock},
+                      callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -307,8 +308,7 @@ Local<Value> FileClass::readAll(const Arguments& args) {
 
             EngineScope scope(engine);
             try {
-                Local<Value> readed = isBinary ? ByteBuffer::newByteBuffer(res.data(), res.size()).asValue()
-                                               : String::newString(res).asValue();
+                Local<Value> readed = isBinary ? ByteBuffer::newByteBuffer(res.data(), res.size()).asValue() : String::newString(res).asValue();
                 NewTimeout(callback.get(), {readed}, 1);
             }
             CATCH_IN_CALLBACK("FileReadAll")
@@ -340,8 +340,8 @@ Local<Value> FileClass::write(const Arguments& args) {
         if (args.size() >= 2)
             callbackFunc = args[1].asFunction();
 
-        pool.enqueue([fp{&file}, lock{&lock}, data{std::move(data)}, isString, callback{std::move(callbackFunc)},
-                      engine{EngineScope::currentEngine()}]() {
+        pool.enqueue([fp{&file}, lock{&lock}, data{std::move(data)}, isString,
+                      callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -381,8 +381,8 @@ Local<Value> FileClass::writeLine(const Arguments& args) {
         if (args.size() >= 2)
             callbackFunc = args[1].asFunction();
 
-        pool.enqueue([fp{&file}, lock{&lock}, data{std::move(data)}, callback{std::move(callbackFunc)},
-                      engine{EngineScope::currentEngine()}]() {
+        pool.enqueue([fp{&file}, lock{&lock}, data{std::move(data)},
+                      callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))

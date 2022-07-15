@@ -108,8 +108,7 @@ void SQLiteSession::close() {
     if (conn) {
         auto res = sqlite3_close(conn);
         if (res != SQLITE_OK) {
-            throw std::runtime_error("SQLiteSession::close: Failed to close database: " +
-                                     std::string(sqlite3_errmsg(conn)));
+            throw std::runtime_error("SQLiteSession::close: Failed to close database: " + std::string(sqlite3_errmsg(conn)));
         }
         conn = nullptr;
         IF_ENDBG dbLogger.debug("SQLiteSession::close: Closed database");

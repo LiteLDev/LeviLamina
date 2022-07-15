@@ -19,7 +19,8 @@ ClassDefine<CommandOutputClass> CommandOutputClassBuilder =
 //////////////////// APIs ////////////////////
 
 CommandOutputClass::CommandOutputClass(CommandOutput* p)
-: ScriptClass(ScriptClass::ConstructFromCpp<CommandOutputClass>{}), ptr(p){};
+: ScriptClass(ScriptClass::ConstructFromCpp<CommandOutputClass>{})
+, ptr(p){};
 
 Local<Object> CommandOutputClass::newCommandOutput(CommandOutput* p) {
     auto newp = new CommandOutputClass(p);

@@ -3,11 +3,13 @@
 
 struct sqlite3_stmt;
 
-namespace DB {
+namespace DB
+{
 
 class SQLiteSession;
 
-class SQLiteStmt : public Stmt {
+class SQLiteStmt : public Stmt
+{
 
     std::shared_ptr<RowHeader> resultHeader;
     sqlite3_stmt* stmt = nullptr;
@@ -49,8 +51,7 @@ public:
     int getParamsCount() const;
     DBType getType() const;
 
-    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql,
-                                            bool autoExecute = false);
+    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql, bool autoExecute = false);
 };
 
 } // namespace DB

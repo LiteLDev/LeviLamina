@@ -137,7 +137,9 @@ auto TestRemoteCall = ([]() -> bool {
     std::thread([]() {
         Sleep(5000);
         Schedule::nextTick([]() {
-            RemoteCall::exportAs("TestNameSpace", "StrSize", [](std::string arg) -> size_t { return arg.size(); });
+            RemoteCall::exportAs("TestNameSpace", "StrSize", [](std::string arg) -> size_t {
+                return arg.size();
+            });
 
             exportTestSimulatedPlayerLL();
             RemoteCall::exportAs("Test", "test2", TestExport);
@@ -146,8 +148,7 @@ auto TestRemoteCall = ([]() -> bool {
             auto func = RemoteCall::importAs<decltype(TestExport)>("Test", "test2");
             auto func2 = RemoteCall::importAs<std::function<decltype(TestExport)>>("Test", "test2");
             auto size = func("TestParam", 5, 10);
-            static auto TestSimulatedPlayerJs =
-                RemoteCall::importAs<bool(Player*)>("TestRemoteCall", "TestSimulatedPlayerJs");
+            static auto TestSimulatedPlayerJs = RemoteCall::importAs<bool(Player*)>("TestRemoteCall", "TestSimulatedPlayerJs");
             Event::PlayerJoinEvent::subscribe_ref([](Event::PlayerJoinEvent& ev) {
                 logger.warn("TestSimulatedPlayer");
                 auto res = TestSimulatedPlayerJs(ev.mPlayer);

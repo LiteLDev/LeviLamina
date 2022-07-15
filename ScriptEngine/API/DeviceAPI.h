@@ -10,7 +10,8 @@ private:
     bool isValid = true;
 
 public:
-    explicit DeviceClass(Player* p) : ScriptClass(ScriptClass::ConstructFromCpp<DeviceClass>{}) {
+    explicit DeviceClass(Player* p)
+    : ScriptClass(ScriptClass::ConstructFromCpp<DeviceClass>{}) {
         setPlayer(p);
     }
 

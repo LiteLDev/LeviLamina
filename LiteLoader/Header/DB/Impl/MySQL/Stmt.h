@@ -3,15 +3,17 @@
 
 struct MYSQL_STMT;
 
-namespace DB {
+namespace DB
+{
 
 class MySQLSession;
 
 /**
  * @brief Fetched data receiver(buffer)
- *
+ * 
  */
-struct Receiver {
+struct Receiver
+{
     MYSQL_FIELD field;
     std::shared_ptr<char[]> buffer;
     unsigned long length = 0;
@@ -20,10 +22,11 @@ struct Receiver {
     bool error = false;
 };
 
-class MySQLStmt : public Stmt {
+class MySQLStmt : public Stmt
+{
 
     MYSQL_STMT* stmt = nullptr;
-    MYSQL_RES* metadata = nullptr;
+    MYSQL_RES*  metadata = nullptr;
     std::shared_ptr<MYSQL_BIND[]> params = nullptr; ///< Parameters to bind
     std::shared_ptr<MYSQL_BIND[]> result = nullptr; ///< Result of query
     std::shared_ptr<RowHeader> resultHeader = nullptr;
@@ -62,8 +65,7 @@ public:
     int getParamsCount() const;
     DBType getType() const;
 
-    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql,
-                                            bool autoExecute = false);
+    LIAPI static SharedPointer<Stmt> create(const std::weak_ptr<Session>& sess, const std::string& sql, bool autoExecute = false);
 };
 
 } // namespace DB

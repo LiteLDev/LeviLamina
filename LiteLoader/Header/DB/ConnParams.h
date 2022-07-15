@@ -2,13 +2,15 @@
 #include "Any.h"
 #include <unordered_map>
 
-namespace DB {
+namespace DB
+{
 
 /**
  * @brief Connection parameters
  *
  */
-class ConnParams : public std::unordered_map<std::string, Any> {
+class ConnParams : public std::unordered_map<std::string, Any>
+{
 
     std::string raw;
 
@@ -42,7 +44,7 @@ public:
 
     /**
      * @brief Get the scheme.
-     *
+     * 
      * @return std::string  The scheme
      */
     LIAPI std::string getScheme();
@@ -105,26 +107,29 @@ public:
      *          the first one(keys[0]) will be returned.
      */
     template <typename T>
-    inline T get(const std::vector<std::string>& keys, bool ignoreCase = true, T defaultValue = T()) {
+    inline T get(const std::vector<std::string>& keys, bool ignoreCase = true, T defaultValue = T())
+    {
         Any value;
         int w = INT_MAX;
-        for (auto& [k, v] : *this) {
+        for (auto& [k, v] : *this)
+        {
             std::string lowerKey = k;
-            if (ignoreCase) {
+            if (ignoreCase)
+            {
                 std::transform(lowerKey.begin(), lowerKey.end(), lowerKey.begin(), ::tolower);
             }
             int i = 0;
-            for (auto& key : keys) {
-                if (lowerKey == key && i < w) {
+            for (auto& key : keys)
+            {
+                if (lowerKey == key && i < w)
+                {
                     value = v;
                     w = i;
-                    if (w == 0)
-                        break;
+                    if (w == 0) break;
                 }
                 i++;
             }
-            if (w == 0)
-                break;
+            if (w == 0) break;
         }
         if (value.is_null())
             return defaultValue;

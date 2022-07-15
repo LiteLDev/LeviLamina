@@ -6,9 +6,8 @@
 //  - Form that contains several buttons (with optional image)
 //  - Let the player to choose one option
 //
-//  SimpleForm form("Welcome to shop", "Choose what you want to do...");     // Initialize the form with title and
-//  content form.addButton("Buy", "textures/items/apple",                            // Add a button "Buy" with texture
-//  image
+//  SimpleForm form("Welcome to shop", "Choose what you want to do...");     // Initialize the form with title and content
+//  form.addButton("Buy", "textures/items/apple",                            // Add a button "Buy" with texture image
 //      [](Player* pl) { pl->sendText("To buy something..."); })			 // Buy's callback function
 //
 //      .addButton("Sell", "https://xxx.com/xxx.png",                        // Add a button "Sell" with online image
@@ -26,22 +25,17 @@
 //  - Let the player to provide some detailed information
 //
 //  CustomForm form2("Information Collection Form");                            // Initialize the form with title
-//  form2.addLabel("label1", "Personal Information")                            // Add a label shows "Personal
-//  Information"
-//      .addInput("username", "Your Name")                                      // Add an input line to gather player's
-//      name .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })           // Add a dropdown to gather
-//      player's sex .addSlider("age", "Your Age", 3, 100)                                   // Add a slider to gather
-//      player's age
+//  form2.addLabel("label1", "Personal Information")                            // Add a label shows "Personal Information"
+//      .addInput("username", "Your Name")                                      // Add an input line to gather player's name
+//      .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })           // Add a dropdown to gather player's sex
+//      .addSlider("age", "Your Age", 3, 100)                                   // Add a slider to gather player's age
 //
 //      .addLabel("label2", "MC Information")                                   // Add a label shows "MC Information"
-//      .addToggle("licensed", "Purchased a licensed Minecraft?", true)         // Add a toggle about whether he buys a
-//      licensed mc or not .addStepSlider("ability", "MC Ability", { "Beginner", "Experienced", "Master" })      // Add
-//      a step slider shows his game ability
+//      .addToggle("licensed", "Purchased a licensed Minecraft?", true)         // Add a toggle about whether he buys a licensed mc or not
+//      .addStepSlider("ability", "MC Ability", { "Beginner", "Experienced", "Master" })      // Add a step slider shows his game ability
 //
-//      .sendTo(Level::getPlayer("yqs112358"),                                  // Send the form to a player called
-//      "John"
-//          [](Player* player, auto result)                                     // Callback function to process the
-//          result
+//      .sendTo(Level::getPlayer("yqs112358"),                                  // Send the form to a player called "John"
+//          [](Player* player, auto result)                                     // Callback function to process the result
 //          {
 //              if (result.empty())                                             // He cancelled the form
 //                  return;
@@ -86,9 +80,9 @@ public:
 
 public:
     inline explicit Button(string text, string image = "", ButtonCallback callback = ButtonCallback())
-        : text(std::move(text))
-        , image(std::move(image))
-        , callback(std::move(callback)) {
+    : text(std::move(text))
+    , image(std::move(image))
+    , callback(std::move(callback)) {
     }
     inline void setText(const string& _text) {
         this->text = _text;
@@ -108,7 +102,14 @@ protected:
     friend class CustomForm;
 
 public:
-    enum class Type { Label, Input, Toggle, Dropdown, Slider, StepSlider };
+    enum class Type {
+        Label,
+        Input,
+        Toggle,
+        Dropdown,
+        Slider,
+        StepSlider
+    };
     string name;
     string value;
     Type type{};
@@ -130,7 +131,7 @@ public:
 
 public:
     inline Label(const string& name, string text)
-        : text(std::move(text)) {
+    : text(std::move(text)) {
         setName(name);
     }
     inline Type getType() override {
@@ -148,9 +149,9 @@ protected:
 public:
     string title, placeholder, def;
     inline Input(const string& name, string title, string placeholder = "", string def = "")
-        : title(std::move(title))
-        , placeholder(std::move(placeholder))
-        , def(std::move(def)) {
+    : title(std::move(title))
+    , placeholder(std::move(placeholder))
+    , def(std::move(def)) {
         setName(name);
     }
     inline Type getType() override {
@@ -178,8 +179,8 @@ public:
 
 public:
     inline Toggle(const string& name, string title, bool def = false)
-        : title(std::move(title))
-        , def(def) {
+    : title(std::move(title))
+    , def(def) {
         setName(name);
     }
     inline virtual Type getType() override {
@@ -204,9 +205,9 @@ public:
 
 public:
     inline Dropdown(const string& name, string title, const vector<string>& options, int defId = 0)
-        : title(std::move(title))
-        , options(options)
-        , def(defId) {
+    : title(std::move(title))
+    , options(options)
+    , def(defId) {
         setName(name);
     }
     inline Type getType() override {
@@ -236,11 +237,11 @@ public:
 
 public:
     inline Slider(const string& name, string title, int minValue, int maxValue, int step = 1, int def = 0)
-        : title(std::move(title))
-        , minValue(minValue)
-        , maxValue(maxValue)
-        , step(step)
-        , def(def) {
+    : title(std::move(title))
+    , minValue(minValue)
+    , maxValue(maxValue)
+    , step(step)
+    , def(def) {
         setName(name);
     }
     inline Type getType() override {
@@ -274,9 +275,9 @@ public:
 
 public:
     inline StepSlider(const string& name, string title, const vector<string>& options, int defId = 0)
-        : title(std::move(title))
-        , options(options)
-        , def(defId) {
+    : title(std::move(title))
+    , options(options)
+    , def(defId) {
         setName(name);
     }
     inline Type getType() override {
@@ -315,8 +316,8 @@ public:
 
 public:
     SimpleForm(string title, string content)
-        : title(std::move(title))
-        , content(std::move(content)) {
+    : title(std::move(title))
+    , content(std::move(content)) {
     }
     template <typename T, typename... Args>
     SimpleForm(const string& title, const string& content, T element, Args... args) {
@@ -325,8 +326,7 @@ public:
     }
     LIAPI SimpleForm& setTitle(const string& title);
     LIAPI SimpleForm& setContent(const string& content);
-    LIAPI SimpleForm& addButton(string text, string image = "",
-                                Button::ButtonCallback callback = Button::ButtonCallback());
+    LIAPI SimpleForm& addButton(string text, string image = "", Button::ButtonCallback callback = Button::ButtonCallback());
     LIAPI SimpleForm& append(const Button& element);
     LIAPI bool sendTo(Player* player, Callback callback = Callback());
 };
@@ -344,9 +344,10 @@ public:
 
 public:
     explicit CustomForm(string title)
-        : title(std::move(title)) {
+    : title(std::move(title)) {
     }
-    template <typename T, typename... Args> CustomForm(const string& title, T element, Args... args) {
+    template <typename T, typename... Args>
+    CustomForm(const string& title, T element, Args... args) {
         append(element);
         CustomForm(title, args...);
     }
@@ -378,7 +379,8 @@ public:
     LIAPI bool getBool(int index);
 
     // Tool Functions
-    template <typename T> inline void setValue(int index, T value) {
+    template <typename T>
+    inline void setValue(int index, T value) {
         elements[index].second->value = to_string(value);
     }
     inline void setValue(int index, string value) {

@@ -15,8 +15,7 @@ LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tick
 LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1) {
     return repeat(task, tickInterval, maxCount, nullptr);
 }
-LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
-                               unsigned long long tickInterval, int maxCount = -1) {
+LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1) {
     return delayRepeat(task, tickDelay, tickInterval, maxCount, nullptr);
 }
 LIAPI ScheduleTask nextTick(std::function<void(void)> task) {

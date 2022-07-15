@@ -34,7 +34,9 @@ inline void loadconfig() {
     if (std::filesystem::exists("plugins/LiteLoader/LiteLoader.json")) {
         try {
             LoadConfigFromJson("plugins/LiteLoader/LiteLoader.json");
-        } catch (std::exception& e) { ColorLog = true; } catch (...) {
+        } catch (std::exception& e) {
+            ColorLog = true;
+        } catch (...) {
             ColorLog = true;
         }
     } else {
@@ -51,9 +53,8 @@ inline void loadconfig() {
 #define COLOR_ERROR_PREFIX fmt::terminal_color::bright_red
 #define COLOR_ERROR_TEXT fmt::color::red2
 
-#define LOG_PREFIX(prefix, color1, color2)                              \
-    fmt::print(ColorLog ? fmt::fg(color1) : fmt::text_style(),          \
-               fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0)))); \
+#define LOG_PREFIX(prefix, color1, color2)                                                                              \
+    fmt::print(ColorLog ? fmt::fg(color1) : fmt::text_style(), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0)))); \
     fmt::print(ColorLog ? fmt::fg(color2) : fmt::text_style(), fmt::format(prefix, fmt::localtime(_time64(0))));
 #define LOG(color1, color2, prefix)                                            \
     LOG_PREFIX(prefix, color1, color2);                                        \

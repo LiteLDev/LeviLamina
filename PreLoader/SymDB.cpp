@@ -52,8 +52,7 @@ struct Handle {
 };
 
 MemoryMappedFile::Handle Open(const wchar_t* path) {
-    HANDLE file =
-        CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_READONLY, nullptr);
+    HANDLE file = CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_READONLY, nullptr);
     if (file == INVALID_HANDLE_VALUE) {
         return Handle{INVALID_HANDLE_VALUE, INVALID_HANDLE_VALUE, nullptr};
     }
@@ -148,8 +147,7 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
 
         for (const PDB::HashRecord& hashRecord : hashRecords) {
             const PDB::CodeView::DBI::Record* record = publicSymbolStream.GetRecord(symbolRecordStream, hashRecord);
-            const uint32_t rva =
-                imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_PUB32.section, record->data.S_PUB32.offset);
+            const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_PUB32.section, record->data.S_PUB32.offset);
             if (rva == 0u)
                 continue;
             funcMap->emplace(record->data.S_PUB32.name, rva);
@@ -166,8 +164,7 @@ void InitFastDlsym(const PDB::RawFile& rawPdbFile, const PDB::DBIStream& dbiStre
             const PDB::ModuleSymbolStream moduleSymbolStream = module.CreateSymbolStream(rawPdbFile);
             moduleSymbolStream.ForEachSymbol([&imageSectionStream](const PDB::CodeView::DBI::Record* record) {
                 if (record->header.kind == PDB::CodeView::DBI::SymbolRecordKind::S_LPROC32) {
-                    const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_LPROC32.section,
-                                                                                      record->data.S_LPROC32.offset);
+                    const uint32_t rva = imageSectionStream.ConvertSectionOffsetToRVA(record->data.S_LPROC32.section, record->data.S_LPROC32.offset);
                     string name = record->data.S_LPROC32.name;
                     if (name.find("lambda") != name.npos) {
                         funcMap->emplace(record->data.S_LPROC32.name, rva);

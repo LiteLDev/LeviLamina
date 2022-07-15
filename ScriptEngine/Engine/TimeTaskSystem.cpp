@@ -55,8 +55,7 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
 
 //////////////////// API ////////////////////
 
-// void NewTimeout_s(script::Global<Function> func, vector<script::Local<Value>> paras, int timeout, ScriptEngine*
-// engine)
+// void NewTimeout_s(script::Global<Function> func, vector<script::Local<Value>> paras, int timeout, ScriptEngine* engine)
 //{
 //     std::vector<script::Global<Value>> tmp;
 //     if (paras.size() > 0) {
@@ -291,7 +290,9 @@ bool ClearTimeTask(int id) {
             data.swap(timeTaskMap[id]);
             timeTaskMap.erase(id);
         }
-    } catch (...) { logger.error("Fail in ClearTimeTask"); }
+    } catch (...) {
+        logger.error("Fail in ClearTimeTask");
+    }
     return true;
 }
 
@@ -311,6 +312,8 @@ void LLSERemoveTimeTaskData(ScriptEngine* engine) {
             } else
                 ++it;
         }
-    } catch (...) { logger.info("Fail in LLSERemoveTimeTaskData"); }
+    } catch (...) {
+        logger.info("Fail in LLSERemoveTimeTaskData");
+    }
     tmpMap.clear();
 }

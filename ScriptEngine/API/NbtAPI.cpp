@@ -21,89 +21,98 @@ using namespace std;
 
 //////////////////// Class Definition ////////////////////
 
-ClassDefine<void> NbtStaticBuilder = defineClass("NBT")
-                                         .function("parseSNBT", &NbtStatic::parseSNBT)
-                                         .function("parseBinaryNBT", &NbtStatic::parseBinaryNBT)
-                                         .property("End", &NbtStatic::getType<Tag::Type::End>)
-                                         .property("Byte", &NbtStatic::getType<Tag::Type::Byte>)
-                                         .property("Short", &NbtStatic::getType<Tag::Type::Short>)
-                                         .property("Int", &NbtStatic::getType<Tag::Type::Int>)
-                                         .property("Long", &NbtStatic::getType<Tag::Type::Int64>)
-                                         .property("Float", &NbtStatic::getType<Tag::Type::Float>)
-                                         .property("Double", &NbtStatic::getType<Tag::Type::Double>)
-                                         .property("ByteArray", &NbtStatic::getType<Tag::Type::ByteArray>)
-                                         .property("String", &NbtStatic::getType<Tag::Type::String>)
-                                         .property("List", &NbtStatic::getType<Tag::Type::List>)
-                                         .property("Compound", &NbtStatic::getType<Tag::Type::Compound>)
+ClassDefine<void> NbtStaticBuilder =
+    defineClass("NBT")
+        .function("parseSNBT", &NbtStatic::parseSNBT)
+        .function("parseBinaryNBT", &NbtStatic::parseBinaryNBT)
+        .property("End", &NbtStatic::getType<Tag::Type::End>)
+        .property("Byte", &NbtStatic::getType<Tag::Type::Byte>)
+        .property("Short", &NbtStatic::getType<Tag::Type::Short>)
+        .property("Int", &NbtStatic::getType<Tag::Type::Int>)
+        .property("Long", &NbtStatic::getType<Tag::Type::Int64>)
+        .property("Float", &NbtStatic::getType<Tag::Type::Float>)
+        .property("Double", &NbtStatic::getType<Tag::Type::Double>)
+        .property("ByteArray", &NbtStatic::getType<Tag::Type::ByteArray>)
+        .property("String", &NbtStatic::getType<Tag::Type::String>)
+        .property("List", &NbtStatic::getType<Tag::Type::List>)
+        .property("Compound", &NbtStatic::getType<Tag::Type::Compound>)
 
-                                         // For Compatibility
-                                         .function("createTag", &NbtStatic::newTag)
-                                         .function("newTag", &NbtStatic::newTag)
-                                         .build();
+        // For Compatibility
+        .function("createTag", &NbtStatic::newTag)
+        .function("newTag", &NbtStatic::newTag)
+        .build();
 
-ClassDefine<NbtEndClass> NbtEndClassBuilder = defineClass<NbtEndClass>("NbtEnd")
-                                                  .constructor(&NbtEndClass::constructor)
-                                                  .instanceFunction("getType", &NbtEndClass::getType)
-                                                  .instanceFunction("toString", &NbtEndClass::toString)
-                                                  .instanceFunction("set", &NbtEndClass::set)
-                                                  .instanceFunction("get", &NbtEndClass::get)
-                                                  .build();
+ClassDefine<NbtEndClass> NbtEndClassBuilder =
+    defineClass<NbtEndClass>("NbtEnd")
+        .constructor(&NbtEndClass::constructor)
+        .instanceFunction("getType", &NbtEndClass::getType)
+        .instanceFunction("toString", &NbtEndClass::toString)
+        .instanceFunction("set", &NbtEndClass::set)
+        .instanceFunction("get", &NbtEndClass::get)
+        .build();
 
-ClassDefine<NbtByteClass> NbtByteClassBuilder = defineClass<NbtByteClass>("NbtByte")
-                                                    .constructor(&NbtByteClass::constructor)
-                                                    .instanceFunction("getType", &NbtByteClass::getType)
-                                                    .instanceFunction("toString", &NbtByteClass::toString)
-                                                    .instanceFunction("set", &NbtByteClass::set)
-                                                    .instanceFunction("get", &NbtByteClass::get)
-                                                    .build();
+ClassDefine<NbtByteClass> NbtByteClassBuilder =
+    defineClass<NbtByteClass>("NbtByte")
+        .constructor(&NbtByteClass::constructor)
+        .instanceFunction("getType", &NbtByteClass::getType)
+        .instanceFunction("toString", &NbtByteClass::toString)
+        .instanceFunction("set", &NbtByteClass::set)
+        .instanceFunction("get", &NbtByteClass::get)
+        .build();
 
-ClassDefine<NbtShortClass> NbtShortClassBuilder = defineClass<NbtShortClass>("NbtShort")
-                                                      .constructor(&NbtShortClass::constructor)
-                                                      .instanceFunction("getType", &NbtShortClass::getType)
-                                                      .instanceFunction("toString", &NbtShortClass::toString)
-                                                      .instanceFunction("set", &NbtShortClass::set)
-                                                      .instanceFunction("get", &NbtShortClass::get)
-                                                      .build();
+ClassDefine<NbtShortClass> NbtShortClassBuilder =
+    defineClass<NbtShortClass>("NbtShort")
+        .constructor(&NbtShortClass::constructor)
+        .instanceFunction("getType", &NbtShortClass::getType)
+        .instanceFunction("toString", &NbtShortClass::toString)
+        .instanceFunction("set", &NbtShortClass::set)
+        .instanceFunction("get", &NbtShortClass::get)
+        .build();
 
-ClassDefine<NbtIntClass> NbtIntClassBuilder = defineClass<NbtIntClass>("NbtInt")
-                                                  .constructor(&NbtIntClass::constructor)
-                                                  .instanceFunction("getType", &NbtIntClass::getType)
-                                                  .instanceFunction("toString", &NbtIntClass::toString)
-                                                  .instanceFunction("set", &NbtIntClass::set)
-                                                  .instanceFunction("get", &NbtIntClass::get)
-                                                  .build();
+ClassDefine<NbtIntClass> NbtIntClassBuilder =
+    defineClass<NbtIntClass>("NbtInt")
+        .constructor(&NbtIntClass::constructor)
+        .instanceFunction("getType", &NbtIntClass::getType)
+        .instanceFunction("toString", &NbtIntClass::toString)
+        .instanceFunction("set", &NbtIntClass::set)
+        .instanceFunction("get", &NbtIntClass::get)
+        .build();
 
-ClassDefine<NbtLongClass> NbtLongClassBuilder = defineClass<NbtLongClass>("NbtLong")
-                                                    .constructor(&NbtLongClass::constructor)
-                                                    .instanceFunction("getType", &NbtLongClass::getType)
-                                                    .instanceFunction("toString", &NbtLongClass::toString)
-                                                    .instanceFunction("set", &NbtLongClass::set)
-                                                    .instanceFunction("get", &NbtLongClass::get)
-                                                    .build();
+ClassDefine<NbtLongClass> NbtLongClassBuilder =
+    defineClass<NbtLongClass>("NbtLong")
+        .constructor(&NbtLongClass::constructor)
+        .instanceFunction("getType", &NbtLongClass::getType)
+        .instanceFunction("toString", &NbtLongClass::toString)
+        .instanceFunction("set", &NbtLongClass::set)
+        .instanceFunction("get", &NbtLongClass::get)
+        .build();
 
-ClassDefine<NbtFloatClass> NbtFloatClassBuilder = defineClass<NbtFloatClass>("NbtFloat")
-                                                      .constructor(&NbtFloatClass::constructor)
-                                                      .instanceFunction("getType", &NbtFloatClass::getType)
-                                                      .instanceFunction("toString", &NbtFloatClass::toString)
-                                                      .instanceFunction("set", &NbtFloatClass::set)
-                                                      .instanceFunction("get", &NbtFloatClass::get)
-                                                      .build();
+ClassDefine<NbtFloatClass> NbtFloatClassBuilder =
+    defineClass<NbtFloatClass>("NbtFloat")
+        .constructor(&NbtFloatClass::constructor)
+        .instanceFunction("getType", &NbtFloatClass::getType)
+        .instanceFunction("toString", &NbtFloatClass::toString)
+        .instanceFunction("set", &NbtFloatClass::set)
+        .instanceFunction("get", &NbtFloatClass::get)
+        .build();
 
-ClassDefine<NbtDoubleClass> NbtDoubleClassBuilder = defineClass<NbtDoubleClass>("NbtDouble")
-                                                        .constructor(&NbtDoubleClass::constructor)
-                                                        .instanceFunction("getType", &NbtDoubleClass::getType)
-                                                        .instanceFunction("toString", &NbtDoubleClass::toString)
-                                                        .instanceFunction("set", &NbtDoubleClass::set)
-                                                        .instanceFunction("get", &NbtDoubleClass::get)
-                                                        .build();
+ClassDefine<NbtDoubleClass> NbtDoubleClassBuilder =
+    defineClass<NbtDoubleClass>("NbtDouble")
+        .constructor(&NbtDoubleClass::constructor)
+        .instanceFunction("getType", &NbtDoubleClass::getType)
+        .instanceFunction("toString", &NbtDoubleClass::toString)
+        .instanceFunction("set", &NbtDoubleClass::set)
+        .instanceFunction("get", &NbtDoubleClass::get)
+        .build();
 
-ClassDefine<NbtStringClass> NbtStringClassBuilder = defineClass<NbtStringClass>("NbtString")
-                                                        .constructor(&NbtStringClass::constructor)
-                                                        .instanceFunction("getType", &NbtStringClass::getType)
-                                                        .instanceFunction("toString", &NbtStringClass::toString)
-                                                        .instanceFunction("set", &NbtStringClass::set)
-                                                        .instanceFunction("get", &NbtStringClass::get)
-                                                        .build();
+ClassDefine<NbtStringClass> NbtStringClassBuilder =
+    defineClass<NbtStringClass>("NbtString")
+        .constructor(&NbtStringClass::constructor)
+        .instanceFunction("getType", &NbtStringClass::getType)
+        .instanceFunction("toString", &NbtStringClass::toString)
+        .instanceFunction("set", &NbtStringClass::set)
+        .instanceFunction("get", &NbtStringClass::get)
+        .build();
 
 ClassDefine<NbtByteArrayClass> NbtByteArrayClassBuilder =
     defineClass<NbtByteArrayClass>("NbtByteArray")
@@ -114,28 +123,29 @@ ClassDefine<NbtByteArrayClass> NbtByteArrayClassBuilder =
         .instanceFunction("get", &NbtByteArrayClass::get)
         .build();
 
-ClassDefine<NbtListClass> NbtListClassBuilder = defineClass<NbtListClass>("NbtList")
-                                                    .constructor(&NbtListClass::constructor)
-                                                    .instanceFunction("getType", &NbtListClass::getType)
-                                                    .instanceFunction("toString", &NbtListClass::toString)
-                                                    .instanceFunction("getSize", &NbtListClass::getSize)
-                                                    .instanceFunction("getTypeOf", &NbtListClass::getTypeOf)
-                                                    .instanceFunction("setEnd", &NbtListClass::setEnd)
-                                                    .instanceFunction("setByte", &NbtListClass::setByte)
-                                                    .instanceFunction("setInt", &NbtListClass::setInt)
-                                                    .instanceFunction("setShort", &NbtListClass::setShort)
-                                                    .instanceFunction("setLong", &NbtListClass::setLong)
-                                                    .instanceFunction("setFloat", &NbtListClass::setFloat)
-                                                    .instanceFunction("setDouble", &NbtListClass::setDouble)
-                                                    .instanceFunction("setString", &NbtListClass::setString)
-                                                    .instanceFunction("setByteArray", &NbtListClass::setByteArray)
-                                                    .instanceFunction("setTag", &NbtListClass::setTag)
-                                                    .instanceFunction("addTag", &NbtListClass::addTag)
-                                                    .instanceFunction("removeTag", &NbtListClass::removeTag)
-                                                    .instanceFunction("getData", &NbtListClass::getData)
-                                                    .instanceFunction("getTag", &NbtListClass::getTag)
-                                                    .instanceFunction("toArray", &NbtListClass::toArray)
-                                                    .build();
+ClassDefine<NbtListClass> NbtListClassBuilder =
+    defineClass<NbtListClass>("NbtList")
+        .constructor(&NbtListClass::constructor)
+        .instanceFunction("getType", &NbtListClass::getType)
+        .instanceFunction("toString", &NbtListClass::toString)
+        .instanceFunction("getSize", &NbtListClass::getSize)
+        .instanceFunction("getTypeOf", &NbtListClass::getTypeOf)
+        .instanceFunction("setEnd", &NbtListClass::setEnd)
+        .instanceFunction("setByte", &NbtListClass::setByte)
+        .instanceFunction("setInt", &NbtListClass::setInt)
+        .instanceFunction("setShort", &NbtListClass::setShort)
+        .instanceFunction("setLong", &NbtListClass::setLong)
+        .instanceFunction("setFloat", &NbtListClass::setFloat)
+        .instanceFunction("setDouble", &NbtListClass::setDouble)
+        .instanceFunction("setString", &NbtListClass::setString)
+        .instanceFunction("setByteArray", &NbtListClass::setByteArray)
+        .instanceFunction("setTag", &NbtListClass::setTag)
+        .instanceFunction("addTag", &NbtListClass::addTag)
+        .instanceFunction("removeTag", &NbtListClass::removeTag)
+        .instanceFunction("getData", &NbtListClass::getData)
+        .instanceFunction("getTag", &NbtListClass::getTag)
+        .instanceFunction("toArray", &NbtListClass::toArray)
+        .build();
 
 ClassDefine<NbtCompoundClass> NbtCompoundClassBuilder =
     defineClass<NbtCompoundClass>("NbtCompound")
@@ -166,11 +176,13 @@ ClassDefine<NbtCompoundClass> NbtCompoundClassBuilder =
 
 //////////////////// Classes NbtEnd ////////////////////
 
-NbtEndClass::NbtEndClass(const Local<Object>& scriptObj, std::unique_ptr<EndTag> p) : ScriptClass(scriptObj) {
+NbtEndClass::NbtEndClass(const Local<Object>& scriptObj, std::unique_ptr<EndTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
-NbtEndClass::NbtEndClass(std::unique_ptr<EndTag> p) : ScriptClass(ScriptClass::ConstructFromCpp<NbtEndClass>{}) {
+NbtEndClass::NbtEndClass(std::unique_ptr<EndTag> p)
+: ScriptClass(ScriptClass::ConstructFromCpp<NbtEndClass>{}) {
     this->nbt = std::move(p);
 }
 
@@ -243,11 +255,13 @@ Local<Value> NbtEndClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtByte ////////////////////
 
-NbtByteClass::NbtByteClass(const Local<Object>& scriptObj, std::unique_ptr<ByteTag> p) : ScriptClass(scriptObj) {
+NbtByteClass::NbtByteClass(const Local<Object>& scriptObj, std::unique_ptr<ByteTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
-NbtByteClass::NbtByteClass(std::unique_ptr<ByteTag> p) : ScriptClass(ScriptClass::ConstructFromCpp<NbtByteClass>{}) {
+NbtByteClass::NbtByteClass(std::unique_ptr<ByteTag> p)
+: ScriptClass(ScriptClass::ConstructFromCpp<NbtByteClass>{}) {
     this->nbt = std::move(p);
 }
 
@@ -320,11 +334,13 @@ Local<Value> NbtByteClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtInt ////////////////////
 
-NbtIntClass::NbtIntClass(const Local<Object>& scriptObj, std::unique_ptr<IntTag> p) : ScriptClass(scriptObj) {
+NbtIntClass::NbtIntClass(const Local<Object>& scriptObj, std::unique_ptr<IntTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
-NbtIntClass::NbtIntClass(std::unique_ptr<IntTag> p) : ScriptClass(ScriptClass::ConstructFromCpp<NbtIntClass>{}) {
+NbtIntClass::NbtIntClass(std::unique_ptr<IntTag> p)
+: ScriptClass(ScriptClass::ConstructFromCpp<NbtIntClass>{}) {
     this->nbt = std::move(p);
 }
 
@@ -397,7 +413,8 @@ Local<Value> NbtIntClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtShort ////////////////////
 
-NbtShortClass::NbtShortClass(const Local<Object>& scriptObj, std::unique_ptr<ShortTag> p) : ScriptClass(scriptObj) {
+NbtShortClass::NbtShortClass(const Local<Object>& scriptObj, std::unique_ptr<ShortTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
@@ -475,11 +492,13 @@ Local<Value> NbtShortClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtLong ////////////////////
 
-NbtLongClass::NbtLongClass(const Local<Object>& scriptObj, std::unique_ptr<Int64Tag> p) : ScriptClass(scriptObj) {
+NbtLongClass::NbtLongClass(const Local<Object>& scriptObj, std::unique_ptr<Int64Tag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
-NbtLongClass::NbtLongClass(std::unique_ptr<Int64Tag> p) : ScriptClass(ScriptClass::ConstructFromCpp<NbtLongClass>{}) {
+NbtLongClass::NbtLongClass(std::unique_ptr<Int64Tag> p)
+: ScriptClass(ScriptClass::ConstructFromCpp<NbtLongClass>{}) {
     this->nbt = std::move(p);
 }
 
@@ -552,7 +571,8 @@ Local<Value> NbtLongClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtFloat ////////////////////
 
-NbtFloatClass::NbtFloatClass(const Local<Object>& scriptObj, std::unique_ptr<FloatTag> p) : ScriptClass(scriptObj) {
+NbtFloatClass::NbtFloatClass(const Local<Object>& scriptObj, std::unique_ptr<FloatTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
@@ -630,7 +650,8 @@ Local<Value> NbtFloatClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtDouble ////////////////////
 
-NbtDoubleClass::NbtDoubleClass(const Local<Object>& scriptObj, std::unique_ptr<DoubleTag> p) : ScriptClass(scriptObj) {
+NbtDoubleClass::NbtDoubleClass(const Local<Object>& scriptObj, std::unique_ptr<DoubleTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
@@ -708,7 +729,8 @@ Local<Value> NbtDoubleClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtString ////////////////////
 
-NbtStringClass::NbtStringClass(const Local<Object>& scriptObj, std::unique_ptr<StringTag> p) : ScriptClass(scriptObj) {
+NbtStringClass::NbtStringClass(const Local<Object>& scriptObj, std::unique_ptr<StringTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
@@ -868,11 +890,13 @@ Local<Value> NbtByteArrayClass::set(const Arguments& args) {
 
 //////////////////// Classes NbtList ////////////////////
 
-NbtListClass::NbtListClass(const Local<Object>& scriptObj, std::unique_ptr<ListTag> p) : ScriptClass(scriptObj) {
+NbtListClass::NbtListClass(const Local<Object>& scriptObj, std::unique_ptr<ListTag> p)
+: ScriptClass(scriptObj) {
     this->nbt = std::move(p);
 }
 
-NbtListClass::NbtListClass(std::unique_ptr<ListTag> p) : ScriptClass(ScriptClass::ConstructFromCpp<NbtListClass>{}) {
+NbtListClass::NbtListClass(std::unique_ptr<ListTag> p)
+: ScriptClass(ScriptClass::ConstructFromCpp<NbtListClass>{}) {
     this->nbt = std::move(p);
 }
 
@@ -1514,7 +1538,9 @@ Local<Value> NbtCompoundClass::getTypeOf(const Arguments& args) {
         auto key = args[0].toStr();
 
         return Number::newNumber(int(list.at(key).getTagType()));
-    } catch (const out_of_range& e) { return Local<Value>(); }
+    } catch (const out_of_range& e) {
+        return Local<Value>();
+    }
     CATCH("Fail in NBT GetTypeOf!");
 }
 
@@ -1716,7 +1742,9 @@ Local<Value> NbtCompoundClass::getData(const Arguments& args) {
         auto key = args[0].toStr();
 
         return Tag2Value(list.at(key).asTag());
-    } catch (const out_of_range& e) { return Local<Value>(); }
+    } catch (const out_of_range& e) {
+        return Local<Value>();
+    }
     CATCH("Fail in NBT GetData!")
 }
 
@@ -1767,7 +1795,9 @@ Local<Value> NbtCompoundClass::getTag(const Arguments& args) {
                 break;
         }
         return res;
-    } catch (const out_of_range& e) { return Local<Value>(); }
+    } catch (const out_of_range& e) {
+        return Local<Value>();
+    }
     CATCH("Fail in NBT GetTag!");
 }
 
@@ -1961,12 +1991,7 @@ Local<Value> NbtStatic::parseBinaryNBT(const Arguments& args) {
 //////////////////// Helper ////////////////////
 
 bool IsNbtClass(Local<Value> value) {
-    return IsInstanceOf<NbtEndClass>(value) || IsInstanceOf<NbtByteClass>(value) ||
-           IsInstanceOf<NbtShortClass>(value) || IsInstanceOf<NbtIntClass>(value) ||
-           IsInstanceOf<NbtLongClass>(value) || IsInstanceOf<NbtFloatClass>(value) ||
-           IsInstanceOf<NbtDoubleClass>(value) || IsInstanceOf<NbtStringClass>(value) ||
-           IsInstanceOf<NbtByteArrayClass>(value) || IsInstanceOf<NbtListClass>(value) ||
-           IsInstanceOf<NbtCompoundClass>(value);
+    return IsInstanceOf<NbtEndClass>(value) || IsInstanceOf<NbtByteClass>(value) || IsInstanceOf<NbtShortClass>(value) || IsInstanceOf<NbtIntClass>(value) || IsInstanceOf<NbtLongClass>(value) || IsInstanceOf<NbtFloatClass>(value) || IsInstanceOf<NbtDoubleClass>(value) || IsInstanceOf<NbtStringClass>(value) || IsInstanceOf<NbtByteArrayClass>(value) || IsInstanceOf<NbtListClass>(value) || IsInstanceOf<NbtCompoundClass>(value);
 }
 
 

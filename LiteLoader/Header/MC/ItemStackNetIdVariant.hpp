@@ -8,8 +8,7 @@
 struct ItemStackNetIdTag;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
-enum ItemStackNetIdType : unsigned char
-{
+enum ItemStackNetIdType : unsigned char {
     ItemStackNetId_TypedServerNetId = 0,
     ItemStackRequestId_TypedClientNetId = 1,
     ItemStackLegacyRequestId_TypedClientNetId = 2,
@@ -19,36 +18,34 @@ enum ItemStackNetIdType : unsigned char
 struct ItemStackNetIdVariant {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
     std::variant<
         TypedServerNetId<ItemStackNetIdTag, int, 0>, TypedClientNetId<ItemStackRequestIdTag, int, 0>,
         TypedClientNetId<ItemStackLegacyRequestIdTag, int, 0>>
         id;
-   
-	
+
+
 #undef AFTER_EXTRA
 
 public:
     MCAPI ItemStackNetIdVariant();
-    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant &&);
-    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const &);
-    MCAPI void deserialize(class ReadOnlyBinaryStream &);
+    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant&&);
+    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const&);
+    MCAPI void deserialize(class ReadOnlyBinaryStream&);
     MCAPI bool hasServerNetId() const;
     MCAPI bool isValid() const;
-    MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant &&);
-    MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant const &);
-    MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
-    MCAPI struct ItemStackNetIdVariant & operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
-    MCAPI bool operator==(struct ItemStackNetIdVariant const &) const;
-    MCAPI void serialize(class BinaryStream &) const;
+    MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant&&);
+    MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&);
+    MCAPI struct ItemStackNetIdVariant& operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
+    MCAPI struct ItemStackNetIdVariant& operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
+    MCAPI bool operator==(struct ItemStackNetIdVariant const&) const;
+    MCAPI void serialize(class BinaryStream&) const;
     MCAPI std::string toString() const;
-    MCAPI class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const * tryGetLegacyRequestId() const;
-    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const * tryGetRequestId() const;
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
+    MCAPI class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const* tryGetLegacyRequestId() const;
+    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const* tryGetRequestId() const;
+    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
     MCAPI ~ItemStackNetIdVariant();
 
 protected:
-
 private:
-
 };

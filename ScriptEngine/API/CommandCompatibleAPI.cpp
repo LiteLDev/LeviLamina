@@ -19,8 +19,8 @@ using namespace std;
 //////////////////// Helper ////////////////////
 
 bool RegisterCmd(const string& cmd, const string& describe, int cmdLevel) {
-    ::Global<CommandRegistry>->registerCommand(cmd, describe.c_str(), (CommandPermissionLevel)cmdLevel,
-                                               {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+    ::Global<CommandRegistry>->registerCommand(cmd, describe.c_str(), (CommandPermissionLevel)cmdLevel, {(CommandFlagValue)0},
+                                               {(CommandFlagValue)0x80});
     return true;
 }
 
@@ -33,8 +33,7 @@ void LLSERegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, in
         localShareData->playerCmdCallbacks[cmd] = {EngineScope::currentEngine(), level, script::Global<Function>(func)};
         globalShareData->playerRegisteredCmd[cmd] = LLSE_BACKEND_TYPE;
     } else {
-        localShareData->consoleCmdCallbacks[cmd] = {EngineScope::currentEngine(), level,
-                                                    script::Global<Function>(func)};
+        localShareData->consoleCmdCallbacks[cmd] = {EngineScope::currentEngine(), level, script::Global<Function>(func)};
         globalShareData->consoleRegisteredCmd[cmd] = LLSE_BACKEND_TYPE;
     }
 
@@ -46,8 +45,12 @@ void LLSERegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, in
 }
 
 bool LLSERemoveCmdRegister(ScriptEngine* engine) {
-    erase_if(localShareData->playerCmdCallbacks, [&engine](auto& data) { return data.second.fromEngine == engine; });
-    erase_if(localShareData->consoleCmdCallbacks, [&engine](auto& data) { return data.second.fromEngine == engine; });
+    erase_if(localShareData->playerCmdCallbacks, [&engine](auto& data) {
+        return data.second.fromEngine == engine;
+    });
+    erase_if(localShareData->consoleCmdCallbacks, [&engine](auto& data) {
+        return data.second.fromEngine == engine;
+    });
     return true;
 }
 // Helper
@@ -98,8 +101,7 @@ bool SendCmdOutput(const std::string& output) {
     string finalOutput(output);
     finalOutput += "\r\n";
 
-    SymCall("??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@"
-            "QEBD_K@Z",
+    SymCall("??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z",
             ostream&, ostream&, const char*, unsigned)(cout, finalOutput.c_str(), finalOutput.size());
     return true;
 }

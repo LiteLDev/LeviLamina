@@ -86,7 +86,9 @@ std::string CustomFormElement::getString() {
 int CustomFormElement::getNumber() {
     try {
         return stoi(value);
-    } catch (...) { return 0; }
+    } catch (...) {
+        return 0;
+    }
 }
 
 bool CustomFormElement::getBool() {
