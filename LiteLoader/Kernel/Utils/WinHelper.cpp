@@ -9,14 +9,13 @@
 
 using namespace std;
 
-string GetLastErrorMessage(DWORD error_message_id)
-{
+string GetLastErrorMessage(DWORD error_message_id) {
     if (error_message_id == 0)
         return "";
 
     LPWSTR message_buffer = nullptr;
-    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
-                  nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
+    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM, nullptr,
+                  error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
     string res = wstr2str(wstring(message_buffer));
     LocalFree(message_buffer);
     return res;
@@ -28,17 +27,17 @@ string GetLastErrorMessage() {
         return "";
 
     LPWSTR message_buffer = nullptr;
-    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
-                  nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR) &message_buffer, 0, nullptr);
+    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM, nullptr,
+                  error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
     string res = wstr2str(wstring(message_buffer));
     LocalFree(message_buffer);
     return res;
 }
 
 // Tool
-wchar_t *str2cwstr(const string &str) {
+wchar_t* str2cwstr(const string& str) {
     auto len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
-    auto *buffer = new wchar_t[len + 1];
+    auto* buffer = new wchar_t[len + 1];
     MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, buffer, len + 1);
     buffer[len] = L'\0';
     return buffer;
@@ -46,7 +45,7 @@ wchar_t *str2cwstr(const string &str) {
 
 #define READ_BUFFER_SIZE 4096
 
-bool NewProcess(const std::string &process, std::function<void(int, std::string)> callback, int timeLimit) {
+bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback, int timeLimit) {
     SECURITY_ATTRIBUTES sa;
     HANDLE hRead, hWrite;
     sa.nLength = sizeof(SECURITY_ATTRIBUTES);
@@ -71,8 +70,8 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
     CloseHandle(hWrite);
     CloseHandle(pi.hThread);
 
-    std::thread([hRead{hRead}, hProcess{pi.hProcess},
-                        callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}]() {
+    std::thread([hRead{hRead}, hProcess{pi.hProcess}, callback{std::move(callback)}, timeLimit{timeLimit},
+                 wCmd{wCmd}]() {
         _set_se_translator(seh_exception::TranslateSEHtoCE);
         if (timeLimit == -1)
             WaitForSingleObject(hProcess, INFINITE);
@@ -96,15 +95,13 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
         CloseHandle(hProcess);
 
         try {
-            if(callback)
-                callback((int) exitCode, strOutput);
-        }
-        catch (const seh_exception &e) {
+            if (callback)
+                callback((int)exitCode, strOutput);
+        } catch (const seh_exception& e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             logger.error("In NewProcess callback");
             PrintCurrentStackTraceback();
-        }
-        catch (...) {
+        } catch (...) {
             logger.error("NewProcess Callback Failed!");
             logger.error("Uncaught Exception Detected!");
             PrintCurrentStackTraceback();
@@ -114,8 +111,7 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
     return true;
 }
 
-std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput)
-{
+std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput) {
     SECURITY_ATTRIBUTES sa;
     HANDLE hRead, hWrite;
     sa.nLength = sizeof(SECURITY_ATTRIBUTES);
@@ -123,8 +119,8 @@ std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit,
     sa.bInheritHandle = TRUE;
 
     if (!CreatePipe(&hRead, &hWrite, &sa, 0))
-        return { -1,"" };
-    STARTUPINFOW si = { 0 };
+        return {-1, ""};
+    STARTUPINFOW si = {0};
     PROCESS_INFORMATION pi;
 
     si.cb = sizeof(STARTUPINFO);
@@ -135,7 +131,7 @@ std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit,
     auto wCmd = str2cwstr(process);
     if (!CreateProcessW(nullptr, wCmd, nullptr, nullptr, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         delete[] wCmd;
-        return { -1,"" };
+        return {-1, ""};
     }
     CloseHandle(hWrite);
     CloseHandle(pi.hThread);
@@ -152,8 +148,7 @@ std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit,
 
     delete[] wCmd;
     GetExitCodeProcess(pi.hProcess, &exitCode);
-    if (!noReadOutput)
-    {
+    if (!noReadOutput) {
         while (true) {
             ZeroMemory(buffer, READ_BUFFER_SIZE);
             if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, nullptr))
@@ -163,24 +158,22 @@ std::pair<int, string> NewProcessSync(const std::string& process, int timeLimit,
     }
     CloseHandle(hRead);
     CloseHandle(pi.hProcess);
-    return { exitCode, strOutput };
+    return {exitCode, strOutput};
 }
 
 string GetModulePath(HMODULE handle) {
-    wchar_t buf[MAX_PATH] = { 0 };
+    wchar_t buf[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), handle, buf, MAX_PATH);
     return wstr2str(std::wstring(buf));
 }
 
-string GetModuleName(HMODULE handle)
-{
-    wchar_t buf[MAX_PATH] = { 0 };
+string GetModuleName(HMODULE handle) {
+    wchar_t buf[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), handle, buf, MAX_PATH);
     return UTF82String(std::filesystem::path(buf).filename().u8string());
 }
 
-inline bool isWine()
-{
+inline bool isWine() {
     HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
     auto pwine_get_version = GetProcAddress(ntdll, "wine_get_version");
     if (pwine_get_version)
@@ -189,8 +182,7 @@ inline bool isWine()
         return false;
 }
 
-bool IsWineEnvironment()
-{
+bool IsWineEnvironment() {
     static bool result = isWine();
     return result;
 }

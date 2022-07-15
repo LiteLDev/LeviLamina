@@ -26,8 +26,7 @@ using namespace std;
 //////////////////// Remote Call ////////////////////
 
 RemoteCall::ValueType pack(Local<Value> value);
-RemoteCall::ValueType pack(Local<Object> value)
-{
+RemoteCall::ValueType pack(Local<Object> value) {
     // Player*, Actor*, ItemStack*, Block*, BlockActor*, Container*, Vec3, BlockPos, CompoundTag*
     if (IsInstanceOf<PlayerClass>(value))
         return PlayerClass::extract(value);
@@ -35,8 +34,7 @@ RemoteCall::ValueType pack(Local<Object> value)
         return EntityClass::extract(value);
     if (IsInstanceOf<ItemClass>(value))
         return ItemClass::extract(value);
-    if (IsInstanceOf<BlockClass>(value))
-    {
+    if (IsInstanceOf<BlockClass>(value)) {
         auto blk = EngineScope::currentEngine()->getNativeInstance<BlockClass>(value);
         return blk->toBlockInstance();
     }
@@ -44,8 +42,7 @@ RemoteCall::ValueType pack(Local<Object> value)
         return BlockEntityClass::extract(value);
     if (IsInstanceOf<ContainerClass>(value))
         return ContainerClass::extract(value);
-    if (IsInstanceOf<FloatPos>(value))
-    {
+    if (IsInstanceOf<FloatPos>(value)) {
         auto pos = FloatPos::extractPos(value);
         return std::make_pair(pos->getVec3(), pos->getDimensionId());
     }
@@ -60,18 +57,15 @@ RemoteCall::ValueType pack(Local<Object> value)
         result.emplace(k, pack(value.get(k)));
     return std::move(result);
 }
-RemoteCall::ValueType pack(Local<Array> value)
-{
+RemoteCall::ValueType pack(Local<Array> value) {
     std::vector<RemoteCall::ValueType> result;
     for (size_t index = 0; index < value.size(); index++)
         result.push_back(pack(value.get(index)));
     return std::move(result);
 }
 
-RemoteCall::ValueType pack(Local<Value> value)
-{
-    switch (value.getKind())
-    {
+RemoteCall::ValueType pack(Local<Value> value) {
+    switch (value.getKind()) {
         case script::ValueKind::kNull:
             return nullptr;
             break;
@@ -81,8 +75,7 @@ RemoteCall::ValueType pack(Local<Value> value)
         case script::ValueKind::kString:
             return value.toStr();
             break;
-        case script::ValueKind::kNumber:
-        {
+        case script::ValueKind::kNumber: {
             auto num = value.asNumber();
             return RemoteCall::NumberType(num.toInt64(), num.toDouble());
             break;
@@ -111,67 +104,52 @@ RemoteCall::ValueType pack(Local<Value> value)
 }
 
 // Player*, Actor*, ItemStack*, Block*, BlockActor*, Container*, Vec3, BlockPos, CompoundTag*
-Local<Value> _extractValue(bool v)
-{
+Local<Value> _extractValue(bool v) {
     return Boolean::newBoolean(v);
 };
-Local<Value> _extractValue(std::string v)
-{
+Local<Value> _extractValue(std::string v) {
     return String::newString(v);
 };
-Local<Value> _extractValue(std::nullptr_t v)
-{
+Local<Value> _extractValue(std::nullptr_t v) {
     return Local<Value>();
 };
-Local<Value> _extractValue(std::string* v)
-{
+Local<Value> _extractValue(std::string* v) {
     return Local<Value>();
 };
-Local<Value> _extractValue(Player* v)
-{
+Local<Value> _extractValue(Player* v) {
     return PlayerClass::newPlayer(v);
 };
-Local<Value> _extractValue(Actor* v)
-{
+Local<Value> _extractValue(Actor* v) {
     return EntityClass::newEntity(v);
 };
-Local<Value> _extractValue(Block* v)
-{
+Local<Value> _extractValue(Block* v) {
     return BlockClass::newBlock(const_cast<Block*>(v), &BlockPos::ZERO, -1);
 };
-Local<Value> _extractValue(BlockActor* const& v)
-{
+Local<Value> _extractValue(BlockActor* const& v) {
     return BlockEntityClass::newBlockEntity(v, -1);
 };
-Local<Value> _extractValue(Container* v)
-{
+Local<Value> _extractValue(Container* v) {
     return ContainerClass::newContainer(v);
 };
-Local<Value> _extractValue(RemoteCall::WorldPosType v)
-{
+Local<Value> _extractValue(RemoteCall::WorldPosType v) {
     return FloatPos::newPos(v.pos, v.dimId);
 };
-Local<Value> _extractValue(RemoteCall::BlockPosType v)
-{
+Local<Value> _extractValue(RemoteCall::BlockPosType v) {
     return IntPos::newPos(v.pos, v.dimId);
 };
-Local<Value> _extractValue(RemoteCall::BlockType v)
-{
+Local<Value> _extractValue(RemoteCall::BlockType v) {
     return BlockClass::newBlock(v.get<BlockInstance>());
 };
-Local<Value> _extractValue(RemoteCall::NumberType v)
-{
+Local<Value> _extractValue(RemoteCall::NumberType v) {
     return Number::newNumber(v.get<double>());
 };
-Local<Value> _extractValue(RemoteCall::ItemType&& v)
-{
+Local<Value> _extractValue(RemoteCall::ItemType&& v) {
     if (v.own)
         return ItemClass::newItem(v.tryGetUniquePtr().release());
     else
         return ItemClass::newItem(const_cast<ItemStack*>(v.ptr));
 };
-Local<Value> _extractValue(RemoteCall::NbtType&& v)
-{
+Local<Value> _extractValue(RemoteCall::NbtType&& v) {
     if (v.own)
         return NbtCompoundClass::pack(v.tryGetUniquePtr());
     else
@@ -180,13 +158,12 @@ Local<Value> _extractValue(RemoteCall::NbtType&& v)
 
 Local<Value> extract(RemoteCall::ValueType&& val);
 
-Local<Value> extractValue(RemoteCall::Value&& val)
-{
+Local<Value> extractValue(RemoteCall::Value&& val) {
     static_assert(std::variant_size_v<RemoteCall::Value> == 13);
-    switch (val.index())
-    {
+    switch (val.index()) {
 #define Extra(index) \
-    case index: return _extractValue(std::move(std::get<index>(val)));
+    case index:      \
+        return _extractValue(std::move(std::get<index>(val)));
         Extra(0);
         Extra(1);
         Extra(2);
@@ -205,28 +182,23 @@ Local<Value> extractValue(RemoteCall::Value&& val)
             break;
     }
 };
-Local<Value> extractValue(std::vector<RemoteCall::ValueType>&& val)
-{
+Local<Value> extractValue(std::vector<RemoteCall::ValueType>&& val) {
     auto arr = Array::newArray();
     for (auto& v : val)
         arr.add(extract(std::move(v)));
     return arr;
 };
-Local<Value> extractValue(std::unordered_map<std::string, RemoteCall::ValueType>&& val)
-{
+Local<Value> extractValue(std::unordered_map<std::string, RemoteCall::ValueType>&& val) {
     auto obj = Object::newObject();
-    for (auto& [k, v] : val)
-    {
+    for (auto& [k, v] : val) {
         obj.set(k, extract(std::move(v)));
     }
     return obj;
 };
 
-Local<Value> extract(RemoteCall::ValueType&& val)
-{
+Local<Value> extract(RemoteCall::ValueType&& val) {
     static_assert(std::variant_size_v<RemoteCall::ValueType::Type> == 3);
-    switch (val.value.index())
-    {
+    switch (val.value.index()) {
         case 0:
             return extractValue(std::move(std::get<0>(val.value)));
         case 1:
@@ -240,45 +212,40 @@ Local<Value> extract(RemoteCall::ValueType&& val)
     }
 }
 
-Local<Value> MakeRemoteCall(const string& nameSpace, const string& funcName, const Arguments& args)
-{
+Local<Value> MakeRemoteCall(const string& nameSpace, const string& funcName, const Arguments& args) {
     auto& func = RemoteCall::importFunc(nameSpace, funcName);
-    if (!func)
-    {
+    if (!func) {
         logger.error("Fail to import! Function [{}::{}] has not been exported!", nameSpace, funcName);
         logger.error("In plugin <{}>", ENGINE_OWN_DATA()->pluginName);
         return Local<Value>();
     }
 
     std::vector<RemoteCall::ValueType> params;
-    for (int i = 0; i < args.size(); ++i)
-    {
+    for (int i = 0; i < args.size(); ++i) {
         params.emplace_back(pack(args[i]));
     }
     return extract(func(std::move(params)));
 }
 
-bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace, const string& funcName)
-{
+bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const string& nameSpace,
+                    const string& funcName) {
     // Putting script::Global value into lambda capture list may cause crash
     // script::Global<Function> callback = script::Global<Function>(func);
     std::string identifier = nameSpace + "::" + funcName;
-    RemoteCall::CallbackFn cb = [engine, identifier /*, scriptCallback = std::move(callback)*/](std::vector<RemoteCall::ValueType> params) -> RemoteCall::ValueType {
+    RemoteCall::CallbackFn cb = [engine, identifier /*, scriptCallback = std::move(callback)*/](
+                                    std::vector<RemoteCall::ValueType> params) -> RemoteCall::ValueType {
         if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
             return "";
         EngineScope enter(engine);
-        try
-        {
+        try {
             auto iter = ENGINE_GET_DATA(engine)->exportFuncs.find(identifier);
-            if (iter == ENGINE_GET_DATA(engine)->exportFuncs.end())
-            {
+            if (iter == ENGINE_GET_DATA(engine)->exportFuncs.end()) {
                 logger.debug("");
                 return "";
             }
             auto scriptCallback = iter->second.callback.get();
             std::vector<script::Local<Value>> scriptParams;
-            for (auto& param : params)
-            {
+            for (auto& param : params) {
                 scriptParams.emplace_back(extract(std::move(param)));
             }
             return pack(scriptCallback.call({}, scriptParams));
@@ -286,21 +253,19 @@ bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const str
         CATCH_WITHOUT_RETURN("Fail in Remote Call");
         return "";
     };
-    if (RemoteCall::exportFunc(nameSpace, funcName, std::move(cb)))
-    {
-        ENGINE_GET_DATA(engine)->exportFuncs.emplace(identifier, RemoteCallData{nameSpace, funcName, script::Global<Function>(func)});
+    if (RemoteCall::exportFunc(nameSpace, funcName, std::move(cb))) {
+        ENGINE_GET_DATA(engine)->exportFuncs.emplace(
+            identifier, RemoteCallData{nameSpace, funcName, script::Global<Function>(func)});
         return true;
     }
     return false;
 }
 
-bool LLSERemoveAllExportedFuncs(ScriptEngine* engine)
-{
+bool LLSERemoveAllExportedFuncs(ScriptEngine* engine) {
     // enter scope to prevent crash in script::Global::~Global()
     EngineScope enter(engine);
     std::vector<std::pair<std::string, std::string>> funcs;
-    for (auto& [key, data] : ENGINE_GET_DATA(engine)->exportFuncs)
-    {
+    for (auto& [key, data] : ENGINE_GET_DATA(engine)->exportFuncs) {
         funcs.emplace_back(data.nameSpace, data.funcName);
     }
     int count = RemoteCall::removeFuncs(std::move(funcs));
@@ -311,49 +276,40 @@ bool LLSERemoveAllExportedFuncs(ScriptEngine* engine)
 
 //////////////////// APIs ////////////////////
 
-Local<Value> LlClass::exportFunc(const Arguments& args)
-{
+Local<Value> LlClass::exportFunc(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
-    try
-    {
+    try {
         std::string nameSpace;
         std::string funcName;
-        if (args.size() > 2)
-        {
+        if (args.size() > 2) {
             CHECK_ARG_TYPE(args[2], ValueKind::kString);
             nameSpace = args[1].toStr();
             funcName = args[2].toStr();
-        }
-        else
-        {
+        } else {
             nameSpace = DEFAULT_REMOTE_CALL_NAME_SPACE;
             funcName = args[1].toStr();
         }
-        return Boolean::newBoolean(LLSEExportFunc(EngineScope::currentEngine(), args[0].asFunction(), nameSpace, funcName));
+        return Boolean::newBoolean(
+            LLSEExportFunc(EngineScope::currentEngine(), args[0].asFunction(), nameSpace, funcName));
     }
     CATCH("Fail in LLSEExport!");
 }
 
-Local<Value> LlClass::importFunc(const Arguments& args)
-{
+Local<Value> LlClass::importFunc(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         std::string nameSpace;
         std::string funcName;
-        if (args.size() > 1)
-        {
+        if (args.size() > 1) {
             CHECK_ARG_TYPE(args[1], ValueKind::kString);
             nameSpace = args[0].toStr();
             funcName = args[1].toStr();
-        }
-        else
-        {
+        } else {
             nameSpace = DEFAULT_REMOTE_CALL_NAME_SPACE;
             funcName = args[0].toStr();
         }
@@ -366,23 +322,18 @@ Local<Value> LlClass::importFunc(const Arguments& args)
     CATCH("Fail in LLSEImport!")
 }
 
-Local<Value> LlClass::hasFuncExported(const Arguments& args)
-{
+Local<Value> LlClass::hasFuncExported(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         std::string nameSpace;
         std::string funcName;
-        if (args.size() > 1)
-        {
+        if (args.size() > 1) {
             CHECK_ARG_TYPE(args[1], ValueKind::kString);
             nameSpace = args[0].toStr();
             funcName = args[1].toStr();
-        }
-        else
-        {
+        } else {
             nameSpace = DEFAULT_REMOTE_CALL_NAME_SPACE;
             funcName = args[0].toStr();
         }

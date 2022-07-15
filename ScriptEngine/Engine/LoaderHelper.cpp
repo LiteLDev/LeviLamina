@@ -25,8 +25,7 @@
 using namespace std;
 
 //远程装载回调
-void RemoteLoadRequest(ModuleMessage& msg)
-{
+void RemoteLoadRequest(ModuleMessage& msg) {
     istringstream sin(msg.getData());
 
     bool isHotLoad;
@@ -39,10 +38,8 @@ void RemoteLoadRequest(ModuleMessage& msg)
     msg.sendResult(ModuleMessage::MessageType::RemoteLoadReturn, string(res ? "1" : "0"));
 }
 
-void RemoteLoadReturn(ModuleMessage& msg)
-{
-    if (msg.getData() == "0")
-    {
+void RemoteLoadReturn(ModuleMessage& msg) {
+    if (msg.getData() == "0") {
         logger.error("Romote Load Failed!");
     }
 }

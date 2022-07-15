@@ -18,18 +18,12 @@ constexpr const char* NoCrashLogger[] = {"AntiCheats"};
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
-namespace LL
-{
-struct CommandLineOption
-{
+namespace LL {
+struct CommandLineOption {
     bool noColorOption = false;
 };
-enum class LLServerStatus
-{
-    Starting, Running, Stopping
-};
-struct LLConfig
-{
+enum class LLServerStatus { Starting, Running, Stopping };
+struct LLConfig {
     bool debugMode = false;
     bool colorLog = true;
     int logLevel = 4;

@@ -3,13 +3,11 @@
 
 struct MYSQL;
 
-namespace DB
-{
+namespace DB {
 
 class MySQLStmt;
 
-class MySQLSession : public Session
-{
+class MySQLSession : public Session {
 
     MYSQL* conn = nullptr;
 
@@ -34,7 +32,6 @@ public:
     SharedPointer<Stmt> operator<<(const std::string& query);
 
     friend class MySQLStmt;
-
 };
 
 } // namespace DB

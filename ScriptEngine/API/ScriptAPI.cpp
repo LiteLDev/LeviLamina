@@ -15,8 +15,7 @@ using namespace std;
 
 //////////////////// APIs ////////////////////
 
-Local<Value> Log(const Arguments& args)
-{
+Local<Value> Log(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
 
     try {
@@ -31,35 +30,63 @@ Local<Value> Log(const Arguments& args)
 }
 
 //#include <LiteLoader/Main/Config.h>
-Local<Value> ColorLog(const Arguments& args)
-{
+Local<Value> ColorLog(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
 
     try {
         std::string prefix = "";
-        switch (H(args[0].asString().toString().c_str()))
-        {
-            case H("dk_blue")  : prefix = "\x1b[34m";  break;
-            case H("dk_green") : prefix = "\x1b[32m";  break;
-            case H("bt_blue")  : prefix = "\x1b[36m";  break;
-            case H("dk_red")   : prefix = "\x1b[31m";  break;
-            case H("purple")   : prefix = "\x1b[35m";  break;
-            case H("dk_yellow"): prefix = "\x1b[33m";  break;
-            case H("grey")     : prefix = "\x1b[37m";  break;
-            case H("sky_blue") : prefix = "\x1b[94m";  break;
-            case H("blue")     : prefix = "\x1b[94m";  break;
-            case H("green")    : prefix = "\x1b[92m"; break;
-            case H("cyan")     : prefix = "\x1b[36m"; break;
-            case H("red")      : prefix = "\x1b[91m"; break;
-            case H("pink")     : prefix = "\x1b[95m"; break;
-            case H("yellow")   : prefix = "\x1b[93m"; break;
-            case H("white")    : prefix = "\x1b[97m"; break;
-            default: 
+        switch (H(args[0].asString().toString().c_str())) {
+            case H("dk_blue"):
+                prefix = "\x1b[34m";
+                break;
+            case H("dk_green"):
+                prefix = "\x1b[32m";
+                break;
+            case H("bt_blue"):
+                prefix = "\x1b[36m";
+                break;
+            case H("dk_red"):
+                prefix = "\x1b[31m";
+                break;
+            case H("purple"):
+                prefix = "\x1b[35m";
+                break;
+            case H("dk_yellow"):
+                prefix = "\x1b[33m";
+                break;
+            case H("grey"):
+                prefix = "\x1b[37m";
+                break;
+            case H("sky_blue"):
+                prefix = "\x1b[94m";
+                break;
+            case H("blue"):
+                prefix = "\x1b[94m";
+                break;
+            case H("green"):
+                prefix = "\x1b[92m";
+                break;
+            case H("cyan"):
+                prefix = "\x1b[36m";
+                break;
+            case H("red"):
+                prefix = "\x1b[91m";
+                break;
+            case H("pink"):
+                prefix = "\x1b[95m";
+                break;
+            case H("yellow"):
+                prefix = "\x1b[93m";
+                break;
+            case H("white"):
+                prefix = "\x1b[97m";
+                break;
+            default:
                 LOG_ERROR_WITH_SCRIPT_INFO("Invalid color!");
                 break;
         }
-        //if (!LL::globalConfig.colorLog)
-        //    prefix = "";
+        // if (!LL::globalConfig.colorLog)
+        //     prefix = "";
         auto& infoOut = ENGINE_OWN_DATA()->logger.info;
         infoOut << prefix;
         for (int i = 1; i < args.size(); ++i)
@@ -70,8 +97,7 @@ Local<Value> ColorLog(const Arguments& args)
     CATCH("Fail in Log!");
 }
 
-Local<Value> FastLog(const Arguments& args)
-{
+Local<Value> FastLog(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
 
     try {
@@ -80,7 +106,7 @@ Local<Value> FastLog(const Arguments& args)
             PrintValue(sout, args[i]);
         sout << endl;
 
-        pool.enqueue([str{ sout.str() }, pluginName{ ENGINE_OWN_DATA()->pluginName }]() {
+        pool.enqueue([str{sout.str()}, pluginName{ENGINE_OWN_DATA()->pluginName}]() {
             Logger fastLogger(pluginName);
             fastLogger.info(str);
         });
@@ -92,14 +118,12 @@ Local<Value> FastLog(const Arguments& args)
 
 //////////////////// APIs ////////////////////
 
-Local<Value> SetTimeout(const Arguments& args)
-{
+Local<Value> SetTimeout(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber)
     try {
         bool isFunc = args[0].getKind() == ValueKind::kFunction;
-        if (!isFunc && args[0].getKind() != ValueKind::kString)
-        {
+        if (!isFunc && args[0].getKind() != ValueKind::kString) {
             LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
@@ -116,15 +140,13 @@ Local<Value> SetTimeout(const Arguments& args)
     CATCH("Fail in SetTimeout!")
 }
 
-Local<Value> SetInterval(const Arguments& args)
-{
+Local<Value> SetInterval(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber)
 
     try {
         bool isFunc = args[0].getKind() == ValueKind::kFunction;
-        if (!isFunc && args[0].getKind() != ValueKind::kString)
-        {
+        if (!isFunc && args[0].getKind() != ValueKind::kString) {
             LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
@@ -133,7 +155,7 @@ Local<Value> SetInterval(const Arguments& args)
         if (timeout <= 0)
             timeout = 1;
 
-        if(isFunc)
+        if (isFunc)
             return Number::newNumber(NewInterval(args[0].asFunction(), {}, timeout));
         else
             return Number::newNumber(NewInterval(args[0].asString(), timeout));
@@ -142,8 +164,7 @@ Local<Value> SetInterval(const Arguments& args)
 }
 
 // ClearInterval
-Local<Value> ClearInterval(const Arguments& args)
-{
+Local<Value> ClearInterval(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber)
 

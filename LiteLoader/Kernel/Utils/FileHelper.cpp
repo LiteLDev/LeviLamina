@@ -25,8 +25,7 @@ FILE* GetFILEfromFstream(std::fstream& fs) {
     return hack(fs.rdbuf());
 }
 
-HANDLE GetHANDLEfromFstream(std::fstream& fs)
-{
+HANDLE GetHANDLEfromFstream(std::fstream& fs) {
     auto cfile = ::_fileno(GetFILEfromFstream(fs));
     return (HANDLE)::_get_osfhandle(cfile);
 }
@@ -42,8 +41,7 @@ std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinar
     if (!fRead.is_open()) {
         return std::nullopt;
     }
-    std::string data((std::istreambuf_iterator<char>(fRead)),
-                     std::istreambuf_iterator<char>());
+    std::string data((std::istreambuf_iterator<char>(fRead)), std::istreambuf_iterator<char>());
     fRead.close();
     return data;
 }
@@ -65,23 +63,20 @@ bool WriteAllFile(const std::string& filePath, const std::string& content, bool 
     return true;
 }
 
-vector<string> GetFileNameList(const std::string& dir)
-{
+vector<string> GetFileNameList(const std::string& dir) {
     std::filesystem::directory_entry d(dir);
     if (!d.is_directory())
         return {};
 
     vector<string> list;
     std::filesystem::directory_iterator deps(d);
-    for (auto& i : deps)
-    {
+    for (auto& i : deps) {
         list.push_back(UTF82String(i.path().filename().u8string()));
     }
     return list;
 }
 
-bool CreateDirs(const string path)
-{
+bool CreateDirs(const string path) {
     std::error_code ec;
     return std::filesystem::create_directories(std::filesystem::path(str2wstr(path)).remove_filename(), ec);
 }

@@ -7,11 +7,9 @@ extern ClassDefine<void> OriginTypeStaticBuilder;
 extern ClassDefine<CommandOriginClass> CommandOriginClassBuilder;
 
 
-class CommandOriginClass : public ScriptClass
-{
+class CommandOriginClass : public ScriptClass {
     CommandOrigin const* ptr;
-    inline CommandOrigin const* get()
-    {
+    inline CommandOrigin const* get() {
         return ptr;
     }
 

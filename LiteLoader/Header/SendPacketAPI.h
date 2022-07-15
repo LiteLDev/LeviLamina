@@ -2,15 +2,13 @@
 #include "MC/BinaryStream.hpp"
 #include "MC/Packet.hpp"
 
-template <int pid, bool batching = true, bool compress = true>
-class NetworkPacket : public Packet {
+template <int pid, bool batching = true, bool compress = true> class NetworkPacket : public Packet {
 public:
     string_view view;
     NetworkPacket() {
         incompressible = compress;
     }
-    NetworkPacket(string_view sv)
-        : view(sv) {
+    NetworkPacket(string_view sv) : view(sv) {
         incompressible = compress;
     }
     inline virtual ~NetworkPacket() {

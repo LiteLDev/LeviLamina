@@ -17,4 +17,4 @@ LIAPI void SetSimpleFormBuilderData(unsigned formId, std::shared_ptr<Form::Simpl
 
 LIAPI void SetCustomFormBuilderData(unsigned formId, std::shared_ptr<Form::CustomForm> data);
 
-LIAPI void HandleFormPacket(Player *player, unsigned formId, const string &data);
+LIAPI void HandleFormPacket(Player* player, unsigned formId, const string& data);

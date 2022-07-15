@@ -4,29 +4,19 @@
 #include <AllowListAPI.h>
 #include <Utils/FileHelper.h>
 #include <MC/AllowListFile.hpp>
-#pragma warning(disable: 26812)
+#pragma warning(disable : 26812)
 
 Logger allowListLogger("AllowList");
 
-AllowListManager::AllowListManager()
-{
+AllowListManager::AllowListManager() {
     allowList = nlohmann::json::array();
-    if (std::filesystem::exists("allowlist.json"))
-    {
+    if (std::filesystem::exists("allowlist.json")) {
         auto content = ReadAllFile("allowlist.json");
-        if (content.has_value())
-        {
-            try
-            {
+        if (content.has_value()) {
+            try {
                 allowList = nlohmann::json::parse(content.value());
-            }
-            catch (std::exception e)
-            {
-                allowListLogger.error("Failed to parse allowlist.json: {}", e.what());
-            }
-        }
-        else
-        {
+            } catch (std::exception e) { allowListLogger.error("Failed to parse allowlist.json: {}", e.what()); }
+        } else {
             allowListLogger.error("Failed to read allowlist.json");
         }
         return;
@@ -34,36 +24,27 @@ AllowListManager::AllowListManager()
     allowListLogger.warn("allowlist.json is not found");
 }
 
-void AllowListManager::save()
-{
+void AllowListManager::save() {
     WriteAllFile("allowlist.json", allowList.dump());
 }
 
-size_t AllowListManager::size()
-{
+size_t AllowListManager::size() {
     return allowList.size();
 }
 
-bool AllowListManager::has(const std::string& name, const xuid_t& xuid)
-{
+bool AllowListManager::has(const std::string& name, const xuid_t& xuid) {
     size_t _;
     return has(name, xuid, _);
 }
 
-bool AllowListManager::has(const std::string& name, const xuid_t& xuid, size_t& index)
-{
-    for (int i = 0; i < allowList.size(); i++)
-    {
+bool AllowListManager::has(const std::string& name, const xuid_t& xuid, size_t& index) {
+    for (int i = 0; i < allowList.size(); i++) {
         auto& p = allowList[i];
-        if (p["name"] == name)
-        {
-            if (!xuid.empty() && p.count("xuid") && p.at("xuid") == xuid)
-            {
+        if (p["name"] == name) {
+            if (!xuid.empty() && p.count("xuid") && p.at("xuid") == xuid) {
                 index = i;
                 return true;
-            }
-            else if (xuid.empty())
-            {
+            } else if (xuid.empty()) {
                 index = i;
                 return true;
             }
@@ -72,13 +53,10 @@ bool AllowListManager::has(const std::string& name, const xuid_t& xuid, size_t& 
     return false;
 }
 
-AllowListManager& AllowListManager::add(const std::string& name, const xuid_t& xuid, bool ignore)
-{
-    try
-    {
+AllowListManager& AllowListManager::add(const std::string& name, const xuid_t& xuid, bool ignore) {
+    try {
         nlohmann::json j{{"name", name}, {"ignoresPlayerLimit", ignore}};
-        if (!xuid.empty())
-        {
+        if (!xuid.empty()) {
             j.emplace("xuid", xuid);
         }
         allowList.push_back(j);
@@ -87,41 +65,26 @@ AllowListManager& AllowListManager::add(const std::string& name, const xuid_t& x
             allowListLogger.warn("Added player \"{}\" to AllowList with ignoresPlayerLimit on", name);
         else
             allowListLogger.info("Added player \"{}\" to AllowList", name);
-    }
-    catch (std::exception e)
-    {
-        allowListLogger.error("Failed to add player to AllowList: {}", e.what());
-    }
+    } catch (std::exception e) { allowListLogger.error("Failed to add player to AllowList: {}", e.what()); }
     return *this;
 }
 
-AllowListManager& AllowListManager::remove(const std::string& name, const xuid_t& xuid)
-{
-    try
-    {
+AllowListManager& AllowListManager::remove(const std::string& name, const xuid_t& xuid) {
+    try {
         size_t i = -1;
-        if (has(name, xuid, i))
-        {
+        if (has(name, xuid, i)) {
             allowList.erase(i);
             save();
             allowListLogger.info("Removed player \"{}\" from AllowList", name);
-        }
-        else
-        {
+        } else {
             allowListLogger.error("Failed to remove player from AllowList: Target player is not found");
         }
-    }
-    catch (std::exception e)
-    {
-        allowListLogger.error("Failed to remove player from AllowList: {}", e.what());
-    }
+    } catch (std::exception e) { allowListLogger.error("Failed to remove player from AllowList: {}", e.what()); }
     return *this;
 }
 
-void AllowListManager::reload()
-{
-    if (Global<AllowListFile>)
-    {
+void AllowListManager::reload() {
+    if (Global<AllowListFile>) {
         Global<AllowListFile>->reload();
     }
 }

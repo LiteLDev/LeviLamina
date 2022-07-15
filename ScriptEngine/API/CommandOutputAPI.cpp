@@ -19,54 +19,45 @@ ClassDefine<CommandOutputClass> CommandOutputClassBuilder =
 //////////////////// APIs ////////////////////
 
 CommandOutputClass::CommandOutputClass(CommandOutput* p)
-    : ScriptClass(ScriptClass::ConstructFromCpp<CommandOutputClass>{})
-    , ptr(p){};
+: ScriptClass(ScriptClass::ConstructFromCpp<CommandOutputClass>{}), ptr(p){};
 
-Local<Object> CommandOutputClass::newCommandOutput(CommandOutput* p)
-{
+Local<Object> CommandOutputClass::newCommandOutput(CommandOutput* p) {
     auto newp = new CommandOutputClass(p);
     return newp->getScriptObject();
 }
 
-//MCAPI bool empty() const;
-Local<Value> CommandOutputClass::empty()
-{
-    try
-    {
+// MCAPI bool empty() const;
+Local<Value> CommandOutputClass::empty() {
+    try {
         return Boolean::newBoolean(get()->empty());
     }
     CATCH("Fail in empty!");
 }
 
 
-    //MCAPI int getSuccessCount() const;
-Local<Value> CommandOutputClass::getSuccessCount()
-{
-    try
-    {
+// MCAPI int getSuccessCount() const;
+Local<Value> CommandOutputClass::getSuccessCount() {
+    try {
         return Number::newNumber(get()->getSuccessCount());
     }
     CATCH("Fail in getSuccessCount!");
 };
 
-//MCAPI enum CommandOutputType getType() const;
-//Local<Value> CommandOutputClass::getType()
+// MCAPI enum CommandOutputType getType() const;
+// Local<Value> CommandOutputClass::getType()
 //{
-//    try
-//    {
-//        return String::newString(magic_enum::enum_name(get()->getType()));
-//    }
-//    CATCH("Fail in getType!");
-//};
+//     try
+//     {
+//         return String::newString(magic_enum::enum_name(get()->getType()));
+//     }
+//     CATCH("Fail in getType!");
+// };
 
-//MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const&);
-//MCAPI void success();
-Local<Value> CommandOutputClass::success(const Arguments& args)
-{
-    try
-    {
-        if (args.size() == 0)
-        {
+// MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const&);
+// MCAPI void success();
+Local<Value> CommandOutputClass::success(const Arguments& args) {
+    try {
+        if (args.size() == 0) {
             get()->success();
             return Boolean::newBoolean(true);
         }
@@ -78,10 +69,8 @@ Local<Value> CommandOutputClass::success(const Arguments& args)
     CATCH("Fail in success!");
 };
 
-Local<Value> CommandOutputClass::addMessage(const Arguments& args)
-{
-    try
-    {
+Local<Value> CommandOutputClass::addMessage(const Arguments& args) {
+    try {
         CHECK_ARG_TYPE(args[0], ValueKind::kString);
         auto msg = args[0].toStr();
         get()->addMessage(msg);
@@ -90,13 +79,11 @@ Local<Value> CommandOutputClass::addMessage(const Arguments& args)
     CATCH("Fail in addMessage!");
 };
 
-//MCAPI void error(std::string const&, std::vector<class CommandOutputParameter> const&);
-Local<Value> CommandOutputClass::error(const Arguments& args)
-{
+// MCAPI void error(std::string const&, std::vector<class CommandOutputParameter> const&);
+Local<Value> CommandOutputClass::error(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    try
-    {
+    try {
         auto msg = args[0].toStr();
         get()->error(msg);
         return Boolean::newBoolean(true);
@@ -104,13 +91,9 @@ Local<Value> CommandOutputClass::error(const Arguments& args)
     CATCH("Fail in error!");
 };
 
-Local<Value> CommandOutputClass::toString(const Arguments& args)
-{
-    try
-    {
+Local<Value> CommandOutputClass::toString(const Arguments& args) {
+    try {
         return String::newString("<CommandOutput>");
     }
     CATCH("Fail in toString!");
 };
-
-

@@ -14,18 +14,14 @@ public:
     LIAPI class AABB toAABB() const;
 
 
-    inline BoundingBox(class BoundingBox const& k)
-        : min(k.min)
-        , max(k.max){};
-    inline BoundingBox(BlockPos const& p1, BlockPos const& p2)
-        : min(p1)
-        , max(p2){};
-    inline BoundingBox()
-        : min(BlockPos::MIN)
-        , max(BlockPos::MIN){};
+    inline BoundingBox(class BoundingBox const& k) : min(k.min), max(k.max){};
+    inline BoundingBox(BlockPos const& p1, BlockPos const& p2) : min(p1), max(p2){};
+    inline BoundingBox() : min(BlockPos::MIN), max(BlockPos::MIN){};
 
     inline BlockPos& operator[](int index) {
-        if (index < 0 || index > 1) { return (&min)[0]; }
+        if (index < 0 || index > 1) {
+            return (&min)[0];
+        }
         return (&min)[index];
     }
 
@@ -72,7 +68,9 @@ public:
     inline void forEachBlockInBox(const std::function<void(const BlockPos&)>& todo) {
         for (int y = min.y; y <= max.y; y++)
             for (int x = min.x; x <= max.x; x++)
-                for (int z = min.z; z <= max.z; z++) { todo({x, y, z}); }
+                for (int z = min.z; z <= max.z; z++) {
+                    todo({x, y, z});
+                }
     }
 
     inline BoundingBox merge(BoundingBox const& a) {

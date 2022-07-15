@@ -10,7 +10,7 @@
 #include "ChunkPos.hpp"
 #include "ChunkBlockPos.hpp"
 
-typedef std::string        xuid_t;
+typedef std::string xuid_t;
 typedef unsigned long long QWORD;
 
 namespace mce {
@@ -18,10 +18,10 @@ class UUID {
     uint64_t a, b;
 
 public:
-    MCAPI std::string            asString() const;
-    MCAPI static UUID            fromString(std::string const&);
-    MCAPI bool                   isEmpty() const;
-    MCAPI static UUID            seedFromString(std::string const&);
+    MCAPI std::string asString() const;
+    MCAPI static UUID fromString(std::string const&);
+    MCAPI bool isEmpty() const;
+    MCAPI static UUID seedFromString(std::string const&);
     MCAPI static class mce::UUID EMPTY;
 
     inline operator bool() const {
@@ -34,21 +34,9 @@ public:
     float g;
     float b;
     float a;
-    Color()
-        : r(0.0f)
-        , g(0.0f)
-        , b(0.0f)
-        , a(0.0f){};
-    Color(float r, float g, float b, float a = 1)
-        : r(r)
-        , g(g)
-        , b(b)
-        , a(a){};
-    Color(int ir, int ig, int ib, int ia = 255)
-        : r(ir / 255.0f)
-        , g(ig / 255.0f)
-        , b(ib / 255.0f)
-        , a(ia / 255.0f){};
+    Color() : r(0.0f), g(0.0f), b(0.0f), a(0.0f){};
+    Color(float r, float g, float b, float a = 1) : r(r), g(g), b(b), a(a){};
+    Color(int ir, int ig, int ib, int ia = 255) : r(ir / 255.0f), g(ig / 255.0f), b(ib / 255.0f), a(ia / 255.0f){};
 
     inline operator bool() const {
         return !(*this == NIL);
@@ -56,24 +44,24 @@ public:
 
     LIAPI double distanceTo(mce::Color const& dst) const;
     LIAPI std::string toConsoleCode(bool foreground = true) const;
-    LIAPI std::string             toNearestColorCode() const;
+    LIAPI std::string toNearestColorCode() const;
     LIAPI static class mce::Color fromConsoleCode(std::string const&);
     LIAPI static class mce::Color fromColorCode(std::string const&);
-    LIAPI class mce::Color        sRGBToLinear() const;
-    LIAPI class mce::Color        LinearTosRGB() const;
-    LIAPI class mce::Color        LinearToXYZ() const;
-    LIAPI class mce::Color        XYZToLinear() const;
-    LIAPI class mce::Color        XYZToLab() const;
-    LIAPI class mce::Color        LabToXYZ() const;
-    LIAPI double                  deltaE76(mce::Color const& dst) const; // 2.3 for JND
-    LIAPI double                  deltaE94(mce::Color const& dst) const; // 1.0 for JND
-    LIAPI double                  deltaE00(mce::Color const& dst) const; // 1.0 for JND
+    LIAPI class mce::Color sRGBToLinear() const;
+    LIAPI class mce::Color LinearTosRGB() const;
+    LIAPI class mce::Color LinearToXYZ() const;
+    LIAPI class mce::Color XYZToLinear() const;
+    LIAPI class mce::Color XYZToLab() const;
+    LIAPI class mce::Color LabToXYZ() const;
+    LIAPI double deltaE76(mce::Color const& dst) const; // 2.3 for JND
+    LIAPI double deltaE94(mce::Color const& dst) const; // 1.0 for JND
+    LIAPI double deltaE00(mce::Color const& dst) const; // 1.0 for JND
 
     MCAPI static mce::Color const NIL;
     MCAPI static class mce::Color fromHexString(std::string const&);
-    MCAPI bool                    operator==(class mce::Color const&) const;
-    MCAPI int                     toABGR(void) const;
-    MCAPI int                     toARGB(void) const;
+    MCAPI bool operator==(class mce::Color const&) const;
+    MCAPI int toABGR(void) const;
+    MCAPI int toARGB(void) const;
     MCAPI std::string toHexString(void) const;
 
     inline Vec3 toVec3() const {
@@ -216,8 +204,7 @@ namespace std {
 template <>
 struct hash<mce::Color> {
     std::size_t operator()(mce::Color const& c) const noexcept {
-        return (std::hash<float>()(c.r) ^ std::hash<float>()(c.g) ^
-                std::hash<float>()(c.b) ^ std::hash<float>()(c.a));
+        return (std::hash<float>()(c.r) ^ std::hash<float>()(c.g) ^ std::hash<float>()(c.b) ^ std::hash<float>()(c.a));
     }
 };
 
@@ -404,7 +391,7 @@ struct SubChunkStorageUnit {
 template <typename T, typename T2, int unk>
 class TypedServerNetId {
 public:
-    T2     netId;
+    T2 netId;
     inline operator T2() {
         return netId;
     }
@@ -517,8 +504,7 @@ template <typename T>
 class ToFloatFunction;
 
 template <typename T>
-class TypedScreenCapabilities {
-};
+class TypedScreenCapabilities {};
 
 template <typename T, typename T2, typename T3, typename T4 = class UNK>
 class ViewedEntityContextT;
@@ -589,7 +575,7 @@ template <typename T1>
 class WildcardCommandSelector;
 
 // enum
-
+// clang-format off
 enum class ContainerType : char {
     INVENTORY              = -1,
     NONE                   = -9,
@@ -1213,10 +1199,10 @@ enum class InventorySourceType {
     UntrackedInteractionUI = 100,
     NONIMPLEMENTEDTODO     = 99999
 };
-
+// clang-format on
 template <typename T>
 struct InvertableFilter {
-    T    value;
+    T value;
     bool inverted;
 };
 

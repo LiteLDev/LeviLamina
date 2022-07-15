@@ -4,25 +4,23 @@
 #include <MC/Level.hpp>
 
 LIAPI std::string Container::getTypeName() {
-    //ContainerType type = dAccess<ContainerType>(this, 8); //IDA Container::Container
+    // ContainerType type = dAccess<ContainerType>(this, 8); //IDA Container::Container
     ContainerType type = getContainerType();
     return getContainerTypeName(type);
 }
 
-//Safely add items to the container
-LIAPI bool Container::addItem_s(ItemStack* item)
-{
+// Safely add items to the container
+LIAPI bool Container::addItem_s(ItemStack* item) {
     if (!hasRoomForItem(*item))
         return false;
     addItem(*((ItemStack*)item)->clone_s());
     return true;
 }
 
-LIAPI bool Container::addItemToFirstEmptySlot_s(ItemStack* item)
-{
+LIAPI bool Container::addItemToFirstEmptySlot_s(ItemStack* item) {
     return addItemToFirstEmptySlot(*((ItemStack*)item)->clone_s());
 }
-//Safely remove items to the container
+// Safely remove items to the container
 LIAPI bool Container::removeItem_s(int slot, unsigned int number) {
     if (slot >= getSize())
         return false;
@@ -41,9 +39,9 @@ LIAPI std::vector<const ItemStack*> Container::getAllSlots() {
     return getSlots();
 }
 
-LIAPI int Container::getSize()
-{
-    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
+LIAPI int Container::getSize() {
+    // return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA
+    // Container::getSlotCopies
     return getContainerSize();
 }
 

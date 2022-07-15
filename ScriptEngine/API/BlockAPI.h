@@ -7,13 +7,12 @@
 
 //////////////////// Classes ////////////////////
 class Block;
-class BlockClass : public ScriptClass
-{
+class BlockClass : public ScriptClass {
 private:
-    Block *block;
+    Block* block;
 
     // Pre data
-    std::string name,type;
+    std::string name, type;
     int id;
     IntVec4 pos;
 
@@ -22,12 +21,10 @@ public:
     BlockClass(Block const* p, BlockPos bp, int dim);
 
     void preloadData(BlockPos bp, int dim);
-    Block* get()
-    {
+    Block* get() {
         return block;
     }
-    BlockInstance toBlockInstance()
-    {
+    BlockInstance toBlockInstance() {
         return BlockInstance::createBlockInstance(block, pos.getBlockPos(), pos.getDimensionId());
     }
 

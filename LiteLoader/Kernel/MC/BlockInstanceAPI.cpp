@@ -11,15 +11,10 @@
 #include <MC/Level.hpp>
 #include <MC/ItemInstance.hpp>
 
-BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID)
-    : block(block)
-    , pos(pos)
-    , dim(dimID) {
+BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID) : block(block), pos(pos), dim(dimID) {
 }
 
-BlockInstance::BlockInstance(BlockPos pos, int dimID)
-    : pos(pos)
-    , dim(dimID) {
+BlockInstance::BlockInstance(BlockPos pos, int dimID) : pos(pos), dim(dimID) {
     block = Level::getBlock(pos, dimID);
 }
 
@@ -48,16 +43,15 @@ bool BlockInstance::hasContainer() {
 }
 
 class DropperBlockActor;
-Container* BlockInstance::getContainer()
-{
+Container* BlockInstance::getContainer() {
     auto be = getBlockEntity();
     if (!be)
         return nullptr;
-    return VirtualCall<Container*>(be, 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
+    return VirtualCall<Container*>(be,
+                                   224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
 }
 
-bool BlockInstance::breakNaturally(bool isCreativeMode)
-{
+bool BlockInstance::breakNaturally(bool isCreativeMode) {
     auto canDestroy = isCreativeMode || (block->getDestroySpeed() >= 0.0f);
     if (!canDestroy)
         return false;
@@ -70,8 +64,7 @@ bool BlockInstance::breakNaturally(bool isCreativeMode)
     return out;
 }
 
-bool BlockInstance::breakNaturally(ItemStack* tool, bool isCreativeMode)
-{
+bool BlockInstance::breakNaturally(ItemStack* tool, bool isCreativeMode) {
     auto canDestroy = isCreativeMode || (block->getDestroySpeed() >= 0.0f);
     if (!canDestroy)
         return false;

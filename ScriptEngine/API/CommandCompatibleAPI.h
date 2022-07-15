@@ -6,11 +6,12 @@
 //////////////////// LLSE Event Callbacks ////////////////////
 
 class Player;
-//helper
+// helper
 std::vector<std::string> SplitCmdLine(const std::string& paras);
 
 // 命令回调查询
-std::string LLSEFindCmdReg(bool isPlayerCmd, const std::string& cmd, std::vector<std::string>& receiveParas, bool* fromOtherEngine);
+std::string LLSEFindCmdReg(bool isPlayerCmd, const std::string& cmd, std::vector<std::string>& receiveParas,
+                           bool* fromOtherEngine);
 // 删除指定引擎的所有命令
 bool LLSERemoveCmdRegister(script::ScriptEngine* engine);
 

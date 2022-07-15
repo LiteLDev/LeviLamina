@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 
-namespace LL
-{
+namespace LL {
 void LoadMain();
 } // namespace LL

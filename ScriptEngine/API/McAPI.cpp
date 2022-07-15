@@ -1,5 +1,5 @@
 #include "McAPI.h"
-
+// clang-format off
 ClassDefine<void> McClassBuilder =
 	defineClass("mc")
 		.function("getBDSVersion", &McClass::getBDSVersion)
@@ -42,3 +42,4 @@ ClassDefine<void> McClassBuilder =
 		.function("crash", &McClass::crashBDS)
         	.function("setMaxPlayers", &McClass::setMaxNumPlayers)
         	.build();
+// clang-format on

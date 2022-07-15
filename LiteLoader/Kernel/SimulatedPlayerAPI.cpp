@@ -7,10 +7,9 @@
 #include <MC/OwnerStorageEntity.hpp>
 #include <MC/Level.hpp>
 
-//static_assert(sizeof(ScriptNavigationResult) == 32);
+// static_assert(sizeof(ScriptNavigationResult) == 32);
 
-bool SimulatedPlayer::simulateDestory()
-{
+bool SimulatedPlayer::simulateDestory() {
     FaceID face = FaceID::Unknown;
     auto blockIns = getBlockFromViewVector(face);
     if (blockIns.isNull())
@@ -18,53 +17,45 @@ bool SimulatedPlayer::simulateDestory()
     return simulateDestroyBlock(blockIns.getPosition(), (ScriptModuleMinecraft::ScriptFacing)face);
 }
 
-bool SimulatedPlayer::simulateUseItem()
-{
+bool SimulatedPlayer::simulateUseItem() {
     auto slot = getSelectedItemSlot();
     return simulateUseItemInSlot(slot);
 }
 
-bool SimulatedPlayer::simulateSneak()
-{
+bool SimulatedPlayer::simulateSneak() {
     setSneaking(true);
     return isSneaking();
 }
 
-bool SimulatedPlayer::simulateStopSneaking()
-{
+bool SimulatedPlayer::simulateStopSneaking() {
     setSneaking(false);
     return !isSneaking();
 }
 
 template <>
-class OwnerPtrT<struct EntityRefTraits>
-{
+class OwnerPtrT<struct EntityRefTraits> {
     char filler[24];
 
 public:
     MCAPI ~OwnerPtrT();
 
-    inline OwnerPtrT(OwnerPtrT&& right) noexcept
-    {
+    inline OwnerPtrT(OwnerPtrT&& right) noexcept {
         void (OwnerPtrT::*rv)(OwnerPtrT && right);
         *((void**)&rv) = dlsym("??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z");
         (this->*rv)(std::move(right));
     }
-    inline OwnerPtrT& operator=(OwnerPtrT&& right) noexcept
-    {
+    inline OwnerPtrT& operator=(OwnerPtrT&& right) noexcept {
         void (OwnerPtrT::*rv)(OwnerPtrT && right);
         *((void**)&rv) = dlsym("??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z");
         (this->*rv)(std::move(right));
     }
 
-    inline SimulatedPlayer* tryGetSimulatedPlayer(bool b = false)
-    {
+    inline SimulatedPlayer* tryGetSimulatedPlayer(bool b = false) {
         auto& context = dAccess<StackResultStorageEntity, 0>(this).getStackRef();
         return SimulatedPlayer::tryGetFromEntity(context, b);
     }
 
-    inline bool hasValue() const
-    {
+    inline bool hasValue() const {
         if (!this)
             return false;
         return dAccess<bool, 16>(this);
@@ -72,15 +63,14 @@ public:
     // inline bool isValid()
 };
 
-class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position, class AutomaticID<class Dimension, int> dimensionId)
-{
+class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class BlockPos const& position,
+                                               class AutomaticID<class Dimension, int> dimensionId) {
     // auto handler = Global<Minecraft>->getServerNetworkHandler();
     // return create(name, position, dimensionId, Global<Minecraft>->getServerNetworkHandler());
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(name, dimensionId, "");
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
-    if (player /* && player->isSimulatedPlayer() */)
-    {
+    if (player /* && player->isSimulatedPlayer() */) {
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));
@@ -96,13 +86,12 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Bl
 }
 
 
-class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class AutomaticID<class Dimension, int> dimensionId)
-{
+class SimulatedPlayer* SimulatedPlayer::create(std::string const& name,
+                                               class AutomaticID<class Dimension, int> dimensionId) {
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(name, dimensionId, "");
     auto player = ownerPtr.tryGetSimulatedPlayer();
 
-    if (player /* && player->isSimulatedPlayer() */)
-    {
+    if (player /* && player->isSimulatedPlayer() */) {
         player->postLoad(/* isNewPlayer */ true);
         Level& level = player->getLevel();
         level.addUser(std::move(ownerPtr));

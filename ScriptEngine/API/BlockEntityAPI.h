@@ -5,17 +5,15 @@
 
 //////////////////// Classes ////////////////////
 class BlockActor;
-class BlockEntityClass : public ScriptClass
-{
+class BlockEntityClass : public ScriptClass {
 private:
     BlockActor* blockEntity;
     int dim;
 
 public:
-    explicit BlockEntityClass(BlockActor* be,int dim);
+    explicit BlockEntityClass(BlockActor* be, int dim);
 
-    BlockActor* get()
-    {
+    BlockActor* get() {
         return blockEntity;
     }
 
