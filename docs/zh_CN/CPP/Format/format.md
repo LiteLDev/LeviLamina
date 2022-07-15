@@ -45,6 +45,14 @@
 
 &emsp;&emsp;需要注意的是，对于不利于人类识别的定义方法请不要使用。例如，在同一行定义某个类的变量与变量指针。
 
+&emsp;&emsp;命名应当使用英文全称，注意动词的时态，除非大家公认的缩写，否则不要使用。
+
+&emsp;&emsp;类中的成员应当写在最前端，随后是构造函数，然后进行运算符重载，其余函数写在后面。对于静态成员，应当写在类的末尾。
+
+### 使用括号
+
+&emsp;&emsp;小括号的使用，可以有效的帮助开发者分辨逻辑，运算语句的顺序，在进行不同层级的符号运算时，如位移的同时进行加减法，逻辑语句中加入取非运算，比较大小与加减乘除混合使用等情况时，应当适当的添加小括号增加代码可读性。
+
 ### 缩进
 
 &emsp;&emsp;目前 LL 采用 120 格的代码宽度，并且使用 4 个空格为一个单元的缩进方式，请勿使用 tab 缩进。
@@ -86,10 +94,9 @@
 
 ```cpp
 bool *Player::eat(ItemStack* item) {
-  if (!item->isTerminator() &&
-      item->isFood() && this->isHungry()) {
-    ... some long code ....
-  }
+    if ((!item->isTerminator()) && item->isFood() && this->isHungry()) {
+        ... some long code ....
+    }
 
   return false;
 }
@@ -99,15 +106,9 @@ bool *Player::eat(ItemStack* item) {
 ```cpp
 bool *Player::eat(ItemStack* item) {
 
-  if (item->isTerminator()) {
-  return false;
-  }
-  if (!item->isFood()) {
-  return false;
-  }
-  if (!this->isHungry()) {
-  return false;
-  }
+    if (item->isTerminator() || (!item->isFood()) || (!this->isHungry())) {
+        return false;
+    }
 
     ... some long code ....
 }
@@ -171,6 +172,10 @@ if (containsFood(BarList)) {
 }
 
 ```
+
+### 善用匿名命名空间
+
+&emsp;&emsp;如上面的 containsFood ，可能仅仅需要使用一次，那么请将其放入实现文件的匿名命名空间中，不应当将其暴露给外部。
 
 ### 不要使用 using namespace std
 
