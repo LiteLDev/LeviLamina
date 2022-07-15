@@ -381,7 +381,7 @@
     <ClCompile Include="Kernel\MC\BiomeAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="MolangAPI.cpp">
+    <ClCompile Include="Kernel\MC\MolangAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
   </ItemGroup>
