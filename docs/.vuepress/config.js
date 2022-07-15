@@ -137,7 +137,7 @@ module.exports = {
       ],
       '/zh_CN/CPP/': [
         'Format/format',
-        'Commit/commit'
+        'Commit/Commit'
       ],
       '/zh_CN/': 'auto'
     },
