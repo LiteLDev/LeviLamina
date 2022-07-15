@@ -22,7 +22,6 @@ AllowShortEnumsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
 BinPackArguments: true
 BinPackParameters: true
-PackConstructorInitializers: BinPack
 ConstructorInitializerIndentWidth: 0
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ColumnLimit: 0
