@@ -85,9 +85,9 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages               | `C++`，`JavaScript`，`Lua`，`Golang`，`.Net` |
+| Supported languages               | `C++`, `JavaScript`, `Lua`, `Golang`, `.Net` |
 | --------------------------------- | -------------------------------------------- |
-| **Upcoming supported  languages** | `Python`，`Ruby`，`TypeScript`               |
+| **Upcoming supported  languages** | `Python`, `Ruby`, `TypeScript`               |
 
 - 📕 Smooth development experience with great compatibility
   - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving features
@@ -144,11 +144,11 @@ docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
 
-Start server: `docker container start liteloader`
-Force stop server(not recommended): `docker container stop liteloader`
-Enter console: `docker attach liteloader`
-Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.
-If you want to manage server files, use `docker volume --help` for more details.
+Start server: `docker container start liteloader`<br>
+Force stop server(not recommended): `docker container stop liteloader`<br>
+Enter console: `docker attach liteloader`<br>
+Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.<br>
+If you want to manage server files, use `docker volume --help` for more details.<br>
 
 Everything's done! Next, you can install **LiteLoader** plugins!
 
@@ -183,7 +183,7 @@ For more **installation and usage guides**,  come to 👉[LiteLoader documentati
 1. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
 1. Copy the plugin to the plugins directory for testing
 
-For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈
+For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈<br>
 If you have a revision request or need to add an API, please contact the author or post an Issue
 
 ### Developing plugins using scripting Languages
@@ -203,19 +203,18 @@ You can also learn plugin development methods and tips here
 
 ### Development Aids - VSCode Development Aids & Complementary Libraries
 
-Use the LiteLoader development helper plugin developed by Moxicat
-Helps you do better with **script plugins**!
+Use the LiteLoader development helper plugin developed by Moxicat<br>
+Helps you do better with **script plugins**!<br>
 Code hint, auto-completion, auto-documentation, error alert, runtime debugging and so on
 
 [Click here](https://www.minebbs.com/resources/llscripthelper.2672/)
-View more description and introduction of this extension
+View more description and introduction of this extension<br>
 VSCode extension store search `LLScriptHelper`, install **LLScriptHelper** and experience it instantly!
 
 ### Development Aids - Blockly-LXL Graphical Development Kit
 
-No programming foundation? Tired of complex language rules?
-Have you ever thought that BDS plug-in development could be as easy as a puzzle?
-
+No programming foundation? Tired of complex language rules?<br>
+Have you ever thought that BDS plug-in development could be as easy as a puzzle?<br>
 Here it is! The Blockly-LXL graphical development kit from pa733 takes the plugin development experience to a new level!
 
 [Click here](https://www.minebbs.com/resources/blockly-lxl.2671/)
@@ -232,7 +231,7 @@ View related installation and usage instructions
 3. Open the `LiteLoader.sln` project file and click on the **Batch Generation** item in the **Generation** menu
 4. Bring up the batch generation dialog, check all the generation checkboxes on the right side of the dialog
 5. When you have finished selecting, click the **Generate** button in the dialog box to perform batch generation
-6. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.
+6. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.<br>
    After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
 
 <br/>
@@ -305,5 +304,5 @@ If you want to reproduce and distribute this framework, you have to get our auth
 |                 [@ShrBox](https://github.com/ShrBox)                 |              [@dreamguxiang](https://github.com/dreamguxiang)              |               [@WangYneos](https://github.com/WangYneos)                |               [@wzy](https://github.com/wzyyyyyyy)                |                [@xiaoqch](https://github.com/xiaoqch)                 |               [@yqs112358](https://github.com/yqs112358)                |                [@Sysca11](https://github.com/Sysca11)                 |               [@RimuruChan](https://github.com/RimuruChan)               |
 
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
-as [CLion](https://www.jetbrains.com/clion/)**.
+as [CLion](https://www.jetbrains.com/clion/)**.<br>
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
