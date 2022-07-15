@@ -23,7 +23,10 @@ public:
     Local<Value> getIP();
     Local<Value> getAvgPing();
     Local<Value> getAvgPacketLoss();
+    Local<Value> getLastPing();
+    Local<Value> getLastPacketLoss();
     Local<Value> getOs();
+    Local<Value> getServerAddress();
     Local<Value> getClientId();
 };
 extern ClassDefine<DeviceClass> DeviceClassBuilder;

@@ -46,6 +46,7 @@
 | pl.name      | 玩家名                      | `String`         |
 | pl.pos       | 玩家所在坐标                | `FloatPos`       |
 | pl.blockPos  | 玩家所在的方块坐标          | `IntPos`         |
+| pl.lastDeathPos  | 玩家上次死亡的坐标 | `IntPos`    |
 | pl.realName  | 玩家的真实名字              | `String`         |
 | pl.xuid      | 玩家Xuid字符串              | `String`         |
 | pl.uuid      | 玩家Uuid字符串              | `String`         |
@@ -60,6 +61,7 @@
 | pl.direction | 玩家当前朝向                | `DirectionAngle` |
 | pl.uniqueId  | 玩家（实体的）唯一标识符    | `String`         |
 | pl.langCode  | 玩家设置的语言的标识符(形如zh_CN) | `String`    |
+| pl.isLoading  | 玩家是否正在加载 | `Bool`    |
 
 这些对象属性都是只读的，无法被修改。其中：
 
@@ -88,13 +90,17 @@
 - 返回值：玩家是否为OP
 - 返回值类型：`Boolean`  
 
-```clike
-[Js]
-//对于一个玩家对象pl
-var open = pl.isOP();
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var open = pl.isOP();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    open = pl:isOP()
+    ```
 
 #### 断开玩家连接  
 
@@ -108,13 +114,17 @@ var open = pl.isOP();
 - 返回值：是否成功断开连接
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.kick();
-[Lua]
-pl:kick()
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.kick();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:kick()
+    ```
 
 #### 发送一个文本消息给玩家  
 
@@ -141,13 +151,17 @@ pl:kick()
 
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.tell("Welcome back ~ ",5);
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    //对于一个玩家对象pl
+    pl.tell("Welcome back ~ ", 5);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:tell("Welcome back ~ ", 5)
+    ```
 
 #### 广播一个文本消息给所有玩家  
 
@@ -172,12 +186,17 @@ pl.tell("Welcome back ~ ",5);
 
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-mc.broadcast("Hello everyone ~ ");
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    mc.broadcast("Hello everyone ~ ");
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    mc.broadcast("Hello everyone ~ ")
+    ```
 
 #### 在屏幕上方显示消息(类似于成就完成)
 
@@ -195,12 +214,17 @@ mc.broadcast("Hello everyone ~ ");
 
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-pl.sendToast("Hello","everyone ~");
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.sendToast("Hello", "everyone ~");
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:sendToast("Hello", "everyone ~")
+    ```
 
 #### 以某个玩家身份执行一条命令 
 
@@ -212,13 +236,17 @@ pl.sendToast("Hello","everyone ~");
 - 返回值：是否执行成功
 - 返回值类型： `Boolean`   
 
-```clike
-[Js]
-//对于一个玩家对象pl
-var open = pl.runcmd("tp ~ ~+50 ~");
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.runcmd("tp ~ ~50 ~");
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:runcmd("tp ~ ~50 ~")
+    ```
 
 #### 以某个玩家身份说话
 
@@ -230,6 +258,17 @@ var open = pl.runcmd("tp ~ ~+50 ~");
 - 返回值：是否执行成功
 - 返回值类型： `Boolean`   
 
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.talkAs("Hello everyone ~ ");
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:talkAs("Hello everyone ~ ")
+    ```
 
 #### 以某个玩家身份向某玩家说话
 
@@ -243,7 +282,17 @@ var open = pl.runcmd("tp ~ ~+50 ~");
 - 返回值：是否执行成功
 - 返回值类型： `Boolean`   
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.talkAs(anotherpl, "Hello ~ ");
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:talkAs(anotherpl, "Hello everyone ~ ")
+    ```
 
 #### 传送玩家至指定位置  
 
@@ -256,13 +305,16 @@ var open = pl.runcmd("tp ~ ~+50 ~");
 - 返回值：是否成功传送
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl，一个坐标对象pos
-pl.teleport(pos);
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    //对于一个玩家对象pl
+    pl.teleport(pos);
+    ```
+  - Lua
+    ```lua
+    pl:teleport(pos)
+    ```
 
 #### 杀死玩家  
 
@@ -271,13 +323,17 @@ pl.teleport(pos);
 - 返回值：是否成功执行
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.kill();
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.kill();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:kill()
+    ```
 
 #### 对玩家造成伤害
 
@@ -291,7 +347,17 @@ pl.kill();
 
 注意，此处造成的伤害为真实伤害，无法被盔甲等保护装备减免
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.hurt(20);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:hurt(20)
+    ```
 
 #### 使指定玩家着火
 
@@ -303,7 +369,17 @@ pl.kill();
 - 返回值：是否成功着火
 - 返回值类型：`Boolean`
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setOnFire(20);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setOnFire(20)
+    ```
 
 #### 重命名玩家  
 
@@ -315,13 +391,17 @@ pl.kill();
 - 返回值：是否重命名成功
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.rename("newname");
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.rename("Steve");
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:rename("Steve")
+    ```
 
 #### 获取玩家当前站立所在的方块
 
@@ -330,7 +410,17 @@ pl.rename("newname");
 - 返回值：当前站立在的方块对象
 - 返回值类型：`Block`
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var bl = pl.getBlockStandingOn();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    bl = pl:getBlockStandingOn()
+    ```
 
 #### 获取玩家对应的设备信息对象
 
@@ -342,7 +432,17 @@ pl.rename("newname");
 设备信息对象储存了与玩家设备有关的某些信息，如设备IP地址、设备类型、网络延迟等信息。  
 关于设备信息对象的其他信息请参考 [设备信息对象 API](zh_CN/Development/GameAPI/Device.md)
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var dv = pl.getDevice();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    dv = pl:getDevice()
+    ```
 
 #### 获取玩家主手中的物品对象
 
@@ -353,7 +453,17 @@ pl.rename("newname");
 
 此处获取的物品对象为引用。也就是说，修改此处返回的物品对象，或使用其API，就相当于直接操作玩家主手中对应的物品
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var it = pl.getHand();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    it = pl:getHand()
+    ```
 
 #### 获取玩家副手的物品对象
 
@@ -364,7 +474,17 @@ pl.rename("newname");
 
 此处获取的物品对象为引用。也就是说，修改此处返回的物品对象，或使用其API，就相当于直接操作玩家副手中对应的物品
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var it = pl.getOffHand();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    it = pl:getOffHand()
+    ```
 
 #### 获取玩家物品栏的容器对象  
 
@@ -375,7 +495,17 @@ pl.rename("newname");
 
 关于容器对象的更多使用，请参考 [容器对象 API文档](zh_CN/Development/GameAPI/Container.md)
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var ct = pl.getInventory();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    ct = pl:getInventory()
+    ```
 
 #### 获取玩家盔甲栏的容器对象  
 
@@ -386,7 +516,17 @@ pl.rename("newname");
 
 关于容器对象的更多使用，请参考 [容器对象 API文档](zh_CN/Development/GameAPI/Container.md)
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var ct = pl.getArmor();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    ct = pl:getArmor()
+    ```
 
 #### 获取玩家末影箱的容器对象  
 
@@ -397,7 +537,17 @@ pl.rename("newname");
 
 关于容器对象的更多使用，请参考 [容器对象 API文档](zh_CN/Development/GameAPI/Container.md)
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var ct = pl.getEnderChest();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    ct = pl:getEnderChest()
+    ```
 
 #### 获取玩家的重生坐标  
 
@@ -406,7 +556,17 @@ pl.rename("newname");
 - 返回值：重生点坐标
 - 返回值类型：`IntPos`
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var pos = pl.getRespawnPosition();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pos = pl:getRespawnPosition()
+    ```
 
 #### 修改玩家的重生坐标  
 
@@ -419,7 +579,15 @@ pl.rename("newname");
 - 返回值：是否成功修改
 - 返回值类型：`Boolean`
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    mc.setRespawnPosition(pos);
+    ```
+  - Lua
+    ```lua
+    mc.setRespawnPosition(pos)
+    ```
 
 #### 给予玩家一个物品
 
@@ -433,7 +601,17 @@ pl.rename("newname");
 
 如果玩家物品栏已满，将返回失败
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.giveItem(item);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:giveItem(item)
+    ```
 
 #### 清除玩家背包中所有指定类型的物品
 
@@ -448,7 +626,17 @@ pl.rename("newname");
 将玩家物品栏、主手、副手、盔甲栏中所有物品的type属性与此字符串进行比较  
 如果相等，则清除此物品
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.clearItem("minecraft:dirt");
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:clearItem("minecraft:dirt")
+    ```
 
 #### 刷新玩家物品栏、盔甲栏
 
@@ -459,7 +647,17 @@ pl.rename("newname");
 
 在修改玩家物品之后，为了促使客户端生效，需要刷新玩家所有的物品
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.refreshItems();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:refreshItems()
+    ```
 
 #### 刷新玩家加载的所有区块
 
@@ -468,7 +666,17 @@ pl.rename("newname");
 - 返回值：是否成功刷新
 - 返回值类型：`Boolean`
 
-<br>
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.refreshChunks();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:refreshChunks()
+    ```
 
 #### 修改玩家操作权限  
 
@@ -489,13 +697,17 @@ pl.rename("newname");
 
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.setPermLevel(1);
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setPermLevel(0);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setPermLevel(0)
+    ```
 
 #### 修改玩家游戏模式
 
@@ -510,31 +722,61 @@ pl.setPermLevel(1);
 
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.setGameMode(1);
-[Lua]
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setGameMode(0);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setGameMode(0)
+    ```
 
-```
-
-#### 提高玩家经验等级 
+#### 提高玩家经验等级
 
 `pl.addLevel(count)`
 
 - 参数：
   - count : `Integer`  
-    要提升的经验等级
+    要提高的经验等级
 - 返回值：是否设置成功
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.addLevel(6);
-[Lua]
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.addLevel(1);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:addLevel(1)
+    ```
 
-```
+#### 降低玩家经验等级
+
+`pl.reduceLevel(count)`
+
+- 参数：
+  - count : `Integer`  
+    要降低的经验等级
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.reduceLevel(1);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:reduceLevel(1)
+    ```
 
 #### 获取玩家经验等级
 
@@ -543,14 +785,39 @@ pl.addLevel(6);
 - 返回值：玩家的经验等级
 - 返回值类型：`Integer`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.getLevel();
-[Lua]
---对于一个玩家对象pl
-pl.getLevel()
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var lv = pl.getLevel();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    lv = pl:getLevel()
+    ```
+
+#### 设置玩家经验等级
+
+`pl.setLevel(count)`
+
+- 参数：
+  - count : `Integer`  
+    要设置的经验等级
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setLevel(1);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setLevel(1)
+    ```
 
 #### 重置玩家经验
 
@@ -559,14 +826,143 @@ pl.getLevel()
 - 返回值：是否设置成功
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.resetLevel();
-[Lua]
---对于一个玩家对象pl
-pl:resetLevel()
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.resetLevel();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:resetLevel()
+    ```
+
+#### 获取玩家当前经验值
+
+`pl.getCurrentExperience()`
+
+- 返回值：玩家当前经验值
+- 返回值类型：`Integer`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.getCurrentExperience();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:getCurrentExperience()
+    ```
+
+#### 设置玩家当前经验值
+
+`pl.setCurrentExperience(count)`
+
+- 参数：
+  - count : `Integer`  
+    要设置的经验值
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setCurrentExperience(1);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setCurrentExperience(1)
+    ```
+
+#### 获取玩家总经验值
+
+`pl.getTotalExperience()`
+
+- 返回值：玩家总经验值
+- 返回值类型：`Integer`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var xp = pl.getTotalExperience();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    xp = pl:getTotalExperience()
+    ```
+
+#### 设置玩家总经验值
+
+`pl.setTotalExperience(count)`
+
+- 参数：
+  - count : `Integer`  
+    要设置的经验值
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setTotalExperience(1);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setTotalExperience(1)
+    ```
+
+#### 提高玩家经验值
+
+`pl.addExperience(count)`
+
+- 参数：
+  - count : `Integer`
+    要提高的经验值
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.addExperience(1);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:addExperience(1)
+    ```
+
+#### 降低玩家经验值
+
+`pl.reduceExperience(count)`
+
+- 参数：
+  - count : `Integer`
+    要降低的经验值
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.reduceExperience(1);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:reduceExperience(1)
+    ```
 
 #### 获取玩家升级所需的经验值
 
@@ -575,35 +971,19 @@ pl:resetLevel()
 - 返回值：玩家升级所需的经验值
 - 返回值类型：`Integer`
 
-注意，此方法在计算时会忽略超出等级的经验值
+注意，此方法在计算时会忽略当前经验值
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.getXpNeededForNextLevel();
-[Lua]
---对于一个玩家对象pl
-pl.getXpNeededForNextLevel()
-```
-
-#### 提高玩家经验值
-
-`pl.addExperience(count)`
-
-- 参数：
-  - count : `Integer`
-    要提升的经验值
-- 返回值：是否设置成功
-- 返回值类型：`Boolean`
-
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.addExperience(6);
-[Lua]
---对于一个玩家对象pl
-pl:addExperience(6)
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    var ndxp = pl.getXpNeededForNextLevel();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    ndxp = pl:getXpNeededForNextLevel()
+    ```
 
 #### 传送玩家至指定服务器  
 
@@ -618,13 +998,17 @@ pl:addExperience(6)
 - 返回值：是否成功传送
 - 返回值类型：`Boolean` 
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.transServer("123.45.67.89",23333);
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+      // 对于一个玩家对象pl
+      pl.transServer("123.45.67.89", 23333);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:transServer("123.45.67.89", 23333)
+    ```
 
 #### 使玩家客户端崩溃
 
@@ -633,14 +1017,17 @@ pl.transServer("123.45.67.89",23333);
 - 返回值：是否成功执行
 - 返回值类型：`Boolean` 
 
-```clike
-//对于一个玩家对象pl
-[Js]
-pl.crash();
-[Lua]
-pl:crash()
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.crash();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:crash()
+    ```
 
 #### 设置玩家自定义侧边栏
 
@@ -660,13 +1047,25 @@ pl:crash()
 
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.setSidebar("title",{"aaaa":3,"bbb":12,"cc":7});
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setSidebar("title", {
+        aaaa: 3,
+        bbb: 12,
+        cc: 7,
+    });
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setSidebar("title", {
+        "aaaa" = 3,
+        "bbb" = 12,
+        "cc" = 7
+    })
+    ```
 
 #### 移除玩家自定义侧边栏
 
@@ -675,13 +1074,17 @@ pl.setSidebar("title",{"aaaa":3,"bbb":12,"cc":7});
 - 返回值：是否成功移除
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.removeSidebar();
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.removeSidebar();
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:removeSidebar()
+    ```
 
 #### 设置玩家看到的自定义Boss血条  
 
@@ -699,13 +1102,17 @@ pl.removeSidebar();
 - 返回值：是否成功设置
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.setBossBar(1145141919,"Hello ~ ",80,0);
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.setBossBar(1145141919, "Hello ~ ", 80, 0);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:setBossBar(1145141919, "Hello ~ ", 80, 0)
+    ```
 
 #### 移除玩家的自定义的指定Boss血条  
 
@@ -717,13 +1124,17 @@ pl.setBossBar(1145141919,"Hello ~ ",80,0);
 - 返回值：是否成功移除
 - 返回值类型：`Boolean`
 
-```clike
-[Js]
-//对于一个玩家对象pl
-pl.removeBossBar(1145141919);
-[Lua]
-
-```
+- 示例：  
+  - JS
+    ```js
+    // 对于一个玩家对象pl
+    pl.removeBossBar(1145141919);
+    ```
+  - Lua
+    ```lua
+    -- 对于一个玩家对象pl
+    pl:removeBossBar(1145141919)
+    ```
 
 #### 获取玩家对应的NBT对象
 
@@ -813,19 +1224,17 @@ pl.removeBossBar(1145141919);
 
 数组中的每一项为一个键 - 值对列表对象`Object`，Attributes对象默认含有`Base` `Current` `DefaultMax` `DefaultMin` `Max` `Min` `Name` 等几种内容 。其内容形如：
 
-```
+```js
 {
-        "Base": 0, 
-        "Current": 0, 
-        "DefaultMax": 1024, 
-        "DefaultMin": -1024, 
-        "Max": 1024, 
-        "Min": -1024, 
-        "Name": "minecraft:luck"
-}, 
+    Base: 0, 
+    Current: 0, 
+    DefaultMax: 1024, 
+    DefaultMin: -1024, 
+    Max: 1024, 
+    Min: -1024, 
+    Name: "minecraft:luck"
+}
 ```
-
-（此处使用Json格式直观地展示）
 
 <br>
 
@@ -1079,8 +1488,55 @@ pl.removeBossBar(1145141919);
 - 返回值：是否能到达指定位置以及导航路径，结构：{isFullPath:`Boolean`,path:`Number[3][]`}
 - 返回值类型：`Object`
 
-参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#navigatetoblock)
-返回值示例：{isFullPath:false,path:[[-8,0,-3],[-7,0,-2],[-6,0,-2],[-5,0,-2],[-4,0,-1],[-3,0,-1],[-2,0,-1],[-1,0,0]]}，
+参考：[mojang-gametest docs](https://docs.microsoft.com/zh-cn/minecraft/creator/scriptapi/mojang-gametest/simulatedplayer#navigatetoblock)  
+返回值示例：
+```js
+{
+    isFullPath: false,
+    path: [
+        [
+            -8,
+            0,
+            -3
+        ],
+        [
+            -7,
+            0,
+            -2
+        ],
+        [
+            -6,
+            0,
+            -2
+        ],
+        [
+            -5,
+            0,
+            -2
+        ],
+        [
+            -4,
+            0,
+            -1
+        ],
+        [
+            -3,
+            0,
+            -1
+        ],
+        [
+            -2,
+            0,
+            -1
+        ],
+        [
+            -1,
+            0,
+            0
+        ]
+      ]
+}
+```
 此数据的目标坐标为(0,2,0)，路径终点为(-1,0,0)，所以isFullPath为false，但由于路径不为空，所以模拟玩家将会移动至(-1,0,0)坐标
 
 

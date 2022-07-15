@@ -24,7 +24,10 @@
 | dv.ip            | 玩家设备的IP地址             | `String`  |
 | dv.avgPing       | 玩家的平均网络延迟时间（ms） | `Integer` |
 | dv.avgPacketLoss | 玩家的平均网络丢包率（%）    | `Float`   |
+| dv.lastPing      | 玩家的网络延迟时间（ms）     | `Integer` |
+| dv.lastPacketLoss| 玩家的网络丢包率（%）        | `Float`   |
 | dv.os            | 玩家设备的操作系统类型       | `String`  |
+| dv.serverAddress | 玩家连接的地址              | `String`  |
 | dv.clientId      | 玩家客户端的识别码ID         | `String`  |
 
 这些对象属性都是只读的，无法被修改 
@@ -33,18 +36,18 @@
 
 | dv.os返回字符串 | 玩家设备的操作系统    |
 | --------------- | --------------------- |
-| `Android`       | 手机安卓Android       |
-| `iOS`           | 手机苹果iOS           |
-| `OSX`           | 电脑苹果OSX           |
-| `Amazon`        | Amazon                |
-| `GearVR`        | GearVR                |
-| `Hololens`      | Hololens              |
-| `Windows10`     | 电脑Windows10         |
-| `Win32`         | 电脑Win32（教育版？） |
-| `TVOS`          | TVOS                  |
-| `PlayStation`   | 主机PlayStation       |
-| `Nintendo`      | 主机Nintendo          |
-| `Xbox`          | 主机Xbox              |
-| `WindowsPhone`  | 手机Windows Phone     |
+| `Android`       | 手机谷歌Android       |
+| `iOS`           | 手机苹果iOS/平板iPadOS           |
+| `OSX`           | 电脑苹果macOS           |
+| `Amazon`        | 平板/电视亚马逊FireOS                |
+| `GearVR`        | 头显三星GearVR                |
+| `Hololens`      | 头显微软HoloLens              |
+| `Windows10`     | 电脑微软Windows         |
+| `Win32`         | 电脑微软Win32（教育版？） |
+| `TVOS`          | 机顶盒苹果tvOS                  |
+| `PlayStation`   | 主机索尼PlayStation       |
+| `Nintendo`      | 掌机任天堂Switch          |
+| `Xbox`          | 主机微软Xbox              |
+| `WindowsPhone`  | 手机微软Windows Mobile     |
 | `Unknown`       | 未知系统              |
 
