@@ -46,6 +46,7 @@ Each player object contains some fixed object properties. For a particular playe
 | pl.name      | Player's name               | `String`         |
 | pl.pos       | Player's coordinates        | `FloatPos`       |
 | pl.blockPos  | The coordinates of the block that the player is standing on.          | `IntPos`         |
+| pl.lastDeathPos  | The coordinates of the block that the player last died.          | `IntPos`         |
 | pl.realName  | Player's Real Name              | `String`         |
 | pl.xuid      | Player Xuid String              | `String`         |
 | pl.uuid      | Player Uuid string              | `String`         |
@@ -59,6 +60,7 @@ Each player object contains some fixed object properties. For a particular playe
 | pl.speed     | Player's current speed               | `Float`          |
 | pl.direction | Player's current orientation         | `DirectionAngle` |
 | pl.uniqueId  | Player's (entity's) unique identifier    | `String`         |
+| pl.isLoading | Player is loading | `Bool`    |
 
 These object properties are read-only and cannot be modified. in:
 
@@ -232,6 +234,7 @@ var open = pl.runcmd("tp ~ ~+50 ~");
 - Return value: Whether the execution was successful.
 - Return value type:  `Boolean`   
 
+<br>
 
 #### Speak to a Player as a Player
 
@@ -398,6 +401,7 @@ For more usage of container objects, please refer to [Container Object API Docum
 - Return value type: `Container`
 
 For more usage of container objects, please refer to [Container Object API Documentation](/en_US/Development/GameAPI/Container.md)
+
 <br>
 
 #### Get the Player’s Respawn Coordinates  
@@ -534,12 +538,23 @@ pl.addLevel(6);
 [Lua]
 
 ```
+#### Decreases Player Experience Level
+
+`pl.reduceLevel(count)`
+
+- Parameters: 
+  - count : `Integer`  
+    The number of experience levels to reduce.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
 
 #### Get Player Experience Level 
 
 `pl.getLevel()`
 
-- Return value: The player's experience level
+- Return value: The player's experience level.
 - Return value type: `Integer`
 
 ```JavaScript
@@ -552,6 +567,17 @@ pl.getLevel();
 --For a `Player` object pl
 pl.getLevel()
 ```
+#### Set Player Experience Level
+
+`pl.setLevel(count)`
+
+- Parameters
+  - count : `Integer`  
+    The number of experience levels to set.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
 
 #### Reset Player Experience
 
@@ -571,27 +597,49 @@ pl.resetLevel();
 pl:resetLevel()
 ```
 
-#### Get the Experience Points Needed for Players to Level Up
+#### Get Player Current Experience Points 
 
-`pl.getXpNeededForNextLevel()`
+`pl.getCurrentExperience()`
 
-- Return value: The amount of experience points required for the player to level up.
+- Return value: The player's current experience points.
 - Return value type: `Integer`
 
-Note that this method ignores the experience value that exceeds the level when calculating.
+<br>
 
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.getXpNeededForNextLevel();
-```
-```Lua
-[Lua]
---For a `Player` object pl
-pl.getXpNeededForNextLevel()
-```
+#### Set Player Current Experience Points
 
-#### Increase Player Experience
+`pl.setCurrentExperience(count)`
+
+- Parameters
+  - count : `Integer`  
+    The number of experience points to set.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
+
+#### Get Player Total Experience Points
+
+`pl.getTotalExperience()`
+
+- Return value: The player's total experience points.
+- Return value type: `Integer`
+
+<br>
+
+#### Set Player Total Experience Points
+
+`pl.getTotalExperience(count)`
+
+- Parameters
+  - count : `Integer`  
+    The number of experience points to set.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
+
+#### Increase Player Experience Points
 
 `pl.addExperience(count)`
 
@@ -610,6 +658,38 @@ pl.addExperience(6);
 [Lua]
 --For a `Player` object pl
 pl:addExperience(6)
+```
+
+#### Decreases Player Experience Points
+
+`pl.reduceExperience(count)`
+
+- Parameters: 
+  - count : `Integer`  
+    The number of experience points to reduce.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
+
+#### Get the Experience Points Needed for Players to Level Up
+
+`pl.getXpNeededForNextLevel()`
+
+- Return value: The amount of experience points required for the player to level up.
+- Return value type: `Integer`
+
+Note that this method ignores the experience value that exceeds the level when calculating.
+
+```Javascript
+[JS]
+//For a `Player` object pl
+pl.getXpNeededForNextLevel();
+```
+```Lua
+[Lua]
+--For a `Player` object pl
+pl.getXpNeededForNextLevel()
 ```
 
 #### Send the Player to the Specified Server  
@@ -650,7 +730,6 @@ pl.crash();
 pl:crash()
 
 ```
-
 #### Set Player Custom Sidebar
 
 `pl.setSidebar(title,data[,sortOrder])`
@@ -822,14 +901,14 @@ Each item in the list of key-value pairs looks like: `"mayfly": 1` etc.
 Each item in the array is a key-value pair list object `Object`, and the Attributes object contains several contents such as `Base` `Current` `DefaultMax` `DefaultMin` `Max` `Min` `Name` by default. Its content looks like:
 ```JSON
 {
-        "Base": 0, 
-        "Current": 0, 
-        "DefaultMax": 1024, 
-        "DefaultMin": -1024, 
-        "Max": 1024, 
-        "Min": -1024, 
-        "Name": "minecraft:luck"
-}, 
+    "Base": 0, 
+    "Current": 0, 
+    "DefaultMax": 1024, 
+    "DefaultMin": -1024, 
+    "Max": 1024, 
+    "Min": -1024, 
+    "Name": "minecraft:luck"
+}
 ```
 
 (Here it's displayed visually using JSON format)

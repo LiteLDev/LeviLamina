@@ -298,6 +298,13 @@ float Player::getAvgPacketLoss() {
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgpacketloss;
 }
 
+float Player::getLastPacketLoss() {
+    if (isSimulatedPlayer()) {
+        return 0.f;
+    }
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().packetloss;
+}
+
 string Player::getClientId() {
     if (isSimulatedPlayer())
         return "";

@@ -35,6 +35,7 @@ ClassDefine<BlockClass> BlockClassBuilder =
         .instanceFunction("hasBlockEntity", &BlockClass::hasBlockEntity)
         .instanceFunction("getBlockEntity", &BlockClass::getBlockEntity)
         .instanceFunction("removeBlockEntity", &BlockClass::removeBlockEntity)
+        .instanceFunction("destroy", &BlockClass::destroyBlock)
 
         // For Compatibility
         .instanceFunction("setTag", &BlockClass::setNbt)
@@ -54,7 +55,7 @@ BlockClass::BlockClass(Block const* p, BlockPos bp, int dim)
     preloadData(bp, dim);
 }
 
-//生成函数
+// generating function
 Local<Object> BlockClass::newBlock(Block const* p, BlockPos const* pos, int dim) {
     auto newp = new BlockClass(p, *pos, dim);
     return newp->getScriptObject();
@@ -84,7 +85,7 @@ Block* BlockClass::extract(Local<Value> v) {
         return nullptr;
 }
 
-//成员函数
+// member function
 void BlockClass::preloadData(BlockPos bp, int dim) {
     name = block->getTypeName(); // TODO
     type = block->getTypeName();
@@ -94,7 +95,7 @@ void BlockClass::preloadData(BlockPos bp, int dim) {
 
 Local<Value> BlockClass::getName() {
     try {
-        // 已预加载
+        // preloaded
         return String::newString(name);
     }
     CATCH("Fail in getBlockName!");
@@ -102,7 +103,7 @@ Local<Value> BlockClass::getName() {
 
 Local<Value> BlockClass::getType() {
     try {
-        // 已预加载
+        // preloaded
         return String::newString(type);
     }
     CATCH("Fail in getBlockType!");
@@ -110,7 +111,7 @@ Local<Value> BlockClass::getType() {
 
 Local<Value> BlockClass::getId() {
     try {
-        // 已预加载
+        // preloaded
         return Number::newNumber(id);
     }
     CATCH("Fail in getBlockId!");
@@ -118,7 +119,7 @@ Local<Value> BlockClass::getId() {
 
 Local<Value> BlockClass::getPos() {
     try {
-        // 已预加载
+        // preloaded
         return IntPos::newPos(pos);
     }
     CATCH("Fail in getBlockPos!");
@@ -126,7 +127,7 @@ Local<Value> BlockClass::getPos() {
 
 Local<Value> BlockClass::getTileData() {
     try {
-        // 已预加载
+        // preloaded
         return Number::newNumber(block->getTileData());
     }
     CATCH("Fail in getTileData!");
@@ -137,6 +138,17 @@ Local<Value> BlockClass::getRawPtr(const Arguments& args) {
         return Number::newNumber((intptr_t)block);
     }
     CATCH("Fail in getRawPtr!");
+}
+
+Local<Value> BlockClass::destroyBlock(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+
+    try {
+        // same as `Level::getBlockInstance(pos.getBlockPos(), pos.dim).breakNaturally()` when drop
+        return Boolean::newBoolean(Global<Level>->destroyBlock(*Level::getBlockSource(pos.dim), pos.getBlockPos(), args[0].asBoolean().value()));
+    }
+    CATCH("Fail in destroyBlock!");
 }
 
 Local<Value> BlockClass::getNbt(const Arguments& args) {
@@ -217,7 +229,7 @@ Local<Value> BlockClass::removeBlockEntity(const Arguments& args) {
     CATCH("Fail in removeBlockEntity!");
 }
 
-//公用API
+// public API
 Local<Value> McClass::getBlock(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
 
@@ -323,14 +335,14 @@ Local<Value> McClass::setBlock(const Arguments& args) {
 
 
         if (block.isString()) {
-            //方块名
+            // block name
             return Boolean::newBoolean(Level::setBlock(pos.getBlockPos(), pos.dim, block.toStr(), tileData));
         } else if (IsInstanceOf<NbtCompoundClass>(block)) {
             // Nbt
             Tag* nbt = NbtCompoundClass::extract(block);
             return Boolean::newBoolean(Level::setBlock(pos.getBlockPos(), pos.dim, (CompoundTag*)nbt));
         } else {
-            //其他方块对象
+            // other block object
             Block* bl = BlockClass::extract(block);
             if (!bl) {
                 LOG_WRONG_ARG_TYPE();

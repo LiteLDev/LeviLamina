@@ -15,7 +15,10 @@ ClassDefine<DeviceClass> DeviceClassBuilder =
         .instanceProperty("ip", &DeviceClass::getIP)
         .instanceProperty("avgPing", &DeviceClass::getAvgPing)
         .instanceProperty("avgPacketLoss", &DeviceClass::getAvgPacketLoss)
+        .instanceProperty("lastPing", &DeviceClass::getLastPing)
+        .instanceProperty("lastPacketLoss", &DeviceClass::getLastPacketLoss)
         .instanceProperty("os", &DeviceClass::getOs)
+        .instanceProperty("serverAddress", &DeviceClass::getServerAddress)
         .instanceProperty("clientId", &DeviceClass::getClientId)
         .build();
 
@@ -72,9 +75,33 @@ Local<Value> DeviceClass::getAvgPacketLoss() {
         if (!player)
             return Local<Value>();
 
-        return Number::newNumber(0); //=================???
+        return Number::newNumber(player->getAvgPacketLoss());
     }
     CATCH("Fail in getAvgPacketLoss!")
+}
+
+Local<Value> DeviceClass::getLastPing() {
+    try {
+        Player* player = getPlayer();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Number::newNumber(player->getLastPing());
+    }
+    CATCH("Fail in getLastPing!")
+}
+
+Local<Value> DeviceClass::getLastPacketLoss() {
+    try {
+        Player* player = getPlayer();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Number::newNumber(player->getLastPacketLoss());
+    }
+    CATCH("Fail in getLastPacketLoss!")
 }
 
 Local<Value> DeviceClass::getOs() {
@@ -86,6 +113,18 @@ Local<Value> DeviceClass::getOs() {
         return String::newString(player->getDeviceName());
     }
     CATCH("Fail in getOs!")
+}
+
+Local<Value> DeviceClass::getServerAddress() {
+    try {
+        Player* player = getPlayer();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return String::newString(player->getServerAddress());
+    }
+    CATCH("Fail in getServerAddress!")
 }
 
 Local<Value> DeviceClass::getClientId() {

@@ -52,5 +52,6 @@ public:
     Local<Value> hasBlockEntity(const Arguments& args);
     Local<Value> getBlockEntity(const Arguments& args);
     Local<Value> removeBlockEntity(const Arguments& args);
+    Local<Value> destroyBlock(const Arguments& args);
 };
 extern ClassDefine<BlockClass> BlockClassBuilder;

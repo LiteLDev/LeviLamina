@@ -25,6 +25,7 @@ public:
     Local<Value> getName();
     Local<Value> getPos();
     Local<Value> getBlockPos();
+    Local<Value> getLastDeathPos();
     Local<Value> getRealName();
     Local<Value> getXuid();
     Local<Value> getUuid();
@@ -39,6 +40,7 @@ public:
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
+    Local<Value> isLoading();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
@@ -84,10 +86,17 @@ public:
     Local<Value> setBossBar(const Arguments& args);
     Local<Value> removeBossBar(const Arguments& args);
     Local<Value> addLevel(const Arguments& args);
+    Local<Value> reduceLevel(const Arguments& args);
     Local<Value> getLevel(const Arguments& arg);
+    Local<Value> setLevel(const Arguments& arg);
     Local<Value> resetLevel(const Arguments& arg);
-    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
+    Local<Value> reduceExperience(const Arguments& args);
+    Local<Value> getCurrentExperience(const Arguments& arg);
+    Local<Value> setCurrentExperience(const Arguments& arg);
+    Local<Value> getTotalExperience(const Arguments& arg);
+    Local<Value> setTotalExperience(const Arguments& arg);
+    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
 
     Local<Value> sendSimpleForm(const Arguments& args);
     Local<Value> sendModalForm(const Arguments& args);
