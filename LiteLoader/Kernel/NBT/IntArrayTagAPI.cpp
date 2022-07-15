@@ -1,22 +1,18 @@
 #include <MC/IntArrayTag.hpp>
 
-TagMemoryChunk& IntArrayTag::value()
-{
+TagMemoryChunk& IntArrayTag::value() {
     return dAccess<TagMemoryChunk, 8>(this);
 }
-IntArrayTag& IntArrayTag::operator=(TagMemoryChunk const& val)
-{
+IntArrayTag& IntArrayTag::operator=(TagMemoryChunk const& val) {
     value() = val;
     return *this;
 }
 
-std::unique_ptr<IntArrayTag> IntArrayTag::create()
-{
+std::unique_ptr<IntArrayTag> IntArrayTag::create() {
     return std::unique_ptr<IntArrayTag>((IntArrayTag*)Tag::newTag(Tag::Type::IntArray).release());
 }
 
-std::unique_ptr<IntArrayTag> IntArrayTag::create(TagMemoryChunk const& val)
-{
+std::unique_ptr<IntArrayTag> IntArrayTag::create(TagMemoryChunk const& val) {
     if (val.size % 4)
         return nullptr;
     auto tag = Tag::newTag(Tag::Type::IntArray);
@@ -24,21 +20,18 @@ std::unique_ptr<IntArrayTag> IntArrayTag::create(TagMemoryChunk const& val)
     return std::unique_ptr<IntArrayTag>((IntArrayTag*)tag.release());
 }
 
-std::unique_ptr<IntArrayTag> IntArrayTag::create(int data[], size_t size)
-{
+std::unique_ptr<IntArrayTag> IntArrayTag::create(int data[], size_t size) {
     TagMemoryChunk tmc((char*)data, size * 4);
     return create(tmc);
 }
 
-bool IntArrayTag::set(TagMemoryChunk const& val)
-{
+bool IntArrayTag::set(TagMemoryChunk const& val) {
     if (getTagType() != Tag::Type::IntArray)
         return false;
     value() = val;
     return true;
 }
 
-TagMemoryChunk IntArrayTag::get()
-{
+TagMemoryChunk IntArrayTag::get() {
     return value();
 }

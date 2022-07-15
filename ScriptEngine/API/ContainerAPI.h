@@ -4,16 +4,14 @@
 
 //////////////////// Classes ////////////////////
 class Container;
-class ContainerClass : public ScriptClass
-{
+class ContainerClass : public ScriptClass {
 private:
     Container* container;
 
 public:
     explicit ContainerClass(Container* p);
 
-    Container* get()
-    {
+    Container* get() {
         return container;
     }
 

@@ -8,25 +8,16 @@ using namespace cyanray;
 
 //////////////////// Types ////////////////////
 
-enum class WSClientEvents : char
-{
-    onTextReceived = 0, onBinaryReceived, onError, onLostConnection,
-    EVENT_COUNT
-};
+enum class WSClientEvents : char { onTextReceived = 0, onBinaryReceived, onError, onLostConnection, EVENT_COUNT };
 
-struct ListenerListType
-{
+struct ListenerListType {
     ScriptEngine* engine;
     script::Global<Function> func;
 };
 
-enum class HttpRequestType : char
-{
-    Get = 0, Post, Put, Delete, Options, Patch, Head
-};
+enum class HttpRequestType : char { Get = 0, Post, Put, Delete, Options, Patch, Head };
 
-struct HttpServerCallback
-{
+struct HttpServerCallback {
     ScriptEngine* engine;
     script::Global<Function> func;
     HttpRequestType type;
@@ -35,14 +26,13 @@ struct HttpServerCallback
 
 //////////////////// Network Static ////////////////////
 
-class NetworkClass
-{
+class NetworkClass {
 public:
     static Local<Value> httpGet(const Arguments& args);
     static Local<Value> httpPost(const Arguments& args);
     static Local<Value> httpGetSync(const Arguments& args);
 
-    //For Compatibility
+    // For Compatibility
     static Local<Value> newWebSocket(const Arguments& args);
 };
 extern ClassDefine<void> NetworkClassBuilder;
@@ -50,8 +40,7 @@ extern ClassDefine<void> NetworkClassBuilder;
 
 //////////////////// Classes ////////////////////
 
-class WSClientClass : public ScriptClass
-{
+class WSClientClass : public ScriptClass {
 private:
     std::shared_ptr<WebSocketClient> ws;
     std::list<ListenerListType> listeners[(int)WSClientEvents::EVENT_COUNT];
@@ -63,8 +52,7 @@ public:
     void initListeners();
     void initListeners_s();
     void clearListeners();
-    ~WSClientClass()
-    {
+    ~WSClientClass() {
         ws->Shutdown();
     }
     static WSClientClass* constructor(const Arguments& args);
@@ -79,13 +67,12 @@ public:
     Local<Value> shutdown(const Arguments& args);
     Local<Value> errorCode(const Arguments& args);
 
-    //For Compatibility
+    // For Compatibility
     static Local<Object> newWSClient();
 };
 extern ClassDefine<WSClientClass> WSClientClassBuilder;
 
-class HttpServerClass : public ScriptClass
-{
+class HttpServerClass : public ScriptClass {
 
 protected:
     std::shared_ptr<httplib::Server> svr = nullptr;
@@ -116,14 +103,13 @@ public:
 };
 extern ClassDefine<HttpServerClass> HttpServerClassBuilder;
 
-class HttpRequestClass : public ScriptClass
-{
+class HttpRequestClass : public ScriptClass {
     std::shared_ptr<httplib::Request> req;
 
 public:
     HttpRequestClass(const Local<Object>& scriptObj, const httplib::Request& req = {});
     HttpRequestClass(const httplib::Request& req = {});
-    //static HttpRequestClass* constructor(const Arguments& args);
+    // static HttpRequestClass* constructor(const Arguments& args);
     std::shared_ptr<httplib::Request> get();
 
     Local<Value> getHeaders();
@@ -136,18 +122,17 @@ public:
     Local<Value> getRemotePort();
     Local<Value> getVersion();
     Local<Value> getRegexMatches();
-    //Local<Value> getMultiFormData();
+    // Local<Value> getMultiFormData();
 };
 extern ClassDefine<HttpRequestClass> HttpRequestClassBuilder;
 
-class HttpResponseClass : public ScriptClass
-{
+class HttpResponseClass : public ScriptClass {
     std::shared_ptr<httplib::Response> resp;
 
 public:
     HttpResponseClass(const Local<Object>& scriptObj, const httplib::Response& resp = {});
     HttpResponseClass(const httplib::Response& resp);
-    //static HttpResponseClass* constructor(const Arguments& args);
+    // static HttpResponseClass* constructor(const Arguments& args);
     std::shared_ptr<httplib::Response> get();
 
     Local<Value> setHeader(const Arguments& args);

@@ -4,8 +4,7 @@
 
 #pragma region AnyConversion
 
-namespace DB
-{
+namespace DB {
 // Declare Any class
 class Any;
 } // namespace DB
@@ -18,67 +17,54 @@ class Any;
  * @return T The converted value
  */
 template <typename T>
-inline T any_to(const DB::Any& v)
-{
+inline T any_to(const DB::Any& v) {
     throw std::bad_cast();
 }
 
 template <typename T>
-inline std::vector<DB::Any> to_any_container(const std::vector<T>& v)
-{
+inline std::vector<DB::Any> to_any_container(const std::vector<T>& v) {
     std::vector<DB::Any> result;
-    for (auto& i : v)
-    {
+    for (auto& i : v) {
         result.push_back(DB::Any(i));
     }
     return result;
 }
 template <typename T>
-inline std::set<DB::Any> to_any_container(const std::set<T>& v)
-{
+inline std::set<DB::Any> to_any_container(const std::set<T>& v) {
     std::set<DB::Any> result;
-    for (auto& i : v)
-    {
+    for (auto& i : v) {
         result.insert(DB::Any(i));
     }
     return result;
 }
 template <typename T>
-inline std::list<DB::Any> to_any_container(const std::list<T>& v)
-{
+inline std::list<DB::Any> to_any_container(const std::list<T>& v) {
     std::list<DB::Any> result;
-    for (auto& i : v)
-    {
+    for (auto& i : v) {
         result.push_back(DB::Any(i));
     }
     return result;
 }
 template <typename T>
-inline std::unordered_set<DB::Any> to_any_container(const std::unordered_set<T>& v)
-{
+inline std::unordered_set<DB::Any> to_any_container(const std::unordered_set<T>& v) {
     std::unordered_set<DB::Any> result;
-    for (auto& i : v)
-    {
+    for (auto& i : v) {
         result.insert(DB::Any(i));
     }
     return result;
 }
 template <typename K, typename V>
-inline std::map<K, DB::Any> to_any_container(const std::map<K, V>& v)
-{
+inline std::map<K, DB::Any> to_any_container(const std::map<K, V>& v) {
     std::map<K, DB::Any> result;
-    for (auto& i : v)
-    {
+    for (auto& i : v) {
         result.insert(std::make_pair(i.first, DB::Any(i.second)));
     }
     return result;
 }
 template <typename K, typename V>
-inline std::unordered_map<K, DB::Any> to_any_unordered_map(const std::unordered_map<K, V>& v)
-{
+inline std::unordered_map<K, DB::Any> to_any_unordered_map(const std::unordered_map<K, V>& v) {
     std::unordered_map<K, DB::Any> result;
-    for (auto& i : v)
-    {
+    for (auto& i : v) {
         result.insert(std::make_pair(i.first, DB::Any(i.second)));
     }
     return result;
@@ -86,19 +72,16 @@ inline std::unordered_map<K, DB::Any> to_any_unordered_map(const std::unordered_
 
 #pragma endregion
 
-namespace DB
-{
+namespace DB {
 
 /**
  * @brief Any class to store some SQL basic types
  *
  */
-class Any
-{
+class Any {
 
 public:
-    union Value
-    {
+    union Value {
         bool boolean;
         int64_t integer;
         uint64_t uinteger;
@@ -110,8 +93,7 @@ public:
         ByteArray* blob;
     } value; ///< Value
 
-    enum class Type : char
-    {
+    enum class Type : char {
         Null = 0,
         Boolean = 1,
         Integer = 2,
@@ -324,10 +306,8 @@ public:
      * @see    is_number()
      */
     template <typename T>
-    inline T get_number() const
-    {
-        switch (type)
-        {
+    inline T get_number() const {
+        switch (type) {
 #if !defined(DBANY_NO_NULL_CONVERSION)
             case Type::Null:
                 return 0;
@@ -375,8 +355,7 @@ public:
      * @see any_to
      */
     template <typename T>
-    inline T get() const
-    {
+    inline T get() const {
         return any_to<T>(*this);
     }
     /**
@@ -387,10 +366,8 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to string
      */
     template <>
-    inline bool get() const
-    {
-        switch (type)
-        {
+    inline bool get() const {
+        switch (type) {
 #if !defined(DBANY_NO_NULL_CONVERSION)
             case Type::Null:
                 return false;
@@ -418,8 +395,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to char
      */
     template <>
-    inline char get() const
-    {
+    inline char get() const {
         return get_number<char>();
     }
     /**
@@ -430,8 +406,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to unsigned char
      */
     template <>
-    inline unsigned char get() const
-    {
+    inline unsigned char get() const {
         return get_number<unsigned char>();
     }
     /**
@@ -442,8 +417,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to short
      */
     template <>
-    inline short get() const
-    {
+    inline short get() const {
         return get_number<short>();
     }
     /**
@@ -454,8 +428,7 @@ public:
      * @throws std::bad_cast   If the value cannot be converted to unsigned short
      */
     template <>
-    inline unsigned short get() const
-    {
+    inline unsigned short get() const {
         return get_number<unsigned short>();
     }
     /**
@@ -466,8 +439,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to int
      */
     template <>
-    inline int get() const
-    {
+    inline int get() const {
         return get_number<int>();
     }
     /**
@@ -478,8 +450,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to unsigned int
      */
     template <>
-    inline unsigned int get() const
-    {
+    inline unsigned int get() const {
         return get_number<unsigned int>();
     }
     /**
@@ -490,8 +461,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to long
      */
     template <>
-    inline long get() const
-    {
+    inline long get() const {
         return get_number<long>();
     }
     /**
@@ -502,8 +472,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to unsigned long
      */
     template <>
-    inline unsigned long get() const
-    {
+    inline unsigned long get() const {
         return get_number<unsigned long>();
     }
     /**
@@ -514,8 +483,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to long long
      */
     template <>
-    inline long long get() const
-    {
+    inline long long get() const {
         return get_number<long long>();
     }
     /**
@@ -526,8 +494,7 @@ public:
      * @throws std::bad_cast       If the value cannot be converted to unsigned long long
      */
     template <>
-    inline unsigned long long get() const
-    {
+    inline unsigned long long get() const {
         return get_number<unsigned long long>();
     }
     /**
@@ -538,8 +505,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to double
      */
     template <>
-    inline double get() const
-    {
+    inline double get() const {
         return get_number<double>();
     }
     /**
@@ -550,8 +516,7 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to float
      */
     template <>
-    inline float get() const
-    {
+    inline float get() const {
         return get_number<float>();
     }
     /**
@@ -562,10 +527,8 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to string
      */
     template <>
-    std::string get() const
-    {
-        switch (type)
-        {
+    std::string get() const {
+        switch (type) {
 #if !defined(DBANY_NO_NULL_CONVERSION)
             case Type::Null:
                 return "";
@@ -581,21 +544,17 @@ public:
             case Type::String:
                 return *value.string;
             case Type::Date:
-                return std::to_string(value.date->year) + "-" +
-                       std::to_string(value.date->month) + "-" +
+                return std::to_string(value.date->year) + "-" + std::to_string(value.date->month) + "-" +
                        std::to_string(value.date->day);
                 break;
             case Type::Time:
-                return std::to_string(value.time->hour) + ":" +
-                       std::to_string(value.time->minute) + ":" +
+                return std::to_string(value.time->hour) + ":" + std::to_string(value.time->minute) + ":" +
                        std::to_string(value.time->second);
             case Type::DateTime:
-                return std::to_string(value.datetime->date.year) + "-" +
-                       std::to_string(value.datetime->date.month) + "-" +
-                       std::to_string(value.datetime->date.day) + " " +
-                       std::to_string(value.datetime->time.hour) + ":" +
-                       std::to_string(value.datetime->time.minute) + ":" +
-                       std::to_string(value.datetime->time.second);
+                return std::to_string(value.datetime->date.year) + "-" + std::to_string(value.datetime->date.month) +
+                       "-" + std::to_string(value.datetime->date.day) + " " +
+                       std::to_string(value.datetime->time.hour) + ":" + std::to_string(value.datetime->time.minute) +
+                       ":" + std::to_string(value.datetime->time.second);
             case Type::Blob:
                 return std::string(value.blob->begin(), value.blob->end());
             default:
@@ -610,10 +569,8 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to DB::Date
      */
     template <>
-    Date get() const
-    {
-        switch (type)
-        {
+    Date get() const {
+        switch (type) {
             case Type::Date:
                 return *value.date;
             case Type::DateTime:
@@ -636,10 +593,8 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to DB::Time
      */
     template <>
-    Time get() const
-    {
-        switch (type)
-        {
+    Time get() const {
+        switch (type) {
             case Type::Time:
                 return *value.time;
             case Type::DateTime:
@@ -662,10 +617,8 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to DB::DateTime
      */
     template <>
-    DateTime get() const
-    {
-        switch (type)
-        {
+    DateTime get() const {
+        switch (type) {
             case Type::DateTime:
                 return *value.datetime;
             case Type::String:
@@ -687,10 +640,8 @@ public:
      * @throws std::bad_cast  If the value cannot be converted to DB::ByteArray
      */
     template <>
-    ByteArray get() const
-    {
-        switch (type)
-        {
+    ByteArray get() const {
+        switch (type) {
             case Type::Blob:
                 return *value.blob;
             case Type::String:
@@ -722,7 +673,6 @@ public:
      * @return Any  The converted value
      */
     LIAPI static Any str2any(const std::string& str);
-
 };
 
 } // namespace DB

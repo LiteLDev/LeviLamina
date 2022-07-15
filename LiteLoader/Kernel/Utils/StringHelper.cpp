@@ -8,8 +8,7 @@ wstring str2wstr(const string& str) {
     return str2wstr(str, CP_UTF8);
 }
 
-std::wstring str2wstr(const std::string& str, UINT codePage)
-{
+std::wstring str2wstr(const std::string& str, UINT codePage) {
     auto len = MultiByteToWideChar(codePage, 0, str.c_str(), -1, nullptr, 0);
     auto* buffer = new wchar_t[len + 1];
     MultiByteToWideChar(codePage, 0, str.c_str(), -1, buffer, len + 1);
@@ -24,8 +23,7 @@ string wstr2str(const wstring& wstr) {
     return wstr2str(wstr, CP_UTF8);
 }
 
-std::string wstr2str(const std::wstring& wstr, UINT codePage)
-{
+std::string wstr2str(const std::wstring& wstr, UINT codePage) {
     auto len = WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
     char* buffer = new char[len + 1];
     WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, buffer, len + 1, nullptr, nullptr);
@@ -98,7 +96,6 @@ std::string FixCurlyBracket(std::string str) {
 }
 
 
-std::string UTF82String(std::u8string str)
-{
+std::string UTF82String(std::u8string str) {
     return reinterpret_cast<std::string&>(str);
 }

@@ -23,13 +23,11 @@
 //
 //////////////////////////////////////////////////////
 
-class AllowListManager
-{
+class AllowListManager {
 
     void save();
 
 public:
-
     nlohmann::json allowList;
 
     LIAPI AllowListManager();
@@ -50,5 +48,4 @@ public:
 
     // @summary Reload the allowlist(Making changes effective)
     LIAPI void reload();
-
 };

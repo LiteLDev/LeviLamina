@@ -6,8 +6,7 @@ class SimulatedPlayer;
 //////////////////// Classes ////////////////////
 class Player;
 class ActorUniqueID;
-class PlayerClass : public ScriptClass
-{
+class PlayerClass : public ScriptClass {
 private:
     ActorUniqueID id;
     bool isValid = true;
@@ -19,7 +18,7 @@ public:
     Player* get();
     SimulatedPlayer* asSimulatedPlayer();
 
-    static Local<Object> newPlayer(Player *p);
+    static Local<Object> newPlayer(Player* p);
     static Player* extract(Local<Value> v);
     Local<Value> getRawPtr();
 
@@ -104,7 +103,7 @@ public:
     Local<Value> sendModalForm(const Arguments& args);
     Local<Value> sendCustomForm(const Arguments& args);
     Local<Value> sendForm(const Arguments& args);
-    //Local<Value> sendPacket(const Arguments& args);
+    // Local<Value> sendPacket(const Arguments& args);
 
     Local<Value> setExtraData(const Arguments& args);
     Local<Value> getExtraData(const Arguments& args);
@@ -148,7 +147,7 @@ public:
     // bool simulateSetItem(class ItemStack&, bool, int);
     // bool simulateGiveItem(class ItemStack&, bool);
 
-    //For Compatibility
+    // For Compatibility
     Local<Value> getIP();
     Local<Value> getAllItems();
     Local<Value> removeItem(const Arguments& args);

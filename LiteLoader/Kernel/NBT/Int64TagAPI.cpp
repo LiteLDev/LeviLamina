@@ -26,8 +26,7 @@ int64_t Int64Tag::get() {
     return value();
 }
 
-Int64Tag::operator int64_t() const
-{
+Int64Tag::operator int64_t() const {
     if (!this)
         return 0;
     return val;

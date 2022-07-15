@@ -15,13 +15,12 @@ using namespace Form;
 
 //////////////////// Class Definition ////////////////////
 
-ClassDefine<SimpleFormClass> SimpleFormClassBuilder =
-    defineClass<SimpleFormClass>("LLSE_SimpleForm")
-        .constructor(nullptr)
-        .instanceFunction("setTitle", &SimpleFormClass::setTitle)
-        .instanceFunction("setContent", &SimpleFormClass::setContent)
-        .instanceFunction("addButton", &SimpleFormClass::addButton)
-        .build();
+ClassDefine<SimpleFormClass> SimpleFormClassBuilder = defineClass<SimpleFormClass>("LLSE_SimpleForm")
+                                                          .constructor(nullptr)
+                                                          .instanceFunction("setTitle", &SimpleFormClass::setTitle)
+                                                          .instanceFunction("setContent", &SimpleFormClass::setContent)
+                                                          .instanceFunction("addButton", &SimpleFormClass::addButton)
+                                                          .build();
 
 ClassDefine<CustomFormClass> CustomFormClassBuilder =
     defineClass<CustomFormClass>("LLSE_CustomForm")
@@ -37,33 +36,27 @@ ClassDefine<CustomFormClass> CustomFormClassBuilder =
 
 //////////////////// Simple Form ////////////////////
 
-SimpleFormClass::SimpleFormClass()
-    :ScriptClass(ScriptClass::ConstructFromCpp<SimpleFormClass>{}),form("","")
-{ }
+SimpleFormClass::SimpleFormClass() : ScriptClass(ScriptClass::ConstructFromCpp<SimpleFormClass>{}), form("", "") {
+}
 
 //生成函数
-Local<Object> SimpleFormClass::newForm()
-{
+Local<Object> SimpleFormClass::newForm() {
     auto newp = new SimpleFormClass();
     return newp->getScriptObject();
 }
 
-Form::SimpleForm* SimpleFormClass::extract(Local<Value> v)
-{
+Form::SimpleForm* SimpleFormClass::extract(Local<Value> v) {
     if (EngineScope::currentEngine()->isInstanceOf<SimpleFormClass>(v))
         return EngineScope::currentEngine()->getNativeInstance<SimpleFormClass>(v)->get();
     else
         return nullptr;
 }
 
-bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::Local<Function> &callback)
-{
-    script::Global<Function> callbackFunc{ callback };
+bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::Local<Function>& callback) {
+    script::Global<Function> callbackFunc{callback};
 
-    return form->sendTo(player,
-        [engine{ EngineScope::currentEngine() }, callback{ std::move(callbackFunc) }]
-        (Player* pl, int chosen)
-        {
+    return form->sendTo(
+        player, [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, int chosen) {
             if (LL::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -72,9 +65,8 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
                 return;
 
             EngineScope scope(engine);
-            try
-            {
-                if(chosen < 0)
+            try {
+                if (chosen < 0)
                     callback.get().call({}, PlayerClass::newPlayer(pl), Local<Value>());
                 else
                     callback.get().call({}, PlayerClass::newPlayer(pl), Number::newNumber(chosen));
@@ -84,34 +76,29 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
 }
 
 //成员函数
-Local<Value> SimpleFormClass::setTitle(const Arguments& args)
-{
+Local<Value> SimpleFormClass::setTitle(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         form.title = args[0].toStr();
         return this->getScriptObject();
     }
     CATCH("Fail in setTitle!")
 }
 
-Local<Value> SimpleFormClass::setContent(const Arguments& args)
-{
+Local<Value> SimpleFormClass::setContent(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         form.content = args[0].toStr();
         return this->getScriptObject();
     }
     CATCH("Fail in setTitle!")
 }
 
-Local<Value> SimpleFormClass::addButton(const Arguments& args)
-{
+Local<Value> SimpleFormClass::addButton(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     if (args.size() >= 2)
@@ -126,88 +113,77 @@ Local<Value> SimpleFormClass::addButton(const Arguments& args)
 }
 
 
-
 //////////////////// Custom Form ////////////////////
 
-CustomFormClass::CustomFormClass()
-    :ScriptClass(ScriptClass::ConstructFromCpp<CustomFormClass>{}),form("")
-{ }
+CustomFormClass::CustomFormClass() : ScriptClass(ScriptClass::ConstructFromCpp<CustomFormClass>{}), form("") {
+}
 
 
 //生成函数
-Local<Object> CustomFormClass::newForm()
-{
+Local<Object> CustomFormClass::newForm() {
     auto newp = new CustomFormClass();
     return newp->getScriptObject();
 }
 
-CustomForm* CustomFormClass::extract(Local<Value> v)
-{
-    if(EngineScope::currentEngine()->isInstanceOf<CustomFormClass>(v))
+CustomForm* CustomFormClass::extract(Local<Value> v) {
+    if (EngineScope::currentEngine()->isInstanceOf<CustomFormClass>(v))
         return EngineScope::currentEngine()->getNativeInstance<CustomFormClass>(v)->get();
     else
         return nullptr;
 }
 
 //成员函数
-bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::Local<Function>& callback)
-{
-    script::Global<Function> callbackFunc{ callback };
+bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::Local<Function>& callback) {
+    script::Global<Function> callbackFunc{callback};
 
-    return form->sendToForRawJson(player,
-        [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}]
-    (Player* pl, string data)
-    {
-        if (LL::isServerStopping())
-            return;
-        if (!EngineManager::isValid(engine))
-            return;
-        if (callback.isEmpty())
-            return;
+    return form->sendToForRawJson(
+        player, [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, string data) {
+            if (LL::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
+            if (callback.isEmpty())
+                return;
 
-        EngineScope scope(engine);
-        try
-        {
-            callback.get().call({}, PlayerClass::newPlayer(pl), JsonToValue(data));
-        }
-        CATCH_WITHOUT_RETURN("Fail in form callback!")
-    });
+            EngineScope scope(engine);
+            try {
+                callback.get().call({}, PlayerClass::newPlayer(pl), JsonToValue(data));
+            }
+            CATCH_WITHOUT_RETURN("Fail in form callback!")
+        });
 }
 
-Local<Value> CustomFormClass::setTitle(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
+Local<Value> CustomFormClass::setTitle(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
-    try{
+    try {
         form.title = args[0].toStr();
         return this->getScriptObject();
     }
     CATCH("Fail in setTitle!")
 }
 
-Local<Value> CustomFormClass::addLabel(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
+Local<Value> CustomFormClass::addLabel(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
-    try{
+    try {
         form.append(Label(args[0].toStr(), args[0].toStr()));
         return this->getScriptObject();
     }
     CATCH("Fail in addLabel!")
 }
 
-Local<Value> CustomFormClass::addInput(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
-    if(args.size() >= 2)
-        CHECK_ARG_TYPE(args[1],ValueKind::kString);
-    if(args.size() >= 3)
-        CHECK_ARG_TYPE(args[2],ValueKind::kString);
+Local<Value> CustomFormClass::addInput(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
+    if (args.size() >= 2)
+        CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    if (args.size() >= 3)
+        CHECK_ARG_TYPE(args[2], ValueKind::kString);
 
-    try{
+    try {
         string placeholder = args.size() >= 2 ? args[1].toStr() : "";
         string def = args.size() >= 3 ? args[2].toStr() : "";
 
@@ -217,14 +193,13 @@ Local<Value> CustomFormClass::addInput(const Arguments& args)
     CATCH("Fail in addInput!")
 }
 
-Local<Value> CustomFormClass::addSwitch(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
-    if(args.size() >= 2)
-        CHECK_ARG_TYPE(args[1],ValueKind::kBoolean);
+Local<Value> CustomFormClass::addSwitch(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
+    if (args.size() >= 2)
+        CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
 
-    try{
+    try {
         bool def = args.size() >= 2 ? args[1].asBoolean().value() : false;
 
         form.append(Toggle(args[0].toStr(), args[0].toStr(), def));
@@ -233,15 +208,14 @@ Local<Value> CustomFormClass::addSwitch(const Arguments& args)
     CATCH("Fail in addSwitch!")
 }
 
-Local<Value> CustomFormClass::addDropdown(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,2)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
-    CHECK_ARG_TYPE(args[1],ValueKind::kArray);
-    if(args.size() >= 3)
-        CHECK_ARG_TYPE(args[2],ValueKind::kNumber);
+Local<Value> CustomFormClass::addDropdown(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    if (args.size() >= 3)
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
 
-    try{
+    try {
         auto optionsArr = args[1].asArray();
         vector<string> options;
         for (int i = 0; i < optionsArr.size(); ++i)
@@ -255,21 +229,20 @@ Local<Value> CustomFormClass::addDropdown(const Arguments& args)
     CATCH("Fail in addDropdown!")
 }
 
-Local<Value> CustomFormClass::addSlider(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,3)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
-    CHECK_ARG_TYPE(args[1],ValueKind::kNumber);
-    CHECK_ARG_TYPE(args[2],ValueKind::kNumber);
-    if(args.size() >= 4)
-        CHECK_ARG_TYPE(args[3],ValueKind::kNumber);
-    if(args.size() >= 5)
-        CHECK_ARG_TYPE(args[4],ValueKind::kNumber);
+Local<Value> CustomFormClass::addSlider(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+    if (args.size() >= 4)
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+    if (args.size() >= 5)
+        CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
 
-    try{
+    try {
         int minValue = args[1].asNumber().toInt32();
         int maxValue = args[2].asNumber().toInt32();
-        if(minValue >= maxValue)
+        if (minValue >= maxValue)
             maxValue = minValue + 1;
 
         int step = args.size() >= 4 ? args[3].asNumber().toInt32() : 1;
@@ -283,15 +256,14 @@ Local<Value> CustomFormClass::addSlider(const Arguments& args)
     CATCH("Fail in addSlider!")
 }
 
-Local<Value> CustomFormClass::addStepSlider(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,2)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
-    CHECK_ARG_TYPE(args[1],ValueKind::kArray);
-    if(args.size() >= 3)
-        CHECK_ARG_TYPE(args[2],ValueKind::kNumber);
+Local<Value> CustomFormClass::addStepSlider(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    if (args.size() >= 3)
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
 
-    try{
+    try {
         auto stepsArr = args[1].asArray();
         vector<string> steps;
         for (int i = 0; i < stepsArr.size(); ++i)
@@ -308,12 +280,10 @@ Local<Value> CustomFormClass::addStepSlider(const Arguments& args)
 
 //////////////////// APIs ////////////////////
 
-Local<Value> McClass::newSimpleForm(const Arguments& args)
-{
+Local<Value> McClass::newSimpleForm(const Arguments& args) {
     return SimpleFormClass::newForm();
 }
 
-Local<Value> McClass::newCustomForm(const Arguments& args)
-{
+Local<Value> McClass::newCustomForm(const Arguments& args) {
     return CustomFormClass::newForm();
 }

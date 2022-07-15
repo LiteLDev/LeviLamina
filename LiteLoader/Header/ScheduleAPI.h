@@ -30,8 +30,7 @@
 //
 /////////////////////////////////////////////////////
 
-class ScheduleTask
-{
+class ScheduleTask {
     unsigned int taskId;
 
 public:
@@ -39,18 +38,19 @@ public:
     LIAPI ScheduleTask() = default;
     LIAPI ScheduleTask(unsigned int taskId);
 
-    inline unsigned int getTaskId()
-    {
+    inline unsigned int getTaskId() {
         return taskId;
     }
 
     LIAPI bool isFinished() const;
 };
 
-namespace Schedule
-{
-    LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle = GetCurrentModule());
-    LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
-    LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
-    LIAPI ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle = GetCurrentModule());
+namespace Schedule {
+LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay,
+                         HMODULE handle = GetCurrentModule());
+LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1,
+                          HMODULE handle = GetCurrentModule());
+LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
+                               unsigned long long tickInterval, int maxCount = -1, HMODULE handle = GetCurrentModule());
+LIAPI ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle = GetCurrentModule());
 }; // namespace Schedule

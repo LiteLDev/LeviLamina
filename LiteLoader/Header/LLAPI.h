@@ -18,17 +18,10 @@
 #include "Utils/PluginOwnData.h"
 
 // LL types
-namespace LL
-{
+namespace LL {
 
-struct Version
-{
-    enum Status
-    {
-        Dev,
-        Beta,
-        Release
-    };
+struct Version {
+    enum Status { Dev, Beta, Release };
 
     int major;
     int minor;
@@ -44,47 +37,37 @@ struct Version
     LIAPI static Version parse(const std::string& str);
 };
 
-struct Plugin
-{
+struct Plugin {
     std::string name;
-    std::string desc;  // `introduction` before
+    std::string desc; // `introduction` before
     Version version;
-    std::map<std::string, std::string> others;  // `otherInformation` before
+    std::map<std::string, std::string> others; // `otherInformation` before
 
     std::string filePath;
     HMODULE handle;
 
-    enum class PluginType
-    {
-        DllPlugin,
-        ScriptPlugin
-    };
+    enum class PluginType { DllPlugin, ScriptPlugin };
 
     PluginType type;
 
     // Call a Function by Symbol String
     template <typename ReturnType = void, typename... Args>
-    inline ReturnType callFunction(const char* functionName, Args... args)
-    {
+    inline ReturnType callFunction(const char* functionName, Args... args) {
         void* address = GetProcAddress(handle, functionName);
         if (!address)
             return ReturnType();
         return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
     }
-
 };
 
 } // namespace LL
-inline bool operator<=(LL::Version a, LL::Version b)
-{
+inline bool operator<=(LL::Version a, LL::Version b) {
     return a < b || a == b;
 }
-inline bool operator>(LL::Version a, LL::Version b)
-{
+inline bool operator>(LL::Version a, LL::Version b) {
     return b < a;
 }
-inline bool operator>=(LL::Version a, LL::Version b)
-{
+inline bool operator>=(LL::Version a, LL::Version b) {
     return b < a || b == a;
 }
 
@@ -93,8 +76,7 @@ LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string desc, L
                           std::map<std::string, std::string> others);
 
 // Loader APIs
-namespace LL
-{
+namespace LL {
 
 /**
  * @brief Get the loader version as a string
@@ -135,13 +117,15 @@ LIAPI std::string getDataPath(const std::string& pluginName);
  * @return bool     True if the plugin is registered successfully
  * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
  */
-inline bool registerPlugin(std::string name, std::string desc, LL::Version version,
-                           std::string git = "", std::string license = "", std::string website = "")
-{
+inline bool registerPlugin(std::string name, std::string desc, LL::Version version, std::string git = "",
+                           std::string license = "", std::string website = "") {
     std::map<std::string, std::string> others;
-    if (!git.empty()) others.emplace("Git", git);
-    if (!license.empty()) others.emplace("License", license);
-    if (!website.empty()) others.emplace("Website", website);
+    if (!git.empty())
+        others.emplace("Git", git);
+    if (!license.empty())
+        others.emplace("License", license);
+    if (!website.empty())
+        others.emplace("Website", website);
     return ::RegisterPlugin(GetCurrentModule(), name, desc, version, others);
 }
 
@@ -161,8 +145,7 @@ inline bool registerPlugin(std::string name, std::string desc, LL::Version versi
  * @endcode
  */
 inline bool registerPlugin(std::string name, std::string desc, LL::Version version,
-                           std::map<std::string, std::string> others)
-{
+                           std::map<std::string, std::string> others) {
     return ::RegisterPlugin(GetCurrentModule(), name, desc, version, others);
 }
 
@@ -204,12 +187,7 @@ LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 LIAPI HMODULE getLoaderHandle();
 
 /// Server Status
-enum class ServerStatus
-{
-    Starting,
-    Running,
-    Stopping
-};
+enum class ServerStatus { Starting, Running, Stopping };
 LIAPI ServerStatus getServerStatus();
 LIAPI bool isServerStarting();
 LIAPI bool isServerStopping();

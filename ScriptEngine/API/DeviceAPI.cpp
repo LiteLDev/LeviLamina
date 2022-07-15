@@ -8,7 +8,7 @@ using namespace std;
 
 
 //////////////////// Class Definition ////////////////////
-
+// clang-format off
 ClassDefine<DeviceClass> DeviceClassBuilder =
 	defineClass<DeviceClass>("LLSE_Device")
 		.constructor(nullptr)
@@ -21,40 +21,31 @@ ClassDefine<DeviceClass> DeviceClassBuilder =
         .instanceProperty("serverAddress", &DeviceClass::getServerAddress)
         .instanceProperty("clientId", &DeviceClass::getClientId)
 		.build();
-
+// clang-format on
 
 //////////////////// Classes ////////////////////
 
 //生成函数
-Local<Object> DeviceClass::newDevice(Player* p)
-{
+Local<Object> DeviceClass::newDevice(Player* p) {
     auto newp = new DeviceClass(p);
     return newp->getScriptObject();
 }
 
 //成员函数
-void DeviceClass::setPlayer(Player* player)
-{
-    __try
-    {
+void DeviceClass::setPlayer(Player* player) {
+    __try {
         id = player->getUniqueID();
-    }
-    __except (EXCEPTION_EXECUTE_HANDLER)
-    {
-        isValid = false;
-    }
+    } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
 }
 
-Player* DeviceClass::getPlayer()
-{
+Player* DeviceClass::getPlayer() {
     if (!isValid)
         return nullptr;
     else
         return ::Global<Level>->getPlayer(id);
 }
 
-Local<Value> DeviceClass::getIP()
-{
+Local<Value> DeviceClass::getIP() {
     try {
         Player* player = getPlayer();
         if (!player)
@@ -65,8 +56,7 @@ Local<Value> DeviceClass::getIP()
     CATCH("Fail in GetIP!")
 }
 
-Local<Value> DeviceClass::getAvgPing()
-{
+Local<Value> DeviceClass::getAvgPing() {
     try {
         Player* player = getPlayer();
         if (!player)
@@ -77,8 +67,7 @@ Local<Value> DeviceClass::getAvgPing()
     CATCH("Fail in getAvgPing!")
 }
 
-Local<Value> DeviceClass::getAvgPacketLoss()
-{
+Local<Value> DeviceClass::getAvgPacketLoss() {
     try {
         Player* player = getPlayer();
         if (!player)
@@ -89,8 +78,7 @@ Local<Value> DeviceClass::getAvgPacketLoss()
     CATCH("Fail in getAvgPacketLoss!")
 }
 
-Local<Value> DeviceClass::getLastPing()
-{
+Local<Value> DeviceClass::getLastPing() {
     try {
         Player* player = getPlayer();
         if (!player)
@@ -101,8 +89,7 @@ Local<Value> DeviceClass::getLastPing()
     CATCH("Fail in getLastPing!")
 }
 
-Local<Value> DeviceClass::getLastPacketLoss()
-{
+Local<Value> DeviceClass::getLastPacketLoss() {
     try {
         Player* player = getPlayer();
         if (!player)
@@ -113,8 +100,7 @@ Local<Value> DeviceClass::getLastPacketLoss()
     CATCH("Fail in getLastPacketLoss!")
 }
 
-Local<Value> DeviceClass::getOs()
-{
+Local<Value> DeviceClass::getOs() {
     try {
         Player* player = getPlayer();
         if (!player)
@@ -125,8 +111,7 @@ Local<Value> DeviceClass::getOs()
     CATCH("Fail in getOs!")
 }
 
-Local<Value> DeviceClass::getServerAddress()
-{
+Local<Value> DeviceClass::getServerAddress() {
     try {
         Player* player = getPlayer();
         if (!player)
@@ -137,14 +122,13 @@ Local<Value> DeviceClass::getServerAddress()
     CATCH("Fail in getServerAddress!")
 }
 
-Local<Value> DeviceClass::getClientId()
-{
+Local<Value> DeviceClass::getClientId() {
     try {
         Player* player = getPlayer();
         if (!player)
             return Local<Value>();
 
-        return String::newString(player->getClientId());       //=============???
+        return String::newString(player->getClientId()); //=============???
     }
     CATCH("Fail in getClientId!")
 }

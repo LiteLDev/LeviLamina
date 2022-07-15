@@ -4,8 +4,7 @@
 
 //////////////////// System Static ////////////////////
 
-class SystemClass
-{
+class SystemClass {
 public:
     static Local<Value> getTimeStr(const Arguments& args);
     static Local<Value> getTimeObj(const Arguments& args);

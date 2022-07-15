@@ -4,11 +4,9 @@
 
 #undef max
 
-namespace DB
-{
+namespace DB {
 
-class RowSet : public std::vector<Row>
-{
+class RowSet : public std::vector<Row> {
 
     using Base = std::vector<Row>;
 

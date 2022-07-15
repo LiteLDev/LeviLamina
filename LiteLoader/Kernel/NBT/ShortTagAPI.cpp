@@ -26,8 +26,7 @@ short ShortTag::get() {
     return value();
 }
 
-ShortTag::operator short() const
-{
+ShortTag::operator short() const {
     if (!this)
         return 0;
     return val;

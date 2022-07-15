@@ -6,8 +6,7 @@
 
 class Logger;
 
-namespace DB
-{
+namespace DB {
 
 extern Logger dbLogger;
 
@@ -19,8 +18,7 @@ class Session;
  * @tparam T Type of sequence container, must have begin() and end() methods
  * @tparam The value type of the container must be DB::Any.
  */
-struct BindType
-{
+struct BindType {
     Any value;
     std::string name;
     int idx = -1;
@@ -34,8 +32,7 @@ struct BindType
  * @tparam The value type of the container must be DB::Any.
  */
 template <typename T>
-struct BindSequenceType
-{
+struct BindSequenceType {
     T values;
     static_assert(std::is_same<typename T::value_type, Any>::value, "Container value type must be DB::Any");
 };
@@ -48,21 +45,18 @@ struct BindSequenceType
  *         and the value type of the map must be DB::Any.
  */
 template <typename T>
-struct BindMapType
-{
+struct BindMapType {
     T values;
     static_assert(std::is_same<typename T::key_type, std::string>::value, "Map key type must be std::string");
     static_assert(std::is_same<typename T::mapped_type, Any>::value, "Map value type must be DB::Any");
 };
 
 template <typename T>
-struct IntoType
-{
+struct IntoType {
     T& value;
 };
 
-class Stmt
-{
+class Stmt {
 
 protected:
 #if defined(LLDB_DEBUG_MODE)
@@ -177,8 +171,7 @@ public:
      * @endcode
      */
     template <typename T = Row>
-    inline T fetch()
-    {
+    inline T fetch() {
         return row_to<T>(_Fetch());
     }
 
@@ -189,8 +182,7 @@ public:
      * @return     Stmt&  *this
      */
     template <typename T = Row>
-    inline Stmt& fetch(T& row)
-    {
+    inline Stmt& fetch(T& row) {
         row = row_to<T>(_Fetch());
         return *this;
     }
@@ -212,10 +204,10 @@ public:
      *     ->close();
      * @endcode
      */
-    inline Stmt& fetchEach(std::function<bool(const Row&)> cb)
-    {
+    inline Stmt& fetchEach(std::function<bool(const Row&)> cb) {
         do {
-            if (!cb(_Fetch())) break;
+            if (!cb(_Fetch()))
+                break;
         } while (step());
         return *this;
     }
@@ -228,11 +220,10 @@ public:
      * @note   Return false in callback to stop fetching
      * @see Stmt::fetchEach
      */
-    inline Stmt& fetchAll(std::function<bool(const Row&)> cb)
-    {
+    inline Stmt& fetchAll(std::function<bool(const Row&)> cb) {
         return fetchEach(cb);
     }
-    //virtual Stmt& fetchAll(std::function<bool(const Row&)> cb);
+    // virtual Stmt& fetchAll(std::function<bool(const Row&)> cb);
 
     /**
      * @brief Fetch all the result rows.
@@ -241,12 +232,11 @@ public:
      * @return std::vector<T>  The result rows
      */
     template <typename T>
-    inline std::vector<T> fetchAll()
-    {
+    inline std::vector<T> fetchAll() {
         std::vector<T> result;
         return fetchAll(result);
     }
-    //virtual ResultSet fetchAll() = 0;
+    // virtual ResultSet fetchAll() = 0;
 
     /**
      * @brief Fetch all the result rows.
@@ -256,25 +246,22 @@ public:
      * @return     Stmt&  *this
      */
     template <typename T>
-    inline Stmt& fetchAll(std::vector<T>& rows)
-    {
+    inline Stmt& fetchAll(std::vector<T>& rows) {
         return fetchEach([&](const Row& row) {
             rows.push_back(row_to<T>(row));
             return true;
         });
         return *this;
     }
-    //virtual Stmt& fetchAll(ResultSet& rows);
+    // virtual Stmt& fetchAll(ResultSet& rows);
 
-    inline ResultSet fetchAll()
-    {
+    inline ResultSet fetchAll() {
         ResultSet set;
         fetchAll(set);
         return set;
     }
 
-    inline Stmt& fetchAll(ResultSet& rows)
-    {
+    inline Stmt& fetchAll(ResultSet& rows) {
         return fetchEach([&rows](const Row& row) {
             rows.push_back(row);
             return true;
@@ -418,8 +405,7 @@ public:
      * @param  v  The value
      * @return SharedPointer<Stmt>  this
      */
-    inline SharedPointer<Stmt> operator<<(const Any& v)
-    {
+    inline SharedPointer<Stmt> operator<<(const Any& v) {
         bind(v);
         return getSharedPointer();
     }
@@ -432,20 +418,17 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator>>(T& v)
-    {
+    inline SharedPointer<Stmt> operator>>(T& v) {
         fetch(v);
         return getSharedPointer();
     }
     template <>
-    inline SharedPointer<Stmt> operator>>(ResultSet& v)
-    {
+    inline SharedPointer<Stmt> operator>>(ResultSet& v) {
         fetchAll(v);
         return getSharedPointer();
     }
     template <typename T>
-    inline SharedPointer<Stmt> operator>>(std::vector<T>& v)
-    {
+    inline SharedPointer<Stmt> operator>>(std::vector<T>& v) {
         fetchAll(v);
         return getSharedPointer();
     }
@@ -464,10 +447,8 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(const BindSequenceType<T>& b)
-    {
-        for (auto& v : b.values)
-        {
+    inline SharedPointer<Stmt> operator,(const BindSequenceType<T>& b) {
+        for (auto& v : b.values) {
             bind(v);
         }
         return getSharedPointer();
@@ -479,19 +460,14 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <>
-    inline SharedPointer<Stmt> operator,(const BindSequenceType<Row>& b)
-    {
-        if (b.values.header && b.values.header->size())
-        {
+    inline SharedPointer<Stmt> operator,(const BindSequenceType<Row>& b) {
+        if (b.values.header && b.values.header->size()) {
             b.values.forEach([&](const std::string& name, const Any& value) {
                 bind(value, name);
                 return true;
             });
-        }
-        else
-        {
-            for (auto& v : b.values)
-            {
+        } else {
+            for (auto& v : b.values) {
                 bind(v);
             }
         }
@@ -504,10 +480,8 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(const BindMapType<T>& b)
-    {
-        for (auto& v : b.values)
-        {
+    inline SharedPointer<Stmt> operator,(const BindMapType<T>& b) {
+        for (auto& v : b.values) {
             bind(v.second, v.first);
         }
         return getSharedPointer();
@@ -519,9 +493,9 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(IntoType<T>& i)
-    {
-        if (!done()) fetch<T>(i.value);
+    inline SharedPointer<Stmt> operator,(IntoType<T>& i) {
+        if (!done())
+            fetch<T>(i.value);
         return getSharedPointer();
     }
     /**
@@ -531,8 +505,7 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <typename T>
-    inline SharedPointer<Stmt> operator,(IntoType<std::vector<T>>& i)
-    {
+    inline SharedPointer<Stmt> operator,(IntoType<std::vector<T>>& i) {
         fetchAll<std::vector<T>>(i.value);
         return getSharedPointer();
     }
@@ -543,8 +516,7 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <>
-    inline SharedPointer<Stmt> operator,(IntoType<ResultSet>& i)
-    {
+    inline SharedPointer<Stmt> operator,(IntoType<ResultSet>& i) {
         fetchAll(i.value);
         return getSharedPointer();
     }
@@ -555,8 +527,7 @@ public:
      * @return SharedPointer<Stmt>  this
      */
     template <>
-    inline SharedPointer<Stmt> operator,(IntoType<Row>& i)
-    {
+    inline SharedPointer<Stmt> operator,(IntoType<Row>& i) {
         fetch(i.value);
         return getSharedPointer();
     }
@@ -566,102 +537,83 @@ public:
      *
      * @return Stmt*  this
      */
-    inline Stmt* operator->()
-    {
+    inline Stmt* operator->() {
         return this;
     }
 };
 
-inline BindType use(const Any& value, int idx = -1)
-{
+inline BindType use(const Any& value, int idx = -1) {
     return BindType{value, std::string(), idx};
 }
-inline BindType use(const Any& value, const std::string& name)
-{
+inline BindType use(const Any& value, const std::string& name) {
     return BindType{value, name};
 }
-inline BindSequenceType<Row> use(const Row& values)
-{
+inline BindSequenceType<Row> use(const Row& values) {
     return BindSequenceType<Row>{values};
 }
 
 
 template <typename T>
-inline BindSequenceType<std::vector<T>> use(const std::vector<T>& values)
-{
+inline BindSequenceType<std::vector<T>> use(const std::vector<T>& values) {
     return BindSequenceType<std::vector<Any>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::set<T>> use(const std::set<T>& values)
-{
+inline BindSequenceType<std::set<T>> use(const std::set<T>& values) {
     return BindSequenceType<std::set<T>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::list<T>> use(const std::list<T>& values)
-{
+inline BindSequenceType<std::list<T>> use(const std::list<T>& values) {
     return BindSequenceType<std::list<T>>{to_any_container(values)};
 }
 template <typename T>
-inline BindSequenceType<std::vector<T>> use(const std::initializer_list<T>& values)
-{
+inline BindSequenceType<std::vector<T>> use(const std::initializer_list<T>& values) {
     return BindSequenceType<std::vector<T>>{to_any_container(std::vector<T>(values))};
 }
 template <>
-inline BindSequenceType<std::vector<Any>> use(const std::vector<Any>& values)
-{
+inline BindSequenceType<std::vector<Any>> use(const std::vector<Any>& values) {
     return BindSequenceType<std::vector<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::set<Any>> use(const std::set<Any>& values)
-{
+inline BindSequenceType<std::set<Any>> use(const std::set<Any>& values) {
     return BindSequenceType<std::set<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::list<Any>> use(const std::list<Any>& values)
-{
+inline BindSequenceType<std::list<Any>> use(const std::list<Any>& values) {
     return BindSequenceType<std::list<Any>>{values};
 }
 template <>
-inline BindSequenceType<std::vector<Any>> use(const std::initializer_list<Any>& values)
-{
+inline BindSequenceType<std::vector<Any>> use(const std::initializer_list<Any>& values) {
     return BindSequenceType<std::vector<Any>>{std::vector<Any>(values)};
 }
 
 
 // Map
 template <typename T>
-inline BindMapType<std::map<std::string, T>> use(const std::map<std::string, T>& values)
-{
+inline BindMapType<std::map<std::string, T>> use(const std::map<std::string, T>& values) {
     return BindMapType<std::map<std::string, T>>{values};
 }
 template <typename T>
-inline BindMapType<std::unordered_map<std::string, T>> use(const std::unordered_map<std::string, T>& values)
-{
+inline BindMapType<std::unordered_map<std::string, T>> use(const std::unordered_map<std::string, T>& values) {
     return BindMapType<std::unordered_map<std::string, T>>{values};
 }
 template <>
-inline BindMapType<std::map<std::string, Any>> use(const std::map<std::string, Any>& values)
-{
+inline BindMapType<std::map<std::string, Any>> use(const std::map<std::string, Any>& values) {
     return BindMapType<std::map<std::string, Any>>{values};
 }
 template <>
-inline BindMapType<std::unordered_map<std::string, Any>> use(const std::unordered_map<std::string, Any>& values)
-{
+inline BindMapType<std::unordered_map<std::string, Any>> use(const std::unordered_map<std::string, Any>& values) {
     return BindMapType<std::unordered_map<std::string, Any>>{values};
 }
-inline BindMapType<std::map<std::string, Any>> use(const std::initializer_list<std::pair<std::string, Any>>& values)
-{
+inline BindMapType<std::map<std::string, Any>> use(const std::initializer_list<std::pair<std::string, Any>>& values) {
     std::map<std::string, Any> result;
-    for (auto& pair : values)
-    {
+    for (auto& pair : values) {
         result.insert(std::make_pair(pair.first, pair.second));
     }
     return BindMapType<std::map<std::string, Any>>{result};
 }
 
 template <typename T>
-inline IntoType<T> into(T& out)
-{
+inline IntoType<T> into(T& out) {
     return IntoType<T>{out};
 }
 

@@ -4,12 +4,14 @@
 //
 //  [Examples]
 //
-//  Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {        //Common situation - Const parameter "ev"
+//  Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {        //Common situation - Const parameter
+//  "ev"
 //      ev.mPlayer->sendText("hello world~");
 //      return true;
 //  });
 //
-//  Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters - Reference parameter "ev"
+//  Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters
+//  - Reference parameter "ev"
 //      ev.mMessage = "[Plugin Modified] " + ev.mMessage;
 //      return true;
 //  });
@@ -59,66 +61,64 @@ class ArmorStand;
 class Objective;
 struct ScoreboardId;
 
-namespace Event
-{
+namespace Event {
 ///////////////////////////// Impl /////////////////////////////
 
 constexpr bool Ok = true;
 constexpr bool Cancel = false;
 
-template<typename EVENT>
-class EventManager
-{
+template <typename EVENT> class EventManager {
 public:
     LIAPI static int addEventListener(std::string name, std::function<bool(EVENT)> callback);
     LIAPI static int addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback);
     LIAPI static bool removeEventListener(int id);
     LIAPI static bool hasListener();
-    LIAPI static bool call(EVENT &ev);
+    LIAPI static bool call(EVENT& ev);
     LIAPI static bool callToPlugin(std::string pluginName, EVENT& ev);
 };
 
-template <typename EVENT>
-class EventListener
-{
+template <typename EVENT> class EventListener {
 private:
     int listenerId;
     bool deleted = false;
 
 public:
-    EventListener(int id) : listenerId(id) {}
+    EventListener(int id) : listenerId(id) {
+    }
 
-    void remove()
-    {
-        if (!deleted)
-        {
+    void remove() {
+        if (!deleted) {
             deleted = true;
             EventManager<EVENT>::removeEventListener(listenerId);
         }
     }
 };
 
-template <typename EVENT>
-class EventTemplate
-{
+template <typename EVENT> class EventTemplate {
 public:
-    static EventListener<EVENT> subscribe(std::function<bool(EVENT)> callback)
-    {
+    static EventListener<EVENT> subscribe(std::function<bool(EVENT)> callback) {
         auto plugin = LL::getPlugin(GetCurrentModule());
         return EventListener<EVENT>(EventManager<EVENT>::addEventListener(plugin ? plugin->name : "", callback));
     }
 
-    static EventListener<EVENT> subscribe_ref(std::function<bool(EVENT&)> callback)
-    {
+    static EventListener<EVENT> subscribe_ref(std::function<bool(EVENT&)> callback) {
         auto plugin = LL::getPlugin(GetCurrentModule());
         return EventListener<EVENT>(EventManager<EVENT>::addEventListenerRef(plugin ? plugin->name : "", callback));
     }
 
-    static void unsubscribe(const EventListener<EVENT>& listener) { listener.remove(); }
-    static bool hasListener() { return EventManager<EVENT>::hasListener(); }
+    static void unsubscribe(const EventListener<EVENT>& listener) {
+        listener.remove();
+    }
+    static bool hasListener() {
+        return EventManager<EVENT>::hasListener();
+    }
 
-    bool call() { return EventManager<EVENT>::call(*(EVENT*)this); }
-    bool callToPlugin(std::string pluginName) { return EventManager<EVENT>::callToPlugin(pluginName, *(EVENT*)this); }
+    bool call() {
+        return EventManager<EVENT>::call(*(EVENT*)this);
+    }
+    bool callToPlugin(std::string pluginName) {
+        return EventManager<EVENT>::callToPlugin(pluginName, *(EVENT*)this);
+    }
 
 
     ////////////////////// For compatibility DO NOT UPDATE //////////////////////
@@ -132,42 +132,36 @@ protected:
 
 ///////////////////////////// Player Events /////////////////////////////
 
-class PlayerPreJoinEvent : public EventTemplate<PlayerPreJoinEvent>
-{
+class PlayerPreJoinEvent : public EventTemplate<PlayerPreJoinEvent> {
 public:
     Player* mPlayer;
     string mIP;
     string mXUID;
 };
 
-class PlayerJoinEvent : public EventTemplate<PlayerJoinEvent>
-{
+class PlayerJoinEvent : public EventTemplate<PlayerJoinEvent> {
 public:
     Player* mPlayer;
 };
 
-class PlayerLeftEvent : public EventTemplate<PlayerLeftEvent>
-{
+class PlayerLeftEvent : public EventTemplate<PlayerLeftEvent> {
 public:
     Player* mPlayer;
     string mXUID;
 };
 
-class PlayerRespawnEvent : public EventTemplate<PlayerRespawnEvent>
-{
+class PlayerRespawnEvent : public EventTemplate<PlayerRespawnEvent> {
 public:
     Player* mPlayer;
 };
 
-class PlayerUseItemEvent : public EventTemplate<PlayerUseItemEvent>
-{
+class PlayerUseItemEvent : public EventTemplate<PlayerUseItemEvent> {
 public:
     Player* mPlayer;
     ItemStack* mItemStack;
 };
 
-class PlayerUseItemOnEvent : public EventTemplate<PlayerUseItemOnEvent>
-{
+class PlayerUseItemOnEvent : public EventTemplate<PlayerUseItemOnEvent> {
 public:
     Player* mPlayer;
     ItemStack* mItemStack;
@@ -176,152 +170,127 @@ public:
     Vec3 mClickPos;
 };
 
-class PlayerChatEvent : public EventTemplate<PlayerChatEvent>
-{
+class PlayerChatEvent : public EventTemplate<PlayerChatEvent> {
 public:
     Player* mPlayer;
     string mMessage;
 };
 
-class PlayerChangeDimEvent : public EventTemplate<PlayerChangeDimEvent>
-{
+class PlayerChangeDimEvent : public EventTemplate<PlayerChangeDimEvent> {
 public:
     Player* mPlayer;
     int mToDimensionId;
 };
 
-class PlayerJumpEvent : public EventTemplate<PlayerJumpEvent>
-{
+class PlayerJumpEvent : public EventTemplate<PlayerJumpEvent> {
 public:
     Player* mPlayer;
 };
 
-class EntityTransformEvent : public EventTemplate<EntityTransformEvent>
-{
+class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {
 public:
     ActorUniqueID* mBeforeEntityUniqueId;
     Actor* mAfterEntity;
 };
 
-class PlayerSneakEvent : public EventTemplate<PlayerSneakEvent>
-{
+class PlayerSneakEvent : public EventTemplate<PlayerSneakEvent> {
 public:
     Player* mPlayer;
     bool mIsSneaking;
 };
 
-class PlayerAttackEvent : public EventTemplate<PlayerAttackEvent>
-{
+class PlayerAttackEvent : public EventTemplate<PlayerAttackEvent> {
 public:
     Player* mPlayer;
     Actor* mTarget;
     int mAttackDamage;
 };
 
-class PlayerAttackBlockEvent : public EventTemplate<PlayerAttackBlockEvent>
-{
+class PlayerAttackBlockEvent : public EventTemplate<PlayerAttackBlockEvent> {
 public:
     Player* mPlayer;
     ItemStack* mItemStack;
     BlockInstance mBlockInstance;
 };
 
-class PlayerDieEvent : public EventTemplate<PlayerDieEvent>
-{
+class PlayerDieEvent : public EventTemplate<PlayerDieEvent> {
 public:
     Player* mPlayer;
     ActorDamageSource* mDamageSource;
 };
 
-class PlayerPickupItemEvent : public EventTemplate<PlayerPickupItemEvent>
-{
+class PlayerPickupItemEvent : public EventTemplate<PlayerPickupItemEvent> {
 public:
     Player* mPlayer;
     Actor* mItemEntity;
     ItemStack* mItemStack;
 };
 
-class PlayerDropItemEvent : public EventTemplate<PlayerDropItemEvent>
-{
+class PlayerDropItemEvent : public EventTemplate<PlayerDropItemEvent> {
 public:
     Player* mPlayer;
     ItemStack* mItemStack;
 };
 
-class PlayerEatEvent : public EventTemplate<PlayerEatEvent>
-{
+class PlayerEatEvent : public EventTemplate<PlayerEatEvent> {
 public:
     Player* mPlayer;
     ItemStack* mFoodItem;
 };
 
-class PlayerConsumeTotemEvent : public EventTemplate<PlayerConsumeTotemEvent>
-{
+class PlayerConsumeTotemEvent : public EventTemplate<PlayerConsumeTotemEvent> {
 public:
     Player* mPlayer;
 };
 
-class PlayerCmdEvent : public EventTemplate<PlayerCmdEvent>
-{
+class PlayerCmdEvent : public EventTemplate<PlayerCmdEvent> {
 public:
     Player* mPlayer;
     string mCommand;
     MCRESULT* mResult;
 };
 
-class PlayerEffectChangedEvent : public EventTemplate<PlayerEffectChangedEvent>
-{
+class PlayerEffectChangedEvent : public EventTemplate<PlayerEffectChangedEvent> {
 public:
-    enum class EventType
-    {
-        Add,
-        Remove,
-        Update
-    };
+    enum class EventType { Add, Remove, Update };
     Player* mPlayer;
     EventType mEventType;
     MobEffectInstance* mEffect;
 };
 
-class PlayerStartDestroyBlockEvent : public EventTemplate<PlayerStartDestroyBlockEvent>
-{
+class PlayerStartDestroyBlockEvent : public EventTemplate<PlayerStartDestroyBlockEvent> {
 public:
     Player* mPlayer;
     BlockInstance mBlockInstance;
 };
 
-class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
-{
+class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent> {
 public:
     Player* mPlayer;
     BlockInstance mBlockInstance;
 };
 
-class PlayerPlaceBlockEvent : public EventTemplate<PlayerPlaceBlockEvent>
-{
+class PlayerPlaceBlockEvent : public EventTemplate<PlayerPlaceBlockEvent> {
 public:
     Player* mPlayer;
     BlockInstance mBlockInstance;
 };
 
-class PlayerOpenContainerEvent : public EventTemplate<PlayerOpenContainerEvent>
-{
+class PlayerOpenContainerEvent : public EventTemplate<PlayerOpenContainerEvent> {
 public:
     Player* mPlayer;
     BlockInstance mBlockInstance;
     Container* mContainer;
 };
 
-class PlayerCloseContainerEvent : public EventTemplate<PlayerCloseContainerEvent>
-{
+class PlayerCloseContainerEvent : public EventTemplate<PlayerCloseContainerEvent> {
 public:
     Player* mPlayer;
     BlockInstance mBlockInstance;
     Container* mContainer;
 };
 
-class PlayerInventoryChangeEvent : public EventTemplate<PlayerInventoryChangeEvent>
-{
+class PlayerInventoryChangeEvent : public EventTemplate<PlayerInventoryChangeEvent> {
 public:
     Player* mPlayer;
     int mSlot;
@@ -329,56 +298,45 @@ public:
     ItemStack* mNewItemStack;
 };
 
-class PlayerMoveEvent : public EventTemplate<PlayerMoveEvent>
-{
+class PlayerMoveEvent : public EventTemplate<PlayerMoveEvent> {
 public:
     Player* mPlayer;
     Vec3 mPos;
 };
 
-class PlayerSprintEvent : public EventTemplate<PlayerSprintEvent>
-{
+class PlayerSprintEvent : public EventTemplate<PlayerSprintEvent> {
 public:
     Player* mPlayer;
     bool mIsSprinting;
 };
 
-class PlayerSetArmorEvent : public EventTemplate<PlayerSetArmorEvent>
-{
+class PlayerSetArmorEvent : public EventTemplate<PlayerSetArmorEvent> {
 public:
     Player* mPlayer;
     int mSlot;
     ItemStack* mArmorItem;
 };
 
-class PlayerUseRespawnAnchorEvent : public EventTemplate<PlayerUseRespawnAnchorEvent>
-{
+class PlayerUseRespawnAnchorEvent : public EventTemplate<PlayerUseRespawnAnchorEvent> {
 public:
     Player* mPlayer;
     BlockInstance mBlockInstance;
 };
 
-class PlayerOpenContainerScreenEvent : public EventTemplate<PlayerOpenContainerScreenEvent>
-{
+class PlayerOpenContainerScreenEvent : public EventTemplate<PlayerOpenContainerScreenEvent> {
 public:
     Player* mPlayer;
 };
 
-class PlayerUseFrameBlockEvent : public EventTemplate<PlayerUseFrameBlockEvent>
-{
+class PlayerUseFrameBlockEvent : public EventTemplate<PlayerUseFrameBlockEvent> {
 public:
-    enum class Type
-    {
-        Use,
-        Attack
-    };
+    enum class Type { Use, Attack };
     Type mType;
     Player* mPlayer;
     BlockInstance mBlockInstance;
 };
 
-class PlayerScoreChangedEvent : public EventTemplate<PlayerScoreChangedEvent>
-{
+class PlayerScoreChangedEvent : public EventTemplate<PlayerScoreChangedEvent> {
 public:
     Player* mPlayer;
     int mScore;
@@ -386,8 +344,7 @@ public:
     ScoreboardId* mScoreboardId;
 };
 
-class PlayerExperienceAddEvent : public EventTemplate<PlayerExperienceAddEvent>
-{
+class PlayerExperienceAddEvent : public EventTemplate<PlayerExperienceAddEvent> {
 public:
     Player* mPlayer;
     int mExp;
@@ -396,36 +353,31 @@ public:
 
 ///////////////////////////// Block Events /////////////////////////////
 
-class BlockInteractedEvent : public EventTemplate<BlockInteractedEvent>
-{
+class BlockInteractedEvent : public EventTemplate<BlockInteractedEvent> {
 public:
     BlockInstance mBlockInstance;
     Player* mPlayer;
 };
 
-class BlockChangedEvent : public EventTemplate<BlockChangedEvent>
-{
+class BlockChangedEvent : public EventTemplate<BlockChangedEvent> {
 public:
     BlockInstance mPreviousBlockInstance;
     BlockInstance mNewBlockInstance;
 };
 
-class BlockExplodedEvent : public EventTemplate<BlockExplodedEvent>
-{
+class BlockExplodedEvent : public EventTemplate<BlockExplodedEvent> {
 public:
     BlockInstance mBlockInstance;
     Actor* mExplodeSource;
 };
 
-class FireSpreadEvent : public EventTemplate<FireSpreadEvent>
-{
+class FireSpreadEvent : public EventTemplate<FireSpreadEvent> {
 public:
     BlockPos mTarget;
     int mDimensionId;
 };
 
-class ContainerChangeEvent : public EventTemplate<ContainerChangeEvent>
-{
+class ContainerChangeEvent : public EventTemplate<ContainerChangeEvent> {
 public:
     Player* mPlayer;
     Actor* mActor;
@@ -436,23 +388,20 @@ public:
     ItemStack* mNewItemStack;
 };
 
-class ProjectileHitBlockEvent : public EventTemplate<ProjectileHitBlockEvent>
-{
+class ProjectileHitBlockEvent : public EventTemplate<ProjectileHitBlockEvent> {
 public:
     BlockInstance mBlockInstance;
     Actor* mSource;
 };
 
-class RedStoneUpdateEvent : public EventTemplate<RedStoneUpdateEvent>
-{
+class RedStoneUpdateEvent : public EventTemplate<RedStoneUpdateEvent> {
 public:
     BlockInstance mBlockInstance;
     int mRedStonePower;
     bool mIsActivated;
 };
 
-class HopperSearchItemEvent : public EventTemplate<HopperSearchItemEvent>
-{
+class HopperSearchItemEvent : public EventTemplate<HopperSearchItemEvent> {
 public:
     bool isMinecart;
     BlockInstance mHopperBlock;
@@ -460,44 +409,38 @@ public:
     int mDimensionId;
 };
 
-class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent>
-{
+class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent> {
 public:
     Vec3 mPos;
     int mDimensionId;
 };
 
-class PistonTryPushEvent : public EventTemplate<PistonTryPushEvent>
-{
+class PistonTryPushEvent : public EventTemplate<PistonTryPushEvent> {
 public:
     BlockInstance mPistonBlockInstance;
     BlockInstance mTargetBlockInstance;
 };
 
-class PistonPushEvent : public EventTemplate<PistonPushEvent>
-{
+class PistonPushEvent : public EventTemplate<PistonPushEvent> {
 public:
     BlockInstance mPistonBlockInstance;
     BlockInstance mTargetBlockInstance;
 };
 
-class FarmLandDecayEvent : public EventTemplate<FarmLandDecayEvent>
-{
+class FarmLandDecayEvent : public EventTemplate<FarmLandDecayEvent> {
 public:
     BlockInstance mBlockInstance;
     Actor* mActor;
 };
 
-class LiquidSpreadEvent : public EventTemplate<LiquidSpreadEvent>
-{
+class LiquidSpreadEvent : public EventTemplate<LiquidSpreadEvent> {
 public:
     BlockInstance mBlockInstance;
     BlockPos mTarget;
     int mDimensionId;
 };
 
-class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent>
-{
+class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent> {
 public:
     string mCommand;
     bool mIsMinecart;
@@ -505,8 +448,7 @@ public:
     Actor* mMinecart;
 };
 
-class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent>
-{
+class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent> {
 public:
     BlockInstance mBlockInstance;
     float mRadius;
@@ -518,8 +460,7 @@ public:
 
 ///////////////////////////// Entity Events /////////////////////////////
 
-class EntityExplodeEvent : public EventTemplate<EntityExplodeEvent>
-{
+class EntityExplodeEvent : public EventTemplate<EntityExplodeEvent> {
 public:
     Actor* mActor;
     Vec3 mPos;
@@ -530,82 +471,71 @@ public:
     bool mFire;
 };
 
-class MobHurtEvent : public EventTemplate<MobHurtEvent>
-{
+class MobHurtEvent : public EventTemplate<MobHurtEvent> {
 public:
     Mob* mMob;
     ActorDamageSource* mDamageSource;
     float mDamage;
 };
 
-class MobDieEvent : public EventTemplate<MobDieEvent>
-{
+class MobDieEvent : public EventTemplate<MobDieEvent> {
 public:
     Mob* mMob;
     ActorDamageSource* mDamageSource;
 };
 
-class ProjectileHitEntityEvent : public EventTemplate<ProjectileHitEntityEvent>
-{
+class ProjectileHitEntityEvent : public EventTemplate<ProjectileHitEntityEvent> {
 public:
     Actor* mTarget;
     Actor* mSource;
 };
 
-class WitherBossDestroyEvent : public EventTemplate<WitherBossDestroyEvent>
-{
+class WitherBossDestroyEvent : public EventTemplate<WitherBossDestroyEvent> {
 public:
     WitherBoss* mWitherBoss;
     AABB mDestroyRange = {{}, {}};
 };
 
-class EntityRideEvent : public EventTemplate<EntityRideEvent>
-{
+class EntityRideEvent : public EventTemplate<EntityRideEvent> {
 public:
     Actor* mRider;
     Actor* mVehicle;
 };
 
-class EntityStepOnPressurePlateEvent : public EventTemplate<EntityStepOnPressurePlateEvent>
-{
+class EntityStepOnPressurePlateEvent : public EventTemplate<EntityStepOnPressurePlateEvent> {
 public:
     Actor* mActor;
     BlockInstance mBlockInstance;
 };
 
-class NpcCmdEvent : public EventTemplate<NpcCmdEvent>
-{
+class NpcCmdEvent : public EventTemplate<NpcCmdEvent> {
 public:
     Actor* mNpc;
     std::string mCommand;
     Player* mPlayer;
 };
 
-class ProjectileSpawnEvent : public EventTemplate<ProjectileSpawnEvent>
-{
+class ProjectileSpawnEvent : public EventTemplate<ProjectileSpawnEvent> {
 public:
     Actor* mShooter;
     ActorDefinitionIdentifier* mIdentifier;
     std::string mType;
 };
 
-class ProjectileCreatedEvent : public EventTemplate<ProjectileCreatedEvent>
-{
+class ProjectileCreatedEvent : public EventTemplate<ProjectileCreatedEvent> {
 public:
     Actor* mShooter;
     Actor* mProjectile;
 };
 
-class ArmorStandChangeEvent : public EventTemplate<ArmorStandChangeEvent>
-{
+class ArmorStandChangeEvent : public EventTemplate<ArmorStandChangeEvent> {
 public:
     ArmorStand* mArmorStand;
     Player* mPlayer;
     int mSlot;
 };
 
-class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent>
-{
+class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent> {
 public:
     ActorRuntimeID mTarget;
     int mInteractiveMode;
@@ -613,48 +543,36 @@ public:
 
 ///////////////////////////// Other Events /////////////////////////////
 
-class PostInitEvent : public EventTemplate<PostInitEvent>
-{
-};
+class PostInitEvent : public EventTemplate<PostInitEvent> {};
 
-class ServerStartedEvent : public EventTemplate<ServerStartedEvent>
-{
-};
+class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {};
 
-class ServerStoppedEvent : public EventTemplate<ServerStoppedEvent>
-{
-};
+class ServerStoppedEvent : public EventTemplate<ServerStoppedEvent> {};
 
-class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent>
-{
+class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent> {
 public:
     std::string mCommand;
 };
 
-class RegCmdEvent : public EventTemplate<RegCmdEvent>
-{
+class RegCmdEvent : public EventTemplate<RegCmdEvent> {
 public:
     CommandRegistry* mCommandRegistry;
 };
 
-class ConsoleOutputEvent : public EventTemplate<ConsoleOutputEvent>
-{
+class ConsoleOutputEvent : public EventTemplate<ConsoleOutputEvent> {
 public:
     std::string mOutput;
 };
 
-class PlayerBedEnterEvent : public EventTemplate<PlayerBedEnterEvent>
-{
+class PlayerBedEnterEvent : public EventTemplate<PlayerBedEnterEvent> {
 public:
     Player* mPlayer;
     BlockInstance* mBlockInstance;
 };
 
-class ScriptPluginManagerEvent : public EventTemplate<ScriptPluginManagerEvent>
-{
+class ScriptPluginManagerEvent : public EventTemplate<ScriptPluginManagerEvent> {
 public:
-    enum class Operation
-    { Load, Unload, Reload };
+    enum class Operation { Load, Unload, Reload };
 
     Operation operation;
     std::string target;
@@ -664,13 +582,11 @@ public:
     bool success = false;
 };
 
-class MobSpawnEvent : public EventTemplate<MobSpawnEvent>
-{
+class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
 public:
     string mTypeName;
     Vec3 mPos;
     int mDimensionId;
-	
 };
 
 }; // namespace Event

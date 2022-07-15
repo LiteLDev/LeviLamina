@@ -6,13 +6,11 @@
 
 class Logger;
 
-namespace DB
-{
+namespace DB {
 
 extern Logger dbLogger;
 
-class Session
-{
+class Session {
 
 protected:
 #if defined(LLDB_DEBUG_MODE)
@@ -24,7 +22,6 @@ protected:
     std::vector<std::weak_ptr<Stmt>> stmtPool; ///< List of statements opened by prepare method.
 
 public:
-
     /// Destructor
     virtual ~Session() = default;
     /**
@@ -181,7 +178,9 @@ public:
      * @param  database  Database name
      * @return SharedPointer<Session>  The session
      */
-    LIAPI static SharedPointer<Session> create(DBType type, const std::string& host, uint16_t port, const std::string& user, const std::string& password, const std::string& database);
+    LIAPI static SharedPointer<Session> create(DBType type, const std::string& host, uint16_t port,
+                                               const std::string& user, const std::string& password,
+                                               const std::string& database);
     /**
      * @brief Create and open a new session.
      *
@@ -192,7 +191,6 @@ public:
     LIAPI static SharedPointer<Session> create(DBType type, const std::string& path);
 
 private:
-
     /**
      * @brief Create a new session(internal).
      *
@@ -203,29 +201,25 @@ private:
     static SharedPointer<Session> _Create(DBType type, const ConnParams& params = {});
 
 private:
-
     static std::vector<std::weak_ptr<Session>> sessionPool; ///< List of sessions(weak pointers)
 
 public:
-
     /**
      * @brief Get the Session ptr by the (this) pointer.
      *
      * @param  session  The (this) pointer
      * @return std::shared_ptr<Session>  The Session ptr
      */
-    static std::shared_ptr<Session> getSession(Session* session)
-    {
-        for (auto& s : sessionPool)
-        {
-            if (s.expired()) continue;
+    static std::shared_ptr<Session> getSession(Session* session) {
+        for (auto& s : sessionPool) {
+            if (s.expired())
+                continue;
             auto ptr = s.lock();
             if (ptr.get() == session)
                 return ptr;
         }
         throw std::runtime_error("Session::getSession: Session is not found or expired");
     }
-
 };
 
 } // namespace DB

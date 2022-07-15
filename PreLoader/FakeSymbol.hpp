@@ -4,11 +4,9 @@
 #include <string>
 #include "../Tools/Demangler/include/MicrosoftDemangle.h"
 
-namespace FakeSymbol
-{
+namespace FakeSymbol {
 
-inline static llvm::ms_demangle::SpecialIntrinsicKind consumeSpecialIntrinsicKind(StringView& MangledName)
-{
+inline static llvm::ms_demangle::SpecialIntrinsicKind consumeSpecialIntrinsicKind(StringView& MangledName) {
     using namespace llvm::ms_demangle;
     using namespace llvm;
     if (MangledName.consumeFront("?_7"))
@@ -47,8 +45,7 @@ inline static llvm::ms_demangle::SpecialIntrinsicKind consumeSpecialIntrinsicKin
 }
 
 // generate fakeSymbol for virtual functions
-inline static std::optional<std::string> getFakeSymbol(const std::string& fn)
-{
+inline static std::optional<std::string> getFakeSymbol(const std::string& fn) {
     using namespace llvm::ms_demangle;
     using namespace llvm;
     Demangler Demangler;
@@ -65,33 +62,30 @@ inline static std::optional<std::string> getFakeSymbol(const std::string& fn)
         return std::nullopt;
 
     SymbolNode* DemangledName = Demangler.demangleDeclarator(Name);
-    if (DemangledName == nullptr || (DemangledName->kind() != NodeKind::FunctionSymbol && DemangledName->kind() != NodeKind::VariableSymbol) || Demangler.Error)
+    if (DemangledName == nullptr ||
+        (DemangledName->kind() != NodeKind::FunctionSymbol && DemangledName->kind() != NodeKind::VariableSymbol) ||
+        Demangler.Error)
         return std::nullopt;
 
-	if (DemangledName->kind() == NodeKind::FunctionSymbol)
-    {
+    if (DemangledName->kind() == NodeKind::FunctionSymbol) {
         auto& FunctionClass = ((FunctionSymbolNode*)DemangledName)->Signature->FunctionClass;
         bool modified = false;
         size_t originalSize = FunctionClass.toString().size();
-        if (FunctionClass.has(FC_Virtual))
-        {
+        if (FunctionClass.has(FC_Virtual)) {
             FunctionClass.remove(FC_Virtual);
             modified = true;
         }
-        if (FunctionClass.has(FC_Protected))
-        {
+        if (FunctionClass.has(FC_Protected)) {
             FunctionClass.remove(FC_Protected);
             FunctionClass.add(FC_Public);
             modified = true;
         }
-        if (FunctionClass.has(FC_Private))
-        {
+        if (FunctionClass.has(FC_Private)) {
             FunctionClass.remove(FC_Private);
             FunctionClass.add(FC_Public);
             modified = true;
         }
-        if (modified)
-        {
+        if (modified) {
             std::string FakeSymbol = fn;
             std::string FakeFunctionClass = FunctionClass.toString();
             size_t BeginPos = fn.size() - FunctionClass.pos->size();
@@ -104,22 +98,20 @@ inline static std::optional<std::string> getFakeSymbol(const std::string& fn)
     if (DemangledName->kind() == NodeKind::VariableSymbol) {
         auto& StorageClass = ((VariableSymbolNode*)DemangledName)->SC;
         bool modified = false;
-        if (StorageClass == StorageClass::PrivateStatic)
-        {
+        if (StorageClass == StorageClass::PrivateStatic) {
             StorageClass.set(StorageClass::PublicStatic);
             modified = true;
         }
-        if (StorageClass == StorageClass::ProtectedStatic)
-        {
-			StorageClass.set(StorageClass::PublicStatic);
+        if (StorageClass == StorageClass::ProtectedStatic) {
+            StorageClass.set(StorageClass::PublicStatic);
             modified = true;
         }
         if (modified) {
-			std::string FakeSymbol = fn;
+            std::string FakeSymbol = fn;
             char FakeStorageClass = StorageClass.toChar();
-			size_t BeginPos = fn.size() - StorageClass.pos->size();
+            size_t BeginPos = fn.size() - StorageClass.pos->size();
             FakeSymbol[BeginPos] = FakeStorageClass;
-			return FakeSymbol;
+            return FakeSymbol;
         }
     }
 

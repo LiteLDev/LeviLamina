@@ -10,11 +10,9 @@
 
 using namespace std;
 
-std::string LL::getDataPath(const std::string &pluginName)
-{
+std::string LL::getDataPath(const std::string& pluginName) {
     string dataPath = "plugins\\LiteLoader\\" + pluginName;
-    if (!filesystem::exists(str2wstr(dataPath)))
-    {
+    if (!filesystem::exists(str2wstr(dataPath))) {
         std::error_code ec;
         filesystem::create_directories(str2wstr(dataPath), ec);
     }
@@ -25,20 +23,20 @@ std::string LL::getLoaderVersionString() {
     return getLoaderVersion().toString();
 }
 
-LL::Version LL::getLoaderVersion()
-{
-    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, (LL::Version::Status)LITELOADER_VERSION_STATUS);
+LL::Version LL::getLoaderVersion() {
+    return Version(LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION,
+                   (LL::Version::Status)LITELOADER_VERSION_STATUS);
 }
 
 bool LL::isDebugMode() {
     return LL::globalConfig.debugMode;
 }
 
-LL::Plugin *LL::getPlugin(std::string name) {
+LL::Plugin* LL::getPlugin(std::string name) {
     return PluginManager::getPlugin(name);
 }
 
-LL::Plugin *LL::getPlugin(HMODULE handle) {
+LL::Plugin* LL::getPlugin(HMODULE handle) {
     return PluginManager::getPlugin(handle);
 }
 
@@ -54,9 +52,10 @@ HMODULE LL::getLoaderHandle() {
     return GetCurrentModule();
 }
 
-//Version
+// Version
 LL::Version::Version(int major, int minor, int revision, Status status)
-        : major(major), minor(minor), revision(revision), status(status) {}
+: major(major), minor(minor), revision(revision), status(status) {
+}
 
 bool LL::Version::operator<(LL::Version b) {
     return major < b.major || (major == b.major && minor < b.minor) ||
@@ -79,7 +78,7 @@ std::string LL::Version::toString(bool needStatus) {
 }
 
 
-LL::Version LL::Version::parse(const std::string &str) {
+LL::Version LL::Version::parse(const std::string& str) {
     Version ver;
     std::string a = str;
     std::string status;
@@ -108,17 +107,14 @@ LL::Version LL::Version::parse(const std::string &str) {
     return ver;
 }
 
-LL::ServerStatus LL::getServerStatus()
-{
+LL::ServerStatus LL::getServerStatus() {
     return (LL::ServerStatus)(LL::globalConfig.serverStatus);
 }
 
-bool LL::isServerStarting()
-{
+bool LL::isServerStarting() {
     return getServerStatus() == LL::ServerStatus::Starting;
 }
 
-bool LL::isServerStopping()
-{
+bool LL::isServerStopping() {
     return getServerStatus() == LL::ServerStatus::Stopping;
 }

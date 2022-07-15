@@ -26,8 +26,7 @@ std::string StringTag::get() {
     return value();
 }
 
-StringTag::operator std::string() const
-{
+StringTag::operator std::string() const {
     if (!this)
         return "";
     return val;

@@ -1,6 +1,6 @@
 #pragma once
 #include <I18nAPI.h>
-
+// clang-format off
 static const I18N::LangData defaultLangData = {
     {"en", {
          {"init.loadConfig.fail", "Loading ScriptEngine config failed"},
@@ -78,3 +78,4 @@ static const I18N::LangData defaultLangData = {
          {"Do you want to terminate the process with PID {}?  (y=Yes, n=No)", "您是否要強製終止該PID為 {} 的進程? (y=是, n=否)"},
     }}
 };
+// clang-format on

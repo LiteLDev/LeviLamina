@@ -31,13 +31,13 @@ bool is(std::string str) {
 //////////// Hook Data ////////////
 HANDLE hConsole;
 
-BOOL (WINAPI *WriteFile_Ptr)(HANDLE hFile, LPCVOID lpBuffer,
-                             DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten,
-                             LPOVERLAPPED lpOverlapped) = WriteFile;
+BOOL(WINAPI* WriteFile_Ptr)
+(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten,
+ LPOVERLAPPED lpOverlapped) = WriteFile;
 
 
 //////////// Process ////////////
-//extern bool OutputProcess(std::string& line);
+// extern bool OutputProcess(std::string& line);
 std::ostringstream buffer;
 
 bool inline SendLine(HANDLE hOutput) {
@@ -67,15 +67,14 @@ bool inline SendLine(HANDLE hOutput) {
     return success;
 }
 
-void inline AddText(const char *text, std::streamsize len) {
+void inline AddText(const char* text, std::streamsize len) {
     buffer.write(text, len);
 }
 
-BOOL WINAPI WriteFile_Process(HANDLE hFile, LPCVOID lpBuffer,
-                              DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten,
-                              LPOVERLAPPED lpOverlapped) {
+BOOL WINAPI WriteFile_Process(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite,
+                              LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped) {
     if (hFile == hConsole) {
-        char *fromPos = (char *) lpBuffer;
+        char* fromPos = (char*)lpBuffer;
         int nowLen = 0;
         for (size_t i = 0; i < nNumberOfBytesToWrite; ++i) {
             if (fromPos[nowLen++] == '\n') {
@@ -90,8 +89,7 @@ BOOL WINAPI WriteFile_Process(HANDLE hFile, LPCVOID lpBuffer,
         *lpNumberOfBytesWritten = nNumberOfBytesToWrite;
         return TRUE;
     } else
-        return WriteFile_Ptr(hFile, lpBuffer, nNumberOfBytesToWrite,
-                             lpNumberOfBytesWritten, lpOverlapped);
+        return WriteFile_Ptr(hFile, lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, lpOverlapped);
 }
 
 //////////// Init ////////////
@@ -109,7 +107,7 @@ bool Hook() {
         return true;
     });
     bool success = true;
-    if ((__int64) (hConsole = GetStdHandle(STD_OUTPUT_HANDLE)) <= 0)
+    if ((__int64)(hConsole = GetStdHandle(STD_OUTPUT_HANDLE)) <= 0)
         success = false;
     else {
         DetourRestoreAfterWith();
@@ -117,7 +115,7 @@ bool Hook() {
             success = false;
         else if (DetourUpdateThread(GetCurrentThread()) != NO_ERROR)
             success = false;
-        else if (DetourAttach((PVOID *) &WriteFile_Ptr, WriteFile_Process) != NO_ERROR)
+        else if (DetourAttach((PVOID*)&WriteFile_Ptr, WriteFile_Process) != NO_ERROR)
             success = false;
         else if (DetourTransactionCommit() != NO_ERROR)
             success = false;
@@ -131,7 +129,7 @@ bool UnHook() {
         success = false;
     else if (DetourUpdateThread(GetCurrentThread()) != NO_ERROR)
         success = false;
-    else if (DetourDetach((PVOID *) &WriteFile_Ptr, WriteFile_Process) != NO_ERROR)
+    else if (DetourDetach((PVOID*)&WriteFile_Ptr, WriteFile_Process) != NO_ERROR)
         success = false;
     else if (DetourTransactionCommit() != NO_ERROR)
         success = false;
@@ -155,8 +153,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     return TRUE;
 }
 
-THook(int, "main", int a, void *b) {
-    char **str = static_cast<char **>(b);
+THook(int, "main", int a, void* b) {
+    char** str = static_cast<char**>(b);
     bool enablePrompt = true;
     for (int i = 0; i < a; ++i) {
         if (strcmp(str[i], "--noPrompt") == 0) {
