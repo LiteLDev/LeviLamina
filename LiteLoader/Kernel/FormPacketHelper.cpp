@@ -19,10 +19,11 @@ using namespace std;
 
 enum class FormType {
     SimpleFormBuilder,
+    ModalFormBuilder,
     CustomFormBuilder,
     SimpleFormPacket,
-    CustomFormPacket,
-    ModalFormPacket
+    ModalFormPacket,
+    CustomFormPacket
 };
 
 unordered_map<unsigned, FormType> formTypes;
@@ -32,6 +33,7 @@ unordered_map<unsigned, std::function<void(Player*, bool)>> modalFormPacketCallb
 unordered_map<unsigned, std::function<void(Player*, string)>> customFormPacketCallbacks;
 
 unordered_map<unsigned, std::shared_ptr<Form::SimpleForm>> simpleFormBuilders;
+unordered_map<unsigned, std::shared_ptr<Form::ModalForm>> modalFormBuilders;
 unordered_map<unsigned, std::shared_ptr<Form::CustomForm>> customFormBuilders;
 
 
@@ -67,6 +69,11 @@ void SetSimpleFormBuilderData(unsigned formId, std::shared_ptr<Form::SimpleForm>
     simpleFormBuilders[formId] = data;
 }
 
+void SetModalFormBuilderData(unsigned formId, std::shared_ptr<Form::ModalForm> data) {
+    formTypes[formId] = FormType::ModalFormBuilder;
+    modalFormBuilders[formId] = data;
+}
+
 void SetCustomFormBuilderData(unsigned formId, std::shared_ptr<Form::CustomForm> data) {
     formTypes[formId] = FormType::CustomFormBuilder;
     customFormBuilders[formId] = data;
@@ -90,6 +97,14 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data) {
                 button->callback(player);
         }
         simpleFormBuilders.erase(formId);
+    } else if (formTypes[formId] == FormType::ModalFormBuilder) {
+        int chosen = data == "true" ? 1 : 0;
+
+        // Modal Form Builder
+        auto form = modalFormBuilders[formId];
+        if (form->callback)
+            form->callback(player, chosen);
+        modalFormBuilders.erase(formId);
     } else if (formTypes[formId] == FormType::CustomFormBuilder) {
         // Custom Form Builder
         auto form = customFormBuilders[formId];
