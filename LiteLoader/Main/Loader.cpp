@@ -76,6 +76,7 @@ void LoadScriptEngine() {
 }
 
 void LoadDotNETEngine() {
+    logger.warn("LiteLoader.NET is not finished yet!");
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     std::string path = "plugins/LiteLoader.NET.dll";
     std::string version = GetFileVersionString(path, true);
@@ -86,8 +87,10 @@ void LoadDotNETEngine() {
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
         logger.info("* .NET Engine loaded");
-    }
-    else {
+        // Fake Register
+        RegisterPlugin(lib, "DotNETEngine", ".NETEngine", LITELOADER_VERSION,
+                       {{"GitHub", "github.com/LiteLDev/LiteLoaderBDS"}});
+    } else {
         logger.error("* Fail to load .NET Engine!");
         logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
     }
@@ -195,7 +198,6 @@ void LL::LoadMain() {
 
     // Load .NET Engine
     if (filesystem::exists("plugins/LiteLoader.NET.dll")) {
-        logger.warn("LiteLoader.NET is not finished yet!");
         LoadDotNETEngine();
     }
 
