@@ -78,7 +78,7 @@ bool SimpleForm::sendTo(Player* player, Callback callback) {
     return player->sendRawFormPacket(id, data);
 }
 
-//////////////////////////////// Simple Form ////////////////////////////////
+//////////////////////////////// Modal Form ////////////////////////////////
 ModalForm& ModalForm::setTitle(const string& title) {
     this->title = title;
     return *this;
@@ -89,13 +89,13 @@ ModalForm& ModalForm::setContent(const string& content) {
     return *this;
 }
 
-ModalForm& ModalForm::setButton1(const string& text) {
-    this->button1 = text;
+ModalForm& ModalForm::setConfirmButton(const string& text) {
+    this->confirmButton = text;
     return *this;
 }
 
-ModalForm& ModalForm::setButton2(const string& text) {
-    this->button2 = text;
+ModalForm& ModalForm::setCancelButton(const string& text) {
+    this->cancelButton = text;
     return *this;
 }
 
@@ -104,11 +104,11 @@ string ModalForm::serialize() {
         fifo_json form = fifo_json::parse(R"({"title":"","content":"","button1":"","button2":"","type":"modal"})");
         form["title"] = title;
         form["content"] = content;
-        form["button1"] = button1;
-        form["button2"] = button2;
+        form["button1"] = confirmButton;
+        form["button2"] = cancelButton;
         return form.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Simple Form in serialize!");
+        logger.error("Fail to generate Modal Form in serialize!");
         return "";
     }
 }

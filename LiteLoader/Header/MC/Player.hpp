@@ -137,7 +137,7 @@ public:
 
     // Form
     LIAPI bool sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const;
-    LIAPI bool sendModalForm(const string& title, const string& content, const string& button1, const string& button2, std::function<void(Player*, bool)> callback) const;
+    LIAPI bool sendModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, std::function<void(Player*, bool)> callback) const;
     LIAPI bool sendCustomForm(const std::string& data, std::function<void(Player*, string)> callback) const;
 
     // Packet

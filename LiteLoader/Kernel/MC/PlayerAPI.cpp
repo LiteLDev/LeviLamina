@@ -790,12 +790,12 @@ bool Player::sendSimpleForm(const string& title, const string& content, const ve
     return true;
 }
 
-bool Player::sendModalForm(const string& title, const string& content, const string& button1, const string& button2, std::function<void(Player*, bool)> callback) const {
+bool Player::sendModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, std::function<void(Player*, bool)> callback) const {
     nlohmann::json model = R"({"title":"","content":"","button1":"","button2":"","type":"modal"})"_json;
     model["title"] = title;
     model["content"] = content;
-    model["button1"] = button1;
-    model["button2"] = button2;
+    model["button1"] = confirmButton;
+    model["button2"] = cancelButton;
     std::string data = model.dump();
     unsigned formId = NewFormId();
     if (!sendRawFormPacket(formId, data))

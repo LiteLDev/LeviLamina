@@ -4,7 +4,7 @@
 //
 //  [Example - Simple Form]
 //  - Form that contains several buttons (with optional image)
-//  - Lets the player to choose one option
+//  - Let the player choose an option from multiple options
 //
 //  SimpleForm form("Welcome to shop", "Choose what you want to do...");     // Initialize the form with title and content
 //  form.addButton("Buy", "textures/items/apple",                            // Add a button "Buy" with texture image
@@ -21,14 +21,14 @@
 //
 //
 //  [Example - Modal Form]
-//  - Form that contains accept button and cancell button
-//  - Lets the player to choose one option
+//  - Form with Confirm and Cancel buttons
+//  - Let the player confirm or cancel an action
 //
 //  ModalForm form("Confirm the action", "Do you want that?", "Yes", "Nope");     // Initialize the form with title, content and two buttons ("Yes", "Nope")
 //  form.sendTo(Level::getPlayer("S3v3N1ce"),                                     // Send the form to a player called "S3v3N1ce"
-//      [](Player* player, bool isAccept)                                         // Callback function to process the result
+//      [](Player* player, bool isConfirm)                                        // Callback function to process the result
 //          {
-//              if (isAccept)                                                     // Player pressed button "Yes"
+//              if (isConfirm)                                                    // Player pressed button "Yes"
 //                  player->sendText("Okay, let's go");
 //              else                                                              // Player pressed button "Nope"
 //                  player->sendText("Hm, suit yourself");
@@ -37,7 +37,7 @@
 //
 //  [Example - Custom Form]
 //  - Form that contains some kinds of elements (like input line, toggle, dropdown, ....)
-//  - Lets the player to provide some detailed information
+//  - Let the player provide some detailed information
 //
 //  CustomForm form2("Information Collection Form");                               // Initialize the form with title
 //  form2.addLabel("label1", "Personal Information")                               // Add a label shows "Personal Information"
@@ -352,24 +352,24 @@ protected:
 
 public:
     using Callback = std::function<void(Player*, bool)>;
-    string title, content, button1, button2;
+    string title, content, confirmButton, cancelButton;
     Callback callback;
 
 public:
     ModalForm(string title, string content, string button1, string button2)
     : title(std::move(title))
     , content(std::move(content))
-    , button1(std::move(button1))
-    , button2(std::move(button2)) {
+    , confirmButton(std::move(button1))
+    , cancelButton(std::move(button2)) {
     }
     template <typename T, typename... Args>
-    ModalForm(const string& title, const string& content, const string& button1, const string& button2, Args... args) {
-        ModalForm(title, content, button1, button2, args...);
+    ModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, Args... args) {
+        ModalForm(title, content, confirmButton, cancelButton, args...);
     }
     LIAPI ModalForm& setTitle(const string& title);
     LIAPI ModalForm& setContent(const string& content);
-    LIAPI ModalForm& setButton1(const string& text);
-    LIAPI ModalForm& setButton2(const string& text);
+    LIAPI ModalForm& setConfirmButton(const string& text);
+    LIAPI ModalForm& setCancelButton(const string& text);
     LIAPI bool sendTo(Player* player, Callback callback = Callback());
 };
 
