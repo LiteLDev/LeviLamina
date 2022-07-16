@@ -67,7 +67,7 @@ void LoadScriptEngine() {
             logger.info("* ScriptEngine for " + backend + " loaded");
             // Fake Register
             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
-                           {{"GitHub", "github.com/LiteLDev/LiteLoaderBDS"}});
+                           {{"GitHub", "https://github.com/LiteLDev/LiteLoaderBDS"}});
         } else {
             logger.error("* Fail to load ScriptEngine for {}!", backend);
             logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
@@ -76,19 +76,22 @@ void LoadScriptEngine() {
 }
 
 void LoadDotNETEngine() {
+    logger.warn("LiteLoader.NET is not finished yet!");
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
-    std::string path = "plugins/LiteLoader.NET.dll";
+    std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
     std::string version = GetFileVersionString(path, true);
     if (version != llVersion) {
-        logger.warn("The file version <{}> of .NET Engine does not match the LiteLoader version <{}>",
+        logger.warn("The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>",
                     version, llVersion);
     }
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
         logger.info("* .NET Engine loaded");
-    }
-    else {
-        logger.error("* Fail to load .NET Engine!");
+        // Fake Register
+        RegisterPlugin(lib, "LiteLoader.NET", "LiteLoader.NET", LITELOADER_VERSION,
+                       {{"GitHub", "https://github.com/LiteLDev/LiteLoader.NET"}});
+    } else {
+        logger.error("* Fail to load LiteLoader.NET!");
         logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
     }
 }
@@ -194,8 +197,7 @@ void LL::LoadMain() {
     }
 
     // Load .NET Engine
-    if (filesystem::exists("plugins/LiteLoader.NET.dll")) {
-        logger.warn("LiteLoader.NET is not finished yet!");
+    if (filesystem::exists("plugins/LiteLoader/LiteLoader.NET.dll")) {
         LoadDotNETEngine();
     }
 
