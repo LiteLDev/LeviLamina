@@ -21,14 +21,14 @@
 //
 //
 //  [Example - Modal Form]
-//  - Form that contains two horizontally arranged buttons (accept button and cancell button)
+//  - Form that contains accept button and cancell button
 //  - Lets the player to choose one option
 //
 //  ModalForm form("Confirm the action", "Do you want that?", "Yes", "Nope");     // Initialize the form with title, content and two buttons ("Yes", "Nope")
 //  form.sendTo(Level::getPlayer("S3v3N1ce"),                                     // Send the form to a player called "S3v3N1ce"
-//      [](Player* player, bool result)                                           // Callback function to process the result
+//      [](Player* player, bool isAccept)                                         // Callback function to process the result
 //          {
-//              if (result == true)                                               // Player pressed button "Yes"
+//              if (isAccept)                                                     // Player pressed button "Yes"
 //                  player->sendText("Okay, let's go");
 //              else                                                              // Player pressed button "Nope"
 //                  player->sendText("Hm, suit yourself");
