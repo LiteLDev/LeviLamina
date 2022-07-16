@@ -67,7 +67,7 @@ void LoadScriptEngine() {
             logger.info("* ScriptEngine for " + backend + " loaded");
             // Fake Register
             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
-                           {{"GitHub", "github.com/LiteLDev/LiteLoaderBDS"}});
+                           {{"GitHub", "https://github.com/LiteLDev/LiteLoaderBDS"}});
         } else {
             logger.error("* Fail to load ScriptEngine for {}!", backend);
             logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
@@ -89,7 +89,7 @@ void LoadDotNETEngine() {
         logger.info("* .NET Engine loaded");
         // Fake Register
         RegisterPlugin(lib, "DotNETEngine", ".NETEngine", LITELOADER_VERSION,
-                       {{"GitHub", "github.com/LiteLDev/LiteLoaderBDS"}});
+                       {{"GitHub", "https://github.com/LiteLDev/LiteLoader.NET"}});
     } else {
         logger.error("* Fail to load .NET Engine!");
         logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
