@@ -1335,8 +1335,8 @@
 
 #### 模拟破坏
 
-`sp.simulateDestory([pos,face])`
-`sp.simulateDestory([block,face])`
+`sp.simulateDestroy([pos,face])`
+`sp.simulateDestroy([block,face])`
 - 参数：
 
   - pos :`IntPos`  
