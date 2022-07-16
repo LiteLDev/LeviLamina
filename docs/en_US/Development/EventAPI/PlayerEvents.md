@@ -461,3 +461,28 @@ Note: Player.setSprinting (false) can be executed in the next game tick to achie
 
 Note: This event is so powerful that it can even intercept and open backpacks.
 
+<br>
+
+#### `"onExperienceAdd"` - Player Get Experience
+
+- Listener function prototype 
+  `function(player,exp)`
+- Parameters：
+  - player : `Player`  
+    Players with experience.
+  - exp : `Integer`
+    Amount of experience gained by the player.
+- Intercept events: function returns `false`
+
+<br>
+
+#### `"onBedEnter"` - Player Enters Bed
+
+- Listener function prototype 
+  `function(player,pos)`
+- Parameters：
+  - player : `Player`  
+    The player using the bed.
+  - pos : `IntPos`  
+    The position of the bed used.
+- Intercept events: function returns `false`
