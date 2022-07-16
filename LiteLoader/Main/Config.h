@@ -31,7 +31,7 @@ struct LLConfig {
     bool debugMode = false;
     bool colorLog = true;
     int logLevel = 4;
-    std::string language = "en_US";
+    std::string language = "system";
 
     bool enableScriptEngine = true;
     bool alwaysLaunchScriptEngine = false;

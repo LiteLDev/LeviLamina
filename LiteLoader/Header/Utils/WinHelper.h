@@ -26,4 +26,11 @@ HMODULE inline GetCurrentModule() {
 LIAPI std::string GetModulePath(HMODULE handle);
 LIAPI std::string GetModuleName(HMODULE handle);
 
+/**
+ * @brief Get the system locale name.
+ * 
+ * @return  std::string  The system locale name.
+ */
+LIAPI std::string GetSystemLocaleName();
+
 LIAPI bool IsWineEnvironment();

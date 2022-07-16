@@ -173,6 +173,15 @@ string GetModuleName(HMODULE handle) {
     return UTF82String(std::filesystem::path(buf).filename().u8string());
 }
 
+std::string GetSystemLocaleName() {
+    wchar_t buf[256] = {0};
+    auto lcid = GetSystemDefaultLCID();
+    GetSystemDefaultLocaleName(buf, lcid);
+    auto str = wstr2str(buf);
+    std::replace(str.begin(), str.end(), '-', '_');
+    return str;
+}
+
 inline bool isWine() {
     HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
     auto pwine_get_version = GetProcAddress(ntdll, "wine_get_version");

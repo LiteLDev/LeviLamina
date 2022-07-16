@@ -31,8 +31,9 @@ inline bool hasImpl(HMODULE hPlugin, const std::string& key) {
 
 template <typename T>
 inline void removeImpl(HMODULE hPlugin, const std::string& key) {
-    if (hasImpl(hPlugin, key))
+    if (hasImpl(hPlugin, key)) {
         delete (T*)ll_PluginOwnData[hPlugin][key];
+    }
 }
 
 template <typename T, typename... Args>
@@ -44,9 +45,25 @@ inline T& setImpl(HMODULE hPlugin, const std::string& key, const Args&... args) 
 }
 
 template <typename T>
+inline T& setWithoutNewImpl(HMODULE hPlugin, const std::string& key, T* val) {
+    removeImpl<T>(hPlugin, key);
+    ll_PluginOwnData[hPlugin][key] = val;
+    return *val;
+}
+
+template <typename T>
 inline T& getImpl(HMODULE hPlugin, const std::string& key) {
-    if (!hasImpl(hPlugin, key))
-        ll_PluginOwnData[hPlugin][key] = new T;
+    if (!hasImpl(hPlugin, key)) {
+        throw std::out_of_range("The specified key is not found!");
+    }
+    return *(T*)ll_PluginOwnData[hPlugin][key];
+}
+
+template <typename T, typename... Args>
+inline T& getOrImpl(HMODULE hPlugin, const std::string& key, const Args&... args) {
+    if (!hasImpl(hPlugin, key)) {
+        return setImpl(hPlugin, key, args...);
+    }
     return *(T*)ll_PluginOwnData[hPlugin][key];
 }
 
@@ -55,9 +72,19 @@ inline T& set(const std::string& key, const Args&... args) {
     return setImpl<T, Args...>(GetCurrentModule(), key, args...);
 }
 
+template <typename T, typename... Args>
+inline T& setWithoutNew(const std::string& key, T* val) {
+    return setWithoutNewImpl(GetCurrentModule(), key, val);
+}
+
 template <typename T>
 inline T& get(const std::string& key) {
     return getImpl<T>(GetCurrentModule(), key);
+}
+
+template <typename T, typename ... Args>
+inline T& getOr(const std::string& key, const Args& ... args) {
+    return getOrImpl<T>(GetCurrentModule(), key, args...);
 }
 
 inline bool has(const std::string& key) {
