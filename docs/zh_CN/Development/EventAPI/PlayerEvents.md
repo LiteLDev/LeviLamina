@@ -458,7 +458,7 @@
   `function(player,pos)`
 - 参数：
   - player : `Player`  
-    使用重生锚的玩家指针
+    使用重生锚的玩家对象
   - pos : `IntPos`  
     被使用的重生锚的位置
 - 拦截事件：函数返回`false`
@@ -497,7 +497,7 @@
   `function(player,pos)`
 - 参数：
   - player : `Player`  
-    上床的玩家指针
+    上床的玩家对象
   - pos : `IntPos`  
     床的位置
 - 拦截事件：函数返回`false`
