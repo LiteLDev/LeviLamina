@@ -538,7 +538,7 @@ void EnableEventListener(int eventId) {
             break;
 
         case EVENT_TYPES::afterPlaceBlock:
-            Event::PlayerTryPlaceBlockEvent::subscribe([](const PlayerTryPlaceBlockEvent& ev) {
+            Event::BlockPlacedByPlayerEvent::subscribe([](const BlockPlacedByPlayerEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::afterPlaceBlock) {
                     CallEvent(EVENT_TYPES::afterPlaceBlock, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance));
                 }

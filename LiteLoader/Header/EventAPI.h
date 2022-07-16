@@ -282,7 +282,7 @@ public:
     BlockInstance mBlockInstance;
 };
 
-class PlayerTryPlaceBlockEvent : public EventTemplate<PlayerTryPlaceBlockEvent> {
+class BlockPlacedByPlayerEvent : public EventTemplate<BlockPlacedByPlayerEvent> {
 public:
     Player* mPlayer;
     BlockInstance mBlockInstance;
