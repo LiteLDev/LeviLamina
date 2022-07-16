@@ -75,6 +75,7 @@ enum class EVENT_TYPES : int {
     onSetArmor,
     onUseRespawnAnchor,
     onOpenContainerScreen,
+    onExperienceAdd,
     /* Entity Events */
     onMobDie,
     onMobHurt,
@@ -210,7 +211,9 @@ static const std::unordered_map<string, EVENT_TYPES> EventsMap{
     {"onEffectAdded", EVENT_TYPES::onEffectAdded},
     {"onEffectRemoved", EVENT_TYPES::onEffectRemoved},
     {"onEffectUpdated", EVENT_TYPES::onEffectUpdated},
-    {"onMobSpawn", EVENT_TYPES::onMobSpawn}};
+    {"onMobSpawn", EVENT_TYPES::onMobSpawn},
+    {"onExperienceAdd", EVENT_TYPES::onExperienceAdd}
+};
 struct ListenerListType {
     ScriptEngine* engine;
     script::Global<Function> func;
@@ -1071,6 +1074,7 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED_END(EVENT_TYPES::onConsoleOutput);
             });
             break;
+
         case EVENT_TYPES::onMobSpawn:
             Event::MobSpawnEvent::subscribe([](const MobSpawnEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onMobSpawn) {
@@ -1079,6 +1083,16 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED_END(EVENT_TYPES::onMobSpawn);
             });
             break;
+
+        case EVENT_TYPES::onExperienceAdd:
+            Event::PlayerExperienceAddEvent::subscribe([](const PlayerExperienceAddEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onExperienceAdd) {
+                    CallEvent(EVENT_TYPES::onExperienceAdd, PlayerClass::newPlayer(ev.mPlayer), Number::newNumber(ev.mExp));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onExperienceAdd);
+                });
+            break;
+
         default:
             break;
     }
