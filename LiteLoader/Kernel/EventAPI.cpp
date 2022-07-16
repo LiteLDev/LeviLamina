@@ -225,6 +225,7 @@ DECLARE_EVENT_DATA(PlayerConsumeTotemEvent);
 DECLARE_EVENT_DATA(PlayerCmdEvent);
 DECLARE_EVENT_DATA(PlayerDestroyBlockEvent);
 DECLARE_EVENT_DATA(PlayerPlaceBlockEvent);
+DECLARE_EVENT_DATA(PlayerTryPlaceBlockEvent);
 DECLARE_EVENT_DATA(PlayerEffectChangedEvent);
 DECLARE_EVENT_DATA(PlayerStartDestroyBlockEvent);
 DECLARE_EVENT_DATA(PlayerOpenContainerEvent);
@@ -605,6 +606,20 @@ TInstanceHook(char, "?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBl
         IF_LISTENED_END(PlayerPlaceBlockEvent)
     }
     return original(this, ac, bp, facing, item, a6);
+}
+
+/////////////////// PlayerTryPlaceBlock ///////////////////
+TClasslessInstanceHook(void, "?sendBlockPlacedByPlayer@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z",
+    Player* pl, Block* bl, BlockPos* bp, bool a5)
+{
+    IF_LISTENED(PlayerTryPlaceBlockEvent) {
+        PlayerTryPlaceBlockEvent ev{};
+        ev.mPlayer = pl;
+        ev.mBlockInstance = BlockInstance::createBlockInstance(bl, *bp, pl->getDimensionId());
+        ev.call();
+    }
+    IF_LISTENED_END(PlayerTryPlaceBlockEvent)
+    original(this, pl, bl, bp, a5);
 }
 
 /*

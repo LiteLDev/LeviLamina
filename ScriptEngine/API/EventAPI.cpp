@@ -67,6 +67,7 @@ enum class EVENT_TYPES : int {
     onStartDestroyBlock,
     onDestroyBlock,
     onPlaceBlock,
+    afterPlaceBlock,
     onOpenContainer,
     onCloseContainer,
     onInventoryChange,
@@ -534,6 +535,15 @@ void EnableEventListener(int eventId) {
                 }
                 IF_LISTENED_END(EVENT_TYPES::onPlaceBlock);
             });
+            break;
+
+        case EVENT_TYPES::afterPlaceBlock:
+            Event::PlayerTryPlaceBlockEvent::subscribe([](const PlayerTryPlaceBlockEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::afterPlaceBlock) {
+                    CallEvent(EVENT_TYPES::afterPlaceBlock, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance));
+                }
+                IF_LISTENED_END(EVENT_TYPES::afterPlaceBlock);
+                });
             break;
 
         case EVENT_TYPES::onMove:

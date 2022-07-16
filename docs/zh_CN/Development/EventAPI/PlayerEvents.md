@@ -348,7 +348,24 @@
 
 <br>
 
-#### `"onPlaceBlock"` - 玩家放置方块
+#### `"onPlaceBlock"` - 玩家尝试放置方块
+
+- 监听函数原型
+  `function(player,block)`
+- 参数：
+  - player : `Player`  
+    放置方块的玩家对象
+
+  - block : `Block`  
+    将要放置的方块对象
+
+- 拦截事件：函数返回`false`
+
+> **注意** 当玩家尝试放置方块时，该事件将持续被触发。
+
+<br>
+
+#### `"afterPlaceBlock"` - 玩家放置方块
 
 - 监听函数原型
   `function(player,block)`
@@ -359,7 +376,7 @@
   - block : `Block`  
     被放置的方块对象
 
-- 拦截事件：函数返回`false`
+- 拦截事件：不可以拦截
 
 <br>
 

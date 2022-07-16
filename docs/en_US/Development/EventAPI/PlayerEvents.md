@@ -336,7 +336,23 @@ Note: Win10 client right-clicking on the player will trigger this event on the s
 
 <br>
 
-#### `"onPlaceBlock"` - Player Places Block Event
+#### `"onPlaceBlock"` - Player Try Places Block Event
+
+- Listener function prototype 
+  `function(player,block)`
+- Parameters: 
+  - player : `Player`  
+    The player that placed the block.
+  - block : `Block`  
+    The block that was placed.
+
+- Intercept events: function returns `false`
+
+> **ATTENTION** This event will always fire when the player tries to place a block.
+
+<br>
+
+#### `"afterPlaceBlock"` - Player Placed Block Event
 
 - Listener function prototype 
   `function(player,block)`
