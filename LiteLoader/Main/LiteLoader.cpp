@@ -239,7 +239,7 @@ void LLMain() {
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is licensed under AGPLv3");
-        logger.info("Our new forum is live! -> https://fourm.litebds.com");
+        logger.info("Our new forum is live! -> https://forum.litebds.com");
         logger.info("Thanks to RhyMC(rhymc.com) for the support");
         return true;
     });
