@@ -126,7 +126,7 @@ public:
 
     Local<Value> simulateSneak(const Arguments& args);
     Local<Value> simulateAttack(const Arguments& args);
-    Local<Value> simulateDestory(const Arguments& args);
+    Local<Value> simulateDestroy(const Arguments& args);
     Local<Value> simulateDisconnect(const Arguments& args);
     Local<Value> simulateInteract(const Arguments& args);
     Local<Value> simulateJump(const Arguments& args);

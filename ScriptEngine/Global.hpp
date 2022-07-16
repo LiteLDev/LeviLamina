@@ -24,7 +24,7 @@ typedef unsigned long long QWORD;
 class IntVec4
 {
 public:
-	int x,y,z;
+    int x,y,z;
     int dim;
 
     inline BlockPos getBlockPos()
@@ -41,7 +41,7 @@ public:
 class FloatVec4
 {
 public:
-	float x,y,z;
+    float x,y,z;
     int dim;
 
     inline Vec3 getVec3()

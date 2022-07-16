@@ -142,7 +142,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
         .instanceFunction("simulateSneak", &PlayerClass::simulateSneak)
         .instanceFunction("simulateAttack", &PlayerClass::simulateAttack)
-        .instanceFunction("simulateDestory", &PlayerClass::simulateDestory)
+        .instanceFunction("simulateDestroy", &PlayerClass::simulateDestroy)
         .instanceFunction("simulateDisconnect", &PlayerClass::simulateDisconnect)
         .instanceFunction("simulateInteract", &PlayerClass::simulateInteract)
         .instanceFunction("simulateJump", &PlayerClass::simulateJump)

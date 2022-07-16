@@ -7,14 +7,14 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 enum PlayStatus : int {
-	PlayStatusLoginSuccess,
-	PlayStatusLoginFailedClient,
-	PlayStatusLoginFailedServer,
-	PlayStatusPlayerSpawn,
-	PlayStatusLoginFailedInvalidTenant,
-	PlayStatusLoginFailedVanillaEdu,
-	PlayStatusLoginFailedEduVanilla,
-	PlayStatusLoginFailedServerFull,
+    PlayStatusLoginSuccess,
+    PlayStatusLoginFailedClient,
+    PlayStatusLoginFailedServer,
+    PlayStatusPlayerSpawn,
+    PlayStatusLoginFailedInvalidTenant,
+    PlayStatusLoginFailedVanillaEdu,
+    PlayStatusLoginFailedEduVanilla,
+    PlayStatusLoginFailedServerFull,
 };
 
 #undef BEFORE_EXTRA

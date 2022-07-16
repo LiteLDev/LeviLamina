@@ -75,6 +75,24 @@ void LoadScriptEngine() {
     }
 }
 
+void LoadDotNETEngine() {
+    std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
+    std::string path = "plugins/LiteLoader.NET.dll";
+    std::string version = GetFileVersionString(path, true);
+    if (version != llVersion) {
+        logger.warn("The file version <{}> of .NET Engine does not match the LiteLoader version <{}>",
+                    version, llVersion);
+    }
+    auto lib = LoadLibrary(str2wstr(path).c_str());
+    if (lib) {
+        logger.info("* .NET Engine loaded");
+    }
+    else {
+        logger.error("* Fail to load .NET Engine!");
+        logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+    }
+}
+
 void LL::LoadMain() {
     logger.info("Loading plugins...");
 
@@ -97,7 +115,7 @@ void LL::LoadMain() {
         } else
             continue;
         auto strPath = UTF82String(path.u8string());
-        if (strPath.find("LiteLoader.dll") != string::npos || strPath.find("LiteXLoader") != string::npos) // Skip Wrong file path
+        if (strPath.find("LiteLoader") != string::npos || strPath.find("LiteXLoader") != string::npos) // Skip Wrong file path
             continue;
 
         if (strPath.find("LLMoney.dll") != string::npos) {
@@ -169,9 +187,17 @@ void LL::LoadMain() {
     }
 
     // Load ScriptEngine
-    if (LL::globalConfig.enableScriptEngine)
-        if (LL::globalConfig.alwaysLaunchScriptEngine || hasScriptPlugin)
+    if (LL::globalConfig.enableScriptEngine) {
+        if (LL::globalConfig.alwaysLaunchScriptEngine || hasScriptPlugin) {
             LoadScriptEngine();
+        }
+    }
+
+    // Load .NET Engine
+    if (filesystem::exists("plugins/LiteLoader.NET.dll")) {
+        logger.warn("LiteLoader.NET is not finished yet!");
+        LoadDotNETEngine();
+    }
 
     //  Call onPostInit
     auto plugins = PluginManager::getAllPlugins(false);

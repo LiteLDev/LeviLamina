@@ -39,7 +39,7 @@ struct ScriptNavigationResult {
 public:
     bool mIsFullPath;
     std::vector<BlockPos> mPath;
-	
+
 public:
     struct ScriptNavigationResult& operator=(struct ScriptNavigationResult const&) = delete;
     ScriptNavigationResult(struct ScriptNavigationResult const&) = delete;

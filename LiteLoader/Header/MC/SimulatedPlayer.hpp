@@ -17,7 +17,9 @@ class SimulatedPlayer : public ServerPlayer {
 #define AFTER_EXTRA
 // Add Member There
 public:
+    [[deprecated("This is a typo. Please use simulateDestroy")]]
     LIAPI bool simulateDestory();
+    LIAPI bool simulateDestroy();
     LIAPI bool simulateUseItem();
     LIAPI bool simulateSneak();
     LIAPI bool simulateStopSneaking();

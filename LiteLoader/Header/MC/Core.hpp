@@ -93,7 +93,7 @@ public:
     PathBuffer() = delete;
     PathBuffer(PathBuffer const&) = delete;
     PathBuffer(PathBuffer const&&) = delete;
-	
+
     T value;
     operator T&() noexcept
     {
