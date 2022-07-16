@@ -100,21 +100,33 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         auto& actions = pk->transaction->data.actions;
         bool abnormal = false;
         bool mayFromReducer = true;
-        for (auto& action : actions)
+        bool isContainer = false;
+        for (auto& action : actions) {
+            if (action.first.type == InventorySourceType::Container) {
+				isContainer = true;
+                if (abnormal) {
+                    logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
+                    mayFromReducer = false;
+                }
+            }			
             if (action.first.type == InventorySourceType::NONIMPLEMENTEDTODO) {
                 for (auto& a : action.second) {
                     auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
-                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
-                    if (!itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
-                        if (mayFromReducer)
+                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);					
+                    if ( isContainer || !itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
+                        if (mayFromReducer) {
                             logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
-                        if (!toDesc.isNull())
+                        }
+                        if (!toDesc.isNull()) {
                             logger.warn("Item: {}", toDesc.toString());
+                        }
                         mayFromReducer = false;
                     }
                 }
                 abnormal = true;
             }
+        }
+		
         if (abnormal && !mayFromReducer) {
             string cmd = ReplaceStr(globalConfig.antiGiveCommand, "{player}", "\"" + sp->getRealName() + "\"");
             Level::runcmd(cmd);
