@@ -8,7 +8,7 @@
 //
 //  SimpleForm form("Welcome to shop", "Choose what you want to do...");     // Initialize the form with title and content
 //  form.addButton("Buy", "textures/items/apple",                            // Add a button "Buy" with texture image
-//      [](Player* pl) { pl->sendText("To buy something..."); })			 // Buy's callback function
+//      [](Player* pl) { pl->sendText("To buy something..."); })             // Buy's callback function
 //
 //      .addButton("Sell", "https://xxx.com/xxx.png",                        // Add a button "Sell" with online image
 //          [](Player* pl) { pl->sendText("To sell something..."); })        // Sell's callback function

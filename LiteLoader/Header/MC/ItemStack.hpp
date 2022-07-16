@@ -34,12 +34,12 @@ public:
     LIAPI ItemStack* clone_s() const;
     LIAPI static ItemStack fromItemInstance(ItemInstance const& ins);
 
-	LIAPI std::string getTypeName() const;
-	LIAPI int getAux() const;
-	LIAPI int getCount() const;
+    LIAPI std::string getTypeName() const;
+    LIAPI int getAux() const;
+    LIAPI int getCount() const;
 
-	LIAPI bool setItem(ItemStack* newItem);
-	LIAPI bool setLore(const std::vector<std::string>& lores);
+    LIAPI bool setItem(ItemStack* newItem);
+    LIAPI bool setLore(const std::vector<std::string>& lores);
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI string getStandardName(const Localization& language);

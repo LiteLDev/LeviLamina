@@ -113,16 +113,16 @@ Local<Value> PlayerClass::simulateAttack(const Arguments& args) {
     CATCH("Fail in " __FUNCTION__ "!")
 };
 
-// bool simulateDestory(); // LIAPI
+// bool simulateDestroy(); // LIAPI
 // bool simulateDestroyBlock(class BlockPos const&, enum ScriptFacing);
-Local<Value> PlayerClass::simulateDestory(const Arguments& args) {
+Local<Value> PlayerClass::simulateDestroy(const Arguments& args) {
     try {
         auto sp = asSimulatedPlayer();
         if (!sp)
             return Local<Value>();
 
         if (args.size() == 0)
-            return Boolean::newBoolean(sp->simulateDestory());
+            return Boolean::newBoolean(sp->simulateDestroy());
 
         int dimid = sp->getDimensionId();
         BlockPos bpos;

@@ -9,25 +9,25 @@
 #define LLSE_BACKEND_LUA "Lua"
 
 #if defined(SCRIPTX_LANG_JAVASCRIPT)
-	#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS
-	#define LLSE_PLUGINS_EXTENSION ".js"
+    #define LLSE_BACKEND_TYPE LLSE_BACKEND_JS
+    #define LLSE_PLUGINS_EXTENSION ".js"
 #elif defined(SCRIPTX_LANG_LUA)
-	#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA
-	#define LLSE_PLUGINS_EXTENSION ".lua"
+    #define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA
+    #define LLSE_PLUGINS_EXTENSION ".lua"
 #endif
 
-#define LLSE_VALID_BACKENDS				std::set<std::string>({"Js", "Lua"})
-#define LLSE_VALID_PLUGIN_EXTENSIONS	std::set<std::string>({".js",".lua"})
-#define LLSE_VALID_BACKENDS_COUNT		LLSE_VALID_BACKENDS.size()
+#define LLSE_VALID_BACKENDS             std::set<std::string>({"Js", "Lua"})
+#define LLSE_VALID_PLUGIN_EXTENSIONS    std::set<std::string>({".js",".lua"})
+#define LLSE_VALID_BACKENDS_COUNT       LLSE_VALID_BACKENDS.size()
 
 
 // 插件注册信息
 #if defined(SCRIPTX_LANG_JAVASCRIPT)
-	#define LLSE_LOADER_NAME "ScriptEngine-Js"
-	#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine for LiteLoaderBDS"
+    #define LLSE_LOADER_NAME "ScriptEngine-Js"
+    #define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine for LiteLoaderBDS"
 #elif defined(SCRIPTX_LANG_LUA)
-	#define LLSE_LOADER_NAME "ScriptEngine-Lua"
-	#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine for LiteLoaderBDS"
+    #define LLSE_LOADER_NAME "ScriptEngine-Lua"
+    #define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine for LiteLoaderBDS"
 #endif
 
 #define LLSE_MODULE_TYPE LLSE_BACKEND_TYPE
@@ -41,9 +41,9 @@
 
 // 调试引擎
 #if defined(SCRIPTX_LANG_JAVASCRIPT)
-	#define LLSE_DEBUG_CMD "jsdebug"
+    #define LLSE_DEBUG_CMD "jsdebug"
 #elif defined(SCRIPTX_LANG_LUA)
-	#define LLSE_DEBUG_CMD "luadebug"
+    #define LLSE_DEBUG_CMD "luadebug"
 #endif
 #define LLSE_DEBUG_ENGINE_NAME "__LLSE_DEBUG_ENGINE__"
 

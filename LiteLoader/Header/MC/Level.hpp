@@ -48,7 +48,7 @@ public:
     LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
     //LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
     LIAPI static Actor* cloneMob(Vec3 pos, int dimId, Actor* ac);
-	
+
     //Block
     LIAPI static Block* getBlock(BlockPos* pos, int dimId);
     LIAPI static Block* getBlock(BlockPos* pos, BlockSource* blockSource);

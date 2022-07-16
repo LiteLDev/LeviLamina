@@ -19,7 +19,7 @@ struct ClipParameters
 {
     MCAPI static const std::function<bool(class Block const&)> CHECK_ALL_BLOCKS;
 };
-	LIAPI BlockInstance getBlockInstance(BlockPos);
+    LIAPI BlockInstance getBlockInstance(BlockPos);
 
 #undef AFTER_EXTRA
 

@@ -148,14 +148,14 @@ bool InitPlayerDatabase() {
         db = std::make_unique<SQLite::Database>(PlayerDatabasePath, SQLite::OPEN_CREATE | SQLite::OPEN_READWRITE);
 
         db->exec("CREATE TABLE IF NOT EXISTS player ( \
-			NAME TEXT PRIMARY KEY \
+            NAME TEXT PRIMARY KEY \
             NOT NULL, \
-			XUID TEXT \
+            XUID TEXT \
             NOT NULL, \
             UUID TEXT \
             NOT NULL \
-		) \
-			WITHOUT ROWID; ");
+        ) \
+            WITHOUT ROWID; ");
 
         Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& e) {
             if (!e.mPlayer->isSimulatedPlayer())

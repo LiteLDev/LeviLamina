@@ -238,9 +238,9 @@ void LLMain() {
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
-        logger.info("LiteLoader is distributed under the AGPLv3 License");
-        logger.info("Our new fourm is now available! -> https://fourm.litebds.com");
-        logger.info("Thanks to RhyMC (rhymc.com) for supporting this project.");
+        logger.info("LiteLoader is licensed under AGPLv3");
+        logger.info("Our new forum is live! -> https://fourm.litebds.com");
+        logger.info("Thanks to RhyMC(rhymc.com) for the support");
         return true;
     });
 

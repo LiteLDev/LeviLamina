@@ -12,7 +12,7 @@ namespace Automation {
 
 #define AFTER_EXTRA
 // Add Member There
-	class AutomationClient;
+    class AutomationClient;
     enum MessagePurpose;
 #undef AFTER_EXTRA
     MCAPI extern char const * BodyData;

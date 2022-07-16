@@ -60,7 +60,7 @@ Each player object contains some fixed object properties. For a particular playe
 | pl.speed     | Player's current speed               | `Float`          |
 | pl.direction | Player's current orientation         | `DirectionAngle` |
 | pl.uniqueId  | Player's (entity's) unique identifier    | `String`         |
-| pl.isLoading | Player is loading | `Bool`    |
+| pl.isLoading | Player is loading | `Boolean`    |
 
 These object properties are read-only and cannot be modified. in:
 

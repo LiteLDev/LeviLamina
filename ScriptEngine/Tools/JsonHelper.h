@@ -67,7 +67,7 @@ inline fifo_json CreateJson(const std::string& path, const std::string& defConte
                 jsonConf = fifo_json::object();
             }
         }
-        
+
     }
     return jsonConf;
 }
