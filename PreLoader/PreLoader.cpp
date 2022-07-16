@@ -83,7 +83,7 @@ void loadPlugins() {
 
         auto& path = file.path();
         auto fileName = path.u8string();
-        if (fileName.find("LiteLoader.dll") != string::npos || fileName.find("LiteXLoader") != string::npos) // Skip Wrong file path
+        if (fileName.find("LiteLoader") != string::npos || fileName.find("LiteXLoader") != string::npos) // Skip Wrong file path
             continue;
 
         string ext = path.extension().u8string();
