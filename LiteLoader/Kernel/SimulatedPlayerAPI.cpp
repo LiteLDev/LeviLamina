@@ -9,6 +9,11 @@
 
 // static_assert(sizeof(ScriptNavigationResult) == 32);
 
+// For compatibility
+bool SimulatedPlayer::simulateDestory() {
+    return SimulatedPlayer::simulateDestroy();
+}
+
 bool SimulatedPlayer::simulateDestroy() {
     FaceID face = FaceID::Unknown;
     auto blockIns = getBlockFromViewVector(face);
