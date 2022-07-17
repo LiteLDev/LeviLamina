@@ -41,7 +41,7 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
     }
     // Finally, not found, return the key or log warning
     if (pattern != Pattern::SrcToTrans) {
-        logger.warn("The specified language key is not found! This may cause FMT errors. Please complete the language files!");
+        logger.warn << "The specified language key is not found! This may cause FMT errors. Please complete the language files!";
     }
     return key;
 }

@@ -86,6 +86,7 @@ public:
      * @param  key          The language key
      * @param  localeName     The language code like en_US,zh_CN("" => this->defaultLocaleName)
      * @return std::string  The translation
+     * @note   [DEV] DO NOT USE `logger.xxx()` IN THIS METHOD!!!
      * @see    I18N::defaultLocaleName
      */
     virtual std::string get(const std::string& key, const std::string& localeName = "");
