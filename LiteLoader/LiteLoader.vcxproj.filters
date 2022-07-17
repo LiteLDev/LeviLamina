@@ -809,9 +809,6 @@
     <ClInclude Include="Header\MC\SemVersion.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
-    <ClInclude Include="Main\DefaultLangData.h">
-      <Filter>Main</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">

@@ -344,7 +344,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\VarInt.h" />
     <ClInclude Include="Header\Utils\ViewHelper.h" />
     <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp" />
-    <ClInclude Include="Main\DefaultLangData.h" />
     <ClInclude Include="Main\LiteLoader.h" />
     <ClInclude Include="Main\Loader.h" />
     <ClInclude Include="Main\PluginManager.h" />

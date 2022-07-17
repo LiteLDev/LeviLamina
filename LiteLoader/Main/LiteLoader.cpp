@@ -12,7 +12,6 @@
 #include "Config.h"
 #include "Loader.h"
 #include "CrashLogger.h"
-#include "DefaultLangData.h"
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
