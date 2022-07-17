@@ -10,7 +10,7 @@ public:
         incompressible = compress;
     }
     NetworkPacket(string_view sv)
-        : view(sv) {
+    : view(sv) {
         incompressible = compress;
     }
     inline virtual ~NetworkPacket() {

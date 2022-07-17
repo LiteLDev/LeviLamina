@@ -12,16 +12,16 @@ for a specific player object `pl`, the following form interfaces are available:
 
 A modal form contains a title, a text display, and two buttons.
 
-`pl.sendModalForm(title,content,button1,button2,callback)`
+`pl.sendModalForm(title,content,confirmButton,cancelButton,callback)`
 
 - Parameters: 
   - title : `String`  
     Form title.  
   - content : `String`  
     Form content.
-  - button1 : `String`  
+  - confirmButton : `String`  
     Button 1 text.  
-  - button2 : `String`  
+  - cancelButton : `String`  
     Button 2 text.  
   - callback : `Function`  
     Function called after player clicks a button.  
@@ -35,7 +35,7 @@ A modal form contains a title, a text display, and two buttons.
     The player object that interacts with the form.
     
   - result : `Boolean`    
-    Player clicks **OK** button is `true`, **Cancel** button is `false`.   
+    Player clicks **Confirm** button is `true`, **Cancel** button is `false`.   
     
     If the id is `Null`, the player cancels the form.
 

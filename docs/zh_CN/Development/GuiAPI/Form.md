@@ -12,16 +12,16 @@
 
 模式表单包含一个标题、一个文本显示框以及两个按钮
 
-`pl.sendModalForm(title,content,button1,button2,callback)`
+`pl.sendModalForm(title,content,confirmButton,cancelButton,callback)`
 
 - 参数：
   - title : `String`  
     表单标题  
   - content : `String`  
     表单内容
-  - button1 : `String`  
+  - confirmButton : `String`  
     按钮1文本的字符串  
-  - button2 : `String`  
+  - cancelButton : `String`  
     按钮2文本的字符串  
   - callback : `Function`  
     玩家点击按钮之后被调用的回调函数。  

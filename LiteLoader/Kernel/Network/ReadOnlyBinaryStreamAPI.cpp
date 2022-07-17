@@ -25,8 +25,7 @@ void ReadOnlyBinaryStream::setReadPointer(std::size_t size) {
         readPointer = len;
 }
 
-std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag()
-{
+std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag() {
     auto tag = CompoundTag::create();
     class CompoundTag& (*rv)(class CompoundTag&, class ReadOnlyBinaryStream&);
     *((void**)&rv) = dlsym("?read@?$serialize@VCompoundTag@@@@SA?AVCompoundTag@@AEAVReadOnlyBinaryStream@@@Z");
@@ -34,4 +33,4 @@ std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag()
     return std::move(tag);
 }
 
-//static_assert(offsetof(ReadOnlyBinaryStream, pBuf) == 56);
+// static_assert(offsetof(ReadOnlyBinaryStream, pBuf) == 56);

@@ -1,8 +1,7 @@
 #pragma once
 #include <../Global.h>
 
-class StringReader
-{
+class StringReader {
 
     const std::string str;
     size_t len = 0;
@@ -60,13 +59,11 @@ public:
     LIAPI void skipDigits(const std::string& chars = "");
     LIAPI void skipLettersAndDigits(const std::string& chars = "");
 
-    
+
     template <typename T>
-    inline T readInteger()
-    {
+    inline T readInteger() {
         T result = 0;
-        while (isValid() && isdigit(read()))
-        {
+        while (isValid() && isdigit(read())) {
             result = result * 10 + (read() - '0');
         }
         return result;

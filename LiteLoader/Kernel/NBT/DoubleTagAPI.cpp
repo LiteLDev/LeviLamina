@@ -26,8 +26,7 @@ double DoubleTag::get() {
     return value();
 }
 
-DoubleTag::operator double() const
-{
+DoubleTag::operator double() const {
     if (!this)
         return 0.0;
     return val;

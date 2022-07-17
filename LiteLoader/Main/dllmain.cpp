@@ -8,10 +8,8 @@
 
 
 #include <Windows.h>
-BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
-{
-    switch (ul_reason_for_call)
-    {
+BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID) {
+    switch (ul_reason_for_call) {
         case DLL_PROCESS_ATTACH:
         case DLL_THREAD_ATTACH:
         case DLL_THREAD_DETACH:

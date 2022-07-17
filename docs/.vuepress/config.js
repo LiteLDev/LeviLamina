@@ -135,6 +135,10 @@ module.exports = {
         'SystemAPI/SystemCall',
         'SystemAPI/SystemInfo'
       ],
+      '/zh_CN/CPP/': [
+        'Format/format',
+        'Commit/Commit'
+      ],
       '/zh_CN/': 'auto'
     },
     'locales': {

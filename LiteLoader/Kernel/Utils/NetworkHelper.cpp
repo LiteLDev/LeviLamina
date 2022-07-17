@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void SplitHttpUrl(const std::string &url, string &host, string &path) {
+void SplitHttpUrl(const std::string& url, string& host, string& path) {
     host = url;
 
     bool foundProtocol = host.find('/') != string::npos;
@@ -22,17 +22,15 @@ void SplitHttpUrl(const std::string &url, string &host, string &path) {
     }
 }
 
-bool HttpGet(const string& url, const function<void(int, string)>& callback, int timeout)
-{
+bool HttpGet(const string& url, const function<void(int, string)>& callback, int timeout) {
     return HttpGet(url, {}, callback, timeout);
 }
 
-bool HttpGet(const string& url, const httplib::Headers& headers, const function<void(int, string)>& callback, int timeout)
-{
+bool HttpGet(const string& url, const httplib::Headers& headers, const function<void(int, string)>& callback, int timeout) {
     string host, path;
     SplitHttpUrl(url, host, path);
 
-    auto *cli = new httplib::Client(host.c_str());
+    auto* cli = new httplib::Client(host.c_str());
     if (!cli->is_valid()) {
         delete cli;
         return false;
@@ -50,19 +48,15 @@ bool HttpGet(const string& url, const httplib::Headers& headers, const function<
                 callback(-1, "");
             else
                 callback(response->status, response->body);
-        }
-        catch (const seh_exception &e) {
+        } catch (const seh_exception& e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
-        }
-        catch (const std::exception& e)
-        {
+        } catch (const std::exception& e) {
             logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
-        }
-        catch (...) {
+        } catch (...) {
             logger.error("HttpGet Callback Failed!");
             logger.error("Uncaught Exception Detected!");
             PrintCurrentStackTraceback();
@@ -73,50 +67,40 @@ bool HttpGet(const string& url, const httplib::Headers& headers, const function<
 }
 
 bool HttpPost(const string& url, const string& data, const string& type, const std::function<void(int, string)>& callback,
-              int timeout)
-{
+              int timeout) {
     return HttpPost(url, {}, data, type, callback);
 }
 
 bool HttpPost(const string& url, const httplib::Headers& headers, const string& data, const string& type, const std::function<void(int, string)>& callback,
-              int timeout)
-{
+              int timeout) {
     string host, path;
     SplitHttpUrl(url, host, path);
     auto* cli = new httplib::Client(host.c_str());
-    if (!cli->is_valid())
-    {
+    if (!cli->is_valid()) {
         delete cli;
         return false;
     }
     if (timeout > 0)
         cli->set_connection_timeout(timeout, 0);
-        
+
     std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
         _set_se_translator(seh_exception::TranslateSEHtoCE);
-        try
-        {
+        try {
             auto response = cli->Post(path.c_str(), headers, data, type.c_str());
             delete cli;
             if (!response)
                 callback(-1, "");
             else
                 callback(response->status, response->body);
-        }
-        catch (const seh_exception& e)
-        {
+        } catch (const seh_exception& e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In HttpPost callback");
             PrintCurrentStackTraceback();
-        }
-        catch (const std::exception& e)
-        {
+        } catch (const std::exception& e) {
             logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
             logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
-        }
-        catch (...)
-        {
+        } catch (...) {
             logger.error("HttpPost Callback Failed!");
             logger.error("Uncaught Exception Detected!");
             PrintCurrentStackTraceback();
@@ -125,7 +109,7 @@ bool HttpPost(const string& url, const httplib::Headers& headers, const string& 
     return true;
 }
 
-bool HttpGetSync(const std::string &url, int *statusRtn, std::string *dataRtn, int timeout) {
+bool HttpGetSync(const std::string& url, int* statusRtn, std::string* dataRtn, int timeout) {
     string host, path;
     SplitHttpUrl(url, host, path);
 

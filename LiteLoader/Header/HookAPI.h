@@ -39,15 +39,13 @@ inline const T& dAccess(void const* ptr, uintptr_t off) {
 
 #if _HAS_CXX20
 template <size_t N>
-struct FixedString
-{
+struct FixedString {
     char buf[N + 1]{};
-    constexpr FixedString(char const* s)
-    {
-        for (unsigned i = 0; i != N; ++i) buf[i] = s[i];
+    constexpr FixedString(char const* s) {
+        for (unsigned i = 0; i != N; ++i)
+            buf[i] = s[i];
     }
-    constexpr operator char const*() const
-    {
+    constexpr operator char const*() const {
         return buf;
     }
 };
@@ -59,8 +57,7 @@ __declspec(selectany) void* __dlsym_ptr_cache = dlsym_real(Fn);
 
 #define VA_EXPAND(...) __VA_ARGS__
 template <FixedString Fn, typename ret, typename... p>
-static inline auto __imp_Call()
-{
+static inline auto __imp_Call() {
     return ((ret(*)(p...))(__dlsym_ptr_cache<Fn>));
 }
 
@@ -72,10 +69,8 @@ static inline auto __imp_Call()
 template <CHash, CHash>
 __declspec(selectany) void* __ptr_cache;
 template <CHash hash, CHash hash2>
-inline static void* dlsym_cache(const char* fn)
-{
-    if (!__ptr_cache<hash, hash2>)
-    {
+inline static void* dlsym_cache(const char* fn) {
+    if (!__ptr_cache<hash, hash2>) {
         __ptr_cache<hash, hash2> = dlsym_real(fn);
     }
     return __ptr_cache<hash, hash2>;
@@ -83,8 +78,7 @@ inline static void* dlsym_cache(const char* fn)
 
 #define VA_EXPAND(...) __VA_ARGS__
 template <CHash hash, CHash hash2, typename ret, typename... p>
-static inline auto __imp_Call(const char* fn)
-{
+static inline auto __imp_Call(const char* fn) {
     return ((ret(*)(p...))(dlsym_cache<hash, hash2>(fn)));
 }
 
@@ -106,8 +100,7 @@ public:
             printf("FailedToHook: %p\n", sym);
         } else {
             auto ret = HookFunction(found, org, hook);
-            if (ret != 0)
-            {
+            if (ret != 0) {
                 printf("FailedToHook: %s\n", sym);
             }
         }

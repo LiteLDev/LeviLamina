@@ -5,15 +5,12 @@
 
 extern Logger logger;
 
-namespace RemoteCall
-{
+namespace RemoteCall {
 CallbackFn const EMPTY_FUNC{};
 std::unordered_map<std::string, RemoteCall::ExportedFuncData> exportedFuncs;
 
-bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handle)
-{
-    if (nameSpace.find("::") != nameSpace.npos)
-    {
+bool exportFunc(std::string const& nameSpace, std::string const& funcName, CallbackFn&& callback, HMODULE handle) {
+    if (nameSpace.find("::") != nameSpace.npos) {
         logger.error("Namespace can't includes \"::\"");
         return false;
     }
@@ -23,58 +20,47 @@ bool exportFunc(std::string const& nameSpace, std::string const& funcName, Callb
     return true;
 }
 
-CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName)
-{
+CallbackFn const& importFunc(std::string const& nameSpace, std::string const& funcName) {
     auto iter = exportedFuncs.find(nameSpace + "::" + funcName);
     if (iter == exportedFuncs.end())
         return EMPTY_FUNC;
     return iter->second.callback;
 }
 
-bool hasFunc(std::string const& nameSpace, std::string const& funcName)
-{
+bool hasFunc(std::string const& nameSpace, std::string const& funcName) {
     return exportedFuncs.find(nameSpace + "::" + funcName) != exportedFuncs.end();
 }
 
-bool removeFunc(std::string&& key)
-{
+bool removeFunc(std::string&& key) {
     return exportedFuncs.erase(key);
 }
 
-bool removeFunc(std::string const& nameSpace, std::string const& funcName)
-{
+bool removeFunc(std::string const& nameSpace, std::string const& funcName) {
     return removeFunc(nameSpace + "::" + funcName);
 }
 
-void _onCallError(std::string const& msg, HMODULE handle)
-{
+void _onCallError(std::string const& msg, HMODULE handle) {
     logger.error(msg);
     auto plugin = LL::getPlugin(handle);
     if (plugin)
         logger.error("In plugin <{}>", plugin->name);
 }
 
-int removeNameSpace(std::string const& nameSpace)
-{
+int removeNameSpace(std::string const& nameSpace) {
     int count = 0;
-    for (auto& iter = exportedFuncs.begin(); iter != exportedFuncs.end();)
-    {
-        if (SplitStrWithPattern(iter->first, "::")[0] == nameSpace)
-        {
+    for (auto& iter = exportedFuncs.begin(); iter != exportedFuncs.end();) {
+        if (SplitStrWithPattern(iter->first, "::")[0] == nameSpace) {
             iter = exportedFuncs.erase(iter);
             ++count;
-        }
-        else
+        } else
             ++iter;
     }
     return count;
 }
 
-int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs)
-{
+int removeFuncs(std::vector<std::pair<std::string, std::string>> funcs) {
     int count = 0;
-    for (auto& [ns, name] : funcs)
-    {
+    for (auto& [ns, name] : funcs) {
         if (removeFunc(ns + "::" + name))
             count++;
     }
@@ -96,7 +82,7 @@ static_assert(RemoteCall::is_supported_type_v<Block*>);
 static_assert(RemoteCall::is_supported_type_v<Vec3>);
 static_assert(RemoteCall::is_supported_type_v<Vec3&>);
 static_assert(RemoteCall::is_supported_type_v<Vec3 const&>);
-//static_assert(RemoteCall::is_supported_type_v<Vec3 const*>);
+// static_assert(RemoteCall::is_supported_type_v<Vec3 const*>);
 static_assert(RemoteCall::is_supported_type_v<CompoundTag*>);
 
 
@@ -136,17 +122,14 @@ inline bool testExtra = ([]() {
 #endif // false
     return true;
 })();
-int TestExport(std::string a0, int a1, int a2)
-{
+int TestExport(std::string a0, int a1, int a2) {
     return static_cast<int>(a0.size()) + a1;
 }
-std::unique_ptr<CompoundTag> TestSimulatedPlayerLL(Player* player)
-{
+std::unique_ptr<CompoundTag> TestSimulatedPlayerLL(Player* player) {
     return player->getNbt();
 }
 
-void exportTestSimulatedPlayerLL()
-{
+void exportTestSimulatedPlayerLL() {
     RemoteCall::exportAs("TestRemoteCall", "TestSimulatedPlayerLL", TestSimulatedPlayerLL);
 }
 #include <EventAPI.h>

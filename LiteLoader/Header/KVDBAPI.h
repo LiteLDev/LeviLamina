@@ -10,8 +10,7 @@
 #include <unordered_map>
 using std::string_view, std::string;
 
-class KVDB
-{
+class KVDB {
     leveldb::DB* db;
     leveldb::ReadOptions rdopt;
     leveldb::WriteOptions wropt;
@@ -22,11 +21,10 @@ class KVDB
     void _init(const char* path, bool create, bool read_cache, int cache_sz, int Bfilter_bit);
 
 public:
-
     LIAPI static std::unique_ptr<KVDB> create(const std::string& path, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
     LIAPI static std::unique_ptr<KVDB> open(const std::string& path, bool create = true, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
     LIAPI ~KVDB();
-    
+
     KVDB() = default;
     KVDB(KVDB const&) = delete;
     KVDB& operator=(KVDB const&) = delete;
@@ -43,5 +41,7 @@ public:
     LIAPI operator bool();
 
     // For Compatibility
-    inline bool put(std::string_view key, std::string_view val) { return set(key, val); }
+    inline bool put(std::string_view key, std::string_view val) {
+        return set(key, val);
+    }
 };

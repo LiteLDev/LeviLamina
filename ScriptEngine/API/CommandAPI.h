@@ -8,31 +8,25 @@ extern ClassDefine<void> ParamOptionStaticBuilder;
 
 bool LLSERemoveCmdCallback(script::ScriptEngine* engine);
 
-class CommandClass : public ScriptClass
-{
+class CommandClass : public ScriptClass {
     std::unique_ptr<DynamicCommandInstance> uptr;
     DynamicCommandInstance* ptr;
     bool registered = false;
-    inline DynamicCommandInstance* get()
-    {
+    inline DynamicCommandInstance* get() {
         return ptr;
     }
-    inline std::vector<std::string> parseStringList(Local<Array> arr)
-    {
+    inline std::vector<std::string> parseStringList(Local<Array> arr) {
         if (arr.size() == 0 || !arr.get(0).isString())
             return {};
         std::vector<std::string> strs;
-        for (size_t i = 0; i < arr.size(); i++)
-        {
+        for (size_t i = 0; i < arr.size(); ++i) {
             strs.push_back(arr.get(i).toStr());
         }
         return std::move(strs);
     }
-    inline Local<Value> getStringArray(std::vector<std::string> values)
-    {
+    inline Local<Value> getStringArray(std::vector<std::string> values) {
         Local<Array> arr = Array::newArray(values.size());
-        for (auto& str : values)
-        {
+        for (auto& str : values) {
             arr.add(String::newString(str));
         }
         return arr;

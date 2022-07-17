@@ -16,7 +16,7 @@ using namespace std;
 static_assert(sizeof(ItemStack) == 160);
 static_assert(sizeof(ItemInstance) == 136);
 
-ItemStack *ItemStack::create() {
+ItemStack* ItemStack::create() {
     try {
         return new ItemStack();
     } catch (...) {
@@ -24,8 +24,8 @@ ItemStack *ItemStack::create() {
     }
 }
 
-ItemStack *ItemStack::create(std::unique_ptr<CompoundTag> tag) {
-    ItemStack *item = create();
+ItemStack* ItemStack::create(std::unique_ptr<CompoundTag> tag) {
+    ItemStack* item = create();
     if (!item)
         return nullptr;
     tag->setItemStack(item);
@@ -33,15 +33,14 @@ ItemStack *ItemStack::create(std::unique_ptr<CompoundTag> tag) {
 }
 
 #include <MC/ItemRegistry.hpp>
-ItemStack* ItemStack::create(short itemId, int aux,int count)
-{
+ItemStack* ItemStack::create(short itemId, int aux, int count) {
     auto item = ItemRegistry::getItem(itemId);
     if (item)
         return new ItemStack(*item, count, aux);
     return nullptr;
 }
 
-ItemStack *ItemStack::create(std::string type, int count) {
+ItemStack* ItemStack::create(std::string type, int count) {
     auto nbt = CompoundTag::create();
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
@@ -50,17 +49,16 @@ ItemStack *ItemStack::create(std::string type, int count) {
     return create(std::move(nbt));
 }
 
-ItemStack ItemStack::fromItemInstance(ItemInstance const &ins) {
+ItemStack ItemStack::fromItemInstance(ItemInstance const& ins) {
     try {
         return {ins};
-    }
-    catch (...) {
+    } catch (...) {
         return ItemStack::EMPTY_ITEM;
     }
 }
 
-ItemStack *ItemStack::clone_s() const {
-    ItemStack *a = ItemStack::create();
+ItemStack* ItemStack::clone_s() const {
+    ItemStack* a = ItemStack::create();
     *a = clone();
     return a;
 }
@@ -83,13 +81,13 @@ int ItemStack::getCount() const {
     return dAccess<unsigned char, 34>(this);
 }
 
-bool ItemStack::setItem(ItemStack *newItem) {
+bool ItemStack::setItem(ItemStack* newItem) {
     auto nbt = CompoundTag::fromItemStack(newItem);
     nbt->setItemStack(this);
     return true;
 }
 
-bool ItemStack::setLore(const vector<string> &lores) {
+bool ItemStack::setLore(const vector<string>& lores) {
     if (this->isNull())
         return false;
     this->setCustomLore(lores);
@@ -105,15 +103,13 @@ bool ItemStack::setNbt(CompoundTag* nbt) {
     return true;
 }
 
-int ItemStackBase::getCount() const
-{
+int ItemStackBase::getCount() const {
     if (this->isNull())
         return 0;
     return dAccess<unsigned char, 34>(this);
 }
 
-string ItemStack::getStandardName(const Localization& language)
-{
+string ItemStack::getStandardName(const Localization& language) {
     I18n::chooseLanguage(language);
     string standardName = this->getItem()->buildDescriptionName(*this);
     I18n::chooseLanguage(Global<PropertiesSettings>->getLanguage());

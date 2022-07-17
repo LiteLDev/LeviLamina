@@ -1,31 +1,32 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-LiteLoaderBDS-2.4.0更新已发布，适应于BDS-1.19.10，协议版本534
+LiteLoaderBDS-2.4.1更新已发布，适应于BDS-1.19.10，协议版本534
 
-[HEADING=2][新内容][/HEADING]
+[HEADING=1][新内容][/HEADING]
 [LIST]
-[*]支持BDS1.19.10 ,by @QingYu,@WangYneos 
-[*]全新的I18N API(为中小型插件设计) ,by @Jasonzyt（服务于大型插件的i18n正在制作中）
-[*]配置文件新增enableTpdimCommand与enableForceUtf8Input,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/518']#518[/URL] by @QingYu
-[*]重写PlayerPlaceBlockEvent, by @Redbeanw44602
-[*]为onUseItemOnEvent新增点击目标的坐标(Vec3), [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/523']#523[/URL] by @OEOTYAN
+[*]LL API
+[LIST]
+[*]新增 Player::getLastPacketLoss, By @StarsDream00
+[*]新增事件 BlockPlacedByPlayerEvent, By @StarsDream00
+[*]FormUI中新增ModalForm,(#554) By @S3v3Nice
 [/LIST]
-
-[HEADING=2][新内容][/HEADING]
+[*]LLSE API
 [LIST]
-[*]PlayerMoveEvent/onMove将在未来被移除(请尽快修改其他方案)
+[*]新增 pl.lastDeathPos,(#551) By @StarsDream00
+[*]新增 pl.isLoading, By @StarsDream00
+[*]新增 dv.lastPacketLoss, By @StarsDream00
+[*]新增 dv.lastPing, By @StarsDream00
+[*]新增 dv.serverAddress, By @StarsDream00
+[*]新增 bl.destroy(drop), By @StarsDream00
+[*]新增事件 onExperienceAdd, By @StarsDream00
+[*]新增事件 onBedEnter, By @StarsDream00
+[*]新增事件 afterPlaceBlock, By @Redbeanw44602
 [/LIST]
-
-[HEADING=2][BUG修复][/HEADING]
-[LIST]
-[*]修复LL Bugs
-[LIST]
-[*]修复不会加载文件名与已注册插件名称相同的插件,[URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/510']#510[/URL] by @Jasonzyt
-[*]修复Molang API(MC/ExpressionNode.hpp) 的错误 , [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/524']#524[/URL] by @LazuliKao
-[*]修复onMove的部分问题 , [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/530']#530[/URL] by @Redbeanw44602
-[*]修复distanceToSqr API ,by @QingYu
 [/LIST]
-[*]修复LLSE bugs
+[HEADING=1][Bug修复][/HEADING]
 [LIST]
-[*]修复mc.newCommand中参数perm的默认值不正确, [URL='https://github.com/LiteLDev/LiteLoaderBDS/issues/517']#517[/URL] by @StarsDream00
+[*]LL bugs:
+[LIST]
+[*]修复AntiGive部分情况下失效的问题, By @dreamguxiang
+[*]修复Vec3的一些问题, By @OEOTYAN
 [/LIST]
 [/LIST]

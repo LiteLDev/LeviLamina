@@ -11,15 +11,12 @@ using namespace LL;
 
 Logger crashLogger("CrashLogger");
 
-bool LL::StartCrashLoggerProcess()
-{
-    if (IsDebuggerPresent())
-    {
+bool LL::StartCrashLoggerProcess() {
+    if (IsDebuggerPresent()) {
         crashLogger.info("Existing debugger detected. Builtin CrashLogger will not work.");
         return true;
     }
-    if (IsWineEnvironment())
-    {
+    if (IsWineEnvironment()) {
         crashLogger.info("Wine Environment detected. Builtin CrashLogger will not work.");
         return true;
     }
@@ -37,8 +34,7 @@ bool LL::StartCrashLoggerProcess()
     wchar_t daemonCmd[MAX_PATH];
     std::string serverVersion = fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
     wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(), str2wstr(serverVersion).c_str());
-    if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi))
-    {
+    if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("Could not Create CrashLogger Daemon Process!");
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
         return false;
@@ -49,17 +45,13 @@ bool LL::StartCrashLoggerProcess()
     return true;
 }
 
-void LL::InitCrashLogger(bool enableCrashLogger)
-{
+void LL::InitCrashLogger(bool enableCrashLogger) {
     // Enable PreLog Module
-    try
-    {
+    try {
         LoadLibrary(CL_PRELOG_MODULE);
-    }
-    catch (...) {}
+    } catch (...) {}
 
-    if (!enableCrashLogger)
-    {
+    if (!enableCrashLogger) {
         crashLogger.warn("Builtin CrashLogger is not enabled because the configuration disabled it.");
         crashLogger.warn("There will be no crash log when unhandled exception occurs,");
         crashLogger.warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
@@ -76,7 +68,7 @@ void LL::InitCrashLogger(bool enableCrashLogger)
         if (i.is_regular_file() && i.path().extension().u8string() == u8".dll") {
             auto path = UTF82String(i.path().u8string());
 
-            //Check crashLogger
+            // Check crashLogger
             for (auto name : NoCrashLogger) {
                 if (path.find(name) != string::npos) {
                     noCrashLoggerReason = string(name) + ".dll";
@@ -98,11 +90,9 @@ void LL::InitCrashLogger(bool enableCrashLogger)
 
     // Start CrashLogger
     if (StartCrashLoggerProcess()) {
-        //Logger::Info("CrashLogger Daemon Process attached.");
-    }
-    else {
+        // Logger::Info("CrashLogger Daemon Process attached.");
+    } else {
         crashLogger.warn("Builtin CrashLogger failed to start!");
         crashLogger.warn("There will be no crash log when unhandled exception occurs.");
     }
-
 }

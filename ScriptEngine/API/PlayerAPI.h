@@ -6,12 +6,11 @@ class SimulatedPlayer;
 //////////////////// Classes ////////////////////
 class Player;
 class ActorUniqueID;
-class PlayerClass : public ScriptClass
-{
+class PlayerClass : public ScriptClass {
 private:
     ActorUniqueID id;
     bool isValid = true;
-    
+
 public:
     explicit PlayerClass(Player* p);
 
@@ -19,13 +18,14 @@ public:
     Player* get();
     SimulatedPlayer* asSimulatedPlayer();
 
-    static Local<Object> newPlayer(Player *p);
+    static Local<Object> newPlayer(Player* p);
     static Player* extract(Local<Value> v);
     Local<Value> getRawPtr(const Arguments& args);
 
     Local<Value> getName();
     Local<Value> getPos();
     Local<Value> getBlockPos();
+    Local<Value> getLastDeathPos();
     Local<Value> getRealName();
     Local<Value> getXuid();
     Local<Value> getUuid();
@@ -40,6 +40,7 @@ public:
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
+    Local<Value> isLoading();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
@@ -85,16 +86,23 @@ public:
     Local<Value> setBossBar(const Arguments& args);
     Local<Value> removeBossBar(const Arguments& args);
     Local<Value> addLevel(const Arguments& args);
+    Local<Value> reduceLevel(const Arguments& args);
     Local<Value> getLevel(const Arguments& arg);
+    Local<Value> setLevel(const Arguments& arg);
     Local<Value> resetLevel(const Arguments& arg);
-    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
+    Local<Value> reduceExperience(const Arguments& args);
+    Local<Value> getCurrentExperience(const Arguments& arg);
+    Local<Value> setCurrentExperience(const Arguments& arg);
+    Local<Value> getTotalExperience(const Arguments& arg);
+    Local<Value> setTotalExperience(const Arguments& arg);
+    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
 
     Local<Value> sendSimpleForm(const Arguments& args);
     Local<Value> sendModalForm(const Arguments& args);
     Local<Value> sendCustomForm(const Arguments& args);
     Local<Value> sendForm(const Arguments& args);
-    //Local<Value> sendPacket(const Arguments& args);
+    // Local<Value> sendPacket(const Arguments& args);
 
     Local<Value> setExtraData(const Arguments& args);
     Local<Value> getExtraData(const Arguments& args);
@@ -115,10 +123,10 @@ public:
     Local<Value> quickEvalMolangScript(const Arguments& args);
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
-    
+
     Local<Value> simulateSneak(const Arguments& args);
     Local<Value> simulateAttack(const Arguments& args);
-    Local<Value> simulateDestory(const Arguments& args);
+    Local<Value> simulateDestroy(const Arguments& args);
     Local<Value> simulateDisconnect(const Arguments& args);
     Local<Value> simulateInteract(const Arguments& args);
     Local<Value> simulateJump(const Arguments& args);
@@ -138,7 +146,7 @@ public:
     // bool simulateSetItem(class ItemStack&, bool, int);
     // bool simulateGiveItem(class ItemStack&, bool);
 
-    //For Compatibility
+    // For Compatibility
     Local<Value> getIP();
     Local<Value> getAllItems(const Arguments& args);
     Local<Value> removeItem(const Arguments& args);

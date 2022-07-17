@@ -6,7 +6,7 @@
 [
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)  
+](https://github.com/LiteLDev/LiteLoader/releases/latest)
 QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### English | [简体中文](README_zh-cn.md)
@@ -18,7 +18,7 @@ massive API, lots of packed utility interfaces, a rich event system and powerful
 
 `LiteLoader` provides a massive API, a powerful event system and a large number of encapsulated development infrastructure interfaces, providing a solid foundation for extending the Bedrock Edition **BDS** with more gameplay and functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn, and the development approach is flexible.
 
-Writing plugins in **C++，Golang，JavaScript，Lua，Python**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
+Writing plugins in **C++, Golang, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
 <br/>
@@ -48,7 +48,7 @@ void PluginInit()
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
-        logger.info("Player:{} attacks {} | at {} in Dimension {}", 
+        logger.info("Player:{} attacks {} | at {} in Dimension {}",
          player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
             std::to_string(actor->getDimensionId()));
         return true;
@@ -61,19 +61,16 @@ void PluginInit()
 ```javascript
 // Register for shutdown command
 mc.listen("onServerStarted", () => {
-    const cmd = mc.newCommand("stopsvr", "close server", PermType.GameMasters);
+    const cmd = mc.newCommand("stopsvr", "close server");
     cmd.overload();
     cmd.setCallback((_cmd, ori, out, _res) => {
-        const pl = ori.player;
         out.success("stop command executed successfully");
         mc.broadcast(
-            `Player${pl.realName}Execute the stop command. The server will be shut down after 5 seconds`
+            `Player${ori.player.realName}Execute the stop command. The server will be shut down after 5 seconds`
         );
 
         // Execute stop command
-        setTimeout(() => {
-            mc.runcmd("stop");
-        }, 5000);
+        setTimeout(() => mc.runcmd("stop"), 5000);
     });
     cmd.setup();
 });
@@ -85,32 +82,33 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages | `C++`，`JavaScript`，`Lua`，`Golang`，`.Net`|
-| -------------------------- | ------------------------------------ |
-| **Upcoming supported  languages** | `Python`，`Ruby`，`TypeScript` |
+| Supported languages               | `C++`, `Go`, `JavaScript`, `Lua`, `.NET` |
+| --------------------------------- | -------------------------------------------- |
+| **Upcoming supported languages**  | `Python`, `Ruby`, `TypeScript`               |
 
 - 📕 Smooth development experience with great compatibility
   - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving features
-  - For scripting language plugins, a multi-language code completion library, a powerful VSCode plugin, a hot-loading system ...... Many tools to help you write every line of code more efficiently
+  - For scripting language plugins, a multi-language code completion library, a powerful VSCode plugin, a hot-loading system...... Many tools to help you write every line of code more efficiently
   - When a version is updated, the API is guaranteed to be largely **backward compatible** and the plugin requires little or no code changes with the version update. With the `LiteLoader` series' unique symbol lookup technology, cross-version **auto-adaptation** is no longer a dream
 
 - 📋 Well documented and explained in detail
-  - Welcome to 👉[LiteLoader documentation](https://docs.litebds.com/)👈 to see more  
+  - Welcome to 👉[LiteLoader documentation](https://docs.litebds.com/)👈 to see more
 
 - 🎈 Numerous well-packaged interfaces
-  - Numerous game APIs support: players, entities, cubes, items, containers, NBTs, server systems ......
+  - Numerous game APIs support: players, entities, cubes, items, containers, NBTs, server systems......
   - Up to **50+** game events to listen to, no matter what happens,  the first to respond
 
 - 🛡 Secure, stable and versatile
-  - Fixes a number of vulnerabilities in BDS to ensure the stability and security of your server  
+  - Fixes a number of vulnerabilities in BDS to ensure the stability and security of your server
   - Extensive use of the seh exception protection framework to minimise the risk of server crashes
   - Supports running on Linux, MacOS platforms via **Wine**, bringing a free plugin experience to other platforms as well: write once, **share on multiple platforms**.
 
 - 🏆 Sound app ecosystem
-  - A large number of existing plugins, mature publishing platform, instantly 👉[Go to MineBBS](https://www.minebbs.com/resources/?prefix_id=67)👈 to find and download your favorite LL plugins  
+  - A large number of existing plugins, mature publishing platform, instantly 👉[Go to official forum](https://forum.litebds.com/)👈 to find and download your favorite LL plugins
+
 - 🏃 Open Source & Community Building
-  - The project is licensed under the `AGPL-3.0` open source license and will **never** be charged for or released as a commercial version.  
-  - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!  
+  - The project is licensed under the `AGPL-3.0` open source license and will **never** be charged for or released as a commercial version.
+  - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!
 
 ------
 
@@ -121,9 +119,9 @@ mc.listen("onServerStarted", () => {
 1. Download the latest <code>LiteLoader-<i>version</i>.zip</code> from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions),
 2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
 3. Ensure that the `bedrock_server.pdb` file exists.
-   Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)  
-4. When the console output `Press any key to continue. . .` , press any key to close the window
-5. Execute `bedrock_server_mod.exe` and enjoy it !
+   Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)
+4. When the console output `Press any key to continue . . . ` , press any key to close the window
+5. Execute `bedrock_server_mod.exe` and enjoy it!
 
 ### For Linux
 
@@ -144,13 +142,13 @@ docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
 
-Start server: `docker container start liteloader`  
-Force stop server(not recommended): `docker container stop liteloader`  
-Enter console: `docker attach liteloader`  
-Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.  
-If you want to manage server files, use `docker volume --help` for more details.  
+Start server: `docker container start liteloader`<br>
+Force stop server(not recommended): `docker container stop liteloader`<br>
+Enter console: `docker attach liteloader`<br>
+Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.<br>
+If you want to manage server files, use `docker volume --help` for more details.<br>
 
-Everything's done! Next, you can install **LiteLoader** plugins!  
+Everything's done! Next, you can install **LiteLoader** plugins!
 
 <br>
 
@@ -183,7 +181,7 @@ For more **installation and usage guides**,  come to 👉[LiteLoader documentati
 1. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
 1. Copy the plugin to the plugins directory for testing
 
-For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈  
+For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈<br>
 If you have a revision request or need to add an API, please contact the author or post an Issue
 
 ### Developing plugins using scripting Languages
@@ -192,8 +190,8 @@ If you have a revision request or need to add an API, please contact the author 
 2. Write the code
 3. Copy the plugin to the plugins directory for testing
 
-Please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.  
-If you have a revision request or need to add an API, please feel free to contact the author or post an Issue  
+Please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.
+If you have a revision request or need to add an API, please feel free to contact the author or post an Issue
 
 ### Example Plugins
 
@@ -203,19 +201,18 @@ You can also learn plugin development methods and tips here
 
 ### Development Aids - VSCode Development Aids & Complementary Libraries
 
-Use the LiteLoader development helper plugin developed by Moxicat  
-Helps you do better with **script plugins**!  
+Use the LiteLoader development helper plugin developed by Moxicat<br>
+Helps you do better with **script plugins**!<br>
 Code hint, auto-completion, auto-documentation, error alert, runtime debugging and so on
 
 [Click here](https://www.minebbs.com/resources/llscripthelper.2672/)
-View more description and introduction of this extension  
+View more description and introduction of this extension<br>
 VSCode extension store search `LLScriptHelper`, install **LLScriptHelper** and experience it instantly!
 
 ### Development Aids - Blockly-LXL Graphical Development Kit
 
-No programming foundation? Tired of complex language rules?  
-Have you ever thought that BDS plug-in development could be as easy as a puzzle?
-
+No programming foundation? Tired of complex language rules?<br>
+Have you ever thought that BDS plug-in development could be as easy as a puzzle?<br>
 Here it is! The Blockly-LXL graphical development kit from pa733 takes the plugin development experience to a new level!
 
 [Click here](https://www.minebbs.com/resources/blockly-lxl.2671/)
@@ -232,7 +229,7 @@ View related installation and usage instructions
 3. Open the `LiteLoader.sln` project file and click on the **Batch Generation** item in the **Generation** menu
 4. Bring up the batch generation dialog, check all the generation checkboxes on the right side of the dialog
 5. When you have finished selecting, click the **Generate** button in the dialog box to perform batch generation
-6. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.  
+6. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.<br>
    After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
 
 <br/>
@@ -248,7 +245,7 @@ You can use the following methods to contribute to the `LiteLoader` project
 
 ⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐
 
-If you are interested in contributing to LiteLoaderBDS, feel free to come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Maintenance/)👈 to view **Project Maintenance and Support Documentation**  
+If you are interested in contributing to LiteLoaderBDS, feel free to come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Maintenance/)👈 to view **Project Maintenance and Support Documentation**
 
 ------
 
@@ -263,23 +260,23 @@ You must accept the Minecraft EULA.
 - If you violate the **EULA**, any legal liability is **IRRELEVANT** to the developers.
 - **NO WARRANTY**.
 
-Project|License
------|-----
-[LiteLoader](https://github.com/LiteLDev/LiteLoader)|AGPLv3 with extra restrictions&exceptions
-[BedrockX](https://github.com/Sysca11/BedrockX)|GPLv3 with extra restrictions&exceptions
-[ElementZero](https://github.com/Element-0/ElementZero)|GPLv3
-[ScriptX](https://github.com/Tencent/ScriptX)|Apache License Version 2.0
-[OpenSSL](https://github.com/openssl/openssl)|Apache-2.0 License
-[SimpleIni](https://github.com/brofield/simpleini)|MIT License
-[Nlohmann-Json](https://github.com/nlohmann/json)|MIT License
-[nbt-cpp](https://github.com/handtruth/nbt-cpp)|MIT License
-[Hash](https://github.com/Chocobo1/Hash)|GPLv3
-[ThreadPool](https://github.com/jhasse/ThreadPool)|Zlib License
-[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient)|MIT License
-[magic_enum](https://github.com/Neargye/magic_enum)|MIT License
-[dyncall](https://www.dyncall.org/index)|ISC license
-[vcproxy](https://github.com/pr701/vcproxy)|MIT License
-[RawPDB](https://github.com/MolecularMatters/raw_pdb)|BSD 2-Clause License
+| Project                                                                 | License                                   |
+| ----------------------------------------------------------------------- | ----------------------------------------- |
+| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | AGPLv3 with extra restrictions&exceptions |
+| [BedrockX](https://github.com/Sysca11/BedrockX)                         | GPLv3 with extra restrictions&exceptions  |
+| [ElementZero](https://github.com/Element-0/ElementZero)                 | GPLv3                                     |
+| [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                |
+| [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 License                        |
+| [SimpleIni](https://github.com/brofield/simpleini)                      | MIT License                               |
+| [Nlohmann-Json](https://github.com/nlohmann/json)                       | MIT License                               |
+| [nbt-cpp](https://github.com/handtruth/nbt-cpp)                         | MIT License                               |
+| [Hash](https://github.com/Chocobo1/Hash)                                | GPLv3                                     |
+| [ThreadPool](https://github.com/jhasse/ThreadPool)                      | Zlib License                              |
+| [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT License                               |
+| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                               |
+| [dyncall](https://www.dyncall.org/index)                                | ISC license                               |
+| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT License                               |
+| [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause License                      |
 
 ### Extra Restrictions & Exceptions
 
@@ -289,7 +286,7 @@ or using it for commercial propose.
 > Do not do evil.
 
 Although we expected to build an open-source community, but forcing everything open-source will ruin this community. So
-you can write plugins based on `LiteLoader` with ANY open-source license or even don't publish your source code. but if
+you can write plugins based on `LiteLoader` with ANY open-source license or even do not publish your source code. but if
 you modified the framework, or write a new framework based on this framework, you MUST open-source it.
 
 If you want to reproduce and distribute this framework, you have to get our authorization!
@@ -301,9 +298,9 @@ If you want to reproduce and distribute this framework, you have to get our auth
 #### Important Contributors
 
 | ![ShrBox](https://avatars.githubusercontent.com/u/53301243?s=96&v=4) | ![dreamguxiang](https://avatars.githubusercontent.com/u/62042544?s=96&v=4) | ![WangYneos](https://avatars.githubusercontent.com/u/42824603?s=96&v=4) | ![wzy](https://avatars.githubusercontent.com/u/59381521?s=96&v=4) | ![xiaoqch](https://avatars.githubusercontent.com/u/37901097?s=96&v=4) | ![yqs112358](https://avatars.githubusercontent.com/u/37969157?s=96&v=4) | ![Sysca11](https://avatars.githubusercontent.com/u/46832985?s=96&v=4) | ![RimuruChan](https://avatars.githubusercontent.com/u/42002296?s=96&v=4) |
-|:--------------------------------------------------------------------:|:--------------------------------------------------------------------------:|:-----------------------------------------------------------------------:|:-----------------------------------------------------------------:|:---------------------------------------------------------------------:|:-----------------------------------------------------------------------:|:---------------------------------------------------------------------:|:------------------------------------------------------------------------:|
+| :------------------------------------------------------------------: | :------------------------------------------------------------------------: | :---------------------------------------------------------------------: | :---------------------------------------------------------------: | :-------------------------------------------------------------------: | :---------------------------------------------------------------------: | :-------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 |                 [@ShrBox](https://github.com/ShrBox)                 |              [@dreamguxiang](https://github.com/dreamguxiang)              |               [@WangYneos](https://github.com/WangYneos)                |               [@wzy](https://github.com/wzyyyyyyy)                |                [@xiaoqch](https://github.com/xiaoqch)                 |               [@yqs112358](https://github.com/yqs112358)                |                [@Sysca11](https://github.com/Sysca11)                 |               [@RimuruChan](https://github.com/RimuruChan)               |
 
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
-as [CLion](https://www.jetbrains.com/clion/)**.  
+as [CLion](https://www.jetbrains.com/clion/)**.<br>
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)

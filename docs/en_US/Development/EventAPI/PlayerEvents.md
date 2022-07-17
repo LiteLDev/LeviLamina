@@ -336,7 +336,23 @@ Note: Win10 client right-clicking on the player will trigger this event on the s
 
 <br>
 
-#### `"onPlaceBlock"` - Player Places Block Event
+#### `"onPlaceBlock"` - Player Try Places Block Event
+
+- Listener function prototype 
+  `function(player,block)`
+- Parameters: 
+  - player : `Player`  
+    The player that placed the block.
+  - block : `Block`  
+    The block that was placed.
+
+- Intercept events: function returns `false`
+
+> **ATTENTION** This event will always fire when the player tries to place a block.
+
+<br>
+
+#### `"afterPlaceBlock"` - Player Placed Block Event
 
 - Listener function prototype 
   `function(player,block)`
@@ -461,3 +477,28 @@ Note: Player.setSprinting (false) can be executed in the next game tick to achie
 
 Note: This event is so powerful that it can even intercept and open backpacks.
 
+<br>
+
+#### `"onExperienceAdd"` - Player Get Experience
+
+- Listener function prototype 
+  `function(player,exp)`
+- Parameters：
+  - player : `Player`  
+    Players with experience.
+  - exp : `Integer`
+    Amount of experience gained by the player.
+- Intercept events: function returns `false`
+
+<br>
+
+#### `"onBedEnter"` - Player Enters Bed
+
+- Listener function prototype 
+  `function(player,pos)`
+- Parameters：
+  - player : `Player`  
+    The player using the bed.
+  - pos : `IntPos`  
+    The position of the bed used.
+- Intercept events: function returns `false`

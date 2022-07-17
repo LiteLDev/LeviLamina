@@ -42,8 +42,7 @@ static CommandParameterData makeMandatory(Type Command::*field, std::string name
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
-    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr)
-{
+    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
     return {
         type_id<CommandRegistry, Type>(),
         CommandRegistry::getParseFn<Type>(),

@@ -15,10 +15,10 @@ public:
     ActorUniqueID mUid;
     string mProperty;
     bool mBool;
-	string mString;
-	int mInt;
-	float mFloat;
-	
+    string mString;
+    int mInt;
+    float mFloat;
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANGEMOBPROPERTYPACKET

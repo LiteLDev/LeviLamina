@@ -4,8 +4,7 @@
 
 //////////////////// Classes ////////////////////
 
-class LoggerClass
-{
+class LoggerClass {
 public:
     static Local<Value> log(const Arguments& args);
     static Local<Value> debug(const Arguments& args);

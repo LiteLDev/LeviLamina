@@ -44,6 +44,18 @@ These object properties are read-only and cannot be modified.
 
 <br>
 
+#### Destroy The Block
+
+`bl.destroy(drop)`
+
+- Parameters：
+  - drop : `Boolen`  
+    Whether to generate drops
+- Return value: Whether the destroy was successful or not.
+- Return value type: `Boolean`
+
+<br>
+
 ### Block Object - Function
 
 Each block object contains some member functions (member methods) that can be executed. for a specific block object `bl`, you can perform some operations on this block through the following functions.

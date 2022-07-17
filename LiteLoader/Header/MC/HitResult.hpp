@@ -50,7 +50,7 @@ public:
     LIAPI bool isHitLiquid();
     LIAPI bool isEntity();
     LIAPI bool isTile();
-	LIAPI BlockPos getBlockPos();
+    LIAPI BlockPos getBlockPos();
     LIAPI BlockPos getLiquidPos();
     LIAPI FaceID getLiquidFacing();
     //LIAPI Vec3 getLiquidHitPos();

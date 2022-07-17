@@ -6,27 +6,21 @@ class Vec2 {
 public:
     float x, y;
 
-    Vec2(float a, float b)
-        : x(a)
-        , y(b){};
+    Vec2(float a, float b) : x(a), y(b){};
 
-    inline std::string toString() const
-    {
+    inline std::string toString() const {
         return std::to_string(x) + "," + std::to_string(y);
     }
 
-    inline Vec2 operator*(float num) const
-    {
+    inline Vec2 operator*(float num) const {
         return {x * num, y * num};
     }
 
-    inline Vec2 operator+(const Vec2& b) const
-    {
+    inline Vec2 operator+(const Vec2& b) const {
         return {this->x + b.x, this->y + b.y};
     }
 
-    inline Vec2 operator-(const Vec2& b) const
-    {
+    inline Vec2 operator-(const Vec2& b) const {
         return {this->x - b.x, this->y - b.y};
     }
 
@@ -39,5 +33,4 @@ public:
     MCAPI static class Vec2 const UNIT_X;
     MCAPI static class Vec2 const UNIT_Y;
     MCAPI static class Vec2 const ZERO;
-
 };

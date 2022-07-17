@@ -32,15 +32,12 @@ ClassDefine<void> LoggerClassBuilder =
 
 
 ////////////////// Helper //////////////////
-string inline GetTimeStrHelper()
-{
+string inline GetTimeStrHelper() {
     return Raw_GetDateTimeStr();
 }
 
-string& StrReplace(string& str, const string& to_replaced, const string& new_str)
-{
-    for (string::size_type pos(0); pos != string::npos; pos += new_str.length())
-    {
+string& StrReplace(string& str, const string& to_replaced, const string& new_str) {
+    for (string::size_type pos(0); pos != string::npos; pos += new_str.length()) {
         pos = str.find(to_replaced, pos);
         if (pos != string::npos)
             str.replace(pos, to_replaced.length(), new_str);
@@ -51,18 +48,16 @@ string& StrReplace(string& str, const string& to_replaced, const string& new_str
 }
 ////////////////// Helper //////////////////
 
-void inline LogDataHelper(Logger::OutputStream *outStream, const Arguments& args)
-{
-    for(int i = 0; i < args.size(); ++i)
-        PrintValue(*outStream,args[i]);
+void inline LogDataHelper(Logger::OutputStream* outStream, const Arguments& args) {
+    for (int i = 0; i < args.size(); ++i)
+        PrintValue(*outStream, args[i]);
     (*outStream) << Logger::endl;
 }
 
-Local<Value> LoggerClass::log(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
+Local<Value> LoggerClass::log(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
 
-    try{
+    try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.info, args);
         return Boolean::newBoolean(true);
@@ -70,9 +65,8 @@ Local<Value> LoggerClass::log(const Arguments& args)
     CATCH("Fail in LoggerLog!")
 }
 
-Local<Value> LoggerClass::debug(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
+Local<Value> LoggerClass::debug(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
 
     try {
         auto globalConf = ENGINE_OWN_DATA();
@@ -82,10 +76,9 @@ Local<Value> LoggerClass::debug(const Arguments& args)
     CATCH("Fail in LoggerDebug!")
 }
 
-Local<Value> LoggerClass::info(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    
+Local<Value> LoggerClass::info(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.info, args);
@@ -94,10 +87,9 @@ Local<Value> LoggerClass::info(const Arguments& args)
     CATCH("Fail in LoggerInfo!")
 }
 
-Local<Value> LoggerClass::warn(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    
+Local<Value> LoggerClass::warn(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.warn, args);
@@ -106,10 +98,9 @@ Local<Value> LoggerClass::warn(const Arguments& args)
     CATCH("Fail in LoggerWarn!")
 }
 
-Local<Value> LoggerClass::error(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    
+Local<Value> LoggerClass::error(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.error, args);
@@ -118,10 +109,9 @@ Local<Value> LoggerClass::error(const Arguments& args)
     CATCH("Fail in LoggerError!")
 }
 
-Local<Value> LoggerClass::fatal(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    
+Local<Value> LoggerClass::fatal(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+
     try {
         auto globalConf = ENGINE_OWN_DATA();
         LogDataHelper(&globalConf->logger.fatal, args);
@@ -130,10 +120,9 @@ Local<Value> LoggerClass::fatal(const Arguments& args)
     CATCH("Fail in LoggerFatal!")
 }
 
-Local<Value> LoggerClass::setTitle(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
+Local<Value> LoggerClass::setTitle(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
     try {
         ENGINE_OWN_DATA()->logger.title = args[0].asString().toString();
@@ -143,8 +132,7 @@ Local<Value> LoggerClass::setTitle(const Arguments& args)
 }
 
 ///////////////// Helper /////////////////
-void UpdateMaxLogLevel()
-{
+void UpdateMaxLogLevel() {
     auto data = ENGINE_OWN_DATA();
     data->maxLogLevel = data->logger.consoleLevel;
     if (data->maxLogLevel < data->logger.fileLevel)
@@ -154,17 +142,15 @@ void UpdateMaxLogLevel()
 }
 ///////////////// Helper /////////////////
 
-Local<Value> LoggerClass::setConsole(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    CHECK_ARG_TYPE(args[0],ValueKind::kBoolean)
-    if(args.size() >= 2)
+Local<Value> LoggerClass::setConsole(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kBoolean)
+    if (args.size() >= 2)
         CHECK_ARG_TYPE(args[1], ValueKind::kNumber)
 
     try {
         ENGINE_OWN_DATA()->toConsole = args[0].asBoolean().value();
-        if (args.size() >= 2)
-        {
+        if (args.size() >= 2) {
             ENGINE_OWN_DATA()->logger.consoleLevel = args[1].toInt();
             UpdateMaxLogLevel();
         }
@@ -173,10 +159,9 @@ Local<Value> LoggerClass::setConsole(const Arguments& args)
     CATCH("Fail in LoggerSetConsole!")
 }
 
-Local<Value> LoggerClass::setFile(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
-    CHECK_ARG_TYPE(args[0],ValueKind::kString)
+Local<Value> LoggerClass::setFile(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
+    CHECK_ARG_TYPE(args[0], ValueKind::kString)
     if (args.size() >= 2)
         CHECK_ARG_TYPE(args[1], ValueKind::kNumber)
 
@@ -184,8 +169,7 @@ Local<Value> LoggerClass::setFile(const Arguments& args)
         string newFile = args[0].asString().toString();
         ENGINE_OWN_DATA()->logger.setFile(newFile, ios::app);
 
-        if (args.size() >= 2)
-        {
+        if (args.size() >= 2) {
             ENGINE_OWN_DATA()->logger.fileLevel = args[1].toInt();
             UpdateMaxLogLevel();
         }
@@ -194,18 +178,16 @@ Local<Value> LoggerClass::setFile(const Arguments& args)
     CATCH("Fail in LoggerSetFile!")
 }
 
-Local<Value> LoggerClass::setPlayer(const Arguments& args)
-{
-    CHECK_ARGS_COUNT(args,1)
+Local<Value> LoggerClass::setPlayer(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1)
     if (args.size() >= 2)
         CHECK_ARG_TYPE(args[1], ValueKind::kNumber)
 
     try {
-        Player *p = PlayerClass::extract(args[0]);
+        Player* p = PlayerClass::extract(args[0]);
         ENGINE_OWN_DATA()->logger.player = p;
 
-        if (args.size() >= 2)
-        {
+        if (args.size() >= 2) {
             ENGINE_OWN_DATA()->logger.playerLevel = args[1].toInt();
             UpdateMaxLogLevel();
         }
@@ -214,8 +196,7 @@ Local<Value> LoggerClass::setPlayer(const Arguments& args)
     CATCH("Fail in LoggerSetPlayer!")
 }
 
-Local<Value> LoggerClass::setLogLevel(const Arguments& args)
-{
+Local<Value> LoggerClass::setLogLevel(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber)
 

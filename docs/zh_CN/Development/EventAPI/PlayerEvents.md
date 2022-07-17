@@ -348,7 +348,24 @@
 
 <br>
 
-#### `"onPlaceBlock"` - 玩家放置方块
+#### `"onPlaceBlock"` - 玩家尝试放置方块
+
+- 监听函数原型
+  `function(player,block)`
+- 参数：
+  - player : `Player`  
+    放置方块的玩家对象
+
+  - block : `Block`  
+    将要放置的方块对象
+
+- 拦截事件：函数返回`false`
+
+> **注意** 当玩家尝试放置方块时，该事件将持续被触发。
+
+<br>
+
+#### `"afterPlaceBlock"` - 玩家放置方块
 
 - 监听函数原型
   `function(player,block)`
@@ -359,7 +376,7 @@
   - block : `Block`  
     被放置的方块对象
 
-- 拦截事件：函数返回`false`
+- 拦截事件：不可以拦截
 
 <br>
 
@@ -458,7 +475,7 @@
   `function(player,pos)`
 - 参数：
   - player : `Player`  
-    使用重生锚的玩家指针
+    使用重生锚的玩家对象
   - pos : `IntPos`  
     被使用的重生锚的位置
 - 拦截事件：函数返回`false`
@@ -476,3 +493,28 @@
 
 注：此事件非常强力，甚至可以拦截打开背包。
 
+<br>
+
+#### `"onExperienceAdd"` - 玩家获得经验
+
+- 监听函数原型
+  `function(player,exp)`
+- 参数：
+  - player : `Player`  
+    获得经验的玩家对象
+  - exp : `Integer`
+    获得的经验值
+- 拦截事件：函数返回`false`
+
+<br>
+
+#### `"onBedEnter"` - 玩家上床
+
+- 监听函数原型
+  `function(player,pos)`
+- 参数：
+  - player : `Player`  
+    上床的玩家对象
+  - pos : `IntPos`  
+    床的位置
+- 拦截事件：函数返回`false`

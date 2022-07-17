@@ -1,33 +1,30 @@
 #include "DatabaseAPI.h"
 using namespace DB;
 
-#define CATCH_AND_THROW(LOG) \
-    catch(const Exception& e) \
-    { \
-        logger.error(LOG##"\n"); PrintException(e); \
+#define CATCH_AND_THROW(LOG)                                         \
+    catch (const Exception& e) {                                     \
+        logger.error(LOG##"\n");                                     \
+        PrintException(e);                                           \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
-        return Local<Value>(); \
-    } \
-    catch(const std::exception &e) \
-    { \
-        throw Exception(TextEncoding::toUTF8(e.what())); \
-    } \
-    catch(const seh_exception &e) \
-    { \
-        logger.error("SEH Uncaught Exception Detected!"); \
-        logger.error(TextEncoding::toUTF8(e.what())); \
-        PrintScriptStackTrace(); \
-        logger.error(std::string("In API: ") + __FUNCTION__); \
+        return Local<Value>();                                       \
+    }                                                                \
+    catch (const std::exception& e) {                                \
+        throw Exception(TextEncoding::toUTF8(e.what()));             \
+    }                                                                \
+    catch (const seh_exception& e) {                                 \
+        logger.error("SEH Uncaught Exception Detected!");            \
+        logger.error(TextEncoding::toUTF8(e.what()));                \
+        PrintScriptStackTrace();                                     \
+        logger.error(std::string("In API: ") + __FUNCTION__);        \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
-        return Local<Value>(); \
-    } \
-    catch(...) \
-    { \
-        logger.error("Uncaught Exception Detected!"); \
-        PrintScriptStackTrace(); \
-        logger.error(std::string("In API: ") + __FUNCTION__); \
+        return Local<Value>();                                       \
+    }                                                                \
+    catch (...) {                                                    \
+        logger.error("Uncaught Exception Detected!");                \
+        PrintScriptStackTrace();                                     \
+        logger.error(std::string("In API: ") + __FUNCTION__);        \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
-        return Local<Value>(); \
+        return Local<Value>();                                       \
     }
 
 //////////////////// Class Definition ////////////////////
@@ -72,10 +69,8 @@ ClassDefine<DBStmtClass> DBStmtClassBuilder =
 
 //////////////////// Functions ////////////////////
 
-Any LocalValueToAny(const Local<Value>& val)
-{
-    switch (val.getKind())
-    {
+Any LocalValueToAny(const Local<Value>& val) {
+    switch (val.getKind()) {
         case ValueKind::kObject:
         case ValueKind::kArray:
             throw std::exception("Cannot convert script object(array) to Any");
@@ -92,11 +87,9 @@ Any LocalValueToAny(const Local<Value>& val)
         case ValueKind::kString:
             return Any(val.asString().toString());
         case ValueKind::kByteBuffer:
-            switch (val.asByteBuffer().getType())
-            {
+            switch (val.asByteBuffer().getType()) {
                 case ByteBuffer::Type::kInt8:
-                case ByteBuffer::Type::kUint8:
-                {
+                case ByteBuffer::Type::kUint8: {
                     auto buf = (uint8_t*)val.asByteBuffer().getRawBytes();
                     return Any(ByteArray(buf, buf + val.asByteBuffer().elementCount()));
                 }
@@ -111,10 +104,8 @@ Any LocalValueToAny(const Local<Value>& val)
 }
 
 template <>
-Local<Value> any_to(const Any& val)
-{
-    switch (val.type)
-    {
+Local<Value> any_to(const Any& val) {
+    switch (val.type) {
         case Any::Type::Null:
             return Local<Value>();
         case Any::Type::Boolean:
@@ -129,24 +120,21 @@ Local<Value> any_to(const Any& val)
             return Number::newNumber(val.value.floating);
         case Any::Type::String:
             return String::newString(*val.value.string);
-        case Any::Type::Date:
-        {
+        case Any::Type::Date: {
             auto obj = Object::newObject();
             obj.set("Y", val.value.date->year);
             obj.set("M", val.value.date->month);
             obj.set("D", val.value.date->day);
             return obj;
         }
-        case Any::Type::Time:
-        {
+        case Any::Type::Time: {
             auto obj = Object::newObject();
             obj.set("h", val.value.time->hour);
             obj.set("m", val.value.time->minute);
             obj.set("s", val.value.time->second);
             return obj;
         }
-        case Any::Type::DateTime:
-        {
+        case Any::Type::DateTime: {
             auto obj = Object::newObject();
             obj.set("Y", val.value.datetime->date.year);
             obj.set("M", val.value.datetime->date.month);
@@ -164,10 +152,8 @@ Local<Value> any_to(const Any& val)
     return Local<Value>();
 }
 
-Local<Value> RowSetToLocalValue(const RowSet& rows)
-{
-    if (rows.empty() || !rows.header)
-    {
+Local<Value> RowSetToLocalValue(const RowSet& rows) {
+    if (rows.empty() || !rows.header) {
         return Local<Value>();
     }
     Local<Array> arr = Array::newArray();
@@ -175,8 +161,7 @@ Local<Value> RowSetToLocalValue(const RowSet& rows)
     for (auto& col : *rows.header)
         header.add(String::newString(col));
     arr.add(header);
-    for (auto& row : rows)
-    {
+    for (auto& row : rows) {
         Local<Array> rowValues = Array::newArray();
         for (auto& col : row)
             rowValues.add(col.get<Local<Value>>());
@@ -185,8 +170,7 @@ Local<Value> RowSetToLocalValue(const RowSet& rows)
     return arr;
 }
 
-Local<Value> RowToLocalValue(const Row& row)
-{
+Local<Value> RowToLocalValue(const Row& row) {
     auto result = Object::newObject();
     row.forEach([&](const std::string& key, const Any& value) {
         result.set(key, value.get<Local<Value>>());
@@ -199,34 +183,29 @@ Local<Value> RowToLocalValue(const Row& row)
 
 // 生成函数
 KVDBClass::KVDBClass(const Local<Object>& scriptObj, const string& dir)
-    : ScriptClass(scriptObj)
-    , kvdb(KVDB::create(dir))
-{
+: ScriptClass(scriptObj)
+, kvdb(KVDB::create(dir)) {
     unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) {
         kvdb.reset();
     });
 }
 
 KVDBClass::KVDBClass(const string& dir)
-    : ScriptClass(script::ScriptClass::ConstructFromCpp<KVDBClass>{})
-    , kvdb(KVDB::create(dir))
-{
+: ScriptClass(script::ScriptClass::ConstructFromCpp<KVDBClass>{})
+, kvdb(KVDB::create(dir)) {
     unloadCallbackIndex = ENGINE_OWN_DATA()->addUnloadCallback([&](ScriptEngine* engine) {
         kvdb.reset();
     });
 }
 
-KVDBClass::~KVDBClass()
-{
+KVDBClass::~KVDBClass() {
 }
 
-KVDBClass* KVDBClass::constructor(const Arguments& args)
-{
+KVDBClass* KVDBClass::constructor(const Arguments& args) {
     CHECK_ARGS_COUNT_C(args, 1);
     CHECK_ARG_TYPE_C(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         auto res = new KVDBClass(args.thiz(), args[0].toStr());
         if (res->isValid())
             return res;
@@ -236,13 +215,11 @@ KVDBClass* KVDBClass::constructor(const Arguments& args)
     CATCH_C("Fail in Open Database!");
 }
 
-Local<Value> KVDBClass::get(const Arguments& args)
-{
+Local<Value> KVDBClass::get(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         if (!isValid())
             return Local<Value>();
 
@@ -255,13 +232,11 @@ Local<Value> KVDBClass::get(const Arguments& args)
     CATCH_AND_THROW("Fail in DbGet!");
 }
 
-Local<Value> KVDBClass::set(const Arguments& args)
-{
+Local<Value> KVDBClass::set(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         if (!isValid())
             return Local<Value>();
 
@@ -271,13 +246,11 @@ Local<Value> KVDBClass::set(const Arguments& args)
     CATCH_AND_THROW("Fail in DbSet!");
 }
 
-Local<Value> KVDBClass::del(const Arguments& args)
-{
+Local<Value> KVDBClass::del(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         if (!isValid())
             return Local<Value>();
 
@@ -286,29 +259,24 @@ Local<Value> KVDBClass::del(const Arguments& args)
     CATCH_AND_THROW("Fail in DbDel!");
 }
 
-Local<Value> KVDBClass::close(const Arguments& args)
-{
+Local<Value> KVDBClass::close(const Arguments& args) {
     ENGINE_OWN_DATA()->removeUnloadCallback(unloadCallbackIndex);
     unloadCallbackIndex = -1;
-    try
-    {
+    try {
         kvdb.reset();
         return Boolean::newBoolean(true);
     }
     CATCH_AND_THROW("Fail in DbClose!");
 }
 
-Local<Value> KVDBClass::listKey(const Arguments& args)
-{
-    try
-    {
+Local<Value> KVDBClass::listKey(const Arguments& args) {
+    try {
         if (!isValid())
             return Local<Value>();
 
         auto list = kvdb->getAllKeys();
         Local<Array> arr = Array::newArray();
-        for (auto& key : list)
-        {
+        for (auto& key : list) {
             arr.add(String::newString(key));
         }
         return arr;
@@ -320,52 +288,39 @@ Local<Value> KVDBClass::listKey(const Arguments& args)
 
 // 生成函数
 DBSessionClass::DBSessionClass(const Local<Object>& scriptObj, const ConnParams& params)
-    : ScriptClass(scriptObj)
-    , session(Session::create(params))
-{
+: ScriptClass(scriptObj)
+, session(Session::create(params)) {
     session->setDebugOutput(true);
 }
 DBSessionClass::DBSessionClass(const ConnParams& params)
-    : ScriptClass(script::ScriptClass::ConstructFromCpp<DBSessionClass>{})
-    , session(Session::create(params))
-{
+: ScriptClass(script::ScriptClass::ConstructFromCpp<DBSessionClass>{})
+, session(Session::create(params)) {
     session->setDebugOutput(true);
 }
 
-DBSessionClass::~DBSessionClass()
-{
+DBSessionClass::~DBSessionClass() {
 }
 
-DBSessionClass* DBSessionClass::constructor(const Arguments& args)
-{
-    try
-    {
+DBSessionClass* DBSessionClass::constructor(const Arguments& args) {
+    try {
         DBSessionClass* result = nullptr;
-        switch (args.size())
-        {
-            case 1:
-            {
+        switch (args.size()) {
+            case 1: {
                 // When the first argument is a string, it is a url or file path.
-                if (args[0].isString())
-                {
+                if (args[0].isString()) {
                     result = new DBSessionClass(args.thiz(), ConnParams(args[0].asString().toString()));
-                }
-                else if (args[0].isObject())
-                {
+                } else if (args[0].isObject()) {
                     auto obj = args[0].asObject();
                     ConnParams params;
                     for (auto& key : obj.getKeys())
                         params[key.toString()] = LocalValueToAny(obj.get(key));
                     result = new DBSessionClass(args.thiz(), params);
-                }
-                else
-                {
+                } else {
                     LOG_WRONG_ARG_TYPE();
                 }
                 break;
             }
-            case 2:
-            {
+            case 2: {
                 CHECK_ARG_TYPE_C(args[0], ValueKind::kString);
                 CHECK_ARG_TYPE_C(args[1], ValueKind::kObject);
                 auto obj = args[1].asObject();
@@ -385,63 +340,53 @@ DBSessionClass* DBSessionClass::constructor(const Arguments& args)
     CATCH_C("Fail in Open Database!");
 }
 
-Local<Value> DBSessionClass::query(const Arguments& args)
-{
+Local<Value> DBSessionClass::query(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         auto res = session->query(args[0].asString().toString());
         return RowSetToLocalValue(res);
     }
     CATCH_AND_THROW("Fail in query!");
 }
 
-Local<Value> DBSessionClass::exec(const Arguments& args)
-{
+Local<Value> DBSessionClass::exec(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         session->execute(args[0].asString().toString());
         return this->getScriptObject();
     }
     CATCH_AND_THROW("Fail in exec!");
 }
 
-Local<Value> DBSessionClass::prepare(const Arguments& args)
-{
+Local<Value> DBSessionClass::prepare(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
-    try
-    {
+    try {
         auto stmt = new DBStmtClass(session->prepare(args[0].asString().toString()));
         return stmt->getScriptObject();
     }
     CATCH_AND_THROW("Fail in exec!");
 }
 
-Local<Value> DBSessionClass::close(const Arguments& args)
-{
+Local<Value> DBSessionClass::close(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         session->close();
         return Boolean::newBoolean(true);
     }
     CATCH_WITHOUT_RETURN("Fail in close!");
     return Boolean::newBoolean(false);
 }
-Local<Value> DBSessionClass::isOpen(const Arguments& args)
-{
+Local<Value> DBSessionClass::isOpen(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         return Boolean::newBoolean(session->isOpen());
     }
     CATCH_AND_THROW("Fail in isOpen!");
@@ -451,25 +396,20 @@ Local<Value> DBSessionClass::isOpen(const Arguments& args)
 
 // 生成函数
 DBStmtClass::DBStmtClass(const Local<Object>& scriptObj, const DB::SharedPointer<DB::Stmt>& stmt)
-    : ScriptClass(scriptObj)
-    , stmt(stmt)
-{
+: ScriptClass(scriptObj)
+, stmt(stmt) {
 }
 
 DBStmtClass::DBStmtClass(const DB::SharedPointer<DB::Stmt>& stmt)
-    : ScriptClass(script::ScriptClass::ConstructFromCpp<DBStmtClass>{})
-    , stmt(stmt)
-{
+: ScriptClass(script::ScriptClass::ConstructFromCpp<DBStmtClass>{})
+, stmt(stmt) {
 }
 
-DBStmtClass::~DBStmtClass()
-{
+DBStmtClass::~DBStmtClass() {
 }
 
-Local<Value> DBStmtClass::getAffectedRows()
-{
-    try
-    {
+Local<Value> DBStmtClass::getAffectedRows() {
+    try {
         auto res = stmt->getAffectedRows();
         if (res == (uint64_t)-1)
             return Number::newNumber(-1);
@@ -480,10 +420,8 @@ Local<Value> DBStmtClass::getAffectedRows()
     CATCH_AND_THROW("Fail in getAffectedRows!");
 }
 
-Local<Value> DBStmtClass::getInsertId()
-{
-    try
-    {
+Local<Value> DBStmtClass::getInsertId() {
+    try {
         auto res = stmt->getInsertId();
         if (res == (uint64_t)-1)
             return Number::newNumber(-1);
@@ -494,25 +432,18 @@ Local<Value> DBStmtClass::getInsertId()
     CATCH_AND_THROW("Fail in getInsertId!");
 }
 
-Local<Value> DBStmtClass::bind(const Arguments& args)
-{
-    try
-    {
-        switch (args.size())
-        {
-            case 1:
-            {
-                switch (args[0].getKind())
-                {
-                    case ValueKind::kArray:
-                    {
+Local<Value> DBStmtClass::bind(const Arguments& args) {
+    try {
+        switch (args.size()) {
+            case 1: {
+                switch (args[0].getKind()) {
+                    case ValueKind::kArray: {
                         auto arr = args[0].asArray();
                         for (size_t i = 0; i < arr.size(); ++i)
                             stmt->bind(LocalValueToAny(arr.get(i)));
                         break;
                     }
-                    case ValueKind::kObject:
-                    {
+                    case ValueKind::kObject: {
                         auto obj = args[0].asObject();
                         for (auto& key : obj.getKeys())
                             stmt->bind(LocalValueToAny(obj.get(key)), key.toString());
@@ -523,18 +454,12 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
                 }
                 break;
             }
-            case 2:
-            {
-                if (args[1].isNumber())
-                {
+            case 2: {
+                if (args[1].isNumber()) {
                     stmt->bind(LocalValueToAny(args[0]), (int)args[1].asNumber().toInt64());
-                }
-                else if (args[1].isString())
-                {
+                } else if (args[1].isString()) {
                     stmt->bind(LocalValueToAny(args[0]), args[1].asString().toString());
-                }
-                else
-                {
+                } else {
                     LOG_WRONG_ARG_TYPE();
                 }
             }
@@ -544,57 +469,46 @@ Local<Value> DBStmtClass::bind(const Arguments& args)
     CATCH_AND_THROW("Fail in bind!");
 }
 
-Local<Value> DBStmtClass::execute(const Arguments& args)
-{
+Local<Value> DBStmtClass::execute(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         stmt->execute();
         return this->getScriptObject();
     }
     CATCH_AND_THROW("Fail in reset!");
 }
 
-Local<Value> DBStmtClass::step(const Arguments& args)
-{
+Local<Value> DBStmtClass::step(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         return Boolean::newBoolean(stmt->step());
     }
     CATCH_WITHOUT_RETURN("Fail in step!");
     return Boolean::newBoolean(false);
 }
 
-Local<Value> DBStmtClass::fetch(const Arguments& args)
-{
+Local<Value> DBStmtClass::fetch(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         return RowToLocalValue(stmt->fetch());
     }
     CATCH_AND_THROW("Fail in fetch!");
 }
 
-Local<Value> DBStmtClass::fetchAll(const Arguments& args)
-{
-    try
-    {
-        switch (args.size())
-        {
+Local<Value> DBStmtClass::fetchAll(const Arguments& args) {
+    try {
+        switch (args.size()) {
             case 0:
                 return RowSetToLocalValue(stmt->fetchAll());
-            case 1:
-            {
+            case 1: {
                 CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
                 auto func = args[0].asFunction();
                 stmt->fetchAll([&](const Row& row) {
                     auto res = func.call({}, RowToLocalValue(row));
-                    if (res.isBoolean())
-                    {
+                    if (res.isBoolean()) {
                         return res.asBoolean().value();
                     }
                     return true;
@@ -606,36 +520,30 @@ Local<Value> DBStmtClass::fetchAll(const Arguments& args)
     CATCH_AND_THROW("Fail in fetchAll!");
 }
 
-Local<Value> DBStmtClass::reset(const Arguments& args)
-{
+Local<Value> DBStmtClass::reset(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         stmt->reset();
         return this->getScriptObject();
     }
     CATCH_AND_THROW("Fail in reset!");
 }
 
-Local<Value> DBStmtClass::reexec(const Arguments& args)
-{
+Local<Value> DBStmtClass::reexec(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         stmt->reexec();
         return this->getScriptObject();
     }
     CATCH_AND_THROW("Fail in reexec!");
 }
 
-Local<Value> DBStmtClass::clear(const Arguments& args)
-{
+Local<Value> DBStmtClass::clear(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 0);
 
-    try
-    {
+    try {
         stmt->clear();
         return this->getScriptObject();
     }

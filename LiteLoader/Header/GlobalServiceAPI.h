@@ -1,6 +1,6 @@
 #pragma once
 
-//Types
+// Types
 namespace RakNet {
 class RakPeer;
 };

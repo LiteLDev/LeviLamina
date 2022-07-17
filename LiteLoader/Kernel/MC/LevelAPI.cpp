@@ -26,24 +26,20 @@
 #include <MC/PlayerCommandOrigin.hpp>
 
 
-Actor* Level::getEntity(ActorUniqueID uniqueId)
-{
-    try
-    {
+Actor* Level::getEntity(ActorUniqueID uniqueId) {
+    try {
         return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, Level*, ActorUniqueID)(Global<Level>, uniqueId);
-    }
-    catch (...)
-    {
+    } catch (...) {
         return nullptr;
     }
 }
 
 
 BlockSource* Level::getBlockSource(int dimID) {
-    //auto dim = Global<Level>->createDimension(dimID);
+    // auto dim = Global<Level>->createDimension(dimID);
     auto dim = Global<Level>->getDimension(dimID);
     return &dim->getBlockSourceFromMainChunkSource();
-    //return dAccess<BlockSource*>(dim, 96);
+    // return dAccess<BlockSource*>(dim, 96);
 }
 
 BlockSource* Level::getBlockSource(Actor* ac) {
@@ -68,8 +64,7 @@ Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) {
 
 
 // Return nullptr when failing to get block
-Block* Level::getBlockEx(const BlockPos& pos, int dimId)
-{
+Block* Level::getBlockEx(const BlockPos& pos, int dimId) {
     auto dim = Global<Level>->getDimension(dimId);
     if (!dim)
         return nullptr;
@@ -112,7 +107,7 @@ BlockActor* Level::getBlockEntity(BlockPos* pos, BlockSource* blockSource) {
 }
 
 BlockActor* Level::getBlockEntity(const BlockPos& pos, int dimId) {
-    return getBlockEntity((BlockPos*) & pos, Level::getBlockSource(dimId));
+    return getBlockEntity((BlockPos*)&pos, Level::getBlockSource(dimId));
 }
 
 BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource) {
@@ -122,7 +117,7 @@ BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource)
 
 bool Level::setBlock(const BlockPos& pos, int dim, Block* block) {
     BlockSource* bs = getBlockSource(dim);
-    return bs->setBlock(pos, *block, 3, nullptr,nullptr); // updateFlag = 3 from IDA SetBlockCommand::execute()
+    return bs->setBlock(pos, *block, 3, nullptr, nullptr); // updateFlag = 3 from IDA SetBlockCommand::execute()
 }
 
 bool Level::setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData) {
@@ -147,15 +142,13 @@ bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack*
     return getBlockInstance(pos, bs).breakNaturally(item);
 }
 
-bool Level::hasContainer(Vec3 pos, int dim)
-{
-    return getContainer(pos,dim) != nullptr;
+bool Level::hasContainer(Vec3 pos, int dim) {
+    return getContainer(pos, dim) != nullptr;
 }
 
-Container* Level::getContainer(Vec3 pos, int dim)
-{
+Container* Level::getContainer(Vec3 pos, int dim) {
     // VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
-    
+
     // This function didn't use 'this' pointer
     return ((DropperBlockActor*)nullptr)->_getContainerAt(*Level::getBlockSource(dim), pos);
 }
@@ -167,14 +160,12 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 
 void* Level::ServerCommandOrigin::fake_vtbl[26];
 
-CompoundTag& getServerOriginTag()
-{
+CompoundTag& getServerOriginTag() {
     static auto cached = CompoundTag::fromSNBT(R"({"CommandPermissionLevel":4b,"DimensionId":"Overworld","OriginType":7b,"RequestId":"00000000-0000-0000-0000-000000000000"})");
     return *cached;
 }
 
-std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player)
-{
+std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player) {
     static auto cached = CompoundTag::fromSNBT(R"({"OriginType":0b,"PlayerId":0l})");
     auto tag = cached->clone();
     tag->putInt64("PlayerId", player.getUniqueID());
@@ -188,8 +179,7 @@ bool Level::executeCommand(const string& cmd) {
 
 std::unordered_map<CommandOrigin const*, string*> resultOfOrigin = {};
 
-std::pair<bool, string> Level::executeCommandEx(const string& cmd)
-{
+std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
     auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
     auto ptr = origin.get();
@@ -210,37 +200,33 @@ bool Level::executeCommandAs(Player* pl, const string& cmd) {
 
 
 std::vector<Player*> Level::getAllPlayers() {
-    try
-    {
+    try {
         std::vector<Player*> player_list;
         Global<Level>->forEachPlayer([&](Player& sp) -> bool {
             Player* player = &sp;
             player_list.push_back(player);
             return true;
-            });
+        });
         return player_list;
-    }
-    catch (...)
-    {
+    } catch (...) {
         return {};
     }
 }
 
 std::vector<Actor*> Level::getAllEntities(int dimId) {
-    try
-    {
+    try {
         Level* lv = Global<Level>;
         Dimension* dim = lv->getDimension(dimId);
         if (!dim)
             return {};
-        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 320); //IDA Dimension::registerEntity
+        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 320); // IDA Dimension::registerEntity
 
-        //Check Valid
+        // Check Valid
         std::vector<Actor*> result;
         auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
         for (auto& i : list) {
-            //auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
-            //    Actor*, void*)(&i.second);
+            // auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
+            //     Actor*, void*)(&i.second);
             auto entity = getEntity(i.first);
             if (!entity)
                 continue;
@@ -251,36 +237,32 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
                 result.push_back(entity);
         }
         return result;
-    }
-    catch (...)
-    {
+    } catch (...) {
         return {};
     }
 }
 
-std::vector<Actor*> Level::getAllEntities()
-{
+std::vector<Actor*> Level::getAllEntities() {
 
-    //std::vector<Actor*> entityList;
-    //auto entities = getAllEntities(0);
-    //entityList.insert(entityList.end(), entities.begin(), entities.end());
-    //entities = getAllEntities(1);
-    //entityList.insert(entityList.end(), entities.begin(), entities.end());
-    //entities = getAllEntities(2);
-    //entityList.insert(entityList.end(), entities.begin(), entities.end());
-    //return entityList;
+    // std::vector<Actor*> entityList;
+    // auto entities = getAllEntities(0);
+    // entityList.insert(entityList.end(), entities.begin(), entities.end());
+    // entities = getAllEntities(1);
+    // entityList.insert(entityList.end(), entities.begin(), entities.end());
+    // entities = getAllEntities(2);
+    // entityList.insert(entityList.end(), entities.begin(), entities.end());
+    // return entityList;
     return Global<Level>->getRuntimeActorList();
 }
 
 Player* Level::getPlayer(const string& info) {
     string target{info};
-    std::transform(target.begin(), target.end(), target.begin(), ::tolower); //lower case the string
-    size_t delta = UINT64_MAX;                                                  //c++ int max
+    std::transform(target.begin(), target.end(), target.begin(), ::tolower); // lower case the string
+    size_t delta = UINT64_MAX;                                               // c++ int max
     Player* found = nullptr;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         Player* p = &sp;
-        if (p->getXuid() == target || p->getRealName() == info)
-        {
+        if (p->getXuid() == target || p->getRealName() == info) {
             found = p;
             return false;
         }
@@ -290,7 +272,7 @@ Player* Level::getPlayer(const string& info) {
 
         //模糊匹配
         if (pName.find(target) == 0) {
-            //0 ís the index where the "target" appear in "pName"
+            // 0 ís the index where the "target" appear in "pName"
             size_t curDelta = pName.length() - target.length();
             if (curDelta == 0) {
                 found = p;
@@ -306,8 +288,7 @@ Player* Level::getPlayer(const string& info) {
     return found;
 }
 
-Player* Level::getPlayer(ActorUniqueID id)
-{
+Player* Level::getPlayer(ActorUniqueID id) {
     return SymCall("?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z", Player*, Level*, ActorUniqueID)(Global<Level>, id);
 }
 
@@ -317,8 +298,7 @@ Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
     return sp->spawnMob(pos, dimId, std::move(name));
 }
 
-Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac)
-{
+Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac) {
     Spawner* sp = &Global<Level>->getSpawner();
     Mob* mob = sp->spawnMob(pos, dimId, std::move(ac->getTypeName()));
     mob->setNbt(ac->getNbt().get());
@@ -343,8 +323,7 @@ ItemStack* Level::getItemStackFromId(short itemId, int aux) {
     return nullptr;
 }
 
-void Level::broadcastText(const string& a1, TextType ty) 
-{
+void Level::broadcastText(const string& a1, TextType ty) {
     if (!Global<Level>)
         return;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
@@ -353,8 +332,7 @@ void Level::broadcastText(const string& a1, TextType ty)
     });
 }
 
-void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration)
-{
+void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
     if (!Global<Level>)
         return;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
@@ -363,8 +341,7 @@ void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuratio
     });
 }
 
-void Level::sendPacketForAllPlayer(Packet& pkt)
-{
+void Level::sendPacketForAllPlayer(Packet& pkt) {
     if (!Global<Level>)
         return;
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
@@ -372,32 +349,29 @@ void Level::sendPacketForAllPlayer(Packet& pkt)
         return sender->sendBroadcast(pkt);
 }
 
-std::string Level::getCurrentLevelName()
-{
+std::string Level::getCurrentLevelName() {
     if (Global<PropertiesSettings>)
         return Global<PropertiesSettings>->getLevelName();
     std::ifstream fin("server.properties");
     string buf;
-    while (getline(fin, buf))
-    {
-        if (buf.find("level-name=") != string::npos)
-        {
-            if (buf.back() == '\n') buf.pop_back();
-            if (buf.back() == '\r') buf.pop_back();
+    while (getline(fin, buf)) {
+        if (buf.find("level-name=") != string::npos) {
+            if (buf.back() == '\n')
+                buf.pop_back();
+            if (buf.back() == '\r')
+                buf.pop_back();
             return buf.substr(11);
         }
     }
     return "";
 }
 
-std::string Level::getCurrentLevelPath()
-{
+std::string Level::getCurrentLevelPath() {
     return "./worlds/" + getCurrentLevelName();
 }
 
 int64_t BossID = 7492341231332ull;
 
-int64_t Level::createBossEvent()
-{
+int64_t Level::createBossEvent() {
     return ++BossID;
 }

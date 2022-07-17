@@ -9,33 +9,21 @@ public:
 
     inline Vec3() = default;
 
-    inline Vec3(float _x, float _y, float _z)
-        : x(_x)
-        , y(_y)
-        , z(_z){};
+    inline Vec3(float _x, float _y, float _z) : x(_x), y(_y), z(_z){};
 
-    inline explicit Vec3(BlockPos& pos)
-        : x((float)pos.x)
-        , y((float)pos.y)
-        , z((float)pos.z){};
+    inline explicit Vec3(BlockPos& pos) : x((float)pos.x), y((float)pos.y), z((float)pos.z){};
 
-    inline Vec3(double _x, double _y, double _z)
-        : x((float)_x)
-        , y((float)_y)
-        , z((float)_z){};
+    inline Vec3(double _x, double _y, double _z) : x((float)_x), y((float)_y), z((float)_z){};
 
-    inline Vec3(int _x, int _y, int _z)
-        : x((float)_x)
-        , y((float)_y)
-        , z((float)_z){};
+    inline Vec3(int _x, int _y, int _z) : x((float)_x), y((float)_y), z((float)_z){};
 
     MCAPI class Vec3 abs() const;
 
     MCAPI class Vec3 ceil() const;
 
-    MCAPI float distanceToLineSquared(class Vec3 const&, class Vec3 const&) const;
+    MCAPI class Vec3 floor(float l = 1.0f) const;
 
-    MCAPI class Vec3 floor(float) const;
+    MCAPI float distanceToLineSquared(class Vec3 const&, class Vec3 const&) const;
 
     MCAPI bool isNan() const;
 
@@ -79,10 +67,6 @@ public:
 
     LIAPI BlockPos toBlockPos() const;
 
-    LIAPI float length() const;
-
-    LIAPI float distanceTo(Vec3 const&) const;
-
     inline std::string toString() const {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
@@ -96,17 +80,27 @@ public:
         return {x / l, y / l, z / l};
     }
 
-      inline float distanceToSqr(const struct Vec3& a2) const {
-        return (float)((float)((float)(*((float*)&a2 + 1) - *((float*)this + 1)) *
-                               (float)(*((float*)&a2 + 1) - *((float*)this + 1))) +
-                       (float)((float)(*(float*)&a2 - *(float*)this) * (float)(*(float*)&a2 - *(float*)this))) +
-               (float)((float)(*((float*)&a2 + 2) - *((float*)this + 2)) *
-                       (float)(*((float*)&a2 + 2) - *((float*)this + 2)));
+    inline float length() const {
+        return sqrt(lengthSqr());
+    }
+
+    inline float lengthSqr() const {
+        return this->dot(*this);
+    }
+
+    inline float distanceTo(Vec3 const& b) const {
+        return (*this - b).length();
+    }
+
+    inline float distanceToSqr(Vec3 const& b) const {
+        return (*this - b).lengthSqr();
     }
 
 
     float& operator[](int index) {
-            if (index < 0 || index > 2) { return (&x)[0]; }
+        if (index < 0 || index > 2) {
+            return (&x)[0];
+        }
         return (&x)[index];
     }
 
@@ -225,7 +219,8 @@ public:
 
 namespace std {
 
-template <> struct hash<Vec3> {
+template <>
+struct hash<Vec3> {
     std::size_t operator()(Vec3 const& pos) const noexcept {
         return (std::hash<float>()(pos.x) ^ std::hash<float>()(pos.y) ^ std::hash<float>()(pos.z));
     }

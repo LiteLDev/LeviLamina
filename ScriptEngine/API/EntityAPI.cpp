@@ -32,8 +32,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("health", &EntityClass::getHealth)
         .instanceProperty("inAir", &EntityClass::getInAir)
         .instanceProperty("inWater", &EntityClass::getInWater)
-        .instanceProperty("speed",&EntityClass::getSpeed)
-        .instanceProperty("direction",&EntityClass::getDirection)
+        .instanceProperty("speed", &EntityClass::getSpeed)
+        .instanceProperty("direction", &EntityClass::getDirection)
         .instanceProperty("uniqueId", &EntityClass::getUniqueID)
 
         .instanceFunction("teleport", &EntityClass::teleport)
@@ -59,7 +59,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("getBlockFromViewVector", &EntityClass::getBlockFromViewVector)
         .instanceFunction("quickEvalMolangScript", &EntityClass::quickEvalMolangScript)
 
-        //For Compatibility
+        // For Compatibility
         .instanceFunction("setTag", &EntityClass::setNbt)
         .instanceFunction("getTag", &EntityClass::getNbt)
         .build();
@@ -68,21 +68,18 @@ ClassDefine<EntityClass> EntityClassBuilder =
 //////////////////// Classes ////////////////////
 
 //生成函数
-Local<Object> EntityClass::newEntity(Actor *p)
-{
+Local<Object> EntityClass::newEntity(Actor* p) {
     auto newp = new EntityClass(p);
     return newp->getScriptObject();
 }
-Actor* EntityClass::extract(Local<Value> v)
-{
-    if(EngineScope::currentEngine()->isInstanceOf<EntityClass>(v))
+Actor* EntityClass::extract(Local<Value> v) {
+    if (EngineScope::currentEngine()->isInstanceOf<EntityClass>(v))
         return EngineScope::currentEngine()->getNativeInstance<EntityClass>(v)->get();
     else
         return nullptr;
 }
 
-std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v)
-{
+std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v) {
     if (IsInstanceOf<EntityClass>(v))
         return EntityClass::extract(v);
     if (IsInstanceOf<PlayerClass>(v))
@@ -91,28 +88,22 @@ std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v)
 }
 
 //成员函数
-void EntityClass::set(Actor* actor)
-{
-    __try
-    {
+void EntityClass::set(Actor* actor) {
+    __try {
         id = actor->getUniqueID();
-    }
-    __except(EXCEPTION_EXECUTE_HANDLER)
-    {
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
         isValid = false;
     }
 }
 
-Actor* EntityClass::get()
-{
+Actor* EntityClass::get() {
     if (!isValid)
         return nullptr;
     else
         return Level::getEntity(id);
 }
 
-Local<Value> EntityClass::getRawPtr(const Arguments& args)
-{
+Local<Value> EntityClass::getRawPtr(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -123,8 +114,7 @@ Local<Value> EntityClass::getRawPtr(const Arguments& args)
     CATCH("Fail in getRawPtr!")
 }
 
-Local<Value> EntityClass::getUniqueID()
-{
+Local<Value> EntityClass::getUniqueID() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -135,9 +125,8 @@ Local<Value> EntityClass::getUniqueID()
     CATCH("Fail in getUniqueID!")
 }
 #include <MC/CommandUtils.hpp>
-Local<Value> EntityClass::getName()
-{ 
-    try{
+Local<Value> EntityClass::getName() {
+    try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -147,8 +136,7 @@ Local<Value> EntityClass::getName()
     CATCH("Fail in getEntityName!")
 }
 
-Local<Value> EntityClass::getType()
-{
+Local<Value> EntityClass::getType() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -159,8 +147,7 @@ Local<Value> EntityClass::getType()
     CATCH("Fail in getEntityType!")
 }
 
-Local<Value> EntityClass::getId()
-{
+Local<Value> EntityClass::getId() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -171,9 +158,8 @@ Local<Value> EntityClass::getId()
     CATCH("Fail in getEntityId!")
 }
 
-Local<Value> EntityClass::getPos()
-{ 
-    try{
+Local<Value> EntityClass::getPos() {
+    try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -183,8 +169,7 @@ Local<Value> EntityClass::getPos()
     CATCH("Fail in GetEntityPos!")
 }
 
-Local<Value> EntityClass::getBlockPos()
-{
+Local<Value> EntityClass::getBlockPos() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -195,9 +180,8 @@ Local<Value> EntityClass::getBlockPos()
     CATCH("Fail in GetEntityBlockPos!")
 }
 
-Local<Value> EntityClass::getMaxHealth()
-{
-    try{
+Local<Value> EntityClass::getMaxHealth() {
+    try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -207,9 +191,8 @@ Local<Value> EntityClass::getMaxHealth()
     CATCH("Fail in GetMaxHealth!")
 }
 
-Local<Value> EntityClass::getHealth()
-{
-    try{
+Local<Value> EntityClass::getHealth() {
+    try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -219,9 +202,8 @@ Local<Value> EntityClass::getHealth()
     CATCH("Fail in GetHealth!")
 }
 
-Local<Value> EntityClass::getInAir()
-{
-    try{
+Local<Value> EntityClass::getInAir() {
+    try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -231,8 +213,7 @@ Local<Value> EntityClass::getInAir()
     CATCH("Fail in getInAir!")
 }
 
-Local<Value> EntityClass::getInWater()
-{
+Local<Value> EntityClass::getInWater() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -243,8 +224,7 @@ Local<Value> EntityClass::getInWater()
     CATCH("Fail in getInWater!")
 }
 
-Local<Value> EntityClass::getSpeed()
-{
+Local<Value> EntityClass::getSpeed() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -255,68 +235,55 @@ Local<Value> EntityClass::getSpeed()
     CATCH("Fail in getSpeed!")
 }
 
-Local<Value> EntityClass::getDirection()
-{
+Local<Value> EntityClass::getDirection() {
     try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
 
-        Vec2 *vec = entity->getDirection();
-        return DirectionAngle::newAngle(vec->x, vec->y); 
+        Vec2* vec = entity->getDirection();
+        return DirectionAngle::newAngle(vec->x, vec->y);
     }
     CATCH("Fail in getDirection!")
 }
 
-Local<Value> EntityClass::teleport(const Arguments& args)
-{
+Local<Value> EntityClass::teleport(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (args.size() == 4)
-    {
+    if (args.size() == 4) {
         CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
     }
-    
-    try{
+
+    try {
         FloatVec4 pos;
 
-        if (args.size() == 1)
-        {
-            if (IsInstanceOf<IntPos>(args[0]))
-            {
+        if (args.size() == 1) {
+            if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos.x = posObj->x;
                     pos.y = posObj->y;
                     pos.z = posObj->z;
                     pos.dim = posObj->dim;
                 }
-            }
-            else if (IsInstanceOf<FloatPos>(args[0]))
-            {
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
                 // FloatPos
                 FloatPos* posObj = FloatPos::extractPos(args[0]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos = *posObj;
                 }
-            }
-            else
-            {
+            } else {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        }
-        else if (args.size() == 4)
-        {
+        } else if (args.size() == 4) {
             // number pos
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
@@ -327,13 +294,11 @@ Local<Value> EntityClass::teleport(const Arguments& args)
             pos.y = args[1].asNumber().toFloat();
             pos.z = args[2].asNumber().toFloat();
             pos.dim = args[3].toInt();
-        }
-        else
-        {
+        } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
-        
+
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -344,9 +309,8 @@ Local<Value> EntityClass::teleport(const Arguments& args)
     CATCH("Fail in teleportEntity!")
 }
 
-Local<Value> EntityClass::kill(const Arguments& args)
-{
-    try{
+Local<Value> EntityClass::kill(const Arguments& args) {
+    try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
@@ -357,8 +321,7 @@ Local<Value> EntityClass::kill(const Arguments& args)
     CATCH("Fail in killEntity!")
 }
 
-Local<Value> EntityClass::isPlayer(const Arguments& args)
-{
+Local<Value> EntityClass::isPlayer(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -369,8 +332,7 @@ Local<Value> EntityClass::isPlayer(const Arguments& args)
     CATCH("Fail in isPlayer!")
 }
 
-Local<Value> EntityClass::toPlayer(const Arguments& args)
-{
+Local<Value> EntityClass::toPlayer(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity || !entity->isPlayer())
@@ -385,8 +347,7 @@ Local<Value> EntityClass::toPlayer(const Arguments& args)
     CATCH("Fail in toPlayer!");
 }
 
-Local<Value> EntityClass::isItemEntity(const Arguments& args)
-{
+Local<Value> EntityClass::isItemEntity(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -397,8 +358,7 @@ Local<Value> EntityClass::isItemEntity(const Arguments& args)
     CATCH("Fail in isPlayer!")
 }
 
-Local<Value> EntityClass::toItem(const Arguments& args)
-{
+Local<Value> EntityClass::toItem(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity || !entity->isItemActor())
@@ -413,20 +373,18 @@ Local<Value> EntityClass::toItem(const Arguments& args)
     CATCH("Fail in toItem!");
 }
 
-Local<Value> EntityClass::getBlockStandingOn(const Arguments& args)
-{
+Local<Value> EntityClass::getBlockStandingOn(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
 
-        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr), (int)entity->getDimensionId());    //===========?
+        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr), (int)entity->getDimensionId()); //===========?
     }
     CATCH("Fail in getBlockStandingOn!");
 }
 
-Local<Value> EntityClass::getArmor(const Arguments& args)
-{
+Local<Value> EntityClass::getArmor(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -437,8 +395,7 @@ Local<Value> EntityClass::getArmor(const Arguments& args)
     CATCH("Fail in getArmor!");
 }
 
-Local<Value> EntityClass::refreshItems(const Arguments& args)
-{
+Local<Value> EntityClass::refreshItems(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -449,35 +406,32 @@ Local<Value> EntityClass::refreshItems(const Arguments& args)
     CATCH("Fail in refreshItems!");
 }
 
-Local<Value> EntityClass::hasContainer(const Arguments& args)
-{
+Local<Value> EntityClass::hasContainer(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
 
         Vec3 pos = entity->getPosition();
-        return Boolean::newBoolean(Level::hasContainer({ pos.x, pos.y, pos.z }, entity->getDimensionId()));
+        return Boolean::newBoolean(Level::hasContainer({pos.x, pos.y, pos.z}, entity->getDimensionId()));
     }
     CATCH("Fail in hasContainer!");
 }
 
-Local<Value> EntityClass::getContainer(const Arguments& args)
-{
+Local<Value> EntityClass::getContainer(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
             return Local<Value>();
 
         Vec3 pos = entity->getPosition();
-        Container* container = Level::getContainer({ pos.x, pos.y, pos.z }, entity->getDimensionId());
+        Container* container = Level::getContainer({pos.x, pos.y, pos.z}, entity->getDimensionId());
         return container ? ContainerClass::newContainer(container) : Local<Value>();
     }
     CATCH("Fail in getContainer!");
 }
 
-Local<Value> EntityClass::hurt(const Arguments& args)
-{
+Local<Value> EntityClass::hurt(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
 
@@ -492,8 +446,7 @@ Local<Value> EntityClass::hurt(const Arguments& args)
     CATCH("Fail in hurt!");
 }
 
-Local<Value> EntityClass::setOnFire(const Arguments& args)
-{
+Local<Value> EntityClass::setOnFire(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
 
@@ -509,8 +462,7 @@ Local<Value> EntityClass::setOnFire(const Arguments& args)
     CATCH("Fail in setOnFire!")
 }
 
-Local<Value> EntityClass::getNbt(const Arguments& args)
-{
+Local<Value> EntityClass::getNbt(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -521,8 +473,7 @@ Local<Value> EntityClass::getNbt(const Arguments& args)
     CATCH("Fail in getNbt!")
 }
 
-Local<Value> EntityClass::setNbt(const Arguments& args)
-{
+Local<Value> EntityClass::setNbt(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
 
     try {
@@ -532,15 +483,14 @@ Local<Value> EntityClass::setNbt(const Arguments& args)
 
         auto nbt = NbtCompoundClass::extract(args[0]);
         if (!nbt)
-            return Local<Value>();    //Null
+            return Local<Value>(); // Null
 
         return Boolean::newBoolean(entity->setNbt(nbt));
     }
     CATCH("Fail in setNbt!")
 }
 
-Local<Value> EntityClass::addTag(const Arguments& args)
-{
+Local<Value> EntityClass::addTag(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
@@ -554,8 +504,7 @@ Local<Value> EntityClass::addTag(const Arguments& args)
     CATCH("Fail in addTag!");
 }
 
-Local<Value> EntityClass::removeTag(const Arguments& args)
-{
+Local<Value> EntityClass::removeTag(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
@@ -569,8 +518,7 @@ Local<Value> EntityClass::removeTag(const Arguments& args)
     CATCH("Fail in removeTag!");
 }
 
-Local<Value> EntityClass::hasTag(const Arguments& args)
-{
+Local<Value> EntityClass::hasTag(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
@@ -584,8 +532,7 @@ Local<Value> EntityClass::hasTag(const Arguments& args)
     CATCH("Fail in hasTag!");
 }
 
-Local<Value> EntityClass::getAllTags(const Arguments& args)
-{
+Local<Value> EntityClass::getAllTags(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -600,17 +547,14 @@ Local<Value> EntityClass::getAllTags(const Arguments& args)
     CATCH("Fail in getAllTags!");
 }
 
-Local<Value> EntityClass::getEntityFromViewVector(const Arguments& args)
-{
+Local<Value> EntityClass::getEntityFromViewVector(const Arguments& args) {
 
-    try
-    {
+    try {
         Actor* actor = get();
         if (!actor)
             return Local<Value>();
         float maxDistance = 5.25f;
-        if (args.size() > 0)
-        {
+        if (args.size() > 0) {
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             maxDistance = args[0].asNumber().toFloat();
         }
@@ -622,10 +566,8 @@ Local<Value> EntityClass::getEntityFromViewVector(const Arguments& args)
     CATCH("Fail in getEntityFromViewVector!");
 }
 
-Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args)
-{
-    try
-    {
+Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args) {
+    try {
         Actor* actor = get();
         if (!actor)
             return Local<Value>();
@@ -634,23 +576,19 @@ Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args)
         float maxDistance = 5.25f;
         bool ignoreBorderBlocks = true;
         bool fullOnly = false;
-        if (args.size() > 0)
-        {
+        if (args.size() > 0) {
             CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
             includeLiquid = args[0].asBoolean().value();
         }
-        if (args.size() > 1)
-        {
+        if (args.size() > 1) {
             CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
             solidOnly = args[1].asBoolean().value();
         }
-        if (args.size() > 2)
-        {
+        if (args.size() > 2) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             maxDistance = args[2].asNumber().toFloat();
         }
-        if (args.size() > 3)
-        {
+        if (args.size() > 3) {
             CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
             fullOnly = args[3].asBoolean().value();
         }
@@ -663,15 +601,15 @@ Local<Value> EntityClass::getBlockFromViewVector(const Arguments& args)
 }
 
 Local<Value> EntityClass::quickEvalMolangScript(const Arguments& args) {
-	CHECK_ARGS_COUNT(args, 1);
-	CHECK_ARG_TYPE(args[0], ValueKind::kString);
-	try {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    try {
         Actor* actor = get();
         if (!actor)
-			return Local<Value>();
-		return Number::newNumber(actor->quickEvalMolangScript(args[0].toStr()));
-	}
-	CATCH("Fail in quickEvalMolangScript!");
+            return Local<Value>();
+        return Number::newNumber(actor->quickEvalMolangScript(args[0].toStr()));
+    }
+    CATCH("Fail in quickEvalMolangScript!");
 }
 
 Local<Value> McClass::getAllEntities(const Arguments& args) {
@@ -686,70 +624,55 @@ Local<Value> McClass::getAllEntities(const Arguments& args) {
     CATCH("Fail in GetAllEntities");
 }
 
-Local<Value> McClass::cloneMob(const Arguments& args)
-{
+Local<Value> McClass::cloneMob(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
 
-    try
-    {
+    try {
         Actor* ac = EntityClass::extract(args[0]);
-        if (!ac)
-        {
+        if (!ac) {
             LOG_WRONG_ARG_TYPE();
             return Local<Value>(); // Null
         }
-		
+
         FloatVec4 pos;
 
-        if (args.size() == 2)
-        {
-            if (IsInstanceOf<IntPos>(args[1]))
-            {
+        if (args.size() == 2) {
+            if (IsInstanceOf<IntPos>(args[1])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[1]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos.x = posObj->x;
                     pos.y = posObj->y;
                     pos.z = posObj->z;
                     pos.dim = posObj->dim;
                 }
-            }
-            else if (IsInstanceOf<FloatPos>(args[1]))
-            {
+            } else if (IsInstanceOf<FloatPos>(args[1])) {
                 // FloatPos
                 FloatPos* posObj = FloatPos::extractPos(args[1]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos = *posObj;
                 }
-            }
-            else
-            {
+            } else {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        }
-        else if (args.size() == 5)
-        {
+        } else if (args.size() == 5) {
             // Number Pos
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
             pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
-        }
-        else
-        {
+        } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
-        auto entity = Level::cloneMob(pos.getVec3(), pos.dim,ac);
+        auto entity = Level::cloneMob(pos.getVec3(), pos.dim, ac);
         if (!entity)
             return Local<Value>(); // Null
         else
@@ -758,8 +681,7 @@ Local<Value> McClass::cloneMob(const Arguments& args)
     CATCH("Fail in CloneMob!");
 }
 
-Local<Value> McClass::spawnMob(const Arguments& args)
-{
+Local<Value> McClass::spawnMob(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
@@ -767,124 +689,99 @@ Local<Value> McClass::spawnMob(const Arguments& args)
         string name = args[0].toStr();
         FloatVec4 pos;
 
-        if (args.size() == 2)
-        {
-            if (IsInstanceOf<IntPos>(args[1]))
-            {
+        if (args.size() == 2) {
+            if (IsInstanceOf<IntPos>(args[1])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[1]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos.x = posObj->x;
                     pos.y = posObj->y;
                     pos.z = posObj->z;
                     pos.dim = posObj->dim;
                 }
-            }
-            else if (IsInstanceOf<FloatPos>(args[1]))
-            {
+            } else if (IsInstanceOf<FloatPos>(args[1])) {
                 // FloatPos
                 FloatPos* posObj = FloatPos::extractPos(args[1]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos = *posObj;
                 }
-            }
-            else
-            {
+            } else {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        }
-        else if (args.size() == 5)
-        {
+        } else if (args.size() == 5) {
             // Number Pos
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
-            pos = { args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt() };
-        }
-        else
-        {
+            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
+        } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
         auto entity = Level::spawnMob(pos.getVec3(), pos.dim, name);
         if (!entity)
-            return Local<Value>();    //Null
+            return Local<Value>(); // Null
         else
             return EntityClass::newEntity(entity);
     }
     CATCH("Fail in SpawnMob!");
 }
 
-Local<Value> McClass::explode(const Arguments& args)
-{
+Local<Value> McClass::explode(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 6);
 
     try {
         FloatVec4 pos;
         int beginIndex;
-        if (args.size() == 6)
-        {
+        if (args.size() == 6) {
             // PosObj
             beginIndex = 1;
 
-            if (IsInstanceOf<IntPos>(args[0]))
-            {
+            if (IsInstanceOf<IntPos>(args[0])) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos.x = posObj->x;
                     pos.y = posObj->y;
                     pos.z = posObj->z;
                     pos.dim = posObj->dim;
                 }
-            }
-            else if (IsInstanceOf<FloatPos>(args[0]))
-            {
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
                 // FloatPos
                 FloatPos* posObj = FloatPos::extractPos(args[0]);
                 if (posObj->dim < 0)
                     return Boolean::newBoolean(false);
-                else
-                {
+                else {
                     pos = *posObj;
                 }
-            }
-            else
-            {
+            } else {
                 LOG_WRONG_ARG_TYPE();
                 return Local<Value>();
             }
-        }
-        else if (args.size() == 9)
-        {
+        } else if (args.size() == 9) {
             // Number Pos
             beginIndex = 4;
             CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-            pos = { args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt() };
-        }
-        else
-        {
+            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt()};
+        } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();
         }
 
-        auto source = EntityClass::extract(args[beginIndex + 0]); //Can be nullptr
-        
+        auto source = EntityClass::extract(args[beginIndex + 0]); // Can be nullptr
+
         CHECK_ARG_TYPE(args[beginIndex + 1], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[beginIndex + 2], ValueKind::kNumber);
         CHECK_ARG_TYPE(args[beginIndex + 3], ValueKind::kBoolean);

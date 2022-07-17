@@ -13,11 +13,10 @@ LIAPI std::pair<int, std::string> NewProcessSync(const std::string& process, int
 
 // Get Current DLL's module handle
 // (Must be header-only!)
-HMODULE inline GetCurrentModule()
-{
+HMODULE inline GetCurrentModule() {
     HMODULE hModule = nullptr;
     if (GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-        (LPCWSTR)GetCurrentModule, &hModule)) {
+                          (LPCWSTR)GetCurrentModule, &hModule)) {
         return hModule;
     }
     return nullptr;
@@ -26,5 +25,12 @@ HMODULE inline GetCurrentModule()
 // Get the module path from a module handle
 LIAPI std::string GetModulePath(HMODULE handle);
 LIAPI std::string GetModuleName(HMODULE handle);
+
+/**
+ * @brief Get the system locale name.
+ * 
+ * @return  std::string  The system locale name.
+ */
+LIAPI std::string GetSystemLocaleName();
 
 LIAPI bool IsWineEnvironment();

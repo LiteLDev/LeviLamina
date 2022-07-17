@@ -6,18 +6,25 @@ AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
 AlignEscapedNewlinesLeft: true
-AlignOperands: true
+AlignOperands: Align
+AlwaysBreakTemplateDeclarations : true
 AlignTrailingComments: true
+AllowAllArgumentsOnNextLine : true
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine : true
-AllowShortCaseLabelsOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Inline
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true 
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: false
 AllowShortLambdasOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
-ColumnLimit: 120
+BinPackArguments: true
+BinPackParameters: true
+ConstructorInitializerIndentWidth: 0
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ColumnLimit: 0
 CommentPragmas: '^ IWYU pragma:'
 PointerAlignment: Left
 IndentWidth: 4
@@ -31,7 +38,7 @@ IndentWrappedFunctionNames: true
 KeepEmptyLinesAtTheStartOfBlocks: true
 BreakConstructorInitializersBeforeComma: true
 SpaceAfterCStyleCast: false
-IndentCaseLabels: true 
+IndentCaseLabels: true
 TabWidth: 4
 UseTab: Never
 

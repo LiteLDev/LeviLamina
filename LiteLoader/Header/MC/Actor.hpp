@@ -26,7 +26,7 @@ class Actor {
 #define AFTER_EXTRA
 // Add new members to class
 public:
-	enum InitializationMethod;
+    enum InitializationMethod;
 
     LIAPI std::string getTypeName() const;
     LIAPI Vec3 getFeetPosition() const;
@@ -38,21 +38,21 @@ public:
     LIAPI std::vector<std::string> getAllTags();
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
-	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
+    LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
     LIAPI Actor* getActorFromViewVector(float maxDistance);
     LIAPI BlockPos getBlockPos();
     LIAPI BlockInstance getBlockStandingOn() const;
 
-	LIAPI bool isSimulatedPlayer() const;
+    LIAPI bool isSimulatedPlayer() const;
     LIAPI bool isPlayer(bool allowSimulatedPlayer = true) const;
     LIAPI bool isItemActor() const;
     LIAPI bool isOnGround() const;
     LIAPI bool setOnFire(int time, bool isEffect);
     LIAPI bool stopFire();
     LIAPI bool hasTag(const string& tag);
-	LIAPI bool hurtEntity(float damage);
+    LIAPI bool hurtEntity(float damage);
     LIAPI bool teleport(Vec3 to, int dimID, float x, float y);
-	LIAPI bool teleport(Vec3 pos,int dimid);
+    LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
     LIAPI bool rename(const string& name);
     LIAPI std::unique_ptr<CompoundTag> getNbt();
@@ -70,7 +70,7 @@ public:
     {
         return getPosPrev();
     }
-	
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR

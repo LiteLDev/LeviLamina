@@ -58,9 +58,10 @@
       <WarningLevel>Level3</WarningLevel>
       <ExternalWarningLevel>Level1</ExternalWarningLevel>
       <DisableAnalyzeExternal>true</DisableAnalyzeExternal>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
@@ -114,6 +115,7 @@ LibraryBuilder.exe
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)I18nAPI_LL.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="Kernel\MC\BiomeAPI.cpp" />
+    <ClCompile Include="Kernel\MC\MolangAPI.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
@@ -134,7 +136,6 @@ LibraryBuilder.exe
     <ClCompile Include="Main\CrashLogger.cpp" />
     <ClCompile Include="Main\dllmain.cpp" />
     <ClCompile Include="Main\BuiltinBugFix.cpp" />
-    <ClCompile Include="MolangAPI.cpp" />
     <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\DB\Any.h" />
     <ClInclude Include="Header\DB\ConnParams.h" />

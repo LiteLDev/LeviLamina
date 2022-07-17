@@ -57,8 +57,7 @@ LIAPI std::optional<int> Scoreboard::addScore(const std::string& objname, const 
     int a1 = 0;
     auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
     bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Add);
-    if (res)
-    {
+    if (res) {
         Global<Scoreboard>->onScoreChanged(identity, *obj);
         return a1;
     }
@@ -75,8 +74,7 @@ LIAPI std::optional<int> Scoreboard::setScore(const std::string& objname, const 
     int a1 = 0;
     auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
     bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Set);
-    if (res)
-    {
+    if (res) {
         Global<Scoreboard>->onScoreChanged(identity, *obj);
         return a1;
     }
@@ -93,8 +91,7 @@ LIAPI std::optional<int> Scoreboard::reduceScore(const std::string& objname, con
     int a1 = 0;
     auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
     bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Remove);
-    if (res)
-    {
+    if (res) {
         Global<Scoreboard>->onScoreChanged(identity, *obj);
         return a1;
     }
@@ -123,8 +120,7 @@ LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, Player* p
     vector<ScorePacketInfo> info;
     ScorePacketInfo i((ScoreboardId*)&identity, objname, Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(), obj->getPlayerScore(identity).getCount(), obj->getName());
     info.emplace_back(i);
-    for (auto sp : Level::getAllPlayers())
-    {
+    for (auto sp : Level::getAllPlayers()) {
         sp->sendSetScorePacket(1, info);
     }
     auto out = Global<Scoreboard>->getScoreboardIdentityRef(identity)->removeFromObjective(*Global<Scoreboard>, *obj);
@@ -142,12 +138,11 @@ LIAPI int Scoreboard::getScore(const std::string& objname, const std::string& id
 
     auto scores = Global<Scoreboard>->getIdScores(identity);
 #ifdef DEBUG
-    struct voids
-    {
+    struct voids {
         void** filler[100];
     };
     auto& vs = *(voids*&)scores; // -> sizeof(ScoreInfo) == 16
-#endif // DEBUG
+#endif                           // DEBUG
     for (auto& it : scores)
         if (it.getObjective() == obj)
             return it.getCount();
@@ -177,7 +172,7 @@ LIAPI bool Scoreboard::setScore(Player* player, const std::string& key, int valu
         Global<Scoreboard>->createScoreboardId(*player);
     }
     bool a2 = true;
-    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)0); //Set
+    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)0); // Set
     return true;
 }
 
@@ -191,7 +186,7 @@ LIAPI bool Scoreboard::addScore(Player* player, const std::string& key, int valu
         Global<Scoreboard>->createScoreboardId(*player);
     }
     bool a2 = true;
-    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)1); //Add
+    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)1); // Add
     return true;
 }
 
@@ -207,7 +202,7 @@ LIAPI bool Scoreboard::reduceScore(Player* player, const std::string& key, int v
         Global<Scoreboard>->createScoreboardId(*player);
     }
     bool a2 = true;
-    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)2); //Reduce
+    Global<Scoreboard>->modifyPlayerScore(a2, identity, *obj, value, (PlayerScoreSetFunction)2); // Reduce
     return true;
 }
 

@@ -1,7 +1,6 @@
 #pragma once
 
-namespace LL
-{
+namespace LL {
 bool StartCrashLoggerProcess();
 void InitCrashLogger(bool enableCrashLogger);
 } // namespace LL

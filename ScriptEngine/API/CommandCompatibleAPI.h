@@ -6,7 +6,7 @@
 //////////////////// LLSE Event Callbacks ////////////////////
 
 class Player;
-//helper
+// helper
 std::vector<std::string> SplitCmdLine(const std::string& paras);
 
 // 命令回调查询

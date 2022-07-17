@@ -6,8 +6,7 @@
 //////////////////// Classes ////////////////////
 
 //// KVDB
-class KVDBClass : public ScriptClass
-{
+class KVDBClass : public ScriptClass {
 private:
     std::unique_ptr<KVDB> kvdb;
     int unloadCallbackIndex = -1;
@@ -18,8 +17,7 @@ public:
     ~KVDBClass();
     static KVDBClass* constructor(const Arguments& args);
 
-    bool isValid()
-    {
+    bool isValid() {
         return kvdb->isValid();
     }
 
@@ -36,8 +34,7 @@ extern ClassDefine<KVDBClass> KVDBClassBuilder;
 
 
 //// SQLDB
-class DBSessionClass : public ScriptClass
-{
+class DBSessionClass : public ScriptClass {
 private:
     DB::SharedPointer<DB::Session> session;
 
@@ -55,8 +52,7 @@ public:
 };
 extern ClassDefine<DBSessionClass> DBSessionClassBuilder;
 
-class DBStmtClass : public ScriptClass
-{
+class DBStmtClass : public ScriptClass {
 private:
     DB::SharedPointer<DB::Stmt> stmt;
 

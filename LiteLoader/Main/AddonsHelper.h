@@ -5,9 +5,11 @@
 
 void InitAddonsHelper();
 
-struct Addon
-{
-    enum class Type { ResourcePack, BehaviorPack  };
+struct Addon {
+    enum class Type {
+        ResourcePack,
+        BehaviorPack
+    };
     std::string name;
     std::string description;
     Type type;
@@ -19,8 +21,7 @@ struct Addon
     std::string getPrintName() const;
 };
 
-class AddonsManager
-{
+class AddonsManager {
 public:
     static bool install(std::string path);
     static bool uninstall(std::string nameOrUuid);

@@ -4,16 +4,14 @@
 
 //////////////////// Classes ////////////////////
 class Player;
-class DeviceClass : public ScriptClass
-{
+class DeviceClass : public ScriptClass {
 private:
     ActorUniqueID id;
     bool isValid = true;
 
 public:
     explicit DeviceClass(Player* p)
-        :ScriptClass(ScriptClass::ConstructFromCpp<DeviceClass>{})
-    {
+    : ScriptClass(ScriptClass::ConstructFromCpp<DeviceClass>{}) {
         setPlayer(p);
     }
 
@@ -26,7 +24,10 @@ public:
     Local<Value> getIP();
     Local<Value> getAvgPing();
     Local<Value> getAvgPacketLoss();
+    Local<Value> getLastPing();
+    Local<Value> getLastPacketLoss();
     Local<Value> getOs();
+    Local<Value> getServerAddress();
     Local<Value> getClientId();
 };
 extern ClassDefine<DeviceClass> DeviceClassBuilder;

@@ -5,66 +5,55 @@
 #include <vector>
 
 OperationCount::OperationCount(const string& name)
-	:name(name)
-{}
-
-OperationCount OperationCount::create(const string& name)
-{
-	if (exists(name))
-		return OperationCount("");
-	else
-	{
-		globalShareData->operationCountData[name] = 0;
-		return OperationCount(name);
-	}
+: name(name) {
 }
 
-bool OperationCount::exists(const string& name)
-{
-	return globalShareData->operationCountData.find(name) != globalShareData->operationCountData.end();
+OperationCount OperationCount::create(const string& name) {
+    if (exists(name))
+        return OperationCount("");
+    else {
+        globalShareData->operationCountData[name] = 0;
+        return OperationCount(name);
+    }
 }
 
-bool OperationCount::remove()
-{
-	auto p = globalShareData->operationCountData.find(name);
-	if (p != globalShareData->operationCountData.end())
-	{
-		globalShareData->operationCountData.erase(p);
-		return true;
-	}
-	return false;
+bool OperationCount::exists(const string& name) {
+    return globalShareData->operationCountData.find(name) != globalShareData->operationCountData.end();
 }
 
-bool OperationCount::done()
-{
-	auto p = globalShareData->operationCountData.find(name);
-	if (p != globalShareData->operationCountData.end())
-	{
-		InterlockedIncrement((LONG*)&(p->second));
-		return true;
-	}
-	return false;
+bool OperationCount::remove() {
+    auto p = globalShareData->operationCountData.find(name);
+    if (p != globalShareData->operationCountData.end()) {
+        globalShareData->operationCountData.erase(p);
+        return true;
+    }
+    return false;
 }
 
-int OperationCount::get()
-{
-	if (exists(name))
-		return globalShareData->operationCountData[name];
-	else
-		return -1;
+bool OperationCount::done() {
+    auto p = globalShareData->operationCountData.find(name);
+    if (p != globalShareData->operationCountData.end()) {
+        InterlockedIncrement((LONG*)&(p->second));
+        return true;
+    }
+    return false;
 }
 
-bool OperationCount::hasReachCount(int count)
-{
-	return get() >= count;
+int OperationCount::get() {
+    if (exists(name))
+        return globalShareData->operationCountData[name];
+    else
+        return -1;
 }
 
-bool OperationCount::hasReachMaxEngineCount()
-{
-	return hasReachCount(PluginManager::getAllScriptPlugins().size());
+bool OperationCount::hasReachCount(int count) {
+    return get() >= count;
 }
 
-bool OperationCount::hasReachMaxBackendCount()
-{
-	return hasReachCount(LLSE_VALID_BACKENDS.size());
+bool OperationCount::hasReachMaxEngineCount() {
+    return hasReachCount(PluginManager::getAllScriptPlugins().size());
+}
+
+bool OperationCount::hasReachMaxBackendCount() {
+    return hasReachCount(LLSE_VALID_BACKENDS.size());
 }

@@ -387,7 +387,7 @@ extern Logger logger;
     Func(UpdateAbilitiesPacket);                   \
     Func(UpdateAdventureSettingsPacket);           \
     Func(EditorNetworkPacket);                     \
-    Func(DeathInfoPacket);                         \
+    Func(DeathInfoPacket);
 
 #define DeclearClass(packet) class packet;
 
@@ -402,8 +402,7 @@ inline void* VFTABLE_ADDR;
 template <typename T>
 inline size_t PACKET_SIZE;
 
-inline void __initPacketVftable()
-{
+inline void __initPacketVftable() {
     static bool inited = false;
     if (inited)
         return;
@@ -417,30 +416,25 @@ inline void __initPacketVftable()
 }
 
 template <typename T>
-inline void* getVftableAddr()
-{
+inline void* getVftableAddr() {
     __initPacketVftable();
     return VFTABLE_ADDR<T>;
 }
 
-void __initPacketSize()
-{
+void __initPacketSize() {
     static bool inited = false;
     if (inited)
         return;
     inited = true;
-#define SET_PACKET_SIZE(type)                            \
-    if (getVftableAddr<type>() == *(void**)packet.get()) \
-    {                                                    \
-        PACKET_SIZE<type> = size - 16;                   \
-        continue;                                        \
+#define SET_PACKET_SIZE(type)                              \
+    if (getVftableAddr<type>() == *(void**)packet.get()) { \
+        PACKET_SIZE<type> = size - 16;                     \
+        continue;                                          \
     }
     int packetId = -1;
-    while (packetId < 200)
-    {
+    while (packetId < 200) {
         auto packet = MinecraftPackets::createPacket(++packetId);
-        if (packet)
-        {
+        if (packet) {
             auto size = _msize((void**)packet.get() - 2);
 
             ForEachPacket(SET_PACKET_SIZE);
@@ -450,8 +444,7 @@ void __initPacketSize()
 #undef SET_PACKET_SIZE
 }
 
-std::string getClassName(Packet* packet)
-{
+std::string getClassName(Packet* packet) {
 #define RETURN_IF_FIND(type)                             \
     if (getVftableAddr<class type>() == *(void**)packet) \
         return #type;
@@ -461,16 +454,13 @@ std::string getClassName(Packet* packet)
 #undef RETURN_IF_FIND
 }
 
-inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)> callback)
-{
+inline void forEachPacket(std::function<void(Packet const& packet, std::string className, size_t size)> callback) {
     int packetId = 0;
-    while (packetId < 200)
-    {
+    while (packetId < 200) {
         auto packet = MinecraftPackets::createPacket(packetId);
-        if (packet)
-        {
+        if (packet) {
             auto size = _msize((void**)packet.get() - 2);
-            //logger.warn("Packet: {},{},{},{},{}", magic_enum::enum_name((MinecraftPacketIds)packetId), packet->getName(), getClassName(packet.get()), packetId, size);
+            // logger.warn("Packet: {},{},{},{},{}", magic_enum::enum_name((MinecraftPacketIds)packetId), packet->getName(), getClassName(packet.get()), packetId, size);
 
             auto className = getClassName(packet.get());
             callback(*packet, className, size - 16);
@@ -480,8 +470,7 @@ inline void forEachPacket(std::function<void(Packet const& packet, std::string c
 }
 
 template <typename T>
-inline size_t getPacketSize()
-{
+inline size_t getPacketSize() {
     __initPacketSize();
     return PACKET_SIZE<T>;
 }
@@ -497,8 +486,7 @@ using ParamType = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;
 using Result = DynamicCommand::Result;
 
-inline bool replaceString(std::string& content, std::string const& start, std::string const& end, std::string const& str, size_t offset = 0, bool exclude = true)
-{
+inline bool replaceString(std::string& content, std::string const& start, std::string const& end, std::string const& str, size_t offset = 0, bool exclude = true) {
     auto startOffset = content.find(start, offset);
     if (startOffset == content.npos)
         return false;
@@ -506,17 +494,14 @@ inline bool replaceString(std::string& content, std::string const& start, std::s
         startOffset += start.size();
     auto endOffset = end.empty() ? content.npos : content.find(end, startOffset);
 
-    if (endOffset != content.npos && !exclude)
-    {
+    if (endOffset != content.npos && !exclude) {
         endOffset += sizeof(end);
     }
     content.replace(startOffset, endOffset - startOffset, str);
     return true;
-
 }
 
-void autoGenerate()
-{
+void autoGenerate() {
     auto file = ReadAllFile(__FILE__, false);
     if (!file)
         __debugbreak();
@@ -556,8 +541,7 @@ void autoGenerate()
     WriteAllFile(__FILE__, content, false);
 }
 template <typename T>
-void __autoFill(std::string const& className)
-{
+void __autoFill(std::string const& className) {
     if (sizeof(T) == getPacketSize<T>())
         return;
 
@@ -565,8 +549,7 @@ void __autoFill(std::string const& className)
 
     std::filesystem::path filePath = McDir.append(fmt::format("{}.hpp", className));
     auto file = ReadAllFile(filePath.string());
-    if (!file)
-    {
+    if (!file) {
         __debugbreak();
         return;
     }
@@ -575,29 +558,23 @@ void __autoFill(std::string const& className)
     std::string filler = fmt::format("    char filler[{}];\n", getPacketSize<T>() - 48);
 
     auto startOffset = content.find("// Add Member There");
-    if (startOffset == content.npos)
-    {
+    if (startOffset == content.npos) {
         startOffset = content.find("#define AFTER_EXTRA");
-        if (startOffset == content.npos)
-        {
+        if (startOffset == content.npos) {
             __debugbreak();
             return;
         }
         filler = "// Add Member There\n" + filler;
     }
 
-    startOffset += std::string("// Add Member There").size()+1;
+    startOffset += std::string("// Add Member There").size() + 1;
     auto endOffset = content.find("#undef", startOffset);
 
-    if (sizeof(T) != 48)
-    {
-        replaceString(content, "filler[", "]", std::to_string(getPacketSize<T>()-48));
-    }
-    else
-    {
-        if (content.substr(startOffset, endOffset - startOffset) != "\n")
-        {
-            startOffset = content.find("\n\n", startOffset)+1;
+    if (sizeof(T) != 48) {
+        replaceString(content, "filler[", "]", std::to_string(getPacketSize<T>() - 48));
+    } else {
+        if (content.substr(startOffset, endOffset - startOffset) != "\n") {
+            startOffset = content.find("\n\n", startOffset) + 1;
             __debugbreak();
         }
         content.insert(startOffset, filler);
@@ -606,11 +583,10 @@ void __autoFill(std::string const& className)
     WriteAllFile(filePath.string(), content);
     return;
 }
-void autoFill()
-{
+void autoFill() {
 #ifdef FILL_PACKET
 
-#define AUTO_FILL(type)\
+#define AUTO_FILL(type) \
     __autoFill<type>(#type);
     ForEachPacket(AUTO_FILL);
 #undef AUTO_FILL;
@@ -619,15 +595,13 @@ void autoFill()
 }
 
 void onExecute(DynamicCommand const& cmd, CommandOrigin const& origin, CommandOutput& output,
-               std::unordered_map<std::string, Result>& results)
-{
+               std::unordered_map<std::string, Result>& results) {
     autoGenerate();
     autoFill();
     output.success("Generate finished");
 }
 
-TClasslessInstanceHook2("SetupPacketCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ")
-{
+TClasslessInstanceHook2("SetupPacketCommand_startServerThread", void, "?startServerThread@ServerInstance@@QEAAXXZ") {
     original(this);
     Global<Level> = Global<Minecraft>->getLevel();
     autoGenerate();

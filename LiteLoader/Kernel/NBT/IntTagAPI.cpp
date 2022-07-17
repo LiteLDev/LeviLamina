@@ -26,8 +26,7 @@ int IntTag::get() {
     return value();
 }
 
-IntTag::operator int() const
-{
+IntTag::operator int() const {
     if (!this)
         return 0;
     return val;

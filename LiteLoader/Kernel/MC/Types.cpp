@@ -145,8 +145,10 @@ double mce::Color::deltaE00(mce::Color const& dst) const {
     double dCp = C1p - C2p;
     double h1p = atan2(b1, a1p);
     double h2p = atan2(b2, a2p);
-    if (h1p < 0) h1p += 6.2831853071796;
-    if (h2p < 0) h2p += 6.2831853071796;
+    if (h1p < 0)
+        h1p += 6.2831853071796;
+    if (h2p < 0)
+        h2p += 6.2831853071796;
     h1p *= 57.2957795131;
     h2p *= 57.2957795131;
     double h_p = (h1p + h2p) * 0.5;
@@ -221,15 +223,6 @@ bool BlockPos::containedWithin(BoundingBox const& box) const {
 
 BlockPos Vec3::toBlockPos() const {
     return BlockPos((int)std::floor((double)x), (int)std::floor((double)y), (int)std::floor((double)z));
-}
-
-float Vec3::length() const {
-    return sqrt(x * x + y * y + z * z);
-}
-
-float Vec3::distanceTo(Vec3 const& a0) const {
-    Vec3 tmp = *this - a0;
-    return tmp.length();
 }
 
 AABB BoundingBox::toAABB() const {
