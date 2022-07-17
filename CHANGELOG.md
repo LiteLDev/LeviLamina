@@ -1,25 +1,26 @@
-## [New Forum]
-[https://forum.litebds.com/](https://forum.litebds.com/)
-
 ## [LiteLoader Release Note]
-LiteLoaderBDS-2.4.0 update has been released, adapted to BDS-1.19.10, ProtocolVersion 534
+LiteLoaderBDS-2.4.1 update has been released, adapted to BDS-1.19.10, ProtocolVersion 534
 
 ## [New features]
-- Support BDS 1.19.10, by @QingYu,@WangYneos
-- New I18N api(Provided for small plugins), by @Jasonzyt
-  - `Please wait for the next version for large plugins`
-- Config add enableTpdimCommand, enableForceUtf8Input by @QingYu
-- Better PlayerPlaceBlockEvent, by @Redbeanw44602
-- Add Vec3 for onUseItemOn event, #523 by @OEOTYAN
-
-## [Change]
-- PlayerMoveEvent/OnMove Will be abandoned in the future.(Please revise other programs as soon as possible)
+- LL API
+  - Add `Player::getLastPacketLoss`, By @StarsDream00
+  - Add Event `BlockPlacedByPlayerEvent`, By @StarsDream00
+  - Add ModalForm in FormUI,(#554) By @S3v3Nice
+- LLSE API
+  - Add `pl.lastDeathPos`,(#551) By @StarsDream00
+  - Add `pl.isLoading`, By @StarsDream00
+  - Add `dv.lastPacketLoss`, By @StarsDream00
+  - Add `dv.lastPing`, By @StarsDream00
+  - Add `dv.serverAddress`, By @StarsDream00
+  - Add `bl.destroy(drop)`, By @StarsDream00
+  - Add Event `onExperienceAdd`, By @StarsDream00
+  - Add Event `onBedEnter`, By @StarsDream00
+  - Add Event `afterPlaceBlock`, By @Redbeanw44602
 
 ## [Bug Fixes]
 - Fix LL bugs:
-  - Don't load plugins with the same file name as a registered plugin, #510 by @Jasonzyt
-  - Molang API(MC/ExpressionNode.hpp) syntax error, #524 by @LazuliKao
-  - PlayerMoveEvent bugs, #530 by @Redbeanw44602
-  - distanceToSqr API, by @QingYu
-- Fix LLSE bugs:
-  - The default value of parameter `perm` in `mc.newCommand` is not correct, #517 by @StarsDream00
+  - Fix AntiGive not working, By @dreamguxiang
+  - Fix Vec3 some problems, By @OEOTYAN
+
+## [New Forum]
+[https://forum.litebds.com/](https://forum.litebds.com/)
