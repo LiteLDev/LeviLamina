@@ -78,6 +78,52 @@ bool SimpleForm::sendTo(Player* player, Callback callback) {
     return player->sendRawFormPacket(id, data);
 }
 
+//////////////////////////////// Modal Form ////////////////////////////////
+ModalForm& ModalForm::setTitle(const string& title) {
+    this->title = title;
+    return *this;
+}
+
+ModalForm& ModalForm::setContent(const string& content) {
+    this->content = content;
+    return *this;
+}
+
+ModalForm& ModalForm::setConfirmButton(const string& text) {
+    this->confirmButton = text;
+    return *this;
+}
+
+ModalForm& ModalForm::setCancelButton(const string& text) {
+    this->cancelButton = text;
+    return *this;
+}
+
+string ModalForm::serialize() {
+    try {
+        fifo_json form = fifo_json::parse(R"({"title":"","content":"","button1":"","button2":"","type":"modal"})");
+        form["title"] = title;
+        form["content"] = content;
+        form["button1"] = confirmButton;
+        form["button2"] = cancelButton;
+        return form.dump();
+    } catch (const fifo_json::exception&) {
+        logger.error("Fail to generate Modal Form in serialize!");
+        return "";
+    }
+}
+
+bool ModalForm::sendTo(Player* player, Callback callback) {
+    unsigned id = NewFormId();
+    this->callback = std::move(callback);
+    SetModalFormBuilderData(id, make_shared<ModalForm>(*this));
+
+    string data = serialize();
+    if (data.empty())
+        return false;
+    return player->sendRawFormPacket(id, data);
+}
+
 //////////////////////////////// Custom Form ////////////////////////////////
 std::string CustomFormElement::getString() {
     return value;

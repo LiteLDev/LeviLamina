@@ -4,7 +4,7 @@
 //
 //  [Example - Simple Form]
 //  - Form that contains several buttons (with optional image)
-//  - Let the player to choose one option
+//  - Let the player choose an option from multiple options
 //
 //  SimpleForm form("Welcome to shop", "Choose what you want to do...");     // Initialize the form with title and content
 //  form.addButton("Buy", "textures/items/apple",                            // Add a button "Buy" with texture image
@@ -17,34 +17,49 @@
 //          [](Player* pl) { pl->sendText("Get into settings..."); })        // Settings's callback function
 //
 //      .addButton("Exit")                                                   // Add a single button "Exit"
-//      .sendTo(Level::getPlayer("John"));                   // Send the form to a player called "Jim"
+//      .sendTo(Level::getPlayer("John"));                                   // Send the form to a player called "John"
+//
+//
+//  [Example - Modal Form]
+//  - Form with Confirm and Cancel buttons
+//  - Let the player confirm or cancel an action
+//
+//  ModalForm form("Confirm the action", "Do you want that?", "Yes", "Nope");     // Initialize the form with title, content and two buttons ("Yes", "Nope")
+//  form.sendTo(Level::getPlayer("S3v3N1ce"),                                     // Send the form to a player called "S3v3N1ce"
+//      [](Player* player, bool isConfirm)                                        // Callback function to process the result
+//          {
+//              if (isConfirm)                                                    // Player pressed button "Yes"
+//                  player->sendText("Okay, let's go");
+//              else                                                              // Player pressed button "Nope"
+//                  player->sendText("Hm, suit yourself");
+//          });                                    
 //
 //
 //  [Example - Custom Form]
 //  - Form that contains some kinds of elements (like input line, toggle, dropdown, ....)
-//  - Let the player to provide some detailed information
+//  - Let the player provide some detailed information
 //
-//  CustomForm form2("Information Collection Form");                            // Initialize the form with title
-//  form2.addLabel("label1", "Personal Information")                            // Add a label shows "Personal Information"
-//      .addInput("username", "Your Name")                                      // Add an input line to gather player's name
-//      .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })           // Add a dropdown to gather player's sex
-//      .addSlider("age", "Your Age", 3, 100)                                   // Add a slider to gather player's age
+//  CustomForm form2("Information Collection Form");                               // Initialize the form with title
+//  form2.addLabel("label1", "Personal Information")                               // Add a label shows "Personal Information"
+//      .addInput("username", "Your Name")                                         // Add an input line to gather player's name
+//      .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })              // Add a dropdown to gather player's sex
+//      .addSlider("age", "Your Age", 3, 100)                                      // Add a slider to gather player's age
 //
-//      .addLabel("label2", "MC Information")                                   // Add a label shows "MC Information"
-//      .addToggle("licensed", "Purchased a licensed Minecraft?", true)         // Add a toggle about whether he buys a licensed mc or not
-//      .addStepSlider("ability", "MC Ability", { "Beginner", "Experienced", "Master" })      // Add a step slider shows his game ability
+//      .addLabel("label2", "MC Information")                                      // Add a label shows "MC Information"
+//      .addToggle("licensed", "Purchased a licensed Minecraft?", true)            // Add a toggle about whether he buys a licensed mc or not
+//      .addStepSlider("skill", "Skill Lvl", { "Beginner", "Amateur", "Pro" })     // Add a step slider shows his game skill level
 //
-//      .sendTo(Level::getPlayer("yqs112358"),                                  // Send the form to a player called "John"
-//          [](Player* player, auto result)                                     // Callback function to process the result
+//      .sendTo(Level::getPlayer("yqs112358"),                                     // Send the form to a player called "yqs112358"
+//          [](Player* player, auto result)                                        // Callback function to process the result
 //          {
-//              if (result.empty())                                             // He cancelled the form
+//              if (result.empty())                                                // Player cancelled the form
 //                  return;
 //              player->sendText("You have commited the form.");
 //              player->sendFormattedText("Your name: {}", result["username"]->getString());
 //              player->sendFormattedText("Your sex: {}", result["sex"]->getString());
 //              player->sendFormattedText("Your age: {}", result["age"]->getNumber());
 //              player->sendFormattedText("Your license: {}", result["licensed"]->getBool() ? "yes" : "no");
-//              player->sendFormattedText("Your ability: {}:", result["ability"]->getString());
+//              player->sendFormattedText("Your skill level: {}:", result["skill"]->getString());
 //          });
 //
 //
@@ -328,6 +343,33 @@ public:
     LIAPI SimpleForm& setContent(const string& content);
     LIAPI SimpleForm& addButton(string text, string image = "", Button::ButtonCallback callback = Button::ButtonCallback());
     LIAPI SimpleForm& append(const Button& element);
+    LIAPI bool sendTo(Player* player, Callback callback = Callback());
+};
+
+class ModalForm : public FormImpl {
+protected:
+    LIAPI string serialize() override;
+
+public:
+    using Callback = std::function<void(Player*, bool)>;
+    string title, content, confirmButton, cancelButton;
+    Callback callback;
+
+public:
+    ModalForm(string title, string content, string button1, string button2)
+    : title(std::move(title))
+    , content(std::move(content))
+    , confirmButton(std::move(button1))
+    , cancelButton(std::move(button2)) {
+    }
+    template <typename T, typename... Args>
+    ModalForm(const string& title, const string& content, const string& confirmButton, const string& cancelButton, Args... args) {
+        ModalForm(title, content, confirmButton, cancelButton, args...);
+    }
+    LIAPI ModalForm& setTitle(const string& title);
+    LIAPI ModalForm& setContent(const string& content);
+    LIAPI ModalForm& setConfirmButton(const string& text);
+    LIAPI ModalForm& setCancelButton(const string& text);
     LIAPI bool sendTo(Player* player, Callback callback = Callback());
 };
 
