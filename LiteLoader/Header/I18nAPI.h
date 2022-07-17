@@ -229,8 +229,29 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
     if (PluginOwnData::hasImpl(hPlugin, I18N::POD_KEY)) {
         auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
         realFormatStr = i18n.get(formatStr);
-        if (i18n.getPattern() != I18N::Pattern::SrcToTrans && realFormatStr == formatStr) { // If failed
-            return formatStr;
+        if (i18n.getPattern() != I18N::Pattern::SrcToTrans && realFormatStr == formatStr) {
+            // If failed and the str dosn't match the args count, avoid fmt
+            auto argSz = sizeof...(args);
+            bool lastIsBracket = false;
+            size_t cnt = 0;
+            for (auto& c : formatStr) {
+                if (c == '{') {
+                    if (lastIsBracket) {
+                        cnt--;
+                        lastIsBracket = false;
+                    } else {
+                        cnt++;
+                        lastIsBracket = true;
+                        continue;
+                    }
+                }
+                if (lastIsBracket) {
+                    lastIsBracket = false;
+                }
+            }
+            if (cnt != argSz) {
+                return formatStr;
+            }
         }
     }
     // realFormatStr = FixCurlyBracket(realFormatStr);
@@ -247,8 +268,29 @@ inline std::string trlImpl(HMODULE hPlugin, const std::string& localeName, const
     if (PluginOwnData::hasImpl(hPlugin, I18N::POD_KEY)) {
         auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
         realFormatStr = i18n.get(formatStr, localeName);
-        if (i18n.getPattern() != I18N::Pattern::SrcToTrans && realFormatStr == formatStr) { // If failed
-            return formatStr;
+        if (i18n.getPattern() != I18N::Pattern::SrcToTrans && realFormatStr == formatStr) {
+            // If failed and the str dosn't match the args count, avoid fmt
+            auto argSz = sizeof...(args);
+            bool lastIsBracket = false;
+            size_t cnt = 0;
+            for (auto& c : formatStr) {
+                if (c == '{') {
+                    if (lastIsBracket) {
+                        cnt--;
+                        lastIsBracket = false;
+                    } else {
+                        cnt++;
+                        lastIsBracket = true;
+                        continue;
+                    }
+                }
+                if (lastIsBracket) {
+                    lastIsBracket = false;
+                }
+            }
+            if (cnt != argSz) {
+                return formatStr;
+            }
         }
     }
     // realFormatStr = FixCurlyBracket(realFormatStr);
@@ -292,21 +334,45 @@ LIAPI I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
  * @par Example
  * 1. SimpleI18N with Pattern::SrcToTrans
  * @code
- * // In the file plugins/xxx/language.json
+ * // In the file plugins/xxx/language.json:
  * // {"zh_CN": {"text": "文本"}, "en_US": {"text", "text"}}
  * Translation::load("plugins/xxx/language.json", I18N::Pattern::SrcToTrans);
  * tr("text");
  * @endcode
- * 
  * 2. SimpleI18N with Pattern::IdToTrans
  * @code
- * // In the file plugins/xxx/language.json
+ * // In the file plugins/xxx/language.json:
  * // {"zh_CN": {"a.b.c.id.text": "文本"}, "en_US": {"a.b.c.id.text", "text"}}
- * Translation::load("plugins/xxx/language.json", I18N::Pattern::SrcToTrans);
+ * Translation::load("plugins/xxx/language.json", I18N::Pattern::IdToTrans);
  * tr("a.b.c.d.id.text");
  * @endcode
- * 
- * 3. 
+ * 3. HeavyI18N with Pattern::SrcToTrans
+ * @code
+ * // In the file plugins/xxx/LangPack/en.json:
+ * // {"text": "text"}
+ * // In the file plugins/xxx/LangPack/zh_CN.json:
+ * // {"text": "文本"}
+ * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::SrcToTrans);
+ * tr("text");
+ * @endcode
+ * 4. HeavyI18N with Pattern::IdToTrans
+ * @code
+ * // In the file plugins/xxx/LangPack/en.json:
+ * // {"a.b.c.d.text1": "text"}
+ * // In the file plugins/xxx/LangPack/zh_CN.json:
+ * // {"a.b.c.d.text1": "文本"}
+ * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::IdToTrans);
+ * tr("a.b.c.d.text1");
+ * @endcode
+ * 5. HeavyI18N with Pattern::NestedIdToTrans
+ * @code
+ * // In the file plugins/xxx/LangPack/en.json:
+ * // {"a": {"b": {"c": {"d": {"text1": "text"}}}}}
+ * // In the file plugins/xxx/LangPack/zh_CN.json:
+ * // {"a": {"b": {"c": {"d": {"text1": "文本"}}}}}
+ * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::NestedIdToTrans);
+ * tr("a.b.c.d.text1");
+ * @endcode
  */
 inline I18N* load(const std::string& path, I18N::Pattern pattern, const std::string& defaultLocaleName = "",
                   const I18N::LangData& defaultLangData = {}) {

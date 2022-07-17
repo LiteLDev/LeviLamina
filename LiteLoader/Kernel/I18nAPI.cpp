@@ -1,6 +1,7 @@
 #include <I18nAPI.h>
 #include <Utils/StringHelper.h>
 #include <Main/LiteLoader.h>
+#include <ScheduleAPI.h>
 using namespace std;
 namespace fs = std::filesystem;
 
@@ -39,10 +40,7 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
             }
         }
     }
-    // Finally, not found, return the key or log warning
-    if (pattern != Pattern::SrcToTrans) {
-        logger.warn << "The specified language key is not found! This may cause FMT errors. Please complete the language files!";
-    }
+    // Finally, not found, return the key
     return key;
 }
 
@@ -133,7 +131,7 @@ I18N::SubLangData nestedHelper(const nlohmann::json& j, const std::string& prefi
 
 void HeavyI18N::load(const std::string& dirName) {
     this->dirPath = dirName;
-    if (!fs::exists(dirName)) {
+    if (!fs::exists(dirName) || fs::is_empty(dirName)) {
         if (this->defaultLangData.empty()) {
             logger.error("Language files NOT FOUND! This may cause many errors!");
             return;
@@ -163,20 +161,25 @@ void HeavyI18N::save() {
     if (!fs::exists(dirPath)) {
         fs::create_directories(dirPath);
         for (auto& [lc, lv] : this->defaultLangData) {
-            auto fileName = fs::path(dirPath).append("").wstring();
-            std::fstream file(fileName, std::ios::out | std::ios::app);
+            auto fileName = fs::path(dirPath).append(lc + ".json").wstring();
+            std::fstream file;
+            if (fs::exists(fileName)) {
+                file.open(fileName, std::ios::out | std::ios::ate);
+            } else {
+                file.open(fileName, std::ios::out | std::ios::app);     
+            }
             if (this->pattern == Pattern::NestedIdToTrans) {
-                nlohmann::json out = nlohmann::json::object();
+                auto out = nlohmann::json::object();
                 for (auto& [k, v] : lv) {
                     auto keys = SplitStrWithPattern(k, ".");
-                    nlohmann::json& j = out;
+                    std::string name = keys.back();
+                    keys.pop_back();
+                    nlohmann::json* j = &out;
                     for (auto& key : keys) {
-                        j = j[key];
-                        if (!j.is_object()) {
-                            j = nlohmann::json::object();
-                        }
+                        j->emplace(key, nlohmann::json::object());
+                        j = &j->at(key);
                     }
-                    j = v;
+                    j->emplace(name, v);
                 }
                 file << nlohmann::json(out).dump(4);
             } else {
