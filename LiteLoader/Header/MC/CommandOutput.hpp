@@ -61,7 +61,7 @@ public:
                     code = ori.getPlayer()->getLanguageCode();
                     break;
                 default:
-                    code = i18n.getDefaultLocaleName();
+                    code = i18n.defaultLangCode;
                     break;
             }
         }

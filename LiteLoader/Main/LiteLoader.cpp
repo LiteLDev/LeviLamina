@@ -12,6 +12,7 @@
 #include "Config.h"
 #include "Loader.h"
 #include "CrashLogger.h"
+#include "DefaultLangData.h"
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
@@ -186,8 +187,7 @@ void LLMain() {
     LL::LoadLLConfig();
 
     // I18n
-    Translation::load("plugins/LiteLoader/LangPack/", I18N::Pattern::IdToTrans,
-                      (LL::globalConfig.language == "system" ? "" : LL::globalConfig.language));
+    Translation::load("plugins/LiteLoader/language.json", LL::globalConfig.language, defaultLangData);
 
     // Check Protocol Version
     CheckProtocolVersion();
