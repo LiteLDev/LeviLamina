@@ -56,9 +56,8 @@ public:
     enum class Pattern : char
     {
         None,
-        SrcToTrans,      ///< Source text - Translation
-        IdToTrans,       ///< Source ID - Translation
-        NestedIdToTrans, ///< Nested Source ID - Translation
+        Normal, ///< Normal like `{"a.b.text1": "text", ... }`
+        Nested, ///< Nested like `{"a": {"b": {"text1": "text", ...}, ...}, ...}`
     };
 
     enum class Type : char
@@ -100,21 +99,21 @@ public:
 
     /**
      * @brief Get the pattern of the i18n object.
-     * 
+     *
      * @return  The pattern of the i18n object
      */
     virtual Pattern getPattern();
 
     /**
      * @brief Get the default language code of the i18n object.
-     * 
+     *
      * @return  The default language code of the i18n object
      */
     virtual std::string getDefaultLocaleName();
 
     /**
      * @brief Clone a new i18n object.
-     * 
+     *
      * @return  The new i18n object.
      */
     virtual I18N* clone();
@@ -143,7 +142,7 @@ public:
      * @brief Construct a SimpleI18N object.
      *
      * @param filePath         The path to the i18n file(json)
-     * @param pattern          The i18n file pattern(Simple I18N supports `Mode::SrcToTrans` and `Mode::IdToTrans`
+     * @param pattern          The i18n file pattern(Simple I18N supports `Mode::Normal` and `Mode::Normal`
      * @param defaultLocaleName  The default language code(if empty, default the system default language)
      * @param defaultLangData  The default translation data
      */
@@ -229,7 +228,7 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
     if (PluginOwnData::hasImpl(hPlugin, I18N::POD_KEY)) {
         auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
         realFormatStr = i18n.get(formatStr);
-        if (i18n.getPattern() != I18N::Pattern::SrcToTrans && realFormatStr == formatStr) {
+        if (i18n.getPattern() != I18N::Pattern::Normal && realFormatStr == formatStr) {
             // If failed and the str dosn't match the args count, avoid fmt
             auto argSz = sizeof...(args);
             bool lastIsBracket = false;
@@ -268,8 +267,8 @@ inline std::string trlImpl(HMODULE hPlugin, const std::string& localeName, const
     if (PluginOwnData::hasImpl(hPlugin, I18N::POD_KEY)) {
         auto& i18n = PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
         realFormatStr = i18n.get(formatStr, localeName);
-        if (i18n.getPattern() != I18N::Pattern::SrcToTrans && realFormatStr == formatStr) {
-            // If failed and the str dosn't match the args count, avoid fmt
+        if (realFormatStr == formatStr) {
+            // If failed and the str dosn't match the args count, avoid fmt to avoid errors
             auto argSz = sizeof...(args);
             bool lastIsBracket = false;
             size_t cnt = 0;
@@ -330,51 +329,52 @@ LIAPI I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
  * @param  defaultLangData  The default translation data
  * @return I18N*            The pointer to the I18N object in PluginOwnData, null if failed
  * @note   Directory => HeavyI18N, Single File => SimpleI18N
- * @note   SimpleI18N only supports a single file and Pattern::SrcToTrans or Pattern::IdToTrans
+ * @note   SimpleI18N only supports a single file and Pattern::Normal or Pattern::Normal
  * @par Example
- * 1. SimpleI18N with Pattern::SrcToTrans
+ * 1. SimpleI18N with Pattern::Normal
  * @code
  * // In the file plugins/xxx/language.json:
  * // {"zh_CN": {"text": "文本"}, "en_US": {"text", "text"}}
- * Translation::load("plugins/xxx/language.json", I18N::Pattern::SrcToTrans);
+ * Translation::load("plugins/xxx/language.json", I18N::Pattern::Normal);
  * tr("text");
  * @endcode
- * 2. SimpleI18N with Pattern::IdToTrans
+ * 2. SimpleI18N with Pattern::Normal
  * @code
  * // In the file plugins/xxx/language.json:
  * // {"zh_CN": {"a.b.c.id.text": "文本"}, "en_US": {"a.b.c.id.text", "text"}}
- * Translation::load("plugins/xxx/language.json", I18N::Pattern::IdToTrans);
+ * Translation::load("plugins/xxx/language.json", I18N::Pattern::Normal);
  * tr("a.b.c.d.id.text");
  * @endcode
- * 3. HeavyI18N with Pattern::SrcToTrans
+ * 3. HeavyI18N with Pattern::Normal
  * @code
  * // In the file plugins/xxx/LangPack/en.json:
  * // {"text": "text"}
  * // In the file plugins/xxx/LangPack/zh_CN.json:
  * // {"text": "文本"}
- * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::SrcToTrans);
+ * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::Normal);
  * tr("text");
  * @endcode
- * 4. HeavyI18N with Pattern::IdToTrans
+ * 4. HeavyI18N with Pattern::Normal
  * @code
  * // In the file plugins/xxx/LangPack/en.json:
  * // {"a.b.c.d.text1": "text"}
  * // In the file plugins/xxx/LangPack/zh_CN.json:
  * // {"a.b.c.d.text1": "文本"}
- * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::IdToTrans);
+ * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::Normal);
  * tr("a.b.c.d.text1");
  * @endcode
- * 5. HeavyI18N with Pattern::NestedIdToTrans
+ * 5. HeavyI18N with Pattern::Nested
  * @code
  * // In the file plugins/xxx/LangPack/en.json:
  * // {"a": {"b": {"c": {"d": {"text1": "text"}}}}}
  * // In the file plugins/xxx/LangPack/zh_CN.json:
  * // {"a": {"b": {"c": {"d": {"text1": "文本"}}}}}
- * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::NestedIdToTrans);
+ * Translation::load("plugins/xxx/LangPack/", I18N::Pattern::Nested);
  * tr("a.b.c.d.text1");
  * @endcode
  */
-inline I18N* load(const std::string& path, I18N::Pattern pattern, const std::string& defaultLocaleName = "",
+inline I18N* load(const std::string& path, I18N::Pattern pattern = I18N::Pattern::Normal,
+                  const std::string& defaultLocaleName = "",
                   const I18N::LangData& defaultLangData = {}) {
     return loadImpl(GetCurrentModule(), path, pattern, defaultLocaleName, defaultLangData);
 }
@@ -528,6 +528,18 @@ template <typename... Args>
 inline std::string trl(const std::string& langCode, const char* formatStr, const Args&... args) {
     return trl(langCode, std::string(formatStr), args...);
 }
+
+/* literals
+namespace Translation {
+namespace literals {
+
+inline std::string operator""_tr(const char* str, size_t) {
+    return tr(str);
+}
+
+} // namespace literals
+} // namespace Translation
+*/
 
 // For text encoding
 namespace TextEncoding {

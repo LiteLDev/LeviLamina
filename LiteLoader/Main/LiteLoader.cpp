@@ -186,7 +186,7 @@ void LLMain() {
     LL::LoadLLConfig();
 
     // I18n
-    Translation::load("plugins/LiteLoader/LangPack/", I18N::Pattern::IdToTrans,
+    Translation::load("plugins/LiteLoader/LangPack/", I18N::Pattern::Normal,
                       (LL::globalConfig.language == "system" ? "" : LL::globalConfig.language));
 
     // Check Protocol Version

@@ -148,7 +148,7 @@ void HeavyI18N::load(const std::string& dirName) {
         std::fstream file(f.path().wstring(), std::ios::in);
         nlohmann::json j;
         file >> j;
-        if (this->pattern == Pattern::NestedIdToTrans) {
+        if (this->pattern == Pattern::Nested) {
             auto data = nestedHelper(j);
             this->langData.emplace(langName, data);
         } else {
@@ -168,7 +168,7 @@ void HeavyI18N::save() {
             } else {
                 file.open(fileName, std::ios::out | std::ios::app);     
             }
-            if (this->pattern == Pattern::NestedIdToTrans) {
+            if (this->pattern == Pattern::Nested) {
                 auto out = nlohmann::json::object();
                 for (auto& [k, v] : lv) {
                     auto keys = SplitStrWithPattern(k, ".");
@@ -198,14 +198,14 @@ namespace Translation {
 
 I18N* loadImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
                const I18N::LangData& defaultLangData) {
-    return loadImpl(hPlugin, path, I18N::Pattern::SrcToTrans, defaultLocaleName, defaultLangData);
+    return loadImpl(hPlugin, path, I18N::Pattern::Normal, defaultLocaleName, defaultLangData);
 }
 
 I18N* loadImpl(HMODULE hPlugin, const std::string& path, I18N::Pattern pattern, const std::string& defaultLocaleName,
                const I18N::LangData& defaultLangData) {
     try {
         I18N* res = nullptr;
-        if (path.ends_with('/') || path.ends_with('\\')) { // Directory
+        if (path.ends_with('/') || path.ends_with('\\') || fs::is_directory(path)) { // Directory
             res = new HeavyI18N(path, pattern, defaultLocaleName, defaultLangData);
         } else {
             res = new SimpleI18N(path, pattern, defaultLocaleName, defaultLangData);
