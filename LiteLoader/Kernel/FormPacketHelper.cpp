@@ -129,7 +129,7 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data) {
                     form->setValue(nowIndex, j.get<bool>());
                     break;
                 case Form::CustomFormElement::Type::Slider:
-                    form->setValue(nowIndex, j.get<int>());
+                    form->setValue(nowIndex, j.get<double>());
                     break;
                 case Form::CustomFormElement::Type::Dropdown: {
                     auto& options = dynamic_pointer_cast<Form::Dropdown>(form->elements[nowIndex].second)->options;

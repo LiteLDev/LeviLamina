@@ -133,7 +133,11 @@ public:
     }
     inline virtual Type getType() = 0;
     LIAPI std::string getString();
+    [[deprecated("Please use getInt")]]
     LIAPI int getNumber();
+    LIAPI int getInt();
+    LIAPI float getFloat();
+    LIAPI double getDouble();
     LIAPI bool getBool();
 };
 
@@ -248,10 +252,10 @@ protected:
 
 public:
     string title;
-    int minValue, maxValue, step, def;
+    double minValue, maxValue, step, def;
 
 public:
-    inline Slider(const string& name, string title, int minValue, int maxValue, int step = 1, int def = 0)
+    inline Slider(const string& name, string title, double minValue, double maxValue, double step = 1, double def = 0)
     : title(std::move(title))
     , minValue(minValue)
     , maxValue(maxValue)
@@ -265,16 +269,16 @@ public:
     inline void setTitle(const string& _title) {
         this->title = _title;
     }
-    inline void setMin(int _minValue) {
+    inline void setMin(double _minValue) {
         this->minValue = _minValue;
     }
-    inline void setMax(int _maxValue) {
+    inline void setMax(double _maxValue) {
         this->maxValue = _maxValue;
     }
-    inline void setStep(int _step) {
+    inline void setStep(double _step) {
         this->step = _step;
     }
-    inline void setDefault(int _def) {
+    inline void setDefault(double _def) {
         this->def = _def;
     }
 };
@@ -399,7 +403,7 @@ public:
     LIAPI CustomForm& addInput(const string& name, string title, string placeholder = "", string def = "");
     LIAPI CustomForm& addToggle(const string& name, string title, bool def = false);
     LIAPI CustomForm& addDropdown(const string& name, string title, const vector<string>& options, int defId = 0);
-    LIAPI CustomForm& addSlider(const string& name, string title, int min, int max, int step = 1, int def = 0);
+    LIAPI CustomForm& addSlider(const string& name, string title, double min, double max, double step = 1, double def = 0);
     LIAPI CustomForm& addStepSlider(const string& name, string title, const vector<string>& options, int defId = 0);
 
     LIAPI CustomForm& append(const Label& element);
@@ -411,13 +415,23 @@ public:
 
     LIAPI bool sendTo(Player* player, Callback callback);
     LIAPI bool sendToForRawJson(Player* player, Callback2 callback);
+    LIAPI CustomFormElement* getElement(const string& name);
+    LIAPI CustomFormElement* getElement(int index);
     LIAPI CustomFormElement::Type getType(int index);
 
     LIAPI string getString(const string& name);
+    [[deprecated("Please use getInt")]]
     LIAPI int getNumber(const string& name);
+    LIAPI int getInt(const string& name);
+    LIAPI float getFloat(const string& name);
+    LIAPI double getDouble(const string& name);
     LIAPI bool getBool(const string& name);
     LIAPI string getString(int index);
+    [[deprecated("Please use getInt")]]
     LIAPI int getNumber(int index);
+    LIAPI int getInt(int index);
+    LIAPI float getFloat(int index);
+    LIAPI double getDouble(int index);
     LIAPI bool getBool(int index);
 
     // Tool Functions

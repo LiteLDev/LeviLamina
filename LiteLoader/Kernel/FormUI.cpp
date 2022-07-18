@@ -130,8 +130,28 @@ std::string CustomFormElement::getString() {
 }
 
 int CustomFormElement::getNumber() {
+    return getInt();
+}
+
+int CustomFormElement::getInt() {
     try {
         return stoi(value);
+    } catch (...) {
+        return 0;
+    }
+}
+
+float CustomFormElement::getFloat() {
+    try {
+        return stof(value);
+    } catch (...) {
+        return 0;
+    }
+}
+
+double CustomFormElement::getDouble() {
+    try {
+        return stod(value);
     } catch (...) {
         return 0;
     }
@@ -212,13 +232,16 @@ string Slider::serialize() {
         itemAdd["text"] = title;
 
         if (minValue >= maxValue)
-            maxValue = minValue + 1;
+        {
+            const auto t = maxValue;
+            maxValue = minValue;
+            minValue = t;
+        }
         itemAdd["min"] = minValue;
         itemAdd["max"] = maxValue;
-        itemAdd["step"] = step >= 1 ? step : 1;
-        if (def > 0 && minValue <= def && maxValue >= def) {
-            itemAdd["default"] = def;
-        }
+        itemAdd["step"] = step > 0 ? step : maxValue - minValue;
+        itemAdd["default"] = max(min(def, maxValue), minValue);
+
         return itemAdd.dump();
     } catch (const fifo_json::exception&) {
         logger.error("Fail to generate Slider in Custom Form serialize!");
@@ -269,7 +292,7 @@ CustomForm& CustomForm::addDropdown(const string& name, string title, const vect
     return append(Dropdown(name, title, options, defId));
 }
 
-CustomForm& CustomForm::addSlider(const string& name, string title, int min, int max, int step, int def) {
+CustomForm& CustomForm::addSlider(const string& name, string title, double min, double max, double step, double def) {
     return append(Slider(name, title, min, max, step, def));
 }
 
@@ -349,36 +372,72 @@ bool CustomForm::sendToForRawJson(Player* player, Callback2 callback) {
 }
 
 string CustomForm::getString(const string& name) {
-    for (auto& [k, v] : elements)
-        if (k == name)
-            return v->getString();
-    return "";
+    const auto element = getElement(name);
+    return element != nullptr ? element->getString() : "";
 }
 
 int CustomForm::getNumber(const string& name) {
-    for (auto& [k, v] : elements)
-        if (k == name)
-            return v->getNumber();
-    return 0;
+    return getInt(name);
+}
+
+int CustomForm::getInt(const string& name) {
+    const auto element = getElement(name);
+    return element != nullptr ? element->getInt() : 0;
+}
+
+float CustomForm::getFloat(const string& name) {
+    const auto element = getElement(name);
+    return element != nullptr ? element->getFloat() : 0;
+}
+
+double CustomForm::getDouble(const string& name) {
+    const auto element = getElement(name);
+    return element != nullptr ? element->getDouble() : 0;
 }
 
 bool CustomForm::getBool(const string& name) {
-    for (auto& [k, v] : elements)
-        if (k == name)
-            return v->getBool();
-    return false;
+    const auto element = getElement(name);
+    return element != nullptr ? element->getBool() : false;
 }
 
 string CustomForm::getString(int index) {
-    return elements[index].second->getString();
+    const auto element = getElement(index);
+    return element != nullptr ? element->getString() : "";
 }
 
 int CustomForm::getNumber(int index) {
-    return elements[index].second->getNumber();
+    return getInt(index);
+}
+
+int CustomForm::getInt(int index) {
+    const auto element = getElement(index);
+    return element != nullptr ? element->getInt() : 0;
+}
+
+float CustomForm::getFloat(int index) {
+    const auto element = getElement(index);
+    return element != nullptr ? element->getFloat() : 0;
+}
+
+double CustomForm::getDouble(int index) {
+    const auto element = getElement(index);
+    return element != nullptr ? element->getDouble() : 0;
 }
 
 bool CustomForm::getBool(int index) {
-    return elements[index].second->getBool();
+    const auto element = getElement(index);
+    return element != nullptr ? element->getBool() : false;
+}
+
+CustomFormElement* CustomForm::getElement(const string& name) {
+    for (auto& [k, v] : elements)
+        if (k == name)
+            return v.get();
+    return nullptr;
+}
+
+CustomFormElement* CustomForm::getElement(int index) {
+    return elements.size() > index ? elements[index].second.get() : nullptr;
 }
 
 CustomFormElement::Type CustomForm::getType(int index) {
