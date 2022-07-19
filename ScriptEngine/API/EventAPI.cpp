@@ -130,7 +130,7 @@ enum class EVENT_TYPES : int {
     onBedExplode,
     onMobSpawn,
     /* Internal */
-    onFormSelected,
+    onFormResponsePacket,
     EVENT_COUNT
 };
 static const std::unordered_map<string, EVENT_TYPES> EventsMap{
@@ -208,7 +208,7 @@ static const std::unordered_map<string, EVENT_TYPES> EventsMap{
     {"onMoneyReduce", EVENT_TYPES::onMoneyReduce},
     {"onMoneyTrans", EVENT_TYPES::onMoneyTrans},
     {"onMoneySet", EVENT_TYPES::onMoneySet},
-    {"onFormSelected", EVENT_TYPES::onFormSelected},
+    {"onFormResponsePacket", EVENT_TYPES::onFormResponsePacket},
     {"onConsumeTotem", EVENT_TYPES::onConsumeTotem},
     {"onEffectAdded", EVENT_TYPES::onEffectAdded},
     {"onEffectRemoved", EVENT_TYPES::onEffectRemoved},
