@@ -2136,12 +2136,12 @@ TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFo
         logger.error("Event Callback Failed!");
         logger.error("SEH Uncaught Exception Detected!");
         logger.error("{}", TextEncoding::toUTF8(e.what()));
-        logger.error("In Event: onFormResponse");
+        logger.error("In Event: onFormResponsePacket");
         PrintCurrentStackTraceback();
     } catch (...) {
         logger.error("Event Callback Failed!");
         logger.error("Uncaught Exception Detected!");
-        logger.error("In Event: onFormResponse");
+        logger.error("In Event: onFormResponsePacket");
         PrintCurrentStackTraceback();
     }
 
