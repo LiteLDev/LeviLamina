@@ -25,15 +25,20 @@ LIAPI std::string nearestColorCodeFromConsoleCode(std::string const& consoleCode
 LIAPI std::string& convertToMc(std::string& str);
 LIAPI std::string convertToMc(std::string&& str);
 
+[[deprecated("This is a typo. Use convertToConsole instead")]]
 LIAPI std::string& convertToColsole(std::string& str, bool keepColorCode = false);
+[[deprecated("This is a typo. Use convertToConsole instead")]]
 LIAPI std::string convertToColsole(std::string&& str, bool keepColorCode = false);
+ 
+LIAPI std::string& convertToConsole(std::string& str, bool keepColorCode = false);
+LIAPI std::string convertToConsole(std::string&& str, bool keepColorCode = false);
 
 LIAPI std::string& removeColorCode(std::string& str);
 LIAPI std::string removeColorCode(std::string&& str);
 
 [[deprecated("Use convertToMc instead")]]
 LIAPI std::string& transferConsoleColorToColorCode(std::string& str);
-[[deprecated("Use convertToColsole instead")]]
+[[deprecated("Use convertToConsole instead")]]
 LIAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode = false);
 
 #undef AFTER_EXTRA
