@@ -124,113 +124,30 @@ enum class EVENT_TYPES : int {
     beforeMoneyReduce,
     beforeMoneyTrans,
     beforeMoneySet,
+    onFormResponsePacket,
     /* Outdated Events */
     onAttack,
     onExplode,
     onBedExplode,
     onMobSpawn,
-    /* Internal */
-    onFormResponsePacket,
+    onContainerChangeSlot,
     EVENT_COUNT
 };
-static const std::unordered_map<string, EVENT_TYPES> EventsMap{
-    {"onPreJoin", EVENT_TYPES::onPreJoin},
-    {"onJoin", EVENT_TYPES::onJoin},
-    {"onLeft", EVENT_TYPES::onLeft},
-    {"onPlayerCmd", EVENT_TYPES::onPlayerCmd},
-    {"onChat", EVENT_TYPES::onChat},
-    {"onPlayerDie", EVENT_TYPES::onPlayerDie},
-    {"onRespawn", EVENT_TYPES::onRespawn},
-    {"onChangeDim", EVENT_TYPES::onChangeDim},
-    {"onJump", EVENT_TYPES::onJump},
-    {"onSneak", EVENT_TYPES::onSneak},
-    {"onAttack", EVENT_TYPES::onAttackEntity},
-    {"onAttackEntity", EVENT_TYPES::onAttackEntity},
-    {"onAttackBlock", EVENT_TYPES::onAttackBlock},
-    {"onEat", EVENT_TYPES::onEat},
-    {"onMove", EVENT_TYPES::onMove},
-    {"onChangeSprinting", EVENT_TYPES::onChangeSprinting},
-    {"onSpawnProjectile", EVENT_TYPES::onSpawnProjectile},
-    {"onProjectileCreated", EVENT_TYPES::onProjectileCreated},
-    {"onSetArmor", EVENT_TYPES::onSetArmor},
-    {"onRide", EVENT_TYPES::onRide},
-    {"onStepOnPressurePlate", EVENT_TYPES::onStepOnPressurePlate},
-    {"onMobDie", EVENT_TYPES::onMobDie},
-    {"onMobHurt", EVENT_TYPES::onMobHurt},
-    {"onUseItem", EVENT_TYPES::onUseItem},
-    {"onTakeItem", EVENT_TYPES::onTakeItem},
-    {"onDropItem", EVENT_TYPES::onDropItem},
-    {"onUseItemOn", EVENT_TYPES::onUseItemOn},
-    {"onInventoryChange", EVENT_TYPES::onInventoryChange},
-    {"onChangeArmorStand", EVENT_TYPES::onChangeArmorStand},
-    {"onStartDestroyBlock", EVENT_TYPES::onStartDestroyBlock},
-    {"onDestroyBlock", EVENT_TYPES::onDestroyBlock},
-    {"onWitherBossDestroy", EVENT_TYPES::onWitherBossDestroy},
-    {"onPlaceBlock", EVENT_TYPES::onPlaceBlock},
-    {"onExplode", EVENT_TYPES::onExplode},
-    {"onBedExplode", EVENT_TYPES::onBedExplode},
-    {"onRespawnAnchorExplode", EVENT_TYPES::onRespawnAnchorExplode},
-    {"onBlockExploded", EVENT_TYPES::onBlockExploded},
-    {"onEntityExplode", EVENT_TYPES::onEntityExplode},
-    {"onBlockExplode", EVENT_TYPES::onBlockExplode},
-    {"onLiquidFlow", EVENT_TYPES::onLiquidFlow},
-    {"onOpenContainer", EVENT_TYPES::onOpenContainer},
-    {"onCloseContainer", EVENT_TYPES::onCloseContainer},
-    {"onContainerChangeSlot", EVENT_TYPES::onContainerChange},
-    {"onContainerChange", EVENT_TYPES::onContainerChange},
-    {"onOpenContainerScreen", EVENT_TYPES::onOpenContainerScreen},
-    {"onCmdBlockExecute", EVENT_TYPES::onCmdBlockExecute},
-    {"onRedStoneUpdate", EVENT_TYPES::onRedStoneUpdate},
-    {"onProjectileHitBlock", EVENT_TYPES::onProjectileHitBlock},
-    {"onProjectileHitEntity", EVENT_TYPES::onProjectileHitEntity},
-    {"onEntityTransformation", EVENT_TYPES::onEntityTransformation},
-    {"onBlockInteracted", EVENT_TYPES::onBlockInteracted},
-    {"onUseRespawnAnchor", EVENT_TYPES::onUseRespawnAnchor},
-    {"onFarmLandDecay", EVENT_TYPES::onFarmLandDecay},
-    {"onUseFrameBlock", EVENT_TYPES::onUseFrameBlock},
-    {"onPistonTryPush", EVENT_TYPES::onPistonTryPush},
-    {"onPistonPush", EVENT_TYPES::onPistonPush},
-    {"onHopperSearchItem", EVENT_TYPES::onHopperSearchItem},
-    {"onHopperPushOut", EVENT_TYPES::onHopperPushOut},
-    {"onFireSpread", EVENT_TYPES::onFireSpread},
-    {"onBlockChanged", EVENT_TYPES::onBlockChanged},
-    {"onNpcCmd", EVENT_TYPES::onNpcCmd},
-    {"onScoreChanged", EVENT_TYPES::onScoreChanged},
-    {"onServerStarted", EVENT_TYPES::onServerStarted},
-    {"onConsoleCmd", EVENT_TYPES::onConsoleCmd},
-    {"onConsoleOutput", EVENT_TYPES::onConsoleOutput},
-    {"onTick", EVENT_TYPES::onTick},
-    {"beforeMoneyAdd", EVENT_TYPES::beforeMoneyAdd},
-    {"beforeMoneyReduce", EVENT_TYPES::beforeMoneyReduce},
-    {"beforeMoneyTrans", EVENT_TYPES::beforeMoneyTrans},
-    {"beforeMoneySet", EVENT_TYPES::beforeMoneySet},
-    {"onMoneyAdd", EVENT_TYPES::onMoneyAdd},
-    {"onMoneyReduce", EVENT_TYPES::onMoneyReduce},
-    {"onMoneyTrans", EVENT_TYPES::onMoneyTrans},
-    {"onMoneySet", EVENT_TYPES::onMoneySet},
-    {"onFormResponsePacket", EVENT_TYPES::onFormResponsePacket},
-    {"onConsumeTotem", EVENT_TYPES::onConsumeTotem},
-    {"onEffectAdded", EVENT_TYPES::onEffectAdded},
-    {"onEffectRemoved", EVENT_TYPES::onEffectRemoved},
-    {"onEffectUpdated", EVENT_TYPES::onEffectUpdated},
-    {"onMobSpawn", EVENT_TYPES::onMobSpawn},
-    {"onExperienceAdd", EVENT_TYPES::onExperienceAdd},
-    {"onBedEnter", EVENT_TYPES::onBedEnter}};
+
 struct ListenerListType {
     ScriptEngine* engine;
     script::Global<Function> func;
 };
+
 //监听器表
 static std::list<ListenerListType> listenerList[int(EVENT_TYPES::EVENT_COUNT)];
+
 //监听器历史
 static bool hasListened[int(EVENT_TYPES::EVENT_COUNT)] = {0};
 
 //监听器异常拦截
 string EventTypeToString(EVENT_TYPES e) {
-    for (auto& [k, v] : EventsMap)
-        if (v == e)
-            return k;
-    return "Unknown";
+    return string(magic_enum::enum_name(e));
 }
 
 #define LISTENER_CATCH(TYPE)                                         \
@@ -364,19 +281,19 @@ Local<Value> McClass::listen(const Arguments& args) {
     CATCH("Fail to Bind Listener!");
 }
 
-
 //////////////////// Funcs ////////////////////
 
 bool LLSEAddEventListener(ScriptEngine* engine, const string& eventName, const Local<Function>& func) {
     try {
-        int eventId = int(EventsMap.at(eventName));
+        auto event_enum = magic_enum::enum_cast<EVENT_TYPES>(eventName);
+        auto eventId = int(event_enum.value());
         listenerList[eventId].push_back({engine, script::Global<Function>(func)});
         if (!hasListened[eventId]) {
             hasListened[eventId] = true;
             EnableEventListener(eventId);
         }
         return true;
-    } catch (const std::logic_error& e) {
+    } catch (...) {
         logger.error("Event \"" + eventName + "\" No Found!\n");
         logger.error("In Plugin: " + ENGINE_GET_DATA(engine)->pluginName);
         return false;
@@ -780,21 +697,7 @@ void EnableEventListener(int eventId) {
             });
             break;
 
-        case EVENT_TYPES::onExplode:
-            /// Explode events ↓↓ recently deleted.
-            Event::EntityExplodeEvent::subscribe([](const EntityExplodeEvent& ev) {
-                IF_LISTENED(EVENT_TYPES::onExplode) {
-                    CallEvent(EVENT_TYPES::onExplode, ev.mActor ? EntityClass::newEntity(ev.mActor) : Local<Value>(),
-                              FloatPos::newPos(ev.mPos, ev.mDimension->getDimensionId()),
-                              Number::newNumber(ev.mRadius), Number::newNumber(ev.mMaxResistance),
-                              Boolean::newBoolean(ev.mBreaking), Boolean::newBoolean(ev.mFire));
-                }
-                IF_LISTENED_END(EVENT_TYPES::onExplode);
-            });
-            break;
-
         case EVENT_TYPES::onRespawnAnchorExplode:
-        case EVENT_TYPES::onBedExplode:
             Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
                 BlockInstance bl(ev.mBlockInstance);
                 if (bl.getBlock() == VanillaBlocks::mRespawnAnchor) {
@@ -803,14 +706,8 @@ void EnableEventListener(int eventId) {
                                   Local<Value>());
                     }
                     IF_LISTENED_END(EVENT_TYPES::onRespawnAnchorExplode);
-                } else {
-                    IF_LISTENED(EVENT_TYPES::onBedExplode) {
-                        CallEvent(EVENT_TYPES::onBedExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()));
-                    }
-                    IF_LISTENED_END(EVENT_TYPES::onBedExplode);
                 }
             });
-            /// Explode events ↑↑ recently deleted.
             break;
 
         case EVENT_TYPES::onBlockExploded:
@@ -1113,6 +1010,55 @@ void EnableEventListener(int eventId) {
                 IF_LISTENED_END(EVENT_TYPES::onBedEnter);
             });
             break;
+
+        /* DEPRECATED AND RECENTLY REMOVED - START */
+
+        case EVENT_TYPES::onAttack:
+            Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onAttack) {
+                    if (ev.mTarget) {
+                        CallEvent(EVENT_TYPES::onAttack, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
+                    }
+                }
+                IF_LISTENED_END(EVENT_TYPES::onAttack);
+            });
+            break;
+
+        case EVENT_TYPES::onContainerChangeSlot:
+            Event::ContainerChangeEvent::subscribe([](const ContainerChangeEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onContainerChange) {
+                    CallEvent(EVENT_TYPES::onContainerChange, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance),
+                              ev.mSlot, ItemClass::newItem(ev.mPreviousItemStack), ItemClass::newItem(ev.mNewItemStack));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onContainerChange);
+            });
+            break;
+
+        case EVENT_TYPES::onExplode:
+            Event::EntityExplodeEvent::subscribe([](const EntityExplodeEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onExplode) {
+                    CallEvent(EVENT_TYPES::onExplode, ev.mActor ? EntityClass::newEntity(ev.mActor) : Local<Value>(),
+                              FloatPos::newPos(ev.mPos, ev.mDimension->getDimensionId()),
+                              Number::newNumber(ev.mRadius), Number::newNumber(ev.mMaxResistance),
+                              Boolean::newBoolean(ev.mBreaking), Boolean::newBoolean(ev.mFire));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onExplode);
+            });
+            break;
+
+        case EVENT_TYPES::onBedExplode:
+            Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
+                BlockInstance bl(ev.mBlockInstance);
+                if (bl.getBlock() == VanillaBlocks::mBed) {
+                    IF_LISTENED(EVENT_TYPES::onBedExplode) {
+                        CallEvent(EVENT_TYPES::onBedExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()));
+                    }
+                    IF_LISTENED_END(EVENT_TYPES::onBedExplode);
+                }
+            });
+            break;
+
+        /* DEPRECATED AND RECENTLY REMOVED - END */
 
         default:
             break;
