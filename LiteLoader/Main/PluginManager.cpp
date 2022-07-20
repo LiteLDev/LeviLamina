@@ -134,14 +134,16 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
                 ev.call();
 
                 return ev.success;
-            } else if (outputResult)
-                logger.error("You need to give a correct type of file!");
+            } else if (outputResult) {
+                logger.error(tr("ll.pluginManager.error.invalidFileType", ext, pluginFilePath));
+            }
             return false;
         }
 
         if (pluginFilePath.find("/") == string::npos && pluginFilePath.find("\\") == string::npos && loadPlugin("plugins/" + pluginFilePath)) {
-            if (outputResult)
-                logger.error("No valid plugin found at {}!", pluginFilePath);
+            if (outputResult) {
+                logger.error(tr("ll.pluginManager.error.noValidPluginFound", pluginFilePath));
+            }
             return false;
         }
 
@@ -150,15 +152,17 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
         if (lib) {
             if (getPlugin(lib) == nullptr) {
                 if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {})) {
-                    logger.error("Failed to register plugin {}!", pluginFilePath);
-                    if (getPlugin(pluginFileName))
-                        logger.error("A plugin named {} has been registered", pluginFileName);
+                    logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", pluginFilePath));
+                    if (getPlugin(pluginFileName)) {
+                        logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
+                    }
                     return false;
                 }
             };
         } else {
-            if (outputResult)
-                logger.error("Fail to load the plugin {}!", pluginFileName);
+            if (outputResult) {
+                logger.error(tr("ll.pluginManager.error.failToLoadPlugin", pluginFileName));
+            }
             return false;
         }
 
@@ -214,8 +218,9 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
     try {
         LL::Plugin* plugin = getPlugin(pluginName);
         if (!plugin) {
-            if (outputResult)
-                logger.error("No match plugin found!");
+            if (outputResult) {
+                logger.error(tr("ll.pluginManager.error.pluginNotFound"));
+            }
             return false;
         }
 
@@ -235,7 +240,7 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
         // unRegisterPlugin(pluginName);
         // removeAllEventListeners(pluginName);
 
-        logger.warn("Unload function of dll plugins has not been finished."); // TODO
+        logger.warn(tr("ll.pluginManager.warning.unloadDllNotFinished")); // TODO
         return false;
     } catch (const std::exception& e) {
         if (outputResult) {
@@ -257,8 +262,9 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
     try {
         LL::Plugin* plugin = getPlugin(pluginName);
         if (!plugin) {
-            if (outputResult)
-                logger.error("No match plugin found!");
+            if (outputResult) {
+                logger.error(tr("ll.pluginManager.error.pluginNotFound"));
+            }
             return false;
         }
 
@@ -277,7 +283,7 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
             return false;
         return loadPlugin(path);*/
 
-        logger.warn("Reload function of dll plugins has not been finished."); // TODO
+        logger.warn(tr("ll.pluginManager.warning.reloadDllNotFinished")); // TODO
         return false;
     } catch (const std::exception& e) {
         if (outputResult) {
@@ -307,13 +313,15 @@ int LL::PluginManager::reloadAllPlugins(bool outputResult) {
                 ev.pluginExtention = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
                 ev.call();
 
-                if (ev.success)
+                if (ev.success) {
                     ++cnt;
+                }
             } else {
-                if (reloadPlugin(name))
+                if (reloadPlugin(name)) {
                     ++cnt;
-                else
-                    logger.error("Fail to reload plugin {}!", name);
+                } else {
+                    logger.error(tr("ll.pluginManager.reloadPlugin.fail", name));
+                }
             }
         }
         return cnt;

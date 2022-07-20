@@ -76,9 +76,9 @@ void CheckRunningBDS() {
             if (sz = GetModuleFileNameEx(handle, NULL, buf, 8196)) {
                 std::wstring path{buf, sz};
                 if (current == path) {
-                    logger.error("Detected the existence of another BDS process with the same path!");
-                    logger.error("This may cause the network port and the level to be occupied");
-                    logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No)", pid);
+                    logger.error(tr("ll.main.checkRunningBDS.detected"));
+                    logger.error(tr("ll.main.checkRunningBDS.tip"));
+                    logger.error(tr("ll.main.checkRunningBDS.ask", pid));
                     char ch;
                     cin >> ch;
                     if (ch == 'y' || ch == 'Y') {
@@ -98,17 +98,18 @@ void FixAllowList() {
         if (filesystem::exists("allowlist.json")) {
             auto res = ReadAllFile("allowlist.json");
             if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty())) {
-                logger.warn("allowlist.json is empty! Removing...");
+                logger.warn(tr("ll.main.fixAllowList.removeEmptyAllowlist"));
                 filesystem::remove("allowlist.json");
             } else {
-                logger.warn("Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
+                logger.warn(tr("ll.main.fixAllowList.checkManually"));
                 return;
             }
         }
         std::error_code ec;
+        // Rename whitelist.json to allowlist.json
         filesystem::copy_file("whitelist.json", "allowlist.json", filesystem::copy_options::overwrite_existing, ec);
         filesystem::remove("whitelist.json", ec);
-        logger.warn("Renamed whitelist.json to allowlist.json");
+        logger.warn(tr("ll.main.fixAllowList.renamed"));
     }
 }
 
@@ -145,22 +146,21 @@ void Welcome() {
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode)
-        logger.warn("Currently in developer mode!");
+        logger.warn(tr("ll.main.warning.inDevMode"));
 }
 
 void CheckBetaVersion() {
     if (LITELOADER_VERSION_STATUS != LL::Version::Release) {
-        logger.warn("Currently using a beta version.");
-        logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
+        logger.warn(tr("ll.main.warning.betaVersion"));
+        logger.warn(tr("ll.main.warning.productionEnv"));
     }
 }
 
 void CheckProtocolVersion() {
     auto currentProtocol = LL::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("Protocol version not match, target version: {}, current version: {}.",
-                    TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
-        logger.warn("This will most likely crash the server, please use the LiteLoader that matches the BDS version!");
+        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.1"), TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }

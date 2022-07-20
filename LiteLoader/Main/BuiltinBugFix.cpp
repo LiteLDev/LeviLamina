@@ -105,7 +105,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             if (action.first.type == InventorySourceType::Container) {
 				isContainer = true;
                 if (abnormal) {
-                    logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
+                    logger.warn(tr("ll.antiAbnormalItem.detected", sp->getRealName()));
                     mayFromReducer = false;
                 }
             }			
@@ -115,10 +115,10 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                     auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);					
                     if ( isContainer || !itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
                         if (mayFromReducer) {
-                            logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
+                            logger.warn(tr("ll.antiAbnormalItem.detected", sp->getRealName()));
                         }
                         if (!toDesc.isNull()) {
-                            logger.warn("Item: {}", toDesc.toString());
+                            logger.warn(tr("ll.antiAbnormalItem.itemInfo", toDesc.toString()));
                         }
                         mayFromReducer = false;
                     }

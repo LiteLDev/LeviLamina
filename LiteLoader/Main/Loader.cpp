@@ -59,12 +59,11 @@ void LoadScriptEngine() {
         std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
         std::string version = GetFileVersionString(path, true);
         if (version != llVersion) {
-            logger.warn("The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>",
-                        version, backend, llVersion);
+            logger.warn(tr("ll.loader.loadScriptEngine.error.versionNotMatch", version, backend, llVersion));
         }
         auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
         if (lib) {
-            logger.info("* ScriptEngine for " + backend + " loaded");
+            logger.info(tr("ll.loader.loadScriptEngine.success"));
             // Fake Register
             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
                            {{"GitHub", "https://github.com/LiteLDev/LiteLoaderBDS"}});
@@ -76,17 +75,16 @@ void LoadScriptEngine() {
 }
 
 void LoadDotNETEngine() {
-    logger.warn("LiteLoader.NET is not finished yet!");
+    logger.warn(tr("ll.loader.loadDotNetEngine.warning.notFinished"));
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
     std::string version = GetFileVersionString(path, true);
     if (version != llVersion) {
-        logger.warn("The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>",
-                    version, llVersion);
+        logger.warn(tr("ll.loader.loadDotNetEngine.error.versionNotMatch", version, llVersion));
     }
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
-        logger.info("* .NET Engine loaded");
+        logger.info(tr("ll.loader.loadDotNetEngine.success"));
         // Fake Register
         RegisterPlugin(lib, "LiteLoader.NET", "LiteLoader.NET", LITELOADER_VERSION,
                        {{"GitHub", "https://github.com/LiteLDev/LiteLoader.NET"}});
@@ -164,17 +162,19 @@ void LL::LoadMain() {
         if (lib) {
             ++pluginCount;
 
-            if (isShellLink)
-                logger.info("ShellLink Plugin <{} => {}> loaded",
-                            UTF82String(file.path().filename().u8string()), UTF82String(path.u8string()));
-            else
-                logger.info("Plugin <{}> loaded", pluginFileName);
+            if (isShellLink) {
+                logger.info(tr("ll.loader.loadMain.loadedShellLink",
+                               UTF82String(file.path().filename().u8string()), UTF82String(path.u8string())));
+            } else {
+                logger.info(tr("ll.loader.loadMain.loadedPlugin", pluginFileName));
+            }
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {})) {
-                    logger.error("Failed to register plugin {}!", UTF82String(path.u8string()));
-                    if (getPlugin(pluginFileName))
-                        logger.error("A plugin named {} has been registered", pluginFileName);
+                    logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", UTF82String(path.u8string())));
+                    if (getPlugin(pluginFileName)) {
+                        logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
+                    }
                 }
             }
         } else {
@@ -228,5 +228,5 @@ void LL::LoadMain() {
             }
         }
     }
-    logger.info << pluginCount << " plugin(s) loaded" << Logger::endl;
+    logger.info(tr("ll.loader.loadMain.done", pluginCount));
 }
