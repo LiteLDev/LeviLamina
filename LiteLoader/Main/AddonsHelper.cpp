@@ -240,7 +240,7 @@ void FindManifest(vector<string>& result, const string& path) {
 
 std::string Addon::getPrintName() const {
     if (LL::globalConfig.colorLog)
-        return ColorFormat::convertToColsole(std::string(name));
+        return ColorFormat::convertToConsole(std::string(name));
     else
         return ColorFormat::removeColorCode(std::string(name));
 }
