@@ -611,4 +611,11 @@ public:
     int mDimensionId;
 };
 
+class FormResponsePacketEvent : public EventTemplate<FormResponsePacketEvent> {
+public:
+    ServerPlayer* mServerPlayer;
+    unsigned mFormId;
+    string mJsonData;
+};
+
 }; // namespace Event

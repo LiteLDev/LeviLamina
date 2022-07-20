@@ -124,8 +124,7 @@ enum class EVENT_TYPES : int {
     beforeMoneyReduce,
     beforeMoneyTrans,
     beforeMoneySet,
-    /* Internal */
-    onFormSelected,
+    onFormResponsePacket,
     /* Outdated Events */
     onAttack,
     onExplode,
