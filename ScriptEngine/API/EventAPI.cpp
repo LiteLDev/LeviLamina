@@ -167,6 +167,7 @@ static const std::unordered_map<string, EVENT_TYPES> EventsMap{
     {"onDestroyBlock", EVENT_TYPES::onDestroyBlock},
     {"onWitherBossDestroy", EVENT_TYPES::onWitherBossDestroy},
     {"onPlaceBlock", EVENT_TYPES::onPlaceBlock},
+    {"afterPlaceBlock", EVENT_TYPES::afterPlaceBlock},
     {"onExplode", EVENT_TYPES::onExplode},
     {"onBedExplode", EVENT_TYPES::onBedExplode},
     {"onRespawnAnchorExplode", EVENT_TYPES::onRespawnAnchorExplode},
