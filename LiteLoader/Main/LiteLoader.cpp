@@ -168,6 +168,9 @@ void CheckProtocolVersion() {
 
 // extern
 extern void EndScheduleSystem();
+namespace bstats {
+    void registerBStat();
+}
 
 void LLMain() {
     // Set global SEH-Exception handler
@@ -235,6 +238,9 @@ void LLMain() {
 
     // Register simple server logger
     RegisterSimpleServerLogger();
+
+    //Register BStats
+    bstats::registerBStat();
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
