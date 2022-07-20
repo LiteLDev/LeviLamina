@@ -33,6 +33,7 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
                         {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
                         {"WelcomeText", {{"enabled", conf.enableWelcomeText}}},
                         {"FixMcBug", {{"enabled", conf.enableFixMcBug}}},
+                        {"FixBroadcastBug", {{"enabled", conf.enableFixBroadcastBug}}},
                         {"OutputFilter", {{"enabled", conf.enableOutputFilter}, {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput}, {"filterRegex", conf.outputFilterRegex}}},
                         {"EconomyCore", {{"enabled", conf.enableEconomyCore}}},
                         {"ForceUtf8Input", {{"enabled", conf.enableForceUtf8Input}}},
@@ -106,6 +107,10 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.count("FixMcBug")) {
             const nlohmann::json& setting = modules.at("FixMcBug");
             conf.enableFixMcBug = setting.value("enabled", true);
+        }
+        if (modules.count("FixBroadcastBug")) {
+            const nlohmann::json& setting = modules.at("FixBroadcastBug");
+            conf.enableFixBroadcastBug = setting.value("enabled", true);
         }
         if (modules.find("ErrorStackTraceback") != modules.end()) {
             const nlohmann::json& setting = modules.at("ErrorStackTraceback");

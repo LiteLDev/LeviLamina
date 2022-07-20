@@ -224,7 +224,7 @@ TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerP
 }
 #endif
 
-// fix Fishing Hook changeDimension Crash
+// Fix Fishing Hook changeDimension Crash
 TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z", Actor, unsigned int a1) {
     if (!LL::globalConfig.enableFixMcBug)
         return original(this, a1);
@@ -241,7 +241,7 @@ TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAV
     return original(this, a1);
 }
 
-// fix Wine Stop
+// Fix wine stop
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
     original(this);
     if (IsWineEnvironment()) {
@@ -286,7 +286,7 @@ TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXP
     original(this, a1, a2, a3, a4);
 }
 
-// set stdin mode to text mode if in wine environment
+// Set stdin mode to text mode if in wine environment
 inline bool _tryFixConsoleInputMode() {
     if ((LL::globalConfig.enableFixMcBug && IsWineEnvironment()) || LL::globalConfig.enableForceUtf8Input) {
         int result = _setmode(_fileno(stdin), _O_U8TEXT);
@@ -308,4 +308,19 @@ THook(std::wistream&,
         static bool fixed = _tryFixConsoleInputMode();
     }
     return original(std::move(ret), a1, a2);
+}
+
+// Fix server broadcast bug.
+TClasslessInstanceHook(bool, "?getLANBroadcast@LevelData@@QEBA_NXZ") {
+    if (LL::globalConfig.enableFixBroadcastBug) {
+        return true;
+    }
+    return original(this);
+}
+
+TClasslessInstanceHook(bool, "?getLANBroadcastIntent@LevelData@@QEBA_NXZ") {
+    if (LL::globalConfig.enableFixBroadcastBug) {
+        return true;
+    }
+    return original(this);
 }

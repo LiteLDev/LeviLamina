@@ -53,6 +53,7 @@ struct LLConfig {
     bool enableCheckRunningBDS = true;
     bool enableWelcomeText = true;
     bool enableFixMcBug = true;
+    bool enableFixBroadcastBug = true;
     bool enableOutputFilter = false;
     bool onlyFilterConsoleOutput = true;
     bool enableEconomyCore = true;
