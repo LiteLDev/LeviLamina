@@ -33,6 +33,7 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
                         {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
                         {"WelcomeText", {{"enabled", conf.enableWelcomeText}}},
                         {"FixMcBug", {{"enabled", conf.enableFixMcBug}}},
+                        {"DisableAutoCompactionLog", {{"enabled", conf.disableAutoCompactionLog}}},
                         {"FixBroadcastBug", {{"enabled", conf.enableFixBroadcastBug}}},
                         {"OutputFilter", {{"enabled", conf.enableOutputFilter}, {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput}, {"filterRegex", conf.outputFilterRegex}}},
                         {"EconomyCore", {{"enabled", conf.enableEconomyCore}}},
@@ -111,6 +112,10 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.count("FixBroadcastBug")) {
             const nlohmann::json& setting = modules.at("FixBroadcastBug");
             conf.enableFixBroadcastBug = setting.value("enabled", true);
+        }
+        if (modules.count("DisableAutoCompactionLog")) {
+            const nlohmann::json& setting = modules.at("DisableAutoCompactionLog");
+            conf.disableAutoCompactionLog = setting.value("enabled", true);
         }
         if (modules.find("ErrorStackTraceback") != modules.end()) {
             const nlohmann::json& setting = modules.at("ErrorStackTraceback");
