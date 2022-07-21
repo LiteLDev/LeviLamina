@@ -25,7 +25,7 @@ ClassDefine<PacketClass> PacketClassBuilder =
 ClassDefine<BinaryStreamClass> BinaryStreamClassBuilder =
     defineClass<BinaryStreamClass>("BinaryStream")
         .constructor(&BinaryStreamClass::constructor)
-        .instanceFunction("getAndReleaseData", &BinaryStreamClass::getAndReleaseData)
+        .instanceFunction("getData", &BinaryStreamClass::getAndReleaseData)
         .instanceFunction("reset", &BinaryStreamClass::reset)
         .instanceFunction("reserve", &BinaryStreamClass::reserve)
         .instanceFunction("writeBool", &BinaryStreamClass::writeBool)

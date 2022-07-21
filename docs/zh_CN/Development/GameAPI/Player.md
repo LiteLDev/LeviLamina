@@ -1289,6 +1289,18 @@
 
 <br>
 
+#### 向玩家发送数据包
+
+`pl.sendPacket(packet)`  
+
+- 参数：
+  - packet : `Packet`  
+    数据包
+- 返回值：是否成功，如果pl不存在，返回Null
+- 返回值类型：`Bool`
+
+<br>
+
 #### 判断是否为模拟玩家
 
 `pl.isSimulatedPlayer()`
