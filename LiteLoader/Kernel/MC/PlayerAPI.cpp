@@ -255,7 +255,7 @@ bool Player::setNbt(CompoundTag* nbt) {
 #include <MC/Attribute.hpp>
 #include <MC/AttributeInstance.hpp>
 #include <MC/HashedString.hpp>
-#include <LiteLoader/Header/SendPacketAPI.h>
+#include <SendPacketAPI.h>
 bool Player::refreshAttribute(class Attribute const& attribute) {
     return refreshAttributes({&attribute});
 }
