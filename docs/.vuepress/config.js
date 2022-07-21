@@ -170,6 +170,11 @@ module.exports = {
     }
   },
   locales: {
+    '/': {
+      lang: 'Home',
+      title: 'LiteLoaderBDS',
+      description: 'Documentation of LiteLoaderBDS',
+    },
     '/en_US/': {
       lang: 'en-US',
       title: 'LiteLoaderBDS',
