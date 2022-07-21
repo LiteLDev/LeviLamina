@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 project(LiteLoader)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
@@ -25,11 +25,11 @@ file(GLOB_RECURSE SRC_FILES
 
 add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
         -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS
-        -D_USRDLL -D_AMD64_ -DNOMINMAX)
+        -D_USRDLL -D_AMD64_ -DNOMINMAX -D__cpp_lib_char8_t)
 
 add_compile_options(
         /permissive /MP /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /sdl /Zc:inline /fp:precise
-        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHa /nologo
+        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++20 /FC /EHa /nologo
         /diagnostics:column /utf-8
 )
 
@@ -41,6 +41,7 @@ add_link_options(
 include_directories(${PROJECT_SOURCE_DIR}/)
 include_directories(${PROJECT_SOURCE_DIR}/Header)
 include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
+include_directories(${CMAKE_SOURCE_DIR})
 
 link_directories(.)
 link_directories(${PROJECT_SOURCE_DIR}/../x64/Release/)
