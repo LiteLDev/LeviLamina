@@ -16,9 +16,9 @@ bool initNodeJs() {
     WCHAR buf[MAX_PATH];
     GetCurrentDirectory(MAX_PATH, buf);
     auto path = wstr2str(buf) + "\\bedrock_server_mod.exe";
-    char* cPath = const_cast<char*>(path.c_str());
-    auto argv = uv_setup_args(1, &cPath);
-    args = std::vector<std::string>(argv, argv + 1);
+    char* cPath = path.data();
+    uv_setup_args(1, &cPath);
+    args = {path};
     std::vector<std::string> errors;
     auto exitCode = node::InitializeNodeWithArgs(&args, &exec_args, &errors);
     if (exitCode != 0) {

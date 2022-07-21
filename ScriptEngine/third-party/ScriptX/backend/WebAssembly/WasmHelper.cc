@@ -824,7 +824,7 @@ CHECKED_EM_JS(int, _ScriptX_Native_getInternalStore, (int weakThis), {
   return stack.push(thiz[sym]);
 });
 
-CHECKED_EM_JS(void, _ScriptX_Native_destoryInstance, (int scriptClassInstance), {
+CHECKED_EM_JS(void, _ScriptX_Native_destroyInstance, (int scriptClassInstance), {
   const stack = Module.SCRIPTX_STACK;
   scriptClassInstance = stack.values[scriptClassInstance];
 
@@ -1243,7 +1243,7 @@ void wasm_interop::destroySharedByteBuffer(const Local<ByteBuffer> &sharedByteBu
 }
 
 void wasm_interop::destroyScriptClass(const Local<Object> &scriptClass) {
-  CHECKED_VOID_JS_CALL(wasm_backend::_ScriptX_Native_destoryInstance(
+  CHECKED_VOID_JS_CALL(wasm_backend::_ScriptX_Native_destroyInstance(
       wasm_backend::WasmEngine::refIndex(scriptClass)));
 }
 

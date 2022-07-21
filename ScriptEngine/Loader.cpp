@@ -42,6 +42,7 @@ void LoadDebugEngine() {
 // 主加载
 void LoadMain() {
     logger.info("Loading plugins...");
+    Sleep(10000);
     int installCount = 0;
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);

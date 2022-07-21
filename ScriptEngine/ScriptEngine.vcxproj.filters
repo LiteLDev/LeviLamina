@@ -9,9 +9,6 @@
       <Extensions>
       </Extensions>
     </Filter>
-    <Filter Include="Lib">
-      <UniqueIdentifier>{3aacf150-55b2-4166-9782-9832fe58a15f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine">
       <UniqueIdentifier>{4af0e4d7-d5c3-479b-8390-dd767fa049b6}</UniqueIdentifier>
     </Filter>
@@ -325,59 +322,6 @@
     <ClInclude Include="NodeJsHelper.h">
       <Filter>Main</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="third-party\cpp-base64\lib\cpp-base64.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\openssl\libcrypto.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\dyncall\lib\libdyncall_s.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\dyncall\lib\libdyncallback_s.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\dyncall\lib\libdynload_s.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\openssl\libssl.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\LightWebSocketClient\lib\LightWSClient.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\Lua\lib\lua.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\V8\lib\v8.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\V8\lib\v8_libbase.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\V8\lib\v8_libplatform.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\V8\lib\zlib.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\NodeJs\lib\libnode.lib">
-      <Filter>Lib</Filter>
-    </Library>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ScriptEngine.rc">
