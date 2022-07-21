@@ -50,5 +50,7 @@ public:
     static Local<Value> newScoreObjective(const Arguments& args);
     static Local<Value> removeScoreObjective(const Arguments& args);
     static Local<Value> getAllScoreObjectives(const Arguments& args);
+    static Local<Value> getStructure(const Arguments& args);
+    static Local<Value> setStructure(const Arguments& args);
 };
 extern ClassDefine<void> McClassBuilder;

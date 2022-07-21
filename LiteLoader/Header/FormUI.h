@@ -32,7 +32,7 @@
 //                  player->sendText("Okay, let's go");
 //              else                                                              // Player pressed button "Nope"
 //                  player->sendText("Hm, suit yourself");
-//          });                                    
+//          });
 //
 //
 //  [Example - Custom Form]

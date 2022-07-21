@@ -37,6 +37,7 @@
     <ClCompile Include="API\PlayerAPI.cpp" />
     <ClCompile Include="API\ScriptAPI.cpp" />
     <ClCompile Include="API\ServerAPI.cpp" />
+    <ClCompile Include="API\StructureAPI.cpp" />
     <ClCompile Include="API\SystemAPI.cpp" />
     <ClCompile Include="BindAPIs.cpp" />
     <ClCompile Include="API\CommandAPI.cpp" />

@@ -173,6 +173,9 @@
     <ClCompile Include="API\PacketAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="API\StructureAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
