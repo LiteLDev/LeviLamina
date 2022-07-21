@@ -60,5 +60,5 @@ Local<Value> McClass::setStructure(const Arguments& args) {
         }
         return Boolean::newBoolean(Structure.toWorld(pos->getDimensionId(), pos->getBlockPos(), (Mirror)mirror, (Rotation)rotation));
     } 
-	 CATCH("Fail in getStructure!");
+	 CATCH("Fail in setStructure!");
 }
