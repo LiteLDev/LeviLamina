@@ -46,16 +46,20 @@ unordered_set<string> getAllValue() {
     if (lRet != ERROR_SUCCESS)
         return result;
 
-    // enum key from registry
+    // enum value from registry
     DWORD dwIndex = 0;
-    DWORD dwNameSize = MAX_PATH;
-    wchar_t* lpName = new wchar_t[dwNameSize];
-    while (::RegEnumKey(hKey, dwIndex, lpName, dwNameSize) == ERROR_SUCCESS) {
-        result.insert(wstr2str(lpName));
-        dwNameSize = MAX_PATH;
+    DWORD dwValueNameSize = MAX_PATH;
+    DWORD dwValueSize = MAX_PATH;
+    wchar_t* lpValueName = new wchar_t[dwValueNameSize];
+    wchar_t* lpValue = new wchar_t[dwValueSize];
+    while (::RegEnumValue(hKey, dwIndex, lpValueName, &dwValueNameSize, NULL, NULL, (LPBYTE)lpValue, &dwValueSize) == ERROR_SUCCESS) {
+        result.insert(wstr2str(lpValueName));
+        dwValueNameSize = MAX_PATH;
+        dwValueSize = MAX_PATH;
         dwIndex++;
     }
-    delete[] lpName;
+    delete[] lpValueName;
+    delete[] lpValue;
     ::RegCloseKey(hKey);
     return result;
 }
