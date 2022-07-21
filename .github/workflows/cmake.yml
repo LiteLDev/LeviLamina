@@ -1,17 +1,7 @@
 name: CMake
 
 on:
-  push:
-    paths:
-      - '**.cpp'
-      - '**.cc'
-      - '**.cxx'
-      - '**.c'
-      - '**.hpp'
-      - '**.hh'
-      - '**.hxx'
-      - '**.h'
-    branch: [ feature/cmake-fix ]
+  workflow_dispatch:
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
