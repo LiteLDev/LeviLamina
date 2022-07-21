@@ -17,8 +17,8 @@ bool initNodeJs() {
     GetCurrentDirectory(MAX_PATH, buf);
     auto path = wstr2str(buf) + "\\bedrock_server_mod.exe";
     char* cPath = const_cast<char*>(path.c_str());
-    uv_setup_args(1, &cPath);
-    args = {path};
+    auto argv = uv_setup_args(1, &cPath);
+    args = std::vector<std::string>(argv, argv + 1);
     std::vector<std::string> errors;
     auto exitCode = node::InitializeNodeWithArgs(&args, &exec_args, &errors);
     if (exitCode != 0) {
@@ -27,7 +27,7 @@ bool initNodeJs() {
     }
 
     using namespace v8;
-    platform = node::MultiIsolatePlatform::Create(4);
+    platform = node::MultiIsolatePlatform::Create(std::thread::hardware_concurrency());
     V8::InitializePlatform(platform.get());
     V8::Initialize();
     return nodeJsInited = true;

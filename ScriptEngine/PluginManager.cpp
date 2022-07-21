@@ -94,6 +94,8 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
             node::Stop(env);
             return false;
         }
+        node::SpinEventLoop(env).FromMaybe(1);
+
         if (!PluginManager::getPlugin(pluginName)) {
             PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
         }
