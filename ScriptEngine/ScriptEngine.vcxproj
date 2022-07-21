@@ -9,6 +9,10 @@
       <Configuration>Lua</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="NodeJs|x64">
+      <Configuration>NodeJs</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API\APIHelp.cpp" />
@@ -53,6 +57,7 @@
     <ClCompile Include="Engine\RemoteCall.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="EconomySystem.cpp" />
+    <ClCompile Include="NodeJsHelper.cpp" />
     <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="SafeGuardRecord.cpp" />
     <ClCompile Include="API\SimulatedPlayerAPI.cpp" />
@@ -104,6 +109,7 @@
     <ClInclude Include="Engine\TimeTaskSystem.h" />
     <ClInclude Include="Global.hpp" />
     <ClInclude Include="EconomicSystem.h" />
+    <ClInclude Include="NodeJsHelper.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SafeGuardRecord.h" />
@@ -120,10 +126,12 @@
     <Library Include="third-party\LightWebSocketClient\lib\LightWSClient.lib" />
     <Library Include="third-party\Lua\lib\lua.lib" />
     <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib" />
+    <Library Include="third-party\NodeJs\lib\libnode.lib" />
     <Library Include="third-party\openssl\libcrypto.lib" />
     <Library Include="third-party\openssl\libssl.lib" />
     <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib" />
     <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib" />
+    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib" />
     <Library Include="third-party\V8\lib\v8.lib" />
     <Library Include="third-party\V8\lib\v8_libbase.lib" />
     <Library Include="third-party\V8\lib\v8_libplatform.lib" />
@@ -157,6 +165,14 @@
     <CharacterSet>Unicode</CharacterSet>
     <EnableUnitySupport>false</EnableUnitySupport>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <EnableUnitySupport>false</EnableUnitySupport>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
@@ -166,6 +182,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -179,6 +198,12 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <TargetName>LiteLoader.Js</TargetName>
+    <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(ProjectDir)third-party\V8\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
+    <TargetName>LiteLoader.NodeJs</TargetName>
     <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(ProjectDir)third-party\V8\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">
@@ -245,6 +270,56 @@ LibraryBuilder.exe
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <ExternalWarningLevel>Level1</ExternalWarningLevel>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-Js.lib;$(ProjectDir)third-party\V8\lib\v8.lib;$(ProjectDir)third-party\V8\lib\v8_libbase.lib;$(ProjectDir)third-party\V8\lib\v8_libplatform.lib;$(ProjectDir)third-party\V8\lib\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
+    </Link>
+    <PostBuildEvent>
+      <Command>if exist "$(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\" (
+copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\"
+)</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if not exist "$(SolutionDir)LiteLoader\Lib\bedrock_server_api.lib" goto process
+if not exist "$(SolutionDir)LiteLoader\Lib\bedrock_server_var.lib" goto process
+goto end
+
+:process
+cd /d "$(SolutionDir)Tools"
+LibraryBuilder.exe
+
+:end</Command>
+    </PreBuildEvent>
+    <ResourceCompile />
+    <ResourceCompile />
+    <ResourceCompile>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;SCRIPTX_LANG_JAVASCRIPT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/V8/trait/Trait;SCRIPTX_LANG_NODEJS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)third-party\NodeJs\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <ExternalWarningLevel>Level1</ExternalWarningLevel>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

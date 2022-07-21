@@ -96,7 +96,8 @@ void LoadMain()
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files)
     {
-        if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION)
+        auto path = i.path().u8string();
+        if (i.is_regular_file() && EndsWith(path, LLSE_PLUGINS_EXTENSION))
         {
             if (PluginManager::loadPlugin(i.path().generic_u8string()))
                 ++count;

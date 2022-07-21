@@ -17,14 +17,14 @@
 #include <API/EventAPI.h>
 #include <API/CommandAPI.h>
 #include <Utils/Hash.h>
+#include <NodeJsHelper.h>
 #define H(x) do_hash(x)
 using namespace std;
 
 extern void BindAPIs(ScriptEngine* engine);
 
-//Helper
-string RemoveRealAllExtension(string fileName)
-{
+// Helper
+string RemoveRealAllExtension(string fileName) {
     int pos = fileName.find(".");
     if (pos == string::npos)
         return fileName;
@@ -32,137 +32,78 @@ string RemoveRealAllExtension(string fileName)
         return fileName.substr(0, pos);
 }
 
-//加载插件
-bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule)
-{
-    if (filePath == LLSE_DEBUG_ENGINE_NAME)
-        return true;
-
-    string suffix = filesystem::path(str2wstr(filePath)).extension().u8string();
-
-    if (suffix != LLSE_PLUGINS_EXTENSION)
-    {
-        if (mustBeCurrentModule)
-            return false;
-
-        string moduleToBroadcast;
-        switch (H(suffix.c_str()))
-        {
-        case H(".lua"):
-            moduleToBroadcast = LLSE_BACKEND_LUA;
-            break;
-        case H(".js"):
-            moduleToBroadcast = LLSE_BACKEND_JS;
-            break;
-        default:
-            logger.error("Do not support this type of plugin!");
-            return false;
-            break;
-        }
-
-        //Remote Load
-        //logger.debug("Remote Load begin");
-
-        ostringstream sout;
-        sout << isHotLoad << "\n" << filePath;
-        string request = sout.str();
-
-        auto result = ModuleMessage::sendToRandom(moduleToBroadcast, ModuleMessage::MessageType::RemoteLoadRequest, request);
-        if (!result)
-        {
-            logger.error("Fail to send remote load request!");
-            return false;
-        }
-
-        if (!result.waitForAllResults(LLSE_MAXWAIT_REMOTE_LOAD))
-        {
-            logger.error("Remote Load Timeout!");
-            return false;
-        }
-        return true;
-    }
-
-    //判重
-    string pluginFileName = std::filesystem::path(str2wstr(filePath)).filename().u8string();
-    if (PluginManager::getPlugin(pluginFileName))
-    {
-        //logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
+#if defined(SCRIPTX_LANG_NODEJS)
+bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool mustBeCurrentModule) {
+    auto& packageFilePath = std::filesystem::path(dirPath).append("package.json");
+    if (!std::filesystem::exists(packageFilePath)) {
         return false;
     }
-
-    if (!filesystem::exists(str2wstr(filePath)))
-    {
-        logger.error("Plugin no found! Check the path you input again.");
-        return false;
-    }
-
     ScriptEngine* engine = nullptr;
-    try
-    {
-        auto scripts = ReadAllFile(filePath);
-        if (!scripts)
-            throw("Fail to open plugin file!");
-
-        //启动引擎
-        engine = EngineManager::newEngine();
-        EngineScope enter(engine);
-
-        //setData
-        ENGINE_OWN_DATA()->pluginName = pluginFileName;
-        ENGINE_OWN_DATA()->pluginFilePath = filePath;
-        ENGINE_OWN_DATA()->logger.title = RemoveRealAllExtension(pluginFileName);
-
-        //绑定API
-        try {
-            BindAPIs(engine);
+    node::Environment* env = nullptr;
+    try {
+        std::fstream file(packageFilePath.u8string());
+        nlohmann::json j;
+        file >> j;
+        std::string entryFile = "index.js";
+        if (j.contains("main")) {
+            entryFile = j["main"].get<std::string>();
         }
-        catch (const Exception& e)
-        {
-            logger.error("Fail in Binding APIs!\n");
-            throw;
+        std::string copy = dirPath;
+        if (copy.back() == '/' || copy.back() == '\\') {
+            copy.pop_back();
+        }
+        std::string pluginName = std::filesystem::path(copy).filename().u8string();
+        if (j.contains("name")) {
+            pluginName = j["name"].get<std::string>();
         }
 
-        //加载libs依赖库
-        try
-        {
-            for (auto& [path, content] : depends)
-            {
-                engine->eval(content, path);
-            }
+        std::string entryPath = copy + "/" + entryFile;
+        // setData
+        ENGINE_OWN_DATA()->pluginName = pluginName;
+        ENGINE_OWN_DATA()->pluginFilePath = entryPath;
+        ENGINE_OWN_DATA()->logger.title = pluginName;
+
+        auto mainScripts = ReadAllFile(entryPath);
+        if (!mainScripts) {
+            throw std::runtime_error("Fail to open entry script!");
         }
-        catch (const Exception& e)
-        {
-            logger.error("Fail in Loading Dependence Lib!\n");
-            throw;
+        auto&& [eng, setup] = NodeJsHelper::newEngine();
+        engine = eng;
+        auto isolate = setup->isolate();
+        auto env = setup->env();
+        BindAPIs(engine);
+
+        v8::Locker locker(isolate);
+        v8::Isolate::Scope isolate_scope(isolate);
+        v8::HandleScope handle_scope(isolate);
+        // The v8::Context needs to be entered when node::CreateEnvironment() and
+        // node::LoadEnvironment() are being called.
+        v8::Context::Scope context_scope(setup->context());
+
+        v8::MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(
+            env,
+            ("const publicRequire ="
+             "  require('module').createRequire(process.cwd() + '/');"
+             "globalThis.require = publicRequire;" +
+             *mainScripts)
+                .c_str());
+
+        if (loadenv_ret.IsEmpty()) { // There has been a JS exception.
+            node::Stop(env);
+            return false;
+        }
+        if (!PluginManager::getPlugin(pluginName)) {
+            PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
         }
 
-        //加载脚本
-        try
-        {
-            engine->eval(*scripts, ENGINE_OWN_DATA()->pluginFilePath);
-        }
-        catch (const Exception& e)
-        {
-            logger.error("Fail in Loading Script Plugin!\n");
-            throw;
-        }
-        std::string const& pluginName = ENGINE_OWN_DATA()->pluginName;
-        ExitEngineScope exit;
-
-        //后处理
-        if (!PluginManager::getPlugin(pluginName))
-            PluginManager::registerPlugin(filePath, pluginName, pluginName, LL::Version(1, 0, 0), {});
-
-        if (isHotLoad)
+        if (isHotLoad) {
             LLSECallEventsOnHotLoad(engine);
+        }
         logger.info(pluginName + " loaded.");
         return true;
-    }
-    catch (const Exception& e)
-    {
-        logger.error("Fail to load " + filePath + "!");
-        if (engine)
-        {
+    } catch (const Exception& e) {
+        logger.error("Fail to load " + dirPath + "!");
+        if (engine) {
             EngineScope enter(engine);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
             PrintException(e);
@@ -177,24 +118,158 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
             engine->getData().reset();
             EngineManager::unRegisterEngine(engine);
         }
-        if(engine)
-            engine->destroy();
+        if (engine) {
+            node::Stop(env);
+        }
+    } catch (const std::exception& e) {
+        logger.error("Fail to load " + dirPath + "!");
+        logger.error(TextEncoding::toUTF8(e.what()));
+    } catch (...) {
+        logger.error("Fail to load " + dirPath + "!");
     }
-    catch (const std::exception& e)
-    {
+}
+#else
+// 加载插件
+bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule) {
+    if (filePath == LLSE_DEBUG_ENGINE_NAME)
+        return true;
+
+    string suffix = filesystem::path(str2wstr(filePath)).extension().u8string();
+
+    if (suffix != LLSE_PLUGINS_EXTENSION) {
+        if (mustBeCurrentModule)
+            return false;
+
+        string moduleToBroadcast;
+        switch (H(suffix.c_str())) {
+            case H(".lua"):
+                moduleToBroadcast = LLSE_BACKEND_LUA;
+                break;
+            case H(".js"):
+                moduleToBroadcast = LLSE_BACKEND_JS;
+                break;
+            default:
+                logger.error("Do not support this type of plugin!");
+                return false;
+                break;
+        }
+
+        // Remote Load
+        // logger.debug("Remote Load begin");
+
+        ostringstream sout;
+        sout << isHotLoad << "\n"
+             << filePath;
+        string request = sout.str();
+
+        auto result = ModuleMessage::sendToRandom(moduleToBroadcast, ModuleMessage::MessageType::RemoteLoadRequest, request);
+        if (!result) {
+            logger.error("Fail to send remote load request!");
+            return false;
+        }
+
+        if (!result.waitForAllResults(LLSE_MAXWAIT_REMOTE_LOAD)) {
+            logger.error("Remote Load Timeout!");
+            return false;
+        }
+        return true;
+    }
+
+    //判重
+    string pluginFileName = std::filesystem::path(str2wstr(filePath)).filename().u8string();
+    if (PluginManager::getPlugin(pluginFileName)) {
+        // logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
+        return false;
+    }
+
+    if (!filesystem::exists(str2wstr(filePath))) {
+        logger.error("Plugin no found! Check the path you input again.");
+        return false;
+    }
+
+    ScriptEngine* engine = nullptr;
+    try {
+        auto scripts = ReadAllFile(filePath);
+        if (!scripts) {
+            throw std::runtime_error("Fail to open plugin file!");
+        }
+
+        //启动引擎
+        engine = EngineManager::newEngine();
+        EngineScope enter(engine);
+
+        // setData
+        ENGINE_OWN_DATA()->pluginName = pluginFileName;
+        ENGINE_OWN_DATA()->pluginFilePath = filePath;
+        ENGINE_OWN_DATA()->logger.title = RemoveRealAllExtension(pluginFileName);
+
+        //绑定API
+        try {
+            BindAPIs(engine);
+        } catch (const Exception& e) {
+            logger.error("Fail in Binding APIs!\n");
+            throw;
+        }
+        //加载libs依赖库
+        try {
+            for (auto& [path, content] : depends) {
+                engine->eval(content, path);
+            }
+        } catch (const Exception& e) {
+            logger.error("Fail in Loading Dependence Lib!\n");
+            throw;
+        }
+
+        //加载脚本
+        try {
+            engine->eval(*scripts, ENGINE_OWN_DATA()->pluginFilePath);
+        } catch (const Exception& e) {
+            logger.error("Fail in Loading Script Plugin!\n");
+            throw;
+        }
+        std::string const& pluginName = ENGINE_OWN_DATA()->pluginName;
+        ExitEngineScope exit;
+
+        //后处理
+        if (!PluginManager::getPlugin(pluginName))
+            PluginManager::registerPlugin(filePath, pluginName, pluginName, LL::Version(1, 0, 0), {});
+
+        if (isHotLoad)
+            LLSECallEventsOnHotLoad(engine);
+        logger.info(pluginName + " loaded.");
+        return true;
+    } catch (const Exception& e) {
+        logger.error("Fail to load " + filePath + "!");
+        if (engine) {
+            EngineScope enter(engine);
+            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+            PrintException(e);
+            ExitEngineScope exit;
+
+            LLSERemoveTimeTaskData(engine);
+            LLSERemoveAllEventListeners(engine);
+            LLSERemoveCmdRegister(engine);
+            LLSERemoveCmdCallback(engine);
+            LLSERemoveAllExportedFuncs(engine);
+
+            engine->getData().reset();
+            EngineManager::unRegisterEngine(engine);
+        }
+        if (engine) {
+            engine->destroy();
+        }
+    } catch (const std::exception& e) {
         logger.error("Fail to load " + filePath + "!");
         logger.error(TextEncoding::toUTF8(e.what()));
-    }
-    catch (...)
-    {
+    } catch (...) {
         logger.error("Fail to load " + filePath + "!");
     }
     return false;
 }
+#endif
 
 //卸载插件
-bool PluginManager::unloadPlugin(const std::string& name)
-{
+bool PluginManager::unloadPlugin(const std::string& name) {
     if (name == LLSE_DEBUG_ENGINE_NAME)
         return false;
 
@@ -213,7 +288,11 @@ bool PluginManager::unloadPlugin(const std::string& name)
 
     PluginManager::unRegisterPlugin(name);
     Schedule::nextTick([engine]() {
+#if defined(SCRIPTX_LANG_NODEJS)
+        NodeJsHelper::stopEngine(engine);
+#else
         engine->destroy();
+#endif
     });
 
     logger.info(name + " unloaded.");
@@ -221,8 +300,7 @@ bool PluginManager::unloadPlugin(const std::string& name)
 }
 
 //重载插件
-bool PluginManager::reloadPlugin(const std::string& name)
-{
+bool PluginManager::reloadPlugin(const std::string& name) {
     if (name == LLSE_DEBUG_ENGINE_NAME)
         return true;
 
@@ -237,30 +315,25 @@ bool PluginManager::reloadPlugin(const std::string& name)
 }
 
 //重载全部插件
-bool PluginManager::reloadAllPlugins()
-{
+bool PluginManager::reloadAllPlugins() {
     auto pluginsList = PluginManager::getLocalPlugins();
     for (auto& plugin : pluginsList)
         reloadPlugin(plugin.second->name);
     return true;
 }
 
-LL::Plugin* PluginManager::getPlugin(std::string name)
-{
-    return LL::PluginManager::getPlugin(name,true);
+LL::Plugin* PluginManager::getPlugin(std::string name) {
+    return LL::PluginManager::getPlugin(name, true);
 }
 
 //获取当前语言的所有插件
-std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins()
-{
+std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins() {
     std::unordered_map<std::string, LL::Plugin*> res;
 
     auto engines = EngineManager::getLocalEngines();
-    for (auto& engine : engines)
-    {
+    for (auto& engine : engines) {
         string name = ENGINE_GET_DATA(engine)->pluginName;
-        if (name != LLSE_DEBUG_ENGINE_NAME)
-        {
+        if (name != LLSE_DEBUG_ENGINE_NAME) {
             LL::Plugin* plugin = PluginManager::getPlugin(name);
             if (plugin)
                 res[plugin->name] = plugin;
@@ -269,8 +342,7 @@ std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins()
     return res;
 }
 
-std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllScriptPlugins()
-{
+std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllScriptPlugins() {
     auto res = getAllPlugins();
     erase_if(res, [](auto& item) {
         return item.second->type != LL::Plugin::PluginType::ScriptPlugin;
@@ -279,20 +351,17 @@ std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllScriptPlugins(
 }
 
 // 获取所有的插件
-std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllPlugins()
-{
+std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllPlugins() {
     return LL::PluginManager::getAllPlugins();
 }
 
 bool PluginManager::registerPlugin(std::string filePath, std::string name, std::string desc,
-    LL::Version version, std::map<std::string, std::string> others)
-{
+                                   LL::Version version, std::map<std::string, std::string> others) {
     others["PluginType"] = "Script Plugin";
     others["PluginFilePath"] = filePath;
     return LL::PluginManager::registerPlugin(NULL, name, desc, version, others);
 }
 
-bool PluginManager::unRegisterPlugin(std::string name)
-{
+bool PluginManager::unRegisterPlugin(std::string name) {
     return LL::PluginManager::unRegisterPlugin(name);
 }

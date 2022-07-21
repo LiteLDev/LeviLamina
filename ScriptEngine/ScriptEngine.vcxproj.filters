@@ -170,6 +170,9 @@
     <ClCompile Include="API\SimulatedPlayerAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="NodeJsHelper.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -319,6 +322,9 @@
     <ClInclude Include="resource.h">
       <Filter>Resource</Filter>
     </ClInclude>
+    <ClInclude Include="NodeJsHelper.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="third-party\cpp-base64\lib\cpp-base64.lib">
@@ -364,6 +370,12 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="third-party\V8\lib\zlib.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\NodeJs\lib\libnode.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
