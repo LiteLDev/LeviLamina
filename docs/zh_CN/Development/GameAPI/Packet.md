@@ -102,6 +102,8 @@
 | writeUnsignedVarInt64   |  `Number` |
 | writeVarInt   |  `Number` |
 | writeVarInt64   |  `Number`  |
+| writeVec3   |  `FloatPos`  |
+| writeCompountTag   |  `NbtCompound`  |
 
 <br>
 

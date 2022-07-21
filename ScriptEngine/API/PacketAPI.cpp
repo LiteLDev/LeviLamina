@@ -404,9 +404,44 @@ Local<Value> BinaryStreamClass::writeVarInt64(const Arguments& args) {
 	CATCH("Fail in BinaryStream writeVarInt64!");
 }
 
-Local<Value> BinaryStreamClass::createPacket(const Arguments& args) {
+Local<Value> BinaryStreamClass::writeVec3(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    try {
+        BinaryStream* pkt = get();
+        if (!pkt) {
+            return Local<Value>();
+        }
+        if (!IsInstanceOf<FloatPos>(args[0])) {
+            LOG_WRONG_ARG_TYPE()
+            return Local<Value>();
+        }
+        FloatPos* posObj = FloatPos::extractPos(args[0]);
+        pkt->writeType<Vec3>(posObj->getVec3());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in BinaryStream writeVec3!");
+}
+
+Local<Value> BinaryStreamClass::writeCompoundTag(const Arguments& args){
+    CHECK_ARGS_COUNT(args, 1);
+    try {
+        BinaryStream* pkt = get();
+        if (!pkt) {
+            return Local<Value>();
+        }
+        auto nbt = NbtCompoundClass::extract(args[0]);
+        if (!nbt) {
+            LOG_WRONG_ARG_TYPE()
+            return Local<Value>();
+        }
+        pkt->writeCompoundTag(*nbt);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in BinaryStream writeCompoundTag!");
+}
+
+ Local<Value> BinaryStreamClass::createPacket(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
     try {
         BinaryStream* bs = get();
         if (!bs) {
@@ -417,5 +452,4 @@ Local<Value> BinaryStreamClass::createPacket(const Arguments& args) {
         return PacketClass::newPacket(pkt);
     }
     CATCH("Fail in BinaryStream createPacket!");
-
 }

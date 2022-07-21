@@ -102,6 +102,8 @@ Every binary stream object contains some member functions (member methods) that 
 | writeUnsignedVarInt64   |  `Number` |
 | writeVarInt   |  `Number` |
 | writeVarInt64   |  `Number`  |
+| writeVec3   |  `FloatPos`  |
+| writeCompountTag   |  `NbtCompound`  |
 
 <br>
 
