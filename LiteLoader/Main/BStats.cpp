@@ -5,7 +5,7 @@
 #include <EventAPI.h>
 #include <ScheduleAPI.h>
 #include <MC/PropertiesSettings.hpp>
-#include <LiteLoader/Header/ServerAPI.h>
+#include <ServerAPI.h>
 #include "Main/LiteLoader.h"
 #include <Utils/StringHelper.h>
 #include <MC/ServerNetworkHandler.hpp>

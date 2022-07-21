@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 project(LiteLoader)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
@@ -52,9 +52,19 @@ set_property(TARGET sqlitecpp PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE
 add_library(sqlite3 STATIC IMPORTED)
 set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/sqlite3.lib")
 add_library(base64 STATIC IMPORTED)
-set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Header/third-party/cpp-base64/lib/cpp-base64.lib")
+set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/cpp-base64/cpp-base64.lib")
+add_library(mysql STATIC IMPORTED)
+set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
 
-target_link_libraries(LiteLoader base64 sqlitecpp sqlite3
+target_link_libraries(LiteLoader PreLoader base64 sqlitecpp sqlite3 mysql
         "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib")
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
+        "${PROJECT_SOURCE_DIR}/x64/Release/PreLoader.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/SymDBHelper.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/dyncall/dyncall_s.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/dyncall/dyncallback_s.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/dyncall/dynload_s.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib")
