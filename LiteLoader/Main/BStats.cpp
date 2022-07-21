@@ -1,16 +1,16 @@
-﻿#include <Utils/NetworkHelper.h>
-#include <third-party/Nlohmann/json.hpp>
-#include <Utils/WinHelper.h>
-#include <Utils/DbgHelper.h>
+﻿#include "LiteLoader.h"
 #include <EventAPI.h>
 #include <ScheduleAPI.h>
-#include <MC/PropertiesSettings.hpp>
-#include <LiteLoader/Header/ServerAPI.h>
-#include "Main/LiteLoader.h"
+#include <ServerAPI.h>
+#include <Utils/WinHelper.h>
+#include <Utils/DbgHelper.h>
 #include <Utils/StringHelper.h>
-#include <MC/ServerNetworkHandler.hpp>
+#include <Utils/NetworkHelper.h>
 #include <MC/Level.hpp>
+#include <MC/PropertiesSettings.hpp>
+#include <MC/ServerNetworkHandler.hpp>
 #include <MC/ServerPlayer.hpp>
+#include <third-party/Nlohmann/json.hpp>
 
 #define BSTATJSON(key, val)                       \
     if (json.find(key) != json.end()) {           \
@@ -19,14 +19,6 @@
     }
 
 namespace regkey {
-
-wstring randStr(const int len) {
-    wstring str;
-    for (int i = 0; i < len; i++) {
-        str += (wchar_t)(rand() % 26 + 'a');
-    }
-    return str;
-}
 
 bool create(string UUID) {
     HKEY hRoot = HKEY_CURRENT_USER;
@@ -37,7 +29,7 @@ bool create(string UUID) {
     if (lRet != ERROR_SUCCESS)
         return false;
     auto uuid = str2wstr(UUID).c_str();
-    lRet = ::RegSetValueEx(hKey, randStr(8).c_str(), 0, REG_SZ, (BYTE*)uuid, sizeof(wchar_t) * (DWORD)(wcslen(uuid) + 1));
+    lRet = ::RegSetValueEx(hKey, uuid, 0, REG_SZ, nullptr, 0);
     if (lRet == ERROR_SUCCESS) {
     }
     ::RegCloseKey(hKey);
@@ -53,19 +45,17 @@ unordered_set<string> getAllValue() {
                                  REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &dwDisposition);
     if (lRet != ERROR_SUCCESS)
         return result;
+
+    // enum key from registry
     DWORD dwIndex = 0;
-    DWORD dwValueNameSize = MAX_PATH;
-    DWORD dwValueSize = MAX_PATH;
-    wchar_t* lpValueName = new wchar_t[dwValueNameSize];
-    wchar_t* lpValue = new wchar_t[dwValueSize];
-    while (::RegEnumValue(hKey, dwIndex, lpValueName, &dwValueNameSize, NULL, NULL, (LPBYTE)lpValue, &dwValueSize) == ERROR_SUCCESS) {
-        result.insert(wstr2str(lpValue));
-        dwValueNameSize = MAX_PATH;
-        dwValueSize = MAX_PATH;
+    DWORD dwNameSize = MAX_PATH;
+    wchar_t* lpName = new wchar_t[dwNameSize];
+    while (::RegEnumKey(hKey, dwIndex, lpName, dwNameSize) == ERROR_SUCCESS) {
+        result.insert(wstr2str(lpName));
+        dwNameSize = MAX_PATH;
         dwIndex++;
     }
-    delete[] lpValueName;
-    delete[] lpValue;
+    delete[] lpName;
     ::RegCloseKey(hKey);
     return result;
 }
@@ -159,8 +149,8 @@ void loadConfigFromJson(const std::string& fileName) {
         return;
     }
     auto json = nlohmann::json::parse(file, nullptr, true, true);
-    //file >> json;
-    //file.close();
+    // file >> json;
+    // file.close();
     initjson(json);
     writeConfig(fileName);
 }
@@ -334,4 +324,4 @@ void registerBStat() {
     }
 }
 
-} // namespace bsata
+} // namespace bstats
