@@ -47,6 +47,7 @@ module.exports = {
         'GameAPI/Device',
         'GameAPI/Server',
         'GameAPI/GameUtils',
+        'GameAPI/Packet',
         'EventAPI/Listen',
         'EventAPI/PlayerEvents',
         'EventAPI/EntityEvents',
@@ -109,6 +110,7 @@ module.exports = {
         'GameAPI/Device',
         'GameAPI/Server',
         'GameAPI/GameUtils',
+        'GameAPI/Packet',
         'EventAPI/Listen',
         'EventAPI/PlayerEvents',
         'EventAPI/EntityEvents',
@@ -142,7 +144,7 @@ module.exports = {
       '/zh_CN/': 'auto'
     },
     'locales': {
-      '/': {
+      '/en_US/': {
         selectText: 'Languages',
         label: 'English',
         ariaLabel: 'Languages',
@@ -169,6 +171,11 @@ module.exports = {
   },
   locales: {
     '/': {
+      lang: 'Home',
+      title: 'LiteLoaderBDS',
+      description: 'Documentation of LiteLoaderBDS',
+    },
+    '/en_US/': {
       lang: 'en-US',
       title: 'LiteLoaderBDS',
       description: 'Documentation of LiteLoaderBDS',

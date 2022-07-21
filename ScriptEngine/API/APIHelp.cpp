@@ -456,6 +456,7 @@ std::string ValueToJson(Local<Value> v, int formatIndent) {
     switch (v.getKind()) {
         case ValueKind::kString:
             result = "\"" + v.asString().toString() + "\"";
+            ReplaceStr(result, "\n", "\\n");
             break;
         case ValueKind::kNumber:
             if (CheckIsFloat(v)) {

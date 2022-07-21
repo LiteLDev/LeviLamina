@@ -1,32 +1,20 @@
 [HEADING=1][LiteLoader Release Note][/HEADING]
-LiteLoaderBDS-2.4.1更新已发布，适应于BDS-1.19.10，协议版本534
+LiteLoaderBDS-2.4.2更新已发布，适应于BDS-1.19.10，协议版本534
 
 [HEADING=1][新内容][/HEADING]
 [LIST]
-[*]LL API
-[LIST]
-[*]新增 Player::getLastPacketLoss, By @StarsDream00
-[*]新增事件 BlockPlacedByPlayerEvent, By @StarsDream00
-[*]FormUI中新增ModalForm,(#554) By @S3v3Nice
-[/LIST]
-[*]LLSE API
-[LIST]
-[*]新增 pl.lastDeathPos,(#551) By @StarsDream00
-[*]新增 pl.isLoading, By @StarsDream00
-[*]新增 dv.lastPacketLoss, By @StarsDream00
-[*]新增 dv.lastPing, By @StarsDream00
-[*]新增 dv.serverAddress, By @StarsDream00
-[*]新增 bl.destroy(drop), By @StarsDream00
-[*]新增事件 onExperienceAdd, By @StarsDream00
-[*]新增事件 onBedEnter, By @StarsDream00
-[*]新增事件 afterPlaceBlock, By @Redbeanw44602
-[/LIST]
+[*]添加内置broadcast bug修复 @Redbeanw44602
+[*]添加内置runningAutocompaction关闭开关 @Redbeanw44602
+[*]添加bStats @dreamguxiang
+[*]添加[ICODE]FormResponsePacketEvent[/ICODE] @S3v3Nice
+[*]为LLSE添加PacketAPI @dreamguxiang
 [/LIST]
 [HEADING=1][Bug修复][/HEADING]
 [LIST]
 [*]LL bugs:
 [LIST]
-[*]修复AntiGive部分情况下失效的问题, By @dreamguxiang
-[*]修复Vec3的一些问题, By @OEOTYAN
+[*]修复[ICODE]afterPlaceBlock[/ICODE] @Redbeanw44602
+[*]修复#577 @dreamguxiang
+[*]修复[ICODE]convertToColsole[/ICODE]的拼写 @S3v3Nice
 [/LIST]
 [/LIST]
