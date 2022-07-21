@@ -24,6 +24,7 @@
 #include <API/SystemAPI.h>
 #include <API/McAPI.h>
 #include <API/GameUtilsAPI.h>
+#include <API/PacketAPI.h>
 
 void BindAPIs(ScriptEngine* engine)
 {
@@ -79,7 +80,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<ItemClass>(ItemClassBuilder);
     engine->registerNativeClass<PlayerClass>(PlayerClassBuilder);
     engine->registerNativeClass<ObjectiveClass>(ObjectiveClassBuilder);
-    // engine->registerNativeClass<PacketClass>(PacketClassBuilder);
+    engine->registerNativeClass<PacketClass>(PacketClassBuilder);
     engine->registerNativeClass<NbtEndClass>(NbtEndClassBuilder);
     engine->registerNativeClass<NbtByteClass>(NbtByteClassBuilder);
     engine->registerNativeClass<NbtShortClass>(NbtShortClassBuilder);
@@ -97,4 +98,5 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpServerClass>(HttpServerClassBuilder);
     engine->registerNativeClass<HttpRequestClass>(HttpRequestClassBuilder);
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
+    engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
 }
