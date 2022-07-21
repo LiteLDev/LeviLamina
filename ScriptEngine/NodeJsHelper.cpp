@@ -13,7 +13,9 @@ std::unique_ptr<node::MultiIsolatePlatform> platform = nullptr;
 std::map<script::ScriptEngine*, node::Environment*> environments;
 
 bool initNodeJs() {
-    auto path = GetModulePath(GetCurrentModule());
+    WCHAR buf[MAX_PATH];
+    GetCurrentDirectory(MAX_PATH, buf);
+    auto path = wstr2str(buf) + "\\bedrock_server_mod.exe";
     char* cPath = const_cast<char*>(path.c_str());
     uv_setup_args(1, &cPath);
     args = {path};
@@ -21,10 +23,11 @@ bool initNodeJs() {
     auto exitCode = node::InitializeNodeWithArgs(&args, &exec_args, &errors);
     if (exitCode != 0) {
         logger.error("Failed to initialize node! NodeJs plugins won't be loaded");
+        return false;
     }
 
     using namespace v8;
-    platform = node::MultiIsolatePlatform::Create(std::thread::hardware_concurrency());
+    platform = node::MultiIsolatePlatform::Create(4);
     V8::InitializePlatform(platform.get());
     V8::Initialize();
     return nodeJsInited = true;

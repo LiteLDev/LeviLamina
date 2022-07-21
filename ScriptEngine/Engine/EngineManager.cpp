@@ -2,8 +2,6 @@
 #include "EngineOwnData.h"
 #include "GlobalShareData.h"
 #include "../NodeJsHelper.h"
-#include <node.h>
-#include <uv/uv.h>
 #include <Utils/STLHelper.h>
 #include <map>
 using namespace std;

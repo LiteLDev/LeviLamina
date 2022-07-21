@@ -34,7 +34,7 @@ string RemoveRealAllExtension(string fileName) {
 
 #if defined(SCRIPTX_LANG_NODEJS)
 bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool mustBeCurrentModule) {
-    auto& packageFilePath = std::filesystem::path(dirPath).append("package.json");
+    std::filesystem::path packageFilePath = std::filesystem::path(dirPath).append("package.json");
     if (!std::filesystem::exists(packageFilePath)) {
         return false;
     }
@@ -58,10 +58,6 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         }
 
         std::string entryPath = copy + "/" + entryFile;
-        // setData
-        ENGINE_OWN_DATA()->pluginName = pluginName;
-        ENGINE_OWN_DATA()->pluginFilePath = entryPath;
-        ENGINE_OWN_DATA()->logger.title = pluginName;
 
         auto mainScripts = ReadAllFile(entryPath);
         if (!mainScripts) {
@@ -69,6 +65,12 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         }
         auto&& [eng, setup] = NodeJsHelper::newEngine();
         engine = eng;
+
+        // setData
+        ENGINE_OWN_DATA()->pluginName = pluginName;
+        ENGINE_OWN_DATA()->pluginFilePath = entryPath;
+        ENGINE_OWN_DATA()->logger.title = pluginName;
+
         auto isolate = setup->isolate();
         auto env = setup->env();
         BindAPIs(engine);
@@ -127,6 +129,7 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
     } catch (...) {
         logger.error("Fail to load " + dirPath + "!");
     }
+    return false;
 }
 #else
 // 加载插件
