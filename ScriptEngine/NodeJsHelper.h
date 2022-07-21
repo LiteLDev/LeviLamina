@@ -2,7 +2,7 @@
 #if defined(SCRIPTX_LANG_NODEJS)
 #include <map>
 #include <node.h>
-#include <uv/uv.h>
+#include <uv/include/uv.h>
 #include <ScriptX/ScriptX.h>
 
 namespace NodeJsHelper {

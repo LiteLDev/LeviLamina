@@ -119,25 +119,6 @@
     <ClInclude Include="Loader.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="third-party\cpp-base64\lib\cpp-base64.lib" />
-    <Library Include="third-party\dyncall\lib\libdyncallback_s.lib" />
-    <Library Include="third-party\dyncall\lib\libdyncall_s.lib" />
-    <Library Include="third-party\dyncall\lib\libdynload_s.lib" />
-    <Library Include="third-party\LightWebSocketClient\lib\LightWSClient.lib" />
-    <Library Include="third-party\Lua\lib\lua.lib" />
-    <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib" />
-    <Library Include="third-party\NodeJs\lib\libnode.lib" />
-    <Library Include="third-party\openssl\libcrypto.lib" />
-    <Library Include="third-party\openssl\libssl.lib" />
-    <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib" />
-    <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib" />
-    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib" />
-    <Library Include="third-party\V8\lib\v8.lib" />
-    <Library Include="third-party\V8\lib\v8_libbase.lib" />
-    <Library Include="third-party\V8\lib\v8_libplatform.lib" />
-    <Library Include="third-party\V8\lib\zlib.lib" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="ScriptEngine.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -204,7 +185,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <TargetName>LiteLoader.NodeJs</TargetName>
-    <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(ProjectDir)third-party\V8\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\NodeJs\deps;$(ProjectDir)third-party\NodeJs\src;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(ProjectDir)third-party\V8\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">
     <ClCompile>
@@ -212,7 +193,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/Lua/trait/Trait;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/Lua/trait/Trait;SCRIPTX_LANG_LUA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -229,7 +210,6 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-Lua.lib;$(ProjectDir)third-party\Lua\lib\lua.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
@@ -259,7 +239,7 @@ LibraryBuilder.exe
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/V8/trait/Trait;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/V8/trait/Trait;SCRIPTX_LANG_V8JS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -276,7 +256,6 @@ LibraryBuilder.exe
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-Js.lib;$(ProjectDir)third-party\V8\lib\v8.lib;$(ProjectDir)third-party\V8\lib\v8_libbase.lib;$(ProjectDir)third-party\V8\lib\v8_libplatform.lib;$(ProjectDir)third-party\V8\lib\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
@@ -326,7 +305,6 @@ LibraryBuilder.exe
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-Js.lib;$(ProjectDir)third-party\V8\lib\v8.lib;$(ProjectDir)third-party\V8\lib\v8_libbase.lib;$(ProjectDir)third-party\V8\lib\v8_libplatform.lib;$(ProjectDir)third-party\V8\lib\zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
