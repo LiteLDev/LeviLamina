@@ -1,6 +1,6 @@
 # This CMakeLists just for loading symbols in clion
 cmake_minimum_required(VERSION 3.21)
-project(ScriptEngine.Js)
+project(LiteLoader.Js)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Release)
@@ -42,7 +42,7 @@ add_link_options(
         /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
 )
 
-add_library(ScriptEngine.Js SHARED ${SRC_FILES})
+add_library(LiteLoader.Js SHARED ${SRC_FILES})
 
 include_directories(${PROJECT_SOURCE_DIR}/..)
 include_directories(${PROJECT_SOURCE_DIR}/../..)
@@ -60,7 +60,7 @@ link_directories(${PROJECT_SOURCE_DIR}/../../x64/Release/)
 add_library(base64 STATIC IMPORTED)
 set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/../third-party/cpp-base64/lib/cpp-base64.lib")
 
-target_link_libraries(ScriptEngine.Js LiteLoader SymDBHelper base64
+target_link_libraries(LiteLoader.Js LiteLoader SymDBHelper base64
         "${PROJECT_SOURCE_DIR}/../third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/../third-party/openssl/libssl.lib"
         "${PROJECT_SOURCE_DIR}/../third-party/dyncall/lib/libdyncall_s.lib"
