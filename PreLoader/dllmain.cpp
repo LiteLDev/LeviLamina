@@ -3,6 +3,8 @@
 #include "Logger.h"
 void fixUpLibDir();
 void loadDlls();
+#pragma comment(lib, "detours/detours.lib")
+#pragma comment(lib, "Demangler.lib")
 #pragma comment(linker, "/export:GetServerSymbol=LLPreLoader.dlsym_real")
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
