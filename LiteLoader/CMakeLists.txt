@@ -56,7 +56,7 @@ set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib
 add_library(mysql STATIC IMPORTED)
 set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
 
-target_link_libraries(LiteLoader PreLoader base64 sqlitecpp sqlite3 mysql
+target_link_libraries(LiteLoader SymDBHelper PreLoader base64 sqlitecpp sqlite3 mysql
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
@@ -66,4 +66,6 @@ target_link_libraries(LiteLoader PreLoader base64 sqlitecpp sqlite3 mysql
         "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncallback_s.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dynload_s.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib")
+        "${PROJECT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib"
+        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
+        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib")
