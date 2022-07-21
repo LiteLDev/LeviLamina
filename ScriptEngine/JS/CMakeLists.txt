@@ -51,14 +51,14 @@ include_directories(${PROJECT_SOURCE_DIR}/../../LiteLoader/Header/third-party)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party/ScriptX/src/include/ScriptX)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party/ScriptX/src/include)
-include_directories(${PROJECT_SOURCE_DIR}/../third-party/Lua/include)
+include_directories(${PROJECT_SOURCE_DIR}/../third-party/V8/include)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party/gsl)
 
 link_directories(.)
 link_directories(${PROJECT_SOURCE_DIR}/../../x64/Release/)
 
 add_library(base64 STATIC IMPORTED)
-set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/../../third-party/cpp-base64/lib/cpp-base64.lib")
+set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/../third-party/cpp-base64/lib/cpp-base64.lib")
 
 target_link_libraries(ScriptEngine.Js LiteLoader SymDBHelper base64
         "${PROJECT_SOURCE_DIR}/../third-party/openssl/libcrypto.lib"
