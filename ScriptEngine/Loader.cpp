@@ -36,21 +36,21 @@ void LoadDepends()
         {
             try
             {
-                auto path = i.path().generic_u8string();
+                auto path = UTF82String(i.path().generic_u8string());
                 auto content = ReadAllFile(path);
                 if (!content)
                     throw("Fail to open plugin file!");
                 depends.emplace(path, *content);
-                logger.info("Dependence " + i.path().filename().u8string() + " loaded.");
+                logger.info("Dependence " + UTF82String(i.path().filename().u8string()) + " loaded.");
             }
             catch (std::exception e)
             {
-                logger.warn("Fail to load dependence " + i.path().filename().u8string() + ".");
+                logger.warn("Fail to load dependence " + UTF82String(i.path().filename().u8string()) + ".");
                 logger.warn(TextEncoding::toUTF8(e.what()));
             }
             catch (...)
             {
-                logger.warn("Fail to load dependence " + i.path().filename().u8string() + ".");
+                logger.warn("Fail to load dependence " + UTF82String(i.path().filename().u8string()) + ".");
             }
         }
     }
@@ -98,7 +98,7 @@ void LoadMain()
     {
         if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION)
         {
-            if (PluginManager::loadPlugin(i.path().generic_u8string()))
+            if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string())))
                 ++count;
         }
     }

@@ -28,6 +28,8 @@ LIAPI std::string FixCurlyBracket(std::string str);
 
 #if _HAS_CXX20
 LIAPI std::string UTF82String(std::u8string str);
+#else
+LIAPI std::string UTF82String(std::string str);
 #endif
 /**
  * @brief Integer to hex string.
