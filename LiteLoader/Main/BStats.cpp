@@ -261,7 +261,7 @@ void submitTask() {
         if (playerPlatList.find(OS) == playerPlatList.end()) {
             playerPlatList.emplace(OS, 1);
         } else {
-            playerPlatList.emplace(OS, playerPlatList[OS] + 1);
+            playerPlatList[OS] = playerPlatList[OS] + 1;
         }
     }
 
