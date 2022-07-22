@@ -4,9 +4,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-set(SCRIPTX_BACKEND V8)
+set(SCRIPTX_BACKEND QuickJs)
+set(CMAKE_CXX_STANDARD 20)
 
 project ("ScriptX-Build")
 
-include_directories(../include/V8)
+include_directories(../include/QuickJs)
 include(../ScriptX/CMakeLists.txt)

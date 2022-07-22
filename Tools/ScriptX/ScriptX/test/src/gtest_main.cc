@@ -18,6 +18,10 @@
 #include <iostream>
 #include "test.h"
 
+#ifdef __SANITIZE_ADDRESS__
+#include <sanitizer/lsan_interface.h>
+#endif
+
 namespace {
 class Logger : public script::Logger::Delegate {
  public:
@@ -49,7 +53,7 @@ void ScriptXTestFixture::SetUp() {
 #ifdef SCRIPTX_BACKEND_WEBASSEMBLY
   auto eng = script::ScriptEngineImpl::instance();
   script::ScriptEngineImpl::ignoreDestroyCall();
-  eng->unitTestResetRetistry();
+  eng->unitTestResetRegistry();
   engine = eng;
 #else
   engine = new script::ScriptEngineImpl();
@@ -73,6 +77,10 @@ void ScriptXTestFixture::SetUp() {
 
 void ScriptXTestFixture::TearDown() {
   if (engine) engine->destroy();
+
+#ifdef __SANITIZE_ADDRESS__
+  __lsan_do_leak_check();
+#endif
 }
 
 void ScriptXTestFixture::destroyEngine() {

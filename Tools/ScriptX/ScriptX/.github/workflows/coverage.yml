@@ -11,9 +11,9 @@ on:
       - 'docs/**'
 
 jobs:
-  coverage-mac-clang:
+  coverage-ubuntu-gcc:
     timeout-minutes: 30
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -22,13 +22,13 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
-          key: build-dependencies-macos
+          key: ScriptX-UnitTests-Depedencies-${{ hashFiles('test/cmake/**') }}
           path: |
             build/ScriptXTestLibs
             build/googletest-src
       - name: prepare lcov
         run: |
-          HOMEBREW_NO_AUTO_UPDATE=1 brew install lcov
+          sudo apt-get install -y lcov
       - name: Configure cmake
         env:
           SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
@@ -41,7 +41,7 @@ jobs:
       - name: Compile UnitTests
         run: |
           cd build
-          cmake --build . -j $(sysctl -n hw.ncpu) --target UnitTests
+          cmake --build . -j $(nproc) --target UnitTests
       - name: Run UnitTests
         run: |
           cd build && ./UnitTests
@@ -62,7 +62,7 @@ jobs:
 
   coverage-finish:
     timeout-minutes: 30
-    needs: coverage-mac-clang
+    needs: coverage-ubuntu-gcc
     runs-on: ubuntu-latest
     steps:
       - name: Coveralls Finished

@@ -35,4 +35,4 @@ target_link_libraries(UnitTests gtest
 
 # Include头文件
 
-ScriptX的所有内容都通过一个聚合的头文件 `<ScriptX/ScriptXh.h>` 暴露出来，使用者只需include这个头文件即可开箱即用。
+ScriptX的所有内容都通过一个聚合的头文件 `<ScriptX/ScriptX.h>` 暴露出来，使用者只需include这个头文件即可开箱即用。

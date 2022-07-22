@@ -149,7 +149,7 @@ void doFrame() {
 
 ### Message::tag
 
-有一点需要注意，因为部分backend允许多个ScriptEngine共享一个MessageQueue；所以当你使用该特性时，MessageQueue的Message有一个tag字段，用来区分这个Message属于哪个ScriptEngine，因此在postMessage的时候请指定tag，这样ScriptEngine在destory的时候会把到期没执行的Message全部release掉，并调用其release handler。（通过`messageQueue.removeMessageByTag(scriptEngine)`实现。)
+有一点需要注意，因为部分backend允许多个ScriptEngine共享一个MessageQueue；所以当你使用该特性时，MessageQueue的Message有一个tag字段，用来区分这个Message属于哪个ScriptEngine，因此在postMessage的时候请指定tag，这样ScriptEngine在destroy的时候会把到期没执行的Message全部release掉，并调用其release handler。（通过`messageQueue.removeMessageByTag(scriptEngine)`实现。)
 
 PS: 如果一个ScriptEngine只对应一个MessageQueue，则在ScriptEngine destroy的时候会析构掉MessageQueue，那么内部的**所有** Message 都将release，这种情况可以不设置tag字段。
 

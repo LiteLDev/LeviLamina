@@ -1300,7 +1300,7 @@ static ClassDefine<WasmScriptClassDestroyScriptClass> wasmScriptClassDestroyScri
         .constructor()
         .build();
 
-TEST_F(NativeTest, WasmScriptClassDestoryTest) {
+TEST_F(NativeTest, WasmScriptClassDestroyTest) {
   EngineScope scope(engine);
   engine->registerNativeClass(wasmScriptClassDestroyScriptClassDefine);
 

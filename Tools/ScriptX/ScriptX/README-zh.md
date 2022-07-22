@@ -125,11 +125,11 @@ ScriptX通过一系列的技术手段实现了脚本的异常和C++异常相互�
 
 ScriptX 设计的时候充分考虑到API的易用性，包括操作友好简单，不易出错，错误信息明显，便于定位问题等。在这样的指导思想之下ScriptX做了很多原生引擎做不了的事情。
 
-比如：V8在destory的时候是不执行GC的，导致很多绑定的native类不能释放。ScriptX做了额外的逻辑处理这个情况。
+比如：V8在destroy的时候是不执行GC的，导致很多绑定的native类不能释放。ScriptX做了额外的逻辑处理这个情况。
 
 V8和JSCore要求在finalize回调中不能调用ScriptX的其他API，否则会crash，这也导致代码逻辑很难实现。ScriptX借助MessageQueue完美规避这个问题。
 
-V8和JSCore的全局引用都必须在engine destory之前全部释放掉，否则就会引起crash、不能destory等问题。ScriptX则保证在Engine destory的时候主动reset所有 Global / Weak 引用。
+V8和JSCore的全局引用都必须在engine destroy之前全部释放掉，否则就会引起crash、不能destroy等问题。ScriptX则保证在Engine destroy的时候主动reset所有 Global / Weak 引用。
 
 ## 6. 简单高效的绑定API
 

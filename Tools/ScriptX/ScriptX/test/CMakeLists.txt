@@ -12,12 +12,10 @@ enable_testing()
 add_executable(UnitTests)
 include(cmake/TestEnv.cmake)
 
-if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    string(APPEND CMAKE_CXX_FLAGS_RELEASE " -O3 -flto")
-
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     if (TEST_FLAG_ENABLE_ASAN)
         # macOS doesn't support -fsanitize=memory
-        string(APPEND CMAKE_CXX_FLAGS_DEBUG
+        string(APPEND UNIT_TEST_ASAN_FLAGS
                 " -fsanitize=address"
                 " -fsanitize-recover=address"
                 " -fno-omit-frame-pointer")
@@ -26,14 +24,24 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     if (TEST_FLAG_ENABLE_UBSAN)
         # UBSan make UnitTests runs very slow
         # enable as need
-        string(APPEND CMAKE_CXX_FLAGS_DEBUG
+        string(APPEND UNIT_TEST_ASAN_FLAGS
                 " -fsanitize=undefined"
                 " -fsanitize-recover=undefined")
     endif ()
 
+    string(APPEND CMAKE_C_FLAGS ${UNIT_TEST_ASAN_FLAGS})
+    string(APPEND CMAKE_CXX_FLAGS ${UNIT_TEST_ASAN_FLAGS})
+    string(APPEND CMAKE_EXE_LINKER ${UNIT_TEST_ASAN_FLAGS})
+
     if (DEVOPS_ENABLE_COVERAGE)
         # devops support gcov only
-        string(APPEND CMAKE_CXX_FLAGS_DEBUG " --coverage -g3")
+        if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+            # for clang
+            string(APPEND CMAKE_CXX_FLAGS " --coverage")
+        else ()
+            # for gcc
+            string(APPEND CMAKE_CXX_FLAGS " -fprofile-arcs -ftest-coverage")
+        endif()
     endif ()
 endif ()
 
@@ -63,7 +71,9 @@ target_sources(UnitTests PRIVATE
         src/InteroperateTest.cc
         src/ExceptionTest.cc
         src/PressureTest.cc
-        src/EngineTest.cc)
+        src/EngineTest.cc
+        src/ShowCaseTest.cc
+        )
 
 ######## ScriptX config ##########
 
@@ -88,6 +98,7 @@ endif ()
 
 include_directories(${DEVOPS_LIBS_INCLUDE})
 target_link_libraries(ScriptX ${DEVOPS_LIBS_LIBPATH})
+target_compile_definitions(ScriptX PUBLIC ${DEVOPS_LIBS_MARCO})
 
 # if you want to close rtti feature for ScriptX and your project
 #target_compile_options(ScriptX PRIVATE -fno-rtti)

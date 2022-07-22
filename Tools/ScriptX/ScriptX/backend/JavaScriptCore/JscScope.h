@@ -29,8 +29,8 @@ class JscEngineScope {
   struct UnlockPrevious {
     JscEngine* previousEngine_;
 
-    explicit UnlockPrevious(JscEngine* currentEngine) : previousEngine_() {
-      UnlockPrevious_Ctor(currentEngine, *this);
+    explicit UnlockPrevious(JscEngine* currentEngine, JscEngine* previous) : previousEngine_() {
+      UnlockPrevious_Ctor(currentEngine, *this, previous);
     }
 
     ~UnlockPrevious() { UnlockPrevious_Dtor(*this); }
@@ -40,12 +40,12 @@ class JscEngineScope {
   std::lock_guard<std::recursive_mutex> lockGuard_;
 
  public:
-  explicit JscEngineScope(JscEngine&);
+  explicit JscEngineScope(JscEngine&, JscEngine*);
 
   ~JscEngineScope();
 
  private:
-  static void UnlockPrevious_Ctor(JscEngine* engine, UnlockPrevious&);
+  static void UnlockPrevious_Ctor(JscEngine* engine, UnlockPrevious&, JscEngine* previous);
 
   static void UnlockPrevious_Dtor(UnlockPrevious&);
 };
