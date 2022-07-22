@@ -41,15 +41,14 @@ EngineScope::EngineScope(EngineImpl* engine)
 static inline EngineScope*& currentScope() { return internal::getThreadLocal(current_); }
 
 EngineScope::EngineScope(EngineScope::InternalEnterEngine, EngineImpl* engine, bool needEnter)
-    : needEnter_(needEnter && engine != nullptr && engine != currentEngine()),
-      engineScopeImpl_(),
-      engine_(engine),
-      prev_(currentScope()) {
+    : needEnter_(false), engineScopeImpl_(), engine_(engine), prev_(currentScope()) {
+  auto currentEngine = prev_ != nullptr ? prev_->engine_ : nullptr;
+  needEnter_ = needEnter && engine != nullptr && engine != currentEngine;
   if (needEnter_) {
     if (engine->isDestroying()) {
       throw std::logic_error("enter EngineScope with a destroying ScriptEngine");
     }
-    engineScopeImpl_.emplace(*engine);
+    engineScopeImpl_.emplace(*engine, currentEngine);
   }
 
   currentScope() = this;
@@ -86,6 +85,7 @@ ScriptEngine& EngineScope::currentEngineChecked() {
 
 ExitEngineScope::ExitEngineScope()
     : exitEngineScopeImpl_(EngineScope::currentEngineAs<EngineImpl>()),
+      // enters to a null engine, so EngineScope::currentEngine() == nullptr
       nullEngineScope_(EngineScope::InternalEnterEngine{}, nullptr) {}
 
 ExitEngineScope::ExitEngineHolder::ExitEngineHolder(ExitEngineScope::EngineImpl* engine)

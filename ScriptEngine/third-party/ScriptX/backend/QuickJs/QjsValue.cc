@@ -173,10 +173,14 @@ Local<script::ByteBuffer> ByteBuffer::newByteBuffer(void* nativeBuffer, size_t s
 Local<ByteBuffer> ByteBuffer::newByteBuffer(std::shared_ptr<void> nativeBuffer, size_t size) {
   auto ptr = nativeBuffer.get();
   auto sharedPtrPtr = std::make_unique<std::shared_ptr<void>>(std::move(nativeBuffer));
+  auto opaque = sharedPtrPtr.get();
 
   auto ab = JS_NewArrayBuffer(
       qjs_backend::currentContext(), static_cast<uint8_t*>(ptr), size,
-      [](JSRuntime*, void* opaque, void* ptr) {}, sharedPtrPtr->get(), false);
+      [](JSRuntime*, void* opaque, void* /*ptr*/) {
+        delete static_cast<std::shared_ptr<void>*>(opaque);
+      },
+      opaque, false);
   qjs_backend::checkException(ab);
 
   sharedPtrPtr.release();  // NOLINT(bugprone-unused-return-value)
