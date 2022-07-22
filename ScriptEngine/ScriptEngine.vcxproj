@@ -124,12 +124,9 @@
     <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib" />
     <Library Include="third-party\openssl\libcrypto.lib" />
     <Library Include="third-party\openssl\libssl.lib" />
+    <Library Include="third-party\QuickJs\lib\quickjs.lib" />
     <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib" />
     <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib" />
-    <Library Include="third-party\V8\lib\v8.lib" />
-    <Library Include="third-party\V8\lib\v8_libbase.lib" />
-    <Library Include="third-party\V8\lib\v8_libplatform.lib" />
-    <Library Include="third-party\V8\lib\zlib.lib" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ScriptEngine.rc" />
@@ -253,7 +250,7 @@ LibraryBuilder.exe
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-QuickJs.lib;$(ProjectDir)third-party\QuickJs\lib\quickjs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-Js.lib;$(ProjectDir)third-party\QuickJs\lib\quickjs.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>

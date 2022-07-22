@@ -360,16 +360,7 @@
     <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\V8\lib\v8.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\V8\lib\v8_libbase.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\V8\lib\v8_libplatform.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="third-party\V8\lib\zlib.lib">
+    <Library Include="third-party\QuickJs\lib\quickjs.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
