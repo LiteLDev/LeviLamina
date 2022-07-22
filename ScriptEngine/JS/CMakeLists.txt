@@ -1,4 +1,3 @@
-# This CMakeLists just for loading symbols in clion
 cmake_minimum_required(VERSION 3.21)
 project(LiteLoader.Js)
 
