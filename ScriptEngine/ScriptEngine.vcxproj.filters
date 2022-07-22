@@ -375,6 +375,18 @@
     <Library Include="third-party\V8\lib\zlib.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="..\LiteLoader\Lib\bedrock_server_api.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\LiteLoader\Lib\bedrock_server_var.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\LiteLoader\Lib\LiteLoader.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\LiteLoader\Lib\SymDBHelper.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ScriptEngine.rc">

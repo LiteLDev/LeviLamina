@@ -261,7 +261,7 @@ void submitTask() {
         if (playerPlatList.find(OS) == playerPlatList.end()) {
             playerPlatList.emplace(OS, 1);
         } else {
-            playerPlatList.emplace(OS, playerPlatList[OS] + 1);
+            playerPlatList[OS] = playerPlatList[OS] + 1;
         }
     }
 
@@ -321,7 +321,7 @@ void registerBStat() {
             isOnlineAuth = Global<PropertiesSettings>->useOnlineAuthentication();
             long initialDelay = (long)((1000 * 60 * (3 + randomFloat() * 3)) / 50);
             long secondDelay = (long)((1000 * 60 * (randomFloat() * 30)) / 50);
-            Schedule::repeat(submitTask, initialDelay);
+            Schedule::delay(submitTask, initialDelay);
             Schedule::delayRepeat(submitTask, static_cast<unsigned long long>(initialDelay) + secondDelay, (1000 * 60 * 30) / 50);
             return true;
         });
