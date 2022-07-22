@@ -1,6 +1,6 @@
-﻿// #pragma comment(lib, "Lib/bedrock_server_api.lib")
-// #pragma comment(lib, "Lib/bedrock_server_var.lib")
-// #pragma comment(lib, "Lib/SymDBHelper.lib")
+﻿#pragma comment(lib, "Lib/bedrock_server_api.lib")
+#pragma comment(lib, "Lib/bedrock_server_var.lib")
+#pragma comment(lib, "Lib/SymDBHelper.lib")
 
 #pragma comment(linker, "/export:HookFunction=LLPreLoader.HookFunction")
 #pragma comment(linker, "/export:dlsym_real=LLPreLoader.dlsym_real")

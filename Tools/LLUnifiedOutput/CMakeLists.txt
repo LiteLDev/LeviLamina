@@ -6,7 +6,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/RELEASE/plugins/LiteLoader)
 
-add_definitions(-D"NDEBUG" -D"CUSTOMCONSOLEOUTPUT_EXPORTS" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"UNICODE" -D"NOMINMAX")
+add_definitions(-D"NDEBUG" -D"CUSTOMCONSOLEOUTPUT_EXPORTS" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"UNICODE")
 
 add_compile_options(
         /permissive- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl

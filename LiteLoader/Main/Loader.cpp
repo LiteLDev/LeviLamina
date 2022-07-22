@@ -15,7 +15,7 @@
 #include <I18nAPI.h>
 #include "Config.h"
 #include "Version.h"
-#include "../ScriptEngine/Configs.h"
+#include <ScriptEngine/Configs.h>
 
 using namespace std;
 

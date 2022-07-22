@@ -10,6 +10,9 @@ add_definitions(-D"NDEBUG" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"
 include_directories(${LiteLoader_SOURCE_DIR}/Header/)
 include_directories(${LiteLoader_SOURCE_DIR}/Header/third-party)
 
+link_directories(${LiteLoader_SOURCE_DIR}/Lib/third-party)
+link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
+
 add_compile_options(
         /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
         /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHsc /nologo /diagnostics:column
@@ -21,9 +24,7 @@ add_link_options(
 )
 
 link_directories(${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party)
-link_directories(${CMAKE_SOURCE_DIR}/LiteLoader/Lib)
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
-aux_source_directory(../LiteLoader/Lib/third-party/rawpdb DIR_LIB_SRCS)
-add_library(PreLoader SHARED dllmain.cpp SymDB.cpp PreLoader.cpp Utils.cpp ${DIR_LIB_SRCS})
+add_library(PreLoader SHARED dllmain.cpp SymDB.cpp PreLoader.cpp Utils.cpp)
 target_link_libraries(PreLoader SymDBHelper)

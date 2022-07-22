@@ -49,24 +49,13 @@ link_directories(${PROJECT_SOURCE_DIR}/../x64/Release/)
 add_library(LiteLoader SHARED ${SRC_FILES} Resource/LiteLoader.rc)
 
 add_library(sqlitecpp STATIC IMPORTED)
-set_property(TARGET sqlitecpp PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib")
+set_property(TARGET sqlitecpp PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib")
 add_library(sqlite3 STATIC IMPORTED)
-set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/sqlite3.lib")
+set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/sqlite3.lib")
 add_library(base64 STATIC IMPORTED)
-set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/cpp-base64/cpp-base64.lib")
-add_library(mysql STATIC IMPORTED)
-set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
+set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Header/third-party/cpp-base64/lib/cpp-base64.lib")
 
-target_link_libraries(LiteLoader SymDBHelper PreLoader base64 sqlitecpp sqlite3 mysql
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/SymDBHelper.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncall_s.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncallback_s.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dynload_s.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib")
+target_link_libraries(LiteLoader base64 sqlitecpp sqlite3
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib")

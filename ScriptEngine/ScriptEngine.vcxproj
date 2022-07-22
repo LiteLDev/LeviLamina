@@ -116,10 +116,6 @@
     <ClInclude Include="Loader.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\LiteLoader\Lib\bedrock_server_api.lib" />
-    <Library Include="..\LiteLoader\Lib\bedrock_server_var.lib" />
-    <Library Include="..\LiteLoader\Lib\LiteLoader.lib" />
-    <Library Include="..\LiteLoader\Lib\SymDBHelper.lib" />
     <Library Include="third-party\cpp-base64\lib\cpp-base64.lib" />
     <Library Include="third-party\dyncall\lib\libdyncallback_s.lib" />
     <Library Include="third-party\dyncall\lib\libdyncall_s.lib" />
