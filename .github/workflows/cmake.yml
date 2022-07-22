@@ -13,7 +13,9 @@ jobs:
     runs-on: windows-2022
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 0
 
       - name: Download Server
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -31,24 +33,37 @@ jobs:
           LibraryBuilder.exe Server
         shell: cmd
 
-      - name: Configure CMake(ClangCL)
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
+      - name: Change LITELOADER_VERSION_STATUS_BETA
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: false == startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
+          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
+          cat LiteLoader/Main/Version.h
+        shell: bash
 
-      - name: Build SymDBHelper
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target SymDBHelper
+      - name: Change LITELOADER_VERSION_STATUS_RELEASE
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/Main/Version.h
+          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
+        shell: bash
 
       - name: Configure CMake(MSVC)
-        run: |
-          rd /S /Q build
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T v143
+        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
         shell: cmd
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-      - name: Test
-        working-directory: ${{github.workspace}}/build
-        run: ctest -C ${{env.BUILD_TYPE}}
+      - name: Configure CMake(ClangCL)
+        run: |
+          rd /S /Q build
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
+
+      - name: Build SymDBHelper
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
       - name: Pack Release
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -57,21 +72,21 @@ jobs:
           ./PackRelease.cmd action
         shell: cmd
 
-      - name: Pack SDK
+      - name: Move PDB to path
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
-          cd Scripts
-          ./PackSDK.cmd action
-        shell: cmd
+          mkdir PDB
+          cp x64/Release/*.pdb PDB
+        shell: bash
 
       - name: Upload LiteLoader
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
           path: ${{ github.workspace }}\RELEASE\
 
-      - name: Upload LiteLoader SDK
-        uses: actions/upload-artifact@v2
+      - name: Upload PDB
+        uses: actions/upload-artifact@v3.1.0
         with:
-          name: LiteLoader-SDK
-          path: ${{ github.workspace }}\LiteLoader-SDK.zip
+          name: PDB
+          path: ${{ github.workspace }}\PDB
