@@ -67,17 +67,6 @@ class MessageQueueTaskRunner : public v8::TaskRunner {
 
   bool IdleTasksEnabled() override { return defaultTaskRunner_->IdleTasksEnabled(); }
 
-  void PostNonNestableTask(std::unique_ptr<v8::Task> task) override { PostTask(std::move(task)); }
-
-  void PostNonNestableDelayedTask(std::unique_ptr<v8::Task> task,
-                                  double delay_in_seconds) override {
-    PostDelayedTask(std::move(task), delay_in_seconds);
-  }
-
-  bool NonNestableTasksEnabled() const override { return true; }
-
-  bool NonNestableDelayedTasksEnabled() const override { return true; }
-
  private:
   void schedulePump() {
     bool expected = false;

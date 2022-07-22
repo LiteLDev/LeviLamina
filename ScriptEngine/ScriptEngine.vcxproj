@@ -185,7 +185,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <TargetName>LiteLoader.NodeJs</TargetName>
-    <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\NodeJs\deps;$(ProjectDir)third-party\NodeJs\src;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(ProjectDir)third-party\V8\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\NodeJs\include\v8;$(ProjectDir)third-party\NodeJs\include;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">
     <ClCompile>

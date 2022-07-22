@@ -46,8 +46,8 @@ StackFrameScopeImpl::~StackFrameScopeImpl() {
   }
 }
 
-EngineScopeImpl::EngineScopeImpl(LuaEngine &engine, LuaEngine *prevEngine)
-    : lockGuard_(engine.lock_), stack_(engine) {
+EngineScopeImpl::EngineScopeImpl(LuaEngine &engine) : lockGuard_(engine.lock_), stack_(engine) {
+  auto prevEngine = EngineScope::currentEngineAs<LuaEngine>();
   if (prevEngine && prevEngine != stack_.engine_) {
     prevEngine_ = prevEngine;
     prevEngine->lock_.unlock();

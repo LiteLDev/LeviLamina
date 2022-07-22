@@ -25,7 +25,7 @@ namespace template_backend {
 
 class EngineScopeImpl {
  public:
-  explicit EngineScopeImpl(TemplateEngine &, TemplateEngine *) {
+  explicit EngineScopeImpl(TemplateEngine &) {
     // enter engine;
   }
 

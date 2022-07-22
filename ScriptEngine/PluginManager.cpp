@@ -32,69 +32,34 @@ string RemoveRealAllExtension(string fileName) {
         return fileName.substr(0, pos);
 }
 
-#if defined(SCRIPTX_LANG_NODEJS)
+// 加载插件
 bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool mustBeCurrentModule) {
-    std::filesystem::path packageFilePath = std::filesystem::path(dirPath).append("package.json");
-    if (!std::filesystem::exists(packageFilePath)) {
+
+#if defined(SCRIPTX_LANG_NODEJS)
+    std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
+    if (entryPath.empty())
         return false;
-    }
+    std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
+
     ScriptEngine* engine = nullptr;
     node::Environment* env = nullptr;
     try {
-        std::fstream file(packageFilePath.u8string());
-        nlohmann::json j;
-        file >> j;
-        std::string entryFile = "index.js";
-        if (j.contains("main")) {
-            entryFile = j["main"].get<std::string>();
-        }
-        std::string copy = dirPath;
-        if (copy.back() == '/' || copy.back() == '\\') {
-            copy.pop_back();
-        }
-        std::string pluginName = std::filesystem::path(copy).filename().u8string();
-        if (j.contains("name")) {
-            pluginName = j["name"].get<std::string>();
-        }
-
-        std::string entryPath = copy + "/" + entryFile;
-
         auto mainScripts = ReadAllFile(entryPath);
         if (!mainScripts) {
             throw std::runtime_error("Fail to open entry script!");
         }
-        auto&& [eng, setup] = NodeJsHelper::newEngine();
-        engine = eng;
+        engine = EngineManager::newEngine();
 
-        // setData
-        ENGINE_OWN_DATA()->pluginName = pluginName;
-        ENGINE_OWN_DATA()->pluginFilePath = entryPath;
-        ENGINE_OWN_DATA()->logger.title = pluginName;
-
-        auto isolate = setup->isolate();
-        auto env = setup->env();
-        BindAPIs(engine);
-
-        v8::Locker locker(isolate);
-        v8::Isolate::Scope isolate_scope(isolate);
-        v8::HandleScope handle_scope(isolate);
-        // The v8::Context needs to be entered when node::CreateEnvironment() and
-        // node::LoadEnvironment() are being called.
-        v8::Context::Scope context_scope(setup->context());
-
-        v8::MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(
-            env,
-            ("const publicRequire ="
-             "  require('module').createRequire(process.cwd() + '/');"
-             "globalThis.require = publicRequire;" +
-             *mainScripts)
-                .c_str());
-
-        if (loadenv_ret.IsEmpty()) { // There has been a JS exception.
-            node::Stop(env);
-            return false;
+        {
+            EngineScope enter(engine);
+            // setData
+            ENGINE_OWN_DATA()->pluginName = pluginName;
+            ENGINE_OWN_DATA()->pluginFilePath = entryPath;
+            ENGINE_OWN_DATA()->logger.title = pluginName;
+            // bindAPIs
+            BindAPIs(engine);
         }
-        node::SpinEventLoop(env).FromMaybe(1);
+        NodeJsHelper::loadPluginCode(engine, entryPath);
 
         if (!PluginManager::getPlugin(pluginName)) {
             PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
@@ -132,10 +97,9 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         logger.error("Fail to load " + dirPath + "!");
     }
     return false;
-}
+
 #else
-// 加载插件
-bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule) {
+
     if (filePath == LLSE_DEBUG_ENGINE_NAME)
         return true;
 
@@ -270,8 +234,8 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         logger.error("Fail to load " + filePath + "!");
     }
     return false;
-}
 #endif
+}
 
 //卸载插件
 bool PluginManager::unloadPlugin(const std::string& name) {

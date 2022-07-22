@@ -25,7 +25,7 @@ Tracer::Delegate* Tracer::delegate_;
 void Tracer::setDelegate(Tracer::Delegate* d) {
   delegate_ = d;
   // use atomic to insert a memory barrier here.
-  std::atomic_thread_fence(std::memory_order_release);
+  std::atomic_int().store(0, std::memory_order_release);
 }
 
 Tracer::Tracer(ScriptEngine* engine, const char* traceName) noexcept : engine_(engine) {

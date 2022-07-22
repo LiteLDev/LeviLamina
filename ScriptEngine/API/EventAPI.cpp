@@ -1199,6 +1199,7 @@ inline bool CallTickEvent() {
 // 植入tick
 THook(void, "?tick@ServerLevel@@UEAAXXZ",
       void* _this) {
+#ifndef SCRIPTX_LANG_NODEJS
     try {
         std::list<ScriptEngine*> tmpList;
         {
@@ -1216,7 +1217,7 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
         logger.error("Error occurred in Engine Message Loop!");
         logger.error("Uncaught Exception Detected!");
     }
-
+#endif
     CallTickEvent();
     return original(_this);
 }

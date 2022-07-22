@@ -9,20 +9,16 @@
 #define LLSE_BACKEND_LUA "Lua"
 #define LLSE_BACKEND_NODEJS "NodeJs"
 
-#define LLSE_7Z_PATH "./plugins/LiteLoader/7z/7za.exe"
 #if defined(SCRIPTX_LANG_NODEJS)
-#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS
-#define LLSE_PLUGINPACK_EXTENSION ".ll.zip"
-#define LLSE_PLUGINS_EXTENSION ".js"
-#define LLSE_NODEJS_DIR "plugins/nodejs"
-#define LLSE_NODEJS_TEMP_DIR LLSE_NODEJS_DIR "/temp"
-#define LLSE_NODEJS_UNCOMPRESS_TIMEOUT 30000
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS
+	#define LLSE_PLUGINPACK_EXTENSION ".ll.zip"
+	#define LLSE_PLUGINS_EXTENSION ".js"
 #elif defined(SCRIPTX_LANG_JAVASCRIPT)
-#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS
-#define LLSE_PLUGINS_EXTENSION ".js"
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS
+	#define LLSE_PLUGINS_EXTENSION ".js"
 #elif defined(SCRIPTX_LANG_LUA)
-#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA
-#define LLSE_PLUGINS_EXTENSION ".lua"
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA
+	#define LLSE_PLUGINS_EXTENSION ".lua"
 #endif
 
 #define LLSE_VALID_BACKENDS std::set<std::string>({"Js", "Lua", "NodeJs"})
@@ -30,16 +26,22 @@
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()
 
 
+// NodeJs额外宏
+#define LLSE_NODEJS_DIR "plugins/nodejs"
+#define LLSE_NODEJS_TEMP_DIR LLSE_NODEJS_DIR "/temp"
+#define LLSE_NODEJS_UNCOMPRESS_TIMEOUT 30000
+
+
 // 插件注册信息
 #if defined(SCRIPTX_LANG_NODEJS)
-#define LLSE_LOADER_NAME "ScriptEngine-NodeJs"
-#define LLSE_LOADER_DESCRIPTION "Node.js ScriptEngine for LiteLoaderBDS"
+	#define LLSE_LOADER_NAME "ScriptEngine-NodeJs"
+	#define LLSE_LOADER_DESCRIPTION "Node.js ScriptEngine for LiteLoaderBDS"
 #elif defined(SCRIPTX_LANG_JAVASCRIPT)
-#define LLSE_LOADER_NAME "ScriptEngine-Js"
-#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine for LiteLoaderBDS"
+	#define LLSE_LOADER_NAME "ScriptEngine-Js"
+	#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine for LiteLoaderBDS"
 #elif defined(SCRIPTX_LANG_LUA)
-#define LLSE_LOADER_NAME "ScriptEngine-Lua"
-#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine for LiteLoaderBDS"
+	#define LLSE_LOADER_NAME "ScriptEngine-Lua"
+	#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine for LiteLoaderBDS"
 #endif
 
 #define LLSE_MODULE_TYPE LLSE_BACKEND_TYPE
@@ -70,3 +72,6 @@
 
 // 线程池
 #define LLSE_POOL_THREAD_COUNT 4
+
+// 其他
+#define LLSE_7Z_PATH "./plugins/LiteLoader/7z/7za.exe"

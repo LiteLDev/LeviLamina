@@ -22,7 +22,7 @@
 
 namespace script::v8_backend {
 
-V8EngineScope::V8EngineScope(V8Engine& engine, V8Engine*)
+V8EngineScope::V8EngineScope(V8Engine& engine)
     : locker_(engine.isolate_),
       isolateScope_(engine.isolate_),
       handleScope_(engine.isolate_),

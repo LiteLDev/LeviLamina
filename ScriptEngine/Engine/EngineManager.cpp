@@ -29,7 +29,7 @@ ScriptEngine* EngineManager::newEngine(string pluginName) {
     ScriptEngine* engine = nullptr;
 
 #if defined(SCRIPTX_LANG_NODEJS)
-    engine = NodeJsHelper::newEngine().first;
+    engine = NodeJsHelper::newEngine();
 #elif !defined(SCRIPTX_BACKEND_WEBASSEMBLY)
     engine = new ScriptEngineImpl();
 #else
@@ -37,7 +37,6 @@ ScriptEngine* EngineManager::newEngine(string pluginName) {
 #endif
 
     engine->setData(make_shared<EngineOwnData>());
-
     registerEngine(engine);
     if (!pluginName.empty()) {
         ENGINE_GET_DATA(engine)->pluginName = pluginName;

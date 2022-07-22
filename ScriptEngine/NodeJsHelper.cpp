@@ -3,6 +3,7 @@
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
+#include <uv/uv.h>
 
 namespace NodeJsHelper {
 
@@ -11,12 +12,13 @@ std::vector<std::string> args;
 std::vector<std::string> exec_args;
 std::unique_ptr<node::MultiIsolatePlatform> platform = nullptr;
 std::map<script::ScriptEngine*, node::Environment*> environments;
+std::map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> setups;
 
 bool initNodeJs() {
     WCHAR buf[MAX_PATH];
     GetCurrentDirectory(MAX_PATH, buf);
     auto path = wstr2str(buf) + "\\bedrock_server_mod.exe";
-    char* cPath = path.data();
+    char* cPath = (char*)path.c_str();
     uv_setup_args(1, &cPath);
     args = {path};
     std::vector<std::string> errors;
@@ -38,23 +40,31 @@ void shutdownNodeJs() {
     v8::V8::ShutdownPlatform();
 }
 
-std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> newEngine() {
+script::ScriptEngine* newEngine() {
     if (!nodeJsInited && !initNodeJs()) {
-        return {nullptr, nullptr};
+        return nullptr;
     }
     std::vector<std::string> errors;
     std::unique_ptr<node::CommonEnvironmentSetup> setup =
         node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args);
+    if (!setup) {
+        for (const std::string& err : errors)
+            logger.error("CommonEnvironmentSetup Error: {}", err.c_str());
+        return nullptr;
+    }
     v8::Isolate* isolate = setup->isolate();
     node::Environment* env = setup->env();
 
-    script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context());
+    v8::Locker locker(isolate);
+    v8::Isolate::Scope isolate_scope(isolate);
+    v8::HandleScope handle_scope(isolate);
+    v8::Context::Scope context_scope(setup->context());
+
+    script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context(), false);
+    
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
     environments.emplace(engine, env);
-
-    engine->setData(std::make_shared<EngineOwnData>());
-
-    EngineManager::registerEngine(engine);
+    setups.emplace(engine, std::move(setup));
 
     node::AddEnvironmentCleanupHook(
         isolate,
@@ -63,13 +73,57 @@ std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> 
             logger.debug("Destory ScriptEngine for node.js [{}]", arg);
         },
         engine);
-    return {engine, std::move(setup)};
+    return engine;
+}
+
+bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath)
+{
+    auto mainScripts = ReadAllFile(entryScriptPath);
+    if (!mainScripts) {
+        return false;
+    }
+
+    //find setup
+    auto it = setups.find(engine);
+    if (it == setups.end()) return false;
+
+    auto isolate = it->second->isolate();
+    auto env = it->second->env();
+
+    try
+    {
+        EngineScope enter(engine);
+
+        node::LoadEnvironment(env,
+            ("const publicRequire ="
+                "  require('module').createRequire(process.cwd() + '/');"
+                "globalThis.require = publicRequire;" +
+                *mainScripts)
+            .c_str());
+
+        //if (loadenv_ret.IsEmpty()) { 
+        //    node::Stop(env);
+        //    return false;
+        //}
+        node::SpinEventLoop(env).FromMaybe(1);
+        return true;
+    }
+    catch (...)
+    {
+        return false;
+    }
 }
 
 node::Environment* getEnvironmentOf(script::ScriptEngine* engine) {
     auto it = environments.find(engine);
     if (it == environments.end()) return nullptr;
     return it->second;
+}
+
+v8::Isolate* getIsolateOf(script::ScriptEngine* engine) {
+    auto it = setups.find(engine);
+    if (it == setups.end()) return nullptr;
+    return it->second->isolate();
 }
 
 int spinEventLoop(script::ScriptEngine* engine) {
@@ -90,7 +144,7 @@ int stopEngine(script::ScriptEngine* engine) {
     return node::Stop(env);
 }
 
-bool processPluginPack(const std::string& filePath) {
+bool deployPluginPack(const std::string& filePath) {
     if (!EndsWith(filePath, LLSE_PLUGINPACK_EXTENSION)) {
         return false;
     }
@@ -116,6 +170,59 @@ bool processPluginPack(const std::string& filePath) {
         std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest);
     }
     std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR);
+    return true;
+}
+
+std::string findEntryScript(const std::string& dirPath)
+{
+    auto dirPath_obj = std::filesystem::path(dirPath);
+
+    std::filesystem::path packageFilePath = dirPath_obj / "package.json";
+    if (!std::filesystem::exists(packageFilePath))
+        return "";
+
+    try {
+        std::ifstream file(packageFilePath.make_preferred().u8string());
+        nlohmann::json j;
+        file >> j;
+        std::string entryFile = "index.js";
+        if (j.contains("main")) {
+            entryFile = j["main"].get<std::string>();
+        }
+        auto entryPath = dirPath_obj / std::filesystem::path(entryFile);
+        if (!std::filesystem::exists(entryPath))
+            return "";
+        else
+            return entryPath.u8string();
+    }
+    catch (...)
+    {
+        return "";
+    }
+}
+
+std::string getPluginPackageName(const std::string& dirPath)
+{
+    auto dirPath_obj = std::filesystem::path(dirPath);
+
+    std::filesystem::path packageFilePath = dirPath_obj / std::filesystem::path("package.json");
+    if (!std::filesystem::exists(packageFilePath))
+        return "";
+
+    try {
+        std::ifstream file(packageFilePath.make_preferred().u8string());
+        nlohmann::json j;
+        file >> j;
+        std::string packageName = "";
+        if (j.contains("name")) {
+            packageName = j["name"].get<std::string>();
+        }
+        return packageName;
+    }
+    catch (...)
+    {
+        return "";
+    }
 }
 
 } // namespace NodeJsHelper

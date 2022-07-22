@@ -29,54 +29,10 @@ bool globalDebug = false;
 extern void BindAPIs(ScriptEngine *engine);
 
 
-
-#if defined(SCRIPTX_LANG_NODEJS)
 // 预加载依赖库
 void LoadDepends() {
-}
-
-// 加载调试引擎
-void LoadDebugEngine() {
-}
-
-// 主加载
-void LoadMain() {
-    logger.info("Loading plugins...");
-    Sleep(10000);
-    int installCount = 0;
-    int count = 0;
-    std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
-    for (auto& i : files) {
-        if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
-            logger.info("Found Node.js plugin pack \"{}\"! Try installing...", i.path().u8string());
-            if (!NodeJsHelper::processPluginPack(i.path().u8string())) {
-                logger.error("Failed to install plugin pack {}, please check your package.json file");
-            }
-            ++installCount;
-        }
-    }
-    logger.info("{} Node.js plugin packs installed in all", installCount);
-    if (!std::filesystem::exists(LLSE_NODEJS_DIR)) {
-        std::filesystem::create_directories(LLSE_NODEJS_DIR);
-    }
-    files = std::filesystem::directory_iterator(LLSE_NODEJS_DIR);
-    for (auto& i : files) {
-        if (i.is_directory() && i.path().filename() != "temp") {
-            std::filesystem::path pth = i.path();
-            if (std::filesystem::exists(pth.append("package.json"))) {
-                if (PluginManager::loadPlugin(i.path().u8string())) {
-                    ++count;
-                }
-            } else {
-                logger.warn("No package.json file found in directory {}, ignored.");
-            }
-        }
-    }
-    logger.info("{} Node.js plugins loaded in all.", count);
-}
-#else
-// 预加载依赖库
-void LoadDepends() {
+    ////////////////////////////// !!!Need to be recover!!! //////////////////////////////
+#ifndef SCRIPTX_LANG_NODEJS
     std::filesystem::directory_iterator deps(LLSE_DEPENDS_DIR);
     for (auto& i : deps) {
         if (i.is_regular_file() && i.path().filename() == string("BaseLib") + LLSE_PLUGINS_EXTENSION) {
@@ -95,10 +51,13 @@ void LoadDepends() {
             }
         }
     }
+#endif
 }
 
 // 加载调试引擎
 void LoadDebugEngine() {
+    ////////////////////////////// !!!Need to be recover!!! //////////////////////////////
+#ifndef SCRIPTX_LANG_NODEJS
     // 启动引擎
     debugEngine = EngineManager::newEngine(LLSE_DEBUG_ENGINE_NAME);
     EngineScope enter(debugEngine);
@@ -120,11 +79,14 @@ void LoadDebugEngine() {
         logger.error("Fail in Loading Dependence Lib!\n");
         throw;
     }
+#endif
 }
 
 // 主加载
 void LoadMain()
 {
+    ////////////////////////////// !!!Need to be recover!!! //////////////////////////////
+#ifndef SCRIPTX_LANG_NODEJS
     logger.info("Loading plugins...");
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
@@ -137,5 +99,41 @@ void LoadMain()
         }
     }
     logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugins loaded in all.");
-}
+
+#else
+
+    logger.info("Loading plugins...");
+    int installCount = 0;
+    int count = 0;
+    std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
+    for (auto& i : files) {
+        if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
+            logger.info("Found Node.js plugin pack \"{}\"! Try installing...", i.path().u8string());
+            if (!NodeJsHelper::deployPluginPack(i.path().u8string())) {
+                logger.error("Failed to install plugin pack {}, please check your package.json file");
+            }
+            ++installCount;
+        }
+    }
+    logger.info("{} Node.js plugin packs installed in all", installCount);
+    if (!std::filesystem::exists(LLSE_NODEJS_DIR)) {
+        std::filesystem::create_directories(LLSE_NODEJS_DIR);
+    }
+    files = std::filesystem::directory_iterator(LLSE_NODEJS_DIR);
+    for (auto& i : files) {
+        if (i.is_directory() && i.path().filename() != "temp") {
+            std::filesystem::path pth = i.path();
+            if (std::filesystem::exists(pth / "package.json")) {
+                if (PluginManager::loadPlugin(i.path().u8string())) {
+                    ++count;
+                }
+            }
+            else {
+                logger.warn("No package.json file found in directory {}, ignored.");
+            }
+        }
+    }
+    logger.info("{} Node.js plugins loaded in all.", count);
+
 #endif
+}
