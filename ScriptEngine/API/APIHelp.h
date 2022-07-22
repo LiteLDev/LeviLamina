@@ -34,6 +34,7 @@ using script::ValueKind;
 // 输出异常信息
 inline void PrintException(const script::Exception& e) {
     ostringstream sout;
+    sout << "script::Exception ";
     sout << e;
     logger.error(sout.str());
 }
@@ -86,7 +87,7 @@ bool inline IsInstanceOf(Local<Value> v) {
 
 // 截获引擎异常
 #define CATCH(LOG)                                                   \
-    catch (const Exception& e) {                                     \
+    catch (const script::Exception& e) {                             \
         logger.error(LOG##"\n");                                     \
         PrintException(e);                                           \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \

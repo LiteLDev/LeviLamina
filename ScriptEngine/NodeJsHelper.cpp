@@ -45,10 +45,21 @@ std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> 
     std::vector<std::string> errors;
     std::unique_ptr<node::CommonEnvironmentSetup> setup =
         node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args);
+    if (!setup) {
+        for (const std::string& err : errors)
+            logger.error("CommonEnvironmentSetup Error: {}", err.c_str());
+        return {nullptr, nullptr};
+    }
     v8::Isolate* isolate = setup->isolate();
     node::Environment* env = setup->env();
 
+    v8::Locker locker(isolate);
+    v8::Isolate::Scope isolate_scope(isolate);
+    v8::HandleScope handle_scope(isolate);
+    v8::Context::Scope context_scope(setup->context());
+
     script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context());
+    
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
     environments.emplace(engine, env);
 

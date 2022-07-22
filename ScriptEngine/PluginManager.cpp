@@ -73,7 +73,6 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
 
         auto isolate = setup->isolate();
         auto env = setup->env();
-        BindAPIs(engine);
 
         v8::Locker locker(isolate);
         v8::Isolate::Scope isolate_scope(isolate);
@@ -82,7 +81,9 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         // node::LoadEnvironment() are being called.
         v8::Context::Scope context_scope(setup->context());
 
-        v8::MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(
+        BindAPIs(engine);
+
+        /*v8::MaybeLocal<v8::Value> loadenv_ret = */node::LoadEnvironment(
             env,
             ("const publicRequire ="
              "  require('module').createRequire(process.cwd() + '/');"
@@ -90,10 +91,10 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
              *mainScripts)
                 .c_str());
 
-        if (loadenv_ret.IsEmpty()) { // There has been a JS exception.
-            node::Stop(env);
-            return false;
-        }
+        //if (loadenv_ret.IsEmpty()) { // There has been a JS exception.
+        //    node::Stop(env);
+        //    return false;
+        //}
         node::SpinEventLoop(env).FromMaybe(1);
 
         if (!PluginManager::getPlugin(pluginName)) {
