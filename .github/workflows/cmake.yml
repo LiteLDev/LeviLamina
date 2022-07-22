@@ -52,7 +52,6 @@ jobs:
 
       - name: Configure CMake(MSVC)
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-        shell: cmd
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -61,6 +60,7 @@ jobs:
         run: |
           rd /S /Q build
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
+        shell: cmd
 
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target SymDBHelper
