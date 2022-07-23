@@ -34,68 +34,30 @@ string RemoveRealAllExtension(string fileName) {
 
 #if defined(SCRIPTX_LANG_NODEJS)
 bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool mustBeCurrentModule) {
-    std::filesystem::path packageFilePath = std::filesystem::path(dirPath).append("package.json");
-    if (!std::filesystem::exists(packageFilePath)) {
+    std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
+    if (entryPath.empty())
         return false;
-    }
+    std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
+
     ScriptEngine* engine = nullptr;
     node::Environment* env = nullptr;
     try {
-        std::fstream file(packageFilePath.u8string());
-        nlohmann::json j;
-        file >> j;
-        std::string entryFile = "index.js";
-        if (j.contains("main")) {
-            entryFile = j["main"].get<std::string>();
-        }
-        std::string copy = dirPath;
-        if (copy.back() == '/' || copy.back() == '\\') {
-            copy.pop_back();
-        }
-        std::string pluginName = std::filesystem::path(copy).filename().u8string();
-        if (j.contains("name")) {
-            pluginName = j["name"].get<std::string>();
-        }
-
-        std::string entryPath = copy + "/" + entryFile;
-
         auto mainScripts = ReadAllFile(entryPath);
         if (!mainScripts) {
             throw std::runtime_error("Fail to open entry script!");
         }
-        auto&& [eng, setup] = NodeJsHelper::newEngine();
-        engine = eng;
+        engine = NodeJsHelper::newEngine();
 
-        // setData
-        ENGINE_OWN_DATA()->pluginName = pluginName;
-        ENGINE_OWN_DATA()->pluginFilePath = entryPath;
-        ENGINE_OWN_DATA()->logger.title = pluginName;
-
-        auto isolate = setup->isolate();
-        auto env = setup->env();
-
-        v8::Locker locker(isolate);
-        v8::Isolate::Scope isolate_scope(isolate);
-        v8::HandleScope handle_scope(isolate);
-        // The v8::Context needs to be entered when node::CreateEnvironment() and
-        // node::LoadEnvironment() are being called.
-        v8::Context::Scope context_scope(setup->context());
-
-        BindAPIs(engine);
-
-        /*v8::MaybeLocal<v8::Value> loadenv_ret = */node::LoadEnvironment(
-            env,
-            ("const publicRequire ="
-             "  require('module').createRequire(process.cwd() + '/');"
-             "globalThis.require = publicRequire;" +
-             *mainScripts)
-                .c_str());
-
-        //if (loadenv_ret.IsEmpty()) { // There has been a JS exception.
-        //    node::Stop(env);
-        //    return false;
-        //}
-        node::SpinEventLoop(env).FromMaybe(1);
+        {
+            EngineScope enter(engine);
+            // setData
+            ENGINE_OWN_DATA()->pluginName = pluginName;
+            ENGINE_OWN_DATA()->pluginFilePath = entryPath;
+            ENGINE_OWN_DATA()->logger.title = pluginName;
+            // bindAPIs
+            BindAPIs(engine);
+        }
+        NodeJsHelper::loadPluginCode(engine, entryPath);
 
         if (!PluginManager::getPlugin(pluginName)) {
             PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});

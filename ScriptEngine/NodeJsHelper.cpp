@@ -3,6 +3,7 @@
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
+#include <uv/uv.h>
 
 namespace NodeJsHelper {
 
@@ -54,19 +55,16 @@ script::ScriptEngine* newEngine() {
     v8::Isolate* isolate = setup->isolate();
     node::Environment* env = setup->env();
 
-    v8::Locker locker(isolate);
-    v8::Isolate::Scope isolate_scope(isolate);
-    v8::HandleScope handle_scope(isolate);
-    v8::Context::Scope context_scope(setup->context());
+    //v8::Locker locker(isolate);
+    //v8::Isolate::Scope isolate_scope(isolate);
+    //v8::HandleScope handle_scope(isolate);
+    //v8::Context::Scope context_scope(setup->context());
 
     script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context());
     
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
     environments.emplace(engine, env);
     setups.emplace(engine, std::move(setup));
-
-    //engine->setData(std::make_shared<EngineOwnData>());
-    //EngineManager::registerEngine(engine);
 
     node::AddEnvironmentCleanupHook(
         isolate,
@@ -78,10 +76,61 @@ script::ScriptEngine* newEngine() {
     return engine;
 }
 
+bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath)
+{
+    auto mainScripts = ReadAllFile(entryScriptPath);
+    if (!mainScripts) {
+        return false;
+    }
+
+    //find setup
+    auto it = setups.find(engine);
+    if (it == setups.end()) return false;
+
+    auto isolate = it->second->isolate();
+    auto env = it->second->env();
+    auto context = it->second->context();
+
+    try
+    {
+        v8::Locker locker(isolate);
+        v8::Isolate::Scope isolate_scope(isolate);
+        v8::HandleScope handle_scope(isolate);
+        // The v8::Context needs to be entered when node::CreateEnvironment() and
+        // node::LoadEnvironment() are being called.
+        v8::Context::Scope context_scope(context);
+
+        /*v8::MaybeLocal<v8::Value> loadenv_ret = */node::LoadEnvironment(
+            env,
+            ("const publicRequire ="
+                "  require('module').createRequire(process.cwd() + '/');"
+                "globalThis.require = publicRequire;" +
+                *mainScripts)
+            .c_str());
+
+        //if (loadenv_ret.IsEmpty()) { // There has been a JS exception.
+        //    node::Stop(env);
+        //    return false;
+        //}
+        node::SpinEventLoop(env).FromMaybe(1);
+        return true;
+    }
+    catch (...)
+    {
+        return false;
+    }
+}
+
 node::Environment* getEnvironmentOf(script::ScriptEngine* engine) {
     auto it = environments.find(engine);
     if (it == environments.end()) return nullptr;
     return it->second;
+}
+
+v8::Isolate* getIsolateOf(script::ScriptEngine* engine) {
+    auto it = setups.find(engine);
+    if (it == setups.end()) return nullptr;
+    return it->second->isolate();
 }
 
 int spinEventLoop(script::ScriptEngine* engine) {
@@ -102,7 +151,7 @@ int stopEngine(script::ScriptEngine* engine) {
     return node::Stop(env);
 }
 
-bool processPluginPack(const std::string& filePath) {
+bool deployPluginPack(const std::string& filePath) {
     if (!EndsWith(filePath, LLSE_PLUGINPACK_EXTENSION)) {
         return false;
     }
@@ -128,6 +177,58 @@ bool processPluginPack(const std::string& filePath) {
         std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest);
     }
     std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR);
+}
+
+std::string findEntryScript(const std::string& dirPath)
+{
+    auto dirPath_obj = std::filesystem::path(dirPath);
+
+    std::filesystem::path packageFilePath = dirPath_obj / "package.json";
+    if (!std::filesystem::exists(packageFilePath))
+        return "";
+
+    try {
+        std::fstream file(packageFilePath.u8string());
+        nlohmann::json j;
+        file >> j;
+        std::string entryFile = "index.js";
+        if (j.contains("main")) {
+            entryFile = j["main"].get<std::string>();
+        }
+        auto entryPath = dirPath_obj / std::filesystem::path(entryFile);
+        if (!std::filesystem::exists(entryPath))
+            return "";
+        else
+            return entryPath.u8string();
+    }
+    catch (...)
+    {
+        return "";
+    }
+}
+
+std::string getPluginPackageName(const std::string& dirPath)
+{
+    auto dirPath_obj = std::filesystem::path(dirPath);
+
+    std::filesystem::path packageFilePath = dirPath_obj / std::filesystem::path("package.json");
+    if (!std::filesystem::exists(packageFilePath))
+        return "";
+
+    try {
+        std::fstream file(packageFilePath.u8string());
+        nlohmann::json j;
+        file >> j;
+        std::string packageName = "";
+        if (j.contains("name")) {
+            packageName = j["name"].get<std::string>();
+        }
+        return packageName;
+    }
+    catch (...)
+    {
+        return "";
+    }
 }
 
 } // namespace NodeJsHelper

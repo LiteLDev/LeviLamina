@@ -37,7 +37,6 @@ ScriptEngine* EngineManager::newEngine(string pluginName) {
 #endif
 
     engine->setData(make_shared<EngineOwnData>());
-
     registerEngine(engine);
     if (!pluginName.empty()) {
         ENGINE_GET_DATA(engine)->pluginName = pluginName;
