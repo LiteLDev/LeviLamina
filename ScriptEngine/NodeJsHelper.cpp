@@ -6,7 +6,7 @@
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
-#include <uv/uv.h>
+#include <uv/include/uv.h>
 
 namespace NodeJsHelper {
 

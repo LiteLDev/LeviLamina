@@ -1,7 +1,7 @@
 #pragma once
 #if defined(SCRIPTX_LANG_NODEJS)
 #include <map>
-#include <node.h>
+#include <NodeJs/src/node.h>
 #include <ScriptX/ScriptX.h>
 
 namespace NodeJsHelper {

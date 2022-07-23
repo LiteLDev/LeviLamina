@@ -27,7 +27,7 @@ class WasmEngineScope {
   int stackTop_;
 
  public:
-  explicit WasmEngineScope(WasmEngine &);
+  explicit WasmEngineScope(WasmEngine &, WasmEngine *);
 
   ~WasmEngineScope() {
     // restore stack top
