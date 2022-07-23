@@ -17,7 +17,7 @@ bool initNodeJs() {
     WCHAR buf[MAX_PATH];
     GetCurrentDirectory(MAX_PATH, buf);
     auto path = wstr2str(buf) + "\\bedrock_server_mod.exe";
-    char* cPath = path.data();
+    char* cPath = (char*)path.c_str();
     uv_setup_args(1, &cPath);
     args = {path};
     std::vector<std::string> errors;
