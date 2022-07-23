@@ -311,7 +311,7 @@ float randomFloat() {
     return dis(gen);
 }
 
-void registerBStat() {
+void registerBStats() {
     configInit();
     if (bstatsSettings::enable) {
         Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {

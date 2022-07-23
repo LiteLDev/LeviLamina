@@ -169,7 +169,7 @@ void CheckProtocolVersion() {
 // extern
 extern void EndScheduleSystem();
 namespace bstats {
-    void registerBStat();
+    void registerBStats();
 }
 
 void LLMain() {
@@ -240,7 +240,7 @@ void LLMain() {
     RegisterSimpleServerLogger();
 
     //Register BStats
-    bstats::registerBStat();
+    bstats::registerBStats();
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
