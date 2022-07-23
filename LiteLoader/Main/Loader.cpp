@@ -153,17 +153,6 @@ void LL::LoadMain() {
             continue;
         filesystem::path path = file.path();
 
-        auto strPath = UTF82String(path.u8string());
-        if (strPath.find("LiteLoader") != string::npos || strPath.find("LiteXLoader") != string::npos) // Skip Wrong file path
-            continue;
-
-        // LLMoney load check
-        if (strPath.find("LLMoney.dll") != string::npos) {
-            if (!globalConfig.enableEconomyCore) {
-                continue;
-            }
-        }
-
         // Process Shell link file
         string ext = UTF82String(path.extension().u8string());
         bool isShellLink = false;
@@ -175,6 +164,22 @@ void LL::LoadMain() {
                 continue;
             ext = UTF82String(path.extension().u8string());
             isShellLink = true;
+        }
+
+        // Check is dll
+        if (ext != ".dll")
+            continue;
+
+        // Skip Wrong file path
+        auto strPath = UTF82String(path.u8string());
+        if (strPath.find("LiteLoader") != string::npos || strPath.find("LiteXLoader") != string::npos)
+            continue;
+
+        // LLMoney load check
+        if (strPath.find("LLMoney.dll") != string::npos) {
+            if (!globalConfig.enableEconomyCore) {
+                continue;
+            }
         }
 
         // Avoid preloaded plugin
