@@ -78,6 +78,7 @@ bool IsExistScriptPlugin()
                 return true;
         }
     }
+    return false;
 }
 
 bool IsExistNodeJsPlugin()
