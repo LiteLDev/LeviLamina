@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(PreLoader)
+project(LLPreLoader)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Release)
@@ -25,5 +25,5 @@ link_directories(${CMAKE_SOURCE_DIR}/LiteLoader/Lib)
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 aux_source_directory(../LiteLoader/Lib/third-party/rawpdb DIR_LIB_SRCS)
-add_library(PreLoader SHARED dllmain.cpp SymDB.cpp PreLoader.cpp Utils.cpp ${DIR_LIB_SRCS})
-target_link_libraries(PreLoader SymDBHelper)
+add_library(LLPreLoader SHARED dllmain.cpp SymDB.cpp PreLoader.cpp Utils.cpp ${DIR_LIB_SRCS})
+target_link_libraries(LLPreLoader SymDBHelper)

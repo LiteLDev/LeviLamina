@@ -311,15 +311,34 @@ float randomFloat() {
     return dis(gen);
 }
 
-void registerBStats() {
+void scheduleThread() {
+    long initialDelay = (long)(1000 * 60 * (3 + randomFloat() * 3));
+    long secondDelay = (long)(1000 * 60 * (randomFloat() * 30));
+    std::thread schedule([](long initialDelay) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(initialDelay));
+        Schedule::nextTick(submitTask);
+        }, initialDelay);
+        schedule.detach();
+    std::thread scheduleAtFixedRate([](long initialDelay, long secondDelay) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000 * 60 * 30));
+        while ( true ) {
+            Schedule::nextTick(submitTask);
+            std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<unsigned long long>(initialDelay) + static_cast<unsigned long long>(secondDelay)));
+        }
+        }, initialDelay, secondDelay);
+        scheduleAtFixedRate.detach();
+}
+
+void registerBStat() {
     configInit();
     if (bstatsSettings::enable) {
         Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
             isOnlineAuth = Global<PropertiesSettings>->useOnlineAuthentication();
-            long initialDelay = (long)((1000 * 60 * (3 + randomFloat() * 3)) / 50);
-            long secondDelay = (long)((1000 * 60 * (randomFloat() * 30)) / 50);
-            Schedule::delay(submitTask, initialDelay);
-            Schedule::delayRepeat(submitTask, static_cast<unsigned long long>(initialDelay) + secondDelay, (1000 * 60 * 30) / 50);
+            // long initialDelay = (long)((1000 * 60 * (3 + randomFloat() * 3)) / 50);
+            // long secondDelay = (long)((1000 * 60 * (randomFloat() * 30)) / 50);
+            // Schedule::delay(submitTask, initialDelay);
+            // Schedule::delayRepeat(submitTask, static_cast<unsigned long long>(initialDelay) + secondDelay, (1000 * 60 * 30) / 50);
+            scheduleThread();
             return true;
         });
     }
