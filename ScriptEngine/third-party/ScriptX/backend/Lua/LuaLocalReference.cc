@@ -43,6 +43,28 @@ void ensureNonnull(int index) {
   throw Exception("NullPointerException");
 }
 
+bool judgeIsArray(int index)
+{
+  auto lua = currentLua();
+  int currectArrIndex = 0;
+
+  lua_pushnil(lua); 
+  
+  while (lua_next(lua, index))
+  {
+      // Copy current key and judge it's type
+      lua_pushvalue(lua, -2);
+      if(!lua_isnumber(lua,-1) || lua_tonumber(lua,-1) != ++currectArrIndex)
+      {
+        lua_pop(lua, 3);
+        return false;
+      }
+      lua_pop(lua, 2);
+  }
+  return true;
+}
+
+
 }  // namespace lua_backend
 
 #define REF_IMPL_BASIC_FUNC(ValueType)                                                           \
@@ -149,8 +171,11 @@ ValueKind Local<Value>::getKind() const {
   } else if (isByteBuffer()) {
     return ValueKind::kByteBuffer;
   } else if (type == LUA_TTABLE) {
-    // lua don't have array type, the are all tables
-    return ValueKind::kObject;
+    // Traverse the table to judge whether it is an array
+    if(isArray())
+      return ValueKind::kArray;
+    else
+      return ValueKind::kObject;
   } else {
     return ValueKind::kUnsupported;
   }
@@ -176,7 +201,11 @@ bool Local<Value>::isFunction() const {
   return val_ != 0 && lua_type(lua_backend::currentLua(), val_) == LUA_TFUNCTION;
 }
 
-bool Local<Value>::isArray() const { return isObject(); }
+bool Local<Value>::isArray() const { 
+  if(val_ == 0 || lua_type(lua_backend::currentLua(), val_) != LUA_TTABLE)
+    return false;
+  return lua_backend::judgeIsArray(val_);
+}
 
 bool Local<Value>::isByteBuffer() const {
   auto engine = lua_backend::currentEngine();

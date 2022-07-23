@@ -51,7 +51,7 @@ class EngineScopeImpl {
   StackFrameScopeImpl stack_;
 
  public:
-  explicit EngineScopeImpl(LuaEngine &, LuaEngine *);
+  explicit EngineScopeImpl(LuaEngine &);
 
   ~EngineScopeImpl();
 };

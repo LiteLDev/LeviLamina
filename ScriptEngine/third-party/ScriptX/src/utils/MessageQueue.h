@@ -31,7 +31,7 @@
 
 namespace script::utils {
 
-struct alignas(std::max_align_t) ArbitraryData {
+struct ArbitraryData {
   /** arbitrary data */
   int64_t data0 = 0;
   int64_t data1 = 0;
@@ -49,8 +49,6 @@ struct alignas(std::max_align_t) ArbitraryData {
   ArbitraryData(const ArbitraryData& copy) { *this = copy; }
 
   ArbitraryData& operator=(const ArbitraryData&);
-
-  SCRIPTX_DISALLOW_MOVE(ArbitraryData);
 
   ~ArbitraryData() = default;
 };
@@ -165,7 +163,8 @@ class InplaceMessage : public Message {
       throw std::runtime_error("inplaceObject can only be called once.");
     }
 
-    auto ptr = new (alignedStorage()) T(std::forward<Args>(args)...);
+    auto buffer = static_cast<void*>(static_cast<ArbitraryData*>(this));
+    auto ptr = new (buffer) T(std::forward<Args>(args)...);
     cleanupProc = [](Message& self) {
       reinterpret_cast<InplaceMessage&>(self).getObject<T>().~T();
     };
@@ -174,13 +173,11 @@ class InplaceMessage : public Message {
 
   template <typename T>
   T& getObject() {
-    return *static_cast<T*>(alignedStorage());
+    return *reinterpret_cast<T*>(static_cast<ArbitraryData*>(this));
   }
 
  private:
   InplaceMessage() = default;
-
-  void* alignedStorage() { return static_cast<void*>(static_cast<ArbitraryData*>(this)); }
 
   friend class MessageQueue;
 

@@ -17,15 +17,7 @@
 // Language Libraries for specific Language Platform
 #ifdef SCRIPTX_LANG_NODEJS
 #pragma comment(lib, "third-party/ScriptX/lib/ScriptX-NodeJs.lib")
-#pragma comment(lib, "third-party/NodeJs/out/Release/libnode.lib")
-#pragma comment(lib, "third-party/NodeJs/out/Release/lib/v8_libplatform.lib")
-#pragma comment(linker, "/alternatename:?MakeWeak@V8@v8@@CAXPEAPEA_K@Z=?MakeWeak@api_internal@v8@@YAXPEAPEA_K@Z")
-#pragma comment(linker, "/alternatename:?GlobalizeReference@V8@v8@@CAPEA_KPEAVIsolate@internal@2@PEA_K@Z=?GlobalizeReference@api_internal@v8@@YAPEA_KPEAVIsolate@internal@2@PEA_K@Z")
-#pragma comment(linker, "/alternatename:?MoveGlobalReference@V8@v8@@CAXPEAPEA_K0@Z=?MoveGlobalReference@api_internal@v8@@YAXPEAPEA_K0@Z")
-#pragma comment(linker, "/alternatename:?DisposeGlobal@V8@v8@@CAXPEA_K@Z=?DisposeGlobal@api_internal@v8@@YAXPEA_K@Z")
-#pragma comment(linker, "/alternatename:?CopyGlobalReference@V8@v8@@CAPEA_KPEA_K@Z=?CopyGlobalReference@api_internal@v8@@YAPEA_KPEA_K@Z")
-#pragma comment(linker, "/alternatename:?New@FunctionTemplate@v8@@SA?AV?$Local@VFunctionTemplate@v8@@@2@PEAVIsolate@2@P6AXAEBV?$FunctionCallbackInfo@VValue@v8@@@2@@ZV?$Local@VValue@v8@@@2@V?$Local@VSignature@v8@@@2@HW4ConstructorBehavior@2@W4SideEffectType@2@PEBVCFunction@2@@Z=?New@FunctionTemplate@v8@@SA?AV?$Local@VFunctionTemplate@v8@@@2@PEAVIsolate@2@P6AXAEBV?$FunctionCallbackInfo@VValue@v8@@@2@@ZV?$Local@VValue@v8@@@2@V?$Local@VSignature@v8@@@2@HW4ConstructorBehavior@2@W4SideEffectType@2@PEBVCFunction@2@GGG@Z")
-#pragma comment(linker, "/alternatename:?ToLocalEmpty@V8@v8@@CAXXZ=?ToLocalEmpty@api_internal@v8@@YAXXZ")
+#pragma comment(lib, "third-party/NodeJs/lib/libnode.lib")
 #endif
 
 #ifdef SCRIPTX_LANG_V8JS

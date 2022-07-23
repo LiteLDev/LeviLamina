@@ -39,12 +39,12 @@ class WasmEngine : public ScriptEngine {
   std::shared_ptr<utils::MessageQueue> messageQueue_ = std::make_shared<utils::MessageQueue>();
   bool ignoreDestroyCall_ = false;
 
-  std::thread::id engineThreadId_ = {};
+  static std::thread::id engineThreadId_;
 
   WasmEngine();
 
   // for unit-test only
-  void unitTestResetRegistry();
+  void unitTestResetRetistry();
 
  public:
   static WasmEngine* instance();
