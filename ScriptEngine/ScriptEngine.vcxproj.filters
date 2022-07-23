@@ -176,6 +176,9 @@
     <ClCompile Include="API\StructureAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="API\NativeAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -326,6 +329,9 @@
       <Filter>Resource</Filter>
     </ClInclude>
     <ClInclude Include="API\PacketAPI.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\NativeAPI.h">
       <Filter>API</Filter>
     </ClInclude>
   </ItemGroup>

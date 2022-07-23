@@ -55,8 +55,8 @@ void LoadDepends()
         }
     }
 }
-
-//加载调试引擎
+void InitDynamicCallSystem();
+    //加载调试引擎
 void LoadDebugEngine()
 {
     //启动引擎
@@ -91,6 +91,7 @@ void LoadDebugEngine()
 //主加载
 void LoadMain()
 {
+    InitDynamicCallSystem();
     logger.info("Loading plugins...");
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);

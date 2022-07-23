@@ -19,7 +19,6 @@ ClassDefine<PacketClass> PacketClassBuilder =
         .instanceFunction("getRawPtr", &PacketClass::getRawPtr)
         .instanceFunction("getName", &PacketClass::getName)
         .instanceFunction("getId", &PacketClass::getId)
-	
         .build();
 
 ClassDefine<BinaryStreamClass> BinaryStreamClassBuilder =
@@ -103,6 +102,7 @@ Local<Value> PacketClass::getId() {
     }
     CATCH("Fail in getPacketId!");
 }
+
 
 //////////////////// BinaryStream Classes ////////////////////
 
