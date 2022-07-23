@@ -11,6 +11,7 @@ std::vector<std::string> args;
 std::vector<std::string> exec_args;
 std::unique_ptr<node::MultiIsolatePlatform> platform = nullptr;
 std::map<script::ScriptEngine*, node::Environment*> environments;
+std::map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> setups;
 
 bool initNodeJs() {
     WCHAR buf[MAX_PATH];
@@ -38,9 +39,9 @@ void shutdownNodeJs() {
     v8::V8::ShutdownPlatform();
 }
 
-std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> newEngine() {
+script::ScriptEngine* newEngine() {
     if (!nodeJsInited && !initNodeJs()) {
-        return {nullptr, nullptr};
+        return nullptr;
     }
     std::vector<std::string> errors;
     std::unique_ptr<node::CommonEnvironmentSetup> setup =
@@ -48,7 +49,7 @@ std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> 
     if (!setup) {
         for (const std::string& err : errors)
             logger.error("CommonEnvironmentSetup Error: {}", err.c_str());
-        return {nullptr, nullptr};
+        return nullptr;
     }
     v8::Isolate* isolate = setup->isolate();
     node::Environment* env = setup->env();
@@ -62,10 +63,10 @@ std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> 
     
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
     environments.emplace(engine, env);
+    setups.emplace(engine, std::move(setup));
 
-    engine->setData(std::make_shared<EngineOwnData>());
-
-    EngineManager::registerEngine(engine);
+    //engine->setData(std::make_shared<EngineOwnData>());
+    //EngineManager::registerEngine(engine);
 
     node::AddEnvironmentCleanupHook(
         isolate,
@@ -74,7 +75,7 @@ std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> 
             logger.debug("Destory ScriptEngine for node.js [{}]", arg);
         },
         engine);
-    return {engine, std::move(setup)};
+    return engine;
 }
 
 node::Environment* getEnvironmentOf(script::ScriptEngine* engine) {

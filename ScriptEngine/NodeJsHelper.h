@@ -15,7 +15,7 @@ extern std::map<script::ScriptEngine*, node::Environment*> environments;
 
 bool initNodeJs();
 void shutdownNodeJs();
-std::pair<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> newEngine();
+script::ScriptEngine* newEngine();
 node::Environment* getEnvironmentOf(script::ScriptEngine* engine);
 int spinEventLoop(script::ScriptEngine* engine);
 int stopEngine(script::ScriptEngine* engine);
