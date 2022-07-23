@@ -106,7 +106,7 @@ std::string generateUuidV4() {
 } // namespace uuid
 
 bool enable = true;
-std::string serverUuid = uuid::generateUuidV4(); //NOLINT(cert-err58-cpp)
+std::string serverUuid = uuid::generateUuidV4(); // NOLINT(cert-err58-cpp)
 
 nlohmann::json globalJson() {
     nlohmann::json json;
@@ -180,7 +180,7 @@ namespace bstats {
 
 static bool isOnlineAuth;
 static int playerAmount;
-static unordered_map<string, int> playerPlatList; //NOLINT(cert-err58-cpp)
+static unordered_map<string, int> playerPlatList; // NOLINT(cert-err58-cpp)
 
 DWORD getCpuCoreCount() {
     SYSTEM_INFO systemInfo;
@@ -311,22 +311,24 @@ float randomFloat() {
     return dis(gen);
 }
 
+const unsigned long long period = 1000 * 60 * 30;
+
 void scheduleThread() {
-    long initialDelay = (long)(1000 * 60 * (3 + randomFloat() * 3));
-    long secondDelay = (long)(1000 * 60 * (randomFloat() * 30));
-    std::thread schedule([](long initialDelay) {
+    std::thread schedule([]() {
+        auto initialDelay = (unsigned long long)(1000 * 60 * (3 + randomFloat() * 3));
+        auto secondDelay = (unsigned long long)(1000 * 60 * (randomFloat() * 30));
+
         std::this_thread::sleep_for(std::chrono::milliseconds(initialDelay));
         Schedule::nextTick(submitTask);
-        }, initialDelay);
-        schedule.detach();
-    std::thread scheduleAtFixedRate([](long initialDelay, long secondDelay) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000 * 60 * 30));
-        while ( true ) {
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(secondDelay));
+        while (!LL::isServerStopping()) {
             Schedule::nextTick(submitTask);
-            std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<unsigned long long>(initialDelay) + static_cast<unsigned long long>(secondDelay)));
+            std::this_thread::sleep_for(std::chrono::milliseconds(period));
         }
-        }, initialDelay, secondDelay);
-        scheduleAtFixedRate.detach();
+
+    });
+    schedule.detach();
 }
 
 void registerBStats() {
@@ -334,10 +336,6 @@ void registerBStats() {
     if (bstatsSettings::enable) {
         Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
             isOnlineAuth = Global<PropertiesSettings>->useOnlineAuthentication();
-            // long initialDelay = (long)((1000 * 60 * (3 + randomFloat() * 3)) / 50);
-            // long secondDelay = (long)((1000 * 60 * (randomFloat() * 30)) / 50);
-            // Schedule::delay(submitTask, initialDelay);
-            // Schedule::delayRepeat(submitTask, static_cast<unsigned long long>(initialDelay) + secondDelay, (1000 * 60 * 30) / 50);
             scheduleThread();
             return true;
         });
