@@ -32,8 +32,10 @@ string RemoveRealAllExtension(string fileName) {
         return fileName.substr(0, pos);
 }
 
-#if defined(SCRIPTX_LANG_NODEJS)
+// 加载插件
 bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool mustBeCurrentModule) {
+
+#if defined(SCRIPTX_LANG_NODEJS)
     std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
     if (entryPath.empty())
         return false;
@@ -95,10 +97,9 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         logger.error("Fail to load " + dirPath + "!");
     }
     return false;
-}
+
 #else
-// 加载插件
-bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule) {
+
     if (filePath == LLSE_DEBUG_ENGINE_NAME)
         return true;
 
@@ -233,8 +234,8 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         logger.error("Fail to load " + filePath + "!");
     }
     return false;
-}
 #endif
+}
 
 //卸载插件
 bool PluginManager::unloadPlugin(const std::string& name) {

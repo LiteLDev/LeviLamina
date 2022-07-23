@@ -13,9 +13,6 @@
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS
 	#define LLSE_PLUGINPACK_EXTENSION ".ll.zip"
 	#define LLSE_PLUGINS_EXTENSION ".js"
-	#define LLSE_NODEJS_DIR "plugins/nodejs"
-	#define LLSE_NODEJS_TEMP_DIR LLSE_NODEJS_DIR "/temp"
-	#define LLSE_NODEJS_UNCOMPRESS_TIMEOUT 30000
 #elif defined(SCRIPTX_LANG_JAVASCRIPT)
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS
 	#define LLSE_PLUGINS_EXTENSION ".js"
@@ -27,6 +24,12 @@
 #define LLSE_VALID_BACKENDS std::set<std::string>({"Js", "Lua", "NodeJs"})
 #define LLSE_VALID_PLUGIN_EXTENSIONS std::set<std::string>({".js", ".lua", ".ll.zip"})
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()
+
+
+// NodeJs额外宏
+#define LLSE_NODEJS_DIR "plugins/nodejs"
+#define LLSE_NODEJS_TEMP_DIR LLSE_NODEJS_DIR "/temp"
+#define LLSE_NODEJS_UNCOMPRESS_TIMEOUT 30000
 
 
 // 插件注册信息
