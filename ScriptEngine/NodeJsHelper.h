@@ -16,7 +16,6 @@ int stopEngine(script::ScriptEngine* engine);
 bool deployPluginPack(const std::string& filePath);
 std::string findEntryScript(const std::string& dirPath);
 std::string getPluginPackageName(const std::string& dirPath);
-
 bool processConsoleNpmCmd(const std::string& cmd);
 int executeNpmCommand(const std::string& cmd, const std::string& workingDir = LLSE_NODEJS_ROOT_DIR);
 

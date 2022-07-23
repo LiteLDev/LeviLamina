@@ -1,0 +1,3 @@
+[submodule "ScriptEngine/third-party/NodeJs"]
+	path = ScriptEngine/third-party/NodeJs
+	url = https://github.com/nodejs/node
