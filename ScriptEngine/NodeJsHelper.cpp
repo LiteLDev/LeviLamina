@@ -55,10 +55,10 @@ script::ScriptEngine* newEngine() {
     v8::Isolate* isolate = setup->isolate();
     node::Environment* env = setup->env();
 
-    //v8::Locker locker(isolate);
-    //v8::Isolate::Scope isolate_scope(isolate);
-    //v8::HandleScope handle_scope(isolate);
-    //v8::Context::Scope context_scope(setup->context());
+    v8::Locker locker(isolate);
+    v8::Isolate::Scope isolate_scope(isolate);
+    v8::HandleScope handle_scope(isolate);
+    v8::Context::Scope context_scope(setup->context());
 
     script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context());
     
@@ -177,6 +177,7 @@ bool deployPluginPack(const std::string& filePath) {
         std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest);
     }
     std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR);
+    return true;
 }
 
 std::string findEntryScript(const std::string& dirPath)
@@ -188,7 +189,7 @@ std::string findEntryScript(const std::string& dirPath)
         return "";
 
     try {
-        std::fstream file(packageFilePath.u8string());
+        std::ifstream file(packageFilePath.make_preferred().u8string());
         nlohmann::json j;
         file >> j;
         std::string entryFile = "index.js";
@@ -216,7 +217,7 @@ std::string getPluginPackageName(const std::string& dirPath)
         return "";
 
     try {
-        std::fstream file(packageFilePath.u8string());
+        std::ifstream file(packageFilePath.make_preferred().u8string());
         nlohmann::json j;
         file >> j;
         std::string packageName = "";

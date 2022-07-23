@@ -48,7 +48,7 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         if (!mainScripts) {
             throw std::runtime_error("Fail to open entry script!");
         }
-        engine = NodeJsHelper::newEngine();
+        engine = EngineManager::newEngine();
 
         {
             EngineScope enter(engine);
