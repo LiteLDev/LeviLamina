@@ -1,5 +1,6 @@
 #if defined(SCRIPTX_LANG_NODEJS)
 #include "Global.hpp"
+#include <ScheduleAPI.h>
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
@@ -105,7 +106,10 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath)
         //    node::Stop(env);
         //    return false;
         //}
-        node::SpinEventLoop(env).FromMaybe(1);
+
+        Schedule::repeat([engine]() {
+            spinEngineUV(engine);
+        }, 4);
         return true;
     }
     catch (...)
@@ -126,21 +130,18 @@ v8::Isolate* getIsolateOf(script::ScriptEngine* engine) {
     return it->second->isolate();
 }
 
-int spinEventLoop(script::ScriptEngine* engine) {
+int spinEngineUV(script::ScriptEngine* engine) {
     auto env = NodeJsHelper::getEnvironmentOf(engine);
-    if (!env) {
-        logger.error("Failed in loading script plugin: Cannot get nodejs environment!");
-        return 1;
-    }
+    if (!env)
+        return 0;
+    EngineScope enter(engine);
     return node::SpinEventLoop(env).FromMaybe(1);
 }
 
 int stopEngine(script::ScriptEngine* engine) {
     auto env = NodeJsHelper::getEnvironmentOf(engine);
-    if (!env) {
-        logger.error("Failed in loading script plugin: Cannot get nodejs environment!");
-        return 1;
-    }
+    if (!env)
+        return 0;
     return node::Stop(env);
 }
 
