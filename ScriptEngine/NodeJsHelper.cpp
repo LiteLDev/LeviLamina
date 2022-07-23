@@ -6,6 +6,7 @@
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
+#include <node.h>
 #include <uv/uv.h>
 
 namespace NodeJsHelper {
@@ -165,13 +166,13 @@ bool deployPluginPack(const std::string& filePath) {
     }
     if (std::filesystem::exists(LLSE_NODEJS_TEMP_DIR "/package.json")) {
         auto pluginName = std::filesystem::path(filePath).stem().u8string();
-        auto& dest = std::filesystem::path(LLSE_NODEJS_DIR)
+        auto& dest = std::filesystem::path(LLSE_NODEJS_ROOT_DIR)
                         .append(pluginName.substr(0, pluginName.length() - 3));
         nlohmann::json j;
         std::fstream file(LLSE_NODEJS_TEMP_DIR "/package.json");
         file >> j;
         if (j.contains("name")) {
-            dest = std::filesystem::path(LLSE_NODEJS_DIR).append(j["name"].get<std::string>());
+            dest = std::filesystem::path(LLSE_NODEJS_ROOT_DIR).append(j["name"].get<std::string>());
         }
         file.close();
         std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest);
@@ -230,6 +231,50 @@ std::string getPluginPackageName(const std::string& dirPath)
     {
         return "";
     }
+}
+
+int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
+{
+    if (!nodeJsInited && !initNodeJs()) {
+        return -1;
+    }
+    std::vector<std::string> errors;
+    std::unique_ptr<node::CommonEnvironmentSetup> setup =
+        node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args);
+    if (!setup) {
+        for (const std::string& err : errors)
+            logger.error("CommonEnvironmentSetup Error: {}", err.c_str());
+        return -1;
+    }
+    v8::Isolate* isolate = setup->isolate();
+    node::Environment* env = setup->env();
+    int exit_code;
+
+    {
+        using namespace v8;
+        v8::Locker locker(isolate);
+        v8::Isolate::Scope isolate_scope(isolate);
+        v8::HandleScope handle_scope(isolate);
+        v8::Context::Scope context_scope(setup->context());
+
+        MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(
+            env,
+            "const publicRequire ="
+            "  require('module').createRequire(process.cwd() + '/plugins/nodejs');"
+            "globalThis.require = publicRequire;"
+            "require('vm').runInThisContext(process.argv[1]);");
+
+        if (loadenv_ret.IsEmpty())  // There has been a JS exception.
+            return 1;
+
+        exit_code = node::SpinEventLoop(env).FromMaybe(1);
+
+        // node::Stop() can be used to explicitly stop the event loop and keep
+        // further JavaScript from running. It can be called from any thread,
+        // and will act like worker.terminate() if called from another thread.
+        node::Stop(env);
+    }
+    return exit_code;
 }
 
 } // namespace NodeJsHelper
