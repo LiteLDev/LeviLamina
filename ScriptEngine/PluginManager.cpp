@@ -18,6 +18,9 @@
 #include <API/CommandAPI.h>
 #include <Utils/Hash.h>
 #include <NodeJsHelper.h>
+#if defined(SCRIPTX_LANG_NODEJS)
+#include <node.h>
+#endif
 #define H(x) do_hash(x)
 using namespace std;
 

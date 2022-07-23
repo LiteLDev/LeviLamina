@@ -9,6 +9,6 @@
   "author": "LiteLDev",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "npm-js-interface": "^1.0.0"
+    "npm-js-interface": "^1.0.1"
   }
 }

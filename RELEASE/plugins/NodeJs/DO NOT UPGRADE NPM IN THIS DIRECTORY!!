@@ -1,0 +1,2 @@
+NEVER try to upgrade "npm" in this directory
+or the NodeJs backend will crash !!!!!!

@@ -27,8 +27,8 @@
 
 
 // NodeJs额外宏
-#define LLSE_NODEJS_DIR "plugins/nodejs"
-#define LLSE_NODEJS_TEMP_DIR LLSE_NODEJS_DIR "/temp"
+#define LLSE_NODEJS_ROOT_DIR "plugins/nodejs"
+#define LLSE_NODEJS_TEMP_DIR LLSE_NODEJS_ROOT_DIR "/temp"
 #define LLSE_NODEJS_UNCOMPRESS_TIMEOUT 30000
 
 

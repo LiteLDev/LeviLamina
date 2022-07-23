@@ -84,7 +84,7 @@ bool IsExistScriptPlugin()
 bool IsExistNodeJsPlugin()
 {
     bool exist = false;
-    filesystem::directory_iterator ent(LLSE_NODEJS_DIR);
+    filesystem::directory_iterator ent(LLSE_NODEJS_ROOT_DIR);
     for (auto& file : ent) {
         if (file.is_directory() && filesystem::exists(file.path() / "package.json"))
         {

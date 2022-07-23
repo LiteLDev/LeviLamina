@@ -233,6 +233,21 @@ std::string getPluginPackageName(const std::string& dirPath)
     }
 }
 
+bool processConsoleNpmCmd(const std::string& cmd)
+{
+#ifdef SCRIPTX_LANG_NODEJS
+    if (StartsWith(cmd, "npm "))
+    {
+        executeNpmCommand(cmd);
+        return false;
+    }
+    else
+        return true;
+#else
+    return true;
+#endif
+}
+
 int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
 {
     if (!nodeJsInited && !initNodeJs()) {
@@ -248,7 +263,7 @@ int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
     }
     v8::Isolate* isolate = setup->isolate();
     node::Environment* env = setup->env();
-    int exit_code;
+    int exit_code = 0;
 
     {
         using namespace v8;
@@ -257,21 +272,24 @@ int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
         v8::HandleScope handle_scope(isolate);
         v8::Context::Scope context_scope(setup->context());
 
-        MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(
-            env,
+        string executeJs = 
             "const publicRequire ="
-            "  require('module').createRequire(process.cwd() + '/plugins/nodejs');"
-            "globalThis.require = publicRequire;"
-            "require('vm').runInThisContext(process.argv[1]);");
+            "  require('module').createRequire(process.cwd() + '/plugins/nodejs/');"
+            "require('process').chdir('" + workingDir + "');"
+            + "publicRequire('npm-js-interface')('" + cmd + "');";
 
-        if (loadenv_ret.IsEmpty())  // There has been a JS exception.
-            return 1;
+        try
+        {
+            MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(env, executeJs.c_str());
+            if (loadenv_ret.IsEmpty())  // There has been a JS exception.
+                return 1;
+            exit_code = node::SpinEventLoop(env).FromMaybe(1);
+        }
+        catch(...)
+        {
+            logger.error("Fail to execute NPM command. Error occurs");
+        }
 
-        exit_code = node::SpinEventLoop(env).FromMaybe(1);
-
-        // node::Stop() can be used to explicitly stop the event loop and keep
-        // further JavaScript from running. It can be called from any thread,
-        // and will act like worker.terminate() if called from another thread.
         node::Stop(env);
     }
     return exit_code;

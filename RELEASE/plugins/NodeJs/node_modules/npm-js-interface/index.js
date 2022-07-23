@@ -1,10 +1,3 @@
-function errorHandler(err)
-{
-    if(err)
-        console.log(`${err.message}\n\n${err.stack}\n`);
-}
-
-// copilot yyds!
 function splitLine(line)
 {
     if(line.indexOf(" ") == -1)
@@ -37,7 +30,9 @@ function splitLine(line)
 }
 
 module.exports = async (cmdLine) => {
-    const npm = require('../npm/lib/npm.js');
+    const Npm = require('../npm/lib/npm.js');
+	const npm = new Npm()
+	
     try {
         await npm.load();
 
@@ -53,18 +48,20 @@ module.exports = async (cmdLine) => {
             args.shift();
         }
         const cmd = args.shift();
+		if (!cmd) {
+		    npm.output(`Unknown command: "${cmd}"\nTo see a list of supported npm commands, run:\n  npm help`);
+			return false
+		}
 
-        const impl = npm.commands[cmd];
-        if (!impl)
-        {
-          npm.output(`Unknown command: "${cmd}"\n\nTo see a list of supported npm commands, run:\n  npm help`);
-          return false
-        }
-        impl(args, errorHandler);
+		await npm.exec(cmd, args)
     }
     catch (err) 
     {
-        errorHandler(err);
+        if (err.code === 'EUNKNOWNCOMMAND') {
+		    npm.output(`Bad command.\nTo see a list of supported npm commands, run:\n  npm help`);
+		    return false
+		}
+		console.log(`Error when executing npm command. ${err.message}\n\n${err.stack}\n`);
         return false;
     }
     return true;

@@ -15,6 +15,7 @@
 #include <Engine/LocalShareData.h>
 #include <BuiltinCommands.h>
 #include "APIHelp.h"
+#include <NodeJsHelper.h>
 #include "BaseAPI.h"
 #include "BlockAPI.h"
 #include "GuiAPI.h"
@@ -1110,6 +1111,8 @@ void InitBasicEventListeners() {
         if (!ProcessDebugEngine(cmd))
             return false;
         if (!ProcessOldHotManageCommand(ev.mCommand))
+            return false;
+        if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
             return false;
 
         // CallEvents
