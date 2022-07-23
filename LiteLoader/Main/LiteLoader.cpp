@@ -150,10 +150,10 @@ void CheckDevMode() {
 }
 
 void CheckBetaVersion() {
-    if (LITELOADER_VERSION_STATUS != LL::Version::Release) {
-        logger.warn("Currently using a beta version.");
-        logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
-    }
+#if LITELOADER_VERSION_STATUS != LITELOADER_VERSION_RELEASE
+    logger.warn("Currently using a beta version.");
+    logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
+#endif
 }
 
 void CheckProtocolVersion() {
@@ -169,7 +169,7 @@ void CheckProtocolVersion() {
 // extern
 extern void EndScheduleSystem();
 namespace bstats {
-    void registerBStats();
+void registerBStats();
 }
 
 void LLMain() {
@@ -239,7 +239,7 @@ void LLMain() {
     // Register simple server logger
     RegisterSimpleServerLogger();
 
-    //Register BStats
+    // Register BStats
     bstats::registerBStats();
 
     // Register Started
