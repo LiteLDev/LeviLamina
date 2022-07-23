@@ -60,7 +60,7 @@ script::ScriptEngine* newEngine() {
     v8::HandleScope handle_scope(isolate);
     v8::Context::Scope context_scope(setup->context());
 
-    script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context());
+    script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context(), false);
     
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
     environments.emplace(engine, env);
@@ -89,26 +89,19 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath)
 
     auto isolate = it->second->isolate();
     auto env = it->second->env();
-    auto context = it->second->context();
 
     try
     {
-        v8::Locker locker(isolate);
-        v8::Isolate::Scope isolate_scope(isolate);
-        v8::HandleScope handle_scope(isolate);
-        // The v8::Context needs to be entered when node::CreateEnvironment() and
-        // node::LoadEnvironment() are being called.
-        v8::Context::Scope context_scope(context);
+        EngineScope enter(engine);
 
-        /*v8::MaybeLocal<v8::Value> loadenv_ret = */node::LoadEnvironment(
-            env,
+        node::LoadEnvironment(env,
             ("const publicRequire ="
                 "  require('module').createRequire(process.cwd() + '/');"
                 "globalThis.require = publicRequire;" +
                 *mainScripts)
             .c_str());
 
-        //if (loadenv_ret.IsEmpty()) { // There has been a JS exception.
+        //if (loadenv_ret.IsEmpty()) { 
         //    node::Stop(env);
         //    return false;
         //}
