@@ -1,7 +1,7 @@
 #pragma once
 
 #define DBGHELP_TRANSLATE_TCHAR
-#include <windows.h>
+#include <Windows.h>
 #include <dbghelp.h>
 #include <string>
 

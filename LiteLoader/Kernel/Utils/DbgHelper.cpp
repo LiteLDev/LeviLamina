@@ -1,5 +1,5 @@
 ﻿#include <Utils/DbgHelper.h>
-#include <windows.h>
+#include <Windows.h>
 #include <dbghelp/dbghelp.h>
 #include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
