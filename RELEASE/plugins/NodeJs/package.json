@@ -1,4 +1,14 @@
 {
-  "name": "LiteLoaderBDS-NodeJs-Root",
-  "version": "1.0.0"
+  "name": "llse-nodejs-root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "author": "LiteLDev",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "npm-js-interface": "^1.0.0"
+  }
 }
