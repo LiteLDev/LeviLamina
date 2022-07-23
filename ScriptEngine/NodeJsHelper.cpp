@@ -1,6 +1,8 @@
 #if defined(SCRIPTX_LANG_NODEJS)
 #include "Global.hpp"
 #include <ScheduleAPI.h>
+#include <EventAPI.h>
+#include <LLAPI.h>
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
@@ -16,6 +18,7 @@ std::map<script::ScriptEngine*, node::Environment*> environments;
 std::map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> setups;
 
 bool initNodeJs() {
+    // Init NodeJs
     WCHAR buf[MAX_PATH];
     GetCurrentDirectory(MAX_PATH, buf);
     auto path = wstr2str(buf) + "\\bedrock_server_mod.exe";
@@ -29,11 +32,20 @@ bool initNodeJs() {
         return false;
     }
 
+    // Init V8
     using namespace v8;
     platform = node::MultiIsolatePlatform::Create(std::thread::hardware_concurrency());
     V8::InitializePlatform(platform.get());
     V8::Initialize();
-    return nodeJsInited = true;
+    
+    /*// Set Cleanup
+    Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent) {
+        shutdownNodeJs();
+        return true;
+    });*/
+
+    nodeJsInited = true;
+    return true;
 }
 
 void shutdownNodeJs() {
@@ -107,9 +119,11 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath)
         //    return false;
         //}
 
-        Schedule::repeat([engine]() {
-            spinEngineUV(engine);
-        }, 4);
+        Schedule::repeat([eventLoop{ it->second->event_loop() }]() {
+            if(!LL::isServerStopping())
+                uv_run(eventLoop, UV_RUN_NOWAIT);
+        }, 2);
+        
         return true;
     }
     catch (...)
@@ -128,14 +142,6 @@ v8::Isolate* getIsolateOf(script::ScriptEngine* engine) {
     auto it = setups.find(engine);
     if (it == setups.end()) return nullptr;
     return it->second->isolate();
-}
-
-int spinEngineUV(script::ScriptEngine* engine) {
-    auto env = NodeJsHelper::getEnvironmentOf(engine);
-    if (!env)
-        return 0;
-    EngineScope enter(engine);
-    return node::SpinEventLoop(env).FromMaybe(1);
 }
 
 int stopEngine(script::ScriptEngine* engine) {

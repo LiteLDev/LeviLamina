@@ -13,7 +13,6 @@ script::ScriptEngine* newEngine();
 bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath);
 node::Environment* getEnvironmentOf(script::ScriptEngine* engine);
 v8::Isolate* getIsolateOf(script::ScriptEngine* engine);
-int spinEngineUV(script::ScriptEngine* engine);
 int stopEngine(script::ScriptEngine* engine);
 
 bool deployPluginPack(const std::string& filePath);
