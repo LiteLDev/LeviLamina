@@ -329,7 +329,7 @@ void scheduleThread() {
         scheduleAtFixedRate.detach();
 }
 
-void registerBStat() {
+void registerBStats() {
     configInit();
     if (bstatsSettings::enable) {
         Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
