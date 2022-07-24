@@ -6,7 +6,8 @@
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
-#include <uv/include/uv.h>
+#include <NodeJs/include/uv/uv.h>
+#include <NodeJs/include/v8/v8.h>
 
 namespace NodeJsHelper {
 
@@ -59,7 +60,7 @@ script::ScriptEngine* newEngine() {
     }
     std::vector<std::string> errors;
     std::unique_ptr<node::CommonEnvironmentSetup> setup =
-        node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args);
+        node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args, node::EnvironmentFlags::kOwnsProcessState);
     if (!setup) {
         for (const std::string& err : errors)
             logger.error("CommonEnvironmentSetup Error: {}", err.c_str());
@@ -254,7 +255,7 @@ int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
     }
     std::vector<std::string> errors;
     std::unique_ptr<node::CommonEnvironmentSetup> setup =
-        node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args);
+        node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args, node::EnvironmentFlags::kOwnsProcessState);
     if (!setup) {
         for (const std::string& err : errors)
             logger.error("CommonEnvironmentSetup Error: {}", err.c_str());

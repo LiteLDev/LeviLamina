@@ -19,7 +19,7 @@
 #include <Utils/Hash.h>
 #include <NodeJsHelper.h>
 #if defined(SCRIPTX_LANG_NODEJS)
-#include <node.h>
+#include <NodeJs/include/node.h>
 #endif
 #define H(x) do_hash(x)
 using namespace std;

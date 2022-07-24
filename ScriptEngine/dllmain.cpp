@@ -17,7 +17,7 @@
 // Language Libraries for specific Language Platform
 #ifdef SCRIPTX_LANG_NODEJS
 #pragma comment(lib, "third-party/ScriptX/lib/ScriptX-NodeJs.lib")
-#pragma comment(lib, "third-party/NodeJs/out/Release/libnode.lib")
+#pragma comment(lib, "third-party/NodeJs/lib/libnode.lib")
 #endif
 
 #ifdef SCRIPTX_LANG_V8JS

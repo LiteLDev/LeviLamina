@@ -1,7 +1,7 @@
 #pragma once
 #if defined(SCRIPTX_LANG_NODEJS)
 #include <map>
-#include <NodeJs/src/node.h>
+#include <NodeJs/include/node.h>
 #include <ScriptX/ScriptX.h>
 #include <Configs.h>
 

@@ -144,6 +144,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
     <OutDir>$(ProjectDir)Lib\</OutDir>
     <TargetName>ScriptX-NodeJs</TargetName>
+    <IncludePath>$(ProjectDir)..\NodeJs\include\v8;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
     <ClCompile>
