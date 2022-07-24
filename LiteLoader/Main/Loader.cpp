@@ -53,6 +53,18 @@ void CleanOldScriptEngine() {
         filesystem::remove("plugins/LiteXLoader.Lua.dll", ec);
 }
 
+
+const char* DEFAULT_ROOT_PACKAGE_JSON =
+R"({
+    "name": "llse-nodejs-root",
+    "version" : "1.0.0",
+    "description" : "Root package environment of LLSE NodeJs backend",
+    "main" : "index.js",
+    "scripts" : { "test": "exit" },
+    "author" : "LiteLDev",
+    "license" : "AGPL-3.0-or-later"
+})";
+
 bool IsExistScriptPlugin()
 {
     std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
@@ -83,6 +95,9 @@ bool IsExistScriptPlugin()
 
 bool IsExistNodeJsPlugin()
 {
+    if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
+        return false;
+
     bool exist = false;
     filesystem::directory_iterator ent(LLSE_NODEJS_ROOT_DIR);
     for (auto& file : ent) {
@@ -93,6 +108,27 @@ bool IsExistNodeJsPlugin()
         }
     }
     return exist;
+}
+
+void InitNodeJsDirectories()
+{
+    // Check & Create nodejs directories
+    if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
+    {
+        filesystem::create_directories(LLSE_NODEJS_ROOT_DIR);
+    }
+    auto node_modules_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "node_modules";
+    if (!filesystem::exists(node_modules_path))
+    {
+        filesystem::create_directories(node_modules_path);
+    }
+    auto package_json_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "package.json";
+    if (!filesystem::exists(package_json_path))
+    {
+        ofstream fout(package_json_path.c_str());
+        fout << DEFAULT_ROOT_PACKAGE_JSON;
+        logger.warn("NodeJs runtime directory no found. created.");
+    }
 }
 
 void LoadScriptEngine() {
@@ -225,6 +261,7 @@ void LL::LoadMain() {
 
     // Load ScriptEngine
     if (LL::globalConfig.enableScriptEngine) {
+        InitNodeJsDirectories();
         if (LL::globalConfig.alwaysLaunchScriptEngine || IsExistNodeJsPlugin() || IsExistScriptPlugin()) {
             LoadScriptEngine();
         }

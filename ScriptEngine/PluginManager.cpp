@@ -44,11 +44,16 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         return false;
     std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
 
-    // Run npm install if needed
+    // Run "npm install" if needed
     if (NodeJsHelper::doesPluginPackHasDependency(dirPath)
         && !filesystem::exists(filesystem::path(dirPath) / "node_modules"))
     {
-        NodeJsHelper::executeNpmCommand("npm install", dirPath);
+        int exitCode = 0;
+        logger.info("Executing \"npm install\" for plugin {}...", filesystem::path(dirPath).filename().u8string());
+        if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
+            logger.info("Npm finished successfully.");
+        else
+            logger.error("Error occurred. Exit code: {}", exitCode);
     }
 
     // Create engine & Load plugin

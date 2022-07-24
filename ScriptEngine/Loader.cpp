@@ -116,9 +116,7 @@ void LoadMain()
         }
     }
     logger.info("{} Node.js plugin packs installed in all", installCount);
-    if (!std::filesystem::exists(LLSE_NODEJS_ROOT_DIR)) {
-        std::filesystem::create_directories(LLSE_NODEJS_ROOT_DIR);
-    }
+
     files = std::filesystem::directory_iterator(LLSE_NODEJS_ROOT_DIR);
     for (auto& i : files) {
         if (i.is_directory() && i.path().filename() != "temp" && i.path().filename() != "node_modules") {
