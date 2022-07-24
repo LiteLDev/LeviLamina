@@ -44,6 +44,13 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         return false;
     std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
 
+    // Run npm install if needed
+    if (!filesystem::exists(filesystem::path(dirPath) / "node_modules"))
+    {
+        NodeJsHelper::executeNpmCommand("npm install", dirPath);
+    }
+
+    // Create engine & Load plugin
     ScriptEngine* engine = nullptr;
     node::Environment* env = nullptr;
     try {

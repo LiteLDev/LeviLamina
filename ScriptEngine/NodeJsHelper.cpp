@@ -253,7 +253,7 @@ bool processConsoleNpmCmd(const std::string& cmd)
 #endif
 }
 
-int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
+int executeNpmCommand(std::string cmd, std::string workingDir)
 {
     if (!nodeJsInited && !initNodeJs()) {
         return -1;
@@ -269,6 +269,9 @@ int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
     v8::Isolate* isolate = setup->isolate();
     node::Environment* env = setup->env();
     int exit_code = 0;
+
+    //Process workingDir
+    workingDir = ReplaceStr(workingDir, "\\", "/");
 
     {
         using namespace v8;
