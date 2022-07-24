@@ -2088,8 +2088,9 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
     return original(this, blk);
 }
 
-////////////// MobSpawn //////////////
 #include <MC/Spawner.hpp>
+
+////////////// MobSpawn //////////////
 TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
               Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8) {
     IF_LISTENED(MobSpawnEvent) {
@@ -2104,45 +2105,33 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
     return original(this, a2, a3, a4, a5, a6, a7, a8);
 }
 
-////////////// FormResponsePacket //////////////
 #include "Impl/FormPacketHelper.h"
+
+////////////// FormResponsePacket //////////////
 TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
                        NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
-    try {
-        Packet* packet = *(Packet**)pPacket;
-        ServerPlayer* sp = handler->getServerPlayer(*id, 0);
+    Packet* packet = *(Packet**)pPacket;
+    ServerPlayer* sp = handler->getServerPlayer(*id, 0);
 
-        if (sp) {
-            unsigned formId = dAccess<unsigned>(packet, 48);
-            string data = dAccess<string>(packet, 56);
+    if (sp) {
+        unsigned formId = dAccess<unsigned>(packet, 48);
+        string data = dAccess<string>(packet, 56);
 
-            if (data.back() == '\n')
-                data.pop_back();
+        if (data.back() == '\n')
+            data.pop_back();
 
-            IF_LISTENED(FormResponsePacketEvent) {
-                FormResponsePacketEvent ev{};
-                ev.mServerPlayer = sp;
-                ev.mFormId = formId;
-                ev.mJsonData = data;
+        IF_LISTENED(FormResponsePacketEvent) {
+            FormResponsePacketEvent ev{};
+            ev.mServerPlayer = sp;
+            ev.mFormId = formId;
+            ev.mJsonData = data;
 
-                if (!ev.call())
-                    return;
-            }
-            IF_LISTENED_END(PlayerBedEnterEvent)
-
-            HandleFormPacket(sp, formId, data);
+            if (!ev.call())
+                return;
         }
-    } catch (const seh_exception& e) {
-        logger.error("Event Callback Failed!");
-        logger.error("SEH Uncaught Exception Detected!");
-        logger.error("{}", TextEncoding::toUTF8(e.what()));
-        logger.error("In Event: onFormResponsePacket");
-        PrintCurrentStackTraceback();
-    } catch (...) {
-        logger.error("Event Callback Failed!");
-        logger.error("Uncaught Exception Detected!");
-        logger.error("In Event: onFormResponsePacket");
-        PrintCurrentStackTraceback();
+        IF_LISTENED_END(FormResponsePacketEvent)
+
+        HandleFormPacket(sp, formId, data);
     }
 
     original(this, id, handler, pPacket);
