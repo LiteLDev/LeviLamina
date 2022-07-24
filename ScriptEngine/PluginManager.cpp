@@ -60,10 +60,6 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
     ScriptEngine* engine = nullptr;
     node::Environment* env = nullptr;
     try {
-        auto mainScripts = ReadAllFile(entryPath);
-        if (!mainScripts) {
-            throw std::runtime_error("Fail to open entry script!");
-        }
         engine = EngineManager::newEngine();
 
         {

@@ -101,10 +101,9 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
     }
 
     // Process requireDir
-    std::string requireDir = std::filesystem::canonical(pluginDirPath).u8string();
-    requireDir = ReplaceStr(requireDir, "\\", "/");
-    if (!EndsWith(requireDir, "/"))
-        requireDir += "/";
+    if (!EndsWith(pluginDirPath, "/"))
+        pluginDirPath += "/";
+    pluginDirPath = ReplaceStr(pluginDirPath, "\\", "/");
 
     // Find setup
     auto it = setups.find(engine);
@@ -118,7 +117,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
         EngineScope enter(engine);
 
         string executeJs =
-            "const publicRequire = require('module').createRequire('" + requireDir + "');"
+            "const publicRequire = require('module').createRequire(process.cwd() + '/" + pluginDirPath + "');"
             + "globalThis.require = publicRequire;"
             + *mainScripts;
         node::LoadEnvironment(env, executeJs.c_str());
@@ -164,7 +163,8 @@ bool deployPluginPack(const std::string& filePath) {
     if (!EndsWith(filePath, LLSE_PLUGINPACK_EXTENSION)) {
         return false;
     }
-    std::filesystem::create_directories(LLSE_NODEJS_TEMP_DIR);
+    error_code ec;
+    std::filesystem::create_directories(LLSE_NODEJS_TEMP_DIR, ec);
     auto&& [exitCode, output] = NewProcessSync(fmt::format("{} x \"{}\" -o\"{}\" -aoa", LLSE_7Z_PATH, filePath, LLSE_NODEJS_TEMP_DIR "/"),
                                                LLSE_NODEJS_UNCOMPRESS_TIMEOUT);
     if (exitCode != 0) {
@@ -173,19 +173,20 @@ bool deployPluginPack(const std::string& filePath) {
         return false;
     }
     if (std::filesystem::exists(LLSE_NODEJS_TEMP_DIR "/package.json")) {
-        auto pluginName = std::filesystem::path(filePath).stem().u8string();
-        auto& dest = std::filesystem::path(LLSE_NODEJS_ROOT_DIR)
-                        .append(pluginName.substr(0, pluginName.length() - 3));
-        nlohmann::json j;
-        std::fstream file(LLSE_NODEJS_TEMP_DIR "/package.json");
-        file >> j;
-        if (j.contains("name")) {
-            dest = std::filesystem::path(LLSE_NODEJS_ROOT_DIR).append(j["name"].get<std::string>());
+        auto pluginName = NodeJsHelper::getPluginPackageName(LLSE_NODEJS_TEMP_DIR);
+        if (pluginName.empty())
+        {
+            pluginName = std::filesystem::path(filePath).stem().u8string().substr(0, pluginName.length() - 3);
+            // remove ".ll" at end
         }
-        file.close();
-        std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest);
+        auto dest = std::filesystem::path(LLSE_NODEJS_ROOT_DIR).append(pluginName);
+        //if (filesystem::exists(dest))
+        //    filesystem::remove_all(dest, ec);
+        std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest, 
+            filesystem::copy_options::overwrite_existing | filesystem::copy_options::recursive, ec);
     }
-    std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR);
+    std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR, ec);
+    std::filesystem::remove(filePath, ec);
     return true;
 }
 
@@ -205,7 +206,7 @@ std::string findEntryScript(const std::string& dirPath)
         if (j.contains("main")) {
             entryFile = j["main"].get<std::string>();
         }
-        auto entryPath = dirPath_obj / std::filesystem::path(entryFile);
+        auto entryPath = std::filesystem::canonical(dirPath_obj / std::filesystem::path(entryFile));
         if (!std::filesystem::exists(entryPath))
             return "";
         else
