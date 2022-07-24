@@ -21,13 +21,11 @@
 
 namespace script::jsc_backend {
 
-JscEngineScope::JscEngineScope(JscEngine& engine)
-    : unlockPrevious_(&engine), lockGuard_(*engine.virtualMachineLock_) {}
+JscEngineScope::JscEngineScope(JscEngine& engine, JscEngine* previous)
+    : unlockPrevious_(&engine, previous), lockGuard_(*engine.virtualMachineLock_) {}
 
 void JscEngineScope::UnlockPrevious_Ctor(JscEngine* currentEngine,
-                                         JscEngineScope::UnlockPrevious& u) {
-  // we are building new frame, so "current" is actually the previous frame.
-  auto previous = ::script::EngineScope::currentEngineAs<JscEngine>();
+                                         JscEngineScope::UnlockPrevious& u, JscEngine* previous) {
   if (previous && previous != currentEngine) {
     u.previousEngine_ = previous;
     previous->virtualMachineLock_->unlock();

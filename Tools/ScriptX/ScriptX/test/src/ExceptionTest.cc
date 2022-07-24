@@ -121,12 +121,19 @@ return exceptionStackTraceTest
                           .select());
 
   try {
+#ifdef SCRIPTX_BACKEND_QUICKJS
+    // update max stack size for QuickJs
+    // otherwise a "stack overflow" maybe thrown
+    // even we have limited to 10 layers of recursion.
+    JS_SetMaxStackSize(qjs_interop::currentRuntime(), 1024 * 1024);
+#endif
+
     func.asFunction().call({}, Number::newNumber(0));
     FAIL() << "should thrown";
   } catch (const Exception& e) {
-    EXPECT_NE(e.message().find("recursive too deep"), std::string::npos);
-    EXPECT_NE(e.stacktrace().find("exceptionStackTraceTestThrow"), std::string::npos);
-    EXPECT_NE(e.stacktrace().find("exceptionStackTraceTest"), std::string::npos);
+    EXPECT_NE(e.message().find("recursive too deep"), std::string::npos) << e;
+    EXPECT_NE(e.stacktrace().find("exceptionStackTraceTestThrow"), std::string::npos) << e;
+    EXPECT_NE(e.stacktrace().find("exceptionStackTraceTest"), std::string::npos) << e;
   }
   Exception().stacktrace();
   std::ostringstream() << Exception();
@@ -168,7 +175,7 @@ TEST_F(ExceptionTest, Cross) {
 }
 
 #ifndef SCRIPTX_BACKEND_WEBASSEMBLY
-TEST_F(ExceptionTest, EngineScopeOnDestory) {
+TEST_F(ExceptionTest, EngineScopeOnDestroy) {
   bool executed = false;
   {
     EngineScope engineScope(engine);

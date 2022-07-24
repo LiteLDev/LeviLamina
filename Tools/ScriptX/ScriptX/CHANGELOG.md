@@ -1,5 +1,8 @@
 
 ---
+Version 3.2.0 (2021-12):
+1. fix QuickJs memory leak, engine instance not deleted on destroy
+2. fix QuickJs missing EngineScope when run micro task (Promise)
 
 Version 3.1.0 (2021-04):
 1. add QuickJs backend

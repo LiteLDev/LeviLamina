@@ -20,7 +20,7 @@
 
 namespace script::wasm_backend {
 
-WasmEngineScope::WasmEngineScope(WasmEngine &) : stackTop_(-1) {
+WasmEngineScope::WasmEngineScope(WasmEngine &, WasmEngine *) : stackTop_(-1) {
 #ifdef __EMSCRIPTEN_PTHREADS__
   if (wasm_backend::WasmEngine::engineThreadId_ != std::this_thread::get_id()) {
     std::ostringstream oss;

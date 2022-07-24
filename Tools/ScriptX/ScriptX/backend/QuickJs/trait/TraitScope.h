@@ -28,7 +28,7 @@ class EngineScopeImpl {
   QjsEngine *current_;
 
  public:
-  explicit EngineScopeImpl(QjsEngine &);
+  explicit EngineScopeImpl(QjsEngine &, QjsEngine *);
 
   ~EngineScopeImpl();
 };

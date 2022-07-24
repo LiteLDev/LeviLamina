@@ -71,7 +71,7 @@ The memory can only be managed manually. There are two main aspects related to S
 In V8 and JSCore, depending on the finalize callback provided by the engine, the automatic release of the bound class
 is realized, but in WASM it is not possible, and the user can only release it by himself. ScriptX provides auxiliary methods in the JS global scope.
 
-Give a chestnut:
+For example:
 
 ```C++
 static ClassDefine<Test> test =
@@ -238,13 +238,13 @@ class SharedByteBuffer {
     readonly byteLength: number;
 
     // Manual memory management, destroy this class, and release WASM memory
-    public destory(): void;
+    public destroy(): void;
 }
 ```
 
 Pay attention to the buffer attribute above. As mentioned above, when WASM `grow_memory`, the underlying `ArrayBuffer` may change, so when using `SharedByteBuffer`, create a `TypedArray` immediately, don’t keep the reference for long-term use (of course you You can configure wasm not to grow_memory, or use `SharedArrayBuffer`, so the buffer attribute will not change, depending on your usage scenario).
 
-Finally, because WASM has no GC and JS has no finalize, the user needs to release this memory. You can use the above `destory` method, or you can use `ScriptX.destroySharedByteBuffer`. The C++ code uses `wasm_interop::destroySharedByteBuffer`.
+Finally, because WASM has no GC and JS has no finalize, the user needs to release this memory. You can use the above `destroy` method, or you can use `ScriptX.destroySharedByteBuffer`. The C++ code uses `wasm_interop::destroySharedByteBuffer`.
 
 Give a chestnut:
 

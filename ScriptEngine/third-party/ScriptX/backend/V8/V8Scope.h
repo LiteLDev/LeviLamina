@@ -30,7 +30,7 @@ class V8EngineScope {
   v8::Context::Scope contextScope_;
 
  public:
-  explicit V8EngineScope(V8Engine& engine);
+  explicit V8EngineScope(V8Engine& engine, V8Engine* previous);
 
   ~V8EngineScope() = default;
 };
