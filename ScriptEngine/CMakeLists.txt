@@ -17,7 +17,7 @@ file(GLOB_RECURSE SRC_FILES
 
 add_definitions(-D "CPPHTTPLIB_OPENSSL_SUPPORT" -D "NDEBUG" -D "_CONSOLE" -D "_AMD64_"
         -D "NOMINMAX" -D "SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/Lua/trait/Trait"
-        -D "_WINDLL" -D "_UNICODE" -D "UNICODE")
+        -D "_WINDLL" -D "_UNICODE" -D "UNICODE" -D "SCRIPTX_LANG_LUA")
 
 add_compile_options(
         /permissive- /MP /GS /GL /W3 /Gy /Zc:wchar_t
@@ -33,7 +33,7 @@ add_link_options(
         /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
 )
 
-add_library(LiteLoader.Lua SHARED ${SRC_FILES})
+add_library(LiteLoader.Lua SHARED ${SRC_FILES} ScriptEngine.rc)
 
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/..)
