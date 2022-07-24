@@ -9,18 +9,10 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
 set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 
 file(GLOB_RECURSE SRC_FILES
-        ${PROJECT_SOURCE_DIR}/Lib/*.cpp
-        ${PROJECT_SOURCE_DIR}/Lib/*.hpp
-        ${PROJECT_SOURCE_DIR}/Lib/*.h
+        ${PROJECT_SOURCE_DIR}/Lib/third-party/nbt-cpp/*.cpp
         ${PROJECT_SOURCE_DIR}/Header/*.cpp
-        ${PROJECT_SOURCE_DIR}/Header/*.hpp
-        ${PROJECT_SOURCE_DIR}/Header/*.h
         ${PROJECT_SOURCE_DIR}/Kernel/*.cpp
-        ${PROJECT_SOURCE_DIR}/Kernel/*.hpp
-        ${PROJECT_SOURCE_DIR}/Kernel/*.h
         ${PROJECT_SOURCE_DIR}/Main/*.cpp
-        ${PROJECT_SOURCE_DIR}/Main/*.hpp
-        ${PROJECT_SOURCE_DIR}/Main/*.h
         )
 
 add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
@@ -28,14 +20,14 @@ add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
         -D_USRDLL -D_AMD64_ -DNOMINMAX -D__cpp_lib_char8_t)
 
 add_compile_options(
-        -permissive -MP -GS -GL -W0 -Gy -Zc:wchar_t -Zi -Gm- -sdl -Zc:inline -fp:precise
-        -errorReport:prompt -WX- -Zc:forScope -Gd -Oi -MD -std:c++20 -FC -EHa -nologo
-        -diagnostics:column -utf-8
+        /permissive /MP /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /sdl /Zc:inline /fp:precise
+        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++20 /FC /EHa /nologo
+        /diagnostics:column /utf-8
 )
 
 add_link_options(
-        -MANIFEST -LTCG:incremental -NXCOMPAT -DEBUG:FULL -DLL -MACHINE:X64 -OPT:REF -INCREMENTAL:NO -SUBSYSTEM:CONSOLE
-        -MANIFESTUAC:NO -OPT:ICF -ERRORREPORT:PROMPT -NOLOGO -DELAYLOAD:"bedrock_server.dll" -TLBID:1
+        /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO /SUBSYSTEM:CONSOLE
+        /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:bedrock_server.dll /TLBID:1
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/)
@@ -57,7 +49,7 @@ set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib
 add_library(mysql STATIC IMPORTED)
 set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
 
-target_link_libraries(LiteLoader SymDBHelper LLPreLoader base64 sqlitecpp sqlite3 mysql
+target_link_libraries(LiteLoader LLPreLoader base64 sqlitecpp sqlite3 mysql
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
