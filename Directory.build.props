@@ -1,6 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <LLVMInstallDir>C:\Program Files\LLVM</LLVMInstallDir>
-    <LLVMToolsVersion>14.0.6</LLVMToolsVersion>
-  </PropertyGroup>
-</Project>

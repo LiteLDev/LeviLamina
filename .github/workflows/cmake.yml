@@ -21,7 +21,6 @@ on:
       - '**.hh'
       - '**.hxx'
       - '**.h'
-      - 'cmake.yml'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
