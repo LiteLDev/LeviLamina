@@ -121,7 +121,7 @@ void LoadMain()
     }
     files = std::filesystem::directory_iterator(LLSE_NODEJS_ROOT_DIR);
     for (auto& i : files) {
-        if (i.is_directory() && i.path().filename() != "temp") {
+        if (i.is_directory() && i.path().filename() != "temp" && i.path().filename() != "node_modules") {
             std::filesystem::path pth = i.path();
             if (std::filesystem::exists(pth / "package.json")) {
                 if (PluginManager::loadPlugin(i.path().u8string())) {
@@ -129,7 +129,7 @@ void LoadMain()
                 }
             }
             else {
-                logger.warn("No package.json file found in directory {}, ignored.");
+                logger.warn("No package.json file found in directory {}, ignored.", i.path().filename().u8string());
             }
         }
     }
