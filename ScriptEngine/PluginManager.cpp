@@ -62,7 +62,7 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
             // bindAPIs
             BindAPIs(engine);
         }
-        NodeJsHelper::loadPluginCode(engine, entryPath);
+        NodeJsHelper::loadPluginCode(engine, entryPath, dirPath);
 
         if (!PluginManager::getPlugin(pluginName)) {
             PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});

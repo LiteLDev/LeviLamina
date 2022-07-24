@@ -3,6 +3,7 @@
 #include <ScheduleAPI.h>
 #include <EventAPI.h>
 #include <LLAPI.h>
+#include <Utils/StringHelper.h>
 #include "NodeJsHelper.h"
 #include "Engine/EngineManager.h"
 #include "Engine/EngineOwnData.h"
@@ -90,14 +91,19 @@ script::ScriptEngine* newEngine() {
     return engine;
 }
 
-bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath)
+bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, std::string pluginDirPath)
 {
     auto mainScripts = ReadAllFile(entryScriptPath);
     if (!mainScripts) {
         return false;
     }
 
-    //find setup
+    // Process requireDir
+    std::string requireDir = ReplaceStr(pluginDirPath, "\\", "/");
+    if (!EndsWith(requireDir, "/"))
+        requireDir += "/";
+
+    // Find setup
     auto it = setups.find(engine);
     if (it == setups.end()) return false;
 
@@ -108,12 +114,11 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath)
     {
         EngineScope enter(engine);
 
-        node::LoadEnvironment(env,
-            ("const publicRequire ="
-                "  require('module').createRequire(process.cwd() + '/');"
-                "globalThis.require = publicRequire;" +
-                *mainScripts)
-            .c_str());
+        string executeJs =
+            "const publicRequire = require('module').createRequire('" + requireDir + "');"
+            + "globalThis.require = publicRequire;"
+            + *mainScripts;
+        node::LoadEnvironment(env, executeJs.c_str());
 
         //if (loadenv_ret.IsEmpty()) { 
         //    node::Stop(env);
@@ -273,8 +278,7 @@ int executeNpmCommand(const std::string& cmd, const std::string& workingDir)
         v8::Context::Scope context_scope(setup->context());
 
         string executeJs = 
-            "const publicRequire ="
-            "  require('module').createRequire(process.cwd() + '/plugins/nodejs/');"
+            "const publicRequire = require('module').createRequire(process.cwd() + '/plugins/nodejs/');"
             "require('process').chdir('" + workingDir + "');"
             + "publicRequire('npm-js-interface')('" + cmd + "');";
 

@@ -11,7 +11,7 @@ bool initNodeJs();
 void shutdownNodeJs();
 
 script::ScriptEngine* newEngine();
-bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath);
+bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, std::string pluginDirPath);
 int stopEngine(script::ScriptEngine* engine);
 
 bool deployPluginPack(const std::string& filePath);
