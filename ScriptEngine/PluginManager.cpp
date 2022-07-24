@@ -45,7 +45,8 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
     std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
 
     // Run npm install if needed
-    if (!filesystem::exists(filesystem::path(dirPath) / "node_modules"))
+    if (NodeJsHelper::doesPluginPackHasDependency(dirPath)
+        && !filesystem::exists(filesystem::path(dirPath) / "node_modules"))
     {
         NodeJsHelper::executeNpmCommand("npm install", dirPath);
     }

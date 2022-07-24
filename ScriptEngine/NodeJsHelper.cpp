@@ -62,6 +62,8 @@ script::ScriptEngine* newEngine() {
     std::vector<std::string> errors;
     std::unique_ptr<node::CommonEnvironmentSetup> setup =
         node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args, node::EnvironmentFlags::kOwnsProcessState);
+    //if kOwnsInspector set, inspector_agent.cc:681 CHECK_EQ(start_io_thread_async_initialized.exchange(true), false) fail!
+    
     if (!setup) {
         for (const std::string& err : errors)
             logger.error("CommonEnvironmentSetup Error: {}", err.c_str());
@@ -99,7 +101,8 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
     }
 
     // Process requireDir
-    std::string requireDir = ReplaceStr(pluginDirPath, "\\", "/");
+    std::string requireDir = std::filesystem::canonical(pluginDirPath).u8string();
+    requireDir = ReplaceStr(requireDir, "\\", "/");
     if (!EndsWith(requireDir, "/"))
         requireDir += "/";
 
@@ -238,6 +241,29 @@ std::string getPluginPackageName(const std::string& dirPath)
     }
 }
 
+bool doesPluginPackHasDependency(const std::string& dirPath)
+{
+    auto dirPath_obj = std::filesystem::path(dirPath);
+
+    std::filesystem::path packageFilePath = dirPath_obj / std::filesystem::path("package.json");
+    if (!std::filesystem::exists(packageFilePath))
+        return false;
+
+    try {
+        std::ifstream file(packageFilePath.make_preferred().u8string());
+        nlohmann::json j;
+        file >> j;
+        if (j.contains("dependencies")) {
+            return true;
+        }
+        return false;
+    }
+    catch (...)
+    {
+        return false;
+    }
+}
+
 bool processConsoleNpmCmd(const std::string& cmd)
 {
 #ifdef SCRIPTX_LANG_NODEJS
@@ -261,6 +287,8 @@ int executeNpmCommand(std::string cmd, std::string workingDir)
     std::vector<std::string> errors;
     std::unique_ptr<node::CommonEnvironmentSetup> setup =
         node::CommonEnvironmentSetup::Create(platform.get(), &errors, args, exec_args, node::EnvironmentFlags::kOwnsProcessState);
+    //if kOwnsInspector set, inspector_agent.cc:681 CHECK_EQ(start_io_thread_async_initialized.exchange(true), false) fail!
+
     if (!setup) {
         for (const std::string& err : errors)
             logger.error("CommonEnvironmentSetup Error: {}", err.c_str());
@@ -281,7 +309,7 @@ int executeNpmCommand(std::string cmd, std::string workingDir)
         v8::Context::Scope context_scope(setup->context());
 
         string executeJs = 
-            "const publicRequire = require('module').createRequire(process.cwd() + '/plugins/nodejs/');"
+            "const publicRequire = require('module').createRequire(process.cwd() + '/plugins/lib/');"
             "require('process').chdir('" + workingDir + "');"
             + "publicRequire('npm-js-interface')('" + cmd + "');";
 
@@ -289,16 +317,16 @@ int executeNpmCommand(std::string cmd, std::string workingDir)
         {
             MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(env, executeJs.c_str());
             if (loadenv_ret.IsEmpty())  // There has been a JS exception.
-                return 1;
+                throw "error";
             exit_code = node::SpinEventLoop(env).FromMaybe(1);
         }
         catch(...)
         {
             logger.error("Fail to execute NPM command. Error occurs");
         }
-
-        node::Stop(env);
     }
+
+    node::Stop(env);
     return exit_code;
 }
 
