@@ -1112,8 +1112,10 @@ void InitBasicEventListeners() {
             return false;
         if (!ProcessOldHotManageCommand(ev.mCommand))
             return false;
+#ifdef SCRIPTX_LANG_NODEJS
         if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
             return false;
+#endif
 
         // CallEvents
         vector<string> paras;

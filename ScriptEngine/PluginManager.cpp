@@ -18,7 +18,7 @@
 #include <API/CommandAPI.h>
 #include <Utils/Hash.h>
 #include <NodeJsHelper.h>
-#if defined(SCRIPTX_LANG_NODEJS)
+#ifdef SCRIPTX_LANG_NODEJS
 #include <NodeJs/include/node.h>
 #endif
 #define H(x) do_hash(x)
@@ -179,6 +179,8 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     return false;
 }
 
+
+#ifdef SCRIPTX_LANG_NODEJS
 // 加载NodeJs插件
 bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
 {
@@ -303,6 +305,7 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
     }
     return false;
 }
+#endif
 
 //卸载插件
 bool PluginManager::unloadPlugin(const std::string& name) {

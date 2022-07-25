@@ -110,6 +110,8 @@ void LoadMain()
     logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugins loaded in all.");
 }
 
+
+#ifdef SCRIPTX_LANG_NODEJS
 // NodeJs后端 - 主加载
 void LoadMain_NodeJs()
 {
@@ -147,3 +149,4 @@ void LoadMain_NodeJs()
     }
     logger.info("{} Node.js plugins loaded in all.", count);
 }
+#endif
