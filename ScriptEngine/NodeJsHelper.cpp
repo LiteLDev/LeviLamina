@@ -117,7 +117,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
 
         string executeJs =
             "const publicRequire = require('module').createRequire(process.cwd() + '/" + pluginDirPath + "');"
-            + "globalThis.require = publicRequire;"
+            + "require = publicRequire;"
             + *mainScripts;
 
         // Set exit handler
