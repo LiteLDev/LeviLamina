@@ -141,10 +141,11 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         std::string const& pluginName = ENGINE_OWN_DATA()->pluginName;
         ExitEngineScope exit;
 
-        //后处理
+        //如果插件自身未注册则帮忙注册信息
         if (!PluginManager::getPlugin(pluginName))
             PluginManager::registerPlugin(filePath, pluginName, pluginName, LL::Version(1, 0, 0), {});
 
+        //热加载完毕后补调用各启动事件
         if (isHotLoad)
             LLSECallEventsOnHotLoad(engine);
         logger.info(pluginName + " loaded.");
@@ -217,7 +218,55 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
         NodeJsHelper::loadPluginCode(engine, entryPath, dirPath);
 
         if (!PluginManager::getPlugin(pluginName)) {
-            PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
+            // Plugin did't register itself. Help to register it
+            string description = pluginName;
+            LL::Version ver(1, 0, 0);
+            std::map<string, string> others = {};
+
+            // Read information from package.json
+            try {
+                std::filesystem::path packageFilePath = std::filesystem::path(dirPath) / "package.json";
+                std::ifstream file(packageFilePath.make_preferred().u8string());
+                nlohmann::json j;
+                file >> j;
+                file.close();
+
+                // description
+                if (j.contains("description"))
+                {
+                    description = j["description"].get<std::string>();
+                }
+                // version
+                if (j.contains("version") && j["version"].is_string())
+                {
+                    ver = LL::Version::parse(j["version"].get<std::string>());
+                }
+                // license
+                if (j.contains("license") && j["license"].is_string())
+                {
+                    others["License"] = j["license"].get<std::string>();
+                }
+                else if (j["license"].is_object() && j["license"].contains("url"))
+                {
+                    others["License"] = j["license"]["url"].get<std::string>();
+                }
+                // repository
+                if (j.contains("repository") && j["repository"].is_string())
+                {
+                    others["Repository"] = j["repository"].get<std::string>();
+                }
+                else if (j["repository"].is_object() && j["repository"].contains("url"))
+                {
+                    others["Repository"] = j["repository"]["url"].get<std::string>();
+                }
+            }
+            catch(...)
+            {
+                logger.warn("Fail to help plugin {} get registered.", pluginName);
+            }
+
+            // register
+            PluginManager::registerPlugin(dirPath, pluginName, description, ver, others);
         }
 
         logger.info(pluginName + " loaded.");
