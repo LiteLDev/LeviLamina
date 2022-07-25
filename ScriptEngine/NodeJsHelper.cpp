@@ -42,12 +42,6 @@ bool initNodeJs() {
     platform = node::MultiIsolatePlatform::Create(std::thread::hardware_concurrency());
     V8::InitializePlatform(platform.get());
     V8::Initialize();
-    
-    /*// Set Cleanup
-    Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent) {
-        shutdownNodeJs();
-        return true;
-    });*/
 
     nodeJsInited = true;
     return true;
@@ -144,7 +138,6 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
         {
             if (!LL::isServerStopping() && (*isRunningMap)[env])
             {
-                logger.debug("UV Loop of {}", ENGINE_GET_DATA(engine)->pluginName);
                 EngineScope enter(engine);
                 uv_run(eventLoop, UV_RUN_NOWAIT);
             }
@@ -188,6 +181,7 @@ bool stopEngine(node::Environment* env)
         {
             it->second.cancel();
         }
+
         return true;
     }
     catch (...)
