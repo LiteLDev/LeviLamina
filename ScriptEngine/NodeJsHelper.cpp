@@ -15,9 +15,12 @@ namespace NodeJsHelper {
 bool nodeJsInited = false;
 std::vector<std::string> args;
 std::vector<std::string> exec_args;
+
 std::unique_ptr<node::MultiIsolatePlatform> platform = nullptr;
-std::map<script::ScriptEngine*, node::Environment*> environments;
-std::map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> setups;
+std::unordered_map<script::ScriptEngine*, node::Environment*> environments;
+std::unordered_map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> setups;
+std::unordered_map<node::Environment*, bool> isRunning;
+std::unordered_map<node::Environment*, ScheduleTask> uvLoopTask;
 
 bool initNodeJs() {
     // Init NodeJs
@@ -80,8 +83,9 @@ script::ScriptEngine* newEngine() {
     script::ScriptEngine* engine = new script::ScriptEngineImpl({}, isolate, setup->context(), false);
     
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
-    environments.emplace(engine, env);
-    setups.emplace(engine, std::move(setup));
+    environments[engine] = env;
+    setups[engine] = std::move(setup);
+    isRunning[env] = true;
 
     node::AddEnvironmentCleanupHook(
         isolate,
@@ -114,22 +118,36 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
 
     try
     {
+        using namespace v8;
         EngineScope enter(engine);
 
         string executeJs =
             "const publicRequire = require('module').createRequire(process.cwd() + '/" + pluginDirPath + "');"
             + "globalThis.require = publicRequire;"
             + *mainScripts;
-        node::LoadEnvironment(env, executeJs.c_str());
 
-        //if (loadenv_ret.IsEmpty()) { 
-        //    node::Stop(env);
-        //    return false;
-        //}
+        // Set exit handler
+        node::SetProcessExitHandler(env, [](node::Environment* env_, int exit_code){
+            stopEngine(getEngine(env_));
+        });
 
-        Schedule::repeat([eventLoop{ it->second->event_loop() }]() {
-            if(!LL::isServerStopping())
+        // Load code
+        MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(env, executeJs.c_str());
+        if (loadenv_ret.IsEmpty())  // There has been a JS exception.
+        {
+            node::Stop(env);
+            return false;
+        }
+
+        // Start libuv event loop
+        uvLoopTask[env] = Schedule::repeat([engine, env, isRunningMap{ &isRunning }, eventLoop{it->second->event_loop()}]()
+        {
+            if (!LL::isServerStopping() && (*isRunningMap)[env])
+            {
+                logger.debug("UV Loop of {}", ENGINE_GET_DATA(engine)->pluginName);
+                EngineScope enter(engine);
                 uv_run(eventLoop, UV_RUN_NOWAIT);
+            }
         }, 2);
         
         return true;
@@ -152,11 +170,45 @@ v8::Isolate* getIsolateOf(script::ScriptEngine* engine) {
     return it->second->isolate();
 }
 
-int stopEngine(script::ScriptEngine* engine) {
-    auto env = NodeJsHelper::getEnvironmentOf(engine);
+bool stopEngine(node::Environment* env)
+{
     if (!env)
-        return 0;
-    return node::Stop(env);
+        return false;
+    try
+    {
+        // Set flag
+        isRunning[env] = false;
+
+        // Stop code executing
+        node::Stop(env);
+
+        // Stop libuv event loop
+        auto it = uvLoopTask.find(env);
+        if (it != uvLoopTask.end())
+        {
+            it->second.cancel();
+        }
+        return true;
+    }
+    catch (...)
+    {
+        logger.error("Fail to stop engine {}", (void*)env);
+        return false;
+    }
+}
+
+bool stopEngine(script::ScriptEngine* engine) {
+    logger.warn("NodeJs plugin {} exited.", ENGINE_GET_DATA(engine)->pluginName);
+    auto env = NodeJsHelper::getEnvironmentOf(engine);
+    return stopEngine(env);
+}
+
+script::ScriptEngine* getEngine(node::Environment* env)
+{
+    for (auto& [engine, environment] : environments)
+        if (env == environment)
+            return engine;
+    return nullptr;
 }
 
 bool deployPluginPack(const std::string& filePath) {
@@ -316,6 +368,9 @@ int executeNpmCommand(std::string cmd, std::string workingDir)
 
         try
         {
+            node::SetProcessExitHandler(env, [&](node::Environment* env_, int exit_code) {
+                node::Stop(env);
+            });
             MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(env, executeJs.c_str());
             if (loadenv_ret.IsEmpty())  // There has been a JS exception.
                 throw "error";

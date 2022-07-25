@@ -215,7 +215,8 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
             // bindAPIs
             BindAPIs(engine);
         }
-        NodeJsHelper::loadPluginCode(engine, entryPath, dirPath);
+        if (!NodeJsHelper::loadPluginCode(engine, entryPath, dirPath))
+            throw "Uncaught exception thrown in code";
 
         if (!PluginManager::getPlugin(pluginName)) {
             // Plugin did't register itself. Help to register it

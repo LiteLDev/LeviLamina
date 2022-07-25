@@ -12,7 +12,9 @@ void shutdownNodeJs();
 
 script::ScriptEngine* newEngine();
 bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, std::string pluginDirPath);
-int stopEngine(script::ScriptEngine* engine);
+bool stopEngine(script::ScriptEngine* engine);
+bool stopEngine(node::Environment* env);
+script::ScriptEngine* getEngine(node::Environment* env);
 
 bool deployPluginPack(const std::string& filePath);
 std::string findEntryScript(const std::string& dirPath);
