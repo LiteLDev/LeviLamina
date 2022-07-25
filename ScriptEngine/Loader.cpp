@@ -30,9 +30,12 @@ extern void BindAPIs(ScriptEngine *engine);
 
 
 // 预加载依赖库
-void LoadDepends() {
-    ////////////////////////////// !!!Need to be recover!!! //////////////////////////////
-#ifndef SCRIPTX_LANG_NODEJS
+void LoadDepends()
+{
+#ifdef SCRIPTX_LANG_NODEJS
+    return;     // NodeJs backend load depends code in another place
+#endif
+
     std::filesystem::directory_iterator deps(LLSE_DEPENDS_DIR);
     for (auto& i : deps) {
         if (i.is_regular_file() && i.path().filename() == string("BaseLib") + LLSE_PLUGINS_EXTENSION) {
@@ -51,13 +54,15 @@ void LoadDepends() {
             }
         }
     }
-#endif
 }
 
 // 加载调试引擎
-void LoadDebugEngine() {
-    ////////////////////////////// !!!Need to be recover!!! //////////////////////////////
-#ifndef SCRIPTX_LANG_NODEJS
+void LoadDebugEngine()
+{
+#ifdef SCRIPTX_LANG_NODEJS
+    return;     // NodeJs backend didn't enable debug engine now
+#endif
+
     // 启动引擎
     debugEngine = EngineManager::newEngine(LLSE_DEBUG_ENGINE_NAME);
     EngineScope enter(debugEngine);
@@ -79,14 +84,18 @@ void LoadDebugEngine() {
         logger.error("Fail in Loading Dependence Lib!\n");
         throw;
     }
-#endif
 }
 
+
 // 主加载
+void LoadMain_NodeJs();
 void LoadMain()
 {
-    ////////////////////////////// !!!Need to be recover!!! //////////////////////////////
-#ifndef SCRIPTX_LANG_NODEJS
+#ifdef SCRIPTX_LANG_NODEJS
+    LoadMain_NodeJs();      // Process NodeJs backend's plugin load separately
+    return;
+#endif
+
     logger.info("Loading plugins...");
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
@@ -99,12 +108,16 @@ void LoadMain()
         }
     }
     logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugins loaded in all.");
+}
 
-#else
-
+// NodeJs后端 - 主加载
+void LoadMain_NodeJs()
+{
     logger.info("Loading plugins...");
     int installCount = 0;
     int count = 0;
+
+    // Unpack .ll.zip
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
@@ -117,6 +130,7 @@ void LoadMain()
     }
     logger.info("{} Node.js plugin packs installed in all", installCount);
 
+    // Load Plugins in NODEJS_ROOT_DIR
     files = std::filesystem::directory_iterator(LLSE_NODEJS_ROOT_DIR);
     for (auto& i : files) {
         if (i.is_directory() && i.path().filename() != "temp" && i.path().filename() != "node_modules") {
@@ -132,6 +146,4 @@ void LoadMain()
         }
     }
     logger.info("{} Node.js plugins loaded in all.", count);
-
-#endif
 }

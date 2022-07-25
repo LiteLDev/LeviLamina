@@ -11,6 +11,7 @@ private:
 
 public:
     static bool loadPlugin(const std::string& filePath, bool isHotLoad = false, bool mustBeCurrectModule = false);
+    static bool loadNodeJsPlugin(const std::string& dirPath);
     static bool unloadPlugin(const std::string& name);
     static bool reloadPlugin(const std::string& name);
     static bool reloadAllPlugins();

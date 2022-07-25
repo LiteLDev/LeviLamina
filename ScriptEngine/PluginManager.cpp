@@ -36,81 +36,11 @@ string RemoveRealAllExtension(string fileName) {
 }
 
 // 加载插件
-bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool mustBeCurrentModule) {
-
-#if defined(SCRIPTX_LANG_NODEJS)
-    std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
-    if (entryPath.empty())
-        return false;
-    std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
-
-    // Run "npm install" if needed
-    if (NodeJsHelper::doesPluginPackHasDependency(dirPath)
-        && !filesystem::exists(filesystem::path(dirPath) / "node_modules"))
-    {
-        int exitCode = 0;
-        logger.info("Executing \"npm install\" for plugin {}...", filesystem::path(dirPath).filename().u8string());
-        if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
-            logger.info("Npm finished successfully.");
-        else
-            logger.error("Error occurred. Exit code: {}", exitCode);
-    }
-
-    // Create engine & Load plugin
-    ScriptEngine* engine = nullptr;
-    node::Environment* env = nullptr;
-    try {
-        engine = EngineManager::newEngine();
-
-        {
-            EngineScope enter(engine);
-            // setData
-            ENGINE_OWN_DATA()->pluginName = pluginName;
-            ENGINE_OWN_DATA()->pluginFilePath = entryPath;
-            ENGINE_OWN_DATA()->logger.title = pluginName;
-            // bindAPIs
-            BindAPIs(engine);
-        }
-        NodeJsHelper::loadPluginCode(engine, entryPath, dirPath);
-
-        if (!PluginManager::getPlugin(pluginName)) {
-            PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
-        }
-
-        if (isHotLoad) {
-            LLSECallEventsOnHotLoad(engine);
-        }
-        logger.info(pluginName + " loaded.");
-        return true;
-    } catch (const Exception& e) {
-        logger.error("Fail to load " + dirPath + "!");
-        if (engine) {
-            EngineScope enter(engine);
-            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-            PrintException(e);
-            ExitEngineScope exit;
-
-            LLSERemoveTimeTaskData(engine);
-            LLSERemoveAllEventListeners(engine);
-            LLSERemoveCmdRegister(engine);
-            LLSERemoveCmdCallback(engine);
-            LLSERemoveAllExportedFuncs(engine);
-
-            engine->getData().reset();
-            EngineManager::unRegisterEngine(engine);
-        }
-        if (engine) {
-            node::Stop(env);
-        }
-    } catch (const std::exception& e) {
-        logger.error("Fail to load " + dirPath + "!");
-        logger.error(TextEncoding::toUTF8(e.what()));
-    } catch (...) {
-        logger.error("Fail to load " + dirPath + "!");
-    }
-    return false;
-
-#else
+bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule)
+{
+#ifdef SCRIPTX_LANG_NODEJS
+    return loadNodeJsPlugin(filePath);          // Process NodeJs plugin load separately
+#endif
 
     if (filePath == LLSE_DEBUG_ENGINE_NAME)
         return true;
@@ -246,7 +176,82 @@ bool PluginManager::loadPlugin(const std::string& dirPath, bool isHotLoad, bool 
         logger.error("Fail to load " + filePath + "!");
     }
     return false;
-#endif
+}
+
+// 加载NodeJs插件
+bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
+{
+    // NodeJs plugins do not support features like hot-load or remote-load now
+
+    std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
+    if (entryPath.empty())
+        return false;
+    std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
+
+    // Run "npm install" if needed
+    if (NodeJsHelper::doesPluginPackHasDependency(dirPath)
+        && !filesystem::exists(filesystem::path(dirPath) / "node_modules"))
+    {
+        int exitCode = 0;
+        logger.info("Executing \"npm install\" for plugin {}...", filesystem::path(dirPath).filename().u8string());
+        if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
+            logger.info("Npm finished successfully.");
+        else
+            logger.error("Error occurred. Exit code: {}", exitCode);
+    }
+
+    // Create engine & Load plugin
+    ScriptEngine* engine = nullptr;
+    node::Environment* env = nullptr;
+    try {
+        engine = EngineManager::newEngine();
+        {
+            EngineScope enter(engine);
+            // setData
+            ENGINE_OWN_DATA()->pluginName = pluginName;
+            ENGINE_OWN_DATA()->pluginFilePath = entryPath;
+            ENGINE_OWN_DATA()->logger.title = pluginName;
+            // bindAPIs
+            BindAPIs(engine);
+        }
+        NodeJsHelper::loadPluginCode(engine, entryPath, dirPath);
+
+        if (!PluginManager::getPlugin(pluginName)) {
+            PluginManager::registerPlugin(entryPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
+        }
+
+        logger.info(pluginName + " loaded.");
+        return true;
+    }
+    catch (const Exception& e) {
+        logger.error("Fail to load " + dirPath + "!");
+        if (engine) {
+            EngineScope enter(engine);
+            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+            PrintException(e);
+            ExitEngineScope exit;
+
+            LLSERemoveTimeTaskData(engine);
+            LLSERemoveAllEventListeners(engine);
+            LLSERemoveCmdRegister(engine);
+            LLSERemoveCmdCallback(engine);
+            LLSERemoveAllExportedFuncs(engine);
+
+            engine->getData().reset();
+            EngineManager::unRegisterEngine(engine);
+        }
+        if (engine) {
+            node::Stop(env);
+        }
+    }
+    catch (const std::exception& e) {
+        logger.error("Fail to load " + dirPath + "!");
+        logger.error(TextEncoding::toUTF8(e.what()));
+    }
+    catch (...) {
+        logger.error("Fail to load " + dirPath + "!");
+    }
+    return false;
 }
 
 //卸载插件
