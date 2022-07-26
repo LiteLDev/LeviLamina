@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Js|x64">
-      <Configuration>Js</Configuration>
+    <ProjectConfiguration Include="QuickJs|x64">
+      <Configuration>QuickJs</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Lua|x64">
@@ -136,8 +136,18 @@
     <Library Include="third-party\openssl\libcrypto.lib" />
     <Library Include="third-party\openssl\libssl.lib" />
     <Library Include="third-party\QuickJs\lib\quickjs.lib" />
-    <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib" />
-    <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib" />
+    <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-QuickJs.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ScriptEngine.rc" />
@@ -159,7 +169,7 @@
     <CharacterSet>Unicode</CharacterSet>
     <EnableUnitySupport>false</EnableUnitySupport>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
@@ -183,7 +193,7 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Lua|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'" Label="PropertySheets">
@@ -196,7 +206,7 @@
     <TargetName>LiteLoader.Lua</TargetName>
     <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(ProjectDir)third-party\Lua\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
     <TargetName>LiteLoader.Js</TargetName>
@@ -231,7 +241,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-Lua.lib;$(ProjectDir)third-party\Lua\lib\lua.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
@@ -255,7 +265,7 @@ LibraryBuilder.exe
       <PreprocessorDefinitions>_UNICODE;UNICODE;SCRIPTX_LANG_LUA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -278,7 +288,7 @@ LibraryBuilder.exe
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
-      <AdditionalDependencies>$(ProjectDir)third-party\ScriptX\lib\ScriptX-Js.lib;$(ProjectDir)third-party\QuickJs\lib\quickjs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
@@ -329,6 +339,7 @@ LibraryBuilder.exe
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>if exist "$(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\" (

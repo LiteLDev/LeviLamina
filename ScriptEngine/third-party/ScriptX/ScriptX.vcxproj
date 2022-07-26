@@ -9,77 +9,119 @@
       <Configuration>NodeJs</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Js|x64">
-      <Configuration>Js</Configuration>
+    <ProjectConfiguration Include="QuickJs|x64">
+      <Configuration>QuickJs</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="backend\Lua\LuaByteBufferImpl.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaEngine.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaException.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaHelper.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaLocalReference.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaNative.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaScope.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaUtils.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\Lua\LuaValue.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Js|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsEngine.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsException.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsHelper.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsLocalReference.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsNative.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsScope.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsUtils.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsValue.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Engine.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Exception.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Helper.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Inspector.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8LocalReference.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Native.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Platform.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Scope.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Utils.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Value.cc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\Engine.cc" />
     <ClCompile Include="src\Reference.cc" />
@@ -104,7 +146,7 @@
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
@@ -126,16 +168,16 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Lua|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">
     <OutDir>$(ProjectDir)Lib\</OutDir>
-    <TargetName>ScriptX-Js</TargetName>
+    <TargetName>ScriptX-QuickJs</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">
     <OutDir>$(ProjectDir)Lib\</OutDir>
@@ -144,7 +186,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
     <OutDir>$(ProjectDir)Lib\</OutDir>
     <TargetName>ScriptX-NodeJs</TargetName>
-    <IncludePath>$(ProjectDir)..\NodeJs\include\v8;$(IncludePath)</IncludePath>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
     <ClCompile>
@@ -167,7 +209,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Js|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>

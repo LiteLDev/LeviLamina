@@ -363,9 +363,6 @@
     <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
       <Filter>Lib</Filter>
     </Library>
@@ -382,6 +379,12 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="..\LiteLoader\Lib\SymDBHelper.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-QuickJs.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

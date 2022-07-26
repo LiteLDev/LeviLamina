@@ -11,11 +11,14 @@
     <Filter Include="backends">
       <UniqueIdentifier>{37717e08-e84b-45d4-902b-d0a07c62b0e4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="backends\js">
-      <UniqueIdentifier>{aca5c534-e538-4a23-af88-bcc919d8522f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="backends\lua">
       <UniqueIdentifier>{b8350dd1-2579-44fa-b176-b801f3586e5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="backends\quickjs">
+      <UniqueIdentifier>{aca5c534-e538-4a23-af88-bcc919d8522f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="backends\nodejs">
+      <UniqueIdentifier>{29f67abc-9e23-4fb1-9e56-7ddc923f250d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -67,35 +70,59 @@
     <ClCompile Include="backend\Lua\LuaValue.cc">
       <Filter>backends\lua</Filter>
     </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsEngine.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsException.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsHelper.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsLocalReference.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsNative.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsScope.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsUtils.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
+    <ClCompile Include="backend\QuickJs\QjsValue.cc">
+      <Filter>backends\quickjs</Filter>
+    </ClCompile>
     <ClCompile Include="backend\V8\V8Engine.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Exception.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Helper.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Inspector.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8LocalReference.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Native.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Platform.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Scope.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Utils.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
     <ClCompile Include="backend\V8\V8Value.cc">
-      <Filter>backends\js</Filter>
+      <Filter>backends\nodejs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
