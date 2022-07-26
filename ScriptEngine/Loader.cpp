@@ -32,7 +32,7 @@ extern void BindAPIs(ScriptEngine *engine);
 // 预加载依赖库
 void LoadDepends()
 {
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
     return;     // NodeJs backend load depends code in another place
 #endif
 
@@ -59,7 +59,7 @@ void LoadDepends()
 // 加载调试引擎
 void LoadDebugEngine()
 {
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
     return;     // NodeJs backend didn't enable debug engine now
 #endif
 
@@ -91,7 +91,7 @@ void LoadDebugEngine()
 void LoadMain_NodeJs();
 void LoadMain()
 {
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
     LoadMain_NodeJs();      // Process NodeJs backend's plugin load separately
     return;
 #endif
@@ -111,7 +111,7 @@ void LoadMain()
 }
 
 
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
 // NodeJs后端 - 主加载
 void LoadMain_NodeJs()
 {

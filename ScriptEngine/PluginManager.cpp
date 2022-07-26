@@ -18,7 +18,7 @@
 #include <API/CommandAPI.h>
 #include <Utils/Hash.h>
 #include <NodeJsHelper.h>
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
 #include <NodeJs/include/node.h>
 #endif
 #define H(x) do_hash(x)
@@ -38,7 +38,7 @@ string RemoveRealAllExtension(string fileName) {
 // 加载插件
 bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule)
 {
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
     return loadNodeJsPlugin(filePath);          // Process NodeJs plugin load separately
 #endif
 
@@ -54,10 +54,10 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         string moduleToBroadcast;
         switch (H(suffix.c_str())) {
             case H(".lua"):
-                moduleToBroadcast = LLSE_BACKEND_LUA;
+                moduleToBroadcast = LLSE_BACKEND_LUA_NAME;
                 break;
             case H(".js"):
-                moduleToBroadcast = LLSE_BACKEND_JS;
+                moduleToBroadcast = LLSE_BACKEND_QUICKJS_NAME;
                 break;
             default:
                 logger.error("Do not support this type of plugin!");
@@ -180,7 +180,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
 }
 
 
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
 // 加载NodeJs插件
 bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
 {
@@ -327,7 +327,7 @@ bool PluginManager::unloadPlugin(const std::string& name) {
 
     PluginManager::unRegisterPlugin(name);
     Schedule::nextTick([engine]() {
-#if defined(SCRIPTX_LANG_NODEJS)
+#if defined(LLSE_BACKEND_NODEJS)
         NodeJsHelper::stopEngine(engine);
 #else
         engine->destroy();

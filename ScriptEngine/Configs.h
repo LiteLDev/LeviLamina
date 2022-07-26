@@ -2,26 +2,25 @@
 #include <set>
 #include <string>
 
+#define LLSE_BACKEND_NODEJS_NAME "NodeJs"
+#define LLSE_BACKEND_QUICKJS_NAME "QuickJs"
+#define LLSE_BACKEND_LUA_NAME "LUa"
+
 ///////////////////// Configs /////////////////////
 
-// 后端宏
-#define LLSE_BACKEND_JS "Js"
-#define LLSE_BACKEND_LUA "Lua"
-#define LLSE_BACKEND_NODEJS "NodeJs"
-
-#if defined(SCRIPTX_LANG_NODEJS)
-	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS
+#if defined(LLSE_BACKEND_NODEJS)
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS_NAME
 	#define LLSE_PLUGINPACK_EXTENSION ".ll.zip"
 	#define LLSE_PLUGINS_EXTENSION ".js"
-#elif defined(SCRIPTX_LANG_JAVASCRIPT)
-	#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS
+#elif defined(LLSE_BACKEND_QUICKJS)
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_QUICKJS_NAME
 	#define LLSE_PLUGINS_EXTENSION ".js"
-#elif defined(SCRIPTX_LANG_LUA)
-	#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA
+#elif defined(LLSE_BACKEND_LUA)
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA_NAME
 	#define LLSE_PLUGINS_EXTENSION ".lua"
 #endif
 
-#define LLSE_VALID_BACKENDS std::set<std::string>({"Js", "Lua", "NodeJs"})
+#define LLSE_VALID_BACKENDS std::set<std::string>({"QuickJs", "Lua", "NodeJs"})
 #define LLSE_VALID_PLUGIN_EXTENSIONS std::set<std::string>({".js", ".lua", ".ll.zip"})
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()
 
@@ -33,10 +32,10 @@
 
 
 // 插件注册信息
-#if defined(SCRIPTX_LANG_NODEJS)
+#if defined(LLSE_BACKEND_NODEJS)
 	#define LLSE_LOADER_NAME "ScriptEngine-NodeJs"
 	#define LLSE_LOADER_DESCRIPTION "Node.js ScriptEngine for LiteLoaderBDS"
-#elif defined(SCRIPTX_LANG_JAVASCRIPT)
+#elif defined(LLSE_BACKEND_QUICKJS)
 	#define LLSE_LOADER_NAME "ScriptEngine-Js"
 	#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine for LiteLoaderBDS"
 #elif defined(SCRIPTX_LANG_LUA)

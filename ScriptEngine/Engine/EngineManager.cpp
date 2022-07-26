@@ -28,7 +28,7 @@ bool EngineManager::registerEngine(ScriptEngine* engine) {
 ScriptEngine* EngineManager::newEngine(string pluginName) {
     ScriptEngine* engine = nullptr;
 
-#if defined(SCRIPTX_LANG_NODEJS)
+#if defined(LLSE_BACKEND_NODEJS)
     engine = NodeJsHelper::newEngine();
 #elif !defined(SCRIPTX_BACKEND_WEBASSEMBLY)
     engine = new ScriptEngineImpl();

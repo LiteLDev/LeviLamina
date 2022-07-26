@@ -1,5 +1,5 @@
 #pragma once
-#if defined(SCRIPTX_LANG_NODEJS)
+#if defined(LLSE_BACKEND_NODEJS)
 #include <map>
 #include <NodeJs/include/node.h>
 #include <ScriptX/ScriptX.h>

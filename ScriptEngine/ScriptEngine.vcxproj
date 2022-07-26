@@ -209,7 +209,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
-    <TargetName>LiteLoader.Js</TargetName>
+    <TargetName>LiteLoader.QuickJs</TargetName>
     <IncludePath>$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\gsl;$(SolutionDir)LiteLoader\Header\third-party;$(SolutionDir)LiteLoader\Header;$(ProjectDir)third-party;$(SolutionDir);$(ProjectDir);$(ProjectDir)third-party\QuickJs\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
@@ -224,7 +224,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/Lua/trait/Trait;SCRIPTX_LANG_LUA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/Lua/trait/Trait;LLSE_BACKEND_LUA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -271,7 +271,7 @@ LibraryBuilder.exe
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/QuickJs/trait/Trait;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/QuickJs/trait/Trait;LLSE_BACKEND_QUICKJS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -319,7 +319,7 @@ LibraryBuilder.exe
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;BUILDING_NODE_EXTENSION;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/V8/trait/Trait;SCRIPTX_LANG_NODEJS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;BUILDING_NODE_EXTENSION;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/V8/trait/Trait;LLSE_BACKEND_NODEJS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

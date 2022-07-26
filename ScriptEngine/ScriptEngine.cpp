@@ -93,7 +93,7 @@ void entry() {
     //初始化事件监听
     InitBasicEventListeners();
 
-    #ifndef SCRIPTX_LANG_NODEJS
+    #ifndef LLSE_BACKEND_NODEJS
     //初始化消息队列
     InitMessageSystem();
     #endif

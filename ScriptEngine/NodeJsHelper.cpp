@@ -1,4 +1,5 @@
-#if defined(SCRIPTX_LANG_NODEJS)
+#include "Configs.h"
+#if defined(LLSE_BACKEND_NODEJS)
 #include "Global.hpp"
 #include <ScheduleAPI.h>
 #include <EventAPI.h>
@@ -313,7 +314,7 @@ bool doesPluginPackHasDependency(const std::string& dirPath)
 
 bool processConsoleNpmCmd(const std::string& cmd)
 {
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
     if (StartsWith(cmd, "npm "))
     {
         executeNpmCommand(cmd);

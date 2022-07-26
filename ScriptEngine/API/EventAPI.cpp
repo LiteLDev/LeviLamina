@@ -1111,7 +1111,7 @@ void InitBasicEventListeners() {
             return false;
         if (!ProcessOldHotManageCommand(ev.mCommand))
             return false;
-#ifdef SCRIPTX_LANG_NODEJS
+#ifdef LLSE_BACKEND_NODEJS
         if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
             return false;
 #endif
@@ -1203,7 +1203,7 @@ inline bool CallTickEvent() {
 // 植入tick
 THook(void, "?tick@ServerLevel@@UEAAXXZ",
       void* _this) {
-#ifndef SCRIPTX_LANG_NODEJS
+#ifndef LLSE_BACKEND_NODEJS
     try {
         std::list<ScriptEngine*> tmpList;
         {
