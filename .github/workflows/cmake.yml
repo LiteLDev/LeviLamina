@@ -39,6 +39,7 @@ jobs:
 
       - name: Cache Build directory
         uses: actions/cache@v3
+        working-directory: ${{env.GITHUB_WORKSPACE}}
         with:
           path: |
             build/LiteLoader
@@ -59,8 +60,8 @@ jobs:
             LiteLoader/Lib/bedrock_server_var.lib
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
 
-      - if: ${{ steps.cache-bds-lib.outputs.cache-hit == 'false' }}
-        name: Download Server
+      - name: Download Server
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           mkdir Tools/Server
@@ -69,8 +70,8 @@ jobs:
           unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
         shell: bash
 
-      - if: ${{ steps.cache-bds-lib.outputs.cache-hit == 'false' }}
-        name: Build Library
+      - name: Build Library
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd Tools
