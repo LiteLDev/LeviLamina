@@ -4,7 +4,7 @@
 
 #define LLSE_BACKEND_NODEJS_NAME "NodeJs"
 #define LLSE_BACKEND_QUICKJS_NAME "QuickJs"
-#define LLSE_BACKEND_LUA_NAME "LUa"
+#define LLSE_BACKEND_LUA_NAME "Lua"
 
 ///////////////////// Configs /////////////////////
 
