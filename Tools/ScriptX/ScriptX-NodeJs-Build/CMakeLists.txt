@@ -6,7 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(SCRIPTX_BACKEND V8)
 
-project ("ScriptX-Build")
+project(ScriptX-NodeJs)
 
 include_directories(../include/Node)
 include(../ScriptX/CMakeLists.txt)

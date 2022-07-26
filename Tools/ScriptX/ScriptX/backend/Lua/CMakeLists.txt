@@ -1,4 +1,4 @@
-target_sources(ScriptX PRIVATE
+target_sources(${PROJECT_NAME} PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/LuaByteBufferImpl.h
         ${CMAKE_CURRENT_LIST_DIR}/LuaByteBufferImpl.cc
         ${CMAKE_CURRENT_LIST_DIR}/LuaEngine.cc
