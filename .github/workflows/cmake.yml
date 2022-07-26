@@ -45,7 +45,7 @@ jobs:
             build/PreLoader
             build/ScriptEngine
             build/Tools
-          key: CMake-build-${{GITHUB_SHA}}
+          key: CMake-build-${{github.sha}}
           restore-keys: CMake-build-
 
       - name: Download Server

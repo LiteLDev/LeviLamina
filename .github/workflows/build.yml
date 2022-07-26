@@ -46,7 +46,7 @@ jobs:
             PreLoader/x64
             ScriptEngine/x64
             ScriptEngine/third-party/ScriptX/x64
-          key: MSBuild-build-${{GITHUB_SHA}}
+          key: MSBuild-build-${{github.sha}}
           restore-keys: MSBuild-build-
 
       - name: Download Server
