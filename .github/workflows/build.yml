@@ -44,10 +44,10 @@ jobs:
           cache-name: cache-msbuild
         with:
           path: |
-            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/x64
-            ${{ env.GITHUB_WORKSPACE }}/PreLoader/x64
-            ${{ env.GITHUB_WORKSPACE }}/ScriptEngine/x64
-            ${{ env.GITHUB_WORKSPACE }}/ScriptEngine/third-party/ScriptX/x64
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/x64
+            ${{ env.GITHUB_WORKSPACE }}PreLoader/x64
+            ${{ env.GITHUB_WORKSPACE }}ScriptEngine/x64
+            ${{ env.GITHUB_WORKSPACE }}ScriptEngine/third-party/ScriptX/x64
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
 
@@ -58,8 +58,8 @@ jobs:
           cache-name: cache-bds-lib
         with:
           path: |
-            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/Lib/bedrock_server_api.lib
-            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/Lib/bedrock_server_var.lib
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
 
       - name: Download Server

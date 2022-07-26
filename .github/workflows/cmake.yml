@@ -43,10 +43,10 @@ jobs:
           cache-name: cache-cmake
         with:
           path: |
-            ${{ env.GITHUB_WORKSPACE }}/build/LiteLoader
-            ${{ env.GITHUB_WORKSPACE }}/build/PreLoader
-            ${{ env.GITHUB_WORKSPACE }}/build/ScriptEngine
-            ${{ env.GITHUB_WORKSPACE }}/build/Tools
+            ${{ env.GITHUB_WORKSPACE }}build/LiteLoader
+            ${{ env.GITHUB_WORKSPACE }}build/PreLoader
+            ${{ env.GITHUB_WORKSPACE }}build/ScriptEngine
+            ${{ env.GITHUB_WORKSPACE }}build/Tools
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
 
@@ -57,8 +57,8 @@ jobs:
           cache-name: cache-bds-lib
         with:
           path: |
-            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/Lib/bedrock_server_api.lib
-            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/Lib/bedrock_server_var.lib
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
 
       - name: Download Server
@@ -80,7 +80,7 @@ jobs:
         shell: cmd
 
       - name: Change LITELOADER_VERSION_STATUS_BETA
-        working-directory: $${{ env.GITHUB_WORKSPACE }}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: false == startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
