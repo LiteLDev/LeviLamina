@@ -44,10 +44,10 @@ jobs:
           cache-name: cache-msbuild
         with:
           path: |
-            ${{env.GITHUB_WORKSPACE}}/LiteLoader/x64
-            ${{env.GITHUB_WORKSPACE}}/PreLoader/x64
-            ${{env.GITHUB_WORKSPACE}}/ScriptEngine/x64
-            ${{env.GITHUB_WORKSPACE}}/ScriptEngine/third-party/ScriptX/x64
+            $GITHUB_WORKSPACE/LiteLoader/x64
+            $GITHUB_WORKSPACE/PreLoader/x64
+            $GITHUB_WORKSPACE/ScriptEngine/x64
+            $GITHUB_WORKSPACE/ScriptEngine/third-party/ScriptX/x64
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
 
@@ -58,8 +58,8 @@ jobs:
           cache-name: cache-bds-lib
         with:
           path: |
-            ${{env.GITHUB_WORKSPACE}}/LiteLoader/Lib/bedrock_server_api.lib
-            ${{env.GITHUB_WORKSPACE}}/LiteLoader/Lib/bedrock_server_var.lib
+            $GITHUB_WORKSPACE/LiteLoader/Lib/bedrock_server_api.lib
+            $GITHUB_WORKSPACE/LiteLoader/Lib/bedrock_server_var.lib
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
 
       - name: Download Server
@@ -100,86 +100,86 @@ jobs:
           sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
         shell: bash
 
-      - name: Build
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        id: build
-        run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release 
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Lua
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=NodeJs
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=QuickJs
-        shell: bash
+      # - name: Build
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   id: build
+      #   run: |
+      #     MSBuild.exe ./LiteLoader.sln -property:Configuration=Release 
+      #     MSBuild.exe ./LiteLoader.sln -property:Configuration=Lua
+      #     MSBuild.exe ./LiteLoader.sln -property:Configuration=NodeJs
+      #     MSBuild.exe ./LiteLoader.sln -property:Configuration=QuickJs
+      #   shell: bash
 
-      - name: Pack Release
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          cd Scripts
-          ./PackRelease.cmd action
-        shell: cmd
+      # - name: Pack Release
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   run: |
+      #     cd Scripts
+      #     ./PackRelease.cmd action
+      #   shell: cmd
 
-      - name: Move PDB to path
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          mkdir PDB
-          cp x64/Release/*.pdb PDB
-        shell: bash
+      # - name: Move PDB to path
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   run: |
+      #     mkdir PDB
+      #     cp x64/Release/*.pdb PDB
+      #   shell: bash
 
-      - name: Pack PDB
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: 7z a -tzip PDB.zip PDB
-        shell: bash
+      # - name: Pack PDB
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   run: 7z a -tzip PDB.zip PDB
+      #   shell: bash
 
-      - name: Update LiteLoaderSDK
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cd Scripts
-          ./UploadSDK.cmd action
-        env:
-          REPO_KEY: ${{secrets.PUSH_TOKEN}}
-          USERNAME: github-actions[bot]
-        shell: cmd
+      # - name: Update LiteLoaderSDK
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #     cd Scripts
+      #     ./UploadSDK.cmd action
+      #   env:
+      #     REPO_KEY: ${{secrets.PUSH_TOKEN}}
+      #     USERNAME: github-actions[bot]
+      #   shell: cmd
 
-      - name: Upload LiteLoader
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LiteLoader
-          path: ${{ github.workspace }}\RELEASE
+      # - name: Upload LiteLoader
+      #   uses: actions/upload-artifact@v3.1.0
+      #   with:
+      #     name: LiteLoader
+      #     path: ${{ github.workspace }}\RELEASE
 
-      - name: Upload PDB
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: PDB
-          path: ${{ github.workspace }}\PDB
+      # - name: Upload PDB
+      #   uses: actions/upload-artifact@v3.1.0
+      #   with:
+      #     name: PDB
+      #     path: ${{ github.workspace }}\PDB
 
-      - name: Prepare for creating Release
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        id: rel
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-          mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
-        shell: bash
+      # - name: Prepare for creating Release
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   id: rel
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   run: |
+      #     echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      #     mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
+      #   shell: bash
 
-      - name: Create New Release
-        uses: softprops/action-gh-release@v0.1.14
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          body_path: ${{ github.workspace }}\CHANGELOG.md
-          files: |
-            ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
-            ${{ github.workspace }}\PDB.zip
-        env:
-          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
+      # - name: Create New Release
+      #   uses: softprops/action-gh-release@v0.1.14
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   with:
+      #     body_path: ${{ github.workspace }}\CHANGELOG.md
+      #     files: |
+      #       ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
+      #       ${{ github.workspace }}\PDB.zip
+      #   env:
+      #     GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
 
-      - name: Publish to MineBBS
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
-          -H "Accept: application/vnd.github.everest-preview+json" \
-          -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
-          --data '{"event_type": "webhook"}'
-        shell: bash
+      # - name: Publish to MineBBS
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   if: startsWith(github.ref, 'refs/tags/')
+      #   run: |
+      #     curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
+      #     -H "Accept: application/vnd.github.everest-preview+json" \
+      #     -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
+      #     --data '{"event_type": "webhook"}'
+      #   shell: bash

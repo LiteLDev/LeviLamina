@@ -43,10 +43,10 @@ jobs:
           cache-name: cache-cmake
         with:
           path: |
-            ${{env.GITHUB_WORKSPACE}}/build/LiteLoader
-            ${{env.GITHUB_WORKSPACE}}/build/PreLoader
-            ${{env.GITHUB_WORKSPACE}}/build/ScriptEngine
-            ${{env.GITHUB_WORKSPACE}}/build/Tools
+            $GITHUB_WORKSPACE/build/LiteLoader
+            $GITHUB_WORKSPACE/build/PreLoader
+            $GITHUB_WORKSPACE/build/ScriptEngine
+            $GITHUB_WORKSPACE/build/Tools
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
 
@@ -99,8 +99,8 @@ jobs:
       - name: Configure CMake(MSVC)
         run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-      - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      # - name: Build
+      #   run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Configure CMake(ClangCL)
         run: |
@@ -108,31 +108,31 @@ jobs:
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
         shell: cmd
 
-      - name: Build SymDBHelper
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target SymDBHelper
+      # - name: Build SymDBHelper
+      #   run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Pack Release
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          cd Scripts
-          ./PackRelease.cmd action
-        shell: cmd
+      # - name: Pack Release
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   run: |
+      #     cd Scripts
+      #     ./PackRelease.cmd action
+      #   shell: cmd
 
-      - name: Move PDB to path
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          mkdir PDB
-          cp x64/Release/*.pdb PDB
-        shell: bash
+      # - name: Move PDB to path
+      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   run: |
+      #     mkdir PDB
+      #     cp x64/Release/*.pdb PDB
+      #   shell: bash
 
-      - name: Upload LiteLoader
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LiteLoader
-          path: ${{ github.workspace }}\RELEASE\
+      # - name: Upload LiteLoader
+      #   uses: actions/upload-artifact@v3.1.0
+      #   with:
+      #     name: LiteLoader
+      #     path: ${{ github.workspace }}\RELEASE\
 
-      - name: Upload PDB
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: PDB
-          path: ${{ github.workspace }}\PDB
+      # - name: Upload PDB
+      #   uses: actions/upload-artifact@v3.1.0
+      #   with:
+      #     name: PDB
+      #     path: ${{ github.workspace }}\PDB
