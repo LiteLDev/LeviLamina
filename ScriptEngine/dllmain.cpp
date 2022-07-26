@@ -5,6 +5,7 @@
 // #pragma comment(lib, "../LiteLoader/Lib/LiteLoader.lib")
 
 // Common Libs
+#ifndef CMAKE
 #pragma comment(lib, "third-party/cpp-base64/lib/cpp-base64.lib")
 #pragma comment(lib, "third-party/openssl/libcrypto.lib")
 #pragma comment(lib, "third-party/dyncall/lib/libdyncall_s.lib")
@@ -28,6 +29,7 @@
 #ifdef SCRIPTX_LANG_LUA
 #pragma comment(lib, "third-party/ScriptX/lib/ScriptX-Lua.lib")
 #pragma comment(lib, "third-party/Lua/lib/lua.lib")
+#endif
 #endif
 
 #include <windows.h>
