@@ -39,15 +39,16 @@ jobs:
 
       - name: Cache Build directory
         uses: actions/cache@v3
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        env:
+          cache-name: cache-cmake
         with:
           path: |
-            build/LiteLoader
-            build/PreLoader
-            build/ScriptEngine
-            build/Tools
-          key: CMake-build-${{github.sha}}
-          restore-keys: CMake-build-
+            ${{env.GITHUB_WORKSPACE}}/build/LiteLoader
+            ${{env.GITHUB_WORKSPACE}}/build/PreLoader
+            ${{env.GITHUB_WORKSPACE}}/build/ScriptEngine
+            ${{env.GITHUB_WORKSPACE}}/build/Tools
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
+          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
 
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
@@ -56,8 +57,8 @@ jobs:
           cache-name: cache-bds-lib
         with:
           path: |
-            LiteLoader/Lib/bedrock_server_api.lib
-            LiteLoader/Lib/bedrock_server_var.lib
+            ${{env.GITHUB_WORKSPACE}}/LiteLoader/Lib/bedrock_server_api.lib
+            ${{env.GITHUB_WORKSPACE}}/LiteLoader/Lib/bedrock_server_var.lib
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
 
       - name: Download Server
