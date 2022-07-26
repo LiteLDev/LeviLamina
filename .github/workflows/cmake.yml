@@ -43,10 +43,8 @@ jobs:
           cache-name: cache-cmake
         with:
           path: |
-            ${{ env.GITHUB_WORKSPACE }}build/LiteLoader
-            ${{ env.GITHUB_WORKSPACE }}build/PreLoader
-            ${{ env.GITHUB_WORKSPACE }}build/ScriptEngine
-            ${{ env.GITHUB_WORKSPACE }}build/Tools
+            build
+            build_clang
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
 
@@ -104,12 +102,11 @@ jobs:
 
       - name: Configure CMake(ClangCL)
         run: |
-          rd /S /Q build
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
+          cmake -B ${{github.workspace}}/build_clang -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
         shell: cmd
 
       - name: Build SymDBHelper
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target SymDBHelper
+        run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
       - name: Pack Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
