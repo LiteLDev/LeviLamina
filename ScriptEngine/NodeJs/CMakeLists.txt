@@ -24,7 +24,7 @@ file(GLOB_RECURSE SRC_FILES
         )
 
 add_definitions(-D "CPPHTTPLIB_OPENSSL_SUPPORT" -D "NDEBUG" -D "_CONSOLE" -D "_AMD64_"
-        -D "NOMINMAX" -D "SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/NodeJs/trait/Trait"
+        -D "NOMINMAX" -D "SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/V8/trait/Trait"
         -D "_WINDLL" -D "_UNICODE" -D "UNICODE" -D "LLSE_BACKEND_NODEJS" -D "CMAKE")
 
 add_compile_options(
