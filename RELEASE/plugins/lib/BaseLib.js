@@ -280,7 +280,7 @@ SOFTWARE.
             return undefined;
         }
 
-        function loadPackageSelf(id) {
+        function loadPackageSelf(_id) {
             return undefined;
         }
     }
@@ -348,7 +348,7 @@ SOFTWARE.
             e.stack = e.stack
                 .replace(
                     /at Object\.@file"([^"]*)" \(eval at cjsRequire \(:\d+:\d+\), <anonymous>:(\d+):(\d+)\)/g,
-                    (match, fileName, line, col) => {
+                    (_match, fileName, line, col) => {
                         return `at Object.<anonymous> (${fileName}:${
                             line - 2
                         }:${col})`;
@@ -356,7 +356,7 @@ SOFTWARE.
                 )
                 .replace(
                     /at (\w*) \(eval at cjsRequire \(:\d+:\d+\), <anonymous>:(\d+):(\d+)\)/g,
-                    (match, functionName, line, col) => {
+                    (_match, functionName, line, col) => {
                         return `at ${functionName} (${line - 2}:${col})`;
                     }
                 )
