@@ -177,4 +177,4 @@ message(STATUS "Configuring ScriptX using backend ${SCRIPTX_BACKEND}.")
 message(STATUS "Configuring ScriptX option SCRIPTX_NO_EXCEPTION_ON_BIND_FUNCTION ${SCRIPTX_NO_EXCEPTION_ON_BIND_FUNCTION}.")
 message(STATUS "Configuring ScriptX feature SCRIPTX_FEATURE_INSPECTOR ${SCRIPTX_FEATURE_INSPECTOR}.")
 
-include(${SCRIPTX_DIR}/docs/doxygen/CMakeLists.txt)
+# include(${SCRIPTX_DIR}/docs/doxygen/CMakeLists.txt)
