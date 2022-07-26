@@ -20,10 +20,10 @@ add_link_options(
         /SUBSYSTEM:WINDOWS /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
 )
 
-link_directories(${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party)
-link_directories(${CMAKE_SOURCE_DIR}/LiteLoader/Lib)
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 aux_source_directory(../LiteLoader/Lib/third-party/rawpdb DIR_LIB_SRCS)
 add_library(LLPreLoader SHARED dllmain.cpp SymDB.cpp PreLoader.cpp Utils.cpp ${DIR_LIB_SRCS})
-target_link_libraries(LLPreLoader SymDBHelper)
+target_link_libraries(LLPreLoader SymDBHelper
+        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/detours/detours.lib"
+        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/Demangler.lib")

@@ -1,7 +1,6 @@
 name: CMake
 
 on:
-  workflow_dispatch:
   pull_request:
     paths:
       - '**.cpp'
@@ -12,6 +11,7 @@ on:
       - '**.hh'
       - '**.hxx'
       - '**.h'
+      - '.github/workflows/cmake.yml'
   push:
     paths:
       - '**.cpp'
@@ -22,6 +22,7 @@ on:
       - '**.hh'
       - '**.hxx'
       - '**.h'
+      - '.github/workflows/cmake.yml'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -39,8 +40,13 @@ jobs:
       - name: Cache Build directory
         uses: actions/cache@v3
         with:
-          path: build
-          key: CMake-build
+          path: |
+            build/LiteLoader
+            build/PreLoader
+            build/ScriptEngine
+            build/Tools
+          key: CMake-build-${{GITHUB_SHA}}
+          restore-keys: CMake-build-
 
       - name: Download Server
         working-directory: ${{env.GITHUB_WORKSPACE}}

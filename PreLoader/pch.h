@@ -9,7 +9,6 @@
 #endif
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
-#pragma comment(lib, "detours/detours.lib")
 #include <Windows.h>
 #include <filesystem>
 #include <fstream>
