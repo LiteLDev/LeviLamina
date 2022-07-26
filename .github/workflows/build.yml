@@ -44,10 +44,10 @@ jobs:
           cache-name: cache-msbuild
         with:
           path: |
-            $GITHUB_WORKSPACE/LiteLoader/x64
-            $GITHUB_WORKSPACE/PreLoader/x64
-            $GITHUB_WORKSPACE/ScriptEngine/x64
-            $GITHUB_WORKSPACE/ScriptEngine/third-party/ScriptX/x64
+            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/x64
+            ${{ env.GITHUB_WORKSPACE }}/PreLoader/x64
+            ${{ env.GITHUB_WORKSPACE }}/ScriptEngine/x64
+            ${{ env.GITHUB_WORKSPACE }}/ScriptEngine/third-party/ScriptX/x64
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
 
@@ -58,13 +58,13 @@ jobs:
           cache-name: cache-bds-lib
         with:
           path: |
-            $GITHUB_WORKSPACE/LiteLoader/Lib/bedrock_server_api.lib
-            $GITHUB_WORKSPACE/LiteLoader/Lib/bedrock_server_var.lib
+            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/Lib/bedrock_server_api.lib
+            ${{ env.GITHUB_WORKSPACE }}/LiteLoader/Lib/bedrock_server_var.lib
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
 
       - name: Download Server
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir Tools/Server
           ServerLink=$(cat 'Scripts/LINK.txt')
@@ -74,7 +74,7 @@ jobs:
 
       - name: Build Library
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Tools
           LibraryBuilder.exe Server
@@ -84,7 +84,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
 
       - name: Change LITELOADER_VERSION_STATUS_BETA
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: false == startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
@@ -93,7 +93,7 @@ jobs:
         shell: bash
 
       - name: Change LITELOADER_VERSION_STATUS_RELEASE
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/Main/Version.h
@@ -101,7 +101,7 @@ jobs:
         shell: bash
 
       # - name: Build
-      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
       #   id: build
       #   run: |
       #     MSBuild.exe ./LiteLoader.sln -property:Configuration=Release 
@@ -111,27 +111,27 @@ jobs:
       #   shell: bash
 
       # - name: Pack Release
-      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
       #   run: |
       #     cd Scripts
       #     ./PackRelease.cmd action
       #   shell: cmd
 
       # - name: Move PDB to path
-      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
       #   run: |
       #     mkdir PDB
       #     cp x64/Release/*.pdb PDB
       #   shell: bash
 
       # - name: Pack PDB
-      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
       #   if: startsWith(github.ref, 'refs/tags/')
       #   run: 7z a -tzip PDB.zip PDB
       #   shell: bash
 
       # - name: Update LiteLoaderSDK
-      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
       #   run: |
       #     git config --global user.name "github-actions[bot]"
       #     git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -155,7 +155,7 @@ jobs:
       #     path: ${{ github.workspace }}\PDB
 
       # - name: Prepare for creating Release
-      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
       #   id: rel
       #   if: startsWith(github.ref, 'refs/tags/')
       #   run: |
@@ -175,7 +175,7 @@ jobs:
       #     GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
 
       # - name: Publish to MineBBS
-      #   working-directory: ${{env.GITHUB_WORKSPACE}}
+      #   working-directory: ${{ env.GITHUB_WORKSPACE }}
       #   if: startsWith(github.ref, 'refs/tags/')
       #   run: |
       #     curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
