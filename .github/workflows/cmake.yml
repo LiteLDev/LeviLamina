@@ -36,6 +36,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Cache Build directory
+        uses: actions/cache@v3
+        with:
+          path: build
+          key: CMake-build
+
       - name: Download Server
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
