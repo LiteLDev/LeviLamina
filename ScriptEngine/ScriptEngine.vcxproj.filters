@@ -387,6 +387,9 @@
     <Library Include="third-party\ScriptX\lib\ScriptX-QuickJs.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="third-party\NodeJs\lib\libnode.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ScriptEngine.rc">
