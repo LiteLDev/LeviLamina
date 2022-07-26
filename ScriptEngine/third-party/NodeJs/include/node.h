@@ -214,6 +214,20 @@ namespace node {
 class IsolateData;
 class Environment;
 
+namespace ProcessFlags {
+enum Flags : uint64_t {
+  kNoFlags = 0,
+  // Enable stdio inheritance, which is disabled by default.
+  kEnableStdioInheritance = 1 << 0,
+  // Disable reading the NODE_OPTIONS environment variable.
+  kDisableNodeOptionsEnv = 1 << 1,
+  // Do not parse CLI options.
+  kDisableCLIOptions = 1 << 2,
+  // Do not initialize ICU.
+  kNoICU = 1 << 3,
+};
+}  // namespace ProcessFlags
+
 // TODO(addaleax): Officially deprecate this and replace it with something
 // better suited for a public embedder API.
 NODE_EXTERN int Start(int argc, char* argv[]);
@@ -226,9 +240,16 @@ NODE_EXTERN int Stop(Environment* env);
 // from argv, fill exec_argv, and possibly add errors resulting from parsing
 // the arguments to `errors`. The return value is a suggested exit code for the
 // program; If it is 0, then initializing Node.js succeeded.
-NODE_EXTERN int InitializeNodeWithArgs(std::vector<std::string>* argv,
-                                       std::vector<std::string>* exec_argv,
-                                       std::vector<std::string>* errors);
+NODE_EXTERN int InitializeNodeWithArgs(
+    std::vector<std::string>* argv,
+    std::vector<std::string>* exec_argv,
+    std::vector<std::string>* errors);
+// TODO(zcbenz): Turn above overloaded version into below's default argument.
+NODE_EXTERN int InitializeNodeWithArgs(
+    std::vector<std::string>* argv,
+    std::vector<std::string>* exec_argv,
+    std::vector<std::string>* errors,
+    ProcessFlags::Flags flags);
 
 enum OptionEnvvarSettings {
   kAllowedInEnvironment,
@@ -417,7 +438,12 @@ enum Flags : uint64_t {
   // $HOME/.node_modules and $NODE_PATH. This is used by standalone apps that
   // do not expect to have their behaviors changed because of globally
   // installed modules.
-  kNoGlobalSearchPaths = 1 << 7
+  kNoGlobalSearchPaths = 1 << 7,
+  // Controls whether or not the Environment should call V8Inspector::create().
+  // This control is needed by embedders who may not want to initialize the V8
+  // inspector in situations where one has already been created,
+  // e.g. Blink's in Chromium.
+  kNoCreateInspector = 1 << 9
 };
 }  // namespace EnvironmentFlags
 
