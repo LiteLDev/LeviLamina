@@ -39,17 +39,29 @@ jobs:
 
       - name: Cache Build directory
         uses: actions/cache@v3
+        env:
+          cache-name: cache-cmake
         with:
           path: |
-            build/LiteLoader
-            build/PreLoader
-            build/ScriptEngine
-            build/Tools
-          key: CMake-build-${{github.sha}}
-          restore-keys: CMake-build-
+            build
+            build_clang
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
+          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
+
+      - name: Cache Bedrock Dedicated Server Library
+        id: cache-bds-lib
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-bds-lib
+        with:
+          path: |
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
 
       - name: Download Server
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir Tools/Server
           ServerLink=$(cat 'Scripts/LINK.txt')
@@ -58,14 +70,15 @@ jobs:
         shell: bash
 
       - name: Build Library
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Tools
           LibraryBuilder.exe Server
         shell: cmd
 
       - name: Change LITELOADER_VERSION_STATUS_BETA
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: false == startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
@@ -74,7 +87,7 @@ jobs:
         shell: bash
 
       - name: Change LITELOADER_VERSION_STATUS_RELEASE
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/Main/Version.h
@@ -89,22 +102,21 @@ jobs:
 
       - name: Configure CMake(ClangCL)
         run: |
-          rd /S /Q build
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
+          cmake -B ${{github.workspace}}/build_clang -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
         shell: cmd
 
       - name: Build SymDBHelper
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target SymDBHelper
+        run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
       - name: Pack Release
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Scripts
           ./PackRelease.cmd action
         shell: cmd
 
       - name: Move PDB to path
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir PDB
           cp x64/Release/*.pdb PDB

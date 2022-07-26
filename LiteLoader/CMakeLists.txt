@@ -23,7 +23,7 @@ file(GLOB_RECURSE SRC_FILES
 
 add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
         -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS
-        -D_USRDLL -D_AMD64_ -DNOMINMAX -D__cpp_lib_char8_t)
+        -D_USRDLL -D_AMD64_ -DNOMINMAX)
 
 add_compile_options(
         /permissive /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
