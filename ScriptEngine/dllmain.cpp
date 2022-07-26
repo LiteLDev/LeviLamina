@@ -20,12 +20,9 @@
 #pragma comment(lib, "third-party/NodeJs/lib/libnode.lib")
 #endif
 
-#ifdef SCRIPTX_LANG_V8JS
+#ifdef SCRIPTX_LANG_JAVASCRIPT
 #pragma comment(lib, "third-party/ScriptX/lib/ScriptX-Js.lib")
-#pragma comment(lib, "third-party/V8/lib/v8.lib")
-#pragma comment(lib, "third-party/V8/lib/v8_libbase.lib")
-#pragma comment(lib, "third-party/V8/lib/v8_libplatform.lib")
-#pragma comment(lib, "third-party/V8/lib/zlib.lib")
+#pragma comment(lib, "third-party/QuickJs/lib/quickjs.lib")
 #endif
 
 #ifdef SCRIPTX_LANG_LUA

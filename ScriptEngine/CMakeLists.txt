@@ -45,7 +45,7 @@ include_directories(${PROJECT_SOURCE_DIR}/third-party/ScriptX/src/include)
 include_directories(${PROJECT_SOURCE_DIR}/third-party/Lua/include)
 include_directories(${PROJECT_SOURCE_DIR}/third-party/gsl)
 
-link_directories(.)
+link_directories(${PROJECT_SOURCE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/../x64/Release/)
 
 add_library(base64 STATIC IMPORTED)
