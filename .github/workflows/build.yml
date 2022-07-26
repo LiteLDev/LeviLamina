@@ -76,8 +76,10 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: build
         run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release -property:Configuration=Js
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release 
           MSBuild.exe ./LiteLoader.sln -property:Configuration=Lua
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=NodeJs
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=QuickJs
         shell: bash
 
       - name: Pack Release
