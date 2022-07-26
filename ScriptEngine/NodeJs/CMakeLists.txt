@@ -51,6 +51,7 @@ include_directories(${PROJECT_SOURCE_DIR}/../third-party)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party/ScriptX/src/include/ScriptX)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party/ScriptX/src/include)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party/NodeJs/include)
+include_directories(${PROJECT_SOURCE_DIR}/../third-party/NodeJs/include/v8)
 include_directories(${PROJECT_SOURCE_DIR}/../third-party/gsl)
 
 link_directories(${PROJECT_SOURCE_DIR}/../)
