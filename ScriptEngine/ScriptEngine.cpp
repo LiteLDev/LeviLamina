@@ -20,7 +20,6 @@
 #include <Utils/FileHelper.h>
 #include <Tools/JsonHelper.h>
 #include <EconomicSystem.h>
-
 using namespace std;
 
 //配置文件
@@ -94,6 +93,8 @@ void entry() {
     //初始化事件监听
     InitBasicEventListeners();
 
+    #ifndef LLSE_BACKEND_NODEJS
     //初始化消息队列
     InitMessageSystem();
+    #endif
 }

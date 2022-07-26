@@ -15,7 +15,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ÖÐÎÄ(¼òÌå£¬ÖÐ¹ú) resources
+// ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½å£¬ï¿½Ð¹ï¿½) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -48,12 +48,15 @@ END
 
 #endif    // APSTUDIO_INVOKED
 
-#if defined(SCRIPTX_LANG_JAVASCRIPT)
-#define LLSE_OUTPUT_FILE_NAME "LiteLoader.Js.dll"
-#define LLSE_FILE_DESCRIPTION "A JavaScript Script Plugin Engine for LiteLoader"
-#elif defined(SCRIPTX_LANG_LUA)
+#ifdef LLSE_BACKEND_QUICKJS
+#define LLSE_OUTPUT_FILE_NAME "LiteLoader.QuickJs.dll"
+#define LLSE_FILE_DESCRIPTION "A QuickJs Script Plugin Engine for LiteLoader"
+#elif defined LLSE_BACKEND_LUA
 #define LLSE_OUTPUT_FILE_NAME "LiteLoader.Lua.dll"
 #define LLSE_FILE_DESCRIPTION "A Lua Script Plugin Engine for LiteLoader"
+#elif defined LLSE_BACKEND_NODEJS
+#define LLSE_OUTPUT_FILE_NAME "LiteLoader.NodeJs.dll"
+#define LLSE_FILE_DESCRIPTION "A NodeJs Script Plugin Engine for LiteLoader"
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
@@ -91,7 +94,7 @@ BEGIN
     END
 END
 
-#endif    // ÖÐÎÄ(¼òÌå£¬ÖÐ¹ú) resources
+#endif    // ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½å£¬ï¿½Ð¹ï¿½) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

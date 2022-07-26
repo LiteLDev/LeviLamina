@@ -1,9 +1,4 @@
-// #pragma comment(lib, "../LiteLoader/Lib/bedrock_server_api.lib")
-// #pragma comment(lib, "../LiteLoader/Lib/bedrock_server_var.lib")
-// #pragma comment(lib, "../LiteLoader/Lib/SymDBHelper.lib")
-// #pragma comment(lib, "../LiteLoader/Lib/LiteLoader.lib")
-
-#include <windows.h>
+#include <Windows.h>
 #include <iostream>
 
 extern void entry();

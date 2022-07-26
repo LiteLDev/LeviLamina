@@ -15,6 +15,7 @@
 #include <Engine/LocalShareData.h>
 #include <BuiltinCommands.h>
 #include "APIHelp.h"
+#include <NodeJsHelper.h>
 #include "BaseAPI.h"
 #include "BlockAPI.h"
 #include "GuiAPI.h"
@@ -1110,6 +1111,10 @@ void InitBasicEventListeners() {
             return false;
         if (!ProcessOldHotManageCommand(ev.mCommand))
             return false;
+#ifdef LLSE_BACKEND_NODEJS
+        if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
+            return false;
+#endif
 
         // CallEvents
         vector<string> paras;
@@ -1198,6 +1203,7 @@ inline bool CallTickEvent() {
 // 植入tick
 THook(void, "?tick@ServerLevel@@UEAAXXZ",
       void* _this) {
+#ifndef LLSE_BACKEND_NODEJS
     try {
         std::list<ScriptEngine*> tmpList;
         {
@@ -1215,7 +1221,7 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
         logger.error("Error occurred in Engine Message Loop!");
         logger.error("Uncaught Exception Detected!");
     }
-
+#endif
     CallTickEvent();
     return original(_this);
 }

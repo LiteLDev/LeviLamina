@@ -53,6 +53,84 @@ void CleanOldScriptEngine() {
         filesystem::remove("plugins/LiteXLoader.Lua.dll", ec);
 }
 
+
+const char* DEFAULT_ROOT_PACKAGE_JSON =
+R"({
+    "name": "llse-nodejs-root",
+    "version" : "1.0.0",
+    "description" : "Root package environment of LLSE NodeJs backend",
+    "main" : "index.js",
+    "scripts" : { "test": "exit" },
+    "author" : "LiteLDev",
+    "license" : "AGPL-3.0-or-later"
+})";
+
+bool IsExistScriptPlugin()
+{
+    std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
+    filesystem::directory_iterator ent("plugins");
+    for (auto& file : ent) {
+        if (!file.is_regular_file())
+            continue;
+
+        filesystem::path path = file.path();
+        string ext = UTF82String(path.extension().u8string());
+        if (ext != ".dll") {
+            // Process Shell link file
+            if (ext == ".lnk") // Shell link file
+            {
+                ShellLinkFile lnk(path.wstring());
+                path = lnk.getPathW();
+                if (!filesystem::is_regular_file(path))
+                    continue;
+                ext = UTF82String(path.extension().u8string());
+            }
+
+            if (scriptExts.find(ext) != scriptExts.end())
+                return true;
+        }
+    }
+    return false;
+}
+
+bool IsExistNodeJsPlugin()
+{
+    if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
+        return false;
+
+    bool exist = false;
+    filesystem::directory_iterator ent(LLSE_NODEJS_ROOT_DIR);
+    for (auto& file : ent) {
+        if (file.is_directory() && filesystem::exists(file.path() / "package.json"))
+        {
+            exist = true;
+            break;
+        }
+    }
+    return exist;
+}
+
+void InitNodeJsDirectories()
+{
+    // Check & Create nodejs directories
+    if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
+    {
+        filesystem::create_directories(LLSE_NODEJS_ROOT_DIR);
+    }
+    auto node_modules_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "node_modules";
+    if (!filesystem::exists(node_modules_path))
+    {
+        filesystem::create_directories(node_modules_path);
+    }
+    auto package_json_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "package.json";
+    if (!filesystem::exists(package_json_path))
+    {
+        ofstream fout(package_json_path.c_str());
+        fout << DEFAULT_ROOT_PACKAGE_JSON;
+        logger.warn("NodeJs runtime directory no found. created.");
+    }
+}
+
 void LoadScriptEngine() {
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     for (string backend : LLSE_VALID_BACKENDS) {
@@ -98,10 +176,7 @@ void LoadDotNETEngine() {
 
 void LL::LoadMain() {
     logger.info("Loading plugins...");
-
     CleanOldScriptEngine();
-    std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
-    bool hasScriptPlugin = false;
 
     // Load plugins
     int pluginCount = 0;
@@ -110,56 +185,51 @@ void LL::LoadMain() {
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
 
-        filesystem::path path;
+        if (!file.is_regular_file())
+            continue;
+        filesystem::path path = file.path();
+
+        // Process Shell link file
+        string ext = UTF82String(path.extension().u8string());
         bool isShellLink = false;
+        if (ext == ".lnk") // Shell link file
+        {
+            ShellLinkFile lnk(path.wstring());
+            path = lnk.getPathW();
+            if (!filesystem::is_regular_file(path))
+                continue;
+            ext = UTF82String(path.extension().u8string());
+            isShellLink = true;
+        }
 
-        if (file.is_regular_file()) {
-            path = file.path();
-        } else
+        // Check is dll
+        if (ext != ".dll")
             continue;
+
+        // Skip Wrong file path
         auto strPath = UTF82String(path.u8string());
-        if (strPath.find("LiteLoader") != string::npos || strPath.find("LiteXLoader") != string::npos) // Skip Wrong file path
+        if (strPath.find("LiteLoader") != string::npos || strPath.find("LiteXLoader") != string::npos)
             continue;
 
+        // LLMoney load check
         if (strPath.find("LLMoney.dll") != string::npos) {
             if (!globalConfig.enableEconomyCore) {
                 continue;
             }
         }
 
-        string ext = UTF82String(path.extension().u8string());
-        if (ext != ".dll") {
-            if (ext == ".lnk") // Shell link file
-            {
-                ShellLinkFile lnk(path.wstring());
-                filesystem::path target = lnk.getPathW();
-                if (!filesystem::is_regular_file(target))
-                    continue;
-                if (target.extension() != ".dll") {
-                    if (scriptExts.find(ext) != scriptExts.end())
-                        hasScriptPlugin = true;
-                    continue;
-                }
-                logger.debug(UTF82String(target.u8string()));
-                path = target;
-                isShellLink = true;
-            } else {
-                if (scriptExts.find(ext) != scriptExts.end())
-                    hasScriptPlugin = true;
-                continue;
-            }
-        }
-
+        // Avoid preloaded plugin
+        string pluginFileName = UTF82String(path.filename().u8string());
         bool loaded = false;
         for (auto& p : preloadList)
-            if (p.find(str2wstr(strPath)) != std::wstring::npos) {
+            if (p.find(str2wstr(pluginFileName)) != std::wstring::npos) {
                 loaded = true;
                 break;
             }
         if (loaded)
             continue;
 
-        string pluginFileName = UTF82String(path.filename().u8string());
+        // Real load
         auto lib = LoadLibrary(path.wstring().c_str());
         if (lib) {
             ++pluginCount;
@@ -191,7 +261,8 @@ void LL::LoadMain() {
 
     // Load ScriptEngine
     if (LL::globalConfig.enableScriptEngine) {
-        if (LL::globalConfig.alwaysLaunchScriptEngine || hasScriptPlugin) {
+        InitNodeJsDirectories();
+        if (LL::globalConfig.alwaysLaunchScriptEngine || IsExistNodeJsPlugin() || IsExistScriptPlugin()) {
             LoadScriptEngine();
         }
     }

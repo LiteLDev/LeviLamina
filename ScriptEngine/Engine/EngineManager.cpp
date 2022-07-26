@@ -1,6 +1,7 @@
 #include "EngineManager.h"
 #include "EngineOwnData.h"
 #include "GlobalShareData.h"
+#include "../NodeJsHelper.h"
 #include <Utils/STLHelper.h>
 #include <map>
 using namespace std;
@@ -25,19 +26,21 @@ bool EngineManager::registerEngine(ScriptEngine* engine) {
 }
 
 ScriptEngine* EngineManager::newEngine(string pluginName) {
-    ScriptEngine* engine;
+    ScriptEngine* engine = nullptr;
 
-#if !defined(SCRIPTX_BACKEND_WEBASSEMBLY)
+#if defined(LLSE_BACKEND_NODEJS)
+    engine = NodeJsHelper::newEngine();
+#elif !defined(SCRIPTX_BACKEND_WEBASSEMBLY)
     engine = new ScriptEngineImpl();
 #else
     engine = ScriptEngineImpl::instance();
 #endif
 
     engine->setData(make_shared<EngineOwnData>());
-
     registerEngine(engine);
-    if (!pluginName.empty())
+    if (!pluginName.empty()) {
         ENGINE_GET_DATA(engine)->pluginName = pluginName;
+    }
     return engine;
 }
 

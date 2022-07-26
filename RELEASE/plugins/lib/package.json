@@ -1,0 +1,14 @@
+{
+  "name": "llse-npm-helper",
+  "version": "1.0.0",
+  "description": "NPM tools for LLSE NodeJs backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "author": "LiteLDev",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "npm-js-interface": "^1.0.1"
+  }
+}

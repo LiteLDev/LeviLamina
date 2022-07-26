@@ -2,8 +2,8 @@
 mkdir Release 2>nul
 
 :: Js
-set NAME=ScriptX-Js-Build
-set Release=ScriptX-Js
+set NAME=ScriptX-QuickJs-Build
+set Release=ScriptX-QuickJs
 cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -H%NAME% -B%NAME%/build -T host=x64 -A x64 2>nul
 cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -H%NAME% -B%NAME%/build -T host=x64 -A x64
 cmake --build %NAME%/build --config MinSizeRel --target ALL_BUILD -j 8 --

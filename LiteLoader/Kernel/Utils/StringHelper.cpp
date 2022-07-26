@@ -96,10 +96,10 @@ std::string FixCurlyBracket(std::string str) {
 }
 
 
-std::string UTF82String(std::u8string str) {
+LIAPI std::string UTF82String(std::u8string str) {
     return reinterpret_cast<std::string&>(str);
 }
 
-std::string UTF82String(std::string str) {
+LIAPI std::string UTF82String(std::string str) {
     return str;
 }

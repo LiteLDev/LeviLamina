@@ -170,6 +170,9 @@
     <ClCompile Include="API\SimulatedPlayerAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="NodeJsHelper.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
     <ClCompile Include="API\PacketAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
@@ -328,6 +331,9 @@
     <ClInclude Include="API\PacketAPI.h">
       <Filter>API</Filter>
     </ClInclude>
+    <ClInclude Include="NodeJsHelper.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="third-party\cpp-base64\lib\cpp-base64.lib">
@@ -357,9 +363,6 @@
     <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
       <Filter>Lib</Filter>
     </Library>
@@ -376,6 +379,15 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="..\LiteLoader\Lib\SymDBHelper.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-QuickJs.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\NodeJs\lib\libnode.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

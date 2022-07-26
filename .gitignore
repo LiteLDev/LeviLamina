@@ -15,7 +15,7 @@ LiteLoader/Lib/SymDBHelper.lib
 LiteLoaderSDK/
 
 RELEASE/*.dll
-RELEASE/SymDB2.exe
+RELEASE/LLPeEditor.exe
 !RELEASE/ChakraCore.dll
 RELEASE/plugins/LiteLoader/*.dll
 RELEASE/plugins/LiteLoader/*.pdb
