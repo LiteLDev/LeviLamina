@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(LiteLoader.Js)
+project(LiteLoader.QuickJs)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
@@ -25,7 +25,7 @@ file(GLOB_RECURSE SRC_FILES
 
 add_definitions(-D "CPPHTTPLIB_OPENSSL_SUPPORT" -D "NDEBUG" -D "_CONSOLE" -D "_AMD64_"
         -D "NOMINMAX" -D "SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/QuickJs/trait/Trait"
-        -D "_WINDLL" -D "_UNICODE" -D "UNICODE" -D "SCRIPTX_LANG_JAVASCRIPT" -D "CMAKE")
+        -D "_WINDLL" -D "_UNICODE" -D "UNICODE" -D "LLSE_BACKEND_QUICKJS" -D "CMAKE")
 
 add_compile_options(
         /permissive- /MP /GS /GL /W3 /Gy /Zc:wchar_t
