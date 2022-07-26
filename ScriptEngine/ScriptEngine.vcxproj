@@ -133,6 +133,10 @@
     <Library Include="third-party\LightWebSocketClient\lib\LightWSClient.lib" />
     <Library Include="third-party\Lua\lib\lua.lib" />
     <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib" />
+    <Library Include="third-party\NodeJs\lib\libnode.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
+    </Library>
     <Library Include="third-party\openssl\libcrypto.lib" />
     <Library Include="third-party\openssl\libssl.lib" />
     <Library Include="third-party\QuickJs\lib\quickjs.lib" />
@@ -262,7 +266,7 @@ LibraryBuilder.exe
     </PreBuildEvent>
     <ResourceCompile />
     <ResourceCompile>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;SCRIPTX_LANG_LUA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;LLSE_BACKEND_LUA;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">
@@ -310,7 +314,7 @@ LibraryBuilder.exe
     <ResourceCompile />
     <ResourceCompile />
     <ResourceCompile>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;SCRIPTX_LANG_JAVASCRIPT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;LLSE_BACKEND_QUICKJS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
@@ -360,7 +364,7 @@ LibraryBuilder.exe
     <ResourceCompile />
     <ResourceCompile />
     <ResourceCompile>
-      <PreprocessorDefinitions>_UNICODE;UNICODE;SCRIPTX_LANG_JAVASCRIPT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;LLSE_BACKEND_NODEJS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
