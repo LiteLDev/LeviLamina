@@ -41,7 +41,7 @@ add_link_options(
         /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
 )
 
-add_library(LiteLoader.Js SHARED ${SRC_FILES} ${PROJECT_SOURCE_DIR}/../ScriptEngine.rc)
+add_library(LiteLoader.QuickJs SHARED ${SRC_FILES} ${PROJECT_SOURCE_DIR}/../ScriptEngine.rc)
 
 include_directories(${PROJECT_SOURCE_DIR}/..)
 include_directories(${PROJECT_SOURCE_DIR}/../..)
@@ -59,7 +59,7 @@ link_directories(${PROJECT_SOURCE_DIR}/../../x64/Release/)
 add_library(base64 STATIC IMPORTED)
 set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/../third-party/cpp-base64/lib/cpp-base64.lib")
 
-target_link_libraries(LiteLoader.Js LiteLoader base64 ScriptX-Js
+target_link_libraries(LiteLoader.QuickJs LiteLoader base64 ScriptX-Js
         "${PROJECT_SOURCE_DIR}/../third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/../third-party/openssl/libssl.lib"
         "${PROJECT_SOURCE_DIR}/../third-party/dyncall/lib/libdyncall_s.lib"
