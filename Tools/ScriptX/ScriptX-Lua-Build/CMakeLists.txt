@@ -6,7 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(SCRIPTX_BACKEND Lua)
 
-project ("ScriptX-Build")
+project(ScriptX-Lua)
 
 include_directories(../include/Lua)
 include(../ScriptX/CMakeLists.txt)

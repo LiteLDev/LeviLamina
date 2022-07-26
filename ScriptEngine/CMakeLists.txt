@@ -51,7 +51,7 @@ link_directories(${PROJECT_SOURCE_DIR}/../x64/Release/)
 add_library(base64 STATIC IMPORTED)
 set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/third-party/cpp-base64/lib/cpp-base64.lib")
 
-target_link_libraries(LiteLoader.Lua LiteLoader base64
+target_link_libraries(LiteLoader.Lua LiteLoader base64 ScriptX-Lua
         "${PROJECT_SOURCE_DIR}/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/third-party/openssl/libssl.lib"
         "${PROJECT_SOURCE_DIR}/third-party/dyncall/lib/libdyncall_s.lib"
@@ -60,7 +60,6 @@ target_link_libraries(LiteLoader.Lua LiteLoader base64
         "${PROJECT_SOURCE_DIR}/third-party/LightWebSocketClient/lib/LightWSClient.lib"
         "${PROJECT_SOURCE_DIR}/third-party/Lua/lib/lua.lib"
         "${PROJECT_SOURCE_DIR}/third-party/nbt-cpp/lib/nbt-cpp.lib"
-        "${PROJECT_SOURCE_DIR}/third-party/ScriptX/lib/ScriptX-Lua.lib"
         "${PROJECT_SOURCE_DIR}/../LiteLoader/Lib/bedrock_server_api.lib"
         "${PROJECT_SOURCE_DIR}/../LiteLoader/Lib/bedrock_server_var.lib"
         SymDBHelper)

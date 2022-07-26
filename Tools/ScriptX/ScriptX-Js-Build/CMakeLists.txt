@@ -6,7 +6,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(SCRIPTX_BACKEND QuickJs)
 
-project ("ScriptX-Build")
+project(ScriptX-Js)
 
 include_directories(../include/QuickJs)
 include(../ScriptX/CMakeLists.txt)

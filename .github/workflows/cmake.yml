@@ -2,26 +2,26 @@ name: CMake
 
 on:
   workflow_dispatch:
-  # pull_request:
-  #   paths:
-  #     - '**.cpp'
-  #     - '**.cc'
-  #     - '**.cxx'
-  #     - '**.c'
-  #     - '**.hpp'
-  #     - '**.hh'
-  #     - '**.hxx'
-  #     - '**.h'
-  # push:
-  #   paths:
-  #     - '**.cpp'
-  #     - '**.cc'
-  #     - '**.cxx'
-  #     - '**.c'
-  #     - '**.hpp'
-  #     - '**.hh'
-  #     - '**.hxx'
-  #     - '**.h'
+  pull_request:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
+  push:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
