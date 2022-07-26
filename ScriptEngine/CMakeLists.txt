@@ -20,9 +20,17 @@ set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 
 file(GLOB_RECURSE SRC_FILES
         ${SCRIPTENGINE_DIR}/*.cpp
+        ${SCRIPTENGINE_DIR}/*.hpp
+        ${SCRIPTENGINE_DIR}/*.h
         ${SCRIPTENGINE_DIR}/API/*.cpp
+        ${SCRIPTENGINE_DIR}/API/*.hpp
+        ${SCRIPTENGINE_DIR}/API/*.h
         ${SCRIPTENGINE_DIR}/Engine/*.cpp
+        ${SCRIPTENGINE_DIR}/Engine/*.hpp
+        ${SCRIPTENGINE_DIR}/Engine/*.h
         ${SCRIPTENGINE_DIR}/Tools/*.cpp
+        ${SCRIPTENGINE_DIR}/Tools/*.hpp
+        ${SCRIPTENGINE_DIR}/Tools/*.h
         )
 
 add_definitions(-D "CPPHTTPLIB_OPENSSL_SUPPORT" -D "NDEBUG" -D "_CONSOLE" -D "_AMD64_"

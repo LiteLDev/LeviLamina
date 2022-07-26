@@ -11,8 +11,14 @@ set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 file(GLOB_RECURSE SRC_FILES
         ${PROJECT_SOURCE_DIR}/Lib/third-party/nbt-cpp/*.cpp
         ${PROJECT_SOURCE_DIR}/Header/*.cpp
+        ${PROJECT_SOURCE_DIR}/Header/*.hpp
+        ${PROJECT_SOURCE_DIR}/Header/*.h
         ${PROJECT_SOURCE_DIR}/Kernel/*.cpp
+        ${PROJECT_SOURCE_DIR}/Kernel/*.hpp
+        ${PROJECT_SOURCE_DIR}/Kernel/*.h
         ${PROJECT_SOURCE_DIR}/Main/*.cpp
+        ${PROJECT_SOURCE_DIR}/Main/*.hpp
+        ${PROJECT_SOURCE_DIR}/Main/*.h
         )
 
 add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
@@ -20,9 +26,9 @@ add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
         -D_USRDLL -D_AMD64_ -DNOMINMAX -D__cpp_lib_char8_t)
 
 add_compile_options(
-        /permissive /MP /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /sdl /Zc:inline /fp:precise
-        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++20 /FC /EHa /nologo
-        /diagnostics:column /utf-8
+        /permissive /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
+        /external:W1 /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /EHa /nologo /Ot /diagnostics:column
+        /utf-8
 )
 
 add_link_options(
@@ -33,10 +39,9 @@ add_link_options(
 include_directories(${PROJECT_SOURCE_DIR}/)
 include_directories(${PROJECT_SOURCE_DIR}/Header)
 include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
-include_directories(${CMAKE_SOURCE_DIR})
 
-link_directories(.)
-link_directories(${PROJECT_SOURCE_DIR}/../x64/Release/)
+link_directories(${PROJECT_SOURCE_DIR}/)
+link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_library(LiteLoader SHARED ${SRC_FILES} Resource/LiteLoader.rc)
 
