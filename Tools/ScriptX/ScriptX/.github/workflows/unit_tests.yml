@@ -9,6 +9,7 @@ on:
       - main
     paths-ignore:
       - 'docs/**'
+  workflow_dispatch:
 
 jobs:
   mac-clang-run:
@@ -20,13 +21,13 @@ jobs:
         backends: [ V8, JavaScriptCore, QuickJs, Lua, Empty ]
         build_type:
           - Debug
-          # mac runner seems to be slow and less
+          # mac runner seems to be slow and rear
           # - Release
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
-          key: build-dependencies-macos
+          key: ScriptX-UnitTests-Depedencies-${{ hashFiles('test/cmake/**') }}
           path: |
             build/ScriptXTestLibs
             build/googletest-src
@@ -63,7 +64,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
-          key: build-dependencies-macos
+          key: ScriptX-UnitTests-Depedencies-${{ hashFiles('test/cmake/**') }}
           path: |
             build/ScriptXTestLibs
             build/googletest-src
@@ -99,7 +100,7 @@ jobs:
           cd build
           ${{ matrix.build_type }}/UnitTests
 
-  ubuntu-gcc-build:
+  ubuntu-gcc-run:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     strategy:
@@ -108,28 +109,33 @@ jobs:
         backends: [ V8, JavaScriptCore, QuickJs, Lua, Empty ]
         build_type:
           - Debug
-          #- Release
+          - Release
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
-          key: build-dependencies-macos
+          key: ScriptX-UnitTests-Depedencies-${{ hashFiles('test/cmake/**') }}
           path: |
             build/ScriptXTestLibs
             build/googletest-src
       - name: Configure cmake
         env:
           SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
-          SCRIPTX_TEST_BUILD_ONLY: ON
         run: |
           mkdir -p build && cd build
           cmake ../test                                       \
                 -DSCRIPTX_BACKEND=${{ matrix.backends }}      \
+                -DTEST_FLAG_ENABLE_ASAN=ON                    \
                 -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
       - name: Compile UnitTests
         run: |
           cd build
           cmake --build . -j $(nproc) --target UnitTests
+      - name: Run UnitTests
+        if: matrix.backends != 'Empty'
+        run: |
+          cd build
+          ./UnitTests
 
   android-clang-build:
     # disable for now
@@ -144,12 +150,12 @@ jobs:
         backends: [ V8, JavaScriptCore, QuickJs, Lua, Empty ]
         build_type:
           - Debug
-          #- Release
+          - Release
     steps:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
-          key: build-dependencies-macos
+          key: ScriptX-UnitTests-Depedencies-${{ hashFiles('test/cmake/**') }}
           path: |
             build/ScriptXTestLibs
             build/googletest-src
@@ -201,15 +207,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
-          key: build-dependencies-macos
+          key: ScriptX-UnitTests-Depedencies-${{ hashFiles('test/cmake/**') }}
           path: |
             build/ScriptXTestLibs
             build/googletest-src
       - name: Setup Emscripten
-        uses: mymindstorm/setup-emsdk@v8
+        uses: mymindstorm/setup-emsdk@v11
         with:
-          version: '2.0.5'
-          actions-cache-folder: 'emsdk-cache'
+          version: '3.0.0'
+          actions-cache-folder: 'emsdk-cache-3.0.0'
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -230,4 +236,4 @@ jobs:
         run: |
           cd build
           # exclude failed tests
-          node UnitTests.js '--gtest_filter=-ThreadPool.*:EngineScopeTest.ExitEngine:EngineScopeTest.TwoThreads:EngineScopeTest.ThreadLocal:MessageQueue.Interrupt:MessageQueue.Shutdown:MessageQueue.ShutdownNow:MessageQueue.FullAndPostInsideLoopQueue:ReferenceTest.WeakGc:ReferenceTest.WeakGc:ReferenceTest.GlobalNotClear:ReferenceTest.GlobalOnEngineDestroy:ReferenceTest.WeakOnEngineDestroy:ReferenceTest.WeakNotClrear:ManagedObjectTest.EngineDispose:ManagedObjectTest.FunctionCallback:PressureTest.All'
+          node UnitTests.js '--gtest_filter=-ThreadPool.*:EngineScopeTest.ExitEngine:EngineScopeTest.TwoThreads:EngineScopeTest.ThreadLocal:MessageQueue.Interrupt:MessageQueue.Shutdown:MessageQueue.ShutdownNow:MessageQueue.FullAndPostInsideLoopQueue:ReferenceTest.WeakGc:ReferenceTest.WeakGc:ReferenceTest.GlobalNotClear:ReferenceTest.GlobalOnEngineDestroy:ReferenceTest.WeakOnEngineDestroy:ReferenceTest.WeakNotClrear:ManagedObjectTest.EngineDispose:ManagedObjectTest.FunctionCallback:PressureTest.All:EngineTest.JsPromiseTest:ShowCaseTest.SetTimeout'

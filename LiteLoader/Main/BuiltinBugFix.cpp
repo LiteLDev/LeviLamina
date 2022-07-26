@@ -324,3 +324,24 @@ TClasslessInstanceHook(bool, "?getLANBroadcastIntent@LevelData@@QEBA_NXZ") {
     }
     return original(this);
 }
+
+// Disable 'Running AutoCompaction...' log.
+bool pauseBLogging = false;
+THook(__int64, "std::_Func_impl_no_alloc<<lambda_bc4a73e92ba7b703b39f322d94bb55f6>,TaskResult>::_Do_call",
+      __int64 a1, __int64 a2) {
+    if (LL::globalConfig.disableAutoCompactionLog) {
+        pauseBLogging = true;
+        auto v = original(a1, a2);
+        pauseBLogging = false;
+        return v;
+    }
+    return original(a1, a2);
+}
+
+TClasslessInstanceHook(char, "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
+                       char a2, int a3, int a4, unsigned int a5, __int64 a6, int a7, __int64 a8, __int64 a9) {
+    if (LL::globalConfig.disableAutoCompactionLog && pauseBLogging) {
+        return 0;
+    }
+    return original(this, a2, a3, a4, a5, a6, a7, a8, a9);
+}

@@ -9,6 +9,7 @@
 #include "ItemAPI.h"
 #include "GuiAPI.h"
 #include "NbtAPI.h"
+#include "PacketAPI.h"
 #include <Engine/EngineOwnData.h>
 #include <Engine/GlobalShareData.h>
 #include <MC/Player.hpp>
@@ -120,7 +121,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("sendModalForm", &PlayerClass::sendModalForm)
         .instanceFunction("sendCustomForm", &PlayerClass::sendCustomForm)
         .instanceFunction("sendForm", &PlayerClass::sendForm)
-        //.instanceFunction("sendPacket",&PlayerClass::sendPacket)
+        .instanceFunction("sendPacket",&PlayerClass::sendPacket)
 
         .instanceFunction("setExtraData", &PlayerClass::setExtraData)
         .instanceFunction("getExtraData", &PlayerClass::getExtraData)
@@ -1427,7 +1428,7 @@ Local<Value> PlayerClass::sendForm(const Arguments& args) {
     }
     CATCH("Fail in sendForm!");
 }
-/*
+
 Local<Value> PlayerClass::sendPacket(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
@@ -1438,15 +1439,15 @@ Local<Value> PlayerClass::sendPacket(const Arguments& args)
         Player* player = get();
         if (!player)
             return Local<Value>();
-        auto id = PacketClass::_getPacketid(args[0]);
-        auto wb = PacketClass::extractPacket(args[0]);
-        auto pkt = MyPkt("", (MinecraftPacketIds)id);
-        pkt.write(wb);
-        Raw_SendPacket(player, &pkt);
+        auto pkt = PacketClass::extract(args[0]);
+		if (!pkt)
+            return Boolean::newBoolean(false);  
+        player->sendNetworkPacket(*pkt);
+        return Boolean::newBoolean(true);
     }
     CATCH("Fail in sendPacket");
     return Local<Value>();
-}*/
+}
 
 Local<Value> PlayerClass::setExtraData(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);

@@ -384,6 +384,9 @@
     <ClCompile Include="Kernel\MC\MolangAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
+    <ClCompile Include="Main\BStats.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

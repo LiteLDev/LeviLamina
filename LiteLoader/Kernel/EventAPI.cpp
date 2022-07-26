@@ -275,6 +275,7 @@ DECLARE_EVENT_DATA(RegCmdEvent);
 DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobSpawnEvent);
+DECLARE_EVENT_DATA(FormResponsePacketEvent);
 
 
 #ifdef ENABLE_SEH_PROTECTION
@@ -2023,7 +2024,7 @@ THook(std::ostream&,
     return original(_this, str, size);
 }
 
-
+////////////// PlayerDropItem //////////////
 TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
               ComplexInventoryTransaction, Player* a2, int a3) {
     if (this->type == ComplexInventoryTransaction::Type::NORMAL) {
@@ -2072,6 +2073,7 @@ TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
     return original(this, a2, a3, a4, a5);
 }
 
+////////////// PlayerBedEnter //////////////
 TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
               Player, BlockPos const& blk) {
     auto bl = Level::getBlockInstance(blk, getDimensionId());
@@ -2086,8 +2088,9 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
     return original(this, blk);
 }
 
-
 #include <MC/Spawner.hpp>
+
+////////////// MobSpawn //////////////
 TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
               Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8) {
     IF_LISTENED(MobSpawnEvent) {
@@ -2100,4 +2103,36 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
     }
     IF_LISTENED_END(MobSpawnEvent)
     return original(this, a2, a3, a4, a5, a6, a7, a8);
+}
+
+#include "Impl/FormPacketHelper.h"
+
+////////////// FormResponsePacket //////////////
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
+    Packet* packet = *(Packet**)pPacket;
+    ServerPlayer* sp = handler->getServerPlayer(*id, 0);
+
+    if (sp) {
+        unsigned formId = dAccess<unsigned>(packet, 48);
+        string data = dAccess<string>(packet, 56);
+
+        if (data.back() == '\n')
+            data.pop_back();
+
+        IF_LISTENED(FormResponsePacketEvent) {
+            FormResponsePacketEvent ev{};
+            ev.mServerPlayer = sp;
+            ev.mFormId = formId;
+            ev.mJsonData = data;
+
+            if (!ev.call())
+                return;
+        }
+        IF_LISTENED_END(FormResponsePacketEvent)
+
+        HandleFormPacket(sp, formId, data);
+    }
+
+    original(this, id, handler, pPacket);
 }

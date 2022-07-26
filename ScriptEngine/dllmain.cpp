@@ -1,8 +1,8 @@
 // BDS and LiteLoader Apis
-#pragma comment(lib, "../LiteLoader/Lib/bedrock_server_api.lib")
-#pragma comment(lib, "../LiteLoader/Lib/bedrock_server_var.lib")
-#pragma comment(lib, "../LiteLoader/Lib/SymDBHelper.lib")
-#pragma comment(lib, "../LiteLoader/Lib/LiteLoader.lib")
+// #pragma comment(lib, "../LiteLoader/Lib/bedrock_server_api.lib")
+// #pragma comment(lib, "../LiteLoader/Lib/bedrock_server_var.lib")
+// #pragma comment(lib, "../LiteLoader/Lib/SymDBHelper.lib")
+// #pragma comment(lib, "../LiteLoader/Lib/LiteLoader.lib")
 
 // Common Libs
 #pragma comment(lib, "third-party/cpp-base64/lib/cpp-base64.lib")

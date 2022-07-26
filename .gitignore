@@ -31,3 +31,4 @@ LiteLoader/Lib/Demangler.pdb
 LiteLoader/Lib/Demangler.lib
 
 /build
+**/Directory.build.props
