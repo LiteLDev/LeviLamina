@@ -65,7 +65,6 @@ Global
 		{3524E651-FDFA-498D-BE39-7DF750172672}.QuickJs|x64.ActiveCfg = QuickJs|x64
 		{3524E651-FDFA-498D-BE39-7DF750172672}.QuickJs|x64.Build.0 = QuickJs|x64
 		{3524E651-FDFA-498D-BE39-7DF750172672}.Release|x64.ActiveCfg = QuickJs|x64
-		{3524E651-FDFA-498D-BE39-7DF750172672}.Release|x64.Build.0 = QuickJs|x64
 		{0136A4C1-10AF-480B-B845-006821CE5054}.Debug|x64.ActiveCfg = NodeJs|x64
 		{0136A4C1-10AF-480B-B845-006821CE5054}.Debug|x64.Build.0 = NodeJs|x64
 		{0136A4C1-10AF-480B-B845-006821CE5054}.Lua|x64.ActiveCfg = Release|x64
@@ -93,8 +92,7 @@ Global
 		{6DB8FA74-C907-470C-B634-F1EDD20CA31B}.NodeJs|x64.Build.0 = NodeJs|x64
 		{6DB8FA74-C907-470C-B634-F1EDD20CA31B}.QuickJs|x64.ActiveCfg = QuickJs|x64
 		{6DB8FA74-C907-470C-B634-F1EDD20CA31B}.QuickJs|x64.Build.0 = QuickJs|x64
-		{6DB8FA74-C907-470C-B634-F1EDD20CA31B}.Release|x64.ActiveCfg = NodeJs|x64
-		{6DB8FA74-C907-470C-B634-F1EDD20CA31B}.Release|x64.Build.0 = NodeJs|x64
+		{6DB8FA74-C907-470C-B634-F1EDD20CA31B}.Release|x64.ActiveCfg = QuickJs|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
