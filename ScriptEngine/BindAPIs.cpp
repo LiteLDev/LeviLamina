@@ -25,7 +25,7 @@
 #include <API/McAPI.h>
 #include <API/GameUtilsAPI.h>
 #include <API/PacketAPI.h>
-
+#include <API/NativeAPI.h>
 void BindAPIs(ScriptEngine* engine)
 {
 
@@ -59,6 +59,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(ParamOptionStaticBuilder);
     engine->registerNativeClass(OriginTypeStaticBuilder);
     engine->registerNativeClass(DamageCauseEnumBuilder);
+    engine->registerNativeClass(NativeClassBuilder);
 
     //////////////// 实例类 ////////////////
 
@@ -101,4 +102,5 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpRequestClass>(HttpRequestClassBuilder);
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
     engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
+    engine->registerNativeClass<NativePointer>(NativePointerBuilder);
 }

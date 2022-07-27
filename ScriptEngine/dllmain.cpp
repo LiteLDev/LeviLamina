@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <iostream>
+#pragma comment(lib, "../LiteLoader/Lib/Demangler.lib")
 
 extern void entry();
 
