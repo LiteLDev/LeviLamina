@@ -96,7 +96,7 @@ void LoadMain()
     return;
 #endif
 
-    logger.info("Loading plugins...");
+    logger.info("Loading " LLSE_MODULE_TYPE " plugins...");
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files)
@@ -107,7 +107,7 @@ void LoadMain()
                 ++count;
         }
     }
-    logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugins loaded in all.");
+    logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugin(s) loaded.");
 }
 
 
@@ -115,7 +115,7 @@ void LoadMain()
 // NodeJs后端 - 主加载
 void LoadMain_NodeJs()
 {
-    logger.info("Loading plugins...");
+    logger.info("Loading Node.js plugins...");
     int installCount = 0;
     int count = 0;
 
@@ -125,12 +125,12 @@ void LoadMain_NodeJs()
         if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
             logger.info("Found Node.js plugin pack \"{}\"! Try installing...", i.path().u8string());
             if (!NodeJsHelper::deployPluginPack(i.path().u8string())) {
-                logger.error("Failed to install plugin pack {}, please check your package.json file");
+                logger.error("Failed to install plugin pack {}, please check your package.json file!");
             }
             ++installCount;
         }
     }
-    logger.info("{} Node.js plugin packs installed in all", installCount);
+    logger.info("{} Node.js plugin pack(s) installed", installCount);
 
     // Load Plugins in NODEJS_ROOT_DIR
     files = std::filesystem::directory_iterator(LLSE_NODEJS_ROOT_DIR);
@@ -147,6 +147,6 @@ void LoadMain_NodeJs()
             }
         }
     }
-    logger.info("{} Node.js plugins loaded in all.", count);
+    logger.info("{} Node.js plugin(s) loaded.", count);
 }
 #endif

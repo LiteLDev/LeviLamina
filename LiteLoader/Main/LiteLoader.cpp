@@ -78,7 +78,7 @@ void CheckRunningBDS() {
                 std::wstring path{buf, sz};
                 if (current == path) {
                     logger.error("Detected the existence of another BDS process with the same path!");
-                    logger.error("This may cause the network port and the level to be occupied");
+                    logger.error("This may cause the network port and the level to be occupied!");
                     logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No)", pid);
                     char ch;
                     cin >> ch;
@@ -102,14 +102,14 @@ void FixAllowList() {
                 logger.warn("allowlist.json is empty! Removing...");
                 filesystem::remove("allowlist.json");
             } else {
-                logger.warn("Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
+                logger.warn("Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually.");
                 return;
             }
         }
         std::error_code ec;
         filesystem::copy_file("whitelist.json", "allowlist.json", filesystem::copy_options::overwrite_existing, ec);
         filesystem::remove("whitelist.json", ec);
-        logger.warn("Renamed whitelist.json to allowlist.json");
+        logger.warn("Renamed whitelist.json to allowlist.json.");
     }
 }
 

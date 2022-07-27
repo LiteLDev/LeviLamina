@@ -10,8 +10,8 @@ using namespace std;
 
 namespace LL {
 
-LLConfig globalConfig;
-LL::CommandLineOption commandLineOption;
+LIAPI LLConfig globalConfig;
+LIAPI LL::CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf) {
     j = nlohmann::json{

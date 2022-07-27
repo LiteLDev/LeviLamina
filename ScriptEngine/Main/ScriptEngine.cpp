@@ -1,3 +1,4 @@
+#include <LiteLoader/Main/Config.h>
 #include <API/APIHelp.h>
 #include <API/EventAPI.h>
 #include <Engine/GlobalShareData.h>
@@ -32,11 +33,6 @@ extern void LoadMain();
 extern void BindAPIs(ScriptEngine* engine);
 extern void LoadDebugEngine();
 
-void LoaderInfo() {
-    logger.info(std::string("ScriptEngine for ") + LLSE_MODULE_TYPE + " loaded");
-    logger.info(std::string("Version ") + LITELOADER_VERSION.toString());
-}
-
 void LoadConfigFile() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
@@ -45,10 +41,10 @@ void LoadConfigFile() {
             return;
         }
     } catch (const nlohmann::json::exception& e) {
-        logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+        logger.error("Fail to parse config file <{}>!", LITELOADER_CONFIG_FILE);
         logger.error("{}", TextEncoding::toUTF8(e.what()));
     } catch (...) {
-        logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
+        logger.error("Fail to load config file <{}>!", LITELOADER_CONFIG_FILE);
     }
     globalConfig = fifo_json::object();
 }
@@ -76,10 +72,11 @@ void entry() {
     if (localShareData->isFirstInstance) {
         logger.info("ScriptEngine initializing...");
     }
-    LoaderInfo();
 
     //初始化经济系统
-    EconomySystem::init();
+    if (LL::globalConfig.enableEconomyCore) {
+        EconomySystem::init();
+    }
 
     //预加载库
     LoadDepends();
