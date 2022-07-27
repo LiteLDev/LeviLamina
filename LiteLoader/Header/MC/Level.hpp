@@ -86,6 +86,8 @@ public:
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     LIAPI static void broadcastText(const string& text, TextType type);
     LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LIAPI static void sendPacketForAllPlayers(Packet& pkt);
+    [[deprecated("This is a typo. Please use sendPacketForAllPlayers")]]
     LIAPI static void sendPacketForAllPlayer(Packet& pkt);
 
     LIAPI static std::string getCurrentLevelName();
