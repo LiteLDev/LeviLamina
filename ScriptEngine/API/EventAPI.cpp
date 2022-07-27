@@ -205,11 +205,7 @@ string EventTypeToString(EVENT_TYPES e) {
         }                                                                  \
         LISTENER_CATCH(TYPE)                                               \
     }                                                                      \
-    if (!passToBDS) {                                                      \
-        return false;                                                      \
-    } else {                                                               \
-        return true;                                                       \
-    }
+    return passToBDS;
 
 //调用事件监听函数，拦截返回RETURN_VALUE
 #define CallEventRtnValue(TYPE, RETURN_VALUE, ...)                         \
@@ -708,6 +704,7 @@ void EnableEventListener(int eventId) {
                     }
                     IF_LISTENED_END(EVENT_TYPES::onRespawnAnchorExplode);
                 }
+				return true;
             });
             break;
 
@@ -1056,6 +1053,7 @@ void EnableEventListener(int eventId) {
                     }
                     IF_LISTENED_END(EVENT_TYPES::onBedExplode);
                 }
+                return true;
             });
             break;
 
