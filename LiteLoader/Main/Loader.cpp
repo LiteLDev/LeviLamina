@@ -127,7 +127,7 @@ void InitNodeJsDirectories()
     {
         ofstream fout(package_json_path.c_str());
         fout << DEFAULT_ROOT_PACKAGE_JSON;
-        logger.warn("NodeJs runtime directory no found. created.");
+        logger.warn("NodeJs runtime directory no found, created.");
     }
 }
 
@@ -137,18 +137,18 @@ void LoadScriptEngine() {
         std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
         std::string version = GetFileVersionString(path, true);
         if (version != llVersion) {
-            logger.warn("The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>",
+            logger.warn("The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>!",
                         version, backend, llVersion);
         }
         auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
         if (lib) {
-            logger.info("* ScriptEngine for " + backend + " loaded");
+            logger.info("ScriptEngine for " + backend + " loaded.");
             // Fake Register
             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
                            {{"GitHub", "https://github.com/LiteLDev/LiteLoaderBDS"}});
         } else {
-            logger.error("* Fail to load ScriptEngine for {}!", backend);
-            logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+            logger.error("Fail to load ScriptEngine for {}!", backend);
+            logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
         }
     }
 }
@@ -158,18 +158,18 @@ void LoadDotNETEngine() {
     std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
     std::string version = GetFileVersionString(path, true);
     if (version != llVersion) {
-        logger.warn("The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>",
+        logger.warn("The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>!",
                     version, llVersion);
     }
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
-        logger.info("* LiteLoader.NET loaded");
+        logger.info("LiteLoader.NET loaded.");
         // Fake Register
         RegisterPlugin(lib, "LiteLoader.NET", "LiteLoader.NET", LITELOADER_VERSION,
                        {{"GitHub", "https://github.com/LiteLDev/LiteLoader.NET"}});
     } else {
-        logger.error("* Fail to load LiteLoader.NET!");
-        logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+        logger.error("Fail to load LiteLoader.NET!");
+        logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
     }
 }
 
@@ -234,16 +234,16 @@ void LL::LoadMain() {
             ++pluginCount;
 
             if (isShellLink)
-                logger.info("ShellLink Plugin <{} => {}> loaded",
+                logger.info("ShellLink Plugin <{} => {}> loaded.",
                             UTF82String(file.path().filename().u8string()), UTF82String(path.u8string()));
             else
-                logger.info("Native plugin <{}> loaded", pluginFileName);
+                logger.info("Native plugin <{}> loaded.", pluginFileName);
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {})) {
-                    logger.error("Failed to register plugin {}!", UTF82String(path.u8string()));
+                    logger.error("Failed to register plugin <{}>!", UTF82String(path.u8string()));
                     if (getPlugin(pluginFileName))
-                        logger.error("A plugin named {} has been registered", pluginFileName);
+                        logger.error("A plugin named <{}> has been registered!", pluginFileName);
                 }
             }
         } else {
@@ -253,7 +253,7 @@ void LL::LoadMain() {
             if (!fileVersion.empty()) {
                 info += " [" + fileVersion + "]";
             }
-            logger.error("Fail to load plugin <{}>", info);
+            logger.error("Fail to load plugin <{}>!", info);
             logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
         }
     }
@@ -284,19 +284,19 @@ void LL::LoadMain() {
                 if (!fileVersion.empty()) {
                     info += "<" + fileVersion + ">";
                 }
-                logger.error("Plugin [{}] throws an std::exception in onPostInit", info);
+                logger.error("Plugin <{}> throws an std::exception in onPostInit!", info);
                 logger.error("Exception: {}", TextEncoding::toUTF8(e.what()));
-                logger.error("Fail to init this plugin!");
+                logger.error("Fail to init plugin <{}>!", info);
             } catch (...) {
                 std::string fileVersion = GetFileVersionString(plugin->handle, true);
                 std::string info = name;
                 if (!fileVersion.empty()) {
                     info += "<" + fileVersion + ">";
                 }
-                logger.error("Plugin [{}] throws an exception in onPostInit", info);
-                logger.error("Fail to init this plugin!");
+                logger.error("Plugin <{}> throws an exception in onPostInit!", info);
+                logger.error("Fail to init plugin <{}>!", info);
             }
         }
     }
-    logger.info << pluginCount << " native plugin(s) loaded" << Logger::endl;
+    logger.info << pluginCount << " native plugin(s) loaded." << Logger::endl;
 }

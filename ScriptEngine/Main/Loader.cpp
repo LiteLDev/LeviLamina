@@ -107,7 +107,7 @@ void LoadMain()
                 ++count;
         }
     }
-    logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugin(s) loaded");
+    logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugin(s) loaded.");
 }
 
 
@@ -125,7 +125,7 @@ void LoadMain_NodeJs()
         if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
             logger.info("Found Node.js plugin pack \"{}\"! Try installing...", i.path().u8string());
             if (!NodeJsHelper::deployPluginPack(i.path().u8string())) {
-                logger.error("Failed to install plugin pack {}, please check your package.json file");
+                logger.error("Failed to install plugin pack {}, please check your package.json file!");
             }
             ++installCount;
         }
@@ -147,6 +147,6 @@ void LoadMain_NodeJs()
             }
         }
     }
-    logger.info("{} Node.js plugin(s) loaded", count);
+    logger.info("{} Node.js plugin(s) loaded.", count);
 }
 #endif

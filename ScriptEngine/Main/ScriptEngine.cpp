@@ -41,10 +41,10 @@ void LoadConfigFile() {
             return;
         }
     } catch (const nlohmann::json::exception& e) {
-        logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+        logger.error("Fail to parse config file <{}>!", LITELOADER_CONFIG_FILE);
         logger.error("{}", TextEncoding::toUTF8(e.what()));
     } catch (...) {
-        logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
+        logger.error("Fail to load config file <{}>!", LITELOADER_CONFIG_FILE);
     }
     globalConfig = fifo_json::object();
 }
