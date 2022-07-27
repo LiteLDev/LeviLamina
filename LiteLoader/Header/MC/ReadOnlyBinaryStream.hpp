@@ -40,17 +40,28 @@ public:
     MCAPI void readType(class StructureSettings&);
     template <>
     MCAPI void readType(std::vector<std::unique_ptr<class DataItem>>&);
+
     template <>
     inline void readType(mce::UUID& uuid)
     {
         dAccess<uint64_t, 0>(&uuid) = getUnsignedInt64();
         dAccess<uint64_t, 8>(&uuid) = getUnsignedInt64();
     }
+
+    template <>
+    inline void readType(Vec3& vec3)
+    {
+        vec3.x = getFloat();
+        vec3.y = getFloat();
+        vec3.z = getFloat();
+    }
+
     //template <>
     //inline void readType(NetworkItemInstanceDescriptor& descriptor)
     //{
     //    descriptor.read(*this);
     //}
+
     LIAPI std::unique_ptr<class CompoundTag> getCompoundTag();
 
 #undef AFTER_EXTRA
@@ -90,7 +101,4 @@ public:
     MCAPI unsigned __int64 getUnsignedVarInt64();
     MCAPI int getVarInt();
     MCAPI __int64 getVarInt64();
-
-
-
 };
