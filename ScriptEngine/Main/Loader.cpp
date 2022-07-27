@@ -130,7 +130,7 @@ void LoadMain_NodeJs()
             ++installCount;
         }
     }
-    logger.info("{} Node.js plugin pack(s) installed", installCount);
+    logger.info("{} Node.js plugin pack(s) installed.", installCount);
 
     // Load Plugins in NODEJS_ROOT_DIR
     files = std::filesystem::directory_iterator(LLSE_NODEJS_ROOT_DIR);

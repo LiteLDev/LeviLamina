@@ -1,4 +1,4 @@
-﻿#include <API/APIHelp.h>
+#include <API/APIHelp.h>
 #include "PluginManager.h"
 #include <Global.hpp>
 #include <Configs.h>
@@ -47,23 +47,22 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
 
     string suffix = UTF82String(filesystem::path(str2wstr(filePath)).extension().u8string());
     string moduleToBroadcast;
+    switch (H(suffix.c_str())) {
+        case H(".lua"):
+            moduleToBroadcast = LLSE_BACKEND_LUA_NAME;
+            break;
+        case H(".js"):
+            moduleToBroadcast = LLSE_BACKEND_QUICKJS_NAME;
+            break;
+        default:
+            logger.error("Do not support this type of plugin!");
+            return false;
+            break;
+    }
 
     if (suffix != LLSE_PLUGINS_EXTENSION) {
         if (mustBeCurrentModule)
             return false;
-
-        switch (H(suffix.c_str())) {
-            case H(".lua"):
-                moduleToBroadcast = LLSE_BACKEND_LUA_NAME;
-                break;
-            case H(".js"):
-                moduleToBroadcast = LLSE_BACKEND_QUICKJS_NAME;
-                break;
-            default:
-                logger.error("Do not support this type of plugin!");
-                return false;
-                break;
-        }
 
         // Remote Load
         // logger.debug("Remote Load begin");
@@ -148,7 +147,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         //热加载完毕后补调用各启动事件
         if (isHotLoad)
             LLSECallEventsOnHotLoad(engine);
-        logger.info(moduleToBroadcast + " plugin <" + pluginName + "> loaded");
+        logger.info(moduleToBroadcast + " plugin <" + pluginName + "> loaded.");
         return true;
     } catch (const Exception& e) {
         logger.error("Fail to load " + filePath + "!");
@@ -198,7 +197,7 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
         int exitCode = 0;
         logger.info("Executing \"npm install\" for plugin {}...", filesystem::path(dirPath).filename().u8string());
         if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
-            logger.info("Npm finished successfully");
+            logger.info("Npm finished successfully.");
         else
             logger.error("Error occurred. Exit code: {}", exitCode);
     }
@@ -265,14 +264,14 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
             }
             catch(...)
             {
-                logger.warn("Fail to help plugin {} get registered", pluginName);
+                logger.warn("Fail to help plugin {} get registered!", pluginName);
             }
 
             // register
             PluginManager::registerPlugin(dirPath, pluginName, description, ver, others);
         }
 
-        logger.info("Node.js plugin <" + pluginName + "> loaded");
+        logger.info("Node.js plugin <" + pluginName + "> loaded.");
         return true;
     }
     catch (const Exception& e) {
@@ -334,7 +333,7 @@ bool PluginManager::unloadPlugin(const std::string& name) {
 #endif
     });
 
-    logger.info(name + " unloaded");
+    logger.info(name + " unloaded.");
     return true;
 }
 
