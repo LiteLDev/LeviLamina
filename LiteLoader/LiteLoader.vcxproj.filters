@@ -207,7 +207,7 @@
     <ClCompile Include="Kernel\Scoreboard\ScoreboardAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
-    <ClCompile Include="Main\PlayerInfoAPI.cpp">
+    <ClCompile Include="Kernel\PlayerInfoAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">

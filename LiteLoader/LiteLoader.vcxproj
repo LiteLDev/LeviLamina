@@ -296,7 +296,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="Main\LiteLoader.cpp" />
     <ClCompile Include="Main\ModifyInfomation.cpp" />
-    <ClCompile Include="Main\PlayerInfoAPI.cpp" />
+    <ClCompile Include="Kernel\PlayerInfoAPI.cpp" />
     <ClCompile Include="Main\PluginManager.cpp" />
     <ClCompile Include="Main\BuiltinCommands.cpp" />
     <ClCompile Include="Main\SEHProtection.cpp" />
