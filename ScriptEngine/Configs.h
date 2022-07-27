@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <set>
 #include <string>
 
@@ -36,7 +36,7 @@
 	#define LLSE_LOADER_NAME "ScriptEngine-NodeJs"
 	#define LLSE_LOADER_DESCRIPTION "Node.js ScriptEngine for LiteLoaderBDS"
 #elif defined(LLSE_BACKEND_QUICKJS)
-	#define LLSE_LOADER_NAME "ScriptEngine-Js"
+	#define LLSE_LOADER_NAME "ScriptEngine-QuickJs"
 	#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine for LiteLoaderBDS"
 #elif defined(SCRIPTX_LANG_LUA)
 	#define LLSE_LOADER_NAME "ScriptEngine-Lua"
@@ -53,7 +53,9 @@
 #define LLSE_PLUGINS_LOAD_DIR "./plugins"
 
 // 调试引擎
-#if defined(SCRIPTX_LANG_JAVASCRIPT)
+#if defined(LLSE_BACKEND_NODEJS)
+#define LLSE_DEBUG_CMD "nodedebug"
+#elif defined(LLSE_BACKEND_QUICKJS)
 #define LLSE_DEBUG_CMD "jsdebug"
 #elif defined(SCRIPTX_LANG_LUA)
 #define LLSE_DEBUG_CMD "luadebug"
