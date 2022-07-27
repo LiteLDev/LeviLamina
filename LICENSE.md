@@ -1,4 +1,4 @@
-版权所有 (C) 2020-2022 [LiteLoaderBDS Developers](https://github.com/LiteLDev)。
+版权所有 (C) 2020-2022 [LiteLoaderBDS Developers](https://github.com/LiteLDev)
 ===
 
 _如果中英文版本有差别，以中文版为主。_
@@ -11,7 +11,7 @@ _如果中英文版本有差别，以中文版为主。_
 4. 如果您修复或调整了代码，**请提交PR或开源**，而不是将其设为私有或用于商业用途。
 5. **本许可证最终解释权归 [LiteLoaderBDS Developers](https://github.com/LiteLDev) 所有。**
 
-Copyright (C) 2020-2022 [LiteLoaderBDS Developers](https://github.com/LiteLDev).
+Copyright (C) 2020-2022 [LiteLoaderBDS Developers](https://github.com/LiteLDev)
 ===
 
 _If there is a difference between the Chinese and English versions, the Chinese version shall prevail._
