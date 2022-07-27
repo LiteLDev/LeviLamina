@@ -1,81 +1,91 @@
 #include <EventAPI.h>
 #include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
+#include <MC/PropertiesSettings.hpp>
 #include <Main/LiteLoader.h>
 #include <PlayerInfoAPI.h>
 #include <exception>
-#include <SQLiteCpp/SQLiteCpp.h>
+#include <DB/Session.h>
 
-#define PlayerDatabasePath "plugins/LiteLoader/PlayerDB.db"
-std::unique_ptr<SQLite::Database> db;
+#define PLAYER_DATABASE_PATH "plugins/LiteLoader/PlayerDB.db"
+#define SQL_CREATE_PLAYER_TABLE \
+    R"(
+CREATE TABLE IF NOT EXISTS player (
+    NAME TEXT PRIMARY KEY NOT NULL,
+    XUID TEXT NOT NULL,
+    UUID TEXT NOT NULL
+) WITHOUT ROWID;
+)"
 
+DB::SharedPointer<DB::Session> db;
 
 namespace PlayerInfo {
-std::string getVal(std::string name, unsigned short type) { // type: 0=XUID 1=UUID
-    if (name == "")
-        return "";
-    try {
-        std::string val;
-        if (type == 0) { // XUID
-            SQLite::Statement get{*db, "select XUID from player where NAME=?"};
-            get.bindNoCopy(1, name);
-            while (get.executeStep()) {
-                val = get.getColumn(0).getText();
-            }
-            get.reset();
-            get.clearBindings();
-        } else { // UUID
-            SQLite::Statement get{*db, "select UUID from player where NAME=?"};
-            get.bindNoCopy(1, name);
-            while (get.executeStep()) {
-                val = get.getColumn(0).getText();
-            }
-            get.reset();
-            get.clearBindings();
-        }
 
-        return val;
-    } catch (std::exception const& e) {
-        logger.error("DB Error: {}", e.what());
-        return "";
+std::vector<Info> data;
+
+std::optional<Info> findByName(const std::string& name) {
+    for (Info info : data) {
+        if (info.name == name) {
+            return info;
+        }
     }
+    return std::optional<Info>();
+}
+std::optional<Info> findByXuid(const xuid_t& xuid) {
+    for (Info info : data) {
+        if (info.xuid == xuid) {
+            return info;
+        }
+    }
+    return std::optional<Info>();
+}
+std::optional<Info> findByUUID(const std::string& uuid) {
+    for (Info info : data) {
+        if (info.uuid == uuid) {
+            return info;
+        }
+    }
+    return std::optional<Info>();
+}
+
+std::vector<std::string> getAllPlayerNames() {
+    std::vector<std::string> result;
+    for (auto& info : data) {
+        result.push_back(info.name);
+    }
+    return result;
+}
+
+std::vector<Info> getAllPlayerInfo() {
+    return data;
 }
 
 bool insert(std::string name, std::string xuid, std::string uuid) {
-    if (name == "" || xuid == "" || uuid == "") {
+    if (name.empty() || xuid.empty() || uuid.empty()) {
         return false;
     }
-    if (getVal(name, 0) == "") {
+    auto info = findByXuid(xuid);
+    if (!info.has_value()) {
         try {
-            SQLite::Statement st{*db, "insert into player values (?,?,?)"};
-            st.bindNoCopy(1, name);
-            st.bindNoCopy(2, xuid);
-            st.bindNoCopy(3, uuid);
-            st.exec();
-            st.reset();
-            st.clearBindings();
-        } catch (std::exception const& e) {
-            logger.error("DB Error: {}", e.what());
+            data.push_back({name, xuid, uuid});
+            db << "insert into player (NAME, XUID, UUID) values(?,?,?)", DB::use(DB::Row{name, xuid, uuid});
+        } catch (const std::exception& e) {
+            logger.error("PlayerDB Error: {}", e.what());
             return false;
         }
     } else {
         try {
-            db->exec("begin");
-            SQLite::Statement st{*db, "update player set XUID=? where NAME=?"};
-            st.bindNoCopy(2, name);
-            st.bindNoCopy(1, xuid);
-            st.exec();
-            st.reset();
-            st.clearBindings();
-            SQLite::Statement stUUID{*db, "update player set UUID=? where NAME=?"};
-            stUUID.bindNoCopy(2, name);
-            stUUID.bindNoCopy(1, uuid);
-            stUUID.exec();
-            stUUID.reset();
-            stUUID.clearBindings();
-            db->exec("commit");
+            for (auto& it : data) {
+                if (it.xuid == info.value().xuid) {
+                    if (it.name != name || it.uuid != uuid) {
+                        it.name = name;
+                        it.uuid = uuid;
+                        db << "update player set NAME = ?, UUID = ? where XUID = ?", DB::use(DB::Row{name, uuid, xuid});
+                    }
+                }
+            }
         } catch (std::exception const& e) {
-            logger.error("DB Error: {}", e.what());
+            logger.error("PlayerDB Error: {}", e.what());
             return false;
         }
     }
@@ -83,83 +93,64 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
 }
 
 std::string getXuid(std::string name) {
-    return getVal(name, 0);
+    auto res = findByName(name);
+    return res.has_value() ? res.value().xuid : "";
 }
 
 std::string getUUID(std::string name) {
-    return getVal(name, 1);
-}
-
-std::string getName(unsigned short type, std::string val) {
-    if (val == "")
-        return "";
-    try {
-        std::string out;
-        if (type == 0) {
-            SQLite::Statement get{*db, "select NAME from player where XUID=?"};
-            get.bindNoCopy(1, val);
-            while (get.executeStep()) {
-                out = get.getColumn(0).getText();
-            }
-            get.reset();
-            get.clearBindings();
-        } else {
-            SQLite::Statement get{*db, "select NAME from player where UUID=?"};
-            get.bindNoCopy(1, val);
-            while (get.executeStep()) {
-                out = get.getColumn(0).getText();
-            }
-            get.reset();
-            get.clearBindings();
-        }
-        return out;
-    } catch (std::exception const& e) {
-        logger.error("DB Error: {}", e.what());
-        return "";
-    }
+    auto res = findByName(name);
+    return res.has_value() ? res.value().uuid : "";
 }
 
 std::string fromXuid(std::string xuid) {
-    return getName(0, xuid);
+    auto res = findByXuid(xuid);
+    return res.has_value() ? res.value().name : "";
 }
 
 std::string fromUUID(std::string uuid) {
-    return getName(1, uuid);
+    auto res = findByXuid(uuid);
+    return res.has_value() ? res.value().name : "";
 }
 
 void forEachInfo(std::function<bool(std::string_view name, std::string_view xuid, std::string_view uuid)> callback) {
-    SQLite::Statement get{*db, "select NAME, XUID, UUID from player"};
-    while (get.executeStep()) {
-        auto name = get.getColumn(0).getText();
-        auto xuid = get.getColumn(1).getText();
-        auto uuid = get.getColumn(2).getText();
-        if (!callback(name, xuid, uuid))
+    for (auto& info : data) {
+        if (!callback(info.name, info.xuid, info.uuid)) {
             break;
+        }
     }
-    get.reset();
-    get.clearBindings();
 }
 
 } // namespace PlayerInfo
 
+template <>
+PlayerInfo::Info row_to(const DB::Row& row) {
+    //logger.debug("{} {} {}", row["NAME"].get<std::string>(), row["XUID"].get<std::string>(), row["UUID"].get<std::string>());
+    return {
+        row["NAME"].get<std::string>(),
+        row["XUID"].get<std::string>(),
+        row["UUID"].get<std::string>()
+    };
+}
+
 bool InitPlayerDatabase() {
     using namespace PlayerInfo;
     try {
-        db = std::make_unique<SQLite::Database>(PlayerDatabasePath, SQLite::OPEN_CREATE | SQLite::OPEN_READWRITE);
+        db = DB::Session::create(DB::DBType::SQLite, std::string(PLAYER_DATABASE_PATH));
 
-        db->exec("CREATE TABLE IF NOT EXISTS player ( \
-            NAME TEXT PRIMARY KEY \
-            NOT NULL, \
-            XUID TEXT \
-            NOT NULL, \
-            UUID TEXT \
-            NOT NULL \
-        ) \
-            WITHOUT ROWID; ");
+        db->execute(SQL_CREATE_PLAYER_TABLE);
 
+        PlayerInfo::data = db->prepare("select NAME, XUID, UUID from player")->execute()->fetchAll<Info>();
+
+        // Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent&) {
+        //     if (Global<PropertiesSettings> && !Global<PropertiesSettings>->useOnlineAuthentication()) {
+        //         logger.warn("Online Authentication(online-mode in server.properties) is disabled!");
+        //     }
+        //     return true;
+        // });
         Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& e) {
-            if (!e.mPlayer->isSimulatedPlayer())
+            if (!e.mPlayer->isSimulatedPlayer()) {
                 insert(e.mPlayer->getRealName(), e.mPlayer->getXuid(), e.mPlayer->getUuid());
+            }
             return true;
         });
     } catch (std::exception const& e) {
