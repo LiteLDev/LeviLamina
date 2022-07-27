@@ -8,4 +8,4 @@ set(LLSE_BACKEND QUICKJS)
 set(SCRIPTX_BACKEND QuickJs)
 set(LLSE_BACKEND_LIBRARY QuickJs)
 
-include(../ScriptEngine/CMakeLists.txt)
+include(../../CMakeLists.txt)
