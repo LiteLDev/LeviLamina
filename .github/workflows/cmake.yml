@@ -37,17 +37,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Cache Build directory
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-cmake
-        with:
-          path: |
-            build
-            build_clang
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
-          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
-
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
         uses: actions/cache@v3

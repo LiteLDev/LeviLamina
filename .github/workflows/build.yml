@@ -38,19 +38,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Cache Build directory
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-msbuild
-        with:
-          path: |
-            LiteLoader/x64
-            PreLoader/x64
-            ScriptEngine/x64
-            ScriptEngine/third-party/ScriptX/x64
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{github.sha}}
-          restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}-
-
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
         uses: actions/cache@v3
