@@ -1,3 +1,4 @@
+#include <LiteLoader/Main/Config.h>
 #include <API/APIHelp.h>
 #include <API/EventAPI.h>
 #include <Engine/GlobalShareData.h>
@@ -73,7 +74,9 @@ void entry() {
     }
 
     //初始化经济系统
-    EconomySystem::init();
+    if (LL::globalConfig.enableEconomyCore) {
+        EconomySystem::init();
+    }
 
     //预加载库
     LoadDepends();
