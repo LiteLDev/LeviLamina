@@ -154,7 +154,6 @@ void LoadScriptEngine() {
 }
 
 void LoadDotNETEngine() {
-    logger.warn("LiteLoader.NET is not finished yet!");
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
     std::string version = GetFileVersionString(path, true);
@@ -164,7 +163,7 @@ void LoadDotNETEngine() {
     }
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
-        logger.info("* .NET Engine loaded");
+        logger.info("* LiteLoader.NET loaded");
         // Fake Register
         RegisterPlugin(lib, "LiteLoader.NET", "LiteLoader.NET", LITELOADER_VERSION,
                        {{"GitHub", "https://github.com/LiteLDev/LiteLoader.NET"}});
@@ -175,7 +174,7 @@ void LoadDotNETEngine() {
 }
 
 void LL::LoadMain() {
-    logger.info("Loading plugins...");
+    logger.info("Loading native plugins...");
     CleanOldScriptEngine();
 
     // Load plugins
@@ -238,7 +237,7 @@ void LL::LoadMain() {
                 logger.info("ShellLink Plugin <{} => {}> loaded",
                             UTF82String(file.path().filename().u8string()), UTF82String(path.u8string()));
             else
-                logger.info("Plugin <{}> loaded", pluginFileName);
+                logger.info("Native plugin <{}> loaded", pluginFileName);
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {})) {
@@ -299,5 +298,5 @@ void LL::LoadMain() {
             }
         }
     }
-    logger.info << pluginCount << " plugin(s) loaded" << Logger::endl;
+    logger.info << pluginCount << " native plugin(s) loaded" << Logger::endl;
 }

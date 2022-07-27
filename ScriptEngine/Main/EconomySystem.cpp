@@ -1,3 +1,4 @@
+#include <Engine/LocalShareData.h>
 #include "EconomicSystem.h"
 #include "API/EventAPI.h"
 #include <LLAPI.h>
@@ -41,7 +42,9 @@ bool EconomySystem::init()
     auto llmoney = LL::getPlugin("LLMoney");
     if (!llmoney)
     {
-        economicLogger.warn(tr("init.llMoney.noFound"));
+        if (localShareData->isFirstInstance) {
+            economicLogger.warn(tr("init.llMoney.noFound"));
+        }
         return false;
     }
 

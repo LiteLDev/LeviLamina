@@ -32,11 +32,6 @@ extern void LoadMain();
 extern void BindAPIs(ScriptEngine* engine);
 extern void LoadDebugEngine();
 
-void LoaderInfo() {
-    logger.info(std::string("ScriptEngine for ") + LLSE_MODULE_TYPE + " loaded");
-    logger.info(std::string("Version ") + LITELOADER_VERSION.toString());
-}
-
 void LoadConfigFile() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
@@ -76,7 +71,6 @@ void entry() {
     if (localShareData->isFirstInstance) {
         logger.info("ScriptEngine initializing...");
     }
-    LoaderInfo();
 
     //初始化经济系统
     EconomySystem::init();
