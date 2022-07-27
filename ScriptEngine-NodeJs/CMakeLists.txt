@@ -8,4 +8,4 @@ set(LLSE_BACKEND NODEJS)
 set(SCRIPTX_BACKEND V8)
 set(LLSE_BACKEND_LIBRARY NodeJs)
 
-include(../CMakeLists.txt)
+include(../ScriptEngine/CMakeLists.txt)

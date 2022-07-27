@@ -16,9 +16,6 @@
 *.so
 *.suo
 *.user
-*.vcproj
-*.vcxproj
-*.vcxproj.filters
 *.xcodeproj
 *~
 .#*

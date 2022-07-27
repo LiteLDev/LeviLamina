@@ -19,6 +19,8 @@ file(GLOB_RECURSE SRC_FILES
         ${PROJECT_SOURCE_DIR}/Main/*.cpp
         ${PROJECT_SOURCE_DIR}/Main/*.hpp
         ${PROJECT_SOURCE_DIR}/Main/*.h
+        ${PROJECT_SOURCE_DIR}/Resource/*.rc
+        ${PROJECT_SOURCE_DIR}/Resource/*.h
         )
 
 add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
@@ -43,7 +45,7 @@ include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
 link_directories(${PROJECT_SOURCE_DIR}/)
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
-add_library(LiteLoader SHARED ${SRC_FILES} Resource/LiteLoader.rc)
+add_library(LiteLoader SHARED ${SRC_FILES})
 
 add_library(sqlitecpp STATIC IMPORTED)
 set_property(TARGET sqlitecpp PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib")

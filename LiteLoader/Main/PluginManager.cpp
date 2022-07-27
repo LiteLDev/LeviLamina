@@ -12,7 +12,7 @@
 #include <Windows.h>
 #include <string>
 #include <unordered_map>
-#include "../ScriptEngine/Configs.h"
+#include "../ScriptEngine/Main/Configs.h"
 using namespace std;
 
 extern Logger logger;

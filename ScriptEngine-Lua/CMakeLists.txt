@@ -8,4 +8,4 @@ set(LLSE_BACKEND LUA)
 set(SCRIPTX_BACKEND Lua)
 set(LLSE_BACKEND_LIBRARY Lua)
 
-include(../CMakeLists.txt)
+include(../ScriptEngine/CMakeLists.txt)

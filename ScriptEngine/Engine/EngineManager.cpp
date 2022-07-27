@@ -1,7 +1,7 @@
 #include "EngineManager.h"
 #include "EngineOwnData.h"
 #include "GlobalShareData.h"
-#include "../NodeJsHelper.h"
+#include <NodeJsHelper.h>
 #include <Utils/STLHelper.h>
 #include <map>
 using namespace std;

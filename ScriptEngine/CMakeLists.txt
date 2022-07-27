@@ -19,9 +19,9 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
 set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 
 file(GLOB_RECURSE SRC_FILES
-        ${SCRIPTENGINE_DIR}/*.cpp
-        ${SCRIPTENGINE_DIR}/*.hpp
-        ${SCRIPTENGINE_DIR}/*.h
+        ${SCRIPTENGINE_DIR}/Main/*.cpp
+        ${SCRIPTENGINE_DIR}/Main/*.hpp
+        ${SCRIPTENGINE_DIR}/Main/*.h
         ${SCRIPTENGINE_DIR}/API/*.cpp
         ${SCRIPTENGINE_DIR}/API/*.hpp
         ${SCRIPTENGINE_DIR}/API/*.h
@@ -31,6 +31,8 @@ file(GLOB_RECURSE SRC_FILES
         ${SCRIPTENGINE_DIR}/Tools/*.cpp
         ${SCRIPTENGINE_DIR}/Tools/*.hpp
         ${SCRIPTENGINE_DIR}/Tools/*.h
+        ${SCRIPTENGINE_DIR}/Resource/*.rc
+        ${SCRIPTENGINE_DIR}/Resource/*.h
         )
 
 add_definitions(-D "CPPHTTPLIB_OPENSSL_SUPPORT" -D "NDEBUG" -D "_CONSOLE" -D "_AMD64_"
@@ -51,9 +53,10 @@ add_link_options(
         /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
 )
 
-add_library(${PROJECT_NAME} SHARED ${SRC_FILES} ${SCRIPTENGINE_DIR}/ScriptEngine.rc)
+add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 
 include_directories(${SCRIPTENGINE_DIR}/)
+include_directories(${SCRIPTENGINE_DIR}/Main)
 include_directories(${SCRIPTENGINE_DIR}/..)
 include_directories(${LiteLoader_SOURCE_DIR}/Header)
 include_directories(${LiteLoader_SOURCE_DIR}/Header/third-party)
