@@ -1,3 +1,4 @@
+#include <LiteLoader/Main/Config.h>
 #include <Engine/LocalShareData.h>
 #include "EconomicSystem.h"
 #include "API/EventAPI.h"
@@ -42,7 +43,7 @@ bool EconomySystem::init()
     auto llmoney = LL::getPlugin("LLMoney");
     if (!llmoney)
     {
-        if (localShareData->isFirstInstance) {
+        if (localShareData->isFirstInstance && LL::globalConfig.enableEconomyCore) {
             economicLogger.warn(tr("init.llMoney.noFound"));
         }
         return false;
