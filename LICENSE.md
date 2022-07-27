@@ -1,27 +1,32 @@
-## Copyright (C) 2020-2022 LiteLoaderBDS Developers.
+版权所有 (C) 2020-2022 LiteLoaderBDS Developers。
+===
+
+_如果中英文版本有差别，以中文版为主。_
+
+本项目使用 GNU Affero v3 许可证，额外限制条款如下：
+
+1. 您**不得**违反 [Minecraft (Mojang AB) 的最终用户许可协议](https://account.mojang.com/documents/minecraft_eula)。
+2. 如果您提供商业服务，**包括但不限于服务器托管服务**，您可以免费使用这个软件. 但您**不得**对这个软件进行私下更改或者作为卖点。
+3. 您**不得**去除版权或赞助商信息。去除版权以及赞助商的信息是一件非常**可耻**的事情！
+4. 如果您修复或调整了代码，**请提交PR或开源**，而不是将其设为私有或用于商业用途。
+5. **本许可证最终解释权归 LiteLoaderBDS Developers 所有。**
+
+Copyright (C) 2020-2022 LiteLoaderBDS Developers.
+===
 
 _If there is a difference between the Chinese and English versions, the Chinese version shall prevail._
 
 This project is under the GNU Affero v3 license, with extra restrictions as follows:
 
-1. You may not
+1. You **may not**
    violate [Minecraft (Mojang AB) End User License Agreement](https://account.mojang.com/documents/minecraft_eula).
-2. If you provide commercial services, including but not limited to server hosting services, you may use this software
-   for free. However, you may not make private changes to this software or use it as a selling point.
-3. You may not remove copyright or sponsor information. Removing copyright and sponsor information is a very shameful
-   thing!
-4. If you fix or tweak the code, please submit a PR or open source instead of making it private or for commercial use.
-
-## 版权所有 (C) 2020-2022 LiteLoaderBDS Developers.
-
-_如果中英文版本有差别, 以中文版为主._
-
-本项目使用 GNU Affero v3 许可证, 额外限制条款如下:
-
-1. 您不得违反 [Minecraft (Mojang AB) 的最终用户许可协议](https://account.mojang.com/documents/minecraft_eula).
-2. 如果您提供商业服务, 包括但不限于服务器托管服务, 您可以免费使用这个软件. 但您不得对这个软件进行私下更改或者作为卖点.
-3. 您不得去除版权或赞助商信息. 去除版权以及赞助商的信息是一件非常可耻的事情!
-4. 如果您修复或调整了代码, 请提交PR或开源, 而不是将其设为私有或用于商业用途.
+2. If you provide commercial services, **including but not limited to server hosting services**, you may use this
+   software for free. However, you **may not** make private changes to this software or use it as a selling point.
+3. You **may not** remove copyright or sponsor information. Removing copyright and sponsor information is a very
+   **shameful** thing!
+4. If you fix or tweak the code, **please submit a PR or open source** instead of making it private or for commercial
+   use.
+5. **The final interpretation right of this license belongs to LiteLoader BDS Developers.**
 
 GNU Affero General Public License
 =================================
