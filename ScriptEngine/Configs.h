@@ -38,7 +38,7 @@
 #elif defined(LLSE_BACKEND_QUICKJS)
 	#define LLSE_LOADER_NAME "ScriptEngine-QuickJs"
 	#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine for LiteLoaderBDS"
-#elif defined(SCRIPTX_LANG_LUA)
+#elif defined(LLSE_BACKEND_LUA)
 	#define LLSE_LOADER_NAME "ScriptEngine-Lua"
 	#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine for LiteLoaderBDS"
 #endif
