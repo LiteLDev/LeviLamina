@@ -158,7 +158,9 @@ Local<Value> V8Engine::eval(const Local<String>& script, const Local<Value>& sou
   if (scriptString.IsEmpty() || scriptString->IsNullOrUndefined()) {
     throw Exception("can't eval script");
   }
-  v8::ScriptOrigin origin(sourceFile.isNull() || !sourceFile.isString()
+
+  // NodeJs use a newer version of v8, which has a new way to eval script.
+  v8::ScriptOrigin origin(isolate_, sourceFile.isNull() || !sourceFile.isString()
                               ? v8::Local<v8::String>()
                               : toV8(isolate_, sourceFile.asString()));
   v8::MaybeLocal<v8::Script> maybeScript = v8::Script::Compile(context, scriptString, &origin);
