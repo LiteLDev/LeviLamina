@@ -188,9 +188,9 @@ root
 ScriptX 中的一些重要类：
 1. `ScriptEngine`
 2. `EngineScope`
-2. `Exception`
-3. `Value`, `Null`, `Object`, `String`, `Number`, `Boolean`, `Function`, `Array`, `ByteBuffer`, `Unsupported`
-4. `Local<Value>`, `Local<Null>`, `Local<Object>`, `Local<String>`, `Local<Number>`, `Local<Boolean>`, `Local<Function>`, `Local<Array>`, `Local<ByteBuffer>`, `Local<Unsupported>`
-5. `Global<T>`, `Weak<T>`
+3. `Exception`
+4. `Value`, `Null`, `Object`, `String`, `Number`, `Boolean`, `Function`, `Array`, `ByteBuffer`, `Unsupported`
+5. `Local<Value>`, `Local<Null>`, `Local<Object>`, `Local<String>`, `Local<Number>`, `Local<Boolean>`, `Local<Function>`, `Local<Array>`, `Local<ByteBuffer>`, `Local<Unsupported>`
+6. `Global<T>`, `Weak<T>`
 
 在正式使用ScriptX之前，请花半个小时**仔细阅读**[项目文档](docs/zh/TOC.md)，并熟悉 ScriptX 中的若干概念。

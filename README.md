@@ -176,10 +176,10 @@ For more **installation and usage guides**,  come to 👉[LiteLoader documentati
 ### Developing plugins with C++
 
 1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project templates, or create your own project repository based on the templates and download the code locally
-1. Open the Template.sln project file
-1. Start writing the plugin code in Plugin.cpp
-1. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
-1. Copy the plugin to the plugins directory for testing
+2. Open the Template.sln project file
+3. Start writing the plugin code in Plugin.cpp
+4. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
+5. Copy the plugin to the plugins directory for testing
 
 For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈<br>
 If you have a revision request or need to add an API, please contact the author or post an Issue

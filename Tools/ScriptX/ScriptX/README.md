@@ -190,9 +190,9 @@ root
 Some important classes in ScriptX:
 1. `ScriptEngine`
 2. `EngineScope`
-2. `Exception`
-3. `Value`, `Null`, `Object`, `String`, `Number`, `Boolean`, `Function`, `Array`, `ByteBuffer`, `Unsupported`
-4. `Local<Value>`, `Local<Null>`, `Local<Object>`, `Local<String>`, `Local<Number>`, `Local<Boolean>`, `Local<Function>` , `Local<Array>`, `Local<ByteBuffer>`, `Local<Unsupported>`
-5. `Global<T>`, `Weak<T>`
+3. `Exception`
+4. `Value`, `Null`, `Object`, `String`, `Number`, `Boolean`, `Function`, `Array`, `ByteBuffer`, `Unsupported`
+5. `Local<Value>`, `Local<Null>`, `Local<Object>`, `Local<String>`, `Local<Number>`, `Local<Boolean>`, `Local<Function>` , `Local<Array>`, `Local<ByteBuffer>`, `Local<Unsupported>`
+6. `Global<T>`, `Weak<T>`
 
 Before officially using ScriptX, please spend half an hour **read carefully** [the project documents](docs/en/TOC.md), and be familiar with several concepts in ScriptX.

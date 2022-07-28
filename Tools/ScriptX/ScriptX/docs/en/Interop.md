@@ -5,8 +5,8 @@ These basic interfaces appear in the form of auxiliary classes.
 
 such as:
 1. `V8` -> `script::v8_interop`
-1. `JavaScriptCore` -> `script::jsc_interop`
-1. `Lua` -> `script::lua_interop`
+2. `JavaScriptCore` -> `script::jsc_interop`
+3. `Lua` -> `script::lua_interop`
 
 Mainly provide capabilities:
 1. Get the internal native engine instance from the engine pointer

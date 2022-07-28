@@ -145,14 +145,14 @@ graph TB
 
 从JS创建的 `ArrayBuffer` 读写内容：
 
-0. 创建 `Local<ByteBuffer>` (比如调用 `Local<Value>::asByteBuffer()`)
-1. malloc内存 -- ptr
-2. copy js的 `ArrayBuffer` 到 ptr
-3. `Local<ByteBuffer>::getRawBytes()` 直接返回ptr
-4. C++ 读写ptr
-5. C++ 使用 `Local<ByteBuffer>::commit` 将ptr的内容copy回`ArrayBuffer`
-6. C++ 使用 `Local<ByteBuffer>::sync` 将`ArrayBuffer`的内容copy到ptr
-5. `Local<ByteBuffer>` 析构，主动调用`commit`并释放ptr
+1. 创建 `Local<ByteBuffer>` (比如调用 `Local<Value>::asByteBuffer()`)
+2. malloc内存 -- ptr
+3. copy js的 `ArrayBuffer` 到 ptr
+4. `Local<ByteBuffer>::getRawBytes()` 直接返回ptr
+5. C++ 读写ptr
+6. C++ 使用 `Local<ByteBuffer>::commit` 将ptr的内容copy回`ArrayBuffer`
+7. C++ 使用 `Local<ByteBuffer>::sync` 将`ArrayBuffer`的内容copy到ptr
+8. `Local<ByteBuffer>` 析构，主动调用`commit`并释放ptr
 
 举个栗子：
 

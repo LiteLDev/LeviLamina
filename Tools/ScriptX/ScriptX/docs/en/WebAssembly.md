@@ -146,14 +146,14 @@ graph TB
 
 Read and write content from `ArrayBuffer` created by JS:
 
-0. Create `Local<ByteBuffer>` (such as calling `Local<Value>::asByteBuffer()`)
-1. malloc memory - ptr
-2. Copy js's `ArrayBuffer` to ptr
-3. `Local<ByteBuffer>::getRawBytes()` returns ptr directly
-4. C++ read and write ptr
-5. C++ uses `Local<ByteBuffer>::commit` to copy the contents of ptr back to `ArrayBuffer`
-6. C++ uses `Local<ByteBuffer>::sync` to copy the contents of `ArrayBuffer` to ptr
-5. `Local<ByteBuffer>` destructs, actively calls `commit` and releases ptr
+1. Create `Local<ByteBuffer>` (such as calling `Local<Value>::asByteBuffer()`)
+2. malloc memory - ptr
+3. Copy js's `ArrayBuffer` to ptr
+4. `Local<ByteBuffer>::getRawBytes()` returns ptr directly
+5. C++ read and write ptr
+6. C++ uses `Local<ByteBuffer>::commit` to copy the contents of ptr back to `ArrayBuffer`
+7. C++ uses `Local<ByteBuffer>::sync` to copy the contents of `ArrayBuffer` to ptr
+8. `Local<ByteBuffer>` destructs, actively calls `commit` and releases ptr
 
 Give a chestnut:
 
