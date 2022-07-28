@@ -214,11 +214,7 @@ Local<Value> CustomFormClass::addSwitch(const Arguments& args) {
 Local<Value> CustomFormClass::addDropdown(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
-    if (LLSE_BACKEND_TYPE == "Lua") {
-        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
-    } else {
-        CHECK_ARG_TYPE(args[1], ValueKind::kArray);
-    }
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
     if (args.size() >= 3)
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
 
@@ -266,11 +262,7 @@ Local<Value> CustomFormClass::addSlider(const Arguments& args) {
 Local<Value> CustomFormClass::addStepSlider(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
-    if (LLSE_BACKEND_TYPE == "Lua") {
-        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
-    } else {
-        CHECK_ARG_TYPE(args[1], ValueKind::kArray);
-    }
+    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
     if (args.size() >= 3)
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
 

@@ -168,11 +168,7 @@ Local<Value> ItemClass::setAux(const Arguments& args) {
 
 Local<Value> ItemClass::setLore(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
-    if (LLSE_BACKEND_TYPE == "Lua") {
-        CHECK_ARG_TYPE(args[0], ValueKind::kObject);
-    } else {
-        CHECK_ARG_TYPE(args[0], ValueKind::kArray);
-    }
+    CHECK_ARG_TYPE(args[0], ValueKind::kArray);
 
     try {
         auto arr = args[0].asArray();
