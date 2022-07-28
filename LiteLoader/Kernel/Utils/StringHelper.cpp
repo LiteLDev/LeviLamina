@@ -1,7 +1,7 @@
 #include <Utils/StringHelper.h>
 #include <string>
 #include <vector>
-#include <Windows.h>
+#include <windows.h>
 using namespace std;
 
 wstring str2wstr(const string& str) {

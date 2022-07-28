@@ -1,5 +1,5 @@
 #include <Main/Loader.h>
-#include <Windows.h>
+#include <windows.h>
 #include <filesystem>
 #include <string>
 #include <vector>

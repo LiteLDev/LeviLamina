@@ -1,6 +1,6 @@
 #include "SymbolHelper.h"
 
-#include <Windows.h>
+#include <windows.h>
 #include <dbghelp.h>
 #include <string>
 #include <map>

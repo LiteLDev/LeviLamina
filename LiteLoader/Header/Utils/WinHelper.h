@@ -1,7 +1,7 @@
 #pragma once
 #include "../Global.h"
 #include <string>
-#include <Windows.h>
+#include <windows.h>
 
 // GetLastError() -> string
 LIAPI std::string GetLastErrorMessage();

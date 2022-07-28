@@ -9,7 +9,7 @@
 #include <I18nAPI.h>
 #include <MC/Level.hpp>
 #include <MC/Player.hpp>
-#include <Windows.h>
+#include <windows.h>
 #include <string>
 #include <unordered_map>
 #include "../ScriptEngine/Main/Configs.h"

@@ -3,7 +3,7 @@
 #include <string>
 #include <set>
 #include <filesystem>
-#include <Windows.h>
+#include <windows.h>
 
 using std::string;
 using std::wstring;

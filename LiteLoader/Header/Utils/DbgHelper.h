@@ -1,6 +1,6 @@
 #pragma once
 #include <Global.h>
-#include <Windows.h>
+#include <windows.h>
 #include <string>
 
 class Logger;
