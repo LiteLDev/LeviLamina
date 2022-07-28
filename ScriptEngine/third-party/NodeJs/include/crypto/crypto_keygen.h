@@ -16,6 +16,7 @@ namespace node {
 namespace crypto {
 namespace Keygen {
 void Initialize(Environment* env, v8::Local<v8::Object> target);
+void RegisterExternalReferences(ExternalReferenceRegistry* registry);
 }  // namespace Keygen
 
 enum class KeyGenJobStatus {
@@ -56,6 +57,10 @@ class KeyGenJob final : public CryptoJob<KeyGenTraits> {
       Environment* env,
       v8::Local<v8::Object> target) {
     CryptoJob<KeyGenTraits>::Initialize(New, env, target);
+  }
+
+  static void RegisterExternalReferences(ExternalReferenceRegistry* registry) {
+    CryptoJob<KeyGenTraits>::RegisterExternalReferences(New, registry);
   }
 
   KeyGenJob(
@@ -296,6 +301,6 @@ using SecretKeyGenJob = KeyGenJob<SecretKeyGenTraits>;
 }  // namespace crypto
 }  // namespace node
 
-#endif  // !defined(NODE_WANT_INTERNALS) && NODE_WANT_INTERNALS
+#endif  // defined(NODE_WANT_INTERNALS) && NODE_WANT_INTERNALS
 #endif  // SRC_CRYPTO_CRYPTO_KEYGEN_H_
 

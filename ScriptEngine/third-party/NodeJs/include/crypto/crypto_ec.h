@@ -24,6 +24,8 @@ class ECDH final : public BaseObject {
   ~ECDH() override;
 
   static void Initialize(Environment* env, v8::Local<v8::Object> target);
+  static void RegisterExternalReferences(ExternalReferenceRegistry* registry);
+
   static ECPointPointer BufferToPoint(Environment* env,
                                       const EC_GROUP* group,
                                       v8::Local<v8::Value> buf);
@@ -142,7 +144,7 @@ struct ECKeyExportTraits final {
 
 using ECKeyExportJob = KeyExportJob<ECKeyExportTraits>;
 
-v8::Maybe<bool> ExportJWKEcKey(
+v8::Maybe<void> ExportJWKEcKey(
     Environment* env,
     std::shared_ptr<KeyObjectData> key,
     v8::Local<v8::Object> target);
