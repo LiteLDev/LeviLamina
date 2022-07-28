@@ -25,7 +25,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PreLoader", "PreLoader\PreL
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demangler", "Tools\Demangler\Demangler.vcxproj", "{9FC74B2E-BF05-4879-B76B-11105FF74358}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScriptX", "Tools\ScriptX\ScriptX\ScriptX.vcxproj", "{6DB8FA74-C907-470C-B634-F1EDD20CA31B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScriptX", "Tools\ScriptX\ScriptX.vcxproj", "{6DB8FA74-C907-470C-B634-F1EDD20CA31B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

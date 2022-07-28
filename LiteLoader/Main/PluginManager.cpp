@@ -155,7 +155,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
                         logger.error("A plugin named {} has been registered", pluginFileName);
                     return false;
                 }
-            };
+            }
         } else {
             if (outputResult)
                 logger.error("Fail to load the plugin {}!", pluginFileName);
