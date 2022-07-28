@@ -249,7 +249,11 @@ Local<Value> CommandClass::setAlias(const Arguments& args) {
 Local<Value> CommandClass::setEnum(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
-    CHECK_ARG_TYPE(args[1], ValueKind::kArray)
+    if (LLSE_BACKEND_TYPE == "Lua") {
+        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
+    } else {
+        CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    }
     try {
         if (registered)
             return Local<Value>(); // TODO
@@ -488,7 +492,11 @@ Local<Value> CommandClass::toString(const Arguments& args) {
 Local<Value> CommandClass::setSoftEnum(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    if (LLSE_BACKEND_TYPE == "Lua") {
+        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
+    } else {
+        CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    }
     try {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());
@@ -500,7 +508,11 @@ Local<Value> CommandClass::setSoftEnum(const Arguments& args) {
 Local<Value> CommandClass::addSoftEnumValues(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    if (LLSE_BACKEND_TYPE == "Lua") {
+        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
+    } else {
+        CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    }
     try {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());
@@ -512,7 +524,11 @@ Local<Value> CommandClass::addSoftEnumValues(const Arguments& args) {
 Local<Value> CommandClass::removeSoftEnumValues(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    if (LLSE_BACKEND_TYPE == "Lua") {
+        CHECK_ARG_TYPE(args[1], ValueKind::kObject);
+    } else {
+        CHECK_ARG_TYPE(args[1], ValueKind::kArray);
+    }
     try {
         auto name = args[0].toStr();
         auto enums = parseStringList(args[1].asArray());

@@ -1273,8 +1273,16 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 4);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
-    CHECK_ARG_TYPE(args[2], ValueKind::kArray);
-    CHECK_ARG_TYPE(args[3], ValueKind::kArray);
+    if (LLSE_BACKEND_TYPE == "Lua") {
+        CHECK_ARG_TYPE(args[2], ValueKind::kObject);
+    } else {
+        CHECK_ARG_TYPE(args[2], ValueKind::kArray);
+    }
+    if (LLSE_BACKEND_TYPE == "Lua") {
+        CHECK_ARG_TYPE(args[3], ValueKind::kObject);
+    } else {
+        CHECK_ARG_TYPE(args[3], ValueKind::kArray);
+    }
     CHECK_ARG_TYPE(args[4], ValueKind::kFunction);
 
     try {
