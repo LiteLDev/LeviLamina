@@ -63,7 +63,7 @@ void CheckRunningBDS() {
     CloseHandle(hProcessSnap);
     // Get current process path
     WCHAR buf[8196] = {0};
-    auto sz = GetModuleFileName(NULL, buf, 8196);
+    auto sz = GetModuleFileName(nullptr, buf, 8196);
     std::wstring current{buf, sz}; // Copy
     // Check the BDS process paths
     for (auto& pid : pids) {
@@ -74,7 +74,7 @@ void CheckRunningBDS() {
             DWORD sz = NULL;
             WCHAR buf[8196] = {0};
             // Get the full path of the process
-            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8196)) {
+            if (sz = GetModuleFileNameEx(handle, nullptr, buf, 8196)) {
                 std::wstring path{buf, sz};
                 if (current == path) {
                     logger.error("Detected the existence of another BDS process with the same path!");
