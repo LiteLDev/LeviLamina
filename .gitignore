@@ -32,3 +32,5 @@ LiteLoader/Lib/Demangler.lib
 
 /build
 **/Directory.build.props
+RELEASE/plugins/lib/BaseLib.js
+RELEASE/plugins/lib/BaseLib.lua
