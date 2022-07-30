@@ -100,7 +100,7 @@ FileClass* FileClass::constructor(const Arguments& args) {
         FileOpenMode fMode = (FileOpenMode)(args[1].toInt());
         // Auto Create
         if (fMode == FileOpenMode::ReadMode || fMode == FileOpenMode::WriteMode) {
-            fstream tmp(path, ios_base::app);
+            fstream tmp(str2wstr(path), ios_base::app);
             tmp.flush();
             tmp.close();
         }
@@ -120,7 +120,7 @@ FileClass* FileClass::constructor(const Arguments& args) {
             mode |= ios_base::binary;
         }
 
-        fstream fs(path, mode);
+        fstream fs(str2wstr(path), mode);
         if (!fs.is_open()) {
             LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open File " + path + "!\n");
             return nullptr;
