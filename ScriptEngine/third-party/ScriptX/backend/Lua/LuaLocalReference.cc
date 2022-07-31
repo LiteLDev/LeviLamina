@@ -47,7 +47,6 @@ bool judgeIsArray(int index)
 {
   auto lua = currentLua();
   int currectArrIndex = 0;
-  bool isArray = true;
 
   lua_pushnil(lua); 
   
@@ -58,11 +57,11 @@ bool judgeIsArray(int index)
       if(!lua_isnumber(lua,-1) || lua_tonumber(lua,-1) != ++currectArrIndex)
       {
         lua_pop(lua, 3);
-        isArray = false;
+        return false;
       }
       lua_pop(lua, 2);
   }
-  return isArray;
+  return true;
 }
 
 
