@@ -20,7 +20,7 @@
 	#define LLSE_PLUGINS_EXTENSION ".lua"
 #endif
 
-#define LLSE_VALID_BACKENDS std::set<std::string>({"QuickJs", "Lua", "NodeJs"})
+#define LLSE_VALID_BACKENDS std::set<std::string>({"Js", "Lua", "NodeJs"})
 #define LLSE_VALID_PLUGIN_EXTENSIONS std::set<std::string>({".js", ".lua", ".ll.zip"})
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()
 

@@ -213,7 +213,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\Release\</OutDir>
-    <TargetName>LiteLoader.QuickJs</TargetName>
+    <TargetName>LiteLoader.Js</TargetName>
     <IncludePath>$(SolutionDir);$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(ProjectDir);$(ProjectDir)Main;$(ProjectDir)third-party;$(ProjectDir)third-party\gsl;$(ProjectDir)third-party\QuickJs\include;$(ProjectDir)third-party\ScriptX\src\include;$(ProjectDir)third-party\ScriptX\src\include\ScriptX;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NodeJs|x64'">
