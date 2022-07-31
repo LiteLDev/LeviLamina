@@ -117,9 +117,12 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
         EngineScope enter(engine);
 
         string executeJs =
-            "const publicRequire = require('module').createRequire(process.cwd() + '/" + pluginDirPath + "');"
-            + "require = publicRequire;"
-            + *mainScripts;
+            "const __LLSE_PublicRequire = require('module').createRequire(process.cwd() + '/" + pluginDirPath + "');"
+            + "const __LLSE_PublicModule = require('module'); __LLSE_PublicModule.exports = {};"
+
+            + "(function (exports, require, module, __filename, __dirname) { "
+            + *mainScripts + "\n})({}, __LLSE_PublicRequire, __LLSE_PublicModule, '"
+            + entryScriptPath + "', '" + pluginDirPath + "'); ";        // TODO __filename & __dirname need to be reviewed
 
         // Set exit handler
         node::SetProcessExitHandler(env, [](node::Environment* env_, int exit_code){
