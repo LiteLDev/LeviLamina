@@ -509,7 +509,7 @@ Local<Value> PathDelete(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try {
-        return Boolean::newBoolean(remove_all(args[0].asString().toString()) > 0);
+        return Boolean::newBoolean(remove_all(str2wstr(args[0].asString().toString())) > 0);
     } catch (const filesystem_error& e) {
         LOG_ERROR_WITH_SCRIPT_INFO("Fail to Delete " + args[0].asString().toString() + "!\n");
         return Boolean::newBoolean(false);
@@ -536,7 +536,7 @@ Local<Value> PathCopy(const Arguments& args) {
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
     try {
-        copy(args[0].asString().toString(), args[1].asString().toString());
+        copy(str2wstr(args[0].asString().toString()), str2wstr(args[1].asString().toString()));
         return Boolean::newBoolean(true);
     } catch (const filesystem_error& e) {
         LOG_ERROR_WITH_SCRIPT_INFO("Fail to Copy " + args[0].asString().toString() + "!\n");
@@ -551,7 +551,7 @@ Local<Value> PathRename(const Arguments& args) {
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
     try {
-        rename(args[0].asString().toString(), args[1].asString().toString());
+        rename(str2wstr(args[0].asString().toString()), str2wstr(args[1].asString().toString()));
         return Boolean::newBoolean(true);
     } catch (const filesystem_error& e) {
         LOG_ERROR_WITH_SCRIPT_INFO("Fail to Rename " + args[0].asString().toString() + "!\n");
@@ -566,8 +566,8 @@ Local<Value> PathMove(const Arguments& args) {
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
 
     try {
-        copy(args[0].asString().toString(), args[1].asString().toString());
-        remove_all(args[0].asString().toString());
+        copy(str2wstr(args[0].asString().toString()), str2wstr(args[1].asString().toString()));
+        remove_all(str2wstr(args[0].asString().toString()));
         return Boolean::newBoolean(true);
     } catch (const filesystem_error& e) {
         LOG_ERROR_WITH_SCRIPT_INFO("Fail to Move " + args[0].asString().toString() + "!\n");
@@ -581,7 +581,7 @@ Local<Value> CheckIsDir(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try {
-        path p(args[0].toStr());
+        path p(str2wstr(args[0].toStr()));
         if (!exists(p))
             return Boolean::newBoolean(false);
 
@@ -598,7 +598,7 @@ Local<Value> GetFileSize(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     try {
-        path p(args[0].toStr());
+        path p(str2wstr(args[0].toStr()));
         if (!exists(p))
             return Number::newNumber(0);
         if (directory_entry(p).is_directory())
@@ -689,7 +689,7 @@ Local<Value> OpenFile(const Arguments& args) {
         FileOpenMode fMode = (FileOpenMode)(args[1].toInt());
         ios_base::openmode mode = ios_base::in;
         if (fMode == FileOpenMode::WriteMode) {
-            fstream tmp(path, ios_base::app);
+            fstream tmp(str2wstr(path), ios_base::app);
             tmp.flush();
             tmp.close();
             mode |= ios_base::out;
@@ -702,7 +702,7 @@ Local<Value> OpenFile(const Arguments& args) {
             mode |= ios_base::binary;
         }
 
-        fstream fs(path, mode);
+        fstream fs(str2wstr(path), mode);
         if (!fs.is_open()) {
             LOG_ERROR_WITH_SCRIPT_INFO("Fail to Open File " + path + "!\n");
             return Local<Value>();
