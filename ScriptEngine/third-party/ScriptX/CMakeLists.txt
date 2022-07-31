@@ -47,7 +47,7 @@ option(SCRIPTX_FEATURE_INSPECTOR "enable inspector feature, default to OFF" OFF)
 ###### add ScriptX library target ######
 
 # define our target first
-add_library(ScriptX STATIC
+add_library(${PROJECT_NAME} STATIC
         ${SCRIPTX_DIR}/src/Engine.h
         ${SCRIPTX_DIR}/src/Engine.hpp
         ${SCRIPTX_DIR}/src/Engine.cc
@@ -69,7 +69,7 @@ add_library(ScriptX STATIC
         ${SCRIPTX_DIR}/src/utils/TypeInformation.h
         )
 
-target_include_directories(ScriptX PUBLIC ${SCRIPTX_DIR}/src/include)
+target_include_directories(${PROJECT_NAME} PUBLIC ${SCRIPTX_DIR}/src/include)
 
 ###### config implementation ######
 
@@ -115,10 +115,10 @@ elseif (${SCRIPTX_BACKEND} STREQUAL ${SCRIPTX_BACKEND_WEBASSEMBLY})
     # -sALLOW_MEMORY_GROWTH=1
     # -sINITIAL_MEMORY=167772160
     # -sUSE_PTHREADS=1
-    target_compile_options(ScriptX PRIVATE
+    target_compile_options(${PROJECT_NAME} PRIVATE
             -sDISABLE_EXCEPTION_CATCHING=0
             )
-    target_link_options(ScriptX INTERFACE
+    target_link_options(${PROJECT_NAME} INTERFACE
             -sDISABLE_EXCEPTION_CATCHING=0
             -sLLD_REPORT_UNDEFINED
             )
