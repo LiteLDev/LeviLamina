@@ -47,7 +47,7 @@ option(SCRIPTX_FEATURE_INSPECTOR "enable inspector feature, default to OFF" OFF)
 ###### add ScriptX library target ######
 
 # define our target first
-add_library(${PROJECT_NAME} STATIC
+add_library(ScriptX STATIC
         ${SCRIPTX_DIR}/src/Engine.h
         ${SCRIPTX_DIR}/src/Engine.hpp
         ${SCRIPTX_DIR}/src/Engine.cc
@@ -69,7 +69,7 @@ add_library(${PROJECT_NAME} STATIC
         ${SCRIPTX_DIR}/src/utils/TypeInformation.h
         )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${SCRIPTX_DIR}/src/include)
+target_include_directories(ScriptX PUBLIC ${SCRIPTX_DIR}/src/include)
 
 ###### config implementation ######
 
@@ -177,4 +177,4 @@ message(STATUS "Configuring ScriptX using backend ${SCRIPTX_BACKEND}.")
 message(STATUS "Configuring ScriptX option SCRIPTX_NO_EXCEPTION_ON_BIND_FUNCTION ${SCRIPTX_NO_EXCEPTION_ON_BIND_FUNCTION}.")
 message(STATUS "Configuring ScriptX feature SCRIPTX_FEATURE_INSPECTOR ${SCRIPTX_FEATURE_INSPECTOR}.")
 
-# include(${SCRIPTX_DIR}/docs/doxygen/CMakeLists.txt)
+include(${SCRIPTX_DIR}/docs/doxygen/CMakeLists.txt)
