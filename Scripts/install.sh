@@ -1,12 +1,11 @@
 #!/bin/bash
 # Install wine
 codename=$(lsb_release -c --short)
-BDSVER="1.19.10.03"
-LLVER="2.4.1"
+BDSVER="1.19.11.01"
+LLVER="2.4.2-patch1"
 sudo apt install -y wget software-properties-common unzip
 sudo dpkg --add-architecture i386
-wget -nc https://dl.winehq.org/wine-builds/winehq.key
-sudo apt-key add winehq.key
+sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 sudo add-apt-repository "deb https://dl.winehq.org/wine-builds/ubuntu/ $codename main"
 sudo apt update
 sudo apt install winehq-stable -y
