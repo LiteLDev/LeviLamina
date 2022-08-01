@@ -192,17 +192,15 @@ Local<Value> ObjectiveClass::getScore(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
 
     try {
-        string id;
+        int res = 0;
         if (args[0].isString())
-            id = args[0].toStr();
+            res = Scoreboard::getScore(objname, args[0].toStr());
         else if (IsInstanceOf<PlayerClass>(args[0]))
-            id = PlayerClass::extract(args[0])->getRealName();
+            res = Scoreboard::getScore(PlayerClass::extract(args[0]), objname);
         else {
             LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
-
-        int res = Scoreboard::getScore(objname, id);
 
         return Number::newNumber(res);
     }
