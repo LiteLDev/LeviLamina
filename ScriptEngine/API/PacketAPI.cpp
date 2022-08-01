@@ -45,6 +45,7 @@ ClassDefine<BinaryStreamClass> BinaryStreamClassBuilder =
         .instanceFunction("writeUnsignedVarInt64", &BinaryStreamClass::writeUnsignedVarInt64)
         .instanceFunction("writeVarInt", &BinaryStreamClass::writeVarInt)
         .instanceFunction("writeVarInt64", &BinaryStreamClass::writeVarInt64)
+        .instanceFunction("writeVec3", &BinaryStreamClass::writeVec3)
         .instanceFunction("createPacket", &BinaryStreamClass::createPacket)
 
         .build();
