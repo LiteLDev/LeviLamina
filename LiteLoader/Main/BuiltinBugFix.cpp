@@ -103,7 +103,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         bool isContainer = false;
         for (auto& action : actions) {
             if (action.first.type == InventorySourceType::Container) {
-				isContainer = true;
+                isContainer = true;
                 if (abnormal) {
                     logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
                     mayFromReducer = false;
@@ -126,7 +126,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                 abnormal = true;
             }
         }
-		
+        
         if (abnormal && !mayFromReducer) {
             string cmd = ReplaceStr(globalConfig.antiGiveCommand, "{player}", "\"" + sp->getRealName() + "\"");
             Level::runcmd(cmd);

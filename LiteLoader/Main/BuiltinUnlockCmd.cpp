@@ -11,6 +11,11 @@ void LogCommandRegistration(std::string const& name, char const* description, en
 
 TInstanceHook(void, "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
               CommandRegistry, std::string const& name, char const* description, enum CommandPermissionLevel perm, short flag1, short flag2) {
+    // Check whether command is already exists before registering
+    if (this->findCommand(name)) {
+        // throw to prevent setup function, then this exception can be caught by event handler
+        throw std::runtime_error("There is already a command named " + name);
+    }
     if (LL::globalConfig.enableUnlockCmd)
         flag1 |= 0x80;
     if (LL::globalConfig.debugMode)

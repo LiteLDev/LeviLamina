@@ -384,7 +384,6 @@ void RegisterCommands() {
         if (LL::globalConfig.enableTpdimCommand) {
             TeleportDimensionCommand::setup(ev.mCommandRegistry);
         }
-
         return true;
     });
 }
