@@ -2,7 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
+#include "ItemEnchants.hpp"
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
@@ -10,7 +10,10 @@
 class ItemEnchantOption {
 
 #define AFTER_EXTRA
-
+    int mCost;
+    ItemEnchants mEnchants;
+    std::basic_string<char, std::char_traits<char>, std::allocator<char>> mEnchantName;
+    TypedServerNetId<void*, unsigned int, 0> mEnchantNetId;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTOPTION

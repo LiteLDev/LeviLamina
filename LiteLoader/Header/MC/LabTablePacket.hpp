@@ -6,13 +6,38 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum LabTableReactionType : unsigned char {
+    None = 0x0,
+    IceBomb = 0x1,
+    Bleach = 0x2,
+    ElephantToothpaste = 0x3,
+    Fertilizer = 0x4,
+    HeatBlock = 0x5,
+    MagnesiumSalts = 0x6,
+    MiscFire = 0x7,
+    MiscExplosion = 0x8,
+    MiscLava = 0x9,
+    MiscMystical = 0xA,
+    MiscSmoke = 0xB,
+    MiscLargeSmoke = 0xC,
+};
 
 #undef BEFORE_EXTRA
 
 class LabTablePacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    enum Type : unsigned char {
+        StartCombine = 0x0,
+        StartReaction = 0x1,
+        Reset = 0x2,
+    };
+	
+    LabTablePacket::Type mType;
+    BlockPos mPos;
+    LabTableReactionType mReaction;
 
 #undef AFTER_EXTRA
 

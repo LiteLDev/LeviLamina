@@ -12,7 +12,9 @@
 class NetworkSettingsPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    unsigned __int16 mCompressionThreshold;
 
 #undef AFTER_EXTRA
 

@@ -12,7 +12,10 @@
 class ScriptCustomEventPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    std::string mEventName;
+    Json::Value mData;
 
 #undef AFTER_EXTRA
 

@@ -19,12 +19,41 @@ enum BossEventUpdateType
     BossEventAppearanceProperties = 6,
     BossEventTexture = 7,
 };
+enum BossBarColor : int {
+    PINK = 0x0,
+    BLUE = 0x1,
+    RED = 0x2,
+    GREEN = 0x3,
+    YELLOW = 0x4,
+    PURPLE = 0x5,
+    WHITE = 0x6,
+};
+
+enum BossBarOverlay : int {
+    PROGRESS = 0x0,
+    NOTCHED_6 = 0x1,
+    NOTCHED_10 = 0x2,
+    NOTCHED_12 = 0x3,
+    NOTCHED_20 = 0x4,
+};
 #undef BEFORE_EXTRA
 
 class BossEventPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    const int FLAG_DARKEN;
+    const int FLAG_FOG;
+    ActorUniqueID mBossID;
+    ActorUniqueID mPlayerID;
+    BossEventUpdateType mEventType;
+    std::string mName;
+    float mHealthPercent;
+    BossBarColor mColor;
+    BossBarOverlay mOverlay;
+    unsigned __int8 mDarkenScreen;
+    unsigned __int8 mCreateWorldFog;
 
 #undef AFTER_EXTRA
 
