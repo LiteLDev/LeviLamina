@@ -131,14 +131,14 @@ chmod +x install.sh
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
+docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-
-启动服务器：`docker container start liteloader`<br>
-强制停止服务器（不推荐）：`docker container stop liteloader`<br>
+启动服务器：`docker container start liteloader -a`<br>
+强制停止服务器（不推荐）：`docker container stop -t 30 liteloader`<br>
 进入控制台：`docker attach liteloader`<br>
 退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。<br>
-如想管理服务端文件，使用命令 `docker volume --help` 了解详情。
+如想管理服务端文件，使用命令 `docker volume ls` 获取volume id，然后通过 `docker volume inspect id `获取volume路径。</br>
+你也可以通过在`create`指定参数`--mount`来自定义服务端数据路径
 
 ## 🎯 下载 & 加载插件
 

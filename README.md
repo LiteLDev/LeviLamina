@@ -139,14 +139,14 @@ Enter the following lines in your terminal:
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
+docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-
-Start server: `docker container start liteloader`<br>
-Force stop server(not recommended): `docker container stop liteloader`<br>
+Start server: `docker container start liteloader -a`<br>
+Force stop server(not recommended): `docker container stop -t 30 liteloader`<br>
 Enter console: `docker attach liteloader`<br>
 Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.<br>
-If you want to manage server files, use `docker volume --help` for more details.<br>
+If you want to manage server files, use `docker volume ls` to get volume id and execute `docker volume inspect id` to see volume directory<br>
+You can also add `--mount` parameter in `create` to customize your server directory
 
 Everything's done! Next, you can install **LiteLoader** plugins!
 
