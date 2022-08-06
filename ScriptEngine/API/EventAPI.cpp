@@ -235,7 +235,6 @@ string EventTypeToString(EVENT_TYPES e) {
                     listener.func.get().call({}, __VA_ARGS__);          \
                 }                                                       \
                 LISTENER_CATCH(TYPE)                                    \
-                break;                                                  \
             }                                                           \
         }                                                               \
     }
