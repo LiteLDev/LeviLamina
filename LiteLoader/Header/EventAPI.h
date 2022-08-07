@@ -189,12 +189,6 @@ public:
     Player* mPlayer;
 };
 
-class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {
-public:
-    ActorUniqueID* mBeforeEntityUniqueId;
-    Actor* mAfterEntity;
-};
-
 class PlayerSneakEvent : public EventTemplate<PlayerSneakEvent> {
 public:
     Player* mPlayer;
@@ -363,6 +357,18 @@ class PlayerExperienceAddEvent : public EventTemplate<PlayerExperienceAddEvent> 
 public:
     Player* mPlayer;
     int mExp;
+};
+
+class PlayerInteractEntityEvent : public EventTemplate<PlayerInteractEntityEvent> {
+public:
+    enum class InteractiveMode {
+        RightClick,
+        LeftClick
+    };
+
+    ServerPlayer* mPlayer;
+    Actor* mTarget;
+    InteractiveMode mInteractiveMode;
 };
 
 
@@ -550,10 +556,17 @@ public:
     int mSlot;
 };
 
+// Deprecated. Please use PlayerInteractEntityEvent
 class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent> {
 public:
     ActorRuntimeID mTarget;
     int mInteractiveMode;
+};
+
+class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {
+public:
+    ActorUniqueID* mBeforeEntityUniqueId;
+    Actor* mAfterEntity;
 };
 
 ///////////////////////////// Other Events /////////////////////////////

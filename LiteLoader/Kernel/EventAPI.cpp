@@ -213,7 +213,6 @@ DECLARE_EVENT_DATA(PlayerUseItemEvent);
 DECLARE_EVENT_DATA(PlayerUseItemOnEvent);
 DECLARE_EVENT_DATA(PlayerChangeDimEvent);
 DECLARE_EVENT_DATA(PlayerJumpEvent);
-DECLARE_EVENT_DATA(EntityTransformEvent);
 DECLARE_EVENT_DATA(PlayerSneakEvent);
 DECLARE_EVENT_DATA(PlayerAttackEvent);
 DECLARE_EVENT_DATA(PlayerAttackBlockEvent);
@@ -238,6 +237,7 @@ DECLARE_EVENT_DATA(PlayerUseRespawnAnchorEvent);
 DECLARE_EVENT_DATA(PlayerOpenContainerScreenEvent);
 DECLARE_EVENT_DATA(PlayerUseFrameBlockEvent);
 DECLARE_EVENT_DATA(PlayerExperienceAddEvent);
+DECLARE_EVENT_DATA(PlayerInteractEntityEvent);
 DECLARE_EVENT_DATA(MobHurtEvent);
 DECLARE_EVENT_DATA(MobDieEvent);
 DECLARE_EVENT_DATA(EntityExplodeEvent);
@@ -249,6 +249,7 @@ DECLARE_EVENT_DATA(NpcCmdEvent);
 DECLARE_EVENT_DATA(ProjectileSpawnEvent);
 DECLARE_EVENT_DATA(ProjectileCreatedEvent);
 DECLARE_EVENT_DATA(ItemUseOnActorEvent);
+DECLARE_EVENT_DATA(EntityTransformEvent);
 DECLARE_EVENT_DATA(BlockInteractedEvent);
 DECLARE_EVENT_DATA(ArmorStandChangeEvent);
 DECLARE_EVENT_DATA(BlockExplodeEvent);
@@ -421,19 +422,6 @@ TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player) {
     }
     IF_LISTENED_END(PlayerJumpEvent)
     return original(this);
-}
-
-////////////////// EntityTransform //////////////////
-TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
-                       Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
-    IF_LISTENED(EntityTransformEvent) {
-        EntityTransformEvent ev{};
-        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
-        ev.mAfterEntity = afterEntity;
-        ev.call();
-    }
-    IF_LISTENED_END(EntityTransformEvent)
-    original(this, beforeEntity, afterEntity, a4, aid, level);
 }
 
 /////////////////// PlayerSneak ///////////////////
@@ -1124,6 +1112,32 @@ TInstanceHook(void, "?addExperience@Player@@UEAAXH@Z", Player, int exp) {
     }
     IF_LISTENED_END(PlayerExperienceAddEvent)
     return original(this, exp);
+}
+
+////////////// PlayerInteractEntity & ItemUseOnActor //////////////
+TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
+              ServerNetworkHandler, ServerPlayer* sp, bool unk) {
+    IF_LISTENED(PlayerInteractEntityEvent) {
+        PlayerInteractEntityEvent ev{};
+        ev.mPlayer = sp;
+        ev.mTarget = sp->getLevel().getRuntimeEntity(dAccess<ActorRuntimeID, 104>(this), true);
+        ev.mInteractiveMode = static_cast<PlayerInteractEntityEvent::InteractiveMode>(dAccess<int, 112>(this));
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(PlayerInteractEntityEvent)
+
+    // For compatibility
+    IF_LISTENED(ItemUseOnActorEvent) {
+        ItemUseOnActorEvent ev{};
+        ev.mTarget = dAccess<ActorRuntimeID, 104>(this);
+        ev.mInteractiveMode = dAccess<int, 112>(this);
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(ItemUseOnActorEvent)
+
+    return original(this, sp, unk);
 }
 
 /////////////////// CmdBlockExecute ///////////////////
@@ -1911,18 +1925,17 @@ TInstanceHook(bool, "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot
     return original(this, a2, a3);
 }
 
-
-////////////// ItemUseOnActorInventory //////////////
-TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
-              ServerNetworkHandler, ServerPlayer* sp, bool unk) {
-    IF_LISTENED(ItemUseOnActorEvent) {
-        ItemUseOnActorEvent ev{};
-        ev.mTarget = dAccess<ActorRuntimeID, 104>(this);
-        ev.mInteractiveMode = dAccess<int, 112>(this);
+////////////////// EntityTransform //////////////////
+TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
+                       Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
+    IF_LISTENED(EntityTransformEvent) {
+        EntityTransformEvent ev{};
+        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
+        ev.mAfterEntity = afterEntity;
         ev.call();
     }
-    IF_LISTENED_END(ItemUseOnActorEvent)
-    return original(this, sp, unk);
+    IF_LISTENED_END(EntityTransformEvent)
+    original(this, beforeEntity, afterEntity, a4, aid, level);
 }
 
 ////////////// PlayerScoreChangedEvent  //////////////
