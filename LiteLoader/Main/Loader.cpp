@@ -184,31 +184,34 @@ void LL::LoadMain() {
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
 
-        if (!file.is_regular_file())
+        if (!file.is_regular_file()) {
             continue;
+        }
         filesystem::path path = file.path();
-
+		
+        // Skip Wrong file path
+        auto strPath = UTF82String(path.u8string());
+        if (strPath == "LiteLoader.dll" || strPath.find("LiteXLoader") != string::npos) {
+            continue;
+        }
+		
         // Process Shell link file
         string ext = UTF82String(path.extension().u8string());
         bool isShellLink = false;
-        if (ext == ".lnk") // Shell link file
-        {
+        if (ext == ".lnk") { // Shell link file
             ShellLinkFile lnk(path.wstring());
             path = lnk.getPathW();
-            if (!filesystem::is_regular_file(path))
+            if (!filesystem::is_regular_file(path)) {
                 continue;
+            }
             ext = UTF82String(path.extension().u8string());
             isShellLink = true;
         }
 
         // Check is dll
-        if (ext != ".dll")
+        if (ext != ".dll") {
             continue;
-
-        // Skip Wrong file path
-        auto strPath = UTF82String(path.u8string());
-        if (strPath.find("LiteLoader") != string::npos || strPath.find("LiteXLoader") != string::npos)
-            continue;
+        }
 
         // LLMoney load check
         if (strPath.find("LLMoney.dll") != string::npos) {
