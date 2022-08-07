@@ -84,7 +84,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath) {
         string type = manifest["modules"][0]["type"];
         if (type == "resources")
             addon.type = Addon::Type::ResourcePack;
-        else if (type == "data")
+        else if (type == "data" || type == "script")
             addon.type = Addon::Type::BehaviorPack;
         else
             throw std::exception("Unknown type of addon pack!");
