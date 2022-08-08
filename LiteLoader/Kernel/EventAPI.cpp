@@ -1492,7 +1492,8 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
 
 
 /////////////////// PlayerDeath ///////////////////
-TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer, ActorDamageSource* src) {
+TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer, ActorDamageSource* src) {
+    std::cout << getArmor(ArmorSlot::Head).getTypeName() << std::endl;
     IF_LISTENED(PlayerDieEvent) {
         if (this->isPlayer()) {
             PlayerDieEvent ev{};
