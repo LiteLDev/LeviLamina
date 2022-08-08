@@ -367,7 +367,7 @@ public:
     };
 
     ServerPlayer* mPlayer;
-    Actor* mTarget;
+    ActorRuntimeID mTargetId;
     InteractiveMode mInteractiveMode;
 };
 
@@ -554,13 +554,6 @@ public:
     ArmorStand* mArmorStand;
     Player* mPlayer;
     int mSlot;
-};
-
-// Deprecated. Please use PlayerInteractEntityEvent
-class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent> {
-public:
-    ActorRuntimeID mTarget;
-    int mInteractiveMode;
 };
 
 class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {

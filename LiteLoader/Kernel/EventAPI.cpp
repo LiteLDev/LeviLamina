@@ -248,7 +248,6 @@ DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
 DECLARE_EVENT_DATA(NpcCmdEvent);
 DECLARE_EVENT_DATA(ProjectileSpawnEvent);
 DECLARE_EVENT_DATA(ProjectileCreatedEvent);
-DECLARE_EVENT_DATA(ItemUseOnActorEvent);
 DECLARE_EVENT_DATA(EntityTransformEvent);
 DECLARE_EVENT_DATA(BlockInteractedEvent);
 DECLARE_EVENT_DATA(ArmorStandChangeEvent);
@@ -1114,28 +1113,18 @@ TInstanceHook(void, "?addExperience@Player@@UEAAXH@Z", Player, int exp) {
     return original(this, exp);
 }
 
-////////////// PlayerInteractEntity & ItemUseOnActor //////////////
+////////////// PlayerInteractEntity //////////////
 TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
               ServerNetworkHandler, ServerPlayer* sp, bool unk) {
     IF_LISTENED(PlayerInteractEntityEvent) {
         PlayerInteractEntityEvent ev{};
         ev.mPlayer = sp;
-        ev.mTarget = sp->getLevel().getRuntimeEntity(dAccess<ActorRuntimeID, 104>(this), true);
+        ev.mTargetId = dAccess<ActorRuntimeID, 104>(this);
         ev.mInteractiveMode = static_cast<PlayerInteractEntityEvent::InteractiveMode>(dAccess<int, 112>(this));
         if (!ev.call())
             return;
     }
     IF_LISTENED_END(PlayerInteractEntityEvent)
-
-    // For compatibility
-    IF_LISTENED(ItemUseOnActorEvent) {
-        ItemUseOnActorEvent ev{};
-        ev.mTarget = dAccess<ActorRuntimeID, 104>(this);
-        ev.mInteractiveMode = dAccess<int, 112>(this);
-        if (!ev.call())
-            return;
-    }
-    IF_LISTENED_END(ItemUseOnActorEvent)
 
     return original(this, sp, unk);
 }
