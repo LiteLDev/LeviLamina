@@ -242,11 +242,6 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 
 ## 📍 许可证
 
-您必须接受 Minecraft 的最终用户许可协议(EULA).
-
-- 它意味着**请勿将任何违反 EULA 的内容用于商业用途**
-- 接受这个**许可证**意味着您也**接受了**[Minecraft EULA](https://account.mojang.com/terms)
-- 如果您违反了 **EULA**，任何法律责任都与开发者**无关**
 - **开发者不对您负责，开发者没有义务为你编写代码、为你使用造成的任何后果负责**
 
 | Project                                                                 | License                                   |
