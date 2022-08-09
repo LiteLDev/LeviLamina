@@ -137,8 +137,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Lua|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
     </Library>
-    <Library Include="third-party\openssl\libcrypto.lib" />
-    <Library Include="third-party\openssl\libssl.lib" />
+    <Library Include="..\LiteLoader\Lib\third-party\openssl\libcrypto.lib" />
+    <Library Include="..\LiteLoader\Lib\third-party\openssl\libssl.lib" />
     <Library Include="third-party\QuickJs\lib\quickjs.lib" />
     <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='QuickJs|x64'">true</ExcludedFromBuild>
