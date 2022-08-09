@@ -589,32 +589,23 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
     return true;
 }
 
-// Bad?
+#include <SendPacketAPI.h>
 bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const {
     BinaryStream wp;
-    wp.writeVarInt64(runtimeID);         // RuntimeId
+    wp.writeVarInt64(runtimeID);                                // RuntimeId
     wp.writeUnsignedVarInt64(runtimeID); // EntityId
-
-    // NetworkItemStackDescriptor
     ItemStackDescriptor desc(item, aux, stackSize, nullptr);
     NetworkItemStackDescriptor netDesc(desc);
     wp.writeType(netDesc);
-    // wp.writeBool(true);                                            //hasNetID
-    // wp.writeVarInt(itemID);                                        //ItemId
-    // wp.writeUnsignedShort(static_cast<unsigned short>(stackSize)); //StackSize
-    // wp.writeUnsignedVarInt(aux);                                   //Aux
-    // wp.writeUnsignedVarInt(110);
-    // wp.writeVarInt(0);
-    // wp.writeString("minecraft:apple");
+    wp.writeType(pos); 
+    wp.writeType(Vec3::ZERO);
 
-    wp.writeType(pos);        // mPos
-    wp.writeType(Vec3::ZERO); // mVelocity
-    wp.writeType(dataItems);  // EntityMetadata & DataItem
-    wp.writeBool(false);      // isFromFishing
+    wp.writeType(dataItems); 
 
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::AddItemActor);
-    pkt->read(wp);
-    sendNetworkPacket(*pkt);
+    wp.writeBool(false); 
+
+    NetworkPacket<15> pkt(wp.getRaw());
+    sendNetworkPacket(pkt);
     return true;
 }
 

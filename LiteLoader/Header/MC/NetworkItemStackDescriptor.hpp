@@ -16,7 +16,7 @@ class NetworkItemStackDescriptor {
 // Add Member There
 public:
     ItemDescriptor mDescriptor;//0
-    char filler[80];
+    char filler[32];
 
 #undef AFTER_EXTRA
 

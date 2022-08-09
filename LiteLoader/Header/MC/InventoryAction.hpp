@@ -19,18 +19,18 @@ public:
     InventorySource source;                    // 0
     uint32_t slot;                             // 12
     NetworkItemStackDescriptor fromDescriptor; // 16
-    NetworkItemStackDescriptor toDescriptor;   // 168
-    ItemStack fromItem;                        // 320
-    ItemStack toItem;                          // 480
+    NetworkItemStackDescriptor toDescriptor;   // 104
+    ItemStack fromItem;                        // 192
+    ItemStack toItem;                          // 352
 
 private:
     inline void test()
     {
         static_assert(offsetof(InventoryAction, slot) == 12);
         static_assert(offsetof(InventoryAction, fromDescriptor) == 16);
-        static_assert(offsetof(InventoryAction, toDescriptor) == 168);
-        static_assert(offsetof(InventoryAction, fromItem) == 320);
-        static_assert(offsetof(InventoryAction, toItem) == 480);
+        static_assert(offsetof(InventoryAction, toDescriptor) == 104);
+        static_assert(offsetof(InventoryAction, fromItem) == 192);
+        static_assert(offsetof(InventoryAction, toItem) == 352);
     }
 
 #undef AFTER_EXTRA
