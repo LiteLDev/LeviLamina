@@ -67,4 +67,5 @@ target_link_libraries(LiteLoader LLPreLoader base64 sqlitecpp sqlite3 mysql
         "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib"
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib")
+        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
+        SymDBHelper)
