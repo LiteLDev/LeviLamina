@@ -2,9 +2,9 @@
 
 版权所有 © 2020-2022 [LiteLoaderBDS Developers](https://github.com/LiteLDev) 保留所有权利
 
-! 如果中英文版本有差别，以中文版为主。
+！如果中英文版本有差别，以中文版为主。
 
-本项目使用 GNU General Public License version 3(GPLv3许可证)，额外限制条款如下：
+本项目使用 GNU Lesser General Public License version 3(LGPLv3许可证)，额外限制条款如下：
 
 1. 您不得违反 [Minecraft (Mojang AB) 的最终用户许可协议](https://account.mojang.com/documents/minecraft_eula)。
 2. 如果您提供商业服务，包括但不限于服务器托管服务，您可以免费使用这个软件. 但您不得对这个软件进行私下更改或者作为卖点。
@@ -22,7 +22,7 @@ Copyright © 2020-2022 [LiteLoaderBDS Developers](https://github.com/LiteLDev) A
 
 ! If there is a difference between the Chinese and English versions, the Chinese version shall prevail.
 
-This project is under the GNU General Public License version 3, with extra restrictions as follows:
+This project is under the GNU Lesser General Public License version 3, with extra restrictions as follows:
 
 1. You may not violate [Minecraft (Mojang AB) End User License Agreement](https://account.mojang.com/documents/minecraft_eula).
 2. If you provide commercial services, including but not limited to server hosting services, you may use this
