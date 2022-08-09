@@ -6,7 +6,7 @@ ItemStack* ItemActor::getItemStack() {
 }
 
 int ItemActor::getDespawnTime() {
-    return dAccess<int, 487 * 4>(this); // ItemActor::normalTick
+    return dAccess<int, 487 * 4>(this); // ItemActor::postNormalTick
 }
 
 bool ItemActor::setDespawnTime(int a1) {
