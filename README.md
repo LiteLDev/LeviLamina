@@ -253,8 +253,6 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to ğŸ‘
 
 ## ğŸ“ LICENSE
 
-You must accept the Minecraft EULA.
-
 - If you violate the **EULA**, any legal liability is **IRRELEVANT** to the developers.
 - **NO WARRANTY**.
 
