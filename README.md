@@ -107,7 +107,7 @@ mc.listen("onServerStarted", () => {
   - A large number of existing plugins, mature publishing platform, instantly 👉[Go to official forum](https://forum.litebds.com/)👈 to find and download your favorite LL plugins
 
 - 🏃 Open Source & Community Building
-  - The project is licensed under the `AGPL-3.0` open source license and will **never** be charged for or released as a commercial version.
+  - The project is licensed under the `LGPL-3.0` open source license and will **never** be charged for or released as a commercial version.
   - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!
 
 ------
@@ -259,8 +259,6 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to �
 | Project                                                                 | License                                   |
 | ----------------------------------------------------------------------- | ----------------------------------------- |
 | [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra restrictions&exceptions                                |
-| [BedrockX](https://github.com/Sysca11/BedrockX)                         | GPLv3 with extra restrictions&exceptions                                |
-| [ElementZero](https://github.com/Element-0/ElementZero)                 | GPLv3                                     |
 | [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                         |
 | [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 license                                   |
 | [SimpleIni](https://github.com/brofield/simpleini)                      | MIT license                                   |

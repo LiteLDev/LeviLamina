@@ -99,7 +99,7 @@ mc.listen("onServerStarted", () => {
   - 海量现有插件，成熟发布平台，即刻 👉[前往官方论坛](https://forum.litebds.com/)👈 查找并下载你喜欢的 LL 插件
 
 - 🏃 开源 & 社区共建
-  - 项目采用 `AGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。<br>
+  - 项目采用 `LGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。<br>
   - 设计思想采取 **去中心化** 设计，放心享受 **自由** 的插件加载框架！<br>
 
 ------
@@ -247,8 +247,6 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 | Project                                                                 | License                                   |
 | ----------------------------------------------------------------------- | ----------------------------------------- |
 | [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra restrictions&exceptions                                |
-| [BedrockX](https://github.com/Sysca11/BedrockX)                         | GPLv3 with extra restrictions&exceptions                                |
-| [ElementZero](https://github.com/Element-0/ElementZero)                 | GPLv3                                     |
 | [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                         |
 | [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 license                                   |
 | [SimpleIni](https://github.com/brofield/simpleini)                      | MIT license                                   |
