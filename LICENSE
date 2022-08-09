@@ -6,12 +6,11 @@
 
 本项目使用 GNU Lesser General Public License version 3(LGPLv3许可证)，额外限制条款如下：
 
-1. 您不得违反 [Minecraft (Mojang AB) 的最终用户许可协议](https://account.mojang.com/documents/minecraft_eula)。
-2. 如果您提供商业服务，包括但不限于服务器托管服务，您可以免费使用这个软件. 但您不得对这个软件进行私下更改或者作为卖点。
-3. 您不得去除版权或赞助商信息。去除版权以及赞助商的信息是一件非常可耻的事情！
-4. 如果您修复或调整了代码，请提交PR或开源，而不是将其设为私有或用于商业用途。
-5. LiteLoaderSDK不受此许可证约束, LiteLoaderSDK使用MIT许可证开源。
-6. 本许可证最终解释权归 [LiteLoaderBDS Developers](https://github.com/LiteLDev) 所有。
+1. 如果您提供商业服务，包括但不限于服务器托管服务，您可以免费使用这个软件. 但您不得对这个软件进行私下更改或者作为卖点。
+2. 您不得去除版权或赞助商信息。去除版权以及赞助商的信息是一件非常可耻的事情！
+3. 如果您修复或调整了代码，请提交PR或开源，而不是将其设为私有或用于商业用途。
+4. LiteLoaderSDK不受此许可证约束, LiteLoaderSDK使用MIT许可证开源。
+5. 本许可证最终解释权归 [LiteLoaderBDS Developers](https://github.com/LiteLDev) 所有。
 
 注: LiteLoaderSDK指本仓库的LiteLoader/Header目录下的文件
    许可证详见https://github.com/LiteLDev/LiteLoaderSDK/tree/main/LICENSE
@@ -24,15 +23,14 @@ Copyright © 2020-2022 [LiteLoaderBDS Developers](https://github.com/LiteLDev) A
 
 This project is under the GNU Lesser General Public License version 3, with extra restrictions as follows:
 
-1. You may not violate [Minecraft (Mojang AB) End User License Agreement](https://account.mojang.com/documents/minecraft_eula).
-2. If you provide commercial services, including but not limited to server hosting services, you may use this
+1. If you provide commercial services, including but not limited to server hosting services, you may use this
    software for free. However, you **may not** make private changes to this software or use it as a selling point.
-3. You may not remove copyright or sponsor information. Removing copyright and sponsor information is a very
+2. You may not remove copyright or sponsor information. Removing copyright and sponsor information is a very
    shameful thing!
-4. If you fix or tweak the code, please submit a Pull Request or open source instead of making it private or for
+3. If you fix or tweak the code, please submit a Pull Request or open source instead of making it private or for
    commercial use.
-5. LiteLoaderSDK is not under the terms of this license, and is open source under the MIT license.
-6. The final interpretation right of this license belongs to [LiteLoaderBDS Developers](https://github.com/LiteLDev)
+4. LiteLoaderSDK is not under the terms of this license, and is open source under the MIT license.
+5. The final interpretation right of this license belongs to [LiteLoaderBDS Developers](https://github.com/LiteLDev)
 
 Note: LiteLoaderSDK refers to the repository's LiteLoader/Header directory.
       See https://github.com/LiteLDev/LiteLoaderSDK/tree/main/LICENSE for the license.
