@@ -260,7 +260,6 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 | [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause license                                   |
 | [SQLiteCpp](https://github.com/SRombauts/SQLiteCpp)                     | MIT license                                   |
 | [compact_enc_det](https://github.com/google/compact_enc_det)            | Apache-2.0 license                                   |
-| [cpp-base64](https://github.com/ReneNyffenegger/cpp-base64)             | [License](https://github.com/ReneNyffenegger/cpp-base64/blob/master/LICENSE) |
 | [detours](https://github.com/microsoft/Detours)                         | MIT license                                   |
 | [httplib](https://github.com/yhirose/cpp-httplib)                       | MIT license                                   |
 | [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
@@ -270,6 +269,7 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 | [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                   |
 | [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause license                                   |
 | [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 license                                   |
+| [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                   |
 
 ### 额外限制和例外
 

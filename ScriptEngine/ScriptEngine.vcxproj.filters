@@ -336,9 +336,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="third-party\cpp-base64\lib\cpp-base64.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="..\LiteLoader\Lib\third-party\openssl\libcrypto.lib">
       <Filter>Lib</Filter>
     </Library>

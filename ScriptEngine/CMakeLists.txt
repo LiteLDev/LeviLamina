@@ -74,9 +74,8 @@ link_directories(${SCRIPTENGINE_DIR}/)
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_library(base64 STATIC IMPORTED)
-set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${SCRIPTENGINE_DIR}/third-party/cpp-base64/lib/cpp-base64.lib")
 
-target_link_libraries(${PROJECT_NAME} LiteLoader base64 ScriptX-${LLSE_BACKEND_LIBRARY}
+target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
         "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libcrypto.lib"
         "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libssl.lib"
         "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdyncall_s.lib"

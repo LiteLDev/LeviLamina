@@ -853,9 +853,6 @@
     <Library Include="Lib\third-party\dyncall\dynload_s.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="Lib\third-party\cpp-base64\cpp-base64.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="Lib\third-party\mysql\mysqlclient.lib">
       <Filter>Lib</Filter>
     </Library>

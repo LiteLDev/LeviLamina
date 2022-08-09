@@ -12,7 +12,7 @@
 #include <Utils/StringHelper.h>
 #include <Tools/JsonHelper.h>
 #include <EconomicSystem.h>
-#include <cpp-base64/base64.h>
+#include <Base64/Base64.hpp>
 using namespace std;
 
 
@@ -808,7 +808,7 @@ Local<Value> DataClass::toBase64(const Arguments& args) {
             LOG_WRONG_ARG_TYPE();
             return Local<Value>();
         }
-        return String::newString(base64_encode(data));
+        return String::newString(Base64::Encode(data));
     }
     CATCH("Fail in ToBase64!");
 }
@@ -823,7 +823,7 @@ Local<Value> DataClass::fromBase64(const Arguments& args) {
             CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
             isBinary = args[1].asBoolean().value();
         }
-        auto data = base64_decode(args[0].toStr());
+        auto data = Base64::Decode(args[0].toStr());
         if (isBinary) {
             return ByteBuffer::newByteBuffer((void*)data.c_str(), data.size());
         } else {

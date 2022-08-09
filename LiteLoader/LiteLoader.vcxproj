@@ -360,7 +360,6 @@ LibraryBuilder.exe
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />
     <Library Include="Lib\third-party\compact_enc_det\ced.lib" />
-    <Library Include="Lib\third-party\cpp-base64\cpp-base64.lib" />
     <Library Include="Lib\third-party\dbghelp\dbghelp.lib" />
     <Library Include="Lib\third-party\dyncall\dyncallback_s.lib" />
     <Library Include="Lib\third-party\dyncall\dyncall_s.lib" />
