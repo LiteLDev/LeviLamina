@@ -12,6 +12,8 @@ class FeatureRegistry {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+struct FeatureBinaryJsonFormat;
 
 #undef AFTER_EXTRA
 
