@@ -231,8 +231,7 @@ string Slider::serialize() {
         itemAdd["type"] = "slider";
         itemAdd["text"] = title;
 
-        if (minValue >= maxValue)
-        {
+        if (minValue > maxValue) {
             const auto t = maxValue;
             maxValue = minValue;
             minValue = t;
