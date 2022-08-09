@@ -12,7 +12,10 @@
 class EnchantmentInstance {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    Enchant::Type mEnchantType;
+    int mLevel;
 
 #undef AFTER_EXTRA
 

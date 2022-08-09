@@ -84,7 +84,7 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath) {
         string type = manifest["modules"][0]["type"];
         if (type == "resources")
             addon.type = Addon::Type::ResourcePack;
-        else if (type == "data")
+        else if (type == "data" || type == "script")
             addon.type = Addon::Type::BehaviorPack;
         else
             throw std::exception("Unknown type of addon pack!");
@@ -240,7 +240,7 @@ void FindManifest(vector<string>& result, const string& path) {
 
 std::string Addon::getPrintName() const {
     if (LL::globalConfig.colorLog)
-        return ColorFormat::convertToColsole(std::string(name));
+        return ColorFormat::convertToConsole(std::string(name));
     else
         return ColorFormat::removeColorCode(std::string(name));
 }

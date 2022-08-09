@@ -139,14 +139,14 @@ Enter the following lines in your terminal:
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
+docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-
-Start server: `docker container start liteloader`<br>
-Force stop server(not recommended): `docker container stop liteloader`<br>
+Start server: `docker container start liteloader -a`<br>
+Force stop server(not recommended): `docker container stop -t 30 liteloader`<br>
 Enter console: `docker attach liteloader`<br>
 Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.<br>
-If you want to manage server files, use `docker volume --help` for more details.<br>
+If you want to manage server files, use `docker volume ls` to get volume id and execute `docker volume inspect id` to see volume directory<br>
+You can also add `--mount` parameter in `create` to customize your server directory
 
 Everything's done! Next, you can install **LiteLoader** plugins!
 
@@ -176,10 +176,10 @@ For more **installation and usage guides**,  come to 👉[LiteLoader documentati
 ### Developing plugins with C++
 
 1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project templates, or create your own project repository based on the templates and download the code locally
-1. Open the Template.sln project file
-1. Start writing the plugin code in Plugin.cpp
-1. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
-1. Copy the plugin to the plugins directory for testing
+2. Open the Template.sln project file
+3. Start writing the plugin code in Plugin.cpp
+4. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
+5. Copy the plugin to the plugins directory for testing
 
 For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈<br>
 If you have a revision request or need to add an API, please contact the author or post an Issue

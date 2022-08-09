@@ -12,8 +12,15 @@
 class AnimateEntityPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
-
+    // Add Member There
+public:
+    std::vector<ActorRuntimeID> mRuntimeIds;
+    std::string mAnimation;
+    std::string mNextState;
+    std::string mStopExpression;
+    int StopConditionVersion;
+    std::string mController;
+    float mBlendOutTime;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEENTITYPACKET

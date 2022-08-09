@@ -129,7 +129,7 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data) {
                     form->setValue(nowIndex, j.get<bool>());
                     break;
                 case Form::CustomFormElement::Type::Slider:
-                    form->setValue(nowIndex, j.get<int>());
+                    form->setValue(nowIndex, j.get<double>());
                     break;
                 case Form::CustomFormElement::Type::Dropdown: {
                     auto& options = dynamic_pointer_cast<Form::Dropdown>(form->elements[nowIndex].second)->options;
@@ -169,45 +169,4 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data) {
         modalFormPacketCallbacks.erase(formId);
     }
     formTypes.erase(formId);
-}
-
-
-//////////////////////////////// Form Callback ////////////////////////////////
-class Packet;
-class ServerNetworkHandler;
-class NetworkIdentifier;
-
-Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id, Packet* packet) {
-    return (Player*)handler->getServerPlayer(*id, dAccess<char>(packet, 16));
-}
-
-TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
-    try {
-        Packet* packet = *(Packet**)pPacket;
-        ServerPlayer* sp = handler->getServerPlayer(*id, 0);
-
-        if (sp) {
-            unsigned formId = dAccess<unsigned>(packet, 48);
-            string data = dAccess<string>(packet, 56);
-
-            if (data.back() == '\n')
-                data.pop_back();
-
-            HandleFormPacket(sp, formId, data);
-        }
-    } catch (const seh_exception& e) {
-        logger.error("Event Callback Failed!");
-        logger.error("SEH Uncaught Exception Detected!");
-        logger.error("{}", TextEncoding::toUTF8(e.what()));
-        logger.error("In Event: onFormSelected");
-        PrintCurrentStackTraceback();
-    } catch (...) {
-        logger.error("Event Callback Failed!");
-        logger.error("Uncaught Exception Detected!");
-        logger.error("In Event: onFormSelected");
-        PrintCurrentStackTraceback();
-    }
-
-    original(this, id, handler, pPacket);
 }

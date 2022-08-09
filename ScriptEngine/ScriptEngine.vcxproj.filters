@@ -71,16 +71,16 @@
     <ClCompile Include="API\ServerAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
-    <ClCompile Include="BindAPIs.cpp">
+    <ClCompile Include="Main\BindAPIs.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="Main\dllmain.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptEngine.cpp">
+    <ClCompile Include="Main\ScriptEngine.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Loader.cpp">
+    <ClCompile Include="Main\Loader.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="API\ScriptAPI.cpp">
@@ -125,7 +125,7 @@
     <ClCompile Include="API\McAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
-    <ClCompile Include="Global.cpp">
+    <ClCompile Include="Main\Global.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Tools\Utils.cpp">
@@ -134,16 +134,16 @@
     <ClCompile Include="Tools\IniHelper.cpp">
       <Filter>Tools</Filter>
     </ClCompile>
-    <ClCompile Include="EconomySystem.cpp">
+    <ClCompile Include="Main\EconomySystem.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Engine\OperationCount.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="SafeGuardRecord.cpp">
+    <ClCompile Include="Main\SafeGuardRecord.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="BuiltinCommands.cpp">
+    <ClCompile Include="Main\BuiltinCommands.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="API\CommandAPI.cpp">
@@ -155,7 +155,7 @@
     <ClCompile Include="API\CommandOutputAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
-    <ClCompile Include="PluginManager.cpp">
+    <ClCompile Include="Main\PluginManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Engine\EngineManager.cpp">
@@ -169,6 +169,15 @@
     </ClCompile>
     <ClCompile Include="API\SimulatedPlayerAPI.cpp">
       <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\PacketAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="API\StructureAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\NodeJsHelper.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -220,10 +229,10 @@
     <ClInclude Include="API\ServerAPI.h">
       <Filter>API</Filter>
     </ClInclude>
-    <ClInclude Include="Configs.h">
+    <ClInclude Include="Main\Configs.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Loader.h">
+    <ClInclude Include="Main\Loader.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="API\ScriptAPI.h">
@@ -271,7 +280,7 @@
     <ClInclude Include="API\GameUtilsAPI.h">
       <Filter>API</Filter>
     </ClInclude>
-    <ClInclude Include="Global.hpp">
+    <ClInclude Include="Main\Global.hpp">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Tools\Utils.h">
@@ -280,7 +289,7 @@
     <ClInclude Include="Tools\IniHelper.h">
       <Filter>Tools</Filter>
     </ClInclude>
-    <ClInclude Include="EconomicSystem.h">
+    <ClInclude Include="Main\EconomicSystem.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Tools\JsonHelper.h">
@@ -289,13 +298,13 @@
     <ClInclude Include="Engine\OperationCount.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="SafeGuardRecord.h">
+    <ClInclude Include="Main\SafeGuardRecord.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="BuiltinCommands.h">
+    <ClInclude Include="Main\BuiltinCommands.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="PluginManager.h">
+    <ClInclude Include="Main\PluginManager.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="API\CommandAPI.h">
@@ -316,8 +325,14 @@
     <ClInclude Include="API\DatabaseAPI.h">
       <Filter>API</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="Resource\resource.h">
       <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="API\PacketAPI.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\NodeJsHelper.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -348,27 +363,36 @@
     <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\V8\lib\v8.lib">
+    <Library Include="third-party\QuickJs\lib\quickjs.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\V8\lib\v8_libbase.lib">
+    <Library Include="..\LiteLoader\Lib\bedrock_server_api.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\V8\lib\v8_libplatform.lib">
+    <Library Include="..\LiteLoader\Lib\bedrock_server_var.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="third-party\V8\lib\zlib.lib">
+    <Library Include="..\LiteLoader\Lib\LiteLoader.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\LiteLoader\Lib\SymDBHelper.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-NodeJs.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\ScriptX\lib\ScriptX-QuickJs.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="third-party\NodeJs\lib\libnode.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ScriptEngine.rc">
+    <ResourceCompile Include="Resource\ScriptEngine.rc">
       <Filter>Resource</Filter>
     </ResourceCompile>
   </ItemGroup>

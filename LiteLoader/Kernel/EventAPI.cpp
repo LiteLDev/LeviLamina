@@ -213,7 +213,6 @@ DECLARE_EVENT_DATA(PlayerUseItemEvent);
 DECLARE_EVENT_DATA(PlayerUseItemOnEvent);
 DECLARE_EVENT_DATA(PlayerChangeDimEvent);
 DECLARE_EVENT_DATA(PlayerJumpEvent);
-DECLARE_EVENT_DATA(EntityTransformEvent);
 DECLARE_EVENT_DATA(PlayerSneakEvent);
 DECLARE_EVENT_DATA(PlayerAttackEvent);
 DECLARE_EVENT_DATA(PlayerAttackBlockEvent);
@@ -238,6 +237,7 @@ DECLARE_EVENT_DATA(PlayerUseRespawnAnchorEvent);
 DECLARE_EVENT_DATA(PlayerOpenContainerScreenEvent);
 DECLARE_EVENT_DATA(PlayerUseFrameBlockEvent);
 DECLARE_EVENT_DATA(PlayerExperienceAddEvent);
+DECLARE_EVENT_DATA(PlayerInteractEntityEvent);
 DECLARE_EVENT_DATA(MobHurtEvent);
 DECLARE_EVENT_DATA(MobDieEvent);
 DECLARE_EVENT_DATA(EntityExplodeEvent);
@@ -248,7 +248,7 @@ DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
 DECLARE_EVENT_DATA(NpcCmdEvent);
 DECLARE_EVENT_DATA(ProjectileSpawnEvent);
 DECLARE_EVENT_DATA(ProjectileCreatedEvent);
-DECLARE_EVENT_DATA(ItemUseOnActorEvent);
+DECLARE_EVENT_DATA(EntityTransformEvent);
 DECLARE_EVENT_DATA(BlockInteractedEvent);
 DECLARE_EVENT_DATA(ArmorStandChangeEvent);
 DECLARE_EVENT_DATA(BlockExplodeEvent);
@@ -275,6 +275,7 @@ DECLARE_EVENT_DATA(RegCmdEvent);
 DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobSpawnEvent);
+DECLARE_EVENT_DATA(FormResponsePacketEvent);
 
 
 #ifdef ENABLE_SEH_PROTECTION
@@ -420,19 +421,6 @@ TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player) {
     }
     IF_LISTENED_END(PlayerJumpEvent)
     return original(this);
-}
-
-////////////////// EntityTransform //////////////////
-TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
-                       Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
-    IF_LISTENED(EntityTransformEvent) {
-        EntityTransformEvent ev{};
-        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
-        ev.mAfterEntity = afterEntity;
-        ev.call();
-    }
-    IF_LISTENED_END(EntityTransformEvent)
-    original(this, beforeEntity, afterEntity, a4, aid, level);
 }
 
 /////////////////// PlayerSneak ///////////////////
@@ -1125,6 +1113,22 @@ TInstanceHook(void, "?addExperience@Player@@UEAAXH@Z", Player, int exp) {
     return original(this, exp);
 }
 
+////////////// PlayerInteractEntity //////////////
+TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
+              ServerNetworkHandler, ServerPlayer* sp, bool unk) {
+    IF_LISTENED(PlayerInteractEntityEvent) {
+        PlayerInteractEntityEvent ev{};
+        ev.mPlayer = sp;
+        ev.mTargetId = dAccess<ActorRuntimeID, 104>(this);
+        ev.mInteractiveMode = static_cast<PlayerInteractEntityEvent::InteractiveMode>(dAccess<int, 112>(this));
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(PlayerInteractEntityEvent)
+
+    return original(this, sp, unk);
+}
+
 /////////////////// CmdBlockExecute ///////////////////
 TInstanceHook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z",
               BaseCommandBlock, BlockSource* a2, CommandOrigin* a3, bool* a4) {
@@ -1491,7 +1495,8 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
 
 
 /////////////////// PlayerDeath ///////////////////
-TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer, ActorDamageSource* src) {
+TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer, ActorDamageSource* src) {
+    std::cout << getArmor(ArmorSlot::Head).getTypeName() << std::endl;
     IF_LISTENED(PlayerDieEvent) {
         if (this->isPlayer()) {
             PlayerDieEvent ev{};
@@ -1910,18 +1915,17 @@ TInstanceHook(bool, "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot
     return original(this, a2, a3);
 }
 
-
-////////////// ItemUseOnActorInventory //////////////
-TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
-              ServerNetworkHandler, ServerPlayer* sp, bool unk) {
-    IF_LISTENED(ItemUseOnActorEvent) {
-        ItemUseOnActorEvent ev{};
-        ev.mTarget = dAccess<ActorRuntimeID, 104>(this);
-        ev.mInteractiveMode = dAccess<int, 112>(this);
+////////////////// EntityTransform //////////////////
+TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
+                       Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
+    IF_LISTENED(EntityTransformEvent) {
+        EntityTransformEvent ev{};
+        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
+        ev.mAfterEntity = afterEntity;
         ev.call();
     }
-    IF_LISTENED_END(ItemUseOnActorEvent)
-    return original(this, sp, unk);
+    IF_LISTENED_END(EntityTransformEvent)
+    original(this, beforeEntity, afterEntity, a4, aid, level);
 }
 
 ////////////// PlayerScoreChangedEvent  //////////////
@@ -2023,7 +2027,7 @@ THook(std::ostream&,
     return original(_this, str, size);
 }
 
-
+////////////// PlayerDropItem //////////////
 TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
               ComplexInventoryTransaction, Player* a2, int a3) {
     if (this->type == ComplexInventoryTransaction::Type::NORMAL) {
@@ -2072,6 +2076,7 @@ TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
     return original(this, a2, a3, a4, a5);
 }
 
+////////////// PlayerBedEnter //////////////
 TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
               Player, BlockPos const& blk) {
     auto bl = Level::getBlockInstance(blk, getDimensionId());
@@ -2086,8 +2091,9 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
     return original(this, blk);
 }
 
-
 #include <MC/Spawner.hpp>
+
+////////////// MobSpawn //////////////
 TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
               Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8) {
     IF_LISTENED(MobSpawnEvent) {
@@ -2100,4 +2106,36 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
     }
     IF_LISTENED_END(MobSpawnEvent)
     return original(this, a2, a3, a4, a5, a6, a7, a8);
+}
+
+#include "Impl/FormPacketHelper.h"
+
+////////////// FormResponsePacket //////////////
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+                       NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
+    Packet* packet = *(Packet**)pPacket;
+    ServerPlayer* sp = handler->getServerPlayer(*id, 0);
+
+    if (sp) {
+        unsigned formId = dAccess<unsigned>(packet, 48);
+        string data = dAccess<string>(packet, 56);
+
+        if (data.back() == '\n')
+            data.pop_back();
+
+        IF_LISTENED(FormResponsePacketEvent) {
+            FormResponsePacketEvent ev{};
+            ev.mServerPlayer = sp;
+            ev.mFormId = formId;
+            ev.mJsonData = data;
+
+            if (!ev.call())
+                return;
+        }
+        IF_LISTENED_END(FormResponsePacketEvent)
+
+        HandleFormPacket(sp, formId, data);
+    }
+
+    original(this, id, handler, pPacket);
 }

@@ -35,7 +35,9 @@ ClassDefine<void> McClassBuilder =
         .function("newScoreObjective", &McClass::newScoreObjective)
         .function("removeScoreObjective", &McClass::removeScoreObjective)
         .function("getAllScoreObjectives", &McClass::getAllScoreObjectives)
-
+        .function("setStructure", &McClass::setStructure)
+        .function("getStructure", &McClass::getStructure)
+	
         // For Compatity
         .function("getAllScoreObjective", &McClass::getAllScoreObjectives)
         .function("getDisplayObjectives", &McClass::getDisplayObjective)

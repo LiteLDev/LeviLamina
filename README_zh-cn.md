@@ -131,14 +131,14 @@ chmod +x install.sh
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
+docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-
-启动服务器：`docker container start liteloader`<br>
-强制停止服务器（不推荐）：`docker container stop liteloader`<br>
+启动服务器：`docker container start liteloader -a`<br>
+强制停止服务器（不推荐）：`docker container stop -t 30 liteloader`<br>
 进入控制台：`docker attach liteloader`<br>
 退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。<br>
-如想管理服务端文件，使用命令 `docker volume --help` 了解详情。
+如想管理服务端文件，使用命令 `docker volume ls` 获取volume id，然后通过 `docker volume inspect id `获取volume路径。</br>
+你也可以通过在`create`指定参数`--mount`来自定义服务端数据路径
 
 ## 🎯 下载 & 加载插件
 
@@ -164,10 +164,10 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ### 使用 C++ 开发插件
 
 1. 前往 [LiteLoader 插件模板仓库](https://github.com/LiteLDev/PluginTemplate) 下载项目模板，或者根据模板创建自己的项目仓库，并下载代码到本地
-1. 打开 Template.sln 项目文件
-1. 在Plugin.cpp中开始编写插件代码
-1. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
-1. 复制插件到 plugins 目录进行测试
+2. 打开 Template.sln 项目文件
+3. 在Plugin.cpp中开始编写插件代码
+4. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
+5. 复制插件到 plugins 目录进行测试
 
 具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
@@ -232,7 +232,7 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 1. 贡献代码，维护项目和符号
 2. 帮助我们修改并优化开发文档
 3. 按照格式写下你想要的新API并提交一个PR（GitHub Issue），或者提出好的建议
-5. 帮助我们推广 `LiteLoader`，支持我们的发展
+4. 帮助我们推广 `LiteLoader`，支持我们的发展
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 

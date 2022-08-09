@@ -48,7 +48,7 @@ class EngineScope final {
    *
    * class EngineScopeImpl {
    * public:
-   *      EngineScopeImpl(EngineImpl&) {
+   *      EngineScopeImpl(EngineImpl& engine, EngineImpl* prev) {
    *          // enter engine;
    *      }
    *

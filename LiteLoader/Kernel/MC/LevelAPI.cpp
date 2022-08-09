@@ -341,12 +341,17 @@ void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuratio
     });
 }
 
-void Level::sendPacketForAllPlayer(Packet& pkt) {
+void Level::sendPacketForAllPlayers(Packet& pkt) {
     if (!Global<Level>)
         return;
     auto sender = (LoopbackPacketSender*)Global<Level>->getPacketSender();
     if (sender)
         return sender->sendBroadcast(pkt);
+}
+
+// For compatibility
+void Level::sendPacketForAllPlayer(Packet& pkt) {
+    sendPacketForAllPlayers(pkt);
 }
 
 std::string Level::getCurrentLevelName() {

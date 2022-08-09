@@ -131,6 +131,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\STLHelper.cpp" />
     <ClCompile Include="Kernel\Utils\StringReader.cpp" />
     <ClCompile Include="Main\AddonsHelper.cpp" />
+    <ClCompile Include="Main\BStats.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
     <ClCompile Include="Main\CrashLogger.cpp" />
@@ -295,7 +296,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="Main\LiteLoader.cpp" />
     <ClCompile Include="Main\ModifyInfomation.cpp" />
-    <ClCompile Include="Main\PlayerInfoAPI.cpp" />
+    <ClCompile Include="Kernel\PlayerInfoAPI.cpp" />
     <ClCompile Include="Main\PluginManager.cpp" />
     <ClCompile Include="Main\BuiltinCommands.cpp" />
     <ClCompile Include="Main\SEHProtection.cpp" />
@@ -344,6 +345,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\VarInt.h" />
     <ClInclude Include="Header\Utils\ViewHelper.h" />
     <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp" />
+    <ClInclude Include="Main\DefaultLangData.h" />
     <ClInclude Include="Main\LiteLoader.h" />
     <ClInclude Include="Main\Loader.h" />
     <ClInclude Include="Main\PluginManager.h" />

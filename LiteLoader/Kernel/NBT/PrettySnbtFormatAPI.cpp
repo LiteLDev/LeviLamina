@@ -60,12 +60,12 @@ inline void PrettySnbtFormat::ValueFormat::toPlayerFormat() {
     ColorFormat::convertToMc(mSuffix);
 }
 inline void PrettySnbtFormat::ValueFormat::toConsoleFormat() {
-    ColorFormat::convertToColsole(mPrefix);
-    ColorFormat::convertToColsole(mSuffix);
+    ColorFormat::convertToConsole(mPrefix);
+    ColorFormat::convertToConsole(mSuffix);
 }
 PrettySnbtFormat::PrettySnbtFormat() {
 #define InitFormat(type) mValueFormats[type] = {DefaultPrefix<type>, DefaultSuffix<type>};
-    ForEachTagType(InitFormat);
+    ForEachTagType(InitFormat)
     mExpandInList[Tag::Type::End] = false;
     mExpandInList[Tag::Type::Byte] = false;
     mExpandInList[Tag::Type::Short] = false;
@@ -159,9 +159,9 @@ void PrettySnbtFormat::switchToPlayerFormat() {
 void PrettySnbtFormat::switchToConsoleFormat() {
     if (!mForPlayer)
         return;
-    ColorFormat::convertToColsole(mIndent);
-    ColorFormat::convertToColsole(mSeparator);
-    ColorFormat::convertToColsole(mColon);
+    ColorFormat::convertToConsole(mIndent);
+    ColorFormat::convertToConsole(mSeparator);
+    ColorFormat::convertToConsole(mColon);
     mKeyFormat.toConsoleFormat();
     for (auto& format : mValueFormats) {
         format.toConsoleFormat();

@@ -1,4 +1,4 @@
-#include <Windows.h>
+#include <windows.h>
 #include <TlHelp32.h>
 #include <Psapi.h>
 #include <string>
@@ -12,6 +12,7 @@
 #include "Config.h"
 #include "Loader.h"
 #include "CrashLogger.h"
+#include "DefaultLangData.h"
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
@@ -62,7 +63,7 @@ void CheckRunningBDS() {
     CloseHandle(hProcessSnap);
     // Get current process path
     WCHAR buf[8196] = {0};
-    auto sz = GetModuleFileName(NULL, buf, 8196);
+    auto sz = GetModuleFileName(nullptr, buf, 8196);
     std::wstring current{buf, sz}; // Copy
     // Check the BDS process paths
     for (auto& pid : pids) {
@@ -73,7 +74,7 @@ void CheckRunningBDS() {
             DWORD sz = NULL;
             WCHAR buf[8196] = {0};
             // Get the full path of the process
-            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8196)) {
+            if (sz = GetModuleFileNameEx(handle, nullptr, buf, 8196)) {
                 std::wstring path{buf, sz};
                 if (current == path) {
                     logger.error(tr("ll.main.checkRunningBDS.detected"));
@@ -167,6 +168,9 @@ void CheckProtocolVersion() {
 
 // extern
 extern void EndScheduleSystem();
+namespace bstats {
+void registerBStats();
+}
 
 void LLMain() {
     // Set global SEH-Exception handler
@@ -235,6 +239,9 @@ void LLMain() {
 
     // Register simple server logger
     RegisterSimpleServerLogger();
+
+    // Register BStats
+    bstats::registerBStats();
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {

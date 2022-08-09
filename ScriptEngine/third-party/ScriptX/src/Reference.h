@@ -430,6 +430,8 @@ class Local<Number> {
 
   double toDouble() const;
 
+  bool isInteger() const;
+
   SPECIALIZE_NON_VALUE(Number)
 };
 

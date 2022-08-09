@@ -120,7 +120,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     string line;
     while (getline(iss, line)) {
         if (LL::globalConfig.colorLog)
-            log << ColorFormat::convertToColsole(line, false) << Logger::endl;
+            log << ColorFormat::convertToConsole(line, false) << Logger::endl;
         else
             log << ColorFormat::removeColorCode(line) << Logger::endl;
     }

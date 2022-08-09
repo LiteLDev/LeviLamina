@@ -12,7 +12,7 @@
 #include <MC/VanillaDimensions.hpp>
 #include <Main/Config.h>
 #include <Main/PluginManager.h>
-#include <ScriptEngine/Configs.h>
+#include "../ScriptEngine/Main/Configs.h"
 
 using namespace RegisterCommandHelper;
 using namespace LL;
@@ -384,7 +384,6 @@ void RegisterCommands() {
         if (LL::globalConfig.enableTpdimCommand) {
             TeleportDimensionCommand::setup(ev.mCommandRegistry);
         }
-
         return true;
     });
 }

@@ -13,7 +13,8 @@ class PlayerFogPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    std::vector<std::string> mFogStack;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERFOGPACKET

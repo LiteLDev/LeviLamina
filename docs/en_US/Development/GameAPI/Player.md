@@ -935,3 +935,15 @@ Each item in the array is a key-value pair list object `Object`, and the Attribu
 - Return value type: `Boolean`
 
 <br>
+
+#### Sending packets to the player
+
+`pl.sendPacket(packet)`  
+
+- Parameters:
+  - packet : `Packet`  
+    Packet
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>

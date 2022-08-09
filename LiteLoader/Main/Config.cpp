@@ -10,8 +10,8 @@ using namespace std;
 
 namespace LL {
 
-LLConfig globalConfig;
-LL::CommandLineOption commandLineOption;
+LIAPI LLConfig globalConfig;
+LIAPI LL::CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf) {
     // clang-format off
@@ -150,6 +150,14 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.count("FixMcBug")) {
             const nlohmann::json& setting = modules.at("FixMcBug");
             conf.enableFixMcBug = setting.value("enabled", true);
+        }
+        if (modules.count("FixBroadcastBug")) {
+            const nlohmann::json& setting = modules.at("FixBroadcastBug");
+            conf.enableFixBroadcastBug = setting.value("enabled", true);
+        }
+        if (modules.count("DisableAutoCompactionLog")) {
+            const nlohmann::json& setting = modules.at("DisableAutoCompactionLog");
+            conf.disableAutoCompactionLog = setting.value("enabled", true);
         }
         if (modules.find("ErrorStackTraceback") != modules.end()) {
             const nlohmann::json& setting = modules.at("ErrorStackTraceback");

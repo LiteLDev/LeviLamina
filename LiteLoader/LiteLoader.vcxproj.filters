@@ -207,7 +207,7 @@
     <ClCompile Include="Kernel\Scoreboard\ScoreboardAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
-    <ClCompile Include="Main\PlayerInfoAPI.cpp">
+    <ClCompile Include="Kernel\PlayerInfoAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
@@ -383,6 +383,9 @@
     </ClCompile>
     <ClCompile Include="Kernel\MC\MolangAPI.cpp">
       <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\BStats.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -808,6 +811,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\SemVersion.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\DefaultLangData.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

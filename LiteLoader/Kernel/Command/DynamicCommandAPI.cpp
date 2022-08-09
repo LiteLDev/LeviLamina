@@ -431,6 +431,13 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
 #ifdef DEBUG
     logger.info("Setting up command \"{}\"", name);
 #endif // DEBUG
+	
+    // Check if there is another command with the same name
+    auto signature = Global<CommandRegistry>->findCommand(name);
+    if (signature) {
+        throw std::runtime_error("There is already a command named " + signature->name);
+    }
+
     auto handle = commandInstance->handle;
     try {
         if (!commandInstance)

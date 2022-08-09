@@ -12,7 +12,10 @@
 class CodeBuilderPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    std::string mURL;
+    bool mShouldOpenCodeBuilder;
 
 #undef AFTER_EXTRA
 

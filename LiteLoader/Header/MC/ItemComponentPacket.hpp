@@ -13,7 +13,8 @@ class ItemComponentPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    std::vector<std::pair<std::string, CompoundTag>> mItems;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMCOMPONENTPACKET

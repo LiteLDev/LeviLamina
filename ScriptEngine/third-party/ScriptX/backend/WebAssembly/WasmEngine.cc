@@ -26,8 +26,6 @@
 
 namespace script::wasm_backend {
 
-std::thread::id WasmEngine::engineThreadId_{};
-
 WasmEngine::WasmEngine() { engineThreadId_ = std::this_thread::get_id(); }
 
 WasmEngine* WasmEngine::instance() {
@@ -49,7 +47,7 @@ void WasmEngine::destroy() {
 
 bool WasmEngine::isDestroying() const { return false; }
 
-void WasmEngine::unitTestResetRetistry() {
+void WasmEngine::unitTestResetRegistry() {
   classDefineRegistry_.clear();
   ScriptEngine::classDefineRegistry_.clear();
 }

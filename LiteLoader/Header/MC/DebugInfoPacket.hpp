@@ -12,7 +12,10 @@
 class DebugInfoPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    std::string mData;
+    ActorUniqueID mActorId;
 
 #undef AFTER_EXTRA
 

@@ -1,0 +1,5 @@
+NEVER try to upgrade "npm" in this directory
+or the NodeJs backend will crash !!!!!!
+
+禁止升级此目录中的npm
+否则NodeJs后端将会崩溃！！！

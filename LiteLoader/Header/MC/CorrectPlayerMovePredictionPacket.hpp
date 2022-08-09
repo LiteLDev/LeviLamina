@@ -12,7 +12,12 @@
 class CorrectPlayerMovePredictionPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    Vec3 mPos;
+    Vec3 mPosDelta;
+    unsigned __int64 mTick;
+    bool mOnGround;
 
 #undef AFTER_EXTRA
 

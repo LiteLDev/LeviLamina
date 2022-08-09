@@ -12,7 +12,10 @@
 class BiomeDefinitionListPacket : public Packet {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    CompoundTag mBiomeData;
+
 
 #undef AFTER_EXTRA
 
