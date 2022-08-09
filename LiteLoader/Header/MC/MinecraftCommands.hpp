@@ -69,6 +69,7 @@ public:
     MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const &);
     MCAPI static void initBlockEnum(class CommandRegistry &, class BaseGameVersion const &);
     MCAPI static void initItemEnum(class ItemRegistryRef, class CommandRegistry &, class BaseGameVersion const &);
+    MCAPI static void initItemTagEnum(class CommandRegistry &);
 
 //private:
     MCAPI void _registerSharedClientServerEnums();

@@ -64,17 +64,17 @@ public:
     /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*187*/ virtual void __unk_vfn_187();
-    /*198*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
-    /*204*/ virtual std::string getDustParticleName(class Block const &) const;
-    /*205*/ virtual void __unk_vfn_205();
+    /*157*/ virtual void __unk_vfn_157();
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*177*/ virtual void __unk_vfn_177();
+    /*187*/ virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual class mce::Color getDustColor(class Block const &) const;
+    /*193*/ virtual std::string getDustParticleName(class Block const &) const;
+    /*194*/ virtual void __unk_vfn_194();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SANDBLOCK
 #endif
     MCAPI SandBlock(std::string const &, int);

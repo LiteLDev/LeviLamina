@@ -59,6 +59,7 @@ public:
     MCAPI bool isPremiumSkin() const;
     MCAPI bool isPrimaryUser() const;
     MCAPI bool isThirdPartyNameOnly() const;
+    MCAPI bool isTrustedSkin() const;
     MCAPI std::string toString();
     MCAPI bool verify(std::vector<std::string> const &, __int64);
     MCAPI bool verifySelfSigned();

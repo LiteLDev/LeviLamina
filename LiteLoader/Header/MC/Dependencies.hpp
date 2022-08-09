@@ -15,12 +15,13 @@ struct Dependencies {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPENDENCIES
 public:
-    struct Dependencies& operator=(struct Dependencies const &) = delete;
     Dependencies(struct Dependencies const &) = delete;
     Dependencies() = delete;
 #endif
 
 public:
+    MCAPI struct Dependencies & operator=(struct Dependencies &&);
+    MCAPI struct Dependencies & operator=(struct Dependencies const &);
     MCAPI ~Dependencies();
 
 protected:

@@ -27,7 +27,7 @@ public:
 public:
     /*0*/ virtual ~StructureVoid();
     /*5*/ virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &) const;
+    /*6*/ virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
     /*10*/ virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /*11*/ virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /*19*/ virtual void __unk_vfn_19();
@@ -61,12 +61,12 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*187*/ virtual void __unk_vfn_187();
-    /*199*/ virtual void __unk_vfn_199();
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*177*/ virtual void __unk_vfn_177();
+    /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREVOID
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool canHaveExtraData() const;

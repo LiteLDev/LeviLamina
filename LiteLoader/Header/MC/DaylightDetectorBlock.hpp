@@ -62,18 +62,18 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /*175*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*204*/ virtual void updateShape(class BlockSource &, class BlockPos const &);
-    /*205*/ virtual void updateSignalStrength(class BlockSource &, class BlockPos const &) const;
+    /*157*/ virtual void __unk_vfn_157();
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*193*/ virtual void updateShape(class BlockSource &, class BlockPos const &);
+    /*194*/ virtual void updateSignalStrength(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAYLIGHTDETECTORBLOCK
     MCVAPI bool isInteractiveBlock() const;
 #endif

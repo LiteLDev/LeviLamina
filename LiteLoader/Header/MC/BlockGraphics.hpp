@@ -28,7 +28,6 @@ public:
 #endif
     MCAPI enum BlockShape getBlockShape() const;
     MCAPI struct TextureUVCoordinateSet const & getIconTexture(int) const;
-    MCAPI bool isFull() const;
     MCAPI bool isFullAndOpaque() const;
     MCAPI static float const SIZE_OFFSET;
     MCAPI static class BlockGraphics const * getForBlock(class Block const &);

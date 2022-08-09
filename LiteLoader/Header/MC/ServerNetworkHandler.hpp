@@ -23,7 +23,7 @@ public:
     }
 
     inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
-        return _getServerPlayer(a0, a1);
+        return _getServerPlayer(a0, (SubClientId)a1);
     }
 
     inline int getActiveAndInProgressPlayerCount(class mce::UUID a1)
@@ -397,8 +397,8 @@ public:
     MCVAPI void handle(class NetworkIdentifier const &, class EditorNetworkPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
-    MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
     MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
@@ -471,7 +471,7 @@ public:
     MCVAPI void onDisconnect(class NetworkIdentifier const &, std::string const &, bool, std::string const &);
     MCVAPI void onInvalidPlayerJoinedLobby(class mce::UUID const &, std::string const &);
     MCVAPI void onPlayerReady(class Player &);
-    MCVAPI void onTextFilterSkipped(class NetworkIdentifier const &, unsigned char, std::string const &);
+    MCVAPI void onTextFilterSkipped(class NetworkIdentifier const &, enum SubClientId, std::string const &);
     MCVAPI void onTick();
     MCVAPI void onTransferRequest(class NetworkIdentifier const &, std::string const &, int);
     MCVAPI void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
@@ -488,7 +488,7 @@ public:
     MCAPI class OwnerPtrT<struct EntityRefTraits> createSimulatedPlayer(std::string const &, class AutomaticID<class Dimension, int>, std::string const &);
     MCAPI void disallowIncomingConnections();
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &, bool);
-    MCAPI void disconnectClient(class NetworkIdentifier const &, unsigned char, std::string const &, bool);
+    MCAPI void disconnectClient(class NetworkIdentifier const &, enum SubClientId, std::string const &, bool);
     MCAPI void engineCancelResponseHelper(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
     MCAPI void engineDownloadingFinishedResponseHelper(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
     MCAPI void engineDownloadingResponseHelper(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
@@ -507,11 +507,11 @@ public:
 
 //private:
     MCAPI void _buildSubChunkPacketData(class NetworkIdentifier const &, class ServerPlayer const *, class SubChunkRequestPacket const &, class SubChunkPacket &, unsigned int, bool);
-    MCAPI class ServerPlayer & _createNewPlayer(class NetworkIdentifier const &, class SubClientConnectionRequest const &, unsigned char);
+    MCAPI class ServerPlayer & _createNewPlayer(class NetworkIdentifier const &, class SubClientConnectionRequest const &, enum SubClientId);
     MCAPI void _displayGameMessage(class Player const &, struct ChatEvent &);
     MCAPI int _getActiveAndInProgressPlayerCount(class mce::UUID) const;
     MCAPI std::string _getDisplayName(class Certificate const &, bool, std::string const &) const;
-    MCAPI class ServerPlayer * _getServerPlayer(class NetworkIdentifier const &, unsigned char);
+    MCAPI class ServerPlayer * _getServerPlayer(class NetworkIdentifier const &, enum SubClientId);
     MCAPI void _handleSetDifficulty(class ServerPlayer const &, class SetDifficultyPacket const &) const;
     MCAPI bool _loadNewPlayer(class ServerPlayer &, bool);
     MCAPI void _onClientAuthenticated(class NetworkIdentifier const &, class Certificate const &);

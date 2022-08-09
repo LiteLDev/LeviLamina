@@ -44,6 +44,7 @@ public:
     MCAPI void getBlock(class Pos const &, class Block const *&, class Block const *&);
     MCAPI class Pos getCentralSubchunkOrigin();
     MCAPI struct SubChunkBrightnessStorage::LightPair getLightPair(class Pos const &) const;
+    MCAPI struct SubChunkBrightnessStorage::LightPair getLightPairWithPlaceholderCheck(class Pos const &, struct SubChunkBrightnessStorage::LightPair const &) const;
     MCAPI void getTouchedSubChunks(std::vector<class Pos> &);
     MCAPI void setBlockLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     MCAPI void setSkyLight(class Pos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness);

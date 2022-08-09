@@ -57,19 +57,21 @@ public:
     MCAPI bool chunkHasConvertedDataTag() const;
     MCAPI void clearDeletedEntities();
     MCAPI void clearDirtyTickCounters();
+    MCAPI void clientSubChunkRequestGenerateLightingForSubChunk(class ChunkViewSource &, short);
     MCAPI void deserializeBiomes(class IDataInput &);
     MCAPI void deserializeBlockEntities(class IDataInput &);
     MCAPI void deserializeFinalization(class IDataInput &);
     MCAPI bool deserializeKey(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);
     MCAPI void deserializeLoadedVersion(class IDataInput &);
     MCAPI void deserializeMetaDataHash(class IDataInput &);
-    MCAPI void deserializeSubChunk(unsigned char, class IDataInput &, class std::optional<signed char>);
+    MCAPI void deserializeSubChunk(unsigned char, class IDataInput &, class std::optional<signed char>, class std::optional<struct DeserializationChanges *>);
     MCAPI void deserializeSubChunkBlockEntities(class IDataInput &, class std::unordered_map<class ChunkBlockPos, class std::shared_ptr<class BlockActor>, struct std::hash<class ChunkBlockPos>, struct std::equal_to<class ChunkBlockPos>, class std::allocator<struct std::pair<class ChunkBlockPos const, class std::shared_ptr<class BlockActor>>>> &);
     MCAPI class LevelChunkBlockActorAccessToken enableBlockEntityAccessForThisThread() const;
     MCAPI void fetchBiomes(std::vector<class Biome const *> &) const;
     MCAPI void fetchBlocks(class BlockPos const &, class BlockVolume &) const;
     MCAPI void fillBiomes(struct BiomeChunkData const &);
     MCAPI void finalizeDeserialization();
+    MCAPI void finalizePostProcessing();
     MCAPI void finalizeSubChunkDeserialization(class std::unordered_map<class ChunkBlockPos, class std::shared_ptr<class BlockActor>, struct std::hash<class ChunkBlockPos>, struct std::equal_to<class ChunkBlockPos>, class std::allocator<struct std::pair<class ChunkBlockPos const, class std::shared_ptr<class BlockActor>>>> &, class buffer_span_mut<struct SubChunk>);
     MCAPI class std::optional<class BlockPos> findExposedLightningRod(class BlockPos const &, class BlockSource &);
     MCAPI class Vec3 findLightningTarget(class BlockPos const &, class BlockSource &);
@@ -95,6 +97,7 @@ public:
     MCAPI int getGrassColor(class ChunkBlockPos const &);
     MCAPI class DimensionHeightRange const & getHeightRange() const;
     MCAPI short getHeightmap(class ChunkBlockPos const &) const;
+    MCAPI short getHighestNonAirSubChunkIndex() const;
     MCAPI float getInterpolant(unsigned __int64, unsigned __int64) const;
     MCAPI struct Tick const & getLastTick() const;
     MCAPI class Level & getLevel() const;
@@ -128,6 +131,7 @@ public:
     MCAPI bool hasEntitiesToSerialize() const;
     MCAPI bool hasEntity(class WeakEntityRef);
     MCAPI bool isBlockInChunk(class BlockPos const &) const;
+    MCAPI bool isClientGeneratedChunk() const;
     MCAPI bool isFullyLoaded() const;
     MCAPI bool isNonActorDataDirty() const;
     MCAPI bool isReadOnly() const;
@@ -181,6 +185,7 @@ public:
     MCAPI void setExtraBlockSimple(class ChunkBlockPos const &, class Block const &);
     MCAPI void setFinalized(enum LevelChunk::Finalization);
     MCAPI void setHadSerializedEntities();
+    MCAPI void setIsClientGeneratedChunk(bool);
     MCAPI void setMetaData(class std::shared_ptr<class LevelChunkMetaData>);
     MCAPI void setPendingEntities(std::string);
     MCAPI void setPreWorldGenHeightMap(std::unique_ptr<std::vector<short>>);
@@ -205,7 +210,7 @@ public:
     MCAPI static class std::tuple<class std::array<class ChunkLocalHeight, 256>, class std::array<struct BiomeChunkData, 256>> deserialize2DData(class IDataInput &);
     MCAPI static struct std::pair<unsigned short, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>> deserialize3DBiomes(class IDataInput &, class BiomeRegistry const &, unsigned short);
     MCAPI static class std::tuple<class std::array<class ChunkLocalHeight, 256>, unsigned short, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>> deserialize3DData(class IDataInput &, class BiomeRegistry const &, unsigned short);
-    MCAPI static void deserializeSubChunk(class IDataInput &, class std::optional<signed char>, struct SubChunk &, class BlockPalette &);
+    MCAPI static void deserializeSubChunk(class IDataInput &, class ChunkPos const &, class std::optional<signed char>, struct SubChunk &, class BlockPalette &, class std::optional<struct DeserializationChanges *>);
     MCAPI static void flushGarbageCollector();
     MCAPI static struct std::pair<enum LevelChunkTag, short> getTagAndSubIndexFromKey(class gsl::basic_string_span<char const, -1>);
     MCAPI static void serializeEntities(std::vector<class WeakEntityRef> const &, std::string const &, std::string &, bool, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>, class std::function<void (std::string const &)>);
@@ -228,7 +233,6 @@ public:
     MCAPI bool _deserializeSubChunk(short, class StringByteInput &);
     MCAPI void _disableBlockEntityAccessForThisThread() const;
     MCAPI void _enableBlockEntityAccessForThisThread() const;
-    MCAPI short _getHighestNonAirSubChunkIndex() const;
     MCAPI void _makeUniformBiomes(class Biome const &);
     MCAPI void _replaceBiomeStorage(unsigned short, std::unique_ptr<class SubChunkStorage<class Biome>>, class Bedrock::Threading::UniqueLock<class std::shared_mutex> const &);
     MCAPI void _setBiome(class Biome const &, class ChunkBlockPos const &, bool);

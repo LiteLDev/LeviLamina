@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 
@@ -24,7 +25,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTCOMMONMODULEFACTORY
 #endif
     MCAPI ScriptMinecraftCommonModuleFactory();
-    MCAPI void addCommon(class Scripting::ModuleBindingBuilder &, struct Scripting::Version);
+    MCAPI void addCommon(class Scripting::ModuleBindingBuilder &);
     MCAPI ~ScriptMinecraftCommonModuleFactory();
 
 

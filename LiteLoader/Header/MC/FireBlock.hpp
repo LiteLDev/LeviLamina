@@ -64,25 +64,25 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*199*/ virtual void __unk_vfn_199();
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBLOCK
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     MCAPI FireBlock(std::string const &, int);
+    MCAPI void checkBurn(class BlockSource &, class BlockPos const &, int, class Randomize &, int) const;
     MCAPI static bool isSolidToppedBlock(class BlockSource &, class BlockPos const &);
 
 //private:
     MCAPI void _tryAddToTickingQueue(class BlockSource &, class BlockPos const &, class Random &) const;
     MCAPI bool _trySpawnBlueFire(class BlockSource &, class BlockPos const &) const;
-    MCAPI void checkBurn(class BlockSource &, class BlockPos const &, int, class Random &, int) const;
     MCAPI float getFireOdds(class BlockSource &, class BlockPos const &) const;
     MCAPI bool isValidFireLocation(class BlockSource &, class BlockPos const &) const;
 

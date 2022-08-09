@@ -25,12 +25,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLAGPASSENGERREMOVALSYSTEM
 #endif
     MCAPI static struct TickingSystemWithInfo createDeferredSystem();
+    MCAPI static void tickDeferredPassengerRemoval(class StrictEntityContext const &, struct VehicleComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PendingRemovePassengersComponent>);
 
-//private:
-    MCAPI static void _tickDeferredRemoval(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PendingRemovePassengersComponent>);
-
-
-private:
 
 
 };

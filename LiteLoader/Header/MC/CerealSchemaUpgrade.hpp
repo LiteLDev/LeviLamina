@@ -26,6 +26,12 @@ public:
     /*0*/ virtual ~CerealSchemaUpgrade();
     /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual bool upgradeToNext(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ MCAPI class SemVersion const & getPreviousVersion() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALSCHEMAUPGRADE
 #endif
     MCAPI CerealSchemaUpgrade(class SemVersion, std::string const &, std::string const &);

@@ -24,7 +24,7 @@ public:
 
 public:
     MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
-    MCAPI void parse(class Json::Value &);
+    MCAPI void parse(class Json::Value &, class SemVersion const &);
 
 protected:
 

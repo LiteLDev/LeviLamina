@@ -41,9 +41,11 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORBLOCKACTOR
 #endif
     MCAPI SculkSensorBlockActor(class BlockPos const &);
-    MCAPI int getLatestGameEventFrequency() const;
+    MCAPI int getLatestReceivedVibrationFrequency() const;
+    MCAPI void onStepOn(class BlockSource &, class Actor &);
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
+    MCAPI static class SculkSensorBlockActor * tryGet(class BlockSource &, class BlockPos const &);
 
 
 

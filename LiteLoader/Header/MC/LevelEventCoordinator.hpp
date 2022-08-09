@@ -28,7 +28,7 @@ public:
     MCAPI LevelEventCoordinator();
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler> &&);
     MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const &);
-    MCAPI void sendLevelBiomesRegistered(class BiomeRegistry &);
+    MCAPI void sendLevelBiomesRegistered(class IWorldRegistriesProvider &);
     MCAPI void sendLevelInitialized(class Level &);
     MCAPI void sendLevelRemovedActor(class Level &, class Actor &);
     MCAPI void sendLevelTick();

@@ -41,7 +41,9 @@ public:
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
     MCAPI std::string const getBiomeOverride() const;
     MCAPI bool getBonusChestSpawned() const;
+    MCAPI enum ChatRestrictionLevel getChatRestrictionLevel() const;
     MCAPI struct Tick const & getCurrentTick() const;
+    MCAPI bool getCustomSkinsDisabled() const;
     MCAPI class Abilities & getDefaultAbilities();
     MCAPI class PermissionsHandler & getDefaultPermissions();
     MCAPI class PermissionsHandler const & getDefaultPermissions() const;
@@ -70,6 +72,7 @@ public:
     MCAPI int getNetherScale() const;
     MCAPI enum NetherWorldType getNetherType() const;
     MCAPI bool getOnlySpawnV1Villagers() const;
+    MCAPI bool getPersonaDisabled() const;
     MCAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
     MCAPI enum Social::GamePublishSetting getPlatformBroadcastMode() const;
     MCAPI class ContentIdentity const & getPremiumTemplateContentIdentity() const;
@@ -114,7 +117,9 @@ public:
     MCAPI void recordStartUp();
     MCAPI void setBaseGameVersion(class BaseGameVersion const &);
     MCAPI void setBonusChestSpawned(bool);
+    MCAPI void setChatRestrictionLevel(enum ChatRestrictionLevel);
     MCAPI void setCommandsEnabled(bool);
+    MCAPI void setCustomSkinsDisabled(bool);
     MCAPI void setDataDrivenGenerator(enum GeneratorType);
     MCAPI void setEduSharedUriResource(struct EduSharedUriResource const &);
     MCAPI void setEducationEditionOffer(enum EducationEditionOffer);
@@ -133,6 +138,7 @@ public:
     MCAPI void setMultiplayerGame(bool);
     MCAPI void setMultiplayerGameIntent(bool);
     MCAPI void setOnlySpawnV1Villagers(bool);
+    MCAPI void setPersonaDisabled(bool);
     MCAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting);
     MCAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting);
     MCAPI void setPremiumTemplateContentIdentity(class ContentIdentity const &);

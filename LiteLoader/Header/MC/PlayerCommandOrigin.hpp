@@ -42,7 +42,7 @@ public:
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
-    /*20*/ virtual unsigned char getSourceSubId() const;
+    /*20*/ virtual enum SubClientId getSourceSubId() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;

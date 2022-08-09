@@ -128,8 +128,8 @@ public:
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, std::string const &);
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(class CompoundTag const &);
     MCAPI bool removeObjective(class Objective *);
-    MCAPI void removeScoreListener(class Player &);
-    MCAPI void removeScoreListener(class Player &, std::string const &);
+    MCAPI void removeScoreListener(class Player const &);
+    MCAPI void removeScoreListener(class Player const &, std::string const &);
     MCAPI void replaceFakePlayer(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     MCAPI void resetPlayerScore(struct ScoreboardId const &);
     MCAPI void resetPlayerScore(struct ScoreboardId const &, class Objective &);
@@ -147,7 +147,6 @@ public:
     MCAPI class std::unordered_map<std::string, std::unique_ptr<class Objective>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class Objective>>>> const & _getObjectiveMap() const;
 
 //private:
-    MCAPI struct ScoreboardId const & _getOrCreatePlayerId(class Player &);
     MCAPI void _init();
 
 

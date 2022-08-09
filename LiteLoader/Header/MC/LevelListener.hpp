@@ -51,7 +51,7 @@ public:
     MCVAPI void onEntityAdded(class Actor &);
     MCVAPI void onEntityRemoved(class Actor &);
     MCVAPI void onLevelDestruction(std::string const &);
-    MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short);
+    MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short, bool);
     MCVAPI void playMusic(std::string const &, class Vec3 const &, float, float);
     MCVAPI void playStreamingMusic(std::string const &, int, int, int);
     MCVAPI void playerListChanged();

@@ -4,6 +4,7 @@
 #include "../Global.h"
 #include "Json.hpp"
 #include "ScriptModuleMinecraft.hpp"
+#include "Scripting.hpp"
 #include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
@@ -36,7 +37,7 @@ public:
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 //private:
-    MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, std::vector<std::string> const &);
+    MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 
 
 private:

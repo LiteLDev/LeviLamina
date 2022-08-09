@@ -26,7 +26,7 @@ public:
     MCVAPI enum EventResult onEvent(struct PlayerFormResponseEvent const &);
 #endif
     MCAPI ScriptFormPromiseTracker();
-    MCAPI void handleFormClose(unsigned int);
+    MCAPI void handleFormClose(struct PlayerFormCloseEvent const &);
     MCAPI void handleFormResponse(unsigned int, class Json::Value const &);
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);
     MCAPI class ScriptFormPromiseTracker & operator=(class ScriptFormPromiseTracker const &);

@@ -35,6 +35,7 @@ public:
     MCAPI void carve(int, int, class BlockPos const &, class BlockSource &, bool, float, class BlockPos const &, int, int) const;
     MCAPI void generateIcebergBlock(class BlockSource &, class Random &, class BlockPos const &, int, int, int, int, int, int, bool, bool, float, int, class Block const &) const;
     MCAPI int heightDependentRadiusRound(class Random &, int, int, int) const;
+    MCAPI void setIcebergBlock(class BlockPos const &, class BlockSource &, class Random &, int, int, bool, bool, class Block const &) const;
     MCAPI float signedDistanceEllipse(int, int, class BlockPos const &, int, int, float) const;
 
 

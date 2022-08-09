@@ -29,7 +29,13 @@ public:
     /*2*/ virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLEGACYTICKSYSTEM
 #endif
+    MCAPI static void tickActorLegacyTickSystem(class EntityContext &, class Actor &, class ActorTickNeededComponent &);
 
+//private:
+    MCAPI static void _runActorLegacyTick(class ViewedEntityContextT<class EntityContext, class ActorTickNeededComponent, class FlagComponent<struct ActorFlag>> &);
+
+
+private:
 
 
 };

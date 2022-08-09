@@ -12,6 +12,7 @@ namespace VibrationListenerUtils {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
+    MCAPI int getGameEventFrequency(class GameEvent const &);
     MCAPI bool ignoreVibrationIfSneaking(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 
 };

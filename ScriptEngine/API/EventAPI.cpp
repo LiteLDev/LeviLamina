@@ -1046,7 +1046,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onBedExplode:
             Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
                 BlockInstance bl(ev.mBlockInstance);
-                if (bl.getBlock() == VanillaBlocks::mBed) {
+                if (bl.getBlock()->getTypeName() == "minecraft:bed") {
                     IF_LISTENED(EVENT_TYPES::onBedExplode) {
                         CallEvent(EVENT_TYPES::onBedExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()));
                     }

@@ -35,7 +35,7 @@ public:
     MCAPI void calculateBoundingBox();
     MCAPI void moveBoundingBoxes(int);
     MCAPI void moveInsideHeights(class Random &, short, short);
-    MCAPI void moveToLevel(short, class Random &, int);
+    MCAPI void moveToBelowSeaLevel(short, short, class Random &, int);
 
 
 protected:

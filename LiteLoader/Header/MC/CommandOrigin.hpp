@@ -50,7 +50,7 @@ public:
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const & getSourceId() const;
-    /*20*/ virtual unsigned char getSourceSubId() const;
+    /*20*/ virtual enum SubClientId getSourceSubId() const;
     /*21*/ virtual class CommandOrigin const & getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const = 0;
@@ -69,7 +69,7 @@ public:
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
-    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, unsigned char);
+    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, enum SubClientId);
 
 //protected:
 

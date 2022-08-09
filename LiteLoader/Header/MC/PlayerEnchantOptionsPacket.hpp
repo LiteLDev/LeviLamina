@@ -3,7 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Packet.hpp"
-#include <MC/ItemEnchantOption.hpp>
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -13,8 +13,7 @@ class PlayerEnchantOptionsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
-    std::vector<ItemEnchantOption> mOptions;
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERENCHANTOPTIONSPACKET

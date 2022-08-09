@@ -28,18 +28,18 @@ public:
 public:
     /*0*/ virtual ~AirBlockItem();
     /*7*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_13();
-    /*15*/ virtual void __unk_vfn_15();
-    /*51*/ virtual void __unk_vfn_51();
-    /*53*/ virtual void __unk_vfn_53();
-    /*66*/ virtual void __unk_vfn_66();
-    /*70*/ virtual void __unk_vfn_70();
+    /*11*/ virtual void __unk_vfn_11();
+    /*14*/ virtual void __unk_vfn_14();
+    /*16*/ virtual void __unk_vfn_16();
+    /*52*/ virtual void __unk_vfn_52();
+    /*54*/ virtual void __unk_vfn_54();
+    /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
-    /*75*/ virtual void __unk_vfn_75();
-    /*79*/ virtual void __unk_vfn_79();
+    /*73*/ virtual void __unk_vfn_73();
+    /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
+    /*81*/ virtual void __unk_vfn_81();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AIRBLOCKITEM
 #endif
 

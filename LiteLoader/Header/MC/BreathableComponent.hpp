@@ -20,13 +20,13 @@ enum BreathableState;
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLECOMPONENT
 public:
     class BreathableComponent& operator=(class BreathableComponent const &) = delete;
-    BreathableComponent(class BreathableComponent const &) = delete;
 #endif
 
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLECOMPONENT
 #endif
+    MCAPI BreathableComponent(class BreathableComponent const &);
     MCAPI BreathableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     MCAPI bool canBreathe(class Actor const &) const;

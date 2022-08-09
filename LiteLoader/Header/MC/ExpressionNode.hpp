@@ -40,6 +40,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPRESSIONNODE
 #endif
     MCAPI ExpressionNode(class ExpressionNode &&);
+    MCAPI ExpressionNode(struct MolangScriptArg &, enum ExpressionOp);
     MCAPI ExpressionNode(class ExpressionNode const &);
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
     MCAPI ExpressionNode(std::string const &, enum MolangVersion, class gsl::span<class HashedString const, -1>);

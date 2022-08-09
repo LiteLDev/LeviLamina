@@ -36,7 +36,6 @@ public:
 
 //private:
     MCAPI unsigned int _calculateAddableCountForBasicStorage(class ItemStack const &, class ItemStackBase const &) const;
-    MCAPI unsigned int _calculateAddableCountForBundleStorage(class ItemStack const &, class ItemStackBase const &) const;
     MCAPI unsigned int _getItemListSize(class ItemStack &) const;
     MCAPI unsigned int _getPerItemCost(class ItemStack const &, class ItemStackBase const &) const;
     MCAPI void _storeItemInNewOrExistingSlot(class ItemStack &, class ItemStack &, unsigned int) const;

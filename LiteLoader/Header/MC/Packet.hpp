@@ -72,8 +72,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET
 #endif
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
-    MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, unsigned char const &, struct ExtendedStreamReadResult &);
-    MCAPI void writeWithHeader(unsigned char, class BinaryStream &) const;
+    MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum SubClientId const &, struct ExtendedStreamReadResult &);
+    MCAPI void writeWithHeader(enum SubClientId, class BinaryStream &) const;
 
 
 

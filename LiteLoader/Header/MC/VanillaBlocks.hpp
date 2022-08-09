@@ -29,15 +29,12 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mAzalea;
     MCAPI extern class Block const * mBambooBlock;
     MCAPI extern class Block const * mBambooSapling;
-    MCAPI extern class Block const * mBarrel;
     MCAPI extern class Block const * mBarrierBlock;
     MCAPI extern class Block const * mBasalt;
     MCAPI extern class Block const * mBeacon;
-    MCAPI extern class Block const * mBed;
     MCAPI extern class Block const * mBeeNest;
     MCAPI extern class Block const * mBeehive;
     MCAPI extern class Block const * mBeetrootCrop;
-    MCAPI extern class Block const * mBellBlock;
     MCAPI extern class Block const * mBigDripleaf;
     MCAPI extern class Block const * mBirchFenceGate;
     MCAPI extern class Block const * mBirchSign;
@@ -59,8 +56,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mBrickStairs;
     MCAPI extern class Block const * mBrownCandle;
     MCAPI extern class Block const * mBrownCandleCake;
-    MCAPI extern class Block const * mBrownMushroom;
-    MCAPI extern class Block const * mBrownMushroomBlock;
     MCAPI extern class Block const * mBubbleColumn;
     MCAPI extern class Block const * mBuddingAmethyst;
     MCAPI extern class Block const * mButtonAcacia;
@@ -76,7 +71,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mCandle;
     MCAPI extern class Block const * mCandleCake;
     MCAPI extern class Block const * mCarrotCrop;
-    MCAPI extern class Block const * mCartographyTableBlock;
     MCAPI extern class Block const * mCarvedPumpkin;
     MCAPI extern class Block const * mCauldron;
     MCAPI extern class Block const * mCaveVines;
@@ -89,7 +83,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mChemistryTable;
     MCAPI extern class Block const * mChest;
     MCAPI extern class Block const * mChiseledDeepslate;
-    MCAPI extern class Block const * mChiseledNetherBricks;
     MCAPI extern class Block const * mChiseledPolishedBlackstone;
     MCAPI extern class Block const * mChorusFlowerBlock;
     MCAPI extern class Block const * mChorusPlantBlock;
@@ -102,7 +95,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mCobbledDeepslateWall;
     MCAPI extern class Block const * mCobblestone;
     MCAPI extern class Block const * mCobblestoneStairs;
-    MCAPI extern class Block const * mCocoa;
     MCAPI extern class Block const * mColoredTorchBP;
     MCAPI extern class Block const * mColoredTorchRG;
     MCAPI extern class Block const * mCommandBlock;
@@ -119,7 +111,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mCoralFanHang2;
     MCAPI extern class Block const * mCoralFanHang3;
     MCAPI extern class Block const * mCrackedDeepslateTiles;
-    MCAPI extern class Block const * mCrackedNetherBricks;
     MCAPI extern class Block const * mCrimsonButton;
     MCAPI extern class Block const * mCrimsonDoor;
     MCAPI extern class Block const * mCrimsonDoubleSlab;
@@ -164,7 +155,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mDetectorRail;
     MCAPI extern class Block const * mDiamondBlock;
     MCAPI extern class Block const * mDioriteStairs;
-    MCAPI extern class Block const * mDirt;
     MCAPI extern class Block const * mDirtWithRoots;
     MCAPI extern class Block const * mDispenser;
     MCAPI extern class Block const * mDoubleCutCopperSlab;
@@ -299,14 +289,7 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mElement99;
     MCAPI extern class Block const * mEmeraldBlock;
     MCAPI extern class Block const * mEnchantingTable;
-    MCAPI extern class Block const * mEndBrick;
     MCAPI extern class Block const * mEndBrickStairs;
-    MCAPI extern class Block const * mEndGateway;
-    MCAPI extern class Block const * mEndPortal;
-    MCAPI extern class Block const * mEndPortalFrame;
-    MCAPI extern class Block const * mEndRod;
-    MCAPI extern class Block const * mEndStone;
-    MCAPI extern class Block const * mEnderChest;
     MCAPI extern class Block const * mExposedCopper;
     MCAPI extern class Block const * mExposedCutCopper;
     MCAPI extern class Block const * mExposedCutCopperSlab;
@@ -315,11 +298,8 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mFence;
     MCAPI extern class Block const * mFenceGateOak;
     MCAPI extern class Block const * mFire;
-    MCAPI extern class Block const * mFletchingTable;
     MCAPI extern class Block const * mFlowerPot;
     MCAPI extern class Block const * mFloweringAzalea;
-    MCAPI extern class Block const * mFlowingLava;
-    MCAPI extern class Block const * mFlowingWater;
     MCAPI extern class Block const * mFrogSpawn;
     MCAPI extern class Block const * mGildedBlackstone;
     MCAPI extern class Block const * mGlass;
@@ -340,7 +320,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mGlazedTerracottaSilver;
     MCAPI extern class Block const * mGlazedTerracottaWhite;
     MCAPI extern class Block const * mGlazedTerracottaYellow;
-    MCAPI extern class Block const * mGlowItemFrame;
     MCAPI extern class Block const * mGlowLichen;
     MCAPI extern class Block const * mGlowStone;
     MCAPI extern class Block const * mGlowingObsidian;
@@ -360,8 +339,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mHardStainedGlassPane;
     MCAPI extern class Block const * mHardenedClay;
     MCAPI extern class Block const * mHeavyWeightedPressurePlate;
-    MCAPI extern class Block const * mHoneyBlock;
-    MCAPI extern class Block const * mHoneycombBlock;
     MCAPI extern class Block const * mHopper;
     MCAPI extern class Block const * mInfestedDeepslate;
     MCAPI extern class Block const * mInfoReserved6;
@@ -371,7 +348,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mIronDoor;
     MCAPI extern class Block const * mIronFence;
     MCAPI extern class Block const * mIronTrapdoor;
-    MCAPI extern class Block const * mItemFrame;
     MCAPI extern class Block const * mJigsawBlock;
     MCAPI extern class Block const * mJukebox;
     MCAPI extern class Block const * mJungleFenceGate;
@@ -379,12 +355,10 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mJungleStairs;
     MCAPI extern class Block const * mJungleWallSign;
     MCAPI extern class Block const * mKelp;
-    MCAPI extern class Block const * mLadder;
     MCAPI extern class Block const * mLantern;
     MCAPI extern class Block const * mLapisBlock;
     MCAPI extern class Block const * mLargeAmethystBud;
     MCAPI extern class Block const * mLavaCauldron;
-    MCAPI extern class Block const * mLecternBlock;
     MCAPI extern class Block const * mLever;
     MCAPI extern class Block const * mLightBlock;
     MCAPI extern class Block const * mLightBlueCandle;
@@ -399,7 +373,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mLitRedStoneLamp;
     MCAPI extern class Block const * mLitRedStoneTorch;
     MCAPI extern class Block const * mLodestoneBlock;
-    MCAPI extern class Block const * mLoomBlock;
     MCAPI extern class Block const * mMagentaCandle;
     MCAPI extern class Block const * mMagentaCandleCake;
     MCAPI extern class Block const * mMagmaBlock;
@@ -434,15 +407,7 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mMudBrickWall;
     MCAPI extern class Block const * mMuddyMangroveRoots;
     MCAPI extern class Block const * mMycelium;
-    MCAPI extern class Block const * mNetherBrick;
     MCAPI extern class Block const * mNetherBrickStairs;
-    MCAPI extern class Block const * mNetherFence;
-    MCAPI extern class Block const * mNetherGoldOre;
-    MCAPI extern class Block const * mNetherReactor;
-    MCAPI extern class Block const * mNetherSprouts;
-    MCAPI extern class Block const * mNetherWart;
-    MCAPI extern class Block const * mNetheriteBlock;
-    MCAPI extern class Block const * mNetherrack;
     MCAPI extern class Block const * mNote;
     MCAPI extern class Block const * mOakStairs;
     MCAPI extern class Block const * mObserver;
@@ -508,11 +473,7 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mRedCandle;
     MCAPI extern class Block const * mRedCandleCake;
     MCAPI extern class Block const * mRedFlower;
-    MCAPI extern class Block const * mRedMushroom;
-    MCAPI extern class Block const * mRedMushroomBlock;
-    MCAPI extern class Block const * mRedNetherBrick;
     MCAPI extern class Block const * mRedNetherBrickStairs;
-    MCAPI extern class Block const * mRedNetherWartBlock;
     MCAPI extern class Block const * mRedSandstone;
     MCAPI extern class Block const * mRedSandstoneStairs;
     MCAPI extern class Block const * mRedStoneDust;
@@ -563,8 +524,6 @@ namespace VanillaBlocks {
     MCAPI extern class Block const * mStandingBanner;
     MCAPI extern class Block const * mStickyPiston;
     MCAPI extern class Block const * mStickyPistonArm;
-    MCAPI extern class Block const * mStillLava;
-    MCAPI extern class Block const * mStillWater;
     MCAPI extern class Block const * mStoneBrickStairs;
     MCAPI extern class Block const * mStoneButton;
     MCAPI extern class Block const * mStonePressurePlate;

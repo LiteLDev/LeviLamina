@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Packet.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -11,10 +12,7 @@
 class AnvilDamagePacket : public Packet {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
-    int mDamage;
-    BlockPos mPosition;
+// Add Member There
 
 #undef AFTER_EXTRA
 

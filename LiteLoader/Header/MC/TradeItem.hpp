@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI struct TradeItem & operator=(struct TradeItem &&);
     MCAPI ~TradeItem();
 
 protected:

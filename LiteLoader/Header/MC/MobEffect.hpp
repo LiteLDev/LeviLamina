@@ -66,9 +66,10 @@ public:
     /*0*/ virtual ~MobEffect();
     /*1*/ virtual void applyEffects(class Actor *, int, int) const;
     /*2*/ virtual void removeEffects(class Actor *);
-    /*3*/ virtual void applyInstantaneousEffect(class Actor *, class Actor *, class Actor *, int, float) const;
-    /*4*/ virtual bool isInstantaneous() const;
-    /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
+    /*3*/ virtual void updateEffects(class Actor *, int, int);
+    /*4*/ virtual void applyInstantaneousEffect(class Actor *, class Actor *, class Actor *, int, float) const;
+    /*5*/ virtual bool isInstantaneous() const;
+    /*6*/ virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECT
 #endif
     MCAPI MobEffect(int, std::string const &, std::string const &, bool, int, int, std::string const &, bool, struct MobEffect::FactorCalculationData const &);

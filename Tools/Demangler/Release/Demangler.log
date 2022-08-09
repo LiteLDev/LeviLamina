@@ -1,0 +1,14 @@
+﻿  MicrosoftDemangle.cpp
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(317,44): warning C4244: “=”: 从“uint64_t”转换到“uint32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(371,44): warning C4244: “=”: 从“uint64_t”转换到“uint32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(372,42): warning C4244: “=”: 从“int64_t”转换到“int32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(373,44): warning C4244: “=”: 从“uint64_t”转换到“uint32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(374,44): warning C4244: “=”: 从“uint64_t”转换到“uint32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(1916,54): warning C4244: “=”: 从“int64_t”转换到“uint32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(1920,60): warning C4244: “=”: 从“int64_t”转换到“int32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(1921,60): warning C4244: “=”: 从“int64_t”转换到“int32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(1923,56): warning C4244: “=”: 从“int64_t”转换到“int32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(1924,56): warning C4244: “=”: 从“int64_t”转换到“uint32_t”，可能丢失数据
+C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Tools\Demangler\MicrosoftDemangle.cpp(2143,56): warning C4244: “参数”: 从“uint64_t”转换到“size_t”，可能丢失数据
+  MicrosoftDemangleNodes.cpp
+  Demangler.vcxproj -> C:\Users\Admin\source\repos\LiteLDev\LiteLoaderBDS\Release\Demangler.lib

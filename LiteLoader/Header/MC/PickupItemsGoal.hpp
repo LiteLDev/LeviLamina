@@ -37,8 +37,10 @@ public:
     MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
 
 //private:
+    MCAPI void _dropItem(class ItemStack const &) const;
     MCAPI std::vector<class WeakEntityRef> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
     MCAPI struct Shareable const * _getShareableItem(class ItemStack const &) const;
+    MCAPI bool _hasRoomForCarriedItem() const;
     MCAPI void _pickItemUp(class ItemActor *);
 
 

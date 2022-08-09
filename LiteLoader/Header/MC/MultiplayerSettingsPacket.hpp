@@ -6,19 +6,13 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum MultiplayerSettingsPacketType : int {
-    EnableMultiplayer = 0x0,
-    DisableMultiplayer = 0x1,
-    RefreshJoincode = 0x2,
-};
+
 #undef BEFORE_EXTRA
 
 class MultiplayerSettingsPacket : public Packet {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
-    MultiplayerSettingsPacketType mPacketType;
+// Add Member There
 
 #undef AFTER_EXTRA
 

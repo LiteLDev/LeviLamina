@@ -12,23 +12,26 @@ namespace CodeBuilder {
 
 #define AFTER_EXTRA
 enum ProtocolVersion;
-
+enum EncryptionCipherMode;
 struct RequestHeader;
 enum RequestPurpose;
 struct AgentMessage;
 struct ChatMessage;
 struct CommandMessage;
 struct ErrorMessage;
+struct EncryptionResult;
 enum ResponsePurpose;
 struct EventMessage;
 
 #undef AFTER_EXTRA
     MCAPI struct MCRESULT deserialize(class Json::Value const &, struct CodeBuilder::RequestHeader &);
-    MCAPI enum CodeBuilder::RequestPurpose fromString(std::string const &);
+    MCAPI bool fromString(std::string const &, enum CodeBuilder::EncryptionCipherMode &);
+    MCAPI bool fromString(std::string const &, enum CodeBuilder::RequestPurpose &);
     MCAPI std::string serialize(struct CodeBuilder::AgentMessage const &);
     MCAPI std::string serialize(struct CodeBuilder::ChatMessage const &);
     MCAPI std::string serialize(struct CodeBuilder::ChatMessage const &, std::string const &);
     MCAPI std::string serialize(struct CodeBuilder::CommandMessage const &);
+    MCAPI std::string serialize(struct CodeBuilder::EncryptionResult const &);
     MCAPI std::string serialize(struct CodeBuilder::ErrorMessage const &);
     MCAPI std::string serialize(struct CodeBuilder::EventMessage const &);
     MCAPI std::string toString(enum CodeBuilder::ResponsePurpose);

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -26,16 +27,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTOR
 #endif
+    MCAPI ItemDescriptor();
     MCAPI ItemDescriptor(class ItemDescriptor &&);
+    MCAPI ItemDescriptor(struct ItemTag const &);
     MCAPI ItemDescriptor(class ItemDescriptor const &);
     MCAPI ItemDescriptor(class Block const &);
     MCAPI ItemDescriptor(class BlockLegacy const &);
     MCAPI ItemDescriptor(class Item const &, int);
+    MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
     MCAPI ItemDescriptor(class gsl::basic_string_span<char const, -1>, int);
-    MCAPI ItemDescriptor();
     MCAPI short getAuxValue() const;
     MCAPI class Block const * getBlock() const;
-    MCAPI std::string const & getFullName() const;
+    MCAPI std::string getFullName() const;
     MCAPI short getId() const;
     MCAPI int getIdAux() const;
     MCAPI class Item const * getItem() const;
@@ -44,23 +47,21 @@ public:
     MCAPI std::string getSerializedNameAndAux() const;
     MCAPI bool isDefinedAsItemName() const;
     MCAPI bool isNull() const;
-    MCAPI bool isValid() const;
+    MCAPI bool isValid(bool) const;
     MCAPI void operator=(class ItemDescriptor &&);
     MCAPI void operator=(class ItemDescriptor const &);
     MCAPI bool operator==(class ItemDescriptor const &) const;
-    MCAPI bool sameItemAndAux(class ItemDescriptor const &) const;
-    MCAPI bool sameItemAndAux(class ItemStack const &) const;
+    MCAPI bool sameItem(class ItemDescriptor const &, bool) const;
+    MCAPI bool sameItem(class ItemStack const &, bool) const;
     MCAPI class std::optional<class CompoundTag> save() const;
     MCAPI ~ItemDescriptor();
     MCAPI static void bindType();
-    MCAPI static class ItemDescriptor fromTagExpression(std::string const &, enum MolangVersion);
 
 //private:
-    MCAPI ItemDescriptor(int, int);
-    MCAPI bool _hasTagOfItem(class Item const *) const;
-    MCAPI void _initFromBlockLegacy(class BlockLegacy const &, class WeakPtr<class Item>) const;
-    MCAPI void _initFromItem(class WeakPtr<class Item>, short) const;
-    MCAPI void _resolveImpl() const;
+    MCAPI void _initFromTagExpression(std::string const &, enum MolangVersion);
+    MCAPI void _resolve() const;
+    MCAPI static void fromMap(class ItemDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &, class BedrockLoadContext const &);
+    MCAPI static class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap(class ItemDescriptor const &);
 
 
 private:

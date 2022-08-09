@@ -28,24 +28,24 @@ public:
 public:
     /*0*/ virtual ~WrittenBookItem();
     /*7*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_13();
-    /*15*/ virtual void __unk_vfn_15();
-    /*50*/ virtual bool isGlint(class ItemStackBase const &) const;
-    /*51*/ virtual void __unk_vfn_51();
-    /*53*/ virtual void __unk_vfn_53();
-    /*59*/ virtual bool requiresInteract() const;
-    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*66*/ virtual void __unk_vfn_66();
-    /*70*/ virtual void __unk_vfn_70();
+    /*11*/ virtual void __unk_vfn_11();
+    /*14*/ virtual void __unk_vfn_14();
+    /*16*/ virtual void __unk_vfn_16();
+    /*51*/ virtual bool isGlint(class ItemStackBase const &) const;
+    /*52*/ virtual void __unk_vfn_52();
+    /*54*/ virtual void __unk_vfn_54();
+    /*60*/ virtual bool requiresInteract() const;
+    /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
-    /*75*/ virtual void __unk_vfn_75();
-    /*79*/ virtual void __unk_vfn_79();
+    /*73*/ virtual void __unk_vfn_73();
+    /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
-    /*84*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*117*/ virtual std::string getInteractText(class Player const &) const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*85*/ virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*119*/ virtual std::string getInteractText(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITTENBOOKITEM
 #endif
     MCAPI WrittenBookItem(std::string const &, int);

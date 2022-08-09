@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Bedrock.hpp"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 
@@ -36,10 +35,10 @@ public:
 
 //private:
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> _createRequest(std::string const &, std::string const &, class IMinecraftEventing *, std::string const &, enum TextProcessingEventOrigin, class std::shared_ptr<std::vector<std::string>>, class std::shared_ptr<std::vector<std::string>>, bool, std::string const &);
-    MCAPI struct CommunitySiftEndpoints _getEndpointsFromConfig(class Json::Value const &, std::string const &);
     MCAPI void _processEvent(class Player const &, enum TextProcessingEventOrigin, class UserEntityIdentifierComponent const *, std::string const &);
     MCAPI class CallbackToken _processMessages(class Player const &, bool, enum TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
     MCAPI bool _validateCommunitySiftConfiguration();
+    MCAPI static struct CommunitySiftConfig _createConfigFromJson(std::string const &);
 
 
 private:

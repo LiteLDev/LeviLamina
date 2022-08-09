@@ -65,15 +65,15 @@ public:
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
     /*150*/ virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
-    /*165*/ virtual void __unk_vfn_165();
-    /*175*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*187*/ virtual void __unk_vfn_187();
-    /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
+    /*157*/ virtual void __unk_vfn_157();
+    /*165*/ virtual void onRemove(class BlockSource &, class BlockPos const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*177*/ virtual void __unk_vfn_177();
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCK
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isCraftingBlock() const;

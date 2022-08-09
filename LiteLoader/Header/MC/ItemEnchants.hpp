@@ -3,7 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Enchant.hpp"
-#include "EnchantmentInstance.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -13,9 +13,7 @@ class ItemEnchants {
 
 #define AFTER_EXTRA
 // Add Member There
-    int mSlot;
-    std::vector<EnchantmentInstance, std::allocator<EnchantmentInstance>> mItemEnchants[3];
-	
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTS

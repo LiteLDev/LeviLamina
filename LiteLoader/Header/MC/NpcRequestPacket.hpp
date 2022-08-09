@@ -12,22 +12,7 @@
 class NpcRequestPacket : public Packet {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
-    enum RequestType : unsigned char {
-        SetActions = 0x0,
-        ExecuteAction = 0x1,
-        ExecuteClosingCommands = 0x2,
-        SetName = 0x3,
-        SetSkin = 0x4,
-        SetInteractText = 0x5,
-        ExecuteOpeningCommands = 0x6,
-    };
-    ActorRuntimeID mId;
-    NpcRequestPacket::RequestType mType;
-    std::string mActions;
-    unsigned __int8 mActionIndex;
-    std::string mSceneName;
+// Add Member There
 
 #undef AFTER_EXTRA
 

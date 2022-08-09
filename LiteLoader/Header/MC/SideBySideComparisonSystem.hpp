@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "SideBySideExtractionId.hpp"
 
 #define BEFORE_EXTRA
 
@@ -24,7 +25,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECOMPARISONSYSTEM
 #endif
-    MCAPI static struct TickingSystemWithInfo createSideBySideComparisonSystem(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>);
+    MCAPI static struct TickingSystemWithInfo createSideBySideComparisonSystem(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, std::vector<unsigned int> const &);
     MCAPI static class std::array<struct TickingSystemWithInfo, 6> createSideBySideExceptionSystems();
 
 

@@ -25,10 +25,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONEVENTLOADER
 #endif
-    MCAPI static class ActorDefinitionEvent loadEvent(class Json::Value, class SemVersion const &, class ActorEventResponseFactory const *);
+    MCAPI static class ActorDefinitionEvent loadEvent(class Json::Value, class SemVersion const &, class SemVersion const &, class ActorEventResponseFactory const *);
 
 //private:
     MCAPI static void _loadCollection(class ActorDefinitionEvent &, class Json::Value const &, class SemVersion const &, class ActorEventResponseFactory const *);
+    MCAPI static class ActorDefinitionEvent _loadEvent(class Json::Value &, class SemVersion const &, class ActorEventResponseFactory const *);
 
 
 private:

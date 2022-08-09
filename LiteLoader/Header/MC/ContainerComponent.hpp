@@ -40,6 +40,7 @@ public:
     MCAPI int findFirstSlotForItem(class ItemStack const &) const;
     MCAPI int getContainerSize() const;
     MCAPI class ItemStack const & getItem(int) const;
+    MCAPI std::vector<class ItemStack const *> const getSlots() const;
     MCAPI bool hasRoomForItem(class ItemActor const &);
     MCAPI bool hasRoomForItem(class ItemStack const &);
     MCAPI void initFromDefinition(class Actor &);

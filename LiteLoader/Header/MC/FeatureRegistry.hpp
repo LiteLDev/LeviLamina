@@ -30,10 +30,11 @@ public:
     MCAPI std::vector<std::string> getLargeFeaturePasses() const;
     MCAPI std::vector<std::string> getSmallFeaturePasses() const;
     MCAPI bool isFeaturePassDefined(std::string const &) const;
-    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider &, class ResourcePackManager const &, class Experiments const &);
+    MCAPI void loadFromDefinitions(class IWorldRegistriesProvider &, class ResourcePackManager const &, class Experiments const &, bool);
     MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const &) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const &);
     MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const &);
+    MCAPI std::string const & reverseLookupString(class IFeature const &);
     MCAPI void setLargeFeaturePasses(std::vector<std::string>);
     MCAPI void setSmallFeaturePasses(std::vector<std::string>);
     MCAPI static std::string const AFTER_SKY_PASS;
@@ -52,7 +53,7 @@ public:
 //private:
     MCAPI std::string const _featureNamespaceFromInput(std::string const &, std::string const &);
     MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
-    MCAPI void _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);
+    MCAPI std::string _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);
 
 
 private:

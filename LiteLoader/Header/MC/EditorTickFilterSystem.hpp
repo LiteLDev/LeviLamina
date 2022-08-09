@@ -24,7 +24,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORTICKFILTERSYSTEM
 #endif
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static void _addPauseTickNeeded(class StrictEntityContext &, class ActorTickNeededComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct EditorActorPauseTickNeededComponent> &);
+    MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();
+    MCAPI static struct TickingSystemWithInfo createRemoveActorTickNeeded();
 
 
 

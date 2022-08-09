@@ -12,10 +12,8 @@
 class FilterTextPacket : public Packet {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
-    std::string mText;
-    bool mFromServer;
+// Add Member There
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTEXTPACKET

@@ -14,13 +14,13 @@ class ChangeDimensionPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    AutomaticID<Dimension, int> mDimensionId;
-    Vec3 mPos;
-    bool mRespawn;
+    AutomaticID<Dimension, int> dimensionId;
+    Vec3 position;
+    bool respawn;
 
     inline std::string toDebugString() {
         return fmt::format("{}: pos: {}, dimensionId: {}, isRespawn: {}",
-                           __super::toDebugString(), mPos.toString(), (int)mDimensionId, mRespawn);
+            __super::toDebugString(), position.toString(), (int)dimensionId, respawn);
     }
 #undef AFTER_EXTRA
 

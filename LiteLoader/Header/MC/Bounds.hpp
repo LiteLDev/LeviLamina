@@ -23,7 +23,9 @@ public:
 #endif
 
 public:
+    MCAPI Bounds(class BlockPos const &, int, int, short, short);
     MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum Bounds::Option);
+    MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
 
 protected:
 

@@ -32,8 +32,8 @@ public:
 
 //protected:
     MCAPI void _assertValid() const;
-    MCAPI class entt::basic_registry<class EntityId> const & _enttRegistry() const;
     MCAPI class entt::basic_registry<class EntityId> & _enttRegistry();
+    MCAPI class entt::basic_registry<class EntityId> const & _enttRegistry() const;
     MCAPI class EntityId _getEntityId() const;
     MCAPI unsigned int _getRegistryId() const;
 

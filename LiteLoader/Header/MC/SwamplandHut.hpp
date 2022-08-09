@@ -29,7 +29,7 @@ public:
     /*2*/ virtual enum StructurePieceType getType() const;
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*5*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /*11*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWAMPLANDHUT
 #endif
     MCAPI SwamplandHut(short, int, int);

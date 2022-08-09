@@ -52,20 +52,20 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAG
 public:
-    class ListTag& operator=(class ListTag const&) = delete;
-    ListTag(class ListTag const&) = delete;
+    class ListTag& operator=(class ListTag const &) = delete;
+    ListTag(class ListTag const &) = delete;
 #endif
 
 
 public:
     /*0*/ virtual ~ListTag();
     /*1*/ virtual void deleteChildren();
-    /*2*/ virtual void write(class IDataOutput&) const;
-    /*3*/ virtual void load(class IDataInput&);
+    /*2*/ virtual void write(class IDataOutput &) const;
+    /*3*/ virtual void load(class IDataInput &);
     /*4*/ virtual std::string toString() const;
     /*5*/ virtual enum Tag::Type getId() const;
-    /*6*/ virtual bool equals(class Tag const&) const;
-    /*8*/ virtual void print(std::string const&, class PrintStream&) const;
+    /*6*/ virtual bool equals(class Tag const &) const;
+    /*8*/ virtual void print(std::string const &, class PrintStream &) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const;
     /*10*/ virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAG
@@ -74,14 +74,17 @@ public:
     MCAPI void add(std::unique_ptr<class Tag>);
     MCAPI std::unique_ptr<class ListTag> copyList() const;
     MCAPI void erase(unsigned __int64);
-    MCAPI void forEachCompoundTag(class std::function<void(class CompoundTag const&)>) const;
-    MCAPI class Tag* get(int) const;
-    MCAPI class CompoundTag* getCompound(unsigned __int64);
-    MCAPI class CompoundTag const* getCompound(unsigned __int64) const;
+    MCAPI void forEachCompoundTag(class std::function<void (class CompoundTag const &)>) const;
+    MCAPI class Tag * get(int) const;
+    MCAPI class CompoundTag * getCompound(unsigned __int64);
+    MCAPI class CompoundTag const * getCompound(unsigned __int64) const;
     MCAPI double getDouble(int) const;
     MCAPI float getFloat(int) const;
     MCAPI int getInt(int) const;
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const & getString(int) const;
     MCAPI void popBack();
     MCAPI int size() const;
+
+
+
 };

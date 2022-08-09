@@ -58,17 +58,17 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*187*/ virtual void __unk_vfn_187();
-    /*191*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*204*/ virtual class ItemInstance const getBaseSeed() const;
-    /*205*/ virtual class ItemInstance const getBaseCrop() const;
-    /*207*/ virtual int getCropNum(class Randomize &, int, int) const;
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*177*/ virtual void __unk_vfn_177();
+    /*181*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*193*/ virtual class ItemInstance const getBaseSeed() const;
+    /*194*/ virtual class ItemInstance const getBaseCrop() const;
+    /*196*/ virtual int getCropNum(class Randomize &, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARROTBLOCK
 #endif
     MCAPI CarrotBlock(std::string const &, int);

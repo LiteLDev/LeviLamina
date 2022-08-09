@@ -21,17 +21,6 @@
 
 using namespace LL;
 
-
-// Fix bug
-TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
-              ServerNetworkHandler, NetworkIdentifier* ni, void* packet) {
-    if (globalConfig.enableFixDisconnectBug) {
-        if (!getServerPlayer(*ni))
-            return;
-    }
-    return original(this, ni, packet);
-}
-
 // Fix bug
 TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
                        ReadOnlyBinaryStream* a2) {
@@ -192,10 +181,10 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
         return original(this, pos, dimid);
     fixPlayerPosition(false);
 }
-TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-                       BlockPos const& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4) {
-    if (validPosition(a1))
-        return original(this, a1, a2, a3, a4);
+TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
+                       BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6, __int64 a7) {
+    if (validPosition(a2))
+        return original(this, a2, a3, a4,a5,a6,a7);
     fixPlayerPosition(movingViewPlayer);
     return 0;
 }

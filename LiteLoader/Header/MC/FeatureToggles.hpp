@@ -31,6 +31,7 @@ public:
     MCAPI bool isEnabled(enum FeatureOptionID) const;
 
 //private:
+    MCAPI class std::function<void (class Option &)> _getDisableIfOtherOptionDisabledSetupCallback(enum FeatureOptionID) const;
     MCAPI class std::function<void (class Option &)> _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<enum FeatureOptionID>, std::vector<enum FeatureOptionID>);
     MCAPI class std::function<void (class Option &)> _getDisabledIfOtherOptionsEnabledSetupCallback(std::vector<enum FeatureOptionID>);
     MCAPI class std::function<void (bool &)> _getLockIfInGameCallback();

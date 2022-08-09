@@ -30,6 +30,7 @@ public:
     /*10*/ virtual bool isMultiRecipe() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIRECIPE
 #endif
+    MCAPI MultiRecipe(class gsl::basic_string_span<char const, -1>, class HashedString);
 
 
 

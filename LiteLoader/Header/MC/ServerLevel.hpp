@@ -41,9 +41,11 @@ public:
     MCVAPI void initializeLevelChunkMetaData(class LevelChunk &);
     MCVAPI void loadFunctionManager();
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
+    MCVAPI void registerEventCoordinators();
     MCVAPI void runCommand(class Command &, class CommandOrigin &, enum CommandOriginSystem);
     MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CommandOriginSystem, enum CurrentCmdVersion);
     MCVAPI void saveAdditionalData();
+    MCVAPI void saveDynamicProperties();
     MCVAPI void setCommandsEnabled(bool);
     MCVAPI void setServerTickOffset(__int64);
     MCVAPI void setWorldTemplateOptionsUnlocked();

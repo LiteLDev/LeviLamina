@@ -30,17 +30,17 @@ public:
     /*3*/ virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &) = 0;
     /*5*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /*6*/ virtual int getWorldX(int, int);
-    /*7*/ virtual int getWorldZ(int, int);
-    /*8*/ virtual void placeBlock(class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
-    /*9*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
-    /*10*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
-    /*11*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+    /*6*/ virtual bool isInInvalidLocation(class BlockSource &, class BoundingBox const &);
+    /*7*/ virtual int getWorldX(int, int);
+    /*8*/ virtual int getWorldZ(int, int);
+    /*9*/ virtual void placeBlock(class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    /*11*/ virtual void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, class Block const &, class Block const &, bool);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPIECE
 #endif
     MCAPI class BlockPos _getWorldPos(int, int, int);
     MCAPI void addTerrainAdjustmentToken(class std::shared_ptr<bool>);
-    MCAPI bool edgesLiquid(class BlockSource &, class BoundingBox const &);
     MCAPI void generateAirBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int);
     MCAPI void generateBox(class BlockSource &, class BoundingBox const &, int, int, int, int, int, int, bool, class Random &, class BlockSelector const &);
     MCAPI void generateMaybeBox(class BlockSource &, class BoundingBox const &, class Random &, float, int, int, int, int, int, int, class Block const &, class Block const &, bool, bool);

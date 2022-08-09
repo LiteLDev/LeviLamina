@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "SideBySideExtractionId.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -15,11 +16,9 @@ namespace VanillaSystemsRegistration {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void registerECSMovementToggleSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
-    MCAPI void registerRemovePassengerSystems(class EntitySystems &, bool);
+    MCAPI void _registerSideBySideApply(std::vector<unsigned int> const &, std::vector<unsigned int> const &, class EntitySystems &, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    MCAPI void registerExtractApplyBlock(struct VanillaSystemsRegistration::DependencyInfo &, enum VanillaSystemsRegistration::ExtractApplyMode, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::function<void (class IEntitySystems &)> const &);
     MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems &);
-    MCAPI void registerSideBySideApply(class EntitySystems &, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, struct VanillaSystemsRegistration::RegistrationOptions const &);
-    MCAPI void registerSideBySideExtract(class EntitySystems &, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>);
     MCAPI void registerTickFilterSystems(class EntitySystems &);
     MCAPI void registerVanillaServerTickingSystems(class EntitySystems &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const &);
 

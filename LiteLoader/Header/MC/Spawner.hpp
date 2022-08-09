@@ -41,11 +41,13 @@ public:
     MCAPI class Actor * spawnProjectile(class BlockSource &, struct ActorDefinitionIdentifier const &, class Actor *, class Vec3 const &, class Vec3 const &);
     MCAPI void tick(class BlockSource &, class LevelChunk const &);
     MCAPI static bool findNextSpawnBlockUnder(class BlockSource const &, class BlockPos &, enum MaterialType, enum SpawnBlockRequirements);
+    MCAPI static bool isSpawnPositionOk(class MobSpawnRules const &, class BlockSource &, class BlockPos const &, bool);
 
 //protected:
-    MCAPI bool _isSpawnPositionOk(class MobSpawnRules const &, class BlockSource &, class BlockPos const &, bool) const;
+    MCAPI void _spawnStructureMob(class BlockSource &, class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &);
     MCAPI void _tickSpawnMobClusters(class BlockSource &, class LevelChunk const &, class BlockPos, class std::function<void (class BlockPos const &, class SpawnConditions &)> const &);
     MCAPI void _tickSpawnStructureMobs(class BlockSource &, class LevelChunk const &, class BlockPos, class std::function<void (class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &)> const &, class std::function<class gsl::span<struct LevelChunk::HardcodedSpawningArea const, -1> (class LevelChunk const &)> const &);
+    MCAPI void _updateBaseTypeCount(class BlockSource &, class ChunkPos const &);
 
 //private:
     MCAPI int _handlePopulationCap(class MobSpawnerData const *, class SpawnConditions const &, int);
@@ -53,8 +55,6 @@ public:
     MCAPI void _sendHerdEvents(struct MobSpawnHerdInfo const &, std::vector<class Mob *> &) const;
     MCAPI void _spawnMobCluster(class BlockSource &, class BlockPos const &, class SpawnConditions &);
     MCAPI void _spawnMobInCluster(class BlockSource &, struct ActorDefinitionIdentifier, class BlockPos const &, class SpawnConditions const &, std::vector<class Mob *> &);
-    MCAPI void _spawnStructureMob(class BlockSource &, class BlockPos const &, struct LevelChunk::HardcodedSpawningArea const &, class SpawnConditions const &);
-    MCAPI void _updateBaseTypeCount(class BlockSource &, class ChunkPos const &);
     MCAPI void _updateMobCounts(class BlockSource &, struct ActorDefinitionIdentifier const &, class SpawnConditions const &);
 
 

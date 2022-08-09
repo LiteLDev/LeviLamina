@@ -35,8 +35,11 @@ public:
     MCAPI bool forceGameType() const;
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
     MCAPI std::string const & getBiomeOverride() const;
+    MCAPI enum ChatRestrictionLevel getChatRestrictionLevel() const;
+    MCAPI bool getCustomSkinsDisabled() const;
     MCAPI class PermissionsHandler const & getDefaultPermissions() const;
     MCAPI class BlockPos const & getDefaultSpawn() const;
+    MCAPI bool getDisablePlayerInteractions() const;
     MCAPI struct EduSharedUriResource const & getEduSharedUriResource() const;
     MCAPI enum EducationEditionOffer getEducationEditionOffer() const;
     MCAPI class std::optional<struct EducationLevelSettings> const & getEducationLevelSettings() const;
@@ -53,6 +56,7 @@ public:
     MCAPI bool getMultiplayerGameIntent() const;
     MCAPI enum NetherWorldType getNetherType() const;
     MCAPI bool getOnlySpawnV1Villagers() const;
+    MCAPI bool getPersonaDisabled() const;
     MCAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
     MCAPI float getRainLevel() const;
     MCAPI class LevelSeed64 getSeed() const;
@@ -76,9 +80,12 @@ public:
     MCAPI class LevelSettings & operator=(class LevelSettings &&);
     MCAPI void overrideSavedSettings(class LevelData &) const;
     MCAPI class LevelSettings & setBaseGameVersion(class BaseGameVersion const &);
+    MCAPI class LevelSettings & setChatRestrictionLevel(enum ChatRestrictionLevel);
     MCAPI class LevelSettings & setCommandsEnabled(bool);
+    MCAPI class LevelSettings & setCustomSkinsDisabled(bool);
     MCAPI class LevelSettings & setDefaultPlayerPermissions(enum PlayerPermissionLevel);
     MCAPI class LevelSettings & setDifficulty(enum Difficulty);
+    MCAPI class LevelSettings & setDisablePlayerInteractions(bool);
     MCAPI class LevelSettings & setEduSharedUriResource(struct EduSharedUriResource const &);
     MCAPI class LevelSettings & setEducationFeaturesEnabled(bool);
     MCAPI class LevelSettings & setEducationProductID(std::string);

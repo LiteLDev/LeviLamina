@@ -57,6 +57,7 @@ public:
     MCAPI bool tick(class Actor *);
     MCAPI void tryInitializeMobEffectData();
     MCAPI void update(class MobEffectInstance const &);
+    MCAPI void updateEffects(class Actor *) const;
     MCAPI ~MobEffectInstance();
     MCAPI static int const MAX_AMPLIFIER_COUNT;
     MCAPI static class MobEffectInstance const NO_EFFECT;

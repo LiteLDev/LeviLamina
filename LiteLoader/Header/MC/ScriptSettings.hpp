@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI ScriptSettings(struct ScriptSettings &&);
     MCAPI ~ScriptSettings();
 
 protected:

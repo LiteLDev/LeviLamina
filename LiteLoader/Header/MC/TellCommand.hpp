@@ -31,6 +31,11 @@ public:
 #endif
     MCAPI static void setup(class CommandRegistry &);
 
+//private:
+    MCAPI void _sendMessageToPlayers(class CommandSelectorResults<class Player> const &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
+
+
+private:
 
 
 };

@@ -23,28 +23,30 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTION
 public:
-    class ItemStackRequestAction& operator=(class ItemStackRequestAction const&) = delete;
-    ItemStackRequestAction(class ItemStackRequestAction const&) = delete;
+    class ItemStackRequestAction& operator=(class ItemStackRequestAction const &) = delete;
+    ItemStackRequestAction(class ItemStackRequestAction const &) = delete;
     ItemStackRequestAction() = delete;
 #endif
 
 
 public:
     /*0*/ virtual ~ItemStackRequestAction();
-    /*1*/ virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
+    /*1*/ virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
     /*2*/ virtual int getFilteredStringIndex() const;
-    /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
+    /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
 #endif
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream &) const;
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
-    MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream&);
+    MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 
-    // private:
+//private:
 
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
+
+
 };

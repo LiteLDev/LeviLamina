@@ -13,8 +13,8 @@ class ChunkSource {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum LoadMode;
-
+    enum LoadMode;
+    enum ChunkSourceViewGenerateMode;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKSOURCE
@@ -32,41 +32,44 @@ public:
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random &);
     /*5*/ virtual bool isChunkKnown(class ChunkPos const &);
-    /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
-    /*7*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
-    /*8*/ virtual bool postProcess(class ChunkViewSource &);
-    /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
-    /*10*/ virtual void loadChunk(class LevelChunk &, bool);
-    /*11*/ virtual void postProcessMobsAt(class BlockSource &, int, int, class Random &);
-    /*12*/ virtual bool saveLiveChunk(class LevelChunk &);
-    /*13*/ virtual void writeEntityChunkTransfer(class LevelChunk &);
-    /*14*/ virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
-    /*15*/ virtual void hintDiscardBatchBegin();
-    /*16*/ virtual void hintDiscardBatchEnd();
-    /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    /*18*/ virtual void compact();
-    /*19*/ virtual void flushPendingDiscardedChunkWrites();
-    /*20*/ virtual void flushThreadBatch();
-    /*21*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /*22*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
-    /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
-    /*24*/ virtual void clearDeletedEntities();
-    /*25*/ virtual bool canCreateViews() const;
-    /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
-    /*27*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
+    /*6*/ virtual bool isChunkSaved(class ChunkPos const &);
+    /*7*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
+    /*8*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
+    /*9*/ virtual bool postProcess(class ChunkViewSource &);
+    /*10*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
+    /*11*/ virtual void loadChunk(class LevelChunk &, bool);
+    /*12*/ virtual void postProcessMobsAt(class BlockSource &, int, int, class Random &);
+    /*13*/ virtual bool saveLiveChunk(class LevelChunk &);
+    /*14*/ virtual void writeEntityChunkTransfer(class LevelChunk &);
+    /*15*/ virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
+    /*16*/ virtual void hintDiscardBatchBegin();
+    /*17*/ virtual void hintDiscardBatchEnd();
+    /*18*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    /*19*/ virtual void compact();
+    /*20*/ virtual void flushPendingDiscardedChunkWrites();
+    /*21*/ virtual void flushThreadBatch();
+    /*22*/ virtual bool isWithinWorldLimit(class ChunkPos const &) const;
+    /*23*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
+    /*24*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
+    /*25*/ virtual void clearDeletedEntities();
+    /*26*/ virtual bool canCreateViews() const;
+    /*27*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
+    /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKSOURCE
 #endif
     MCAPI ChunkSource(class Dimension *, int);
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
-    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
+    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum ChunkSource::ChunkSourceViewGenerateMode, struct ActorUniqueID);
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunkAt(class BlockPos const &);
     MCAPI int getChunkSide() const;
     MCAPI class Dimension & getDimension() const;
     MCAPI class std::shared_ptr<class LevelChunk> getGeneratedChunk(class ChunkPos const &);
     MCAPI class Level & getLevel() const;
+    MCAPI void getServerGeneratedAreas(class ChunkPos const &, bool &, bool &, bool &);
     MCAPI void setShuttingDown(bool);
+    MCAPI static bool gPerfIsClientSide;
 
 //protected:
     MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const &, bool);
@@ -75,7 +78,7 @@ public:
     MCAPI void _checkLevelChunkForNextStage(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, enum ChunkState);
     MCAPI void _checkLevelChunkForPostProcessing(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &);
     MCAPI bool _chunkAtStage(class std::weak_ptr<class LevelChunk>, enum ChunkState);
-    MCAPI void _freeChunkGenerationGridMap(class ChunkPos const &);
+    MCAPI void _freeChunkGenerationGridMap(class ChunkPos const &, bool);
     MCAPI void _launchGenerationTask(class std::shared_ptr<class LevelChunk> const &, bool);
     MCAPI void _launchLightingTask(class std::shared_ptr<class LevelChunk> const &, class std::shared_ptr<class ChunkViewSource> const &, bool);
     MCAPI void _launchPostProcessingTask(class std::shared_ptr<class LevelChunk> const &, class std::shared_ptr<class ChunkViewSource> const &, bool);

@@ -32,6 +32,8 @@ public:
 //protected:
     MCAPI MessagingCommand(bool, bool);
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const &, class Level const &, std::vector<std::string> const &) const;
+    MCAPI void checkMutedAndSendToastIfMuted(class Player const &, std::vector<std::string> const &) const;
     MCAPI bool tryToSIFTText(class CommandOrigin const &, class CommandOutput &, std::vector<std::string> const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>) const;
 
 

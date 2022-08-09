@@ -6,27 +6,13 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum BookEditAction : unsigned char {
-    ReplacePage = 0x0,
-    AddPage = 0x1,
-    DeletePage = 0x2,
-    SwapPages = 0x3,
-    Finalize = 0x4,
-};
+
 #undef BEFORE_EXTRA
 
 class BookEditPacket : public Packet {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
-    BookEditAction mAction;
-    int mBookSlot;
-    int mPageIndex1;
-    int mPageIndex2;
-    std::string mText1;
-    std::string mText2;
-    std::string mText3;
+// Add Member There
 
 #undef AFTER_EXTRA
 

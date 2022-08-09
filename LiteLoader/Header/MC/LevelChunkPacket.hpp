@@ -31,7 +31,6 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKPACKET
 #endif
-    MCAPI LevelChunkPacket(class ChunkPos const &, bool);
     MCAPI LevelChunkPacket();
     MCAPI void pushSubChunkMetadata(unsigned __int64);
 

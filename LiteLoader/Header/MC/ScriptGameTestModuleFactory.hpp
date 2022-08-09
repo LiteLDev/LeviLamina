@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
+#include "Scripting.hpp"
 #include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
@@ -33,7 +34,8 @@ public:
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
-    MCAPI void _addV1();
+    MCAPI void _addVersions();
+    MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 
 
 private:

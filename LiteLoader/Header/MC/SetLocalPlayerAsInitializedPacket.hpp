@@ -12,9 +12,7 @@
 class SetLocalPlayerAsInitializedPacket : public Packet {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
-    ActorRuntimeID mPlayerID;
+// Add Member There
 
 #undef AFTER_EXTRA
 

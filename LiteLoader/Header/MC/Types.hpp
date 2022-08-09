@@ -1190,14 +1190,6 @@ enum class InventoryTransactionError {
     ApiDenied          = 8
 };
 
-enum ArmorSlot : int {
-    Head = 0x0,
-    Torso = 0x1,
-    Legs = 0x2,
-    Feet = 0x3,
-    _count = 0x4,
-};
-
 enum class InventorySourceType {
     Invalid                = -1,
     Container              = 0,

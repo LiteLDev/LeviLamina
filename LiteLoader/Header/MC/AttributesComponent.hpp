@@ -16,12 +16,12 @@ struct AttributesComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTESCOMPONENT
 public:
     struct AttributesComponent& operator=(struct AttributesComponent const &) = delete;
+    AttributesComponent(struct AttributesComponent const &) = delete;
     AttributesComponent() = delete;
 #endif
 
 public:
     MCAPI AttributesComponent(struct AttributesComponent &&);
-    MCAPI AttributesComponent(struct AttributesComponent const &);
     MCAPI ~AttributesComponent();
 
 protected:

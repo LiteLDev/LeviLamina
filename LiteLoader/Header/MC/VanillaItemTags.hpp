@@ -26,38 +26,43 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTAGS
 #endif
-    MCAPI static char const Armor[];
-    MCAPI static char const Arrows[];
-    MCAPI static char const Banners[];
-    MCAPI static char const Boat[];
-    MCAPI static char const ChainmailTier[];
-    MCAPI static char const Cooked[];
-    MCAPI static char const DiamondTier[];
-    MCAPI static char const Digger[];
-    MCAPI static char const Door[];
-    MCAPI static char const Fishes[];
-    MCAPI static char const Food[];
-    MCAPI static char const GoldenTier[];
-    MCAPI static char const HangingActor[];
-    MCAPI static char const Hatchet[];
-    MCAPI static char const Hoe[];
-    MCAPI static char const HorseArmor[];
-    MCAPI static char const IronTier[];
-    MCAPI static char const LeatherTier[];
-    MCAPI static char const LecternBooks[];
-    MCAPI static char const Meat[];
-    MCAPI static char const Minecart[];
-    MCAPI static char const MusicDiscs[];
-    MCAPI static char const NetheriteTier[];
-    MCAPI static char const Pickaxe[];
-    MCAPI static char const Shovel[];
-    MCAPI static char const Sign[];
-    MCAPI static char const SpawnEgg[];
-    MCAPI static char const StoneTier[];
-    MCAPI static char const Sword[];
-    MCAPI static char const Tool[];
-    MCAPI static char const VibrationDamper[];
-    MCAPI static char const WoodenTier[];
+    MCAPI static struct ItemTag const Armor;
+    MCAPI static struct ItemTag const Arrows;
+    MCAPI static struct ItemTag const Banners;
+    MCAPI static struct ItemTag const Boat;
+    MCAPI static struct ItemTag const ChainmailTier;
+    MCAPI static struct ItemTag const ChestBoat;
+    MCAPI static struct ItemTag const Coal;
+    MCAPI static struct ItemTag const Cooked;
+    MCAPI static struct ItemTag const DiamondTier;
+    MCAPI static struct ItemTag const Digger;
+    MCAPI static struct ItemTag const Door;
+    MCAPI static struct ItemTag const Fishes;
+    MCAPI static struct ItemTag const Food;
+    MCAPI static struct ItemTag const GoldenTier;
+    MCAPI static struct ItemTag const HangingActor;
+    MCAPI static struct ItemTag const Hatchet;
+    MCAPI static struct ItemTag const Hoe;
+    MCAPI static struct ItemTag const HorseArmor;
+    MCAPI static struct ItemTag const IronTier;
+    MCAPI static struct ItemTag const LeatherTier;
+    MCAPI static struct ItemTag const LecternBooks;
+    MCAPI static struct ItemTag const Meat;
+    MCAPI static struct ItemTag const Minecart;
+    MCAPI static struct ItemTag const MusicDiscs;
+    MCAPI static struct ItemTag const NetheriteTier;
+    MCAPI static struct ItemTag const Pickaxe;
+    MCAPI static struct ItemTag const PiglinLoved;
+    MCAPI static struct ItemTag const PiglinRepellents;
+    MCAPI static struct ItemTag const Shovel;
+    MCAPI static struct ItemTag const Sign;
+    MCAPI static struct ItemTag const Signs;
+    MCAPI static struct ItemTag const SpawnEgg;
+    MCAPI static struct ItemTag const StoneTier;
+    MCAPI static struct ItemTag const Sword;
+    MCAPI static struct ItemTag const Tool;
+    MCAPI static struct ItemTag const VibrationDamper;
+    MCAPI static struct ItemTag const WoodenTier;
 
 
 

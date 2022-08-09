@@ -27,6 +27,7 @@ public:
 #endif
     MCAPI SerializerContext();
     MCAPI void clear();
+    MCAPI void consumeContext(class SerializerContext &&);
     MCAPI class SerializerContext detachContext();
     MCAPI void error(std::string const &);
     MCAPI class SerializerContext & operator=(class SerializerContext &&);

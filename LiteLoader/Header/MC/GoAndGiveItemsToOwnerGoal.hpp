@@ -34,6 +34,11 @@ public:
 #endif
     MCAPI GoAndGiveItemsToOwnerGoal(class Mob &);
 
+//private:
+    MCAPI bool _attemptToGiveItem();
+
+
+private:
 
 
 };

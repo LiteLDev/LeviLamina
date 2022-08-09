@@ -49,7 +49,7 @@ public:
 
 //private:
     MCAPI void _buildSummonableActorList(class Experiments const &, class std::function<void (std::string const &, struct ActorFactoryData const &)>) const;
-    MCAPI class OwnerPtrT<struct EntityRefTraits> _constructActor(struct ActorDefinitionIdentifier const &, class Vec3 const &, class Vec2 const &) const;
+    MCAPI class OwnerPtrT<struct EntityRefTraits> _constructActor(struct ActorDefinitionIdentifier const &, class Vec3 const &, class Vec2 const &, std::vector<std::string> const *) const;
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup *);
     MCAPI void _loadDefinitionsHelper();
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;

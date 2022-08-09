@@ -28,11 +28,8 @@ public:
 #endif
     MCAPI class ActorGameplayHandler & getActorGameplayHandler();
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler> &&);
-    MCAPI void sendActorCarriedItemChanged(class Actor &, class ItemInstance const &, class ItemInstance const &, enum HandSlot);
     MCAPI void sendActorCreated(class Actor &);
     MCAPI void sendActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
-    MCAPI void sendActorDroppedItem(class Actor &, class ItemInstance const &);
-    MCAPI void sendActorEquippedArmor(class Actor &, class ItemInstance const &, enum ArmorSlot);
     MCAPI void sendActorMove(class Actor &, class Vec3 const &);
     MCAPI void sendActorPredictedMove(class Actor &, enum MovePredictionType, class Vec3 const &);
     MCAPI void sendActorSneakChanged(class Actor &, bool);

@@ -15,13 +15,12 @@ struct SideBySidePartialComparison {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDEPARTIALCOMPARISON
 public:
-    SideBySidePartialComparison(struct SideBySidePartialComparison const &) = delete;
+    struct SideBySidePartialComparison& operator=(struct SideBySidePartialComparison const &) = delete;
     SideBySidePartialComparison() = delete;
 #endif
 
 public:
-    MCAPI struct SideBySidePartialComparison & operator=(struct SideBySidePartialComparison const &);
-    MCAPI struct SideBySidePartialComparison & operator=(struct SideBySidePartialComparison &&);
+    MCAPI SideBySidePartialComparison(struct SideBySidePartialComparison const &);
 
 protected:
 

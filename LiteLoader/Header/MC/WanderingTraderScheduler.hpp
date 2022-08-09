@@ -35,11 +35,10 @@ public:
 
 //private:
     MCAPI bool _doesWanderingTraderExist() const;
-    MCAPI class std::optional<class BlockPos> _findClosestSpawnablePositionInColumn(class BlockPos const &, class BlockSource &);
+    MCAPI class std::optional<class BlockPos> _findValidSpawnPosUnder(class BlockPos const &, class BlockSource &) const;
+    MCAPI class BlockPos _getRandomHeightmapPosAroundOrigin(class BlockSource const &, class BlockPos const &, int, bool);
     MCAPI class Actor * _getRandomPlayerInOverworld() const;
-    MCAPI class BlockPos _getRandomXZAroundPos(class BlockPos const &, int, bool);
     MCAPI class std::optional<class BlockPos> _getSpawnPosFromNearestVillageToPlayerPos(class BlockPos const &, class BlockSource &);
-    MCAPI bool _isPosSafeForSpawning(class BlockPos const &, class BlockSource &);
 
 
 private:

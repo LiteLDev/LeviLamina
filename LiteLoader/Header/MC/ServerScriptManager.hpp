@@ -43,7 +43,7 @@ public:
     MCAPI void onMainThreadStartLeaveGame();
 
 //private:
-    MCAPI void _loadAndRunAllPlugins(class Minecraft &, class ServerLevel &);
+    MCAPI void _loadAndRunAllPlugins(class ServerInstance &, class ServerLevel &);
     MCAPI void _registerEventHandlers(class Level &) const;
     MCAPI void _sendInitializeEvent(class ServerLevel &) const;
     MCAPI void _unregisterEventHandlers(class Level &) const;

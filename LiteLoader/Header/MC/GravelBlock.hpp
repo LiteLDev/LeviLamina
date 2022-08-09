@@ -60,15 +60,15 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*187*/ virtual void __unk_vfn_187();
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
-    /*204*/ virtual std::string getDustParticleName(class Block const &) const;
-    /*205*/ virtual void __unk_vfn_205();
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*177*/ virtual void __unk_vfn_177();
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual class mce::Color getDustColor(class Block const &) const;
+    /*193*/ virtual std::string getDustParticleName(class Block const &) const;
+    /*194*/ virtual void __unk_vfn_194();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRAVELBLOCK
 #endif
     MCAPI GravelBlock(std::string const &, int);

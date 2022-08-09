@@ -47,7 +47,7 @@ public:
     MCAPI std::string getClientPlatformOfflineId() const;
     MCAPI std::string getClientPlatformOnlineId() const;
     MCAPI unsigned __int64 getClientRandomId() const;
-    MCAPI unsigned char getClientSubId() const;
+    MCAPI enum SubClientId getClientSubId() const;
     MCAPI std::string getClientThirdPartyName() const;
     MCAPI std::string getDeviceId() const;
     MCAPI enum BuildPlatform getDeviceOS() const;
@@ -71,6 +71,7 @@ public:
     MCAPI bool isEduMode() const;
     MCAPI bool isPersonaSkin() const;
     MCAPI bool isPremiumSkin() const;
+    MCAPI bool isTrustedSkin() const;
     MCAPI std::string toString();
     MCAPI bool verify(std::vector<std::string> const &, __int64);
     MCAPI bool verifySelfSigned();

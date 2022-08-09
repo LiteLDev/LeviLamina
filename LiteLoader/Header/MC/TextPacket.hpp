@@ -38,6 +38,7 @@ public:
     MCAPI static class TextPacket createJukeboxPopup(std::string const &, std::vector<std::string> const &);
     MCAPI static class TextPacket createSystemMessage(std::string const &);
     MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const &, std::string, std::string);
+    MCAPI static class TextPacket createTextObjectWhisperMessage(std::string const &, std::string const &, std::string const &);
     MCAPI static class TextPacket createTextObjectWhisperMessage(class ResolvedTextObject const &, std::string const &, std::string const &);
     MCAPI static class TextPacket createTranslated(std::string const &, std::vector<std::string> const &);
     MCAPI static class TextPacket createTranslatedAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);

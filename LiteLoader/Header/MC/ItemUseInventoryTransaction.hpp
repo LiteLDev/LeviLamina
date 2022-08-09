@@ -35,6 +35,7 @@ public:
     MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const &);
     MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
     MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, unsigned char) const;
+    MCAPI void resendPlayerState(class Player &) const;
     MCAPI class ItemUseInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 //private:

@@ -12,10 +12,7 @@
 class SettingsCommandPacket : public Packet {
 
 #define AFTER_EXTRA
-    // Add Member There
-public:
-    std::string mCommandString;
-    bool mSupressOutput;
+// Add Member There
 
 #undef AFTER_EXTRA
 
