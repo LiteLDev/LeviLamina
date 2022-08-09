@@ -1,35 +1,25 @@
 #include <Utils/CryptHelper.h>
 #include <openssl/md5.h>
-#include <openssl/crypto.h>
+#include <openssl/evp.h>
 #include <openssl/sha.h>
 using namespace std;
 
 unsigned char *oldMD5(const unsigned char *d, size_t n, unsigned char *md)
 {
-    MD5_CTX c;
-    static unsigned char m[MD5_DIGEST_LENGTH];
+    EVP_MD_CTX *c;
+    static unsigned char *m;
+    unsigned int md5_digest_len = EVP_MD_size(EVP_md5());
+
 
     if (md == NULL)
         md = m;
-    if (!MD5_Init(&c))
+    c = EVP_MD_CTX_new();
+    if (!EVP_DigestInit_ex(c, EVP_md5(), NULL))
         return NULL;
-#ifndef CHARSET_EBCDIC
-    MD5_Update(&c, d, n);
-#else
-    {
-        char temp[1024];
-        unsigned long chunk;
-
-        while (n > 0) {
-            chunk = (n > sizeof(temp)) ? sizeof(temp) : n;
-            ebcdic2ascii(temp, d, chunk);
-            MD5_Update(&c, temp, chunk);
-            n -= chunk;
-            d += chunk;
-        }
-    }
-#endif
-    MD5_Final(md, &c);
+    EVP_DigestUpdate(c, d, n);
+    m = (unsigned char *)OPENSSL_malloc(md5_digest_len);
+    EVP_DigestFinal_ex(c, md, &md5_digest_len);
+    EVP_MD_CTX_free(c);
     OPENSSL_cleanse(&c, sizeof(c)); /* security consideration */
     return md;
 }
