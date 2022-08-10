@@ -1,119 +1,240 @@
 {
-    "api.parseJson.fail": "Json parse error",
-    "base.getDimName.0": "Overworld",
-    "base.getDimName.1": "Nether",
-    "base.getDimName.2": "End",
-    "base.getDimName.unknown": "Other dimension",
-    "init.fileMapping.fail": "Failed to load global shared data",
-    "init.idFile.fail": "Failed to initialize unique identification file! Code: ",
-    "init.llMoney.noFound": "LLMoney.dll not found, ScriptEngine Economy System won't work",
-    "init.loadConfig.fail": "Loading ScriptEngine config failed",
-    "init.mapFile.fail": "Global shared data mapping failed",
-    "llseapi.require.download.success": " - Successfully downloaded require! Path: ",
-    "llseapi.require.fail": " - Plugin require load failed",
-    "llseapi.require.network.fail": " - Download plugin require failed! Code: ",
-    "llseapi.require.success": " - Plugin require loaded successfully. Loaded: ",
-    "remoteCall.createEventObject.fail": "Creating Event Object failed",
-    "remoteCall.createMessageThread.fail": "Creating Message Thread failed",
-    "remoteCall.inRemoteEngine.fail": "Remote call error in remote engine",
-    "remoteCall.postMessage.fail": "Posting remote call information failed",
-    "remoteCall.postMessageReturn.fail": "Remote call post return value failed",
-    "remoteCall.timeout.fail": "Remote call timeout, call failed",
-    "remoteCall.waitFail.fail": "Remote call waiting failed, call failed",
-    "ll.main.checkRunningBDS.detected": "Detected the existence of another BDS process with the same path!",
-    "ll.main.checkRunningBDS.tip": "This may cause the network port and the level to be occupied",
-    "ll.main.checkRunningBDS.ask": "Do you want to terminate the process with PID {}?  (y=Yes, n=No)",
-    "ll.main.fixAllowList.removeEmptyAllowlist": "allowlist.json is empty! Removing...",
-    "ll.main.fixAllowList.checkManually": "Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually",
-    "ll.main.fixAllowList.renamed": "Renamed whitelist.json to allowlist.json",
-    "ll.main.warning.inDevMode": "Currently in developer mode!",
-    "ll.main.warning.betaVersion": "Currently using a beta version.",
-    "ll.main.warning.productionEnv": "PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!",
-    "ll.main.warning.protocolVersionNotMatch.1": "Protocol version not match, target version: {}, current version: {}.",
-    "ll.main.warning.protocolVersionNotMatch.2": "This will most likely crash the server, please use the LiteLoader that matches the BDS version!",
-    "ll.main.license": "LiteLoader is licensed under AGPLv3",
-    "ll.main.newForum": "Our new forum is live! -> https://forum.litebds.com",
-    "ll.main.thanks.rhymc": "Thanks to RhyMC(rhymc.com) for the support",
-    "ll.antiAbnormalItem.detected": "Player({}) item data error!",
-    "ll.antiAbnormalItem.itemInfo": "Item: {}",
-    "ll.cmd.tpdim.success": "Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-    "ll.cmd.tpdim.error.noActorTeleported": "No Actor Teleported",    
-    "ll.cmd.tpdim.error.noActorSpecified": "No Actor Specified",
-    "ll.cmd.tpdim.invalidDimid": "Invalid DimensionId: {}",
-    "ll.cmd.listPlugin.overview": "Plugin List [{}]",
-    "ll.cmd.listPlugin.tip": "* Send command \"ll list <Plugin Name>\" for more information",
-    "ll.cmd.pluginInfo.title": "Plugin <{}>",
-    "ll.cmd.pluginInfo.error.pluginNotFound": "Plugin <{}> is not found!",
-    "ll.cmd.version.msg": "Bedrock Dedicated Server {}\n- with LiteLoaderBDS {}\n- Network Protocol: {}",
-    "ll.cmd.help.msg": "[Introduction]\nLiteLoaderBDS is an unofficial plugin loader for modding development of Bedrock Dedicated Server.\nIt provides a huge nubmer of APIs, a powerful event system and lots of packed utility interfaces .\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nWelcome to our github project to get more information ~",
-    "ll.cmd.loadPlugin.success": "Plugin <{}> loaded.",
-    "ll.cmd.loadPlugin.fail": "Failed to load plugin {}",
-    "ll.cmd.unloadPlugin.success": "Plugin <{}> unloaded.",
-    "ll.cmd.unloadPlugin.fail": "Failed to unload plugin <{}>",
-    "ll.cmd.reloadPlugin.success": "Plugin <{}> reloaded.",
-    "ll.cmd.reloadPlugin.fail": "Failed to reload plugin <{}>",
-    "ll.cmd.reloadAllPlugins.success": "{} plugins reloaded successfully.",
-    "ll.cmd.reloadAllPlugins.fail": "Failed to reload any plugin",
-    "ll.cmd.error.noPathSpecified": "You must provide a valid path of LiteLoader plugin!",
-    "ll.cmd.error.noNameSpecified": "You must provide a valid name of LiteLoader plugin!",
-    "ll.config.save.fail": "Failed to save(create) configuration file!",
-    "ll.config.creating": "LL Config File <{}> not found. Creating configuration file...",
-    "ll.config.updating": "Updating configuration file...",
-    "ll.config.warning.configOutdated": "LL Config File <{}> is outdated.",
-    "ll.crashLogger.existsingDebuggerDetected": "Existing debugger detected. Builtin CrashLogger will not work.",
-    "ll.crashLogger.wineDetected": "Wine Environment detected. Builtin CrashLogger will not work.",
-    "ll.crashLogger.error.cannotCreateDaemonProcess": "Couldn't Create CrashLogger Daemon Process!",
-    "ll.crashLogger.warning.crashLoggerDisabled.1": "Builtin CrashLogger is not enabled because the configuration disabled it.",
-    "ll.crashLogger.warning.crashLoggerDisabled.2": "There will be no crash log when unhandled exception occurs,",
-    "ll.crashLogger.warning.crashLoggerDisabled.3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
-    "ll.crashLogger.warning.crashLoggerDisabled.4": "We strongly recommend you to enable it to ensure server stability",
-    "ll.crashLogger.warning.conflicts.1": "Builtin CrashLogger is not enabled because plugin <{}> conflicts with it",
-    "ll.crashLogger.warning.conflicts.2": "There will be no crash log when unhandled exception occurs,",
-    "ll.crashLogger.warning.conflicts.3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
-    "ll.crashLogger.warning.conflicts.4": "Since CrashLogger is an important component which ensures server stability",
-    "ll.crashLogger.warning.conflicts.5": "We recommend you to think twice about the usage of plugin <{}>",
-    "ll.crashLogger.init.fail.msg": "Builtin CrashLogger failed to start!",
-    "ll.crashLogger.init.fail.tip": "There will be no crash log when unhandled exception occurs.",
-    "ll.addonsHelper.error.addonConfigNotFound": "Addon config not found!",
-    "ll.addonsHelper.error.addonFileNotFound": "Addon file \"{}\" not found!",
-    "ll.addonsHelper.error.addonNotFound": "Addon <{}> not found!",
-    "ll.addonsHelper.error.outOfRange": "Addon index {} out of range",
-    "ll.addonsHelper.error.unsupportedFileType": "Unsupported type of file found!",
-    "ll.addonsHelper.error.parsingEnabledAddonsList": "Error when parsing enabled addons list",
-    "ll.addonsHelper.error.noAddonInstalled": "No addon was installed.",
-    "ll.addonsHelper.error.installationAborted": "Install progress aborted!",
-    "ll.addonsHelper.displayError": "Error: {}",
-    "ll.addonsHelper.removeAddonFromList.fail": "Fail to remove addon <{}> from config file!",
-    "ll.addonsHelper.removeAddonFromList.success": "Removed addon <{}> from config file.",
-    "ll.addonsHelper.addAddonToList.invalidList": "Invalid Addon List File {}, backup to {} and reset to default",
-    "ll.addonsHelper.addAddonToList.fail": "Fail to insert the addon {} into {}!",
-    "ll.addonsHelper.addAddonToList.success": "Added addon <{}> to config file.",
-    "ll.addonsHelper.install.installing": "Installing addon <{}>...",
-    "ll.addonsHelper.install.error.failToUncompress.msg": "Fail to uncompress addon {}!",
-    "ll.addonsHelper.install.error.failToUncompress.exitCode": "Exit Code: {}",
-    "ll.addonsHelper.install.error.failToUncompress.programOutput": "Program Output:\n{}",
-    "ll.addonsHelper.uninstall.success": "Addon <{}> uninstalled.",
-    "ll.addonsHelper.autoInstall.tip.dirCreated": "Directory created. You can move compressed Addon files to {} to get installed at next launch.",
-    "ll.addonsHelper.autoInstall.working": "{} new addon(s) found to install. Working...",
-    "ll.addonsHelper.autoInstall.installed": "Addon {} has beed installed.",
-    "ll.addonsHelper.autoInstall.installedCount": "{} addon(s) was installed.",
-    "ll.addonsHelper.cmd.output.list.overview": "Addons: {} addon(s) installed:",
-    "ll.loader.loadScriptEngine.error.versionNotMatch": "The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>",
-    "ll.loader.loadScriptEngine.success": "* ScriptEngine for {} loaded",
-    "ll.loader.loadDotNetEngine.warning.notFinished": "LiteLoader.NET is not finished yet!",
-    "ll.loader.loadDotNetEngine.error.versionNotMatch": "The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>",
-    "ll.loader.loadDotNetEngine.success": "* .NET Engine loaded",
-    "ll.loader.loadMain.loadingPlugins": "Loading plugins...",
-    "ll.loader.loadMain.loadedShellLink": "ShellLinked Plugin <{} => {}> loaded",
-    "ll.loader.loadMain.loadedPlugin": "Plugin <{}> loaded",
-    "ll.loader.loadMain.done": "{} plugins loaded.",
-    "ll.pluginManager.error.invalidFileType": "Invalid plugin file type {} in {}",
-    "ll.pluginManager.error.noValidPluginFound": "No valid plugin found at {}!",
-    "ll.pluginManager.error.failToRegisterPlugin": "Failed to register plugin {}!",
-    "ll.pluginManager.error.hasBeenRegistered": "A plugin named {} has been registered",
-    "ll.pluginManager.error.failToLoadPlugin": "Fail to load the plugin {}!",
-    "ll.pluginManager.error.pluginNotFound": "Plugin <{}> is not found",
-    "ll.pluginManager.warning.unloadDllNotFinished": "Unload function of dll plugins is not finished.",
-    "ll.pluginManager.warning.reloadDllNotFinished": "Reload function of dll plugins is not finished.",
-    "ll.pluginManager.reloadPlugin.fail": "Failed to reload plugin {}!"
+    "base": {
+        "getDimName": {
+            "0": "โลกปกติ",
+            "1": "เนเธอร์",
+            "2": "ดิเอนด์",
+            "unknown": "มิติอื่นๆ"
+        }
+    },
+    "ll": {
+        "main": {
+            "checkRunningBDS": {
+                "detected": "ตรวจพบการทำงาน BDS อื่นในตำแหน่งเดียวกัน!",
+                "tip": "ซึ่งอาจทำให้เครือข่ายพอร์ตและระดับถูกครอบครอง",
+                "ask": "คุณต้องการยุติการทำงานของ PID {} หรือไม่? (y=ใช่ n=ไม่ใช่)"
+            },
+            "fixAllowList": {
+                "removeEmptyAllowlist": "allowlist.json ว่างเปล่า! กำลังลบ...",
+                "checkManually": "มีทั้ง allowlist.json และ whitelist.json ไม่ว่างเปล่า โปรดตรวจสอบด้วยตนเอง",
+                "renamed": "เปลี่ยนชื่อ whitelist.json ไปยัง allowlist.json"
+            },
+            "warning": {
+                "inDevMode": "ขณะนี้อยู่ในโหมดผู้พัฒนา!",
+                "betaVersion": "ขณะนี้กำลังใช้เวอร์ชั่นเบต้า",
+                "productionEnv": "โปรดอย่าใช้ในงานโปรดักชั่นจริง!",
+                "protocolVersionNotMatch": {
+                    "1": "เวอร์ชันโปรโตคอลไม่ตรงกัน เวอร์ชันที่ต้องการ: {}, ขณะนี้ใช้เวอร์ชั่น: {}",
+                    "2": "ดำเนินการนี้จะทำให้เซิร์ฟเวอร์มีปัญหา โปรดใช้ LiteLoader ที่ตรงกับเวอร์ชั่น BDS!"
+                }
+            }
+        },
+        "antiAbnormalItem": {
+            "detected": "ผู้เล่น({}) ข้อมูลไอเทมเกิดข้อผิดพลาด",
+            "itemInfo": "ไอเทม: {}"
+        },
+        "cmd": {
+            "tpdim": {
+                "success": "เทเลพอร์ต {} ไปยัง {} ({:2f}, {:2f}, {:2f})",
+                "error": {
+                    "noActorTeleported": "ไม่มีเอนทิตีที่เทเลพอร์ต",
+                    "noActorSpecified": "ไม่มีเอนทิตีที่ระบุไว้"
+                },
+                "invalidDimid": "ไม่รู้จักมิติไอดีนี้: {}"
+            },
+            "listPlugin": {
+                "overview": "รายการปลั๊กอิน [{}]",
+                "tip": "* ส่งคำสั่ง \"ll list <ชื่อปลั๊กอิน>\" สำหรับข้อมูลเพิ่มเติม"
+            },
+            "pluginInfo": {
+                "title": "ปลั๊กอิน <{}>",
+                "error": {
+                    "pluginNotFound": "ไม่พบปลั๊กอิน <{}>"
+                }
+            },
+            "version": {
+                "msg": "Bedrock Dedicated Server {}\n- ด้วย LiteLoaderBDS {}\n- โปรโตคอลอินเทอร์เน็ต: {}"
+            },
+            "help": {
+                "msg": "[Introduction]\nLiteLoaderBDS เป็นตัวโหลดเดอร์ปลั๊กอินที่ไม่เป็นทางการสำหรับการพัฒนามอดของ Bedrock Dedicated Server\nมันมี API จำนวนมาก ระบบอีเวนต์ที่ทรงพลัง และอินเทอร์เฟซยูทิลิตี้ที่อัดแน่นมากมาย\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nยินดีต้อนรับสู่โครงการ github ของเราเพื่อรับข้อมูลเพิ่มเติม ~"
+            },
+            "loadPlugin": {
+                "success": "ปลั๊กอิน <{}> โหลดสำเร็จ.",
+                "fail": "ไม่สามารถโหลดปลั๊กอิน {}"
+            },
+            "unloadPlugin": {
+                "success": "ปลั๊กอิน <{}> ยกเลิกโหลดสำเร็จ.",
+                "fail": "ไม่สามารถยกเลิกการโหลดปลั๊กอิน <{}>"
+            },
+            "reloadPlugin": {
+                "success": "ปลั๊กอิน <{}> รีโหลดสำเร็จ.",
+                "fail": "ไม่สามารถรีโหลดปลั๊กอิน <{}>"
+            },
+            "reloadAllPlugins": {
+                "success": "ปลั๊กอิน {} รีโหลดสำเร็จ",
+                "fail": "ไม่สามารถรีโหลดปลั๊กอินใดๆ"
+            },
+            "error": {
+                "noPathSpecified": "คุณต้องระบุตำแหน่งที่ถูกต้องของปลั๊กอิน LiteLoader!",
+                "noNameSpecified": "คุณต้องระบุชื่อที่ถูกต้องของปลั๊กอิน LiteLoader!"
+            }
+        },
+        "config": {
+            "save": {
+                "fail": "ไม่สามารถบันทึก(สร้าง) ไฟล์คอนฟิกได้!"
+            },
+            "creating": "ไม่พบคอนฟิกไฟล์ LL <{}> กำลังสร้างคอนฟิกไฟล์ใหม่...",
+            "warning": {
+                "configOutdated": "ไฟล์คอนฟิก LL <{}> ล้าสมัย"
+            },
+            "updating": "กำลังอัพเดทไฟล์คอนฟิก.."
+        },
+        "crashLogger": {
+            "existsingDebuggerDetected": "ตรวจพบดีบักที่มีอยู่ดั้งนั้น CrashLogger ในตัวจะไม่ทำงาน",
+            "wineDetected": "ตรวจพบสภาพแวดล้อมของ Wine CrashLogger ในตัวจะไม่ทำงาน",
+            "error": {
+                "cannotCreateDaemonProcess": "ไม่สามารถเริ่มกระบวนการ CrashLogger Daemon!"
+            },
+            "warning": {
+                "crashLoggerDisabled": {
+                    "1": "ไม่ได้เปิดใช้งาน CrashLogger ในตัวเนื่องจากการกำหนดค่าคอนฟิก",
+                    "2": "จะไม่มีบันทึกข้อขัดข้องเมื่อเกิดข้อยกเว้นที่ไม่สามารถจัดการได้,",
+                    "3": "ซึ่งทำให้แทบเป็นไปไม่ได้เลยที่จะค้นหาสาเหตุของการล่มและที่มาของการล่ม",
+                    "4": "เราขอแนะนำให้คุณเปิดใช้งานเพื่อให้แน่ใจว่าเซิร์ฟเวอร์มีความเสถียร"
+                },
+                "conflicts": {
+                    "1": "ไม่ได้เปิดใช้งาน CrashLogger ในตัวเนื่องจากปลั๊กอิน <{}> ขัดแย้งกับมัน",
+                    "2": "จะไม่มีบันทึกข้อขัดข้องเมื่อเกิดข้อยกเว้นที่ไม่สามารถจัดการได้,",
+                    "3": "ซึ่งทำให้แทบเป็นไปไม่ได้เลยที่จะค้นหาสาเหตุของการล่มและที่มาของการล่ม",
+                    "4": "เนื่องจาก CrashLogger เป็นส่วนประกอบสำคัญที่ทำให้เซิร์ฟเวอร์มีความเสถียร",
+                    "5": "เราขอแนะนำให้คุณคิดให้รอบคอบเกี่ยวกับการใช้ปลั๊กอิน <{}>"
+                }
+            },
+            "init": {
+                "fail": {
+                    "msg": "CrashLogger ภายในไม่สามารถเริ่มต้นได้!",
+                    "tip": "จะไม่มีบันทึกข้อขัดข้องเมื่อเกิดข้อยกเว้นที่ไม่สามารถจัดการได้"
+                }
+            }
+        },
+        "addonsHelper": {
+            "error": {
+                "addonConfigNotFound": "ไม่พบไฟล์คอนฟิกแอดออน \"{}\"",
+                "addonFileNotFound": "ไม่พบไฟล์แอดออน \"{}\"",
+                "addonNotFound": "ไม่พบไฟล์แอดออน \"{}\"",
+                "outOfRange": "Addon index {} อยู่นอกพื้นที่",
+                "unsupportedFileType": "ไม่รองรับสกุลไฟล์นี้",
+                "parsingEnabledAddonsList": "เกิดข้อผิดพลาดเมื่อแยกวิเคราะห์แอดออนที่เปิดใช้งาน",
+                "noAddonInstalled": "ไม่ได้ติดตั้งแอดออน",
+                "installationAborted": "ยกเลิกความคืบหน้าในการติดตั้ง!"
+            },
+            "displayError": "ข้อผิดพลาด: {}",
+            "removeAddonFromList": {
+                "fail": "ไม่สามารถลบ addon <{}> จากไฟล์คอนฟิกได้!",
+                "success": "ลบแอดออน <{}> จากไฟล์คอนฟิก"
+            },
+            "addAddonToList": {
+                "invalidList": "ไฟล์รายการแอดออนไม่ถูกต้อง {} สำรองข้อมูลไปที่ {} และรีเซ็ตเป็นค่าเริ่มต้น",
+                "fail": "ไม่สามารถแทรกส่วนเสริม {} ลงใน {}!",
+                "success": "เพิ่มแอดออน <{}> จากไฟล์คอนฟิก"
+            },
+            "install": {
+                "installing": "กำลังติดตั้งแอดออน <{}>...",
+                "error": {
+                    "failToUncompress": {
+                        "msg": "ไม่สามารถคลายบีบอัดแอดออน {}!",
+                        "exitCode": "Exit Code: {}",
+                        "programOutput": "เอาท์พุตโปรแกรม:\n{}"
+                    }
+                }
+            },
+            "uninstall": {
+                "success": "แอดออน <{}> ถอนการติดตั้งสำเร็จ"
+            },
+            "autoInstall": {
+                "tip": {
+                    "dirCreated": "สร้างไดเร็กทอรีแล้ว คุณสามารถย้ายไฟล์แอดออนที่บีบอัดไปยัง {} เพื่อติดตั้งในการเปิดครั้งถัดไป"
+                },
+                "working": "{} เจอแอดออนใหม่(s) พร้อมติดตั้ง กำลังทำงาน...",
+                "installed": "ติดตั้งแอดออน {} แล้ว",
+                "installedCount": "{} แอดออนถูกติดตั้งแล้ว"
+            },
+            "cmd": {
+                "output": {
+                    "list": {
+                        "overview": "แอดออน: {} แอดออนที่ติดตั้ง:"
+                    }
+                }
+            }
+        },
+        "loader": {
+            "loadScriptEngine": {
+                "error": {
+                    "versionNotMatch": "ไฟล์เวอร์ชั่น <{}> ของ Script Engine สำหรับ {} ไม่ตรงกับเวอร์ชั่น LiteLoader <{}>"
+                },
+                "success": "* ScriptEngine สำหรับ {} โหลดแล้ว"
+            },
+            "loadDotNetEngine": {
+                "warning": {
+                    "notFinished": "LiteLoader.NET ยังไม่เสร็จ!"
+                },
+                "error": {
+                    "versionNotMatch": "ไฟล์เวอร์ชั่น <{}> ของ LiteLoader.NET ไม่ตรงกับเวอร์ชั่น LiteLoader <{}>"
+                },
+                "success": "* .NET Engine โหลดแล้ว"
+            },
+            "loadMain": {
+                "loadingPlugins": "โหลดปลั๊กอิน...",
+                "loadedShellLink": "ปลั๊กอิน ShellLinked <{} => {}> โหลดแล้ว",
+                "loadedPlugin": "ปลั๊กอิน <{}> โหลดสำเร็จ",
+                "done": "ปลั๊กอิน {} โหลดแล้ว",
+                "start": "Loading native plugins..."
+            }
+        },
+        "notice": {
+            "newForum": "Our new forum is live! -> {}",
+            "license": "LiteLoader is licensed under {}"
+        },
+        "pluginManager": {
+            "error": {
+                "invalidFileType": "ประเภทไฟล์ปลั๊กอินไม่ถูกต้อง {} ใน {}",
+                "noValidPluginFound": "ไม่พบปลั๊กอินที่ถูกต้องที่ {}!",
+                "failToRegisterPlugin": "ไม่สามารถลงทะเบียนปลั๊กอิน {}!",
+                "hasBeenRegistered": "ปลั๊กอินชื่อ {} ได้รับการลงทะเบียนแล้ว",
+                "failToLoadPlugin": "ไม่สามารถโหลดปลั๊กอิน {}!",
+                "pluginNotFound": "ไม่พบปลั๊กอิน <{}>"
+            },
+            "warning": {
+                "unloadDllNotFinished": "ยกเลิกการโหลดฟังก์ชั่นของ dll ปลั๊กอิน ยังไม่สำเร็จ",
+                "reloadDllNotFinished": "โหลดซ้ำฟังก์ชั่นของ dll ปลั๊กอิน ยังไม่สำเร็จ"
+            },
+            "reloadPlugin": {
+                "fail": "ไม่สามารถรีโหลดปลั๊กอิน {}!"
+            }
+        }
+    },
+    "llse": {
+        "init": {
+            "llMoney": {
+                "notFound": "ไม่พบ LLMoney.dll ของระบบ ScriptEngine Economy จะไม่ทำงาน"
+            }
+        },
+        "api": {
+            "ll": {
+                "require": {
+                    "success": " - ปลั๊กอินที่ต้องการโหลดสำเร็จแล้ว โหลด: ",
+                    "fail": " - ปลั๊กอินที่ต้องการโหลดไม่สำเร็จ",
+                    "download": {
+                        "success": " - ไฟล์ที่ต้องการดาวน์โหลดสำเร็จ ตำแหน่ง: ",
+                        "fail": " - ดาวน์โหลดปลั๊กอินที่ต้องการไม่สำเร็จ! รหัส: "
+                    }
+                }
+            }
+        },
+        "apiHelp": {
+            "parseJson": {
+                "fail": "ข้อผิดพลาดในการแยกวิเคราะห์ Json"
+            }
+        }
+    }
 }
