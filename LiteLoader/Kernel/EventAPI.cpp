@@ -2108,33 +2108,35 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
 }
 
 #include "Impl/FormPacketHelper.h"
-
+#include <MC/Json.hpp>
 ////////////// FormResponsePacket //////////////
+
 TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
                        NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
     Packet* packet = *(Packet**)pPacket;
     ServerPlayer* sp = handler->getServerPlayer(*id, 0);
-
     if (sp) {
-        unsigned formId = dAccess<unsigned>(packet, 48);
-        string data = dAccess<string>(packet, 56);
+        if (!dAccess<bool>(packet, 81)) {
+            if (dAccess<bool>(packet, 72)) {
+                auto formId = dAccess<int>(packet, 48);
+                auto json = dAccess<Json::Value>(packet, 56);
+                string data = json.toStyledString();
+                if (data.back() == '\n')
+                    data.pop_back();
 
-        if (data.back() == '\n')
-            data.pop_back();
+                IF_LISTENED(FormResponsePacketEvent) {
+                    FormResponsePacketEvent ev{};
+                    ev.mServerPlayer = sp;
+                    ev.mFormId = formId;
+                    ev.mJsonData = data;
 
-        IF_LISTENED(FormResponsePacketEvent) {
-            FormResponsePacketEvent ev{};
-            ev.mServerPlayer = sp;
-            ev.mFormId = formId;
-            ev.mJsonData = data;
-
-            if (!ev.call())
-                return;
+                    if (!ev.call())
+                        return;
+                }
+                IF_LISTENED_END(FormResponsePacketEvent)
+                HandleFormPacket(sp, formId, data);
+            }
         }
-        IF_LISTENED_END(FormResponsePacketEvent)
-
-        HandleFormPacket(sp, formId, data);
     }
-
     original(this, id, handler, pPacket);
 }
