@@ -10,7 +10,7 @@
 
 #if defined(LLSE_BACKEND_NODEJS)
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS_NAME
-	#define LLSE_PLUGINPACK_EXTENSION ".ll.zip"
+	#define LLSE_PLUGINPACK_EXTENSION ".llplugin"
 	#define LLSE_PLUGINS_EXTENSION ".js"
 #elif defined(LLSE_BACKEND_QUICKJS)
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_QUICKJS_NAME
@@ -21,7 +21,7 @@
 #endif
 
 #define LLSE_VALID_BACKENDS std::set<std::string>({"Js", "Lua", "NodeJs"})
-#define LLSE_VALID_PLUGIN_EXTENSIONS std::set<std::string>({".js", ".lua", ".ll.zip"})
+#define LLSE_VALID_PLUGIN_EXTENSIONS std::set<std::string>({".js", ".lua", ".llplugin"})
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()
 
 

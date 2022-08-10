@@ -119,7 +119,7 @@ void LoadMain_NodeJs()
     int installCount = 0;
     int count = 0;
 
-    // Unpack .ll.zip
+    // Unpack .llplugin
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
