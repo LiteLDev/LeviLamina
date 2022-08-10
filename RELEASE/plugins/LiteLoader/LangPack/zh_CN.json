@@ -170,7 +170,7 @@
         "loader": {
             "loadScriptEngine": {
                 "error": {
-                    "versionNotMatch": "{2} 脚本引擎的文件版本 <{1}> 与 LiteLoaderBDS版本 <{3}> 不匹配"
+                    "versionNotMatch": "<{}> 版本的 {} 脚本引擎 与 LiteLoaderBDS版本 <{}> 不匹配"
                 },
                 "success": "* {} 脚本引擎已加载"
             },
@@ -189,6 +189,9 @@
                 "loadedPlugin": "插件 <{}> 已加载",
                 "done": "已加载 {} 个原生插件",
                 "start": "加载原生插件..."
+            },
+            "initNodeJsDirectories": {
+                "created": "NodeJs运行库文件夹未找到，已自动创建"
             }
         },
         "notice": {
@@ -197,7 +200,7 @@
         },
         "pluginManager": {
             "error": {
-                "invalidFileType": "{2} 中的插件文件类型 {1} 无效",
+                "invalidFileType": "无效的插件文件类型 {} 在 {} 中",
                 "noValidPluginFound": "在 {} 未找到有效的插件",
                 "failToRegisterPlugin": "注册插件 {} 失败",
                 "hasBeenRegistered": "一个名为 {} 的插件已被注册",

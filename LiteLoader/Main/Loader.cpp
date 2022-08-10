@@ -141,7 +141,7 @@ void LoadScriptEngine() {
         }
         auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
         if (lib) {
-            logger.info(tr("ll.loader.loadScriptEngine.success"));
+            logger.info(tr("ll.loader.loadScriptEngine.success", backend));
             // Fake Register
             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
                            {{"GitHub", "https://github.com/LiteLDev/LiteLoaderBDS"}});
