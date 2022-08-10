@@ -16,8 +16,7 @@ class NetworkItemStackDescriptor {
 // Add Member There
 public:
     ItemDescriptor mDescriptor;//0
-    char filler[32];
-
+    char filler[80];
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKITEMSTACKDESCRIPTOR

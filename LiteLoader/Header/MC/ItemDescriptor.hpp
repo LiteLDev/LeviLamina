@@ -13,7 +13,7 @@ class ItemDescriptor {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[56];
+    char filler[8];
 
 #define DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTOR
 #undef AFTER_EXTRA
