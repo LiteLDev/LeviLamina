@@ -12,7 +12,6 @@
 #include "Config.h"
 #include "Loader.h"
 #include "CrashLogger.h"
-#include "DefaultLangData.h"
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
@@ -190,8 +189,7 @@ void LLMain() {
     LL::LoadLLConfig();
 
     // I18n
-    Translation::load("plugins/LiteLoader/LangPack/", I18N::Pattern::Normal,
-                      (LL::globalConfig.language == "system" ? "" : LL::globalConfig.language));
+    Translation::load("plugins/LiteLoader/LangPack/", (LL::globalConfig.language == "system" ? "" : LL::globalConfig.language));
 
     // Check Protocol Version
     CheckProtocolVersion();
@@ -245,8 +243,9 @@ void LLMain() {
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
-        logger.info("LiteLoader is licensed under AGPLv3");
-        logger.info("Our new forum is live! -> https://forum.litebds.com");
+        logger.info(tr("ll.notice.license", "LGPLv3"));
+        logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
+        logger.info("Help us translate & improve text in LL -> https://crowdin.com/project/liteloaderbds");
         logger.info("Thanks to RhyMC(rhymc.com) for the support");
         return true;
     });

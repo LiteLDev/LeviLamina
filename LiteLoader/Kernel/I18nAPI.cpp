@@ -4,58 +4,8 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-void I18N::load(const std::string& fileName) {
-    if (!fs::exists(fileName)) {
-        fs::create_directories(fs::path(fileName).parent_path());
-        std::fstream file(fileName, std::ios::out | std::ios::app);
-        nlohmann::json j = defaultLangData;
-        file << std::setw(4) << j; // Dump default language data
-        file.close();
-        langData = defaultLangData;
-        return; // Skip parsing
-    }
-    std::fstream file(fileName, std::ios::in);
-    nlohmann::json j;
-    file >> j;
-    langData = j.get<LangData>();
-    file.close();
-    // Replenish the missing keys
-    for (auto& [lang, dat] : langData) {
-        if (defaultLangData.count(lang)) {
-            for (auto& [k, v] : defaultLangData[lang]) {
-                if (!dat.count(k)) {
-                    dat[k] = v;
-                }
-            }
-        }
-    }
-    save();
-}
-
-void I18N::loadOldLangFile(const std::string& fileName) {
-    if (!fs::exists(fileName)) {
-        throw std::invalid_argument("Language file not found!");
-    }
-    auto langCode = fs::path(fileName).stem().string();
-    std::fstream file(fileName, std::ios::in);
-    nlohmann::json j;
-    file >> j;
-    langData[langCode] = j.get<SubLangData>();
-}
-
-void I18N::save() {
-    std::fstream file;
-    if (fs::exists(filePath))
-        file.open(filePath, std::ios::out | std::ios::ate);
-    else
-        file.open(filePath, std::ios::out | std::ios::app);
-    nlohmann::json j = langData;
-    file << std::setw(4) << j;
-    file.close();
-}
-
 std::string I18N::get(const std::string& key, const std::string& langCode) {
-    auto& langc = (langCode.empty() ? defaultLangCode : langCode);
+    auto& langc = (langCode.empty() ? defaultLocaleName : langCode);
     auto langType = langc.substr(0, 2);
     if (langData.count(langc)) {
         auto& lang = langData[langc];
@@ -89,10 +39,6 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
     }
     // Finally, not found, return the key
     return key;
-}
-
-I18N::Pattern I18N::getPattern() {
-    return this->pattern;
 }
 
 std::string I18N::getDefaultLocaleName() {
@@ -157,7 +103,7 @@ I18N::Type SimpleI18N::getType() {
 
 ////////////////////////////////////////// HeavyI18N //////////////////////////////////////////
 
-I18N::SubLangData nestedHelper(const nlohmann::json& j, const std::string& prefix = "") {
+I18N::SubLangData NestedHelper(const nlohmann::json& j, const std::string& prefix = "") {
     I18N::SubLangData data;
     if (!j.is_object()) {
         // throw std::exception("Error when parsing I18N data: The value must be object!");
@@ -166,7 +112,7 @@ I18N::SubLangData nestedHelper(const nlohmann::json& j, const std::string& prefi
     for (auto it = j.begin(); it != j.end(); ++it) {
         auto& val = it.value();
         if (val.is_object()) {
-            data.merge(nestedHelper(val, prefix + it.key() + '.'));
+            data.merge(NestedHelper(val, prefix + it.key() + '.'));
         } else if (val.is_string()) {
             data.emplace(prefix + it.key(), val.get<std::string>());
         } else {
@@ -195,16 +141,12 @@ void HeavyI18N::load(const std::string& dirName) {
         std::fstream file(f.path().wstring(), std::ios::in);
         nlohmann::json j;
         file >> j;
-        if (this->pattern == Pattern::Nested) {
-            auto data = nestedHelper(j);
-            this->langData.emplace(langName, data);
-        } else {
-            this->langData.emplace(langName, j.get<SubLangData>());
-        }
+        auto data = NestedHelper(j);
+        this->langData.emplace(langName, data);
     }
 }
 
-void HeavyI18N::save() {
+void HeavyI18N::save(bool nested) {
     if (!fs::exists(dirPath)) {
         fs::create_directories(dirPath);
         for (auto& [lc, lv] : this->defaultLangData) {
@@ -215,7 +157,7 @@ void HeavyI18N::save() {
             } else {
                 file.open(fileName, std::ios::out | std::ios::app);     
             }
-            if (this->pattern == Pattern::Nested) {
+            if (nested) {
                 auto out = nlohmann::json::object();
                 for (auto& [k, v] : lv) {
                     auto keys = SplitStrWithPattern(k, ".");
@@ -245,30 +187,25 @@ namespace Translation {
 
 I18N* loadImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
                const I18N::LangData& defaultLangData) {
-    return loadImpl(hPlugin, path, I18N::Pattern::Normal, defaultLocaleName, defaultLangData);
-}
-
-I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
-               const I18N::LangData& defaultLangData) {
     try {
         I18N* res = nullptr;
         if (path.ends_with('/') || path.ends_with('\\') || fs::is_directory(path)) { // Directory
-            res = new HeavyI18N(path, pattern, defaultLocaleName, defaultLangData);
+            res = new HeavyI18N(path, defaultLocaleName, defaultLangData);
         } else {
-            res = new SimpleI18N(path, pattern, defaultLocaleName, defaultLangData);
+            res = new SimpleI18N(path, defaultLocaleName, defaultLangData);
         }
         return &PluginOwnData::setWithoutNewImpl<I18N>(hPlugin, I18N::POD_KEY, res);
     } catch (const std::exception& e) {
-        logger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("Fail to load translation file <{}> !", path);
         logger.error("- {}", TextEncoding::toUTF8(e.what()));
-    } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
+    } catch (...) { logger.error("Fail to load translation file <{}> !", path); }
     return nullptr;
 }
 
 I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
     try {
         auto& i18n = PluginOwnData::getImpl<I18N>(hTarget, I18N::POD_KEY);
-        return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY, i18n);
+        return &PluginOwnData::setWithoutNewImpl<I18N>(hPlugin, I18N::POD_KEY, i18n.clone());
     } catch (const std::exception& e) {
         logger.error("Fail to load translation from another plugin!", e.what());
         logger.error("- {}", e.what());

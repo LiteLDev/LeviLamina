@@ -172,7 +172,7 @@ void LoadDotNETEngine() {
 }
 
 void LL::LoadMain() {
-    logger.info("Loading native plugins...");
+    logger.info(tr("ll.loader.loadMain.start"));
     CleanOldScriptEngine();
 
     // Load plugins

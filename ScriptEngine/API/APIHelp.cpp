@@ -346,7 +346,7 @@ Local<Value> JsonToValue(std::string jsonStr) {
         auto j = fifo_json::parse(jsonStr, nullptr, true, true);
         return JsonToValue(j);
     } catch (const fifo_json::exception& e) {
-        logger.warn(tr("api.parseJson.fail") + TextEncoding::toUTF8(e.what()));
+        logger.warn(tr("llse.apiHelp.parseJson.fail") + TextEncoding::toUTF8(e.what()));
         return String::newString(jsonStr);
     }
 }
