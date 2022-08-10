@@ -127,7 +127,7 @@ void InitNodeJsDirectories()
     {
         ofstream fout(package_json_path.c_str());
         fout << DEFAULT_ROOT_PACKAGE_JSON;
-        logger.warn("NodeJs runtime directory no found, created.");
+        logger.warn(tr("ll.loader.initNodeJsDirectories.created"));
     }
 }
 
@@ -186,13 +186,13 @@ void LL::LoadMain() {
             continue;
         }
         filesystem::path path = file.path();
-		
+        
         // Skip Wrong file path
         auto strPath = UTF82String(path.u8string());
         if (strPath == "LiteLoader.dll" || strPath.find("LiteXLoader") != string::npos) {
             continue;
         }
-		
+        
         // Process Shell link file
         string ext = UTF82String(path.extension().u8string());
         bool isShellLink = false;

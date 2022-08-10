@@ -22,18 +22,17 @@ extern ::Logger logger;
 std::unordered_map<std::string, std::string> depends;
 
 // 调试引擎
-ScriptEngine *debugEngine;
+ScriptEngine* debugEngine;
 bool globalDebug = false;
 
 // 前置声明
-extern void BindAPIs(ScriptEngine *engine);
+extern void BindAPIs(ScriptEngine* engine);
 
 
 // 预加载依赖库
-void LoadDepends()
-{
+void LoadDepends() {
 #ifdef LLSE_BACKEND_NODEJS
-    return;     // NodeJs backend load depends code in another place
+    return; // NodeJs backend load depends code in another place
 #endif
 
     std::filesystem::directory_iterator deps(LLSE_DEPENDS_DIR);
@@ -45,22 +44,21 @@ void LoadDepends()
                 if (!content)
                     throw("Fail to open plugin file!");
                 depends.emplace(path, *content);
-                logger.info("Dependence " + UTF82String(i.path().filename().u8string()) + " loaded.");
+                logger.info(tr("llse.loader.loadDepends.success", UTF82String(i.path().filename().u8string())));
             } catch (std::exception e) {
-                logger.warn("Fail to load dependence " + UTF82String(i.path().filename().u8string()) + ".");
+                logger.warn(tr("llse.loader.loadDepends.fail", UTF82String(i.path().filename().u8string())));
                 logger.warn(TextEncoding::toUTF8(e.what()));
             } catch (...) {
-                logger.warn("Fail to load dependence " + UTF82String(i.path().filename().u8string()) + ".");
+                logger.warn(tr("llse.loader.loadDepends.fail", UTF82String(i.path().filename().u8string())));
             }
         }
     }
 }
 
 // 加载调试引擎
-void LoadDebugEngine()
-{
+void LoadDebugEngine() {
 #ifdef LLSE_BACKEND_NODEJS
-    return;     // NodeJs backend didn't enable debug engine now
+    return; // NodeJs backend didn't enable debug engine now
 #endif
 
     // 启动引擎
@@ -89,33 +87,31 @@ void LoadDebugEngine()
 
 // 主加载
 void LoadMain_NodeJs();
-void LoadMain()
-{
+void LoadMain() {
 #ifdef LLSE_BACKEND_NODEJS
-    LoadMain_NodeJs();      // Process NodeJs backend's plugin load separately
+    LoadMain_NodeJs(); // Process NodeJs backend's plugin load separately
     return;
 #endif
 
-    logger.info("Loading " LLSE_MODULE_TYPE " plugins...");
+    logger.info(tr("llse.loader.loadMain.start", LLSE_MODULE_TYPE));
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
-    for (auto& i : files)
-    {
-        if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION)
-        {
+    for (auto& i : files) {
+        if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION) {
             if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string())))
                 ++count;
         }
     }
-    logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugin(s) loaded.");
+    logger.info(tr("llse.loader.loadMain.done",
+                   fmt::arg("count", count),
+                   fmt::arg("type", LLSE_MODULE_TYPE)));
 }
 
 
 #ifdef LLSE_BACKEND_NODEJS
 // NodeJs后端 - 主加载
-void LoadMain_NodeJs()
-{
-    logger.info("Loading Node.js plugins...");
+void LoadMain_NodeJs() {
+    logger.info(tr("llse.loader.loadMain.start", "Node.js"));
     int installCount = 0;
     int count = 0;
 
@@ -123,14 +119,16 @@ void LoadMain_NodeJs()
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
-            logger.info("Found Node.js plugin pack \"{}\"! Try installing...", i.path().u8string());
+            logger.info(tr("llse.loader.loadMain.nodejs.installPack.start", i.path().u8string()));
             if (!NodeJsHelper::deployPluginPack(i.path().u8string())) {
-                logger.error("Failed to install plugin pack {}, please check your package.json file!");
+                logger.error(tr("llse.loader.loadMain.nodejs.installPack.fail"));
             }
             ++installCount;
         }
     }
-    logger.info("{} Node.js plugin pack(s) installed.", installCount);
+    logger.info(tr("llse.loader.loadMain.installPack.done",
+                   fmt::arg("count", installCount),
+                   fmt::arg("type", "Node.js")));
 
     // Load Plugins in NODEJS_ROOT_DIR
     files = std::filesystem::directory_iterator(LLSE_NODEJS_ROOT_DIR);
@@ -141,12 +139,13 @@ void LoadMain_NodeJs()
                 if (PluginManager::loadPlugin(i.path().u8string())) {
                     ++count;
                 }
-            }
-            else {
-                logger.warn("No package.json file found in directory {}, ignored.", i.path().filename().u8string());
+            } else {
+                logger.warn(tr("llse.loader.loadMain.nodejs.ignored", i.path().filename().u8string()));
             }
         }
     }
-    logger.info("{} Node.js plugin(s) loaded.", count);
+    logger.info(tr("llse.loader.loadMain.done",
+                   fmt::arg("count", count),
+                   fmt::arg("type", "Node.js")));
 }
 #endif

@@ -36,10 +36,9 @@ string RemoveRealAllExtension(string fileName) {
 }
 
 // 加载插件
-bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule)
-{
+bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule) {
 #ifdef LLSE_BACKEND_NODEJS
-    return loadNodeJsPlugin(filePath);          // Process NodeJs plugin load separately
+    return loadNodeJsPlugin(filePath); // Process NodeJs plugin load separately
 #endif
 
     if (filePath == LLSE_DEBUG_ENGINE_NAME)
@@ -147,7 +146,9 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         //热加载完毕后补调用各启动事件
         if (isHotLoad)
             LLSECallEventsOnHotLoad(engine);
-        logger.info(moduleToBroadcast + " plugin <" + pluginName + "> loaded.");
+        logger.info(tr("llse.loader.loadMain.loadedPlugin",
+                       fmt::arg("type", moduleToBroadcast),
+                       fmt::arg("name", pluginName)));
         return true;
     } catch (const Exception& e) {
         logger.error("Fail to load " + filePath + "!");
@@ -181,8 +182,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
 
 #ifdef LLSE_BACKEND_NODEJS
 // 加载NodeJs插件
-bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
-{
+bool PluginManager::loadNodeJsPlugin(const std::string& dirPath) {
     // NodeJs plugins do not support features like hot-load or remote-load now
 
     std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
@@ -191,15 +191,13 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
     std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
 
     // Run "npm install" if needed
-    if (NodeJsHelper::doesPluginPackHasDependency(dirPath)
-        && !filesystem::exists(filesystem::path(dirPath) / "node_modules"))
-    {
+    if (NodeJsHelper::doesPluginPackHasDependency(dirPath) && !filesystem::exists(filesystem::path(dirPath) / "node_modules")) {
         int exitCode = 0;
-        logger.info("Executing \"npm install\" for plugin {}...", filesystem::path(dirPath).filename().u8string());
+        logger.info(tr("llse.loader.nodejs.executeNpmInstall.start", filesystem::path(dirPath).filename().u8string()));
         if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
-            logger.info("Npm finished successfully.");
+            logger.info(tr("llse.loader.nodejs.executeNpmInstall.success"));
         else
-            logger.error("Error occurred. Exit code: {}", exitCode);
+            logger.error(tr("llse.loader.nodejs.executeNpmInstall.fail", exitCode));
     }
 
     // Create engine & Load plugin
@@ -234,47 +232,39 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
                 file.close();
 
                 // description
-                if (j.contains("description"))
-                {
+                if (j.contains("description")) {
                     description = j["description"].get<std::string>();
                 }
                 // version
-                if (j.contains("version") && j["version"].is_string())
-                {
+                if (j.contains("version") && j["version"].is_string()) {
                     ver = LL::Version::parse(j["version"].get<std::string>());
                 }
                 // license
-                if (j.contains("license") && j["license"].is_string())
-                {
+                if (j.contains("license") && j["license"].is_string()) {
                     others["License"] = j["license"].get<std::string>();
-                }
-                else if (j["license"].is_object() && j["license"].contains("url"))
-                {
+                } else if (j["license"].is_object() && j["license"].contains("url")) {
                     others["License"] = j["license"]["url"].get<std::string>();
                 }
                 // repository
-                if (j.contains("repository") && j["repository"].is_string())
-                {
+                if (j.contains("repository") && j["repository"].is_string()) {
                     others["Repository"] = j["repository"].get<std::string>();
-                }
-                else if (j["repository"].is_object() && j["repository"].contains("url"))
-                {
+                } else if (j["repository"].is_object() && j["repository"].contains("url")) {
                     others["Repository"] = j["repository"]["url"].get<std::string>();
                 }
-            }
-            catch(...)
-            {
-                logger.warn("Fail to help plugin {} get registered!", pluginName);
+            } catch (...) {
+                logger.warn(tr("llse.loader.nodejs.register.fail", pluginName));
             }
 
             // register
             PluginManager::registerPlugin(dirPath, pluginName, description, ver, others);
         }
 
-        logger.info("Node.js plugin <" + pluginName + "> loaded.");
+        
+        logger.info(tr("llse.loader.loadMain.loadedPlugin",
+                       fmt::arg("type", "Node.js"),
+                       fmt::arg("name", pluginName)));
         return true;
-    }
-    catch (const Exception& e) {
+    } catch (const Exception& e) {
         logger.error("Fail to load " + dirPath + "!");
         if (engine) {
             EngineScope enter(engine);
@@ -294,12 +284,10 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath)
         if (engine) {
             node::Stop(env);
         }
-    }
-    catch (const std::exception& e) {
+    } catch (const std::exception& e) {
         logger.error("Fail to load " + dirPath + "!");
         logger.error(TextEncoding::toUTF8(e.what()));
-    }
-    catch (...) {
+    } catch (...) {
         logger.error("Fail to load " + dirPath + "!");
     }
     return false;

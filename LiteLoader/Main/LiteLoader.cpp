@@ -245,7 +245,7 @@ void LLMain() {
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info(tr("ll.notice.license", "LGPLv3"));
         logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
-        logger.info("Help us translate & improve text in LL -> https://crowdin.com/project/liteloaderbds");
+        logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
         logger.info("Thanks to RhyMC(rhymc.com) for the support");
         return true;
     });

@@ -46,17 +46,17 @@ std::string I18N::getDefaultLocaleName() {
 }
 
 I18N* I18N::clone() {
-    if (getType() == Type::Simple) {
-        return new SimpleI18N(*(SimpleI18N*)this);
-    } else if (getType() == Type::Heavy) {
-        return new HeavyI18N(*(HeavyI18N*)this);
+    if (getType() == Type::SingleFile) {
+        return new SingleFileI18N(*(SingleFileI18N*)this);
+    } else if (getType() == Type::MultiFile) {
+        return new MultiFileI18N(*(MultiFileI18N*)this);
     }
     return nullptr;
 }
 
-////////////////////////////////////////// SimpleI18N //////////////////////////////////////////
+////////////////////////////////////////// SingleFileI18N //////////////////////////////////////////
 
-void SimpleI18N::load(const std::string& fileName) {
+void SingleFileI18N::load(const std::string& fileName) {
     this->filePath = fileName;
     if (!fs::exists(fileName)) {
         fs::create_directories(fs::path(fileName).parent_path());
@@ -85,7 +85,7 @@ void SimpleI18N::load(const std::string& fileName) {
     save();
 }
 
-void SimpleI18N::save() {
+void SingleFileI18N::save() {
     std::fstream file;
     if (fs::exists(filePath))
         file.open(filePath, std::ios::out | std::ios::ate);
@@ -96,12 +96,12 @@ void SimpleI18N::save() {
     file.close();
 }
 
-I18N::Type SimpleI18N::getType() {
-    return Type::Simple;
+I18N::Type SingleFileI18N::getType() {
+    return Type::SingleFile;
 }
 
 
-////////////////////////////////////////// HeavyI18N //////////////////////////////////////////
+////////////////////////////////////////// MultiFileI18N //////////////////////////////////////////
 
 I18N::SubLangData NestedHelper(const nlohmann::json& j, const std::string& prefix = "") {
     I18N::SubLangData data;
@@ -122,7 +122,7 @@ I18N::SubLangData NestedHelper(const nlohmann::json& j, const std::string& prefi
     return data;
 }
 
-void HeavyI18N::load(const std::string& dirName) {
+void MultiFileI18N::load(const std::string& dirName) {
     this->dirPath = dirName;
     if (!fs::exists(dirName) || fs::is_empty(dirName)) {
         if (this->defaultLangData.empty()) {
@@ -146,7 +146,7 @@ void HeavyI18N::load(const std::string& dirName) {
     }
 }
 
-void HeavyI18N::save(bool nested) {
+void MultiFileI18N::save(bool nested) {
     if (!fs::exists(dirPath)) {
         fs::create_directories(dirPath);
         for (auto& [lc, lv] : this->defaultLangData) {
@@ -178,8 +178,8 @@ void HeavyI18N::save(bool nested) {
     }
 }
 
-I18N::Type HeavyI18N::getType() {
-    return Type::Heavy;
+I18N::Type MultiFileI18N::getType() {
+    return Type::MultiFile;
 }
 
 
@@ -190,9 +190,9 @@ I18N* loadImpl(HMODULE hPlugin, const std::string& path, const std::string& defa
     try {
         I18N* res = nullptr;
         if (path.ends_with('/') || path.ends_with('\\') || fs::is_directory(path)) { // Directory
-            res = new HeavyI18N(path, defaultLocaleName, defaultLangData);
+            res = new MultiFileI18N(path, defaultLocaleName, defaultLangData);
         } else {
-            res = new SimpleI18N(path, defaultLocaleName, defaultLangData);
+            res = new SingleFileI18N(path, defaultLocaleName, defaultLangData);
         }
         return &PluginOwnData::setWithoutNewImpl<I18N>(hPlugin, I18N::POD_KEY, res);
     } catch (const std::exception& e) {
