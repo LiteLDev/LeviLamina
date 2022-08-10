@@ -275,7 +275,6 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to ðŸ‘
 | [detours](https://github.com/microsoft/Detours)                         | MIT license                                   |
 | [httplib](https://github.com/yhirose/cpp-httplib)                       | MIT license                                   |
 | [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
-| [mysql](https://github.com/twitter-forks/mysql)                         | GPLv2                                     |
 | [entt](https://github.com/skypjack/entt)                                | MIT license                                   |
 | [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst)              |
 | [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                   |

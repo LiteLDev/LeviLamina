@@ -263,7 +263,6 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 | [detours](https://github.com/microsoft/Detours)                         | MIT license                                   |
 | [httplib](https://github.com/yhirose/cpp-httplib)                       | MIT license                                   |
 | [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
-| [mysql](https://github.com/twitter-forks/mysql)                         | GPLv2                                     |
 | [entt](https://github.com/skypjack/entt)                                | MIT license                                   |
 | [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst)              |
 | [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                   |
