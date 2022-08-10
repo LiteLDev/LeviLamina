@@ -99,8 +99,8 @@ LibraryBuilder.exe
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="Kernel\DB\Impl\MySQL\Stmt.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName> -->
-    </ClCompile>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
+    </ClCompile> -->
     <ClCompile Include="Kernel\DB\Impl\SQLite\Session.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)SQLite\</ObjectFileName>
     </ClCompile>
