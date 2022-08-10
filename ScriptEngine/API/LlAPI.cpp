@@ -195,7 +195,7 @@ Local<Value> LlClass::require(const Arguments& args) {
 
         //已加载插件
         if (PluginManager::getPlugin(require) != nullptr) {
-            logger.info(thisName + tr("llseapi.require.success") + require);
+            logger.info(tr("llse.api.ll.require.success", thisName, require));
             return Boolean::newBoolean(true);
         }
 

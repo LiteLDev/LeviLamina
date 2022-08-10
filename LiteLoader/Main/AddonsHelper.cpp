@@ -108,13 +108,13 @@ std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath) {
 bool RemoveAddonFromList(Addon& addon) {
     auto jsonFile = GetAddonJsonFile(addon.type);
     if (!filesystem::exists(str2wstr(jsonFile))) {
-        addonLogger.error("Addon config not found!");
+        addonLogger.error(tr("ll.addonsHelper.error.addonConfigNotFound"));
         return false;
     }
 
     auto addonJsonContent = ReadAllFile(jsonFile);
     if (!addonJsonContent || addonJsonContent->empty()) {
-        addonLogger.error("Addon config not found!");
+        addonLogger.error(tr("ll.addonsHelper.error.addonConfigNotFound"));
         return false;
     }
     auto addonJson = fifo_json::parse(*addonJsonContent, nullptr, true, true);
@@ -124,15 +124,15 @@ bool RemoveAddonFromList(Addon& addon) {
             addonJson.erase(id);
             bool res = WriteAllFile(jsonFile, addonJson.dump(4));
             if (!res) {
-                addonLogger.error("Fail to remove addon <{}> from config file!", addon.getPrintName());
+                addonLogger.error(tr("ll.addonsHelper.removeAddonFromList.fail", addon.getPrintName()));
                 return false;
             }
-            addonLogger.info("Success to remove addon <{}> from config file.", addon.getPrintName());
+            addonLogger.info(tr("ll.addonsHelper.removeAddonFromList.success", addon.getPrintName()));
             return true;
         }
         ++id;
     }
-    addonLogger.error("Addon <{}> not found!", addon.getPrintName());
+    addonLogger.error(tr("ll.addonsHelper.error.addonNotFound", addon.getPrintName()));
     return false;
 }
 
@@ -150,7 +150,7 @@ bool AddAddonToList(Addon& addon) {
         // Auto fix Addon List File
         if (!addonList.is_array()) {
             auto backupPath = UTF82String(filesystem::path(str2wstr(addonListFile)).stem().u8string()) + "_error.json";
-            addonLogger.error("Invalid Addon List File {}, backup to {} and reset to default", addonListFile, backupPath);
+            addonLogger.error(tr("ll.addonsHelper.addAddonToList.invalidList", addonListFile, backupPath));
             std::error_code ec;
             std::filesystem::rename(str2wstr(addonListFile), filesystem::path(addonListFile).remove_filename().append(str2wstr(backupPath)), ec);
             addonList = "[]"_json;
@@ -171,12 +171,12 @@ bool AddAddonToList(Addon& addon) {
         bool res = WriteAllFile(addonListFile, addonList.dump(4));
         if (!res)
             throw std::exception("Fail to write data back to addon list file!");
-        addonLogger.info("Success to add addon <{}> to config file.", addon.getPrintName());
+        addonLogger.info(tr("ll.addonsHelper.addAddonToList.success", addon.getPrintName()));
         return true;
     } catch (const std::exception& e) {
-        addonLogger.error("Fail to insert the addon {} into {}!", addon.getPrintName(), addonListFile);
-        addonLogger.error("Error: {}", TextEncoding::toUTF8(e.what()));
-        addonLogger.error("* Install progress aborted!");
+        addonLogger.error(tr("ll.addonsHelper.addAddonToList.fail", addon.getPrintName(), addonListFile));
+        addonLogger.error(tr("ll.addonsHelper.displayError", TextEncoding::toUTF8(e.what())));
+        addonLogger.error(tr("ll.addonsHelper.error.installationAborted"));
         return false;
     }
 }
@@ -248,16 +248,16 @@ std::string Addon::getPrintName() const {
 bool AddonsManager::install(std::string packPath) {
     try {
         if (!filesystem::exists(str2wstr(packPath))) {
-            addonLogger.error("Addon file \"{}\" not found!", packPath);
+            addonLogger.error(tr("ll.addonsHelper.error.addonFileNotFound", packPath));
             return false;
         }
         if (VALID_ADDON_FILE_EXTENSION.find(UTF82String(filesystem::path(str2wstr(packPath)).extension().u8string())) == VALID_ADDON_FILE_EXTENSION.end()) {
-            addonLogger.error("Unsupported type of file found!");
+            addonLogger.error(tr("ll.addonsHelper.error.unsupportedFileType"));
             return false;
         }
 
         string name = UTF82String(filesystem::path(str2wstr(packPath)).filename().u8string());
-        addonLogger.warn("Installing addon <{}>...", name);
+        addonLogger.warn(tr("ll.addonsHelper.install.installing", name));
 
         std::error_code ec;
         if (EndsWith(packPath, ".mcpack")) {
@@ -280,10 +280,10 @@ bool AddonsManager::install(std::string packPath) {
 
         auto res = NewProcessSync(fmt::format("{} x \"{}\" -o{} -aoa", ZIP_PROGRAM_PATH, packPath, "\"" ADDON_INSTALL_TEMP_DIR + name + "/\""), ADDON_INSTALL_MAX_WAIT);
         if (res.first != 0) {
-            addonLogger.error("Fail to uncompress addon {}!", name);
-            addonLogger.error("Exit Code: {}", res.first);
-            addonLogger.error("Program Output:\n{}", res.second);
-            addonLogger.error("* Install progress aborted!");
+            addonLogger.error(tr("ll.addonsHelper.install.error.failToUncompress.msg", name));
+            addonLogger.error(tr("ll.addonsHelper.install.error.failToUncompress.exitCode"), res.first);
+            addonLogger.error(tr("ll.addonsHelper.install.error.failToUncompress.programOutput"), res.second);
+            addonLogger.error(tr("ll.addonsHelper.error.installationAborted"));
             filesystem::remove_all(ADDON_INSTALL_TEMP_DIR + name + "/", ec);
             return false;
         }
@@ -349,7 +349,7 @@ bool AddonsManager::uninstall(std::string nameOrUuid) {
     try {
         auto addon = findAddon(nameOrUuid, true);
         if (!addon) {
-            addonLogger.error("Addon not found!");
+            addonLogger.error(tr("ll.addonsHelper.error.addonNotFound"));
             return false;
         }
         RemoveAddonFromList(*addon);
@@ -360,7 +360,7 @@ bool AddonsManager::uninstall(std::string nameOrUuid) {
                 addons.erase(i);
                 break;
             }
-        addonLogger.info("Addon <{}> uninstalled.", addon->getPrintName());
+        addonLogger.info(tr("ll.addonsHelper.uninstall.success", addon->getPrintName()));
     } catch (...) {}
     return false;
 }
@@ -402,11 +402,11 @@ Addon* AddonsManager::findAddon(std::string nameOrUuid, bool fuzzy) {
 
 void ListAllAddons(CommandOutput& output) {
     if (addons.empty()) {
-        output.success("No addon is installed.");
+        output.trSuccess("ll.addonsHelper.error.noAddonInstalled");
         return;
     }
 
-    output.success("Addons: " + to_string(addons.size()) + " addon(s) installed:");
+    output.trSuccess("ll.addonsHelper.cmd.output.list.overview", addons.size());
     for (auto index = 0; index < addons.size(); ++index) {
         auto& addon = addons[index];
         string addonName = addon.name;
@@ -432,7 +432,7 @@ void ShowAddon(CommandOutput& output, Addon& addon) {
     oss << "Addon <" << addon.name << "§r>" << (addon.enable ? " §aEnabled" : " §cDisabled") << "\n\n";
     oss << "- §aName§r:  " << addon.name << "\n";
     oss << "- §aUUID§r:  " << addon.uuid << "\n";
-    oss << "- §aIntroduction§r:  " << addon.description << "\n";
+    oss << "- §aDescription§r:  " << addon.description << "\n";
     oss << "- §aVersion§r:  v" << addon.version.toString(true) << "\n";
     oss << "- §aType§r:  " << magic_enum::enum_name(addon.type) << "\n";
     oss << "- §aDirectory§r:  " << addon.directory << "\n";
@@ -458,22 +458,24 @@ class AddonsCommand : public Command {
         Addon* addon = nullptr;
         if (target_isSet) {
             auto addon = AddonsManager::findAddon(target, true);
-            if (addon)
+            if (addon) {
                 return addon;
-            else
-                output.error(fmt::format("Addon {} Not Found", target));
+            } else {
+                output.trError("ll.addonsHelper.error.addonNotfound", target);
+            }
         } else {
             auto addons = AddonsManager::getAllAddons();
             if (index - 1 >= 0 && index - 1 < static_cast<int>(addons.size()))
                 return addons[index - 1];
             else
-                output.error(fmt::format("Addon index {} out of range", index));
+                output.trError("ll.addonsHelper.error.outOfRange", index);
         }
         return nullptr;
     }
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
+        output.setLanguageCode(ori);
         switch (operation) {
             case Operation::List:
                 if (target_isSet || index_isSet) {
@@ -578,7 +580,7 @@ void FindAddons(string jsonPath, string packsDir) {
                 validPackIDs.insert(pktid);
             }
         } catch (const std::exception&) {
-            addonLogger.error("Error in parse enabled addons list");
+            addonLogger.error(tr("ll.addonsHelper.error.parsingEnabledAddonsList"));
         }
 
         filesystem::directory_iterator ent(str2wstr(packsDir));
@@ -617,8 +619,7 @@ bool AutoInstallAddons(string path) {
     std::error_code ec;
     if (!filesystem::exists(str2wstr(path))) {
         filesystem::create_directories(str2wstr(path), ec);
-        addonLogger.warn("Directory created. You can move compressed Addon files to {} to get installed at next launch.",
-                         LL::globalConfig.addonsInstallPath);
+        addonLogger.info(tr("ll.addonsHelper.autoInstall.tip.dirCreated", LL::globalConfig.addonsInstallPath));
         return false;
     }
     std::vector<string> toInstallList;
@@ -636,7 +637,7 @@ bool AutoInstallAddons(string path) {
     if (toInstallList.empty())
         return false;
 
-    addonLogger.warn("{} new addon(s) found to install. Working...", toInstallList.size());
+    addonLogger.info(tr("ll.addonsHelper.autoInstall.working", toInstallList.size()));
     int cnt = 0;
     for (auto& path : toInstallList) {
         addonLogger.debug("Installing \"{}\"...", path);
@@ -645,14 +646,14 @@ bool AutoInstallAddons(string path) {
             break;
         } else {
             ++cnt;
-            addonLogger.warn("Addon {} has beed installed.", path);
+            addonLogger.info(tr("ll.addonsHelper.autoInstall.installed", path));
         }
     }
 
     if (cnt == 0) {
-        addonLogger.error("No addon was installed.");
+        addonLogger.error(tr("ll.addonsHelper.error.noAddonInstalled"));
     } else {
-        addonLogger.warn("{} addon(s) was installed.", cnt);
+        addonLogger.info(tr("ll.addonsHelper.autoInstall.installedCount", cnt));
     }
     return true;
 }

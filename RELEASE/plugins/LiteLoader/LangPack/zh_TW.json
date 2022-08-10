@@ -1,0 +1,240 @@
+{
+    "base": {
+        "getDimName": {
+            "0": "主世界",
+            "1": "地獄",
+            "2": "終界",
+            "unknown": "其他維度"
+        }
+    },
+    "ll": {
+        "main": {
+            "checkRunningBDS": {
+                "detected": "檢測到另一個具有相同路徑的BDS進程！",
+                "tip": "檢測到另一個具有相同路徑的BDS進程！",
+                "ask": "是否要終止PID為 {} 的進程？ （y=是，n=否）"
+            },
+            "fixAllowList": {
+                "removeEmptyAllowlist": "allowlist.json為空！正在刪除……",
+                "checkManually": "同時存在非空文件：allowlist.json和whitelist.json。請手動檢查",
+                "renamed": "已將whitelist.json重命名為allowlist.json"
+            },
+            "warning": {
+                "inDevMode": "當前處於開發者模式！",
+                "betaVersion": "當前正在使用beta版本",
+                "productionEnv": "請勿在生產環境中使用！",
+                "protocolVersionNotMatch": {
+                    "1": "協議版本不匹配，目標版本：{}，當前版本：{}。",
+                    "2": "這很可能會使服務器崩潰，請使用與BDS版本匹配的LiteLoader！"
+                }
+            }
+        },
+        "antiAbnormalItem": {
+            "detected": "玩家 ({}) 物品數據錯誤！",
+            "itemInfo": "物品: {}"
+        },
+        "cmd": {
+            "tpdim": {
+                "success": "傳送 {} 到 {} ({:2f}, {:2f}, {:2f})",
+                "error": {
+                    "noActorTeleported": "沒有傳送對象傳送",
+                    "noActorSpecified": "未指定參與者"
+                },
+                "invalidDimid": "無效的維度ID: {}"
+            },
+            "listPlugin": {
+                "overview": "插件列表[{}]",
+                "tip": "*若要獲取詳細信息，請發送指令「ll list <Plugin Name>」"
+            },
+            "pluginInfo": {
+                "title": "插件<{}>",
+                "error": {
+                    "pluginNotFound": "找不到插件<{}>！"
+                }
+            },
+            "version": {
+                "msg": "基岩版官方專用服務器 {}\n- 使用LiteLoaderBDS {}\n- 網絡協定：{}"
+            },
+            "help": {
+                "msg": "[Introduction]\nLiteLoaderBDS是一個非官方的插件加載器，用於修改基岩版官方專用服務器的開發。它提供了大量API、強大的事件系統和大量的接口。\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\n歡迎來到我們的 GitHub 項目，您可以在這裡找到更多信息。"
+            },
+            "loadPlugin": {
+                "success": "插件<{}>已加載。",
+                "fail": "加載插件{}失敗"
+            },
+            "unloadPlugin": {
+                "success": "<{}>已卸載。",
+                "fail": "卸載插件<{}>失败"
+            },
+            "reloadPlugin": {
+                "success": "插件<{}>已重新加載。",
+                "fail": "<{}> 插件載入失敗。"
+            },
+            "reloadAllPlugins": {
+                "success": "卸載 {} 插件成功。",
+                "fail": "沒有可用的插件可以重載。"
+            },
+            "error": {
+                "noPathSpecified": "您必須提供一個LiteLoader插件的有效路徑！",
+                "noNameSpecified": "您必須提供一個LiteLoader插件的有效名稱！"
+            }
+        },
+        "config": {
+            "save": {
+                "fail": "無法保存(創建)配置文件！"
+            },
+            "creating": "無法找到 LL 配置檔案 <{}> ，正在創建一個新的。",
+            "warning": {
+                "configOutdated": "LL 配置檔案 <{}> 已過期。"
+            },
+            "updating": "正在更新配置文件..."
+        },
+        "crashLogger": {
+            "existsingDebuggerDetected": "檢測到已存在的BUG調試器，內建 CrashLogger 將不被使用。",
+            "wineDetected": "檢測到調試器環境，內建 CrashLogger 將不被使用。",
+            "error": {
+                "cannotCreateDaemonProcess": "無法創建 CrashLogger 保護進程！"
+            },
+            "warning": {
+                "crashLoggerDisabled": {
+                    "1": "內建 CrashLogger 未啟用，因為已在配置中關閉了它。",
+                    "2": "若伺服器爆掉，將不會記錄任何訊息",
+                    "3": "無法找出伺服器爆炸的原因與來源(幾乎不可能找出)",
+                    "4": "我們強烈建議您啟用它以確保服務器穩定性"
+                },
+                "conflicts": {
+                    "1": "內建 CrashLogger 未啟用，因為插件 <{}> 與之衝突",
+                    "2": "若伺服器爆掉，將不會記錄任何訊息",
+                    "3": "無法找出伺服器爆炸的原因與來源(幾乎不可能找出)",
+                    "4": "由於 CrashLogger 是穩定服務器的重要組件",
+                    "5": "我們建議您對插件 <{}> 的使用再考慮看看。"
+                }
+            },
+            "init": {
+                "fail": {
+                    "msg": "內置 CrashLogger 無法啟動！",
+                    "tip": "若伺服器爆掉，將不會記錄任何訊息"
+                }
+            }
+        },
+        "addonsHelper": {
+            "error": {
+                "addonConfigNotFound": "找不到Addon附加元件！",
+                "addonFileNotFound": "找不到Addon檔案 \"{}\" ！",
+                "addonNotFound": "找不到Addon \"{}\" ！",
+                "outOfRange": "插件索引 {} 超出範圍",
+                "unsupportedFileType": "未知的檔案種類！",
+                "parsingEnabledAddonsList": "解析啟用的插件列表時出現問題",
+                "noAddonInstalled": "沒有安裝任何Addon。",
+                "installationAborted": "安裝進度中止！"
+            },
+            "displayError": "錯誤： {}",
+            "removeAddonFromList": {
+                "fail": "Fail to remove addon <{}> from config file!",
+                "success": "Removed addon <{}> from config file."
+            },
+            "addAddonToList": {
+                "invalidList": "Invalid Addon List File {}, backup to {} and reset to default",
+                "fail": "Fail to insert the addon {} into {}!",
+                "success": "Added addon <{}> to config file."
+            },
+            "install": {
+                "installing": "Installing addon <{}>...",
+                "error": {
+                    "failToUncompress": {
+                        "msg": "Fail to uncompress addon {}!",
+                        "exitCode": "Exit Code: {}",
+                        "programOutput": "Program Output:\n{}"
+                    }
+                }
+            },
+            "uninstall": {
+                "success": "Addon <{}> uninstalled."
+            },
+            "autoInstall": {
+                "tip": {
+                    "dirCreated": "Directory created. You can move compressed Addon files to {} to get installed at next launch."
+                },
+                "working": "{} new addon(s) found to install. Working...",
+                "installed": "Addon {} has beed installed.",
+                "installedCount": "{} addon(s) was installed."
+            },
+            "cmd": {
+                "output": {
+                    "list": {
+                        "overview": "Addons: {} addon(s) installed:"
+                    }
+                }
+            }
+        },
+        "loader": {
+            "loadScriptEngine": {
+                "error": {
+                    "versionNotMatch": "The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>"
+                },
+                "success": "* {} 的 腳本引擎 已成功載入"
+            },
+            "loadDotNetEngine": {
+                "warning": {
+                    "notFinished": "LiteLoader.NET is not finished yet!"
+                },
+                "error": {
+                    "versionNotMatch": "The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>"
+                },
+                "success": "* .NET Engine loaded"
+            },
+            "loadMain": {
+                "loadingPlugins": "載入插件中...",
+                "loadedShellLink": "ShellLinked Plugin <{} => {}> loaded",
+                "loadedPlugin": "插件 <{}> 已載入",
+                "done": "{} native plugins loaded.",
+                "start": "Loading native plugins..."
+            }
+        },
+        "notice": {
+            "newForum": "Our new forum is live! -> {}",
+            "license": "LiteLoader is licensed under {}"
+        },
+        "pluginManager": {
+            "error": {
+                "invalidFileType": "Invalid plugin file type {} in {}",
+                "noValidPluginFound": "No valid plugin found at {}!",
+                "failToRegisterPlugin": "Failed to register plugin {}!",
+                "hasBeenRegistered": "A plugin named {} has been registered",
+                "failToLoadPlugin": "Fail to load the plugin {}!",
+                "pluginNotFound": "Plugin <{}> is not found"
+            },
+            "warning": {
+                "unloadDllNotFinished": "Unload function of dll plugins is not finished.",
+                "reloadDllNotFinished": "Reload function of dll plugins is not finished."
+            },
+            "reloadPlugin": {
+                "fail": "Failed to reload plugin {}!"
+            }
+        }
+    },
+    "llse": {
+        "init": {
+            "llMoney": {
+                "notFound": "LLMoney.dll 不存在，ScriptEngine 經濟系統將不起作用"
+            }
+        },
+        "api": {
+            "ll": {
+                "require": {
+                    "success": " - 插件依賴庫加載成功。已加載：",
+                    "fail": " - 插件前置加載失敗",
+                    "download": {
+                        "success": " - 成功下載前置檔案！ 檔案位置： ",
+                        "fail": " - 插件前置下載失敗！錯誤代碼： "
+                    }
+                }
+            }
+        },
+        "apiHelp": {
+            "parseJson": {
+                "fail": "JSON解析錯誤"
+            }
+        }
+    }
+}

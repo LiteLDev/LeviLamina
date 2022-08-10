@@ -13,11 +13,11 @@ Logger crashLogger("CrashLogger");
 
 bool LL::StartCrashLoggerProcess() {
     if (IsDebuggerPresent()) {
-        crashLogger.info("Existing debugger detected. Builtin CrashLogger will not work.");
+        crashLogger.info(tr("ll.crashLogger.existsingDebuggerDetected"));
         return true;
     }
     if (IsWineEnvironment()) {
-        crashLogger.info("Wine Environment detected. Builtin CrashLogger will not work.");
+        crashLogger.info(tr("ll.crashLogger.wineDetected"));
         return true;
     }
 
@@ -35,7 +35,7 @@ bool LL::StartCrashLoggerProcess() {
     std::string serverVersion = fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
     wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(), str2wstr(serverVersion).c_str());
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
-        crashLogger.error("Could not Create CrashLogger Daemon Process!");
+        crashLogger.error(tr("ll.crashLogger.error.cannotCreateDaemonProcess"));
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
         return false;
     }
@@ -52,11 +52,11 @@ void LL::InitCrashLogger(bool enableCrashLogger) {
     } catch (...) {}
 
     if (!enableCrashLogger) {
-        crashLogger.warn("Builtin CrashLogger is not enabled because the configuration disabled it.");
-        crashLogger.warn("There will be no crash log when unhandled exception occurs,");
-        crashLogger.warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
+        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.1"));
+        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.2"));
+        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.3"));
         crashLogger.warn("");
-        crashLogger.warn("We strongly recommend you to enable it to ensure server stability");
+        crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.4"));
         return;
     }
     string noCrashLoggerReason = "";
@@ -79,12 +79,13 @@ void LL::InitCrashLogger(bool enableCrashLogger) {
     }
 
     if (noCrashLoggerReason != "") {
-        crashLogger.warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
-        crashLogger.warn("There will be no crash log when unhandled exception occurs,");
-        crashLogger.warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
+        // Plugin conflicts with CrashLogger
+        crashLogger.warn(tr("ll.crashLogger.warning.conflicts.1", noCrashLoggerReason));
+        crashLogger.warn(tr("ll.crashLogger.warning.conflicts.2"));
+        crashLogger.warn(tr("ll.crashLogger.warning.conflicts.3"));
         crashLogger.warn("");
-        crashLogger.warn("Since CrashLogger is an important component which ensures server stability");
-        crashLogger.warn("We recommend you to think twice about the usage of plugin <{}>", noCrashLoggerReason);
+        crashLogger.warn(tr("ll.crashLogger.warning.conflicts.4"));
+        crashLogger.warn(tr("ll.crashLogger.warning.conflicts.5", noCrashLoggerReason));
         return;
     }
 
@@ -92,7 +93,7 @@ void LL::InitCrashLogger(bool enableCrashLogger) {
     if (StartCrashLoggerProcess()) {
         // Logger::Info("CrashLogger Daemon Process attached.");
     } else {
-        crashLogger.warn("Builtin CrashLogger failed to start!");
-        crashLogger.warn("There will be no crash log when unhandled exception occurs.");
+        crashLogger.warn(tr("ll.crashLogger.init.fail.msg"));
+        crashLogger.warn(tr("ll.crashLogger.init.fail.tip"));
     }
 }

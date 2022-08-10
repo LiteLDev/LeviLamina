@@ -14,32 +14,74 @@ LIAPI LLConfig globalConfig;
 LIAPI LL::CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf) {
+    // clang-format off
     j = nlohmann::json{
         {"DebugMode", conf.debugMode},
         {"ColorLog", conf.colorLog},
         {"LogLevel", conf.logLevel},
         {"Language", conf.language},
-        {"ScriptEngine", {{"enabled", conf.enableScriptEngine}, {"alwaysLaunch", conf.alwaysLaunchScriptEngine}}},
+        {"ScriptEngine", {
+            {"enabled", conf.enableScriptEngine},
+            {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
+        }},
         {"Modules", {
-                        {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}}},
-                        {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
-                        {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
-                        {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
-                        {"AddonsHelper", {{"enabled", conf.enableAddonsHelper}, {"autoInstallPath", conf.addonsInstallPath}}},
-                        {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
-                        {"AntiGive", {{"enabled", conf.enableAntiGive}, {"command", conf.antiGiveCommand}}},
-                        {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}, {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}}},
-                        {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
-                        {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
-                        {"WelcomeText", {{"enabled", conf.enableWelcomeText}}},
-                        {"FixMcBug", {{"enabled", conf.enableFixMcBug}}},
-                        {"DisableAutoCompactionLog", {{"enabled", conf.disableAutoCompactionLog}}},
-                        {"FixBroadcastBug", {{"enabled", conf.enableFixBroadcastBug}}},
-                        {"OutputFilter", {{"enabled", conf.enableOutputFilter}, {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput}, {"filterRegex", conf.outputFilterRegex}}},
-                        {"EconomyCore", {{"enabled", conf.enableEconomyCore}}},
-                        {"ForceUtf8Input", {{"enabled", conf.enableForceUtf8Input}}},
-                        {"TpdimCommand", {{"enabled", conf.enableTpdimCommand}}},
-                    }}};
+            {"CrashLogger", {
+                {"enabled", conf.enableCrashLogger},
+                {"path", conf.crashLoggerPath}
+            }},
+            {"SimpleServerLogger", {
+                {"enabled", conf.enableSimpleServerLogger}
+            }},
+            {"FixDisconnectBug", {
+                {"enabled", conf.enableFixDisconnectBug}
+            }},
+            {"UnlockCmd", {
+                {"enabled", conf.enableUnlockCmd}
+            }},
+            {"AddonsHelper", {
+                {"enabled", conf.enableAddonsHelper},
+                {"autoInstallPath", conf.addonsInstallPath}
+            }},
+            {"FixListenPort", {
+                {"enabled", conf.enableFixListenPort}
+            }},
+            {"AntiGive", {
+                {"enabled", conf.enableAntiGive},
+                {"command", conf.antiGiveCommand}
+            }},
+            {"ErrorStackTraceback", {
+                {"enabled", conf.enableErrorStackTraceback},
+                {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}
+            }},
+            {"UnoccupyPort19132", {
+                {"enabled", conf.enableUnoccupyPort19132}
+            }},
+            {"CheckRunningBDS", {
+                {"enabled", conf.enableCheckRunningBDS}
+            }},
+            {"WelcomeText", {
+                {"enabled", conf.enableWelcomeText}
+            }},
+            {"FixMcBug", {
+                {"enabled", conf.enableFixMcBug}
+            }},
+            {"OutputFilter", {
+                {"enabled", conf.enableOutputFilter},
+                {"onlyFilterConsoleOutput", conf.onlyFilterConsoleOutput},
+                {"filterRegex", conf.outputFilterRegex}
+            }},
+            {"EconomyCore", {
+                {"enabled", conf.enableEconomyCore}
+            }},
+            {"ForceUtf8Input", {
+                {"enabled", conf.enableForceUtf8Input}
+            }},
+            {"TpdimCommand", {
+                {"enabled", conf.enableTpdimCommand}
+            }},
+        }}
+    };
+    // clang-format on
 }
 
 void inline from_json(const nlohmann::json& j, LLConfig& conf) {
@@ -150,7 +192,7 @@ inline bool SaveConfig(nlohmann::json& config) {
         of << config.dump(4);
         return true;
     } else {
-        logger.error("Configuration File Creation failed!");
+        logger.error(tr("ll.config.save.fail"));
         return false;
     }
 }
@@ -159,7 +201,7 @@ bool LL::LoadLLConfig() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
         if (!content || content.value().empty()) {
-            logger.warn("LL Config File <{}> not found. Creating configuration file...", LITELOADER_CONFIG_FILE);
+            logger.warn(tr("ll.config.creating", LITELOADER_CONFIG_FILE));
             filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
             LL::SaveLLConfig();
         } else {
@@ -168,9 +210,8 @@ bool LL::LoadLLConfig() {
                 LL::globalConfig = out;
                 auto config = nlohmann::json(LL::globalConfig);
                 if (out != config) {
-                    logger.warn("LL Config File <{}> is outdated.",
-                                LITELOADER_CONFIG_FILE);
-                    logger.warn("Updating configuration file...");
+                    logger.warn(tr("ll.config.warning.configOutdated", LITELOADER_CONFIG_FILE));
+                    logger.warn(tr("ll.config.updating"));
                     return SaveConfig(config);
                 }
                 return true;
