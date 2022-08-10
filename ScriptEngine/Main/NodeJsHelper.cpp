@@ -359,10 +359,11 @@ int executeNpmCommand(std::string cmd, std::string workingDir)
         v8::HandleScope handle_scope(isolate);
         v8::Context::Scope context_scope(setup->context());
 
-        string executeJs = 
-            "const publicRequire = require('module').createRequire(process.cwd() + '/plugins/lib/');"
+        string executeJs = "const oldCwd = process.cwd();"
+            "const publicRequire = require('module').createRequire(oldCwd + '/plugins/lib/');"
             "require('process').chdir('" + workingDir + "');"
-            + "publicRequire('npm-js-interface')('" + cmd + "');";
+            + "publicRequire('npm-js-interface')('" + cmd + "');"
+            + "require('process').chdir(oldCwd);";
 
         try
         {
