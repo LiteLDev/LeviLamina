@@ -130,39 +130,39 @@
             },
             "displayError": "錯誤： {}",
             "removeAddonFromList": {
-                "fail": "Fail to remove addon <{}> from config file!",
-                "success": "Removed addon <{}> from config file."
+                "fail": "無法從配置文件中刪除addon <{}>！",
+                "success": "成功從配置文件刪除了addon <{}>"
             },
             "addAddonToList": {
-                "invalidList": "Invalid Addon List File {}, backup to {} and reset to default",
-                "fail": "Fail to insert the addon {} into {}!",
-                "success": "Added addon <{}> to config file."
+                "invalidList": "無效的Addon列表文件, 已備份到 {} 並重置成默認值",
+                "fail": "無法將addon {} 插入到 {}",
+                "success": "成功將Addon <{}> 添加到配置文件"
             },
             "install": {
-                "installing": "Installing addon <{}>...",
+                "installing": "正在安裝addon <{}>...",
                 "error": {
                     "failToUncompress": {
-                        "msg": "Fail to uncompress addon {}!",
-                        "exitCode": "Exit Code: {}",
-                        "programOutput": "Program Output:\n{}"
+                        "msg": "無法解壓縮addon {}！",
+                        "exitCode": "退出代碼: {}",
+                        "programOutput": "程式輸出: {}"
                     }
                 }
             },
             "uninstall": {
-                "success": "Addon <{}> uninstalled."
+                "success": "Addon <{}> 成功卸載"
             },
             "autoInstall": {
                 "tip": {
-                    "dirCreated": "Directory created. You can move compressed Addon files to {} to get installed at next launch."
+                    "dirCreated": "已創建目錄. 您可以把壓縮的Addon 檔移至 {} 以在下次啟動時安裝"
                 },
-                "working": "{} new addon(s) found to install. Working...",
-                "installed": "Addon {} has beed installed.",
-                "installedCount": "{} addon(s) was installed."
+                "working": "{} 個要安裝的新addon(s). 處理中...",
+                "installed": "Addon {} 已被安裝",
+                "installedCount": "{} 個addon(s) 已被安裝"
             },
             "cmd": {
                 "output": {
                     "list": {
-                        "overview": "Addons: {} addon(s) installed:"
+                        "overview": "Addons: {} 個addon(s) 已安裝:"
                     }
                 }
             }
@@ -170,46 +170,50 @@
         "loader": {
             "loadScriptEngine": {
                 "error": {
-                    "versionNotMatch": "The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>"
+                    "versionNotMatch": "{} 的腳本引擎的文件版本 <{}> 與 LiteLoader 版本 <{}> 不符合"
                 },
                 "success": "* {} 的 腳本引擎 已成功載入"
             },
             "loadDotNetEngine": {
                 "warning": {
-                    "notFinished": "LiteLoader.NET is not finished yet!"
+                    "notFinished": "LiteLoader.NET 還未完成！"
                 },
                 "error": {
-                    "versionNotMatch": "The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>"
+                    "versionNotMatch": "LiteLoader.NET 的檔版本 <{}> 與 LiteLoader 版本 <{}> 不符合"
                 },
-                "success": "* .NET Engine loaded"
+                "success": "* .NET 引擎已載入"
             },
             "loadMain": {
-                "loadingPlugins": "載入插件中...",
-                "loadedShellLink": "ShellLinked Plugin <{} => {}> loaded",
-                "loadedPlugin": "插件 <{}> 已載入",
-                "done": "{} native plugins loaded.",
-                "start": "Loading native plugins..."
+                "loadingPlugins": "載入原生插件中...",
+                "loadedShellLink": "快捷連結插件 <{} => {}> 已加載",
+                "loadedPlugin": "原生插件 <{name}> 已載入",
+                "done": "已載入 {} 個原生插件",
+                "start": "加載原生插件..."
+            },
+            "initNodeJsDirectories": {
+                "created": "無法找到NodeJS運行文件，已自動創建。"
             }
         },
         "notice": {
-            "newForum": "Our new forum is live! -> {}",
-            "license": "LiteLoader is licensed under {}"
+            "newForum": "我們的新論壇！-> {}",
+            "license": "LiteLoader 在 {} 許可證下開源",
+            "translateText": "幫助我們翻譯&改進翻譯 -> {}"
         },
         "pluginManager": {
             "error": {
-                "invalidFileType": "Invalid plugin file type {} in {}",
-                "noValidPluginFound": "No valid plugin found at {}!",
-                "failToRegisterPlugin": "Failed to register plugin {}!",
-                "hasBeenRegistered": "A plugin named {} has been registered",
-                "failToLoadPlugin": "Fail to load the plugin {}!",
-                "pluginNotFound": "Plugin <{}> is not found"
+                "invalidFileType": "{} 中的插件文件類型 {} 無效",
+                "noValidPluginFound": "未找到有效的插件在 {}!",
+                "failToRegisterPlugin": "插件 {} 註冊失敗",
+                "hasBeenRegistered": "插件 {} 已被註冊",
+                "failToLoadPlugin": "插件 {} 加載失敗",
+                "pluginNotFound": "找不到此插件 <{}>"
             },
             "warning": {
-                "unloadDllNotFinished": "Unload function of dll plugins is not finished.",
-                "reloadDllNotFinished": "Reload function of dll plugins is not finished."
+                "unloadDllNotFinished": "dll插件卸載功能尚未完成",
+                "reloadDllNotFinished": "dll插件的重新載入功能尚未完成"
             },
             "reloadPlugin": {
-                "fail": "Failed to reload plugin {}!"
+                "fail": "無法重新載入插件 {}!"
             }
         }
     },
@@ -234,6 +238,37 @@
         "apiHelp": {
             "parseJson": {
                 "fail": "JSON解析錯誤"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "依賴 {} 已載入",
+                "fail": "無法載入依賴 {}"
+            },
+            "loadMain": {
+                "start": "載入 {type} 插件中...",
+                "done": "{count} 個 {type} 已成功載入。",
+                "nodejs": {
+                    "install": {
+                        "fail": "安裝插件 {} 失敗，請檢查您的 package.json 文件！",
+                        "start": "發現 Node.js 插件包 \"{path}\"! 嘗試安裝中..."
+                    },
+                    "ignored": "在目錄 {path} 中找不到 package.json 文件, 已忽略"
+                },
+                "loadedPlugin": "{type} 插件 <{name}> 已加載。",
+                "installPluginPack": {
+                    "done": "已安裝 {count} 個 {type} 插件包"
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npm 命玲已成功完成",
+                    "start": "正在為 {name} 插件執行 “npm install”...",
+                    "fail": "發生錯誤. 退出代碼: {code}"
+                },
+                "register": {
+                    "fail": "無法讓插件 {name} 被註冊！"
+                }
             }
         }
     }

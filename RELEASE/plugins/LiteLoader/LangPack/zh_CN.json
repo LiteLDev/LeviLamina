@@ -184,9 +184,9 @@
                 "success": "* .NET 引擎已加载"
             },
             "loadMain": {
-                "loadingPlugins": "正在加载插件...",
+                "loadingPlugins": "加载原生插件...",
                 "loadedShellLink": "快捷方式插件 <{} => {}> 已加载",
-                "loadedPlugin": "插件 <{}> 已加载",
+                "loadedPlugin": "原生插件 <{name}> 已加载",
                 "done": "已加载 {} 个原生插件",
                 "start": "加载原生插件..."
             },
@@ -196,7 +196,8 @@
         },
         "notice": {
             "newForum": "我们的新论坛上线了啦! -> {}",
-            "license": "LiteLoader采用 {} 许可证开源"
+            "license": "LiteLoader采用 {} 许可证开源",
+            "translateText": "帮助我们翻译&改进翻译 -> {}"
         },
         "pluginManager": {
             "error": {
@@ -237,6 +238,37 @@
         "apiHelp": {
             "parseJson": {
                 "fail": "JSON 解析错误"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "依赖项 {} 已加载。",
+                "fail": "加载依赖项 {} 失败"
+            },
+            "loadMain": {
+                "start": "加载 {type} 插件...",
+                "done": "{count} 个 {type} 插件已加载。",
+                "nodejs": {
+                    "install": {
+                        "fail": "安装插件包 {} 失败，请检查您的 package.json 文件！",
+                        "start": "找到 Node.js 插件包 \"{path}\"！尝试安装..."
+                    },
+                    "ignored": "在目录 {path} 中没有找到 package.json 文件，已忽略。"
+                },
+                "loadedPlugin": "{type} 插件 <{name}> 已加载。",
+                "installPluginPack": {
+                    "done": "{count} 个 {type} 插件包已安装。"
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npm 命令成功完成",
+                    "start": "为插件 {name} 执行 \"npm install\"...",
+                    "fail": "发生错误。退出代码： {code}"
+                },
+                "register": {
+                    "fail": "插件 {name} 注册失败！"
+                }
             }
         }
     }

@@ -193,11 +193,11 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath) {
     // Run "npm install" if needed
     if (NodeJsHelper::doesPluginPackHasDependency(dirPath) && !filesystem::exists(filesystem::path(dirPath) / "node_modules")) {
         int exitCode = 0;
-        logger.info(tr("llse.loader.nodejs.executeNpmInstall.start", filesystem::path(dirPath).filename().u8string()));
+        logger.info(tr("llse.loader.nodejs.executeNpmInstall.start", fmt::arg("name", filesystem::path(dirPath).filename().u8string())));
         if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
             logger.info(tr("llse.loader.nodejs.executeNpmInstall.success"));
         else
-            logger.error(tr("llse.loader.nodejs.executeNpmInstall.fail", exitCode));
+            logger.error(tr("llse.loader.nodejs.executeNpmInstall.fail", fmt::arg("code",exitCode)));
     }
 
     // Create engine & Load plugin
@@ -252,7 +252,7 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath) {
                     others["Repository"] = j["repository"]["url"].get<std::string>();
                 }
             } catch (...) {
-                logger.warn(tr("llse.loader.nodejs.register.fail", pluginName));
+                logger.warn(tr("llse.loader.nodejs.register.fail", fmt::arg("name", pluginName)));
             }
 
             // register

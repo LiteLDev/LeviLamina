@@ -238,7 +238,7 @@ void LL::LoadMain() {
                 logger.info(tr("ll.loader.loadMain.loadedShellLink",
                                UTF82String(file.path().filename().u8string()), UTF82String(path.u8string())));
             } else {
-                logger.info(tr("ll.loader.loadMain.loadedPlugin", pluginFileName));
+                logger.info(tr("ll.loader.loadMain.loadedPlugin", fmt::arg("name" ,pluginFileName)));
             }
 
             if (PluginManager::getPlugin(lib) == nullptr) {

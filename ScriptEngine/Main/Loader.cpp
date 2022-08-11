@@ -93,7 +93,7 @@ void LoadMain() {
     return;
 #endif
 
-    logger.info(tr("llse.loader.loadMain.start", LLSE_MODULE_TYPE));
+    logger.info(tr("llse.loader.loadMain.start", fmt::arg("type", LLSE_MODULE_TYPE)));
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
@@ -111,7 +111,7 @@ void LoadMain() {
 #ifdef LLSE_BACKEND_NODEJS
 // NodeJs后端 - 主加载
 void LoadMain_NodeJs() {
-    logger.info(tr("llse.loader.loadMain.start", "Node.js"));
+    logger.info(tr("llse.loader.loadMainl.start", fmt::arg("type", "Node.js")));
     int installCount = 0;
     int count = 0;
 
