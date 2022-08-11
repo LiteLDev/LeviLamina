@@ -93,7 +93,7 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         conf.colorLog = j.value("ColorLog", true);
     conf.version = j.value("Version", 1);
     conf.logLevel = j.value("LogLevel", 4);
-    conf.language = j.value("Language", "en");
+    conf.language = j.value("Language", "system");
 
     if (j.find("ScriptEngine") != j.end()) {
         const nlohmann::json& scriptEngine = j.at("ScriptEngine");
@@ -199,13 +199,12 @@ inline bool SaveConfig(nlohmann::json& config) {
     }
 }
 
-void ChooseLanguage() {
+void ChooseLanguage() { //deprecated
     std::unordered_map<std::string, std::string> languageList = {{"en", "English"}, {"zh_CN", "简体中文"}, {"zh_TW", "繁体中文"}, {"ja", "日本語"}, {"ru", "Русский"}, {"id", "Indonesian"}, {"th", "ไทย"}, {"it", "Italiano"}, {"vi", "tiếng việt"}};
     logger.info("Please select your language first");
     std::unordered_map<unsigned short, std::string> languages;
     unsigned short languageCode = 0;
     logger.info("0. Default(System)");
-    languages[0] = "system";
     for (std::filesystem::directory_entry i : std::filesystem::directory_iterator("plugins/LiteLoader/LangPack")) {
         languageCode++;
         std::string langFile = i.path().filename().string();
@@ -213,11 +212,13 @@ void ChooseLanguage() {
         languages[languageCode] = lang;
         logger.info("{}. {}", languageCode, languageList[lang]);
     }
-    unsigned short selected;
+    unsigned short selected = 0;
     std::cout << "(Number)> ";
     std::cin >> selected;
     std::cin.ignore();
-    LL::globalConfig.language = languages[selected];
+    if (!languages[selected].empty()) {
+        LL::globalConfig.language = languages[selected];
+    }
 }
 
 bool LL::LoadLLConfig() {
@@ -226,7 +227,9 @@ bool LL::LoadLLConfig() {
 
         if (!content || content.value().empty()) {
             logger.warn(tr("ll.config.creating", LITELOADER_CONFIG_FILE));
-            //ChooseLanguage();
+            // if (IsWineEnvironment()) {
+            //     ChooseLanguage();
+            // }
             filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
             LL::SaveLLConfig();
         } else {
@@ -238,6 +241,7 @@ bool LL::LoadLLConfig() {
                     logger.warn(tr("ll.config.warning.configOutdated", LITELOADER_CONFIG_FILE));
                     logger.warn(tr("ll.config.updating"));
                     LL::globalConfig.language = "system";
+                    config = nlohmann::json(LL::globalConfig);
                     return SaveConfig(config);
                 }
                 return true;
