@@ -111,7 +111,7 @@ void LoadMain() {
 #ifdef LLSE_BACKEND_NODEJS
 // NodeJs后端 - 主加载
 void LoadMain_NodeJs() {
-    logger.info(tr("llse.loader.loadMainl.start", fmt::arg("type", "Node.js")));
+    logger.info(tr("llse.loader.loadMain.start", fmt::arg("type", "Node.js")));
     int installCount = 0;
     int count = 0;
 
@@ -126,7 +126,7 @@ void LoadMain_NodeJs() {
             ++installCount;
         }
     }
-    logger.info(tr("llse.loader.loadMain.installPack.done",
+    logger.info(tr("llse.loader.loadMain.installPluginPack.done",
                    fmt::arg("count", installCount),
                    fmt::arg("type", "Node.js")));
 

@@ -43,7 +43,7 @@ bool EconomySystem::init()
     if (!llmoney)
     {
         if (localShareData->isFirstInstance) {
-            economicLogger.warn(tr("init.llMoney.noFound"));
+            economicLogger.warn(tr("llse.init.llMoney.notFound"));
         }
         return false;
     }
