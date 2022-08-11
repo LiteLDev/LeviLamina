@@ -155,7 +155,7 @@ docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 将所有获取到的内容直接放入`plugins`目录
 3. 运行`bedrock_server_mod.exe` 开服
 
-更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看
+更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
 
 ------
 
@@ -169,7 +169,7 @@ docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 4. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
 5. 复制插件到 plugins 目录进行测试
 
-具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看
+具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
 
 ### 使用脚本语言开发插件
@@ -178,7 +178,7 @@ docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 编写代码
 3. 复制插件到 plugins 目录进行测试
 
-请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**
+请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
 
 ### 示例插件
@@ -236,7 +236,7 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 
-PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Maintenance/)👈查看 **项目维护与支持文档**
+PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Maintenance/)👈查看 **项目维护与支持文档**
 
 ------
 

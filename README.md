@@ -167,7 +167,7 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 2. Place all the obtained contents directly into the `plugins` directory
 3. Run `bedrock_server_mod.exe` to start the service
 
-For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈 to view
+For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)👈 to view
 
 ------
 
@@ -181,7 +181,7 @@ For more **installation and usage guides**,  come to 👉[LiteLoader documentati
 4. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
 5. Copy the plugin to the plugins directory for testing
 
-For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈<br>
+For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Usage/)👈<br>
 If you have a revision request or need to add an API, please contact the author or post an Issue
 
 ### Developing plugins using scripting Languages
@@ -190,7 +190,7 @@ If you have a revision request or need to add an API, please contact the author 
 2. Write the code
 3. Copy the plugin to the plugins directory for testing
 
-Please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.
+Please come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.
 If you have a revision request or need to add an API, please feel free to contact the author or post an Issue
 
 ### Example Plugins
@@ -245,7 +245,7 @@ You can use the following methods to contribute to the `LiteLoader` project
 
 ⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐
 
-If you are interested in contributing to LiteLoaderBDS, feel free to come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Maintenance/)👈 to view **Project Maintenance and Support Documentation**
+If you are interested in contributing to LiteLoaderBDS, feel free to come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en_US/Maintenance/)👈 to view **Project Maintenance and Support Documentation**
 
 ------
 
