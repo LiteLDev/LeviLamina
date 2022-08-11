@@ -31,6 +31,7 @@ enum class LLServerStatus {
 struct LLConfig {
     bool debugMode = false;
     bool colorLog = true;
+    int version = 1;
     int logLevel = 4;
     std::string language = "en";
 
