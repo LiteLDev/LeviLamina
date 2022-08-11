@@ -5,26 +5,25 @@ setlocal enabledelayedexpansion
 
 set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
 
-
-rem Process System Proxy
-for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable') do (
-    if %%i==0x1 (
-        echo [INFO] System Proxy enabled. Adapting Settings...
-        for /f "tokens=3* delims= " %%a in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer') do set PROXY_ADDR=%%a
-        set http_proxy=http://!PROXY_ADDR!
-        set https_proxy=http://!PROXY_ADDR!
-        echo [INFO] System Proxy enabled. Adapting Settings finished.
-        echo.
-    )
-)
+@REM rem Process System Proxy
+@REM for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable') do (
+@REM     if %%i==0x1 (
+@REM         echo [INFO] System Proxy enabled. Adapting Settings...
+@REM         for /f "tokens=3* delims= " %%a in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer') do set PROXY_ADDR=%%a
+@REM         set http_proxy=http://!PROXY_ADDR!
+@REM         set https_proxy=http://!PROXY_ADDR!
+@REM         echo [INFO] System Proxy enabled. Adapting Settings finished.
+@REM         echo.
+@REM     )
+@REM )
 
 
 echo [INFO] Fetching LiteLoaderSDK to GitHub ...
 echo.
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
-for /f "delims=" %%i in ('git describe') do set LL_NOW_TAG_LONG=%%i
-for /f "delims=-" %%i in ('git describe') do set LL_NOW_TAG=%%i
+for /f "delims=" %%i in ('git describe --tags') do set LL_NOW_TAG_LONG=%%i
+for /f "delims=-" %%i in ('git describe --tags') do set LL_NOW_TAG=%%i
 
 echo LL_SDK_NOW_BRANCH %LL_SDK_NOW_BRANCH%
 echo LL_NOW_TAG_LONG %LL_NOW_TAG_LONG%
@@ -72,9 +71,11 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo [INFO] Pushing to origin...
     echo.
     if [%1] neq [action] (
+        git push origin %LL_SDK_NOW_BRANCH%
         git push --tags origin %LL_SDK_NOW_BRANCH%
     ) else (
         git push https://%USERNAME%:%REPO_KEY%@github.com/LiteLDev/LiteLoaderSDK.git %LL_SDK_NOW_BRANCH%
+        git push --tags https://%USERNAME%:%REPO_KEY%@github.com/LiteLDev/LiteLoaderSDK.git %LL_SDK_NOW_BRANCH%
     )
     cd ..
     echo.
