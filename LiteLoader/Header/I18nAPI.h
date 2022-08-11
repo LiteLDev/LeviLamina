@@ -66,7 +66,7 @@ public:
     LangData defaultLangData;
     std::string defaultLocaleName = "en_US";
 
-	virtual ~I18N() = default;
+    virtual ~I18N() = default;
 
     /**
      * @brief Get the translation of the specified key.
@@ -98,7 +98,7 @@ public:
      * @return  The new i18n object.
      */
     virtual I18N* clone();
-	
+    
     static const constexpr char* POD_KEY = "ll_plugin_i18n"; ///< PluginOwnData key
 };
 
@@ -261,9 +261,9 @@ LIAPI I18N* loadImpl(HMODULE hPlugin, const std::string& path, const std::string
 LIAPI I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
 
 /**
- * @brief Load translation from a file.
+ * @brief Load translation from a file or dir.
  *
- * @param  filePath         The path to the i18n file(json)
+ * @param  path            The path to the i18n file(json) or dir
  * @param  defaultLangCode  The default language code(if no lang code is specified, it will use this)
  * @param  defaultLangData  The default translation data
  * @return I18N*            The pointer to the I18N object in PluginOwnData, null if failed
@@ -314,6 +314,21 @@ inline I18N* load(const std::string& path,
                   const std::string& defaultLocaleName = "",
                   const I18N::LangData& defaultLangData = {}) {
     return loadImpl(GetCurrentModule(), path, defaultLocaleName, defaultLangData);
+}
+
+/**
+ * Load i18n with custom i18n type.
+ * 
+ * @param args...  The args to pass to the i18n type constructor
+ * @return I18N*   The pointer to the I18N object in PluginOwnData, null if failed
+ */
+template <typename T, typename... Args>
+inline I18N* load(Args&&... args) {
+    try {
+        I18N* res = new T(std::forward<Args>(args)...);
+        return &PluginOwnData::setWithoutNewImpl<I18N>(GetCurrentModule(), I18N::POD_KEY, res);
+    } catch (...) {}
+    return nullptr;
 }
 
 /**
