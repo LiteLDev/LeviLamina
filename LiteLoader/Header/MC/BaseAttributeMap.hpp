@@ -44,7 +44,7 @@ public:
     MCAPI bool operator==(class BaseAttributeMap const &) const;
     MCAPI class AttributeInstance & registerAttribute(class Attribute const &);
     MCAPI unsigned __int64 size() const;
-    MCAPI void updateAttribute(class HashedString const &, float, float, float, float);
+    MCAPI void updateAttribute(class HashedString const &, float, float, float, float, std::vector<class AttributeModifier> const &);
     MCAPI ~BaseAttributeMap();
 
 //private:

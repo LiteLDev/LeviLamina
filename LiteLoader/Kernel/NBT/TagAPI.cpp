@@ -11,7 +11,7 @@
 #include <MC/ShortTag.hpp>
 #include <MC/StringTag.hpp>
 #include <MC/Tag.hpp>
-#include <cpp-base64/base64.h>
+#include <Base64/Base64.hpp>
 #include <map>
 #include <sstream>
 #include <vector>
@@ -136,7 +136,7 @@ void TagToJson_List_Helper(fifo_json& res, ListTag* nbt) {
                 break;
             case Tag::Type::ByteArray: {
                 auto& bytes = tag->asByteArrayTag()->value();
-                res.push_back(base64_encode(string((char*)bytes.data.get(), bytes.size)));
+                res.push_back(Base64::Encode(string((char*)bytes.data.get(), bytes.size)));
                 break;
             }
             case Tag::Type::List: {
@@ -189,7 +189,7 @@ void TagToJson_Compound_Helper(fifo_json& res, CompoundTag* nbt) {
                 break;
             case Tag::Type::ByteArray: {
                 auto& bytes = tag.asByteArrayTag()->value();
-                res.push_back({key, base64_encode(string((char*)bytes.data.get(), bytes.size))});
+                res.push_back({key, Base64::Encode(string((char*)bytes.data.get(), bytes.size))});
                 break;
             }
             case Tag::Type::List: {
@@ -241,7 +241,7 @@ string Tag::toJson(int formatIndent) {
             break;
         case Tag::Type::ByteArray: {
             auto& bytes = nbt->asByteArrayTag()->value();
-            result = base64_encode(string((char*)bytes.data.get(), bytes.size));
+            result = Base64::Encode(string((char*)bytes.data.get(), bytes.size));
             break;
         }
         case Tag::Type::List: {

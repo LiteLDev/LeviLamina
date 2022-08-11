@@ -47,7 +47,6 @@ public:
     MCVAPI class Vec3 getLastDelta() const;
     MCVAPI class Vec3 getLastPos() const;
     MCVAPI enum LoadingState getLoadingState() const;
-    MCVAPI class Vec2 getLookBob() const;
     MCVAPI class MoveInputHandler * getMoveInputHandler();
     MCVAPI enum ClientPlayMode getPlayMode() const;
     MCVAPI float getPlayerPaddleForce(enum Side) const;
@@ -87,9 +86,7 @@ public:
     MCVAPI void setJumpRidingScale(float);
     MCVAPI void setLastBob(float);
     MCVAPI void setLastDelta(class Vec3 const &);
-    MCVAPI void setLastLookBob(class Vec2 const &);
     MCVAPI void setLastPos(class Vec3 const &);
-    MCVAPI void setLookBob(class Vec2 const &);
     MCVAPI void setPlayerPaddleForce(enum Side, float);
     MCVAPI void setWasAutoJumping(bool);
     MCVAPI bool shouldSendPosition() const;

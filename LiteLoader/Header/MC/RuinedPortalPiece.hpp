@@ -39,6 +39,7 @@ public:
     MCAPI void _moveStructureBoundsToSuitableY(class Random &, class BlockSource &, struct PortalEnvironmentModifiers const &);
     MCAPI void _spreadNetherrack(class Random &, class BlockSource &, struct PortalEnvironmentModifiers const &);
     MCAPI static class Block const & _getRandomFacingStairs(class Random &, class Block const &);
+    MCAPI static bool _isLava(class BlockSource &, class BlockPos);
     MCAPI static bool _willLavaFlowIn(class BlockSource &, class BlockPos);
 
 

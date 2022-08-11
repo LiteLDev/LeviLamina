@@ -43,7 +43,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMANDORIGIN
 #endif
     MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>);
-    //MCAPI void __autoclassinit2(unsigned __int64);
+    MCAPI void __autoclassinit2(unsigned __int64);
 
 
 

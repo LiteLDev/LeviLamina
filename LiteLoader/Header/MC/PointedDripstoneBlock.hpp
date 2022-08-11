@@ -67,22 +67,22 @@ public:
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /*153*/ virtual class BlockLegacy & init();
-    /*165*/ virtual void __unk_vfn_165();
-    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*182*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
-    /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class mce::Color getDustColor(class Block const &) const;
-    /*204*/ virtual std::string getDustParticleName(class Block const &) const;
-    /*205*/ virtual void __unk_vfn_205();
-    /*206*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
-    /*208*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
+    /*157*/ virtual void __unk_vfn_157();
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*172*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
+    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual class mce::Color getDustColor(class Block const &) const;
+    /*193*/ virtual std::string getDustParticleName(class Block const &) const;
+    /*194*/ virtual void __unk_vfn_194();
+    /*195*/ virtual void onLand(class BlockSource &, class BlockPos const &) const;
+    /*197*/ virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POINTEDDRIPSTONEBLOCK
     MCVAPI bool falling() const;
 #endif

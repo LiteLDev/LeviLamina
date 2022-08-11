@@ -57,7 +57,9 @@ public:
     MCAPI static class BlockPos transform(class BlockPos, enum Mirror, enum Rotation);
 
 //private:
-    MCAPI std::unique_ptr<class CompoundTag> _mapTag(std::unique_ptr<class CompoundTag>, std::string const &);
+    MCAPI static void _mapPropertiesToTags(class CompoundTag &, class CompoundTag const &);
+    MCAPI static void _mapPropertyToTag(class CompoundTag &, std::string const &, std::string const &);
+    MCAPI static std::unique_ptr<class CompoundTag> _mapTag(std::unique_ptr<class CompoundTag>, std::string const &);
 
 
 private:

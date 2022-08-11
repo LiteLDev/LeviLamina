@@ -25,6 +25,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
+    MCVAPI void registerTickingSystem(class gsl::span<class typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &);
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     MCVAPI ~EntitySystems();
 #endif

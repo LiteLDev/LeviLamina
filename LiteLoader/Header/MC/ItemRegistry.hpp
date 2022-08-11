@@ -40,6 +40,8 @@ public:
 #endif
     MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
     MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
+    MCAPI static void addItemToTagMap(class Item const &);
+    MCAPI static class TagUpdateToken allowTagUpdate();
     MCAPI static void alterAvailableCreativeItems(class ActorInfoRegistry *, class LevelData &);
     MCAPI static void clearItemAndCreativeItemRegistry();
     MCAPI static void digestServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
@@ -56,6 +58,7 @@ public:
     MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum ItemVersion);
     MCAPI static bool isComponentBasedItemSchema(class SemVersion const &);
     MCAPI static bool isCreativeItem(class ItemInstance const &);
+    MCAPI static bool mCanAddTags;
     MCAPI static bool mCheckForItemWorldCompatibility;
     MCAPI static class std::mutex mCompatibilityCheckLock;
     MCAPI static std::vector<class SharedPtr<class Item>> mDeadItemRegistry;
@@ -65,7 +68,6 @@ public:
     MCAPI static class BaseGameVersion mWorldBaseGameVersion;
     MCAPI static void registerAlias(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
     MCAPI static class Item & registerComplexAlias(class HashedString const &, class std::function<class HashedString (short)>);
-    MCAPI static void registerItem(class SharedPtr<class Item>);
     MCAPI static void registerLegacyID(class HashedString const &, short);
     MCAPI static void registerLegacyMapping(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
     MCAPI static unsigned __int64 remapToFullLegacyNameByHash(unsigned __int64);
@@ -74,7 +76,6 @@ public:
     MCAPI static void setWorldBaseGameVersion(class BaseGameVersion const &);
     MCAPI static void shutdown();
     MCAPI static void startRegistration();
-    MCAPI static void unregisterItem(class HashedString const &);
     MCAPI static std::vector<std::string> validateServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
 
 //private:
@@ -85,12 +86,16 @@ public:
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &) const;
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &) const;
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(class HashedString const &) const;
+    MCAPI class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>> const & lookupByTag(struct ItemTag const &) const;
+    MCAPI void registerItem(class SharedPtr<class Item>);
+    MCAPI void unregisterItem(class HashedString const &);
     MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
 
 
 private:
     MCAPI static std::vector<class HashedString> mAttachableDefinitions;
     MCAPI static class std::unordered_map<class HashedString, class std::function<class HashedString (short)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<class HashedString (short)>>>> mComplexAliasLookupMap;
+    MCAPI static class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>> const mEmptyItemSet;
     MCAPI static class std::unordered_map<int, class WeakPtr<class Item>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class WeakPtr<class Item>>>> mIdToItemMap;
     MCAPI static class std::unordered_map<class HashedString, struct ItemRegistry::ItemAlias, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct ItemRegistry::ItemAlias>>> mItemAliasLookupMap;
     MCAPI static std::vector<class SharedPtr<class Item>> mItemRegistry;
@@ -100,6 +105,7 @@ private:
     MCAPI static class std::thread::id mOwnerThread;
     MCAPI static class std::unordered_map<unsigned __int64, struct ItemRegistry::ItemHashAlias, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct ItemRegistry::ItemHashAlias>>> mReverseAliasLookupMap;
     MCAPI static class std::unordered_map<unsigned __int64, struct ItemRegistry::ItemHashAlias, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct ItemRegistry::ItemHashAlias>>> mReverseFullNameAliasLookupMap;
+    MCAPI static class std::unordered_map<struct ItemTag, class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>>, struct std::hash<struct ItemTag>, struct std::equal_to<struct ItemTag>, class std::allocator<struct std::pair<struct ItemTag const, class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>>>>> mTagToItemsMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileItemNameToItemMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> mTileNamespaceToItemMap;
 

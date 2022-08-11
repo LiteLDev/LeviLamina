@@ -26,6 +26,7 @@ public:
 #endif
     MCAPI std::string generateMessage(bool, bool, bool, std::string const &, class Vec3 const &) const;
     MCAPI ~SideBySideValidationFailure();
+    MCAPI static std::string toString(enum SideBySideValidationFailure::FailureReason);
 
 
 

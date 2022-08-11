@@ -62,17 +62,17 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
     /*152*/ virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*165*/ virtual void __unk_vfn_165();
-    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /*177*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
+    /*157*/ virtual void __unk_vfn_157();
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*167*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual void _lightUpBlock(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONEOREBLOCK
 #endif
     MCAPI RedStoneOreBlock(std::string const &, int, bool);

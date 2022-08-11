@@ -3,6 +3,7 @@
 #include <Nlohmann/json.hpp>
 #include <string>
 #include <thread>
+#include <LLAPI.h>
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
@@ -30,8 +31,9 @@ enum class LLServerStatus {
 struct LLConfig {
     bool debugMode = false;
     bool colorLog = true;
+    int version = 1;
     int logLevel = 4;
-    std::string language = "en_us";
+    std::string language = "system";
 
     bool enableScriptEngine = true;
     bool alwaysLaunchScriptEngine = false;
@@ -66,8 +68,8 @@ struct LLConfig {
     LLServerStatus serverStatus = LLServerStatus::Starting;
     std::thread::id tickThreadId;
 };
-extern LLConfig globalConfig;
-extern CommandLineOption commandLineOption;
+LIAPI extern LLConfig globalConfig;
+LIAPI extern CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf);
 

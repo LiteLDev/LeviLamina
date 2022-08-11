@@ -213,7 +213,6 @@ DECLARE_EVENT_DATA(PlayerUseItemEvent);
 DECLARE_EVENT_DATA(PlayerUseItemOnEvent);
 DECLARE_EVENT_DATA(PlayerChangeDimEvent);
 DECLARE_EVENT_DATA(PlayerJumpEvent);
-DECLARE_EVENT_DATA(EntityTransformEvent);
 DECLARE_EVENT_DATA(PlayerSneakEvent);
 DECLARE_EVENT_DATA(PlayerAttackEvent);
 DECLARE_EVENT_DATA(PlayerAttackBlockEvent);
@@ -238,6 +237,7 @@ DECLARE_EVENT_DATA(PlayerUseRespawnAnchorEvent);
 DECLARE_EVENT_DATA(PlayerOpenContainerScreenEvent);
 DECLARE_EVENT_DATA(PlayerUseFrameBlockEvent);
 DECLARE_EVENT_DATA(PlayerExperienceAddEvent);
+DECLARE_EVENT_DATA(PlayerInteractEntityEvent);
 DECLARE_EVENT_DATA(MobHurtEvent);
 DECLARE_EVENT_DATA(MobDieEvent);
 DECLARE_EVENT_DATA(EntityExplodeEvent);
@@ -248,7 +248,7 @@ DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
 DECLARE_EVENT_DATA(NpcCmdEvent);
 DECLARE_EVENT_DATA(ProjectileSpawnEvent);
 DECLARE_EVENT_DATA(ProjectileCreatedEvent);
-DECLARE_EVENT_DATA(ItemUseOnActorEvent);
+DECLARE_EVENT_DATA(EntityTransformEvent);
 DECLARE_EVENT_DATA(BlockInteractedEvent);
 DECLARE_EVENT_DATA(ArmorStandChangeEvent);
 DECLARE_EVENT_DATA(BlockExplodeEvent);
@@ -421,19 +421,6 @@ TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player) {
     }
     IF_LISTENED_END(PlayerJumpEvent)
     return original(this);
-}
-
-////////////////// EntityTransform //////////////////
-TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
-                       Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
-    IF_LISTENED(EntityTransformEvent) {
-        EntityTransformEvent ev{};
-        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
-        ev.mAfterEntity = afterEntity;
-        ev.call();
-    }
-    IF_LISTENED_END(EntityTransformEvent)
-    original(this, beforeEntity, afterEntity, a4, aid, level);
 }
 
 /////////////////// PlayerSneak ///////////////////
@@ -1126,6 +1113,22 @@ TInstanceHook(void, "?addExperience@Player@@UEAAXH@Z", Player, int exp) {
     return original(this, exp);
 }
 
+////////////// PlayerInteractEntity //////////////
+TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
+              ServerNetworkHandler, ServerPlayer* sp, bool unk) {
+    IF_LISTENED(PlayerInteractEntityEvent) {
+        PlayerInteractEntityEvent ev{};
+        ev.mPlayer = sp;
+        ev.mTargetId = dAccess<ActorRuntimeID, 104>(this);
+        ev.mInteractiveMode = static_cast<PlayerInteractEntityEvent::InteractiveMode>(dAccess<int, 112>(this));
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(PlayerInteractEntityEvent)
+
+    return original(this, sp, unk);
+}
+
 /////////////////// CmdBlockExecute ///////////////////
 TInstanceHook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z",
               BaseCommandBlock, BlockSource* a2, CommandOrigin* a3, bool* a4) {
@@ -1492,7 +1495,7 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
 
 
 /////////////////// PlayerDeath ///////////////////
-TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer, ActorDamageSource* src) {
+TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer, ActorDamageSource* src) {
     IF_LISTENED(PlayerDieEvent) {
         if (this->isPlayer()) {
             PlayerDieEvent ev{};
@@ -1911,18 +1914,17 @@ TInstanceHook(bool, "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot
     return original(this, a2, a3);
 }
 
-
-////////////// ItemUseOnActorInventory //////////////
-TInstanceHook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
-              ServerNetworkHandler, ServerPlayer* sp, bool unk) {
-    IF_LISTENED(ItemUseOnActorEvent) {
-        ItemUseOnActorEvent ev{};
-        ev.mTarget = dAccess<ActorRuntimeID, 104>(this);
-        ev.mInteractiveMode = dAccess<int, 112>(this);
+////////////////// EntityTransform //////////////////
+TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
+                       Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
+    IF_LISTENED(EntityTransformEvent) {
+        EntityTransformEvent ev{};
+        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
+        ev.mAfterEntity = afterEntity;
         ev.call();
     }
-    IF_LISTENED_END(ItemUseOnActorEvent)
-    return original(this, sp, unk);
+    IF_LISTENED_END(EntityTransformEvent)
+    original(this, beforeEntity, afterEntity, a4, aid, level);
 }
 
 ////////////// PlayerScoreChangedEvent  //////////////
@@ -2053,7 +2055,7 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
 
 TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
               Container, int a2, char a3, char a4, bool a5) {
-    auto pl = dAccess<Player*, 248>(this);
+    auto pl = dAccess<Player*, 272>(this);
     if (pl->isPlayer()) {
         IF_LISTENED(PlayerDropItemEvent) {
             PlayerDropItemEvent ev{};
@@ -2088,8 +2090,9 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
     return original(this, blk);
 }
 
-////////////// MobSpawn //////////////
 #include <MC/Spawner.hpp>
+
+////////////// MobSpawn //////////////
 TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAVActor@@AEBVVec3@@_N44@Z",
               Spawner, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3& a5, bool a6, bool a7, bool a8) {
     IF_LISTENED(MobSpawnEvent) {
@@ -2104,46 +2107,36 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
     return original(this, a2, a3, a4, a5, a6, a7, a8);
 }
 
-////////////// FormResponsePacket //////////////
 #include "Impl/FormPacketHelper.h"
+#include <MC/Json.hpp>
+////////////// FormResponsePacket //////////////
+
 TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
                        NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
-    try {
-        Packet* packet = *(Packet**)pPacket;
-        ServerPlayer* sp = handler->getServerPlayer(*id, 0);
+    Packet* packet = *(Packet**)pPacket;
+    ServerPlayer* sp = handler->getServerPlayer(*id, 0);
+    if (sp) {
+        if (!dAccess<bool>(packet, 81)) {
+            if (dAccess<bool>(packet, 72)) {
+                auto formId = dAccess<int>(packet, 48);
+                auto json = dAccess<Json::Value>(packet, 56);
+                string data = json.toStyledString();
+                if (data.back() == '\n')
+                    data.pop_back();
 
-        if (sp) {
-            unsigned formId = dAccess<unsigned>(packet, 48);
-            string data = dAccess<string>(packet, 56);
+                IF_LISTENED(FormResponsePacketEvent) {
+                    FormResponsePacketEvent ev{};
+                    ev.mServerPlayer = sp;
+                    ev.mFormId = formId;
+                    ev.mJsonData = data;
 
-            if (data.back() == '\n')
-                data.pop_back();
-
-            IF_LISTENED(FormResponsePacketEvent) {
-                FormResponsePacketEvent ev{};
-                ev.mServerPlayer = sp;
-                ev.mFormId = formId;
-                ev.mJsonData = data;
-
-                if (!ev.call())
-                    return;
+                    if (!ev.call())
+                        return;
+                }
+                IF_LISTENED_END(FormResponsePacketEvent)
+                HandleFormPacket(sp, formId, data);
             }
-            IF_LISTENED_END(PlayerBedEnterEvent)
-
-            HandleFormPacket(sp, formId, data);
         }
-    } catch (const seh_exception& e) {
-        logger.error("Event Callback Failed!");
-        logger.error("SEH Uncaught Exception Detected!");
-        logger.error("{}", TextEncoding::toUTF8(e.what()));
-        logger.error("In Event: onFormResponsePacket");
-        PrintCurrentStackTraceback();
-    } catch (...) {
-        logger.error("Event Callback Failed!");
-        logger.error("Uncaught Exception Detected!");
-        logger.error("In Event: onFormResponsePacket");
-        PrintCurrentStackTraceback();
     }
-
     original(this, id, handler, pPacket);
 }

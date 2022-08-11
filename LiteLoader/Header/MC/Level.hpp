@@ -86,7 +86,11 @@ public:
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     LIAPI static void broadcastText(const string& text, TextType type);
     LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+	
+    [[deprecated("This is a typo. Use Level::sendPacketForAllPlayers")]]
     LIAPI static void sendPacketForAllPlayer(Packet& pkt);
+
+    LIAPI static void sendPacketForAllPlayers(Packet& pkt);
 
     LIAPI static std::string getCurrentLevelName();
     LIAPI static std::string getCurrentLevelPath();
@@ -260,6 +264,7 @@ public:
     MCVAPI class std::optional<class DimensionDefinitionGroup> const getDimensionDefinitionGroup() const;
     MCVAPI class Factory<class Dimension, class Level &, class Scheduler &> const & getDimensionFactory() const;
     MCVAPI class Factory<class Dimension, class Level &, class Scheduler &> & getDimensionFactory();
+    MCVAPI bool getDisablePlayerInteractions() const;
     MCVAPI class std::optional<struct EducationLevelSettings> const & getEducationLevelSettings() const;
     MCVAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getEntities() const;
     MCVAPI class ActorDefinitionGroup * getEntityDefinitions() const;
@@ -291,8 +296,8 @@ public:
     MCVAPI std::string getLevelId() const;
     MCVAPI class LevelStorage const & getLevelStorage() const;
     MCVAPI class LevelStorage & getLevelStorage();
-    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> & getLightTextureImageBuilderFactory();
     MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> const & getLightTextureImageBuilderFactory() const;
+    MCVAPI class Factory<class BaseLightTextureImageBuilder, class Level &, class Scheduler &> & getLightTextureImageBuilderFactory();
     MCVAPI class HitResult & getLiquidHitResult();
     MCVAPI class LootTables & getLootTables();
     MCVAPI class MapItemSavedData * getMapSavedData(class CompoundTag const &);
@@ -344,6 +349,7 @@ public:
     MCVAPI class SavedDataStorage & getSavedData() const;
     MCVAPI class Scoreboard & getScoreboard();
     MCVAPI class Core::PathBuffer<std::string> getScreenshotsFolder() const;
+    MCVAPI class ScriptingEventCoordinator & getScriptingEventCoordinator();
     MCVAPI unsigned int getSeed();
     MCVAPI class ServerNetworkEventCoordinator & getServerNetworkEventCoordinator();
     MCVAPI class ServerPlayerEventCoordinator & getServerPlayerEventCoordinator();
@@ -376,6 +382,8 @@ public:
     MCVAPI int getUserCount() const;
     MCVAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getUsers() const;
     MCVAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> & getUsers();
+    MCVAPI class IWorldRegistriesProvider const & getWorldRegistriesProvider() const;
+    MCVAPI class IWorldRegistriesProvider & getWorldRegistriesProvider();
     MCVAPI enum Social::GamePublishSetting getXBLBroadcastIntent() const;
     MCVAPI enum Social::GamePublishSetting getXBLBroadcastMode() const;
     MCVAPI void handleLevelEvent(enum LevelEvent, class CompoundTag const &);
@@ -415,7 +423,7 @@ public:
     MCVAPI void onPlayerDeath(class Player &, class ActorDamageSource const &);
     MCVAPI void onSourceCreated(class BlockSource &);
     MCVAPI void onSourceDestroyed(class BlockSource &);
-    MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short);
+    MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short, bool);
     MCVAPI void playSound(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     MCVAPI void playSound(class BlockSource &, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     MCVAPI void playSound(class AutomaticID<class Dimension, int>, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
@@ -427,6 +435,7 @@ public:
     MCVAPI void pruneChunkViewTrackers();
     MCVAPI void queueEntityDestruction(class OwnerPtrT<struct EntityRefTraits>, bool);
     MCVAPI void registerEntity(class OwnerPtrT<struct EntityRefTraits>);
+    MCVAPI void registerEventCoordinators();
     MCVAPI void registerTemporaryPointer(class _TickPtr &);
     MCVAPI class OwnerPtrT<struct EntityRefTraits> removeActorAndTakeEntity(class WeakEntityRef);
     MCVAPI class OwnerPtrT<struct EntityRefTraits> removeActorFromWorldAndTakeEntity(class WeakEntityRef);
@@ -447,6 +456,7 @@ public:
     MCVAPI void saveAdditionalData();
     MCVAPI void saveBiomeData();
     MCVAPI void saveDirtyChunks();
+    MCVAPI void saveDynamicProperties();
     MCVAPI void saveEducationLevelSettings();
     MCVAPI void saveGameData();
     MCVAPI void saveLevelData();
@@ -462,6 +472,7 @@ public:
     MCVAPI void setDefaultGameType(enum GameType);
     MCVAPI void setDefaultSpawn(class BlockPos const &);
     MCVAPI void setDifficulty(enum Difficulty);
+    MCVAPI void setDisablePlayerInteractions(bool);
     MCVAPI void setEducationLevelSettings(struct EducationLevelSettings);
     MCVAPI void setFinishedInitializing();
     MCVAPI void setHasLockedBehaviorPack(bool);
@@ -482,6 +493,7 @@ public:
     MCVAPI void setPlayerAbilities(struct ActorUniqueID const &, class LayeredAbilities const &);
     MCVAPI void setPlayerMovementSettings(struct PlayerMovementSettings const &);
     MCVAPI void setRemotePlayerEventCoordinator(std::unique_ptr<class PlayerEventCoordinator> &&);
+    MCVAPI void setScriptingEventCoordinator(std::unique_ptr<class ScriptingEventCoordinator> &&);
     MCVAPI void setServerNetworkEventCoordinator(std::unique_ptr<class ServerNetworkEventCoordinator> &&);
     MCVAPI void setServerPlayerEventCoordinator(std::unique_ptr<class ServerPlayerEventCoordinator> &&);
     MCVAPI void setSimPaused(bool);
@@ -507,30 +519,31 @@ public:
     MCVAPI void waitAsyncSuspendWork();
     MCVAPI ~Level();
 #endif
-    MCAPI Level(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, bool, unsigned char, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, class std::weak_ptr<class BlockTypeRegistry>, class std::optional<class DimensionDefinitionGroup>);
+    MCAPI Level(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, bool, enum SubClientId, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, class std::weak_ptr<class BlockTypeRegistry>, class std::optional<class DimensionDefinitionGroup>);
     MCAPI struct AdventureSettings const & getAdventureSettings() const;
     MCAPI struct PlayerCapabilities::ISharedController const & getCapabilities() const;
     MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition> getDimensionDefinition(std::string const &) const;
     MCAPI class LevelSeed64 getLevelSeed64() const;
     MCAPI class NpcDialogueStorage * getNpcDialogueStorage();
+    MCAPI class ServerLevelEventCoordinator & getServerLevelEventCoordinator();
     MCAPI class StrictEntityContext getSideBySideEntity() const;
     MCAPI double getTickDeltaTime() const;
+    MCAPI void isChunkInTickRange(class ChunkPos const &, class Dimension const &, bool &, bool &);
     MCAPI bool isChunkInTickRange(class LevelChunk const &, class std::optional<int>) const;
     MCAPI enum NodeType isFree(class NavigationComponent &, class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
+    MCAPI void setClientLevelEventCoordinator(std::unique_ptr<class ClientLevelEventCoordinator> &&);
+    MCAPI void setNpcEventCoordinator(std::unique_ptr<class NpcEventCoordinator>);
     MCAPI void setPerformanceTelemetryPeriodicCallback(class std::function<void (void)>);
+    MCAPI void setServerLevelEventCoordinator(std::unique_ptr<class ServerLevelEventCoordinator> &&);
     MCAPI bool use3DBiomeMaps() const;
     MCAPI static float const AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK;
     MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY;
     MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE;
     MCAPI static float const RANDOM_TICKS_PER_TICK_PER_SUBCHUNK;
     MCAPI static void addLevelComponents(class EntityContext &, class IRandom &, bool);
-    MCAPI static void addSideBySideLevelComponents(class EntityContext &, bool);
     MCAPI static unsigned int createRandomSeed();
     MCAPI static bool isUsableLevel(class ILevel const &);
     MCAPI static class LevelSeed64 parseLevelSeed64(std::string const &);
-
-//protected:
-    MCAPI class ServerLevelEventCoordinator & _getServerLevelEventCoordinator();
 
 //private:
     MCAPI void _checkBlockSourceValidity();
@@ -548,8 +561,6 @@ public:
     MCAPI void _saveSomeChunks();
     MCAPI void _syncTime(int);
 
-
-protected:
 
 private:
 

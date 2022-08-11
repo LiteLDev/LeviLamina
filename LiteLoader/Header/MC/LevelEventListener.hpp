@@ -27,7 +27,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
     MCVAPI enum EventResult onEvent(struct LevelNotificationEvent const &);
     MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
-    MCVAPI enum EventResult onLevelBiomesRegistered(class BiomeRegistry &);
+    MCVAPI enum EventResult onLevelBiomesRegistered(class IWorldRegistriesProvider &);
     MCVAPI enum EventResult onLevelInitialized(class Level &);
     MCVAPI enum EventResult onLevelRemovedActor(class Level &, class Actor &);
     MCVAPI enum EventResult onLevelRemovedPlayer(class Level &, class Player &);

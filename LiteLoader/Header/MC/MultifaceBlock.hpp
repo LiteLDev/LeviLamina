@@ -62,17 +62,17 @@ public:
     /*132*/ virtual void __unk_vfn_132();
     /*143*/ virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*188*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
-    /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class Block const & getMultifaceBlock() const = 0;
-    /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const = 0;
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*178*/ virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
+    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual class Block const & getMultifaceBlock() const = 0;
+    /*193*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK
     MCVAPI bool isMultifaceBlock() const;
 #endif

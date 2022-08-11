@@ -207,7 +207,7 @@
     <ClCompile Include="Kernel\Scoreboard\ScoreboardAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
-    <ClCompile Include="Main\PlayerInfoAPI.cpp">
+    <ClCompile Include="Kernel\PlayerInfoAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
@@ -366,12 +366,12 @@
     <ClCompile Include="Kernel\DB\Stmt.cpp">
       <Filter>Kernel\DB</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
+    <!-- <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
       <Filter>Kernel\DB\Impl\MySQL</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\DB\Impl\MySQL\Stmt.cpp">
       <Filter>Kernel\DB\Impl\MySQL</Filter>
-    </ClCompile>
+    </ClCompile> -->
     <ClCompile Include="Kernel\Utils\StringReader.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -770,12 +770,12 @@
     <ClInclude Include="Header\DB\Stmt.h">
       <Filter>Header\DB</Filter>
     </ClInclude>
-    <ClInclude Include="Header\DB\Impl\MySQL\Session.h">
+    <!-- <ClInclude Include="Header\DB\Impl\MySQL\Session.h">
       <Filter>Header\DB\Impl\MySQL</Filter>
     </ClInclude>
     <ClInclude Include="Header\DB\Impl\MySQL\Stmt.h">
       <Filter>Header\DB\Impl\MySQL</Filter>
-    </ClInclude>
+    </ClInclude> -->
     <ClInclude Include="Header\DB\Pointer.h">
       <Filter>Header\DB</Filter>
     </ClInclude>
@@ -811,9 +811,6 @@
     </ClInclude>
     <ClInclude Include="Header\MC\SemVersion.hpp">
       <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Main\DefaultLangData.h">
-      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -851,12 +848,6 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\third-party\dyncall\dynload_s.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\third-party\cpp-base64\cpp-base64.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\third-party\mysql\mysqlclient.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

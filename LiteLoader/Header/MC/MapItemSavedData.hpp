@@ -37,9 +37,12 @@ public:
     MCAPI MapItemSavedData(struct ActorUniqueID);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor &, enum MapDecoration::Type);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class BlockPos const &, class BlockSource &, enum MapDecoration::Type);
+    MCAPI bool areClientPixelsDirty() const;
     MCAPI void copyMapData(class MapItemSavedData const &);
     MCAPI void deserialize(class CompoundTag const &);
     MCAPI void enableUnlimitedTracking();
+    MCAPI std::vector<struct ClientTerrainPixel> & getClientPixels();
+    MCAPI class SpinLock * getClientSamplingLock();
     MCAPI std::unique_ptr<class Packet> getFullDataPacket() const;
     MCAPI struct ActorUniqueID getMapId() const;
     MCAPI struct ActorUniqueID getParentMapId() const;
@@ -56,11 +59,12 @@ public:
     MCAPI void removeTrackedMapEntity(class BlockPos const &);
     MCAPI void save(class LevelStorage &);
     MCAPI void serialize(class CompoundTag &) const;
+    MCAPI void setClientPixelsDirty(bool);
     MCAPI void setDirtyForSaveAndPixelData();
     MCAPI void setLocked();
     MCAPI void setMapSection(class buffer_span<unsigned int>, struct MapItemSavedData::ChunkBounds);
     MCAPI void setOrigin(class Vec3, int, class AutomaticID<class Dimension, int>, bool, bool, class BlockPos const &);
-    MCAPI void setPixel(unsigned int, unsigned int, unsigned int);
+    MCAPI bool setPixel(unsigned int, unsigned int, unsigned int);
     MCAPI void setPixelDirty(unsigned int, unsigned int);
     MCAPI void setScale(int);
     MCAPI void setScaleAndParentMapId(int, struct ActorUniqueID);

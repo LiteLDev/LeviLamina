@@ -25,5 +25,6 @@ namespace DebugUtils {
     MCAPI extern bool gShouldDebugBreak;
     MCAPI extern bool gShouldPresentDialog;
     MCAPI extern class ServiceOverrider<bool ( *)(struct AssertHandlerContext const &)> gp_assert_handler;
+    MCAPI bool isDebuggerAttached();
 
 };

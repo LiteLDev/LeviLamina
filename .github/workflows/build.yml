@@ -11,6 +11,7 @@ on:
       - '**.hh'
       - '**.hxx'
       - '**.h'
+      - '.github/workflows/build.yml'
   push:
     paths:
       - '**.cpp'
@@ -21,6 +22,7 @@ on:
       - '**.hh'
       - '**.hxx'
       - '**.h'
+      - '.github/workflows/build.yml'
 
 env:
   SOLUTION_FILE_PATH: .
@@ -36,8 +38,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Cache Bedrock Dedicated Server Library
+        id: cache-bds-lib
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-bds-lib
+        with:
+          path: |
+            LiteLoader/Lib/bedrock_server_api.lib
+            LiteLoader/Lib/bedrock_server_var.lib
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
+
       - name: Download Server
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir Tools/Server
           ServerLink=$(cat 'Scripts/LINK.txt')
@@ -46,7 +60,8 @@ jobs:
         shell: bash
 
       - name: Build Library
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Tools
           LibraryBuilder.exe Server
@@ -56,7 +71,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
 
       - name: Change LITELOADER_VERSION_STATUS_BETA
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: false == startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
@@ -65,7 +80,7 @@ jobs:
         shell: bash
 
       - name: Change LITELOADER_VERSION_STATUS_RELEASE
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/Main/Version.h
@@ -73,35 +88,37 @@ jobs:
         shell: bash
 
       - name: Build
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         id: build
         run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release -property:Configuration=Js
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release 
           MSBuild.exe ./LiteLoader.sln -property:Configuration=Lua
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=NodeJs
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=QuickJs
         shell: bash
 
       - name: Pack Release
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Scripts
           ./PackRelease.cmd action
         shell: cmd
 
       - name: Move PDB to path
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir PDB
           cp x64/Release/*.pdb PDB
         shell: bash
 
       - name: Pack PDB
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
         run: 7z a -tzip PDB.zip PDB
         shell: bash
 
       - name: Update LiteLoaderSDK
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -125,7 +142,7 @@ jobs:
           path: ${{ github.workspace }}\PDB
 
       - name: Prepare for creating Release
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         id: rel
         if: startsWith(github.ref, 'refs/tags/')
         run: |
@@ -145,7 +162,7 @@ jobs:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
 
       - name: Publish to MineBBS
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \

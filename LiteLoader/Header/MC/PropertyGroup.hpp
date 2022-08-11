@@ -28,19 +28,28 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYGROUP
 #endif
     MCAPI PropertyGroup();
+    MCAPI bool getDefaultBoolValue(unsigned __int64, class RenderParams &) const;
+    MCAPI unsigned __int64 getDefaultEnumIndexValue(unsigned __int64, class RenderParams &, std::string const &) const;
+    MCAPI float getDefaultFloatValue(unsigned __int64, class RenderParams &) const;
+    MCAPI int getDefaultIntValue(unsigned __int64, class RenderParams &) const;
     MCAPI class CompoundTag getNetworkSyncPropertyDescriptionsAsCompound() const;
     MCAPI class PropertyMetadata const * getPropertyMetadata(unsigned __int64) const;
     MCAPI class PropertyMetadata const * getPropertyMetadataByString(std::string const &) const;
+    MCAPI ~PropertyGroup();
     MCAPI static unsigned __int64 const MAX_ENUM_SIZE;
-    MCAPI static class std::shared_ptr<class PropertyGroup const> loadPropertiesFromJson(class Json::Value const &);
+    MCAPI static unsigned __int64 const MAX_ENUM_VALUE_SIZE;
+    MCAPI static unsigned __int64 const MAX_PROPERTIES_COUNT;
+    MCAPI static bool isValidEnumEntry(std::string const &);
+    MCAPI static class std::shared_ptr<class PropertyGroup const> loadPropertiesFromJson(class Json::Value const &, class SemVersion const &);
 
 //private:
-    MCAPI void _addEnumIndexProperty(std::string const &, bool, unsigned __int64, std::vector<std::string> const &);
+    MCAPI void _addBoolProperty(std::string const &, bool, bool);
+    MCAPI void _addEnumIndexProperty(std::string const &, bool, unsigned __int64, std::vector<class HashedString> const &);
     MCAPI void _addFloatProperty(std::string const &, bool, float, float, float);
     MCAPI void _addIntProperty(std::string const &, bool, int, int, int);
     MCAPI void _addPropertyMetadata(std::string const &, bool, enum PropertyMetadata::ContainedPropertyType);
     MCAPI std::string const & _getFriendlyJsonTypeString(enum PropertyMetadata::ContainedPropertyType);
-    MCAPI bool _loadPropertyFromJson(std::string const &, class Json::Value const &);
+    MCAPI bool _loadPropertyFromJson(std::string const &, class Json::Value const &, enum MolangVersion);
     MCAPI void _reserveSpaceForTypes(std::vector<unsigned __int64> const &);
     MCAPI bool _validateDataType(class Json::Value const &, enum PropertyMetadata::ContainedPropertyType);
     MCAPI static enum PropertyMetadata::ContainedPropertyType _getJsonPropertyType(class Json::Value const &);

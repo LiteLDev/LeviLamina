@@ -1,20 +1,37 @@
-[HEADING=1][LiteLoader Release Note][/HEADING]
-LiteLoaderBDS-2.4.2更新已发布，适应于BDS-1.19.10，协议版本534
+[HEADING=1][LiteLoader 发行说明][/HEADING]
+LiteLoaderBDS-2.5.0更新已经发布，适配BDS-1.19.20，ProtocolVersion 544
 
-[HEADING=1][新内容][/HEADING]
+[HEADING=1][主要][/HEADING]
 [LIST]
-[*]添加内置broadcast bug修复 @Redbeanw44602
-[*]添加内置runningAutocompaction关闭开关 @Redbeanw44602
-[*]添加bStats @dreamguxiang
-[*]添加[ICODE]FormResponsePacketEvent[/ICODE] @S3v3Nice
-[*]为LLSE添加PacketAPI @dreamguxiang
+[*]支持 BDS 1.19.20 by @dreamguxiang
+[*]新 i18n API (#503)(#651) @Jasonzyt
+[*]NodeJs 支持 @Jasonzyt @@WangYneos @@ [USER=1]yqs112358[/USER] @shrbox @@RimuruChan
 [/LIST]
-[HEADING=1][Bug修复][/HEADING]
+[HEADING=1][新功能][/HEADING]
 [LIST]
-[*]LL bugs:
-[LIST]
-[*]修复[ICODE]afterPlaceBlock[/ICODE] @Redbeanw44602
-[*]修复#577 @dreamguxiang
-[*]修复[ICODE]convertToColsole[/ICODE]的拼写 @S3v3Nice
+[*]添加BinaryStream.writeType(mce::UUID) (#606) @S3v3Nice 
+[*]添加ReadOnlyBinaryStream.readType(Vec3) (#619) @S3v3Nice 
+[*]添加PlayerInfoAPI 缓存和新 API (#612) @Jasonzyt 
+[*]添加在尝试注册已有命令名称时引发错误（#604）@Jasonzyt
+[*]添加PlayerInteractEntityEvent (#646) @S3v3Nice
 [/LIST]
+[HEADING=1][改变][/HEADING]
+[LIST]
+[*]Addon脚本插件支持 @dofes
+[*]将 LLSE-JS 引擎从 V8 更改为QuickJs @dreamguxiang @yqs112358 
+[*]更新 Slider 和 CustomForm (#572) @S3v3Nice 
+[*]将 OpenSSL 升级到 3.0.5 (#654) @shrbox
+[/LIST]
+[HEADING=1][错误修复][/HEADING]
+[LIST]
+[*]分离 jsdebug 和 nodedebug 命令 (#615) @StarsDream00 @RimuruChan
+[*]修复 Lua 表类型检查 (#622) @StarsDream00 @RimuruChan
+[*]修复 LLSE File 类对象无法正确读取中文文件名的文件 (#625) by @Jasonzyt
+[*]修复 LLSE File 类无法正确删除带有中文文件名的文件 (#627) by @Jasonzyt
+[*]修复 BinaryStream 类缺少 writeVec3 (#631)  @Jasonzyt
+[*]修复 ob.getScore(target) 无法正确获取对应分数的问题 (#626) by @Jasonzyt
+[*]修复 Block::getTileData 错误，@Jasonzyt
+[*]修复插件名称不能包含的 LiteLoader字样 (#644) @Jasonzyt
+[*]修复监听玩家死亡时事件回调无法正确获取玩家物品的问题 (#634) by @dreamguxiang
+[*]修复 FormUI Form StepSlider 的错误 (#642) by @Jasonzyt
 [/LIST]

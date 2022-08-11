@@ -74,7 +74,7 @@ public:
     /*45*/ virtual class std::optional<struct gametest::GameTestError> assertRedstonePower(class BlockPos const &, int);
     /*46*/ virtual class std::optional<struct gametest::GameTestError> assertIsWaterlogged(class BlockPos const &, bool);
     /*47*/ virtual class std::optional<struct gametest::GameTestError> pulseRedstone(class BlockPos const &, int);
-    /*48*/ virtual class std::variant<struct gametest::GameTestError, class ScriptGameTestConnectivity> getFenceConnectivity(class BlockPos const &);
+    /*48*/ virtual class std::variant<struct gametest::GameTestError, class ScriptModuleGameTest::ScriptGameTestConnectivity> getFenceConnectivity(class BlockPos const &);
     /*49*/ virtual class std::variant<struct gametest::GameTestError, class BlockPos> worldPosition(class BlockPos const &) const;
     /*50*/ virtual class std::variant<struct gametest::GameTestError, class Vec3> worldPosition(class Vec3 const &) const;
     /*51*/ virtual class std::variant<struct gametest::GameTestError, class BlockPos> relativePosition(class BlockPos const &) const;

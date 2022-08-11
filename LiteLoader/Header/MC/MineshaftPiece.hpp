@@ -26,7 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~MineshaftPiece();
-    /*9*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
+    /*6*/ virtual bool isInInvalidLocation(class BlockSource &, class BoundingBox const &);
+    /*10*/ virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTPIECE
 #endif
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(struct MineshaftData &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);

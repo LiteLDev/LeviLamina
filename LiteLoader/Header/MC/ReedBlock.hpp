@@ -67,15 +67,15 @@ public:
     /*138*/ virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /*141*/ virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*199*/ virtual void __unk_vfn_199();
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REEDBLOCK
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool waterSpreadCausesSpawn() const;

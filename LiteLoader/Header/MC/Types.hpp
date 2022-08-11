@@ -1100,7 +1100,8 @@ enum class MinecraftPacketIds : int {
     UpdateAbilities                   = 0xBB,
     UpdateAdventureSettings           = 0xBC,
     DeathInfo                         = 0XBD,
-    EditorNetwork                     = 0XBE
+    EditorNetwork                     = 0XBE,
+    FeatureRegistry                   = 0XBF   
 };
 
 enum ItemStackNetResult : unsigned char {

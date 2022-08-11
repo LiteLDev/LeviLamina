@@ -34,24 +34,24 @@ public:
 public:
     /*0*/ virtual ~SparklerItem();
     /*7*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_13();
-    /*15*/ virtual void __unk_vfn_15();
-    /*49*/ virtual bool isHandEquipped() const;
-    /*51*/ virtual void __unk_vfn_51();
-    /*53*/ virtual void __unk_vfn_53();
-    /*66*/ virtual void __unk_vfn_66();
-    /*70*/ virtual void __unk_vfn_70();
+    /*11*/ virtual void __unk_vfn_11();
+    /*14*/ virtual void __unk_vfn_14();
+    /*16*/ virtual void __unk_vfn_16();
+    /*50*/ virtual bool isHandEquipped() const;
+    /*52*/ virtual void __unk_vfn_52();
+    /*54*/ virtual void __unk_vfn_54();
+    /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
-    /*75*/ virtual void __unk_vfn_75();
-    /*79*/ virtual void __unk_vfn_79();
+    /*73*/ virtual void __unk_vfn_73();
+    /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
-    /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*101*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
-    /*120*/ virtual struct Brightness getLightEmission(int) const;
-    /*121*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /*123*/ virtual class Item & setIcon(std::string const &, int);
+    /*81*/ virtual void __unk_vfn_81();
+    /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*102*/ virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    /*122*/ virtual struct Brightness getLightEmission(int) const;
+    /*123*/ virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /*125*/ virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARKLERITEM
 #endif
     MCAPI SparklerItem(std::string const &, int);

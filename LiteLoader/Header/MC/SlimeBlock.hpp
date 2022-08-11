@@ -56,15 +56,15 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*177*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*182*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*193*/ virtual int getExtraRenderLayers() const;
-    /*199*/ virtual void __unk_vfn_199();
+    /*157*/ virtual void __unk_vfn_157();
+    /*167*/ virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*172*/ virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*183*/ virtual int getExtraRenderLayers() const;
+    /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEBLOCK
     MCVAPI bool isBounceBlock() const;
 #endif

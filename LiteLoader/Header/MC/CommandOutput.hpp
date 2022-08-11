@@ -61,7 +61,7 @@ public:
                     code = ori.getPlayer()->getLanguageCode();
                     break;
                 default:
-                    code = i18n.defaultLangCode;
+                    code = i18n.getDefaultLocaleName();
                     break;
             }
         }
@@ -120,7 +120,7 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUT
 public:
-    class CommandOutput& operator=(class CommandOutput const&) = delete;
+    class CommandOutput& operator=(class CommandOutput const &) = delete;
     CommandOutput() = delete;
 #endif
 
@@ -128,28 +128,30 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUT
 #endif
-    MCAPI CommandOutput(class CommandOutput const&);
+    MCAPI CommandOutput(class CommandOutput const &);
     MCAPI CommandOutput(enum CommandOutputType);
-    MCAPI void addToResultList(std::string const&, std::string const&);
-    MCAPI void addToResultList(std::string const&, class Actor const&);
+    MCAPI void addToResultList(std::string const &, std::string const &);
+    MCAPI void addToResultList(std::string const &, class Actor const &);
     MCAPI bool empty() const;
-    MCAPI void error(std::string const&, std::vector<class CommandOutputParameter> const&);
-    MCAPI void forceOutput(std::string const&, std::vector<class CommandOutputParameter> const&);
-    MCAPI class CommandPropertyBag const& getData() const;
-    MCAPI std::vector<class CommandOutputMessage> const& getMessages() const;
+    MCAPI void error(std::string const &, std::vector<class CommandOutputParameter> const &);
+    MCAPI void forceOutput(std::string const &, std::vector<class CommandOutputParameter> const &);
+    MCAPI class CommandPropertyBag const & getData() const;
+    MCAPI std::vector<class CommandOutputMessage> const & getMessages() const;
     MCAPI int getSuccessCount() const;
     MCAPI enum CommandOutputType getType() const;
     MCAPI bool hasPlayerText() const;
-    MCAPI void load(enum CommandOutputType, int, std::vector<class CommandOutputMessage>&&, std::unique_ptr<class CommandPropertyBag>&&);
+    MCAPI void load(enum CommandOutputType, int, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);
     MCAPI void setHasPlayerText();
-    MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const&);
+    MCAPI void success(std::string const &, std::vector<class CommandOutputParameter> const &);
     MCAPI void success();
     MCAPI bool wantsData() const;
     MCAPI ~CommandOutput();
 
-    // private:
-    MCAPI void addMessage(std::string const&, std::vector<class CommandOutputParameter> const&, enum CommandOutputMessageType);
+//private:
+    MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum CommandOutputMessageType);
 
 
 private:
+
+
 };

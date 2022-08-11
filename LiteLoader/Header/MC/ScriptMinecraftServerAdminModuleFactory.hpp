@@ -4,6 +4,7 @@
 #include "../Global.h"
 #include "Json.hpp"
 #include "Bedrock.hpp"
+#include "Scripting.hpp"
 #include "TextObjectText.hpp"
 
 #define BEFORE_EXTRA
@@ -33,7 +34,6 @@ public:
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 //private:
-    MCAPI void _addV1();
 
 
 private:

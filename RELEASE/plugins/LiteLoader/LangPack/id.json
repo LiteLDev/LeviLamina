@@ -1,0 +1,275 @@
+{
+    "base": {
+        "getDimName": {
+            "0": "Dunia Awal",
+            "1": "Dunia Neraka",
+            "2": "Dunia Akhir",
+            "unknown": "Dimensi Lain"
+        }
+    },
+    "ll": {
+        "main": {
+            "checkRunningBDS": {
+                "detected": "Terdeteksi adanya proses BDS lain dengan jalur yang sama!",
+                "tip": "Ini dapat menyebabkan port jaringan dan level terisi",
+                "ask": "Apakah Anda ingin menghentikan proses dengan PID {}? (y=Ya, n=Tidak)"
+            },
+            "fixAllowList": {
+                "removeEmptyAllowlist": "allowlist.json kosong! Menghapus...",
+                "checkManually": "Allowlist.json dan whitelist.json ada dan tidak boleh kosong. Silakan periksa secara manual",
+                "renamed": "Mengganti nama whitelist.json menjadi allowlist.json"
+            },
+            "warning": {
+                "inDevMode": "Saat ini dalam mode pengembang!",
+                "betaVersion": "Saat ini menggunakan versi beta.",
+                "productionEnv": "JANGAN GUNAKAN DI LINGKUNGAN PRODUKSI!",
+                "protocolVersionNotMatch": {
+                    "1": "Versi protokol tidak cocok, versi target: {}, versi saat ini: {}.",
+                    "2": "Ini kemungkinan besar akan membuat server crash, silakan gunakan LiteLoader yang cocok dengan versi BDS!"
+                }
+            }
+        },
+        "antiAbnormalItem": {
+            "detected": "Kesalahan data item pemain({})!",
+            "itemInfo": "Barang: {}"
+        },
+        "cmd": {
+            "tpdim": {
+                "success": "Teleport {} ke {} ({:2f}, {:2f}, {:2f})",
+                "error": {
+                    "noActorTeleported": "Tidak Ada Entitas yang Diteleportasi",
+                    "noActorSpecified": "Tidak Ada Aktor yang Ditentukan"
+                },
+                "invalidDimid": "DimensionId tidak valid: {}"
+            },
+            "listPlugin": {
+                "overview": "Daftar Plugin [{}]",
+                "tip": "* Kirim perintah \"ll list <Nama Plugin>\" untuk informasi lebih lanjut"
+            },
+            "pluginInfo": {
+                "title": "Plugin <{}>",
+                "error": {
+                    "pluginNotFound": "Plugin <{}> tidak ditemukan!"
+                }
+            },
+            "version": {
+                "msg": "Server Khusus Bedrok {}\n- dengan LiteLoaderBDS {}\n- Protokol Jaringan: {}"
+            },
+            "help": {
+                "msg": "[Pengantar]\nLiteLoaderBDS adalah pemuat plugin tidak resmi untuk pengembangan modding Bedrock Dedicated Server.\nIni menyediakan sejumlah besar API, sistem acara yang kuat, dan banyak utilitas yang dikemas\n\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nSelamat datang di proyek github kami untuk mendapatkan informasi lebih lanjut ~"
+            },
+            "loadPlugin": {
+                "success": "Plugin <{}> dimuat.",
+                "fail": "Gagal memuat plugin {}"
+            },
+            "unloadPlugin": {
+                "success": "Plugin <{}> dibongkar.",
+                "fail": "Gagal membongkar plugin <{}>"
+            },
+            "reloadPlugin": {
+                "success": "Plugin <{}> dimuat ulang.",
+                "fail": "Gagal memuat ulang plugin <{}>"
+            },
+            "reloadAllPlugins": {
+                "success": "Plugin {} berhasil dimuat ulang.",
+                "fail": "Gagal memuat ulang plugin apa pun"
+            },
+            "error": {
+                "noPathSpecified": "Anda harus memberikan jalur plugin LiteLoader yang valid!",
+                "noNameSpecified": "Anda harus memberikan nama plugin LiteLoader yang valid!"
+            }
+        },
+        "config": {
+            "save": {
+                "fail": "Gagal menyimpan (membuat) file konfigurasi!"
+            },
+            "creating": "File Konfigurasi LL <{}> tidak ditemukan. Membuat file konfigurasi...",
+            "warning": {
+                "configOutdated": "File Konfigurasi LL <{}> sudah basi."
+            },
+            "updating": "Memperbarui file konfigurasi..."
+        },
+        "crashLogger": {
+            "existsingDebuggerDetected": "Debugger yang ada terdeteksi. CrashLogger bawaan tidak akan berfungsi.",
+            "wineDetected": "Debugger yang ada terdeteksi. CrashLogger bawaan tidak akan berfungsi.",
+            "error": {
+                "cannotCreateDaemonProcess": "Tidak Dapat Membuat Proses Daemon CrashLogger!"
+            },
+            "warning": {
+                "crashLoggerDisabled": {
+                    "1": "CrashLogger bawaan tidak diaktifkan karena konfigurasi menonaktifkannya.",
+                    "2": "Tidak akan ada crash log saat terjadi pengecualian yang tidak tertangani,",
+                    "3": "yang membuatnya hampir tidak mungkin untuk mengetahui alasan crash dan sumber crash.",
+                    "4": "Kami sangat menyarankan Anda untuk mengaktifkannya untuk memastikan stabilitas server"
+                },
+                "conflicts": {
+                    "1": "CrashLogger bawaan tidak diaktifkan karena plugin <{}> bertentangan dengannya",
+                    "2": "Tidak akan ada crash log saat terjadi pengecualian yang tidak tertangani,",
+                    "3": "yang membuatnya hampir tidak mungkin untuk mengetahui alasan crash dan sumber crash.",
+                    "4": "Karena CrashLogger adalah komponen penting yang menjamin stabilitas server",
+                    "5": "Kami menyarankan Anda untuk berpikir dua kali tentang penggunaan plugin <{}>"
+                }
+            },
+            "init": {
+                "fail": {
+                    "msg": "Built In Crash Logger gagal memulai!",
+                    "tip": "Tidak akan ada crash log saat terjadi pengecualian yang tidak tertangani."
+                }
+            }
+        },
+        "addonsHelper": {
+            "error": {
+                "addonConfigNotFound": "Konfigurasi addon tidak ditemukan!",
+                "addonFileNotFound": "File addon \"{}\" tidak ditemukan!",
+                "addonNotFound": "Addon <{}> tidak ditemukan!",
+                "outOfRange": "Indeks addon {} di luar jangkauan",
+                "unsupportedFileType": "Jenis file yang tidak didukung ditemukan!",
+                "parsingEnabledAddonsList": "Kesalahan saat mem-parsing daftar add-on yang diaktifkan",
+                "noAddonInstalled": "Tidak ada addon yang dipasang.",
+                "installationAborted": "Kemajuan penginstalan dibatalkan!"
+            },
+            "displayError": "Kesalahan: {}",
+            "removeAddonFromList": {
+                "fail": "Gagal menghapus addon <{}> dari file konfigurasi!",
+                "success": "Addon <{}> dihapus dari file konfigurasi."
+            },
+            "addAddonToList": {
+                "invalidList": "File Daftar Addon Tidak Valid {}, buat cadangan ke {} dan setel ulang ke default",
+                "fail": "Gagal menyisipkan addon {} ke {}!",
+                "success": "Menambahkan addon <{}> ke file konfigurasi."
+            },
+            "install": {
+                "installing": "Memasang addon <{}>...",
+                "error": {
+                    "failToUncompress": {
+                        "msg": "Gagal mengompres addon {}!",
+                        "exitCode": "Kode Keluar: {}",
+                        "programOutput": "Keluaran Program:\n{}"
+                    }
+                }
+            },
+            "uninstall": {
+                "success": "Addon <{}> dicopot pemasangannya."
+            },
+            "autoInstall": {
+                "tip": {
+                    "dirCreated": "Direktori dibuat. Anda bisa memindahkan file Addon terkompresi ke {} untuk diinstal pada peluncuran berikutnya."
+                },
+                "working": "{} addon baru ditemukan untuk dipasang. Bekerja...",
+                "installed": "Addon {} telah dipasang.",
+                "installedCount": "{} addon telah dipasang."
+            },
+            "cmd": {
+                "output": {
+                    "list": {
+                        "overview": "Addon: {} addon terpasang:"
+                    }
+                }
+            }
+        },
+        "loader": {
+            "loadScriptEngine": {
+                "error": {
+                    "versionNotMatch": "Versi file <{}> Script Engine untuk {} tidak cocok dengan versi LiteLoader <{}>"
+                },
+                "success": "* ScriptEngine untuk {} dimuat"
+            },
+            "loadDotNetEngine": {
+                "warning": {
+                    "notFinished": "LiteLoader.NET belum selesai!"
+                },
+                "error": {
+                    "versionNotMatch": "Versi file <{}> LiteLoader.NET tidak cocok dengan versi LiteLoader <{}>"
+                },
+                "success": "* .NET Engine dimuat"
+            },
+            "loadMain": {
+                "loadingPlugins": "Memuat plugin...",
+                "loadedShellLink": "Plugin ShellLinked <{} => {}> dimuat",
+                "loadedPlugin": "Plugin <{name}> dimuat",
+                "done": "{} plugin <{}> dimuat.",
+                "start": "Loading native plugins..."
+            },
+            "initNodeJsDirectories": {
+                "created": "NodeJs runtime directory no found, created."
+            }
+        },
+        "notice": {
+            "newForum": "Our new forum is live! -> {}",
+            "license": "LiteLoader is licensed under {}",
+            "translateText": "Help us translate & improve text in LL -> {}"
+        },
+        "pluginManager": {
+            "error": {
+                "invalidFileType": "Jenis file plugin tidak valid {} dalam {}",
+                "noValidPluginFound": "Tidak ditemukan plugin yang valid di {}!",
+                "failToRegisterPlugin": "Gagal memuat ulang plugin apa pun {}!",
+                "hasBeenRegistered": "Sebuah plugin bernama {} telah terdaftar",
+                "failToLoadPlugin": "Gagal memuat plugin {}!",
+                "pluginNotFound": "Plugin <{}> tidak ditemukan"
+            },
+            "warning": {
+                "unloadDllNotFinished": "Fungsi bongkar plugin dll belum selesai.",
+                "reloadDllNotFinished": "Fungsi reload plugin dll belum selesai."
+            },
+            "reloadPlugin": {
+                "fail": "Gagal memuat ulang plugin {}!"
+            }
+        }
+    },
+    "llse": {
+        "init": {
+            "llMoney": {
+                "notFound": "LLMoney.dll tidak ditemukan, Sistem Ekonomi ScriptEngine tidak akan berfungsi"
+            }
+        },
+        "api": {
+            "ll": {
+                "require": {
+                    "success": " - Plugin membutuhkan berhasil dimuat. Sarat: ",
+                    "fail": " - Plugin membutuhkan beban gagal",
+                    "download": {
+                        "success": " - Berhasil diunduh membutuhkan! Jalur: ",
+                        "fail": " - Persyaratan unduhan plugin gagal! Kode: "
+                    }
+                }
+            }
+        },
+        "apiHelp": {
+            "parseJson": {
+                "fail": "Kesalahan Parsing API"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "Dependence {} loaded.",
+                "fail": "Fail to load dependence {}"
+            },
+            "loadMain": {
+                "start": "Loading {type} plugins...",
+                "done": "{count} {type} plugin(s) loaded.",
+                "nodejs": {
+                    "install": {
+                        "fail": "Failed to install plugin pack {}, please check your package.json file!",
+                        "start": "Found Node.js plugin pack \"{path}\"! Try installing..."
+                    },
+                    "ignored": "No package.json file found in directory {path}, ignored."
+                },
+                "loadedPlugin": "{type} plugin <{name}> loaded.",
+                "installPluginPack": {
+                    "done": "{count} {type} plugin pack(s) installed."
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npm finished successfully.",
+                    "start": "Executing \"npm install\" for plugin {name}...",
+                    "fail": "Error occurred. Exit code: {code}"
+                },
+                "register": {
+                    "fail": "Fail to help plugin {name} get registered!"
+                }
+            }
+        }
+    }
+}

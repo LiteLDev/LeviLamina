@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo &&);
     MCAPI ~TickingSystemWithInfo();
 
 protected:

@@ -24,6 +24,7 @@ public:
 
 public:
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
+    MCAPI struct PackedItemUseLegacyInventoryTransaction & operator=(struct PackedItemUseLegacyInventoryTransaction &&);
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
 
 protected:

@@ -72,17 +72,17 @@ public:
     /*143*/ virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*181*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /*184*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /*190*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /*199*/ virtual void __unk_vfn_199();
+    /*157*/ virtual void __unk_vfn_157();
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*171*/ virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /*174*/ virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*180*/ virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORBLOCK
     MCVAPI bool canBeSilkTouched() const;
     MCVAPI bool isDoorBlock() const;

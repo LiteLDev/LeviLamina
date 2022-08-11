@@ -24,7 +24,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMAPPING
 #endif
-    MCAPI static std::string const eventToName(class GameEvent const &);
     MCAPI static class GameEvent const & nameToEvent(std::string const &);
     MCAPI static class GameEvent const & typeToEvent(enum GameEventConfig::GameEventType);
 

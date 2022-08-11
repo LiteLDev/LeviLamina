@@ -17,8 +17,8 @@ class WeakEntityRef {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
     class WeakEntityRef& operator=(class WeakEntityRef const &) = delete;
-    WeakEntityRef(class WeakEntityRef const &) = default;
-    WeakEntityRef() = default;
+    WeakEntityRef(class WeakEntityRef const &) = delete;
+    WeakEntityRef() = delete;
 #endif
 
 

@@ -55,13 +55,13 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*187*/ virtual void __unk_vfn_187();
-    /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /*199*/ virtual void __unk_vfn_199();
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*177*/ virtual void __unk_vfn_177();
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLEBLOCK
     MCVAPI bool isCraftingBlock() const;
     MCVAPI bool isInteractiveBlock() const;

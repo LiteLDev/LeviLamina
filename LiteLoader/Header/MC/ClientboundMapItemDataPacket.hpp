@@ -32,7 +32,7 @@ public:
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTBOUNDMAPITEMDATAPACKET
 #endif
-    MCAPI ClientboundMapItemDataPacket(struct ActorUniqueID, signed char, std::vector<struct std::pair<struct MapItemTrackedActor::UniqueId, class std::shared_ptr<class MapDecoration>>> const &, class buffer_span<unsigned int>, int, int, int, int, class AutomaticID<class Dimension, int>, bool);
+    MCAPI ClientboundMapItemDataPacket(struct ActorUniqueID, signed char, std::vector<struct std::pair<struct MapItemTrackedActor::UniqueId, class std::shared_ptr<class MapDecoration>>> const &, class buffer_span<unsigned int>, int, int, int, int, class AutomaticID<class Dimension, int>, bool, class BlockPos const &);
     MCAPI ClientboundMapItemDataPacket(class gsl::not_null<class MapItemSavedData *>, class Level &);
     MCAPI ClientboundMapItemDataPacket();
 

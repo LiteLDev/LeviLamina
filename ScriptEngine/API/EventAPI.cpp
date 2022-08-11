@@ -15,6 +15,7 @@
 #include <Engine/LocalShareData.h>
 #include <BuiltinCommands.h>
 #include "APIHelp.h"
+#include <NodeJsHelper.h>
 #include "BaseAPI.h"
 #include "BlockAPI.h"
 #include "GuiAPI.h"
@@ -204,11 +205,7 @@ string EventTypeToString(EVENT_TYPES e) {
         }                                                                  \
         LISTENER_CATCH(TYPE)                                               \
     }                                                                      \
-    if (!passToBDS) {                                                      \
-        return false;                                                      \
-    } else {                                                               \
-        return true;                                                       \
-    }
+    return passToBDS;
 
 //调用事件监听函数，拦截返回RETURN_VALUE
 #define CallEventRtnValue(TYPE, RETURN_VALUE, ...)                         \
@@ -238,7 +235,6 @@ string EventTypeToString(EVENT_TYPES e) {
                     listener.func.get().call({}, __VA_ARGS__);          \
                 }                                                       \
                 LISTENER_CATCH(TYPE)                                    \
-                break;                                                  \
             }                                                           \
         }                                                               \
     }
@@ -707,6 +703,7 @@ void EnableEventListener(int eventId) {
                     }
                     IF_LISTENED_END(EVENT_TYPES::onRespawnAnchorExplode);
                 }
+				return true;
             });
             break;
 
@@ -1049,12 +1046,13 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onBedExplode:
             Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
                 BlockInstance bl(ev.mBlockInstance);
-                if (bl.getBlock() == VanillaBlocks::mBed) {
+                if (bl.getBlock()->getTypeName() == "minecraft:bed") {
                     IF_LISTENED(EVENT_TYPES::onBedExplode) {
                         CallEvent(EVENT_TYPES::onBedExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onBedExplode);
                 }
+                return true;
             });
             break;
 
@@ -1110,6 +1108,10 @@ void InitBasicEventListeners() {
             return false;
         if (!ProcessOldHotManageCommand(ev.mCommand))
             return false;
+#ifdef LLSE_BACKEND_NODEJS
+        if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
+            return false;
+#endif
 
         // CallEvents
         vector<string> paras;
@@ -1198,6 +1200,7 @@ inline bool CallTickEvent() {
 // 植入tick
 THook(void, "?tick@ServerLevel@@UEAAXXZ",
       void* _this) {
+#ifndef LLSE_BACKEND_NODEJS
     try {
         std::list<ScriptEngine*> tmpList;
         {
@@ -1215,7 +1218,7 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
         logger.error("Error occurred in Engine Message Loop!");
         logger.error("Uncaught Exception Detected!");
     }
-
+#endif
     CallTickEvent();
     return original(_this);
 }

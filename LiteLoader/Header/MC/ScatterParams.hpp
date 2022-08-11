@@ -33,6 +33,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMS
 #endif
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    MCAPI void readAdditionalSaveData(class CompoundTag const &);
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     MCAPI ~ScatterParams();
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
@@ -40,6 +42,7 @@ public:
 
 //private:
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
+    MCAPI void _parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
 
 
 private:

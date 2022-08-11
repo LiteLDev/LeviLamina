@@ -4,7 +4,67 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-void I18N::load(const std::string& fileName) {
+std::string I18N::get(const std::string& key, const std::string& langCode) {
+    auto& langc = (langCode.empty() ? defaultLocaleName : langCode);
+    auto langType = langc.substr(0, 2);
+    if (langData.count(langc)) { // If there is lang data for the language
+        auto& lang = langData[langc];
+        if (lang.count(key)) { // If there is matched key in the language data
+            return lang[key];
+        }
+    }
+    // Search for the similar language in langData
+    for (auto& [lc, ld] : langData) {
+        if (lc.length() < 2) {
+            continue;
+        }
+        if (lc.substr(0, 2) == langType) {
+            if (ld.count(key)) {
+                return ld[key];
+            }
+        }
+    }
+    if (!defaultLangData.empty()) {
+        // If not found, try falling back to the default language data
+        if (defaultLangData.count(langc)) {
+            auto& lang = defaultLangData[langc];
+            if (lang.count(key)) {
+                return lang[key]; // Fall back
+            }
+        }
+        // Search for the similar language
+        for (auto& [lc, ld] : defaultLangData) {
+            if (lc.length() < 2) {
+                continue;
+            }
+            if (lc.substr(0, 2) == langType) {
+                if (ld.count(key)) {
+                    return ld[key];
+                }
+            }
+        }
+    }
+    // Finally, not found, return the key
+    return key;
+}
+
+std::string I18N::getDefaultLocaleName() {
+    return this->defaultLocaleName;
+}
+
+I18N* I18N::clone() {
+    if (getType() == Type::SingleFile) {
+        return new SingleFileI18N(*(SingleFileI18N*)this);
+    } else if (getType() == Type::MultiFile) {
+        return new MultiFileI18N(*(MultiFileI18N*)this);
+    }
+    return nullptr;
+}
+
+////////////////////////////////////////// SingleFileI18N //////////////////////////////////////////
+
+void SingleFileI18N::load(const std::string& fileName) {
+    this->filePath = fileName;
     if (!fs::exists(fileName)) {
         fs::create_directories(fs::path(fileName).parent_path());
         std::fstream file(fileName, std::ios::out | std::ios::app);
@@ -32,18 +92,7 @@ void I18N::load(const std::string& fileName) {
     save();
 }
 
-void I18N::loadOldLangFile(const std::string& fileName) {
-    if (!fs::exists(fileName)) {
-        throw std::invalid_argument("Language file not found!");
-    }
-    auto langCode = fs::path(fileName).stem().string();
-    std::fstream file(fileName, std::ios::in);
-    nlohmann::json j;
-    file >> j;
-    langData[langCode] = j.get<SubLangData>();
-}
-
-void I18N::save() {
+void SingleFileI18N::save() {
     std::fstream file;
     if (fs::exists(filePath))
         file.open(filePath, std::ios::out | std::ios::ate);
@@ -54,75 +103,116 @@ void I18N::save() {
     file.close();
 }
 
-std::string I18N::get(const std::string& key, const std::string& langCode) {
-    auto& langc = (langCode.empty() ? defaultLangCode : langCode);
-    auto langType = langc.substr(0, 2);
-    if (langData.count(langc)) {
-        auto& lang = langData[langc];
-        if (lang.count(key))
-            return lang[key];
-        // Search for the similar language in langData
-        for (auto& [lc, ld] : langData) {
-            if (lc.length() < 2)
-                continue;
-            if (lc.substr(0, 2) == langType) {
-                if (ld.count(key)) {
-                    return ld[key];
+I18N::Type SingleFileI18N::getType() {
+    return Type::SingleFile;
+}
+
+
+////////////////////////////////////////// MultiFileI18N //////////////////////////////////////////
+
+I18N::SubLangData NestedHelper(const nlohmann::json& j, const std::string& prefix = "") {
+    I18N::SubLangData data;
+    if (!j.is_object()) {
+        // throw std::exception("Error when parsing I18N data: The value must be object!");
+        return data; // Empty
+    }
+    for (auto it = j.begin(); it != j.end(); ++it) {
+        auto& val = it.value();
+        if (val.is_object()) {
+            data.merge(NestedHelper(val, prefix + it.key() + '.'));
+        } else if (val.is_string()) {
+            data.emplace(prefix + it.key(), val.get<std::string>());
+        } else {
+            continue; // Ignore
+        }
+    }
+    return data;
+}
+
+void MultiFileI18N::load(const std::string& dirName) {
+    this->dirPath = dirName;
+    if (!fs::exists(dirName) || fs::is_empty(dirName)) {
+        if (this->defaultLangData.empty()) {
+            logger.error("Language files NOT FOUND! This may cause many errors!");
+            return;
+        }
+        this->langData = this->defaultLangData;
+        save();
+        return;
+    }
+    for (auto& f : fs::directory_iterator(dirName)) {
+        if (!f.is_regular_file() || f.path().extension() != ".json") {
+            continue;
+        }
+        auto langName = f.path().stem().string();
+        std::fstream file(f.path().wstring(), std::ios::in);
+        nlohmann::json j;
+        file >> j;
+        auto data = NestedHelper(j);
+        this->langData.emplace(langName, data);
+    }
+}
+
+void MultiFileI18N::save(bool nested) {
+    if (!fs::exists(dirPath)) {
+        fs::create_directories(dirPath);
+        for (auto& [lc, lv] : this->defaultLangData) {
+            auto fileName = fs::path(dirPath).append(lc + ".json").wstring();
+            std::fstream file;
+            if (fs::exists(fileName)) {
+                file.open(fileName, std::ios::out | std::ios::ate);
+            } else {
+                file.open(fileName, std::ios::out | std::ios::app);     
+            }
+            if (nested) {
+                auto out = nlohmann::json::object();
+                for (auto& [k, v] : lv) {
+                    auto keys = SplitStrWithPattern(k, ".");
+                    std::string name = keys.back();
+                    keys.pop_back();
+                    nlohmann::json* j = &out;
+                    for (auto& key : keys) {
+                        j->emplace(key, nlohmann::json::object());
+                        j = &j->at(key);
+                    }
+                    j->emplace(name, v);
                 }
+                file << nlohmann::json(out).dump(4);
+            } else {
+                file << nlohmann::json(lv).dump(4);
             }
         }
     }
-    // If not found, try falling back to the default language data
-    if (defaultLangData.count(langc)) {
-        if (defaultLangData[langc].count(key))
-            return defaultLangData[langc][key]; // Fall back
-    }
-    // Search for the similar language
-    for (auto& [lc, ld] : defaultLangData) {
-        if (lc.substr(0, 2) == langType) {
-            if (lc.length() < 2)
-                continue;
-            if (ld.count(key)) {
-                return ld[key];
-            }
-        }
-    }
-    // Finally, not found, return the key
-    return key;
+}
+
+I18N::Type MultiFileI18N::getType() {
+    return Type::MultiFile;
 }
 
 
 namespace Translation {
 
-bool loadImpl(HMODULE hPlugin, const std::string& filePath) {
-    try {
-        I18N i18n{};
-        i18n.curModule = hPlugin;
-        i18n.loadOldLangFile(filePath);
-        return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY);
-    } catch (const std::exception& e) {
-        logger.error("Fail to load translation file <{}> !", filePath);
-        logger.error("- {}", TextEncoding::toUTF8(e.what()));
-    } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
-    return false;
-}
-
-I18N* loadImpl(HMODULE hPlugin, const std::string& filePath, const std::string& defaultLangCode,
+I18N* loadImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
                const I18N::LangData& defaultLangData) {
     try {
-        I18N i18n(filePath, defaultLangCode, defaultLangData, hPlugin);
-        return &PluginOwnData::getImpl<I18N>(hPlugin, I18N::POD_KEY);
+        I18N* res = nullptr;
+        if (path.ends_with('/') || path.ends_with('\\') || fs::is_directory(path)) { // Directory
+            res = new MultiFileI18N(path, defaultLocaleName, defaultLangData);
+        } else {
+            res = new SingleFileI18N(path, defaultLocaleName, defaultLangData);
+        }
+        return &PluginOwnData::setWithoutNewImpl<I18N>(hPlugin, I18N::POD_KEY, res);
     } catch (const std::exception& e) {
-        logger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("Fail to load translation file <{}> !", path);
         logger.error("- {}", TextEncoding::toUTF8(e.what()));
-    } catch (...) { logger.error("Fail to load translation file <{}> !", filePath); }
+    } catch (...) { logger.error("Fail to load translation file <{}> !", path); }
     return nullptr;
 }
 
 I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
     try {
         auto& i18n = PluginOwnData::getImpl<I18N>(hTarget, I18N::POD_KEY);
-        return &PluginOwnData::setImpl<I18N>(hPlugin, I18N::POD_KEY, i18n);
+        return &PluginOwnData::setWithoutNewImpl<I18N>(hPlugin, I18N::POD_KEY, i18n.clone());
     } catch (const std::exception& e) {
         logger.error("Fail to load translation from another plugin!", e.what());
         logger.error("- {}", e.what());

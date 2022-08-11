@@ -24,7 +24,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYCONTAINER
 #endif
-    MCAPI PropertyContainer(class gsl::not_null<class std::shared_ptr<class PropertyGroup const>>);
+    MCAPI PropertyContainer(class gsl::not_null<class std::shared_ptr<class PropertyGroup const>>, class RenderParams &);
     MCAPI void addAdditionalSaveDataToCompoundTag(class CompoundTag &) const;
     MCAPI void addSerializationDataToCompoundTag(class CompoundTag &, class PropertyMetadata const &) const;
     MCAPI bool getMolangValue(unsigned __int64, struct MolangScriptArg &) const;

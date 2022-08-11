@@ -29,11 +29,11 @@ public:
     /*1*/ virtual void moveBoundingBox(int, int, int);
     /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /*5*/ virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /*12*/ virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const = 0;
-    /*13*/ virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const = 0;
-    /*14*/ virtual class Block const & getBeardStabilizeBlock(class Block const &) const = 0;
-    /*15*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
-    /*16*/ virtual bool _needsPostProcessing(class BlockSource &);
+    /*13*/ virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const = 0;
+    /*14*/ virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const = 0;
+    /*15*/ virtual class Block const & getBeardStabilizeBlock(class Block const &) const = 0;
+    /*16*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
+    /*17*/ virtual bool _needsPostProcessing(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POOLELEMENTSTRUCTUREPIECE
 #endif
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);

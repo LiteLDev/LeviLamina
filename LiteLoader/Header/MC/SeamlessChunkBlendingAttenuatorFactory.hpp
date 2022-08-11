@@ -26,6 +26,7 @@ public:
 #endif
     MCAPI SeamlessChunkBlendingAttenuatorFactory(class Dimension &);
     MCAPI class std::shared_ptr<class SeamlessChunkBlendingAttenuator> getOrCreateAttenuator(class ChunkPos const &);
+    MCAPI bool const isClientSide() const;
 
 //private:
     MCAPI class std::shared_ptr<class SeamlessChunkBlendingAttenuator> _createChunkBlendingAttenuator(class ChunkPos const &) const;

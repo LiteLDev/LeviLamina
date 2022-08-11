@@ -59,6 +59,7 @@ public:
     MCAPI bool getIgnoreJigsawBlocks() const;
     MCAPI unsigned int getIntegritySeed() const;
     MCAPI float getIntegrityValue() const;
+    MCAPI bool getIsWaterLogged() const;
     MCAPI struct ActorUniqueID getLastTouchedByPlayerID() const;
     MCAPI enum Mirror getMirror() const;
     MCAPI std::string const & getPaletteName() const;
@@ -79,6 +80,7 @@ public:
     MCAPI void setIgnoreJigsawBlocks(bool);
     MCAPI void setIntegritySeed(unsigned int);
     MCAPI void setIntegrityValue(float);
+    MCAPI void setIsWaterLogged(bool);
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
     MCAPI void setMirror(enum Mirror);
     MCAPI void setPaletteName(std::string);

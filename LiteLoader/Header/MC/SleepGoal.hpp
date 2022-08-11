@@ -41,9 +41,9 @@ public:
     MCAPI SleepGoal(class Mob &, float, float, float, bool, float, int, float);
 
 //private:
+    MCAPI void _lockPosToBedPos();
+    MCAPI void _setSleepVariables();
     MCAPI void _wakeUp();
-    MCAPI void lockPosToBedPos();
-    MCAPI void setSleepVariables();
 
 
 private:

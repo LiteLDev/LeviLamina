@@ -99,7 +99,7 @@ mc.listen("onServerStarted", () => {
   - 海量现有插件，成熟发布平台，即刻 👉[前往官方论坛](https://forum.litebds.com/)👈 查找并下载你喜欢的 LL 插件
 
 - 🏃 开源 & 社区共建
-  - 项目采用 `AGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。<br>
+  - 项目采用 `LGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。<br>
   - 设计思想采取 **去中心化** 设计，放心享受 **自由** 的插件加载框架！<br>
 
 ------
@@ -131,14 +131,14 @@ chmod +x install.sh
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
+docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-
-启动服务器：`docker container start liteloader`<br>
-强制停止服务器（不推荐）：`docker container stop liteloader`<br>
+启动服务器：`docker container start liteloader -a`<br>
+强制停止服务器（不推荐）：`docker container stop -t 30 liteloader`<br>
 进入控制台：`docker attach liteloader`<br>
 退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。<br>
-如想管理服务端文件，使用命令 `docker volume --help` 了解详情。
+如想管理服务端文件，使用命令 `docker volume ls` 获取volume id，然后通过 `docker volume inspect id `获取volume路径。</br>
+你也可以通过在`create`指定参数`--mount`来自定义服务端数据路径
 
 ## 🎯 下载 & 加载插件
 
@@ -164,10 +164,10 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ### 使用 C++ 开发插件
 
 1. 前往 [LiteLoader 插件模板仓库](https://github.com/LiteLDev/PluginTemplate) 下载项目模板，或者根据模板创建自己的项目仓库，并下载代码到本地
-1. 打开 Template.sln 项目文件
-1. 在Plugin.cpp中开始编写插件代码
-1. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
-1. 复制插件到 plugins 目录进行测试
+2. 打开 Template.sln 项目文件
+3. 在Plugin.cpp中开始编写插件代码
+4. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
+5. 复制插件到 plugins 目录进行测试
 
 具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
@@ -232,7 +232,7 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 1. 贡献代码，维护项目和符号
 2. 帮助我们修改并优化开发文档
 3. 按照格式写下你想要的新API并提交一个PR（GitHub Issue），或者提出好的建议
-5. 帮助我们推广 `LiteLoader`，支持我们的发展
+4. 帮助我们推广 `LiteLoader`，支持我们的发展
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 
@@ -242,30 +242,33 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 
 ## 📍 许可证
 
-您必须接受 Minecraft 的最终用户许可协议(EULA).
-
-- 它意味着**请勿将任何违反 EULA 的内容用于商业用途**
-- 接受这个**许可证**意味着您也**接受了**[Minecraft EULA](https://account.mojang.com/terms)
-- 如果您违反了 **EULA**，任何法律责任都与开发者**无关**
 - **开发者不对您负责，开发者没有义务为你编写代码、为你使用造成的任何后果负责**
 
-另外，您需要遵守本项目的`AGPL-3.0`开源许可证条款，以及下列提到的各关联项目的开源许可证条款
-
-[LiteLoader](https://github.com/LiteLDev/LiteLoader) AGPLv3以及额外限制和例外
-[BedrockX](https://github.com/Sysca11/BedrockX) GPLv3以及额外限制和例外
-[ElementZero](https://github.com/Element-0/ElementZero) GPLv3
-[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0
-[OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License
-[SimpleIni](https://github.com/brofield/simpleini) MIT License
-[Nlohmann-Json](https://github.com/nlohmann/json) MIT License
-[nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License
-[Hash](https://github.com/Chocobo1/Hash) GPL v3
-[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License
-[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
-[magic_enum](https://github.com/Neargye/magic_enum) MIT License
-[dyncall](https://www.dyncall.org/index) ISC license
-[vcproxy](https://github.com/pr701/vcproxy) MIT License
-[RawPDB](https://github.com/MolecularMatters/raw_pdb) BSD 2-Clause License
+| Project                                                                 | License                                   |
+| ----------------------------------------------------------------------- | ----------------------------------------- |
+| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra restrictions&exceptions                                |
+| [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                         |
+| [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 license                                   |
+| [SimpleIni](https://github.com/brofield/simpleini)                      | MIT license                                   |
+| [Nlohmann-Json](https://github.com/nlohmann/json)                       | MIT license                                   |
+| [nbt-cpp](https://github.com/handtruth/nbt-cpp)                         | MIT license                                   |
+| [ThreadPool](https://github.com/jhasse/ThreadPool)                      | Zlib license                                   |
+| [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT license                                   |
+| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
+| [dyncall](https://www.dyncall.org/index)                                | [ISC license](https://www.dyncall.org/license)                                  |
+| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT license                                   |
+| [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause license                                   |
+| [SQLiteCpp](https://github.com/SRombauts/SQLiteCpp)                     | MIT license                                   |
+| [compact_enc_det](https://github.com/google/compact_enc_det)            | Apache-2.0 license                                   |
+| [detours](https://github.com/microsoft/Detours)                         | MIT license                                   |
+| [httplib](https://github.com/yhirose/cpp-httplib)                       | MIT license                                   |
+| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
+| [entt](https://github.com/skypjack/entt)                                | MIT license                                   |
+| [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst)              |
+| [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                   |
+| [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause license                                   |
+| [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 license                                   |
+| [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                   |
 
 ### 额外限制和例外
 

@@ -29,7 +29,13 @@ public:
     template <>
     MCAPI void writeType(class MoveActorAbsoluteData const&);
     template <>
-    MCAPI void writeType(class mce::UUID const&);
+    inline void writeType(class mce::UUID const& uuid)
+    {
+        for (const unsigned char b : dAccess<unsigned char[16]>(&uuid, 0))
+        {
+            writeByte(b);
+        }
+    }
     template <>
     MCAPI void writeType(class NetworkItemInstanceDescriptor const&);
     template <>

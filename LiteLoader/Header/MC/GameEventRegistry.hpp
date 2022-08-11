@@ -51,6 +51,7 @@ namespace GameEventRegistry {
     MCAPI extern class GameEvent const projectileLand;
     MCAPI extern class GameEvent const projectileShoot;
     MCAPI extern class GameEvent const sculkSensorTendrilsClicking;
+    MCAPI extern class GameEvent const sculkTouch;
     MCAPI extern class GameEvent const shear;
     MCAPI extern class GameEvent const shriek;
     MCAPI extern class GameEvent const splash;

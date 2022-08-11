@@ -31,6 +31,7 @@ public:
     MCAPI void addToResultList(std::string const &, std::string const &);
     MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
     MCAPI void set(std::string const &, class BlockPos const &);
+    MCAPI void set(std::string const &, class Json::Value const &);
     MCAPI void set(std::string const &, class Vec3);
 
 

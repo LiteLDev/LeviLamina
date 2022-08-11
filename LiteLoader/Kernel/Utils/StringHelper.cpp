@@ -1,7 +1,7 @@
 #include <Utils/StringHelper.h>
 #include <string>
 #include <vector>
-#include <Windows.h>
+#include <windows.h>
 using namespace std;
 
 wstring str2wstr(const string& str) {
@@ -96,6 +96,10 @@ std::string FixCurlyBracket(std::string str) {
 }
 
 
-std::string UTF82String(std::u8string str) {
+LIAPI std::string UTF82String(std::u8string str) {
     return reinterpret_cast<std::string&>(str);
+}
+
+LIAPI std::string UTF82String(std::string str) {
+    return str;
 }

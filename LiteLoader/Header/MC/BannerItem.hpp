@@ -28,23 +28,23 @@ public:
 public:
     /*0*/ virtual ~BannerItem();
     /*7*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_13();
-    /*15*/ virtual void __unk_vfn_15();
-    /*51*/ virtual void __unk_vfn_51();
-    /*53*/ virtual void __unk_vfn_53();
-    /*54*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
-    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*66*/ virtual void __unk_vfn_66();
-    /*67*/ virtual bool isValidAuxValue(int) const;
-    /*70*/ virtual void __unk_vfn_70();
+    /*11*/ virtual void __unk_vfn_11();
+    /*14*/ virtual void __unk_vfn_14();
+    /*16*/ virtual void __unk_vfn_16();
+    /*52*/ virtual void __unk_vfn_52();
+    /*54*/ virtual void __unk_vfn_54();
+    /*55*/ virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
+    /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /*67*/ virtual void __unk_vfn_67();
+    /*68*/ virtual bool isValidAuxValue(int) const;
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
-    /*75*/ virtual void __unk_vfn_75();
-    /*79*/ virtual void __unk_vfn_79();
+    /*73*/ virtual void __unk_vfn_73();
+    /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
-    /*95*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /*134*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*96*/ virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /*136*/ virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERITEM
 #endif
     MCAPI BannerItem(std::string const &, int);

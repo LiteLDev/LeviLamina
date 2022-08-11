@@ -31,6 +31,7 @@ public:
     /*7*/ virtual void tick(class BlockSource &);
     /*8*/ virtual void onChanged(class BlockSource &);
     /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void onRemoved(class BlockSource &);
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual float getShadowRadius(class BlockSource &) const;
     /*28*/ virtual void __unk_vfn_28();

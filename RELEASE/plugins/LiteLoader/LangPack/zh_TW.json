@@ -1,26 +1,275 @@
 {
-    "Detected the existence of another BDS process with the same path!": "檢測到另一個相同的BDS進程存在!",
-    "Do you want to terminate the process with PID {}?  (y=Yes, n=No)": "您是否要強製終止該PID為 {} 的進程? (y=是, n=否)",
-    "This may cause the network port and the level to be occupied": "這可能會導致存檔和端口占用",
-    "api.parseJson.fail": "解析Json時發生錯誤！",
-    "base.getDimName.0": "主世界",
-    "base.getDimName.1": "地獄",
-    "base.getDimName.2": "終界",
-    "base.getDimName.unknown": "其他維度(世界)",
-    "init.fileMapping.fail": "加載全局共享數據失敗！",
-    "init.idFile.fail": "初始化唯一標識文件失敗！ 錯誤代碼：：",
-    "init.llMoney.noFound": "LLMoney.dll 未找到！ScriptEngine經濟系統將無法工作",
-    "init.loadConfig.fail": "加載ScriptEngine配置文件失敗！",
-    "init.mapFile.fail": "全局共享數據映射失敗！",
-    "llseapi.require.download.success": " - 插件所需拓展包下載成功！已安裝到至：",
-    "llseapi.require.fail": " - 插件所需拓展包加載失敗！",
-    "llseapi.require.network.fail": " - 插件所需拓展包下載請求失敗！錯誤代碼：",
-    "llseapi.require.success": " - 插件所需拓展包加載成功。已加載：",
-    "remoteCall.createEventObject.fail": "創建事件線程失敗",
-    "remoteCall.createMessageThread.fail": "創建消息線程失敗",
-    "remoteCall.inRemoteEngine.fail": "在遠程引擎中的遠程調用錯誤！",
-    "remoteCall.postMessage.fail": "發送遠程調用信息失敗！",
-    "remoteCall.postMessageReturn.fail": "遠程調用後返回值失敗！",
-    "remoteCall.timeout.fail": "遠程調用超時，調用失敗！",
-    "remoteCall.waitFail.fail": "遠程調用等待失敗，調用失敗！"
+    "base": {
+        "getDimName": {
+            "0": "主世界",
+            "1": "地獄",
+            "2": "終界",
+            "unknown": "其他維度"
+        }
+    },
+    "ll": {
+        "main": {
+            "checkRunningBDS": {
+                "detected": "檢測到另一個具有相同路徑的BDS進程！",
+                "tip": "檢測到另一個具有相同路徑的BDS進程！",
+                "ask": "是否要終止PID為 {} 的進程？ （y=是，n=否）"
+            },
+            "fixAllowList": {
+                "removeEmptyAllowlist": "allowlist.json為空！正在刪除……",
+                "checkManually": "同時存在非空文件：allowlist.json和whitelist.json。請手動檢查",
+                "renamed": "已將whitelist.json重命名為allowlist.json"
+            },
+            "warning": {
+                "inDevMode": "當前處於開發者模式！",
+                "betaVersion": "當前正在使用beta版本",
+                "productionEnv": "請勿在生產環境中使用！",
+                "protocolVersionNotMatch": {
+                    "1": "協議版本不匹配，目標版本：{}，當前版本：{}。",
+                    "2": "這很可能會使服務器崩潰，請使用與BDS版本匹配的LiteLoader！"
+                }
+            }
+        },
+        "antiAbnormalItem": {
+            "detected": "玩家 ({}) 物品數據錯誤！",
+            "itemInfo": "物品: {}"
+        },
+        "cmd": {
+            "tpdim": {
+                "success": "傳送 {} 到 {} ({:2f}, {:2f}, {:2f})",
+                "error": {
+                    "noActorTeleported": "沒有傳送對象傳送",
+                    "noActorSpecified": "未指定參與者"
+                },
+                "invalidDimid": "無效的維度ID: {}"
+            },
+            "listPlugin": {
+                "overview": "插件列表[{}]",
+                "tip": "*若要獲取詳細信息，請發送指令「ll list <Plugin Name>」"
+            },
+            "pluginInfo": {
+                "title": "插件<{}>",
+                "error": {
+                    "pluginNotFound": "找不到插件<{}>！"
+                }
+            },
+            "version": {
+                "msg": "基岩版官方專用服務器 {}\n- 使用LiteLoaderBDS {}\n- 網絡協定：{}"
+            },
+            "help": {
+                "msg": "[Introduction]\nLiteLoaderBDS是一個非官方的插件加載器，用於修改基岩版官方專用服務器的開發。它提供了大量API、強大的事件系統和大量的接口。\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\n歡迎來到我們的 GitHub 項目，您可以在這裡找到更多信息。"
+            },
+            "loadPlugin": {
+                "success": "插件<{}>已加載。",
+                "fail": "加載插件{}失敗"
+            },
+            "unloadPlugin": {
+                "success": "<{}>已卸載。",
+                "fail": "卸載插件<{}>失败"
+            },
+            "reloadPlugin": {
+                "success": "插件<{}>已重新加載。",
+                "fail": "<{}> 插件載入失敗。"
+            },
+            "reloadAllPlugins": {
+                "success": "卸載 {} 插件成功。",
+                "fail": "沒有可用的插件可以重載。"
+            },
+            "error": {
+                "noPathSpecified": "您必須提供一個LiteLoader插件的有效路徑！",
+                "noNameSpecified": "您必須提供一個LiteLoader插件的有效名稱！"
+            }
+        },
+        "config": {
+            "save": {
+                "fail": "無法保存(創建)配置文件！"
+            },
+            "creating": "無法找到 LL 配置檔案 <{}> ，正在創建一個新的。",
+            "warning": {
+                "configOutdated": "LL 配置檔案 <{}> 已過期。"
+            },
+            "updating": "正在更新配置文件..."
+        },
+        "crashLogger": {
+            "existsingDebuggerDetected": "檢測到已存在的BUG調試器，內建 CrashLogger 將不被使用。",
+            "wineDetected": "檢測到調試器環境，內建 CrashLogger 將不被使用。",
+            "error": {
+                "cannotCreateDaemonProcess": "無法創建 CrashLogger 保護進程！"
+            },
+            "warning": {
+                "crashLoggerDisabled": {
+                    "1": "內建 CrashLogger 未啟用，因為已在配置中關閉了它。",
+                    "2": "若伺服器爆掉，將不會記錄任何訊息",
+                    "3": "無法找出伺服器爆炸的原因與來源(幾乎不可能找出)",
+                    "4": "我們強烈建議您啟用它以確保服務器穩定性"
+                },
+                "conflicts": {
+                    "1": "內建 CrashLogger 未啟用，因為插件 <{}> 與之衝突",
+                    "2": "若伺服器爆掉，將不會記錄任何訊息",
+                    "3": "無法找出伺服器爆炸的原因與來源(幾乎不可能找出)",
+                    "4": "由於 CrashLogger 是穩定服務器的重要組件",
+                    "5": "我們建議您對插件 <{}> 的使用再考慮看看。"
+                }
+            },
+            "init": {
+                "fail": {
+                    "msg": "內置 CrashLogger 無法啟動！",
+                    "tip": "若伺服器爆掉，將不會記錄任何訊息"
+                }
+            }
+        },
+        "addonsHelper": {
+            "error": {
+                "addonConfigNotFound": "找不到Addon附加元件！",
+                "addonFileNotFound": "找不到Addon檔案 \"{}\" ！",
+                "addonNotFound": "找不到Addon \"{}\" ！",
+                "outOfRange": "插件索引 {} 超出範圍",
+                "unsupportedFileType": "未知的檔案種類！",
+                "parsingEnabledAddonsList": "解析啟用的插件列表時出現問題",
+                "noAddonInstalled": "沒有安裝任何Addon。",
+                "installationAborted": "安裝進度中止！"
+            },
+            "displayError": "錯誤： {}",
+            "removeAddonFromList": {
+                "fail": "無法從配置文件中刪除addon <{}>！",
+                "success": "成功從配置文件刪除了addon <{}>"
+            },
+            "addAddonToList": {
+                "invalidList": "無效的Addon列表文件, 已備份到 {} 並重置成默認值",
+                "fail": "無法將addon {} 插入到 {}",
+                "success": "成功將Addon <{}> 添加到配置文件"
+            },
+            "install": {
+                "installing": "正在安裝addon <{}>...",
+                "error": {
+                    "failToUncompress": {
+                        "msg": "無法解壓縮addon {}！",
+                        "exitCode": "退出代碼: {}",
+                        "programOutput": "程式輸出: {}"
+                    }
+                }
+            },
+            "uninstall": {
+                "success": "Addon <{}> 成功卸載"
+            },
+            "autoInstall": {
+                "tip": {
+                    "dirCreated": "已創建目錄. 您可以把壓縮的Addon 檔移至 {} 以在下次啟動時安裝"
+                },
+                "working": "{} 個要安裝的新addon(s). 處理中...",
+                "installed": "Addon {} 已被安裝",
+                "installedCount": "{} 個addon(s) 已被安裝"
+            },
+            "cmd": {
+                "output": {
+                    "list": {
+                        "overview": "Addons: {} 個addon(s) 已安裝:"
+                    }
+                }
+            }
+        },
+        "loader": {
+            "loadScriptEngine": {
+                "error": {
+                    "versionNotMatch": "{} 的腳本引擎的文件版本 <{}> 與 LiteLoader 版本 <{}> 不符合"
+                },
+                "success": "* {} 的 腳本引擎 已成功載入"
+            },
+            "loadDotNetEngine": {
+                "warning": {
+                    "notFinished": "LiteLoader.NET 還未完成！"
+                },
+                "error": {
+                    "versionNotMatch": "LiteLoader.NET 的檔版本 <{}> 與 LiteLoader 版本 <{}> 不符合"
+                },
+                "success": "* .NET 引擎已載入"
+            },
+            "loadMain": {
+                "loadingPlugins": "載入原生插件中...",
+                "loadedShellLink": "快捷連結插件 <{} => {}> 已加載",
+                "loadedPlugin": "原生插件 <{name}> 已載入",
+                "done": "已載入 {} 個原生插件",
+                "start": "加載原生插件..."
+            },
+            "initNodeJsDirectories": {
+                "created": "無法找到NodeJS運行文件，已自動創建。"
+            }
+        },
+        "notice": {
+            "newForum": "我們的新論壇！-> {}",
+            "license": "LiteLoader 在 {} 許可證下開源",
+            "translateText": "幫助我們翻譯&改進翻譯 -> {}"
+        },
+        "pluginManager": {
+            "error": {
+                "invalidFileType": "{} 中的插件文件類型 {} 無效",
+                "noValidPluginFound": "未找到有效的插件在 {}!",
+                "failToRegisterPlugin": "插件 {} 註冊失敗",
+                "hasBeenRegistered": "插件 {} 已被註冊",
+                "failToLoadPlugin": "插件 {} 加載失敗",
+                "pluginNotFound": "找不到此插件 <{}>"
+            },
+            "warning": {
+                "unloadDllNotFinished": "dll插件卸載功能尚未完成",
+                "reloadDllNotFinished": "dll插件的重新載入功能尚未完成"
+            },
+            "reloadPlugin": {
+                "fail": "無法重新載入插件 {}!"
+            }
+        }
+    },
+    "llse": {
+        "init": {
+            "llMoney": {
+                "notFound": "LLMoney.dll 不存在，ScriptEngine 經濟系統將不起作用"
+            }
+        },
+        "api": {
+            "ll": {
+                "require": {
+                    "success": " - 插件依賴庫加載成功。已加載：",
+                    "fail": " - 插件前置加載失敗",
+                    "download": {
+                        "success": " - 成功下載前置檔案！ 檔案位置： ",
+                        "fail": " - 插件前置下載失敗！錯誤代碼： "
+                    }
+                }
+            }
+        },
+        "apiHelp": {
+            "parseJson": {
+                "fail": "JSON解析錯誤"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "依賴 {} 已載入",
+                "fail": "無法載入依賴 {}"
+            },
+            "loadMain": {
+                "start": "載入 {type} 插件中...",
+                "done": "{count} 個 {type} 已成功載入。",
+                "nodejs": {
+                    "install": {
+                        "fail": "安裝插件 {} 失敗，請檢查您的 package.json 文件！",
+                        "start": "發現 Node.js 插件包 \"{path}\"! 嘗試安裝中..."
+                    },
+                    "ignored": "在目錄 {path} 中找不到 package.json 文件, 已忽略"
+                },
+                "loadedPlugin": "{type} 插件 <{name}> 已加載。",
+                "installPluginPack": {
+                    "done": "已安裝 {count} 個 {type} 插件包"
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npm 命玲已成功完成",
+                    "start": "正在為 {name} 插件執行 “npm install”...",
+                    "fail": "發生錯誤. 退出代碼: {code}"
+                },
+                "register": {
+                    "fail": "無法讓插件 {name} 被註冊！"
+                }
+            }
+        }
+    }
 }

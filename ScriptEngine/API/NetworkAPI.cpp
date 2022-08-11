@@ -628,7 +628,7 @@ Local<Value> HttpServerClass::onException(const Arguments& args) {
 
     try {
         exceptionCallback = {EngineScope::currentEngine(), script::Global{args[0].asFunction()}};
-        svr->set_exception_handler([this, engine = EngineScope::currentEngine()](const Request& req, Response& resp, std::exception& e) {
+        svr->set_exception_handler([this, engine = EngineScope::currentEngine()](const Request& req, Response& resp, std::exception_ptr e) {
             if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
                 return;
             auto task = Schedule::nextTick([this, engine, req, &resp, e] {
@@ -637,7 +637,13 @@ Local<Value> HttpServerClass::onException(const Arguments& args) {
                 EngineScope enter(engine);
                 auto reqObj = new HttpRequestClass(req);
                 auto respObj = new HttpResponseClass(resp);
-                this->exceptionCallback.func.get().call({}, reqObj, respObj, String::newString(e.what()));
+                try {
+                    if (e) {
+                        std::rethrow_exception(e);
+                    }
+                } catch(const std::exception& exp) {
+                    this->exceptionCallback.func.get().call({}, reqObj, respObj, String::newString(exp.what()));
+                }
                 resp = *respObj->get();
             });
             while (!task.isFinished())

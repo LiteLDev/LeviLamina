@@ -95,12 +95,12 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
     <ClCompile Include="Kernel\DB\Any.cpp" />
     <ClCompile Include="Kernel\DB\ConnParams.cpp" />
-    <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
+    <!-- <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="Kernel\DB\Impl\MySQL\Stmt.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
-    </ClCompile>
+    </ClCompile> -->
     <ClCompile Include="Kernel\DB\Impl\SQLite\Session.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)SQLite\</ObjectFileName>
     </ClCompile>
@@ -140,8 +140,8 @@ LibraryBuilder.exe
     <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\DB\Any.h" />
     <ClInclude Include="Header\DB\ConnParams.h" />
-    <ClInclude Include="Header\DB\Impl\MySQL\Session.h" />
-    <ClInclude Include="Header\DB\Impl\MySQL\Stmt.h" />
+    <!-- <ClInclude Include="Header\DB\Impl\MySQL\Session.h" />
+    <ClInclude Include="Header\DB\Impl\MySQL\Stmt.h" /> -->
     <ClInclude Include="Header\DB\Impl\SQLite\Session.h" />
     <ClInclude Include="Header\DB\Impl\SQLite\Stmt.h" />
     <ClInclude Include="Header\DB\Pointer.h" />
@@ -296,7 +296,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="Main\LiteLoader.cpp" />
     <ClCompile Include="Main\ModifyInfomation.cpp" />
-    <ClCompile Include="Main\PlayerInfoAPI.cpp" />
+    <ClCompile Include="Kernel\PlayerInfoAPI.cpp" />
     <ClCompile Include="Main\PluginManager.cpp" />
     <ClCompile Include="Main\BuiltinCommands.cpp" />
     <ClCompile Include="Main\SEHProtection.cpp" />
@@ -345,7 +345,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\VarInt.h" />
     <ClInclude Include="Header\Utils\ViewHelper.h" />
     <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp" />
-    <ClInclude Include="Main\DefaultLangData.h" />
     <ClInclude Include="Main\LiteLoader.h" />
     <ClInclude Include="Main\Loader.h" />
     <ClInclude Include="Main\PluginManager.h" />
@@ -360,12 +359,10 @@ LibraryBuilder.exe
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />
     <Library Include="Lib\third-party\compact_enc_det\ced.lib" />
-    <Library Include="Lib\third-party\cpp-base64\cpp-base64.lib" />
     <Library Include="Lib\third-party\dbghelp\dbghelp.lib" />
     <Library Include="Lib\third-party\dyncall\dyncallback_s.lib" />
     <Library Include="Lib\third-party\dyncall\dyncall_s.lib" />
     <Library Include="Lib\third-party\dyncall\dynload_s.lib" />
-    <Library Include="Lib\third-party\mysql\mysqlclient.lib" />
     <Library Include="Lib\third-party\openssl\libcrypto.lib" />
     <Library Include="Lib\third-party\openssl\libssl.lib" />
     <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />

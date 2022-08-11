@@ -15,7 +15,7 @@ LiteLoader/Lib/SymDBHelper.lib
 LiteLoaderSDK/
 
 RELEASE/*.dll
-RELEASE/SymDB2.exe
+RELEASE/LLPeEditor.exe
 !RELEASE/ChakraCore.dll
 RELEASE/plugins/LiteLoader/*.dll
 RELEASE/plugins/LiteLoader/*.pdb
@@ -31,3 +31,6 @@ LiteLoader/Lib/Demangler.pdb
 LiteLoader/Lib/Demangler.lib
 
 /build
+**/Directory.build.props
+RELEASE/plugins/lib/BaseLib.js
+RELEASE/plugins/lib/BaseLib.lua

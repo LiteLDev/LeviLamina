@@ -107,7 +107,7 @@ mc.listen("onServerStarted", () => {
   - A large number of existing plugins, mature publishing platform, instantly 👉[Go to official forum](https://forum.litebds.com/)👈 to find and download your favorite LL plugins
 
 - 🏃 Open Source & Community Building
-  - The project is licensed under the `AGPL-3.0` open source license and will **never** be charged for or released as a commercial version.
+  - The project is licensed under the `LGPL-3.0` open source license and will **never** be charged for or released as a commercial version.
   - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!
 
 ------
@@ -139,14 +139,14 @@ Enter the following lines in your terminal:
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
+docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-
-Start server: `docker container start liteloader`<br>
-Force stop server(not recommended): `docker container stop liteloader`<br>
+Start server: `docker container start liteloader -a`<br>
+Force stop server(not recommended): `docker container stop -t 30 liteloader`<br>
 Enter console: `docker attach liteloader`<br>
 Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.<br>
-If you want to manage server files, use `docker volume --help` for more details.<br>
+If you want to manage server files, use `docker volume ls` to get volume id and execute `docker volume inspect id` to see volume directory<br>
+You can also add `--mount` parameter in `create` to customize your server directory
 
 Everything's done! Next, you can install **LiteLoader** plugins!
 
@@ -176,10 +176,10 @@ For more **installation and usage guides**,  come to 👉[LiteLoader documentati
 ### Developing plugins with C++
 
 1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project templates, or create your own project repository based on the templates and download the code locally
-1. Open the Template.sln project file
-1. Start writing the plugin code in Plugin.cpp
-1. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
-1. Copy the plugin to the plugins directory for testing
+2. Open the Template.sln project file
+3. Start writing the plugin code in Plugin.cpp
+4. Compile, and select the appropriate PDB file as prompted to generate the dependency libs
+5. Copy the plugin to the plugins directory for testing
 
 For plugins development examples and guidance, please come to 👉[LiteLoader documentation](https://docs.litebds.com/en_US/Usage/)👈<br>
 If you have a revision request or need to add an API, please contact the author or post an Issue
@@ -253,30 +253,34 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to �
 
 ## 📍 LICENSE
 
-You must accept the Minecraft EULA.
-
-- It means **DO NOT MAKE COMMERCIAL USE OF ANYTHING which breaks the EULA.**
-- Accepting this **LICENSE** means you **ACCEPTED** [Minecraft EULA](https://account.mojang.com/terms) too.
 - If you violate the **EULA**, any legal liability is **IRRELEVANT** to the developers.
 - **NO WARRANTY**.
 
 | Project                                                                 | License                                   |
 | ----------------------------------------------------------------------- | ----------------------------------------- |
-| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | AGPLv3 with extra restrictions&exceptions |
-| [BedrockX](https://github.com/Sysca11/BedrockX)                         | GPLv3 with extra restrictions&exceptions  |
-| [ElementZero](https://github.com/Element-0/ElementZero)                 | GPLv3                                     |
-| [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                |
-| [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 License                        |
-| [SimpleIni](https://github.com/brofield/simpleini)                      | MIT License                               |
-| [Nlohmann-Json](https://github.com/nlohmann/json)                       | MIT License                               |
-| [nbt-cpp](https://github.com/handtruth/nbt-cpp)                         | MIT License                               |
-| [Hash](https://github.com/Chocobo1/Hash)                                | GPLv3                                     |
-| [ThreadPool](https://github.com/jhasse/ThreadPool)                      | Zlib License                              |
-| [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT License                               |
-| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                               |
-| [dyncall](https://www.dyncall.org/index)                                | ISC license                               |
-| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT License                               |
-| [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause License                      |
+| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra restrictions&exceptions                                |
+| [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                         |
+| [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 license                                   |
+| [SimpleIni](https://github.com/brofield/simpleini)                      | MIT license                                   |
+| [Nlohmann-Json](https://github.com/nlohmann/json)                       | MIT license                                   |
+| [nbt-cpp](https://github.com/handtruth/nbt-cpp)                         | MIT license                                   |
+| [ThreadPool](https://github.com/jhasse/ThreadPool)                      | Zlib license                                   |
+| [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT license                                   |
+| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
+| [dyncall](https://www.dyncall.org/index)                                | [ISC license](https://www.dyncall.org/license)                                  |
+| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT license                                   |
+| [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause license                                   |
+| [SQLiteCpp](https://github.com/SRombauts/SQLiteCpp)                     | MIT license                                   |
+| [compact_enc_det](https://github.com/google/compact_enc_det)            | Apache-2.0 license                                   |
+| [detours](https://github.com/microsoft/Detours)                         | MIT license                                   |
+| [httplib](https://github.com/yhirose/cpp-httplib)                       | MIT license                                   |
+| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
+| [entt](https://github.com/skypjack/entt)                                | MIT license                                   |
+| [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst)              |
+| [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                   |
+| [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause license                                   |
+| [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 license                                   |
+| [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                   |
 
 ### Extra Restrictions & Exceptions
 

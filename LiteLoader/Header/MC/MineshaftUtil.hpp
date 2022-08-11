@@ -12,6 +12,7 @@ namespace MineshaftUtil {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
+    MCAPI bool _isLava(class BlockLegacy const &);
     MCAPI bool isCavesAndCliffs(class Level const &);
 
 };

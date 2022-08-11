@@ -65,7 +65,7 @@ inline void PrettySnbtFormat::ValueFormat::toConsoleFormat() {
 }
 PrettySnbtFormat::PrettySnbtFormat() {
 #define InitFormat(type) mValueFormats[type] = {DefaultPrefix<type>, DefaultSuffix<type>};
-    ForEachTagType(InitFormat);
+    ForEachTagType(InitFormat)
     mExpandInList[Tag::Type::End] = false;
     mExpandInList[Tag::Type::Byte] = false;
     mExpandInList[Tag::Type::Short] = false;

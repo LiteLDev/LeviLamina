@@ -28,6 +28,11 @@ public:
     MCAPI class ActorDefinitionEvent & operator=(class ActorDefinitionEvent const &);
     MCAPI ~ActorDefinitionEvent();
 
+//private:
+    MCAPI void _evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
+
+
+private:
 
 
 };

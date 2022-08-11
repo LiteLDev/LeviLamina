@@ -32,19 +32,20 @@ public:
     /*1*/ virtual void shutdown();
     /*2*/ virtual bool isShutdownDone();
     /*5*/ virtual bool isChunkKnown(class ChunkPos const &);
-    /*8*/ virtual bool postProcess(class ChunkViewSource &);
-    /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
-    /*10*/ virtual void loadChunk(class LevelChunk &, bool);
-    /*12*/ virtual bool saveLiveChunk(class LevelChunk &);
-    /*13*/ virtual void writeEntityChunkTransfer(class LevelChunk &);
-    /*14*/ virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
-    /*15*/ virtual void hintDiscardBatchBegin();
-    /*16*/ virtual void hintDiscardBatchEnd();
-    /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    /*19*/ virtual void flushPendingDiscardedChunkWrites();
-    /*20*/ virtual void flushThreadBatch();
-    /*26*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
-    /*27*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
+    /*6*/ virtual bool isChunkSaved(class ChunkPos const &);
+    /*9*/ virtual bool postProcess(class ChunkViewSource &);
+    /*10*/ virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
+    /*11*/ virtual void loadChunk(class LevelChunk &, bool);
+    /*13*/ virtual bool saveLiveChunk(class LevelChunk &);
+    /*14*/ virtual void writeEntityChunkTransfer(class LevelChunk &);
+    /*15*/ virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
+    /*16*/ virtual void hintDiscardBatchBegin();
+    /*17*/ virtual void hintDiscardBatchEnd();
+    /*18*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    /*20*/ virtual void flushPendingDiscardedChunkWrites();
+    /*21*/ virtual void flushThreadBatch();
+    /*27*/ virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
+    /*28*/ virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBCHUNKSTORAGE
 #endif
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage &, class Scheduler &, class Experiments const &);
@@ -61,7 +62,6 @@ public:
     MCAPI bool _hasChunk(class DBChunkStorageKey const &);
     MCAPI bool _hasChunkUncached(class DBChunkStorageKey const &);
     MCAPI struct std::pair<bool, std::unique_ptr<struct PersistentBlendData>> _levelChunkCanBeUsedForBlending(class DBChunkStorageKey const &);
-    MCAPI void _loadAndBlendFromDB(class LevelChunk &, class LevelChunk &, class ChunkViewSource &);
     MCAPI bool _loadChunkFromDB(class LevelChunk &, class LevelChunk &, class ChunkViewSource &);
     MCAPI void _saveBlendData(class LevelStorageWriteBatch &, class gsl::basic_string_span<char const, -1> const &, std::string &, struct PersistentBlendData) const;
     MCAPI void _serializeChunk(class LevelChunk &, class LevelStorageWriteBatch &, bool);

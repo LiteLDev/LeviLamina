@@ -15,12 +15,13 @@ struct ComponentInfo {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPONENTINFO
 public:
-    struct ComponentInfo& operator=(struct ComponentInfo const &) = delete;
     ComponentInfo(struct ComponentInfo const &) = delete;
     ComponentInfo() = delete;
 #endif
 
 public:
+    MCAPI struct ComponentInfo & operator=(struct ComponentInfo &&);
+    MCAPI struct ComponentInfo & operator=(struct ComponentInfo const &);
     MCAPI ~ComponentInfo();
 
 protected:

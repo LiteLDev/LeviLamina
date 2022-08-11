@@ -63,16 +63,16 @@ public:
     /*135*/ virtual bool isAuxValueRelevantForPicking() const;
     /*147*/ virtual int getVariant(class Block const &) const;
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*191*/ virtual enum BlockRenderLayer getRenderLayer() const;
-    /*192*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
-    /*199*/ virtual void __unk_vfn_199();
+    /*157*/ virtual void __unk_vfn_157();
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*181*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    /*182*/ virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    /*188*/ virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAPLING
 #endif
     MCAPI Sapling(std::string const &, int);

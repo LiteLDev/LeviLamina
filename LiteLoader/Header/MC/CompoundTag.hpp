@@ -114,7 +114,6 @@ public:
 #endif
     MCAPI CompoundTag(class CompoundTag &&);
     MCAPI CompoundTag();
-    //MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI void append(class CompoundTag const &);
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> begin() const;
     MCAPI void clear();

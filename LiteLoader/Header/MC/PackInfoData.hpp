@@ -29,15 +29,17 @@ struct PackInfoData {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINFODATA
 public:
-    struct PackInfoData& operator=(struct PackInfoData const&) = delete;
-    PackInfoData(struct PackInfoData const&) = delete;
+    struct PackInfoData& operator=(struct PackInfoData const &) = delete;
+    PackInfoData(struct PackInfoData const &) = delete;
     PackInfoData() = delete;
 #endif
 
 public:
-    MCAPI PackInfoData(class mce::UUID const&, class SemVersion const&, unsigned __int64, std::string const&, std::string const&, class ContentIdentity const&, bool, bool);
+    MCAPI PackInfoData(class mce::UUID const &, class SemVersion const &, unsigned __int64, std::string const &, std::string const &, class ContentIdentity const &, bool, bool);
     MCAPI ~PackInfoData();
 
 protected:
+
 private:
+
 };

@@ -215,7 +215,13 @@ public:
     inline Stmt& fetchEach(std::function<bool(const Row&)> cb)
     {
         do {
-            if (!cb(_Fetch())) break;
+            auto res = _Fetch();
+            if (res.size() == 0) {
+                continue;
+            }
+            if (!cb(res)) {
+                break;
+            }
         } while (step());
         return *this;
     }
@@ -237,33 +243,32 @@ public:
     /**
      * @brief Fetch all the result rows.
      *
-     * @tparam T  The value type of vector
-     * @return std::vector<T>  The result rows
-     */
-    template <typename T>
-    inline std::vector<T> fetchAll()
-    {
-        std::vector<T> result;
-        return fetchAll(result);
-    }
-    //virtual ResultSet fetchAll() = 0;
-
-    /**
-     * @brief Fetch all the result rows.
-     *
      * @tparam T   The value type of vector
      * @param[out] rows   The result set
      * @return     Stmt&  *this
      */
     template <typename T>
-    inline Stmt& fetchAll(std::vector<T>& rows)
-    {
+    inline Stmt& fetchAll(std::vector<T>& rows) {
         return fetchEach([&](const Row& row) {
             rows.push_back(row_to<T>(row));
             return true;
         });
         return *this;
     }
+
+    /**
+     * @brief Fetch all the result rows.
+     *
+     * @tparam T  The value type of vector
+     * @return std::vector<T>  The result rows
+     */
+    template <typename T>
+    inline std::vector<T> fetchAll() {
+        std::vector<T> result;
+        fetchAll(result);
+        return result;
+    }
+    //virtual ResultSet fetchAll() = 0;
     //virtual Stmt& fetchAll(ResultSet& rows);
 
     inline ResultSet fetchAll()

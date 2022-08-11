@@ -25,6 +25,12 @@ public:
 public:
     /*0*/ virtual ~BlockReducer();
     /*1*/ virtual void registerBlock(class ItemStack const &, std::vector<class ItemStack> &&);
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack>>>> const & getReductionMap() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKREDUCER
 #endif
     MCAPI BlockReducer();

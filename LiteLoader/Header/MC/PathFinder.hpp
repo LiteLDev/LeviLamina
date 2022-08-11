@@ -41,6 +41,7 @@ public:
     MCAPI bool _findNearestPathableNeighbor(class BlockPos &, class Actor &, class BlockPos const &);
     MCAPI std::unique_ptr<class Path> _findPath(class Actor &, float, float, float, float);
     MCAPI std::unique_ptr<class Path> _findPath(class Actor &, class PathfinderNode *, class PathfinderNode *, class PathfinderNode const &, float);
+    MCAPI class AABB & _getAABBForHeightComputation(class BlockPos const &, class Block const &, class AABB &) const;
     MCAPI class AABB & _getAABBForPathfinding(class BlockPos const &, class Block const &, class AABB &) const;
     MCAPI float _getHeightAboveBlock(class BlockPos const &, float) const;
     MCAPI class std::optional<class BlockPos> _getHighestReachablePosByJumping(class BlockPos const &, float, class BlockPos const &) const;
@@ -52,6 +53,7 @@ public:
     MCAPI float _getPathfindingMalus(class Actor &, enum NodeType, class BlockPos const &);
     MCAPI class PathfinderNode * _getUnderneathSupportedNode(class PathfinderNode *, class Actor &, class BlockPos const &, class PathfinderNode const &, enum CanClimbIntoNode);
     MCAPI class PathfinderNode * _getWaterNode(class Actor &, class BlockPos const &, class BlockPos const &);
+    MCAPI enum NodeType _isFreeStartNode(class Actor &, class AABB const &, class BlockPos const &, class BlockPos const &);
     MCAPI enum NodeType _isFreeWaterNode(class Actor &, class BlockPos const &, class BlockPos const &);
     MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode *, enum PathCompletionType, struct ActorUniqueID);
 

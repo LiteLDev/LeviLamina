@@ -26,6 +26,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__PROFILERLITETIMER
 #endif
     MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData &, class std::thread::id);
+    MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI ~_ProfilerLiteTimer();
 
 

@@ -29,21 +29,18 @@ public:
     /*2*/ virtual void initializeBehaviorStack(class Experiments const &, class IResourcePackRepository &, class ResourcePackStack &, class BaseGameVersion const &);
     /*3*/ virtual void configureLevel(class Level &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual void configureDocumentation(class IGameModuleDocumentation &, class ItemRegistryRef);
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void setupCommands(class CommandRegistry &);
     /*8*/ virtual void configureServerNetworkHandler(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULESERVER
-    MCVAPI void configureDocumentation(class IGameModuleDocumentation &);
     MCVAPI void configureNewPlayer(class Player &);
     MCVAPI void tick();
 #endif
     MCAPI VanillaGameModuleServer();
 
 //private:
-    MCAPI void _configureEntitySystems(class Level &, class ResourcePackManager &, class Experiments const &);
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
-    MCAPI void _registerGameplayHandlers(class Level &) const;
     MCAPI void _registerListeners(class Level &);
 
 

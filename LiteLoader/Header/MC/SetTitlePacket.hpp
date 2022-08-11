@@ -21,7 +21,6 @@ enum TitleType;
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTITLEPACKET
 public:
     class SetTitlePacket& operator=(class SetTitlePacket const &) = delete;
-    SetTitlePacket(class SetTitlePacket const &) = delete;
 #endif
 
 
@@ -38,6 +37,8 @@ public:
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
     MCAPI SetTitlePacket();
+    MCAPI SetTitlePacket(class SetTitlePacket const &);
+    MCAPI class SetTitlePacket & operator=(class SetTitlePacket &&);
 
 
 

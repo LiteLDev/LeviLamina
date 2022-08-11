@@ -36,6 +36,7 @@ public:
     MCVAPI bool isEditorModeEnabled() const;
     MCVAPI bool isEduMode() const;
     MCVAPI void onNetworkMaxPlayersChanged(unsigned int);
+    MCVAPI bool requestServerShutdown();
     MCVAPI bool stop();
     MCVAPI ~DedicatedServer();
 #endif
@@ -45,7 +46,6 @@ public:
 
 //private:
     MCAPI std::string const & _getLevelName(class PropertiesSettings const &) const;
-    MCAPI void initalizeAppConfigs();
     MCAPI void initializeHttp(enum Bedrock::Http::Implementation);
     MCAPI void initializeLogging();
 

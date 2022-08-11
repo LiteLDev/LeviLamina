@@ -88,10 +88,9 @@ public:
     MCAPI bool hasCompoundTextUserData() const;
     MCAPI bool hasContainerData() const;
     MCAPI bool hasCustomHoverName() const;
-    MCAPI bool hasDamageValue() const;
     MCAPI bool hasSameAuxValue(class ItemStackBase const &) const;
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
-    MCAPI bool hasTag(class HashedString const &) const;
+    MCAPI bool hasTag(struct ItemTag const &) const;
     MCAPI bool hasTag(unsigned __int64 const &) const;
     MCAPI bool hasUserData() const;
     MCAPI bool hurtAndBreak(int, class Actor *);
@@ -117,6 +116,7 @@ public:
     MCAPI bool isPattern() const;
     MCAPI bool isPotionItem() const;
     MCAPI bool isStackable(class ItemStackBase const &) const;
+    MCAPI bool isStackable() const;
     MCAPI bool isStackedByData() const;
     MCAPI bool isValidAuxValue(int) const;
     MCAPI bool isWearableItem() const;

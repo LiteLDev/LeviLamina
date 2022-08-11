@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Scripting.hpp"
 #include "ResourceInformation.hpp"
 
 #define BEFORE_EXTRA
@@ -27,7 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGER
 #endif
-    MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, std::unique_ptr<class IScriptTelemetryLogger>);
+    MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, bool, std::unique_ptr<class IScriptTelemetryLogger>);
     MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &, class ScriptPackConfigurationManager const &);
     MCAPI std::vector<class ScriptPlugin> const & getPlugins() const;
     MCAPI void releaseAll();

@@ -4,3 +4,4 @@ Release/
 
 !third-party/**/*.lib
 x64/
+/third-party/ScriptX/lib/

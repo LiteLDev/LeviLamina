@@ -53,6 +53,7 @@ public:
     MCAPI void setIgnoreEntities(bool);
     MCAPI void setIntegritySeed(unsigned int);
     MCAPI void setIntegrityValue(float);
+    MCAPI void setIsWaterLogged(bool);
     MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
     MCAPI void setMirror(enum Mirror);
     MCAPI void setRotation(enum Rotation);

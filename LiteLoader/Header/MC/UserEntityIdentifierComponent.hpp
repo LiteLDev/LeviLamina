@@ -35,7 +35,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USERENTITYIDENTIFIERCOMPONENT
 #endif
     MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent &&);
-    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, unsigned char, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
+    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, enum SubClientId, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
     MCAPI bool isPrimaryClient() const;
     MCAPI class UserEntityIdentifierComponent & operator=(class UserEntityIdentifierComponent &&);
     MCAPI ~UserEntityIdentifierComponent();

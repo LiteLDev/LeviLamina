@@ -40,8 +40,8 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
     MCVAPI struct NpcActionsContainer * getActionsContainer();
     MCVAPI struct NpcActionsContainer const * getActionsContainer() const;
-    MCVAPI class Actor const * getActor() const;
     MCVAPI class Actor * getActor();
+    MCVAPI class Actor const * getActor() const;
 #endif
     MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const &);
 

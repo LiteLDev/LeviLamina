@@ -28,15 +28,12 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mAzalea;
     MCAPI extern class WeakPtr<class BlockLegacy> mBambooBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mBambooSapling;
-    MCAPI extern class WeakPtr<class BlockLegacy> mBarrel;
     MCAPI extern class WeakPtr<class BlockLegacy> mBarrierBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mBasalt;
     MCAPI extern class WeakPtr<class BlockLegacy> mBeacon;
-    MCAPI extern class WeakPtr<class BlockLegacy> mBed;
     MCAPI extern class WeakPtr<class BlockLegacy> mBeeNest;
     MCAPI extern class WeakPtr<class BlockLegacy> mBeehive;
     MCAPI extern class WeakPtr<class BlockLegacy> mBeetrootCrop;
-    MCAPI extern class WeakPtr<class BlockLegacy> mBellBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mBigDripleaf;
     MCAPI extern class WeakPtr<class BlockLegacy> mBirchFenceGate;
     MCAPI extern class WeakPtr<class BlockLegacy> mBirchSign;
@@ -58,8 +55,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mBrickStairs;
     MCAPI extern class WeakPtr<class BlockLegacy> mBrownCandle;
     MCAPI extern class WeakPtr<class BlockLegacy> mBrownCandleCake;
-    MCAPI extern class WeakPtr<class BlockLegacy> mBrownMushroom;
-    MCAPI extern class WeakPtr<class BlockLegacy> mBrownMushroomBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mBubbleColumn;
     MCAPI extern class WeakPtr<class BlockLegacy> mBuddingAmethyst;
     MCAPI extern class WeakPtr<class BlockLegacy> mButtonAcacia;
@@ -75,7 +70,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mCandle;
     MCAPI extern class WeakPtr<class BlockLegacy> mCandleCake;
     MCAPI extern class WeakPtr<class BlockLegacy> mCarrotCrop;
-    MCAPI extern class WeakPtr<class BlockLegacy> mCartographyTableBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mCarvedPumpkin;
     MCAPI extern class WeakPtr<class BlockLegacy> mCauldron;
     MCAPI extern class WeakPtr<class BlockLegacy> mCaveVines;
@@ -88,7 +82,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mChemistryTable;
     MCAPI extern class WeakPtr<class BlockLegacy> mChest;
     MCAPI extern class WeakPtr<class BlockLegacy> mChiseledDeepslate;
-    MCAPI extern class WeakPtr<class BlockLegacy> mChiseledNetherBricks;
     MCAPI extern class WeakPtr<class BlockLegacy> mChiseledPolishedBlackstone;
     MCAPI extern class WeakPtr<class BlockLegacy> mChorusFlowerBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mChorusPlantBlock;
@@ -101,7 +94,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mCobbledDeepslateWall;
     MCAPI extern class WeakPtr<class BlockLegacy> mCobblestone;
     MCAPI extern class WeakPtr<class BlockLegacy> mCobblestoneStairs;
-    MCAPI extern class WeakPtr<class BlockLegacy> mCocoa;
     MCAPI extern class WeakPtr<class BlockLegacy> mColoredTorchBP;
     MCAPI extern class WeakPtr<class BlockLegacy> mColoredTorchRG;
     MCAPI extern class WeakPtr<class BlockLegacy> mCommandBlock;
@@ -118,7 +110,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mCoralFanHang2;
     MCAPI extern class WeakPtr<class BlockLegacy> mCoralFanHang3;
     MCAPI extern class WeakPtr<class BlockLegacy> mCrackedDeepslateTiles;
-    MCAPI extern class WeakPtr<class BlockLegacy> mCrackedNetherBricks;
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonButton;
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonDoor;
     MCAPI extern class WeakPtr<class BlockLegacy> mCrimsonDoubleSlab;
@@ -163,7 +154,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mDetectorRail;
     MCAPI extern class WeakPtr<class BlockLegacy> mDiamondBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mDioriteStairs;
-    MCAPI extern class WeakPtr<class BlockLegacy> mDirt;
     MCAPI extern class WeakPtr<class BlockLegacy> mDirtWithRoots;
     MCAPI extern class WeakPtr<class BlockLegacy> mDispenser;
     MCAPI extern class WeakPtr<class BlockLegacy> mDoubleCutCopperSlab;
@@ -177,8 +167,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mDriedKelpBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mDripstone;
     MCAPI extern class WeakPtr<class BlockLegacy> mDropper;
-    MCAPI extern class WeakPtr<class BlockLegacy> mDynamicLava;
-    MCAPI extern class WeakPtr<class BlockLegacy> mDynamicWater;
     MCAPI extern class WeakPtr<class BlockLegacy> mElement0;
     MCAPI extern class WeakPtr<class BlockLegacy> mElement1;
     MCAPI extern class WeakPtr<class BlockLegacy> mElement10;
@@ -300,14 +288,7 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mElement99;
     MCAPI extern class WeakPtr<class BlockLegacy> mEmeraldBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mEnchantingTable;
-    MCAPI extern class WeakPtr<class BlockLegacy> mEndBrick;
     MCAPI extern class WeakPtr<class BlockLegacy> mEndBrickStairs;
-    MCAPI extern class WeakPtr<class BlockLegacy> mEndGateway;
-    MCAPI extern class WeakPtr<class BlockLegacy> mEndPortal;
-    MCAPI extern class WeakPtr<class BlockLegacy> mEndPortalFrame;
-    MCAPI extern class WeakPtr<class BlockLegacy> mEndRod;
-    MCAPI extern class WeakPtr<class BlockLegacy> mEndStone;
-    MCAPI extern class WeakPtr<class BlockLegacy> mEnderChest;
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCopper;
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopper;
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopperSlab;
@@ -316,7 +297,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mFence;
     MCAPI extern class WeakPtr<class BlockLegacy> mFenceGateOak;
     MCAPI extern class WeakPtr<class BlockLegacy> mFire;
-    MCAPI extern class WeakPtr<class BlockLegacy> mFletchingTable;
     MCAPI extern class WeakPtr<class BlockLegacy> mFlowerPot;
     MCAPI extern class WeakPtr<class BlockLegacy> mFloweringAzalea;
     MCAPI extern class WeakPtr<class BlockLegacy> mFrogSpawn;
@@ -339,7 +319,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mGlazedTerracottaSilver;
     MCAPI extern class WeakPtr<class BlockLegacy> mGlazedTerracottaWhite;
     MCAPI extern class WeakPtr<class BlockLegacy> mGlazedTerracottaYellow;
-    MCAPI extern class WeakPtr<class BlockLegacy> mGlowItemFrame;
     MCAPI extern class WeakPtr<class BlockLegacy> mGlowLichen;
     MCAPI extern class WeakPtr<class BlockLegacy> mGlowStone;
     MCAPI extern class WeakPtr<class BlockLegacy> mGlowingObsidian;
@@ -359,8 +338,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mHardStainedGlassPane;
     MCAPI extern class WeakPtr<class BlockLegacy> mHardenedClay;
     MCAPI extern class WeakPtr<class BlockLegacy> mHeavyWeightedPressurePlate;
-    MCAPI extern class WeakPtr<class BlockLegacy> mHoneyBlock;
-    MCAPI extern class WeakPtr<class BlockLegacy> mHoneycombBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mHopper;
     MCAPI extern class WeakPtr<class BlockLegacy> mInfestedDeepslate;
     MCAPI extern class WeakPtr<class BlockLegacy> mInfoReserved6;
@@ -370,7 +347,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mIronDoor;
     MCAPI extern class WeakPtr<class BlockLegacy> mIronFence;
     MCAPI extern class WeakPtr<class BlockLegacy> mIronTrapdoor;
-    MCAPI extern class WeakPtr<class BlockLegacy> mItemFrame;
     MCAPI extern class WeakPtr<class BlockLegacy> mJigsawBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mJukebox;
     MCAPI extern class WeakPtr<class BlockLegacy> mJungleFenceGate;
@@ -378,12 +354,10 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mJungleStairs;
     MCAPI extern class WeakPtr<class BlockLegacy> mJungleWallSign;
     MCAPI extern class WeakPtr<class BlockLegacy> mKelp;
-    MCAPI extern class WeakPtr<class BlockLegacy> mLadder;
     MCAPI extern class WeakPtr<class BlockLegacy> mLantern;
     MCAPI extern class WeakPtr<class BlockLegacy> mLapisBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mLargeAmethystBud;
     MCAPI extern class WeakPtr<class BlockLegacy> mLavaCauldron;
-    MCAPI extern class WeakPtr<class BlockLegacy> mLecternBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mLever;
     MCAPI extern class WeakPtr<class BlockLegacy> mLightBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mLightBlueCandle;
@@ -398,7 +372,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mLitRedStoneLamp;
     MCAPI extern class WeakPtr<class BlockLegacy> mLitRedStoneTorch;
     MCAPI extern class WeakPtr<class BlockLegacy> mLodestoneBlock;
-    MCAPI extern class WeakPtr<class BlockLegacy> mLoomBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mMagentaCandle;
     MCAPI extern class WeakPtr<class BlockLegacy> mMagentaCandleCake;
     MCAPI extern class WeakPtr<class BlockLegacy> mMagmaBlock;
@@ -433,15 +406,7 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mMudBrickWall;
     MCAPI extern class WeakPtr<class BlockLegacy> mMuddyMangroveRoots;
     MCAPI extern class WeakPtr<class BlockLegacy> mMycelium;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherBrick;
     MCAPI extern class WeakPtr<class BlockLegacy> mNetherBrickStairs;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherFence;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherGoldOre;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherReactor;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherSprouts;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherWart;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetheriteBlock;
-    MCAPI extern class WeakPtr<class BlockLegacy> mNetherrack;
     MCAPI extern class WeakPtr<class BlockLegacy> mNote;
     MCAPI extern class WeakPtr<class BlockLegacy> mOakStairs;
     MCAPI extern class WeakPtr<class BlockLegacy> mObserver;
@@ -507,11 +472,7 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mRedCandle;
     MCAPI extern class WeakPtr<class BlockLegacy> mRedCandleCake;
     MCAPI extern class WeakPtr<class BlockLegacy> mRedFlower;
-    MCAPI extern class WeakPtr<class BlockLegacy> mRedMushroom;
-    MCAPI extern class WeakPtr<class BlockLegacy> mRedMushroomBlock;
-    MCAPI extern class WeakPtr<class BlockLegacy> mRedNetherBrick;
     MCAPI extern class WeakPtr<class BlockLegacy> mRedNetherBrickStairs;
-    MCAPI extern class WeakPtr<class BlockLegacy> mRedNetherWartBlock;
     MCAPI extern class WeakPtr<class BlockLegacy> mRedSandstone;
     MCAPI extern class WeakPtr<class BlockLegacy> mRedSandstoneStairs;
     MCAPI extern class WeakPtr<class BlockLegacy> mRedStoneDust;
@@ -560,8 +521,6 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mStainedGlass;
     MCAPI extern class WeakPtr<class BlockLegacy> mStainedGlassPane;
     MCAPI extern class WeakPtr<class BlockLegacy> mStandingBanner;
-    MCAPI extern class WeakPtr<class BlockLegacy> mStaticLava;
-    MCAPI extern class WeakPtr<class BlockLegacy> mStaticWater;
     MCAPI extern class WeakPtr<class BlockLegacy> mStickyPiston;
     MCAPI extern class WeakPtr<class BlockLegacy> mStickyPistonArm;
     MCAPI extern class WeakPtr<class BlockLegacy> mStoneBrickStairs;

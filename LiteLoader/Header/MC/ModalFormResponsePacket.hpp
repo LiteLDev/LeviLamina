@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Packet.hpp"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -14,8 +15,7 @@ class ModalFormResponsePacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    int formId;
-    std::string data;
+	
 
 #undef AFTER_EXTRA
 
@@ -35,7 +35,5 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MODALFORMRESPONSEPACKET
 #endif
     MCAPI ModalFormResponsePacket();
-
-
 
 };

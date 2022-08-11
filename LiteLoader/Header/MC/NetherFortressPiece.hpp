@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "StructurePiece.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class NetherFortressPiece {
+class NetherFortressPiece : public StructurePiece {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,11 +25,12 @@ public:
 
 
 public:
+    /*0*/ virtual ~NetherFortressPiece();
+    /*4*/ virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSPIECE
-    MCVAPI void addHardcodedSpawnAreas(class LevelChunk &) const;
-    MCVAPI bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    MCVAPI ~NetherFortressPiece();
 #endif
+    MCAPI NetherFortressPiece(int);
     MCAPI std::unique_ptr<class NetherFortressPiece> findAndCreateBridgePieceFactory(std::string const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     MCAPI class StructurePiece * generateAndAddPiece(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int, bool);
     MCAPI class StructurePiece * generateChildForward(class NBStartPiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, bool);

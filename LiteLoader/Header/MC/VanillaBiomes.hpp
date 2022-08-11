@@ -113,11 +113,6 @@ public:
     MCAPI static class Biome * mWarpedForest;
     MCAPI static void shutdownBiomes();
 
-//private:
-    MCAPI static void addBiomeDimensionAttributeComponentHelper(class BiomeRegistry &, std::string const &, class AutomaticID<class Dimension, int>);
-
-
-private:
 
 
 };

@@ -36,14 +36,17 @@ unsigned short Block::getTileData() {
     auto tileData = dAccess<unsigned short, 8>(this);
     auto blk = &getLegacyBlock();
 
-    if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this)
+    if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this) {
         return tileData;
+    }
 
     for (unsigned short i = 0; i < 16; ++i) {
-        if (i == tileData)
+        if (i == tileData) {
             continue;
-        if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this)
+        }
+        if (((BlockLegacy*)blk)->toBlock(i) == (Block*)this) {
             return i;
+        }
     }
     logger.error("Error in GetTileData");
     return 0;

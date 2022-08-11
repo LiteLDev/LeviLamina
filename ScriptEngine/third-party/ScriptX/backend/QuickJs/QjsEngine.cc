@@ -82,13 +82,15 @@ QjsEngine::QjsEngine(std::shared_ptr<utils::MessageQueue> queue, const QjsFactor
     : queue_(queue ? std::move(queue) : std::make_shared<utils::MessageQueue>()) {
   if (factory) {
     std::tie(runtime_, context_) = factory();
-    assert(runtime_);
-    assert(context_);
   } else {
     runtime_ = JS_NewRuntime();
-    assert(runtime_);
-    context_ = JS_NewContext(runtime_);
-    assert(context_);
+    if (runtime_) {
+      context_ = JS_NewContext(runtime_);
+    }
+  }
+
+  if (!runtime_ || !context_) {
+    throw std::logic_error("QjsEngine: runtime or context is nullptr");
   }
 
   initEngineResource();
@@ -185,6 +187,8 @@ void QjsEngine::destroy() noexcept {
   JS_RunGC(runtime_);
   JS_FreeContext(context_);
   JS_FreeRuntime(runtime_);
+
+  delete this;
 }
 
 void QjsEngine::scheduleTick() {
@@ -194,6 +198,7 @@ void QjsEngine::scheduleTick() {
         [](auto& m) {
           auto eng = static_cast<QjsEngine*>(m.ptr0);
           JSContext* ctx = nullptr;
+          EngineScope scope(eng);
           while (JS_ExecutePendingJob(eng->runtime_, &ctx) > 0) {
           }
           eng->tickScheduled_ = false;
@@ -224,7 +229,7 @@ void QjsEngine::extendLifeTimeToNextLoop(JSValue value) {
   msg->template inplaceObject<ExtendLifeTime>(value, this);
   msg->tag = this;
 
-  mq->template postMessage(msg);
+  mq->postMessage(msg);
 }
 
 Local<Value> QjsEngine::get(const Local<String>& key) { return getGlobal().get(key); }

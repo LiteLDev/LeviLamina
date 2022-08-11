@@ -22,6 +22,7 @@ public:
 public:
     MCAPI PropertyValues(struct PropertyValues const &);
     MCAPI struct PropertyValues & operator=(struct PropertyValues &&);
+    MCAPI void resize(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
     MCAPI ~PropertyValues();
 
 protected:

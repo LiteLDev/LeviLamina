@@ -41,7 +41,6 @@ public:
 
 //private:
     MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const &) const;
-    MCAPI struct Aquifer::FluidSample _getOrComputeNewFluidSample(class BlockPos const &);
 
 
 private:

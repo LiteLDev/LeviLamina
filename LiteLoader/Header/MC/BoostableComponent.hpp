@@ -37,7 +37,6 @@ public:
     MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();
 
 //private:
-    MCAPI bool _canUseItem(class Actor &, class ItemStack &);
 
 
 private:

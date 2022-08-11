@@ -27,7 +27,7 @@ public:
     MCAPI SubChunk(struct SubChunk &&);
     MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, signed char);
     MCAPI SubChunk();
-    MCAPI void deserialize(class IDataInput &, class BlockPalette const &);
+    MCAPI void deserialize(class IDataInput &, class BlockPalette const &, class SubChunkPos const &, class std::optional<struct DeserializationChanges *>);
     MCAPI void fetchBlocks(class BlockPos const &, class BlockPos const &, short, class BlockVolume &) const;
     MCAPI void fetchBlocksInBox(class BlockPos const &, class BoundingBox const &, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
     MCAPI void fetchBlocksInCylinder(class BlockPos const &, class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
@@ -36,6 +36,7 @@ public:
     MCAPI void initialize(class Block const *, bool, bool, class SpinLock &, signed char);
     MCAPI bool isPaletteUniform(class Block const &) const;
     MCAPI bool isUniform(class Block const &) const;
+    MCAPI bool likelyHasNonUniformBlockLight() const;
     MCAPI bool needsInitLighting() const;
     MCAPI struct SubChunk & operator=(struct SubChunk &&);
     MCAPI void prune(enum SubChunkStorageUnit::PruneType);
@@ -48,6 +49,7 @@ public:
     MCAPI void setAllIsNoSkyLight();
     MCAPI void setBlockLight(unsigned short, unsigned char);
     MCAPI void setFromBlockVolume(class BlockVolume const &, short);
+    MCAPI void setNeedsClientLighting(bool);
     MCAPI void setNeedsInitLighting(bool);
     MCAPI void setSkyLight(unsigned short, unsigned char);
     MCAPI void setSubChunkState(enum SubChunk::SubChunkState);

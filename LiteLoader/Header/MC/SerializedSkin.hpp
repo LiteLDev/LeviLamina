@@ -20,8 +20,8 @@ class SerializedSkin {
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDSKIN
 #endif
-    MCAPI SerializedSkin(class SerializedSkin &&);
     MCAPI SerializedSkin();
+    MCAPI SerializedSkin(class SerializedSkin &&);
     MCAPI SerializedSkin(class SerializedSkin const &);
     MCAPI SerializedSkin(class ConnectionRequest const &);
     MCAPI SerializedSkin(class SubClientConnectionRequest const &);
@@ -35,6 +35,8 @@ public:
     MCAPI bool useBlinkingAnimation() const;
     MCAPI void write(class BinaryStream &) const;
     MCAPI ~SerializedSkin();
+    MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
+    MCAPI static bool isSkinDisabled(class SerializedSkin const &, class LevelData const &);
 
 
 

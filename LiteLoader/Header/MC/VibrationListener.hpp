@@ -31,14 +31,14 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENER
 #endif
     MCAPI VibrationListener(std::unique_ptr<class VibrationListenerConfig> &&, class GameEvents::PositionSource, unsigned int, enum VibrationListener::OwnerType);
-    MCAPI class GameEvent const & getGameEvent() const;
-    MCAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    MCAPI class GameEvent const & getLatestReceivedVibration() const;
+    MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     MCAPI void save(class CompoundTag &) const;
     MCAPI void tick(class BlockSource &);
-    MCAPI static int getGameEventFrequency(class GameEvent const &);
 
 //private:
-    MCAPI void _sendSignal(class BlockSource &, class GameEvent const &, struct GameEventContext const &, class GameEvents::PositionSource const &);
+    MCAPI void _requestVibrationParticle(class BlockSource &, class BlockPos const &, float);
+    MCAPI static bool _isVibrationOccluded(class BlockSource &, class Vec3 const &, class Vec3 const &);
     MCAPI static bool _shouldIgnoreVibration(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 
 

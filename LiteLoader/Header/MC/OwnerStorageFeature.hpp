@@ -28,6 +28,7 @@ public:
 //protected:
     MCAPI OwnerStorageFeature(class OwnerStorageFeature &&);
     MCAPI OwnerStorageFeature(enum OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
+    MCAPI class IFeature & _getStackRef() const;
     MCAPI bool _hasValue() const;
     MCAPI ~OwnerStorageFeature();
 

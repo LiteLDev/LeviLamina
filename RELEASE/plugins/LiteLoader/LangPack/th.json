@@ -1,0 +1,275 @@
+{
+    "base": {
+        "getDimName": {
+            "0": "โลกปกติ",
+            "1": "เนเธอร์",
+            "2": "ดิเอนด์",
+            "unknown": "มิติอื่นๆ"
+        }
+    },
+    "ll": {
+        "main": {
+            "checkRunningBDS": {
+                "detected": "ตรวจพบการทำงาน BDS อื่นในตำแหน่งเดียวกัน!",
+                "tip": "ซึ่งอาจทำให้เครือข่ายพอร์ตและระดับถูกครอบครอง",
+                "ask": "คุณต้องการยุติการทำงานของ PID {} หรือไม่? (y=ใช่ n=ไม่ใช่)"
+            },
+            "fixAllowList": {
+                "removeEmptyAllowlist": "allowlist.json ว่างเปล่า! กำลังลบ...",
+                "checkManually": "มีทั้ง allowlist.json และ whitelist.json ไม่ว่างเปล่า โปรดตรวจสอบด้วยตนเอง",
+                "renamed": "เปลี่ยนชื่อ whitelist.json ไปยัง allowlist.json"
+            },
+            "warning": {
+                "inDevMode": "ขณะนี้อยู่ในโหมดผู้พัฒนา!",
+                "betaVersion": "ขณะนี้กำลังใช้เวอร์ชั่นเบต้า",
+                "productionEnv": "โปรดอย่าใช้ในงานโปรดักชั่นจริง!",
+                "protocolVersionNotMatch": {
+                    "1": "เวอร์ชันโปรโตคอลไม่ตรงกัน เวอร์ชันที่ต้องการ: {}, ขณะนี้ใช้เวอร์ชั่น: {}",
+                    "2": "ดำเนินการนี้จะทำให้เซิร์ฟเวอร์มีปัญหา โปรดใช้ LiteLoader ที่ตรงกับเวอร์ชั่น BDS!"
+                }
+            }
+        },
+        "antiAbnormalItem": {
+            "detected": "ผู้เล่น({}) ข้อมูลไอเทมเกิดข้อผิดพลาด",
+            "itemInfo": "ไอเทม: {}"
+        },
+        "cmd": {
+            "tpdim": {
+                "success": "เทเลพอร์ต {} ไปยัง {} ({:2f}, {:2f}, {:2f})",
+                "error": {
+                    "noActorTeleported": "ไม่มีเอนทิตีที่เทเลพอร์ต",
+                    "noActorSpecified": "ไม่มีเอนทิตีที่ระบุไว้"
+                },
+                "invalidDimid": "ไม่รู้จักมิติไอดีนี้: {}"
+            },
+            "listPlugin": {
+                "overview": "รายการปลั๊กอิน [{}]",
+                "tip": "* ส่งคำสั่ง \"ll list <ชื่อปลั๊กอิน>\" สำหรับข้อมูลเพิ่มเติม"
+            },
+            "pluginInfo": {
+                "title": "ปลั๊กอิน <{}>",
+                "error": {
+                    "pluginNotFound": "ไม่พบปลั๊กอิน <{}>"
+                }
+            },
+            "version": {
+                "msg": "Bedrock Dedicated Server {}\n- ด้วย LiteLoaderBDS {}\n- โปรโตคอลอินเทอร์เน็ต: {}"
+            },
+            "help": {
+                "msg": "[Introduction]\nLiteLoaderBDS เป็นตัวโหลดเดอร์ปลั๊กอินที่ไม่เป็นทางการสำหรับการพัฒนามอดของ Bedrock Dedicated Server\nมันมี API จำนวนมาก ระบบอีเวนต์ที่ทรงพลัง และอินเทอร์เฟซยูทิลิตี้ที่อัดแน่นมากมาย\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nยินดีต้อนรับสู่โครงการ github ของเราเพื่อรับข้อมูลเพิ่มเติม ~"
+            },
+            "loadPlugin": {
+                "success": "ปลั๊กอิน <{}> โหลดสำเร็จ.",
+                "fail": "ไม่สามารถโหลดปลั๊กอิน {}"
+            },
+            "unloadPlugin": {
+                "success": "ปลั๊กอิน <{}> ยกเลิกโหลดสำเร็จ.",
+                "fail": "ไม่สามารถยกเลิกการโหลดปลั๊กอิน <{}>"
+            },
+            "reloadPlugin": {
+                "success": "ปลั๊กอิน <{}> รีโหลดสำเร็จ.",
+                "fail": "ไม่สามารถรีโหลดปลั๊กอิน <{}>"
+            },
+            "reloadAllPlugins": {
+                "success": "ปลั๊กอิน {} รีโหลดสำเร็จ",
+                "fail": "ไม่สามารถรีโหลดปลั๊กอินใดๆ"
+            },
+            "error": {
+                "noPathSpecified": "คุณต้องระบุตำแหน่งที่ถูกต้องของปลั๊กอิน LiteLoader!",
+                "noNameSpecified": "คุณต้องระบุชื่อที่ถูกต้องของปลั๊กอิน LiteLoader!"
+            }
+        },
+        "config": {
+            "save": {
+                "fail": "ไม่สามารถบันทึก(สร้าง) ไฟล์คอนฟิกได้!"
+            },
+            "creating": "ไม่พบคอนฟิกไฟล์ LL <{}> กำลังสร้างคอนฟิกไฟล์ใหม่...",
+            "warning": {
+                "configOutdated": "ไฟล์คอนฟิก LL <{}> ล้าสมัย"
+            },
+            "updating": "กำลังอัพเดทไฟล์คอนฟิก.."
+        },
+        "crashLogger": {
+            "existsingDebuggerDetected": "ตรวจพบดีบักที่มีอยู่ดั้งนั้น CrashLogger ในตัวจะไม่ทำงาน",
+            "wineDetected": "ตรวจพบสภาพแวดล้อมของ Wine CrashLogger ในตัวจะไม่ทำงาน",
+            "error": {
+                "cannotCreateDaemonProcess": "ไม่สามารถเริ่มกระบวนการ CrashLogger Daemon!"
+            },
+            "warning": {
+                "crashLoggerDisabled": {
+                    "1": "ไม่ได้เปิดใช้งาน CrashLogger ในตัวเนื่องจากการกำหนดค่าคอนฟิก",
+                    "2": "จะไม่มีบันทึกข้อขัดข้องเมื่อเกิดข้อยกเว้นที่ไม่สามารถจัดการได้,",
+                    "3": "ซึ่งทำให้แทบเป็นไปไม่ได้เลยที่จะค้นหาสาเหตุของการล่มและที่มาของการล่ม",
+                    "4": "เราขอแนะนำให้คุณเปิดใช้งานเพื่อให้แน่ใจว่าเซิร์ฟเวอร์มีความเสถียร"
+                },
+                "conflicts": {
+                    "1": "ไม่ได้เปิดใช้งาน CrashLogger ในตัวเนื่องจากปลั๊กอิน <{}> ขัดแย้งกับมัน",
+                    "2": "จะไม่มีบันทึกข้อขัดข้องเมื่อเกิดข้อยกเว้นที่ไม่สามารถจัดการได้,",
+                    "3": "ซึ่งทำให้แทบเป็นไปไม่ได้เลยที่จะค้นหาสาเหตุของการล่มและที่มาของการล่ม",
+                    "4": "เนื่องจาก CrashLogger เป็นส่วนประกอบสำคัญที่ทำให้เซิร์ฟเวอร์มีความเสถียร",
+                    "5": "เราขอแนะนำให้คุณคิดให้รอบคอบเกี่ยวกับการใช้ปลั๊กอิน <{}>"
+                }
+            },
+            "init": {
+                "fail": {
+                    "msg": "CrashLogger ภายในไม่สามารถเริ่มต้นได้!",
+                    "tip": "จะไม่มีบันทึกข้อขัดข้องเมื่อเกิดข้อยกเว้นที่ไม่สามารถจัดการได้"
+                }
+            }
+        },
+        "addonsHelper": {
+            "error": {
+                "addonConfigNotFound": "ไม่พบไฟล์คอนฟิกแอดออน \"{}\"",
+                "addonFileNotFound": "ไม่พบไฟล์แอดออน \"{}\"",
+                "addonNotFound": "ไม่พบไฟล์แอดออน \"{}\"",
+                "outOfRange": "Addon index {} อยู่นอกพื้นที่",
+                "unsupportedFileType": "ไม่รองรับสกุลไฟล์นี้",
+                "parsingEnabledAddonsList": "เกิดข้อผิดพลาดเมื่อแยกวิเคราะห์แอดออนที่เปิดใช้งาน",
+                "noAddonInstalled": "ไม่ได้ติดตั้งแอดออน",
+                "installationAborted": "ยกเลิกความคืบหน้าในการติดตั้ง!"
+            },
+            "displayError": "ข้อผิดพลาด: {}",
+            "removeAddonFromList": {
+                "fail": "ไม่สามารถลบ addon <{}> จากไฟล์คอนฟิกได้!",
+                "success": "ลบแอดออน <{}> จากไฟล์คอนฟิก"
+            },
+            "addAddonToList": {
+                "invalidList": "ไฟล์รายการแอดออนไม่ถูกต้อง {} สำรองข้อมูลไปที่ {} และรีเซ็ตเป็นค่าเริ่มต้น",
+                "fail": "ไม่สามารถแทรกส่วนเสริม {} ลงใน {}!",
+                "success": "เพิ่มแอดออน <{}> จากไฟล์คอนฟิก"
+            },
+            "install": {
+                "installing": "กำลังติดตั้งแอดออน <{}>...",
+                "error": {
+                    "failToUncompress": {
+                        "msg": "ไม่สามารถคลายบีบอัดแอดออน {}!",
+                        "exitCode": "โค้ด ส่งออก: {}",
+                        "programOutput": "เอาท์พุตโปรแกรม:\n{}"
+                    }
+                }
+            },
+            "uninstall": {
+                "success": "แอดออน <{}> ถอนการติดตั้งสำเร็จ"
+            },
+            "autoInstall": {
+                "tip": {
+                    "dirCreated": "สร้างไดเร็กทอรีแล้ว คุณสามารถย้ายไฟล์แอดออนที่บีบอัดไปยัง {} เพื่อติดตั้งในการเปิดครั้งถัดไป"
+                },
+                "working": "{} เจอแอดออนใหม่(s) พร้อมติดตั้ง กำลังทำงาน...",
+                "installed": "ติดตั้งแอดออน {} แล้ว",
+                "installedCount": "{} แอดออนถูกติดตั้งแล้ว"
+            },
+            "cmd": {
+                "output": {
+                    "list": {
+                        "overview": "แอดออน: {} แอดออนที่ติดตั้ง:"
+                    }
+                }
+            }
+        },
+        "loader": {
+            "loadScriptEngine": {
+                "error": {
+                    "versionNotMatch": "ไฟล์เวอร์ชั่น <{}> ของ Script Engine สำหรับ {} ไม่ตรงกับเวอร์ชั่น LiteLoader <{}>"
+                },
+                "success": "* ScriptEngine สำหรับ {} โหลดแล้ว"
+            },
+            "loadDotNetEngine": {
+                "warning": {
+                    "notFinished": "LiteLoader.NET ยังไม่เสร็จ!"
+                },
+                "error": {
+                    "versionNotMatch": "ไฟล์เวอร์ชั่น <{}> ของ LiteLoader.NET ไม่ตรงกับเวอร์ชั่น LiteLoader <{}>"
+                },
+                "success": "* .NET Engine โหลดแล้ว"
+            },
+            "loadMain": {
+                "loadingPlugins": "กำลังโหลดปลั๊กอิน...",
+                "loadedShellLink": "ปลั๊กอิน ShellLinked <{} => {}> โหลดแล้ว",
+                "loadedPlugin": "โหลดปลั๊กอิน <{name}> สำเร็จ",
+                "done": "ปลั๊กอิน {} โหลดแล้ว",
+                "start": "กำลังโหลดปลั๊กอิน..."
+            },
+            "initNodeJsDirectories": {
+                "created": "ไม่พบตำแหน่ง RunTime NodeJs, สร้างใหม่แล้ว"
+            }
+        },
+        "notice": {
+            "newForum": "ฟอรัมใหม่ของเราพร้อมใช้งานแล้ว! -> {}",
+            "license": "LiteLoader ได้รับอนุญาตภายใต้ {}",
+            "translateText": "Help us translate & improve text in LL -> {}"
+        },
+        "pluginManager": {
+            "error": {
+                "invalidFileType": "ประเภทไฟล์ปลั๊กอินไม่ถูกต้อง {} ใน {}",
+                "noValidPluginFound": "ไม่พบปลั๊กอินที่ถูกต้องที่ {}!",
+                "failToRegisterPlugin": "ไม่สามารถลงทะเบียนปลั๊กอิน {}!",
+                "hasBeenRegistered": "ปลั๊กอินชื่อ {} ได้รับการลงทะเบียนแล้ว",
+                "failToLoadPlugin": "ไม่สามารถโหลดปลั๊กอิน {}!",
+                "pluginNotFound": "ไม่พบปลั๊กอิน <{}>"
+            },
+            "warning": {
+                "unloadDllNotFinished": "ยกเลิกการโหลดฟังก์ชั่นของ dll ปลั๊กอิน ยังไม่สำเร็จ",
+                "reloadDllNotFinished": "โหลดซ้ำฟังก์ชั่นของ dll ปลั๊กอิน ยังไม่สำเร็จ"
+            },
+            "reloadPlugin": {
+                "fail": "ไม่สามารถรีโหลดปลั๊กอิน {}!"
+            }
+        }
+    },
+    "llse": {
+        "init": {
+            "llMoney": {
+                "notFound": "ไม่พบ LLMoney.dll ของระบบ ScriptEngine Economy จะไม่ทำงาน"
+            }
+        },
+        "api": {
+            "ll": {
+                "require": {
+                    "success": " - ปลั๊กอินที่ต้องการโหลดสำเร็จแล้ว โหลด: ",
+                    "fail": " - ปลั๊กอินที่ต้องการโหลดไม่สำเร็จ",
+                    "download": {
+                        "success": " - ไฟล์ที่ต้องการดาวน์โหลดสำเร็จ ตำแหน่ง: ",
+                        "fail": " - ดาวน์โหลดปลั๊กอินที่ต้องการไม่สำเร็จ! รหัส: "
+                    }
+                }
+            }
+        },
+        "apiHelp": {
+            "parseJson": {
+                "fail": "ข้อผิดพลาดในการแยกวิเคราะห์ Json"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "ส่วนเสริม {} โหลดแล้ว.",
+                "fail": "ไม่สามารถโหลดส่วนเสริม {}"
+            },
+            "loadMain": {
+                "start": "กำลังโหลดปลั๊กอิน {type}...",
+                "done": "{count} {type} ปลั๊กอิน(s)โหลดแล้ว",
+                "nodejs": {
+                    "install": {
+                        "fail": "ไม่สามารถติดตั้งปลั๊กอินแพ็ค {}, โปรดเช็คไฟล์ package.json ของคุณ!",
+                        "start": "พบแพ็คปลั๊กอิน Node.js \"{path}\"! กำลังติดตั้ง..."
+                    },
+                    "ignored": "ไม่พบไฟล์ package.json ในตำแหน่ง {path}"
+                },
+                "loadedPlugin": "{type} ปลั๊กอิน <{name}> โหลดแล้ว",
+                "installPluginPack": {
+                    "done": "{count} {type} ปลั๊กอินแพ็คติดตั้งแล้ว"
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npm เสร็จเรียบร้อยแล้ว",
+                    "start": "ดำเนินการ \"npm install\" สำหรับปลั๊กอิน {name}...",
+                    "fail": "เกิดข้อผิดพลาด โค้ด: {code}"
+                },
+                "register": {
+                    "fail": "ไม่สามารถลงทะเบียนปลั๊กอิน {name} ได้!"
+                }
+            }
+        }
+    }
+}

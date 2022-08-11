@@ -57,20 +57,20 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*185*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /*187*/ virtual void __unk_vfn_187();
-    /*189*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual void __unk_vfn_203();
-    /*204*/ virtual void __unk_vfn_204();
-    /*205*/ virtual void __unk_vfn_205();
-    /*206*/ virtual void __unk_vfn_206();
-    /*207*/ virtual void __unk_vfn_207();
-    /*208*/ MCAPI std::string const & getDescriptionId() const;
+    /*157*/ virtual void __unk_vfn_157();
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*175*/ virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /*177*/ virtual void __unk_vfn_177();
+    /*179*/ virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual void __unk_vfn_192();
+    /*193*/ virtual void __unk_vfn_193();
+    /*194*/ virtual void __unk_vfn_194();
+    /*195*/ virtual void __unk_vfn_195();
+    /*196*/ virtual void __unk_vfn_196();
+    /*197*/ MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBLOCK
 #endif
     MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);

@@ -44,9 +44,9 @@ public:
     /*9*/ virtual bool containsMaterial(class AABB const &, enum MaterialType) const;
     /*10*/ virtual class Material const & getMaterial(class BlockPos const &) const;
     /*11*/ virtual class Material const & getMaterial(int, int, int) const;
-    /*12*/ virtual bool hasChunksAt(struct Bounds const &) const;
-    /*13*/ virtual bool hasChunksAt(class BlockPos const &, int) const;
-    /*14*/ virtual bool hasChunksAt(class AABB const &) const;
+    /*12*/ virtual bool hasChunksAt(struct Bounds const &, bool) const;
+    /*13*/ virtual bool hasChunksAt(class BlockPos const &, int, bool) const;
+    /*14*/ virtual bool hasChunksAt(class AABB const &, bool) const;
     /*15*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /*16*/ virtual void fetchAABBs(std::vector<class AABB> &, class AABB const &, bool) const;
     /*17*/ virtual void fetchCollisionShapes(std::vector<class AABB> &, class AABB const &, float *, bool, class optional_ref<class GetCollisionShapeInterface const>) const;
@@ -73,7 +73,7 @@ public:
     MCVAPI class Dimension const & getDimensionConst() const;
 #endif
     MCAPI BlockSource(class ChunkSource &, bool, bool);
-    MCAPI BlockSource(class Level &, class Dimension &, class ChunkSource &, bool, bool);
+    MCAPI BlockSource(class Level &, class Dimension &, class ChunkSource &, bool, bool, bool);
     MCAPI class gsl::span<class gsl::not_null<class Actor *>, -1> _fetchEntities(struct IActorMovementProxy const *, class AABB const &, bool);
     MCAPI void addToRandomTickingQueue(class BlockPos const &, class Block const &, int, int, bool);
     MCAPI void addToRandomTickingQueuePercentChance(class BlockPos const &, class Block const &, float, int, bool);
@@ -91,8 +91,8 @@ public:
     MCAPI bool checkBlockPermissions(class Actor &, class BlockPos const &, unsigned char, class ItemStackBase const &, bool);
     MCAPI void checkValidity() const;
     MCAPI void clearDeletedEntities();
-    MCAPI class HitResult clip(struct BlockSource::ClipParameters const &) const;
-    MCAPI class HitResult clip(class Vec3 const &, class Vec3 const &, bool, bool, int, bool, bool, class Player *, class std::function<bool (class Block const &)> const &) const;
+    MCAPI class HitResult clip(struct ClipParameters const &) const;
+    MCAPI class HitResult clip(class Vec3 const &, class Vec3 const &, bool, bool, int, bool, bool, class Player *, class std::function<bool (class BlockSource const &, class Block const &, bool)> const &) const;
     MCAPI bool containsAnyBlockInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
     MCAPI bool containsAnyBlockOfType(class BlockPos const &, class BlockPos const &, class Block const &) const;
     MCAPI bool containsAnySolidBlocking(class AABB const &) const;
@@ -129,6 +129,7 @@ public:
     MCAPI class LevelChunk * getChunk(class ChunkPos const &) const;
     MCAPI class LevelChunk * getChunk(int, int) const;
     MCAPI class Biome const & getConstBiome(class BlockPos const &) const;
+    MCAPI struct BrightnessPair getDefaultBrightness() const;
     MCAPI int getGrassColor(class BlockPos const &) const;
     MCAPI short getHeightmap(int, int);
     MCAPI short getHeightmap(class BlockPos const &) const;
@@ -142,11 +143,10 @@ public:
     MCAPI struct Brightness getRawBrightnessWithManualDarken(class BlockPos const &, struct Brightness, bool, bool) const;
     MCAPI float getSeenPercent(class Vec3 const &, class AABB const &);
     MCAPI class BlockTickingQueue * getTickingQueue(class BlockPos const &, enum TickingQueueType, bool) const;
-    MCAPI float getVisualLiquidHeight(class Vec3 const &);
     MCAPI short getVoidHeight() const;
     MCAPI class LevelChunk * getWritableChunk(class ChunkPos const &);
     MCAPI bool hasBorderBlock(class BlockPos) const;
-    MCAPI bool hasChunksAt(class BlockPos const &, class BlockPos const &) const;
+    MCAPI bool hasChunksAt(class BlockPos const &, class BlockPos const &, bool) const;
     MCAPI bool hasTickInCurrentTick(class BlockPos const &) const;
     MCAPI bool hasTickInCurrentTick(class BlockPos const &, enum TickingQueueType) const;
     MCAPI bool hasTickInPendingTicks(class BlockPos const &) const;
@@ -164,7 +164,6 @@ public:
     MCAPI bool isInWall(class Vec3 const &);
     MCAPI bool isInstaticking(class BlockPos const &) const;
     MCAPI bool isNearUnloadedChunks(class ChunkPos const &);
-    MCAPI bool isPositionUnderLiquid(class Vec3 const &, enum MaterialType);
     MCAPI bool isSolidBlockingBlock(int, int, int) const;
     MCAPI bool isTouchingMaterial(class BlockPos const &, enum MaterialType) const;
     MCAPI bool isUnderWater(class Vec3 const &, class Block const &) const;
@@ -204,7 +203,7 @@ public:
     MCAPI void _blockChanged(class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, class Actor *);
     MCAPI void _fetchBorderBlockCollisions(std::vector<class AABB> &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, bool) const;
     MCAPI void _fetchEntityHelper(class WeakEntityRef, class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, bool);
-    MCAPI bool _hasChunksAt(struct Bounds const &) const;
+    MCAPI bool _hasChunksAt(struct Bounds const &, bool) const;
     MCAPI void _updateTallestCollisionShapeWithBorderBlockCollisions(class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     MCAPI void addUnloadedChunksAABBs(std::vector<class AABB> &, class AABB const &) const;
     MCAPI void addVoidFloor(std::vector<class AABB> &, class AABB const &) const;
@@ -212,7 +211,6 @@ public:
 
 //private:
     MCAPI bool _getBlockPermissions(class BlockPos const &, bool);
-    MCAPI float _getLiquidHeight(class BlockPos const &, enum MaterialType, bool);
     MCAPI struct Brightness _getRawBrightness(class BlockPos const &, struct Brightness, bool, bool) const;
     MCAPI void _removeFromTickingQueue(class BlockPos const &, class Block const &, enum TickingQueueType);
 

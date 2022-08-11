@@ -20,6 +20,6 @@ public:
 };
 
 #undef AFTER_EXTRA
-    MCAPI class std::shared_ptr<class VanillaWorldSystems::Impl> init(class Level *, class Experiments const &, class BaseGameVersion const &, class ResourcePackManager *);
+    MCAPI class std::shared_ptr<class VanillaWorldSystems::Impl> init(class Level *, class Experiments const &, class BaseGameVersion const &, class ResourcePackManager *, class ItemRegistryRef);
 
 };

@@ -61,15 +61,15 @@ public:
     /*127*/ virtual void __unk_vfn_127();
     /*132*/ virtual void __unk_vfn_132();
     /*148*/ virtual void __unk_vfn_148();
-    /*165*/ virtual void __unk_vfn_165();
-    /*166*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /*178*/ virtual void __unk_vfn_178();
-    /*179*/ virtual void __unk_vfn_179();
-    /*180*/ virtual void __unk_vfn_180();
-    /*187*/ virtual void __unk_vfn_187();
-    /*199*/ virtual void __unk_vfn_199();
-    /*203*/ virtual class Block const & getMultifaceBlock() const;
-    /*204*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
+    /*157*/ virtual void __unk_vfn_157();
+    /*158*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /*168*/ virtual void __unk_vfn_168();
+    /*169*/ virtual void __unk_vfn_169();
+    /*170*/ virtual void __unk_vfn_170();
+    /*177*/ virtual void __unk_vfn_177();
+    /*188*/ virtual void __unk_vfn_188();
+    /*192*/ virtual class Block const & getMultifaceBlock() const;
+    /*193*/ virtual class MultifaceSpreader const & getMultifaceSpreader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINBLOCK
     MCVAPI bool canBeSilkTouched() const;
 #endif

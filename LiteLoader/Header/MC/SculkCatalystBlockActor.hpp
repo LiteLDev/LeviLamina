@@ -39,6 +39,11 @@ public:
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
 
+//private:
+    MCAPI void _tryConsumeOnDeathExperience(class Level &, class Actor &);
+
+
+private:
 
 
 };

@@ -12,7 +12,7 @@
 #include <MC/VanillaDimensions.hpp>
 #include <Main/Config.h>
 #include <Main/PluginManager.h>
-#include "../ScriptEngine/Configs.h"
+#include "../ScriptEngine/Main/Configs.h"
 
 using namespace RegisterCommandHelper;
 using namespace LL;
@@ -60,8 +60,7 @@ class TeleportDimensionCommand : public Command {
         auto dim = VanillaDimensions::toString((int)DimensionId);
         auto pos = getTargetPos(ori, actor);
         actor->teleport(pos, (int)DimensionId);
-        output.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-                                   actor->getNameTag(), dim, pos.x, pos.y, pos.z));
+        output.trSuccess("ll.cmd.tpdim.success", actor->getNameTag(), dim, pos.x, pos.y, pos.z);
         return true;
     }
 
@@ -74,11 +73,12 @@ class TeleportDimensionCommand : public Command {
                 actorName = actor->getTypeName();
             }
             names.append(", ").append(actorName);
-            if (actor->teleport(getTargetPos(ori, actor), (int)DimensionId))
+            if (actor->teleport(getTargetPos(ori, actor), (int)DimensionId)) {
                 output.success();
+            }
         }
         if (output.getSuccessCount() == 0) {
-            output.error("No Actor Teleported");
+            output.trError("ll.cmd.tpdim.error.noActorTeleported");
             return false;
         } else {
             std::string message = fmt::format("Teleported {} to {}", names.substr(2), dim);
@@ -93,14 +93,15 @@ class TeleportDimensionCommand : public Command {
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
+        output.setLanguageCode(ori);
         if ((int)DimensionId < 0 || (int)DimensionId > 2) {
-            output.error("Invalid DimensionId: " + std::to_string((int)DimensionId));
+            output.trError("ll.cmd.tpdim.invalidDimid", (int)DimensionId);
             return;
         }
         if (Victim_isSet) {
             auto result = Victim.results(ori);
             if (result.empty())
-                output.error("No Actor Specific");
+                output.trError("ll.cmd.tpdim.error.noActorSpecified");
             else if (result.count() == 1)
                 teleportTarget(ori, output, *result.begin());
             else
@@ -108,7 +109,7 @@ public:
         } else {
             auto actor = ori.getEntity();
             if (!actor)
-                output.error("No Actor Specific");
+                output.trError("ll.cmd.tpdim.error.noActorSpecified");
             else
                 teleportTarget(ori, output, actor);
         }
@@ -149,9 +150,9 @@ public:
 
 void LLListPluginsCommand(CommandOutput& output) {
     auto plugins = LL::getAllPlugins();
-    std::ostringstream oss;
-    oss << "Plugin Lists [" << plugins.size() << "]\n";
+    output.trSuccess("ll.cmd.listPlugin.overview", plugins.size());
 
+    std::ostringstream oss;
     for (auto& [name, plugin] : plugins) {
         string pluginName = name;
         if (pluginName.find("§") == string::npos)
@@ -164,8 +165,8 @@ void LLListPluginsCommand(CommandOutput& output) {
         oss << fmt::format("- {} §a[v{}] §8({})\n  {}\n",
                            pluginName, plugin->version.toString(), fileName, desc);
     }
-    oss << "\n* Send command \"ll list <Plugin Name>\" for more information";
-    output.success(oss.str());
+    output.success(oss.str() + '\n');
+    output.trAddMessage("ll.cmd.listPlugin.tip");
 }
 
 void LLPluginInfoCommand(CommandOutput& output, const string& pluginName) {
@@ -176,7 +177,7 @@ void LLPluginInfoCommand(CommandOutput& output, const string& pluginName) {
         auto fn = UTF82String(std::filesystem::path(str2wstr(plugin->filePath)).filename().u8string());
         string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
-        oss << "Plugin <" << pluginName << ">\n\n";
+        output.trAddMessage("ll.cmd.pluginInfo.title", pluginName);
 
         outs.emplace("Name", fmt::format("{} ({})", plugin->name, fn));
         outs.emplace("Description", plugin->desc);
@@ -195,57 +196,54 @@ void LLPluginInfoCommand(CommandOutput& output, const string& pluginName) {
         text.pop_back();
         output.success(text, {});
     } else {
-        output.error("Plugin <" + pluginName + "> is not found!", {});
+        output.trError("ll.cmd.pluginInfo.error.pluginNotFound", pluginName);
     }
 }
 
 void LLVersionCommand(CommandOutput& output) {
-    output.success(fmt::format("Bedrock Dedicated Server {}\n- with LiteLoaderBDS {}\n- Network Protocol: {}",
-                               LL::getBdsVersion(), LL::getLoaderVersionString(), LL::getServerProtocolVersion()));
+    output.trSuccess("ll.cmd.version.msg", LL::getBdsVersion(), LL::getLoaderVersionString(), LL::getServerProtocolVersion());
 }
 
 void LLHelpCommand(CommandOutput& output) {
-    output.success(
-        "[Introduction]\n"
-        "LiteLoaderBDS is an unofficial plugin loader for modding development of Bedrock Dedicated Server.\n"
-        "It provides a huge nubmer of APIs, a powerful event system and lots of packed utility interfaces .\n"
-        "[Github]\n"
-        "--> https://github.com/LiteLDev/LiteLoaderBDS <--\n"
-        "Welcome to our github project to get more information ~");
+    output.trSuccess("ll.cmd.help.msg");
 }
 
 void LLLoadPluginCommand(CommandOutput& output, const string& path) {
     // if (!LL::isDebugMode())
     //     return;
-    if (PluginManager::loadPlugin(path, true))
-        output.success("Plugin <" + path + "> loaded successfully.");
-    else
-        output.error("Fail to load plugin " + path);
+    if (PluginManager::loadPlugin(path, true)) {
+        output.trSuccess("ll.cmd.loadPlugin.success", path);
+    } else {
+        output.trError("ll.cmd.loadPlugin.fail", path);
+    }
 }
 
 void LLUnloadPluginCommand(CommandOutput& output, const string& pluginName) {
     // if (!LL::isDebugMode())
     //     return;
-    if (PluginManager::unloadPlugin(pluginName, true))
-        output.success("Plugin <" + pluginName + "> unloaded successfully.");
-    else
-        output.error("Fail to unload plugin " + pluginName);
+    if (PluginManager::unloadPlugin(pluginName, true)) {
+        output.trSuccess("ll.cmd.unloadPlugin.success", pluginName);
+    } else {
+        output.trError("ll.cmd.unloadPlugin.fail", pluginName);
+    }
 }
 
 void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool reloadAll) {
     // if (!LL::isDebugMode())
     //     return;
     if (!reloadAll) {
-        if (PluginManager::reloadPlugin(pluginName, true))
-            output.success("Plugin <" + pluginName + "> reloaded successfully.");
-        else
-            output.error("Fail to reload plugin <" + pluginName + ">");
+        if (PluginManager::reloadPlugin(pluginName, true)) {
+            output.trSuccess("ll.cmd.reloadPlugin.success", pluginName);
+        } else {
+            output.trError("ll.cmd.reloadPlugin.success", pluginName);
+        }
     } else {
         int cnt = PluginManager::reloadAllPlugins(true);
-        if (cnt > 0)
-            output.success(std::to_string(cnt) + " plugins reloaded successfully.");
-        else
-            output.error("Fail to reload any plugin!");
+        if (cnt > 0) {
+            output.trSuccess("ll.cmd.reloadAllPlugins.success", cnt);
+        } else {
+            output.trError("ll.cmd.reloadAllPlugins.fail");
+        }
     }
 }
 
@@ -266,6 +264,7 @@ class LLCommand : public Command {
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
+        output.setLanguageCode(ori);
         std::string pluginName = "";
         if (hasPluginNameSet) {
             pluginName = pluginNameToDoOperation;
@@ -288,13 +287,13 @@ public:
                 if (hasPluginNameSet)
                     LLLoadPluginCommand(output, pluginName);
                 else
-                    output.error("You must provide a valid path of LiteLoader plugin!");
+                    output.trError("ll.cmd.error.noPathSpecified");
                 break;
             case Operation::Unload:
                 if (hasPluginNameSet)
                     LLUnloadPluginCommand(output, pluginName);
                 else
-                    output.error("You must provide a valid name of LiteLoader plugin!");
+                    output.trError("ll.cmd.error.noNameSpecified");
                 break;
             case Operation::Reload:
                 if (hasPluginNameSet)
@@ -364,6 +363,7 @@ class VersionCommand : public Command {
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
+        output.setLanguageCode(ori);
 #ifdef DEBUG
         Logger("CommandOrigin").warn(ori.serialize().toSNBT());
 #endif // DEBUG
@@ -384,7 +384,6 @@ void RegisterCommands() {
         if (LL::globalConfig.enableTpdimCommand) {
             TeleportDimensionCommand::setup(ev.mCommandRegistry);
         }
-
         return true;
     });
 }

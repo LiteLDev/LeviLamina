@@ -46,6 +46,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCKACTOR
 #endif
     MCAPI SignBlockActor(class BlockPos const &);
+    MCAPI std::string const & getMessage();
     MCAPI class mce::Color const & getSignTextColor() const;
     MCAPI bool isBug471852Resolved() const;
     MCAPI void resolveBug471852();

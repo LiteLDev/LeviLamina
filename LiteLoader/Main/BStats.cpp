@@ -1,9 +1,9 @@
 ﻿#include "LiteLoader.h"
 #include <EventAPI.h>
+#include <Global.h>
 #include <ScheduleAPI.h>
 #include <ServerAPI.h>
 #include <Utils/WinHelper.h>
-#include <Utils/DbgHelper.h>
 #include <Utils/StringHelper.h>
 #include <Utils/NetworkHelper.h>
 #include <MC/Level.hpp>
@@ -12,24 +12,26 @@
 #include <MC/ServerPlayer.hpp>
 #include <third-party/Nlohmann/json.hpp>
 
-#define BSTATJSON(key, val)                       \
+#define BSTATS_JSON(key, val)                     \
     if (json.find(key) != json.end()) {           \
         const nlohmann::json& out = json.at(key); \
         out.get_to(val);                          \
     }
 
-namespace regkey {
+using namespace std;
 
-bool create(string UUID) {
+namespace regEdit {
+
+bool create(const string& UUID) {
     HKEY hRoot = HKEY_CURRENT_USER;
     HKEY hKey;
     DWORD dwDisposition = REG_OPENED_EXISTING_KEY;
-    LONG lRet = ::RegCreateKeyEx(hRoot, L"SOFTWARE\\LiteLoaderBDS", 0, NULL,
-                                 REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &dwDisposition);
+    LONG lRet = ::RegCreateKeyEx(hRoot, L"SOFTWARE\\LiteLoaderBDS", 0, nullptr,
+                                 REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, nullptr, &hKey, &dwDisposition);
     if (lRet != ERROR_SUCCESS)
         return false;
-    auto uuid = str2wstr(UUID).c_str();
-    lRet = ::RegSetValueEx(hKey, uuid, 0, REG_SZ, nullptr, 0);
+    auto uuid = str2wstr(UUID);
+    lRet = ::RegSetValueEx(hKey, uuid.c_str(), 0, REG_SZ, nullptr, 0);
     if (lRet == ERROR_SUCCESS) {
     }
     ::RegCloseKey(hKey);
@@ -41,8 +43,8 @@ unordered_set<string> getAllValue() {
     HKEY hRoot = HKEY_CURRENT_USER;
     HKEY hKey;
     DWORD dwDisposition = REG_OPENED_EXISTING_KEY;
-    LONG lRet = ::RegCreateKeyEx(hRoot, L"SOFTWARE\\LiteLoaderBDS", 0, NULL,
-                                 REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, NULL, &hKey, &dwDisposition);
+    LONG lRet = ::RegCreateKeyEx(hRoot, L"SOFTWARE\\LiteLoaderBDS", 0, nullptr,
+                                 REG_OPTION_NON_VOLATILE, KEY_ALL_ACCESS, nullptr, &hKey, &dwDisposition);
     if (lRet != ERROR_SUCCESS)
         return result;
 
@@ -50,9 +52,9 @@ unordered_set<string> getAllValue() {
     DWORD dwIndex = 0;
     DWORD dwValueNameSize = MAX_PATH;
     DWORD dwValueSize = MAX_PATH;
-    wchar_t* lpValueName = new wchar_t[dwValueNameSize];
-    wchar_t* lpValue = new wchar_t[dwValueSize];
-    while (::RegEnumValue(hKey, dwIndex, lpValueName, &dwValueNameSize, NULL, NULL, (LPBYTE)lpValue, &dwValueSize) == ERROR_SUCCESS) {
+    auto* lpValueName = new wchar_t[dwValueNameSize];
+    auto* lpValue = new wchar_t[dwValueSize];
+    while (::RegEnumValue(hKey, dwIndex, lpValueName, &dwValueNameSize, nullptr, nullptr, (LPBYTE)lpValue, &dwValueSize) == ERROR_SUCCESS) {
         result.insert(wstr2str(lpValueName));
         dwValueNameSize = MAX_PATH;
         dwValueSize = MAX_PATH;
@@ -63,18 +65,19 @@ unordered_set<string> getAllValue() {
     ::RegCloseKey(hKey);
     return result;
 }
-} // namespace regkey
+} // namespace regEdit
 
 
-namespace bstatsettings {
+namespace bstatsSettings {
 
 namespace uuid {
-static std::random_device rd;
-static std::mt19937 gen(rd());
-static std::uniform_int_distribution<> dis(0, 15);
-static std::uniform_int_distribution<> dis2(8, 11);
 
 std::string generateUuidV4() {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    static std::uniform_int_distribution<> dis(0, 15);
+    static std::uniform_int_distribution<> dis2(8, 11);
+
     std::stringstream ss;
     int i;
     ss << std::hex;
@@ -97,24 +100,24 @@ std::string generateUuidV4() {
     ss << "-";
     for (i = 0; i < 12; i++) {
         ss << dis(gen);
-    };
+    }
     return ss.str();
 }
 } // namespace uuid
 
 bool enable = true;
-std::string serverUuid = uuid::generateUuidV4();
+std::string serverUuid = uuid::generateUuidV4(); // NOLINT(cert-err58-cpp)
 
-nlohmann::json globaljson() {
+nlohmann::json globalJson() {
     nlohmann::json json;
     json["enabled"] = enable;
     json["serverUuid"] = serverUuid;
     return json;
 }
 
-void initjson(nlohmann::json json) {
-    BSTATJSON("enabled", enable);
-    BSTATJSON("serverUuid", serverUuid);
+void initJson(nlohmann::json json) {
+    BSTATS_JSON("enabled", enable)
+    BSTATS_JSON("serverUuid", serverUuid)
 }
 
 void writeDefaultConfig(const std::string& fileName) {
@@ -123,8 +126,8 @@ void writeDefaultConfig(const std::string& fileName) {
         logger.error("Can't open file {}", fileName);
         return;
     }
-    auto json = globaljson();
-    regkey::create(serverUuid);
+    auto json = globalJson();
+    regEdit::create(serverUuid);
     file << "//bStats collects some data for plugin authors like how many servers are using their plugins.\n";
     file << "//To honor their work, you should not disable it.\n";
     file << "//This has nearly no effect on the server performance!Check out https://bStats.org/ to learn more\n";
@@ -138,7 +141,7 @@ void writeConfig(const std::string& fileName) {
         logger.error("Can't open file {}", fileName);
         return;
     }
-    auto json = globaljson();
+    auto json = globalJson();
     file << "//bStats collects some data for plugin authors like how many servers are using their plugins.\n";
     file << "//To honor their work, you should not disable it.\n";
     file << "//This has nearly no effect on the server performance!Check out https://bStats.org/ to learn more\n";
@@ -155,7 +158,7 @@ void loadConfigFromJson(const std::string& fileName) {
     auto json = nlohmann::json::parse(file, nullptr, true, true);
     // file >> json;
     // file.close();
-    initjson(json);
+    initJson(json);
     writeConfig(fileName);
 }
 
@@ -165,30 +168,30 @@ void reloadJson(const std::string& fileName) {
         file << "//bStats collects some data for plugin authors like how many servers are using their plugins.\n";
         file << "//To honor their work, you should not disable it.\n";
         file << "//This has nearly no effect on the server performance!Check out https://bStats.org/ to learn more\n";
-        file << globaljson().dump(4);
+        file << globalJson().dump(4);
     } else {
         logger.error("Configuration File Creation failed!");
     }
     file.close();
 }
-} // namespace bstatsettings
+} // namespace bstatsSettings
 
 namespace bstats {
 
 static bool isOnlineAuth;
 static int playerAmount;
-static unordered_map<string, int> playerPlatList;
+static unordered_map<string, int> playerPlatList; // NOLINT(cert-err58-cpp)
 
-int getCpuCoreCount() {
-    SYSTEM_INFO sysinfo;
-    GetSystemInfo(&sysinfo);
-    return sysinfo.dwNumberOfProcessors;
+DWORD getCpuCoreCount() {
+    SYSTEM_INFO systemInfo;
+    GetSystemInfo(&systemInfo);
+    return systemInfo.dwNumberOfProcessors;
 }
 
 string getOsArch() {
-    SYSTEM_INFO sysinfo;
-    GetSystemInfo(&sysinfo);
-    return sysinfo.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64 ? "x64" : "x86";
+    SYSTEM_INFO systemInfo;
+    GetSystemInfo(&systemInfo);
+    return systemInfo.wProcessorArchitecture == PROCESSOR_ARCHITECTURE_AMD64 ? "x64" : "x86";
 }
 
 
@@ -197,7 +200,7 @@ string getOsName() {
 }
 
 
-nlohmann::json addSimplePie(string key, string val) {
+nlohmann::json addSimplePie(const string& key, const string& val) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
@@ -206,7 +209,7 @@ nlohmann::json addSimplePie(string key, string val) {
     return json;
 }
 
-nlohmann::json addAdvancedPie(string key, unordered_map<string, int> val) {
+nlohmann::json addAdvancedPie(const string& key, const unordered_map<string, int>& val) {
     nlohmann::json json;
     json["chartId"] = key;
     nlohmann::json json2;
@@ -220,30 +223,22 @@ nlohmann::json addAdvancedPie(string key, unordered_map<string, int> val) {
 }
 
 nlohmann::json getCustomCharts() {
-    nlohmann::json pluginsjson;
+    nlohmann::json pluginsJson;
 
-    pluginsjson.emplace_back(addSimplePie("liteloaderbds_version", LL::getLoaderVersion().toString(false)));
-    pluginsjson.emplace_back(addSimplePie("bds_version", LL::getBdsVersion().substr(1)));
-    pluginsjson.emplace_back(addSimplePie("xbox_auth", isOnlineAuth ? "Required" : "Not required"));
-    pluginsjson.emplace_back(addAdvancedPie("player_platform", playerPlatList));
+    pluginsJson.emplace_back(addSimplePie("liteloaderbds_version", LL::getLoaderVersion().toString(false)));
+    pluginsJson.emplace_back(addSimplePie("bds_version", LL::getBdsVersion().substr(1)));
+    pluginsJson.emplace_back(addSimplePie("xbox_auth", isOnlineAuth ? "Required" : "Not required"));
+    pluginsJson.emplace_back(addAdvancedPie("player_platform", playerPlatList));
 
-    return pluginsjson;
+    return pluginsJson;
 }
-
-nlohmann::json getPluginData() {
-    nlohmann::json json;
-    json["pluginName"] = "LiteLoaderBDS";
-    json["customCharts"] = getCustomCharts();
-    return json;
-}
-
 
 string createJson() {
     nlohmann::json json;
     // service
     json["service"]["id"] = 15847;
     json["service"]["customCharts"] = getCustomCharts();
-    json["serverUUID"] = bstatsettings::serverUuid;
+    json["serverUUID"] = bstatsSettings::serverUuid;
     json["playerAmount"] = playerAmount;
     json["osName"] = getOsName();
     json["osArch"] = getOsArch();
@@ -251,7 +246,6 @@ string createJson() {
     json["coreCount"] = getCpuCoreCount();
     return json.dump();
 }
-
 
 void submitTask() {
     playerAmount = Global<ServerNetworkHandler>->_getActiveAndInProgressPlayerCount(mce::UUID::EMPTY);
@@ -275,7 +269,7 @@ void submitTask() {
             {"Content-Type", "application/json"},
             {"User-Agent", "Metrics-Service/1"}};
         HttpPost(
-            "https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int a1, string a2) {}, 10);
+            "https://bstats.org/api/v2/data/bukkit", headers, json, "", [](int a1, const string& a2) {}, 10);
     });
 
     a.detach();
@@ -286,7 +280,7 @@ void createJsonConfig() {
         std::filesystem::create_directories("plugins/bStats");
     if (std::filesystem::exists("plugins/bStats/config.json")) {
         try {
-            bstatsettings::loadConfigFromJson("plugins/bStats/config.json");
+            bstatsSettings::loadConfigFromJson("plugins/bStats/config.json");
         } catch (std::exception& e) {
             logger.error("Config File isInvalid, Err {}", e.what());
         } catch (...) {
@@ -294,35 +288,55 @@ void createJsonConfig() {
         }
     } else {
         logger.info("Config with default values created");
-        bstatsettings::writeDefaultConfig("plugins/bStats/config.json");
+        bstatsSettings::writeDefaultConfig("plugins/bStats/config.json");
     }
 }
 
 void configInit() {
     createJsonConfig();
-    auto serveruuidlist = regkey::getAllValue();
-    if (!serveruuidlist.count(bstatsettings::serverUuid)) {
-        auto newUUID = bstatsettings::uuid::generateUuidV4();
-        regkey::create(newUUID);
-        bstatsettings::serverUuid = newUUID;
-        bstatsettings::reloadJson("plugins/bStats/config.json");
+    auto serverUuidList = regEdit::getAllValue();
+    if (!serverUuidList.count(bstatsSettings::serverUuid)) {
+        auto newUUID = bstatsSettings::uuid::generateUuidV4();
+        regEdit::create(newUUID);
+        bstatsSettings::serverUuid = newUUID;
+        bstatsSettings::reloadJson("plugins/bStats/config.json");
     }
 }
 
+// generate random float between 0.0 and 1.0
 float randomFloat() {
-    return rand() % (999 + 1) / (float)(999 + 1);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> dis(0.0, 1.0);
+    return dis(gen);
 }
 
-void registerBStat() {
+const unsigned long long period = 1000 * 60 * 30;
+
+void scheduleThread() {
+    std::thread schedule([]() {
+        auto initialDelay = (unsigned long long)(1000 * 60 * (3 + randomFloat() * 3));
+        auto secondDelay = (unsigned long long)(1000 * 60 * (randomFloat() * 30));
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(initialDelay));
+        Schedule::nextTick(submitTask);
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(secondDelay));
+        while (!LL::isServerStopping()) {
+            Schedule::nextTick(submitTask);
+            std::this_thread::sleep_for(std::chrono::milliseconds(period));
+        }
+
+    });
+    schedule.detach();
+}
+
+void registerBStats() {
     configInit();
-    if (bstatsettings::enable) {
+    if (bstatsSettings::enable) {
         Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent& ev) {
-            srand((unsigned int)time(NULL));
             isOnlineAuth = Global<PropertiesSettings>->useOnlineAuthentication();
-            long initialDelay = (long)((1000 * 60 * (3 + randomFloat() * 3)) / 50);
-            long secondDelay = (long)((1000 * 60 * (randomFloat() * 30)) / 50);
-            Schedule::delay(submitTask, initialDelay);
-            Schedule::delayRepeat(submitTask, static_cast<unsigned long long>(initialDelay) + secondDelay, (1000 * 60 * 30) / 50);
+            scheduleThread();
             return true;
         });
     }

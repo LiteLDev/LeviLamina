@@ -31,11 +31,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTSCULKBEHAVIOR
 #endif
 
-//private:
-    MCAPI static bool _attemptSpreadVeinsIntoBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &);
-
-
-private:
 
 
 };

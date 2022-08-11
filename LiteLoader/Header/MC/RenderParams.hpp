@@ -28,7 +28,7 @@ public:
     MCAPI RenderParams(class RenderParams &&);
     MCAPI RenderParams();
     MCAPI class Actor * getActorTarget(enum FilterSubject) const;
-    MCAPI class RenderParams & init(class BaseActorRenderContext *, class Actor *, class AnimationComponent *, class MolangVariableMap *, class std::shared_ptr<class DataDrivenModel>, float, float, int, bool, class std::function<float (void)>);
+    MCAPI class RenderParams & init(class BaseActorRenderContext *, class Actor *, class AnimationComponent *, class MolangVariableMap *, class std::shared_ptr<class DataDrivenModel>, float, float);
     MCAPI class RenderParams & operator=(class RenderParams &&);
     MCAPI float & operator[](unsigned __int64);
     MCAPI ~RenderParams();

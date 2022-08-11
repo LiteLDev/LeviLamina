@@ -13,14 +13,11 @@ struct SystemInfo {
 
 #undef AFTER_EXTRA
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYSTEMINFO
 public:
-    struct SystemInfo& operator=(struct SystemInfo const &) = delete;
-    SystemInfo(struct SystemInfo const &) = delete;
-    SystemInfo() = delete;
-#endif
-
-public:
+    MCAPI SystemInfo(struct SystemInfo const &);
+    MCAPI SystemInfo();
+    MCAPI struct SystemInfo & operator=(struct SystemInfo &&);
+    MCAPI struct SystemInfo & operator=(struct SystemInfo const &);
     MCAPI ~SystemInfo();
 
 protected:

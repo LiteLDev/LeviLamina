@@ -25,14 +25,14 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRYMANAGER
 #endif
-    MCAPI static class ItemRegistryRef getClientItemRegistryById(unsigned char);
     MCAPI static class ItemRegistryRef getItemRegistry();
+    MCAPI static void resetItemRegistry();
+    MCAPI static void setItemRegistry(class ItemRegistryRef);
 
 //private:
 
 
 private:
-    MCAPI static class std::unordered_map<unsigned char, class std::weak_ptr<class ItemRegistry>, struct std::hash<unsigned char>, struct std::equal_to<unsigned char>, class std::allocator<struct std::pair<unsigned char const, class std::weak_ptr<class ItemRegistry>>>> mClientIdRegistryMap;
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class std::weak_ptr<class ItemRegistry>, class std::allocator<class std::weak_ptr<class ItemRegistry>>> mThreadLocalRegistry;
 
 

@@ -26,9 +26,9 @@ public:
 
 public:
     /*0*/ virtual ~LegacyChunkStorage();
-    /*10*/ virtual void loadChunk(class LevelChunk &, bool);
-    /*12*/ virtual bool saveLiveChunk(class LevelChunk &);
-    /*17*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    /*11*/ virtual void loadChunk(class LevelChunk &, bool);
+    /*13*/ virtual bool saveLiveChunk(class LevelChunk &);
+    /*18*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYCHUNKSTORAGE
 #endif
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum StorageVersion, class Biome &);

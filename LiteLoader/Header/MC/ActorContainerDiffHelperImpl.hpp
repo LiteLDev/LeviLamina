@@ -14,6 +14,7 @@ namespace ActorContainerDiffHelperImpl {
 // Add Member There
 
 #undef AFTER_EXTRA
+    MCAPI void _applyDiff(class BaseAttributeMap &, std::vector<class gsl::not_null<class AttributeInstance const *>> const &);
     MCAPI std::vector<class gsl::not_null<class AttributeInstance const *>> const _createListOfPointers(class BaseAttributeMap const &);
     MCAPI std::vector<class gsl::not_null<class DataItem const *>> const _createListOfPointers(class SynchedActorData const &);
     MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _createListOfPointers(std::vector<class MobEffectInstance> const &);

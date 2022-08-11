@@ -18,7 +18,6 @@ class ShooterItemComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERITEMCOMPONENT
 public:
     class ShooterItemComponent& operator=(class ShooterItemComponent const &) = delete;
-    ShooterItemComponent(class ShooterItemComponent const &) = delete;
     ShooterItemComponent() = delete;
 #endif
 
@@ -33,6 +32,7 @@ public:
     /*6*/ virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERITEMCOMPONENT
 #endif
+    MCAPI ShooterItemComponent(class ShooterItemComponent const &);
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
     MCAPI bool use(class ItemStack &, class Player &) const;
     MCAPI static void bindType();

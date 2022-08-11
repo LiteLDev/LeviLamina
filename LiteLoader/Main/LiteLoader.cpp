@@ -1,4 +1,4 @@
-#include <Windows.h>
+#include <windows.h>
 #include <TlHelp32.h>
 #include <Psapi.h>
 #include <string>
@@ -12,7 +12,6 @@
 #include "Config.h"
 #include "Loader.h"
 #include "CrashLogger.h"
-#include "DefaultLangData.h"
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
@@ -63,7 +62,7 @@ void CheckRunningBDS() {
     CloseHandle(hProcessSnap);
     // Get current process path
     WCHAR buf[8196] = {0};
-    auto sz = GetModuleFileName(NULL, buf, 8196);
+    auto sz = GetModuleFileName(nullptr, buf, 8196);
     std::wstring current{buf, sz}; // Copy
     // Check the BDS process paths
     for (auto& pid : pids) {
@@ -74,12 +73,12 @@ void CheckRunningBDS() {
             DWORD sz = NULL;
             WCHAR buf[8196] = {0};
             // Get the full path of the process
-            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8196)) {
+            if (sz = GetModuleFileNameEx(handle, nullptr, buf, 8196)) {
                 std::wstring path{buf, sz};
                 if (current == path) {
-                    logger.error("Detected the existence of another BDS process with the same path!");
-                    logger.error("This may cause the network port and the level to be occupied");
-                    logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No)", pid);
+                    logger.error(tr("ll.main.checkRunningBDS.detected"));
+                    logger.error(tr("ll.main.checkRunningBDS.tip"));
+                    logger.error(tr("ll.main.checkRunningBDS.ask", pid));
                     char ch;
                     cin >> ch;
                     if (ch == 'y' || ch == 'Y') {
@@ -99,17 +98,18 @@ void FixAllowList() {
         if (filesystem::exists("allowlist.json")) {
             auto res = ReadAllFile("allowlist.json");
             if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty())) {
-                logger.warn("allowlist.json is empty! Removing...");
+                logger.warn(tr("ll.main.fixAllowList.removeEmptyAllowlist"));
                 filesystem::remove("allowlist.json");
             } else {
-                logger.warn("Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
+                logger.warn(tr("ll.main.fixAllowList.checkManually"));
                 return;
             }
         }
         std::error_code ec;
+        // Rename whitelist.json to allowlist.json
         filesystem::copy_file("whitelist.json", "allowlist.json", filesystem::copy_options::overwrite_existing, ec);
         filesystem::remove("whitelist.json", ec);
-        logger.warn("Renamed whitelist.json to allowlist.json");
+        logger.warn(tr("ll.main.fixAllowList.renamed"));
     }
 }
 
@@ -146,22 +146,21 @@ void Welcome() {
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode)
-        logger.warn("Currently in developer mode!");
+        logger.warn(tr("ll.main.warning.inDevMode"));
 }
 
 void CheckBetaVersion() {
     if (LITELOADER_VERSION_STATUS != LL::Version::Release) {
-        logger.warn("Currently using a beta version.");
-        logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
+        logger.warn(tr("ll.main.warning.betaVersion"));
+        logger.warn(tr("ll.main.warning.productionEnv"));
     }
 }
 
 void CheckProtocolVersion() {
     auto currentProtocol = LL::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        logger.warn("Protocol version not match, target version: {}, current version: {}.",
-                    TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
-        logger.warn("This will most likely crash the server, please use the LiteLoader that matches the BDS version!");
+        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.1"), TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
+        logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
@@ -169,7 +168,7 @@ void CheckProtocolVersion() {
 // extern
 extern void EndScheduleSystem();
 namespace bstats {
-    void registerBStat();
+void registerBStats();
 }
 
 void LLMain() {
@@ -190,7 +189,7 @@ void LLMain() {
     LL::LoadLLConfig();
 
     // I18n
-    Translation::load("plugins/LiteLoader/language.json", LL::globalConfig.language, defaultLangData);
+    Translation::load("plugins/LiteLoader/LangPack/", (LL::globalConfig.language == "system" ? "" : LL::globalConfig.language));
 
     // Check Protocol Version
     CheckProtocolVersion();
@@ -239,13 +238,14 @@ void LLMain() {
     // Register simple server logger
     RegisterSimpleServerLogger();
 
-    //Register BStats
-    bstats::registerBStat();
+    // Register BStats
+    bstats::registerBStats();
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
-        logger.info("LiteLoader is licensed under AGPLv3");
-        logger.info("Our new forum is live! -> https://forum.litebds.com");
+        logger.info(tr("ll.notice.license", "LGPLv3"));
+        logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
+        logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
         logger.info("Thanks to RhyMC(rhymc.com) for the support");
         return true;
     });

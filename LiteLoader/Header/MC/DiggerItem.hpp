@@ -28,25 +28,25 @@ public:
 public:
     /*0*/ virtual ~DiggerItem();
     /*7*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_13();
-    /*15*/ virtual void __unk_vfn_15();
-    /*48*/ virtual int getAttackDamage() const;
-    /*49*/ virtual bool isHandEquipped() const;
-    /*51*/ virtual void __unk_vfn_51();
-    /*53*/ virtual void __unk_vfn_53();
-    /*60*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /*61*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
-    /*63*/ virtual int getEnchantValue() const;
-    /*66*/ virtual void __unk_vfn_66();
-    /*70*/ virtual void __unk_vfn_70();
+    /*11*/ virtual void __unk_vfn_11();
+    /*14*/ virtual void __unk_vfn_14();
+    /*16*/ virtual void __unk_vfn_16();
+    /*49*/ virtual int getAttackDamage() const;
+    /*50*/ virtual bool isHandEquipped() const;
+    /*52*/ virtual void __unk_vfn_52();
+    /*54*/ virtual void __unk_vfn_54();
+    /*61*/ virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /*62*/ virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /*64*/ virtual int getEnchantValue() const;
+    /*67*/ virtual void __unk_vfn_67();
     /*71*/ virtual void __unk_vfn_71();
     /*72*/ virtual void __unk_vfn_72();
-    /*75*/ virtual void __unk_vfn_75();
-    /*79*/ virtual void __unk_vfn_79();
+    /*73*/ virtual void __unk_vfn_73();
+    /*76*/ virtual void __unk_vfn_76();
     /*80*/ virtual void __unk_vfn_80();
-    /*88*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
-    /*93*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /*81*/ virtual void __unk_vfn_81();
+    /*89*/ virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
+    /*94*/ virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGERITEM
 #endif
     MCAPI void setBlocks(std::vector<class Block const *> const &);

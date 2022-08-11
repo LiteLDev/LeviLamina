@@ -68,7 +68,7 @@ public:
     MCAPI ItemStack(class RecipeIngredient const &);
     MCAPI ItemStack(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
     MCAPI ItemStack();
-    //MCAPI void __autoclassinit2(unsigned __int64);
+    MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI void _assignNetIdVariant(class ItemStack const &) const;
     MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     MCAPI class ItemStack clone() const;

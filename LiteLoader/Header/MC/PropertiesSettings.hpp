@@ -29,9 +29,12 @@ public:
 #endif
     MCAPI PropertiesSettings(std::string const &);
     MCAPI bool allowCheats() const;
+    MCAPI bool areCustomSkinsDisabled() const;
     MCAPI bool canEmitTelemetryEvents() const;
+    MCAPI bool disablePlayerInteractions() const;
     MCAPI bool enableItemStackNetManager() const;
     MCAPI bool forceGamemode() const;
+    MCAPI enum ChatRestrictionLevel getChatRestrictionLevel() const;
     MCAPI unsigned short getCompressionThresholdBytesize() const;
     MCAPI std::string const & getCustomProperty(std::string const &) const;
     MCAPI enum PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;

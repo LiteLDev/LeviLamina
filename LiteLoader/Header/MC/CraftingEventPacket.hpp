@@ -8,7 +8,7 @@
 // Include Headers or Declare Types Here
 #include "NetworkItemStackDescriptor.hpp"
 #include "Block.hpp"
-static_assert(sizeof(NetworkItemStackDescriptor) == 152);
+static_assert(sizeof(NetworkItemStackDescriptor) == 88);
 
 #undef BEFORE_EXTRA
 
@@ -23,23 +23,23 @@ public:
     std::vector<NetworkItemStackDescriptor> inputItems;//72
     std::vector<NetworkItemStackDescriptor> outputItems;//96
 
-    inline std::string toDebugString() {
-        auto str = fmt::format("{}: screenID: {}, craftingType: {}, recipeUUID: {}, input: [",
-            __super::toDebugString(), (int)screenID, craftingType, recipeUUID.asString());
-        bool first = true;
-        for (auto& item : inputItems) {
-            str += fmt::format("{}{}", first ? "" : ", ", item.mDescriptor.getFullName());
-            first = false;
-        }
-        str += "], output: [";
-        first = true;
-        for (auto& item : outputItems) {
-            str += fmt::format("{}{}", first ? "" : ", ", item.mDescriptor.getRawNameId());
-            first = false;
-        }
-        str += "]";
-        return str;
-    }
+    //inline std::string toDebugString() {
+    //    auto str = fmt::format("{}: screenID: {}, craftingType: {}, recipeUUID: {}, input: [",
+    //        __super::toDebugString(), (int)screenID, craftingType, recipeUUID.asString());
+    //    bool first = true;
+    //    for (auto& item : inputItems) {
+    //        str += fmt::format("{}{}", first ? "" : ", ", item.mDescriptor.getFullName());
+    //        first = false;
+    //    }
+    //    str += "], output: [";
+    //    first = true;
+    //    for (auto& item : outputItems) {
+    //        str += fmt::format("{}{}", first ? "" : ", ", item.mDescriptor.getRawNameId());
+    //        first = false;
+    //    }
+    //    str += "]";
+    //    return str;
+    //}
 
 #undef AFTER_EXTRA
 
