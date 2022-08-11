@@ -143,7 +143,7 @@
                 "error": {
                     "failToUncompress": {
                         "msg": "ไม่สามารถคลายบีบอัดแอดออน {}!",
-                        "exitCode": "Exit Code: {}",
+                        "exitCode": "โค้ด ส่งออก: {}",
                         "programOutput": "เอาท์พุตโปรแกรม:\n{}"
                     }
                 }
@@ -184,16 +184,20 @@
                 "success": "* .NET Engine โหลดแล้ว"
             },
             "loadMain": {
-                "loadingPlugins": "โหลดปลั๊กอิน...",
+                "loadingPlugins": "กำลังโหลดปลั๊กอิน...",
                 "loadedShellLink": "ปลั๊กอิน ShellLinked <{} => {}> โหลดแล้ว",
-                "loadedPlugin": "ปลั๊กอิน <{}> โหลดสำเร็จ",
+                "loadedPlugin": "โหลดปลั๊กอิน <{name}> สำเร็จ",
                 "done": "ปลั๊กอิน {} โหลดแล้ว",
-                "start": "Loading native plugins..."
+                "start": "กำลังโหลดปลั๊กอิน..."
+            },
+            "initNodeJsDirectories": {
+                "created": "ไม่พบตำแหน่ง RunTime NodeJs, สร้างใหม่แล้ว"
             }
         },
         "notice": {
-            "newForum": "Our new forum is live! -> {}",
-            "license": "LiteLoader is licensed under {}"
+            "newForum": "ฟอรัมใหม่ของเราพร้อมใช้งานแล้ว! -> {}",
+            "license": "LiteLoader ได้รับอนุญาตภายใต้ {}",
+            "translateText": "Help us translate & improve text in LL -> {}"
         },
         "pluginManager": {
             "error": {
@@ -234,6 +238,37 @@
         "apiHelp": {
             "parseJson": {
                 "fail": "ข้อผิดพลาดในการแยกวิเคราะห์ Json"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "ส่วนเสริม {} โหลดแล้ว.",
+                "fail": "ไม่สามารถโหลดส่วนเสริม {}"
+            },
+            "loadMain": {
+                "start": "กำลังโหลดปลั๊กอิน {type}...",
+                "done": "{count} {type} ปลั๊กอิน(s)โหลดแล้ว",
+                "nodejs": {
+                    "install": {
+                        "fail": "ไม่สามารถติดตั้งปลั๊กอินแพ็ค {}, โปรดเช็คไฟล์ package.json ของคุณ!",
+                        "start": "พบแพ็คปลั๊กอิน Node.js \"{path}\"! กำลังติดตั้ง..."
+                    },
+                    "ignored": "ไม่พบไฟล์ package.json ในตำแหน่ง {path}"
+                },
+                "loadedPlugin": "{type} ปลั๊กอิน <{name}> โหลดแล้ว",
+                "installPluginPack": {
+                    "done": "{count} {type} ปลั๊กอินแพ็คติดตั้งแล้ว"
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npm เสร็จเรียบร้อยแล้ว",
+                    "start": "ดำเนินการ \"npm install\" สำหรับปลั๊กอิน {name}...",
+                    "fail": "เกิดข้อผิดพลาด โค้ด: {code}"
+                },
+                "register": {
+                    "fail": "ไม่สามารถลงทะเบียนปลั๊กอิน {name} ได้!"
+                }
             }
         }
     }

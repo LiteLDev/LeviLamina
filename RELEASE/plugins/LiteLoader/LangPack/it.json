@@ -186,14 +186,18 @@
             "loadMain": {
                 "loadingPlugins": "Caricamento dei plugin in corso...",
                 "loadedShellLink": "Plugin ShellLinked <{} => {}> caricato",
-                "loadedPlugin": "Plugin <{}> caricato",
+                "loadedPlugin": "Plugin <{name}> caricato",
                 "done": "{} plugin caricati.",
-                "start": "Loading native plugins..."
+                "start": "Caricamento dei plugin nativi in corso..."
+            },
+            "initNodeJsDirectories": {
+                "created": "Cartella del runtime Node.js non trovata, creata una nuova cartella."
             }
         },
         "notice": {
-            "newForum": "Our new forum is live! -> {}",
-            "license": "LiteLoader is licensed under {}"
+            "newForum": "Il nostro nuovo forum è aperto! -> {}",
+            "license": "LiteLoaderBDS è concesso in licenza sotto la licenza {}",
+            "translateText": "Help us translate & improve text in LL -> {}"
         },
         "pluginManager": {
             "error": {
@@ -234,6 +238,37 @@
         "apiHelp": {
             "parseJson": {
                 "fail": "Errore di analisi JSON"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "Libreria {} caricata.",
+                "fail": "Impossibile caricare la libreria {}"
+            },
+            "loadMain": {
+                "start": "Caricamento dei plugin {type} in corso...",
+                "done": "{count} plugin {type} caricati.",
+                "nodejs": {
+                    "install": {
+                        "fail": "Impossibile installare il pacchetto plugin {}, si prega di controllare il file package.json!",
+                        "start": "Trovato pacchetto plugin Node.js \"{path}\"! Installazione in corso..."
+                    },
+                    "ignored": "Nessun file package.json trovato nella cartella {path}, ignorato."
+                },
+                "loadedPlugin": "Plugin {type} <{name}> caricato.",
+                "installPluginPack": {
+                    "done": "{count} pacchetti plugin {type} installati."
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Esecuzione di \"npm install\" completata con successo.",
+                    "start": "Esecuzione di \"npm install\" per il plugin {name}...",
+                    "fail": "Si è verificato un errore. Codice di uscita: {code}"
+                },
+                "register": {
+                    "fail": "Impossibile aiutare il plugin {name} a registrarsi!"
+                }
             }
         }
     }

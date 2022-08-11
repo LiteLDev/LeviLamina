@@ -186,14 +186,18 @@
             "loadMain": {
                 "loadingPlugins": "Memuat plugin...",
                 "loadedShellLink": "Plugin ShellLinked <{} => {}> dimuat",
-                "loadedPlugin": "Plugin <{}> dimuat",
+                "loadedPlugin": "Plugin <{name}> dimuat",
                 "done": "{} plugin <{}> dimuat.",
                 "start": "Loading native plugins..."
+            },
+            "initNodeJsDirectories": {
+                "created": "NodeJs runtime directory no found, created."
             }
         },
         "notice": {
             "newForum": "Our new forum is live! -> {}",
-            "license": "LiteLoader is licensed under {}"
+            "license": "LiteLoader is licensed under {}",
+            "translateText": "Help us translate & improve text in LL -> {}"
         },
         "pluginManager": {
             "error": {
@@ -234,6 +238,37 @@
         "apiHelp": {
             "parseJson": {
                 "fail": "Kesalahan Parsing API"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "Dependence {} loaded.",
+                "fail": "Fail to load dependence {}"
+            },
+            "loadMain": {
+                "start": "Loading {type} plugins...",
+                "done": "{count} {type} plugin(s) loaded.",
+                "nodejs": {
+                    "install": {
+                        "fail": "Failed to install plugin pack {}, please check your package.json file!",
+                        "start": "Found Node.js plugin pack \"{path}\"! Try installing..."
+                    },
+                    "ignored": "No package.json file found in directory {path}, ignored."
+                },
+                "loadedPlugin": "{type} plugin <{name}> loaded.",
+                "installPluginPack": {
+                    "done": "{count} {type} plugin pack(s) installed."
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npm finished successfully.",
+                    "start": "Executing \"npm install\" for plugin {name}...",
+                    "fail": "Error occurred. Exit code: {code}"
+                },
+                "register": {
+                    "fail": "Fail to help plugin {name} get registered!"
+                }
             }
         }
     }

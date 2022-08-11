@@ -186,14 +186,18 @@
             "loadMain": {
                 "loadingPlugins": "プラグインをロード中：",
                 "loadedShellLink": "シェルリンクされたプラグイン <{} => {}> 読み込みました",
-                "loadedPlugin": "プラグイン <{}> がリロードされました",
+                "loadedPlugin": "プラグイン <{name}> がリロードされました",
                 "done": "{} プラグインがロードされました。",
-                "start": "Loading native plugins..."
+                "start": "ネイティブプラグインを読み込み中..."
+            },
+            "initNodeJsDirectories": {
+                "created": "NodeJs ランタイムファイルが見つかりませんでした。"
             }
         },
         "notice": {
-            "newForum": "Our new forum is live! -> {}",
-            "license": "LiteLoader is licensed under {}"
+            "newForum": "新しいフォーラムです-> {}",
+            "license": "LiteLoader は {} の下でライセンスされています。",
+            "translateText": "Help us translate & improve text in LL -> {}"
         },
         "pluginManager": {
             "error": {
@@ -234,6 +238,37 @@
         "apiHelp": {
             "parseJson": {
                 "fail": "JSONの構文エラー"
+            }
+        },
+        "loader": {
+            "loadDepends": {
+                "success": "依存関係 {} が読み込まれました。",
+                "fail": "依存関係の読み込みに失敗しました {}"
+            },
+            "loadMain": {
+                "start": "{type} プラグインを読み込み中...",
+                "done": "{count} {type} プラグインが読み込まれました。",
+                "nodejs": {
+                    "install": {
+                        "fail": "プラグインパック {} のインストールに失敗しました。package.json ファイルを確認してください。",
+                        "start": "Node.js プラグインパック \"{path}\" が見つかりました。インストールを試してください..."
+                    },
+                    "ignored": "ディレクトリ {path}にpackage.json ファイルが見つかりませんでした。無視しました。"
+                },
+                "loadedPlugin": "{type} プラグイン <{name}> を読み込みました。",
+                "installPluginPack": {
+                    "done": "{count} {type} プラグインパックがインストールされました。"
+                }
+            },
+            "nodejs": {
+                "executeNpmInstall": {
+                    "success": "Npmは正常に終了しました。",
+                    "start": "プラグイン {name} の \"npm install\" を実行しています...",
+                    "fail": "エラーが発生しました。終了コード: {code}"
+                },
+                "register": {
+                    "fail": "プラグイン {name} の登録に失敗しました。"
+                }
             }
         }
     }
