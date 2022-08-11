@@ -12,6 +12,7 @@
   - [📮 Block Entity Object](/en_US/Development/GameAPI/BlockEntity.md)
   - [👜 Container Object](/en_US/Development/GameAPI/Container.md)
   - [📝 Scoreboard](/en_US/Development/GameAPI/ScoreBoard.md)
+  - [📩 Packets](en_US/Development/GameAPI/Packet.md)
   - [📱 Player Device Information](/en_US/Development/GameAPI/Device.md)
   - [💻 Server Settings](/en_US/Development/GameAPI/Server.md)
   - [🎮 Game Utilities](/en_US/Development/GameAPI/GameUtils.md)
