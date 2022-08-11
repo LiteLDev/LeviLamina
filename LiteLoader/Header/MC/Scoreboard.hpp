@@ -47,15 +47,89 @@ public:
 
     LIAPI static struct ScoreboardId& getOrCreateScoreboardId(std::string const& id);
 
+    /**
+     * Get the score of the id in the specified objective.
+     * 
+     * @param  objname  Objective name
+     * @param  id       ScoreboardId name(string)
+     * @return int      The score
+     * @throws std::invalid_argument  if the objective is not found
+     *         std::runtime_error     if cannot get or create id/cannot get scores
+     * @note   If there is not a ScoreboardId named `id`, it will create a new one
+     */
     LIAPI static int getScore(const std::string& objname, const std::string& id);
+    /**
+     * Get the score of the id in the specified objective.
+     *
+     * @param      objname  Objective name
+     * @param      id       ScoreboardId name(string)
+     * @param[out] score    The score
+     * @return     bool     Success or not
+     * @note   If there is not a ScoreboardId named `id`, it will create a new one
+     */
+    LIAPI static bool getScore(const std::string& objname, const std::string& id, int& score);
     LIAPI static std::optional<int> setScore(const std::string& objname, const std::string& id, int score);
     LIAPI static std::optional<int> addScore(const std::string& objname, const std::string& id, int score);
     LIAPI static std::optional<int> reduceScore(const std::string& objname, const std::string& id, int score);
 
-    LIAPI static int getScore(Player* player, const std::string& key);
-    LIAPI static bool setScore(Player* player, const std::string& key, int value);
-    LIAPI static bool addScore(Player* player, const std::string& key, int value);
-    LIAPI static bool reduceScore(Player* player, const std::string& key, int value);
+    /**
+     * Get the score of the player in the specified objective.
+     *
+     * @param  objname  Objective name
+     * @param  player   The player
+     * @return int      The score
+     * @throws std::invalid_argument  if the objective is not found
+     *         std::runtime_error     if cannot get or create id/cannot get scores
+     */
+    LIAPI static int getScore(const std::string& objname, Player* player);
+    LIAPI static int getScore(Player* player, const std::string& objname);
+    /**
+     * Get the score of the player in the specified objective.
+     *
+     * @param      objname  Objective name
+     * @param      player   The player
+     * @param[out] score    The score
+     * @return     bool     Success or not
+     */
+    LIAPI static bool getScore(const std::string& objname, Player* player, int& score);
+    /**
+     * Set the score of the player in the specified objective.
+     * 
+     * @param  objname  Objective name
+     * @param  player   The player
+     * @param  value    The score value to set
+     * @return bool     Success or not
+     */
+    LIAPI static bool setScore(const std::string& objname, Player* player, int value);
+    LIAPI static bool setScore(Player* player, const std::string& objname, int value);
+    /**
+     * Add the score of the player in the specified objective.
+     *
+     * @param  objname  Objective name
+     * @param  player   The player
+     * @param  value    The score value to add
+     * @return bool     Success or not
+     */
+    LIAPI static bool addScore(const std::string& objname, Player* player, int value);
+    LIAPI static bool addScore(Player* player, const std::string& objname, int value);
+    /**
+     * Reduce the score of the player in the specified objective.
+     *
+     * @param  objname  Objective name
+     * @param  player   The player
+     * @param  value    The score value to reduce
+     * @return bool     Success or not
+     */
+    LIAPI static bool reduceScore(const std::string& objname, Player* player, int value);
+    LIAPI static bool reduceScore(Player* player, const std::string& objname, int value);
+    /**
+     * Delete the score of the player from the specified objective.
+     *
+     * @param  objname  Objective name
+     * @param  player   The player
+     * @return bool     Success or not
+     */
+    LIAPI static bool deleteScore(const std::string& objname, Player* player);
     LIAPI static bool deleteScore(Player* player, const std::string& objname);
 
     LIAPI static bool scoreboardIdIsValid(ScoreboardId* id);

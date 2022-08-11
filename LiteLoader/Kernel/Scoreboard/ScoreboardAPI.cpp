@@ -132,12 +132,12 @@ LIAPI int Scoreboard::getScore(const std::string& objname, const std::string& id
         Global<Scoreboard>->getOrCreateScoreboardId(id) // If not exists, create a new one
     );
     if (!scoreboardIdIsValid(&identity)) {
-        return 0;
+        throw std::runtime_error("Bad ScoreboardId");
     }
 
     auto obj = Global<Scoreboard>->getObjective(objname);
     if (!obj) {
-        return 0;
+        throw std::invalid_argument("Objective " + objname + " not found");
     }
     
     auto scores = Global<Scoreboard>->getIdScores(identity);
@@ -152,30 +152,56 @@ LIAPI int Scoreboard::getScore(const std::string& objname, const std::string& id
             return it.getCount();
         }
     }
-    return 0;
+    throw std::runtime_error("Cannot get score");
 }
 
+LIAPI bool Scoreboard::getScore(const std::string& objname, const std::string& id, int& score) {
+    try {
+        score = getScore(objname, id);
+        return true;
+    } catch (...) {}
+    return false;
+}
+
+// For compatibility
 LIAPI int Scoreboard::getScore(Player* player, const std::string& objname) {
+    return getScore(objname, player);
+}
+
+LIAPI int Scoreboard::getScore(const std::string& objname, Player* player) {
     Objective* obj = Global<Scoreboard>->getObjective(objname);
     if (!obj) {
-        return 0;
+        throw std::invalid_argument("Objective " + objname + " not found");
     }
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        return 0;
+        throw std::runtime_error("Bad ScoreboardId");
     }
 
     auto score = obj->getPlayerScore(identity);
     return score.getCount();
 }
 
+LIAPI bool Scoreboard::getScore(const std::string& objname, Player* player, int& score) {
+    try {
+        score = getScore(objname, player);
+        return true;
+    } catch (...) {}
+    return false;
+}
+
+// For compatibility
 LIAPI bool Scoreboard::setScore(Player* player, const std::string& objname, int value) {
+    return setScore(objname, player, value);
+}
+
+LIAPI bool Scoreboard::setScore(const std::string& objname, Player* player, int value) {
     Objective* obj = Global<Scoreboard>->getObjective(objname);
     if (!obj) {
         return false;
     }
-	
+
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
         Global<Scoreboard>->createScoreboardId(*player);
@@ -185,11 +211,17 @@ LIAPI bool Scoreboard::setScore(Player* player, const std::string& objname, int 
     return true;
 }
 
+// For compatibility
 LIAPI bool Scoreboard::addScore(Player* player, const std::string& objname, int value) {
-    Objective* obj = Global<Scoreboard>->getObjective(objname);
-    if (!obj)
-        return false;
+    return addScore(objname, player, value);
+}
 
+LIAPI bool Scoreboard::addScore(const std::string& objname, Player* player, int value) {
+    Objective* obj = Global<Scoreboard>->getObjective(objname);
+    if (!obj) {
+        return false;
+    }
+    
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
         Global<Scoreboard>->createScoreboardId(*player);
@@ -199,10 +231,16 @@ LIAPI bool Scoreboard::addScore(Player* player, const std::string& objname, int 
     return true;
 }
 
+// For compatibility
 LIAPI bool Scoreboard::reduceScore(Player* player, const std::string& objname, int value) {
+    return reduceScore(objname, player, value);
+}
+
+LIAPI bool Scoreboard::reduceScore(const std::string& objname, Player* player, int value) {
     Objective* obj = Global<Scoreboard>->getObjective(objname);
-    if (!obj)
+    if (!obj) {
         return false;
+    }
 
     bool a1 = true;
     bool& pa = a1;
@@ -215,7 +253,12 @@ LIAPI bool Scoreboard::reduceScore(Player* player, const std::string& objname, i
     return true;
 }
 
+// For compatibility
 LIAPI bool Scoreboard::deleteScore(Player* player, const std::string& objname) {
+    return deleteScore(objname, player);
+}
+
+LIAPI bool Scoreboard::deleteScore(const std::string& objname, Player* player) {
     return removeFromObjective(objname, player);
 }
 
