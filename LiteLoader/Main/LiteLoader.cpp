@@ -184,12 +184,17 @@ void LLMain() {
     // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
-
+	
+    // I18n
+    auto i18n = Translation::load("plugins/LiteLoader/LangPack/");
+		
     // Load Config
     LL::LoadLLConfig();
 
-    // I18n
-    Translation::load("plugins/LiteLoader/LangPack/", (LL::globalConfig.language == "system" ? "" : LL::globalConfig.language));
+    // Update default language
+    if (i18n && LL::globalConfig.language != "system") {
+		i18n->defaultLocaleName = LL::globalConfig.language;
+    }
 
     // Check Protocol Version
     CheckProtocolVersion();
