@@ -21,19 +21,19 @@ class CommandOutput {
     // Add Member There
 public:
     /**
-     * @brief Output a message(without I18N).
+     * @brief Output a message(without I18nBase).
      *
      * @param str  The message
      */
     LIAPI void addMessage(const std::string& str);
     /**
-     * @brief Output a success message(without I18N).
+     * @brief Output a success message(without I18nBase).
      *
      * @param str  The message
      */
     LIAPI void success(const string& str);
     /**
-     * @brief Output a success message(without I18N).
+     * @brief Output a success message(without I18nBase).
      *
      * @param str  The message
      */
@@ -54,8 +54,8 @@ public:
      */
     inline void setLanguageCode(const CommandOrigin& ori) {
         std::string code = "en_US";
-        if (PluginOwnData::has(I18N::POD_KEY)) {
-            auto& i18n = PluginOwnData::get<I18N>(I18N::POD_KEY);
+        if (PluginOwnData::has(I18nBase::POD_KEY)) {
+            auto& i18n = PluginOwnData::get<I18nBase>(I18nBase::POD_KEY);
             switch ((OriginType)ori.getOriginType()) {
                 case OriginType::Player:
                     code = ori.getPlayer()->getLanguageCode();
@@ -69,7 +69,7 @@ public:
     }
 
     /**
-     * @brief Output a message(I18N, convenience func).
+     * @brief Output a message(I18nBase, convenience func).
      *
      * @tparam Args    ...
      * @param  format  The str to translate and format
@@ -85,7 +85,7 @@ public:
     }
 
     /**
-     * @brief Output a success message(I18N, convenience func).
+     * @brief Output a success message(I18nBase, convenience func).
      *
      * @tparam Args    ...
      * @param  format  The str to translate and format
@@ -101,7 +101,7 @@ public:
     }
 
     /**
-     * @brief Output a error message(I18N, convenience func).
+     * @brief Output a error message(I18nBase, convenience func).
      *
      * @tparam Args    ...
      * @param  format  The str to translate and format
