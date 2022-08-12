@@ -203,4 +203,10 @@ LIAPI ServerStatus getServerStatus();
 LIAPI bool isServerStarting();
 LIAPI bool isServerStopping();
 
+/**
+ * @breif Get LiteLoaderBDS's current language
+ *
+ * @return std::string  Language(such as: en, zh_CN, ja, ru)
+ */
+std::string getLanguage();
 }; // namespace LL
