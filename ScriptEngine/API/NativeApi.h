@@ -8,6 +8,9 @@ public:
     static Local<Value> hook(const Arguments& args);
     static Local<Value> getSymbol(const Arguments& args);
     static Local<Value> getItemClass(const Arguments& args);
+    static Local<Value> searchAddress(const Arguments& args);
+    static Local<Value> patch(const Arguments& args);
+    static Local<Value> DAccess(const Arguments& args);
 };
 extern ClassDefine<void> NativeClassBuilder;
 

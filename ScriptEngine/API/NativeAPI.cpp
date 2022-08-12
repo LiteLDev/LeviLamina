@@ -28,6 +28,9 @@ ClassDefine<void> NativeClassBuilder =
     defineClass("native")
         .function("Hook", &NativeClass::hook)
         .function("getSymbol", &NativeClass::getSymbol)
+        .function("searchAddress", &NativeClass::searchAddress)
+        .function("patch", &NativeClass::patch)
+        .function("DAccess", &NativeClass::DAccess)
         .build();
 
 
@@ -559,6 +562,49 @@ Local<Value> NativeClass::getSymbol(const Arguments& args) {
         });
     }
     CATCH("Fail in GetSymbol!")
+}
+
+#include <Utils/ModUtils.h>
+#include <Utils/TypeConversionHelper.hpp>
+
+Local<Value> NativeClass::searchAddress(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    std::vector<uint16_t> pattern = TCHelper::splitHex(args[0].asString().toString());
+    uintptr_t address = ModUtils::SigScan(pattern);
+	if (address == 0) {
+		return Local<Value>();
+	}
+    return String::newString(TCHelper::uto_string(address));
+}
+
+Local<Value> NativeClass::patch(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 3);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kString);
+    CHECK_ARG_TYPE(args[2], ValueKind::kString);
+    uintptr_t address = TCHelper::string_tohex(args[0].asString().toString());
+    vector<uint16_t> oriByte = TCHelper::splitHex(args[1].asString().toString());
+    vector<uint8_t> newByte = TCHelper::splitHex8(args[2].asString().toString());
+    bool rtn = ModUtils::Replace(address, oriByte, newByte);
+    return Boolean::newBoolean(rtn);
+}
+
+Local<Value> NativeClass::DAccess(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    uintptr_t address = TCHelper::string_tohex(args[0].asString().toString()); 
+	INT64 size = args[1].asNumber().toInt64();
+    std::vector<uint8_t> buffer(size+1);
+    ModUtils::MemCopy((uintptr_t)&buffer[0], (uintptr_t)(void*)address, buffer.size());
+    uint8_t em = buffer[size];
+	stringstream ss;
+    ss << hex << int(em);
+	stringstream ss1;
+	ss1 << hex << address+size;
+    vector<Local<Value>> rtn = {String::newString(ss1.str()), String::newString(ss.str())};
+    return Array::newArray(rtn);
 }
 
 
