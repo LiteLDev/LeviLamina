@@ -60,9 +60,9 @@ docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:
 
 > 没错，，就这么简单~
 
-## 安装资源包/Addon
-将`.mcpack`、`.mcaddon`或`.zip`格式的资源包/Addon复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader会为您自动配置资源包/Addon。  
-您可以通过`addons`指令对资源包和Addon进行管理
+## 🎨 安装资源包 / Addon
+- 将`.mcpack`、`.mcaddon`或`.zip`格式的资源包 / Addon 复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader 会为您自动配置并安装
+- 开服后，您可以通过`addons`指令对已安装的资源包和 Addon 进行管理
 
 ## 🔌 插件热管理
 

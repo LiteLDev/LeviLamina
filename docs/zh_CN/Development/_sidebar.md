@@ -1,5 +1,5 @@
 - [⛳ 新手入门（必读）](zh_CN/Development/)
-- [📋 重大更改页面](zh_CN/Development/Changes)
+- [📋 多种开发语言支持](zh_CN/Development/LanguageSupport.md)
 - [💼 通用脚本接口 - 常用](zh_CN/Development/ScriptAPI/ScriptHelp.md)
 - 游戏内容接口
 
@@ -51,5 +51,7 @@
   - [🌏 网络](zh_CN/Development/SystemAPI/Network.md)
   - [📡 系统调用](zh_CN/Development/SystemAPI/SystemCall.md)
   - [📜 获取系统信息](zh_CN/Development/SystemAPI/SystemInfo.md)
+
+- [📋 重大更改页面（弃用）](zh_CN/Development/Changes)
 
 - [👈 返回起始页](zh_CN/)
