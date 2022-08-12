@@ -11,7 +11,7 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 
 ##### [English](README.md) | 简体中文
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2F.vuepress%2Fpublic%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20&%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/main/docs/assets/LL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版专用服务器——`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
@@ -112,7 +112,7 @@ mc.listen("onServerStarted", () => {
 2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
 3. 保证 `bedrock_server.pdb`文件存在。
    运行 `LLPeEditor.exe` 来生成具有导出符号的BDS（`bedrock_server_mod.exe`）
-4. 当控制台输出 `请按任意键继续. . . ` 时，按任意键关闭窗口
+4. 当控制台输出 `请按任意键继续. . .` 时，按任意键关闭窗口
 5. 运行 `bedrock_server_mod.exe` 开服
 
 ### 对于 Linux 用户
@@ -134,6 +134,7 @@ docker pull shrbox/liteloaderbds
 mkdir <install directory>
 docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
+
 `<install directory>` 是用于存放数据的目录，例如: `/home/shrbox/bedrock-server`  
 第一次启动需要花费一点时间用于下载Bedrock Dedicated Server和LiteLoaderBDS  
 启动服务器：`docker container start llbds -a`<br>
