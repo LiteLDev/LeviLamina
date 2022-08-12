@@ -237,7 +237,7 @@ namespace ModUtils
 
 		size_t numRegionsChecked = 0;
 		uintptr_t currentAddress = 0;
-		while (numRegionsChecked < 10000)
+		while (numRegionsChecked < 1000000000000000)
 		{
 			MEMORY_BASIC_INFORMATION memoryInfo = { 0 };
 			if (VirtualQuery((void*)regionStart, &memoryInfo, sizeof(MEMORY_BASIC_INFORMATION)) == 0)
@@ -264,7 +264,9 @@ namespace ModUtils
 				protection == PAGE_READWRITE || 
 				protection == PAGE_READONLY || 
 				protection == PAGE_WRITECOPY || 
-				protection == PAGE_EXECUTE_WRITECOPY) 
+				protection == PAGE_EXECUTE_WRITECOPY ||
+                protection == PAGE_EXECUTE_READ ||
+                protection == PAGE_WRITECOMBINE) 
 				&& state == MEM_COMMIT;
 
 			if (readableMemory)
@@ -288,6 +290,7 @@ namespace ModUtils
 						else if (i == pattern.size() - 1)
 						{
 							uintptr_t signature = currentAddress - pattern.size() + 1;
+                            //Log(std::to_string(protection));
 					//Log("Found signature at %p", signature);
 							return signature;
 						}
@@ -358,154 +361,6 @@ namespace ModUtils
 			RaiseError("Bytes do not match!");
 		}
 		return false;
-	}
-
-	// Winapi callback that receives all active window handles one by one.
-	inline BOOL CALLBACK EnumWindowHandles(HWND hwnd, LPARAM lParam)
-	{
-		DWORD processId = NULL;
-		GetWindowThreadProcessId(hwnd, &processId);
-		if (processId == GetCurrentProcessId())
-		{
-			char buffer[100];
-			GetWindowTextA(hwnd, buffer, 100);
-	//Log("Found window belonging to ER: %s", buffer);
-			if (std::string(buffer).find("ELDEN RING") != std::string::npos)
-			{
-		//Log("%s handle selected", buffer);
-				muWindow = hwnd;
-				return false;
-			}
-		}
-		return true;
-	}
-
-	// Attempts different methods to get the main window handle.
-	inline bool GetWindowHandle()
-	{
-//Log("Finding application window...");
-
-		for (size_t i = 0; i < 10000; i++)
-		{
-			HWND hwnd = FindWindowExA(NULL, NULL, NULL, "ELDEN RING?");
-			DWORD processId = 0;
-			GetWindowThreadProcessId(hwnd, &processId);
-			if (processId == GetCurrentProcessId())
-			{
-				muWindow = hwnd;
-		//Log("FindWindowExA: found window handle");
-				break;
-			}
-			Sleep(1);
-		}
-
-		// Backup method
-		if (muWindow == NULL)
-		{
-	//Log("Enumerating windows...");
-			for (size_t i = 0; i < 10000; i++)
-			{
-				EnumWindows(&EnumWindowHandles, NULL);
-				if (muWindow != NULL)
-				{
-					break;
-				}
-				Sleep(1);
-			}
-		}
-
-		return (muWindow == NULL) ? false : true;
-	}
-
-	// Checks if a hotkey or a combination of hotkeys is pressed.
-	inline bool CheckHotkey(WORD key, WORD modifier = HK_NONE, bool checkController = false)
-	{
-		static std::vector<unsigned int> notReleasedKeys;
-		static bool retrievedWindowHandle = false;
-
-		if (!retrievedWindowHandle)
-		{
-			if (GetWindowHandle())
-			{
-				char buffer[100];
-				GetWindowTextA(muWindow, buffer, 100);
-		//Log("Found application window: %s", buffer);
-			}
-			else
-			{
-		//Log("Failed to get window handle, inputs will be detected globally");
-			}
-			retrievedWindowHandle = true;
-		}
-
-		if(muWindow != NULL && muWindow != GetForegroundWindow()) 
-		{
-			return false;
-		}
-
-		bool keyPressed = false;
-		bool modifierPressed = false;
-
-		if (checkController)
-		{
-			for (DWORD controllerIndex = 0; controllerIndex < XUSER_MAX_COUNT; controllerIndex++)
-			{
-				XINPUT_STATE state = { 0 };
-				DWORD result = XInputGetState(controllerIndex, &state);
-				if (result == ERROR_SUCCESS)
-				{
-					if (state.Gamepad.wButtons == key)
-					{
-						keyPressed = true;
-					}
-					else if (state.Gamepad.wButtons == modifier)
-					{
-						modifierPressed = true;
-					}
-					else if (state.Gamepad.wButtons == (key | modifier))
-					{
-						keyPressed = true;
-						modifierPressed = true;
-					}
-				}
-			}
-		}
-		else
-		{
-			keyPressed = GetAsyncKeyState(key) & 0x8000;
-			modifierPressed = GetAsyncKeyState(modifier) & 0x8000;
-		}
-
-		if (key == HK_NONE)
-		{
-			return modifierPressed;
-		}
-
-		auto iterator = std::find(notReleasedKeys.begin(), notReleasedKeys.end(), key);
-		bool keyNotReleased = iterator != notReleasedKeys.end();
-
-		if (keyPressed && keyNotReleased)
-		{
-			return false;
-		}
-
-		if (!keyPressed)
-		{
-			if (keyNotReleased)
-			{
-				notReleasedKeys.erase(iterator);
-			}
-			return false;
-		}
-
-		if (modifier != HK_NONE && !modifierPressed)
-		{
-			return false;
-		}
-
-//Log("Key: %i, modifier: %i", keyPressed, modifierPressed);
-		notReleasedKeys.push_back(key);
-		return true;
 	}
 
 	// Takes a 4-byte relative address and converts it to an absolute 8-byte address.
