@@ -72,9 +72,9 @@ public:
      * @brief Get the translation of the specified key.
      *
      * @param  key          The language key
-     * @param  langCode     The language code like en_US,zh_CN("" => this->defaultLangCode)
+     * @param  localeName   The language code like en_US,zh_CN("" => this->defaultLocaleName)
      * @return std::string  The translation
-     * @see    I18N::defaultLangCode
+     * @see    I18N::defaultLocaleName
      */
     virtual std::string get(const std::string& key, const std::string& localeName = "");
 
@@ -263,10 +263,10 @@ LIAPI I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget);
 /**
  * @brief Load translation from a file or dir.
  *
- * @param  path            The path to the i18n file(json) or dir
- * @param  defaultLangCode  The default language code(if no lang code is specified, it will use this)
- * @param  defaultLangData  The default translation data
- * @return I18N*            The pointer to the I18N object in PluginOwnData, null if failed
+ * @param  path               The path to the i18n file(json) or dir
+ * @param  defaultLocaleName  The default language code(if no lang code is specified, it will use this)
+ * @param  defaultLangData    The default translation data
+ * @return I18N*              The pointer to the I18N object in PluginOwnData, null if failed
  * @par Example
  * 1. SingleFileI18N (1)
  * @code
@@ -446,7 +446,7 @@ inline const char* trc(const char* formatStr, Args&&... args) {
  *
  * @tparam S            The string type
  * @tparam Args         ...
- * @param  langCode     The language code like en_US
+ * @param  localeName   The language code like en_US
  * @param  formatStr    The str to translate and format
  * @param  args         The format arguments
  * @return std::string  The translated str
@@ -458,15 +458,15 @@ inline const char* trc(const char* formatStr, Args&&... args) {
  * @endcode
  */
 template <typename S, typename... Args>
-inline std::string trl(const std::string& langCode, const S& formatStr, Args&&... args) {
-    return Translation::trlImpl(GetCurrentModule(), langCode, formatStr, std::forward<Args>(args)...);
+inline std::string trl(const std::string& localeName, const S& formatStr, Args&&... args) {
+    return Translation::trlImpl(GetCurrentModule(), localeName, formatStr, std::forward<Args>(args)...);
 }
 
 /**
  * @brief Translate a str to the specified language.
  *
  * @tparam Args         ...
- * @param  langCode     The language code like en_US
+ * @param  localeName   The language code like en_US
  * @param  formatStr    The str to translate and format(c-style)
  * @param  args         The format arguments
  * @return std::string  The translated str
@@ -478,11 +478,10 @@ inline std::string trl(const std::string& langCode, const S& formatStr, Args&&..
  * @endcode
  */
 template <typename... Args>
-inline std::string trl(const std::string& langCode, const char* formatStr, Args&&... args) {
-    return trl(langCode, std::string(formatStr), std::forward<Args>(args)...);
+inline std::string trl(const std::string& localeName, const char* formatStr, Args&&... args) {
+    return trl(localeName, std::string(formatStr), std::forward<Args>(args)...);
 }
 
-/* literals
 namespace Translation {
 namespace literals {
 
@@ -492,7 +491,6 @@ inline std::string operator""_tr(const char* str, size_t) {
 
 } // namespace literals
 } // namespace Translation
-*/
 
 // For text encoding
 namespace TextEncoding {
