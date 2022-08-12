@@ -179,6 +179,9 @@
     <ClCompile Include="Main\NodeJsHelper.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="API\NativeAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -334,6 +337,9 @@
     <ClInclude Include="Main\NodeJsHelper.h">
       <Filter>Main</Filter>
     </ClInclude>
+    <ClInclude Include="API\NativeApi.h">
+      <Filter>API</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\LiteLoader\Lib\third-party\openssl\libcrypto.lib">
@@ -385,6 +391,9 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="third-party\NodeJs\lib\libnode.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\LiteLoader\Lib\Demangler.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
