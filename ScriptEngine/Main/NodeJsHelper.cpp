@@ -131,21 +131,23 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
 
         // Load code
         MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(env, executeJs.c_str());
-        if (loadenv_ret.IsEmpty())  // There has been a JS exception.
+        if (loadenv_ret.IsEmpty()) // There has been a JS exception.
         {
             node::Stop(env);
+            uv_stop(it->second->event_loop());
             return false;
         }
 
         // Start libuv event loop
-        uvLoopTask[env] = Schedule::repeat([engine, env, isRunningMap{ &isRunning }, eventLoop{it->second->event_loop()}]()
-        {
-            if (!LL::isServerStopping() && (*isRunningMap)[env])
-            {
+        uvLoopTask[env] = Schedule::repeat([engine, env, isRunningMap{&isRunning}, eventLoop{it->second->event_loop()}]() {
+            if (!LL::isServerStopping() && (*isRunningMap)[env]) {
                 EngineScope enter(engine);
                 uv_run(eventLoop, UV_RUN_NOWAIT);
             }
-        }, 2);
+            if (LL::isServerStopping()) {
+                uv_stop(eventLoop);
+            }
+        },2);
         
         return true;
     }
