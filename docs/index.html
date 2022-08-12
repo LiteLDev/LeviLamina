@@ -140,7 +140,8 @@
     <script type="text/javascript">
         function updateCustomCSS() {
             var darkModeBtn = document.getElementById("dark-mode-btn");
-            var tocNav = document.getElementsByClassName("toc-nav")[0]
+            var tocNav = document.getElementsByClassName("toc-nav")[0];
+            var tableBars = document.querySelectorAll('.markdown-section tr:nth-child(2n)');
             
             // set darkModeBtn color
             darkModeBtn.style.backgroundColor = window.isDocsifyDarkMode ? "#3f3f3f" : "white";
@@ -148,6 +149,10 @@
             // set toc bar color
             tocNav.style.backgroundColor = window.isDocsifyDarkMode ? "#3f3f3f" : "white";
             tocNav.style.setProperty('--sidebar-nav-link-color', window.isDocsifyDarkMode ? "white" : "black");
+
+            // fix table bar color
+            for(var i=0; i<tableBars.length; ++i)
+                tableBars[i].style.backgroundColor = window.isDocsifyDarkMode ? "#363636" : "#f8f8f8";
         }
         window.updateCustomCSS = updateCustomCSS;
         function changeDarkMode(){
