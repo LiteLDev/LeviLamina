@@ -1,4 +1,4 @@
-# LLSE - Overview of LLSE Plugin Development
+# Overview of LLSE Plugin Development
 
 ## ⛳ Start
 
@@ -74,7 +74,6 @@ If Array<...> appears in the parameter type, it means an array/list containing t
    The function parameters will follow **Paameter Name : Parameter Type** Format description example: cmd : `String` means a **String** variable of type **cmd**  
    The parameter type `Array<...>`, represents an array/list containing the variables within <>.
    
-
 2. About the description of **optional parameters** in the documentation:  
    If `optional parameters` appears in the parameter descripton, it means that you have the option to not pass this parameter.
    When you do not pass this parameter, the engine will use the default value given in the description.

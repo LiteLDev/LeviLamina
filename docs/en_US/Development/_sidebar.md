@@ -1,6 +1,6 @@
-- [⛳ Beginners (Must Read)](/en_US/Development/)
-- [📋 Breaking Changes Page](/en_US/Development/Changes)
-- [💼 Generic Script Interface - Commonly Used](/en_US/Development/ScriptAPI/ScriptHelp.md)
+- [⛳ For Beginners (Must Read)](/en_US/Development/)
+- [📋 Multi Development Language Support](en_US/Development/LanguageSupport.md)
+- [💼 Generic Script Interface (Commonly Used)](/en_US/Development/ScriptAPI/ScriptHelp.md)
 - Game Content Interface
 
   - [🎨 Basic Game Interface](/en_US/Development/GameAPI/Basic.md)
@@ -51,5 +51,7 @@
   - [🌏 Network](/en_US/Development/SystemAPI/Network.md)
   - [📡 System Calls](/en_US/Development/SystemAPI/SystemCall.md)
   - [📜 Get System Information](/en_US/Development/SystemAPI/SystemInfo.md)
+
+- [📋 Breaking Changes Page (Deprecated)](/en_US/Development/Changes)
 
 - [👈 Back to Start Page](/)
