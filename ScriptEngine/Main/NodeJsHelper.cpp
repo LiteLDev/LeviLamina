@@ -19,7 +19,7 @@ std::vector<std::string> exec_args;
 
 std::unique_ptr<node::MultiIsolatePlatform> platform = nullptr;
 std::unordered_map<script::ScriptEngine*, node::Environment*> environments;
-std::unordered_map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> setups;
+std::unordered_map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>>* setups = new std::unordered_map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>>();
 std::unordered_map<node::Environment*, bool> isRunning;
 std::unordered_map<node::Environment*, ScheduleTask> uvLoopTask;
 
@@ -79,7 +79,7 @@ script::ScriptEngine* newEngine() {
     
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
     environments[engine] = env;
-    setups[engine] = std::move(setup);
+    (*setups)[engine] = std::move(setup);
     isRunning[env] = true;
 
     node::AddEnvironmentCleanupHook(
@@ -87,6 +87,7 @@ script::ScriptEngine* newEngine() {
         [](void* arg) {
             static_cast<script::ScriptEngine*>(arg)->destroy();
             logger.debug("Destory ScriptEngine for node.js [{}]", arg);
+            logger.warn("Destroy EnvironmentCleanupHook");
         },
         engine);
     return engine;
@@ -105,8 +106,9 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
     pluginDirPath = ReplaceStr(pluginDirPath, "\\", "/");
 
     // Find setup
-    auto it = setups.find(engine);
-    if (it == setups.end()) return false;
+    auto it = setups->find(engine);
+    if (it == setups->end())
+        return false;
 
     auto isolate = it->second->isolate();
     auto env = it->second->env();
@@ -147,6 +149,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
             }
             if (LL::isServerStopping()) {
                 uv_stop(eventLoop);
+                logger.warn("Destroy ServerStopping");
             }
         },2);
         
@@ -165,8 +168,9 @@ node::Environment* getEnvironmentOf(script::ScriptEngine* engine) {
 }
 
 v8::Isolate* getIsolateOf(script::ScriptEngine* engine) {
-    auto it = setups.find(engine);
-    if (it == setups.end()) return nullptr;
+    auto it = setups->find(engine);
+    if (it == setups->end())
+        return nullptr;
     return it->second->isolate();
 }
 
