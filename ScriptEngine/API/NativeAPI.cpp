@@ -30,7 +30,7 @@ ClassDefine<void> NativeClassBuilder =
         .function("getSymbol", &NativeClass::getSymbol)
         .function("searchAddress", &NativeClass::searchAddress)
         .function("patch", &NativeClass::patch)
-        .function(" getSymbolAddres", &NativeClass::getSymbolAddress)
+        .function("getSymbolAddress", &NativeClass::getSymbolAddress)
         .build();
 
 
@@ -604,7 +604,7 @@ Local<Value> NativeClass::patch(const Arguments& args) {
     return Boolean::newBoolean(rtn);
 }
 
-static Local<Value> getSymbolAddress(const Arguments& args) {
+Local<Value> NativeClass::getSymbolAddress(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     string symbol = args[0].asString().toString();
