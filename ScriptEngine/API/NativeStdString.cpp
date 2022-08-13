@@ -32,8 +32,8 @@ ClassDefine<NativeStdString> NativeStdStringBuilder =
         .instanceFunction("reserve", &NativeStdString::reserve)
         .instanceFunction("resize", &NativeStdString::resize)
 
-        .instanceFunction("toScriptString", &NativeStdString::toScriptString)
-        .instanceFunction("toPointer", &NativeStdString::toPointer)
+        .instanceFunction("toString", &NativeStdString::toString)
+        .instanceFunction("asPointer", &NativeStdString::asPointer)
         .instanceFunction("clone", &NativeStdString::clone)
         .instanceFunction("destroy", &NativeStdString::destroy)
         .build();
@@ -312,18 +312,18 @@ Local<Value> NativeStdString::resize(const Arguments& args) {
     CATCH("Fail in NativeStdString::resize!");
 }
 
-Local<Value> NativeStdString::toPointer() {
+Local<Value> NativeStdString::asPointer() {
     try {
         return NativePointer::newNativePointer(mStr);
     }
-    CATCH("Fail in NativeStdString::toPointer!");
+    CATCH("Fail in NativeStdString::asPointer!");
 }
 
-Local<Value> NativeStdString::toScriptString() {
+Local<Value> NativeStdString::toString() {
     try {
         return String::newString(*mStr);
     }
-    CATCH("Fail in NativeStdString::toScriptString!");
+    CATCH("Fail in NativeStdString::toString!");
 }
 
 Local<Value> NativeStdString::clone() {

@@ -376,8 +376,3 @@ Local<Value> NativePointer::asStdString() {
     }
     CATCH("Fail in NativePointer::asStdString!")
 }
-
-THook(void, "?setNameTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", Actor* actor, std::string* str) {
-    logger.warn("setNameTag {} {}", (__int64)actor, (__int64)str);
-    return original(actor, str);
-}
