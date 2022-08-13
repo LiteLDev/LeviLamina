@@ -105,7 +105,7 @@ void BindAPIs(ScriptEngine* engine)
     //////////////// NativeFFI ////////////////
     engine->registerNativeClass(NativeTypeEnumBuilder);
     engine->registerNativeClass<NativePointer>(NativePointerBuilder);
-    engine->registerNativeClass<ScriptFunctionSymbol>(NativeCallBuilder);
+    engine->registerNativeClass<ScriptNativeFunction>(NativeCallBuilder);
     engine->registerNativeClass<DynamicHookData>(NativeHookBuilder);
     engine->registerNativeClass<NativePatch>(NativePatchBuilder);
 }

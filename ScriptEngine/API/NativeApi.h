@@ -39,19 +39,27 @@ public:
     void* mFunction = nullptr;
 
     //Dyncall Helper
+
+    /* get dynamic call signature char for Type*/
     static char getTypeSignature(NativeFunction::Types type);
+    /* get NativeFunction::Type from LLVM Ast Node*/
     static NativeFunction::Types getNativeType(llvm::ms_demangle::Node* type);
+    /* get dynamic call signature string for this function*/
     std::string buildDynCallbackSig();
 
     //Script Helper
+    /* get a script::Function instance for scripts to call*/
     Local<Value> getCallableFunction();
+    /* call NativeFunction by using DynamicCallVM, internel api*/
     static Local<Value> callNativeFunction(DCCallVM* vm, NativeFunction* funcSymbol, const Arguments& args);
+    /* shared Hook Callback function that wrap script callback*/
     static char hookCallbackHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
 
     //Cache Helper
     static Concurrency::concurrent_unordered_map<std::string, NativeFunction> parsedSymbol;
     static NativeFunction getOrParse(const std::string& symbol);
 
+    /* clone from other NativeFunction instance*/
     inline void cloneFrom(const NativeFunction& i) {
         this->mReturnVal = i.mReturnVal;
         this->mParams = i.mParams;
@@ -73,15 +81,29 @@ public:
     }
 };
 
-class ScriptFunctionSymbol : public NativeFunction, public ScriptClass {
+class ScriptNativeFunction : public NativeFunction, public ScriptClass {
 public:
-    explicit ScriptFunctionSymbol(const Local<Object>& scriptObj)
+    explicit ScriptNativeFunction(const Local<Object>& scriptObj)
     : ScriptClass(scriptObj) {
     }
+
+    /* create NativeFunction instance from mangled symbol
+     * dlsym will be called to query the address
+     * > NativeFunction.fromSymbol(string"?xxx@xxx")
+     */
     static Local<Value> fromSymbol(const Arguments& args);
+
+    /* create NativeFunction by describe the arguments
+     * you should set address manually before you call or hook it
+     * > NativeFunction.fromDescribe(RetuenValue: NativeTypes.Void, Params [NativeType.Int......])
+     */
     static Local<Value> fromDescribe(const Arguments& args);
     Local<Value> setAddress(const Local<Value>& value);
     Local<Value> getAddress();
+
+    /* Hook current NativeFunction by passing a fuction
+     * > NativeFunction.hook(CallBack: func(a1,a2,a3...){})
+     */
     Local<Value> hook(const Arguments& args);
 };
 
@@ -165,7 +187,7 @@ public:
 
 // export apis
 extern ClassDefine<void> NativeTypeEnumBuilder;
-extern ClassDefine<ScriptFunctionSymbol> NativeCallBuilder;
+extern ClassDefine<ScriptNativeFunction> NativeCallBuilder;
 extern ClassDefine<DynamicHookData> NativeHookBuilder;
 extern ClassDefine<NativePointer> NativePointerBuilder;
 extern ClassDefine<NativePatch> NativePatchBuilder;

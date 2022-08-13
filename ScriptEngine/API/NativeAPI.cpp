@@ -295,22 +295,22 @@ NativeFunction NativeFunction::getOrParse(const std::string& symbol) {
 
     return result;
 }
-Local<Value> ScriptFunctionSymbol::fromSymbol(const Arguments& args) {
+Local<Value> ScriptNativeFunction::fromSymbol(const Arguments& args) {
     using namespace llvm::ms_demangle;
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     const std::string symbol = args[0].toStr();
 
-    auto scriptResult = args.engine()->newNativeClass<ScriptFunctionSymbol>();
-    ScriptFunctionSymbol* result = args.engine()->getNativeInstance<ScriptFunctionSymbol>(scriptResult);
+    auto scriptResult = args.engine()->newNativeClass<ScriptNativeFunction>();
+    ScriptNativeFunction* result = args.engine()->getNativeInstance<ScriptNativeFunction>(scriptResult);
 
     result->cloneFrom(getOrParse(symbol));
 
     return scriptResult;
 }
-Local<Value> ScriptFunctionSymbol::fromDescribe(const Arguments& args) {
-    auto scriptResult = args.engine()->newNativeClass<ScriptFunctionSymbol>();
-    ScriptFunctionSymbol* result = args.engine()->getNativeInstance<ScriptFunctionSymbol>(scriptResult);
+Local<Value> ScriptNativeFunction::fromDescribe(const Arguments& args) {
+    auto scriptResult = args.engine()->newNativeClass<ScriptNativeFunction>();
+    ScriptNativeFunction* result = args.engine()->getNativeInstance<ScriptNativeFunction>(scriptResult);
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
     size_t argsSize = args.size();
@@ -451,7 +451,7 @@ char NativeFunction::hookCallbackHandler(DCCallback* cb, DCArgs* args, DCValue* 
 }
 
 
-Local<Value> ScriptFunctionSymbol::setAddress(const Local<Value>& value) {
+Local<Value> ScriptNativeFunction::setAddress(const Local<Value>& value) {
     auto engine = this->getScriptEngine();
     bool isNativePointer = engine->isInstanceOf<NativePointer>(value);
     bool isInt64 = value.getKind() == ValueKind::kNumber;
@@ -467,19 +467,19 @@ Local<Value> ScriptFunctionSymbol::setAddress(const Local<Value>& value) {
     LOG_WRONG_ARG_TYPE();
     return Local<Value>();
 }
-Local<Value> ScriptFunctionSymbol::getAddress() {
+Local<Value> ScriptNativeFunction::getAddress() {
     try {
         return Number::newNumber(*((__int64*)&this->mFunction));
     }
     CATCH("Fail in getUchar!")
 }
 
-Local<Value> ScriptFunctionSymbol::hook(const Arguments& args) {
+Local<Value> ScriptNativeFunction::hook(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
     auto scriptResult = args.engine()->newNativeClass<DynamicHookData>(args.thiz());
     DynamicHookData* hookSymbol = args.engine()->getNativeInstance<DynamicHookData>(scriptResult);
-    hookSymbol->cloneFrom(NativeFunction(*args.engine()->getNativeInstance<ScriptFunctionSymbol>(args.thiz())));
+    hookSymbol->cloneFrom(NativeFunction(*args.engine()->getNativeInstance<ScriptNativeFunction>(args.thiz())));
     hookSymbol->mEngine = args.engine();
     hookSymbol->mNativeCallack = dcbNewCallback(hookSymbol->buildDynCallbackSig().c_str(), &hookCallbackHandler, hookSymbol);
     hookSymbol->mScriptCallback = args[0].asFunction();
@@ -509,18 +509,18 @@ ClassDefine<void> NativeTypeEnumBuilder =
         .property("Pointer", &NativeFunction::getType<NativeFunction::Types::Pointer>)
         .build();
 
-ClassDefine<ScriptFunctionSymbol> NativeCallBuilder =
-    defineClass<ScriptFunctionSymbol>("NativeFunction")
+ClassDefine<ScriptNativeFunction> NativeCallBuilder =
+    defineClass<ScriptNativeFunction>("NativeFunction")
         .constructor()
-        .function("fromSymbol", &ScriptFunctionSymbol::fromSymbol)
-        .function("fromDescribe", &ScriptFunctionSymbol::fromDescribe)
-        .instanceFunction("hook", &ScriptFunctionSymbol::hook)
-        .instanceProperty("call", &ScriptFunctionSymbol::getCallableFunction)
-        .instanceProperty("address", &ScriptFunctionSymbol::getAddress, &ScriptFunctionSymbol::setAddress)
+        .function("fromSymbol", &ScriptNativeFunction::fromSymbol)
+        .function("fromDescribe", &ScriptNativeFunction::fromDescribe)
+        .instanceFunction("hook", &ScriptNativeFunction::hook)
+        .instanceProperty("call", &ScriptNativeFunction::getCallableFunction)
+        .instanceProperty("address", &ScriptNativeFunction::getAddress, &ScriptNativeFunction::setAddress)
         .build();
 
 ClassDefine<DynamicHookData> NativeHookBuilder =
     defineClass<DynamicHookData>("NativeHook")
         .constructor()
-        .instanceProperty("call", &ScriptFunctionSymbol::getCallableFunction)
+        .instanceProperty("call", &ScriptNativeFunction::getCallableFunction)
         .build();
