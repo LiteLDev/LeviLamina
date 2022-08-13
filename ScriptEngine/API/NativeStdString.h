@@ -46,6 +46,8 @@ public:
     Local<Value> resize(const Arguments& args);
 
     Local<Value> toScriptString();
+    Local<Value> toPointer();
+    Local<Value> clone();
     Local<Value> destroy();
 };
 

@@ -31,7 +31,7 @@ ClassDefine<NativePointer>
             .instanceProperty("string", &NativePointer::getString, &NativePointer::setString)
             .instanceProperty("bool", &NativePointer::getBool, &NativePointer::setBool)
 
-            .instanceFunction("asString", &NativePointer::asString)
+            .instanceFunction("asStdString", &NativePointer::asStdString)
             .build();
 
 NativePointer::NativePointer(void* p)
@@ -105,7 +105,7 @@ Local<Value> NativePointer::asRawAddress(const Arguments& args) {
             return Local<Value>();
         return Number::newNumber((intptr_t)pkt);
     }
-    CATCH("Fail in getRawPtr!")
+    CATCH("Fail in NativePointer::getRawPtr!")
 }
 
 
@@ -118,7 +118,7 @@ Local<Value> NativePointer::asHexAddress(const Arguments& args) {
 		ss << std::hex << (intptr_t)pkt;
 		return String::newString(ss.str());
     }
-    CATCH("Fail in asHexStr!")
+    CATCH("Fail in NativePointer::asHexStr!")
 }
 
 Local<Value> NativePointer::offset(const Arguments& args) {
@@ -130,7 +130,7 @@ Local<Value> NativePointer::offset(const Arguments& args) {
             return Local<Value>();
         return newNativePointer((void*)((uintptr_t)ptr + args[0].asNumber().toInt32()));
     }
-    CATCH("Fail in offset!")
+    CATCH("Fail in NativePointer::offset!")
 }
 
 Local<Value> NativePointer::getMemByte() {
@@ -145,7 +145,7 @@ Local<Value> NativePointer::getMemByte() {
         ss << hex << int(em);
         return String::newString(ss.str());
     }
-    CATCH("Fail in getMemByte!")
+    CATCH("Fail in NativePointer::getMemByte!")
 }
 
 void NativePointer::setMemByte(const Local<Value>& value) {
@@ -161,7 +161,7 @@ Local<Value> NativePointer::getChar() {
     try {
         return Number::newNumber(*(char*)get());
     }
-    CATCH("Fail in getChar!")
+    CATCH("Fail in NativePointer::getChar!")
 }
 
 void NativePointer::setChar(const Local<Value>& value) {
@@ -177,7 +177,7 @@ Local<Value> NativePointer::getUchar() {
     try {
         return Number::newNumber(*(unsigned char*)get());
     }
-    CATCH("Fail in getUchar!")
+    CATCH("Fail in NativePointer::getUchar!")
 }
 void NativePointer::setUchar(const Local<Value>& value) {
     try {
@@ -192,7 +192,7 @@ Local<Value> NativePointer::getShort() {
     try {
         return Number::newNumber(*(short*)get());
     }
-    CATCH("Fail in getShort!")
+    CATCH("Fail in NativePointer::getShort!")
 }
 void NativePointer::setShort(const Local<Value>& value) {
     try {
@@ -207,7 +207,7 @@ Local<Value> NativePointer::getUshort() {
     try {
         return Number::newNumber(*(unsigned short*)get());
     }
-    CATCH("Fail in getUshort!")
+    CATCH("Fail in NativePointer::getUshort!")
 }
 void NativePointer::setUshort(const Local<Value>& value) {
     try {
@@ -222,7 +222,7 @@ Local<Value> NativePointer::getInt() {
     try {
         return Number::newNumber(*(int*)get());
     }
-    CATCH("Fail in getInt!")
+    CATCH("Fail in NativePointer::getInt!")
 }
 void NativePointer::setInt(const Local<Value>& value) {
     try {
@@ -237,7 +237,7 @@ Local<Value> NativePointer::getUint() {
     try {
         return Number::newNumber(*(long long*)get());
     }
-    CATCH("Fail in getUint!")
+    CATCH("Fail in NativePointer::getUint!")
 }
 void NativePointer::setUint(const Local<Value>& value) {
     try {
@@ -252,7 +252,7 @@ Local<Value> NativePointer::getLong() {
     try {
         return Number::newNumber(*(long long*)get());
     }
-    CATCH("Fail in getLong!")
+    CATCH("Fail in NativePointer::getLong!")
 }
 void NativePointer::setLong(const Local<Value>& value) {
     try {
@@ -267,7 +267,7 @@ Local<Value> NativePointer::getUlong() {
     try {
         return Number::newNumber(*(long long*)get());
     }
-    CATCH("Fail in getUlong!")
+    CATCH("Fail in NativePointer::getUlong!")
 }
 void NativePointer::setUlong(const Local<Value>& value) {
     try {
@@ -283,7 +283,7 @@ Local<Value> NativePointer::getLonglong() {
     try {
         return Number::newNumber(*(long long*)get());
     }
-    CATCH("Fail in getLonglong!")
+    CATCH("Fail in NativePointer::getLonglong!")
 }
 void NativePointer::setLonglong(const Local<Value>& value) {
     try {
@@ -298,7 +298,7 @@ Local<Value> NativePointer::getUlonglong() {
     try {
         return Number::newNumber(*(long long*)get());
     }
-    CATCH("Fail in getUlonglong!")
+    CATCH("Fail in NativePointer::getUlonglong!")
 }
 void NativePointer::setUlonglong(const Local<Value>& value) {
     try {
@@ -313,7 +313,7 @@ Local<Value> NativePointer::getFloat() {
     try {
         return Number::newNumber(*(float*)get());
     }
-    CATCH("Fail in getFloat!")
+    CATCH("Fail in NativePointer::getFloat!")
 }
 void NativePointer::setFloat(const Local<Value>& value) {
     try {
@@ -328,7 +328,7 @@ Local<Value> NativePointer::getDouble() {
     try {
         return Number::newNumber(*(double*)get());
     }
-    CATCH("Fail in getDouble!")
+    CATCH("Fail in NativePointer::getDouble!")
 }
 void NativePointer::setDouble(const Local<Value>& value) {
     try {
@@ -343,7 +343,7 @@ Local<Value> NativePointer::getString() {
     try {
         return String::newString(*(string*)get());
     }
-    CATCH("Fail in getString!")
+    CATCH("Fail in NativePointer::getString!")
 }
 void NativePointer::setString(const Local<Value>& value) {
     try {
@@ -358,7 +358,7 @@ Local<Value> NativePointer::getBool() {
     try {
         return Boolean::newBoolean(*(bool*)get());
     }
-    CATCH("Fail in getBool!")
+    CATCH("Fail in NativePointer::getBool!")
 }
 
 void NativePointer::setBool(const Local<Value>& value) {
@@ -370,9 +370,14 @@ void NativePointer::setBool(const Local<Value>& value) {
     }
 }
 
-Local<Value> NativePointer::asString() {
+Local<Value> NativePointer::asStdString() {
     try {
         return NativeStdString::newNativeStdString((std::string*)mPtr);
     }
-    CATCH("Fail in asString!")
+    CATCH("Fail in NativePointer::asStdString!")
+}
+
+THook(void, "?setNameTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", Actor* actor, std::string* str) {
+    logger.warn("setNameTag {} {}", (__int64)actor, (__int64)str);
+    return original(actor, str);
 }

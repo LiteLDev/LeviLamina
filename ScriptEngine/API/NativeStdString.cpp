@@ -1,7 +1,7 @@
+#include "NativeApi.h"
 #include "NativeStdString.h"
 #include <string>
 using namespace std;
-
 
 //////////////////// Class Definition ////////////////////
 
@@ -33,6 +33,8 @@ ClassDefine<NativeStdString> NativeStdStringBuilder =
         .instanceFunction("resize", &NativeStdString::resize)
 
         .instanceFunction("toScriptString", &NativeStdString::toScriptString)
+        .instanceFunction("toPointer", &NativeStdString::toPointer)
+        .instanceFunction("clone", &NativeStdString::clone)
         .instanceFunction("destroy", &NativeStdString::destroy)
         .build();
 
@@ -66,19 +68,26 @@ Local<Object> NativeStdString::newNativeStdString(std::string* ptr) {
 
 NativeStdString* NativeStdString::constructor(const Arguments& args) {
     CHECK_ARGS_COUNT_C(args, 1);
-    CHECK_ARG_TYPE_C(args[0], ValueKind::kString);
 
     try {
-        return new NativeStdString(args.thiz(), new string(std::move(args[0].toStr())));
+        if (args[0].getKind() == ValueKind::kString) {
+            return new NativeStdString(args.thiz(), new string(std::move(args[0].toStr())));
+        }
+        if (args[0].getKind() == ValueKind::kObject) {
+            string* strPointer = static_cast<string*>(NativePointer::extract(args[0]));
+            if (strPointer) // != nullptr
+                return new NativeStdString(args.thiz(), strPointer);
+        }
+        LOG_WRONG_ARG_TYPE();
     }
-    CATCH_C("Fail in create NativeStdString!");
+    CATCH_C("Fail in NativeStdString::create NativeStdString!");
 }
 
 Local<Value> NativeStdString::getNpos() {
     try {
         return Number::newNumber((int64_t)std::string::npos);
     }
-    CATCH("Fail in getNpos!");
+    CATCH("Fail in NativeStdString::getNpos!");
 }
 
 Local<Value> NativeStdString::clear() {
@@ -86,49 +95,49 @@ Local<Value> NativeStdString::clear() {
         mStr->clear();
         return Local<Value>();
     }
-    CATCH("Fail in clear!");
+    CATCH("Fail in NativeStdString::clear!");
 }
 
 Local<Value> NativeStdString::size() {
     try {
         return Number::newNumber((int64_t)mStr->size());
     }
-    CATCH("Fail in size!");
+    CATCH("Fail in NativeStdString::size!");
 }
 
 Local<Value> NativeStdString::length() {
     try {
         return Number::newNumber((int64_t)mStr->length());
     }
-    CATCH("Fail in length!");
+    CATCH("Fail in NativeStdString::length!");
 }
 
 Local<Value> NativeStdString::capacity() {
     try {
         return Number::newNumber((int64_t)mStr->capacity());
     }
-    CATCH("Fail in capacity!");
+    CATCH("Fail in NativeStdString::capacity!");
 }
 
 Local<Value> NativeStdString::empty() {
     try {
         return Boolean::newBoolean(mStr->empty());
     }
-    CATCH("Fail in empty!");
+    CATCH("Fail in NativeStdString::empty!");
 }
 
 Local<Value> NativeStdString::front() {
     try {
         return String::newString(string(mStr->front(), 1));
     }
-    CATCH("Fail in front!");
+    CATCH("Fail in NativeStdString::front!");
 }
 
 Local<Value> NativeStdString::back() {
     try {
         return String::newString(string(mStr->back(), 1));
     }
-    CATCH("Fail in back!");
+    CATCH("Fail in NativeStdString::back!");
 }
 
 Local<Value> NativeStdString::shrink_to_fit() {
@@ -136,7 +145,7 @@ Local<Value> NativeStdString::shrink_to_fit() {
         mStr->shrink_to_fit();
         return Local<Value>();
     }
-    CATCH("Fail in shrink_to_fit!");
+    CATCH("Fail in NativeStdString::shrink_to_fit!");
 }
 
 Local<Value> NativeStdString::pop_back() {
@@ -144,7 +153,7 @@ Local<Value> NativeStdString::pop_back() {
         mStr->pop_back();
         return Local<Value>();
     }
-    CATCH("Fail in pop_back!");
+    CATCH("Fail in NativeStdString::pop_back!");
 }
 
 Local<Value> NativeStdString::at(const Arguments& args) {
@@ -158,7 +167,7 @@ Local<Value> NativeStdString::at(const Arguments& args) {
     {
         throw Exception(e.what());
     }
-    CATCH("Fail in at!");
+    CATCH("Fail in NativeStdString::at!");
 }
 
 Local<Value> NativeStdString::append(const Arguments& args) {
@@ -169,7 +178,7 @@ Local<Value> NativeStdString::append(const Arguments& args) {
         mStr->append(args[0].toStr());
         return args.thiz();
     }
-    CATCH("Fail in append!");
+    CATCH("Fail in NativeStdString::append!");
 }
 
 Local<Value> NativeStdString::push_back(const Arguments& args) {
@@ -180,7 +189,7 @@ Local<Value> NativeStdString::push_back(const Arguments& args) {
         mStr->push_back(args[0].toStr()[0]);
         return Local<Value>();
     }
-    CATCH("Fail in push_back!");
+    CATCH("Fail in NativeStdString::push_back!");
 }
 
 Local<Value> NativeStdString::assign(const Arguments& args) {
@@ -191,7 +200,7 @@ Local<Value> NativeStdString::assign(const Arguments& args) {
         mStr->assign(args[0].toStr());
         return args.thiz();
     }
-    CATCH("Fail in assign!");
+    CATCH("Fail in NativeStdString::assign!");
 }
 
 Local<Value> NativeStdString::insert(const Arguments& args) {
@@ -203,7 +212,7 @@ Local<Value> NativeStdString::insert(const Arguments& args) {
         mStr->insert(args[0].toInt(), args[1].toStr());
         return args.thiz();
     }
-    CATCH("Fail in insert!");
+    CATCH("Fail in NativeStdString::insert!");
 }
 
 Local<Value> NativeStdString::erase(const Arguments& args) {
@@ -220,7 +229,7 @@ Local<Value> NativeStdString::erase(const Arguments& args) {
             mStr->erase(args[0].toInt());
         return args.thiz();
     }
-    CATCH("Fail in erase!");
+    CATCH("Fail in NativeStdString::erase!");
 }
 
 Local<Value> NativeStdString::find(const Arguments& args) {
@@ -236,7 +245,7 @@ Local<Value> NativeStdString::find(const Arguments& args) {
         else
             return Number::newNumber((int64_t)mStr->find(args[0].toStr()));
     }
-    CATCH("Fail in find!");
+    CATCH("Fail in NativeStdString::find!");
 }
 
 Local<Value> NativeStdString::rfind(const Arguments& args) {
@@ -252,7 +261,7 @@ Local<Value> NativeStdString::rfind(const Arguments& args) {
         else
             return Number::newNumber((int64_t)mStr->rfind(args[0].toStr()));
     }
-    CATCH("Fail in rfind!");
+    CATCH("Fail in NativeStdString::rfind!");
 }
 
 Local<Value> NativeStdString::substr(const Arguments& args) {
@@ -270,7 +279,7 @@ Local<Value> NativeStdString::substr(const Arguments& args) {
             res = std::move(mStr->substr(args[0].toInt()));
         return newNativeStdString(new string(std::move(res)));
     }
-    CATCH("Fail in substr!");
+    CATCH("Fail in NativeStdString::substr!");
 }
 
 Local<Value> NativeStdString::compare(const Arguments& args) {
@@ -280,7 +289,7 @@ Local<Value> NativeStdString::compare(const Arguments& args) {
     try {
         return Number::newNumber(mStr->compare(args[0].toStr()));
     }
-    CATCH("Fail in compare!");
+    CATCH("Fail in NativeStdString::compare!");
 }
 
 Local<Value> NativeStdString::reserve(const Arguments& args) {
@@ -290,7 +299,7 @@ Local<Value> NativeStdString::reserve(const Arguments& args) {
         mStr->reserve(args[0].toInt());
         return Local<Value>();
     }
-    CATCH("Fail in reserve!");
+    CATCH("Fail in NativeStdString::reserve!");
 }
 Local<Value> NativeStdString::resize(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
@@ -300,14 +309,28 @@ Local<Value> NativeStdString::resize(const Arguments& args) {
         mStr->resize(args[0].toInt());
         return Local<Value>();
     }
-    CATCH("Fail in resize!");
+    CATCH("Fail in NativeStdString::resize!");
+}
+
+Local<Value> NativeStdString::toPointer() {
+    try {
+        return NativePointer::newNativePointer(mStr);
+    }
+    CATCH("Fail in NativeStdString::toPointer!");
 }
 
 Local<Value> NativeStdString::toScriptString() {
     try {
         return String::newString(*mStr);
     }
-    CATCH("Fail in toScriptString!");
+    CATCH("Fail in NativeStdString::toScriptString!");
+}
+
+Local<Value> NativeStdString::clone() {
+    try {
+        return NativeStdString::newNativeStdString(new string(*mStr));
+    }
+    CATCH("Fail in NativeStdString::clone!")
 }
 
 Local<Value> NativeStdString::destroy() {
@@ -316,5 +339,5 @@ Local<Value> NativeStdString::destroy() {
         mStr = nullptr;
         return Local<Value>();
     }
-    CATCH("Fail in destroy!");
+    CATCH("Fail in NativeStdString::destroy!");
 }
