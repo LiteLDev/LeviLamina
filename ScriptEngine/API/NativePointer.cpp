@@ -48,20 +48,16 @@ Local<Value> NativePointer::mallocMem(const Arguments& args) {
     return newNativePointer(malloc(size));
 }
 
-//directly free memblock in c runtime
+// directly free memblock in c runtime
 Local<Value> NativePointer::freeMem(const Arguments& args) {
-    void* memObj = nullptr; 
-    if (args.hasThiz()) {
-        memObj = NativePointer::extract(args.thiz());
-    } else {
-        CHECK_ARGS_COUNT(args, 1);
-        if (args[0].isObject()) {
-            memObj = NativePointer::extract(args[0]);
-        } else 
-        if (args[0].isNumber()) {
-            *((__int64*)&memObj) = args[0].asNumber().toInt64();
-        }
+    void* memObj = nullptr;
+    CHECK_ARGS_COUNT(args, 1);
+    if (args[0].isObject()) {
+        memObj = NativePointer::extract(args[0]);
+    } else if (args[0].isNumber()) {
+        *((__int64*)&memObj) = args[0].asNumber().toInt64();
     }
+
     if (!memObj) {
         throw std::runtime_error("free(nullptr)");
     }
