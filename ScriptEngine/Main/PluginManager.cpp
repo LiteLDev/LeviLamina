@@ -272,7 +272,9 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath) {
             PrintException(e);
             ExitEngineScope exit;
 
-            LLSERemoveTimeTaskData(engine);
+            //NodeJs use his own setTimeout, so no need to remove
+            //LLSERemoveTimeTaskData(engine);
+
             LLSERemoveAllEventListeners(engine);
             LLSERemoveCmdRegister(engine);
             LLSERemoveCmdCallback(engine);
@@ -282,7 +284,7 @@ bool PluginManager::loadNodeJsPlugin(const std::string& dirPath) {
             EngineManager::unRegisterEngine(engine);
         }
         if (engine) {
-            node::Stop(env);
+            NodeJsHelper::stopEngine(engine);
         }
     } catch (const std::exception& e) {
         logger.error("Fail to load " + dirPath + "!");
@@ -302,8 +304,11 @@ bool PluginManager::unloadPlugin(const std::string& name) {
     auto engine = EngineManager::getEngine(name);
     if (!engine)
         return false;
+
+    //NodeJs use his own setTimeout, so no need to remove
+    //LLSERemoveTimeTaskData(engine);
+
     LLSECallEventsOnHotUnload(engine);
-    LLSERemoveTimeTaskData(engine);
     LLSERemoveAllEventListeners(engine);
     LLSERemoveCmdRegister(engine);
     LLSERemoveCmdCallback(engine);
