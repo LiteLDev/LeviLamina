@@ -191,6 +191,9 @@
     <ClCompile Include="API\NativePatch.cpp">
       <Filter>API\NativeAPI</Filter>
     </ClCompile>
+    <ClCompile Include="API\NativeStdString.cpp">
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -347,6 +350,9 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="API\NativeApi.h">
+      <Filter>API\NativeAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="API\NativeStdString.h">
       <Filter>API\NativeAPI</Filter>
     </ClInclude>
   </ItemGroup>

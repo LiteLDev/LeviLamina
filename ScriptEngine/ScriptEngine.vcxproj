@@ -31,6 +31,7 @@
     <ClCompile Include="API\NativeAPI.cpp" />
     <ClCompile Include="API\NativePatch.cpp" />
     <ClCompile Include="API\NativePointer.cpp" />
+    <ClCompile Include="API\NativeStdString.cpp" />
     <ClCompile Include="API\PacketAPI.cpp" />
     <ClCompile Include="API\RemoteCallAPI.cpp" />
     <ClCompile Include="API\ScoreboardAPI.cpp" />
@@ -84,6 +85,7 @@
     <ClInclude Include="API\EventAPI.h" />
     <ClInclude Include="API\FileSystemAPI.h" />
     <ClInclude Include="API\NativeApi.h" />
+    <ClInclude Include="API\NativeStdString.h" />
     <ClInclude Include="API\PacketAPI.h" />
     <ClInclude Include="API\RemoteCallAPI.h" />
     <ClInclude Include="API\ScoreboardAPI.h" />

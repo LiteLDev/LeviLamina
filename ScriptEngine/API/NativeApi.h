@@ -184,6 +184,8 @@ public:
     Local<Value> getDouble();
     Local<Value> getString();
     Local<Value> getBool();
+
+    Local<Value> asString();
 };
 
 class NativePatch : public ScriptClass {

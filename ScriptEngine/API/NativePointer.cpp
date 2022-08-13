@@ -1,5 +1,6 @@
 #include "APIHelp.h"
 #include "NativeAPI.h"
+#include "NativeStdString.h"
 #include <Utils/TypeConversionHelper.hpp>
 
 //////////////////// NativePointer ////////////////////
@@ -28,6 +29,8 @@ ClassDefine<NativePointer>
             .instanceProperty("double", &NativePointer::getDouble, &NativePointer::setDouble)
             .instanceProperty("string", &NativePointer::getString, &NativePointer::setString)
             .instanceProperty("bool", &NativePointer::getBool, &NativePointer::setBool)
+
+            .instanceFunction("asString", &NativePointer::asString)
             .build();
 
 NativePointer::NativePointer(void* p)
@@ -340,6 +343,7 @@ Local<Value> NativePointer::getBool() {
     }
     CATCH("Fail in getBool!")
 }
+
 void NativePointer::setBool(const Local<Value>& value) {
     try {
         *(bool*)get() = value.asBoolean().value();
@@ -347,4 +351,11 @@ void NativePointer::setBool(const Local<Value>& value) {
         logger.error("Fail to set bool!");
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
     }
+}
+
+Local<Value> NativePointer::asString() {
+    try {
+        return NativeStdString::newNativeStdString((std::string*)mPtr);
+    }
+    CATCH("Fail in asString!")
 }
