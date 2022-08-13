@@ -142,6 +142,8 @@ public:
 
     Local<Value> getRawPtr(const Arguments& args);
 
+	Local<Value> getRawPtrAsHex(const Arguments& args);
+		
     Local<Value> offset(const Arguments& args);
 
     void setChar(const Local<Value>& value);

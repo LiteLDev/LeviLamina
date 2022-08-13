@@ -10,6 +10,7 @@ ClassDefine<NativePointer>
             .function("malloc",&NativePointer::mallocMem)
             .function("free", &NativePointer::freeMem)
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
+            .instanceFunction("getRawPtrAsHex", &NativePointer::getRawPtrAsHex)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
             .instanceProperty("uint8", &NativePointer::getUchar, &NativePointer::setUchar)
@@ -87,6 +88,17 @@ Local<Value> NativePointer::getRawPtr(const Arguments& args) {
         return Number::newNumber((intptr_t)pkt);
     }
     CATCH("Fail in getRawPtr!")
+}
+
+#include <Utils/TypeConversionHelper.hpp>
+Local<Value> NativePointer::getRawPtrAsHex(const Arguments& args) {
+    try {
+        void* pkt = unwrap();
+        if (!pkt)
+            return Local<Value>();
+		return String::newString(TCHelper::uto_string((uintptr_t)pkt));
+    }
+    CATCH("Fail in getHexRawPtr!")
 }
 
 Local<Value> NativePointer::offset(const Arguments& args) {
