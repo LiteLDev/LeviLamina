@@ -174,7 +174,9 @@ BOOL WINAPI ConseleExitHandler(DWORD CEvent)
         case CTRL_CLOSE_EVENT:
         case CTRL_SHUTDOWN_EVENT:
         {
-            Global<Minecraft>->requestServerShutdown();
+            if (Global<Minecraft>) {
+                Global<Minecraft>->requestServerShutdown();
+            }
             return TRUE;
         }
     }
