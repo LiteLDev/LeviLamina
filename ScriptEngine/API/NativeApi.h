@@ -6,8 +6,6 @@
 #include <Tools/Demangler/include/MicrosoftDemangleNodes.h>
 #include <concurrent_unordered_map.h>
 
-extern ClassDefine<void> NativeTypeEnumBuilder;
-
 class NativeFunction {
 public:
     // TypesEnum
@@ -87,9 +85,6 @@ public:
     Local<Value> hook(const Arguments& args);
 };
 
-extern ClassDefine<ScriptFunctionSymbol> NativeCallBuilder;
-extern ClassDefine<DynamicHookData> NativeHookBuilder;
-
 class NativePointer : public ScriptClass {
 private:
     void* mPtr;
@@ -153,4 +148,17 @@ public:
     Local<Value> getString();
     Local<Value> getBool();
 };
+
+class NativePatch : public ScriptClass {
+public:
+    static Local<Value> search(const Arguments& args);
+    static Local<Value> patch(const Arguments& args);
+    static Local<Value> dump(const Arguments& args);
+};
+
+// export apis
+extern ClassDefine<void> NativeTypeEnumBuilder;
+extern ClassDefine<ScriptFunctionSymbol> NativeCallBuilder;
+extern ClassDefine<DynamicHookData> NativeHookBuilder;
 extern ClassDefine<NativePointer> NativePointerBuilder;
+extern ClassDefine<NativePatch> NativePatchBuilder;

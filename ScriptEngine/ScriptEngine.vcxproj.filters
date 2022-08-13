@@ -188,6 +188,9 @@
     <ClCompile Include="API\NativePointer.cpp">
       <Filter>API\NativeAPI</Filter>
     </ClCompile>
+    <ClCompile Include="API\NativePatch.cpp">
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
