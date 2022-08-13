@@ -146,6 +146,7 @@ public:
 		
     Local<Value> offset(const Arguments& args);
 
+    void setMemByte(const Local<Value>& value);
     void setChar(const Local<Value>& value);
     void setUchar(const Local<Value>& value);
     void setShort(const Local<Value>& value);
@@ -161,6 +162,7 @@ public:
     void setString(const Local<Value>& value);
     void setBool(const Local<Value>& value);
 
+	Local<Value> getMemByte();
     Local<Value> getChar();
     Local<Value> getUchar();
     Local<Value> getShort();
