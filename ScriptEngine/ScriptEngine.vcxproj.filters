@@ -21,6 +21,9 @@
     <Filter Include="Resource">
       <UniqueIdentifier>{01a1c5e2-9b11-4e4b-aece-b6f0aaef4b25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="API\NativeAPI">
+      <UniqueIdentifier>{8e85a302-7b11-499d-889a-260a27310158}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API\APIHelp.cpp">
@@ -180,7 +183,10 @@
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="API\NativeAPI.cpp">
-      <Filter>API</Filter>
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="API\NativePointer.cpp">
+      <Filter>API\NativeAPI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -338,7 +344,7 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="API\NativeApi.h">
-      <Filter>API</Filter>
+      <Filter>API\NativeAPI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

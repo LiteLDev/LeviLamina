@@ -60,7 +60,6 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(ParamOptionStaticBuilder);
     engine->registerNativeClass(OriginTypeStaticBuilder);
     engine->registerNativeClass(DamageCauseEnumBuilder);
-    engine->registerNativeClass(NativeClassBuilder);
     //////////////// 实例类 ////////////////
 
     engine->registerNativeClass<IntPos>(IntPosBuilder);
@@ -102,6 +101,11 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpRequestClass>(HttpRequestClassBuilder);
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
     engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
+
+    //////////////// NativeFFI ////////////////
+    engine->registerNativeClass(NativeTypeEnumBuilder);
     engine->registerNativeClass<NativePointer>(NativePointerBuilder);
+    engine->registerNativeClass<ScriptFunctionSymbol>(NativeCallBuilder);
+    engine->registerNativeClass<DynamicHookData>(NativeHookBuilder);
 
 }
