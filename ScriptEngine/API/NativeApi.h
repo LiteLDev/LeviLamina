@@ -151,6 +151,9 @@ public:
 
 class NativePatch : public ScriptClass {
 public:
+    explicit NativePatch(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
+    }
     static Local<Value> search(const Arguments& args);
     static Local<Value> patch(const Arguments& args);
     static Local<Value> dump(const Arguments& args);
