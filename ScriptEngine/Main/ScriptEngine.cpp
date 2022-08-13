@@ -96,8 +96,6 @@ void entry() {
     // Register basic event listeners
     InitBasicEventListeners();
 
-    #ifndef LLSE_BACKEND_NODEJS
     // Init message system
     InitMessageSystem();
-    #endif
 }
