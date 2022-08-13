@@ -10,6 +10,7 @@ ClassDefine<NativePointer>
             .function("fromSymbol", &NativePointer::fromSymbol)
             .function("malloc",&NativePointer::mallocMem)
             .function("free", &NativePointer::freeMem)
+            .function("fromAddress", &NativePointer::fromAddress)
             .instanceFunction("asRawAddress", &NativePointer::asRawAddress)
             .instanceFunction("asHexAddress", &NativePointer::asHexAddress)
             .instanceFunction("offset", &NativePointer::offset)
@@ -33,6 +34,22 @@ ClassDefine<NativePointer>
 NativePointer::NativePointer(void* p)
 : ScriptClass(ScriptClass::ConstructFromCpp<NativePointer>{}) {
     set(p);
+}
+
+Local<Value> NativePointer::fromAddress(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+	if (args[0].isString() ){
+        stringstream ss;
+        ss << hex << args[0].asString().toString();
+        uintptr_t res;
+        ss >> res;
+        return newNativePointer((void*)res);
+		
+	} else if (args[0].isNumber()) {
+        return newNativePointer((void*)args[0].asNumber().toInt64());
+	} 
+    LOG_WRONG_ARG_TYPE();
+    return Local<Value>();
 }
 
 Local<Value> NativePointer::fromSymbol(const Arguments& args) {

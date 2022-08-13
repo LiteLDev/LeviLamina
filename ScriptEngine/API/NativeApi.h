@@ -141,6 +141,8 @@ public:
         mPtr = ptr;
     };
 
+    static Local<Value> fromAddress(const Arguments& args);
+		
     static Local<Value> fromSymbol(const Arguments& args);
 
     static Local<Value> mallocMem(const Arguments& args);
