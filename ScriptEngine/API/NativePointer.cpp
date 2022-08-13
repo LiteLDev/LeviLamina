@@ -1,5 +1,6 @@
 #include "APIHelp.h"
 #include "NativeAPI.h"
+#include <Utils/TypeConversionHelper.hpp>
 
 //////////////////// NativePointer ////////////////////
 ClassDefine<NativePointer>
@@ -10,7 +11,7 @@ ClassDefine<NativePointer>
             .function("malloc",&NativePointer::mallocMem)
             .function("free", &NativePointer::freeMem)
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
-            .instanceFunction("getRawPtrAsHex", &NativePointer::getRawPtrAsHex)
+            .instanceFunction("getRawPtrAsHex", &NativePointer::asHexStr)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
             .instanceProperty("uint8", &NativePointer::getUchar, &NativePointer::setUchar)
@@ -90,15 +91,15 @@ Local<Value> NativePointer::getRawPtr(const Arguments& args) {
     CATCH("Fail in getRawPtr!")
 }
 
-#include <Utils/TypeConversionHelper.hpp>
-Local<Value> NativePointer::getRawPtrAsHex(const Arguments& args) {
+
+Local<Value> NativePointer::asHexStr(const Arguments& args) {
     try {
         void* pkt = unwrap();
         if (!pkt)
             return Local<Value>();
 		return String::newString(TCHelper::uto_string((uintptr_t)pkt));
     }
-    CATCH("Fail in getHexRawPtr!")
+    CATCH("Fail in asHexStr!")
 }
 
 Local<Value> NativePointer::offset(const Arguments& args) {
@@ -112,7 +113,6 @@ Local<Value> NativePointer::offset(const Arguments& args) {
     }
     CATCH("Fail in offset!")
 }
-
 
 Local<Value> NativePointer::getChar() {
     try {

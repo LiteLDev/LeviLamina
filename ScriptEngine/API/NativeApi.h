@@ -142,7 +142,7 @@ public:
 
     Local<Value> getRawPtr(const Arguments& args);
 
-	Local<Value> getRawPtrAsHex(const Arguments& args);
+	Local<Value> asHexStr(const Arguments& args);
 		
     Local<Value> offset(const Arguments& args);
 

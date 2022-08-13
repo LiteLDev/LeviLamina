@@ -1,16 +1,17 @@
 #pragma once
 #include <../Global.h>
 #include <string>
+#include <third-party/ModUtils/ModUtils.h>
 using namespace std;
 
 namespace TCHelper {
-string uto_string(uintptr_t x) {
+inline string uto_string(uintptr_t x) {
     stringstream ss;
     ss << hex << x;
     return ss.str();
 }
 
-uintptr_t string_tohex(const string& str) {
+inline uintptr_t string_tohex(const string& str) {
     stringstream ss;
     ss << hex << str;
     uintptr_t res;
@@ -19,7 +20,7 @@ uintptr_t string_tohex(const string& str) {
 }
 
 
-vector<uint8_t> splitHex8(const string& str) {
+inline vector<uint8_t> splitHex8(const string& str) {
     vector<uint8_t> res;
     stringstream ss(str);
     string item;
@@ -33,14 +34,14 @@ vector<uint8_t> splitHex8(const string& str) {
     return res;
 }
 
-string uto_string(uint8_t x) {
+inline string uto_string(uint8_t x) {
     stringstream ss;
     ss << hex << x;
     return ss.str();
 }
 
 
-vector<uint16_t> splitHex(const string& str) {
+inline vector<uint16_t> splitHex(const string& str) {
     vector<uint16_t> res;
 	stringstream ss(str);
 	string item;
