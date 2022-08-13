@@ -7,6 +7,8 @@ ClassDefine<NativePointer>
         defineClass<NativePointer>("NativePointer")
             .constructor(nullptr)
             .function("fromSymbol", &NativePointer::fromSymbol)
+            .function("malloc",&NativePointer::mallocMem)
+            .function("free", &NativePointer::freeMem)
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
@@ -35,6 +37,34 @@ Local<Value> NativePointer::fromSymbol(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
 
     return newNativePointer(dlsym_real(args[0].asString().toStringHolder().c_str()));
+}
+
+Local<Value> NativePointer::mallocMem(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    size_t size = args[0].asNumber().toInt64();
+    return newNativePointer(malloc(size));
+}
+
+//directly free memblock in c runtime
+Local<Value> NativePointer::freeMem(const Arguments& args) {
+    void* memObj = nullptr; 
+    if (args.hasThiz()) {
+        memObj = NativePointer::extract(args.thiz());
+    } else {
+        CHECK_ARGS_COUNT(args, 1);
+        if (args[0].isObject()) {
+            memObj = NativePointer::extract(args[0]);
+        } else 
+        if (args[0].isNumber()) {
+            *((__int64*)&memObj) = args[0].asNumber().toInt64();
+        }
+    }
+    if (!memObj) {
+        throw std::runtime_error("free(nullptr)");
+    }
+    free(memObj);
+    return Local<Value>();
 }
 
 Local<Object> NativePointer::newNativePointer(void* ptr) {

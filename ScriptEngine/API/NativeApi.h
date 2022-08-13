@@ -114,6 +114,10 @@ public:
 
     static Local<Value> fromSymbol(const Arguments& args);
 
+    static Local<Value> mallocMem(const Arguments& args);
+
+    static Local<Value> freeMem(const Arguments& args);
+
     Local<Value> getRawPtr(const Arguments& args);
 
     Local<Value> offset(const Arguments& args);
