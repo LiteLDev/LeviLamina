@@ -850,6 +850,9 @@
     <Library Include="Lib\third-party\dyncall\dynload_s.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="Lib\third-party\mysql\mysqlclient.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\LiteLoader.aps">
