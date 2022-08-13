@@ -292,7 +292,7 @@ Local<Value> ScriptNativeFunction::fromSymbol(const Arguments& args) {
 
     return scriptResult;
 }
-Local<Value> ScriptNativeFunction::fromDescribe(const Arguments& args) {
+Local<Value> ScriptNativeFunction::fromDescription(const Arguments& args) {
     auto scriptResult = args.engine()->newNativeClass<ScriptNativeFunction>();
     ScriptNativeFunction* result = args.engine()->getNativeInstance<ScriptNativeFunction>(scriptResult);
     CHECK_ARGS_COUNT(args, 1);
@@ -511,7 +511,7 @@ ClassDefine<ScriptNativeFunction> NativeCallBuilder =
     defineClass<ScriptNativeFunction>("NativeFunction")
         .constructor()
         .function("fromSymbol", &ScriptNativeFunction::fromSymbol)
-        .function("fromDescribe", &ScriptNativeFunction::fromDescribe)
+        .function("fromDescription", &ScriptNativeFunction::fromDescription)
         .function("fromScript", &ScriptNativeFunction::fromScript)
         .instanceFunction("hook", &ScriptNativeFunction::hook)
         .instanceProperty("call", &ScriptNativeFunction::getCallableFunction)
