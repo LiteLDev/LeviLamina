@@ -2,7 +2,7 @@
 LiteLoaderBDS-2.5.1 update has been released, adapted to BDS-1.19.20, ProtocolVersion 544
 
 ## [New features]
-- Add basic NativeAPI For LLSE @dreamguxiang & @yqs112358 & ＠WangYneos & @dofes &　@wzyyyyyyy
+- Add basic NativeAPI For LLSE @dreamguxiang & @yqs112358 & ＠WangYneos & @dofes & @wzyyyyyyy
 - Add `LL::getLanguage()` by @ShrBox
 - Add response to control event(Ctrl+C) by @Redbeanw44602
 
