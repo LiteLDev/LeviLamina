@@ -97,7 +97,9 @@ Local<Value> NativePointer::asHexStr(const Arguments& args) {
         void* pkt = unwrap();
         if (!pkt)
             return Local<Value>();
-		return String::newString(TCHelper::uto_string((uintptr_t)pkt));
+		std::stringstream ss;
+		ss << std::hex << (intptr_t)pkt;
+		return String::newString(ss.str());
     }
     CATCH("Fail in asHexStr!")
 }
