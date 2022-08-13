@@ -13,6 +13,7 @@ ClassDefine<NativePointer>
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
             .instanceFunction("getRawPtrAsHex", &NativePointer::asHexStr)
             .instanceFunction("offset", &NativePointer::offset)
+            .instanceProperty("memByte", &NativePointer::getMemByte, &NativePointer::setMemByte)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
             .instanceProperty("uint8", &NativePointer::getUchar, &NativePointer::setUchar)
             .instanceProperty("int16", &NativePointer::getShort, &NativePointer::setShort)
@@ -112,12 +113,37 @@ Local<Value> NativePointer::offset(const Arguments& args) {
     CATCH("Fail in offset!")
 }
 
+Local<Value> NativePointer::getMemByte() {
+    try {
+        auto ptr = get();
+        if (!ptr)
+            return Local<Value>();
+        std::vector<uint8_t> buffer(1);
+        ModUtils::MemCopy((uintptr_t)&buffer[0], (uintptr_t)ptr, buffer.size());
+        uint8_t em = buffer[0];
+        stringstream ss;
+        ss << hex << int(em);
+        return String::newString(ss.str());
+    }
+    CATCH("Fail in getMemByte!")
+}
+
+void NativePointer::setMemByte(const Local<Value>& value) {
+    try {
+        ModUtils::MemSet((uintptr_t)get(), (unsigned char)stoul(value.asString().toString(), nullptr, 16), 1);
+    } catch (...) {
+        logger.error("Fail to set mem!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
+}
+
 Local<Value> NativePointer::getChar() {
     try {
         return Number::newNumber(*(char*)get());
     }
     CATCH("Fail in getChar!")
 }
+
 void NativePointer::setChar(const Local<Value>& value) {
     try {
         *(char*)get() = (char)value.asNumber().toInt32();
