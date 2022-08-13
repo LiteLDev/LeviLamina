@@ -1,19 +1,19 @@
 [MD]
 ## [LiteLoader Release Note]
-LiteLoaderBDS-2.5.1 update has been released, adapted to BDS-1.19.20, ProtocolVersion 544
+LiteLoaderBDS-2.5.1更新已发布, 适配BDS-1.19.20, 协议版本544
 
-## [New features]
-- Add basic NativeAPI For LLSE @dreamguxiang & @yqs112358 & ＠WangYneos & @dofes &　@wzyyyyyyy
-- Add `LL::getLanguage()` by @ShrBox
-- Add response to control event(Ctrl+C) by @Redbeanw44602
+## [新特性]
+- 为LLSE添加基本的NativeAPI by @dreamguxiang & @yqs112358 & ＠WangYneos & @dofes &　@wzyyyyyyy
+- 添加 `LL::getLanguage()` by @ShrBox
+- 添加对Ctrl+C的响应 by @Redbeanw44602
 
 ## [Change]
-- Re-add mysql support
+- 重新添加mysql支持
 
 ## [Bug Fixes]
-- Fix FormUI error by @dreamguxiang
-- Fix #666 by @dreamguxiang & @WangYneos
-- Fix I18N compatibility by @Jasonzyt
-- Fix quickjs timezone bug (#664) by @yqs112358
-- Fix #604 again by @Jasonzyt
+- 修复 FormUI 错误 by @dreamguxiang
+- 修复 #666 by @dreamguxiang & @WangYneos
+- 修复 I18N 兼容性 by @Jasonzyt
+- 修复 quickjs 时区bug (#664) by @yqs112358
+- 再次修复 #604 by @Jasonzyt
 [/MD]
