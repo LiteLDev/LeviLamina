@@ -29,6 +29,8 @@
     <ClCompile Include="API\FileSystemAPI.cpp" />
     <ClCompile Include="API\McAPI.cpp" />
     <ClCompile Include="API\NativeAPI.cpp" />
+    <ClCompile Include="API\NativePatch.cpp" />
+    <ClCompile Include="API\NativePointer.cpp" />
     <ClCompile Include="API\PacketAPI.cpp" />
     <ClCompile Include="API\RemoteCallAPI.cpp" />
     <ClCompile Include="API\ScoreboardAPI.cpp" />

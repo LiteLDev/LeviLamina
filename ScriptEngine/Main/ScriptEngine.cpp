@@ -32,7 +32,6 @@ extern void LoadDepends();
 extern void LoadMain();
 extern void BindAPIs(ScriptEngine* engine);
 extern void LoadDebugEngine();
-extern void InitDynamicCallSystem();
 
 
 void LoadConfigFile() {
@@ -80,9 +79,6 @@ void entry() {
     if (LL::globalConfig.enableEconomyCore) {
         EconomySystem::init();
     }
-
-    // Init dynamic call system
-    InitDynamicCallSystem();
 
     // Pre-load depending libs
     LoadDepends();

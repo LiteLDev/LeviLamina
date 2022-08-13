@@ -1,20 +1,89 @@
-﻿#pragma once
+#pragma once
 #include "APIHelp.h"
 #include <string>
+#include <dyncall/dyncall.h>
+#include <dyncall/dyncall_callback.h>
+#include <Tools/Demangler/include/MicrosoftDemangleNodes.h>
+#include <concurrent_unordered_map.h>
 
-
-class NativeClass {
+class NativeFunction {
 public:
-    static Local<Value> hook(const Arguments& args);
-    static Local<Value> getSymbol(const Arguments& args);
-    static Local<Value> getItemClass(const Arguments& args);
-    static Local<Value> searchAddress(const Arguments& args);
-    static Local<Value> patch(const Arguments& args);
-    static Local<Value> getSymbolAddress(const Arguments& args);
-    static Local<Value> dump(const Arguments& args);
-};
-extern ClassDefine<void> NativeClassBuilder;
+    // TypesEnum
+    enum class Types : int {
+        Void,
+        Bool,
+        Char,
+        UnsignedChar,
+        Short,
+        UnsignedShort,
+        Int,
+        UnsignedInt,
+        Long,
+        UnsignedLong,
+        LongLong,
+        UnsignedLongLong,
+        Float,
+        Double,
+        String,
+        Pointer,
+    };
 
+    template <Types T>
+    static Local<Value> getType() {
+        return Number::newNumber((int)T);
+    }
+    //Data Members
+    NativeFunction::Types mReturnVal = NativeFunction::Types::Void;
+    vector<NativeFunction::Types> mParams = {};
+    std::string mSymbol = "unknown";
+    void* mFunction = nullptr;
+
+    //Dyncall Helper
+    static char getTypeSignature(NativeFunction::Types type);
+    static NativeFunction::Types getNativeType(llvm::ms_demangle::Node* type);
+    std::string buildDynCallbackSig();
+
+    //Script Helper
+    Local<Value> getCallableFunction();
+    static Local<Value> callNativeFunction(DCCallVM* vm, NativeFunction* funcSymbol, const Arguments& args);
+    static char hookCallbackHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
+
+    //Cache Helper
+    static Concurrency::concurrent_unordered_map<std::string, NativeFunction> parsedSymbol;
+    static NativeFunction getOrParse(const std::string& symbol);
+
+    inline void cloneFrom(const NativeFunction& i) {
+        this->mReturnVal = i.mReturnVal;
+        this->mParams = i.mParams;
+        this->mSymbol = i.mSymbol;
+        this->mFunction = i.mFunction;
+    }
+};
+
+class DynamicHookData : public NativeFunction, public ScriptClass {
+public:
+    script::ScriptEngine* mEngine = nullptr;
+    DCCallback* mNativeCallack = nullptr;
+    script::Global<Function> mScriptCallback;
+    explicit DynamicHookData(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
+    }
+    explicit DynamicHookData(const Local<Object>& scriptObj, const NativeFunction& symbol)
+    : NativeFunction(symbol), ScriptClass(scriptObj) {
+    }
+};
+
+class ScriptFunctionSymbol : public NativeFunction, public ScriptClass {
+public:
+    explicit ScriptFunctionSymbol(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
+    }
+    static Local<Value> fromSymbol(const Arguments& args);
+    static Local<Value> fromDescribe(const Arguments& args);
+    Local<Value> setAddress(const Local<Value>& value);
+    Local<Value> getAddress();
+    Local<Value> hook(const Arguments& args);
+};
 
 class NativePointer : public ScriptClass {
 private:
@@ -43,13 +112,13 @@ public:
         mPtr = ptr;
     };
 
+    static Local<Value> fromSymbol(const Arguments& args);
+
     Local<Value> getRawPtr(const Arguments& args);
-    Local<Value> getRawPtrAsHex(const Arguments& args);
 
     Local<Value> offset(const Arguments& args);
 
     void setChar(const Local<Value>& value);
-    void setMenByte(const Local<Value>& value);
     void setUchar(const Local<Value>& value);
     void setShort(const Local<Value>& value);
     void setUshort(const Local<Value>& value);
@@ -63,11 +132,7 @@ public:
     void setDouble(const Local<Value>& value);
     void setString(const Local<Value>& value);
     void setBool(const Local<Value>& value);
-    // Local<Value> setWstring(const Arguments& args);
-    // Local<Value> setVoid(const Arguments& args);
-    // Local<Value> setPointer(const Arguments& args);
 
-    Local<Value> getMemByte();
     Local<Value> getChar();
     Local<Value> getUchar();
     Local<Value> getShort();
@@ -83,47 +148,20 @@ public:
     Local<Value> getString();
     Local<Value> getBool();
 };
-extern ClassDefine<NativePointer> NativePointerBuilder;
 
-
-enum class NativeTypes : int {
-    Void,
-    Bool,
-    Char,
-    UnsignedChar,
-    Short,
-    UnsignedShort,
-    Int,
-    UnsignedInt,
-    Long,
-    UnsignedLong,
-    LongLong,
-    UnsignedLongLong,
-    Float,
-    Double,
-    Pointer,
-    CString,
-    CWideString,
-    String,
-    WideString,
-    Vector,
-    Map,
-    Int8,
-    Int16,
-    Int32,
-    Int64,
-    HANDLE,
-    DWORD,
-    LPSTR,
-    LPWSTR,
-
-    Player,
-    Block,
-    Entity,
-    ItemStack,
-    BlockEntity,
-    Container,
-    Objective,
-    BlockPos,
-    Vec3
+class NativePatch : public ScriptClass {
+public:
+    explicit NativePatch(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
+    }
+    static Local<Value> search(const Arguments& args);
+    static Local<Value> patch(const Arguments& args);
+    static Local<Value> dump(const Arguments& args);
 };
+
+// export apis
+extern ClassDefine<void> NativeTypeEnumBuilder;
+extern ClassDefine<ScriptFunctionSymbol> NativeCallBuilder;
+extern ClassDefine<DynamicHookData> NativeHookBuilder;
+extern ClassDefine<NativePointer> NativePointerBuilder;
+extern ClassDefine<NativePatch> NativePatchBuilder;

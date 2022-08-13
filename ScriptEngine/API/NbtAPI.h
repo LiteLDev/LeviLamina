@@ -14,7 +14,6 @@
 #include <MC/CompoundTag.hpp>
 
 extern struct Tag;
-extern ClassDefine<void> NbtStaticBuilder;
 
 // NBT Static
 class NbtStatic : public ScriptClass {
