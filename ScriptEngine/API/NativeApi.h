@@ -11,6 +11,7 @@ public:
     static Local<Value> searchAddress(const Arguments& args);
     static Local<Value> patch(const Arguments& args);
     static Local<Value> getSymbolAddress(const Arguments& args);
+    static Local<Value> dump(const Arguments& args);
 };
 extern ClassDefine<void> NativeClassBuilder;
 

@@ -31,6 +31,7 @@ ClassDefine<void> NativeClassBuilder =
         .function("searchAddress", &NativeClass::searchAddress)
         .function("patch", &NativeClass::patch)
         .function("getSymbolAddress", &NativeClass::getSymbolAddress)
+        .function("dump", &NativeClass::dump)
         .build();
 
 
@@ -609,6 +610,22 @@ Local<Value> NativeClass::getSymbolAddress(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     string symbol = args[0].asString().toString();
     return NativePointer::newNativePointer(dlsym_real(symbol.c_str()));
+}
+
+Local<Value> NativeClass::dump(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kObject);
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    auto address = NativePointer::extract(args[0]);
+    auto size = args[1].asNumber().toInt32();
+    std::vector<uint8_t> bytes(size);
+    ModUtils::MemCopy((uintptr_t)bytes.data(), (uintptr_t)address, size);
+    stringstream ss;
+    ss << std::hex;
+    for (auto i : bytes) {
+        ss << (uint16_t)i << " ";
+    }
+    return String::newString(ss.str());
 }
 //////////////////// NativePointer ////////////////////
 ClassDefine<NativePointer>
