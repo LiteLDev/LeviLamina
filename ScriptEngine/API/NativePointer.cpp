@@ -13,7 +13,7 @@ ClassDefine<NativePointer>
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
             .instanceFunction("asHexStr", &NativePointer::asHexStr)
             .instanceFunction("offset", &NativePointer::offset)
-            .instanceProperty("memByte", &NativePointer::getMemByte, &NativePointer::setMemByte)
+            .instanceProperty("byte", &NativePointer::getMemByte, &NativePointer::setMemByte)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
             .instanceProperty("uint8", &NativePointer::getUchar, &NativePointer::setUchar)
             .instanceProperty("int16", &NativePointer::getShort, &NativePointer::setShort)
