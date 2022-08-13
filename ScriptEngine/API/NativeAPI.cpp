@@ -75,14 +75,6 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
                 NATIVE_CHECK_ARG_CLASS(NativePointer);
                 dcArgPointer(vm, NativePointer::extract(args[i]));
                 break;
-            case NativeFunction::Types::String: {
-                // TODO: [std::string &] as param
-                NATIVE_CHECK_ARG_TYPE(ValueKind::kString);
-                string str = args[i].toStr();
-                // garbage.push_back({NativeFunction::Types::String, (void*)str});
-                dcArgPointer(vm, (void*)(uintptr_t)&str);
-                break;
-            }
             default:
                 break;
         }
@@ -125,10 +117,6 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
         case NativeFunction::Types::Pointer:
             res = NativePointer::newNativePointer((NativePointer*)dcCallPointer(vm, func));
             break;
-        case NativeFunction::Types::String: {
-            res = String::newString(*(string*)dcCallPointer(vm, func));
-            break;
-        }
         default:
             break;
     }
@@ -176,7 +164,6 @@ char NativeFunction::getTypeSignature(NativeFunction::Types type) {
             return 'd';
             break;
         case NativeFunction::Types::Pointer:
-        case NativeFunction::Types::String:
             return 'p';
             break;
         default:
@@ -243,9 +230,6 @@ NativeFunction::Types NativeFunction::getNativeType(llvm::ms_demangle::Node* typ
                     return NativeFunction::Types::Void;
             }
         } else if (type->kind() == NodeKind::PointerType || type->kind() == NodeKind::NamedIdentifier) {
-            if (type->toString().find("std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>") != type->toString().npos) {
-                return NativeFunction::Types::String;
-            }
             return NativeFunction::Types::Pointer;
         } else if (type->kind() == NodeKind::TagType) {
             switch (((TagTypeNode*)type)->Tag) {
@@ -403,9 +387,6 @@ char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue
                 case NativeFunction::Types::Pointer:
                     paras.emplace_back(NativePointer::newNativePointer((NativePointer*)dcbArgPointer(args)));
                     break;
-                case NativeFunction::Types::String:
-                    paras.emplace_back(String::newString(*(string*)dcbArgPointer(args)));
-                    break;
                 default:
                     break;
             }
@@ -455,9 +436,6 @@ char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue
                 break;
             case NativeFunction::Types::Pointer:
                 result->p = NativePointer::extract(res);
-                break;
-            case NativeFunction::Types::String:
-                result->p = new string(res.asString().toString());
                 break;
             default:
                 break;
@@ -526,7 +504,6 @@ ClassDefine<void> NativeTypeEnumBuilder =
         .property("UnsignedLongLong", &NativeFunction::getType<NativeFunction::Types::UnsignedLongLong>)
         .property("Float", &NativeFunction::getType<NativeFunction::Types::Float>)
         .property("Double", &NativeFunction::getType<NativeFunction::Types::Double>)
-        .property("String", &NativeFunction::getType<NativeFunction::Types::String>)
         .property("Pointer", &NativeFunction::getType<NativeFunction::Types::Pointer>)
         .build();
 

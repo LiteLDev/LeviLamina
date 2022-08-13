@@ -24,7 +24,6 @@ public:
         UnsignedLongLong,
         Float,
         Double,
-        String,
         Pointer,
     };
 
