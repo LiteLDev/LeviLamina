@@ -570,6 +570,19 @@ Local<Value> NativeClass::getSymbol(const Arguments& args) {
 Local<Value> NativeClass::searchAddress(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    if (args.size() >= 3 &&
+        args[1].isObject() && args[2].isNumber()) {
+        auto regionStart = (uintptr_t)NativePointer::extract(args[1]);
+        auto size = args[2].asNumber().toInt32();
+        std::vector<uint16_t> pattern = TCHelper::splitHex(args[0].asString().toString());
+        uintptr_t address = ModUtils::SigScan(pattern, regionStart, size);
+        if (address == 0) {
+            return Local<Value>();
+        }
+        return NativePointer::newNativePointer((void*)address);
+    }
+
     std::vector<uint16_t> pattern = TCHelper::splitHex(args[0].asString().toString());
     uintptr_t address = ModUtils::SigScan(pattern);
     if (address == 0) {

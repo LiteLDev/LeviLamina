@@ -267,7 +267,7 @@ inline uintptr_t SigScan(std::vector<uint16_t> pattern) {
     return 0;
 }
 
-inline uintptr_t SigScan(std::vector<uint16_t> pattern, uintptr_t regionStart, uintptr_t regionEnd) {
+inline uintptr_t SigScan(std::vector<uint16_t> pattern, uintptr_t regionStart, int32_t size) {
     DWORD processId = GetCurrentProcessId();
     // Log("Process name: %s", GetModuleName(false).c_str());
     // Log("Process ID: %i", processId);
@@ -312,7 +312,7 @@ inline uintptr_t SigScan(std::vector<uint16_t> pattern, uintptr_t regionStart, u
                                protection == PAGE_EXECUTE_READ ||
                                protection == PAGE_WRITECOMBINE) &&
                               state == MEM_COMMIT;
-
+        uintptr_t regionEnd = regionStart + size;
         if (readableMemory) {
             // Log("Checking region: %p", regionStart);
             currentAddress = regionStart;
