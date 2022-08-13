@@ -87,7 +87,7 @@ script::ScriptEngine* newEngine() {
         [](void* arg) {
             static_cast<script::ScriptEngine*>(arg)->destroy();
             logger.debug("Destory ScriptEngine for node.js [{}]", arg);
-            logger.warn("Destroy EnvironmentCleanupHook");
+            logger.debug("Destroy EnvironmentCleanupHook");
         },
         engine);
     return engine;
@@ -149,7 +149,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
             }
             if (LL::isServerStopping()) {
                 uv_stop(eventLoop);
-                logger.warn("Destroy ServerStopping");
+                logger.debug("Destroy ServerStopping");
             }
         },2);
         
