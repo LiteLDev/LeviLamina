@@ -26,6 +26,7 @@
 #include <API/GameUtilsAPI.h>
 #include <API/PacketAPI.h>
 #include <API/NativeApi.h>
+#include <API/NativeStdString.h>
 
 void BindAPIs(ScriptEngine* engine)
 {
@@ -106,6 +107,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(NativeTypeEnumBuilder);
     engine->registerNativeClass<NativePointer>(NativePointerBuilder);
     engine->registerNativeClass<ScriptNativeFunction>(NativeCallBuilder);
+    engine->registerNativeClass<NativeStdString>(NativeStdStringBuilder);
     engine->registerNativeClass<DynamicHookData>(NativeHookBuilder);
     engine->registerNativeClass<NativePatch>(NativePatchBuilder);
 }
