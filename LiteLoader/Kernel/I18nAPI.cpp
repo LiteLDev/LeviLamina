@@ -4,6 +4,10 @@
 using namespace std;
 namespace fs = std::filesystem;
 
+std::vector<std::string> GeneralLanguages{
+    "en", "zh"
+};
+
 std::string I18nBase::get(const std::string& key, const std::string& langCode) {
     auto& langc = (langCode.empty() ? defaultLocaleName : langCode);
     auto langType = langc.substr(0, 2);
@@ -38,6 +42,19 @@ std::string I18nBase::get(const std::string& key, const std::string& langCode) {
                 continue;
             }
             if (lc.substr(0, 2) == langType) {
+                if (ld.count(key)) {
+                    return ld[key];
+                }
+            }
+        }
+    }
+    // Try finding general languages
+    for (auto& lang : GeneralLanguages) {
+        for (auto& [lc, ld] : langData) {
+            if (lc.length() < 2) {
+                continue;
+            }
+            if (lc.substr(0, 2) == lang) {
                 if (ld.count(key)) {
                     return ld[key];
                 }
