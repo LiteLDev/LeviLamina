@@ -1,4 +1,7 @@
-# 📋 LiteLoader ScriptEngine - Breaking Changes Page
+# 📋 Breaking Changes Page (Deprecated)
+
+> Since the API has been designed to be strictly backward compatible since version 1.0.0, there are almost no more major changes that would cause API incompatibility, so there is no need to constantly maintain this page  
+> If nothing else, this page will not be updated, and the rare exceptions will be explained in the release.
 
 Here is a list of some breaking changes to the **API** made by LiteLoader ScriptEngine that may cause **backwards incompatibility**.
 If your plugin has problems after updatin the version, please check the relevant content in this chapter first to check whether it is caused by API changes.  

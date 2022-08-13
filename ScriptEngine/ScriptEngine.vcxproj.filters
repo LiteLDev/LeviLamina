@@ -21,6 +21,9 @@
     <Filter Include="Resource">
       <UniqueIdentifier>{01a1c5e2-9b11-4e4b-aece-b6f0aaef4b25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="API\NativeAPI">
+      <UniqueIdentifier>{8e85a302-7b11-499d-889a-260a27310158}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API\APIHelp.cpp">
@@ -179,6 +182,18 @@
     <ClCompile Include="Main\NodeJsHelper.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="API\NativeAPI.cpp">
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="API\NativePointer.cpp">
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="API\NativePatch.cpp">
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="API\NativeStdString.cpp">
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -334,6 +349,12 @@
     <ClInclude Include="Main\NodeJsHelper.h">
       <Filter>Main</Filter>
     </ClInclude>
+    <ClInclude Include="API\NativeApi.h">
+      <Filter>API\NativeAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="API\NativeStdString.h">
+      <Filter>API\NativeAPI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\LiteLoader\Lib\third-party\openssl\libcrypto.lib">
@@ -385,6 +406,9 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="third-party\NodeJs\lib\libnode.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\LiteLoader\Lib\Demangler.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

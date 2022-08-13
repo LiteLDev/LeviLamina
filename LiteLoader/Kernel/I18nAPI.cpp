@@ -4,7 +4,11 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-std::string I18N::get(const std::string& key, const std::string& langCode) {
+std::vector<std::string> GeneralLanguages{
+    "en", "zh"
+};
+
+std::string I18nBase::get(const std::string& key, const std::string& langCode) {
     auto& langc = (langCode.empty() ? defaultLocaleName : langCode);
     auto langType = langc.substr(0, 2);
     if (langData.count(langc)) { // If there is lang data for the language
@@ -44,15 +48,28 @@ std::string I18N::get(const std::string& key, const std::string& langCode) {
             }
         }
     }
+    // Try finding general languages
+    for (auto& lang : GeneralLanguages) {
+        for (auto& [lc, ld] : langData) {
+            if (lc.length() < 2) {
+                continue;
+            }
+            if (lc.substr(0, 2) == lang) {
+                if (ld.count(key)) {
+                    return ld[key];
+                }
+            }
+        }
+    }
     // Finally, not found, return the key
     return key;
 }
 
-std::string I18N::getDefaultLocaleName() {
+std::string I18nBase::getDefaultLocaleName() {
     return this->defaultLocaleName;
 }
 
-I18N* I18N::clone() {
+I18nBase* I18nBase::clone() {
     if (getType() == Type::SingleFile) {
         return new SingleFileI18N(*(SingleFileI18N*)this);
     } else if (getType() == Type::MultiFile) {
@@ -103,17 +120,17 @@ void SingleFileI18N::save() {
     file.close();
 }
 
-I18N::Type SingleFileI18N::getType() {
+I18nBase::Type SingleFileI18N::getType() {
     return Type::SingleFile;
 }
 
 
 ////////////////////////////////////////// MultiFileI18N //////////////////////////////////////////
 
-I18N::SubLangData NestedHelper(const nlohmann::json& j, const std::string& prefix = "") {
-    I18N::SubLangData data;
+I18nBase::SubLangData NestedHelper(const nlohmann::json& j, const std::string& prefix = "") {
+    I18nBase::SubLangData data;
     if (!j.is_object()) {
-        // throw std::exception("Error when parsing I18N data: The value must be object!");
+        // throw std::exception("Error when parsing I18nBase data: The value must be object!");
         return data; // Empty
     }
     for (auto it = j.begin(); it != j.end(); ++it) {
@@ -185,23 +202,23 @@ void MultiFileI18N::save(bool nested) {
     }
 }
 
-I18N::Type MultiFileI18N::getType() {
+I18nBase::Type MultiFileI18N::getType() {
     return Type::MultiFile;
 }
 
 
 namespace Translation {
 
-I18N* loadImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
-               const I18N::LangData& defaultLangData) {
+I18nBase* loadI18nImpl(HMODULE hPlugin, const std::string& path, const std::string& defaultLocaleName,
+               const I18nBase::LangData& defaultLangData) {
     try {
-        I18N* res = nullptr;
+        I18nBase* res = nullptr;
         if (path.ends_with('/') || path.ends_with('\\') || fs::is_directory(path)) { // Directory
             res = new MultiFileI18N(path, defaultLocaleName, defaultLangData);
         } else {
             res = new SingleFileI18N(path, defaultLocaleName, defaultLangData);
         }
-        return &PluginOwnData::setWithoutNewImpl<I18N>(hPlugin, I18N::POD_KEY, res);
+        return &PluginOwnData::setWithoutNewImpl<I18nBase>(hPlugin, I18nBase::POD_KEY, res);
     } catch (const std::exception& e) {
         logger.error("Fail to load translation file <{}> !", path);
         logger.error("- {}", TextEncoding::toUTF8(e.what()));
@@ -209,10 +226,10 @@ I18N* loadImpl(HMODULE hPlugin, const std::string& path, const std::string& defa
     return nullptr;
 }
 
-I18N* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
+I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
     try {
-        auto& i18n = PluginOwnData::getImpl<I18N>(hTarget, I18N::POD_KEY);
-        return &PluginOwnData::setWithoutNewImpl<I18N>(hPlugin, I18N::POD_KEY, i18n.clone());
+        auto& i18n = PluginOwnData::getImpl<I18nBase>(hTarget, I18nBase::POD_KEY);
+        return &PluginOwnData::setWithoutNewImpl<I18nBase>(hPlugin, I18nBase::POD_KEY, i18n.clone());
     } catch (const std::exception& e) {
         logger.error("Fail to load translation from another plugin!", e.what());
         logger.error("- {}", e.what());

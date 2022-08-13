@@ -28,7 +28,6 @@ bool globalDebug = false;
 // 前置声明
 extern void BindAPIs(ScriptEngine* engine);
 
-
 // 预加载依赖库
 void LoadDepends() {
 #ifdef LLSE_BACKEND_NODEJS
@@ -87,6 +86,7 @@ void LoadDebugEngine() {
 
 // 主加载
 void LoadMain_NodeJs();
+
 void LoadMain() {
 #ifdef LLSE_BACKEND_NODEJS
     LoadMain_NodeJs(); // Process NodeJs backend's plugin load separately

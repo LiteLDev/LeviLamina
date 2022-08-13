@@ -2116,27 +2116,34 @@ TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFo
     Packet* packet = *(Packet**)pPacket;
     ServerPlayer* sp = handler->getServerPlayer(*id, 0);
     if (sp) {
+        string data;
+        auto formId = dAccess<int>(packet, 48);
+		
         if (!dAccess<bool>(packet, 81)) {
             if (dAccess<bool>(packet, 72)) {
-                auto formId = dAccess<int>(packet, 48);
                 auto json = dAccess<Json::Value>(packet, 56);
-                string data = json.toStyledString();
-                if (data.back() == '\n')
-                    data.pop_back();
-
-                IF_LISTENED(FormResponsePacketEvent) {
-                    FormResponsePacketEvent ev{};
-                    ev.mServerPlayer = sp;
-                    ev.mFormId = formId;
-                    ev.mJsonData = data;
-
-                    if (!ev.call())
-                        return;
-                }
-                IF_LISTENED_END(FormResponsePacketEvent)
-                HandleFormPacket(sp, formId, data);
+                data = json.toStyledString();
             }
         }
+		
+        if (data.empty()) {
+            data = "null";
+        }
+		
+        if (data.back() == '\n')
+            data.pop_back();
+
+        IF_LISTENED(FormResponsePacketEvent) {
+            FormResponsePacketEvent ev{};
+            ev.mServerPlayer = sp;
+            ev.mFormId = formId;
+            ev.mJsonData = data;
+
+            if (!ev.call())
+                return;
+        }
+        IF_LISTENED_END(FormResponsePacketEvent)
+        HandleFormPacket(sp, formId, data);
     }
     original(this, id, handler, pPacket);
 }

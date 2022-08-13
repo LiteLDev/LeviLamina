@@ -9,7 +9,7 @@
     <meta name="description" content="Documents of LiteLoaderBDS">
     <meta name="keywords" content="LiteLoaderBDS,Bedrock Dedicated Server,BDS,BDS plugin,Minecraft,LiteLoader,Bedrock">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" id="theme-css">
     <link rel="stylesheet" href="//unpkg.com/docsify-sidebar-collapse/dist/sidebar.min.css" />
     <link rel="stylesheet" href="//unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
 </head>
@@ -27,6 +27,7 @@
             mergeNavbar: true,
             auto2top: true,
             coverpage: true,
+            themeColor: "#42b983",
             name: 'LiteLoaderBDS',
             toc: {
                 tocMaxLevel: 5,
@@ -38,12 +39,12 @@
                 paths: 'auto',
                 placeholder: {
                     '/zh_CN/': '搜索',
-                    '/en/': 'Type to search',
+                    '/en_US/': 'Type to search',
                     '/': 'Type to search'
                 },
                 noData: {
                     '/zh_CN/': '找不到结果',
-                    '/en/': 'No Results',
+                    '/en_US/': 'No Results',
                     '/': 'No Results'
                 },
                 depth: 2,
@@ -52,12 +53,12 @@
             copyCode: {
                 buttonText: {
                     '/zh_CN/': '点击复制',
-                    '/en/': 'Copy to clipboard',
+                    '/en_US/': 'Copy to clipboard',
                     '/': 'Copy to clipboard'
                 },
                 errorText: {
                     '/zh_CN/': '错误',
-                    '/en/': 'Error',
+                    '/en_US/': 'Error',
                     '/': 'Error'
                 },
                 successText: {
@@ -83,32 +84,40 @@
                 note: {
                     label: {
                         '/de_DE/': 'Hinweis',
-                        '/en/': 'Note',
+                        '/en_US/': 'Note',
                         '/zh_CN/': '信息'
                     }
                 },
                 tip: {
                     label: {
                         '/de_DE/': 'Tipp',
-                        '/en/': 'Tip',
+                        '/en_US/': 'Tip',
                         '/zh_CN/': '提示'
                     }
                 },
                 warning: {
                     label: {
                         '/de_DE/': 'Warnung',
-                        '/en/': 'Warning',
+                        '/en_US/': 'Warning',
                         '/zh_CN/': '警告'
                     }
                 },
                 attention: {
                     label: {
                         '/de_DE/': 'Achtung',
-                        '/en/': 'Attention',
+                        '/en_US/': 'Attention',
                         '/zh_CN/': '注意'
                     }
                 }
-            }
+            },
+            plugins: [
+                // dark mode
+                function(hook) {
+                    hook.doneEach(function() {
+                        window.updateCustomCSS();
+                    });
+                }
+            ]
         }
     </script>
     <!-- Docsify v4 -->
@@ -126,6 +135,65 @@
     <script src="js/pangu.min.js"></script>
     <script src="//unpkg.com/docsify-progress"></script>
     <script src="//unpkg.com/docsify-plugin-flexible-alerts"></script>
+
+    <!-- custom dark mode --->
+    <script type="text/javascript">
+        function updateCustomCSS() {
+            var darkModeBtn = document.getElementById("dark-mode-btn");
+            var tocNav = document.getElementsByClassName("toc-nav")[0];
+            var tableBars = document.querySelectorAll('.markdown-section tr:nth-child(2n)');
+            
+            // set darkModeBtn color
+            darkModeBtn.style.backgroundColor = window.isDocsifyDarkMode ? "#3f3f3f" : "white";
+
+            // set toc bar color
+            tocNav.style.backgroundColor = window.isDocsifyDarkMode ? "#3f3f3f" : "white";
+            tocNav.style.setProperty('--sidebar-nav-link-color', window.isDocsifyDarkMode ? "white" : "black");
+
+            // fix table bar color
+            for(var i=0; i<tableBars.length; ++i)
+                tableBars[i].style.backgroundColor = window.isDocsifyDarkMode ? "#363636" : "#f8f8f8";
+        }
+        window.updateCustomCSS = updateCustomCSS;
+        function changeDarkMode(){
+            var themeCss = document.getElementById("theme-css");
+            var darkBtn = document.getElementById("dark-mode-btn");
+            if(!window.isDocsifyDarkMode)
+            {
+                window.isDocsifyDarkMode = true;
+                themeCss.setAttribute("href","//unpkg.com/docsify@4.12.2/lib/themes/dark.css");
+                updateCustomCSS()
+            }
+            else
+            {
+                window.isDocsifyDarkMode = false;
+                themeCss.setAttribute("href","//unpkg.com/docsify@4.12.2/lib/themes/vue.css");
+                updateCustomCSS()
+            }
+        }
+    </script>
+
+    <style>
+        #dark-mode-btn {
+            background: transparent; 
+            border: 2px solid #201d1d;
+            border-radius: 6px; 
+            border: none;
+            text-align: center;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        #dark-mode-btn {
+            border: 2px solid #18191a;
+        }
+        #dark-mode-btn:hover {
+            background-color: #54585a;
+            color: white;
+        }
+    </style>
 </body>
 
 </html>

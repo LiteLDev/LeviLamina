@@ -19,7 +19,7 @@ std::vector<std::string> exec_args;
 
 std::unique_ptr<node::MultiIsolatePlatform> platform = nullptr;
 std::unordered_map<script::ScriptEngine*, node::Environment*> environments;
-std::unordered_map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>> setups;
+std::unordered_map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>>* setups = new std::unordered_map<script::ScriptEngine*, std::unique_ptr<node::CommonEnvironmentSetup>>();
 std::unordered_map<node::Environment*, bool> isRunning;
 std::unordered_map<node::Environment*, ScheduleTask> uvLoopTask;
 
@@ -79,7 +79,7 @@ script::ScriptEngine* newEngine() {
     
     logger.debug("Initialize ScriptEngine for node.js [{}]", (void*)engine);
     environments[engine] = env;
-    setups[engine] = std::move(setup);
+    (*setups)[engine] = std::move(setup);
     isRunning[env] = true;
 
     node::AddEnvironmentCleanupHook(
@@ -87,6 +87,7 @@ script::ScriptEngine* newEngine() {
         [](void* arg) {
             static_cast<script::ScriptEngine*>(arg)->destroy();
             logger.debug("Destory ScriptEngine for node.js [{}]", arg);
+            logger.debug("Destroy EnvironmentCleanupHook");
         },
         engine);
     return engine;
@@ -105,8 +106,9 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
     pluginDirPath = ReplaceStr(pluginDirPath, "\\", "/");
 
     // Find setup
-    auto it = setups.find(engine);
-    if (it == setups.end()) return false;
+    auto it = setups->find(engine);
+    if (it == setups->end())
+        return false;
 
     auto isolate = it->second->isolate();
     auto env = it->second->env();
@@ -123,6 +125,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
             + "(function (exports, require, module, __filename, __dirname) { "
             + *mainScripts + "\n})({}, __LLSE_PublicRequire, __LLSE_PublicModule, '"
             + entryScriptPath + "', '" + pluginDirPath + "'); ";        // TODO __filename & __dirname need to be reviewed
+        //TODO: ESM Support
 
         // Set exit handler
         node::SetProcessExitHandler(env, [](node::Environment* env_, int exit_code){
@@ -131,21 +134,24 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
 
         // Load code
         MaybeLocal<v8::Value> loadenv_ret = node::LoadEnvironment(env, executeJs.c_str());
-        if (loadenv_ret.IsEmpty())  // There has been a JS exception.
+        if (loadenv_ret.IsEmpty()) // There has been a JS exception.
         {
             node::Stop(env);
+            uv_stop(it->second->event_loop());
             return false;
         }
 
         // Start libuv event loop
-        uvLoopTask[env] = Schedule::repeat([engine, env, isRunningMap{ &isRunning }, eventLoop{it->second->event_loop()}]()
-        {
-            if (!LL::isServerStopping() && (*isRunningMap)[env])
-            {
+        uvLoopTask[env] = Schedule::repeat([engine, env, isRunningMap{&isRunning}, eventLoop{it->second->event_loop()}]() {
+            if (!LL::isServerStopping() && (*isRunningMap)[env]) {
                 EngineScope enter(engine);
                 uv_run(eventLoop, UV_RUN_NOWAIT);
             }
-        }, 2);
+            if (LL::isServerStopping()) {
+                uv_stop(eventLoop);
+                logger.debug("Destroy ServerStopping");
+            }
+        },2);
         
         return true;
     }
@@ -162,8 +168,9 @@ node::Environment* getEnvironmentOf(script::ScriptEngine* engine) {
 }
 
 v8::Isolate* getIsolateOf(script::ScriptEngine* engine) {
-    auto it = setups.find(engine);
-    if (it == setups.end()) return nullptr;
+    auto it = setups->find(engine);
+    if (it == setups->end())
+        return nullptr;
     return it->second->isolate();
 }
 
@@ -234,9 +241,11 @@ bool deployPluginPack(const std::string& filePath) {
         //    filesystem::remove_all(dest, ec);
         std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest, 
             filesystem::copy_options::overwrite_existing | filesystem::copy_options::recursive, ec);
+
+        // delete installed plugin pack
+        std::filesystem::remove(filePath, ec);
     }
     std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR, ec);
-    std::filesystem::remove(filePath, ec);
     return true;
 }
 

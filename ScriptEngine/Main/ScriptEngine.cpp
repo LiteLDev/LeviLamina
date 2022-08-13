@@ -23,15 +23,16 @@
 #include <EconomicSystem.h>
 using namespace std;
 
-//配置文件
+// Global vars
 fifo_json globalConfig;
-
 ::Logger logger("LiteLoader");
+
 
 extern void LoadDepends();
 extern void LoadMain();
 extern void BindAPIs(ScriptEngine* engine);
 extern void LoadDebugEngine();
+
 
 void LoadConfigFile() {
     try {
@@ -49,49 +50,48 @@ void LoadConfigFile() {
     globalConfig = fifo_json::object();
 }
 
+
 void entry() {
-    //设置全局SEH处理
+    // Enable thread SEH protection
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
-    // Register Myself
+    // Register myself
     LL::registerPlugin(LLSE_LOADER_NAME, LLSE_LOADER_DESCRIPTION, LITELOADER_VERSION,
                        {{"GitHub", "github.com/LiteLDev/LiteLoaderBDS"}});
 
-    // Load Global Config
+    // Load config file
     LoadConfigFile();
 
-    // I18n
+    // Load i18n files
     Translation::loadFromImpl(GetCurrentModule(), LL::getLoaderHandle());
 
-    //初始化全局数据
+    // Init global share data
     InitLocalShareData();
     InitGlobalShareData();
     InitSafeGuardRecord();
 
-    //欢迎
+    // Welcome
     if (localShareData->isFirstInstance) {
         logger.info("ScriptEngine initializing...");
     }
 
-    //初始化经济系统
+    // Init builtin economy system
     if (LL::globalConfig.enableEconomyCore) {
         EconomySystem::init();
     }
 
-    //预加载库
+    // Pre-load depending libs
     LoadDepends();
 
-    //加载插件
+    // Load plugins
     LoadMain();
 
-    //注册后台调试
+    // Register real-time debug
     LoadDebugEngine();
 
-    //初始化事件监听
+    // Register basic event listeners
     InitBasicEventListeners();
 
-    #ifndef LLSE_BACKEND_NODEJS
-    //初始化消息队列
+    // Init message system
     InitMessageSystem();
-    #endif
 }

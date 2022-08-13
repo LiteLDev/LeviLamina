@@ -1,6 +1,6 @@
-# LLSE - LLSE插件开发概述
+# ⛳ LLSE - 插件开发概述
 
-## ⛳  放在前面
+##  🔔 放在前面
 
 `LiteLoader ScriptEngine`（以下简称**LLSE**）是一个基岩版官方服务端 `Bedrock Dedicated Server`（以下简称**BDS**）的插件框架，提供强大的跨语言脚本插件支持能力和稳定的开发API支持。  
 
