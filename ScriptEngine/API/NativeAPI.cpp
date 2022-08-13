@@ -30,7 +30,6 @@ ClassDefine<void> NativeClassBuilder =
         .function("getSymbol", &NativeClass::getSymbol)
         .function("searchAddress", &NativeClass::searchAddress)
         .function("patch", &NativeClass::patch)
-        .function("DAccess", &NativeClass::DAccess)
         .build();
 
 
@@ -564,7 +563,7 @@ Local<Value> NativeClass::getSymbol(const Arguments& args) {
     CATCH("Fail in GetSymbol!")
 }
 
-#include <Utils/ModUtils.h>
+#include <third-party/ModUtils/ModUtils.h>
 #include <Utils/TypeConversionHelper.hpp>
 
 Local<Value> NativeClass::searchAddress(const Arguments& args) {
@@ -580,7 +579,7 @@ Local<Value> NativeClass::searchAddress(const Arguments& args) {
 
 Local<Value> NativeClass::patch(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 3);
-    // CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[0], ValueKind::kObject);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
     CHECK_ARG_TYPE(args[2], ValueKind::kString);
     // uintptr_t address = TCHelper::string_tohex(args[0].asString().toString());
@@ -591,27 +590,15 @@ Local<Value> NativeClass::patch(const Arguments& args) {
     return Boolean::newBoolean(rtn);
 }
 
-Local<Value> NativeClass::DAccess(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 2);
-    // CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-    auto address = (uintptr_t)NativePointer::extract(args[0]);
-    INT64 size = args[1].asNumber().toInt64();
-    std::vector<uint8_t> buffer(size + 1);
-    ModUtils::MemCopy((uintptr_t)&buffer[0], address, buffer.size());
-    uint8_t em = buffer[size];
-    vector<Local<Value>> rtn = {NativePointer::newNativePointer((void*)(address + size)), Number::newNumber(em)};
-    return Array::newArray(rtn);
-}
-
-
 //////////////////// NativePointer ////////////////////
 ClassDefine<NativePointer>
     NativePointerBuilder =
         defineClass<NativePointer>("NativePointer")
             .constructor(nullptr)
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
+            .instanceFunction("getRawPtrAsHex", &NativePointer::getRawPtrAsHex)
             .instanceFunction("offset", &NativePointer::offset)
+            .instanceProperty("memByte", &NativePointer::getMemByte, &NativePointer::setMenByte)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
             .instanceProperty("uint8", &NativePointer::getUchar, &NativePointer::setUchar)
             .instanceProperty("int16", &NativePointer::getShort, &NativePointer::setShort)
@@ -656,6 +643,16 @@ Local<Value> NativePointer::getRawPtr(const Arguments& args) {
     CATCH("Fail in getRawPtr!")
 }
 
+Local<Value> NativePointer::getRawPtrAsHex(const Arguments& args) {
+	try {
+		void* pkt = unwrap();
+		if (!pkt)
+			return Local<Value>();
+		return String::newString(TCHelper::uto_string((uintptr_t)pkt));
+	}
+	CATCH("Fail in getRawPtrAsHex!")
+}
+
 Local<Value> NativePointer::offset(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -668,6 +665,14 @@ Local<Value> NativePointer::offset(const Arguments& args) {
     CATCH("Fail in offset!")
 }
 
+void NativePointer::setMenByte(const Local<Value>& value) {
+    try {
+        ModUtils::MemSet((uintptr_t)get(), (unsigned char)stoul(value.asString().toString(), nullptr, 16), 1);
+    } catch (...) {
+        logger.error("Fail to set mem!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
+}
 
 void NativePointer::setChar(const Local<Value>& value) {
     try {
@@ -784,6 +789,20 @@ void NativePointer::setBool(const Local<Value>& value) {
     }
 }
 
+Local<Value> NativePointer::getMemByte() {
+	try {
+		auto ptr = get();
+		if (!ptr)
+			return Local<Value>();
+        std::vector<uint8_t> buffer(1);
+        ModUtils::MemCopy((uintptr_t)&buffer[0], (uintptr_t)ptr, buffer.size());
+        uint8_t em = buffer[0];
+        stringstream ss;
+        ss << hex << int(em);
+		return String::newString(ss.str());
+	}
+	CATCH("Fail in getMemByte!")
+}
 
 Local<Value> NativePointer::getChar() {
     try {
