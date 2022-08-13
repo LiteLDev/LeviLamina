@@ -147,7 +147,7 @@ public:
 
     static Local<Value> freeMem(const Arguments& args);
 
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> asRawAddress(const Arguments& args);
 
     Local<Value> asHexStr(const Arguments& args);
 
