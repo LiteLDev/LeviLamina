@@ -10,6 +10,7 @@ ClassDefine<NativePointer>
             .function("malloc",&NativePointer::mallocMem)
             .function("free", &NativePointer::freeMem)
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
+            .instanceFunction("getRawPtrAsHex", &NativePointer::getRawPtrAsHex)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
             .instanceProperty("uint8", &NativePointer::getUchar, &NativePointer::setUchar)
@@ -87,6 +88,18 @@ Local<Value> NativePointer::getRawPtr(const Arguments& args) {
         return Number::newNumber((intptr_t)pkt);
     }
     CATCH("Fail in getRawPtr!")
+}
+
+Local<Value> NativePointer::getRawPtrAsHex(const Arguments& args) {
+    try {
+        void* pkt = unwrap();
+        if (!pkt)
+            return Local<Value>();
+		std::stringstream ss;
+		ss << std::hex << (intptr_t)pkt;
+		return String::newString(ss.str());
+    }
+    CATCH("Fail in getRawPtrAsHex!")
 }
 
 Local<Value> NativePointer::offset(const Arguments& args) {
