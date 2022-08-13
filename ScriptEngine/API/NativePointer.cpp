@@ -11,7 +11,7 @@ ClassDefine<NativePointer>
             .function("malloc",&NativePointer::mallocMem)
             .function("free", &NativePointer::freeMem)
             .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
-            .instanceFunction("getRawPtrAsHex", &NativePointer::asHexStr)
+            .instanceFunction("asHexStr", &NativePointer::asHexStr)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("memByte", &NativePointer::getMemByte, &NativePointer::setMemByte)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
