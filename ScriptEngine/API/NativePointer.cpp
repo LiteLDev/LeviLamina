@@ -10,7 +10,7 @@ ClassDefine<NativePointer>
             .function("fromSymbol", &NativePointer::fromSymbol)
             .function("malloc",&NativePointer::mallocMem)
             .function("free", &NativePointer::freeMem)
-            .instanceFunction("getRawPtr", &NativePointer::getRawPtr)
+            .instanceFunction("asRawAddress", &NativePointer::asRawAddress)
             .instanceFunction("asHexStr", &NativePointer::asHexStr)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("byte", &NativePointer::getMemByte, &NativePointer::setMemByte)
@@ -78,7 +78,7 @@ void* NativePointer::extract(Local<Value> v) {
         return nullptr;
 }
 
-Local<Value> NativePointer::getRawPtr(const Arguments& args) {
+Local<Value> NativePointer::asRawAddress(const Arguments& args) {
     try {
         void* pkt = unwrap();
         if (!pkt)
