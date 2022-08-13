@@ -149,7 +149,7 @@ public:
 
     Local<Value> asRawAddress(const Arguments& args);
 
-    Local<Value> asHexStr(const Arguments& args);
+    Local<Value> asHexAddress(const Arguments& args);
 
     Local<Value> offset(const Arguments& args);
 
