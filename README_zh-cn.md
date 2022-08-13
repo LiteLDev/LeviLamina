@@ -271,6 +271,7 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 | [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause license                                   |
 | [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 license                                   |
 | [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                   |
+| [EldenRingMods](https://github.com/techiew/EldenRingMods)               | MIT license                                   |
 
 ### 额外限制和例外
 

@@ -283,6 +283,7 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to ðŸ‘
 | [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause license                                   |
 | [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 license                                   |
 | [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                   |
+| [EldenRingMods](https://github.com/techiew/EldenRingMods)               | MIT license                                   |
 
 ### Extra Restrictions & Exceptions
 
