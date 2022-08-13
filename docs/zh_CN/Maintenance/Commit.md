@@ -1,4 +1,4 @@
-# Git使用以及Commit规范
+# 🔮 Git使用以及项目Commit规范
 
 ## Git版本管理控制使用原则
 
