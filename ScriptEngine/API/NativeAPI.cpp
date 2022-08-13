@@ -322,6 +322,27 @@ Local<Value> ScriptNativeFunction::fromDescribe(const Arguments& args) {
     return scriptResult;
 }
 
+Local<Value> ScriptNativeFunction::fromScript(const Arguments& args) {
+    CHECK_ARG_TYPE(args[args.size() - 1], ValueKind::kFunction);
+    auto scriptResult = args.engine()->newNativeClass<DynamicHookData>(args.thiz());
+    DynamicHookData* nativeScriptFunction = args.engine()->getNativeInstance<DynamicHookData>(scriptResult);
+
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    size_t argsSize = args.size();
+    nativeScriptFunction->mReturnVal = magic_enum::enum_cast<NativeFunction::Types>(args[0].toInt()).value_or(NativeFunction::Types::Void);
+    for (size_t i = 1; i < argsSize - 1; i++) {
+        CHECK_ARG_TYPE(args[i], ValueKind::kNumber);
+        nativeScriptFunction->mParams.push_back(magic_enum::enum_cast<NativeFunction::Types>(args[i].toInt()).value_or(NativeFunction::Types::Void));
+    }
+
+    nativeScriptFunction->mEngine = args.engine();
+    nativeScriptFunction->mNativeCallack = dcbNewCallback(nativeScriptFunction->buildDynCallbackSig().c_str(), &nativeCallbackHandler, nativeScriptFunction);
+    nativeScriptFunction->mFunction = nativeScriptFunction->mNativeCallack;
+    nativeScriptFunction->mScriptCallback = args[args.size() - 1].asFunction();
+
+    return scriptResult;
+}
+
 Local<Value> NativeFunction::getCallableFunction() {
     return Function::newFunction([this](const Arguments& args) -> Local<Value> {
         if (args.size() < mParams.size()) {
@@ -332,7 +353,7 @@ Local<Value> NativeFunction::getCallableFunction() {
         return callNativeFunction(ENGINE_OWN_DATA()->dynamicCallVM, this, args);
     });
 }
-char NativeFunction::hookCallbackHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata) {
+char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata) {
     DynamicHookData* hookInfo = (DynamicHookData*)userdata;
 
     EngineScope enter(hookInfo->mEngine);
@@ -481,7 +502,7 @@ Local<Value> ScriptNativeFunction::hook(const Arguments& args) {
     DynamicHookData* hookSymbol = args.engine()->getNativeInstance<DynamicHookData>(scriptResult);
     hookSymbol->cloneFrom(NativeFunction(*args.engine()->getNativeInstance<ScriptNativeFunction>(args.thiz())));
     hookSymbol->mEngine = args.engine();
-    hookSymbol->mNativeCallack = dcbNewCallback(hookSymbol->buildDynCallbackSig().c_str(), &hookCallbackHandler, hookSymbol);
+    hookSymbol->mNativeCallack = dcbNewCallback(hookSymbol->buildDynCallbackSig().c_str(), &nativeCallbackHandler, hookSymbol);
     hookSymbol->mScriptCallback = args[0].asFunction();
     void* hookOriginl = nullptr;
     int hookResult = HookFunction(hookSymbol->mFunction, &hookOriginl, hookSymbol->mNativeCallack);
@@ -514,6 +535,7 @@ ClassDefine<ScriptNativeFunction> NativeCallBuilder =
         .constructor()
         .function("fromSymbol", &ScriptNativeFunction::fromSymbol)
         .function("fromDescribe", &ScriptNativeFunction::fromDescribe)
+        .function("fromScript", &ScriptNativeFunction::fromScript)
         .instanceFunction("hook", &ScriptNativeFunction::hook)
         .instanceProperty("call", &ScriptNativeFunction::getCallableFunction)
         .instanceProperty("address", &ScriptNativeFunction::getAddress, &ScriptNativeFunction::setAddress)
@@ -523,4 +545,5 @@ ClassDefine<DynamicHookData> NativeHookBuilder =
     defineClass<DynamicHookData>("NativeHook")
         .constructor()
         .instanceProperty("call", &ScriptNativeFunction::getCallableFunction)
+        .instanceProperty("address", &ScriptNativeFunction::getAddress, &ScriptNativeFunction::setAddress)
         .build();

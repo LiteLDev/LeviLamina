@@ -32,13 +32,13 @@ public:
     static Local<Value> getType() {
         return Number::newNumber((int)T);
     }
-    //Data Members
+    // Data Members
     NativeFunction::Types mReturnVal = NativeFunction::Types::Void;
     vector<NativeFunction::Types> mParams = {};
     std::string mSymbol = "unknown";
     void* mFunction = nullptr;
 
-    //Dyncall Helper
+    // Dyncall Helper
 
     /* get dynamic call signature char for Type*/
     static char getTypeSignature(NativeFunction::Types type);
@@ -47,15 +47,15 @@ public:
     /* get dynamic call signature string for this function*/
     std::string buildDynCallbackSig();
 
-    //Script Helper
+    // Script Helper
     /* get a script::Function instance for scripts to call*/
     Local<Value> getCallableFunction();
     /* call NativeFunction by using DynamicCallVM, internel api*/
     static Local<Value> callNativeFunction(DCCallVM* vm, NativeFunction* funcSymbol, const Arguments& args);
     /* shared Hook Callback function that wrap script callback*/
-    static char hookCallbackHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
+    static char nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue* result, void* userdata);
 
-    //Cache Helper
+    // Cache Helper
     static Concurrency::concurrent_unordered_map<std::string, NativeFunction> parsedSymbol;
     static NativeFunction getOrParse(const std::string& symbol);
 
@@ -68,23 +68,13 @@ public:
     }
 };
 
-class DynamicHookData : public NativeFunction, public ScriptClass {
-public:
-    script::ScriptEngine* mEngine = nullptr;
-    DCCallback* mNativeCallack = nullptr;
-    script::Global<Function> mScriptCallback;
-    explicit DynamicHookData(const Local<Object>& scriptObj)
-    : ScriptClass(scriptObj) {
-    }
-    explicit DynamicHookData(const Local<Object>& scriptObj, const NativeFunction& symbol)
-    : NativeFunction(symbol), ScriptClass(scriptObj) {
-    }
-};
-
 class ScriptNativeFunction : public NativeFunction, public ScriptClass {
 public:
     explicit ScriptNativeFunction(const Local<Object>& scriptObj)
     : ScriptClass(scriptObj) {
+    }
+    explicit ScriptNativeFunction(const Local<Object>& scriptObj, const NativeFunction& symbol)
+    : NativeFunction(symbol), ScriptClass(scriptObj) {
     }
 
     /* create NativeFunction instance from mangled symbol
@@ -95,9 +85,14 @@ public:
 
     /* create NativeFunction by describe the arguments
      * you should set address manually before you call or hook it
-     * > NativeFunction.fromDescribe(RetuenValue: NativeTypes.Void, Params [NativeType.Int......])
+     * > NativeFunction.fromDescribe(RetuenValue: NativeTypes.Void, Params: [NativeType.Int......])
      */
     static Local<Value> fromDescribe(const Arguments& args);
+
+    /* create NativeFunction that wrap Script Function by describe the arguments
+     * > NativeFunction.fromScript(RetuenValue: NativeTypes.Void, Params: [NativeType.Int......], Callback: func(Params...){})
+     */
+    static Local<Value> fromScript(const Arguments& args);
     Local<Value> setAddress(const Local<Value>& value);
     Local<Value> getAddress();
 
@@ -105,6 +100,19 @@ public:
      * > NativeFunction.hook(CallBack: func(a1,a2,a3...){})
      */
     Local<Value> hook(const Arguments& args);
+};
+
+class DynamicHookData : public ScriptNativeFunction {
+public:
+    script::ScriptEngine* mEngine = nullptr;
+    DCCallback* mNativeCallack = nullptr;
+    script::Global<Function> mScriptCallback;
+    explicit DynamicHookData(const Local<Object>& scriptObj)
+    : ScriptNativeFunction(scriptObj) {
+    }
+    explicit DynamicHookData(const Local<Object>& scriptObj, const NativeFunction& symbol)
+    : ScriptNativeFunction(scriptObj, symbol) {
+    }
 };
 
 class NativePointer : public ScriptClass {
@@ -142,8 +150,8 @@ public:
 
     Local<Value> getRawPtr(const Arguments& args);
 
-	Local<Value> asHexStr(const Arguments& args);
-		
+    Local<Value> asHexStr(const Arguments& args);
+
     Local<Value> offset(const Arguments& args);
 
     void setMemByte(const Local<Value>& value);
@@ -162,7 +170,7 @@ public:
     void setString(const Local<Value>& value);
     void setBool(const Local<Value>& value);
 
-	Local<Value> getMemByte();
+    Local<Value> getMemByte();
     Local<Value> getChar();
     Local<Value> getUchar();
     Local<Value> getShort();
