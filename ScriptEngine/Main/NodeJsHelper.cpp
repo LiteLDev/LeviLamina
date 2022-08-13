@@ -123,6 +123,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
             + "(function (exports, require, module, __filename, __dirname) { "
             + *mainScripts + "\n})({}, __LLSE_PublicRequire, __LLSE_PublicModule, '"
             + entryScriptPath + "', '" + pluginDirPath + "'); ";        // TODO __filename & __dirname need to be reviewed
+        //TODO: ESM Support
 
         // Set exit handler
         node::SetProcessExitHandler(env, [](node::Environment* env_, int exit_code){
@@ -236,9 +237,11 @@ bool deployPluginPack(const std::string& filePath) {
         //    filesystem::remove_all(dest, ec);
         std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest, 
             filesystem::copy_options::overwrite_existing | filesystem::copy_options::recursive, ec);
+
+        // delete installed plugin pack
+        std::filesystem::remove(filePath, ec);
     }
     std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR, ec);
-    std::filesystem::remove(filePath, ec);
     return true;
 }
 

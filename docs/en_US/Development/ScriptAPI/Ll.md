@@ -45,7 +45,7 @@ Some interfaces related to loader operations are provided here.
 - Return value type:  `Boolean`
 
 If the detection finds that the currently installed version of LLSE is lower than the value passed in, it will return `false`. 
-You can choose to judge based on the results and report an error to remind users to upgrade their LiteLoader (LLSE) version.
+You can choose to judge based on the results and report an error to remind users to upgrade their LiteLoaderBDS version.
 <br>
 
 ### List all loaded plugins
@@ -60,24 +60,6 @@ You can choose to judge based on the results and report an error to remind users
 ### Remote Function Call
 
 In order to allow the pre-plug-ins developed by developers to provide interfaces and services for other plug-ins, the remote function call function is provided here, so that one LLSE plug-in can call the existing functions in another plug-in. 
-
-#### Export Function 
-
-First, in order for the functions in your plug-in to be located by other plug-ins, you first export some functions in your plug-in, so that others can find your interface by name. Use this function to export the functions you want to share:
-
-`ll.export(func,name)`
-
-- Parameter: 
-  - func : `Function`  
-    Function to be exported
-  - name : `String`  
-    The export name of the function. Other plugins call this function based on the export name.
-- Return value: Whether the export was successful.
-- Return value type:  `Boolean`
-
-Note: If there is a name conflict when exporting, the export will fail. You may need to add some unique prefix or suffix to the export name to avoid possible conflicts with other plugins.
-
-<br>
 
 #### Export Function
 
@@ -95,26 +77,7 @@ In order to allow the pre-plug-ins developed by developers to provide interfaces
 - Return value: Whether the export was successful.
 - Return value type:  `Boolean`
 
-Note: If you export a function with an existing namespace and name, the export will fail. This API is currently only available under `debugMode`.  
-
-<br>
-
-#### Import Function
-
-After you have learned that there is a plug-in exporting function, in order to use the function exported by him, you first need to import this function into your own scripting system.
-LLSE provides the interface import to import functions already exported by other plugins. 
-
-`ll.import(name)`
-
-- Parameter: 
-  - name : `String`  
-    The export name used by the function to be imported.
-- Return value: the imported function
-- Return value type:  `Function`
-
-`ll.import` will import the target function directly into your scripting environment. Therefore, you can call an imported function as if you were using an existing function. The process of calling across plugins will be done automatically in the background, you don't need to worry about any of this.
-
-Note: In the process of remote invocation, you cannot pass custom data objects such as player objects in the parameters. You can use player Xuid info etc as an alternative.
+Note: If the namespace and name of the exported function are exactly the same as another already exported function, the export will fail. Please select the namespace and export name appropriately when exporting.
 
 <br>
 
@@ -133,23 +96,34 @@ LLSE provides the interface import to import functions already exported by other
 - Return value: The imported function
 - Return value type:  `Function`
 
-`ll.import` will import the target function directly into your scripting environment. Therefore, you can call an imported function as if you were using an existing function. The process of calling across plugins will be done automatically in the background, you don't need to worry about any of this.
-
-Note: In the process of remote invocation, you cannot pass custom data objects such as player objects in the parameters. You can use player Xuid info etc as an alternative Note: this API is only available in `debugMode`.
+The return value of `ll.import` is a function. When you call this function, the cross-plugin call process will be done automatically in the background. The parameters of the calling function will be wrapped and passed to the remote function, and the return value of this function is the return value returned by the remote function after it has been executed.
 
 <br>
 
 #### Example of Remote Calling Function 
 
-For example, there is a plugin that exports a function, and the export name of the function is AAA_Welcome
-when you use `welcome = ll.import("AAA_Welcome"); ` After the import is complete, you can execute directly below:
+For example, there is a plug-in that exports a function using the namespace AAA, and the name of the exported function is Welcome
+You can execute `welcome = ll.import("AAA", "Welcome"); ` to import this function. After the import is complete, you can execute directly below:
 
 `welcome("hello",2,true);`   
 
-As if the function already existed. 
 The parameters of the function will be automatically forwarded to the corresponding target function for execution, and the return value of the corresponding target function will be returned after execution. The whole process is automatically completed. 
 
 Notice! When calling a function, you need to ensure that the number and types of parameters you pass in and the parameters accepted by the target function are correct and in one-to-one correspondence. Otherwise, an error will occur. 
+
+<br>
+
+### Determine if a remote function has been exported
+
+`ll.hasExported(namespace,name)`
+
+- Parameter：
+  - namespace : `String`  
+    Namespace name used by the function
+  - name : `String`  
+    Export name used by the function
+- Return value：Whether the function has been exported
+- Return value type： `Boolean`
 
 <br>
 

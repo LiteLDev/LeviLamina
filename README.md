@@ -11,7 +11,7 @@ QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [85051
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2F.vuepress%2Fpublic%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20&%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/main/docs/assets/LL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
@@ -120,7 +120,7 @@ mc.listen("onServerStarted", () => {
 2. Unzip everything into the directory of `bedrock_server.exe`. If you are prompted with conflicting files during the decompression process, just select `Overwrite`.
 3. Ensure that the `bedrock_server.pdb` file exists.
    Run `LLPeEditor.exe` to generate the BDS with the exported symbols (`bedrock_server_mod.exe`)
-4. When the console output `Press any key to continue . . . ` , press any key to close the window
+4. When the console output `Press any key to continue . . .` , press any key to close the window
 5. Execute `bedrock_server_mod.exe` and enjoy it!
 
 ### For Linux
@@ -142,6 +142,7 @@ docker pull shrbox/liteloaderbds
 mkdir <install directory>
 docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
+
 `<install directory>` is directory to store data, for example: `/home/shrbox/bedrock-server`  
 The first boot takes a little while to download the Bedrock Dedicated Server and LiteLoaderBDS  
 Start server: `docker container start llbds -a`<br>

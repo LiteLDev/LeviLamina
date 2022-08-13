@@ -51,8 +51,10 @@ add_library(sqlitecpp STATIC IMPORTED)
 set_property(TARGET sqlitecpp PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib")
 add_library(sqlite3 STATIC IMPORTED)
 set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/sqlite3.lib")
+add_library(mysql STATIC IMPORTED)
+set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
 
-target_link_libraries(LiteLoader sqlitecpp sqlite3
+target_link_libraries(LiteLoader sqlitecpp sqlite3 mysql
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
