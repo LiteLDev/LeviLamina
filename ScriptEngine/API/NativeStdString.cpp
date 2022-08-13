@@ -285,13 +285,9 @@ Local<Value> NativeStdString::compare(const Arguments& args) {
 
 Local<Value> NativeStdString::reserve(const Arguments& args) {
     try {
-        if (args.size() >= 1)
-        {
-            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-            mStr->reserve(args[0].toInt());
-        }
-        else
-            mStr->reserve();
+        CHECK_ARGS_COUNT(args, 1);
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        mStr->reserve(args[0].toInt());
         return Local<Value>();
     }
     CATCH("Fail in reserve!");
