@@ -86,7 +86,7 @@ public:
      * you should set address manually before you call or hook it
      * > NativeFunction.fromDescribe(RetuenValue: NativeTypes.Void, Params: [NativeType.Int......])
      */
-    static Local<Value> fromDescribe(const Arguments& args);
+    static Local<Value> fromDescription(const Arguments& args);
 
     /* create NativeFunction that wrap Script Function by describe the arguments
      * > NativeFunction.fromScript(RetuenValue: NativeTypes.Void, Params: [NativeType.Int......], Callback: func(Params...){})
