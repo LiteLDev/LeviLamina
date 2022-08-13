@@ -11,7 +11,7 @@ ClassDefine<NativePointer>
             .function("malloc",&NativePointer::mallocMem)
             .function("free", &NativePointer::freeMem)
             .instanceFunction("asRawAddress", &NativePointer::asRawAddress)
-            .instanceFunction("asHexStr", &NativePointer::asHexStr)
+            .instanceFunction("asHexAddress", &NativePointer::asHexAddress)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("byte", &NativePointer::getMemByte, &NativePointer::setMemByte)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
@@ -89,7 +89,7 @@ Local<Value> NativePointer::asRawAddress(const Arguments& args) {
 }
 
 
-Local<Value> NativePointer::asHexStr(const Arguments& args) {
+Local<Value> NativePointer::asHexAddress(const Arguments& args) {
     try {
         void* pkt = unwrap();
         if (!pkt)
