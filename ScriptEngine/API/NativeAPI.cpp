@@ -1,4 +1,4 @@
-#include "APIHelp.h"
+﻿#include "APIHelp.h"
 #include "NativeAPI.h"
 #include <dyncall/dyncall_callback.h>
 #include <magic_enum/magic_enum.hpp>
@@ -572,38 +572,35 @@ Local<Value> NativeClass::searchAddress(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
     std::vector<uint16_t> pattern = TCHelper::splitHex(args[0].asString().toString());
     uintptr_t address = ModUtils::SigScan(pattern);
-	if (address == 0) {
-		return Local<Value>();
-	}
-    return String::newString(TCHelper::uto_string(address));
+    if (address == 0) {
+        return Local<Value>();
+    }
+    return NativePointer::newNativePointer((void*)address);
 }
 
 Local<Value> NativeClass::patch(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 3);
-    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    // CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kString);
     CHECK_ARG_TYPE(args[2], ValueKind::kString);
-    uintptr_t address = TCHelper::string_tohex(args[0].asString().toString());
+    // uintptr_t address = TCHelper::string_tohex(args[0].asString().toString());
+    auto address = NativePointer::extract(args[0]);
     vector<uint16_t> oriByte = TCHelper::splitHex(args[1].asString().toString());
     vector<uint8_t> newByte = TCHelper::splitHex8(args[2].asString().toString());
-    bool rtn = ModUtils::Replace(address, oriByte, newByte);
+    bool rtn = ModUtils::Replace((uintptr_t)address, oriByte, newByte);
     return Boolean::newBoolean(rtn);
 }
 
 Local<Value> NativeClass::DAccess(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
-    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    // CHECK_ARG_TYPE(args[0], ValueKind::kString);
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
-    uintptr_t address = TCHelper::string_tohex(args[0].asString().toString()); 
-	INT64 size = args[1].asNumber().toInt64();
-    std::vector<uint8_t> buffer(size+1);
-    ModUtils::MemCopy((uintptr_t)&buffer[0], (uintptr_t)(void*)address, buffer.size());
+    auto address = (uintptr_t)NativePointer::extract(args[0]);
+    INT64 size = args[1].asNumber().toInt64();
+    std::vector<uint8_t> buffer(size + 1);
+    ModUtils::MemCopy((uintptr_t)&buffer[0], address, buffer.size());
     uint8_t em = buffer[size];
-	stringstream ss;
-    ss << hex << int(em);
-	stringstream ss1;
-	ss1 << hex << address+size;
-    vector<Local<Value>> rtn = {String::newString(ss1.str()), String::newString(ss.str())};
+    vector<Local<Value>> rtn = {NativePointer::newNativePointer((void*)(address + size)), Number::newNumber(em)};
     return Array::newArray(rtn);
 }
 
@@ -665,140 +662,126 @@ Local<Value> NativePointer::offset(const Arguments& args) {
     try {
         auto ptr = get();
         if (!ptr)
-			return Local<Value>();
-        return newNativePointer((void*)((uintptr_t)ptr + args[0].asNumber().toInt32()));	
+            return Local<Value>();
+        return newNativePointer((void*)((uintptr_t)ptr + args[0].asNumber().toInt32()));
     }
     CATCH("Fail in offset!")
 }
 
 
-void NativePointer::setChar(const Local<Value>& value) {	
-	try {
-		*(char*)get() = (char)value.asNumber().toInt32();
-	}catch
-		(...) {
-		logger.error("Fail to set char!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+void NativePointer::setChar(const Local<Value>& value) {
+    try {
+        *(char*)get() = (char)value.asNumber().toInt32();
+    } catch (...) {
+        logger.error("Fail to set char!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setUchar(const Local<Value>& value) {
-	try {
-		*(unsigned char*)get() = (unsigned char)value.asNumber().toInt32();
-	}catch
-		(...) {
-		logger.error("Fail to set uchar!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    try {
+        *(unsigned char*)get() = (unsigned char)value.asNumber().toInt32();
+    } catch (...) {
+        logger.error("Fail to set uchar!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setShort(const Local<Value>& value) {
-	try {
-		*(short*)get() = (short)value.asNumber().toInt32();
-	}catch
-		(...) {
-		logger.error("Fail to set short!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    try {
+        *(short*)get() = (short)value.asNumber().toInt32();
+    } catch (...) {
+        logger.error("Fail to set short!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setUshort(const Local<Value>& value) {
-	try {
-		*(unsigned short*)get() = (unsigned short)value.asNumber().toInt32();
-	}catch
-		(...) {
-		logger.error("Fail to set ushort!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    try {
+        *(unsigned short*)get() = (unsigned short)value.asNumber().toInt32();
+    } catch (...) {
+        logger.error("Fail to set ushort!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 
-void NativePointer::setInt(const Local<Value>& value) { 
-	try {
-		*(int*)get() = (int)value.asNumber().toInt32();
-	}catch
-		(...) {
-		logger.error("Fail to set int!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+void NativePointer::setInt(const Local<Value>& value) {
+    try {
+        *(int*)get() = (int)value.asNumber().toInt32();
+    } catch (...) {
+        logger.error("Fail to set int!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 
 void NativePointer::setUint(const Local<Value>& value) {
-	try {
+    try {
         *(unsigned int*)get() = (unsigned int)value.asNumber().toInt64();
-	}catch
-		(...) {
-		logger.error("Fail to set uint!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    } catch (...) {
+        logger.error("Fail to set uint!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setLong(const Local<Value>& value) {
-	try {
+    try {
         *(long*)get() = (long)value.asNumber().toInt64();
-	}catch
-		(...) {
-		logger.error("Fail to set long!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    } catch (...) {
+        logger.error("Fail to set long!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setUlong(const Local<Value>& value) {
-	try {
+    try {
         *(unsigned long*)get() = (unsigned long)value.asNumber().toInt64();
-	}catch
-		(...) {
-		logger.error("Fail to set ulong!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    } catch (...) {
+        logger.error("Fail to set ulong!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setLonglong(const Local<Value>& value) {
-	try {
+    try {
         *(long long*)get() = (long long)value.asNumber().toInt64();
-	}catch
-		(...) {
-		logger.error("Fail to set longlong!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    } catch (...) {
+        logger.error("Fail to set longlong!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setUlonglong(const Local<Value>& value) {
-	try {
-		*(unsigned long long*)get() = (unsigned long long)value.asNumber().toInt64();
-	}catch
-		(...) {
-		logger.error("Fail to set ulonglong!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    try {
+        *(unsigned long long*)get() = (unsigned long long)value.asNumber().toInt64();
+    } catch (...) {
+        logger.error("Fail to set ulonglong!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setFloat(const Local<Value>& value) {
-	try {
-		*(float*)get() = (float)value.asNumber().toFloat();
-	}catch
-		(...) {
-		logger.error("Fail to set float!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    try {
+        *(float*)get() = (float)value.asNumber().toFloat();
+    } catch (...) {
+        logger.error("Fail to set float!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setDouble(const Local<Value>& value) {
-	try {
-		*(double*)get() = (double)value.asNumber().toFloat();
-	}catch
-		(...) {
-		logger.error("Fail to set double!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    try {
+        *(double*)get() = (double)value.asNumber().toFloat();
+    } catch (...) {
+        logger.error("Fail to set double!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setString(const Local<Value>& value) {
-	try {
-		*(string*)get() = value.asString().toString();
-	}catch
-		(...) {
-		logger.error("Fail to set string!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    try {
+        *(string*)get() = value.asString().toString();
+    } catch (...) {
+        logger.error("Fail to set string!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 void NativePointer::setBool(const Local<Value>& value) {
-	try {
+    try {
         *(bool*)get() = value.asBoolean().value();
-	}catch
-		(...) {
-		logger.error("Fail to set bool!");
-		logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-	}
+    } catch (...) {
+        logger.error("Fail to set bool!");
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+    }
 }
 
 
@@ -810,20 +793,20 @@ Local<Value> NativePointer::getChar() {
 }
 Local<Value> NativePointer::getUchar() {
     try {
-		return Number::newNumber(*(unsigned char*)get());
+        return Number::newNumber(*(unsigned char*)get());
     }
     CATCH("Fail in getUchar!")
 }
 
 Local<Value> NativePointer::getShort() {
     try {
-		return Number::newNumber(*(short*)get());
+        return Number::newNumber(*(short*)get());
     }
     CATCH("Fail in getShort!")
 }
 Local<Value> NativePointer::getUshort() {
     try {
-		return Number::newNumber(*(unsigned short*)get());
+        return Number::newNumber(*(unsigned short*)get());
     }
     CATCH("Fail in getUshort!")
 }
@@ -831,7 +814,7 @@ Local<Value> NativePointer::getUshort() {
 
 Local<Value> NativePointer::getInt() {
     try {
-		return Number::newNumber(*(int*)get());
+        return Number::newNumber(*(int*)get());
     }
     CATCH("Fail in getInt!")
 }
@@ -849,45 +832,45 @@ Local<Value> NativePointer::getLong() {
 }
 Local<Value> NativePointer::getUlong() {
     try {
-		return Number::newNumber(*(long long*)get());
+        return Number::newNumber(*(long long*)get());
     }
     CATCH("Fail in getUlong!")
 }
 Local<Value> NativePointer::getLonglong() {
-	
+
     try {
-		return Number::newNumber(*(long long*)get());
+        return Number::newNumber(*(long long*)get());
     }
     CATCH("Fail in getLonglong!")
 }
 Local<Value> NativePointer::getUlonglong() {
     try {
-		return Number::newNumber(*(long long*)get());
+        return Number::newNumber(*(long long*)get());
     }
     CATCH("Fail in getUlonglong!")
 }
 Local<Value> NativePointer::getFloat() {
     try {
-		return Number::newNumber(*(float*)get());
+        return Number::newNumber(*(float*)get());
     }
     CATCH("Fail in getFloat!")
 }
-Local<Value> NativePointer::getDouble() {	
+Local<Value> NativePointer::getDouble() {
     try {
-		return Number::newNumber(*(double*)get());
+        return Number::newNumber(*(double*)get());
     }
     CATCH("Fail in getDouble!")
 }
 Local<Value> NativePointer::getString() {
     try {
-		return String::newString(*(string*)get());
+        return String::newString(*(string*)get());
     }
     CATCH("Fail in getString!")
 }
 
 Local<Value> NativePointer::getBool() {
     try {
-		return Boolean::newBoolean(*(bool*)get());
+        return Boolean::newBoolean(*(bool*)get());
     }
     CATCH("Fail in getBool!")
 }
