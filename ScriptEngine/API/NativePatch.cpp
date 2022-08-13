@@ -67,7 +67,7 @@ Local<Value> NativePatch::dump(const Arguments& args) {
 }
 
 ClassDefine<NativePatch> NativePatchBuilder =
-    defineClass<NativePatch>("NativeFunction")
+    defineClass<NativePatch>("NativePatch")
         .constructor()
         .function("search", &NativePatch::search)
         .function("patch", &NativePatch::patch)
