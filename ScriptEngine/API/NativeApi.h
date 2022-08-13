@@ -10,7 +10,6 @@ public:
     static Local<Value> getItemClass(const Arguments& args);
     static Local<Value> searchAddress(const Arguments& args);
     static Local<Value> patch(const Arguments& args);
-    static Local<Value> DAccess(const Arguments& args);
 };
 extern ClassDefine<void> NativeClassBuilder;
 
@@ -43,10 +42,12 @@ public:
     };
 
     Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> getRawPtrAsHex(const Arguments& args);
 
     Local<Value> offset(const Arguments& args);
 
     void setChar(const Local<Value>& value);
+    void setMenByte(const Local<Value>& value);
     void setUchar(const Local<Value>& value);
     void setShort(const Local<Value>& value);
     void setUshort(const Local<Value>& value);
@@ -64,7 +65,7 @@ public:
     // Local<Value> setVoid(const Arguments& args);
     // Local<Value> setPointer(const Arguments& args);
 
-
+    Local<Value> getMemByte();
     Local<Value> getChar();
     Local<Value> getUchar();
     Local<Value> getShort();

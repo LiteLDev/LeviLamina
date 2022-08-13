@@ -18,6 +18,7 @@ uintptr_t string_tohex(const string& str) {
     return res;
 }
 
+
 vector<uint8_t> splitHex8(const string& str) {
     vector<uint8_t> res;
     stringstream ss(str);
