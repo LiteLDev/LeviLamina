@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "APIHelp.h"
 #include <string>
 
@@ -10,6 +10,7 @@ public:
     static Local<Value> getItemClass(const Arguments& args);
     static Local<Value> searchAddress(const Arguments& args);
     static Local<Value> patch(const Arguments& args);
+    static Local<Value> getSymbolAddress(const Arguments& args);
 };
 extern ClassDefine<void> NativeClassBuilder;
 
@@ -80,7 +81,6 @@ public:
     Local<Value> getDouble();
     Local<Value> getString();
     Local<Value> getBool();
-
 };
 extern ClassDefine<NativePointer> NativePointerBuilder;
 

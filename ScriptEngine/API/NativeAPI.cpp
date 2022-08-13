@@ -30,6 +30,7 @@ ClassDefine<void> NativeClassBuilder =
         .function("getSymbol", &NativeClass::getSymbol)
         .function("searchAddress", &NativeClass::searchAddress)
         .function("patch", &NativeClass::patch)
+        .function(" getSymbolAddres", &NativeClass::getSymbolAddress)
         .build();
 
 
@@ -590,6 +591,12 @@ Local<Value> NativeClass::patch(const Arguments& args) {
     return Boolean::newBoolean(rtn);
 }
 
+static Local<Value> getSymbolAddress(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    string symbol = args[0].asString().toString();
+    return NativePointer::newNativePointer(dlsym_real(symbol.c_str()));
+}
 //////////////////// NativePointer ////////////////////
 ClassDefine<NativePointer>
     NativePointerBuilder =
@@ -644,13 +651,13 @@ Local<Value> NativePointer::getRawPtr(const Arguments& args) {
 }
 
 Local<Value> NativePointer::getRawPtrAsHex(const Arguments& args) {
-	try {
-		void* pkt = unwrap();
-		if (!pkt)
-			return Local<Value>();
-		return String::newString(TCHelper::uto_string((uintptr_t)pkt));
-	}
-	CATCH("Fail in getRawPtrAsHex!")
+    try {
+        void* pkt = unwrap();
+        if (!pkt)
+            return Local<Value>();
+        return String::newString(TCHelper::uto_string((uintptr_t)pkt));
+    }
+    CATCH("Fail in getRawPtrAsHex!")
 }
 
 Local<Value> NativePointer::offset(const Arguments& args) {
@@ -790,18 +797,18 @@ void NativePointer::setBool(const Local<Value>& value) {
 }
 
 Local<Value> NativePointer::getMemByte() {
-	try {
-		auto ptr = get();
-		if (!ptr)
-			return Local<Value>();
+    try {
+        auto ptr = get();
+        if (!ptr)
+            return Local<Value>();
         std::vector<uint8_t> buffer(1);
         ModUtils::MemCopy((uintptr_t)&buffer[0], (uintptr_t)ptr, buffer.size());
         uint8_t em = buffer[0];
         stringstream ss;
         ss << hex << int(em);
-		return String::newString(ss.str());
-	}
-	CATCH("Fail in getMemByte!")
+        return String::newString(ss.str());
+    }
+    CATCH("Fail in getMemByte!")
 }
 
 Local<Value> NativePointer::getChar() {
