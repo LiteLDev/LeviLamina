@@ -191,7 +191,7 @@
                 "start": "Loading native plugins..."
             },
             "initNodeJsDirectories": {
-                "created": "NodeJs runtime directory no found, created."
+                "created": "Node.js runtime directory no found, created."
             }
         },
         "notice": {
