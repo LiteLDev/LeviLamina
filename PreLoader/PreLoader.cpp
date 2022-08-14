@@ -138,7 +138,7 @@ void loadDlls() {
         dllList.close();
     }
     if (!loadLiteLoader()) {
-        Info("[LiteLoader] PreLoader is running as LiteLoaderCore...");
+        Info("PreLoader is running as LiteLoaderCore...");
         loadPlugins();
     }
 }
