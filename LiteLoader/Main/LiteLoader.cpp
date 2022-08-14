@@ -16,6 +16,7 @@
 #include <EventAPI.h>
 #include "Version.h"
 #include "MC/Minecraft.hpp"
+#include <csignal>
 
 using namespace std;
 
@@ -174,13 +175,25 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent)
         case CTRL_CLOSE_EVENT:
         case CTRL_SHUTDOWN_EVENT:
         {
-            if (Global<Minecraft>) {
-                Global<Minecraft>->requestServerShutdown();
+            auto mc = Global<Minecraft>;
+            if (mc) {
+                mc->requestServerShutdown();
             }
             return TRUE;
         }
     }
     return FALSE;
+}
+
+void UnixSignalHandler(int signum) {
+    switch (signum) {
+        case SIGINT:
+        case SIGTERM:
+            auto mc = Global<Minecraft>;
+            if (mc) {
+                mc->requestServerShutdown();
+            }
+    }
 }
 
 // extern
@@ -242,7 +255,9 @@ void LLMain() {
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
-    SetConsoleCtrlHandler(ConseleExitHandler,TRUE);
+    SetConsoleCtrlHandler(ConsoleExitHandler,TRUE);
+    signal(SIGTERM,UnixSignalHandler);
+    signal(SIGINT,UnixSignalHandler);
 
     // Welcome
     Welcome();
