@@ -92,6 +92,21 @@ void PrintValue(T& out, Local<Value> v) {
                 out << ss.str();
                 break;
             }
+            if (IsInstanceOf<ScriptNativeFunction>(v)) {
+                std::stringstream ss;
+                ScriptNativeFunction* func = EngineScope::currentEngine()->getNativeInstance<ScriptNativeFunction>(v);
+                ss << std::hex
+                   << "Address: " << (intptr_t)func->mFunction << " "
+                   << "Symbol: " << func->mSymbol << " "
+                   << "ReturnType: " << magic_enum::enum_name(func->mReturnVal)
+                   << "Params: " << func->mParams.size();
+                for (size_t i = 0; i < func->mParams.size(); ++i) {
+                    ss << " [" << i << "]" << magic_enum::enum_name(func->mParams[i]);
+                }
+                
+                out << ss.str();
+                break;
+            }
             if (IsInstanceOf<BlockClass>(v)) {
                 out << "<Block>";
                 break;
