@@ -166,7 +166,7 @@ void CheckProtocolVersion() {
     }
 }
 
-BOOL WINAPI ConseleExitHandler(DWORD CEvent)
+BOOL WINAPI ConsoleExitHandler(DWORD CEvent)
 {
     switch(CEvent)
     {
