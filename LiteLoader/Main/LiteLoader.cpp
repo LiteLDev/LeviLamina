@@ -15,6 +15,7 @@
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
+#include "MC/Minecraft.hpp"
 
 using namespace std;
 
@@ -165,6 +166,23 @@ void CheckProtocolVersion() {
     }
 }
 
+BOOL WINAPI ConseleExitHandler(DWORD CEvent)
+{
+    switch(CEvent)
+    {
+        case CTRL_C_EVENT:
+        case CTRL_CLOSE_EVENT:
+        case CTRL_SHUTDOWN_EVENT:
+        {
+            if (Global<Minecraft>) {
+                Global<Minecraft>->requestServerShutdown();
+            }
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 // extern
 extern void EndScheduleSystem();
 namespace bstats {
@@ -184,12 +202,17 @@ void LLMain() {
     // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
-
+	
+    // I18n
+    auto i18n = Translation::load("plugins/LiteLoader/LangPack/");
+		
     // Load Config
     LL::LoadLLConfig();
 
-    // I18n
-    Translation::load("plugins/LiteLoader/LangPack/", (LL::globalConfig.language == "system" ? "" : LL::globalConfig.language));
+    // Update default language
+    if (i18n && LL::globalConfig.language != "system") {
+		i18n->defaultLocaleName = LL::globalConfig.language;
+    }
 
     // Check Protocol Version
     CheckProtocolVersion();
@@ -217,6 +240,9 @@ void LLMain() {
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
+
+    // Register Exit Event Handler.
+    SetConsoleCtrlHandler(ConseleExitHandler,TRUE);
 
     // Welcome
     Welcome();

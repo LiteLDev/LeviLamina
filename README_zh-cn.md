@@ -11,7 +11,7 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 
 ##### [English](README.md) | 简体中文
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FLiteLoaderBDS%2Fmain%2Fdocs%2F.vuepress%2Fpublic%2Fassets%2FLL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20&%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/main/docs/assets/LL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版专用服务器——`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
@@ -74,7 +74,7 @@ mc.listen("onServerStarted", () => {
 
 - 💻 支持多种不同的语言开发插件，保持接口统一
 
-| 目前已支持的插件开发语言   | `C++`、`Go`、`JavaScript`、`Lua` 、`.NET` |
+| 目前已支持的插件开发语言   | `C++`、`Go`、`JavaScript(NodeJs)`、`Lua` 、`.NET` |
 | -------------------------- | --------------------------------------------- |
 | **即将支持的插件开发语言** | `Python`、`Ruby`、`TypeScript`                |
 
@@ -112,7 +112,7 @@ mc.listen("onServerStarted", () => {
 2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
 3. 保证 `bedrock_server.pdb`文件存在。
    运行 `LLPeEditor.exe` 来生成具有导出符号的BDS（`bedrock_server_mod.exe`）
-4. 当控制台输出 `请按任意键继续. . . ` 时，按任意键关闭窗口
+4. 当控制台输出 `请按任意键继续. . .` 时，按任意键关闭窗口
 5. 运行 `bedrock_server_mod.exe` 开服
 
 ### 对于 Linux 用户
@@ -131,14 +131,16 @@ chmod +x install.sh
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
+mkdir <install directory>
+docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-启动服务器：`docker container start liteloader -a`<br>
-强制停止服务器（不推荐）：`docker container stop -t 30 liteloader`<br>
-进入控制台：`docker attach liteloader`<br>
+
+`<install directory>` 是用于存放数据的目录，例如: `/home/shrbox/bedrock-server`  
+第一次启动需要花费一点时间用于下载Bedrock Dedicated Server和LiteLoaderBDS  
+启动服务器：`docker container start llbds -a`<br>
+强制停止服务器（不推荐）：`docker container stop llbds`<br>
+进入控制台：`docker attach llbds`<br>
 退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。<br>
-如想管理服务端文件，使用命令 `docker volume ls` 获取volume id，然后通过 `docker volume inspect id `获取volume路径。</br>
-你也可以通过在`create`指定参数`--mount`来自定义服务端数据路径
 
 ## 🎯 下载 & 加载插件
 
@@ -155,7 +157,7 @@ docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 将所有获取到的内容直接放入`plugins`目录
 3. 运行`bedrock_server_mod.exe` 开服
 
-更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看
+更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
 
 ------
 
@@ -169,7 +171,7 @@ docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 4. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
 5. 复制插件到 plugins 目录进行测试
 
-具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Usage/)👈查看
+具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
 
 ### 使用脚本语言开发插件
@@ -178,7 +180,7 @@ docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 编写代码
 3. 复制插件到 plugins 目录进行测试
 
-请👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**
+请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue
 
 ### 示例插件
@@ -236,7 +238,7 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 
-PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://docs.litebds.com/zh_CN/Maintenance/)👈查看 **项目维护与支持文档**
+PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Maintenance/)👈查看 **项目维护与支持文档**
 
 ------
 

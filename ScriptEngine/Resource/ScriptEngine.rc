@@ -49,7 +49,7 @@ END
 #endif    // APSTUDIO_INVOKED
 
 #ifdef LLSE_BACKEND_QUICKJS
-#define LLSE_OUTPUT_FILE_NAME "LiteLoader.QuickJs.dll"
+#define LLSE_OUTPUT_FILE_NAME "LiteLoader.Js.dll"
 #define LLSE_FILE_DESCRIPTION "A QuickJs Script Plugin Engine for LiteLoader"
 #elif defined LLSE_BACKEND_LUA
 #define LLSE_OUTPUT_FILE_NAME "LiteLoader.Lua.dll"

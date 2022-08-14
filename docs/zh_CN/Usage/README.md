@@ -31,18 +31,17 @@ LiteLoaderBDS 采用 Wine 兼容层对 Linux 服务器提供BDS支持，同时�
 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
+mkdir <install directory>
+docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-
-安装完毕后，以下命令可以为您管理服务器提供帮助：
-
-启动服务器：`docker container start liteloader -a`  
-停止服务器：`docker container stop -t 30 liteloader`  
-进入控制台：`docker attach liteloader`  
+`<install directory>` 是用于存放数据的目录，例如: `/home/shrbox/bedrock-server`  
+第一次启动需要花费一点时间用于下载Bedrock Dedicated Server和LiteLoaderBDS  
+安装完毕后，以下命令可以为您管理服务器提供帮助:  
+启动服务器：`docker container start llbds -a`  
+停止服务器：`docker container stop llbds`  
+进入控制台：`docker attach llbds`  
 退出控制台：按下 `Ctrl + P + Q`  
 如果按下 `Ctrl + C`，服务器进程将会终止。
-如想管理服务端文件，使用命令 `docker volume ls` 获取volume id，然后通过 `docker volume inspect id `获取volume路径。  
-你也可以通过在`create`指定参数`--mount`来自定义服务端数据路径
 
 ## 🎯 下载 & 加载插件
 
@@ -61,9 +60,9 @@ docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 > 没错，，就这么简单~
 
-## 安装资源包/Addon
-将`.mcpack`、`.mcaddon`或`.zip`格式的资源包/Addon复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader会为您自动配置资源包/Addon。  
-您可以通过`addons`指令对资源包和Addon进行管理
+## 🎨 安装资源包 / Addon
+- 将`.mcpack`、`.mcaddon`或`.zip`格式的资源包 / Addon 复制到`plugins/AddonsHelper`文件夹内，重新启动服务器，LiteLoader 会为您自动配置并安装
+- 开服后，您可以通过`addons`指令对已安装的资源包和 Addon 进行管理
 
 ## 🔌 插件热管理
 

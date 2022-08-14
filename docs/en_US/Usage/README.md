@@ -26,14 +26,15 @@ chmod +x install.sh
 Enter the following lines in your terminal: 
 ```
 docker pull shrbox/liteloaderbds
-docker create --name llbds -p 19132:19132/udp -i -t shrbox/liteloaderbds
+mkdir <install directory>
+docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
-Start server: `docker container start liteloader -a`  
-Stop server: `docker container stop -t 30 liteloader`  
-Enter console: `docker attach liteloader`  
+`<install directory>` is directory to store data, for example: `/home/shrbox/bedrock-server`  
+The first boot takes a little while to download the Bedrock Dedicated Server and LiteLoaderBDS  
+Start server: `docker container start llbds -a`  
+Stop server: `docker container stop llbds`  
+Enter console: `docker attach llbdsr`  
 Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.  
-If you want to manage server files, use `docker volume ls` to get volume id and execute `docker volume inspect id` to see volume directory  
-You can also add `--mount` parameter in `create` to customize your server directory
 
 Everything's done! Next, you can install **LiteLoader** plugins!
 
@@ -56,9 +57,9 @@ Everything's done! Next, you can install **LiteLoader** plugins!
 
 For more **installation and usage guides**,  come to 👉[LiteLoader documentation](https://docs.litebds.com/#/en/Usage/)👈 to view
 
-## Installation ResourcePacks/Addon
-Copy `.mcpack`, `.mcaddon` or `.zip` to `plugins/AddonsHelper` and restart server  
-You can manage ResourcePacks and Addons by using `addons` command
+## 🎨  Install ResourcePacks / Addons
+- Copy `.mcpack`, `.mcaddon` or `.zip` to `plugins/AddonsHelper` and restart server. LL will install it for you when the server launch.
+- You can manage Resource Packs and Addons by using `addons` command
 
 ## 🔌 Plugins hot management
 

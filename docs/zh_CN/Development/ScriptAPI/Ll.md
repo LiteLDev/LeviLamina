@@ -45,7 +45,7 @@
 - 返回值类型： `Boolean`
 
 如果检测发现当前安装的LLSE版本低于传入的数值，将返回`false`。  
-你可以选择根据结果判断并报错，提醒用户升级自己的LiteLoader(LLSE)版本
+你可以选择根据结果判断并报错，提醒用户升级自己的LiteLoaderBDS版本
 
 <br>
 
@@ -59,26 +59,6 @@
 <br>
 
 ### 远程函数调用
-
-为了可以让开发者开发的前置插件能够为其他插件提供接口和服务，这里提供了远程函数调用功能，让一个LLSE插件可以调用另一个插件中已有的函数。
-
-#### 导出函数
-
-首先，为了你的插件中的函数可以被其他插件定位，你首先将你插件中的某些函数导出，让别人可以通过名字找到你的接口所在。使用这个函数来导出你想要共享的函数
-
-`ll.export(func,name)`
-
-- 参数：
-  - func : `Function`  
-    要导出的函数
-  - name : `String`  
-    函数的导出名称。其他插件根据导出名称来调用这个函数
-- 返回值：是否成功导出
-- 返回值类型： `Boolean`
-
-注意：如果导出时出现名字冲突，将会导出失败。你可能需要给导出名字加一些特有的前缀或者后缀，来避免可能和其他插件发生的冲突。
-
-<br>
 
 #### 导出函数
 
@@ -96,26 +76,7 @@
 - 返回值：是否成功导出
 - 返回值类型： `Boolean`
 
-注意：如果导出已有现命名空间和名字的函数，将会导出失败。此 API 暂时仅在 `debugMode` 下可用
-
-<br>
-
-#### 导入函数
-
-当你已经得知有插件导出函数之后，为了可以使用他导出的函数，首先需要将这个函数导入到你自己的脚本系统中  
-LLSE提供了接口 import 来导入其他插件已经导出的函数。
-
-`ll.import(name)`
-
-- 参数：
-  - name : `String`  
-    要导入的函数使用的导出名称
-- 返回值：导入的函数
-- 返回值类型： `Function`
-
-`ll.import` 将把目标函数直接导入到你的脚本环境中。因此，你可以像使用一个已经存在的函数那样调用一个被导入的函数。跨插件调用的流程将在后台自动完成，你不需要担心任何这方面的问题。
-
-注意：在远程调用的过程中，不能在参数传递类似于玩家对象这类的自定义数据对象。你可以用玩家Xuid信息等作为替代
+注意：如果导出的函数的命名空间和名字与另一个已经导出的函数完全相同，将会导出失败。选定命名空间和导出名称时请适当选择。
 
 <br>
 
@@ -134,43 +95,38 @@ LLSE提供了接口 import 来导入其他插件已经导出的函数。
 - 返回值：导入的函数
 - 返回值类型： `Function`
 
-`ll.import` 将把目标函数直接导入到你的脚本环境中。因此，你可以像使用一个已经存在的函数那样调用一个被导入的函数。跨插件调用的流程将在后台自动完成，你不需要担心任何这方面的问题。
-
-注意：在远程调用的过程中，不能在参数传递类似于玩家对象这类的自定义数据对象。你可以用玩家Xuid信息等作为替代
-注意：此 API 暂时仅在 `debugMode` 下可用
+`ll.import` 的返回值是一个函数。当你调用这个函数时，跨插件调用的流程将在后台自动完成。调用函数的参数将被包装并传递给远程函数，此函数的返回值即是远程函数执行完毕之后返回的返回值。
 
 <br>
 
 #### 远程调用参数类型对照，其中Type可以为其他受支持的类型
 
-| 内部类型 | C++ | ScriptEngine | .NET |
-| -- | -- | -- | -- | 
-| `std::nullptr_t` | `std::nullptr_t` | `Null` | `null` / `Nothing` / `nullptr`
- | 
-| `bool` | `bool` | `Boolean` | `Boolean` | 
-| `RemoteCall::NumberType` | `__int64`, `double`... | `Number` | `Int64`, `Double`... | 
-| `std::string` | `std::string` | `String` | `String` | 
-| `std::vector<Type>` | `std::vector<Type>` | `Array` | `List<Type>` | 
-| `std::unordered_map<std::string,Type>` | `std::unordered_map<std::string,Type>` | `Object` | `Dictionary<String,Type>` | 
-| `Actor*` | `Actor*` | `Entity` | `MC.Actor` | 
-| `Player*` | `Player*` | `Player` | `MC.Player` | 
-| `RemoteCall::ItemType` | `ItemStack*`, `std::unique_ptr<ItemStack>` | `Item` | `RemoteCall.ItemType` | 
-| `RemoteCall::BlockType` | `Block*`, `BlockInstance` | `Block` | `RemoteCall.BlockType` | 
-| `BlockActor*` | `BlockActor*` | `BlockActor` | `MC.BlockActor` | 
-| `Container*` | `Container*` | `Container` | `MC.Container` | 
-| `RemoteCall::WorldPosType` | `Vec3`,`std::pair<Vec3,int>` | `FloatPos` | `MC.Vec3`,`RemoteCall.WorldPosType` | 
-| `RemoteCall::BlockPosType` | `BlockPos`,`std::pair<BlockPos, int>` | `IntPos` | `MC.BlockPos`,`RemoteCall.BlockPosType` | 
-| `RemoteCall::NbtType` | `CompoundTag*`,`std::unique_ptr<CompoundTag>` | `NBTCompound` | `RemoteCall.NbtType` | 
+| C++层类型 | 脚本引擎类型 | .NET引擎类型 | 内部类型（备注） |
+| -- | -- | -- | -- |
+| `std::nullptr_t` | `Null` | `null` / `Nothing` / `nullptr`| `std::nullptr_t` |
+| `bool` | `Boolean` | `Boolean` | `bool` |
+| `__int64`, `double`... | `Number` | `Int64`, `Double`... | `RemoteCall::NumberType` |
+| `std::string` | `String` | `String` | `std::string` |
+| `std::vector<Type>` | `Array` | `List<Type>` | `std::vector<Type>` |
+| `std::unordered_map<std::string,Type>` | `Object` | `Dictionary<String,Type>` | `std::unordered_map<std::string,Type>` |
+| `Actor*` | `Entity` | `MC.Actor` | `Actor*` |
+| `Player*` | `Player` | `MC.Player` | `Player*` |
+| `ItemStack*`, `std::unique_ptr<ItemStack>` | `Item` | `RemoteCall.ItemType` | `RemoteCall::ItemType` |
+| `Block*`, `BlockInstance` | `Block` | `RemoteCall.BlockType` | `RemoteCall::BlockType` |
+| `BlockActor*` | `BlockActor` | `MC.BlockActor` | `BlockActor*` |
+| `Container*` | `Container` | `MC.Container` | `Container*` |
+| `Vec3`,`std::pair<Vec3,int>` | `FloatPos` | `MC.Vec3`,`RemoteCall.WorldPosType` | `RemoteCall::WorldPosType` |
+| `BlockPos`,`std::pair<BlockPos, int>` | `IntPos` | `MC.BlockPos`,`RemoteCall.BlockPosType` | `RemoteCall::BlockPosType` |
+| `CompoundTag*`,`std::unique_ptr<CompoundTag>` | `NBTCompound` | `RemoteCall.NbtType` | `RemoteCall::NbtType` |
 
 #### 远程调用函数举例说明
 
-比如，有一个插件导出了某个函数，函数的导出名称为 AAA_Welcome  
-当你使用 `welcome = ll.import("AAA_Welcome"); ` 完成导入之后，你就可以直接在下面执行：
+比如，有一个插件导出了某个函数，函数导出使用的命名空间为 AAA，导出函数名称为 Welcome  
+当你使用 `welcome = ll.import("AAA","welcome"); ` 完成导入之后，你就可以直接在下面执行：
 
-`welcome("hello",2,true);`   
+`welcome("hello",2,true);`     
 
-就像这个函数本来就已经存在了一样。  
-函数的参数将被自动转发到对应的目标函数执行，执行完毕之后将返回回应的目标函数的返回值，整个过程都是自动完成的。
+函数的参数将被自动转发到对应的目标函数执行，执行完毕之后将返回回应的目标函数的返回值，整个过程都是自动完成的。  
 
 注意！在调用函数的时候，需要保证你传入的参数和目标函数接受的参数数量和类型都是正确且一一对应的。否则，将会发生错误。
 

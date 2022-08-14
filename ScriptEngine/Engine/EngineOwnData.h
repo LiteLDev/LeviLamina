@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <memory>
 #include <LoggerAPI.h>
+#include <ScriptEngine/third-party/dyncall/include/dyncall.h>
 
 struct FormCallbackData {
     script::ScriptEngine* engine;
@@ -70,6 +71,9 @@ struct EngineOwnData {
     //玩家绑定数据
     std::unordered_map<std::string, script::Global<Value>> playerDataDB;
 
+    //Dynamic Call vm for NativeFFI
+    DCCallVM* dynamicCallVM;
+
     // Unload Callbacks, use for close database...
     int index = 0;
     std::unordered_map<int, std::function<void(ScriptEngine*)>> unloadCallbacks;
@@ -79,6 +83,12 @@ struct EngineOwnData {
     }
     inline bool removeUnloadCallback(int index) {
         return unloadCallbacks.erase(index);
+    }
+
+    //init
+    EngineOwnData() {
+        dynamicCallVM = dcNewCallVM(4096);
+        dcMode(dynamicCallVM, DC_CALL_C_DEFAULT);
     }
 };
 

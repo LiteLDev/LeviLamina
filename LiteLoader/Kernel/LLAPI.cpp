@@ -117,3 +117,7 @@ bool LL::isServerStarting() {
 bool LL::isServerStopping() {
     return getServerStatus() == LL::ServerStatus::Stopping;
 }
+
+std::string LL::getLanguage() {
+    return LL::globalConfig.language;
+}
