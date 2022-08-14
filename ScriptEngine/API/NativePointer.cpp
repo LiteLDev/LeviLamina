@@ -14,6 +14,9 @@ ClassDefine<NativePointer>
             .function("free", &NativePointer::freeMem)
             .instanceFunction("asRawAddress", &NativePointer::asRawAddress)
             .instanceFunction("asHexAddress", &NativePointer::asHexAddress)
+            .instanceFunction("asRef", &NativePointer::asRef)
+            .instanceFunction("deRef", &NativePointer::deRef)
+            .instanceFunction("isNull", &NativePointer::isNull)
             .instanceFunction("offset", &NativePointer::offset)
             .instanceProperty("byte", &NativePointer::getMemByte, &NativePointer::setMemByte)
             .instanceProperty("int8", &NativePointer::getChar, &NativePointer::setChar)
@@ -119,6 +122,27 @@ Local<Value> NativePointer::asHexAddress(const Arguments& args) {
 		return String::newString(ss.str());
     }
     CATCH("Fail in NativePointer::asHexStr!")
+}
+
+Local<Value> NativePointer::asRef(const Arguments& args) {
+    try {
+        return newNativePointer((void*)&mPtr);
+    }
+    CATCH("Fail in NativePointer::asRef!")
+}
+
+Local<Value> NativePointer::deRef(const Arguments& args) {
+    try {
+        return newNativePointer(*(void**)mPtr);
+    }
+    CATCH("Fail in NativePointer::deRef!")
+}
+
+Local<Value> NativePointer::isNull(const Arguments& args) {
+    try {
+        return script::Boolean::newBoolean(mPtr == nullptr);
+    }
+    CATCH("Fail in NativePointer::isNull!")
 }
 
 Local<Value> NativePointer::offset(const Arguments& args) {

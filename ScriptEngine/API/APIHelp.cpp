@@ -98,12 +98,12 @@ void PrintValue(T& out, Local<Value> v) {
                 ss << std::hex
                    << "Address: " << (intptr_t)func->mFunction << " "
                    << "Symbol: " << func->mSymbol << " "
-                   << "ReturnType: " << magic_enum::enum_name(func->mReturnVal)
+                   << "ReturnType: " << magic_enum::enum_name(func->mReturnVal) << " "
                    << "Params: " << func->mParams.size();
                 for (size_t i = 0; i < func->mParams.size(); ++i) {
                     ss << " [" << i << "]" << magic_enum::enum_name(func->mParams[i]);
                 }
-                
+
                 out << ss.str();
                 break;
             }
