@@ -95,12 +95,12 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Command\DynamicCommandAPI.cpp" />
     <ClCompile Include="Kernel\DB\Any.cpp" />
     <ClCompile Include="Kernel\DB\ConnParams.cpp" />
-    <!-- <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
+    <ClCompile Include="Kernel\DB\Impl\MySQL\Session.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="Kernel\DB\Impl\MySQL\Stmt.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)MySQL\</ObjectFileName>
-    </ClCompile> -->
+    </ClCompile>
     <ClCompile Include="Kernel\DB\Impl\SQLite\Session.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)SQLite\</ObjectFileName>
     </ClCompile>
@@ -140,8 +140,8 @@ LibraryBuilder.exe
     <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\DB\Any.h" />
     <ClInclude Include="Header\DB\ConnParams.h" />
-    <!-- <ClInclude Include="Header\DB\Impl\MySQL\Session.h" />
-    <ClInclude Include="Header\DB\Impl\MySQL\Stmt.h" /> -->
+    <ClInclude Include="Header\DB\Impl\MySQL\Session.h" />
+    <ClInclude Include="Header\DB\Impl\MySQL\Stmt.h" />
     <ClInclude Include="Header\DB\Impl\SQLite\Session.h" />
     <ClInclude Include="Header\DB\Impl\SQLite\Stmt.h" />
     <ClInclude Include="Header\DB\Pointer.h" />
@@ -363,6 +363,7 @@ LibraryBuilder.exe
     <Library Include="Lib\third-party\dyncall\dyncallback_s.lib" />
     <Library Include="Lib\third-party\dyncall\dyncall_s.lib" />
     <Library Include="Lib\third-party\dyncall\dynload_s.lib" />
+    <Library Include="Lib\third-party\mysql\mysqlclient.lib" />
     <Library Include="Lib\third-party\openssl\libcrypto.lib" />
     <Library Include="Lib\third-party\openssl\libssl.lib" />
     <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />

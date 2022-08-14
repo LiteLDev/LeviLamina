@@ -88,7 +88,6 @@ void LoadDebugEngine() {
 void LoadMain_NodeJs();
 
 void LoadMain() {
-    
 #ifdef LLSE_BACKEND_NODEJS
     LoadMain_NodeJs(); // Process NodeJs backend's plugin load separately
     return;

@@ -246,31 +246,32 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 
 - **开发者不对您负责，开发者没有义务为你编写代码、为你使用造成的任何后果负责**
 
-| Project                                                                 | License                                   |
-| ----------------------------------------------------------------------- | ----------------------------------------- |
-| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra restrictions&exceptions                                |
-| [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                         |
-| [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 license                                   |
-| [SimpleIni](https://github.com/brofield/simpleini)                      | MIT license                                   |
-| [Nlohmann-Json](https://github.com/nlohmann/json)                       | MIT license                                   |
-| [nbt-cpp](https://github.com/handtruth/nbt-cpp)                         | MIT license                                   |
-| [ThreadPool](https://github.com/jhasse/ThreadPool)                      | Zlib license                                   |
-| [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT license                                   |
-| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
-| [dyncall](https://www.dyncall.org/index)                                | [ISC license](https://www.dyncall.org/license)                                  |
-| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT license                                   |
-| [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause license                                   |
-| [SQLiteCpp](https://github.com/SRombauts/SQLiteCpp)                     | MIT license                                   |
-| [compact_enc_det](https://github.com/google/compact_enc_det)            | Apache-2.0 license                                   |
-| [detours](https://github.com/microsoft/Detours)                         | MIT license                                   |
-| [httplib](https://github.com/yhirose/cpp-httplib)                       | MIT license                                   |
-| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT license                                   |
-| [entt](https://github.com/skypjack/entt)                                | MIT license                                   |
-| [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst)              |
-| [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                   |
-| [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause license                                   |
-| [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 license                                   |
-| [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                   |
+| Project                                                                 | License                                                          |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra exceptions                                     |
+| [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                       |
+| [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 License                                               |
+| [SimpleIni](https://github.com/brofield/simpleini)                      | MIT License                                                      |
+| [Nlohmann-Json](https://github.com/nlohmann/json)                       | MIT License                                                      |
+| [nbt-cpp](https://github.com/handtruth/nbt-cpp)                         | MIT License                                                      |
+| [ThreadPool](https://github.com/jhasse/ThreadPool)                      | Zlib License                                                     |
+| [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT License                                                      |
+| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                                                      |
+| [dyncall](https://www.dyncall.org/index)                                | [ISC License](https://www.dyncall.org/license)                   |
+| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT :icense                                                      |
+| [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause License                                             |
+| [SQLiteCpp](https://github.com/SRombauts/SQLiteCpp)                     | MIT License                                                      |
+| [compact_enc_det](https://github.com/google/compact_enc_det)            | Apache-2.0 License                                               |
+| [detours](https://github.com/microsoft/Detours)                         | MIT License                                                      |
+| [httplib](https://github.com/yhirose/cpp-httplib)                       | MIT License                                                      |
+| [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                                                      |
+| [entt](https://github.com/skypjack/entt)                                | MIT License                                                      |
+| [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst) |
+| [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                                      |
+| [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause License                                             |
+| [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 License                                               |
+| [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                                      |
+| [EldenRingMods](https://github.com/techiew/EldenRingMods)               | MIT License                                                      |
 
 ### 额外限制和例外
 

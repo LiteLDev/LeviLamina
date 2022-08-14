@@ -51,6 +51,11 @@
   - [🌏 网络](zh_CN/Development/SystemAPI/Network.md)
   - [📡 系统调用](zh_CN/Development/SystemAPI/SystemCall.md)
   - [📜 获取系统信息](zh_CN/Development/SystemAPI/SystemInfo.md)
+- Native调用
+  - [📚 概述](zh_CN/Development/NativeAPI/Summary.md)
+  - [📲 指针类型NativePointer](zh_CN/Development/NativeAPI/NativePointer.md)
+  - [🎚️ 函数类型NativeFunction](zh_CN/Development/NativeAPI/NativeFunction.md)
+  - [🛠️ 补丁工具NativePatch](zh_CN/Development/NativeAPI/NativePatch.md)
 
 - [📋 重大更改页面（弃用）](zh_CN/Development/Changes)
 

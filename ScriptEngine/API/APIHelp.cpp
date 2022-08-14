@@ -24,6 +24,8 @@
 #include <Engine/EngineOwnData.h>
 #include "APIHelp.h"
 
+#include "NativeApi.h"
+
 using namespace std;
 
 //////////////////// APIs ////////////////////
@@ -84,6 +86,12 @@ void PrintValue(T& out, Local<Value> v) {
             }
 
             // 其他自定义类型
+            if (IsInstanceOf<NativePointer>(v)) {
+                std::stringstream ss;
+                ss << std::hex << (intptr_t)EngineScope::currentEngine()->getNativeInstance<NativePointer>(v)->get();
+                out << ss.str();
+                break;
+            }
             if (IsInstanceOf<BlockClass>(v)) {
                 out << "<Block>";
                 break;
