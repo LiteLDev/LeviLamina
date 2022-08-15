@@ -99,12 +99,12 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
     IF_ENDBG dbLogger.debug("MySQLSession::query: Query returned {} rows and {} fields", numRows, numFields);
     // Fetch column names
     RowHeader header;
-    for (auto i = 0; i < numFields; i++)
+    for (unsigned int i = 0; i < numFields; i++)
         header.add(std::string(fields[i].name, fields[i].name_length));
     // Fetch rows
     while (auto row = mysql_fetch_row(result)) {
         Row r(header);
-        for (auto i = 0; i < numFields; i++) {
+        for (unsigned int i = 0; i < numFields; i++) {
             auto type = fields[i].type;
             switch (type) {
                 case MYSQL_TYPE_TINY:
@@ -127,7 +127,7 @@ Session& MySQLSession::query(const std::string& query, std::function<bool(const 
                 case MYSQL_TYPE_BIT: {
                     uint64_t val = 0;
                     auto len = fields[i].length;
-                    for (auto j = 0; j < len; j++) {
+                    for (unsigned int j = 0; j < len; j++) {
                         if (row[i][j] == '1')
                             val |= (1ULL << j);
                     }
