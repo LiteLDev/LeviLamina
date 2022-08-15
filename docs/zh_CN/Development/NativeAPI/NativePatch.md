@@ -38,7 +38,7 @@
 
 以十六进制字符串展示目标地址的指定长度内存
 
-`NativePatch.patch(pointer, size)`
+`NativePatch.dump(pointer, size)`
 
 - 参数：
   - NativePointer: `pointer`
