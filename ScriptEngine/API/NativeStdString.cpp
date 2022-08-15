@@ -79,6 +79,7 @@ NativeStdString* NativeStdString::constructor(const Arguments& args) {
                 return new NativeStdString(args.thiz(), strPointer);
         }
         LOG_WRONG_ARG_TYPE();
+        return nullptr;
     }
     CATCH_C("Fail in NativeStdString::create NativeStdString!");
 }
