@@ -108,7 +108,7 @@ Local<Value> NativePointer::asRawAddress(const Arguments& args) {
             return Local<Value>();
         return Number::newNumber((intptr_t)pkt);
     }
-    CATCH("Fail in NativePointer::getRawPtr!")
+    CATCH("Fail in NativePointer::asPointer!")
 }
 
 

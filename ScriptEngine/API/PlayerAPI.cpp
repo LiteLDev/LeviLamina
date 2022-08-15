@@ -38,7 +38,7 @@ using namespace std;
 ClassDefine<PlayerClass> PlayerClassBuilder =
     defineClass<PlayerClass>("LLSE_Player")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &PlayerClass::getRawPtr)
+        .instanceFunction("asPointer", &PlayerClass::asPointer)
 
         .instanceProperty("name", &PlayerClass::getName)
         .instanceProperty("pos", &PlayerClass::getPos)
@@ -474,7 +474,7 @@ Local<Value> PlayerClass::getInWater() {
     CATCH("Fail in getInWater!")
 }
 
-Local<Value> PlayerClass::getRawPtr(const Arguments& args) {
+Local<Value> PlayerClass::asPointer(const Arguments& args) {
     try {
         Player* player = get();
         if (!player)
@@ -482,7 +482,7 @@ Local<Value> PlayerClass::getRawPtr(const Arguments& args) {
         else
             return Number::newNumber((intptr_t)player);
     }
-    CATCH("Fail in getRawPtr!")
+    CATCH("Fail in asPointer!")
 }
 
 Local<Value> PlayerClass::getUniqueID() {

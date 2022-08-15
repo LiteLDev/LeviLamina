@@ -10,7 +10,7 @@ using namespace std;
 ClassDefine<ContainerClass> ContainerClassBuilder =
     defineClass<ContainerClass>("LLSE_Container")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &ContainerClass::getRawPtr)
+        .instanceFunction("asPointer", &ContainerClass::asPointer)
 
         .instanceProperty("size", &ContainerClass::getSize)
         .instanceProperty("type", &ContainerClass::getType)
@@ -63,11 +63,11 @@ Local<Value> ContainerClass::getType() {
     CATCH("Fail in getType!")
 }
 
-Local<Value> ContainerClass::getRawPtr(const Arguments& args) {
+Local<Value> ContainerClass::asPointer(const Arguments& args) {
     try {
         return Number::newNumber((intptr_t)container);
     }
-    CATCH("Fail in getRawPtr!")
+    CATCH("Fail in asPointer!")
 }
 
 Local<Value> ContainerClass::addItem(const Arguments& args) {

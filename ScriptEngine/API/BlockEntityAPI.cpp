@@ -12,7 +12,7 @@
 ClassDefine<BlockEntityClass> BlockEntityClassBuilder =
     defineClass<BlockEntityClass>("LLSE_BlockEntity")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &BlockEntityClass::getRawPtr)
+        .instanceFunction("asPointer", &BlockEntityClass::asPointer)
 
         .instanceProperty("pos", &BlockEntityClass::getPos)
         .instanceProperty("type", &BlockEntityClass::getType)
@@ -43,11 +43,11 @@ BlockActor* BlockEntityClass::extract(Local<Value> v) {
 }
 
 //成员函数
-Local<Value> BlockEntityClass::getRawPtr(const Arguments& args) {
+Local<Value> BlockEntityClass::asPointer(const Arguments& args) {
     try {
         return Number::newNumber((intptr_t)blockEntity);
     }
-    CATCH("Fail in getRawPtr!")
+    CATCH("Fail in asPointer!")
 }
 
 Local<Value> BlockEntityClass::getPos() {

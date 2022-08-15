@@ -19,7 +19,7 @@
 ClassDefine<BlockClass> BlockClassBuilder =
     defineClass<BlockClass>("LLSE_Block")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &BlockClass::getRawPtr)
+        .instanceFunction("asPointer", &BlockClass::asPointer)
 
         .instanceProperty("name", &BlockClass::getName)
         .instanceProperty("type", &BlockClass::getType)
@@ -133,11 +133,11 @@ Local<Value> BlockClass::getTileData() {
     CATCH("Fail in getTileData!");
 }
 
-Local<Value> BlockClass::getRawPtr(const Arguments& args) {
+Local<Value> BlockClass::asPointer(const Arguments& args) {
     try {
         return Number::newNumber((intptr_t)block);
     }
-    CATCH("Fail in getRawPtr!");
+    CATCH("Fail in asPointer!");
 }
 
 Local<Value> BlockClass::destroyBlock(const Arguments& args) {

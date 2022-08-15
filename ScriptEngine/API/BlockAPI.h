@@ -36,7 +36,7 @@ public:
     static Local<Object> newBlock(IntVec4 pos);
     static Local<Object> newBlock(BlockInstance block);
     static Block* extract(Local<Value> v);
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> asPointer(const Arguments& args);
 
     Local<Value> getName();
     Local<Value> getType();

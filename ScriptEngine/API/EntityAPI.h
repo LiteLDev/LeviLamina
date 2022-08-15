@@ -21,7 +21,7 @@ public:
     static Local<Object> newEntity(Actor* p);
     static Actor* extract(Local<Value> v);
     static std::optional<Actor*> tryExtractActor(Local<Value> v);
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> asPointer(const Arguments& args);
 
     Local<Value> getName();
     Local<Value> getType();

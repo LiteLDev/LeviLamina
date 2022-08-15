@@ -21,7 +21,7 @@
 ClassDefine<EntityClass> EntityClassBuilder =
     defineClass<EntityClass>("LLSE_Entity")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &EntityClass::getRawPtr)
+        .instanceFunction("asPointer", &EntityClass::asPointer)
 
         .instanceProperty("name", &EntityClass::getName)
         .instanceProperty("type", &EntityClass::getType)
@@ -103,7 +103,7 @@ Actor* EntityClass::get() {
         return Level::getEntity(id);
 }
 
-Local<Value> EntityClass::getRawPtr(const Arguments& args) {
+Local<Value> EntityClass::asPointer(const Arguments& args) {
     try {
         Actor* entity = get();
         if (!entity)
@@ -111,7 +111,7 @@ Local<Value> EntityClass::getRawPtr(const Arguments& args) {
         else
             return Number::newNumber((intptr_t)entity);
     }
-    CATCH("Fail in getRawPtr!")
+    CATCH("Fail in asPointer!")
 }
 
 Local<Value> EntityClass::getUniqueID() {

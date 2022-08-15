@@ -15,7 +15,7 @@
 ClassDefine<ItemClass> ItemClassBuilder =
     defineClass<ItemClass>("LLSE_Item")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &ItemClass::getRawPtr)
+        .instanceFunction("asPointer", &ItemClass::asPointer)
 
         .instanceProperty("name", &ItemClass::getName)
         .instanceProperty("type", &ItemClass::getType)
@@ -109,11 +109,11 @@ Local<Value> ItemClass::getAux() {
     CATCH("Fail in GetAux!");
 }
 
-Local<Value> ItemClass::getRawPtr(const Arguments& args) {
+Local<Value> ItemClass::asPointer(const Arguments& args) {
     try {
         return Number::newNumber((intptr_t)item);
     }
-    CATCH("Fail in getRawPtr!");
+    CATCH("Fail in asPointer!");
 }
 
 Local<Value> ItemClass::set(const Arguments& args) {

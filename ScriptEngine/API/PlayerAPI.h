@@ -20,7 +20,7 @@ public:
 
     static Local<Object> newPlayer(Player* p);
     static Player* extract(Local<Value> v);
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> asPointer(const Arguments& args);
 
     Local<Value> getName();
     Local<Value> getPos();
