@@ -46,6 +46,7 @@ public:
     Local<Value> resize(const Arguments& args);
 
     Local<Value> toString();
+    Local<Value> toHashedString();
     Local<Value> asPointer();
     Local<Value> clone();
     Local<Value> destroy();
