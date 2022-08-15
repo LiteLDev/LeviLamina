@@ -77,11 +77,11 @@ public:
      * @see    tr
      */
     template <typename... Args>
-    inline void trAddMessage(const std::string& format, const Args&... args) {
+    inline void trAddMessage(const std::string& format, Args&&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
-            this->addMessage(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
+            this->addMessage(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, std::forward<Args>(args)...));
         else
-            this->addMessage(tr(format, args...));
+            this->addMessage(tr(format, std::forward<Args>(args)...));
     }
 
     /**
@@ -93,11 +93,11 @@ public:
      * @see    tr
      */
     template <typename... Args>
-    inline void trSuccess(const std::string& format, const Args&... args) {
+    inline void trSuccess(const std::string& format, Args&&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
-            this->success(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
+            this->success(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, std::forward<Args>(args)...));
         else
-            this->success(tr(format, args...));
+            this->success(tr(format, std::forward<Args>(args)...));
     }
 
     /**
@@ -109,11 +109,11 @@ public:
      * @see    tr
      */
     template <typename... Args>
-    inline void trError(const std::string& format, const Args&... args) {
+    inline void trError(const std::string& format, Args&&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
-            this->error(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, args...));
+            this->error(trl(PluginOwnData::get<std::string>(POD_COMMANDOUTPUT_LANGCODE), format, std::forward<Args>(args)...));
         else
-            this->error(tr(format, args...));
+            this->error(tr(format, std::forward<Args>(args)...));
     }
 
 #undef AFTER_EXTRA
