@@ -155,6 +155,12 @@ public:
 
     Local<Value> offset(const Arguments& args);
 
+    Local<Value> isNull(const Arguments& args);
+
+    Local<Value> asRef(const Arguments& args);
+
+    Local<Value> deRef(const Arguments& args);
+
     void setMemByte(const Local<Value>& value);
     void setChar(const Local<Value>& value);
     void setUchar(const Local<Value>& value);
