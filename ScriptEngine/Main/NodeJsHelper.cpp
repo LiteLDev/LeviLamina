@@ -1,3 +1,4 @@
+#pragma warning(disable : 4251)
 #include "Configs.h"
 #if defined(LLSE_BACKEND_NODEJS)
 #include "Global.hpp"

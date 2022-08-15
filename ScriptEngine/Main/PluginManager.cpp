@@ -17,9 +17,9 @@
 #include <API/EventAPI.h>
 #include <API/CommandAPI.h>
 #include <Utils/Hash.h>
-#include <NodeJsHelper.h>
 #ifdef LLSE_BACKEND_NODEJS
-#include <NodeJs/include/node.h>
+#pragma warning(disable : 4251)
+#include <NodeJsHelper.h>
 #endif
 #define H(x) do_hash(x)
 using namespace std;
