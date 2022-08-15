@@ -16,30 +16,36 @@
 #define FMT_HEADER_ONLY
 #endif
 
-#include <bitset>
-#include <functional>
-#include <iostream>
-#include <mutex>
-#include <optional>
+/// std containers
+#include <string>
+#include <vector>
+#include <stack>
 #include <queue>
+#include <bitset>
+
 #include <set>
 #include <map>
-#include <stack>
-#include <string>
-#include <cuchar>
 #include <unordered_map>
 #include <unordered_set>
+
+#include <iostream>
+#include <optional>
+#include <functional>
+#include <mutex>
+#include <shared_mutex>
+
+// std utils
+#include <cuchar>
 #include <utility>
 #include <variant>
-#include <vector>
 #include <numeric>
 #include <cmath>
 #include <random>
 #include <algorithm>
 #include <iomanip>
 #include <xhash>
-#include <shared_mutex>
 
+// windows types
 #include <minwindef.h>
 
 #include "third-party/entt/entt.hpp"
@@ -51,9 +57,11 @@
 #include "third-party/FMT/os.h"
 #include "third-party/FMT/printf.h"
 
-#include "MC/Types.hpp"
 #include "GlobalServiceAPI.h"
 #include "Utils/Optional.h"
+
+//basic mc types
+#include "MC/Types.hpp"
 
 using std::map;
 using std::string;
