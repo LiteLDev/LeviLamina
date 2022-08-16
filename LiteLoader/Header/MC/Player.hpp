@@ -73,8 +73,8 @@ public:
      * @return std::string  The translated str
      */
     template <typename... Args>
-    inline std::string trImpl(HMODULE hPlugin, const std::string& format, const Args&... args) {
-        return Translation::trlImpl(hPlugin, this->getLanguageCode(), format, args...);
+    inline std::string trImpl(HMODULE hPlugin, const std::string& format, Args&&... args) {
+        return Translation::trlImpl(hPlugin, this->getLanguageCode(), format, std::forward<Args>(args)...);
     }
 
     /**
@@ -85,8 +85,8 @@ public:
      * @return std::string  The translated str
      */
     template <typename... Args>
-    inline std::string tr(const std::string& format, const Args&... args) {
-        return trImpl(GetCurrentModule(), format, args...);
+    inline std::string tr(const std::string& format, Args&&... args) {
+        return trImpl(GetCurrentModule(), format, std::forward<Args>(args)...);
     }
 
     LIAPI bool sendText(const std::string& text, TextType type = TextType::RAW);
@@ -100,16 +100,17 @@ public:
      * @return bool   Success or not
      */
     template <TextType ttype = TextType::RAW, typename... Args>
-    inline bool sendText(const std::string& text, const Args&... args) {
-        return sendText(this->tr(text, args...), ttype);
+    inline bool sendText(const std::string& text, Args&&... args) {
+        return sendText(this->tr(text, std::forward<Args>(args)...), ttype);
     }
     template <typename... Args>
-    inline bool sendFormattedText(const std::string& text, const Args&... args) {
+    inline bool sendFormattedText(const std::string& text, Args&&... args) {
         if constexpr (0 == sizeof...(args)) {
             // Avoid fmt if only one argument
             return sendText(text);
-        } else
-            return sendText(fmt::format(text, args...));
+        } else {
+            return sendText(fmt::format(text, std::forward<Args>(args)...));
+        }
     }
 
     LIAPI bool kick(const string& msg);
