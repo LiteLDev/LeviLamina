@@ -36,7 +36,7 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
         switch (funcSymbol->mParams[i]) {
             case NativeFunction::Types::Bool:
                 NATIVE_CHECK_ARG_TYPE(ValueKind::kBoolean);
-                dcArgBool(vm, args[i].asBoolean().value());
+                dcArgChar(vm, args[i].asBoolean().value());
                 break;
             case NativeFunction::Types::Char:
             case NativeFunction::Types::UnsignedChar:
@@ -85,9 +85,14 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
         case NativeFunction::Types::Void:
             dcCallVoid(vm, func);
             break;
-        case NativeFunction::Types::Bool:
-            res = Boolean::newBoolean(dcCallBool(vm, func));
+        case NativeFunction::Types::Bool: {
+            // in c, bool is the alias of int
+            // [c]#define bool int, sizeof(bool) == 4
+            // but in cpp, bool represent a true/false value
+            // it'a a builtin type, sizeof(bool) == sizeof(char) == 1
+            res = Boolean::newBoolean(dcCallChar(vm, func));
             break;
+        }
         case NativeFunction::Types::Char:
         case NativeFunction::Types::UnsignedChar:
             res = Number::newNumber(dcCallChar(vm, func));
