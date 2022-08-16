@@ -119,7 +119,8 @@ void LoadMain_NodeJs() {
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
-            logger.info(tr("llse.loader.loadMain.nodejs.installPack.start", i.path().u8string()));
+            logger.info(tr("llse.loader.loadMain.nodejs.installPack.start",
+                           fmt::arg("path", i.path().u8string())));
             if (!NodeJsHelper::deployPluginPack(i.path().u8string())) {
                 logger.error(tr("llse.loader.loadMain.nodejs.installPack.fail"));
             }
