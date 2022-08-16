@@ -4,6 +4,7 @@
 #include "McAPI.h"
 #include "EntityAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <MC/CompoundTag.hpp>
 #include <MC/ItemStack.hpp>
 #include <vector>
@@ -111,7 +112,7 @@ Local<Value> ItemClass::getAux() {
 
 Local<Value> ItemClass::asPointer(const Arguments& args) {
     try {
-        return Number::newNumber((intptr_t)item);
+        return NativePointer::newNativePointer(item);
     }
     CATCH("Fail in asPointer!");
 }

@@ -8,6 +8,7 @@
 #include "McAPI.h"
 #include "ContainerAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <MC/ServerPlayer.hpp>
 #include <MC/Level.hpp>
 #include <MC/ItemActor.hpp>
@@ -109,7 +110,7 @@ Local<Value> EntityClass::asPointer(const Arguments& args) {
         if (!entity)
             return Local<Value>();
         else
-            return Number::newNumber((intptr_t)entity);
+            return NativePointer::newNativePointer(entity);
     }
     CATCH("Fail in asPointer!")
 }

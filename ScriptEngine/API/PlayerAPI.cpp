@@ -10,6 +10,7 @@
 #include "GuiAPI.h"
 #include "NbtAPI.h"
 #include "PacketAPI.h"
+#include "NativeAPI.h"
 #include <Engine/EngineOwnData.h>
 #include <Engine/GlobalShareData.h>
 #include <MC/Player.hpp>
@@ -480,7 +481,7 @@ Local<Value> PlayerClass::asPointer(const Arguments& args) {
         if (!player)
             return Local<Value>();
         else
-            return Number::newNumber((intptr_t)player);
+            return NativePointer::newNativePointer(player);
     }
     CATCH("Fail in asPointer!")
 }

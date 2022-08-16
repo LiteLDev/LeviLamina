@@ -6,6 +6,7 @@
 #include "EntityAPI.h"
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <MC/Level.hpp>
 #include <MC/Block.hpp>
 #include <MC/CompoundTag.hpp>
@@ -135,7 +136,7 @@ Local<Value> BlockClass::getTileData() {
 
 Local<Value> BlockClass::asPointer(const Arguments& args) {
     try {
-        return Number::newNumber((intptr_t)block);
+        return NativePointer::newNativePointer(block);
     }
     CATCH("Fail in asPointer!");
 }

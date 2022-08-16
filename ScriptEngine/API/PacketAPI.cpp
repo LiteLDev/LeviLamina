@@ -6,6 +6,7 @@
 #include "EntityAPI.h"
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <MC/Packet.hpp>
 #include "PacketAPI.h"
 #include <MC/MinecraftPackets.hpp>
@@ -78,7 +79,7 @@ Local<Value> PacketClass::asPointer(const Arguments& args) {
         if (!pkt)
             return Local<Value>();
         else
-            return Number::newNumber((intptr_t)pkt.get());
+            return NativePointer::newNativePointer(pkt.get());
     }
     CATCH("Fail in asPointer!")
 }

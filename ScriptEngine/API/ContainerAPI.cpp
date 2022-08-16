@@ -1,6 +1,7 @@
 #include "ContainerAPI.h"
 #include "APIHelp.h"
 #include "ItemAPI.h"
+#include "NativeAPI.h"
 #include <MC/ItemStack.hpp>
 #include <MC/Container.hpp>
 using namespace std;
@@ -65,7 +66,7 @@ Local<Value> ContainerClass::getType() {
 
 Local<Value> ContainerClass::asPointer(const Arguments& args) {
     try {
-        return Number::newNumber((intptr_t)container);
+        return NativePointer::newNativePointer(container);
     }
     CATCH("Fail in asPointer!")
 }

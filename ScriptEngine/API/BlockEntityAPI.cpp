@@ -3,6 +3,7 @@
 #include "BlockAPI.h"
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <Global.hpp>
 #include <MC/BlockActor.hpp>
 #include <MC/CompoundTag.hpp>
@@ -45,7 +46,7 @@ BlockActor* BlockEntityClass::extract(Local<Value> v) {
 //成员函数
 Local<Value> BlockEntityClass::asPointer(const Arguments& args) {
     try {
-        return Number::newNumber((intptr_t)blockEntity);
+        return NativePointer::newNativePointer(blockEntity);
     }
     CATCH("Fail in asPointer!")
 }
