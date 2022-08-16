@@ -25,7 +25,7 @@
 #include <API/McAPI.h>
 #include <API/GameUtilsAPI.h>
 #include <API/PacketAPI.h>
-#include <API/NativeApi.h>
+#include <API/NativeAPI.h>
 #include <API/NativeStdString.h>
 
 void BindAPIs(ScriptEngine* engine)
