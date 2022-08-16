@@ -1,6 +1,5 @@
 #include "NativeApi.h"
 #include "NativeStdString.h"
-#include "MC/HashedString.hpp"
 #include <string>
 using namespace std;
 
@@ -34,7 +33,6 @@ ClassDefine<NativeStdString> NativeStdStringBuilder =
         .instanceFunction("resize", &NativeStdString::resize)
 
         .instanceFunction("toString", &NativeStdString::toString)
-        .instanceFunction("toHashedString", &NativeStdString::toHashedString)
         .instanceFunction("asPointer", &NativeStdString::asPointer)
         .instanceFunction("clone", &NativeStdString::clone)
         .instanceFunction("destroy", &NativeStdString::destroy)
@@ -327,14 +325,6 @@ Local<Value> NativeStdString::toString() {
         return String::newString(*mStr);
     }
     CATCH("Fail in NativeStdString::toString!");
-}
-
-Local<Value> NativeStdString::toHashedString() {
-    try {
-        auto hashed = HashedString(*mStr);
-        return NativePointer::newNativePointer(&hashed);
-    }
-    CATCH("Fail in NativeStdString::toHashedString!");
 }
 
 Local<Value> NativeStdString::clone() {
