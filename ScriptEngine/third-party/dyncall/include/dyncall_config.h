@@ -39,7 +39,7 @@
 
 #include "dyncall_macros.h"
 
-#define DC_BOOL         unsigned __int8
+#define DC_BOOL         int
 #define DC_LONG_LONG    long long
 #define DC_POINTER      void*
 
