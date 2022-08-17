@@ -1,9 +1,9 @@
-#include "MC/RealVanillaBlocks.hpp"
+#include "MC/StaticVanillaBlocks.hpp"
 #include "MC/BlockTypeRegistry.hpp"
 #include "MC/HashedString.hpp"
 #include "MC/VanillaBlockTypeIds.hpp"
 
-namespace RealVanillaBlocks {
+namespace StaticVanillaBlocks {
 
     Block const* mAcaciaButton;
     Block const* mAcaciaDoor;
@@ -1244,9 +1244,9 @@ namespace RealVanillaBlocks {
         mYellowFlower = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowFlower, true);
         mYellowGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowGlazedTerracotta, true);
     }
-}; // namespace RealVanillaBlocks
+}; // namespace StaticVanillaBlocks
 
 THook(void, "?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z", class Experiments const& exp) {
-    RealVanillaBlocks::assignBlocks();
+    StaticVanillaBlocks::assignBlocks();
     return original(exp);
 }
