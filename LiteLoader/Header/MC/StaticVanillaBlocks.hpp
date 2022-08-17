@@ -3,7 +3,7 @@
 #include "../Global.h"
 #include "MC/Block.hpp"
 
-namespace RealVanillaBlocks {
+namespace StaticVanillaBlocks {
 
     LIAPI extern class Block const* mAcaciaButton;
     LIAPI extern class Block const* mAcaciaDoor;
