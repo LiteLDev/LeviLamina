@@ -84,7 +84,7 @@
     <ClInclude Include="API\EntityAPI.h" />
     <ClInclude Include="API\EventAPI.h" />
     <ClInclude Include="API\FileSystemAPI.h" />
-    <ClInclude Include="API\NativeApi.h" />
+    <ClInclude Include="API\NativeAPI.h" />
     <ClInclude Include="API\NativeStdString.h" />
     <ClInclude Include="API\PacketAPI.h" />
     <ClInclude Include="API\RemoteCallAPI.h" />

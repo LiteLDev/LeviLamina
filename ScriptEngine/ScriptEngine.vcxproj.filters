@@ -349,7 +349,7 @@
     <ClInclude Include="Main\NodeJsHelper.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="API\NativeApi.h">
+    <ClInclude Include="API\NativeAPI.h">
       <Filter>API\NativeAPI</Filter>
     </ClInclude>
     <ClInclude Include="API\NativeStdString.h">

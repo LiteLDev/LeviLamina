@@ -72,8 +72,20 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
                 dcArgDouble(vm, args[i].asNumber().toDouble());
                 break;
             case NativeFunction::Types::Pointer:
-                NATIVE_CHECK_ARG_CLASS(NativePointer);
-                dcArgPointer(vm, NativePointer::extract(args[i]));
+                switch (args[i].getKind()) {
+                    case ValueKind::kObject:
+                        NATIVE_CHECK_ARG_CLASS(NativePointer);
+                        dcArgPointer(vm, NativePointer::extract(args[i]));
+                        break;
+                    case ValueKind::kNumber:
+                        NATIVE_CHECK_ARG_TYPE(ValueKind::kNumber);
+                        dcArgPointer(vm, (void*)args[i].asNumber().toInt64());
+                        break;
+                    case ValueKind::kNull:
+                    default:
+                        dcArgPointer(vm, nullptr);
+                        break;
+                }
                 break;
             default:
                 break;
