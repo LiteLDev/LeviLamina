@@ -1245,3 +1245,8 @@ namespace RealVanillaBlocks {
         mYellowGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowGlazedTerracotta, true);
     }
 }; // namespace RealVanillaBlocks
+
+THook(void, "?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z", class Experiments const& exp) {
+    RealVanillaBlocks::assignBlocks();
+    return original(exp);
+}
