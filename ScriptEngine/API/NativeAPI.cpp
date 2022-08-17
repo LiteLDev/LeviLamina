@@ -26,6 +26,7 @@ Concurrency::concurrent_unordered_map<std::string, NativeFunction> NativeFunctio
 Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* funcSymbol, const Arguments& args) {
     if (args.size() < funcSymbol->mParams.size()) {
         logger.error("Too Few arguments!");
+        logger.error("In Component: NativeCall");
         logger.error("In Symbol: " + funcSymbol->mSymbol);
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
         return Local<Value>();
@@ -346,11 +347,6 @@ Local<Value> ScriptNativeFunction::fromScript(const Arguments& args) {
 
 Local<Value> NativeFunction::getCallableFunction() {
     return Function::newFunction([this](const Arguments& args) -> Local<Value> {
-        if (args.size() < mParams.size()) {
-            logger.error("Too Few arguments!");
-            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-            return Local<Value>();
-        }
         return callNativeFunction(ENGINE_OWN_DATA()->dynamicCallVM, this, args);
     });
 }
@@ -459,6 +455,8 @@ char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue
         }
     } catch (const Exception& e) {
         logger.error("Hook Callback Failed!");
+        logger.error("Message: {}",e.message());
+        logger.error("StackTrace: {}", e.stacktrace());
         logger.error("In Symbol: " + hookInfo->mSymbol);
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
     }
