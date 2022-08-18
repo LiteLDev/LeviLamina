@@ -82,6 +82,9 @@
     <Filter Include="Kernel\DB\Impl\MySQL">
       <UniqueIdentifier>{2ddb5319-2d2b-4a85-8d4e-1beb3d3d7023}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\PERM">
+      <UniqueIdentifier>{0101d9de-4977-4635-8fb5-7475a3ee9230}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -389,6 +392,9 @@
     </ClCompile>
     <ClCompile Include="Main\BStats.cpp">
       <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\PermissionAPI.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -814,6 +820,21 @@
     </ClInclude>
     <ClInclude Include="Header\MC\SemVersion.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\PERM\Role.hpp">
+      <Filter>Header\PERM</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\PERM\Foundation.hpp">
+      <Filter>Header\PERM</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\PERM\Member.hpp">
+      <Filter>Header\PERM</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\PERM\Permission.hpp">
+      <Filter>Header\PERM</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\PermissionAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
