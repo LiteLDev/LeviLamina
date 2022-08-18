@@ -156,7 +156,10 @@
     <ClCompile Include="Kernel\MC\BlockInstanceAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BlockLegacyAPI.cpp">
+    <ClCompile Include="Kernel\MC\BlockLegacyAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\StaticVanillaBlocksAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\MC\BlockSourceAPI.cpp">

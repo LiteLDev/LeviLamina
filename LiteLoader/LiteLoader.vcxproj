@@ -241,7 +241,8 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\MC\BlockActorAPI.cpp" />
     <ClCompile Include="Kernel\MC\BlockAPI.cpp" />
     <ClCompile Include="Kernel\MC\BlockInstanceAPI.cpp" />
-    <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
+    <ClCompile Include="Kernel\MC\BlockLegacyAPI.cpp" />
+    <ClCompile Include="Kernel\MC\StaticVanillaBlocksAPI.cpp" />
     <ClCompile Include="Kernel\MC\BlockSourceAPI.cpp" />
     <ClCompile Include="Kernel\NBT\ByteArrayTagAPI.cpp" />
     <ClCompile Include="Kernel\NBT\ByteTagAPI.cpp" />
