@@ -194,6 +194,9 @@
     <ClCompile Include="API\NativeStdString.cpp">
       <Filter>API\NativeAPI</Filter>
     </ClCompile>
+    <ClCompile Include="API\PermissionAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">
@@ -354,6 +357,9 @@
     </ClInclude>
     <ClInclude Include="API\NativeStdString.h">
       <Filter>API\NativeAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="API\PermissionAPI.h">
+      <Filter>API</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

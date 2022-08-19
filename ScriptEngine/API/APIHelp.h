@@ -56,6 +56,10 @@ bool inline IsInstanceOf(Local<Value> v) {
     return EngineScope::currentEngine()->isInstanceOf<T>(v);
 }
 
+std::string ValueKindToString(const ValueKind& kind);
+
+#if !defined(NEW_DEFINES)
+
 // 输出脚本调用堆栈，API名称，以及插件名
 #define LOG_ERROR_WITH_SCRIPT_INFO(...)    \
     PrintScriptStackTrace(__VA_ARGS__);    \
@@ -214,6 +218,38 @@ bool inline IsInstanceOf(Local<Value> v) {
         logger.error(std::string("In callback for ") + callback);    \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     }
+
+#else
+
+// 新的宏定义, 把异常抛入脚本层处理
+
+#define CATCH_AND_THROW                                        \
+    catch (const Exception& e) {                               \
+        throw e;                                               \
+    }                                                          \
+    catch (const std::exception& e) {                          \
+        throw Exception(e.what());                             \
+    }                                                          \
+    catch (...) {                                              \
+        throw Exception("Unknown exception in " __FUNCTION__); \
+    }
+
+#define CHECK_ARGS_COUNT(count)                                                                                              \
+    if (args.size() != count) {                                                                                              \
+        throw Exception(fmt::format("Invalid arguments count: {}, expect {}, in API {}", args.size(), count, __FUNCTION__)); \
+    }
+
+#define CHECK_ARG_TYPE(index, type)                                                                                                                                                               \
+    if (args[index].getKind() != ValueKind::type) {                                                                                                                                               \
+        throw Exception(fmt::format("Wrong type of arguments[{}]: {}, expect {}, in API {}", index, ValueKindToString(args[index].getKind()), ValueKindToString(ValueKind::type), __FUNCTION__)); \
+    }
+
+#define CHECK_VAL_TYPE(val, type)                                                                                                                                          \
+    if (val.getKind() != ValueKind::type) {                                                                                                                                \
+        throw Exception(fmt::format("Wrong type of value: {}, expect {}, in API {}", ValueKindToString(val.getKind()), ValueKindToString(ValueKind::type), __FUNCTION__)); \
+    }
+
+#endif
 
 // 判断是否为浮点数
 bool CheckIsFloat(const Local<Value>& num);

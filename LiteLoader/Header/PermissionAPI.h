@@ -341,6 +341,16 @@ public:
     }
 
     /**
+     * @brief Check whether a role exists.
+     *
+     * @param  name  The name of the role.
+     * @return bool  True If the role exists, false otherwise.
+     */
+    static bool roleExists(const std::string& name) {
+        return api.roleExists(name);
+    }
+
+    /**
      * @brief Register an permission.
      *
      * @param name  The name of the permission.
@@ -359,7 +369,7 @@ public:
      * @brief Delete a permission.
      *
      * @param    name  The name of the permission.
-     * @warning  This function will also delete the permission instances in roles.
+     * @note     This function will also delete the permission instances in roles.
      * @throws std::invalid_argument      If the permission does not exist.
      * @par Example
      * @code
@@ -368,6 +378,16 @@ public:
      */
     static void deletePermission(const std::string& name) {
         api.deletePermission(name);
+    }
+
+    /**
+     * @brief Check whether a permission exists.
+     *
+     * @param  name  The name of the permission.
+     * @return bool  True If the permission exists, false otherwise.
+     */
+    static bool permissionExists(const std::string& name) {
+        return api.permissionExists(name);
     }
 
     /**

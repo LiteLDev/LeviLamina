@@ -27,6 +27,7 @@
 #include <API/PacketAPI.h>
 #include <API/NativeAPI.h>
 #include <API/NativeStdString.h>
+#include <API/PermissionAPI.h>
 
 void BindAPIs(ScriptEngine* engine)
 {
@@ -61,6 +62,9 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(ParamOptionStaticBuilder);
     engine->registerNativeClass(OriginTypeStaticBuilder);
     engine->registerNativeClass(DamageCauseEnumBuilder);
+
+    engine->registerNativeClass(PermissionClassBuilder);
+
     //////////////// 实例类 ////////////////
 
     engine->registerNativeClass<IntPos>(IntPosBuilder);
@@ -102,6 +106,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpRequestClass>(HttpRequestClassBuilder);
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
     engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
+    engine->registerNativeClass<RoleClass>(RoleClassBuilder);
 
     //////////////// NativeFFI ////////////////
     engine->registerNativeClass(NativeTypeEnumBuilder);

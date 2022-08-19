@@ -512,3 +512,26 @@ std::string ValueToJson(Local<Value> v, int formatIndent) {
     }
     return result;
 }
+
+std::string ValueKindToString(const ValueKind& kind) {
+    switch (kind) {
+        case ValueKind::kString:
+            return "string";
+        case ValueKind::kNumber:
+            return "number";
+        case ValueKind::kBoolean:
+            return "boolean";
+        case ValueKind::kNull:
+            return "null";
+        case ValueKind::kObject:
+            return "object";
+        case ValueKind::kArray:
+            return "array";
+        case ValueKind::kFunction:
+            return "function";
+        case ValueKind::kByteBuffer:
+            return "bytebuffer";
+        default:
+            return "unknown";
+    }
+}
