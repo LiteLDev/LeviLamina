@@ -267,6 +267,11 @@ void LL::LoadMain() {
         }
     }
 
+    // Load PermissionAPI
+    if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
+        LoadPermissionAPI();
+    }
+
     // Load ScriptEngine
     if (LL::globalConfig.enableScriptEngine) {
         InitNodeJsDirectories();
@@ -278,11 +283,6 @@ void LL::LoadMain() {
     // Load .NET Engine
     if (filesystem::exists("plugins/LiteLoader/LiteLoader.NET.dll")) {
         LoadDotNETEngine();
-    }
-
-    // Load PermissionAPI
-    if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
-        LoadPermissionAPI();
     }
 
     // Call onPostInit

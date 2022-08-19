@@ -25,6 +25,7 @@ ClassDefine<RoleClass> RoleClassBuilder =
         .instanceFunction("setPermission", &RoleClass::setPermission)
         .instanceFunction("removePermission", &RoleClass::removePermission)
         .instanceFunction("permissionDefined", &RoleClass::permissionDefined)
+        .instanceFunction("isValid", &RoleClass::isValid)
         .instanceProperty("name", &RoleClass::getName, &RoleClass::setName)
         .instanceProperty("displayName", &RoleClass::getDisplayName, &RoleClass::setDisplayName)
         .instanceProperty("priority", &RoleClass::getPriority, &RoleClass::setPriority)
@@ -34,7 +35,7 @@ ClassDefine<RoleClass> RoleClassBuilder =
 
 
 ClassDefine<void> PermissionClassBuilder =
-    defineClass("perm")
+    defineClass("Permission")
         .function("createRole", &PermissionClass::createRole)
         .function("roleExists", &PermissionClass::roleExists)
         .function("getRole", &PermissionClass::getRole)
