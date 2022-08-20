@@ -275,14 +275,14 @@ Local<Value> RoleClass::isValid(const Arguments& args) {
     CHECK_ARGS_COUNT(0);
 
     try {
-        return Boolean::newBoolean(role.expired());
+        return Boolean::newBoolean(!role.expired());
     }
     CATCH_AND_THROW;
     return Local<Value>();
 }
 
 
-    Local<Value> PermissionClass::createRole(const Arguments& args) {
+Local<Value> PermissionClass::createRole(const Arguments& args) {
     try {
         auto res = RoleClass::constructor(args);
         if (res) {
@@ -310,7 +310,8 @@ Local<Value> PermissionClass::getRole(const Arguments& args) {
     CHECK_ARG_TYPE(0, kString);
 
     try {
-        return RoleClass(args.thiz(), Permission::getRole(args[0].toStr())).getScriptObject();
+        auto res = new RoleClass(Permission::getRole(args[0].toStr()));
+        return res->getScriptObject();
     }
     CATCH_AND_THROW;
     return Local<Value>();
@@ -321,7 +322,8 @@ Local<Value> PermissionClass::getOrCreateRole(const Arguments& args) {
     CHECK_ARG_TYPE(0, kString);
 
     try {
-        return RoleClass(args.thiz(), Permission::getOrCreateRole(args[0].toStr())).getScriptObject();
+        auto res = new RoleClass(Permission::getOrCreateRole(args[0].toStr()));
+        return res->getScriptObject();
     }
     CATCH_AND_THROW;
     return Local<Value>();
@@ -362,7 +364,7 @@ Local<Value> PermissionClass::permissionExists(const Arguments& args) {
 }
 
 Local<Value> PermissionClass::checkPermission(const Arguments& args) {
-    CHECK_ARGS_COUNT(1);
+    CHECK_ARGS_COUNT(2);
     CHECK_ARG_TYPE(0, kString);
     CHECK_ARG_TYPE(1, kString);
 
