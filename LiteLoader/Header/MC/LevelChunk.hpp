@@ -15,17 +15,31 @@ class LevelChunk {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Finalization;
+enum Finalization : int {
+    Requeue = 0x0,
+    Done = 0x1,
+    Noop = 0x2,
+};
+
 class Neighbors {
 public:
     Neighbors() = delete;
     Neighbors(Neighbors const&) = delete;
     Neighbors(Neighbors const&&) = delete;
 };
+
+enum HardcodedSpawnAreaType : char {
+    NONE = 0,
+    NETHER_FORTRESS = 1,
+    SWAMP_HUT = 2,
+    OCEAN_MONUMENT = 3,
+    UNKNOWN4 = 4,
+    PILLAGER_OUTPOST = 5,
+};
+
 struct HardcodedSpawningArea {
-    HardcodedSpawningArea() = delete;
-    HardcodedSpawningArea(HardcodedSpawningArea const&) = delete;
-    HardcodedSpawningArea(HardcodedSpawningArea const&&) = delete;
+    class BoundingBox aabb;
+    enum HardcodedSpawnAreaType type;
 };
 #undef AFTER_EXTRA
 

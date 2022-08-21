@@ -6,6 +6,15 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
+struct ChunkLocalHeight
+{
+    short mVal;
+    ChunkLocalHeight(short v)
+    : mVal(v){};
+    ChunkLocalHeight()
+    : mVal(0){};
+};
+
 #undef BEFORE_EXTRA
 
 class ChunkBlockPos {
@@ -16,7 +25,7 @@ class ChunkBlockPos {
 public:
 char x;
 char z;
-short y; // ChunkLocalHeight
+ChunkLocalHeight y;
 ChunkBlockPos()
     : x(0)
     , y(0)
