@@ -6,45 +6,37 @@ namespace PERM {
 
     class Role {
 
+    protected:
+
+        Members members;
+        Permissions permissions;
+
     public:
         enum class Type : char {
             None = 0,
             General = 1,
             Everyone = 2,
-            Admin = 3
+            Admin = 3,
+            //Custom = 4,
         };
 
-        Members members;
-        Permissions permissions;
         std::string name;
         std::string displayName;
         int priority = 0;
 
         static constexpr std::string_view roleNameInvalidChars = "@#[]{}<>()/|\\$%^&*!~`\"\'+=?\n\t\r\f\v ";
 
-        virtual ~Role() = default;
+        virtual ~Role() {};
 
         virtual bool hasPermission(const std::string& name) const {
             return this->permissions.contains(name) && this->permissions.at(name).enabled;
         }
-        virtual void setPermission(const std::string& name, bool enabled = true, const nlohmann::json& extra = nlohmann::json()) {
-            if (!this->permissions.contains(name)) {
-                this->permissions.push_back({name, enabled, extra});
-            } else {
-                this->permissions.at(name).enabled = enabled;
-                if (!extra.is_null()) {
-                    if (extra.is_object()) {
-                        this->permissions.at(name).extra = extra;
-                    } else {
-                        throw std::runtime_error("Failed to set the permission: the extra data is not a json object");
-                    }
-                }
-            }
-        }
+        virtual void setPermission(const std::string& name, bool enabled = true, const nlohmann::json& extra = nlohmann::json());
+
         virtual void removePermission(const std::string& name) {
             this->permissions.remove(name);
         }
-        virtual bool permissionDefined(const std::string& name) {
+        virtual bool permissionExists(const std::string& name) {
             return this->permissions.contains(name);
         }
 
@@ -53,7 +45,16 @@ namespace PERM {
         virtual void removeMember(const xuid_t& xuid) = 0;
 
 
+        virtual Permissions& getPermissions() {
+            return this->permissions;
+        }
+        virtual Permissions getPermissions() const {
+            return this->permissions;
+        }
         virtual Members& getMembers() {
+            return this->members;
+        }
+        virtual Members getMembers() const {
             return this->members;
         }
         virtual Type getType() const = 0;
@@ -85,9 +86,11 @@ namespace PERM {
         using Base = Role;
 
     public:
+
         GeneralRole() = default;
         GeneralRole(const GeneralRole& other) = default;
         GeneralRole(GeneralRole&& other) = default;
+        ~GeneralRole() = default;
 
         GeneralRole& operator=(const GeneralRole& other) = default;
         GeneralRole& operator=(GeneralRole&& other) = default;
@@ -112,9 +115,11 @@ namespace PERM {
         using Base = Role;
 
     public:
+
         EveryoneRole() = default;
         EveryoneRole(const EveryoneRole& other) = default;
         EveryoneRole(EveryoneRole&& other) = default;
+        ~EveryoneRole() = default;
 
         EveryoneRole& operator=(const EveryoneRole& other) = default;
         EveryoneRole& operator=(EveryoneRole&& other) = default;
@@ -139,9 +144,11 @@ namespace PERM {
         using Base = Role;
 
     public:
+
         AdminRole() = default;
         AdminRole(const AdminRole& other) = default;
         AdminRole(AdminRole&& other) = default;
+        ~AdminRole() = default;
 
         AdminRole& operator=(const AdminRole& other) = default;
         AdminRole& operator=(AdminRole&& other) = default;

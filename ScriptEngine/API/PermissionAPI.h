@@ -52,7 +52,7 @@ public:
 
     Local<Value> removePermission(const Arguments& args);
 
-    Local<Value> permissionDefined(const Arguments& args);
+    Local<Value> permissionExists(const Arguments& args);
 
     Local<Value> isValid(const Arguments& args);
 };

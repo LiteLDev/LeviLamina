@@ -24,7 +24,7 @@ ClassDefine<RoleClass> RoleClassBuilder =
         .instanceFunction("hasPermission", &RoleClass::hasPermission)
         .instanceFunction("setPermission", &RoleClass::setPermission)
         .instanceFunction("removePermission", &RoleClass::removePermission)
-        .instanceFunction("permissionDefined", &RoleClass::permissionDefined)
+        .instanceFunction("permissionExists", &RoleClass::permissionExists)
         .instanceFunction("isValid", &RoleClass::isValid)
         .instanceProperty("name", &RoleClass::getName, &RoleClass::setName)
         .instanceProperty("displayName", &RoleClass::getDisplayName, &RoleClass::setDisplayName)
@@ -98,7 +98,7 @@ Local<Value> RoleClass::getMembers() {
     auto members = Array::newArray();
     if (lock()->getType() == Role::Type::Everyone)
         return members;
-    for (auto& member : lock()->members) {
+    for (auto& member : lock()->getMembers()) {
         members.add(String::newString(member));
     }
     return members;
@@ -106,7 +106,7 @@ Local<Value> RoleClass::getMembers() {
 
 Local<Value> RoleClass::getPermissions() {
     auto result = Array::newArray();
-    for (auto& perm : lock()->permissions) {
+    for (auto& perm : lock()->getPermissions()) {
         result.add(PermInstanceToObject(perm));
     }
     return result;
@@ -146,11 +146,11 @@ void RoleClass::setMembers(const Local<Value>& val) {
     CHECK_VAL_TYPE(val, kArray);
 
     try {
-        lock()->members.clear();
+        lock()->getMembers().clear();
         auto arr = val.asArray();
         for (size_t i = 0; i < arr.size(); i++) {
             CHECK_VAL_TYPE(arr.get(i), kString);
-            lock()->members.push_back(arr.get(i).toStr());
+            lock()->getMembers().push_back(arr.get(i).toStr());
         }
     }
     CATCH_AND_THROW;
@@ -160,7 +160,7 @@ void RoleClass::setPermissions(const Local<Value>& val) {
     CHECK_VAL_TYPE(val, kArray);
 
     try {
-        lock()->permissions.clear();
+        lock()->getPermissions().clear();
         auto arr = val.asArray();
         for (size_t i = 0; i < arr.size(); i++) {
             CHECK_VAL_TYPE(arr.get(i), kObject);
@@ -174,7 +174,7 @@ void RoleClass::setPermissions(const Local<Value>& val) {
             perm.extra = nlohmann::json::parse(ValueToJson(obj));
             perm.extra.erase("name");
             perm.extra.erase("enabled");
-            lock()->permissions.push_back(perm);
+            lock()->getPermissions().push_back(perm);
         }
     }
     CATCH_AND_THROW;
@@ -260,12 +260,12 @@ Local<Value> RoleClass::removePermission(const Arguments& args) {
     return Local<Value>();
 }
 
-Local<Value> RoleClass::permissionDefined(const Arguments& args) {
+Local<Value> RoleClass::permissionExists(const Arguments& args) {
     CHECK_ARGS_COUNT(1);
     CHECK_ARG_TYPE(0, kString);
 
     try {
-        return Boolean::newBoolean(lock()->permissionDefined(args[0].toStr()));
+        return Boolean::newBoolean(lock()->permissionExists(args[0].toStr()));
     }
     CATCH_AND_THROW;
     return Local<Value>();
