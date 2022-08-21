@@ -55,14 +55,14 @@ void CleanOldScriptEngine() {
 
 
 const char* DEFAULT_ROOT_PACKAGE_JSON =
-R"({
+    R"({
     "name": "llse-nodejs-root",
     "version" : "1.0.0",
     "description" : "Root package environment of LLSE NodeJs backend",
     "main" : "index.js",
     "scripts" : { "test": "exit" },
     "author" : "LiteLDev",
-    "license" : "AGPL-3.0-or-later"
+    "license" : "LGPL-3.0"
 })";
 
 bool IsExistScriptPlugin()
