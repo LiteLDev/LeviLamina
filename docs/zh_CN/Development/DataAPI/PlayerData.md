@@ -83,4 +83,17 @@ Xuid数据库让你可以即使在玩家离线的时候，也可以查询玩家�
 
 <br>
 
+#### 获取所有的玩家信息
+
+`data.getAllPlayerInfo()`
+
+- 返回值: 所有的玩家信息
+- 返回值类型: `Array<Object>`
+  - 每个对象都含有以下属性:
+    - `name`: 玩家名
+    - `xuid`: 玩家Xuid
+    - `uuid`: 玩家UUID
+
+<br>
+
 提示：Xuid数据库中储存的玩家名为玩家对象对应的`realName`字段

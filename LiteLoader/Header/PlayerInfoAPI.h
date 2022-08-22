@@ -1,8 +1,20 @@
+/**
+ * @file   PlayerInfoAPI.h
+ * @author LiteLDev (https://github.com/LiteLDev)
+ * @brief  Player information database interfaces
+ *
+ * @copyright Copyright (c) 2021-present  LiteLoaderBDS developers and all contributors
+ *
+ */
 #pragma once
 #include <Global.h>
 #include <string>
 namespace PlayerInfo {
 
+/**
+ * @brief Player information structure.
+ * 
+ */
 struct Info {
     std::string name; ///< Real name(xbox)
     xuid_t xuid;      ///< Xuid(online-mode is required)

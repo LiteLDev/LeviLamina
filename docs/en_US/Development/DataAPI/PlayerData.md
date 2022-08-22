@@ -83,4 +83,17 @@ When a player enters the server for the first time, his name and Xuid are automa
 
 <br>
 
+#### Get all player information
+
+`data.getAllPlayerInfo()`
+
+- Return value: All player information.
+- Return value type: `Array<Object>`
+  - Each object contains the following properties:
+    - `name`: Player's name.
+    - `xuid`: Player's Xuid.
+    - `uuid`: Player's UUID.
+
+<br>
+
 Tip: The player name stored in the Xuid database is named corresponding to the player object. `realName` field.
