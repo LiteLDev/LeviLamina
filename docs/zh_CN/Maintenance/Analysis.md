@@ -35,21 +35,21 @@ LLSE最重要的思想，就是将各重要功能模块化，方便于后续的�
 项目使用MSBuild构建系统构建。  
 上述的架构落实到实际项目中，项目目录结构如图所示：
 
-```
-├───docs				# 文档目录
+```txt
+├───docs                  # 文档目录
 ├───ScriptEngine
-│   ├───engine			# 脚本引擎库目录
-│   ├───include			# 头文件包含目录
-│   ├───lib				# 依赖库目录
-│   ├───LiteLoader.Js	# Js项目目录（无源码）
-│   ├───LiteLoader.Lua	# Lua项目目录（无源码）
-│   ├───Release			# DLL生成目录
-│   ├───src				# [核心]源码目录
-│   │   ├───API			# API接口层
-│   │   └───Kernel		# 核心抽象层
-│   └───test			# 测试
-├───RELEASE				# 发布目录（用于GitHub Action）
-└───ScriptX				# ScriptX源码目录
+│   ├───engine            # 脚本引擎库目录
+│   ├───include           # 头文件包含目录
+│   ├───lib               # 依赖库目录
+│   ├───LiteLoader.Js     # Js项目目录（无源码）
+│   ├───LiteLoader.Lua    # Lua项目目录（无源码）
+│   ├───Release           # DLL生成目录
+│   ├───src               # [核心]源码目录
+│   │   ├───API           # API接口层
+│   │   └───Kernel        # 核心抽象层
+│   └───test              # 测试
+├───RELEASE               # 发布目录（用于GitHub Action）
+└───ScriptX               # ScriptX源码目录
 ```
 
 <br>
