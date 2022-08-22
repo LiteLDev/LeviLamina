@@ -4,6 +4,7 @@
 #include <Utils/StringReader.h>
 #include <LoggerAPI.h>
 #define Wptr2MySQLSession(x) ((MySQLSession*)x.lock().get())
+#pragma warning(disable : 4267)
 #pragma warning(disable : 26812)
 
 template <>
