@@ -5,6 +5,7 @@
 #include <vector>
 
 #include <LoggerAPI.h>
+#include <PermissionAPI.h>
 #include <Main/PluginManager.h>
 #include <Main/LiteLoader.h>
 #include <Utils/StringHelper.h>
@@ -65,8 +66,7 @@ const char* DEFAULT_ROOT_PACKAGE_JSON =
     "license" : "LGPL-3.0"
 })";
 
-bool IsExistScriptPlugin()
-{
+bool IsExistScriptPlugin() {
     std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
@@ -93,16 +93,14 @@ bool IsExistScriptPlugin()
     return false;
 }
 
-bool IsExistNodeJsPlugin()
-{
+bool IsExistNodeJsPlugin() {
     if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
         return false;
 
     bool exist = false;
     filesystem::directory_iterator ent(LLSE_NODEJS_ROOT_DIR);
     for (auto& file : ent) {
-        if (file.is_directory() && filesystem::exists(file.path() / "package.json"))
-        {
+        if (file.is_directory() && filesystem::exists(file.path() / "package.json")) {
             exist = true;
             break;
         }
@@ -110,21 +108,17 @@ bool IsExistNodeJsPlugin()
     return exist;
 }
 
-void InitNodeJsDirectories()
-{
+void InitNodeJsDirectories() {
     // Check & Create nodejs directories
-    if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
-    {
+    if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR)) {
         filesystem::create_directories(LLSE_NODEJS_ROOT_DIR);
     }
     auto node_modules_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "node_modules";
-    if (!filesystem::exists(node_modules_path))
-    {
+    if (!filesystem::exists(node_modules_path)) {
         filesystem::create_directories(node_modules_path);
     }
     auto package_json_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "package.json";
-    if (!filesystem::exists(package_json_path))
-    {
+    if (!filesystem::exists(package_json_path)) {
         ofstream fout(package_json_path.c_str());
         fout << DEFAULT_ROOT_PACKAGE_JSON;
         logger.warn(tr("ll.loader.initNodeJsDirectories.created"));
@@ -133,7 +127,7 @@ void InitNodeJsDirectories()
 
 void LoadScriptEngine() {
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
-    for (string backend : LLSE_VALID_BACKENDS) {
+    for (const string& backend : LLSE_VALID_BACKENDS) {
         std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
         std::string version = GetFileVersionString(path, true);
         if (version != llVersion) {
@@ -171,6 +165,18 @@ void LoadDotNETEngine() {
     }
 }
 
+void LoadPermissionAPI() {
+    std::string path = "plugins/LiteLoader/PermissionAPI.dll";
+    auto lib = LoadLibrary(str2wstr(path).c_str());
+    if (lib) {
+        logger.info(tr("ll.loader.loadPermissionAPI.success"));
+        Permission::init(lib);
+    } else {
+        logger.error("Fail to load PermissionAPI!");
+        logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+    }
+}
+
 void LL::LoadMain() {
     logger.info(tr("ll.loader.loadMain.start"));
     CleanOldScriptEngine();
@@ -186,13 +192,13 @@ void LL::LoadMain() {
             continue;
         }
         filesystem::path path = file.path();
-        
+
         // Skip Wrong file path
         auto strPath = UTF82String(path.u8string());
         if (strPath == "LiteLoader.dll" || strPath.find("LiteXLoader") != string::npos) {
             continue;
         }
-        
+
         // Process Shell link file
         string ext = UTF82String(path.extension().u8string());
         bool isShellLink = false;
@@ -238,7 +244,7 @@ void LL::LoadMain() {
                 logger.info(tr("ll.loader.loadMain.loadedShellLink",
                                UTF82String(file.path().filename().u8string()), UTF82String(path.u8string())));
             } else {
-                logger.info(tr("ll.loader.loadMain.loadedPlugin", fmt::arg("name" ,pluginFileName)));
+                logger.info(tr("ll.loader.loadMain.loadedPlugin", fmt::arg("name", pluginFileName)));
             }
 
             if (PluginManager::getPlugin(lib) == nullptr) {
@@ -261,6 +267,11 @@ void LL::LoadMain() {
         }
     }
 
+    // Load PermissionAPI
+    if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
+        LoadPermissionAPI();
+    }
+
     // Load ScriptEngine
     if (LL::globalConfig.enableScriptEngine) {
         InitNodeJsDirectories();
@@ -274,7 +285,7 @@ void LL::LoadMain() {
         LoadDotNETEngine();
     }
 
-    //  Call onPostInit
+    // Call onPostInit
     auto plugins = PluginManager::getAllPlugins(false);
     for (auto& [name, plugin] : plugins) {
         auto fn = GetProcAddress(plugin->handle, "onPostInit");

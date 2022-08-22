@@ -1,275 +1,414 @@
 {
-    "base": {
-        "getDimName": {
-            "0": "Thế giới chính",
-            "1": "Địa ngục",
-            "2": "End",
-            "unknown": "Không gian khác"
-        }
-    },
-    "ll": {
-        "main": {
-            "checkRunningBDS": {
-                "detected": "Detected the existence of another BDS process with the same path!",
-                "tip": "This may cause the network port and the level to be occupied",
-                "ask": "Do you want to terminate the process with PID {}?  (y=Yes, n=No)"
-            },
-            "fixAllowList": {
-                "removeEmptyAllowlist": "allowlist.json is empty! Removing...",
-                "checkManually": "Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually",
-                "renamed": "Renamed whitelist.json to allowlist.json"
-            },
-            "warning": {
-                "inDevMode": "Currently in developer mode!",
-                "betaVersion": "Currently using a beta version.",
-                "productionEnv": "PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!",
-                "protocolVersionNotMatch": {
-                    "1": "Protocol version not match, target version: {}, current version: {}.",
-                    "2": "This will most likely crash the server, please use the LiteLoader that matches the BDS version!"
-                }
-            }
-        },
-        "antiAbnormalItem": {
-            "detected": "Player({}) item data error!",
-            "itemInfo": "Item: {}"
-        },
-        "cmd": {
-            "tpdim": {
-                "success": "Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-                "error": {
-                    "noActorTeleported": "No Actor Teleported",
-                    "noActorSpecified": "No Actor Specified"
-                },
-                "invalidDimid": "Invalid DimensionId: {}"
-            },
-            "listPlugin": {
-                "overview": "Plugin List [{}]",
-                "tip": "* Send command \"ll list <Plugin Name>\" for more information"
-            },
-            "pluginInfo": {
-                "title": "Plugin <{}>",
-                "error": {
-                    "pluginNotFound": "Không tìm thấy plugin <{}>!"
-                }
-            },
-            "version": {
-                "msg": "Bedrock Dedicated Server {}\n- with LiteLoaderBDS {}\n- Network Protocol: {}"
-            },
-            "help": {
-                "msg": "[Introduction]\nLiteLoaderBDS is an unofficial plugin loader for modding development of Bedrock Dedicated Server.\nIt provides a huge nubmer of APIs, a powerful event system and lots of packed utility interfaces .\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nWelcome to our github project to get more information ~"
-            },
-            "loadPlugin": {
-                "success": "Plugin <{}> loaded.",
-                "fail": "Failed to load plugin {}"
-            },
-            "unloadPlugin": {
-                "success": "Plugin <{}> unloaded.",
-                "fail": "Failed to unload plugin <{}>"
-            },
-            "reloadPlugin": {
-                "success": "Đã tải lại plugin <{}>.",
-                "fail": "Không tải lại được plugin <{}>"
-            },
-            "reloadAllPlugins": {
-                "success": "{} plugin đã được tải lại thành công.",
-                "fail": "Không tải lại được bất kỳ plugin nào"
-            },
-            "error": {
-                "noPathSpecified": "You must provide a valid path of LiteLoader plugin!",
-                "noNameSpecified": "You must provide a valid name of LiteLoader plugin!"
-            }
-        },
-        "config": {
-            "save": {
-                "fail": "Failed to save(create) configuration file!"
-            },
-            "creating": "LL Config File <{}> not found. Creating configuration file...",
-            "warning": {
-                "configOutdated": "LL Config File <{}> is outdated."
-            },
-            "updating": "Updating configuration file..."
-        },
-        "crashLogger": {
-            "existsingDebuggerDetected": "Existing debugger detected. Builtin CrashLogger will not work.",
-            "wineDetected": "Wine Environment detected. Builtin CrashLogger will not work.",
-            "error": {
-                "cannotCreateDaemonProcess": "Couldn't Create CrashLogger Daemon Process!"
-            },
-            "warning": {
-                "crashLoggerDisabled": {
-                    "1": "Builtin CrashLogger is not enabled because the configuration disabled it.",
-                    "2": "There will be no crash log when unhandled exception occurs,",
-                    "3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
-                    "4": "We strongly recommend you to enable it to ensure server stability"
-                },
-                "conflicts": {
-                    "1": "Builtin CrashLogger is not enabled because plugin <{}> conflicts with it",
-                    "2": "There will be no crash log when unhandled exception occurs,",
-                    "3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
-                    "4": "Since CrashLogger is an important component which ensures server stability",
-                    "5": "We recommend you to think twice about the usage of plugin <{}>"
-                }
-            },
-            "init": {
-                "fail": {
-                    "msg": "Builtin CrashLogger failed to start!",
-                    "tip": "There will be no crash log when unhandled exception occurs."
-                }
-            }
-        },
-        "addonsHelper": {
-            "error": {
-                "addonConfigNotFound": "Addon config not found!",
-                "addonFileNotFound": "Addon file \"{}\" not found!",
-                "addonNotFound": "Addon <{}> not found!",
-                "outOfRange": "Addon index {} out of range",
-                "unsupportedFileType": "Unsupported type of file found!",
-                "parsingEnabledAddonsList": "Error when parsing enabled addons list",
-                "noAddonInstalled": "No addon was installed.",
-                "installationAborted": "Install progress aborted!"
-            },
-            "displayError": "Error: {}",
-            "removeAddonFromList": {
-                "fail": "Fail to remove addon <{}> from config file!",
-                "success": "Removed addon <{}> from config file."
-            },
-            "addAddonToList": {
-                "invalidList": "Invalid Addon List File {}, backup to {} and reset to default",
-                "fail": "Fail to insert the addon {} into {}!",
-                "success": "Added addon <{}> to config file."
-            },
-            "install": {
-                "installing": "Installing addon <{}>...",
-                "error": {
-                    "failToUncompress": {
-                        "msg": "Fail to uncompress addon {}!",
-                        "exitCode": "Exit Code: {}",
-                        "programOutput": "Program Output:\n{}"
-                    }
-                }
-            },
-            "uninstall": {
-                "success": "Addon <{}> uninstalled."
-            },
-            "autoInstall": {
-                "tip": {
-                    "dirCreated": "Directory created. You can move compressed Addon files to {} to get installed at next launch."
-                },
-                "working": "{} new addon(s) found to install. Working...",
-                "installed": "Addon {} has beed installed.",
-                "installedCount": "{} addon(s) was installed."
-            },
-            "cmd": {
-                "output": {
-                    "list": {
-                        "overview": "Addons: {} addon(s) installed:"
-                    }
-                }
-            }
-        },
-        "loader": {
-            "loadScriptEngine": {
-                "error": {
-                    "versionNotMatch": "The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>"
-                },
-                "success": "* ScriptEngine for {} loaded"
-            },
-            "loadDotNetEngine": {
-                "warning": {
-                    "notFinished": "LiteLoader.NET is not finished yet!"
-                },
-                "error": {
-                    "versionNotMatch": "The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>"
-                },
-                "success": "* .NET Engine loaded"
-            },
-            "loadMain": {
-                "loadingPlugins": "Loading native plugins...",
-                "loadedShellLink": "ShellLinked plugin <{} => {}> loaded",
-                "loadedPlugin": "Native plugin <{name}> loaded",
-                "done": "{} native plugin(s) loaded.",
-                "start": "Loading native plugins..."
-            },
-            "initNodeJsDirectories": {
-                "created": "NodeJs runtime directory no found, created."
-            }
-        },
-        "notice": {
-            "newForum": "Our new forum is live! -> {}",
-            "license": "LiteLoader is licensed under {}",
-            "translateText": "Help us translate & improve text in LL -> {}"
-        },
-        "pluginManager": {
-            "error": {
-                "invalidFileType": "Invalid plugin file type {} in {}",
-                "noValidPluginFound": "No valid plugin found at {}!",
-                "failToRegisterPlugin": "Failed to register plugin {}!",
-                "hasBeenRegistered": "A plugin named {} has been registered",
-                "failToLoadPlugin": "Fail to load the plugin {}!",
-                "pluginNotFound": "Plugin <{}> is not found"
-            },
-            "warning": {
-                "unloadDllNotFinished": "Unload function of dll plugins is not finished.",
-                "reloadDllNotFinished": "Reload function of dll plugins is not finished."
-            },
-            "reloadPlugin": {
-                "fail": "Failed to reload plugin {}!"
-            }
-        }
-    },
-    "llse": {
-        "init": {
-            "llMoney": {
-                "notFound": "Không tìm thấy LLMoney.dll, ScriptEngine Economy System sẽ không hoạt động"
-            }
-        },
-        "api": {
-            "ll": {
-                "require": {
-                    "success": " - Plugin require loaded successfully. Loaded: ",
-                    "fail": " - Plugin require load failed",
-                    "download": {
-                        "success": " - Successfully downloaded require! Path: ",
-                        "fail": " - Download plugin require failed! Code: "
-                    }
-                }
-            }
-        },
-        "apiHelp": {
-            "parseJson": {
-                "fail": "Lỗi phân tích cú pháp JSON"
-            }
-        },
-        "loader": {
-            "loadDepends": {
-                "success": "Dependence {} loaded.",
-                "fail": "Fail to load dependence {}"
-            },
-            "loadMain": {
-                "start": "Loading {type} plugins...",
-                "done": "{count} {type} plugin(s) loaded.",
-                "nodejs": {
-                    "install": {
-                        "fail": "Failed to install plugin pack {}, please check your package.json file!",
-                        "start": "Found Node.js plugin pack \"{path}\"! Try installing..."
-                    },
-                    "ignored": "No package.json file found in directory {path}, ignored."
-                },
-                "loadedPlugin": "{type} plugin <{name}> loaded.",
-                "installPluginPack": {
-                    "done": "{count} {type} plugin pack(s) installed."
-                }
-            },
-            "nodejs": {
-                "executeNpmInstall": {
-                    "success": "Npm finished successfully.",
-                    "start": "Executing \"npm install\" for plugin {name}...",
-                    "fail": "Error occurred. Exit code: {code}"
-                },
-                "register": {
-                    "fail": "Fail to help plugin {name} get registered!"
-                }
-            }
-        }
+  "base": {
+    "getDimName": {
+      "0": "Thế giới chính",
+      "1": "Địa ngục",
+      "2": "Kết thúc",
+      "unknown": "Không gian khác"
     }
+  },
+  "ll": {
+    "main": {
+      "checkRunningBDS": {
+        "detected": "Đã phát hiện ra sự tồn tại của một trình chạy BDS khác với cùng một đường dẫn!",
+        "tip": "Điều này có thể khiến cổng mạng và thế giới bị chiếm",
+        "ask": "Bạn có muốn kết thúc trình chạy với PID {} không? (y=Có, n=Không)"
+      },
+      "fixAllowList": {
+        "removeEmptyAllowlist": "allowlist.json trống! Đang xóa...",
+        "checkManually": "Cả allowlist.json và whitelist.json đều tồn tại và không trống. Vui lòng kiểm tra lại chúng",
+        "renamed": "Đã đổi tên whitelist.json thành allowlist.json"
+      },
+      "warning": {
+        "inDevMode": "Hiện đang ở chế độ nhà phát triển!",
+        "betaVersion": "Hiện đang sử dụng phiên bản beta.",
+        "productionEnv": "VUI LÒNG KHÔNG SỬ DỤNG TRONG MÔI TRƯỜNG SẢN XUẤT!",
+        "protocolVersionNotMatch": {
+          "1": "Phiên bản giao thức không khớp, phiên bản mục tiêu: {}, phiên bản hiện tại: {}.",
+          "2": "Điều này rất có thể sẽ làm hỏng máy chủ, vui lòng sử dụng LiteLoader phù hợp với phiên bản BDS!"
+        }
+      }
+    },
+    "antiAbnormalItem": {
+      "detected": "Lỗi khi đọc dữ liệu vật phẩm người chơi({})!",
+      "itemInfo": "Vật phẩm: {}"
+    },
+    "cmd": {
+      "tpdim": {
+        "success": "Dịch chuyển người chơi {} đến {} ({:2f}, {:2f}, {:2f})",
+        "error": {
+          "noActorTeleported": "Không có thực thể nào được dịch chuyển",
+          "noActorSpecified": "Không có thực thể nào được chỉ định"
+        },
+        "invalidDimid": "ID Không gian không hợp kệ: {}"
+      },
+      "listPlugin": {
+        "overview": "Danh sách plugin [{}]",
+        "tip": "* Gõ lệnh \"ll list <Plugin Name>\" để biết thêm thông tin"
+      },
+      "pluginInfo": {
+        "title": "Plugin <{}>",
+        "error": {
+          "pluginNotFound": "Không tìm thấy plugin <{}>!"
+        }
+      },
+      "version": {
+        "msg": "Bedrock Dedicated Server {}\n- với LiteLoaderBDS {}\n- Giao thức mạng: {}"
+      },
+      "help": {
+        "msg": "[Giới thiệu]\nLiteLoaderBDS là một trình tải plugin không chính thức để phát triển modding cho Bedrock Dedicated Server.\nNó cung cấp một kho API khổng lồ, một hệ thống sự kiện mạnh mẽ và rất nhiều giao diện tiện ích được đóng gói.\n[Github]\n-> https://github.com/LiteLDev/LiteLoaderBDS <-\nChào mừng bạn đến với dự án github của chúng tôi để biết thêm thông tin ~"
+      },
+      "loadPlugin": {
+        "success": "Đã tải plugin <{}>.",
+        "fail": "Không tải được plugin {}"
+      },
+      "unloadPlugin": {
+        "success": "Đã hủy tải plugin <{}>.",
+        "fail": "Không hủy tải được plugin <{}>"
+      },
+      "reloadPlugin": {
+        "success": "Đã tải lại plugin <{}>.",
+        "fail": "Không tải lại được plugin <{}>"
+      },
+      "reloadAllPlugins": {
+        "success": "{} plugin đã được tải lại thành công.",
+        "fail": "Không tải lại được bất kỳ plugin nào"
+      },
+      "error": {
+        "noPathSpecified": "Bạn phải cung cấp đường dẫn hợp lệ của plugin LiteLoader!",
+        "noNameSpecified": "Bạn phải cung cấp tên hợp lệ cho plugin LiteLoader!"
+      }
+    },
+    "config": {
+      "save": {
+        "fail": "Không thể lưu(hay tạo) tệp cấu hình!"
+      },
+      "creating": "Không tìm thấy tệp cấu hình LL <{}>. Đang tạo tệp cấu hình...",
+      "warning": {
+        "configOutdated": "Tệp cấu hình LL <{}> đã lỗi thời."
+      },
+      "updating": "Đang cập nhật tệp cấu hình..."
+    },
+    "crashLogger": {
+      "existsingDebuggerDetected": "Đã phát hiện trình gỡ lỗi hiện có. CrashLogger có sẵn sẽ không hoạt động.",
+      "wineDetected": "Đã phát hiện môi trường cho Wine. CrashLogger có sẵn sẽ không hoạt động.",
+      "error": {
+        "cannotCreateDaemonProcess": "Không thể tạo trình chạy CrashLogger Daemon!"
+      },
+      "warning": {
+        "crashLoggerDisabled": {
+          "1": "CrashLogger có sẵn đã không được bật vì cấu hình đã vô hiệu hóa nó.",
+          "2": "Sẽ không có ghi chép các sự cố khi ngoại lệ không được xử lý xảy ra,",
+          "3": "điều này khiến cho việc tìm ra lý do của sự cố và nguồn gốc của sự cố gần như không thể.",
+          "4": "Chúng tôi thực sự khuyên bạn nên bật nó để đảm bảo sự ổn định của máy chủ"
+        },
+        "conflicts": {
+          "1": "Builtin CrashLogger is not enabled because plugin <{}> conflicts with it",
+          "2": "There will be no crash log when unhandled exception occurs,",
+          "3": "which makes it almost impossible to find out the reason for crash and the source of crash.",
+          "4": "Since CrashLogger is an important component which ensures server stability",
+          "5": "We recommend you to think twice about the usage of plugin <{}>"
+        }
+      },
+      "init": {
+        "fail": {
+          "msg": "Builtin CrashLogger failed to start!",
+          "tip": "There will be no crash log when unhandled exception occurs."
+        }
+      }
+    },
+    "addonsHelper": {
+      "error": {
+        "addonConfigNotFound": "Addon config not found!",
+        "addonFileNotFound": "Addon file \"{}\" not found!",
+        "addonNotFound": "Addon <{}> not found!",
+        "outOfRange": "Addon index {} out of range",
+        "unsupportedFileType": "Unsupported type of file found!",
+        "parsingEnabledAddonsList": "Error when parsing enabled addons list",
+        "noAddonInstalled": "No addon was installed.",
+        "installationAborted": "Install progress aborted!"
+      },
+      "displayError": "Error: {}",
+      "removeAddonFromList": {
+        "fail": "Fail to remove addon <{}> from config file!",
+        "success": "Removed addon <{}> from config file."
+      },
+      "addAddonToList": {
+        "invalidList": "Invalid Addon List File {}, backup to {} and reset to default",
+        "fail": "Fail to insert the addon {} into {}!",
+        "success": "Added addon <{}> to config file."
+      },
+      "install": {
+        "installing": "Installing addon <{}>...",
+        "error": {
+          "failToUncompress": {
+            "msg": "Fail to uncompress addon {}!",
+            "exitCode": "Exit Code: {}",
+            "programOutput": "Program Output:\n{}"
+          }
+        }
+      },
+      "uninstall": {
+        "success": "Addon <{}> uninstalled."
+      },
+      "autoInstall": {
+        "tip": {
+          "dirCreated": "Directory created. You can move compressed Addon files to {} to get installed at next launch."
+        },
+        "working": "{} new addon(s) found to install. Working...",
+        "installed": "Addon {} has beed installed.",
+        "installedCount": "{} addon(s) was installed."
+      },
+      "cmd": {
+        "output": {
+          "list": {
+            "overview": "Addons: {} addon(s) installed:"
+          }
+        }
+      }
+    },
+    "loader": {
+      "loadScriptEngine": {
+        "error": {
+          "versionNotMatch": "The file version <{}> of Script Engine for {} does not match the LiteLoader version <{}>"
+        },
+        "success": "* ScriptEngine for {} loaded."
+      },
+      "loadDotNetEngine": {
+        "error": {
+          "versionNotMatch": "The file version <{}> of LiteLoader.NET does not match the LiteLoader version <{}>"
+        },
+        "success": "* .NET Engine loaded."
+      },
+      "loadMain": {
+        "loadingPlugins": "Loading native plugins...",
+        "loadedShellLink": "ShellLinked plugin <{} => {}> loaded",
+        "loadedPlugin": "Native plugin <{name}> loaded",
+        "done": "{} native plugin(s) loaded.",
+        "start": "Loading native plugins..."
+      },
+      "initNodeJsDirectories": {
+        "created": "Node.js runtime directory no found, created."
+      },
+      "loadPermissionAPI": {
+        "success": "* PermissionAPI loaded."
+      }
+    },
+    "notice": {
+      "newForum": "Our new forum is live! -> {}",
+      "license": "LiteLoader is licensed under {}",
+      "translateText": "Help us translate & improve text in LL -> {}"
+    },
+    "pluginManager": {
+      "error": {
+        "invalidFileType": "Invalid plugin file type {} in {}",
+        "noValidPluginFound": "No valid plugin found at {}!",
+        "failToRegisterPlugin": "Failed to register plugin {}!",
+        "hasBeenRegistered": "A plugin named {} has been registered",
+        "failToLoadPlugin": "Fail to load the plugin {}!",
+        "pluginNotFound": "Plugin <{}> is not found"
+      },
+      "warning": {
+        "unloadDllNotFinished": "Unload function of dll plugins is not finished.",
+        "reloadDllNotFinished": "Reload function of dll plugins is not finished."
+      },
+      "reloadPlugin": {
+        "fail": "Failed to reload plugin {}!"
+      }
+    }
+  },
+  "llse": {
+    "init": {
+      "llMoney": {
+        "notFound": "Không tìm thấy LLMoney.dll, ScriptEngine Economy System sẽ không hoạt động"
+      }
+    },
+    "api": {
+      "ll": {
+        "require": {
+          "success": " - Plugin require loaded successfully. Loaded: ",
+          "fail": " - Plugin require load failed",
+          "download": {
+            "success": " - Successfully downloaded require! Path: ",
+            "fail": " - Download plugin require failed! Code: "
+          }
+        }
+      }
+    },
+    "apiHelp": {
+      "parseJson": {
+        "fail": "Lỗi phân tích cú pháp JSON"
+      }
+    },
+    "loader": {
+      "loadDepends": {
+        "success": "Dependence {} loaded.",
+        "fail": "Fail to load dependence {}"
+      },
+      "loadMain": {
+        "start": "Loading {type} plugins...",
+        "done": "{count} {type} plugin(s) loaded.",
+        "nodejs": {
+          "installPack": {
+            "fail": "Failed to install plugin pack {}, please check your package.json file!",
+            "start": "Found Node.js plugin pack \"{path}\"! Try installing..."
+          },
+          "ignored": "No package.json file found in directory {path}, ignored."
+        },
+        "loadedPlugin": "{type} plugin <{name}> loaded.",
+        "installPluginPack": {
+          "done": "{count} {type} plugin pack(s) installed."
+        }
+      },
+      "nodejs": {
+        "executeNpmInstall": {
+          "success": "Npm finished successfully.",
+          "start": "Executing \"npm install\" for plugin {name}...",
+          "fail": "Error occurred. Exit code: {code}"
+        },
+        "register": {
+          "fail": "Fail to help plugin {name} get registered!"
+        }
+      }
+    }
+  },
+  "permapi": {
+    "data": {
+      "process": {
+        "fail": "Failed to process the data file: {}"
+      },
+      "read": {
+        "fail": "Failed to read the data file at {}"
+      },
+      "save": {
+        "fail": "Failed to save the data file: {}"
+      }
+    },
+    "cmd": {
+      "error": {
+        "invalidCommand": "Invalid command. Type '/help perm' to get help.",
+        "internal": "Internal error. Please try again later.",
+        "roleAlreadyExists": "Role already exists.",
+        "permissionAlreadyExists": "Permission already exists.",
+        "invalidPermissionName": "Invalid permission name.",
+        "roleNotFound": "Role not found.",
+        "permissionNotFound": "Permission not found.",
+        "playerNotFound": "Player not found.",
+        "modifyMembersOfEveryone": "The role is a everyone role. You cannot modify the members of it.",
+        "jsonParsingError": "JSON parsing error: {}",
+        "missingArgument": "Missing argument: {}",
+        "permissionDenied": "You don't have permission to use this command."
+      },
+      "output": {
+        "create": {
+          "role": {
+            "success": "Role created."
+          },
+          "perm": {
+            "success": "Permission created."
+          }
+        },
+        "delete": {
+          "role": {
+            "success": "Role deleted."
+          },
+          "perm": {
+            "success": "Permission deleted."
+          }
+        },
+        "list": {
+          "role": {
+            "none": "No roles to display.",
+            "header": "§b§lRole List:",
+            "isMember": "§r(§eMember§r)"
+          },
+          "perm": {
+            "none": "No permissions to display.",
+            "header": "§b§lPermission List:"
+          }
+        },
+        "view": {
+          "player": {
+            "yourStatus": "§b§lYour current permission status:",
+            "status": "§b§l{}'s current permission status:",
+            "rolesTitle": "- §eRoles:",
+            "permissionsTitle": "- §ePermissions:"
+          },
+          "role": {
+            "header": "§b§lRole Info:",
+            "info": {
+              "name": "+ §eName§r: {roleName}",
+              "displayName": "+ §eDisplayName§r: {}",
+              "priority": "+ §ePriority§r: {}",
+              "membersNone": "+ §eMembers§r: None",
+              "members": "+ §eMembers§r:",
+              "permissionsNone": "+ §ePermissions§r: None",
+              "permissions": "+ §ePermissions§r:"
+            },
+            "note": {
+              "admin": "※ {}§r is a special role. All permissions will be enabled by default.",
+              "everyone": "※ {}§r is a special role. All players are members of this role."
+            },
+            "enabled": "§a(Enabled)§r",
+            "disabled": "§c(Disabled)§r",
+            "enabledWithExtra": "§b(Enabled with extra restrictions)§r"
+          },
+          "perm": {
+            "header": "§b§lPermission Info:",
+            "info": {
+              "name": "+ §eName§r: {permissionName}",
+              "desc": "+ §eDescription§r: {}"
+            }
+          }
+        },
+        "update": {
+          "role": {
+            "member": {
+              "add": {
+                "success": "Member {name}§r({xuid}) added to Role {roleDisplayName}§r."
+              },
+              "remove": {
+                "success": "Member {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+              }
+            },
+            "perm": {
+              "add": {
+                "success": "Permission {name}§r added to Role {roleDisplayName}§r."
+              },
+              "remove": {
+                "success": "Quyền {name}§r đã bị xóa khỏi Vai trò {roleDisplayName}§r."
+              },
+              "set": {
+                "enabled": "§abật",
+                "disabled": "§ctắt",
+                "success": "Quyền {name}§r của Vai trò {roleDisplayName}§r đã được {enable}."
+              }
+            },
+            "priority": {
+              "set": {
+                "success": "Mức độ ưu tiên của Vai trò {roleDisplayName}§r đã được đặt thành {priority}."
+              }
+            },
+            "displayName": {
+              "set": {
+                "success": "Tên hiển thị của Vai trò <{roleName}§r> đã được đặt thành {displayName}."
+              }
+            }
+          },
+          "player": {
+            "role": {
+              "add": {
+                "success": "Người chơi {name}§r({xuid}) đã được thêm vào Vai trò {roleDisplayName}§r."
+              },
+              "remove": {
+                "success": "Người chơi {name}§r({xuid}) đã bị xóa khỏi Vai trò {roleDisplayName}§r."
+              }
+            }
+          }
+        },
+        "noDesc": "[Không có mô tả]",
+        "permissionNameExamples": "Ví dụ về tên quyền: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+      }
+    }
+  }
 }
