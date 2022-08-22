@@ -1,17 +1,33 @@
+/**
+ * @file   Role.hpp
+ * @author LiteLDev (https://github.com/LiteLDev)
+ * @brief  Role type for PermissionAPI
+ * 
+ * @copyright Copyright (c) 2021-present  LiteLoaderBDS developers and all contributors
+ * 
+ */
 #pragma once
 #include "Member.hpp"
 #include "Permission.hpp"
 
 namespace PERM {
 
+    /**
+     * @brief Role instance.
+     * 
+     */
     class Role {
 
     protected:
 
-        Members members;
-        Permissions permissions;
+        Members members;         ///< Members of the role.
+        Permissions permissions; ///< Permissions of the role.
 
     public:
+        /**
+         * @brief The type of role.
+         * 
+         */
         enum class Type : char {
             None = 0,
             General = 1,
@@ -20,43 +36,116 @@ namespace PERM {
             //Custom = 4,
         };
 
-        std::string name;
-        std::string displayName;
-        int priority = 0;
+        std::string name;        ///< Name of the role.
+        std::string displayName; ///< Display name of the role.
+        int priority = 0;        ///< Priority of the role.
 
-        static constexpr std::string_view roleNameInvalidChars = "@#[]{}<>()/|\\$%^&*!~`\"\'+=?\n\t\r\f\v ";
+        static constexpr std::string_view roleNameInvalidChars = "@#[]{}<>()/|\\$%^&*!~`\"\'+=?\n\t\r\f\v "; ///< Invalid characters for the role name.
 
+        /**
+         * @brief Destructor.
+         * 
+         */
         virtual ~Role() {};
 
+        /**
+         * @brief Check whether the role has the permission.
+         * 
+         * @param  name  The permission name to check.
+         * @return bool  True if the role has the permission, false otherwise.
+         */
         virtual bool hasPermission(const std::string& name) const {
             return this->permissions.contains(name) && this->permissions.at(name).enabled;
         }
+        /**
+         * @brief Set the permission of the role.
+         * 
+         * @param name     The name of the permission to set.
+         * @param enabled  Whether the permission is enabled.
+         * @param extra    Extra data for the permission.
+         */
         virtual void setPermission(const std::string& name, bool enabled = true, const nlohmann::json& extra = nlohmann::json());
 
+        /**
+         * @brief Remove the permission of the role.
+         * 
+         * @param name  The name of the permission to remove.
+         */
         virtual void removePermission(const std::string& name) {
             this->permissions.remove(name);
         }
+
+        /**
+         * @brief Check whether the permission exists in the role.
+         * 
+         * @param  name  The name of the permission to check.
+         * @return bool  True if the permission exists in the role, false otherwise.
+         */
         virtual bool permissionExists(const std::string& name) {
             return this->permissions.contains(name);
         }
 
+        /**
+         * @brief Check whether the role has the member.
+         * 
+         * @param  xuid  The xuid of the member(player) to check.
+         * @return bool  True if the role has the member, false otherwise.
+         */
         virtual bool hasMember(const xuid_t& xuid) const = 0;
+
+        /**
+         * @brief Add the member to the role.
+         * 
+         * @param xuid  The xuid of the member(player) to add.
+         */
         virtual void addMember(const xuid_t& xuid) = 0;
+
+        /**
+         * @brief Remove the member from the role.
+         * 
+         * @param xuid  The xuid of the member(player) to remove.
+         */
         virtual void removeMember(const xuid_t& xuid) = 0;
 
-
+        /**
+         * @brief Get the permissions of the role(non-const).
+         * 
+         * @return Permissions&  The permissions of the role.
+         */
         virtual Permissions& getPermissions() {
             return this->permissions;
         }
-        virtual Permissions getPermissions() const {
+        /**
+         * @brief Get the permissions of the role(const).
+         * 
+         * @return const Permissions&  The permissions of the role.
+         */
+        virtual const Permissions& getPermissions() const {
             return this->permissions;
         }
+
+        /**
+         * @brief Get the members of the role(non-const).
+         * 
+         * @return Members&  The members of the role.
+         */
         virtual Members& getMembers() {
             return this->members;
         }
-        virtual Members getMembers() const {
+        /**
+         * @brief Get the members of the role(const).
+         * 
+         * @return const Members&  The members of the role.
+         */
+        virtual const Members& getMembers() const {
             return this->members;
         }
+
+        /**
+         * @brief Get the type of the role.
+         * 
+         * @return Type  The type of the role.
+         */
         virtual Type getType() const = 0;
 
         /**
@@ -76,11 +165,21 @@ namespace PERM {
             return false;
         }
 
+        /**
+         * @brief Check whether the role name is valid.
+         * 
+         * @param  name  The name to check.
+         * @return bool  True if the role name is valid, false otherwise.
+         */
         static bool isValidRoleName(const std::string& name) {
             return name.find_first_of(Role::roleNameInvalidChars.data()) == std::string::npos;
         }
     };
 
+    /**
+     * @brief General role type.
+     * 
+     */
     class GeneralRole : public Role {
 
         using Base = Role;
@@ -110,6 +209,10 @@ namespace PERM {
         }
     };
 
+    /**
+     * @brief Everyone role type.
+     * 
+     */
     class EveryoneRole : public Role {
 
         using Base = Role;
@@ -139,6 +242,10 @@ namespace PERM {
         }
     };
 
+    /**
+     * @brief Admin role type.
+     * 
+     */
     class AdminRole : public Role {
 
         using Base = Role;
@@ -176,6 +283,10 @@ namespace PERM {
         }
     };
 
+    /**
+     * @brief Container to hold roles.
+     * 
+     */
     class Roles : public PermPtrContainer<Role> {
 
         using Base = PermPtrContainer<Role>;
@@ -193,6 +304,12 @@ namespace PERM {
         Roles(const Roles& other) = default;
         Roles(Roles&& other) = default;
 
+        /**
+         * @brief Sort the roles by priority.
+         * 
+         * @param  greater  Greater or less.
+         * @return Roles    The sorted roles.
+         */
         Roles sortByPriority(bool greater = false) const {
             Roles result;
             for (auto& role : *this) {

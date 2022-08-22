@@ -1,15 +1,27 @@
+/**
+ * @file   Foundation.hpp
+ * @author LiteLDev (https://github.com/LiteLDev)
+ * @brief  Permission classes for PermissionAPI
+ * 
+ * @copyright Copyright (c) 2021-present  LiteLoaderBDS developers and all contributors
+ * 
+ */
 #pragma once
 #include <third-party/Nlohmann/json.hpp>
 #include "Foundation.hpp"
 
 namespace PERM {
 
+    /**
+     * @brief Permission instance.
+     * 
+     */
     struct PermInstance {
-        std::string name;
-        bool enabled;
-        ::nlohmann::json extra;
+        std::string name;        ///< Name of the permission.
+        bool enabled;            ///< Whether the permission is enabled.
+        ::nlohmann::json extra;  ///< Extra data for the permission.
 
-        static constexpr const std::string_view permNameInvalidChars = " \t\n\r\f\v";
+        static constexpr const std::string_view permNameInvalidChars = " \t\n\r\f\v";  ///< Invalid characters for the permission name.
         /**
          * @brief Get the namespace of the permission.
          *
@@ -19,6 +31,12 @@ namespace PERM {
             return this->name.substr(0, this->name.find_first_of(':'));
         }
 
+        /**
+         * @brief Check whether a permission name is valid.
+         * 
+         * @param  name  The permission name to check.
+         * @return bool  True if the permission name is valid, false otherwise.
+         */
         static bool isValidPermissionName(const std::string& name) {
             return name.find_first_of(PermInstance::permNameInvalidChars.data()) == std::string::npos && // Not contain invalid chars
                    name.find_first_of(':') != std::string::npos &&                                       // Has at least one :
@@ -27,9 +45,13 @@ namespace PERM {
         }
     };
 
+    /**
+     * @brief Permission information.
+     * 
+     */
     struct PermInfo {
-        std::string name;
-        std::string desc;
+        std::string name; ///< Name of the permission.
+        std::string desc; ///< Description of the permission.
     };
 
     using Permissions = PermContainer<PermInstance>;

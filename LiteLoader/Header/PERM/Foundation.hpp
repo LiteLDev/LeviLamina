@@ -1,8 +1,21 @@
+/**
+ * @file   Foundation.hpp
+ * @author LiteLDev (https://github.com/LiteLDev)
+ * @brief  Foundation data classes for PermissionAPI
+ * 
+ * @copyright Copyright (c) 2021-present  LiteLoaderBDS developers and all contributors
+ * 
+ */
 #pragma once
 #include <Global.h>
 
 namespace PERM {
 
+    /**
+     * @brief Vector for Members.
+     * 
+     * @tparam T  Type of the elements in the vector.
+     */
     template <typename T>
     class PermVector : public std::vector<T> {
 
@@ -60,6 +73,11 @@ namespace PERM {
         PermVector<T>& operator=(PermVector<T>&& other) = default;
     };
 
+    /**
+     * @brief Vector for PermInfoList.
+     * 
+     * @tparam T  Type of the elements in the vector(object with field `name`).
+     */
     template <typename T>
     class PermContainer : public std::vector<T> {
 
@@ -184,6 +202,11 @@ namespace PERM {
         }
     };
 
+    /**
+     * @brief Vector for Roles.
+     * 
+     * @tparam T  Type of the elements in the vector(object with field `name`).
+     */
     template <typename T>
     class PermPtrContainer : public std::vector<std::shared_ptr<T>> {
 

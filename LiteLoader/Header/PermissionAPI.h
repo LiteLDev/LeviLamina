@@ -1,7 +1,19 @@
+/**
+ * @file   PermissionAPI.h
+ * @author LiteLDev (https://github.com/LiteLDev)
+ * @brief  Permission APIs
+ *
+ * @copyright Copyright (c) 2021-present  LiteLoaderBDS developers and all contributors
+ *
+ */
 #pragma once
 #include <LLAPI.h>
 #include "PERM/Role.hpp"
 
+/**
+ * @brief PermissionAPI (Dynamic dependency).
+ * 
+ */
 class DynPermissionAPI {
 
     using FuncCreateRole = void (*)(const std::string&, const std::string&, std::weak_ptr<PERM::Role>&);
@@ -264,6 +276,10 @@ public:
     }
 };
 
+/**
+ * @brief Permission APIs.
+ * 
+ */
 class Permission {
 
 public:
@@ -319,7 +335,7 @@ public:
     /**
      * @brief Get or create a role object.
      * 
-     * @param  name         The name of the role.
+     * @param  name  The name of the role.
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      */
     static std::weak_ptr<PERM::Role> getOrCreateRole(const std::string& name) {
@@ -330,7 +346,7 @@ public:
      * @brief Delete a role.
      *
      * @param  name  The name of the role.
-     * @throws std::invalid_argument      If the role does not exist.
+     * @throws std::invalid_argument  If the role does not exist.
      * @par Example
      * @code
      * Permission::deleteRole("role1");
@@ -353,9 +369,9 @@ public:
     /**
      * @brief Register an permission.
      *
-     * @param name  The name of the permission.
-     * @param desc  The description name of the permission.
-     * @throws std::invalid_argument      If the permission already exists.
+     * @param  name  The name of the permission.
+     * @param  desc  The description name of the permission.
+     * @throws std::invalid_argument  If the permission already exists.
      * @par Example
      * @code
      * Permission::registerPermission("MyPlugin:destroy", "Destroy permission for MyPlugin");
@@ -368,9 +384,9 @@ public:
     /**
      * @brief Delete a permission.
      *
-     * @param    name  The name of the permission.
-     * @note     This function will also delete the permission instances in roles.
-     * @throws std::invalid_argument      If the permission does not exist.
+     * @param  name  The name of the permission.
+     * @throws std::invalid_argument  If the permission does not exist.
+     * @note   This function will also delete the permission instances in roles.
      * @par Example
      * @code
      * Permission::deletePermission("MyPlugin:destroy");
@@ -396,7 +412,7 @@ public:
      * @param  xuid  The xuid of the player.
      * @param  name  The name of the permission.
      * @return bool  True If the player has the permission, false otherwise.
-     * @throws std::invalid_argument      If the permission does not exist.
+     * @throws std::invalid_argument  If the permission does not exist.
      * @par Example
      * @code
      * if (Permission::checkPermission(pl->getXuid(), "MyPlugin:destroy")) {
@@ -411,10 +427,10 @@ public:
     /**
      * @brief Check whether a player is member of a role.
      * 
-     * @param xuid  The xuid of the player.
-     * @param name  The name of the role.
+     * @param  xuid  The xuid of the player.
+     * @param  name  The name of the role.
      * @return bool  True If the player is member of the role, false otherwise.
-     * @throws std::invalid_argument      If the role does not exist.
+     * @throws std::invalid_argument  If the role does not exist.
      */
     static bool isMemberOf(const xuid_t& xuid, const std::string& name) {
         return api.isMemberOf(xuid, name);
@@ -423,7 +439,7 @@ public:
     /**
      * @brief Get the roles of a player.
      * 
-     * @param xuid  The xuid of the player.
+     * @param  xuid         The xuid of the player.
      * @return PERM::Roles  The roles of the player.
      */
     static PERM::Roles getPlayerRoles(const xuid_t& xuid) {
@@ -433,7 +449,7 @@ public:
     /**
      * @brief Get the permissions of a player.
      * 
-     * @param xuid  The xuid of the player.
+     * @param  xuid               The xuid of the player.
      * @return PERM::Permissions  The permissions of the player.
      */
     static PERM::Permissions getPlayerPermissions(const xuid_t& xuid) {
