@@ -27,14 +27,51 @@
 ## 代码格式
 
 ### 注释
+
 &emsp;&emsp;注释对于可读性和可维护性很重要。写注释时，用英文，使用适当的大小写、标点符号等。旨在描述代码试图做什么以及为什么，而不是在微观层面上它是如何做到的。但对于某些算法中的魔法数字，请注明。
+
+函数体中的单行注释 `// xxxxxx` 务必要在`//`后打一个空格.
+导出的LLAPI函数建议使用doxygen注释写在函数前，例如：
+
+```cpp
+/**
+ * @brief Get whether LiteLoader is in debug mode.
+ * 
+ * @return bool  True if it is in debug mode
+ */
+LIAPI bool isDebugMode();
+
+/**
+ * @brief Register a plugin.
+ * 
+ * @param  name     The name of the plugin
+ * @param  desc     The descirption(introduction) of the plugin
+ * @param  version  The version of the plugin(LL::Version)
+ * @param  others   The other information of the plugin(key-value)
+ * @return bool     True if the plugin is registered successfully
+ * @note   The implementation of this function must be in header file(because of `GetCurrentModule`)
+ * 
+ * @par Example
+ * @code
+ * LL::registerPlugin("Test", "A test plugin", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
+ * @endcode
+ */
+inline bool registerPlugin(std::string name, std::string desc, LL::Version version, std::map<std::string, std::string> others) {
+    return ::RegisterPlugin(GetCurrentModule(), name, desc, version, others);
+}
+// (FROM LiteLoader/Header/LLAPI.h)
+```
 
 ### 头文件
 
 &emsp;&emsp;介于目前编译器对 `module` 的支持并不完善，我们依旧使用头文件而非 `module` 的形式。请确保所有头文件的开头都写有：
+
 ```cpp
+
 #pragma once
+
 ```
+
 &emsp;&emsp;以保证头文件不被重复编译。头文件内的函数尽量全部使用 `inline` 使得编译器在头文件循环引用时可以忽略多重定义，选取其中一个。除模板外，函数的定义尽量与实现分开。
 
 ### 命名
@@ -60,6 +97,20 @@
 ### 警告
 
 &emsp;&emsp;将编译器警告视为错误，而不是 `disable` ，除非它由外部库引起。这样有利于寻找代码中的隐含错误。
+&emsp;&emsp;外部库造成的警告应当尽量在 cpp 文件内 disable ，对于头文件的警告，应当在开头将此警告设置为 disable ，末尾此警告设置为 default 。
+
+```cpp
+
+// in xxx.h
+#pragma once
+
+#pragma warning(disable : xxxx)
+
+some code
+
+#pragma warning(default : xxxx)
+
+```
 
 ### 格式化
 
@@ -72,9 +123,11 @@
 &emsp;&emsp;BDS 任何情况下，请考虑代码的可移植性，对于非必要的偏移，请不要使用。所有使用可能发生变化的偏移的部分都应当写有统一格式的注释：
 
 ```cpp
-/*_CHANGEABLE_OFFSET_LV240_16*/
+/*_CHANGEABLE_OFFSET_16_BDS_1_19_020_02*/
+dAccess<int, 16>(this);
 ```
-&emsp;&emsp;此处的 16 为偏移的数值，LV240代表最后一次更改偏移的版本为 2.4.0 。每当 LL 进行 BDS 版本兼容升级时，应当对所有使用可能发生变化的偏移的代码部分进行测试。
+
+&emsp;&emsp;此处的 16 为偏移的数值，1_19_020 代表最后一次更改偏移的版本为 1.19.20.02 。每当 LL 进行 BDS 版本兼容升级时，应当对所有使用可能发生变化的偏移的代码部分进行测试。
 
 ### 可读性
 
@@ -103,6 +156,7 @@ bool *Player::eat(ItemStack* item) {
   return false;
 }
 ```
+
 &emsp;&emsp;相较于上述代码，我们更推荐下面的。
 
 ```cpp
@@ -127,6 +181,7 @@ bool *Player::eat(ItemStack* item) {
 ### 将操作拆分
 
 &emsp;&emsp;使用宏定义或新增函数的方式，将冗长的代码块变成小单元，例如：
+
 ```cpp
 bool *Player::canEat() {
 
@@ -148,6 +203,7 @@ if (FoundFood) {
 
 }
 ```
+
 &emsp;&emsp;相较于上述代码，我们更推荐下面的。
 
 ```cpp
@@ -192,7 +248,9 @@ auto blocks = ...
 for (auto I = blocks->begin(); I != blocks->end(); ++I){
     Level::setBlock(getPos(I),blocks[I]);
 }
+
 ```
+
 &emsp;&emsp;相较于上述代码，我们更推荐下面的。
 
 ```cpp
@@ -209,13 +267,17 @@ for (auto I = blocks->begin(), E = blocks->end(); I != E; ++I){
 &emsp;&emsp;第二个（甚至更大）的问题是，以第一种形式编写循环会向读者暗示循环正在改变容器（注释很容易证实这一事实！）。如果您以第二种形式编写循环，则无需查看循环体就可以立即看出容器没有被修改，这使得阅读代码和理解它的作用更容易。
 
 ### 避免使用 std::endl
+
 ```cpp
 std::cout << std::endl;
 ```
+
 &emsp;&emsp;上述代码等价于以下代码。
+
 ```cpp
 std::cout << '\n' << std::flush;
 ```
+
 &emsp;&emsp;多数情况下，你可能并不需要刷新输出流，因此最好使用 '\n' 。
 
 ### 首选 ++I
@@ -228,7 +290,7 @@ std::cout << '\n' << std::flush;
 
 ## 代码审查
 
-&emsp;&emsp;开发者在对 LL 进行维护时，不可擅自提交至 beta ，尤其是 main 仓库，应当以 pull request 的形式，先对代码进行编译确认代码无编译错误，并由至少 2 名开发者审查后，才可合并到 beta 分支。详情见[Commit格式](../Commit/Commit.md)
+&emsp;&emsp;开发者在对 LL 进行维护时，不可擅自提交至 beta ，尤其是 main 仓库，应当以 pull request 的形式，先对代码进行编译确认代码无编译错误，并由至少 2 名开发者审查后，才可合并到 beta 分支。详情见[Commit格式](Commit.md)
 
 ## 单元测试
 

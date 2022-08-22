@@ -6,8 +6,9 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-struct ChunkLocalHeight
+class ChunkLocalHeight
 {
+   public:
     short mVal;
     ChunkLocalHeight(short v)
     : mVal(v){};

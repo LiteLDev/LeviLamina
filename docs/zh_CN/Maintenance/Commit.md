@@ -86,6 +86,15 @@ git rebase -i HEAD~5 #以当前HEAD往前5个commit，执行交互式rebase
 - 提交信息应以大写字母开头，控制在50个字符以内为佳
 - 提交信息应准确描述进行的更改，避免`Update xxx.cpp`等类似提交
 
+> 只要是没有修改项目代码运行效果的提交，都应该加上以下前缀之一
+> `docs`: 文档（documentation）
+> `style`: 格式（不影响代码运行的变动）
+> `refactor`: 重构（即不是新增功能，也不是修改bug的代码变动）
+> `test`: 增加测试
+> `chore`: 构建过程或辅助工具的变动
+> `revert`: 回滚到之前的版本
+
+
 ### 统一的语言规范
 
 - 统一的语言可以帮助在大量git log中迅速查找
@@ -97,6 +106,15 @@ git rebase -i HEAD~5 #以当前HEAD往前5个commit，执行交互式rebase
 > 以下为几个范例
 > `Fixed Bugs about xxx`->`Fix bug about xxx`
 > `Fix typo destory`->`Fix typo 'destroy(destory)'`
+>  
+> `docs: Update README`
+> `Fix #123`
+> `Add onMove event for LLSE`
+> `chore: Add format check workflow`
+> `style: Code format`
+> `test: Add unit test for I18N APIs`
+> `refactor: Rename class A to B`
+> `Optimize plugin manager`
 
 ## 依赖管理
 

@@ -1,6 +1,7 @@
 #ifndef _DBGHELP_
 #define _DBGHELP_
 
+#pragma warning(disable : 4200)
 
 // As a general principal always call the 64 bit version
 // of every API, if a choice exists.  The 64 bit version
@@ -4672,6 +4673,7 @@ MiniDumpReadDumpStream(
 }
 #endif
 
+#pragma warning(default : 4200)
 
 #endif // _DBGHELP_
 
