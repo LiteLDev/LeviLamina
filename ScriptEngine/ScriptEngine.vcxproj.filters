@@ -197,6 +197,9 @@
     <ClCompile Include="API\PermissionAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="API\GlobalNativePointer.cpp">
+      <Filter>API\NativeAPI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h">

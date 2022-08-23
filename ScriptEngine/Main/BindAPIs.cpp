@@ -115,4 +115,5 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<NativeStdString>(NativeStdStringBuilder);
     engine->registerNativeClass<DynamicHookData>(NativeHookBuilder);
     engine->registerNativeClass<NativePatch>(NativePatchBuilder);
+    engine->registerNativeClass<GlobalNativePointer>(GlobalNativePointerBuilder);
 }

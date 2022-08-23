@@ -206,9 +206,27 @@ public:
     static Local<Value> dump(const Arguments& args);
 };
 
+class GlobalNativePointer : public ScriptClass {
+public:
+    explicit GlobalNativePointer(const Local<Object>& scriptObj)
+    : ScriptClass(scriptObj) {
+    }
+    static Local<Value> getLevelPtr(const Arguments& args);
+    static Local<Value> getMinecraftPtr(const Arguments& args);
+    static Local<Value> getServerNetworkHandlerPtr(const Arguments& args);
+    static Local<Value> getMinecraftCommandsPtr(const Arguments& args);
+    static Local<Value> getLevelStoragePtr(const Arguments& args);
+    static Local<Value> getDBStoragePtr(const Arguments& args);
+    static Local<Value> getRakNetServerLocatorPtr(const Arguments& args);
+    static Local<Value> getRakNetRakPeerPtr(const Arguments& args);
+    static Local<Value> getScoreboardPtr(const Arguments& args);
+    static Local<Value> getAllowListFilePtr(const Arguments& args);
+    static Local<Value> getPropertiesSettingsPtr(const Arguments& args);
+};
 // export apis
 extern ClassDefine<void> NativeTypeEnumBuilder;
 extern ClassDefine<ScriptNativeFunction> NativeCallBuilder;
 extern ClassDefine<DynamicHookData> NativeHookBuilder;
 extern ClassDefine<NativePointer> NativePointerBuilder;
 extern ClassDefine<NativePatch> NativePatchBuilder;
+extern ClassDefine<GlobalNativePointer> GlobalNativePointerBuilder;

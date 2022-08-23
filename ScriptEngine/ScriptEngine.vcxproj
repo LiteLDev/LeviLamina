@@ -27,6 +27,7 @@
     <ClCompile Include="API\EntityAPI.cpp" />
     <ClCompile Include="API\EventAPI.cpp" />
     <ClCompile Include="API\FileSystemAPI.cpp" />
+    <ClCompile Include="API\GlobalNativePointer.cpp" />
     <ClCompile Include="API\McAPI.cpp" />
     <ClCompile Include="API\NativeAPI.cpp" />
     <ClCompile Include="API\NativePatch.cpp" />
