@@ -311,3 +311,7 @@ If you want to reproduce and distribute this framework, you have to get our auth
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
 as [CLion](https://www.jetbrains.com/clion/)**.<br>
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
+
+## ⭐Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=LiteLDev/liteloaderbds&type=Date)](https://star-history.com/#LiteLDev/liteloaderbds&Date)
