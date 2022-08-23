@@ -39,9 +39,6 @@
 #include <LLAPI.h>
 #include <Utils/WinHelper.h>
 
-using std::function;
-using std::string;
-
 class Actor;
 class ServerPlayer;
 class Player;
