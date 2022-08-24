@@ -21,21 +21,38 @@ class NetworkPeer {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum class Reliability : int {};
-enum class DataStatus : int { OK,
-                              BUSY };
+enum Reliability : int {
+    Reliable = 0x0,
+    ReliableOrdered = 0x1,
+    Unreliable = 0x2,
+    UnreliableSequenced = 0x3,
+};
+
+enum DataStatus : int {
+        HasData = 0x0,
+        NoData = 0x1,
+        BrokenData = 0x2,
+};
+
+enum NetworkLoad : __int32 {
+    Unrestricted = 0x0,
+    Low = 0x1,
+    Medium = 0x2,
+    High = 0x3,
+};
+
 struct NetworkStatus {
-    int unk0;             //0
-    int ping;             //4
-    int avgping;          //8
-    int unk12;            //12
-    float packetloss;     //16
-    float avgpacketloss;  //20
-    double unk24;         //24
-    double unk32;         //32
-    double unk40;         //40
-    int unk48;            //48
-    bool unk52;           //52
+    NetworkLoad mLoad;
+    int mCurrentPing;
+    int mAveragePing;
+    int mApproximateMaxBps;
+    float mCurrentPacketLoss;
+    float mAveragePacketLoss;
+    unsigned __int64 mTotalBytesReceived;
+    unsigned __int64 mTotalBytesSent;
+    unsigned __int64 unk40;
+    int unk48;
+    bool unk52;
 };
 
 #undef AFTER_EXTRA

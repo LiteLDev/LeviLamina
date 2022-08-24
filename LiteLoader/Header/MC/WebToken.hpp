@@ -23,11 +23,11 @@ class WebToken {
 // Add Member There
 
 public:
-    std::string header;
-    Json::Value headerInfo;
-    std::string data;
-    Json::Value dataInfo;
-    std::string signature;
+    std::string mHeader;
+    Json::Value mHeaderInfo;
+    std::string mData;
+    Json::Value mDataInfo;
+    std::string mSignature;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBTOKEN

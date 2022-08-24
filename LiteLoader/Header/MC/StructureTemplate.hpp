@@ -23,7 +23,10 @@ class StructureTemplate {
 
 #define AFTER_EXTRA
     // Add Member There
-    char filler[216]; // IDA StructureTemplate::StructureTemplate
+    string mName;
+    StructureTemplateData mStructureTemplateData;
+    unsigned __int8 mStructureVersion;
+    //char filler[216]; // IDA StructureTemplate::StructureTemplate
 
 public:
 #define DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATE
@@ -127,3 +130,5 @@ MCAPI static class BlockPos const INVALID_POSITION;
 private:
 
 };
+
+static_assert(sizeof(StructureTemplate) == 0xd8);

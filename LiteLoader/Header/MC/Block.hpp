@@ -22,6 +22,8 @@ class Block {
 #define AFTER_EXTRA
     // Add new members to class
 public:
+
+public:
     LIAPI static Block* create(const string& str, unsigned short tileData);
     LIAPI static Block* create(CompoundTag* nbt);
 

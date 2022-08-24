@@ -26,10 +26,10 @@ class ConnectionRequest {
 // Add Member There
 
 public:
-    std::unique_ptr<UnverifiedCertificate> certificateData;
-    std::unique_ptr<Certificate> certificate;
-    std::unique_ptr<WebToken> rawToken;
-    uint8_t clientSubId;
+    std::unique_ptr<UnverifiedCertificate> mCertificateData;
+    std::unique_ptr<Certificate> mCertificate;
+    std::unique_ptr<WebToken> mRawToken;
+    unsigned __int8 mClientSubId;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONNECTIONREQUEST

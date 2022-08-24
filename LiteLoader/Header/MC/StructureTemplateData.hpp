@@ -6,7 +6,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
+#include "StructureBlockPalette.hpp"
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -20,7 +20,16 @@ class StructureTemplateData {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    void* __vftable;
+    int mFormatVersion;
+    BlockPos mSize;
+    BlockPos mStructureWorldOrigin;
+    std::vector<int> mBlockIndices;
+    std::vector<int> mExtraBlockIndices;
+    std::unordered_map<std::string, StructureBlockPalette> mPalettes;
+    std::vector<std::unique_ptr<CompoundTag>> mEntityData;
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEDATA
 public:
@@ -142,3 +151,5 @@ protected:
 private:
 
 };
+
+static_assert(offsetof(StructureTemplateData, mFormatVersion) == 0x8);

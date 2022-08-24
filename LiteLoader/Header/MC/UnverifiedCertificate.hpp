@@ -7,7 +7,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-
+#include "WebToken.hpp"
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -21,7 +21,8 @@ class UnverifiedCertificate {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    const WebToken mRawToken;
+    std::unique_ptr<UnverifiedCertificate> mParentUnverifiedCertificate;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNVERIFIEDCERTIFICATE
 public:

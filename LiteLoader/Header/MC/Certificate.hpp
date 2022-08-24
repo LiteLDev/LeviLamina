@@ -7,7 +7,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-
+#include "UnverifiedCertificate.hpp"
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -21,8 +21,11 @@ class Certificate {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[128];
-
+public:
+    UnverifiedCertificate mUnverifiedCertificate;
+    std::unique_ptr<Certificate> mParentCertificate;
+    bool mIsValid;
+	
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CERTIFICATE
 public:
