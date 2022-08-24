@@ -51,6 +51,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("permLevel", &PlayerClass::getPermLevel)
         .instanceProperty("gameMode", &PlayerClass::getGameMode)
         .instanceProperty("canSleep", &PlayerClass::getCanSleep)
+        .instanceProperty("canFly", &PlayerClass::getCanFly)
         .instanceProperty("maxHealth", &PlayerClass::getMaxHealth)
         .instanceProperty("health", &PlayerClass::getHealth)
         .instanceProperty("inAir", &PlayerClass::getInAir)
@@ -406,7 +407,18 @@ Local<Value> PlayerClass::getCanSleep() {
 
         return Boolean::newBoolean(player->canSleep());
     }
-    CATCH("Fail in getGameMode!")
+    CATCH("Fail in getCanSleep!")
+}
+
+Local<Value> PlayerClass::getCanFly() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->canFly());
+    }
+    CATCH("Fail in getCanFly!")
 }
 
 Local<Value> PlayerClass::getSneaking() {
