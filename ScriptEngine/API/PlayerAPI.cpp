@@ -50,6 +50,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("uuid", &PlayerClass::getUuid)
         .instanceProperty("permLevel", &PlayerClass::getPermLevel)
         .instanceProperty("gameMode", &PlayerClass::getGameMode)
+        .instanceProperty("canSleep", &PlayerClass::getCanSleep)
         .instanceProperty("maxHealth", &PlayerClass::getMaxHealth)
         .instanceProperty("health", &PlayerClass::getHealth)
         .instanceProperty("inAir", &PlayerClass::getInAir)
@@ -393,6 +394,17 @@ Local<Value> PlayerClass::getGameMode() {
             return Local<Value>();
 
         return Number::newNumber(player->getPlayerGameType()); //==========???
+    }
+    CATCH("Fail in getGameMode!")
+}
+
+Local<Value> PlayerClass::getCanSleep() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->canSleep());
     }
     CATCH("Fail in getGameMode!")
 }

@@ -31,6 +31,7 @@ public:
     Local<Value> getUuid();
     Local<Value> getPermLevel();
     Local<Value> getGameMode();
+    Local<Value> getCanSleep();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
     Local<Value> getInAir();
