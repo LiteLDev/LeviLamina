@@ -47,6 +47,7 @@ public:
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
     Local<Value> setGameMode(const Arguments& args);
+    Local<Value> setCanFly(const Arguments& args);
 
     Local<Value> runcmd(const Arguments& args);
     Local<Value> teleport(const Arguments& args);
