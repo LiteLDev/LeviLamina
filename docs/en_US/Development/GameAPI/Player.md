@@ -525,25 +525,6 @@ pl.setGameMode(1);
 
 ```
 
-#### Enable/disable the player's flying ability
-
-`pl.setCanFly(bool)`
-
-- Parameters:
-
-  - bool : `Boolean`
-    Will the player be able to fly
-- Return value: Whether the modification was successful.
-- Return value type: `Boolean`
-
-```Javascript
-[JS]
-//For a `Player` object pl
-pl.setCanFly(true);
-[Lua]
-
-```
-
 #### Increase Player Experience Level 
 
 `pl.addLevel(count)`

@@ -738,31 +738,6 @@
     pl:setGameMode(0)
     ```
 
-#### 启用/禁用玩家的飞行能力
-
-`pl.setCanFly(bool)`
-
-- 参数：
-
-  - bool : `Boolean`  
-    玩家能飞吗？
-
-- 返回值：是否成功修改
-
-- 返回值类型：`Boolean`
-
-- 示例：  
-  - JS
-    ```js
-    // 对于一个玩家对象pl
-    pl.setCanFly(true);
-    ```
-  - Lua
-    ```lua
-    -- 对于一个玩家对象pl
-    pl:setCanFly(true)
-    ```
-
 #### 提高玩家经验等级
 
 `pl.addLevel(count)`

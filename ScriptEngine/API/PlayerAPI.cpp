@@ -111,7 +111,6 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("reduceLevel", &PlayerClass::reduceLevel)
         .instanceFunction("getLevel", &PlayerClass::getLevel)
         .instanceFunction("setLevel", &PlayerClass::setLevel)
-        .instanceFunction("setCanFly", &PlayerClass::setCanFly)
         .instanceFunction("resetLevel", &PlayerClass::resetLevel)
         .instanceFunction("addExperience", &PlayerClass::addExperience)
         .instanceFunction("reduceExperience", &PlayerClass::reduceExperience)
@@ -661,23 +660,6 @@ Local<Value> PlayerClass::setGameMode(const Arguments& args) {
         return Boolean::newBoolean(res);
     }
     CATCH("Fail in setGameMode!");
-}
-
-Local<Value> PlayerClass::setCanFly(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-    CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
-
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        bool canFlyValue = args[0].asBoolean().value();
-
-        player->setCanFly(canFlyValue);
-        return Boolean::newBoolean(true);
-    }
-    CATCH("Fail in setCanFly!")
 }
 
 Local<Value> PlayerClass::runcmd(const Arguments& args) {
