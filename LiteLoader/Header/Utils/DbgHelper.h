@@ -4,7 +4,6 @@
 #include <string>
 
 class Logger;
-using namespace std;
 
 LIAPI bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e = nullptr, Logger* logger = nullptr);
 

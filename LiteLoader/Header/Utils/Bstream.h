@@ -14,7 +14,6 @@
 #    define DO_BUF_CHK()
 #    define BUF_CHK_VAR
 #endif
-using std::string, std::string_view;
 template <class T>
 struct is_safe_obj
     : std::integral_constant<bool, !std::is_class<std::remove_reference_t<T>>::value> {};
