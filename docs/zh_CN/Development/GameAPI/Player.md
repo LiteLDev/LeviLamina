@@ -53,7 +53,7 @@
 | pl.permLevel | 玩家的操作权限等级（0 - 4） | `Integer`        |
 | pl.gameMode  | 玩家的游戏模式（0 - 3）     | `Integer`        |
 | pl.canFly    | 玩家是否可以飞行        | `Boolean`        |
-| pl.canSleep  | 玩家可以睡觉吗              | `Boolean`        |
+| pl.canSleep  | 玩家是否可以睡觉              | `Boolean`        |
 | pl.maxHealth | 玩家最大生命值              | `Integer`        |
 | pl.health    | 玩家当前生命值              | `Integer`        |
 | pl.inAir     | 玩家当前是否悬空            | `Boolean`        |
