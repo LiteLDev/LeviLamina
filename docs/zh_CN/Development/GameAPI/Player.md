@@ -740,7 +740,7 @@
 
 #### 启用/禁用玩家的飞行能力
 
-`pl.setCanFly(bool)
+`pl.setCanFly(bool)`
 
 - 参数：
 
