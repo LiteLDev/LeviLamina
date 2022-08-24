@@ -2055,7 +2055,7 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
 
 TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
               Container, int a2, char a3, char a4, bool a5) {
-    auto pl = dAccess<Player*, 272>(this);
+    auto pl = dAccess<Player*, 248>(this);
     if (pl->isPlayer()) {
         IF_LISTENED(PlayerDropItemEvent) {
             PlayerDropItemEvent ev{};

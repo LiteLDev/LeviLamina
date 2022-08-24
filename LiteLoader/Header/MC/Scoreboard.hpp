@@ -6,7 +6,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Player;
@@ -14,12 +13,15 @@ class Objective;
 struct PlayerScore;
 
 struct ScoreInfo {
-    char filler[16];
+    Objective* mObjective;
+    bool mValid;
+    int mValue;
+	
     Objective* getObjective() {
-        return dAccess<Objective*>(this, 0);
+        return mObjective;
     }
     int getCount() {
-        return dAccess<int>(this, 12);
+        return mValue;
     }
 };
 #undef BEFORE_EXTRA
@@ -32,19 +34,8 @@ class Scoreboard {
 
 #define AFTER_EXTRA
 // Add new members to class
+#define ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
 public:
-
-    inline struct ScoreboardId const& createScoreboardId(std::string const& a0) {
-        struct ScoreboardId const& (Scoreboard::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-
-    inline struct ScoreboardId const& createScoreboardId(class Player const& a0) {
-        struct ScoreboardId const& (Scoreboard::*rv)(class Player const&);
-        *((void**)&rv) = dlsym("?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const&>(a0));
-    }
 
     LIAPI static Objective* newObjective(const std::string& objname, const std::string& displayName);
     //LIAPI static bool setDisplayObjective(const std::string& objname, const std::string& slot, int sort);
