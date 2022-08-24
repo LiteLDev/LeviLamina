@@ -31,6 +31,8 @@ public:
     Local<Value> getUuid();
     Local<Value> getPermLevel();
     Local<Value> getGameMode();
+    Local<Value> getCanSleep();
+    Local<Value> getCanFly();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
     Local<Value> getInAir();
@@ -58,6 +60,7 @@ public:
     Local<Value> crash(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
+    Local<Value> setFire(const Arguments& args);
     Local<Value> refreshChunks(const Arguments& args);
     Local<Value> giveItem(const Arguments& args);
     Local<Value> clearItem(const Arguments& args);

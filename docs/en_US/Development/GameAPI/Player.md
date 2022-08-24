@@ -52,6 +52,8 @@ Each player object contains some fixed object properties. For a particular playe
 | pl.uuid      | Player Uuid string              | `String`         |
 | pl.permLevel | Player's permission level (0 - 4) | `Integer`        |
 | pl.gameMode  | Player's game mode (0 - 3)     | `Integer`        |
+| pl.canSleep  | Whether the player can sleep   | `Boolean`        |
+| pl.canFly    | Whether the player can fly     | `Boolean`        |
 | pl.maxHealth | Player's maximum health              | `Integer`        |
 | pl.health    | Player's current health              | `Integer`        |
 | pl.inAir     | Whether the player is in the air     | `Boolean`        |
@@ -300,11 +302,13 @@ Note that the damage dealt here is real damage and cannot be reduced by protecti
 
 #### Set the Specified Player on Fire
 
-`pl.setOnFire(time)`
+`pl.setOnFire(time,isEffect)`
 
 - Parameters: 
   - time : `Integer`  
     Fire time, in seconds.
+  - isEffect : `Boolean`
+    Will there be a fire effect?
 - Return value: Whether the player was set on fire.
 - Return value type: `Boolean`
 

@@ -52,6 +52,8 @@
 | pl.uuid      | 玩家Uuid字符串              | `String`         |
 | pl.permLevel | 玩家的操作权限等级（0 - 4） | `Integer`        |
 | pl.gameMode  | 玩家的游戏模式（0 - 3）     | `Integer`        |
+| pl.canFly    | 玩家是否可以飞行        | `Boolean`        |
+| pl.canSleep  | 玩家是否可以睡觉              | `Boolean`        |
 | pl.maxHealth | 玩家最大生命值              | `Integer`        |
 | pl.health    | 玩家当前生命值              | `Integer`        |
 | pl.inAir     | 玩家当前是否悬空            | `Boolean`        |
@@ -61,7 +63,7 @@
 | pl.direction | 玩家当前朝向                | `DirectionAngle` |
 | pl.uniqueId  | 玩家（实体的）唯一标识符    | `String`         |
 | pl.langCode  | 玩家设置的语言的标识符(形如zh_CN) | `String`    |
-| pl.isLoading  | 玩家是否正在加载 | `Boolean`    |
+| pl.isLoading  | 玩家是否正在加载                | `Boolean`    |
 
 这些对象属性都是只读的，无法被修改。其中：
 
@@ -361,11 +363,13 @@
 
 #### 使指定玩家着火
 
-`pl.setOnFire(time)`
+`pl.setFire(time,isEffect)`
 
 - 参数：
   - time : `Integer`  
     着火时长，单位秒
+  - isEffect : `Boolean`
+    会不会有火的效果
 - 返回值：是否成功着火
 - 返回值类型：`Boolean`
 
@@ -373,12 +377,12 @@
   - JS
     ```js
     // 对于一个玩家对象pl
-    pl.setOnFire(20);
+    pl.setFire(20,true);
     ```
   - Lua
     ```lua
     -- 对于一个玩家对象pl
-    pl:setOnFire(20)
+    pl:setFire(20,true)
     ```
 
 #### 重命名玩家  
