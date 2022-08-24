@@ -51,6 +51,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("permLevel", &PlayerClass::getPermLevel)
         .instanceProperty("gameMode", &PlayerClass::getGameMode)
         .instanceProperty("canSleep", &PlayerClass::getCanSleep)
+        .instanceProperty("canFly", &PlayerClass::getCanFly)
         .instanceProperty("maxHealth", &PlayerClass::getMaxHealth)
         .instanceProperty("health", &PlayerClass::getHealth)
         .instanceProperty("inAir", &PlayerClass::getInAir)
@@ -75,7 +76,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("talkAs", &PlayerClass::talkAs)
         .instanceFunction("sendText", &PlayerClass::tell)
         .instanceFunction("rename", &PlayerClass::rename)
-        .instanceFunction("setOnFire", &PlayerClass::setOnFire)
+        .instanceFunction("setFire", &PlayerClass::setFire)
         .instanceFunction("transServer", &PlayerClass::transServer)
         .instanceFunction("crash", &PlayerClass::crash)
         .instanceFunction("hurt", &PlayerClass::hurt)
@@ -110,7 +111,6 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("reduceLevel", &PlayerClass::reduceLevel)
         .instanceFunction("getLevel", &PlayerClass::getLevel)
         .instanceFunction("setLevel", &PlayerClass::setLevel)
-        .instanceProperty("canFly", &PlayerClass::getCanFly)
         .instanceFunction("setCanFly", &PlayerClass::setCanFly)
         .instanceFunction("resetLevel", &PlayerClass::resetLevel)
         .instanceFunction("addExperience", &PlayerClass::addExperience)
@@ -168,6 +168,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("ip", &PlayerClass::getIP)
         .instanceFunction("setTag", &PlayerClass::setNbt)
         .instanceFunction("getTag", &PlayerClass::getNbt)
+        .instanceFunction("setOnFire", &PlayerClass::setOnFire)
         .instanceFunction("removeItem", &PlayerClass::removeItem)
         .instanceFunction("getAllItems", &PlayerClass::getAllItems)
         .instanceFunction("removeScore", &PlayerClass::deleteScore)
@@ -1568,10 +1569,10 @@ Local<Value> PlayerClass::hurt(const Arguments& args) {
     CATCH("Fail in hurt!");
 }
 
-Local<Value> PlayerClass::setOnFire(const Arguments& args) {
+Local<Value> PlayerClass::setFire(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
-    CHECK_ARG_TYPE(args[1], ValueKind::kBoolean)
+    CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
 
     try {
         Player* player = get();
@@ -1582,6 +1583,23 @@ Local<Value> PlayerClass::setOnFire(const Arguments& args) {
         bool isEffectValue = args[1].asBoolean().value();
 
         bool result = player->setOnFire(time, isEffectValue);
+        return Boolean::newBoolean(result);
+    }
+    CATCH("Fail in setOnFire!");
+}
+
+Local<Value> PlayerClass::setOnFire(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        int time = args[0].toInt();
+
+        bool result = player->setOnFire(time, true);
         return Boolean::newBoolean(result);
     }
     CATCH("Fail in setOnFire!");

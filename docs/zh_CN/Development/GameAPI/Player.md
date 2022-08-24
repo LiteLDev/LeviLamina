@@ -363,7 +363,7 @@
 
 #### 使指定玩家着火
 
-`pl.setOnFire(time,isEffect)`
+`pl.setFire(time,isEffect)`
 
 - 参数：
   - time : `Integer`  
@@ -377,12 +377,12 @@
   - JS
     ```js
     // 对于一个玩家对象pl
-    pl.setOnFire(20,true);
+    pl.setFire(20,true);
     ```
   - Lua
     ```lua
     -- 对于一个玩家对象pl
-    pl:setOnFire(20,true)
+    pl:setFire(20,true)
     ```
 
 #### 重命名玩家  
