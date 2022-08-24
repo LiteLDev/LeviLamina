@@ -1569,8 +1569,9 @@ Local<Value> PlayerClass::hurt(const Arguments& args) {
 }
 
 Local<Value> PlayerClass::setOnFire(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kBoolean)
 
     try {
         Player* player = get();
@@ -1578,7 +1579,9 @@ Local<Value> PlayerClass::setOnFire(const Arguments& args) {
             return Local<Value>();
 
         int time = args[0].toInt();
-        bool result = player->setOnFire(time, true);
+        bool isEffectValue = args[1].asBoolean().value();
+
+        bool result = player->setOnFire(time, isEffectValue);
         return Boolean::newBoolean(result);
     }
     CATCH("Fail in setOnFire!");
