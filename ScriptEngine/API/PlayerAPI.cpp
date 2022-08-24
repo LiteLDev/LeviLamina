@@ -1570,6 +1570,7 @@ Local<Value> PlayerClass::setFire(const Arguments& args) {
     CATCH("Fail in setOnFire!");
 }
 
+// For Compatibility
 Local<Value> PlayerClass::setOnFire(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
