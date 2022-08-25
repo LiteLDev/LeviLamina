@@ -32,6 +32,15 @@
 
 <br>
 
+### 获取 LiteLoader 版本状态
+
+`ll.versionStatus()`
+
+- 返回值: 版本状态（`0` 是 Release，`1` 是 Beta，`2` 是 Dev）
+- 返回值类型:  `Integer`
+
+<br>
+
 ### 检查 LiteLoader 是否处于调试模式
 
 `ll.isDebugMode()`

@@ -23,13 +23,21 @@ Some interfaces related to loader operations are provided here.
 
 <br>
 
-
 ### Get LiteLoader loader version string
 
 `ll.versionString()`
 
 - Return value: loader version
 - Return value type:  `String`
+
+<br>
+
+### Get LiteLoader Version Status
+
+`ll.versionStatus()`
+
+- Return value: Version Status (`0` is Release, `1` is Beta, `2` is Dev)
+- Return value type:  `Integer`
 
 <br>
 
