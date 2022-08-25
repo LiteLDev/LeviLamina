@@ -13,7 +13,8 @@ public:
     static Local<Value> getIsDebugMode(const Arguments& args);
     static Local<Value> versionString(const Arguments& args);
     static Local<Value> requireVersion(const Arguments& args);
-    static Local<Value> listPlugins(const Arguments& args);
+    static Local<Value> listExtPlugins(const Arguments& args);
+    static Local<Value> listPluginsName(const Arguments& args);
     static Local<Value> exportFunc(const Arguments& args);
     static Local<Value> importFunc(const Arguments& args);
     static Local<Value> hasFuncExported(const Arguments& args);

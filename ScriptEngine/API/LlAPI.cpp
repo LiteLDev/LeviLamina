@@ -23,7 +23,7 @@ ClassDefine<void> LlClassBuilder =
         .function("language", &LlClass::getLanguage)
         .function("isDebugMode", &LlClass::getIsDebugMode)
         .function("requireVersion", &LlClass::requireVersion)
-        .function("listPlugins", &LlClass::listPlugins)
+        .function("listExtPlugins", &LlClass::listExtPlugins)
         .function("import", &LlClass::importFunc)
         .function("export", &LlClass::exportFunc)
         .function("hasExported", &LlClass::hasFuncExported)
@@ -35,8 +35,35 @@ ClassDefine<void> LlClassBuilder =
 
         // For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
+        .function("listPlugins", &LlClass::listPluginsName)
         .build();
 
+//////////////////// Plugin Object ////////////////////
+
+script::Local<script::Object> PluginObject(auto plugin) {
+    auto result = Object::newObject();
+
+    result.set("name", plugin->name);
+    result.set("desc", plugin->desc);
+
+    auto ver = Array::newArray();
+    ver.add(Number::newNumber(plugin->version.major));
+    ver.add(Number::newNumber(plugin->version.minor));
+    ver.add(Number::newNumber(plugin->version.revision));
+
+    result.set("version", ver);
+    result.set("versionStr", plugin->version.toString(true));
+    result.set("filePath", plugin->filePath);
+
+    auto others = Object::newObject();
+    for (auto& [k, v] : plugin->others) {
+        others.set(k, v);
+    }
+    result.set("others", others);
+    return result;
+}
+
+///////////////////////////////////////////////////////
 
 Local<Value> LlClass::registerPlugin(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
@@ -118,22 +145,7 @@ Local<Value> LlClass::getPluginInfo(const Arguments& args) {
         std::string name = args[0].toStr();
         auto plugin = LL::getPlugin(name);
         if (plugin) {
-            auto result = Object::newObject();
-            result.set("name", plugin->name);
-            result.set("desc", plugin->desc);
-            auto ver = Array::newArray();
-            ver.add(Number::newNumber(plugin->version.major));
-            ver.add(Number::newNumber(plugin->version.minor));
-            ver.add(Number::newNumber(plugin->version.revision));
-            result.set("version", ver);
-            result.set("versionStr", plugin->version.toString(true));
-            result.set("filePath", plugin->filePath);
-            auto others = Object::newObject();
-            for (auto& [k, v] : plugin->others) {
-                others.set(k, v);
-            }
-            result.set("others", others);
-            return result;
+            return PluginObject(plugin);
         }
         return Local<Value>();
     }
@@ -173,7 +185,7 @@ Local<Value> LlClass::version(const Arguments& args) {
 
 Local<Value> LlClass::getLanguage(const Arguments& args) {
     try {
-        return String::newString(LL::getLanguage());
+        return String::newString(std::format("{}", LL::getLanguage()));
     }
     CATCH("Fail in LLSEGetLanguage")
 }
@@ -207,7 +219,20 @@ Local<Value> LlClass::requireVersion(const Arguments& args) {
     CATCH("Fail in LLSERequireVersion!")
 }
 
-Local<Value> LlClass::listPlugins(const Arguments& args) {
+Local<Value> LlClass::listExtPlugins(const Arguments& args) {
+    try {
+        Local<Array> plugins = Array::newArray();
+        auto list = PluginManager::getAllPlugins();
+        for (auto& plugin : list) {
+            plugins.add(PluginObject(plugin.second));
+        }
+        return plugins;
+    }
+    CATCH("Fail in LLSEListExtPlugins!")
+}
+
+// For Compatibility
+Local<Value> LlClass::listPluginsName(const Arguments& args) {
     try {
         Local<Array> plugins = Array::newArray();
         auto list = PluginManager::getAllPlugins();
