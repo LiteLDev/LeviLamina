@@ -53,6 +53,9 @@ public:
 
     Local<Value> getNbt(const Arguments& args);
     Local<Value> setNbt(const Arguments& args);
+    Local<Value> getNameTag(const Arguments& args);
+    Local<Value> setNameTag(const Arguments& args);
+    Local<Value> setNameTagVisible(const Arguments& args);
     Local<Value> addTag(const Arguments& args);
     Local<Value> removeTag(const Arguments& args);
     Local<Value> hasTag(const Arguments& args);

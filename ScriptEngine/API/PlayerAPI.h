@@ -93,6 +93,9 @@ public:
     Local<Value> getLevel(const Arguments& arg);
     Local<Value> setLevel(const Arguments& arg);
     Local<Value> resetLevel(const Arguments& arg);
+    Local<Value> getNameTag(const Arguments& arg);
+    Local<Value> setNameTag(const Arguments& arg);
+    Local<Value> setNameTagVisible(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
     Local<Value> reduceExperience(const Arguments& args);
     Local<Value> getCurrentExperience(const Arguments& arg);

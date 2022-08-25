@@ -112,6 +112,9 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getLevel", &PlayerClass::getLevel)
         .instanceFunction("setLevel", &PlayerClass::setLevel)
         .instanceFunction("resetLevel", &PlayerClass::resetLevel)
+        .instanceFunction("getNameTag", &PlayerClass::getNameTag)
+        .instanceFunction("setNameTag", &PlayerClass::getNameTag)
+        .instanceFunction("setNameTagVisible", &PlayerClass::getNameTag)
         .instanceFunction("addExperience", &PlayerClass::addExperience)
         .instanceFunction("reduceExperience", &PlayerClass::reduceExperience)
         .instanceFunction("getCurrentExperience", &PlayerClass::getCurrentExperience)
@@ -958,6 +961,49 @@ Local<Value> PlayerClass::resetLevel(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in resetLevel!")
+}
+
+Local<Value> PlayerClass::getNameTag(const Arguments& args) {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        std::string nameTagValue = player->getNameTag();
+
+        return String::newString(nameTagValue);
+    }
+    CATCH("Fail in getNameTag!");
+}
+
+Local<Value> PlayerClass::setNameTag(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        player->setNameTag(args[0].asString().toString());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setNameTag!");
+}
+
+Local<Value> PlayerClass::setNameTagVisible(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        player->setNameTagVisible(args[0].asBoolean().value());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setNameTagVisible!");
 }
 
 Local<Value> PlayerClass::addExperience(const Arguments& args) {

@@ -52,6 +52,9 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("refreshItems", &EntityClass::refreshItems)
         .instanceFunction("setNbt", &EntityClass::setNbt)
         .instanceFunction("getNbt", &EntityClass::getNbt)
+        .instanceFunction("getNameTag", &EntityClass::getNameTag)
+        .instanceFunction("setNameTag", &EntityClass::setNameTag)
+        .instanceFunction("setNameTagVisible", &EntityClass::setNameTagVisible)
         .instanceFunction("addTag", &EntityClass::addTag)
         .instanceFunction("removeTag", &EntityClass::removeTag)
         .instanceFunction("hasTag", &EntityClass::hasTag)
@@ -394,6 +397,49 @@ Local<Value> EntityClass::getArmor(const Arguments& args) {
         return ContainerClass::newContainer(&entity->getArmorContainer());
     }
     CATCH("Fail in getArmor!");
+}
+
+Local<Value> EntityClass::getNameTag(const Arguments& args) {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        std::string NameTagValue = entity->getNameTag();
+
+        return String::newString(NameTagValue);
+    }
+    CATCH("Fail in getNameTag!");
+}
+
+Local<Value> EntityClass::setNameTag(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        entity->setNameTag(args[0].asString().toString());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setNameTag!");
+}
+
+Local<Value> EntityClass::setNameTagVisible(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kBoolean);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        entity->setNameTagVisible(args[0].asBoolean().value());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setNameTagVisible!");
 }
 
 Local<Value> EntityClass::refreshItems(const Arguments& args) {
