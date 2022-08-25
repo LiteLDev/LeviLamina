@@ -31,7 +31,7 @@ You will come across them frequently in subsequent documentation.
 
 ## 🧩 Plugin Object
 
-| Parameter       | Meaning                              | Data Type  |
+| Property       | Description                              | Type  |
 | ------------ | ------------------------------------- | --------- |
 | pl.name    | Plugin name                             | `String` |
 | pl.desc    | Plugin description                      | `String` |
