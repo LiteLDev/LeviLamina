@@ -2,6 +2,12 @@
 
 这里提供了一些与加载器操作相关的接口。
 
+### Properties
+
+| 属性           | 类型      | 描述                                                       |
+| ------------- | -------- | ---------------------------------------------------------- |
+| `ll.language` | `String` | The language LiteLoader used.(such as `zh`, `en`, `ru_RU`) |
+
 ### 获取LiteLoader加载器版本
 
 `ll.version()`
@@ -12,12 +18,14 @@
 
   - 对于返回的某个加载器版本对象 ver，有如下这些成员：
 
-  | 成员         | 含义                                  | 类型      |
+  | 成员          | 含义                                  | 类型      |
   | ------------ | ------------------------------------- | --------- |
   | ver.major    | 主版本号（如 **2**.1.0 里的 **2**）   | `Integer` |
   | ver.minor    | 次版本号（如 2.**1**.0 里的 **1**）   | `Integer` |
   | ver.revision | 修订版本号（如 2.1.**0** 里的 **0**） | `Integer` |
   | ver.isBeta   | 当前版本是否为测试版                  | `Boolean` |
+  | ver.isDev    | 当前版本是否为开发版                  | `Boolean` |
+  | ver.isRelease| 当前版本是否为发布版本                | `Boolean` |
 
 <br>
 
@@ -27,6 +35,24 @@
 
 - 返回值：加载器版本
 - 返回值类型： `String`
+
+<br>
+
+### 获取 LiteLoader 版本状态
+
+`ll.versionStatus()`
+
+- 返回值: 版本状态（`0` 是 Release，`1` 是 Beta，`2` 是 Dev）
+- 返回值类型:  `Integer`
+
+<br>
+
+### 检查 LiteLoader 是否处于调试模式
+
+`ll.isDebugMode()`
+
+- 返回值: LiteLoader 是否处于调试模式
+- 返回值类型:  `Boolean`
 
 <br>
 
@@ -49,12 +75,44 @@
 
 <br>
 
+### 获取有关插件的信息
+
+`ll.getPluginInfo(name)`
+
+- 参数:
+  - name: `String`
+  插件名称
+- 返回值: 插件对象
+- 返回值类型:  `Plugin`
+  
+  - 对于返回的某个插件对象 plugin，有如下这些属性：  
+
+  | 属性               | 描述                  | 类型      |
+  | ----------------- | --------------------- | -------- |
+  | plugin.name       | 插件名称               | `String` |
+  | plugin.desc       | 插件描述               | `String` |
+  | plugin.version    | 插件版本（数组形式）     | `Array<Integer,Integer,Integer>` |
+  | plugin.versionStr | 插件版本               | `String` |
+  | plugin.filePath   | 插件路径               | `String` |
+  | plugin.others     | 其他信息               | `Object` |
+
+<br>
+
 ### 列出所有已加载的插件
 
 `ll.listPlugins()`
 
 - 返回值：已加载的所有的插件名字列表
 - 返回值类型： `Array<String,String,...>`
+
+<br>
+
+### 列出所有加载的插件信息
+
+`ll.getAllPluginInfo()`
+
+- 返回值: 包含所有已加载插件的插件对象的列表
+- 返回值类型:  `Array<Plugin,Plugin,...>`
 
 <br>
 
@@ -175,6 +233,15 @@ LLSE提供了下面的接口来提前加载插件所需要的依赖库，从本�
 <br>
 
 依赖库作者可以将相关代码托管在GitHub或Gitee等稳定的大型网站上，并将外链提供给其他开发者以供远程下载使用。
+
+<br>
+
+### 获取脚本引擎版本
+
+`ll.scriptEngineVersion()`
+
+- 返回值: 后端引擎版本
+- 返回值类型:  `String`
 
 <br>
 

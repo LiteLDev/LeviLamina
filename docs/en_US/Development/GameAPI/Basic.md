@@ -29,6 +29,8 @@ You will come across them frequently in subsequent documentation.
 
 <br>
 
+<br>
+
 ## 🎯 Coordinate Object
 
 In games, numerous APIs require coordinates.

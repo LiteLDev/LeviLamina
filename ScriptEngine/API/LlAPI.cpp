@@ -1,4 +1,5 @@
 #include "APIHelp.h"
+#include <LiteLoader/Main/Config.h>
 #include "LlAPI.h"
 #include <Engine/GlobalShareData.h>
 #include <Engine/EngineOwnData.h>
@@ -19,18 +20,24 @@ ClassDefine<void> LlClassBuilder =
     defineClass("ll")
         .function("version", &LlClass::version)
         .function("versionString", &LlClass::versionString)
+        .function("versionStatus", &LlClass::getVersionStatus)
+        .function("isDebugMode", &LlClass::isDebugMode)
         .function("requireVersion", &LlClass::requireVersion)
         .function("listPlugins", &LlClass::listPlugins)
+        .function("getAllPluginInfo", &LlClass::getAllPluginInfo)
         .function("import", &LlClass::importFunc)
         .function("export", &LlClass::exportFunc)
         .function("hasExported", &LlClass::hasFuncExported)
         .function("require", &LlClass::require)
+        .function("scriptEngineVersion", &LlClass::getScriptEngineVersion)
         .function("eval", &LlClass::eval)
         .function("registerPlugin", &LlClass::registerPlugin)
         .function("getPluginInfo", &LlClass::getPluginInfo)
 
-        // For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
+
+        .property("language", &LlClass::getLanguage)
+
         .build();
 
 
@@ -115,15 +122,19 @@ Local<Value> LlClass::getPluginInfo(const Arguments& args) {
         auto plugin = LL::getPlugin(name);
         if (plugin) {
             auto result = Object::newObject();
+
             result.set("name", plugin->name);
             result.set("desc", plugin->desc);
+
             auto ver = Array::newArray();
             ver.add(Number::newNumber(plugin->version.major));
             ver.add(Number::newNumber(plugin->version.minor));
             ver.add(Number::newNumber(plugin->version.revision));
+
             result.set("version", ver);
             result.set("versionStr", plugin->version.toString(true));
             result.set("filePath", plugin->filePath);
+
             auto others = Object::newObject();
             for (auto& [k, v] : plugin->others) {
                 others.set(k, v);
@@ -136,16 +147,49 @@ Local<Value> LlClass::getPluginInfo(const Arguments& args) {
     CATCH("Fail in getPluginInfo");
 }
 
+Local<Value> LlClass::getVersionStatus(const Arguments& args) {
+    try {
+        int versionStatusValue;
+
+        if (LITELOADER_VERSION_STATUS == LL::Version::Status::Release) {
+            versionStatusValue = 0;
+        } else if (LITELOADER_VERSION_STATUS == LL::Version::Status::Beta) {
+            versionStatusValue = 1;
+        } else if (LITELOADER_VERSION_STATUS == LL::Version::Status::Dev) {
+            versionStatusValue = 2;
+        }
+
+        return Number::newNumber(versionStatusValue);
+    }
+    CATCH("Fail in LLSEGetVersionStatus")
+}
+
 Local<Value> LlClass::version(const Arguments& args) {
     try {
         Local<Object> ver = Object::newObject();
         ver.set("major", LITELOADER_VERSION_MAJOR);
         ver.set("minor", LITELOADER_VERSION_MINOR);
         ver.set("revision", LITELOADER_VERSION_REVISION);
-        ver.set("isBeta", LITELOADER_VERSION_STATUS != LL::Version::Status::Release);
+        ver.set("isBeta", LITELOADER_VERSION_STATUS == LL::Version::Status::Beta);
+        ver.set("isRelease", LITELOADER_VERSION_STATUS == LL::Version::Status::Release);
+        ver.set("isDev", LITELOADER_VERSION_STATUS == LL::Version::Status::Dev);
         return ver;
     }
     CATCH("Fail in LLSEGetVersion!")
+}
+
+Local<Value> LlClass::getLanguage() {
+    try {
+        return String::newString(PluginOwnData::getImpl<I18nBase>(LL::getLoaderHandle(), I18nBase::POD_KEY).defaultLocaleName);
+    }
+    CATCH("Fail in LLSEGetLanguage")
+}
+
+Local<Value> LlClass::isDebugMode(const Arguments& args) {
+    try {
+        return Boolean::newBoolean(LL::isDebugMode());
+    }
+    CATCH("Fail in LLSEGetIsDebugMode")
 }
 
 Local<Value> LlClass::versionString(const Arguments& args) {
@@ -170,6 +214,41 @@ Local<Value> LlClass::requireVersion(const Arguments& args) {
     CATCH("Fail in LLSERequireVersion!")
 }
 
+Local<Value> LlClass::getAllPluginInfo(const Arguments& args) {
+    try {
+        Local<Array> plugins = Array::newArray();
+        auto list = PluginManager::getAllPlugins();
+        for (auto& plugin : list) {
+            // Create plugin object
+            auto pluginObject = Object::newObject();
+
+            pluginObject.set("name", plugin.second->name);
+            pluginObject.set("desc", plugin.second->desc);
+
+            auto ver = Array::newArray();
+            ver.add(Number::newNumber(plugin.second->version.major));
+            ver.add(Number::newNumber(plugin.second->version.minor));
+            ver.add(Number::newNumber(plugin.second->version.revision));
+
+            pluginObject.set("version", ver);
+            pluginObject.set("versionStr", plugin.second->version.toString(true));
+            pluginObject.set("filePath", plugin.second->filePath);
+
+            auto others = Object::newObject();
+            for (auto& [k, v] : plugin.second->others) {
+                others.set(k, v);
+            }
+            pluginObject.set("others", others);
+
+            // Add plugin object to list
+            plugins.add(pluginObject);
+        }
+        return plugins;
+    }
+    CATCH("Fail in LLSEGetAllPluginInfo!")
+}
+
+// For Compatibility
 Local<Value> LlClass::listPlugins(const Arguments& args) {
     try {
         Local<Array> plugins = Array::newArray();
@@ -279,6 +358,13 @@ Local<Value> LlClass::require(const Arguments& args) {
         }
     }
     CATCH("Fail in LLSERequire!")
+}
+
+Local<Value> LlClass::getScriptEngineVersion(const Arguments& args) {
+    try {
+        return String::newString(EngineScope::currentEngine()->getEngineVersion());
+    }
+    CATCH("Fail in LLSEGetScriptEngineVerison")
 }
 
 Local<Value> LlClass::eval(const Arguments& args) {

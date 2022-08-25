@@ -2,6 +2,12 @@
 
 Some interfaces related to loader operations are provided here. 
 
+### Properties
+
+| Property      | Type     | Description                                                |
+| ------------- | -------- | ---------------------------------------------------------- |
+| `ll.language` | `String` | The language LiteLoader used.(such as `zh`, `en`, `ru_RU`) |
+
 ### Get LiteLoader loader version
 
 `ll.version()`
@@ -18,6 +24,8 @@ Some interfaces related to loader operations are provided here.
   | ver.minor    | Minor Version Number (ex: the **1** in 2.**1**.0)    | `Integer` |
   | ver.revision | Revision Number: (ex: the **0** in 2.1.**0**)  | `Integer` |
   | ver.isBeta   | Whether the current version is a beta version  | `Boolean` |
+  | ver.isDev    | Whether the current version is a dev version  | `Boolean` |
+  | ver.isRelease| Whether the current version is a release version  | `Boolean` |
 
 <br>
 
@@ -27,6 +35,24 @@ Some interfaces related to loader operations are provided here.
 
 - Return value: loader version
 - Return value type:  `String`
+
+<br>
+
+### Get LiteLoader Version Status
+
+`ll.versionStatus()`
+
+- Return value: Version Status (`0` is Release, `1` is Beta, `2` is Dev)
+- Return value type:  `Integer`
+
+<br>
+
+### Check is LiteLoader in debug mode
+
+`ll.isDebugMode()`
+
+- Return value: Is LiteLoader in debug mode
+- Return value type:  `Boolean`
 
 <br>
 
@@ -46,6 +72,30 @@ Some interfaces related to loader operations are provided here.
 
 If the detection finds that the currently installed version of LLSE is lower than the value passed in, it will return `false`. 
 You can choose to judge based on the results and report an error to remind users to upgrade their LiteLoaderBDS version.
+
+<br>
+
+### Get information about Plugin
+
+`ll.getPluginInfo(name)`
+
+- Parameter:
+  - name: `String`
+  Plugin name
+- Return value: Plugin Object
+- Return value type:  `Plugin`
+  - For a returned plugin object, there are the following members:  
+
+  | Property       | Description                              | Type  |
+  | ------------ | ------------------------------------- | --------- |
+  | plugin.name    | Plugin name                             | `String` |
+  | plugin.desc    | Plugin description                      | `String` |
+  | plugin.version     | Plugin version (array)                  | `Array<Integer,Integer,Integer>` |
+  | plugin.versionStr  | Plugin version (string)             | `String` |
+  | plugin.filePath | Path to plugin                         | `String` |
+  | plugin.others     | Other information                     | `Object` |
+
+
 <br>
 
 ### List all loaded plugins
@@ -54,6 +104,15 @@ You can choose to judge based on the results and report an error to remind users
 
 - Return value: A list containing the names of all loaded plugin
 - Return value type:  `Array<String,String,...>`
+
+<br>
+
+### List all loaded plugins with information
+
+`ll.getAllPluginInfo()`
+
+- Return value: A list containing the plugin objects of all loaded plugin
+- Return value type:  `Array<Plugin,Plugin,...>`
 
 <br>
 
@@ -157,6 +216,15 @@ For execution, use `ll.require`, then LLSE will perform the following series of 
 <br>
 
 Authors of dependent libraries can host relevant code on stable large websites such as GitHub or Gitee, and provide external links to other developers for remote download.
+
+<br>
+
+### Get Script Engine version
+
+`ll.scriptEngineVersion()`
+
+- Return value: The backend engine version
+- Return value type:  `String`
 
 <br>
 
