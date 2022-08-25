@@ -194,6 +194,15 @@ Authors of dependent libraries can host relevant code on stable large websites s
 
 <br>
 
+### Get Script Engine version
+
+`ll.scriptEngineVersion()`
+
+- Return value: The backend engine version
+- Return value type:  `String`
+
+<br>
+
 ### Execute a String as a Script
 
 `ll.eval(str)`
