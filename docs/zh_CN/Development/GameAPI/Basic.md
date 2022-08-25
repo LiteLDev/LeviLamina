@@ -29,6 +29,19 @@ LLSE提供了丰富强大的游戏元素接口，为你发挥创意提供方便�
 
 <br>
 
+## 🧩 插件对象
+
+| 范围       | 对象称呼                              | 对象实际意义  |
+| ------------ | ------------------------------------- | --------- |
+| pl.name    | 插件名称                             | `String` |
+| pl.desc    | 插件说明                      | `String` |
+| pl.ver     | 插件版本（数组）                  | `Array<Integer,Integer,Integer>` |
+| pl.versionStr  | 插件版本（字符串）             | `String` |
+| pl.filePath | 插件路径                         | `String` |
+| pl.other     | 其他信息                     | `Object` |
+
+<br>
+
 ## 🎯 坐标对象
 
 在游戏中，数量众多的 API 都需要提供坐标。  

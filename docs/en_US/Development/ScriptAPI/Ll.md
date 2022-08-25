@@ -18,14 +18,35 @@ Some interfaces related to loader operations are provided here.
   | ver.minor    | Minor Version Number (ex: the **1** in 2.**1**.0)    | `Integer` |
   | ver.revision | Revision Number: (ex: the **0** in 2.1.**0**)  | `Integer` |
   | ver.isBeta   | Whether the current version is a beta version  | `Boolean` |
+  | ver.isDev    | Whether the current version is a dev version  | `Boolean` |
+  | ver.isRelease| Whether the current version is a release version  | `Boolean` |
 
 <br>
+
 
 ### Get LiteLoader loader version string
 
 `ll.versionString()`
 
 - Return value: loader version
+- Return value type:  `String`
+
+<br>
+
+### Check is LiteLoader in debug mode
+
+`ll.isDebugMode()`
+
+- Return value: Is LiteLoader in debug mode
+- Return value type:  `Boolean`
+
+<br>
+
+### Get LiteLoader language
+
+`ll.language()`
+
+- Return value: Language (such as `ru`, `en`, `zh_CN`)
 - Return value type:  `String`
 
 <br>
@@ -46,14 +67,27 @@ Some interfaces related to loader operations are provided here.
 
 If the detection finds that the currently installed version of LLSE is lower than the value passed in, it will return `false`. 
 You can choose to judge based on the results and report an error to remind users to upgrade their LiteLoaderBDS version.
+
+<br>
+
+### Get information about Plugin
+
+`ll.getPluginInfo(name)`
+
+- Parameter:
+  - name: `String`
+  Plugin name
+- Return value: Plugin Object
+- Return value type:  `Plugin`
+
 <br>
 
 ### List all loaded plugins
 
-`ll.listPlugins()`
+`ll.listExtPlugins()`
 
-- Return value: A list containing the names of all loaded plugin
-- Return value type:  `Array<String,String,...>`
+- Return value: A list containing the plugin objects of all loaded plugin
+- Return value type:  `Array<Plugin,Plugin,...>`
 
 <br>
 

@@ -20,12 +20,26 @@ Currently, LLSE has the following game element objects:
 | `Player`         | Player Object | Identify player or access player attributes       |
 | `Entity`         | Entity Object | Identify entity or access entity attributes      |
 | `Block`          | Block Object  | Identify Block or access block attributes |
+| `Plugin`         | Plugin Object  | Identify any plugin (Native, JS, Lua) |
 | `Item`           | Item Object  | Identifies an item in an inventory |
 | `Container`      | Container Object | Identifies a container that can store items|
 | `BlockEntity`    | Block Entity Object| Identifies a block entity |
 | `Objective`      | Scoring Item Objective | Identifies the scoring items of a scoreboard system|
 
 You will come across them frequently in subsequent documentation.
+
+<br>
+
+## 🧩 Plugin Object
+
+| Parameter       | Meaning                              | Data Type  |
+| ------------ | ------------------------------------- | --------- |
+| pl.name    | Plugin name                             | `String` |
+| pl.desc    | Plugin description                      | `String` |
+| pl.ver     | Plugin version (array)                  | `Array<Integer,Integer,Integer>` |
+| pl.versionStr  | Plugin version (string)             | `String` |
+| pl.filePath | Path to plugin                         | `String` |
+| pl.other     | Other information                     | `Object` |
 
 <br>
 

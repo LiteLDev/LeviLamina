@@ -18,6 +18,8 @@
   | ver.minor    | 次版本号（如 2.**1**.0 里的 **1**）   | `Integer` |
   | ver.revision | 修订版本号（如 2.1.**0** 里的 **0**） | `Integer` |
   | ver.isBeta   | 当前版本是否为测试版                  | `Boolean` |
+  | ver.isDev    | 当前版本是否为开发版                  | `Boolean` |
+  | ver.isRelease| 当前版本是否为发布版本                | `Boolean` |
 
 <br>
 
@@ -27,6 +29,24 @@
 
 - 返回值：加载器版本
 - 返回值类型： `String`
+
+<br>
+
+### 检查 LiteLoader 是否处于调试模式
+
+`ll.isDebugMode()`
+
+- 返回值: LiteLoader 是否处于调试模式
+- 返回值类型:  `Boolean`
+
+<br>
+
+### 获取 LiteLoader 语言
+
+`ll.language()`
+
+- 返回值: 语言（如`ru`、`en`、`zh_CN`）
+- 返回值类型:  `String`
 
 <br>
 
@@ -49,12 +69,24 @@
 
 <br>
 
-### 列出所有已加载的插件
+### 获取有关插件的信息
 
-`ll.listPlugins()`
+`ll.getPluginInfo(name)`
 
-- 返回值：已加载的所有的插件名字列表
-- 返回值类型： `Array<String,String,...>`
+- 参数:
+  - name: `String`
+  插件名称
+- 返回值: 插件对象
+- 返回值类型:  `Plugin`
+
+<br>
+
+### 列出所有加载的插件
+
+`ll.listExtPlugins()`
+
+- 返回值: 包含所有已加载插件的插件对象的列表
+- 返回值类型:  `Array<Plugin,Plugin,...>`
 
 <br>
 
