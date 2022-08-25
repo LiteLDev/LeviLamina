@@ -33,11 +33,11 @@ You will come across them frequently in subsequent documentation.
 
 | Property       | Description                              | Type  |
 | ------------ | ------------------------------------- | --------- |
-| pl.name    | Plugin name                             | `String` |
-| pl.desc    | Plugin description                      | `String` |
-| pl.ver     | Plugin version (array)                  | `Array<Integer,Integer,Integer>` |
-| pl.versionStr  | Plugin version (string)             | `String` |
-| pl.filePath | Path to plugin                         | `String` |
+| plugin.name    | Plugin name                             | `String` |
+| plugin.desc    | Plugin description                      | `String` |
+| plugin.version     | Plugin version (array)                  | `Array<Integer,Integer,Integer>` |
+| plugin.versionStr  | Plugin version (string)             | `String` |
+| plugin.filePath | Path to plugin                         | `String` |
 | plugin.others     | Other information                     | `Object` |
 
 <br>

@@ -33,12 +33,12 @@ LLSE提供了丰富强大的游戏元素接口，为你发挥创意提供方便�
 
 | 范围       | 对象称呼                              | 对象实际意义  |
 | ------------ | ------------------------------------- | --------- |
-| pl.name    | 插件名称                             | `String` |
-| pl.desc    | 插件说明                      | `String` |
-| pl.ver     | 插件版本（数组）                  | `Array<Integer,Integer,Integer>` |
-| pl.versionStr  | 插件版本（字符串）             | `String` |
-| pl.filePath | 插件路径                         | `String` |
-| pl.other     | 其他信息                     | `Object` |
+| plugin.name    | 插件名称                             | `String` |
+| plugin.desc    | 插件说明                      | `String` |
+| plugin.version     | 插件版本（数组）                  | `Array<Integer,Integer,Integer>` |
+| plugin.versionStr  | 插件版本（字符串）             | `String` |
+| plugin.filePath | 插件路径                         | `String` |
+| plugin.other     | 其他信息                     | `Object` |
 
 <br>
 
