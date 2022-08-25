@@ -28,6 +28,7 @@ ClassDefine<void> LlClassBuilder =
         .function("export", &LlClass::exportFunc)
         .function("hasExported", &LlClass::hasFuncExported)
         .function("require", &LlClass::require)
+        .function("scriptEngineVersion", &LlClass::getScriptEngineVersion)
         .function("eval", &LlClass::eval)
         .function("registerPlugin", &LlClass::registerPlugin)
         .function("getPluginInfo", &LlClass::getPluginInfo)
@@ -315,6 +316,13 @@ Local<Value> LlClass::require(const Arguments& args) {
         }
     }
     CATCH("Fail in LLSERequire!")
+}
+
+Local<Value> LlClass::getScriptEngineVersion(const Arguments& args) {
+    try {
+        return String::newString(EngineScope::currentEngine()->getEngineVersion());
+    }
+    CATCH("Fail in LLSEGetScriptEngineVerison")
 }
 
 Local<Value> LlClass::eval(const Arguments& args) {
