@@ -92,7 +92,16 @@ You can choose to judge based on the results and report an error to remind users
 
 ### List all loaded plugins
 
-`ll.listExtPlugins()`
+`ll.listPlugins()`
+
+- Return value: A list containing the names of all loaded plugin
+- Return value type:  `Array<String,String,...>`
+
+<br>
+
+### List all loaded plugins with information
+
+`ll.getAllPluginInfo()`
 
 - Return value: A list containing the plugin objects of all loaded plugin
 - Return value type:  `Array<Plugin,Plugin,...>`

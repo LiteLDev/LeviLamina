@@ -90,9 +90,18 @@
 
 <br>
 
-### 列出所有加载的插件
+### 列出所有已加载的插件
 
-`ll.listExtPlugins()`
+`ll.listPlugins()`
+
+- 返回值：已加载的所有的插件名字列表
+- 返回值类型： `Array<String,String,...>`
+
+<br>
+
+### 列出所有加载的插件信息
+
+`ll.getAllPluginInfo()`
 
 - 返回值: 包含所有已加载插件的插件对象的列表
 - 返回值类型:  `Array<Plugin,Plugin,...>`

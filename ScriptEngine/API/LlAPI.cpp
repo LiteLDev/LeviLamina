@@ -24,7 +24,8 @@ ClassDefine<void> LlClassBuilder =
         .function("language", &LlClass::getLang)
         .function("isDebugMode", &LlClass::getIsDebugMode)
         .function("requireVersion", &LlClass::requireVersion)
-        .function("listExtPlugins", &LlClass::listExtPlugins)
+        .function("listPlugins", &LlClass::listPlugins)
+        .function("getAllPluginInfo", &LlClass::getAllPluginInfo)
         .function("import", &LlClass::importFunc)
         .function("export", &LlClass::exportFunc)
         .function("hasExported", &LlClass::hasFuncExported)
@@ -34,9 +35,7 @@ ClassDefine<void> LlClassBuilder =
         .function("registerPlugin", &LlClass::registerPlugin)
         .function("getPluginInfo", &LlClass::getPluginInfo)
 
-        // For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
-        .function("listPlugins", &LlClass::listPluginsName)
         .build();
 
 
@@ -213,7 +212,7 @@ Local<Value> LlClass::requireVersion(const Arguments& args) {
     CATCH("Fail in LLSERequireVersion!")
 }
 
-Local<Value> LlClass::listExtPlugins(const Arguments& args) {
+Local<Value> LlClass::getAllPluginInfo(const Arguments& args) {
     try {
         Local<Array> plugins = Array::newArray();
         auto list = PluginManager::getAllPlugins();
@@ -244,11 +243,11 @@ Local<Value> LlClass::listExtPlugins(const Arguments& args) {
         }
         return plugins;
     }
-    CATCH("Fail in LLSEListExtPlugins!")
+    CATCH("Fail in LLSEGetAllPluginInfo!")
 }
 
 // For Compatibility
-Local<Value> LlClass::listPluginsName(const Arguments& args) {
+Local<Value> LlClass::listPlugins(const Arguments& args) {
     try {
         Local<Array> plugins = Array::newArray();
         auto list = PluginManager::getAllPlugins();
