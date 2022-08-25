@@ -1,4 +1,5 @@
 #include "APIHelp.h"
+#include <LiteLoader/Main/Config.h>
 #include "LlAPI.h"
 #include <Engine/GlobalShareData.h>
 #include <Engine/EngineOwnData.h>
@@ -20,6 +21,7 @@ ClassDefine<void> LlClassBuilder =
         .function("version", &LlClass::version)
         .function("versionString", &LlClass::versionString)
         .function("versionStatus", &LlClass::getVersionStatus)
+        .function("language", &LlClass::getLang)
         .function("isDebugMode", &LlClass::getIsDebugMode)
         .function("requireVersion", &LlClass::requireVersion)
         .function("listExtPlugins", &LlClass::listExtPlugins)
@@ -37,32 +39,6 @@ ClassDefine<void> LlClassBuilder =
         .function("listPlugins", &LlClass::listPluginsName)
         .build();
 
-//////////////////// Plugin Object ////////////////////
-
-script::Local<script::Object> PluginObject(auto plugin) {
-    auto result = Object::newObject();
-
-    result.set("name", plugin->name);
-    result.set("desc", plugin->desc);
-
-    auto ver = Array::newArray();
-    ver.add(Number::newNumber(plugin->version.major));
-    ver.add(Number::newNumber(plugin->version.minor));
-    ver.add(Number::newNumber(plugin->version.revision));
-
-    result.set("version", ver);
-    result.set("versionStr", plugin->version.toString(true));
-    result.set("filePath", plugin->filePath);
-
-    auto others = Object::newObject();
-    for (auto& [k, v] : plugin->others) {
-        others.set(k, v);
-    }
-    result.set("others", others);
-    return result;
-}
-
-///////////////////////////////////////////////////////
 
 Local<Value> LlClass::registerPlugin(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
@@ -144,7 +120,26 @@ Local<Value> LlClass::getPluginInfo(const Arguments& args) {
         std::string name = args[0].toStr();
         auto plugin = LL::getPlugin(name);
         if (plugin) {
-            return PluginObject(plugin);
+            auto result = Object::newObject();
+
+            result.set("name", plugin->name);
+            result.set("desc", plugin->desc);
+
+            auto ver = Array::newArray();
+            ver.add(Number::newNumber(plugin->version.major));
+            ver.add(Number::newNumber(plugin->version.minor));
+            ver.add(Number::newNumber(plugin->version.revision));
+
+            result.set("version", ver);
+            result.set("versionStr", plugin->version.toString(true));
+            result.set("filePath", plugin->filePath);
+
+            auto others = Object::newObject();
+            for (auto& [k, v] : plugin->others) {
+                others.set(k, v);
+            }
+            result.set("others", others);
+            return result;
         }
         return Local<Value>();
     }
@@ -182,13 +177,12 @@ Local<Value> LlClass::version(const Arguments& args) {
     CATCH("Fail in LLSEGetVersion!")
 }
 
-//error LNK2001: unresolved external symbol 
-//Local<Value> LlClass::getLanguage(const Arguments& args) {
-//    try {
-//        return String::newString(std::format("{}", LL::getLanguage()));
-//    }
-//    CATCH("Fail in LLSEGetLanguage")
-//}
+Local<Value> LlClass::getLang(const Arguments& args) {
+    try {
+        return String::newString(LL::globalConfig.language);
+    }
+    CATCH("Fail in LLSEGetLanguage")
+}
 
 Local<Value> LlClass::getIsDebugMode(const Arguments& args) {
     try {
@@ -224,7 +218,29 @@ Local<Value> LlClass::listExtPlugins(const Arguments& args) {
         Local<Array> plugins = Array::newArray();
         auto list = PluginManager::getAllPlugins();
         for (auto& plugin : list) {
-            plugins.add(PluginObject(plugin.second));
+            // Create plugin object
+            auto pluginObject = Object::newObject();
+
+            pluginObject.set("name", plugin.second->name);
+            pluginObject.set("desc", plugin.second->desc);
+
+            auto ver = Array::newArray();
+            ver.add(Number::newNumber(plugin.second->version.major));
+            ver.add(Number::newNumber(plugin.second->version.minor));
+            ver.add(Number::newNumber(plugin.second->version.revision));
+
+            pluginObject.set("version", ver);
+            pluginObject.set("versionStr", plugin.second->version.toString(true));
+            pluginObject.set("filePath", plugin.second->filePath);
+
+            auto others = Object::newObject();
+            for (auto& [k, v] : plugin.second->others) {
+                others.set(k, v);
+            }
+            pluginObject.set("others", others);
+
+            // Add plugin object to list
+            plugins.add(pluginObject);
         }
         return plugins;
     }

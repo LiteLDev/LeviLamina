@@ -10,6 +10,7 @@ public:
     static Local<Value> version(const Arguments& args);
     static Local<Value> getVersionStatus(const Arguments& args);
     static Local<Value> getIsDebugMode(const Arguments& args);
+    static Local<Value> getLang(const Arguments& args);
     static Local<Value> versionString(const Arguments& args);
     static Local<Value> requireVersion(const Arguments& args);
     static Local<Value> listExtPlugins(const Arguments& args);
