@@ -19,6 +19,9 @@ ClassDefine<void> LlClassBuilder =
     defineClass("ll")
         .function("version", &LlClass::version)
         .function("versionString", &LlClass::versionString)
+        .function("versionStatus", &LlClass::getVersionStatus)
+        .function("language", &LlClass::getLanguage)
+        .function("isDebugMode", &LlClass::getIsDebugMode)
         .function("requireVersion", &LlClass::requireVersion)
         .function("listPlugins", &LlClass::listPlugins)
         .function("import", &LlClass::importFunc)
@@ -136,16 +139,49 @@ Local<Value> LlClass::getPluginInfo(const Arguments& args) {
     CATCH("Fail in getPluginInfo");
 }
 
+Local<Value> LlClass::getVersionStatus(const Arguments& args) {
+    try {
+        int versionStatusValue;
+
+        if (LITELOADER_VERSION_STATUS == LL::Version::Status::Release) {
+            versionStatusValue = 0;
+        } else if (LITELOADER_VERSION_STATUS == LL::Version::Status::Beta) {
+            versionStatusValue = 1;
+        } else if (LITELOADER_VERSION_STATUS == LL::Version::Status::Dev) {
+            versionStatusValue = 2;
+        }
+
+        return Number::newNumber(versionStatusValue);
+    }
+    CATCH("Fail in LLSEGetVersionStatus")
+}
+
 Local<Value> LlClass::version(const Arguments& args) {
     try {
         Local<Object> ver = Object::newObject();
         ver.set("major", LITELOADER_VERSION_MAJOR);
         ver.set("minor", LITELOADER_VERSION_MINOR);
         ver.set("revision", LITELOADER_VERSION_REVISION);
-        ver.set("isBeta", LITELOADER_VERSION_STATUS != LL::Version::Status::Release);
+        ver.set("isBeta", LITELOADER_VERSION_STATUS == LL::Version::Status::Beta);
+        ver.set("isRelease", LITELOADER_VERSION_STATUS == LL::Version::Status::Release);
+        ver.set("isDev", LITELOADER_VERSION_STATUS == LL::Version::Status::Dev);
         return ver;
     }
     CATCH("Fail in LLSEGetVersion!")
+}
+
+Local<Value> LlClass::getLanguage(const Arguments& args) {
+    try {
+        return String::newString(LL::getLanguage());
+    }
+    CATCH("Fail in LLSEGetLanguage")
+}
+
+Local<Value> LlClass::getIsDebugMode(const Arguments& args) {
+    try {
+        return Boolean::newBoolean(LL::isDebugMode());
+    }
+    CATCH("Fail in LLSEGetIsDebugMode")
 }
 
 Local<Value> LlClass::versionString(const Arguments& args) {
