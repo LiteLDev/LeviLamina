@@ -38,7 +38,7 @@ You will come across them frequently in subsequent documentation.
 | pl.ver     | Plugin version (array)                  | `Array<Integer,Integer,Integer>` |
 | pl.versionStr  | Plugin version (string)             | `String` |
 | pl.filePath | Path to plugin                         | `String` |
-| pl.other     | Other information                     | `Object` |
+| plugin.others     | Other information                     | `Object` |
 
 <br>
 
