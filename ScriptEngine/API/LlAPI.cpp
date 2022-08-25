@@ -20,7 +20,6 @@ ClassDefine<void> LlClassBuilder =
         .function("version", &LlClass::version)
         .function("versionString", &LlClass::versionString)
         .function("versionStatus", &LlClass::getVersionStatus)
-        .function("language", &LlClass::getLanguage)
         .function("isDebugMode", &LlClass::getIsDebugMode)
         .function("requireVersion", &LlClass::requireVersion)
         .function("listExtPlugins", &LlClass::listExtPlugins)
@@ -183,12 +182,13 @@ Local<Value> LlClass::version(const Arguments& args) {
     CATCH("Fail in LLSEGetVersion!")
 }
 
-Local<Value> LlClass::getLanguage(const Arguments& args) {
-    try {
-        return String::newString(std::format("{}", LL::getLanguage()));
-    }
-    CATCH("Fail in LLSEGetLanguage")
-}
+//error LNK2001: unresolved external symbol 
+//Local<Value> LlClass::getLanguage(const Arguments& args) {
+//    try {
+//        return String::newString(std::format("{}", LL::getLanguage()));
+//    }
+//    CATCH("Fail in LLSEGetLanguage")
+//}
 
 Local<Value> LlClass::getIsDebugMode(const Arguments& args) {
     try {

@@ -9,7 +9,6 @@ public:
     static Local<Value> registerPlugin(const Arguments& args);
     static Local<Value> version(const Arguments& args);
     static Local<Value> getVersionStatus(const Arguments& args);
-    static Local<Value> getLanguage(const Arguments& args);
     static Local<Value> getIsDebugMode(const Arguments& args);
     static Local<Value> versionString(const Arguments& args);
     static Local<Value> requireVersion(const Arguments& args);
