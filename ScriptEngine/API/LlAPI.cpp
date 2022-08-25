@@ -179,7 +179,7 @@ Local<Value> LlClass::version(const Arguments& args) {
 
 Local<Value> LlClass::getLang(const Arguments& args) {
     try {
-        return String::newString(LL::globalConfig.language);
+        return String::newString(PluginOwnData::getImpl<I18nBase>(LL::getLoaderHandle(), I18nBase::POD_KEY).defaultLocaleName);
     }
     CATCH("Fail in LLSEGetLanguage")
 }
