@@ -2,6 +2,12 @@
 
 这里提供了一些与加载器操作相关的接口。
 
+### Properties
+
+| 属性           | 类型      | 描述                                                       |
+| ------------- | -------- | ---------------------------------------------------------- |
+| `ll.language` | `String` | The language LiteLoader used.(such as `zh`, `en`, `ru_RU`) |
+
 ### 获取LiteLoader加载器版本
 
 `ll.version()`
@@ -12,7 +18,7 @@
 
   - 对于返回的某个加载器版本对象 ver，有如下这些成员：
 
-  | 成员         | 含义                                  | 类型      |
+  | 成员          | 含义                                  | 类型      |
   | ------------ | ------------------------------------- | --------- |
   | ver.major    | 主版本号（如 **2**.1.0 里的 **2**）   | `Integer` |
   | ver.minor    | 次版本号（如 2.**1**.0 里的 **1**）   | `Integer` |
@@ -50,15 +56,6 @@
 
 <br>
 
-### 获取 LiteLoader 语言
-
-`ll.language()`
-
-- 返回值: 语言（如`ru`、`en`、`zh_CN`）
-- 返回值类型:  `String`
-
-<br>
-
 ### 检查LiteLoader加载器版本
 
 `ll.requireVersion(major[,minor,revision])`
@@ -87,6 +84,17 @@
   插件名称
 - 返回值: 插件对象
 - 返回值类型:  `Plugin`
+  
+  - 对于返回的某个插件对象 plugin，有如下这些属性：  
+
+  | 属性               | 描述                  | 类型      |
+  | ----------------- | --------------------- | -------- |
+  | plugin.name       | 插件名称               | `String` |
+  | plugin.desc       | 插件描述               | `String` |
+  | plugin.version    | 插件版本（数组形式）     | `Array<Integer,Integer,Integer>` |
+  | plugin.versionStr | 插件版本               | `String` |
+  | plugin.filePath   | 插件路径               | `String` |
+  | plugin.others     | 其他信息               | `Object` |
 
 <br>
 

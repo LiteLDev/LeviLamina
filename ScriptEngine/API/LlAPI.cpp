@@ -21,8 +21,7 @@ ClassDefine<void> LlClassBuilder =
         .function("version", &LlClass::version)
         .function("versionString", &LlClass::versionString)
         .function("versionStatus", &LlClass::getVersionStatus)
-        .function("language", &LlClass::getLang)
-        .function("isDebugMode", &LlClass::getIsDebugMode)
+        .function("isDebugMode", &LlClass::isDebugMode)
         .function("requireVersion", &LlClass::requireVersion)
         .function("listPlugins", &LlClass::listPlugins)
         .function("getAllPluginInfo", &LlClass::getAllPluginInfo)
@@ -36,6 +35,9 @@ ClassDefine<void> LlClassBuilder =
         .function("getPluginInfo", &LlClass::getPluginInfo)
 
         .function("checkVersion", &LlClass::requireVersion)
+
+        .property("language", &LlClass::getLanguage)
+
         .build();
 
 
@@ -176,14 +178,14 @@ Local<Value> LlClass::version(const Arguments& args) {
     CATCH("Fail in LLSEGetVersion!")
 }
 
-Local<Value> LlClass::getLang(const Arguments& args) {
+Local<Value> LlClass::getLanguage() {
     try {
         return String::newString(PluginOwnData::getImpl<I18nBase>(LL::getLoaderHandle(), I18nBase::POD_KEY).defaultLocaleName);
     }
     CATCH("Fail in LLSEGetLanguage")
 }
 
-Local<Value> LlClass::getIsDebugMode(const Arguments& args) {
+Local<Value> LlClass::isDebugMode(const Arguments& args) {
     try {
         return Boolean::newBoolean(LL::isDebugMode());
     }

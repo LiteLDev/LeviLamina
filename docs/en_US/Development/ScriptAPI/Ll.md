@@ -2,6 +2,12 @@
 
 Some interfaces related to loader operations are provided here. 
 
+### Properties
+
+| Property      | Type     | Description                                                |
+| ------------- | -------- | ---------------------------------------------------------- |
+| `ll.language` | `String` | The language LiteLoader used.(such as `zh`, `en`, `ru_RU`) |
+
 ### Get LiteLoader loader version
 
 `ll.version()`
@@ -50,15 +56,6 @@ Some interfaces related to loader operations are provided here.
 
 <br>
 
-### Get LiteLoader language
-
-`ll.language()`
-
-- Return value: Language (such as `ru`, `en`, `zh_CN`)
-- Return value type:  `String`
-
-<br>
-
 ### Check LiteLoader loader version
 
 `ll.requireVersion(major[,minor,revision])`
@@ -87,6 +84,17 @@ You can choose to judge based on the results and report an error to remind users
   Plugin name
 - Return value: Plugin Object
 - Return value type:  `Plugin`
+  - For a returned plugin object, there are the following members:  
+
+  | Property       | Description                              | Type  |
+  | ------------ | ------------------------------------- | --------- |
+  | plugin.name    | Plugin name                             | `String` |
+  | plugin.desc    | Plugin description                      | `String` |
+  | plugin.version     | Plugin version (array)                  | `Array<Integer,Integer,Integer>` |
+  | plugin.versionStr  | Plugin version (string)             | `String` |
+  | plugin.filePath | Path to plugin                         | `String` |
+  | plugin.others     | Other information                     | `Object` |
+
 
 <br>
 
