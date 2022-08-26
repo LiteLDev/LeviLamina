@@ -35,6 +35,13 @@ This function returns an array of player objects, each of which corresponds to a
 > Note: Do not save a `Player` object **long-term**.
 > When the player exits the server, the corresponding player object will become invalid. Therefore, if there is a need to operate a player for a long time, please obtain the real-time player object through the above methods.
 
+#### Get random online player
+
+`mc.getRandomPlayer()`
+
+- Return value: Random player
+- Return value type: `Player`
+
 <br>
 
 ### Player Object - Properties
@@ -54,15 +61,23 @@ Each player object contains some fixed object properties. For a particular playe
 | pl.gameMode  | Player's game mode (0 - 3)     | `Integer`        |
 | pl.canSleep  | Whether the player can sleep   | `Boolean`        |
 | pl.canFly    | Whether the player can fly     | `Boolean`        |
+| pl.canBeSeenOnMap    | Whether the player can be seen on map     | `Boolean`        |
 | pl.maxHealth | Player's maximum health              | `Integer`        |
 | pl.health    | Player's current health              | `Integer`        |
 | pl.inAir     | Whether the player is in the air     | `Boolean`        |
 | pl.inWater   | Whether the player is in water       | `Boolean`        |
+| pl.inLava   | Whether the player is in lava       | `Boolean`        |
+| pl.inRain   | Whether the player is in rain       | `Boolean`        |
+| pl.inSnow   | Whether the player is in snow       | `Boolean`        |
+| pl.inClouds | Whether the player is in clouds       | `Boolean`    |
 | pl.sneaking  | Whether the player is sneaking       | `Boolean`        |
 | pl.speed     | Player's current speed               | `Float`          |
 | pl.direction | Player's current orientation         | `DirectionAngle` |
 | pl.uniqueId  | Player's (entity's) unique identifier    | `String`         |
 | pl.isLoading | Player is loading | `Boolean`    |
+| pl.isTrading | Player is trading | `Boolean`    |
+| pl.isRiding | Player is riding | `Boolean`    |
+| pl.isGliding | Player is gliding | `Boolean`    |
 
 These object properties are read-only and cannot be modified. in:
 
@@ -695,6 +710,50 @@ pl.getXpNeededForNextLevel();
 --For a `Player` object pl
 pl.getXpNeededForNextLevel()
 ```
+<br>
+
+#### Get Player Nametag
+
+`pl.getNameTag()`
+
+- Return value: Nametag text
+- Return value type: `Boolean`
+
+```Javascript
+[JS]
+//For a `Player` object pl
+pl.getNameTag();
+```
+```Lua
+[Lua]
+--For a `Player` object pl
+pl.getNameTag()
+```
+
+<br>
+
+#### Set Player Nametag Visible
+
+`pl.setNameTagVisible(bool)`
+
+- Parameters
+  - bool : `Boolean`  
+    Will Nametag be visible.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+```Javascript
+[JS]
+//For a `Player` object pl
+pl.setNameTagVisible(true);
+```
+```Lua
+[Lua]
+--For a `Player` object pl
+pl.setNameTagVisible(true)
+```
+
+<br>
 
 #### Send the Player to the Specified Server  
 

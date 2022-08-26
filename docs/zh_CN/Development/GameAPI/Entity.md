@@ -76,9 +76,14 @@
 | en.health    | 实体当前生命值     | `Integer`        |
 | en.inAir     | 实体当前是否悬空   | `Boolean`        |
 | en.inWater   | 实体当前是否在水中 | `Boolean`        |
+| en.inLava     | 实体是否在熔岩中   | `Boolean`        |
+| en.inRain   | 实体是否在雨中 | `Boolean`        |
+| en.inSnow   | 实体是否在雪中 | `Boolean`        |
 | en.speed     | 实体当前速度       | `Float`          |
 | en.direction | 实体当前朝向       | `DirectionAngle` |
 | en.uniqueId  | 实体唯一标识符     | `String`         |
+| en.isTrading | 实体在交易 | `Boolean`    |
+| en.isRiding | 实体正在骑行 | `Boolean`    |
 
 这些对象属性都是只读的，无法被修改
 
@@ -266,6 +271,39 @@
     要检查的tag字符串
 - 返回值：是否拥有这个Tag
 - 返回值类型：`Boolean`
+
+<br>
+
+#### 获取实体名称标签
+
+`en.getNameTag()`
+
+- 返回值: 名牌文本
+- 返回值类型: `Boolean`
+
+<br>
+
+#### 设置实体名称标签
+
+`en.setNameTag(tag)`
+
+- 参数:
+  - tag : `String`  
+    名牌上会写什么。
+- 返回值: 设置是否成功。
+- 返回值类型: `Boolean`
+
+<br>
+
+#### 设置实体名称标签可见
+
+`en.setNameTagVisible(bool)`
+
+- 参数:
+  - bool : `Boolean`  
+    名牌是否可见。
+- 返回值: 设置是否成功。
+- 返回值类型: `Boolean`
 
 <br>
 

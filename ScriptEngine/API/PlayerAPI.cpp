@@ -52,16 +52,24 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("gameMode", &PlayerClass::getGameMode)
         .instanceProperty("canSleep", &PlayerClass::getCanSleep)
         .instanceProperty("canFly", &PlayerClass::getCanFly)
+        .instanceProperty("canBeSeenOnMap", &PlayerClass::getCanBeSeenOnMap)
         .instanceProperty("maxHealth", &PlayerClass::getMaxHealth)
         .instanceProperty("health", &PlayerClass::getHealth)
         .instanceProperty("inAir", &PlayerClass::getInAir)
         .instanceProperty("inWater", &PlayerClass::getInWater)
+        .instanceProperty("inLava", &PlayerClass::getInLava)
+        .instanceProperty("inRain", &PlayerClass::getInRain)
+        .instanceProperty("inSnow", &PlayerClass::getInSnow)
+        .instanceProperty("inClouds", &PlayerClass::getIsInClouds)
         .instanceProperty("sneaking", &PlayerClass::getSneaking)
         .instanceProperty("speed", &PlayerClass::getSpeed)
         .instanceProperty("direction", &PlayerClass::getDirection)
         .instanceProperty("uniqueId", &PlayerClass::getUniqueID)
         .instanceProperty("langCode", &PlayerClass::getLangCode)
         .instanceProperty("isLoading", &PlayerClass::isLoading)
+        .instanceProperty("isTrading", &PlayerClass::getIsTrading)
+        .instanceProperty("isRiding", &PlayerClass::getIsRiding)
+        .instanceProperty("isGliding", &PlayerClass::getIsGliding)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -113,7 +121,6 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("setLevel", &PlayerClass::setLevel)
         .instanceFunction("resetLevel", &PlayerClass::resetLevel)
         .instanceFunction("getNameTag", &PlayerClass::getNameTag)
-        .instanceFunction("setNameTag", &PlayerClass::setNameTag)
         .instanceFunction("setNameTagVisible", &PlayerClass::setNameTagVisible)
         .instanceFunction("addExperience", &PlayerClass::addExperience)
         .instanceFunction("reduceExperience", &PlayerClass::reduceExperience)
@@ -432,6 +439,28 @@ Local<Value> PlayerClass::getCanFly() {
     CATCH("Fail in getCanFly!")
 }
 
+Local<Value> PlayerClass::getCanBeSeenOnMap() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->canBeSeenOnMap());
+    }
+    CATCH("Fail in getCanBeSeenOnMap!")
+}
+
+Local<Value> PlayerClass::getIsInClouds() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInClouds());
+    }
+    CATCH("Fail in getIsInClouds!")
+}
+
 Local<Value> PlayerClass::getSneaking() {
     try {
         Player* player = get();
@@ -508,6 +537,72 @@ Local<Value> PlayerClass::getInWater() {
         return Boolean::newBoolean(player->isInWater());
     }
     CATCH("Fail in getInWater!")
+}
+
+Local<Value> PlayerClass::getInLava() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInLava());
+    }
+    CATCH("Fail in getInLava!")
+}
+
+Local<Value> PlayerClass::getInRain() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInRain());
+    }
+    CATCH("Fail in getInRain!")
+}
+
+Local<Value> PlayerClass::getInSnow() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isInSnow());
+    }
+    CATCH("Fail in getInSnow!")
+}
+
+Local<Value> PlayerClass::getIsTrading() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isTrading());
+    }
+    CATCH("Fail in getIsTrading!")
+}
+
+Local<Value> PlayerClass::getIsRiding() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isRiding());
+    }
+    CATCH("Fail in getIsRiding!")
+}
+
+Local<Value> PlayerClass::getIsGliding() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->isGliding());
+    }
+    CATCH("Fail in getIsGliding!")
 }
 
 Local<Value> PlayerClass::asPointer(const Arguments& args) {
@@ -981,21 +1076,6 @@ Local<Value> PlayerClass::getNameTag(const Arguments& args) {
         return String::newString(nameTagValue);
     }
     CATCH("Fail in getNameTag!");
-}
-
-Local<Value> PlayerClass::setNameTag(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-    CHECK_ARG_TYPE(args[0], ValueKind::kString);
-
-    try {
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        player->setNameTag(args[0].asString().toString());
-        return Boolean::newBoolean(true);
-    }
-    CATCH("Fail in setNameTag!");
 }
 
 Local<Value> PlayerClass::setNameTagVisible(const Arguments& args) {

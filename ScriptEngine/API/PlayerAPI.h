@@ -33,10 +33,18 @@ public:
     Local<Value> getGameMode();
     Local<Value> getCanSleep();
     Local<Value> getCanFly();
+    Local<Value> getCanBeSeenOnMap();
+    Local<Value> getIsInClouds();
+    Local<Value> getIsTrading();
+    Local<Value> getIsRiding();
+    Local<Value> getIsGliding();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
     Local<Value> getInAir();
     Local<Value> getInWater();
+    Local<Value> getInLava();
+    Local<Value> getInRain();
+    Local<Value> getInSnow();
     Local<Value> getSneaking();
     Local<Value> getSpeed();
     Local<Value> getDirection();
@@ -94,7 +102,6 @@ public:
     Local<Value> setLevel(const Arguments& arg);
     Local<Value> resetLevel(const Arguments& arg);
     Local<Value> getNameTag(const Arguments& arg);
-    Local<Value> setNameTag(const Arguments& arg);
     Local<Value> setNameTagVisible(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
     Local<Value> reduceExperience(const Arguments& args);

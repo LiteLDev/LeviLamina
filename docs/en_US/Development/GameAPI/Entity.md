@@ -75,9 +75,14 @@ Every entity object contains some fixed object properties. for a specific entity
 | en.health    | Entity's current health     | `Integer`        |
 | en.inAir     | Whether the entity is in the air   | `Boolean`        |
 | en.inWater   | Whether the entity is in the water | `Boolean`        |
+| en.inLava     | Whether the entity is in the lava   | `Boolean`        |
+| en.inRain   | Whether the entity is in the rain | `Boolean`        |
+| en.inSnow   | Whether the entity is in the snow | `Boolean`        |
 | en.speed     | Entity's current speed       | `Float`          |
 | en.direction | Entity's orientation       | `DirectionAngle` |
 | en.uniqueId  | Entity's unique identifier     | `String`         |
+| en.isTrading | Entity is trading | `Boolean`    |
+| en.isRiding | Entity is riding | `Boolean`    |
 
 These object properties are read-only and cannot be modified.
 
@@ -265,6 +270,39 @@ After modifying the creature's items, in order to make the client take effect, i
     Tag string to check 
 - Return value: Whether the entity has the tag.
 - Return value type:  `Boolean`
+
+<br>
+
+#### Get Entity Nametag
+
+`en.getNameTag()`
+
+- Return value: Nametag text
+- Return value type: `Boolean`
+
+<br>
+
+#### Set Entity Nametag
+
+`en.setNameTag(tag)`
+
+- Parameters
+  - tag : `String`  
+    What will be on the nametag.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
+
+<br>
+
+#### Set Entity Nametag Visible
+
+`en.setNameTagVisible(bool)`
+
+- Parameters
+  - bool : `Boolean`  
+    Will Nametag be visible.
+- Return value: Whether the setting was successful.
+- Return value type: `Boolean`
 
 <br>
 

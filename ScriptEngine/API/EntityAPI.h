@@ -32,9 +32,15 @@ public:
     Local<Value> getHealth();
     Local<Value> getInAir();
     Local<Value> getInWater();
+    Local<Value> getInLava();
+    Local<Value> getInRain();
+    Local<Value> getInSnow();
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
+    Local<Value> getIsInClouds();
+    Local<Value> getIsTrading();
+    Local<Value> getIsRiding();
 
     Local<Value> teleport(const Arguments& args);
     Local<Value> kill(const Arguments& args);

@@ -35,6 +35,13 @@
 > 注意：不要**长期保存**一个玩家对象  
 > 当玩家退出服务器时，对应的玩家对象将变得无效。因此，如果有长期操作某个玩家的需要，请通过上述途径获取实时的玩家对象
 
+#### 获取随机在线播放器
+
+`mc.getRandomPlayer()`
+
+- 返回值: 随机播放器
+- 返回值类型: `Player`
+
 <br>
 
 ### 玩家对象 - 属性
@@ -54,16 +61,24 @@
 | pl.gameMode  | 玩家的游戏模式（0 - 3）     | `Integer`        |
 | pl.canFly    | 玩家是否可以飞行        | `Boolean`        |
 | pl.canSleep  | 玩家是否可以睡觉              | `Boolean`        |
+| pl.canBeSeenOnMap    | 玩家是否可以在地图上看到     | `Boolean`        |
 | pl.maxHealth | 玩家最大生命值              | `Integer`        |
 | pl.health    | 玩家当前生命值              | `Integer`        |
 | pl.inAir     | 玩家当前是否悬空            | `Boolean`        |
 | pl.inWater   | 玩家当前是否在水中          | `Boolean`        |
+| pl.inLava   | 玩家是否在熔岩中       | `Boolean`        |
+| pl.inRain   | 玩家是否下雨       | `Boolean`        |
+| pl.inSnow   | 玩家是否在雪中       | `Boolean`        |
+| pl.inClouds | 玩家是否在云端       | `Boolean`    |
 | pl.sneaking  | 玩家当前是否正在潜行        | `Boolean`        |
 | pl.speed     | 玩家当前速度                | `Float`          |
 | pl.direction | 玩家当前朝向                | `DirectionAngle` |
 | pl.uniqueId  | 玩家（实体的）唯一标识符    | `String`         |
 | pl.langCode  | 玩家设置的语言的标识符(形如zh_CN) | `String`    |
 | pl.isLoading  | 玩家是否正在加载                | `Boolean`    |
+| pl.isTrading | 玩家正在交易 | `Boolean`    |
+| pl.isRiding | 玩家正在骑行 | `Boolean`    |
+| pl.isGliding | 玩家在滑行 | `Boolean`    |
 
 这些对象属性都是只读的，无法被修改。其中：
 
@@ -988,6 +1003,23 @@
     -- 对于一个玩家对象pl
     ndxp = pl:getXpNeededForNextLevel()
     ```
+
+#### 获取玩家名牌
+
+`pl.getNameTag()`
+
+- 返回值: 名牌文字
+- 返回值类型: `Boolean`
+
+#### 设置玩家姓名标签可见
+
+`pl.setNameTagVisible(bool)`
+
+- 参数
+  - bool : `Boolean`  
+    名牌是否可见。
+- 返回值: 是否成功传送
+- 返回值类型: `Boolean`
 
 #### 传送玩家至指定服务器  
 
