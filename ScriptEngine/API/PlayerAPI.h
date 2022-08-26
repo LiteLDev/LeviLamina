@@ -29,7 +29,6 @@ public:
     Local<Value> getRealName();
     Local<Value> getNameTag();
     Local<Value> getXuid();
-    Local<Value> getNameTag();
     Local<Value> getUuid();
     Local<Value> getPermLevel();
     Local<Value> getGameMode();
