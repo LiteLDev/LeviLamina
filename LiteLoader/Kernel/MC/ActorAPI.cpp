@@ -24,6 +24,8 @@
 #include <MC/TeleportRotationData.hpp>
 #include <MC/ClipDefaults.hpp>
 #include <MC/ItemStack.hpp>
+#include <MC/ActorDefinitionIdentifier.hpp>
+#include <MC/ActorDamageSource.hpp>
 
 class UserEntityIdentifierComponent;
 
@@ -64,20 +66,18 @@ bool Actor::isItemActor() const {
 bool Actor::isOnGround() const {
     return (dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
-#include <MC/ActorDefinitionIdentifier.hpp>
+
 std::string Actor::getTypeName() const {
     return getActorIdentifier().getCanonicalName();
 }
-
-#include <MC/ActorDamageSource.hpp>
-bool Actor::hurtEntity(float damage) {
-    char source[16];
-    (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::Override);
-
-    auto res = ((Mob*)this)->_hurt((*(ActorDamageSource*)source), damage, true, false);
-    (*(ActorDamageSource*)source).~ActorDamageSource();
+ 
+bool Actor::hurtEntity(float damage, ActorDamageCause damageCause) {
+    auto source =  new ActorDamageSource(damageCause);	
+    auto res = ((Mob*)this)->_hurt(*source, damage, true, false);
+    source->~ActorDamageSource();
     return res;
 }
+
 
 Vec2* Actor::getDirection() const {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
