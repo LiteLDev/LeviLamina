@@ -55,6 +55,7 @@ Each player object contains some fixed object properties. For a particular playe
 | pl.blockPos  | The coordinates of the block that the player is standing on.          | `IntPos`         |
 | pl.lastDeathPos  | The coordinates of the block that the player last died.          | `IntPos`         |
 | pl.realName  | Player's Real Name              | `String`         |
+| pl.nameTag   | Player's Name Tag               | `String`         |
 | pl.xuid      | Player Xuid String              | `String`         |
 | pl.uuid      | Player Uuid string              | `String`         |
 | pl.permLevel | Player's permission level (0 - 4) | `Integer`        |

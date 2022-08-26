@@ -67,6 +67,7 @@ Every entity object contains some fixed object properties. for a specific entity
 | Attributes   | Meaning            | Data Type        |
 | ------------ | ------------------ | ---------------- |
 | en.name      | Entity name           | `String`         |
+| en.nameTag      | Entity Name Tag           | `String`         |
 | en.type      | Entity type name     | `String`         |
 | en.id        | Entity's in-game ID     | `Integer`        |
 | en.pos       | Entity's coordinates       | `FloatPos`       |

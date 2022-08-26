@@ -55,6 +55,7 @@
 | pl.blockPos  | 玩家所在的方块坐标          | `IntPos`         |
 | pl.lastDeathPos  | 玩家上次死亡的坐标 | `IntPos`    |
 | pl.realName  | 玩家的真实名字              | `String`         |
+| pl.nameTag   | 玩家姓名标签        | `String` |
 | pl.xuid      | 玩家Xuid字符串              | `String`         |
 | pl.uuid      | 玩家Uuid字符串              | `String`         |
 | pl.permLevel | 玩家的操作权限等级（0 - 4） | `Integer`        |

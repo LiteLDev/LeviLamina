@@ -68,6 +68,7 @@
 | 属性         | 含义               | 类型             |
 | ------------ | ------------------ | ---------------- |
 | en.name      | 实体名称           | `String`         |
+| en.nameTag   | 实体名称标签        | `String` |
 | en.type      | 实体标准类型名     | `String`         |
 | en.id        | 实体的游戏内id     | `Integer`        |
 | en.pos       | 实体所在坐标       | `FloatPos`       |
@@ -272,15 +273,6 @@
     要检查的tag字符串
 - 返回值：是否拥有这个Tag
 - 返回值类型：`Boolean`
-
-<br>
-
-#### 获取实体名称标签
-
-`en.getNameTag()`
-
-- 返回值: 名牌文本
-- 返回值类型: `Boolean`
 
 <br>
 
