@@ -9,7 +9,22 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum AttributeModifierOperation : int {
+    OPERATION_ADDITION = 0x0,
+    OPERATION_MULTIPLY_BASE = 0x1,
+    OPERATION_MULTIPLY_TOTAL = 0x2,
+    OPERATION_CAP = 0x3,
+    TOTAL_OPERATIONS = 0x4,
+    OPERATION_INVALID = 0x4,
+};
 
+enum AttributeOperands : int {
+    OPERAND_MIN = 0x0,
+    OPERAND_MAX = 0x1,
+    OPERAND_CURRENT = 0x2,
+    TOTAL_OPERANDS = 0x3,
+    OPERAND_INVALID = 0x3,
+};
 #undef BEFORE_EXTRA
 
 /**
@@ -19,7 +34,14 @@
 class AttributeModifier {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    float mAmount;
+    AttributeModifierOperation mOperation;
+    AttributeOperands mOperand;
+    string mName;
+    mce::UUID mId;
+    bool mSerialize;
 
 #undef AFTER_EXTRA
 public:
