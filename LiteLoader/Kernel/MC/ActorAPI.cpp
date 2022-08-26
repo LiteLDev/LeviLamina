@@ -72,9 +72,7 @@ std::string Actor::getTypeName() const {
 }
  
 bool Actor::hurtEntity(float damage, ActorDamageCause damageCause) {
-    auto source =  new ActorDamageSource(damageCause);	
-    auto res = ((Mob*)this)->_hurt(*source, damage, true, false);
-    source->~ActorDamageSource();
+    auto res = ((Mob*)this)->_hurt(ActorDamageSource(damageCause), damage, true, false);
     return res;
 }
 
