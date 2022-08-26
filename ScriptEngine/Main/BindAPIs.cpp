@@ -66,6 +66,8 @@ void BindAPIs(ScriptEngine* engine)
 
     engine->registerNativeClass(PermissionClassBuilder);
 
+    engine->registerNativeClass(I18nClassBuilder);
+
     //////////////// 实例类 ////////////////
 
     engine->registerNativeClass<IntPos>(IntPosBuilder);
@@ -108,7 +110,6 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
     engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
     engine->registerNativeClass<RoleClass>(RoleClassBuilder);
-    engine->registerNativeClass<I18nClass>(I18nClassBuilder);
 
     //////////////// NativeFFI ////////////////
     engine->registerNativeClass(NativeTypeEnumBuilder);

@@ -32,12 +32,12 @@ struct SimpleCallbackData
 class Player;
 
 struct EngineOwnData {
-    //基础信息
+    // 基础信息
     std::string pluginName = "";
     std::string pluginFilePath = "";
     std::string engineType = LLSE_BACKEND_TYPE;
 
-    //表单回调
+    // 表单回调
     std::map<unsigned, FormCallbackData> formCallbacks;
 
     // RemoteCall Exported Functions: unordered_map<nameSpace, funcName>
@@ -62,16 +62,19 @@ struct EngineOwnData {
         return simpleCallbacks.erase(index);
     }
     */
+    
+    // I18nAPI
+    I18nBase* i18n = nullptr;
 
     // LoggerAPI
     bool toConsole = true;
     ::Logger logger = ::Logger("");
     int maxLogLevel = 4;
 
-    //玩家绑定数据
+    // 玩家绑定数据
     std::unordered_map<std::string, script::Global<Value>> playerDataDB;
 
-    //Dynamic Call vm for NativeFFI
+    // Dynamic Call vm for NativeFFI
     DCCallVM* dynamicCallVM;
 
     // Unload Callbacks, use for close database...
@@ -85,7 +88,7 @@ struct EngineOwnData {
         return unloadCallbacks.erase(index);
     }
 
-    //init
+    // Init
     EngineOwnData() {
         dynamicCallVM = dcNewCallVM(4096);
         dcMode(dynamicCallVM, DC_CALL_C_DEFAULT);

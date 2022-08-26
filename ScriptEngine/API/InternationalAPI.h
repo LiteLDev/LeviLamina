@@ -3,7 +3,9 @@
 
 class I18nClass {
 public:
-    static Local<Value> _tr(const Arguments& args);
-    static Local<Value> _load(const Arguments& args);
+    static Local<Value> tr(const Arguments& args);
+    static Local<Value> trl(const Arguments& args);
+    static Local<Value> get(const Arguments& args);
+    static Local<Value> load(const Arguments& args);
 };
-extern ClassDefine<I18nClass> I18nClassBuilder;
+extern ClassDefine<void> I18nClassBuilder;
