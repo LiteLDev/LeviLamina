@@ -84,7 +84,7 @@
 | en.direction | 实体当前朝向       | `DirectionAngle` |
 | en.uniqueId  | 实体唯一标识符     | `String`         |
 | en.isTrading | 实体是否在交易 | `Boolean`    |
-| en.isRiding | 实体正在骑行 | `Boolean`    |
+| en.isRiding | 实体是否在骑行 | `Boolean`    |
 
 这些对象属性都是只读的，无法被修改
 
