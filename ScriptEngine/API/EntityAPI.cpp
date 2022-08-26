@@ -25,24 +25,25 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("asPointer", &EntityClass::asPointer)
 
         .instanceProperty("name", &EntityClass::getName)
+        .instanceProperty("nameTag", &EntityClass::getNameTag)
         .instanceProperty("type", &EntityClass::getType)
         .instanceProperty("id", &EntityClass::getId)
         .instanceProperty("pos", &EntityClass::getPos)
         .instanceProperty("blockPos", &EntityClass::getBlockPos)
         .instanceProperty("maxHealth", &EntityClass::getMaxHealth)
         .instanceProperty("health", &EntityClass::getHealth)
-        .instanceProperty("canFly", &EntityClass::getCanFly)
+        .instanceProperty("canFly", &EntityClass::canFly)
         .instanceProperty("inAir", &EntityClass::getInAir)
         .instanceProperty("inWater", &EntityClass::getInWater)
         .instanceProperty("inLava", &EntityClass::getInLava)
         .instanceProperty("inRain", &EntityClass::getInRain)
         .instanceProperty("inSnow", &EntityClass::getInSnow)
-        .instanceProperty("inClouds", &EntityClass::getIsInClouds)
+        .instanceProperty("inClouds", &EntityClass::getInClouds)
         .instanceProperty("speed", &EntityClass::getSpeed)
         .instanceProperty("direction", &EntityClass::getDirection)
         .instanceProperty("uniqueId", &EntityClass::getUniqueID)
-        .instanceProperty("isTrading", &EntityClass::getIsTrading)
-        .instanceProperty("isRiding", &EntityClass::getIsRiding)
+        .instanceProperty("isTrading", &EntityClass::isTrading)
+        .instanceProperty("isRiding", &EntityClass::isRiding)
 
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
@@ -59,7 +60,6 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("refreshItems", &EntityClass::refreshItems)
         .instanceFunction("setNbt", &EntityClass::setNbt)
         .instanceFunction("getNbt", &EntityClass::getNbt)
-        .instanceFunction("getNameTag", &EntityClass::getNameTag)
         .instanceFunction("setNameTag", &EntityClass::setNameTag)
         .instanceFunction("setNameTagVisible", &EntityClass::setNameTagVisible)
         .instanceFunction("addTag", &EntityClass::addTag)
@@ -136,7 +136,7 @@ Local<Value> EntityClass::getUniqueID() {
     CATCH("Fail in getUniqueID!")
 }
 
-Local<Value> EntityClass::getIsInClouds() {
+Local<Value> EntityClass::getInClouds() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -144,10 +144,10 @@ Local<Value> EntityClass::getIsInClouds() {
 
         return Boolean::newBoolean(entity->isInClouds());
     }
-    CATCH("Fail in getIsInClouds!")
+    CATCH("Fail in getInClouds!")
 }
 
-Local<Value> EntityClass::getIsTrading() {
+Local<Value> EntityClass::isTrading() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -158,7 +158,7 @@ Local<Value> EntityClass::getIsTrading() {
     CATCH("Fail in getIsTrading!")
 }
 
-Local<Value> EntityClass::getIsRiding() {
+Local<Value> EntityClass::isRiding() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -179,6 +179,19 @@ Local<Value> EntityClass::getName() {
         return String::newString(CommandUtils::getActorName(*entity));
     }
     CATCH("Fail in getEntityName!")
+}
+
+Local<Value> EntityClass::getNameTag() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        std::string NameTagValue = entity->getNameTag();
+
+        return String::newString(NameTagValue);
+    }
+    CATCH("Fail in getNameTag!");
 }
 
 Local<Value> EntityClass::getType() {
@@ -269,7 +282,7 @@ Local<Value> EntityClass::getInWater() {
     CATCH("Fail in getInWater!")
 }
 
-Local<Value> EntityClass::getCanFly() {
+Local<Value> EntityClass::canFly() {
     try {
         Actor* entity = get();
         if (!entity)
@@ -482,19 +495,6 @@ Local<Value> EntityClass::getArmor(const Arguments& args) {
         return ContainerClass::newContainer(&entity->getArmorContainer());
     }
     CATCH("Fail in getArmor!");
-}
-
-Local<Value> EntityClass::getNameTag(const Arguments& args) {
-    try {
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        std::string NameTagValue = entity->getNameTag();
-
-        return String::newString(NameTagValue);
-    }
-    CATCH("Fail in getNameTag!");
 }
 
 Local<Value> EntityClass::setNameTag(const Arguments& args) {

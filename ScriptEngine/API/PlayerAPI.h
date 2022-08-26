@@ -27,17 +27,15 @@ public:
     Local<Value> getBlockPos();
     Local<Value> getLastDeathPos();
     Local<Value> getRealName();
+    Local<Value> getNameTag();
     Local<Value> getXuid();
+    Local<Value> getNameTag();
     Local<Value> getUuid();
     Local<Value> getPermLevel();
     Local<Value> getGameMode();
-    Local<Value> getCanSleep();
-    Local<Value> getCanFly();
-    Local<Value> getCanBeSeenOnMap();
-    Local<Value> getIsInClouds();
-    Local<Value> getIsTrading();
-    Local<Value> getIsRiding();
-    Local<Value> getIsGliding();
+    Local<Value> canSleep();
+    Local<Value> canFly();
+    Local<Value> canBeSeenOnMap();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
     Local<Value> getInAir();
@@ -45,12 +43,16 @@ public:
     Local<Value> getInLava();
     Local<Value> getInRain();
     Local<Value> getInSnow();
+    Local<Value> getInClouds();
     Local<Value> getSneaking();
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
     Local<Value> isLoading();
+    Local<Value> isTrading();
+    Local<Value> isRiding();
+    Local<Value> isGliding();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
@@ -101,7 +103,6 @@ public:
     Local<Value> getLevel(const Arguments& arg);
     Local<Value> setLevel(const Arguments& arg);
     Local<Value> resetLevel(const Arguments& arg);
-    Local<Value> getNameTag(const Arguments& arg);
     Local<Value> setNameTagVisible(const Arguments& arg);
     Local<Value> addExperience(const Arguments& args);
     Local<Value> reduceExperience(const Arguments& args);

@@ -30,18 +30,19 @@ public:
     Local<Value> getBlockPos();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
-    Local<Value> getCanFly();
+    Local<Value> canFly();
+    Local<Value> getNameTag();
     Local<Value> getInAir();
     Local<Value> getInWater();
     Local<Value> getInLava();
     Local<Value> getInRain();
     Local<Value> getInSnow();
+    Local<Value> getInClouds();
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
-    Local<Value> getIsInClouds();
-    Local<Value> getIsTrading();
-    Local<Value> getIsRiding();
+    Local<Value> isTrading();
+    Local<Value> isRiding();
 
     Local<Value> teleport(const Arguments& args);
     Local<Value> kill(const Arguments& args);
@@ -60,7 +61,6 @@ public:
 
     Local<Value> getNbt(const Arguments& args);
     Local<Value> setNbt(const Arguments& args);
-    Local<Value> getNameTag(const Arguments& args);
     Local<Value> setNameTag(const Arguments& args);
     Local<Value> setNameTagVisible(const Arguments& args);
     Local<Value> addTag(const Arguments& args);
