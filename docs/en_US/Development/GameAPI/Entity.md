@@ -73,6 +73,7 @@ Every entity object contains some fixed object properties. for a specific entity
 | en.blockPos  | The coordinates of the block the entity is standing on | `IntPos`         |
 | en.maxHealth | Entity's maximum health     | `Integer`        |
 | en.health    | Entity's current health     | `Integer`        |
+| en.canFly    | Whether the entity can fly        | `Boolean`        |
 | en.inAir     | Whether the entity is in the air   | `Boolean`        |
 | en.inWater   | Whether the entity is in the water | `Boolean`        |
 | en.inLava     | Whether the entity is in the lava   | `Boolean`        |

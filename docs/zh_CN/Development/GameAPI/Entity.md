@@ -74,6 +74,7 @@
 | en.blockPos  | 实体所在的方块坐标 | `IntPos`         |
 | en.maxHealth | 实体最大生命值     | `Integer`        |
 | en.health    | 实体当前生命值     | `Integer`        |
+| en.canFly    | 实体是否可以飞行        | `Boolean`        |
 | en.inAir     | 实体当前是否悬空   | `Boolean`        |
 | en.inWater   | 实体当前是否在水中 | `Boolean`        |
 | en.inLava     | 实体是否在熔岩中   | `Boolean`        |
