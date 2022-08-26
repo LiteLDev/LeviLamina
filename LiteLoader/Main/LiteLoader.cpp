@@ -167,17 +167,15 @@ void CheckProtocolVersion() {
     }
 }
 
-BOOL WINAPI ConsoleExitHandler(DWORD CEvent)
-{
-    switch(CEvent)
-    {
+BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
+    switch (CEvent) {
         case CTRL_C_EVENT:
         case CTRL_CLOSE_EVENT:
-        case CTRL_SHUTDOWN_EVENT:
-        {
-            auto mc = Global<Minecraft>;
-            if (mc) {
-                mc->requestServerShutdown();
+        case CTRL_SHUTDOWN_EVENT: {
+            if (Global<Minecraft>) {
+                Global<Minecraft>->requestServerShutdown();
+            } else {
+                std::terminate();
             }
             return TRUE;
         }
@@ -188,11 +186,13 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent)
 void UnixSignalHandler(int signum) {
     switch (signum) {
         case SIGINT:
-        case SIGTERM:
-            auto mc = Global<Minecraft>;
-            if (mc) {
-                mc->requestServerShutdown();
+        case SIGTERM: {
+            if (Global<Minecraft>) {
+                Global<Minecraft>->requestServerShutdown();
+            } else {
+                std::terminate();
             }
+        }
     }
 }
 
@@ -215,16 +215,16 @@ void LLMain() {
     // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
-	
+
     // I18n
     auto i18n = Translation::load("plugins/LiteLoader/LangPack/");
-		
+
     // Load Config
     LL::LoadLLConfig();
 
     // Update default language
     if (i18n && LL::globalConfig.language != "system") {
-		i18n->defaultLocaleName = LL::globalConfig.language;
+        i18n->defaultLocaleName = LL::globalConfig.language;
     }
 
     // Check Protocol Version
@@ -255,9 +255,9 @@ void LLMain() {
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
-    SetConsoleCtrlHandler(ConsoleExitHandler,TRUE);
-    signal(SIGTERM,UnixSignalHandler);
-    signal(SIGINT,UnixSignalHandler);
+    SetConsoleCtrlHandler(ConsoleExitHandler, TRUE);
+    signal(SIGTERM, UnixSignalHandler);
+    signal(SIGINT, UnixSignalHandler);
 
     // Welcome
     Welcome();
