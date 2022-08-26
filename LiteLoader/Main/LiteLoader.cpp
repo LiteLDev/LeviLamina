@@ -204,7 +204,7 @@ void registerBStats();
 
 void LLMain() {
     // Set global SEH-Exception handler
-    _set_se_translator(seh_exception::TranslateSEHtoCE);
+    auto oldSeTranslator = _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
@@ -221,6 +221,10 @@ void LLMain() {
 
     // Load Config
     LL::LoadLLConfig();
+
+    // If SEH Protection is not enabled (Debug mode), restore old SE translator
+    if (!LL::isDebugMode())
+        _set_se_translator(oldSeTranslator);
 
     // Update default language
     if (i18n && LL::globalConfig.language != "system") {

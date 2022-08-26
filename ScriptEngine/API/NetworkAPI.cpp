@@ -9,6 +9,7 @@
 #include <string>
 #include <vector>
 #include <ScheduleAPI.h>
+#include <LiteLoader/Main/Config.h>
 using namespace std;
 
 using namespace cyanray;
@@ -277,7 +278,8 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args) {
 #ifdef DEBUG
                 SetThreadDescription(GetCurrentThread(), L"LLSE Connect WebSocket");
 #endif // DEBUG
-                _set_se_translator(seh_exception::TranslateSEHtoCE);
+                if (!LL::isDebugMode())
+                    _set_se_translator(seh_exception::TranslateSEHtoCE);
                 try {
                     bool result = false;
                     try {

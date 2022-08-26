@@ -278,7 +278,6 @@ DECLARE_EVENT_DATA(MobSpawnEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 
 
-#ifdef ENABLE_SEH_PROTECTION
 #define IF_LISTENED(EVENT)      \
     if (EVENT::hasListener()) { \
         try
@@ -291,11 +290,6 @@ DECLARE_EVENT_DATA(FormResponsePacketEvent);
         PrintCurrentStackTraceback();                 \
     }                                                 \
     }
-#else
-#define IF_LISTENED(EVENT) \
-    if (EVENT::hasListener()) {
-#define IF_LISTENED_END(EVENT) }
-#endif
 
 
 /////////////////////////////// Events ///////////////////////////////
@@ -1961,7 +1955,9 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 ////////////// ServerStarted //////////////
 TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
                        class ServerInstance& ins) {
-    _set_se_translator(seh_exception::TranslateSEHtoCE);
+    if(!LL::isDebugMode())
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+
     LL::globalConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();

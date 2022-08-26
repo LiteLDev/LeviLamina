@@ -11,11 +11,6 @@ constexpr const char* NoCrashLogger[] = {"AntiCheats"};
 #define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
 
 
-/////////////////////// SEH Protection ///////////////////////
-// Remove this to disable SEH all around LiteLoader
-#define ENABLE_SEH_PROTECTION
-
-
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 

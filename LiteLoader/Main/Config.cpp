@@ -199,7 +199,9 @@ inline bool SaveConfig(nlohmann::json& config) {
     }
 }
 
-void ChooseLanguage() { //deprecated
+/* deprecated
+
+void ChooseLanguage() { 
     std::unordered_map<std::string, std::string> languageList = {{"en", "English"}, {"zh_CN", "简体中文"}, {"zh_TW", "繁体中文"}, {"ja", "日本語"}, {"ru", "Русский"}, {"id", "Indonesian"}, {"th", "ไทย"}, {"it", "Italiano"}, {"vi", "tiếng việt"}};
     logger.info("Please select your language first");
     std::unordered_map<unsigned short, std::string> languages;
@@ -220,6 +222,7 @@ void ChooseLanguage() { //deprecated
         LL::globalConfig.language = languages[selected];
     }
 }
+*/
 
 bool LL::LoadLLConfig() {
     try {
