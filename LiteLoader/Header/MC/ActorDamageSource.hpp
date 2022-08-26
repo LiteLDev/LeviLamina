@@ -21,6 +21,8 @@ class ActorDamageSource {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[16];
+
 public:
     LIAPI Actor* getEntity();
 
