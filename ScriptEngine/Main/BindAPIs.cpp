@@ -28,6 +28,7 @@
 #include <API/NativeAPI.h>
 #include <API/NativeStdString.h>
 #include <API/PermissionAPI.h>
+#include <API/InternationalAPI.h>
 
 void BindAPIs(ScriptEngine* engine)
 {
@@ -107,6 +108,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
     engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
     engine->registerNativeClass<RoleClass>(RoleClassBuilder);
+    engine->registerNativeClass<I18nClass>(I18nClassBuilder);
 
     //////////////// NativeFFI ////////////////
     engine->registerNativeClass(NativeTypeEnumBuilder);

@@ -28,6 +28,7 @@
     <ClCompile Include="API\EventAPI.cpp" />
     <ClCompile Include="API\FileSystemAPI.cpp" />
     <ClCompile Include="API\GlobalNativePointer.cpp" />
+    <ClCompile Include="API\InternationalAPI.cpp" />
     <ClCompile Include="API\McAPI.cpp" />
     <ClCompile Include="API\NativeAPI.cpp" />
     <ClCompile Include="API\NativePatch.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="API\SystemAPI.h" />
     <ClInclude Include="API\CommandOriginAPI.h" />
     <ClInclude Include="API\CommandOutputAPI.h" />
+    <ClInclude Include="API\InternationalAPI.h" />
     <ClInclude Include="Main\Configs.h" />
     <ClInclude Include="API\CommandAPI.h" />
     <ClInclude Include="Engine\EngineManager.h" />
