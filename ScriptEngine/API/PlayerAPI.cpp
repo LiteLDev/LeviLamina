@@ -245,6 +245,13 @@ Local<Value> McClass::getOnlinePlayers(const Arguments& args) {
     CATCH("Fail in GetOnlinePlayers!")
 }
 
+Local<Value> McClass::getRandomPlayer(const Arguments& args) {
+    try {
+        return PlayerClass::newPlayer(Global<Level>->getRandomPlayer());
+    }
+    CATCH("Fail in GetRandomPlayer")
+}
+
 Local<Value> McClass::broadcast(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)

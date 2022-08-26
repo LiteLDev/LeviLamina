@@ -12,6 +12,7 @@ ClassDefine<void> McClassBuilder =
         .function("listen", &McClass::listen)
         .function("getPlayer", &McClass::getPlayer)
         .function("getOnlinePlayers", &McClass::getOnlinePlayers)
+        .function("getRandomPlayer", &McClass::getRandomPlayer)
         .function("getAllEntities", McClass::getAllEntities)
         .function("newItem", &McClass::newItem)
         .function("spawnMob", &McClass::spawnMob)
