@@ -423,7 +423,12 @@ Local<Value> PlayerClass::getCanSleep() {
         if (!player)
             return Local<Value>();
 
-        return Boolean::newBoolean(player->canSleep());
+        if (player->getDimensionId() != 0) {
+            return Boolean::newBoolean(false);
+        }
+        else {
+            return Boolean::newBoolean(player->canSleep());
+        }
     }
     CATCH("Fail in getCanSleep!")
 }

@@ -31,6 +31,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("blockPos", &EntityClass::getBlockPos)
         .instanceProperty("maxHealth", &EntityClass::getMaxHealth)
         .instanceProperty("health", &EntityClass::getHealth)
+        .instanceProperty("canFly", &EntityClass::getCanFly)
         .instanceProperty("inAir", &EntityClass::getInAir)
         .instanceProperty("inWater", &EntityClass::getInWater)
         .instanceProperty("inLava", &EntityClass::getInLava)
@@ -266,6 +267,17 @@ Local<Value> EntityClass::getInWater() {
         return Boolean::newBoolean(entity->isInWater());
     }
     CATCH("Fail in getInWater!")
+}
+
+Local<Value> EntityClass::getCanFly() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->canFly());
+    }
+    CATCH("Fail in getCanFly!")
 }
 
 Local<Value> EntityClass::getInLava() {

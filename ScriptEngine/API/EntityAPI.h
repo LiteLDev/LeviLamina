@@ -30,6 +30,7 @@ public:
     Local<Value> getBlockPos();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
+    Local<Value> getCanFly();
     Local<Value> getInAir();
     Local<Value> getInWater();
     Local<Value> getInLava();
