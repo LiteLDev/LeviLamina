@@ -26,6 +26,8 @@
 #include <cstdio>
 #include <tuple>
 
+#pragma warning(disable : 4244)
+
 using namespace llvm;
 using namespace ms_demangle;
 
