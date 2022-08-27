@@ -45,6 +45,7 @@
     <ClCompile Include="API\NbtAPI.cpp" />
     <ClCompile Include="API\NetworkAPI.cpp" />
     <ClCompile Include="API\PlayerAPI.cpp" />
+    <ClCompile Include="API\ParticleAPI.cpp" />
     <ClCompile Include="API\ScriptAPI.cpp" />
     <ClCompile Include="API\ServerAPI.cpp" />
     <ClCompile Include="API\StructureAPI.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="API\GuiAPI.h" />
     <ClInclude Include="API\ItemAPI.h" />
     <ClInclude Include="API\LoggerAPI.h" />
+    <ClInclude Include="API\ParticleAPI.h" />
     <ClInclude Include="API\LlAPI.h" />
     <ClInclude Include="API\NbtAPI.h" />
     <ClInclude Include="API\NetworkAPI.h" />
