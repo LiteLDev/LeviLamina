@@ -21,7 +21,6 @@ ClassDefine<IntPos> IntPosBuilder =
         .instanceProperty("z", &IntPos::getZ, &IntPos::setZ)
         .instanceProperty("dim", &IntPos::getDim)
         .instanceProperty("dimid", &IntPos::getDimId, &IntPos::setDimId)
-        .instanceProperty("dimid", &IntPos::getDimId, &IntPos::setDimId)
 
         .instanceFunction("toString", &IntPos::toString)
         .build();
