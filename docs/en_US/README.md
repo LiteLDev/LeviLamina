@@ -29,7 +29,8 @@ Meet some problem while installing or using `LiteLoaderBDS`? There are some comm
 ## ⛳ Development guide and API documentation of C++ Plugin
 
 Using `C++` to develop LiteLoader plugin can realize your creative idea.
-But the documentation is still writing.
+
+👉[Click here](https://cpp.docs.litebds.com/en/)👈 to read the documentation.
 <br>
 
 ## 🎯 Development guide and API documentation of Scirpt Plugin

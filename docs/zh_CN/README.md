@@ -30,7 +30,7 @@
 
 使用 `C++`, `Golang` 等编译型语言语言开发 LL 插件，拥有海量API，自由实现你的任意想法
 
-在做了(新建文件夹)
+👉[点击此处](https://cpp.docs.litebds.com/zh-Hans/)👈 查看 LiteLoaderSDK插件开发文档
 <br>
 
 ## 🎯 脚本插件 - 开发指南 与 API文档
