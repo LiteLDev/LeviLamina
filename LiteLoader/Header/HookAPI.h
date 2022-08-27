@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <thread>
-
+#include "third-party/ModUtils/ModUtils.h"
 
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);
@@ -13,21 +13,6 @@ extern "C" {
 LIAPI int HookFunction(void* oldfunc, void** poutold, void* newfunc);
 LIAPI void* dlsym_real(char const* name);
 }
-
-namespace WinApi {
-typedef struct _MODULEINFO {
-    void* lpBaseOfDll;
-    unsigned long SizeOfImage;
-    void* EntryPoint;
-} MODULEINFO, *LPMODULEINFO;
-
-// import windows api manually to avoid windows headers import
-extern "C" {
-__declspec(dllimport) void* __stdcall GetCurrentProcess();
-__declspec(dllimport) void* __stdcall GetModuleHandleA(char*);
-__declspec(dllimport) bool __stdcall K32GetModuleInformation(void*, void*, LPMODULEINFO, unsigned long);
-}
-} // namespace WinAPI
 
 extern std::vector<std::string> dlsym_reverse(int addr);
 
@@ -53,55 +38,7 @@ inline const T& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
-#define INRANGE(x, a, b) (x >= a && x <= b)
-#define GET_BYTE(x) (GET_BITS(x[0]) << 4 | GET_BITS(x[1]))
-#define GET_BITS(x) (INRANGE((x & (~0x20)), 'A', 'F') ? ((x & (~0x20)) - 'A' + 0xa) : (INRANGE(x, '0', '9') ? x - '0' : 0))
-
 namespace mem {
-inline uintptr_t FindSig(const char* szSignature) {
-    const char* pattern = szSignature;
-    uintptr_t firstMatch = 0;
-    static const uintptr_t rangeStart = (uintptr_t)WinApi::GetModuleHandleA("bedrock_server_mod.exe");
-    static WinApi::MODULEINFO miModInfo;
-    static bool init = false;
-    if (!init) {
-        init = true;
-        WinApi::K32GetModuleInformation(WinApi::GetCurrentProcess(), (HMODULE)rangeStart, &miModInfo, sizeof(WinApi::MODULEINFO));
-    }
-    static const uintptr_t rangeEnd = rangeStart + miModInfo.SizeOfImage;
-    BYTE patByte = GET_BYTE(pattern);
-    const char* oldPat = pattern;
-
-    for (uintptr_t pCur = rangeStart; pCur < rangeEnd; pCur++) {
-        if (!*pattern)
-            return firstMatch;
-
-        while (*(PBYTE)pattern == ' ')
-            pattern++;
-
-        if (!*pattern)
-            return firstMatch;
-
-        if (oldPat != pattern) {
-            oldPat = pattern;
-            if (*(PBYTE)pattern != '\?')
-                patByte = GET_BYTE(pattern);
-        }
-        if (*(PBYTE)pattern == '\?' || *(BYTE*)pCur == patByte) {
-            if (!firstMatch)
-                firstMatch = pCur;
-
-            if (!pattern[2] || !pattern[1])
-                return firstMatch;
-            pattern += 2;
-        } else {
-            pattern = szSignature;
-            firstMatch = 0;
-        }
-    }
-    return 0;
-}
-
 inline std::string ptrToStr(uintptr_t ptr) {
     std::ostringstream ss;
     ss << std::hex << ((UINT64)ptr) << std::endl;
@@ -139,7 +76,7 @@ static inline auto __imp_Call() {
 
 template <FixedString Fn, typename ret, typename... p>
 static inline auto __imp_Call_Sig() {
-    return ((ret(*)(p...))((void*)mem::FindSig(Fn)));
+    return ((ret(*)(p...))((void*)ModUtils::FindSig(Fn)));
 }
 
 template <FixedString Fn, typename ret, typename... p>
@@ -273,17 +210,17 @@ extern THookRegister THookRegisterTemplate;
 #define _TStaticNoDefHook(iname, sym, ret, ...) \
     _TStaticHook(, iname, sym, ret, VA_EXPAND(__VA_ARGS__))
 
-#define SHook2(iname, ret, sig, ...) _TStaticNoDefHook(iname, (void*)mem::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
+#define SHook2(iname, ret, sig, ...) _TStaticNoDefHook(iname, (void*)ModUtils::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
 #define SHook(ret, sig, ...) SHook2(sig, ret, sig, VA_EXPAND(__VA_ARGS__))
 #define SStaticHook2(iname, ret, sig, type, ...) \
-    _TStaticDefHook(iname, (void*)mem::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
+    _TStaticDefHook(iname, (void*)ModUtils::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
 #define SStaticHook(ret, sig, type, ...) SStaticHook2(sig, ret, sig, type, VA_EXPAND(__VA_ARGS__))
 #define SClasslessInstanceHook2(iname, ret, sig, ...) \
-    _TInstanceNoDefHook(iname, (void*)mem::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
+    _TInstanceNoDefHook(iname, (void*)ModUtils::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
 #define SClasslessInstanceHook(ret, sig, ...) \
     SClasslessInstanceHook2(sig, ret, sig, VA_EXPAND(__VA_ARGS__))
 #define SInstanceHook2(iname, ret, sig, type, ...) \
-    _TInstanceDefHook(iname, (void*)mem::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
+    _TInstanceDefHook(iname, (void*)ModUtils::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
 #define SInstanceHook(ret, sig, type, ...) \
     SInstanceHook2(sig, ret, sig, type, VA_EXPAND(__VA_ARGS__))
 

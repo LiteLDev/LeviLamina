@@ -357,7 +357,7 @@ THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ",
 }
 
 SHook2("_tickDimensionTransition", __int64, "40 53 55 41 56 41 57 48 ?? ?? ?? ?? ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 33 "
-                                           "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
+       "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
       __int64 a1, ActorOwnerComponent* a2, __int64 a3, void* a4) {
     if (LL::globalConfig.enableFixBDSCrash) {
         auto ac = Actor::tryGetFromComponent(*a2, 0);
