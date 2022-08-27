@@ -6,6 +6,7 @@
 #include <ServerAPI.h>
 #include "McAPI.h"
 #include <cmath>
+#include <MC/ActorDamageSource.hpp>
 
 ///////////////////// Enum //////////////////////
 ClassDefine<void> DamageCauseEnumBuilder = EnumDefineBuilder<ActorDamageCause>::build("DamageCause");
