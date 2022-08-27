@@ -35,6 +35,7 @@
 #include <MC/ScoreboardId.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/VanillaBlocks.hpp>
+#include <MC/ActorDamageSource.hpp>
 #include <ScheduleAPI.h>
 #include <MC/ServerPlayer.hpp>
 #include <RegCommandAPI.h>
@@ -1585,7 +1586,7 @@ TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
 }
 
 TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageSource@@M@Z", Mob, ActorDamageSource* src, float damage) {
-    if (src->getCause() == ActorDamageCause::Magic) {
+    if (src->getCause() == ActorDamageCause::ActorDamageCause_Magic) {
         IF_LISTENED(MobHurtEvent) {
             if (this) {
                 MobHurtEvent ev{};

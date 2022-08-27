@@ -43,6 +43,18 @@ void FixUpCWD() {
     SetCurrentDirectoryA(buf.c_str());
 }
 
+#include <FMT/format.h>
+void UnzipNodeModules() {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.tar")))) {
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\lib\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\lib\\node_modules.tar"), 30000);
+        if (res.first != 0) {
+            logger.error(tr("ll.unzipNodeModules.fail"));
+        } else {
+            filesystem::remove(".\\plugins\\lib\\node_modules.tar");
+        }
+    }
+}
+
 void CheckRunningBDS() {
     if (!LL::globalConfig.enableCheckRunningBDS)
         return;
@@ -221,6 +233,9 @@ void LLMain() {
 
     // Load Config
     LL::LoadLLConfig();
+
+    //Unzip Node Modules
+    UnzipNodeModules();
 
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
     if (!LL::isDebugMode())

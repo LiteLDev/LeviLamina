@@ -56,7 +56,8 @@ class ActorDamageSource {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[16];
+    ActorDamageCause mCause;
+    char filler[4];
 
 public:
     LIAPI Actor* getEntity();
@@ -212,3 +213,4 @@ public:
     MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
 
 };
+
