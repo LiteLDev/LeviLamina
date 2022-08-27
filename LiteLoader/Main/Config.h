@@ -57,6 +57,7 @@ struct LLConfig {
     bool enableEconomyCore = true;
     bool enableTpdimCommand = true;
     bool enableForceUtf8Input = false;
+    bool enableFixBDSCrash = false;
     std::vector<std::string> outputFilterRegex = {};
 
     // Runtime Config
