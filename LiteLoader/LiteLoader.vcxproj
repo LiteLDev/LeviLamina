@@ -154,6 +154,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Impl\FormPacketHelper.h" />
     <ClInclude Include="Header\Impl\ObjectivePacketHelper.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
+    <ClInclude Include="Header\ParticleAPI.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
     <ClInclude Include="Header\MC\Automation.hpp" />
@@ -269,6 +270,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\NBT\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
+    <ClCompile Include="Kernel\ParticleAPI.cpp" />
     <ClCompile Include="Kernel\MC\MobAPI.cpp" />
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp" />
     <ClCompile Include="Kernel\Network\ReadOnlyBinaryStreamAPI.cpp" />

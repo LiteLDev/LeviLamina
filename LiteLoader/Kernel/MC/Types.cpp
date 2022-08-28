@@ -24,6 +24,31 @@ std::string mce::Color::toConsoleCode(bool foreground) const {
 std::string mce::Color::toNearestColorCode() const {
     return ColorFormat::nearestColorCodeFromColor(*this);
 };
+char mce::Color::toNearestParticleColorCode() const {
+    double minDis = DBL_MAX;
+    char result = 'B';
+    for (auto& color : mce::particleColors) {
+        auto dis = this->distanceTo(color.second.second);
+        if (minDis > dis) {
+            minDis = dis;
+            result = color.second.first;
+        }
+    }
+    return result;
+}
+ColorPalette mce::Color::toNearestParticleColorType() const {
+    double minDis = DBL_MAX;
+    ColorPalette result = ColorPalette::BLACK;
+    for (auto& color : mce::particleColors) {
+        auto dis = this->distanceTo(color.second.second);
+        if (minDis > dis) {
+            minDis = dis;
+            result = color.first;
+        }
+    }
+    return result;
+}
+
 class mce::Color mce::Color::fromConsoleCode(std::string const& code) {
     return ColorFormat::ColorFromConsoleCode(code);
 }

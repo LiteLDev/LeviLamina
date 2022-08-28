@@ -28,6 +28,7 @@
 #include <API/NativeAPI.h>
 #include <API/NativeStdString.h>
 #include <API/PermissionAPI.h>
+#include <API/ParticleAPI.h>
 
 void BindAPIs(ScriptEngine* engine)
 {
@@ -56,6 +57,8 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(LlClassBuilder);
     engine->registerNativeClass(NbtStaticBuilder);
     engine->registerNativeClass(TextClassBuilder);
+    engine->registerNativeClass(ParticleColorBuilder);
+    engine->registerNativeClass(DirectionBuilder);
 
     engine->registerNativeClass(PermissionStaticBuilder);
     engine->registerNativeClass(ParamTypeStaticBuilder);
@@ -107,6 +110,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
     engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
     engine->registerNativeClass<RoleClass>(RoleClassBuilder);
+    engine->registerNativeClass<ParticleSpawner>(ParticleSpawnerBuilder);
 
     //////////////// NativeFFI ////////////////
     engine->registerNativeClass(NativeTypeEnumBuilder);

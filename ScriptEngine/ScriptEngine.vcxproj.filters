@@ -35,6 +35,9 @@
     <ClCompile Include="API\BlockAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
+    <ClCompile Include="API\ParticleAPI.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
     <ClCompile Include="API\CommandCompatibleAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
@@ -230,6 +233,9 @@
       <Filter>API</Filter>
     </ClInclude>
     <ClInclude Include="API\LoggerAPI.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="API\ParticleAPI.h">
       <Filter>API</Filter>
     </ClInclude>
     <ClInclude Include="API\LlAPI.h">
