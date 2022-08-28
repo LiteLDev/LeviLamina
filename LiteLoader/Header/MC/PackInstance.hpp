@@ -22,7 +22,8 @@ class PackInstance {
 
 #define AFTER_EXTRA
 // Add Member There
-
+#define DISABLE_CONSTRUCTOR_PREVENTION_PACKINSTANCE
+    char filler[480];
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINSTANCE
 public:

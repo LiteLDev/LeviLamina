@@ -39,9 +39,12 @@ struct CrashUploadStatus {
 template <typename T0>
 class NonOwnerPointer {
 public:
-    NonOwnerPointer() = delete;
-    NonOwnerPointer(NonOwnerPointer const&) = delete;
-    NonOwnerPointer(NonOwnerPointer const&&) = delete;
+    std::shared_ptr<T0> mPtr;
+
+    NonOwnerPointer(T0& a1) {
+        mPtr = std::make_shared<T0>(a1);
+    }
+	
 };
 struct StorageMigration {
     enum StorageMigrationType;
@@ -49,6 +52,10 @@ struct StorageMigration {
     StorageMigration(StorageMigration const&) = delete;
     StorageMigration(StorageMigration const&&) = delete;
 };
+
+
+
+
 namespace PubSub {
 class Subscription {
 public:

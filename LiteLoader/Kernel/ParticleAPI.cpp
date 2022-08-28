@@ -7,13 +7,14 @@
 #include "MC/Level.hpp"
 #include <MC/ResourcePackRepository.hpp>
 #include <MC/ResourcePackStack.hpp>
-
-THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ", ResourcePackRepository* a1) {
-    auto out = Core::Path(R"(plugins/LiteLoader/ResourcePacks)");
-    a1->addWorldResourcePacks(out);
-    return original(a1);
+#include <EventAPI.h>
+#include <MC/ResourcePackRepository.hpp>
+void InitParticle() {
+    Event::ResourcePackInitEvent::subscribe([](const Event::ResourcePackInitEvent& ev) {
+        ev.mRepo->setCustomResourcePackPath(PackType::PackType_Resources, R"(plugins/LiteLoader/ResourcePacks)");
+        return true;
+    });
 }
-
 
 namespace {
 template <typename T>

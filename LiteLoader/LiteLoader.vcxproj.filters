@@ -399,8 +399,11 @@
     <ClCompile Include="Kernel\PermissionAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Main\EncryptPack.cpp">
+    <ClCompile Include="Main\ModifyPack.cpp">
       <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MC\ResourcePackRepositoryAPI.cpp">
+      <Filter>Kernel\MC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

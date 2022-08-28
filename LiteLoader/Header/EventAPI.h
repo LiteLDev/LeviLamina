@@ -627,4 +627,9 @@ public:
     string mJsonData;
 };
 
+class ResourcePackInitEvent : public EventTemplate<ResourcePackInitEvent> {
+public:
+    ResourcePackRepository* mRepo;
+};
+
 }; // namespace Event

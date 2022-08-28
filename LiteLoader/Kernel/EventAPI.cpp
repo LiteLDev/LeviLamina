@@ -54,6 +54,14 @@
 #include <MC/InventorySource.hpp>
 #include <MC/Util.hpp>
 #include <DynamicCommandAPI.h>
+#include <MC/ResourcePackManager.hpp>
+#include <MC/ResourceLocation.hpp>
+#include <MC/PackSourceFactory.hpp>
+#include <MC/CompositePackSource.hpp>
+#include <MC/PackSourceFactory.hpp>
+#include <MC/ResourcePackPaths.hpp>
+#include <MC/DirectoryPackSource.hpp> 
+#include <MC/PackSource.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -277,7 +285,7 @@ DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobSpawnEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
-
+DECLARE_EVENT_DATA(ResourcePackInitEvent);
 
 #define IF_LISTENED(EVENT)      \
     if (EVENT::hasListener()) { \
@@ -2143,4 +2151,16 @@ TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFo
         HandleFormPacket(sp, formId, data);
     }
     original(this, id, handler, pPacket);
+}
+
+THook(void, "?_initialize@ResourcePackRepository@@AEAAXXZ",
+      ResourcePackRepository* self) {
+    Global<ResourcePackRepository> = self;
+    IF_LISTENED(ResourcePackInitEvent) {
+        ResourcePackInitEvent ev{};
+        ev.mRepo = self;
+        ev.call();
+    }
+    IF_LISTENED_END(ResourcePackInitEvent)
+    original(self);
 }

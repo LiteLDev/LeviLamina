@@ -116,6 +116,7 @@ LibraryBuilder.exe
     </ClCompile>
     <ClCompile Include="Kernel\MC\BiomeAPI.cpp" />
     <ClCompile Include="Kernel\MC\MolangAPI.cpp" />
+    <ClCompile Include="Kernel\MC\ResourcePackRepositoryAPI.cpp" />
     <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
@@ -292,7 +293,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp" />
-    <ClCompile Include="Main\EncryptPack.cpp" />
+    <ClCompile Include="Main\ModifyPack.cpp" />
     <ClCompile Include="Main\Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />

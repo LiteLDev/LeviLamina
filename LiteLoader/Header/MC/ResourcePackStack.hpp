@@ -7,7 +7,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Core.hpp"
-
+#include "PackSourceReport.hpp"
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -21,7 +21,9 @@ class ResourcePackStack {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    std::vector<PackInstance> mStack;
+    std::unique_ptr<PackSourceReport> mPackSourceReport;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKSTACK
 public:
