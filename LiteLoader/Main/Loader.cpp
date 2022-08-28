@@ -16,7 +16,7 @@
 #include <I18nAPI.h>
 #include "Config.h"
 #include "Version.h"
-#include "../ScriptEngine/Main/Configs.h"
+#include <ScriptEngine/Main/Configs.h>
 
 using namespace std;
 
@@ -67,7 +67,7 @@ const char* DEFAULT_ROOT_PACKAGE_JSON =
 })";
 
 bool IsExistScriptPlugin() {
-    std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
+    std::vector<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
         if (!file.is_regular_file())
@@ -86,7 +86,8 @@ bool IsExistScriptPlugin() {
                 ext = UTF82String(path.extension().u8string());
             }
 
-            if (scriptExts.find(ext) != scriptExts.end())
+            if ((!ext.empty() && std::find(scriptExts.begin(), scriptExts.end(), ext) != scriptExts.end())
+                || ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
                 return true;
         }
     }

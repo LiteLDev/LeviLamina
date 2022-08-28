@@ -62,7 +62,6 @@
     <ClCompile Include="Engine\TimeTaskSystem.cpp" />
     <ClCompile Include="Main\dllmain.cpp" />
     <ClCompile Include="Engine\GlobalShareData.cpp" />
-    <ClCompile Include="Engine\LoaderHelper.cpp" />
     <ClCompile Include="Engine\RemoteCall.cpp" />
     <ClCompile Include="Main\Global.cpp" />
     <ClCompile Include="Main\EconomySystem.cpp" />
@@ -114,7 +113,6 @@
     <ClInclude Include="Engine\EngineManager.h" />
     <ClInclude Include="Engine\GlobalShareData.h" />
     <ClInclude Include="Engine\EngineOwnData.h" />
-    <ClInclude Include="Engine\LoaderHelper.h" />
     <ClInclude Include="Engine\LocalShareData.h" />
     <ClInclude Include="Engine\MessageSystem.h" />
     <ClInclude Include="Engine\OperationCount.h" />
@@ -343,7 +341,7 @@ LibraryBuilder.exe
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>CPPHTTPLIB_OPENSSL_SUPPORT;BUILDING_NODE_EXTENSION;NDEBUG;_CONSOLE;_AMD64_;NOMINMAX;SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/V8/trait/Trait;LLSE_BACKEND_NODEJS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>

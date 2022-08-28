@@ -1145,28 +1145,30 @@ void InitBasicEventListeners() {
     Event::ScriptPluginManagerEvent::subscribe_ref([](ScriptPluginManagerEvent& ev) {
         // if (!LL::isDebugMode())
         //     return false;
-        if (ev.pluginExtention != LLSE_PLUGINS_EXTENSION)
-            return true;
 
         switch (ev.operation) {
             case ScriptPluginManagerEvent::Operation::Load:
+                // ev.pluginType is not used
+                // since in loadPlugin there will be check
                 if (PluginManager::loadPlugin(ev.target, true, true))
                     ev.success = true;
                 break;
 
             case ScriptPluginManagerEvent::Operation::Unload:
-                if (PluginManager::unloadPlugin(ev.target))
+                if(PluginManager::unloadPlugin(ev.target))
                     ev.success = true;
                 break;
 
             case ScriptPluginManagerEvent::Operation::Reload:
-                if (PluginManager::reloadPlugin(ev.target))
+                if(PluginManager::reloadPlugin(ev.target))
                     ev.success = true;
                 break;
 
             default:
                 break;
         }
+        if (ev.success)
+            return false;   // Success. No need to spread to next engine
         return true;
     });
 

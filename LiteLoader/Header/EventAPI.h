@@ -598,6 +598,11 @@ public:
         Unload,
         Reload
     };
+    enum class PluginType {
+        SingleFile,             // like .js / .lua
+        PluginPackage,          // like .llplugin
+        UncompressedPackage     // like plugins/nodejs/ABC
+    };
 
     Operation operation;
     std::string target;
@@ -605,6 +610,7 @@ public:
     std::string pluginExtention;
 
     bool success = false;
+    PluginType pluginType;
 };
 
 class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {

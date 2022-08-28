@@ -98,9 +98,6 @@
     <ClCompile Include="Engine\GlobalShareData.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\LoaderHelper.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\RemoteCall.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -272,9 +269,6 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Engine\EngineOwnData.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\LoaderHelper.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Engine\RemoteCall.h">
