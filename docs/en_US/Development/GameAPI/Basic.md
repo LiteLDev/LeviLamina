@@ -142,5 +142,28 @@ Since there is no concept of rotation in the entity system of MC, there is no da
 
 The return value is `0-3`, representing the four basic orientations of **North, East, South, West**. Used to quickly determine the general direction an entity is facing.
 
-<br>
+## Get Structure NBT
 
+`mc.getStructure(pos1, pos2, ignoreBlocks = false, ignoreEntities = false)`
+
+- Parameters:
+  - pos1 : `IntPos`
+  - pos1 : `IntPos`
+  - ignoreBlocks : `Boolean`
+  - ignoreEntities : `Boolean`
+
+- Return value type: `NbtCompound`
+
+## Set Structure NBT
+
+`mc.setStructure(nbt, pos, mirror = 0, rotation = 0)`
+
+- Parameters:
+  - nbt : `NbtCompound`
+  - pos : `IntPos`
+  - mirror : `number`
+    - `0:None` `1:X` `2:Z` `3:XZ`
+  - rotation : `number`
+    - `0:None` `1:Rotate90` `2:Rotate180` `3:Rotate270`
+
+- Return value type: `Boolean`

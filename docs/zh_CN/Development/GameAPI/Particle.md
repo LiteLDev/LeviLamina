@@ -3,7 +3,7 @@
    对于某个 `ParticleSpawner` 类型变量 ps, 有如下这些成员:
 
    | 成员             | 含义           | 类型      |
-   | ---------------- | -------------- | --------- |
+   | ---------------- | ------------- | --------- |
    | ps.displayRadius | 粒子显示半径   | `Integer` |
    | ps.highDetial    | 需要高细节线条 | `Boolean` |
    | ps.doubleSide    | 需要双面粒子   | `Boolean` |
