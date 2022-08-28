@@ -5,6 +5,15 @@
 #include "MC/Player.hpp"
 #include "MC/Dimension.hpp"
 #include "MC/Level.hpp"
+#include <MC/ResourcePackRepository.hpp>
+#include <MC/ResourcePackStack.hpp>
+
+THook(bool, "?isInitialized@ResourcePackRepository@@UEAA_NXZ", ResourcePackRepository* a1) {
+    auto out = Core::Path(R"(plugins/LiteLoader/ResourcePacks)");
+    a1->addWorldResourcePacks(out);
+    return original(a1);
+}
+
 
 namespace {
 template <typename T>
