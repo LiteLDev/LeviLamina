@@ -8,7 +8,7 @@
    | ps.highDetial    | 需要高细节线条 | `Boolean` |
    | ps.doubleSide    | 需要双面粒子   | `Boolean` |
 
-### 生成一个整数坐标对象
+### 生成一个粒子生成器对象
 
 `mc.newParticleSpawner(displayRadius = 4294967295, highDetial = true, doubleSide = true)`
 
