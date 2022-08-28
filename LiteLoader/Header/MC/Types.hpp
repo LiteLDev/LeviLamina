@@ -15,7 +15,7 @@ typedef unsigned long long QWORD;
 
 namespace mce {
 
-inline constexpr int static hexToNum(char s) {
+LL_CONSTEXPR int static hexToNum(char s) {
     if ('A' <= s && s <= 'F') {
         return 10 + (s - 'A');
     }
@@ -28,7 +28,7 @@ inline constexpr int static hexToNum(char s) {
     return 0;
 }
 
-inline constexpr double static hexToNum(std::string_view s) {
+LL_CONSTEXPR double static hexToNum(std::string_view s) {
     if (s.length() == 2) {
         return (16 * hexToNum(s[0]) + hexToNum(s[1])) / 255.0;
     }
@@ -84,30 +84,37 @@ public:
     Color(int ir, int ig, int ib, int ia = 255)
     : r(ir / 255.0f), g(ig / 255.0f), b(ib / 255.0f), a(ia / 255.0f){};
 
-    inline constexpr Color(std::string_view hex) {
+    LL_CONSTEXPR Color(std::string_view hex) {
+        r = 0, g = 0, b = 0, a = 1;
         if (hex[0] == '#') {
             hex = hex.substr(1);
         }
         if (hex.length() == 3) {
-            *this = Color((hexToNum(hex[0]) * 17) / 255.0, (hexToNum(hex[1]) * 17) / 255.0,
-                          (hexToNum(hex[2]) * 17) / 255.0);
+            r = (float)((hexToNum(hex[0]) * 17) / 255.0);
+            g = (float)((hexToNum(hex[1]) * 17) / 255.0);
+            b = (float)((hexToNum(hex[2]) * 17) / 255.0);
             return;
         }
         if (hex.length() == 4) {
-            *this = Color((hexToNum(hex[1]) * 17) / 255.0, (hexToNum(hex[2]) * 17) / 255.0,
-                          (hexToNum(hex[3]) * 17) / 255.0, (hexToNum(hex[0]) * 17) / 255.0);
+            a = (float)((hexToNum(hex[0]) * 17) / 255.0);
+            r = (float)((hexToNum(hex[1]) * 17) / 255.0);
+            g = (float)((hexToNum(hex[2]) * 17) / 255.0);
+            b = (float)((hexToNum(hex[3]) * 17) / 255.0);
             return;
         }
         if (hex.length() == 6) {
-            *this = Color(hexToNum(hex.substr(0, 2)), hexToNum(hex.substr(2, 2)), hexToNum(hex.substr(4, 2)));
+            r = (float)hexToNum(hex.substr(0, 2));
+            g = (float)hexToNum(hex.substr(2, 2));
+            b = (float)hexToNum(hex.substr(4, 2));
             return;
         }
         if (hex.length() == 8) {
-            *this = Color(hexToNum(hex.substr(2, 2)), hexToNum(hex.substr(4, 2)), hexToNum(hex.substr(6, 2)),
-                          hexToNum(hex.substr(0, 2)));
+            a = (float)hexToNum(hex.substr(0, 2));
+            r = (float)hexToNum(hex.substr(2, 2));
+            g = (float)hexToNum(hex.substr(4, 2));
+            b = (float)hexToNum(hex.substr(6, 2));
             return;
         }
-        *this = Color();
         return;
     };
 
@@ -293,7 +300,7 @@ static std::unordered_map<ColorPalette, std::pair<char, Color>> const particleCo
     // clang-format on
 };
 
-inline static const char getParticleColorType(ColorPalette const& p){
+inline static const char getParticleColorType(ColorPalette const& p) {
     return particleColors.at(p).first;
 }
 

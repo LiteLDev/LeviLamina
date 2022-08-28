@@ -255,11 +255,11 @@ Local<Value> ParticleSpawner::drawCuboid(const Arguments& args) {
     }
     if (size > 1) {
         if (IsInstanceOf<IntPos>(args[1])) {
-            auto pos2 = EngineScope::currentEngine()->getNativeInstance<IntPos>(args[0]);
+            auto pos2 = EngineScope::currentEngine()->getNativeInstance<IntPos>(args[1]);
             max = Vec3(pos2->x, pos2->y, pos2->z) + 1;
             dimId2 = pos2->dim;
         } else if (IsInstanceOf<FloatPos>(args[1])) {
-            auto pos2 = EngineScope::currentEngine()->getNativeInstance<FloatPos>(args[0]);
+            auto pos2 = EngineScope::currentEngine()->getNativeInstance<FloatPos>(args[1]);
             max = Vec3(pos2->x, pos2->y, pos2->z);
             dimId2 = pos2->dim;
         } else {

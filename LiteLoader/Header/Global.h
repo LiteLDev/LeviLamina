@@ -16,6 +16,14 @@
 #define FMT_HEADER_ONLY
 #endif
 
+#ifndef LL_CONSTEXPR
+#if __cplusplus <= 201703L
+#define LL_CONSTEXPR inline
+#else
+#define LL_CONSTEXPR constexpr
+#endif
+#endif
+
 /// std containers
 #include <string>
 #include <vector>

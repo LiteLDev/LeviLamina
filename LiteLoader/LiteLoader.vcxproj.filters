@@ -102,6 +102,9 @@
     <ClCompile Include="Kernel\ServerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\ParticleAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -720,6 +723,9 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Header\AllowListAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ParticleAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\ItemStackBase.hpp">
