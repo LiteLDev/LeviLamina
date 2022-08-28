@@ -290,6 +290,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp" />
+    <ClCompile Include="Main\EncryptPack.cpp" />
     <ClCompile Include="Main\Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />
