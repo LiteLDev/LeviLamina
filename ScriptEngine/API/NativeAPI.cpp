@@ -409,7 +409,7 @@ char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue
 
         switch (hookInfo->mReturnVal) {
             case NativeFunction::Types::Bool:
-                result->B = res.asBoolean().value();
+                result->c = res.asBoolean().value();// pass bool by char
                 break;
             case NativeFunction::Types::Char:
                 result->c = (char)res.toInt();
@@ -448,7 +448,18 @@ char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue
                 result->d = res.asNumber().toDouble();
                 break;
             case NativeFunction::Types::Pointer:
-                result->p = NativePointer::extract(res);
+                switch (res.getKind()) {
+                    case ValueKind::kObject:
+                        result->p = NativePointer::extract(res);
+                        break;
+                    case ValueKind::kNumber:
+                        result->p = (void*)res.asNumber().toInt64();
+                        break;
+                    case ValueKind::kNull:
+                    default:
+                        result->p = nullptr;
+                        break;
+                }
                 break;
             default:
                 break;

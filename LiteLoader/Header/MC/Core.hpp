@@ -80,35 +80,32 @@ public:
     SingleThreadedLock(SingleThreadedLock const&) = delete;
     SingleThreadedLock(SingleThreadedLock const&&) = delete;
 };
-class PathPart
-{
+
+class PathPart {
 public:
-    std::string data;
+    std::string mUtf8StdString;
 };
 
-class Path : public PathPart
-{
+class Path {
 public:
-    Path() = delete;
-    Path(Path const&) = delete;
-    Path(Path const&&) = delete;
+    PathPart mPath;
+    Path(string a1) {
+        mPath.mUtf8StdString = a1;
+    }
 };
 
 template <typename T>
-class PathBuffer
-{
-public:
-    PathBuffer() = delete;
-    PathBuffer(PathBuffer const&) = delete;
-    PathBuffer(PathBuffer const&&) = delete;
-
+class PathBuffer {
     T value;
-    operator T&() noexcept
-    {
+
+public:
+    T& get() {
         return value;
     }
-    operator T const&() const noexcept
-    {
+    operator T&() noexcept {
+        return value;
+    }
+    operator T const&() const noexcept {
         return value;
     }
 };
