@@ -76,7 +76,7 @@ LLSE提供了丰富强大的游戏元素接口，为你发挥创意提供方便�
 
 #### 生成一个整数坐标对象
 
-`mc.newIntPos(x,y,z,dimid)` [static]
+`mc.newIntPos(x,y,z,dimid)`
 
 - 参数：
   - x : `Integer`  
