@@ -154,7 +154,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Impl\FormPacketHelper.h" />
     <ClInclude Include="Header\Impl\ObjectivePacketHelper.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
-    <ClCompile Include="Header\ParticleAPI.h" />
+    <ClInclude Include="Header\ParticleAPI.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
     <ClInclude Include="Header\MC\Automation.hpp" />
