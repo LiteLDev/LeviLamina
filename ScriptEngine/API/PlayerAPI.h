@@ -74,6 +74,7 @@ public:
     Local<Value> isDancing();
     Local<Value> isCreative();
     Local<Value> isFlying();
+    Local<Value> isSleeping();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
