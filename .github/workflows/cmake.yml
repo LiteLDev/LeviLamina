@@ -91,7 +91,7 @@ jobs:
 
       - name: Configure CMake(MSVC)
         run: |
-          set CC="C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/${{env.MSVC_VER}}/bin/Hostx64/x64/cl.exe" & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
+          "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 & set CC="C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/${{env.MSVC_VER}}/bin/Hostx64/x64/cl.exe"
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja -DCMAKE_TRY_COMPILE_TARGET_TYPE="STATIC_LIBRARY" -DCMAKE_MAKE_PROGRAM="C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\Enterprise\COMMON7\IDE\COMMONEXTENSIONS\Microsoft\CMake\Ninja\ninja.exe"
         shell: cmd
 
