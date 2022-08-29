@@ -97,6 +97,7 @@ jobs:
 
       - name: Build
         run: "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        shell: cmd
 
       - name: Configure CMake(ClangCL)
         run: |
