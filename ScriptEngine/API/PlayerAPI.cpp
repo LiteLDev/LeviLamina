@@ -711,6 +711,18 @@ Local<Value> PlayerClass::getLangCode() {
     CATCH("Fail in getLangCode!");
 }
 
+Local<Value> PlayerClass::isLoading() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isLoading());
+    }
+    CATCH("Fail in isLoading!")
+}
+
 Local<Value> PlayerClass::isInvisible() {
     try {
         Player* player = get();
