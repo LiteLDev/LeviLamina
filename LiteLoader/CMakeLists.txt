@@ -38,11 +38,12 @@ add_link_options(
         /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:bedrock_server.dll /TLBID:1
 )
 
-include_directories(${PROJECT_SOURCE_DIR}/)
+include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/Header)
 include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
+include_directories(${CMAKE_SOURCE_DIR})
 
-link_directories(${PROJECT_SOURCE_DIR}/)
+link_directories(${PROJECT_SOURCE_DIR})
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_library(LiteLoader SHARED ${SRC_FILES})
