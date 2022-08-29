@@ -12,7 +12,7 @@ include_directories(${LiteLoader_SOURCE_DIR}/Header/third-party)
 
 add_compile_options(
         /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
-        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHsc /nologo /diagnostics:column
+        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /EHsc /nologo /diagnostics:column
 )
 
 add_link_options(
