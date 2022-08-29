@@ -86,7 +86,7 @@ jobs:
       - name: Get MSVC Path
         working-directory: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\
         run: 
-          echo "MSVC_VER=$(ls | head -n -1)" >> $GITHUB_ENV
+          echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
         shell: bash
 
       - name: Configure CMake(MSVC)
