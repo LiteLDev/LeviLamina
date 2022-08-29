@@ -65,7 +65,12 @@ void FormatHelper(std::vector<Local<Value>>& args, const std::vector<char*>& nam
                     std::vector<char*> nextNames;
                     for (auto j = 0ULL; j < keys.size(); ++j) {
                         auto key = keys[j].toString();
+#if __cplusplus <= 201703L
+                        char* cName = new char[key.size() + 1];
+                        std::memset(cName, 0, key.size() + 1);
+#else
                         char* cName = new char[key.size() + 1](0);
+#endif
                         std::copy(key.begin(), key.end(), cName);
                         delList.push_back(cName);
                         nextNames.push_back(cName);
@@ -89,30 +94,34 @@ void FormatHelper(std::vector<Local<Value>>& args, const std::vector<char*>& nam
     }
 }
 
-Local<Value> Format(const Arguments& args, size_t offset, std::string key, 
+Local<Value> TrFormat(const Arguments& args, size_t offset, std::string key, 
                     const std::string& localeName = "") {
-    size_t argsLength = args.size() - offset;
-    auto i18n = ENGINE_OWN_DATA()->i18n;
-    if (i18n) {
-        key = i18n->get(key, localeName);
-    }
-    // realFormatStr = FixCurlyBracket(realFormatStr);
-    if (0ULL == argsLength) {
-        // Avoid fmt if only one argument
+    try {
+        size_t argsLength = args.size() - offset;
+        auto i18n = ENGINE_OWN_DATA()->i18n;
+        if (i18n) {
+            key = i18n->get(key, localeName);
+        }
+        // realFormatStr = FixCurlyBracket(realFormatStr);
+        if (0ULL == argsLength) {
+            // Avoid fmt if only one argument
+            return String::newString(key);
+        } else {
+            fmt::dynamic_format_arg_store<fmt::format_context> s;
+            std::vector<char*> delList;
+            std::vector<Local<Value>> vals;
+            for (auto i = offset; i < args.size(); ++i) {
+                vals.push_back(args[i]);
+            }
+            FormatHelper(vals, {}, true, s, delList);
+            auto result = String::newString(fmt::vformat(key, s));
+            for (auto& ptr : delList) {
+                delete[] ptr;
+            }
+            return result;
+        }
+    } catch (const fmt::format_error&) {
         return String::newString(key);
-    } else {
-        fmt::dynamic_format_arg_store<fmt::format_context> s;
-        std::vector<char*> delList;
-        std::vector<Local<Value>> vals;
-        for (auto i = offset; i < args.size(); ++i) {
-            vals.push_back(args[i]);
-        }
-        FormatHelper(vals, {}, true, s, delList);
-        auto result = String::newString(fmt::vformat(key, s));
-        for (auto& ptr : delList) {
-            delete[] ptr;
-        }
-        return result;
     }
 }
 
@@ -129,7 +138,7 @@ Local<Value> I18nClass::tr(const Arguments& args) {
     CHECK_ARG_TYPE(0, kString);
 
     try {
-        return Format(args, 1ULL, args[1].toStr());
+        return TrFormat(args, 1ULL, args[0].toStr());
     }
     CATCH_AND_THROW;
 }
@@ -140,7 +149,7 @@ Local<Value> I18nClass::trl(const Arguments& args) {
     CHECK_ARG_TYPE(1, kString);
 
     try {
-        return Format(args, 2ULL, args[1].toStr(), args[0].toStr());
+        return TrFormat(args, 2ULL, args[1].toStr(), args[0].toStr());
     }
     CATCH_AND_THROW;
 }
