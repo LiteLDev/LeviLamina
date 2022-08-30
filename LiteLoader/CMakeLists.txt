@@ -28,7 +28,7 @@ add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
         -D_USRDLL -D_AMD64_ -DNOMINMAX)
 
 add_compile_options(
-        /permissive /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
+        /permissive- /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
         /external:W1 /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /EHa /nologo /Ot /diagnostics:column
         /utf-8
 )
