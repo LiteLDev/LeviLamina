@@ -45,24 +45,81 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRY
 #endif
 MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
+    /**
+     * @symbol ?_parseItemDefinition@ItemRegistry@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@3@1W4ItemVersion@@W4PackType@@@Z
+     */
     MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
+    /**
+     * @symbol ?addItemToTagMap@ItemRegistry@@SAXAEBVItem@@@Z
+     */
     MCAPI static void addItemToTagMap(class Item const &);
+    /**
+     * @symbol ?allowTagUpdate@ItemRegistry@@SA?AVTagUpdateToken@@XZ
+     */
     MCAPI static class TagUpdateToken allowTagUpdate();
+    /**
+     * @symbol ?alterAvailableCreativeItems@ItemRegistry@@SAXPEAVActorInfoRegistry@@AEAVLevelData@@@Z
+     */
     MCAPI static void alterAvailableCreativeItems(class ActorInfoRegistry *, class LevelData &);
+    /**
+     * @symbol ?clearItemAndCreativeItemRegistry@ItemRegistry@@SAXXZ
+     */
     MCAPI static void clearItemAndCreativeItemRegistry();
+    /**
+     * @symbol ?digestServerItemComponents@ItemRegistry@@SAXAEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@@Z
+     */
     MCAPI static void digestServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
+    /**
+     * @symbol ?finishedRegistration@ItemRegistry@@SAXXZ
+     */
     MCAPI static void finishedRegistration();
+    /**
+     * @symbol ?getItem@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@AEBVBlock@@@Z
+     */
     MCAPI static class WeakPtr<class Item> getItem(class Block const &);
+    /**
+     * @symbol ?getItem@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@AEBVBlockLegacy@@@Z
+     */
     MCAPI static class WeakPtr<class Item> getItem(class BlockLegacy const &);
+    /**
+     * @symbol ?getItem@ItemRegistry@@SA?AV?$WeakPtr@VItem@@@@F@Z
+     */
     MCAPI static class WeakPtr<class Item> getItem(short);
+    /**
+     * @symbol ?getItemCount@ItemRegistry@@SAHXZ
+     */
     MCAPI static int getItemCount();
+    /**
+     * @symbol ?getItemResponseFactory@ItemRegistry@@SAPEAVItemEventResponseFactory@@XZ
+     */
     MCAPI static class ItemEventResponseFactory * getItemResponseFactory();
+    /**
+     * @symbol ?getNameFromAlias@ItemRegistry@@SA?AU?$pair@VHashedString@@H@std@@AEBVHashedString@@H@Z
+     */
     MCAPI static struct std::pair<class HashedString, int> getNameFromAlias(class HashedString const &, int);
+    /**
+     * @symbol ?getNameFromLegacyID@ItemRegistry@@SA?AVHashedString@@F@Z
+     */
     MCAPI static class HashedString getNameFromLegacyID(short);
+    /**
+     * @symbol ?getNameToItemMap@ItemRegistry@@SAAEBV?$unordered_map@VHashedString@@V?$WeakPtr@VItem@@@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@V?$WeakPtr@VItem@@@@@std@@@4@@std@@XZ
+     */
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item>>>> const & getNameToItemMap();
+    /**
+     * @symbol ?initCreativeItemsServer@ItemRegistry@@SAXPEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@_NAEBVExperiments@@V?$function@$$A6AXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z@std@@@Z
+     */
     MCAPI static void initCreativeItemsServer(class ActorInfoRegistry *, class BlockDefinitionGroup *, bool, class Experiments const &, class std::function<void (class ItemRegistryRef, class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &)>);
+    /**
+     * @symbol ?initServerData@ItemRegistry@@SAXAEAVResourcePackManager@@AEBVExperiments@@W4ItemVersion@@@Z
+     */
     MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum ItemVersion);
+    /**
+     * @symbol ?isComponentBasedItemSchema@ItemRegistry@@SA_NAEBVSemVersion@@@Z
+     */
     MCAPI static bool isComponentBasedItemSchema(class SemVersion const &);
+    /**
+     * @symbol ?isCreativeItem@ItemRegistry@@SA_NAEBVItemInstance@@@Z
+     */
     MCAPI static bool isCreativeItem(class ItemInstance const &);
 MCAPI static bool mCanAddTags;
 MCAPI static bool mCheckForItemWorldCompatibility;
@@ -72,29 +129,95 @@ MCAPI static class ItemRegistry mItemRegistryInstance;
 MCAPI static std::unique_ptr<class ItemEventResponseFactory> mResponseFactory;
 MCAPI static bool mServerInitializingCreativeItems;
 MCAPI static class BaseGameVersion mWorldBaseGameVersion;
+    /**
+     * @symbol ?registerAlias@ItemRegistry@@SAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
+     */
     MCAPI static void registerAlias(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
+    /**
+     * @symbol ?registerComplexAlias@ItemRegistry@@SAAEAVItem@@AEBVHashedString@@V?$function@$$A6A?AVHashedString@@F@Z@std@@@Z
+     */
     MCAPI static class Item & registerComplexAlias(class HashedString const &, class std::function<class HashedString (short)>);
+    /**
+     * @symbol ?registerLegacyID@ItemRegistry@@SAXAEBVHashedString@@F@Z
+     */
     MCAPI static void registerLegacyID(class HashedString const &, short);
+    /**
+     * @symbol ?registerLegacyMapping@ItemRegistry@@SAXAEBVHashedString@@0AEBVBaseGameVersion@@@Z
+     */
     MCAPI static void registerLegacyMapping(class HashedString const &, class HashedString const &, class BaseGameVersion const &);
+    /**
+     * @symbol ?remapToFullLegacyNameByHash@ItemRegistry@@SA_K_K@Z
+     */
     MCAPI static unsigned __int64 remapToFullLegacyNameByHash(unsigned __int64);
+    /**
+     * @symbol ?remapToLegacyNameByHash@ItemRegistry@@SA_K_K@Z
+     */
     MCAPI static unsigned __int64 remapToLegacyNameByHash(unsigned __int64);
+    /**
+     * @symbol ?setOwningThreadId@ItemRegistry@@SAXVid@thread@std@@@Z
+     */
     MCAPI static void setOwningThreadId(class std::thread::id);
+    /**
+     * @symbol ?setWorldBaseGameVersion@ItemRegistry@@SAXAEBVBaseGameVersion@@@Z
+     */
     MCAPI static void setWorldBaseGameVersion(class BaseGameVersion const &);
+    /**
+     * @symbol ?shutdown@ItemRegistry@@SAXXZ
+     */
     MCAPI static void shutdown();
+    /**
+     * @symbol ?startRegistration@ItemRegistry@@SAXXZ
+     */
     MCAPI static void startRegistration();
+    /**
+     * @symbol ?validateServerItemComponents@ItemRegistry@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@3@@Z
+     */
     MCAPI static std::vector<std::string> validateServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &);
 
 //private:
+    /**
+     * @symbol ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAH0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByName(int &, int &, std::string const &) const;
+    /**
+     * @symbol ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByName(int &, std::string const &) const;
+    /**
+     * @symbol ?lookupByName@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
+    /**
+     * @symbol ?lookupByNameNoAlias@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string const &) const;
+    /**
+     * @symbol ?lookupByNameNoAlias@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &) const;
+    /**
+     * @symbol ?lookupByNameNoParsing@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &) const;
+    /**
+     * @symbol ?lookupByNameNoParsing@ItemRegistry@@AEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(class HashedString const &) const;
+    /**
+     * @symbol ?lookupByTag@ItemRegistry@@AEBAAEBV?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@AEBUItemTag@@@Z
+     */
     MCAPI class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>> const & lookupByTag(struct ItemTag const &) const;
+    /**
+     * @symbol ?registerItem@ItemRegistry@@AEAAXV?$SharedPtr@VItem@@@@@Z
+     */
     MCAPI void registerItem(class SharedPtr<class Item>);
+    /**
+     * @symbol ?unregisterItem@ItemRegistry@@AEAAXAEBVHashedString@@@Z
+     */
     MCAPI void unregisterItem(class HashedString const &);
+    /**
+     * @symbol ?_loadItemDefinition@ItemRegistry@@CAXAEAVValue@Json@@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@std@@1W4ItemVersion@@W4PackType@@@Z
+     */
     MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
 
 private:

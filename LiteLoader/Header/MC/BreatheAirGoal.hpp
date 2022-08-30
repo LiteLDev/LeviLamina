@@ -30,20 +30,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BreatheAirGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@BreatheAirGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@BreatheAirGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol ?canBeInterrupted@BreatheAirGoal@@UEAA_NXZ
+     */
     virtual bool canBeInterrupted();
+    /**
+     * @vtable 4
+     * @symbol ?start@BreatheAirGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol ?tick@BreatheAirGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@BreatheAirGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHEAIRGOAL
 #endif
+    /**
+     * @symbol ??0BreatheAirGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI BreatheAirGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?_determineApproximateDepth@BreatheAirGoal@@AEAAHXZ
+     */
     MCAPI int _determineApproximateDepth();
+    /**
+     * @symbol ?_findAirPosition@BreatheAirGoal@@AEAAXXZ
+     */
     MCAPI void _findAirPosition();
 
 private:

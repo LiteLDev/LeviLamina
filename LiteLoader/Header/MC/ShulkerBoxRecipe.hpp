@@ -31,12 +31,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShulkerBoxRecipe();
+    /**
+     * @vtable 1
+     * @symbol ?assemble@ShulkerBoxRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /**
+     * @vtable 12
+     * @symbol ?itemsMatch@ShulkerBoxRecipe@@UEBA_NAEBVItemDescriptor@@0@Z
+     */
     virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &) const;
+    /**
+     * @vtable 14
+     * @symbol ?itemsMatch@ShulkerBoxRecipe@@UEBA_NAEBVItemDescriptor@@HHPEBVCompoundTag@@@Z
+     */
     virtual bool itemsMatch(class ItemDescriptor const &, int, int, class CompoundTag const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXRECIPE
 #endif
+    /**
+     * @symbol ??0ShulkerBoxRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@4@VHashedString@@HPEBVUUID@mce@@@Z
+     */
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
 MCAPI static class mce::UUID const ID;
 

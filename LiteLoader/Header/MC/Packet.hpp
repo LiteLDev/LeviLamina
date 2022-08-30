@@ -68,17 +68,54 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~Packet();
+    /**
+     * @vtable 1
+     * @symbol ?getId@UpdateTradePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const = 0;
+    /**
+     * @vtable 2
+     * @symbol ?getName@UpdateTradePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const = 0;
+    /**
+     * @vtable 3
+     * @symbol ?write@UpdateTradePacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const = 0;
+    /**
+     * @vtable 4
+     * @symbol ?readExtended@Packet@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    /**
+     * @vtable 5
+     * @symbol ?disallowBatching@Packet@@UEBA_NXZ
+     */
     virtual bool disallowBatching() const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@UpdateTradePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET
 #endif
+    /**
+     * @symbol ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z
+     */
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
+    /**
+     * @symbol ?readNoHeader@Packet@@QEAA_NAEAVReadOnlyBinaryStream@@AEBW4SubClientId@@AEAUExtendedStreamReadResult@@@Z
+     */
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum SubClientId const &, struct ExtendedStreamReadResult &);
+    /**
+     * @symbol ?writeWithHeader@Packet@@QEBAXW4SubClientId@@AEAVBinaryStream@@@Z
+     */
     MCAPI void writeWithHeader(enum SubClientId, class BinaryStream &) const;
 
 };

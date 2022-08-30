@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CentralSpikedFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@CentralSpikedFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CENTRALSPIKEDFEATURE
 #endif
+    /**
+     * @symbol ??0CentralSpikedFeature@@QEAA@AEBVBlock@@@Z
+     */
     MCAPI CentralSpikedFeature(class Block const &);
 
 };

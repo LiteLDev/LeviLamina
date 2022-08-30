@@ -31,22 +31,81 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ComparatorBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@ComparatorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@ComparatorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@ComparatorBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 38
+     * @symbol ?getOutputSignal@ComparatorBlockActor@@UEAAHXZ
+     */
     virtual int getOutputSignal();
+    /**
+     * @vtable 39
+     * @symbol ?setOutputSignal@ComparatorBlockActor@@UEAAXH@Z
+     */
     virtual void setOutputSignal(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0ComparatorBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI ComparatorBlockActor(class BlockPos const &);
 
 };

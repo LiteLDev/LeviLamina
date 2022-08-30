@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATECOMMANDPARAM
 #endif
+    /**
+     * @symbol ??0BlockStateCommandParam@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Type@0@@Z
+     */
     MCAPI BlockStateCommandParam(std::string, std::string, enum BlockStateCommandParam::Type);
+    /**
+     * @symbol ?setBlockState@BlockStateCommandParam@@QEBA_NPEAPEBVBlock@@AEAVCommandOutput@@@Z
+     */
     MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;
+    /**
+     * @symbol ??1BlockStateCommandParam@@QEAA@XZ
+     */
     MCAPI ~BlockStateCommandParam();
 
 };

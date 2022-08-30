@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHCOMPONENT
 #endif
+    /**
+     * @symbol ?getPreferredPath@PreferredPathComponent@@QEAAAEBUPreferredPathDescription@@AEAVActor@@@Z
+     */
     MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
+    /**
+     * @symbol ?initFromDefinition@PreferredPathComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void initFromDefinition(class Actor &);
 
 };

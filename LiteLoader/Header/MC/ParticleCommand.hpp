@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ParticleCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@ParticleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLECOMMAND
 #endif
+    /**
+     * @symbol ?setup@ParticleCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

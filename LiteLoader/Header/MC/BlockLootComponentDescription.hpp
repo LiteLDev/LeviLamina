@@ -27,13 +27,31 @@ public:
     BlockLootComponentDescription() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockLootComponentDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getName@BlockLootComponentDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?initializeComponent@BlockLootComponentDescription@@UEBAXAEAVEntityContext@@@Z
+     */
     virtual void initializeComponent(class EntityContext &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLOOTCOMPONENTDESCRIPTION
 #endif
 MCAPI static std::string const NameID;
+    /**
+     * @symbol ?bindType@BlockLootComponentDescription@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?registerVersionUpgrades@BlockLootComponentDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

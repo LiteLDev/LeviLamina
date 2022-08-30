@@ -29,13 +29,28 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MangroveTreeTrunk();
+    /**
+     * @vtable 1
+     * @symbol ?placeTrunk@MangroveTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
+     */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
+    /**
+     * @vtable 2
+     * @symbol ?getTreeHeight@MangroveTreeTrunk@@UEBAHAEAVRandom@@@Z
+     */
     virtual int getTreeHeight(class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVETREETRUNK
 #endif
 
 //private:
+    /**
+     * @symbol ?_placeBranch@MangroveTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@PEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEAVBlockPos@@HEHHPEBVBlock@@@Z
+     */
     MCAPI void _placeBranch(class IBlockWorldGenAPI &, std::vector<class BlockPos> *, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class BlockPos &, int, unsigned char, int, int, class Block const *) const;
 
 private:

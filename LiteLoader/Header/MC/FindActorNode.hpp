@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FindActorNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@FindActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@FindActorNode@@EEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDACTORNODE
 #endif
+    /**
+     * @symbol ??0FindActorNode@@QEAA@XZ
+     */
     MCAPI FindActorNode();
 
 };

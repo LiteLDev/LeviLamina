@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMECOMPONENT
 #endif
+    /**
+     * @symbol ??1OnActorEnterVolumeComponent@@QEAA@XZ
+     */
     MCAPI ~OnActorEnterVolumeComponent();
 
 };

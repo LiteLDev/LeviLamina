@@ -31,7 +31,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DefaultMobSpawner();
+    /**
+     * @vtable 4
+     * @symbol ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
+     */
     virtual class BlockPos const & getPos();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTMOBSPAWNER
 #endif

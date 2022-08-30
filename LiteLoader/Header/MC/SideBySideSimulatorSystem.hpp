@@ -31,13 +31,37 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDESIMULATORSYSTEM
 #endif
+    /**
+     * @symbol ?_clearRemappings@SideBySideSimulatorSystem@@SAXV?$OptionalGlobalT@USideBySideRemappingComponent@@VEntityRegistryBase@@@@@Z
+     */
     MCAPI static void _clearRemappings(class OptionalGlobalT<struct SideBySideRemappingComponent, class EntityRegistryBase>);
+    /**
+     * @symbol ?createBegin@SideBySideSimulatorSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createBegin();
+    /**
+     * @symbol ?createClearRemappingsSystem@SideBySideSimulatorSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createClearRemappingsSystem();
+    /**
+     * @symbol ?createEnd@SideBySideSimulatorSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createEnd();
+    /**
+     * @symbol ?createMigrator@SideBySideSimulatorSystem@@SA?AUTickingSystemWithInfo@@V?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@std@@AEBV?$vector@IV?$allocator@I@std@@@4@@Z
+     */
     MCAPI static struct TickingSystemWithInfo createMigrator(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, std::vector<unsigned int> const &);
+    /**
+     * @symbol ?createSideBySideResultMigratorSystem@SideBySideSimulatorSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createSideBySideResultMigratorSystem();
+    /**
+     * @symbol ?tickBegin@SideBySideSimulatorSystem@@SAXVEntityFactory@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@USideBySideSimulatorComponent@@V?$FlagComponent@UUsesECSMovementFlag@@@@@@V?$OptionalGlobalT@USideBySideRemappingComponent@@VEntityRegistryBase@@@@@Z
+     */
     MCAPI static void tickBegin(class EntityFactory, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>, struct SideBySideSimulatorComponent, class FlagComponent<struct UsesECSMovementFlag>>, class OptionalGlobalT<struct SideBySideRemappingComponent, class EntityRegistryBase>);
+    /**
+     * @symbol ?tickEnd@SideBySideSimulatorSystem@@SAXV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@USideBySideSimulatorComponent@@@@VEntityFactory@@@Z
+     */
     MCAPI static void tickEnd(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct SideBySideSimulatorComponent>, class EntityFactory);
 
 };

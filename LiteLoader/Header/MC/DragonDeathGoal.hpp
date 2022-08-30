@@ -30,18 +30,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DragonDeathGoal();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@DragonDeathGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@DragonDeathGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@DragonDeathGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@DragonDeathGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONDEATHGOAL
+    /**
+     * @vtable -1
+     * @symbol ?canContinueToUse@DragonDeathGoal@@UEAA_NXZ
+     */
     MCVAPI bool canContinueToUse();
+    /**
+     * @vtable -1
+     * @symbol ?canUse@DragonDeathGoal@@UEAA_NXZ
+     */
     MCVAPI bool canUse();
 #endif
+    /**
+     * @symbol ??0DragonDeathGoal@@QEAA@AEAVEnderDragon@@@Z
+     */
     MCAPI DragonDeathGoal(class EnderDragon &);
 
 };

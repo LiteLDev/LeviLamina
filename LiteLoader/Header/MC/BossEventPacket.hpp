@@ -42,15 +42,44 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BossEventPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@BossEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@BossEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@BossEventPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@BossEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSEVENTPACKET
 #endif
+    /**
+     * @symbol ??0BossEventPacket@@QEAA@XZ
+     */
     MCAPI BossEventPacket();
+    /**
+     * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
+     */
     MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
+    /**
+     * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
+     */
     MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
 
 };

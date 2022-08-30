@@ -31,15 +31,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ResourceUriCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@ResourceUriCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEURICOMMAND
 #endif
+    /**
+     * @symbol ?setup@ResourceUriCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
+    /**
+     * @symbol ?_executeClear@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
+     */
     MCAPI void _executeClear(class Level &, class Player *, class CommandOutput &) const;
+    /**
+     * @symbol ?_executeNamed@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
+     */
     MCAPI void _executeNamed(class Level &, class Player *, class CommandOutput &) const;
+    /**
+     * @symbol ?_executeUriOnly@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
+     */
     MCAPI void _executeUriOnly(class Level &, class Player *, class CommandOutput &) const;
 
 private:

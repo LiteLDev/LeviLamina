@@ -28,8 +28,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCHARGEEVENT
 #endif
+    /**
+     * @symbol ??0ItemChargeEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI ItemChargeEvent(struct ItemChargeEvent const &);
+    /**
+     * @symbol ??0ItemChargeEvent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI ItemChargeEvent(struct ItemChargeEvent &&);
+    /**
+     * @symbol ??1ItemChargeEvent@@QEAA@XZ
+     */
     MCAPI ~ItemChargeEvent();
 
 };

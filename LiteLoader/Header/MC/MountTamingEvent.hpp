@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTTAMINGEVENT
 #endif
+    /**
+     * @symbol ??1MountTamingEvent@@QEAA@XZ
+     */
     MCAPI ~MountTamingEvent();
 
 };

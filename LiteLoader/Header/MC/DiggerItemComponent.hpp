@@ -30,19 +30,62 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DiggerItemComponent();
+    /**
+     * @vtable 1
+     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGERITEMCOMPONENT
 #endif
+    /**
+     * @symbol ?canDestroySpecial@DiggerItemComponent@@QEBA_NAEBVBlock@@@Z
+     */
     MCAPI bool canDestroySpecial(class Block const &) const;
+    /**
+     * @symbol ?getDestroySpeed@DiggerItemComponent@@QEAAMAEBVItemStackBase@@AEBVBlock@@@Z
+     */
     MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
+    /**
+     * @symbol ?mineBlock@DiggerItemComponent@@QEAA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+     */
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
+    /**
+     * @symbol ?bindType@DiggerItemComponent@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier@DiggerItemComponent@@SAAEBVHashedString@@XZ
+     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

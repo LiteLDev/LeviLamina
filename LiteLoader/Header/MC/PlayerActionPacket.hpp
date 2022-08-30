@@ -73,18 +73,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PlayerActionPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@PlayerActionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@PlayerActionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@PlayerActionPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@PlayerActionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONPACKET
 #endif
+    /**
+     * @symbol ??0PlayerActionPacket@@QEAA@XZ
+     */
     MCAPI PlayerActionPacket();
+    /**
+     * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@VActorRuntimeID@@@Z
+     */
     MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
+    /**
+     * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@VActorRuntimeID@@@Z
+     */
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, class ActorRuntimeID);
+    /**
+     * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@HVActorRuntimeID@@@Z
+     */
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
+    /**
+     * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@EVActorRuntimeID@@@Z
+     */
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
+    /**
+     * @symbol ??0PlayerActionPacket@@QEAA@W4PlayerActionType@@AEBVBlockPos@@1HVActorRuntimeID@@@Z
+     */
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const &, class BlockPos const &, int, class ActorRuntimeID);
 
 };

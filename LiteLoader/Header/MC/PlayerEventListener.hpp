@@ -31,46 +31,210 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTLISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onCameraSetPlayerRot@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec2@@@Z
+     */
     MCVAPI enum EventResult onCameraSetPlayerRot(class Player &, class Vec2 const &);
+    /**
+     * @vtable -1
+     * @symbol ?onEvent@PlayerEventListener@@UEAA?AW4EventResult@@AEBUPlayerNotificationEvent@@@Z
+     */
     MCVAPI enum EventResult onEvent(struct PlayerNotificationEvent const &);
+    /**
+     * @vtable -1
+     * @symbol ?onLocalPlayerDeath@PlayerEventListener@@UEAA?AW4EventResult@@AEAVIClientInstance@@AEAVLocalPlayer@@@Z
+     */
     MCVAPI enum EventResult onLocalPlayerDeath(class IClientInstance &, class LocalPlayer &);
+    /**
+     * @vtable -1
+     * @symbol ?onLocalPlayerRespawn@PlayerEventListener@@UEAA?AW4EventResult@@AEAVIClientInstance@@AEAVLocalPlayer@@@Z
+     */
     MCVAPI enum EventResult onLocalPlayerRespawn(class IClientInstance &, class LocalPlayer &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerAIStepBegin@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerAIStepBegin(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerAIStepEnd@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerAIStepEnd(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerAction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4PlayerActionType@@AEBVBlockPos@@H@Z
+     */
     MCVAPI enum EventResult onPlayerAction(class Player &, enum PlayerActionType, class BlockPos const &, int);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerAttackedActor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
+     */
     MCVAPI enum EventResult onPlayerAttackedActor(class Player &, class Actor &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerAuthInputApplied@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerAuthInputApplied(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerAuthInputReceived@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerAuthInputReceived(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerAwardAchievement@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
+     */
     MCVAPI enum EventResult onPlayerAwardAchievement(class Player &, enum MinecraftEventing::AchievementIds);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerCaravanChanged@PlayerEventListener@@UEAA?AW4EventResult@@AEBVActor@@H@Z
+     */
     MCVAPI enum EventResult onPlayerCaravanChanged(class Actor const &, int);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerCraftedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@_N22HHH22AEBV?$vector@FV?$allocator@F@std@@@std@@@Z
+     */
     MCVAPI enum EventResult onPlayerCraftedItem(class Player &, class ItemInstance const &, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerCreated@PlayerEventListener@@UEAA?AW4EventResult@@AEAVLocalPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z
+     */
     MCVAPI enum EventResult onPlayerCreated(class LocalPlayer &, std::string const &, std::string const &, bool);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z
+     */
     MCVAPI enum EventResult onPlayerDestroyedBlock(class Player &, int, int, int);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockLegacy@@@Z
+     */
     MCVAPI enum EventResult onPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerEnchantedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemStack@@AEBVItemEnchants@@@Z
+     */
     MCVAPI enum EventResult onPlayerEnchantedItem(class Player &, class ItemStack const &, class ItemEnchants const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerEquippedArmor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
+     */
     MCVAPI enum EventResult onPlayerEquippedArmor(class Player &, class ItemDescriptor const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerInput@PlayerEventListener@@UEAA?AW4EventResult@@AEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@@Z
+     */
     MCVAPI enum EventResult onPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerItemEquipped@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@H@Z
+     */
     MCVAPI enum EventResult onPlayerItemEquipped(class Player &, class ItemInstance const &, int);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerItemPlaceInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z
+     */
     MCVAPI enum EventResult onPlayerItemPlaceInteraction(class Player &, class ItemInstance const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerItemUseInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z
+     */
     MCVAPI enum EventResult onPlayerItemUseInteraction(class Player &, class ItemInstance const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerMove@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerMove(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerMovementAnomaly@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
+     */
     MCVAPI enum EventResult onPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerMovementCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
+     */
     MCVAPI enum EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerMovementRewindCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_K@Z
+     */
     MCVAPI enum EventResult onPlayerMovementRewindCorrected(class Player &, unsigned __int64);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerNamedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
+     */
     MCVAPI enum EventResult onPlayerNamedItem(class Player &, class ItemDescriptor const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerOnGround@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerOnGround(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerPiglinBarter@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     */
     MCVAPI enum EventResult onPlayerPiglinBarter(class Player &, std::string const &, bool);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerPortalBuilt@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
+     */
     MCVAPI enum EventResult onPlayerPortalBuilt(class Player &, class AutomaticID<class Dimension, int>);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerPortalUsed@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
+     */
     MCVAPI enum EventResult onPlayerPortalUsed(class Player &, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerSaved(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerSlide@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerSlide(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerStartRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
+     */
     MCVAPI enum EventResult onPlayerStartRiding(class Player &, class Actor &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerStopRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_N11@Z
+     */
     MCVAPI enum EventResult onPlayerStopRiding(class Player &, bool, bool, bool);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerTargetBlockHit@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
+     */
     MCVAPI enum EventResult onPlayerTargetBlockHit(class Player &, int);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerTeleported(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerTick@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onPlayerTick(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerTurn@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVVec2@@@Z
+     */
     MCVAPI enum EventResult onPlayerTurn(class Player &, class Vec2 &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerWaxOnWaxOff@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
+     */
     MCVAPI enum EventResult onPlayerWaxOnWaxOff(class Player &, int);
+    /**
+     * @vtable -1
+     * @symbol ?onStartDestroyBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@AEAE@Z
+     */
     MCVAPI enum EventResult onStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 #endif
 

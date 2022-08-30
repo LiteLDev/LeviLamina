@@ -31,13 +31,27 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LakeFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@LakeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAKEFEATURE
 #endif
+    /**
+     * @symbol ??0LakeFeature@@QEAA@AEBVBlock@@V?$optional@VXoroshiroPositionalRandomFactory@@@std@@@Z
+     */
     MCAPI LakeFeature(class Block const &, class std::optional<class XoroshiroPositionalRandomFactory>);
 
 //private:
+    /**
+     * @symbol ?_check@LakeFeature@@AEBA_NAEBVBlockPos@@V?$span@_N$0IAA@@gsl@@@Z
+     */
     MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
 
 private:

@@ -30,8 +30,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTHANDLERSLOTINFO
 #endif
+    /**
+     * @symbol ??0ItemStackRequestHandlerSlotInfo@@QEAA@XZ
+     */
     MCAPI ItemStackRequestHandlerSlotInfo();
+    /**
+     * @symbol ??BItemStackRequestHandlerSlotInfo@@QEBA_NXZ
+     */
     MCAPI operator bool() const;
+    /**
+     * @symbol ??1ItemStackRequestHandlerSlotInfo@@QEAA@XZ
+     */
     MCAPI ~ItemStackRequestHandlerSlotInfo();
 
 };

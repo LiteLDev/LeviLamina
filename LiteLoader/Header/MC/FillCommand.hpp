@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FillCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@FillCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILLCOMMAND
 #endif
+    /**
+     * @symbol ?setup@FillCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

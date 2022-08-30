@@ -30,16 +30,50 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~OnUseItemComponent();
+    /**
+     * @vtable 1
+     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VOnUseItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONUSEITEMCOMPONENT
 #endif
+    /**
+     * @symbol ?bindType@OnUseItemComponent@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier@OnUseItemComponent@@SAAEBVHashedString@@XZ
+     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

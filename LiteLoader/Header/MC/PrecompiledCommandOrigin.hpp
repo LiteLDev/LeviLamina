@@ -32,25 +32,105 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PrecompiledCommandOrigin();
+    /**
+     * @vtable 1
+     * @symbol ?getRequestId@PrecompiledCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getRequestId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@PrecompiledCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ
+     */
     virtual class BlockPos getBlockPosition() const;
+    /**
+     * @vtable 4
+     * @symbol ?getWorldPosition@PrecompiledCommandOrigin@@UEBA?AVVec3@@XZ
+     */
     virtual class Vec3 getWorldPosition() const;
+    /**
+     * @vtable 5
+     * @symbol ?getRotation@PrecompiledCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+     */
     virtual class std::optional<class Vec2> getRotation() const;
+    /**
+     * @vtable 6
+     * @symbol ?getLevel@PrecompiledCommandOrigin@@UEBAPEAVLevel@@XZ
+     */
     virtual class Level * getLevel() const;
+    /**
+     * @vtable 7
+     * @symbol ?getDimension@PrecompiledCommandOrigin@@UEBAPEAVDimension@@XZ
+     */
     virtual class Dimension * getDimension() const;
+    /**
+     * @vtable 8
+     * @symbol ?getEntity@PrecompiledCommandOrigin@@UEBAPEAVActor@@XZ
+     */
     virtual class Actor * getEntity() const;
+    /**
+     * @vtable 9
+     * @symbol ?getPermissionsLevel@PrecompiledCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /**
+     * @vtable 10
+     * @symbol ?clone@PrecompiledCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /**
+     * @vtable 13
+     * @symbol ?hasChatPerms@PrecompiledCommandOrigin@@UEBA_NXZ
+     */
     virtual bool hasChatPerms() const;
+    /**
+     * @vtable 14
+     * @symbol ?hasTellPerms@PrecompiledCommandOrigin@@UEBA_NXZ
+     */
     virtual bool hasTellPerms() const;
+    /**
+     * @vtable 15
+     * @symbol ?canUseAbility@PrecompiledCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
+     */
     virtual bool canUseAbility(enum AbilitiesIndex) const;
+    /**
+     * @vtable 16
+     * @symbol ?isWorldBuilder@PrecompiledCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isWorldBuilder() const;
+    /**
+     * @vtable 17
+     * @symbol ?canUseCommandsWithoutCheatsEnabled@PrecompiledCommandOrigin@@UEBA_NXZ
+     */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /**
+     * @vtable 18
+     * @symbol ?isSelectorExpansionAllowed@PrecompiledCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isSelectorExpansionAllowed() const;
+    /**
+     * @vtable 23
+     * @symbol ?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     */
     virtual enum CommandOriginType getOriginType() const;
+    /**
+     * @vtable 29
+     * @symbol ?serialize@PrecompiledCommandOrigin@@UEBA?AVCompoundTag@@XZ
+     */
     virtual class CompoundTag serialize() const;
+    /**
+     * @vtable 30
+     * @symbol ?isValid@PrecompiledCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRECOMPILEDCOMMANDORIGIN
 #endif

@@ -31,19 +31,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MaterialReducerInputValidation();
+    /**
+     * @vtable 1
+     * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    /**
+     * @vtable 2
+     * @symbol ?isItemAllowedInSlot@MaterialReducerInputValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
+     */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?isItemAllowedToAdd@MaterialReducerInputValidation@@UEBA_NAEBVItemStack@@@Z
+     */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
+     */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol ?getContainerOffset@MaterialReducerInputValidation@@UEBAHAEBVContainerScreenContext@@@Z
+     */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERINPUTVALIDATION
+    /**
+     * @vtable -1
+     * @symbol ?canDestroy@MaterialReducerInputValidation@@UEBA_NAEBVContainerScreenContext@@@Z
+     */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?getAvailableSetCount@MaterialReducerInputValidation@@UEBAHHAEBVItemStackBase@@@Z
+     */
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
+    /**
+     * @symbol ??0MaterialReducerInputValidation@@QEAA@AEBVContainerScreenContext@@@Z
+     */
     MCAPI MaterialReducerInputValidation(class ContainerScreenContext const &);
 
 };

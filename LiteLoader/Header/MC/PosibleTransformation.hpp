@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSIBLETRANSFORMATION
 #endif
+    /**
+     * @symbol ??1PosibleTransformation@@QEAA@XZ
+     */
     MCAPI ~PosibleTransformation();
 
 };

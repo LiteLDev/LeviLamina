@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONPASSENGERUTILITY
 #endif
+    /**
+     * @symbol ?getNewPassengerPosition@PositionPassengerUtility@@SA?AVVec3@@AEBVSynchedActorData@@AEBV2@AEBVVec2@@@Z
+     */
     MCAPI static class Vec3 getNewPassengerPosition(class SynchedActorData const &, class Vec3 const &, class Vec2 const &);
 
 };

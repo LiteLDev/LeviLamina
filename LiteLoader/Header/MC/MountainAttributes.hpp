@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTAINATTRIBUTES
 #endif
+    /**
+     * @symbol ??1MountainAttributes@@QEAA@XZ
+     */
     MCAPI ~MountainAttributes();
 
 };

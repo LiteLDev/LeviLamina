@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGCONTEXTVARIABLE
 #endif
+    /**
+     * @symbol ??0MolangContextVariable@@QEAA@AEBVHashedString@@@Z
+     */
     MCAPI MolangContextVariable(class HashedString const &);
+    /**
+     * @symbol ??1MolangContextVariable@@QEAA@XZ
+     */
     MCAPI ~MolangContextVariable();
 
 };

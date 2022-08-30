@@ -29,9 +29,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKCONFIGURATIONMANAGER
 #endif
+    /**
+     * @symbol ??0ScriptPackConfigurationManager@@QEAA@XZ
+     */
     MCAPI ScriptPackConfigurationManager();
+    /**
+     * @symbol ??0ScriptPackConfigurationManager@@QEAA@AEBV0@@Z
+     */
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
+    /**
+     * @symbol ?getPackConfiguration@ScriptPackConfigurationManager@@QEBAAEBVScriptPackConfiguration@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class ScriptPackConfiguration const & getPackConfiguration(std::string const &) const;
+    /**
+     * @symbol ?loadPackConfigs@ScriptPackConfigurationManager@@QEAAXAEBVPath@Core@@@Z
+     */
     MCAPI void loadPackConfigs(class Core::Path const &);
 
 //private:

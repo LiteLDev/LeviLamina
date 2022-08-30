@@ -30,7 +30,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~IdentifierDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getJsonName@IdentifierDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTIFIERDESCRIPTION
 #endif

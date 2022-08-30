@@ -30,14 +30,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~EducationSettingsPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@EducationSettingsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@EducationSettingsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@EducationSettingsPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@EducationSettingsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONSETTINGSPACKET
 #endif
+    /**
+     * @symbol ??0EducationSettingsPacket@@QEAA@XZ
+     */
     MCAPI EducationSettingsPacket();
+    /**
+     * @symbol ??0EducationSettingsPacket@@QEAA@UEducationLevelSettings@@@Z
+     */
     MCAPI EducationSettingsPacket(struct EducationLevelSettings);
 
 };

@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORDEFINITION
 #endif
+    /**
+     * @symbol ??0BlockBreakSensorDefinition@@QEAA@XZ
+     */
     MCAPI BlockBreakSensorDefinition();
+    /**
+     * @symbol ?initialize@BlockBreakSensorDefinition@@QEAAXAEAVEntityContext@@AEAVBlockBreakSensorComponent@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class BlockBreakSensorComponent &);
+    /**
+     * @symbol ?buildSchema@BlockBreakSensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBlockBreakSensorDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockBreakSensorDefinition>> &);
 
 };

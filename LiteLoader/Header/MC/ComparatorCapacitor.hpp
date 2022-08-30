@@ -32,26 +32,96 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ComparatorCapacitor();
+    /**
+     * @vtable 6
+     * @symbol ?canConsumePowerAnyDirection@ComparatorCapacitor@@UEBA_NXZ
+     */
     virtual bool canConsumePowerAnyDirection() const;
+    /**
+     * @vtable 7
+     * @symbol ?canConsumerPower@ComparatorCapacitor@@UEBA_NXZ
+     */
     virtual bool canConsumerPower() const;
+    /**
+     * @vtable 10
+     * @symbol ?removeSource@ComparatorCapacitor@@UEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
+     */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
+    /**
+     * @vtable 11
+     * @symbol ?addSource@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    /**
+     * @vtable 12
+     * @symbol ?allowConnection@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /**
+     * @vtable 14
+     * @symbol ?evaluate@ComparatorCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /**
+     * @vtable 15
+     * @symbol ?cacheValues@ComparatorCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
+    /**
+     * @vtable 16
+     * @symbol ?updateDependencies@ComparatorCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
+     */
     virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
+    /**
+     * @vtable 17
+     * @symbol __unk_vfn_17
+     */
     virtual void __unk_vfn_17();
+    /**
+     * @vtable 20
+     * @symbol __unk_vfn_20
+     */
     virtual void __unk_vfn_20();
+    /**
+     * @vtable 22
+     * @symbol ?getCircuitComponentType@ComparatorCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
+    /**
+     * @vtable 24
+     * @symbol ?getPoweroutDirection@ComparatorCapacitor@@UEBAEXZ
+     */
     virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORCAPACITOR
 #endif
+    /**
+     * @symbol ??0ComparatorCapacitor@@QEAA@XZ
+     */
     MCAPI ComparatorCapacitor();
+    /**
+     * @symbol ?clearAnalogStrength@ComparatorCapacitor@@QEAAXE@Z
+     */
     MCAPI void clearAnalogStrength(unsigned char);
+    /**
+     * @symbol ?getOldStrength@ComparatorCapacitor@@QEAAHXZ
+     */
     MCAPI int getOldStrength();
+    /**
+     * @symbol ?isSubtractMode@ComparatorCapacitor@@QEAA_NXZ
+     */
     MCAPI bool isSubtractMode();
+    /**
+     * @symbol ?setAnalogStrength@ComparatorCapacitor@@QEAAXHE@Z
+     */
     MCAPI void setAnalogStrength(int, unsigned char);
+    /**
+     * @symbol ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
+     */
     MCAPI void setMode(enum ComparatorCapacitor::Mode);
 
 };

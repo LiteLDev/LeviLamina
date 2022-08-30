@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKADDRESS
 #endif
+    /**
+     * @symbol ??1NetworkAddress@@QEAA@XZ
+     */
     MCAPI ~NetworkAddress();
 
 };

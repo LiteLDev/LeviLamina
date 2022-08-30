@@ -20,6 +20,9 @@ namespace EconomyTradeableComponentInternal {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?_filterTradeByBiome@EconomyTradeableComponentInternal@@YAHAEAV?$vector@UTradeItem@@V?$allocator@UTradeItem@@@std@@@std@@H@Z
+     */
     MCAPI int _filterTradeByBiome(std::vector<struct TradeItem> &, int);
 
 };

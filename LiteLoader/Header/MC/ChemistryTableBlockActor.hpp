@@ -31,30 +31,109 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCKACTOR
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@ChemistryTableBlockActor@@UEAAPEAVContainer@@XZ
+     */
     MCVAPI class Container * getContainer();
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ
+     */
     MCVAPI class Container const * getContainer() const;
+    /**
+     * @vtable -1
+     * @symbol ?getContainerSize@ChemistryTableBlockActor@@UEBAHXZ
+     */
     MCVAPI int getContainerSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?getItem@ChemistryTableBlockActor@@UEBAAEBVItemStack@@H@Z
+     */
     MCVAPI class ItemStack const & getItem(int) const;
+    /**
+     * @vtable -1
+     * @symbol ?getMaxStackSize@ChemistryTableBlockActor@@UEBAHXZ
+     */
     MCVAPI int getMaxStackSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?load@ChemistryTableBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable -1
+     * @symbol ?onRemoved@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void onRemoved(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?save@ChemistryTableBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     MCVAPI bool save(class CompoundTag &) const;
+    /**
+     * @vtable -1
+     * @symbol ?serverInitItemStackIds@ChemistryTableBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
+    /**
+     * @vtable -1
+     * @symbol ?setItem@ChemistryTableBlockActor@@UEAAXHAEBVItemStack@@@Z
+     */
     MCVAPI void setItem(int, class ItemStack const &);
+    /**
+     * @vtable -1
+     * @symbol ?startOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void startOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?stopOpen@ChemistryTableBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void stopOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?tick@ChemistryTableBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void tick(class BlockSource &);
 #endif
+    /**
+     * @symbol ??0ChemistryTableBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI ChemistryTableBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?isSameType@ChemistryTableBlockActor@@QEBA_NW4ChemistryTableType@@@Z
+     */
     MCAPI bool isSameType(enum ChemistryTableType) const;
+    /**
+     * @symbol ?playerOpenLabTable@ChemistryTableBlockActor@@QEAAXAEAVPlayer@@@Z
+     */
     MCAPI void playerOpenLabTable(class Player &);
+    /**
+     * @symbol ?reset@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@@Z
+     */
     MCAPI void reset(class BlockSource &);
+    /**
+     * @symbol ?serverCombine@ChemistryTableBlockActor@@QEAAXAEAVBlockSource@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
+     */
     MCAPI void serverCombine(class BlockSource &, std::vector<class ItemStack> const &);
+    /**
+     * @symbol ?serverLabTablePacket_DEPRECATED@ChemistryTableBlockActor@@QEAAXAEBVLabTablePacket@@AEAVBlockSource@@@Z
+     */
     MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const &, class BlockSource &);
 
 //private:
+    /**
+     * @symbol ?_createReaction@ChemistryTableBlockActor@@AEAA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@AEAVRandom@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@3@@Z
+     */
     MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random &, std::vector<class ItemStack> const &);
+    /**
+     * @symbol ?_popPendingReactionOutput@ChemistryTableBlockActor@@AEAAXAEAVBlockSource@@@Z
+     */
     MCAPI void _popPendingReactionOutput(class BlockSource &);
+    /**
+     * @symbol ?_updateType@ChemistryTableBlockActor@@AEAA?AW4ChemistryTableType@@AEAVBlockSource@@@Z
+     */
     MCAPI enum ChemistryTableType _updateType(class BlockSource &);
 
 private:

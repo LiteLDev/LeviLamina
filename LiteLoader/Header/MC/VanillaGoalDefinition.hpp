@@ -22,6 +22,9 @@ namespace VanillaGoalDefinition {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?init@VanillaGoalDefinition@@YAXXZ
+     */
     MCAPI void init();
 
 };

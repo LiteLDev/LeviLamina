@@ -31,28 +31,100 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ConduitBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@ConduitBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@ConduitBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@ConduitBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 18
+     * @symbol ?hasAlphaLayer@ConduitBlockActor@@UEBA_NXZ
+     */
     virtual bool hasAlphaLayer() const;
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 35
+     * @symbol ?_getUpdatePacket@ConduitBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable 36
+     * @symbol ?_onUpdatePacket@ConduitBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDUITBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0ConduitBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI ConduitBlockActor(class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?_animateTick@ConduitBlockActor@@AEBAXAEAVBlockSource@@@Z
+     */
     MCAPI void _animateTick(class BlockSource &) const;
+    /**
+     * @symbol ?_checkShape@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
+     */
     MCAPI void _checkShape(class BlockSource &);
+    /**
+     * @symbol ?_updateTarget@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
+     */
     MCAPI void _updateTarget(class BlockSource &);
 
 private:

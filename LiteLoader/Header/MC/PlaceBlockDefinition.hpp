@@ -32,6 +32,10 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PlaceBlockDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLACEBLOCKDEFINITION
 #endif

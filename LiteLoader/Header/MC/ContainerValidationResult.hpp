@@ -31,10 +31,25 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONRESULT
 #endif
+    /**
+     * @symbol ??0ContainerValidationResult@@QEAA@W4ContainerValidationOutcome@@@Z
+     */
     MCAPI ContainerValidationResult(enum ContainerValidationOutcome);
+    /**
+     * @symbol ??0ContainerValidationResult@@QEAA@$$QEAV?$vector@UContainerValidationOperation@@V?$allocator@UContainerValidationOperation@@@std@@@std@@W4ContainerValidationOutcome@@W4ContainerScreenRequestActionType@@@Z
+     */
     MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum ContainerValidationOutcome, enum ContainerScreenRequestActionType);
+    /**
+     * @symbol ?isSuccess@ContainerValidationResult@@QEBA_NXZ
+     */
     MCAPI bool isSuccess() const;
+    /**
+     * @symbol ?tryGetOperation@ContainerValidationResult@@QEBAPEBUContainerValidationOperation@@W4ContainerValidationOperationType@@@Z
+     */
     MCAPI struct ContainerValidationOperation const * tryGetOperation(enum ContainerValidationOperationType) const;
+    /**
+     * @symbol ??1ContainerValidationResult@@QEAA@XZ
+     */
     MCAPI ~ContainerValidationResult();
 
 };

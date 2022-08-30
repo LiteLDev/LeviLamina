@@ -30,10 +30,25 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXTOWNER
 #endif
+    /**
+     * @symbol ??0StrictEntityContextOwner@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
+     */
     MCAPI StrictEntityContextOwner(class EntityRegistryBase &, class EntityId);
+    /**
+     * @symbol ??0StrictEntityContextOwner@@QEAA@$$QEAV0@@Z
+     */
     MCAPI StrictEntityContextOwner(class StrictEntityContextOwner &&);
+    /**
+     * @symbol ?getStrictContext@StrictEntityContextOwner@@QEBA?AVStrictEntityContext@@XZ
+     */
     MCAPI class StrictEntityContext getStrictContext() const;
+    /**
+     * @symbol ??4StrictEntityContextOwner@@QEAAAEAV0@$$QEAV0@@Z
+     */
     MCAPI class StrictEntityContextOwner & operator=(class StrictEntityContextOwner &&);
+    /**
+     * @symbol ??1StrictEntityContextOwner@@QEAA@XZ
+     */
     MCAPI ~StrictEntityContextOwner();
 
 };

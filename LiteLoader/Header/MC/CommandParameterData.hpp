@@ -89,9 +89,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPARAMETERDATA
 #endif
+    /**
+     * @symbol ??0CommandParameterData@@QEAA@V?$typeid_t@VCommandRegistry@@@@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@2@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@@ZPEBDW4CommandParameterDataType@@7H_NH@Z
+     */
     MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum CommandParameterDataType, char const *, int, bool, int);
+    /**
+     * @symbol ??0CommandParameterData@@QEAA@AEBV0@@Z
+     */
     MCAPI CommandParameterData(class CommandParameterData const &);
+    /**
+     * @symbol ?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z
+     */
     MCAPI class CommandParameterData & addOptions(enum CommandParameterOption);
+    /**
+     * @symbol ??1CommandParameterData@@QEAA@XZ
+     */
     MCAPI ~CommandParameterData();
 
 };

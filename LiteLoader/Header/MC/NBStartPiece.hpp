@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NBStartPiece();
+    /**
+     * @vtable 2
+     * @symbol ?getType@NBStartPiece@@UEBA?AW4StructurePieceType@@XZ
+     */
     virtual enum StructurePieceType getType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBSTARTPIECE
 #endif
+    /**
+     * @symbol ??0NBStartPiece@@QEAA@AEAVRandom@@HH@Z
+     */
     MCAPI NBStartPiece(class Random &, int, int);
 
 };

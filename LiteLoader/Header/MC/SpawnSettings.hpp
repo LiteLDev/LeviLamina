@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNSETTINGS
 #endif
+    /**
+     * @symbol ??1SpawnSettings@@QEAA@XZ
+     */
     MCAPI ~SpawnSettings();
 
 };

@@ -30,11 +30,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DimensionBrightnessRamp();
+    /**
+     * @vtable 1
+     * @symbol ?buildBrightnessRamp@DimensionBrightnessRamp@@UEAAXXZ
+     */
     virtual void buildBrightnessRamp();
+    /**
+     * @vtable 2
+     * @symbol ?getBaseAmbientValue@DimensionBrightnessRamp@@UEBAMXZ
+     */
     virtual float getBaseAmbientValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONBRIGHTNESSRAMP
 #endif
+    /**
+     * @symbol ?getBrightnessRampValue@DimensionBrightnessRamp@@QEBAMH@Z
+     */
     MCAPI float getBrightnessRampValue(int) const;
 
 };

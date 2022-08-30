@@ -32,14 +32,35 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMS
 #endif
+    /**
+     * @symbol ?registerItems@VanillaItems@@SAXVItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@_N@Z
+     */
     MCAPI static void registerItems(class ItemRegistryRef, class BaseGameVersion const &, class Experiments const &, bool);
+    /**
+     * @symbol ?serverInitCreativeItemsCallback@VanillaItems@@SAXVItemRegistryRef@@PEAVActorInfoRegistry@@PEAVBlockDefinitionGroup@@PEAVCreativeItemRegistry@@_NAEBVBaseGameVersion@@AEBVExperiments@@@Z
+     */
     MCAPI static void serverInitCreativeItemsCallback(class ItemRegistryRef, class ActorInfoRegistry *, class BlockDefinitionGroup *, class CreativeItemRegistry *, bool, class BaseGameVersion const &, class Experiments const &);
+    /**
+     * @symbol ?unregisterItems@VanillaItems@@SAXXZ
+     */
     MCAPI static void unregisterItems();
 
 //private:
+    /**
+     * @symbol ?_addConstructionCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@@Z
+     */
     MCAPI static void _addConstructionCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &);
+    /**
+     * @symbol ?_addEquipmentCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@@Z
+     */
     MCAPI static void _addEquipmentCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &);
+    /**
+     * @symbol ?_addItemsCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@@Z
+     */
     MCAPI static void _addItemsCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &);
+    /**
+     * @symbol ?_addNatureCategory@VanillaItems@@CAXPEAVCreativeItemRegistry@@VItemRegistryRef@@AEBVBaseGameVersion@@@Z
+     */
     MCAPI static void _addNatureCategory(class CreativeItemRegistry *, class ItemRegistryRef, class BaseGameVersion const &);
 
 private:

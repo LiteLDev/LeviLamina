@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PIECEWEIGHT
 #endif
+    /**
+     * @symbol ??1PieceWeight@@QEAA@XZ
+     */
     MCAPI ~PieceWeight();
 
 };

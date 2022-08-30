@@ -31,39 +31,171 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LevelListener();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol __unk_vfn_10
+     */
     virtual void __unk_vfn_10();
+    /**
+     * @vtable 11
+     * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
+     */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLISTENER
+    /**
+     * @vtable -1
+     * @symbol ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUTextureUVCoordinateSet@@_N@Z
+     */
     MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum ParticleType, struct TextureUVCoordinateSet const &, bool);
+    /**
+     * @vtable -1
+     * @symbol ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
+     */
     MCVAPI void addParticleEffect(class HashedString const &, class Actor const &, class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
+    /**
+     * @vtable -1
+     * @symbol ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVVec3@@AEBVMolangVariableMap@@@Z
+     */
     MCVAPI void addParticleEffect(class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
+    /**
+     * @vtable -1
+     * @symbol ?addTerrainParticleEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
+     */
     MCVAPI void addTerrainParticleEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
+    /**
+     * @vtable -1
+     * @symbol ?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
+     */
     MCVAPI void addTerrainSlideEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
+    /**
+     * @vtable -1
+     * @symbol ?allChanged@LevelListener@@UEAAXXZ
+     */
     MCVAPI void allChanged();
+    /**
+     * @vtable -1
+     * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
+     */
     MCVAPI void levelEvent(enum LevelEvent, class CompoundTag const &);
+    /**
+     * @vtable -1
+     * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
+     */
     MCVAPI void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    /**
+     * @vtable -1
+     * @symbol ?levelSoundEvent@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
+     */
     MCVAPI void levelSoundEvent(std::string const &, class Vec3 const &, float, float);
+    /**
+     * @vtable -1
+     * @symbol ?levelSoundEvent@LevelListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
+     */
     MCVAPI void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    /**
+     * @vtable -1
+     * @symbol ?onChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+     */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
+    /**
+     * @vtable -1
+     * @symbol ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+     */
     MCVAPI void onChunkReloaded(class ChunkSource &, class LevelChunk &);
+    /**
+     * @vtable -1
+     * @symbol ?onChunkUnloaded@LevelListener@@UEAAXAEAVLevelChunk@@@Z
+     */
     MCVAPI void onChunkUnloaded(class LevelChunk &);
+    /**
+     * @vtable -1
+     * @symbol ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
+     */
     MCVAPI void onEntityAdded(class Actor &);
+    /**
+     * @vtable -1
+     * @symbol ?onEntityRemoved@LevelListener@@UEAAXAEAVActor@@@Z
+     */
     MCVAPI void onEntityRemoved(class Actor &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelDestruction@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI void onLevelDestruction(std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
+     */
     MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short, bool);
+    /**
+     * @vtable -1
+     * @symbol ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
+     */
     MCVAPI void playMusic(std::string const &, class Vec3 const &, float, float);
+    /**
+     * @vtable -1
+     * @symbol ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
+     */
     MCVAPI void playStreamingMusic(std::string const &, int, int, int);
+    /**
+     * @vtable -1
+     * @symbol ?playerListChanged@LevelListener@@UEAAXXZ
+     */
     MCVAPI void playerListChanged();
+    /**
+     * @vtable -1
+     * @symbol ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
+     */
     MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
+    /**
+     * @vtable -1
+     * @symbol ?stopAllSounds@LevelListener@@UEAAXXZ
+     */
     MCVAPI void stopAllSounds();
+    /**
+     * @vtable -1
+     * @symbol ?stopSoundEvent@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI void stopSoundEvent(std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
+     */
     MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);
 #endif
 

@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUEST
 #endif
+    /**
+     * @symbol ??1EventingRequest@@QEAA@XZ
+     */
     MCAPI ~EventingRequest();
 
 };

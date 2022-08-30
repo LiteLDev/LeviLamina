@@ -30,10 +30,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~InMemoryRandomAccessFile();
+    /**
+     * @vtable 1
+     * @symbol ?Read@InMemoryRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
+     */
     virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYRANDOMACCESSFILE
 #endif
+    /**
+     * @symbol ??0InMemoryRandomAccessFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
+     */
     MCAPI InMemoryRandomAccessFile(class std::shared_ptr<class InMemoryFile>);
 
 };

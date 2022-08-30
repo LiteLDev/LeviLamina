@@ -30,12 +30,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemStackRequestActionDestroy();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONDESTROY
 #endif
+    /**
+     * @symbol ??0ItemStackRequestActionDestroy@@QEAA@XZ
+     */
     MCAPI ItemStackRequestActionDestroy();
 
 };

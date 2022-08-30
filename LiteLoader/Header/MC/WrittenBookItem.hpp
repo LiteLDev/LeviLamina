@@ -32,28 +32,111 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WrittenBookItem();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 51
+     * @symbol ?isGlint@WrittenBookItem@@MEBA_NAEBVItemStackBase@@@Z
+     */
     virtual bool isGlint(class ItemStackBase const &) const;
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 60
+     * @symbol ?requiresInteract@WrittenBookItem@@UEBA_NXZ
+     */
     virtual bool requiresInteract() const;
+    /**
+     * @vtable 61
+     * @symbol ?appendFormattedHovertext@WrittenBookItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 85
+     * @symbol ?use@WrittenBookItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /**
+     * @vtable 96
+     * @symbol ?buildDescriptionId@WrittenBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /**
+     * @vtable 119
+     * @symbol ?getInteractText@WrittenBookItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
+     */
     virtual std::string getInteractText(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WRITTENBOOKITEM
 #endif
+    /**
+     * @symbol ??0WrittenBookItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI WrittenBookItem(std::string const &, int);
 MCAPI static int const MAX_GENERATION;
 MCAPI static int const MAX_PAGES;
@@ -68,9 +151,21 @@ MCAPI static class gsl::basic_string_span<char const, -1> const TAG_PAGE_TEXT;
 MCAPI static class gsl::basic_string_span<char const, -1> const TAG_RESOLVED;
 MCAPI static class gsl::basic_string_span<char const, -1> const TAG_TITLE;
 MCAPI static class gsl::basic_string_span<char const, -1> const TAG_XUID;
+    /**
+     * @symbol ?canBeCopied@WrittenBookItem@@SA_NPEBVCompoundTag@@@Z
+     */
     MCAPI static bool canBeCopied(class CompoundTag const *);
+    /**
+     * @symbol ?getGeneration@WrittenBookItem@@SAHPEBVCompoundTag@@@Z
+     */
     MCAPI static int getGeneration(class CompoundTag const *);
+    /**
+     * @symbol ?getPageCount@WrittenBookItem@@SAHAEBVItemStack@@@Z
+     */
     MCAPI static int getPageCount(class ItemStack const &);
+    /**
+     * @symbol ?getPages@WrittenBookItem@@SA?AV?$vector@UPageContent@@V?$allocator@UPageContent@@@std@@@std@@AEBVItemStack@@@Z
+     */
     MCAPI static std::vector<struct PageContent> getPages(class ItemStack const &);
 
 };

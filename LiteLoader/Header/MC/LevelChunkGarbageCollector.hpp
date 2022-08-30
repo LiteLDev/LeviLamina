@@ -32,12 +32,27 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKGARBAGECOLLECTOR
 #endif
+    /**
+     * @symbol ??0LevelChunkGarbageCollector@@QEAA@AEAVDimension@@@Z
+     */
     MCAPI LevelChunkGarbageCollector(class Dimension &);
+    /**
+     * @symbol ?acquireDiscardedChunk@LevelChunkGarbageCollector@@QEAAXV?$unique_ptr@VLevelChunk@@U?$default_delete@VLevelChunk@@@std@@@std@@@Z
+     */
     MCAPI void acquireDiscardedChunk(std::unique_ptr<class LevelChunk>);
+    /**
+     * @symbol ?getPendingDeletesCount@LevelChunkGarbageCollector@@QEBA_KXZ
+     */
     MCAPI unsigned __int64 getPendingDeletesCount() const;
+    /**
+     * @symbol ??1LevelChunkGarbageCollector@@QEAA@XZ
+     */
     MCAPI ~LevelChunkGarbageCollector();
 
 //protected:
+    /**
+     * @symbol ?flush@LevelChunkGarbageCollector@@IEAAXXZ
+     */
     MCAPI void flush();
 
 protected:

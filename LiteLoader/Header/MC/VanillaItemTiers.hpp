@@ -39,6 +39,9 @@ MCAPI static class Item::Tier const IRON;
 MCAPI static class Item::Tier const NETHERITE;
 MCAPI static class Item::Tier const STONE;
 MCAPI static class Item::Tier const WOOD;
+    /**
+     * @symbol ?getTierItems@VanillaItemTiers@@SA?BV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVTier@Item@@AEBVBaseGameVersion@@@Z
+     */
     MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const &, class BaseGameVersion const &);
 
 };

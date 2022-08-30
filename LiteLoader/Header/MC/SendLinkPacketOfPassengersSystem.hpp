@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDLINKPACKETOFPASSENGERSSYSTEM
 #endif
+    /**
+     * @symbol ?createSystem@SendLinkPacketOfPassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?sendLinkPacketOfPassengers@SendLinkPacketOfPassengersSystem@@SAXAEAVStrictEntityContext@@AEBUActorUniqueIDComponent@@AEAUVehicleComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USendPacketsComponent@@@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UPassengerComponent@@@@$$CBUActorUniqueIDComponent@@@@@Z
+     */
     MCAPI static void sendLinkPacketOfPassengers(class StrictEntityContext &, struct ActorUniqueIDComponent const &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent> &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent>, struct ActorUniqueIDComponent const>);
 
 };

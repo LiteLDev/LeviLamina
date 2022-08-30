@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HTTP_HEADER_COMPARE
 #endif
+    /**
+     * @symbol ??Rhttp_header_compare@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@0@Z
+     */
     MCAPI bool operator()(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const &, class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const &) const;
 
 };

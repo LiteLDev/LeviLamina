@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBPACKINFO
 #endif
+    /**
+     * @symbol ??1SubpackInfo@@QEAA@XZ
+     */
     MCAPI ~SubpackInfo();
 
 };

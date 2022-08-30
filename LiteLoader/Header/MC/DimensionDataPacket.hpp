@@ -29,13 +29,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DimensionDataPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@DimensionDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@DimensionDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@DimensionDataPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@DimensionDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDATAPACKET
 #endif
+    /**
+     * @symbol ??0DimensionDataPacket@@QEAA@AEBVDimensionDefinitionGroup@@@Z
+     */
     MCAPI DimensionDataPacket(class DimensionDefinitionGroup const &);
 
 };

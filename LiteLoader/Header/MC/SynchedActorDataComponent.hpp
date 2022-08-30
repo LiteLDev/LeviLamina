@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATACOMPONENT
 #endif
+    /**
+     * @symbol ??1SynchedActorDataComponent@@QEAA@XZ
+     */
     MCAPI ~SynchedActorDataComponent();
 
 };

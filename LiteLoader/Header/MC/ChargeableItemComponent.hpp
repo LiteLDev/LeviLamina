@@ -28,19 +28,62 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ChargeableItemComponent();
+    /**
+     * @vtable 1
+     * @symbol ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
+     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEABLEITEMCOMPONENT
 #endif
+    /**
+     * @symbol ?getMovementModifier@ChargeableItemComponent@@QEBAMXZ
+     */
     MCAPI float getMovementModifier() const;
+    /**
+     * @symbol ?use@ChargeableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
+     */
     MCAPI bool use(class ItemStack &, class Player &) const;
+    /**
+     * @symbol ?useTimeDepleted@ChargeableItemComponent@@QEBAXAEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
+     */
     MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;
+    /**
+     * @symbol ?bindType@ChargeableItemComponent@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier@ChargeableItemComponent@@SAAEBVHashedString@@XZ
+     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

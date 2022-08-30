@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGERPROXY
 #endif
+    /**
+     * @symbol ??0WorldTemplateManagerProxy@@QEAA@AEBUWorldTemplateManagerProxyCallbacks@@@Z
+     */
     MCAPI WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const &);
+    /**
+     * @symbol ??1WorldTemplateManagerProxy@@QEAA@XZ
+     */
     MCAPI ~WorldTemplateManagerProxy();
 
 };

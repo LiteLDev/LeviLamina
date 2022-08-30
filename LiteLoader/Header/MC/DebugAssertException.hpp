@@ -29,12 +29,29 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DebugAssertException();
+    /**
+     * @vtable 1
+     * @symbol ?what@DebugAssertException@@UEBAPEBDXZ
+     */
     virtual char const * what() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGASSERTEXCEPTION
 #endif
+    /**
+     * @symbol ??0DebugAssertException@@QEAA@PEBD00H00@Z
+     */
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
+    /**
+     * @symbol ??0DebugAssertException@@QEAA@AEBV0@@Z
+     */
     MCAPI DebugAssertException(class DebugAssertException const &);
+    /**
+     * @symbol ?isEnabled@DebugAssertException@@SA_NXZ
+     */
     MCAPI static bool isEnabled();
 
 //private:

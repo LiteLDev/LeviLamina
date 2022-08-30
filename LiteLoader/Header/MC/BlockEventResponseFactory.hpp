@@ -30,8 +30,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockEventResponseFactory();
+    /**
+     * @vtable 1
+     * @symbol ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
+     */
     virtual void initializeFactory(class Experiments const &);
+    /**
+     * @vtable 2
+     * @symbol ?initSchema@BlockEventResponseFactory@@UEAAXXZ
+     */
     virtual void initSchema();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTRESPONSEFACTORY
 #endif

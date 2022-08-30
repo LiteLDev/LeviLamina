@@ -31,15 +31,51 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FurnaceFuelContainerValidation();
+    /**
+     * @vtable 1
+     * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    /**
+     * @vtable 2
+     * @symbol ?isItemAllowedInSlot@FurnaceFuelContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
+     */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    /**
+     * @vtable 3
+     * @symbol ?getAvailableSetCount@FurnaceFuelContainerValidation@@UEBAHHAEBVItemStackBase@@@Z
+     */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    /**
+     * @vtable 4
+     * @symbol ?isItemAllowedToAdd@FurnaceFuelContainerValidation@@UEBA_NAEBVItemStack@@@Z
+     */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /**
+     * @vtable 5
+     * @symbol ?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
+     */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
+    /**
+     * @vtable 6
+     * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
+     */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
+    /**
+     * @vtable 7
+     * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+     */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACEFUELCONTAINERVALIDATION
+    /**
+     * @vtable -1
+     * @symbol ?getContainerOffset@FurnaceFuelContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
+     */
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
 #endif
 

@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CUSTOMSAVECOMPONENT
 #endif
+    /**
+     * @symbol ?save@CustomSaveComponent@@QEAA_NAEAVLevelStorage@@AEAVActor@@@Z
+     */
     MCAPI bool save(class LevelStorage &, class Actor &);
 
 };

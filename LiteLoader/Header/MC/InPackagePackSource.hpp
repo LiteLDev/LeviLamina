@@ -31,16 +31,51 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~InPackagePackSource();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ
+     */
     virtual enum PackOrigin getPackOrigin() const;
+    /**
+     * @vtable 4
+     * @symbol ?getPackType@InPackagePackSource@@UEBA?AW4PackType@@XZ
+     */
     virtual enum PackType getPackType() const;
+    /**
+     * @vtable 5
+     * @symbol ?load@InPackagePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+     */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPACKAGEPACKSOURCE
+    /**
+     * @vtable -1
+     * @symbol ?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+     */
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
+    /**
+     * @vtable -1
+     * @symbol ?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
+     */
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
+    /**
+     * @symbol ??0InPackagePackSource@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@W4PackType@@@Z
+     */
     MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
 
 };

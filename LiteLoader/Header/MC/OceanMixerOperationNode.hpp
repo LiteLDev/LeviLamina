@@ -30,13 +30,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~OceanMixerOperationNode();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?_fillArea@OceanMixerOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1HV?$OperationGraphResult@W4BiomeTemperatureCategory@@@@@Z
+     */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome *, class Biome *> &, class Pos2d const &, class Pos2d const &, int, class OperationGraphResult<enum BiomeTemperatureCategory>) const;
+    /**
+     * @vtable 4
+     * @symbol ?_getAreaRead@OceanMixerOperationNode@@MEBA?AV?$tuple@VPos2d@@V1@@std@@AEBVPos2d@@0@Z
+     */
     virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const &, class Pos2d const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMIXEROPERATIONNODE
 #endif
+    /**
+     * @symbol ??0OceanMixerOperationNode@@QEAA@IAEAV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@AEAV?$shared_ptr@V?$OperationNode@W4BiomeTemperatureCategory@@VPos2d@@@@@2@AEBVBiomeRegistry@@AEAVBiome@@3@Z
+     */
     MCAPI OceanMixerOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> &, class std::shared_ptr<class OperationNode<enum BiomeTemperatureCategory, class Pos2d>> &, class BiomeRegistry const &, class Biome &, class Biome &);
 
 };

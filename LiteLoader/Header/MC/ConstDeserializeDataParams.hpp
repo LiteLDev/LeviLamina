@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSTDESERIALIZEDATAPARAMS
 #endif
+    /**
+     * @symbol ??1ConstDeserializeDataParams@@QEAA@XZ
+     */
     MCAPI ~ConstDeserializeDataParams();
 
 };

@@ -31,17 +31,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StompEggGoal();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@StompEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 18
+     * @symbol ?_createBreakProgressParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+     */
     virtual void _createBreakProgressParticles(class Level &, class BlockSource &, class BlockPos);
+    /**
+     * @vtable 19
+     * @symbol ?_createDestroyParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+     */
     virtual void _createDestroyParticles(class Level &, class BlockSource &, class BlockPos);
+    /**
+     * @vtable 20
+     * @symbol ?_playBreakProgressSound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+     */
     virtual void _playBreakProgressSound(class Level &, class BlockSource &, class BlockPos);
+    /**
+     * @vtable 21
+     * @symbol ?_playDestroySound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z
+     */
     virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPEGGGOAL
 #endif
+    /**
+     * @symbol ??0StompEggGoal@@QEAA@AEAVMob@@MHHMH@Z
+     */
     MCAPI StompEggGoal(class Mob &, float, int, int, float, int);
 
 };

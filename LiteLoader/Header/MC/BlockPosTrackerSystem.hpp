@@ -30,11 +30,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockPosTrackerSystem();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?tick@BlockPosTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z
+     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSTRACKERSYSTEM
 #endif
+    /**
+     * @symbol ?_tickBlockPosTrackerComponent@BlockPosTrackerSystem@@SAXPEAVActor@@AEAVBlockPosTrackerComponent@@@Z
+     */
     MCAPI static void _tickBlockPosTrackerComponent(class Actor *, class BlockPosTrackerComponent &);
 
 };

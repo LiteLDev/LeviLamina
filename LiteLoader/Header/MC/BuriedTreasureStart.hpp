@@ -31,9 +31,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BuriedTreasureStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURIEDTREASURESTART
 #endif
+    /**
+     * @symbol ??0BuriedTreasureStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
+     */
     MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
 
 };

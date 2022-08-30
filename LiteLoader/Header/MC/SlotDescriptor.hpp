@@ -29,9 +29,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDESCRIPTOR
 #endif
+    /**
+     * @symbol ??0SlotDescriptor@@QEAA@XZ
+     */
     MCAPI SlotDescriptor();
+    /**
+     * @symbol ??0SlotDescriptor@@QEAA@AEBU0@@Z
+     */
     MCAPI SlotDescriptor(struct SlotDescriptor const &);
+    /**
+     * @symbol ?addAcceptedItem@SlotDescriptor@@QEAAXAEBVItemDescriptor@@@Z
+     */
     MCAPI void addAcceptedItem(class ItemDescriptor const &);
+    /**
+     * @symbol ??1SlotDescriptor@@QEAA@XZ
+     */
     MCAPI ~SlotDescriptor();
 
 };

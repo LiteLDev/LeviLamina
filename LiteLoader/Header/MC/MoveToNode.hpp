@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MoveToNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@MoveToNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@MoveToNode@@EEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETONODE
 #endif
+    /**
+     * @symbol ??0MoveToNode@@QEAA@XZ
+     */
     MCAPI MoveToNode();
 
 };

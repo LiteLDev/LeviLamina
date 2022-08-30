@@ -28,17 +28,65 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?AddRef@TaskQueuePortContextImpl@@UEAAIXZ
+     */
     virtual unsigned int AddRef();
+    /**
+     * @vtable 1
+     * @symbol ?Release@TaskQueuePortContextImpl@@UEAAIXZ
+     */
     virtual unsigned int Release();
+    /**
+     * @vtable 2
+     * @symbol ?QueryApi@TaskQueuePortContextImpl@@UEAAJW4ApiId@@PEAPEAX@Z
+     */
     virtual long QueryApi(enum ApiId, void **);
+    /**
+     * @vtable 3
+     * @symbol ?GetType@TaskQueuePortContextImpl@@UEAA?AW4XTaskQueuePort@@XZ
+     */
     virtual enum XTaskQueuePort GetType();
+    /**
+     * @vtable 4
+     * @symbol ?GetStatus@TaskQueuePortContextImpl@@UEAA?AW4TaskQueuePortStatus@@XZ
+     */
     virtual enum TaskQueuePortStatus GetStatus();
+    /**
+     * @vtable 5
+     * @symbol ?GetQueue@TaskQueuePortContextImpl@@UEAAPEAUITaskQueue@@XZ
+     */
     virtual struct ITaskQueue * GetQueue();
+    /**
+     * @vtable 6
+     * @symbol ?GetPort@TaskQueuePortContextImpl@@UEAAPEAUITaskQueuePort@@XZ
+     */
     virtual struct ITaskQueuePort * GetPort();
+    /**
+     * @vtable 7
+     * @symbol ?TrySetStatus@TaskQueuePortContextImpl@@UEAA_NW4TaskQueuePortStatus@@0@Z
+     */
     virtual bool TrySetStatus(enum TaskQueuePortStatus, enum TaskQueuePortStatus);
+    /**
+     * @vtable 8
+     * @symbol ?SetStatus@TaskQueuePortContextImpl@@UEAAXW4TaskQueuePortStatus@@@Z
+     */
     virtual void SetStatus(enum TaskQueuePortStatus);
+    /**
+     * @vtable 9
+     * @symbol ?ItemQueued@TaskQueuePortContextImpl@@UEAAXXZ
+     */
     virtual void ItemQueued();
+    /**
+     * @vtable 10
+     * @symbol ?AddSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
+     */
     virtual bool AddSuspend();
+    /**
+     * @vtable 11
+     * @symbol ?RemoveSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
+     */
     virtual bool RemoveSuspend();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
 #endif

@@ -30,14 +30,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ContainerSetDataPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@ContainerSetDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@ContainerSetDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@ContainerSetDataPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@ContainerSetDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSETDATAPACKET
 #endif
+    /**
+     * @symbol ??0ContainerSetDataPacket@@QEAA@XZ
+     */
     MCAPI ContainerSetDataPacket();
+    /**
+     * @symbol ??0ContainerSetDataPacket@@QEAA@W4ContainerID@@HH@Z
+     */
     MCAPI ContainerSetDataPacket(enum ContainerID, int, int);
 
 };

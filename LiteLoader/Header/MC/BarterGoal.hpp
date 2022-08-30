@@ -30,19 +30,57 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BarterGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@BarterGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@BarterGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol ?tick@BarterGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@BarterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERGOAL
 #endif
+    /**
+     * @symbol ??0BarterGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI BarterGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?_getThrowVector@BarterGoal@@AEAA?AVVec3@@XZ
+     */
     MCAPI class Vec3 _getThrowVector();
 
 private:

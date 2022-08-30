@@ -30,17 +30,44 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StructureStart();
+    /**
+     * @vtable 1
+     * @symbol ?postProcess@StructureStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
+    /**
+     * @vtable 2
+     * @symbol ?isValid@StructureStart@@UEBA_NXZ
+     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESTART
 #endif
+    /**
+     * @symbol ?postProcessMobsAt@StructureStart@@QEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     */
     MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 //protected:
+    /**
+     * @symbol ?calculateBoundingBox@StructureStart@@IEAAXXZ
+     */
     MCAPI void calculateBoundingBox();
+    /**
+     * @symbol ?moveBoundingBoxes@StructureStart@@IEAAXH@Z
+     */
     MCAPI void moveBoundingBoxes(int);
+    /**
+     * @symbol ?moveInsideHeights@StructureStart@@IEAAXAEAVRandom@@FF@Z
+     */
     MCAPI void moveInsideHeights(class Random &, short, short);
+    /**
+     * @symbol ?moveToBelowSeaLevel@StructureStart@@IEAAXFFAEAVRandom@@H@Z
+     */
     MCAPI void moveToBelowSeaLevel(short, short, class Random &, int);
 
 protected:

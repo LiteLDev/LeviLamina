@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDATTACKDEFINITION
 #endif
+    /**
+     * @symbol ??0RangedAttackDefinition@@QEAA@XZ
+     */
     MCAPI RangedAttackDefinition();
+    /**
+     * @symbol ?initialize@RangedAttackDefinition@@QEAAXAEAVEntityContext@@AEAVRangedAttackGoal@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class RangedAttackGoal &);
+    /**
+     * @symbol ?buildSchema@RangedAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRangedAttackDefinition@@@JsonUtil@@@3@@Z
+     */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition>> &);
 
 };

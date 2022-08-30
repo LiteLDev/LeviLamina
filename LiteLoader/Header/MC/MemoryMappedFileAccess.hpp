@@ -32,16 +32,51 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MemoryMappedFileAccess();
+    /**
+     * @vtable 1
+     * @symbol ?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void * fopen(class Core::Path const &, std::string const &);
+    /**
+     * @vtable 2
+     * @symbol ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
+     */
     virtual int fclose(void *);
+    /**
+     * @vtable 3
+     * @symbol ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
+     */
     virtual int fseek(void *, __int64, int);
+    /**
+     * @vtable 4
+     * @symbol ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
+     */
     virtual __int64 ftell(void *);
+    /**
+     * @vtable 5
+     * @symbol ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
+     */
     virtual class IFileReadAccess const * getReadInterface() const;
+    /**
+     * @vtable 6
+     * @symbol ?getWriteInterface@MemoryMappedFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
+     */
     virtual class IFileWriteAccess * getWriteInterface();
+    /**
+     * @vtable 7
+     * @symbol ?unload@MemoryMappedFileAccess@@UEAAXXZ
+     */
     virtual void unload();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEMORYMAPPEDFILEACCESS
 #endif
+    /**
+     * @symbol ??0MemoryMappedFileAccess@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@V?$unique_ptr@VFileAccessTransforms@@U?$default_delete@VFileAccessTransforms@@@std@@@std@@@Z
+     */
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
 MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 

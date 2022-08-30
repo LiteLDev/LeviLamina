@@ -32,31 +32,115 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockCommandOrigin();
+    /**
+     * @vtable 1
+     * @symbol ?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getRequestId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@BlockCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?getBlockPosition@BlockCommandOrigin@@UEBA?AVBlockPos@@XZ
+     */
     virtual class BlockPos getBlockPosition() const;
+    /**
+     * @vtable 4
+     * @symbol ?getWorldPosition@BlockCommandOrigin@@UEBA?AVVec3@@XZ
+     */
     virtual class Vec3 getWorldPosition() const;
+    /**
+     * @vtable 5
+     * @symbol ?getRotation@BlockCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+     */
     virtual class std::optional<class Vec2> getRotation() const;
+    /**
+     * @vtable 6
+     * @symbol ?getLevel@BlockCommandOrigin@@UEBAPEAVLevel@@XZ
+     */
     virtual class Level * getLevel() const;
+    /**
+     * @vtable 7
+     * @symbol ?getDimension@BlockCommandOrigin@@UEBAPEAVDimension@@XZ
+     */
     virtual class Dimension * getDimension() const;
+    /**
+     * @vtable 8
+     * @symbol ?getEntity@BlockCommandOrigin@@UEBAPEAVActor@@XZ
+     */
     virtual class Actor * getEntity() const;
+    /**
+     * @vtable 9
+     * @symbol ?getPermissionsLevel@BlockCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /**
+     * @vtable 10
+     * @symbol ?clone@BlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /**
+     * @vtable 17
+     * @symbol ?canUseCommandsWithoutCheatsEnabled@BlockCommandOrigin@@UEBA_NXZ
+     */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /**
+     * @vtable 18
+     * @symbol ?isSelectorExpansionAllowed@BlockCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isSelectorExpansionAllowed() const;
+    /**
+     * @vtable 23
+     * @symbol ?getOriginType@BlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     */
     virtual enum CommandOriginType getOriginType() const;
+    /**
+     * @vtable 29
+     * @symbol ?serialize@BlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
+     */
     virtual class CompoundTag serialize() const;
+    /**
+     * @vtable 30
+     * @symbol ?isValid@BlockCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isValid() const;
+    /**
+     * @vtable 32
+     * @symbol ?_getBaseCommandBlock@BlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
+     */
     virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
+    /**
+     * @vtable 33
+     * @symbol ?_getBlockEntity@BlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
+     */
     virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMMANDORIGIN
 #endif
+    /**
+     * @symbol ??0BlockCommandOrigin@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
+     */
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
+    /**
+     * @symbol ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
+    /**
+     * @symbol ?load@BlockCommandOrigin@@SA?AV?$unique_ptr@VBlockCommandOrigin@@U?$default_delete@VBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
+     */
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 //protected:
+    /**
+     * @symbol ?_getName@BlockCommandOrigin@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
+     */
     MCAPI std::string _getName(class BlockSource &) const;
 
 protected:

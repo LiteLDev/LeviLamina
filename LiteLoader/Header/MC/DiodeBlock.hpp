@@ -31,71 +31,316 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DiodeBlock();
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 36
+     * @symbol __unk_vfn_36
+     */
     virtual void __unk_vfn_36();
+    /**
+     * @vtable 37
+     * @symbol __unk_vfn_37
+     */
     virtual void __unk_vfn_37();
+    /**
+     * @vtable 38
+     * @symbol __unk_vfn_38
+     */
     virtual void __unk_vfn_38();
+    /**
+     * @vtable 39
+     * @symbol __unk_vfn_39
+     */
     virtual void __unk_vfn_39();
+    /**
+     * @vtable 40
+     * @symbol __unk_vfn_40
+     */
     virtual void __unk_vfn_40();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 42
+     * @symbol __unk_vfn_42
+     */
     virtual void __unk_vfn_42();
+    /**
+     * @vtable 44
+     * @symbol __unk_vfn_44
+     */
     virtual void __unk_vfn_44();
+    /**
+     * @vtable 45
+     * @symbol __unk_vfn_45
+     */
     virtual void __unk_vfn_45();
+    /**
+     * @vtable 46
+     * @symbol __unk_vfn_46
+     */
     virtual void __unk_vfn_46();
+    /**
+     * @vtable 47
+     * @symbol __unk_vfn_47
+     */
     virtual void __unk_vfn_47();
+    /**
+     * @vtable 48
+     * @symbol __unk_vfn_48
+     */
     virtual void __unk_vfn_48();
+    /**
+     * @vtable 49
+     * @symbol __unk_vfn_49
+     */
     virtual void __unk_vfn_49();
+    /**
+     * @vtable 51
+     * @symbol ?isSignalSource@DiodeBlock@@UEBA_NXZ
+     */
     virtual bool isSignalSource() const;
+    /**
+     * @vtable 58
+     * @symbol ?getDirectSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+     */
     virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
+    /**
+     * @vtable 59
+     * @symbol __unk_vfn_59
+     */
     virtual void __unk_vfn_59();
+    /**
+     * @vtable 60
+     * @symbol __unk_vfn_60
+     */
     virtual void __unk_vfn_60();
+    /**
+     * @vtable 71
+     * @symbol ?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+     */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 90
+     * @symbol ?mayPlace@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 98
+     * @symbol ?neighborChanged@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+    /**
+     * @vtable 105
+     * @symbol __unk_vfn_105
+     */
     virtual void __unk_vfn_105();
+    /**
+     * @vtable 106
+     * @symbol ?getPlacementBlock@DiodeBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+     */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    /**
+     * @vtable 124
+     * @symbol __unk_vfn_124
+     */
     virtual void __unk_vfn_124();
+    /**
+     * @vtable 126
+     * @symbol __unk_vfn_126
+     */
     virtual void __unk_vfn_126();
+    /**
+     * @vtable 127
+     * @symbol __unk_vfn_127
+     */
     virtual void __unk_vfn_127();
+    /**
+     * @vtable 132
+     * @symbol __unk_vfn_132
+     */
     virtual void __unk_vfn_132();
+    /**
+     * @vtable 147
+     * @symbol ?getVariant@DiodeBlock@@UEBAHAEBVBlock@@@Z
+     */
     virtual int getVariant(class Block const &) const;
+    /**
+     * @vtable 148
+     * @symbol __unk_vfn_148
+     */
     virtual void __unk_vfn_148();
+    /**
+     * @vtable 157
+     * @symbol __unk_vfn_157
+     */
     virtual void __unk_vfn_157();
+    /**
+     * @vtable 168
+     * @symbol __unk_vfn_168
+     */
     virtual void __unk_vfn_168();
+    /**
+     * @vtable 169
+     * @symbol __unk_vfn_169
+     */
     virtual void __unk_vfn_169();
+    /**
+     * @vtable 170
+     * @symbol __unk_vfn_170
+     */
     virtual void __unk_vfn_170();
+    /**
+     * @vtable 177
+     * @symbol __unk_vfn_177
+     */
     virtual void __unk_vfn_177();
+    /**
+     * @vtable 180
+     * @symbol ?canSurvive@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 188
+     * @symbol __unk_vfn_188
+     */
     virtual void __unk_vfn_188();
+    /**
+     * @vtable 192
+     * @symbol ?getSignal@DiodeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+     */
     virtual int getSignal(class BlockSource &, class BlockPos const &, int) const;
+    /**
+     * @vtable 193
+     * @symbol ?isLocked@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 194
+     * @symbol ?isSameDiode@DiodeBlock@@UEBA_NAEBVBlock@@@Z
+     */
     virtual bool isSameDiode(class Block const &) const;
+    /**
+     * @vtable 195
+     * @symbol ?shouldPrioritize@DiodeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool shouldPrioritize(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 196
+     * @symbol ?isOn@DiodeBlock@@MEBA_NXZ
+     */
     virtual bool isOn() const;
+    /**
+     * @vtable 197
+     * @symbol ?shouldTurnOn@DiodeBlock@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool shouldTurnOn(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 198
+     * @symbol ?getInputSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual int getInputSignal(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 199
+     * @symbol ?isAlternateInput@DiodeBlock@@MEBA_NAEBVBlock@@@Z
+     */
     virtual bool isAlternateInput(class Block const &) const;
+    /**
+     * @vtable 200
+     * @symbol ?getAlternateSignal@DiodeBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual int getAlternateSignal(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 201
+     * @symbol ?getOutputSignal@DiodeBlock@@MEBAHAEBVBlock@@@Z
+     */
     virtual int getOutputSignal(class Block const &) const;
+    /**
+     * @vtable 202
+     * @symbol ?getTurnOffDelay@DiodeBlock@@MEBAHAEBVBlock@@@Z
+     */
     virtual int getTurnOffDelay(class Block const &) const;
+    /**
+     * @vtable 203
+     * @symbol ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
+     */
     virtual int getTurnOnDelay(class Block const &) const = 0;
+    /**
+     * @vtable 204
+     * @symbol ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+     */
     virtual class Block const * getOnBlock(class Block const *) const = 0;
+    /**
+     * @vtable 205
+     * @symbol ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+     */
     virtual class Block const * getOffBlock(class Block const *) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIODEBLOCK
+    /**
+     * @vtable -1
+     * @symbol ?canSpawnOn@DiodeBlock@@UEBA_NXZ
+     */
     MCVAPI bool canSpawnOn() const;
 #endif
+    /**
+     * @symbol ??0DiodeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
+     */
     MCAPI DiodeBlock(std::string const &, int, bool);
+    /**
+     * @symbol ?isDiode@DiodeBlock@@SA_NAEBVBlock@@@Z
+     */
     MCAPI static bool isDiode(class Block const &);
 
 //protected:
+    /**
+     * @symbol ?getAlternateSignalAt@DiodeBlock@@IEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+     */
     MCAPI int getAlternateSignalAt(class BlockSource &, class BlockPos const &, int) const;
 
 protected:

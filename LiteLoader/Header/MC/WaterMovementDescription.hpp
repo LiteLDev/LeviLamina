@@ -30,12 +30,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@WaterMovementDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~WaterMovementDescription();
+    /**
+     * @vtable 2
+     * @symbol ?deserializeData@WaterMovementDescription@@UEAAXUDeserializeDataParams@@@Z
+     */
     virtual void deserializeData(struct DeserializeDataParams);
+    /**
+     * @vtable 3
+     * @symbol ?serializeData@WaterMovementDescription@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERMOVEMENTDESCRIPTION
 #endif
+    /**
+     * @symbol ??0WaterMovementDescription@@QEAA@XZ
+     */
     MCAPI WaterMovementDescription();
 
 };

@@ -30,20 +30,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DragonStrafePlayerGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@DragonStrafePlayerGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@DragonStrafePlayerGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@DragonStrafePlayerGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@DragonStrafePlayerGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@DragonStrafePlayerGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@DragonStrafePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSTRAFEPLAYERGOAL
 #endif
+    /**
+     * @symbol ??0DragonStrafePlayerGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI DragonStrafePlayerGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?navigateToNextPathNode@DragonStrafePlayerGoal@@AEAAXXZ
+     */
     MCAPI void navigateToNextPathNode();
+    /**
+     * @symbol ?setTarget@DragonStrafePlayerGoal@@AEAAXPEAVActor@@@Z
+     */
     MCAPI void setTarget(class Actor *);
 
 private:

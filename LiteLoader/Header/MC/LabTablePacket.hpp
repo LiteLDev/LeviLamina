@@ -30,15 +30,44 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LabTablePacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@LabTablePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@LabTablePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@LabTablePacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@LabTablePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEPACKET
 #endif
+    /**
+     * @symbol ??0LabTablePacket@@QEAA@XZ
+     */
     MCAPI LabTablePacket();
+    /**
+     * @symbol ??0LabTablePacket@@QEAA@W4Type@0@AEBVBlockPos@@@Z
+     */
     MCAPI LabTablePacket(enum LabTablePacket::Type, class BlockPos const &);
+    /**
+     * @symbol ??0LabTablePacket@@QEAA@AEBVBlockPos@@W4LabTableReactionType@@@Z
+     */
     MCAPI LabTablePacket(class BlockPos const &, enum LabTableReactionType);
 
 };

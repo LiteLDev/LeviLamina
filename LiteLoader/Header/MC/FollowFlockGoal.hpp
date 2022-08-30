@@ -30,16 +30,51 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FollowFlockGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@FollowFlockGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@FollowFlockGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol ?canBeInterrupted@FollowFlockGoal@@UEAA_NXZ
+     */
     virtual bool canBeInterrupted();
+    /**
+     * @vtable 4
+     * @symbol ?start@FollowFlockGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@FollowFlockGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@FollowFlockGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@FollowFlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWFLOCKGOAL
 #endif
+    /**
+     * @symbol ??0FollowFlockGoal@@QEAA@AEAVMob@@M@Z
+     */
     MCAPI FollowFlockGoal(class Mob &, float);
 
 };

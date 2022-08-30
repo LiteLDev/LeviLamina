@@ -22,7 +22,13 @@ namespace PacketUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?byteToDegrees@PacketUtil@@YAMC@Z
+     */
     MCAPI float byteToDegrees(signed char);
+    /**
+     * @symbol ?degreesToByte@PacketUtil@@YACM@Z
+     */
     MCAPI signed char degreesToByte(float);
 
 };

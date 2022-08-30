@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CodeBuilderActorInfoCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@CodeBuilderActorInfoCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERACTORINFOCOMMAND
 #endif
+    /**
+     * @symbol ?setup@CodeBuilderActorInfoCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

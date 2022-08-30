@@ -31,10 +31,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScriptMinecraftNetModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTNETMODULEFACTORY
 #endif
+    /**
+     * @symbol ??0ScriptMinecraftNetModuleFactory@@QEAA@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@Z
+     */
     MCAPI ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);
+    /**
+     * @symbol ?getModuleUUIDAsString@ScriptMinecraftNetModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:

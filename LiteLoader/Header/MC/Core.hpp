@@ -133,10 +133,22 @@ enum FileAccessType;
 MCAPI extern char const * RESULT_FAILED_MESSAGE;
 MCAPI extern char const * RESULT_NOT_IMPLEMENTED_MESSAGE;
 MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
+    /**
+     * @symbol ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
+     */
     MCAPI unsigned __int64 operator&(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
+    /**
+     * @symbol ??UCore@@YA?AW4DirectoryIterationFlags@0@W410@0@Z
+     */
     MCAPI enum Core::DirectoryIterationFlags operator|(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
 MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
+    /**
+     * @symbol ?starts_with@Core@@YA_NVStringSpan@1@0@Z
+     */
     MCAPI bool starts_with(class Core::StringSpan, class Core::StringSpan);
+    /**
+     * @symbol ?transferDirectory@Core@@YA?AVResult@1@PEAVFileSystemImpl@1@AEBVPath@1@01AEBV?$function@$$A6A?AVResult@Core@@AEBVPath@2@0@Z@std@@@Z
+     */
     MCAPI class Core::Result transferDirectory(class Core::FileSystemImpl *, class Core::Path const &, class Core::FileSystemImpl *, class Core::Path const &, class std::function<class Core::Result (class Core::Path const &, class Core::Path const &)> const &);
 
 };

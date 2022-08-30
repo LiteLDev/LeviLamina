@@ -20,6 +20,9 @@ namespace LocateCommandUtil {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?locateNearbyBiome@LocateCommandUtil@@YA?AV?$optional@VBlockPos@@@std@@VBlockPos@@PEAVDimension@@W4Biomes@1@@Z
+     */
     MCAPI class std::optional<class BlockPos> locateNearbyBiome(class BlockPos, class Dimension *, enum LocateCommandUtil::Biomes);
 
 };

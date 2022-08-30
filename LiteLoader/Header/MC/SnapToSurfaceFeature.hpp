@@ -31,13 +31,27 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SnapToSurfaceFeature();
+    /**
+     * @vtable 1
+     * @symbol ?place@SnapToSurfaceFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPTOSURFACEFEATURE
 #endif
+    /**
+     * @symbol ??0SnapToSurfaceFeature@@QEAA@XZ
+     */
     MCAPI SnapToSurfaceFeature();
 
 //private:
+    /**
+     * @symbol ?_findSnapPos@SnapToSurfaceFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@W4Surface@1@@Z
+     */
     MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI &, class BlockPos const &, enum SnapToSurfaceFeature::Surface) const;
 
 private:

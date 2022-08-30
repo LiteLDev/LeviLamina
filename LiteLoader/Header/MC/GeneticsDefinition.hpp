@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSDEFINITION
 #endif
+    /**
+     * @symbol ??0GeneticsDefinition@@QEAA@XZ
+     */
     MCAPI GeneticsDefinition();
+    /**
+     * @symbol ?addGeneDefinition@GeneticsDefinition@@QEAAXAEBUGeneDefinition@@@Z
+     */
     MCAPI void addGeneDefinition(struct GeneDefinition const &);
+    /**
+     * @symbol ?initialize@GeneticsDefinition@@QEAAXAEAVEntityContext@@AEAVGeneticsComponent@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class GeneticsComponent &);
+    /**
+     * @symbol ?buildSchema@GeneticsDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGeneticsDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>> &);
 
 //private:

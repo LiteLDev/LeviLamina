@@ -31,14 +31,41 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~VexCopyOwnerTargetGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@VexCopyOwnerTargetGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 4
+     * @symbol ?start@VexCopyOwnerTargetGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@VexCopyOwnerTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEXCOPYOWNERTARGETGOAL
 #endif
+    /**
+     * @symbol ??0VexCopyOwnerTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
+     */
     MCAPI VexCopyOwnerTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 
 };

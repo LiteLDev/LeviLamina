@@ -31,26 +31,90 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SculkSensorBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@SculkSensorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@SculkSensorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 13
+     * @symbol ?onRemoved@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onRemoved(class BlockSource &);
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0SculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI SculkSensorBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?getLatestReceivedVibrationFrequency@SculkSensorBlockActor@@QEBAHXZ
+     */
     MCAPI int getLatestReceivedVibrationFrequency() const;
+    /**
+     * @symbol ?onStepOn@SculkSensorBlockActor@@QEAAXAEAVBlockSource@@AEAVActor@@@Z
+     */
     MCAPI void onStepOn(class BlockSource &, class Actor &);
 MCAPI static enum BlockActorType const TypeId;
 MCAPI static std::string const TypeString;
+    /**
+     * @symbol ?tryGet@SculkSensorBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI static class SculkSensorBlockActor * tryGet(class BlockSource &, class BlockPos const &);
 
 };

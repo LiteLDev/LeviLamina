@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROLCOMPONENT
 #endif
+    /**
+     * @symbol ??1BodyControlComponent@@QEAA@XZ
+     */
     MCAPI ~BodyControlComponent();
 
 };

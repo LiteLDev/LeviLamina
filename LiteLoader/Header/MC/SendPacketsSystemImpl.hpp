@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDPACKETSSYSTEMIMPL
 #endif
+    /**
+     * @symbol ?_sendPacketsSystem@SendPacketsSystemImpl@@SAXV?$ViewedEntityContextT@VStrictEntityContext@@$$CBVActorOwnerComponent@@$$CBUSendPacketsComponent@@@@@Z
+     */
     MCAPI static void _sendPacketsSystem(class ViewedEntityContextT<class StrictEntityContext, class ActorOwnerComponent const, struct SendPacketsComponent const>);
 
 };

@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOALDEFINITION
 #endif
+    /**
+     * @symbol ?initialize@TargetGoalDefinition@@QEAAXAEAVEntityContext@@AEAVTargetGoal@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class TargetGoal &);
 
 };

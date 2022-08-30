@@ -29,13 +29,33 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WorldTemplatePackManifest();
+    /**
+     * @vtable 1
+     * @symbol ?clone@WorldTemplatePackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class PackManifest> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEPACKMANIFEST
 #endif
+    /**
+     * @symbol ??0WorldTemplatePackManifest@@QEAA@XZ
+     */
     MCAPI WorldTemplatePackManifest();
+    /**
+     * @symbol ??0WorldTemplatePackManifest@@QEAA@$$QEAVPackManifest@@@Z
+     */
     MCAPI WorldTemplatePackManifest(class PackManifest &&);
+    /**
+     * @symbol ?getGameType@WorldTemplatePackManifest@@QEBA?AW4GameType@@XZ
+     */
     MCAPI enum GameType getGameType() const;
+    /**
+     * @symbol ?setGameType@WorldTemplatePackManifest@@QEAAXW4GameType@@@Z
+     */
     MCAPI void setGameType(enum GameType);
 
 };

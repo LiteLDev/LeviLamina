@@ -31,11 +31,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~EncryptedZipTransforms();
+    /**
+     * @vtable 1
+     * @symbol ?readTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+     */
     virtual bool readTransform(std::vector<unsigned char> &) const;
+    /**
+     * @vtable 2
+     * @symbol ?writeTransform@EncryptedZipTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+     */
     virtual bool writeTransform(std::vector<unsigned char> &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDZIPTRANSFORMS
 #endif
+    /**
+     * @symbol ??0EncryptedZipTransforms@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+     */
     MCAPI EncryptedZipTransforms(class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 
 };

@@ -31,11 +31,22 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
+    /**
+     * @vtable -1
+     * @symbol ?start@PetSleepWithOwnerState@@UEAAXXZ
+     */
     MCVAPI void start();
+    /**
+     * @vtable -1
+     * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
+     */
     MCVAPI void stop();
 #endif
 
 //protected:
+    /**
+     * @symbol ?dampenSpeed@PetSleepWithOwnerState@@IEAAXXZ
+     */
     MCAPI void dampenSpeed();
 
 protected:

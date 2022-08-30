@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SubtreeNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@SubtreeNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@SubtreeNode@@MEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBTREENODE
 #endif
+    /**
+     * @symbol ??0SubtreeNode@@QEAA@XZ
+     */
     MCAPI SubtreeNode();
 
 };

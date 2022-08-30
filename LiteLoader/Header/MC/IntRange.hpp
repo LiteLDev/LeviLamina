@@ -32,11 +32,29 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTRANGE
 #endif
+    /**
+     * @symbol ??0IntRange@@QEAA@H@Z
+     */
     MCAPI IntRange(int);
+    /**
+     * @symbol ??0IntRange@@QEAA@HH@Z
+     */
     MCAPI IntRange(int, int);
+    /**
+     * @symbol ?getValue@IntRange@@QEBAHAEAVRandom@@@Z
+     */
     MCAPI int getValue(class Random &) const;
+    /**
+     * @symbol ?getValueInclusive@IntRange@@QEBAHAEAVRandom@@@Z
+     */
     MCAPI int getValueInclusive(class Random &) const;
+    /**
+     * @symbol ?isInRangeInclusive@IntRange@@QEBA_NH@Z
+     */
     MCAPI bool isInRangeInclusive(int) const;
+    /**
+     * @symbol ?parseJson@IntRange@@QEAA_NVValue@Json@@HH@Z
+     */
     MCAPI bool parseJson(class Json::Value, int, int);
 MCAPI static struct IntRange const ZERO;
 

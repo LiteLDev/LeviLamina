@@ -29,15 +29,45 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemStackRequestActionDrop();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?_write@ItemStackRequestActionDrop@@MEBAXAEAVBinaryStream@@@Z
+     */
     virtual void _write(class BinaryStream &) const;
+    /**
+     * @vtable 5
+     * @symbol ?_read@ItemStackRequestActionDrop@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
+     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONDROP
 #endif
+    /**
+     * @symbol ??0ItemStackRequestActionDrop@@QEAA@XZ
+     */
     MCAPI ItemStackRequestActionDrop();
+    /**
+     * @symbol ?getRandomly@ItemStackRequestActionDrop@@QEBA_NXZ
+     */
     MCAPI bool getRandomly() const;
 
 };

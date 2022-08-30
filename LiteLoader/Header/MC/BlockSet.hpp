@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSET
 #endif
+    /**
+     * @symbol ??1BlockSet@@QEAA@XZ
+     */
     MCAPI ~BlockSet();
 
 };

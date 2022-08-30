@@ -31,13 +31,27 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FlowerFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@FlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERFEATURE
 #endif
+    /**
+     * @symbol ??0FlowerFeature@@QEAA@AEBVBlock@@@Z
+     */
     MCAPI FlowerFeature(class Block const &);
 
 //private:
+    /**
+     * @symbol ?_placeMushroom@FlowerFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
+     */
     MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
 
 private:

@@ -22,6 +22,9 @@ namespace WorldGenMolangQueries {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?registerWorldGenMolangQueries@WorldGenMolangQueries@@YAXXZ
+     */
     MCAPI void registerWorldGenMolangQueries();
 
 };

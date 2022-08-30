@@ -29,20 +29,62 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MoveOutdoorsGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@MoveOutdoorsGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@MoveOutdoorsGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 6
+     * @symbol ?tick@MoveOutdoorsGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MoveOutdoorsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 11
+     * @symbol ?isValidTarget@MoveOutdoorsGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEOUTDOORSGOAL
 #endif
+    /**
+     * @symbol ??0MoveOutdoorsGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI MoveOutdoorsGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?_setNextTargetTick@MoveOutdoorsGoal@@AEAAXXZ
+     */
     MCAPI void _setNextTargetTick();
 
 private:

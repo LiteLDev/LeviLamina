@@ -30,9 +30,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ElementConstructorContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTCONSTRUCTORCONTAINERSCREENVALIDATOR
 #endif
+    /**
+     * @symbol ??0ElementConstructorContainerScreenValidator@@QEAA@XZ
+     */
     MCAPI ElementConstructorContainerScreenValidator();
 
 };

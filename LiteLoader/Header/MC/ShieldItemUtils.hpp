@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEMUTILS
 #endif
+    /**
+     * @symbol ?isBlockedDamageCause@ShieldItemUtils@@SA_NAEBVActorDamageSource@@@Z
+     */
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
 
 //private:

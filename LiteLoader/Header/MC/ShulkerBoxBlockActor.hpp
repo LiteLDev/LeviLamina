@@ -31,28 +31,101 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKACTOR
+    /**
+     * @vtable -1
+     * @symbol ?_detectEntityObstruction@ShulkerBoxBlockActor@@MEBA_NAEAVBlockSource@@@Z
+     */
     MCVAPI bool _detectEntityObstruction(class BlockSource &) const;
+    /**
+     * @vtable -1
+     * @symbol ?_getUpdatePacket@ShulkerBoxBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?_onUpdatePacket@ShulkerBoxBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?canPushInItem@ShulkerBoxBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?getMaxStackSize@ShulkerBoxBlockActor@@UEBAHXZ
+     */
     MCVAPI int getMaxStackSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?getName@ShulkerBoxBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCVAPI std::string getName() const;
+    /**
+     * @vtable -1
+     * @symbol ?getObstructionAABB@ShulkerBoxBlockActor@@MEBA?AVAABB@@XZ
+     */
     MCVAPI class AABB getObstructionAABB() const;
+    /**
+     * @vtable -1
+     * @symbol ?load@ShulkerBoxBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlace@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void onPlace(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?playCloseSound@ShulkerBoxBlockActor@@MEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void playCloseSound(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?playOpenSound@ShulkerBoxBlockActor@@MEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void playOpenSound(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?save@ShulkerBoxBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     MCVAPI bool save(class CompoundTag &) const;
+    /**
+     * @vtable -1
+     * @symbol ?tick@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void tick(class BlockSource &);
 #endif
+    /**
+     * @symbol ??0ShulkerBoxBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
+     */
     MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
+    /**
+     * @symbol ?setFacingDir@ShulkerBoxBlockActor@@QEAAXE@Z
+     */
     MCAPI void setFacingDir(unsigned char);
+    /**
+     * @symbol ?itemAllowed@ShulkerBoxBlockActor@@SA_NAEBVItemStackBase@@@Z
+     */
     MCAPI static bool itemAllowed(class ItemStackBase const &);
+    /**
+     * @symbol ?itemAllowedInSlot@ShulkerBoxBlockActor@@SA_NHAEBVItemStackBase@@H@Z
+     */
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const &, int);
 
 //private:
+    /**
+     * @symbol ?_calculateBB@ShulkerBoxBlockActor@@AEAAXXZ
+     */
     MCAPI void _calculateBB();
+    /**
+     * @symbol ?_calculateMovementWithCollisions@ShulkerBoxBlockActor@@AEBA?AVVec3@@AEAVBlockSource@@PEAVActor@@@Z
+     */
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
+    /**
+     * @symbol ?_moveCollidedEntities@ShulkerBoxBlockActor@@AEBAXAEAVBlockSource@@@Z
+     */
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
 
 private:

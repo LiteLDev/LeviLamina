@@ -32,18 +32,51 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANDERINGTRADERSCHEDULER
 #endif
+    /**
+     * @symbol ??0WanderingTraderScheduler@@QEAA@AEAVLevel@@@Z
+     */
     MCAPI WanderingTraderScheduler(class Level &);
+    /**
+     * @symbol ?isWanderingTraderCurrentlyManaged@WanderingTraderScheduler@@QEAA_NAEBVActor@@@Z
+     */
     MCAPI bool isWanderingTraderCurrentlyManaged(class Actor const &);
+    /**
+     * @symbol ?readSaveData@WanderingTraderScheduler@@QEAAXXZ
+     */
     MCAPI void readSaveData();
+    /**
+     * @symbol ?tick@WanderingTraderScheduler@@QEAAXXZ
+     */
     MCAPI void tick();
+    /**
+     * @symbol ?writeSaveData@WanderingTraderScheduler@@QEBAXXZ
+     */
     MCAPI void writeSaveData() const;
+    /**
+     * @symbol ??1WanderingTraderScheduler@@QEAA@XZ
+     */
     MCAPI ~WanderingTraderScheduler();
 
 //private:
+    /**
+     * @symbol ?_doesWanderingTraderExist@WanderingTraderScheduler@@AEBA_NXZ
+     */
     MCAPI bool _doesWanderingTraderExist() const;
+    /**
+     * @symbol ?_findValidSpawnPosUnder@WanderingTraderScheduler@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z
+     */
     MCAPI class std::optional<class BlockPos> _findValidSpawnPosUnder(class BlockPos const &, class BlockSource &) const;
+    /**
+     * @symbol ?_getRandomHeightmapPosAroundOrigin@WanderingTraderScheduler@@AEAA?AVBlockPos@@AEBVBlockSource@@AEBV2@H_N@Z
+     */
     MCAPI class BlockPos _getRandomHeightmapPosAroundOrigin(class BlockSource const &, class BlockPos const &, int, bool);
+    /**
+     * @symbol ?_getRandomPlayerInOverworld@WanderingTraderScheduler@@AEBAPEAVActor@@XZ
+     */
     MCAPI class Actor * _getRandomPlayerInOverworld() const;
+    /**
+     * @symbol ?_getSpawnPosFromNearestVillageToPlayerPos@WanderingTraderScheduler@@AEAA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z
+     */
     MCAPI class std::optional<class BlockPos> _getSpawnPosFromNearestVillageToPlayerPos(class BlockPos const &, class BlockSource &);
 
 private:

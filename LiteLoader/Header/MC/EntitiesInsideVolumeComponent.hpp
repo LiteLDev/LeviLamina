@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESINSIDEVOLUMECOMPONENT
 #endif
+    /**
+     * @symbol ??1EntitiesInsideVolumeComponent@@QEAA@XZ
+     */
     MCAPI ~EntitiesInsideVolumeComponent();
 
 };

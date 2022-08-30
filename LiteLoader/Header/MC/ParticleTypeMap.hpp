@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLETYPEMAP
 #endif
+    /**
+     * @symbol ?getParticleName@ParticleTypeMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ParticleType@@@Z
+     */
     MCAPI static std::string const & getParticleName(enum ParticleType);
+    /**
+     * @symbol ?getParticleTypeId@ParticleTypeMap@@SA?AW4ParticleType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI static enum ParticleType getParticleTypeId(std::string const &);
 
 //private:

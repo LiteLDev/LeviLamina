@@ -31,7 +31,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDRIDERDEFINITION
 #endif
+    /**
+     * @symbol ?initialize@AddRiderDefinition@@QEAAXAEAVEntityContext@@AEAVAddRiderComponent@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class AddRiderComponent &);
+    /**
+     * @symbol ?buildSchema@AddRiderDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAddRiderDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AddRiderDefinition>> &);
 
 };

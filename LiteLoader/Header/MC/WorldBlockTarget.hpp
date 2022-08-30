@@ -30,36 +30,151 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WorldBlockTarget();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?getChunk@WorldBlockTarget@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
+     */
     virtual class LevelChunk * getChunk(class ChunkPos const &);
+    /**
+     * @vtable 3
+     * @symbol ?tryGetLiquidBlock@WorldBlockTarget@@UEBAPEBVBlock@@AEBVBlockPos@@@Z
+     */
     virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
+    /**
+     * @vtable 4
+     * @symbol ?getBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+     */
     virtual class Block const & getBlock(class BlockPos const &) const;
+    /**
+     * @vtable 5
+     * @symbol ?getBlockNoBoundsCheck@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+     */
     virtual class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
+    /**
+     * @vtable 6
+     * @symbol ?getExtraBlock@WorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+     */
     virtual class Block const & getExtraBlock(class BlockPos const &) const;
+    /**
+     * @vtable 7
+     * @symbol ?fetchBlocksInBox@WorldBlockTarget@@UEAA?AV?$span@$$CBV?$BlockDataFetchResult@VBlock@@@@$0?0@gsl@@AEBVBoundingBox@@V?$function@$$A6A_NAEBVBlock@@@Z@std@@@Z
+     */
     virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
+    /**
+     * @vtable 8
+     * @symbol ?hasBiomeTag@WorldBlockTarget@@UEBA_N_KAEBVBlockPos@@@Z
+     */
     virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
+    /**
+     * @vtable 9
+     * @symbol ?setBlock@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
+     */
     virtual bool setBlock(class BlockPos const &, class Block const &, int);
+    /**
+     * @vtable 10
+     * @symbol ?setBlockSimple@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual bool setBlockSimple(class BlockPos const &, class Block const &);
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 12
+     * @symbol ?placeStructure@WorldBlockTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z
+     */
     virtual bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
+    /**
+     * @vtable 13
+     * @symbol ?mayPlace@WorldBlockTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual bool mayPlace(class BlockPos const &, class Block const &) const;
+    /**
+     * @vtable 14
+     * @symbol ?canSurvive@WorldBlockTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual bool canSurvive(class BlockPos const &, class Block const &) const;
+    /**
+     * @vtable 15
+     * @symbol ?getMaxHeight@WorldBlockTarget@@UEBAFXZ
+     */
     virtual short getMaxHeight() const;
+    /**
+     * @vtable 16
+     * @symbol ?getMinHeight@WorldBlockTarget@@UEBAFXZ
+     */
     virtual short getMinHeight() const;
+    /**
+     * @vtable 17
+     * @symbol ?shimPlaceForOldFeatures@WorldBlockTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
+    /**
+     * @vtable 18
+     * @symbol ?getHeightmap@WorldBlockTarget@@UEAAFHH@Z
+     */
     virtual short getHeightmap(int, int);
+    /**
+     * @vtable 19
+     * @symbol ?isLegacyLevel@WorldBlockTarget@@UEAA_NXZ
+     */
     virtual bool isLegacyLevel();
+    /**
+     * @vtable 20
+     * @symbol ?getBiome@WorldBlockTarget@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
+     */
     virtual class Biome const * getBiome(class BlockPos const &) const;
+    /**
+     * @vtable 21
+     * @symbol ?isInBounds@WorldBlockTarget@@UEBA_NAEBVPos@@@Z
+     */
     virtual bool isInBounds(class Pos const &) const;
+    /**
+     * @vtable 22
+     * @symbol ?getLocalWaterLevel@WorldBlockTarget@@UEBAFAEBVBlockPos@@@Z
+     */
     virtual short getLocalWaterLevel(class BlockPos const &) const;
+    /**
+     * @vtable 23
+     * @symbol ?getLevelData@WorldBlockTarget@@UEBAAEBVLevelData@@XZ
+     */
     virtual class LevelData const & getLevelData() const;
+    /**
+     * @vtable 24
+     * @symbol ?getContext@WorldBlockTarget@@UEAAAEBUWorldGenContext@@XZ
+     */
     virtual struct WorldGenContext const & getContext();
+    /**
+     * @vtable 25
+     * @symbol ?disableBlockSimple@WorldBlockTarget@@UEAAXXZ
+     */
     virtual void disableBlockSimple();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDBLOCKTARGET
+    /**
+     * @vtable -1
+     * @symbol ?apply@WorldBlockTarget@@UEBA_NXZ
+     */
     MCVAPI bool apply() const;
+    /**
+     * @vtable -1
+     * @symbol ?canGetChunk@WorldBlockTarget@@UEBA_NXZ
+     */
     MCVAPI bool canGetChunk() const;
 #endif
+    /**
+     * @symbol ??0WorldBlockTarget@@QEAA@AEAVBlockSource@@AEBUWorldGenContext@@@Z
+     */
     MCAPI WorldBlockTarget(class BlockSource &, struct WorldGenContext const &);
 
 };

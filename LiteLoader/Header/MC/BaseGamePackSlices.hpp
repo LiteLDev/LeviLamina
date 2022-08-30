@@ -31,9 +31,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGAMEPACKSLICES
 #endif
+    /**
+     * @symbol ??0BaseGamePackSlices@@QEAA@XZ
+     */
     MCAPI BaseGamePackSlices();
+    /**
+     * @symbol ?addFromVersions@BaseGamePackSlices@@QEAAXAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@AEBVIResourcePackRepository@@AEBVUUID@mce@@@Z
+     */
     MCAPI void addFromVersions(std::vector<class BaseGameVersion> const &, class IResourcePackRepository const &, class mce::UUID const &);
+    /**
+     * @symbol ?applyPackSlices@BaseGamePackSlices@@QEBAXAEBVBaseGameVersion@@AEBVIResourcePackRepository@@AEAVResourcePackStack@@@Z
+     */
     MCAPI void applyPackSlices(class BaseGameVersion const &, class IResourcePackRepository const &, class ResourcePackStack &) const;
+    /**
+     * @symbol ??1BaseGamePackSlices@@QEAA@XZ
+     */
     MCAPI ~BaseGamePackSlices();
 
 };

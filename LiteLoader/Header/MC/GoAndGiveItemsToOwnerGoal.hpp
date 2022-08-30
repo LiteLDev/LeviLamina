@@ -28,19 +28,57 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~GoAndGiveItemsToOwnerGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@GoAndGiveItemsToOwnerGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@GoAndGiveItemsToOwnerGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@GoAndGiveItemsToOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOANDGIVEITEMSTOOWNERGOAL
 #endif
+    /**
+     * @symbol ??0GoAndGiveItemsToOwnerGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI GoAndGiveItemsToOwnerGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?_attemptToGiveItem@GoAndGiveItemsToOwnerGoal@@AEAA_NXZ
+     */
     MCAPI bool _attemptToGiveItem();
 
 private:

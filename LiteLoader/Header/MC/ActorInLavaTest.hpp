@@ -32,8 +32,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorInLavaTest();
+    /**
+     * @vtable 2
+     * @symbol ?evaluate@ActorInLavaTest@@UEBA_NAEBUFilterContext@@@Z
+     */
     virtual bool evaluate(struct FilterContext const &) const;
+    /**
+     * @vtable 4
+     * @symbol ?getName@ActorInLavaTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINLAVATEST
 #endif

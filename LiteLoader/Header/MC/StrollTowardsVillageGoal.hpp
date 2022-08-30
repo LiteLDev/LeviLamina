@@ -31,15 +31,46 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StrollTowardsVillageGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@StrollTowardsVillageGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@StrollTowardsVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 17
+     * @symbol ?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ
+     */
     virtual class BlockPos _selectRandomPosInVillage();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STROLLTOWARDSVILLAGEGOAL
 #endif
+    /**
+     * @symbol ??0StrollTowardsVillageGoal@@QEAA@AEAVMob@@MMMHM@Z
+     */
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
 
 };

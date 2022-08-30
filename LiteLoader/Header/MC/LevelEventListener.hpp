@@ -31,14 +31,50 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onEvent@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
+     */
     MCVAPI enum EventResult onEvent(struct LevelNotificationEvent const &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelAddedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelBiomesRegistered@LevelEventListener@@UEAA?AW4EventResult@@AEAVIWorldRegistriesProvider@@@Z
+     */
     MCVAPI enum EventResult onLevelBiomesRegistered(class IWorldRegistriesProvider &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
+     */
     MCVAPI enum EventResult onLevelInitialized(class Level &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z
+     */
     MCVAPI enum EventResult onLevelRemovedActor(class Level &, class Actor &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelRemovedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+     */
     MCVAPI enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelSaveData@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVCompoundTag@@@Z
+     */
     MCVAPI enum EventResult onLevelSaveData(class Level &, class CompoundTag &);
+    /**
+     * @vtable -1
+     * @symbol ?onLevelTick@LevelEventListener@@UEAA?AW4EventResult@@XZ
+     */
     MCVAPI enum EventResult onLevelTick();
+    /**
+     * @vtable -1
+     * @symbol ?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
+     */
     MCVAPI enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
 #endif
 

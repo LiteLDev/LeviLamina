@@ -32,15 +32,39 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMELIGHTINGMANAGER
 #endif
+    /**
+     * @symbol ??0RuntimeLightingManager@@QEAA@AEAVDimension@@@Z
+     */
     MCAPI RuntimeLightingManager(class Dimension &);
+    /**
+     * @symbol ?flushRunTimeLighting@RuntimeLightingManager@@QEAAXXZ
+     */
     MCAPI void flushRunTimeLighting();
+    /**
+     * @symbol ?updateBlockLight@RuntimeLightingManager@@QEAAXAEBVBlockPos@@UBrightness@@111_N@Z
+     */
     MCAPI void updateBlockLight(class BlockPos const &, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
+    /**
+     * @symbol ??1RuntimeLightingManager@@QEAA@XZ
+     */
     MCAPI ~RuntimeLightingManager();
 
 //private:
+    /**
+     * @symbol ?_checkForRelightingTask@RuntimeLightingManager@@AEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
+     */
     MCAPI void _checkForRelightingTask(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
+    /**
+     * @symbol ?_getListOfChunksWithPlayerDistance@RuntimeLightingManager@@AEAAXXZ
+     */
     MCAPI void _getListOfChunksWithPlayerDistance();
+    /**
+     * @symbol ?_relightChunks@RuntimeLightingManager@@AEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
+     */
     MCAPI void _relightChunks(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
+    /**
+     * @symbol ?_removeProcessedSubchunks@RuntimeLightingManager@@AEAAXXZ
+     */
     MCAPI void _removeProcessedSubchunks();
 
 private:

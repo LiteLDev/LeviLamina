@@ -30,18 +30,59 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AvoidMobTypeGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@AvoidMobTypeGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@AvoidMobTypeGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@AvoidMobTypeGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@AvoidMobTypeGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@AvoidMobTypeGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@AvoidMobTypeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVOIDMOBTYPEGOAL
 #endif
+    /**
+     * @symbol ??0AvoidMobTypeGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI AvoidMobTypeGoal(class Mob &);
+    /**
+     * @symbol ?canFindAvoidPath@AvoidMobTypeGoal@@QEAA_NPEAVActor@@@Z
+     */
     MCAPI bool canFindAvoidPath(class Actor *);
+    /**
+     * @symbol ?findNearestEntityToAvoid@AvoidMobTypeGoal@@QEAAPEAVActor@@M@Z
+     */
     MCAPI class Actor * findNearestEntityToAvoid(float);
 
 };

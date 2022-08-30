@@ -29,6 +29,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
+    /**
+     * @vtable -1
+     * @symbol ??1IEntityRegistryOwner@@MEAA@XZ
+     */
     MCVAPI ~IEntityRegistryOwner();
 #endif
 

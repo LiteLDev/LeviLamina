@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NetherFossilFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@NetherFossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFOSSILFEATURE
 #endif
+    /**
+     * @symbol ??0NetherFossilFeature@@QEAA@$$QEAV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@std@@_N@Z
+     */
     MCAPI NetherFossilFeature(std::vector<class Block const *> &&, bool);
 
 //private:

@@ -30,10 +30,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NpcUrlAction();
+    /**
+     * @vtable 1
+     * @symbol ?toJson@NpcUrlAction@@UEAA?AVValue@Json@@XZ
+     */
     virtual class Json::Value toJson();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCURLACTION
 #endif
+    /**
+     * @symbol ??0NpcUrlAction@@QEAA@XZ
+     */
     MCAPI NpcUrlAction();
 
 };

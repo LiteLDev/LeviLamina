@@ -32,13 +32,37 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCLASSTREE
 #endif
+    /**
+     * @symbol ?getEntityTypeIdLegacy@ActorClassTree@@SA?AW4ActorType@@W42@@Z
+     */
     MCAPI static enum ActorType getEntityTypeIdLegacy(enum ActorType);
+    /**
+     * @symbol ?hasCategory@ActorClassTree@@SA_NAEBW4ActorCategory@@W42@@Z
+     */
     MCAPI static bool hasCategory(enum ActorCategory const &, enum ActorCategory);
+    /**
+     * @symbol ?isHangingEntity@ActorClassTree@@SA_NAEBVActor@@@Z
+     */
     MCAPI static bool isHangingEntity(class Actor const &);
+    /**
+     * @symbol ?isInstanceOf@ActorClassTree@@SA_NAEBVActor@@W4ActorType@@@Z
+     */
     MCAPI static bool isInstanceOf(class Actor const &, enum ActorType);
+    /**
+     * @symbol ?isMob@ActorClassTree@@SA_NW4ActorType@@@Z
+     */
     MCAPI static bool isMob(enum ActorType);
+    /**
+     * @symbol ?isMobLegacy@ActorClassTree@@SA_NW4ActorType@@@Z
+     */
     MCAPI static bool isMobLegacy(enum ActorType);
+    /**
+     * @symbol ?isOfType@ActorClassTree@@SA_NW4ActorType@@0@Z
+     */
     MCAPI static bool isOfType(enum ActorType, enum ActorType);
+    /**
+     * @symbol ?isTypeInstanceOf@ActorClassTree@@SA_NW4ActorType@@0@Z
+     */
     MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
 
 };

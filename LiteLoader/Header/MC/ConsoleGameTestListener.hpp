@@ -30,9 +30,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ConsoleGameTestListener();
+    /**
+     * @vtable 1
+     * @symbol ?onTestStructureLoaded@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
+    /**
+     * @vtable 2
+     * @symbol ?onTestPassed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
+    /**
+     * @vtable 3
+     * @symbol ?onTestFailed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     */
     virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEGAMETESTLISTENER
 #endif

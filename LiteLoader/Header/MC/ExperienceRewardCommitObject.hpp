@@ -28,12 +28,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ExperienceRewardCommitObject();
+    /**
+     * @vtable 1
+     * @symbol ?append@ExperienceRewardCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
+     */
     virtual bool append(class ContainerValidationCommitObject *);
+    /**
+     * @vtable 2
+     * @symbol ?canCommit@ExperienceRewardCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z
+     */
     virtual bool canCommit(class ContainerScreenContext const &) const;
+    /**
+     * @vtable 3
+     * @symbol ?commit@ExperienceRewardCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
+     */
     virtual void commit(class ContainerScreenContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMMITOBJECT
 #endif
+    /**
+     * @symbol ??0ExperienceRewardCommitObject@@QEAA@H@Z
+     */
     MCAPI ExperienceRewardCommitObject(int);
 
 };

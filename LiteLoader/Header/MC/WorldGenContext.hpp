@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCONTEXT
 #endif
+    /**
+     * @symbol ??1WorldGenContext@@QEAA@XZ
+     */
     MCAPI ~WorldGenContext();
 
 };

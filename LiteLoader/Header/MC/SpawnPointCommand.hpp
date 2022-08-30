@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SpawnPointCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@SpawnPointCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNPOINTCOMMAND
 #endif
+    /**
+     * @symbol ?setup@SpawnPointCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

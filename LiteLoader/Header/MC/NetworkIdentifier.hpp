@@ -36,18 +36,51 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
 #endif
+    /**
+     * @symbol ??0NetworkIdentifier@@QEAA@_K@Z
+     */
     MCAPI NetworkIdentifier(unsigned __int64);
+    /**
+     * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
+     */
     MCAPI NetworkIdentifier(struct sockaddr_in const &);
+    /**
+     * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
+     */
     MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
+    /**
+     * @symbol ??0NetworkIdentifier@@QEAA@AEBURakNetGUID@RakNet@@@Z
+     */
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
+    /**
+     * @symbol ??0NetworkIdentifier@@QEAA@AEBUNetworkID@NetherNet@@@Z
+     */
     MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
+    /**
+     * @symbol ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string getAddress() const;
+    /**
+     * @symbol ?getHash@NetworkIdentifier@@QEBA_KXZ
+     */
     MCAPI unsigned __int64 getHash() const;
+    /**
+     * @symbol ?getNetherNetIDAsString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string getNetherNetIDAsString() const;
+    /**
+     * @symbol ?isUnassigned@NetworkIdentifier@@QEBA_NXZ
+     */
     MCAPI bool isUnassigned() const;
+    /**
+     * @symbol ?toString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string toString() const;
 
 //private:
+    /**
+     * @symbol ?equalsTypeData@NetworkIdentifier@@AEBA_NAEBV1@@Z
+     */
     MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 
 private:

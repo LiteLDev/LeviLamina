@@ -30,6 +30,10 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?_createItem@EmptyLootItem@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
+     */
     virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYLOOTITEM
 #endif

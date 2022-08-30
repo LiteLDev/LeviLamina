@@ -31,20 +31,54 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MapExtendingRecipe();
+    /**
+     * @vtable 1
+     * @symbol ?assemble@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /**
+     * @vtable 2
+     * @symbol ?getCraftingSize@MapExtendingRecipe@@UEBAHXZ
+     */
     virtual int getCraftingSize() const;
+    /**
+     * @vtable 3
+     * @symbol ?getIngredient@MapExtendingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
+    /**
+     * @vtable 4
+     * @symbol ?getResultItem@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
+    /**
+     * @vtable 6
+     * @symbol ?matches@MapExtendingRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
+    /**
+     * @vtable 7
+     * @symbol ?size@MapExtendingRecipe@@UEBAHXZ
+     */
     virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPEXTENDINGRECIPE
 #endif
+    /**
+     * @symbol ??0MapExtendingRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     */
     MCAPI MapExtendingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
 MCAPI static class mce::UUID const CartographyTableID;
 MCAPI static class mce::UUID const CraftingTableID;
 
 //private:
+    /**
+     * @symbol ?_updateMapInstance@MapExtendingRecipe@@AEBAXAEAVItemInstance@@@Z
+     */
     MCAPI void _updateMapInstance(class ItemInstance &) const;
 
 private:

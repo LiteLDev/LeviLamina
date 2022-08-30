@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATESYSTEM
 #endif
+    /**
+     * @symbol ?createAddReplayStateComponentSystem@ReplayStateSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createAddReplayStateComponentSystem();
+    /**
+     * @symbol ?createReplayStateSystem@ReplayStateSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createReplayStateSystem();
 
 };

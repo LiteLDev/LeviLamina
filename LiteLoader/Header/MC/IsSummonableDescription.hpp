@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~IsSummonableDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getJsonName@IsSummonableDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSUMMONABLEDESCRIPTION
 #endif
+    /**
+     * @symbol ?parse@IsSummonableDescription@@QEAAXAEBVValue@Json@@@Z
+     */
     MCAPI void parse(class Json::Value const &);
 
 };

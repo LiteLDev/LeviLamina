@@ -31,38 +31,132 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~EndGatewayBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@EndGatewayBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@EndGatewayBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@EndGatewayBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 8
+     * @symbol ?onChanged@EndGatewayBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onChanged(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 14
+     * @symbol ?triggerEvent@EndGatewayBlockActor@@UEAAXHH@Z
+     */
     virtual void triggerEvent(int, int);
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 18
+     * @symbol ?hasAlphaLayer@EndGatewayBlockActor@@UEBA_NXZ
+     */
     virtual bool hasAlphaLayer() const;
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 35
+     * @symbol ?_getUpdatePacket@EndGatewayBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0EndGatewayBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI EndGatewayBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?canTeleport@EndGatewayBlockActor@@QEBA_NPEBVGetCollisionShapeInterface@@AEBVBlockSource@@@Z
+     */
     MCAPI bool canTeleport(class GetCollisionShapeInterface const *, class BlockSource const &) const;
+    /**
+     * @symbol ?getExitPosition@EndGatewayBlockActor@@QEBA?AVBlockPos@@XZ
+     */
     MCAPI class BlockPos getExitPosition() const;
+    /**
+     * @symbol ?getParticleAmount@EndGatewayBlockActor@@QEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI int getParticleAmount(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?setExitPosition@EndGatewayBlockActor@@QEAAXAEBVBlockPos@@@Z
+     */
     MCAPI void setExitPosition(class BlockPos const &);
+    /**
+     * @symbol ?teleportEntity@EndGatewayBlockActor@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void teleportEntity(class Actor &);
 MCAPI static int const COOLDOWN_TIME;
 MCAPI static int const EVENT_COOLDOWN;
 MCAPI static int const SPAWN_TIME;
+    /**
+     * @symbol ?findExitPortal@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVWorldGenerator@@AEBV2@@Z
+     */
     MCAPI static class BlockPos findExitPortal(class WorldGenerator &, class BlockPos const &);
+    /**
+     * @symbol ?findTallestBlock@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVBlockSource@@AEBV2@H_N@Z
+     */
     MCAPI static class BlockPos findTallestBlock(class BlockSource &, class BlockPos const &, int, bool);
+    /**
+     * @symbol ?findValidSpawnAround@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVBlockSource@@AEBV2@_NH@Z
+     */
     MCAPI static class BlockPos findValidSpawnAround(class BlockSource &, class BlockPos const &, bool, int);
 
 //private:
+    /**
+     * @symbol ?_getHighestSection@EndGatewayBlockActor@@CAHAEAVWorldGenerator@@AEAVBlockVolume@@AEBVBlockPos@@@Z
+     */
     MCAPI static int _getHighestSection(class WorldGenerator &, class BlockVolume &, class BlockPos const &);
 
 private:

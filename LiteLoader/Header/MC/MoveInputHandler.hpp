@@ -30,24 +30,82 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MoveInputHandler();
+    /**
+     * @vtable 1
+     * @symbol ?tick@MoveInputHandler@@UEAAXAEAUIPlayerMovementProxy@@@Z
+     */
     virtual void tick(struct IPlayerMovementProxy &);
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?clearInputState@MoveInputHandler@@UEAAXXZ
+     */
     virtual void clearInputState();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 9
+     * @symbol ?isChangeHeight@MoveInputHandler@@UEBA_NXZ
+     */
     virtual bool isChangeHeight() const;
+    /**
+     * @vtable 11
+     * @symbol ?isPlayerMoving@MoveInputHandler@@UEBA_NXZ
+     */
     virtual bool isPlayerMoving() const;
+    /**
+     * @vtable 12
+     * @symbol ?getGazeDirection@MoveInputHandler@@UEBAAEBVVec3@@XZ
+     */
     virtual class Vec3 const & getGazeDirection() const;
+    /**
+     * @vtable 13
+     * @symbol ?extractInputComponent@MoveInputHandler@@UEBA?AUMoveInputComponent@@XZ
+     */
     virtual struct MoveInputComponent extractInputComponent() const;
+    /**
+     * @vtable 14
+     * @symbol ?fillInputPacket@MoveInputHandler@@UEAAXAEAVPlayerAuthInputPacket@@@Z
+     */
     virtual void fillInputPacket(class PlayerAuthInputPacket &);
+    /**
+     * @vtable 15
+     * @symbol __unk_vfn_15
+     */
     virtual void __unk_vfn_15() = 0;
+    /**
+     * @vtable 16
+     * @symbol ?createSnapshot@MoveInputHandler@@UEAA?AV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTHANDLER
 #endif
+    /**
+     * @symbol ?wantsMoveForward@MoveInputHandler@@QEBA_NXZ
+     */
     MCAPI bool wantsMoveForward() const;
 
 //protected:
+    /**
+     * @symbol ??0MoveInputHandler@@IEAA@XZ
+     */
     MCAPI MoveInputHandler();
 
 protected:

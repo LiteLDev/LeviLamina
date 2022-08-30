@@ -639,7 +639,13 @@ MCAPI extern class WeakPtr<class BlockLegacy> mWoolCarpet;
 MCAPI extern class WeakPtr<class BlockLegacy> mYellowCandle;
 MCAPI extern class WeakPtr<class BlockLegacy> mYellowCandleCake;
 MCAPI extern class WeakPtr<class BlockLegacy> mYellowFlower;
+    /**
+     * @symbol ?registerBlocks@VanillaBlockTypes@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
+     */
     MCAPI void registerBlocks(class BaseGameVersion const &, class Experiments const &);
+    /**
+     * @symbol ?unregisterBlocks@VanillaBlockTypes@@YAXXZ
+     */
     MCAPI void unregisterBlocks();
 
 };

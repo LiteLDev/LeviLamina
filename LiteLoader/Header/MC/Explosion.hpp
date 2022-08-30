@@ -32,13 +32,37 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSION
 #endif
+    /**
+     * @symbol ??0Explosion@@QEAA@AEAVBlockSource@@PEAVActor@@AEBVVec3@@M@Z
+     */
     MCAPI Explosion(class BlockSource &, class Actor *, class Vec3 const &, float);
+    /**
+     * @symbol ?explode@Explosion@@QEAAXXZ
+     */
     MCAPI void explode();
+    /**
+     * @symbol ?overrideInWater@Explosion@@QEAAX_N@Z
+     */
     MCAPI void overrideInWater(bool);
+    /**
+     * @symbol ?setAllowUnderwater@Explosion@@QEAAX_N@Z
+     */
     MCAPI void setAllowUnderwater(bool);
+    /**
+     * @symbol ?setBreaking@Explosion@@QEAAX_N@Z
+     */
     MCAPI void setBreaking(bool);
+    /**
+     * @symbol ?setFire@Explosion@@QEAAX_N@Z
+     */
     MCAPI void setFire(bool);
+    /**
+     * @symbol ?setMaxResistance@Explosion@@QEAAXM@Z
+     */
     MCAPI void setMaxResistance(float);
+    /**
+     * @symbol ??1Explosion@@QEAA@XZ
+     */
     MCAPI ~Explosion();
 
 };

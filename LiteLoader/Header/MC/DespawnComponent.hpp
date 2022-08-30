@@ -32,10 +32,19 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT
 #endif
+    /**
+     * @symbol ?onDespawn@DespawnComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void onDespawn(class Actor &);
+    /**
+     * @symbol ?tick@DespawnComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void tick(class Actor &);
 
 //private:
+    /**
+     * @symbol ?_tryStandardDespawnRules@DespawnComponent@@AEBA_NAEAVActor@@@Z
+     */
     MCAPI bool _tryStandardDespawnRules(class Actor &) const;
 
 private:

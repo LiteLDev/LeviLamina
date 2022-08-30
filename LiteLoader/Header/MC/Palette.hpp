@@ -48,7 +48,13 @@ MCAPI static class mce::Color const RED;
 MCAPI static class mce::Color const SILVER;
 MCAPI static class mce::Color const WHITE;
 MCAPI static class mce::Color const YELLOW;
+    /**
+     * @symbol ?fromByte@Palette@@SA?AW4PaletteColor@@E@Z
+     */
     MCAPI static enum PaletteColor fromByte(unsigned char);
+    /**
+     * @symbol ?getColor@Palette@@SAAEBVColor@mce@@W4PaletteColor@@@Z
+     */
     MCAPI static class mce::Color const & getColor(enum PaletteColor);
 
 };

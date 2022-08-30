@@ -31,11 +31,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockPileFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@BlockPileFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+    /**
+     * @vtable 4
+     * @symbol ?getBlockToPlace@BlockPileFeature@@MEBAAEBVBlock@@AEAVRandom@@@Z
+     */
     virtual class Block const & getBlockToPlace(class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPILEFEATURE
 #endif
+    /**
+     * @symbol ??0BlockPileFeature@@QEAA@AEBVBlock@@@Z
+     */
     MCAPI BlockPileFeature(class Block const &);
 
 };

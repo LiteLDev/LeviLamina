@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LootItemRandomChanceWithSpecialModifierCondition();
+    /**
+     * @vtable 1
+     * @symbol ?applies@LootItemRandomChanceWithSpecialModifierCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+     */
     virtual bool applies(class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMRANDOMCHANCEWITHSPECIALMODIFIERCONDITION
 #endif
+    /**
+     * @symbol ?deserialize@LootItemRandomChanceWithSpecialModifierCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
+     */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 };

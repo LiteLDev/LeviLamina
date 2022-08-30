@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATECONFIG
 #endif
+    /**
+     * @symbol ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
+     */
     MCAPI ReplayStateConfig(enum ReplayStateMode);
+    /**
+     * @symbol ?usesUnsupportedThresholds@ReplayStateConfig@@QEBA_NXZ
+     */
     MCAPI bool usesUnsupportedThresholds() const;
 
 };

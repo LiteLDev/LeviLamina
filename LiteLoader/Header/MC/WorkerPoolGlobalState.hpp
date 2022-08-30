@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOLGLOBALSTATE
 #endif
+    /**
+     * @symbol ??1WorkerPoolGlobalState@@QEAA@XZ
+     */
     MCAPI ~WorkerPoolGlobalState();
 
 };

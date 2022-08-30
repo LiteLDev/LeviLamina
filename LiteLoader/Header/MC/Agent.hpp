@@ -32,76 +32,329 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 10
+     * @symbol ?initializeComponents@Agent@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~Agent();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 44
+     * @symbol ?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH1@Z
+     */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    /**
+     * @vtable 49
+     * @symbol ?normalTick@Agent@@UEAAXXZ
+     */
     virtual void normalTick();
+    /**
+     * @vtable 59
+     * @symbol ?isInvisible@Agent@@UEBA_NXZ
+     */
     virtual bool isInvisible() const;
+    /**
+     * @vtable 60
+     * @symbol ?canShowNameTag@Agent@@UEBA_NXZ
+     */
     virtual bool canShowNameTag() const;
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 65
+     * @symbol ?getFormattedNameTag@Agent@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getFormattedNameTag() const;
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 95
+     * @symbol ?isPickable@Agent@@UEAA_NXZ
+     */
     virtual bool isPickable();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 142
+     * @symbol ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
+     */
     virtual void handleEntityEvent(enum ActorEvent, int);
+    /**
+     * @vtable 161
+     * @symbol ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
+     */
     virtual void setCarriedItem(class ItemStack const &);
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 194
+     * @symbol ?canBePulledIntoVehicle@Agent@@UEBA_NXZ
+     */
     virtual bool canBePulledIntoVehicle() const;
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 212
+     * @symbol ?canBeAffected@Agent@@UEBA_NAEBVMobEffectInstance@@@Z
+     */
     virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 230
+     * @symbol ?isWorldBuilder@Agent@@UEBA_NXZ
+     */
     virtual bool isWorldBuilder() const;
+    /**
+     * @vtable 232
+     * @symbol ?isAdventure@Agent@@UEBA_NXZ
+     */
     virtual bool isAdventure() const;
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 252
+     * @symbol ?kill@Agent@@UEAAXXZ
+     */
     virtual void kill();
+    /**
+     * @vtable 267
+     * @symbol ?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z
+     */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 270
+     * @symbol ?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@M_N1@Z
+     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 286
+     * @symbol ?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z
+     */
     virtual void knockback(class Actor *, int, float, float, float, float, float);
+    /**
+     * @vtable 297
+     * @symbol ?travel@Agent@@UEAAXMMM@Z
+     */
     virtual void travel(float, float, float);
+    /**
+     * @vtable 300
+     * @symbol ?aiStep@Agent@@UEAAXXZ
+     */
     virtual void aiStep();
+    /**
+     * @vtable 313
+     * @symbol __unk_vfn_313
+     */
     virtual void __unk_vfn_313();
+    /**
+     * @vtable 317
+     * @symbol __unk_vfn_317
+     */
     virtual void __unk_vfn_317();
+    /**
+     * @vtable 343
+     * @symbol ?createAIGoals@Agent@@UEAA_NXZ
+     */
     virtual bool createAIGoals();
+    /**
+     * @vtable 350
+     * @symbol ?canExistWhenDisallowMob@Agent@@UEBA_NXZ
+     */
     virtual bool canExistWhenDisallowMob() const;
+    /**
+     * @vtable 351
+     * @symbol __unk_vfn_351
+     */
     virtual void __unk_vfn_351();
+    /**
+     * @vtable 356
+     * @symbol ?initBodyControl@Agent@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
+    /**
+     * @vtable 365
+     * @symbol __unk_vfn_365
+     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENT
+    /**
+     * @vtable -1
+     * @symbol ?breaksFallingBlocks@Agent@@UEBA_NXZ
+     */
     MCVAPI bool breaksFallingBlocks() const;
+    /**
+     * @vtable -1
+     * @symbol ?getAlwaysShowNameTag@Agent@@UEBA_NXZ
+     */
     MCVAPI bool getAlwaysShowNameTag() const;
+    /**
+     * @vtable -1
+     * @symbol ?interactPreventDefault@Agent@@UEAA_NXZ
+     */
     MCVAPI bool interactPreventDefault();
+    /**
+     * @vtable -1
+     * @symbol ?isTargetable@Agent@@UEBA_NXZ
+     */
     MCVAPI bool isTargetable() const;
 #endif
+    /**
+     * @symbol ??0Agent@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI Agent(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?doServerTravel@Agent@@QEAA?AVVec3@@VAABB@@W4AgentTravelType@@@Z
+     */
     MCAPI class Vec3 doServerTravel(class AABB, enum AgentTravelType);
+    /**
+     * @symbol ?getMoveSpeedScalar@Agent@@QEBAMXZ
+     */
     MCAPI float getMoveSpeedScalar() const;
+    /**
+     * @symbol ?getSelectedSlot@Agent@@QEBAHXZ
+     */
     MCAPI int getSelectedSlot() const;
+    /**
+     * @symbol ?isValidSlotNum@Agent@@QEAA_NH@Z
+     */
     MCAPI bool isValidSlotNum(int);
+    /**
+     * @symbol ?setMoveTarget@Agent@@QEAAXAEBVVec3@@@Z
+     */
     MCAPI void setMoveTarget(class Vec3 const &);
+    /**
+     * @symbol ?setNameTagFromOwner@Agent@@QEAAXAEBVPlayer@@@Z
+     */
     MCAPI void setNameTagFromOwner(class Player const &);
+    /**
+     * @symbol ?startCommandMode@Agent@@QEAAXXZ
+     */
     MCAPI void startCommandMode();
+    /**
+     * @symbol ?stopCommandMode@Agent@@QEAAXXZ
+     */
     MCAPI void stopCommandMode();
+    /**
+     * @symbol ?swingAnimationCompleted@Agent@@QEAA_NXZ
+     */
     MCAPI bool swingAnimationCompleted();
+    /**
+     * @symbol ?swingArm@Agent@@QEAAXXZ
+     */
     MCAPI void swingArm();
+    /**
+     * @symbol ?tryFireCreateEvent@Agent@@QEAAXAEAVPlayer@@@Z
+     */
     MCAPI void tryFireCreateEvent(class Player &);
+    /**
+     * @symbol ?roundTeleportPos@Agent@@SA?AVVec3@@AEBV2@@Z
+     */
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const &);
+    /**
+     * @symbol ?tryGetFromEntity@Agent@@SAPEAV1@AEAVEntityContext@@_N@Z
+     */
     MCAPI static class Agent * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
+    /**
+     * @symbol ?_getContainerComponent@Agent@@AEAAPEAVContainerComponent@@XZ
+     */
     MCAPI class ContainerComponent * _getContainerComponent();
 
 private:

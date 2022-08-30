@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDELEVELSYSTEM
 #endif
+    /**
+     * @symbol ?emptyEventingRequests@SideBySideLevelSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo emptyEventingRequests();
+    /**
+     * @symbol ?emptySoundRequests@SideBySideLevelSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo emptySoundRequests();
 
 };

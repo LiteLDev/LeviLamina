@@ -33,14 +33,30 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScriptGameTestModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTGAMETESTMODULEFACTORY
 #endif
+    /**
+     * @symbol ??0ScriptGameTestModuleFactory@@QEAA@AEAVGameTestRegistry@gametest@@@Z
+     */
     MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry &);
+    /**
+     * @symbol ?getModuleUUIDAsString@ScriptGameTestModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
+    /**
+     * @symbol ?_addVersions@ScriptGameTestModuleFactory@@AEAAXXZ
+     */
     MCAPI void _addVersions();
+    /**
+     * @symbol ?_generateBindings@ScriptGameTestModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEBUVersion@3@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     */
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 
 private:

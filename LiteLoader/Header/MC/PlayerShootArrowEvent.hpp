@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSHOOTARROWEVENT
 #endif
+    /**
+     * @symbol ??0PlayerShootArrowEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const &);
+    /**
+     * @symbol ??1PlayerShootArrowEvent@@QEAA@XZ
+     */
     MCAPI ~PlayerShootArrowEvent();
 
 };

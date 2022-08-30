@@ -37,31 +37,111 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NetherNetServerLocator();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2@Z
+     */
     virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
+    /**
+     * @vtable 4
+     * @symbol ?stopAnnouncingServer@NetherNetServerLocator@@UEAAXXZ
+     */
     virtual void stopAnnouncingServer();
+    /**
+     * @vtable 5
+     * @symbol ?startServerDiscovery@NetherNetServerLocator@@UEAAXUPortPair@@@Z
+     */
     virtual void startServerDiscovery(struct PortPair);
+    /**
+     * @vtable 6
+     * @symbol ?stopServerDiscovery@NetherNetServerLocator@@UEAAXXZ
+     */
     virtual void stopServerDiscovery();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol ?getServerList@NetherNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
+     */
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
+    /**
+     * @vtable 10
+     * @symbol ?clearServerList@NetherNetServerLocator@@UEAAXXZ
+     */
     virtual void clearServerList();
+    /**
+     * @vtable 11
+     * @symbol ?update@NetherNetServerLocator@@UEAAXXZ
+     */
     virtual void update();
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 13
+     * @symbol __unk_vfn_13
+     */
     virtual void __unk_vfn_13();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSERVERLOCATOR
 #endif
+    /**
+     * @symbol ??0NetherNetServerLocator@@QEAA@XZ
+     */
     MCAPI NetherNetServerLocator();
 
 //private:
+    /**
+     * @symbol ?_isNetherNetOverLANAllowed@NetherNetServerLocator@@AEBA_NXZ
+     */
     MCAPI bool _isNetherNetOverLANAllowed() const;
+    /**
+     * @symbol ?_onBroadcastResponseCallback@NetherNetServerLocator@@AEAAX_KPEBXH@Z
+     */
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
+    /**
+     * @symbol ?_pruneStaleServers@NetherNetServerLocator@@AEAAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
+     */
     MCAPI void _pruneStaleServers(class std::chrono::duration<__int64, struct std::ratio<1, 1>>);
+    /**
+     * @symbol ?_setBroadcastDiscoveryResponse@NetherNetServerLocator@@AEAAXAEBUServerData@1@@Z
+     */
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const &);
+    /**
+     * @symbol ?_setIsAnnouncing@NetherNetServerLocator@@AEAAX_N@Z
+     */
     MCAPI void _setIsAnnouncing(bool);
+    /**
+     * @symbol ?_setIsDiscovering@NetherNetServerLocator@@AEAAX_N@Z
+     */
     MCAPI void _setIsDiscovering(bool);
+    /**
+     * @symbol ?_transformFrom@NetherNetServerLocator@@AEAA?AUPingedCompatibleServer@@_KAEBUServerData@1@@Z
+     */
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
 
 private:

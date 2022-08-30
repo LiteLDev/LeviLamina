@@ -28,8 +28,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCEPROXY
 #endif
+    /**
+     * @symbol ??0BlockMaterialInstanceProxy@@QEAA@AEBU0@@Z
+     */
     MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const &);
+    /**
+     * @symbol ??1BlockMaterialInstanceProxy@@QEAA@XZ
+     */
     MCAPI ~BlockMaterialInstanceProxy();
+    /**
+     * @symbol ?bindType@BlockMaterialInstanceProxy@@SAXXZ
+     */
     MCAPI static void bindType();
 
 };

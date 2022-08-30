@@ -30,17 +30,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~TargetWhenPushedGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@TargetWhenPushedGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@TargetWhenPushedGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@TargetWhenPushedGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?appendDebugInfo@TargetWhenPushedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETWHENPUSHEDGOAL
+    /**
+     * @vtable -1
+     * @symbol ?canBeInterrupted@TargetWhenPushedGoal@@UEAA_NXZ
+     */
     MCVAPI bool canBeInterrupted();
+    /**
+     * @vtable -1
+     * @symbol ?canContinueToUse@TargetWhenPushedGoal@@UEAA_NXZ
+     */
     MCVAPI bool canContinueToUse();
 #endif
+    /**
+     * @symbol ??0TargetWhenPushedGoal@@QEAA@AEAVMob@@V?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@M@Z
+     */
     MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
 
 };

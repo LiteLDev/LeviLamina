@@ -31,13 +31,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~OwnerHurtByTargetGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@OwnerHurtByTargetGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 4
+     * @symbol ?start@OwnerHurtByTargetGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERHURTBYTARGETGOAL
 #endif
+    /**
+     * @symbol ??0OwnerHurtByTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
+     */
     MCAPI OwnerHurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 
 };

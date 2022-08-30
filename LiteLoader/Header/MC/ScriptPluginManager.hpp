@@ -34,16 +34,43 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGER
 #endif
+    /**
+     * @symbol ??0ScriptPluginManager@@QEAA@AEAVScriptEngine@Scripting@@_NV?$unique_ptr@VIScriptTelemetryLogger@@U?$default_delete@VIScriptTelemetryLogger@@@std@@@std@@@Z
+     */
     MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, bool, std::unique_ptr<class IScriptTelemetryLogger>);
+    /**
+     * @symbol ?discoverPlugins@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@W4ResourceType@ResourceInformation@@AEBVIScriptPluginSourceEnumerator@@AEBVScriptPackConfigurationManager@@@Z
+     */
     MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &, class ScriptPackConfigurationManager const &);
+    /**
+     * @symbol ?getPlugins@ScriptPluginManager@@QEBAAEBV?$vector@VScriptPlugin@@V?$allocator@VScriptPlugin@@@std@@@std@@XZ
+     */
     MCAPI std::vector<class ScriptPlugin> const & getPlugins() const;
+    /**
+     * @symbol ?releaseAll@ScriptPluginManager@@QEAAXXZ
+     */
     MCAPI void releaseAll();
+    /**
+     * @symbol ?releasePlugins@ScriptPluginManager@@QEAAXXZ
+     */
     MCAPI void releasePlugins();
+    /**
+     * @symbol ?runAll@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@XZ
+     */
     MCAPI class ScriptPluginManagerResult runAll();
+    /**
+     * @symbol ??1ScriptPluginManager@@QEAA@XZ
+     */
     MCAPI ~ScriptPluginManager();
 
 //private:
+    /**
+     * @symbol ?_generateModuleDependencies@ScriptPluginManager@@AEBA?AV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@AEBV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@3@0@Z
+     */
     MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(std::vector<struct PackIdVersion> const &, std::vector<struct PackIdVersion> const &) const;
+    /**
+     * @symbol ?_reportContextResults@ScriptPluginManager@@AEAAXAEBUScriptContextResult@Scripting@@AEAVScriptPluginResult@@@Z
+     */
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const &, class ScriptPluginResult &);
 
 private:

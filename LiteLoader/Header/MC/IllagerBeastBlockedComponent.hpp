@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILLAGERBEASTBLOCKEDCOMPONENT
 #endif
+    /**
+     * @symbol ?initFromDefinition@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void initFromDefinition(class Actor &);
+    /**
+     * @symbol ?onBlocked@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@0@Z
+     */
     MCAPI void onBlocked(class Actor &, class ActorDamageSource const &, class Actor &);
 
 };

@@ -31,11 +31,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AbsorptionMobEffect();
+    /**
+     * @vtable 1
+     * @symbol ?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z
+     */
     virtual void applyEffects(class Actor *, int, int) const;
+    /**
+     * @vtable 2
+     * @symbol ?removeEffects@AbsorptionMobEffect@@UEAAXPEAVActor@@@Z
+     */
     virtual void removeEffects(class Actor *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSORPTIONMOBEFFECT
 #endif
+    /**
+     * @symbol ??0AbsorptionMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
+     */
     MCAPI AbsorptionMobEffect(int, std::string const &, std::string const &, bool, int, int);
 
 };

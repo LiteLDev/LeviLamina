@@ -27,10 +27,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AppPlatformNetworkSettings();
+    /**
+     * @vtable 1
+     * @symbol ?requiresNetworkOutageMessaging@AppPlatformNetworkSettings@@UEBA_NXZ
+     */
     virtual bool requiresNetworkOutageMessaging() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMNETWORKSETTINGS
 #endif
+    /**
+     * @symbol ??0AppPlatformNetworkSettings@@QEAA@XZ
+     */
     MCAPI AppPlatformNetworkSettings();
 
 };

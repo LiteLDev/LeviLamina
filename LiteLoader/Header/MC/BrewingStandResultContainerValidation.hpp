@@ -31,15 +31,55 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BrewingStandResultContainerValidation();
+    /**
+     * @vtable 1
+     * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
+    /**
+     * @vtable 2
+     * @symbol ?isItemAllowedInSlot@BrewingStandResultContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
+     */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
+    /**
+     * @vtable 3
+     * @symbol ?getAvailableSetCount@BrewingStandResultContainerValidation@@UEBAHHAEBVItemStackBase@@@Z
+     */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
+    /**
+     * @vtable 4
+     * @symbol ?isItemAllowedToAdd@BrewingStandResultContainerValidation@@UEBA_NAEBVItemStack@@@Z
+     */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
+    /**
+     * @vtable 5
+     * @symbol ?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
+     */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
+    /**
+     * @vtable 6
+     * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
+     */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
+    /**
+     * @vtable 7
+     * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+     */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
+    /**
+     * @vtable 8
+     * @symbol ?getContainerOffset@BrewingStandResultContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
+     */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
+    /**
+     * @vtable 9
+     * @symbol ?getContainerSize@BrewingStandResultContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
+     */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDRESULTCONTAINERVALIDATION
 #endif

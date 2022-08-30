@@ -30,8 +30,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FitDoubleZRoom();
+    /**
+     * @vtable 1
+     * @symbol ?fits@FitDoubleZRoom@@UEBA_NAEBVRoomDefinition@@@Z
+     */
     virtual bool fits(class RoomDefinition const &) const;
+    /**
+     * @vtable 2
+     * @symbol ?create@FitDoubleZRoom@@UEAA?AV?$unique_ptr@VOceanMonumentPiece@@U?$default_delete@VOceanMonumentPiece@@@std@@@std@@AEAHV?$shared_ptr@VRoomDefinition@@@3@AEAVRandom@@@Z
+     */
     virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FITDOUBLEZROOM
 #endif

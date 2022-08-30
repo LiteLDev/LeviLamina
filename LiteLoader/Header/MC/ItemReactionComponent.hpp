@@ -30,9 +30,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemReactionComponent();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?_onEnd@ItemReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+     */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREACTIONCOMPONENT
 #endif

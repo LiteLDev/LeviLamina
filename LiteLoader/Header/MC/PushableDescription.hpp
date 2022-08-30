@@ -29,12 +29,31 @@ public:
     PushableDescription(struct PushableDescription const &) = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@PushableDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~PushableDescription();
+    /**
+     * @vtable 2
+     * @symbol ?deserializeData@PushableDescription@@UEAAXUDeserializeDataParams@@@Z
+     */
     virtual void deserializeData(struct DeserializeDataParams);
+    /**
+     * @vtable 3
+     * @symbol ?serializeData@PushableDescription@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLEDESCRIPTION
 #endif
+    /**
+     * @symbol ??0PushableDescription@@QEAA@XZ
+     */
     MCAPI PushableDescription();
 
 };

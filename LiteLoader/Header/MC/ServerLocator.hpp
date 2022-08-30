@@ -31,7 +31,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
+    /**
+     * @vtable -1
+     * @symbol ?_onDisable@ServerLocator@@EEAAXXZ
+     */
     MCVAPI void _onDisable();
+    /**
+     * @vtable -1
+     * @symbol ?_onEnable@ServerLocator@@EEAAXXZ
+     */
     MCVAPI void _onEnable();
 #endif
 

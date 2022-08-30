@@ -31,8 +31,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRYMANAGER
 #endif
+    /**
+     * @symbol ?getItemRegistry@ItemRegistryManager@@SA?AVItemRegistryRef@@XZ
+     */
     MCAPI static class ItemRegistryRef getItemRegistry();
+    /**
+     * @symbol ?resetItemRegistry@ItemRegistryManager@@SAXXZ
+     */
     MCAPI static void resetItemRegistry();
+    /**
+     * @symbol ?setItemRegistry@ItemRegistryManager@@SAXVItemRegistryRef@@@Z
+     */
     MCAPI static void setItemRegistry(class ItemRegistryRef);
 
 //private:

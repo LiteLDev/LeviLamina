@@ -37,74 +37,323 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ComposterBlock();
+    /**
+     * @vtable 9
+     * @symbol ?addAABBs@ComposterBlock@@UEBAXAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@@Z
+     */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
+    /**
+     * @vtable 11
+     * @symbol ?addCollisionShapes@ComposterBlock@@UEBA_NAEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+     */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 22
+     * @symbol ?canProvideSupport@ComposterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+     */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 36
+     * @symbol __unk_vfn_36
+     */
     virtual void __unk_vfn_36();
+    /**
+     * @vtable 37
+     * @symbol __unk_vfn_37
+     */
     virtual void __unk_vfn_37();
+    /**
+     * @vtable 38
+     * @symbol __unk_vfn_38
+     */
     virtual void __unk_vfn_38();
+    /**
+     * @vtable 39
+     * @symbol __unk_vfn_39
+     */
     virtual void __unk_vfn_39();
+    /**
+     * @vtable 40
+     * @symbol __unk_vfn_40
+     */
     virtual void __unk_vfn_40();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 42
+     * @symbol __unk_vfn_42
+     */
     virtual void __unk_vfn_42();
+    /**
+     * @vtable 44
+     * @symbol __unk_vfn_44
+     */
     virtual void __unk_vfn_44();
+    /**
+     * @vtable 45
+     * @symbol __unk_vfn_45
+     */
     virtual void __unk_vfn_45();
+    /**
+     * @vtable 46
+     * @symbol __unk_vfn_46
+     */
     virtual void __unk_vfn_46();
+    /**
+     * @vtable 47
+     * @symbol __unk_vfn_47
+     */
     virtual void __unk_vfn_47();
+    /**
+     * @vtable 48
+     * @symbol __unk_vfn_48
+     */
     virtual void __unk_vfn_48();
+    /**
+     * @vtable 49
+     * @symbol __unk_vfn_49
+     */
     virtual void __unk_vfn_49();
+    /**
+     * @vtable 59
+     * @symbol __unk_vfn_59
+     */
     virtual void __unk_vfn_59();
+    /**
+     * @vtable 60
+     * @symbol __unk_vfn_60
+     */
     virtual void __unk_vfn_60();
+    /**
+     * @vtable 61
+     * @symbol ?canContainLiquid@ComposterBlock@@UEBA_NXZ
+     */
     virtual bool canContainLiquid() const;
+    /**
+     * @vtable 72
+     * @symbol ?onMove@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     */
     virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 94
+     * @symbol ?breaksFallingBlocks@ComposterBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+     */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
+    /**
+     * @vtable 105
+     * @symbol __unk_vfn_105
+     */
     virtual void __unk_vfn_105();
+    /**
+     * @vtable 124
+     * @symbol __unk_vfn_124
+     */
     virtual void __unk_vfn_124();
+    /**
+     * @vtable 126
+     * @symbol __unk_vfn_126
+     */
     virtual void __unk_vfn_126();
+    /**
+     * @vtable 127
+     * @symbol __unk_vfn_127
+     */
     virtual void __unk_vfn_127();
+    /**
+     * @vtable 128
+     * @symbol ?getComparatorSignal@ComposterBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+     */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
+    /**
+     * @vtable 132
+     * @symbol __unk_vfn_132
+     */
     virtual void __unk_vfn_132();
+    /**
+     * @vtable 147
+     * @symbol ?getVariant@ComposterBlock@@UEBAHAEBVBlock@@@Z
+     */
     virtual int getVariant(class Block const &) const;
+    /**
+     * @vtable 148
+     * @symbol __unk_vfn_148
+     */
     virtual void __unk_vfn_148();
+    /**
+     * @vtable 157
+     * @symbol __unk_vfn_157
+     */
     virtual void __unk_vfn_157();
+    /**
+     * @vtable 165
+     * @symbol ?onRemove@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 168
+     * @symbol __unk_vfn_168
+     */
     virtual void __unk_vfn_168();
+    /**
+     * @vtable 169
+     * @symbol __unk_vfn_169
+     */
     virtual void __unk_vfn_169();
+    /**
+     * @vtable 170
+     * @symbol __unk_vfn_170
+     */
     virtual void __unk_vfn_170();
+    /**
+     * @vtable 171
+     * @symbol ?onPlace@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 174
+     * @symbol ?tick@ComposterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /**
+     * @vtable 177
+     * @symbol __unk_vfn_177
+     */
     virtual void __unk_vfn_177();
+    /**
+     * @vtable 179
+     * @symbol ?use@ComposterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+     */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /**
+     * @vtable 188
+     * @symbol __unk_vfn_188
+     */
     virtual void __unk_vfn_188();
+    /**
+     * @vtable 192
+     * @symbol __unk_vfn_192
+     */
     virtual void __unk_vfn_192();
+    /**
+     * @vtable 193
+     * @symbol __unk_vfn_193
+     */
     virtual void __unk_vfn_193();
+    /**
+     * @vtable 194
+     * @symbol __unk_vfn_194
+     */
     virtual void __unk_vfn_194();
+    /**
+     * @vtable 195
+     * @symbol __unk_vfn_195
+     */
     virtual void __unk_vfn_195();
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @symbol ?getDescriptionId@BlockLegacy@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string const & getDescriptionId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSTERBLOCK
+    /**
+     * @vtable -1
+     * @symbol ?hasComparatorSignal@ComposterBlock@@UEBA_NXZ
+     */
     MCVAPI bool hasComparatorSignal() const;
 #endif
+    /**
+     * @symbol ??0ComposterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI ComposterBlock(std::string const &, int);
+    /**
+     * @symbol ?addItem@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
+     */
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
+    /**
+     * @symbol ?addItems@ComposterBlock@@SAHAEBVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
+     */
     MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);
+    /**
+     * @symbol ?addItems@ComposterBlock@@SA_NAEAVContainer@@HAEAVItemStack@@HAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
+     */
     MCAPI static bool addItems(class Container &, int, class ItemStack &, int, class BlockSource &, class Block const &, class BlockPos const &);
+    /**
+     * @symbol ?empty@ComposterBlock@@SAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
+     */
     MCAPI static void empty(class BlockSource &, class Block const &, class BlockPos const &);
+    /**
+     * @symbol ?extractItem@ComposterBlock@@SA?AVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
+     */
     MCAPI static class ItemStack extractItem(class BlockSource &, class Block const &, class BlockPos const &);
+    /**
+     * @symbol ?getComposterAt@ComposterBlock@@SAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI static class Block const * getComposterAt(class BlockSource &, class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?_emitBoneMeal@ComposterBlock@@AEBAXAEAVLevel@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI void _emitBoneMeal(class Level &, class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?_notifyClientComposterUsed@ComposterBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
+     */
     MCAPI void _notifyClientComposterUsed(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;
+    /**
+     * @symbol ?_getCompostableItems@ComposterBlock@@CAAEBV?$vector@U?$pair@HC@std@@V?$allocator@U?$pair@HC@std@@@2@@std@@AEBVExperiments@@@Z
+     */
     MCAPI static std::vector<struct std::pair<int, signed char>> const & _getCompostableItems(class Experiments const &);
 
 private:

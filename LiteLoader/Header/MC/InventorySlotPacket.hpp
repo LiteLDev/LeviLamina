@@ -30,14 +30,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~InventorySlotPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@InventorySlotPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@InventorySlotPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@InventorySlotPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@InventorySlotPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYSLOTPACKET
 #endif
+    /**
+     * @symbol ??0InventorySlotPacket@@QEAA@XZ
+     */
     MCAPI InventorySlotPacket();
+    /**
+     * @symbol ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
+     */
     MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const &);
 
 };

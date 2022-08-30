@@ -31,64 +31,278 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RespawnAnchorBlock();
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 36
+     * @symbol __unk_vfn_36
+     */
     virtual void __unk_vfn_36();
+    /**
+     * @vtable 37
+     * @symbol __unk_vfn_37
+     */
     virtual void __unk_vfn_37();
+    /**
+     * @vtable 38
+     * @symbol __unk_vfn_38
+     */
     virtual void __unk_vfn_38();
+    /**
+     * @vtable 39
+     * @symbol __unk_vfn_39
+     */
     virtual void __unk_vfn_39();
+    /**
+     * @vtable 40
+     * @symbol __unk_vfn_40
+     */
     virtual void __unk_vfn_40();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 42
+     * @symbol __unk_vfn_42
+     */
     virtual void __unk_vfn_42();
+    /**
+     * @vtable 44
+     * @symbol __unk_vfn_44
+     */
     virtual void __unk_vfn_44();
+    /**
+     * @vtable 45
+     * @symbol __unk_vfn_45
+     */
     virtual void __unk_vfn_45();
+    /**
+     * @vtable 46
+     * @symbol __unk_vfn_46
+     */
     virtual void __unk_vfn_46();
+    /**
+     * @vtable 47
+     * @symbol __unk_vfn_47
+     */
     virtual void __unk_vfn_47();
+    /**
+     * @vtable 48
+     * @symbol __unk_vfn_48
+     */
     virtual void __unk_vfn_48();
+    /**
+     * @vtable 49
+     * @symbol __unk_vfn_49
+     */
     virtual void __unk_vfn_49();
+    /**
+     * @vtable 59
+     * @symbol __unk_vfn_59
+     */
     virtual void __unk_vfn_59();
+    /**
+     * @vtable 60
+     * @symbol __unk_vfn_60
+     */
     virtual void __unk_vfn_60();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 101
+     * @symbol ?getResourceItem@RespawnAnchorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /**
+     * @vtable 105
+     * @symbol __unk_vfn_105
+     */
     virtual void __unk_vfn_105();
+    /**
+     * @vtable 124
+     * @symbol __unk_vfn_124
+     */
     virtual void __unk_vfn_124();
+    /**
+     * @vtable 126
+     * @symbol __unk_vfn_126
+     */
     virtual void __unk_vfn_126();
+    /**
+     * @vtable 127
+     * @symbol __unk_vfn_127
+     */
     virtual void __unk_vfn_127();
+    /**
+     * @vtable 128
+     * @symbol ?getComparatorSignal@RespawnAnchorBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
+     */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
+    /**
+     * @vtable 130
+     * @symbol ?canSpawnAt@RespawnAnchorBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
+    /**
+     * @vtable 131
+     * @symbol ?notifySpawnedAt@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void notifySpawnedAt(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 132
+     * @symbol __unk_vfn_132
+     */
     virtual void __unk_vfn_132();
+    /**
+     * @vtable 147
+     * @symbol ?getVariant@RespawnAnchorBlock@@UEBAHAEBVBlock@@@Z
+     */
     virtual int getVariant(class Block const &) const;
+    /**
+     * @vtable 148
+     * @symbol __unk_vfn_148
+     */
     virtual void __unk_vfn_148();
+    /**
+     * @vtable 152
+     * @symbol ?animateTick@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /**
+     * @vtable 154
+     * @symbol ?getLightEmission@RespawnAnchorBlock@@UEBA?AUBrightness@@AEBVBlock@@@Z
+     */
     virtual struct Brightness getLightEmission(class Block const &) const;
+    /**
+     * @vtable 157
+     * @symbol __unk_vfn_157
+     */
     virtual void __unk_vfn_157();
+    /**
+     * @vtable 158
+     * @symbol ?getSilkTouchItemInstance@RespawnAnchorBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
+     */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /**
+     * @vtable 168
+     * @symbol __unk_vfn_168
+     */
     virtual void __unk_vfn_168();
+    /**
+     * @vtable 169
+     * @symbol __unk_vfn_169
+     */
     virtual void __unk_vfn_169();
+    /**
+     * @vtable 170
+     * @symbol __unk_vfn_170
+     */
     virtual void __unk_vfn_170();
+    /**
+     * @vtable 171
+     * @symbol ?onPlace@RespawnAnchorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 173
+     * @symbol ?playerDestroy@RespawnAnchorBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
+    /**
+     * @vtable 177
+     * @symbol __unk_vfn_177
+     */
     virtual void __unk_vfn_177();
+    /**
+     * @vtable 179
+     * @symbol ?use@RespawnAnchorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+     */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
+    /**
+     * @vtable 188
+     * @symbol __unk_vfn_188
+     */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNANCHORBLOCK
+    /**
+     * @vtable -1
+     * @symbol ?hasComparatorSignal@RespawnAnchorBlock@@UEBA_NXZ
+     */
     MCVAPI bool hasComparatorSignal() const;
+    /**
+     * @vtable -1
+     * @symbol ?isInteractiveBlock@RespawnAnchorBlock@@UEBA_NXZ
+     */
     MCVAPI bool isInteractiveBlock() const;
 #endif
+    /**
+     * @symbol ??0RespawnAnchorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI RespawnAnchorBlock(std::string const &, int);
+    /**
+     * @symbol ?addItem@RespawnAnchorBlock@@SA_NAEAVContainer@@HAEAVItemStack@@AEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z
+     */
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
+    /**
+     * @symbol ?getChargeLevel@RespawnAnchorBlock@@SAHAEBVBlock@@@Z
+     */
     MCAPI static int getChargeLevel(class Block const &);
 
 //private:
+    /**
+     * @symbol ?bumpCharge@RespawnAnchorBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@F@Z
+     */
     MCAPI static bool bumpCharge(class BlockSource &, class BlockPos const &, short);
+    /**
+     * @symbol ?explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z
+     */
     MCAPI static void explode(class Player &, class BlockPos const &, class BlockSource &, class Level &);
+    /**
+     * @symbol ?trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z
+     */
     MCAPI static bool trySetSpawn(class Player &, class BlockPos const &, class BlockSource &, class Level &);
 
 private:

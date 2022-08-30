@@ -31,7 +31,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@NavigationHoverDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~NavigationHoverDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONHOVERDESCRIPTION
 #endif

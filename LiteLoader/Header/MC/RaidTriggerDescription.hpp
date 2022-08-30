@@ -31,9 +31,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@RaidTriggerDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~RaidTriggerDescription();
+    /**
+     * @vtable 2
+     * @symbol ?deserializeData@RaidTriggerDescription@@UEAAXUDeserializeDataParams@@@Z
+     */
     virtual void deserializeData(struct DeserializeDataParams);
+    /**
+     * @vtable 3
+     * @symbol ?serializeData@RaidTriggerDescription@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERDESCRIPTION
 #endif

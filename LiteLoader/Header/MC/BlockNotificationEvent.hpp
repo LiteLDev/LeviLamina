@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKNOTIFICATIONEVENT
 #endif
+    /**
+     * @symbol ??1BlockNotificationEvent@@QEAA@XZ
+     */
     MCAPI ~BlockNotificationEvent();
 
 };

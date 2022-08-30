@@ -30,19 +30,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MountPathingGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@MountPathingGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@MountPathingGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@MountPathingGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@MountPathingGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@MountPathingGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MountPathingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol ?_getAttackReachSqr@MountPathingGoal@@MEAAMXZ
+     */
     virtual float _getAttackReachSqr();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTPATHINGGOAL
 #endif
+    /**
+     * @symbol ??0MountPathingGoal@@QEAA@AEAVMob@@MM_N@Z
+     */
     MCAPI MountPathingGoal(class Mob &, float, float, bool);
 
 };

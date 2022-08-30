@@ -31,16 +31,50 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~TradeContainerManagerModel();
+    /**
+     * @vtable 6
+     * @symbol ?getItemCopies@TradeContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemStack> getItemCopies() const;
+    /**
+     * @vtable 7
+     * @symbol ?setSlot@TradeContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     */
     virtual void setSlot(int, class ItemStack const &, bool);
+    /**
+     * @vtable 8
+     * @symbol ?getSlot@TradeContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     */
     virtual class ItemStack const & getSlot(int) const;
+    /**
+     * @vtable 10
+     * @symbol ?broadcastChanges@TradeContainerManagerModel@@UEAAXXZ
+     */
     virtual void broadcastChanges();
+    /**
+     * @vtable 16
+     * @symbol ?isValid@TradeContainerManagerModel@@UEAA_NM@Z
+     */
     virtual bool isValid(float);
+    /**
+     * @vtable 17
+     * @symbol ?_postInit@TradeContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADECONTAINERMANAGERMODEL
 #endif
+    /**
+     * @symbol ??0TradeContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+     */
     MCAPI TradeContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
+    /**
+     * @symbol ?getEntity@TradeContainerManagerModel@@QEBAPEAVActor@@XZ
+     */
     MCAPI class Actor * getEntity() const;
 
 };

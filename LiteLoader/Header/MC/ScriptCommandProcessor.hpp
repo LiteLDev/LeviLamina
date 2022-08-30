@@ -30,10 +30,25 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMANDPROCESSOR
 #endif
+    /**
+     * @symbol ??0ScriptCommandProcessor@@QEAA@_K@Z
+     */
     MCAPI ScriptCommandProcessor(unsigned __int64);
+    /**
+     * @symbol ?executeCommands@ScriptCommandProcessor@@QEAAXAEAVMinecraftCommands@@@Z
+     */
     MCAPI void executeCommands(class MinecraftCommands &);
+    /**
+     * @symbol ?queueCommand@ScriptCommandProcessor@@QEAA_N$$QEAV?$shared_ptr@UScriptPendingCommand@@@std@@@Z
+     */
     MCAPI bool queueCommand(class std::shared_ptr<struct ScriptPendingCommand> &&);
+    /**
+     * @symbol ?rejectAll@ScriptCommandProcessor@@QEAAXXZ
+     */
     MCAPI void rejectAll();
+    /**
+     * @symbol ??1ScriptCommandProcessor@@QEAA@XZ
+     */
     MCAPI ~ScriptCommandProcessor();
 
 };

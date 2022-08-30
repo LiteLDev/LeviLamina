@@ -30,18 +30,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~IWebviewTelemetry();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol ?onDownloadBegin@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     */
     virtual void onDownloadBegin(struct WebviewDownloadInfo const &);
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol ?onDownloadComplete@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     */
     virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
+    /**
+     * @vtable 9
+     * @symbol ?onDownloadCanceled@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     */
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWEBVIEWTELEMETRY
 #endif
+    /**
+     * @symbol ??0IWebviewTelemetry@@QEAA@AEBVIMinecraftEventing@@@Z
+     */
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
 
 };

@@ -32,30 +32,118 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~EmptyMapItem();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 60
+     * @symbol ?requiresInteract@EmptyMapItem@@UEBA_NXZ
+     */
     virtual bool requiresInteract() const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 85
+     * @symbol ?use@EmptyMapItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /**
+     * @vtable 96
+     * @symbol ?buildDescriptionId@EmptyMapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /**
+     * @vtable 119
+     * @symbol ?getInteractText@EmptyMapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
+     */
     virtual std::string getInteractText(class Player const &) const;
+    /**
+     * @vtable 137
+     * @symbol ?getUpdatePacket@ComplexItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
+     */
     virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMPTYMAPITEM
 #endif
+    /**
+     * @symbol ??0EmptyMapItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
+     */
     MCAPI EmptyMapItem(std::string const &, short);
+    /**
+     * @symbol ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemStack@@@Z
+     */
     MCAPI static void addPlayerMarker(class ItemStack &);
+    /**
+     * @symbol ?addPlayerMarker@EmptyMapItem@@SAXAEAVItemInstance@@@Z
+     */
     MCAPI static void addPlayerMarker(class ItemInstance &);
+    /**
+     * @symbol ?isLocatorMap@EmptyMapItem@@SA_NAEBVItemStack@@@Z
+     */
     MCAPI static bool isLocatorMap(class ItemStack const &);
 
 };

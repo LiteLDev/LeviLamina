@@ -33,7 +33,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSOMNIADEFINITION
 #endif
+    /**
+     * @symbol ?initialize@InsomniaDefinition@@QEAAXAEAVEntityContext@@AEAVInsomniaComponent@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class InsomniaComponent &);
+    /**
+     * @symbol ?buildSchema@InsomniaDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInsomniaDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition>> &);
 
 };

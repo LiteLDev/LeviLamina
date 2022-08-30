@@ -22,6 +22,9 @@ namespace ContainerUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?getNotNoneTypeContainerComponentFromActor@ContainerUtility@@YAPEAVContainerComponent@@PEAVActor@@@Z
+     */
     MCAPI class ContainerComponent * getNotNoneTypeContainerComponentFromActor(class Actor *);
 
 };

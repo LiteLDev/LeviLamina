@@ -30,13 +30,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~EnderChestContainer();
+    /**
+     * @vtable 16
+     * @symbol ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+     */
     virtual void startOpen(class Player &);
+    /**
+     * @vtable 17
+     * @symbol ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+     */
     virtual void stopOpen(class Player &);
+    /**
+     * @vtable 22
+     * @symbol __unk_vfn_22
+     */
     virtual void __unk_vfn_22();
+    /**
+     * @vtable 23
+     * @symbol __unk_vfn_23
+     */
     virtual void __unk_vfn_23();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTCONTAINER
 #endif
+    /**
+     * @symbol ??0EnderChestContainer@@QEAA@XZ
+     */
     MCAPI EnderChestContainer();
 MCAPI static int const ITEMS_SIZE;
 

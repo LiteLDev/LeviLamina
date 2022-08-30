@@ -30,14 +30,32 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorLegacyTickSystem();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?tick@ActorLegacyTickSystem@@UEAAXAEAVEntityRegistry@@@Z
+     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLEGACYTICKSYSTEM
 #endif
+    /**
+     * @symbol ?tickActorLegacyTickSystem@ActorLegacyTickSystem@@SAXAEAVEntityContext@@AEAVActor@@AEAVActorTickNeededComponent@@@Z
+     */
     MCAPI static void tickActorLegacyTickSystem(class EntityContext &, class Actor &, class ActorTickNeededComponent &);
 
 //private:
+    /**
+     * @symbol ?_runActorLegacyTick@ActorLegacyTickSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@VActorTickNeededComponent@@V?$FlagComponent@UActorFlag@@@@@@@Z
+     */
     MCAPI static void _runActorLegacyTick(class ViewedEntityContextT<class EntityContext, class ActorTickNeededComponent, class FlagComponent<struct ActorFlag>> &);
 
 private:

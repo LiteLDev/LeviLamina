@@ -30,10 +30,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~UnburiedConstraint();
+    /**
+     * @vtable 1
+     * @symbol ?isSatisfied@UnburiedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
+     */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNBURIEDCONSTRAINT
 #endif
+    /**
+     * @symbol ??0UnburiedConstraint@@QEAA@AEAVStructureTemplate@@@Z
+     */
     MCAPI UnburiedConstraint(class StructureTemplate &);
 
 };

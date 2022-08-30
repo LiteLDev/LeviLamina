@@ -36,17 +36,47 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CERTIFICATE
 #endif
+    /**
+     * @symbol ??0Certificate@@QEAA@AEBV0@@Z
+     */
     MCAPI Certificate(class Certificate const &);
+    /**
+     * @symbol ?getExpirationDate@Certificate@@QEBA_JXZ
+     */
     MCAPI __int64 getExpirationDate() const;
+    /**
+     * @symbol ?getExtraData@Certificate@@QEBA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     */
     MCAPI class Json::Value getExtraData(std::string const &, class Json::Value const &) const;
+    /**
+     * @symbol ?getIdentityPublicKey@Certificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string getIdentityPublicKey() const;
+    /**
+     * @symbol ?getNotBeforeDate@Certificate@@QEBA_JXZ
+     */
     MCAPI __int64 getNotBeforeDate() const;
+    /**
+     * @symbol ?isValid@Certificate@@QEBA_NXZ
+     */
     MCAPI bool isValid() const;
+    /**
+     * @symbol ?toString@Certificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string toString() const;
+    /**
+     * @symbol ?validate@Certificate@@QEAA_N_J@Z
+     */
     MCAPI bool validate(__int64);
+    /**
+     * @symbol ??1Certificate@@QEAA@XZ
+     */
     MCAPI ~Certificate();
 
 //private:
+    /**
+     * @symbol ??0Certificate@@AEAA@AEBVUnverifiedCertificate@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@@Z
+     */
     MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
 
 private:

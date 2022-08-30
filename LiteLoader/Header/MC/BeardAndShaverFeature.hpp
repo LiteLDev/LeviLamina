@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BeardAndShaverFeature();
+    /**
+     * @vtable 1
+     * @symbol ?place@BeardAndShaverFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDANDSHAVERFEATURE
 #endif
+    /**
+     * @symbol ??0BeardAndShaverFeature@@QEAA@XZ
+     */
     MCAPI BeardAndShaverFeature();
 
 };

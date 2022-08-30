@@ -30,7 +30,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BiomeRegistryMergeStrategy();
+    /**
+     * @vtable 1
+     * @symbol ?mergeFiles@BiomeRegistryMergeStrategy@@UEAAXAEBV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@@Z
+     */
     virtual void mergeFiles(std::vector<class LoadedResourceData> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEREGISTRYMERGESTRATEGY
 #endif

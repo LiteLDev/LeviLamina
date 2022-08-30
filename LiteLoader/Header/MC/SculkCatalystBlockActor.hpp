@@ -31,21 +31,62 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKCATALYSTBLOCKACTOR
+    /**
+     * @vtable -1
+     * @symbol ?getDeliveryMode@SculkCatalystBlockActor@@UEBA?AW4DeliveryMode@GameEventListener@@XZ
+     */
     MCVAPI enum GameEventListener::DeliveryMode getDeliveryMode() const;
+    /**
+     * @vtable -1
+     * @symbol ?getPositionSource@SculkCatalystBlockActor@@UEBAAEBVPositionSource@GameEvents@@XZ
+     */
     MCVAPI class GameEvents::PositionSource const & getPositionSource() const;
+    /**
+     * @vtable -1
+     * @symbol ?getRange@SculkCatalystBlockActor@@UEBAIXZ
+     */
     MCVAPI unsigned int getRange() const;
+    /**
+     * @vtable -1
+     * @symbol ?handleGameEvent@SculkCatalystBlockActor@@UEAAXAEBVGameEvent@@AEBUGameEventContext@@AEAVBlockSource@@@Z
+     */
     MCVAPI void handleGameEvent(class GameEvent const &, struct GameEventContext const &, class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?load@SculkCatalystBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable -1
+     * @symbol ?onRemoved@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void onRemoved(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?save@SculkCatalystBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     MCVAPI bool save(class CompoundTag &) const;
+    /**
+     * @vtable -1
+     * @symbol ?tick@SculkCatalystBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void tick(class BlockSource &);
 #endif
+    /**
+     * @symbol ??0SculkCatalystBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI SculkCatalystBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?getSculkSpreader@SculkCatalystBlockActor@@QEAAAEAVSculkSpreader@@XZ
+     */
     MCAPI class SculkSpreader & getSculkSpreader();
 MCAPI static enum BlockActorType const TypeId;
 MCAPI static std::string const TypeString;
 
 //private:
+    /**
+     * @symbol ?_tryConsumeOnDeathExperience@SculkCatalystBlockActor@@AEAAXAEAVLevel@@AEAVActor@@@Z
+     */
     MCAPI void _tryConsumeOnDeathExperience(class Level &, class Actor &);
 
 private:

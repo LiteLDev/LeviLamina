@@ -29,25 +29,92 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~Goal();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1() = 0;
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@Goal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol ?canBeInterrupted@Goal@@UEAA_NXZ
+     */
     virtual bool canBeInterrupted();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4() = 0;
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol ?isTargetGoal@Goal@@UEBA_NXZ
+     */
     virtual bool isTargetGoal() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
+     */
     MCVAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
+    /**
+     * @vtable -1
+     * @symbol ?start@Goal@@UEAAXXZ
+     */
     MCVAPI void start();
+    /**
+     * @vtable -1
+     * @symbol ?stop@Goal@@UEAAXXZ
+     */
     MCVAPI void stop();
+    /**
+     * @vtable -1
+     * @symbol ?tick@Goal@@UEAAXXZ
+     */
     MCVAPI void tick();
 #endif
+    /**
+     * @symbol ??0Goal@@QEAA@XZ
+     */
     MCAPI Goal();
+    /**
+     * @symbol ?getRequiredControlFlags@Goal@@QEBAHXZ
+     */
     MCAPI int getRequiredControlFlags() const;
+    /**
+     * @symbol ?getTypeId@Goal@@QEBAGXZ
+     */
     MCAPI unsigned short getTypeId() const;
+    /**
+     * @symbol ?setRequiredControlFlags@Goal@@QEAAXH@Z
+     */
     MCAPI void setRequiredControlFlags(int);
+    /**
+     * @symbol ?setTypeId@Goal@@QEAAXG@Z
+     */
     MCAPI void setTypeId(unsigned short);
 
 };

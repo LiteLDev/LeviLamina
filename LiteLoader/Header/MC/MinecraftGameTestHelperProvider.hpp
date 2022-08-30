@@ -30,8 +30,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MinecraftGameTestHelperProvider();
+    /**
+     * @vtable 1
+     * @symbol ?createGameTestHelper@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VBaseGameTestHelper@gametest@@U?$default_delete@VBaseGameTestHelper@gametest@@@std@@@std@@AEAVBaseGameTestInstance@gametest@@@Z
+     */
     virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance &);
+    /**
+     * @vtable 2
+     * @symbol ?clone@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTHELPERPROVIDER
 #endif

@@ -22,7 +22,13 @@ namespace GoalSelectorUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?tickGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
+     */
     MCAPI void tickGoals(class Mob &, bool);
+    /**
+     * @symbol ?tryStartGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
+     */
     MCAPI void tryStartGoals(class Mob &, bool);
 
 };

@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGDATAENTRY
 #endif
+    /**
+     * @symbol ?fillFromMultiRecipe@CraftingDataEntry@@QEAAXAEBVMultiRecipe@@@Z
+     */
     MCAPI void fillFromMultiRecipe(class MultiRecipe const &);
+    /**
+     * @symbol ?fillFromRecipe@CraftingDataEntry@@QEAAXAEBVRecipe@@@Z
+     */
     MCAPI void fillFromRecipe(class Recipe const &);
+    /**
+     * @symbol ?write@CraftingDataEntry@@QEBAXAEAVBinaryStream@@@Z
+     */
     MCAPI void write(class BinaryStream &) const;
+    /**
+     * @symbol ??1CraftingDataEntry@@QEAA@XZ
+     */
     MCAPI ~CraftingDataEntry();
 
 };

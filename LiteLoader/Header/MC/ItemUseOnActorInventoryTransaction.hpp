@@ -30,14 +30,41 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemUseOnActorInventoryTransaction();
+    /**
+     * @vtable 1
+     * @symbol ?read@ItemUseOnActorInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
+     */
     virtual void read(class ReadOnlyBinaryStream &);
+    /**
+     * @vtable 2
+     * @symbol ?write@ItemUseOnActorInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 3
+     * @symbol ?postLoadItems@ItemUseOnActorInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
+     */
     virtual void postLoadItems(class BlockPalette &, bool);
+    /**
+     * @vtable 4
+     * @symbol ?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
+     */
     virtual enum InventoryTransactionError handle(class Player &, bool) const;
+    /**
+     * @vtable 5
+     * @symbol ?onTransactionError@ItemUseOnActorInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
+     */
     virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEONACTORINVENTORYTRANSACTION
 #endif
+    /**
+     * @symbol ?setSelectedItem@ItemUseOnActorInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
+     */
     MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 };

@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENTDATA
 #endif
+    /**
+     * @symbol ??1RideableComponentData@@QEAA@XZ
+     */
     MCAPI ~RideableComponentData();
 
 };

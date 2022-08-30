@@ -22,6 +22,9 @@ namespace port {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?toFilePath@port@@YA?AV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     */
     MCAPI class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t>> toFilePath(std::string const &);
 
 };

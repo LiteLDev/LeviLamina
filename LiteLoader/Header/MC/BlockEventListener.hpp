@@ -31,15 +31,55 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTLISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onBlockDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@@Z
+     */
     MCVAPI enum EventResult onBlockDestroyedByPlayer(class Player &, class Block const &, class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockDestructionStarted@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
+     */
     MCVAPI enum EventResult onBlockDestructionStarted(class Player &, class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockDestructionStopped@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@H@Z
+     */
     MCVAPI enum EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockExploded@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
+     */
     MCVAPI enum EventResult onBlockExploded(class BlockPos const &, class Block const &, class Actor *);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
+     */
     MCVAPI enum EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockModified@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@1@Z
+     */
     MCVAPI enum EventResult onBlockModified(class BlockPos const &, class Block const &, class Block const &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockMovedByPiston@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@0W4PistonState@@@Z
+     */
     MCVAPI enum EventResult onBlockMovedByPiston(class BlockPos const &, class BlockPos const &, enum PistonState);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockPlacedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
+     */
     MCVAPI enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
+    /**
+     * @vtable -1
+     * @symbol ?onEvent@BlockEventListener@@UEAA?AW4EventResult@@AEBUBlockNotificationEvent@@@Z
+     */
     MCVAPI enum EventResult onEvent(struct BlockNotificationEvent const &);
+    /**
+     * @vtable -1
+     * @symbol ?onUnknownBlockReceived@BlockEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEBUNewBlockID@@G@Z
+     */
     MCVAPI enum EventResult onUnknownBlockReceived(class Level &, struct NewBlockID const &, unsigned short);
 #endif
 

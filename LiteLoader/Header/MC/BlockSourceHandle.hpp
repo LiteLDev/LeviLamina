@@ -31,11 +31,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockSourceHandle();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?onSourceDestroyed@BlockSourceHandle@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onSourceDestroyed(class BlockSource &);
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCEHANDLE
 #endif

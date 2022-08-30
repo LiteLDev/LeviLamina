@@ -31,30 +31,118 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BedBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@BedBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@BedBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 3
+     * @symbol ?saveItemInstanceData@BedBlockActor@@UEAA_NAEAVCompoundTag@@@Z
+     */
     virtual bool saveItemInstanceData(class CompoundTag &);
+    /**
+     * @vtable 7
+     * @symbol ?tick@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 8
+     * @symbol ?onChanged@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onChanged(class BlockSource &);
+    /**
+     * @vtable 11
+     * @symbol ?onPlace@BedBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onPlace(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 19
+     * @symbol ?getCrackEntity@BedBlockActor@@UEAAPEAVBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
+    /**
+     * @vtable 23
+     * @symbol ?getName@BedBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 35
+     * @symbol ?_getUpdatePacket@BedBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable 36
+     * @symbol ?_onUpdatePacket@BedBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0BedBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI BedBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?claimPetSleepOnBed@BedBlockActor@@QEAA_NUActorUniqueID@@@Z
+     */
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);
+    /**
+     * @symbol ?startSleepingOn@BedBlockActor@@QEAAXXZ
+     */
     MCAPI void startSleepingOn();
+    /**
+     * @symbol ?stopSleepingOn@BedBlockActor@@QEAAXAEAVBlockSource@@_N@Z
+     */
     MCAPI void stopSleepingOn(class BlockSource &, bool);
 
 };

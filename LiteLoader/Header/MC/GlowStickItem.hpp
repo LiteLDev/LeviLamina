@@ -32,26 +32,101 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~GlowStickItem();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 68
+     * @symbol ?isValidAuxValue@GlowStickItem@@UEBA_NH@Z
+     */
     virtual bool isValidAuxValue(int) const;
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 96
+     * @symbol ?buildDescriptionId@GlowStickItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /**
+     * @vtable 122
+     * @symbol ?getLightEmission@GlowStickItem@@UEBA?AUBrightness@@H@Z
+     */
     virtual struct Brightness getLightEmission(int) const;
+    /**
+     * @vtable 123
+     * @symbol ?getIcon@GlowStickItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+     */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOWSTICKITEM
 #endif
+    /**
+     * @symbol ??0GlowStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI GlowStickItem(std::string const &, int);
 MCAPI static enum ItemColor const COLORS[];
 MCAPI static int const MAX_ACTIVE_TICKS;

@@ -29,13 +29,31 @@ public:
     BlockMapColorDescription() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockMapColorDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getName@BlockMapColorDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?initializeComponent@BlockMapColorDescription@@UEBAXAEAVEntityContext@@@Z
+     */
     virtual void initializeComponent(class EntityContext &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMAPCOLORDESCRIPTION
 #endif
 MCAPI static std::string const NameID;
+    /**
+     * @symbol ?bindType@BlockMapColorDescription@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?registerVersionUpgrades@BlockMapColorDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

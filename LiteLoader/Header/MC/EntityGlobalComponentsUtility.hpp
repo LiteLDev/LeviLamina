@@ -22,7 +22,13 @@ namespace EntityGlobalComponentsUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?initializeGlobalComponents@EntityGlobalComponentsUtility@@YAXAEAVEntityRegistry@@@Z
+     */
     MCAPI void initializeGlobalComponents(class EntityRegistry &);
+    /**
+     * @symbol ?removeGlobalComponents@EntityGlobalComponentsUtility@@YAXAEAVEntityRegistry@@@Z
+     */
     MCAPI void removeGlobalComponents(class EntityRegistry &);
 
 };

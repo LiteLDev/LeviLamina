@@ -28,13 +28,28 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ContainerScreenValidationCrafting();
+    /**
+     * @vtable 1
+     * @symbol ?tryCraft@ContainerScreenValidationCrafting@@UEAA?AUContainerValidationResult@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+     */
     virtual struct ContainerValidationResult tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
+    /**
+     * @vtable 2
+     * @symbol ?getCraftResults@ContainerScreenValidationCrafting@@UEAA?AUContainerValidationCraftResult@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+     */
     virtual struct ContainerValidationCraftResult getCraftResults(std::unique_ptr<struct ContainerValidationCraftInputs>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATIONCRAFTING
 #endif
 
 //private:
+    /**
+     * @symbol ?_appendCraftResult@ContainerScreenValidationCrafting@@AEAAXAEAUContainerValidationCraftResult@@@Z
+     */
     MCAPI void _appendCraftResult(struct ContainerValidationCraftResult &);
 
 private:

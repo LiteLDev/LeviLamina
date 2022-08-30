@@ -31,7 +31,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONSTATESYSTEM
 #endif
+    /**
+     * @symbol ?isDimensionReady@DimensionStateSystem@@SA_NAEBVEntityContext@@@Z
+     */
     MCAPI static bool isDimensionReady(class EntityContext const &);
+    /**
+     * @symbol ?setDimensionState@DimensionStateSystem@@SAXAEAVEntityContext@@W4DimensionState@DimensionStateComponent@@@Z
+     */
     MCAPI static void setDimensionState(class EntityContext &, enum DimensionStateComponent::DimensionState);
 
 };

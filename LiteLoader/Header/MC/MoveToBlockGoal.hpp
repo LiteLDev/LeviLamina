@@ -30,22 +30,69 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MoveToBlockGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@MoveToBlockGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@MoveToBlockGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@MoveToBlockGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@MoveToBlockGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@MoveToBlockGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MoveToBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOBLOCKGOAL
 #endif
+    /**
+     * @symbol ??0MoveToBlockGoal@@QEAA@AEAVMob@@MHHHHMVVec3@@MW4TargetSelectionMethod@@V?$vector@VActorDefinitionTrigger@@V?$allocator@VActorDefinitionTrigger@@@std@@@std@@3V?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@5@AEBVActorFilterGroup@@@Z
+     */
     MCAPI MoveToBlockGoal(class Mob &, float, int, int, int, int, float, class Vec3, float, enum TargetSelectionMethod, std::vector<class ActorDefinitionTrigger>, std::vector<class ActorDefinitionTrigger>, std::vector<class ItemDescriptor>, class ActorFilterGroup const &);
 
 //private:
+    /**
+     * @symbol ?_checkIfStuck@MoveToBlockGoal@@AEAAXXZ
+     */
     MCAPI void _checkIfStuck();
+    /**
+     * @symbol ?_isValidTarget@MoveToBlockGoal@@AEBA_NAEBVBlock@@@Z
+     */
     MCAPI bool _isValidTarget(class Block const &) const;
+    /**
+     * @symbol ?_moveToBlock@MoveToBlockGoal@@AEAAXXZ
+     */
     MCAPI void _moveToBlock();
+    /**
+     * @symbol ?_pathIsValid@MoveToBlockGoal@@AEAA_NPEBVPath@@@Z
+     */
     MCAPI bool _pathIsValid(class Path const *);
 
 private:

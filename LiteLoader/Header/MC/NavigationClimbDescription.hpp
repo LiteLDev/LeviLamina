@@ -31,7 +31,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@NavigationClimbDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~NavigationClimbDescription();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONCLIMBDESCRIPTION
 #endif

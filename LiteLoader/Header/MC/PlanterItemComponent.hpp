@@ -30,17 +30,54 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PlanterItemComponent();
+    /**
+     * @vtable 1
+     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?useOn@PlanterItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+     */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLANTERITEMCOMPONENT
 #endif
+    /**
+     * @symbol ?calculatePlacePos@PlanterItemComponent@@QEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+     */
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    /**
+     * @symbol ?bindType@PlanterItemComponent@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier@PlanterItemComponent@@SAAEBVHashedString@@XZ
+     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

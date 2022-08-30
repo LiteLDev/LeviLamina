@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINTERACTEVENT
 #endif
+    /**
+     * @symbol ??0PlayerInteractEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI PlayerInteractEvent(struct PlayerInteractEvent const &);
+    /**
+     * @symbol ??1PlayerInteractEvent@@QEAA@XZ
+     */
     MCAPI ~PlayerInteractEvent();
 
 };

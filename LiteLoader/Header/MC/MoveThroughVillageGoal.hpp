@@ -30,18 +30,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MoveThroughVillageGoal();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@MoveThroughVillageGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@MoveThroughVillageGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MoveThroughVillageGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETHROUGHVILLAGEGOAL
+    /**
+     * @vtable -1
+     * @symbol ?canContinueToUse@MoveThroughVillageGoal@@UEAA_NXZ
+     */
     MCVAPI bool canContinueToUse();
+    /**
+     * @vtable -1
+     * @symbol ?canUse@MoveThroughVillageGoal@@UEAA_NXZ
+     */
     MCVAPI bool canUse();
 #endif
+    /**
+     * @symbol ??0MoveThroughVillageGoal@@QEAA@AEAVMob@@M_N@Z
+     */
     MCAPI MoveThroughVillageGoal(class Mob &, float, bool);
 
 };

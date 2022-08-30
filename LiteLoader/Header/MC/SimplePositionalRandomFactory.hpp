@@ -30,12 +30,30 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SimplePositionalRandomFactory();
+    /**
+     * @vtable 1
+     * @symbol ?forBlockPos@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
+     */
     virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
+    /**
+     * @vtable 2
+     * @symbol ?forString@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     */
     virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEPOSITIONALRANDOMFACTORY
 #endif
+    /**
+     * @symbol ??0SimplePositionalRandomFactory@@QEAA@_J@Z
+     */
     MCAPI SimplePositionalRandomFactory(__int64);
+    /**
+     * @symbol ?forBlockPosImpl@SimplePositionalRandomFactory@@QEBA?AVSimpleRandom@@AEBVBlockPos@@@Z
+     */
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const &) const;
 
 };

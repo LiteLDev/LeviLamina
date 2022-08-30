@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DispenserContainerManagerModel();
+    /**
+     * @vtable 17
+     * @symbol ?_postInit@DispenserContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERCONTAINERMANAGERMODEL
 #endif
+    /**
+     * @symbol ??0DispenserContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     */
     MCAPI DispenserContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 };

@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTVIBRATIONCOMPONENT
 #endif
+    /**
+     * @symbol ?getTicksSinceLastVibration@ClientVibrationComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
+     */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;
+    /**
+     * @symbol ?setLastVibrationTick@ClientVibrationComponent@@QEAAXUTick@@@Z
+     */
     MCAPI void setLastVibrationTick(struct Tick);
 
 };

@@ -30,23 +30,73 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PickupItemsGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@PickupItemsGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@PickupItemsGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@PickupItemsGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@PickupItemsGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@PickupItemsGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@PickupItemsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PICKUPITEMSGOAL
 #endif
+    /**
+     * @symbol ??0PickupItemsGoal@@QEAA@AEAVMob@@M_NHHM11H11AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@@Z
+     */
     MCAPI PickupItemsGoal(class Mob &, float, bool, int, int, float, bool, bool, int, bool, bool, std::vector<class ItemDescriptor> const &);
 
 //private:
+    /**
+     * @symbol ?_dropItem@PickupItemsGoal@@AEBAXAEBVItemStack@@@Z
+     */
     MCAPI void _dropItem(class ItemStack const &) const;
+    /**
+     * @symbol ?_filterValidTargets@PickupItemsGoal@@AEBA?AV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@AEBV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@3@@Z
+     */
     MCAPI std::vector<class WeakEntityRef> _filterValidTargets(std::vector<struct DistanceSortedActor> const &) const;
+    /**
+     * @symbol ?_getShareableItem@PickupItemsGoal@@AEBAPEBUShareable@@AEBVItemStack@@@Z
+     */
     MCAPI struct Shareable const * _getShareableItem(class ItemStack const &) const;
+    /**
+     * @symbol ?_hasRoomForCarriedItem@PickupItemsGoal@@AEBA_NXZ
+     */
     MCAPI bool _hasRoomForCarriedItem() const;
+    /**
+     * @symbol ?_pickItemUp@PickupItemsGoal@@AEAAXPEAVItemActor@@@Z
+     */
     MCAPI void _pickItemUp(class ItemActor *);
 
 private:

@@ -39,15 +39,39 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALITEMCOMPONENTFACTORY
 #endif
+    /**
+     * @symbol ?addAllComponentUpgrades@CerealItemComponentFactory@@SAXAEAVCerealDocumentUpgrader@@@Z
+     */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
+    /**
+     * @symbol ?constructItemComponent@CerealItemComponentFactory@@SA?AV?$shared_ptr@VItemComponent@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     */
     MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
+    /**
+     * @symbol ?getItemContext@CerealItemComponentFactory@@SAPEAVComponentItem@@XZ
+     */
     MCAPI static class ComponentItem * getItemContext();
+    /**
+     * @symbol ?isRegisteredComponent@CerealItemComponentFactory@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI static bool isRegisteredComponent(std::string const &);
+    /**
+     * @symbol ?registerComponentUpgrade@CerealItemComponentFactory@@SAXAEAVCerealDocumentUpgrader@@V?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
+     */
     MCAPI static void registerComponentUpgrade(class CerealDocumentUpgrader &, class std::shared_ptr<class CerealSchemaUpgrade>);
+    /**
+     * @symbol ?resetItemContext@CerealItemComponentFactory@@SAXXZ
+     */
     MCAPI static void resetItemContext();
+    /**
+     * @symbol ?setItemContext@CerealItemComponentFactory@@SAXPEAVComponentItem@@@Z
+     */
     MCAPI static void setItemContext(class ComponentItem *);
 
 //private:
+    /**
+     * @symbol ?_bindAllComponentSchemas@CerealItemComponentFactory@@CAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
+     */
     MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 
 private:

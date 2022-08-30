@@ -32,44 +32,176 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorPlacerItem();
+    /**
+     * @vtable 2
+     * @symbol ?tearDown@ActorPlacerItem@@UEAAXXZ
+     */
     virtual void tearDown();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 58
+     * @symbol ?isLiquidClipItem@ActorPlacerItem@@UEBA_NH@Z
+     */
     virtual bool isLiquidClipItem(int) const;
+    /**
+     * @vtable 59
+     * @symbol ?shouldInteractionWithBlockBypassLiquid@ActorPlacerItem@@UEBA_NAEBVBlock@@@Z
+     */
     virtual bool shouldInteractionWithBlockBypassLiquid(class Block const &) const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 68
+     * @symbol ?isValidAuxValue@ActorPlacerItem@@UEBA_NH@Z
+     */
     virtual bool isValidAuxValue(int) const;
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 82
+     * @symbol ?getActorIdentifier@ActorPlacerItem@@UEBA?AUActorDefinitionIdentifier@@AEBVItemStack@@@Z
+     */
     virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const &) const;
+    /**
+     * @vtable 86
+     * @symbol ?dispense@ActorPlacerItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /**
+     * @vtable 96
+     * @symbol ?buildDescriptionId@ActorPlacerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /**
+     * @vtable 123
+     * @symbol ?getIcon@ActorPlacerItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+     */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /**
+     * @vtable 136
+     * @symbol ?_useOn@ActorPlacerItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+     */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPLACERITEM
+    /**
+     * @vtable -1
+     * @symbol ?getBaseColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
+     */
     MCVAPI class mce::Color getBaseColor(class ItemStack const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?getSecondaryColor@ActorPlacerItem@@UEBA?AVColor@mce@@AEBVItemStack@@@Z
+     */
     MCVAPI class mce::Color getSecondaryColor(class ItemStack const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?isActorPlacerItem@ActorPlacerItem@@UEBA_NXZ
+     */
     MCVAPI bool isActorPlacerItem() const;
+    /**
+     * @vtable -1
+     * @symbol ?isMultiColorTinted@ActorPlacerItem@@UEBA_NAEBVItemStack@@@Z
+     */
     MCVAPI bool isMultiColorTinted(class ItemStack const &) const;
 #endif
+    /**
+     * @symbol ??0ActorPlacerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBUActorDefinitionIdentifier@@@Z
+     */
     MCAPI ActorPlacerItem(std::string const &, int, struct ActorDefinitionIdentifier const &);
+    /**
+     * @symbol ?forEachCustomEgg@ActorPlacerItem@@SAXVItemRegistryRef@@AEBV?$function@$$A6AXAEBVItem@@@Z@std@@@Z
+     */
     MCAPI static void forEachCustomEgg(class ItemRegistryRef, class std::function<void (class Item const &)> const &);
+    /**
+     * @symbol ?getCustomSpawnEggName@ActorPlacerItem@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI static std::string getCustomSpawnEggName(int);
+    /**
+     * @symbol ?registerCustomEggs@ActorPlacerItem@@SAXVItemRegistryRef@@AEBVActorInfoRegistry@@@Z
+     */
     MCAPI static void registerCustomEggs(class ItemRegistryRef, class ActorInfoRegistry const &);
+    /**
+     * @symbol ?spawnOrMoveAgent@ActorPlacerItem@@SAPEAVActor@@AEBVVec3@@AEAV2@@Z
+     */
     MCAPI static class Actor * spawnOrMoveAgent(class Vec3 const &, class Actor &);
 
 //private:
+    /**
+     * @symbol ?_getActorID@ActorPlacerItem@@AEBA?AUActorDefinitionIdentifier@@AEAVBlockSource@@@Z
+     */
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource &) const;
+    /**
+     * @symbol ?_spawnActorAt@ActorPlacerItem@@AEBAPEAVActor@@AEAVBlockSource@@AEBVVec3@@1AEBVItemStack@@PEAV2@@Z
+     */
     MCAPI class Actor * _spawnActorAt(class BlockSource &, class Vec3 const &, class Vec3 const &, class ItemStack const &, class Actor *) const;
+    /**
+     * @symbol ?_setAgentOwner@ActorPlacerItem@@CAXAEAVPlayer@@AEAVAgent@@@Z
+     */
     MCAPI static void _setAgentOwner(class Player &, class Agent &);
 
 private:

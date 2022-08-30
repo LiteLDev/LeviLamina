@@ -32,13 +32,37 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNTELEMETRYDATA
 #endif
+    /**
+     * @symbol ??0PlayerRespawnTelemetryData@@QEAA@XZ
+     */
     MCAPI PlayerRespawnTelemetryData();
+    /**
+     * @symbol ?WriteEventData@PlayerRespawnTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
+     */
     MCAPI void WriteEventData(class Social::Events::Event &) const;
+    /**
+     * @symbol ?setChangedDimension@PlayerRespawnTelemetryData@@QEAAX_N@Z
+     */
     MCAPI void setChangedDimension(bool);
+    /**
+     * @symbol ?setJumpDistance@PlayerRespawnTelemetryData@@QEAAXN@Z
+     */
     MCAPI void setJumpDistance(double);
+    /**
+     * @symbol ?setLongJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
+     */
     MCAPI void setLongJumpCount(unsigned int);
+    /**
+     * @symbol ?setPositionSourceType@PlayerRespawnTelemetryData@@QEAAXI@Z
+     */
     MCAPI void setPositionSourceType(unsigned int);
+    /**
+     * @symbol ?setSearchTime@PlayerRespawnTelemetryData@@QEAAXN@Z
+     */
     MCAPI void setSearchTime(double);
+    /**
+     * @symbol ?setShortJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
+     */
     MCAPI void setShortJumpCount(unsigned int);
 
 //private:

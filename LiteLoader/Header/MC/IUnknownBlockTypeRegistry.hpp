@@ -31,6 +31,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
+    /**
+     * @vtable -1
+     * @symbol ??1IUnknownBlockTypeRegistry@@UEAA@XZ
+     */
     MCVAPI ~IUnknownBlockTypeRegistry();
 #endif
 

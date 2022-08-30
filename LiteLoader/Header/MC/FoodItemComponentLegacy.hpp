@@ -31,23 +31,72 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FoodItemComponentLegacy();
+    /**
+     * @vtable 1
+     * @symbol ?getNutrition@FoodItemComponentLegacy@@UEBAHXZ
+     */
     virtual int getNutrition() const;
+    /**
+     * @vtable 2
+     * @symbol ?getSaturationModifier@FoodItemComponentLegacy@@UEBAMXZ
+     */
     virtual float getSaturationModifier() const;
+    /**
+     * @vtable 3
+     * @symbol ?canAlwaysEat@FoodItemComponentLegacy@@UEBA_NXZ
+     */
     virtual bool canAlwaysEat() const;
+    /**
+     * @vtable 4
+     * @symbol ?eatItem@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVActor@@AEAVLevel@@@Z
+     */
     virtual class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
+    /**
+     * @vtable 5
+     * @symbol ?use@FoodItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVPlayer@@@Z
+     */
     virtual bool use(class ItemStack &, class Player &);
+    /**
+     * @vtable 6
+     * @symbol ?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
+     */
     virtual class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENTLEGACY
 #endif
+    /**
+     * @symbol ??0FoodItemComponentLegacy@@QEAA@AEAVItem@@@Z
+     */
     MCAPI FoodItemComponentLegacy(class Item &);
+    /**
+     * @symbol ?buildNetworkTag@FoodItemComponentLegacy@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @symbol ?init@FoodItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     MCAPI bool init(class Json::Value &, class SemVersion const &);
+    /**
+     * @symbol ?initializeFromNetwork@FoodItemComponentLegacy@@SA?AVValue@Json@@AEBVCompoundTag@@@Z
+     */
     MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const &);
 
 //private:
+    /**
+     * @symbol ?_applyEatEffects@FoodItemComponentLegacy@@AEAAXAEBVItemStack@@AEAVActor@@AEAVLevel@@@Z
+     */
     MCAPI void _applyEatEffects(class ItemStack const &, class Actor &, class Level &);
+    /**
+     * @symbol ?_loadEffects@FoodItemComponentLegacy@@AEAAXAEAVValue@Json@@@Z
+     */
     MCAPI void _loadEffects(class Json::Value &);
+    /**
+     * @symbol ?_loadRemoveEffects@FoodItemComponentLegacy@@AEAAXAEAVValue@Json@@@Z
+     */
     MCAPI void _loadRemoveEffects(class Json::Value &);
 
 private:

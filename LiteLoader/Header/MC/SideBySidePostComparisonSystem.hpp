@@ -31,6 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEPOSTCOMPARISONSYSTEM
 #endif
+    /**
+     * @symbol ?createSideBySideCleanupCopyComponentSystem@SideBySidePostComparisonSystem@@SA?AUTickingSystemWithInfo@@V?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@std@@@Z
+     */
     MCAPI static struct TickingSystemWithInfo createSideBySideCleanupCopyComponentSystem(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>);
 
 };

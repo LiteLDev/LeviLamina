@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYBAG
 #endif
+    /**
+     * @symbol ??0PropertyBag@@QEAA@XZ
+     */
     MCAPI PropertyBag();
+    /**
+     * @symbol ??0PropertyBag@@QEAA@AEBVValue@Json@@@Z
+     */
     MCAPI PropertyBag(class Json::Value const &);
+    /**
+     * @symbol ?toJsonValue@PropertyBag@@QEBAAEBVValue@Json@@XZ
+     */
     MCAPI class Json::Value const & toJsonValue() const;
+    /**
+     * @symbol ?toString@PropertyBag@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string toString() const;
 MCAPI static class PropertyBag EMPTY;
 

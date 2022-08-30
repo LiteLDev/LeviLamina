@@ -29,15 +29,46 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~IgniteSubcomponent();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?doOnHitEffect@IgniteSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /**
+     * @vtable 4
+     * @symbol ?getName@IgniteSubcomponent@@UEAAPEBDXZ
+     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGNITESUBCOMPONENT
+    /**
+     * @vtable -1
+     * @symbol ?readfromJSON@IgniteSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
+    /**
+     * @vtable -1
+     * @symbol ?writetoJSON@IgniteSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
+    /**
+     * @symbol ??0IgniteSubcomponent@@QEAA@XZ
+     */
     MCAPI IgniteSubcomponent();
 
 };

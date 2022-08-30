@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANCEINFORMATION
 #endif
+    /**
+     * @symbol ?isValid@ChanceInformation@@QEBA_NXZ
+     */
     MCAPI bool isValid() const;
+    /**
+     * @symbol ?roll@ChanceInformation@@QEBA_NAEAVRandom@@@Z
+     */
     MCAPI bool roll(class Random &) const;
+    /**
+     * @symbol ?set@ChanceInformation@@QEAAXII@Z
+     */
     MCAPI void set(unsigned int, unsigned int);
+    /**
+     * @symbol ?set@ChanceInformation@@QEAAXM@Z
+     */
     MCAPI void set(float);
 
 };

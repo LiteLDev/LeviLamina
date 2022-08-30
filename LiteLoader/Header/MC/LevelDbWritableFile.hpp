@@ -31,13 +31,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LevelDbWritableFile();
+    /**
+     * @vtable 1
+     * @symbol ?Append@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
+     */
     virtual class leveldb::Status Append(class leveldb::Slice const &);
+    /**
+     * @vtable 2
+     * @symbol ?Close@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@XZ
+     */
     virtual class leveldb::Status Close();
+    /**
+     * @vtable 3
+     * @symbol ?Flush@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@XZ
+     */
     virtual class leveldb::Status Flush();
+    /**
+     * @vtable 4
+     * @symbol ?Sync@LevelDbWritableFile@@UEAA?AVStatus@leveldb@@XZ
+     */
     virtual class leveldb::Status Sync();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBWRITABLEFILE
 #endif
+    /**
+     * @symbol ??0LevelDbWritableFile@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVFile@Core@@@Z
+     */
     MCAPI LevelDbWritableFile(std::string, class Core::File &&);
 
 };

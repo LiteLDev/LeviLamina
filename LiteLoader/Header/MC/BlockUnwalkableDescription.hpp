@@ -31,12 +31,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockUnwalkableDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getName@BlockUnwalkableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?initializeComponent@BlockUnwalkableDescription@@UEBAXAEAVEntityContext@@@Z
+     */
     virtual void initializeComponent(class EntityContext &) const;
+    /**
+     * @vtable 3
+     * @symbol ?buildSchema@BlockUnwalkableDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
+     */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
+    /**
+     * @vtable 4
+     * @symbol ?isNetworkComponent@BlockUnwalkableDescription@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@BlockUnwalkableDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@BlockUnwalkableDescription@@UEAAXAEBVCompoundTag@@@Z
+     */
     virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNWALKABLEDESCRIPTION
 #endif

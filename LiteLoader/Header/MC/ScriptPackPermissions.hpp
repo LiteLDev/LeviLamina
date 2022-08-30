@@ -28,9 +28,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKPERMISSIONS
 #endif
+    /**
+     * @symbol ??0ScriptPackPermissions@@QEAA@XZ
+     */
     MCAPI ScriptPackPermissions();
+    /**
+     * @symbol ??0ScriptPackPermissions@@QEAA@AEBV0@@Z
+     */
     MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
+    /**
+     * @symbol ?isModuleAllowed@ScriptPackPermissions@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI bool isModuleAllowed(std::string const &) const;
+    /**
+     * @symbol ??4ScriptPackPermissions@@QEAAAEAV0@$$QEAV0@@Z
+     */
     MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
 
 //private:

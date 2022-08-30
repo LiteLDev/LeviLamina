@@ -35,29 +35,103 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?containerContentChanged@LevelContainerModel@@UEAAXH@Z
+     */
     virtual void containerContentChanged(int);
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~LevelContainerModel();
+    /**
+     * @vtable 2
+     * @symbol ?postInit@LevelContainerModel@@UEAAXXZ
+     */
     virtual void postInit();
+    /**
+     * @vtable 3
+     * @symbol ?releaseResources@LevelContainerModel@@UEAAXXZ
+     */
     virtual void releaseResources();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?getContainerWeakRef@LevelContainerModel@@UEBA?AVContainerWeakRef@@XZ
+     */
     virtual class ContainerWeakRef getContainerWeakRef() const;
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 14
+     * @symbol ?isValid@LevelContainerModel@@UEAA_NXZ
+     */
     virtual bool isValid();
+    /**
+     * @vtable 15
+     * @symbol __unk_vfn_15
+     */
     virtual void __unk_vfn_15();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 20
+     * @symbol ?_getContainer@LevelContainerModel@@EEBAPEAVContainer@@XZ
+     */
     virtual class Container * _getContainer() const;
+    /**
+     * @vtable 21
+     * @symbol ?_getContainerOffset@LevelContainerModel@@MEBAHXZ
+     */
     virtual int _getContainerOffset() const;
+    /**
+     * @vtable 22
+     * @symbol ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
+     */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCONTAINERMODEL
 #endif
+    /**
+     * @symbol ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@W4ContainerCategory@@@Z
+     */
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, enum BlockActorType, class BlockPos const &, enum ContainerCategory);
+    /**
+     * @symbol ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
+     */
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, struct ActorUniqueID, enum ContainerCategory);
+    /**
+     * @symbol ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+     */
     MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
+    /**
+     * @symbol ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@@Z
+     */
     MCAPI static class Container * getContainerHelper(class Player &, enum BlockActorType, class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?_getEntity@LevelContainerModel@@AEBAPEAVActor@@XZ
+     */
     MCAPI class Actor * _getEntity() const;
+    /**
+     * @symbol ?_refreshSlot@LevelContainerModel@@AEAAXH@Z
+     */
     MCAPI void _refreshSlot(int);
 
 private:

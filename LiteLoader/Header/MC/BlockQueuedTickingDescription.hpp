@@ -29,13 +29,31 @@ public:
     BlockQueuedTickingDescription() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockQueuedTickingDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getName@BlockQueuedTickingDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?initializeComponent@BlockQueuedTickingDescription@@UEBAXAEAVEntityContext@@@Z
+     */
     virtual void initializeComponent(class EntityContext &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGDESCRIPTION
 #endif
 MCAPI static std::string const NameID;
+    /**
+     * @symbol ?bindType@BlockQueuedTickingDescription@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?registerVersionUpgrades@BlockQueuedTickingDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

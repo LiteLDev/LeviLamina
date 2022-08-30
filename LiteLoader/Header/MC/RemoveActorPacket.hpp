@@ -30,14 +30,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RemoveActorPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@RemoveActorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@RemoveActorPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@RemoveActorPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@RemoveActorPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEACTORPACKET
 #endif
+    /**
+     * @symbol ??0RemoveActorPacket@@QEAA@XZ
+     */
     MCAPI RemoveActorPacket();
+    /**
+     * @symbol ??0RemoveActorPacket@@QEAA@UActorUniqueID@@@Z
+     */
     MCAPI RemoveActorPacket(struct ActorUniqueID);
 
 };

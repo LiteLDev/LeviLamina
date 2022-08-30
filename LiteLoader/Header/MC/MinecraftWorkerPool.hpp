@@ -44,11 +44,29 @@ MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> PYTHONRUNTIME;
 MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING;
 MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> VR;
 MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> WATCHDOG;
+    /**
+     * @symbol ?configureMainThread@MinecraftWorkerPool@@SAXXZ
+     */
     MCAPI static void configureMainThread();
+    /**
+     * @symbol ?configureServerThread@MinecraftWorkerPool@@SAXXZ
+     */
     MCAPI static void configureServerThread();
+    /**
+     * @symbol ?createSingletons@MinecraftWorkerPool@@SAXXZ
+     */
     MCAPI static void createSingletons();
+    /**
+     * @symbol ?destroySingletons@MinecraftWorkerPool@@SAXXZ
+     */
     MCAPI static void destroySingletons();
+    /**
+     * @symbol ?initializeDefaults@MinecraftWorkerPool@@SAXXZ
+     */
     MCAPI static void initializeDefaults();
+    /**
+     * @symbol ?loadWorkerConfigurations@MinecraftWorkerPool@@SAXII@Z
+     */
     MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
 
 };

@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBSOCKET_OUTGOING_MESSAGE
 #endif
+    /**
+     * @symbol ??1websocket_outgoing_message@@QEAA@XZ
+     */
     MCAPI ~websocket_outgoing_message();
 
 };

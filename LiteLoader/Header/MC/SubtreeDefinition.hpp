@@ -32,7 +32,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SubtreeDefinition();
+    /**
+     * @vtable 1
+     * @symbol ?load@SubtreeDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBTREEDEFINITION
 #endif

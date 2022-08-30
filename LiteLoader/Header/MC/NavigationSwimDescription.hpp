@@ -31,8 +31,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@NavigationSwimDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~NavigationSwimDescription();
+    /**
+     * @vtable 3
+     * @symbol ?serializeData@NavigationSwimDescription@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONSWIMDESCRIPTION
 #endif

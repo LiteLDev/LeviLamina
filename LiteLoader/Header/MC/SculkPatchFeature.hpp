@@ -30,12 +30,23 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SculkPatchFeature();
+    /**
+     * @vtable 1
+     * @symbol ?place@SculkPatchFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKPATCHFEATURE
 #endif
 
 //private:
+    /**
+     * @symbol ?_getNearestSolidNeighborPos@SculkPatchFeature@@AEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
+     */
     MCAPI class std::optional<class BlockPos> _getNearestSolidNeighborPos(class IBlockWorldGenAPI &, class BlockPos const &) const;
 
 private:

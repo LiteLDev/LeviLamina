@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBLENDRULES
 #endif
+    /**
+     * @symbol ??1OverworldBlendRules@@QEAA@XZ
+     */
     MCAPI ~OverworldBlendRules();
 
 };

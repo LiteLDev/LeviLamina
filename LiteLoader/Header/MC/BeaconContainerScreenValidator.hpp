@@ -30,9 +30,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BeaconContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONCONTAINERSCREENVALIDATOR
 #endif
+    /**
+     * @symbol ??0BeaconContainerScreenValidator@@QEAA@XZ
+     */
     MCAPI BeaconContainerScreenValidator();
 
 };

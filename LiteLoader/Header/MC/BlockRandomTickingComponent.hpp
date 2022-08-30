@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGCOMPONENT
 #endif
+    /**
+     * @symbol ??1BlockRandomTickingComponent@@QEAA@XZ
+     */
     MCAPI ~BlockRandomTickingComponent();
 
 };

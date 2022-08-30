@@ -31,12 +31,30 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NearestAttackableTargetDefinition();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?validate@NearestAttackableTargetDefinition@@UEAA_NAEAVMob@@@Z
+     */
     virtual bool validate(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTATTACKABLETARGETDEFINITION
 #endif
+    /**
+     * @symbol ?initialize@NearestAttackableTargetDefinition@@QEAAXAEAVEntityContext@@AEAVNearestAttackableTargetGoal@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class NearestAttackableTargetGoal &);
+    /**
+     * @symbol ?buildSchema@NearestAttackableTargetDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNearestAttackableTargetDefinition@@@JsonUtil@@@3@@Z
+     */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition>> &);
 
 };

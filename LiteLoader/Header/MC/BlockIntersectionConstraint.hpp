@@ -30,10 +30,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockIntersectionConstraint();
+    /**
+     * @vtable 1
+     * @symbol ?isSatisfied@BlockIntersectionConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
+     */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKINTERSECTIONCONSTRAINT
 #endif
+    /**
+     * @symbol ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z
+     */
     MCAPI BlockIntersectionConstraint(class StructureTemplate &);
 
 };

@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEGENERICBLOCKSYSTEM
 #endif
+    /**
+     * @symbol ?createSystem@InsideGenericBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

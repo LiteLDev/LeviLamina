@@ -31,60 +31,262 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShulkerBoxBlock();
+    /**
+     * @vtable 10
+     * @symbol ?getAABB@ShulkerBoxBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
+     */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 36
+     * @symbol __unk_vfn_36
+     */
     virtual void __unk_vfn_36();
+    /**
+     * @vtable 37
+     * @symbol __unk_vfn_37
+     */
     virtual void __unk_vfn_37();
+    /**
+     * @vtable 38
+     * @symbol __unk_vfn_38
+     */
     virtual void __unk_vfn_38();
+    /**
+     * @vtable 39
+     * @symbol __unk_vfn_39
+     */
     virtual void __unk_vfn_39();
+    /**
+     * @vtable 40
+     * @symbol __unk_vfn_40
+     */
     virtual void __unk_vfn_40();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 42
+     * @symbol __unk_vfn_42
+     */
     virtual void __unk_vfn_42();
+    /**
+     * @vtable 44
+     * @symbol __unk_vfn_44
+     */
     virtual void __unk_vfn_44();
+    /**
+     * @vtable 45
+     * @symbol __unk_vfn_45
+     */
     virtual void __unk_vfn_45();
+    /**
+     * @vtable 46
+     * @symbol __unk_vfn_46
+     */
     virtual void __unk_vfn_46();
+    /**
+     * @vtable 47
+     * @symbol __unk_vfn_47
+     */
     virtual void __unk_vfn_47();
+    /**
+     * @vtable 48
+     * @symbol __unk_vfn_48
+     */
     virtual void __unk_vfn_48();
+    /**
+     * @vtable 49
+     * @symbol __unk_vfn_49
+     */
     virtual void __unk_vfn_49();
+    /**
+     * @vtable 59
+     * @symbol __unk_vfn_59
+     */
     virtual void __unk_vfn_59();
+    /**
+     * @vtable 60
+     * @symbol __unk_vfn_60
+     */
     virtual void __unk_vfn_60();
+    /**
+     * @vtable 69
+     * @symbol ?dispense@ShulkerBoxBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 77
+     * @symbol ?setupRedstoneComponent@ShulkerBoxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 94
+     * @symbol ?breaksFallingBlocks@ShulkerBoxBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+     */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
+    /**
+     * @vtable 96
+     * @symbol ?playerWillDestroy@ShulkerBoxBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
+    /**
+     * @vtable 101
+     * @symbol ?getResourceItem@ShulkerBoxBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    /**
+     * @vtable 102
+     * @symbol ?asItemInstance@ShulkerBoxBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /**
+     * @vtable 103
+     * @symbol ?spawnResources@ShulkerBoxBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MH@Z
+     */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
+    /**
+     * @vtable 105
+     * @symbol __unk_vfn_105
+     */
     virtual void __unk_vfn_105();
+    /**
+     * @vtable 106
+     * @symbol ?getPlacementBlock@ShulkerBoxBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+     */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    /**
+     * @vtable 124
+     * @symbol __unk_vfn_124
+     */
     virtual void __unk_vfn_124();
+    /**
+     * @vtable 126
+     * @symbol __unk_vfn_126
+     */
     virtual void __unk_vfn_126();
+    /**
+     * @vtable 127
+     * @symbol __unk_vfn_127
+     */
     virtual void __unk_vfn_127();
+    /**
+     * @vtable 132
+     * @symbol __unk_vfn_132
+     */
     virtual void __unk_vfn_132();
+    /**
+     * @vtable 135
+     * @symbol ?isAuxValueRelevantForPicking@ShulkerBoxBlock@@UEBA_NXZ
+     */
     virtual bool isAuxValueRelevantForPicking() const;
+    /**
+     * @vtable 136
+     * @symbol ?getColor@ShulkerBoxBlock@@UEBAHAEBVBlock@@@Z
+     */
     virtual int getColor(class Block const &) const;
+    /**
+     * @vtable 139
+     * @symbol ?getColorForParticle@ShulkerBoxBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /**
+     * @vtable 148
+     * @symbol __unk_vfn_148
+     */
     virtual void __unk_vfn_148();
+    /**
+     * @vtable 157
+     * @symbol __unk_vfn_157
+     */
     virtual void __unk_vfn_157();
+    /**
+     * @vtable 168
+     * @symbol __unk_vfn_168
+     */
     virtual void __unk_vfn_168();
+    /**
+     * @vtable 169
+     * @symbol __unk_vfn_169
+     */
     virtual void __unk_vfn_169();
+    /**
+     * @vtable 170
+     * @symbol __unk_vfn_170
+     */
     virtual void __unk_vfn_170();
+    /**
+     * @vtable 177
+     * @symbol __unk_vfn_177
+     */
     virtual void __unk_vfn_177();
+    /**
+     * @vtable 187
+     * @symbol ?getMapColor@ShulkerBoxBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 188
+     * @symbol __unk_vfn_188
+     */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCK
 #endif
+    /**
+     * @symbol ??0ShulkerBoxBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI ShulkerBoxBlock(std::string const &, int);
 
 //protected:
+    /**
+     * @symbol ?spawnBoxInstance@ShulkerBoxBlock@@IEBAXAEAVBlockSource@@AEAVLevel@@AEBVBlockPos@@AEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@7@H@Z
+     */
     MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int) const;
 
 protected:

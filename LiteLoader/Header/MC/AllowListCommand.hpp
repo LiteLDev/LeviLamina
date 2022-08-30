@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AllowListCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@AllowListCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTCOMMAND
 #endif
+    /**
+     * @symbol ?setup@AllowListCommand@@SAXAEAVCommandRegistry@@AEAVAllowListFile@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 
 //private:

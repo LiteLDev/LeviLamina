@@ -31,36 +31,139 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MovingBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@MovingBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@MovingBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@MovingBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 27
+     * @symbol ?getOwningPiston@MovingBlockActor@@UEAAPEAVPistonBlockActor@@AEAVBlockSource@@@Z
+     */
     virtual class PistonBlockActor * getOwningPiston(class BlockSource &);
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 31
+     * @symbol ?getDeletionDelayTimeSeconds@MovingBlockActor@@UEBAMXZ
+     */
     virtual float getDeletionDelayTimeSeconds() const;
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 35
+     * @symbol ?_getUpdatePacket@MovingBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable 36
+     * @symbol ?_onUpdatePacket@MovingBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVINGBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0MovingBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI MovingBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?_validPistonPos@MovingBlockActor@@QEBA_NAEBVIConstBlockSource@@@Z
+     */
     MCAPI bool _validPistonPos(class IConstBlockSource const &) const;
+    /**
+     * @symbol ?aquireBlockEntity@MovingBlockActor@@QEAA?AV?$shared_ptr@VBlockActor@@@std@@XZ
+     */
     MCAPI class std::shared_ptr<class BlockActor> aquireBlockEntity();
+    /**
+     * @symbol ?getCollisionShape@MovingBlockActor@@QEBAAEBVAABB@@XZ
+     */
     MCAPI class AABB const & getCollisionShape() const;
+    /**
+     * @symbol ?getDrawPos@MovingBlockActor@@QEBA?AVVec3@@AEBVIConstBlockSource@@M@Z
+     */
     MCAPI class Vec3 getDrawPos(class IConstBlockSource const &, float) const;
+    /**
+     * @symbol ?getExtraBlock@MovingBlockActor@@QEAAAEBVBlock@@XZ
+     */
     MCAPI class Block const & getExtraBlock();
+    /**
+     * @symbol ?getMovingBlock@MovingBlockActor@@QEBAAEBVBlock@@XZ
+     */
     MCAPI class Block const & getMovingBlock() const;
+    /**
+     * @symbol ?moveCollidedEntities@MovingBlockActor@@QEAAXAEAVPistonBlockActor@@AEAVBlockSource@@@Z
+     */
     MCAPI void moveCollidedEntities(class PistonBlockActor &, class BlockSource &);
+    /**
+     * @symbol ?registerPiston@MovingBlockActor@@QEAAXAEBVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI void registerPiston(class BlockSource const &, class BlockPos const &);
+    /**
+     * @symbol ?setBlock@MovingBlockActor@@QEAAXAEBVBlock@@@Z
+     */
     MCAPI void setBlock(class Block const &);
+    /**
+     * @symbol ?setBlockEntity@MovingBlockActor@@QEAAXV?$shared_ptr@VBlockActor@@@std@@@Z
+     */
     MCAPI void setBlockEntity(class std::shared_ptr<class BlockActor>);
+    /**
+     * @symbol ?setCollisionShape@MovingBlockActor@@QEAAXAEBVAABB@@@Z
+     */
     MCAPI void setCollisionShape(class AABB const &);
+    /**
+     * @symbol ?setExtraBlock@MovingBlockActor@@QEAAXAEBVBlock@@@Z
+     */
     MCAPI void setExtraBlock(class Block const &);
 
 };

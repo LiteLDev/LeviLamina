@@ -31,7 +31,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CALLBACKTOKENCANCELSTATE
 #endif
+    /**
+     * @symbol ??0CallbackTokenCancelState@@QEAA@XZ
+     */
     MCAPI CallbackTokenCancelState();
+    /**
+     * @symbol ?wasCanceled@CallbackTokenCancelState@@QEBA_NXZ
+     */
     MCAPI bool wasCanceled() const;
 
 };

@@ -30,20 +30,76 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockSourceListener();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?onSourceDestroyed@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onSourceDestroyed(class BlockSource &);
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?onBrightnessChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void onBrightnessChanged(class BlockSource &, class BlockPos const &);
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?onBlockEntityAboutToBeRemoved@BlockSourceListener@@UEAAXAEAVBlockSource@@V?$shared_ptr@VBlockActor@@@std@@@Z
+     */
     virtual void onBlockEntityAboutToBeRemoved(class BlockSource &, class std::shared_ptr<class BlockActor>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCELISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onAreaChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     */
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
+     */
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVBlockActor@@@Z
+     */
     MCVAPI void onBlockEntityChanged(class BlockSource &, class BlockActor &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockEvent@BlockSourceListener@@UEAAXAEAVBlockSource@@HHHHH@Z
+     */
     MCVAPI void onBlockEvent(class BlockSource &, int, int, int, int, int);
+    /**
+     * @vtable -1
+     * @symbol ?onEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVActor@@@Z
+     */
     MCVAPI void onEntityChanged(class BlockSource &, class Actor &);
+    /**
+     * @vtable -1
+     * @symbol ?onSourceCreated@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void onSourceCreated(class BlockSource &);
 #endif
 

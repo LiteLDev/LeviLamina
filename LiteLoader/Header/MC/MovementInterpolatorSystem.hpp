@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATORSYSTEM
 #endif
+    /**
+     * @symbol ?onGroundPostTick@MovementInterpolatorSystem@@SAXAEBUMovementInterpolatorComponent@@AEAUStateVectorComponent@@@Z
+     */
     MCAPI static void onGroundPostTick(struct MovementInterpolatorComponent const &, struct StateVectorComponent &);
+    /**
+     * @symbol ?tick@MovementInterpolatorSystem@@SAXAEAVActor@@@Z
+     */
     MCAPI static void tick(class Actor &);
 
 };

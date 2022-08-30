@@ -32,7 +32,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LookAtBlockDefinition();
+    /**
+     * @vtable 1
+     * @symbol ?load@LookAtBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATBLOCKDEFINITION
 #endif

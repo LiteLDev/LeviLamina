@@ -31,23 +31,67 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FurnaceContainerManagerModel();
+    /**
+     * @vtable 6
+     * @symbol ?getItemCopies@FurnaceContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemStack> getItemCopies() const;
+    /**
+     * @vtable 7
+     * @symbol ?setSlot@FurnaceContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     */
     virtual void setSlot(int, class ItemStack const &, bool);
+    /**
+     * @vtable 8
+     * @symbol ?getSlot@FurnaceContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     */
     virtual class ItemStack const & getSlot(int) const;
+    /**
+     * @vtable 9
+     * @symbol ?setData@FurnaceContainerManagerModel@@UEAAXHH@Z
+     */
     virtual void setData(int, int);
+    /**
+     * @vtable 10
+     * @symbol ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
+     */
     virtual void broadcastChanges();
+    /**
+     * @vtable 16
+     * @symbol ?isValid@FurnaceContainerManagerModel@@UEAA_NM@Z
+     */
     virtual bool isValid(float);
+    /**
+     * @vtable 17
+     * @symbol ?_postInit@FurnaceContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERMANAGERMODEL
 #endif
+    /**
+     * @symbol ??0FurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     */
     MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 //protected:
+    /**
+     * @symbol ??0FurnaceContainerManagerModel@@IEAA@AEBVHashedString@@W4ContainerType@@W4BlockActorType@@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     */
     MCAPI FurnaceContainerManagerModel(class HashedString const &, enum ContainerType, enum BlockActorType, enum ContainerID, class Player &, class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?_getFurnaceEntity@FurnaceContainerManagerModel@@AEAAPEAVFurnaceBlockActor@@XZ
+     */
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
+    /**
+     * @symbol ?_updateResultSlotInfo@FurnaceContainerManagerModel@@AEAAXXZ
+     */
     MCAPI void _updateResultSlotInfo();
 
 protected:

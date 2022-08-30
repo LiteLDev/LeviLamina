@@ -30,10 +30,30 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~VanillaGameModuleDedicatedServer();
+    /**
+     * @vtable 1
+     * @symbol ?createGameModuleServer@VanillaGameModuleDedicatedServer@@UEAA?AV?$unique_ptr@VGameModuleServer@@U?$default_delete@VGameModuleServer@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
+    /**
+     * @vtable 2
+     * @symbol ?createInPackagePacks@VanillaGameModuleDedicatedServer@@UEAA?AV?$shared_ptr@VIInPackagePacks@@@std@@XZ
+     */
     virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
+    /**
+     * @vtable 3
+     * @symbol ?registerMolangQueries@VanillaGameModuleDedicatedServer@@UEAAXXZ
+     */
     virtual void registerMolangQueries();
+    /**
+     * @vtable 4
+     * @symbol ?registerServerInstanceHandler@VanillaGameModuleDedicatedServer@@UEAAXAEAVServerInstanceEventCoordinator@@@Z
+     */
     virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULEDEDICATEDSERVER
 #endif

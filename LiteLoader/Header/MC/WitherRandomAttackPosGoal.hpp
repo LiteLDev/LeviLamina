@@ -31,15 +31,46 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WitherRandomAttackPosGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@WitherRandomAttackPosGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 4
+     * @symbol ?start@WitherRandomAttackPosGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@WitherRandomAttackPosGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERRANDOMATTACKPOSGOAL
 #endif
+    /**
+     * @symbol ??0WitherRandomAttackPosGoal@@QEAA@AEAVMob@@MHH@Z
+     */
     MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
 
 };

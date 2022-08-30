@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REFRESHAABBSYSTEM
 #endif
+    /**
+     * @symbol ?refreshAABB@RefreshAABBSystem@@SA?AVAABB@@MAEBVVec3@@AEBVVec2@@1@Z
+     */
     MCAPI static class AABB refreshAABB(float, class Vec3 const &, class Vec2 const &, class Vec2 const &);
 
 };

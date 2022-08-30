@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGEPERFORMANCEDATA
 #endif
+    /**
+     * @symbol ?resetAll@DBStoragePerformanceData@@QEAAXXZ
+     */
     MCAPI void resetAll();
 MCAPI static class std::array<char const *, 12> CATEGORY_NAMES;
 MCAPI static class std::array<char const *, 4> OPERATION_NAMES;

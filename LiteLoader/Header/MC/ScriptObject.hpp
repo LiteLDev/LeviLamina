@@ -31,12 +31,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScriptObject();
+    /**
+     * @vtable 1
+     * @symbol ?_functionError@ScriptObject@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual struct Scripting::Error _functionError(std::string const &) const;
+    /**
+     * @vtable 2
+     * @symbol ?_getPropertyError@ScriptObject@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual struct Scripting::Error _getPropertyError(std::string const &) const;
+    /**
+     * @vtable 3
+     * @symbol ?_setPropertyError@ScriptObject@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual struct Scripting::Error _setPropertyError(std::string const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTOBJECT
 #endif
+    /**
+     * @symbol ??0ScriptObject@@QEAA@AEBVWeakLifetimeScope@Scripting@@@Z
+     */
     MCAPI ScriptObject(class Scripting::WeakLifetimeScope const &);
 
 };

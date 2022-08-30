@@ -29,8 +29,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMPACK
 #endif
+    /**
+     * @symbol ??0ItemPack@@QEAA@XZ
+     */
     MCAPI ItemPack();
+    /**
+     * @symbol ?add@ItemPack@@QEAAXAEBVRecipeIngredient@@H@Z
+     */
     MCAPI void add(class RecipeIngredient const &, int);
+    /**
+     * @symbol ??1ItemPack@@QEAA@XZ
+     */
     MCAPI ~ItemPack();
 
 };

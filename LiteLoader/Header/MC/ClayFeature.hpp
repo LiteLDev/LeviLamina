@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ClayFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@ClayFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLAYFEATURE
 #endif
+    /**
+     * @symbol ??0ClayFeature@@QEAA@H@Z
+     */
     MCAPI ClayFeature(int);
 
 };

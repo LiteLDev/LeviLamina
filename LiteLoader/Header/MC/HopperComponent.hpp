@@ -31,8 +31,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERCOMPONENT
 #endif
+    /**
+     * @symbol ??0HopperComponent@@QEAA@XZ
+     */
     MCAPI HopperComponent();
+    /**
+     * @symbol ?getLastPosition@HopperComponent@@QEBA?AVBlockPos@@XZ
+     */
     MCAPI class BlockPos getLastPosition() const;
+    /**
+     * @symbol ?pullInItems@HopperComponent@@QEAA_NAEAVActor@@@Z
+     */
     MCAPI bool pullInItems(class Actor &);
 
 };

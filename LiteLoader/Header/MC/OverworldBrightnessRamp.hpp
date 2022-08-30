@@ -31,6 +31,10 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~OverworldBrightnessRamp();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBRIGHTNESSRAMP
 #endif

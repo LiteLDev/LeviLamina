@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCACHE
 #endif
+    /**
+     * @symbol ??0WorldGenCache@@QEAA@VChunkLocalNoiseCache@@VSurfaceLevelCache@@@Z
+     */
     MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache);
+    /**
+     * @symbol ?getChunkLocalNoiseCache@WorldGenCache@@QEBAAEBVChunkLocalNoiseCache@@XZ
+     */
     MCAPI class ChunkLocalNoiseCache const & getChunkLocalNoiseCache() const;
+    /**
+     * @symbol ?getSurfaceLevelCache@WorldGenCache@@QEBAAEBVSurfaceLevelCache@@XZ
+     */
     MCAPI class SurfaceLevelCache const & getSurfaceLevelCache() const;
+    /**
+     * @symbol ??1WorldGenCache@@QEAA@XZ
+     */
     MCAPI ~WorldGenCache();
 
 };

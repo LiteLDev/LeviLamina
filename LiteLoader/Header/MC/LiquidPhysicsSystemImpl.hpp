@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDPHYSICSSYSTEMIMPL
 #endif
+    /**
+     * @symbol ?_getLiquidBlocksInAABB@LiquidPhysicsSystemImpl@@SAXAEAV?$vector@ULiquidBlockEntry@LiquidPhysicsSystemImpl@@V?$allocator@ULiquidBlockEntry@LiquidPhysicsSystemImpl@@@std@@@std@@AEBVIConstBlockSource@@AEBVAABB@@W4MaterialType@@@Z
+     */
     MCAPI static void _getLiquidBlocksInAABB(std::vector<struct LiquidPhysicsSystemImpl::LiquidBlockEntry> &, class IConstBlockSource const &, class AABB const &, enum MaterialType);
 
 };

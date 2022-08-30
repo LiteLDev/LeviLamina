@@ -22,6 +22,9 @@ namespace VanillaBuiltInEntities {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?registerMappings@VanillaBuiltInEntities@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
+     */
     MCAPI void registerMappings(class BaseGameVersion const &, class Experiments const &);
 
 };

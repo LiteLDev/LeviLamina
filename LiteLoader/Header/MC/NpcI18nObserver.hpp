@@ -30,14 +30,33 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NpcI18nObserver();
+    /**
+     * @vtable 1
+     * @symbol ?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     */
     virtual void onLanguageChanged(std::string const &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCI18NOBSERVER
+    /**
+     * @vtable -1
+     * @symbol ?onLanguageKeywordsLoadedFromPack@NpcI18nObserver@@UEAAXAEBVPackManifest@@@Z
+     */
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const &);
+    /**
+     * @vtable -1
+     * @symbol ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
+     */
     MCVAPI void onLanguagesLoaded();
 #endif
 
 //private:
+    /**
+     * @symbol ?_loadNpcData@NpcI18nObserver@@AEAAXXZ
+     */
     MCAPI void _loadNpcData();
 
 private:

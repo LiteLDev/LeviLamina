@@ -31,8 +31,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShapelessChemistryRecipe();
+    /**
+     * @vtable 6
+     * @symbol ?matches@ShapelessChemistryRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
+    /**
+     * @vtable 8
+     * @symbol ?getId@ShapelessChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
+     */
     virtual class mce::UUID const & getId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPELESSCHEMISTRYRECIPE
 #endif

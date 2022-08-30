@@ -32,38 +32,150 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CrossbowItem();
+    /**
+     * @vtable 6
+     * @symbol ?getMaxUseDuration@CrossbowItem@@UEBAHPEBVItemStack@@@Z
+     */
     virtual int getMaxUseDuration(class ItemStack const *) const;
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 63
+     * @symbol ?getEnchantSlot@CrossbowItem@@UEBAHXZ
+     */
     virtual int getEnchantSlot() const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 85
+     * @symbol ?use@CrossbowItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /**
+     * @vtable 87
+     * @symbol ?useTimeDepleted@CrossbowItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+     */
     virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /**
+     * @vtable 88
+     * @symbol ?releaseUsing@CrossbowItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+     */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    /**
+     * @vtable 114
+     * @symbol ?enchantProjectile@CrossbowItem@@UEBAXAEBVItemStackBase@@AEAVActor@@@Z
+     */
     virtual void enchantProjectile(class ItemStackBase const &, class Actor &) const;
+    /**
+     * @vtable 120
+     * @symbol ?getAnimationFrameFor@CrossbowItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+     */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /**
+     * @vtable 123
+     * @symbol ?getIcon@CrossbowItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+     */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /**
+     * @vtable 125
+     * @symbol ?setIcon@CrossbowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     virtual class Item & setIcon(std::string const &, int);
+    /**
+     * @vtable 128
+     * @symbol ?canBeCharged@CrossbowItem@@UEBA_NXZ
+     */
     virtual bool canBeCharged() const;
+    /**
+     * @vtable 130
+     * @symbol ?playSoundIncrementally@CrossbowItem@@UEBAXAEBVItemStack@@AEAVMob@@@Z
+     */
     virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROSSBOWITEM
 #endif
+    /**
+     * @symbol ??0CrossbowItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI CrossbowItem(std::string const &, int);
 
 //private:
+    /**
+     * @symbol ?_getShootDir@CrossbowItem@@AEBA?AVVec3@@AEBVPlayer@@M@Z
+     */
     MCAPI class Vec3 _getShootDir(class Player const &, float) const;
+    /**
+     * @symbol ?_shootArrow@CrossbowItem@@AEBAXAEBVItemInstance@@0AEAVPlayer@@@Z
+     */
     MCAPI void _shootArrow(class ItemInstance const &, class ItemInstance const &, class Player &) const;
+    /**
+     * @symbol ?_shootFirework@CrossbowItem@@AEBAXAEBVItemInstance@@AEAVPlayer@@@Z
+     */
     MCAPI void _shootFirework(class ItemInstance const &, class Player &) const;
 
 private:

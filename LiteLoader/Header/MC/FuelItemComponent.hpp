@@ -30,16 +30,50 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FuelItemComponent();
+    /**
+     * @vtable 1
+     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VFuelItemComponent@@@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VFuelItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VFuelItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUELITEMCOMPONENT
 #endif
+    /**
+     * @symbol ?bindType@FuelItemComponent@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier@FuelItemComponent@@SAAEBVHashedString@@XZ
+     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

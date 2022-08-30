@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERDATAENTRY
 #endif
+    /**
+     * @symbol ??1MaterialReducerDataEntry@@QEAA@XZ
+     */
     MCAPI ~MaterialReducerDataEntry();
 
 };

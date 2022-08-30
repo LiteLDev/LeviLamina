@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHURTEVENT
 #endif
+    /**
+     * @symbol ??1ActorHurtEvent@@QEAA@XZ
+     */
     MCAPI ~ActorHurtEvent();
 
 };

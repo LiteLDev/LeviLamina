@@ -31,9 +31,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RemoveMobEffectResponse();
+    /**
+     * @vtable 1
+     * @symbol ?getName@RemoveMobEffectResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?executeAction@RemoveMobEffectResponse@@UEBAXAEAVRenderParams@@@Z
+     */
     virtual void executeAction(class RenderParams &) const;
+    /**
+     * @vtable 3
+     * @symbol ?buildSchema@RemoveMobEffectResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEMOBEFFECTRESPONSE
 #endif

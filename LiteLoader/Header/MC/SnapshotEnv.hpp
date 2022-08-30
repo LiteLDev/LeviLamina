@@ -32,20 +32,60 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SnapshotEnv();
+    /**
+     * @vtable 1
+     * @symbol ?NewSequentialFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
+     */
     virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
+    /**
+     * @vtable 2
+     * @symbol ?NewRandomAccessFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
+     */
     virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
+    /**
+     * @vtable 3
+     * @symbol ?NewWritableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
+     */
     virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
+    /**
+     * @vtable 4
+     * @symbol ?NewAppendableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
+     */
     virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
+    /**
+     * @vtable 7
+     * @symbol ?DeleteFileA@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual class leveldb::Status DeleteFileA(std::string const &);
+    /**
+     * @vtable 11
+     * @symbol ?RenameFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     */
     virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTENV
 #endif
+    /**
+     * @symbol ??0SnapshotEnv@@QEAA@PEAVEnv@leveldb@@@Z
+     */
     MCAPI SnapshotEnv(class leveldb::Env *);
+    /**
+     * @symbol ?createSnapshot@SnapshotEnv@@QEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBVPath@Core@@@Z
+     */
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
+    /**
+     * @symbol ?releaseSnapshot@SnapshotEnv@@QEAAXXZ
+     */
     MCAPI void releaseSnapshot();
 
 //private:
+    /**
+     * @symbol ?_isQueuedForRemoval@SnapshotEnv@@AEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
+     */
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
 
 private:

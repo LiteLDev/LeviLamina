@@ -31,18 +31,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RandomBreachingGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@RandomBreachingGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@RandomBreachingGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol ?canBeInterrupted@RandomBreachingGoal@@UEAA_NXZ
+     */
     virtual bool canBeInterrupted();
+    /**
+     * @vtable 4
+     * @symbol ?start@RandomBreachingGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@RandomBreachingGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@RandomBreachingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol ?_setWantedPosition@RandomBreachingGoal@@MEAA_NXZ
+     */
     virtual bool _setWantedPosition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMBREACHINGGOAL
 #endif
+    /**
+     * @symbol ??0RandomBreachingGoal@@QEAA@AEAVMob@@MHHHM@Z
+     */
     MCAPI RandomBreachingGoal(class Mob &, float, int, int, int, float);
 
 };

@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTENDEDSTREAMREADRESULT
 #endif
+    /**
+     * @symbol ??0ExtendedStreamReadResult@@QEAA@W4StreamReadResult@@@Z
+     */
     MCAPI ExtendedStreamReadResult(enum StreamReadResult);
+    /**
+     * @symbol ??1ExtendedStreamReadResult@@QEAA@XZ
+     */
     MCAPI ~ExtendedStreamReadResult();
 
 };

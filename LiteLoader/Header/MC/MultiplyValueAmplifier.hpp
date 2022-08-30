@@ -30,10 +30,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MultiplyValueAmplifier();
+    /**
+     * @vtable 1
+     * @symbol ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
+     */
     virtual float getAmount(int, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIPLYVALUEAMPLIFIER
 #endif
+    /**
+     * @symbol ??0MultiplyValueAmplifier@@QEAA@M@Z
+     */
     MCAPI MultiplyValueAmplifier(float);
 
 };

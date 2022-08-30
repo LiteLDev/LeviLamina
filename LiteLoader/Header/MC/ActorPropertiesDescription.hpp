@@ -29,11 +29,25 @@ public:
     ActorPropertiesDescription() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorPropertiesDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getJsonName@ActorPropertiesDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
 #endif
+    /**
+     * @symbol ??4ActorPropertiesDescription@@QEAAAEAU0@AEBU0@@Z
+     */
     MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
+    /**
+     * @symbol ?parse@ActorPropertiesDescription@@QEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     MCAPI void parse(class Json::Value &, class SemVersion const &);
 
 };

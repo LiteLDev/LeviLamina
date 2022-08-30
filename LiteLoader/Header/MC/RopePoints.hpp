@@ -30,12 +30,33 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPOINTS
 #endif
+    /**
+     * @symbol ?beginRope@RopePoints@@QEAAXXZ
+     */
     MCAPI void beginRope();
+    /**
+     * @symbol ?endRope@RopePoints@@QEAAXXZ
+     */
     MCAPI void endRope();
+    /**
+     * @symbol ?freezeInterpolation@RopePoints@@QEAAXXZ
+     */
     MCAPI void freezeInterpolation();
+    /**
+     * @symbol ?pushBack@RopePoints@@QEAAXAEBVVec3@@@Z
+     */
     MCAPI void pushBack(class Vec3 const &);
+    /**
+     * @symbol ?reserve@RopePoints@@QEAAX_K@Z
+     */
     MCAPI void reserve(unsigned __int64);
+    /**
+     * @symbol ?size@RopePoints@@QEBA_KXZ
+     */
     MCAPI unsigned __int64 size() const;
+    /**
+     * @symbol ??1RopePoints@@QEAA@XZ
+     */
     MCAPI ~RopePoints();
 
 };

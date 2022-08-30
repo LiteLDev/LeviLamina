@@ -31,14 +31,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CameraShakeCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@CameraShakeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKECOMMAND
 #endif
+    /**
+     * @symbol ?setup@CameraShakeCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
+    /**
+     * @symbol ?_executeAdd@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     MCAPI void _executeAdd(class CommandOrigin const &, class CommandOutput &) const;
+    /**
+     * @symbol ?_executeStop@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     MCAPI void _executeStop(class CommandOrigin const &, class CommandOutput &) const;
 
 private:

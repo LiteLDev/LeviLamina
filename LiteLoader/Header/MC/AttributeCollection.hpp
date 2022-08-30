@@ -32,9 +32,15 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTECOLLECTION
 #endif
+    /**
+     * @symbol ?hasAttribute@AttributeCollection@@SA_NAEBVHashedString@@@Z
+     */
     MCAPI static bool hasAttribute(class HashedString const &);
 
 //private:
+    /**
+     * @symbol ?instance@AttributeCollection@@CAAEAV1@XZ
+     */
     MCAPI static class AttributeCollection & instance();
 
 private:

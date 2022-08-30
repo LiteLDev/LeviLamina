@@ -31,9 +31,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShootEventResponse();
+    /**
+     * @vtable 1
+     * @symbol ?getName@ShootEventResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?executeAction@ShootEventResponse@@UEBAXAEAVRenderParams@@@Z
+     */
     virtual void executeAction(class RenderParams &) const;
+    /**
+     * @vtable 3
+     * @symbol ?buildSchema@ShootEventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTEVENTRESPONSE
 #endif

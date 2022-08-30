@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABBPRED
 #endif
+    /**
+     * @symbol ??RAABBPred@@QEBA_NAEBVAABB@@0@Z
+     */
     MCAPI bool operator()(class AABB const &, class AABB const &) const;
 
 };

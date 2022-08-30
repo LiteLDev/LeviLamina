@@ -30,9 +30,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BarrelContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELCONTAINERSCREENVALIDATOR
 #endif
+    /**
+     * @symbol ??0BarrelContainerScreenValidator@@QEAA@XZ
+     */
     MCAPI BarrelContainerScreenValidator();
 
 };

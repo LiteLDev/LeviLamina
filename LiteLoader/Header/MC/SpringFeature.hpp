@@ -31,13 +31,27 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SpringFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@SpringFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPRINGFEATURE
 #endif
+    /**
+     * @symbol ??0SpringFeature@@QEAA@AEBVBlock@@@Z
+     */
     MCAPI SpringFeature(class Block const &);
 
 //private:
+    /**
+     * @symbol ?isValidSpringBorderBlock@SpringFeature@@AEBA_NAEBVBlockLegacy@@AEAVBlockSource@@@Z
+     */
     MCAPI bool isValidSpringBorderBlock(class BlockLegacy const &, class BlockSource &) const;
 
 private:

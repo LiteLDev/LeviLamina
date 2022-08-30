@@ -28,8 +28,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDOCUMENT
 #endif
+    /**
+     * @symbol ??0DimensionDocument@@QEAA@XZ
+     */
     MCAPI DimensionDocument();
+    /**
+     * @symbol ??1DimensionDocument@@QEAA@XZ
+     */
     MCAPI ~DimensionDocument();
+    /**
+     * @symbol ?bindType@DimensionDocument@@SAXXZ
+     */
     MCAPI static void bindType();
 
 };

@@ -31,12 +31,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~TextObjectSelector();
+    /**
+     * @vtable 1
+     * @symbol ?asString@TextObjectSelector@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string asString() const;
+    /**
+     * @vtable 2
+     * @symbol ?asJsonValue@TextObjectSelector@@UEBA?AVValue@Json@@XZ
+     */
     virtual class Json::Value asJsonValue() const;
+    /**
+     * @vtable 3
+     * @symbol ?resolve@TextObjectSelector@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+     */
     virtual class Json::Value resolve(struct ResolveData const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTSELECTOR
 #endif
+    /**
+     * @symbol ??0TextObjectSelector@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI TextObjectSelector(std::string);
 MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
 MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;

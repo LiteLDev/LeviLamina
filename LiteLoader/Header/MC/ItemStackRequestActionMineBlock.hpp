@@ -31,18 +31,57 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemStackRequestActionMineBlock();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?_write@ItemStackRequestActionMineBlock@@MEBAXAEAVBinaryStream@@@Z
+     */
     virtual void _write(class BinaryStream &) const;
+    /**
+     * @vtable 5
+     * @symbol ?_read@ItemStackRequestActionMineBlock@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
+     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONMINEBLOCK
 #endif
+    /**
+     * @symbol ??0ItemStackRequestActionMineBlock@@QEAA@XZ
+     */
     MCAPI ItemStackRequestActionMineBlock();
+    /**
+     * @symbol ?getPreValidationStatus@ItemStackRequestActionMineBlock@@QEBA?AW4PreValidationStatus@1@XZ
+     */
     MCAPI enum ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
+    /**
+     * @symbol ?getPredictedDurability@ItemStackRequestActionMineBlock@@QEBAHXZ
+     */
     MCAPI int getPredictedDurability() const;
+    /**
+     * @symbol ?getSrc@ItemStackRequestActionMineBlock@@QEBA?AUItemStackRequestSlotInfo@@XZ
+     */
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
+    /**
+     * @symbol ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
+     */
     MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
 
 };

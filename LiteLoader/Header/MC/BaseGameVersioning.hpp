@@ -24,8 +24,17 @@ namespace BaseGameVersioning {
 #undef AFTER_EXTRA
 MCAPI extern class BaseGameVersion const PATCH_UPGRADE_VERSION;
 MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
+    /**
+     * @symbol ?getAvailableBehaviorPackBaseGameVersions@BaseGameVersioning@@YAAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@XZ
+     */
     MCAPI std::vector<class BaseGameVersion> const & getAvailableBehaviorPackBaseGameVersions();
+    /**
+     * @symbol ?getAvailableResourcePackBaseGameVersions@BaseGameVersioning@@YAAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@XZ
+     */
     MCAPI std::vector<class BaseGameVersion> const & getAvailableResourcePackBaseGameVersions();
+    /**
+     * @symbol ?upgradeBaseGameVersionFromWorldTemplate@BaseGameVersioning@@YA_NAEBVWorldTemplateManager@@AEAVLevelData@@@Z
+     */
     MCAPI bool upgradeBaseGameVersionFromWorldTemplate(class WorldTemplateManager const &, class LevelData &);
 
 };

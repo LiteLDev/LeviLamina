@@ -30,25 +30,99 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onAppFocusGained@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppFocusGained();
+    /**
+     * @vtable -1
+     * @symbol ?onAppFocusLost@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppFocusLost();
+    /**
+     * @vtable -1
+     * @symbol ?onAppPaused@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppPaused();
+    /**
+     * @vtable -1
+     * @symbol ?onAppPreSuspended@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppPreSuspended();
+    /**
+     * @vtable -1
+     * @symbol ?onAppResumed@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppResumed();
+    /**
+     * @vtable -1
+     * @symbol ?onAppSuspended@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppSuspended();
+    /**
+     * @vtable -1
+     * @symbol ?onAppTerminated@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppTerminated();
+    /**
+     * @vtable -1
+     * @symbol ?onAppUnpaused@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onAppUnpaused();
+    /**
+     * @vtable -1
+     * @symbol ?onClipboardCopy@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI void onClipboardCopy(std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI void onClipboardPaste(std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?onDeviceLost@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onDeviceLost();
+    /**
+     * @vtable -1
+     * @symbol ?onLowMemory@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onLowMemory();
+    /**
+     * @vtable -1
+     * @symbol ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
+     */
     MCVAPI void onOperationModeChanged(enum OperationMode);
+    /**
+     * @vtable -1
+     * @symbol ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
+     */
     MCVAPI void onPerformanceModeChanged(bool);
+    /**
+     * @vtable -1
+     * @symbol ?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z
+     */
     MCVAPI void onPushNotificationReceived(class PushNotificationMessage const &);
+    /**
+     * @vtable -1
+     * @symbol ?onResizeBegin@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onResizeBegin();
+    /**
+     * @vtable -1
+     * @symbol ?onResizeEnd@AppPlatformListener@@UEAAXXZ
+     */
     MCVAPI void onResizeEnd();
 #endif
+    /**
+     * @symbol ??0AppPlatformListener@@QEAA@XZ
+     */
     MCAPI AppPlatformListener();
+    /**
+     * @symbol ?terminate@AppPlatformListener@@QEAAXXZ
+     */
     MCAPI void terminate();
 
 };

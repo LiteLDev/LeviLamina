@@ -31,37 +31,138 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ChalkboardBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@ChalkboardBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@ChalkboardBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@ChalkboardBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 8
+     * @symbol ?onChanged@ChalkboardBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onChanged(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 17
+     * @symbol ?getShadowRadius@ChalkboardBlockActor@@UEBAMAEAVBlockSource@@@Z
+     */
     virtual float getShadowRadius(class BlockSource &) const;
+    /**
+     * @vtable 25
+     * @symbol ?getImmersiveReaderText@ChalkboardBlockActor@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::string getImmersiveReaderText(class BlockSource &);
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 35
+     * @symbol ?_getUpdatePacket@ChalkboardBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable 36
+     * @symbol ?_onUpdatePacket@ChalkboardBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHALKBOARDBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0ChalkboardBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI ChalkboardBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?getChalkboardSize@ChalkboardBlockActor@@QEBA?BW4ChalkboardSize@@XZ
+     */
     MCAPI enum ChalkboardSize const getChalkboardSize() const;
+    /**
+     * @symbol ?getLocked@ChalkboardBlockActor@@QEBA_NXZ
+     */
     MCAPI bool getLocked() const;
+    /**
+     * @symbol ?getTextCharCount@ChalkboardBlockActor@@QEBAHXZ
+     */
     MCAPI int getTextCharCount() const;
+    /**
+     * @symbol ?setText@ChalkboardBlockActor@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void setText(std::string const &);
+    /**
+     * @symbol ?validate@ChalkboardBlockActor@@QEAAXAEAVBlockSource@@@Z
+     */
     MCAPI void validate(class BlockSource &);
+    /**
+     * @symbol ?calculateAllBlocks@ChalkboardBlockActor@@SA?AV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVBlockPos@@W4ChalkboardSize@@H@Z
+     */
     MCAPI static std::vector<class BlockPos> calculateAllBlocks(class BlockPos const &, enum ChalkboardSize, int);
+    /**
+     * @symbol ?canCreateChalkboard@ChalkboardBlockActor@@SA_NPEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EHAEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEBVItemStack@@_N@Z
+     */
     MCAPI static bool canCreateChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, unsigned char, int, std::vector<class BlockPos> &, class ItemStack const &, bool);
+    /**
+     * @symbol ?convertFromEntity@ChalkboardBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVCompoundTag@@@Z
+     */
     MCAPI static class ChalkboardBlockActor * convertFromEntity(class BlockSource &, class CompoundTag const &);
+    /**
+     * @symbol ?createChalkboard@ChalkboardBlockActor@@SAPEAV1@PEAVActor@@AEAVBlockSource@@AEBVBlockPos@@W4ChalkboardSize@@EH_NAEBVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI static class ChalkboardBlockActor * createChalkboard(class Actor *, class BlockSource &, class BlockPos const &, enum ChalkboardSize, unsigned char, int, bool, class ItemStack const &, std::string);
 
 //private:
+    /**
+     * @symbol ?_findChalkboard@ChalkboardBlockActor@@CA?AUChalkboardFinder@1@AEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI static struct ChalkboardBlockActor::ChalkboardFinder _findChalkboard(class BlockSource &, class BlockPos const &);
 
 private:

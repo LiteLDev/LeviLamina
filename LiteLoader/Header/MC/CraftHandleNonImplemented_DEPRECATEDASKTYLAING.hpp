@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
+    /**
+     * @vtable 4
+     * @symbol ?_handleCraftAction@CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+     */
     virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
 #endif
+    /**
+     * @symbol ??0CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
+     */
     MCAPI CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftHandler &);
 
 };

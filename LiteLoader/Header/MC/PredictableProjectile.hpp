@@ -31,30 +31,121 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 13
+     * @symbol ?_doInitialMove@PredictableProjectile@@MEAAXXZ
+     */
     virtual void _doInitialMove();
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~PredictableProjectile();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTABLEPROJECTILE
 #endif
+    /**
+     * @symbol ??0PredictableProjectile@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI PredictableProjectile(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 };

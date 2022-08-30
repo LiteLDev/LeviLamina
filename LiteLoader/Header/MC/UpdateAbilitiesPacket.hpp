@@ -28,16 +28,48 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~UpdateAbilitiesPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@UpdateAbilitiesPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@UpdateAbilitiesPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@UpdateAbilitiesPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@UpdateAbilitiesPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEABILITIESPACKET
 #endif
+    /**
+     * @symbol ??0UpdateAbilitiesPacket@@QEAA@XZ
+     */
     MCAPI UpdateAbilitiesPacket();
+    /**
+     * @symbol ??0UpdateAbilitiesPacket@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
+     */
     MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const &);
+    /**
+     * @symbol ?fillIn@UpdateAbilitiesPacket@@QEBAXAEAVLayeredAbilities@@@Z
+     */
     MCAPI void fillIn(class LayeredAbilities &) const;
+    /**
+     * @symbol ?getTargetPlayer@UpdateAbilitiesPacket@@QEBA?AUActorUniqueID@@XZ
+     */
     MCAPI struct ActorUniqueID getTargetPlayer() const;
 
 //private:

@@ -30,9 +30,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUSHAREDURIRESOURCE
 #endif
+    /**
+     * @symbol ??0EduSharedUriResource@@QEAA@XZ
+     */
     MCAPI EduSharedUriResource();
+    /**
+     * @symbol ??0EduSharedUriResource@@QEAA@AEBVCompoundTag@@@Z
+     */
     MCAPI EduSharedUriResource(class CompoundTag const &);
+    /**
+     * @symbol ??1EduSharedUriResource@@QEAA@XZ
+     */
     MCAPI ~EduSharedUriResource();
+    /**
+     * @symbol ?toTag@EduSharedUriResource@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBU1@@Z
+     */
     MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const &);
 
 };

@@ -30,8 +30,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTPROXYCOMPONENT
 #endif
+    /**
+     * @symbol ??0ActorMovementProxyComponent@@QEAA@V?$not_null@V?$shared_ptr@UIActorMovementProxy@@@std@@@gsl@@@Z
+     */
     MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
+    /**
+     * @symbol ?getMovementProxy@ActorMovementProxyComponent@@QEAA?AV?$shared_ptr@UIActorMovementProxy@@@std@@XZ
+     */
     MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
+    /**
+     * @symbol ?getMovementProxy@ActorMovementProxyComponent@@QEBA?AV?$shared_ptr@$$CBUIActorMovementProxy@@@std@@XZ
+     */
     MCAPI class std::shared_ptr<struct IActorMovementProxy const> getMovementProxy() const;
 
 };

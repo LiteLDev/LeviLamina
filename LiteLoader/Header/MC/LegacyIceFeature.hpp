@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LegacyIceFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@LegacyIceFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYICEFEATURE
 #endif
+    /**
+     * @symbol ??0LegacyIceFeature@@QEAA@AEBVFeatureRegistry@@@Z
+     */
     MCAPI LegacyIceFeature(class FeatureRegistry const &);
 
 };

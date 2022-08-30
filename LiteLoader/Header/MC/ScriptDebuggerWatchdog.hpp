@@ -30,13 +30,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScriptDebuggerWatchdog();
+    /**
+     * @vtable 1
+     * @symbol ?requireClose@ScriptDebuggerWatchdog@@UEBA_NXZ
+     */
     virtual bool requireClose() const;
+    /**
+     * @vtable 2
+     * @symbol ?startListenTimeout@ScriptDebuggerWatchdog@@UEAAXXZ
+     */
     virtual void startListenTimeout();
+    /**
+     * @vtable 3
+     * @symbol ?listenTimeoutExpired@ScriptDebuggerWatchdog@@UEBA_NXZ
+     */
     virtual bool listenTimeoutExpired() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGERWATCHDOG
 #endif
+    /**
+     * @symbol ??0ScriptDebuggerWatchdog@@QEAA@V?$duration@HU?$ratio@$0DM@$00@std@@@chrono@std@@@Z
+     */
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
+    /**
+     * @symbol ?startLeaveGame@ScriptDebuggerWatchdog@@QEAAXXZ
+     */
     MCAPI void startLeaveGame();
 
 };

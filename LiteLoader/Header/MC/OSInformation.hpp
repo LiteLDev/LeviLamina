@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OSINFORMATION
 #endif
+    /**
+     * @symbol ??1OSInformation@@QEAA@XZ
+     */
     MCAPI ~OSInformation();
 
 };

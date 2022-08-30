@@ -34,8 +34,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGIONFILE
 #endif
+    /**
+     * @symbol ??0RegionFile@@QEAA@AEBVPath@Core@@@Z
+     */
     MCAPI RegionFile(class Core::Path const &);
+    /**
+     * @symbol ?open@RegionFile@@QEAA_NXZ
+     */
     MCAPI bool open();
+    /**
+     * @symbol ?readChunk@RegionFile@@QEAA_NHHPEAPEAVBitStream@RakNet@@@Z
+     */
     MCAPI bool readChunk(int, int, class RakNet::BitStream **);
 
 };

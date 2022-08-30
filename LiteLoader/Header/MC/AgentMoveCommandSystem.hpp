@@ -28,13 +28,34 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AgentMoveCommandSystem();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?tick@AgentMoveCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
+     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTMOVECOMMANDSYSTEM
 #endif
+    /**
+     * @symbol ?cleanUp@AgentMoveCommandSystem@@SAXAEAVEntityContext@@M@Z
+     */
     MCAPI static void cleanUp(class EntityContext &, float);
+    /**
+     * @symbol ?initialize@AgentMoveCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgent@AgentComponents@@UActionDetails@4@V?$FlagComponent@UInitializingFlag@AgentComponents@@@@VMove@4@@@@Z
+     */
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::InitializingFlag>, class AgentComponents::Move> &);
+    /**
+     * @symbol ?tickMove@AgentMoveCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgent@AgentComponents@@UActionDetails@4@V?$FlagComponent@UExecutingFlag@AgentComponents@@@@VMove@4@@@@Z
+     */
     MCAPI static void tickMove(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::Agent, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::ExecutingFlag>, class AgentComponents::Move> &);
 
 };

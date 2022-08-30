@@ -29,20 +29,65 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~TemporalAttributeBuff();
+    /**
+     * @vtable 1
+     * @symbol ?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ
+     */
     virtual bool isInstantaneous() const;
+    /**
+     * @vtable 2
+     * @symbol ?isSerializable@TemporalAttributeBuff@@UEBA_NXZ
+     */
     virtual bool isSerializable() const;
+    /**
+     * @vtable 3
+     * @symbol ?setDurationAmplifier@TemporalAttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
+     */
     virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
+    /**
+     * @vtable 4
+     * @symbol ?shouldBuff@TemporalAttributeBuff@@UEBA_NXZ
+     */
     virtual bool shouldBuff() const;
+    /**
+     * @vtable 5
+     * @symbol ?isComplete@TemporalAttributeBuff@@UEBA_NXZ
+     */
     virtual bool isComplete() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPORALATTRIBUTEBUFF
 #endif
+    /**
+     * @symbol ??0TemporalAttributeBuff@@QEAA@MHW4AttributeBuffType@@_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const &);
+    /**
+     * @symbol ??0TemporalAttributeBuff@@QEAA@AEBV0@@Z
+     */
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
+    /**
+     * @symbol ?getBaseAmount@TemporalAttributeBuff@@QEBAMXZ
+     */
     MCAPI float getBaseAmount() const;
+    /**
+     * @symbol ?getDuration@TemporalAttributeBuff@@QEBAHXZ
+     */
     MCAPI int getDuration() const;
+    /**
+     * @symbol ?getLifeTimer@TemporalAttributeBuff@@QEBAHXZ
+     */
     MCAPI int getLifeTimer() const;
+    /**
+     * @symbol ?serializationSetLifeTime@TemporalAttributeBuff@@QEAAXH@Z
+     */
     MCAPI void serializationSetLifeTime(int);
+    /**
+     * @symbol ?tick@TemporalAttributeBuff@@QEAAXXZ
+     */
     MCAPI void tick();
 
 };

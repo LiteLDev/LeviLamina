@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONCONVERSIONDATA
 #endif
+    /**
+     * @symbol ??0DimensionConversionData@@QEAA@AEBVVec3@@H@Z
+     */
     MCAPI DimensionConversionData(class Vec3 const &, int);
+    /**
+     * @symbol ?getNetherScale@DimensionConversionData@@QEBAHXZ
+     */
     MCAPI int getNetherScale() const;
+    /**
+     * @symbol ?getOverworldSpawnPoint@DimensionConversionData@@QEBAAEBVVec3@@XZ
+     */
     MCAPI class Vec3 const & getOverworldSpawnPoint() const;
 
 };

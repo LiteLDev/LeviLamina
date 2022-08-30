@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABASTIONJIGSAWSTRUCTUREBLOCKRULES
 #endif
+    /**
+     * @symbol ?initialize@VanillaBastionJigsawStructureBlockRules@@SAXAEAVJigsawStructureRegistry@@@Z
+     */
     MCAPI static void initialize(class JigsawStructureRegistry &);
 
 };

@@ -23,12 +23,33 @@ namespace BlockColorUtil {
 
 #undef AFTER_EXTRA
 MCAPI extern class std::array<enum BlockColor, 16> RAINBOW;
+    /**
+     * @symbol ?fromInt@BlockColorUtil@@YA?AW4BlockColor@@H@Z
+     */
     MCAPI enum BlockColor fromInt(int);
+    /**
+     * @symbol ?fromItemColor@BlockColorUtil@@YA?AW4BlockColor@@W4ItemColor@@@Z
+     */
     MCAPI enum BlockColor fromItemColor(enum ItemColor);
+    /**
+     * @symbol ?getColor@BlockColorUtil@@YA?AVColor@mce@@W4BlockColor@@@Z
+     */
     MCAPI class mce::Color getColor(enum BlockColor);
+    /**
+     * @symbol ?getName@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
+     */
     MCAPI std::string const & getName(enum BlockColor);
+    /**
+     * @symbol ?getNameMixedCase@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
+     */
     MCAPI std::string const & getNameMixedCase(enum BlockColor);
+    /**
+     * @symbol ?getNameSnakeCase@BlockColorUtil@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockColor@@@Z
+     */
     MCAPI std::string const & getNameSnakeCase(enum BlockColor);
+    /**
+     * @symbol ?getRGBColor@BlockColorUtil@@YAHW4BlockColor@@@Z
+     */
     MCAPI int getRGBColor(enum BlockColor);
 
 };

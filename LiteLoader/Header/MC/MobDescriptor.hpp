@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBDESCRIPTOR
 #endif
+    /**
+     * @symbol ??0MobDescriptor@@QEAA@AEBU0@@Z
+     */
     MCAPI MobDescriptor(struct MobDescriptor const &);
+    /**
+     * @symbol ??1MobDescriptor@@QEAA@XZ
+     */
     MCAPI ~MobDescriptor();
 
 };

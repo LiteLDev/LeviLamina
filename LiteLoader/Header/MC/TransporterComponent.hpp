@@ -30,17 +30,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~TransporterComponent();
+    /**
+     * @vtable 7
+     * @symbol ?canConsumerPower@TransporterComponent@@UEBA_NXZ
+     */
     virtual bool canConsumerPower() const;
+    /**
+     * @vtable 11
+     * @symbol ?addSource@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    /**
+     * @vtable 12
+     * @symbol ?allowConnection@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /**
+     * @vtable 14
+     * @symbol ?evaluate@TransporterComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /**
+     * @vtable 15
+     * @symbol ?cacheValues@TransporterComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
+    /**
+     * @vtable 17
+     * @symbol __unk_vfn_17
+     */
     virtual void __unk_vfn_17();
+    /**
+     * @vtable 20
+     * @symbol __unk_vfn_20
+     */
     virtual void __unk_vfn_20();
+    /**
+     * @vtable 22
+     * @symbol ?getCircuitComponentType@TransporterComponent@@UEBA?AW4CircuitComponentType@@XZ
+     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTERCOMPONENT
 #endif
+    /**
+     * @symbol ??0TransporterComponent@@QEAA@XZ
+     */
     MCAPI TransporterComponent();
 
 };

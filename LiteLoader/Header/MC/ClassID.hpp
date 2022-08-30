@@ -34,6 +34,9 @@ public:
 #endif
 
 //private:
+    /**
+     * @symbol ?getNextID@ClassID@@CA_KXZ
+     */
     MCAPI static unsigned __int64 getNextID();
 
 private:

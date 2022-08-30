@@ -31,13 +31,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LookAtTradingPlayerGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@LookAtTradingPlayerGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@LookAtTradingPlayerGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@LookAtTradingPlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATTRADINGPLAYERGOAL
 #endif
+    /**
+     * @symbol ??0LookAtTradingPlayerGoal@@QEAA@AEAVMob@@MMHHHH@Z
+     */
     MCAPI LookAtTradingPlayerGoal(class Mob &, float, float, int, int, int, int);
 
 };

@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMTAG
 #endif
+    /**
+     * @symbol ??1ItemTag@@QEAA@XZ
+     */
     MCAPI ~ItemTag();
 
 };

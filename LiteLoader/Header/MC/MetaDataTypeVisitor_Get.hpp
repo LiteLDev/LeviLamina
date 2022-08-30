@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_METADATATYPEVISITOR_GET
 #endif
+    /**
+     * @symbol ??1MetaDataTypeVisitor_Get@@QEAA@XZ
+     */
     MCAPI ~MetaDataTypeVisitor_Get();
 
 };

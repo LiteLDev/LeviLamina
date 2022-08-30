@@ -30,18 +30,57 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemUseInventoryTransaction();
+    /**
+     * @vtable 1
+     * @symbol ?read@ItemUseInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
+     */
     virtual void read(class ReadOnlyBinaryStream &);
+    /**
+     * @vtable 2
+     * @symbol ?write@ItemUseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 3
+     * @symbol ?postLoadItems@ItemUseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
+     */
     virtual void postLoadItems(class BlockPalette &, bool);
+    /**
+     * @vtable 4
+     * @symbol ?handle@ItemUseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
+     */
     virtual enum InventoryTransactionError handle(class Player &, bool) const;
+    /**
+     * @vtable 5
+     * @symbol ?onTransactionError@ItemUseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
+     */
     virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEINVENTORYTRANSACTION
 #endif
+    /**
+     * @symbol ??0ItemUseInventoryTransaction@@QEAA@AEBV0@@Z
+     */
     MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const &);
+    /**
+     * @symbol ??4ItemUseInventoryTransaction@@QEAAAEAV0@AEBV0@@Z
+     */
     MCAPI class ItemUseInventoryTransaction & operator=(class ItemUseInventoryTransaction const &);
+    /**
+     * @symbol ?resendBlocksAroundArea@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@AEBVBlockPos@@E@Z
+     */
     MCAPI void resendBlocksAroundArea(class Player &, class BlockPos const &, unsigned char) const;
+    /**
+     * @symbol ?resendPlayerState@ItemUseInventoryTransaction@@QEBAXAEAVPlayer@@@Z
+     */
     MCAPI void resendPlayerState(class Player &) const;
+    /**
+     * @symbol ?setSelectedItem@ItemUseInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
+     */
     MCAPI class ItemUseInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 //private:

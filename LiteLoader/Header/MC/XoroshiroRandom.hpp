@@ -30,16 +30,60 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~XoroshiroRandom();
+    /**
+     * @vtable 1
+     * @symbol ?nextInt@XoroshiroRandom@@UEAAHXZ
+     */
     virtual int nextInt();
+    /**
+     * @vtable 2
+     * @symbol ?nextInt@XoroshiroRandom@@UEAAHH@Z
+     */
     virtual int nextInt(int);
+    /**
+     * @vtable 3
+     * @symbol ?nextLong@XoroshiroRandom@@UEAA_JXZ
+     */
     virtual __int64 nextLong();
+    /**
+     * @vtable 4
+     * @symbol ?nextBoolean@XoroshiroRandom@@UEAA_NXZ
+     */
     virtual bool nextBoolean();
+    /**
+     * @vtable 5
+     * @symbol ?nextFloat@XoroshiroRandom@@UEAAMXZ
+     */
     virtual float nextFloat();
+    /**
+     * @vtable 6
+     * @symbol ?nextDouble@XoroshiroRandom@@UEAANXZ
+     */
     virtual double nextDouble();
+    /**
+     * @vtable 7
+     * @symbol ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
+     */
     virtual double nextGaussianDouble();
+    /**
+     * @vtable 8
+     * @symbol ?consumeCount@XoroshiroRandom@@UEAAXI@Z
+     */
     virtual void consumeCount(unsigned int);
+    /**
+     * @vtable 9
+     * @symbol ?fork@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class IRandom> fork();
+    /**
+     * @vtable 10
+     * @symbol ?forkPositional@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRORANDOM
 #endif

@@ -29,16 +29,49 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemStackRequestActionBeaconPayment();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?_write@ItemStackRequestActionBeaconPayment@@MEBAXAEAVBinaryStream@@@Z
+     */
     virtual void _write(class BinaryStream &) const;
+    /**
+     * @vtable 5
+     * @symbol ?_read@ItemStackRequestActionBeaconPayment@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
+     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONBEACONPAYMENT
 #endif
+    /**
+     * @symbol ??0ItemStackRequestActionBeaconPayment@@QEAA@XZ
+     */
     MCAPI ItemStackRequestActionBeaconPayment();
+    /**
+     * @symbol ?getPrimaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
+     */
     MCAPI int getPrimaryEffectId() const;
+    /**
+     * @symbol ?getSecondaryEffectId@ItemStackRequestActionBeaconPayment@@QEBAHXZ
+     */
     MCAPI int getSecondaryEffectId() const;
 
 };

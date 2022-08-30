@@ -29,14 +29,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CommandBlockUpdatePacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@CommandBlockUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@CommandBlockUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@CommandBlockUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@CommandBlockUpdatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKUPDATEPACKET
 #endif
+    /**
+     * @symbol ??0CommandBlockUpdatePacket@@QEAA@XZ
+     */
     MCAPI CommandBlockUpdatePacket();
+    /**
+     * @symbol ??0CommandBlockUpdatePacket@@QEAA@AEBV0@@Z
+     */
     MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &);
 
 };

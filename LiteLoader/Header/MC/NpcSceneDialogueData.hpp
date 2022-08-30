@@ -34,21 +34,76 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NpcSceneDialogueData();
+    /**
+     * @vtable 1
+     * @symbol ?getDialogueText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getDialogueText() const;
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?getNameText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getNameText() const;
+    /**
+     * @vtable 4
+     * @symbol ?getNameRawText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getNameRawText() const;
+    /**
+     * @vtable 5
+     * @symbol ?getSceneName@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getSceneName() const;
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol ?getActorUniqueID@NpcSceneDialogueData@@UEAA?AUActorUniqueID@@XZ
+     */
     virtual struct ActorUniqueID getActorUniqueID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
+    /**
+     * @vtable -1
+     * @symbol ?getActionsContainer@NpcSceneDialogueData@@UEAAPEAUNpcActionsContainer@@XZ
+     */
     MCVAPI struct NpcActionsContainer * getActionsContainer();
+    /**
+     * @vtable -1
+     * @symbol ?getActionsContainer@NpcSceneDialogueData@@UEBAPEBUNpcActionsContainer@@XZ
+     */
     MCVAPI struct NpcActionsContainer const * getActionsContainer() const;
+    /**
+     * @vtable -1
+     * @symbol ?getActor@NpcSceneDialogueData@@UEAAPEAVActor@@XZ
+     */
     MCVAPI class Actor * getActor();
+    /**
+     * @vtable -1
+     * @symbol ?getActor@NpcSceneDialogueData@@UEBAPEBVActor@@XZ
+     */
     MCVAPI class Actor const * getActor() const;
 #endif
+    /**
+     * @symbol ??0NpcSceneDialogueData@@QEAA@VWeakEntityRef@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const &);
 
 };

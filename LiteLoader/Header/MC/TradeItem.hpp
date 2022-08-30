@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEITEM
 #endif
+    /**
+     * @symbol ??4TradeItem@@QEAAAEAU0@$$QEAU0@@Z
+     */
     MCAPI struct TradeItem & operator=(struct TradeItem &&);
+    /**
+     * @symbol ??1TradeItem@@QEAA@XZ
+     */
     MCAPI ~TradeItem();
 
 };

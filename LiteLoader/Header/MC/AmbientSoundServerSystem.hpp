@@ -28,13 +28,28 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AmbientSoundServerSystem();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?tick@AmbientSoundServerSystem@@UEAAXAEAVEntityRegistry@@@Z
+     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDSERVERSYSTEM
 #endif
 
 //private:
+    /**
+     * @symbol ?_tickAmbientSoundComponent@AmbientSoundServerSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VAmbientSoundServerComponent@@@@@Z
+     */
     MCAPI static void _tickAmbientSoundComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class AmbientSoundServerComponent> &);
 
 private:

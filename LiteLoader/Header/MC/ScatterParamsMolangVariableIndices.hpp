@@ -31,6 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMSMOLANGVARIABLEINDICES
 #endif
+    /**
+     * @symbol ?initialize@ScatterParamsMolangVariableIndices@@QEAAXXZ
+     */
     MCAPI void initialize();
 
 };

@@ -31,73 +31,318 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BasePressurePlateBlock();
+    /**
+     * @vtable 5
+     * @symbol ?getCollisionShape@BasePressurePlateBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
+     */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /**
+     * @vtable 10
+     * @symbol ?getAABB@BasePressurePlateBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
+     */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 36
+     * @symbol __unk_vfn_36
+     */
     virtual void __unk_vfn_36();
+    /**
+     * @vtable 37
+     * @symbol __unk_vfn_37
+     */
     virtual void __unk_vfn_37();
+    /**
+     * @vtable 38
+     * @symbol __unk_vfn_38
+     */
     virtual void __unk_vfn_38();
+    /**
+     * @vtable 39
+     * @symbol __unk_vfn_39
+     */
     virtual void __unk_vfn_39();
+    /**
+     * @vtable 40
+     * @symbol __unk_vfn_40
+     */
     virtual void __unk_vfn_40();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 42
+     * @symbol __unk_vfn_42
+     */
     virtual void __unk_vfn_42();
+    /**
+     * @vtable 44
+     * @symbol __unk_vfn_44
+     */
     virtual void __unk_vfn_44();
+    /**
+     * @vtable 45
+     * @symbol __unk_vfn_45
+     */
     virtual void __unk_vfn_45();
+    /**
+     * @vtable 46
+     * @symbol __unk_vfn_46
+     */
     virtual void __unk_vfn_46();
+    /**
+     * @vtable 47
+     * @symbol __unk_vfn_47
+     */
     virtual void __unk_vfn_47();
+    /**
+     * @vtable 48
+     * @symbol __unk_vfn_48
+     */
     virtual void __unk_vfn_48();
+    /**
+     * @vtable 49
+     * @symbol __unk_vfn_49
+     */
     virtual void __unk_vfn_49();
+    /**
+     * @vtable 51
+     * @symbol ?isSignalSource@BasePressurePlateBlock@@UEBA_NXZ
+     */
     virtual bool isSignalSource() const;
+    /**
+     * @vtable 59
+     * @symbol __unk_vfn_59
+     */
     virtual void __unk_vfn_59();
+    /**
+     * @vtable 60
+     * @symbol __unk_vfn_60
+     */
     virtual void __unk_vfn_60();
+    /**
+     * @vtable 62
+     * @symbol ?shouldConnectToRedstone@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
+     */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
+    /**
+     * @vtable 67
+     * @symbol ?checkIsPathable@BasePressurePlateBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+     */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 77
+     * @symbol ?setupRedstoneComponent@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 90
+     * @symbol ?mayPlace@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 98
+     * @symbol ?neighborChanged@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
+    /**
+     * @vtable 105
+     * @symbol __unk_vfn_105
+     */
     virtual void __unk_vfn_105();
+    /**
+     * @vtable 108
+     * @symbol ?isAttachedTo@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAV3@@Z
+     */
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
+    /**
+     * @vtable 112
+     * @symbol ?shouldTriggerEntityInside@BasePressurePlateBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+     */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /**
+     * @vtable 113
+     * @symbol ?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+     */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /**
+     * @vtable 124
+     * @symbol __unk_vfn_124
+     */
     virtual void __unk_vfn_124();
+    /**
+     * @vtable 126
+     * @symbol __unk_vfn_126
+     */
     virtual void __unk_vfn_126();
+    /**
+     * @vtable 127
+     * @symbol __unk_vfn_127
+     */
     virtual void __unk_vfn_127();
+    /**
+     * @vtable 132
+     * @symbol __unk_vfn_132
+     */
     virtual void __unk_vfn_132();
+    /**
+     * @vtable 144
+     * @symbol ?getVisualShape@BasePressurePlateBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
+     */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
+    /**
+     * @vtable 147
+     * @symbol ?getVariant@BasePressurePlateBlock@@UEBAHAEBVBlock@@@Z
+     */
     virtual int getVariant(class Block const &) const;
+    /**
+     * @vtable 148
+     * @symbol __unk_vfn_148
+     */
     virtual void __unk_vfn_148();
+    /**
+     * @vtable 157
+     * @symbol __unk_vfn_157
+     */
     virtual void __unk_vfn_157();
+    /**
+     * @vtable 158
+     * @symbol ?getSilkTouchItemInstance@BasePressurePlateBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
+     */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+    /**
+     * @vtable 168
+     * @symbol __unk_vfn_168
+     */
     virtual void __unk_vfn_168();
+    /**
+     * @vtable 169
+     * @symbol __unk_vfn_169
+     */
     virtual void __unk_vfn_169();
+    /**
+     * @vtable 170
+     * @symbol __unk_vfn_170
+     */
     virtual void __unk_vfn_170();
+    /**
+     * @vtable 171
+     * @symbol ?onPlace@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vtable 174
+     * @symbol ?tick@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /**
+     * @vtable 177
+     * @symbol __unk_vfn_177
+     */
     virtual void __unk_vfn_177();
+    /**
+     * @vtable 188
+     * @symbol __unk_vfn_188
+     */
     virtual void __unk_vfn_188();
+    /**
+     * @vtable 192
+     * @symbol ?getTickDelay@BasePressurePlateBlock@@UEBAHXZ
+     */
     virtual int getTickDelay() const;
+    /**
+     * @vtable 193
+     * @symbol ?getSignalStrength@WeightedPressurePlateBlock@@MEBAHAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual int getSignalStrength(class BlockSource &, class BlockPos const &) const = 0;
+    /**
+     * @vtable 194
+     * @symbol ?getSignalForData@WeightedPressurePlateBlock@@MEBAHH@Z
+     */
     virtual int getSignalForData(int) const = 0;
+    /**
+     * @vtable 195
+     * @symbol ?getRedstoneSignal@WeightedPressurePlateBlock@@MEBAHH@Z
+     */
     virtual int getRedstoneSignal(int) const = 0;
+    /**
+     * @vtable 196
+     * @symbol ?getSensitiveAABB@BasePressurePlateBlock@@MEBA?BVAABB@@AEBVBlockPos@@@Z
+     */
     virtual class AABB const getSensitiveAABB(class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEPRESSUREPLATEBLOCK
+    /**
+     * @vtable -1
+     * @symbol ?canSpawnOn@BasePressurePlateBlock@@UEBA_NXZ
+     */
     MCVAPI bool canSpawnOn() const;
+    /**
+     * @vtable -1
+     * @symbol ?isSignalSource@BasePressurePlateBlock@@UEBA_NXZ
+     */
     MCVAPI bool isSignalSource() const;
 #endif
 
 //protected:
+    /**
+     * @symbol ??0BasePressurePlateBlock@@IEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
+     */
     MCAPI BasePressurePlateBlock(std::string const &, int, class Material const &);
+    /**
+     * @symbol ?checkPressed@BasePressurePlateBlock@@IEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@HH@Z
+     */
     MCAPI void checkPressed(class BlockSource &, class BlockPos const &, class Actor *, int, int) const;
 
 //private:
+    /**
+     * @symbol ?isEntityInsideTriggerable@BasePressurePlateBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
+     */
     MCAPI bool isEntityInsideTriggerable(class BlockSource const &, class BlockPos const &, class Actor &) const;
 
 protected:

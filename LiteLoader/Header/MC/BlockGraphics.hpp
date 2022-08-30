@@ -32,16 +32,37 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGRAPHICS
 #endif
+    /**
+     * @symbol ?getBlockShape@BlockGraphics@@QEBA?AW4BlockShape@@XZ
+     */
     MCAPI enum BlockShape getBlockShape() const;
+    /**
+     * @symbol ?getIconTexture@BlockGraphics@@QEBAAEBUTextureUVCoordinateSet@@H@Z
+     */
     MCAPI struct TextureUVCoordinateSet const & getIconTexture(int) const;
+    /**
+     * @symbol ?isFullAndOpaque@BlockGraphics@@QEBA_NXZ
+     */
     MCAPI bool isFullAndOpaque() const;
 MCAPI static float const SIZE_OFFSET;
+    /**
+     * @symbol ?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlock@@@Z
+     */
     MCAPI static class BlockGraphics const * getForBlock(class Block const &);
+    /**
+     * @symbol ?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlockLegacy@@@Z
+     */
     MCAPI static class BlockGraphics const * getForBlock(class BlockLegacy const &);
+    /**
+     * @symbol ?isInitialized@BlockGraphics@@SA_NXZ
+     */
     MCAPI static bool isInitialized();
 MCAPI static class std::unordered_map<std::string, class BlockGraphics *, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class BlockGraphics *>>> mBlockLookupMap;
 MCAPI static std::unique_ptr<class BlockGraphics> mDummyBlock;
 MCAPI static std::vector<std::unique_ptr<class BlockGraphics>> mOwnedBlocks;
+    /**
+     * @symbol ?setAtlasItemManager@BlockGraphics@@SAXV?$shared_ptr@VAtlasItemManager@@@std@@@Z
+     */
     MCAPI static void setAtlasItemManager(class std::shared_ptr<class AtlasItemManager>);
 
 //protected:

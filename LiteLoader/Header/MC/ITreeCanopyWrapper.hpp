@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREECANOPYWRAPPER
 #endif
+    /**
+     * @symbol ??1ITreeCanopyWrapper@@QEAA@XZ
+     */
     MCAPI ~ITreeCanopyWrapper();
 
 };

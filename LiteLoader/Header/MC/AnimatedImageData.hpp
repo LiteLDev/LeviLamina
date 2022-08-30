@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEDIMAGEDATA
 #endif
+    /**
+     * @symbol ??0AnimatedImageData@@QEAA@W4AnimatedTextureType@persona@@W4AnimationExpression@2@AEBUImage@mce@@M@Z
+     */
     MCAPI AnimatedImageData(enum persona::AnimatedTextureType, enum persona::AnimationExpression, struct mce::Image const &, float);
+    /**
+     * @symbol ??0AnimatedImageData@@QEAA@AEBV0@@Z
+     */
     MCAPI AnimatedImageData(class AnimatedImageData const &);
 
 };

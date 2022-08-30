@@ -29,25 +29,78 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FertilizeFarmBlockGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@FertilizeFarmBlockGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@FertilizeFarmBlockGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@FertilizeFarmBlockGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@FertilizeFarmBlockGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@FertilizeFarmBlockGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@FertilizeFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 11
+     * @symbol ?isValidTarget@FertilizeFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZEFARMBLOCKGOAL
 #endif
+    /**
+     * @symbol ??0FertilizeFarmBlockGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI FertilizeFarmBlockGoal(class Mob &);
 
 //protected:
+    /**
+     * @symbol ?tryFertilizeCrop@FertilizeFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI bool tryFertilizeCrop(class BlockSource &, class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?_findFertilizer@FertilizeFarmBlockGoal@@AEAA_NXZ
+     */
     MCAPI bool _findFertilizer();
 
 protected:

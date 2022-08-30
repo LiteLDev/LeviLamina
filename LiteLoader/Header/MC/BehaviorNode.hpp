@@ -29,12 +29,30 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BehaviorNode();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1() = 0;
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORNODE
 #endif
+    /**
+     * @symbol ??0BehaviorNode@@QEAA@XZ
+     */
     MCAPI BehaviorNode();
+    /**
+     * @symbol ?getBehaviorData@BehaviorNode@@QEAAAEAVBehaviorData@@XZ
+     */
     MCAPI class BehaviorData & getBehaviorData();
 
 };

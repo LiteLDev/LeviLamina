@@ -30,14 +30,35 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATORFACTORY
 #endif
+    /**
+     * @symbol ??0SeamlessChunkBlendingAttenuatorFactory@@QEAA@AEAVDimension@@@Z
+     */
     MCAPI SeamlessChunkBlendingAttenuatorFactory(class Dimension &);
+    /**
+     * @symbol ?getOrCreateAttenuator@SeamlessChunkBlendingAttenuatorFactory@@QEAA?AV?$shared_ptr@VSeamlessChunkBlendingAttenuator@@@std@@AEBVChunkPos@@@Z
+     */
     MCAPI class std::shared_ptr<class SeamlessChunkBlendingAttenuator> getOrCreateAttenuator(class ChunkPos const &);
+    /**
+     * @symbol ?isClientSide@SeamlessChunkBlendingAttenuatorFactory@@QEBA?B_NXZ
+     */
     MCAPI bool const isClientSide() const;
 
 //private:
+    /**
+     * @symbol ?_createChunkBlendingAttenuator@SeamlessChunkBlendingAttenuatorFactory@@AEBA?AV?$shared_ptr@VSeamlessChunkBlendingAttenuator@@@std@@AEBVChunkPos@@@Z
+     */
     MCAPI class std::shared_ptr<class SeamlessChunkBlendingAttenuator> _createChunkBlendingAttenuator(class ChunkPos const &) const;
+    /**
+     * @symbol ?_finalizeChunkAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@AEBA?AV?$vector@V?$array@UAttenuationData@SeamlessChunkBlendingAttenuatorUtil@@$03@std@@V?$allocator@V?$array@UAttenuationData@SeamlessChunkBlendingAttenuatorUtil@@$03@std@@@2@@std@@AEBV?$vector@V?$array@UIntermediateAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@$03@std@@V?$allocator@V?$array@UIntermediateAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@$03@std@@@2@@3@@Z
+     */
     MCAPI std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> const &) const;
+    /**
+     * @symbol ?_processDensityColumn@SeamlessChunkBlendingAttenuatorFactory@@AEBAXAEAV?$vector@V?$array@UIntermediateAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@$03@std@@V?$allocator@V?$array@UIntermediateAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@$03@std@@@2@@std@@AEBVBlendingData@@MU?$pair@HH@3@2_N@Z
+     */
     MCAPI void _processDensityColumn(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> &, class BlendingData const &, float, struct std::pair<int, int>, struct std::pair<int, int>, bool) const;
+    /**
+     * @symbol ?_updateIntermediateAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@AEBAXAEAV?$vector@V?$array@UIntermediateAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@$03@std@@V?$allocator@V?$array@UIntermediateAttenuationData@SeamlessChunkBlendingAttenuatorFactory@@$03@std@@@2@@std@@AEBVChunkPos@@1AEBVBlendingData@@_N@Z
+     */
     MCAPI void _updateIntermediateAttenuationData(std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorFactory::IntermediateAttenuationData, 4>> &, class ChunkPos const &, class ChunkPos const &, class BlendingData const &, bool) const;
 
 private:

@@ -39,14 +39,32 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTFACTORY
 #endif
+    /**
+     * @symbol ??0BlockComponentFactory@@QEAA@AEBVExperiments@@@Z
+     */
     MCAPI BlockComponentFactory(class Experiments const &);
+    /**
+     * @symbol ?createDescription@BlockComponentFactory@@QEBA?AV?$unique_ptr@UBlockComponentDescription@@U?$default_delete@UBlockComponentDescription@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     */
     MCAPI std::unique_ptr<struct BlockComponentDescription> createDescription(std::string const &) const;
+    /**
+     * @symbol ?addAllComponentUpgrades@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@@Z
+     */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
 MCAPI static class std::unordered_map<std::string, struct BlockComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct BlockComponentFactory::Constructor>>> mRegisteredCerealComponents;
+    /**
+     * @symbol ?registerAllCerealDescriptions@BlockComponentFactory@@SAXXZ
+     */
     MCAPI static void registerAllCerealDescriptions();
+    /**
+     * @symbol ?registerComponentUpgrade@BlockComponentFactory@@SAXAEAVCerealDocumentUpgrader@@V?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
+     */
     MCAPI static void registerComponentUpgrade(class CerealDocumentUpgrader &, class std::shared_ptr<class CerealSchemaUpgrade>);
 
 //private:
+    /**
+     * @symbol ?_bindAllComponentSchemas@BlockComponentFactory@@CAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
+     */
     MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 
 private:

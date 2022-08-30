@@ -31,9 +31,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@MobEffectChangeDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~MobEffectChangeDescription();
+    /**
+     * @vtable 2
+     * @symbol ?deserializeData@MobEffectChangeDescription@@UEAAXUDeserializeDataParams@@@Z
+     */
     virtual void deserializeData(struct DeserializeDataParams);
+    /**
+     * @vtable 3
+     * @symbol ?serializeData@MobEffectChangeDescription@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTCHANGEDESCRIPTION
 #endif

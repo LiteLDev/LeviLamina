@@ -30,15 +30,55 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RakDataOutput();
+    /**
+     * @vtable 1
+     * @symbol ?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     virtual void writeString(class gsl::basic_string_span<char const, -1>);
+    /**
+     * @vtable 2
+     * @symbol ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
+    /**
+     * @vtable 3
+     * @symbol ?writeFloat@BytesDataOutput@@UEAAXM@Z
+     */
     virtual void writeFloat(float);
+    /**
+     * @vtable 4
+     * @symbol ?writeDouble@BytesDataOutput@@UEAAXN@Z
+     */
     virtual void writeDouble(double);
+    /**
+     * @vtable 5
+     * @symbol ?writeByte@BytesDataOutput@@UEAAXD@Z
+     */
     virtual void writeByte(char);
+    /**
+     * @vtable 6
+     * @symbol ?writeShort@BytesDataOutput@@UEAAXF@Z
+     */
     virtual void writeShort(short);
+    /**
+     * @vtable 7
+     * @symbol ?writeInt@BytesDataOutput@@UEAAXH@Z
+     */
     virtual void writeInt(int);
+    /**
+     * @vtable 8
+     * @symbol ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
+     */
     virtual void writeLongLong(__int64);
+    /**
+     * @vtable 9
+     * @symbol ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
+     */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAOUTPUT
 #endif

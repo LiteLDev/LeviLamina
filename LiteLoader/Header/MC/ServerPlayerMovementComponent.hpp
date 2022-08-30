@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERMOVEMENTCOMPONENT
 #endif
+    /**
+     * @symbol ??0ServerPlayerMovementComponent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent &&);
+    /**
+     * @symbol ??1ServerPlayerMovementComponent@@QEAA@XZ
+     */
     MCAPI ~ServerPlayerMovementComponent();
 
 };

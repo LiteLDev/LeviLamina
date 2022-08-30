@@ -30,13 +30,27 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MeadowFlowerFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@MeadowFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEADOWFLOWERFEATURE
 #endif
+    /**
+     * @symbol ??0MeadowFlowerFeature@@QEAA@XZ
+     */
     MCAPI MeadowFlowerFeature();
 
 //private:
+    /**
+     * @symbol ?getRandomArrayIndex@MeadowFlowerFeature@@AEBAHAEBVBlockPos@@_KM@Z
+     */
     MCAPI int getRandomArrayIndex(class BlockPos const &, unsigned __int64, float) const;
 
 private:

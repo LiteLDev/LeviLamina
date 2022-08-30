@@ -31,23 +31,76 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WorkGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@WorkGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@WorkGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@WorkGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@WorkGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@WorkGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@WorkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 18
+     * @symbol ?useWorkstation@WorkGoal@@UEAAXXZ
+     */
     virtual void useWorkstation();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKGOAL
 #endif
+    /**
+     * @symbol ??0WorkGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI WorkGoal(class Mob &);
+    /**
+     * @symbol ?playPOISoundEvent@WorkGoal@@QEBAXXZ
+     */
     MCAPI void playPOISoundEvent() const;
 
 //private:
+    /**
+     * @symbol ?_isInsideOrIsNotRaining@WorkGoal@@AEAA_NXZ
+     */
     MCAPI bool _isInsideOrIsNotRaining();
 
 private:

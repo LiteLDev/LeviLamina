@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEUTIL
 #endif
+    /**
+     * @symbol ?pathFromString@ResourceUtil@@SA?AW4ResourceFileSystem@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     MCAPI static enum ResourceFileSystem pathFromString(class gsl::basic_string_span<char const, -1>);
+    /**
+     * @symbol ?stringFromPath@ResourceUtil@@SA?AV?$basic_string_span@$$CBD$0?0@gsl@@W4ResourceFileSystem@@@Z
+     */
     MCAPI static class gsl::basic_string_span<char const, -1> stringFromPath(enum ResourceFileSystem);
 
 };

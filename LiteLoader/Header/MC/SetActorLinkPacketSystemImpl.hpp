@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORLINKPACKETSYSTEMIMPL
 #endif
+    /**
+     * @symbol ?_setActorLinkPacketSystem@SetActorLinkPacketSystemImpl@@SAXAEAVStrictEntityContext@@AEBUActorUniqueIDComponent@@AEBURemovePassengersComponent@@V?$Optional@$$CBV?$FlagComponent@UActorIsBeingDestroyedFlag@@@@@@V?$Optional@$$CBV?$FlagComponent@UPassengerInitiatedFlag@@@@@@AEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUActorUniqueIDComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@USendPacketsComponent@@@@@Z
+     */
     MCAPI static void _setActorLinkPacketSystem(class StrictEntityContext &, struct ActorUniqueIDComponent const &, struct RemovePassengersComponent const &, class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag> const>, class Optional<class FlagComponent<struct PassengerInitiatedFlag> const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct ActorUniqueIDComponent const> &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>);
 
 };

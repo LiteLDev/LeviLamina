@@ -30,12 +30,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getJsonName@TeleportDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~TeleportDescription();
+    /**
+     * @vtable 2
+     * @symbol ?deserializeData@TeleportDescription@@UEAAXUDeserializeDataParams@@@Z
+     */
     virtual void deserializeData(struct DeserializeDataParams);
+    /**
+     * @vtable 3
+     * @symbol ?serializeData@TeleportDescription@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTDESCRIPTION
 #endif
+    /**
+     * @symbol ??0TeleportDescription@@QEAA@XZ
+     */
     MCAPI TeleportDescription();
 
 };

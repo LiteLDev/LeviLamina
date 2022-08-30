@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUSEITEMEVENT
 #endif
+    /**
+     * @symbol ??1ActorUseItemEvent@@QEAA@XZ
+     */
     MCAPI ~ActorUseItemEvent();
 
 };

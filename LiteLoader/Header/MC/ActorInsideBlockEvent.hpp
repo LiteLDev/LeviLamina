@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINSIDEBLOCKEVENT
 #endif
+    /**
+     * @symbol ??0ActorInsideBlockEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI ActorInsideBlockEvent(struct ActorInsideBlockEvent const &);
+    /**
+     * @symbol ??1ActorInsideBlockEvent@@QEAA@XZ
+     */
     MCAPI ~ActorInsideBlockEvent();
 
 };

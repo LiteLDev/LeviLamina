@@ -31,8 +31,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SetDataFromColorIndexFunction();
+    /**
+     * @vtable 1
+     * @symbol ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+     */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
+    /**
+     * @vtable 3
+     * @symbol ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+     */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETDATAFROMCOLORINDEXFUNCTION
 #endif

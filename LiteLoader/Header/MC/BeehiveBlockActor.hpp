@@ -37,32 +37,104 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BeehiveBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@BeehiveBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@BeehiveBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@BeehiveBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0BeehiveBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI BeehiveBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?disableBeeSpawn@BeehiveBlockActor@@QEAAXXZ
+     */
     MCAPI void disableBeeSpawn();
+    /**
+     * @symbol ?evictAll@BeehiveBlockActor@@QEAAXAEAVBlockSource@@_N@Z
+     */
     MCAPI void evictAll(class BlockSource &, bool);
+    /**
+     * @symbol ?saveUserData@BeehiveBlockActor@@QEBAXAEAVCompoundTag@@@Z
+     */
     MCAPI void saveUserData(class CompoundTag &) const;
+    /**
+     * @symbol ?tryAdmit@BeehiveBlockActor@@QEAA_NAEAVActor@@@Z
+     */
     MCAPI bool tryAdmit(class Actor &);
 MCAPI static unsigned int const MAX_OCCUPANCY;
 MCAPI static enum BlockActorType const TypeId;
 MCAPI static std::string const TypeString;
 
 //private:
+    /**
+     * @symbol ?_revive@BeehiveBlockActor@@AEAAPEAVActor@@AEAVBlockSource@@AEBUOccupant@1@E@Z
+     */
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
+    /**
+     * @symbol ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
+     */
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
+    /**
+     * @symbol ?_trySpawnBees@BeehiveBlockActor@@AEAAXAEAVBlockSource@@@Z
+     */
     MCAPI void _trySpawnBees(class BlockSource &);
 
 private:

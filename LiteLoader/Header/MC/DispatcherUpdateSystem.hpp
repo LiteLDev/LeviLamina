@@ -29,8 +29,20 @@ public:
     DispatcherUpdateSystem() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DispatcherUpdateSystem();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?tick@DispatcherUpdateSystem@@UEAAXAEAVEntityRegistry@@@Z
+     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPATCHERUPDATESYSTEM
 #endif

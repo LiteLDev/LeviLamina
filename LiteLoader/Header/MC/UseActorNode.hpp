@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~UseActorNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@UseActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORNODE
 #endif
+    /**
+     * @symbol ??0UseActorNode@@QEAA@XZ
+     */
     MCAPI UseActorNode();
 
 };

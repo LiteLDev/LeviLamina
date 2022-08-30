@@ -31,17 +31,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorDamageByChildActorSource();
+    /**
+     * @vtable 2
+     * @symbol ?isChildEntitySource@ActorDamageByChildActorSource@@UEBA_NXZ
+     */
     virtual bool isChildEntitySource() const;
+    /**
+     * @vtable 10
+     * @symbol ?getDeathMessage@ActorDamageByChildActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
+     */
     virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
+    /**
+     * @vtable 16
+     * @symbol ?getDamagingEntityIsCreative@ActorDamageByChildActorSource@@UEBA_NXZ
+     */
     virtual bool getDamagingEntityIsCreative() const;
+    /**
+     * @vtable 17
+     * @symbol ?getDamagingEntityIsWorldBuilder@ActorDamageByChildActorSource@@UEBA_NXZ
+     */
     virtual bool getDamagingEntityIsWorldBuilder() const;
+    /**
+     * @vtable 18
+     * @symbol ?getDamagingEntityUniqueID@ActorDamageByChildActorSource@@UEBA?AUActorUniqueID@@XZ
+     */
     virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /**
+     * @vtable 19
+     * @symbol ?getDamagingEntityType@ActorDamageByChildActorSource@@UEBA?AW4ActorType@@XZ
+     */
     virtual enum ActorType getDamagingEntityType() const;
+    /**
+     * @vtable 20
+     * @symbol ?getDamagingEntityCategories@ActorDamageByChildActorSource@@UEBA?AW4ActorCategory@@XZ
+     */
     virtual enum ActorCategory getDamagingEntityCategories() const;
+    /**
+     * @vtable 21
+     * @symbol ?clone@ActorDamageByChildActorSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGEBYCHILDACTORSOURCE
 #endif
+    /**
+     * @symbol ??0ActorDamageByChildActorSource@@QEAA@AEAVActor@@0W4ActorDamageCause@@@Z
+     */
     MCAPI ActorDamageByChildActorSource(class Actor &, class Actor &, enum ActorDamageCause);
 
 };

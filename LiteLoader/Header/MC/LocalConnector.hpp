@@ -32,30 +32,118 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LocalConnector();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?getLocalIp@LocalConnector@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getLocalIp();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?getConnectedGameInfo@LocalConnector@@UEBAAEBVGameConnectionInfo@Social@@XZ
+     */
     virtual class Social::GameConnectionInfo const & getConnectedGameInfo() const;
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?getNatPunchInfo@LocalConnector@@UEBA?AUNatPunchInfo@Connector@@XZ
+     */
     virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALCONNECTOR
+    /**
+     * @vtable -1
+     * @symbol ?addConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
+     */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
+    /**
+     * @vtable -1
+     * @symbol ?getIPv4Port@LocalConnector@@UEBAGXZ
+     */
     MCVAPI unsigned short getIPv4Port() const;
+    /**
+     * @vtable -1
+     * @symbol ?getIPv6Port@LocalConnector@@UEBAGXZ
+     */
     MCVAPI unsigned short getIPv6Port() const;
+    /**
+     * @vtable -1
+     * @symbol ?getLocalIps@LocalConnector@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     */
     MCVAPI std::vector<std::string> getLocalIps() const;
+    /**
+     * @vtable -1
+     * @symbol ?getPort@LocalConnector@@UEBAGXZ
+     */
     MCVAPI unsigned short getPort() const;
+    /**
+     * @vtable -1
+     * @symbol ?getRefinedLocalIps@LocalConnector@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
+     */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
+    /**
+     * @vtable -1
+     * @symbol ?isIPv4Supported@LocalConnector@@UEBA_NXZ
+     */
     MCVAPI bool isIPv4Supported() const;
+    /**
+     * @vtable -1
+     * @symbol ?isIPv6Supported@LocalConnector@@UEBA_NXZ
+     */
     MCVAPI bool isIPv6Supported() const;
+    /**
+     * @vtable -1
+     * @symbol ?removeConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
+     */
     MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
+    /**
+     * @vtable -1
+     * @symbol ?setupNatPunch@LocalConnector@@UEAAX_N@Z
+     */
     MCVAPI void setupNatPunch(bool);
+    /**
+     * @vtable -1
+     * @symbol ?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+     */
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
 #endif
+    /**
+     * @symbol ??0LocalConnector@@QEAA@AEAVConnectionCallbacks@0@AEBVNetworkIdentifier@@@Z
+     */
     MCAPI LocalConnector(class LocalConnector::ConnectionCallbacks &, class NetworkIdentifier const &);
+    /**
+     * @symbol ?disconnect@LocalConnector@@QEAAXXZ
+     */
     MCAPI void disconnect();
+    /**
+     * @symbol ?host@LocalConnector@@QEAAXAEBVNetworkIdentifier@@@Z
+     */
     MCAPI void host(class NetworkIdentifier const &);
+    /**
+     * @symbol ?runEvents@LocalConnector@@QEAAXXZ
+     */
     MCAPI void runEvents();
 
 //private:

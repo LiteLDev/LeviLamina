@@ -30,13 +30,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HurtOwnerSubcomponent();
+    /**
+     * @vtable 1
+     * @symbol ?readfromJSON@HurtOwnerSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
+    /**
+     * @vtable 2
+     * @symbol ?writetoJSON@HurtOwnerSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void writetoJSON(class Json::Value &) const;
+    /**
+     * @vtable 3
+     * @symbol ?doOnHitEffect@HurtOwnerSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /**
+     * @vtable 4
+     * @symbol ?getName@HurtOwnerSubcomponent@@UEAAPEBDXZ
+     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTOWNERSUBCOMPONENT
 #endif
+    /**
+     * @symbol ??0HurtOwnerSubcomponent@@QEAA@XZ
+     */
     MCAPI HurtOwnerSubcomponent();
 
 };

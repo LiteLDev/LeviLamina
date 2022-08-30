@@ -31,25 +31,86 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SurvivalMode();
+    /**
+     * @vtable 1
+     * @symbol ?startDestroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
+     */
     virtual bool startDestroyBlock(class BlockPos const &, unsigned char, bool &);
+    /**
+     * @vtable 2
+     * @symbol ?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z
+     */
     virtual bool destroyBlock(class BlockPos const &, unsigned char);
+    /**
+     * @vtable 5
+     * @symbol ?startBuildBlock@SurvivalMode@@UEAAXAEBVBlockPos@@E@Z
+     */
     virtual void startBuildBlock(class BlockPos const &, unsigned char);
+    /**
+     * @vtable 6
+     * @symbol ?buildBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E_N@Z
+     */
     virtual bool buildBlock(class BlockPos const &, unsigned char, bool);
+    /**
+     * @vtable 9
+     * @symbol ?tick@SurvivalMode@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 11
+     * @symbol ?useItem@SurvivalMode@@UEAA_NAEAVItemStack@@@Z
+     */
     virtual bool useItem(class ItemStack &);
+    /**
+     * @vtable 12
+     * @symbol ?useItemOn@SurvivalMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
+     */
     virtual bool useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
+    /**
+     * @vtable 13
+     * @symbol ?interact@SurvivalMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
+     */
     virtual bool interact(class Actor &, class Vec3 const &);
+    /**
+     * @vtable 14
+     * @symbol ?attack@SurvivalMode@@UEAA_NAEAVActor@@@Z
+     */
     virtual bool attack(class Actor &);
+    /**
+     * @vtable 16
+     * @symbol ?setTrialMode@SurvivalMode@@UEAAX_N@Z
+     */
     virtual void setTrialMode(bool);
+    /**
+     * @vtable 17
+     * @symbol ?isInTrialMode@SurvivalMode@@UEAA_NXZ
+     */
     virtual bool isInTrialMode();
+    /**
+     * @vtable 18
+     * @symbol ?registerUpsellScreenCallback@SurvivalMode@@UEAAXV?$function@$$A6AX_N@Z@std@@@Z
+     */
     virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURVIVALMODE
 #endif
+    /**
+     * @symbol ??0SurvivalMode@@QEAA@AEAVPlayer@@@Z
+     */
     MCAPI SurvivalMode(class Player &);
 
 //private:
+    /**
+     * @symbol ?_messagePlayers@SurvivalMode@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void _messagePlayers(std::string);
+    /**
+     * @symbol ?_showTrialReminder@SurvivalMode@@AEAAX_N@Z
+     */
     MCAPI void _showTrialReminder(bool);
 
 private:

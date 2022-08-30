@@ -31,14 +31,50 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HoverPathNavigation();
+    /**
+     * @vtable 1
+     * @symbol ?initializeInternal@HoverPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
+     */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
+    /**
+     * @vtable 2
+     * @symbol ?tick@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     */
     virtual void tick(class NavigationComponent &, class Mob &);
+    /**
+     * @vtable 3
+     * @symbol ?getTempMobPos@HoverPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
+     */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
+    /**
+     * @vtable 4
+     * @symbol ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
+     */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
+    /**
+     * @vtable 5
+     * @symbol ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
+     */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
+    /**
+     * @vtable 9
+     * @symbol ?stop@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     */
     virtual void stop(class NavigationComponent &, class Mob &);
+    /**
+     * @vtable 11
+     * @symbol ?canUpdatePath@HoverPathNavigation@@MEBA_NAEBVMob@@@Z
+     */
     virtual bool canUpdatePath(class Mob const &) const;
+    /**
+     * @vtable 12
+     * @symbol ?updatePath@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     */
     virtual void updatePath(class NavigationComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERPATHNAVIGATION
 #endif

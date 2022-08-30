@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUESTQUEUECOMPONENT
 #endif
+    /**
+     * @symbol ??0EventingRequestQueueComponent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI EventingRequestQueueComponent(struct EventingRequestQueueComponent &&);
+    /**
+     * @symbol ??1EventingRequestQueueComponent@@QEAA@XZ
+     */
     MCAPI ~EventingRequestQueueComponent();
 
 };

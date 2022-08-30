@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSISTENTBLENDDATA
 #endif
+    /**
+     * @symbol ??0PersistentBlendData@@QEAA@AEAVStringByteInput@@@Z
+     */
     MCAPI PersistentBlendData(class StringByteInput &);
+    /**
+     * @symbol ?serialize@PersistentBlendData@@QEBAXAEAVStringByteOutput@@@Z
+     */
     MCAPI void serialize(class StringByteOutput &) const;
 
 };

@@ -30,8 +30,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONCOMPONENTID
 #endif
+    /**
+     * @symbol ??0AnimationComponentID@@QEAA@AEBUActorUniqueID@@GW4AttachableSlotIndex@@@Z
+     */
     MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum AttachableSlotIndex);
+    /**
+     * @symbol ?getHash@AnimationComponentID@@QEBA_KXZ
+     */
     MCAPI unsigned __int64 getHash() const;
+    /**
+     * @symbol ??8AnimationComponentID@@QEBA_NAEBV0@@Z
+     */
     MCAPI bool operator==(class AnimationComponentID const &) const;
 
 };

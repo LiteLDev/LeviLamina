@@ -34,12 +34,33 @@ public:
 #endif
 MCAPI static class mce::Color const SWAMP_WATER_COLOR;
 MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
+    /**
+     * @symbol ?initBiomeComponents@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
+     */
     MCAPI static void initBiomeComponents(class BiomeComponentFactory &);
+    /**
+     * @symbol ?initBiomeDimensionComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
+     */
     MCAPI static void initBiomeDimensionComponent(class BiomeRegistry &);
+    /**
+     * @symbol ?initBiomes@VanillaBiomes@@SAXAEAVBiomeRegistry@@AEBUSpawnSettings@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
+     */
     MCAPI static void initBiomes(class BiomeRegistry &, struct SpawnSettings const &, class BaseGameVersion const &, class Experiments const &);
+    /**
+     * @symbol ?initClientOnlyComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
+     */
     MCAPI static void initClientOnlyComponents(class BiomeRegistry &);
+    /**
+     * @symbol ?initDefaultWorldGenComponents@VanillaBiomes@@SAXAEAVIWorldRegistriesProvider@@@Z
+     */
     MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider &);
+    /**
+     * @symbol ?initSurfaceBuilders@VanillaBiomes@@SAXAEAVSurfaceBuilderRegistry@@AEBVBaseGameVersion@@@Z
+     */
     MCAPI static void initSurfaceBuilders(class SurfaceBuilderRegistry &, class BaseGameVersion const &);
+    /**
+     * @symbol ?initVanillaBiomeTypeComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
+     */
     MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry &);
 MCAPI static class Biome * mBambooJungle;
 MCAPI static class Biome * mBambooJungleHills;
@@ -117,6 +138,9 @@ MCAPI static class Biome * mTaigaColdHills;
 MCAPI static class Biome * mTaigaColdMutated;
 MCAPI static class Biome * mTaigaHills;
 MCAPI static class Biome * mWarpedForest;
+    /**
+     * @symbol ?shutdownBiomes@VanillaBiomes@@SAXXZ
+     */
     MCAPI static void shutdownBiomes();
 
 };

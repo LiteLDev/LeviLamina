@@ -33,15 +33,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SaveCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@SaveCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVECOMMAND
 #endif
+    /**
+     * @symbol ?setup@SaveCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
+    /**
+     * @symbol ?saveHold@SaveCommand@@CAXAEAVCommandOutput@@@Z
+     */
     MCAPI static void saveHold(class CommandOutput &);
+    /**
+     * @symbol ?saveResume@SaveCommand@@CAXAEAVCommandOutput@@@Z
+     */
     MCAPI static void saveResume(class CommandOutput &);
+    /**
+     * @symbol ?saveState@SaveCommand@@CAXAEAVCommandOutput@@@Z
+     */
     MCAPI static void saveState(class CommandOutput &);
 
 private:

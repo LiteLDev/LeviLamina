@@ -31,22 +31,58 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONCOMPONENT
 #endif
+    /**
+     * @symbol ??0BalloonComponent@@QEAA@XZ
+     */
     MCAPI BalloonComponent();
+    /**
+     * @symbol ?addAdditionalSaveData@BalloonComponent@@QEBAXAEAVCompoundTag@@@Z
+     */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @symbol ?computeMaxHeight@BalloonComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void computeMaxHeight(class Actor &);
+    /**
+     * @symbol ?detach@BalloonComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void detach(class Actor &);
+    /**
+     * @symbol ?getAttachedActor@BalloonComponent@@QEAAPEAVActor@@AEAV2@@Z
+     */
     MCAPI class Actor * getAttachedActor(class Actor &);
+    /**
+     * @symbol ?getMaxHeight@BalloonComponent@@QEBAMXZ
+     */
     MCAPI float getMaxHeight() const;
+    /**
+     * @symbol ?integrate@BalloonComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void integrate(class Actor &);
+    /**
+     * @symbol ?onRemoved@BalloonComponent@@QEAAXAEAVActor@@_N@Z
+     */
     MCAPI void onRemoved(class Actor &, bool);
+    /**
+     * @symbol ?readAdditionalSaveData@BalloonComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @symbol ?setAttachedActor@BalloonComponent@@QEAAXAEAVActor@@0@Z
+     */
     MCAPI void setAttachedActor(class Actor &, class Actor &);
+    /**
+     * @symbol ?shouldPop@BalloonComponent@@QEAA_NAEAVActor@@AEA_N@Z
+     */
     MCAPI bool shouldPop(class Actor &, bool &);
 MCAPI static std::string const ATTACHED_TAG;
 MCAPI static float const FENCE_BALLOON_RANGE;
 MCAPI static float const MAX_BALLOON_RANGE;
 MCAPI static std::string const MAX_HEIGHT_TAG;
 MCAPI static std::string const SHOULD_DROP_TAG;
+    /**
+     * @symbol ?getBalloonForActor@BalloonComponent@@SAPEAVActor@@AEBV2@@Z
+     */
     MCAPI static class Actor * getBalloonForActor(class Actor const &);
 
 };

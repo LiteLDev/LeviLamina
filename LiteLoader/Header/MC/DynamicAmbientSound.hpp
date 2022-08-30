@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICAMBIENTSOUND
 #endif
+    /**
+     * @symbol ??1DynamicAmbientSound@@QEAA@XZ
+     */
     MCAPI ~DynamicAmbientSound();
 
 };

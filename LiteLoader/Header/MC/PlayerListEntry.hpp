@@ -40,10 +40,25 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTENTRY
 #endif
+    /**
+     * @symbol ??0PlayerListEntry@@QEAA@AEBVPlayer@@@Z
+     */
     MCAPI PlayerListEntry(class Player const &);
+    /**
+     * @symbol ?clone@PlayerListEntry@@QEBA?AV1@XZ
+     */
     MCAPI class PlayerListEntry clone() const;
+    /**
+     * @symbol ?read@PlayerListEntry@@QEAA_NAEAVReadOnlyBinaryStream@@@Z
+     */
     MCAPI bool read(class ReadOnlyBinaryStream &);
+    /**
+     * @symbol ?write@PlayerListEntry@@QEBAXAEAVBinaryStream@@@Z
+     */
     MCAPI void write(class BinaryStream &) const;
+    /**
+     * @symbol ??1PlayerListEntry@@QEAA@XZ
+     */
     MCAPI ~PlayerListEntry();
 
 };

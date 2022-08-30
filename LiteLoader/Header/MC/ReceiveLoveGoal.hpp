@@ -30,18 +30,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ReceiveLoveGoal();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol ?tick@ReceiveLoveGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@ReceiveLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
+    /**
+     * @vtable -1
+     * @symbol ?canContinueToUse@ReceiveLoveGoal@@UEAA_NXZ
+     */
     MCVAPI bool canContinueToUse();
+    /**
+     * @vtable -1
+     * @symbol ?canUse@ReceiveLoveGoal@@UEAA_NXZ
+     */
     MCVAPI bool canUse();
 #endif
+    /**
+     * @symbol ??0ReceiveLoveGoal@@QEAA@AEAVVillagerBase@@@Z
+     */
     MCAPI ReceiveLoveGoal(class VillagerBase &);
 
 };

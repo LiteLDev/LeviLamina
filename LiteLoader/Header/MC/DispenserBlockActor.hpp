@@ -31,25 +31,99 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERBLOCKACTOR
+    /**
+     * @vtable -1
+     * @symbol ?_getUpdatePacket@DispenserBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?_onUpdatePacket@DispenserBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@DispenserBlockActor@@UEAAPEAVContainer@@XZ
+     */
     MCVAPI class Container * getContainer();
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@DispenserBlockActor@@UEBAPEBVContainer@@XZ
+     */
     MCVAPI class Container const * getContainer() const;
+    /**
+     * @vtable -1
+     * @symbol ?getContainerSize@DispenserBlockActor@@UEBAHXZ
+     */
     MCVAPI int getContainerSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?getItem@DispenserBlockActor@@UEBAAEBVItemStack@@H@Z
+     */
     MCVAPI class ItemStack const & getItem(int) const;
+    /**
+     * @vtable -1
+     * @symbol ?getMaxStackSize@DispenserBlockActor@@UEBAHXZ
+     */
     MCVAPI int getMaxStackSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?getName@DispenserBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCVAPI std::string getName() const;
+    /**
+     * @vtable -1
+     * @symbol ?getRandomSlot@DispenserBlockActor@@UEAAHXZ
+     */
     MCVAPI int getRandomSlot();
+    /**
+     * @vtable -1
+     * @symbol ?load@DispenserBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable -1
+     * @symbol ?onMove@DispenserBlockActor@@UEAAXXZ
+     */
     MCVAPI void onMove();
+    /**
+     * @vtable -1
+     * @symbol ?save@DispenserBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     MCVAPI bool save(class CompoundTag &) const;
+    /**
+     * @vtable -1
+     * @symbol ?serverInitItemStackIds@DispenserBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
+    /**
+     * @vtable -1
+     * @symbol ?setItem@DispenserBlockActor@@UEAAXHAEBVItemStack@@@Z
+     */
     MCVAPI void setItem(int, class ItemStack const &);
+    /**
+     * @vtable -1
+     * @symbol ?startOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void startOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?stopOpen@DispenserBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void stopOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ??1DispenserBlockActor@@UEAA@XZ
+     */
     MCVAPI ~DispenserBlockActor();
 #endif
+    /**
+     * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@@Z
+     */
     MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
+    /**
+     * @symbol ??0DispenserBlockActor@@QEAA@VBlockPos@@@Z
+     */
     MCAPI DispenserBlockActor(class BlockPos);
 
 };

@@ -31,15 +31,46 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MapCloningRecipe();
+    /**
+     * @vtable 1
+     * @symbol ?assemble@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /**
+     * @vtable 2
+     * @symbol ?getCraftingSize@MapCloningRecipe@@UEBAHXZ
+     */
     virtual int getCraftingSize() const;
+    /**
+     * @vtable 3
+     * @symbol ?getIngredient@MapCloningRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
+    /**
+     * @vtable 4
+     * @symbol ?getResultItem@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
+    /**
+     * @vtable 6
+     * @symbol ?matches@MapCloningRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
+    /**
+     * @vtable 7
+     * @symbol ?size@MapCloningRecipe@@UEBAHXZ
+     */
     virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPCLONINGRECIPE
 #endif
+    /**
+     * @symbol ??0MapCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     */
     MCAPI MapCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
 MCAPI static class mce::UUID const CartographyTableID;
 MCAPI static class mce::UUID const CraftingTableID;

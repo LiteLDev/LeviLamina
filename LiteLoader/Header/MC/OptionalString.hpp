@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPTIONALSTRING
 #endif
+    /**
+     * @symbol ??1OptionalString@@QEAA@XZ
+     */
     MCAPI ~OptionalString();
 
 };

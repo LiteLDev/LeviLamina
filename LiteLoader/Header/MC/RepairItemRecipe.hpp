@@ -31,15 +31,46 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RepairItemRecipe();
+    /**
+     * @vtable 1
+     * @symbol ?assemble@RepairItemRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /**
+     * @vtable 2
+     * @symbol ?getCraftingSize@RepairItemRecipe@@UEBAHXZ
+     */
     virtual int getCraftingSize() const;
+    /**
+     * @vtable 3
+     * @symbol ?getIngredient@RepairItemRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
+    /**
+     * @vtable 4
+     * @symbol ?getResultItem@RepairItemRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
+    /**
+     * @vtable 6
+     * @symbol ?matches@RepairItemRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
+    /**
+     * @vtable 7
+     * @symbol ?size@RepairItemRecipe@@UEBAHXZ
+     */
     virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPAIRITEMRECIPE
 #endif
+    /**
+     * @symbol ??0RepairItemRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@PEBVUUID@mce@@@Z
+     */
     MCAPI RepairItemRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
 MCAPI static class mce::UUID ID;
 

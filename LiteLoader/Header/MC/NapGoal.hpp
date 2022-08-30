@@ -30,21 +30,65 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NapGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@NapGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@NapGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@NapGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@NapGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@NapGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAPGOAL
 #endif
+    /**
+     * @symbol ??0NapGoal@@QEAA@AEAVMob@@MMMMAEBVActorFilterGroup@@1@Z
+     */
     MCAPI NapGoal(class Mob &, float, float, float, float, class ActorFilterGroup const &, class ActorFilterGroup const &);
 
 //private:
+    /**
+     * @symbol ?_canSleep@NapGoal@@AEBA_NAEBUTick@@@Z
+     */
     MCAPI bool _canSleep(struct Tick const &) const;
+    /**
+     * @symbol ?_detectsMobs@NapGoal@@AEBA_NXZ
+     */
     MCAPI bool _detectsMobs() const;
+    /**
+     * @symbol ?_setCooldown@NapGoal@@AEAAXXZ
+     */
     MCAPI void _setCooldown();
 
 private:

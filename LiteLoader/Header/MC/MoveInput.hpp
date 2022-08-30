@@ -30,23 +30,91 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MoveInput();
+    /**
+     * @vtable 1
+     * @symbol ?tick@MoveInput@@UEAAXAEAUIPlayerMovementProxy@@@Z
+     */
     virtual void tick(struct IPlayerMovementProxy &);
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?clearInputState@MoveInput@@UEAAXXZ
+     */
     virtual void clearInputState();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol ?allowPicking@MoveInput@@UEAA_NMM@Z
+     */
     virtual bool allowPicking(float, float);
+    /**
+     * @vtable 7
+     * @symbol ?setJumping@MoveInput@@UEAAX_N@Z
+     */
     virtual void setJumping(bool);
+    /**
+     * @vtable 8
+     * @symbol ?setAutoJumpingInWater@MoveInput@@UEAAX_N@Z
+     */
     virtual void setAutoJumpingInWater(bool);
+    /**
+     * @vtable 9
+     * @symbol ?isChangeHeight@MoveInput@@UEBA_NXZ
+     */
     virtual bool isChangeHeight() const;
+    /**
+     * @vtable 10
+     * @symbol ?setSneakDown@MoveInput@@UEAAX_N@Z
+     */
     virtual void setSneakDown(bool);
+    /**
+     * @vtable 11
+     * @symbol ?isPlayerMoving@MoveInput@@UEBA_NXZ
+     */
     virtual bool isPlayerMoving() const;
+    /**
+     * @vtable 12
+     * @symbol ?getGazeDirection@MoveInput@@UEBAAEBVVec3@@XZ
+     */
     virtual class Vec3 const & getGazeDirection() const;
+    /**
+     * @vtable 13
+     * @symbol ?extractInputComponent@MoveInput@@UEBA?AUMoveInputComponent@@XZ
+     */
     virtual struct MoveInputComponent extractInputComponent() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUT
+    /**
+     * @vtable -1
+     * @symbol ?clearMovementState@MoveInput@@UEAAXXZ
+     */
     MCVAPI void clearMovementState();
+    /**
+     * @vtable -1
+     * @symbol ?render@MoveInput@@UEAAXM@Z
+     */
     MCVAPI void render(float);
+    /**
+     * @vtable -1
+     * @symbol ?setKey@MoveInput@@UEAAXH_N@Z
+     */
     MCVAPI void setKey(int, bool);
 #endif
 

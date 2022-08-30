@@ -38,10 +38,25 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEMTRACKEDACTOR
 #endif
+    /**
+     * @symbol ??0MapItemTrackedActor@@QEAA@AEBUUniqueId@0@AEAVBlockSource@@@Z
+     */
     MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const &, class BlockSource &);
+    /**
+     * @symbol ?getDecorationRotation@MapItemTrackedActor@@QEAAMAEAVBlockSource@@@Z
+     */
     MCAPI float getDecorationRotation(class BlockSource &);
+    /**
+     * @symbol ?getEntity@MapItemTrackedActor@@QEAAPEAVActor@@AEAVBlockSource@@@Z
+     */
     MCAPI class Actor * getEntity(class BlockSource &);
+    /**
+     * @symbol ?nextUpdatePacket@MapItemTrackedActor@@QEAA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVMapItemSavedData@@@Z
+     */
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const &);
+    /**
+     * @symbol ?setPixelDirty@MapItemTrackedActor@@QEAAXII@Z
+     */
     MCAPI void setPixelDirty(unsigned int, unsigned int);
 
 };

@@ -28,13 +28,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?getPosDeltaNonConst@UpdateEntityAfterFallOnActorProxy@@UEAAAEAVVec3@@XZ
+     */
     virtual class Vec3 & getPosDeltaNonConst();
+    /**
+     * @vtable 1
+     * @symbol ?isSneaking@UpdateEntityAfterFallOnActorProxy@@UEBA_NXZ
+     */
     virtual bool isSneaking() const;
+    /**
+     * @vtable 2
+     * @symbol ?onBounceStarted@UpdateEntityAfterFallOnActorProxy@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
+    /**
+     * @vtable 3
+     * @symbol ?getPosition@UpdateEntityAfterFallOnActorProxy@@UEBA?AVVec3@@XZ
+     */
     virtual class Vec3 getPosition() const;
+    /**
+     * @vtable 4
+     * @symbol ?getRegion@UpdateEntityAfterFallOnActorProxy@@UEBAAEBVIConstBlockSource@@XZ
+     */
     virtual class IConstBlockSource const & getRegion() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEENTITYAFTERFALLONACTORPROXY
 #endif
+    /**
+     * @symbol ??0UpdateEntityAfterFallOnActorProxy@@QEAA@AEAUIActorMovementProxy@@@Z
+     */
     MCAPI UpdateEntityAfterFallOnActorProxy(struct IActorMovementProxy &);
 
 };

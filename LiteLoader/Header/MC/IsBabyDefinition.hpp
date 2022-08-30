@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISBABYDEFINITION
 #endif
+    /**
+     * @symbol ?initialize@IsBabyDefinition@@QEAAXAEAVEntityContext@@@Z
+     */
     MCAPI void initialize(class EntityContext &);
+    /**
+     * @symbol ?uninitialize@IsBabyDefinition@@QEAAXAEAVEntityContext@@@Z
+     */
     MCAPI void uninitialize(class EntityContext &);
+    /**
+     * @symbol ?buildSchema@IsBabyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsBabyDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsBabyDefinition>> &);
 
 };

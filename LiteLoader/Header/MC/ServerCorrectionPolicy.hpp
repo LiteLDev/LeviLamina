@@ -31,7 +31,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ServerCorrectionPolicy();
+    /**
+     * @vtable 3
+     * @symbol ?shouldCorrectMovement@ServerCorrectionPolicy@@UEAA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@_K@Z
+     */
     virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCORRECTIONPOLICY
 #endif

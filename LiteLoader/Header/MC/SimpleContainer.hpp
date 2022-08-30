@@ -31,18 +31,61 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SimpleContainer();
+    /**
+     * @vtable 2
+     * @symbol ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
+    /**
+     * @vtable 5
+     * @symbol ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
+     */
     virtual class ItemStack const & getItem(int) const;
+    /**
+     * @vtable 9
+     * @symbol ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
+     */
     virtual void setItem(int, class ItemStack const &);
+    /**
+     * @vtable 14
+     * @symbol ?getContainerSize@SimpleContainer@@UEBAHXZ
+     */
     virtual int getContainerSize() const;
+    /**
+     * @vtable 15
+     * @symbol ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+     */
     virtual int getMaxStackSize() const;
+    /**
+     * @vtable 16
+     * @symbol ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+     */
     virtual void startOpen(class Player &);
+    /**
+     * @vtable 17
+     * @symbol ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+     */
     virtual void stopOpen(class Player &);
+    /**
+     * @vtable 22
+     * @symbol __unk_vfn_22
+     */
     virtual void __unk_vfn_22();
+    /**
+     * @vtable 23
+     * @symbol __unk_vfn_23
+     */
     virtual void __unk_vfn_23();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLECONTAINER
 #endif
+    /**
+     * @symbol ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
+     */
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 
 };

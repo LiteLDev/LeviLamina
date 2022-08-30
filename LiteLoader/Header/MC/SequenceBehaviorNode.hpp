@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SequenceBehaviorNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@SequenceBehaviorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@SequenceBehaviorNode@@MEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEQUENCEBEHAVIORNODE
 #endif
+    /**
+     * @symbol ??0SequenceBehaviorNode@@QEAA@XZ
+     */
     MCAPI SequenceBehaviorNode();
 
 };

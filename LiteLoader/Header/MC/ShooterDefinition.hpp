@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERDEFINITION
 #endif
+    /**
+     * @symbol ??0ShooterDefinition@@QEAA@XZ
+     */
     MCAPI ShooterDefinition();
+    /**
+     * @symbol ?initialize@ShooterDefinition@@QEBAXAEAVEntityContext@@AEAVShooterComponent@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class ShooterComponent &) const;
+    /**
+     * @symbol ?setActorDefByName@ShooterDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void setActorDefByName(std::string const &);
+    /**
+     * @symbol ?buildSchema@ShooterDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VShooterDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShooterDefinition>> &);
 
 };

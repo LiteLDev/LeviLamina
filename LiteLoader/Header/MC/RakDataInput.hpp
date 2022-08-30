@@ -30,16 +30,60 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RakDataInput();
+    /**
+     * @vtable 1
+     * @symbol ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string readString();
+    /**
+     * @vtable 2
+     * @symbol ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string readLongString();
+    /**
+     * @vtable 3
+     * @symbol ?readFloat@BytesDataInput@@UEAAMXZ
+     */
     virtual float readFloat();
+    /**
+     * @vtable 4
+     * @symbol ?readDouble@BytesDataInput@@UEAANXZ
+     */
     virtual double readDouble();
+    /**
+     * @vtable 5
+     * @symbol ?readByte@BytesDataInput@@UEAADXZ
+     */
     virtual char readByte();
+    /**
+     * @vtable 6
+     * @symbol ?readShort@BytesDataInput@@UEAAFXZ
+     */
     virtual short readShort();
+    /**
+     * @vtable 7
+     * @symbol ?readInt@BytesDataInput@@UEAAHXZ
+     */
     virtual int readInt();
+    /**
+     * @vtable 8
+     * @symbol ?readLongLong@BytesDataInput@@UEAA_JXZ
+     */
     virtual __int64 readLongLong();
+    /**
+     * @vtable 9
+     * @symbol ?readBytes@RakDataInput@@UEAA_NPEAX_K@Z
+     */
     virtual bool readBytes(void *, unsigned __int64);
+    /**
+     * @vtable 10
+     * @symbol ?numBytesLeft@RakDataInput@@UEBA_KXZ
+     */
     virtual unsigned __int64 numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAINPUT
 #endif

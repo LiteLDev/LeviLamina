@@ -34,6 +34,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINERCLIENT
 #endif
+    /**
+     * @symbol ?_networkUpdateItem@SparseContainerClient@@QEAAXHAEBVItemStack@@@Z
+     */
     MCAPI void _networkUpdateItem(int, class ItemStack const &);
 
 //private:

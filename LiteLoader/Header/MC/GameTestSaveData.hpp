@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTSAVEDATA
 #endif
+    /**
+     * @symbol ??1GameTestSaveData@@QEAA@XZ
+     */
     MCAPI ~GameTestSaveData();
 
 };

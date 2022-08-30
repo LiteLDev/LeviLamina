@@ -33,15 +33,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ResourcePackFileUploadManager();
+    /**
+     * @vtable 2
+     * @symbol ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
+     */
     virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKFILEUPLOADMANAGER
 #endif
+    /**
+     * @symbol ??0ResourcePackFileUploadManager@@QEAA@AEAVTaskGroup@@V?$shared_ptr@VIFileChunkUploader@@@std@@@Z
+     */
     MCAPI ResourcePackFileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
+    /**
+     * @symbol ?uploadResourcePack@ResourcePackFileUploadManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@_N2W4PackType@@@Z
+     */
     MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum PackType);
 
 //private:
+    /**
+     * @symbol ?_uploadPackToRealmStorage@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
+     */
     MCAPI void _uploadPackToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &);
+    /**
+     * @symbol ?_uploadResourcePackFolder@ResourcePackFileUploadManager@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@AEBVPath@Core@@AEBVValue@Json@@@Z
+     */
     MCAPI void _uploadResourcePackFolder(std::string const &, class ResourceLocation const &, class Core::Path const &, class Json::Value const &);
 
 private:

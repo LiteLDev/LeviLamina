@@ -33,14 +33,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorEventPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@ActorEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@ActorEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@ActorEventPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@ActorEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTPACKET
 #endif
+    /**
+     * @symbol ??0ActorEventPacket@@QEAA@XZ
+     */
     MCAPI ActorEventPacket();
+    /**
+     * @symbol ??0ActorEventPacket@@QEAA@VActorRuntimeID@@W4ActorEvent@@H@Z
+     */
     MCAPI ActorEventPacket(class ActorRuntimeID, enum ActorEvent, int);
 
 };

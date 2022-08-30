@@ -31,7 +31,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RabbitPanicGoal();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RABBITPANICGOAL
 #endif

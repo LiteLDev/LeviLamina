@@ -31,19 +31,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HideGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@HideGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@HideGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@HideGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@HideGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@HideGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 16
+     * @symbol ?_getRepathTime@HideGoal@@MEBA_KXZ
+     */
     virtual unsigned __int64 _getRepathTime() const;
+    /**
+     * @vtable 17
+     * @symbol ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
+     */
     virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDEGOAL
 #endif
+    /**
+     * @symbol ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
+     */
     MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
 
 };

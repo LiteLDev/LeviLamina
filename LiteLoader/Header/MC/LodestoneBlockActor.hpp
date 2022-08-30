@@ -31,26 +31,98 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LodestoneBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@LodestoneBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@LodestoneBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@LodestoneBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 13
+     * @symbol ?onRemoved@LodestoneBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onRemoved(class BlockSource &);
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 35
+     * @symbol ?_getUpdatePacket@LodestoneBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable 36
+     * @symbol ?_onUpdatePacket@LodestoneBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONEBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0LodestoneBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI LodestoneBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?getTrackingHandle@LodestoneBlockActor@@QEBAAEBVPositionTrackingId@@XZ
+     */
     MCAPI class PositionTrackingId const & getTrackingHandle() const;
+    /**
+     * @symbol ?hasTrackingHandle@LodestoneBlockActor@@QEBA_NXZ
+     */
     MCAPI bool hasTrackingHandle() const;
+    /**
+     * @symbol ?setTrackingHandle@LodestoneBlockActor@@QEAA_NAEBVPositionTrackingId@@@Z
+     */
     MCAPI bool setTrackingHandle(class PositionTrackingId const &);
 
 //private:

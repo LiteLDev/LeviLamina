@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCUITCOMPONENTLIST
 #endif
+    /**
+     * @symbol ?removeSource@CircuitComponentList@@QEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
+     */
     MCAPI bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
+    /**
+     * @symbol ??1CircuitComponentList@@QEAA@XZ
+     */
     MCAPI ~CircuitComponentList();
 
 };

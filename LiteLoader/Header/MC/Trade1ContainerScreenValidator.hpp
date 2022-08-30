@@ -28,9 +28,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~Trade1ContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE1CONTAINERSCREENVALIDATOR
 #endif
+    /**
+     * @symbol ??0Trade1ContainerScreenValidator@@QEAA@XZ
+     */
     MCAPI Trade1ContainerScreenValidator();
 
 };

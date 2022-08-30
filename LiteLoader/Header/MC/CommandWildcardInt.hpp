@@ -31,8 +31,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDWILDCARDINT
 #endif
+    /**
+     * @symbol ??0CommandWildcardInt@@QEAA@XZ
+     */
     MCAPI CommandWildcardInt();
+    /**
+     * @symbol ?getValue@CommandWildcardInt@@QEBAHXZ
+     */
     MCAPI int getValue() const;
+    /**
+     * @symbol ?isWildcard@CommandWildcardInt@@QEBA_NXZ
+     */
     MCAPI bool isWildcard() const;
 
 };

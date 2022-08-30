@@ -30,7 +30,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PrintStream();
+    /**
+     * @vtable 1
+     * @symbol ?print@PrintStream@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void print(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRINTSTREAM
 #endif

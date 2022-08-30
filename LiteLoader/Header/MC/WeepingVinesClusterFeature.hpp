@@ -31,14 +31,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WeepingVinesClusterFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@WeepingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEEPINGVINESCLUSTERFEATURE
 #endif
 
 //private:
+    /**
+     * @symbol ?_isInvalidPlacementLocation@WeepingVinesClusterFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI bool _isInvalidPlacementLocation(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?_placeRoofNetherWart@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     MCAPI void _placeRoofNetherWart(class BlockSource &, class BlockPos const &, class Random &) const;
+    /**
+     * @symbol ?_placeRoofWeepingVines@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     MCAPI void _placeRoofWeepingVines(class BlockSource &, class BlockPos const &, class Random &) const;
 
 private:

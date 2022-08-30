@@ -32,9 +32,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ThrownPotionEffectSubcomponent();
+    /**
+     * @vtable 2
+     * @symbol ?writetoJSON@ThrownPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void writetoJSON(class Json::Value &) const;
+    /**
+     * @vtable 3
+     * @symbol ?doOnHitEffect@ThrownPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /**
+     * @vtable 4
+     * @symbol ?getName@ThrownPotionEffectSubcomponent@@UEAAPEBDXZ
+     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNPOTIONEFFECTSUBCOMPONENT
 #endif

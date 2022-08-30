@@ -29,11 +29,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~OreFeature();
+    /**
+     * @vtable 1
+     * @symbol ?place@OreFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREFEATURE
 #endif
+    /**
+     * @symbol ??0OreFeature@@QEAA@XZ
+     */
     MCAPI OreFeature();
+    /**
+     * @symbol ??0OreFeature@@QEAA@H$$QEAV?$vector@UReplaceRule@@V?$allocator@UReplaceRule@@@std@@@std@@@Z
+     */
     MCAPI OreFeature(int, std::vector<struct ReplaceRule> &&);
 
 };

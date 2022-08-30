@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShootBowNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@ShootBowNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@ShootBowNode@@EEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTBOWNODE
 #endif
+    /**
+     * @symbol ??0ShootBowNode@@QEAA@XZ
+     */
     MCAPI ShootBowNode();
 
 };

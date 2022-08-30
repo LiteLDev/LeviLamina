@@ -31,8 +31,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~OceanMonumentDoubleZRoom();
+    /**
+     * @vtable 2
+     * @symbol ?getType@OceanMonumentDoubleZRoom@@UEBA?AW4StructurePieceType@@XZ
+     */
     virtual enum StructurePieceType getType() const;
+    /**
+     * @vtable 4
+     * @symbol ?postProcess@OceanMonumentDoubleZRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTDOUBLEZROOM
 #endif

@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTOPCHARGEEVENT
 #endif
+    /**
+     * @symbol ??1ItemStopChargeEvent@@QEAA@XZ
+     */
     MCAPI ~ItemStopChargeEvent();
 
 };

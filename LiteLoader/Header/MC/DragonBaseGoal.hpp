@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOAL
 #endif
+    /**
+     * @symbol ??0DragonBaseGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI DragonBaseGoal(class Mob &);
 
 };

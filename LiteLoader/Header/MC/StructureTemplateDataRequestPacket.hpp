@@ -30,13 +30,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StructureTemplateDataRequestPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@StructureTemplateDataRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@StructureTemplateDataRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@StructureTemplateDataRequestPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@StructureTemplateDataRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATAREQUESTPACKET
 #endif
+    /**
+     * @symbol ??0StructureTemplateDataRequestPacket@@QEAA@XZ
+     */
     MCAPI StructureTemplateDataRequestPacket();
 
 };

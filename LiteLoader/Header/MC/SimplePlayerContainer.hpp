@@ -31,12 +31,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SimplePlayerContainer();
+    /**
+     * @vtable 9
+     * @symbol ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
+     */
     virtual void setItem(int, class ItemStack const &);
+    /**
+     * @vtable 22
+     * @symbol __unk_vfn_22
+     */
     virtual void __unk_vfn_22();
+    /**
+     * @vtable 23
+     * @symbol __unk_vfn_23
+     */
     virtual void __unk_vfn_23();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEPLAYERCONTAINER
 #endif
+    /**
+     * @symbol ??0SimplePlayerContainer@@QEAA@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
+     */
     MCAPI SimplePlayerContainer(class Player &, std::string const &, bool, int, enum ContainerType);
 
 };

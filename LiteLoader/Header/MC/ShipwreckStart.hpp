@@ -31,9 +31,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShipwreckStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKSTART
 #endif
+    /**
+     * @symbol ??0ShipwreckStart@@QEAA@AEBVBiomeSource@@AEAVRandom@@HHF@Z
+     */
     MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
 
 };

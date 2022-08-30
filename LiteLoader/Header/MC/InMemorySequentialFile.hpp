@@ -30,11 +30,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~InMemorySequentialFile();
+    /**
+     * @vtable 1
+     * @symbol ?Read@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_KPEAVSlice@3@PEAD@Z
+     */
     virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
+    /**
+     * @vtable 2
+     * @symbol ?Skip@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_K@Z
+     */
     virtual class leveldb::Status Skip(unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYSEQUENTIALFILE
 #endif
+    /**
+     * @symbol ??0InMemorySequentialFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
+     */
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
 
 };

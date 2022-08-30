@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORACTORPAUSETICKNEEDEDCOMPONENT
 #endif
+    /**
+     * @symbol ??1EditorActorPauseTickNeededComponent@@QEAA@XZ
+     */
     MCAPI ~EditorActorPauseTickNeededComponent();
 
 };

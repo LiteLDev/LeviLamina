@@ -32,45 +32,181 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~FireworksRocketActor();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 47
+     * @symbol ?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z
+     */
     virtual void lerpMotion(class Vec3 const &);
+    /**
+     * @vtable 49
+     * @symbol ?normalTick@FireworksRocketActor@@UEAAXXZ
+     */
     virtual void normalTick();
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 80
+     * @symbol ?getShadowRadius@FireworksRocketActor@@UEBAMXZ
+     */
     virtual float getShadowRadius() const;
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 142
+     * @symbol ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
+     */
     virtual void handleEntityEvent(enum ActorEvent, int);
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 191
+     * @symbol ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
+     */
     virtual void onSynchedDataUpdate(int);
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 273
+     * @symbol ?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 274
+     * @symbol ?addAdditionalSaveData@FireworksRocketActor@@MEBAXAEAVCompoundTag@@@Z
+     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSROCKETACTOR
 #endif
+    /**
+     * @symbol ??0FireworksRocketActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI FireworksRocketActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?init@FireworksRocketActor@@QEAAXAEAVLevel@@AEBVVec3@@AEBVCompoundTag@@1UActorUniqueID@@_N@Z
+     */
     MCAPI void init(class Level &, class Vec3 const &, class CompoundTag const &, class Vec3 const &, struct ActorUniqueID, bool);
+    /**
+     * @symbol ?isAttachedToEntity@FireworksRocketActor@@QEBA_NXZ
+     */
     MCAPI bool isAttachedToEntity() const;
+    /**
+     * @symbol ?postNormalTick@FireworksRocketActor@@QEAAXXZ
+     */
     MCAPI void postNormalTick();
+    /**
+     * @symbol ?setDispensed@FireworksRocketActor@@QEAAX_N@Z
+     */
     MCAPI void setDispensed(bool);
 
 //private:
+    /**
+     * @symbol ?checkAchievement@FireworksRocketActor@@AEBAXXZ
+     */
     MCAPI void checkAchievement() const;
+    /**
+     * @symbol ?dealExplosionDamage@FireworksRocketActor@@AEAAXXZ
+     */
     MCAPI void dealExplosionDamage();
+    /**
+     * @symbol ?initTagData@FireworksRocketActor@@AEAAXAEAVRandom@@@Z
+     */
     MCAPI void initTagData(class Random &);
 
 private:

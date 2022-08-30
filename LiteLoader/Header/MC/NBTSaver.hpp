@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSAVER
 #endif
+    /**
+     * @symbol ?getSavedCompoundTag@NBTSaver@@QEAA?AVCompoundTag@@XZ
+     */
     MCAPI class CompoundTag getSavedCompoundTag();
 
 };

@@ -32,7 +32,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RepeatUntilFailureDefinition();
+    /**
+     * @vtable 1
+     * @symbol ?load@RepeatUntilFailureDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILUREDEFINITION
 #endif

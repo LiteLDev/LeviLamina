@@ -30,12 +30,29 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SideBySideExtractionSystem();
+    /**
+     * @vtable 1
+     * @symbol ?registerEvents@SideBySideExtractionSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+     */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEEXTRACTIONSYSTEM
 #endif
+    /**
+     * @symbol ??0SideBySideExtractionSystem@@QEAA@AEBV?$tuple@U?$ExtractionDependencies@UTickBegin@SideBySideExtractionId@@@@U?$ExtractionDependencies@UBeginManagePassengers@SideBySideExtractionId@@@@U?$ExtractionDependencies@UManagePassengersStopRiding@SideBySideExtractionId@@@@U?$ExtractionDependencies@UManagePassengersPositioning@SideBySideExtractionId@@@@U?$ExtractionDependencies@UEntityInside@SideBySideExtractionId@@@@@std@@@Z
+     */
     MCAPI SideBySideExtractionSystem(class std::tuple<struct ExtractionDependencies<struct SideBySideExtractionId::TickBegin>, struct ExtractionDependencies<struct SideBySideExtractionId::BeginManagePassengers>, struct ExtractionDependencies<struct SideBySideExtractionId::ManagePassengersStopRiding>, struct ExtractionDependencies<struct SideBySideExtractionId::ManagePassengersPositioning>, struct ExtractionDependencies<struct SideBySideExtractionId::EntityInside>> const &);
+    /**
+     * @symbol ?_onSideBySideExtractionRequest@SideBySideExtractionSystem@@SAXAEBUExtractMethods@SideBySide@@AEBUOnExtractSideBySide@@@Z
+     */
     MCAPI static void _onSideBySideExtractionRequest(struct SideBySide::ExtractMethods const &, struct OnExtractSideBySide const &);
+    /**
+     * @symbol ?onStoreSideBySideResult@SideBySideExtractionSystem@@SAXAEBUOnStoreSideBySideResult@@@Z
+     */
     MCAPI static void onStoreSideBySideResult(struct OnStoreSideBySideResult const &);
 
 };

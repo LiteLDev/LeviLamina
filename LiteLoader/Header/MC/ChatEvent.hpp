@@ -28,8 +28,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHATEVENT
 #endif
+    /**
+     * @symbol ??0ChatEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI ChatEvent(struct ChatEvent const &);
+    /**
+     * @symbol ??0ChatEvent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI ChatEvent(struct ChatEvent &&);
+    /**
+     * @symbol ??1ChatEvent@@QEAA@XZ
+     */
     MCAPI ~ChatEvent();
 
 };

@@ -30,7 +30,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NullLogger();
+    /**
+     * @vtable 1
+     * @symbol ?Logv@NullLogger@@UEAAXPEBDPEAD@Z
+     */
     virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLLOGGER
 #endif

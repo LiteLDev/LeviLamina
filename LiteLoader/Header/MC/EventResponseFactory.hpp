@@ -33,7 +33,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSEFACTORY
 #endif
+    /**
+     * @symbol ?getSchema@EventResponseFactory@@QEBAAEBV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@XZ
+     */
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
+    /**
+     * @symbol ?initSchema@EventResponseFactory@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@@Z
+     */
     MCAPI void initSchema(std::string const &, class SemVersion const &);
 
 };

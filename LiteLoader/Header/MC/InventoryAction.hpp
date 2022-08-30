@@ -51,8 +51,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYACTION
 #endif
+    /**
+     * @symbol ??0InventoryAction@@QEAA@AEBV0@@Z
+     */
     MCAPI InventoryAction(class InventoryAction const &);
+    /**
+     * @symbol ?postLoadItems@InventoryAction@@QEAAXAEAVBlockPalette@@_N@Z
+     */
     MCAPI void postLoadItems(class BlockPalette &, bool);
+    /**
+     * @symbol ??1InventoryAction@@QEAA@XZ
+     */
     MCAPI ~InventoryAction();
 
 };

@@ -31,35 +31,134 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERBLOCKACTOR
+    /**
+     * @vtable -1
+     * @symbol ?_getUpdatePacket@HopperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?_onUpdatePacket@HopperBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@HopperBlockActor@@UEAAPEAVContainer@@XZ
+     */
     MCVAPI class Container * getContainer();
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@HopperBlockActor@@UEBAPEBVContainer@@XZ
+     */
     MCVAPI class Container const * getContainer() const;
+    /**
+     * @vtable -1
+     * @symbol ?getContainerSize@HopperBlockActor@@UEBAHXZ
+     */
     MCVAPI int getContainerSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?getItem@HopperBlockActor@@UEBAAEBVItemStack@@H@Z
+     */
     MCVAPI class ItemStack const & getItem(int) const;
+    /**
+     * @vtable -1
+     * @symbol ?getMaxStackSize@HopperBlockActor@@UEBAHXZ
+     */
     MCVAPI int getMaxStackSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?getName@HopperBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCVAPI std::string getName() const;
+    /**
+     * @vtable -1
+     * @symbol ?load@HopperBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable -1
+     * @symbol ?onMove@HopperBlockActor@@UEAAXXZ
+     */
     MCVAPI void onMove();
+    /**
+     * @vtable -1
+     * @symbol ?onNeighborChanged@HopperBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?save@HopperBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     MCVAPI bool save(class CompoundTag &) const;
+    /**
+     * @vtable -1
+     * @symbol ?serverInitItemStackIds@HopperBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
+    /**
+     * @vtable -1
+     * @symbol ?setContainerChanged@HopperBlockActor@@UEAAXH@Z
+     */
     MCVAPI void setContainerChanged(int);
+    /**
+     * @vtable -1
+     * @symbol ?setItem@HopperBlockActor@@UEAAXHAEBVItemStack@@@Z
+     */
     MCVAPI void setItem(int, class ItemStack const &);
+    /**
+     * @vtable -1
+     * @symbol ?startOpen@HopperBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void startOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?stopOpen@HopperBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void stopOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?tick@HopperBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void tick(class BlockSource &);
 #endif
+    /**
+     * @symbol ??0HopperBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI HopperBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?checkForSmeltEverythingAchievement@HopperBlockActor@@QEAAXAEAVBlockSource@@@Z
+     */
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource &);
+    /**
+     * @symbol ?getAttachedFurnace@HopperBlockActor@@QEAAPEAVFurnaceBlockActor@@AEAVBlockSource@@@Z
+     */
     MCAPI class FurnaceBlockActor * getAttachedFurnace(class BlockSource &);
+    /**
+     * @symbol ?isAttachedToChestAndFurnace@HopperBlockActor@@QEAA_NAEAVBlockSource@@@Z
+     */
     MCAPI bool isAttachedToChestAndFurnace(class BlockSource &);
+    /**
+     * @symbol ?updateCooldownAfterMove@HopperBlockActor@@QEAAXAEBUTick@@H@Z
+     */
     MCAPI void updateCooldownAfterMove(struct Tick const &, int);
 
 //private:
+    /**
+     * @symbol ?_ensureTickingOrder@HopperBlockActor@@AEAAXAEAVBlockSource@@H@Z
+     */
     MCAPI void _ensureTickingOrder(class BlockSource &, int);
+    /**
+     * @symbol ?_tick@HopperBlockActor@@AEAAXAEAVBlockSource@@H@Z
+     */
     MCAPI void _tick(class BlockSource &, int);
+    /**
+     * @symbol ?isAttachedToContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
+     */
     MCAPI bool isAttachedToContainerType(class BlockSource &, enum ContainerType);
+    /**
+     * @symbol ?isSourceOfContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
+     */
     MCAPI bool isSourceOfContainerType(class BlockSource &, enum ContainerType);
 
 private:

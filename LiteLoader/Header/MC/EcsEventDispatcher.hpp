@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECSEVENTDISPATCHER
 #endif
+    /**
+     * @symbol ?update@EcsEventDispatcher@@QEAAXXZ
+     */
     MCAPI void update();
 
 };

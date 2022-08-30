@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFSETSCOMPONENT
 #endif
+    /**
+     * @symbol ??8OffsetsComponent@@QEBA_NAEBU0@@Z
+     */
     MCAPI bool operator==(struct OffsetsComponent const &) const;
 
 };

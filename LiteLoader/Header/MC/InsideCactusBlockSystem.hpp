@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDECACTUSBLOCKSYSTEM
 #endif
+    /**
+     * @symbol ?createSystem@InsideCactusBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

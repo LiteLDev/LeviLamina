@@ -30,13 +30,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StickInGroundSubcomponent();
+    /**
+     * @vtable 1
+     * @symbol ?readfromJSON@StickInGroundSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
+    /**
+     * @vtable 2
+     * @symbol ?writetoJSON@StickInGroundSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     */
     virtual void writetoJSON(class Json::Value &) const;
+    /**
+     * @vtable 3
+     * @symbol ?doOnHitEffect@StickInGroundSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
+    /**
+     * @vtable 4
+     * @symbol ?getName@StickInGroundSubcomponent@@UEAAPEBDXZ
+     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STICKINGROUNDSUBCOMPONENT
 #endif
+    /**
+     * @symbol ??0StickInGroundSubcomponent@@QEAA@XZ
+     */
     MCAPI StickInGroundSubcomponent();
 
 };

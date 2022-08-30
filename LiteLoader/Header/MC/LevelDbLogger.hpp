@@ -30,7 +30,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LevelDbLogger();
+    /**
+     * @vtable 1
+     * @symbol ?Logv@LevelDbLogger@@EEAAXPEBDPEAD@Z
+     */
     virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBLOGGER
 #endif

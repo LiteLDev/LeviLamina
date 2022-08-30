@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEHONEYBLOCKSYSTEM
 #endif
+    /**
+     * @symbol ?createEventsSystem@InsideHoneyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createEventsSystem();
+    /**
+     * @symbol ?createMovementSystem@InsideHoneyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createMovementSystem();
 
 };

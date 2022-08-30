@@ -29,17 +29,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DynamicJumpControl();
+    /**
+     * @vtable 1
+     * @symbol ?initializeInternal@DynamicJumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
+     */
     virtual void initializeInternal(class Mob &, struct JumpControlDescription *);
+    /**
+     * @vtable 2
+     * @symbol ?clone@DynamicJumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class JumpControl> clone() const;
+    /**
+     * @vtable 3
+     * @symbol ?tick@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
+     */
     virtual void tick(class JumpControlComponent &, class Mob &);
+    /**
+     * @vtable 4
+     * @symbol ?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@@Z
+     */
     virtual int getJumpDelay(class JumpControlComponent const &) const;
+    /**
+     * @vtable 5
+     * @symbol ?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@@Z
+     */
     virtual float getJumpPower(class JumpControlComponent const &) const;
+    /**
+     * @vtable 6
+     * @symbol ?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
+     */
     virtual enum JumpType getJumpType(class JumpControlComponent const &) const;
+    /**
+     * @vtable 7
+     * @symbol ?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
+     */
     virtual void setJumpType(class JumpControlComponent &, enum JumpType);
+    /**
+     * @vtable 8
+     * @symbol ?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
+     */
     virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
 #endif
+    /**
+     * @symbol ??0DynamicJumpControl@@QEAA@XZ
+     */
     MCAPI DynamicJumpControl();
 
 };

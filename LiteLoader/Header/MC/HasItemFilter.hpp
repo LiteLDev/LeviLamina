@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASITEMFILTER
 #endif
+    /**
+     * @symbol ??1HasItemFilter@@QEAA@XZ
+     */
     MCAPI ~HasItemFilter();
 
 };

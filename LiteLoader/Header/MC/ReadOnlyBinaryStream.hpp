@@ -70,31 +70,105 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ReadOnlyBinaryStream();
+    /**
+     * @vtable 1
+     * @symbol ?read@ReadOnlyBinaryStream@@EEAA_NPEAX_K@Z
+     */
     virtual bool read(void *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_READONLYBINARYSTREAM
 #endif
+    /**
+     * @symbol ??0ReadOnlyBinaryStream@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     */
     MCAPI ReadOnlyBinaryStream(std::string const &, bool);
+    /**
+     * @symbol ??0ReadOnlyBinaryStream@@QEAA@$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI ReadOnlyBinaryStream(std::string &&);
+    /**
+     * @symbol ?canReadBool@ReadOnlyBinaryStream@@QEBA_NXZ
+     */
     MCAPI bool canReadBool() const;
+    /**
+     * @symbol ?getBool@ReadOnlyBinaryStream@@QEAA_NXZ
+     */
     MCAPI bool getBool();
+    /**
+     * @symbol ?getByte@ReadOnlyBinaryStream@@QEAAEXZ
+     */
     MCAPI unsigned char getByte();
+    /**
+     * @symbol ?getDouble@ReadOnlyBinaryStream@@QEAANXZ
+     */
     MCAPI double getDouble();
+    /**
+     * @symbol ?getFloat@ReadOnlyBinaryStream@@QEAAMXZ
+     */
     MCAPI float getFloat();
+    /**
+     * @symbol ?getReadCompleteResult@ReadOnlyBinaryStream@@QEBA?AW4StreamReadResult@@XZ
+     */
     MCAPI enum StreamReadResult getReadCompleteResult() const;
+    /**
+     * @symbol ?getSignedBigEndianInt@ReadOnlyBinaryStream@@QEAAHXZ
+     */
     MCAPI int getSignedBigEndianInt();
+    /**
+     * @symbol ?getSignedInt@ReadOnlyBinaryStream@@QEAAHXZ
+     */
     MCAPI int getSignedInt();
+    /**
+     * @symbol ?getSignedInt64@ReadOnlyBinaryStream@@QEAA_JXZ
+     */
     MCAPI __int64 getSignedInt64();
+    /**
+     * @symbol ?getSignedShort@ReadOnlyBinaryStream@@QEAAFXZ
+     */
     MCAPI short getSignedShort();
+    /**
+     * @symbol ?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string getString();
+    /**
+     * @symbol ?getString@ReadOnlyBinaryStream@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI bool getString(std::string &);
+    /**
+     * @symbol ?getUnsignedChar@ReadOnlyBinaryStream@@QEAAEXZ
+     */
     MCAPI unsigned char getUnsignedChar();
+    /**
+     * @symbol ?getUnsignedInt@ReadOnlyBinaryStream@@QEAAIXZ
+     */
     MCAPI unsigned int getUnsignedInt();
+    /**
+     * @symbol ?getUnsignedInt64@ReadOnlyBinaryStream@@QEAA_KXZ
+     */
     MCAPI unsigned __int64 getUnsignedInt64();
+    /**
+     * @symbol ?getUnsignedShort@ReadOnlyBinaryStream@@QEAAGXZ
+     */
     MCAPI unsigned short getUnsignedShort();
+    /**
+     * @symbol ?getUnsignedVarInt@ReadOnlyBinaryStream@@QEAAIXZ
+     */
     MCAPI unsigned int getUnsignedVarInt();
+    /**
+     * @symbol ?getUnsignedVarInt64@ReadOnlyBinaryStream@@QEAA_KXZ
+     */
     MCAPI unsigned __int64 getUnsignedVarInt64();
+    /**
+     * @symbol ?getVarInt@ReadOnlyBinaryStream@@QEAAHXZ
+     */
     MCAPI int getVarInt();
+    /**
+     * @symbol ?getVarInt64@ReadOnlyBinaryStream@@QEAA_JXZ
+     */
     MCAPI __int64 getVarInt64();
 
 };

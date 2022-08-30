@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFORMENVDELETER
 #endif
+    /**
+     * @symbol ??RPerformEnvDeleter@@QEAAXPEAUHC_PERFORM_ENV@@@Z
+     */
     MCAPI void operator()(struct HC_PERFORM_ENV *);
 
 };

@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOCKINGDEFINITION
 #endif
+    /**
+     * @symbol ??0FlockingDefinition@@QEAA@XZ
+     */
     MCAPI FlockingDefinition();
+    /**
+     * @symbol ?initialize@FlockingDefinition@@QEAAXAEAVEntityContext@@AEAVFlockingComponent@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class FlockingComponent &);
+    /**
+     * @symbol ?buildSchema@FlockingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VFlockingDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>> &);
 
 };

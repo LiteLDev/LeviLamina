@@ -30,14 +30,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SetCommandsEnabledPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@SetCommandsEnabledPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@SetCommandsEnabledPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@SetCommandsEnabledPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@SetCommandsEnabledPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETCOMMANDSENABLEDPACKET
 #endif
+    /**
+     * @symbol ??0SetCommandsEnabledPacket@@QEAA@_N@Z
+     */
     MCAPI SetCommandsEnabledPacket(bool);
+    /**
+     * @symbol ??0SetCommandsEnabledPacket@@QEAA@XZ
+     */
     MCAPI SetCommandsEnabledPacket();
 
 };

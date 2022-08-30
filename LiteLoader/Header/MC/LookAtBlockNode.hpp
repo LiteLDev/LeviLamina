@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LookAtBlockNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@LookAtBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@LookAtBlockNode@@EEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATBLOCKNODE
 #endif
+    /**
+     * @symbol ??0LookAtBlockNode@@QEAA@XZ
+     */
     MCAPI LookAtBlockNode();
 
 };

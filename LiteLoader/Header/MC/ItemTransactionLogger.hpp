@@ -22,11 +22,29 @@ namespace ItemTransactionLogger {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?initializeLogger@ItemTransactionLogger@@YAX_N@Z
+     */
     MCAPI void initializeLogger(bool);
+    /**
+     * @symbol ?log@ItemTransactionLogger@@YAXAEBVInventoryAction@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void log(class InventoryAction const &, std::string);
+    /**
+     * @symbol ?log@ItemTransactionLogger@@YAXAEBVInventoryTransactionPacket@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void log(class InventoryTransactionPacket const &, std::string);
+    /**
+     * @symbol ?log@ItemTransactionLogger@@YAXAEBVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void log(class ItemStack const &, std::string);
+    /**
+     * @symbol ?log@ItemTransactionLogger@@YAXAEBVItemStackResponsePacket@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void log(class ItemStackResponsePacket const &, std::string);
+    /**
+     * @symbol ?log@ItemTransactionLogger@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void log(std::string);
 
 };

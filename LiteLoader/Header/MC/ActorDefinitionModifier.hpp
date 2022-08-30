@@ -28,8 +28,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONMODIFIER
 #endif
+    /**
+     * @symbol ??0ActorDefinitionModifier@@QEAA@AEBU0@@Z
+     */
     MCAPI ActorDefinitionModifier(struct ActorDefinitionModifier const &);
+    /**
+     * @symbol ??4ActorDefinitionModifier@@QEAAAEAU0@$$QEAU0@@Z
+     */
     MCAPI struct ActorDefinitionModifier & operator=(struct ActorDefinitionModifier &&);
+    /**
+     * @symbol ??1ActorDefinitionModifier@@QEAA@XZ
+     */
     MCAPI ~ActorDefinitionModifier();
 
 };

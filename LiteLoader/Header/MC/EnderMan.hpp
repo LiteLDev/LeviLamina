@@ -32,50 +32,206 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~EnderMan();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 49
+     * @symbol ?normalTick@EnderMan@@UEAAXXZ
+     */
     virtual void normalTick();
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 132
+     * @symbol ?shouldRender@EnderMan@@UEBA_NXZ
+     */
     virtual bool shouldRender() const;
+    /**
+     * @vtable 134
+     * @symbol ?getAmbientSound@EnderMan@@UEBA?AW4LevelSoundEvent@@XZ
+     */
     virtual enum LevelSoundEvent getAmbientSound() const;
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 213
+     * @symbol ?canBeAffectedByArrow@EnderMan@@UEBA_NAEBVMobEffectInstance@@@Z
+     */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 270
+     * @symbol ?_hurt@EnderMan@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 273
+     * @symbol ?readAdditionalSaveData@EnderMan@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 274
+     * @symbol ?addAdditionalSaveData@EnderMan@@MEBAXAEAVCompoundTag@@@Z
+     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 294
+     * @symbol ?hurtEffects@EnderMan@@UEAAXAEBVActorDamageSource@@M_N1@Z
+     */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 300
+     * @symbol ?aiStep@EnderMan@@UEAAXXZ
+     */
     virtual void aiStep();
+    /**
+     * @vtable 313
+     * @symbol __unk_vfn_313
+     */
     virtual void __unk_vfn_313();
+    /**
+     * @vtable 317
+     * @symbol __unk_vfn_317
+     */
     virtual void __unk_vfn_317();
+    /**
+     * @vtable 351
+     * @symbol __unk_vfn_351
+     */
     virtual void __unk_vfn_351();
+    /**
+     * @vtable 360
+     * @symbol ?newServerAiStep@EnderMan@@UEAAXXZ
+     */
     virtual void newServerAiStep();
+    /**
+     * @vtable 365
+     * @symbol __unk_vfn_365
+     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMAN
 #endif
+    /**
+     * @symbol ??0EnderMan@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?getCarryingBlock@EnderMan@@QEBAAEBVBlock@@XZ
+     */
     MCAPI class Block const & getCarryingBlock() const;
+    /**
+     * @symbol ?setCarryingBlock@EnderMan@@QEAAXAEBVBlock@@@Z
+     */
     MCAPI void setCarryingBlock(class Block const &);
 MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
 MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
 MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
+    /**
+     * @symbol ?shutdown@EnderMan@@SAXXZ
+     */
     MCAPI static void shutdown();
 
 //private:

@@ -31,23 +31,86 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ClassroomModeListener();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol __unk_vfn_10
+     */
     virtual void __unk_vfn_10();
+    /**
+     * @vtable 11
+     * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
+     */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODELISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onAreaChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     */
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
+     */
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
+    /**
+     * @vtable -1
+     * @symbol ?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+     */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
+    /**
+     * @vtable -1
+     * @symbol ?onChunkUnloaded@ClassroomModeListener@@UEAAXAEAVLevelChunk@@@Z
+     */
     MCVAPI void onChunkUnloaded(class LevelChunk &);
+    /**
+     * @vtable -1
+     * @symbol ?onEntityAdded@ClassroomModeListener@@UEAAXAEAVActor@@@Z
+     */
     MCVAPI void onEntityAdded(class Actor &);
+    /**
+     * @vtable -1
+     * @symbol ?onEntityRemoved@ClassroomModeListener@@UEAAXAEAVActor@@@Z
+     */
     MCVAPI void onEntityRemoved(class Actor &);
 #endif
+    /**
+     * @symbol ??0ClassroomModeListener@@QEAA@AEAVIMinecraftEventing@@@Z
+     */
     MCAPI ClassroomModeListener(class IMinecraftEventing &);
 
 };

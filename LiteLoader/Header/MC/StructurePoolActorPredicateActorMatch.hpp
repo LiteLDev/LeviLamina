@@ -30,10 +30,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StructurePoolActorPredicateActorMatch();
+    /**
+     * @vtable 1
+     * @symbol ?test@StructurePoolActorPredicateActorMatch@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual bool test(std::string const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLACTORPREDICATEACTORMATCH
 #endif
+    /**
+     * @symbol ??0StructurePoolActorPredicateActorMatch@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI StructurePoolActorPredicateActorMatch(std::string);
 
 };

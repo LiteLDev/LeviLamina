@@ -33,16 +33,49 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPDECORATION
 #endif
+    /**
+     * @symbol ??0MapDecoration@@QEAA@XZ
+     */
     MCAPI MapDecoration();
+    /**
+     * @symbol ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
+     */
     MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
+    /**
+     * @symbol ?getColor@MapDecoration@@QEBAAEBVColor@mce@@XZ
+     */
     MCAPI class mce::Color const & getColor() const;
+    /**
+     * @symbol ?getImg@MapDecoration@@QEBA?AW4Type@1@XZ
+     */
     MCAPI enum MapDecoration::Type getImg() const;
+    /**
+     * @symbol ?getLabel@MapDecoration@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string const & getLabel() const;
+    /**
+     * @symbol ?getRot@MapDecoration@@QEBACXZ
+     */
     MCAPI signed char getRot() const;
+    /**
+     * @symbol ?getX@MapDecoration@@QEBACXZ
+     */
     MCAPI signed char getX() const;
+    /**
+     * @symbol ?getY@MapDecoration@@QEBACXZ
+     */
     MCAPI signed char getY() const;
+    /**
+     * @symbol ?load@MapDecoration@@QEAAXAEBVCompoundTag@@@Z
+     */
     MCAPI void load(class CompoundTag const &);
+    /**
+     * @symbol ?save@MapDecoration@@QEAAXAEAVCompoundTag@@@Z
+     */
     MCAPI void save(class CompoundTag &);
+    /**
+     * @symbol ??1MapDecoration@@QEAA@XZ
+     */
     MCAPI ~MapDecoration();
 
 };

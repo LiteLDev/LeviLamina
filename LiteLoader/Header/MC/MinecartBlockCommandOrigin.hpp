@@ -32,20 +32,70 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MinecartBlockCommandOrigin();
+    /**
+     * @vtable 3
+     * @symbol ?getBlockPosition@MinecartBlockCommandOrigin@@UEBA?AVBlockPos@@XZ
+     */
     virtual class BlockPos getBlockPosition() const;
+    /**
+     * @vtable 4
+     * @symbol ?getWorldPosition@MinecartBlockCommandOrigin@@UEBA?AVVec3@@XZ
+     */
     virtual class Vec3 getWorldPosition() const;
+    /**
+     * @vtable 8
+     * @symbol ?getEntity@MinecartBlockCommandOrigin@@UEBAPEAVActor@@XZ
+     */
     virtual class Actor * getEntity() const;
+    /**
+     * @vtable 10
+     * @symbol ?clone@MinecartBlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /**
+     * @vtable 17
+     * @symbol ?canUseCommandsWithoutCheatsEnabled@MinecartBlockCommandOrigin@@UEBA_NXZ
+     */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /**
+     * @vtable 23
+     * @symbol ?getOriginType@MinecartBlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     */
     virtual enum CommandOriginType getOriginType() const;
+    /**
+     * @vtable 29
+     * @symbol ?serialize@MinecartBlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
+     */
     virtual class CompoundTag serialize() const;
+    /**
+     * @vtable 30
+     * @symbol ?isValid@MinecartBlockCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isValid() const;
+    /**
+     * @vtable 32
+     * @symbol ?_getBaseCommandBlock@MinecartBlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
+     */
     virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
+    /**
+     * @vtable 33
+     * @symbol ?_getBlockEntity@MinecartBlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
+     */
     virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTBLOCKCOMMANDORIGIN
 #endif
+    /**
+     * @symbol ??0MinecartBlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBUActorUniqueID@@@Z
+     */
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
+    /**
+     * @symbol ?load@MinecartBlockCommandOrigin@@SA?AV?$unique_ptr@VMinecartBlockCommandOrigin@@U?$default_delete@VMinecartBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
+     */
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

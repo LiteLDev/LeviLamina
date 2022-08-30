@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYINGREDIENT
 #endif
+    /**
+     * @symbol ??1ChemistryIngredient@@QEAA@XZ
+     */
     MCAPI ~ChemistryIngredient();
 
 };

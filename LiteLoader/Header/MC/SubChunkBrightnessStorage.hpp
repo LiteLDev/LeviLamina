@@ -31,7 +31,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKBRIGHTNESSSTORAGE
 #endif
+    /**
+     * @symbol ??0SubChunkBrightnessStorage@@QEAA@XZ
+     */
     MCAPI SubChunkBrightnessStorage();
+    /**
+     * @symbol ?reset@SubChunkBrightnessStorage@@QEAAX_N@Z
+     */
     MCAPI void reset(bool);
 
 };

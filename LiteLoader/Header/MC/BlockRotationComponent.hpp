@@ -31,7 +31,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKROTATIONCOMPONENT
 #endif
+    /**
+     * @symbol ??0BlockRotationComponent@@QEAA@AEBVVec3@@@Z
+     */
     MCAPI BlockRotationComponent(class Vec3 const &);
+    /**
+     * @symbol ?setRotationDegrees@BlockRotationComponent@@QEAAXAEBVVec3@@@Z
+     */
     MCAPI void setRotationDegrees(class Vec3 const &);
 
 };

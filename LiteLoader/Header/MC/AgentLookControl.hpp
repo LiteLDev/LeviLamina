@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AgentLookControl();
+    /**
+     * @vtable 1
+     * @symbol ?initializeInternal@AgentLookControl@@UEAAXAEAVMob@@@Z
+     */
     virtual void initializeInternal(class Mob &);
+    /**
+     * @vtable 2
+     * @symbol ?tick@AgentLookControl@@UEAAXAEAVMob@@@Z
+     */
     virtual void tick(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTLOOKCONTROL
 #endif
+    /**
+     * @symbol ??0AgentLookControl@@QEAA@XZ
+     */
     MCAPI AgentLookControl();
 MCAPI static float sBaseYMax;
 

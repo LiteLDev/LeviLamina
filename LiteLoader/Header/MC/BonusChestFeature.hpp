@@ -31,12 +31,23 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BonusChestFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@BonusChestFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONUSCHESTFEATURE
 #endif
 
 //private:
+    /**
+     * @symbol ?_place@BonusChestFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 private:

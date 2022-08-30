@@ -30,19 +30,57 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SwimWithEntityGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@SwimWithEntityGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@SwimWithEntityGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol ?canBeInterrupted@SwimWithEntityGoal@@UEAA_NXZ
+     */
     virtual bool canBeInterrupted();
+    /**
+     * @vtable 4
+     * @symbol ?start@SwimWithEntityGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@SwimWithEntityGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@SwimWithEntityGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@SwimWithEntityGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWITHENTITYGOAL
 #endif
+    /**
+     * @symbol ??0SwimWithEntityGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI SwimWithEntityGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?_setWantedMob@SwimWithEntityGoal@@AEAA_NXZ
+     */
     MCAPI bool _setWantedMob();
 
 private:

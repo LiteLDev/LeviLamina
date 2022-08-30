@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGER
 #endif
+    /**
+     * @symbol ??1OnPlacedTrigger@@QEAA@XZ
+     */
     MCAPI ~OnPlacedTrigger();
 
 };

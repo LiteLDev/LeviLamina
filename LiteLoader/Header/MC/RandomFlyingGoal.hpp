@@ -31,17 +31,47 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RandomFlyingGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@RandomFlyingGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@RandomFlyingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol ?_setWantedPosition@RandomFlyingGoal@@MEAA_NXZ
+     */
     virtual bool _setWantedPosition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMFLYINGGOAL
 #endif
+    /**
+     * @symbol ??0RandomFlyingGoal@@QEAA@AEAVMob@@MHH_N@Z
+     */
     MCAPI RandomFlyingGoal(class Mob &, float, int, int, bool);
 
 //private:
+    /**
+     * @symbol ?_getTreePos@RandomFlyingGoal@@AEBA_NAEAVVec3@@@Z
+     */
     MCAPI bool _getTreePos(class Vec3 &) const;
 
 private:

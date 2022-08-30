@@ -39,17 +39,55 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShortTag();
+    /**
+     * @vtable 2
+     * @symbol ?write@ShortTag@@UEBAXAEAVIDataOutput@@@Z
+     */
     virtual void write(class IDataOutput &) const;
+    /**
+     * @vtable 3
+     * @symbol ?load@ShortTag@@UEAAXAEAVIDataInput@@@Z
+     */
     virtual void load(class IDataInput &);
+    /**
+     * @vtable 4
+     * @symbol ?toString@ShortTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string toString() const;
+    /**
+     * @vtable 5
+     * @symbol ?getId@ShortTag@@UEBA?AW4Type@Tag@@XZ
+     */
     virtual enum Tag::Type getId() const;
+    /**
+     * @vtable 6
+     * @symbol ?equals@ShortTag@@UEBA_NAEBVTag@@@Z
+     */
     virtual bool equals(class Tag const &) const;
+    /**
+     * @vtable 9
+     * @symbol ?copy@ShortTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class Tag> copy() const;
+    /**
+     * @vtable 10
+     * @symbol ?hash@ShortTag@@UEBA_KXZ
+     */
     virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHORTTAG
 #endif
+    /**
+     * @symbol ??0ShortTag@@QEAA@XZ
+     */
     MCAPI ShortTag();
+    /**
+     * @symbol ??0ShortTag@@QEAA@F@Z
+     */
     MCAPI ShortTag(short);
 
 };

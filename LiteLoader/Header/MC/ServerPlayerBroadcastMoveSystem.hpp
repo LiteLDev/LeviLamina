@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERBROADCASTMOVESYSTEM
 #endif
+    /**
+     * @symbol ?create@ServerPlayerBroadcastMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo create();
 
 };

@@ -29,17 +29,51 @@ public:
     BlockLightEmissionDescription() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockLightEmissionDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getName@BlockLightEmissionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?initializeComponent@BlockLightEmissionDescription@@UEBAXAEAVEntityContext@@@Z
+     */
     virtual void initializeComponent(class EntityContext &) const;
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?isNetworkComponent@BlockLightEmissionDescription@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@BlockLightEmissionDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@BlockLightEmissionDescription@@UEAAXAEBVCompoundTag@@@Z
+     */
     virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLIGHTEMISSIONDESCRIPTION
 #endif
 MCAPI static std::string const NameID;
+    /**
+     * @symbol ?bindType@BlockLightEmissionDescription@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?registerVersionUpgrades@BlockLightEmissionDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

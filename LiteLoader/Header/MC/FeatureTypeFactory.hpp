@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETYPEFACTORY
 #endif
+    /**
+     * @symbol ??0FeatureTypeFactory@@QEAA@XZ
+     */
     MCAPI FeatureTypeFactory();
+    /**
+     * @symbol ?processFeature@FeatureTypeFactory@@QEBAXAEAVIWorldRegistriesProvider@@AEBVResourcePackManager@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     MCAPI void processFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, class Json::Value &, class SemVersion const &) const;
 
 };

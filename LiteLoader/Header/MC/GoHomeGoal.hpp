@@ -30,22 +30,69 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~GoHomeGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@GoHomeGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@GoHomeGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@GoHomeGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@GoHomeGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@GoHomeGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@GoHomeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOHOMEGOAL
 #endif
+    /**
+     * @symbol ??0GoHomeGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI GoHomeGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?_getHomeDimension@GoHomeGoal@@AEBA?AV?$AutomaticID@VDimension@@H@@XZ
+     */
     MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
+    /**
+     * @symbol ?_getHomePos@GoHomeGoal@@AEBA?AVBlockPos@@XZ
+     */
     MCAPI class BlockPos _getHomePos() const;
+    /**
+     * @symbol ?_hasRequiredComponents@GoHomeGoal@@AEBA_NXZ
+     */
     MCAPI bool _hasRequiredComponents() const;
+    /**
+     * @symbol ?_triggerOnFailedEvents@GoHomeGoal@@AEAAXXZ
+     */
     MCAPI void _triggerOnFailedEvents();
 
 private:

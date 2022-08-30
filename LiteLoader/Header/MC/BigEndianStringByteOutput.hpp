@@ -29,11 +29,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BigEndianStringByteOutput();
+    /**
+     * @vtable 3
+     * @symbol ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
+     */
     virtual void writeFloat(float);
+    /**
+     * @vtable 4
+     * @symbol ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
+     */
     virtual void writeDouble(double);
+    /**
+     * @vtable 6
+     * @symbol ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
+     */
     virtual void writeShort(short);
+    /**
+     * @vtable 7
+     * @symbol ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
+     */
     virtual void writeInt(int);
+    /**
+     * @vtable 8
+     * @symbol ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+     */
     virtual void writeLongLong(__int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEOUTPUT
 #endif

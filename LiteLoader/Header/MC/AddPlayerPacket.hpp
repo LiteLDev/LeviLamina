@@ -30,14 +30,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AddPlayerPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@AddPlayerPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@AddPlayerPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@AddPlayerPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@AddPlayerPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDPLAYERPACKET
 #endif
+    /**
+     * @symbol ??0AddPlayerPacket@@QEAA@XZ
+     */
     MCAPI AddPlayerPacket();
+    /**
+     * @symbol ??0AddPlayerPacket@@QEAA@AEAVPlayer@@@Z
+     */
     MCAPI AddPlayerPacket(class Player &);
 
 };

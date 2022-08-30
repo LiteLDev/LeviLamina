@@ -31,15 +31,45 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLECOMPONENT
 #endif
+    /**
+     * @symbol ??0BoostableComponent@@QEAA@XZ
+     */
     MCAPI BoostableComponent();
+    /**
+     * @symbol ?getBoostTime@BoostableComponent@@QEBAHXZ
+     */
     MCAPI int getBoostTime() const;
+    /**
+     * @symbol ?getBoostTimeTotal@BoostableComponent@@QEBAHXZ
+     */
     MCAPI int getBoostTimeTotal() const;
+    /**
+     * @symbol ?getIsBoosting@BoostableComponent@@QEBA_NXZ
+     */
     MCAPI bool getIsBoosting() const;
+    /**
+     * @symbol ?itemUseText@BoostableComponent@@QEAA_NAEBVPlayer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI bool itemUseText(class Player const &, std::string &);
+    /**
+     * @symbol ?onItemInteract@BoostableComponent@@QEAA_NAEAVActor@@AEAVItemStack@@AEAVPlayer@@@Z
+     */
     MCAPI bool onItemInteract(class Actor &, class ItemStack &, class Player &);
+    /**
+     * @symbol ?removePassenger@BoostableComponent@@QEAAXAEAVPlayer@@@Z
+     */
     MCAPI void removePassenger(class Player &);
+    /**
+     * @symbol ?setBoostTime@BoostableComponent@@QEAAXH@Z
+     */
     MCAPI void setBoostTime(int);
+    /**
+     * @symbol ?setIsBoosting@BoostableComponent@@QEAAX_N@Z
+     */
     MCAPI void setIsBoosting(bool);
+    /**
+     * @symbol ?getSpeedModifierBoosting@BoostableComponent@@SA?AV?$shared_ptr@VAttributeModifier@@@std@@XZ
+     */
     MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();
 
 //private:

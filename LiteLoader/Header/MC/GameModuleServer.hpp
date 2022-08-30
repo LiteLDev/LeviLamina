@@ -31,6 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
 #endif
+    /**
+     * @symbol ??0GameModuleServer@@QEAA@XZ
+     */
     MCAPI GameModuleServer();
 
 };

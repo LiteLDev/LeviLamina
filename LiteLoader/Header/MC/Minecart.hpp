@@ -31,62 +31,268 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 8
+     * @symbol ?reloadHardcoded@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 9
+     * @symbol ?reloadHardcodedClient@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~Minecart();
+    /**
+     * @vtable 33
+     * @symbol ?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z
+     */
     virtual float getInterpolatedBodyYaw(float) const;
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 49
+     * @symbol ?normalTick@Minecart@@UEAAXXZ
+     */
     virtual void normalTick();
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 79
+     * @symbol ?getShadowHeightOffs@Minecart@@UEAAMXZ
+     */
     virtual float getShadowHeightOffs();
+    /**
+     * @vtable 80
+     * @symbol ?getShadowRadius@Minecart@@UEBAMXZ
+     */
     virtual float getShadowRadius() const;
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 95
+     * @symbol ?isPickable@Minecart@@UEAA_NXZ
+     */
     virtual bool isPickable();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 135
+     * @symbol ?isInvulnerableTo@Minecart@@UEBA_NAEBVActorDamageSource@@@Z
+     */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /**
+     * @vtable 140
+     * @symbol ?onBounceStarted@Minecart@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+     */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 184
+     * @symbol ?getControllingPlayer@Minecart@@UEBA?AUActorUniqueID@@XZ
+     */
     virtual struct ActorUniqueID getControllingPlayer() const;
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 252
+     * @symbol ?kill@Minecart@@MEAAXXZ
+     */
     virtual void kill();
+    /**
+     * @vtable 260
+     * @symbol ?interpolatorTick@Minecart@@UEAAXXZ
+     */
     virtual void interpolatorTick();
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 270
+     * @symbol ?_hurt@Minecart@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 273
+     * @symbol ?readAdditionalSaveData@Minecart@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 274
+     * @symbol ?addAdditionalSaveData@Minecart@@MEBAXAEAVCompoundTag@@@Z
+     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 284
+     * @symbol ?_onSizeUpdated@Minecart@@EEAAXXZ
+     */
     virtual void _onSizeUpdated();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 286
+     * @symbol ?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z
+     */
     virtual void destroy(class ActorDamageSource const &, bool);
+    /**
+     * @vtable 287
+     * @symbol ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
+     */
     virtual enum MinecartType getType() = 0;
+    /**
+     * @vtable 288
+     * @symbol ?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ
+     */
     virtual class Block const * getDefaultDisplayBlock() const;
+    /**
+     * @vtable 289
+     * @symbol __unk_vfn_289
+     */
     virtual void __unk_vfn_289();
+    /**
+     * @vtable 290
+     * @symbol ?getDefaultDisplayOffset@Minecart@@UEBAHXZ
+     */
     virtual int getDefaultDisplayOffset() const;
+    /**
+     * @vtable 291
+     * @symbol ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
+     */
     virtual void applyNaturalSlowdown(class BlockSource &);
+    /**
+     * @vtable 292
+     * @symbol ?_lazyInitDisplayBlock@Minecart@@EEAAXXZ
+     */
     virtual void _lazyInitDisplayBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECART
+    /**
+     * @vtable -1
+     * @symbol ?canMakeStepSound@Minecart@@EEBA_NXZ
+     */
     MCVAPI bool canMakeStepSound() const;
+    /**
+     * @vtable -1
+     * @symbol ?getDefaultDisplayData@Minecart@@UEBAHXZ
+     */
     MCVAPI int getDefaultDisplayData() const;
 #endif
+    /**
+     * @symbol ??0Minecart@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI Minecart(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?dropMinecartWithContentsAndRemove@Minecart@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@_N@Z
+     */
     MCAPI void dropMinecartWithContentsAndRemove(class gsl::basic_string_span<char const, -1>, bool);
+    /**
+     * @symbol ?postNormalTick@Minecart@@QEAAXAEBVBlockPos@@@Z
+     */
     MCAPI void postNormalTick(class BlockPos const &);
+    /**
+     * @symbol ?setCustomDisplay@Minecart@@QEAAX_N@Z
+     */
     MCAPI void setCustomDisplay(bool);
+    /**
+     * @symbol ?setDisplayBlock@Minecart@@QEAAXAEBVBlock@@@Z
+     */
     MCAPI void setDisplayBlock(class Block const &);
 
 //private:
+    /**
+     * @symbol ?_registerLoopingSounds@Minecart@@AEAAXXZ
+     */
     MCAPI void _registerLoopingSounds();
 
 private:

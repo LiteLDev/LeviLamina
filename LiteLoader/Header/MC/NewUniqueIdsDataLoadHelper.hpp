@@ -29,38 +29,161 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NewUniqueIdsDataLoadHelper();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol __unk_vfn_10
+     */
     virtual void __unk_vfn_10();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 13
+     * @symbol ?loadActorUniqueID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     */
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
+    /**
+     * @vtable 14
+     * @symbol ?loadOwnerID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     */
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
+    /**
+     * @vtable 15
+     * @symbol ?loadActorInternalComponentInfo@NewUniqueIdsDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
+     */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
+    /**
+     * @vtable 16
+     * @symbol ?getType@NewUniqueIdsDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
+     */
     virtual enum DataLoadHelperType getType() const;
+    /**
+     * @vtable 17
+     * @symbol ?shouldResetTime@NewUniqueIdsDataLoadHelper@@UEAA_NXZ
+     */
     virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWUNIQUEIDSDATALOADHELPER
+    /**
+     * @vtable -1
+     * @symbol ?loadBlockPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     */
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     */
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     */
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
+    /**
+     * @vtable -1
+     * @symbol ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+     */
     MCVAPI enum Direction::Type loadDirection(enum Direction::Type);
+    /**
+     * @vtable -1
+     * @symbol ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
+     */
     MCVAPI unsigned char loadFacingID(unsigned char);
+    /**
+     * @vtable -1
+     * @symbol ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
+     */
     MCVAPI enum Mirror loadMirror(enum Mirror);
+    /**
+     * @vtable -1
+     * @symbol ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     */
     MCVAPI class Vec3 loadPosition(class Vec3 const &);
+    /**
+     * @vtable -1
+     * @symbol ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
+     */
     MCVAPI enum Rotation loadRotation(enum Rotation);
+    /**
+     * @vtable -1
+     * @symbol ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     */
     MCVAPI float loadRotationDegreesX(float);
+    /**
+     * @vtable -1
+     * @symbol ?loadRotationDegreesY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     */
     MCVAPI float loadRotationDegreesY(float);
+    /**
+     * @vtable -1
+     * @symbol ?loadRotationRadiansX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     */
     MCVAPI float loadRotationRadiansX(float);
+    /**
+     * @vtable -1
+     * @symbol ?loadRotationRadiansY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     */
     MCVAPI float loadRotationRadiansY(float);
 #endif
+    /**
+     * @symbol ??0NewUniqueIdsDataLoadHelper@@QEAA@AEAVILevel@@@Z
+     */
     MCAPI NewUniqueIdsDataLoadHelper(class ILevel &);
 
 };

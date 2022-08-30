@@ -29,19 +29,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~JumpControl();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol ?clone@JumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class JumpControl> clone() const;
+    /**
+     * @vtable 3
+     * @symbol ?tick@JumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
+     */
     virtual void tick(class JumpControlComponent &, class Mob &);
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?getJumpPower@JumpControl@@MEBAMAEBVJumpControlComponent@@@Z
+     */
     virtual float getJumpPower(class JumpControlComponent const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
+    /**
+     * @vtable -1
+     * @symbol ?getJumpDelay@JumpControl@@MEBAHAEBVJumpControlComponent@@@Z
+     */
     MCVAPI int getJumpDelay(class JumpControlComponent const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?getJumpType@JumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
+     */
     MCVAPI enum JumpType getJumpType(class JumpControlComponent const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?initializeInternal@JumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
+     */
     MCVAPI void initializeInternal(class Mob &, struct JumpControlDescription *);
+    /**
+     * @vtable -1
+     * @symbol ?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
+     */
     MCVAPI void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
+    /**
+     * @vtable -1
+     * @symbol ?setJumpType@JumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
+     */
     MCVAPI void setJumpType(class JumpControlComponent &, enum JumpType);
 #endif
+    /**
+     * @symbol ??0JumpControl@@QEAA@XZ
+     */
     MCAPI JumpControl();
 
 };

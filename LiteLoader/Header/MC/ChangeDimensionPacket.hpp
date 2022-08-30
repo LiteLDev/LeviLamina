@@ -38,14 +38,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ChangeDimensionPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@ChangeDimensionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@ChangeDimensionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@ChangeDimensionPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@ChangeDimensionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANGEDIMENSIONPACKET
 #endif
+    /**
+     * @symbol ??0ChangeDimensionPacket@@QEAA@XZ
+     */
     MCAPI ChangeDimensionPacket();
+    /**
+     * @symbol ??0ChangeDimensionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@VVec3@@_N@Z
+     */
     MCAPI ChangeDimensionPacket(class AutomaticID<class Dimension, int>, class Vec3, bool);
 
 };

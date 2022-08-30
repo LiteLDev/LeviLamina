@@ -30,16 +30,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SquidDiveGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@SquidDiveGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@SquidDiveGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@SquidDiveGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@SquidDiveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDDIVEGOAL
+    /**
+     * @vtable -1
+     * @symbol ?stop@SquidDiveGoal@@UEAAXXZ
+     */
     MCVAPI void stop();
+    /**
+     * @vtable -1
+     * @symbol ?tick@SquidDiveGoal@@UEAAXXZ
+     */
     MCVAPI void tick();
 #endif
 

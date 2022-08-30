@@ -30,20 +30,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WeaponItemComponent();
+    /**
+     * @vtable 1
+     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VWeaponItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEMCOMPONENT
 #endif
+    /**
+     * @symbol ?appendFormattedHovertext@WeaponItemComponent@@QEBAXAEBVItemStackBase@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     */
     MCAPI void appendFormattedHovertext(class ItemStackBase const &, std::string &, bool) const;
+    /**
+     * @symbol ?hitActor@WeaponItemComponent@@QEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     */
     MCAPI void hitActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @symbol ?hitBlock@WeaponItemComponent@@QEBAXAEAVItemStack@@AEBVBlock@@AEBVBlockPos@@AEAVMob@@@Z
+     */
     MCAPI void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
+    /**
+     * @symbol ?hurtActor@WeaponItemComponent@@QEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     */
     MCAPI void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @symbol ?bindType@WeaponItemComponent@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier@WeaponItemComponent@@SAAEBVHashedString@@XZ
+     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

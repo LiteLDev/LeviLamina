@@ -43,102 +43,433 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 10
+     * @symbol ?initializeComponents@SimulatedPlayer@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~SimulatedPlayer();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 44
+     * @symbol ?teleportTo@SimulatedPlayer@@UEAAXAEBVVec3@@_NHH1@Z
+     */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 300
+     * @symbol ?aiStep@SimulatedPlayer@@UEAAXXZ
+     */
     virtual void aiStep();
+    /**
+     * @vtable 313
+     * @symbol __unk_vfn_313
+     */
     virtual void __unk_vfn_313();
+    /**
+     * @vtable 317
+     * @symbol __unk_vfn_317
+     */
     virtual void __unk_vfn_317();
+    /**
+     * @vtable 351
+     * @symbol __unk_vfn_351
+     */
     virtual void __unk_vfn_351();
+    /**
+     * @vtable 365
+     * @symbol __unk_vfn_365
+     */
     virtual void __unk_vfn_365();
+    /**
+     * @vtable 375
+     * @symbol __unk_vfn_375
+     */
     virtual void __unk_vfn_375();
+    /**
+     * @vtable 382
+     * @symbol __unk_vfn_382
+     */
     virtual void __unk_vfn_382();
+    /**
+     * @vtable 383
+     * @symbol __unk_vfn_383
+     */
     virtual void __unk_vfn_383();
+    /**
+     * @vtable 385
+     * @symbol __unk_vfn_385
+     */
     virtual void __unk_vfn_385();
+    /**
+     * @vtable 386
+     * @symbol __unk_vfn_386
+     */
     virtual void __unk_vfn_386();
+    /**
+     * @vtable 391
+     * @symbol __unk_vfn_391
+     */
     virtual void __unk_vfn_391();
+    /**
+     * @vtable 392
+     * @symbol __unk_vfn_392
+     */
     virtual void __unk_vfn_392();
+    /**
+     * @vtable 395
+     * @symbol __unk_vfn_395
+     */
     virtual void __unk_vfn_395();
+    /**
+     * @vtable 398
+     * @symbol __unk_vfn_398
+     */
     virtual void __unk_vfn_398();
+    /**
+     * @vtable 399
+     * @symbol __unk_vfn_399
+     */
     virtual void __unk_vfn_399();
+    /**
+     * @vtable 409
+     * @symbol __unk_vfn_409
+     */
     virtual void __unk_vfn_409();
+    /**
+     * @vtable 410
+     * @symbol __unk_vfn_410
+     */
     virtual void __unk_vfn_410();
+    /**
+     * @vtable 411
+     * @symbol ?isHostingPlayer@SimulatedPlayer@@UEBA_NXZ
+     */
     virtual bool isHostingPlayer() const;
+    /**
+     * @vtable 414
+     * @symbol __unk_vfn_414
+     */
     virtual void __unk_vfn_414();
+    /**
+     * @vtable 421
+     * @symbol __unk_vfn_421
+     */
     virtual void __unk_vfn_421();
+    /**
+     * @vtable 448
+     * @symbol __unk_vfn_448
+     */
     virtual void __unk_vfn_448();
+    /**
+     * @vtable 449
+     * @symbol ?getXuid@SimulatedPlayer@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getXuid() const;
+    /**
+     * @vtable 450
+     * @symbol ?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ
+     */
     virtual struct PlayerMovementSettings const & getMovementSettings() const;
+    /**
+     * @vtable 453
+     * @symbol ?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z
+     */
     virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
+    /**
+     * @vtable 454
+     * @symbol ?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ
+     */
     virtual int _getSpawnChunkLimit() const;
+    /**
+     * @vtable 455
+     * @symbol ?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z
+     */
     virtual void _updateChunkPublisherView(class Vec3 const &, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMULATEDPLAYER
+    /**
+     * @vtable -1
+     * @symbol ?isSimulated@SimulatedPlayer@@UEBA_NXZ
+     */
     MCVAPI bool isSimulated() const;
+    /**
+     * @vtable -1
+     * @symbol ?useNewAi@SimulatedPlayer@@UEBA_NXZ
+     */
     MCVAPI bool useNewAi() const;
 #endif
+    /**
+     * @symbol ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
+     */
     MCAPI SimulatedPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, enum SubClientId, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
+    /**
+     * @symbol ?getGameTestHelper@SimulatedPlayer@@QEBA?AV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@XZ
+     */
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
+    /**
+     * @symbol ?preAiStep@SimulatedPlayer@@QEAAXXZ
+     */
     MCAPI void preAiStep();
+    /**
+     * @symbol ?setGameTestHelper@SimulatedPlayer@@QEAAXV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@@Z
+     */
     MCAPI void setGameTestHelper(class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper>);
+    /**
+     * @symbol ?setXuid@SimulatedPlayer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void setXuid(std::string const &);
+    /**
+     * @symbol ?simulateAttack@SimulatedPlayer@@QEAA_NPEAVActor@@@Z
+     */
     MCAPI bool simulateAttack(class Actor *);
+    /**
+     * @symbol ?simulateAttack@SimulatedPlayer@@QEAA_NXZ
+     */
     MCAPI bool simulateAttack();
+    /**
+     * @symbol ?simulateDestroyBlock@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
+     */
     MCAPI bool simulateDestroyBlock(class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing);
+    /**
+     * @symbol ?simulateDisconnect@SimulatedPlayer@@QEAAXXZ
+     */
     MCAPI void simulateDisconnect();
+    /**
+     * @symbol ?simulateGiveItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_N@Z
+     */
     MCAPI bool simulateGiveItem(class ItemStack &, bool);
+    /**
+     * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NAEAVActor@@@Z
+     */
     MCAPI bool simulateInteract(class Actor &);
+    /**
+     * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
+     */
     MCAPI bool simulateInteract(class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing);
+    /**
+     * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NXZ
+     */
     MCAPI bool simulateInteract();
+    /**
+     * @symbol ?simulateJump@SimulatedPlayer@@QEAA_NXZ
+     */
     MCAPI bool simulateJump();
+    /**
+     * @symbol ?simulateLocalMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
+     */
     MCAPI void simulateLocalMove(class Vec3 const &, float);
+    /**
+     * @symbol ?simulateLookAt@SimulatedPlayer@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void simulateLookAt(class Actor &);
+    /**
+     * @symbol ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVBlockPos@@@Z
+     */
     MCAPI void simulateLookAt(class BlockPos const &);
+    /**
+     * @symbol ?simulateLookAt@SimulatedPlayer@@QEAAXAEBVVec3@@@Z
+     */
     MCAPI void simulateLookAt(class Vec3 const &);
+    /**
+     * @symbol ?simulateMoveToLocation@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
+     */
     MCAPI void simulateMoveToLocation(class Vec3 const &, float);
+    /**
+     * @symbol ?simulateNavigateToEntity@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEAVActor@@M@Z
+     */
     MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult simulateNavigateToEntity(class Actor &, float);
+    /**
+     * @symbol ?simulateNavigateToLocation@SimulatedPlayer@@QEAA?AUScriptNavigationResult@ScriptModuleMinecraft@@AEBVVec3@@M@Z
+     */
     MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult simulateNavigateToLocation(class Vec3 const &, float);
+    /**
+     * @symbol ?simulateNavigateToLocations@SimulatedPlayer@@QEAAX$$QEAV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@M@Z
+     */
     MCAPI void simulateNavigateToLocations(std::vector<class Vec3> &&, float);
+    /**
+     * @symbol ?simulateSetBodyRotation@SimulatedPlayer@@QEAAXM@Z
+     */
     MCAPI void simulateSetBodyRotation(float);
+    /**
+     * @symbol ?simulateSetItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@_NH@Z
+     */
     MCAPI bool simulateSetItem(class ItemStack &, bool, int);
+    /**
+     * @symbol ?simulateStopDestroyingBlock@SimulatedPlayer@@QEAAXXZ
+     */
     MCAPI void simulateStopDestroyingBlock();
+    /**
+     * @symbol ?simulateStopInteracting@SimulatedPlayer@@QEAAXXZ
+     */
     MCAPI void simulateStopInteracting();
+    /**
+     * @symbol ?simulateStopMoving@SimulatedPlayer@@QEAAXXZ
+     */
     MCAPI void simulateStopMoving();
+    /**
+     * @symbol ?simulateStopUsingItem@SimulatedPlayer@@QEAAXXZ
+     */
     MCAPI void simulateStopUsingItem();
+    /**
+     * @symbol ?simulateUseItem@SimulatedPlayer@@QEAA_NAEAVItemStack@@@Z
+     */
     MCAPI bool simulateUseItem(class ItemStack &);
+    /**
+     * @symbol ?simulateUseItemInSlot@SimulatedPlayer@@QEAA_NH@Z
+     */
     MCAPI bool simulateUseItemInSlot(int);
+    /**
+     * @symbol ?simulateUseItemInSlotOnBlock@SimulatedPlayer@@QEAA_NHAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
+     */
     MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
+    /**
+     * @symbol ?simulateUseItemOnBlock@SimulatedPlayer@@QEAA_NAEAVItemStack@@AEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
+     */
     MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
+    /**
+     * @symbol ?simulateWorldMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
+     */
     MCAPI void simulateWorldMove(class Vec3 const &, float);
+    /**
+     * @symbol ?create@SimulatedPlayer@@SAPEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@V?$AutomaticID@VDimension@@H@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@0@Z
+     */
     MCAPI static class SimulatedPlayer * create(std::string const &, class BlockPos const &, class AutomaticID<class Dimension, int>, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, std::string const &);
+    /**
+     * @symbol ?tryGetFromEntity@SimulatedPlayer@@SAPEAV1@AEAVEntityContext@@_N@Z
+     */
     MCAPI static class SimulatedPlayer * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
+    /**
+     * @symbol ?_addMoveComponent@SimulatedPlayer@@AEAAXXZ
+     */
     MCAPI void _addMoveComponent();
+    /**
+     * @symbol ?_createNavigationResult@SimulatedPlayer@@AEBA?AUScriptNavigationResult@ScriptModuleMinecraft@@PEAVNavigationComponent@@@Z
+     */
     MCAPI struct ScriptModuleMinecraft::ScriptNavigationResult _createNavigationResult(class NavigationComponent *) const;
+    /**
+     * @symbol ?_getInputSpeed@SimulatedPlayer@@AEAAMXZ
+     */
     MCAPI float _getInputSpeed();
+    /**
+     * @symbol ?_startCooldown@SimulatedPlayer@@AEAAXXZ
+     */
     MCAPI void _startCooldown();
+    /**
+     * @symbol ?_trySwing@SimulatedPlayer@@AEAA_NXZ
+     */
     MCAPI bool _trySwing();
+    /**
+     * @symbol ?_updateMovement@SimulatedPlayer@@AEAAXXZ
+     */
     MCAPI void _updateMovement();
 
 private:

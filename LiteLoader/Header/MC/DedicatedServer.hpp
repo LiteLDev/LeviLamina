@@ -34,25 +34,87 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVER
+    /**
+     * @vtable -1
+     * @symbol ?getAutomationClient@DedicatedServer@@EEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ
+     */
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>> getAutomationClient() const;
+    /**
+     * @vtable -1
+     * @symbol ?getEditorManager@DedicatedServer@@UEBA?AV?$NonOwnerPointer@VIEditorManager@Editor@@@Bedrock@@XZ
+     */
     MCVAPI class Bedrock::NonOwnerPointer<class Editor::IEditorManager> getEditorManager() const;
+    /**
+     * @vtable -1
+     * @symbol ?getGameModule@DedicatedServer@@EEAAAEAVIGameModuleShared@@XZ
+     */
     MCVAPI class IGameModuleShared & getGameModule();
+    /**
+     * @vtable -1
+     * @symbol ?getPrimaryMinecraft@DedicatedServer@@EEAA?AV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@XZ
+     */
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
+    /**
+     * @vtable -1
+     * @symbol ?isDedicatedServer@DedicatedServer@@EEBA_NXZ
+     */
     MCVAPI bool isDedicatedServer() const;
+    /**
+     * @vtable -1
+     * @symbol ?isEditorModeEnabled@DedicatedServer@@EEBA_NXZ
+     */
     MCVAPI bool isEditorModeEnabled() const;
+    /**
+     * @vtable -1
+     * @symbol ?isEduMode@DedicatedServer@@EEBA_NXZ
+     */
     MCVAPI bool isEduMode() const;
+    /**
+     * @vtable -1
+     * @symbol ?onNetworkMaxPlayersChanged@DedicatedServer@@EEAAXI@Z
+     */
     MCVAPI void onNetworkMaxPlayersChanged(unsigned int);
+    /**
+     * @vtable -1
+     * @symbol ?requestServerShutdown@DedicatedServer@@EEAA_NXZ
+     */
     MCVAPI bool requestServerShutdown();
+    /**
+     * @vtable -1
+     * @symbol ?stop@DedicatedServer@@UEAA_NXZ
+     */
     MCVAPI bool stop();
+    /**
+     * @vtable -1
+     * @symbol ??1DedicatedServer@@UEAA@XZ
+     */
     MCVAPI ~DedicatedServer();
 #endif
+    /**
+     * @symbol ??0DedicatedServer@@QEAA@XZ
+     */
     MCAPI DedicatedServer();
+    /**
+     * @symbol ?runDedicatedServerLoop@DedicatedServer@@QEAA?AW4StartResult@1@AEAVFilePathManager@Core@@AEAVPropertiesSettings@@AEAVLevelSettings@@AEAVAllowListFile@@AEAV?$unique_ptr@VPermissionsFile@@U?$default_delete@VPermissionsFile@@@std@@@std@@@Z
+     */
     MCAPI enum DedicatedServer::StartResult runDedicatedServerLoop(class Core::FilePathManager &, class PropertiesSettings &, class LevelSettings &, class AllowListFile &, std::unique_ptr<class PermissionsFile> &);
+    /**
+     * @symbol ?start@DedicatedServer@@QEAA?AW4StartResult@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActivationArguments@Bedrock@@@Z
+     */
     MCAPI enum DedicatedServer::StartResult start(std::string const &, class Bedrock::ActivationArguments const &);
 
 //private:
+    /**
+     * @symbol ?_getLevelName@DedicatedServer@@AEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPropertiesSettings@@@Z
+     */
     MCAPI std::string const & _getLevelName(class PropertiesSettings const &) const;
+    /**
+     * @symbol ?initializeHttp@DedicatedServer@@AEAAXW4Implementation@Http@Bedrock@@@Z
+     */
     MCAPI void initializeHttp(enum Bedrock::Http::Implementation);
+    /**
+     * @symbol ?initializeLogging@DedicatedServer@@AEAAXXZ
+     */
     MCAPI void initializeLogging();
 
 private:

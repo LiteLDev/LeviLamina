@@ -30,19 +30,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RakTcpProxy();
+    /**
+     * @vtable 1
+     * @symbol ?start@RakTcpProxy@@UEAA_NGGG@Z
+     */
     virtual bool start(unsigned short, unsigned short, unsigned short);
+    /**
+     * @vtable 2
+     * @symbol ?connect@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+     */
     virtual struct RakNet::SystemAddress connect(std::string const &, unsigned short);
+    /**
+     * @vtable 3
+     * @symbol ?send@RakTcpProxy@@UEAAXPEBDIUSystemAddress@RakNet@@@Z
+     */
     virtual void send(char const *, unsigned int, struct RakNet::SystemAddress);
+    /**
+     * @vtable 4
+     * @symbol ?close@RakTcpProxy@@UEAAXUSystemAddress@RakNet@@@Z
+     */
     virtual void close(struct RakNet::SystemAddress);
+    /**
+     * @vtable 5
+     * @symbol ?packetsAvailable@RakTcpProxy@@UEAA_NXZ
+     */
     virtual bool packetsAvailable();
+    /**
+     * @vtable 6
+     * @symbol ?nextPacket@RakTcpProxy@@UEAAPEAUPacket@RakNet@@XZ
+     */
     virtual struct RakNet::Packet * nextPacket();
+    /**
+     * @vtable 7
+     * @symbol ?deallocatePacket@RakTcpProxy@@UEAAXPEAUPacket@RakNet@@@Z
+     */
     virtual void deallocatePacket(struct RakNet::Packet *);
+    /**
+     * @vtable 8
+     * @symbol ?nextCompletedConnectionAttempt@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
+     */
     virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
+    /**
+     * @vtable 9
+     * @symbol ?nextFailedConnectionAttempt@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
+     */
     virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
+    /**
+     * @vtable 10
+     * @symbol ?nextLostConnection@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
+     */
     virtual struct RakNet::SystemAddress nextLostConnection();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKTCPPROXY
 #endif
+    /**
+     * @symbol ??0RakTcpProxy@@QEAA@XZ
+     */
     MCAPI RakTcpProxy();
 
 };

@@ -33,14 +33,35 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABLOCKSTATETRANSFORMUTILS
 #endif
+    /**
+     * @symbol ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4CommonDirection@@@Z
+     */
     MCAPI static class Block const * transformBlock(class Block const &, enum CommonDirection);
+    /**
+     * @symbol ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Name@Facing@@@Z
+     */
     MCAPI static class Block const * transformBlock(class Block const &, enum Facing::Name);
+    /**
+     * @symbol ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
+     */
     MCAPI static class Block const * transformBlock(class Block const &, enum Rotation, enum Mirror);
 
 //private:
+    /**
+     * @symbol ?_mirror@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Mirror@@@Z
+     */
     MCAPI static enum CommonDirection _mirror(enum CommonDirection, enum Mirror);
+    /**
+     * @symbol ?_mirrorFrontBack@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
+     */
     MCAPI static enum CommonDirection _mirrorFrontBack(enum CommonDirection);
+    /**
+     * @symbol ?_mirrorLeftRight@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
+     */
     MCAPI static enum CommonDirection _mirrorLeftRight(enum CommonDirection);
+    /**
+     * @symbol ?_rotate@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Rotation@@@Z
+     */
     MCAPI static enum CommonDirection _rotate(enum CommonDirection, enum Rotation);
 
 private:

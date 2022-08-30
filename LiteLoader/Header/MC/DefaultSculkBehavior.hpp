@@ -28,11 +28,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?updateDecayDelay@DefaultSculkBehavior@@UEBAHH@Z
+     */
     virtual int updateDecayDelay(int) const;
+    /**
+     * @vtable 1
+     * @symbol ?updateFacingData@DefaultSculkBehavior@@UEBAHHAEBVBlock@@@Z
+     */
     virtual int updateFacingData(int, class Block const &) const;
+    /**
+     * @vtable 2
+     * @symbol ?canChangeBlockOnSpread@DefaultSculkBehavior@@UEBA_NXZ
+     */
     virtual bool canChangeBlockOnSpread() const;
+    /**
+     * @vtable 3
+     * @symbol ?attemptSpreadVeins@DefaultSculkBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
+     */
     virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
+    /**
+     * @vtable 4
+     * @symbol ?attemptUseCharge@DefaultSculkBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
+     */
     virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
+    /**
+     * @vtable 5
+     * @symbol ?onDischarged@DefaultSculkBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTSCULKBEHAVIOR
 #endif

@@ -31,13 +31,45 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BigEndianStringByteInput();
+    /**
+     * @vtable 3
+     * @symbol ?readFloat@BigEndianStringByteInput@@UEAAMXZ
+     */
     virtual float readFloat();
+    /**
+     * @vtable 4
+     * @symbol ?readDouble@BigEndianStringByteInput@@UEAANXZ
+     */
     virtual double readDouble();
+    /**
+     * @vtable 6
+     * @symbol ?readShort@BigEndianStringByteInput@@UEAAFXZ
+     */
     virtual short readShort();
+    /**
+     * @vtable 7
+     * @symbol ?readInt@BigEndianStringByteInput@@UEAAHXZ
+     */
     virtual int readInt();
+    /**
+     * @vtable 8
+     * @symbol ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
+     */
     virtual __int64 readLongLong();
+    /**
+     * @vtable 9
+     * @symbol ?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
+     */
     virtual bool readBytes(void *, unsigned __int64);
+    /**
+     * @vtable 11
+     * @symbol ?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
+     */
     virtual bool readBigEndianBytes(void *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
 #endif

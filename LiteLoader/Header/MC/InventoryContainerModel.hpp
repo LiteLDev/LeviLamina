@@ -31,25 +31,87 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
+     */
     virtual void containerContentChanged(int);
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~InventoryContainerModel();
+    /**
+     * @vtable 2
+     * @symbol ?postInit@InventoryContainerModel@@UEAAXXZ
+     */
     virtual void postInit();
+    /**
+     * @vtable 3
+     * @symbol ?releaseResources@InventoryContainerModel@@UEAAXXZ
+     */
     virtual void releaseResources();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?getContainerWeakRef@InventoryContainerModel@@UEBA?AVContainerWeakRef@@XZ
+     */
     virtual class ContainerWeakRef getContainerWeakRef() const;
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 14
+     * @symbol ?isValid@InventoryContainerModel@@UEAA_NXZ
+     */
     virtual bool isValid();
+    /**
+     * @vtable 15
+     * @symbol __unk_vfn_15
+     */
     virtual void __unk_vfn_15();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 20
+     * @symbol ?_getContainer@InventoryContainerModel@@EEBAPEAVContainer@@XZ
+     */
     virtual class Container * _getContainer() const;
+    /**
+     * @vtable 21
+     * @symbol ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
+     */
     virtual int _getContainerOffset() const;
+    /**
+     * @vtable 22
+     * @symbol ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
+     */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTAINERMODEL
 #endif
+    /**
+     * @symbol ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
+     */
     MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player &);
 
 //private:
+    /**
+     * @symbol ?_refreshSlot@InventoryContainerModel@@AEAAXH@Z
+     */
     MCAPI void _refreshSlot(int);
 
 private:

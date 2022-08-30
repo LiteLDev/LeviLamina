@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREVEINIFIER
 #endif
+    /**
+     * @symbol ??0OreVeinifier@@QEAA@AEBVOreVeinifierNoises@@@Z
+     */
     MCAPI OreVeinifier(class OreVeinifierNoises const &);
+    /**
+     * @symbol ?fillNoiseAtPos@OreVeinifier@@QEAAXAEBVVec3@@HM@Z
+     */
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
+    /**
+     * @symbol ?getVeinBlockOrFallback@OreVeinifier@@QEBAPEBVBlock@@VVec3@@PEBV2@@Z
+     */
     MCAPI class Block const * getVeinBlockOrFallback(class Vec3, class Block const *) const;
+    /**
+     * @symbol ?resetAndGetInterpolators@OreVeinifier@@QEAA?AV?$array@PEAVNoiseCellInterpolator@@$02@std@@XZ
+     */
     MCAPI class std::array<class NoiseCellInterpolator *, 3> resetAndGetInterpolators();
 
 };

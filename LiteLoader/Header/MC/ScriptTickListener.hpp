@@ -29,15 +29,46 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScriptTickListener();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?onLevelRemovedPlayer@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+     */
     virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol ?onLevelTick@ScriptTickListener@@UEAA?AW4EventResult@@XZ
+     */
     virtual enum EventResult onLevelTick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
 #endif
+    /**
+     * @symbol ??0ScriptTickListener@@QEAA@AEAVServerLevel@@AEAVScriptEngine@Scripting@@AEAVScriptFormPromiseTracker@@AEAVScriptCommandProcessor@@@Z
+     */
     MCAPI ScriptTickListener(class ServerLevel &, class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptCommandProcessor &);
 
 };

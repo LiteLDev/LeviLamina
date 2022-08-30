@@ -32,20 +32,53 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOG
 #endif
+    /**
+     * @symbol ?logEvent@CrashDumpLog@@SAXAEBUCrashDumpEventData@@@Z
+     */
     MCAPI static void logEvent(struct CrashDumpEventData const &);
+    /**
+     * @symbol ?logFrame@CrashDumpLog@@SAXAEBUCrashDumpFrameData@@@Z
+     */
     MCAPI static void logFrame(struct CrashDumpFrameData const &);
+    /**
+     * @symbol ?logKeyValue@CrashDumpLog@@SAXAEBUCrashDumpKeyValueData@@@Z
+     */
     MCAPI static void logKeyValue(struct CrashDumpKeyValueData const &);
+    /**
+     * @symbol ?setAssertMessage@CrashDumpLog@@SAXPEBDH00@Z
+     */
     MCAPI static void setAssertMessage(char const *, int, char const *, char const *);
+    /**
+     * @symbol ?setDeviceSessionID@CrashDumpLog@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI static bool setDeviceSessionID(std::string const &);
+    /**
+     * @symbol ?setGameVersion@CrashDumpLog@@SAXPEBD@Z
+     */
     MCAPI static void setGameVersion(char const *);
+    /**
+     * @symbol ?setPlatform@CrashDumpLog@@SAXPEBD@Z
+     */
     MCAPI static void setPlatform(char const *);
+    /**
+     * @symbol ?setTotalMemory@CrashDumpLog@@SAX_K@Z
+     */
     MCAPI static void setTotalMemory(unsigned __int64);
+    /**
+     * @symbol ?startCrashDumpLogThread@CrashDumpLog@@SA_NXZ
+     */
     MCAPI static bool startCrashDumpLogThread();
+    /**
+     * @symbol ?stopCrashDumpLogThread@CrashDumpLog@@SAXXZ
+     */
     MCAPI static void stopCrashDumpLogThread();
 
 //protected:
 
 //private:
+    /**
+     * @symbol ?crashDumpLogThreadRoutine@CrashDumpLog@@CAXXZ
+     */
     MCAPI static void crashDumpLogThreadRoutine();
 
 protected:

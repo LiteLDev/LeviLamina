@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLLISIONBOXDEFINITION
 #endif
+    /**
+     * @symbol ?setHeight@CollisionBoxDefinition@@QEAAXAEBM@Z
+     */
     MCAPI void setHeight(float const &);
+    /**
+     * @symbol ?setWidth@CollisionBoxDefinition@@QEAAXAEBM@Z
+     */
     MCAPI void setWidth(float const &);
+    /**
+     * @symbol ?buildSchema@CollisionBoxDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCollisionBoxDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CollisionBoxDefinition>> &);
 MCAPI static float const mBoxEpsilon;
 

@@ -29,6 +29,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETOBSERVER
+    /**
+     * @vtable -1
+     * @symbol ??1IPacketObserver@@UEAA@XZ
+     */
     MCVAPI ~IPacketObserver();
 #endif
 

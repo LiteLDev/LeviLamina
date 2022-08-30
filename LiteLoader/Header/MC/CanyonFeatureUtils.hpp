@@ -20,6 +20,9 @@ namespace CanyonFeatureUtils {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?getCurrentConfiguration@CanyonFeatureUtils@@YAAEBUCanyonConfiguration@1@W4TerrainGenVersion@1@@Z
+     */
     MCAPI struct CanyonFeatureUtils::CanyonConfiguration const & getCurrentConfiguration(enum CanyonFeatureUtils::TerrainGenVersion);
 
 };

@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDNAME
 #endif
+    /**
+     * @symbol ??1CommandName@@QEAA@XZ
+     */
     MCAPI ~CommandName();
 
 };

@@ -20,7 +20,13 @@ namespace MineshaftUtil {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?_isLava@MineshaftUtil@@YA_NAEBVBlockLegacy@@@Z
+     */
     MCAPI bool _isLava(class BlockLegacy const &);
+    /**
+     * @symbol ?isCavesAndCliffs@MineshaftUtil@@YA_NAEBVLevel@@@Z
+     */
     MCAPI bool isCavesAndCliffs(class Level const &);
 
 };

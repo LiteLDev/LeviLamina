@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RepeatUntilFailureNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@RepeatUntilFailureNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
+    /**
+     * @vtable 2
+     * @symbol ?initializeFromDefinition@RepeatUntilFailureNode@@MEAAXAEAVActor@@@Z
+     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILURENODE
 #endif
+    /**
+     * @symbol ??0RepeatUntilFailureNode@@QEAA@XZ
+     */
     MCAPI RepeatUntilFailureNode();
 
 };

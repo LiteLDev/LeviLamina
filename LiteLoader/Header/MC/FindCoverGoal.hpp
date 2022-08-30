@@ -30,17 +30,55 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FindCoverGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@FindCoverGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@FindCoverGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@FindCoverGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@FindCoverGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@FindCoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDCOVERGOAL
 #endif
+    /**
+     * @symbol ??0FindCoverGoal@@QEAA@AEAVMob@@MM@Z
+     */
     MCAPI FindCoverGoal(class Mob &, float, float);
+    /**
+     * @symbol ?getMob@FindCoverGoal@@QEBAAEBVMob@@XZ
+     */
     MCAPI class Mob const & getMob() const;
 
 };

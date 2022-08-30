@@ -31,10 +31,25 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORBOOTSTRAPPER
 #endif
+    /**
+     * @symbol ?createEditorManager@EditorBootstrapper@@QEBA?AV?$unique_ptr@VIEditorManager@Editor@@U?$default_delete@VIEditorManager@Editor@@@std@@@std@@XZ
+     */
     MCAPI std::unique_ptr<class Editor::IEditorManager> createEditorManager() const;
+    /**
+     * @symbol ?getRequestedMap@EditorBootstrapper@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string const & getRequestedMap() const;
+    /**
+     * @symbol ?hasRequestedMap@EditorBootstrapper@@QEBA_NXZ
+     */
     MCAPI bool hasRequestedMap() const;
+    /**
+     * @symbol ?isEditorModeEnabled@EditorBootstrapper@@QEBA_NXZ
+     */
     MCAPI bool isEditorModeEnabled() const;
+    /**
+     * @symbol ?processActivationArguments@EditorBootstrapper@@QEAAXAEBVActivationArguments@Bedrock@@@Z
+     */
     MCAPI void processActivationArguments(class Bedrock::ActivationArguments const &);
 
 };

@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ContentTierManager();
+    /**
+     * @vtable 1
+     * @symbol ?getContentTierInfo@ContentTierManager@@UEBA?AVContentTierInfo@@XZ
+     */
     virtual class ContentTierInfo getContentTierInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERMANAGER
 #endif
+    /**
+     * @symbol ??0ContentTierManager@@QEAA@XZ
+     */
     MCAPI ContentTierManager();
 
 };

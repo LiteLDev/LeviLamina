@@ -32,7 +32,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~InverterDefinition();
+    /**
+     * @vtable 1
+     * @symbol ?load@InverterDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVERTERDEFINITION
 #endif

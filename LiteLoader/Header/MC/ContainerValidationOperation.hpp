@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONOPERATION
 #endif
+    /**
+     * @symbol ??0ContainerValidationOperation@@QEAA@W4ContainerValidationOperationType@@AEBUContainerValidationSlotData@@HAEBVItemStack@@@Z
+     */
     MCAPI ContainerValidationOperation(enum ContainerValidationOperationType, struct ContainerValidationSlotData const &, int, class ItemStack const &);
 
 };

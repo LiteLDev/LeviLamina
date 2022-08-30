@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORACQUIREDITEMEVENT
 #endif
+    /**
+     * @symbol ??0ActorAcquiredItemEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const &);
+    /**
+     * @symbol ??1ActorAcquiredItemEvent@@QEAA@XZ
+     */
     MCAPI ~ActorAcquiredItemEvent();
 
 };

@@ -33,13 +33,28 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCESIGNATURE
 #endif
+    /**
+     * @symbol ?areKnownFilesValid@ResourceSignature@@QEAA_NAEBVPackAccessStrategy@@@Z
+     */
     MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
+    /**
+     * @symbol ??1ResourceSignature@@QEAA@XZ
+     */
     MCAPI ~ResourceSignature();
 MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
 //private:
+    /**
+     * @symbol ?_areKnownFilesValid@ResourceSignature@@AEAA_NAEBVPackAccessStrategy@@_N@Z
+     */
     MCAPI bool _areKnownFilesValid(class PackAccessStrategy const &, bool);
+    /**
+     * @symbol ?_checkSignedFiles@ResourceSignature@@AEBA_NAEBVPackAccessStrategy@@@Z
+     */
     MCAPI bool _checkSignedFiles(class PackAccessStrategy const &) const;
+    /**
+     * @symbol ?_loadSignaturesFile@ResourceSignature@@AEAAXAEBVPath@Core@@AEBVPackAccessStrategy@@@Z
+     */
     MCAPI void _loadSignaturesFile(class Core::Path const &, class PackAccessStrategy const &);
 
 private:

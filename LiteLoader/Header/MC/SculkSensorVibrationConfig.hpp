@@ -29,9 +29,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SculkSensorVibrationConfig();
+    /**
+     * @vtable 1
+     * @symbol ?onSignalReceive@SculkSensorVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
+     */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
+    /**
+     * @vtable 2
+     * @symbol ?isValidVibration@VibrationListenerConfig@@UEAA_NAEBVGameEvent@@@Z
+     */
     virtual bool isValidVibration(class GameEvent const &);
+    /**
+     * @vtable 3
+     * @symbol ?shouldListen@SculkSensorVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
+     */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORVIBRATIONCONFIG
 #endif

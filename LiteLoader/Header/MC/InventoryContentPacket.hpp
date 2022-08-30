@@ -30,15 +30,44 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~InventoryContentPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@InventoryContentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@InventoryContentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@InventoryContentPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@InventoryContentPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTENTPACKET
 #endif
+    /**
+     * @symbol ??0InventoryContentPacket@@QEAA@XZ
+     */
     MCAPI InventoryContentPacket();
+    /**
+     * @symbol ??0InventoryContentPacket@@QEAA@W4ContainerID@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
+     */
     MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const &);
+    /**
+     * @symbol ?fromPlayerInventoryId@InventoryContentPacket@@SA?AV1@W4ContainerID@@AEAVPlayer@@@Z
+     */
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player &);
 
 };

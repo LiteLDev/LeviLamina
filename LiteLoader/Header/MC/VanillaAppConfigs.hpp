@@ -32,34 +32,150 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~VanillaAppConfigs();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol __unk_vfn_10
+     */
     virtual void __unk_vfn_10();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 13
+     * @symbol __unk_vfn_13
+     */
     virtual void __unk_vfn_13();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 15
+     * @symbol __unk_vfn_15
+     */
     virtual void __unk_vfn_15();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 17
+     * @symbol __unk_vfn_17
+     */
     virtual void __unk_vfn_17();
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 20
+     * @symbol __unk_vfn_20
+     */
     virtual void __unk_vfn_20();
+    /**
+     * @vtable 22
+     * @symbol __unk_vfn_22
+     */
     virtual void __unk_vfn_22();
+    /**
+     * @vtable 24
+     * @symbol __unk_vfn_24
+     */
     virtual void __unk_vfn_24();
+    /**
+     * @vtable 25
+     * @symbol __unk_vfn_25
+     */
     virtual void __unk_vfn_25();
+    /**
+     * @vtable 26
+     * @symbol __unk_vfn_26
+     */
     virtual void __unk_vfn_26();
+    /**
+     * @vtable 27
+     * @symbol __unk_vfn_27
+     */
     virtual void __unk_vfn_27();
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 31
+     * @symbol __unk_vfn_31
+     */
     virtual void __unk_vfn_31();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAAPPCONFIGS
 #endif

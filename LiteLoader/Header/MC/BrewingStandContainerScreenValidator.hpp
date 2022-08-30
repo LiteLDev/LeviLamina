@@ -30,9 +30,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BrewingStandContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERSCREENVALIDATOR
 #endif
+    /**
+     * @symbol ??0BrewingStandContainerScreenValidator@@QEAA@XZ
+     */
     MCAPI BrewingStandContainerScreenValidator();
 
 };

@@ -32,56 +32,235 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 8
+     * @symbol ?reloadHardcoded@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 9
+     * @symbol ?reloadHardcodedClient@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~Guardian();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 114
+     * @symbol ?setTarget@Guardian@@UEAAXPEAVActor@@@Z
+     */
     virtual void setTarget(class Actor *);
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 270
+     * @symbol ?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 273
+     * @symbol ?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 274
+     * @symbol ?addAdditionalSaveData@Guardian@@MEBAXAEAVCompoundTag@@@Z
+     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 284
+     * @symbol ?_onSizeUpdated@Guardian@@EEAAXXZ
+     */
     virtual void _onSizeUpdated();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 300
+     * @symbol ?aiStep@Guardian@@UEAAXXZ
+     */
     virtual void aiStep();
+    /**
+     * @vtable 305
+     * @symbol ?checkSpawnRules@Guardian@@UEAA_N_N@Z
+     */
     virtual bool checkSpawnRules(bool);
+    /**
+     * @vtable 313
+     * @symbol __unk_vfn_313
+     */
     virtual void __unk_vfn_313();
+    /**
+     * @vtable 314
+     * @symbol ?getMaxHeadXRot@Guardian@@UEAAMXZ
+     */
     virtual float getMaxHeadXRot();
+    /**
+     * @vtable 317
+     * @symbol __unk_vfn_317
+     */
     virtual void __unk_vfn_317();
+    /**
+     * @vtable 351
+     * @symbol __unk_vfn_351
+     */
     virtual void __unk_vfn_351();
+    /**
+     * @vtable 365
+     * @symbol __unk_vfn_365
+     */
     virtual void __unk_vfn_365();
+    /**
+     * @vtable 367
+     * @symbol ?isDarkEnoughToSpawn@Guardian@@MEBA_NXZ
+     */
     virtual bool isDarkEnoughToSpawn() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIAN
+    /**
+     * @vtable -1
+     * @symbol ?canSeeInvisible@Guardian@@UEBA_NXZ
+     */
     MCVAPI bool canSeeInvisible() const;
 #endif
+    /**
+     * @symbol ??0Guardian@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI Guardian(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?getAttackDuration@Guardian@@QEAAHXZ
+     */
     MCAPI int getAttackDuration();
+    /**
+     * @symbol ?getMoveEyeVector@Guardian@@QEAA?AVVec3@@XZ
+     */
     MCAPI class Vec3 getMoveEyeVector();
+    /**
+     * @symbol ?isElder@Guardian@@QEBA_NXZ
+     */
     MCAPI bool isElder() const;
+    /**
+     * @symbol ?isElderGhost@Guardian@@QEBA_NXZ
+     */
     MCAPI bool isElderGhost() const;
+    /**
+     * @symbol ?preAiStep@Guardian@@QEAAXXZ
+     */
     MCAPI void preAiStep();
+    /**
+     * @symbol ?setAttackTime@Guardian@@QEAAXH@Z
+     */
     MCAPI void setAttackTime(int);
+    /**
+     * @symbol ?setElder@Guardian@@QEAAX_N@Z
+     */
     MCAPI void setElder(bool);
 
 //protected:
+    /**
+     * @symbol ?registerLoopingSounds@Guardian@@IEAAXXZ
+     */
     MCAPI void registerLoopingSounds();
 
 //private:

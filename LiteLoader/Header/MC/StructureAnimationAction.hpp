@@ -30,15 +30,43 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StructureAnimationAction();
+    /**
+     * @vtable 1
+     * @symbol ?execute@StructureAnimationAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+     */
     virtual void execute(class ServerLevel &, class Dimension &);
+    /**
+     * @vtable 2
+     * @symbol ?serialize@StructureAnimationAction@@UEAAXAEAVCompoundTag@@@Z
+     */
     virtual void serialize(class CompoundTag &);
+    /**
+     * @vtable 3
+     * @symbol ??8StructureAnimationAction@@UEBA_NAEAVIRequestAction@@@Z
+     */
     virtual bool operator==(class IRequestAction &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREANIMATIONACTION
 #endif
+    /**
+     * @symbol ??0StructureAnimationAction@@QEAA@V?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+     */
     MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
+    /**
+     * @symbol ??0StructureAnimationAction@@QEAA@AEBVStructureSettings@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI StructureAnimationAction(class StructureSettings const &, class AutomaticID<class Dimension, int>, class BlockPos const &, std::string const &);
+    /**
+     * @symbol ?isValidTag@StructureAnimationAction@@SA_NAEBVCompoundTag@@@Z
+     */
     MCAPI static bool isValidTag(class CompoundTag const &);
+    /**
+     * @symbol ?load@StructureAnimationAction@@SA?AV?$unique_ptr@VStructureAnimationAction@@U?$default_delete@VStructureAnimationAction@@@std@@@std@@AEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     */
     MCAPI static std::unique_ptr<class StructureAnimationAction> load(class CompoundTag const &, std::string const &);
 
 };

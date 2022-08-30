@@ -28,8 +28,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSIONSTARTEDEVENT
 #endif
+    /**
+     * @symbol ??0ExplosionStartedEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const &);
+    /**
+     * @symbol ??0ExplosionStartedEvent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent &&);
+    /**
+     * @symbol ??1ExplosionStartedEvent@@QEAA@XZ
+     */
     MCAPI ~ExplosionStartedEvent();
 
 };

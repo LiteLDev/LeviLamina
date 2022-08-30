@@ -31,7 +31,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGCOMPONENT
 #endif
+    /**
+     * @symbol ??0BlockQueuedTickingComponent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent &&);
+    /**
+     * @symbol ??1BlockQueuedTickingComponent@@QEAA@XZ
+     */
     MCAPI ~BlockQueuedTickingComponent();
 
 };

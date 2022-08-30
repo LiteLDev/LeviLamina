@@ -29,21 +29,85 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTLISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onEvent@ItemEventListener@@UEAA?AW4EventResult@@AEBUItemNotificationEvent@@@Z
+     */
     MCVAPI enum EventResult onEvent(struct ItemNotificationEvent const &);
+    /**
+     * @vtable -1
+     * @symbol ?onInventoryItemClosed@ItemEventListener@@UEAA?AW4EventResult@@XZ
+     */
     MCVAPI enum EventResult onInventoryItemClosed();
+    /**
+     * @vtable -1
+     * @symbol ?onInventoryItemCraftedAutomaticallyByRecipe@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
+     */
     MCVAPI enum EventResult onInventoryItemCraftedAutomaticallyByRecipe(class ItemStackBase const &);
+    /**
+     * @vtable -1
+     * @symbol ?onInventoryItemOpened@ItemEventListener@@UEAA?AW4EventResult@@_N@Z
+     */
     MCVAPI enum EventResult onInventoryItemOpened(bool);
+    /**
+     * @vtable -1
+     * @symbol ?onInventoryLayoutSelected@ItemEventListener@@UEAA?AW4EventResult@@HH@Z
+     */
     MCVAPI enum EventResult onInventoryLayoutSelected(int, int);
+    /**
+     * @vtable -1
+     * @symbol ?onItemDefinitionEventTriggered@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI enum EventResult onItemDefinitionEventTriggered(class ItemStackBase const &, std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?onItemModifiedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
+     */
     MCVAPI enum EventResult onItemModifiedActor(class ItemStackBase const &, class Actor const &);
+    /**
+     * @vtable -1
+     * @symbol ?onItemSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
+     */
     MCVAPI enum EventResult onItemSelected(class ItemStackBase const &);
+    /**
+     * @vtable -1
+     * @symbol ?onItemSelectedSlot@ItemEventListener@@UEAA?AW4EventResult@@H@Z
+     */
     MCVAPI enum EventResult onItemSelectedSlot(int);
+    /**
+     * @vtable -1
+     * @symbol ?onItemSmelted@ItemEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@1@Z
+     */
     MCVAPI enum EventResult onItemSmelted(class Player &, class ItemDescriptor const &, class ItemDescriptor const &);
+    /**
+     * @vtable -1
+     * @symbol ?onItemSpawnedActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBVActor@@@Z
+     */
     MCVAPI enum EventResult onItemSpawnedActor(class ItemStackBase const &, class Actor const &);
+    /**
+     * @vtable -1
+     * @symbol ?onItemSpawningActor@ItemEventListener@@UEAA?AW4EventResult@@AEBVActor@@@Z
+     */
     MCVAPI enum EventResult onItemSpawningActor(class Actor const &);
+    /**
+     * @vtable -1
+     * @symbol ?onItemTransferredFromContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI enum EventResult onItemTransferredFromContainer(class ItemStackBase const &, std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?onItemTransferredToContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI enum EventResult onItemTransferredToContainer(class ItemStackBase const &, std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPreviewItemPopulatedInContainer@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCVAPI enum EventResult onPreviewItemPopulatedInContainer(class ItemStackBase const &, std::string const &);
+    /**
+     * @vtable -1
+     * @symbol ?onRecipeSelected@ItemEventListener@@UEAA?AW4EventResult@@AEBVItemStackBase@@@Z
+     */
     MCVAPI enum EventResult onRecipeSelected(class ItemStackBase const &);
 #endif
 

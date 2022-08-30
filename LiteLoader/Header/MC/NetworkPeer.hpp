@@ -64,11 +64,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NetworkPeer();
+    /**
+     * @vtable 1
+     * @symbol ?sendPacket@WebRTCNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
+     */
     virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility) = 0;
+    /**
+     * @vtable 2
+     * @symbol ?receivePacket@WebRTCNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+     */
     virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &) = 0;
+    /**
+     * @vtable 3
+     * @symbol ?getNetworkStatus@WebRTCNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+     */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
+    /**
+     * @vtable 4
+     * @symbol ?update@NetworkPeer@@UEAAXXZ
+     */
     virtual void update();
+    /**
+     * @vtable 5
+     * @symbol ?flush@NetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
+     */
     virtual void flush(class std::function<void (void)> &&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPEER
 #endif

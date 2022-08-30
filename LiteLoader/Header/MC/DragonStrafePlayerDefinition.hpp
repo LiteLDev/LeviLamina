@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSTRAFEPLAYERDEFINITION
 #endif
+    /**
+     * @symbol ??0DragonStrafePlayerDefinition@@QEAA@XZ
+     */
     MCAPI DragonStrafePlayerDefinition();
+    /**
+     * @symbol ?initialize@DragonStrafePlayerDefinition@@QEAAXAEAVEntityContext@@AEAVDragonStrafePlayerGoal@@@Z
+     */
     MCAPI void initialize(class EntityContext &, class DragonStrafePlayerGoal &);
+    /**
+     * @symbol ?buildSchema@DragonStrafePlayerDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDragonStrafePlayerDefinition@@@JsonUtil@@@3@@Z
+     */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonStrafePlayerDefinition>> &);
 
 };

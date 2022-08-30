@@ -32,63 +32,272 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 8
+     * @symbol ?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~Slime();
+    /**
+     * @vtable 18
+     * @symbol ?remove@Slime@@UEAAXXZ
+     */
     virtual void remove();
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 49
+     * @symbol ?normalTick@Slime@@UEAAXXZ
+     */
     virtual void normalTick();
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 80
+     * @symbol ?getShadowRadius@Slime@@UEBAMXZ
+     */
     virtual float getShadowRadius() const;
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 89
+     * @symbol ?playerTouch@Slime@@UEAAXAEAVPlayer@@@Z
+     */
     virtual void playerTouch(class Player &);
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 191
+     * @symbol ?onSynchedDataUpdate@Slime@@UEAAXH@Z
+     */
     virtual void onSynchedDataUpdate(int);
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 273
+     * @symbol ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 274
+     * @symbol ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
+     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 300
+     * @symbol ?aiStep@Slime@@UEAAXXZ
+     */
     virtual void aiStep();
+    /**
+     * @vtable 305
+     * @symbol ?checkSpawnRules@Slime@@UEAA_N_N@Z
+     */
     virtual bool checkSpawnRules(bool);
+    /**
+     * @vtable 313
+     * @symbol __unk_vfn_313
+     */
     virtual void __unk_vfn_313();
+    /**
+     * @vtable 317
+     * @symbol __unk_vfn_317
+     */
     virtual void __unk_vfn_317();
+    /**
+     * @vtable 349
+     * @symbol ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
+     */
     virtual float _getWalkTargetValue(class BlockPos const &);
+    /**
+     * @vtable 351
+     * @symbol __unk_vfn_351
+     */
     virtual void __unk_vfn_351();
+    /**
+     * @vtable 365
+     * @symbol __unk_vfn_365
+     */
     virtual void __unk_vfn_365();
+    /**
+     * @vtable 368
+     * @symbol ?canDealDamage@Slime@@UEAA_NXZ
+     */
     virtual bool canDealDamage();
+    /**
+     * @vtable 369
+     * @symbol ?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ
+     */
     virtual enum LevelSoundEvent getSquishSound();
+    /**
+     * @vtable 370
+     * @symbol ?setSlimeSize@Slime@@MEAAXH@Z
+     */
     virtual void setSlimeSize(int);
+    /**
+     * @vtable 371
+     * @symbol ?doPlayJumpSound@Slime@@MEAA_NXZ
+     */
     virtual bool doPlayJumpSound();
+    /**
+     * @vtable 372
+     * @symbol ?doPlayLandSound@Slime@@MEAA_NXZ
+     */
     virtual bool doPlayLandSound();
+    /**
+     * @vtable 373
+     * @symbol ?playJumpSound@Slime@@MEAAXXZ
+     */
     virtual void playJumpSound();
+    /**
+     * @vtable 374
+     * @symbol ?playLandSound@Slime@@MEAAXXZ
+     */
     virtual void playLandSound();
+    /**
+     * @vtable 375
+     * @symbol ?decreaseSquish@Slime@@MEAAXXZ
+     */
     virtual void decreaseSquish();
+    /**
+     * @vtable 376
+     * @symbol ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
+     */
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIME
+    /**
+     * @vtable -1
+     * @symbol ?useNewAi@Slime@@UEBA_NXZ
+     */
     MCVAPI bool useNewAi() const;
 #endif
+    /**
+     * @symbol ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI Slime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?getOldSquishValue@Slime@@QEBAMXZ
+     */
     MCAPI float getOldSquishValue() const;
+    /**
+     * @symbol ?getSlimeSize@Slime@@QEBAHXZ
+     */
     MCAPI int getSlimeSize() const;
+    /**
+     * @symbol ?getSquishValue@Slime@@QEBAMXZ
+     */
     MCAPI float getSquishValue() const;
+    /**
+     * @symbol ?getSpawnRulesCallback@Slime@@SA?AV?$function@$$A6A_NAEBVSpawnConditions@@AEAVBlockSource@@@Z@std@@XZ
+     */
     MCAPI static class std::function<bool (class SpawnConditions const &, class BlockSource &)> getSpawnRulesCallback();
 
 //protected:
+    /**
+     * @symbol ?justJumped@Slime@@IEAAXXZ
+     */
     MCAPI void justJumped();
+    /**
+     * @symbol ?justLanded@Slime@@IEAAXXZ
+     */
     MCAPI void justLanded();
 
 protected:

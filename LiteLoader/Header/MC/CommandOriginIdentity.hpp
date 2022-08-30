@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINIDENTITY
 #endif
+    /**
+     * @symbol ??1CommandOriginIdentity@@QEAA@XZ
+     */
     MCAPI ~CommandOriginIdentity();
 
 };

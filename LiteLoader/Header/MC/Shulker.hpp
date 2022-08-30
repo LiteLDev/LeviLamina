@@ -32,75 +32,310 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 8
+     * @symbol ?reloadHardcoded@Shulker@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~Shulker();
+    /**
+     * @vtable 19
+     * @symbol ?setPos@Shulker@@UEAAXAEBVVec3@@@Z
+     */
     virtual void setPos(class Vec3 const &);
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 49
+     * @symbol ?normalTick@Shulker@@UEAAXXZ
+     */
     virtual void normalTick();
+    /**
+     * @vtable 58
+     * @symbol ?isInWall@Shulker@@UEBA_NXZ
+     */
     virtual bool isInWall() const;
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 80
+     * @symbol ?getShadowRadius@Shulker@@UEBAMXZ
+     */
     virtual float getShadowRadius() const;
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 113
+     * @symbol ?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z
+     */
     virtual bool canAttack(class Actor *, bool) const;
+    /**
+     * @vtable 132
+     * @symbol ?shouldRender@Shulker@@UEBA_NXZ
+     */
     virtual bool shouldRender() const;
+    /**
+     * @vtable 135
+     * @symbol ?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z
+     */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /**
+     * @vtable 143
+     * @symbol ?getPickRadius@Shulker@@UEAAMXZ
+     */
     virtual float getPickRadius();
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 267
+     * @symbol ?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z
+     */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 270
+     * @symbol ?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 273
+     * @symbol ?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 274
+     * @symbol ?addAdditionalSaveData@Shulker@@UEBAXAEAVCompoundTag@@@Z
+     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 284
+     * @symbol ?_onSizeUpdated@Shulker@@EEAAXXZ
+     */
     virtual void _onSizeUpdated();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 297
+     * @symbol ?travel@Shulker@@UEAAXMMM@Z
+     */
     virtual void travel(float, float, float);
+    /**
+     * @vtable 300
+     * @symbol ?aiStep@Shulker@@UEAAXXZ
+     */
     virtual void aiStep();
+    /**
+     * @vtable 305
+     * @symbol ?checkSpawnRules@Shulker@@UEAA_N_N@Z
+     */
     virtual bool checkSpawnRules(bool);
+    /**
+     * @vtable 313
+     * @symbol __unk_vfn_313
+     */
     virtual void __unk_vfn_313();
+    /**
+     * @vtable 314
+     * @symbol ?getMaxHeadXRot@Shulker@@UEAAMXZ
+     */
     virtual float getMaxHeadXRot();
+    /**
+     * @vtable 317
+     * @symbol __unk_vfn_317
+     */
     virtual void __unk_vfn_317();
+    /**
+     * @vtable 322
+     * @symbol ?getArmorValue@Shulker@@UEBAHXZ
+     */
     virtual int getArmorValue() const;
+    /**
+     * @vtable 351
+     * @symbol __unk_vfn_351
+     */
     virtual void __unk_vfn_351();
+    /**
+     * @vtable 356
+     * @symbol ?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
+    /**
+     * @vtable 365
+     * @symbol __unk_vfn_365
+     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKER
+    /**
+     * @vtable -1
+     * @symbol ?breaksFallingBlocks@Shulker@@UEBA_NXZ
+     */
     MCVAPI bool breaksFallingBlocks() const;
+    /**
+     * @vtable -1
+     * @symbol ?isLeashableType@Shulker@@UEAA_NXZ
+     */
     MCVAPI bool isLeashableType();
+    /**
+     * @vtable -1
+     * @symbol ?useNewAi@Shulker@@UEBA_NXZ
+     */
     MCVAPI bool useNewAi() const;
 #endif
+    /**
+     * @symbol ??0Shulker@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI Shulker(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?postNormalTick@Shulker@@QEAAXXZ
+     */
     MCAPI void postNormalTick();
 MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
 MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
+    /**
+     * @symbol ?setShulkerAttachPos@Shulker@@SAXAEAVSynchedActorData@@AEBVBlockPos@@@Z
+     */
     MCAPI static void setShulkerAttachPos(class SynchedActorData &, class BlockPos const &);
 
 //protected:
+    /**
+     * @symbol ?_canOpenLidAt@Shulker@@IEBA_NVBlockPos@@E@Z
+     */
     MCAPI bool _canOpenLidAt(class BlockPos, unsigned char) const;
+    /**
+     * @symbol ?_setPeekAmount@Shulker@@KAXAEAVSynchedActorData@@H@Z
+     */
     MCAPI static void _setPeekAmount(class SynchedActorData &, int);
 
 //private:
+    /**
+     * @symbol ?_calculateBB@Shulker@@AEAAXXZ
+     */
     MCAPI void _calculateBB();
+    /**
+     * @symbol ?_isPosOccupiedByOtherShulker@Shulker@@AEBA_NVBlockPos@@@Z
+     */
     MCAPI bool _isPosOccupiedByOtherShulker(class BlockPos) const;
+    /**
+     * @symbol ?_isValidAttach@Shulker@@AEAA_NVBlockPos@@E@Z
+     */
     MCAPI bool _isValidAttach(class BlockPos, unsigned char);
+    /**
+     * @symbol ?_peekAmountTick@Shulker@@AEAAXXZ
+     */
     MCAPI void _peekAmountTick();
+    /**
+     * @symbol ?_setAttachFace@Shulker@@AEAAXE@Z
+     */
     MCAPI void _setAttachFace(unsigned char);
+    /**
+     * @symbol ?_tryAttachingToNeighbouringFaces@Shulker@@AEAA_NVBlockPos@@@Z
+     */
     MCAPI bool _tryAttachingToNeighbouringFaces(class BlockPos);
+    /**
+     * @symbol ?_trySpawnShulker@Shulker@@AEAAXXZ
+     */
     MCAPI void _trySpawnShulker();
+    /**
+     * @symbol ?_tryTeleportSomewhere@Shulker@@AEAA_NXZ
+     */
     MCAPI bool _tryTeleportSomewhere();
 
 protected:

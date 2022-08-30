@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEWATERLILYBLOCKSYSTEM
 #endif
+    /**
+     * @symbol ?createDestroyWaterlilySystem@InsideWaterlilyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createDestroyWaterlilySystem();
+    /**
+     * @symbol ?createMovementSystem@InsideWaterlilyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createMovementSystem();
 
 };

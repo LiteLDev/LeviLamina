@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONEXCEPTIONCOMPONENT
 #endif
+    /**
+     * @symbol ??0SideBySideValidationExceptionComponent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent &&);
+    /**
+     * @symbol ??0SideBySideValidationExceptionComponent@@QEAA@AEBU0@@Z
+     */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent const &);
 
 };

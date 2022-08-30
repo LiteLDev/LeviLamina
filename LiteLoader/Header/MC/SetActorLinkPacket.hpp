@@ -30,14 +30,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SetActorLinkPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@SetActorLinkPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@SetActorLinkPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@SetActorLinkPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@SetActorLinkPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORLINKPACKET
 #endif
+    /**
+     * @symbol ??0SetActorLinkPacket@@QEAA@XZ
+     */
     MCAPI SetActorLinkPacket();
+    /**
+     * @symbol ??0SetActorLinkPacket@@QEAA@AEBUActorLink@@@Z
+     */
     MCAPI SetActorLinkPacket(struct ActorLink const &);
 
 };

@@ -31,17 +31,56 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MoveToLandGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@MoveToLandGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@MoveToLandGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MoveToLandGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 11
+     * @symbol ?isValidTarget@MoveToLandGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
+    /**
+     * @vtable 14
+     * @symbol ?_moveToBlock@MoveToLandGoal@@MEAAXXZ
+     */
     virtual void _moveToBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLANDGOAL
 #endif
+    /**
+     * @symbol ??0MoveToLandGoal@@QEAA@AEAVMob@@MHHHM@Z
+     */
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
 
 };

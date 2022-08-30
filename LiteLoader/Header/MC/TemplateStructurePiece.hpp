@@ -31,17 +31,38 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~TemplateStructurePiece();
+    /**
+     * @vtable 1
+     * @symbol ?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z
+     */
     virtual void moveBoundingBox(int, int, int);
+    /**
+     * @vtable 4
+     * @symbol ?postProcess@TemplateStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPLATESTRUCTUREPIECE
 #endif
+    /**
+     * @symbol ??0TemplateStructurePiece@@QEAA@H@Z
+     */
     MCAPI TemplateStructurePiece(int);
 
 //protected:
+    /**
+     * @symbol ?_setup@TemplateStructurePiece@@IEAAXAEAVLegacyStructureTemplate@@AEBVLegacyStructureSettings@@AEBVBlockPos@@@Z
+     */
     MCAPI void _setup(class LegacyStructureTemplate &, class LegacyStructureSettings const &, class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?_setBoundingBoxFromTemplate@TemplateStructurePiece@@AEAAXXZ
+     */
     MCAPI void _setBoundingBoxFromTemplate();
 
 protected:

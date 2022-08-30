@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGEKEY
 #endif
+    /**
+     * @symbol ??1SecureStorageKey@@QEAA@XZ
+     */
     MCAPI ~SecureStorageKey();
 
 };

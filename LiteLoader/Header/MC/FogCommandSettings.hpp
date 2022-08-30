@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGCOMMANDSETTINGS
 #endif
+    /**
+     * @symbol ??1FogCommandSettings@@QEAA@XZ
+     */
     MCAPI ~FogCommandSettings();
 
 };

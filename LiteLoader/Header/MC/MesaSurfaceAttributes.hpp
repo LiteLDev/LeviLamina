@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESASURFACEATTRIBUTES
 #endif
+    /**
+     * @symbol ??1MesaSurfaceAttributes@@QEAA@XZ
+     */
     MCAPI ~MesaSurfaceAttributes();
 
 };

@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITION
 #endif
+    /**
+     * @symbol ?getRoot@BehaviorTreeDefinition@@QEBAPEBVBehaviorDefinition@@XZ
+     */
     MCAPI class BehaviorDefinition const * getRoot() const;
 
 };

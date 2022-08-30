@@ -31,21 +31,67 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol ?containerContentChanged@HudContainerModel@@UEAAXH@Z
+     */
     virtual void containerContentChanged(int);
+    /**
+     * @vtable 1
+     * @symbol 
+     */
     virtual ~HudContainerModel();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?getContainerWeakRef@HudContainerModel@@UEBA?AVContainerWeakRef@@XZ
+     */
     virtual class ContainerWeakRef getContainerWeakRef() const;
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 14
+     * @symbol ?isValid@HudContainerModel@@UEAA_NXZ
+     */
     virtual bool isValid();
+    /**
+     * @vtable 15
+     * @symbol __unk_vfn_15
+     */
     virtual void __unk_vfn_15();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 19
+     * @symbol __unk_vfn_19
+     */
     virtual void __unk_vfn_19();
+    /**
+     * @vtable 20
+     * @symbol ?_getContainer@HudContainerModel@@EEBAPEAVContainer@@XZ
+     */
     virtual class Container * _getContainer() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMODEL
 #endif
+    /**
+     * @symbol ??0HudContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
+     */
     MCAPI HudContainerModel(enum ContainerEnumName, class Player &);
 
 //private:
+    /**
+     * @symbol ?_refreshContainer@HudContainerModel@@AEAAXXZ
+     */
     MCAPI void _refreshContainer();
 
 private:

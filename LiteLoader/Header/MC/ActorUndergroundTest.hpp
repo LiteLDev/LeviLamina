@@ -32,8 +32,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorUndergroundTest();
+    /**
+     * @vtable 2
+     * @symbol ?evaluate@ActorUndergroundTest@@UEBA_NAEBUFilterContext@@@Z
+     */
     virtual bool evaluate(struct FilterContext const &) const;
+    /**
+     * @vtable 4
+     * @symbol ?getName@ActorUndergroundTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUNDERGROUNDTEST
 #endif

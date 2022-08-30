@@ -32,17 +32,54 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BannerAddPatternRecipe();
+    /**
+     * @vtable 1
+     * @symbol ?assemble@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /**
+     * @vtable 2
+     * @symbol ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
+     */
     virtual int getCraftingSize() const;
+    /**
+     * @vtable 3
+     * @symbol ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
+    /**
+     * @vtable 4
+     * @symbol ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
+    /**
+     * @vtable 6
+     * @symbol ?matches@BannerAddPatternRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
+    /**
+     * @vtable 7
+     * @symbol ?size@BannerAddPatternRecipe@@UEBAHXZ
+     */
     virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERADDPATTERNRECIPE
 #endif
+    /**
+     * @symbol ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     */
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+    /**
+     * @symbol ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>);
+    /**
+     * @symbol ?matchPatterns@BannerAddPatternRecipe@@QEBA?BV?$NonOwnerPointer@$$CBVBannerPattern@@@Bedrock@@AEAVCraftingContainer@@@Z
+     */
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
 MCAPI static class mce::UUID const ID;
 

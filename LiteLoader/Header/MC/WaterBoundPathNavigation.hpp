@@ -31,12 +31,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WaterBoundPathNavigation();
+    /**
+     * @vtable 1
+     * @symbol ?initializeInternal@WaterBoundPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
+     */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
+    /**
+     * @vtable 2
+     * @symbol ?tick@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     */
     virtual void tick(class NavigationComponent &, class Mob &);
+    /**
+     * @vtable 3
+     * @symbol ?getTempMobPos@WaterBoundPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
+     */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
+    /**
+     * @vtable 10
+     * @symbol ?travel@WaterBoundPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
+     */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
+    /**
+     * @vtable 11
+     * @symbol ?canUpdatePath@WaterBoundPathNavigation@@MEBA_NAEBVMob@@@Z
+     */
     virtual bool canUpdatePath(class Mob const &) const;
+    /**
+     * @vtable 12
+     * @symbol ?updatePath@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     */
     virtual void updatePath(class NavigationComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERBOUNDPATHNAVIGATION
 #endif

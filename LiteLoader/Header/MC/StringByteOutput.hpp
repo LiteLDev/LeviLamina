@@ -30,15 +30,55 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StringByteOutput();
+    /**
+     * @vtable 1
+     * @symbol ?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     virtual void writeString(class gsl::basic_string_span<char const, -1>);
+    /**
+     * @vtable 2
+     * @symbol ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
+    /**
+     * @vtable 3
+     * @symbol ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
+     */
     virtual void writeFloat(float);
+    /**
+     * @vtable 4
+     * @symbol ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
+     */
     virtual void writeDouble(double);
+    /**
+     * @vtable 5
+     * @symbol ?writeByte@BytesDataOutput@@UEAAXD@Z
+     */
     virtual void writeByte(char);
+    /**
+     * @vtable 6
+     * @symbol ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
+     */
     virtual void writeShort(short);
+    /**
+     * @vtable 7
+     * @symbol ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
+     */
     virtual void writeInt(int);
+    /**
+     * @vtable 8
+     * @symbol ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+     */
     virtual void writeLongLong(__int64);
+    /**
+     * @vtable 9
+     * @symbol ?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z
+     */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
 #endif

@@ -32,30 +32,120 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PlayerCommandOrigin();
+    /**
+     * @vtable 1
+     * @symbol ?getRequestId@PlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getRequestId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@PlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?getBlockPosition@PlayerCommandOrigin@@UEBA?AVBlockPos@@XZ
+     */
     virtual class BlockPos getBlockPosition() const;
+    /**
+     * @vtable 4
+     * @symbol ?getWorldPosition@PlayerCommandOrigin@@UEBA?AVVec3@@XZ
+     */
     virtual class Vec3 getWorldPosition() const;
+    /**
+     * @vtable 5
+     * @symbol ?getRotation@PlayerCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+     */
     virtual class std::optional<class Vec2> getRotation() const;
+    /**
+     * @vtable 6
+     * @symbol ?getLevel@PlayerCommandOrigin@@UEBAPEAVLevel@@XZ
+     */
     virtual class Level * getLevel() const;
+    /**
+     * @vtable 7
+     * @symbol ?getDimension@PlayerCommandOrigin@@UEBAPEAVDimension@@XZ
+     */
     virtual class Dimension * getDimension() const;
+    /**
+     * @vtable 8
+     * @symbol ?getEntity@PlayerCommandOrigin@@UEBAPEAVActor@@XZ
+     */
     virtual class Actor * getEntity() const;
+    /**
+     * @vtable 9
+     * @symbol ?getPermissionsLevel@PlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /**
+     * @vtable 10
+     * @symbol ?clone@PlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /**
+     * @vtable 11
+     * @symbol ?getCursorHitBlockPos@PlayerCommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ
+     */
     virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /**
+     * @vtable 12
+     * @symbol ?getCursorHitPos@PlayerCommandOrigin@@UEBA?AV?$optional@VVec3@@@std@@XZ
+     */
     virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /**
+     * @vtable 15
+     * @symbol ?canUseAbility@PlayerCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
+     */
     virtual bool canUseAbility(enum AbilitiesIndex) const;
+    /**
+     * @vtable 18
+     * @symbol ?isSelectorExpansionAllowed@PlayerCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isSelectorExpansionAllowed() const;
+    /**
+     * @vtable 19
+     * @symbol ?getSourceId@PlayerCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
+     */
     virtual class NetworkIdentifier const & getSourceId() const;
+    /**
+     * @vtable 20
+     * @symbol ?getSourceSubId@PlayerCommandOrigin@@UEBA?AW4SubClientId@@XZ
+     */
     virtual enum SubClientId getSourceSubId() const;
+    /**
+     * @vtable 22
+     * @symbol ?getIdentity@PlayerCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
+     */
     virtual struct CommandOriginIdentity getIdentity() const;
+    /**
+     * @vtable 23
+     * @symbol ?getOriginType@PlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     */
     virtual enum CommandOriginType getOriginType() const;
+    /**
+     * @vtable 29
+     * @symbol ?serialize@PlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ
+     */
     virtual class CompoundTag serialize() const;
+    /**
+     * @vtable 30
+     * @symbol ?isValid@PlayerCommandOrigin@@UEBA_NXZ
+     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERCOMMANDORIGIN
 #endif
+    /**
+     * @symbol ??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z
+     */
     MCAPI PlayerCommandOrigin(class Player &);
+    /**
+     * @symbol ?load@PlayerCommandOrigin@@SA?AV?$unique_ptr@VPlayerCommandOrigin@@U?$default_delete@VPlayerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
+     */
     MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

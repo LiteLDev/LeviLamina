@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDESIMULATORCOMPONENT
 #endif
+    /**
+     * @symbol ??1SideBySideSimulatorComponent@@QEAA@XZ
+     */
     MCAPI ~SideBySideSimulatorComponent();
 
 };

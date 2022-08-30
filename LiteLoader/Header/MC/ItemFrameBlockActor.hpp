@@ -31,38 +31,139 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemFrameBlockActor();
+    /**
+     * @vtable 1
+     * @symbol ?load@ItemFrameBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 2
+     * @symbol ?save@ItemFrameBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     virtual bool save(class CompoundTag &) const;
+    /**
+     * @vtable 7
+     * @symbol ?tick@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void tick(class BlockSource &);
+    /**
+     * @vtable 8
+     * @symbol ?onChanged@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onChanged(class BlockSource &);
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 13
+     * @symbol ?onRemoved@ItemFrameBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     virtual void onRemoved(class BlockSource &);
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 17
+     * @symbol ?getShadowRadius@ItemFrameBlockActor@@UEBAMAEAVBlockSource@@@Z
+     */
     virtual float getShadowRadius(class BlockSource &) const;
+    /**
+     * @vtable 28
+     * @symbol __unk_vfn_28
+     */
     virtual void __unk_vfn_28();
+    /**
+     * @vtable 29
+     * @symbol __unk_vfn_29
+     */
     virtual void __unk_vfn_29();
+    /**
+     * @vtable 30
+     * @symbol __unk_vfn_30
+     */
     virtual void __unk_vfn_30();
+    /**
+     * @vtable 32
+     * @symbol __unk_vfn_32
+     */
     virtual void __unk_vfn_32();
+    /**
+     * @vtable 33
+     * @symbol __unk_vfn_33
+     */
     virtual void __unk_vfn_33();
+    /**
+     * @vtable 34
+     * @symbol __unk_vfn_34
+     */
     virtual void __unk_vfn_34();
+    /**
+     * @vtable 35
+     * @symbol ?_getUpdatePacket@ItemFrameBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable 36
+     * @symbol ?_onUpdatePacket@ItemFrameBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEBLOCKACTOR
 #endif
+    /**
+     * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI ItemFrameBlockActor(class BlockPos, enum BlockActorType, std::string);
+    /**
+     * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@@Z
+     */
     MCAPI ItemFrameBlockActor(class BlockPos);
+    /**
+     * @symbol ?actuallyDropItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_N@Z
+     */
     MCAPI void actuallyDropItem(class BlockSource &, bool);
+    /**
+     * @symbol ?dropFramedItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@_N@Z
+     */
     MCAPI void dropFramedItem(class BlockSource &, bool);
+    /**
+     * @symbol ?getFramedItem@ItemFrameBlockActor@@QEAAAEAVItemInstance@@XZ
+     */
     MCAPI class ItemInstance & getFramedItem();
+    /**
+     * @symbol ?getRotation@ItemFrameBlockActor@@QEAAMXZ
+     */
     MCAPI float getRotation();
+    /**
+     * @symbol ?rotateFramedItem@ItemFrameBlockActor@@QEAAXXZ
+     */
     MCAPI void rotateFramedItem();
+    /**
+     * @symbol ?setItem@ItemFrameBlockActor@@QEAAXAEAVBlockSource@@AEBVItemInstance@@@Z
+     */
     MCAPI void setItem(class BlockSource &, class ItemInstance const &);
+    /**
+     * @symbol ?updateNameTag@ItemFrameBlockActor@@QEAAXXZ
+     */
     MCAPI void updateNameTag();
 MCAPI static float const ROTATION_DEGREES;
 
 //private:
+    /**
+     * @symbol ?_checkMapRemoval@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEAVItemInstance@@@Z
+     */
     MCAPI void _checkMapRemoval(class BlockSource &, class ItemInstance &);
+    /**
+     * @symbol ?_updateBit@ItemFrameBlockActor@@AEAAXAEAVBlockSource@@AEBV?$ItemStateVariant@_N@@AEBVHashedString@@@Z
+     */
     MCAPI void _updateBit(class BlockSource &, class ItemStateVariant<bool> const &, class HashedString const &);
 
 private:

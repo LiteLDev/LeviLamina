@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGECONFIG
 #endif
+    /**
+     * @symbol ??1DBStorageConfig@@QEAA@XZ
+     */
     MCAPI ~DBStorageConfig();
 
 };

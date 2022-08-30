@@ -30,12 +30,29 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~GameTestInstanceLedger();
+    /**
+     * @vtable 1
+     * @symbol ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTINSTANCELEDGER
 #endif
+    /**
+     * @symbol ??0GameTestInstanceLedger@@QEAA@AEAVLevelStorage@@@Z
+     */
     MCAPI GameTestInstanceLedger(class LevelStorage &);
+    /**
+     * @symbol ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
+     */
     MCAPI void clear(class AutomaticID<class Dimension, int>);
+    /**
+     * @symbol ?getBoundingBoxes@GameTestInstanceLedger@@QEBA?AV?$vector@VBoundingBox@@V?$allocator@VBoundingBox@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+     */
     MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
 
 //private:

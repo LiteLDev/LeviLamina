@@ -31,12 +31,29 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~KeyManager();
+    /**
+     * @vtable 1
+     * @symbol ?isValid@KeyManager@@UEBA_NXZ
+     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYMANAGER
 #endif
+    /**
+     * @symbol ??0KeyManager@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4System@Asymmetric@Crypto@@@Z
+     */
     MCAPI KeyManager(std::string const &, enum Crypto::Asymmetric::System);
+    /**
+     * @symbol ?getPublicKey@KeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string getPublicKey() const;
+    /**
+     * @symbol ?verify@KeyManager@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4HashType@Hash@Crypto@@@Z
+     */
     MCAPI bool verify(std::string const &, std::string const &, enum Crypto::Hash::HashType) const;
 
 };

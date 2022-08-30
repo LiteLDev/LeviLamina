@@ -31,13 +31,36 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FleeSunGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@FleeSunGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@FleeSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLEESUNGOAL
 #endif
+    /**
+     * @symbol ??0FleeSunGoal@@QEAA@AEAVMob@@M@Z
+     */
     MCAPI FleeSunGoal(class Mob &, float);
 
 };

@@ -31,24 +31,80 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SleepGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@SleepGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@SleepGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@SleepGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@SleepGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@SleepGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@SleepGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 16
+     * @symbol ?_getRepathTime@SleepGoal@@EEBA_KXZ
+     */
     virtual unsigned __int64 _getRepathTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPGOAL
 #endif
+    /**
+     * @symbol ??0SleepGoal@@QEAA@AEAVMob@@MMM_NMHM@Z
+     */
     MCAPI SleepGoal(class Mob &, float, float, float, bool, float, int, float);
 
 //private:
+    /**
+     * @symbol ?_lockPosToBedPos@SleepGoal@@AEAAXXZ
+     */
     MCAPI void _lockPosToBedPos();
+    /**
+     * @symbol ?_setSleepVariables@SleepGoal@@AEAAXXZ
+     */
     MCAPI void _setSleepVariables();
+    /**
+     * @symbol ?_wakeUp@SleepGoal@@AEAAXXZ
+     */
     MCAPI void _wakeUp();
 
 private:

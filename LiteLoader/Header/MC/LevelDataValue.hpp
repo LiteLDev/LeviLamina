@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATAVALUE
 #endif
+    /**
+     * @symbol ??1LevelDataValue@@QEAA@XZ
+     */
     MCAPI ~LevelDataValue();
 
 };

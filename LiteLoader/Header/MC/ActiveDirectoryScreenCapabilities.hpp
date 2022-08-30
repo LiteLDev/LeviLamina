@@ -29,7 +29,15 @@ public:
     ActiveDirectoryScreenCapabilities() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActiveDirectoryScreenCapabilities();
+    /**
+     * @vtable 1
+     * @symbol ?isOfType@?$TypedScreenCapabilities@UActiveDirectoryScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
+     */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYSCREENCAPABILITIES
 #endif

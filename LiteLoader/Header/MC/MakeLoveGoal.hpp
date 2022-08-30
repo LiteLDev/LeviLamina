@@ -30,19 +30,57 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MakeLoveGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@MakeLoveGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@MakeLoveGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@MakeLoveGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@MakeLoveGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@MakeLoveGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MakeLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAKELOVEGOAL
 #endif
+    /**
+     * @symbol ??0MakeLoveGoal@@QEAA@AEAVVillagerBase@@@Z
+     */
     MCAPI MakeLoveGoal(class VillagerBase &);
 
 //private:
+    /**
+     * @symbol ?_findMate@MakeLoveGoal@@AEBAPEAVVillagerBase@@XZ
+     */
     MCAPI class VillagerBase * _findMate() const;
 
 private:

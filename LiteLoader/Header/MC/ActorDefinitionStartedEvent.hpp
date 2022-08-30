@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONSTARTEDEVENT
 #endif
+    /**
+     * @symbol ??1ActorDefinitionStartedEvent@@QEAA@XZ
+     */
     MCAPI ~ActorDefinitionStartedEvent();
 
 };

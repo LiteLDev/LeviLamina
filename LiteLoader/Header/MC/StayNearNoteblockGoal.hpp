@@ -28,19 +28,57 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StayNearNoteblockGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@StayNearNoteblockGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@StayNearNoteblockGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@StayNearNoteblockGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@StayNearNoteblockGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@StayNearNoteblockGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@StayNearNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAYNEARNOTEBLOCKGOAL
 #endif
+    /**
+     * @symbol ??0StayNearNoteblockGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI StayNearNoteblockGoal(class Mob &);
 
 //private:
+    /**
+     * @symbol ?_hasLastVibrationAtNoteblock@StayNearNoteblockGoal@@AEAA?BV?$optional@VBlockPos@@@std@@XZ
+     */
     MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
 
 private:

@@ -30,16 +30,49 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemStackRequestActionTransferBase();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?_write@ItemStackRequestActionTransferBase@@MEBAXAEAVBinaryStream@@@Z
+     */
     virtual void _write(class BinaryStream &) const;
+    /**
+     * @vtable 5
+     * @symbol ?_read@ItemStackRequestActionTransferBase@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
+     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
 #endif
+    /**
+     * @symbol ?getAmount@ItemStackRequestActionTransferBase@@QEBAEXZ
+     */
     MCAPI unsigned char getAmount() const;
+    /**
+     * @symbol ?getDst@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
+     */
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
+    /**
+     * @symbol ?getSrc@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
+     */
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 
 };

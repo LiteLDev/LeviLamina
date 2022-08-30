@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLETYPE
 #endif
+    /**
+     * @symbol ??0BreedableType@@QEAA@AEBU0@@Z
+     */
     MCAPI BreedableType(struct BreedableType const &);
+    /**
+     * @symbol ??1BreedableType@@QEAA@XZ
+     */
     MCAPI ~BreedableType();
 
 };

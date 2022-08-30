@@ -31,14 +31,41 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERCONTEXT
 #endif
+    /**
+     * @symbol ??0SerializerContext@@QEAA@XZ
+     */
     MCAPI SerializerContext();
+    /**
+     * @symbol ?clear@SerializerContext@@QEAAXXZ
+     */
     MCAPI void clear();
+    /**
+     * @symbol ?consumeContext@SerializerContext@@QEAAX$$QEAV1@@Z
+     */
     MCAPI void consumeContext(class SerializerContext &&);
+    /**
+     * @symbol ?detachContext@SerializerContext@@QEAA?AV1@XZ
+     */
     MCAPI class SerializerContext detachContext();
+    /**
+     * @symbol ?error@SerializerContext@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void error(std::string const &);
+    /**
+     * @symbol ??4SerializerContext@@QEAAAEAV0@$$QEAV0@@Z
+     */
     MCAPI class SerializerContext & operator=(class SerializerContext &&);
+    /**
+     * @symbol ?popContext@SerializerContext@@QEAAXXZ
+     */
     MCAPI void popContext();
+    /**
+     * @symbol ?pushContext@SerializerContext@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class SerializerContext & pushContext(std::string const &);
+    /**
+     * @symbol ??1SerializerContext@@QEAA@XZ
+     */
     MCAPI ~SerializerContext();
 
 };

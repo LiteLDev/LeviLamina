@@ -29,10 +29,25 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONSLOTINFO
 #endif
+    /**
+     * @symbol ??0ContainerValidationSlotInfo@@QEAA@AEBUContainerValidationSlotData@@V?$shared_ptr@VSimpleSparseContainer@@@std@@V?$shared_ptr@$$CBVContainerValidationBase@@@3@@Z
+     */
     MCAPI ContainerValidationSlotInfo(struct ContainerValidationSlotData const &, class std::shared_ptr<class SimpleSparseContainer>, class std::shared_ptr<class ContainerValidationBase const>);
+    /**
+     * @symbol ?getItem@ContainerValidationSlotInfo@@QEBAAEBVItemStack@@XZ
+     */
     MCAPI class ItemStack const & getItem() const;
+    /**
+     * @symbol ??BContainerValidationSlotInfo@@QEBA_NXZ
+     */
     MCAPI operator bool() const;
+    /**
+     * @symbol ?setItem@ContainerValidationSlotInfo@@QEAAXAEBVItemStack@@@Z
+     */
     MCAPI void setItem(class ItemStack const &);
+    /**
+     * @symbol ??1ContainerValidationSlotInfo@@QEAA@XZ
+     */
     MCAPI ~ContainerValidationSlotInfo();
 
 };

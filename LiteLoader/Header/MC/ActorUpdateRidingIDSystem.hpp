@@ -30,11 +30,29 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUPDATERIDINGIDSYSTEM
 #endif
+    /**
+     * @symbol ?createClearPrevRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem();
+    /**
+     * @symbol ?createClearRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem();
+    /**
+     * @symbol ?createUpdatePrevRidingIDSystem@ActorUpdateRidingIDSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem();
+    /**
+     * @symbol ?tickClearRidingID@ActorUpdateRidingIDSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPassengerComponent@@@@@Z
+     */
     MCAPI static void tickClearRidingID(class StrictEntityContext &, struct PassengerComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PassengerComponent> &);
+    /**
+     * @symbol ?tickClearRidingPrevIDAfterRemovePassenger@ActorUpdateRidingIDSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAURidingPrevIDComponent@@@Z
+     */
     MCAPI static void tickClearRidingPrevIDAfterRemovePassenger(class StrictEntityContext &, struct PassengerComponent const &, struct RidingPrevIDComponent &);
+    /**
+     * @symbol ?tickUpdateRidingPrevID@ActorUpdateRidingIDSystem@@SAXAEAVStrictEntityContext@@AEBUPassengerComponent@@AEAURidingPrevIDComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@$$CBUVehicleComponent@@@@@Z
+     */
     MCAPI static void tickUpdateRidingPrevID(class StrictEntityContext &, struct PassengerComponent const &, struct RidingPrevIDComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>);
 
 };

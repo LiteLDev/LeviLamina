@@ -31,12 +31,35 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORCONTAINER
+    /**
+     * @vtable -1
+     * @symbol ?dropContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
+     */
     MCVAPI void dropContents(class BlockSource &, class Vec3 const &, bool);
+    /**
+     * @vtable -1
+     * @symbol ?initializeContainerContents@RandomizableBlockActorContainer@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void initializeContainerContents(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?setContainerChanged@RandomizableBlockActorContainer@@UEAAXH@Z
+     */
     MCVAPI void setContainerChanged(int);
+    /**
+     * @vtable -1
+     * @symbol ?startOpen@RandomizableBlockActorContainer@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void startOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ??1RandomizableBlockActorContainer@@UEAA@XZ
+     */
     MCVAPI ~RandomizableBlockActorContainer();
 #endif
+    /**
+     * @symbol ??0RandomizableBlockActorContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@W4ContainerType@@@Z
+     */
     MCAPI RandomizableBlockActorContainer(enum BlockActorType, std::string const &, class BlockPos const &, enum ContainerType);
 
 };

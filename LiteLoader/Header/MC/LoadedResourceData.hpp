@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADEDRESOURCEDATA
 #endif
+    /**
+     * @symbol ??1LoadedResourceData@@QEAA@XZ
+     */
     MCAPI ~LoadedResourceData();
 
 };

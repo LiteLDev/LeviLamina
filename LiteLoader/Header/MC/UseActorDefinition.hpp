@@ -32,6 +32,10 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~UseActorDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORDEFINITION
 #endif

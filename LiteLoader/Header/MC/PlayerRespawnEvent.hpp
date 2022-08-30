@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNEVENT
 #endif
+    /**
+     * @symbol ??1PlayerRespawnEvent@@QEAA@XZ
+     */
     MCAPI ~PlayerRespawnEvent();
 
 };

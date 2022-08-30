@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONTRANSITIONCOMPONENT
 #endif
+    /**
+     * @symbol ?addAdditionalSaveData@DimensionTransitionComponent@@QEBAXAEAVCompoundTag@@@Z
+     */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @symbol ?readAdditionalSaveData@DimensionTransitionComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 MCAPI static std::string const AXIS_TAG;
 MCAPI static std::string const COMPONENT_TAG;

@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSBARMANAGER
 #endif
+    /**
+     * @symbol ??1BossbarManager@@QEAA@XZ
+     */
     MCAPI ~BossbarManager();
 
 };

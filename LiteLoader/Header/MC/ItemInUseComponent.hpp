@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMINUSECOMPONENT
 #endif
+    /**
+     * @symbol ??1ItemInUseComponent@@QEAA@XZ
+     */
     MCAPI ~ItemInUseComponent();
 
 };

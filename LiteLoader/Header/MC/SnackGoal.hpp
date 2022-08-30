@@ -30,24 +30,80 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SnackGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@SnackGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@SnackGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@SnackGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@SnackGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@SnackGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@SnackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol ?getRandomEatingEnd@SnackGoal@@MEBAHXZ
+     */
     virtual int getRandomEatingEnd() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNACKGOAL
 #endif
+    /**
+     * @symbol ??0SnackGoal@@QEAA@AEAVMob@@AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@MMM@Z
+     */
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
 
 //private:
+    /**
+     * @symbol ?_hasSnackableItems@SnackGoal@@AEAA_NXZ
+     */
     MCAPI bool _hasSnackableItems();
+    /**
+     * @symbol ?_isSnackableItem@SnackGoal@@AEBA_NAEBVItemStack@@@Z
+     */
     MCAPI bool _isSnackableItem(class ItemStack const &) const;
+    /**
+     * @symbol ?_updateHand@SnackGoal@@AEAAXAEBVItemStack@@@Z
+     */
     MCAPI void _updateHand(class ItemStack const &);
 
 private:

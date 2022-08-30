@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEROPENCONTAINEREVENT
 #endif
+    /**
+     * @symbol ??1PlayerOpenContainerEvent@@QEAA@XZ
+     */
     MCAPI ~PlayerOpenContainerEvent();
 
 };

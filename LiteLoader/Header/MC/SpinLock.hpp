@@ -31,13 +31,31 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPINLOCK
 #endif
+    /**
+     * @symbol ??0SpinLock@@QEAA@XZ
+     */
     MCAPI SpinLock();
+    /**
+     * @symbol ?lock@SpinLock@@QEAAXXZ
+     */
     MCAPI void lock();
+    /**
+     * @symbol ?try_lock@SpinLock@@QEAA_NXZ
+     */
     MCAPI bool try_lock();
+    /**
+     * @symbol ?unlock@SpinLock@@QEAAXXZ
+     */
     MCAPI void unlock();
+    /**
+     * @symbol ??1SpinLock@@QEAA@XZ
+     */
     MCAPI ~SpinLock();
 
 //private:
+    /**
+     * @symbol ?_getThreadId@SpinLock@@AEAA_KXZ
+     */
     MCAPI unsigned __int64 _getThreadId();
 
 private:

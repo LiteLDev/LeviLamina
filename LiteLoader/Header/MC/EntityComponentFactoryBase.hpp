@@ -31,9 +31,19 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
+    /**
+     * @vtable -1
+     * @symbol ??1EntityComponentFactoryBase@@MEAA@XZ
+     */
     MCVAPI ~EntityComponentFactoryBase();
 #endif
+    /**
+     * @symbol ?addComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
+     */
     MCAPI void addComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
+    /**
+     * @symbol ?removeComponents@EntityComponentFactoryBase@@QEBAXAEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
+     */
     MCAPI void removeComponents(class EntityContext &, class DefinitionInstanceGroup const &) const;
 
 };

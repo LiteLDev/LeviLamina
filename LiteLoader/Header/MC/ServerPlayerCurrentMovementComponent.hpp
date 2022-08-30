@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERCURRENTMOVEMENTCOMPONENT
 #endif
+    /**
+     * @symbol ??1ServerPlayerCurrentMovementComponent@@QEAA@XZ
+     */
     MCAPI ~ServerPlayerCurrentMovementComponent();
 
 };

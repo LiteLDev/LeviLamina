@@ -38,13 +38,28 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEENTITYMANAGER
 #endif
+    /**
+     * @symbol ?getVolumeInstanceCount@VolumeEntityManager@@QEBA_KXZ
+     */
     MCAPI unsigned __int64 getVolumeInstanceCount() const;
+    /**
+     * @symbol ?getVolumeInstances@VolumeEntityManager@@QEBAAEBV?$vector@V?$OwnerPtrT@UEntityRefTraits@@@@V?$allocator@V?$OwnerPtrT@UEntityRefTraits@@@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+     */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
 MCAPI static bool isTriggerVolumesEnabled;
+    /**
+     * @symbol ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@@Z
+     */
     MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry &);
 
 //protected:
+    /**
+     * @symbol ??0VolumeEntityManager@@IEAA@V?$StackRefResultT@UEntityRegistryRefTraits@@@@@Z
+     */
     MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
+    /**
+     * @symbol ?_createVolumeEntity@VolumeEntityManager@@IEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@AEBVDefinitionInstanceGroup@@@Z
+     */
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const &);
 
 protected:

@@ -32,9 +32,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZERENUMMAPPING
 #endif
+    /**
+     * @symbol ?lookup@SerializerEnumMapping@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_J@Z
+     */
     MCAPI bool lookup(std::string const &, __int64 &) const;
+    /**
+     * @symbol ?lookup@SerializerEnumMapping@@QEBA_N_JAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI bool lookup(__int64, std::string &) const;
+    /**
+     * @symbol ??4SerializerEnumMapping@@QEAAAEAV0@$$QEAV0@@Z
+     */
     MCAPI class SerializerEnumMapping & operator=(class SerializerEnumMapping &&);
+    /**
+     * @symbol ?toString@SerializerEnumMapping@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string toString() const;
 
 };

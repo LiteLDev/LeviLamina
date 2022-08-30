@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALIASINFODESCRIPTION
 #endif
+    /**
+     * @symbol ??0AliasInfoDescription@@QEAA@AEBU0@@Z
+     */
     MCAPI AliasInfoDescription(struct AliasInfoDescription const &);
+    /**
+     * @symbol ??1AliasInfoDescription@@QEAA@XZ
+     */
     MCAPI ~AliasInfoDescription();
 
 };

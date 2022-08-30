@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMTIMING
 #endif
+    /**
+     * @symbol ??1SystemTiming@@QEAA@XZ
+     */
     MCAPI ~SystemTiming();
 
 };

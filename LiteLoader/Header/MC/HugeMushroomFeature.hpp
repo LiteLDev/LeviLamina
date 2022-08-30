@@ -30,15 +30,35 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HugeMushroomFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@HugeMushroomFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEMUSHROOMFEATURE
 #endif
+    /**
+     * @symbol ??0HugeMushroomFeature@@QEAA@XZ
+     */
     MCAPI HugeMushroomFeature();
+    /**
+     * @symbol ??0HugeMushroomFeature@@QEAA@H@Z
+     */
     MCAPI HugeMushroomFeature(int);
+    /**
+     * @symbol ?placeFixed@HugeMushroomFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
+     */
     MCAPI bool placeFixed(class BlockSource &, class BlockPos const &, int, int) const;
 
 //private:
+    /**
+     * @symbol ?_canSurvive@HugeMushroomFeature@@AEBA_NAEBVBlock@@@Z
+     */
     MCAPI bool _canSurvive(class Block const &) const;
 
 private:

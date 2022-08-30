@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONMODIFIER
 #endif
+    /**
+     * @symbol ??0DefinitionModifier@@QEAA@AEBU0@@Z
+     */
     MCAPI DefinitionModifier(struct DefinitionModifier const &);
+    /**
+     * @symbol ??1DefinitionModifier@@QEAA@XZ
+     */
     MCAPI ~DefinitionModifier();
 
 };

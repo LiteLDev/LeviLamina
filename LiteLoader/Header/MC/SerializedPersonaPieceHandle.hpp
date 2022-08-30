@@ -31,6 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERIALIZEDPERSONAPIECEHANDLE
 #endif
+    /**
+     * @symbol ??0SerializedPersonaPieceHandle@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PieceType@persona@@VUUID@mce@@_N0@Z
+     */
     MCAPI SerializedPersonaPieceHandle(std::string const &, enum persona::PieceType, class mce::UUID, bool, std::string const &);
 
 };

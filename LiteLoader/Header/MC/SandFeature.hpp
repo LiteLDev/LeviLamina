@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SandFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@SandFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SANDFEATURE
 #endif
+    /**
+     * @symbol ??0SandFeature@@QEAA@AEBVBlock@@H@Z
+     */
     MCAPI SandFeature(class Block const &, int);
 
 };

@@ -30,16 +30,49 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSHANDLER
 #endif
+    /**
+     * @symbol ??0PermissionsHandler@@QEAA@XZ
+     */
     MCAPI PermissionsHandler();
+    /**
+     * @symbol ??0PermissionsHandler@@QEAA@AEBV0@@Z
+     */
     MCAPI PermissionsHandler(class PermissionsHandler const &);
+    /**
+     * @symbol ?addSaveData@PermissionsHandler@@QEBAXAEAVCompoundTag@@@Z
+     */
     MCAPI void addSaveData(class CompoundTag &) const;
+    /**
+     * @symbol ?getCommandPermissions@PermissionsHandler@@QEBA?AW4CommandPermissionLevel@@XZ
+     */
     MCAPI enum CommandPermissionLevel getCommandPermissions() const;
+    /**
+     * @symbol ?getPlayerPermissions@PermissionsHandler@@QEBA?AW4PlayerPermissionLevel@@XZ
+     */
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
+    /**
+     * @symbol ?loadSaveData@PermissionsHandler@@QEAA_NAEBVCompoundTag@@@Z
+     */
     MCAPI bool loadSaveData(class CompoundTag const &);
+    /**
+     * @symbol ??8PermissionsHandler@@QEBA_NAEBV0@@Z
+     */
     MCAPI bool operator==(class PermissionsHandler const &) const;
+    /**
+     * @symbol ?setCommandPermissions@PermissionsHandler@@QEAAXW4CommandPermissionLevel@@@Z
+     */
     MCAPI void setCommandPermissions(enum CommandPermissionLevel);
+    /**
+     * @symbol ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
+     */
     MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
+    /**
+     * @symbol ?playerPermissionLevelFromString@PermissionsHandler@@SA?AW4PlayerPermissionLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
+    /**
+     * @symbol ?playerPermissionLevelToString@PermissionsHandler@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4PlayerPermissionLevel@@@Z
+     */
     MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
 
 };

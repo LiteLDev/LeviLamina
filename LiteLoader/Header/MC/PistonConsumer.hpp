@@ -30,16 +30,50 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PistonConsumer();
+    /**
+     * @vtable 6
+     * @symbol ?canConsumePowerAnyDirection@PistonConsumer@@UEBA_NXZ
+     */
     virtual bool canConsumePowerAnyDirection() const;
+    /**
+     * @vtable 11
+     * @symbol ?addSource@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
+    /**
+     * @vtable 12
+     * @symbol ?allowConnection@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /**
+     * @vtable 17
+     * @symbol __unk_vfn_17
+     */
     virtual void __unk_vfn_17();
+    /**
+     * @vtable 20
+     * @symbol __unk_vfn_20
+     */
     virtual void __unk_vfn_20();
+    /**
+     * @vtable 22
+     * @symbol ?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ
+     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONCONSUMER
 #endif
+    /**
+     * @symbol ??0PistonConsumer@@QEAA@XZ
+     */
     MCAPI PistonConsumer();
+    /**
+     * @symbol ?setBlockPowerFace@PistonConsumer@@QEAAXE@Z
+     */
     MCAPI void setBlockPowerFace(unsigned char);
 
 };

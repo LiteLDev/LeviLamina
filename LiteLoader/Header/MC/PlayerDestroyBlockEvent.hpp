@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERDESTROYBLOCKEVENT
 #endif
+    /**
+     * @symbol ??1PlayerDestroyBlockEvent@@QEAA@XZ
+     */
     MCAPI ~PlayerDestroyBlockEvent();
 
 };

@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSECONTAINERINFO
 #endif
+    /**
+     * @symbol ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
+     */
     MCAPI ItemStackResponseContainerInfo(enum ContainerEnumName);
+    /**
+     * @symbol ??1ItemStackResponseContainerInfo@@QEAA@XZ
+     */
     MCAPI ~ItemStackResponseContainerInfo();
 
 };

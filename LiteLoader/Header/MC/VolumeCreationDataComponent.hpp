@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMECREATIONDATACOMPONENT
 #endif
+    /**
+     * @symbol ??1VolumeCreationDataComponent@@QEAA@XZ
+     */
     MCAPI ~VolumeCreationDataComponent();
 
 };

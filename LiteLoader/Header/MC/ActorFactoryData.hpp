@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORYDATA
 #endif
+    /**
+     * @symbol ??1ActorFactoryData@@QEAA@XZ
+     */
     MCAPI ~ActorFactoryData();
 
 };

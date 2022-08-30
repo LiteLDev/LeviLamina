@@ -32,29 +32,116 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StructureDataLoadHelper();
+    /**
+     * @vtable 1
+     * @symbol ?loadPosition@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     */
     virtual class Vec3 loadPosition(class Vec3 const &);
+    /**
+     * @vtable 2
+     * @symbol ?loadBlockPosition@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     */
     virtual class BlockPos loadBlockPosition(class BlockPos const &);
+    /**
+     * @vtable 3
+     * @symbol ?loadBlockPositionOffset@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     */
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const &);
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol ?loadRotationDegreesY@StructureDataLoadHelper@@UEAAMM@Z
+     */
     virtual float loadRotationDegreesY(float);
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol ?loadRotationRadiansY@StructureDataLoadHelper@@UEAAMM@Z
+     */
     virtual float loadRotationRadiansY(float);
+    /**
+     * @vtable 8
+     * @symbol ?loadFacingID@StructureDataLoadHelper@@UEAAEE@Z
+     */
     virtual unsigned char loadFacingID(unsigned char);
+    /**
+     * @vtable 9
+     * @symbol ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     */
     virtual class Vec3 loadDirection(class Vec3 const &);
+    /**
+     * @vtable 10
+     * @symbol ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+     */
     virtual enum Direction::Type loadDirection(enum Direction::Type);
+    /**
+     * @vtable 11
+     * @symbol ?loadRotation@StructureDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
+     */
     virtual enum Rotation loadRotation(enum Rotation);
+    /**
+     * @vtable 12
+     * @symbol ?loadMirror@StructureDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
+     */
     virtual enum Mirror loadMirror(enum Mirror);
+    /**
+     * @vtable 13
+     * @symbol ?loadActorUniqueID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     */
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
+    /**
+     * @vtable 14
+     * @symbol ?loadOwnerID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     */
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
+    /**
+     * @vtable 15
+     * @symbol ?loadActorInternalComponentInfo@StructureDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
+     */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
+    /**
+     * @vtable 16
+     * @symbol ?getType@StructureDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
+     */
     virtual enum DataLoadHelperType getType() const;
+    /**
+     * @vtable 17
+     * @symbol ?shouldResetTime@StructureDataLoadHelper@@UEAA_NXZ
+     */
     virtual bool shouldResetTime();
+    /**
+     * @vtable 18
+     * @symbol ?_generateNewID@StructureDataLoadHelper@@MEAA?AUActorUniqueID@@XZ
+     */
     virtual struct ActorUniqueID _generateNewID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
+    /**
+     * @vtable -1
+     * @symbol ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
+     */
     MCVAPI float loadRotationDegreesX(float);
+    /**
+     * @vtable -1
+     * @symbol ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
+     */
     MCVAPI float loadRotationRadiansX(float);
 #endif
+    /**
+     * @symbol ??0StructureDataLoadHelper@@QEAA@AEBVBlockPos@@0AEBVVec3@@UActorUniqueID@@W4Rotation@@W4Mirror@@AEAVLevel@@@Z
+     */
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);
 
 };

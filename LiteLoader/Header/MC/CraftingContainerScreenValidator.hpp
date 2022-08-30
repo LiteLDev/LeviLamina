@@ -30,9 +30,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CraftingContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINERSCREENVALIDATOR
 #endif
+    /**
+     * @symbol ??0CraftingContainerScreenValidator@@QEAA@XZ
+     */
     MCAPI CraftingContainerScreenValidator();
 
 };

@@ -30,9 +30,16 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ChestContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERSCREENVALIDATOR
 #endif
+    /**
+     * @symbol ??0ChestContainerScreenValidator@@QEAA@XZ
+     */
     MCAPI ChestContainerScreenValidator();
 
 };

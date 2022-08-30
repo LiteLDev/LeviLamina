@@ -31,9 +31,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROFILERLITE
 #endif
+    /**
+     * @symbol ??0ProfilerLite@@QEAA@XZ
+     */
     MCAPI ProfilerLite();
+    /**
+     * @symbol ?calculateAndSetServerTickTimes@ProfilerLite@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+     */
     MCAPI void calculateAndSetServerTickTimes(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
+    /**
+     * @symbol ?getServerTickTime@ProfilerLite@@QEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ
+     */
     MCAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getServerTickTime() const;
+    /**
+     * @symbol ??1ProfilerLite@@QEAA@XZ
+     */
     MCAPI ~ProfilerLite();
 MCAPI static class std::thread::id sEmptyThreadID;
 

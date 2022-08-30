@@ -31,15 +31,46 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RandomScatteredLargeFeature();
+    /**
+     * @vtable 1
+     * @symbol ?shouldAddHardcodedSpawnAreas@RandomScatteredLargeFeature@@UEBA_NXZ
+     */
     virtual bool shouldAddHardcodedSpawnAreas() const;
+    /**
+     * @vtable 2
+     * @symbol ?shouldPostProcessMobs@RandomScatteredLargeFeature@@UEBA_NXZ
+     */
     virtual bool shouldPostProcessMobs() const;
+    /**
+     * @vtable 3
+     * @symbol ?getNearestGeneratedFeature@RandomScatteredLargeFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
+     */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
+    /**
+     * @vtable 4
+     * @symbol ?initMobSpawnTypes@RandomScatteredLargeFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
+     */
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
+    /**
+     * @vtable 5
+     * @symbol ?isFeatureChunk@RandomScatteredLargeFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+     */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
+    /**
+     * @vtable 6
+     * @symbol ?createStructureStart@RandomScatteredLargeFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+     */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSCATTEREDLARGEFEATURE
 #endif
+    /**
+     * @symbol ??0RandomScatteredLargeFeature@@QEAA@I@Z
+     */
     MCAPI RandomScatteredLargeFeature(unsigned int);
 
 };

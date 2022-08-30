@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONTRANSITIONSYSTEM
 #endif
+    /**
+     * @symbol ?create@DimensionTransitionSystem@@SA?AUTickingSystemWithInfo@@XZ
+     */
     MCAPI static struct TickingSystemWithInfo create();
 
 };

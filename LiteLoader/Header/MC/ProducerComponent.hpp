@@ -30,19 +30,65 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ProducerComponent();
+    /**
+     * @vtable 3
+     * @symbol ?setStrength@ProducerComponent@@UEAAXH@Z
+     */
     virtual void setStrength(int);
+    /**
+     * @vtable 8
+     * @symbol ?canStopPower@ProducerComponent@@UEBA_NXZ
+     */
     virtual bool canStopPower() const;
+    /**
+     * @vtable 9
+     * @symbol ?setStopPower@ProducerComponent@@UEAAX_N@Z
+     */
     virtual void setStopPower(bool);
+    /**
+     * @vtable 12
+     * @symbol ?allowConnection@ProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /**
+     * @vtable 14
+     * @symbol ?evaluate@ProducerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /**
+     * @vtable 17
+     * @symbol __unk_vfn_17
+     */
     virtual void __unk_vfn_17();
+    /**
+     * @vtable 20
+     * @symbol __unk_vfn_20
+     */
     virtual void __unk_vfn_20();
+    /**
+     * @vtable 22
+     * @symbol ?getCircuitComponentType@ProducerComponent@@UEBA?AW4CircuitComponentType@@XZ
+     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
+    /**
+     * @vtable 24
+     * @symbol ?getPoweroutDirection@RepeaterCapacitor@@UEBAEXZ
+     */
     virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRODUCERCOMPONENT
 #endif
+    /**
+     * @symbol ??0ProducerComponent@@QEAA@XZ
+     */
     MCAPI ProducerComponent();
+    /**
+     * @symbol ?allowAttachments@ProducerComponent@@QEAAX_N@Z
+     */
     MCAPI void allowAttachments(bool);
 
 };

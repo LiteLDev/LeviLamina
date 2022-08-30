@@ -32,25 +32,89 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORMULTINOISE
+    /**
+     * @vtable -1
+     * @symbol ?_prepareHeights@OverworldGeneratorMultinoise@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z
+     */
     MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
+    /**
+     * @vtable -1
+     * @symbol ?createNoiseCache@OverworldGeneratorMultinoise@@EEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
+     */
     MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
+    /**
+     * @vtable -1
+     * @symbol ?decorateWorldGenPostProcess@OverworldGeneratorMultinoise@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+     */
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
+    /**
+     * @vtable -1
+     * @symbol ?findSpawnPosition@OverworldGeneratorMultinoise@@UEBA?AVBlockPos@@XZ
+     */
     MCVAPI class BlockPos findSpawnPosition() const;
+    /**
+     * @vtable -1
+     * @symbol ?generateDensityCellsForChunk@OverworldGeneratorMultinoise@@UEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
+     */
     MCVAPI class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?getBiomeSource@OverworldGeneratorMultinoise@@UEBAAEBVBiomeSource@@XZ
+     */
     MCVAPI class BiomeSource const & getBiomeSource() const;
+    /**
+     * @vtable -1
+     * @symbol ?getLevelGenHeight@OverworldGeneratorMultinoise@@UEBAHXZ
+     */
     MCVAPI int getLevelGenHeight() const;
+    /**
+     * @vtable -1
+     * @symbol ?getMaterialAdjNoise@OverworldGeneratorMultinoise@@MEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ
+     */
     MCVAPI std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const;
+    /**
+     * @vtable -1
+     * @symbol ?getPreliminarySurfaceLevel@OverworldGeneratorMultinoise@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+     */
     MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    /**
+     * @vtable -1
+     * @symbol ?getSurfaceNoise@OverworldGeneratorMultinoise@@MEAAAEBVPerlinSimplexNoise@@XZ
+     */
     MCVAPI class PerlinSimplexNoise const & getSurfaceNoise();
+    /**
+     * @vtable -1
+     * @symbol ?getXoroshiroPositionalRandomFactory@OverworldGeneratorMultinoise@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ
+     */
     MCVAPI class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
+    /**
+     * @vtable -1
+     * @symbol ?tryMakeAquifer@OverworldGeneratorMultinoise@@EEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
+     */
     MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
+    /**
+     * @vtable -1
+     * @symbol ??1OverworldGeneratorMultinoise@@UEAA@XZ
+     */
     MCVAPI ~OverworldGeneratorMultinoise();
 #endif
+    /**
+     * @symbol ??0OverworldGeneratorMultinoise@@QEAA@AEAVDimension@@VLevelSeed64@@PEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
+     */
     MCAPI OverworldGeneratorMultinoise(class Dimension &, class LevelSeed64, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
+    /**
+     * @symbol ?_applySlides@OverworldGeneratorMultinoise@@SAMAEBVDimensionHeightRange@@ME@Z
+     */
     MCAPI static float _applySlides(class DimensionHeightRange const &, float, unsigned char);
 
 //private:
+    /**
+     * @symbol ?_attenuateOffsetAndFactor@OverworldGeneratorMultinoise@@AEBA?AUTerrainInfo@@V?$DividedPos2d@$03@@U2@@Z
+     */
     MCAPI struct TerrainInfo _attenuateOffsetAndFactor(class DividedPos2d<4>, struct TerrainInfo) const;
+    /**
+     * @symbol ?_generateDensityCellsForChunk@OverworldGeneratorMultinoise@@AEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVNoodleCavifier@@PEAVOreVeinifier@@@Z
+     */
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const &, class WorldGenCache const &, class NoodleCavifier *, class OreVeinifier *) const;
 
 private:

@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTDATA
 #endif
+    /**
+     * @symbol ??0SendEventData@@QEAA@AEBU0@@Z
+     */
     MCAPI SendEventData(struct SendEventData const &);
+    /**
+     * @symbol ??1SendEventData@@QEAA@XZ
+     */
     MCAPI ~SendEventData();
 
 };

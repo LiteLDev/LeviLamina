@@ -31,7 +31,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NetherBrightnessRamp();
+    /**
+     * @vtable 2
+     * @symbol ?getBaseAmbientValue@NetherBrightnessRamp@@UEBAMXZ
+     */
     virtual float getBaseAmbientValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERBRIGHTNESSRAMP
 #endif

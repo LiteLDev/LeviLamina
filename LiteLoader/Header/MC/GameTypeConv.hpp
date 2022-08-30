@@ -22,9 +22,21 @@ namespace GameTypeConv {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?gameTypeToNonLocString@GameTypeConv@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameType@@@Z
+     */
     MCAPI std::string gameTypeToNonLocString(enum GameType);
+    /**
+     * @symbol ?gameTypeToString@GameTypeConv@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GameType@@@Z
+     */
     MCAPI std::string gameTypeToString(enum GameType);
+    /**
+     * @symbol ?intToGameType@GameTypeConv@@YA?AW4GameType@@H@Z
+     */
     MCAPI enum GameType intToGameType(int);
+    /**
+     * @symbol ?stringToGameType@GameTypeConv@@YA?AW4GameType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI enum GameType stringToGameType(std::string const &);
 
 };

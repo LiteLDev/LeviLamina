@@ -31,12 +31,40 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERGAMEPLAYEVENTLISTENER
+    /**
+     * @vtable -1
+     * @symbol ?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z
+     */
     MCVAPI enum EventResult onBlockInteractedWith(class Player &, class BlockPos const &);
+    /**
+     * @vtable -1
+     * @symbol ?onBlockPlacedByPlayer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlock@@AEBVBlockPos@@_N@Z
+     */
     MCVAPI enum EventResult onBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
+    /**
+     * @vtable -1
+     * @symbol ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerDamageEvent@@@Z
+     */
     MCVAPI enum EventResult onEvent(struct PlayerDamageEvent const &);
+    /**
+     * @vtable -1
+     * @symbol ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z
+     */
     MCVAPI enum EventResult onEvent(struct ActorHurtEvent const &);
+    /**
+     * @vtable -1
+     * @symbol ?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z
+     */
     MCVAPI enum EventResult onEvent(struct PlayerOpenContainerEvent const &);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerMovementAnomaly@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
+     */
     MCVAPI enum EventResult onPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
+    /**
+     * @vtable -1
+     * @symbol ?onPlayerMovementCorrected@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
+     */
     MCVAPI enum EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
 #endif
 

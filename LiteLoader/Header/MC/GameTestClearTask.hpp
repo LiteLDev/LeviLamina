@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTCLEARTASK
 #endif
+    /**
+     * @symbol ??0GameTestClearTask@@QEAA@AEAVDimension@@AEBVBoundingBox@@@Z
+     */
     MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
+    /**
+     * @symbol ?isDone@GameTestClearTask@@QEBA_NXZ
+     */
     MCAPI bool isDone() const;
+    /**
+     * @symbol ?tick@GameTestClearTask@@QEAAXXZ
+     */
     MCAPI void tick();
 
 };

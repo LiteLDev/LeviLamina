@@ -30,19 +30,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PulseCapacitor();
+    /**
+     * @vtable 1
+     * @symbol ?getStrength@PulseCapacitor@@UEBAHXZ
+     */
     virtual int getStrength() const;
+    /**
+     * @vtable 3
+     * @symbol ?setStrength@PulseCapacitor@@UEAAXH@Z
+     */
     virtual void setStrength(int);
+    /**
+     * @vtable 6
+     * @symbol ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
+     */
     virtual bool canConsumePowerAnyDirection() const;
+    /**
+     * @vtable 7
+     * @symbol ?canConsumerPower@PulseCapacitor@@UEBA_NXZ
+     */
     virtual bool canConsumerPower() const;
+    /**
+     * @vtable 12
+     * @symbol ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
+    /**
+     * @vtable 14
+     * @symbol ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
+    /**
+     * @vtable 17
+     * @symbol __unk_vfn_17
+     */
     virtual void __unk_vfn_17();
+    /**
+     * @vtable 20
+     * @symbol __unk_vfn_20
+     */
     virtual void __unk_vfn_20();
+    /**
+     * @vtable 22
+     * @symbol ?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
+    /**
+     * @vtable 24
+     * @symbol ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
+     */
     virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PULSECAPACITOR
 #endif
+    /**
+     * @symbol ??0PulseCapacitor@@QEAA@XZ
+     */
     MCAPI PulseCapacitor();
 
 };

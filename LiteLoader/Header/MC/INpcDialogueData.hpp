@@ -30,7 +30,15 @@ public:
 #endif
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPCDIALOGUEDATA
+    /**
+     * @vtable -1
+     * @symbol ?getRawDialogueText@INpcDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCVAPI std::string const & getRawDialogueText() const;
+    /**
+     * @vtable -1
+     * @symbol ?isRemoteFire@INpcDialogueData@@UEAA_NXZ
+     */
     MCVAPI bool isRemoteFire();
 #endif
 

@@ -30,11 +30,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SwimMoveControl();
+    /**
+     * @vtable 1
+     * @symbol ?initializeInternal@SwimMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+     */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
+    /**
+     * @vtable 2
+     * @symbol ?tick@SwimMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     */
     virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMMOVECONTROL
 #endif
+    /**
+     * @symbol ??0SwimMoveControl@@QEAA@XZ
+     */
     MCAPI SwimMoveControl();
 
 };

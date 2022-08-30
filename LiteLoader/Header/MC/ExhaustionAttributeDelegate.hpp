@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ExhaustionAttributeDelegate();
+    /**
+     * @vtable 1
+     * @symbol ?tick@ExhaustionAttributeDelegate@@UEAAXXZ
+     */
     virtual void tick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONATTRIBUTEDELEGATE
 #endif
+    /**
+     * @symbol ??0ExhaustionAttributeDelegate@@QEAA@AEBVAttributeInstance@@@Z
+     */
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
 
 };

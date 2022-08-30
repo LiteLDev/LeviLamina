@@ -30,12 +30,30 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AddEntityPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@AddEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@AddEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDENTITYPACKET
 #endif
+    /**
+     * @symbol ??0AddEntityPacket@@QEAA@XZ
+     */
     MCAPI AddEntityPacket();
+    /**
+     * @symbol ??0AddEntityPacket@@QEAA@AEBVEntityContext@@@Z
+     */
     MCAPI AddEntityPacket(class EntityContext const &);
 
 };

@@ -33,40 +33,130 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACK
 #endif
+    /**
+     * @symbol ??0ResourcePack@@QEAA@AEAVPack@@@Z
+     */
     MCAPI ResourcePack(class Pack &);
+    /**
+     * @symbol ?areKnownFilesValid@ResourcePack@@QEAA_NXZ
+     */
     MCAPI bool areKnownFilesValid();
+    /**
+     * @symbol ?forEachIn@ResourcePack@@QEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@H_N@Z
+     */
     MCAPI void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, int, bool) const;
+    /**
+     * @symbol ?generateAssetSet@ResourcePack@@QEAAXXZ
+     */
     MCAPI void generateAssetSet();
+    /**
+     * @symbol ?getFolderName@ResourcePack@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     MCAPI std::string const & getFolderName() const;
+    /**
+     * @symbol ?getLoadTime@ResourcePack@@QEBANXZ
+     */
     MCAPI double getLoadTime() const;
+    /**
+     * @symbol ?getManifest@ResourcePack@@QEAAAEAVPackManifest@@XZ
+     */
     MCAPI class PackManifest & getManifest();
+    /**
+     * @symbol ?getPackCategory@ResourcePack@@QEBA?AW4PackCategory@@XZ
+     */
     MCAPI enum PackCategory getPackCategory() const;
+    /**
+     * @symbol ?getPackId@ResourcePack@@QEBAAEBVUUID@mce@@XZ
+     */
     MCAPI class mce::UUID const & getPackId() const;
+    /**
+     * @symbol ?getPackOrigin@ResourcePack@@QEBA?AW4PackOrigin@@XZ
+     */
     MCAPI enum PackOrigin getPackOrigin() const;
+    /**
+     * @symbol ?getResource@ResourcePack@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI bool getResource(class Core::Path const &, std::string &, int) const;
+    /**
+     * @symbol ?getResourceLocation@ResourcePack@@QEBAAEBVResourceLocation@@XZ
+     */
     MCAPI class ResourceLocation const & getResourceLocation() const;
+    /**
+     * @symbol ?getSubpackCount@ResourcePack@@QEBAHXZ
+     */
     MCAPI int getSubpackCount() const;
+    /**
+     * @symbol ?getSubpackFolderName@ResourcePack@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI std::string const & getSubpackFolderName(int) const;
+    /**
+     * @symbol ?getSubpackIndex@ResourcePack@@QEBAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI int getSubpackIndex(std::string const &) const;
+    /**
+     * @symbol ?getSubpackInfoStack@ResourcePack@@QEBAAEBVSubpackInfoCollection@@XZ
+     */
     MCAPI class SubpackInfoCollection const & getSubpackInfoStack() const;
+    /**
+     * @symbol ?getVersion@ResourcePack@@QEBAAEBVSemVersion@@XZ
+     */
     MCAPI class SemVersion const & getVersion() const;
+    /**
+     * @symbol ?hasResource@ResourcePack@@QEBA_NAEBVPath@Core@@H@Z
+     */
     MCAPI bool hasResource(class Core::Path const &, int) const;
+    /**
+     * @symbol ?isBaseGamePack@ResourcePack@@QEBA_NXZ
+     */
     MCAPI bool isBaseGamePack() const;
+    /**
+     * @symbol ?isSlicePack@ResourcePack@@QEBA_NXZ
+     */
     MCAPI bool isSlicePack() const;
+    /**
+     * @symbol ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
+     */
     MCAPI bool isType(enum PackType) const;
+    /**
+     * @symbol ?isZipped@ResourcePack@@QEBA_NXZ
+     */
     MCAPI bool isZipped() const;
+    /**
+     * @symbol ?setAsSlicePack@ResourcePack@@QEAAXXZ
+     */
     MCAPI void setAsSlicePack();
+    /**
+     * @symbol ?setError@ResourcePack@@QEAAXXZ
+     */
     MCAPI void setError();
+    /**
+     * @symbol ?setLoadTime@ResourcePack@@QEAAXN@Z
+     */
     MCAPI void setLoadTime(double);
+    /**
+     * @symbol ?setLocale@ResourcePack@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI void setLocale(std::string const &);
+    /**
+     * @symbol ?unregisterDeleteCallback@ResourcePack@@QEAAXPEAX@Z
+     */
     MCAPI void unregisterDeleteCallback(void *);
 MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_BUG_ICON_PATH;
 MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
 MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
 
 //private:
+    /**
+     * @symbol ?_createSubpack@ResourcePack@@AEAAXAEBUSubpackInfo@@@Z
+     */
     MCAPI void _createSubpack(struct SubpackInfo const &);
+    /**
+     * @symbol ?_createSubpacks@ResourcePack@@AEAAXXZ
+     */
     MCAPI void _createSubpacks();
+    /**
+     * @symbol ?_generateIconPath@ResourcePack@@AEAAXXZ
+     */
     MCAPI void _generateIconPath();
 
 private:

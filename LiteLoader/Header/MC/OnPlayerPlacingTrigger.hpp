@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGER
 #endif
+    /**
+     * @symbol ??1OnPlayerPlacingTrigger@@QEAA@XZ
+     */
     MCAPI ~OnPlayerPlacingTrigger();
 
 };

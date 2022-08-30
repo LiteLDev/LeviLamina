@@ -31,11 +31,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CompactionListenerEnv();
+    /**
+     * @vtable 14
+     * @symbol ?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z
+     */
     virtual void Schedule(void ( *)(void *), void *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPACTIONLISTENERENV
 #endif
+    /**
+     * @symbol ??0CompactionListenerEnv@@QEAA@PEAVEnv@leveldb@@@Z
+     */
     MCAPI CompactionListenerEnv(class leveldb::Env *);
+    /**
+     * @symbol ?setCompactionCallback@CompactionListenerEnv@@QEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
+     */
     MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
 
 };

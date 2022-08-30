@@ -31,9 +31,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCESCOMPONENT
 #endif
+    /**
+     * @symbol ??0BlockMaterialInstancesComponent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent &&);
+    /**
+     * @symbol ?getRenderLayer@BlockMaterialInstancesComponent@@QEBA?AW4BlockRenderLayer@@XZ
+     */
     MCAPI enum BlockRenderLayer getRenderLayer() const;
+    /**
+     * @symbol ??4BlockMaterialInstancesComponent@@QEAAAEAU0@$$QEAU0@@Z
+     */
     MCAPI struct BlockMaterialInstancesComponent & operator=(struct BlockMaterialInstancesComponent &&);
+    /**
+     * @symbol ??1BlockMaterialInstancesComponent@@QEAA@XZ
+     */
     MCAPI ~BlockMaterialInstancesComponent();
 
 };

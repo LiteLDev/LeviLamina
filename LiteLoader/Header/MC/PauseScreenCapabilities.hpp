@@ -29,7 +29,15 @@ public:
     PauseScreenCapabilities() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PauseScreenCapabilities();
+    /**
+     * @vtable 1
+     * @symbol ?isOfType@?$TypedScreenCapabilities@UPauseScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
+     */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PAUSESCREENCAPABILITIES
 #endif

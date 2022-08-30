@@ -30,11 +30,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~CommandOriginLoader();
+    /**
+     * @vtable 1
+     * @symbol ?load@CommandOriginLoader@@UEAA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@@Z
+     */
     virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINLOADER
 #endif
+    /**
+     * @symbol ??0CommandOriginLoader@@QEAA@AEAVServerLevel@@@Z
+     */
     MCAPI CommandOriginLoader(class ServerLevel &);
+    /**
+     * @symbol ?load@CommandOriginLoader@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
+     */
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
 };

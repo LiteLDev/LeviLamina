@@ -28,9 +28,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPENDENCIES
 #endif
+    /**
+     * @symbol ??4Dependencies@@QEAAAEAU0@AEBU0@@Z
+     */
     MCAPI struct Dependencies & operator=(struct Dependencies const &);
+    /**
+     * @symbol ??4Dependencies@@QEAAAEAU0@$$QEAU0@@Z
+     */
     MCAPI struct Dependencies & operator=(struct Dependencies &&);
+    /**
+     * @symbol ??1Dependencies@@QEAA@XZ
+     */
     MCAPI ~Dependencies();
+    /**
+     * @symbol ?bindType@Dependencies@@SAXXZ
+     */
     MCAPI static void bindType();
 
 };

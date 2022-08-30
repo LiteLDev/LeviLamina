@@ -32,7 +32,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FindBlockDefinition();
+    /**
+     * @vtable 1
+     * @symbol ?load@FindBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDBLOCKDEFINITION
 #endif

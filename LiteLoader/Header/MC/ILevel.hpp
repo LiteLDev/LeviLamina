@@ -31,8 +31,20 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILEVEL
+    /**
+     * @vtable -1
+     * @symbol ?asLevel@ILevel@@UEAAPEAVLevel@@XZ
+     */
     MCVAPI class Level * asLevel();
+    /**
+     * @vtable -1
+     * @symbol ?asMultiPlayerLevel@ILevel@@UEAAPEAVMultiPlayerLevel@@XZ
+     */
     MCVAPI class MultiPlayerLevel * asMultiPlayerLevel();
+    /**
+     * @vtable -1
+     * @symbol ?getTradeTables@ILevel@@UEAAPEAVTradeTables@@XZ
+     */
     MCVAPI class TradeTables * getTradeTables();
 #endif
 

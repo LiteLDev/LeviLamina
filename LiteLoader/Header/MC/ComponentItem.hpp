@@ -35,125 +35,561 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ComponentItem();
+    /**
+     * @vtable 1
+     * @symbol ?initServer@ComponentItem@@UEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     virtual bool initServer(class Json::Value &, class SemVersion const &);
+    /**
+     * @vtable 2
+     * @symbol ?tearDown@ComponentItem@@UEAAXXZ
+     */
     virtual void tearDown();
+    /**
+     * @vtable 3
+     * @symbol ?setDescriptionId@ComponentItem@@UEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual class ComponentItem & setDescriptionId(std::string const &);
+    /**
+     * @vtable 4
+     * @symbol ?getDescriptionId@ComponentItem@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getDescriptionId() const;
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol ?hasTag@ComponentItem@@UEBA_NAEBVHashedString@@@Z
+     */
     virtual bool hasTag(class HashedString const &) const;
+    /**
+     * @vtable 9
+     * @symbol ?hasTag@ComponentItem@@UEBA_NAEBUItemTag@@@Z
+     */
     virtual bool hasTag(struct ItemTag const &) const;
+    /**
+     * @vtable 10
+     * @symbol ?executeEvent@ComponentItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
+     */
     virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 12
+     * @symbol ?isArmor@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isArmor() const;
+    /**
+     * @vtable 13
+     * @symbol ?isBlockPlanterItem@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isBlockPlanterItem() const;
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 17
+     * @symbol ?isDamageable@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isDamageable() const;
+    /**
+     * @vtable 18
+     * @symbol ?isDyeable@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isDyeable() const;
+    /**
+     * @vtable 19
+     * @symbol ?isDye@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isDye() const;
+    /**
+     * @vtable 22
+     * @symbol ?isFood@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isFood() const;
+    /**
+     * @vtable 23
+     * @symbol ?isThrowable@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isThrowable() const;
+    /**
+     * @vtable 24
+     * @symbol ?isUseable@ComponentItem@@UEBA_NXZ
+     */
     virtual bool isUseable() const;
+    /**
+     * @vtable 25
+     * @symbol ?getComponent@ComponentItem@@UEBAPEAVItemComponent@@AEBVHashedString@@@Z
+     */
     virtual class ItemComponent * getComponent(class HashedString const &) const;
+    /**
+     * @vtable 27
+     * @symbol ?getFood@ComponentItem@@UEBAPEAVIFoodItemComponent@@XZ
+     */
     virtual class IFoodItemComponent * getFood() const;
+    /**
+     * @vtable 28
+     * @symbol ?getFuel@ComponentItem@@UEBAPEAVFuelItemComponent@@XZ
+     */
     virtual class FuelItemComponent * getFuel() const;
+    /**
+     * @vtable 31
+     * @symbol ?setMaxDamage@ComponentItem@@UEAAAEAVItem@@H@Z
+     */
     virtual class Item & setMaxDamage(int);
+    /**
+     * @vtable 40
+     * @symbol ?buildNetworkTag@ComponentItem@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 41
+     * @symbol ?initializeFromNetwork@ComponentItem@@UEAAXAEBVCompoundTag@@@Z
+     */
     virtual void initializeFromNetwork(class CompoundTag const &);
+    /**
+     * @vtable 42
+     * @symbol ?validateFromNetwork@ComponentItem@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVCompoundTag@@@Z
+     */
     virtual std::vector<std::string> validateFromNetwork(class CompoundTag const &);
+    /**
+     * @vtable 43
+     * @symbol ?getBlockShape@ComponentItem@@UEBA?AW4BlockShape@@XZ
+     */
     virtual enum BlockShape getBlockShape() const;
+    /**
+     * @vtable 44
+     * @symbol ?canBeDepleted@ComponentItem@@UEBA_NXZ
+     */
     virtual bool canBeDepleted() const;
+    /**
+     * @vtable 45
+     * @symbol ?canDestroySpecial@ComponentItem@@UEBA_NAEBVBlock@@@Z
+     */
     virtual bool canDestroySpecial(class Block const &) const;
+    /**
+     * @vtable 46
+     * @symbol ?getLevelDataForAuxValue@ComponentItem@@UEBAHH@Z
+     */
     virtual int getLevelDataForAuxValue(int) const;
+    /**
+     * @vtable 48
+     * @symbol ?getMaxDamage@ComponentItem@@UEBAFXZ
+     */
     virtual short getMaxDamage() const;
+    /**
+     * @vtable 49
+     * @symbol ?getAttackDamage@ComponentItem@@UEBAHXZ
+     */
     virtual int getAttackDamage() const;
+    /**
+     * @vtable 51
+     * @symbol ?isGlint@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z
+     */
     virtual bool isGlint(class ItemStackBase const &) const;
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 56
+     * @symbol ?canDestroyInCreative@ComponentItem@@UEBA_NXZ
+     */
     virtual bool canDestroyInCreative() const;
+    /**
+     * @vtable 57
+     * @symbol ?isDestructive@ComponentItem@@UEBA_NH@Z
+     */
     virtual bool isDestructive(int) const;
+    /**
+     * @vtable 58
+     * @symbol ?isLiquidClipItem@ComponentItem@@UEBA_NH@Z
+     */
     virtual bool isLiquidClipItem(int) const;
+    /**
+     * @vtable 60
+     * @symbol ?requiresInteract@ComponentItem@@UEBA_NXZ
+     */
     virtual bool requiresInteract() const;
+    /**
+     * @vtable 61
+     * @symbol ?appendFormattedHovertext@ComponentItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /**
+     * @vtable 62
+     * @symbol ?isValidRepairItem@ComponentItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+     */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /**
+     * @vtable 63
+     * @symbol ?getEnchantSlot@ComponentItem@@UEBAHXZ
+     */
     virtual int getEnchantSlot() const;
+    /**
+     * @vtable 64
+     * @symbol ?getEnchantValue@ComponentItem@@UEBAHXZ
+     */
     virtual int getEnchantValue() const;
+    /**
+     * @vtable 65
+     * @symbol ?getArmorValue@ComponentItem@@UEBAHXZ
+     */
     virtual int getArmorValue() const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 68
+     * @symbol ?isValidAuxValue@ComponentItem@@UEBA_NH@Z
+     */
     virtual bool isValidAuxValue(int) const;
+    /**
+     * @vtable 69
+     * @symbol ?getDamageChance@ComponentItem@@UEBAHH@Z
+     */
     virtual int getDamageChance(int) const;
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 74
+     * @symbol ?getColor@ComponentItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
+     */
     virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 77
+     * @symbol ?clearColor@ComponentItem@@UEBAXAEAVItemStackBase@@@Z
+     */
     virtual void clearColor(class ItemStackBase &) const;
+    /**
+     * @vtable 79
+     * @symbol ?setColor@ComponentItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
+     */
     virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 85
+     * @symbol ?use@ComponentItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /**
+     * @vtable 86
+     * @symbol ?dispense@ComponentItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /**
+     * @vtable 87
+     * @symbol ?useTimeDepleted@ComponentItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+     */
     virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /**
+     * @vtable 88
+     * @symbol ?releaseUsing@ComponentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+     */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
+    /**
+     * @vtable 89
+     * @symbol ?getDestroySpeed@ComponentItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+     */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
+    /**
+     * @vtable 90
+     * @symbol ?hurtActor@ComponentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @vtable 91
+     * @symbol ?hitActor@ComponentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     */
     virtual void hitActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @vtable 92
+     * @symbol ?hitBlock@ComponentItem@@UEBAXAEAVItemStack@@AEBVBlock@@AEBVBlockPos@@AEAVMob@@@Z
+     */
     virtual void hitBlock(class ItemStack &, class Block const &, class BlockPos const &, class Mob &) const;
+    /**
+     * @vtable 93
+     * @symbol ?mineBlock@ComponentItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z
+     */
     virtual bool mineBlock(class ItemInstance &, class Block const &, int, int, int, class Actor *) const;
+    /**
+     * @vtable 94
+     * @symbol ?mineBlock@ComponentItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+     */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /**
+     * @vtable 95
+     * @symbol ?buildDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
+     */
     virtual std::string buildDescriptionName(class ItemStackBase const &) const;
+    /**
+     * @vtable 96
+     * @symbol ?buildDescriptionId@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
+    /**
+     * @vtable 97
+     * @symbol ?buildEffectDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z
+     */
     virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
+    /**
+     * @vtable 101
+     * @symbol ?getMaxStackSize@ComponentItem@@UEBAEAEBVItemDescriptor@@@Z
+     */
     virtual unsigned char getMaxStackSize(class ItemDescriptor const &) const;
+    /**
+     * @vtable 104
+     * @symbol ?getCooldownType@ComponentItem@@UEBAAEBVHashedString@@XZ
+     */
     virtual class HashedString const & getCooldownType() const;
+    /**
+     * @vtable 105
+     * @symbol ?getCooldownTime@ComponentItem@@UEBAHXZ
+     */
     virtual int getCooldownTime() const;
+    /**
+     * @vtable 118
+     * @symbol ?initClient@ComponentItem@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     virtual void initClient(class Json::Value &, class SemVersion const &);
+    /**
+     * @vtable 119
+     * @symbol ?getInteractText@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
+     */
     virtual std::string getInteractText(class Player const &) const;
+    /**
+     * @vtable 120
+     * @symbol ?getAnimationFrameFor@ComponentItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+     */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    /**
+     * @vtable 121
+     * @symbol ?isEmissive@ComponentItem@@UEBA_NH@Z
+     */
     virtual bool isEmissive(int) const;
+    /**
+     * @vtable 123
+     * @symbol ?getIcon@ComponentItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+     */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
+    /**
+     * @vtable 125
+     * @symbol ?setIcon@ComponentItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     virtual class Item & setIcon(std::string const &, int);
+    /**
+     * @vtable 128
+     * @symbol ?canBeCharged@ComponentItem@@UEBA_NXZ
+     */
     virtual bool canBeCharged() const;
+    /**
+     * @vtable 133
+     * @symbol ?getAuxValuesDescription@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getAuxValuesDescription() const;
+    /**
+     * @vtable 134
+     * @symbol ?_checkUseOnPermissions@ComponentItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
+     */
     virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
+    /**
+     * @vtable 135
+     * @symbol ?_calculatePlacePos@ComponentItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+     */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    /**
+     * @vtable 136
+     * @symbol ?_useOn@ComponentItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+     */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTITEM
+    /**
+     * @vtable -1
+     * @symbol ?getVariant@ComponentItem@@UEBAHHH_N@Z
+     */
     MCVAPI int getVariant(int, int, bool) const;
+    /**
+     * @vtable -1
+     * @symbol ?hasCustomColor@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z
+     */
     MCVAPI bool hasCustomColor(class ItemStackBase const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?isComponentBased@ComponentItem@@UEBA_NXZ
+     */
     MCVAPI bool isComponentBased() const;
+    /**
+     * @vtable -1
+     * @symbol ?useVariant@ComponentItem@@UEBA_NHH_N@Z
+     */
     MCVAPI bool useVariant(int, int, bool) const;
 #endif
+    /**
+     * @symbol ??0ComponentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
+     */
     MCAPI ComponentItem(std::string const &, short);
+    /**
+     * @symbol ?_addCerealItemsToMap@ComponentItem@@QEAAXXZ
+     */
     MCAPI void _addCerealItemsToMap();
+    /**
+     * @symbol ?_buildItemsFileSchema@ComponentItem@@QEAA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VComponentItem@@@JsonUtil@@@std@@AEAV23@_NVSemVersion@@@Z
+     */
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> _buildItemsFileSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> &, bool, class SemVersion);
+    /**
+     * @symbol ?_validateClientSchemaAndInitItem@ComponentItem@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     MCAPI bool _validateClientSchemaAndInitItem(class Json::Value &, class SemVersion const &);
+    /**
+     * @symbol ?_validateServerSchemaAndInitItem@ComponentItem@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
+     */
     MCAPI bool _validateServerSchemaAndInitItem(class Json::Value &, class SemVersion const &);
+    /**
+     * @symbol ?checkComponentDataForContentErrors@ComponentItem@@QEBA_NXZ
+     */
     MCAPI bool checkComponentDataForContentErrors() const;
+    /**
+     * @symbol ?executeTrigger@ComponentItem@@QEBA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAVRenderParams@@@Z
+     */
     MCAPI bool executeTrigger(class ItemStackBase &, class DefinitionTrigger const &, class RenderParams &) const;
+    /**
+     * @symbol ?getAliases@ComponentItem@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     */
     MCAPI std::vector<std::string> const & getAliases() const;
+    /**
+     * @symbol ?getArmor@ComponentItem@@QEBAPEAVArmorItemComponent@@XZ
+     */
     MCAPI class ArmorItemComponent * getArmor() const;
+    /**
+     * @symbol ?getDamageable@ComponentItem@@QEBAPEAVDurabilityItemComponent@@XZ
+     */
     MCAPI class DurabilityItemComponent * getDamageable() const;
+    /**
+     * @symbol ?getDyeable@ComponentItem@@QEBAPEAVDyeableComponent@@XZ
+     */
     MCAPI class DyeableComponent * getDyeable() const;
+    /**
+     * @symbol ?getKnockbackResistance@ComponentItem@@QEBAPEAVKnockbackResistanceItemComponent@@XZ
+     */
     MCAPI class KnockbackResistanceItemComponent * getKnockbackResistance() const;
+    /**
+     * @symbol ?getProjectile@ComponentItem@@QEBAPEAVProjectileItemComponent@@XZ
+     */
     MCAPI class ProjectileItemComponent * getProjectile() const;
+    /**
+     * @symbol ?getRecordComponent@ComponentItem@@QEBAPEAVRecordItemComponent@@XZ
+     */
     MCAPI class RecordItemComponent * getRecordComponent() const;
+    /**
+     * @symbol ?getRepairable@ComponentItem@@QEBAPEAVRepairableItemComponent@@XZ
+     */
     MCAPI class RepairableItemComponent * getRepairable() const;
+    /**
+     * @symbol ?getStorage@ComponentItem@@QEBAPEAVStorageItemComponent@@XZ
+     */
     MCAPI class StorageItemComponent * getStorage() const;
+    /**
+     * @symbol ?getWearable@ComponentItem@@QEBAPEAVWearableItemComponent@@XZ
+     */
     MCAPI class WearableItemComponent * getWearable() const;
+    /**
+     * @symbol ?isStorage@ComponentItem@@QEBA_NXZ
+     */
     MCAPI bool isStorage() const;
+    /**
+     * @symbol ?parseJsonEvents@ComponentItem@@QEAA_NAEBVValue@Json@@AEBVSemVersion@@@Z
+     */
     MCAPI bool parseJsonEvents(class Json::Value const &, class SemVersion const &);
+    /**
+     * @symbol ?createItemAbstractCerealSchema@ComponentItem@@SA?AUSchema@reflection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI static struct reflection::Schema createItemAbstractCerealSchema(std::string const &);
+    /**
+     * @symbol ?registerItemComponentTypes@ComponentItem@@SAXXZ
+     */
     MCAPI static void registerItemComponentTypes();
+    /**
+     * @symbol ?upgradeJson@ComponentItem@@SA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@V?$optional@VSemVersion@@@3@@Z
+     */
     MCAPI static bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
 
 //private:
+    /**
+     * @symbol ?_buildItemPropertiesNetworkTag@ComponentItem@@AEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     MCAPI std::unique_ptr<class CompoundTag> _buildItemPropertiesNetworkTag() const;
+    /**
+     * @symbol ?_executeEvent@ComponentItem@@AEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@4@AEAVRenderParams@@@Z
+     */
     MCAPI void _executeEvent(class ItemStackBase &, std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
+    /**
+     * @symbol ?_forceExecuteTrigger@ComponentItem@@AEBA_NAEAVItemStackBase@@AEBVDefinitionTrigger@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@std@@AEAVRenderParams@@@Z
+     */
     MCAPI bool _forceExecuteTrigger(class ItemStackBase &, class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
+    /**
+     * @symbol ?_loadComponentsFromNetworkTag@ComponentItem@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
+     */
     MCAPI void _loadComponentsFromNetworkTag(std::string const &, class CompoundTag const &);
+    /**
+     * @symbol ?_loadItemPropertiesNetworkTag@ComponentItem@@AEAAXAEBVCompoundTag@@@Z
+     */
     MCAPI void _loadItemPropertiesNetworkTag(class CompoundTag const &);
+    /**
+     * @symbol ?_loadItemTagsNetworkTag@ComponentItem@@AEAAXAEBVListTag@@@Z
+     */
     MCAPI void _loadItemTagsNetworkTag(class ListTag const &);
 
 private:

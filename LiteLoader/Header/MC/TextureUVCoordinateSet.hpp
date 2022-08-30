@@ -29,8 +29,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTUREUVCOORDINATESET
 #endif
+    /**
+     * @symbol ??0TextureUVCoordinateSet@@QEAA@XZ
+     */
     MCAPI TextureUVCoordinateSet();
+    /**
+     * @symbol ??0TextureUVCoordinateSet@@QEAA@AEBU0@@Z
+     */
     MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const &);
+    /**
+     * @symbol ??1TextureUVCoordinateSet@@QEAA@XZ
+     */
     MCAPI ~TextureUVCoordinateSet();
 
 };

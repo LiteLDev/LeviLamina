@@ -31,6 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEIDENTIFIER
 #endif
+    /**
+     * @symbol ?bindType@VolumeIdentifier@@SAXXZ
+     */
     MCAPI static void bindType();
 
 };

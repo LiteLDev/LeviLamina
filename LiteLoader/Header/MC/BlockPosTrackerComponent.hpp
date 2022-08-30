@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSTRACKERCOMPONENT
 #endif
+    /**
+     * @symbol ??0BlockPosTrackerComponent@@QEAA@_NAEBVBlockPos@@@Z
+     */
     MCAPI BlockPosTrackerComponent(bool, class BlockPos const &);
+    /**
+     * @symbol ?onRemove@BlockPosTrackerComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void onRemove(class Actor &);
 
 };

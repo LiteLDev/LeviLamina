@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYGOALFACTORY
 #endif
+    /**
+     * @symbol ?tryGetDefinitionSerializer@EntityGoalFactory@@QEAAPEAVIJsonDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class IJsonDefinitionSerializer * tryGetDefinitionSerializer(std::string const &);
+    /**
+     * @symbol ??1EntityGoalFactory@@QEAA@XZ
+     */
     MCAPI ~EntityGoalFactory();
+    /**
+     * @symbol ?addGoals@EntityGoalFactory@@SAXAEAVEntityContext@@AEBVDefinitionInstanceGroup@@@Z
+     */
     MCAPI static void addGoals(class EntityContext &, class DefinitionInstanceGroup const &);
 
 };

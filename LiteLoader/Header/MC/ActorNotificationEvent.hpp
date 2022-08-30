@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORNOTIFICATIONEVENT
 #endif
+    /**
+     * @symbol ??1ActorNotificationEvent@@QEAA@XZ
+     */
     MCAPI ~ActorNotificationEvent();
 
 };

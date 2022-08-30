@@ -32,79 +32,332 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 8
+     * @symbol ?reloadHardcoded@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 9
+     * @symbol ?reloadHardcodedClient@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    /**
+     * @vtable 14
+     * @symbol 
+     */
     virtual ~WitherBoss();
+    /**
+     * @vtable 18
+     * @symbol ?remove@WitherBoss@@UEAAXXZ
+     */
     virtual void remove();
+    /**
+     * @vtable 26
+     * @symbol ?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ
+     */
     virtual class Vec3 getFiringPos() const;
+    /**
+     * @vtable 41
+     * @symbol __unk_vfn_41
+     */
     virtual void __unk_vfn_41();
+    /**
+     * @vtable 53
+     * @symbol ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
+     */
     virtual bool startRiding(class Actor &);
+    /**
+     * @vtable 61
+     * @symbol __unk_vfn_61
+     */
     virtual void __unk_vfn_61();
+    /**
+     * @vtable 68
+     * @symbol __unk_vfn_68
+     */
     virtual void __unk_vfn_68();
+    /**
+     * @vtable 76
+     * @symbol ?setBlockMovementSlowdownMultiplier@WitherBoss@@UEAAXAEBVBlockLegacy@@AEBVVec3@@@Z
+     */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
+    /**
+     * @vtable 82
+     * @symbol __unk_vfn_82
+     */
     virtual void __unk_vfn_82();
+    /**
+     * @vtable 85
+     * @symbol __unk_vfn_85
+     */
     virtual void __unk_vfn_85();
+    /**
+     * @vtable 88
+     * @symbol __unk_vfn_88
+     */
     virtual void __unk_vfn_88();
+    /**
+     * @vtable 96
+     * @symbol __unk_vfn_96
+     */
     virtual void __unk_vfn_96();
+    /**
+     * @vtable 99
+     * @symbol __unk_vfn_99
+     */
     virtual void __unk_vfn_99();
+    /**
+     * @vtable 106
+     * @symbol __unk_vfn_106
+     */
     virtual void __unk_vfn_106();
+    /**
+     * @vtable 108
+     * @symbol __unk_vfn_108
+     */
     virtual void __unk_vfn_108();
+    /**
+     * @vtable 109
+     * @symbol __unk_vfn_109
+     */
     virtual void __unk_vfn_109();
+    /**
+     * @vtable 111
+     * @symbol __unk_vfn_111
+     */
     virtual void __unk_vfn_111();
+    /**
+     * @vtable 135
+     * @symbol ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
+     */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
+    /**
+     * @vtable 142
+     * @symbol ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
+     */
     virtual void handleEntityEvent(enum ActorEvent, int);
+    /**
+     * @vtable 174
+     * @symbol ?canFreeze@WitherBoss@@UEBA_NXZ
+     */
     virtual bool canFreeze() const;
+    /**
+     * @vtable 182
+     * @symbol __unk_vfn_182
+     */
     virtual void __unk_vfn_182();
+    /**
+     * @vtable 186
+     * @symbol ?causeFallDamage@WitherBoss@@UEAAXMMVActorDamageSource@@@Z
+     */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
+    /**
+     * @vtable 196
+     * @symbol __unk_vfn_196
+     */
     virtual void __unk_vfn_196();
+    /**
+     * @vtable 212
+     * @symbol ?canBeAffected@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
+     */
     virtual bool canBeAffected(class MobEffectInstance const &) const;
+    /**
+     * @vtable 213
+     * @symbol ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
+     */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
+    /**
+     * @vtable 222
+     * @symbol __unk_vfn_222
+     */
     virtual void __unk_vfn_222();
+    /**
+     * @vtable 223
+     * @symbol __unk_vfn_223
+     */
     virtual void __unk_vfn_223();
+    /**
+     * @vtable 248
+     * @symbol __unk_vfn_248
+     */
     virtual void __unk_vfn_248();
+    /**
+     * @vtable 251
+     * @symbol __unk_vfn_251
+     */
     virtual void __unk_vfn_251();
+    /**
+     * @vtable 253
+     * @symbol ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
+     */
     virtual void die(class ActorDamageSource const &);
+    /**
+     * @vtable 269
+     * @symbol __unk_vfn_269
+     */
     virtual void __unk_vfn_269();
+    /**
+     * @vtable 270
+     * @symbol ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 273
+     * @symbol ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable 274
+     * @symbol ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
+     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @vtable 277
+     * @symbol __unk_vfn_277
+     */
     virtual void __unk_vfn_277();
+    /**
+     * @vtable 285
+     * @symbol __unk_vfn_285
+     */
     virtual void __unk_vfn_285();
+    /**
+     * @vtable 294
+     * @symbol ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
+     */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
+    /**
+     * @vtable 300
+     * @symbol ?aiStep@WitherBoss@@UEAAXXZ
+     */
     virtual void aiStep();
+    /**
+     * @vtable 313
+     * @symbol __unk_vfn_313
+     */
     virtual void __unk_vfn_313();
+    /**
+     * @vtable 317
+     * @symbol __unk_vfn_317
+     */
     virtual void __unk_vfn_317();
+    /**
+     * @vtable 322
+     * @symbol ?getArmorValue@WitherBoss@@UEBAHXZ
+     */
     virtual int getArmorValue() const;
+    /**
+     * @vtable 351
+     * @symbol __unk_vfn_351
+     */
     virtual void __unk_vfn_351();
+    /**
+     * @vtable 360
+     * @symbol ?newServerAiStep@WitherBoss@@UEAAXXZ
+     */
     virtual void newServerAiStep();
+    /**
+     * @vtable 365
+     * @symbol __unk_vfn_365
+     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERBOSS
 #endif
+    /**
+     * @symbol ??0WitherBoss@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     */
     MCAPI WitherBoss(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ?awardSpawnWitherAchievement@WitherBoss@@QEBAXXZ
+     */
     MCAPI void awardSpawnWitherAchievement() const;
+    /**
+     * @symbol ?getHeadPos@WitherBoss@@QEBA?AVVec3@@H@Z
+     */
     MCAPI class Vec3 getHeadPos(int) const;
+    /**
+     * @symbol ?getHeadRot@WitherBoss@@QEAA?AVVec2@@H@Z
+     */
     MCAPI class Vec2 getHeadRot(int);
+    /**
+     * @symbol ?getInvulnerableTicks@WitherBoss@@QEBAHXZ
+     */
     MCAPI int getInvulnerableTicks() const;
+    /**
+     * @symbol ?getOverlayAlpha@WitherBoss@@QEAAMXZ
+     */
     MCAPI float getOverlayAlpha();
+    /**
+     * @symbol ?getSwellAmount@WitherBoss@@QEBAMM@Z
+     */
     MCAPI float getSwellAmount(float) const;
+    /**
+     * @symbol ?hasAerialAttack@WitherBoss@@QEBA_NXZ
+     */
     MCAPI bool hasAerialAttack() const;
+    /**
+     * @symbol ?postAiStep@WitherBoss@@QEAAXXZ
+     */
     MCAPI void postAiStep();
+    /**
+     * @symbol ?preAiStep@WitherBoss@@QEAA?AW4PreAiStepResult@1@XZ
+     */
     MCAPI enum WitherBoss::PreAiStepResult preAiStep();
+    /**
+     * @symbol ?removeSkeleton@WitherBoss@@QEAAXXZ
+     */
     MCAPI void removeSkeleton();
+    /**
+     * @symbol ?setAerialAttack@WitherBoss@@QEAAX_N@Z
+     */
     MCAPI void setAerialAttack(bool);
+    /**
+     * @symbol ?setAlternativeTarget@WitherBoss@@QEAAXHUActorUniqueID@@@Z
+     */
     MCAPI void setAlternativeTarget(int, struct ActorUniqueID);
+    /**
+     * @symbol ?setInvulnerableTicks@WitherBoss@@QEAAXH@Z
+     */
     MCAPI void setInvulnerableTicks(int);
+    /**
+     * @symbol ?setIsPathing@WitherBoss@@QEAAX_N@Z
+     */
     MCAPI void setIsPathing(bool);
+    /**
+     * @symbol ?setShotDelay@WitherBoss@@QEAAXH@Z
+     */
     MCAPI void setShotDelay(int);
+    /**
+     * @symbol ?setWantsToMove@WitherBoss@@QEAAX_N@Z
+     */
     MCAPI void setWantsToMove(bool);
+    /**
+     * @symbol ?wantsToMove@WitherBoss@@QEAA_NXZ
+     */
     MCAPI bool wantsToMove();
 MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
+    /**
+     * @symbol ?canDestroy@WitherBoss@@SA_NAEBVBlock@@W4WitherAttackType@1@@Z
+     */
     MCAPI static bool canDestroy(class Block const &, enum WitherBoss::WitherAttackType);
 
 //private:
+    /**
+     * @symbol ?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z
+     */
     MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int, enum WitherBoss::WitherAttackType);
+    /**
+     * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
+     */
     MCAPI void _performRangedAttack(int, class Actor &);
+    /**
+     * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEBVVec3@@_N@Z
+     */
     MCAPI void _performRangedAttack(int, class Vec3 const &, bool);
+    /**
+     * @symbol ?canShoot@WitherBoss@@AEAA_NXZ
+     */
     MCAPI bool canShoot();
 
 private:

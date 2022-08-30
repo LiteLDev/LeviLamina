@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RuntimeIdentifierDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getJsonName@RuntimeIdentifierDescription@@UEBAPEBDXZ
+     */
     virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMEIDENTIFIERDESCRIPTION
 #endif
+    /**
+     * @symbol ?parse@RuntimeIdentifierDescription@@QEAAXAEBVValue@Json@@@Z
+     */
     MCAPI void parse(class Json::Value const &);
 
 };

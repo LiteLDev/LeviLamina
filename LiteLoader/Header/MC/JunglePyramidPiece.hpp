@@ -31,11 +31,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~JunglePyramidPiece();
+    /**
+     * @vtable 2
+     * @symbol ?getType@JunglePyramidPiece@@UEBA?AW4StructurePieceType@@XZ
+     */
     virtual enum StructurePieceType getType() const;
+    /**
+     * @vtable 4
+     * @symbol ?postProcess@JunglePyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUNGLEPYRAMIDPIECE
 #endif
+    /**
+     * @symbol ??0JunglePyramidPiece@@QEAA@FHH@Z
+     */
     MCAPI JunglePyramidPiece(short, int, int);
 
 };

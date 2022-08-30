@@ -34,31 +34,125 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HorseArmorItem();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 18
+     * @symbol ?isDyeable@HorseArmorItem@@UEBA_NXZ
+     */
     virtual bool isDyeable() const;
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 61
+     * @symbol ?appendFormattedHovertext@HorseArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
+    /**
+     * @vtable 65
+     * @symbol ?getArmorValue@HorseArmorItem@@UEBAHXZ
+     */
     virtual int getArmorValue() const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 74
+     * @symbol ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
+     */
     virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
+    /**
+     * @vtable 75
+     * @symbol ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
+     */
     virtual bool hasCustomColor(class CompoundTag const *) const;
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 78
+     * @symbol ?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z
+     */
     virtual void clearColor(class CompoundTag *) const;
+    /**
+     * @vtable 79
+     * @symbol ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
+     */
     virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 86
+     * @symbol ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSEARMORITEM
 #endif
+    /**
+     * @symbol ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
+     */
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
+    /**
+     * @symbol ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
+     */
     MCAPI enum HorseArmorItem::Tier getTier() const;
 MCAPI static int const mHealthPerTier[];
 

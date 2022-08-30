@@ -30,11 +30,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~GenericMoveControl();
+    /**
+     * @vtable 1
+     * @symbol ?initializeInternal@GenericMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+     */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
+    /**
+     * @vtable 2
+     * @symbol ?tick@GenericMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     */
     virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROL
 #endif
+    /**
+     * @symbol ??0GenericMoveControl@@QEAA@XZ
+     */
     MCAPI GenericMoveControl();
 
 };

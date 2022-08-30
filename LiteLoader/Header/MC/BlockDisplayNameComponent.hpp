@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDISPLAYNAMECOMPONENT
 #endif
+    /**
+     * @symbol ??1BlockDisplayNameComponent@@QEAA@XZ
+     */
     MCAPI ~BlockDisplayNameComponent();
 
 };

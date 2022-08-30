@@ -31,32 +31,121 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUKEBOXBLOCKACTOR
+    /**
+     * @vtable -1
+     * @symbol ?_getUpdatePacket@JukeboxBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?_onUpdatePacket@JukeboxBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?canPullOutItem@JukeboxBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     */
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?canPushInItem@JukeboxBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@JukeboxBlockActor@@UEAAPEAVContainer@@XZ
+     */
     MCVAPI class Container * getContainer();
+    /**
+     * @vtable -1
+     * @symbol ?getContainer@JukeboxBlockActor@@UEBAPEBVContainer@@XZ
+     */
     MCVAPI class Container const * getContainer() const;
+    /**
+     * @vtable -1
+     * @symbol ?getContainerSize@JukeboxBlockActor@@UEBAHXZ
+     */
     MCVAPI int getContainerSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?getItem@JukeboxBlockActor@@UEBAAEBVItemStack@@H@Z
+     */
     MCVAPI class ItemStack const & getItem(int) const;
+    /**
+     * @vtable -1
+     * @symbol ?getMaxStackSize@JukeboxBlockActor@@UEBAHXZ
+     */
     MCVAPI int getMaxStackSize() const;
+    /**
+     * @vtable -1
+     * @symbol ?load@JukeboxBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @vtable -1
+     * @symbol ?onChanged@JukeboxBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void onChanged(class BlockSource &);
+    /**
+     * @vtable -1
+     * @symbol ?save@JukeboxBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     */
     MCVAPI bool save(class CompoundTag &) const;
+    /**
+     * @vtable -1
+     * @symbol ?serverInitItemStackIds@JukeboxBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
+    /**
+     * @vtable -1
+     * @symbol ?setItem@JukeboxBlockActor@@UEAAXHAEBVItemStack@@@Z
+     */
     MCVAPI void setItem(int, class ItemStack const &);
+    /**
+     * @vtable -1
+     * @symbol ?startOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void startOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?stopOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z
+     */
     MCVAPI void stopOpen(class Player &);
+    /**
+     * @vtable -1
+     * @symbol ?tick@JukeboxBlockActor@@UEAAXAEAVBlockSource@@@Z
+     */
     MCVAPI void tick(class BlockSource &);
 #endif
+    /**
+     * @symbol ??0JukeboxBlockActor@@QEAA@AEBVBlockPos@@@Z
+     */
     MCAPI JukeboxBlockActor(class BlockPos const &);
+    /**
+     * @symbol ?getRecord@JukeboxBlockActor@@QEBAAEBVItemStack@@XZ
+     */
     MCAPI class ItemStack const & getRecord() const;
+    /**
+     * @symbol ?isRecordPlaying@JukeboxBlockActor@@QEBA_NXZ
+     */
     MCAPI bool isRecordPlaying() const;
+    /**
+     * @symbol ?setRecord@JukeboxBlockActor@@QEAAXAEBVItemStack@@@Z
+     */
     MCAPI void setRecord(class ItemStack const &);
+    /**
+     * @symbol ?stopPlayingRecord@JukeboxBlockActor@@QEBAXAEAVBlockSource@@@Z
+     */
     MCAPI void stopPlayingRecord(class BlockSource &) const;
 
 //private:
+    /**
+     * @symbol ?_onChanged@JukeboxBlockActor@@AEAAXAEAVBlockSource@@W4LevelSoundEvent@@@Z
+     */
     MCAPI void _onChanged(class BlockSource &, enum LevelSoundEvent);
+    /**
+     * @symbol ?_spawnMusicParticles@JukeboxBlockActor@@AEAAXAEAVLevel@@M@Z
+     */
     MCAPI void _spawnMusicParticles(class Level &, float);
 
 private:

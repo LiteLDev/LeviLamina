@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LegacySwampFoliageFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@LegacySwampFoliageFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSWAMPFOLIAGEFEATURE
 #endif
+    /**
+     * @symbol ??0LegacySwampFoliageFeature@@QEAA@AEAVFeatureRegistry@@@Z
+     */
     MCAPI LegacySwampFoliageFeature(class FeatureRegistry &);
 
 };

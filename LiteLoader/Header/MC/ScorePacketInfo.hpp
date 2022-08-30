@@ -47,6 +47,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREPACKETINFO
 #endif
+    /**
+     * @symbol ??1ScorePacketInfo@@QEAA@XZ
+     */
     MCAPI ~ScorePacketInfo();
 
 };

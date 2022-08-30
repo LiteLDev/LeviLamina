@@ -32,6 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVERSIONMAPPING
 #endif
+    /**
+     * @symbol ?getVersion@MolangVersionMapping@@SA?BW4MolangVersion@@AEBVSemVersion@@@Z
+     */
     MCAPI static enum MolangVersion const getVersion(class SemVersion const &);
 
 };

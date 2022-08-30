@@ -28,8 +28,20 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScriptPluginPackSource();
+    /**
+     * @vtable 1
+     * @symbol ?getManifest@ScriptPluginPackSource@@UEAAAEBVPackManifest@@XZ
+     */
     virtual class PackManifest const & getManifest();
+    /**
+     * @vtable 2
+     * @symbol ?loadScripts@ScriptPluginPackSource@@UEAA?AV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     */
     virtual class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> loadScripts(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINPACKSOURCE
 #endif

@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LegacyFlowerFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@LegacyFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYFLOWERFEATURE
 #endif
+    /**
+     * @symbol ??0LegacyFlowerFeature@@QEAA@W4FlowerPlacementType@@@Z
+     */
     MCAPI LegacyFlowerFeature(enum FlowerPlacementType);
 
 };

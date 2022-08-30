@@ -28,6 +28,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMP_ALLDATA
 #endif
+    /**
+     * @symbol ??0CrashDump_AllData@@QEAA@XZ
+     */
     MCAPI CrashDump_AllData();
 
 };

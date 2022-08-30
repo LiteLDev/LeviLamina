@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANAGEDWANDERINGTRADERCOMPONENT
 #endif
+    /**
+     * @symbol ?initFromDefinition@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void initFromDefinition(class Actor &);
+    /**
+     * @symbol ?reloadComponent@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void reloadComponent(class Actor &);
 
 };

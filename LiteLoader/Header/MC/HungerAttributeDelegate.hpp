@@ -31,11 +31,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HungerAttributeDelegate();
+    /**
+     * @vtable 1
+     * @symbol ?tick@HungerAttributeDelegate@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 2
+     * @symbol ?notify@HungerAttributeDelegate@@UEAAX_J@Z
+     */
     virtual void notify(__int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUNGERATTRIBUTEDELEGATE
 #endif
+    /**
+     * @symbol ??0HungerAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVPlayer@@@Z
+     */
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);
 
 };

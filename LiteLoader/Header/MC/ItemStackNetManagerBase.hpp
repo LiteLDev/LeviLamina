@@ -30,28 +30,96 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ItemStackNetManagerBase();
+    /**
+     * @vtable 1
+     * @symbol ?isEnabled@ItemStackNetManagerBase@@UEBA_NXZ
+     */
     virtual bool isEnabled() const;
+    /**
+     * @vtable 2
+     * @symbol ?getRequestId@ItemStackNetManagerServer@@UEBA?AV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
+     */
     virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
+    /**
+     * @vtable 3
+     * @symbol ?retainSetItemStackNetIdVariant@ItemStackNetManagerBase@@UEBA_NXZ
+     */
     virtual bool retainSetItemStackNetIdVariant() const;
+    /**
+     * @vtable 4
+     * @symbol ?allowInventoryTransactionManager@ItemStackNetManagerServer@@UEBA_NXZ
+     */
     virtual bool allowInventoryTransactionManager() const = 0;
+    /**
+     * @vtable 5
+     * @symbol ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@MEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
+     */
     virtual class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest();
+    /**
+     * @vtable 6
+     * @symbol ?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z
+     */
     virtual void onContainerScreenOpen(class ContainerScreenContext const &);
+    /**
+     * @vtable 7
+     * @symbol ?onContainerScreenClose@ItemStackNetManagerBase@@UEAAXXZ
+     */
     virtual void onContainerScreenClose();
+    /**
+     * @vtable 8
+     * @symbol ?initOpenContainer@ItemStackNetManagerBase@@UEAAPEAVSparseContainer@@AEAVBlockSource@@W4ContainerEnumName@@AEBVContainerWeakRef@@@Z
+     */
     virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &);
+    /**
+     * @vtable 9
+     * @symbol ?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z
+     */
     virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum ContainerType, int);
+    /**
+     * @vtable 10
+     * @symbol ?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z
+     */
     virtual void _initScreen(class ItemStackNetManagerScreen &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERBASE
 #endif
+    /**
+     * @symbol ??0ItemStackNetManagerBase@@QEAA@AEAVPlayer@@_N1@Z
+     */
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
+    /**
+     * @symbol ?_getScreenStack@ItemStackNetManagerBase@@QEAAAEAVItemStackNetManagerScreenStack@@XZ
+     */
     MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
+    /**
+     * @symbol ?getScreenContext@ItemStackNetManagerBase@@QEBAAEBVContainerScreenContext@@XZ
+     */
     MCAPI class ContainerScreenContext const & getScreenContext() const;
+    /**
+     * @symbol ?isClientSide@ItemStackNetManagerBase@@QEBA_NXZ
+     */
     MCAPI bool isClientSide() const;
+    /**
+     * @symbol ?isScreenOpen@ItemStackNetManagerBase@@QEBA_NXZ
+     */
     MCAPI bool isScreenOpen() const;
+    /**
+     * @symbol ?_tryBeginClientLegacyTransactionRequest@ItemStackNetManagerBase@@SA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@PEAVPlayer@@@Z
+     */
     MCAPI static class gsl::final_action<class std::function<void (void)>> _tryBeginClientLegacyTransactionRequest(class Player *);
+    /**
+     * @symbol ?setPlayerContainer@ItemStackNetManagerBase@@SA_NAEAVPlayer@@W4ContainerType@@HAEBVItemStack@@AEAV4@AEBV?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
+     */
     MCAPI static bool setPlayerContainer(class Player &, enum ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
 //protected:
+    /**
+     * @symbol ?_isRequestActionAllowed@ItemStackNetManagerBase@@IEAA_NAEBVItemStackRequestAction@@@Z
+     */
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 
 protected:

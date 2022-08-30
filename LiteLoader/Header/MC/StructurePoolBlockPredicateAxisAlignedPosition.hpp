@@ -30,11 +30,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
+    /**
+     * @vtable 1
+     * @symbol ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+     */
     virtual bool test(class Block const &, class Randomize &) const;
+    /**
+     * @vtable 2
+     * @symbol ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+     */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEAXISALIGNEDPOSITION
 #endif
+    /**
+     * @symbol ??0StructurePoolBlockPredicateAxisAlignedPosition@@QEAA@MMHHE@Z
+     */
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
 
 };

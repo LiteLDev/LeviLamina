@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMSINFO
 #endif
+    /**
+     * @symbol ?bindType@EntitySystemsInfo@@SAXXZ
+     */
     MCAPI static void bindType();
 
 };

@@ -24,10 +24,25 @@ namespace VanillaSystemsRegistration {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?_registerSideBySideApply@VanillaSystemsRegistration@@YAXAEBV?$vector@IV?$allocator@I@std@@@std@@0AEAVEntitySystems@@V?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@3@AEBURegistrationOptions@1@@Z
+     */
     MCAPI void _registerSideBySideApply(std::vector<unsigned int> const &, std::vector<unsigned int> const &, class EntitySystems &, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
+     * @symbol ?registerExtractApplyBlock@VanillaSystemsRegistration@@YAXAEAUDependencyInfo@1@W4ExtractApplyMode@1@V?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@std@@AEAVEntitySystems@@AEBURegistrationOptions@1@AEBV?$function@$$A6AXAEAVIEntitySystems@@@Z@5@@Z
+     */
     MCAPI void registerExtractApplyBlock(struct VanillaSystemsRegistration::DependencyInfo &, enum VanillaSystemsRegistration::ExtractApplyMode, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::function<void (class IEntitySystems &)> const &);
+    /**
+     * @symbol ?registerSharedVanillaPlayerInteractionSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
+     */
     MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems &);
+    /**
+     * @symbol ?registerTickFilterSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
+     */
     MCAPI void registerTickFilterSystems(class EntitySystems &);
+    /**
+     * @symbol ?registerVanillaServerTickingSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@AEBURegistrationOptions@1@@Z
+     */
     MCAPI void registerVanillaServerTickingSystems(class EntitySystems &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const &);
 
 };

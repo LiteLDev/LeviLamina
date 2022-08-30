@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEATDESCRIPTIONUTILITY
 #endif
+    /**
+     * @symbol ?getSeatDescriptionOfPassenger@SeatDescriptionUtility@@SAAEBUSeatDescription@@AEBV?$vector@USeatDescription@@V?$allocator@USeatDescription@@@std@@@std@@HH@Z
+     */
     MCAPI static struct SeatDescription const & getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const &, int, int);
+    /**
+     * @symbol ?setValuesToSynchedActorData@SeatDescriptionUtility@@SAXAEAVSynchedActorData@@AEBVVec3@@AEBUSeatDescription@@M@Z
+     */
     MCAPI static void setValuesToSynchedActorData(class SynchedActorData &, class Vec3 const &, struct SeatDescription const &, float);
 
 };

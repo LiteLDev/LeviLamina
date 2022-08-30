@@ -33,7 +33,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYTYPES
 #endif
+    /**
+     * @symbol ?parseJson@EntityTypes@@QEAA_NAEBVValue@Json@@@Z
+     */
     MCAPI bool parseJson(class Json::Value const &);
+    /**
+     * @symbol ??1EntityTypes@@QEAA@XZ
+     */
     MCAPI ~EntityTypes();
 
 };

@@ -27,17 +27,51 @@ public:
     BlockLightDampeningDescription() = delete;
 #endif
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BlockLightDampeningDescription();
+    /**
+     * @vtable 1
+     * @symbol ?getName@BlockLightDampeningDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string const & getName() const;
+    /**
+     * @vtable 2
+     * @symbol ?initializeComponent@BlockLightDampeningDescription@@UEBAXAEAVEntityContext@@@Z
+     */
     virtual void initializeComponent(class EntityContext &) const;
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?isNetworkComponent@BlockLightDampeningDescription@@UEBA_NXZ
+     */
     virtual bool isNetworkComponent() const;
+    /**
+     * @vtable 5
+     * @symbol ?buildNetworkTag@BlockLightDampeningDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vtable 6
+     * @symbol ?initializeFromNetwork@BlockLightDampeningDescription@@UEAAXAEBVCompoundTag@@@Z
+     */
     virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLIGHTDAMPENINGDESCRIPTION
 #endif
 MCAPI static std::string const NameID;
+    /**
+     * @symbol ?bindType@BlockLightDampeningDescription@@SAXXZ
+     */
     MCAPI static void bindType();
+    /**
+     * @symbol ?registerVersionUpgrades@BlockLightDampeningDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

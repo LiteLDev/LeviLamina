@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONACTIONEVENT
 #endif
+    /**
+     * @symbol ??1PistonActionEvent@@QEAA@XZ
+     */
     MCAPI ~PistonActionEvent();
 
 };

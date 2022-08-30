@@ -31,17 +31,47 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~DefendTrustedTargetGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@DefendTrustedTargetGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 4
+     * @symbol ?start@DefendTrustedTargetGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@DefendTrustedTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDTRUSTEDTARGETGOAL
 #endif
+    /**
+     * @symbol ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@@AEBVActorDefinitionTrigger@@@Z
+     */
     MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class ActorDefinitionTrigger const &);
 
 //private:
+    /**
+     * @symbol ?_findTrustedTarget@DefendTrustedTargetGoal@@AEAA?AUActorUniqueID@@AEBVTrustComponent@@@Z
+     */
     MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
 
 private:

@@ -29,11 +29,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~LookControl();
+    /**
+     * @vtable 1
+     * @symbol ?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z
+     */
     virtual void initializeInternal(class Mob &);
+    /**
+     * @vtable 2
+     * @symbol ?tick@LookControl@@UEAAXAEAVMob@@@Z
+     */
     virtual void tick(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
 #endif
+    /**
+     * @symbol ??0LookControl@@QEAA@XZ
+     */
     MCAPI LookControl();
 
 };

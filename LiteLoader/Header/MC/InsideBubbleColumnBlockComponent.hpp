@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBUBBLECOLUMNBLOCKCOMPONENT
 #endif
+    /**
+     * @symbol ??4InsideBubbleColumnBlockComponent@@QEAAAEAU0@$$QEAU0@@Z
+     */
     MCAPI struct InsideBubbleColumnBlockComponent & operator=(struct InsideBubbleColumnBlockComponent &&);
+    /**
+     * @symbol ??1InsideBubbleColumnBlockComponent@@QEAA@XZ
+     */
     MCAPI ~InsideBubbleColumnBlockComponent();
 
 };

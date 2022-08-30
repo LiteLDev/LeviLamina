@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSEINFO
 #endif
+    /**
+     * @symbol ??0ItemStackResponseInfo@@QEAA@XZ
+     */
     MCAPI ItemStackResponseInfo();
+    /**
+     * @symbol ??1ItemStackResponseInfo@@QEAA@XZ
+     */
     MCAPI ~ItemStackResponseInfo();
 
 };

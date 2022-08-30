@@ -42,18 +42,66 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~VarIntDataOutput();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?writeFloat@VarIntDataOutput@@UEAAXM@Z
+     */
     virtual void writeFloat(float);
+    /**
+     * @vtable 4
+     * @symbol ?writeDouble@VarIntDataOutput@@UEAAXN@Z
+     */
     virtual void writeDouble(double);
+    /**
+     * @vtable 5
+     * @symbol ?writeByte@VarIntDataOutput@@UEAAXD@Z
+     */
     virtual void writeByte(char);
+    /**
+     * @vtable 6
+     * @symbol ?writeShort@VarIntDataOutput@@UEAAXF@Z
+     */
     virtual void writeShort(short);
+    /**
+     * @vtable 7
+     * @symbol ?writeInt@VarIntDataOutput@@UEAAXH@Z
+     */
     virtual void writeInt(int);
+    /**
+     * @vtable 8
+     * @symbol ?writeLongLong@VarIntDataOutput@@UEAAX_J@Z
+     */
     virtual void writeLongLong(__int64);
+    /**
+     * @vtable 9
+     * @symbol ?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z
+     */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
+    /**
+     * @vtable -1
+     * @symbol ?writeLongString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
+    /**
+     * @vtable -1
+     * @symbol ?writeString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
 #endif
 

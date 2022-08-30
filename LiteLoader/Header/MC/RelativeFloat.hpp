@@ -44,8 +44,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RELATIVEFLOAT
 #endif
+    /**
+     * @symbol ??0RelativeFloat@@QEAA@XZ
+     */
     MCAPI RelativeFloat();
+    /**
+     * @symbol ??0RelativeFloat@@QEAA@M_N@Z
+     */
     MCAPI RelativeFloat(float, bool);
+    /**
+     * @symbol ?getValue@RelativeFloat@@QEBAMM@Z
+     */
     MCAPI float getValue(float) const;
 
 };

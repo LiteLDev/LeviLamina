@@ -29,7 +29,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPROPERTYCOMPONENT
 #endif
+    /**
+     * @symbol ?getProperty@BlockPropertyComponent@@QEBA_NW4BlockProperty@@@Z
+     */
     MCAPI bool getProperty(enum BlockProperty) const;
+    /**
+     * @symbol ?hasProperty@BlockPropertyComponent@@QEBA_NW4BlockProperty@@@Z
+     */
     MCAPI bool hasProperty(enum BlockProperty) const;
 
 };

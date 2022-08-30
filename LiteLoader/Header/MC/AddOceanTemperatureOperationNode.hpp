@@ -30,9 +30,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~AddOceanTemperatureOperationNode();
+    /**
+     * @vtable 1
+     * @symbol __unk_vfn_1
+     */
     virtual void __unk_vfn_1();
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?_fillArea@AddOceanTemperatureOperationNode@@MEBAXAEAV?$WorkingData@W4BiomeTemperatureCategory@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
+     */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<enum BiomeTemperatureCategory, char> &, class Pos2d const &, class Pos2d const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDOCEANTEMPERATUREOPERATIONNODE
 #endif

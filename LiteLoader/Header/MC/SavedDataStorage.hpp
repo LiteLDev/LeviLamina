@@ -32,12 +32,27 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATASTORAGE
 #endif
+    /**
+     * @symbol ??0SavedDataStorage@@QEAA@PEAVLevelStorage@@@Z
+     */
     MCAPI SavedDataStorage(class LevelStorage *);
+    /**
+     * @symbol ?loadAndSet@SavedDataStorage@@QEAA_NAEAVSavedData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI bool loadAndSet(class SavedData &, std::string const &);
+    /**
+     * @symbol ?save@SavedDataStorage@@QEAAXXZ
+     */
     MCAPI void save();
+    /**
+     * @symbol ?set@SavedDataStorage@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVSavedData@@@Z
+     */
     MCAPI void set(std::string const &, class SavedData &);
 
 //private:
+    /**
+     * @symbol ?_save@SavedDataStorage@@AEAAXAEBVSavedData@@@Z
+     */
     MCAPI void _save(class SavedData const &);
 
 private:

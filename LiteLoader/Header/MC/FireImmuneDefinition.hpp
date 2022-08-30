@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREIMMUNEDEFINITION
 #endif
+    /**
+     * @symbol ?initialize@FireImmuneDefinition@@QEAAXAEAVEntityContext@@@Z
+     */
     MCAPI void initialize(class EntityContext &);
+    /**
+     * @symbol ?uninitialize@FireImmuneDefinition@@QEAAXAEAVEntityContext@@@Z
+     */
     MCAPI void uninitialize(class EntityContext &);
+    /**
+     * @symbol ?buildSchema@FireImmuneDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFireImmuneDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FireImmuneDefinition>> &);
 
 };

@@ -168,35 +168,119 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATA
 #endif
+    /**
+     * @symbol ??0SynchedActorData@@QEAA@XZ
+     */
     MCAPI SynchedActorData();
+    /**
+     * @symbol ??0SynchedActorData@@QEAA@$$QEAV0@@Z
+     */
     MCAPI SynchedActorData(class SynchedActorData &&);
+    /**
+     * @symbol ?_assignValues@SynchedActorData@@QEAA_NAEBV1@PEAVActor@@@Z
+     */
     MCAPI bool _assignValues(class SynchedActorData const &, class Actor *);
+    /**
+     * @symbol ?_clone@SynchedActorData@@QEBA?AV1@XZ
+     */
     MCAPI class SynchedActorData _clone() const;
+    /**
+     * @symbol ?assignValues@SynchedActorData@@QEAA_NAEBV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@PEAVActor@@@Z
+     */
     MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const &, class Actor *);
+    /**
+     * @symbol ?forEachDataItem@SynchedActorData@@QEBAXAEBV?$function@$$A6AXAEBV?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@Z@std@@@Z
+     */
     MCAPI void forEachDataItem(class std::function<void (std::unique_ptr<class DataItem> const &)> const &) const;
+    /**
+     * @symbol ?getCompoundTag@SynchedActorData@@QEBAAEBVCompoundTag@@G@Z
+     */
     MCAPI class CompoundTag const & getCompoundTag(unsigned short) const;
+    /**
+     * @symbol ?getFloat@SynchedActorData@@QEBAMG@Z
+     */
     MCAPI float getFloat(unsigned short) const;
+    /**
+     * @symbol ?getInt@SynchedActorData@@QEBAHG@Z
+     */
     MCAPI int getInt(unsigned short) const;
+    /**
+     * @symbol ?getInt64@SynchedActorData@@QEBA_JG@Z
+     */
     MCAPI __int64 getInt64(unsigned short) const;
+    /**
+     * @symbol ?getInt8@SynchedActorData@@QEBACG@Z
+     */
     MCAPI signed char getInt8(unsigned short) const;
+    /**
+     * @symbol ?getPosition@SynchedActorData@@QEBA?AVBlockPos@@G@Z
+     */
     MCAPI class BlockPos getPosition(unsigned short) const;
+    /**
+     * @symbol ?getShort@SynchedActorData@@QEBAFG@Z
+     */
     MCAPI short getShort(unsigned short) const;
+    /**
+     * @symbol ?getStatusFlag@SynchedActorData@@QEBA_NW4ActorFlags@@@Z
+     */
     MCAPI bool getStatusFlag(enum ActorFlags) const;
+    /**
+     * @symbol ?getString@SynchedActorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+     */
     MCAPI std::string const & getString(unsigned short) const;
+    /**
+     * @symbol ?getValidDataItemCount@SynchedActorData@@QEBA_KXZ
+     */
     MCAPI unsigned __int64 getValidDataItemCount() const;
+    /**
+     * @symbol ?getVec3@SynchedActorData@@QEBA?AVVec3@@G@Z
+     */
     MCAPI class Vec3 getVec3(unsigned short) const;
+    /**
+     * @symbol ?hasData@SynchedActorData@@QEBA_NG@Z
+     */
     MCAPI bool hasData(unsigned short) const;
+    /**
+     * @symbol ?markDirty@SynchedActorData@@QEAAXG@Z
+     */
     MCAPI void markDirty(unsigned short);
+    /**
+     * @symbol ??4SynchedActorData@@QEAAAEAV0@$$QEAV0@@Z
+     */
     MCAPI class SynchedActorData & operator=(class SynchedActorData &&);
+    /**
+     * @symbol ??8SynchedActorData@@QEBA_NAEBV0@@Z
+     */
     MCAPI bool operator==(class SynchedActorData const &) const;
+    /**
+     * @symbol ?packAll@SynchedActorData@@QEBA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@XZ
+     */
     MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
+    /**
+     * @symbol ?packDirty@SynchedActorData@@QEAA?AV?$vector@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@V?$allocator@V?$unique_ptr@VDataItem@@U?$default_delete@VDataItem@@@std@@@std@@@2@@std@@XZ
+     */
     MCAPI std::vector<std::unique_ptr<class DataItem>> packDirty();
+    /**
+     * @symbol ?setStatusFlag@SynchedActorData@@QEAAXW4ActorFlags@@_N@Z
+     */
     MCAPI void setStatusFlag(enum ActorFlags, bool);
+    /**
+     * @symbol ??1SynchedActorData@@QEAA@XZ
+     */
     MCAPI ~SynchedActorData();
 
 //private:
+    /**
+     * @symbol ?_find@SynchedActorData@@AEBAPEAVDataItem@@G@Z
+     */
     MCAPI class DataItem * _find(unsigned short) const;
+    /**
+     * @symbol ?_get@SynchedActorData@@AEAAAEAVDataItem@@G@Z
+     */
     MCAPI class DataItem & _get(unsigned short);
+    /**
+     * @symbol ?_resizeToContain@SynchedActorData@@AEAAXG@Z
+     */
     MCAPI void _resizeToContain(unsigned short);
 
 private:

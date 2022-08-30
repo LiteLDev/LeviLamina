@@ -28,8 +28,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDEFINITIONEVENTTRIGGEREDEVENT
 #endif
+    /**
+     * @symbol ??0ItemDefinitionEventTriggeredEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &);
+    /**
+     * @symbol ??0ItemDefinitionEventTriggeredEvent@@QEAA@$$QEAU0@@Z
+     */
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent &&);
+    /**
+     * @symbol ??1ItemDefinitionEventTriggeredEvent@@QEAA@XZ
+     */
     MCAPI ~ItemDefinitionEventTriggeredEvent();
 
 };

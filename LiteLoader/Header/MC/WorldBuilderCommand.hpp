@@ -31,11 +31,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~WorldBuilderCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@WorldBuilderCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDBUILDERCOMMAND
 #endif
+    /**
+     * @symbol ?setWorldBuilder@WorldBuilderCommand@@SAXAEAVLayeredAbilities@@_N@Z
+     */
     MCAPI static void setWorldBuilder(class LayeredAbilities &, bool);
+    /**
+     * @symbol ?setup@WorldBuilderCommand@@SAXAEAVCommandRegistry@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

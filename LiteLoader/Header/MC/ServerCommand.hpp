@@ -29,8 +29,15 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
+    /**
+     * @vtable -1
+     * @symbol ??1ServerCommand@@UEAA@XZ
+     */
     MCVAPI ~ServerCommand();
 #endif
+    /**
+     * @symbol ?setup@ServerCommand@@SAXAEAVMinecraft@@@Z
+     */
     MCAPI static void setup(class Minecraft &);
 
 //protected:

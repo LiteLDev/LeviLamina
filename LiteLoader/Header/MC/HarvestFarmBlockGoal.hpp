@@ -31,22 +31,72 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HarvestFarmBlockGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@HarvestFarmBlockGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@HarvestFarmBlockGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@HarvestFarmBlockGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@HarvestFarmBlockGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@HarvestFarmBlockGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@HarvestFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 11
+     * @symbol ?isValidTarget@HarvestFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARVESTFARMBLOCKGOAL
 #endif
+    /**
+     * @symbol ??0HarvestFarmBlockGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI HarvestFarmBlockGoal(class Mob &);
 
 //protected:
+    /**
+     * @symbol ?trySowCrop@HarvestFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
 
 protected:

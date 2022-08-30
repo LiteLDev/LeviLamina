@@ -30,9 +30,25 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~Amplifier();
+    /**
+     * @vtable 1
+     * @symbol ?getAmount@Amplifier@@UEBAMHM@Z
+     */
     virtual float getAmount(int, float) const;
+    /**
+     * @vtable 2
+     * @symbol ?shouldBuff@Amplifier@@UEBA_NHH@Z
+     */
     virtual bool shouldBuff(int, int) const;
+    /**
+     * @vtable 3
+     * @symbol ?getTickInterval@Amplifier@@UEBAHH@Z
+     */
     virtual int getTickInterval(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPLIFIER
 #endif

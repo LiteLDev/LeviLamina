@@ -30,25 +30,85 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MeleeAttackGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@MeleeAttackGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@MeleeAttackGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@MeleeAttackGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@MeleeAttackGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@MeleeAttackGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MeleeAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol ?_attemptMoveToTarget@MeleeAttackGoal@@MEAAXAEAVActor@@@Z
+     */
     virtual void _attemptMoveToTarget(class Actor &);
+    /**
+     * @vtable 11
+     * @symbol ?_attemptAttackTarget@MeleeAttackGoal@@MEAAXAEAVActor@@MMMM@Z
+     */
     virtual void _attemptAttackTarget(class Actor &, float, float, float, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEATTACKGOAL
 #endif
+    /**
+     * @symbol ??0MeleeAttackGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI MeleeAttackGoal(class Mob &);
 
 //protected:
+    /**
+     * @symbol ?_attemptMoveToTargetPosition@MeleeAttackGoal@@IEAAXAEAVActor@@M@Z
+     */
     MCAPI void _attemptMoveToTargetPosition(class Actor &, float);
+    /**
+     * @symbol ?_getAttackReachSqr@MeleeAttackGoal@@IEBAMAEBVActor@@@Z
+     */
     MCAPI float _getAttackReachSqr(class Actor const &) const;
+    /**
+     * @symbol ?_inSunlight@MeleeAttackGoal@@IEBA_NAEBVActor@@@Z
+     */
     MCAPI bool _inSunlight(class Actor const &) const;
 
 protected:

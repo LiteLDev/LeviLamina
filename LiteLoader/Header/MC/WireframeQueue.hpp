@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WIREFRAMEQUEUE
 #endif
+    /**
+     * @symbol ??1WireframeQueue@@QEAA@XZ
+     */
     MCAPI ~WireframeQueue();
 
 };

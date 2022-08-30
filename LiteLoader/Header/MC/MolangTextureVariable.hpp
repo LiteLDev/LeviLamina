@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGTEXTUREVARIABLE
 #endif
+    /**
+     * @symbol ??1MolangTextureVariable@@QEAA@XZ
+     */
     MCAPI ~MolangTextureVariable();
 
 };

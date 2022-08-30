@@ -31,7 +31,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~FloatNavigation();
+    /**
+     * @vtable 10
+     * @symbol ?travel@FloatNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
+     */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATNAVIGATION
 #endif

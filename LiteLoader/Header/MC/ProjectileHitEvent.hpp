@@ -28,7 +28,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEHITEVENT
 #endif
+    /**
+     * @symbol ??0ProjectileHitEvent@@QEAA@AEBU0@@Z
+     */
     MCAPI ProjectileHitEvent(struct ProjectileHitEvent const &);
+    /**
+     * @symbol ??1ProjectileHitEvent@@QEAA@XZ
+     */
     MCAPI ~ProjectileHitEvent();
 
 };

@@ -31,16 +31,50 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BannerDuplicateRecipe();
+    /**
+     * @vtable 1
+     * @symbol ?assemble@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    /**
+     * @vtable 2
+     * @symbol ?getCraftingSize@BannerDuplicateRecipe@@UEBAHXZ
+     */
     virtual int getCraftingSize() const;
+    /**
+     * @vtable 3
+     * @symbol ?getIngredient@BannerDuplicateRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
+    /**
+     * @vtable 4
+     * @symbol ?getResultItem@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
+    /**
+     * @vtable 6
+     * @symbol ?matches@BannerDuplicateRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
+    /**
+     * @vtable 7
+     * @symbol ?size@BannerDuplicateRecipe@@UEBAHXZ
+     */
     virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERDUPLICATERECIPE
 #endif
+    /**
+     * @symbol ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     */
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+    /**
+     * @symbol ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     */
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>);
 MCAPI static class mce::UUID const ID;
 

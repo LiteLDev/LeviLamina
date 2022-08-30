@@ -31,12 +31,23 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~SeagrassFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@SeagrassFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAGRASSFEATURE
 #endif
 
 //private:
+    /**
+     * @symbol ?_isNotIce@SeagrassFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     */
     MCAPI bool _isNotIce(class BlockSource &, class BlockPos const &) const;
 
 private:

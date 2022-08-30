@@ -32,7 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLES
 #endif
+    /**
+     * @symbol ?lookupByName@LootTables@@QEAAPEAVLootTable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVResourcePackManager@@@Z
+     */
     MCAPI class LootTable * lookupByName(std::string const &, class ResourcePackManager &);
+    /**
+     * @symbol ??1LootTables@@QEAA@XZ
+     */
     MCAPI ~LootTables();
 
 };

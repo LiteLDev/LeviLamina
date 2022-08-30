@@ -32,42 +32,159 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ChemistryStickItem();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 31
+     * @symbol ?setMaxDamage@ChemistryStickItem@@UEAAAEAVItem@@H@Z
+     */
     virtual class Item & setMaxDamage(int);
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 62
+     * @symbol ?isValidRepairItem@ChemistryStickItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+     */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 85
+     * @symbol ?use@ChemistryStickItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /**
+     * @vtable 87
+     * @symbol ?useTimeDepleted@ChemistryStickItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
+     */
     virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /**
+     * @vtable 90
+     * @symbol ?hurtActor@ChemistryStickItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @vtable 94
+     * @symbol ?mineBlock@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+     */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /**
+     * @vtable 102
+     * @symbol ?inventoryTick@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+     */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    /**
+     * @vtable 106
+     * @symbol ?fixupCommon@ChemistryStickItem@@UEBAXAEAVItemStackBase@@@Z
+     */
     virtual void fixupCommon(class ItemStackBase &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYSTICKITEM
+    /**
+     * @vtable -1
+     * @symbol ?showsDurabilityInCreative@ChemistryStickItem@@UEBA_NXZ
+     */
     MCVAPI bool showsDurabilityInCreative() const;
+    /**
+     * @vtable -1
+     * @symbol ?uniqueAuxValues@ChemistryStickItem@@UEBA_NXZ
+     */
     MCVAPI bool uniqueAuxValues() const;
 #endif
+    /**
+     * @symbol ??0ChemistryStickItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI ChemistryStickItem(std::string const &, int);
+    /**
+     * @symbol ?getColorType@ChemistryStickItem@@SA?AW4ItemColor@@H@Z
+     */
     MCAPI static enum ItemColor getColorType(int);
+    /**
+     * @symbol ?isActive@ChemistryStickItem@@SA_NH@Z
+     */
     MCAPI static bool isActive(int);
+    /**
+     * @symbol ?isChemistryStick@ChemistryStickItem@@SA_NAEBVItemStackBase@@@Z
+     */
     MCAPI static bool isChemistryStick(class ItemStackBase const &);
 
 //protected:
+    /**
+     * @symbol ?_getColorName@ChemistryStickItem@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI std::string _getColorName(int) const;
+    /**
+     * @symbol ?_tick@ChemistryStickItem@@IEBA_NAEAVItemStack@@_K@Z
+     */
     MCAPI bool _tick(class ItemStack &, unsigned __int64) const;
 
 //private:
+    /**
+     * @symbol ?_storeActivationTimestamp@ChemistryStickItem@@AEBAXAEAVItemStack@@_KH@Z
+     */
     MCAPI void _storeActivationTimestamp(class ItemStack &, unsigned __int64, int) const;
 
 protected:

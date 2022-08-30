@@ -30,11 +30,26 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~TestAction();
+    /**
+     * @vtable 1
+     * @symbol ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+     */
     virtual void execute(class ServerLevel &, class Dimension &);
+    /**
+     * @vtable 3
+     * @symbol ??8TestAction@@UEBA_NAEAVIRequestAction@@@Z
+     */
     virtual bool operator==(class IRequestAction &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTACTION
 #endif
+    /**
+     * @symbol ??0TestAction@@QEAA@XZ
+     */
     MCAPI TestAction();
 
 };

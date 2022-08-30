@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~StopCommand();
+    /**
+     * @vtable 1
+     * @symbol ?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPCOMMAND
 #endif
+    /**
+     * @symbol ?setup@StopCommand@@SAXAEAVCommandRegistry@@AEAVDedicatedServer@@@Z
+     */
     MCAPI static void setup(class CommandRegistry &, class DedicatedServer &);
 
 //private:

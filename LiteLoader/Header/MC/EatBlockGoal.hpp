@@ -30,17 +30,55 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~EatBlockGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@EatBlockGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@EatBlockGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@EatBlockGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@EatBlockGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@EatBlockGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@EatBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATBLOCKGOAL
 #endif
+    /**
+     * @symbol ??0EatBlockGoal@@QEAA@AEAVMob@@@Z
+     */
     MCAPI EatBlockGoal(class Mob &);
+    /**
+     * @symbol ?getEatSuccessChance@EatBlockGoal@@QEBAMAEAVActor@@@Z
+     */
     MCAPI float getEatSuccessChance(class Actor &) const;
 
 };

@@ -32,12 +32,40 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ActorHasEquipmentTest();
+    /**
+     * @vtable 1
+     * @symbol ?setup@ActorHasEquipmentTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+     */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
+    /**
+     * @vtable 2
+     * @symbol ?evaluate@ActorHasEquipmentTest@@UEBA_NAEBUFilterContext@@@Z
+     */
     virtual bool evaluate(struct FilterContext const &) const;
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?getName@ActorHasEquipmentTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
+    /**
+     * @vtable 5
+     * @symbol ?_serializeDomain@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
+     */
     virtual class Json::Value _serializeDomain() const;
+    /**
+     * @vtable 6
+     * @symbol ?_serializeValue@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
+     */
     virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
 #endif

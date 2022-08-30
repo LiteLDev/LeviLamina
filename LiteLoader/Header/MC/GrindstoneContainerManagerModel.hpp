@@ -31,16 +31,51 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~GrindstoneContainerManagerModel();
+    /**
+     * @vtable 6
+     * @symbol ?getItemCopies@GrindstoneContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     */
     virtual std::vector<class ItemStack> getItemCopies() const;
+    /**
+     * @vtable 7
+     * @symbol ?setSlot@GrindstoneContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     */
     virtual void setSlot(int, class ItemStack const &, bool);
+    /**
+     * @vtable 8
+     * @symbol ?getSlot@GrindstoneContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     */
     virtual class ItemStack const & getSlot(int) const;
+    /**
+     * @vtable 9
+     * @symbol ?setData@GrindstoneContainerManagerModel@@UEAAXHH@Z
+     */
     virtual void setData(int, int);
+    /**
+     * @vtable 10
+     * @symbol ?broadcastChanges@GrindstoneContainerManagerModel@@UEAAXXZ
+     */
     virtual void broadcastChanges();
+    /**
+     * @vtable 16
+     * @symbol ?isValid@GrindstoneContainerManagerModel@@UEAA_NM@Z
+     */
     virtual bool isValid(float);
+    /**
+     * @vtable 17
+     * @symbol ?_postInit@GrindstoneContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONECONTAINERMANAGERMODEL
 #endif
+    /**
+     * @symbol ??0GrindstoneContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     */
     MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 MCAPI static int const ADDITIONAL_SLOT;
 MCAPI static int const INPUT_SLOT;

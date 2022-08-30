@@ -28,7 +28,15 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScriptingEventListener();
+    /**
+     * @vtable 1
+     * @symbol ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
+     */
     virtual enum EventResult onEvent(struct ScriptingNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGEVENTLISTENER
 #endif

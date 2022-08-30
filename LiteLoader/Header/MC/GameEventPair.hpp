@@ -29,6 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTPAIR
 #endif
+    /**
+     * @symbol ??1GameEventPair@@QEAA@XZ
+     */
     MCAPI ~GameEventPair();
 
 };

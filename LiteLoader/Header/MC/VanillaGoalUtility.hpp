@@ -22,6 +22,9 @@ namespace VanillaGoalUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?registerGoalsToFactory@VanillaGoalUtility@@YAXAEAVActorGoalFactory@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
+     */
     MCAPI void registerGoalsToFactory(class ActorGoalFactory &, class BaseGameVersion const &, class Experiments const &);
 
 };

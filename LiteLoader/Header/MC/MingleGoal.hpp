@@ -31,23 +31,75 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~MingleGoal();
+    /**
+     * @vtable 1
+     * @symbol ?canUse@MingleGoal@@UEAA_NXZ
+     */
     virtual bool canUse();
+    /**
+     * @vtable 2
+     * @symbol ?canContinueToUse@MingleGoal@@UEAA_NXZ
+     */
     virtual bool canContinueToUse();
+    /**
+     * @vtable 3
+     * @symbol __unk_vfn_3
+     */
     virtual void __unk_vfn_3();
+    /**
+     * @vtable 4
+     * @symbol ?start@MingleGoal@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 5
+     * @symbol ?stop@MingleGoal@@UEAAXXZ
+     */
     virtual void stop();
+    /**
+     * @vtable 6
+     * @symbol ?tick@MingleGoal@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 7
+     * @symbol ?appendDebugInfo@MingleGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual void appendDebugInfo(std::string &) const;
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINGLEGOAL
 #endif
+    /**
+     * @symbol ??0MingleGoal@@QEAA@AEAVMob@@MMMUActorDefinitionIdentifier@@M@Z
+     */
     MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
 
 //private:
+    /**
+     * @symbol ?_findNewPartner@MingleGoal@@AEAAXUActorUniqueID@@@Z
+     */
     MCAPI void _findNewPartner(struct ActorUniqueID);
+    /**
+     * @symbol ?_isWithinInteractRange@MingleGoal@@AEBA_NAEAVActor@@@Z
+     */
     MCAPI bool _isWithinInteractRange(class Actor &) const;
+    /**
+     * @symbol ?_lookAt@MingleGoal@@AEAAXPEAVActor@@@Z
+     */
     MCAPI void _lookAt(class Actor *);
 
 private:

@@ -32,43 +32,163 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ShieldItem();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 14
+     * @symbol __unk_vfn_14
+     */
     virtual void __unk_vfn_14();
+    /**
+     * @vtable 16
+     * @symbol __unk_vfn_16
+     */
     virtual void __unk_vfn_16();
+    /**
+     * @vtable 50
+     * @symbol ?isHandEquipped@ShieldItem@@UEBA_NXZ
+     */
     virtual bool isHandEquipped() const;
+    /**
+     * @vtable 52
+     * @symbol __unk_vfn_52
+     */
     virtual void __unk_vfn_52();
+    /**
+     * @vtable 54
+     * @symbol __unk_vfn_54
+     */
     virtual void __unk_vfn_54();
+    /**
+     * @vtable 62
+     * @symbol ?isValidRepairItem@ShieldItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+     */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
+    /**
+     * @vtable 63
+     * @symbol ?getEnchantSlot@ShieldItem@@UEBAHXZ
+     */
     virtual int getEnchantSlot() const;
+    /**
+     * @vtable 67
+     * @symbol __unk_vfn_67
+     */
     virtual void __unk_vfn_67();
+    /**
+     * @vtable 71
+     * @symbol __unk_vfn_71
+     */
     virtual void __unk_vfn_71();
+    /**
+     * @vtable 72
+     * @symbol __unk_vfn_72
+     */
     virtual void __unk_vfn_72();
+    /**
+     * @vtable 73
+     * @symbol __unk_vfn_73
+     */
     virtual void __unk_vfn_73();
+    /**
+     * @vtable 76
+     * @symbol __unk_vfn_76
+     */
     virtual void __unk_vfn_76();
+    /**
+     * @vtable 80
+     * @symbol __unk_vfn_80
+     */
     virtual void __unk_vfn_80();
+    /**
+     * @vtable 81
+     * @symbol __unk_vfn_81
+     */
     virtual void __unk_vfn_81();
+    /**
+     * @vtable 85
+     * @symbol ?use@ShieldItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
+    /**
+     * @vtable 86
+     * @symbol ?dispense@ShieldItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /**
+     * @vtable 90
+     * @symbol ?hurtActor@ShieldItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @vtable 99
+     * @symbol ?readUserData@ShieldItem@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual void readUserData(class ItemStackBase &, class IDataInput &, class ReadOnlyBinaryStream &) const;
+    /**
+     * @vtable 100
+     * @symbol ?writeUserData@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
+     */
     virtual void writeUserData(class ItemStackBase const &, class IDataOutput &) const;
+    /**
+     * @vtable 102
+     * @symbol ?inventoryTick@ShieldItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+     */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
+    /**
+     * @vtable 104
+     * @symbol ?getCooldownType@ShieldItem@@UEBAAEBVHashedString@@XZ
+     */
     virtual class HashedString const & getCooldownType() const;
+    /**
+     * @vtable 105
+     * @symbol ?getCooldownTime@ShieldItem@@UEBAHXZ
+     */
     virtual int getCooldownTime() const;
+    /**
+     * @vtable 111
+     * @symbol ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
+     */
     virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
+    /**
+     * @vtable 112
+     * @symbol ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+     */
     virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEM
 #endif
+    /**
+     * @symbol ??0ShieldItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     */
     MCAPI ShieldItem(std::string const &, int);
+    /**
+     * @symbol ?playBlockSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
+     */
     MCAPI void playBlockSound(class Player *) const;
+    /**
+     * @symbol ?playBreakSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
+     */
     MCAPI void playBreakSound(class Player *) const;
 MCAPI static int const EFFECTIVE_BLOCK_DELAY;
 MCAPI static int const IN_HAND_BLOCK_DURATION;
 MCAPI static std::string const TIMESTAMP_TAG;
 
 //private:
+    /**
+     * @symbol ?_getInHandUpdateType@ShieldItem@@AEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+     */
     MCAPI enum InHandUpdateType _getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
 
 private:

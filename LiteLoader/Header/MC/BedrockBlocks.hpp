@@ -22,10 +22,16 @@ namespace BedrockBlocks {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?assignBlocks@BedrockBlocks@@YAXXZ
+     */
     MCAPI void assignBlocks();
 MCAPI extern class Block const * mAir;
 MCAPI extern class Block const * mClientRequestPlaceholderBlock;
 MCAPI extern class Block const * mUnknown;
+    /**
+     * @symbol ?unassignBlocks@BedrockBlocks@@YAXXZ
+     */
     MCAPI void unassignBlocks();
 
 };

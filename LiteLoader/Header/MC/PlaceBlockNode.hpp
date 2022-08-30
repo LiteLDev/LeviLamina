@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~PlaceBlockNode();
+    /**
+     * @vtable 1
+     * @symbol ?tick@PlaceBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     */
     virtual enum BehaviorStatus tick(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLACEBLOCKNODE
 #endif
+    /**
+     * @symbol ??0PlaceBlockNode@@QEAA@XZ
+     */
     MCAPI PlaceBlockNode();
 
 };

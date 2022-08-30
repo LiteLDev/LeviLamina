@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREATFOODEVENT
 #endif
+    /**
+     * @symbol ??1PlayerEatFoodEvent@@QEAA@XZ
+     */
     MCAPI ~PlayerEatFoodEvent();
 
 };

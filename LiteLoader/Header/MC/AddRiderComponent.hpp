@@ -30,7 +30,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDRIDERCOMPONENT
 #endif
+    /**
+     * @symbol ?reloadComponent@AddRiderComponent@@QEAAXAEAVActor@@@Z
+     */
     MCAPI void reloadComponent(class Actor &);
+    /**
+     * @symbol ??1AddRiderComponent@@QEAA@XZ
+     */
     MCAPI ~AddRiderComponent();
 
 };

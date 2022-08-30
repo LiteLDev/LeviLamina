@@ -30,13 +30,28 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~HoldBlockSystem();
+    /**
+     * @vtable 1
+     * @symbol ?registerEvents@HoldBlockSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+     */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
+    /**
+     * @vtable 2
+     * @symbol ?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z
+     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDBLOCKSYSTEM
 #endif
 
 //private:
+    /**
+     * @symbol ?_holdBlockSystemOnActorDie@HoldBlockSystem@@CAXAEAUActorDieEvent@@@Z
+     */
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 
 private:

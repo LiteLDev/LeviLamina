@@ -36,7 +36,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MCRESULT
 #endif
+    /**
+     * @symbol ?getFullCode@MCRESULT@@QEBAHXZ
+     */
     MCAPI int getFullCode() const;
+    /**
+     * @symbol ?isSuccess@MCRESULT@@QEBA_NXZ
+     */
     MCAPI bool isSuccess() const;
 
 };

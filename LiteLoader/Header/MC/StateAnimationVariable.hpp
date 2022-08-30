@@ -30,6 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STATEANIMATIONVARIABLE
 #endif
+    /**
+     * @symbol ?addKeyFrame@StateAnimationVariable@@QEAAXMM@Z
+     */
     MCAPI void addKeyFrame(float, float);
 
 };

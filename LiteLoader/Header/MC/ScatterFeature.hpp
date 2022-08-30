@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~ScatterFeature();
+    /**
+     * @vtable 1
+     * @symbol ?place@ScatterFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERFEATURE
 #endif
+    /**
+     * @symbol ??0ScatterFeature@@QEAA@XZ
+     */
     MCAPI ScatterFeature();
 
 };

@@ -31,10 +31,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~IcePatchFeature();
+    /**
+     * @vtable 3
+     * @symbol ?place@IcePatchFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEPATCHFEATURE
 #endif
+    /**
+     * @symbol ??0IcePatchFeature@@QEAA@H@Z
+     */
     MCAPI IcePatchFeature(int);
 
 };

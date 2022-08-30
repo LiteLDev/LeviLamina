@@ -23,12 +23,24 @@ namespace ScriptPluginUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
+    /**
+     * @symbol ?CreateRuntimeByType@ScriptPluginUtils@@YA?AV?$unique_ptr@VIRuntime@Scripting@@U?$default_delete@VIRuntime@Scripting@@@std@@@std@@W4ScriptRuntimeType@@AEAVLifetimeRegistry@Scripting@@PEAVDependencyLocator@6@@Z
+     */
     MCAPI std::unique_ptr<class Scripting::IRuntime> CreateRuntimeByType(enum ScriptRuntimeType, class Scripting::LifetimeRegistry &, class Scripting::DependencyLocator *);
+    /**
+     * @symbol ?GetRuntimeType@ScriptPluginUtils@@YA?AW4ScriptRuntimeType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI enum ScriptRuntimeType GetRuntimeType(std::string const &);
+    /**
+     * @symbol ?GetRuntimeTypeFromFileExtension@ScriptPluginUtils@@YA?AW4ScriptRuntimeType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI enum ScriptRuntimeType GetRuntimeTypeFromFileExtension(std::string const &);
 MCAPI extern std::string const INTERNAL_RELEASE;
 MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION;
 MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
+    /**
+     * @symbol ?SanitizeRuntimeName@ScriptPluginUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     */
     MCAPI std::string SanitizeRuntimeName(std::string const &);
 
 };

@@ -31,6 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPFRAMEDATA
 #endif
+    /**
+     * @symbol ??0CrashDumpFrameData@@QEAA@HH_KMMMM@Z
+     */
     MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
 MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 

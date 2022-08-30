@@ -32,8 +32,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISCHARGEDDEFINITION
 #endif
+    /**
+     * @symbol ?initialize@IsChargedDefinition@@QEAAXAEAVEntityContext@@@Z
+     */
     MCAPI void initialize(class EntityContext &);
+    /**
+     * @symbol ?uninitialize@IsChargedDefinition@@QEAAXAEAVEntityContext@@@Z
+     */
     MCAPI void uninitialize(class EntityContext &);
+    /**
+     * @symbol ?buildSchema@IsChargedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsChargedDefinition@@@JsonUtil@@@std@@@Z
+     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsChargedDefinition>> &);
 
 };

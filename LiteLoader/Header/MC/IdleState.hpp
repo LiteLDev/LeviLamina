@@ -31,12 +31,31 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~IdleState();
+    /**
+     * @vtable 1
+     * @symbol ?tick@IdleState@@UEAAXXZ
+     */
     virtual void tick();
+    /**
+     * @vtable 2
+     * @symbol ?start@IdleState@@UEAAXXZ
+     */
     virtual void start();
+    /**
+     * @vtable 3
+     * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
+     */
     virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDLESTATE
 #endif
+    /**
+     * @symbol ?create@IdleState@@SA?AV?$unique_ptr@VIdleState@@U?$default_delete@VIdleState@@@std@@@std@@AEAVPetSleepWithOwnerGoal@@@Z
+     */
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 
 };

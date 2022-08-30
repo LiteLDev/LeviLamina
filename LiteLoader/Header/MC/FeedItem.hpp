@@ -35,9 +35,21 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEEDITEM
 #endif
+    /**
+     * @symbol ??0FeedItem@@QEAA@AEBU0@@Z
+     */
     MCAPI FeedItem(struct FeedItem const &);
+    /**
+     * @symbol ?addEffect@FeedItem@@QEAAXAEBUEffect@1@@Z
+     */
     MCAPI void addEffect(struct FeedItem::Effect const &);
+    /**
+     * @symbol ??4FeedItem@@QEAAAEAU0@$$QEAU0@@Z
+     */
     MCAPI struct FeedItem & operator=(struct FeedItem &&);
+    /**
+     * @symbol ??1FeedItem@@QEAA@XZ
+     */
     MCAPI ~FeedItem();
 
 };

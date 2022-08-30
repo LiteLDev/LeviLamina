@@ -27,39 +27,157 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~NBTSchemaWriter();
+    /**
+     * @vtable 1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual bool write(std::string const &);
+    /**
+     * @vtable 2
+     * @symbol __unk_vfn_2
+     */
     virtual void __unk_vfn_2();
+    /**
+     * @vtable 3
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NM@Z
+     */
     virtual bool write(float);
+    /**
+     * @vtable 4
+     * @symbol __unk_vfn_4
+     */
     virtual void __unk_vfn_4();
+    /**
+     * @vtable 5
+     * @symbol __unk_vfn_5
+     */
     virtual void __unk_vfn_5();
+    /**
+     * @vtable 6
+     * @symbol __unk_vfn_6
+     */
     virtual void __unk_vfn_6();
+    /**
+     * @vtable 7
+     * @symbol __unk_vfn_7
+     */
     virtual void __unk_vfn_7();
+    /**
+     * @vtable 8
+     * @symbol __unk_vfn_8
+     */
     virtual void __unk_vfn_8();
+    /**
+     * @vtable 9
+     * @symbol __unk_vfn_9
+     */
     virtual void __unk_vfn_9();
+    /**
+     * @vtable 10
+     * @symbol __unk_vfn_10
+     */
     virtual void __unk_vfn_10();
+    /**
+     * @vtable 11
+     * @symbol __unk_vfn_11
+     */
     virtual void __unk_vfn_11();
+    /**
+     * @vtable 12
+     * @symbol __unk_vfn_12
+     */
     virtual void __unk_vfn_12();
+    /**
+     * @vtable 13
+     * @symbol ?pushMember@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     virtual bool pushMember(std::string const &);
+    /**
+     * @vtable 14
+     * @symbol ?popMember@NBTSchemaWriter@@UEAAXXZ
+     */
     virtual void popMember();
+    /**
+     * @vtable 15
+     * @symbol ?openObject@NBTSchemaWriter@@UEAA_NXZ
+     */
     virtual bool openObject();
+    /**
+     * @vtable 16
+     * @symbol ?openArray@NBTSchemaWriter@@UEAA_NXZ
+     */
     virtual bool openArray();
+    /**
+     * @vtable 17
+     * @symbol ?close@NBTSchemaWriter@@UEAAXXZ
+     */
     virtual void close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAWRITER
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NN@Z
+     */
     MCVAPI bool write(double);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_N_K@Z
+     */
     MCVAPI bool write(unsigned __int64);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_N_J@Z
+     */
     MCVAPI bool write(__int64);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_N_N@Z
+     */
     MCVAPI bool write(bool);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NE@Z
+     */
     MCVAPI bool write(unsigned char);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NC@Z
+     */
     MCVAPI bool write(signed char);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NF@Z
+     */
     MCVAPI bool write(short);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NG@Z
+     */
     MCVAPI bool write(unsigned short);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NH@Z
+     */
     MCVAPI bool write(int);
+    /**
+     * @vtable -1
+     * @symbol ?write@NBTSchemaWriter@@UEAA_NI@Z
+     */
     MCVAPI bool write(unsigned int);
 #endif
+    /**
+     * @symbol ??0NBTSchemaWriter@@QEAA@XZ
+     */
     MCAPI NBTSchemaWriter();
 
 //private:
+    /**
+     * @symbol ?_serializeTag@NBTSchemaWriter@@AEAA_NV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
+     */
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
 
 private:

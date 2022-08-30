@@ -29,10 +29,21 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~BodyControl();
+    /**
+     * @vtable 1
+     * @symbol ?clientTick@BodyControl@@UEAAXAEAVMob@@@Z
+     */
     virtual void clientTick(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROL
 #endif
+    /**
+     * @symbol ??0BodyControl@@QEAA@XZ
+     */
     MCAPI BodyControl();
 
 //private:

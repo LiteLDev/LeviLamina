@@ -30,19 +30,55 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRYREF
 #endif
+    /**
+     * @symbol ??0ItemRegistryRef@@QEAA@V?$weak_ptr@VItemRegistry@@@std@@@Z
+     */
     MCAPI ItemRegistryRef(class std::weak_ptr<class ItemRegistry>);
+    /**
+     * @symbol ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAH0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByName(int &, int &, std::string const &) const;
+    /**
+     * @symbol ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByName(int &, std::string const &) const;
+    /**
+     * @symbol ?lookupByName@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
+    /**
+     * @symbol ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string const &) const;
+    /**
+     * @symbol ?lookupByNameNoAlias@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoAlias(class HashedString const &) const;
+    /**
+     * @symbol ?lookupByNameNoParsing@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEAHAEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int &, class HashedString const &) const;
+    /**
+     * @symbol ?lookupByNameNoParsing@ItemRegistryRef@@QEBA?AV?$WeakPtr@VItem@@@@AEBVHashedString@@@Z
+     */
     MCAPI class WeakPtr<class Item> lookupByNameNoParsing(class HashedString const &) const;
+    /**
+     * @symbol ?lookupByTag@ItemRegistryRef@@QEBA?AV?$unordered_set@PEBVItem@@U?$hash@PEBVItem@@@std@@U?$equal_to@PEBVItem@@@3@V?$allocator@PEBVItem@@@3@@std@@AEBUItemTag@@@Z
+     */
     MCAPI class std::unordered_set<class Item const *, struct std::hash<class Item const *>, struct std::equal_to<class Item const *>, class std::allocator<class Item const *>> lookupByTag(struct ItemTag const &) const;
+    /**
+     * @symbol ?unregisterItem@ItemRegistryRef@@QEBAXAEBVHashedString@@@Z
+     */
     MCAPI void unregisterItem(class HashedString const &) const;
+    /**
+     * @symbol ??1ItemRegistryRef@@QEAA@XZ
+     */
     MCAPI ~ItemRegistryRef();
 
 //private:
+    /**
+     * @symbol ?_lockRegistry@ItemRegistryRef@@AEBA?AV?$shared_ptr@VItemRegistry@@@std@@XZ
+     */
     MCAPI class std::shared_ptr<class ItemRegistry> _lockRegistry() const;
 
 private:

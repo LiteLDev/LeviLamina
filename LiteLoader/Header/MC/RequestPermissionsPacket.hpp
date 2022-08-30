@@ -28,16 +28,48 @@ public:
 #endif
 
 public:
+    /**
+     * @vtable 0
+     * @symbol 
+     */
     virtual ~RequestPermissionsPacket();
+    /**
+     * @vtable 1
+     * @symbol ?getId@RequestPermissionsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
     virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @vtable 2
+     * @symbol ?getName@RequestPermissionsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
     virtual std::string getName() const;
+    /**
+     * @vtable 3
+     * @symbol ?write@RequestPermissionsPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
     virtual void write(class BinaryStream &) const;
+    /**
+     * @vtable 6
+     * @symbol ?_read@RequestPermissionsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REQUESTPERMISSIONSPACKET
 #endif
+    /**
+     * @symbol ??0RequestPermissionsPacket@@QEAA@XZ
+     */
     MCAPI RequestPermissionsPacket();
+    /**
+     * @symbol ?getCustomAbilityValue@RequestPermissionsPacket@@QEBA_NW4AbilitiesIndex@@@Z
+     */
     MCAPI bool getCustomAbilityValue(enum AbilitiesIndex) const;
+    /**
+     * @symbol ?getPlayerPermissions@RequestPermissionsPacket@@QEBA?AW4PlayerPermissionLevel@@XZ
+     */
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
+    /**
+     * @symbol ?getTargetPlayerId@RequestPermissionsPacket@@QEBA?AUActorUniqueID@@XZ
+     */
     MCAPI struct ActorUniqueID getTargetPlayerId() const;
 
 };

@@ -32,12 +32,33 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRYINGOUTTIMERCOMPONENT
 #endif
+    /**
+     * @symbol ??0DryingOutTimerComponent@@QEAA@$$QEAV0@@Z
+     */
     MCAPI DryingOutTimerComponent(class DryingOutTimerComponent &&);
+    /**
+     * @symbol ?addAdditionalSaveData@DryingOutTimerComponent@@QEBAXAEAVCompoundTag@@@Z
+     */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @symbol ?canBeAffectedByWaterBottle@DryingOutTimerComponent@@QEBA_NXZ
+     */
     MCAPI bool canBeAffectedByWaterBottle() const;
+    /**
+     * @symbol ??4DryingOutTimerComponent@@QEAAAEAV0@$$QEAV0@@Z
+     */
     MCAPI class DryingOutTimerComponent & operator=(class DryingOutTimerComponent &&);
+    /**
+     * @symbol ?readAdditionalSaveData@DryingOutTimerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @symbol ?refillTimeWithWaterBottle@DryingOutTimerComponent@@QEAAXUTick@@@Z
+     */
     MCAPI void refillTimeWithWaterBottle(struct Tick);
+    /**
+     * @symbol ??1DryingOutTimerComponent@@QEAA@XZ
+     */
     MCAPI ~DryingOutTimerComponent();
 
 };
