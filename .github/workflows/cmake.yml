@@ -35,7 +35,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3.0.2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+          submodules: 'true'
 
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
@@ -91,12 +92,11 @@ jobs:
       - name: Configure CMake(MSVC)
         run: |
           set CC="C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/${{env.MSVC_VER}}/bin/Hostx64/x64/cl.exe"
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja -DCMAKE_TRY_COMPILE_TARGET_TYPE="STATIC_LIBRARY" -DCMAKE_MAKE_PROGRAM="C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\Enterprise\COMMON7\IDE\COMMONEXTENSIONS\Microsoft\CMake\Ninja\ninja.exe"
+          "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja -DCMAKE_TRY_COMPILE_TARGET_TYPE="STATIC_LIBRARY" -DCMAKE_MAKE_PROGRAM="C:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\Enterprise\COMMON7\IDE\COMMONEXTENSIONS\Microsoft\CMake\Ninja\ninja.exe"
         shell: cmd
 
       - name: Build
         run: |
-          set VSCMD_DEBUG=3
           "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
         shell: cmd
 
