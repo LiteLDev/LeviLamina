@@ -41,29 +41,60 @@
 
 每一个玩家对象都包含一些固定的对象属性。对于某个特定的玩家对象`pl`，有以下这些属性
 
-| 属性         | 含义                        | 类型             |
-| ------------ | --------------------------- | ---------------- |
-| pl.name      | 玩家名                      | `String`         |
-| pl.pos       | 玩家所在坐标                | `FloatPos`       |
-| pl.blockPos  | 玩家所在的方块坐标          | `IntPos`         |
-| pl.lastDeathPos  | 玩家上次死亡的坐标 | `IntPos`    |
-| pl.realName  | 玩家的真实名字              | `String`         |
-| pl.xuid      | 玩家Xuid字符串              | `String`         |
-| pl.uuid      | 玩家Uuid字符串              | `String`         |
-| pl.permLevel | 玩家的操作权限等级（0 - 4） | `Integer`        |
-| pl.gameMode  | 玩家的游戏模式（0 - 3）     | `Integer`        |
-| pl.canFly    | 玩家是否可以飞行        | `Boolean`        |
-| pl.canSleep  | 玩家是否可以睡觉              | `Boolean`        |
-| pl.maxHealth | 玩家最大生命值              | `Integer`        |
-| pl.health    | 玩家当前生命值              | `Integer`        |
-| pl.inAir     | 玩家当前是否悬空            | `Boolean`        |
-| pl.inWater   | 玩家当前是否在水中          | `Boolean`        |
-| pl.sneaking  | 玩家当前是否正在潜行        | `Boolean`        |
-| pl.speed     | 玩家当前速度                | `Float`          |
-| pl.direction | 玩家当前朝向                | `DirectionAngle` |
-| pl.uniqueId  | 玩家（实体的）唯一标识符    | `String`         |
-| pl.langCode  | 玩家设置的语言的标识符(形如zh_CN) | `String`    |
-| pl.isLoading  | 玩家是否正在加载                | `Boolean`    |
+| 属性                     | 含义                              | 类型             |
+| ------------------------ | --------------------------------- | ---------------- |
+| pl.name                  | 玩家名                            | `String`         |
+| pl.pos                   | 玩家所在坐标                      | `FloatPos`       |
+| pl.blockPos              | 玩家所在的方块坐标                | `IntPos`         |
+| pl.lastDeathPos          | 玩家上次死亡的坐标                | `IntPos`         |
+| pl.realName              | 玩家的真实名字                    | `String`         |
+| pl.xuid                  | 玩家Xuid字符串                    | `String`         |
+| pl.uuid                  | 玩家Uuid字符串                    | `String`         |
+| pl.permLevel             | 玩家的操作权限等级（0 - 4）       | `Integer`        |
+| pl.gameMode              | 玩家的游戏模式（0 - 3）           | `Integer`        |
+| pl.canFly                | 玩家是否可以飞行                  | `Boolean`        |
+| pl.canSleep              | 玩家是否可以睡觉                  | `Boolean`        |
+| pl.canBeSeenOnMap        | 玩家是否可以在地图上看到          | `Boolean`        |
+| pl.canFreeze             | 玩家是否可以冻结                  | `Boolean`        |
+| pl.canSeeDaylight        | 玩家是否能看到日光                | `Boolean`        |
+| pl.canShowNameTag        | 播放器是否可以显示姓名标签        | `Boolean`        |
+| pl.canStartSleepInBed    | 玩家是否可以开始在床上睡觉        | `Boolean`        |
+| pl.canPickupItems        | 玩家是否可以拾取物品              | `Boolean`        |
+| pl.maxHealth             | 玩家最大生命值                    | `Integer`        |
+| pl.health                | 玩家当前生命值                    | `Integer`        |
+| pl.inAir                 | 玩家当前是否悬空                  | `Boolean`        |
+| pl.inWater               | 玩家当前是否在水中                | `Boolean`        |
+| pl.inLava                | 玩家是否在熔岩中                  | `Boolean`        |
+| pl.inRain                | 玩家是否下雨                      | `Boolean`        |
+| pl.inSnow                | 玩家是否在雪中                    | `Boolean`        |
+| pl.inWall                | 玩家是否在墙上                    | `Boolean`        |
+| pl.inWaterOrRain         | 玩家是否在水中或雨中              | `Boolean`        |
+| pl.inWorld               | 玩家是否在世界                    | `Boolean`        |
+| pl.inClouds              | 玩家是否在云端                    | `Boolean`        |
+| pl.sneaking              | 玩家当前是否正在潜行              | `Boolean`        |
+| pl.speed                 | 玩家当前速度                      | `Float`          |
+| pl.direction             | 玩家当前朝向                      | `DirectionAngle` |
+| pl.uniqueId              | 玩家（实体的）唯一标识符          | `String`         |
+| pl.langCode              | 玩家设置的语言的标识符(形如zh_CN) | `String`         |
+| pl.isLoading             | 玩家是否已经加载                  | `Boolean`        |
+| pl.isInvisible           | 玩家是否隐身中                      | `Boolean`        |
+| pl.isInsidePortal        | 玩家在传送门中                    | `Boolean`        |
+| pl.isHurt                | 玩家是否受伤                          | `Boolean`        |
+| pl.isTrusting            | 未知                             | `Boolean`        |
+| pl.isTouchingDamageBlock | 玩家是否在能造成伤害的方块上             | `Boolean`        |
+| pl.isHungry              | 玩家是否饿了                          | `Boolean`        |
+| pl.isOnFire              | 玩家是否着火                       | `Boolean`        |
+| pl.isOnGround            | 玩家是否在地上                        | `Boolean`        |
+| pl.isOnHotBlock          | 玩家是否在高温方块上（岩浆等）        | `Boolean`        |
+| pl.isTrading             | 玩家在交易                        | `Boolean`        |
+| pl.isAdventure           | 玩家是否是冒险模式                  | `Boolean`        |
+| pl.isGliding             | 玩家在滑行                        | `Boolean`        |
+| pl.isSurvival            | 玩家是否是生存模式                  | `Boolean`        |
+| pl.isSpectator           | 玩家是否是观众模式                  | `Boolean`        |
+| pl.isRiding              | 玩家是否在骑行                      | `Boolean`        |
+| pl.isDancing             | 玩家在跳舞？                       | `Boolean`        |
+| pl.isCreative            | 玩家是否是创造模式                  | `Boolean`        |
+| pl.isFlying              | 玩家是否在飞行                    | `Boolean`        |
 
 这些对象属性都是只读的，无法被修改。其中：
 
