@@ -29,10 +29,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1IContentTierManager@@UEAA@XZ
-     */
     MCVAPI ~IContentTierManager();
 #endif
 

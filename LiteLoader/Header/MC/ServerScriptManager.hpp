@@ -29,103 +29,29 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ServerScriptManager();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
-     */
     virtual enum EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?onServerUpdateStart@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     virtual enum EventResult onServerUpdateStart(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?onServerThreadStarted@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     virtual enum EventResult onServerThreadStarted(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?onServerThreadStopped@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     virtual enum EventResult onServerThreadStopped(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?onEvent@ServerScriptManager@@UEAA?AW4EventResult@@AEBUServerInstanceRequestResourceReload@@@Z
-     */
     virtual enum EventResult onEvent(struct ServerInstanceRequestResourceReload const &);
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
-     */
     virtual enum EventResult onEvent(struct ServerInstanceNotificationEvent const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
 #endif
-    /**
-     * @symbol ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z
-     */
     MCAPI ServerScriptManager(struct ScriptSettings, class Bedrock::NonOwnerPointer<class Scheduler>, class IMinecraftEventing &, bool);
-    /**
-     * @symbol ?onMainThreadStartLeaveGame@ServerScriptManager@@QEAAXXZ
-     */
     MCAPI void onMainThreadStartLeaveGame();
 
 //private:
-    /**
-     * @symbol ?_loadAndRunAllPlugins@ServerScriptManager@@AEAAXAEAVServerInstance@@AEAVServerLevel@@@Z
-     */
     MCAPI void _loadAndRunAllPlugins(class ServerInstance &, class ServerLevel &);
-    /**
-     * @symbol ?_registerEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
-     */
     MCAPI void _registerEventHandlers(class Level &) const;
-    /**
-     * @symbol ?_sendInitializeEvent@ServerScriptManager@@AEBAXAEAVServerLevel@@@Z
-     */
     MCAPI void _sendInitializeEvent(class ServerLevel &) const;
-    /**
-     * @symbol ?_unregisterEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
-     */
     MCAPI void _unregisterEventHandlers(class Level &) const;
 
 private:

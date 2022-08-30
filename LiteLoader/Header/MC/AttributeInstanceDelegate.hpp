@@ -30,51 +30,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AttributeInstanceDelegate();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@AttributeInstanceDelegate@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?notify@AttributeInstanceDelegate@@UEAAX_J@Z
-     */
     virtual void notify(__int64);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?willChange@AttributeInstanceDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
-     */
     virtual bool willChange(float, float, class AttributeBuff const &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?change@AttributeInstanceDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-     */
     virtual float change(float, float, class AttributeBuff const &);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getBuffValueWithModifiers@AttributeInstanceDelegate@@UEBAMAEBVAttributeBuff@@@Z
-     */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEDELEGATE
 #endif
-    /**
-     * @symbol ??0AttributeInstanceDelegate@@QEAA@AEBVAttributeInstance@@@Z
-     */
     MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
 //protected:
-    /**
-     * @symbol ?_getInstance@AttributeInstanceDelegate@@IEBAAEBVAttributeInstance@@XZ
-     */
     MCAPI class AttributeInstance const & _getInstance() const;
-    /**
-     * @symbol ?_getMutableInstance@AttributeInstanceDelegate@@IEBAPEAVAttributeInstance@@XZ
-     */
     MCAPI class AttributeInstance * _getMutableInstance() const;
 
 protected:

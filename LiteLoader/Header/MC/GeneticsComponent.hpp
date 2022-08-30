@@ -37,44 +37,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSCOMPONENT
 #endif
-    /**
-     * @symbol ??0GeneticsComponent@@QEAA@XZ
-     */
     MCAPI GeneticsComponent();
-    /**
-     * @symbol ?addAdditionalSaveData@GeneticsComponent@@QEBAXAEAVCompoundTag@@@Z
-     */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @symbol ?buildDebugInfo@GeneticsComponent@@QEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void buildDebugInfo(std::string &) const;
-    /**
-     * @symbol ?findGene@GeneticsComponent@@QEAAPEAUGene@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI struct GeneticsComponent::Gene * findGene(std::string const &);
-    /**
-     * @symbol ?fireGeneEvents@GeneticsComponent@@QEBAXAEAVActor@@@Z
-     */
     MCAPI void fireGeneEvents(class Actor &) const;
-    /**
-     * @symbol ?initializeGenesFromParents@GeneticsComponent@@QEAAXAEAVActor@@00@Z
-     */
     MCAPI void initializeGenesFromParents(class Actor &, class Actor &, class Actor &);
-    /**
-     * @symbol ??4GeneticsComponent@@QEAAAEAV0@$$QEAV0@@Z
-     */
     MCAPI class GeneticsComponent & operator=(class GeneticsComponent &&);
-    /**
-     * @symbol ?readAdditionalSaveData@GeneticsComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 MCAPI static int const INVALID_ALLELE_VALUE;
 
 //private:
-    /**
-     * @symbol ?_crossParentGenes@GeneticsComponent@@AEAA?AUGene@1@AEBUGeneDefinition@@AEAU21@1@Z
-     */
     MCAPI struct GeneticsComponent::Gene _crossParentGenes(struct GeneDefinition const &, struct GeneticsComponent::Gene &, struct GeneticsComponent::Gene &);
 
 private:

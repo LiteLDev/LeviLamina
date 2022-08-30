@@ -31,323 +31,73 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CandleCakeBlock();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol 
-     */
     virtual void __unk_vfn_36();
-    /**
-     * @note   Virtual function table index: 37
-     * @symbol 
-     */
     virtual void __unk_vfn_37();
-    /**
-     * @note   Virtual function table index: 38
-     * @symbol 
-     */
     virtual void __unk_vfn_38();
-    /**
-     * @note   Virtual function table index: 39
-     * @symbol 
-     */
     virtual void __unk_vfn_39();
-    /**
-     * @note   Virtual function table index: 40
-     * @symbol 
-     */
     virtual void __unk_vfn_40();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 42
-     * @symbol 
-     */
     virtual void __unk_vfn_42();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol 
-     */
     virtual void __unk_vfn_44();
-    /**
-     * @note   Virtual function table index: 45
-     * @symbol 
-     */
     virtual void __unk_vfn_45();
-    /**
-     * @note   Virtual function table index: 46
-     * @symbol 
-     */
     virtual void __unk_vfn_46();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol 
-     */
     virtual void __unk_vfn_47();
-    /**
-     * @note   Virtual function table index: 48
-     * @symbol 
-     */
     virtual void __unk_vfn_48();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol 
-     */
     virtual void __unk_vfn_49();
-    /**
-     * @note   Virtual function table index: 59
-     * @symbol 
-     */
     virtual void __unk_vfn_59();
-    /**
-     * @note   Virtual function table index: 60
-     * @symbol 
-     */
     virtual void __unk_vfn_60();
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol ?checkIsPathable@CandleCakeBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
-     */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 89
-     * @symbol ?mayPlace@CandleCakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
-     */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
-    /**
-     * @note   Virtual function table index: 98
-     * @symbol ?neighborChanged@CandleCakeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 100
-     * @symbol ?getResourceCount@CandleCakeBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
-    /**
-     * @note   Virtual function table index: 101
-     * @symbol ?getResourceItem@CandleCakeBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /**
-     * @note   Virtual function table index: 102
-     * @symbol ?asItemInstance@CandleCakeBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 105
-     * @symbol 
-     */
     virtual void __unk_vfn_105();
-    /**
-     * @note   Virtual function table index: 124
-     * @symbol 
-     */
     virtual void __unk_vfn_124();
-    /**
-     * @note   Virtual function table index: 126
-     * @symbol 
-     */
     virtual void __unk_vfn_126();
-    /**
-     * @note   Virtual function table index: 127
-     * @symbol 
-     */
     virtual void __unk_vfn_127();
-    /**
-     * @note   Virtual function table index: 128
-     * @symbol ?getComparatorSignal@CandleCakeBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
-     */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
-    /**
-     * @note   Virtual function table index: 132
-     * @symbol 
-     */
     virtual void __unk_vfn_132();
-    /**
-     * @note   Virtual function table index: 144
-     * @symbol ?getVisualShape@CandleCakeBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
-    /**
-     * @note   Virtual function table index: 148
-     * @symbol 
-     */
     virtual void __unk_vfn_148();
-    /**
-     * @note   Virtual function table index: 157
-     * @symbol 
-     */
     virtual void __unk_vfn_157();
-    /**
-     * @note   Virtual function table index: 168
-     * @symbol 
-     */
     virtual void __unk_vfn_168();
-    /**
-     * @note   Virtual function table index: 169
-     * @symbol 
-     */
     virtual void __unk_vfn_169();
-    /**
-     * @note   Virtual function table index: 170
-     * @symbol 
-     */
     virtual void __unk_vfn_170();
-    /**
-     * @note   Virtual function table index: 173
-     * @symbol ?playerDestroy@CandleCakeBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 177
-     * @symbol 
-     */
     virtual void __unk_vfn_177();
-    /**
-     * @note   Virtual function table index: 179
-     * @symbol ?use@CandleCakeBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /**
-     * @note   Virtual function table index: 180
-     * @symbol ?canSurvive@CandleCakeBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 188
-     * @symbol 
-     */
     virtual void __unk_vfn_188();
-    /**
-     * @note   Virtual function table index: 192
-     * @symbol ?_getNumCandles@CandleCakeBlock@@MEBAHAEBVBlock@@@Z
-     */
     virtual int _getNumCandles(class Block const &) const;
-    /**
-     * @note   Virtual function table index: 193
-     * @symbol ?_iterateCandles@CandleCakeBlock@@MEBAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-     */
     virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
-    /**
-     * @note   Virtual function table index: 194
-     * @symbol ?_tryLightOnFire@CandleCakeBlock@@MEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     */
     virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
-    /**
-     * @note   Virtual function table index: 195
-     * @symbol 
-     */
     virtual void __unk_vfn_195();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 197
-     * @symbol 
-     */
     virtual void __unk_vfn_197();
-    /**
-     * @note   Virtual function table index: 198
-     * @symbol 
-     */
     virtual void __unk_vfn_198();
-    /**
-     * @note   Virtual function table index: 199
-     * @symbol 
-     */
     virtual void __unk_vfn_199();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLECAKEBLOCK
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canBeSilkTouched@CandleCakeBlock@@EEBA_NXZ
-     */
     MCVAPI bool canBeSilkTouched() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?hasComparatorSignal@CandleCakeBlock@@UEBA_NXZ
-     */
     MCVAPI bool hasComparatorSignal() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isCandleCakeBlock@CandleCakeBlock@@UEBA_NXZ
-     */
     MCVAPI bool isCandleCakeBlock() const;
 #endif
-    /**
-     * @symbol ??0CandleCakeBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI CandleCakeBlock(std::string const &, int);
-    /**
-     * @symbol ?getCandleCakeFromCandle@CandleCakeBlock@@SAAEBVBlock@@AEBV2@@Z
-     */
     MCAPI static class Block const & getCandleCakeFromCandle(class Block const &);
-    /**
-     * @symbol ?getCandleFromCandleCake@CandleCakeBlock@@SAAEBVBlock@@AEBV2@@Z
-     */
     MCAPI static class Block const & getCandleFromCandleCake(class Block const &);
-    /**
-     * @symbol ?tryLightFire@CandleCakeBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     */
     MCAPI static bool tryLightFire(class BlockSource &, class BlockPos const &, class Actor *);
 
 //private:
-    /**
-     * @symbol ?_popCandle@CandleCakeBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI void _popCandle(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @symbol ?_forEachCandle@CandleCakeBlock@@CAXAEBVBlock@@AEBVBlockPos@@V?$function@$$A6AXAEBVVec3@@H@Z@std@@@Z
-     */
     MCAPI static void _forEachCandle(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>);
 
 private:

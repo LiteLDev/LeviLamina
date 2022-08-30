@@ -30,17 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEPOWDERSNOWBLOCKSYSTEM
 #endif
-    /**
-     * @symbol ?createMovementSlowdownSystem@InsidePowderSnowBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createMovementSlowdownSystem();
-    /**
-     * @symbol ?createServerSideClearFireSystem@InsidePowderSnowBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createServerSideClearFireSystem();
-    /**
-     * @symbol ?createServerSideFreezingSystem@InsidePowderSnowBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createServerSideFreezingSystem();
 
 };

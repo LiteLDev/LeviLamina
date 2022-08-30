@@ -31,35 +31,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCKACTOR
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canPullOutItem@EnderChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
-     */
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canPushInItem@EnderChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
-     */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getName@EnderChestBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCVAPI std::string getName() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?playCloseSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void playCloseSound(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?playOpenSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void playOpenSound(class BlockSource &);
 #endif
-    /**
-     * @symbol ??0EnderChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
-     */
     MCAPI EnderChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
 
 //private:

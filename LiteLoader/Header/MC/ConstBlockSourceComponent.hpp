@@ -27,21 +27,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSTBLOCKSOURCECOMPONENT
 #endif
-    /**
-     * @symbol ??0ConstBlockSourceComponent@@QEAA@V?$not_null@PEBVIConstBlockSource@@@gsl@@@Z
-     */
     MCAPI ConstBlockSourceComponent(class gsl::not_null<class IConstBlockSource const *>);
-    /**
-     * @symbol ??0ConstBlockSourceComponent@@QEAA@AEBU0@@Z
-     */
     MCAPI ConstBlockSourceComponent(struct ConstBlockSourceComponent const &);
-    /**
-     * @symbol ?getBlockSource@ConstBlockSourceComponent@@QEBAAEBVIConstBlockSource@@XZ
-     */
     MCAPI class IConstBlockSource const & getBlockSource() const;
-    /**
-     * @symbol ??4ConstBlockSourceComponent@@QEAAAEAU0@AEBU0@@Z
-     */
     MCAPI struct ConstBlockSourceComponent & operator=(struct ConstBlockSourceComponent const &);
 
 };

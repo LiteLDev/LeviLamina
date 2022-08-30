@@ -30,37 +30,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ServerMetricsImpl();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?sendPeriodicMetrics@ServerMetricsImpl@@UEAAXAEAVServerInstance@@@Z
-     */
     virtual void sendPeriodicMetrics(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?sendServerTickTime@ServerMetricsImpl@@UEAAXAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
-     */
     virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?sendChunkLoadTelemetryData@ServerMetricsImpl@@UEAAXXZ
-     */
     virtual void sendChunkLoadTelemetryData();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMETRICSIMPL
 #endif
-    /**
-     * @symbol ??0ServerMetricsImpl@@QEAA@PEAVServerCommunicationInterface@@@Z
-     */
     MCAPI ServerMetricsImpl(class ServerCommunicationInterface *);
 
 //private:
-    /**
-     * @symbol ?sendPeriodicMetricsInternal@ServerMetricsImpl@@AEAAXAEAVServerInstance@@@Z
-     */
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance &);
 
 private:

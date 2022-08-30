@@ -35,66 +35,20 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LevelStorageWriteBatch();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@@Z
-     */
     virtual void putKey(std::string const &, class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Category@DBHelpers@@@Z
-     */
     virtual void putKey(std::string const &, std::string const &, enum DBHelpers::Category);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV23@W4Category@DBHelpers@@@Z
-     */
     virtual void putKey(std::string const &, std::string &&, enum DBHelpers::Category);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
-     */
     virtual void putKey(std::string const &, class std::shared_ptr<std::string>, enum DBHelpers::Category);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?deleteKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
-     */
     virtual void deleteKey(std::string const &, enum DBHelpers::Category);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?flush@LevelStorageWriteBatch@@UEAAXAEAVLevelStorage@@@Z
-     */
     virtual void flush(class LevelStorage &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEWRITEBATCH
 #endif
-    /**
-     * @symbol ??0LevelStorageWriteBatch@@QEAA@XZ
-     */
     MCAPI LevelStorageWriteBatch();
-    /**
-     * @symbol ?addFlushCallback@LevelStorageWriteBatch@@QEAAXV?$function@$$A6AXXZ@std@@@Z
-     */
     MCAPI void addFlushCallback(class std::function<void (void)>);
-    /**
-     * @symbol ?clear@LevelStorageWriteBatch@@QEAAXXZ
-     */
     MCAPI void clear();
-    /**
-     * @symbol ?erase@LevelStorageWriteBatch@@QEAAXAEBV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@@Z
-     */
     MCAPI void erase(class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const &);
-    /**
-     * @symbol ?find@LevelStorageWriteBatch@@QEBA?AV?$_Tree_const_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     */
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &) const;
-    /**
-     * @symbol ?find@LevelStorageWriteBatch@@QEAA?AV?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     */
     MCAPI class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const &);
 
 };

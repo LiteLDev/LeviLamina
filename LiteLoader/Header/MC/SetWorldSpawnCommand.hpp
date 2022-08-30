@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SetWorldSpawnCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@SetWorldSpawnCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETWORLDSPAWNCOMMAND
 #endif
-    /**
-     * @symbol ?setup@SetWorldSpawnCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

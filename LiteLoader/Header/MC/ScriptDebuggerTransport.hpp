@@ -30,66 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ScriptDebuggerTransport();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?listen@ScriptDebuggerTransport@@UEAA_NG@Z
-     */
     virtual bool listen(unsigned short);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?connect@ScriptDebuggerTransport@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     */
     virtual bool connect(std::string const &, unsigned short);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?selectClient@ScriptDebuggerTransport@@UEAA_NXZ
-     */
     virtual bool selectClient();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?connected@ScriptDebuggerTransport@@UEBA_NXZ
-     */
     virtual bool connected() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?lostConnection@ScriptDebuggerTransport@@UEBA_NXZ
-     */
     virtual bool lostConnection() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?readyClose@ScriptDebuggerTransport@@UEBA_NXZ
-     */
     virtual bool readyClose() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?close@ScriptDebuggerTransport@@UEAAXXZ
-     */
     virtual void close();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?peek@ScriptDebuggerTransport@@UEBA_NXZ
-     */
     virtual bool peek() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?receive@ScriptDebuggerTransport@@UEAA_NPEAD_K@Z
-     */
     virtual bool receive(char *, unsigned __int64);
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?send@ScriptDebuggerTransport@@UEAAXPEBD_K@Z
-     */
     virtual void send(char const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGERTRANSPORT
 #endif
-    /**
-     * @symbol ??0ScriptDebuggerTransport@@QEAA@AEAVIScriptDebuggerWatchdog@@@Z
-     */
     MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog &);
 
 };

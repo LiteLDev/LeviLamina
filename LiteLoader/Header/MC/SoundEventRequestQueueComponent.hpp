@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDEVENTREQUESTQUEUECOMPONENT
 #endif
-    /**
-     * @symbol ??0SoundEventRequestQueueComponent@@QEAA@$$QEAU0@@Z
-     */
     MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent &&);
-    /**
-     * @symbol ??1SoundEventRequestQueueComponent@@QEAA@XZ
-     */
     MCAPI ~SoundEventRequestQueueComponent();
 
 };

@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUPDATEPOSTTICKPOSITIONDELTASYSTEM
 #endif
-    /**
-     * @symbol ?createActorUpdatePostTickPositionDeltaSystem@ActorUpdatePostTickPositionDeltaSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
 
 };

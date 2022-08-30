@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKINADJUSTMENTS
 #endif
-    /**
-     * @symbol ??0SkinAdjustments@@QEAA@XZ
-     */
     MCAPI SkinAdjustments();
 
 };

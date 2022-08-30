@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEFOREWATCHDOGTERMINATEEVENT
 #endif
-    /**
-     * @symbol ??1BeforeWatchdogTerminateEvent@@QEAA@XZ
-     */
     MCAPI ~BeforeWatchdogTerminateEvent();
 
 };

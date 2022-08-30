@@ -30,91 +30,23 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveInput();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@MoveInput@@UEAAXAEAUIPlayerMovementProxy@@@Z
-     */
     virtual void tick(struct IPlayerMovementProxy &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?clearInputState@MoveInput@@UEAAXXZ
-     */
     virtual void clearInputState();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?allowPicking@MoveInput@@UEAA_NMM@Z
-     */
     virtual bool allowPicking(float, float);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?setJumping@MoveInput@@UEAAX_N@Z
-     */
     virtual void setJumping(bool);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?setAutoJumpingInWater@MoveInput@@UEAAX_N@Z
-     */
     virtual void setAutoJumpingInWater(bool);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?isChangeHeight@MoveInput@@UEBA_NXZ
-     */
     virtual bool isChangeHeight() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?setSneakDown@MoveInput@@UEAAX_N@Z
-     */
     virtual void setSneakDown(bool);
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?isPlayerMoving@MoveInput@@UEBA_NXZ
-     */
     virtual bool isPlayerMoving() const;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?getGazeDirection@MoveInput@@UEBAAEBVVec3@@XZ
-     */
     virtual class Vec3 const & getGazeDirection() const;
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?extractInputComponent@MoveInput@@UEBA?AUMoveInputComponent@@XZ
-     */
     virtual struct MoveInputComponent extractInputComponent() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUT
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?clearMovementState@MoveInput@@UEAAXXZ
-     */
     MCVAPI void clearMovementState();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?render@MoveInput@@UEAAXM@Z
-     */
     MCVAPI void render(float);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setKey@MoveInput@@UEAAXH_N@Z
-     */
     MCVAPI void setKey(int, bool);
 #endif
 

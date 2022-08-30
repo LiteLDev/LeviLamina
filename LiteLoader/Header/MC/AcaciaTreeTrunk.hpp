@@ -31,32 +31,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AcaciaTreeTrunk();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?placeTrunk@AcaciaTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
-     */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getTreeHeight@AcaciaTreeTrunk@@UEBAHAEAVRandom@@@Z
-     */
     virtual int getTreeHeight(class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACACIATREETRUNK
 #endif
 
 //private:
-    /**
-     * @symbol ?_placeLeaningBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@HHHAEBUTreeParams@TreeHelper@@@Z
-     */
     MCAPI void _placeLeaningBranches(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &, class Random &, class RenderParams &, int, int, int, struct TreeHelper::TreeParams const &) const;
-    /**
-     * @symbol ?_placeVerticalBranches@AcaciaTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@@Z
-     */
     MCAPI void _placeVerticalBranches(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &) const;
 
 private:

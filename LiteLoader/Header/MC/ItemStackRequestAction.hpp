@@ -36,47 +36,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemStackRequestAction();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ
-     */
     virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ
-     */
     virtual int getFilteredStringIndex() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z
-     */
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
 #endif
-    /**
-     * @symbol ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
-     */
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
-    /**
-     * @symbol ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
-     */
     MCAPI enum ItemStackRequestActionType getActionType() const;
-    /**
-     * @symbol ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
-     */
     MCAPI void write(class BinaryStream &) const;
-    /**
-     * @symbol ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z
-     */
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
-    /**
-     * @symbol ?read@ItemStackRequestAction@@SA?AV?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
-     */
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 
 //private:

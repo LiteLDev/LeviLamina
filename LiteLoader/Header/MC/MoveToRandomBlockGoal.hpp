@@ -30,57 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveToRandomBlockGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@MoveToRandomBlockGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@MoveToRandomBlockGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@MoveToRandomBlockGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@MoveToRandomBlockGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@MoveToRandomBlockGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@MoveToRandomBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETORANDOMBLOCKGOAL
 #endif
-    /**
-     * @symbol ??0MoveToRandomBlockGoal@@QEAA@AEAVMob@@MMM@Z
-     */
     MCAPI MoveToRandomBlockGoal(class Mob &, float, float, float);
 
 //private:
-    /**
-     * @symbol ?_isValidDestinationBlock@MoveToRandomBlockGoal@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool _isValidDestinationBlock(class BlockSource &, class BlockPos const &);
 
 private:

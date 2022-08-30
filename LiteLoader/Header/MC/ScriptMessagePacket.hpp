@@ -28,48 +28,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ScriptMessagePacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@ScriptMessagePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@ScriptMessagePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@ScriptMessagePacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@ScriptMessagePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMESSAGEPACKET
 #endif
-    /**
-     * @symbol ??0ScriptMessagePacket@@QEAA@XZ
-     */
     MCAPI ScriptMessagePacket();
-    /**
-     * @symbol ??0ScriptMessagePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     */
     MCAPI ScriptMessagePacket(std::string const &, std::string const &);
-    /**
-     * @symbol ?getMessageId@ScriptMessagePacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getMessageId() const;
-    /**
-     * @symbol ?getMessageValue@ScriptMessagePacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getMessageValue() const;
 
 };

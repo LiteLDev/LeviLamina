@@ -25,33 +25,12 @@ class BehaviorTreeDefinitionPtr {
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITIONPTR
 #endif
-    /**
-     * @symbol ??0BehaviorTreeDefinitionPtr@@QEAA@AEBV0@@Z
-     */
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr const &);
-    /**
-     * @symbol ??0BehaviorTreeDefinitionPtr@@QEAA@AEAVBehaviorTreeGroup@@AEAVBehaviorTreeDefinition@@@Z
-     */
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeGroup &, class BehaviorTreeDefinition &);
-    /**
-     * @symbol ??0BehaviorTreeDefinitionPtr@@QEAA@$$QEAV0@@Z
-     */
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr &&);
-    /**
-     * @symbol ??0BehaviorTreeDefinitionPtr@@QEAA@XZ
-     */
     MCAPI BehaviorTreeDefinitionPtr();
-    /**
-     * @symbol ??4BehaviorTreeDefinitionPtr@@QEAAAEAV0@AEBV0@@Z
-     */
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr const &);
-    /**
-     * @symbol ??4BehaviorTreeDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
-     */
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr &&);
-    /**
-     * @symbol ??1BehaviorTreeDefinitionPtr@@QEAA@XZ
-     */
     MCAPI ~BehaviorTreeDefinitionPtr();
 MCAPI static class BehaviorTreeDefinitionPtr const NONE;
 

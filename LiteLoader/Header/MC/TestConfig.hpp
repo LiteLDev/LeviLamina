@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTCONFIG
 #endif
-    /**
-     * @symbol ?bindType@TestConfig@@SAXXZ
-     */
     MCAPI static void bindType();
 
 };

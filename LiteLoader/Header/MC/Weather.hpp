@@ -31,225 +31,55 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Weather();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
-     */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol 
-     */
     virtual void __unk_vfn_13();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol 
-     */
     virtual void __unk_vfn_15();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol 
-     */
     virtual void __unk_vfn_17();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol 
-     */
     virtual void __unk_vfn_18();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol 
-     */
     virtual void __unk_vfn_20();
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol 
-     */
     virtual void __unk_vfn_21();
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol 
-     */
     virtual void __unk_vfn_22();
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol 
-     */
     virtual void __unk_vfn_23();
-    /**
-     * @note   Virtual function table index: 24
-     * @symbol 
-     */
     virtual void __unk_vfn_24();
-    /**
-     * @note   Virtual function table index: 25
-     * @symbol 
-     */
     virtual void __unk_vfn_25();
-    /**
-     * @note   Virtual function table index: 26
-     * @symbol 
-     */
     virtual void __unk_vfn_26();
-    /**
-     * @note   Virtual function table index: 27
-     * @symbol 
-     */
     virtual void __unk_vfn_27();
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
-     */
     virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEATHER
 #endif
-    /**
-     * @symbol ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z
-     */
     MCAPI Weather(class Dimension &, class IRandom &);
-    /**
-     * @symbol ?calcSnowBlockDepth@Weather@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
-     */
     MCAPI int calcSnowBlockDepth(class BlockSource &, class BlockPos const &, int) const;
-    /**
-     * @symbol ?canPlaceTopSnow@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@_N2PEAH@Z
-     */
     MCAPI bool canPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool, int *) const;
-    /**
-     * @symbol ?getFogLevel@Weather@@QEBAMXZ
-     */
     MCAPI float getFogLevel() const;
-    /**
-     * @symbol ?getLightningLevel@Weather@@QEBAMM@Z
-     */
     MCAPI float getLightningLevel(float) const;
-    /**
-     * @symbol ?getRainLevel@Weather@@QEBAMM@Z
-     */
     MCAPI float getRainLevel(float) const;
-    /**
-     * @symbol ?isLightning@Weather@@QEBA_NXZ
-     */
     MCAPI bool isLightning() const;
-    /**
-     * @symbol ?isPrecipitatingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool isPrecipitatingAt(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @symbol ?isRaining@Weather@@QEBA_NXZ
-     */
     MCAPI bool isRaining() const;
-    /**
-     * @symbol ?isRainingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool isRainingAt(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @symbol ?isSnowingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool isSnowingAt(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @symbol ?serverTick@Weather@@QEAAXXZ
-     */
     MCAPI void serverTick();
-    /**
-     * @symbol ?setSkyFlashTime@Weather@@QEAAXH@Z
-     */
     MCAPI void setSkyFlashTime(int);
-    /**
-     * @symbol ?setTargetLightningLevel@Weather@@QEAAXM@Z
-     */
     MCAPI void setTargetLightningLevel(float);
-    /**
-     * @symbol ?setTargetRainLevel@Weather@@QEAAXM@Z
-     */
     MCAPI void setTargetRainLevel(float);
-    /**
-     * @symbol ?stop@Weather@@QEAAXXZ
-     */
     MCAPI void stop();
-    /**
-     * @symbol ?tick@Weather@@QEAAXXZ
-     */
     MCAPI void tick();
-    /**
-     * @symbol ?tryToPlaceTopSnow@Weather@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-     */
     MCAPI bool tryToPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool);
-    /**
-     * @symbol ?calcLightningCycleTime@Weather@@SAHAEAVIRandom@@@Z
-     */
     MCAPI static int calcLightningCycleTime(class IRandom &);
-    /**
-     * @symbol ?calcRainCycleTime@Weather@@SAHAEAVIRandom@@@Z
-     */
     MCAPI static int calcRainCycleTime(class IRandom &);
-    /**
-     * @symbol ?calcRainDuration@Weather@@SAHAEAVIRandom@@@Z
-     */
     MCAPI static int calcRainDuration(class IRandom &);
-    /**
-     * @symbol ?rebuildTopSnowToDepth@Weather@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
-     */
     MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);
 
 };

@@ -30,55 +30,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CombatRegenerationListener();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?onActorDeath@CombatRegenerationListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
-     */
     virtual enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBATREGENERATIONLISTENER
 #endif

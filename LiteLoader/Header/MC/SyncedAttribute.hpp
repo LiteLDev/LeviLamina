@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCEDATTRIBUTE
 #endif
-    /**
-     * @symbol ??1SyncedAttribute@@QEAA@XZ
-     */
     MCAPI ~SyncedAttribute();
 
 };

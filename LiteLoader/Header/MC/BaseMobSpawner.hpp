@@ -30,50 +30,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BaseMobSpawner();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@BaseMobSpawner@@UEAAXAEAVBlockSource@@@Z
-     */
     virtual void tick(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?load@BaseMobSpawner@@UEAAXAEBVCompoundTag@@@Z
-     */
     virtual void load(class CompoundTag const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?save@BaseMobSpawner@@UEAAXAEAVCompoundTag@@@Z
-     */
     virtual void save(class CompoundTag &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
-     */
     virtual class BlockPos const & getPos() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOBSPAWNER
 #endif
-    /**
-     * @symbol ??0BaseMobSpawner@@QEAA@UActorDefinitionIdentifier@@@Z
-     */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
-    /**
-     * @symbol ?removeDisplayEntity@BaseMobSpawner@@QEAAXXZ
-     */
     MCAPI void removeDisplayEntity();
-    /**
-     * @symbol ?setEntityId@BaseMobSpawner@@QEAAXUActorDefinitionIdentifier@@@Z
-     */
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
 
 //protected:
-    /**
-     * @symbol ?_delay@BaseMobSpawner@@IEAAXAEAVBlockSource@@@Z
-     */
     MCAPI void _delay(class BlockSource &);
 
 protected:

@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUPDATEINTERACTIONEVENT
 #endif
-    /**
-     * @symbol ??1PlayerUpdateInteractionEvent@@QEAA@XZ
-     */
     MCAPI ~PlayerUpdateInteractionEvent();
 
 };

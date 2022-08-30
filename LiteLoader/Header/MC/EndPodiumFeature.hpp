@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~EndPodiumFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@EndPodiumFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPODIUMFEATURE
 #endif
-    /**
-     * @symbol ??0EndPodiumFeature@@QEAA@_N@Z
-     */
     MCAPI EndPodiumFeature(bool);
 MCAPI static float const CORNER_ROUNDING;
 MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;

@@ -31,25 +31,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKLISTENER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onBaseGamePackDownloadComplete@ResourcePackListener@@UEAAXXZ
-     */
     MCVAPI void onBaseGamePackDownloadComplete();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onFullPackStackInvalid@ResourcePackListener@@UEAAXXZ
-     */
     MCVAPI void onFullPackStackInvalid();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onLanguageSubpacksChanged@ResourcePackListener@@UEAAXXZ
-     */
     MCVAPI void onLanguageSubpacksChanged();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z
-     */
     MCVAPI void onResourceManagerDestroyed(class ResourcePackManager &);
 #endif
 

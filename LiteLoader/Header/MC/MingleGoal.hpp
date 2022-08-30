@@ -31,75 +31,23 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MingleGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@MingleGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@MingleGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@MingleGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@MingleGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@MingleGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@MingleGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINGLEGOAL
 #endif
-    /**
-     * @symbol ??0MingleGoal@@QEAA@AEAVMob@@MMMUActorDefinitionIdentifier@@M@Z
-     */
     MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
 
 //private:
-    /**
-     * @symbol ?_findNewPartner@MingleGoal@@AEAAXUActorUniqueID@@@Z
-     */
     MCAPI void _findNewPartner(struct ActorUniqueID);
-    /**
-     * @symbol ?_isWithinInteractRange@MingleGoal@@AEBA_NAEAVActor@@@Z
-     */
     MCAPI bool _isWithinInteractRange(class Actor &) const;
-    /**
-     * @symbol ?_lookAt@MingleGoal@@AEAAXPEAVActor@@@Z
-     */
     MCAPI void _lookAt(class Actor *);
 
 private:

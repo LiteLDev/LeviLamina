@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAFEATURES
 #endif
-    /**
-     * @symbol ?registerFeatureTypes@VanillaFeatures@@SAXAEAVFeatureTypeFactory@@@Z
-     */
     MCAPI static void registerFeatureTypes(class FeatureTypeFactory &);
-    /**
-     * @symbol ?registerFeatures@VanillaFeatures@@SAXAEAVFeatureRegistry@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
-     */
     MCAPI static void registerFeatures(class FeatureRegistry &, class BaseGameVersion const &, class Experiments const &);
 
 };

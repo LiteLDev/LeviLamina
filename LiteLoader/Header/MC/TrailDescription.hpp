@@ -30,31 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?getJsonName@TrailDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~TrailDescription();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserializeData@TrailDescription@@UEAAXUDeserializeDataParams@@@Z
-     */
     virtual void deserializeData(struct DeserializeDataParams);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?serializeData@TrailDescription@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILDESCRIPTION
 #endif
-    /**
-     * @symbol ??0TrailDescription@@QEAA@XZ
-     */
     MCAPI TrailDescription();
 
 };

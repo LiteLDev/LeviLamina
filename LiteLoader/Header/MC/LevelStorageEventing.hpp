@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEEVENTING
 #endif
-    /**
-     * @symbol ??0LevelStorageEventing@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelData@@0@Z
-     */
     MCAPI LevelStorageEventing(std::string const &, class LevelData const &, std::string const &);
-    /**
-     * @symbol ?fireDBStorageError@LevelStorageEventing@@QEAAXPEBD@Z
-     */
     MCAPI void fireDBStorageError(char const *);
-    /**
-     * @symbol ?fireEventWorldCorruptionCausedWorldShutdown@LevelStorageEventing@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@_N@3@@Z
-     */
     MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const &, class std::optional<bool>);
 
 };

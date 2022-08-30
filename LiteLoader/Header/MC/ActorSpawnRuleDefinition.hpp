@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSPAWNRULEDEFINITION
 #endif
-    /**
-     * @symbol ??1ActorSpawnRuleDefinition@@QEAA@XZ
-     */
     MCAPI ~ActorSpawnRuleDefinition();
 
 };

@@ -29,56 +29,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DynamicJumpControl();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?initializeInternal@DynamicJumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
-     */
     virtual void initializeInternal(class Mob &, struct JumpControlDescription *);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?clone@DynamicJumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class JumpControl> clone() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?tick@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class JumpControlComponent &, class Mob &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@@Z
-     */
     virtual int getJumpDelay(class JumpControlComponent const &) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@@Z
-     */
     virtual float getJumpPower(class JumpControlComponent const &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
-     */
     virtual enum JumpType getJumpType(class JumpControlComponent const &) const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
-     */
     virtual void setJumpType(class JumpControlComponent &, enum JumpType);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
-     */
     virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
 #endif
-    /**
-     * @symbol ??0DynamicJumpControl@@QEAA@XZ
-     */
     MCAPI DynamicJumpControl();
 
 };

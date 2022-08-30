@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISHIDDENWHENINVISIBLEDEFINITION
 #endif
-    /**
-     * @symbol ?initialize@IsHiddenWhenInvisibleDefinition@@QEAAXAEAVEntityContext@@@Z
-     */
     MCAPI void initialize(class EntityContext &);
-    /**
-     * @symbol ?uninitialize@IsHiddenWhenInvisibleDefinition@@QEAAXAEAVEntityContext@@@Z
-     */
     MCAPI void uninitialize(class EntityContext &);
-    /**
-     * @symbol ?buildSchema@IsHiddenWhenInvisibleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsHiddenWhenInvisibleDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsHiddenWhenInvisibleDefinition>> &);
 
 };

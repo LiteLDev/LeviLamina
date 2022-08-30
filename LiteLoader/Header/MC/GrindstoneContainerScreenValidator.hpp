@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GrindstoneContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONECONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0GrindstoneContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI GrindstoneContainerScreenValidator();
 
 };

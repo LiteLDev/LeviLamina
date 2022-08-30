@@ -30,69 +30,20 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemComponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writeSettings@ItemComponent@@UEAAXXZ
-     */
     virtual void writeSettings();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
-     */
     MCVAPI bool checkComponentDataForContentErrors() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@@Z
-     */
     MCVAPI bool initializeFromNetwork(class CompoundTag const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isNetworkComponent@ItemComponent@@UEBA_NXZ
-     */
     MCVAPI bool isNetworkComponent() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?useOn@ItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
-     */
     MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
 #endif
-    /**
-     * @symbol ??0ItemComponent@@QEAA@PEAVComponentItem@@@Z
-     */
     MCAPI ItemComponent(class ComponentItem *);
-    /**
-     * @symbol ?bindItemComponentType@ItemComponent@@SAXXZ
-     */
     MCAPI static void bindItemComponentType();
-    /**
-     * @symbol ?registerVersionUpgrades@ItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

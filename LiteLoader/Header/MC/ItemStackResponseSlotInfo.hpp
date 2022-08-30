@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSESLOTINFO
 #endif
-    /**
-     * @symbol ??0ItemStackResponseSlotInfo@@QEAA@$$QEAU0@@Z
-     */
     MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo &&);
-    /**
-     * @symbol ??1ItemStackResponseSlotInfo@@QEAA@XZ
-     */
     MCAPI ~ItemStackResponseSlotInfo();
 
 };

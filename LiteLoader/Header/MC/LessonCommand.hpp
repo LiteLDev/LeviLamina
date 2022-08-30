@@ -29,21 +29,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LessonCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@LessonCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LESSONCOMMAND
 #endif
-    /**
-     * @symbol ?setup@LessonCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

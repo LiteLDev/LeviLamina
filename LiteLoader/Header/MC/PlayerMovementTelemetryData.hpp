@@ -31,17 +31,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERMOVEMENTTELEMETRYDATA
 #endif
-    /**
-     * @symbol ??0PlayerMovementTelemetryData@@QEAA@XZ
-     */
     MCAPI PlayerMovementTelemetryData();
-    /**
-     * @symbol ?getAverage@PlayerMovementTelemetryData@@QEBAMXZ
-     */
     MCAPI float getAverage() const;
-    /**
-     * @symbol ?reset@PlayerMovementTelemetryData@@QEAAXXZ
-     */
     MCAPI void reset();
 
 };

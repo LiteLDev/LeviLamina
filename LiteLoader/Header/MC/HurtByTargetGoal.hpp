@@ -31,46 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HurtByTargetGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@HurtByTargetGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@HurtByTargetGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@HurtByTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?alertOther@HurtByTargetGoal@@MEAAXPEAVMob@@0@Z
-     */
     virtual void alertOther(class Mob *, class Mob *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTBYTARGETGOAL
 #endif
-    /**
-     * @symbol ??0HurtByTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_N@Z
-     */
     MCAPI HurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool);
 
 };

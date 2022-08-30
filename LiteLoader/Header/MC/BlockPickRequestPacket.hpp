@@ -30,36 +30,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockPickRequestPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@BlockPickRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@BlockPickRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@BlockPickRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@BlockPickRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPICKREQUESTPACKET
 #endif
-    /**
-     * @symbol ??0BlockPickRequestPacket@@QEAA@XZ
-     */
     MCAPI BlockPickRequestPacket();
 
 };

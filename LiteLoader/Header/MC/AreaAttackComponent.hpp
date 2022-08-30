@@ -31,17 +31,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAATTACKCOMPONENT
 #endif
-    /**
-     * @symbol ??0AreaAttackComponent@@QEAA@XZ
-     */
     MCAPI AreaAttackComponent();
-    /**
-     * @symbol ??4AreaAttackComponent@@QEAAAEAV0@$$QEAV0@@Z
-     */
     MCAPI class AreaAttackComponent & operator=(class AreaAttackComponent &&);
-    /**
-     * @symbol ??1AreaAttackComponent@@QEAA@XZ
-     */
     MCAPI ~AreaAttackComponent();
 
 };

@@ -30,21 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPIRINGTICK
 #endif
-    /**
-     * @symbol ??0ExpiringTick@@QEAA@UTick@@G@Z
-     */
     MCAPI ExpiringTick(struct Tick, unsigned short);
-    /**
-     * @symbol ?getExpireAtTick@ExpiringTick@@QEBA?AUTick@@XZ
-     */
     MCAPI struct Tick getExpireAtTick() const;
-    /**
-     * @symbol ?isActive@ExpiringTick@@QEBA_NUTick@@@Z
-     */
     MCAPI bool isActive(struct Tick) const;
-    /**
-     * @symbol ?isExpired@ExpiringTick@@QEBA_NUTick@@@Z
-     */
     MCAPI bool isExpired(struct Tick) const;
 
 };

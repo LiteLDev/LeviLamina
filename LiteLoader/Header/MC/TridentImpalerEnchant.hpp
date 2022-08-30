@@ -31,56 +31,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TridentImpalerEnchant();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getMinCost@TridentImpalerEnchant@@UEBAHH@Z
-     */
     virtual int getMinCost(int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getMaxCost@TridentImpalerEnchant@@UEBAHH@Z
-     */
     virtual int getMaxCost(int) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getMaxLevel@TridentImpalerEnchant@@UEBAHXZ
-     */
     virtual int getMaxLevel() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getDamageBonus@TridentImpalerEnchant@@UEBAMHAEBVActor@@@Z
-     */
     virtual float getDamageBonus(int, class Actor const &) const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol 
-     */
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTIMPALERENCHANT
 #endif
-    /**
-     * @symbol ??0TridentImpalerEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     */
     MCAPI TridentImpalerEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 };

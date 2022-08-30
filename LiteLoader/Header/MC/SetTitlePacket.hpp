@@ -31,60 +31,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SetTitlePacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@SetTitlePacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@SetTitlePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@SetTitlePacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@SetTitlePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTITLEPACKET
 #endif
-    /**
-     * @symbol ??0SetTitlePacket@@QEAA@AEBV0@@Z
-     */
     MCAPI SetTitlePacket(class SetTitlePacket const &);
-    /**
-     * @symbol ??0SetTitlePacket@@QEAA@XZ
-     */
     MCAPI SetTitlePacket();
-    /**
-     * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBVResolvedTextObject@@@Z
-     */
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
-    /**
-     * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
-    /**
-     * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
-     */
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
-    /**
-     * @symbol ??0SetTitlePacket@@QEAA@HHH@Z
-     */
     MCAPI SetTitlePacket(int, int, int);
-    /**
-     * @symbol ??4SetTitlePacket@@QEAAAEAV0@$$QEAV0@@Z
-     */
     MCAPI class SetTitlePacket & operator=(class SetTitlePacket &&);
 
 };

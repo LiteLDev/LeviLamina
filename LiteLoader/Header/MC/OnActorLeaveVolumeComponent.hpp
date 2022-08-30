@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORLEAVEVOLUMECOMPONENT
 #endif
-    /**
-     * @symbol ??1OnActorLeaveVolumeComponent@@QEAA@XZ
-     */
     MCAPI ~OnActorLeaveVolumeComponent();
 
 };

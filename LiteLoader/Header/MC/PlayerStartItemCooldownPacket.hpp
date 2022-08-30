@@ -28,40 +28,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PlayerStartItemCooldownPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@PlayerStartItemCooldownPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@PlayerStartItemCooldownPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@PlayerStartItemCooldownPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@PlayerStartItemCooldownPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSTARTITEMCOOLDOWNPACKET
 #endif
-    /**
-     * @symbol ??0PlayerStartItemCooldownPacket@@QEAA@XZ
-     */
     MCAPI PlayerStartItemCooldownPacket();
-    /**
-     * @symbol ??0PlayerStartItemCooldownPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI PlayerStartItemCooldownPacket(std::string const &, int);
 
 };

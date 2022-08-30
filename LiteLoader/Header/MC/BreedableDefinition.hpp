@@ -32,33 +32,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLEDEFINITION
 #endif
-    /**
-     * @symbol ??0BreedableDefinition@@QEAA@XZ
-     */
     MCAPI BreedableDefinition();
-    /**
-     * @symbol ?addBreedItem@BreedableDefinition@@QEAAXAEBVItemDescriptor@@@Z
-     */
     MCAPI void addBreedItem(class ItemDescriptor const &);
-    /**
-     * @symbol ?addBreedableType@BreedableDefinition@@QEAAXAEBUBreedableType@@@Z
-     */
     MCAPI void addBreedableType(struct BreedableType const &);
-    /**
-     * @symbol ?addEnvironmentRequirement@BreedableDefinition@@QEAAXAEBUEnvironmentRequirement@@@Z
-     */
     MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const &);
-    /**
-     * @symbol ?initialize@BreedableDefinition@@QEAAXAEAVEntityContext@@AEAVBreedableComponent@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class BreedableComponent &);
-    /**
-     * @symbol ??1BreedableDefinition@@QEAA@XZ
-     */
     MCAPI ~BreedableDefinition();
-    /**
-     * @symbol ?buildSchema@BreedableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBreedableDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>> &);
 
 };

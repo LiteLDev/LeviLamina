@@ -30,20 +30,8 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ChunkBuildOrderPolicyBase();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1() = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?registerForUpdates@ChunkBuildOrderPolicyBase@@UEAAIXZ
-     */
     virtual unsigned int registerForUpdates();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICYBASE
 #endif

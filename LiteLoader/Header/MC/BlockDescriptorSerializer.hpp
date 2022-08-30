@@ -20,21 +20,9 @@ namespace BlockDescriptorSerializer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?fromProxy@BlockDescriptorSerializer@@YAXAEAVBlockDescriptor@@UBlockDescriptorProxy@1@@Z
-     */
     MCAPI void fromProxy(class BlockDescriptor &, struct BlockDescriptorSerializer::BlockDescriptorProxy);
-    /**
-     * @symbol ?fromString@BlockDescriptorSerializer@@YAXAEAVBlockDescriptor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void fromString(class BlockDescriptor &, std::string const &);
-    /**
-     * @symbol ?fromTags@BlockDescriptorSerializer@@YAXAEAVBlockDescriptor@@AEBV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBVBedrockLoadContext@@@Z
-     */
     MCAPI void fromTags(class BlockDescriptor &, class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &, class BedrockLoadContext const &);
-    /**
-     * @symbol ?toProxy@BlockDescriptorSerializer@@YA?AUBlockDescriptorProxy@1@AEBVBlockDescriptor@@@Z
-     */
     MCAPI struct BlockDescriptorSerializer::BlockDescriptorProxy toProxy(class BlockDescriptor const &);
 
 };

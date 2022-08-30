@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDATA
 #endif
-    /**
-     * @symbol ??1ItemData@@QEAA@XZ
-     */
     MCAPI ~ItemData();
 
 };

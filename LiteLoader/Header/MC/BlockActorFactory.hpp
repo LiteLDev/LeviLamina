@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTORFACTORY
 #endif
-    /**
-     * @symbol ?createBlockEntity@BlockActorFactory@@SA?AV?$shared_ptr@VBlockActor@@@std@@W4BlockActorType@@AEBVBlockPos@@AEBVBlockLegacy@@@Z
-     */
     MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum BlockActorType, class BlockPos const &, class BlockLegacy const &);
-    /**
-     * @symbol ?flushCustomBlockEntityCreationCallbacks@BlockActorFactory@@SAXXZ
-     */
     MCAPI static void flushCustomBlockEntityCreationCallbacks();
 
 //private:

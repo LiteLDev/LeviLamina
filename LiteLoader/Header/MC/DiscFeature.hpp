@@ -29,21 +29,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DiscFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@DiscFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISCFEATURE
 #endif
-    /**
-     * @symbol ??0DiscFeature@@QEAA@AEBVBlock@@H@Z
-     */
     MCAPI DiscFeature(class Block const &, int);
 
 };

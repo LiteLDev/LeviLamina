@@ -30,15 +30,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTEVENTING
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?updatePlayerUndergroundStatus@IMinecraftEventing@@UEAAXPEAVPlayer@@_N@Z
-     */
     MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1IMinecraftEventing@@UEAA@XZ
-     */
     MCVAPI ~IMinecraftEventing();
 #endif
 

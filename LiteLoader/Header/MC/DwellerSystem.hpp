@@ -30,20 +30,8 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DwellerSystem();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?registerEvents@DwellerSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
-     */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z
-     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERSYSTEM
 #endif

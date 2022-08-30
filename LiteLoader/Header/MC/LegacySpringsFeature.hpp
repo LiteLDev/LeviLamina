@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LegacySpringsFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@LegacySpringsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSPRINGSFEATURE
 #endif
-    /**
-     * @symbol ??0LegacySpringsFeature@@QEAA@AEBVFeatureRegistry@@AEBVBaseGameVersion@@@Z
-     */
     MCAPI LegacySpringsFeature(class FeatureRegistry const &, class BaseGameVersion const &);
 
 };

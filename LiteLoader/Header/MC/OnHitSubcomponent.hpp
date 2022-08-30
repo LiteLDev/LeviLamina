@@ -29,42 +29,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~OnHitSubcomponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1() = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2() = 0;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3() = 0;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@OnHitSubcomponent@@UEAAPEBDXZ
-     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONHITSUBCOMPONENT
 #endif
-    /**
-     * @symbol ??0OnHitSubcomponent@@QEAA@XZ
-     */
     MCAPI OnHitSubcomponent();
 
 //protected:
-    /**
-     * @symbol ?_canAttack@OnHitSubcomponent@@IEBA_NPEAVActor@@0@Z
-     */
     MCAPI bool _canAttack(class Actor *, class Actor *) const;
 
 protected:

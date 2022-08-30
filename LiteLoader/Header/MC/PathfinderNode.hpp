@@ -31,45 +31,15 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHFINDERNODE
 #endif
-    /**
-     * @symbol ??0PathfinderNode@@QEAA@AEBVBlockPos@@W4NodeType@@@Z
-     */
     MCAPI PathfinderNode(class BlockPos const &, enum NodeType);
-    /**
-     * @symbol ??0PathfinderNode@@QEAA@AEBV0@@Z
-     */
     MCAPI PathfinderNode(class PathfinderNode const &);
-    /**
-     * @symbol ?distanceTo@PathfinderNode@@QEBAMPEAV1@@Z
-     */
     MCAPI float distanceTo(class PathfinderNode *) const;
-    /**
-     * @symbol ?distanceToSqr@PathfinderNode@@QEBAMPEAV1@@Z
-     */
     MCAPI float distanceToSqr(class PathfinderNode *) const;
-    /**
-     * @symbol ?equals@PathfinderNode@@QEAA_NPEAV1@@Z
-     */
     MCAPI bool equals(class PathfinderNode *);
-    /**
-     * @symbol ?getCostMalus@PathfinderNode@@QEBAMXZ
-     */
     MCAPI float getCostMalus() const;
-    /**
-     * @symbol ?getType@PathfinderNode@@QEBA?AW4NodeType@@XZ
-     */
     MCAPI enum NodeType getType() const;
-    /**
-     * @symbol ?inOpenSet@PathfinderNode@@QEAA_NXZ
-     */
     MCAPI bool inOpenSet();
-    /**
-     * @symbol ?setCostMalus@PathfinderNode@@QEAAXM@Z
-     */
     MCAPI void setCostMalus(float);
-    /**
-     * @symbol ?setMoveMalus@PathfinderNode@@QEAAXM@Z
-     */
     MCAPI void setMoveMalus(float);
 
 };

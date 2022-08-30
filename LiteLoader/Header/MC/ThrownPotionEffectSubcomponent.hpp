@@ -32,25 +32,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ThrownPotionEffectSubcomponent();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writetoJSON@ThrownPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void writetoJSON(class Json::Value &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?doOnHitEffect@ThrownPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@ThrownPotionEffectSubcomponent@@UEAAPEBDXZ
-     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNPOTIONEFFECTSUBCOMPONENT
 #endif

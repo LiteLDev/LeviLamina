@@ -31,40 +31,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SpawnGroupRegistry();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRootKey@SpawnGroupRegistry@@MEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getRootKey();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getFileType@SpawnGroupRegistry@@MEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getFileType();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?processPopulationControl@SpawnGroupRegistry@@MEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@@Z
-     */
     virtual bool processPopulationControl(std::string const &, class Json::Value &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?readResourceFiles@SpawnGroupRegistry@@MEAAXAEAVResourcePackManager@@AEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorSpawnRuleDefinition@@@std@@@2@@std@@@Z
-     */
     virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNGROUPREGISTRY
 #endif
-    /**
-     * @symbol ??0SpawnGroupRegistry@@QEAA@AEAVResourcePackManager@@@Z
-     */
     MCAPI SpawnGroupRegistry(class ResourcePackManager &);
-    /**
-     * @symbol ?getSpawnGroup@SpawnGroupRegistry@@QEBAPEBVSpawnGroupData@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI class SpawnGroupData const * getSpawnGroup(std::string const &) const;
 
 };

@@ -31,273 +31,61 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TntBlock();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol 
-     */
     virtual void __unk_vfn_36();
-    /**
-     * @note   Virtual function table index: 37
-     * @symbol 
-     */
     virtual void __unk_vfn_37();
-    /**
-     * @note   Virtual function table index: 38
-     * @symbol 
-     */
     virtual void __unk_vfn_38();
-    /**
-     * @note   Virtual function table index: 39
-     * @symbol 
-     */
     virtual void __unk_vfn_39();
-    /**
-     * @note   Virtual function table index: 40
-     * @symbol 
-     */
     virtual void __unk_vfn_40();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 42
-     * @symbol 
-     */
     virtual void __unk_vfn_42();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol 
-     */
     virtual void __unk_vfn_44();
-    /**
-     * @note   Virtual function table index: 45
-     * @symbol 
-     */
     virtual void __unk_vfn_45();
-    /**
-     * @note   Virtual function table index: 46
-     * @symbol 
-     */
     virtual void __unk_vfn_46();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol 
-     */
     virtual void __unk_vfn_47();
-    /**
-     * @note   Virtual function table index: 48
-     * @symbol 
-     */
     virtual void __unk_vfn_48();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol 
-     */
     virtual void __unk_vfn_49();
-    /**
-     * @note   Virtual function table index: 59
-     * @symbol 
-     */
     virtual void __unk_vfn_59();
-    /**
-     * @note   Virtual function table index: 60
-     * @symbol 
-     */
     virtual void __unk_vfn_60();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol ?shouldDispense@TntBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@@Z
-     */
     virtual bool shouldDispense(class BlockSource &, class Container &) const;
-    /**
-     * @note   Virtual function table index: 69
-     * @symbol ?dispense@TntBlock@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol ?onRedstoneUpdate@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 77
-     * @symbol ?setupRedstoneComponent@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 95
-     * @symbol ?destroy@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z
-     */
     virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
-    /**
-     * @note   Virtual function table index: 100
-     * @symbol ?getResourceCount@TntBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
-    /**
-     * @note   Virtual function table index: 101
-     * @symbol ?getResourceItem@TntBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /**
-     * @note   Virtual function table index: 104
-     * @symbol ?trySpawnResourcesOnExplosion@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MH@Z
-     */
     virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
-    /**
-     * @note   Virtual function table index: 105
-     * @symbol 
-     */
     virtual void __unk_vfn_105();
-    /**
-     * @note   Virtual function table index: 124
-     * @symbol 
-     */
     virtual void __unk_vfn_124();
-    /**
-     * @note   Virtual function table index: 126
-     * @symbol 
-     */
     virtual void __unk_vfn_126();
-    /**
-     * @note   Virtual function table index: 127
-     * @symbol 
-     */
     virtual void __unk_vfn_127();
-    /**
-     * @note   Virtual function table index: 132
-     * @symbol 
-     */
     virtual void __unk_vfn_132();
-    /**
-     * @note   Virtual function table index: 134
-     * @symbol ?buildDescriptionId@TntBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
-     */
     virtual std::string buildDescriptionId(class Block const &) const;
-    /**
-     * @note   Virtual function table index: 135
-     * @symbol ?isAuxValueRelevantForPicking@TntBlock@@UEBA_NXZ
-     */
     virtual bool isAuxValueRelevantForPicking() const;
-    /**
-     * @note   Virtual function table index: 147
-     * @symbol ?getVariant@TntBlock@@UEBAHAEBVBlock@@@Z
-     */
     virtual int getVariant(class Block const &) const;
-    /**
-     * @note   Virtual function table index: 148
-     * @symbol 
-     */
     virtual void __unk_vfn_148();
-    /**
-     * @note   Virtual function table index: 157
-     * @symbol 
-     */
     virtual void __unk_vfn_157();
-    /**
-     * @note   Virtual function table index: 166
-     * @symbol ?onExploded@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z
-     */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
-    /**
-     * @note   Virtual function table index: 168
-     * @symbol 
-     */
     virtual void __unk_vfn_168();
-    /**
-     * @note   Virtual function table index: 169
-     * @symbol 
-     */
     virtual void __unk_vfn_169();
-    /**
-     * @note   Virtual function table index: 170
-     * @symbol 
-     */
     virtual void __unk_vfn_170();
-    /**
-     * @note   Virtual function table index: 171
-     * @symbol ?onPlace@TntBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 177
-     * @symbol 
-     */
     virtual void __unk_vfn_177();
-    /**
-     * @note   Virtual function table index: 179
-     * @symbol ?use@TntBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /**
-     * @note   Virtual function table index: 188
-     * @symbol 
-     */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TNTBLOCK
 #endif
-    /**
-     * @symbol ??0TntBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI TntBlock(std::string const &, int);
-    /**
-     * @symbol ?_setAllowUnderwater@TntBlock@@QEBAXPEAVActor@@@Z
-     */
     MCAPI void _setAllowUnderwater(class Actor *) const;
-    /**
-     * @symbol ?_shouldAllowUnderwater@TntBlock@@QEBA_NAEBVBlock@@@Z
-     */
     MCAPI bool _shouldAllowUnderwater(class Block const &) const;
-    /**
-     * @symbol ?tryLightTnt@TntBlock@@SA_NAEAVPlayer@@AEBVBlockPos@@@Z
-     */
     MCAPI static bool tryLightTnt(class Player &, class BlockPos const &);
 
 };

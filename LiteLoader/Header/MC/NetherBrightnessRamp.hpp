@@ -31,15 +31,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NetherBrightnessRamp();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getBaseAmbientValue@NetherBrightnessRamp@@UEBAMXZ
-     */
     virtual float getBaseAmbientValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERBRIGHTNESSRAMP
 #endif

@@ -32,21 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPORTALSHAPE
 #endif
-    /**
-     * @symbol ??0EndPortalShape@@QEAA@AEAVBlockSource@@VBlockPos@@@Z
-     */
     MCAPI EndPortalShape(class BlockSource &, class BlockPos);
-    /**
-     * @symbol ?getOrigin@EndPortalShape@@QEBA?AVBlockPos@@XZ
-     */
     MCAPI class BlockPos getOrigin() const;
-    /**
-     * @symbol ?isValid@EndPortalShape@@QEAA_NAEAVBlockSource@@@Z
-     */
     MCAPI bool isValid(class BlockSource &);
-    /**
-     * @symbol ??1EndPortalShape@@QEAA@XZ
-     */
     MCAPI ~EndPortalShape();
 
 };

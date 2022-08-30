@@ -30,26 +30,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HopMoveControl();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class MoveControlComponent &, class Mob &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?setWantedPosition@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
-     */
     virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPMOVECONTROL
 #endif
-    /**
-     * @symbol ??0HopMoveControl@@QEAA@XZ
-     */
     MCAPI HopMoveControl();
 
 };

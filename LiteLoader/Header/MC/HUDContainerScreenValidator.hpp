@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HUDContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0HUDContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI HUDContainerScreenValidator();
 
 };

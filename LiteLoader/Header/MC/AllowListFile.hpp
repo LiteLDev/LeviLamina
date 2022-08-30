@@ -33,25 +33,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTFILE
 #endif
-    /**
-     * @symbol ?getAllowList@AllowListFile@@QEBAAEAVAllowList@@XZ
-     */
     MCAPI class AllowList & getAllowList() const;
-    /**
-     * @symbol ?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ
-     */
     MCAPI enum FileReadResult reload();
-    /**
-     * @symbol ?syncToDisc@AllowListFile@@QEAAXXZ
-     */
     MCAPI void syncToDisc();
-    /**
-     * @symbol ??1AllowListFile@@QEAA@XZ
-     */
     MCAPI ~AllowListFile();
-    /**
-     * @symbol ?loadFromDefaultLocations@AllowListFile@@SA?AV1@AEAVIFileSystem@Core@@@Z
-     */
     MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem &);
 
 };

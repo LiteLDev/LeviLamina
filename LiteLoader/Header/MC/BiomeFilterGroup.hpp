@@ -31,25 +31,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BiomeFilterGroup();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
-     */
     virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEFILTERGROUP
 #endif
-    /**
-     * @symbol ??0BiomeFilterGroup@@QEAA@AEBV0@@Z
-     */
     MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
-    /**
-     * @symbol ?finalizeParsedValue@BiomeFilterGroup@@QEAAXAEAVIWorldRegistriesProvider@@@Z
-     */
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
 
 };

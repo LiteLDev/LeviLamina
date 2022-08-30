@@ -29,92 +29,25 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Goal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1() = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@Goal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?canBeInterrupted@Goal@@UEAA_NXZ
-     */
     virtual bool canBeInterrupted();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4() = 0;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?isTargetGoal@Goal@@UEBA_NXZ
-     */
     virtual bool isTargetGoal() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-     */
     MCVAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?start@Goal@@UEAAXXZ
-     */
     MCVAPI void start();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?stop@Goal@@UEAAXXZ
-     */
     MCVAPI void stop();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tick@Goal@@UEAAXXZ
-     */
     MCVAPI void tick();
 #endif
-    /**
-     * @symbol ??0Goal@@QEAA@XZ
-     */
     MCAPI Goal();
-    /**
-     * @symbol ?getRequiredControlFlags@Goal@@QEBAHXZ
-     */
     MCAPI int getRequiredControlFlags() const;
-    /**
-     * @symbol ?getTypeId@Goal@@QEBAGXZ
-     */
     MCAPI unsigned short getTypeId() const;
-    /**
-     * @symbol ?setRequiredControlFlags@Goal@@QEAAXH@Z
-     */
     MCAPI void setRequiredControlFlags(int);
-    /**
-     * @symbol ?setTypeId@Goal@@QEAAXG@Z
-     */
     MCAPI void setTypeId(unsigned short);
 
 };

@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTCONTEXT
 #endif
-    /**
-     * @symbol ??0GameEventContext@@QEAA@AEBVVec3@@PEAVActor@@PEBVBlock@@@Z
-     */
     MCAPI GameEventContext(class Vec3 const &, class Actor *, class Block const *);
 
 };

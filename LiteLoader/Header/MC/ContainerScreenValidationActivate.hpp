@@ -29,15 +29,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ContainerScreenValidationActivate();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ
-     */
     virtual struct ContainerValidationResult tryActivate();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATIONACTIVATE
 #endif

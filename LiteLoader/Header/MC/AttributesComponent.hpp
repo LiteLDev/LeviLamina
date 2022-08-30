@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTESCOMPONENT
 #endif
-    /**
-     * @symbol ??0AttributesComponent@@QEAA@$$QEAU0@@Z
-     */
     MCAPI AttributesComponent(struct AttributesComponent &&);
-    /**
-     * @symbol ??1AttributesComponent@@QEAA@XZ
-     */
     MCAPI ~AttributesComponent();
 
 };

@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTCOMPONENT
 #endif
-    /**
-     * @symbol ??4MoveInputComponent@@QEAAAEAU0@$$QEAU0@@Z
-     */
     MCAPI struct MoveInputComponent & operator=(struct MoveInputComponent &&);
 
 };

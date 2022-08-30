@@ -31,20 +31,8 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTBASE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getCraftAction@ItemStackRequestActionCraftBase@@UEBAPEBV1@XZ
-     */
     MCVAPI class ItemStackRequestActionCraftBase const * getCraftAction() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftBase@@UEAAXAEAVBlockPalette@@_N@Z
-     */
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1ItemStackRequestActionCraftBase@@UEAA@XZ
-     */
     MCVAPI ~ItemStackRequestActionCraftBase();
 #endif
 

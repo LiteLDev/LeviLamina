@@ -37,9 +37,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTPACKETS
 #endif
-    /**
-     * @symbol ?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z
-     */
     MCAPI static class std::shared_ptr<class Packet> createPacket(enum MinecraftPacketIds);
 
 };

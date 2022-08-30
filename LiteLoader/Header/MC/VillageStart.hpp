@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~VillageStart();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isValid@VillageStart@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGESTART
 #endif
-    /**
-     * @symbol ??0VillageStart@@QEAA@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@HHAEBVIPreliminarySurfaceProvider@@@Z
-     */
     MCAPI VillageStart(class Dimension &, class BiomeSource const &, class Random &, int, int, class IPreliminarySurfaceProvider const &);
 
 };

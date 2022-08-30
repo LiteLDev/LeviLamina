@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENVIRONMENTREQUIREMENT
 #endif
-    /**
-     * @symbol ?addBlockDescriptor@EnvironmentRequirement@@QEAAXAEBVBlockDescriptor@@@Z
-     */
     MCAPI void addBlockDescriptor(class BlockDescriptor const &);
-    /**
-     * @symbol ??1EnvironmentRequirement@@QEAA@XZ
-     */
     MCAPI ~EnvironmentRequirement();
 
 };

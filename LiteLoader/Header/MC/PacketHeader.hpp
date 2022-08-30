@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETHEADER
 #endif
-    /**
-     * @symbol ?getChannel@PacketHeader@@QEBAIXZ
-     */
     MCAPI unsigned int getChannel() const;
 
 };

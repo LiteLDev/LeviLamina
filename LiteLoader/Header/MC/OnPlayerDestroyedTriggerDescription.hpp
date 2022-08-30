@@ -31,15 +31,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~OnPlayerDestroyedTriggerDescription();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getName@OnPlayerDestroyedTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGERDESCRIPTION
 #endif

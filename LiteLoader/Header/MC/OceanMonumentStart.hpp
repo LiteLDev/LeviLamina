@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~OceanMonumentStart();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?postProcess@OceanMonumentStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTSTART
 #endif
-    /**
-     * @symbol ?createMonument@OceanMonumentStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
-     */
     MCAPI void createMonument(class Dimension &, class Random &, int, int);
 
 };

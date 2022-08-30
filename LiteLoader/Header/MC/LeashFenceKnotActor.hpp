@@ -32,195 +32,45 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@LeashFenceKnotActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~LeashFenceKnotActor();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?remove@LeashFenceKnotActor@@UEAAXXZ
-     */
     virtual void remove();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol ?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH1@Z
-     */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 95
-     * @symbol ?isPickable@LeashFenceKnotActor@@UEAA_NXZ
-     */
     virtual bool isPickable();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 238
-     * @symbol ?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z
-     */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@LeashFenceKnotActor@@UEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 284
-     * @symbol ?_onSizeUpdated@LeashFenceKnotActor@@EEAAXXZ
-     */
     virtual void _onSizeUpdated();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 286
-     * @symbol ?setDir@LeashFenceKnotActor@@UEAAXH@Z
-     */
     virtual void setDir(int);
-    /**
-     * @note   Virtual function table index: 287
-     * @symbol ?getWidth@LeashFenceKnotActor@@UEBAHXZ
-     */
     virtual int getWidth() const;
-    /**
-     * @note   Virtual function table index: 288
-     * @symbol ?getHeight@LeashFenceKnotActor@@UEBAHXZ
-     */
     virtual int getHeight() const;
-    /**
-     * @note   Virtual function table index: 289
-     * @symbol ?dropItem@LeashFenceKnotActor@@UEAAXXZ
-     */
     virtual void dropItem();
-    /**
-     * @note   Virtual function table index: 291
-     * @symbol ?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z
-     */
     virtual bool wouldSurvive(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEASHFENCEKNOTACTOR
 #endif
-    /**
-     * @symbol ??0LeashFenceKnotActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?numberofAnimalsAttached@LeashFenceKnotActor@@QEAAHXZ
-     */
     MCAPI int numberofAnimalsAttached();
 
 };

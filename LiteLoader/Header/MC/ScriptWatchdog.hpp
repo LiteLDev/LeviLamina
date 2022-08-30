@@ -31,9 +31,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTWATCHDOG
 #endif
-    /**
-     * @symbol ?initialize@ScriptWatchdog@@QEAAXPEAVIWatchdog@Scripting@@AEAVServerLevel@@PEAVScriptPluginManager@@VWeakLifetimeScope@3@PEAVServerInstance@@@Z
-     */
     MCAPI void initialize(class Scripting::IWatchdog *, class ServerLevel &, class ScriptPluginManager *, class Scripting::WeakLifetimeScope, class ServerInstance *);
 
 };

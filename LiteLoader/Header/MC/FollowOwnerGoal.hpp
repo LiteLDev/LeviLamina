@@ -30,61 +30,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FollowOwnerGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@FollowOwnerGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@FollowOwnerGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@FollowOwnerGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@FollowOwnerGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@FollowOwnerGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@FollowOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?onPlayerDimensionChanged@FollowOwnerGoal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
-     */
     virtual void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWOWNERGOAL
 #endif
-    /**
-     * @symbol ??0FollowOwnerGoal@@QEAA@AEAVMob@@MMM_N1M@Z
-     */
     MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
 
 };

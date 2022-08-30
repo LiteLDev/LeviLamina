@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SORTITEMINSTANCEIDAUX
 #endif
-    /**
-     * @symbol ??RSortItemInstanceIdAux@@QEBA_NAEBVItemInstance@@0@Z
-     */
     MCAPI bool operator()(class ItemInstance const &, class ItemInstance const &) const;
 
 };

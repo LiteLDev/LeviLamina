@@ -33,9 +33,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSJSONVALIDATOR
 #endif
-    /**
-     * @symbol ?getValidator@PackSettingsJsonValidator@@SA?AVProperty@JsonValidator@@XZ
-     */
     MCAPI static class JsonValidator::Property getValidator();
 
 };

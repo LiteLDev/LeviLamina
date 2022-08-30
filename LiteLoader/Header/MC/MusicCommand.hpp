@@ -31,35 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MusicCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@MusicCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MUSICCOMMAND
 #endif
-    /**
-     * @symbol ?setup@MusicCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?_handleActionQueueOrPlay@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-     */
     MCAPI void _handleActionQueueOrPlay(class CompoundTag &, class CommandOutput &) const;
-    /**
-     * @symbol ?_handleActionStop@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-     */
     MCAPI void _handleActionStop(class CompoundTag &, class CommandOutput &) const;
-    /**
-     * @symbol ?_handleActionVolume@MusicCommand@@AEBAXAEAVCompoundTag@@AEAVCommandOutput@@@Z
-     */
     MCAPI void _handleActionVolume(class CompoundTag &, class CommandOutput &) const;
 
 private:

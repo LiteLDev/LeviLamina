@@ -32,51 +32,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COPPERBEHAVIOR
 #endif
-    /**
-     * @symbol ??0CopperBehavior@@QEAA@W4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@AEBV?$function@$$A6AAEBVBlock@@AEBVBlockLegacy@@AEBV1@@Z@std@@@Z
-     */
     MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
-    /**
-     * @symbol ??0CopperBehavior@@QEAA@W4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@11AEBV?$function@$$A6AAEBVBlock@@AEBVBlockLegacy@@AEBV1@@Z@std@@@Z
-     */
     MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
-    /**
-     * @symbol ?canDecrementAge@CopperBehavior@@QEBA_NXZ
-     */
     MCAPI bool canDecrementAge() const;
-    /**
-     * @symbol ?getCorrespondingWaxedBlock@CopperBehavior@@QEBAAEBVBlock@@AEBV2@@Z
-     */
     MCAPI class Block const & getCorrespondingWaxedBlock(class Block const &) const;
-    /**
-     * @symbol ?isWaxable@CopperBehavior@@QEBA_NXZ
-     */
     MCAPI bool isWaxable() const;
-    /**
-     * @symbol ?isWaxed@CopperBehavior@@QEBA_NXZ
-     */
     MCAPI bool isWaxed() const;
-    /**
-     * @symbol ?tryDecrementAge@CopperBehavior@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool tryDecrementAge(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @symbol ?tryIncrementAge@CopperBehavior@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@MM@Z
-     */
     MCAPI bool tryIncrementAge(class BlockSource &, class BlockPos const &, float, float) const;
-    /**
-     * @symbol ?use@CopperBehavior@@QEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     */
     MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /**
-     * @symbol ??1CopperBehavior@@QEAA@XZ
-     */
     MCAPI ~CopperBehavior();
 
 //private:
-    /**
-     * @symbol ?_incrementAge@CopperBehavior@@AEBAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@M@Z
-     */
     MCAPI void _incrementAge(class BlockSource &, class Block const &, class BlockPos const &, float) const;
 
 private:

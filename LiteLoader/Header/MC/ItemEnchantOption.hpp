@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMENCHANTOPTION
 #endif
-    /**
-     * @symbol ??0ItemEnchantOption@@QEAA@$$QEAV0@@Z
-     */
     MCAPI ItemEnchantOption(class ItemEnchantOption &&);
-    /**
-     * @symbol ??1ItemEnchantOption@@QEAA@XZ
-     */
     MCAPI ~ItemEnchantOption();
 
 };

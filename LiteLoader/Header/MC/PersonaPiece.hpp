@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSONAPIECE
 #endif
-    /**
-     * @symbol ??0PersonaPiece@@QEAA@XZ
-     */
     MCAPI PersonaPiece();
-    /**
-     * @symbol ??1PersonaPiece@@QEAA@XZ
-     */
     MCAPI ~PersonaPiece();
 MCAPI static class PersonaPiece const INVALID_PIECE;
 

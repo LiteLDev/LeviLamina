@@ -28,65 +28,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?AddRef@TaskQueuePortContextImpl@@UEAAIXZ
-     */
     virtual unsigned int AddRef();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?Release@TaskQueuePortContextImpl@@UEAAIXZ
-     */
     virtual unsigned int Release();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?QueryApi@TaskQueuePortContextImpl@@UEAAJW4ApiId@@PEAPEAX@Z
-     */
     virtual long QueryApi(enum ApiId, void **);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?GetType@TaskQueuePortContextImpl@@UEAA?AW4XTaskQueuePort@@XZ
-     */
     virtual enum XTaskQueuePort GetType();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?GetStatus@TaskQueuePortContextImpl@@UEAA?AW4TaskQueuePortStatus@@XZ
-     */
     virtual enum TaskQueuePortStatus GetStatus();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?GetQueue@TaskQueuePortContextImpl@@UEAAPEAUITaskQueue@@XZ
-     */
     virtual struct ITaskQueue * GetQueue();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?GetPort@TaskQueuePortContextImpl@@UEAAPEAUITaskQueuePort@@XZ
-     */
     virtual struct ITaskQueuePort * GetPort();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?TrySetStatus@TaskQueuePortContextImpl@@UEAA_NW4TaskQueuePortStatus@@0@Z
-     */
     virtual bool TrySetStatus(enum TaskQueuePortStatus, enum TaskQueuePortStatus);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?SetStatus@TaskQueuePortContextImpl@@UEAAXW4TaskQueuePortStatus@@@Z
-     */
     virtual void SetStatus(enum TaskQueuePortStatus);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?ItemQueued@TaskQueuePortContextImpl@@UEAAXXZ
-     */
     virtual void ItemQueued();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?AddSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
-     */
     virtual bool AddSuspend();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?RemoveSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
-     */
     virtual bool RemoveSuspend();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
 #endif

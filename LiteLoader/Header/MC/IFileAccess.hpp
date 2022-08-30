@@ -31,9 +31,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEACCESS
 #endif
-    /**
-     * @symbol ??0IFileAccess@@QEAA@XZ
-     */
     MCAPI IFileAccess();
 
 };

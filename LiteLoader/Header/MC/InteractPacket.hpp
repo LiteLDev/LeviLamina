@@ -30,40 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~InteractPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@InteractPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@InteractPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@InteractPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@InteractPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTPACKET
 #endif
-    /**
-     * @symbol ??0InteractPacket@@QEAA@XZ
-     */
     MCAPI InteractPacket();
-    /**
-     * @symbol ??0InteractPacket@@QEAA@W4Action@0@VActorRuntimeID@@AEBVVec3@@@Z
-     */
     MCAPI InteractPacket(enum InteractPacket::Action, class ActorRuntimeID, class Vec3 const &);
 
 };

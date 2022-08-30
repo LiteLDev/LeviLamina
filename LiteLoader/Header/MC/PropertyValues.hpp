@@ -28,21 +28,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYVALUES
 #endif
-    /**
-     * @symbol ??0PropertyValues@@QEAA@AEBU0@@Z
-     */
     MCAPI PropertyValues(struct PropertyValues const &);
-    /**
-     * @symbol ??4PropertyValues@@QEAAAEAU0@$$QEAU0@@Z
-     */
     MCAPI struct PropertyValues & operator=(struct PropertyValues &&);
-    /**
-     * @symbol ?resize@PropertyValues@@QEAAX_K000@Z
-     */
     MCAPI void resize(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
-    /**
-     * @symbol ??1PropertyValues@@QEAA@XZ
-     */
     MCAPI ~PropertyValues();
 
 };

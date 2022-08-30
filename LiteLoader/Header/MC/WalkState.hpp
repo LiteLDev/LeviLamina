@@ -31,25 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~WalkState();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@WalkState@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?start@PetSleepWithOwnerState@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
-     */
     virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALKSTATE
 #endif

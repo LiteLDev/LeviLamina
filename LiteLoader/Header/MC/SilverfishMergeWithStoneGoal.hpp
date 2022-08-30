@@ -31,46 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SilverfishMergeWithStoneGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@SilverfishMergeWithStoneGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@SilverfishMergeWithStoneGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SILVERFISHMERGEWITHSTONEGOAL
 #endif
-    /**
-     * @symbol ??0SilverfishMergeWithStoneGoal@@QEAA@AEAVSilverfish@@@Z
-     */
     MCAPI SilverfishMergeWithStoneGoal(class Silverfish &);
 
 };

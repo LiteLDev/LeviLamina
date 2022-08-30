@@ -29,21 +29,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StructureTemplateFeature();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?place@StructureTemplateFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEFEATURE
 #endif
-    /**
-     * @symbol ??0StructureTemplateFeature@@QEAA@XZ
-     */
     MCAPI StructureTemplateFeature();
 
 };

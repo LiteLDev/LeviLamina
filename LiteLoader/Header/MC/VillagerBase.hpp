@@ -33,224 +33,54 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?reloadComponents@VillagerBase@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~VillagerBase();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 139
-     * @symbol ?onLightningHit@VillagerBase@@UEAAXXZ
-     */
     virtual void onLightningHit();
-    /**
-     * @note   Virtual function table index: 142
-     * @symbol ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
-     */
     virtual void handleEntityEvent(enum ActorEvent, int);
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@VillagerBase@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@VillagerBase@@UEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 284
-     * @symbol ?_onSizeUpdated@VillagerBase@@EEAAXXZ
-     */
     virtual void _onSizeUpdated();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 313
-     * @symbol 
-     */
     virtual void __unk_vfn_313();
-    /**
-     * @note   Virtual function table index: 317
-     * @symbol 
-     */
     virtual void __unk_vfn_317();
-    /**
-     * @note   Virtual function table index: 351
-     * @symbol 
-     */
     virtual void __unk_vfn_351();
-    /**
-     * @note   Virtual function table index: 361
-     * @symbol ?_serverAiMobStep@VillagerBase@@MEAAXXZ
-     */
     virtual void _serverAiMobStep();
-    /**
-     * @note   Virtual function table index: 365
-     * @symbol 
-     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGERBASE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?interactPreventDefault@VillagerBase@@UEAA_NXZ
-     */
     MCVAPI bool interactPreventDefault();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?useNewAi@VillagerBase@@UEBA_NXZ
-     */
     MCVAPI bool useNewAi() const;
 #endif
-    /**
-     * @symbol ??0VillagerBase@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI VillagerBase(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?consumeLoveFood@VillagerBase@@QEAAXXZ
-     */
     MCAPI void consumeLoveFood();
-    /**
-     * @symbol ?getBreedingStackIndex@VillagerBase@@QEBAHXZ
-     */
     MCAPI int getBreedingStackIndex() const;
-    /**
-     * @symbol ?isChasing@VillagerBase@@QEBA_NXZ
-     */
     MCAPI bool isChasing() const;
-    /**
-     * @symbol ?isWillingToBreed@VillagerBase@@QEAA_N_N@Z
-     */
     MCAPI bool isWillingToBreed(bool);
-    /**
-     * @symbol ?setChasing@VillagerBase@@QEAAX_N@Z
-     */
     MCAPI void setChasing(bool);
-    /**
-     * @symbol ?setWillingToBreed@VillagerBase@@QEAAX_N@Z
-     */
     MCAPI void setWillingToBreed(bool);
-    /**
-     * @symbol ?stopGoals@VillagerBase@@QEAAXXZ
-     */
     MCAPI void stopGoals();
-    /**
-     * @symbol ?BiomeStrToEnum@VillagerBase@@SA?AW4BiomeType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static enum VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
 
 //private:
-    /**
-     * @symbol ?_addParticlesAroundSelf@VillagerBase@@AEAAXW4ParticleType@@@Z
-     */
     MCAPI void _addParticlesAroundSelf(enum ParticleType);
 
 private:

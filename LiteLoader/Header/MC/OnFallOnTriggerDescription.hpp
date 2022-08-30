@@ -31,25 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~OnFallOnTriggerDescription();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getName@OnFallOnTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeComponent@OnFallOnTriggerDescription@@UEBAXAEAVEntityContext@@@Z
-     */
     virtual void initializeComponent(class EntityContext &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?buildSchema@OnFallOnTriggerDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
-     */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGERDESCRIPTION
 #endif

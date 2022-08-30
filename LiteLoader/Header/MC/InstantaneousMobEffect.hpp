@@ -31,26 +31,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~InstantaneousMobEffect();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?isInstantaneous@InstantaneousMobEffect@@UEBA_NXZ
-     */
     virtual bool isInstantaneous() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?isDurationEffectTick@InstantaneousMobEffect@@UEBA_NHH@Z
-     */
     virtual bool isDurationEffectTick(int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSMOBEFFECT
 #endif
-    /**
-     * @symbol ??0InstantaneousMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
-     */
     MCAPI InstantaneousMobEffect(int, std::string const &, std::string const &, bool, int, int);
 
 };

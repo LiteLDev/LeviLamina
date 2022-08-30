@@ -28,13 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCARRIEDITEMCHANGEDEVENT
 #endif
-    /**
-     * @symbol ??0ActorCarriedItemChangedEvent@@QEAA@AEBU0@@Z
-     */
     MCAPI ActorCarriedItemChangedEvent(struct ActorCarriedItemChangedEvent const &);
-    /**
-     * @symbol ??1ActorCarriedItemChangedEvent@@QEAA@XZ
-     */
     MCAPI ~ActorCarriedItemChangedEvent();
 
 };

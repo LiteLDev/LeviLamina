@@ -28,55 +28,18 @@ public:
     BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const &) = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockMaterialInstancesDescription();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getName@BlockMaterialInstancesDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeComponent@BlockMaterialInstancesDescription@@UEBAXAEAVEntityContext@@@Z
-     */
     virtual void initializeComponent(class EntityContext &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?isNetworkComponent@BlockMaterialInstancesDescription@@UEBA_NXZ
-     */
     virtual bool isNetworkComponent() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?buildNetworkTag@BlockMaterialInstancesDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?initializeFromNetwork@BlockMaterialInstancesDescription@@UEAAXAEBVCompoundTag@@@Z
-     */
     virtual void initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCESDESCRIPTION
 #endif
-    /**
-     * @symbol ??0BlockMaterialInstancesDescription@@QEAA@XZ
-     */
     MCAPI BlockMaterialInstancesDescription();
-    /**
-     * @symbol ??4BlockMaterialInstancesDescription@@QEAAAEAU0@$$QEAU0@@Z
-     */
     MCAPI struct BlockMaterialInstancesDescription & operator=(struct BlockMaterialInstancesDescription &&);
 MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType@BlockMaterialInstancesDescription@@SAXXZ
-     */
     MCAPI static void bindType();
 
 };

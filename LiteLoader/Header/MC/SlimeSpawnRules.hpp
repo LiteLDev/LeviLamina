@@ -20,9 +20,6 @@ namespace SlimeSpawnRules {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?checkSpawnRulesCallback@SlimeSpawnRules@@YA_NAEBVSpawnConditions@@AEAVBlockSource@@@Z
-     */
     MCAPI bool checkSpawnRulesCallback(class SpawnConditions const &, class BlockSource &);
 
 };

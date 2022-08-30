@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMESOURCE
 #endif
-    /**
-     * @symbol ?getAreaIterator@BiomeSource@@SA?AVBlockPosIterator@@AEBVBoundingBox@@I@Z
-     */
     MCAPI static class BlockPosIterator getAreaIterator(class BoundingBox const &, unsigned int);
 
 };

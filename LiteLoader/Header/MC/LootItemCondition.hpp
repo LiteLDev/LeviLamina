@@ -33,9 +33,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMCONDITION
 #endif
-    /**
-     * @symbol ?deserialize@LootItemCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
-     */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 };

@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKBUILDERDATA
 #endif
-    /**
-     * @symbol ??0LevelChunkBuilderData@@QEAA@XZ
-     */
     MCAPI LevelChunkBuilderData();
-    /**
-     * @symbol ??1LevelChunkBuilderData@@QEAA@XZ
-     */
     MCAPI ~LevelChunkBuilderData();
 
 };

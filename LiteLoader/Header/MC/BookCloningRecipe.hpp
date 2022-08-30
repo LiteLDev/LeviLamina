@@ -31,50 +31,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BookCloningRecipe();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?assemble@BookCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getCraftingSize@BookCloningRecipe@@UEBAHXZ
-     */
     virtual int getCraftingSize() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getIngredient@BookCloningRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getResultItem@BookCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?matches@BookCloningRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?size@BookCloningRecipe@@UEBAHXZ
-     */
     virtual int size() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOKCLONINGRECIPE
 #endif
-    /**
-     * @symbol ??0BookCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
-     */
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-    /**
-     * @symbol ??0BookCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
 MCAPI static class mce::UUID const ID;
 

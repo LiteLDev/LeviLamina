@@ -68,102 +68,32 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BinaryStream();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYSTREAM
 #endif
-    /**
-     * @symbol ??0BinaryStream@@QEAA@XZ
-     */
     MCAPI BinaryStream();
-    /**
-     * @symbol ??0BinaryStream@@QEAA@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     */
     MCAPI BinaryStream(std::string &, bool);
-    /**
-     * @symbol ?getAndReleaseData@BinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string getAndReleaseData();
-    /**
-     * @symbol ?reset@BinaryStream@@QEAAXXZ
-     */
     MCAPI void reset();
-    /**
-     * @symbol ?writeBool@BinaryStream@@QEAAX_N@Z
-     */
     MCAPI void writeBool(bool);
-    /**
-     * @symbol ?writeByte@BinaryStream@@QEAAXE@Z
-     */
     MCAPI void writeByte(unsigned char);
-    /**
-     * @symbol ?writeDouble@BinaryStream@@QEAAXN@Z
-     */
     MCAPI void writeDouble(double);
-    /**
-     * @symbol ?writeFloat@BinaryStream@@QEAAXM@Z
-     */
     MCAPI void writeFloat(float);
-    /**
-     * @symbol ?writeSignedBigEndianInt@BinaryStream@@QEAAXH@Z
-     */
     MCAPI void writeSignedBigEndianInt(int);
-    /**
-     * @symbol ?writeSignedInt@BinaryStream@@QEAAXH@Z
-     */
     MCAPI void writeSignedInt(int);
-    /**
-     * @symbol ?writeSignedInt64@BinaryStream@@QEAAX_J@Z
-     */
     MCAPI void writeSignedInt64(__int64);
-    /**
-     * @symbol ?writeSignedShort@BinaryStream@@QEAAXF@Z
-     */
     MCAPI void writeSignedShort(short);
-    /**
-     * @symbol ?writeString@BinaryStream@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     MCAPI void writeString(class gsl::basic_string_span<char const, -1>);
-    /**
-     * @symbol ?writeUnsignedChar@BinaryStream@@QEAAXE@Z
-     */
     MCAPI void writeUnsignedChar(unsigned char);
-    /**
-     * @symbol ?writeUnsignedInt@BinaryStream@@QEAAXI@Z
-     */
     MCAPI void writeUnsignedInt(unsigned int);
-    /**
-     * @symbol ?writeUnsignedInt64@BinaryStream@@QEAAX_K@Z
-     */
     MCAPI void writeUnsignedInt64(unsigned __int64);
-    /**
-     * @symbol ?writeUnsignedShort@BinaryStream@@QEAAXG@Z
-     */
     MCAPI void writeUnsignedShort(unsigned short);
-    /**
-     * @symbol ?writeUnsignedVarInt@BinaryStream@@QEAAXI@Z
-     */
     MCAPI void writeUnsignedVarInt(unsigned int);
-    /**
-     * @symbol ?writeUnsignedVarInt64@BinaryStream@@QEAAX_K@Z
-     */
     MCAPI void writeUnsignedVarInt64(unsigned __int64);
-    /**
-     * @symbol ?writeVarInt@BinaryStream@@QEAAXH@Z
-     */
     MCAPI void writeVarInt(int);
-    /**
-     * @symbol ?writeVarInt64@BinaryStream@@QEAAX_J@Z
-     */
     MCAPI void writeVarInt64(__int64);
 
 //private:
-    /**
-     * @symbol ?write@BinaryStream@@AEAAXPEBX_K@Z
-     */
     MCAPI void write(void const *, unsigned __int64);
 
 private:

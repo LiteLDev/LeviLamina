@@ -30,28 +30,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GoalSelectorSystem();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@GoalSelectorSystem@@UEAAXAEAVEntityRegistry@@@Z
-     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOALSELECTORSYSTEM
 #endif
 
 //private:
-    /**
-     * @symbol ?_tickGoalSelectorComponent@GoalSelectorSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VGoalSelectorComponent@@@@@Z
-     */
     MCAPI static void _tickGoalSelectorComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GoalSelectorComponent> &);
 
 private:

@@ -31,51 +31,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SmithingTableContainerManagerModel();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getItemCopies@SmithingTableContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     */
     virtual std::vector<class ItemStack> getItemCopies() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?setSlot@SmithingTableContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
-     */
     virtual void setSlot(int, class ItemStack const &, bool);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getSlot@SmithingTableContainerManagerModel@@UEBAAEBVItemStack@@H@Z
-     */
     virtual class ItemStack const & getSlot(int) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?setData@SmithingTableContainerManagerModel@@UEAAXHH@Z
-     */
     virtual void setData(int, int);
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?broadcastChanges@SmithingTableContainerManagerModel@@UEAAXXZ
-     */
     virtual void broadcastChanges();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?isValid@SmithingTableContainerManagerModel@@UEAA_NM@Z
-     */
     virtual bool isValid(float);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?_postInit@SmithingTableContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERMANAGERMODEL
 #endif
-    /**
-     * @symbol ??0SmithingTableContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     */
     MCAPI SmithingTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 MCAPI static int const INPUT_SLOT;
 MCAPI static int const MATERIAL_SLOT;

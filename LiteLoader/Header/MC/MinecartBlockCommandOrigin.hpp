@@ -32,70 +32,20 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MinecartBlockCommandOrigin();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getBlockPosition@MinecartBlockCommandOrigin@@UEBA?AVBlockPos@@XZ
-     */
     virtual class BlockPos getBlockPosition() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getWorldPosition@MinecartBlockCommandOrigin@@UEBA?AVVec3@@XZ
-     */
     virtual class Vec3 getWorldPosition() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getEntity@MinecartBlockCommandOrigin@@UEBAPEAVActor@@XZ
-     */
     virtual class Actor * getEntity() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clone@MinecartBlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?canUseCommandsWithoutCheatsEnabled@MinecartBlockCommandOrigin@@UEBA_NXZ
-     */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getOriginType@MinecartBlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     */
     virtual enum CommandOriginType getOriginType() const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol ?serialize@MinecartBlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     */
     virtual class CompoundTag serialize() const;
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol ?isValid@MinecartBlockCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isValid() const;
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol ?_getBaseCommandBlock@MinecartBlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
-     */
     virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol ?_getBlockEntity@MinecartBlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
-     */
     virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTBLOCKCOMMANDORIGIN
 #endif
-    /**
-     * @symbol ??0MinecartBlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBUActorUniqueID@@@Z
-     */
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
-    /**
-     * @symbol ?load@MinecartBlockCommandOrigin@@SA?AV?$unique_ptr@VMinecartBlockCommandOrigin@@U?$default_delete@VMinecartBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     */
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

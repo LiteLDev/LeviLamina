@@ -38,37 +38,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SpikeFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@SpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIKEFEATURE
 #endif
-    /**
-     * @symbol ??0SpikeFeature@@QEAA@AEBVEndSpike@0@@Z
-     */
     MCAPI SpikeFeature(class SpikeFeature::EndSpike const &);
-    /**
-     * @symbol ?placeManually@SpikeFeature@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@PEAVActor@@@Z
-     */
     MCAPI bool placeManually(class BlockSource &, class BlockPos const &, class Random &, class Actor *);
-    /**
-     * @symbol ?postProcessMobsAt@SpikeFeature@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;
-    /**
-     * @symbol ?setCrystalBeamTarget@SpikeFeature@@QEAAXAEBVBlockPos@@@Z
-     */
     MCAPI void setCrystalBeamTarget(class BlockPos const &);
-    /**
-     * @symbol ?setCrystalInvulnerable@SpikeFeature@@QEAAX_N@Z
-     */
     MCAPI void setCrystalInvulnerable(bool);
 
 };

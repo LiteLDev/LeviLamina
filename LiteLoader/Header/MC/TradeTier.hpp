@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADETIER
 #endif
-    /**
-     * @symbol ??1TradeTier@@QEAA@XZ
-     */
     MCAPI ~TradeTier();
 
 };

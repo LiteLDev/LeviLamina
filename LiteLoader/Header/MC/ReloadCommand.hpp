@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ReloadCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@ReloadCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RELOADCOMMAND
 #endif
-    /**
-     * @symbol ?setup@ReloadCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HorseContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0HorseContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI HorseContainerScreenValidator();
 
 };

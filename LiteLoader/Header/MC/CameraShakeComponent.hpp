@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKECOMPONENT
 #endif
-    /**
-     * @symbol ?getMaxIntensity@CameraShakeComponent@@SAMXZ
-     */
     MCAPI static float getMaxIntensity();
 
 };

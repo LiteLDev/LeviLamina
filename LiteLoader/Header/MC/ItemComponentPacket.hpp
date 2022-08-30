@@ -30,41 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemComponentPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@ItemComponentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@ItemComponentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@ItemComponentPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?readExtended@ItemComponentPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@ItemComponentPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENTPACKET
 #endif
-    /**
-     * @symbol ??0ItemComponentPacket@@QEAA@XZ
-     */
     MCAPI ItemComponentPacket();
 
 };

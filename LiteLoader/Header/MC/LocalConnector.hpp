@@ -32,118 +32,30 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LocalConnector();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getLocalIp@LocalConnector@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getLocalIp();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getConnectedGameInfo@LocalConnector@@UEBAAEBVGameConnectionInfo@Social@@XZ
-     */
     virtual class Social::GameConnectionInfo const & getConnectedGameInfo() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getNatPunchInfo@LocalConnector@@UEBA?AUNatPunchInfo@Connector@@XZ
-     */
     virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALCONNECTOR
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?addConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-     */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getIPv4Port@LocalConnector@@UEBAGXZ
-     */
     MCVAPI unsigned short getIPv4Port() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getIPv6Port@LocalConnector@@UEBAGXZ
-     */
     MCVAPI unsigned short getIPv6Port() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLocalIps@LocalConnector@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     */
     MCVAPI std::vector<std::string> getLocalIps() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getPort@LocalConnector@@UEBAGXZ
-     */
     MCVAPI unsigned short getPort() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getRefinedLocalIps@LocalConnector@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
-     */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isIPv4Supported@LocalConnector@@UEBA_NXZ
-     */
     MCVAPI bool isIPv4Supported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isIPv6Supported@LocalConnector@@UEBA_NXZ
-     */
     MCVAPI bool isIPv6Supported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?removeConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-     */
     MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setupNatPunch@LocalConnector@@UEAAX_N@Z
-     */
     MCVAPI void setupNatPunch(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     */
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
 #endif
-    /**
-     * @symbol ??0LocalConnector@@QEAA@AEAVConnectionCallbacks@0@AEBVNetworkIdentifier@@@Z
-     */
     MCAPI LocalConnector(class LocalConnector::ConnectionCallbacks &, class NetworkIdentifier const &);
-    /**
-     * @symbol ?disconnect@LocalConnector@@QEAAXXZ
-     */
     MCAPI void disconnect();
-    /**
-     * @symbol ?host@LocalConnector@@QEAAXAEBVNetworkIdentifier@@@Z
-     */
     MCAPI void host(class NetworkIdentifier const &);
-    /**
-     * @symbol ?runEvents@LocalConnector@@QEAAXXZ
-     */
     MCAPI void runEvents();
 
 //private:

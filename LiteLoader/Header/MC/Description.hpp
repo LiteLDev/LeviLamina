@@ -30,31 +30,12 @@ public:
     Description() = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?getJsonName@TrustDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const = 0;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~Description();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserializeData@Description@@UEAAXUDeserializeDataParams@@@Z
-     */
     virtual void deserializeData(struct DeserializeDataParams);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?serializeData@TrustDescription@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serializeData(class Json::Value &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESCRIPTION
 #endif
-    /**
-     * @symbol ?parseDescription@Description@@QEAAPEAU1@UDeserializeDataParams@@@Z
-     */
     MCAPI struct Description * parseDescription(struct DeserializeDataParams);
 
 };

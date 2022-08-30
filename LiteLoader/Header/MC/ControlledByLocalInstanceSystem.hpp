@@ -30,17 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTROLLEDBYLOCALINSTANCESYSTEM
 #endif
-    /**
-     * @symbol ?createRecalculateControlledByLocalInstanceSystemClient@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createRecalculateControlledByLocalInstanceSystemClient();
-    /**
-     * @symbol ?createRecalculateControlledByLocalInstanceSystemServer@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createRecalculateControlledByLocalInstanceSystemServer();
-    /**
-     * @symbol ?createWasControlledByLocalInstanceSystem@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createWasControlledByLocalInstanceSystem();
 
 };

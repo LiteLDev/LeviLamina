@@ -31,303 +31,69 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BellBlock();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?getAABB@BellBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?onProjectileHit@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z
-     */
     virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 25
-     * @symbol ?canConnect@BellBlock@@UEBA_NAEBVBlock@@E0@Z
-     */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol 
-     */
     virtual void __unk_vfn_36();
-    /**
-     * @note   Virtual function table index: 37
-     * @symbol 
-     */
     virtual void __unk_vfn_37();
-    /**
-     * @note   Virtual function table index: 38
-     * @symbol 
-     */
     virtual void __unk_vfn_38();
-    /**
-     * @note   Virtual function table index: 39
-     * @symbol 
-     */
     virtual void __unk_vfn_39();
-    /**
-     * @note   Virtual function table index: 40
-     * @symbol 
-     */
     virtual void __unk_vfn_40();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 42
-     * @symbol 
-     */
     virtual void __unk_vfn_42();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol 
-     */
     virtual void __unk_vfn_44();
-    /**
-     * @note   Virtual function table index: 45
-     * @symbol 
-     */
     virtual void __unk_vfn_45();
-    /**
-     * @note   Virtual function table index: 46
-     * @symbol 
-     */
     virtual void __unk_vfn_46();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol 
-     */
     virtual void __unk_vfn_47();
-    /**
-     * @note   Virtual function table index: 48
-     * @symbol 
-     */
     virtual void __unk_vfn_48();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol 
-     */
     virtual void __unk_vfn_49();
-    /**
-     * @note   Virtual function table index: 59
-     * @symbol 
-     */
     virtual void __unk_vfn_59();
-    /**
-     * @note   Virtual function table index: 60
-     * @symbol 
-     */
     virtual void __unk_vfn_60();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol ?canContainLiquid@BellBlock@@UEBA_NXZ
-     */
     virtual bool canContainLiquid() const;
-    /**
-     * @note   Virtual function table index: 62
-     * @symbol ?shouldConnectToRedstone@BellBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 74
-     * @symbol ?movedByPiston@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 77
-     * @symbol ?setupRedstoneComponent@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 98
-     * @symbol ?neighborChanged@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 102
-     * @symbol ?asItemInstance@BellBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 105
-     * @symbol 
-     */
     virtual void __unk_vfn_105();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol ?getPlacementBlock@BellBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
-    /**
-     * @note   Virtual function table index: 113
-     * @symbol ?entityInside@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
-    /**
-     * @note   Virtual function table index: 124
-     * @symbol 
-     */
     virtual void __unk_vfn_124();
-    /**
-     * @note   Virtual function table index: 126
-     * @symbol 
-     */
     virtual void __unk_vfn_126();
-    /**
-     * @note   Virtual function table index: 127
-     * @symbol 
-     */
     virtual void __unk_vfn_127();
-    /**
-     * @note   Virtual function table index: 132
-     * @symbol 
-     */
     virtual void __unk_vfn_132();
-    /**
-     * @note   Virtual function table index: 144
-     * @symbol ?getVisualShape@BellBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
-     */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
-    /**
-     * @note   Virtual function table index: 148
-     * @symbol 
-     */
     virtual void __unk_vfn_148();
-    /**
-     * @note   Virtual function table index: 157
-     * @symbol 
-     */
     virtual void __unk_vfn_157();
-    /**
-     * @note   Virtual function table index: 158
-     * @symbol ?getSilkTouchItemInstance@BellBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
-     */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
-    /**
-     * @note   Virtual function table index: 168
-     * @symbol 
-     */
     virtual void __unk_vfn_168();
-    /**
-     * @note   Virtual function table index: 169
-     * @symbol 
-     */
     virtual void __unk_vfn_169();
-    /**
-     * @note   Virtual function table index: 170
-     * @symbol 
-     */
     virtual void __unk_vfn_170();
-    /**
-     * @note   Virtual function table index: 171
-     * @symbol ?onPlace@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 174
-     * @symbol ?tick@BellBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /**
-     * @note   Virtual function table index: 177
-     * @symbol 
-     */
     virtual void __unk_vfn_177();
-    /**
-     * @note   Virtual function table index: 179
-     * @symbol ?use@BellBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
-     */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
-    /**
-     * @note   Virtual function table index: 180
-     * @symbol ?canSurvive@BellBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 188
-     * @symbol 
-     */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BELLBLOCK
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isInteractiveBlock@BellBlock@@UEBA_NXZ
-     */
     MCVAPI bool isInteractiveBlock() const;
 #endif
-    /**
-     * @symbol ??0BellBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI BellBlock(std::string const &, int);
-    /**
-     * @symbol ?hasValidAttachment@BellBlock@@QEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool hasValidAttachment(class Block const &, class BlockSource &, class BlockPos const &) const;
 
 //private:
-    /**
-     * @symbol ?_determineAttachment@BellBlock@@AEBAAEBVBlock@@AEAVActor@@AEAVBlockSource@@AEBVBlockPos@@E@Z
-     */
     MCAPI class Block const & _determineAttachment(class Actor &, class BlockSource &, class BlockPos const &, unsigned char) const;
-    /**
-     * @symbol ?_getItemId@BellBlock@@AEBAFAEBVBlockSource@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     MCAPI short _getItemId(class BlockSource const &, class gsl::basic_string_span<char const, -1>) const;
-    /**
-     * @symbol ?_getShape@BellBlock@@AEBAAEBVAABB@@AEBVBlock@@AEAV2@@Z
-     */
     MCAPI class AABB const & _getShape(class Block const &, class AABB &) const;
-    /**
-     * @symbol ?_sendBellUsedEventToClient@BellBlock@@AEBAXAEBVBlockSource@@AEBVActor@@@Z
-     */
     MCAPI void _sendBellUsedEventToClient(class BlockSource const &, class Actor const &) const;
 
 private:

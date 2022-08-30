@@ -32,199 +32,46 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~Throwable();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol ?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z
-     */
     virtual void lerpMotion(class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 79
-     * @symbol ?getShadowHeightOffs@Throwable@@UEAAMXZ
-     */
     virtual float getShadowHeightOffs();
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 172
-     * @symbol ?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getSourceUniqueID() const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@Throwable@@MEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 286
-     * @symbol ?getThrowPower@Throwable@@UEAAMXZ
-     */
     virtual float getThrowPower();
-    /**
-     * @note   Virtual function table index: 287
-     * @symbol 
-     */
     virtual void __unk_vfn_287();
-    /**
-     * @note   Virtual function table index: 288
-     * @symbol ?getThrowUpAngleOffset@Throwable@@MEAAMXZ
-     */
     virtual float getThrowUpAngleOffset();
-    /**
-     * @note   Virtual function table index: 289
-     * @symbol ?getGravity@Throwable@@MEAAMXZ
-     */
     virtual float getGravity();
-    /**
-     * @note   Virtual function table index: 290
-     * @symbol ?getParticleType@Throwable@@MEAA?AW4ParticleType@@XZ
-     */
     virtual enum ParticleType getParticleType();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWABLE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canMakeStepSound@Throwable@@MEBA_NXZ
-     */
     MCVAPI bool canMakeStepSound() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onHit@Throwable@@MEAAXAEBVHitResult@@@Z
-     */
     MCVAPI void onHit(class HitResult const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?stopUponGroundCollision@Throwable@@UEBA_NXZ
-     */
     MCVAPI bool stopUponGroundCollision() const;
 #endif
-    /**
-     * @symbol ??0Throwable@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI Throwable(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?shoot@Throwable@@QEAAXAEAVMob@@@Z
-     */
     MCAPI void shoot(class Mob &);
-    /**
-     * @symbol ?shoot@Throwable@@QEAAXAEBVVec3@@MM0@Z
-     */
     MCAPI void shoot(class Vec3 const &, float, float, class Vec3 const &);
 
 };

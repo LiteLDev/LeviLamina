@@ -28,61 +28,20 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SniffGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@SniffGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@SniffGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@SniffGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@SniffGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@SniffGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@SniffGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNIFFGOAL
 #endif
-    /**
-     * @symbol ??0SniffGoal@@QEAA@AEAVMob@@@Z
-     */
     MCAPI SniffGoal(class Mob &);
 
 //private:
-    /**
-     * @symbol ?_fetchNearbySniffableActors@SniffGoal@@AEBA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@W4ActorType@@@Z
-     */
     MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum ActorType) const;
-    /**
-     * @symbol ?_fetchNearestSniffableActor@SniffGoal@@AEBA?AV?$optional@UDistanceSortedActor@@@std@@XZ
-     */
     MCAPI class std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
 
 private:

@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MultiplyValueAmplifier();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
-     */
     virtual float getAmount(int, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIPLYVALUEAMPLIFIER
 #endif
-    /**
-     * @symbol ??0MultiplyValueAmplifier@@QEAA@M@Z
-     */
     MCAPI MultiplyValueAmplifier(float);
 
 };

@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGECONDITION
 #endif
-    /**
-     * @symbol ??1DamageCondition@@QEAA@XZ
-     */
     MCAPI ~DamageCondition();
 
 };

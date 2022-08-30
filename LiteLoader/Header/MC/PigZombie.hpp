@@ -32,171 +32,40 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~PigZombie();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@PigZombie@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 270
-     * @symbol ?_hurt@PigZombie@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@PigZombie@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@PigZombie@@MEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 305
-     * @symbol ?checkSpawnRules@PigZombie@@UEAA_N_N@Z
-     */
     virtual bool checkSpawnRules(bool);
-    /**
-     * @note   Virtual function table index: 313
-     * @symbol 
-     */
     virtual void __unk_vfn_313();
-    /**
-     * @note   Virtual function table index: 317
-     * @symbol 
-     */
     virtual void __unk_vfn_317();
-    /**
-     * @note   Virtual function table index: 348
-     * @symbol ?getAttackTime@PigZombie@@UEAAHXZ
-     */
     virtual int getAttackTime();
-    /**
-     * @note   Virtual function table index: 351
-     * @symbol 
-     */
     virtual void __unk_vfn_351();
-    /**
-     * @note   Virtual function table index: 365
-     * @symbol 
-     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PIGZOMBIE
 #endif
-    /**
-     * @symbol ??0PigZombie@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI PigZombie(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 
 //private:

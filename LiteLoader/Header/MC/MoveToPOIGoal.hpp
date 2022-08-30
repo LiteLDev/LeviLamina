@@ -31,87 +31,27 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveToPOIGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@MoveToPOIGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@MoveToPOIGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@MoveToPOIGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@MoveToPOIGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?isValidTarget@MoveToPOIGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?_moveToBlock@MoveToPOIGoal@@MEAAXXZ
-     */
     virtual void _moveToBlock();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?_getTargetPosition@MoveToPOIGoal@@MEBA?AVVec3@@XZ
-     */
     virtual class Vec3 _getTargetPosition() const;
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
-     */
     virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOPOIGOAL
 #endif
-    /**
-     * @symbol ??0MoveToPOIGoal@@QEAA@AEAVMob@@MW4POIType@@M@Z
-     */
     MCAPI MoveToPOIGoal(class Mob &, float, enum POIType, float);
-    /**
-     * @symbol ?getPOI@MoveToPOIGoal@@QEAA_NW4POIType@@@Z
-     */
     MCAPI bool getPOI(enum POIType);
 
 //protected:
-    /**
-     * @symbol ?_canReachPOI@MoveToPOIGoal@@IEAA_NAEBVVec3@@M_N@Z
-     */
     MCAPI bool _canReachPOI(class Vec3 const &, float, bool);
 
 //private:
-    /**
-     * @symbol ?_updatePOIBooking@MoveToPOIGoal@@AEAAXXZ
-     */
     MCAPI void _updatePOIBooking();
 
 protected:

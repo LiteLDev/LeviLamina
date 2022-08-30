@@ -29,21 +29,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AgentBodyControl();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z
-     */
     virtual void clientTick(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTBODYCONTROL
 #endif
-    /**
-     * @symbol ??0AgentBodyControl@@QEAA@XZ
-     */
     MCAPI AgentBodyControl();
 
 };

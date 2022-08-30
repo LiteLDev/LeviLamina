@@ -39,55 +39,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~IntTag();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?write@IntTag@@UEBAXAEAVIDataOutput@@@Z
-     */
     virtual void write(class IDataOutput &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?load@IntTag@@UEAAXAEAVIDataInput@@@Z
-     */
     virtual void load(class IDataInput &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?toString@IntTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string toString() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getId@IntTag@@UEBA?AW4Type@Tag@@XZ
-     */
     virtual enum Tag::Type getId() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?equals@IntTag@@UEBA_NAEBVTag@@@Z
-     */
     virtual bool equals(class Tag const &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?copy@IntTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class Tag> copy() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?hash@IntTag@@UEBA_KXZ
-     */
     virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTTAG
 #endif
-    /**
-     * @symbol ??0IntTag@@QEAA@XZ
-     */
     MCAPI IntTag();
-    /**
-     * @symbol ??0IntTag@@QEAA@H@Z
-     */
     MCAPI IntTag(int);
 
 };

@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCENOTIFICATIONEVENT
 #endif
-    /**
-     * @symbol ??1ServerInstanceNotificationEvent@@QEAA@XZ
-     */
     MCAPI ~ServerInstanceNotificationEvent();
 
 };

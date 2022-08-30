@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMAPPING
 #endif
-    /**
-     * @symbol ?nameToEvent@GameEventMapping@@SAAEBVGameEvent@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static class GameEvent const & nameToEvent(std::string const &);
-    /**
-     * @symbol ?typeToEvent@GameEventMapping@@SAAEBVGameEvent@@W4GameEventType@GameEventConfig@@@Z
-     */
     MCAPI static class GameEvent const & typeToEvent(enum GameEventConfig::GameEventType);
 
 //private:

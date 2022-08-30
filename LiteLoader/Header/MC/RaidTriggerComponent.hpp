@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERCOMPONENT
 #endif
-    /**
-     * @symbol ?initFromDefinition@RaidTriggerComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void initFromDefinition(class Actor &);
-    /**
-     * @symbol ?reloadComponent@RaidTriggerComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void reloadComponent(class Actor &);
 
 };

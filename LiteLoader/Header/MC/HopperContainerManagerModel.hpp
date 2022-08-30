@@ -31,25 +31,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HopperContainerManagerModel();
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?_postInit@HopperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERCONTAINERMANAGERMODEL
 #endif
-    /**
-     * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     */
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-    /**
-     * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
-     */
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
 
 };

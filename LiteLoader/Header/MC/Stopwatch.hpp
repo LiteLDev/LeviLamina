@@ -29,39 +29,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Stopwatch();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?stop@Stopwatch@@UEAANXZ
-     */
     virtual double stop();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?stopContinue@Stopwatch@@UEAANXZ
-     */
     virtual double stopContinue();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?print@Stopwatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void print(std::string const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPWATCH
 #endif
-    /**
-     * @symbol ??0Stopwatch@@QEAA@XZ
-     */
     MCAPI Stopwatch();
-    /**
-     * @symbol ?reset@Stopwatch@@QEAAXXZ
-     */
     MCAPI void reset();
-    /**
-     * @symbol ?start@Stopwatch@@QEAAXXZ
-     */
     MCAPI void start();
 
 };

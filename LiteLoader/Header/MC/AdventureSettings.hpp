@@ -28,9 +28,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADVENTURESETTINGS
 #endif
-    /**
-     * @symbol ??0AdventureSettings@@QEAA@XZ
-     */
     MCAPI AdventureSettings();
 
 };

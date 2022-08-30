@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CompoundCreatorContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0CompoundCreatorContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI CompoundCreatorContainerScreenValidator();
 
 };

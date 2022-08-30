@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSTORAGEOBSERVER
 #endif
-    /**
-     * @symbol ?onSave@LevelStorageObserver@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void onSave(std::string const &);
 
 };

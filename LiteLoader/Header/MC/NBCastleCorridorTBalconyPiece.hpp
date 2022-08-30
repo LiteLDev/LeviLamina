@@ -31,25 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NBCastleCorridorTBalconyPiece();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getType@NBCastleCorridorTBalconyPiece@@UEBA?AW4StructurePieceType@@XZ
-     */
     virtual enum StructurePieceType getType() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?addChildren@NBCastleCorridorTBalconyPiece@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
-     */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?postProcess@NBCastleCorridorTBalconyPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBCASTLECORRIDORTBALCONYPIECE
 #endif

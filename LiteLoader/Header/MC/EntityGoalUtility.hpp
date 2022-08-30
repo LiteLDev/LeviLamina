@@ -22,9 +22,6 @@ namespace EntityGoalUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?getNumericNodeSpecifier@EntityGoalUtility@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     */
     MCAPI std::string getNumericNodeSpecifier(unsigned short);
 
 };

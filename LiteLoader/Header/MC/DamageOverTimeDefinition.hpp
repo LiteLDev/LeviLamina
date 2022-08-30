@@ -33,13 +33,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGEOVERTIMEDEFINITION
 #endif
-    /**
-     * @symbol ?initialize@DamageOverTimeDefinition@@QEAAXAEAVEntityContext@@AEAVDamageOverTimeComponent@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class DamageOverTimeComponent &);
-    /**
-     * @symbol ?buildSchema@DamageOverTimeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDamageOverTimeDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>> &);
 
 };

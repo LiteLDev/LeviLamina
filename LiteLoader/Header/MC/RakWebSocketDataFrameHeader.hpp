@@ -28,45 +28,15 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETDATAFRAMEHEADER
 #endif
-    /**
-     * @symbol ??0RakWebSocketDataFrameHeader@@QEAA@_N0000W4OpCode@@E@Z
-     */
     MCAPI RakWebSocketDataFrameHeader(bool, bool, bool, bool, bool, enum OpCode, unsigned char);
-    /**
-     * @symbol ??0RakWebSocketDataFrameHeader@@QEAA@XZ
-     */
     MCAPI RakWebSocketDataFrameHeader();
-    /**
-     * @symbol ?getFinBit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     */
     MCAPI int getFinBit() const;
-    /**
-     * @symbol ?getMaskBit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     */
     MCAPI int getMaskBit() const;
-    /**
-     * @symbol ?getOpCode@RakWebSocketDataFrameHeader@@QEBA?AW4OpCode@@XZ
-     */
     MCAPI enum OpCode getOpCode() const;
-    /**
-     * @symbol ?getPayloadLength@RakWebSocketDataFrameHeader@@QEBAEXZ
-     */
     MCAPI unsigned char getPayloadLength() const;
-    /**
-     * @symbol ?getRSV1Bit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     */
     MCAPI int getRSV1Bit() const;
-    /**
-     * @symbol ?getRSV2Bit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     */
     MCAPI int getRSV2Bit() const;
-    /**
-     * @symbol ?getRSV3Bit@RakWebSocketDataFrameHeader@@QEBAHXZ
-     */
     MCAPI int getRSV3Bit() const;
-    /**
-     * @symbol ??1RakWebSocketDataFrameHeader@@QEAA@XZ
-     */
     MCAPI ~RakWebSocketDataFrameHeader();
 
 };

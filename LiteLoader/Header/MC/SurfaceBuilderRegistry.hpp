@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEBUILDERREGISTRY
 #endif
-    /**
-     * @symbol ?lookupForEntity@SurfaceBuilderRegistry@@QEBAPEAVISurfaceBuilder@@AEAVEntityContext@@@Z
-     */
     MCAPI class ISurfaceBuilder * lookupForEntity(class EntityContext &) const;
 
 };

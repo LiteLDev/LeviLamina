@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SlimeMoveControl();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@SlimeMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEMOVECONTROL
 #endif
-    /**
-     * @symbol ??0SlimeMoveControl@@QEAA@XZ
-     */
     MCAPI SlimeMoveControl();
 
 };

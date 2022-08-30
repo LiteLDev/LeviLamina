@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNCONDITIONS
 #endif
-    /**
-     * @symbol ?createSpawnConditionsWithSpawnRules@SpawnConditions@@SA?AV1@AEBV1@AEBVMobSpawnRules@@@Z
-     */
     MCAPI static class SpawnConditions createSpawnConditionsWithSpawnRules(class SpawnConditions const &, class MobSpawnRules const &);
 
 };

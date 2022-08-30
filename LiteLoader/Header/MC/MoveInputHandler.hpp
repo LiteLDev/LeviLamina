@@ -30,82 +30,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveInputHandler();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@MoveInputHandler@@UEAAXAEAUIPlayerMovementProxy@@@Z
-     */
     virtual void tick(struct IPlayerMovementProxy &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?clearInputState@MoveInputHandler@@UEAAXXZ
-     */
     virtual void clearInputState();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?isChangeHeight@MoveInputHandler@@UEBA_NXZ
-     */
     virtual bool isChangeHeight() const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?isPlayerMoving@MoveInputHandler@@UEBA_NXZ
-     */
     virtual bool isPlayerMoving() const;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?getGazeDirection@MoveInputHandler@@UEBAAEBVVec3@@XZ
-     */
     virtual class Vec3 const & getGazeDirection() const;
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?extractInputComponent@MoveInputHandler@@UEBA?AUMoveInputComponent@@XZ
-     */
     virtual struct MoveInputComponent extractInputComponent() const;
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?fillInputPacket@MoveInputHandler@@UEAAXAEAVPlayerAuthInputPacket@@@Z
-     */
     virtual void fillInputPacket(class PlayerAuthInputPacket &);
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol 
-     */
     virtual void __unk_vfn_15() = 0;
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?createSnapshot@MoveInputHandler@@UEAA?AV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTHANDLER
 #endif
-    /**
-     * @symbol ?wantsMoveForward@MoveInputHandler@@QEBA_NXZ
-     */
     MCAPI bool wantsMoveForward() const;
 
 //protected:
-    /**
-     * @symbol ??0MoveInputHandler@@IEAA@XZ
-     */
     MCAPI MoveInputHandler();
 
 protected:

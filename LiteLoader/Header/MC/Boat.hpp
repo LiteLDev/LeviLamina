@@ -31,230 +31,55 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?reloadHardcodedClient@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~Boat();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?remove@Boat@@UEAAXXZ
-     */
     virtual void remove();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@Boat@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 56
-     * @symbol ?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z
-     */
     virtual std::string getExitTip(std::string const &, enum InputMode) const;
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 79
-     * @symbol ?getShadowHeightOffs@Boat@@UEAAMXZ
-     */
     virtual float getShadowHeightOffs();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@Boat@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 90
-     * @symbol ?onAboveBubbleColumn@Boat@@UEAAX_N@Z
-     */
     virtual void onAboveBubbleColumn(bool);
-    /**
-     * @note   Virtual function table index: 95
-     * @symbol ?isPickable@Boat@@UEAA_NXZ
-     */
     virtual bool isPickable();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 135
-     * @symbol ?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z
-     */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 184
-     * @symbol ?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getControllingPlayer() const;
-    /**
-     * @note   Virtual function table index: 192
-     * @symbol ?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z
-     */
     virtual bool canAddPassenger(class Actor &) const;
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 226
-     * @symbol ?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z
-     */
     virtual float getPassengerYRotation(class Actor const &) const;
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 270
-     * @symbol ?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@M_N1@Z
-     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 286
-     * @symbol ?destroy@Boat@@UEAAXPEAVActor@@@Z
-     */
     virtual void destroy(class Actor *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOAT
 #endif
-    /**
-     * @symbol ??0Boat@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI Boat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?getRowingTime@Boat@@QEBAMW4Side@@@Z
-     */
     MCAPI float getRowingTime(enum Side) const;
-    /**
-     * @symbol ?getWoodID@Boat@@QEBAEXZ
-     */
     MCAPI unsigned char getWoodID() const;
-    /**
-     * @symbol ?postNormalTick@Boat@@QEAAXXZ
-     */
     MCAPI void postNormalTick();
-    /**
-     * @symbol ?setPaddleState@Boat@@QEAA_NW4Side@@_N@Z
-     */
     MCAPI bool setPaddleState(enum Side, bool);
-    /**
-     * @symbol ?setRowingTime@Boat@@QEAAXW4Side@@M@Z
-     */
     MCAPI void setRowingTime(enum Side, float);
 
 //private:
-    /**
-     * @symbol ?_control@Boat@@AEAAXXZ
-     */
     MCAPI void _control();
-    /**
-     * @symbol ?_move@Boat@@AEAAXXZ
-     */
     MCAPI void _move();
-    /**
-     * @symbol ?_paddleControl@Boat@@AEAAXW4Side@@AEAVVec3@@1@Z
-     */
     MCAPI void _paddleControl(enum Side, class Vec3 &, class Vec3 &);
 
 private:

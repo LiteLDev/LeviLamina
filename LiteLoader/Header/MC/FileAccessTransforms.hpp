@@ -31,15 +31,7 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEACCESSTRANSFORMS
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?readTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-     */
     MCVAPI bool readTransform(std::vector<unsigned char> &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?writeTransform@FileAccessTransforms@@UEBA_NAEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-     */
     MCVAPI bool writeTransform(std::vector<unsigned char> &) const;
 #endif
 

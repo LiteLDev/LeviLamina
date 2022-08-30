@@ -28,26 +28,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StructurePoolBlockPredicateTrueIfFound();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?test@StructurePoolBlockPredicateTrueIfFound@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-     */
     virtual bool test(class Block const &, class Randomize &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?test@StructurePoolBlockPredicateTrueIfFound@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-     */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATETRUEIFFOUND
 #endif
-    /**
-     * @symbol ??0StructurePoolBlockPredicateTrueIfFound@@QEAA@AEBV?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@M@Z
-     */
     MCAPI StructurePoolBlockPredicateTrueIfFound(class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const &, float);
 
 };

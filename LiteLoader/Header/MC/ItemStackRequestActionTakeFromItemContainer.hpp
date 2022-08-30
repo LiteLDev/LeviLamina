@@ -28,31 +28,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemStackRequestActionTakeFromItemContainer();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTAKEFROMITEMCONTAINER
 #endif
-    /**
-     * @symbol ??0ItemStackRequestActionTakeFromItemContainer@@QEAA@XZ
-     */
     MCAPI ItemStackRequestActionTakeFromItemContainer();
 
 };

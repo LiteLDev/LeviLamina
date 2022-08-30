@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONATTRIBUTE
 #endif
-    /**
-     * @symbol ??1ActorDefinitionAttribute@@QEAA@XZ
-     */
     MCAPI ~ActorDefinitionAttribute();
 
 };

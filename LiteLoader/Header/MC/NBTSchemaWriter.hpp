@@ -27,157 +27,39 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NBTSchemaWriter();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual bool write(std::string const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NM@Z
-     */
     virtual bool write(float);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?pushMember@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual bool pushMember(std::string const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?popMember@NBTSchemaWriter@@UEAAXXZ
-     */
     virtual void popMember();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?openObject@NBTSchemaWriter@@UEAA_NXZ
-     */
     virtual bool openObject();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?openArray@NBTSchemaWriter@@UEAA_NXZ
-     */
     virtual bool openArray();
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?close@NBTSchemaWriter@@UEAAXXZ
-     */
     virtual void close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAWRITER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NN@Z
-     */
     MCVAPI bool write(double);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_N_K@Z
-     */
     MCVAPI bool write(unsigned __int64);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_N_J@Z
-     */
     MCVAPI bool write(__int64);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_N_N@Z
-     */
     MCVAPI bool write(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NE@Z
-     */
     MCVAPI bool write(unsigned char);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NC@Z
-     */
     MCVAPI bool write(signed char);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NF@Z
-     */
     MCVAPI bool write(short);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NG@Z
-     */
     MCVAPI bool write(unsigned short);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NH@Z
-     */
     MCVAPI bool write(int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?write@NBTSchemaWriter@@UEAA_NI@Z
-     */
     MCVAPI bool write(unsigned int);
 #endif
-    /**
-     * @symbol ??0NBTSchemaWriter@@QEAA@XZ
-     */
     MCAPI NBTSchemaWriter();
 
 //private:
-    /**
-     * @symbol ?_serializeTag@NBTSchemaWriter@@AEAA_NV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
-     */
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
 
 private:

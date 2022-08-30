@@ -31,15 +31,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DesertWellFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@DesertWellFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERTWELLFEATURE
 #endif

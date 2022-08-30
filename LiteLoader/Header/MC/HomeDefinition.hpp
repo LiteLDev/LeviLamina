@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOMEDEFINITION
 #endif
-    /**
-     * @symbol ??0HomeDefinition@@QEAA@XZ
-     */
     MCAPI HomeDefinition();
-    /**
-     * @symbol ?initialize@HomeDefinition@@QEAAXAEAVEntityContext@@AEAVHomeComponent@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class HomeComponent &);
-    /**
-     * @symbol ?buildSchema@HomeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHomeDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>> &);
 
 };

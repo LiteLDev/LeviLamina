@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEPASSENGERSCOMPONENT
 #endif
-    /**
-     * @symbol ??1RemovePassengersComponent@@QEAA@XZ
-     */
     MCAPI ~RemovePassengersComponent();
 
 };

@@ -30,26 +30,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GlideMoveControl();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?initializeInternal@GlideMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
-     */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@GlideMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLIDEMOVECONTROL
 #endif
-    /**
-     * @symbol ??0GlideMoveControl@@QEAA@XZ
-     */
     MCAPI GlideMoveControl();
 
 };

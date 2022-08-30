@@ -34,25 +34,10 @@ public:
 #endif
 
 //protected:
-    /**
-     * @symbol ??0WeakStorageFeature@@IEAA@W4EmptyInit@0@@Z
-     */
     MCAPI WeakStorageFeature(enum WeakStorageFeature::EmptyInit);
-    /**
-     * @symbol ??0WeakStorageFeature@@IEAA@AEBVOwnerStorageFeature@@@Z
-     */
     MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
-    /**
-     * @symbol ??0WeakStorageFeature@@IEAA@$$QEAV0@@Z
-     */
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
-    /**
-     * @symbol ?_isSet@WeakStorageFeature@@IEBA_NXZ
-     */
     MCAPI bool _isSet() const;
-    /**
-     * @symbol ??4WeakStorageFeature@@IEAAAEAV0@$$QEAV0@@Z
-     */
     MCAPI class WeakStorageFeature & operator=(class WeakStorageFeature &&);
 
 protected:

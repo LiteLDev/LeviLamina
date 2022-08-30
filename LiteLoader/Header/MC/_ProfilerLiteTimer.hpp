@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__PROFILERLITETIMER
 #endif
-    /**
-     * @symbol ??0_ProfilerLiteTimer@@QEAA@AEAUScopedData@ProfilerLite@@Vid@thread@std@@@Z
-     */
     MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData &, class std::thread::id);
-    /**
-     * @symbol ??1_ProfilerLiteTimer@@QEAA@XZ
-     */
     MCAPI ~_ProfilerLiteTimer();
 
 };

@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCALEBYAGECOMPONENT
 #endif
-    /**
-     * @symbol ??0ScaleByAgeComponent@@QEAA@XZ
-     */
     MCAPI ScaleByAgeComponent();
-    /**
-     * @symbol ?_initializeScale@ScaleByAgeComponent@@QEAAXAEAVEntityContext@@@Z
-     */
     MCAPI void _initializeScale(class EntityContext &);
 
 };

@@ -30,42 +30,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ScreenHandlerLabTable();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?handleAction@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
-     */
     virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?endRequest@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@XZ
-     */
     virtual enum ItemStackNetResult endRequest();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?postRequest@ScreenHandlerLabTable@@MEAAX_N@Z
-     */
     virtual void postRequest(bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERLABTABLE
 #endif
-    /**
-     * @symbol ??0ScreenHandlerLabTable@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
-     */
     MCAPI ScreenHandlerLabTable(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
-    /**
-     * @symbol ?_handleLabTableCombine@ScreenHandlerLabTable@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionDataless@$08@@@Z
-     */
     MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
 
 private:

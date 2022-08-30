@@ -32,24 +32,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ScriptMinecraftServerAdminModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTSERVERADMINMODULEFACTORY
 #endif
-    /**
-     * @symbol ??0ScriptMinecraftServerAdminModuleFactory@@QEAA@V?$NonOwnerPointer@VScriptPackConfigurationManager@@@Bedrock@@@Z
-     */
     MCAPI ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>);
-    /**
-     * @symbol ?getModuleUUIDAsString@ScriptMinecraftServerAdminModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI static std::string getModuleUUIDAsString();
-    /**
-     * @symbol ?makeModuleDescriptorFor@ScriptMinecraftServerAdminModuleFactory@@SA?AUModuleDescriptor@Scripting@@UVersion@3@@Z
-     */
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 
 //private:

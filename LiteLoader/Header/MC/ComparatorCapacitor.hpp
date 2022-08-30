@@ -32,96 +32,26 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ComparatorCapacitor();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?canConsumePowerAnyDirection@ComparatorCapacitor@@UEBA_NXZ
-     */
     virtual bool canConsumePowerAnyDirection() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?canConsumerPower@ComparatorCapacitor@@UEBA_NXZ
-     */
     virtual bool canConsumerPower() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?removeSource@ComparatorCapacitor@@UEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
-     */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?addSource@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?allowConnection@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?evaluate@ComparatorCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?cacheValues@ComparatorCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?updateDependencies@ComparatorCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
-     */
     virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol 
-     */
     virtual void __unk_vfn_17();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol 
-     */
     virtual void __unk_vfn_20();
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?getCircuitComponentType@ComparatorCapacitor@@UEBA?AW4CircuitComponentType@@XZ
-     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
-    /**
-     * @note   Virtual function table index: 24
-     * @symbol ?getPoweroutDirection@ComparatorCapacitor@@UEBAEXZ
-     */
     virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPARATORCAPACITOR
 #endif
-    /**
-     * @symbol ??0ComparatorCapacitor@@QEAA@XZ
-     */
     MCAPI ComparatorCapacitor();
-    /**
-     * @symbol ?clearAnalogStrength@ComparatorCapacitor@@QEAAXE@Z
-     */
     MCAPI void clearAnalogStrength(unsigned char);
-    /**
-     * @symbol ?getOldStrength@ComparatorCapacitor@@QEAAHXZ
-     */
     MCAPI int getOldStrength();
-    /**
-     * @symbol ?isSubtractMode@ComparatorCapacitor@@QEAA_NXZ
-     */
     MCAPI bool isSubtractMode();
-    /**
-     * @symbol ?setAnalogStrength@ComparatorCapacitor@@QEAAXHE@Z
-     */
     MCAPI void setAnalogStrength(int, unsigned char);
-    /**
-     * @symbol ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
-     */
     MCAPI void setMode(enum ComparatorCapacitor::Mode);
 
 };

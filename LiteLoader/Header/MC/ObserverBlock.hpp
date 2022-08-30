@@ -31,276 +31,63 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ObserverBlock();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol 
-     */
     virtual void __unk_vfn_36();
-    /**
-     * @note   Virtual function table index: 37
-     * @symbol 
-     */
     virtual void __unk_vfn_37();
-    /**
-     * @note   Virtual function table index: 38
-     * @symbol 
-     */
     virtual void __unk_vfn_38();
-    /**
-     * @note   Virtual function table index: 39
-     * @symbol 
-     */
     virtual void __unk_vfn_39();
-    /**
-     * @note   Virtual function table index: 40
-     * @symbol 
-     */
     virtual void __unk_vfn_40();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 42
-     * @symbol 
-     */
     virtual void __unk_vfn_42();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol 
-     */
     virtual void __unk_vfn_44();
-    /**
-     * @note   Virtual function table index: 45
-     * @symbol 
-     */
     virtual void __unk_vfn_45();
-    /**
-     * @note   Virtual function table index: 46
-     * @symbol 
-     */
     virtual void __unk_vfn_46();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol 
-     */
     virtual void __unk_vfn_47();
-    /**
-     * @note   Virtual function table index: 48
-     * @symbol 
-     */
     virtual void __unk_vfn_48();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol 
-     */
     virtual void __unk_vfn_49();
-    /**
-     * @note   Virtual function table index: 51
-     * @symbol ?isSignalSource@ObserverBlock@@UEBA_NXZ
-     */
     virtual bool isSignalSource() const;
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol ?isValidAuxValue@ObserverBlock@@UEBA_NH@Z
-     */
     virtual bool isValidAuxValue(int) const;
-    /**
-     * @note   Virtual function table index: 59
-     * @symbol 
-     */
     virtual void __unk_vfn_59();
-    /**
-     * @note   Virtual function table index: 60
-     * @symbol 
-     */
     virtual void __unk_vfn_60();
-    /**
-     * @note   Virtual function table index: 62
-     * @symbol ?shouldConnectToRedstone@ObserverBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol ?onRedstoneUpdate@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 74
-     * @symbol ?movedByPiston@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 77
-     * @symbol ?setupRedstoneComponent@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 98
-     * @symbol ?neighborChanged@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 102
-     * @symbol ?asItemInstance@ObserverBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 103
-     * @symbol ?spawnResources@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MH@Z
-     */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
-    /**
-     * @note   Virtual function table index: 105
-     * @symbol 
-     */
     virtual void __unk_vfn_105();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol ?getPlacementBlock@ObserverBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
-    /**
-     * @note   Virtual function table index: 124
-     * @symbol 
-     */
     virtual void __unk_vfn_124();
-    /**
-     * @note   Virtual function table index: 126
-     * @symbol 
-     */
     virtual void __unk_vfn_126();
-    /**
-     * @note   Virtual function table index: 127
-     * @symbol 
-     */
     virtual void __unk_vfn_127();
-    /**
-     * @note   Virtual function table index: 132
-     * @symbol 
-     */
     virtual void __unk_vfn_132();
-    /**
-     * @note   Virtual function table index: 147
-     * @symbol ?getVariant@ObserverBlock@@UEBAHAEBVBlock@@@Z
-     */
     virtual int getVariant(class Block const &) const;
-    /**
-     * @note   Virtual function table index: 148
-     * @symbol 
-     */
     virtual void __unk_vfn_148();
-    /**
-     * @note   Virtual function table index: 150
-     * @symbol ?getMappedFace@ObserverBlock@@UEBAEEAEBVBlock@@@Z
-     */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 151
-     * @symbol ?getFaceFlip@ObserverBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
-     */
     virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 157
-     * @symbol 
-     */
     virtual void __unk_vfn_157();
-    /**
-     * @note   Virtual function table index: 168
-     * @symbol 
-     */
     virtual void __unk_vfn_168();
-    /**
-     * @note   Virtual function table index: 169
-     * @symbol 
-     */
     virtual void __unk_vfn_169();
-    /**
-     * @note   Virtual function table index: 170
-     * @symbol 
-     */
     virtual void __unk_vfn_170();
-    /**
-     * @note   Virtual function table index: 171
-     * @symbol ?onPlace@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 174
-     * @symbol ?tick@ObserverBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /**
-     * @note   Virtual function table index: 177
-     * @symbol 
-     */
     virtual void __unk_vfn_177();
-    /**
-     * @note   Virtual function table index: 188
-     * @symbol 
-     */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBSERVERBLOCK
 #endif
-    /**
-     * @symbol ??0ObserverBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI ObserverBlock(std::string const &, int);
 
 //private:
-    /**
-     * @symbol ?_installCircuit@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
-     */
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool, bool) const;
-    /**
-     * @symbol ?_updateState@ObserverBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVPulseCapacitor@@_N@Z
-     */
     MCAPI void _updateState(class BlockSource &, class BlockPos const &, class PulseCapacitor &, bool) const;
 
 private:

@@ -30,30 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RemoveEntityPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@RemoveEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@RemoveEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEENTITYPACKET
 #endif
-    /**
-     * @symbol ??0RemoveEntityPacket@@QEAA@XZ
-     */
     MCAPI RemoveEntityPacket();
-    /**
-     * @symbol ??0RemoveEntityPacket@@QEAA@AEAVEntityContext@@@Z
-     */
     MCAPI RemoveEntityPacket(class EntityContext &);
 
 };

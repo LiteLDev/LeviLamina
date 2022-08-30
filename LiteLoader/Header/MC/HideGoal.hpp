@@ -31,66 +31,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HideGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@HideGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@HideGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@HideGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@HideGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@HideGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?_getRepathTime@HideGoal@@MEBA_KXZ
-     */
     virtual unsigned __int64 _getRepathTime() const;
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
-     */
     virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDEGOAL
 #endif
-    /**
-     * @symbol ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
-     */
     MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
 
 };

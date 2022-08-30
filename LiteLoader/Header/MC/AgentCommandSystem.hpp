@@ -30,38 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AgentCommandSystem();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@AgentCommandSystem@@UEAAXAEAVEntityRegistry@@@Z
-     */
     virtual void tick(class EntityRegistry &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDSYSTEM
 #endif
-    /**
-     * @symbol ?cleanUp@AgentCommandSystem@@SAXAEAVEntityContext@@M@Z
-     */
     MCAPI static void cleanUp(class EntityContext &, float);
-    /**
-     * @symbol ?initialize@AgentCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UInitializingFlag@AgentComponents@@@@V?$FlagComponent@ULegacyCommandFlag@AgentComponents@@@@@@@Z
-     */
     MCAPI static void initialize(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct AgentComponents::InitializingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
-    /**
-     * @symbol ?tickAgentCooldown@AgentCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VCommandCooldown@AgentComponents@@VActionQueue@4@@@@Z
-     */
     MCAPI static void tickAgentCooldown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentComponents::CommandCooldown, class AgentComponents::ActionQueue> &);
-    /**
-     * @symbol ?tickLegacy@AgentCommandSystem@@SAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@VAgentCommandComponent@@V?$FlagComponent@UExecutingFlag@AgentComponents@@@@V?$FlagComponent@ULegacyCommandFlag@AgentComponents@@@@@@@Z
-     */
     MCAPI static void tickLegacy(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class AgentCommandComponent, class FlagComponent<struct AgentComponents::ExecutingFlag>, class FlagComponent<struct AgentComponents::LegacyCommandFlag>> &);
 
 };

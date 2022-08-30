@@ -31,35 +31,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockSourceHandle();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?onSourceDestroyed@BlockSourceHandle@@UEAAXAEAVBlockSource@@@Z
-     */
     virtual void onSourceDestroyed(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCEHANDLE
 #endif

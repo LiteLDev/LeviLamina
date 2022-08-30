@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBBBSCOMPONENT
 #endif
-    /**
-     * @symbol ??1SubBBsComponent@@QEAA@XZ
-     */
     MCAPI ~SubBBsComponent();
 
 };

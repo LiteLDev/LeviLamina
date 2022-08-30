@@ -31,30 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FreezeOnHitSubcomponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?readfromJSON@FreezeOnHitSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writetoJSON@FreezeOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void writetoJSON(class Json::Value &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?doOnHitEffect@FreezeOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@FreezeOnHitSubcomponent@@UEAAPEBDXZ
-     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZEONHITSUBCOMPONENT
 #endif

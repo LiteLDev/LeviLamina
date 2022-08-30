@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARBITRARYBIOMECOMPONENT
 #endif
-    /**
-     * @symbol ??1ArbitraryBiomeComponent@@QEAA@XZ
-     */
     MCAPI ~ArbitraryBiomeComponent();
 
 };

@@ -153,25 +153,10 @@ MCAPI extern class ItemStateVariant<bool> const WallPostBit;
 MCAPI extern class ItemStateVariant<int> const WeepingVinesAge;
 MCAPI extern class ItemStateVariant<int> const WeirdoDirection;
 MCAPI extern class ItemStateVariant<enum WoodType> const WoodType;
-    /**
-     * @symbol ?getDataState@VanillaStates@@YAPEBVItemState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI class ItemState const * getDataState(std::string const &);
-    /**
-     * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@AEAUCachedItemStateMapPtr@1@@Z
-     */
     MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
-    /**
-     * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@@Z
-     */
     MCAPI class ItemState const * getState(class HashedString const &);
-    /**
-     * @symbol ?registerStates@VanillaStates@@YAXXZ
-     */
     MCAPI void registerStates();
-    /**
-     * @symbol ?unregisterStates@VanillaStates@@YAXXZ
-     */
     MCAPI void unregisterStates();
 
 };

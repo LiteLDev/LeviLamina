@@ -31,87 +31,25 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
-     */
     virtual void containerContentChanged(int);
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~PlayerUIContainerModelBase();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?postInit@PlayerUIContainerModelBase@@UEAAXXZ
-     */
     virtual void postInit();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?releaseResources@PlayerUIContainerModelBase@@UEAAXXZ
-     */
     virtual void releaseResources();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getContainerWeakRef@PlayerUIContainerModelBase@@UEBA?AVContainerWeakRef@@XZ
-     */
     virtual class ContainerWeakRef getContainerWeakRef() const;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?isValid@PlayerUIContainerModelBase@@UEAA_NXZ
-     */
     virtual bool isValid();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol 
-     */
     virtual void __unk_vfn_15();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol ?_getContainer@PlayerUIContainerModelBase@@MEBAPEAVContainer@@XZ
-     */
     virtual class Container * _getContainer() const;
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?_getContainerOffset@PlayerUIContainerModelBase@@MEBAHXZ
-     */
     virtual int _getContainerOffset() const;
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
-     */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODELBASE
 #endif
-    /**
-     * @symbol ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
-     */
     MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player &, int, enum ContainerCategory);
 
 //protected:
-    /**
-     * @symbol ?_refreshContainer@PlayerUIContainerModelBase@@IEAAX_N@Z
-     */
     MCAPI void _refreshContainer(bool);
 
 protected:

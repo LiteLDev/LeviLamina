@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREADESCRIPTION
 #endif
-    /**
-     * @symbol ?asString@TickingAreaDescription@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string asString() const;
-    /**
-     * @symbol ??1TickingAreaDescription@@QEAA@XZ
-     */
     MCAPI ~TickingAreaDescription();
 
 };

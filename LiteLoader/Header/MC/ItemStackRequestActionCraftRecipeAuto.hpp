@@ -29,45 +29,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemStackRequestActionCraftRecipeAuto();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?_write@ItemStackRequestActionCraftRecipeAuto@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void _write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?_read@ItemStackRequestActionCraftRecipeAuto@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRECIPEAUTO
 #endif
-    /**
-     * @symbol ??0ItemStackRequestActionCraftRecipeAuto@@QEAA@XZ
-     */
     MCAPI ItemStackRequestActionCraftRecipeAuto();
-    /**
-     * @symbol ?getNumCrafts@ItemStackRequestActionCraftRecipeAuto@@QEBAEXZ
-     */
     MCAPI unsigned char getNumCrafts() const;
 
 };

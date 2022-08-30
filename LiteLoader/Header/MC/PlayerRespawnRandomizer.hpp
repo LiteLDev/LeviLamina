@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNRANDOMIZER
 #endif
-    /**
-     * @symbol ??1PlayerRespawnRandomizer@@QEAA@XZ
-     */
     MCAPI ~PlayerRespawnRandomizer();
 
 };

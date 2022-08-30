@@ -31,35 +31,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~WallClimberPathNavigation();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@WallClimberPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class NavigationComponent &, class Mob &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
-     */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
-     */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?moveTo@WallClimberPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z
-     */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?canUpdatePath@WallClimberPathNavigation@@MEBA_NAEBVMob@@@Z
-     */
     virtual bool canUpdatePath(class Mob const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLCLIMBERPATHNAVIGATION
 #endif

@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESIREDMOVEDIRECTIONSYSTEM
 #endif
-    /**
-     * @symbol ?rotateTowardsControllingPassenger@DesiredMoveDirectionSystem@@SAX_NAEAVVec2@@1AEAM2AEBV2@@Z
-     */
     MCAPI static void rotateTowardsControllingPassenger(bool, class Vec2 &, class Vec2 &, float &, float &, class Vec2 const &);
-    /**
-     * @symbol ?updateLocalMoveVelocity@DesiredMoveDirectionSystem@@SAXAEAM00MMM@Z
-     */
     MCAPI static void updateLocalMoveVelocity(float &, float &, float &, float, float, float);
 
 };

@@ -30,65 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ProducerComponent();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?setStrength@ProducerComponent@@UEAAXH@Z
-     */
     virtual void setStrength(int);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?canStopPower@ProducerComponent@@UEBA_NXZ
-     */
     virtual bool canStopPower() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?setStopPower@ProducerComponent@@UEAAX_N@Z
-     */
     virtual void setStopPower(bool);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?allowConnection@ProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?evaluate@ProducerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol 
-     */
     virtual void __unk_vfn_17();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol 
-     */
     virtual void __unk_vfn_20();
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?getCircuitComponentType@ProducerComponent@@UEBA?AW4CircuitComponentType@@XZ
-     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
-    /**
-     * @note   Virtual function table index: 24
-     * @symbol ?getPoweroutDirection@RepeaterCapacitor@@UEBAEXZ
-     */
     virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRODUCERCOMPONENT
 #endif
-    /**
-     * @symbol ??0ProducerComponent@@QEAA@XZ
-     */
     MCAPI ProducerComponent();
-    /**
-     * @symbol ?allowAttachments@ProducerComponent@@QEAAX_N@Z
-     */
     MCAPI void allowAttachments(bool);
 
 };

@@ -32,25 +32,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPINFO
 #endif
-    /**
-     * @symbol ??0JumpInfo@@QEAA@MMHH@Z
-     */
     MCAPI JumpInfo(float, float, int, int);
-    /**
-     * @symbol ?getAnimDuration@JumpInfo@@QEBAHXZ
-     */
     MCAPI int getAnimDuration() const;
-    /**
-     * @symbol ?getDistanceScale@JumpInfo@@QEBAMXZ
-     */
     MCAPI float getDistanceScale() const;
-    /**
-     * @symbol ?getHeight@JumpInfo@@QEBAMXZ
-     */
     MCAPI float getHeight() const;
-    /**
-     * @symbol ?getJumpDelay@JumpInfo@@QEBAHXZ
-     */
     MCAPI int getJumpDelay() const;
 
 };

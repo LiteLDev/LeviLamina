@@ -30,31 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?getJsonName@BreakBlocksDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~BreakBlocksDescription();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserializeData@BreakBlocksDescription@@UEAAXUDeserializeDataParams@@@Z
-     */
     virtual void deserializeData(struct DeserializeDataParams);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?serializeData@BreakBlocksDescription@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSDESCRIPTION
 #endif
-    /**
-     * @symbol ??0BreakBlocksDescription@@QEAA@XZ
-     */
     MCAPI BreakBlocksDescription();
 
 };

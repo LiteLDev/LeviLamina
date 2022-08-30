@@ -29,26 +29,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~InteractActionNode();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@InteractActionNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     */
     virtual enum BehaviorStatus tick(class Actor &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeFromDefinition@InteractActionNode@@EEAAXAEAVActor@@@Z
-     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTACTIONNODE
 #endif
-    /**
-     * @symbol ??0InteractActionNode@@QEAA@XZ
-     */
     MCAPI InteractActionNode();
 
 };

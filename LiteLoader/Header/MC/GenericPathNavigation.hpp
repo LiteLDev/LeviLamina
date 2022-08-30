@@ -31,35 +31,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GenericPathNavigation();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?initializeInternal@GenericPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
-     */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class NavigationComponent &, class Mob &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getTempMobPos@GenericPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
-     */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?stop@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     */
     virtual void stop(class NavigationComponent &, class Mob &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?updatePath@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
-     */
     virtual void updatePath(class NavigationComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICPATHNAVIGATION
 #endif

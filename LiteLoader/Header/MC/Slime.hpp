@@ -32,272 +32,63 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~Slime();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?remove@Slime@@UEAAXXZ
-     */
     virtual void remove();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@Slime@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@Slime@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 89
-     * @symbol ?playerTouch@Slime@@UEAAXAEAVPlayer@@@Z
-     */
     virtual void playerTouch(class Player &);
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 191
-     * @symbol ?onSynchedDataUpdate@Slime@@UEAAXH@Z
-     */
     virtual void onSynchedDataUpdate(int);
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@Slime@@MEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 300
-     * @symbol ?aiStep@Slime@@UEAAXXZ
-     */
     virtual void aiStep();
-    /**
-     * @note   Virtual function table index: 305
-     * @symbol ?checkSpawnRules@Slime@@UEAA_N_N@Z
-     */
     virtual bool checkSpawnRules(bool);
-    /**
-     * @note   Virtual function table index: 313
-     * @symbol 
-     */
     virtual void __unk_vfn_313();
-    /**
-     * @note   Virtual function table index: 317
-     * @symbol 
-     */
     virtual void __unk_vfn_317();
-    /**
-     * @note   Virtual function table index: 349
-     * @symbol ?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z
-     */
     virtual float _getWalkTargetValue(class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 351
-     * @symbol 
-     */
     virtual void __unk_vfn_351();
-    /**
-     * @note   Virtual function table index: 365
-     * @symbol 
-     */
     virtual void __unk_vfn_365();
-    /**
-     * @note   Virtual function table index: 368
-     * @symbol ?canDealDamage@Slime@@UEAA_NXZ
-     */
     virtual bool canDealDamage();
-    /**
-     * @note   Virtual function table index: 369
-     * @symbol ?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ
-     */
     virtual enum LevelSoundEvent getSquishSound();
-    /**
-     * @note   Virtual function table index: 370
-     * @symbol ?setSlimeSize@Slime@@MEAAXH@Z
-     */
     virtual void setSlimeSize(int);
-    /**
-     * @note   Virtual function table index: 371
-     * @symbol ?doPlayJumpSound@Slime@@MEAA_NXZ
-     */
     virtual bool doPlayJumpSound();
-    /**
-     * @note   Virtual function table index: 372
-     * @symbol ?doPlayLandSound@Slime@@MEAA_NXZ
-     */
     virtual bool doPlayLandSound();
-    /**
-     * @note   Virtual function table index: 373
-     * @symbol ?playJumpSound@Slime@@MEAAXXZ
-     */
     virtual void playJumpSound();
-    /**
-     * @note   Virtual function table index: 374
-     * @symbol ?playLandSound@Slime@@MEAAXXZ
-     */
     virtual void playLandSound();
-    /**
-     * @note   Virtual function table index: 375
-     * @symbol ?decreaseSquish@Slime@@MEAAXXZ
-     */
     virtual void decreaseSquish();
-    /**
-     * @note   Virtual function table index: 376
-     * @symbol ?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z
-     */
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIME
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?useNewAi@Slime@@UEBA_NXZ
-     */
     MCVAPI bool useNewAi() const;
 #endif
-    /**
-     * @symbol ??0Slime@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI Slime(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?getOldSquishValue@Slime@@QEBAMXZ
-     */
     MCAPI float getOldSquishValue() const;
-    /**
-     * @symbol ?getSlimeSize@Slime@@QEBAHXZ
-     */
     MCAPI int getSlimeSize() const;
-    /**
-     * @symbol ?getSquishValue@Slime@@QEBAMXZ
-     */
     MCAPI float getSquishValue() const;
-    /**
-     * @symbol ?getSpawnRulesCallback@Slime@@SA?AV?$function@$$A6A_NAEBVSpawnConditions@@AEAVBlockSource@@@Z@std@@XZ
-     */
     MCAPI static class std::function<bool (class SpawnConditions const &, class BlockSource &)> getSpawnRulesCallback();
 
 //protected:
-    /**
-     * @symbol ?justJumped@Slime@@IEAAXXZ
-     */
     MCAPI void justJumped();
-    /**
-     * @symbol ?justLanded@Slime@@IEAAXXZ
-     */
     MCAPI void justLanded();
 
 protected:

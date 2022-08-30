@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GameSpecificNetEventCallback();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?handle@GameSpecificNetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
-     */
     virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMESPECIFICNETEVENTCALLBACK
 #endif

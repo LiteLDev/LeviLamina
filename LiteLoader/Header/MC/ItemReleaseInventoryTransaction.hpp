@@ -30,35 +30,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemReleaseInventoryTransaction();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?read@ItemReleaseInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
-     */
     virtual void read(class ReadOnlyBinaryStream &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?write@ItemReleaseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?postLoadItems@ItemReleaseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-     */
     virtual void postLoadItems(class BlockPalette &, bool);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?handle@ItemReleaseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-     */
     virtual enum InventoryTransactionError handle(class Player &, bool) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-     */
     virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASEINVENTORYTRANSACTION
 #endif

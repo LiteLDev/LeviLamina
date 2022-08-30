@@ -32,90 +32,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ActorCommandOrigin();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRequestId@ActorCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getRequestId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@ActorCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getBlockPosition@ActorCommandOrigin@@UEBA?AVBlockPos@@XZ
-     */
     virtual class BlockPos getBlockPosition() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getWorldPosition@ActorCommandOrigin@@UEBA?AVVec3@@XZ
-     */
     virtual class Vec3 getWorldPosition() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getRotation@ActorCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     */
     virtual class std::optional<class Vec2> getRotation() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getLevel@ActorCommandOrigin@@UEBAPEAVLevel@@XZ
-     */
     virtual class Level * getLevel() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getDimension@ActorCommandOrigin@@UEBAPEAVDimension@@XZ
-     */
     virtual class Dimension * getDimension() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getEntity@ActorCommandOrigin@@UEBAPEAVActor@@XZ
-     */
     virtual class Actor * getEntity() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getPermissionsLevel@ActorCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clone@ActorCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?isSelectorExpansionAllowed@ActorCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isSelectorExpansionAllowed() const;
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getOriginType@ActorCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     */
     virtual enum CommandOriginType getOriginType() const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol ?serialize@ActorCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     */
     virtual class CompoundTag serialize() const;
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol ?isValid@ActorCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMMANDORIGIN
 #endif
-    /**
-     * @symbol ??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z
-     */
     MCAPI ActorCommandOrigin(class Actor &);
-    /**
-     * @symbol ?load@ActorCommandOrigin@@SA?AV?$unique_ptr@VActorCommandOrigin@@U?$default_delete@VActorCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     */
     MCAPI static std::unique_ptr<class ActorCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

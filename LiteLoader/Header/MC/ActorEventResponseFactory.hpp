@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
 #endif
-    /**
-     * @symbol ?initSchema@ActorEventResponseFactory@@QEAAXXZ
-     */
     MCAPI void initSchema();
-    /**
-     * @symbol ?initializeFactory@ActorEventResponseFactory@@QEAAXAEBVExperiments@@@Z
-     */
     MCAPI void initializeFactory(class Experiments const &);
 
 };

@@ -31,33 +31,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENCONTEXT
 #endif
-    /**
-     * @symbol ??0ContainerScreenContext@@QEAA@XZ
-     */
     MCAPI ContainerScreenContext();
-    /**
-     * @symbol ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBVBlockPos@@@Z
-     */
     MCAPI ContainerScreenContext(class Player &, enum ContainerType, class BlockPos const &);
-    /**
-     * @symbol ??0ContainerScreenContext@@QEAA@AEAVPlayer@@W4ContainerType@@AEBUActorUniqueID@@@Z
-     */
     MCAPI ContainerScreenContext(class Player &, enum ContainerType, struct ActorUniqueID const &);
-    /**
-     * @symbol ?getPlayer@ContainerScreenContext@@QEBAAEAVPlayer@@XZ
-     */
     MCAPI class Player & getPlayer() const;
-    /**
-     * @symbol ?getScreenContainerType@ContainerScreenContext@@QEBA?AW4ContainerType@@XZ
-     */
     MCAPI enum ContainerType getScreenContainerType() const;
-    /**
-     * @symbol ?tryGetActor@ContainerScreenContext@@QEBAPEAVActor@@XZ
-     */
     MCAPI class Actor * tryGetActor() const;
-    /**
-     * @symbol ?tryGetBlockActor@ContainerScreenContext@@QEBAPEAVBlockActor@@XZ
-     */
     MCAPI class BlockActor * tryGetBlockActor() const;
 
 };

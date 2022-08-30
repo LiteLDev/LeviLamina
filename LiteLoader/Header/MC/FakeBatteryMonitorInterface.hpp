@@ -29,26 +29,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FakeBatteryMonitorInterface();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ
-     */
     virtual enum BatteryStatus getBatteryStatus() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ
-     */
     virtual float getBatteryLevel() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAKEBATTERYMONITORINTERFACE
 #endif
-    /**
-     * @symbol ??0FakeBatteryMonitorInterface@@QEAA@XZ
-     */
     MCAPI FakeBatteryMonitorInterface();
 
 };

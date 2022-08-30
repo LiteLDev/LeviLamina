@@ -31,20 +31,8 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTIONCOMPONENT
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onEnd@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     */
     MCVAPI void _onEnd(class LabTableReaction &, class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onStart@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     */
     MCVAPI void _onStart(class LabTableReaction &, class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
-     */
     MCVAPI void _onTick(class LabTableReaction &, class BlockSource &);
 #endif
 

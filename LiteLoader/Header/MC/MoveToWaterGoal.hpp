@@ -31,31 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveToWaterGoal();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWATERGOAL
 #endif
-    /**
-     * @symbol ??0MoveToWaterGoal@@QEAA@AEAVMob@@MHHHM@Z
-     */
     MCAPI MoveToWaterGoal(class Mob &, float, int, int, int, float);
 
 };

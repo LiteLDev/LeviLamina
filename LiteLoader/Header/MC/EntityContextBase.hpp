@@ -32,39 +32,15 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXTBASE
 #endif
-    /**
-     * @symbol ??0EntityContextBase@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
-     */
     MCAPI EntityContextBase(class EntityRegistryBase &, class EntityId);
-    /**
-     * @symbol ?isValid@EntityContextBase@@QEBA_NXZ
-     */
     MCAPI bool isValid() const;
-    /**
-     * @symbol ??8EntityContextBase@@QEBA_NAEBV0@@Z
-     */
     MCAPI bool operator==(class EntityContextBase const &) const;
 
 //protected:
-    /**
-     * @symbol ?_assertValid@EntityContextBase@@IEBAXXZ
-     */
     MCAPI void _assertValid() const;
-    /**
-     * @symbol ?_enttRegistry@EntityContextBase@@IEAAAEAV?$basic_registry@VEntityId@@@entt@@XZ
-     */
     MCAPI class entt::basic_registry<class EntityId> & _enttRegistry();
-    /**
-     * @symbol ?_enttRegistry@EntityContextBase@@IEBAAEBV?$basic_registry@VEntityId@@@entt@@XZ
-     */
     MCAPI class entt::basic_registry<class EntityId> const & _enttRegistry() const;
-    /**
-     * @symbol ?_getEntityId@EntityContextBase@@IEBA?AVEntityId@@XZ
-     */
     MCAPI class EntityId _getEntityId() const;
-    /**
-     * @symbol ?_getRegistryId@EntityContextBase@@IEBAIXZ
-     */
     MCAPI unsigned int _getRegistryId() const;
 
 protected:

@@ -29,26 +29,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SelectorBehaviorNode();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@SelectorBehaviorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     */
     virtual enum BehaviorStatus tick(class Actor &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeFromDefinition@SelectorBehaviorNode@@MEAAXAEAVActor@@@Z
-     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SELECTORBEHAVIORNODE
 #endif
-    /**
-     * @symbol ??0SelectorBehaviorNode@@QEAA@XZ
-     */
     MCAPI SelectorBehaviorNode();
 
 };

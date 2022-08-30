@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIFFLISTPAIR
 #endif
-    /**
-     * @symbol ??0DiffListPair@@QEAA@_NPEAVActorDefinitionDescriptor@@@Z
-     */
     MCAPI DiffListPair(bool, class ActorDefinitionDescriptor *);
 
 };

@@ -29,76 +29,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ShooterItemComponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?checkComponentDataForContentErrors@ShooterItemComponent@@UEBA_NXZ
-     */
     virtual bool checkComponentDataForContentErrors() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VShooterItemComponent@@@@UEBA_NXZ
-     */
     virtual bool isNetworkComponent() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VShooterItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VShooterItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERITEMCOMPONENT
 #endif
-    /**
-     * @symbol ??0ShooterItemComponent@@QEAA@AEBV0@@Z
-     */
     MCAPI ShooterItemComponent(class ShooterItemComponent const &);
-    /**
-     * @symbol ?releaseUsing@ShooterItemComponent@@QEBA_NAEAVItemStack@@PEAVPlayer@@H@Z
-     */
     MCAPI bool releaseUsing(class ItemStack &, class Player *, int) const;
-    /**
-     * @symbol ?use@ShooterItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     */
     MCAPI bool use(class ItemStack &, class Player &) const;
-    /**
-     * @symbol ?bindType@ShooterItemComponent@@SAXXZ
-     */
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier@ShooterItemComponent@@SAAEBVHashedString@@XZ
-     */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
-    /**
-     * @symbol ?_consumeAmmunition@ShooterItemComponent@@AEBAXPEAVPlayer@@AEBVItemStack@@H_N2@Z
-     */
     MCAPI void _consumeAmmunition(class Player *, class ItemStack const &, int, bool, bool) const;
-    /**
-     * @symbol ?_getAmmunition@ShooterItemComponent@@AEBAHPEBVPlayer@@_NAEAVItemStack@@AEA_N@Z
-     */
     MCAPI int _getAmmunition(class Player const *, bool, class ItemStack &, bool &) const;
-    /**
-     * @symbol ?_shootProjectiles@ShooterItemComponent@@AEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-     */
     MCAPI void _shootProjectiles(class ItemStack &, class Player *, int) const;
 
 private:

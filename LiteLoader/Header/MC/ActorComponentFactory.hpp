@@ -34,9 +34,6 @@ public:
 #endif
 
 //private:
-    /**
-     * @symbol ?_initialize@ActorComponentFactory@@AEAAXAEBVExperiments@@@Z
-     */
     MCAPI void _initialize(class Experiments const &);
 
 private:

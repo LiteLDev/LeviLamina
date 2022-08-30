@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MockUnknownBlockTypeRegistry();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getUnknownBlock@MockUnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
-     */
     virtual class Block const & getUnknownBlock(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOCKUNKNOWNBLOCKTYPEREGISTRY
 #endif

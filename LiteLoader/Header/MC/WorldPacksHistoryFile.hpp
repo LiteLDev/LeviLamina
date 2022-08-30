@@ -34,21 +34,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKSHISTORYFILE
 #endif
-    /**
-     * @symbol ??0WorldPacksHistoryFile@@QEAA@XZ
-     */
     MCAPI WorldPacksHistoryFile();
-    /**
-     * @symbol ?getPacks@WorldPacksHistoryFile@@QEBAAEBV?$vector@VWorldPackHistory@@V?$allocator@VWorldPackHistory@@@std@@@std@@XZ
-     */
     MCAPI std::vector<class WorldPackHistory> const & getPacks() const;
-    /**
-     * @symbol ?initializeFromJson@WorldPacksHistoryFile@@QEAA?AW4ParseResult@1@AEBVValue@Json@@@Z
-     */
     MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
-    /**
-     * @symbol ??1WorldPacksHistoryFile@@QEAA@XZ
-     */
     MCAPI ~WorldPacksHistoryFile();
 
 };

@@ -30,44 +30,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LevelEventPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@LevelEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@LevelEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@LevelEventPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@LevelEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTPACKET
 #endif
-    /**
-     * @symbol ??0LevelEventPacket@@QEAA@XZ
-     */
     MCAPI LevelEventPacket();
-    /**
-     * @symbol ??0LevelEventPacket@@QEAA@W4LevelEvent@@MMMH@Z
-     */
     MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
-    /**
-     * @symbol ??0LevelEventPacket@@QEAA@W4LevelEvent@@AEBVVec3@@H@Z
-     */
     MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const &, int);
 
 };

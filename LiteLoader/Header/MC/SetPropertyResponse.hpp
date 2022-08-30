@@ -29,25 +29,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SetPropertyResponse();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getName@SetPropertyResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?executeAction@SetPropertyResponse@@UEBAXAEAVRenderParams@@@Z
-     */
     virtual void executeAction(class RenderParams &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?buildSchema@SetPropertyResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VActorEventResponse@@$$V@@@Z
-     */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> &, class Factory<class ActorEventResponse> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETPROPERTYRESPONSE
 #endif

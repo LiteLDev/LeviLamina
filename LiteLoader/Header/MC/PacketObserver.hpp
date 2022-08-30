@@ -30,46 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PacketObserver();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?packetSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-     */
     virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, unsigned int);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?packetReceivedFrom@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBVPacket@@I@Z
-     */
     virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, unsigned int);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?reset@PacketObserver@@UEAAXXZ
-     */
     virtual void reset();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETOBSERVER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?dataReceivedFrom@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCVAPI void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?dataSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     MCVAPI void dataSentTo(class NetworkIdentifier const &, class gsl::basic_string_span<char const, -1>);
 #endif
 

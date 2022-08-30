@@ -31,27 +31,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StrongholdStart();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isValid@StrongholdStart@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDSTART
 #endif
-    /**
-     * @symbol ??0StrongholdStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
-     */
     MCAPI StrongholdStart(class Dimension &, class Random &, int, int);
 
 //private:
-    /**
-     * @symbol ?_initializePieceSet@StrongholdStart@@AEAAXAEAVRandom@@@Z
-     */
     MCAPI void _initializePieceSet(class Random &);
 
 private:

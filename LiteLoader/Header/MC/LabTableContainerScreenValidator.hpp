@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LabTableContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLECONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0LabTableContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI LabTableContainerScreenValidator();
 
 };

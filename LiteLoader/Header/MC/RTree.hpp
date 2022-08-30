@@ -44,19 +44,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RTREE
 #endif
-    /**
-     * @symbol ??1RTree@@QEAA@XZ
-     */
     MCAPI ~RTree();
-    /**
-     * @symbol ?create@RTree@@SA?AV?$optional@VRTree@@@std@@AEBV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@3@@Z
-     */
     MCAPI static class std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const &);
 
 //private:
-    /**
-     * @symbol ?build@RTree@@CA?AV?$optional@VNode@RTree@@@std@@$$QEAV?$vector@VNode@RTree@@V?$allocator@VNode@RTree@@@std@@@3@@Z
-     */
     MCAPI static class std::optional<class RTree::Node> build(std::vector<class RTree::Node> &&);
 
 private:

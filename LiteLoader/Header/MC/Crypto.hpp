@@ -30,9 +30,6 @@ public:
 } // namespace Hash
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?init@Crypto@@YAXXZ
-     */
     MCAPI void init();
 
 };

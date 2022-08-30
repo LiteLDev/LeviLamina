@@ -32,29 +32,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERPTR
 #endif
-    /**
-     * @symbol ??0ActorAnimationControllerPtr@@QEAA@AEAVActorAnimationControllerGroup@@AEBVHashedString@@@Z
-     */
     MCAPI ActorAnimationControllerPtr(class ActorAnimationControllerGroup &, class HashedString const &);
-    /**
-     * @symbol ?getName@ActorAnimationControllerPtr@@QEBAAEBVHashedString@@XZ
-     */
     MCAPI class HashedString const & getName() const;
-    /**
-     * @symbol ?isNull@ActorAnimationControllerPtr@@QEBA_NXZ
-     */
     MCAPI bool isNull() const;
-    /**
-     * @symbol ??CActorAnimationControllerPtr@@QEBAPEBVActorAnimationController@@XZ
-     */
     MCAPI class ActorAnimationController const * operator->() const;
-    /**
-     * @symbol ??CActorAnimationControllerPtr@@QEAAPEAVActorAnimationController@@XZ
-     */
     MCAPI class ActorAnimationController * operator->();
-    /**
-     * @symbol ??1ActorAnimationControllerPtr@@QEAA@XZ
-     */
     MCAPI ~ActorAnimationControllerPtr();
 MCAPI static class ActorAnimationControllerPtr const NONE;
 

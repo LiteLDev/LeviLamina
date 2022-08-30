@@ -29,21 +29,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIGHTNESS
 #endif
-    /**
-     * @symbol ??0Brightness@@QEAA@AEBU0@@Z
-     */
     MCAPI Brightness(struct Brightness const &);
-    /**
-     * @symbol ??0Brightness@@QEAA@AEBE@Z
-     */
     MCAPI Brightness(unsigned char const &);
-    /**
-     * @symbol ??4Brightness@@QEAAAEAU0@AEBU0@@Z
-     */
     MCAPI struct Brightness & operator=(struct Brightness const &);
-    /**
-     * @symbol ??4Brightness@@QEAAAEAU0@$$QEAU0@@Z
-     */
     MCAPI struct Brightness & operator=(struct Brightness &&);
 MCAPI static struct Brightness const INVALID;
 MCAPI static struct Brightness const MAX;

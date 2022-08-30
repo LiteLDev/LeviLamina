@@ -33,41 +33,14 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEMETA
 #endif
-    /**
-     * @symbol ??0BlockStateMeta@@QEAA@AEBVItemState@@AEBUBlockStateDefinition@@@Z
-     */
     MCAPI BlockStateMeta(class ItemState const &, struct BlockStateDefinition const &);
-    /**
-     * @symbol ?getBool@BlockStateMeta@@QEBA?B_NH@Z
-     */
     MCAPI bool const getBool(int) const;
-    /**
-     * @symbol ?getID@BlockStateMeta@@QEBA_KXZ
-     */
     MCAPI unsigned __int64 getID() const;
-    /**
-     * @symbol ?getInt@BlockStateMeta@@QEBA?BHH@Z
-     */
     MCAPI int const getInt(int) const;
-    /**
-     * @symbol ?getName@BlockStateMeta@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getName() const;
-    /**
-     * @symbol ?getState@BlockStateMeta@@QEBAAEBVItemState@@XZ
-     */
     MCAPI class ItemState const & getState() const;
-    /**
-     * @symbol ?getString@BlockStateMeta@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI std::string const & getString(int) const;
-    /**
-     * @symbol ?getType@BlockStateMeta@@QEBA?BW4Type@Tag@@XZ
-     */
     MCAPI enum Tag::Type const getType() const;
-    /**
-     * @symbol ?indexOf@BlockStateMeta@@QEBAHAEB_K@Z
-     */
     MCAPI int indexOf(unsigned __int64 const &) const;
 
 };

@@ -33,25 +33,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEFACTORY
 #endif
-    /**
-     * @symbol ??0ProjectileFactory@@QEAA@AEAVLevel@@@Z
-     */
     MCAPI ProjectileFactory(class Level &);
-    /**
-     * @symbol ?shootProjectileFromDefinition@ProjectileFactory@@QEAAPEAVActor@@AEBUActorDefinitionIdentifier@@PEAVMob@@VVec3@@@Z
-     */
     MCAPI class Actor * shootProjectileFromDefinition(struct ActorDefinitionIdentifier const &, class Mob *, class Vec3);
-    /**
-     * @symbol ?createSubcomponent@ProjectileFactory@@SA?AV?$unique_ptr@VOnHitSubcomponent@@U?$default_delete@VOnHitSubcomponent@@@std@@@std@@AEAVValue@Json@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     */
     MCAPI static std::unique_ptr<class OnHitSubcomponent> createSubcomponent(class Json::Value &, class SemVersion const &, std::string const &);
-    /**
-     * @symbol ?initFactory@ProjectileFactory@@SAXXZ
-     */
     MCAPI static void initFactory();
-    /**
-     * @symbol ?shutdown@ProjectileFactory@@SAXXZ
-     */
     MCAPI static void shutdown();
 
 //private:

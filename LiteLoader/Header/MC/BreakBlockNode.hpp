@@ -29,26 +29,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BreakBlockNode();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@BreakBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     */
     virtual enum BehaviorStatus tick(class Actor &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeFromDefinition@BreakBlockNode@@EEAAXAEAVActor@@@Z
-     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKNODE
 #endif
-    /**
-     * @symbol ??0BreakBlockNode@@QEAA@XZ
-     */
     MCAPI BreakBlockNode();
 
 };

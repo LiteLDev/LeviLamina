@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMIDLEDEFINITION
 #endif
-    /**
-     * @symbol ??0SwimIdleDefinition@@QEAA@XZ
-     */
     MCAPI SwimIdleDefinition();
-    /**
-     * @symbol ?initialize@SwimIdleDefinition@@QEAAXAEAVEntityContext@@AEAVSwimIdleGoal@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class SwimIdleGoal &);
-    /**
-     * @symbol ?buildSchema@SwimIdleDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSwimIdleDefinition@@@JsonUtil@@@3@@Z
-     */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimIdleDefinition>> &);
 
 };

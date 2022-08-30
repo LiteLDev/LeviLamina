@@ -30,76 +30,23 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~VanillaGameModuleServer();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?init@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@AEAVLevel@@@Z
-     */
     virtual void init(class ServerInstance &, class Level &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEAVIResourcePackRepository@@AEAVResourcePackStack@@AEBVBaseGameVersion@@@Z
-     */
     virtual void initializeBehaviorStack(class Experiments const &, class IResourcePackRepository &, class ResourcePackStack &, class BaseGameVersion const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?configureLevel@VanillaGameModuleServer@@UEAAXAEAVLevel@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
-     */
     virtual void configureLevel(class Level &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@VItemRegistryRef@@@Z
-     */
     virtual void configureDocumentation(class IGameModuleDocumentation &, class ItemRegistryRef);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?setupCommands@VanillaGameModuleServer@@UEAAXAEAVCommandRegistry@@@Z
-     */
     virtual void setupCommands(class CommandRegistry &);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?configureServerNetworkHandler@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@@Z
-     */
     virtual void configureServerNetworkHandler(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULESERVER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z
-     */
     MCVAPI void configureNewPlayer(class Player &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tick@VanillaGameModuleServer@@UEAAXXZ
-     */
     MCVAPI void tick();
 #endif
-    /**
-     * @symbol ??0VanillaGameModuleServer@@QEAA@XZ
-     */
     MCAPI VanillaGameModuleServer();
 
 //private:
-    /**
-     * @symbol ?_configureWorldGen@VanillaGameModuleServer@@AEAAXAEAVIWorldRegistriesProvider@@AEBUSpawnSettings@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
-     */
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
-    /**
-     * @symbol ?_registerListeners@VanillaGameModuleServer@@AEAAXAEAVLevel@@@Z
-     */
     MCAPI void _registerListeners(class Level &);
 
 private:

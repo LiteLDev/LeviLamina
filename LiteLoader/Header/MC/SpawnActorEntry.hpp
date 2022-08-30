@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORENTRY
 #endif
-    /**
-     * @symbol ??1SpawnActorEntry@@QEAA@XZ
-     */
     MCAPI ~SpawnActorEntry();
 
 };

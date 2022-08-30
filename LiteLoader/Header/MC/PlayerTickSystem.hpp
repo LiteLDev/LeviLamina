@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERTICKSYSTEM
 #endif
-    /**
-     * @symbol ?create@PlayerTickSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo create();
-    /**
-     * @symbol ?onTickAdded@PlayerTickSystem@@SAXAEAUPlayerTickComponent@@_K@Z
-     */
     MCAPI static void onTickAdded(struct PlayerTickComponent &, unsigned __int64);
-    /**
-     * @symbol ?shouldTickMovementSystemOnEntity@PlayerTickSystem@@SA_NAEBVEntityContext@@@Z
-     */
     MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const &);
 
 };

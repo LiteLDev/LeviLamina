@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADTELEMETRYDATA
 #endif
-    /**
-     * @symbol ?recordLoadedChunk@ChunkLoadTelemetryData@@QEAAXAEBVLevelChunk@@@Z
-     */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
-    /**
-     * @symbol ?toJson@ChunkLoadTelemetryData@@QEBA?AVValue@Json@@XZ
-     */
     MCAPI class Json::Value toJson() const;
 
 };

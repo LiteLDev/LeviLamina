@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GetTopSolidBlockCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@GetTopSolidBlockCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETTOPSOLIDBLOCKCOMMAND
 #endif
-    /**
-     * @symbol ?setup@GetTopSolidBlockCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 };

@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKGAMEPLAYNOTIFICATIONEVENT
 #endif
-    /**
-     * @symbol ??1ServerNetworkGameplayNotificationEvent@@QEAA@XZ
-     */
     MCAPI ~ServerNetworkGameplayNotificationEvent();
 
 };

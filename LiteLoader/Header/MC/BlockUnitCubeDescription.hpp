@@ -29,42 +29,15 @@ public:
     BlockUnitCubeDescription() = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockUnitCubeDescription();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getName@BlockUnitCubeDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeComponent@BlockUnitCubeDescription@@UEBAXAEAVEntityContext@@@Z
-     */
     virtual void initializeComponent(class EntityContext &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?initializeFromNetwork@BlockUnitCubeDescription@@UEAAXAEBVCompoundTag@@@Z
-     */
     virtual void initializeFromNetwork(class CompoundTag const &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?isNetworkComponent@BlockUnitCubeDescription@@UEBA_NXZ
-     */
     virtual bool isNetworkComponent() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?buildNetworkTag@BlockUnitCubeDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNITCUBEDESCRIPTION
 #endif
 MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType@BlockUnitCubeDescription@@SAXXZ
-     */
     MCAPI static void bindType();
 
 };

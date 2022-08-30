@@ -31,25 +31,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTLISTENER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onObjectiveAdded@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCVAPI enum EventResult onObjectiveAdded(std::string const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onObjectiveRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCVAPI enum EventResult onObjectiveRemoved(std::string const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onScoreChanged@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCVAPI enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onScoreboardIdentityRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z
-     */
     MCVAPI enum EventResult onScoreboardIdentityRemoved(struct ScoreboardId const &);
 #endif
 

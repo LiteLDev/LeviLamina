@@ -32,110 +32,28 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BannerItem();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol 
-     */
     virtual void __unk_vfn_52();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol 
-     */
     virtual void __unk_vfn_54();
-    /**
-     * @note   Virtual function table index: 55
-     * @symbol ?isWearableThroughLootTable@BannerItem@@UEBA_NPEBVCompoundTag@@@Z
-     */
     virtual bool isWearableThroughLootTable(class CompoundTag const *) const;
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol ?appendFormattedHovertext@BannerItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol 
-     */
     virtual void __unk_vfn_67();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol ?isValidAuxValue@BannerItem@@UEBA_NH@Z
-     */
     virtual bool isValidAuxValue(int) const;
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol 
-     */
     virtual void __unk_vfn_71();
-    /**
-     * @note   Virtual function table index: 72
-     * @symbol 
-     */
     virtual void __unk_vfn_72();
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol 
-     */
     virtual void __unk_vfn_76();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 81
-     * @symbol 
-     */
     virtual void __unk_vfn_81();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol ?buildDescriptionId@BannerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
-     */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-    /**
-     * @note   Virtual function table index: 136
-     * @symbol ?_useOn@BannerItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
-     */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERITEM
 #endif
-    /**
-     * @symbol ??0BannerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI BannerItem(std::string const &, int);
-    /**
-     * @symbol ?getPatternAndColorPairsFromItemStack@BannerItem@@SA?AV?$vector@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@V?$allocator@U?$pair@V?$not_null@PEBVBannerPattern@@@gsl@@W4ItemColor@@@std@@@2@@std@@AEBVItemStackBase@@@Z
-     */
     MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
 
 };

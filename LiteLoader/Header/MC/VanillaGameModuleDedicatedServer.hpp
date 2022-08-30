@@ -30,30 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~VanillaGameModuleDedicatedServer();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?createGameModuleServer@VanillaGameModuleDedicatedServer@@UEAA?AV?$unique_ptr@VGameModuleServer@@U?$default_delete@VGameModuleServer@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?createInPackagePacks@VanillaGameModuleDedicatedServer@@UEAA?AV?$shared_ptr@VIInPackagePacks@@@std@@XZ
-     */
     virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?registerMolangQueries@VanillaGameModuleDedicatedServer@@UEAAXXZ
-     */
     virtual void registerMolangQueries();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?registerServerInstanceHandler@VanillaGameModuleDedicatedServer@@UEAAXAEAVServerInstanceEventCoordinator@@@Z
-     */
     virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULEDEDICATEDSERVER
 #endif

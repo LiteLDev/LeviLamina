@@ -29,21 +29,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ConsumeItemNode();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@ConsumeItemNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     */
     virtual enum BehaviorStatus tick(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMNODE
 #endif
-    /**
-     * @symbol ??0ConsumeItemNode@@QEAA@XZ
-     */
     MCAPI ConsumeItemNode();
 
 };

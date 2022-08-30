@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSNAPSHOTCOMPONENT
 #endif
-    /**
-     * @symbol ?hasStateFlag@PlayerSnapshotComponent@@QEBA_NW4PlayerSnapshotStateFlag@@@Z
-     */
     MCAPI bool hasStateFlag(enum PlayerSnapshotStateFlag) const;
-    /**
-     * @symbol ?setStateFlag@PlayerSnapshotComponent@@QEAAXW4PlayerSnapshotStateFlag@@_N@Z
-     */
     MCAPI void setStateFlag(enum PlayerSnapshotStateFlag, bool);
 
 };

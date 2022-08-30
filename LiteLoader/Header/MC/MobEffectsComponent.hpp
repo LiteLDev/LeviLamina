@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTSCOMPONENT
 #endif
-    /**
-     * @symbol ??1MobEffectsComponent@@QEAA@XZ
-     */
     MCAPI ~MobEffectsComponent();
 
 };

@@ -29,45 +29,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemStackRequestActionCraftLoom();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?_write@ItemStackRequestActionCraftLoom@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void _write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?_read@ItemStackRequestActionCraftLoom@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTLOOM
 #endif
-    /**
-     * @symbol ??0ItemStackRequestActionCraftLoom@@QEAA@XZ
-     */
     MCAPI ItemStackRequestActionCraftLoom();
-    /**
-     * @symbol ?getPatternNameId@ItemStackRequestActionCraftLoom@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getPatternNameId() const;
 
 };

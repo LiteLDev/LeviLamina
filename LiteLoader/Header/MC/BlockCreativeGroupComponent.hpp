@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCREATIVEGROUPCOMPONENT
 #endif
-    /**
-     * @symbol ??1BlockCreativeGroupComponent@@QEAA@XZ
-     */
     MCAPI ~BlockCreativeGroupComponent();
 
 };

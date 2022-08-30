@@ -51,84 +51,28 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATE
 #endif
-    /**
-     * @symbol ??0StructureTemplate@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     MCAPI StructureTemplate(class gsl::basic_string_span<char const, -1>);
-    /**
-     * @symbol ?fillFromWorld@StructureTemplate@@QEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVStructureSettings@@@Z
-     */
     MCAPI void fillFromWorld(class BlockSource &, class BlockPos const &, class StructureSettings const &);
-    /**
-     * @symbol ?getBlockAtPos@StructureTemplate@@QEBAAEBVBlock@@AEBVBlockPos@@@Z
-     */
     MCAPI class Block const & getBlockAtPos(class BlockPos const &) const;
-    /**
-     * @symbol ?getJigsawMarkers@StructureTemplate@@QEBA?AV?$vector@VJigsawStructureBlockInfo@@V?$allocator@VJigsawStructureBlockInfo@@@std@@@std@@XZ
-     */
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
-    /**
-     * @symbol ?getName@StructureTemplate@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getName() const;
-    /**
-     * @symbol ?getSize@StructureTemplate@@QEBAAEBVBlockPos@@XZ
-     */
     MCAPI class BlockPos const & getSize() const;
-    /**
-     * @symbol ?getStructureVersion@StructureTemplate@@QEBAEXZ
-     */
     MCAPI unsigned char getStructureVersion() const;
-    /**
-     * @symbol ?getTransformedBounds@StructureTemplate@@QEBA?AVBoundingBox@@VBlockPos@@AEBVStructureSettings@@@Z
-     */
     MCAPI class BoundingBox getTransformedBounds(class BlockPos, class StructureSettings const &) const;
-    /**
-     * @symbol ?isLoaded@StructureTemplate@@QEBA_NXZ
-     */
     MCAPI bool isLoaded() const;
-    /**
-     * @symbol ?load@StructureTemplate@@QEAA_NAEBVCompoundTag@@@Z
-     */
     MCAPI bool load(class CompoundTag const &);
-    /**
-     * @symbol ?placeInWorld@StructureTemplate@@QEBAXAEAVBlockSource@@AEBVBlockPalette@@AEBVBlockPos@@AEBVStructureSettings@@PEAVStructureTelemetryServerData@@_N@Z
-     */
     MCAPI void placeInWorld(class BlockSource &, class BlockPalette const &, class BlockPos const &, class StructureSettings const &, class StructureTelemetryServerData *, bool) const;
-    /**
-     * @symbol ?placeNextSegmentInWorld@StructureTemplate@@QEBAXAEAVStructureAnimationData@@AEBVBlockPalette@@@Z
-     */
     MCAPI void placeNextSegmentInWorld(class StructureAnimationData &, class BlockPalette const &) const;
-    /**
-     * @symbol ?save@StructureTemplate@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
-    /**
-     * @symbol ??1StructureTemplate@@QEAA@XZ
-     */
     MCAPI ~StructureTemplate();
 MCAPI static class BlockPos const INVALID_POSITION;
 
 //private:
-    /**
-     * @symbol ?_fillBlockInfo@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@11@Z
-     */
     MCAPI void _fillBlockInfo(class BlockSource &, class BlockPos const &, class BlockPos const &, class BlockPos const &);
-    /**
-     * @symbol ?_fillEntityList@StructureTemplate@@AEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     */
     MCAPI void _fillEntityList(class BlockSource &, class BlockPos const &, class BlockPos const &);
-    /**
-     * @symbol ?_placeEntitiesInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@AEAVDataLoadHelper@@_N@Z
-     */
     MCAPI void _placeEntitiesInWorld(class BlockSource &, class DataLoadHelper &, bool) const;
-    /**
-     * @symbol ?_placeNextBlockSegmentInWorld@StructureTemplate@@AEBAXAEAVBlockSource@@_K1AEBVStructureSettings@@AEAVDataLoadHelper@@AEBVStructureBlockPalette@@AEBVBlockPalette@@VBlockPos@@AEBV7@AEBVVec3@@W4Rotation@@W4Mirror@@MIPEAVStructureTelemetryServerData@@_N_N@Z
-     */
     MCAPI void _placeNextBlockSegmentInWorld(class BlockSource &, unsigned __int64, unsigned __int64, class StructureSettings const &, class DataLoadHelper &, class StructureBlockPalette const &, class BlockPalette const &, class BlockPos, class BlockPos const &, class Vec3 const &, enum Rotation, enum Mirror, float, unsigned int, class StructureTelemetryServerData *, bool, bool) const;
 
 private:
 
 };
-
-static_assert(sizeof(StructureTemplate) == 0xd8);

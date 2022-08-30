@@ -31,46 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~PlayerUIContainerModel();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol 
-     */
     virtual void __unk_vfn_15();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?_getContainerOffset@PlayerUIContainerModel@@MEBAHXZ
-     */
     virtual int _getContainerOffset() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODEL
 #endif
-    /**
-     * @symbol ??0PlayerUIContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
-     */
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);
 
 };

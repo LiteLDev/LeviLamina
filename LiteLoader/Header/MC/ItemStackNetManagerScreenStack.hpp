@@ -32,37 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREENSTACK
 #endif
-    /**
-     * @symbol ?foreachScreen@ItemStackNetManagerScreenStack@@QEAAXV?$function@$$A6A_NAEAVItemStackNetManagerScreen@@@Z@std@@@Z
-     */
     MCAPI void foreachScreen(class std::function<bool (class ItemStackNetManagerScreen &)>);
-    /**
-     * @symbol ?getScreenForRequest@ItemStackNetManagerScreenStack@@QEAAPEAVItemStackNetManagerScreen@@AEBVItemStackRequestData@@@Z
-     */
     MCAPI class ItemStackNetManagerScreen * getScreenForRequest(class ItemStackRequestData const &);
-    /**
-     * @symbol ?pop@ItemStackNetManagerScreenStack@@QEAA_NXZ
-     */
     MCAPI bool pop();
-    /**
-     * @symbol ?push@ItemStackNetManagerScreenStack@@QEAAPEAVItemStackNetManagerScreen@@V?$unique_ptr@VItemStackNetManagerScreen@@U?$default_delete@VItemStackNetManagerScreen@@@std@@@std@@@Z
-     */
     MCAPI class ItemStackNetManagerScreen * push(std::unique_ptr<class ItemStackNetManagerScreen>);
-    /**
-     * @symbol ?size@ItemStackNetManagerScreenStack@@QEBA_KXZ
-     */
     MCAPI unsigned __int64 size() const;
-    /**
-     * @symbol ?top@ItemStackNetManagerScreenStack@@QEAAPEAVItemStackNetManagerScreen@@XZ
-     */
     MCAPI class ItemStackNetManagerScreen * top();
-    /**
-     * @symbol ?top@ItemStackNetManagerScreenStack@@QEBAPEBVItemStackNetManagerScreen@@XZ
-     */
     MCAPI class ItemStackNetManagerScreen const * top() const;
-    /**
-     * @symbol ??1ItemStackNetManagerScreenStack@@QEAA@XZ
-     */
     MCAPI ~ItemStackNetManagerScreenStack();
 
 };

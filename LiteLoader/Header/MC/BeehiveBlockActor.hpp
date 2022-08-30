@@ -37,104 +37,32 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BeehiveBlockActor();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?load@BeehiveBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?save@BeehiveBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     */
     virtual bool save(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?tick@BeehiveBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     virtual void tick(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol 
-     */
     virtual void __unk_vfn_28();
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCKACTOR
 #endif
-    /**
-     * @symbol ??0BeehiveBlockActor@@QEAA@AEBVBlockPos@@@Z
-     */
     MCAPI BeehiveBlockActor(class BlockPos const &);
-    /**
-     * @symbol ?disableBeeSpawn@BeehiveBlockActor@@QEAAXXZ
-     */
     MCAPI void disableBeeSpawn();
-    /**
-     * @symbol ?evictAll@BeehiveBlockActor@@QEAAXAEAVBlockSource@@_N@Z
-     */
     MCAPI void evictAll(class BlockSource &, bool);
-    /**
-     * @symbol ?saveUserData@BeehiveBlockActor@@QEBAXAEAVCompoundTag@@@Z
-     */
     MCAPI void saveUserData(class CompoundTag &) const;
-    /**
-     * @symbol ?tryAdmit@BeehiveBlockActor@@QEAA_NAEAVActor@@@Z
-     */
     MCAPI bool tryAdmit(class Actor &);
 MCAPI static unsigned int const MAX_OCCUPANCY;
 MCAPI static enum BlockActorType const TypeId;
 MCAPI static std::string const TypeString;
 
 //private:
-    /**
-     * @symbol ?_revive@BeehiveBlockActor@@AEAAPEAVActor@@AEAVBlockSource@@AEBUOccupant@1@E@Z
-     */
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
-    /**
-     * @symbol ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
-     */
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
-    /**
-     * @symbol ?_trySpawnBees@BeehiveBlockActor@@AEAAXAEAVBlockSource@@@Z
-     */
     MCAPI void _trySpawnBees(class BlockSource &);
 
 private:

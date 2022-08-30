@@ -31,21 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENTCOMPONENT
 #endif
-    /**
-     * @symbol ??0RailMovementComponent@@QEAA@XZ
-     */
     MCAPI RailMovementComponent();
-    /**
-     * @symbol ?comeOffTrack@RailMovementComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void comeOffTrack(class Actor &);
-    /**
-     * @symbol ?moveAlongTrack@RailMovementComponent@@QEAAXAEAVActor@@AEBVBlockPos@@@Z
-     */
     MCAPI void moveAlongTrack(class Actor &, class BlockPos const &);
-    /**
-     * @symbol ??8RailMovementComponent@@QEBA_NAEBV0@@Z
-     */
     MCAPI bool operator==(class RailMovementComponent const &) const;
 
 };

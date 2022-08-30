@@ -32,25 +32,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ArrowEffectSubcomponent();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writetoJSON@ArrowEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void writetoJSON(class Json::Value &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?doOnHitEffect@ArrowEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@ArrowEffectSubcomponent@@UEAAPEBDXZ
-     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROWEFFECTSUBCOMPONENT
 #endif

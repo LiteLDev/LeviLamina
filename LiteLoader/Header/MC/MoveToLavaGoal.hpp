@@ -31,31 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveToLavaGoal();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLAVAGOAL
 #endif
-    /**
-     * @symbol ??0MoveToLavaGoal@@QEAA@AEAVMob@@MHHHM@Z
-     */
     MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);
 
 };

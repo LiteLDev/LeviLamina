@@ -22,9 +22,6 @@ namespace VanillaActors {
 // Add Member There
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?registerVanillaActorData@VanillaActors@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
-     */
     MCAPI void registerVanillaActorData(class BaseGameVersion const &, class Experiments const &);
 
 };

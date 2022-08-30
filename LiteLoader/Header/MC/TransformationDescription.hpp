@@ -29,31 +29,12 @@ public:
     TransformationDescription(struct TransformationDescription const &) = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?getJsonName@TransformationDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~TransformationDescription();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserializeData@TransformationDescription@@UEAAXUDeserializeDataParams@@@Z
-     */
     virtual void deserializeData(struct DeserializeDataParams);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?serializeData@TransformationDescription@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFORMATIONDESCRIPTION
 #endif
-    /**
-     * @symbol ??0TransformationDescription@@QEAA@XZ
-     */
     MCAPI TransformationDescription();
 
 };

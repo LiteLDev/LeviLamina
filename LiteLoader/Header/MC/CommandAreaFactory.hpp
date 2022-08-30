@@ -32,39 +32,15 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREAFACTORY
 #endif
-    /**
-     * @symbol ??0CommandAreaFactory@@QEAA@AEAVDimension@@@Z
-     */
     MCAPI CommandAreaFactory(class Dimension &);
-    /**
-     * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-     */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool) const;
-    /**
-     * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0_N1@Z
-     */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, bool, bool) const;
-    /**
-     * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H_N@Z
-     */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, int, bool) const;
-    /**
-     * @symbol ?findAreaWithBuffer@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
-     */
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
-    /**
-     * @symbol ?findAreaWithBuffer@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H_N@Z
-     */
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, int, bool) const;
-    /**
-     * @symbol ?shouldAllowNonTickingPlayerAndTickingAreaChunks@CommandAreaFactory@@SA_NH@Z
-     */
     MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int);
 
 //private:
-    /**
-     * @symbol ?_getArea@CommandAreaFactory@@AEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBUBounds@@_N1@Z
-     */
     MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool) const;
 
 private:

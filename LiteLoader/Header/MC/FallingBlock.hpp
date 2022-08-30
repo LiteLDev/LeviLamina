@@ -32,207 +32,50 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@FallingBlock@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~FallingBlock();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol ?teleportTo@FallingBlock@@UEAAXAEBVVec3@@_NHH1@Z
-     */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@FallingBlock@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 79
-     * @symbol ?getShadowHeightOffs@FallingBlock@@UEAAMXZ
-     */
     virtual float getShadowHeightOffs();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@FallingBlock@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 95
-     * @symbol ?isPickable@FallingBlock@@UEAA_NXZ
-     */
     virtual bool isPickable();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 181
-     * @symbol ?canChangeDimensionsUsingPortal@FallingBlock@@UEBA_NXZ
-     */
     virtual bool canChangeDimensionsUsingPortal() const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 186
-     * @symbol ?causeFallDamage@FallingBlock@@UEAAXMMVActorDamageSource@@@Z
-     */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
-    /**
-     * @note   Virtual function table index: 191
-     * @symbol ?onSynchedDataUpdate@FallingBlock@@UEAAXH@Z
-     */
     virtual void onSynchedDataUpdate(int);
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 270
-     * @symbol ?_hurt@FallingBlock@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@FallingBlock@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@FallingBlock@@MEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLINGBLOCK
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getDeletionDelayTimeSeconds@FallingBlock@@UEBAMXZ
-     */
     MCVAPI float getDeletionDelayTimeSeconds() const;
 #endif
-    /**
-     * @symbol ??0FallingBlock@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI FallingBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?doNormalTick@FallingBlock@@QEAAXXZ
-     */
     MCAPI void doNormalTick();
-    /**
-     * @symbol ?getFallingBlock@FallingBlock@@QEBAAEBVBlock@@XZ
-     */
     MCAPI class Block const & getFallingBlock() const;
-    /**
-     * @symbol ?setFallDamageAmount@FallingBlock@@QEAAXM@Z
-     */
     MCAPI void setFallDamageAmount(float);
-    /**
-     * @symbol ?setFallingBlock@FallingBlock@@QEAAXAEBVBlock@@_N@Z
-     */
     MCAPI void setFallingBlock(class Block const &, bool);
 
 //private:
-    /**
-     * @symbol ?_breakBlock@FallingBlock@@AEAAXXZ
-     */
     MCAPI void _breakBlock();
-    /**
-     * @symbol ?_waitRemoval@FallingBlock@@AEAAXXZ
-     */
     MCAPI void _waitRemoval();
 
 private:

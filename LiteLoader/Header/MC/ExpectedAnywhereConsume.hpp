@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPECTEDANYWHERECONSUME
 #endif
-    /**
-     * @symbol ??0ExpectedAnywhereConsume@@QEAA@AEBVItemStack@@I@Z
-     */
     MCAPI ExpectedAnywhereConsume(class ItemStack const &, unsigned int);
 
 };

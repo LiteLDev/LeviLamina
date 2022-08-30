@@ -31,14 +31,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMEDEFINITION
 #endif
-    /**
-     * @symbol ?initialize@OnActorEnterVolumeDefinition@@QEBAXAEAVEntityContext@@AEAVOnActorEnterVolumeComponent@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class OnActorEnterVolumeComponent &) const;
 MCAPI static std::string const NAME;
-    /**
-     * @symbol ?bindType@OnActorEnterVolumeDefinition@@SAXXZ
-     */
     MCAPI static void bindType();
 
 };

@@ -30,36 +30,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SpawnChanceSubcomponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?readfromJSON@SpawnChanceSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writetoJSON@SpawnChanceSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void writetoJSON(class Json::Value &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?doOnHitEffect@SpawnChanceSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@SpawnChanceSubcomponent@@UEAAPEBDXZ
-     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNCHANCESUBCOMPONENT
 #endif
-    /**
-     * @symbol ??0SpawnChanceSubcomponent@@QEAA@XZ
-     */
     MCAPI SpawnChanceSubcomponent();
 
 };

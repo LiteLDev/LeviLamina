@@ -30,41 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemUseOnActorInventoryTransaction();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?read@ItemUseOnActorInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
-     */
     virtual void read(class ReadOnlyBinaryStream &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?write@ItemUseOnActorInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?postLoadItems@ItemUseOnActorInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
-     */
     virtual void postLoadItems(class BlockPalette &, bool);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
-     */
     virtual enum InventoryTransactionError handle(class Player &, bool) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?onTransactionError@ItemUseOnActorInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
-     */
     virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEONACTORINVENTORYTRANSACTION
 #endif
-    /**
-     * @symbol ?setSelectedItem@ItemUseOnActorInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
-     */
     MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
 
 };

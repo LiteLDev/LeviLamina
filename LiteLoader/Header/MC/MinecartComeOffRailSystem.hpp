@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTCOMEOFFRAILSYSTEM
 #endif
-    /**
-     * @symbol ?evaluatePosDeltaComingOffRail@MinecartComeOffRailSystem@@SA?AVVec3@@AEBV2@M_N@Z
-     */
     MCAPI static class Vec3 evaluatePosDeltaComingOffRail(class Vec3 const &, float, bool);
 
 };

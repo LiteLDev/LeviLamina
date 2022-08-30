@@ -29,10 +29,6 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1AddActorBasePacket@@UEAA@XZ
-     */
     MCVAPI ~AddActorBasePacket();
 #endif
 

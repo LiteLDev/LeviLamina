@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AmphibiousMoveControl();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@AmphibiousMoveControl@@UEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPHIBIOUSMOVECONTROL
 #endif
-    /**
-     * @symbol ??0AmphibiousMoveControl@@QEAA@XZ
-     */
     MCAPI AmphibiousMoveControl();
 
 };

@@ -28,13 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSYNTAXINFORMATION
 #endif
-    /**
-     * @symbol ??0CommandSyntaxInformation@@QEAA@XZ
-     */
     MCAPI CommandSyntaxInformation();
-    /**
-     * @symbol ??1CommandSyntaxInformation@@QEAA@XZ
-     */
     MCAPI ~CommandSyntaxInformation();
 
 };

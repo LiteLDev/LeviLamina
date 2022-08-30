@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSETTINGS
 #endif
-    /**
-     * @symbol ??0ScriptSettings@@QEAA@$$QEAU0@@Z
-     */
     MCAPI ScriptSettings(struct ScriptSettings &&);
-    /**
-     * @symbol ??1ScriptSettings@@QEAA@XZ
-     */
     MCAPI ~ScriptSettings();
 
 };

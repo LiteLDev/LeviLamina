@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWJUNCTION
 #endif
-    /**
-     * @symbol ??0JigsawJunction@@QEAA@HHHHW4Projection@@0@Z
-     */
     MCAPI JigsawJunction(int, int, int, int, enum Projection, enum Projection);
-    /**
-     * @symbol ?getDeltaTargetY@JigsawJunction@@QEBAHXZ
-     */
     MCAPI int getDeltaTargetY() const;
 
 };

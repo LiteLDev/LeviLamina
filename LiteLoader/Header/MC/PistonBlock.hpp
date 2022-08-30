@@ -31,281 +31,62 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PistonBlock();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?canProvideSupport@PistonBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol 
-     */
     virtual void __unk_vfn_36();
-    /**
-     * @note   Virtual function table index: 37
-     * @symbol 
-     */
     virtual void __unk_vfn_37();
-    /**
-     * @note   Virtual function table index: 38
-     * @symbol 
-     */
     virtual void __unk_vfn_38();
-    /**
-     * @note   Virtual function table index: 39
-     * @symbol 
-     */
     virtual void __unk_vfn_39();
-    /**
-     * @note   Virtual function table index: 40
-     * @symbol 
-     */
     virtual void __unk_vfn_40();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 42
-     * @symbol 
-     */
     virtual void __unk_vfn_42();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol 
-     */
     virtual void __unk_vfn_44();
-    /**
-     * @note   Virtual function table index: 45
-     * @symbol 
-     */
     virtual void __unk_vfn_45();
-    /**
-     * @note   Virtual function table index: 46
-     * @symbol 
-     */
     virtual void __unk_vfn_46();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol 
-     */
     virtual void __unk_vfn_47();
-    /**
-     * @note   Virtual function table index: 48
-     * @symbol 
-     */
     virtual void __unk_vfn_48();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol 
-     */
     virtual void __unk_vfn_49();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol ?isValidAuxValue@PistonBlock@@UEBA_NH@Z
-     */
     virtual bool isValidAuxValue(int) const;
-    /**
-     * @note   Virtual function table index: 59
-     * @symbol 
-     */
     virtual void __unk_vfn_59();
-    /**
-     * @note   Virtual function table index: 60
-     * @symbol 
-     */
     virtual void __unk_vfn_60();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol ?canContainLiquid@PistonBlock@@UEBA_NXZ
-     */
     virtual bool canContainLiquid() const;
-    /**
-     * @note   Virtual function table index: 62
-     * @symbol ?shouldConnectToRedstone@PistonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
-     */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol ?onRedstoneUpdate@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
-     */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 77
-     * @symbol ?setupRedstoneComponent@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 94
-     * @symbol ?breaksFallingBlocks@PistonBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
-    /**
-     * @note   Virtual function table index: 98
-     * @symbol ?neighborChanged@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol ?getSecondPart@PistonBlock@@UEBA_NAEBVBlockSource@@AEBVBlockPos@@AEAV3@@Z
-     */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
-    /**
-     * @note   Virtual function table index: 101
-     * @symbol ?getResourceItem@PistonBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /**
-     * @note   Virtual function table index: 102
-     * @symbol ?asItemInstance@PistonBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 105
-     * @symbol 
-     */
     virtual void __unk_vfn_105();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol ?getPlacementBlock@PistonBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
-     */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
-    /**
-     * @note   Virtual function table index: 124
-     * @symbol 
-     */
     virtual void __unk_vfn_124();
-    /**
-     * @note   Virtual function table index: 126
-     * @symbol 
-     */
     virtual void __unk_vfn_126();
-    /**
-     * @note   Virtual function table index: 127
-     * @symbol 
-     */
     virtual void __unk_vfn_127();
-    /**
-     * @note   Virtual function table index: 132
-     * @symbol 
-     */
     virtual void __unk_vfn_132();
-    /**
-     * @note   Virtual function table index: 147
-     * @symbol ?getVariant@PistonBlock@@UEBAHAEBVBlock@@@Z
-     */
     virtual int getVariant(class Block const &) const;
-    /**
-     * @note   Virtual function table index: 148
-     * @symbol 
-     */
     virtual void __unk_vfn_148();
-    /**
-     * @note   Virtual function table index: 150
-     * @symbol ?getMappedFace@PistonBlock@@UEBAEEAEBVBlock@@@Z
-     */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 157
-     * @symbol 
-     */
     virtual void __unk_vfn_157();
-    /**
-     * @note   Virtual function table index: 168
-     * @symbol 
-     */
     virtual void __unk_vfn_168();
-    /**
-     * @note   Virtual function table index: 169
-     * @symbol 
-     */
     virtual void __unk_vfn_169();
-    /**
-     * @note   Virtual function table index: 170
-     * @symbol 
-     */
     virtual void __unk_vfn_170();
-    /**
-     * @note   Virtual function table index: 171
-     * @symbol ?onPlace@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 174
-     * @symbol ?tick@PistonBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
-    /**
-     * @note   Virtual function table index: 177
-     * @symbol 
-     */
     virtual void __unk_vfn_177();
-    /**
-     * @note   Virtual function table index: 180
-     * @symbol ?canSurvive@PistonBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 188
-     * @symbol 
-     */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONBLOCK
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?pushesUpFallingBlocks@PistonBlock@@UEBA_NXZ
-     */
     MCVAPI bool pushesUpFallingBlocks() const;
 #endif
-    /**
-     * @symbol ??0PistonBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
-     */
     MCAPI PistonBlock(std::string const &, int, enum PistonBlock::Type);
 
 //private:

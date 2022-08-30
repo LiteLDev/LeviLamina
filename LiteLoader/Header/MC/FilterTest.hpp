@@ -37,60 +37,20 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FilterTest();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?setup@FilterTest@@UEAA_NAEBUDefinition@1@AEBUFilterInputs@@@Z
-     */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?evaluate@IsWaterLoggedTest@@UEBA_NAEBUFilterContext@@@Z
-     */
     virtual bool evaluate(struct FilterContext const &) const = 0;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z
-     */
     virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@IsWaterLoggedTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     */
     virtual class gsl::basic_string_span<char const, -1> getName() const = 0;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?_serializeDomain@FilterTest@@MEBA?AVValue@Json@@XZ
-     */
     virtual class Json::Value _serializeDomain() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_serializeValue@FilterTestDimensionWeather@@MEBA?AVValue@Json@@XZ
-     */
     virtual class Json::Value _serializeValue() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTEST
 #endif
-    /**
-     * @symbol ?serialize@FilterTest@@QEBA?AVValue@Json@@XZ
-     */
     MCAPI class Json::Value serialize() const;
 
 //protected:
-    /**
-     * @symbol ?_testValuesWithOperator@FilterTest@@IEBA_NHH@Z
-     */
     MCAPI bool _testValuesWithOperator(int, int) const;
-    /**
-     * @symbol ?_testValuesWithOperator@FilterTest@@IEBA_NMM@Z
-     */
     MCAPI bool _testValuesWithOperator(float, float) const;
-    /**
-     * @symbol ?_testValuesWithOperator@FilterTest@@IEBA_N_N0@Z
-     */
     MCAPI bool _testValuesWithOperator(bool, bool) const;
 
 protected:

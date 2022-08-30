@@ -31,108 +31,28 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCKACTOR
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_getUpdatePacket@LecternBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onUpdatePacket@LecternBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainer@LecternBlockActor@@UEAAPEAVContainer@@XZ
-     */
     MCVAPI class Container * getContainer();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainer@LecternBlockActor@@UEBAPEBVContainer@@XZ
-     */
     MCVAPI class Container const * getContainer() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainerSize@LecternBlockActor@@UEBAHXZ
-     */
     MCVAPI int getContainerSize() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getItem@LecternBlockActor@@UEBAAEBVItemStack@@H@Z
-     */
     MCVAPI class ItemStack const & getItem(int) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getMaxStackSize@LecternBlockActor@@UEBAHXZ
-     */
     MCVAPI int getMaxStackSize() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?load@LecternBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onChanged@LecternBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void onChanged(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?save@LecternBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     */
     MCVAPI bool save(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?serverInitItemStackIds@LecternBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setItem@LecternBlockActor@@UEAAXHAEBVItemStack@@@Z
-     */
     MCVAPI void setItem(int, class ItemStack const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?startOpen@LecternBlockActor@@UEAAXAEAVPlayer@@@Z
-     */
     MCVAPI void startOpen(class Player &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?stopOpen@LecternBlockActor@@UEAAXAEAVPlayer@@@Z
-     */
     MCVAPI void stopOpen(class Player &);
 #endif
-    /**
-     * @symbol ??0LecternBlockActor@@QEAA@AEBVBlockPos@@@Z
-     */
     MCAPI LecternBlockActor(class BlockPos const &);
-    /**
-     * @symbol ?dropBook@LecternBlockActor@@QEAAXAEAVBlockSource@@@Z
-     */
     MCAPI void dropBook(class BlockSource &);
-    /**
-     * @symbol ?getPage@LecternBlockActor@@QEBAHXZ
-     */
     MCAPI int getPage() const;
-    /**
-     * @symbol ?getTotalPages@LecternBlockActor@@QEBAHXZ
-     */
     MCAPI int getTotalPages() const;
-    /**
-     * @symbol ?hasBook@LecternBlockActor@@QEBA_NXZ
-     */
     MCAPI bool hasBook() const;
-    /**
-     * @symbol ?setItemFromBlock@LecternBlockActor@@QEAAXHAEBVItemStack@@@Z
-     */
     MCAPI void setItemFromBlock(int, class ItemStack const &);
-    /**
-     * @symbol ?setPageOnServer@LecternBlockActor@@QEAAXHAEAVBlockSource@@@Z
-     */
     MCAPI void setPageOnServer(int, class BlockSource &);
-    /**
-     * @symbol ?setTotalPages@LecternBlockActor@@QEAAXH@Z
-     */
     MCAPI void setTotalPages(int);
 
 };

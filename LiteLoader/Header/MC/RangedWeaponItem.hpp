@@ -32,115 +32,29 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RangedWeaponItem();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol 
-     */
     virtual void __unk_vfn_52();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol 
-     */
     virtual void __unk_vfn_54();
-    /**
-     * @note   Virtual function table index: 64
-     * @symbol ?getEnchantValue@RangedWeaponItem@@UEBAHXZ
-     */
     virtual int getEnchantValue() const;
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol 
-     */
     virtual void __unk_vfn_67();
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol 
-     */
     virtual void __unk_vfn_71();
-    /**
-     * @note   Virtual function table index: 72
-     * @symbol 
-     */
     virtual void __unk_vfn_72();
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol 
-     */
     virtual void __unk_vfn_76();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 81
-     * @symbol 
-     */
     virtual void __unk_vfn_81();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol ?use@RangedWeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol ?releaseUsing@RangedWeaponItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-     */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /**
-     * @note   Virtual function table index: 90
-     * @symbol ?hurtActor@RangedWeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /**
-     * @note   Virtual function table index: 94
-     * @symbol ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-     */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /**
-     * @note   Virtual function table index: 120
-     * @symbol ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDWEAPONITEM
 #endif
-    /**
-     * @symbol ??0RangedWeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI RangedWeaponItem(std::string const &, int);
-    /**
-     * @symbol ?getLaunchPower@RangedWeaponItem@@QEBAMHHH@Z
-     */
     MCAPI float getLaunchPower(int, int, int) const;
 
 };

@@ -53,101 +53,29 @@ MCAPI static unsigned char const OPPOSITE_FACING[];
 MCAPI static int const STEP_X[];
 MCAPI static int const STEP_Y[];
 MCAPI static int const STEP_Z[];
-    /**
-     * @symbol ?convertDirectionToFacingDirection@Facing@@SAEW4Type@Direction@@@Z
-     */
     MCAPI static unsigned char convertDirectionToFacingDirection(enum Direction::Type);
-    /**
-     * @symbol ?convertWeirdoDirectionToFacingDirection@Facing@@SAEW4WeirdoDirection@@@Z
-     */
     MCAPI static unsigned char convertWeirdoDirectionToFacingDirection(enum WeirdoDirection);
-    /**
-     * @symbol ?convertYRotationToFacingDirection@Facing@@SAEM@Z
-     */
     MCAPI static unsigned char convertYRotationToFacingDirection(float);
-    /**
-     * @symbol ?from2DDataValue@Facing@@SA?AW4Name@1@H@Z
-     */
     MCAPI static enum Facing::Name from2DDataValue(int);
-    /**
-     * @symbol ?fromVec3@Facing@@SAEAEBVVec3@@@Z
-     */
     MCAPI static unsigned char fromVec3(class Vec3 const &);
-    /**
-     * @symbol ?getClockWise@Facing@@SAEE@Z
-     */
     MCAPI static unsigned char getClockWise(unsigned char);
-    /**
-     * @symbol ?getClosestRotation@Facing@@SA?AW4Rotation@1@M@Z
-     */
     MCAPI static enum Facing::Rotation getClosestRotation(float);
-    /**
-     * @symbol ?getCounterClockWise@Facing@@SAEE@Z
-     */
     MCAPI static unsigned char getCounterClockWise(unsigned char);
-    /**
-     * @symbol ?getFaceLocation@Facing@@SA?AVVec3@@EMM@Z
-     */
     MCAPI static class Vec3 getFaceLocation(unsigned char, float, float);
-    /**
-     * @symbol ?getFaceLocationXY@Facing@@SA?AVVec2@@EAEBVVec3@@@Z
-     */
     MCAPI static class Vec2 getFaceLocationXY(unsigned char, class Vec3 const &);
-    /**
-     * @symbol ?getFacingDirection@Facing@@SAEAEBVVec3@@0@Z
-     */
     MCAPI static unsigned char getFacingDirection(class Vec3 const &, class Vec3 const &);
-    /**
-     * @symbol ?getOpposite@Facing@@SAEE@Z
-     */
     MCAPI static unsigned char getOpposite(unsigned char);
-    /**
-     * @symbol ?getRandomFace@Facing@@SAHAEAVRandom@@@Z
-     */
     MCAPI static int getRandomFace(class Random &);
-    /**
-     * @symbol ?getRandomFaceHorizontal@Facing@@SAHAEAVRandom@@@Z
-     */
     MCAPI static int getRandomFaceHorizontal(class Random &);
-    /**
-     * @symbol ?getRotationMatrix@Facing@@SA?AU?$mat@$02$02M$0A@@glm@@EW4Rotation@1@@Z
-     */
     MCAPI static struct glm::mat<3, 3, float, 0> getRotationMatrix(unsigned char, enum Facing::Rotation);
-    /**
-     * @symbol ?getShuffledDirections@Facing@@SA?AV?$vector@EV?$allocator@E@std@@@std@@AEAVRandom@@@Z
-     */
     MCAPI static std::vector<unsigned char> getShuffledDirections(class Random &);
-    /**
-     * @symbol ?getShuffledDirections@Facing@@SA?AV?$vector@EV?$allocator@E@std@@@std@@XZ
-     */
     MCAPI static std::vector<unsigned char> getShuffledDirections();
-    /**
-     * @symbol ?getStepX@Facing@@SAHE@Z
-     */
     MCAPI static int getStepX(unsigned char);
-    /**
-     * @symbol ?getStepY@Facing@@SAHE@Z
-     */
     MCAPI static int getStepY(unsigned char);
-    /**
-     * @symbol ?getStepZ@Facing@@SAHE@Z
-     */
     MCAPI static int getStepZ(unsigned char);
-    /**
-     * @symbol ?isValidDirection@Facing@@SA_NH@Z
-     */
     MCAPI static bool isValidDirection(int);
-    /**
-     * @symbol ?rotateFace@Facing@@SAEEW4Rotation@1@@Z
-     */
     MCAPI static unsigned char rotateFace(unsigned char, enum Facing::Rotation);
-    /**
-     * @symbol ?rotateFaceAroundGivenFace@Facing@@SAEEEW4Rotation@1@@Z
-     */
     MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum Facing::Rotation);
-    /**
-     * @symbol ?toString@Facing@@SA?AV?$basic_string_span@$$CBD$0?0@gsl@@E@Z
-     */
     MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
 
 };

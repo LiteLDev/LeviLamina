@@ -31,46 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RandomSwimmingGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@RandomSwimmingGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@RandomSwimmingGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@RandomSwimmingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?_setWantedPosition@RandomSwimmingGoal@@MEAA_NXZ
-     */
     virtual bool _setWantedPosition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSWIMMINGGOAL
 #endif
-    /**
-     * @symbol ??0RandomSwimmingGoal@@QEAA@AEAVMob@@MHHH_N@Z
-     */
     MCAPI RandomSwimmingGoal(class Mob &, float, int, int, int, bool);
 
 };

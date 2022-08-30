@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSTANDONBLOCKEVENT
 #endif
-    /**
-     * @symbol ??1ActorStandOnBlockEvent@@QEAA@XZ
-     */
     MCAPI ~ActorStandOnBlockEvent();
 
 };

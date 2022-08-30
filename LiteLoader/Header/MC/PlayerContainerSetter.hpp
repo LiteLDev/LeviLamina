@@ -30,31 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PlayerContainerSetter();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?setArmor@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
-     */
     virtual void setArmor(int, class ItemStack const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?setOffhandSlot@PlayerContainerSetter@@UEAAXAEBVItemStack@@@Z
-     */
     virtual void setOffhandSlot(class ItemStack const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?setPlayerUIItem@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
-     */
     virtual void setPlayerUIItem(int, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERCONTAINERSETTER
 #endif
-    /**
-     * @symbol ??0PlayerContainerSetter@@QEAA@AEAVPlayer@@@Z
-     */
     MCAPI PlayerContainerSetter(class Player &);
 
 };

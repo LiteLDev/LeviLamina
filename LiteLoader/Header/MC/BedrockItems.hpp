@@ -33,13 +33,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCKITEMS
 #endif
 MCAPI static class WeakPtr<class Item> mAir;
-    /**
-     * @symbol ?registerItems@BedrockItems@@SAXXZ
-     */
     MCAPI static void registerItems();
-    /**
-     * @symbol ?unregisterItems@BedrockItems@@SAXVItemRegistryRef@@@Z
-     */
     MCAPI static void unregisterItems(class ItemRegistryRef);
 
 };

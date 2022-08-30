@@ -32,9 +32,6 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERMOVEMENTSETTINGS
 #endif
 MCAPI static struct PlayerMovementSettings const INVALID;
-    /**
-     * @symbol ?getDefault@PlayerMovementSettings@@SA?AU1@XZ
-     */
     MCAPI static struct PlayerMovementSettings getDefault();
 
 };

@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE
 #endif
-    /**
-     * @symbol ??4Trade@@QEAAAEAU0@$$QEAU0@@Z
-     */
     MCAPI struct Trade & operator=(struct Trade &&);
-    /**
-     * @symbol ??1Trade@@QEAA@XZ
-     */
     MCAPI ~Trade();
 
 };

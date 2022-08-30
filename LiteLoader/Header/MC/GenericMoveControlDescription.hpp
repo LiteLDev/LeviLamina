@@ -31,25 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?getJsonName@GenericMoveControlDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~GenericMoveControlDescription();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
-     */
     virtual void deserializeData(struct DeserializeDataParams);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?serializeData@MoveControlDescription@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROLDESCRIPTION
 #endif

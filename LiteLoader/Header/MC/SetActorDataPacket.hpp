@@ -30,40 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SetActorDataPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@SetActorDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@SetActorDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@SetActorDataPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@SetActorDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORDATAPACKET
 #endif
-    /**
-     * @symbol ??0SetActorDataPacket@@QEAA@XZ
-     */
     MCAPI SetActorDataPacket();
-    /**
-     * @symbol ??0SetActorDataPacket@@QEAA@VActorRuntimeID@@AEAVSynchedActorData@@_N@Z
-     */
     MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorData &, bool);
 
 };

@@ -31,220 +31,55 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@AreaEffectCloud@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~AreaEffectCloud();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@AreaEffectCloud@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@AreaEffectCloud@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 119
-     * @symbol ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
-     */
     virtual void setOwner(struct ActorUniqueID);
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAEFFECTCLOUD
 #endif
-    /**
-     * @symbol ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI AreaEffectCloud(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?addAreaEffect@AreaEffectCloud@@QEAAXVMobEffectInstance@@@Z
-     */
     MCAPI void addAreaEffect(class MobEffectInstance);
-    /**
-     * @symbol ?getDuration@AreaEffectCloud@@QEBAHXZ
-     */
     MCAPI int getDuration() const;
-    /**
-     * @symbol ?getEffectiveRadius@AreaEffectCloud@@QEBAMXZ
-     */
     MCAPI float getEffectiveRadius() const;
-    /**
-     * @symbol ?getParticle@AreaEffectCloud@@QEBA?AW4ParticleType@@XZ
-     */
     MCAPI enum ParticleType getParticle() const;
-    /**
-     * @symbol ?notifyPickup@AreaEffectCloud@@QEAAXXZ
-     */
     MCAPI void notifyPickup();
-    /**
-     * @symbol ?setAffectOwner@AreaEffectCloud@@QEAAX_N@Z
-     */
     MCAPI void setAffectOwner(bool);
-    /**
-     * @symbol ?setDuration@AreaEffectCloud@@QEAAXH@Z
-     */
     MCAPI void setDuration(int);
-    /**
-     * @symbol ?setInitialRadius@AreaEffectCloud@@QEAAXM@Z
-     */
     MCAPI void setInitialRadius(float);
-    /**
-     * @symbol ?setParticle@AreaEffectCloud@@QEAAXW4ParticleType@@@Z
-     */
     MCAPI void setParticle(enum ParticleType);
-    /**
-     * @symbol ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z
-     */
     MCAPI void setParticleColor(class mce::Color &);
-    /**
-     * @symbol ?setPotion@AreaEffectCloud@@QEAAXF@Z
-     */
     MCAPI void setPotion(short);
-    /**
-     * @symbol ?setRadiusChangeOnPickup@AreaEffectCloud@@QEAAXM@Z
-     */
     MCAPI void setRadiusChangeOnPickup(float);
-    /**
-     * @symbol ?setRadiusOnUse@AreaEffectCloud@@QEAAXM@Z
-     */
     MCAPI void setRadiusOnUse(float);
-    /**
-     * @symbol ?setRadiusPerTick@AreaEffectCloud@@QEAAXM@Z
-     */
     MCAPI void setRadiusPerTick(float);
-    /**
-     * @symbol ?setReapplicationDelay@AreaEffectCloud@@QEAAXH@Z
-     */
     MCAPI void setReapplicationDelay(int);
 
 //private:
-    /**
-     * @symbol ?_getTicksAlive@AreaEffectCloud@@AEBA_JXZ
-     */
     MCAPI __int64 _getTicksAlive() const;
-    /**
-     * @symbol ?_setSpawnTick@AreaEffectCloud@@AEAAX_J@Z
-     */
     MCAPI void _setSpawnTick(__int64);
-    /**
-     * @symbol ?_spawnParticles@AreaEffectCloud@@AEAAXAEAVRandom@@IM@Z
-     */
     MCAPI void _spawnParticles(class Random &, unsigned int, float);
 
 private:

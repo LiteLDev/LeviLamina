@@ -30,25 +30,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDEFINITION
 #endif
-    /**
-     * @symbol ??0BlockDefinition@@QEAA@AEBU0@@Z
-     */
     MCAPI BlockDefinition(struct BlockDefinition const &);
-    /**
-     * @symbol ??1BlockDefinition@@QEAA@XZ
-     */
     MCAPI ~BlockDefinition();
-    /**
-     * @symbol ?createBlockAbstractCerealSchema@BlockDefinition@@SA?AUSchema@reflection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static struct reflection::Schema createBlockAbstractCerealSchema(std::string const &);
-    /**
-     * @symbol ?registerBlockDefinitionTypes@BlockDefinition@@SAXXZ
-     */
     MCAPI static void registerBlockDefinitionTypes();
-    /**
-     * @symbol ?upgradeJson@BlockDefinition@@SA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@V?$optional@VSemVersion@@@3@@Z
-     */
     MCAPI static bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
 
 //private:

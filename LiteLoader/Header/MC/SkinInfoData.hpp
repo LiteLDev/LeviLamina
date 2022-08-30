@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKININFODATA
 #endif
-    /**
-     * @symbol ?isValidSize@SkinInfoData@@SA_N_K@Z
-     */
     MCAPI static bool isValidSize(unsigned __int64);
 
 };

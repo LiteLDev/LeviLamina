@@ -31,137 +31,35 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDDIMENSION
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_upgradeOldLimboEntity@TheEndDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
-     */
     MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_wrapStorageForVersionCompatibility@TheEndDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
-     */
     MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?createGenerator@TheEndDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
-     */
     MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?deserialize@TheEndDimension@@UEAAXAEBVCompoundTag@@@Z
-     */
     MCVAPI void deserialize(class CompoundTag const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?fixWallChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
-     */
     MCVAPI void fixWallChunk(class ChunkSource &, class LevelChunk &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getCloudHeight@TheEndDimension@@UEBAFXZ
-     */
     MCVAPI short getCloudHeight() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getDefaultBiome@TheEndDimension@@UEBAHXZ
-     */
     MCVAPI int getDefaultBiome() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getSpawnPos@TheEndDimension@@UEBA?AVBlockPos@@XZ
-     */
     MCVAPI class BlockPos getSpawnPos() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getSpawnYPosition@TheEndDimension@@UEBAHXZ
-     */
     MCVAPI int getSpawnYPosition() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getSunIntensity@TheEndDimension@@UEBAMMAEBVVec3@@M@Z
-     */
     MCVAPI float getSunIntensity(float, class Vec3 const &, float) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getTimeOfDay@TheEndDimension@@UEBAMHM@Z
-     */
     MCVAPI float getTimeOfDay(int, float) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?hasGround@TheEndDimension@@UEBA_NXZ
-     */
     MCVAPI bool hasGround() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?init@TheEndDimension@@UEAAXXZ
-     */
     MCVAPI void init();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isDay@TheEndDimension@@UEBA_NXZ
-     */
     MCVAPI bool isDay() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isFoggyAt@TheEndDimension@@UEBA_NHH@Z
-     */
     MCVAPI bool isFoggyAt(int, int) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isNaturalDimension@TheEndDimension@@UEBA_NXZ
-     */
     MCVAPI bool isNaturalDimension() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isValidSpawn@TheEndDimension@@UEBA_NHH@Z
-     */
     MCVAPI bool isValidSpawn(int, int) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?levelChunkNeedsUpgrade@TheEndDimension@@UEBA_NAEBVLevelChunk@@@Z
-     */
     MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?mayRespawnViaBed@TheEndDimension@@UEBA_NXZ
-     */
     MCVAPI bool mayRespawnViaBed() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?serialize@TheEndDimension@@UEBAXAEAVCompoundTag@@@Z
-     */
     MCVAPI void serialize(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?startLeaveGame@TheEndDimension@@UEAAXXZ
-     */
     MCVAPI void startLeaveGame();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tick@TheEndDimension@@UEAAXXZ
-     */
     MCVAPI void tick();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?translatePosAcrossDimension@TheEndDimension@@UEBA?AVVec3@@AEBV2@V?$AutomaticID@VDimension@@H@@@Z
-     */
     MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const &, class AutomaticID<class Dimension, int>) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?upgradeLevelChunk@TheEndDimension@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@1@Z
-     */
     MCVAPI void upgradeLevelChunk(class ChunkSource &, class LevelChunk &, class LevelChunk &);
 #endif
-    /**
-     * @symbol ??0TheEndDimension@@QEAA@AEAVLevel@@AEAVScheduler@@@Z
-     */
     MCAPI TheEndDimension(class Level &, class Scheduler &);
 MCAPI static float const AMBIENT_MULTIPLIER;
 
 //private:
-    /**
-     * @symbol ?makeStructureFeatures@TheEndDimension@@CA?AV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@AEAVDimension@@I@Z
-     */
     MCAPI static std::unique_ptr<class StructureFeatureRegistry> makeStructureFeatures(class Dimension &, unsigned int);
 
 private:

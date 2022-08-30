@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CDSCOPEDEVENT
 #endif
-    /**
-     * @symbol ??0CDScopedEvent@@QEAA@W4CrashDumpLogStringID@@00@Z
-     */
     MCAPI CDScopedEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
-    /**
-     * @symbol ??1CDScopedEvent@@QEAA@XZ
-     */
     MCAPI ~CDScopedEvent();
 
 };

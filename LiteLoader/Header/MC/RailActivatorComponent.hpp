@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILACTIVATORCOMPONENT
 #endif
-    /**
-     * @symbol ?ejectAllPassengers@RailActivatorComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void ejectAllPassengers(class Actor &);
 
 };

@@ -29,47 +29,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LootCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@LootCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTCOMMAND
 #endif
-    /**
-     * @symbol ?getToolItemStack@LootCommand@@QEBA?AVItemStack@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI class ItemStack getToolItemStack(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?setup@LootCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?_canReplaceItemsInTargetEntity@LootCommand@@AEBA_NAEAVCommandOutput@@AEBVActor@@@Z
-     */
     MCAPI bool _canReplaceItemsInTargetEntity(class CommandOutput &, class Actor const &) const;
-    /**
-     * @symbol ?_getItemsFromSource@LootCommand@@AEBA?AV?$optional@V?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@std@@AEBVCommandOrigin@@AEAVCommandOutput@@AEBVItemStack@@AEAVLevel@@V?$AutomaticID@VDimension@@H@@@Z
-     */
     MCAPI class std::optional<std::vector<class ItemStack>> _getItemsFromSource(class CommandOrigin const &, class CommandOutput &, class ItemStack const &, class Level &, class AutomaticID<class Dimension, int>) const;
-    /**
-     * @symbol ?_outputSuccess@LootCommand@@AEBAXAEAVCommandOutput@@H@Z
-     */
     MCAPI void _outputSuccess(class CommandOutput &, int) const;
-    /**
-     * @symbol ?_placeItemsInTarget@LootCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
-     */
     MCAPI void _placeItemsInTarget(class CommandOrigin const &, class CommandOutput &, std::vector<class ItemStack> &) const;
-    /**
-     * @symbol ?_slotBoundsValidOrOutputFailure@LootCommand@@AEBA_NAEAVCommandOutput@@HV?$optional@H@std@@@Z
-     */
     MCAPI bool _slotBoundsValidOrOutputFailure(class CommandOutput &, int, class std::optional<int>) const;
 
 private:

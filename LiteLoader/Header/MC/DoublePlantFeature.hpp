@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DoublePlantFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@DoublePlantFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLEPLANTFEATURE
 #endif
-    /**
-     * @symbol ?place@DoublePlantFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@W4DoublePlantType@@@Z
-     */
     MCAPI bool place(class BlockSource &, class BlockPos const &, class Random &, enum DoublePlantType) const;
 
 };

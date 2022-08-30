@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTMAP
 #endif
-    /**
-     * @symbol ?getId@LevelSoundEventMap@@SA?AW4LevelSoundEvent@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static enum LevelSoundEvent getId(std::string const &);
-    /**
-     * @symbol ?getName@LevelSoundEventMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@@@Z
-     */
     MCAPI static std::string const & getName(enum LevelSoundEvent);
 MCAPI static class std::initializer_list<struct std::pair<std::string, enum LevelSoundEvent>> const initializerData;
 

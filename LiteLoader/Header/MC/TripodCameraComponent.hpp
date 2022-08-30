@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERACOMPONENT
 #endif
-    /**
-     * @symbol ?getInteraction@TripodCameraComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 };

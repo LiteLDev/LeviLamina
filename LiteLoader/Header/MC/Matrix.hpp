@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATRIX
 #endif
-    /**
-     * @symbol ??0Matrix@@QEAA@AEBU?$qua@M$0A@@glm@@@Z
-     */
     MCAPI Matrix(struct glm::qua<float, 0> const &);
-    /**
-     * @symbol ?transform3@Matrix@@QEBAXAEAU?$vec@$02M$0A@@glm@@AEAM@Z
-     */
     MCAPI void transform3(struct glm::vec<3, float, 0> &, float &) const;
 
 };

@@ -39,55 +39,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Int64Tag();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?write@Int64Tag@@UEBAXAEAVIDataOutput@@@Z
-     */
     virtual void write(class IDataOutput &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?load@Int64Tag@@UEAAXAEAVIDataInput@@@Z
-     */
     virtual void load(class IDataInput &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?toString@Int64Tag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string toString() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getId@Int64Tag@@UEBA?AW4Type@Tag@@XZ
-     */
     virtual enum Tag::Type getId() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?equals@Int64Tag@@UEBA_NAEBVTag@@@Z
-     */
     virtual bool equals(class Tag const &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?copy@Int64Tag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class Tag> copy() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?hash@Int64Tag@@UEBA_KXZ
-     */
     virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INT64TAG
 #endif
-    /**
-     * @symbol ??0Int64Tag@@QEAA@_J@Z
-     */
     MCAPI Int64Tag(__int64);
-    /**
-     * @symbol ??0Int64Tag@@QEAA@XZ
-     */
     MCAPI Int64Tag();
 
 };

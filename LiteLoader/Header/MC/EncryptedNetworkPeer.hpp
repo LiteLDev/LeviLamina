@@ -31,35 +31,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~EncryptedNetworkPeer();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?sendPacket@EncryptedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
-     */
     virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?receivePacket@EncryptedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
-     */
     virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getNetworkStatus@EncryptedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
-     */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDNETWORKPEER
 #endif
-    /**
-     * @symbol ??0EncryptedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
-     */
     MCAPI EncryptedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
-    /**
-     * @symbol ?enableEncryption@EncryptedNetworkPeer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void enableEncryption(std::string const &);
 
 };

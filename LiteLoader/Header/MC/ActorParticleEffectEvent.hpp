@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPARTICLEEFFECTEVENT
 #endif
-    /**
-     * @symbol ??1ActorParticleEffectEvent@@QEAA@XZ
-     */
     MCAPI ~ActorParticleEffectEvent();
 
 };

@@ -31,31 +31,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LocateCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@LocateCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCATECOMMAND
 #endif
-    /**
-     * @symbol ?setup@LocateCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?_executeLocateBiome@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void _executeLocateBiome(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?_executeLocateStructure@LocateCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void _executeLocateStructure(class CommandOrigin const &, class CommandOutput &) const;
 
 private:

@@ -30,25 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GameCallbacks();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1() = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2() = 0;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?onBeforeSimTick@GameCallbacks@@UEAAXXZ
-     */
     virtual void onBeforeSimTick();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMECALLBACKS
 #endif

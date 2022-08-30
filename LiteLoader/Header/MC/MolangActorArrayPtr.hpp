@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGACTORARRAYPTR
 #endif
-    /**
-     * @symbol ??1MolangActorArrayPtr@@QEAA@XZ
-     */
     MCAPI ~MolangActorArrayPtr();
 
 };

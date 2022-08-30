@@ -30,33 +30,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_read@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     */
     MCVAPI bool _read(class ReadOnlyBinaryStream &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_write@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z
-     */
     MCVAPI void _write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@UEAAXAEAVBlockPalette@@_N@Z
-     */
     MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
 #endif
-    /**
-     * @symbol ??0ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEAA@XZ
-     */
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
-    /**
-     * @symbol ?getNumCrafts@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEBAEXZ
-     */
     MCAPI unsigned char getNumCrafts() const;
-    /**
-     * @symbol ?getResults@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@QEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     */
     MCAPI std::vector<class ItemInstance> const & getResults() const;
 
 };

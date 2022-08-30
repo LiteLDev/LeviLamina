@@ -32,33 +32,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FilterTestBiomeHasTag();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?evaluate@FilterTestBiomeHasTag@@UEBA_NAEBUFilterContext@@@Z
-     */
     virtual bool evaluate(struct FilterContext const &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?finalizeParsedValue@FilterTestBiomeHasTag@@UEAAXAEAVIWorldRegistriesProvider@@@Z
-     */
     virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@FilterTestBiomeHasTag@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTBIOMEHASTAG
 #endif
 
 //private:
-    /**
-     * @symbol ?_evalBiome@FilterTestBiomeHasTag@@AEBA_NAEBVBiome@@AEBUFilterContext@@@Z
-     */
     MCAPI bool _evalBiome(class Biome const &, struct FilterContext const &) const;
 
 private:

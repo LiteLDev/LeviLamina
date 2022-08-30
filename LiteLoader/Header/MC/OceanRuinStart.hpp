@@ -31,16 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~OceanRuinStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANRUINSTART
 #endif
-    /**
-     * @symbol ?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
-     */
     MCAPI void createRuin(class Dimension &, class Random &, int, int);
 
 };

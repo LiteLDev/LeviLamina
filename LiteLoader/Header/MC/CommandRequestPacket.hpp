@@ -31,48 +31,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CommandRequestPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@CommandRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@CommandRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@CommandRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@CommandRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDREQUESTPACKET
 #endif
-    /**
-     * @symbol ??0CommandRequestPacket@@QEAA@XZ
-     */
     MCAPI CommandRequestPacket();
-    /**
-     * @symbol ??0CommandRequestPacket@@QEAA@AEAVCommandContext@@_N@Z
-     */
     MCAPI CommandRequestPacket(class CommandContext &, bool);
-    /**
-     * @symbol ?createCommandContext@CommandRequestPacket@@QEBA?AV?$unique_ptr@VCommandContext@@U?$default_delete@VCommandContext@@@std@@@std@@AEBVNetworkIdentifier@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@H@Z
-     */
     MCAPI std::unique_ptr<class CommandContext> createCommandContext(class NetworkIdentifier const &, class Bedrock::NonOwnerPointer<class ILevel> const &, int) const;
-    /**
-     * @symbol ?getInternalSource@CommandRequestPacket@@QEBA_NXZ
-     */
     MCAPI bool getInternalSource() const;
 
 };

@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEATTACKDEFINITION
 #endif
-    /**
-     * @symbol ??0ChargeAttackDefinition@@QEAA@XZ
-     */
     MCAPI ChargeAttackDefinition();
-    /**
-     * @symbol ?initialize@ChargeAttackDefinition@@QEAAXAEAVEntityContext@@AEAVChargeAttackGoal@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class ChargeAttackGoal &);
-    /**
-     * @symbol ?buildSchema@ChargeAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VChargeAttackDefinition@@@JsonUtil@@@3@@Z
-     */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition>> &);
 
 };

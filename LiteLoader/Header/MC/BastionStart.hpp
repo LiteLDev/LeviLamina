@@ -31,15 +31,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BastionStart();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isValid@BastionStart@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASTIONSTART
 #endif

@@ -20,9 +20,6 @@ namespace NpcSystemHelper {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?sendClosePacket@NpcSystemHelper@@YAXAEAVEntityContext@@AEBULeaveMenuCountdown@NpcComponents@@@Z
-     */
     MCAPI void sendClosePacket(class EntityContext &, struct NpcComponents::LeaveMenuCountdown const &);
 
 };

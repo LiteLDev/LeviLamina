@@ -31,61 +31,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MaterialReducerOutputValidation();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getContainerOffset@MaterialReducerOutputValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getContainerSize@MaterialReducerOutputValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCEROUTPUTVALIDATION
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canDestroy@MaterialReducerOutputValidation@@UEBA_NAEBVContainerScreenContext@@@Z
-     */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
 #endif
 

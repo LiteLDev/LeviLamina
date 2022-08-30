@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ZipPackAccessStrategyOwningFileAccess();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZIPPACKACCESSSTRATEGYOWNINGFILEACCESS
 #endif
-    /**
-     * @symbol ??0ZipPackAccessStrategyOwningFileAccess@@QEAA@V?$shared_ptr@VIFileAccess@@@std@@AEBVResourceLocation@@AEBVPath@Core@@@Z
-     */
     MCAPI ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const &, class Core::Path const &);
 
 };

@@ -30,31 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ShiftedDurationAmplifier();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?shouldBuff@ShiftedDurationAmplifier@@UEBA_NHH@Z
-     */
     virtual bool shouldBuff(int, int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getTickInterval@ShiftedDurationAmplifier@@UEBAHH@Z
-     */
     virtual int getTickInterval(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIFTEDDURATIONAMPLIFIER
 #endif
-    /**
-     * @symbol ??0ShiftedDurationAmplifier@@QEAA@H@Z
-     */
     MCAPI ShiftedDurationAmplifier(int);
 
 };

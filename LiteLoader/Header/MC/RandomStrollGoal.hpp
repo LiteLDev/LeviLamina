@@ -30,66 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RandomStrollGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@RandomStrollGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@RandomStrollGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?canBeInterrupted@RandomBreachingGoal@@UEAA_NXZ
-     */
     virtual bool canBeInterrupted();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@RandomStrollGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@RandomStrollGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@RandomStrollGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@RandomStrollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?_setWantedPosition@RandomStrollGoal@@MEAA_NXZ
-     */
     virtual bool _setWantedPosition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSTROLLGOAL
 #endif
-    /**
-     * @symbol ??0RandomStrollGoal@@QEAA@AEAVMob@@MHHH@Z
-     */
     MCAPI RandomStrollGoal(class Mob &, float, int, int, int);
 
 };

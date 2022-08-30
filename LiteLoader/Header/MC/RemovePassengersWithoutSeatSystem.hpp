@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEPASSENGERSWITHOUTSEATSYSTEM
 #endif
-    /**
-     * @symbol ?createSystem@RemovePassengersWithoutSeatSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol ?removePassengersWithoutSeat@RemovePassengersWithoutSeatSystem@@SAXAEAVStrictEntityContext@@AEBVRideableComponent@@AEAUVehicleComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@URemovePassengersComponent@@@@@Z
-     */
     MCAPI static void removePassengersWithoutSeat(class StrictEntityContext &, class RideableComponent const &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct RemovePassengersComponent> &);
 
 };

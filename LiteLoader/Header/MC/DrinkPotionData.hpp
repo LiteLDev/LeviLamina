@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRINKPOTIONDATA
 #endif
-    /**
-     * @symbol ??1DrinkPotionData@@QEAA@XZ
-     */
     MCAPI ~DrinkPotionData();
 
 };

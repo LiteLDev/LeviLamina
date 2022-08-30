@@ -31,17 +31,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYACTIONLIST
 #endif
-    /**
-     * @symbol ??0DelayActionList@@QEAA@XZ
-     */
     MCAPI DelayActionList();
-    /**
-     * @symbol ?queueRequestOrExecuteAction@DelayActionList@@QEAA?AW4QueueRequestResult@@VDelayRequest@@AEAVServerLevel@@AEAVDimension@@_K_N@Z
-     */
     MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, unsigned __int64, bool);
-    /**
-     * @symbol ?tick@DelayActionList@@QEAAXAEAVServerLevel@@AEAVDimension@@_K@Z
-     */
     MCAPI void tick(class ServerLevel &, class Dimension &, unsigned __int64);
 
 };

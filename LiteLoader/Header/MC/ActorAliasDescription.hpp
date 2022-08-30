@@ -29,29 +29,12 @@ public:
     ActorAliasDescription() = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ActorAliasDescription();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getJsonName@ActorAliasDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORALIASDESCRIPTION
 #endif
-    /**
-     * @symbol ?getAliasInfo@ActorAliasDescription@@QEBAPEBUAliasInfoDescription@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
-    /**
-     * @symbol ??4ActorAliasDescription@@QEAAAEAU0@AEBU0@@Z
-     */
     MCAPI struct ActorAliasDescription & operator=(struct ActorAliasDescription const &);
-    /**
-     * @symbol ?parse@ActorAliasDescription@@QEAAXAEAVValue@Json@@_N@Z
-     */
     MCAPI void parse(class Json::Value &, bool);
 
 };

@@ -29,15 +29,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AncientCityStart();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isValid@AncientCityStart@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANCIENTCITYSTART
 #endif

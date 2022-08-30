@@ -30,96 +30,25 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AbstractCompassItem();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol 
-     */
     virtual void __unk_vfn_52();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol 
-     */
     virtual void __unk_vfn_54();
-    /**
-     * @note   Virtual function table index: 63
-     * @symbol ?getEnchantSlot@AbstractCompassItem@@UEBAHXZ
-     */
     virtual int getEnchantSlot() const;
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol 
-     */
     virtual void __unk_vfn_67();
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol 
-     */
     virtual void __unk_vfn_71();
-    /**
-     * @note   Virtual function table index: 72
-     * @symbol 
-     */
     virtual void __unk_vfn_72();
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol 
-     */
     virtual void __unk_vfn_76();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 81
-     * @symbol 
-     */
     virtual void __unk_vfn_81();
-    /**
-     * @note   Virtual function table index: 120
-     * @symbol ?getAnimationFrameFor@AbstractCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /**
-     * @note   Virtual function table index: 123
-     * @symbol ?getIcon@AbstractCompassItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
-     */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTCOMPASSITEM
 #endif
-    /**
-     * @symbol ??0AbstractCompassItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6A?AVCompassSpriteCalculator@@PEAVMob@@@Z@2@@Z
-     */
     MCAPI AbstractCompassItem(std::string const &, int, class std::function<class CompassSpriteCalculator (class Mob *)>);
 
 };

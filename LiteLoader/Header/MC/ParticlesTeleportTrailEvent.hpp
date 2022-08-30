@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLESTELEPORTTRAILEVENT
 #endif
-    /**
-     * @symbol ?save@ParticlesTeleportTrailEvent@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
 
 };

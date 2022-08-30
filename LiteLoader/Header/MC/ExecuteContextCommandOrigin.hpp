@@ -30,115 +30,30 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ExecuteContextCommandOrigin();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRequestId@ExecuteContextCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getRequestId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@ExecuteContextCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getBlockPosition@ExecuteContextCommandOrigin@@UEBA?AVBlockPos@@XZ
-     */
     virtual class BlockPos getBlockPosition() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getWorldPosition@ExecuteContextCommandOrigin@@UEBA?AVVec3@@XZ
-     */
     virtual class Vec3 getWorldPosition() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getRotation@ExecuteContextCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     */
     virtual class std::optional<class Vec2> getRotation() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getLevel@ExecuteContextCommandOrigin@@UEBAPEAVLevel@@XZ
-     */
     virtual class Level * getLevel() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getDimension@ExecuteContextCommandOrigin@@UEBAPEAVDimension@@XZ
-     */
     virtual class Dimension * getDimension() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getEntity@ExecuteContextCommandOrigin@@UEBAPEAVActor@@XZ
-     */
     virtual class Actor * getEntity() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getPermissionsLevel@ExecuteContextCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clone@ExecuteContextCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getOriginType@ExecuteContextCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     */
     virtual enum CommandOriginType getOriginType() const;
-    /**
-     * @note   Virtual function table index: 27
-     * @symbol ?updateValues@ExecuteContextCommandOrigin@@UEAAXXZ
-     */
     virtual void updateValues();
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol ?getExecutePosition@ExecuteContextCommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-     */
     virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol ?serialize@ExecuteContextCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     */
     virtual class CompoundTag serialize() const;
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol ?isValid@ExecuteContextCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXECUTECONTEXTCOMMANDORIGIN
 #endif
-    /**
-     * @symbol ??0ExecuteContextCommandOrigin@@QEAA@UActorUniqueID@@AEBVVec3@@AEBV?$optional@VVec2@@@std@@00W4ActorLocation@@V?$AutomaticID@VDimension@@H@@AEAVLevel@@@Z
-     */
     MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum ActorLocation, class AutomaticID<class Dimension, int>, class Level &);
-    /**
-     * @symbol ?setDimension@ExecuteContextCommandOrigin@@QEAAXAEAVDimension@@@Z
-     */
     MCAPI void setDimension(class Dimension &);
-    /**
-     * @symbol ?setExecutionEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-     */
     MCAPI void setExecutionEntity(class Actor const &);
-    /**
-     * @symbol ?setPosition@ExecuteContextCommandOrigin@@QEAAXAEBVVec3@@@Z
-     */
     MCAPI void setPosition(class Vec3 const &);
-    /**
-     * @symbol ?setPositionEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-     */
     MCAPI void setPositionEntity(class Actor const &);
-    /**
-     * @symbol ?setRotationEntity@ExecuteContextCommandOrigin@@QEAAXAEBVActor@@@Z
-     */
     MCAPI void setRotationEntity(class Actor const &);
-    /**
-     * @symbol ?load@ExecuteContextCommandOrigin@@SA?AV?$unique_ptr@VExecuteContextCommandOrigin@@U?$default_delete@VExecuteContextCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-     */
     MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
 };

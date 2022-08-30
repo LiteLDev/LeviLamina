@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONDEBUG
 #endif
-    /**
-     * @symbol ??0ContainerValidationDebug@@QEAA@W4ContainerValidationCaller@@@Z
-     */
     MCAPI ContainerValidationDebug(enum ContainerValidationCaller);
 
 };

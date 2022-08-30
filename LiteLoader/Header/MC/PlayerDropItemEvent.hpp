@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERDROPITEMEVENT
 #endif
-    /**
-     * @symbol ??1PlayerDropItemEvent@@QEAA@XZ
-     */
     MCAPI ~PlayerDropItemEvent();
 
 };

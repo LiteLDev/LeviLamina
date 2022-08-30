@@ -27,80 +27,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?GetHandle@TaskQueueImpl@@UEAAPEAUXTaskQueueObject@@XZ
-     */
     virtual struct XTaskQueueObject * GetHandle();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?GetPortContext@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAPEAUITaskQueuePortContext@@@Z
-     */
     virtual long GetPortContext(enum XTaskQueuePort, struct ITaskQueuePortContext **);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?RegisterWaitHandle@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAX1P6AX1_N@ZPEAUXTaskQueueRegistrationToken@@@Z
-     */
     virtual long RegisterWaitHandle(enum XTaskQueuePort, void *, void *, void ( *)(void *, bool), struct XTaskQueueRegistrationToken *);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?UnregisterWaitHandle@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
-     */
     virtual void UnregisterWaitHandle(struct XTaskQueueRegistrationToken);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?RegisterSubmitCallback@TaskQueueImpl@@UEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
-     */
     virtual long RegisterSubmitCallback(void *, void ( *)(void *, struct XTaskQueueObject *, enum XTaskQueuePort), struct XTaskQueueRegistrationToken *);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?UnregisterSubmitCallback@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
-     */
     virtual void UnregisterSubmitCallback(struct XTaskQueueRegistrationToken);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?CanTerminate@TaskQueueImpl@@UEAA_NXZ
-     */
     virtual bool CanTerminate();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?CanClose@TaskQueueImpl@@UEAA_NXZ
-     */
     virtual bool CanClose();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?Terminate@TaskQueueImpl@@UEAAJ_NPEAXP6AX1@Z@Z
-     */
     virtual long Terminate(bool, void *, void ( *)(void *));
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual ~TaskQueueImpl();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?RundownObject@TaskQueueImpl@@MEAAXXZ
-     */
     virtual void RundownObject();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEIMPL
 #endif
-    /**
-     * @symbol ?Initialize@TaskQueueImpl@@QEAAJPEAUXTaskQueuePortObject@@0@Z
-     */
     MCAPI long Initialize(struct XTaskQueuePortObject *, struct XTaskQueuePortObject *);
-    /**
-     * @symbol ?Initialize@TaskQueueImpl@@QEAAJW4XTaskQueueDispatchMode@@0_N1@Z
-     */
     MCAPI long Initialize(enum XTaskQueueDispatchMode, enum XTaskQueueDispatchMode, bool, bool);
-    /**
-     * @symbol ??0TaskQueueImpl@@QEAA@XZ
-     */
     MCAPI TaskQueueImpl();
 
 //private:
-    /**
-     * @symbol ?OnTerminationCallback@TaskQueueImpl@@CAXPEAX@Z
-     */
     MCAPI static void OnTerminationCallback(void *);
 
 private:

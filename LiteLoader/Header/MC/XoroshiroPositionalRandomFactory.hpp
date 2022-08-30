@@ -32,26 +32,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~XoroshiroPositionalRandomFactory();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?forBlockPos@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
-     */
     virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?forString@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     */
     virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIROPOSITIONALRANDOMFACTORY
 #endif
-    /**
-     * @symbol ?forStringImpl@XoroshiroPositionalRandomFactory@@QEBA?AVXoroshiroRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI class XoroshiroRandom forStringImpl(std::string const &) const;
 
 //private:

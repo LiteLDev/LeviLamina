@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~IDefinitionInstance();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRuntimeTypeId@IDefinitionInstance@@UEBAGXZ
-     */
     virtual unsigned short getRuntimeTypeId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
 #endif

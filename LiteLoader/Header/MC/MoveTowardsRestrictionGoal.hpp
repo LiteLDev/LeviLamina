@@ -30,46 +30,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveTowardsRestrictionGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1() = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@MoveTowardsRestrictionGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@MoveTowardsRestrictionGoal@@UEAAXXZ
-     */
     virtual void start();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONGOAL
 #endif
-    /**
-     * @symbol ??0MoveTowardsRestrictionGoal@@QEAA@AEAVMob@@@Z
-     */
     MCAPI MoveTowardsRestrictionGoal(class Mob &);
 
 //protected:
-    /**
-     * @symbol ?_getMob@MoveTowardsRestrictionGoal@@IEBAAEBVMob@@XZ
-     */
     MCAPI class Mob const & _getMob() const;
-    /**
-     * @symbol ?_randomizeWantedPositionTowardsRestriction@MoveTowardsRestrictionGoal@@IEAA_NAEBVVec3@@@Z
-     */
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const &);
 
 protected:

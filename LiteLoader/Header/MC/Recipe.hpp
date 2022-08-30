@@ -30,133 +30,36 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Recipe();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?assemble@ShulkerBoxRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
-     */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getCraftingSize@ShapelessRecipe@@UEBAHXZ
-     */
     virtual int getCraftingSize() const = 0;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getIngredient@ShapelessRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
-     */
     virtual class RecipeIngredient const & getIngredient(int, int) const = 0;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getResultItem@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
-     */
     virtual std::vector<class ItemInstance> const & getResultItem() const = 0;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?isShapeless@ShapelessRecipe@@UEBA_NXZ
-     */
     virtual bool isShapeless() const = 0;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?matches@ShapelessRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     */
     virtual bool matches(class CraftingContainer &, class Level &) const = 0;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?size@ShapelessRecipe@@UEBAHXZ
-     */
     virtual int size() const = 0;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getId@Recipe@@UEBAAEBVUUID@mce@@XZ
-     */
     virtual class mce::UUID const & getId() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getItemPack@Recipe@@UEBAAEBVItemPack@@XZ
-     */
     virtual class ItemPack const & getItemPack() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?isMultiRecipe@Recipe@@UEBA_NXZ
-     */
     virtual bool isMultiRecipe() const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?itemValidForRecipe@Recipe@@UEBA_NAEBVItemDescriptor@@AEBVItemStack@@@Z
-     */
     virtual bool itemValidForRecipe(class ItemDescriptor const &, class ItemStack const &) const;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0@Z
-     */
     virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &) const;
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0PEBVCompoundTag@@@Z
-     */
     virtual bool itemsMatch(class ItemDescriptor const &, class ItemDescriptor const &, class CompoundTag const *) const;
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@HHPEBVCompoundTag@@@Z
-     */
     virtual bool itemsMatch(class ItemDescriptor const &, int, int, class CompoundTag const *) const;
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?loadResultList@Recipe@@UEBAXAEBVBlockPalette@@@Z
-     */
     virtual void loadResultList(class BlockPalette const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPE
 #endif
-    /**
-     * @symbol ?countQuantityOfIngredient@Recipe@@QEBAHAEBVItemInstance@@@Z
-     */
     MCAPI int countQuantityOfIngredient(class ItemInstance const &) const;
-    /**
-     * @symbol ?getHeight@Recipe@@QEBAHXZ
-     */
     MCAPI int getHeight() const;
-    /**
-     * @symbol ?getIngredients@Recipe@@QEBAAEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@XZ
-     */
     MCAPI std::vector<class RecipeIngredient> const & getIngredients() const;
-    /**
-     * @symbol ?getNetId@Recipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-     */
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getNetId() const;
-    /**
-     * @symbol ?getPriority@Recipe@@QEBAHXZ
-     */
     MCAPI int getPriority() const;
-    /**
-     * @symbol ?getRecipeId@Recipe@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string getRecipeId() const;
-    /**
-     * @symbol ?getTag@Recipe@@QEBAAEBVHashedString@@XZ
-     */
     MCAPI class HashedString const & getTag() const;
-    /**
-     * @symbol ?getWidth@Recipe@@QEBAHXZ
-     */
     MCAPI int getWidth() const;
-    /**
-     * @symbol ?setNetId@Recipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     */
     MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
-    /**
-     * @symbol ?isAnyAuxValue@Recipe@@SA_NAEBVItemDescriptor@@@Z
-     */
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const &);
 
 //protected:
-    /**
-     * @symbol ??0Recipe@@IEAA@V?$basic_string_span@$$CBD$0?0@gsl@@VHashedString@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@@Z
-     */
     MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const &);
 
 protected:

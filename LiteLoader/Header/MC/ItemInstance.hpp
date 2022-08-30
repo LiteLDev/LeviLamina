@@ -24,86 +24,28 @@ class ItemInstance : public ItemStackBase {
 
 #undef AFTER_EXTRA
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemInstance();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?reinit@ItemInstance@@UEAAXAEBVItem@@HH@Z
-     */
     virtual void reinit(class Item const &, int, int);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?reinit@ItemInstance@@UEAAXAEBVBlockLegacy@@H@Z
-     */
     virtual void reinit(class BlockLegacy const &, int);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?reinit@ItemInstance@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@HH@Z
-     */
     virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMINSTANCE
 #endif
-    /**
-     * @symbol ??0ItemInstance@@QEAA@XZ
-     */
     MCAPI ItemInstance();
-    /**
-     * @symbol ??0ItemInstance@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HHPEBVCompoundTag@@@Z
-     */
     MCAPI ItemInstance(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const *);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBVItem@@HHPEBVCompoundTag@@@Z
-     */
     MCAPI ItemInstance(class Item const &, int, int, class CompoundTag const *);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBVItem@@HH@Z
-     */
     MCAPI ItemInstance(class Item const &, int, int);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBVItem@@H@Z
-     */
     MCAPI ItemInstance(class Item const &, int);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBVItem@@@Z
-     */
     MCAPI ItemInstance(class Item const &);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBVBlockLegacy@@H@Z
-     */
     MCAPI ItemInstance(class BlockLegacy const &, int);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBVBlock@@HPEBVCompoundTag@@@Z
-     */
     MCAPI ItemInstance(class Block const &, int, class CompoundTag const *);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBV0@@Z
-     */
     MCAPI ItemInstance(class ItemInstance const &);
-    /**
-     * @symbol ??0ItemInstance@@QEAA@AEBVItemStackBase@@@Z
-     */
     MCAPI ItemInstance(class ItemStackBase const &);
-    /**
-     * @symbol ?clone@ItemInstance@@QEBA?AV1@XZ
-     */
     MCAPI class ItemInstance clone() const;
-    /**
-     * @symbol ??4ItemInstance@@QEAAAEAV0@AEBV0@@Z
-     */
     MCAPI class ItemInstance & operator=(class ItemInstance const &);
 MCAPI static class ItemInstance const EMPTY_ITEM;
-    /**
-     * @symbol ?fromTag@ItemInstance@@SA?AV1@AEBVCompoundTag@@@Z
-     */
     MCAPI static class ItemInstance fromTag(class CompoundTag const &);
 
 //protected:
-    /**
-     * @symbol ??0ItemInstance@@IEAA@AEBVBlockLegacy@@HF@Z
-     */
     MCAPI ItemInstance(class BlockLegacy const &, int, short);
 
 protected:

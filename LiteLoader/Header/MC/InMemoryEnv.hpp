@@ -32,67 +32,21 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~InMemoryEnv();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?NewSequentialFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
-     */
     virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?NewRandomAccessFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
-     */
     virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?NewWritableFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-     */
     virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?NewAppendableFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
-     */
     virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?FileExists@InMemoryEnv@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual bool FileExists(std::string const &);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?GetChildren@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@Z
-     */
     virtual class leveldb::Status GetChildren(std::string const &, std::vector<std::string> *);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?DeleteFileA@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual class leveldb::Status DeleteFileA(std::string const &);
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?RenameFile@InMemoryEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     */
     virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol ?flushToPermanentStorage@InMemoryEnv@@UEAAXXZ
-     */
     virtual void flushToPermanentStorage();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYENV
 #endif
-    /**
-     * @symbol ??0InMemoryEnv@@QEAA@PEAVEnv@leveldb@@AEBVPath@Core@@@Z
-     */
     MCAPI InMemoryEnv(class leveldb::Env *, class Core::Path const &);
 
 //private:
-    /**
-     * @symbol ?_flushWithTransaction@InMemoryEnv@@AEAAXXZ
-     */
     MCAPI void _flushWithTransaction();
 
 private:

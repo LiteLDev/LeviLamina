@@ -31,40 +31,12 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     MCVAPI enum EventResult onServerInitializeEnd(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     MCVAPI enum EventResult onServerInitializeStart(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
-     */
     MCVAPI enum EventResult onServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     MCVAPI enum EventResult onServerResume(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     MCVAPI enum EventResult onServerSuspend(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
-     */
     MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
 #endif
 

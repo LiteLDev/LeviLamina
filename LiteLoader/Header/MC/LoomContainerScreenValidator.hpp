@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LoomContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMCONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0LoomContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI LoomContainerScreenValidator();
 
 };

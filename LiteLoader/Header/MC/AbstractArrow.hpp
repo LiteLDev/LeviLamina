@@ -32,204 +32,49 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@AbstractArrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?initializeComponents@AbstractArrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~AbstractArrow();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol ?lerpMotion@AbstractArrow@@UEAAXAEBVVec3@@@Z
-     */
     virtual void lerpMotion(class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 79
-     * @symbol ?getShadowHeightOffs@AbstractArrow@@UEAAMXZ
-     */
     virtual float getShadowHeightOffs();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@AbstractArrow@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 89
-     * @symbol ?playerTouch@AbstractArrow@@UEAAXAEAVPlayer@@@Z
-     */
     virtual void playerTouch(class Player &);
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 172
-     * @symbol ?getSourceUniqueID@AbstractArrow@@MEBA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getSourceUniqueID() const;
-    /**
-     * @note   Virtual function table index: 181
-     * @symbol ?canChangeDimensionsUsingPortal@AbstractArrow@@UEBA_NXZ
-     */
     virtual bool canChangeDimensionsUsingPortal() const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@AbstractArrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@AbstractArrow@@MEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 286
-     * @symbol ?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z
-     */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 287
-     * @symbol ?_playPickupSound@AbstractArrow@@MEAAXXZ
-     */
     virtual void _playPickupSound();
-    /**
-     * @note   Virtual function table index: 288
-     * @symbol ?_getPickupItem@ThrownTrident@@MEBA?AVItemStack@@XZ
-     */
     virtual class ItemStack _getPickupItem() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTARROW
 #endif
-    /**
-     * @symbol ??0AbstractArrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI AbstractArrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?isPlayerOwned@AbstractArrow@@QEBA_NXZ
-     */
     MCAPI bool isPlayerOwned() const;
-    /**
-     * @symbol ?setFavoredSlot@AbstractArrow@@QEAAXH@Z
-     */
     MCAPI void setFavoredSlot(int);
-    /**
-     * @symbol ?setIsCreative@AbstractArrow@@QEAAX_N@Z
-     */
     MCAPI void setIsCreative(bool);
 
 //protected:
-    /**
-     * @symbol ?_canPickup@AbstractArrow@@IEBA_NAEBVPlayer@@@Z
-     */
     MCAPI bool _canPickup(class Player const &) const;
 
 protected:

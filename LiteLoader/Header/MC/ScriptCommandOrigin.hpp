@@ -30,91 +30,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ScriptCommandOrigin();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRequestId@ScriptCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getRequestId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@ScriptCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getBlockPosition@ScriptCommandOrigin@@UEBA?AVBlockPos@@XZ
-     */
     virtual class BlockPos getBlockPosition() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getWorldPosition@ScriptCommandOrigin@@UEBA?AVVec3@@XZ
-     */
     virtual class Vec3 getWorldPosition() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getRotation@ScriptCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     */
     virtual class std::optional<class Vec2> getRotation() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getLevel@ScriptCommandOrigin@@UEBAPEAVLevel@@XZ
-     */
     virtual class Level * getLevel() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getDimension@ScriptCommandOrigin@@UEBAPEAVDimension@@XZ
-     */
     virtual class Dimension * getDimension() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getEntity@ScriptCommandOrigin@@UEBAPEAVActor@@XZ
-     */
     virtual class Actor * getEntity() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getPermissionsLevel@ScriptCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clone@ScriptCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?canUseCommandsWithoutCheatsEnabled@ScriptCommandOrigin@@UEBA_NXZ
-     */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?isSelectorExpansionAllowed@ScriptCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isSelectorExpansionAllowed() const;
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getOriginType@ScriptCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     */
     virtual enum CommandOriginType getOriginType() const;
-    /**
-     * @note   Virtual function table index: 26
-     * @symbol ?handleCommandOutputCallback@ScriptCommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z
-     */
     virtual void handleCommandOutputCallback(int, std::string &&, class Json::Value &&) const;
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol ?isValid@ScriptCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMANDORIGIN
 #endif
-    /**
-     * @symbol ??0ScriptCommandOrigin@@QEAA@AEAVServerLevel@@PEAVDimension@@V?$function@$$A6AXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z@std@@@Z
-     */
     MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>);
 
 };

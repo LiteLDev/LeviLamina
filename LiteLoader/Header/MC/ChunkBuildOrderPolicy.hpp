@@ -29,46 +29,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ChunkBuildOrderPolicy();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getChunkRebuildPriority@ChunkBuildOrderPolicy@@UEBAHAEBVChunkPos@@@Z
-     */
     virtual int getChunkRebuildPriority(class ChunkPos const &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?registerForUpdates@ChunkBuildOrderPolicy@@UEAAIXZ
-     */
     virtual unsigned int registerForUpdates();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?unregisterForUpdates@ChunkBuildOrderPolicy@@UEAAXI@Z
-     */
     virtual void unregisterForUpdates(unsigned int);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?setPlayerInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@AEBVVec3@@@Z
-     */
     virtual void setPlayerInfluence(unsigned int, class ChunkPos const &, class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?setTickingAreaInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@HH_N1@Z
-     */
     virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const &, int, int, bool, bool);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?updateInfluences@ChunkBuildOrderPolicy@@UEAAXXZ
-     */
     virtual void updateInfluences();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICY
 #endif
-    /**
-     * @symbol ??0ChunkBuildOrderPolicy@@QEAA@XZ
-     */
     MCAPI ChunkBuildOrderPolicy();
 
 };

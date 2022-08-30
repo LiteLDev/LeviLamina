@@ -31,72 +31,22 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HarvestFarmBlockGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@HarvestFarmBlockGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@HarvestFarmBlockGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@HarvestFarmBlockGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@HarvestFarmBlockGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@HarvestFarmBlockGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@HarvestFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?isValidTarget@HarvestFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARVESTFARMBLOCKGOAL
 #endif
-    /**
-     * @symbol ??0HarvestFarmBlockGoal@@QEAA@AEAVMob@@@Z
-     */
     MCAPI HarvestFarmBlockGoal(class Mob &);
 
 //protected:
-    /**
-     * @symbol ?trySowCrop@HarvestFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
 
 protected:

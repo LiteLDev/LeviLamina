@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTEXTACCESSOR
 #endif
-    /**
-     * @symbol ??1ContextAccessor@@QEAA@XZ
-     */
     MCAPI ~ContextAccessor();
 
 };

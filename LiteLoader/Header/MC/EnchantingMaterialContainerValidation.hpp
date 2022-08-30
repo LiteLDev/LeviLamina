@@ -31,55 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~EnchantingMaterialContainerValidation();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isItemAllowedInSlot@EnchantingMaterialContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getContainerOffset@EnchantingMaterialContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
-     */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTINGMATERIALCONTAINERVALIDATION
 #endif

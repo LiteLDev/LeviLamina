@@ -20,9 +20,6 @@ namespace GetRidingHeightUtility {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?getRidingHeight@GetRidingHeightUtility@@YAMAEBVSynchedActorData@@PEBURidingHeightComponent@@PEBUAdultRidingHeightOffsetComponent@@M@Z
-     */
     MCAPI float getRidingHeight(class SynchedActorData const &, struct RidingHeightComponent const *, struct AdultRidingHeightOffsetComponent const *, float);
 
 };

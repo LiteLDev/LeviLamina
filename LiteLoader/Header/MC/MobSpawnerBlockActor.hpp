@@ -31,90 +31,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MobSpawnerBlockActor();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?load@MobSpawnerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?save@MobSpawnerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     */
     virtual bool save(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?tick@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     virtual void tick(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?onRemoved@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     virtual void onRemoved(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol 
-     */
     virtual void __unk_vfn_28();
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 35
-     * @symbol ?_getUpdatePacket@MobSpawnerBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol ?_onUpdatePacket@MobSpawnerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERBLOCKACTOR
 #endif
-    /**
-     * @symbol ??0MobSpawnerBlockActor@@QEAA@AEBVBlockPos@@@Z
-     */
     MCAPI MobSpawnerBlockActor(class BlockPos const &);
-    /**
-     * @symbol ?getSpawner@MobSpawnerBlockActor@@QEAAAEAVBaseMobSpawner@@XZ
-     */
     MCAPI class BaseMobSpawner & getSpawner();
 
 };

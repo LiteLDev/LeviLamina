@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPONTRIGGER
 #endif
-    /**
-     * @symbol ??1OnStepOnTrigger@@QEAA@XZ
-     */
     MCAPI ~OnStepOnTrigger();
 
 };

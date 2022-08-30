@@ -30,36 +30,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ImpactDamageSubcomponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?readfromJSON@ImpactDamageSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writetoJSON@ImpactDamageSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void writetoJSON(class Json::Value &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?doOnHitEffect@ImpactDamageSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@ImpactDamageSubcomponent@@UEAAPEBDXZ
-     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPACTDAMAGESUBCOMPONENT
 #endif
-    /**
-     * @symbol ??0ImpactDamageSubcomponent@@QEAA@XZ
-     */
     MCAPI ImpactDamageSubcomponent();
 
 };

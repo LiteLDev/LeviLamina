@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONEWAYPHYSICSBLOCKSCOMPONENT
 #endif
-    /**
-     * @symbol ??1OnewayPhysicsBlocksComponent@@QEAA@XZ
-     */
     MCAPI ~OnewayPhysicsBlocksComponent();
 
 };

@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEMETADATA
 #endif
-    /**
-     * @symbol ??1BiomeMetadata@@QEAA@XZ
-     */
     MCAPI ~BiomeMetadata();
 
 };

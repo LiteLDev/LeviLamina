@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SHStartPiece();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getType@SHStartPiece@@UEBA?AW4StructurePieceType@@XZ
-     */
     virtual enum StructurePieceType getType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTARTPIECE
 #endif
-    /**
-     * @symbol ??0SHStartPiece@@QEAA@HAEAVRandom@@HH@Z
-     */
     MCAPI SHStartPiece(int, class Random &, int, int);
 
 };

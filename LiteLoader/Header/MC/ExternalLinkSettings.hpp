@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALLINKSETTINGS
 #endif
-    /**
-     * @symbol ??1ExternalLinkSettings@@QEAA@XZ
-     */
     MCAPI ~ExternalLinkSettings();
 
 };

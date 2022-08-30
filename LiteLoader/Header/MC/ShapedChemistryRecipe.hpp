@@ -31,20 +31,8 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ShapedChemistryRecipe();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?matches@ShapedChemistryRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
-     */
     virtual bool matches(class CraftingContainer &, class Level &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getId@ShapedChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
-     */
     virtual class mce::UUID const & getId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPEDCHEMISTRYRECIPE
 #endif

@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTITEM
 #endif
-    /**
-     * @symbol ?setReplacementItemDescriptor@BoostItem@@QEAAXAEBVItemDescriptor@@@Z
-     */
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const &);
-    /**
-     * @symbol ??1BoostItem@@QEAA@XZ
-     */
     MCAPI ~BoostItem();
 
 };

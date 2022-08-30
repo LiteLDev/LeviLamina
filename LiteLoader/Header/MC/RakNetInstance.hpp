@@ -42,162 +42,40 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNETINSTANCE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onDisable@RakNetInstance@@EEAAXXZ
-     */
     MCVAPI void _onDisable();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onEnable@RakNetInstance@@EEAAXXZ
-     */
     MCVAPI void _onEnable();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?addConnectionStateListener@RakNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-     */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?connect@RakNetInstance@@UEAA_NPEAX@Z
-     */
     MCVAPI bool connect(void *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?disconnect@RakNetInstance@@UEAAXXZ
-     */
     MCVAPI void disconnect();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getConnectedGameInfo@RakNetInstance@@UEBAAEBVGameConnectionInfo@Social@@XZ
-     */
     MCVAPI class Social::GameConnectionInfo const & getConnectedGameInfo() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getIPv4Port@RakNetInstance@@UEBAGXZ
-     */
     MCVAPI unsigned short getIPv4Port() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getIPv6Port@RakNetInstance@@UEBAGXZ
-     */
     MCVAPI unsigned short getIPv6Port() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLocalIp@RakNetInstance@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCVAPI std::string getLocalIp();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLocalIps@RakNetInstance@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     */
     MCVAPI std::vector<std::string> getLocalIps() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getNatPunchInfo@RakNetInstance@@UEBA?AUNatPunchInfo@Connector@@XZ
-     */
     MCVAPI struct Connector::NatPunchInfo getNatPunchInfo() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getPeer@RakNetInstance@@UEAAPEAVRakPeerInterface@RakNet@@XZ
-     */
     MCVAPI class RakNet::RakPeerInterface * getPeer();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getPeer@RakNetInstance@@UEBAPEBVRakPeerInterface@RakNet@@XZ
-     */
     MCVAPI class RakNet::RakPeerInterface const * getPeer() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getPort@RakNetInstance@@UEBAGXZ
-     */
     MCVAPI unsigned short getPort() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getRefinedLocalIps@RakNetInstance@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
-     */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getTransportIdentifier@RakNetInstance@@UEBA_KXZ
-     */
     MCVAPI unsigned __int64 getTransportIdentifier() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?host@RakNetInstance@@UEAA_NAEBUConnectionDefinition@@@Z
-     */
     MCVAPI bool host(struct ConnectionDefinition const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isIPv4Supported@RakNetInstance@@UEBA_NXZ
-     */
     MCVAPI bool isIPv4Supported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isIPv6Supported@RakNetInstance@@UEBA_NXZ
-     */
     MCVAPI bool isIPv6Supported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isServer@RakNetInstance@@UEBA_NXZ
-     */
     MCVAPI bool isServer() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?removeConnectionStateListener@RakNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z
-     */
     MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?runEvents@RakNetInstance@@UEAAXXZ
-     */
     MCVAPI void runEvents();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setupNatPunch@RakNetInstance@@UEAAX_N@Z
-     */
     MCVAPI void setupNatPunch(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?startNatPunchingClient@RakNetInstance@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     */
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tick@RakNetInstance@@UEAAXXZ
-     */
     MCVAPI void tick();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1RakNetInstance@@UEAA@XZ
-     */
     MCVAPI ~RakNetInstance();
 #endif
-    /**
-     * @symbol ??0RakNetInstance@@QEAA@AEAVConnectionCallbacks@0@AEAVIPSupportInterface@RakPeerHelper@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
-     */
     MCAPI RakNetInstance(class RakNetInstance::ConnectionCallbacks &, class RakPeerHelper::IPSupportInterface &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
 
 //private:
-    /**
-     * @symbol ?_changeNatState@RakNetInstance@@AEAAXW4NATState@1@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const &);
-    /**
-     * @symbol ?_createPeer@RakNetInstance@@AEAA?AV?$shared_ptr@VRakNetNetworkPeer@RakNetInstance@@@std@@AEBVNetworkIdentifier@@@Z
-     */
     MCAPI class std::shared_ptr<class RakNetInstance::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const &);
-    /**
-     * @symbol ?_openNatConnection@RakNetInstance@@AEAAXAEBUSystemAddress@RakNet@@@Z
-     */
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const &);
-    /**
-     * @symbol ?_pingNatService@RakNetInstance@@AEAAX_N@Z
-     */
     MCAPI void _pingNatService(bool);
-    /**
-     * @symbol ?_storeLocalIP@RakNetInstance@@AEAAXXZ
-     */
     MCAPI void _storeLocalIP();
 
 private:

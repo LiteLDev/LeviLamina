@@ -32,338 +32,77 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@Horse@@EEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~Horse();
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol ?getInterpolatedRidingOffset@Horse@@UEBA?AVVec3@@M@Z
-     */
     virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@Horse@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol ?positionPassenger@Horse@@UEAAXAEAVActor@@M@Z
-     */
     virtual void positionPassenger(class Actor &, float);
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@Horse@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 92
-     * @symbol ?isImmobile@Horse@@MEBA_NXZ
-     */
     virtual bool isImmobile() const;
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 122
-     * @symbol ?onFailedTame@Horse@@UEAAXXZ
-     */
     virtual void onFailedTame();
-    /**
-     * @note   Virtual function table index: 126
-     * @symbol ?setStanding@Horse@@UEAAX_N@Z
-     */
     virtual void setStanding(bool);
-    /**
-     * @note   Virtual function table index: 141
-     * @symbol ?feed@Horse@@UEAAXH@Z
-     */
     virtual void feed(int);
-    /**
-     * @note   Virtual function table index: 142
-     * @symbol ?handleEntityEvent@Horse@@UEAAXW4ActorEvent@@H@Z
-     */
     virtual void handleEntityEvent(enum ActorEvent, int);
-    /**
-     * @note   Virtual function table index: 174
-     * @symbol ?canFreeze@Horse@@UEBA_NXZ
-     */
     virtual bool canFreeze() const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 184
-     * @symbol ?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getControllingPlayer() const;
-    /**
-     * @note   Virtual function table index: 186
-     * @symbol ?causeFallDamage@Horse@@MEAAXMMVActorDamageSource@@@Z
-     */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
-    /**
-     * @note   Virtual function table index: 187
-     * @symbol ?handleFallDistanceOnServer@Horse@@MEAAXMM_N@Z
-     */
     virtual void handleFallDistanceOnServer(float, float, bool);
-    /**
-     * @note   Virtual function table index: 191
-     * @symbol ?onSynchedDataUpdate@Horse@@UEAAXH@Z
-     */
     virtual void onSynchedDataUpdate(int);
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 219
-     * @symbol ?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z
-     */
     virtual void openContainerComponent(class Player &);
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 253
-     * @symbol ?die@Horse@@UEAAXAEBVActorDamageSource@@@Z
-     */
     virtual void die(class ActorDamageSource const &);
-    /**
-     * @note   Virtual function table index: 267
-     * @symbol ?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z
-     */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 270
-     * @symbol ?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 275
-     * @symbol ?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
-     */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 297
-     * @symbol ?travel@Horse@@UEAAXMMM@Z
-     */
     virtual void travel(float, float, float);
-    /**
-     * @note   Virtual function table index: 300
-     * @symbol ?aiStep@Horse@@UEAAXXZ
-     */
     virtual void aiStep();
-    /**
-     * @note   Virtual function table index: 313
-     * @symbol 
-     */
     virtual void __unk_vfn_313();
-    /**
-     * @note   Virtual function table index: 317
-     * @symbol 
-     */
     virtual void __unk_vfn_317();
-    /**
-     * @note   Virtual function table index: 322
-     * @symbol ?getArmorValue@Horse@@UEBAHXZ
-     */
     virtual int getArmorValue() const;
-    /**
-     * @note   Virtual function table index: 351
-     * @symbol 
-     */
     virtual void __unk_vfn_351();
-    /**
-     * @note   Virtual function table index: 365
-     * @symbol 
-     */
     virtual void __unk_vfn_365();
-    /**
-     * @note   Virtual function table index: 367
-     * @symbol ?setType@Horse@@UEAAXH@Z
-     */
     virtual void setType(int);
-    /**
-     * @note   Virtual function table index: 368
-     * @symbol ?getType@Horse@@UEBAHXZ
-     */
     virtual int getType() const;
-    /**
-     * @note   Virtual function table index: 369
-     * @symbol ?setHorseEating@Horse@@UEAAX_N@Z
-     */
     virtual void setHorseEating(bool);
-    /**
-     * @note   Virtual function table index: 370
-     * @symbol ?getStandAnim@Horse@@UEBAMM@Z
-     */
     virtual float getStandAnim(float) const;
-    /**
-     * @note   Virtual function table index: 371
-     * @symbol ?isAdult@Horse@@UEBA_NXZ
-     */
     virtual bool isAdult() const;
-    /**
-     * @note   Virtual function table index: 372
-     * @symbol ?isHorseEating@Horse@@UEBA_NXZ
-     */
     virtual bool isHorseEating() const;
-    /**
-     * @note   Virtual function table index: 373
-     * @symbol ?isMouthOpen@Horse@@UEBA_NXZ
-     */
     virtual bool isMouthOpen() const;
-    /**
-     * @note   Virtual function table index: 374
-     * @symbol ?isTailMoving@Horse@@UEBA_NXZ
-     */
     virtual bool isTailMoving() const;
-    /**
-     * @note   Virtual function table index: 375
-     * @symbol ?makeMad@Horse@@UEAAXXZ
-     */
     virtual void makeMad();
-    /**
-     * @note   Virtual function table index: 376
-     * @symbol ?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z
-     */
     virtual bool tameToPlayer(class Player &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?useNewAi@Horse@@MEBA_NXZ
-     */
     MCVAPI bool useNewAi() const;
 #endif
-    /**
-     * @symbol ??0Horse@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI Horse(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?postNormalTick@Horse@@QEAAXXZ
-     */
     MCAPI void postNormalTick();
-    /**
-     * @symbol ?postTravel@Horse@@QEAAXPEAVActor@@_NW4HorsePostTravelType@@@Z
-     */
     MCAPI void postTravel(class Actor *, bool, enum HorsePostTravelType);
 MCAPI static int const DONKEY_CHEST_COUNT;
-    /**
-     * @symbol ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBVVec2@@MMM@Z
-     */
     MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
 
 //private:
-    /**
-     * @symbol ?openMouth@Horse@@AEAAXXZ
-     */
     MCAPI void openMouth();
-    /**
-     * @symbol ?setHorseFlag@Horse@@AEAAXW4HorseFlags@@_N@Z
-     */
     MCAPI void setHorseFlag(enum HorseFlags, bool);
-    /**
-     * @symbol ?setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
-     */
     MCAPI bool setHorseType(enum ActorType &);
 
 private:

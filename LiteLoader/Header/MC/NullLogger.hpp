@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NullLogger();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?Logv@NullLogger@@UEAAXPEBDPEAD@Z
-     */
     virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLLOGGER
 #endif

@@ -31,36 +31,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TridentChannelingEnchant();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isCompatibleWith@TridentChannelingEnchant@@UEBA_NW4Type@Enchant@@@Z
-     */
     virtual bool isCompatibleWith(enum Enchant::Type) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getMinCost@TridentChannelingEnchant@@UEBAHH@Z
-     */
     virtual int getMinCost(int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getMaxCost@TridentChannelingEnchant@@UEBAHH@Z
-     */
     virtual int getMaxCost(int) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getMaxLevel@TridentChannelingEnchant@@UEBAHXZ
-     */
     virtual int getMaxLevel() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTCHANNELINGENCHANT
 #endif
-    /**
-     * @symbol ??0TridentChannelingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     */
     MCAPI TridentChannelingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 };

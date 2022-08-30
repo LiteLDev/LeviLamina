@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKENDRESETSYSTEM
 #endif
-    /**
-     * @symbol ?createSystem@TickEndResetSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

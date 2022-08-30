@@ -28,45 +28,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BiomeSource3d();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?fillBiomes@BiomeSource3d@@UEBAXAEAVLevelChunk@@AEBVChunkLocalNoiseCache@@@Z
-     */
     virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getBiomeArea@BiomeSource3d@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-     */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getBiomeArea@BiomeSource3d@@UEBA?AVBiomeArea@@AEBVBoundingBox@@IAEBUGetBiomeOptions@@@Z
-     */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int, struct GetBiomeOptions const &) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?containsOnly@BiomeSource3d@@UEBA_NHHHHV?$span@$$CBH$0?0@gsl@@@Z
-     */
     virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getBiome@BiomeSource3d@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-     */
     virtual class Biome const * getBiome(class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getBiome@BiomeSource3d@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
-     */
     virtual class Biome const * getBiome(struct GetBiomeOptions const &) const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getBiome@BiomeSource3d@@UEBAPEBVBiome@@HHH@Z
-     */
     virtual class Biome const * getBiome(int, int, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMESOURCE3D
 #endif

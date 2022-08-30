@@ -30,57 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SwimWanderGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@SwimWanderGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@SwimWanderGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@SwimWanderGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@SwimWanderGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@SwimWanderGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWANDERGOAL
 #endif
-    /**
-     * @symbol ??0SwimWanderGoal@@QEAA@AEAVMob@@@Z
-     */
     MCAPI SwimWanderGoal(class Mob &);
 
 //protected:
-    /**
-     * @symbol ?_setWantedPosition@SwimWanderGoal@@IEAA_NXZ
-     */
     MCAPI bool _setWantedPosition();
 
 protected:

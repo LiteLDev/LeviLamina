@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDATA
 #endif
-    /**
-     * @symbol ??0SlotData@@QEAA@XZ
-     */
     MCAPI SlotData();
-    /**
-     * @symbol ??1SlotData@@QEAA@XZ
-     */
     MCAPI ~SlotData();
 MCAPI static struct SlotData UNKNOWN_LOCATION;
 

@@ -30,188 +30,46 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TickingArea();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ
-     */
     virtual class mce::UUID const & getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getEntityId@TickingArea@@UEBAAEBUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID const & getEntityId() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?isEntityOwned@TickingArea@@UEBA_NXZ
-     */
     virtual bool isEntityOwned() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getBounds@TickingArea@@UEBAAEBUBounds@@XZ
-     */
     virtual struct Bounds const & getBounds() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?isAlwaysActive@TickingArea@@UEBA_NXZ
-     */
     virtual bool isAlwaysActive() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getMaxDistToPlayers@TickingArea@@UEBAMXZ
-     */
     virtual float getMaxDistToPlayers() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?getDescription@TickingArea@@UEBA?AUTickingAreaDescription@@XZ
-     */
     virtual struct TickingAreaDescription getDescription() const;
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?getLoadMode@TickingArea@@UEBA?AW4TickingAreaLoadMode@@XZ
-     */
     virtual enum TickingAreaLoadMode getLoadMode() const;
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?setLoadMode@TickingArea@@UEAAXW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
-     */
     virtual void setLoadMode(enum TickingAreaLoadMode, class LevelStorage &);
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?isPreloadDone@TickingArea@@UEBA_NXZ
-     */
     virtual bool isPreloadDone() const;
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?tick@TickingArea@@UEAAXAEBUTick@@_N@Z
-     */
     virtual void tick(struct Tick const &, bool);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?tickSeasons@TickingArea@@UEAAXAEAVRandom@@@Z
-     */
     virtual void tickSeasons(class Random &);
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?updatePosition@TickingArea@@UEAAXAEBVVec3@@@Z
-     */
     virtual void updatePosition(class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol ?updateAndCenter@TickingArea@@UEAAXAEAVLevelStorage@@UTick@@@Z
-     */
     virtual void updateAndCenter(class LevelStorage &, struct Tick);
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol ?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z
-     */
     virtual class Actor * findOwner(unsigned char &);
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?entityHasBeenFound@TickingArea@@UEBA_NXZ
-     */
     virtual bool entityHasBeenFound() const;
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?setEntityFound@TickingArea@@UEAAXXZ
-     */
     virtual void setEntityFound();
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?isRemoved@TickingArea@@UEAA_NXZ
-     */
     virtual bool isRemoved();
-    /**
-     * @note   Virtual function table index: 24
-     * @symbol ?remove@TickingArea@@UEAAXAEAVLevelStorage@@@Z
-     */
     virtual void remove(class LevelStorage &);
-    /**
-     * @note   Virtual function table index: 25
-     * @symbol ?onComponentChanged@TickingArea@@UEAAXIM_NAEAVLevelStorage@@@Z
-     */
     virtual void onComponentChanged(unsigned int, float, bool, class LevelStorage &);
-    /**
-     * @note   Virtual function table index: 26
-     * @symbol ?updateBlockSourceCurrentTick@TickingArea@@UEAAXAEBUTick@@@Z
-     */
     virtual void updateBlockSourceCurrentTick(struct Tick const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREA
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ
-     */
     MCVAPI class BlockSource & getBlockSource();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getBlockSource@TickingArea@@UEBAAEBVBlockSource@@XZ
-     */
     MCVAPI class BlockSource const & getBlockSource() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ
-     */
     MCVAPI class ITickingAreaView & getView();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ
-     */
     MCVAPI class ITickingAreaView const & getView() const;
 #endif
-    /**
-     * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
-     */
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);
-    /**
-     * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBUBounds@@UActorUniqueID@@M@Z
-     */
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
-    /**
-     * @symbol ??0TickingArea@@QEAA@AEAVDimension@@VUUID@mce@@AEBUBounds@@UActorUniqueID@@@Z
-     */
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
 
 //private:
-    /**
-     * @symbol ??0TickingArea@@AEAA@AEAVDimension@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@AEBUBounds@@_NM5W4TickingAreaLoadMode@@@Z
-     */
     MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct ActorUniqueID, struct Bounds const &, bool, float, bool, enum TickingAreaLoadMode);
-    /**
-     * @symbol ?_center@TickingArea@@AEAAXAEAVLevelStorage@@@Z
-     */
     MCAPI void _center(class LevelStorage &);
-    /**
-     * @symbol ?_save@TickingArea@@AEAAXAEAVLevelStorage@@@Z
-     */
     MCAPI void _save(class LevelStorage &);
 
 private:

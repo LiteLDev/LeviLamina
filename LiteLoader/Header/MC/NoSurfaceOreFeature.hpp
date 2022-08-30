@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NoSurfaceOreFeature();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?place@NoSurfaceOreFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOSURFACEOREFEATURE
 #endif
-    /**
-     * @symbol ??0NoSurfaceOreFeature@@QEAA@UIntRange@@AEBVBlockDescriptor@@11@Z
-     */
     MCAPI NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const &, class BlockDescriptor const &, class BlockDescriptor const &);
 
 };

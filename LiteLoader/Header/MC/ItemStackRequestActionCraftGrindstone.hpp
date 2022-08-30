@@ -29,50 +29,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemStackRequestActionCraftGrindstone();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?_write@ItemStackRequestActionCraftGrindstone@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void _write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?_read@ItemStackRequestActionCraftGrindstone@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     */
     virtual bool _read(class ReadOnlyBinaryStream &);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getRecipeNetId@ItemStackRequestActionCraftGrindstone@@UEBAAEBUItemStackNetIdVariant@@XZ
-     */
     virtual struct ItemStackNetIdVariant const & getRecipeNetId() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTGRINDSTONE
 #endif
-    /**
-     * @symbol ??0ItemStackRequestActionCraftGrindstone@@QEAA@XZ
-     */
     MCAPI ItemStackRequestActionCraftGrindstone();
-    /**
-     * @symbol ?getRepairCost@ItemStackRequestActionCraftGrindstone@@QEBAHXZ
-     */
     MCAPI int getRepairCost() const;
 
 };

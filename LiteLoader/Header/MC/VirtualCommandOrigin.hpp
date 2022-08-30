@@ -32,147 +32,36 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~VirtualCommandOrigin();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRequestId@VirtualCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getRequestId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@VirtualCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getBlockPosition@VirtualCommandOrigin@@UEBA?AVBlockPos@@XZ
-     */
     virtual class BlockPos getBlockPosition() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getWorldPosition@VirtualCommandOrigin@@UEBA?AVVec3@@XZ
-     */
     virtual class Vec3 getWorldPosition() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getRotation@VirtualCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
-     */
     virtual class std::optional<class Vec2> getRotation() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getLevel@VirtualCommandOrigin@@UEBAPEAVLevel@@XZ
-     */
     virtual class Level * getLevel() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getDimension@VirtualCommandOrigin@@UEBAPEAVDimension@@XZ
-     */
     virtual class Dimension * getDimension() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getEntity@VirtualCommandOrigin@@UEBAPEAVActor@@XZ
-     */
     virtual class Actor * getEntity() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clone@VirtualCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?hasChatPerms@VirtualCommandOrigin@@UEBA_NXZ
-     */
     virtual bool hasChatPerms() const;
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?hasTellPerms@VirtualCommandOrigin@@UEBA_NXZ
-     */
     virtual bool hasTellPerms() const;
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?canUseAbility@VirtualCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
-     */
     virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?canUseCommandsWithoutCheatsEnabled@VirtualCommandOrigin@@UEBA_NXZ
-     */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?isSelectorExpansionAllowed@VirtualCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isSelectorExpansionAllowed() const;
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol ?getSourceId@VirtualCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
-     */
     virtual class NetworkIdentifier const & getSourceId() const;
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?getOutputReceiver@VirtualCommandOrigin@@UEBAAEBVCommandOrigin@@XZ
-     */
     virtual class CommandOrigin const & getOutputReceiver() const;
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?getIdentity@VirtualCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
-     */
     virtual struct CommandOriginIdentity getIdentity() const;
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     */
     virtual enum CommandOriginType getOriginType() const;
-    /**
-     * @note   Virtual function table index: 27
-     * @symbol ?updateValues@VirtualCommandOrigin@@UEAAXXZ
-     */
     virtual void updateValues();
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol ?getExecutePosition@VirtualCommandOrigin@@UEBA?BVVec3@@HAEBVCommandPositionFloat@@@Z
-     */
     virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const &) const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol ?serialize@VirtualCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     */
     virtual class CompoundTag serialize() const;
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol ?isValid@VirtualCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIRTUALCOMMANDORIGIN
 #endif
-    /**
-     * @symbol ??0VirtualCommandOrigin@@QEAA@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@0AEBVCommandPositionFloat@@H@Z
-     */
     MCAPI VirtualCommandOrigin(std::unique_ptr<class CommandOrigin>, std::unique_ptr<class CommandOrigin>, class CommandPositionFloat const &, int);
-    /**
-     * @symbol ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@AEAVActor@@AEBVCommandPositionFloat@@H@Z
-     */
     MCAPI VirtualCommandOrigin(class CommandOrigin const &, class Actor &, class CommandPositionFloat const &, int);
-    /**
-     * @symbol ??0VirtualCommandOrigin@@QEAA@AEBVCommandOrigin@@0AEBVCommandPositionFloat@@H@Z
-     */
     MCAPI VirtualCommandOrigin(class CommandOrigin const &, class CommandOrigin const &, class CommandPositionFloat const &, int);
-    /**
-     * @symbol ?getOrigin@VirtualCommandOrigin@@QEBAPEAVCommandOrigin@@XZ
-     */
     MCAPI class CommandOrigin * getOrigin() const;
-    /**
-     * @symbol ?load@VirtualCommandOrigin@@SA?AV?$unique_ptr@VVirtualCommandOrigin@@U?$default_delete@VVirtualCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
-     */
     MCAPI static std::unique_ptr<class VirtualCommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 
 };

@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETPOINT
 #endif
-    /**
-     * @symbol ??0TargetPoint@@QEAA@MMMMMM@Z
-     */
     MCAPI TargetPoint(float, float, float, float, float, float);
 
 };

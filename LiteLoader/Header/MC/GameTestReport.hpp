@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTREPORT
 #endif
-    /**
-     * @symbol ??1GameTestReport@@QEAA@XZ
-     */
     MCAPI ~GameTestReport();
-    /**
-     * @symbol ?bindType@GameTestReport@@SAXXZ
-     */
     MCAPI static void bindType();
 
 };

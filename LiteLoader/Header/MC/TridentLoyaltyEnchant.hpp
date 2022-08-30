@@ -31,51 +31,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TridentLoyaltyEnchant();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getMinCost@TridentLoyaltyEnchant@@UEBAHH@Z
-     */
     virtual int getMinCost(int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getMaxCost@TridentLoyaltyEnchant@@UEBAHH@Z
-     */
     virtual int getMaxCost(int) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getMaxLevel@TridentLoyaltyEnchant@@UEBAHXZ
-     */
     virtual int getMaxLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol 
-     */
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTLOYALTYENCHANT
 #endif
-    /**
-     * @symbol ??0TridentLoyaltyEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     */
     MCAPI TridentLoyaltyEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 };

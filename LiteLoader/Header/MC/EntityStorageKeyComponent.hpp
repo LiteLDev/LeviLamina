@@ -30,21 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSTORAGEKEYCOMPONENT
 #endif
-    /**
-     * @symbol ??0EntityStorageKeyComponent@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI EntityStorageKeyComponent(std::string const &);
-    /**
-     * @symbol ?addAdditionalSaveData@EntityStorageKeyComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
-     */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
-    /**
-     * @symbol ?readAdditionalSaveData@EntityStorageKeyComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
-     */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
-    /**
-     * @symbol ??1EntityStorageKeyComponent@@QEAA@XZ
-     */
     MCAPI ~EntityStorageKeyComponent();
 
 };

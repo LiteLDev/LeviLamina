@@ -31,51 +31,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FileSystemFileAccess();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?fopen@FileSystemFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void * fopen(class Core::Path const &, std::string const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?fclose@FileSystemFileAccess@@UEAAHPEAX@Z
-     */
     virtual int fclose(void *);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?fseek@FileSystemFileAccess@@UEAAHPEAX_JH@Z
-     */
     virtual int fseek(void *, __int64, int);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?ftell@FileSystemFileAccess@@UEAA_JPEAX@Z
-     */
     virtual __int64 ftell(void *);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getReadInterface@FileSystemFileAccess@@UEBAPEBVIFileReadAccess@@XZ
-     */
     virtual class IFileReadAccess const * getReadInterface() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?getWriteInterface@FileSystemFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
-     */
     virtual class IFileWriteAccess * getWriteInterface();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?unload@FileSystemFileAccess@@UEAAXXZ
-     */
     virtual void unload();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILESYSTEMFILEACCESS
 #endif
-    /**
-     * @symbol ??0FileSystemFileAccess@@QEAA@W4FileSystemMode@@@Z
-     */
     MCAPI FileSystemFileAccess(enum FileSystemMode);
 
 };

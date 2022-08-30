@@ -33,17 +33,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIBEABLEDEFINITION
 #endif
-    /**
-     * @symbol ?addBribeItem@BribeableDefinition@@QEAAXAEBVItemDescriptor@@@Z
-     */
     MCAPI void addBribeItem(class ItemDescriptor const &);
-    /**
-     * @symbol ?initialize@BribeableDefinition@@QEAAXAEAVEntityContext@@AEAVBribeableComponent@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class BribeableComponent &);
-    /**
-     * @symbol ?buildSchema@BribeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBribeableDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition>> &);
 
 };

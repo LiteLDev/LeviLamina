@@ -31,51 +31,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BatchedNetworkPeer();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?sendPacket@BatchedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
-     */
     virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?receivePacket@BatchedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
-     */
     virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getNetworkStatus@BatchedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
-     */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?update@BatchedNetworkPeer@@UEAAXXZ
-     */
     virtual void update();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?flush@BatchedNetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
-     */
     virtual void flush(class std::function<void (void)> &&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BATCHEDNETWORKPEER
 #endif
-    /**
-     * @symbol ??0BatchedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@AEAVScheduler@@@Z
-     */
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
-    /**
-     * @symbol ?setAsyncEnabled@BatchedNetworkPeer@@QEAAX_N@Z
-     */
     MCAPI void setAsyncEnabled(bool);
 
 //private:
-    /**
-     * @symbol ?_startSendTask@BatchedNetworkPeer@@AEAAXXZ
-     */
     MCAPI void _startSendTask();
 
 private:

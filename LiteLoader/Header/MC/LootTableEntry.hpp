@@ -31,16 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?_createItem@LootTableEntry@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
-     */
     virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLEENTRY
 #endif
-    /**
-     * @symbol ?deserialize@LootTableEntry@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@VValue@Json@@@Z
-     */
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value);
 
 };

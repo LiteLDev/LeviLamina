@@ -20,9 +20,6 @@ namespace JumpPreventionUtility {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?getJumpPrevention@JumpPreventionUtility@@YA?AUJumpPreventionResult@@AEBVAABB@@VBlockPos@@AEBVIConstBlockSource@@@Z
-     */
     MCAPI struct JumpPreventionResult getJumpPrevention(class AABB const &, class BlockPos, class IConstBlockSource const &);
 
 };

@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LevelDbLogger();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?Logv@LevelDbLogger@@EEAAXPEBDPEAD@Z
-     */
     virtual void Logv(char const *, char *);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBLOGGER
 #endif

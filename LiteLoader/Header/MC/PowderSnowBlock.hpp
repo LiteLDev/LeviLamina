@@ -31,293 +31,65 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PowderSnowBlock();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getCollisionShape@PowderSnowBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@V?$optional_ref@$$CBVGetCollisionShapeInterface@@@@@Z
-     */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?getAABB@PowderSnowBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
-     */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?canProvideSupport@PowderSnowBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
-     */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
-    /**
-     * @note   Virtual function table index: 25
-     * @symbol ?canConnect@PowderSnowBlock@@UEBA_NAEBVBlock@@E0@Z
-     */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 31
-     * @symbol ?isClimbable@PowderSnowBlock@@UEBA_NAEBUIActorMovementProxy@@@Z
-     */
     virtual bool isClimbable(struct IActorMovementProxy const &) const;
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 35
-     * @symbol ?isWaterBlocking@PowderSnowBlock@@UEBA_NXZ
-     */
     virtual bool isWaterBlocking() const;
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol 
-     */
     virtual void __unk_vfn_36();
-    /**
-     * @note   Virtual function table index: 37
-     * @symbol 
-     */
     virtual void __unk_vfn_37();
-    /**
-     * @note   Virtual function table index: 38
-     * @symbol 
-     */
     virtual void __unk_vfn_38();
-    /**
-     * @note   Virtual function table index: 39
-     * @symbol 
-     */
     virtual void __unk_vfn_39();
-    /**
-     * @note   Virtual function table index: 40
-     * @symbol 
-     */
     virtual void __unk_vfn_40();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 42
-     * @symbol 
-     */
     virtual void __unk_vfn_42();
-    /**
-     * @note   Virtual function table index: 44
-     * @symbol 
-     */
     virtual void __unk_vfn_44();
-    /**
-     * @note   Virtual function table index: 45
-     * @symbol 
-     */
     virtual void __unk_vfn_45();
-    /**
-     * @note   Virtual function table index: 46
-     * @symbol 
-     */
     virtual void __unk_vfn_46();
-    /**
-     * @note   Virtual function table index: 47
-     * @symbol 
-     */
     virtual void __unk_vfn_47();
-    /**
-     * @note   Virtual function table index: 48
-     * @symbol 
-     */
     virtual void __unk_vfn_48();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol 
-     */
     virtual void __unk_vfn_49();
-    /**
-     * @note   Virtual function table index: 53
-     * @symbol ?canBeAscendedByJumping@PowderSnowBlock@@UEBA_NAEBVActor@@AEBVBlockPos@@@Z
-     */
     virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: 59
-     * @symbol 
-     */
     virtual void __unk_vfn_59();
-    /**
-     * @note   Virtual function table index: 60
-     * @symbol 
-     */
     virtual void __unk_vfn_60();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol ?canContainLiquid@PowderSnowBlock@@UEBA_NXZ
-     */
     virtual bool canContainLiquid() const;
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 94
-     * @symbol ?breaksFallingBlocks@PowderSnowBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
-     */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
-    /**
-     * @note   Virtual function table index: 100
-     * @symbol ?getResourceCount@PowderSnowBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
-     */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
-    /**
-     * @note   Virtual function table index: 101
-     * @symbol ?getResourceItem@PowderSnowBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
-     */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
-    /**
-     * @note   Virtual function table index: 102
-     * @symbol ?asItemInstance@PowderSnowBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /**
-     * @note   Virtual function table index: 104
-     * @symbol ?trySpawnResourcesOnExplosion@PowderSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MH@Z
-     */
     virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
-    /**
-     * @note   Virtual function table index: 105
-     * @symbol 
-     */
     virtual void __unk_vfn_105();
-    /**
-     * @note   Virtual function table index: 113
-     * @symbol ?entityInside@PowderSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z
-     */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
-    /**
-     * @note   Virtual function table index: 124
-     * @symbol 
-     */
     virtual void __unk_vfn_124();
-    /**
-     * @note   Virtual function table index: 126
-     * @symbol 
-     */
     virtual void __unk_vfn_126();
-    /**
-     * @note   Virtual function table index: 127
-     * @symbol 
-     */
     virtual void __unk_vfn_127();
-    /**
-     * @note   Virtual function table index: 132
-     * @symbol 
-     */
     virtual void __unk_vfn_132();
-    /**
-     * @note   Virtual function table index: 148
-     * @symbol 
-     */
     virtual void __unk_vfn_148();
-    /**
-     * @note   Virtual function table index: 157
-     * @symbol 
-     */
     virtual void __unk_vfn_157();
-    /**
-     * @note   Virtual function table index: 168
-     * @symbol 
-     */
     virtual void __unk_vfn_168();
-    /**
-     * @note   Virtual function table index: 169
-     * @symbol 
-     */
     virtual void __unk_vfn_169();
-    /**
-     * @note   Virtual function table index: 170
-     * @symbol 
-     */
     virtual void __unk_vfn_170();
-    /**
-     * @note   Virtual function table index: 172
-     * @symbol ?onFallOn@PowderSnowBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@M@Z
-     */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
-    /**
-     * @note   Virtual function table index: 177
-     * @symbol 
-     */
     virtual void __unk_vfn_177();
-    /**
-     * @note   Virtual function table index: 188
-     * @symbol 
-     */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWDERSNOWBLOCK
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canBeDestroyedByWaterSpread@PowderSnowBlock@@UEBA_NXZ
-     */
     MCVAPI bool canBeDestroyedByWaterSpread() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canBeSilkTouched@PowderSnowBlock@@UEBA_NXZ
-     */
     MCVAPI bool canBeSilkTouched() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?causesFreezeEffect@PowderSnowBlock@@UEBA_NXZ
-     */
     MCVAPI bool causesFreezeEffect() const;
 #endif
-    /**
-     * @symbol ??0PowderSnowBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
-     */
     MCAPI PowderSnowBlock(std::string const &, int, class Material const &);
-    /**
-     * @symbol ?canWalkOnTop@PowderSnowBlock@@SA_NAEBUIActorMovementProxy@@@Z
-     */
     MCAPI static bool canWalkOnTop(struct IActorMovementProxy const &);
-    /**
-     * @symbol ?canWalkOnTop@PowderSnowBlock@@SA_NAEBVGetCollisionShapeInterface@@@Z
-     */
     MCAPI static bool canWalkOnTop(class GetCollisionShapeInterface const &);
-    /**
-     * @symbol ?clearFire@PowderSnowBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     MCAPI static void clearFire(class BlockSource &, class BlockPos const &, class Block const &);
 
 };

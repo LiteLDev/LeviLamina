@@ -30,20 +30,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?log@ContentLogEndPoint@@UEAAXPEBD@Z
-     */
     MCVAPI void log(char const *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1ContentLogEndPoint@@UEAA@XZ
-     */
     MCVAPI ~ContentLogEndPoint();
 #endif
-    /**
-     * @symbol ??0ContentLogEndPoint@@QEAA@XZ
-     */
     MCAPI ContentLogEndPoint();
 
 };

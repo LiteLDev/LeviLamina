@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERPERMUTATION
 #endif
-    /**
-     * @symbol ??1MobSpawnerPermutation@@QEAA@XZ
-     */
     MCAPI ~MobSpawnerPermutation();
 
 };

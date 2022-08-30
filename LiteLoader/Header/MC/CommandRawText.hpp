@@ -39,9 +39,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRAWTEXT
 #endif
-    /**
-     * @symbol ?getText@CommandRawText@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getText() const;
 
 };

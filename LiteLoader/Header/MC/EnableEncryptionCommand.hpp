@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~EnableEncryptionCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@EnableEncryptionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENABLEENCRYPTIONCOMMAND
 #endif
-    /**
-     * @symbol ?setup@EnableEncryptionCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 //private:

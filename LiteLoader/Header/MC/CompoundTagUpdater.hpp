@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATER
 #endif
-    /**
-     * @symbol ?update@CompoundTagUpdater@@QEBA_NAEAVCompoundTag@@@Z
-     */
     MCAPI bool update(class CompoundTag &) const;
-    /**
-     * @symbol ??1CompoundTagUpdater@@QEAA@XZ
-     */
     MCAPI ~CompoundTagUpdater();
 
 };

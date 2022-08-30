@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTTICKFILTERSYSTEM
 #endif
-    /**
-     * @symbol ?createBase@ActorMovementTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createBase();
-    /**
-     * @symbol ?createInputPacketDependentFilter@ActorMovementTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createInputPacketDependentFilter();
 
 };

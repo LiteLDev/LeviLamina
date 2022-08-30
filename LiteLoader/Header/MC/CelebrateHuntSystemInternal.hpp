@@ -22,9 +22,6 @@ namespace CelebrateHuntSystemInternal {
 // Add Member There
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?_tickCelebrateHuntComponent@CelebrateHuntSystemInternal@@YAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VCelebrateHuntComponent@@@@@Z
-     */
     MCAPI void _tickCelebrateHuntComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class CelebrateHuntComponent> &);
 
 };

@@ -22,13 +22,7 @@ namespace DebugUtils {
 // Add Member There
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?DEFAULT_ASSERT_HANDLER@DebugUtils@@YA_NAEBUAssertHandlerContext@@@Z
-     */
     MCAPI bool DEFAULT_ASSERT_HANDLER(struct AssertHandlerContext const &);
-    /**
-     * @symbol ?SET_THREAD_NAME@DebugUtils@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void SET_THREAD_NAME(std::string const &);
 MCAPI extern class std::mutex debugUtilMutex;
 MCAPI extern bool gAssertTelemetryRegistered;
@@ -39,9 +33,6 @@ MCAPI extern std::string gPublishAssertFullMessage;
 MCAPI extern bool gShouldDebugBreak;
 MCAPI extern bool gShouldPresentDialog;
 MCAPI extern class ServiceOverrider<bool ( *)(struct AssertHandlerContext const &)> gp_assert_handler;
-    /**
-     * @symbol ?isDebuggerAttached@DebugUtils@@YA_NXZ
-     */
     MCAPI bool isDebuggerAttached();
 
 };

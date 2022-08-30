@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUSENAMETAGEVENT
 #endif
-    /**
-     * @symbol ??1PlayerUseNameTagEvent@@QEAA@XZ
-     */
     MCAPI ~PlayerUseNameTagEvent();
 
 };

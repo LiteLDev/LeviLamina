@@ -30,116 +30,29 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StubServerLocator();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?setGetHostGUIDFn@StubServerLocator@@UEAAXAEBV?$function@$$A6A?AURakNetGUID@RakNet@@XZ@std@@@Z
-     */
     virtual void setGetHostGUIDFn(class std::function<struct RakNet::RakNetGUID (void)> const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?startAnnouncingServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2@Z
-     */
     virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?stopAnnouncingServer@StubServerLocator@@UEAAXXZ
-     */
     virtual void stopAnnouncingServer();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?startServerDiscovery@StubServerLocator@@UEAAXUPortPair@@@Z
-     */
     virtual void startServerDiscovery(struct PortPair);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?stopServerDiscovery@StubServerLocator@@UEAAXXZ
-     */
     virtual void stopServerDiscovery();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getServerList@StubServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
-     */
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clearServerList@StubServerLocator@@UEAAXXZ
-     */
     virtual void clearServerList();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?update@StubServerLocator@@UEAAXXZ
-     */
     virtual void update();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol 
-     */
     virtual void __unk_vfn_13();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?getPingTimeForGUID@StubServerLocator@@UEAAMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual float getPingTimeForGUID(std::string const &);
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?checkCanConnectToCustomServerAsync@StubServerLocator@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HV?$function@$$A6AX_N@Z@3@@Z
-     */
     virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STUBSERVERLOCATOR
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?addCustomServer@StubServerLocator@@UEAAXAEBVAsynchronousIPResolver@@H@Z
-     */
     MCVAPI void addCustomServer(class AsynchronousIPResolver const &, int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?addCustomServer@StubServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCVAPI void addCustomServer(std::string const &, int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isIPv4Supported@StubServerLocator@@UEBA_NXZ
-     */
     MCVAPI bool isIPv4Supported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isIPv6Supported@StubServerLocator@@UEBA_NXZ
-     */
     MCVAPI bool isIPv6Supported() const;
 #endif
-    /**
-     * @symbol ??0StubServerLocator@@QEAA@XZ
-     */
     MCAPI StubServerLocator();
 
 };

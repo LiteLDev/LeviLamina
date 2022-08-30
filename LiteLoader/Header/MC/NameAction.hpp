@@ -30,17 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEACTION
 #endif
-    /**
-     * @symbol ??0NameAction@@QEAA@AEBU0@@Z
-     */
     MCAPI NameAction(struct NameAction const &);
-    /**
-     * @symbol ?addNameFilterByName@NameAction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void addNameFilterByName(std::string const &);
-    /**
-     * @symbol ??1NameAction@@QEAA@XZ
-     */
     MCAPI ~NameAction();
 
 };

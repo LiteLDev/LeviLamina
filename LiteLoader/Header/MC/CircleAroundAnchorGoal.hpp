@@ -30,65 +30,21 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CircleAroundAnchorGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@CircleAroundAnchorGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@CircleAroundAnchorGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@CircleAroundAnchorGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@CircleAroundAnchorGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@CircleAroundAnchorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCLEAROUNDANCHORGOAL
 #endif
-    /**
-     * @symbol ??0CircleAroundAnchorGoal@@QEAA@AEAVMob@@@Z
-     */
     MCAPI CircleAroundAnchorGoal(class Mob &);
 
 //private:
-    /**
-     * @symbol ?_calculateHeightOffset@CircleAroundAnchorGoal@@AEBAMXZ
-     */
     MCAPI float _calculateHeightOffset() const;
-    /**
-     * @symbol ?_selectNext@CircleAroundAnchorGoal@@AEAAXXZ
-     */
     MCAPI void _selectNext();
-    /**
-     * @symbol ?_setAnchorAboveTarget@CircleAroundAnchorGoal@@AEAAXXZ
-     */
     MCAPI void _setAnchorAboveTarget();
 
 private:

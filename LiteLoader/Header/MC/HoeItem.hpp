@@ -33,91 +33,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HoeItem();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?executeEvent@HoeItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z
-     */
     virtual void executeEvent(class ItemStackBase &, std::string const &, class RenderParams &) const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol 
-     */
     virtual void __unk_vfn_52();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol 
-     */
     virtual void __unk_vfn_54();
-    /**
-     * @note   Virtual function table index: 63
-     * @symbol ?getEnchantSlot@HoeItem@@UEBAHXZ
-     */
     virtual int getEnchantSlot() const;
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol 
-     */
     virtual void __unk_vfn_67();
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol 
-     */
     virtual void __unk_vfn_71();
-    /**
-     * @note   Virtual function table index: 72
-     * @symbol 
-     */
     virtual void __unk_vfn_72();
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol 
-     */
     virtual void __unk_vfn_76();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 81
-     * @symbol 
-     */
     virtual void __unk_vfn_81();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOEITEM
 #endif
-    /**
-     * @symbol ??0HoeItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@AEBVExperiments@@@Z
-     */
     MCAPI HoeItem(std::string const &, int, class Item::Tier const &, class Experiments const &);
 
 };

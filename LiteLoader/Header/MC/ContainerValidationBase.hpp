@@ -31,50 +31,14 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONBASE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
-     */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
-     */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
-     */
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainerOffset@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@@Z
-     */
     MCVAPI int getContainerOffset(class ContainerScreenContext const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
-     */
     MCVAPI int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isItemAllowedInSlot@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
-     */
     MCVAPI bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isItemAllowedToAdd@ContainerValidationBase@@UEBA_NAEBVItemStack@@@Z
-     */
     MCVAPI bool isItemAllowedToAdd(class ItemStack const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
-     */
     MCVAPI bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
-     */
     MCVAPI bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
 #endif
 

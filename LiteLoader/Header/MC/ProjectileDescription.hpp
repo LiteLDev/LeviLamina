@@ -30,31 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?getJsonName@ProjectileDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~ProjectileDescription();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserializeData@ProjectileDescription@@UEAAXUDeserializeDataParams@@@Z
-     */
     virtual void deserializeData(struct DeserializeDataParams);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?serializeData@ProjectileDescription@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEDESCRIPTION
 #endif
-    /**
-     * @symbol ??0ProjectileDescription@@QEAA@XZ
-     */
     MCAPI ProjectileDescription();
 
 };

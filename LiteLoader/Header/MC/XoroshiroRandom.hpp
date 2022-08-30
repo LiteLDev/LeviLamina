@@ -30,60 +30,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~XoroshiroRandom();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?nextInt@XoroshiroRandom@@UEAAHXZ
-     */
     virtual int nextInt();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?nextInt@XoroshiroRandom@@UEAAHH@Z
-     */
     virtual int nextInt(int);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?nextLong@XoroshiroRandom@@UEAA_JXZ
-     */
     virtual __int64 nextLong();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?nextBoolean@XoroshiroRandom@@UEAA_NXZ
-     */
     virtual bool nextBoolean();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?nextFloat@XoroshiroRandom@@UEAAMXZ
-     */
     virtual float nextFloat();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?nextDouble@XoroshiroRandom@@UEAANXZ
-     */
     virtual double nextDouble();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?nextGaussianDouble@XoroshiroRandom@@UEAANXZ
-     */
     virtual double nextGaussianDouble();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?consumeCount@XoroshiroRandom@@UEAAXI@Z
-     */
     virtual void consumeCount(unsigned int);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?fork@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class IRandom> fork();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?forkPositional@XoroshiroRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRORANDOM
 #endif

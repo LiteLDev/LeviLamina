@@ -33,53 +33,17 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYFILE
 #endif
-    /**
-     * @symbol ??0InMemoryFile@@QEAA@AEBVPath@Core@@@Z
-     */
     MCAPI InMemoryFile(class Core::Path const &);
-    /**
-     * @symbol ?append@InMemoryFile@@QEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
-     */
     MCAPI class leveldb::Status append(class leveldb::Slice const &);
-    /**
-     * @symbol ?close@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-     */
     MCAPI class leveldb::Status close(enum InMemoryAccessMode);
-    /**
-     * @symbol ?flushToDisk@InMemoryFile@@QEAA?AVStatus@leveldb@@PEAVEnv@3@@Z
-     */
     MCAPI class leveldb::Status flushToDisk(class leveldb::Env *);
-    /**
-     * @symbol ?getFilename@InMemoryFile@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
-     */
     MCAPI class Core::PathBuffer<std::string> getFilename() const;
-    /**
-     * @symbol ?isMarkedDirty@InMemoryFile@@QEBA_NXZ
-     */
     MCAPI bool isMarkedDirty() const;
-    /**
-     * @symbol ?isSafeToDelete@InMemoryFile@@QEBA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI bool isSafeToDelete(std::string &) const;
-    /**
-     * @symbol ?markForDelete@InMemoryFile@@QEAAXXZ
-     */
     MCAPI void markForDelete();
-    /**
-     * @symbol ?open@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
-     */
     MCAPI class leveldb::Status open(enum InMemoryAccessMode);
-    /**
-     * @symbol ?read@InMemoryFile@@QEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEADAEA_K@Z
-     */
     MCAPI class leveldb::Status read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *, unsigned __int64 &) const;
-    /**
-     * @symbol ?rename@InMemoryFile@@QEAAXAEBVPath@Core@@@Z
-     */
     MCAPI void rename(class Core::Path const &);
-    /**
-     * @symbol ??1InMemoryFile@@QEAA@XZ
-     */
     MCAPI ~InMemoryFile();
 
 };

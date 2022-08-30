@@ -31,16 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RuinedPortalStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALSTART
 #endif
-    /**
-     * @symbol ??0RuinedPortalStart@@QEAA@AEAVBiomeRegistry@@AEBVBiomeSource@@HHAEBVIPreliminarySurfaceProvider@@@Z
-     */
     MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
 
 };

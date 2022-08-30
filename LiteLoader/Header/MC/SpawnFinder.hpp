@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNFINDER
 #endif
-    /**
-     * @symbol ?findStandupPosition@SpawnFinder@@SA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEBVBlockSource@@@Z
-     */
     MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const &, class BlockSource const &);
-    /**
-     * @symbol ?isStandupPosition@SpawnFinder@@SA_NAEBVBlockPos@@AEBVBlockSource@@@Z
-     */
     MCAPI static bool isStandupPosition(class BlockPos const &, class BlockSource const &);
 
 };

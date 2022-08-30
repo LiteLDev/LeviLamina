@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SmoothStoneSelector();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?next@SmoothStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
-     */
     virtual class Block const & next(class Random &, int, int, int, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOOTHSTONESELECTOR
 #endif

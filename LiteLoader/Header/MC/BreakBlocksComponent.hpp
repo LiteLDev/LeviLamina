@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSCOMPONENT
 #endif
-    /**
-     * @symbol ?breakNearbyBlocks@BreakBlocksComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void breakNearbyBlocks(class Actor &);
-    /**
-     * @symbol ?initFromDefinition@BreakBlocksComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void initFromDefinition(class Actor &);
-    /**
-     * @symbol ?isBreakable@BreakBlocksComponent@@QEBA_NAEAVActor@@AEBVBlockLegacy@@@Z
-     */
     MCAPI bool isBreakable(class Actor &, class BlockLegacy const &) const;
 
 };

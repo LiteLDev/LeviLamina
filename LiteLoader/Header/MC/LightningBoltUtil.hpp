@@ -22,9 +22,6 @@ namespace LightningBoltUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?_clearCopperOnLightningStrike@LightningBoltUtil@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI void _clearCopperOnLightningStrike(class BlockSource &, class BlockPos const &);
 
 };

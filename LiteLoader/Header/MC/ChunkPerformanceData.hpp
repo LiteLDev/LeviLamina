@@ -30,17 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKPERFORMANCEDATA
 #endif
-    /**
-     * @symbol ??0ChunkPerformanceData@@QEAA@XZ
-     */
     MCAPI ChunkPerformanceData();
-    /**
-     * @symbol ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
-     */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
-    /**
-     * @symbol ?resetAll@ChunkPerformanceData@@QEAAXXZ
-     */
     MCAPI void resetAll();
 
 };

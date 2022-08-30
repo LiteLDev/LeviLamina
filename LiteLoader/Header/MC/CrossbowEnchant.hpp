@@ -31,86 +31,23 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CrossbowEnchant();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isCompatibleWith@CrossbowEnchant@@UEBA_NW4Type@Enchant@@@Z
-     */
     virtual bool isCompatibleWith(enum Enchant::Type) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getMinCost@CrossbowEnchant@@UEBAHH@Z
-     */
     virtual int getMinCost(int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getMaxCost@CrossbowEnchant@@UEBAHH@Z
-     */
     virtual int getMaxCost(int) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getMaxLevel@CrossbowEnchant@@UEBAHXZ
-     */
     virtual int getMaxLevel() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol 
-     */
     virtual void __unk_vfn_13();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?_isValidEnchantmentTypeForCategory@CrossbowEnchant@@EEBA_NW4Type@Enchant@@@Z
-     */
     virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROSSBOWENCHANT
 #endif
-    /**
-     * @symbol ??0CrossbowEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     */
     MCAPI CrossbowEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 //private:

@@ -29,15 +29,7 @@ public:
     LibraryScreenCapabilities() = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LibraryScreenCapabilities();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isOfType@?$TypedScreenCapabilities@ULibraryScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
-     */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIBRARYSCREENCAPABILITIES
 #endif

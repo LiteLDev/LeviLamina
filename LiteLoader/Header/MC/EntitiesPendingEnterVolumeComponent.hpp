@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESPENDINGENTERVOLUMECOMPONENT
 #endif
-    /**
-     * @symbol ??0EntitiesPendingEnterVolumeComponent@@QEAA@$$QEAV0@@Z
-     */
     MCAPI EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent &&);
-    /**
-     * @symbol ??1EntitiesPendingEnterVolumeComponent@@QEAA@XZ
-     */
     MCAPI ~EntitiesPendingEnterVolumeComponent();
 
 };

@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTEXTMESSAGELOGGER
 #endif
-    /**
-     * @symbol ?log@ContextMessageLogger@@QEAAXW4LogArea@@W4LogLevel@@PEBD@Z
-     */
     MCAPI void log(enum LogArea, enum LogLevel, char const *);
-    /**
-     * @symbol ?shouldMessagePostToParentMessageLoggers@ContextMessageLogger@@QEAA_NXZ
-     */
     MCAPI bool shouldMessagePostToParentMessageLoggers();
 
 };

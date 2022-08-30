@@ -30,31 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?getJsonName@AnimationsDescription@@UEBAPEBDXZ
-     */
     virtual char const * getJsonName() const;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~AnimationsDescription();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserializeData@AnimationsDescription@@UEAAXUDeserializeDataParams@@@Z
-     */
     virtual void deserializeData(struct DeserializeDataParams);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?serializeData@AnimationsDescription@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serializeData(class Json::Value &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONSDESCRIPTION
 #endif
-    /**
-     * @symbol ??0AnimationsDescription@@QEAA@XZ
-     */
     MCAPI AnimationsDescription();
 
 };

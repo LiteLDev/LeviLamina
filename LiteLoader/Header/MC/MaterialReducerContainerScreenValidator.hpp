@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MaterialReducerContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERCONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0MaterialReducerContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI MaterialReducerContainerScreenValidator();
 
 };

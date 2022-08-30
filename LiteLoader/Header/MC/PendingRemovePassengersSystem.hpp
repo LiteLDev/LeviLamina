@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PENDINGREMOVEPASSENGERSSYSTEM
 #endif
-    /**
-     * @symbol ?createPendingRemovePassengersSystem@PendingRemovePassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createPendingRemovePassengersSystem();
 
 };

@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESCRIPTION
 #endif
-    /**
-     * @symbol ??1BlockDescription@@QEAA@XZ
-     */
     MCAPI ~BlockDescription();
 
 };

@@ -30,66 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RakTcpProxy();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?start@RakTcpProxy@@UEAA_NGGG@Z
-     */
     virtual bool start(unsigned short, unsigned short, unsigned short);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?connect@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
-     */
     virtual struct RakNet::SystemAddress connect(std::string const &, unsigned short);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?send@RakTcpProxy@@UEAAXPEBDIUSystemAddress@RakNet@@@Z
-     */
     virtual void send(char const *, unsigned int, struct RakNet::SystemAddress);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?close@RakTcpProxy@@UEAAXUSystemAddress@RakNet@@@Z
-     */
     virtual void close(struct RakNet::SystemAddress);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?packetsAvailable@RakTcpProxy@@UEAA_NXZ
-     */
     virtual bool packetsAvailable();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?nextPacket@RakTcpProxy@@UEAAPEAUPacket@RakNet@@XZ
-     */
     virtual struct RakNet::Packet * nextPacket();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?deallocatePacket@RakTcpProxy@@UEAAXPEAUPacket@RakNet@@@Z
-     */
     virtual void deallocatePacket(struct RakNet::Packet *);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?nextCompletedConnectionAttempt@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
-     */
     virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?nextFailedConnectionAttempt@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
-     */
     virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?nextLostConnection@RakTcpProxy@@UEAA?AUSystemAddress@RakNet@@XZ
-     */
     virtual struct RakNet::SystemAddress nextLostConnection();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKTCPPROXY
 #endif
-    /**
-     * @symbol ??0RakTcpProxy@@QEAA@XZ
-     */
     MCAPI RakTcpProxy();
 
 };

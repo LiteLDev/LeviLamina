@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WSASTARTUPSINGLETON
 #endif
-    /**
-     * @symbol ?AddRef@WSAStartupSingleton@@SAXXZ
-     */
     MCAPI static void AddRef();
-    /**
-     * @symbol ?Deref@WSAStartupSingleton@@SAXXZ
-     */
     MCAPI static void Deref();
 
 //protected:

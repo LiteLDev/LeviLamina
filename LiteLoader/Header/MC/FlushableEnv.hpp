@@ -31,16 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FlushableEnv();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLEENV
 #endif
-    /**
-     * @symbol ??0FlushableEnv@@QEAA@PEAVEnv@leveldb@@@Z
-     */
     MCAPI FlushableEnv(class leveldb::Env *);
 
 };

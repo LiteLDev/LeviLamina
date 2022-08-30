@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDROPPEDITEMEVENT
 #endif
-    /**
-     * @symbol ??1ActorDroppedItemEvent@@QEAA@XZ
-     */
     MCAPI ~ActorDroppedItemEvent();
 
 };

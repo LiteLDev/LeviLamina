@@ -42,66 +42,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~VarIntDataOutput();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?writeFloat@VarIntDataOutput@@UEAAXM@Z
-     */
     virtual void writeFloat(float);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?writeDouble@VarIntDataOutput@@UEAAXN@Z
-     */
     virtual void writeDouble(double);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?writeByte@VarIntDataOutput@@UEAAXD@Z
-     */
     virtual void writeByte(char);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?writeShort@VarIntDataOutput@@UEAAXF@Z
-     */
     virtual void writeShort(short);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?writeInt@VarIntDataOutput@@UEAAXH@Z
-     */
     virtual void writeInt(int);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?writeLongLong@VarIntDataOutput@@UEAAX_J@Z
-     */
     virtual void writeLongLong(__int64);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z
-     */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?writeLongString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?writeString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
 #endif
 

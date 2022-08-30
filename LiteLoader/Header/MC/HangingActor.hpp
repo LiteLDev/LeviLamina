@@ -31,234 +31,57 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@HangingActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?reloadHardcodedClient@HangingActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~HangingActor();
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol ?move@HangingActor@@UEAAXAEBVVec3@@@Z
-     */
     virtual void move(class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@HangingActor@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 87
-     * @symbol ?getBrightness@HangingActor@@UEBAMM@Z
-     */
     virtual float getBrightness(float) const;
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 95
-     * @symbol ?isPickable@HangingActor@@UEAA_NXZ
-     */
     virtual bool isPickable();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 135
-     * @symbol ?isInvulnerableTo@HangingActor@@UEBA_NAEBVActorDamageSource@@@Z
-     */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 241
-     * @symbol ?setSize@HangingActor@@UEAAXMM@Z
-     */
     virtual void setSize(float, float);
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 270
-     * @symbol ?_hurt@HangingActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@HangingActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@HangingActor@@MEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 286
-     * @symbol ?setDir@HangingActor@@UEAAXH@Z
-     */
     virtual void setDir(int);
-    /**
-     * @note   Virtual function table index: 287
-     * @symbol ?getWidth@Painting@@UEBAHXZ
-     */
     virtual int getWidth() const = 0;
-    /**
-     * @note   Virtual function table index: 288
-     * @symbol ?getHeight@Painting@@UEBAHXZ
-     */
     virtual int getHeight() const = 0;
-    /**
-     * @note   Virtual function table index: 289
-     * @symbol ?dropItem@Painting@@UEAAXXZ
-     */
     virtual void dropItem() = 0;
-    /**
-     * @note   Virtual function table index: 290
-     * @symbol ?placeHangingEntity@HangingActor@@UEAA_NAEAVBlockSource@@H@Z
-     */
     virtual bool placeHangingEntity(class BlockSource &, int);
-    /**
-     * @note   Virtual function table index: 291
-     * @symbol ?wouldSurvive@HangingActor@@UEAA_NAEAVBlockSource@@@Z
-     */
     virtual bool wouldSurvive(class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGACTOR
 #endif
-    /**
-     * @symbol ??0HangingActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?getDirection@HangingActor@@QEBAHXZ
-     */
     MCAPI int getDirection() const;
 
 //protected:
-    /**
-     * @symbol ?_calculateAABB@HangingActor@@IEAAXXZ
-     */
     MCAPI void _calculateAABB();
-    /**
-     * @symbol ?_calculateActorPositionFromPlacementPosition@HangingActor@@IEAAXAEBVBlockPos@@@Z
-     */
     MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const &);
-    /**
-     * @symbol ?_wouldSurvive@HangingActor@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
-     */
     MCAPI bool _wouldSurvive(class BlockSource &, class BlockPos const &, bool);
 
 //private:
-    /**
-     * @symbol ?_blockContainsObstruction@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI bool _blockContainsObstruction(class BlockSource const &, class BlockPos const &) const;
-    /**
-     * @symbol ?_canSurviveOnBlock@HangingActor@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@_N@Z
-     */
     MCAPI bool _canSurviveOnBlock(class BlockSource const &, class BlockPos const &, bool) const;
 
 protected:

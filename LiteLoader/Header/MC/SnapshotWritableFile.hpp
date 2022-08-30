@@ -30,36 +30,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SnapshotWritableFile();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
-     */
     virtual class leveldb::Status Append(class leveldb::Slice const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?Close@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
-     */
     virtual class leveldb::Status Close();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?Flush@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
-     */
     virtual class leveldb::Status Flush();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?Sync@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
-     */
     virtual class leveldb::Status Sync();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTWRITABLEFILE
 #endif
-    /**
-     * @symbol ??0SnapshotWritableFile@@QEAA@$$QEAPEAVWritableFile@leveldb@@AEAVshared_mutex@std@@@Z
-     */
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 
 };

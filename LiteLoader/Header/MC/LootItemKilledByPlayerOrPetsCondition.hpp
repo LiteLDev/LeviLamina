@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LootItemKilledByPlayerOrPetsCondition();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?applies@LootItemKilledByPlayerOrPetsCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
-     */
     virtual bool applies(class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMKILLEDBYPLAYERORPETSCONDITION
 #endif
-    /**
-     * @symbol ?deserialize@LootItemKilledByPlayerOrPetsCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
-     */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 };

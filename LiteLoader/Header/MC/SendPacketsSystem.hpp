@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDPACKETSSYSTEM
 #endif
-    /**
-     * @symbol ?createSendPacketsSystem@SendPacketsSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createSendPacketsSystem();
 
 };

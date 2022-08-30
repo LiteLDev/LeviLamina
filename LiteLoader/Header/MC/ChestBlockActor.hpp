@@ -31,296 +31,71 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKACTOR
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_canOpenThis@ChestBlockActor@@MEBA_NAEAVBlockSource@@@Z
-     */
     MCVAPI bool _canOpenThis(class BlockSource &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_detectEntityObstruction@ChestBlockActor@@MEBA_NAEAVBlockSource@@@Z
-     */
     MCVAPI bool _detectEntityObstruction(class BlockSource &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_getUpdatePacket@ChestBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onUpdatePacket@ChestBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?addContentChangeListener@ChestBlockActor@@UEAAXPEAVContainerContentChangeListener@@@Z
-     */
     MCVAPI void addContentChangeListener(class ContainerContentChangeListener *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canPullOutItem@ChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
-     */
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canPushInItem@ChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
-     */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?clearCache@ChestBlockActor@@UEAAXXZ
-     */
     MCVAPI void clearCache();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?clearInventory@ChestBlockActor@@UEAAHH@Z
-     */
     MCVAPI int clearInventory(int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?eraseLootTable@ChestBlockActor@@UEAAXXZ
-     */
     MCVAPI void eraseLootTable();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainer@ChestBlockActor@@UEAAPEAVContainer@@XZ
-     */
     MCVAPI class Container * getContainer();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainer@ChestBlockActor@@UEBAPEBVContainer@@XZ
-     */
     MCVAPI class Container const * getContainer() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getContainerSize@ChestBlockActor@@UEBAHXZ
-     */
     MCVAPI int getContainerSize() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getCrackEntity@ChestBlockActor@@UEAAPEAVBlockActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCVAPI class BlockActor * getCrackEntity(class BlockSource &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getDebugText@ChestBlockActor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBVBlockPos@@@Z
-     */
     MCVAPI void getDebugText(std::vector<std::string> &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getItem@ChestBlockActor@@UEBAAEBVItemStack@@H@Z
-     */
     MCVAPI class ItemStack const & getItem(int) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getMaxStackSize@ChestBlockActor@@UEBAHXZ
-     */
     MCVAPI int getMaxStackSize() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getName@ChestBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCVAPI std::string getName() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getObstructionAABB@ChestBlockActor@@MEBA?AVAABB@@XZ
-     */
     MCVAPI class AABB getObstructionAABB() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?initializeContainerContents@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void initializeContainerContents(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?load@ChestBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?loadItems@ChestBlockActor@@UEAAXAEBVCompoundTag@@AEAVLevel@@@Z
-     */
     MCVAPI void loadItems(class CompoundTag const &, class Level &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onChanged@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void onChanged(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onMove@ChestBlockActor@@UEAAXXZ
-     */
     MCVAPI void onMove();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onNeighborChanged@ChestBlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCVAPI void onNeighborChanged(class BlockSource &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onPlace@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void onPlace(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onRemoved@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void onRemoved(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?playCloseSound@ChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void playCloseSound(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?playOpenSound@ChestBlockActor@@MEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void playOpenSound(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?removeContentChangeListener@ChestBlockActor@@UEAAXPEAVContainerContentChangeListener@@@Z
-     */
     MCVAPI void removeContentChangeListener(class ContainerContentChangeListener *);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?save@ChestBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     */
     MCVAPI bool save(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?saveItemInstanceData@ChestBlockActor@@UEAA_NAEAVCompoundTag@@@Z
-     */
     MCVAPI bool saveItemInstanceData(class CompoundTag &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?saveItems@ChestBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     */
     MCVAPI bool saveItems(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?serverInitItemStackIds@ChestBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
-     */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setContainerChanged@ChestBlockActor@@UEAAXH@Z
-     */
     MCVAPI void setContainerChanged(int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setItem@ChestBlockActor@@UEAAXHAEBVItemStack@@@Z
-     */
     MCVAPI void setItem(int, class ItemStack const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setItemWithForceBalance@ChestBlockActor@@UEAAXHAEBVItemStack@@_N@Z
-     */
     MCVAPI void setItemWithForceBalance(int, class ItemStack const &, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?startOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z
-     */
     MCVAPI void startOpen(class Player &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?stopOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z
-     */
     MCVAPI void stopOpen(class Player &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tick@ChestBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     MCVAPI void tick(class BlockSource &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?triggerEvent@ChestBlockActor@@UEAAXHH@Z
-     */
     MCVAPI void triggerEvent(int, int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1ChestBlockActor@@UEAA@XZ
-     */
     MCVAPI ~ChestBlockActor();
 #endif
-    /**
-     * @symbol ??0ChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@_N@Z
-     */
     MCAPI ChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &, bool);
-    /**
-     * @symbol ?canOpen@ChestBlockActor@@QEBA_NAEAVBlockSource@@@Z
-     */
     MCAPI bool canOpen(class BlockSource &) const;
-    /**
-     * @symbol ?canPairWith@ChestBlockActor@@QEAA_NPEAVBlockActor@@AEAVBlockSource@@@Z
-     */
     MCAPI bool canPairWith(class BlockActor *, class BlockSource &);
-    /**
-     * @symbol ?forceCloseChest@ChestBlockActor@@QEAAXAEAVBlockSource@@@Z
-     */
     MCAPI void forceCloseChest(class BlockSource &);
-    /**
-     * @symbol ?getOpenCount@ChestBlockActor@@QEBAHXZ
-     */
     MCAPI int getOpenCount() const;
-    /**
-     * @symbol ?getOpenness@ChestBlockActor@@QEBAMXZ
-     */
     MCAPI float getOpenness() const;
-    /**
-     * @symbol ?getPairedChestPosition@ChestBlockActor@@QEAAAEBVBlockPos@@XZ
-     */
     MCAPI class BlockPos const & getPairedChestPosition();
-    /**
-     * @symbol ?isFindable@ChestBlockActor@@QEBA_NXZ
-     */
     MCAPI bool isFindable() const;
-    /**
-     * @symbol ?isLargeChest@ChestBlockActor@@QEBA_NXZ
-     */
     MCAPI bool isLargeChest() const;
-    /**
-     * @symbol ?onMove@ChestBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
-     */
     MCAPI void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &);
-    /**
-     * @symbol ?openBy@ChestBlockActor@@QEAAXAEAVPlayer@@@Z
-     */
     MCAPI void openBy(class Player &);
-    /**
-     * @symbol ?pairWith@ChestBlockActor@@QEAAXPEAV1@_N@Z
-     */
     MCAPI void pairWith(class ChestBlockActor *, bool);
-    /**
-     * @symbol ?setFindable@ChestBlockActor@@QEAAX_N@Z
-     */
     MCAPI void setFindable(bool);
-    /**
-     * @symbol ?unpair@ChestBlockActor@@QEAAXAEAVBlockSource@@@Z
-     */
     MCAPI void unpair(class BlockSource &);
 
 //protected:
-    /**
-     * @symbol ?_getCenter@ChestBlockActor@@IEAAXAEAM00@Z
-     */
     MCAPI void _getCenter(float &, float &, float &);
 
 //private:
-    /**
-     * @symbol ?_closeChest@ChestBlockActor@@AEAAXAEAVBlockSource@@PEAVPlayer@@@Z
-     */
     MCAPI void _closeChest(class BlockSource &, class Player *);
-    /**
-     * @symbol ?_saveClientSideState@ChestBlockActor@@AEBA_NAEAVCompoundTag@@@Z
-     */
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
-    /**
-     * @symbol ?_tryToPairWith@ChestBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI void _tryToPairWith(class BlockSource &, class BlockPos const &);
-    /**
-     * @symbol ?_unpair@ChestBlockActor@@AEAAXXZ
-     */
     MCAPI void _unpair();
 
 protected:

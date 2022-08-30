@@ -31,20 +31,9 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGOALDEFINITION
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?validate@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z
-     */
     MCVAPI bool validate(class Mob &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?validateMobType@BaseGoalDefinition@@UEAA_NAEAVMob@@@Z
-     */
     MCVAPI bool validateMobType(class Mob &);
 #endif
-    /**
-     * @symbol ?initialize@BaseGoalDefinition@@QEAAXAEAVEntityContext@@AEAVGoal@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class Goal &);
 
 //private:

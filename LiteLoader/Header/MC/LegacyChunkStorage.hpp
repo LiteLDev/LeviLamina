@@ -31,53 +31,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LegacyChunkStorage();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?loadChunk@LegacyChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z
-     */
     virtual void loadChunk(class LevelChunk &, bool);
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?saveLiveChunk@LegacyChunkStorage@@UEAA_NAEAVLevelChunk@@@Z
-     */
     virtual bool saveLiveChunk(class LevelChunk &);
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?acquireDiscarded@LegacyChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
-     */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYCHUNKSTORAGE
 #endif
-    /**
-     * @symbol ??0LegacyChunkStorage@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@AEAVLevelStorage@@W4StorageVersion@@AEAVBiome@@@Z
-     */
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum StorageVersion, class Biome &);
 
 //private:
-    /**
-     * @symbol ?_isImported@LegacyChunkStorage@@AEAA_NAEBVChunkPos@@@Z
-     */
     MCAPI bool _isImported(class ChunkPos const &);
-    /**
-     * @symbol ?_loadChunk@LegacyChunkStorage@@AEAA_NAEAVLevelChunk@@@Z
-     */
     MCAPI bool _loadChunk(class LevelChunk &);
-    /**
-     * @symbol ?_loadEntities@LegacyChunkStorage@@AEAAXXZ
-     */
     MCAPI void _loadEntities();
-    /**
-     * @symbol ?_markChunkAsImported@LegacyChunkStorage@@AEAAXAEBVChunkPos@@@Z
-     */
     MCAPI void _markChunkAsImported(class ChunkPos const &);
-    /**
-     * @symbol ?_openRegionFile@LegacyChunkStorage@@AEAA_NXZ
-     */
     MCAPI bool _openRegionFile();
 
 private:

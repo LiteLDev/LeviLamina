@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SmokerContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0SmokerContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI SmokerContainerScreenValidator();
 
 };

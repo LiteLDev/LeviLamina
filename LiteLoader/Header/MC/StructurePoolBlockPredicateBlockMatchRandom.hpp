@@ -30,26 +30,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StructurePoolBlockPredicateBlockMatchRandom();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?test@StructurePoolBlockPredicateBlockMatchRandom@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-     */
     virtual bool test(class Block const &, class Randomize &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?test@StructurePoolBlockPredicateBlockMatchRandom@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-     */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCHRANDOM
 #endif
-    /**
-     * @symbol ??0StructurePoolBlockPredicateBlockMatchRandom@@QEAA@AEBVBlock@@M@Z
-     */
     MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const &, float);
 
 };

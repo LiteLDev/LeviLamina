@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HugeFungusFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@HugeFungusFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEFUNGUSFEATURE
 #endif
-    /**
-     * @symbol ??0HugeFungusFeature@@QEAA@_N@Z
-     */
     MCAPI HugeFungusFeature(bool);
 
 };

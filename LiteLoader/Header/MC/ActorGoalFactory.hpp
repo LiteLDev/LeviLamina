@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORGOALFACTORY
 #endif
-    /**
-     * @symbol ?_initializeBedrock@ActorGoalFactory@@QEAAXXZ
-     */
     MCAPI void _initializeBedrock();
 
 };

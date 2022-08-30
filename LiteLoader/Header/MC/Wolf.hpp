@@ -32,222 +32,53 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~Wolf();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@Wolf@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol ?addPassenger@Wolf@@UEAAXAEAVActor@@@Z
-     */
     virtual void addPassenger(class Actor &);
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 120
-     * @symbol ?setSitting@Wolf@@UEAAX_N@Z
-     */
     virtual void setSitting(bool);
-    /**
-     * @note   Virtual function table index: 134
-     * @symbol ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@@XZ
-     */
     virtual enum LevelSoundEvent getAmbientSound() const;
-    /**
-     * @note   Virtual function table index: 142
-     * @symbol ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
-     */
     virtual void handleEntityEvent(enum ActorEvent, int);
-    /**
-     * @note   Virtual function table index: 168
-     * @symbol ?load@Wolf@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual bool load(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 191
-     * @symbol ?onSynchedDataUpdate@Wolf@@UEAAXH@Z
-     */
     virtual void onSynchedDataUpdate(int);
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 270
-     * @symbol ?_hurt@Wolf@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 313
-     * @symbol 
-     */
     virtual void __unk_vfn_313();
-    /**
-     * @note   Virtual function table index: 315
-     * @symbol ?isAlliedTo@Wolf@@UEAA_NPEAVMob@@@Z
-     */
     virtual bool isAlliedTo(class Mob *);
-    /**
-     * @note   Virtual function table index: 317
-     * @symbol 
-     */
     virtual void __unk_vfn_317();
-    /**
-     * @note   Virtual function table index: 344
-     * @symbol ?onBorn@Wolf@@UEAAXAEAVActor@@0@Z
-     */
     virtual void onBorn(class Actor &, class Actor &);
-    /**
-     * @note   Virtual function table index: 351
-     * @symbol 
-     */
     virtual void __unk_vfn_351();
-    /**
-     * @note   Virtual function table index: 360
-     * @symbol ?newServerAiStep@Wolf@@UEAAXXZ
-     */
     virtual void newServerAiStep();
-    /**
-     * @note   Virtual function table index: 365
-     * @symbol 
-     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOLF
 #endif
-    /**
-     * @symbol ??0Wolf@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI Wolf(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?getHeadRollAngle@Wolf@@QEAAMM@Z
-     */
     MCAPI float getHeadRollAngle(float);
-    /**
-     * @symbol ?getShakeAnim@Wolf@@QEBAMXZ
-     */
     MCAPI float getShakeAnim() const;
-    /**
-     * @symbol ?getTailAngle@Wolf@@QEAAMXZ
-     */
     MCAPI float getTailAngle();
-    /**
-     * @symbol ?isShaking@Wolf@@QEBA_NXZ
-     */
     MCAPI bool isShaking() const;
-    /**
-     * @symbol ?postNormalTick@Wolf@@QEAAXXZ
-     */
     MCAPI void postNormalTick();
 
 //private:
-    /**
-     * @symbol ?_avoidSnowBury@Wolf@@AEAAXXZ
-     */
     MCAPI void _avoidSnowBury();
 
 private:

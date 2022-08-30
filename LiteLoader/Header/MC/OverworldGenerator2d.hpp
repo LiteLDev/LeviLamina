@@ -32,69 +32,21 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATOR2D
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_prepareHeights@OverworldGenerator2d@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z
-     */
     MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?decorateWorldGenPostProcess@OverworldGenerator2d@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
-     */
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?findSpawnPosition@OverworldGenerator2d@@UEBA?AVBlockPos@@XZ
-     */
     MCVAPI class BlockPos findSpawnPosition() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?generateDensityCellsForChunk@OverworldGenerator2d@@UEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
-     */
     MCVAPI class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getBiomeSource@OverworldGenerator2d@@UEBAAEBVBiomeSource@@XZ
-     */
     MCVAPI class BiomeSource const & getBiomeSource() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLevelGenHeight@OverworldGenerator2d@@UEBAHXZ
-     */
     MCVAPI int getLevelGenHeight() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getMaterialAdjNoise@OverworldGenerator2d@@MEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ
-     */
     MCVAPI std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getSurfaceNoise@OverworldGenerator2d@@MEAAAEBVPerlinSimplexNoise@@XZ
-     */
     MCVAPI class PerlinSimplexNoise const & getSurfaceNoise();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getXoroshiroPositionalRandomFactory@OverworldGenerator2d@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ
-     */
     MCVAPI class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
 #endif
-    /**
-     * @symbol ??0OverworldGenerator2d@@QEAA@AEAVDimension@@I_NPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
-     */
     MCAPI OverworldGenerator2d(class Dimension &, unsigned int, bool, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
 
 //private:
-    /**
-     * @symbol ?_generateDensityCellsForChunk@OverworldGenerator2d@@AEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
-     */
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const &) const;
-    /**
-     * @symbol ?_makeBiomeSource@OverworldGenerator2d@@CA?AV?$unique_ptr@VBiomeSource@@U?$default_delete@VBiomeSource@@@std@@@std@@IAEBVDimension@@@Z
-     */
     MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(unsigned int, class Dimension const &);
-    /**
-     * @symbol ?_makeCommonNodeGraph@OverworldGenerator2d@@CA?AV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@W4GeneratorType@@AEBVBiomeRegistry@@@Z
-     */
     MCAPI static class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> _makeCommonNodeGraph(enum GeneratorType, class BiomeRegistry const &);
 
 private:

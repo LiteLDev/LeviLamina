@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENEDEFINITION
 #endif
-    /**
-     * @symbol ?addGeneticVariant@GeneDefinition@@QEAAXAEBUGeneticVariant@@@Z
-     */
     MCAPI void addGeneticVariant(struct GeneticVariant const &);
-    /**
-     * @symbol ??1GeneDefinition@@QEAA@XZ
-     */
     MCAPI ~GeneDefinition();
 
 };

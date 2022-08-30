@@ -71,146 +71,36 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ActorDamageSource();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isEntitySource@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isEntitySource() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isChildEntitySource@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isChildEntitySource() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?isBlockSource@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isBlockSource() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?isFire@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isFire() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?isReducedByResistanceEffect@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isReducedByResistanceEffect() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?isReducedByEnchantReduction@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isReducedByEnchantReduction() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?isReducedByArmorReduction@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isReducedByArmorReduction() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?isFallingBlockDamage@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isFallingBlockDamage() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?isFallDamage@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool isFallDamage() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?getDeathMessage@ActorDamageSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z
-     */
     virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor *) const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?getIsCreative@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool getIsCreative() const;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?getIsWorldBuilder@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool getIsWorldBuilder() const;
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?getEntityUniqueID@ActorDamageSource@@UEBA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getEntityUniqueID() const;
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?getEntityType@ActorDamageSource@@UEBA?AW4ActorType@@XZ
-     */
     virtual enum ActorType getEntityType() const;
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?getEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ
-     */
     virtual enum ActorCategory getEntityCategories() const;
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?getDamagingEntityIsCreative@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool getDamagingEntityIsCreative() const;
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?getDamagingEntityIsWorldBuilder@ActorDamageSource@@UEBA_NXZ
-     */
     virtual bool getDamagingEntityIsWorldBuilder() const;
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?getDamagingEntityUniqueID@ActorDamageSource@@UEBA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol ?getDamagingEntityType@ActorDamageSource@@UEBA?AW4ActorType@@XZ
-     */
     virtual enum ActorType getDamagingEntityType() const;
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol ?getDamagingEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ
-     */
     virtual enum ActorCategory getDamagingEntityCategories() const;
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?clone@ActorDamageSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class ActorDamageSource> clone() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDAMAGESOURCE
 #endif
-    /**
-     * @symbol ??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z
-     */
     MCAPI ActorDamageSource(enum ActorDamageCause);
-    /**
-     * @symbol ?getCause@ActorDamageSource@@QEBA?AW4ActorDamageCause@@XZ
-     */
     MCAPI enum ActorDamageCause getCause() const;
-    /**
-     * @symbol ?setCause@ActorDamageSource@@QEAAXW4ActorDamageCause@@@Z
-     */
     MCAPI void setCause(enum ActorDamageCause);
-    /**
-     * @symbol ?generateDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@XZ
-     */
     MCAPI static std::vector<struct std::pair<std::string, enum ActorDamageCause>> generateDamageCauseCommandEnum();
-    /**
-     * @symbol ?isDamageCausedByMob@ActorDamageSource@@SA_NW4ActorDamageCause@@@Z
-     */
     MCAPI static bool isDamageCausedByMob(enum ActorDamageCause);
-    /**
-     * @symbol ?lookupCause@ActorDamageSource@@SA?AW4ActorDamageCause@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static enum ActorDamageCause lookupCause(std::string const &);
-    /**
-     * @symbol ?lookupCauseName@ActorDamageSource@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@Z
-     */
     MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
 
 };
-

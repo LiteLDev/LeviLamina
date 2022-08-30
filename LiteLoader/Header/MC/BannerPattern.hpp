@@ -32,57 +32,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERPATTERN
 #endif
-    /**
-     * @symbol ?getIgnoreAux@BannerPattern@@QEBA_NXZ
-     */
     MCAPI bool getIgnoreAux() const;
-    /**
-     * @symbol ?getIngredientItem@BannerPattern@@QEBAAEBVItemStack@@XZ
-     */
     MCAPI class ItemStack const & getIngredientItem() const;
-    /**
-     * @symbol ?getName@BannerPattern@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getName() const;
-    /**
-     * @symbol ?getNameID@BannerPattern@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getNameID() const;
-    /**
-     * @symbol ?getPattern@BannerPattern@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
-     */
     MCAPI std::vector<std::string> const & getPattern() const;
-    /**
-     * @symbol ?hasPattern@BannerPattern@@QEBA_NXZ
-     */
     MCAPI bool hasPattern() const;
-    /**
-     * @symbol ?matchesPatternItem@BannerPattern@@QEBA_NAEBVItemStackBase@@@Z
-     */
     MCAPI bool matchesPatternItem(class ItemStackBase const &) const;
-    /**
-     * @symbol ?requiresIngredientItem@BannerPattern@@QEBA_NXZ
-     */
     MCAPI bool requiresIngredientItem() const;
-    /**
-     * @symbol ?requiresPatternItem@BannerPattern@@QEBA_NXZ
-     */
     MCAPI bool requiresPatternItem() const;
-    /**
-     * @symbol ?findPatternIndexByNameID@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     */
     MCAPI static class std::optional<unsigned char> findPatternIndexByNameID(std::string const &);
-    /**
-     * @symbol ?getPatternIndexFromName@BannerPattern@@SA?AV?$optional@E@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     */
     MCAPI static class std::optional<unsigned char> getPatternIndexFromName(std::string const &);
-    /**
-     * @symbol ?getPatternIndexFromNameID@BannerPattern@@SAEAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static unsigned char getPatternIndexFromNameID(std::string const &);
-    /**
-     * @symbol ?initPatterns@BannerPattern@@SAXXZ
-     */
     MCAPI static void initPatterns();
 MCAPI static class BannerPattern * mBase;
 MCAPI static class BannerPattern * mBorder;

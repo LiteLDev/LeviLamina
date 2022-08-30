@@ -30,70 +30,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?clone@ItemTagDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?sameItems@ItemTagDescriptor@@UEBA_NAEBUBaseDescriptor@ItemDescriptor@@_N@Z
-     */
     virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const &, bool) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?sameItem@ItemTagDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
-     */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getFullName@MolangDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getFullName() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getItem@ItemTagDescriptor@@UEBA?AUItemEntry@ItemDescriptor@@XZ
-     */
     virtual struct ItemDescriptor::ItemEntry getItem() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?forEachItemUntil@ItemTagDescriptor@@UEBA_NV?$function@$$A6A_NAEBVItem@@F@Z@std@@@Z
-     */
     virtual bool forEachItemUntil(class std::function<bool (class Item const &, short)>) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?toMap@ItemTagDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
-     */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?save@ItemTagDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
-     */
     virtual class std::optional<class CompoundTag> save() const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?serialize@ItemTagDescriptor@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void serialize(class Json::Value &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getType@ItemTagDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
-     */
     virtual enum ItemDescriptor::InternalType getType() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?shouldResolve@DeferredDescriptor@@UEBA_NXZ
-     */
     virtual bool shouldResolve() const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?resolve@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMTAGDESCRIPTOR
 #endif

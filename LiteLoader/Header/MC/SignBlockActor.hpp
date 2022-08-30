@@ -33,123 +33,32 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SignBlockActor();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?load@SignBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?save@SignBlockActor@@UEBA_NAEAVCompoundTag@@@Z
-     */
     virtual bool save(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?onChanged@SignBlockActor@@UEAAXAEAVBlockSource@@@Z
-     */
     virtual void onChanged(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?getShadowRadius@SignBlockActor@@UEBAMAEAVBlockSource@@@Z
-     */
     virtual float getShadowRadius(class BlockSource &) const;
-    /**
-     * @note   Virtual function table index: 25
-     * @symbol ?getImmersiveReaderText@SignBlockActor@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
-     */
     virtual std::string getImmersiveReaderText(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol 
-     */
     virtual void __unk_vfn_28();
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol 
-     */
     virtual void __unk_vfn_32();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol 
-     */
     virtual void __unk_vfn_33();
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol 
-     */
     virtual void __unk_vfn_34();
-    /**
-     * @note   Virtual function table index: 35
-     * @symbol ?_getUpdatePacket@SignBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
-     */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
-    /**
-     * @note   Virtual function table index: 36
-     * @symbol ?_onUpdatePacket@SignBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
-     */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCKACTOR
 #endif
-    /**
-     * @symbol ??0SignBlockActor@@QEAA@AEBVBlockPos@@@Z
-     */
     MCAPI SignBlockActor(class BlockPos const &);
-    /**
-     * @symbol ?getMessage@SignBlockActor@@QEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getMessage();
-    /**
-     * @symbol ?getSignTextColor@SignBlockActor@@QEBAAEBVColor@mce@@XZ
-     */
     MCAPI class mce::Color const & getSignTextColor() const;
-    /**
-     * @symbol ?isBug471852Resolved@SignBlockActor@@QEBA_NXZ
-     */
     MCAPI bool isBug471852Resolved() const;
-    /**
-     * @symbol ?resolveBug471852@SignBlockActor@@QEAAXXZ
-     */
     MCAPI void resolveBug471852();
-    /**
-     * @symbol ?setMessage@SignBlockActor@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
-     */
     MCAPI void setMessage(std::string, std::string);
-    /**
-     * @symbol ?setMessage@SignBlockActor@@QEAAXVTextObjectRoot@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI void setMessage(class TextObjectRoot, std::string);
-    /**
-     * @symbol ?setSignTextColor@SignBlockActor@@QEAAXAEBVColor@mce@@@Z
-     */
     MCAPI void setSignTextColor(class mce::Color const &);
-    /**
-     * @symbol ?setType@SignBlockActor@@QEAAXW4SignType@1@@Z
-     */
     MCAPI void setType(enum SignBlockActor::SignType);
 
 };

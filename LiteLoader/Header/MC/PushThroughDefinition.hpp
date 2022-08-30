@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHTHROUGHDEFINITION
 #endif
-    /**
-     * @symbol ?initialize@PushThroughDefinition@@QEAAXAEAVEntityContext@@@Z
-     */
     MCAPI void initialize(class EntityContext &);
-    /**
-     * @symbol ?buildSchema@PushThroughDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UPushThroughDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct PushThroughDefinition>> &);
 
 };

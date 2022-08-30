@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKTRYPAIREVENT
 #endif
-    /**
-     * @symbol ??1ChestBlockTryPairEvent@@QEAA@XZ
-     */
     MCAPI ~ChestBlockTryPairEvent();
 
 };

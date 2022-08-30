@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SmithingTableContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0SmithingTableContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI SmithingTableContainerScreenValidator();
 
 };

@@ -31,80 +31,25 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CraftHandlerBase();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?handleConsumedItem@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
-     */
     virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?preHandleAction@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
-     */
     virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?endRequestBatch@CraftHandlerBase@@UEAAXXZ
-     */
     virtual void endRequestBatch();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?_handleCraftAction@CraftHandlerSmithingTable@@EEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-     */
     virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?_postCraftRequest@CraftHandlerBase@@MEAAX_N@Z
-     */
     virtual void _postCraftRequest(bool);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_getLevelRecipes@CraftHandlerBase@@MEBAPEBVRecipes@@XZ
-     */
     virtual class Recipes const * _getLevelRecipes() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERBASE
 #endif
-    /**
-     * @symbol ??0CraftHandlerBase@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
-     */
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
-    /**
-     * @symbol ?_isNonImplementedTrustClientResults@CraftHandlerBase@@QEBA_NXZ
-     */
     MCAPI bool _isNonImplementedTrustClientResults() const;
-    /**
-     * @symbol ?endRequest@CraftHandlerBase@@QEAA?AW4ItemStackNetResult@@W42@@Z
-     */
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
-    /**
-     * @symbol ?handleCraftAction@CraftHandlerBase@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@W42@@Z
-     */
     MCAPI enum ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &, enum ItemStackNetResult);
-    /**
-     * @symbol ?isCraftRequest@CraftHandlerBase@@QEAA_NXZ
-     */
     MCAPI bool isCraftRequest();
-    /**
-     * @symbol ?postRequest@CraftHandlerBase@@QEAAX_N@Z
-     */
     MCAPI void postRequest(bool);
 
 //protected:
-    /**
-     * @symbol ?_getRecipeFromNetId@CraftHandlerBase@@IEAA?AV?$tuple@W4ItemStackNetResult@@PEBVRecipe@@@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     */
     MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
-    /**
-     * @symbol ?_tryGetSparseContainer@CraftHandlerBase@@IEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
-     */
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
-    /**
-     * @symbol ?_validateRequestSlot@CraftHandlerBase@@IEAA?AUItemStackRequestHandlerSlotInfo@@UItemStackRequestSlotInfo@@@Z
-     */
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 
 protected:

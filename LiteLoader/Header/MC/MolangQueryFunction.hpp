@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGQUERYFUNCTION
 #endif
-    /**
-     * @symbol ??1MolangQueryFunction@@QEAA@XZ
-     */
     MCAPI ~MolangQueryFunction();
 
 };

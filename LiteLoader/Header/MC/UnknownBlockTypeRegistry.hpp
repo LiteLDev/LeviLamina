@@ -30,23 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~UnknownBlockTypeRegistry();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
-     */
     virtual class Block const & getUnknownBlock(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNKNOWNBLOCKTYPEREGISTRY
 #endif
 
 //private:
-    /**
-     * @symbol ?_registerBlock@UnknownBlockTypeRegistry@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
-     */
     MCAPI void _registerBlock(std::string const &, unsigned __int64);
 
 private:

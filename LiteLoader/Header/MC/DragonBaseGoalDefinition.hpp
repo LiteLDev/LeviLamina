@@ -29,25 +29,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DragonBaseGoalDefinition();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?validateMobType@DragonBaseGoalDefinition@@UEAA_NAEAVMob@@@Z
-     */
     virtual bool validateMobType(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOALDEFINITION
 #endif
-    /**
-     * @symbol ??0DragonBaseGoalDefinition@@QEAA@XZ
-     */
     MCAPI DragonBaseGoalDefinition();
-    /**
-     * @symbol ?initialize@DragonBaseGoalDefinition@@QEAAXAEAVEntityContext@@AEAVDragonBaseGoal@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class DragonBaseGoal &);
 
 };

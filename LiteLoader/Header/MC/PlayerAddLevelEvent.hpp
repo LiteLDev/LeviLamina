@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERADDLEVELEVENT
 #endif
-    /**
-     * @symbol ??1PlayerAddLevelEvent@@QEAA@XZ
-     */
     MCAPI ~PlayerAddLevelEvent();
 
 };

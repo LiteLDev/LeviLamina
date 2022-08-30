@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMITATEMOBSOUNDSCOMPONENT
 #endif
-    /**
-     * @symbol ?getRandomImitatedSound@ImitateMobSoundsComponent@@SA?AW4LevelSoundEvent@@AEBVRandomize@@@Z
-     */
     MCAPI static enum LevelSoundEvent getRandomImitatedSound(class Randomize const &);
-    /**
-     * @symbol ?imitateNearbyMobs@ImitateMobSoundsComponent@@SA_NAEAVActor@@AEBVRandomize@@@Z
-     */
     MCAPI static bool imitateNearbyMobs(class Actor &, class Randomize const &);
 
 //private:

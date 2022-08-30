@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOOLRECIPES
 #endif
-    /**
-     * @symbol ?addRecipes@ToolRecipes@@SAXAEAVRecipes@@@Z
-     */
     MCAPI static void addRecipes(class Recipes &);
 
 };

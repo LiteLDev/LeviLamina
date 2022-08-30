@@ -43,62 +43,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MerchantRecipeList();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@0H@Z
-     */
     virtual class MerchantRecipe * getRecipeFor(class ItemInstance const &, class ItemInstance const &, int);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?addIfNewOrBetter@MerchantRecipeList@@UEAAXPEAVMerchantRecipe@@@Z
-     */
     virtual void addIfNewOrBetter(class MerchantRecipe *);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@00@Z
-     */
     virtual class MerchantRecipe * getMatchingRecipeFor(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBV2@@Z
-     */
     virtual class MerchantRecipe * getMatchingRecipeFor(class MerchantRecipe const &);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?load@MerchantRecipeList@@UEAAXAEBVCompoundTag@@@Z
-     */
     virtual void load(class CompoundTag const &);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?createTag@MerchantRecipeList@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
-     */
     virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPELIST
 #endif
-    /**
-     * @symbol ??0MerchantRecipeList@@QEAA@XZ
-     */
     MCAPI MerchantRecipeList();
-    /**
-     * @symbol ?assignNetIds@MerchantRecipeList@@QEAAXXZ
-     */
     MCAPI void assignNetIds();
-    /**
-     * @symbol ?getRecipeByNetId@MerchantRecipeList@@QEBAPEBVMerchantRecipe@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     */
     MCAPI class MerchantRecipe const * getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
-    /**
-     * @symbol ?getRecipeIndexByNetId@MerchantRecipeList@@QEBA?AV?$optional@_K@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
-     */
     MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
-    /**
-     * @symbol ?isRequiredItem@MerchantRecipeList@@QEAA_NAEBVItemInstance@@0@Z
-     */
     MCAPI bool isRequiredItem(class ItemInstance const &, class ItemInstance const &);
 
 };

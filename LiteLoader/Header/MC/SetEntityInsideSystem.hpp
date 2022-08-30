@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETENTITYINSIDESYSTEM
 #endif
-    /**
-     * @symbol ?createCleanupSystem@SetEntityInsideSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
-    /**
-     * @symbol ?createSystem@SetEntityInsideSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

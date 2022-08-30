@@ -30,20 +30,8 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockStateVariant();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?toNBT@BlockStateVariant@@UEBAXAEAVCompoundTag@@H@Z
-     */
     virtual void toNBT(class CompoundTag &, int) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?fromNBT@BlockStateVariant@@UEBA_NAEBVCompoundTag@@AEAH@Z
-     */
     virtual bool fromNBT(class CompoundTag const &, int &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEVARIANT
 #endif

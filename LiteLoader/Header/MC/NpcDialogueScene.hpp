@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUESCENE
 #endif
-    /**
-     * @symbol ??1NpcDialogueScene@@QEAA@XZ
-     */
     MCAPI ~NpcDialogueScene();
-    /**
-     * @symbol ?parse@NpcDialogueScene@@SA?AU1@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI static struct NpcDialogueScene parse(class Json::Value const &, std::string const &, int);
 
 };

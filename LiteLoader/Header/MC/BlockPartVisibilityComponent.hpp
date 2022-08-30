@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPARTVISIBILITYCOMPONENT
 #endif
-    /**
-     * @symbol ??4BlockPartVisibilityComponent@@QEAAAEAU0@$$QEAU0@@Z
-     */
     MCAPI struct BlockPartVisibilityComponent & operator=(struct BlockPartVisibilityComponent &&);
-    /**
-     * @symbol ??1BlockPartVisibilityComponent@@QEAA@XZ
-     */
     MCAPI ~BlockPartVisibilityComponent();
 
 };

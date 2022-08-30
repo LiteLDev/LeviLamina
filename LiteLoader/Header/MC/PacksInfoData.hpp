@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSINFODATA
 #endif
-    /**
-     * @symbol ?getBehaviorPackSize@PacksInfoData@@QEBA_KXZ
-     */
     MCAPI unsigned __int64 getBehaviorPackSize() const;
-    /**
-     * @symbol ?getResourcePackSize@PacksInfoData@@QEBA_KXZ
-     */
     MCAPI unsigned __int64 getResourcePackSize() const;
 
 };

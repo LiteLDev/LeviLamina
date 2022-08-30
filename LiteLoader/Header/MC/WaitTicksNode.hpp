@@ -29,26 +29,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~WaitTicksNode();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@WaitTicksNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
-     */
     virtual enum BehaviorStatus tick(class Actor &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeFromDefinition@WaitTicksNode@@EEAAXAEAVActor@@@Z
-     */
     virtual void initializeFromDefinition(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WAITTICKSNODE
 #endif
-    /**
-     * @symbol ??0WaitTicksNode@@QEAA@XZ
-     */
     MCAPI WaitTicksNode();
 
 };

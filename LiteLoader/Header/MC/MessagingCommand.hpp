@@ -31,34 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MessagingCommand();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
 #endif
 
 //protected:
-    /**
-     * @symbol ??0MessagingCommand@@IEAA@_N0@Z
-     */
     MCAPI MessagingCommand(bool, bool);
-    /**
-     * @symbol ?checkChatPermissions@MessagingCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?checkMutedAndSendToastIfMuted@MessagingCommand@@IEBAXAEBUCommandOriginIdentity@@AEBVLevel@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     */
     MCAPI void checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const &, class Level const &, std::vector<std::string> const &) const;
-    /**
-     * @symbol ?checkMutedAndSendToastIfMuted@MessagingCommand@@IEBAXAEBVPlayer@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
-     */
     MCAPI void checkMutedAndSendToastIfMuted(class Player const &, std::vector<std::string> const &) const;
-    /**
-     * @symbol ?tryToSIFTText@MessagingCommand@@IEBA_NAEBVCommandOrigin@@AEAVCommandOutput@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z@5@@Z
-     */
     MCAPI bool tryToSIFTText(class CommandOrigin const &, class CommandOutput &, std::vector<std::string> const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>) const;
 
 protected:

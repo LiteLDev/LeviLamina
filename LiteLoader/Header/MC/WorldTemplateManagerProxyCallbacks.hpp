@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGERPROXYCALLBACKS
 #endif
-    /**
-     * @symbol ??1WorldTemplateManagerProxyCallbacks@@QEAA@XZ
-     */
     MCAPI ~WorldTemplateManagerProxyCallbacks();
 
 };

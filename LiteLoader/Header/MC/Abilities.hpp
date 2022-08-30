@@ -31,103 +31,31 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITIES
 #endif
-    /**
-     * @symbol ??0Abilities@@QEAA@_N@Z
-     */
     MCAPI Abilities(bool);
-    /**
-     * @symbol ??0Abilities@@QEAA@AEBV0@@Z
-     */
     MCAPI Abilities(class Abilities const &);
-    /**
-     * @symbol ?addSaveData@Abilities@@QEBAXAEAVCompoundTag@@@Z
-     */
     MCAPI void addSaveData(class CompoundTag &) const;
-    /**
-     * @symbol ?forEachAbility@Abilities@@QEAAXAEBV?$function@$$A6AXAEAVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
-     */
     MCAPI void forEachAbility(class std::function<void (class Ability &, enum AbilitiesIndex)> const &, enum Ability::Options);
-    /**
-     * @symbol ?forEachAbility@Abilities@@QEBAXAEBV?$function@$$A6AXAEBVAbility@@W4AbilitiesIndex@@@Z@std@@W4Options@Ability@@@Z
-     */
     MCAPI void forEachAbility(class std::function<void (class Ability const &, enum AbilitiesIndex)> const &, enum Ability::Options) const;
-    /**
-     * @symbol ?getAbility@Abilities@@QEAAAEAVAbility@@W4AbilitiesIndex@@@Z
-     */
     MCAPI class Ability & getAbility(enum AbilitiesIndex);
-    /**
-     * @symbol ?getAbility@Abilities@@QEBAAEBVAbility@@W4AbilitiesIndex@@@Z
-     */
     MCAPI class Ability const & getAbility(enum AbilitiesIndex) const;
-    /**
-     * @symbol ?getBool@Abilities@@QEBA_NW4AbilitiesIndex@@@Z
-     */
     MCAPI bool getBool(enum AbilitiesIndex) const;
-    /**
-     * @symbol ?getFloat@Abilities@@QEBAMW4AbilitiesIndex@@@Z
-     */
     MCAPI float getFloat(enum AbilitiesIndex) const;
-    /**
-     * @symbol ?isAnyAbilitySet@Abilities@@QEBA_NXZ
-     */
     MCAPI bool isAnyAbilitySet() const;
-    /**
-     * @symbol ?loadSaveData@Abilities@@QEAA_NAEBVCompoundTag@@@Z
-     */
     MCAPI bool loadSaveData(class CompoundTag const &);
-    /**
-     * @symbol ??4Abilities@@QEAAAEAV0@AEBV0@@Z
-     */
     MCAPI class Abilities & operator=(class Abilities const &);
-    /**
-     * @symbol ??8Abilities@@QEBA_NAEBV0@@Z
-     */
     MCAPI bool operator==(class Abilities const &) const;
-    /**
-     * @symbol ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@AEBVAbility@@@Z
-     */
     MCAPI void setAbility(enum AbilitiesIndex, class Ability const &);
-    /**
-     * @symbol ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@M@Z
-     */
     MCAPI void setAbility(enum AbilitiesIndex, float);
-    /**
-     * @symbol ?setAbility@Abilities@@QEAAXW4AbilitiesIndex@@_N@Z
-     */
     MCAPI void setAbility(enum AbilitiesIndex, bool);
-    /**
-     * @symbol ?setAbilityDiff@Abilities@@QEAAXW4AbilitiesIndex@@_NAEA_N@Z
-     */
     MCAPI void setAbilityDiff(enum AbilitiesIndex, bool, bool &);
-    /**
-     * @symbol ?setDefault@Abilities@@QEAAXXZ
-     */
     MCAPI void setDefault();
-    /**
-     * @symbol ?setFromPermissions@Abilities@@QEAAXW4PlayerPermissionLevel@@@Z
-     */
     MCAPI void setFromPermissions(enum PlayerPermissionLevel);
-    /**
-     * @symbol ?unSet@Abilities@@QEAAXW4AbilitiesIndex@@@Z
-     */
     MCAPI void unSet(enum AbilitiesIndex);
-    /**
-     * @symbol ?unSet@Abilities@@QEAAXXZ
-     */
     MCAPI void unSet();
 MCAPI static class Ability INVALID_ABILITY;
 MCAPI static std::string const SERIALIZATION_TAG;
-    /**
-     * @symbol ?getAbilityName@Abilities@@SAPEBDW4AbilitiesIndex@@@Z
-     */
     MCAPI static char const * getAbilityName(enum AbilitiesIndex);
-    /**
-     * @symbol ?getDefault@Abilities@@SAAEBVAbility@@W4AbilitiesIndex@@@Z
-     */
     MCAPI static class Ability const & getDefault(enum AbilitiesIndex);
-    /**
-     * @symbol ?nameToAbilityIndex@Abilities@@SA?AW4AbilitiesIndex@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static enum AbilitiesIndex nameToAbilityIndex(std::string const &);
 
 //private:

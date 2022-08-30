@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERANIMATIONSYSTEM
 #endif
-    /**
-     * @symbol ?createServerAnimationSystem@ServerAnimationSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createServerAnimationSystem();
 
 };

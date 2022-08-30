@@ -29,21 +29,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LegacyBodyControl();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?clientTick@LegacyBodyControl@@UEAAXAEAVMob@@@Z
-     */
     virtual void clientTick(class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBODYCONTROL
 #endif
-    /**
-     * @symbol ??0LegacyBodyControl@@QEAA@XZ
-     */
     MCAPI LegacyBodyControl();
 
 };

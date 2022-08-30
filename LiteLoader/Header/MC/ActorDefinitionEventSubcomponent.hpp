@@ -30,36 +30,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ActorDefinitionEventSubcomponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?readfromJSON@ActorDefinitionEventSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
-     */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writetoJSON@ActorDefinitionEventSubcomponent@@UEBAXAEAVValue@Json@@@Z
-     */
     virtual void writetoJSON(class Json::Value &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?doOnHitEffect@ActorDefinitionEventSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
-     */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@ActorDefinitionEventSubcomponent@@UEAAPEBDXZ
-     */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONEVENTSUBCOMPONENT
 #endif
-    /**
-     * @symbol ??0ActorDefinitionEventSubcomponent@@QEAA@XZ
-     */
     MCAPI ActorDefinitionEventSubcomponent();
 
 };

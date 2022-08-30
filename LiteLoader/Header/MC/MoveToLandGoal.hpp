@@ -31,56 +31,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MoveToLandGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@MoveToLandGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@MoveToLandGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@MoveToLandGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?isValidTarget@MoveToLandGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?_moveToBlock@MoveToLandGoal@@MEAAXXZ
-     */
     virtual void _moveToBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLANDGOAL
 #endif
-    /**
-     * @symbol ??0MoveToLandGoal@@QEAA@AEAVMob@@MHHHM@Z
-     */
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
 
 };

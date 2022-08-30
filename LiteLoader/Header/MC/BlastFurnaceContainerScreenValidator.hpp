@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlastFurnaceContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACECONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0BlastFurnaceContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI BlastFurnaceContainerScreenValidator();
 
 };

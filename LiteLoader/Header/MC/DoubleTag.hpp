@@ -39,51 +39,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DoubleTag();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?write@DoubleTag@@UEBAXAEAVIDataOutput@@@Z
-     */
     virtual void write(class IDataOutput &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?load@DoubleTag@@UEAAXAEAVIDataInput@@@Z
-     */
     virtual void load(class IDataInput &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?toString@DoubleTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string toString() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getId@DoubleTag@@UEBA?AW4Type@Tag@@XZ
-     */
     virtual enum Tag::Type getId() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?equals@DoubleTag@@UEBA_NAEBVTag@@@Z
-     */
     virtual bool equals(class Tag const &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?copy@DoubleTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class Tag> copy() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?hash@DoubleTag@@UEBA_KXZ
-     */
     virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLETAG
 #endif
-    /**
-     * @symbol ??0DoubleTag@@QEAA@XZ
-     */
     MCAPI DoubleTag();
 
 };

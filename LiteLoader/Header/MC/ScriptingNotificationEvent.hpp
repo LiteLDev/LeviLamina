@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGNOTIFICATIONEVENT
 #endif
-    /**
-     * @symbol ??1ScriptingNotificationEvent@@QEAA@XZ
-     */
     MCAPI ~ScriptingNotificationEvent();
 
 };

@@ -31,211 +31,53 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@FishingHook@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~FishingHook();
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?normalTick@FishingHook@@UEAAXXZ
-     */
     virtual void normalTick();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol ?getShadowRadius@FishingHook@@UEBAMXZ
-     */
     virtual float getShadowRadius() const;
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 142
-     * @symbol ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
-     */
     virtual void handleEntityEvent(enum ActorEvent, int);
-    /**
-     * @note   Virtual function table index: 166
-     * @symbol ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z
-     */
     virtual bool save(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 172
-     * @symbol ?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getSourceUniqueID() const;
-    /**
-     * @note   Virtual function table index: 181
-     * @symbol ?canChangeDimensionsUsingPortal@FishingHook@@UEBA_NXZ
-     */
     virtual bool canChangeDimensionsUsingPortal() const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 254
-     * @symbol ?shouldDropDeathLoot@FishingHook@@UEBA_NXZ
-     */
     virtual bool shouldDropDeathLoot() const;
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGHOOK
 #endif
-    /**
-     * @symbol ??0FishingHook@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI FishingHook(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?getOwner@FishingHook@@QEAAPEAVActor@@XZ
-     */
     MCAPI class Actor * getOwner();
-    /**
-     * @symbol ?postNormalTick@FishingHook@@QEAAXXZ
-     */
     MCAPI void postNormalTick();
-    /**
-     * @symbol ?retrieve@FishingHook@@QEAAHXZ
-     */
     MCAPI int retrieve();
 MCAPI static float const BOBBER_SIZE;
 
 //protected:
-    /**
-     * @symbol ?_fishPosEvent@FishingHook@@IEAAXXZ
-     */
     MCAPI void _fishPosEvent();
-    /**
-     * @symbol ?_fishTeaseEvent@FishingHook@@IEAAXXZ
-     */
     MCAPI void _fishTeaseEvent();
-    /**
-     * @symbol ?_fishhookEvent@FishingHook@@IEAAXXZ
-     */
     MCAPI void _fishhookEvent();
-    /**
-     * @symbol ?_getWaterPercentage@FishingHook@@IEAAMXZ
-     */
     MCAPI float _getWaterPercentage();
-    /**
-     * @symbol ?_hitCheck@FishingHook@@IEAA?AVHitResult@@XZ
-     */
     MCAPI class HitResult _hitCheck();
-    /**
-     * @symbol ?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z
-     */
     MCAPI void _pullCloser(class Actor &, float);
-    /**
-     * @symbol ?_serverHooked@FishingHook@@IEAA_NXZ
-     */
     MCAPI bool _serverHooked();
-    /**
-     * @symbol ?_serverLured@FishingHook@@IEAA_NXZ
-     */
     MCAPI bool _serverLured();
-    /**
-     * @symbol ?_updateGravity@FishingHook@@IEAAXXZ
-     */
     MCAPI void _updateGravity();
-    /**
-     * @symbol ?_updateServer@FishingHook@@IEAAXXZ
-     */
     MCAPI void _updateServer();
 
 protected:

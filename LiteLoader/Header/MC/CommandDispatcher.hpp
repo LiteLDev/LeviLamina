@@ -29,21 +29,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CommandDispatcher();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z
-     */
     virtual int performCommand(class CommandOrigin const &, class Command &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDDISPATCHER
 #endif
-    /**
-     * @symbol ??0CommandDispatcher@@QEAA@XZ
-     */
     MCAPI CommandDispatcher();
 
 };

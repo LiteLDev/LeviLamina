@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SurfaceLevelCache();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getPreliminarySurfaceLevel@SurfaceLevelCache@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
-     */
     virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACELEVELCACHE
 #endif
-    /**
-     * @symbol ??0SurfaceLevelCache@@QEAA@V?$DividedPos2d@$03@@AEBVIPreliminarySurfaceProvider@@_K@Z
-     */
     MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const &, unsigned __int64);
 
 };

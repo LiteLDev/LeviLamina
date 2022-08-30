@@ -30,55 +30,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RakDataOutput();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     virtual void writeString(class gsl::basic_string_span<char const, -1>);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
-     */
     virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?writeFloat@BytesDataOutput@@UEAAXM@Z
-     */
     virtual void writeFloat(float);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?writeDouble@BytesDataOutput@@UEAAXN@Z
-     */
     virtual void writeDouble(double);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?writeByte@BytesDataOutput@@UEAAXD@Z
-     */
     virtual void writeByte(char);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?writeShort@BytesDataOutput@@UEAAXF@Z
-     */
     virtual void writeShort(short);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?writeInt@BytesDataOutput@@UEAAXH@Z
-     */
     virtual void writeInt(int);
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
-     */
     virtual void writeLongLong(__int64);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
-     */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAOUTPUT
 #endif

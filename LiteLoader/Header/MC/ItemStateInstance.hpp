@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTATEINSTANCE
 #endif
-    /**
-     * @symbol ?initState@ItemStateInstance@@QEAAXAEAIIIAEBVItemState@@@Z
-     */
     MCAPI void initState(unsigned int &, unsigned int, unsigned int, class ItemState const &);
-    /**
-     * @symbol ?isValidData@ItemStateInstance@@QEBA_NI@Z
-     */
     MCAPI bool isValidData(unsigned int) const;
 
 };

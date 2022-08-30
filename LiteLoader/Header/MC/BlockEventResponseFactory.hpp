@@ -30,20 +30,8 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockEventResponseFactory();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
-     */
     virtual void initializeFactory(class Experiments const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initSchema@BlockEventResponseFactory@@UEAAXXZ
-     */
     virtual void initSchema();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTRESPONSEFACTORY
 #endif

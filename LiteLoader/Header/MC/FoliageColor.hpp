@@ -34,45 +34,15 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLIAGECOLOR
 #endif
-    /**
-     * @symbol ?getBirchColor@FoliageColor@@SAHMM@Z
-     */
     MCAPI static int getBirchColor(float, float);
-    /**
-     * @symbol ?getDefaultColor@FoliageColor@@SAHXZ
-     */
     MCAPI static int getDefaultColor();
-    /**
-     * @symbol ?getEvergreenColor@FoliageColor@@SAHMM@Z
-     */
     MCAPI static int getEvergreenColor(float, float);
-    /**
-     * @symbol ?getFoliageColor@FoliageColor@@SAHMM@Z
-     */
     MCAPI static int getFoliageColor(float, float);
-    /**
-     * @symbol ?getFoliageColor@FoliageColor@@SAHW4PaletteName@1@MM@Z
-     */
     MCAPI static int getFoliageColor(enum FoliageColor::PaletteName, float, float);
-    /**
-     * @symbol ?getMapBirchColor@FoliageColor@@SAHMM@Z
-     */
     MCAPI static int getMapBirchColor(float, float);
-    /**
-     * @symbol ?getMapEvergreenColor@FoliageColor@@SAHMM@Z
-     */
     MCAPI static int getMapEvergreenColor(float, float);
-    /**
-     * @symbol ?getMapFoliageColor@FoliageColor@@SAHMM@Z
-     */
     MCAPI static int getMapFoliageColor(float, float);
-    /**
-     * @symbol ?getMapGrassColor@FoliageColor@@SAHAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI static int getMapGrassColor(class BlockSource &, class BlockPos const &);
-    /**
-     * @symbol ?getMapGrassColor@FoliageColor@@SAHMM@Z
-     */
     MCAPI static int getMapGrassColor(float, float);
 
 //private:

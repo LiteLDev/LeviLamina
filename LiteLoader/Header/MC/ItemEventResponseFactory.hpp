@@ -30,20 +30,8 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemEventResponseFactory();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?initializeFactory@ItemEventResponseFactory@@UEAAXAEBVExperiments@@@Z
-     */
     virtual void initializeFactory(class Experiments const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initSchema@ItemEventResponseFactory@@UEAAXXZ
-     */
     virtual void initSchema();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTRESPONSEFACTORY
 #endif

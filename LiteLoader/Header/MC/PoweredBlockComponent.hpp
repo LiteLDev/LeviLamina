@@ -31,61 +31,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PoweredBlockComponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getStrength@PoweredBlockComponent@@UEBAHXZ
-     */
     virtual int getStrength() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?canConsumerPower@PoweredBlockComponent@@UEBA_NXZ
-     */
     virtual bool canConsumerPower() const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?addSource@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?allowConnection@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?evaluate@PoweredBlockComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol 
-     */
     virtual void __unk_vfn_17();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol 
-     */
     virtual void __unk_vfn_20();
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?getCircuitComponentType@PoweredBlockComponent@@UEBA?AW4CircuitComponentType@@XZ
-     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDBLOCKCOMPONENT
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?hasChildrenSource@PoweredBlockComponent@@UEBA_NXZ
-     */
     MCVAPI bool hasChildrenSource() const;
 #endif
-    /**
-     * @symbol ??0PoweredBlockComponent@@QEAA@E@Z
-     */
     MCAPI PoweredBlockComponent(unsigned char);
 
 };

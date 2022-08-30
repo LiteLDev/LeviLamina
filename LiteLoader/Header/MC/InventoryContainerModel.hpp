@@ -31,87 +31,25 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
-     */
     virtual void containerContentChanged(int);
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual ~InventoryContainerModel();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?postInit@InventoryContainerModel@@UEAAXXZ
-     */
     virtual void postInit();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?releaseResources@InventoryContainerModel@@UEAAXXZ
-     */
     virtual void releaseResources();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?getContainerWeakRef@InventoryContainerModel@@UEBA?AVContainerWeakRef@@XZ
-     */
     virtual class ContainerWeakRef getContainerWeakRef() const;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?isValid@InventoryContainerModel@@UEAA_NXZ
-     */
     virtual bool isValid();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol 
-     */
     virtual void __unk_vfn_15();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol ?_getContainer@InventoryContainerModel@@EEBAPEAVContainer@@XZ
-     */
     virtual class Container * _getContainer() const;
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
-     */
     virtual int _getContainerOffset() const;
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
-     */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTAINERMODEL
 #endif
-    /**
-     * @symbol ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
-     */
     MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player &);
 
 //private:
-    /**
-     * @symbol ?_refreshSlot@InventoryContainerModel@@AEAAXH@Z
-     */
     MCAPI void _refreshSlot(int);
 
 private:

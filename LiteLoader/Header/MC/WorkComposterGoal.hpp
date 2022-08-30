@@ -29,51 +29,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~WorkComposterGoal();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@WorkComposterGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?useWorkstation@WorkComposterGoal@@UEAAXXZ
-     */
     virtual void useWorkstation();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKCOMPOSTERGOAL
 #endif
-    /**
-     * @symbol ??0WorkComposterGoal@@QEAA@AEAVMob@@@Z
-     */
     MCAPI WorkComposterGoal(class Mob &);
 
 //private:
-    /**
-     * @symbol ?_tryCompostItems@WorkComposterGoal@@AEAA_NXZ
-     */
     MCAPI bool _tryCompostItems();
-    /**
-     * @symbol ?_tryEmptyComposter@WorkComposterGoal@@AEAA_NXZ
-     */
     MCAPI bool _tryEmptyComposter();
 
 private:

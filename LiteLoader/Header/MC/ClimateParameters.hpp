@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIMATEPARAMETERS
 #endif
-    /**
-     * @symbol ??0ClimateParameters@@QEAA@UParameter@ClimateUtils@@00000M@Z
-     */
     MCAPI ClimateParameters(struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, float);
-    /**
-     * @symbol ?fitness@ClimateParameters@@QEBA_JAEBUTargetPoint@@@Z
-     */
     MCAPI __int64 fitness(struct TargetPoint const &) const;
 
 };

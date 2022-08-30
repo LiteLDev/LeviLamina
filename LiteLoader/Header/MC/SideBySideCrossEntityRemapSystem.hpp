@@ -30,15 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECROSSENTITYREMAPSYSTEM
 #endif
-    /**
-     * @symbol ?_remapContext@SideBySideCrossEntityRemapSystem@@SAXAEAVStrictEntityContext@@AEBUSideBySideRemappingComponent@@@Z
-     */
     MCAPI static void _remapContext(class StrictEntityContext &, struct SideBySideRemappingComponent const &);
 
 //private:
-    /**
-     * @symbol ?_removeNullStrictEntityContexts@SideBySideCrossEntityRemapSystem@@CAXAEAV?$vector@VStrictEntityContext@@V?$allocator@VStrictEntityContext@@@std@@@std@@@Z
-     */
     MCAPI static void _removeNullStrictEntityContexts(std::vector<class StrictEntityContext> &);
 
 private:

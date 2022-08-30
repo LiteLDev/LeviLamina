@@ -31,14 +31,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEFOGDEFINITION
 #endif
-    /**
-     * @symbol ?initialize@VolumeFogDefinition@@QEBAXAEAVEntityContext@@AEAVVolumeFogComponent@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class VolumeFogComponent &) const;
 MCAPI static std::string const NAME;
-    /**
-     * @symbol ?bindType@VolumeFogDefinition@@SAXXZ
-     */
     MCAPI static void bindType();
 
 };

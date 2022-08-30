@@ -30,336 +30,73 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AppConfigs();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol 
-     */
     virtual void __unk_vfn_5();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol 
-     */
     virtual void __unk_vfn_13();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol 
-     */
     virtual void __unk_vfn_15();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol 
-     */
     virtual void __unk_vfn_17();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?getEducationEditionOffering@AppConfigs@@UEBA?AW4EducationEditionOffer@@XZ
-     */
     virtual enum EducationEditionOffer getEducationEditionOffering() const;
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol 
-     */
     virtual void __unk_vfn_19();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol 
-     */
     virtual void __unk_vfn_20();
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?supports3DExport@AppConfigs@@UEBA_NXZ
-     */
     virtual bool supports3DExport() const;
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol 
-     */
     virtual void __unk_vfn_22();
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getConnectionDefinition@AppConfigs@@UEBA?AUConnectionDefinition@@XZ
-     */
     virtual struct ConnectionDefinition getConnectionDefinition() const;
-    /**
-     * @note   Virtual function table index: 24
-     * @symbol 
-     */
     virtual void __unk_vfn_24();
-    /**
-     * @note   Virtual function table index: 25
-     * @symbol 
-     */
     virtual void __unk_vfn_25();
-    /**
-     * @note   Virtual function table index: 26
-     * @symbol 
-     */
     virtual void __unk_vfn_26();
-    /**
-     * @note   Virtual function table index: 27
-     * @symbol 
-     */
     virtual void __unk_vfn_27();
-    /**
-     * @note   Virtual function table index: 28
-     * @symbol 
-     */
     virtual void __unk_vfn_28();
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol 
-     */
     virtual void __unk_vfn_29();
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol 
-     */
     virtual void __unk_vfn_30();
-    /**
-     * @note   Virtual function table index: 31
-     * @symbol 
-     */
     virtual void __unk_vfn_31();
-    /**
-     * @note   Virtual function table index: 32
-     * @symbol ?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z
-     */
     virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol ?getScreenCapabilities@AppConfigs@@UEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
-     */
     virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const &) const;
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol ?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@V?$not_null@V?$NonOwnerPointer@VIEntitlementManager@@@Bedrock@@@gsl@@@Z
-     */
     virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager>>) const;
-    /**
-     * @note   Virtual function table index: 35
-     * @symbol ?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getFeedbackURL() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPCONFIGS
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?allowGameArguments@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool allowGameArguments() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z
-     */
     MCVAPI void applyLevelDataOverride(class LevelData &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?areEmotesSupported@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool areEmotesSupported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?arePremiumSkinPacksAllowed@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool arePremiumSkinPacksAllowed() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?areQuizzesSupported@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool areQuizzesSupported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool areResourcePacksAllowed() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canUseAzureNotebooks@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool canUseAzureNotebooks() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?canUseMaelstrom@AppConfigs@@UEBA?AW4MaelstromEduUsabilityStatus@1@XZ
-     */
     MCVAPI enum AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool gameArgumentsNeedAuthentication() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isChatScreenAllowed@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool isChatScreenAllowed() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isCoursesCacheEnabled@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool isCoursesCacheEnabled() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isExternalPlayerCommunicationAllowed@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool isExternalPlayerCommunicationAllowed() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isGameTabShownInSettings@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool isGameTabShownInSettings() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool isLessonProgressionSupported() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isPlayScreenAllowed@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool isPlayScreenAllowed() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?loadFromData@AppConfigs@@UEAAXAEBVIAppConfigData@@@Z
-     */
     MCVAPI void loadFromData(class IAppConfigData const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?muteByDefault@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool muteByDefault() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?requireEduLevelSettings@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool requireEduLevelSettings() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?requireTrustedContent@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool requireTrustedContent() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool sendPermissionsTelemetry() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z
-     */
     MCVAPI void setCanAccessWorldCallback(class IMinecraftGame &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool shouldPromptBeforeExit() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool supportsChangingMultiplayerDuringPlay() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool useEduDemoUpsellDialog() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?useFullScreenByDefault@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool useFullScreenByDefault() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?useNormalizedFontSize@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool useNormalizedFontSize() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?webSocketsDisabled@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool webSocketsDisabled() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?worldBuilderDisabled@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool worldBuilderDisabled() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?worldsAreSingleUse@AppConfigs@@UEBA_NXZ
-     */
     MCVAPI bool worldsAreSingleUse() const;
 #endif
-    /**
-     * @symbol ??0AppConfigs@@QEAA@XZ
-     */
     MCAPI AppConfigs();
 
 };

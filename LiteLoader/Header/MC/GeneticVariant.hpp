@@ -28,13 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICVARIANT
 #endif
-    /**
-     * @symbol ??0GeneticVariant@@QEAA@AEBU0@@Z
-     */
     MCAPI GeneticVariant(struct GeneticVariant const &);
-    /**
-     * @symbol ??1GeneticVariant@@QEAA@XZ
-     */
     MCAPI ~GeneticVariant();
 
 };

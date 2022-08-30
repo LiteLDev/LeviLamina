@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNPOSTEVENT
 #endif
-    /**
-     * @symbol ??1BlockPatternPostEvent@@QEAA@XZ
-     */
     MCAPI ~BlockPatternPostEvent();
 
 };

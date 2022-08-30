@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEWATERLILYBLOCKSYSTEMIMPL
 #endif
-    /**
-     * @symbol ?_tickMovementSystem@InsideWaterlilyBlockSystemImpl@@SAXAEBVStrictEntityContext@@AEBU?$InsideBlockWithPosComponent@UWaterlilyBlockFlag@@@@AEAUStateVectorComponent@@@Z
-     */
     MCAPI static void _tickMovementSystem(class StrictEntityContext const &, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const &, struct StateVectorComponent &);
 
 };

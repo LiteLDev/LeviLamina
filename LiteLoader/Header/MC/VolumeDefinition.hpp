@@ -30,26 +30,11 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEDEFINITION
 #endif
-    /**
-     * @symbol ??0VolumeDefinition@@QEAA@XZ
-     */
     MCAPI VolumeDefinition();
-    /**
-     * @symbol ??1VolumeDefinition@@QEAA@XZ
-     */
     MCAPI ~VolumeDefinition();
 MCAPI static std::string const NAME;
-    /**
-     * @symbol ?bindType@VolumeDefinition@@SAXXZ
-     */
     MCAPI static void bindType();
-    /**
-     * @symbol ?getMaxSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
-     */
     MCAPI static class SemVersion const & getMaxSupportedVersion();
-    /**
-     * @symbol ?getMinSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
-     */
     MCAPI static class SemVersion const & getMinSupportedVersion();
 
 };

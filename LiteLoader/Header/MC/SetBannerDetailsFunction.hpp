@@ -32,36 +32,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SetBannerDetailsFunction();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?apply@SetBannerDetailsFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?apply@SetBannerDetailsFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBANNERDETAILSFUNCTION
 #endif
-    /**
-     * @symbol ?deserialize@SetBannerDetailsFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
-     */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
-    /**
-     * @symbol ?_apply@SetBannerDetailsFunction@@AEBAXAEAVItemStackBase@@AEAVRandom@@AEAVLootTableContext@@@Z
-     */
     MCAPI void _apply(class ItemStackBase &, class Random &, class LootTableContext &) const;
-    /**
-     * @symbol ?_parseBannerPattern@SetBannerDetailsFunction@@CAXAEAV?$vector@U?$pair@EW4ItemColor@@@std@@V?$allocator@U?$pair@EW4ItemColor@@@std@@@2@@std@@AEBVValue@Json@@@Z
-     */
     MCAPI static void _parseBannerPattern(std::vector<struct std::pair<unsigned char, enum ItemColor>> &, class Json::Value const &);
 
 private:

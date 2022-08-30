@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTDATA
 #endif
-    /**
-     * @symbol ??0MineshaftData@@QEAA@_N@Z
-     */
     MCAPI MineshaftData(bool);
 
 };

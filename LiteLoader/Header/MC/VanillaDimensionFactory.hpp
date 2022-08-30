@@ -22,9 +22,6 @@ namespace VanillaDimensionFactory {
 // Add Member There
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?registerDimensionTypes@VanillaDimensionFactory@@YAXAEAV?$Factory@VDimension@@AEAVLevel@@AEAVScheduler@@@@@Z
-     */
     MCAPI void registerDimensionTypes(class Factory<class Dimension, class Level &, class Scheduler &> &);
 
 };

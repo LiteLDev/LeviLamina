@@ -30,17 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTCOMMONMODULEFACTORY
 #endif
-    /**
-     * @symbol ??0ScriptMinecraftCommonModuleFactory@@QEAA@XZ
-     */
     MCAPI ScriptMinecraftCommonModuleFactory();
-    /**
-     * @symbol ?addCommon@ScriptMinecraftCommonModuleFactory@@QEAAXAEAVModuleBindingBuilder@Scripting@@@Z
-     */
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &);
-    /**
-     * @symbol ??1ScriptMinecraftCommonModuleFactory@@QEAA@XZ
-     */
     MCAPI ~ScriptMinecraftCommonModuleFactory();
 
 };

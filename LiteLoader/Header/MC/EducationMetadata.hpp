@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONMETADATA
 #endif
-    /**
-     * @symbol ??0EducationMetadata@@QEAA@XZ
-     */
     MCAPI EducationMetadata();
-    /**
-     * @symbol ??1EducationMetadata@@QEAA@XZ
-     */
     MCAPI ~EducationMetadata();
 MCAPI static class std::unordered_map<std::string, enum EducationMetadata::ContentType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum EducationMetadata::ContentType>>> const STRING_TO_CONTENT_TYPE;
 MCAPI static class std::unordered_map<std::string, enum EducationMetadata::UserType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum EducationMetadata::UserType>>> const STRING_TO_USER_TYPE;

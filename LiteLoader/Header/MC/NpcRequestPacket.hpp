@@ -30,70 +30,23 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NpcRequestPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@NpcRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@NpcRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@NpcRequestPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@NpcRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCREQUESTPACKET
 #endif
-    /**
-     * @symbol ??0NpcRequestPacket@@QEAA@XZ
-     */
     MCAPI NpcRequestPacket();
-    /**
-     * @symbol ?getInteractText@NpcRequestPacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getInteractText() const;
-    /**
-     * @symbol ?getNpcName@NpcRequestPacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getNpcName() const;
-    /**
-     * @symbol ?getSceneName@NpcRequestPacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     MCAPI std::string const & getSceneName() const;
-    /**
-     * @symbol ?getSkin@NpcRequestPacket@@QEBAHXZ
-     */
     MCAPI int getSkin() const;
-    /**
-     * @symbol ?requestSetInteractText@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static class NpcRequestPacket requestSetInteractText(class ActorRuntimeID, std::string);
-    /**
-     * @symbol ?requestSetName@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static class NpcRequestPacket requestSetName(class ActorRuntimeID, std::string);
-    /**
-     * @symbol ?requestSetSkin@NpcRequestPacket@@SA?AV1@VActorRuntimeID@@H@Z
-     */
     MCAPI static class NpcRequestPacket requestSetSkin(class ActorRuntimeID, int);
 
 //private:
-    /**
-     * @symbol ??0NpcRequestPacket@@AEAA@VActorRuntimeID@@W4RequestType@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@E@Z
-     */
     MCAPI NpcRequestPacket(class ActorRuntimeID, enum NpcRequestPacket::RequestType, std::string, unsigned char);
 
 private:

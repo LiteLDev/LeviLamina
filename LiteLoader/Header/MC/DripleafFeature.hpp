@@ -31,23 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DripleafFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@DripleafFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRIPLEAFFEATURE
 #endif
 
 //private:
-    /**
-     * @symbol ?_placeBigDripleaf@DripleafFeature@@CA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     MCAPI static bool _placeBigDripleaf(class BlockSource &, class BlockPos const &, class Random &);
 
 private:

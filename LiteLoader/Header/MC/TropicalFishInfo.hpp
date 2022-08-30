@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TROPICALFISHINFO
 #endif
-    /**
-     * @symbol ??1TropicalFishInfo@@QEAA@XZ
-     */
     MCAPI ~TropicalFishInfo();
 
 };

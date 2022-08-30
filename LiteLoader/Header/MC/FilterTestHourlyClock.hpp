@@ -32,25 +32,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FilterTestHourlyClock();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?setup@FilterTestHourlyClock@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
-     */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?evaluate@FilterTestHourlyClock@@UEBA_NAEBUFilterContext@@@Z
-     */
     virtual bool evaluate(struct FilterContext const &) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getName@FilterTestHourlyClock@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTHOURLYCLOCK
 #endif

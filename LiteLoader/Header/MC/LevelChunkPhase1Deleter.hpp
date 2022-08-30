@@ -31,9 +31,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKPHASE1DELETER
 #endif
-    /**
-     * @symbol ??RLevelChunkPhase1Deleter@@QEAAXPEAVLevelChunk@@@Z
-     */
     MCAPI void operator()(class LevelChunk *);
 
 };

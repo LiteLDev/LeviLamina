@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILCOMPONENT
 #endif
-    /**
-     * @symbol ??0TrailComponent@@QEAA@XZ
-     */
     MCAPI TrailComponent();
-    /**
-     * @symbol ?initFromDefinition@TrailComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void initFromDefinition(class Actor &);
 
 };

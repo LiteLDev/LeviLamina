@@ -31,31 +31,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SayCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@SayCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAYCOMMAND
 #endif
-    /**
-     * @symbol ?setup@SayCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?_sendMessage@SayCommand@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBUCommandOriginIdentity@@AEAVLevel@@@Z
-     */
     MCAPI void _sendMessage(std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
-    /**
-     * @symbol ?_trySendSayCommandEvent@SayCommand@@AEBA_NAEBVPlayer@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI bool _trySendSayCommandEvent(class Player const &, class Level &, std::string const &) const;
 
 private:

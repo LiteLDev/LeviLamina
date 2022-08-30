@@ -32,81 +32,22 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~IFileChunkUploader();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initFileUploader@ServerFileChunkUploader@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUFileInfo@@HAEBVValue@Json@@V?$function@$$A6AX_N@Z@3@@Z
-     */
     virtual void initFileUploader(std::string const &, struct FileInfo const &, int, class Json::Value const &, class std::function<void (bool)>) = 0;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getServerMissingChunks@IFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z
-     */
     virtual void getServerMissingChunks(struct FileInfo const &, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?uploadChunk@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z
-     */
     virtual void uploadChunk(struct FileInfo const &, struct FileChunkInfo const &, std::vector<unsigned char> const &, class std::function<void (bool)>);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
-     */
     virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum IFileChunkUploader::UploadStreamResult)>);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?canCancelUpload@ServerFileChunkUploader@@UEBA_NAEBUFileInfo@@@Z
-     */
     virtual bool canCancelUpload(struct FileInfo const &) const = 0;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8() = 0;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ
-     */
     virtual enum UploadError getInitErrorCode() const = 0;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?getUploadProgress@ServerFileChunkUploader@@UEBAMAEBUFileInfo@@@Z
-     */
     virtual float getUploadProgress(struct FileInfo const &) const = 0;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?getChunkInfo@IFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z
-     */
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?confirmChunkReceived@IFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@@Z
-     */
     MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?update@IFileChunkUploader@@UEAAXXZ
-     */
     MCVAPI void update();
 #endif
-    /**
-     * @symbol ??0IFileChunkUploader@@QEAA@XZ
-     */
     MCAPI IFileChunkUploader();
 
 };

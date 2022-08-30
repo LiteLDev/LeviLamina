@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEORIENTATIONTRANSFORM
 #endif
-    /**
-     * @symbol ??0BoneOrientationTransform@@QEAA@XZ
-     */
     MCAPI BoneOrientationTransform();
 
 };

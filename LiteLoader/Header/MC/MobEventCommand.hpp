@@ -37,21 +37,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MobEventCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@MobEventCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENTCOMMAND
 #endif
-    /**
-     * @symbol ?setup@MobEventCommand@@SAXAEAVCommandRegistry@@$$QEAUInitProxy@1@@Z
-     */
     MCAPI static void setup(class CommandRegistry &, struct MobEventCommand::InitProxy &&);
 
 };

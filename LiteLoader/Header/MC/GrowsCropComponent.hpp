@@ -31,13 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWSCROPCOMPONENT
 #endif
-    /**
-     * @symbol ??0GrowsCropComponent@@QEAA@XZ
-     */
     MCAPI GrowsCropComponent();
-    /**
-     * @symbol ?readAdditionalSaveData@GrowsCropComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 
 };

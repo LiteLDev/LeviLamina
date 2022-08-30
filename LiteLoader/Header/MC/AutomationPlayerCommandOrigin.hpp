@@ -32,75 +32,21 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AutomationPlayerCommandOrigin();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getRequestId@AutomationPlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getRequestId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@AutomationPlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getPermissionsLevel@AutomationPlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clone@AutomationPlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?hasChatPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ
-     */
     virtual bool hasChatPerms() const;
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?hasTellPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ
-     */
     virtual bool hasTellPerms() const;
-    /**
-     * @note   Virtual function table index: 19
-     * @symbol ?getSourceId@AutomationPlayerCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
-     */
     virtual class NetworkIdentifier const & getSourceId() const;
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getOriginType@AutomationPlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     */
     virtual enum CommandOriginType getOriginType() const;
-    /**
-     * @note   Virtual function table index: 24
-     * @symbol ?toCommandOriginData@AutomationPlayerCommandOrigin@@UEBA?AUCommandOriginData@@XZ
-     */
     virtual struct CommandOriginData toCommandOriginData() const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol ?serialize@AutomationPlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     */
     virtual class CompoundTag serialize() const;
-    /**
-     * @note   Virtual function table index: 30
-     * @symbol ?isValid@AutomationPlayerCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUTOMATIONPLAYERCOMMANDORIGIN
 #endif
-    /**
-     * @symbol ??0AutomationPlayerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandPermissionLevel@@AEBVNetworkIdentifier@@@Z
-     */
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum CommandPermissionLevel, class NetworkIdentifier const &);
-    /**
-     * @symbol ??0AutomationPlayerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPlayer@@@Z
-     */
     MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);
 
 };

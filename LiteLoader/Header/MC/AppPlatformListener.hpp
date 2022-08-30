@@ -30,99 +30,25 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppFocusGained@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppFocusGained();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppFocusLost@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppFocusLost();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppPaused@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppPaused();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppPreSuspended@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppPreSuspended();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppResumed@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppResumed();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppSuspended@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppSuspended();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppTerminated@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppTerminated();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onAppUnpaused@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onAppUnpaused();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onClipboardCopy@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCVAPI void onClipboardCopy(std::string const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCVAPI void onClipboardPaste(std::string const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onDeviceLost@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onDeviceLost();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onLowMemory@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onLowMemory();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
-     */
     MCVAPI void onOperationModeChanged(enum OperationMode);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
-     */
     MCVAPI void onPerformanceModeChanged(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z
-     */
     MCVAPI void onPushNotificationReceived(class PushNotificationMessage const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onResizeBegin@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onResizeBegin();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onResizeEnd@AppPlatformListener@@UEAAXXZ
-     */
     MCVAPI void onResizeEnd();
 #endif
-    /**
-     * @symbol ??0AppPlatformListener@@QEAA@XZ
-     */
     MCAPI AppPlatformListener();
-    /**
-     * @symbol ?terminate@AppPlatformListener@@QEAAXXZ
-     */
     MCAPI void terminate();
 
 };

@@ -30,23 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SingleBlockFeature();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?place@SingleBlockFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SINGLEBLOCKFEATURE
 #endif
 
 //private:
-    /**
-     * @symbol ?_mayAttach@SingleBlockFeature@@AEBAPEBVBlock@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
-     */
     MCAPI class Block const * _mayAttach(class IBlockWorldGenAPI &, class BlockPos const &) const;
 
 private:

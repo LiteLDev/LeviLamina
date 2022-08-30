@@ -30,49 +30,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemStackRequestActionTransferBase();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?_write@ItemStackRequestActionTransferBase@@MEBAXAEAVBinaryStream@@@Z
-     */
     virtual void _write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?_read@ItemStackRequestActionTransferBase@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
-     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
 #endif
-    /**
-     * @symbol ?getAmount@ItemStackRequestActionTransferBase@@QEBAEXZ
-     */
     MCAPI unsigned char getAmount() const;
-    /**
-     * @symbol ?getDst@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
-     */
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
-    /**
-     * @symbol ?getSrc@ItemStackRequestActionTransferBase@@QEBAAEBUItemStackRequestSlotInfo@@XZ
-     */
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 
 };

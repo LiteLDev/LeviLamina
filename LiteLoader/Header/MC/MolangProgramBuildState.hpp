@@ -31,49 +31,16 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGPROGRAMBUILDSTATE
 #endif
-    /**
-     * @symbol ?allocateInstruction@MolangProgramBuildState@@QEAA_KXZ
-     */
     MCAPI unsigned __int64 allocateInstruction();
-    /**
-     * @symbol ?emplaceInstruction@MolangProgramBuildState@@QEAAXV?$function@$$A6AXAEAUMolangEvalParams@@@Z@std@@@Z
-     */
     MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams &)>);
-    /**
-     * @symbol ?emplaceInstruction@MolangProgramBuildState@@QEAAX_KV?$function@$$A6AXAEAUMolangEvalParams@@@Z@std@@@Z
-     */
     MCAPI void emplaceInstruction(unsigned __int64, class std::function<void (struct MolangEvalParams &)>);
-    /**
-     * @symbol ?insertJumpWithMaddAtIndex@MolangProgramBuildState@@QEAAX_K0MM@Z
-     */
     MCAPI void insertJumpWithMaddAtIndex(unsigned __int64, unsigned __int64, float, float);
-    /**
-     * @symbol ?numInstructions@MolangProgramBuildState@@QEBA_KXZ
-     */
     MCAPI unsigned __int64 numInstructions() const;
-    /**
-     * @symbol ?popForEachScope@MolangProgramBuildState@@QEAAX_K@Z
-     */
     MCAPI void popForEachScope(unsigned __int64);
-    /**
-     * @symbol ?popLoopScope@MolangProgramBuildState@@QEAAX_K@Z
-     */
     MCAPI void popLoopScope(unsigned __int64);
-    /**
-     * @symbol ?pushLoopScope@MolangProgramBuildState@@QEAAX_K000@Z
-     */
     MCAPI void pushLoopScope(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
-    /**
-     * @symbol ?pushReturnValue@MolangProgramBuildState@@QEAAXXZ
-     */
     MCAPI void pushReturnValue();
-    /**
-     * @symbol ?setReturnValue@MolangProgramBuildState@@QEAAXM@Z
-     */
     MCAPI void setReturnValue(float);
-    /**
-     * @symbol ??1MolangProgramBuildState@@QEAA@XZ
-     */
     MCAPI ~MolangProgramBuildState();
 
 };

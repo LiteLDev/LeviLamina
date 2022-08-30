@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKANDSUBCHUNKLOGGINGDATA
 #endif
-    /**
-     * @symbol ?logLevelChunkEvent@LevelChunkAndSubChunkLoggingData@@SAXAEBVChunkPos@@PEBD_N@Z
-     */
     MCAPI static void logLevelChunkEvent(class ChunkPos const &, char const *, bool);
-    /**
-     * @symbol ?logSubChunkEvent@LevelChunkAndSubChunkLoggingData@@SAXAEBVSubChunkPos@@PEBD_N@Z
-     */
     MCAPI static void logSubChunkEvent(class SubChunkPos const &, char const *, bool);
 
 };

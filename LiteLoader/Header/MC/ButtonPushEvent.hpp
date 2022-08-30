@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONPUSHEVENT
 #endif
-    /**
-     * @symbol ??1ButtonPushEvent@@QEAA@XZ
-     */
     MCAPI ~ButtonPushEvent();
 
 };

@@ -31,41 +31,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TridentRiptideEnchant();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isCompatibleWith@TridentRiptideEnchant@@UEBA_NW4Type@Enchant@@@Z
-     */
     virtual bool isCompatibleWith(enum Enchant::Type) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getMinCost@TridentRiptideEnchant@@UEBAHH@Z
-     */
     virtual int getMinCost(int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getMaxCost@TridentRiptideEnchant@@UEBAHH@Z
-     */
     virtual int getMaxCost(int) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getMaxLevel@TridentRiptideEnchant@@UEBAHXZ
-     */
     virtual int getMaxLevel() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTRIPTIDEENCHANT
 #endif
-    /**
-     * @symbol ??0TridentRiptideEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
-     */
     MCAPI TridentRiptideEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 };

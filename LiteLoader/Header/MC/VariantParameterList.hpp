@@ -32,9 +32,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARIANTPARAMETERLIST
 #endif
-    /**
-     * @symbol ?hasParameter@VariantParameterList@@QEBA_NW4FilterSubject@@@Z
-     */
     MCAPI bool hasParameter(enum FilterSubject) const;
 
 };

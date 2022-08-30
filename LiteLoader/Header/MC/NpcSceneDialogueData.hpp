@@ -34,76 +34,21 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NpcSceneDialogueData();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getDialogueText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getDialogueText() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getNameText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getNameText() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?getNameRawText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getNameRawText() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getSceneName@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getSceneName() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol 
-     */
     virtual void __unk_vfn_6();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?getActorUniqueID@NpcSceneDialogueData@@UEAA?AUActorUniqueID@@XZ
-     */
     virtual struct ActorUniqueID getActorUniqueID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getActionsContainer@NpcSceneDialogueData@@UEAAPEAUNpcActionsContainer@@XZ
-     */
     MCVAPI struct NpcActionsContainer * getActionsContainer();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getActionsContainer@NpcSceneDialogueData@@UEBAPEBUNpcActionsContainer@@XZ
-     */
     MCVAPI struct NpcActionsContainer const * getActionsContainer() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getActor@NpcSceneDialogueData@@UEAAPEAVActor@@XZ
-     */
     MCVAPI class Actor * getActor();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getActor@NpcSceneDialogueData@@UEBAPEBVActor@@XZ
-     */
     MCVAPI class Actor const * getActor() const;
 #endif
-    /**
-     * @symbol ??0NpcSceneDialogueData@@QEAA@VWeakEntityRef@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const &);
 
 };

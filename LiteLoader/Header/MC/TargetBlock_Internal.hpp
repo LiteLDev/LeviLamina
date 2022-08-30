@@ -22,9 +22,6 @@ namespace TargetBlock_Internal {
 // Add Member There
 
 #undef AFTER_EXTRA
-    /**
-     * @symbol ?createPoweredBlockComponentAtPos@TargetBlock_Internal@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     MCAPI void createPoweredBlockComponentAtPos(class BlockSource &, class BlockPos const &);
 
 };

@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPITEMCOMPONENT
 #endif
-    /**
-     * @symbol ?onEquipItemPickedUp@EquipItemComponent@@QEAAXVItemStack@@H@Z
-     */
     MCAPI void onEquipItemPickedUp(class ItemStack, int);
-    /**
-     * @symbol ??1EquipItemComponent@@QEAA@XZ
-     */
     MCAPI ~EquipItemComponent();
 
 };

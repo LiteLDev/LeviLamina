@@ -46,55 +46,19 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POTIONBREWING
 #endif
-    /**
-     * @symbol ?addContainerRecipe@PotionBrewing@@SAXAEBVItem@@AEBVIngredient@1@0@Z
-     */
     MCAPI static void addContainerRecipe(class Item const &, class PotionBrewing::Ingredient const &, class Item const &);
-    /**
-     * @symbol ?addPotionMix@PotionBrewing@@SAXAEBVItemDescriptor@@AEBVIngredient@1@0@Z
-     */
     MCAPI static void addPotionMix(class ItemDescriptor const &, class PotionBrewing::Ingredient const &, class ItemDescriptor const &);
-    /**
-     * @symbol ?getFuelValue@PotionBrewing@@SAHAEBVItemDescriptor@@@Z
-     */
     MCAPI static int getFuelValue(class ItemDescriptor const &);
-    /**
-     * @symbol ?hasMix@PotionBrewing@@SA_NAEBVItemInstance@@AEBVItemDescriptor@@@Z
-     */
     MCAPI static bool hasMix(class ItemInstance const &, class ItemDescriptor const &);
-    /**
-     * @symbol ?initPotionBrewing@PotionBrewing@@SAXXZ
-     */
     MCAPI static void initPotionBrewing();
-    /**
-     * @symbol ?isFuel@PotionBrewing@@SA_NAEBVItemDescriptor@@@Z
-     */
     MCAPI static bool isFuel(class ItemDescriptor const &);
-    /**
-     * @symbol ?isIngredient@PotionBrewing@@SA_NAEBVItemDescriptor@@@Z
-     */
     MCAPI static bool isIngredient(class ItemDescriptor const &);
-    /**
-     * @symbol ?isPotionRecipeInput@PotionBrewing@@SA_NAEBVItemDescriptor@@@Z
-     */
     MCAPI static bool isPotionRecipeInput(class ItemDescriptor const &);
-    /**
-     * @symbol ?mix@PotionBrewing@@SA?AVItemInstance@@AEBVItemDescriptor@@AEBV2@@Z
-     */
     MCAPI static class ItemInstance mix(class ItemDescriptor const &, class ItemInstance const &);
-    /**
-     * @symbol ?shutdown@PotionBrewing@@SAXXZ
-     */
     MCAPI static void shutdown();
 
 //private:
-    /**
-     * @symbol ?addChemistryMix@PotionBrewing@@CAXAEBVItemInstance@@AEBVIngredient@1@0@Z
-     */
     MCAPI static void addChemistryMix(class ItemInstance const &, class PotionBrewing::Ingredient const &, class ItemInstance const &);
-    /**
-     * @symbol ?getChemistryMix@PotionBrewing@@CA?AVItemInstance@@AEBVItemDescriptor@@0@Z
-     */
     MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const &, class ItemDescriptor const &);
 
 private:

@@ -31,21 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLECOMPONENT
 #endif
-    /**
-     * @symbol ??0BucketableComponent@@QEAA@XZ
-     */
     MCAPI BucketableComponent();
-    /**
-     * @symbol ?getInteraction@BucketableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
-     */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
-    /**
-     * @symbol ?initFromDefinition@BucketableComponent@@QEAAXAEAVActor@@@Z
-     */
     MCAPI void initFromDefinition(class Actor &);
-    /**
-     * @symbol ?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z
-     */
     MCAPI static void implInteraction(class Actor &, class Player &);
 
 //private:

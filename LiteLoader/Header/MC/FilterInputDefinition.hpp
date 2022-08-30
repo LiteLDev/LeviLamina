@@ -29,17 +29,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUTDEFINITION
 #endif
-    /**
-     * @symbol ??0FilterInputDefinition@@QEAA@VFilterInput@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI FilterInputDefinition(class FilterInput, std::string const &);
-    /**
-     * @symbol ??0FilterInputDefinition@@QEAA@H@Z
-     */
     MCAPI FilterInputDefinition(int);
-    /**
-     * @symbol ??1FilterInputDefinition@@QEAA@XZ
-     */
     MCAPI ~FilterInputDefinition();
 
 };

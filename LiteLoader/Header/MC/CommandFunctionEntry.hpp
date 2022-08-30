@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CommandFunctionEntry();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@CommandFunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-     */
     virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFUNCTIONENTRY
 #endif
-    /**
-     * @symbol ??0CommandFunctionEntry@@QEAA@V?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@Z
-     */
     MCAPI CommandFunctionEntry(std::unique_ptr<class Command>);
 
 };

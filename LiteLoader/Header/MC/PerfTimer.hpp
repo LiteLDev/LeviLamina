@@ -34,13 +34,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFTIMER
 #endif
-    /**
-     * @symbol ??0PerfTimer@@QEAA@Vid@thread@std@@@Z
-     */
     MCAPI PerfTimer(class std::thread::id);
-    /**
-     * @symbol ??1PerfTimer@@QEAA@XZ
-     */
     MCAPI ~PerfTimer();
 MCAPI static bool mEnabled;
 MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;

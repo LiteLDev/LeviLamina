@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGACTORIDARRAYPTR
 #endif
-    /**
-     * @symbol ??0MolangActorIdArrayPtr@@QEAA@V?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@@Z
-     */
     MCAPI MolangActorIdArrayPtr(std::vector<struct ActorUniqueID>);
-    /**
-     * @symbol ??1MolangActorIdArrayPtr@@QEAA@XZ
-     */
     MCAPI ~MolangActorIdArrayPtr();
 
 };

@@ -30,25 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ConsoleGameTestListener();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?onTestStructureLoaded@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?onTestPassed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?onTestFailed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
-     */
     virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEGAMETESTLISTENER
 #endif

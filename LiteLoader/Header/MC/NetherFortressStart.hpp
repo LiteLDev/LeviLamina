@@ -31,16 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~NetherFortressStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSSTART
 #endif
-    /**
-     * @symbol ??0NetherFortressStart@@QEAA@AEAVRandom@@FHH@Z
-     */
     MCAPI NetherFortressStart(class Random &, short, int, int);
 
 };

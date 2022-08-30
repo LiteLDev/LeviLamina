@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LevelDbRandomAccessFile();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?Read@LevelDbRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
-     */
     virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBRANDOMACCESSFILE
 #endif
-    /**
-     * @symbol ??0LevelDbRandomAccessFile@@QEAA@$$QEAVFile@Core@@@Z
-     */
     MCAPI LevelDbRandomAccessFile(class Core::File &&);
 
 };

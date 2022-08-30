@@ -30,56 +30,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ConsumerComponent();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?canConsumerPower@ConsumerComponent@@UEBA_NXZ
-     */
     virtual bool canConsumerPower() const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?addSource@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
-     */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?allowConnection@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?evaluate@ConsumerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol 
-     */
     virtual void __unk_vfn_17();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol 
-     */
     virtual void __unk_vfn_20();
-    /**
-     * @note   Virtual function table index: 21
-     * @symbol ?isSecondaryPowered@ConsumerComponent@@UEBA_NXZ
-     */
     virtual bool isSecondaryPowered() const;
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?getCircuitComponentType@ConsumerComponent@@UEBA?AW4CircuitComponentType@@XZ
-     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMERCOMPONENT
 #endif
-    /**
-     * @symbol ??0ConsumerComponent@@QEAA@XZ
-     */
     MCAPI ConsumerComponent();
 
 };

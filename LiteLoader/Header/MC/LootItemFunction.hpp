@@ -31,40 +31,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LootItemFunction();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?apply@SpecificEnchantFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
-     */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &) = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     */
     virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?apply@SpecificEnchantFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
-     */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &) = 0;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?apply@LootItemFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
-     */
     virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTION
 #endif
-    /**
-     * @symbol ?getConditions@LootItemFunction@@QEBAAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@XZ
-     */
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
-    /**
-     * @symbol ?deserialize@LootItemFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@@Z
-     */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
 
 //private:

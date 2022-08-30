@@ -31,20 +31,8 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~OceanMonumentDoubleXRoom();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getType@OceanMonumentDoubleXRoom@@UEBA?AW4StructurePieceType@@XZ
-     */
     virtual enum StructurePieceType getType() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?postProcess@OceanMonumentDoubleXRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTDOUBLEXROOM
 #endif

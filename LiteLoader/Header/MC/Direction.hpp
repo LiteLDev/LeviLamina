@@ -41,13 +41,7 @@ MCAPI static enum Direction::Type const DIRECTION_OPPOSITE[];
 MCAPI static enum Direction::Type const FACING_DIRECTION[];
 MCAPI static int const STEP_X[];
 MCAPI static int const STEP_Z[];
-    /**
-     * @symbol ?convertFacingDirectionToDirection@Direction@@SA?AW4Type@1@E@Z
-     */
     MCAPI static enum Direction::Type convertFacingDirectionToDirection(unsigned char);
-    /**
-     * @symbol ?getDirection@Direction@@SA?AW4Type@1@MM@Z
-     */
     MCAPI static enum Direction::Type getDirection(float, float);
 
 };

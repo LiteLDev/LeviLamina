@@ -36,13 +36,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONITEMGROUP
 #endif
-    /**
-     * @symbol ?getItemInstance@InventoryTransactionItemGroup@@QEBA?AVItemStack@@XZ
-     */
     MCAPI class ItemStack getItemInstance() const;
-    /**
-     * @symbol ??1InventoryTransactionItemGroup@@QEAA@XZ
-     */
     MCAPI ~InventoryTransactionItemGroup();
 
 };

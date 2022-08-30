@@ -32,10 +32,6 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~UseActorDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORDEFINITION
 #endif

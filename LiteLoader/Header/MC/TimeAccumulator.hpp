@@ -29,25 +29,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMEACCUMULATOR
 #endif
-    /**
-     * @symbol ??0TimeAccumulator@@QEAA@XZ
-     */
     MCAPI TimeAccumulator();
-    /**
-     * @symbol ?getCount@TimeAccumulator@@QEBA_KXZ
-     */
     MCAPI unsigned __int64 getCount() const;
-    /**
-     * @symbol ?getTimeSumAverageMS@TimeAccumulator@@QEBAMXZ
-     */
     MCAPI float getTimeSumAverageMS() const;
-    /**
-     * @symbol ?getTimeSumAverageSeconds@TimeAccumulator@@QEBAMXZ
-     */
     MCAPI float getTimeSumAverageSeconds() const;
-    /**
-     * @symbol ?getTimeSumSeconds@TimeAccumulator@@QEBAMXZ
-     */
     MCAPI float getTimeSumSeconds() const;
 
 };

@@ -30,26 +30,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StructurePoolBlockPredicateBlockMatch();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
-     */
     virtual bool test(class Block const &, class Randomize &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
-     */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCH
 #endif
-    /**
-     * @symbol ??0StructurePoolBlockPredicateBlockMatch@@QEAA@AEBVBlock@@@Z
-     */
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const &);
 
 };

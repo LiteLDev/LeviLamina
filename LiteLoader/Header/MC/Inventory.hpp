@@ -31,82 +31,23 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Inventory();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?init@Inventory@@UEAAXXZ
-     */
     virtual void init();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
-     */
     virtual void setItem(int, class ItemStack const &);
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
-     */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol 
-     */
     virtual void __unk_vfn_22();
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol 
-     */
     virtual void __unk_vfn_23();
-    /**
-     * @note   Virtual function table index: 33
-     * @symbol ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
-     */
     virtual bool add(class ItemStack &);
-    /**
-     * @note   Virtual function table index: 34
-     * @symbol ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
-     */
     virtual bool canAdd(class ItemStack const &) const;
-    /**
-     * @note   Virtual function table index: 38
-     * @symbol ?getEmptySlotsCount@Inventory@@UEBAHXZ
-     */
     virtual int getEmptySlotsCount() const;
-    /**
-     * @note   Virtual function table index: 39
-     * @symbol ?getFirstEmptySlot@Inventory@@UEBAHXZ
-     */
     virtual int getFirstEmptySlot() const;
-    /**
-     * @note   Virtual function table index: 40
-     * @symbol ?setContainerSize@Inventory@@UEAAXH@Z
-     */
     virtual void setContainerSize(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORY
 #endif
-    /**
-     * @symbol ??0Inventory@@QEAA@PEAVPlayer@@@Z
-     */
     MCAPI Inventory(class Player *);
-    /**
-     * @symbol ?dropSlot@Inventory@@QEAAXH_N00@Z
-     */
     MCAPI void dropSlot(int, bool, bool, bool);
-    /**
-     * @symbol ?getComplexItems@Inventory@@QEAA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
-     */
     MCAPI std::vector<class ItemStack> getComplexItems();
-    /**
-     * @symbol ?setupDefault@Inventory@@QEAAXXZ
-     */
     MCAPI void setupDefault();
-    /**
-     * @symbol ?tick@Inventory@@QEAAXH@Z
-     */
     MCAPI void tick(int);
 
 };

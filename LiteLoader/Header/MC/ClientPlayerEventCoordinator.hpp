@@ -32,17 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTPLAYEREVENTCOORDINATOR
 #endif
-    /**
-     * @symbol ?sendPlayerDestroyedBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockLegacy@@@Z
-     */
     MCAPI void sendPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
-    /**
-     * @symbol ?sendPlayerInput@ClientPlayerEventCoordinator@@QEAAXAEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@@Z
-     */
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
-    /**
-     * @symbol ?sendStartDestroyBlock@ClientPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@AEAE@Z
-     */
     MCAPI void sendStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 
 };

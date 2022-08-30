@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ShiftedValueAmplifier();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getAmount@ShiftedValueAmplifier@@UEBAMHM@Z
-     */
     virtual float getAmount(int, float) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIFTEDVALUEAMPLIFIER
 #endif
-    /**
-     * @symbol ??0ShiftedValueAmplifier@@QEAA@HM@Z
-     */
     MCAPI ShiftedValueAmplifier(int, float);
 
 };

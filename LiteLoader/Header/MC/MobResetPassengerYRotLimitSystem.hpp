@@ -30,15 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBRESETPASSENGERYROTLIMITSYSTEM
 #endif
-    /**
-     * @symbol ?createSystem@MobResetPassengerYRotLimitSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
-    /**
-     * @symbol ?_tickPassengerView@MobResetPassengerYRotLimitSystem@@CAXAEAVStrictEntityContext@@AEAUPassengerYRotLimitComponent@@@Z
-     */
     MCAPI static void _tickPassengerView(class StrictEntityContext &, struct PassengerYRotLimitComponent &);
 
 private:

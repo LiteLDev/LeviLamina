@@ -31,35 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~KickCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@KickCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KICKCOMMAND
 #endif
-    /**
-     * @symbol ?setup@KickCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?_findTarget@KickCommand@@AEBAPEBVPlayer@@AEBVCommandOrigin@@AEAVCommandOutput@@PEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@33@Z
-     */
     MCAPI class Player const * _findTarget(class CommandOrigin const &, class CommandOutput &, class Level *, std::string const &, std::string const &, std::string const &) const;
-    /**
-     * @symbol ?_kickPlayer@KickCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEBVPlayer@@PEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@4@Z
-     */
     MCAPI void _kickPlayer(class CommandOrigin const &, class CommandOutput &, class Player const &, class Level *, std::string const &, std::string const &) const;
-    /**
-     * @symbol ?_loopPlayers@KickCommand@@AEBAPEBVPlayer@@AEBVCommandOrigin@@AEAVCommandOutput@@PEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3V?$function@$$A6A_NPEBVPlayer@@@Z@7@@Z
-     */
     MCAPI class Player const * _loopPlayers(class CommandOrigin const &, class CommandOutput &, class Level *, std::string const &, std::string const &, class std::function<bool (class Player const *)>) const;
 
 private:

@@ -31,32 +31,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ShipwreckPiece();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getType@ShipwreckPiece@@UEBA?AW4StructurePieceType@@XZ
-     */
     virtual enum StructurePieceType getType() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?postProcess@ShipwreckPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKPIECE
 #endif
 
 //private:
-    /**
-     * @symbol ?_calculateTargetPos@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
-     */
     MCAPI static class BlockPos _calculateTargetPos(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
-    /**
-     * @symbol ?_calculateTargetPosLegacy@ShipwreckPiece@@CA?AVBlockPos@@AEAVBlockSource@@V2@W4Rotation@@1@Z
-     */
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
 
 private:

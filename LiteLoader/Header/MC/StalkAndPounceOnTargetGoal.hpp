@@ -30,61 +30,20 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StalkAndPounceOnTargetGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?canBeInterrupted@StalkAndPounceOnTargetGoal@@UEAA_NXZ
-     */
     virtual bool canBeInterrupted();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@StalkAndPounceOnTargetGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@StalkAndPounceOnTargetGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@StalkAndPounceOnTargetGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@StalkAndPounceOnTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STALKANDPOUNCEONTARGETGOAL
 #endif
-    /**
-     * @symbol ??0StalkAndPounceOnTargetGoal@@QEAA@AEAVMob@@AEBVActorFilterGroup@@MMMMMMMM_N@Z
-     */
     MCAPI StalkAndPounceOnTargetGoal(class Mob &, class ActorFilterGroup const &, float, float, float, float, float, float, float, float, bool);
 
 //private:
-    /**
-     * @symbol ?_isStuckBlock@StalkAndPounceOnTargetGoal@@AEBA_NVBlockPos@@@Z
-     */
     MCAPI bool _isStuckBlock(class BlockPos) const;
-    /**
-     * @symbol ?_preparePounce@StalkAndPounceOnTargetGoal@@AEAAXAEBVVec3@@0@Z
-     */
     MCAPI void _preparePounce(class Vec3 const &, class Vec3 const &);
 
 private:

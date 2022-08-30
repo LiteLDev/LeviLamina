@@ -32,332 +32,79 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?reloadHardcoded@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?reloadHardcodedClient@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
-     */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual ~WitherBoss();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?remove@WitherBoss@@UEAAXXZ
-     */
     virtual void remove();
-    /**
-     * @note   Virtual function table index: 26
-     * @symbol ?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ
-     */
     virtual class Vec3 getFiringPos() const;
-    /**
-     * @note   Virtual function table index: 41
-     * @symbol 
-     */
     virtual void __unk_vfn_41();
-    /**
-     * @note   Virtual function table index: 53
-     * @symbol ?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z
-     */
     virtual bool startRiding(class Actor &);
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol 
-     */
     virtual void __unk_vfn_61();
-    /**
-     * @note   Virtual function table index: 68
-     * @symbol 
-     */
     virtual void __unk_vfn_68();
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol ?setBlockMovementSlowdownMultiplier@WitherBoss@@UEAAXAEBVBlockLegacy@@AEBVVec3@@@Z
-     */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
-    /**
-     * @note   Virtual function table index: 82
-     * @symbol 
-     */
     virtual void __unk_vfn_82();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol 
-     */
     virtual void __unk_vfn_85();
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol 
-     */
     virtual void __unk_vfn_88();
-    /**
-     * @note   Virtual function table index: 96
-     * @symbol 
-     */
     virtual void __unk_vfn_96();
-    /**
-     * @note   Virtual function table index: 99
-     * @symbol 
-     */
     virtual void __unk_vfn_99();
-    /**
-     * @note   Virtual function table index: 106
-     * @symbol 
-     */
     virtual void __unk_vfn_106();
-    /**
-     * @note   Virtual function table index: 108
-     * @symbol 
-     */
     virtual void __unk_vfn_108();
-    /**
-     * @note   Virtual function table index: 109
-     * @symbol 
-     */
     virtual void __unk_vfn_109();
-    /**
-     * @note   Virtual function table index: 111
-     * @symbol 
-     */
     virtual void __unk_vfn_111();
-    /**
-     * @note   Virtual function table index: 135
-     * @symbol ?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z
-     */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
-    /**
-     * @note   Virtual function table index: 142
-     * @symbol ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
-     */
     virtual void handleEntityEvent(enum ActorEvent, int);
-    /**
-     * @note   Virtual function table index: 174
-     * @symbol ?canFreeze@WitherBoss@@UEBA_NXZ
-     */
     virtual bool canFreeze() const;
-    /**
-     * @note   Virtual function table index: 182
-     * @symbol 
-     */
     virtual void __unk_vfn_182();
-    /**
-     * @note   Virtual function table index: 186
-     * @symbol ?causeFallDamage@WitherBoss@@UEAAXMMVActorDamageSource@@@Z
-     */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
-    /**
-     * @note   Virtual function table index: 196
-     * @symbol 
-     */
     virtual void __unk_vfn_196();
-    /**
-     * @note   Virtual function table index: 212
-     * @symbol ?canBeAffected@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
-     */
     virtual bool canBeAffected(class MobEffectInstance const &) const;
-    /**
-     * @note   Virtual function table index: 213
-     * @symbol ?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z
-     */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
-    /**
-     * @note   Virtual function table index: 222
-     * @symbol 
-     */
     virtual void __unk_vfn_222();
-    /**
-     * @note   Virtual function table index: 223
-     * @symbol 
-     */
     virtual void __unk_vfn_223();
-    /**
-     * @note   Virtual function table index: 248
-     * @symbol 
-     */
     virtual void __unk_vfn_248();
-    /**
-     * @note   Virtual function table index: 251
-     * @symbol 
-     */
     virtual void __unk_vfn_251();
-    /**
-     * @note   Virtual function table index: 253
-     * @symbol ?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z
-     */
     virtual void die(class ActorDamageSource const &);
-    /**
-     * @note   Virtual function table index: 269
-     * @symbol 
-     */
     virtual void __unk_vfn_269();
-    /**
-     * @note   Virtual function table index: 270
-     * @symbol ?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@M_N1@Z
-     */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 273
-     * @symbol ?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
-     */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @note   Virtual function table index: 274
-     * @symbol ?addAdditionalSaveData@WitherBoss@@UEBAXAEAVCompoundTag@@@Z
-     */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @note   Virtual function table index: 277
-     * @symbol 
-     */
     virtual void __unk_vfn_277();
-    /**
-     * @note   Virtual function table index: 285
-     * @symbol 
-     */
     virtual void __unk_vfn_285();
-    /**
-     * @note   Virtual function table index: 294
-     * @symbol ?hurtEffects@WitherBoss@@UEAAXAEBVActorDamageSource@@M_N1@Z
-     */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @note   Virtual function table index: 300
-     * @symbol ?aiStep@WitherBoss@@UEAAXXZ
-     */
     virtual void aiStep();
-    /**
-     * @note   Virtual function table index: 313
-     * @symbol 
-     */
     virtual void __unk_vfn_313();
-    /**
-     * @note   Virtual function table index: 317
-     * @symbol 
-     */
     virtual void __unk_vfn_317();
-    /**
-     * @note   Virtual function table index: 322
-     * @symbol ?getArmorValue@WitherBoss@@UEBAHXZ
-     */
     virtual int getArmorValue() const;
-    /**
-     * @note   Virtual function table index: 351
-     * @symbol 
-     */
     virtual void __unk_vfn_351();
-    /**
-     * @note   Virtual function table index: 360
-     * @symbol ?newServerAiStep@WitherBoss@@UEAAXXZ
-     */
     virtual void newServerAiStep();
-    /**
-     * @note   Virtual function table index: 365
-     * @symbol 
-     */
     virtual void __unk_vfn_365();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERBOSS
 #endif
-    /**
-     * @symbol ??0WitherBoss@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
-     */
     MCAPI WitherBoss(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?awardSpawnWitherAchievement@WitherBoss@@QEBAXXZ
-     */
     MCAPI void awardSpawnWitherAchievement() const;
-    /**
-     * @symbol ?getHeadPos@WitherBoss@@QEBA?AVVec3@@H@Z
-     */
     MCAPI class Vec3 getHeadPos(int) const;
-    /**
-     * @symbol ?getHeadRot@WitherBoss@@QEAA?AVVec2@@H@Z
-     */
     MCAPI class Vec2 getHeadRot(int);
-    /**
-     * @symbol ?getInvulnerableTicks@WitherBoss@@QEBAHXZ
-     */
     MCAPI int getInvulnerableTicks() const;
-    /**
-     * @symbol ?getOverlayAlpha@WitherBoss@@QEAAMXZ
-     */
     MCAPI float getOverlayAlpha();
-    /**
-     * @symbol ?getSwellAmount@WitherBoss@@QEBAMM@Z
-     */
     MCAPI float getSwellAmount(float) const;
-    /**
-     * @symbol ?hasAerialAttack@WitherBoss@@QEBA_NXZ
-     */
     MCAPI bool hasAerialAttack() const;
-    /**
-     * @symbol ?postAiStep@WitherBoss@@QEAAXXZ
-     */
     MCAPI void postAiStep();
-    /**
-     * @symbol ?preAiStep@WitherBoss@@QEAA?AW4PreAiStepResult@1@XZ
-     */
     MCAPI enum WitherBoss::PreAiStepResult preAiStep();
-    /**
-     * @symbol ?removeSkeleton@WitherBoss@@QEAAXXZ
-     */
     MCAPI void removeSkeleton();
-    /**
-     * @symbol ?setAerialAttack@WitherBoss@@QEAAX_N@Z
-     */
     MCAPI void setAerialAttack(bool);
-    /**
-     * @symbol ?setAlternativeTarget@WitherBoss@@QEAAXHUActorUniqueID@@@Z
-     */
     MCAPI void setAlternativeTarget(int, struct ActorUniqueID);
-    /**
-     * @symbol ?setInvulnerableTicks@WitherBoss@@QEAAXH@Z
-     */
     MCAPI void setInvulnerableTicks(int);
-    /**
-     * @symbol ?setIsPathing@WitherBoss@@QEAAX_N@Z
-     */
     MCAPI void setIsPathing(bool);
-    /**
-     * @symbol ?setShotDelay@WitherBoss@@QEAAXH@Z
-     */
     MCAPI void setShotDelay(int);
-    /**
-     * @symbol ?setWantsToMove@WitherBoss@@QEAAX_N@Z
-     */
     MCAPI void setWantsToMove(bool);
-    /**
-     * @symbol ?wantsToMove@WitherBoss@@QEAA_NXZ
-     */
     MCAPI bool wantsToMove();
 MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
-    /**
-     * @symbol ?canDestroy@WitherBoss@@SA_NAEBVBlock@@W4WitherAttackType@1@@Z
-     */
     MCAPI static bool canDestroy(class Block const &, enum WitherBoss::WitherAttackType);
 
 //private:
-    /**
-     * @symbol ?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z
-     */
     MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int, enum WitherBoss::WitherAttackType);
-    /**
-     * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
-     */
     MCAPI void _performRangedAttack(int, class Actor &);
-    /**
-     * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEBVVec3@@_N@Z
-     */
     MCAPI void _performRangedAttack(int, class Vec3 const &, bool);
-    /**
-     * @symbol ?canShoot@WitherBoss@@AEAA_NXZ
-     */
     MCAPI bool canShoot();
 
 private:

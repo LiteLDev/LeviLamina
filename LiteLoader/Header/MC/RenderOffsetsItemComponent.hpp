@@ -41,55 +41,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RenderOffsetsItemComponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEBA_NXZ
-     */
     virtual bool isNetworkComponent() const;
-    /**
-     * @symbol ?_fromString@RenderOffsetsItemComponent@@CAXAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDEROFFSETSITEMCOMPONENT
 #endif
-    /**
-     * @symbol ?bindType@RenderOffsetsItemComponent@@SAXXZ
-     */
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier@RenderOffsetsItemComponent@@SAAEBVHashedString@@XZ
-     */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
-    /**
-     * @symbol ?_fromString@RenderOffsetsItemComponent@@CAXAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 
 private:

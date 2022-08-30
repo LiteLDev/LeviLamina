@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CraftHandlerLoom();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?_handleCraftAction@CraftHandlerLoom@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
-     */
     virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERLOOM
 #endif
-    /**
-     * @symbol ??0CraftHandlerLoom@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
-     */
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 
 };

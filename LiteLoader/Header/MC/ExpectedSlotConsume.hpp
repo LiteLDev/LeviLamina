@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPECTEDSLOTCONSUME
 #endif
-    /**
-     * @symbol ??0ExpectedSlotConsume@@QEAA@W4ContainerEnumName@@EAEBVItemStack@@E@Z
-     */
     MCAPI ExpectedSlotConsume(enum ContainerEnumName, unsigned char, class ItemStack const &, unsigned char);
 
 };

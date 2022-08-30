@@ -31,370 +31,78 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTPLAYERMOVEMENTPROXY
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_getPlayer@DirectPlayerMovementProxy@@UEAAPEAVPlayer@@XZ
-     */
     MCVAPI class Player * _getPlayer();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_onMovePlayerPacketNormal@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@AEBVVec2@@M@Z
-     */
     MCVAPI void _onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_resetPos@DirectPlayerMovementProxy@@UEAAX_N@Z
-     */
     MCVAPI void _resetPos(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?_setPositionMode@DirectPlayerMovementProxy@@UEAAXH@Z
-     */
     MCVAPI void _setPositionMode(int);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?areHandsBusy@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool areHandsBusy() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?checkMovementStats@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z
-     */
     MCVAPI void checkMovementStats(class Vec3 const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?fireEventPersonaEmotePlayed@DirectPlayerMovementProxy@@UEAAX_N@Z
-     */
     MCVAPI void fireEventPersonaEmotePlayed(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getAbilities@DirectPlayerMovementProxy@@UEBAAEBVLayeredAbilities@@XZ
-     */
     MCVAPI class LayeredAbilities const & getAbilities() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getAbilityBool@DirectPlayerMovementProxy@@UEBA_NW4AbilitiesIndex@@@Z
-     */
     MCVAPI bool getAbilityBool(enum AbilitiesIndex) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getAbilityFloat@DirectPlayerMovementProxy@@UEBAMW4AbilitiesIndex@@@Z
-     */
     MCVAPI float getAbilityFloat(enum AbilitiesIndex) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getBob@DirectPlayerMovementProxy@@UEBAMXZ
-     */
     MCVAPI float getBob() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getClientInstance@DirectPlayerMovementProxy@@UEAAPEAUIClientInstanceProxy@@XZ
-     */
     MCVAPI struct IClientInstanceProxy * getClientInstance();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getClientInstance@DirectPlayerMovementProxy@@UEBAPEBUIClientInstanceProxy@@XZ
-     */
     MCVAPI struct IClientInstanceProxy const * getClientInstance() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getCurrentTick@DirectPlayerMovementProxy@@UEBAAEBUTick@@XZ
-     */
     MCVAPI struct Tick const & getCurrentTick() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getGlidingTicks@DirectPlayerMovementProxy@@UEBAHXZ
-     */
     MCVAPI int getGlidingTicks() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getInputMode@DirectPlayerMovementProxy@@UEBA?AW4InputMode@@XZ
-     */
     MCVAPI enum InputMode getInputMode() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getItemUseMovementModifier@DirectPlayerMovementProxy@@UEBAMXZ
-     */
     MCVAPI float getItemUseMovementModifier() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getJumpRidingScale@DirectPlayerMovementProxy@@UEAAMXZ
-     */
     MCVAPI float getJumpRidingScale();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLastBob@DirectPlayerMovementProxy@@UEBAMXZ
-     */
     MCVAPI float getLastBob() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLastDelta@DirectPlayerMovementProxy@@UEBA?AVVec3@@XZ
-     */
     MCVAPI class Vec3 getLastDelta() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLastPos@DirectPlayerMovementProxy@@UEBA?AVVec3@@XZ
-     */
     MCVAPI class Vec3 getLastPos() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getLoadingState@DirectPlayerMovementProxy@@UEBA?AW4LoadingState@@XZ
-     */
     MCVAPI enum LoadingState getLoadingState() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getMoveInputHandler@DirectPlayerMovementProxy@@UEAAPEAVMoveInputHandler@@XZ
-     */
     MCVAPI class MoveInputHandler * getMoveInputHandler();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getPlayMode@DirectPlayerMovementProxy@@UEBA?AW4ClientPlayMode@@XZ
-     */
     MCVAPI enum ClientPlayMode getPlayMode() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getPlayerPaddleForce@DirectPlayerMovementProxy@@UEBAMW4Side@@@Z
-     */
     MCVAPI float getPlayerPaddleForce(enum Side) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getVRMoveAdjustAngle@DirectPlayerMovementProxy@@UEBAMXZ
-     */
     MCVAPI float getVRMoveAdjustAngle() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?hasMoveInput@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool hasMoveInput() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isAdventureSettingsAutoJump@DirectPlayerMovementProxy@@UEAA_NXZ
-     */
     MCVAPI bool isAdventureSettingsAutoJump();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isArmorFlyEnabled@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isArmorFlyEnabled() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isAutoJumpEnabled@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isAutoJumpEnabled() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isAutoJumping@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isAutoJumping() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isEmoting@DirectPlayerMovementProxy@@UEAA_NXZ
-     */
     MCVAPI bool isEmoting();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isFlying@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isFlying() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isLocalPlayer@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isLocalPlayer() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isPaddling@DirectPlayerMovementProxy@@UEBA_NW4Side@@@Z
-     */
     MCVAPI bool isPaddling(enum Side) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isServerAuthoritativeMovement@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isServerAuthoritativeMovement() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isSleeping@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isSleeping() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isSlowedByItemUse@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isSlowedByItemUse() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isSpectator@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isSpectator() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isUsingItem@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool isUsingItem() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?registerFramewiseActionOrStop@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void registerFramewiseActionOrStop();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendAdventureSettingsPacket@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void sendAdventureSettingsPacket();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendClientAuthInput@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void sendClientAuthInput();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendInput@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void sendInput();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPlayerActionPacket@@@Z
-     */
     MCVAPI void sendPacket(class PlayerActionPacket &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendPacket@DirectPlayerMovementProxy@@UEAAXAEAVPassengerJumpPacket@@@Z
-     */
     MCVAPI void sendPacket(class PassengerJumpPacket &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendPlayerInput@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void sendPlayerInput();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendPlayerMove@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void sendPlayerMove();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendPosition@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void sendPosition();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?sendRequestAbilityPacket@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z
-     */
     MCVAPI void sendRequestAbilityPacket(enum AbilitiesIndex, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setAbilityBool@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z
-     */
     MCVAPI void setAbilityBool(enum AbilitiesIndex, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setAbilityFloat@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@M@Z
-     */
     MCVAPI void setAbilityFloat(enum AbilitiesIndex, float);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z
-     */
     MCVAPI void setAutoJumping(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setBob@DirectPlayerMovementProxy@@UEAAXM@Z
-     */
     MCVAPI void setBob(float);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setCurrentLocalMoveVelocity@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z
-     */
     MCVAPI void setCurrentLocalMoveVelocity(class Vec2 const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setEmotingStatus@DirectPlayerMovementProxy@@UEAAX_N@Z
-     */
     MCVAPI void setEmotingStatus(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setHandsBusy@DirectPlayerMovementProxy@@UEAAX_N@Z
-     */
     MCVAPI void setHandsBusy(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setHasMoveInput@DirectPlayerMovementProxy@@UEAAX_N@Z
-     */
     MCVAPI void setHasMoveInput(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setJumpRidingScale@DirectPlayerMovementProxy@@UEAAXM@Z
-     */
     MCVAPI void setJumpRidingScale(float);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setLastBob@DirectPlayerMovementProxy@@UEAAXM@Z
-     */
     MCVAPI void setLastBob(float);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setLastDelta@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z
-     */
     MCVAPI void setLastDelta(class Vec3 const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setLastPos@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z
-     */
     MCVAPI void setLastPos(class Vec3 const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setPlayerPaddleForce@DirectPlayerMovementProxy@@UEAAXW4Side@@M@Z
-     */
     MCVAPI void setPlayerPaddleForce(enum Side, float);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?setWasAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z
-     */
     MCVAPI void setWasAutoJumping(bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?shouldSendPosition@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool shouldSendPosition() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?startGliding@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void startGliding();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?stopGliding@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void stopGliding();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tryAsPlayer@DirectPlayerMovementProxy@@UEBAPEBUIPlayerMovementProxy@@XZ
-     */
     MCVAPI struct IPlayerMovementProxy const * tryAsPlayer() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tryAsPlayer@DirectPlayerMovementProxy@@UEAAPEAUIPlayerMovementProxy@@XZ
-     */
     MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?tryGetPlayerActionComponent@DirectPlayerMovementProxy@@UEAAPEAUPlayerActionComponent@@XZ
-     */
     MCVAPI struct PlayerActionComponent * tryGetPlayerActionComponent();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?updateClientPlayerInputState@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void updateClientPlayerInputState();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?updateTouch@DirectPlayerMovementProxy@@UEAAXXZ
-     */
     MCVAPI void updateTouch();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?wasAutoJumping@DirectPlayerMovementProxy@@UEBA_NXZ
-     */
     MCVAPI bool wasAutoJumping() const;
 #endif
 

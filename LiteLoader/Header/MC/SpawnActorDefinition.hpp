@@ -33,13 +33,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORDEFINITION
 #endif
-    /**
-     * @symbol ?initialize@SpawnActorDefinition@@QEBAXAEAVEntityContext@@AEAVSpawnActorComponent@@@Z
-     */
     MCAPI void initialize(class EntityContext &, class SpawnActorComponent &) const;
-    /**
-     * @symbol ?buildSchema@SpawnActorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSpawnActorDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SpawnActorDefinition>> &);
 
 };

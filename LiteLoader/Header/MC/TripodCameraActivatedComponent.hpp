@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIPODCAMERAACTIVATEDCOMPONENT
 #endif
-    /**
-     * @symbol ??1TripodCameraActivatedComponent@@QEAA@XZ
-     */
     MCAPI ~TripodCameraActivatedComponent();
 
 };

@@ -30,118 +30,32 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BaseMoveToGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@BaseMoveToGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@BaseMoveToGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@BaseMoveToGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@BaseMoveToGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@BaseMoveToGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@WorkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const = 0;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?hasReachedTarget@BaseMoveToGoal@@UEBA_NXZ
-     */
     virtual bool hasReachedTarget() const;
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol ?isValidTarget@StompBlockGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
-     */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?_nextStartTick@BaseMoveToGoal@@MEAAHXZ
-     */
     virtual int _nextStartTick();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol ?_canReach@BaseMoveToGoal@@MEAA_NAEBVBlockPos@@@Z
-     */
     virtual bool _canReach(class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?_moveToBlock@StompBlockGoal@@MEAAXXZ
-     */
     virtual void _moveToBlock() = 0;
-    /**
-     * @note   Virtual function table index: 15
-     * @symbol ?_getTargetPosition@BaseMoveToGoal@@MEBA?AVVec3@@XZ
-     */
     virtual class Vec3 _getTargetPosition() const;
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?_getRepathTime@BaseMoveToGoal@@MEBA_KXZ
-     */
     virtual unsigned __int64 _getRepathTime() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOGOAL
 #endif
-    /**
-     * @symbol ??0BaseMoveToGoal@@QEAA@AEAVMob@@MMMHH@Z
-     */
     MCAPI BaseMoveToGoal(class Mob &, float, float, float, int, int);
-    /**
-     * @symbol ?setTargetPositionOffset@BaseMoveToGoal@@QEAAXAEBVVec3@@@Z
-     */
     MCAPI void setTargetPositionOffset(class Vec3 const &);
 
 //protected:
-    /**
-     * @symbol ?_blockAboveTarget@BaseMoveToGoal@@IEBA?AVBlockPos@@XZ
-     */
     MCAPI class BlockPos _blockAboveTarget() const;
-    /**
-     * @symbol ?_checkIfStuck@BaseMoveToGoal@@IEAAXXZ
-     */
     MCAPI void _checkIfStuck();
-    /**
-     * @symbol ?_isCooldownActive@BaseMoveToGoal@@IEBA_NXZ
-     */
     MCAPI bool _isCooldownActive() const;
-    /**
-     * @symbol ?setInterval@BaseMoveToGoal@@IEAAXH@Z
-     */
     MCAPI void setInterval(int);
 
 protected:

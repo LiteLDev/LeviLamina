@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ExecuteCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@ExecuteCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXECUTECOMMAND
 #endif
-    /**
-     * @symbol ?setup@ExecuteCommand@@SAXAEAVCommandRegistry@@_NH@Z
-     */
     MCAPI static void setup(class CommandRegistry &, bool, int);
 
 };

@@ -31,36 +31,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~WorldLimitChunkSource();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getExistingChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
-     */
     virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?createNewChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
-     */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?isWithinWorldLimit@WorldLimitChunkSource@@UEBA_NAEBVChunkPos@@@Z
-     */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
-    /**
-     * @note   Virtual function table index: 26
-     * @symbol ?canCreateViews@WorldLimitChunkSource@@UEBA_NXZ
-     */
     virtual bool canCreateViews() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDLIMITCHUNKSOURCE
 #endif
-    /**
-     * @symbol ??0WorldLimitChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@AEBVBlockPos@@HH@Z
-     */
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
 
 };

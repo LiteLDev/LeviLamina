@@ -28,13 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUMMONSPELLDATA
 #endif
-    /**
-     * @symbol ??0SummonSpellData@@QEAA@AEBU0@@Z
-     */
     MCAPI SummonSpellData(struct SummonSpellData const &);
-    /**
-     * @symbol ??1SummonSpellData@@QEAA@XZ
-     */
     MCAPI ~SummonSpellData();
 
 };

@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HoverMoveControl();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@HoverMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERMOVECONTROL
 #endif
-    /**
-     * @symbol ??0HoverMoveControl@@QEAA@XZ
-     */
     MCAPI HoverMoveControl();
 
 };

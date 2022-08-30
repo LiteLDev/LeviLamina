@@ -33,9 +33,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNDEFINITION
 #endif
-    /**
-     * @symbol ?buildSchema@DespawnDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDespawnDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DespawnDefinition>> &);
 
 };

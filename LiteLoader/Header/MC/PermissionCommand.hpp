@@ -31,35 +31,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PermissionCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@PermissionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONCOMMAND
 #endif
-    /**
-     * @symbol ?setup@PermissionCommand@@SAXAEAVCommandRegistry@@PEAVPermissionsFile@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &, class PermissionsFile *);
 
 //private:
-    /**
-     * @symbol ?list@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void list(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?reload@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void reload(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?set@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void set(class CommandOrigin const &, class CommandOutput &) const;
 
 private:

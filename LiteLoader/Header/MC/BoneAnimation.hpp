@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATION
 #endif
-    /**
-     * @symbol ?addAnimationChannel@BoneAnimation@@QEAAAEAVBoneAnimationChannel@@W4BoneTransformType@@@Z
-     */
     MCAPI class BoneAnimationChannel & addAnimationChannel(enum BoneTransformType);
-    /**
-     * @symbol ?setRotationRelativeMode@BoneAnimation@@QEAAXW4BoneAnimationRelativeMode@@@Z
-     */
     MCAPI void setRotationRelativeMode(enum BoneAnimationRelativeMode);
 
 };

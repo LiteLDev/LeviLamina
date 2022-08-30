@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATIONCHANNEL
 #endif
-    /**
-     * @symbol ?addKeyFrame@BoneAnimationChannel@@QEAAAEAVKeyFrameTransform@@M@Z
-     */
     MCAPI class KeyFrameTransform & addKeyFrame(float);
-    /**
-     * @symbol ?sortKeyFrames@BoneAnimationChannel@@QEAAXXZ
-     */
     MCAPI void sortKeyFrames();
 
 };

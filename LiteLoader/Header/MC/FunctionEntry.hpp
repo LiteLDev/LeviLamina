@@ -30,29 +30,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FunctionEntry();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@FunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
-     */
     virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONENTRY
 #endif
-    /**
-     * @symbol ??0FunctionEntry@@QEAA@W4FunctionState@@@Z
-     */
     MCAPI FunctionEntry(enum FunctionState);
-    /**
-     * @symbol ??0FunctionEntry@@QEAA@$$QEAV?$vector@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@V?$allocator@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@@2@@std@@W4FunctionState@@@Z
-     */
     MCAPI FunctionEntry(std::vector<std::unique_ptr<class IFunctionEntry>> &&, enum FunctionState);
-    /**
-     * @symbol ?getErrorState@FunctionEntry@@QEBA?AW4FunctionState@@XZ
-     */
     MCAPI enum FunctionState getErrorState() const;
 
 };

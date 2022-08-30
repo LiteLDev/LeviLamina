@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULEID
 #endif
-    /**
-     * @symbol ??0GameRuleId@@QEAA@H@Z
-     */
     MCAPI GameRuleId(int);
 
 };

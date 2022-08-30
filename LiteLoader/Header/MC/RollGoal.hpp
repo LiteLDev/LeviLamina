@@ -30,57 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RollGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@RollGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@RollGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?canBeInterrupted@RollGoal@@UEAA_NXZ
-     */
     virtual bool canBeInterrupted();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@RollGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@RollGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@RollGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@RollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLLGOAL
 #endif
-    /**
-     * @symbol ??0RollGoal@@QEAA@AEAVMob@@M@Z
-     */
     MCAPI RollGoal(class Mob &, float);
 
 //private:
-    /**
-     * @symbol ?_handleRoll@RollGoal@@AEBAXHAEAVVec3@@AEAM1@Z
-     */
     MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
 
 private:

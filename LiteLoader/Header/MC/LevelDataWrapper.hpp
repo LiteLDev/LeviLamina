@@ -31,33 +31,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATAWRAPPER
 #endif
-    /**
-     * @symbol ??0LevelDataWrapper@@QEAA@XZ
-     */
     MCAPI LevelDataWrapper();
-    /**
-     * @symbol ??DLevelDataWrapper@@QEBAAEBVLevelData@@XZ
-     */
     MCAPI class LevelData const & operator*() const;
-    /**
-     * @symbol ??DLevelDataWrapper@@QEAAAEAVLevelData@@XZ
-     */
     MCAPI class LevelData & operator*();
-    /**
-     * @symbol ??CLevelDataWrapper@@QEBAPEBVLevelData@@XZ
-     */
     MCAPI class LevelData const * operator->() const;
-    /**
-     * @symbol ??CLevelDataWrapper@@QEAAPEAVLevelData@@XZ
-     */
     MCAPI class LevelData * operator->();
-    /**
-     * @symbol ?setLevelData@LevelDataWrapper@@QEAAXAEAVLevelData@@@Z
-     */
     MCAPI void setLevelData(class LevelData &);
-    /**
-     * @symbol ??1LevelDataWrapper@@QEAA@XZ
-     */
     MCAPI ~LevelDataWrapper();
 
 };

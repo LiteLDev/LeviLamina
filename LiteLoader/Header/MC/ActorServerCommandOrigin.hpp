@@ -32,53 +32,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ActorServerCommandOrigin();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?getPermissionsLevel@ActorServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
-     */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?clone@ActorServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?isSelectorExpansionAllowed@ActorServerCommandOrigin@@UEBA_NXZ
-     */
     virtual bool isSelectorExpansionAllowed() const;
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?getOriginType@ActorServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
-     */
     virtual enum CommandOriginType getOriginType() const;
-    /**
-     * @note   Virtual function table index: 29
-     * @symbol ?serialize@ActorServerCommandOrigin@@UEBA?AVCompoundTag@@XZ
-     */
     virtual class CompoundTag serialize() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSERVERCOMMANDORIGIN
 #endif
-    /**
-     * @symbol ??0ActorServerCommandOrigin@@QEAA@AEAVActor@@@Z
-     */
     MCAPI ActorServerCommandOrigin(class Actor &);
-    /**
-     * @symbol ?getTargetOther@ActorServerCommandOrigin@@QEBA?AUActorUniqueID@@XZ
-     */
     MCAPI struct ActorUniqueID getTargetOther() const;
-    /**
-     * @symbol ?setTargetOther@ActorServerCommandOrigin@@QEAAXUActorUniqueID@@@Z
-     */
     MCAPI void setTargetOther(struct ActorUniqueID);
-    /**
-     * @symbol ?load@ActorServerCommandOrigin@@SA?AV?$unique_ptr@VActorServerCommandOrigin@@U?$default_delete@VActorServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
-     */
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

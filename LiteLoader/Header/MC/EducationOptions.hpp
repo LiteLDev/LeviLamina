@@ -31,47 +31,18 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONOPTIONS
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActiveResourcePacksChanged@EducationOptions@@UEAAXAEAVResourcePackManager@@@Z
-     */
     MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1EducationOptions@@UEAA@XZ
-     */
     MCVAPI ~EducationOptions();
 #endif
-    /**
-     * @symbol ??0EducationOptions@@QEAA@PEAVResourcePackManager@@@Z
-     */
     MCAPI EducationOptions(class ResourcePackManager *);
-    /**
-     * @symbol ?init@EducationOptions@@QEAAXAEBVLevelData@@@Z
-     */
     MCAPI void init(class LevelData const &);
 MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
-    /**
-     * @symbol ?isBaseCodeBuilderEnabled@EducationOptions@@SA_NXZ
-     */
     MCAPI static bool isBaseCodeBuilderEnabled();
-    /**
-     * @symbol ?isChemistryEnabled@EducationOptions@@SA_NXZ
-     */
     MCAPI static bool isChemistryEnabled();
-    /**
-     * @symbol ?isCodeBuilderEnabled@EducationOptions@@SA_NXZ
-     */
     MCAPI static bool isCodeBuilderEnabled();
-    /**
-     * @symbol ?isEducationEnabled@EducationOptions@@SA_NXZ
-     */
     MCAPI static bool isEducationEnabled();
 
 //private:
-    /**
-     * @symbol ?_getCurrentOptions@EducationOptions@@CA?AV?$ServiceReference@VEducationOptions@@@@XZ
-     */
     MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
 
 private:

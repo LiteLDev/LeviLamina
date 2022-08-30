@@ -30,25 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SleepState();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@SleepState@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?stop@SleepState@@UEAAXXZ
-     */
     virtual void stop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
 #endif

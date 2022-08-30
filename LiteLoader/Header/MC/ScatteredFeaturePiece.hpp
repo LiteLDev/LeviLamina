@@ -31,17 +31,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1ScatteredFeaturePiece@@UEAA@XZ
-     */
     MCVAPI ~ScatteredFeaturePiece();
 #endif
 
 //protected:
-    /**
-     * @symbol ?updateAverageGroundHeight@ScatteredFeaturePiece@@IEAA_NAEAVBlockSource@@AEBVBoundingBox@@H@Z
-     */
     MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
 
 protected:

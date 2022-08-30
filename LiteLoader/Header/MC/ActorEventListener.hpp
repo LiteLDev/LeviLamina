@@ -31,80 +31,20 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorAttackedActor@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-     */
     MCVAPI enum EventResult onActorAttackedActor(class Actor &, class Actor &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorCreated@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-     */
     MCVAPI enum EventResult onActorCreated(class Actor &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorDeath@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
-     */
     MCVAPI enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorDefinitionEvent@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@5@@Z
-     */
     MCVAPI enum EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct ActorDefinitionModifier> &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorMobInteraction@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InteractionType@MinecraftEventing@@W4ActorType@@@Z
-     */
     MCVAPI enum EventResult onActorMobInteraction(class Actor &, enum MinecraftEventing::InteractionType, enum ActorType);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVVec3@@@Z
-     */
     MCVAPI enum EventResult onActorMove(class Actor &, class Vec3 const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorPredictedMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
-     */
     MCVAPI enum EventResult onActorPredictedMove(class Actor &, enum MovePredictionType, class Vec3 const &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorSneakChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N@Z
-     */
     MCVAPI enum EventResult onActorSneakChanged(class Actor &, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorStartRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-     */
     MCVAPI enum EventResult onActorStartRiding(class Actor &, class Actor &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorStopRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N11@Z
-     */
     MCVAPI enum EventResult onActorStopRiding(class Actor &, bool, bool, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorTargetAcquired@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
-     */
     MCVAPI enum EventResult onActorTargetAcquired(class Actor &, class Actor &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorTeleported@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-     */
     MCVAPI enum EventResult onActorTeleported(class Actor &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
-     */
     MCVAPI enum EventResult onActorTick(class Actor &);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onActorUseItemOn@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemStack@@AEBVBlockPos@@E@Z
-     */
     MCVAPI enum EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?onEvent@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
-     */
     MCVAPI enum EventResult onEvent(struct ActorNotificationEvent const &);
 #endif
 

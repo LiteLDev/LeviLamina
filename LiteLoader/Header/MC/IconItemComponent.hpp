@@ -30,58 +30,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~IconItemComponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VIconItemComponent@@@@UEBA_NXZ
-     */
     virtual bool isNetworkComponent() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VIconItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VIconItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONITEMCOMPONENT
 #endif
-    /**
-     * @symbol ??0IconItemComponent@@QEAA@PEAVComponentItem@@@Z
-     */
     MCAPI IconItemComponent(class ComponentItem *);
-    /**
-     * @symbol ?setOwnerIcon@IconItemComponent@@QEAAXXZ
-     */
     MCAPI void setOwnerIcon();
-    /**
-     * @symbol ?bindType@IconItemComponent@@SAXXZ
-     */
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier@IconItemComponent@@SAAEBVHashedString@@XZ
-     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

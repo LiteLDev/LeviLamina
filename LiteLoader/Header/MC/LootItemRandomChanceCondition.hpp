@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LootItemRandomChanceCondition();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?applies@LootItemRandomChanceCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
-     */
     virtual bool applies(class Random &, class LootTableContext &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMRANDOMCHANCECONDITION
 #endif
-    /**
-     * @symbol ?deserialize@LootItemRandomChanceCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
-     */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 };

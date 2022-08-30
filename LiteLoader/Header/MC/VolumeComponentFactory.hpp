@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMECOMPONENTFACTORY
 #endif
-    /**
-     * @symbol ?registerVolumeComponentDefinitions@VolumeComponentFactory@@QEAAX_N@Z
-     */
     MCAPI void registerVolumeComponentDefinitions(bool);
 
 };

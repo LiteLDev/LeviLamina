@@ -30,21 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKKEY
 #endif
-    /**
-     * @symbol ??0ChunkKey@@QEAA@AEBVLevelChunk@@@Z
-     */
     MCAPI ChunkKey(class LevelChunk const &);
-    /**
-     * @symbol ??0ChunkKey@@QEAA@AEBVChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
-     */
     MCAPI ChunkKey(class ChunkPos const &, class AutomaticID<class Dimension, int>);
-    /**
-     * @symbol ?asSpan@ChunkKey@@QEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
-     */
     MCAPI class gsl::basic_string_span<char const, -1> asSpan() const;
-    /**
-     * @symbol ?hashCode@ChunkKey@@QEBA_KXZ
-     */
     MCAPI unsigned __int64 hashCode() const;
 
 };

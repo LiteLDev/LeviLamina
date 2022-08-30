@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUTS
 #endif
-    /**
-     * @symbol ??1FilterInputs@@QEAA@XZ
-     */
     MCAPI ~FilterInputs();
 
 };

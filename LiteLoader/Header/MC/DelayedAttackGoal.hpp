@@ -31,80 +31,24 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DelayedAttackGoal();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?canUse@DelayedAttackGoal@@UEAA_NXZ
-     */
     virtual bool canUse();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?canContinueToUse@DelayedAttackGoal@@UEAA_NXZ
-     */
     virtual bool canContinueToUse();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?start@DelayedAttackGoal@@UEAAXXZ
-     */
     virtual void start();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?stop@DelayedAttackGoal@@UEAAXXZ
-     */
     virtual void stop();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?tick@DelayedAttackGoal@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?appendDebugInfo@DelayedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol 
-     */
     virtual void __unk_vfn_8();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol 
-     */
     virtual void __unk_vfn_9();
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?_attemptMoveToTarget@DelayedAttackGoal@@EEAAXAEAVActor@@@Z
-     */
     virtual void _attemptMoveToTarget(class Actor &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYEDATTACKGOAL
 #endif
-    /**
-     * @symbol ??0DelayedAttackGoal@@QEAA@AEAVMob@@@Z
-     */
     MCAPI DelayedAttackGoal(class Mob &);
 
 //private:
-    /**
-     * @symbol ?_attemptAttack@DelayedAttackGoal@@AEAAXPEAVActor@@@Z
-     */
     MCAPI void _attemptAttack(class Actor *);
-    /**
-     * @symbol ?_attemptStartAttacking@DelayedAttackGoal@@AEBAXPEAVActor@@@Z
-     */
     MCAPI void _attemptStartAttacking(class Actor *) const;
-    /**
-     * @symbol ?_manageAttackTime@DelayedAttackGoal@@AEAAXXZ
-     */
     MCAPI void _manageAttackTime();
 
 private:

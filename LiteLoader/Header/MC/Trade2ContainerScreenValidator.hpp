@@ -28,16 +28,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Trade2ContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE2CONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0Trade2ContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI Trade2ContainerScreenValidator();
 
 };

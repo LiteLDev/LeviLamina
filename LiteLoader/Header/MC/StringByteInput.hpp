@@ -30,60 +30,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~StringByteInput();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string readString();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string readLongString();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?readFloat@BigEndianStringByteInput@@UEAAMXZ
-     */
     virtual float readFloat();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?readDouble@BigEndianStringByteInput@@UEAANXZ
-     */
     virtual double readDouble();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?readByte@BytesDataInput@@UEAADXZ
-     */
     virtual char readByte();
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?readShort@BigEndianStringByteInput@@UEAAFXZ
-     */
     virtual short readShort();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?readInt@BigEndianStringByteInput@@UEAAHXZ
-     */
     virtual int readInt();
-    /**
-     * @note   Virtual function table index: 8
-     * @symbol ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
-     */
     virtual __int64 readLongLong();
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?readBytes@StringByteInput@@UEAA_NPEAX_K@Z
-     */
     virtual bool readBytes(void *, unsigned __int64);
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?numBytesLeft@StringByteInput@@UEBA_KXZ
-     */
     virtual unsigned __int64 numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEINPUT
 #endif

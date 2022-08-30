@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCEDPLAYERMOVEMENTSETTINGS
 #endif
-    /**
-     * @symbol ??0SyncedPlayerMovementSettings@@QEAA@XZ
-     */
     MCAPI SyncedPlayerMovementSettings();
-    /**
-     * @symbol ??0SyncedPlayerMovementSettings@@QEAA@AEBUPlayerMovementSettings@@@Z
-     */
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const &);
 
 };

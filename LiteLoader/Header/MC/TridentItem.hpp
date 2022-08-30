@@ -32,144 +32,38 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TridentItem();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol ?isThrowable@TridentItem@@UEBA_NXZ
-     */
     virtual bool isThrowable() const;
-    /**
-     * @note   Virtual function table index: 48
-     * @symbol ?getMaxDamage@TridentItem@@UEBAFXZ
-     */
     virtual short getMaxDamage() const;
-    /**
-     * @note   Virtual function table index: 49
-     * @symbol ?getAttackDamage@TridentItem@@UEBAHXZ
-     */
     virtual int getAttackDamage() const;
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol 
-     */
     virtual void __unk_vfn_52();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol 
-     */
     virtual void __unk_vfn_54();
-    /**
-     * @note   Virtual function table index: 56
-     * @symbol ?canDestroyInCreative@TridentItem@@UEBA_NXZ
-     */
     virtual bool canDestroyInCreative() const;
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol ?appendFormattedHovertext@TridentItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /**
-     * @note   Virtual function table index: 63
-     * @symbol ?getEnchantSlot@TridentItem@@UEBAHXZ
-     */
     virtual int getEnchantSlot() const;
-    /**
-     * @note   Virtual function table index: 64
-     * @symbol ?getEnchantValue@TridentItem@@UEBAHXZ
-     */
     virtual int getEnchantValue() const;
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol 
-     */
     virtual void __unk_vfn_67();
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol 
-     */
     virtual void __unk_vfn_71();
-    /**
-     * @note   Virtual function table index: 72
-     * @symbol 
-     */
     virtual void __unk_vfn_72();
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol 
-     */
     virtual void __unk_vfn_76();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 81
-     * @symbol 
-     */
     virtual void __unk_vfn_81();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol ?use@TridentItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /**
-     * @note   Virtual function table index: 86
-     * @symbol ?dispense@TridentItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /**
-     * @note   Virtual function table index: 88
-     * @symbol ?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
-     */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /**
-     * @note   Virtual function table index: 90
-     * @symbol ?hurtActor@TridentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTITEM
 #endif
-    /**
-     * @symbol ??0TridentItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI TridentItem(std::string const &, int);
 MCAPI static int const CHARGE_THRESHOLD_TIME;
 MCAPI static int const THROW_THRESHOLD_TIME;
 
 //private:
-    /**
-     * @symbol ?_setupProjectile@TridentItem@@AEBAPEAVActor@@PEAV2@VItemStack@@_N@Z
-     */
     MCAPI class Actor * _setupProjectile(class Actor *, class ItemStack, bool) const;
 
 private:

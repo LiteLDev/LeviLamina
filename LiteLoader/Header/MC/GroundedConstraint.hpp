@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~GroundedConstraint();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isSatisfied@GroundedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
-     */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROUNDEDCONSTRAINT
 #endif
-    /**
-     * @symbol ??0GroundedConstraint@@QEAA@AEAVStructureTemplate@@@Z
-     */
     MCAPI GroundedConstraint(class StructureTemplate &);
 
 };

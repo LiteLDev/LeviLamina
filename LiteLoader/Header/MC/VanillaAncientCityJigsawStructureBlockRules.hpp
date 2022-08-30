@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAANCIENTCITYJIGSAWSTRUCTUREBLOCKRULES
 #endif
-    /**
-     * @symbol ?initialize@VanillaAncientCityJigsawStructureBlockRules@@SAXAEAVJigsawStructureRegistry@@@Z
-     */
     MCAPI static void initialize(class JigsawStructureRegistry &);
 
 };

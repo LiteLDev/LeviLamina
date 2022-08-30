@@ -31,26 +31,11 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DesertPyramidPiece();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getType@DesertPyramidPiece@@UEBA?AW4StructurePieceType@@XZ
-     */
     virtual enum StructurePieceType getType() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?postProcess@DesertPyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERTPYRAMIDPIECE
 #endif
-    /**
-     * @symbol ??0DesertPyramidPiece@@QEAA@FHH@Z
-     */
     MCAPI DesertPyramidPiece(short, int, int);
 
 };

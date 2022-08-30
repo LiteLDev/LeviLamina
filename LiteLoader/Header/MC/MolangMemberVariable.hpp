@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMEMBERVARIABLE
 #endif
-    /**
-     * @symbol ??1MolangMemberVariable@@QEAA@XZ
-     */
     MCAPI ~MolangMemberVariable();
 
 };

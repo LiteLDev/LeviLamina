@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCELEAVEGAMEDONEEVENT
 #endif
-    /**
-     * @symbol ??1ServerInstanceLeaveGameDoneEvent@@QEAA@XZ
-     */
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
 
 };

@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDDEFINITION
 #endif
-    /**
-     * @symbol ??1SoundDefinition@@QEAA@XZ
-     */
     MCAPI ~SoundDefinition();
 
 };

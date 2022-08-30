@@ -39,37 +39,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPOSITION
 #endif
-    /**
-     * @symbol ??0CommandPosition@@QEAA@XZ
-     */
     MCAPI CommandPosition();
-    /**
-     * @symbol ??0CommandPosition@@QEAA@AEBVVec3@@@Z
-     */
     MCAPI CommandPosition(class Vec3 const &);
-    /**
-     * @symbol ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@AEBVCommandOrigin@@AEBVVec3@@@Z
-     */
     MCAPI class BlockPos getBlockPos(class CommandOrigin const &, class Vec3 const &) const;
-    /**
-     * @symbol ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@AEBVVec3@@0@Z
-     */
     MCAPI class BlockPos getBlockPos(class Vec3 const &, class Vec3 const &) const;
-    /**
-     * @symbol ?getPosition@CommandPosition@@QEBA?AVVec3@@AEBV2@0@Z
-     */
     MCAPI class Vec3 getPosition(class Vec3 const &, class Vec3 const &) const;
-    /**
-     * @symbol ?getPosition@CommandPosition@@QEBA?AVVec3@@AEBVCommandOrigin@@AEBV2@@Z
-     */
     MCAPI class Vec3 getPosition(class CommandOrigin const &, class Vec3 const &) const;
-    /**
-     * @symbol ?load@CommandPosition@@QEAAXAEBVCompoundTag@@@Z
-     */
     MCAPI void load(class CompoundTag const &);
-    /**
-     * @symbol ?serialize@CommandPosition@@QEBA?AVCompoundTag@@XZ
-     */
     MCAPI class CompoundTag serialize() const;
 
 };

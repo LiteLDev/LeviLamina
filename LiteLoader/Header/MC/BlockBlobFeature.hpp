@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockBlobFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@BlockBlobFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBLOBFEATURE
 #endif
-    /**
-     * @symbol ??0BlockBlobFeature@@QEAA@AEBVBlock@@H@Z
-     */
     MCAPI BlockBlobFeature(class Block const &, int);
 
 };

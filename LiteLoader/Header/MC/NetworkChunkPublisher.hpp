@@ -39,55 +39,19 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHER
 #endif
-    /**
-     * @symbol ??0NetworkChunkPublisher@@QEAA@AEAVLevel@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
-     */
     MCAPI NetworkChunkPublisher(class Level &, class NetworkIdentifier const &, enum SubClientId);
-    /**
-     * @symbol ?addSavedChunk@NetworkChunkPublisher@@QEAAXAEBVChunkPos@@@Z
-     */
     MCAPI void addSavedChunk(class ChunkPos const &);
-    /**
-     * @symbol ?clearRegion@NetworkChunkPublisher@@QEAAXXZ
-     */
     MCAPI void clearRegion();
-    /**
-     * @symbol ?destroyRegion@NetworkChunkPublisher@@QEAAXXZ
-     */
     MCAPI void destroyRegion();
-    /**
-     * @symbol ?getChunksSentSinceStart@NetworkChunkPublisher@@QEBAHXZ
-     */
     MCAPI int getChunksSentSinceStart() const;
-    /**
-     * @symbol ?is2DPositionRelevant@NetworkChunkPublisher@@QEBA_NAEBVBlockPos@@@Z
-     */
     MCAPI bool is2DPositionRelevant(class BlockPos const &) const;
-    /**
-     * @symbol ?moveRegion@NetworkChunkPublisher@@QEAAXAEBVBlockPos@@IAEBVVec3@@W4ChunkSourceViewGenerateMode@ChunkSource@@M@Z
-     */
     MCAPI void moveRegion(class BlockPos const &, unsigned int, class Vec3 const &, enum ChunkSource::ChunkSourceViewGenerateMode, float);
-    /**
-     * @symbol ?prepareRegion@NetworkChunkPublisher@@QEAAXAEAVChunkSource@@AEBVChunkPos@@@Z
-     */
     MCAPI void prepareRegion(class ChunkSource &, class ChunkPos const &);
-    /**
-     * @symbol ?sendQueuedChunks@NetworkChunkPublisher@@QEAAXXZ
-     */
     MCAPI void sendQueuedChunks();
-    /**
-     * @symbol ?setServerSettings@NetworkChunkPublisher@@QEAAXAEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@@Z
-     */
     MCAPI void setServerSettings(class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &);
 
 //private:
-    /**
-     * @symbol ?_sendQueuedChunk@NetworkChunkPublisher@@AEAA_NAEBVChunkPos@@PEAVTransferBuilder@Server@ClientBlobCache@@@Z
-     */
     MCAPI bool _sendQueuedChunk(class ChunkPos const &, class ClientBlobCache::Server::TransferBuilder *);
-    /**
-     * @symbol ?_serializeAndCache@NetworkChunkPublisher@@AEAAXAEAVLevelChunkPacket@@AEAVTransferBuilder@Server@ClientBlobCache@@$$QEAV?$function@$$A6AXAEAVVarIntDataOutput@@@Z@std@@@Z
-     */
     MCAPI void _serializeAndCache(class LevelChunkPacket &, class ClientBlobCache::Server::TransferBuilder &, class std::function<void (class VarIntDataOutput &)> &&);
 
 private:

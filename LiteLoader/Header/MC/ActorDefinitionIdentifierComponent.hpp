@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONIDENTIFIERCOMPONENT
 #endif
-    /**
-     * @symbol ??1ActorDefinitionIdentifierComponent@@QEAA@XZ
-     */
     MCAPI ~ActorDefinitionIdentifierComponent();
 
 };

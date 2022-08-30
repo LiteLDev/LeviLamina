@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSELECTORARGS
 #endif
-    /**
-     * @symbol ??1ActorSelectorArgs@@QEAA@XZ
-     */
     MCAPI ~ActorSelectorArgs();
 MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
 MCAPI static struct std::pair<float, float> const DEFAULT_X_ROTATION;

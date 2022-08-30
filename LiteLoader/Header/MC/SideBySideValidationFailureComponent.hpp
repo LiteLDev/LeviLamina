@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONFAILURECOMPONENT
 #endif
-    /**
-     * @symbol ??1SideBySideValidationFailureComponent@@QEAA@XZ
-     */
     MCAPI ~SideBySideValidationFailureComponent();
 
 };

@@ -31,30 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AllowListEntry();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?serialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
-     */
     virtual void serialize(class Json::Value &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserialize@AllowListEntry@@UEAAXAEAVValue@Json@@@Z
-     */
     virtual void deserialize(class Json::Value &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTENTRY
 #endif
-    /**
-     * @symbol ??0AllowListEntry@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI AllowListEntry(std::string);
-    /**
-     * @symbol ??0AllowListEntry@@QEAA@AEAVValue@Json@@@Z
-     */
     MCAPI AllowListEntry(class Json::Value &);
 
 };

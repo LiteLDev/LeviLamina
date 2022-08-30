@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONTRIGGEREDEVENT
 #endif
-    /**
-     * @symbol ??1ActorDefinitionTriggeredEvent@@QEAA@XZ
-     */
     MCAPI ~ActorDefinitionTriggeredEvent();
 
 };

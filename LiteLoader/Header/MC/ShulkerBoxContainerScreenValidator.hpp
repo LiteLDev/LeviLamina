@@ -30,16 +30,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ShulkerBoxContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXCONTAINERSCREENVALIDATOR
 #endif
-    /**
-     * @symbol ??0ShulkerBoxContainerScreenValidator@@QEAA@XZ
-     */
     MCAPI ShulkerBoxContainerScreenValidator();
 
 };

@@ -30,41 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HealthAttributeDelegate();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?tick@HealthAttributeDelegate@@UEAAXXZ
-     */
     virtual void tick();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?willChange@HealthAttributeDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
-     */
     virtual bool willChange(float, float, class AttributeBuff const &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?change@HealthAttributeDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
-     */
     virtual float change(float, float, class AttributeBuff const &);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getBuffValueWithModifiers@HealthAttributeDelegate@@UEBAMAEBVAttributeBuff@@@Z
-     */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALTHATTRIBUTEDELEGATE
 #endif
-    /**
-     * @symbol ??0HealthAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVMob@@@Z
-     */
     MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);
 
 };

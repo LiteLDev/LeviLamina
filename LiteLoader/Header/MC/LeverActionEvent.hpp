@@ -28,13 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVERACTIONEVENT
 #endif
-    /**
-     * @symbol ??0LeverActionEvent@@QEAA@AEBU0@@Z
-     */
     MCAPI LeverActionEvent(struct LeverActionEvent const &);
-    /**
-     * @symbol ??1LeverActionEvent@@QEAA@XZ
-     */
     MCAPI ~LeverActionEvent();
 
 };

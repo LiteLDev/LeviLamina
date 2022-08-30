@@ -31,43 +31,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~RideCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@RideCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDECOMMAND
 #endif
-    /**
-     * @symbol ?setup@RideCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?evictPassengers@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void evictPassengers(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?startRiding@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void startRiding(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?stopRiding@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void stopRiding(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?summonPassenger@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void summonPassenger(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?summonVehicle@RideCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     MCAPI void summonVehicle(class CommandOrigin const &, class CommandOutput &) const;
 
 private:

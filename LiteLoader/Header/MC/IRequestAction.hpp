@@ -32,35 +32,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~IRequestAction();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
-     */
     virtual void execute(class ServerLevel &, class Dimension &) = 0;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?serialize@IRequestAction@@UEAAXAEAVCompoundTag@@@Z
-     */
     virtual void serialize(class CompoundTag &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ??8IRequestAction@@UEBA_NAEAV0@@Z
-     */
     virtual bool operator==(class IRequestAction &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IREQUESTACTION
 #endif
-    /**
-     * @symbol ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
-     */
     MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
-    /**
-     * @symbol ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z
-     */
     MCAPI static bool isValidTag(class CompoundTag const &);
 
 };

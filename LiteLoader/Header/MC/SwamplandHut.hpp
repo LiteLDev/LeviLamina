@@ -31,42 +31,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SwamplandHut();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getType@SwamplandHut@@UEBA?AW4StructurePieceType@@XZ
-     */
     virtual enum StructurePieceType getType() const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?postProcess@SwamplandHut@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?postProcessMobsAt@SwamplandHut@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
-     */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?addHardcodedSpawnAreas@SwamplandHut@@UEBAXAEAVLevelChunk@@@Z
-     */
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWAMPLANDHUT
 #endif
-    /**
-     * @symbol ??0SwamplandHut@@QEAA@FHH@Z
-     */
     MCAPI SwamplandHut(short, int, int);
 
 //protected:
-    /**
-     * @symbol ?placeCauldron@SwamplandHut@@IEAAXAEAVBlockSource@@AEAVRandom@@HHHAEBVBoundingBox@@@Z
-     */
     MCAPI void placeCauldron(class BlockSource &, class Random &, int, int, int, class BoundingBox const &);
 
 protected:

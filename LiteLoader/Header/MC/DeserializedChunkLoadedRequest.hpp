@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERIALIZEDCHUNKLOADEDREQUEST
 #endif
-    /**
-     * @symbol ??1DeserializedChunkLoadedRequest@@QEAA@XZ
-     */
     MCAPI ~DeserializedChunkLoadedRequest();
 
 };

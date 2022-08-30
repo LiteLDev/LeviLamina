@@ -28,13 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMUNITYSIFTCONFIG
 #endif
-    /**
-     * @symbol ??0CommunitySiftConfig@@QEAA@XZ
-     */
     MCAPI CommunitySiftConfig();
-    /**
-     * @symbol ??1CommunitySiftConfig@@QEAA@XZ
-     */
     MCAPI ~CommunitySiftConfig();
 
 };

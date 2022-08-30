@@ -31,23 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DeltaFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@DeltaFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELTAFEATURE
 #endif
 
 //private:
-    /**
-     * @symbol ?_isValidPlacement@DeltaFeature@@AEBA_NAEAVBlockSource@@VBlockPos@@@Z
-     */
     MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;
 
 private:

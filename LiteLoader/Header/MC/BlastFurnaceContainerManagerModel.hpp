@@ -31,16 +31,9 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlastFurnaceContainerManagerModel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACECONTAINERMANAGERMODEL
 #endif
-    /**
-     * @symbol ??0BlastFurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     */
     MCAPI BlastFurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 };

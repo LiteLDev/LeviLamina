@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERADDEXPEVENT
 #endif
-    /**
-     * @symbol ??1PlayerAddExpEvent@@QEAA@XZ
-     */
     MCAPI ~PlayerAddExpEvent();
 
 };

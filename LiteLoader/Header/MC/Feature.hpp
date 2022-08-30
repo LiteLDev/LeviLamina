@@ -31,41 +31,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~Feature();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?place@Feature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isValidPlacement@IFeature@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     virtual bool isValidPlacement(std::string const &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@WeepingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
 #endif
-    /**
-     * @symbol ??0Feature@@QEAA@PEAVActor@@@Z
-     */
     MCAPI Feature(class Actor *);
 
 //protected:
-    /**
-     * @symbol ?_placeBlock@Feature@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
-     */
     MCAPI bool _placeBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /**
-     * @symbol ?_setManuallyPlaced@Feature@@IEAAXPEAVActor@@@Z
-     */
     MCAPI void _setManuallyPlaced(class Actor *);
 
 protected:

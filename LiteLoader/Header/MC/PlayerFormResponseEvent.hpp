@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERFORMRESPONSEEVENT
 #endif
-    /**
-     * @symbol ??1PlayerFormResponseEvent@@QEAA@XZ
-     */
     MCAPI ~PlayerFormResponseEvent();
 
 };

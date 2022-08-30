@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ScreenHandlerHUD();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
-     */
     virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERHUD
 #endif

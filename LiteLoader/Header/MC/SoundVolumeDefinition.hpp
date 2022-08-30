@@ -32,13 +32,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDVOLUMEDEFINITION
 #endif
-    /**
-     * @symbol ?initialize@SoundVolumeDefinition@@QEAAXAEAVEntityContext@@@Z
-     */
     MCAPI void initialize(class EntityContext &);
-    /**
-     * @symbol ?buildSchema@SoundVolumeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@USoundVolumeDefinition@@@JsonUtil@@@std@@@Z
-     */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SoundVolumeDefinition>> &);
 
 };

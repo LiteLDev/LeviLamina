@@ -30,17 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGEVENTCOORDINATOR
 #endif
-    /**
-     * @symbol ?getScriptingEventHandler@ScriptingEventCoordinator@@QEAAAEAVScriptingEventHandler@@XZ
-     */
     MCAPI class ScriptingEventHandler & getScriptingEventHandler();
-    /**
-     * @symbol ?registerScriptingEventHandler@ScriptingEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VScriptingEventHandler@@U?$default_delete@VScriptingEventHandler@@@std@@@std@@@Z
-     */
     MCAPI void registerScriptingEventHandler(std::unique_ptr<class ScriptingEventHandler> &&);
-    /**
-     * @symbol ?sendEvent@ScriptingEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableScriptingGameplayEvent@W4CoordinatorResult@@@@@@@Z
-     */
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableScriptingGameplayEvent<enum CoordinatorResult>>);
 
 };

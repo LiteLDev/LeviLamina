@@ -29,33 +29,15 @@ public:
     BlockFlammableDescription() = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockFlammableDescription();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getName@BlockFlammableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeComponent@BlockFlammableDescription@@UEBAXAEAVEntityContext@@@Z
-     */
     virtual void initializeComponent(class EntityContext &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKFLAMMABLEDESCRIPTION
 #endif
 MCAPI static int const CATCH_CHANCE_DEFAULT;
 MCAPI static int const DESTROY_CHANCE_DEFAULT;
 MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType@BlockFlammableDescription@@SAXXZ
-     */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades@BlockFlammableDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

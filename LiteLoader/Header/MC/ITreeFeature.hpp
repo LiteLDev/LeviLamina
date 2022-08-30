@@ -31,17 +31,10 @@ public:
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREEFEATURE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ??1ITreeFeature@@UEAA@XZ
-     */
     MCVAPI ~ITreeFeature();
 #endif
 
 //protected:
-    /**
-     * @symbol ?_place@ITreeFeature@@IEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
-     */
     MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 
 protected:

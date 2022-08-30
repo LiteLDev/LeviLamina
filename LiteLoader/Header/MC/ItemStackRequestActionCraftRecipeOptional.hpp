@@ -29,45 +29,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ItemStackRequestActionCraftRecipeOptional();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getFilteredStringIndex@ItemStackRequestActionCraftRecipeOptional@@UEBAHXZ
-     */
     virtual int getFilteredStringIndex() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?_write@ItemStackRequestActionCraftRecipeOptional@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void _write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?_read@ItemStackRequestActionCraftRecipeOptional@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
-     */
     virtual bool _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
 #endif
-    /**
-     * @symbol ??0ItemStackRequestActionCraftRecipeOptional@@QEAA@XZ
-     */
     MCAPI ItemStackRequestActionCraftRecipeOptional();
-    /**
-     * @symbol ?getRecipeNetId@ItemStackRequestActionCraftRecipeOptional@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
-     */
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
 
 };

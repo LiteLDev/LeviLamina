@@ -39,55 +39,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ByteTag();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?write@ByteTag@@UEBAXAEAVIDataOutput@@@Z
-     */
     virtual void write(class IDataOutput &) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?load@ByteTag@@UEAAXAEAVIDataInput@@@Z
-     */
     virtual void load(class IDataInput &);
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?toString@ByteTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string toString() const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getId@ByteTag@@UEBA?AW4Type@Tag@@XZ
-     */
     virtual enum Tag::Type getId() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?equals@ByteTag@@UEBA_NAEBVTag@@@Z
-     */
     virtual bool equals(class Tag const &) const;
-    /**
-     * @note   Virtual function table index: 9
-     * @symbol ?copy@ByteTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class Tag> copy() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol ?hash@ByteTag@@UEBA_KXZ
-     */
     virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTETAG
 #endif
-    /**
-     * @symbol ??0ByteTag@@QEAA@XZ
-     */
     MCAPI ByteTag();
-    /**
-     * @symbol ??0ByteTag@@QEAA@E@Z
-     */
     MCAPI ByteTag(unsigned char);
 
 };

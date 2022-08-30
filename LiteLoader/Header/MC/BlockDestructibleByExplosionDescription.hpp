@@ -27,31 +27,13 @@ public:
     BlockDestructibleByExplosionDescription() = delete;
 #endif
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~BlockDestructibleByExplosionDescription();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getName@BlockDestructibleByExplosionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string const & getName() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?initializeComponent@BlockDestructibleByExplosionDescription@@UEBAXAEAVEntityContext@@@Z
-     */
     virtual void initializeComponent(class EntityContext &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESTRUCTIBLEBYEXPLOSIONDESCRIPTION
 #endif
 MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType@BlockDestructibleByExplosionDescription@@SAXXZ
-     */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades@BlockDestructibleByExplosionDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
-     */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

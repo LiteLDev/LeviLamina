@@ -128,40 +128,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AvailableCommandsPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@AvailableCommandsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@AvailableCommandsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@AvailableCommandsPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@AvailableCommandsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVAILABLECOMMANDSPACKET
 #endif
-    /**
-     * @symbol ??0AvailableCommandsPacket@@QEAA@XZ
-     */
     MCAPI AvailableCommandsPacket();
-    /**
-     * @symbol ??0AvailableCommandsPacket@@QEAA@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0$$QEAV?$vector@UEnumData@AvailableCommandsPacket@@V?$allocator@UEnumData@AvailableCommandsPacket@@@std@@@2@$$QEAV?$vector@UConstrainedValueData@AvailableCommandsPacket@@V?$allocator@UConstrainedValueData@AvailableCommandsPacket@@@std@@@2@$$QEAV?$vector@UCommandData@AvailableCommandsPacket@@V?$allocator@UCommandData@AvailableCommandsPacket@@@std@@@2@$$QEAV?$vector@USoftEnumData@AvailableCommandsPacket@@V?$allocator@USoftEnumData@AvailableCommandsPacket@@@std@@@2@@Z
-     */
     MCAPI AvailableCommandsPacket(std::vector<std::string> const &, std::vector<std::string> const &, std::vector<struct AvailableCommandsPacket::EnumData> &&, std::vector<struct AvailableCommandsPacket::ConstrainedValueData> &&, std::vector<struct AvailableCommandsPacket::CommandData> &&, std::vector<struct AvailableCommandsPacket::SoftEnumData> &&);
 
 };

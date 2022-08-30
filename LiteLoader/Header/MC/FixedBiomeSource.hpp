@@ -30,51 +30,16 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FixedBiomeSource();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?fillBiomes@FixedBiomeSource@@UEBAXAEAVLevelChunk@@AEBVChunkLocalNoiseCache@@@Z
-     */
     virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
-     */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@IAEBUGetBiomeOptions@@@Z
-     */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int, struct GetBiomeOptions const &) const;
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?containsOnly@FixedBiomeSource@@UEBA_NHHHHV?$span@$$CBH$0?0@gsl@@@Z
-     */
     virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIXEDBIOMESOURCE
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
-     */
     MCVAPI class Biome const * getBiome(class BlockPos const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
-     */
     MCVAPI class Biome const * getBiome(struct GetBiomeOptions const &) const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
-     */
     MCVAPI class Biome const * getBiome(int, int, int) const;
 #endif
-    /**
-     * @symbol ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
-     */
     MCAPI FixedBiomeSource(class Biome const &);
 
 };

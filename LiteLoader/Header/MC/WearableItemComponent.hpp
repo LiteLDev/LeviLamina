@@ -30,58 +30,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~WearableItemComponent();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VWearableItemComponent@@@@UEBA_NXZ
-     */
     virtual bool isNetworkComponent() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VWearableItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
-     */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VWearableItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
-     */
     virtual bool initializeFromNetwork(class CompoundTag const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEARABLEITEMCOMPONENT
 #endif
-    /**
-     * @symbol ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@@XZ
-     */
     MCAPI enum EquipmentSlot getSlot() const;
-    /**
-     * @symbol ?use@WearableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
-     */
     MCAPI bool use(class ItemStack &, class Player &) const;
-    /**
-     * @symbol ?bindType@WearableItemComponent@@SAXXZ
-     */
     MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier@WearableItemComponent@@SAAEBVHashedString@@XZ
-     */
     MCAPI static class HashedString const & getIdentifier();
 
 };

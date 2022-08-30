@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERNOTIFICATIONEVENT
 #endif
-    /**
-     * @symbol ??1PlayerNotificationEvent@@QEAA@XZ
-     */
     MCAPI ~PlayerNotificationEvent();
 
 };

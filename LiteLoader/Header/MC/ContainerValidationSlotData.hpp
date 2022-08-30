@@ -28,17 +28,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONSLOTDATA
 #endif
-    /**
-     * @symbol ??0ContainerValidationSlotData@@QEAA@XZ
-     */
     MCAPI ContainerValidationSlotData();
-    /**
-     * @symbol ??0ContainerValidationSlotData@@QEAA@W4ContainerEnumName@@H@Z
-     */
     MCAPI ContainerValidationSlotData(enum ContainerEnumName, int);
-    /**
-     * @symbol ?matches@ContainerValidationSlotData@@QEBA_NAEBU1@@Z
-     */
     MCAPI bool matches(struct ContainerValidationSlotData const &) const;
 MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
 

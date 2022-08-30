@@ -31,78 +31,23 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SoulSpeedEnchant();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getMinCost@SoulSpeedEnchant@@UEBAHH@Z
-     */
     virtual int getMinCost(int) const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?getMaxCost@SoulSpeedEnchant@@UEBAHH@Z
-     */
     virtual int getMaxCost(int) const;
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getMaxLevel@SoulSpeedEnchant@@UEBAHXZ
-     */
     virtual int getMaxLevel() const;
-    /**
-     * @note   Virtual function table index: 10
-     * @symbol 
-     */
     virtual void __unk_vfn_10();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol 
-     */
     virtual void __unk_vfn_12();
-    /**
-     * @note   Virtual function table index: 13
-     * @symbol 
-     */
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOULSPEEDENCHANT
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isDiscoverable@SoulSpeedEnchant@@UEBA_NXZ
-     */
     MCVAPI bool isDiscoverable() const;
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ
-     */
     MCVAPI bool isTreasureOnly() const;
 #endif
-    /**
-     * @symbol ??0SoulSpeedEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
-     */
     MCAPI SoulSpeedEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
-    /**
-     * @symbol ?getLevel@SoulSpeedEnchant@@SAHAEBVActor@@@Z
-     */
     MCAPI static int getLevel(class Actor const &);
-    /**
-     * @symbol ?getSpeedBoost@SoulSpeedEnchant@@SAMH@Z
-     */
     MCAPI static float getSpeedBoost(int);
-    /**
-     * @symbol ?isActive@SoulSpeedEnchant@@SA_NAEBVActor@@@Z
-     */
     MCAPI static bool isActive(class Actor const &);
-    /**
-     * @symbol ?shouldSpawnParticles@SoulSpeedEnchant@@SA_NAEBVActor@@@Z
-     */
     MCAPI static bool shouldSpawnParticles(class Actor const &);
 
 };

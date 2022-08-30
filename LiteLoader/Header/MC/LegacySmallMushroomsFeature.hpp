@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~LegacySmallMushroomsFeature();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?place@LegacySmallMushroomsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
-     */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSMALLMUSHROOMSFEATURE
 #endif
-    /**
-     * @symbol ??0LegacySmallMushroomsFeature@@QEAA@AEBVFeatureRegistry@@@Z
-     */
     MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const &);
 
 };

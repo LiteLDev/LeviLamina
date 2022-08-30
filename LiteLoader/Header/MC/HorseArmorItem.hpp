@@ -34,125 +34,31 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~HorseArmorItem();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 18
-     * @symbol ?isDyeable@HorseArmorItem@@UEBA_NXZ
-     */
     virtual bool isDyeable() const;
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol 
-     */
     virtual void __unk_vfn_52();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol 
-     */
     virtual void __unk_vfn_54();
-    /**
-     * @note   Virtual function table index: 61
-     * @symbol ?appendFormattedHovertext@HorseArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
-     */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
-    /**
-     * @note   Virtual function table index: 65
-     * @symbol ?getArmorValue@HorseArmorItem@@UEBAHXZ
-     */
     virtual int getArmorValue() const;
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol 
-     */
     virtual void __unk_vfn_67();
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol 
-     */
     virtual void __unk_vfn_71();
-    /**
-     * @note   Virtual function table index: 72
-     * @symbol 
-     */
     virtual void __unk_vfn_72();
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 74
-     * @symbol ?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
-     */
     virtual class mce::Color getColor(class CompoundTag const *, class ItemDescriptor const &) const;
-    /**
-     * @note   Virtual function table index: 75
-     * @symbol ?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z
-     */
     virtual bool hasCustomColor(class CompoundTag const *) const;
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol 
-     */
     virtual void __unk_vfn_76();
-    /**
-     * @note   Virtual function table index: 78
-     * @symbol ?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z
-     */
     virtual void clearColor(class CompoundTag *) const;
-    /**
-     * @note   Virtual function table index: 79
-     * @symbol ?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z
-     */
     virtual void setColor(class ItemStackBase &, class mce::Color const &) const;
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 81
-     * @symbol 
-     */
     virtual void __unk_vfn_81();
-    /**
-     * @note   Virtual function table index: 86
-     * @symbol ?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
-     */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSEARMORITEM
 #endif
-    /**
-     * @symbol ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
-     */
     MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
-    /**
-     * @symbol ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
-     */
     MCAPI enum HorseArmorItem::Tier getTier() const;
 MCAPI static int const mHealthPerTier[];
 

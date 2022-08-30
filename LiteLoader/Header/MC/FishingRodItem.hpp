@@ -32,136 +32,33 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FishingRodItem();
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol 
-     */
     virtual void __unk_vfn_7();
-    /**
-     * @note   Virtual function table index: 11
-     * @symbol 
-     */
     virtual void __unk_vfn_11();
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol 
-     */
     virtual void __unk_vfn_14();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol 
-     */
     virtual void __unk_vfn_16();
-    /**
-     * @note   Virtual function table index: 50
-     * @symbol ?isHandEquipped@FishingRodItem@@UEBA_NXZ
-     */
     virtual bool isHandEquipped() const;
-    /**
-     * @note   Virtual function table index: 52
-     * @symbol 
-     */
     virtual void __unk_vfn_52();
-    /**
-     * @note   Virtual function table index: 54
-     * @symbol 
-     */
     virtual void __unk_vfn_54();
-    /**
-     * @note   Virtual function table index: 60
-     * @symbol ?requiresInteract@FishingRodItem@@UEBA_NXZ
-     */
     virtual bool requiresInteract() const;
-    /**
-     * @note   Virtual function table index: 63
-     * @symbol ?getEnchantSlot@FishingRodItem@@UEBAHXZ
-     */
     virtual int getEnchantSlot() const;
-    /**
-     * @note   Virtual function table index: 64
-     * @symbol ?getEnchantValue@FishingRodItem@@UEBAHXZ
-     */
     virtual int getEnchantValue() const;
-    /**
-     * @note   Virtual function table index: 67
-     * @symbol 
-     */
     virtual void __unk_vfn_67();
-    /**
-     * @note   Virtual function table index: 71
-     * @symbol 
-     */
     virtual void __unk_vfn_71();
-    /**
-     * @note   Virtual function table index: 72
-     * @symbol 
-     */
     virtual void __unk_vfn_72();
-    /**
-     * @note   Virtual function table index: 73
-     * @symbol 
-     */
     virtual void __unk_vfn_73();
-    /**
-     * @note   Virtual function table index: 76
-     * @symbol 
-     */
     virtual void __unk_vfn_76();
-    /**
-     * @note   Virtual function table index: 80
-     * @symbol 
-     */
     virtual void __unk_vfn_80();
-    /**
-     * @note   Virtual function table index: 81
-     * @symbol 
-     */
     virtual void __unk_vfn_81();
-    /**
-     * @note   Virtual function table index: 85
-     * @symbol ?use@FishingRodItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
-     */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /**
-     * @note   Virtual function table index: 90
-     * @symbol ?hurtActor@FishingRodItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
-     */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /**
-     * @note   Virtual function table index: 94
-     * @symbol ?mineBlock@FishingRodItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
-     */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
-    /**
-     * @note   Virtual function table index: 119
-     * @symbol ?getInteractText@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
-     */
     virtual std::string getInteractText(class Player const &) const;
-    /**
-     * @note   Virtual function table index: 120
-     * @symbol ?getAnimationFrameFor@FishingRodItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
-     */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-    /**
-     * @note   Virtual function table index: 123
-     * @symbol ?getIcon@FishingRodItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
-     */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
-    /**
-     * @note   Virtual function table index: 125
-     * @symbol ?setIcon@FishingRodItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     virtual class Item & setIcon(std::string const &, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGRODITEM
 #endif
-    /**
-     * @symbol ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
-     */
     MCAPI FishingRodItem(std::string const &, int);
 
 };

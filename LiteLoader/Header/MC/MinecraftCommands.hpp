@@ -61,71 +61,23 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTCOMMANDS
 #endif
-    /**
-     * @symbol ??0MinecraftCommands@@QEAA@AEAVMinecraft@@@Z
-     */
     MCAPI MinecraftCommands(class Minecraft &);
-    /**
-     * @symbol ?compileCommand@MinecraftCommands@@QEAAPEAVCommand@@AEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
-     */
     MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion, class std::function<void (std::string const &)>);
-    /**
-     * @symbol ?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z
-     */
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
-    /**
-     * @symbol ?getRegistry@MinecraftCommands@@QEAAAEAVCommandRegistry@@XZ
-     */
     MCAPI class CommandRegistry & getRegistry();
-    /**
-     * @symbol ?handleOutput@MinecraftCommands@@QEBAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z
-     */
     MCAPI void handleOutput(class CommandOrigin const &, class CommandOutput const &) const;
-    /**
-     * @symbol ?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVIWorldRegistriesProvider@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z
-     */
     MCAPI void initCoreEnums(class ItemRegistryRef, class IWorldRegistriesProvider const &, class ActorFactory const &, class Experiments const &, class BaseGameVersion const &);
-    /**
-     * @symbol ?initCoreEnumsServer@MinecraftCommands@@QEAAXAEBVActorDefinitionGroup@@@Z
-     */
     MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const &);
-    /**
-     * @symbol ?requestCommandExecution@MinecraftCommands@@QEBA?AUMCRESULT@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@H_N@Z
-     */
     MCAPI struct MCRESULT requestCommandExecution(std::unique_ptr<class CommandOrigin>, std::string const &, int, bool) const;
-    /**
-     * @symbol ?runCommand@MinecraftCommands@@QEAAXAEAVCommand@@AEAVCommandOrigin@@@Z
-     */
     MCAPI void runCommand(class Command &, class CommandOrigin &);
-    /**
-     * @symbol ?runCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
-     */
     MCAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion);
-    /**
-     * @symbol ?setRegistryNetworkUpdateCallback@MinecraftCommands@@QEBAXV?$function@$$A6AXAEBVPacket@@@Z@std@@@Z
-     */
     MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const &)>) const;
-    /**
-     * @symbol ?getOutputType@MinecraftCommands@@SA?AW4CommandOutputType@@AEBVCommandOrigin@@@Z
-     */
     MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const &);
-    /**
-     * @symbol ?initBlockEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVBaseGameVersion@@@Z
-     */
     MCAPI static void initBlockEnum(class CommandRegistry &, class BaseGameVersion const &);
-    /**
-     * @symbol ?initItemEnum@MinecraftCommands@@SAXVItemRegistryRef@@AEAVCommandRegistry@@AEBVBaseGameVersion@@@Z
-     */
     MCAPI static void initItemEnum(class ItemRegistryRef, class CommandRegistry &, class BaseGameVersion const &);
-    /**
-     * @symbol ?initItemTagEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void initItemTagEnum(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?_registerSharedClientServerEnums@MinecraftCommands@@AEAAXXZ
-     */
     MCAPI void _registerSharedClientServerEnums();
 
 private:

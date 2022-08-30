@@ -30,9 +30,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKEVENT
 #endif
-    /**
-     * @symbol ??1KnockBackEvent@@QEAA@XZ
-     */
     MCAPI ~KnockBackEvent();
 
 };

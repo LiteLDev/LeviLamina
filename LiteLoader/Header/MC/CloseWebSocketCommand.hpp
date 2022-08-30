@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~CloseWebSocketCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@CloseWebSocketCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOSEWEBSOCKETCOMMAND
 #endif
-    /**
-     * @symbol ?setup@CloseWebSocketCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 //private:

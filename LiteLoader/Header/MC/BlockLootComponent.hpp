@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLOOTCOMPONENT
 #endif
-    /**
-     * @symbol ??0BlockLootComponent@@QEAA@XZ
-     */
     MCAPI BlockLootComponent();
-    /**
-     * @symbol ?spawnResources@BlockLootComponent@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MHAEBVItemStack@@@Z
-     */
     MCAPI void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, std::vector<class Item const *> *, float, int, class ItemStack const &) const;
 
 };

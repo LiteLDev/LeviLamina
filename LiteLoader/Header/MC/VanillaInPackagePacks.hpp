@@ -30,15 +30,7 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~VanillaInPackagePacks();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getPacks@VanillaInPackagePacks@@UEBA?AV?$vector@UMetaData@IInPackagePacks@@V?$allocator@UMetaData@IInPackagePacks@@@std@@@std@@W4PackType@@@Z
-     */
     virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum PackType) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAINPACKAGEPACKS
 #endif

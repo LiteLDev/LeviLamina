@@ -31,30 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~ChestContainerManagerModel();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?isValid@ChestContainerManagerModel@@UEAA_NM@Z
-     */
     virtual bool isValid(float);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?_postInit@ChestContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERMANAGERMODEL
 #endif
-    /**
-     * @symbol ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
-     */
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
-    /**
-     * @symbol ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
-     */
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
 
 };

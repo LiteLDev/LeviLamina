@@ -31,21 +31,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~DispenserContainerManagerModel();
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?_postInit@DispenserContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
-     */
     virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPENSERCONTAINERMANAGERMODEL
 #endif
-    /**
-     * @symbol ??0DispenserContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
-     */
     MCAPI DispenserContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 };

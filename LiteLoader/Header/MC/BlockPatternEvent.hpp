@@ -28,13 +28,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNEVENT
 #endif
-    /**
-     * @symbol ??0BlockPatternEvent@@QEAA@AEBU0@@Z
-     */
     MCAPI BlockPatternEvent(struct BlockPatternEvent const &);
-    /**
-     * @symbol ??1BlockPatternEvent@@QEAA@XZ
-     */
     MCAPI ~BlockPatternEvent();
 
 };

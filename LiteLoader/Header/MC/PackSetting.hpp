@@ -33,13 +33,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTING
 #endif
-    /**
-     * @symbol ?set@PackSetting@@QEAAXAEBVValue@Json@@@Z
-     */
     MCAPI void set(class Json::Value const &);
-    /**
-     * @symbol ??1PackSetting@@QEAA@XZ
-     */
     MCAPI ~PackSetting();
 
 };

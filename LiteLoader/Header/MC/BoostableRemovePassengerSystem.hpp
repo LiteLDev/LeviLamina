@@ -30,13 +30,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLEREMOVEPASSENGERSYSTEM
 #endif
-    /**
-     * @symbol ?boostableRemovePassenger@BoostableRemovePassengerSystem@@SAXAEAVStrictEntityContext@@AEBURemovePassengersComponent@@AEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UPassengerComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@@@UFOVModifierComponent@@@@@Z
-     */
     MCAPI static void boostableRemovePassenger(class StrictEntityContext &, struct RemovePassengersComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent, class FlagComponent<struct PlayerComponentFlag>>, struct FOVModifierComponent> &);
-    /**
-     * @symbol ?createSystem@BoostableRemovePassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
-     */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

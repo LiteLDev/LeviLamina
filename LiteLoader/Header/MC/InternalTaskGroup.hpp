@@ -30,66 +30,18 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~InternalTaskGroup();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol 
-     */
     virtual void __unk_vfn_1();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol 
-     */
     virtual void __unk_vfn_2();
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol 
-     */
     virtual void __unk_vfn_3();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol 
-     */
     virtual void __unk_vfn_4();
-    /**
-     * @note   Virtual function table index: 5
-     * @symbol ?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ
-     */
     virtual enum TaskGroupState getState() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?processCoroutines@InternalTaskGroup@@UEAAXXZ
-     */
     MCVAPI void processCoroutines();
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?queue@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@$$QEAV?$function@$$A6AXXZ@3@@Z
-     */
     MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queue(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&, class std::function<void (void)> &&);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?queueSync@InternalTaskGroup@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBU?$TaskStartInfoEx@X@@$$QEAV?$function@$$A6A?AVTaskResult@@XZ@3@@Z
-     */
     MCVAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> queueSync(struct TaskStartInfoEx<void> const &, class std::function<class TaskResult (void)> &&);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?requeueTask@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
-     */
     MCVAPI void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z
-     */
     MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
-    /**
-     * @note   Virtual function table index: -1
-     * @symbol ?taskRegister@InternalTaskGroup@@UEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
-     */
     MCVAPI void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
 #endif
 

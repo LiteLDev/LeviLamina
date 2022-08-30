@@ -31,30 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~InstantaneousAttributeBuff();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
-     */
     virtual bool isInstantaneous() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
-     */
     virtual bool isSerializable() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSATTRIBUTEBUFF
 #endif
-    /**
-     * @symbol ??0InstantaneousAttributeBuff@@QEAA@MW4AttributeBuffType@@@Z
-     */
     MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
-    /**
-     * @symbol ??0InstantaneousAttributeBuff@@QEAA@MAEBVActorDamageSource@@@Z
-     */
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
 
 };

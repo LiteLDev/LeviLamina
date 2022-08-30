@@ -30,21 +30,10 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~FlyMoveControl();
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
-     */
     virtual void tick(class MoveControlComponent &, class Mob &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYMOVECONTROL
 #endif
-    /**
-     * @symbol ??0FlyMoveControl@@QEAA@XZ
-     */
     MCAPI FlyMoveControl();
 
 };

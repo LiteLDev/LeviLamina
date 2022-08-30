@@ -30,66 +30,19 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PulseCapacitor();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getStrength@PulseCapacitor@@UEBAHXZ
-     */
     virtual int getStrength() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?setStrength@PulseCapacitor@@UEAAXH@Z
-     */
     virtual void setStrength(int);
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
-     */
     virtual bool canConsumePowerAnyDirection() const;
-    /**
-     * @note   Virtual function table index: 7
-     * @symbol ?canConsumerPower@PulseCapacitor@@UEBA_NXZ
-     */
     virtual bool canConsumerPower() const;
-    /**
-     * @note   Virtual function table index: 12
-     * @symbol ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
-     */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
-    /**
-     * @note   Virtual function table index: 14
-     * @symbol ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
-     */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol 
-     */
     virtual void __unk_vfn_17();
-    /**
-     * @note   Virtual function table index: 20
-     * @symbol 
-     */
     virtual void __unk_vfn_20();
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol ?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ
-     */
     virtual enum CircuitComponentType getCircuitComponentType() const;
-    /**
-     * @note   Virtual function table index: 24
-     * @symbol ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
-     */
     virtual unsigned char getPoweroutDirection() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PULSECAPACITOR
 #endif
-    /**
-     * @symbol ??0PulseCapacitor@@QEAA@XZ
-     */
     MCAPI PulseCapacitor();
 
 };

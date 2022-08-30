@@ -32,21 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKNOTIFIERCOMPONENT
 #endif
-    /**
-     * @symbol ?getBlockList@InsideBlockNotifierComponent@@QEBAAEBV?$vector@VInsideBlockEventMap@@V?$allocator@VInsideBlockEventMap@@@std@@@std@@XZ
-     */
     MCAPI std::vector<class InsideBlockEventMap> const & getBlockList() const;
-    /**
-     * @symbol ?isTrackedBlock@InsideBlockNotifierComponent@@QEBA_NAEBVBlock@@@Z
-     */
     MCAPI bool isTrackedBlock(class Block const &) const;
-    /**
-     * @symbol ?resetBlocksInsideState@InsideBlockNotifierComponent@@QEAAXXZ
-     */
     MCAPI void resetBlocksInsideState();
-    /**
-     * @symbol ?setInsideBlock@InsideBlockNotifierComponent@@QEAAXAEBVBlock@@_N@Z
-     */
     MCAPI void setInsideBlock(class Block const &, bool);
 
 };

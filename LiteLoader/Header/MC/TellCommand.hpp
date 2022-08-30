@@ -31,27 +31,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~TellCommand();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?execute@TellCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
-     */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELLCOMMAND
 #endif
-    /**
-     * @symbol ?setup@TellCommand@@SAXAEAVCommandRegistry@@@Z
-     */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
-    /**
-     * @symbol ?_sendMessageToPlayers@TellCommand@@AEBAXAEBV?$CommandSelectorResults@VPlayer@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBUCommandOriginIdentity@@AEAVLevel@@@Z
-     */
     MCAPI void _sendMessageToPlayers(class CommandSelectorResults<class Player> const &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
 
 private:

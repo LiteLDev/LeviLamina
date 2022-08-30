@@ -38,21 +38,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTNETRELEVANCYREGISTRY
 #endif
-    /**
-     * @symbol ?getFilteredDefinitionsForServer@ComponentNetRelevancyRegistry@@QEBA?AVDefinitionInstanceGroup@@AEBV2@@Z
-     */
     MCAPI class DefinitionInstanceGroup getFilteredDefinitionsForServer(class DefinitionInstanceGroup const &) const;
-    /**
-     * @symbol ?registerNetSerialization@ComponentNetRelevancyRegistry@@QEAAAEAUNetSerializationCallbacks@1@AEBVHashedString@@V?$function@$$A6A_NAEBVDefinitionInstanceGroup@@AEAVCompoundTag@@@Z@std@@@Z
-     */
     MCAPI struct ComponentNetRelevancyRegistry::NetSerializationCallbacks & registerNetSerialization(class HashedString const &, class std::function<bool (class DefinitionInstanceGroup const &, class CompoundTag &)>);
-    /**
-     * @symbol ?serializeComponentDefinitionsForClient@ComponentNetRelevancyRegistry@@QEBA_NAEBVDefinitionInstanceGroup@@AEAVCompoundTag@@@Z
-     */
     MCAPI bool serializeComponentDefinitionsForClient(class DefinitionInstanceGroup const &, class CompoundTag &) const;
-    /**
-     * @symbol ??1ComponentNetRelevancyRegistry@@QEAA@XZ
-     */
     MCAPI ~ComponentNetRelevancyRegistry();
 
 };

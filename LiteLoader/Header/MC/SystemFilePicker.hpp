@@ -30,37 +30,15 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~SystemFilePicker();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?initFilePick@SystemFilePicker@@UEAAXAEBVPath@Core@@V?$function@$$A6AX_NUFileInfo@@@Z@std@@@Z
-     */
     virtual void initFilePick(class Core::Path const &, class std::function<void (bool, struct FileInfo)>);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?readBytes@SystemFilePicker@@UEAA_KAEBUFileInfo@@_K1AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
-     */
     virtual unsigned __int64 readBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> &);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?writeBytes@SystemFilePicker@@UEAA_NAEBUFileInfo@@_K1AEBV?$vector@EV?$allocator@E@std@@@std@@@Z
-     */
     virtual bool writeBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMFILEPICKER
 #endif
-    /**
-     * @symbol ??0SystemFilePicker@@QEAA@XZ
-     */
     MCAPI SystemFilePicker();
 
 //protected:
-    /**
-     * @symbol ?_fillFileInfo@SystemFilePicker@@IEAA?AUFileInfo@@AEBVPath@Core@@@Z
-     */
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const &);
 
 protected:

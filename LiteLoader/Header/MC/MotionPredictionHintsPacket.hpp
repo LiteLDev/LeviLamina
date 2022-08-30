@@ -30,40 +30,14 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MotionPredictionHintsPacket();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?getId@MotionPredictionHintsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
-     */
     virtual enum MinecraftPacketIds getId() const;
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?getName@MotionPredictionHintsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
-     */
     virtual std::string getName() const;
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?write@MotionPredictionHintsPacket@@UEBAXAEAVBinaryStream@@@Z
-     */
     virtual void write(class BinaryStream &) const;
-    /**
-     * @note   Virtual function table index: 6
-     * @symbol ?_read@MotionPredictionHintsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
-     */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOTIONPREDICTIONHINTSPACKET
 #endif
-    /**
-     * @symbol ??0MotionPredictionHintsPacket@@QEAA@XZ
-     */
     MCAPI MotionPredictionHintsPacket();
-    /**
-     * @symbol ??0MotionPredictionHintsPacket@@QEAA@AEBVActor@@@Z
-     */
     MCAPI MotionPredictionHintsPacket(class Actor const &);
 
 };

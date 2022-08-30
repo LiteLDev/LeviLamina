@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSTORAGEIDS
 #endif
-    /**
-     * @symbol ??1PlayerStorageIds@@QEAA@XZ
-     */
     MCAPI ~PlayerStorageIds();
 
 };

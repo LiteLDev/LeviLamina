@@ -31,50 +31,17 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~AllowList();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-     */
     virtual void serialize(class Json::Value &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z
-     */
     virtual void deserialize(class Json::Value &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLIST
 #endif
-    /**
-     * @symbol ??0AllowList@@QEAA@V?$function@$$A6AXXZ@std@@@Z
-     */
     MCAPI AllowList(class std::function<void (void)>);
-    /**
-     * @symbol ?addEntry@AllowList@@QEAA_NAEBVAllowListEntry@@@Z
-     */
     MCAPI bool addEntry(class AllowListEntry const &);
-    /**
-     * @symbol ?getEntries@AllowList@@QEBAAEBV?$vector@VAllowListEntry@@V?$allocator@VAllowListEntry@@@std@@@std@@XZ
-     */
     MCAPI std::vector<class AllowListEntry> const & getEntries() const;
-    /**
-     * @symbol ?isAllowed@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI bool isAllowed(class mce::UUID const &, std::string const &) const;
-    /**
-     * @symbol ?isIgnoringPlayerLimit@AllowList@@QEBA_NAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI bool isIgnoringPlayerLimit(class mce::UUID const &, std::string const &) const;
-    /**
-     * @symbol ?removeByName@AllowList@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
-     */
     MCAPI bool removeByName(std::string const &);
-    /**
-     * @symbol ?tryUpdateEntries@AllowList@@QEAAXAEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
-     */
     MCAPI void tryUpdateEntries(class mce::UUID const &, std::string const &, std::string const &);
 
 };

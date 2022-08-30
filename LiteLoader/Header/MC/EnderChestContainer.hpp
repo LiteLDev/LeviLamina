@@ -30,36 +30,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~EnderChestContainer();
-    /**
-     * @note   Virtual function table index: 16
-     * @symbol ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
-     */
     virtual void startOpen(class Player &);
-    /**
-     * @note   Virtual function table index: 17
-     * @symbol ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
-     */
     virtual void stopOpen(class Player &);
-    /**
-     * @note   Virtual function table index: 22
-     * @symbol 
-     */
     virtual void __unk_vfn_22();
-    /**
-     * @note   Virtual function table index: 23
-     * @symbol 
-     */
     virtual void __unk_vfn_23();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTCONTAINER
 #endif
-    /**
-     * @symbol ??0EnderChestContainer@@QEAA@XZ
-     */
     MCAPI EnderChestContainer();
 MCAPI static int const ITEMS_SIZE;
 

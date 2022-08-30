@@ -31,29 +31,12 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~PrivateKeyManager();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?isValid@PrivateKeyManager@@UEBA_NXZ
-     */
     virtual bool isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIVATEKEYMANAGER
 #endif
-    /**
-     * @symbol ??0PrivateKeyManager@@QEAA@W4System@Asymmetric@Crypto@@@Z
-     */
     MCAPI PrivateKeyManager(enum Crypto::Asymmetric::System);
-    /**
-     * @symbol ?computeSecret@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVKeyManager@@@Z
-     */
     MCAPI std::string computeSecret(class KeyManager const &) const;
-    /**
-     * @symbol ?sign@PrivateKeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4HashType@Hash@Crypto@@@Z
-     */
     MCAPI std::string sign(std::string const &, enum Crypto::Hash::HashType) const;
 
 };

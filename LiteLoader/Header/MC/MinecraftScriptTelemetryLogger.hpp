@@ -28,36 +28,13 @@ public:
 #endif
 
 public:
-    /**
-     * @note   Virtual function table index: 0
-     * @symbol 
-     */
     virtual ~MinecraftScriptTelemetryLogger();
-    /**
-     * @note   Virtual function table index: 1
-     * @symbol ?onPluginDiscovery@MinecraftScriptTelemetryLogger@@UEAAXAEBVScriptPluginResult@@@Z
-     */
     virtual void onPluginDiscovery(class ScriptPluginResult const &);
-    /**
-     * @note   Virtual function table index: 2
-     * @symbol ?onPluginRun@MinecraftScriptTelemetryLogger@@UEAAXAEBVScriptPluginResult@@V?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@Z
-     */
     virtual void onPluginRun(class ScriptPluginResult const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000>>);
-    /**
-     * @note   Virtual function table index: 3
-     * @symbol ?onDebuggerListen@MinecraftScriptTelemetryLogger@@UEAAXXZ
-     */
     virtual void onDebuggerListen();
-    /**
-     * @note   Virtual function table index: 4
-     * @symbol ?onDebuggerConnect@MinecraftScriptTelemetryLogger@@UEAAXXZ
-     */
     virtual void onDebuggerConnect();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTSCRIPTTELEMETRYLOGGER
 #endif
-    /**
-     * @symbol ??0MinecraftScriptTelemetryLogger@@QEAA@AEAVIMinecraftEventing@@_N@Z
-     */
     MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing &, bool);
 
 };

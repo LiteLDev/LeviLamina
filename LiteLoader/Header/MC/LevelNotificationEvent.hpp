@@ -29,9 +29,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELNOTIFICATIONEVENT
 #endif
-    /**
-     * @symbol ??1LevelNotificationEvent@@QEAA@XZ
-     */
     MCAPI ~LevelNotificationEvent();
 
 };

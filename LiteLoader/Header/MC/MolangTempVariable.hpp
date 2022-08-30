@@ -29,13 +29,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGTEMPVARIABLE
 #endif
-    /**
-     * @symbol ??0MolangTempVariable@@QEAA@AEBVHashedString@@@Z
-     */
     MCAPI MolangTempVariable(class HashedString const &);
-    /**
-     * @symbol ??1MolangTempVariable@@QEAA@XZ
-     */
     MCAPI ~MolangTempVariable();
 
 };
