@@ -271,7 +271,6 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\NBT\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
-    <ClCompile Include="Kernel\ParticleAPI.cpp" />
     <ClCompile Include="Kernel\MC\MobAPI.cpp" />
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp" />
     <ClCompile Include="Kernel\Network\ReadOnlyBinaryStreamAPI.cpp" />

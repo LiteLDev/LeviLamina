@@ -102,9 +102,6 @@
     <ClCompile Include="Kernel\ServerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ParticleAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
