@@ -4,7 +4,7 @@ project(LiteLoader)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
 
-set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/Release/)
 
 set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 
@@ -54,7 +54,10 @@ set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Li
 add_library(mysql STATIC IMPORTED)
 set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
 
-target_link_libraries(LiteLoader sqlitecpp sqlite3 mysql
+target_link_libraries(LiteLoader sqlitecpp sqlite3 mysql "delayimp.lib"
+        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
+        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
+        LLPreLoader
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
@@ -63,7 +66,4 @@ target_link_libraries(LiteLoader sqlitecpp sqlite3 mysql
         "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncallback_s.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dynload_s.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
-        LLPreLoader)
+        "${PROJECT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib")
