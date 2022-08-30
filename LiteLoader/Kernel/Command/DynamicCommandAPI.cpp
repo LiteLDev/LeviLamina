@@ -619,7 +619,7 @@ DynamicCommandInstance const* DynamicCommand::setup(std::unique_ptr<class Dynami
 std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std::string const& name, std::string const& description, std::unordered_map<std::string, std::vector<std::string>>&& enums, std::vector<ParameterData>&& params, std::vector<std::vector<std::string>>&& overloads, CallBackFn callback, CommandPermissionLevel permission, CommandFlag flag1, CommandFlag flag2, HMODULE handle) {
     auto command = createCommand(name, description, permission, flag1, flag2, handle);
     if (!command)
-        return nullptr;
+        return std::unique_ptr<class DynamicCommandInstance>();
     for (auto& [name, values] : enums) {
         command->setEnum(name, std::move(values));
     }
