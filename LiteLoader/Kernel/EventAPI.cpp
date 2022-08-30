@@ -104,7 +104,7 @@ int EventManager<EVENT>::addEventListenerRef(std::string name, std::function<boo
 
 template <typename EVENT>
 bool EventManager<EVENT>::removeEventListener(int id) {
-    for (auto& i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
+    for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
         if (i->listenerId == id) {
             listeners<EVENT>.erase(i);
             return true;
