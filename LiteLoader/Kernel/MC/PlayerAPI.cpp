@@ -524,7 +524,7 @@ bool Player::sendTextPacket(string text, TextType Type) const {
 }
 
 bool Player::sendToastPacket(string title, string msg) {
-    sendNetworkPacket(ToastRequestPacket(title, msg));
+    sendNetworkPacket((Packet&)ToastRequestPacket(title, msg));
     return true;
 }
 
@@ -656,7 +656,7 @@ bool Player::sendTransferPacket(const string& address, short port) const {
 }
 
 bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const {
-    sendNetworkPacket(SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder)));
+    sendNetworkPacket((Packet&)SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder)));
     return true;
 }
 
