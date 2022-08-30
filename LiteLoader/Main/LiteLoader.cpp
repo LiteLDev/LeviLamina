@@ -210,7 +210,6 @@ void UnixSignalHandler(int signum) {
 
 // extern
 extern void EndScheduleSystem();
-extern void InitParticle();
 namespace bstats {
 void registerBStats();
 }
@@ -262,9 +261,6 @@ void LLMain() {
 
     // Check Running BDS(Requires Config)
     CheckRunningBDS();
-
-    // Init LL Particle
-    InitParticle();
 
     // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);

@@ -58,7 +58,6 @@
 #include <MC/ResourceLocation.hpp>
 #include <MC/PackSourceFactory.hpp>
 #include <MC/CompositePackSource.hpp>
-#include <MC/PackSourceFactory.hpp>
 #include <MC/ResourcePackPaths.hpp>
 #include <MC/DirectoryPackSource.hpp> 
 #include <MC/PackSource.hpp>

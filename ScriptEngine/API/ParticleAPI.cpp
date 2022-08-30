@@ -94,6 +94,7 @@ ParticleSpawner* ParticleSpawner::create(const Arguments& args) {
         p->displayRadius = args[0].asNumber().toInt64();
         p->highDetial = args[1].asBoolean().value();
         p->doubleSide = args[2].asBoolean().value();
+        p->init();
         return p;
     } catch (...) {
         return nullptr;

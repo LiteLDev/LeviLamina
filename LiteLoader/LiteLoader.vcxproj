@@ -123,6 +123,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\MC\I18nAPI.cpp" />
     <ClCompile Include="Kernel\AllowListAPI.cpp" />
     <ClCompile Include="Kernel\Network\PacketAPI.cpp" />
+    <ClCompile Include="Kernel\ParticleAPI.cpp" />
     <ClCompile Include="Kernel\PermissionAPI.cpp" />
     <ClCompile Include="Kernel\RemoteCallAPI.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
@@ -271,7 +272,6 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\NBT\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
-    <ClCompile Include="Kernel\ParticleAPI.cpp" />
     <ClCompile Include="Kernel\MC\MobAPI.cpp" />
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp" />
     <ClCompile Include="Kernel\Network\ReadOnlyBinaryStreamAPI.cpp" />

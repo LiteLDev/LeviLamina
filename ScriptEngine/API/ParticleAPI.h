@@ -9,7 +9,7 @@
 class ParticleSpawner : public ParticleCUI, public ScriptClass {
 public:
     explicit ParticleSpawner(const Local<Object>& scriptObj)
-    : ScriptClass(scriptObj) {
+    : ScriptClass(scriptObj), ParticleCUI() {
     }
 
     static ParticleSpawner* create(const Arguments& args);
