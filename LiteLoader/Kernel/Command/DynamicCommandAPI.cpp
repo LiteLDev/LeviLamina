@@ -422,7 +422,7 @@ std::unique_ptr<Command>* DynamicCommand::commandBuilder(std::unique_ptr<Command
                 break;
         }
     }
-    rtn->swap((std::unique_ptr<Command>&)std::unique_ptr<Command>((Command*)command));
+    rtn->reset(std::move((Command*)command));
     return rtn;
 }
 
