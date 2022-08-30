@@ -437,7 +437,7 @@ public:
     // Tool Functions
     template <typename T>
     inline void setValue(int index, T value) {
-        elements[index].second->value = to_string(value);
+        elements[index].second->value = std::to_string(value);
     }
     inline void setValue(int index, string value) {
         elements[index].second->value = value;
