@@ -497,7 +497,7 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
             std::vector<std::pair<std::string, uint64_t>> values;
             size_t index = range.first;
             for (auto iter = commandInstance->enumValues.begin() + range.first; iter != commandInstance->enumValues.begin() + range.first + range.second; ++iter) {
-                values.emplace_back(&iter, index);
+                values.emplace_back(*iter, index);
                 ++index;
             }
 #ifdef USE_PARSE_ENUM_STRING
