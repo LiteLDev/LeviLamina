@@ -1914,7 +1914,8 @@ TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEA
                        Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
     IF_LISTENED(EntityTransformEvent) {
         EntityTransformEvent ev{};
-        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
+        ActorUniqueID actorUniqueID = beforeEntity->getActorUniqueId();
+        ev.mBeforeEntityUniqueId = &actorUniqueID;
         ev.mAfterEntity = afterEntity;
         ev.call();
     }
