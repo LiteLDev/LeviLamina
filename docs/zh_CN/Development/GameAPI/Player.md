@@ -76,25 +76,25 @@
 | pl.direction             | 玩家当前朝向                      | `DirectionAngle` |
 | pl.uniqueId              | 玩家（实体的）唯一标识符          | `String`         |
 | pl.langCode              | 玩家设置的语言的标识符(形如zh_CN) | `String`         |
-| pl.isLoading             | 玩家是否正在加载                  | `Boolean`        |
-| pl.isInvisible           | 玩家是隐形的                      | `Boolean`        |
-| pl.isInsidePortal        | 玩家在传送门内                    | `Boolean`        |
-| pl.isHurt                | 球员受伤                          | `Boolean`        |
-| pl.isTrusting            | 玩家信任                          | `Boolean`        |
-| pl.isTouchingDamageBlock | 玩家正在触摸损坏块                | `Boolean`        |
-| pl.isHungry              | 玩家饿了                          | `Boolean`        |
-| pl.isOnFire              | 玩家着火了                        | `Boolean`        |
-| pl.isOnGround            | 玩家在地上                        | `Boolean`        |
-| pl.isOnHotBlock          | 玩家处于热区（岩浆等）            | `Boolean`        |
+| pl.isLoading             | 玩家是否已经加载                  | `Boolean`        |
+| pl.isInvisible           | 玩家是否隐身中                      | `Boolean`        |
+| pl.isInsidePortal        | 玩家在传送门中                    | `Boolean`        |
+| pl.isHurt                | 玩家是否受伤                          | `Boolean`        |
+| pl.isTrusting            | 未知                             | `Boolean`        |
+| pl.isTouchingDamageBlock | 玩家是否在能造成伤害的方块上             | `Boolean`        |
+| pl.isHungry              | 玩家是否饿了                          | `Boolean`        |
+| pl.isOnFire              | 玩家是否着火                       | `Boolean`        |
+| pl.isOnGround            | 玩家是否在地上                        | `Boolean`        |
+| pl.isOnHotBlock          | 玩家是否在高温方块上（岩浆等）        | `Boolean`        |
 | pl.isTrading             | 玩家在交易                        | `Boolean`        |
-| pl.isAdventure           | 玩家处于冒险模式                  | `Boolean`        |
+| pl.isAdventure           | 玩家是否是冒险模式                  | `Boolean`        |
 | pl.isGliding             | 玩家在滑行                        | `Boolean`        |
-| pl.isSurvival            | 玩家处于生存模式                  | `Boolean`        |
-| pl.isSpectator           | 玩家处于观众模式                  | `Boolean`        |
-| pl.isRiding              | 玩家正在骑行                      | `Boolean`        |
-| pl.isDancing             | 玩家在跳舞                        | `Boolean`        |
-| pl.isCreative            | 玩家处于创造模式                  | `Boolean`        |
-| pl.isFlying              | 玩家在飞                          | `Boolean`        |
+| pl.isSurvival            | 玩家是否是生存模式                  | `Boolean`        |
+| pl.isSpectator           | 玩家是否是观众模式                  | `Boolean`        |
+| pl.isRiding              | 玩家是否在骑行                      | `Boolean`        |
+| pl.isDancing             | 玩家在跳舞？                       | `Boolean`        |
+| pl.isCreative            | 玩家是否是创造模式                  | `Boolean`        |
+| pl.isFlying              | 玩家是否在飞行                    | `Boolean`        |
 
 这些对象属性都是只读的，无法被修改。其中：
 
