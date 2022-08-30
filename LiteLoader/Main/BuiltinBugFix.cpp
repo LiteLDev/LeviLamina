@@ -180,7 +180,7 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
               Player, class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
     if (validPosition(pos))
         return original(this, pos, dimid);
-    fixPlayerPosition(false);
+    fixPlayerPosition(this, false);
 }
 TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
                        BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6, __int64 a7) {
