@@ -402,6 +402,9 @@
     <ClCompile Include="Kernel\MC\ResourcePackRepositoryAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\ParticleAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
