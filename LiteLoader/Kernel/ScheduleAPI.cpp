@@ -28,7 +28,7 @@ public:
     std::function<void(void)> task;
     HMODULE handle;
 
-    ScheduleTaskData::ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay,
+    ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay,
                                        unsigned long long interval, int count, HMODULE handle)
     : type(type)
     , task(task)
