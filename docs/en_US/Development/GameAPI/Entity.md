@@ -64,20 +64,42 @@ Through this function, generate a new creature at the specified location and get
 
 Every entity object contains some fixed object properties. for a specific entity object `en`, has the following properties:
 
-| Attributes   | Meaning            | Data Type        |
-| ------------ | ------------------ | ---------------- |
-| en.name      | Entity name           | `String`         |
-| en.type      | Entity type name     | `String`         |
-| en.id        | Entity's in-game ID     | `Integer`        |
-| en.pos       | Entity's coordinates       | `FloatPos`       |
-| en.blockPos  | The coordinates of the block the entity is standing on | `IntPos`         |
-| en.maxHealth | Entity's maximum health     | `Integer`        |
-| en.health    | Entity's current health     | `Integer`        |
-| en.inAir     | Whether the entity is in the air   | `Boolean`        |
-| en.inWater   | Whether the entity is in the water | `Boolean`        |
-| en.speed     | Entity's current speed       | `Float`          |
-| en.direction | Entity's orientation       | `DirectionAngle` |
-| en.uniqueId  | Entity's unique identifier     | `String`         |
+| Attributes               | Meaning                                                | Data Type        |
+| ------------------------ | ------------------------------------------------------ | ---------------- |
+| en.name                  | Entity name                                            | `String`         |
+| en.type                  | Entity type name                                       | `String`         |
+| en.id                    | Entity's in-game ID                                    | `Integer`        |
+| en.pos                   | Entity's coordinates                                   | `FloatPos`       |
+| en.blockPos              | The coordinates of the block the entity is standing on | `IntPos`         |
+| en.maxHealth             | Entity's maximum health                                | `Integer`        |
+| en.health                | Entity's current health                                | `Integer`        |
+| en.canFly                | Can the entity fly                                     | `Boolean`        |
+| en.canFreeze             | Can entity be frozen                                   | `Boolean`        |
+| en.canSeeDaylight        | Can entitiy see daylight                               | `Boolean`        |
+| en.canPickupItems        | Can entitiy pick up items                              | `Boolean`        |
+| en.inAir                 | Whether the entity is in the air                       | `Boolean`        |
+| en.inWater               | Whether the entity is in the water                     | `Boolean`        |
+| en.inLava                | Whether the entity is in the lava                      | `Boolean`        |
+| en.inRain                | Whether the entity is in rain                          | `Boolean`        |
+| en.inSnow                | Whether the entity is in snow                          | `Boolean`        |
+| en.inWall                | Whether the entity is on the wall                      | `Boolean`        |
+| en.inWaterOrRain         | Whether the entity is in water or rain                 | `Boolean`        |
+| en.inWorld               | Whether the entity is in the world                     | `Boolean`        |
+| en.speed                 | Entity's current speed                                 | `Float`          |
+| en.direction             | Entity's orientation                                   | `DirectionAngle` |
+| en.uniqueId              | Entity's unique identifier                             | `String`         |
+| en.isInvisible           | Whether the entity is invisible                        | `Boolean`        |
+| en.isInsidePortal        | Whether the entity is inside the portal                | `Boolean`        |
+| en.isTrusting            | Whether the entity is trusted                          | `Boolean`        |
+| en.isTouchingDamageBlock | Whether the entity touches the damage block            | `Boolean`        |
+| en.isOnFire              | Whether the entity is on fire                          | `Boolean`        |
+| en.isOnGround            | Whether the entity is on the ground                    | `Boolean`        |
+| en.isOnHotBlock          | Whether the entity is on a hot block (magma and etc.)  | `Boolean`        |
+| en.isTrading             | Whether the entity is trading                          | `Boolean`        |
+| en.isRiding              | Whether the entity is riding                           | `Boolean`        |
+| en.isDancing             | Whether the entity is dancing                          | `Boolean`        |
+| en.isSleeping            | Whether the entity is sleeping                         | `Boolean`        |
+| en.isAngry               | Whether the entity is angry                            | `Boolean`        |
 
 These object properties are read-only and cannot be modified.
 

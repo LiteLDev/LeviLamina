@@ -41,28 +41,59 @@ This function returns an array of player objects, each of which corresponds to a
 
 Each player object contains some fixed object properties. For a particular player object `pl`, there are these properties.
 
-| Attributes   | Meaning                     | Data Type        |
-| ------------ | --------------------------- | ---------------- |
-| pl.name      | Player's name               | `String`         |
-| pl.pos       | Player's coordinates        | `FloatPos`       |
-| pl.blockPos  | The coordinates of the block that the player is standing on.          | `IntPos`         |
-| pl.lastDeathPos  | The coordinates of the block that the player last died.          | `IntPos`         |
-| pl.realName  | Player's Real Name              | `String`         |
-| pl.xuid      | Player Xuid String              | `String`         |
-| pl.uuid      | Player Uuid string              | `String`         |
-| pl.permLevel | Player's permission level (0 - 4) | `Integer`        |
-| pl.gameMode  | Player's game mode (0 - 3)     | `Integer`        |
-| pl.canSleep  | Whether the player can sleep   | `Boolean`        |
-| pl.canFly    | Whether the player can fly     | `Boolean`        |
-| pl.maxHealth | Player's maximum health              | `Integer`        |
-| pl.health    | Player's current health              | `Integer`        |
-| pl.inAir     | Whether the player is in the air     | `Boolean`        |
-| pl.inWater   | Whether the player is in water       | `Boolean`        |
-| pl.sneaking  | Whether the player is sneaking       | `Boolean`        |
-| pl.speed     | Player's current speed               | `Float`          |
-| pl.direction | Player's current orientation         | `DirectionAngle` |
-| pl.uniqueId  | Player's (entity's) unique identifier    | `String`         |
-| pl.isLoading | Player is loading | `Boolean`    |
+| Attributes               | Meaning                                                      | Data Type        |
+| ------------------------ | ------------------------------------------------------------ | ---------------- |
+| pl.name                  | Player's name                                                | `String`         |
+| pl.pos                   | Player's coordinates                                         | `FloatPos`       |
+| pl.blockPos              | The coordinates of the block that the player is standing on. | `IntPos`         |
+| pl.lastDeathPos          | The coordinates of the block that the player last died.      | `IntPos`         |
+| pl.realName              | Player's Real Name                                           | `String`         |
+| pl.xuid                  | Player Xuid String                                           | `String`         |
+| pl.uuid                  | Player Uuid string                                           | `String`         |
+| pl.permLevel             | Player's permission level (0 - 4)                            | `Integer`        |
+| pl.gameMode              | Player's game mode (0 - 3)                                   | `Integer`        |
+| pl.canSleep              | Whether the player can sleep                                 | `Boolean`        |
+| pl.canFly                | Whether the player can fly                                   | `Boolean`        |
+| pl.canBeSeenOnMap        | Whether the player can be seen on map                        | `Boolean`        |
+| pl.canFreeze             | Whether the player can freeze                                | `Boolean`        |
+| pl.canSeeDaylight        | Whether the player can see daylight                          | `Boolean`        |
+| pl.canShowNameTag        | Whether the player can show name tag                         | `Boolean`        |
+| pl.canStartSleepInBed    | Whether the player can start sleep in bed                    | `Boolean`        |
+| pl.canPickupItems        | Whether the player can pickup items                          | `Boolean`        |
+| pl.maxHealth             | Player's maximum health                                      | `Integer`        |
+| pl.health                | Player's current health                                      | `Integer`        |
+| pl.inAir                 | Whether the player is in the air                             | `Boolean`        |
+| pl.inWater               | Whether the player is in water                               | `Boolean`        |
+| pl.inLava                | Whether the player is in lava                                | `Boolean`        |
+| pl.inRain                | Whether the player is in rain                                | `Boolean`        |
+| pl.inSnow                | Whether the player is in snow                                | `Boolean`        |
+| pl.inWall                | Whether the player is in wall                                | `Boolean`        |
+| pl.inWaterOrRain         | Whether the player is in water or rain                       | `Boolean`        |
+| pl.inWorld               | Whether the player is in world                               | `Boolean`        |
+| pl.inClouds              | Whether the player is in clouds                              | `Boolean`        |
+| pl.sneaking              | Whether the player is sneaking                               | `Boolean`        |
+| pl.speed                 | Player's current speed                                       | `Float`          |
+| pl.direction             | Player's current orientation                                 | `DirectionAngle` |
+| pl.uniqueId              | Player's (entity's) unique identifier                        | `String`         |
+| pl.isLoading             | Player is loading                                            | `Boolean`        |
+| pl.isInvisible           | Player is invisible                                          | `Boolean`        |
+| pl.isInsidePortal        | Player is inside portal                                      | `Boolean`        |
+| pl.isHurt                | Player is hurt                                               | `Boolean`        |
+| pl.isTrusting            | Player is trusting                                           | `Boolean`        |
+| pl.isTouchingDamageBlock | Player is touching the damage block                          | `Boolean`        |
+| pl.isHungry              | Player is hungry                                             | `Boolean`        |
+| pl.isOnFire              | Player is on fire                                            | `Boolean`        |
+| pl.isOnGround            | Player is on ground                                          | `Boolean`        |
+| pl.isOnHotBlock          | Player is on hot block (magma and etc.)                      | `Boolean`        |
+| pl.isTrading             | Player is trading                                            | `Boolean`        |
+| pl.isAdventure           | Player is in Adventure Mode                                  | `Boolean`        |
+| pl.isGliding             | Player is gliding                                            | `Boolean`        |
+| pl.isSurvival            | Player is in Survival Mode                                   | `Boolean`        |
+| pl.isSpectator           | Player is in Spectator Mode                                  | `Boolean`        |
+| pl.isRiding              | Player is riding                                             | `Boolean`        |
+| pl.isDancing             | Player is dancing                                            | `Boolean`        |
+| pl.isCreative            | Player is in Creative Mode                                   | `Boolean`        |
+| pl.isFlying              | Player is flying                                             | `Boolean`        |
 
 These object properties are read-only and cannot be modified. in:
 
@@ -72,11 +103,11 @@ These object properties are read-only and cannot be modified. in:
 - For a detailed explanation of the **player's current orientation** attribute, see [Basic Game Interface Documentation](/en_US/Development/GameAPI/Basic.md)
 - The comparison table of **operation authority level** attributes is as follows:
 
-| Permission Level | Corresponding Authority    |
-| ------------ | --------------- |
-| 0            | Ordinary Member    |
-| 1            | OP permissions         |
-| 4            | OP + Console permissions |
+| Permission Level | Corresponding Authority  |
+| ---------------- | ------------------------ |
+| 0                | Ordinary Member          |
+| 1                | OP permissions           |
+| 4                | OP + Console permissions |
 
 <br>
 
@@ -134,13 +165,13 @@ pl:kick()
   - type : `Integer`  
     (Optional parameter) The type of text message to send, default is `0`.
 
-    | Type Parameter | Message Type                |
-    | -------- | ----------------------- |
-    | 0        | Normal Message (Raw)        |
-    | 1        | Chat Message (Chat)         |
-    | 4        | Music Box Message (Popup)      |
-    | 5        | Message Above the Inventory (Tip)  |
-    | 9        | JSON format message (JSON)    |
+    | Type Parameter | Message Type                      |
+    | -------------- | --------------------------------- |
+    | 0              | Normal Message (Raw)              |
+    | 1              | Chat Message (Chat)               |
+    | 4              | Music Box Message (Popup)         |
+    | 5              | Message Above the Inventory (Tip) |
+    | 9              | JSON format message (JSON)        |
 
 - Return value: Whether the message was sent successfully.
 
@@ -166,13 +197,13 @@ pl.tell("Welcome back ~ ",5);
   - type : `Integer`  
     (Optional parameter) The type of text message to send, default is `0`.
 
-    | Type Parameter | Message Type                |
-    | -------- | ----------------------- |
-    | 0        | Normal Message (Raw)          |
-    | 1        | Chat Message (Chat)         |
-    | 4        | Music Box Message (Popup)      |
-    | 5        | Message Above the Inventory (Tip)  |
-    | 9        | JSON format message (JSON)    |
+    | Type Parameter | Message Type                      |
+    | -------------- | --------------------------------- |
+    | 0              | Normal Message (Raw)              |
+    | 1              | Chat Message (Chat)               |
+    | 4              | Music Box Message (Popup)         |
+    | 5              | Message Above the Inventory (Tip) |
+    | 9              | JSON format message (JSON)        |
 
 - Return value: Whether the message was sent successfully.
 
@@ -488,11 +519,11 @@ After modifying the player's items, in order for the client to take effect, it i
   - level : `Integer`  
     Target operation authority level  
 
-    | Player Permission Level | Corresponding Permission Authority    |
-    | ------------ | --------------- |
-    | 0            | Ordinary Member Permissions    |
-    | 1            | OP Permissions          |
-    | 4            | OP + Console Permissions |
+    | Player Permission Level | Corresponding Permission Authority |
+    | ----------------------- | ---------------------------------- |
+    | 0                       | Ordinary Member Permissions        |
+    | 1                       | OP Permissions                     |
+    | 4                       | OP + Console Permissions           |
 
 - Return value: Whether the modification was successful.
 
