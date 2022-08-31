@@ -117,8 +117,9 @@ jobs:
 
       - name: Compress Resource Packs
         run: |
-          7z a RELEASE/plugins/LiteLoader/ResourcePacks/LiteLoaderBDS-CUI.tar RELEASE/plugins/LiteLoader/ResourcePacks/LiteLoaderBDS-CUI
-          rm -r RELEASE/plugins/LiteLoader/ResourcePacks/LiteLoaderBDS-CUI
+          cd RELEASE/plugins/LiteLoader/ResourcePacks
+          7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
+          rm -r LiteLoaderBDS-CUI
         shell: bash
 
       - name: Move PDB to path
