@@ -54,7 +54,7 @@ set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Li
 add_library(mysql STATIC IMPORTED)
 set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
 
-target_link_libraries(LiteLoader sqlitecpp sqlite3 mysql "delayimp.lib"
+target_link_libraries(LiteLoader sqlitecpp sqlite3 mysql
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
         LLPreLoader
