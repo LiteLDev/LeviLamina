@@ -28,6 +28,7 @@
 #include <API/NativeAPI.h>
 #include <API/NativeStdString.h>
 #include <API/PermissionAPI.h>
+#include <API/InternationalAPI.h>
 #include <API/ParticleAPI.h>
 
 void BindAPIs(ScriptEngine* engine)
@@ -67,6 +68,8 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(DamageCauseEnumBuilder);
 
     engine->registerNativeClass(PermissionClassBuilder);
+
+    engine->registerNativeClass(I18nClassBuilder);
 
     //////////////// 实例类 ////////////////
 
