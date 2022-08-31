@@ -219,22 +219,21 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 >
 > 当然，如果您愿意自己构建项目，或者向 LiteLoader 贡献代码，您可以按照以下说明自行构建项目
 
-1. 安装最新的 **Microsoft Visual Studio** 和标准的 C++ 桌面开发套件
+1. 安装最新版本的 **Microsoft Visual Studio** 和标准的 C++ 桌面开发套件 （或者你也可以只安装完整的 **msbuild** 编译器套件，并配置好编译环境）
 2. 安装最新的 **Windows SDK**
-3. 打开 `LiteLoader.sln` 项目文件，点击 **生成** 菜单中的 **批生成** 项
-4. 弹出批生成对话框，选中对话框右侧所有的生成复选框
-5. 选择完毕之后，点击对话框中的 **生成** 按钮，进行批生成
-6. 编译生成成功之后，返回到项目根目录，执行 Scripts 文件夹中的 `PackRelease.cmd` 脚本
-   执行完之后，根目录 `RELEASE` 文件夹内的内容即为完整的 `LiteLoader` 环境及所有的依赖库
+3. 使用你熟悉的 IDE （VS / VSCode / CLion等）打开项目目录，对 cmake 项目进行编译生成
+4. 编译生成成功之后，返回到项目根目录，执行 Scripts 文件夹中的 `PackRelease.cmd` 脚本
+5. 执行完之后，根目录 `RELEASE` 文件夹内的内容即为完整的 `LiteLoader` 环境及所有的依赖库
+6. 如果需要 LL 的调试符号，则执行另一个 `PackReleaseWithPDB.cmd` 脚本，执行完后`RELEASE` 文件夹内还会附带上所有必要的调试符号，以方便调试
 
 ## 🎬 参与贡献
 
 您可以使用以下方法为 `LiteLoader` 项目做出贡献
 
-1. 贡献代码，维护项目和符号
-2. 帮助我们修改并优化开发文档
-3. 按照格式写下你想要的新API并提交一个PR（GitHub Issue），或者提出好的建议
-4. 帮助我们推广 `LiteLoader`，支持我们的发展
+1. 贡献代码，维护项目和符号，增加新的API和事件以及基础设施
+2. 帮助我们修改并优化开发文档、使用文档
+3. 在GitHub Issue中反馈使用过程中遇到的问题，或者提出好的建议
+4. 帮助我们推广 `LiteLoaderBDS`，支持我们的发展
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 
