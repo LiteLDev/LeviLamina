@@ -12,6 +12,7 @@ on:
       - '**.hxx'
       - '**.h'
       - '.github/workflows/cmake-self-hosted.yml'
+      - '**/CMakeLists.txt'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
