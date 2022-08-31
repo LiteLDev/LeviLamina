@@ -13,4 +13,4 @@ add_compile_options(
 )
 
 add_library(SymDBHelper STATIC SymDBHelper.cpp)
-target_link_libraries(SymDBHelper Demangler "delayimp.lib")
+target_link_libraries(SymDBHelper Demangler)

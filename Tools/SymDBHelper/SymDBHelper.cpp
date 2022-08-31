@@ -36,6 +36,11 @@
 #define EXTERN_C_SymDBHelper extern
 #endif
 
+extern "C" {
+inline const PfnDliHook __pfnDliFailureHook2 = nullptr;
+inline const PfnDliHook __pfnDliNotifyHook2 = nullptr;
+}
+
 // LiteLoader Api to Fetch Function Address
 EXTERN_C_SymDBHelper void* dlsym_real(char const* name);
 
