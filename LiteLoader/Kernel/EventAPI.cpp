@@ -62,6 +62,7 @@
 #include <MC/ResourcePackPaths.hpp>
 #include <MC/DirectoryPackSource.hpp> 
 #include <MC/PackSource.hpp>
+#include <MC/BucketItem.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -220,6 +221,7 @@ DECLARE_EVENT_DATA(PlayerRespawnEvent);
 DECLARE_EVENT_DATA(PlayerChatEvent);
 DECLARE_EVENT_DATA(PlayerUseItemEvent);
 DECLARE_EVENT_DATA(PlayerUseItemOnEvent);
+DECLARE_EVENT_DATA(PlayerUseBucketEvent);
 DECLARE_EVENT_DATA(PlayerChangeDimEvent);
 DECLARE_EVENT_DATA(PlayerJumpEvent);
 DECLARE_EVENT_DATA(PlayerSneakEvent);
@@ -1571,6 +1573,59 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
     return original(this, it, bp, side, clickPos, a6_block);
+}
+
+/////////////////// PlayerUseBucket ///////////////////
+// 倒出
+TInstanceHook(bool, "?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z", BucketItem,
+              BlockSource* blockSource, Block *block, BlockPos *blockPos, Actor* actor, ItemStack* itemStack, unsigned char face) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        PlayerUseBucketEvent ev{};
+        ev.mPlayer = (Player*)actor;
+        ev.mEventType = PlayerUseBucketEvent::EventType::Place;
+        ev.mTargetPos = blockPos->toVec3();
+        ev.mBucket = itemStack;
+        ev.mBlockInstance = BlockInstance::createBlockInstance(block,*blockPos,actor->getDimensionId());
+        ev.mFace = face;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, blockSource, block, blockPos, actor, itemStack, face);
+}
+// 装水、牛奶
+TInstanceHook(bool, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
+              ItemStack* itemStack, Actor* actor, BlockPos* blockPos) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        PlayerUseBucketEvent ev{};
+        ev.mPlayer = (Player*)actor;
+        ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+        ev.mTargetPos = blockPos->toVec3();
+        ev.mBucket = itemStack;
+        ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
+        ev.mFace = 0;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, itemStack, actor, blockPos);
+}
+// 装细雪
+TInstanceHook(bool, "?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
+              ItemStack* itemStack, Actor* actor, BlockPos* blockPos) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        PlayerUseBucketEvent ev{};
+        ev.mPlayer = (Player*)actor;
+        ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+        ev.mTargetPos = blockPos->toVec3();
+        ev.mBucket = itemStack;
+        ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
+        ev.mFace = 0;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, itemStack, actor, blockPos);
 }
 
 

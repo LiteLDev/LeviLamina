@@ -169,6 +169,21 @@ public:
     Vec3 mClickPos;
 };
 
+class PlayerUseBucketEvent : public EventTemplate<PlayerUseBucketEvent> {
+public:
+    enum class EventType
+    {
+        Place,
+        Take
+    };
+    Player* mPlayer;
+    ItemStack* mBucket;
+    BlockInstance mBlockInstance;
+    EventType mEventType;
+    unsigned char mFace;
+    Vec3 mTargetPos;
+};
+
 class PlayerChatEvent : public EventTemplate<PlayerChatEvent> {
 public:
     Player* mPlayer;
