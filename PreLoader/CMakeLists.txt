@@ -3,7 +3,7 @@ project(LLPreLoader)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Release)
-SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
+SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/Release)
 
 add_definitions(-D"NDEBUG" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"UNICODE")
 
@@ -12,7 +12,7 @@ include_directories(${LiteLoader_SOURCE_DIR}/Header/third-party)
 
 add_compile_options(
         /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
-        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHsc /nologo /diagnostics:column
+        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /EHsc /nologo /diagnostics:column
 )
 
 add_link_options(
