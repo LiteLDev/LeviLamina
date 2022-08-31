@@ -1985,7 +1985,7 @@ public:
     MCVAPI void waitAsyncSuspendWork();
     /**
      * @vtable -1
-     * @symbol ??1Level@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~Level();
 #endif

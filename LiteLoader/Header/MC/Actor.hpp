@@ -161,7 +161,7 @@ public:
     virtual void _doInitialMove();
     /**
      * @vtable 14
-     * @symbol 
+     * @symbol __unk_destructor_14
      */
     virtual ~Actor();
     /**

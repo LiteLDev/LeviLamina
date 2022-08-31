@@ -33,7 +33,7 @@ public:
 public:
     /**
      * @vtable 0
-     * @symbol 
+     * @symbol __unk_destructor_0
      */
     virtual ~ShipwreckStart();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKSTART

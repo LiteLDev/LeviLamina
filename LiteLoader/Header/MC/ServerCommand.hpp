@@ -31,7 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
     /**
      * @vtable -1
-     * @symbol ??1ServerCommand@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~ServerCommand();
 #endif

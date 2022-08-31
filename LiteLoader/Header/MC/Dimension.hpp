@@ -203,7 +203,7 @@ public:
     MCVAPI void tickRedstone();
     /**
      * @vtable -1
-     * @symbol ??1Dimension@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~Dimension();
 #endif

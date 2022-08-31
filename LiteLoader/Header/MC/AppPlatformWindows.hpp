@@ -117,7 +117,7 @@ public:
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
     /**
      * @vtable -1
-     * @symbol ??1AppPlatformWindows@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~AppPlatformWindows();
 #endif

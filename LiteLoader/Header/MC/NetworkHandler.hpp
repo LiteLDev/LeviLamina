@@ -121,7 +121,7 @@ public:
     MCVAPI bool useIPv6Only() const;
     /**
      * @vtable -1
-     * @symbol ??1NetworkHandler@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~NetworkHandler();
 #endif

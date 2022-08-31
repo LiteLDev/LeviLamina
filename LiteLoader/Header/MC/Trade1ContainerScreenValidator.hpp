@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @vtable 0
-     * @symbol 
+     * @symbol __unk_destructor_0
      */
     virtual ~Trade1ContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE1CONTAINERSCREENVALIDATOR

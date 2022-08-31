@@ -1066,7 +1066,7 @@ public:
     MCVAPI void vibrate(int);
     /**
      * @vtable -1
-     * @symbol ??1AppPlatform@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~AppPlatform();
 #endif

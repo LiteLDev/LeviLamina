@@ -43,7 +43,7 @@ public:
     MCVAPI void tickMovementCatchup(class EntityRegistry &);
     /**
      * @vtable -1
-     * @symbol ??1EntitySystems@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~EntitySystems();
 #endif

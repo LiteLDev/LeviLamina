@@ -74,7 +74,7 @@ public:
     virtual long Terminate(bool, void *, void ( *)(void *));
     /**
      * @vtable 12
-     * @symbol 
+     * @symbol __unk_destructor_12
      */
     virtual ~TaskQueueImpl();
     /**

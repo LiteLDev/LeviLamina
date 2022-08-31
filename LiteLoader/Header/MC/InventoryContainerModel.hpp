@@ -38,7 +38,7 @@ public:
     virtual void containerContentChanged(int);
     /**
      * @vtable 1
-     * @symbol 
+     * @symbol __unk_destructor_1
      */
     virtual ~InventoryContainerModel();
     /**

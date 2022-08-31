@@ -105,7 +105,7 @@ public:
     MCVAPI void updateScreens();
     /**
      * @vtable -1
-     * @symbol ??1ServerInstance@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~ServerInstance();
 #endif

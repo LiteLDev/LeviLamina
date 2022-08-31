@@ -63,7 +63,7 @@ public:
     MCVAPI void setSlot(int, class ItemStack const &, bool);
     /**
      * @vtable -1
-     * @symbol ??1InventoryMenu@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~InventoryMenu();
 #endif

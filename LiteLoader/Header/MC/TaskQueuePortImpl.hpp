@@ -99,7 +99,7 @@ public:
     virtual void ResumeTermination(struct ITaskQueuePortContext *);
     /**
      * @vtable 17
-     * @symbol 
+     * @symbol __unk_destructor_17
      */
     virtual ~TaskQueuePortImpl();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTIMPL

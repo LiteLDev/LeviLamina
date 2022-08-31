@@ -1464,7 +1464,7 @@ public:
     MCVAPI void updatePrimaryLocalUserId(unsigned int const &);
     /**
      * @vtable -1
-     * @symbol ??1MinecraftEventing@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~MinecraftEventing();
 #endif

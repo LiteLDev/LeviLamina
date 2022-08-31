@@ -34,7 +34,7 @@ public:
 public:
     /**
      * @vtable 0
-     * @symbol 
+     * @symbol __unk_destructor_0
      */
     virtual ~ScriptMinecraftServerAdminModuleFactory();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTSERVERADMINMODULEFACTORY

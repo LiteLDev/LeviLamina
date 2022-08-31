@@ -113,7 +113,7 @@ public:
     MCVAPI void stopOpen(class Player &);
     /**
      * @vtable -1
-     * @symbol ??1DispenserBlockActor@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~DispenserBlockActor();
 #endif

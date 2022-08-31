@@ -31,7 +31,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
     /**
      * @vtable -1
-     * @symbol ??1IEntityRegistryOwner@@MEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~IEntityRegistryOwner();
 #endif

@@ -34,7 +34,7 @@ public:
 public:
     /**
      * @vtable 0
-     * @symbol 
+     * @symbol __unk_destructor_0
      */
     virtual ~UseActorDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORDEFINITION

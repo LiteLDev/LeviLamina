@@ -138,7 +138,7 @@ public:
     MCVAPI void tick(class BlockSource &);
     /**
      * @vtable -1
-     * @symbol ??1FurnaceBlockActor@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~FurnaceBlockActor();
 #endif

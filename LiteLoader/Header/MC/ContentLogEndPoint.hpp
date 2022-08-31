@@ -37,7 +37,7 @@ public:
     MCVAPI void log(char const *);
     /**
      * @vtable -1
-     * @symbol ??1ContentLogEndPoint@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~ContentLogEndPoint();
 #endif

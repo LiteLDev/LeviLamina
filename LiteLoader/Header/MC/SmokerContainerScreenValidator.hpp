@@ -32,7 +32,7 @@ public:
 public:
     /**
      * @vtable 0
-     * @symbol 
+     * @symbol __unk_destructor_0
      */
     virtual ~SmokerContainerScreenValidator();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERSCREENVALIDATOR

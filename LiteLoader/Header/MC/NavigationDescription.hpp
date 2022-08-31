@@ -36,7 +36,7 @@ public:
     virtual char const * getJsonName() const = 0;
     /**
      * @vtable 1
-     * @symbol 
+     * @symbol __unk_destructor_1
      */
     virtual ~NavigationDescription();
     /**

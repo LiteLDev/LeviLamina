@@ -169,7 +169,7 @@ public:
     MCVAPI void tick();
     /**
      * @vtable -1
-     * @symbol ??1RakNetInstance@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~RakNetInstance();
 #endif

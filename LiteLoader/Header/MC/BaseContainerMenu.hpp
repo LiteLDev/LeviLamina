@@ -78,7 +78,7 @@ public:
     MCVAPI void setData(int, int);
     /**
      * @vtable -1
-     * @symbol ??1BaseContainerMenu@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~BaseContainerMenu();
 #endif

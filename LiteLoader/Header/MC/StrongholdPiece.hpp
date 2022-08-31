@@ -35,7 +35,7 @@ public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDPIECE
     /**
      * @vtable -1
-     * @symbol ??1StrongholdPiece@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~StrongholdPiece();
 #endif

@@ -258,7 +258,7 @@ public:
     MCVAPI void updateTextBoxText(std::string const &);
     /**
      * @vtable -1
-     * @symbol ??1AppPlatform_win32@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~AppPlatform_win32();
 #endif

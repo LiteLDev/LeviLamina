@@ -37,7 +37,7 @@ public:
     virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vtable 14
-     * @symbol 
+     * @symbol __unk_destructor_14
      */
     virtual ~Tadpole();
     /**

@@ -53,7 +53,7 @@ public:
     MCVAPI void startOpen(class Player &);
     /**
      * @vtable -1
-     * @symbol ??1RandomizableBlockActorContainer@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~RandomizableBlockActorContainer();
 #endif

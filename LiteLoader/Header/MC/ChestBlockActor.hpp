@@ -238,7 +238,7 @@ public:
     MCVAPI void triggerEvent(int, int);
     /**
      * @vtable -1
-     * @symbol ??1ChestBlockActor@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~ChestBlockActor();
 #endif

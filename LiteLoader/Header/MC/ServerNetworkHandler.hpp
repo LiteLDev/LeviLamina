@@ -834,7 +834,7 @@ public:
     MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
     /**
      * @vtable -1
-     * @symbol ??1ServerNetworkHandler@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~ServerNetworkHandler();
 #endif

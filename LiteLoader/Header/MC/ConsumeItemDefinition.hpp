@@ -34,7 +34,7 @@ public:
 public:
     /**
      * @vtable 0
-     * @symbol 
+     * @symbol __unk_destructor_0
      */
     virtual ~ConsumeItemDefinition();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMDEFINITION

@@ -38,7 +38,7 @@ public:
     MCVAPI void onActiveResourcePacksChanged(class ResourcePackManager &);
     /**
      * @vtable -1
-     * @symbol ??1EducationOptions@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~EducationOptions();
 #endif

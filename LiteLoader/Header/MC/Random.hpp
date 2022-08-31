@@ -78,7 +78,7 @@ public:
     MCVAPI __int64 nextLong();
     /**
      * @vtable -1
-     * @symbol ??1Random@@UEAA@XZ
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~Random();
 #endif
