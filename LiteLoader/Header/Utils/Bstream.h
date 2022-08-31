@@ -31,7 +31,7 @@ class RBStream {
         datamax += len;
 #endif
     }
-    RBStream(string_view x) { *this = {(void *)x.data(), (size_t)x.size()}; }
+    RBStream(std::string_view x) { *this = {(void *)x.data(), (size_t)x.size()}; }
 
   private:
     template <typename T1, typename T2>
@@ -134,7 +134,7 @@ class WBStreamImpl {
         __put((bsize_t)x.size());
         data.append(x);
     }
-    void __put(string_view const &x) {
+    void __put(std::string_view const &x) {
         __put((bsize_t)x.size());
         data.append(x);
     }

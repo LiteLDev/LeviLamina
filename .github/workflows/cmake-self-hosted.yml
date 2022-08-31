@@ -12,6 +12,7 @@ on:
       - '**.hxx'
       - '**.h'
       - '.github/workflows/cmake-self-hosted.yml'
+      - '**/CMakeLists.txt'
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -78,15 +79,25 @@ jobs:
         run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
         shell: bash
 
+      #- name: Configure CMake(MSVC)
+      #  run: |
+      #    set CC="E:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/${{env.MSVC_VER}}/bin/Hostx64/x64/cl.exe"
+      #    "E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja -DCMAKE_TRY_COMPILE_TARGET_TYPE="STATIC_LIBRARY" -DCMAKE_MAKE_PROGRAM="E:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\Community\COMMON7\IDE\COMMONEXTENSIONS\Microsoft\CMake\Ninja\ninja.exe"
+      #  shell: cmd
+
+      #- name: Build
+      #  run: |
+      #    "E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      #  shell: cmd
+
       - name: Configure CMake(MSVC)
         run: |
-          set CC="E:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/${{env.MSVC_VER}}/bin/Hostx64/x64/cl.exe"
-          "E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja -DCMAKE_TRY_COMPILE_TARGET_TYPE="STATIC_LIBRARY" -DCMAKE_MAKE_PROGRAM="E:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\Community\COMMON7\IDE\COMMONEXTENSIONS\Microsoft\CMake\Ninja\ninja.exe"
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
         shell: cmd
 
       - name: Build
         run: |
-          "E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
         shell: cmd
 
       - name: Configure CMake(ClangCL)
@@ -103,6 +114,13 @@ jobs:
           cd Scripts
           ./PackRelease.cmd action
         shell: cmd
+
+      - name: Compress Resource Packs
+        run: |
+          cd RELEASE/plugins/LiteLoader/ResourcePacks
+          7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
+          rm -r LiteLoaderBDS-CUI
+        shell: bash
 
       - name: Move PDB to path
         working-directory: ${{ env.GITHUB_WORKSPACE }}
