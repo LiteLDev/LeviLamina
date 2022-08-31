@@ -183,7 +183,7 @@ struct BinVariant {
     BinVariant() { type = 0; }
     ~BinVariant() {
         if (type == 2) {
-            v.y.~string();
+            v.y.~basic_string();
         }
     }
     void unpack(RBStream &rs) {

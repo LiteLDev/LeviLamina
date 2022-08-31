@@ -62,7 +62,7 @@ struct MCString {
     void unpack(RBStream& rs) {
         VarUInt sz;
         rs.apply(sz);
-        view = string_view((const char*)rs.data, sz.v);
+        view = std::string_view((const char*)rs.data, sz.v);
         rs.data += sz.v;
     }
 };
