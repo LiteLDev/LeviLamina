@@ -68,7 +68,7 @@ class RBStream {
             x.push_back(std::move(local));
         }
     }
-    void __get(string &x) {
+    void __get(std::string &x) {
         bsize_t sz;
         __get(sz);
         x.reserve(sz);
@@ -155,7 +155,7 @@ class WBStreamImpl {
         (__put(args), ...);
     }
     void write(const void *src, size_t n) { data.append((const char *)src, n); }
-    operator string_view() { return data; }
+    operator std::string_view() { return data; }
 };
 using WBStream = WBStreamImpl<std::string>;
 struct BinVariant {
