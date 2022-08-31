@@ -63,7 +63,7 @@ void DecompressResourcePacks() {
         std::error_code ec;
         // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
         //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
-        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\LiteLoader\ResourcePacks\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar"), 30000);
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\LiteLoader\\ResourcePacks\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar"), 30000);
         if (res.first != 0) {
             logger.error(tr("ll.decompressResourcePacks.fail"));
         } else {
