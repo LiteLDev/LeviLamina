@@ -22,8 +22,8 @@ echo [INFO] Fetching LiteLoaderSDK to GitHub ...
 echo.
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
-for /f "delims=" %%i in ('git describe --tags') do set LL_NOW_TAG_LONG=%%i
-for /f "delims=-" %%i in ('git describe --tags') do set LL_NOW_TAG=%%i
+for /f "delims=" %%i in ('git describe --tags --always') do set LL_NOW_TAG_LONG=%%i
+for /f "delims=-" %%i in ('git describe --tags --always') do set LL_NOW_TAG=%%i
 
 echo LL_SDK_NOW_BRANCH %LL_SDK_NOW_BRANCH%
 echo LL_NOW_TAG_LONG %LL_NOW_TAG_LONG%

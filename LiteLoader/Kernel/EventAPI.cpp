@@ -111,7 +111,7 @@ int EventManager<EVENT>::addEventListenerRef(std::string name, std::function<boo
 
 template <typename EVENT>
 bool EventManager<EVENT>::removeEventListener(int id) {
-    for (auto& i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
+    for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
         if (i->listenerId == id) {
             listeners<EVENT>.erase(i);
             return true;
@@ -1921,7 +1921,8 @@ TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEA
                        Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
     IF_LISTENED(EntityTransformEvent) {
         EntityTransformEvent ev{};
-        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
+        ActorUniqueID actorUniqueID = beforeEntity->getActorUniqueId();
+        ev.mBeforeEntityUniqueId = &actorUniqueID;
         ev.mAfterEntity = afterEntity;
         ev.call();
     }

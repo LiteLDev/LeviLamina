@@ -46,11 +46,28 @@ void FixUpCWD() {
 #include <FMT/format.h>
 void UnzipNodeModules() {
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.tar")))) {
+        std::error_code ec;
+        //if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+        //    filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
         auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\lib\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\lib\\node_modules.tar"), 30000);
         if (res.first != 0) {
             logger.error(tr("ll.unzipNodeModules.fail"));
         } else {
-            filesystem::remove(".\\plugins\\lib\\node_modules.tar");
+            filesystem::remove(".\\plugins\\lib\\node_modules.tar", ec);
+        }
+    }
+}
+
+void DecompressResourcePacks() {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
+        std::error_code ec;
+        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\LiteLoader\\ResourcePacks\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar"), 30000);
+        if (res.first != 0) {
+            logger.error(tr("ll.decompressResourcePacks.fail"));
+        } else {
+            filesystem::remove(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar", ec);
         }
     }
 }
@@ -234,8 +251,11 @@ void LLMain() {
     // Load Config
     LL::LoadLLConfig();
 
-    //Unzip Node Modules
+    //Unzip packed Node Modules
     UnzipNodeModules();
+
+    //Decompress resource packs
+    DecompressResourcePacks();
 
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
     if (!LL::isDebugMode())
