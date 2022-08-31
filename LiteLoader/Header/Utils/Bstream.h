@@ -130,7 +130,7 @@ class WBStreamImpl {
             __put(*i);
         }
     }
-    void __put(string const &x) {
+    void __put(std::string const &x) {
         __put((bsize_t)x.size());
         data.append(x);
     }
