@@ -50,7 +50,7 @@ add_link_options(
         /MANIFEST /LTCG:incremental /NXCOMPAT
         /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO
         /SUBSYSTEM:WINDOWS /MANIFESTUAC:NO
-        /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
+        /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:bedrock_server.dll /TLBID:1
 )
 
 add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
