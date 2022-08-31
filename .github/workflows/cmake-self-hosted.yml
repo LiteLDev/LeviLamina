@@ -111,6 +111,24 @@ jobs:
           cp x64/Release/*.pdb PDB
         shell: bash
 
+      - name: Pack PDB
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: 7z a -tzip PDB.zip PDB
+        shell: bash
+
+      - name: Update LiteLoaderSDK
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cd Scripts
+          ./UploadSDK.cmd action
+        env:
+          REPO_KEY: ${{secrets.PUSH_TOKEN}}
+          USERNAME: github-actions[bot]
+        shell: cmd
+
       - name: Upload LiteLoader
         uses: actions/upload-artifact@v3.1.0
         with:
@@ -122,3 +140,33 @@ jobs:
         with:
           name: PDB
           path: ${{ github.workspace }}\PDB
+
+      - name: Prepare for creating Release
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        id: rel
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+          mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
+        shell: bash
+
+      - name: Create New Release
+        uses: softprops/action-gh-release@v0.1.14
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: ${{ github.workspace }}\CHANGELOG.md
+          files: |
+            ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
+            ${{ github.workspace }}\PDB.zip
+        env:
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
+
+      - name: Publish to MineBBS
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
+          -H "Accept: application/vnd.github.everest-preview+json" \
+          -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
+          --data '{"event_type": "webhook"}'
+        shell: bash
