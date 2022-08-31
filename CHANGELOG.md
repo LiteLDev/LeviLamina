@@ -14,6 +14,7 @@ LiteLoaderBDS-2.6.0 update has been released, adapted to BDS-1.19.21, ProtocolVe
 - Add Hot Reload for NodeJS Plugin  by @yqs112358
 - New methods and properties of LLAPI for LLSE (#726) by @shishkevichd & @Jasonzyt
 - Update 1.19.21 by @dreamguxiang
+- Add ResourcePackInitEvent by @dreamguxiang
 - Add fix BDS crashes(Beta) by @dreamguxiang
   - Default is off, please turn on `FixBDSCrash` from the configuration file
 
