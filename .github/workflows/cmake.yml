@@ -97,12 +97,6 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Compress Resource Packs
-        run: |
-          7z a RELEASE/LiteLoader/ResourcePacks/LiteLoader-CUI.tar RELEASE/LiteLoader/ResourcePacks/LiteLoader-CUI
-          rm -r RELEASE/LiteLoader/ResourcePacks/LiteLoader-CUI
-        shell: bash
-
       - name: Pack Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
