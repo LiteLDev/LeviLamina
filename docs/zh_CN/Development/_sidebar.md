@@ -10,6 +10,7 @@
   - [🎈 实体对象](zh_CN/Development/GameAPI/Entity.md)
   - [🧰 物品对象](zh_CN/Development/GameAPI/Item.md)
   - [📮 方块实体对象](zh_CN/Development/GameAPI/BlockEntity.md)
+  - [✨ 粒子生成器对象](zh_CN/Development/GameAPI/Particle.md)
   - [👜 容器对象](zh_CN/Development/GameAPI/Container.md)
   - [📝 记分板](zh_CN/Development/GameAPI/ScoreBoard.md)
   - [📩 数据包接口](zh_CN/Development/GameAPI/Packet.md)

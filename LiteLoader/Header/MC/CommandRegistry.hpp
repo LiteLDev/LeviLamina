@@ -26,7 +26,7 @@ class CommandParameterData;
 #include "CommandRawText.hpp"
 #include "CommandItem.hpp"
 #include "CommandIntegerRange.hpp"
-
+#include "ActorDamageSource.hpp"
 
 #pragma region typeid
 

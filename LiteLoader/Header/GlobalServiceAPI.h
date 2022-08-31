@@ -15,7 +15,7 @@ class DBStorage;
 class Scoreboard;
 class AllowListFile;
 class PropertiesSettings;
-
+class ResourcePackRepository;
 class LevelStorage;
 
 template <typename T>

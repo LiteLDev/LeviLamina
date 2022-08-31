@@ -1,19 +1,46 @@
-[MD]
-## [LiteLoader Release Note]
-LiteLoaderBDS-2.5.1更新已发布, 适配BDS-1.19.20, 协议版本544
+[HEADING=1][LiteLoader发布说明][/HEADING]
+LiteLoaderBDS-2.6.0更新已发布，适应于BDS-1.19.21，协议版本545
 
-## [新特性]
-- 为LLSE添加基本的NativeAPI by @dreamguxiang & @yqs112358 & @WangYneos & @dofes & @wzyyyyyyy
-- 添加 `LL::getLanguage()` by @ShrBox
-- 添加对Ctrl+C的响应 by @Redbeanw44602
-
-## [Change]
-- 重新添加mysql支持
-
-## [Bug Fixes]
-- 修复 FormUI 错误 by @dreamguxiang
-- 修复 #666 by @dreamguxiang & @WangYneos
-- 修复 I18N 兼容性 by @Jasonzyt
-- 修复 quickjs 时区bug (#664) by @yqs112358
-- 再次修复 #604 by @Jasonzyt
-[/MD]
+[HEADING=1][新特性][/HEADING]
+[LIST]
+[*]添加ParticleAPI by @OEOTYAN
+[*]在PlayerAPI和EntityAPI中添加更多属性 by @shishkevichd & @dreamguxiang
+[*]添加ResourcePackRepository::setCustomResourcePackPath by @dreamguxiang
+[*]增加AddrHook,SigHook API by @dreamguxiang
+[*]添加一些定义（ChunkBlockPos） by @OEOTYAN
+[*]添加PermissionAPI by @Jasonzyt
+[*]添加StaticVanillaBlocks（#704） by @OEOTYAN
+[*]添加PlayerInfoAPI for LLSE by @Jasonzyt
+[*]添加C++文档的链接（#734） 作者：@Futrime
+[*]添加NodeJS插件热重载功能 by @yqs112358
+[*]添加ResourcePackInitEvent事件 by @dreamguxiang
+[*]为LLSE添加LLAPI的新方法和属性（#726） by @shishkevichd & @Jasonzyt
+[*]更新1.19.21 by @dreamguxiang
+[*]增加修复BDS崩溃（测试版） by @dreamguxiang
+[LIST]
+[*]默认为关闭，请在配置文件中打开 "FixBDSCrash"。
+[/LIST]
+[/LIST]
+[HEADING=1][变更][/HEADING]
+[LIST]
+[*]完成#716 by @dreamguxiang
+[*]在DevMode下捕捉SEH异常时抛回异常 by @yqs112358
+[*]添加Actor::hurtEntity 的ActorDamageCause参数（#729） by @dreamguxiang
+[*]更新LLSE的PlayerAPI（#723） by @shishkevichd
+[*]完善与修复NativeApi，by @WangYneos & @Redbeanw44602
+[*]重构LLSE部分的代码，by @yqs112358
+[*]现在development_xxxx_packs目录可以直接加载所有的包，而无需填写world_xxxx_packs.json by @dreamguxiang
+[/LIST]
+[HEADING=1][Bug Fixes][/HEADING]
+[LIST]
+[*]修复并重新编译QuickJs（#708）by @yqs112358
+[*]修复创建AttributeModifier实例时的崩溃（#725） by @dreamguxiang
+[*]修复PlayerDropItemEvent的错误，by @dreamguxiang
+[*]修复LLSE在命令重新注册后重新加载插件会导致注册错误（#689）by @Jasonzyt
+[*]修复Player/CommandOutput的i18n函数无法通过fmt::named_arg by @Jasonzyt
+[*]修复nodejs插件包输出中的命名参数 by @Jasonzyt
+[*]修复LiteLoader.dll加载后Ctrl+C强制关闭服务无效的问题 by @Jasonzyt
+[*]修复Data无法从字符串中解析时间的问题(quickJs)(#708) by  @yqs112358
+[*]修复LLSE热重载quickJs插件出现NodeJs错误信息（#701）by @yqs112358
+[*]修复AntiGiveCommand的问题（#700）by @WangYneos
+[/LIST]

@@ -21,7 +21,7 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 
 ## 🎁 第一印象
 
-> “为什么我应该选择LiteLoader？”<br>
+> “为什么我应该选择LiteLoader？”  
 > 易于使用，直观的接口！
 
 #### C++语言示例插件
@@ -84,14 +84,14 @@ mc.listen("onServerStarted", () => {
   - 版本更新时，将保证 API 基本 **向下兼容**，插件几乎不需要随版本更新而修改代码。`LiteLoader`系列独有符号查找技术，跨版本 **自动适配** 不再是梦想
 
 - 📋 开发文档完善，讲解详细
-  - 欢迎 👉[移步 LiteLoader 文档站](https://docs.litebds.com/)👈 查看更多<br>
+  - 欢迎 👉[移步 LiteLoader 文档站](https://docs.litebds.com/)👈 查看更多  
 
 - 🎈 大量封装完善的的接口
   - 拥有众多游戏API支持：玩家，实体，方块，物品，容器，NBT，服务器系统……
   - 多达 **五十多种** 游戏事件监听，不管什么事情发生，都可以第一时间响应
 
 - 🛡 安全，稳定，通用
-  - 修复BDS中的一些漏洞，确保您的服务器的稳定性和安全性<br>
+  - 修复BDS中的一些漏洞，确保您的服务器的稳定性和安全性  
   - 广泛使用SEH异常保护框架，将服务器崩溃的风险降到最低
   - 支持通过 **Wine** 在Linux、MacOS平台运行，给其他平台也带来自由的插件体验：一次编写，**多平台共享**
 
@@ -99,8 +99,8 @@ mc.listen("onServerStarted", () => {
   - 海量现有插件，成熟发布平台，即刻 👉[前往官方论坛](https://forum.litebds.com/)👈 查找并下载你喜欢的 LL 插件
 
 - 🏃 开源 & 社区共建
-  - 项目采用 `LGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。<br>
-  - 设计思想采取 **去中心化** 设计，放心享受 **自由** 的插件加载框架！<br>
+  - 项目采用 `LGPL-3.0` 开源许可证，**永远不会** 收费或者推出商业版。  
+  - 设计思想采取 **去中心化** 设计，放心享受 **自由** 的插件加载框架！  
 
 ------
 
@@ -137,10 +137,10 @@ docker create --name llbds -v <install directory>:/root/bedrock-server -p 19132:
 
 `<install directory>` 是用于存放数据的目录，例如: `/home/shrbox/bedrock-server`  
 第一次启动需要花费一点时间用于下载Bedrock Dedicated Server和LiteLoaderBDS  
-启动服务器：`docker container start llbds -a`<br>
-强制停止服务器（不推荐）：`docker container stop llbds`<br>
-进入控制台：`docker attach llbds`<br>
-退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。<br>
+启动服务器：`docker container start llbds -a`  
+强制停止服务器（不推荐）：`docker container stop llbds`  
+进入控制台：`docker attach llbds`  
+退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。  
 
 ## 🎯 下载 & 加载插件
 
@@ -219,22 +219,21 @@ VSCode扩展商店搜索`LLScriptHelper`，安装**LLScriptHelper**，即刻体�
 >
 > 当然，如果您愿意自己构建项目，或者向 LiteLoader 贡献代码，您可以按照以下说明自行构建项目
 
-1. 安装最新的 **Microsoft Visual Studio** 和标准的 C++ 桌面开发套件
+1. 安装最新版本的 **Microsoft Visual Studio** 和标准的 C++ 桌面开发套件 （或者你也可以只安装完整的 **msbuild** 编译器套件，并配置好编译环境）
 2. 安装最新的 **Windows SDK**
-3. 打开 `LiteLoader.sln` 项目文件，点击 **生成** 菜单中的 **批生成** 项
-4. 弹出批生成对话框，选中对话框右侧所有的生成复选框
-5. 选择完毕之后，点击对话框中的 **生成** 按钮，进行批生成
-6. 编译生成成功之后，返回到项目根目录，执行 Scripts 文件夹中的 `PackRelease.cmd` 脚本
-   执行完之后，根目录 `RELEASE` 文件夹内的内容即为完整的 `LiteLoader` 环境及所有的依赖库
+3. 使用你熟悉的 IDE （VS / VSCode / CLion等）打开项目目录，对 cmake 项目进行编译生成
+4. 编译生成成功之后，返回到项目根目录，执行 Scripts 文件夹中的 `PackRelease.cmd` 脚本
+5. 执行完之后，根目录 `RELEASE` 文件夹内的内容即为完整的 `LiteLoader` 环境及所有的依赖库
+6. 如果需要 LL 的调试符号，则执行另一个 `PackReleaseWithPDB.cmd` 脚本，执行完后`RELEASE` 文件夹内还会附带上所有必要的调试符号，以方便调试
 
 ## 🎬 参与贡献
 
 您可以使用以下方法为 `LiteLoader` 项目做出贡献
 
-1. 贡献代码，维护项目和符号
-2. 帮助我们修改并优化开发文档
-3. 按照格式写下你想要的新API并提交一个PR（GitHub Issue），或者提出好的建议
-4. 帮助我们推广 `LiteLoader`，支持我们的发展
+1. 贡献代码，维护项目和符号，增加新的API和事件以及基础设施
+2. 帮助我们修改并优化开发文档、使用文档
+3. 在GitHub Issue中反馈使用过程中遇到的问题，或者提出好的建议
+4. 帮助我们推广 `LiteLoaderBDS`，支持我们的发展
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 
@@ -299,5 +298,3 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 **感谢 [JetBrains](https://www.jetbrains.com/) 给开源开发者分配免费的IDE许可证，例如 [CLion](https://www.jetbrains.com/clion/)** 。
 
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
-
-<br>

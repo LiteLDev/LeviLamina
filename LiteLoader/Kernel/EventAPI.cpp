@@ -35,6 +35,7 @@
 #include <MC/ScoreboardId.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/VanillaBlocks.hpp>
+#include <MC/ActorDamageSource.hpp>
 #include <ScheduleAPI.h>
 #include <MC/ServerPlayer.hpp>
 #include <RegCommandAPI.h>
@@ -53,6 +54,13 @@
 #include <MC/InventorySource.hpp>
 #include <MC/Util.hpp>
 #include <DynamicCommandAPI.h>
+#include <MC/ResourcePackManager.hpp>
+#include <MC/ResourceLocation.hpp>
+#include <MC/PackSourceFactory.hpp>
+#include <MC/CompositePackSource.hpp>
+#include <MC/ResourcePackPaths.hpp>
+#include <MC/DirectoryPackSource.hpp> 
+#include <MC/PackSource.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -103,7 +111,7 @@ int EventManager<EVENT>::addEventListenerRef(std::string name, std::function<boo
 
 template <typename EVENT>
 bool EventManager<EVENT>::removeEventListener(int id) {
-    for (auto& i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
+    for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
         if (i->listenerId == id) {
             listeners<EVENT>.erase(i);
             return true;
@@ -276,9 +284,8 @@ DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobSpawnEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
+DECLARE_EVENT_DATA(ResourcePackInitEvent);
 
-
-#ifdef ENABLE_SEH_PROTECTION
 #define IF_LISTENED(EVENT)      \
     if (EVENT::hasListener()) { \
         try
@@ -291,11 +298,6 @@ DECLARE_EVENT_DATA(FormResponsePacketEvent);
         PrintCurrentStackTraceback();                 \
     }                                                 \
     }
-#else
-#define IF_LISTENED(EVENT) \
-    if (EVENT::hasListener()) {
-#define IF_LISTENED_END(EVENT) }
-#endif
 
 
 /////////////////////////////// Events ///////////////////////////////
@@ -1591,7 +1593,7 @@ TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
 }
 
 TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageSource@@M@Z", Mob, ActorDamageSource* src, float damage) {
-    if (src->getCause() == ActorDamageCause::Magic) {
+    if (src->getCause() == ActorDamageCause::ActorDamageCause_Magic) {
         IF_LISTENED(MobHurtEvent) {
             if (this) {
                 MobHurtEvent ev{};
@@ -1919,7 +1921,8 @@ TClasslessInstanceHook(void, "?maintainOldData@TransformationComponent@@QEAAXAEA
                        Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level) {
     IF_LISTENED(EntityTransformEvent) {
         EntityTransformEvent ev{};
-        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
+        ActorUniqueID actorUniqueID = beforeEntity->getActorUniqueId();
+        ev.mBeforeEntityUniqueId = &actorUniqueID;
         ev.mAfterEntity = afterEntity;
         ev.call();
     }
@@ -1961,7 +1964,9 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 ////////////// ServerStarted //////////////
 TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
                        class ServerInstance& ins) {
-    _set_se_translator(seh_exception::TranslateSEHtoCE);
+    if(!LL::isDebugMode())
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+
     LL::globalConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
@@ -2146,4 +2151,16 @@ TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFo
         HandleFormPacket(sp, formId, data);
     }
     original(this, id, handler, pPacket);
+}
+
+THook(void, "?_initialize@ResourcePackRepository@@AEAAXXZ",
+      ResourcePackRepository* self) {
+    Global<ResourcePackRepository> = self;
+    IF_LISTENED(ResourcePackInitEvent) {
+        ResourcePackInitEvent ev{};
+        ev.mRepo = self;
+        ev.call();
+    }
+    IF_LISTENED_END(ResourcePackInitEvent)
+    original(self);
 }

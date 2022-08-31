@@ -125,16 +125,44 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
 
         string ext = UTF82String(path.extension().u8string());
         if (ext != ".dll") {
-            if (LLSE_VALID_PLUGIN_EXTENSIONS.find(ext) != LLSE_VALID_PLUGIN_EXTENSIONS.end()) // LLSE Script Plugin
+            if (filesystem::is_directory(path))
             {
+                // Maybe uncompressed LLSE Script Plugin Package
                 Event::ScriptPluginManagerEvent ev;
                 ev.operation = Event::ScriptPluginManagerEvent::Operation::Load;
                 ev.target = pluginFilePath;
                 ev.pluginExtention = ext;
+                ev.pluginType = Event::ScriptPluginManagerEvent::PluginType::UncompressedPackage;
                 ev.call();
 
                 return ev.success;
-            } else if (outputResult) {
+            }
+            else if(ext == ".llplugin")
+            {
+                // LLSE Script Plugin Package
+                Event::ScriptPluginManagerEvent ev;
+                ev.operation = Event::ScriptPluginManagerEvent::Operation::Load;
+                ev.target = pluginFilePath;
+                ev.pluginExtention = ext;
+                ev.pluginType = Event::ScriptPluginManagerEvent::PluginType::PluginPackage;
+                ev.call();
+
+                return ev.success;
+            }
+            auto validExts = LLSE_VALID_PLUGIN_EXTENSIONS;
+            if(!ext.empty() && std::find(validExts.begin(), validExts.end(), ext) != validExts.end())
+            {
+                // LLSE single-file script plugin
+                Event::ScriptPluginManagerEvent ev;
+                ev.operation = Event::ScriptPluginManagerEvent::Operation::Load;
+                ev.target = pluginFilePath;
+                ev.pluginExtention = ext;
+                ev.pluginType = Event::ScriptPluginManagerEvent::PluginType::SingleFile;
+                ev.call();
+
+                return ev.success;
+            }
+            else if (outputResult) {
                 logger.error(tr("ll.pluginManager.error.invalidFileType", ext, pluginFilePath));
             }
             return false;

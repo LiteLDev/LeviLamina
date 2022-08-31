@@ -43,6 +43,35 @@ void FixUpCWD() {
     SetCurrentDirectoryA(buf.c_str());
 }
 
+#include <FMT/format.h>
+void UnzipNodeModules() {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.tar")))) {
+        std::error_code ec;
+        //if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+        //    filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\lib\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\lib\\node_modules.tar"), 30000);
+        if (res.first != 0) {
+            logger.error(tr("ll.unzipNodeModules.fail"));
+        } else {
+            filesystem::remove(".\\plugins\\lib\\node_modules.tar", ec);
+        }
+    }
+}
+
+void DecompressResourcePacks() {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
+        std::error_code ec;
+        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\LiteLoader\\ResourcePacks\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar"), 30000);
+        if (res.first != 0) {
+            logger.error(tr("ll.decompressResourcePacks.fail"));
+        } else {
+            filesystem::remove(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar", ec);
+        }
+    }
+}
+
 void CheckRunningBDS() {
     if (!LL::globalConfig.enableCheckRunningBDS)
         return;
@@ -167,17 +196,15 @@ void CheckProtocolVersion() {
     }
 }
 
-BOOL WINAPI ConsoleExitHandler(DWORD CEvent)
-{
-    switch(CEvent)
-    {
+BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
+    switch (CEvent) {
         case CTRL_C_EVENT:
         case CTRL_CLOSE_EVENT:
-        case CTRL_SHUTDOWN_EVENT:
-        {
-            auto mc = Global<Minecraft>;
-            if (mc) {
-                mc->requestServerShutdown();
+        case CTRL_SHUTDOWN_EVENT: {
+            if (Global<Minecraft>) {
+                Global<Minecraft>->requestServerShutdown();
+            } else {
+                std::terminate();
             }
             return TRUE;
         }
@@ -188,11 +215,13 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent)
 void UnixSignalHandler(int signum) {
     switch (signum) {
         case SIGINT:
-        case SIGTERM:
-            auto mc = Global<Minecraft>;
-            if (mc) {
-                mc->requestServerShutdown();
+        case SIGTERM: {
+            if (Global<Minecraft>) {
+                Global<Minecraft>->requestServerShutdown();
+            } else {
+                std::terminate();
             }
+        }
     }
 }
 
@@ -204,7 +233,7 @@ void registerBStats();
 
 void LLMain() {
     // Set global SEH-Exception handler
-    _set_se_translator(seh_exception::TranslateSEHtoCE);
+    auto oldSeTranslator = _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
@@ -215,16 +244,26 @@ void LLMain() {
     // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
-	
+
     // I18n
     auto i18n = Translation::load("plugins/LiteLoader/LangPack/");
-		
+
     // Load Config
     LL::LoadLLConfig();
 
+    //Unzip packed Node Modules
+    UnzipNodeModules();
+
+    //Decompress resource packs
+    DecompressResourcePacks();
+
+    // If SEH Protection is not enabled (Debug mode), restore old SE translator
+    if (!LL::isDebugMode())
+        _set_se_translator(oldSeTranslator);
+
     // Update default language
     if (i18n && LL::globalConfig.language != "system") {
-		i18n->defaultLocaleName = LL::globalConfig.language;
+        i18n->defaultLocaleName = LL::globalConfig.language;
     }
 
     // Check Protocol Version
@@ -255,9 +294,9 @@ void LLMain() {
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
-    SetConsoleCtrlHandler(ConsoleExitHandler,TRUE);
-    signal(SIGTERM,UnixSignalHandler);
-    signal(SIGINT,UnixSignalHandler);
+    SetConsoleCtrlHandler(ConsoleExitHandler, TRUE);
+    signal(SIGTERM, UnixSignalHandler);
+    signal(SIGINT, UnixSignalHandler);
 
     // Welcome
     Welcome();

@@ -16,7 +16,8 @@
 #include <I18nAPI.h>
 #include "Config.h"
 #include "Version.h"
-#include "../ScriptEngine/Main/Configs.h"
+#include <ParticleAPI.h>
+#include <ScriptEngine/Main/Configs.h>
 
 using namespace std;
 
@@ -67,7 +68,7 @@ const char* DEFAULT_ROOT_PACKAGE_JSON =
 })";
 
 bool IsExistScriptPlugin() {
-    std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
+    std::vector<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
         if (!file.is_regular_file())
@@ -86,7 +87,8 @@ bool IsExistScriptPlugin() {
                 ext = UTF82String(path.extension().u8string());
             }
 
-            if (scriptExts.find(ext) != scriptExts.end())
+            if ((!ext.empty() && std::find(scriptExts.begin(), scriptExts.end(), ext) != scriptExts.end())
+                || ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
                 return true;
         }
     }
@@ -176,6 +178,19 @@ void LoadPermissionAPI() {
         logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
     }
 }
+
+void LoadParticleAPI() {
+    std::string path = "plugins/LiteLoader/ParticleAPI.dll";
+    auto lib = LoadLibrary(str2wstr(path).c_str());
+    if (lib) {
+        logger.info(tr("ll.loader.loadParticleAPI.success"));
+        ParticleCUI::init(lib);
+    } else {
+        logger.error("Fail to load ParticleAPI!");
+        logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+    }
+}
+
 
 void LL::LoadMain() {
     logger.info(tr("ll.loader.loadMain.start"));
@@ -268,8 +283,16 @@ void LL::LoadMain() {
     }
 
     // Load PermissionAPI
-    if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
+    if(LL::globalConfig.enablePermissionAPI) {
+        if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
         LoadPermissionAPI();
+        }
+    }
+
+    if(LL::globalConfig.enableParticleAPI) {
+        if (filesystem::exists("plugins/LiteLoader/ParticleAPI.dll")) {
+        LoadParticleAPI();
+        }
     }
 
     // Load ScriptEngine

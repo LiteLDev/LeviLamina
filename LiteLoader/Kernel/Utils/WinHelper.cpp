@@ -6,6 +6,7 @@
 #include <I18nAPI.h>
 #include <Psapi.h>
 #include <string>
+#include <Main/Config.h>
 
 using namespace std;
 
@@ -72,7 +73,8 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
     std::thread([hRead{hRead}, hProcess{pi.hProcess},
                  callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}]() {
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        if (!LL::isDebugMode())
+            _set_se_translator(seh_exception::TranslateSEHtoCE);
         if (timeLimit == -1)
             WaitForSingleObject(hProcess, INFINITE);
         else {

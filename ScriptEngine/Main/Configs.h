@@ -1,37 +1,62 @@
 #pragma once
-#include <set>
+#include <vector>
 #include <string>
 
+
+///////////////////////// Configs /////////////////////////
+
+// Plugins & Base libs path
+#define LLSE_DEPENDS_DIR "./plugins/lib"
+#define LLSE_PLUGINS_LOAD_DIR "./plugins"
+
+
+// Plugin package information
+#define LLSE_PLUGIN_PACKAGE_EXTENSION ".llplugin"
+#define LLSE_PLUGIN_PACKAGE_TEMP_DIR "./plugins/LiteLoader/temp"
+#define LLSE_PLUGIN_PACKAGE_UNCOMPRESS_TIMEOUT 30000
+
+
+// Current language information
 #define LLSE_BACKEND_NODEJS_NAME "NodeJs"
-#define LLSE_BACKEND_QUICKJS_NAME "QuickJs"
+#define LLSE_BACKEND_JS_NAME "Js"
 #define LLSE_BACKEND_LUA_NAME "Lua"
 
-///////////////////// Configs /////////////////////
+#if defined(LLSE_BACKEND_QUICKJS)
+// QuickJs
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS_NAME
+	#define LLSE_PLUGINS_EXTENSION ".js"
+	#define LLSE_PLUGINS_ROOT_DIR "plugins"
+	#define LLSE_IS_PLUGIN_PACKAGE 0
 
-#if defined(LLSE_BACKEND_NODEJS)
-	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS_NAME
-	#define LLSE_PLUGINPACK_EXTENSION ".llplugin"
-	#define LLSE_PLUGINS_EXTENSION ".js"
-#elif defined(LLSE_BACKEND_QUICKJS)
-	#define LLSE_BACKEND_TYPE LLSE_BACKEND_QUICKJS_NAME
-	#define LLSE_PLUGINS_EXTENSION ".js"
 #elif defined(LLSE_BACKEND_LUA)
+// Lua
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA_NAME
 	#define LLSE_PLUGINS_EXTENSION ".lua"
+	#define LLSE_PLUGINS_ROOT_DIR "plugins"
+	#define LLSE_IS_PLUGIN_PACKAGE 0
+
+#elif defined(LLSE_BACKEND_NODEJS)
+// NodeJs
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS_NAME
+	#define LLSE_PLUGINS_EXTENSION LLSE_PLUGIN_PACKAGE_EXTENSION
+	#define LLSE_PLUGINS_ROOT_DIR "plugins/nodejs"
+	#define LLSE_IS_PLUGIN_PACKAGE 1
 #endif
 
-#define LLSE_VALID_BACKENDS std::set<std::string>({"Js", "Lua", "NodeJs"})
-#define LLSE_VALID_PLUGIN_EXTENSIONS std::set<std::string>({".js", ".lua", ".llplugin"})
+
+// Language specific information
+#define LLSE_NODEJS_ROOT_DIR "plugins/nodejs"
+
+
+// All backends information
+#define LLSE_MODULE_TYPE LLSE_BACKEND_TYPE
+#define LLSE_VALID_BACKENDS std::vector<std::string>({"Js", "Lua", "NodeJs"})
+#define LLSE_VALID_PLUGIN_EXTENSIONS std::vector<std::string>({".js", ".lua", ""})
+#define LLSE_VALID_PLUGIN_PACKAGE_IDENTIFIER std::vector<std::string>({"", "", "package.json"})
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()
 
 
-// NodeJs额外宏
-#define LLSE_NODEJS_ROOT_DIR "plugins/nodejs"
-#define LLSE_NODEJS_TEMP_DIR LLSE_NODEJS_ROOT_DIR "/temp"
-#define LLSE_NODEJS_UNCOMPRESS_TIMEOUT 30000
-
-
-// 插件注册信息
+// Loader information
 #if defined(LLSE_BACKEND_NODEJS)
 	#define LLSE_LOADER_NAME "ScriptEngine-NodeJs"
 	#define LLSE_LOADER_DESCRIPTION "Node.js ScriptEngine for LiteLoaderBDS"
@@ -43,36 +68,32 @@
 	#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine for LiteLoaderBDS"
 #endif
 
-#define LLSE_MODULE_TYPE LLSE_BACKEND_TYPE
 
-// 配置文件
-#define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
-
-// 基础库 & 依赖库
-#define LLSE_DEPENDS_DIR "./plugins/lib"
-#define LLSE_PLUGINS_LOAD_DIR "./plugins"
-
-// 调试引擎
+// Debug engine information
 #if defined(LLSE_BACKEND_NODEJS)
-#define LLSE_DEBUG_CMD "nodedebug"
+	#define LLSE_DEBUG_CMD "nodejsdebug"
 #elif defined(LLSE_BACKEND_QUICKJS)
-#define LLSE_DEBUG_CMD "jsdebug"
+	#define LLSE_DEBUG_CMD "jsdebug"
 #elif defined(LLSE_BACKEND_LUA)
-#define LLSE_DEBUG_CMD "luadebug"
+	#define LLSE_DEBUG_CMD "luadebug"
 #endif
 #define LLSE_DEBUG_ENGINE_NAME "__LLSE_DEBUG_ENGINE__"
 
-// 全局通信
+
+// Global communication
 #define LLSE_GLOBAL_DATA_NAME L"LLSE_GLOBAL_DATA_SECTION"
 #define LLSE_REMOTE_CALL_EVENT_NAME L"LLSE_REMOTE_CALL_EVENT"
 #define LLSE_MESSAGE_SYSTEM_WAIT_CHECK_INTERVAL 5
 
-// 超时
+
+// Timeout
 #define LLSE_MAXWAIT_REMOTE_LOAD 10 * 1000
 #define LLSE_MAXWAIT_REMOTE_CALL 30 * 1000
 
-// 线程池
+
+// Thread pool parameter
 #define LLSE_POOL_THREAD_COUNT 4
 
-// 其他
+
+// Others
 #define LLSE_7Z_PATH "./plugins/LiteLoader/7z/7za.exe"

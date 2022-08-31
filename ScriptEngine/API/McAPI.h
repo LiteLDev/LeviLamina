@@ -52,5 +52,7 @@ public:
     static Local<Value> getAllScoreObjectives(const Arguments& args);
     static Local<Value> getStructure(const Arguments& args);
     static Local<Value> setStructure(const Arguments& args);
+
+    static Local<Value> newParticleSpawner(const Arguments& args);
 };
 extern ClassDefine<void> McClassBuilder;

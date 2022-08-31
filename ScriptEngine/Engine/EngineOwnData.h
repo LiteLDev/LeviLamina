@@ -34,7 +34,7 @@ class Player;
 struct EngineOwnData {
     // 基础信息
     std::string pluginName = "";
-    std::string pluginFilePath = "";
+    std::string pluginFileOrDirPath = "";
     std::string engineType = LLSE_BACKEND_TYPE;
 
     // 表单回调

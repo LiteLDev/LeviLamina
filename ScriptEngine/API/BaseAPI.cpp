@@ -6,6 +6,7 @@
 #include <ServerAPI.h>
 #include "McAPI.h"
 #include <cmath>
+#include <MC/ActorDamageSource.hpp>
 
 ///////////////////// Enum //////////////////////
 ClassDefine<void> DamageCauseEnumBuilder = EnumDefineBuilder<ActorDamageCause>::build("DamageCause");
@@ -19,7 +20,6 @@ ClassDefine<IntPos> IntPosBuilder =
         .instanceProperty("y", &IntPos::getY, &IntPos::setY)
         .instanceProperty("z", &IntPos::getZ, &IntPos::setZ)
         .instanceProperty("dim", &IntPos::getDim)
-        .instanceProperty("dimid", &IntPos::getDimId, &IntPos::setDimId)
         .instanceProperty("dimid", &IntPos::getDimId, &IntPos::setDimId)
 
         .instanceFunction("toString", &IntPos::toString)

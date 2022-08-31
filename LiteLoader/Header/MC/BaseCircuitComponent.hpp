@@ -10,6 +10,24 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
+// clang-format off
+enum CircuitComponentType : uint64_t {
+    UNDEFINED        = 0LL,
+    CAPACITOR        = 1129530177LL,
+    CONSUMER         = 1129530179LL,
+    POWERED_BLOCK    = 1129533506LL,
+    PRODUCER         = 1129533507LL,
+    BASE             = 1129534275LL,
+    TRANSPORTER      = 1129534546LL,
+    COMPARATOR       = 1296253778LL,
+    PULSE_CAPACITOR  = 1296257091LL,
+    PISTON           = 1296257097LL,
+    RAIL_TRANSPORTER = 1296257106LL,
+    REPEATER         = 1296257618LL,
+    REDSTONE_TORCH   = 1296258115LL,
+};
+// clang-format on
+
 #undef BEFORE_EXTRA
 
 /**
