@@ -26,6 +26,7 @@ struct TextureUVCoordinateSet {
 public:
     struct TextureUVCoordinateSet& operator=(struct TextureUVCoordinateSet const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0TextureUVCoordinateSet@@QEAA@XZ

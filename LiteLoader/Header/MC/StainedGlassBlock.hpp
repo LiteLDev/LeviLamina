@@ -268,6 +268,10 @@ public:
 //private:
 
 private:
-MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION@StainedGlassBlock@@0VBaseGameVersion@@B
+     * @hash   -1650043342
+     */
+    MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

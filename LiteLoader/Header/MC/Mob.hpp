@@ -1389,24 +1389,96 @@ public:
      * @hash   804879072
      */
     MCAPI void snapToYHeadRot(float);
-MCAPI static int const ARMOR_DAMAGE_DIVISOR;
-MCAPI static float const ARMOR_PROTECTION_DIVIDER;
-MCAPI static float const ASCEND_BLOCK_BY_JUMPING_SPEED;
-MCAPI static float const BASE_ARMOR_TOUGHNESS;
-MCAPI static float const DEFAULT_GRAVITY;
-MCAPI static float const FRICTION_CONSTANT;
-MCAPI static float const FRICTION_CONSTANT_MODIFIED;
-MCAPI static float const FRICTION_MODIFIER;
-MCAPI static float const GLIDING_FALL_RESET_DELTA;
-MCAPI static float const LADDER_CLIMB_SPEED;
-MCAPI static float const MAX_ARMOR;
-MCAPI static float const MIN_ARMOR_RATIO;
-MCAPI static float const NUM_ARMOR_ITEMS;
-MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
-MCAPI static int const REMOVE_PASSENGERS_DELAY;
-MCAPI static float const SLOW_FALL_GRAVITY;
-MCAPI static int const SPAWN_XP_DELAY;
-MCAPI static int const TOTAL_ROLL_STEPS;
+    /**
+     * @symbol ?ARMOR_DAMAGE_DIVISOR@Mob@@2HB
+     * @hash   1385402587
+     */
+    MCAPI static int const ARMOR_DAMAGE_DIVISOR;
+    /**
+     * @symbol ?ARMOR_PROTECTION_DIVIDER@Mob@@2MB
+     * @hash   -1080888883
+     */
+    MCAPI static float const ARMOR_PROTECTION_DIVIDER;
+    /**
+     * @symbol ?ASCEND_BLOCK_BY_JUMPING_SPEED@Mob@@2MB
+     * @hash   -1097864917
+     */
+    MCAPI static float const ASCEND_BLOCK_BY_JUMPING_SPEED;
+    /**
+     * @symbol ?BASE_ARMOR_TOUGHNESS@Mob@@2MB
+     * @hash   1651618791
+     */
+    MCAPI static float const BASE_ARMOR_TOUGHNESS;
+    /**
+     * @symbol ?DEFAULT_GRAVITY@Mob@@2MB
+     * @hash   -783711027
+     */
+    MCAPI static float const DEFAULT_GRAVITY;
+    /**
+     * @symbol ?FRICTION_CONSTANT@Mob@@2MB
+     * @hash   112836463
+     */
+    MCAPI static float const FRICTION_CONSTANT;
+    /**
+     * @symbol ?FRICTION_CONSTANT_MODIFIED@Mob@@2MB
+     * @hash   405213889
+     */
+    MCAPI static float const FRICTION_CONSTANT_MODIFIED;
+    /**
+     * @symbol ?FRICTION_MODIFIER@Mob@@2MB
+     * @hash   -303687783
+     */
+    MCAPI static float const FRICTION_MODIFIER;
+    /**
+     * @symbol ?GLIDING_FALL_RESET_DELTA@Mob@@2MB
+     * @hash   -1053898875
+     */
+    MCAPI static float const GLIDING_FALL_RESET_DELTA;
+    /**
+     * @symbol ?LADDER_CLIMB_SPEED@Mob@@2MB
+     * @hash   -1709967985
+     */
+    MCAPI static float const LADDER_CLIMB_SPEED;
+    /**
+     * @symbol ?MAX_ARMOR@Mob@@2MB
+     * @hash   1170117697
+     */
+    MCAPI static float const MAX_ARMOR;
+    /**
+     * @symbol ?MIN_ARMOR_RATIO@Mob@@2MB
+     * @hash   1437615809
+     */
+    MCAPI static float const MIN_ARMOR_RATIO;
+    /**
+     * @symbol ?NUM_ARMOR_ITEMS@Mob@@2MB
+     * @hash   -1813996853
+     */
+    MCAPI static float const NUM_ARMOR_ITEMS;
+    /**
+     * @symbol ?PLAYER_SWIMMING_SURFACE_OFFSET@Mob@@2MB
+     * @hash   2008336913
+     */
+    MCAPI static float const PLAYER_SWIMMING_SURFACE_OFFSET;
+    /**
+     * @symbol ?REMOVE_PASSENGERS_DELAY@Mob@@2HB
+     * @hash   1126165897
+     */
+    MCAPI static int const REMOVE_PASSENGERS_DELAY;
+    /**
+     * @symbol ?SLOW_FALL_GRAVITY@Mob@@2MB
+     * @hash   -271285959
+     */
+    MCAPI static float const SLOW_FALL_GRAVITY;
+    /**
+     * @symbol ?SPAWN_XP_DELAY@Mob@@2HB
+     * @hash   312990587
+     */
+    MCAPI static int const SPAWN_XP_DELAY;
+    /**
+     * @symbol ?TOTAL_ROLL_STEPS@Mob@@2HB
+     * @hash   1983698867
+     */
+    MCAPI static int const TOTAL_ROLL_STEPS;
     /**
      * @symbol ?_aiStep@Mob@@SAXAEAUIMobMovementProxy@@@Z
      * @hash   -1152640490
@@ -1538,7 +1610,11 @@ MCAPI static int const TOTAL_ROLL_STEPS;
     MCAPI static bool _tryApplyingLevitation(struct IMobMovementProxy const &, class Vec3 &);
 
 protected:
-MCAPI static int const MAX_INACTIVITY_TIMER;
+    /**
+     * @symbol ?MAX_INACTIVITY_TIMER@Mob@@1HB
+     * @hash   -7395469
+     */
+    MCAPI static int const MAX_INACTIVITY_TIMER;
 
 private:
 

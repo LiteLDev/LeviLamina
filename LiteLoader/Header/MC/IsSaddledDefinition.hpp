@@ -29,6 +29,7 @@ public:
     IsSaddledDefinition(struct IsSaddledDefinition const &) = delete;
     IsSaddledDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsSaddledDefinition@@QEAAXAEAVEntityContext@@@Z

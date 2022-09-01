@@ -34,6 +34,10 @@ public:
 //private:
 
 private:
-MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
+    /**
+     * @symbol ?invalidInfo@BackwardsCompatTextureGroup@@0VBackwardsCompatTextureInfo@@B
+     * @hash   367852556
+     */
+    MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
 
 };

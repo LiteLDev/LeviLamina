@@ -44,6 +44,10 @@ public:
 //private:
 
 private:
-MCAPI static std::vector<struct std::pair<enum BlockActorType, class std::function<class std::shared_ptr<class BlockActor> (class BlockPos const &)>>> mCustomBlockEntityCreation;
+    /**
+     * @symbol ?mCustomBlockEntityCreation@BlockActorFactory@@0V?$vector@U?$pair@W4BlockActorType@@V?$function@$$A6A?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@@Z@std@@@std@@V?$allocator@U?$pair@W4BlockActorType@@V?$function@$$A6A?AV?$shared_ptr@VBlockActor@@@std@@AEBVBlockPos@@@Z@std@@@std@@@2@@std@@A
+     * @hash   -117588720
+     */
+    MCAPI static std::vector<struct std::pair<enum BlockActorType, class std::function<class std::shared_ptr<class BlockActor> (class BlockPos const &)>>> mCustomBlockEntityCreation;
 
 };

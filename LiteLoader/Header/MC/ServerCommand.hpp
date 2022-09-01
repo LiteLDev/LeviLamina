@@ -44,6 +44,10 @@ public:
 //protected:
 
 protected:
-MCAPI static class Minecraft * mGame;
+    /**
+     * @symbol ?mGame@ServerCommand@@1PEAVMinecraft@@EA
+     * @hash   1961881618
+     */
+    MCAPI static class Minecraft * mGame;
 
 };

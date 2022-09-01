@@ -131,6 +131,10 @@ public:
      * @hash   1779469531
      */
     MCAPI FireChargeItem(std::string const &, int);
-MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;
+    /**
+     * @symbol ?LEVEL_SOUND_EVENT_VOLUME@FireChargeItem@@2HB
+     * @hash   1404484665
+     */
+    MCAPI static int const LEVEL_SOUND_EVENT_VOLUME;
 
 };

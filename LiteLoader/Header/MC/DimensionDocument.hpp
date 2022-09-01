@@ -25,6 +25,7 @@ public:
     struct DimensionDocument& operator=(struct DimensionDocument const &) = delete;
     DimensionDocument(struct DimensionDocument const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0DimensionDocument@@QEAA@XZ

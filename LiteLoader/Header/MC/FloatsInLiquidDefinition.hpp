@@ -29,6 +29,7 @@ public:
     FloatsInLiquidDefinition(struct FloatsInLiquidDefinition const &) = delete;
     FloatsInLiquidDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@FloatsInLiquidDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFloatsInLiquidDefinition@@@JsonUtil@@@std@@@Z

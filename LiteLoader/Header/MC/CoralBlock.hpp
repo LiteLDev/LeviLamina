@@ -283,7 +283,15 @@ public:
      * @hash   1302852330
      */
     MCAPI CoralBlock(std::string const &, int);
-MCAPI static int const DEAD_CORAL_BIT;
-MCAPI static int const DEAD_CORAL_OFFSET;
+    /**
+     * @symbol ?DEAD_CORAL_BIT@CoralBlock@@2HB
+     * @hash   -1743170443
+     */
+    MCAPI static int const DEAD_CORAL_BIT;
+    /**
+     * @symbol ?DEAD_CORAL_OFFSET@CoralBlock@@2HB
+     * @hash   879631631
+     */
+    MCAPI static int const DEAD_CORAL_OFFSET;
 
 };

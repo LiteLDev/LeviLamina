@@ -26,6 +26,7 @@ public:
     MolangMemberVariable(struct MolangMemberVariable const &) = delete;
     MolangMemberVariable() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MolangMemberVariable@@QEAA@XZ

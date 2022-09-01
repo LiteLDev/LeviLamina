@@ -122,6 +122,10 @@ public:
     MCAPI bool _inSunlight(class Actor const &) const;
 
 protected:
-MCAPI static class BaseGameVersion const min3DAttackVersion;
+    /**
+     * @symbol ?min3DAttackVersion@MeleeAttackGoal@@1VBaseGameVersion@@B
+     * @hash   762391833
+     */
+    MCAPI static class BaseGameVersion const min3DAttackVersion;
 
 };

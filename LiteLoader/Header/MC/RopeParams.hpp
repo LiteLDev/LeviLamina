@@ -27,6 +27,7 @@ public:
     struct RopeParams& operator=(struct RopeParams const &) = delete;
     RopeParams(struct RopeParams const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0RopeParams@@QEAA@XZ

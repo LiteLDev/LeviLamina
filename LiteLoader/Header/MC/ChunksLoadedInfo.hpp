@@ -28,6 +28,7 @@ public:
     ChunksLoadedInfo(struct ChunksLoadedInfo const &) = delete;
     ChunksLoadedInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getChunkViewSource@ChunksLoadedInfo@@QEBA?AV?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@XZ

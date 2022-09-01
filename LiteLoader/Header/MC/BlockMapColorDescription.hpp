@@ -28,6 +28,7 @@ public:
     BlockMapColorDescription(struct BlockMapColorDescription const &) = delete;
     BlockMapColorDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -46,7 +47,11 @@ public:
      * @hash   -1918643789
      */
     virtual void initializeComponent(class EntityContext &) const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockMapColorDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   408125335
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockMapColorDescription@@SAXXZ
      * @hash   -727995709

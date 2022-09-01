@@ -98,7 +98,15 @@ public:
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 
 private:
-MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
-MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
+    /**
+     * @symbol ?Main_Hand_Defaults@RenderOffsetsItemComponent@@0UItemTransforms@1@A
+     * @hash   756630482
+     */
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
+    /**
+     * @symbol ?Off_Hand_Defaults@RenderOffsetsItemComponent@@0UItemTransforms@1@A
+     * @hash   -949463272
+     */
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
 
 };

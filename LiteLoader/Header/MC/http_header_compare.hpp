@@ -26,6 +26,7 @@ public:
     http_header_compare(struct http_header_compare const &) = delete;
     http_header_compare() = delete;
 #endif
+
 public:
     /**
      * @symbol ??Rhttp_header_compare@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$http_stl_allocator@D@@@std@@0@Z

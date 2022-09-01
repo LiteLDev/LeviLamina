@@ -75,7 +75,11 @@ public:
      * @hash   -107080876
      */
     MCAPI ~Raid();
-MCAPI static class Vec3 const INVALID_SPAWN_POINT;
+    /**
+     * @symbol ?INVALID_SPAWN_POINT@Raid@@2VVec3@@B
+     * @hash   -463856703
+     */
+    MCAPI static class Vec3 const INVALID_SPAWN_POINT;
 
 //private:
     /**
@@ -90,8 +94,20 @@ MCAPI static class Vec3 const INVALID_SPAWN_POINT;
     MCAPI void _tickGroupInPlay();
 
 private:
-MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
-MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
-MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
+    /**
+     * @symbol ?NUM_GROUPS_ON_EASY@Raid@@0EB
+     * @hash   -371875372
+     */
+    MCAPI static unsigned char const NUM_GROUPS_ON_EASY;
+    /**
+     * @symbol ?NUM_GROUPS_ON_HARD@Raid@@0EB
+     * @hash   54402783
+     */
+    MCAPI static unsigned char const NUM_GROUPS_ON_HARD;
+    /**
+     * @symbol ?NUM_GROUPS_ON_NORMAL@Raid@@0EB
+     * @hash   -139744998
+     */
+    MCAPI static unsigned char const NUM_GROUPS_ON_NORMAL;
 
 };

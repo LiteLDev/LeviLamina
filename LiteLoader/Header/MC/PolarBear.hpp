@@ -188,6 +188,10 @@ public:
 //private:
 
 private:
-MCAPI static float const STAND_ANIMATION_TICKS;
+    /**
+     * @symbol ?STAND_ANIMATION_TICKS@PolarBear@@0MB
+     * @hash   -532828369
+     */
+    MCAPI static float const STAND_ANIMATION_TICKS;
 
 };

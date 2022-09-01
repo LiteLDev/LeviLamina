@@ -28,6 +28,7 @@ public:
     SurfaceMaterialAdjustmentEvaluated(struct SurfaceMaterialAdjustmentEvaluated const &) = delete;
     SurfaceMaterialAdjustmentEvaluated() = delete;
 #endif
+
 public:
     /**
      * @symbol ?empty@SurfaceMaterialAdjustmentEvaluated@@QEBA_NXZ

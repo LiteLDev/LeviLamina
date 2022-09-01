@@ -29,6 +29,7 @@ public:
     OnTargetAcquiredDefinition(struct OnTargetAcquiredDefinition const &) = delete;
     OnTargetAcquiredDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnTargetAcquiredDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnTargetAcquiredDefinition@@@JsonUtil@@@std@@@Z

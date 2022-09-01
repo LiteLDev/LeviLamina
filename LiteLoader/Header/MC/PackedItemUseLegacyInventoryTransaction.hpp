@@ -28,6 +28,7 @@ public:
     PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction const &) = delete;
     PackedItemUseLegacyInventoryTransaction() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction@@QEAA@$$QEAU0@@Z

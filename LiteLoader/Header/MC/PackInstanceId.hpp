@@ -26,6 +26,7 @@ public:
     PackInstanceId(struct PackInstanceId const &) = delete;
     PackInstanceId() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PackInstanceId@@QEAA@AEBUPackIdVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

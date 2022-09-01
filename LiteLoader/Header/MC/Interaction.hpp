@@ -26,6 +26,7 @@ struct Interaction {
 public:
     struct Interaction& operator=(struct Interaction const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0Interaction@@QEAA@XZ

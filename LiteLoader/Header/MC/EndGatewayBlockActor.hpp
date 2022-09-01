@@ -148,9 +148,21 @@ public:
      * @hash   -1962360822
      */
     MCAPI void teleportEntity(class Actor &);
-MCAPI static int const COOLDOWN_TIME;
-MCAPI static int const EVENT_COOLDOWN;
-MCAPI static int const SPAWN_TIME;
+    /**
+     * @symbol ?COOLDOWN_TIME@EndGatewayBlockActor@@2HB
+     * @hash   1858696543
+     */
+    MCAPI static int const COOLDOWN_TIME;
+    /**
+     * @symbol ?EVENT_COOLDOWN@EndGatewayBlockActor@@2HB
+     * @hash   -553032475
+     */
+    MCAPI static int const EVENT_COOLDOWN;
+    /**
+     * @symbol ?SPAWN_TIME@EndGatewayBlockActor@@2HB
+     * @hash   -1022031299
+     */
+    MCAPI static int const SPAWN_TIME;
     /**
      * @symbol ?findExitPortal@EndGatewayBlockActor@@SA?AVBlockPos@@AEAVWorldGenerator@@AEBV2@@Z
      * @hash   -1193270047

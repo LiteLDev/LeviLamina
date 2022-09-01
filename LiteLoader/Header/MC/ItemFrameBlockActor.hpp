@@ -169,7 +169,11 @@ public:
      * @hash   1234768369
      */
     MCAPI void updateNameTag();
-MCAPI static float const ROTATION_DEGREES;
+    /**
+     * @symbol ?ROTATION_DEGREES@ItemFrameBlockActor@@2MB
+     * @hash   95529579
+     */
+    MCAPI static float const ROTATION_DEGREES;
 
 //private:
     /**

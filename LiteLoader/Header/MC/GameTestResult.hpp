@@ -26,6 +26,7 @@ struct GameTestResult {
 public:
     GameTestResult() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0GameTestResult@@QEAA@AEBU0@@Z

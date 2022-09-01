@@ -26,6 +26,7 @@ public:
     PlayerFormResponseEvent(struct PlayerFormResponseEvent const &) = delete;
     PlayerFormResponseEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1PlayerFormResponseEvent@@QEAA@XZ

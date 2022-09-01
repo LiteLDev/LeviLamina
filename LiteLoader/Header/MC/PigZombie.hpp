@@ -207,6 +207,10 @@ public:
 //private:
 
 private:
-MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
+    /**
+     * @symbol ?SPEED_MODIFIER_ATTACK_UUID@PigZombie@@0VUUID@mce@@B
+     * @hash   -598226872
+     */
+    MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
 
 };

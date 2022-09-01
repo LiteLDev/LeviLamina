@@ -28,6 +28,7 @@ public:
     ActiveDirectoryScreenCapabilities(struct ActiveDirectoryScreenCapabilities const &) = delete;
     ActiveDirectoryScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

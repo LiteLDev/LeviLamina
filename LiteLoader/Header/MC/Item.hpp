@@ -1113,8 +1113,16 @@ public:
      * @hash   109448376
      */
     MCAPI bool useOn(class ItemStack &, class Actor &, int, int, int, unsigned char, class Vec3 const &) const;
-MCAPI static std::string const ICON_DESCRIPTION_PREFIX;
-MCAPI static std::string const TAG_DAMAGE;
+    /**
+     * @symbol ?ICON_DESCRIPTION_PREFIX@Item@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   899721701
+     */
+    MCAPI static std::string const ICON_DESCRIPTION_PREFIX;
+    /**
+     * @symbol ?TAG_DAMAGE@Item@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1750386453
+     */
+    MCAPI static std::string const TAG_DAMAGE;
     /**
      * @symbol ?addCreativeItem@Item@@SAXAEBVBlock@@@Z
      * @hash   1989556398
@@ -1175,12 +1183,36 @@ MCAPI static std::string const TAG_DAMAGE;
      * @hash   1364392058
      */
     MCAPI static bool isSameTypeAndItem(class ItemStackBase const &, class ItemStackBase const &);
-MCAPI static class CreativeGroupInfo * mActiveCreativeGroupInfo;
-MCAPI static class CreativeItemGroupCategory * mActiveCreativeItemCategory;
-MCAPI static class CreativeItemRegistry * mActiveCreativeItemRegistry;
-MCAPI static bool const mGenerateDenyParticleEffect;
-MCAPI static struct TextureUVCoordinateSet mInvalidTextureUVCoordinateSet;
-MCAPI static class std::weak_ptr<class AtlasItemManager> mItemTextureItems;
+    /**
+     * @symbol ?mActiveCreativeGroupInfo@Item@@2PEAVCreativeGroupInfo@@EA
+     * @hash   -1578269109
+     */
+    MCAPI static class CreativeGroupInfo * mActiveCreativeGroupInfo;
+    /**
+     * @symbol ?mActiveCreativeItemCategory@Item@@2PEAVCreativeItemGroupCategory@@EA
+     * @hash   1393582867
+     */
+    MCAPI static class CreativeItemGroupCategory * mActiveCreativeItemCategory;
+    /**
+     * @symbol ?mActiveCreativeItemRegistry@Item@@2PEAVCreativeItemRegistry@@EA
+     * @hash   -1891189127
+     */
+    MCAPI static class CreativeItemRegistry * mActiveCreativeItemRegistry;
+    /**
+     * @symbol ?mGenerateDenyParticleEffect@Item@@2_NB
+     * @hash   -1430753435
+     */
+    MCAPI static bool const mGenerateDenyParticleEffect;
+    /**
+     * @symbol ?mInvalidTextureUVCoordinateSet@Item@@2UTextureUVCoordinateSet@@A
+     * @hash   309475539
+     */
+    MCAPI static struct TextureUVCoordinateSet mInvalidTextureUVCoordinateSet;
+    /**
+     * @symbol ?mItemTextureItems@Item@@2V?$weak_ptr@VAtlasItemManager@@@std@@A
+     * @hash   -1986187068
+     */
+    MCAPI static class std::weak_ptr<class AtlasItemManager> mItemTextureItems;
     /**
      * @symbol ?setAtlasItemManager@Item@@SAXV?$shared_ptr@VAtlasItemManager@@@std@@@Z
      * @hash   -292991199
@@ -1214,6 +1246,10 @@ MCAPI static class std::weak_ptr<class AtlasItemManager> mItemTextureItems;
 protected:
 
 private:
-MCAPI static std::unique_ptr<class std::set<short, struct std::less<short>, class std::allocator<short>>> mServerItemsUsedInCreativeItems;
+    /**
+     * @symbol ?mServerItemsUsedInCreativeItems@Item@@0V?$unique_ptr@V?$set@FU?$less@F@std@@V?$allocator@F@2@@std@@U?$default_delete@V?$set@FU?$less@F@std@@V?$allocator@F@2@@std@@@2@@std@@A
+     * @hash   -2059562241
+     */
+    MCAPI static std::unique_ptr<class std::set<short, struct std::less<short>, class std::allocator<short>>> mServerItemsUsedInCreativeItems;
 
 };

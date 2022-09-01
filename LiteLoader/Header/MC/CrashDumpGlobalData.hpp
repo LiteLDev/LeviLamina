@@ -30,6 +30,10 @@ public:
 #endif
 
 public:
-MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    /**
+     * @symbol ?kFormat@CrashDumpGlobalData@@2QBUCrashDumpFormatEntryImpl@@B
+     * @hash   863014387
+     */
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 };

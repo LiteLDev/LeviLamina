@@ -26,6 +26,7 @@ public:
     PerformEnvDeleter(struct PerformEnvDeleter const &) = delete;
     PerformEnvDeleter() = delete;
 #endif
+
 public:
     /**
      * @symbol ??RPerformEnvDeleter@@QEAAXPEAUHC_PERFORM_ENV@@@Z

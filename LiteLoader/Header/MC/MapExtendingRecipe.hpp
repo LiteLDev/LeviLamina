@@ -77,8 +77,16 @@ public:
      * @hash   861873330
      */
     MCAPI MapExtendingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-MCAPI static class mce::UUID const CartographyTableID;
-MCAPI static class mce::UUID const CraftingTableID;
+    /**
+     * @symbol ?CartographyTableID@MapExtendingRecipe@@2VUUID@mce@@B
+     * @hash   164301195
+     */
+    MCAPI static class mce::UUID const CartographyTableID;
+    /**
+     * @symbol ?CraftingTableID@MapExtendingRecipe@@2VUUID@mce@@B
+     * @hash   -1828456487
+     */
+    MCAPI static class mce::UUID const CraftingTableID;
 
 //private:
     /**

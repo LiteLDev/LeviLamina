@@ -143,19 +143,71 @@ public:
      * @hash   -346747679
      */
     MCAPI WrittenBookItem(std::string const &, int);
-MCAPI static int const MAX_GENERATION;
-MCAPI static int const MAX_PAGES;
-MCAPI static int const MAX_PAGE_LENGTH;
-MCAPI static int const MAX_TITLE_LENGTH;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_AUTHOR;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_GENERATION;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_ID;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_PAGES;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_PAGE_PHOTO_NAME;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_PAGE_TEXT;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_RESOLVED;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_TITLE;
-MCAPI static class gsl::basic_string_span<char const, -1> const TAG_XUID;
+    /**
+     * @symbol ?MAX_GENERATION@WrittenBookItem@@2HB
+     * @hash   -1405933127
+     */
+    MCAPI static int const MAX_GENERATION;
+    /**
+     * @symbol ?MAX_PAGES@WrittenBookItem@@2HB
+     * @hash   1643594307
+     */
+    MCAPI static int const MAX_PAGES;
+    /**
+     * @symbol ?MAX_PAGE_LENGTH@WrittenBookItem@@2HB
+     * @hash   1208390243
+     */
+    MCAPI static int const MAX_PAGE_LENGTH;
+    /**
+     * @symbol ?MAX_TITLE_LENGTH@WrittenBookItem@@2HB
+     * @hash   93607575
+     */
+    MCAPI static int const MAX_TITLE_LENGTH;
+    /**
+     * @symbol ?TAG_AUTHOR@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -1946126831
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_AUTHOR;
+    /**
+     * @symbol ?TAG_GENERATION@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   1523928049
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_GENERATION;
+    /**
+     * @symbol ?TAG_ID@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   54304001
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_ID;
+    /**
+     * @symbol ?TAG_PAGES@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   498017967
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_PAGES;
+    /**
+     * @symbol ?TAG_PAGE_PHOTO_NAME@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   59312815
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_PAGE_PHOTO_NAME;
+    /**
+     * @symbol ?TAG_PAGE_TEXT@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -1128325921
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_PAGE_TEXT;
+    /**
+     * @symbol ?TAG_RESOLVED@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   1416110145
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_RESOLVED;
+    /**
+     * @symbol ?TAG_TITLE@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -1686067457
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_TITLE;
+    /**
+     * @symbol ?TAG_XUID@WrittenBookItem@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -321928063
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const TAG_XUID;
     /**
      * @symbol ?canBeCopied@WrittenBookItem@@SA_NPEBVCompoundTag@@@Z
      * @hash   1991718342

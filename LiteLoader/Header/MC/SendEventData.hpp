@@ -25,6 +25,7 @@ public:
     struct SendEventData& operator=(struct SendEventData const &) = delete;
     SendEventData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SendEventData@@QEAA@AEBU0@@Z

@@ -268,9 +268,25 @@ public:
      * @hash   739184120
      */
     MCAPI ~MobSpawnRules();
-MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
-MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
-MCAPI static unsigned __int64 const MAX_WORLD_AGE;
-MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
+    /**
+     * @symbol ?LOW_END_MAX_SPAWN_DISTANCE@MobSpawnRules@@2HB
+     * @hash   950452925
+     */
+    MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
+    /**
+     * @symbol ?MAX_DEFAULT_SPAWN_DISTANCE@MobSpawnRules@@2HB
+     * @hash   -416961129
+     */
+    MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;
+    /**
+     * @symbol ?MAX_WORLD_AGE@MobSpawnRules@@2_KB
+     * @hash   1166886268
+     */
+    MCAPI static unsigned __int64 const MAX_WORLD_AGE;
+    /**
+     * @symbol ?MIN_DEFAULT_SPAWN_DISTANCE@MobSpawnRules@@2HB
+     * @hash   21262135
+     */
+    MCAPI static int const MIN_DEFAULT_SPAWN_DISTANCE;
 
 };

@@ -30,9 +30,25 @@ public:
 #endif
 
 public:
-MCAPI static class FlameOdds const EASY;
-MCAPI static class FlameOdds const HARD;
-MCAPI static class FlameOdds const INSTANT;
-MCAPI static class FlameOdds const MEDIUM;
+    /**
+     * @symbol ?EASY@FlameOdds@@2V1@B
+     * @hash   -1280818287
+     */
+    MCAPI static class FlameOdds const EASY;
+    /**
+     * @symbol ?HARD@FlameOdds@@2V1@B
+     * @hash   -1251707221
+     */
+    MCAPI static class FlameOdds const HARD;
+    /**
+     * @symbol ?INSTANT@FlameOdds@@2V1@B
+     * @hash   -926526355
+     */
+    MCAPI static class FlameOdds const INSTANT;
+    /**
+     * @symbol ?MEDIUM@FlameOdds@@2V1@B
+     * @hash   -2125458053
+     */
+    MCAPI static class FlameOdds const MEDIUM;
 
 };

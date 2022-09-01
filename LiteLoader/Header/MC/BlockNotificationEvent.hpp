@@ -26,6 +26,7 @@ public:
     BlockNotificationEvent(struct BlockNotificationEvent const &) = delete;
     BlockNotificationEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1BlockNotificationEvent@@QEAA@XZ

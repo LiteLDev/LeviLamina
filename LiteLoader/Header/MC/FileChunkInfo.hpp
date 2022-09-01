@@ -28,6 +28,7 @@ public:
     FileChunkInfo(struct FileChunkInfo const &) = delete;
     FileChunkInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0FileChunkInfo@@QEAA@H_K0@Z

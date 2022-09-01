@@ -26,6 +26,7 @@ public:
     MobSpawnHerdInfo(struct MobSpawnHerdInfo const &) = delete;
     MobSpawnHerdInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MobSpawnHerdInfo@@QEAA@IIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@I0I@Z

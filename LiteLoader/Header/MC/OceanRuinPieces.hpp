@@ -55,20 +55,80 @@ public:
     MCAPI static std::vector<class BlockPos> _allPositions(class Random &, int, int, int);
 
 private:
-MCAPI static class gsl::basic_string_span<char const, -1> BIG_RUIN_LOOT;
-MCAPI static class gsl::basic_string_span<char const, -1> RUIN_LOOT;
-MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN1_BRICK;
-MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN8_BRICK;
-MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_2_BRICK;
-MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_3_BRICK;
-MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsBrick[];
-MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsCracked[];
-MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsMossy[];
-MCAPI static class gsl::basic_string_span<char const, -1> bigWarmRuins[];
-MCAPI static class LegacyStructureSettings mSettings;
-MCAPI static class gsl::basic_string_span<char const, -1> ruinsBrick[];
-MCAPI static class gsl::basic_string_span<char const, -1> ruinsCracked[];
-MCAPI static class gsl::basic_string_span<char const, -1> ruinsMossy[];
-MCAPI static class gsl::basic_string_span<char const, -1> warmRuins[];
+    /**
+     * @symbol ?BIG_RUIN_LOOT@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   273855936
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> BIG_RUIN_LOOT;
+    /**
+     * @symbol ?RUIN_LOOT@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   -301622513
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> RUIN_LOOT;
+    /**
+     * @symbol ?STRUCTURE_BIG_RUIN1_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   1067068944
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN1_BRICK;
+    /**
+     * @symbol ?STRUCTURE_BIG_RUIN8_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   1869885351
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN8_BRICK;
+    /**
+     * @symbol ?STRUCTURE_RUIN_2_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   720688617
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_2_BRICK;
+    /**
+     * @symbol ?STRUCTURE_RUIN_3_BRICK@OceanRuinPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   835356906
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_3_BRICK;
+    /**
+     * @symbol ?bigRuinsBrick@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   -405660249
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsBrick[];
+    /**
+     * @symbol ?bigRuinsCracked@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   1942473487
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsCracked[];
+    /**
+     * @symbol ?bigRuinsMossy@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   1155197789
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsMossy[];
+    /**
+     * @symbol ?bigWarmRuins@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   -171580441
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> bigWarmRuins[];
+    /**
+     * @symbol ?mSettings@OceanRuinPieces@@0VLegacyStructureSettings@@A
+     * @hash   1251221819
+     */
+    MCAPI static class LegacyStructureSettings mSettings;
+    /**
+     * @symbol ?ruinsBrick@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   104306119
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> ruinsBrick[];
+    /**
+     * @symbol ?ruinsCracked@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   2039418463
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> ruinsCracked[];
+    /**
+     * @symbol ?ruinsMossy@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   1664256973
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> ruinsMossy[];
+    /**
+     * @symbol ?warmRuins@OceanRuinPieces@@0PAV?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   -154250009
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> warmRuins[];
 
 };

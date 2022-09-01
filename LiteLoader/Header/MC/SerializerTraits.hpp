@@ -27,6 +27,7 @@ public:
     struct SerializerTraits& operator=(struct SerializerTraits const &) = delete;
     SerializerTraits() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SerializerTraits@@QEAA@AEBU0@@Z

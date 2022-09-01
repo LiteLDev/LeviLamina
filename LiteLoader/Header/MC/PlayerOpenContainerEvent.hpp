@@ -26,6 +26,7 @@ public:
     PlayerOpenContainerEvent(struct PlayerOpenContainerEvent const &) = delete;
     PlayerOpenContainerEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1PlayerOpenContainerEvent@@QEAA@XZ

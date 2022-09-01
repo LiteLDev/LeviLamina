@@ -124,6 +124,10 @@ public:
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
 
 private:
-MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
+    /**
+     * @symbol ?gLocalWorkerMappingSingleton@BackgroundWorker@@0PEAV1@EA
+     * @hash   -292230109
+     */
+    MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
 
 };

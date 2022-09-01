@@ -25,6 +25,7 @@ public:
     struct ItemUseEvent& operator=(struct ItemUseEvent const &) = delete;
     ItemUseEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ItemUseEvent@@QEAA@AEBU0@@Z

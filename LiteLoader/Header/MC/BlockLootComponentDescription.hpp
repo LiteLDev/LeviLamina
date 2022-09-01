@@ -26,6 +26,7 @@ public:
     BlockLootComponentDescription(struct BlockLootComponentDescription const &) = delete;
     BlockLootComponentDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -44,7 +45,11 @@ public:
      * @hash   -1535504721
      */
     virtual void initializeComponent(class EntityContext &) const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockLootComponentDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1848229173
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockLootComponentDescription@@SAXXZ
      * @hash   1035857519

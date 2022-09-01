@@ -26,6 +26,7 @@ public:
     DamageCondition(struct DamageCondition const &) = delete;
     DamageCondition() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1DamageCondition@@QEAA@XZ

@@ -26,6 +26,7 @@ public:
     BlockDestructibleByMiningDescription(struct BlockDestructibleByMiningDescription const &) = delete;
     BlockDestructibleByMiningDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -67,7 +68,11 @@ public:
      * @hash   1294015007
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockDestructibleByMiningDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1266780361
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDestructibleByMiningDescription@@SAXXZ
      * @hash   -343261917

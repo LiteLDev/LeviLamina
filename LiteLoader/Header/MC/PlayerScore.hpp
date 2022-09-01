@@ -26,6 +26,7 @@ public:
     PlayerScore(struct PlayerScore const &) = delete;
     PlayerScore() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PlayerScore@@QEAA@AEBUScoreboardId@@H@Z

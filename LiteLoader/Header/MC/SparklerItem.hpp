@@ -149,7 +149,15 @@ public:
      * @hash   707056109
      */
     MCAPI SparklerItem(std::string const &, int);
-MCAPI static struct SparklerItem::ColorInfo const COLORS[];
-MCAPI static int const MAX_ACTIVE_TICKS;
+    /**
+     * @symbol ?COLORS@SparklerItem@@2QBUColorInfo@1@B
+     * @hash   1907907689
+     */
+    MCAPI static struct SparklerItem::ColorInfo const COLORS[];
+    /**
+     * @symbol ?MAX_ACTIVE_TICKS@SparklerItem@@2HB
+     * @hash   -1343149663
+     */
+    MCAPI static int const MAX_ACTIVE_TICKS;
 
 };

@@ -29,6 +29,7 @@ public:
     ContainerDescription(struct ContainerDescription const &) = delete;
     ContainerDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

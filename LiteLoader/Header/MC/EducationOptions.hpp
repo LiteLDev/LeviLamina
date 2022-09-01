@@ -52,7 +52,11 @@ public:
      * @hash   1457223668
      */
     MCAPI void init(class LevelData const &);
-MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
+    /**
+     * @symbol ?CHEMISTRY_ENABLED@EducationOptions@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   1148272959
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;
     /**
      * @symbol ?isBaseCodeBuilderEnabled@EducationOptions@@SA_NXZ
      * @hash   291768552
@@ -82,6 +86,10 @@ MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLE
     MCAPI static class ServiceReference<class EducationOptions> _getCurrentOptions();
 
 private:
-MCAPI static class EducationOptions DEFAULT_OPTION;
+    /**
+     * @symbol ?DEFAULT_OPTION@EducationOptions@@0V1@A
+     * @hash   797397294
+     */
+    MCAPI static class EducationOptions DEFAULT_OPTION;
 
 };

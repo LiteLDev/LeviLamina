@@ -26,6 +26,7 @@ public:
     MolangTempVariable(struct MolangTempVariable const &) = delete;
     MolangTempVariable() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MolangTempVariable@@QEAA@AEBVHashedString@@@Z

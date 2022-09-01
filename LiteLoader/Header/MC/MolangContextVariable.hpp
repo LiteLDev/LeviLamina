@@ -26,6 +26,7 @@ public:
     MolangContextVariable(struct MolangContextVariable const &) = delete;
     MolangContextVariable() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MolangContextVariable@@QEAA@AEBVHashedString@@@Z

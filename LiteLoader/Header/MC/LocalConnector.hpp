@@ -156,6 +156,10 @@ public:
 //private:
 
 private:
-MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
+    /**
+     * @symbol ?sLocalConnectivitySystem@LocalConnector@@0VLocalConnectivitySystem@@A
+     * @hash   1598839974
+     */
+    MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
 
 };

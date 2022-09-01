@@ -28,7 +28,12 @@ public:
     BlockUnitCubeComponent(struct BlockUnitCubeComponent const &) = delete;
     BlockUnitCubeComponent() = delete;
 #endif
+
 public:
-MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
+    /**
+     * @symbol ?mBlockSchematic@BlockUnitCubeComponent@@2V?$shared_ptr@UBlockSchematic@ClientBlockPipeline@@@std@@A
+     * @hash   -559209710
+     */
+    MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
 
 };

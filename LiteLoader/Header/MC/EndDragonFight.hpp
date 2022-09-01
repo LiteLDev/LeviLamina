@@ -161,14 +161,50 @@ public:
     MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
 
 private:
-MCAPI static int const ARENA_SIZE_CHUNKS;
-MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
-MCAPI static int const GATEWAY_CHUNK_RADIUS;
-MCAPI static int const GATEWAY_COUNT;
-MCAPI static int const GATEWAY_DISTANCE;
-MCAPI static int const GATEWAY_HEIGHT;
-MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
-MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
-MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
+    /**
+     * @symbol ?ARENA_SIZE_CHUNKS@EndDragonFight@@0HB
+     * @hash   1402981754
+     */
+    MCAPI static int const ARENA_SIZE_CHUNKS;
+    /**
+     * @symbol ?DEFAULT_PORTAL_LOCATION@EndDragonFight@@0VBlockPos@@B
+     * @hash   -1272748395
+     */
+    MCAPI static class BlockPos const DEFAULT_PORTAL_LOCATION;
+    /**
+     * @symbol ?GATEWAY_CHUNK_RADIUS@EndDragonFight@@0HB
+     * @hash   -1707548207
+     */
+    MCAPI static int const GATEWAY_CHUNK_RADIUS;
+    /**
+     * @symbol ?GATEWAY_COUNT@EndDragonFight@@0HB
+     * @hash   -516908214
+     */
+    MCAPI static int const GATEWAY_COUNT;
+    /**
+     * @symbol ?GATEWAY_DISTANCE@EndDragonFight@@0HB
+     * @hash   1023153194
+     */
+    MCAPI static int const GATEWAY_DISTANCE;
+    /**
+     * @symbol ?GATEWAY_HEIGHT@EndDragonFight@@0HB
+     * @hash   -1434456992
+     */
+    MCAPI static int const GATEWAY_HEIGHT;
+    /**
+     * @symbol ?TIME_BETWEEN_CRYSTAL_SCANS@EndDragonFight@@0HB
+     * @hash   -966546938
+     */
+    MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
+    /**
+     * @symbol ?TIME_BETWEEN_PLAYER_SCANS@EndDragonFight@@0HB
+     * @hash   -1631793369
+     */
+    MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
+    /**
+     * @symbol ?TIME_BETWEEN_PORTAL_SCANS@EndDragonFight@@0HB
+     * @hash   1984975702
+     */
+    MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
 
 };

@@ -28,6 +28,7 @@ public:
     SurfaceMaterialAdjustmentAttributes(struct SurfaceMaterialAdjustmentAttributes const &) = delete;
     SurfaceMaterialAdjustmentAttributes() = delete;
 #endif
+
 public:
     /**
      * @symbol ?evaluateAdjustments@SurfaceMaterialAdjustmentAttributes@@QEBA?AUSurfaceMaterialAdjustmentEvaluated@@AEAVRenderParams@@V?$not_null@PEAVPerlinSimplexNoise@@@gsl@@AEBVBlockPos@@HH@Z

@@ -77,8 +77,20 @@ public:
     MCAPI static bool _isMovementUnobstructed(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &);
 
 private:
-MCAPI static class DefaultSculkBehavior const sDefaultSculkBehavior;
-MCAPI static class SculkBlockBehavior const sSculkBlockBehavior;
-MCAPI static class SculkVeinBlockBehavior const sSculkVeinBlockBehavior;
+    /**
+     * @symbol ?sDefaultSculkBehavior@SculkChargeCursor@@0VDefaultSculkBehavior@@B
+     * @hash   234415873
+     */
+    MCAPI static class DefaultSculkBehavior const sDefaultSculkBehavior;
+    /**
+     * @symbol ?sSculkBlockBehavior@SculkChargeCursor@@0VSculkBlockBehavior@@B
+     * @hash   -1431042679
+     */
+    MCAPI static class SculkBlockBehavior const sSculkBlockBehavior;
+    /**
+     * @symbol ?sSculkVeinBlockBehavior@SculkChargeCursor@@0VSculkVeinBlockBehavior@@B
+     * @hash   -1606080623
+     */
+    MCAPI static class SculkVeinBlockBehavior const sSculkVeinBlockBehavior;
 
 };

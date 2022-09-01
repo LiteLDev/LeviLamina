@@ -26,6 +26,7 @@ public:
     DeserializedChunkLoadedRequest(struct DeserializedChunkLoadedRequest const &) = delete;
     DeserializedChunkLoadedRequest() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1DeserializedChunkLoadedRequest@@QEAA@XZ

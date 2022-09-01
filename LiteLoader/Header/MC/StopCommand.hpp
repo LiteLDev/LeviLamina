@@ -51,6 +51,10 @@ public:
 //private:
 
 private:
-MCAPI static class DedicatedServer * mServer;
+    /**
+     * @symbol ?mServer@StopCommand@@0PEAVDedicatedServer@@EA
+     * @hash   434984685
+     */
+    MCAPI static class DedicatedServer * mServer;
 
 };

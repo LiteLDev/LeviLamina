@@ -26,6 +26,7 @@ public:
     SendPacketsComponent(struct SendPacketsComponent const &) = delete;
     SendPacketsComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4SendPacketsComponent@@QEAAAEAU0@$$QEAU0@@Z

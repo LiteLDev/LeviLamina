@@ -137,6 +137,10 @@ public:
      * @hash   1428887774
      */
     MCAPI IceBombItem(std::string const &, int);
-MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
+    /**
+     * @symbol ?ICE_BOMB_COOLDOWN@IceBombItem@@2VHashedString@@B
+     * @hash   1216903755
+     */
+    MCAPI static class HashedString const ICE_BOMB_COOLDOWN;
 
 };

@@ -26,6 +26,7 @@ public:
     WorldTemplateManagerProxyCallbacks(struct WorldTemplateManagerProxyCallbacks const &) = delete;
     WorldTemplateManagerProxyCallbacks() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1WorldTemplateManagerProxyCallbacks@@QEAA@XZ

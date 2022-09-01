@@ -80,7 +80,11 @@ public:
      * @hash   -1500605280
      */
     MCAPI bool operator==(class ContentIdentity const &) const;
-MCAPI static class ContentIdentity EMPTY;
+    /**
+     * @symbol ?EMPTY@ContentIdentity@@2V1@A
+     * @hash   1142775601
+     */
+    MCAPI static class ContentIdentity EMPTY;
     /**
      * @symbol ?fromString@ContentIdentity@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1225028761

@@ -207,6 +207,10 @@ public:
 //private:
 
 private:
-MCAPI static int const EAT_ANIMATION_TICKS;
+    /**
+     * @symbol ?EAT_ANIMATION_TICKS@Sheep@@0HB
+     * @hash   622387409
+     */
+    MCAPI static int const EAT_ANIMATION_TICKS;
 
 };

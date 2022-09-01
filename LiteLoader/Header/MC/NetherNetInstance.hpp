@@ -29,6 +29,7 @@ public:
     NetherNetInstance(struct NetherNetInstance const &) = delete;
     NetherNetInstance() = delete;
 #endif
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETINSTANCE
     /**

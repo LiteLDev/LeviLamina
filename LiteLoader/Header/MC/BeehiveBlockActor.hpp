@@ -125,9 +125,21 @@ public:
      * @hash   999314947
      */
     MCAPI bool tryAdmit(class Actor &);
-MCAPI static unsigned int const MAX_OCCUPANCY;
-MCAPI static enum BlockActorType const TypeId;
-MCAPI static std::string const TypeString;
+    /**
+     * @symbol ?MAX_OCCUPANCY@BeehiveBlockActor@@2IB
+     * @hash   1586849245
+     */
+    MCAPI static unsigned int const MAX_OCCUPANCY;
+    /**
+     * @symbol ?TypeId@BeehiveBlockActor@@2W4BlockActorType@@B
+     * @hash   -677048141
+     */
+    MCAPI static enum BlockActorType const TypeId;
+    /**
+     * @symbol ?TypeString@BeehiveBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   934248009
+     */
+    MCAPI static std::string const TypeString;
 
 //private:
     /**

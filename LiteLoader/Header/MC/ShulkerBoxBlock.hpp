@@ -303,6 +303,10 @@ public:
     MCAPI void spawnBoxInstance(class BlockSource &, class Level &, class BlockPos const &, class Block const &, std::string const &, std::unique_ptr<class CompoundTag>, int) const;
 
 protected:
-MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION@ShulkerBoxBlock@@1VBaseGameVersion@@B
+     * @hash   -1870120190
+     */
+    MCAPI static class BaseGameVersion const SHULKER_BOX_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

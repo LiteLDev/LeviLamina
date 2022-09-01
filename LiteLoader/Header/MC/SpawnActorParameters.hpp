@@ -26,6 +26,7 @@ struct SpawnActorParameters {
 public:
     struct SpawnActorParameters& operator=(struct SpawnActorParameters const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SpawnActorParameters@@QEAA@XZ

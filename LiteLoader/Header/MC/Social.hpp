@@ -76,6 +76,10 @@ public:
 };
 
 #undef AFTER_EXTRA
-MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
+    /**
+     * @symbol ?INVALID_CONNECTION@Social@@3VGameConnectionInfo@1@B
+     * @hash   -1486199549
+     */
+    MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
 
 };

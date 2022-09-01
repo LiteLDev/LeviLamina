@@ -124,9 +124,21 @@ public:
      * @hash   1970595377
      */
     MCAPI ~BaseGameVersion();
-MCAPI static class BaseGameVersion const ANY;
-MCAPI static class BaseGameVersion const EMPTY;
-MCAPI static class BaseGameVersion const INCOMPATIBLE;
+    /**
+     * @symbol ?ANY@BaseGameVersion@@2V1@B
+     * @hash   422027781
+     */
+    MCAPI static class BaseGameVersion const ANY;
+    /**
+     * @symbol ?EMPTY@BaseGameVersion@@2V1@B
+     * @hash   1364721671
+     */
+    MCAPI static class BaseGameVersion const EMPTY;
+    /**
+     * @symbol ?INCOMPATIBLE@BaseGameVersion@@2V1@B
+     * @hash   -2092869571
+     */
+    MCAPI static class BaseGameVersion const INCOMPATIBLE;
     /**
      * @symbol ?fromString@BaseGameVersion@@SA?AW4MatchType@SemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@@Z
      * @hash   2114269382

@@ -66,6 +66,10 @@ public:
 //private:
 
 private:
-MCAPI static int const ITEMS_SIZE;
+    /**
+     * @symbol ?ITEMS_SIZE@EnderChestBlockActor@@0HB
+     * @hash   331169787
+     */
+    MCAPI static int const ITEMS_SIZE;
 
 };

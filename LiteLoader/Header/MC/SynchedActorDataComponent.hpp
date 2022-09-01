@@ -26,6 +26,7 @@ public:
     SynchedActorDataComponent(struct SynchedActorDataComponent const &) = delete;
     SynchedActorDataComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1SynchedActorDataComponent@@QEAA@XZ

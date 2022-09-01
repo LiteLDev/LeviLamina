@@ -282,11 +282,31 @@ public:
      * @hash   -446022934
      */
     MCAPI BannerBlock(std::string const &, int, bool);
-MCAPI static class AABB EAST_AABB;
-MCAPI static class AABB NORTH_AABB;
-MCAPI static class AABB SOUTH_AABB;
-MCAPI static class AABB STANDING_AABB;
-MCAPI static class AABB WEST_AABB;
+    /**
+     * @symbol ?EAST_AABB@BannerBlock@@2VAABB@@A
+     * @hash   -337657821
+     */
+    MCAPI static class AABB EAST_AABB;
+    /**
+     * @symbol ?NORTH_AABB@BannerBlock@@2VAABB@@A
+     * @hash   -1720312575
+     */
+    MCAPI static class AABB NORTH_AABB;
+    /**
+     * @symbol ?SOUTH_AABB@BannerBlock@@2VAABB@@A
+     * @hash   -468718711
+     */
+    MCAPI static class AABB SOUTH_AABB;
+    /**
+     * @symbol ?STANDING_AABB@BannerBlock@@2VAABB@@A
+     * @hash   866859005
+     */
+    MCAPI static class AABB STANDING_AABB;
+    /**
+     * @symbol ?WEST_AABB@BannerBlock@@2VAABB@@A
+     * @hash   -909550505
+     */
+    MCAPI static class AABB WEST_AABB;
 
 //private:
     /**

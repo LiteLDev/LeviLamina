@@ -26,6 +26,7 @@ public:
     CommandName(struct CommandName const &) = delete;
     CommandName() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1CommandName@@QEAA@XZ

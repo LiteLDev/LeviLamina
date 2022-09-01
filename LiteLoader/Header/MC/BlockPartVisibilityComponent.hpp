@@ -26,6 +26,7 @@ public:
     BlockPartVisibilityComponent(struct BlockPartVisibilityComponent const &) = delete;
     BlockPartVisibilityComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4BlockPartVisibilityComponent@@QEAAAEAU0@$$QEAU0@@Z

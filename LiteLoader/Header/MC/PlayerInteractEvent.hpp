@@ -25,6 +25,7 @@ public:
     struct PlayerInteractEvent& operator=(struct PlayerInteractEvent const &) = delete;
     PlayerInteractEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PlayerInteractEvent@@QEAA@AEBU0@@Z

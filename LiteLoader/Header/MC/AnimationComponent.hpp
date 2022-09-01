@@ -144,8 +144,20 @@ public:
 //private:
 
 private:
-MCAPI static struct std::atomic<__int64> mClientFrameIndex;
-MCAPI static struct std::atomic<__int64> mReloadTimeStampClient;
-MCAPI static struct std::atomic<__int64> mServerFrameIndex;
+    /**
+     * @symbol ?mClientFrameIndex@AnimationComponent@@0U?$atomic@_J@std@@A
+     * @hash   -1083635075
+     */
+    MCAPI static struct std::atomic<__int64> mClientFrameIndex;
+    /**
+     * @symbol ?mReloadTimeStampClient@AnimationComponent@@0U?$atomic@_J@std@@A
+     * @hash   -1758126861
+     */
+    MCAPI static struct std::atomic<__int64> mReloadTimeStampClient;
+    /**
+     * @symbol ?mServerFrameIndex@AnimationComponent@@0U?$atomic@_J@std@@A
+     * @hash   -166255875
+     */
+    MCAPI static struct std::atomic<__int64> mServerFrameIndex;
 
 };

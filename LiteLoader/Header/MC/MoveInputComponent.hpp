@@ -26,6 +26,7 @@ public:
     MoveInputComponent(struct MoveInputComponent const &) = delete;
     MoveInputComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4MoveInputComponent@@QEAAAEAU0@$$QEAU0@@Z

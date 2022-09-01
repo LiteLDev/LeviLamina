@@ -44,6 +44,10 @@ public:
 //private:
 
 private:
-MCAPI static std::unique_ptr<class Scheduler> mInstance;
+    /**
+     * @symbol ?mInstance@MinecraftScheduler@@0V?$unique_ptr@VScheduler@@U?$default_delete@VScheduler@@@std@@@std@@A
+     * @hash   784312009
+     */
+    MCAPI static std::unique_ptr<class Scheduler> mInstance;
 
 };

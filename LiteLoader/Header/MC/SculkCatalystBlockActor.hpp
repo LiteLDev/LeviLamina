@@ -82,8 +82,16 @@ public:
      * @hash   -1372718246
      */
     MCAPI class SculkSpreader & getSculkSpreader();
-MCAPI static enum BlockActorType const TypeId;
-MCAPI static std::string const TypeString;
+    /**
+     * @symbol ?TypeId@SculkCatalystBlockActor@@2W4BlockActorType@@B
+     * @hash   -1116539431
+     */
+    MCAPI static enum BlockActorType const TypeId;
+    /**
+     * @symbol ?TypeString@SculkCatalystBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1510058293
+     */
+    MCAPI static std::string const TypeString;
 
 //private:
     /**

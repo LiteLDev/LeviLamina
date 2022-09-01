@@ -26,6 +26,7 @@ public:
     MolangMemberAccessor(struct MolangMemberAccessor const &) = delete;
     MolangMemberAccessor() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MolangMemberAccessor@@QEAA@XZ

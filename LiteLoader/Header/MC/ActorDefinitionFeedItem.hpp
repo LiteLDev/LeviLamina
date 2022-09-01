@@ -26,6 +26,7 @@ public:
     ActorDefinitionFeedItem(struct ActorDefinitionFeedItem const &) = delete;
     ActorDefinitionFeedItem() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorDefinitionFeedItem@@QEAA@XZ

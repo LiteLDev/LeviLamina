@@ -28,6 +28,7 @@ public:
     BlockRotationDescription(struct BlockRotationDescription const &) = delete;
     BlockRotationDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   -23000176
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockRotationDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -661217787
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockRotationDescription@@SAXXZ
      * @hash   1393299635

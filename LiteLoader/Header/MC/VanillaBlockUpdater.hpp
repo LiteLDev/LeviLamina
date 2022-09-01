@@ -99,6 +99,10 @@ public:
     MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext &);
 
 private:
-MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
+    /**
+     * @symbol ?mContext@VanillaBlockUpdater@@0V?$unique_ptr@VCompoundTagUpdaterContext@@U?$default_delete@VCompoundTagUpdaterContext@@@std@@@std@@A
+     * @hash   -1401458660
+     */
+    MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
 
 };

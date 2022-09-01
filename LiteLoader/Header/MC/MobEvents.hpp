@@ -90,6 +90,10 @@ public:
      * @hash   2004577479
      */
     MCAPI void writeToLevelStorage();
-MCAPI static std::string const EVENTS_ENABLED_STRING;
+    /**
+     * @symbol ?EVENTS_ENABLED_STRING@MobEvents@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1112614607
+     */
+    MCAPI static std::string const EVENTS_ENABLED_STRING;
 
 };

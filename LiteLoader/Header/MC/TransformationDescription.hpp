@@ -28,6 +28,7 @@ public:
     struct TransformationDescription& operator=(struct TransformationDescription const &) = delete;
     TransformationDescription(struct TransformationDescription const &) = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

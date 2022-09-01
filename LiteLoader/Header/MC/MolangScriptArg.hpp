@@ -26,6 +26,7 @@ struct MolangScriptArg {
 public:
     MolangScriptArg() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MolangScriptArg@@QEAA@H@Z
@@ -67,12 +68,40 @@ public:
      * @hash   1456148231
      */
     MCAPI ~MolangScriptArg();
-MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;
-MCAPI static struct MolangScriptArg const mDefaultReturnValue_emptyStringHash;
-MCAPI static struct MolangScriptArg const mDefaultReturnValue_float0;
-MCAPI static struct MolangScriptArg const mDefaultReturnValue_float1;
-MCAPI static struct MolangScriptArg const mDefaultReturnValue_floatNeg1;
-MCAPI static struct MolangScriptArg const mDefaultReturnValue_molangActorIdEmptyArrayPtr;
-MCAPI static struct MolangScriptArg const mDefaultReturnValue_structUV0;
+    /**
+     * @symbol ?mDefaultReturnValue_break@MolangScriptArg@@2U1@B
+     * @hash   -27813629
+     */
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;
+    /**
+     * @symbol ?mDefaultReturnValue_emptyStringHash@MolangScriptArg@@2U1@B
+     * @hash   -515930947
+     */
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_emptyStringHash;
+    /**
+     * @symbol ?mDefaultReturnValue_float0@MolangScriptArg@@2U1@B
+     * @hash   -267599613
+     */
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float0;
+    /**
+     * @symbol ?mDefaultReturnValue_float1@MolangScriptArg@@2U1@B
+     * @hash   1306043285
+     */
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_float1;
+    /**
+     * @symbol ?mDefaultReturnValue_floatNeg1@MolangScriptArg@@2U1@B
+     * @hash   -1100525409
+     */
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_floatNeg1;
+    /**
+     * @symbol ?mDefaultReturnValue_molangActorIdEmptyArrayPtr@MolangScriptArg@@2U1@B
+     * @hash   -1221601473
+     */
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_molangActorIdEmptyArrayPtr;
+    /**
+     * @symbol ?mDefaultReturnValue_structUV0@MolangScriptArg@@2U1@B
+     * @hash   -191083031
+     */
+    MCAPI static struct MolangScriptArg const mDefaultReturnValue_structUV0;
 
 };

@@ -131,6 +131,10 @@ public:
      * @hash   -1407471505
      */
     MCAPI EnderpearlItem(std::string const &, int);
-MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;
+    /**
+     * @symbol ?ENDER_PEARL_COOLDOWN@EnderpearlItem@@2VHashedString@@B
+     * @hash   -986154957
+     */
+    MCAPI static class HashedString const ENDER_PEARL_COOLDOWN;
 
 };

@@ -32,15 +32,51 @@ namespace DebugUtils {
      * @hash   1553025641
      */
     MCAPI void SET_THREAD_NAME(std::string const &);
-MCAPI extern class std::mutex debugUtilMutex;
-MCAPI extern bool gAssertTelemetryRegistered;
-MCAPI extern bool gBreakpadSetupFailed;
-MCAPI extern std::vector<class std::weak_ptr<class std::function<void (struct AssertHandlerContext const &)>>> gDebugAssertCallbacks;
-MCAPI extern class std::function<void (std::string const &, std::string const &)> gFireAssertTelemetry;
-MCAPI extern std::string gPublishAssertFullMessage;
-MCAPI extern bool gShouldDebugBreak;
-MCAPI extern bool gShouldPresentDialog;
-MCAPI extern class ServiceOverrider<bool ( *)(struct AssertHandlerContext const &)> gp_assert_handler;
+    /**
+     * @symbol ?debugUtilMutex@DebugUtils@@3Vmutex@std@@A
+     * @hash   -1227550915
+     */
+    MCAPI extern class std::mutex debugUtilMutex;
+    /**
+     * @symbol ?gAssertTelemetryRegistered@DebugUtils@@3_NA
+     * @hash   443993829
+     */
+    MCAPI extern bool gAssertTelemetryRegistered;
+    /**
+     * @symbol ?gBreakpadSetupFailed@DebugUtils@@3_NA
+     * @hash   -711649464
+     */
+    MCAPI extern bool gBreakpadSetupFailed;
+    /**
+     * @symbol ?gDebugAssertCallbacks@DebugUtils@@3V?$vector@V?$weak_ptr@V?$function@$$A6AXAEBUAssertHandlerContext@@@Z@std@@@std@@V?$allocator@V?$weak_ptr@V?$function@$$A6AXAEBUAssertHandlerContext@@@Z@std@@@std@@@2@@std@@A
+     * @hash   -72169548
+     */
+    MCAPI extern std::vector<class std::weak_ptr<class std::function<void (struct AssertHandlerContext const &)>>> gDebugAssertCallbacks;
+    /**
+     * @symbol ?gFireAssertTelemetry@DebugUtils@@3V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z@std@@A
+     * @hash   253002778
+     */
+    MCAPI extern class std::function<void (std::string const &, std::string const &)> gFireAssertTelemetry;
+    /**
+     * @symbol ?gPublishAssertFullMessage@DebugUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
+     * @hash   -1697566573
+     */
+    MCAPI extern std::string gPublishAssertFullMessage;
+    /**
+     * @symbol ?gShouldDebugBreak@DebugUtils@@3_NA
+     * @hash   -1967702249
+     */
+    MCAPI extern bool gShouldDebugBreak;
+    /**
+     * @symbol ?gShouldPresentDialog@DebugUtils@@3_NA
+     * @hash   1424707644
+     */
+    MCAPI extern bool gShouldPresentDialog;
+    /**
+     * @symbol ?gp_assert_handler@DebugUtils@@3V?$ServiceOverrider@P6A_NAEBUAssertHandlerContext@@@Z@@A
+     * @hash   548117619
+     */
+    MCAPI extern class ServiceOverrider<bool ( *)(struct AssertHandlerContext const &)> gp_assert_handler;
     /**
      * @symbol ?isDebuggerAttached@DebugUtils@@YA_NXZ
      * @hash   1721385969

@@ -2074,10 +2074,26 @@ public:
      * @hash   -1321688168
      */
     MCAPI bool use3DBiomeMaps() const;
-MCAPI static float const AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK;
-MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY;
-MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE;
-MCAPI static float const RANDOM_TICKS_PER_TICK_PER_SUBCHUNK;
+    /**
+     * @symbol ?AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK@Level@@2MB
+     * @hash   1005183545
+     */
+    MCAPI static float const AVERAGE_GAME_TICKS_PER_RANDOM_TICK_PER_BLOCK;
+    /**
+     * @symbol ?AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY@Level@@2MB
+     * @hash   -1005533867
+     */
+    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_GAME_DAY;
+    /**
+     * @symbol ?AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE@Level@@2MB
+     * @hash   448357851
+     */
+    MCAPI static float const AVERAGE_RANDOM_TICKS_PER_BLOCK_PER_MINUTE;
+    /**
+     * @symbol ?RANDOM_TICKS_PER_TICK_PER_SUBCHUNK@Level@@2MB
+     * @hash   1391279787
+     */
+    MCAPI static float const RANDOM_TICKS_PER_TICK_PER_SUBCHUNK;
     /**
      * @symbol ?addLevelComponents@Level@@SAXAEAVEntityContext@@AEAVIRandom@@_N@Z
      * @hash   -158456882

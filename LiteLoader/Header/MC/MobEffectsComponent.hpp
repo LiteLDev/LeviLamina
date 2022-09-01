@@ -26,6 +26,7 @@ public:
     MobEffectsComponent(struct MobEffectsComponent const &) = delete;
     MobEffectsComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MobEffectsComponent@@QEAA@XZ

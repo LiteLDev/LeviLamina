@@ -137,7 +137,11 @@ public:
      * @hash   1051062711
      */
     MCAPI ~SemVersion();
-MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;
+    /**
+     * @symbol ?AnyVersionConstructor@SemVersion@@2Uany_version_constructor@1@B
+     * @hash   1057394435
+     */
+    MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;
     /**
      * @symbol ?fromJson@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@W4ParseOption@1@@Z
      * @hash   504310661

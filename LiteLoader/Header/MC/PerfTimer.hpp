@@ -42,13 +42,29 @@ public:
      * @hash   139223192
      */
     MCAPI ~PerfTimer();
-MCAPI static bool mEnabled;
-MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
+    /**
+     * @symbol ?mEnabled@PerfTimer@@2_NA
+     * @hash   560736253
+     */
+    MCAPI static bool mEnabled;
+    /**
+     * @symbol ?test@PerfTimer@@2V?$ThreadLocalObject@VPerfTimer@@V?$allocator@VPerfTimer@@@std@@@Threading@Bedrock@@A
+     * @hash   112139121
+     */
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>> test;
 
 //protected:
 
 protected:
-MCAPI static int const MultiplyDeBruijnBitPosition[];
-MCAPI static class Core::PathBuffer<std::string> mPath;
+    /**
+     * @symbol ?MultiplyDeBruijnBitPosition@PerfTimer@@1QBHB
+     * @hash   898180489
+     */
+    MCAPI static int const MultiplyDeBruijnBitPosition[];
+    /**
+     * @symbol ?mPath@PerfTimer@@1V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@A
+     * @hash   -891520374
+     */
+    MCAPI static class Core::PathBuffer<std::string> mPath;
 
 };

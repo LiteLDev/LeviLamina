@@ -41,10 +41,26 @@ public:
      * @hash   -305957213
      */
     MCAPI ~PhotoStorage();
-MCAPI static std::string const BOOKS_DIR;
-MCAPI static std::string const MANIFEST_NAME;
-MCAPI static std::string const PHOTOITEM_DIR;
-MCAPI static std::string const PHOTO_DIR;
+    /**
+     * @symbol ?BOOKS_DIR@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1409809997
+     */
+    MCAPI static std::string const BOOKS_DIR;
+    /**
+     * @symbol ?MANIFEST_NAME@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2034131783
+     */
+    MCAPI static std::string const MANIFEST_NAME;
+    /**
+     * @symbol ?PHOTOITEM_DIR@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -229003767
+     */
+    MCAPI static std::string const PHOTOITEM_DIR;
+    /**
+     * @symbol ?PHOTO_DIR@PhotoStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1739744419
+     */
+    MCAPI static std::string const PHOTO_DIR;
 
 //private:
     /**

@@ -21,7 +21,8 @@ struct RepairItemEntry {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0RepairItemEntry@@QEAA@XZ
      * @hash   582526862

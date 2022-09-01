@@ -197,8 +197,16 @@ public:
      * @hash   -2085853246
      */
     MCAPI Cat(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-MCAPI static float const SNEAK_SPEED_MOD;
-MCAPI static float const SPRINT_SPEED_MOD;
+    /**
+     * @symbol ?SNEAK_SPEED_MOD@Cat@@2MB
+     * @hash   1425417395
+     */
+    MCAPI static float const SNEAK_SPEED_MOD;
+    /**
+     * @symbol ?SPRINT_SPEED_MOD@Cat@@2MB
+     * @hash   164758369
+     */
+    MCAPI static float const SPRINT_SPEED_MOD;
 
 //private:
     /**

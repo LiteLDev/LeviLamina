@@ -26,6 +26,7 @@ public:
     TradeTier(struct TradeTier const &) = delete;
     TradeTier() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1TradeTier@@QEAA@XZ

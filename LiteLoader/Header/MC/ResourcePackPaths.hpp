@@ -23,16 +23,56 @@ namespace ResourcePackPaths {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern std::string const BEHAVIOR_PACK_PATH;
-MCAPI extern std::string const DEVELOPMENT_BEHAVIOR_PACKS_PATH;
-MCAPI extern std::string const DEVELOPMENT_RESOURCE_PACKS_PATH;
-MCAPI extern std::string const DEVELOPMENT_SKIN_PACKS_PATH;
-MCAPI extern class Core::PathBuffer<std::string> const GLOBAL_RESOURCE_PACKS_FILENAME;
-MCAPI extern class Core::PathBuffer<std::string> const KNOWN_INVALID_PACKS_FILE_NAME;
-MCAPI extern class Core::PathBuffer<std::string> const KNOWN_VALID_PACKS_FILE_NAME;
-MCAPI extern std::string const RESOURCE_PACKS_PATH;
-MCAPI extern std::string const SKIN_PACKS_PATH;
-MCAPI extern std::string const TREATMENT_PACK_PATH;
+    /**
+     * @symbol ?BEHAVIOR_PACK_PATH@ResourcePackPaths@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1273367665
+     */
+    MCAPI extern std::string const BEHAVIOR_PACK_PATH;
+    /**
+     * @symbol ?DEVELOPMENT_BEHAVIOR_PACKS_PATH@ResourcePackPaths@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1615342289
+     */
+    MCAPI extern std::string const DEVELOPMENT_BEHAVIOR_PACKS_PATH;
+    /**
+     * @symbol ?DEVELOPMENT_RESOURCE_PACKS_PATH@ResourcePackPaths@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   32529807
+     */
+    MCAPI extern std::string const DEVELOPMENT_RESOURCE_PACKS_PATH;
+    /**
+     * @symbol ?DEVELOPMENT_SKIN_PACKS_PATH@ResourcePackPaths@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -206445201
+     */
+    MCAPI extern std::string const DEVELOPMENT_SKIN_PACKS_PATH;
+    /**
+     * @symbol ?GLOBAL_RESOURCE_PACKS_FILENAME@ResourcePackPaths@@3V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -910517614
+     */
+    MCAPI extern class Core::PathBuffer<std::string> const GLOBAL_RESOURCE_PACKS_FILENAME;
+    /**
+     * @symbol ?KNOWN_INVALID_PACKS_FILE_NAME@ResourcePackPaths@@3V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   1662774684
+     */
+    MCAPI extern class Core::PathBuffer<std::string> const KNOWN_INVALID_PACKS_FILE_NAME;
+    /**
+     * @symbol ?KNOWN_VALID_PACKS_FILE_NAME@ResourcePackPaths@@3V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -1186356474
+     */
+    MCAPI extern class Core::PathBuffer<std::string> const KNOWN_VALID_PACKS_FILE_NAME;
+    /**
+     * @symbol ?RESOURCE_PACKS_PATH@ResourcePackPaths@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   57319503
+     */
+    MCAPI extern std::string const RESOURCE_PACKS_PATH;
+    /**
+     * @symbol ?SKIN_PACKS_PATH@ResourcePackPaths@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2134931281
+     */
+    MCAPI extern std::string const SKIN_PACKS_PATH;
+    /**
+     * @symbol ?TREATMENT_PACK_PATH@ResourcePackPaths@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1098237937
+     */
+    MCAPI extern std::string const TREATMENT_PACK_PATH;
     /**
      * @symbol ?getCachedBehaviorPacksPath@ResourcePackPaths@@YA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
      * @hash   530055130

@@ -92,7 +92,11 @@ public:
      * @hash   -633857553
      */
     MCAPI void removePortalRecord(class BlockSource &, class BlockPos const &);
-MCAPI static std::string const PORTAL_FILE_ID;
+    /**
+     * @symbol ?PORTAL_FILE_ID@PortalForcer@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1341942083
+     */
+    MCAPI static std::string const PORTAL_FILE_ID;
 
 //private:
     /**

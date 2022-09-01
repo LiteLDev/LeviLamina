@@ -28,6 +28,7 @@ public:
     PauseScreenCapabilities(struct PauseScreenCapabilities const &) = delete;
     PauseScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

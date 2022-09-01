@@ -88,6 +88,10 @@ public:
      * @hash   -1890798184
      */
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
-MCAPI static class mce::UUID const ID;
+    /**
+     * @symbol ?ID@BannerAddPatternRecipe@@2VUUID@mce@@B
+     * @hash   -1898191333
+     */
+    MCAPI static class mce::UUID const ID;
 
 };

@@ -30,10 +30,30 @@ public:
 #endif
 
 public:
-MCAPI static class BurnOdds const EASY;
-MCAPI static class BurnOdds const HARD;
-MCAPI static class BurnOdds const INSTANT;
-MCAPI static class BurnOdds const MEDIUM;
-MCAPI static class BurnOdds const NEVER;
+    /**
+     * @symbol ?EASY@BurnOdds@@2V1@B
+     * @hash   1661375667
+     */
+    MCAPI static class BurnOdds const EASY;
+    /**
+     * @symbol ?HARD@BurnOdds@@2V1@B
+     * @hash   -805935781
+     */
+    MCAPI static class BurnOdds const HARD;
+    /**
+     * @symbol ?INSTANT@BurnOdds@@2V1@B
+     * @hash   -908203475
+     */
+    MCAPI static class BurnOdds const INSTANT;
+    /**
+     * @symbol ?MEDIUM@BurnOdds@@2V1@B
+     * @hash   654598743
+     */
+    MCAPI static class BurnOdds const MEDIUM;
+    /**
+     * @symbol ?NEVER@BurnOdds@@2V1@B
+     * @hash   -1761138671
+     */
+    MCAPI static class BurnOdds const NEVER;
 
 };

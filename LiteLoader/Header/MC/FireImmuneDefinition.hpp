@@ -29,6 +29,7 @@ public:
     FireImmuneDefinition(struct FireImmuneDefinition const &) = delete;
     FireImmuneDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@FireImmuneDefinition@@QEAAXAEAVEntityContext@@@Z

@@ -25,6 +25,7 @@ public:
     struct BreedableType& operator=(struct BreedableType const &) = delete;
     BreedableType() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BreedableType@@QEAA@AEBU0@@Z

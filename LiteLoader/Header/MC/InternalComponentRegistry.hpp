@@ -51,7 +51,11 @@ public:
      * @hash   -958470472
      */
     MCAPI void initializeComponents(class Actor &, class CompoundTag const &, class DataLoadHelper &) const;
-MCAPI static std::string const INTERNAL_COMPONENTS;
+    /**
+     * @symbol ?INTERNAL_COMPONENTS@InternalComponentRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1905590407
+     */
+    MCAPI static std::string const INTERNAL_COMPONENTS;
 
 //protected:
     /**

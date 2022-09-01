@@ -57,11 +57,31 @@ public:
      * @hash   -1093407096
      */
     MCAPI MoveControl();
-MCAPI static float const MIN_DELTA_TO_JUMP;
-MCAPI static float const MIN_DELTA_TO_JUMP_UNDERWATER;
-MCAPI static float const MIN_DELTA_TO_MOVE;
-MCAPI static float const MIN_SPEED;
-MCAPI static float const MIN_SPEED_SQR;
+    /**
+     * @symbol ?MIN_DELTA_TO_JUMP@MoveControl@@2MB
+     * @hash   -1026076103
+     */
+    MCAPI static float const MIN_DELTA_TO_JUMP;
+    /**
+     * @symbol ?MIN_DELTA_TO_JUMP_UNDERWATER@MoveControl@@2MB
+     * @hash   -2053067617
+     */
+    MCAPI static float const MIN_DELTA_TO_JUMP_UNDERWATER;
+    /**
+     * @symbol ?MIN_DELTA_TO_MOVE@MoveControl@@2MB
+     * @hash   1647298107
+     */
+    MCAPI static float const MIN_DELTA_TO_MOVE;
+    /**
+     * @symbol ?MIN_SPEED@MoveControl@@2MB
+     * @hash   1281244133
+     */
+    MCAPI static float const MIN_SPEED;
+    /**
+     * @symbol ?MIN_SPEED_SQR@MoveControl@@2MB
+     * @hash   1618142355
+     */
+    MCAPI static float const MIN_SPEED_SQR;
     /**
      * @symbol ?getDiffVector@MoveControl@@SA?AVVec3@@AEBV2@AEBVMob@@@Z
      * @hash   -912672969

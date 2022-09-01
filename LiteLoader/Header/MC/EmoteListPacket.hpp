@@ -69,6 +69,10 @@ public:
      * @hash   842543803
      */
     MCAPI EmoteListPacket(class ActorRuntimeID);
-MCAPI static int const MAX_EMOTE_PIECE_IDS;
+    /**
+     * @symbol ?MAX_EMOTE_PIECE_IDS@EmoteListPacket@@2HB
+     * @hash   -1725325605
+     */
+    MCAPI static int const MAX_EMOTE_PIECE_IDS;
 
 };

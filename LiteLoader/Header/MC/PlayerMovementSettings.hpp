@@ -28,8 +28,13 @@ public:
     PlayerMovementSettings(struct PlayerMovementSettings const &) = delete;
     PlayerMovementSettings() = delete;
 #endif
+
 public:
-MCAPI static struct PlayerMovementSettings const INVALID;
+    /**
+     * @symbol ?INVALID@PlayerMovementSettings@@2U1@B
+     * @hash   843569257
+     */
+    MCAPI static struct PlayerMovementSettings const INVALID;
     /**
      * @symbol ?getDefault@PlayerMovementSettings@@SA?AU1@XZ
      * @hash   -1412363332

@@ -28,6 +28,7 @@ public:
     EnvironmentRequirement(struct EnvironmentRequirement const &) = delete;
     EnvironmentRequirement() = delete;
 #endif
+
 public:
     /**
      * @symbol ?addBlockDescriptor@EnvironmentRequirement@@QEAAXAEBVBlockDescriptor@@@Z

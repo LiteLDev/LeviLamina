@@ -28,6 +28,7 @@ public:
     struct PushableDescription& operator=(struct PushableDescription const &) = delete;
     PushableDescription(struct PushableDescription const &) = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

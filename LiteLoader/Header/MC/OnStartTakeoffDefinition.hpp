@@ -29,6 +29,7 @@ public:
     OnStartTakeoffDefinition(struct OnStartTakeoffDefinition const &) = delete;
     OnStartTakeoffDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnStartTakeoffDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnStartTakeoffDefinition@@@JsonUtil@@@std@@@Z

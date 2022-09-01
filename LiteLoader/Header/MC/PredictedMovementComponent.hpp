@@ -95,7 +95,15 @@ public:
     MCAPI bool _tryInterpolate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
 
 private:
-MCAPI static unsigned int const LERP_STEP_SIZE;
-MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
+    /**
+     * @symbol ?LERP_STEP_SIZE@PredictedMovementComponent@@0IB
+     * @hash   -1523864635
+     */
+    MCAPI static unsigned int const LERP_STEP_SIZE;
+    /**
+     * @symbol ?mGlobalRuntimePredictionData@PredictedMovementComponent@@0V?$unique_ptr@URuntimePredictionData@PredictedMovementComponent@@U?$default_delete@URuntimePredictionData@PredictedMovementComponent@@@std@@@std@@A
+     * @hash   643460776
+     */
+    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
 
 };

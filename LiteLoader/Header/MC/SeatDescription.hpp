@@ -26,6 +26,7 @@ struct SeatDescription {
 public:
     SeatDescription() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SeatDescription@@QEAA@AEBU0@@Z
@@ -57,6 +58,10 @@ public:
      * @hash   2075380675
      */
     MCAPI ~SeatDescription();
-MCAPI static struct SeatDescription const EMPTY;
+    /**
+     * @symbol ?EMPTY@SeatDescription@@2U1@B
+     * @hash   -2080577241
+     */
+    MCAPI static struct SeatDescription const EMPTY;
 
 };

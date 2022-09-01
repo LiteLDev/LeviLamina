@@ -28,6 +28,7 @@ public:
     LibraryScreenCapabilities(struct LibraryScreenCapabilities const &) = delete;
     LibraryScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

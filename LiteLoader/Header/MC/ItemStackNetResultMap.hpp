@@ -43,6 +43,10 @@ public:
 //private:
 
 private:
-MCAPI static class BidirectionalUnorderedMap<enum ItemStackNetResult, std::string> const mMap;
+    /**
+     * @symbol ?mMap@ItemStackNetResultMap@@0V?$BidirectionalUnorderedMap@W4ItemStackNetResult@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+     * @hash   791836570
+     */
+    MCAPI static class BidirectionalUnorderedMap<enum ItemStackNetResult, std::string> const mMap;
 
 };

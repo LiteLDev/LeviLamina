@@ -244,7 +244,15 @@ public:
 //private:
 
 private:
-MCAPI static int const mRotatedX[];
-MCAPI static int const mRotatedZ[];
+    /**
+     * @symbol ?mRotatedX@RotatedPillarBlock@@0QBHB
+     * @hash   -1950623056
+     */
+    MCAPI static int const mRotatedX[];
+    /**
+     * @symbol ?mRotatedZ@RotatedPillarBlock@@0QBHB
+     * @hash   1238162314
+     */
+    MCAPI static int const mRotatedZ[];
 
 };

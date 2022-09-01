@@ -162,6 +162,10 @@ public:
      * @hash   917830886
      */
     MCAPI enum HorseArmorItem::Tier getTier() const;
-MCAPI static int const mHealthPerTier[];
+    /**
+     * @symbol ?mHealthPerTier@HorseArmorItem@@2QBHB
+     * @hash   -2123272282
+     */
+    MCAPI static int const mHealthPerTier[];
 
 };

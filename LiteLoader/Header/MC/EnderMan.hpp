@@ -237,9 +237,21 @@ public:
      * @hash   -758821594
      */
     MCAPI void setCarryingBlock(class Block const &);
-MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
-MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
-MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
+    /**
+     * @symbol ?SPEED_MODIFIER_ATTACKING@EnderMan@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   -574635860
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
+    /**
+     * @symbol ?SPEED_MODIFIER_ATTACKING_UUID@EnderMan@@2VUUID@mce@@B
+     * @hash   1397129585
+     */
+    MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
+    /**
+     * @symbol ?mMayTake@EnderMan@@2V?$set@PEBVBlock@@U?$less@PEBVBlock@@@std@@V?$allocator@PEBVBlock@@@3@@std@@A
+     * @hash   -1100632558
+     */
+    MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
     /**
      * @symbol ?shutdown@EnderMan@@SAXXZ
      * @hash   -1737200829
@@ -249,6 +261,10 @@ MCAPI static class std::set<class Block const *, struct std::less<class Block co
 //private:
 
 private:
-MCAPI static bool mMayTakeIsSetup;
+    /**
+     * @symbol ?mMayTakeIsSetup@EnderMan@@0_NA
+     * @hash   2091620758
+     */
+    MCAPI static bool mMayTakeIsSetup;
 
 };

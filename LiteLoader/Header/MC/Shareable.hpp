@@ -28,6 +28,7 @@ public:
     Shareable(struct Shareable const &) = delete;
     Shareable() = delete;
 #endif
+
 public:
     /**
      * @symbol ?setCraftInto@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

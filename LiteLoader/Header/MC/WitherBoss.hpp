@@ -372,7 +372,11 @@ public:
      * @hash   1847558126
      */
     MCAPI bool wantsToMove();
-MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
+    /**
+     * @symbol ?MAX_HEALTH_CAP_UUID@WitherBoss@@2VUUID@mce@@B
+     * @hash   -690473935
+     */
+    MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
     /**
      * @symbol ?canDestroy@WitherBoss@@SA_NAEBVBlock@@W4WitherAttackType@1@@Z
      * @hash   1790099095
@@ -402,6 +406,10 @@ MCAPI static class mce::UUID const MAX_HEALTH_CAP_UUID;
     MCAPI bool canShoot();
 
 private:
-MCAPI static int const TIME_BEFORE_MOVING;
+    /**
+     * @symbol ?TIME_BEFORE_MOVING@WitherBoss@@0HB
+     * @hash   682876332
+     */
+    MCAPI static int const TIME_BEFORE_MOVING;
 
 };

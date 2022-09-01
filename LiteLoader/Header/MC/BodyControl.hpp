@@ -49,6 +49,10 @@ public:
 //private:
 
 private:
-MCAPI static float const MAX_CLAMP_ANGLE;
+    /**
+     * @symbol ?MAX_CLAMP_ANGLE@BodyControl@@0MB
+     * @hash   1535724716
+     */
+    MCAPI static float const MAX_CLAMP_ANGLE;
 
 };

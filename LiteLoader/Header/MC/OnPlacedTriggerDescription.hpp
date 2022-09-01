@@ -42,6 +42,10 @@ public:
      * @hash   -1296853543
      */
     virtual std::string const & getName() const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@OnPlacedTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -891410305
+     */
+    MCAPI static std::string const NameID;
 
 };

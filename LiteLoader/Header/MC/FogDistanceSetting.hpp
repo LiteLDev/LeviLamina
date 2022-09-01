@@ -28,7 +28,12 @@ public:
     FogDistanceSetting(struct FogDistanceSetting const &) = delete;
     FogDistanceSetting() = delete;
 #endif
+
 public:
-MCAPI static struct FogDistanceSetting const ZERO_SETTING;
+    /**
+     * @symbol ?ZERO_SETTING@FogDistanceSetting@@2U1@B
+     * @hash   -1942595431
+     */
+    MCAPI static struct FogDistanceSetting const ZERO_SETTING;
 
 };

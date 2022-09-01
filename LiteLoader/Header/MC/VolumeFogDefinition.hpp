@@ -28,13 +28,18 @@ public:
     VolumeFogDefinition(struct VolumeFogDefinition const &) = delete;
     VolumeFogDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@VolumeFogDefinition@@QEBAXAEAVEntityContext@@AEAVVolumeFogComponent@@@Z
      * @hash   -837500971
      */
     MCAPI void initialize(class EntityContext &, class VolumeFogComponent &) const;
-MCAPI static std::string const NAME;
+    /**
+     * @symbol ?NAME@VolumeFogDefinition@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -206122121
+     */
+    MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@VolumeFogDefinition@@SAXXZ
      * @hash   -651943825

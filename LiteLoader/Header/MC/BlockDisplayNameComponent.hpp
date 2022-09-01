@@ -26,6 +26,7 @@ public:
     BlockDisplayNameComponent(struct BlockDisplayNameComponent const &) = delete;
     BlockDisplayNameComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1BlockDisplayNameComponent@@QEAA@XZ

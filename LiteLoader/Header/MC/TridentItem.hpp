@@ -173,8 +173,16 @@ public:
      * @hash   1793216771
      */
     MCAPI TridentItem(std::string const &, int);
-MCAPI static int const CHARGE_THRESHOLD_TIME;
-MCAPI static int const THROW_THRESHOLD_TIME;
+    /**
+     * @symbol ?CHARGE_THRESHOLD_TIME@TridentItem@@2HB
+     * @hash   -645391571
+     */
+    MCAPI static int const CHARGE_THRESHOLD_TIME;
+    /**
+     * @symbol ?THROW_THRESHOLD_TIME@TridentItem@@2HB
+     * @hash   -829404381
+     */
+    MCAPI static int const THROW_THRESHOLD_TIME;
 
 //private:
     /**

@@ -213,12 +213,36 @@ public:
      * @hash   -458065080
      */
     MCAPI void writePacketData(class CompoundTag &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
-MCAPI static class gsl::basic_string_span<char const, -1> const BACKCOMPAT_FOG_NAME;
-MCAPI static class mce::Color const DEFAULT_FOG_COLOR;
-MCAPI static class gsl::basic_string_span<char const, -1> const DEFAULT_FOG_ID;
-MCAPI static class mce::Color const DEFAULT_UNDERWATER_COLOR;
-MCAPI static class mce::Color const DEFAULT_WATER_COLOR;
-MCAPI static float const RAIN_TEMP_THRESHOLD;
+    /**
+     * @symbol ?BACKCOMPAT_FOG_NAME@Biome@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -256180891
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const BACKCOMPAT_FOG_NAME;
+    /**
+     * @symbol ?DEFAULT_FOG_COLOR@Biome@@2VColor@mce@@B
+     * @hash   -850002025
+     */
+    MCAPI static class mce::Color const DEFAULT_FOG_COLOR;
+    /**
+     * @symbol ?DEFAULT_FOG_ID@Biome@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -431538697
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const DEFAULT_FOG_ID;
+    /**
+     * @symbol ?DEFAULT_UNDERWATER_COLOR@Biome@@2VColor@mce@@B
+     * @hash   2023659833
+     */
+    MCAPI static class mce::Color const DEFAULT_UNDERWATER_COLOR;
+    /**
+     * @symbol ?DEFAULT_WATER_COLOR@Biome@@2VColor@mce@@B
+     * @hash   2016216903
+     */
+    MCAPI static class mce::Color const DEFAULT_WATER_COLOR;
+    /**
+     * @symbol ?RAIN_TEMP_THRESHOLD@Biome@@2MB
+     * @hash   -527968801
+     */
+    MCAPI static float const RAIN_TEMP_THRESHOLD;
     /**
      * @symbol ?buildCachedTemperatureNoise@Biome@@SAXAEAVLevelChunk@@@Z
      * @hash   51673492

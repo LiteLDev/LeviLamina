@@ -2143,40 +2143,176 @@ public:
      * @hash   -2012542459
      */
     MCAPI void useSelectedItem(enum ItemUseMethod, bool);
-MCAPI static float const DEFAULT_BB_HEIGHT;
-MCAPI static float const DEFAULT_BB_WIDTH;
-MCAPI static float const DEFAULT_FLY_SPEED;
-MCAPI static float const DEFAULT_PLAYER_HEIGHT_OFFSET;
-MCAPI static float const DEFAULT_WALK_SPEED;
-MCAPI static float const DISTANCE_TO_TRANSFORM_EVENT;
-MCAPI static float const DISTANCE_TO_TRAVELLED_EVENT;
-MCAPI static class Attribute const EXHAUSTION;
-MCAPI static class Attribute const EXPERIENCE;
-MCAPI static int const GLIDE_STOP_DELAY;
-MCAPI static class Attribute const HUNGER;
-MCAPI static int const ITEM_USE_INTERVAL_COUNT;
-MCAPI static int const ITEM_USE_INTERVAL_DURATION;
-MCAPI static class Attribute const LEVEL;
-MCAPI static int const MAX_ITEM_USE_DURATION;
-MCAPI static float const PLAYER_ALIVE_HEIGHT;
-MCAPI static float const PLAYER_ALIVE_WIDTH;
-MCAPI static float const PLAYER_DEAD_HEIGHT;
-MCAPI static float const PLAYER_DEAD_WIDTH;
-MCAPI static float const PLAYER_DOWN_SWIM_SPEED;
-MCAPI static float const PLAYER_GLIDING_CAMERA_OFFSET;
-MCAPI static float const PLAYER_ITEM_USE_DEFAULT_SPEED_MODIFIER;
-MCAPI static float const PLAYER_SLEEPING_CAMERA_OFFSET;
-MCAPI static float const PLAYER_SLEEPING_HEIGHT;
-MCAPI static float const PLAYER_SLEEPING_WIDTH;
-MCAPI static float const PLAYER_SNEAK_OFFSET;
-MCAPI static float const PLAYER_SWIMMING_CAMERA_OFFSET;
-MCAPI static float const PLAYER_SWIM_BREACH_ANGLE;
-MCAPI static float const PLAYER_SWIM_ENTER_THRESHOLD;
-MCAPI static float const PLAYER_SWIM_FLY_MULTI;
-MCAPI static float const PLAYER_UP_SWIM_SPEED;
-MCAPI static class Attribute const SATURATION;
-MCAPI static unsigned int const SPAWN_CHUNK_LARGE_JUMP;
-MCAPI static unsigned int const SPAWN_CHUNK_RADIUS;
+    /**
+     * @symbol ?DEFAULT_BB_HEIGHT@Player@@2MB
+     * @hash   -1385213937
+     */
+    MCAPI static float const DEFAULT_BB_HEIGHT;
+    /**
+     * @symbol ?DEFAULT_BB_WIDTH@Player@@2MB
+     * @hash   590343629
+     */
+    MCAPI static float const DEFAULT_BB_WIDTH;
+    /**
+     * @symbol ?DEFAULT_FLY_SPEED@Player@@2MB
+     * @hash   1466207971
+     */
+    MCAPI static float const DEFAULT_FLY_SPEED;
+    /**
+     * @symbol ?DEFAULT_PLAYER_HEIGHT_OFFSET@Player@@2MB
+     * @hash   260555233
+     */
+    MCAPI static float const DEFAULT_PLAYER_HEIGHT_OFFSET;
+    /**
+     * @symbol ?DEFAULT_WALK_SPEED@Player@@2MB
+     * @hash   -1177554943
+     */
+    MCAPI static float const DEFAULT_WALK_SPEED;
+    /**
+     * @symbol ?DISTANCE_TO_TRANSFORM_EVENT@Player@@2MB
+     * @hash   -1132206857
+     */
+    MCAPI static float const DISTANCE_TO_TRANSFORM_EVENT;
+    /**
+     * @symbol ?DISTANCE_TO_TRAVELLED_EVENT@Player@@2MB
+     * @hash   2034035603
+     */
+    MCAPI static float const DISTANCE_TO_TRAVELLED_EVENT;
+    /**
+     * @symbol ?EXHAUSTION@Player@@2VAttribute@@B
+     * @hash   -1835176605
+     */
+    MCAPI static class Attribute const EXHAUSTION;
+    /**
+     * @symbol ?EXPERIENCE@Player@@2VAttribute@@B
+     * @hash   -1778490005
+     */
+    MCAPI static class Attribute const EXPERIENCE;
+    /**
+     * @symbol ?GLIDE_STOP_DELAY@Player@@2HB
+     * @hash   2132940485
+     */
+    MCAPI static int const GLIDE_STOP_DELAY;
+    /**
+     * @symbol ?HUNGER@Player@@2VAttribute@@B
+     * @hash   1103648541
+     */
+    MCAPI static class Attribute const HUNGER;
+    /**
+     * @symbol ?ITEM_USE_INTERVAL_COUNT@Player@@2HB
+     * @hash   -876996937
+     */
+    MCAPI static int const ITEM_USE_INTERVAL_COUNT;
+    /**
+     * @symbol ?ITEM_USE_INTERVAL_DURATION@Player@@2HB
+     * @hash   -465642251
+     */
+    MCAPI static int const ITEM_USE_INTERVAL_DURATION;
+    /**
+     * @symbol ?LEVEL@Player@@2VAttribute@@B
+     * @hash   -183238711
+     */
+    MCAPI static class Attribute const LEVEL;
+    /**
+     * @symbol ?MAX_ITEM_USE_DURATION@Player@@2HB
+     * @hash   1297820911
+     */
+    MCAPI static int const MAX_ITEM_USE_DURATION;
+    /**
+     * @symbol ?PLAYER_ALIVE_HEIGHT@Player@@2MB
+     * @hash   1868921671
+     */
+    MCAPI static float const PLAYER_ALIVE_HEIGHT;
+    /**
+     * @symbol ?PLAYER_ALIVE_WIDTH@Player@@2MB
+     * @hash   279703757
+     */
+    MCAPI static float const PLAYER_ALIVE_WIDTH;
+    /**
+     * @symbol ?PLAYER_DEAD_HEIGHT@Player@@2MB
+     * @hash   1370900369
+     */
+    MCAPI static float const PLAYER_DEAD_HEIGHT;
+    /**
+     * @symbol ?PLAYER_DEAD_WIDTH@Player@@2MB
+     * @hash   1649119315
+     */
+    MCAPI static float const PLAYER_DEAD_WIDTH;
+    /**
+     * @symbol ?PLAYER_DOWN_SWIM_SPEED@Player@@2MB
+     * @hash   2090035513
+     */
+    MCAPI static float const PLAYER_DOWN_SWIM_SPEED;
+    /**
+     * @symbol ?PLAYER_GLIDING_CAMERA_OFFSET@Player@@2MB
+     * @hash   460350661
+     */
+    MCAPI static float const PLAYER_GLIDING_CAMERA_OFFSET;
+    /**
+     * @symbol ?PLAYER_ITEM_USE_DEFAULT_SPEED_MODIFIER@Player@@2MB
+     * @hash   -1205037379
+     */
+    MCAPI static float const PLAYER_ITEM_USE_DEFAULT_SPEED_MODIFIER;
+    /**
+     * @symbol ?PLAYER_SLEEPING_CAMERA_OFFSET@Player@@2MB
+     * @hash   119247691
+     */
+    MCAPI static float const PLAYER_SLEEPING_CAMERA_OFFSET;
+    /**
+     * @symbol ?PLAYER_SLEEPING_HEIGHT@Player@@2MB
+     * @hash   269500729
+     */
+    MCAPI static float const PLAYER_SLEEPING_HEIGHT;
+    /**
+     * @symbol ?PLAYER_SLEEPING_WIDTH@Player@@2MB
+     * @hash   -1988632901
+     */
+    MCAPI static float const PLAYER_SLEEPING_WIDTH;
+    /**
+     * @symbol ?PLAYER_SNEAK_OFFSET@Player@@2MB
+     * @hash   -362793297
+     */
+    MCAPI static float const PLAYER_SNEAK_OFFSET;
+    /**
+     * @symbol ?PLAYER_SWIMMING_CAMERA_OFFSET@Player@@2MB
+     * @hash   -38491001
+     */
+    MCAPI static float const PLAYER_SWIMMING_CAMERA_OFFSET;
+    /**
+     * @symbol ?PLAYER_SWIM_BREACH_ANGLE@Player@@2MB
+     * @hash   -1806285083
+     */
+    MCAPI static float const PLAYER_SWIM_BREACH_ANGLE;
+    /**
+     * @symbol ?PLAYER_SWIM_ENTER_THRESHOLD@Player@@2MB
+     * @hash   -1191886169
+     */
+    MCAPI static float const PLAYER_SWIM_ENTER_THRESHOLD;
+    /**
+     * @symbol ?PLAYER_SWIM_FLY_MULTI@Player@@2MB
+     * @hash   -309754369
+     */
+    MCAPI static float const PLAYER_SWIM_FLY_MULTI;
+    /**
+     * @symbol ?PLAYER_UP_SWIM_SPEED@Player@@2MB
+     * @hash   -348429739
+     */
+    MCAPI static float const PLAYER_UP_SWIM_SPEED;
+    /**
+     * @symbol ?SATURATION@Player@@2VAttribute@@B
+     * @hash   1470564243
+     */
+    MCAPI static class Attribute const SATURATION;
+    /**
+     * @symbol ?SPAWN_CHUNK_LARGE_JUMP@Player@@2IB
+     * @hash   2033677977
+     */
+    MCAPI static unsigned int const SPAWN_CHUNK_LARGE_JUMP;
+    /**
+     * @symbol ?SPAWN_CHUNK_RADIUS@Player@@2IB
+     * @hash   -1282336747
+     */
+    MCAPI static unsigned int const SPAWN_CHUNK_RADIUS;
     /**
      * @symbol ?_aiStep@Player@@SAXAEAUIPlayerMovementProxy@@@Z
      * @hash   176154084

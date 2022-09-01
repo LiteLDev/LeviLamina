@@ -62,6 +62,10 @@ public:
 //private:
 
 private:
-MCAPI static class std::array<struct RailMovementUtility::RailExits, 10> const RAIL_EXITS;
+    /**
+     * @symbol ?RAIL_EXITS@RailMovementUtility@@0V?$array@URailExits@RailMovementUtility@@$09@std@@B
+     * @hash   -1759253665
+     */
+    MCAPI static class std::array<struct RailMovementUtility::RailExits, 10> const RAIL_EXITS;
 
 };

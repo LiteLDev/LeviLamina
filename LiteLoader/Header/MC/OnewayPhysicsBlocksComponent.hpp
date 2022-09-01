@@ -26,6 +26,7 @@ public:
     OnewayPhysicsBlocksComponent(struct OnewayPhysicsBlocksComponent const &) = delete;
     OnewayPhysicsBlocksComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1OnewayPhysicsBlocksComponent@@QEAA@XZ

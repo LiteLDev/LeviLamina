@@ -65,6 +65,10 @@ public:
      * @hash   -744552540
      */
     MCAPI ~ActorSkeletalAnimationPtr();
-MCAPI static class ActorSkeletalAnimationPtr const NONE;
+    /**
+     * @symbol ?NONE@ActorSkeletalAnimationPtr@@2V1@B
+     * @hash   -2026236992
+     */
+    MCAPI static class ActorSkeletalAnimationPtr const NONE;
 
 };

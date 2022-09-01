@@ -83,6 +83,10 @@ public:
      * @hash   -1400542259
      */
     MCAPI FireworksRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
-MCAPI static class mce::UUID ID;
+    /**
+     * @symbol ?ID@FireworksRecipe@@2VUUID@mce@@A
+     * @hash   -180054461
+     */
+    MCAPI static class mce::UUID ID;
 
 };

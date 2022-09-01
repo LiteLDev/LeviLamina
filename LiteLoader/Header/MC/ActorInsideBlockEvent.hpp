@@ -25,6 +25,7 @@ public:
     struct ActorInsideBlockEvent& operator=(struct ActorInsideBlockEvent const &) = delete;
     ActorInsideBlockEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ActorInsideBlockEvent@@QEAA@AEBU0@@Z

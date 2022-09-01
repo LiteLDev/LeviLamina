@@ -130,9 +130,21 @@ Profile(Profile const&&) = delete;
 enum FileAccessType;
 
 #undef AFTER_EXTRA
-MCAPI extern char const * RESULT_FAILED_MESSAGE;
-MCAPI extern char const * RESULT_NOT_IMPLEMENTED_MESSAGE;
-MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
+    /**
+     * @symbol ?RESULT_FAILED_MESSAGE@Core@@3PEBDEB
+     * @hash   2045750440
+     */
+    MCAPI extern char const * RESULT_FAILED_MESSAGE;
+    /**
+     * @symbol ?RESULT_NOT_IMPLEMENTED_MESSAGE@Core@@3PEBDEB
+     * @hash   2062567666
+     */
+    MCAPI extern char const * RESULT_NOT_IMPLEMENTED_MESSAGE;
+    /**
+     * @symbol ?RESULT_SUCCEEDED_MESSAGE@Core@@3PEBDEB
+     * @hash   1738946
+     */
+    MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
     /**
      * @symbol ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
      * @hash   -1628559639
@@ -143,7 +155,11 @@ MCAPI extern char const * RESULT_SUCCEEDED_MESSAGE;
      * @hash   1187489555
      */
     MCAPI enum Core::DirectoryIterationFlags operator|(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
-MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
+    /**
+     * @symbol ?sRootStorageArea@Core@@3V?$shared_ptr@VFileStorageArea@Core@@@std@@A
+     * @hash   -650198642
+     */
+    MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
     /**
      * @symbol ?starts_with@Core@@YA_NVStringSpan@1@0@Z
      * @hash   244231283

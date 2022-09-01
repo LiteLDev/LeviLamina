@@ -26,6 +26,7 @@ public:
     MolangActorIdArrayPtr(struct MolangActorIdArrayPtr const &) = delete;
     MolangActorIdArrayPtr() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MolangActorIdArrayPtr@@QEAA@V?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@@Z

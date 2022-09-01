@@ -26,6 +26,7 @@ public:
     DimensionTransitionComponent(struct DimensionTransitionComponent const &) = delete;
     DimensionTransitionComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ?addAdditionalSaveData@DimensionTransitionComponent@@QEBAXAEAVCompoundTag@@@Z
@@ -37,11 +38,35 @@ public:
      * @hash   -874807714
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-MCAPI static std::string const AXIS_TAG;
-MCAPI static std::string const COMPONENT_TAG;
-MCAPI static std::string const DIMENSION_TAG;
-MCAPI static std::string const POSITION_X_TAG;
-MCAPI static std::string const POSITION_Y_TAG;
-MCAPI static std::string const POSITION_Z_TAG;
+    /**
+     * @symbol ?AXIS_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1709934615
+     */
+    MCAPI static std::string const AXIS_TAG;
+    /**
+     * @symbol ?COMPONENT_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1196739375
+     */
+    MCAPI static std::string const COMPONENT_TAG;
+    /**
+     * @symbol ?DIMENSION_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   721499299
+     */
+    MCAPI static std::string const DIMENSION_TAG;
+    /**
+     * @symbol ?POSITION_X_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2046108953
+     */
+    MCAPI static std::string const POSITION_X_TAG;
+    /**
+     * @symbol ?POSITION_Y_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1732597691
+     */
+    MCAPI static std::string const POSITION_Y_TAG;
+    /**
+     * @symbol ?POSITION_Z_TAG@DimensionTransitionComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1419086429
+     */
+    MCAPI static std::string const POSITION_Z_TAG;
 
 };

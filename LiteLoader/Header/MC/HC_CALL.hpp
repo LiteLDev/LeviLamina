@@ -25,6 +25,7 @@ public:
     struct HC_CALL& operator=(struct HC_CALL const &) = delete;
     HC_CALL(struct HC_CALL const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0HC_CALL@@QEAA@XZ

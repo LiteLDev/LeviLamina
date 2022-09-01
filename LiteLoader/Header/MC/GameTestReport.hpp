@@ -28,6 +28,7 @@ public:
     GameTestReport(struct GameTestReport const &) = delete;
     GameTestReport() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1GameTestReport@@QEAA@XZ

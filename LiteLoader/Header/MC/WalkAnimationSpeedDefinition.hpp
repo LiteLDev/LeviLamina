@@ -29,6 +29,7 @@ public:
     WalkAnimationSpeedDefinition(struct WalkAnimationSpeedDefinition const &) = delete;
     WalkAnimationSpeedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@WalkAnimationSpeedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWalkAnimationSpeedDefinition@@@JsonUtil@@@std@@@Z

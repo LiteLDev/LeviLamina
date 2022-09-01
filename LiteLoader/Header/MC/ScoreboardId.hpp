@@ -80,6 +80,10 @@ public:
      * @hash   -518476314
      */
     MCAPI bool operator==(struct ScoreboardId const &) const;
-MCAPI static struct ScoreboardId INVALID;
+    /**
+     * @symbol ?INVALID@ScoreboardId@@2U1@A
+     * @hash   440583273
+     */
+    MCAPI static struct ScoreboardId INVALID;
 
 };

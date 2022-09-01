@@ -29,6 +29,7 @@ public:
     Color2Definition(struct Color2Definition const &) = delete;
     Color2Definition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@Color2Definition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UColor2Definition@@@JsonUtil@@@std@@@Z

@@ -189,7 +189,11 @@ public:
      * @hash   1880571772
      */
     MCAPI void setSkinIndex(class Actor &, int, bool);
-MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
+    /**
+     * @symbol ?MAX_NPC_NAME_LENGTH@NpcComponent@@2_KB
+     * @hash   -797723520
+     */
+    MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
 
 //private:
     /**
@@ -219,12 +223,40 @@ MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
     MCAPI std::string _serializeActions() const;
 
 private:
-MCAPI static std::string const ACTIONS_TAG;
-MCAPI static std::string const INTERACTIVE_TAG;
-MCAPI static std::string const NAME_RAW_TEXT_TAG;
-MCAPI static std::string const PLAYER_ID_TAG;
-MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
-MCAPI static std::string const SCENE_NAME_TAG;
-MCAPI static std::string const URL_TAG;
+    /**
+     * @symbol ?ACTIONS_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1717688385
+     */
+    MCAPI static std::string const ACTIONS_TAG;
+    /**
+     * @symbol ?INTERACTIVE_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1273452516
+     */
+    MCAPI static std::string const INTERACTIVE_TAG;
+    /**
+     * @symbol ?NAME_RAW_TEXT_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1970123386
+     */
+    MCAPI static std::string const NAME_RAW_TEXT_TAG;
+    /**
+     * @symbol ?PLAYER_ID_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1843193125
+     */
+    MCAPI static std::string const PLAYER_ID_TAG;
+    /**
+     * @symbol ?PLAYER_SCENE_MAPPING_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1352652351
+     */
+    MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
+    /**
+     * @symbol ?SCENE_NAME_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -976771872
+     */
+    MCAPI static std::string const SCENE_NAME_TAG;
+    /**
+     * @symbol ?URL_TAG@NpcComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   223356017
+     */
+    MCAPI static std::string const URL_TAG;
 
 };

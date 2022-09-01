@@ -25,6 +25,7 @@ public:
     struct MobDescriptor& operator=(struct MobDescriptor const &) = delete;
     MobDescriptor() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MobDescriptor@@QEAA@AEBU0@@Z

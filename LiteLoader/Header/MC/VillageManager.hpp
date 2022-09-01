@@ -137,7 +137,11 @@ public:
      * @hash   430373883
      */
     MCAPI ~VillageManager();
-MCAPI static int const MAX_POI_TOLERANCE_DIST;
+    /**
+     * @symbol ?MAX_POI_TOLERANCE_DIST@VillageManager@@2HB
+     * @hash   97727985
+     */
+    MCAPI static int const MAX_POI_TOLERANCE_DIST;
 
 //private:
     /**
@@ -187,8 +191,20 @@ MCAPI static int const MAX_POI_TOLERANCE_DIST;
     MCAPI void _unclusterDerelictPOIs(std::vector<class std::weak_ptr<class POIInstance>> &);
 
 private:
-MCAPI static unsigned __int64 const MAX_POI_QUERIES;
-MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
-MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+    /**
+     * @symbol ?MAX_POI_QUERIES@VillageManager@@0_KB
+     * @hash   1718708758
+     */
+    MCAPI static unsigned __int64 const MAX_POI_QUERIES;
+    /**
+     * @symbol ?MAX_QUERY_SCAN_ITERATIONS@VillageManager@@0HB
+     * @hash   108970773
+     */
+    MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
+    /**
+     * @symbol ?VILLAGE_HERO_EFFECT_DURATION@VillageManager@@0HB
+     * @hash   975026243
+     */
+    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
 
 };

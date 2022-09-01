@@ -27,6 +27,7 @@ public:
     struct NameAction& operator=(struct NameAction const &) = delete;
     NameAction() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0NameAction@@QEAA@AEBU0@@Z

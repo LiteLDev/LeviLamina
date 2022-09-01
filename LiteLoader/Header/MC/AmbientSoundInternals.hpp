@@ -20,10 +20,30 @@ namespace AmbientSoundInternals {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-MCAPI extern char const * EVENT_NAMES_KEY;
-MCAPI extern char const * EVENT_NAME_DEFAULT;
-MCAPI extern char const * EVENT_NAME_KEY;
-MCAPI extern char const * RANGE_KEY;
-MCAPI extern char const * VALUE_KEY;
+    /**
+     * @symbol ?EVENT_NAMES_KEY@AmbientSoundInternals@@3PEBDEB
+     * @hash   1250299272
+     */
+    MCAPI extern char const * EVENT_NAMES_KEY;
+    /**
+     * @symbol ?EVENT_NAME_DEFAULT@AmbientSoundInternals@@3PEBDEB
+     * @hash   -613121884
+     */
+    MCAPI extern char const * EVENT_NAME_DEFAULT;
+    /**
+     * @symbol ?EVENT_NAME_KEY@AmbientSoundInternals@@3PEBDEB
+     * @hash   -280574888
+     */
+    MCAPI extern char const * EVENT_NAME_KEY;
+    /**
+     * @symbol ?RANGE_KEY@AmbientSoundInternals@@3PEBDEB
+     * @hash   1801488204
+     */
+    MCAPI extern char const * RANGE_KEY;
+    /**
+     * @symbol ?VALUE_KEY@AmbientSoundInternals@@3PEBDEB
+     * @hash   1252694956
+     */
+    MCAPI extern char const * VALUE_KEY;
 
 };

@@ -82,6 +82,10 @@ public:
      * @hash   2048939226
      */
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>);
-MCAPI static class mce::UUID const ID;
+    /**
+     * @symbol ?ID@BannerDuplicateRecipe@@2VUUID@mce@@B
+     * @hash   605715711
+     */
+    MCAPI static class mce::UUID const ID;
 
 };

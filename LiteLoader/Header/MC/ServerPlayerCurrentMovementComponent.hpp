@@ -26,6 +26,7 @@ public:
     ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent const &) = delete;
     ServerPlayerCurrentMovementComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ServerPlayerCurrentMovementComponent@@QEAA@XZ

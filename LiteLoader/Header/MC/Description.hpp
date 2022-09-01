@@ -29,6 +29,7 @@ public:
     Description(struct Description const &) = delete;
     Description() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

@@ -265,7 +265,11 @@ public:
      * @hash   1205123070
      */
     MCAPI void setShuttingDown(bool);
-MCAPI static bool gPerfIsClientSide;
+    /**
+     * @symbol ?gPerfIsClientSide@ChunkSource@@2_NA
+     * @hash   -1663258565
+     */
+    MCAPI static bool gPerfIsClientSide;
 
 //protected:
     /**

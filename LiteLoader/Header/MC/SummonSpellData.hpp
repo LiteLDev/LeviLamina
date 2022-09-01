@@ -25,6 +25,7 @@ public:
     struct SummonSpellData& operator=(struct SummonSpellData const &) = delete;
     SummonSpellData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SummonSpellData@@QEAA@AEBU0@@Z

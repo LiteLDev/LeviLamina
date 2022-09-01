@@ -26,6 +26,7 @@ public:
     ServerInstanceRequestResourceReload(struct ServerInstanceRequestResourceReload const &) = delete;
     ServerInstanceRequestResourceReload() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ServerInstanceRequestResourceReload@@QEAA@XZ

@@ -29,6 +29,7 @@ public:
     HopperDefinition(struct HopperDefinition const &) = delete;
     HopperDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@HopperDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UHopperDefinition@@@JsonUtil@@@std@@@Z

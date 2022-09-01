@@ -413,9 +413,25 @@ public:
 protected:
 
 private:
-MCAPI static int GROWL_INTERVAL_MAX;
-MCAPI static int GROWL_INTERVAL_MIN;
-MCAPI static int MAX_PATH_RADIUS;
-MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;
+    /**
+     * @symbol ?GROWL_INTERVAL_MAX@EnderDragon@@0HA
+     * @hash   -984909748
+     */
+    MCAPI static int GROWL_INTERVAL_MAX;
+    /**
+     * @symbol ?GROWL_INTERVAL_MIN@EnderDragon@@0HA
+     * @hash   -965976714
+     */
+    MCAPI static int GROWL_INTERVAL_MIN;
+    /**
+     * @symbol ?MAX_PATH_RADIUS@EnderDragon@@0HA
+     * @hash   -887626187
+     */
+    MCAPI static int MAX_PATH_RADIUS;
+    /**
+     * @symbol ?SITTING_ALLOWED_DAMAGE_PERCENTAGE@EnderDragon@@0MA
+     * @hash   894644051
+     */
+    MCAPI static float SITTING_ALLOWED_DAMAGE_PERCENTAGE;
 
 };

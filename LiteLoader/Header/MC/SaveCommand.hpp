@@ -68,8 +68,20 @@ public:
     MCAPI static void saveState(class CommandOutput &);
 
 private:
-MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
-MCAPI static class std::mutex mSaveAllMutex;
-MCAPI static enum SaveCommand::State mState;
+    /**
+     * @symbol ?mSaveAllFileList@SaveCommand@@0V?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@A
+     * @hash   831023920
+     */
+    MCAPI static std::vector<struct SnapshotFilenameAndLength> mSaveAllFileList;
+    /**
+     * @symbol ?mSaveAllMutex@SaveCommand@@0Vmutex@std@@A
+     * @hash   989683313
+     */
+    MCAPI static class std::mutex mSaveAllMutex;
+    /**
+     * @symbol ?mState@SaveCommand@@0W4State@1@A
+     * @hash   -507441169
+     */
+    MCAPI static enum SaveCommand::State mState;
 
 };

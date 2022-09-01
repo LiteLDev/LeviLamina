@@ -84,12 +84,40 @@ public:
     MCAPI void spawnElder(class BlockSource &, class BoundingBox const &, int, int, int);
 
 protected:
-MCAPI static int mGridroomLeftWingConnectIndex;
-MCAPI static int mGridroomRightWingConnectIndex;
-MCAPI static int mGridroomSourceIndex;
-MCAPI static int mGridroomTopConnectIndex;
-MCAPI static int const mLeftWingIndex;
-MCAPI static int const mPenthouseIndex;
-MCAPI static int const mRightWingIndex;
+    /**
+     * @symbol ?mGridroomLeftWingConnectIndex@OceanMonumentPiece@@1HA
+     * @hash   -159925352
+     */
+    MCAPI static int mGridroomLeftWingConnectIndex;
+    /**
+     * @symbol ?mGridroomRightWingConnectIndex@OceanMonumentPiece@@1HA
+     * @hash   1214633781
+     */
+    MCAPI static int mGridroomRightWingConnectIndex;
+    /**
+     * @symbol ?mGridroomSourceIndex@OceanMonumentPiece@@1HA
+     * @hash   -1382255823
+     */
+    MCAPI static int mGridroomSourceIndex;
+    /**
+     * @symbol ?mGridroomTopConnectIndex@OceanMonumentPiece@@1HA
+     * @hash   2042109307
+     */
+    MCAPI static int mGridroomTopConnectIndex;
+    /**
+     * @symbol ?mLeftWingIndex@OceanMonumentPiece@@1HB
+     * @hash   2048113036
+     */
+    MCAPI static int const mLeftWingIndex;
+    /**
+     * @symbol ?mPenthouseIndex@OceanMonumentPiece@@1HB
+     * @hash   -588362373
+     */
+    MCAPI static int const mPenthouseIndex;
+    /**
+     * @symbol ?mRightWingIndex@OceanMonumentPiece@@1HB
+     * @hash   1261959605
+     */
+    MCAPI static int const mRightWingIndex;
 
 };

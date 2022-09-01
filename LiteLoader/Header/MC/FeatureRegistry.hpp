@@ -91,18 +91,66 @@ public:
      * @hash   1829007917
      */
     MCAPI void setSmallFeaturePasses(std::vector<std::string>);
-MCAPI static std::string const AFTER_SKY_PASS;
-MCAPI static std::string const AFTER_SURFACE_PASS;
-MCAPI static std::string const AFTER_UNDERGROUND_PASS;
-MCAPI static std::string const BEFORE_SKY_PASS;
-MCAPI static std::string const BEFORE_SURFACE_PASS;
-MCAPI static std::string const BEFORE_UNDERGROUND_PASS;
-MCAPI static std::string const FINAL_PASS;
-MCAPI static std::string const FIRST_PASS;
-MCAPI static std::string const PREGENERATION_PASS;
-MCAPI static std::string const SKY_PASS;
-MCAPI static std::string const SURFACE_PASS;
-MCAPI static std::string const UNDERGROUND_PASS;
+    /**
+     * @symbol ?AFTER_SKY_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2005827177
+     */
+    MCAPI static std::string const AFTER_SKY_PASS;
+    /**
+     * @symbol ?AFTER_SURFACE_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -370537929
+     */
+    MCAPI static std::string const AFTER_SURFACE_PASS;
+    /**
+     * @symbol ?AFTER_UNDERGROUND_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1024236439
+     */
+    MCAPI static std::string const AFTER_UNDERGROUND_PASS;
+    /**
+     * @symbol ?BEFORE_SKY_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   245053589
+     */
+    MCAPI static std::string const BEFORE_SKY_PASS;
+    /**
+     * @symbol ?BEFORE_SURFACE_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2144465461
+     */
+    MCAPI static std::string const BEFORE_SURFACE_PASS;
+    /**
+     * @symbol ?BEFORE_UNDERGROUND_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2043530091
+     */
+    MCAPI static std::string const BEFORE_UNDERGROUND_PASS;
+    /**
+     * @symbol ?FINAL_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1342395081
+     */
+    MCAPI static std::string const FINAL_PASS;
+    /**
+     * @symbol ?FIRST_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   955670327
+     */
+    MCAPI static std::string const FIRST_PASS;
+    /**
+     * @symbol ?PREGENERATION_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -383635081
+     */
+    MCAPI static std::string const PREGENERATION_PASS;
+    /**
+     * @symbol ?SKY_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1209292951
+     */
+    MCAPI static std::string const SKY_PASS;
+    /**
+     * @symbol ?SURFACE_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2064666935
+     */
+    MCAPI static std::string const SURFACE_PASS;
+    /**
+     * @symbol ?UNDERGROUND_PASS@FeatureRegistry@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1350455959
+     */
+    MCAPI static std::string const UNDERGROUND_PASS;
 
 //private:
     /**

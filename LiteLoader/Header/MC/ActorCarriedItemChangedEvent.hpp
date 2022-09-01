@@ -25,6 +25,7 @@ public:
     struct ActorCarriedItemChangedEvent& operator=(struct ActorCarriedItemChangedEvent const &) = delete;
     ActorCarriedItemChangedEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ActorCarriedItemChangedEvent@@QEAA@AEBU0@@Z

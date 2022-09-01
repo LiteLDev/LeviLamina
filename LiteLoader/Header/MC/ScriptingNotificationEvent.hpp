@@ -26,6 +26,7 @@ public:
     ScriptingNotificationEvent(struct ScriptingNotificationEvent const &) = delete;
     ScriptingNotificationEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ScriptingNotificationEvent@@QEAA@XZ

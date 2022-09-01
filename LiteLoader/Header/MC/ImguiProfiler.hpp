@@ -26,6 +26,7 @@ public:
     ImguiProfiler(struct ImguiProfiler const &) = delete;
     ImguiProfiler() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getTimeAccumulator@ImguiProfiler@@QEAA?AVTimeAccumulator@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z

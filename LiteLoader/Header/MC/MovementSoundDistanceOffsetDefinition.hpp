@@ -27,6 +27,7 @@ public:
     MovementSoundDistanceOffsetDefinition(struct MovementSoundDistanceOffsetDefinition const &) = delete;
     MovementSoundDistanceOffsetDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@MovementSoundDistanceOffsetDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UMovementSoundDistanceOffsetDefinition@@@JsonUtil@@@std@@@Z

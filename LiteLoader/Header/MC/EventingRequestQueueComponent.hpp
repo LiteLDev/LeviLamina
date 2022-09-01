@@ -26,6 +26,7 @@ public:
     EventingRequestQueueComponent(struct EventingRequestQueueComponent const &) = delete;
     EventingRequestQueueComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0EventingRequestQueueComponent@@QEAA@$$QEAU0@@Z

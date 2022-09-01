@@ -28,6 +28,7 @@ public:
     Token(struct Token const &) = delete;
     Token() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0Token@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

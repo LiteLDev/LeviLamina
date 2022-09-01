@@ -154,7 +154,11 @@ public:
      * @hash   1108255139
      */
     MCAPI void startServerThread();
-MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
+    /**
+     * @symbol ?SERVER_MAX_DELAY_BEFORE_SLOWDOWN@ServerInstance@@2V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@B
+     * @hash   -953982622
+     */
+    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const SERVER_MAX_DELAY_BEFORE_SLOWDOWN;
 
 //private:
     /**

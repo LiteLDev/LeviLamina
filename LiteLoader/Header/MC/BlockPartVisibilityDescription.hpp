@@ -27,6 +27,7 @@ public:
     struct BlockPartVisibilityDescription& operator=(struct BlockPartVisibilityDescription const &) = delete;
     BlockPartVisibilityDescription(struct BlockPartVisibilityDescription const &) = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -73,7 +74,11 @@ public:
      * @hash   -358241802
      */
     MCAPI BlockPartVisibilityDescription();
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockPartVisibilityDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2105553939
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockPartVisibilityDescription@@SAXXZ
      * @hash   1818466755

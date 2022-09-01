@@ -27,6 +27,7 @@ public:
     ConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &) = delete;
     ConditionalBandwidthOptimization() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4ConditionalBandwidthOptimization@@QEAAAEAU0@AEBU0@@Z

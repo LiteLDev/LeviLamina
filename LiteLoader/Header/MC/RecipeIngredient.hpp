@@ -71,6 +71,10 @@ public:
      * @hash   -1602135319
      */
     MCAPI ~RecipeIngredient();
-MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
+    /**
+     * @symbol ?EMPTY_INGREDIENT@RecipeIngredient@@2V1@A
+     * @hash   -2105002769
+     */
+    MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
 
 };

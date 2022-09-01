@@ -30,8 +30,16 @@ public:
 #endif
 
 public:
-MCAPI static class mce::Color const SWAMP_WATER_COLOR;
-MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
+    /**
+     * @symbol ?SWAMP_WATER_COLOR@VanillaBiomes@@2VColor@mce@@B
+     * @hash   -979456965
+     */
+    MCAPI static class mce::Color const SWAMP_WATER_COLOR;
+    /**
+     * @symbol ?WATER_FOG_COLOR_SWAMP@VanillaBiomes@@2VColor@mce@@B
+     * @hash   -700261013
+     */
+    MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
     /**
      * @symbol ?initBiomeComponents@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
      * @hash   -765033324
@@ -67,82 +75,386 @@ MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
      * @hash   1823612084
      */
     MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry &);
-MCAPI static class Biome * mBambooJungle;
-MCAPI static class Biome * mBambooJungleHills;
-MCAPI static class Biome * mBasaltDeltas;
-MCAPI static class Biome * mBeaches;
-MCAPI static class Biome * mBirchForest;
-MCAPI static class Biome * mBirchForestHills;
-MCAPI static class Biome * mBirchForestMutated;
-MCAPI static class Biome * mColdBeach;
-MCAPI static class Biome * mCrimsonForest;
-MCAPI static class Biome * mDeepDark;
-MCAPI static class Biome * mDesert;
-MCAPI static class Biome * mDesertHills;
-MCAPI static class Biome * mDripstoneCaves;
-MCAPI static class Biome * mExtremeHills;
-MCAPI static class Biome * mExtremeHillsMutated;
-MCAPI static class Biome * mExtremeHillsWithTrees;
-MCAPI static class Biome * mFlowerForest;
-MCAPI static class Biome * mForest;
-MCAPI static class Biome * mForestHills;
-MCAPI static class Biome * mFrozenPeaks;
-MCAPI static class Biome * mFrozenRiver;
-MCAPI static class Biome * mGrove;
-MCAPI static class Biome * mIceFlats;
-MCAPI static class Biome * mIceFlatsMutated;
-MCAPI static class Biome * mIceMountains;
-MCAPI static class Biome * mJaggedPeaks;
-MCAPI static class Biome * mJungle;
-MCAPI static class Biome * mJungleEdge;
-MCAPI static class Biome * mJungleHills;
-MCAPI static class Biome * mLushCaves;
-MCAPI static class Biome * mMangroveSwamp;
-MCAPI static class Biome * mMeadow;
-MCAPI static class Biome * mMesa;
-MCAPI static class Biome * mMesaBryce;
-MCAPI static class Biome * mMesaClearRock;
-MCAPI static class Biome * mMesaRock;
-MCAPI static class Biome * mMushroomIsland;
-MCAPI static class Biome * mMushroomIslandShore;
-MCAPI static class Biome * mNether;
-MCAPI static class Biome * mOcean;
-MCAPI static class Biome * mOceanCold;
-MCAPI static class Biome * mOceanColdDeep;
-MCAPI static class Biome * mOceanDeep;
-MCAPI static class Biome * mOceanFrozen;
-MCAPI static class Biome * mOceanFrozenDeep;
-MCAPI static class Biome * mOceanLukewarm;
-MCAPI static class Biome * mOceanLukewarmDeep;
-MCAPI static class Biome * mOceanWarm;
-MCAPI static class Biome * mOceanWarmDeep;
-MCAPI static class Biome * mPlains;
-MCAPI static class Biome * mPlainsMutated;
-MCAPI static class std::set<int, struct std::less<int>, class std::allocator<int>> mPlayerValidSpawns;
-MCAPI static class Biome * mRedwoodTaiga;
-MCAPI static class Biome * mRedwoodTaigaHills;
-MCAPI static class Biome * mRedwoodTaigaMutated;
-MCAPI static class Biome * mRiver;
-MCAPI static class Biome * mRoofedForest;
-MCAPI static class Biome * mRoofedForestMutated;
-MCAPI static class Biome * mSavanna;
-MCAPI static class Biome * mSavannaMutated;
-MCAPI static class Biome * mSavannaRock;
-MCAPI static class Biome * mSavannaRockMutated;
-MCAPI static class Biome * mSky;
-MCAPI static class Biome * mSmallerExtremeHills;
-MCAPI static class Biome * mSnowySlopes;
-MCAPI static class Biome * mSoulsandValley;
-MCAPI static class Biome * mStoneBeach;
-MCAPI static class Biome * mStonyPeaks;
-MCAPI static class Biome * mSwampland;
-MCAPI static class Biome * mSwamplandMutated;
-MCAPI static class Biome * mTaiga;
-MCAPI static class Biome * mTaigaCold;
-MCAPI static class Biome * mTaigaColdHills;
-MCAPI static class Biome * mTaigaColdMutated;
-MCAPI static class Biome * mTaigaHills;
-MCAPI static class Biome * mWarpedForest;
+    /**
+     * @symbol ?mBambooJungle@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1737862083
+     */
+    MCAPI static class Biome * mBambooJungle;
+    /**
+     * @symbol ?mBambooJungleHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -144663571
+     */
+    MCAPI static class Biome * mBambooJungleHills;
+    /**
+     * @symbol ?mBasaltDeltas@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -2092923469
+     */
+    MCAPI static class Biome * mBasaltDeltas;
+    /**
+     * @symbol ?mBeaches@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1842694373
+     */
+    MCAPI static class Biome * mBeaches;
+    /**
+     * @symbol ?mBirchForest@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   848783173
+     */
+    MCAPI static class Biome * mBirchForest;
+    /**
+     * @symbol ?mBirchForestHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -521363989
+     */
+    MCAPI static class Biome * mBirchForestHills;
+    /**
+     * @symbol ?mBirchForestMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -724810525
+     */
+    MCAPI static class Biome * mBirchForestMutated;
+    /**
+     * @symbol ?mColdBeach@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1338315203
+     */
+    MCAPI static class Biome * mColdBeach;
+    /**
+     * @symbol ?mCrimsonForest@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -939845947
+     */
+    MCAPI static class Biome * mCrimsonForest;
+    /**
+     * @symbol ?mDeepDark@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   211851323
+     */
+    MCAPI static class Biome * mDeepDark;
+    /**
+     * @symbol ?mDesert@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1479316005
+     */
+    MCAPI static class Biome * mDesert;
+    /**
+     * @symbol ?mDesertHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1239094547
+     */
+    MCAPI static class Biome * mDesertHills;
+    /**
+     * @symbol ?mDripstoneCaves@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1294863467
+     */
+    MCAPI static class Biome * mDripstoneCaves;
+    /**
+     * @symbol ?mExtremeHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1071191549
+     */
+    MCAPI static class Biome * mExtremeHills;
+    /**
+     * @symbol ?mExtremeHillsMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1633346485
+     */
+    MCAPI static class Biome * mExtremeHillsMutated;
+    /**
+     * @symbol ?mExtremeHillsWithTrees@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -261319971
+     */
+    MCAPI static class Biome * mExtremeHillsWithTrees;
+    /**
+     * @symbol ?mFlowerForest@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   2080827835
+     */
+    MCAPI static class Biome * mFlowerForest;
+    /**
+     * @symbol ?mForest@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1112709909
+     */
+    MCAPI static class Biome * mForest;
+    /**
+     * @symbol ?mForestHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   2049453557
+     */
+    MCAPI static class Biome * mForestHills;
+    /**
+     * @symbol ?mFrozenPeaks@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   270853157
+     */
+    MCAPI static class Biome * mFrozenPeaks;
+    /**
+     * @symbol ?mFrozenRiver@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   822170973
+     */
+    MCAPI static class Biome * mFrozenRiver;
+    /**
+     * @symbol ?mGrove@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1017762197
+     */
+    MCAPI static class Biome * mGrove;
+    /**
+     * @symbol ?mIceFlats@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1546062883
+     */
+    MCAPI static class Biome * mIceFlats;
+    /**
+     * @symbol ?mIceFlatsMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   387722869
+     */
+    MCAPI static class Biome * mIceFlatsMutated;
+    /**
+     * @symbol ?mIceMountains@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   562794283
+     */
+    MCAPI static class Biome * mIceMountains;
+    /**
+     * @symbol ?mJaggedPeaks@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1158937565
+     */
+    MCAPI static class Biome * mJaggedPeaks;
+    /**
+     * @symbol ?mJungle@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1093624171
+     */
+    MCAPI static class Biome * mJungle;
+    /**
+     * @symbol ?mJungleEdge@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -566823973
+     */
+    MCAPI static class Biome * mJungleEdge;
+    /**
+     * @symbol ?mJungleHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -296089067
+     */
+    MCAPI static class Biome * mJungleHills;
+    /**
+     * @symbol ?mLushCaves@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -465444843
+     */
+    MCAPI static class Biome * mLushCaves;
+    /**
+     * @symbol ?mMangroveSwamp@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1045553221
+     */
+    MCAPI static class Biome * mMangroveSwamp;
+    /**
+     * @symbol ?mMeadow@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   240351035
+     */
+    MCAPI static class Biome * mMeadow;
+    /**
+     * @symbol ?mMesa@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   213213747
+     */
+    MCAPI static class Biome * mMesa;
+    /**
+     * @symbol ?mMesaBryce@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   2088887053
+     */
+    MCAPI static class Biome * mMesaBryce;
+    /**
+     * @symbol ?mMesaClearRock@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1283153883
+     */
+    MCAPI static class Biome * mMesaClearRock;
+    /**
+     * @symbol ?mMesaRock@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1671527835
+     */
+    MCAPI static class Biome * mMesaRock;
+    /**
+     * @symbol ?mMushroomIsland@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1675043277
+     */
+    MCAPI static class Biome * mMushroomIsland;
+    /**
+     * @symbol ?mMushroomIslandShore@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1654964227
+     */
+    MCAPI static class Biome * mMushroomIslandShore;
+    /**
+     * @symbol ?mNether@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1855160277
+     */
+    MCAPI static class Biome * mNether;
+    /**
+     * @symbol ?mOcean@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1129072117
+     */
+    MCAPI static class Biome * mOcean;
+    /**
+     * @symbol ?mOceanCold@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -246556923
+     */
+    MCAPI static class Biome * mOceanCold;
+    /**
+     * @symbol ?mOceanColdDeep@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1523661555
+     */
+    MCAPI static class Biome * mOceanColdDeep;
+    /**
+     * @symbol ?mOceanDeep@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   836744189
+     */
+    MCAPI static class Biome * mOceanDeep;
+    /**
+     * @symbol ?mOceanFrozen@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   56451413
+     */
+    MCAPI static class Biome * mOceanFrozen;
+    /**
+     * @symbol ?mOceanFrozenDeep@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1718431581
+     */
+    MCAPI static class Biome * mOceanFrozenDeep;
+    /**
+     * @symbol ?mOceanLukewarm@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   162499621
+     */
+    MCAPI static class Biome * mOceanLukewarm;
+    /**
+     * @symbol ?mOceanLukewarmDeep@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   11139629
+     */
+    MCAPI static class Biome * mOceanLukewarmDeep;
+    /**
+     * @symbol ?mOceanWarm@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1560437099
+     */
+    MCAPI static class Biome * mOceanWarm;
+    /**
+     * @symbol ?mOceanWarmDeep@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -127542115
+     */
+    MCAPI static class Biome * mOceanWarmDeep;
+    /**
+     * @symbol ?mPlains@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -78591149
+     */
+    MCAPI static class Biome * mPlains;
+    /**
+     * @symbol ?mPlainsMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1720117531
+     */
+    MCAPI static class Biome * mPlainsMutated;
+    /**
+     * @symbol ?mPlayerValidSpawns@VanillaBiomes@@2V?$set@HU?$less@H@std@@V?$allocator@H@2@@std@@A
+     * @hash   1873529224
+     */
+    MCAPI static class std::set<int, struct std::less<int>, class std::allocator<int>> mPlayerValidSpawns;
+    /**
+     * @symbol ?mRedwoodTaiga@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1459630677
+     */
+    MCAPI static class Biome * mRedwoodTaiga;
+    /**
+     * @symbol ?mRedwoodTaigaHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1397499243
+     */
+    MCAPI static class Biome * mRedwoodTaigaHills;
+    /**
+     * @symbol ?mRedwoodTaigaMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -914132755
+     */
+    MCAPI static class Biome * mRedwoodTaigaMutated;
+    /**
+     * @symbol ?mRiver@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -423626747
+     */
+    MCAPI static class Biome * mRiver;
+    /**
+     * @symbol ?mRoofedForest@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -621214573
+     */
+    MCAPI static class Biome * mRoofedForest;
+    /**
+     * @symbol ?mRoofedForestMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1479037259
+     */
+    MCAPI static class Biome * mRoofedForestMutated;
+    /**
+     * @symbol ?mSavanna@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1355497285
+     */
+    MCAPI static class Biome * mSavanna;
+    /**
+     * @symbol ?mSavannaMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1234031107
+     */
+    MCAPI static class Biome * mSavannaMutated;
+    /**
+     * @symbol ?mSavannaRock@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   249690541
+     */
+    MCAPI static class Biome * mSavannaRock;
+    /**
+     * @symbol ?mSavannaRockMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -763320405
+     */
+    MCAPI static class Biome * mSavannaRockMutated;
+    /**
+     * @symbol ?mSky@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -836084939
+     */
+    MCAPI static class Biome * mSky;
+    /**
+     * @symbol ?mSmallerExtremeHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1831813605
+     */
+    MCAPI static class Biome * mSmallerExtremeHills;
+    /**
+     * @symbol ?mSnowySlopes@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -319459347
+     */
+    MCAPI static class Biome * mSnowySlopes;
+    /**
+     * @symbol ?mSoulsandValley@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   16419867
+     */
+    MCAPI static class Biome * mSoulsandValley;
+    /**
+     * @symbol ?mStoneBeach@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1051377805
+     */
+    MCAPI static class Biome * mStoneBeach;
+    /**
+     * @symbol ?mStonyPeaks@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1367765309
+     */
+    MCAPI static class Biome * mStonyPeaks;
+    /**
+     * @symbol ?mSwampland@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -876183011
+     */
+    MCAPI static class Biome * mSwampland;
+    /**
+     * @symbol ?mSwamplandMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   763263499
+     */
+    MCAPI static class Biome * mSwamplandMutated;
+    /**
+     * @symbol ?mTaiga@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1432417867
+     */
+    MCAPI static class Biome * mTaiga;
+    /**
+     * @symbol ?mTaigaCold@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1172360573
+     */
+    MCAPI static class Biome * mTaigaCold;
+    /**
+     * @symbol ?mTaigaColdHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   604405731
+     */
+    MCAPI static class Biome * mTaigaColdHills;
+    /**
+     * @symbol ?mTaigaColdMutated@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -1213855877
+     */
+    MCAPI static class Biome * mTaigaColdMutated;
+    /**
+     * @symbol ?mTaigaHills@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   -263803269
+     */
+    MCAPI static class Biome * mTaigaHills;
+    /**
+     * @symbol ?mWarpedForest@VanillaBiomes@@2PEAVBiome@@EA
+     * @hash   1868066603
+     */
+    MCAPI static class Biome * mWarpedForest;
     /**
      * @symbol ?shutdownBiomes@VanillaBiomes@@SAXXZ
      * @hash   -1511833741

@@ -26,6 +26,7 @@ public:
     LevelNotificationEvent(struct LevelNotificationEvent const &) = delete;
     LevelNotificationEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1LevelNotificationEvent@@QEAA@XZ

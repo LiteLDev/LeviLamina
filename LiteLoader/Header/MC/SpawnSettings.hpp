@@ -26,6 +26,7 @@ public:
     SpawnSettings(struct SpawnSettings const &) = delete;
     SpawnSettings() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1SpawnSettings@@QEAA@XZ

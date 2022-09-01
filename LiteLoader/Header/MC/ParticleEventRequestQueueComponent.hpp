@@ -26,6 +26,7 @@ public:
     ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent const &) = delete;
     ParticleEventRequestQueueComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ParticleEventRequestQueueComponent@@QEAA@$$QEAU0@@Z

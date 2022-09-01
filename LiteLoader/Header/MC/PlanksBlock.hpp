@@ -246,7 +246,11 @@ public:
      * @hash   1360525594
      */
     MCAPI PlanksBlock(std::string const &, int);
-MCAPI static class std::array<std::string, 7> const WOOD_NAMES;
+    /**
+     * @symbol ?WOOD_NAMES@PlanksBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$06@std@@B
+     * @hash   1776549101
+     */
+    MCAPI static class std::array<std::string, 7> const WOOD_NAMES;
     /**
      * @symbol ?isValidWoodMaterial@PlanksBlock@@SA_NH@Z
      * @hash   -680210961

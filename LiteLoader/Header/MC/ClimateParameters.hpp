@@ -29,6 +29,7 @@ public:
     ClimateParameters(struct ClimateParameters const &) = delete;
     ClimateParameters() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ClimateParameters@@QEAA@UParameter@ClimateUtils@@00000M@Z

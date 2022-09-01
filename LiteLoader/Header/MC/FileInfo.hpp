@@ -27,6 +27,7 @@ public:
     FileInfo(struct FileInfo const &) = delete;
     FileInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0FileInfo@@QEAA@VPath@Core@@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

@@ -72,6 +72,10 @@ public:
      * @hash   1251891314
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockUnwalkableDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1568733439
+     */
+    MCAPI static std::string const NameID;
 
 };

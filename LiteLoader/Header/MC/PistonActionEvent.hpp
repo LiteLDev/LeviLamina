@@ -26,6 +26,7 @@ public:
     PistonActionEvent(struct PistonActionEvent const &) = delete;
     PistonActionEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1PistonActionEvent@@QEAA@XZ

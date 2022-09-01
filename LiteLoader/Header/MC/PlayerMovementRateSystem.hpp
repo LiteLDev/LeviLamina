@@ -28,6 +28,7 @@ public:
     PlayerMovementRateSystem(struct PlayerMovementRateSystem const &) = delete;
     PlayerMovementRateSystem() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

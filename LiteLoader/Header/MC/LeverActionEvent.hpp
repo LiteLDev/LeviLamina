@@ -25,6 +25,7 @@ public:
     struct LeverActionEvent& operator=(struct LeverActionEvent const &) = delete;
     LeverActionEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0LeverActionEvent@@QEAA@AEBU0@@Z

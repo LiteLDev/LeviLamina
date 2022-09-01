@@ -29,6 +29,7 @@ public:
     NpcDialogueScene(struct NpcDialogueScene const &) = delete;
     NpcDialogueScene() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1NpcDialogueScene@@QEAA@XZ

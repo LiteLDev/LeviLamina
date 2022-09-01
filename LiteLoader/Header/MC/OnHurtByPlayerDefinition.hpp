@@ -29,6 +29,7 @@ public:
     OnHurtByPlayerDefinition(struct OnHurtByPlayerDefinition const &) = delete;
     OnHurtByPlayerDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnHurtByPlayerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnHurtByPlayerDefinition@@@JsonUtil@@@std@@@Z

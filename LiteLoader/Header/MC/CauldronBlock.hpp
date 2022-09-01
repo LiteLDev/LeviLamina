@@ -341,7 +341,11 @@ public:
      * @hash   -1560659767
      */
     MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int, enum CauldronLiquidType) const;
-MCAPI static int const FILL_LEVEL_PER_DRIP;
+    /**
+     * @symbol ?FILL_LEVEL_PER_DRIP@CauldronBlock@@2HB
+     * @hash   -1083319155
+     */
+    MCAPI static int const FILL_LEVEL_PER_DRIP;
     /**
      * @symbol ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
      * @hash   1302781557
@@ -386,8 +390,20 @@ MCAPI static int const FILL_LEVEL_PER_DRIP;
     MCAPI void _useInventory(class Player &, class ItemStack &, class ItemStack &, int) const;
 
 private:
-MCAPI static int const BASE_WATER_PIXEL;
-MCAPI static class BaseGameVersion const CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-MCAPI static int const PIXEL_PER_LEVEL;
+    /**
+     * @symbol ?BASE_WATER_PIXEL@CauldronBlock@@0HB
+     * @hash   -537667831
+     */
+    MCAPI static int const BASE_WATER_PIXEL;
+    /**
+     * @symbol ?CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION@CauldronBlock@@0VBaseGameVersion@@B
+     * @hash   155344459
+     */
+    MCAPI static class BaseGameVersion const CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?PIXEL_PER_LEVEL@CauldronBlock@@0HB
+     * @hash   -974926714
+     */
+    MCAPI static int const PIXEL_PER_LEVEL;
 
 };

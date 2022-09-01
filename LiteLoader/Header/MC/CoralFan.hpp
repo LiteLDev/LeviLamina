@@ -361,7 +361,15 @@ public:
      * @hash   42081168
      */
     MCAPI CoralFan(std::string const &, int);
-MCAPI static std::string const CORAL_FAN_NAMES[];
-MCAPI static int const CORAL_FAN_NAMES_COUNT;
+    /**
+     * @symbol ?CORAL_FAN_NAMES@CoralFan@@2QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -408063281
+     */
+    MCAPI static std::string const CORAL_FAN_NAMES[];
+    /**
+     * @symbol ?CORAL_FAN_NAMES_COUNT@CoralFan@@2HB
+     * @hash   -1787947857
+     */
+    MCAPI static int const CORAL_FAN_NAMES_COUNT;
 
 };

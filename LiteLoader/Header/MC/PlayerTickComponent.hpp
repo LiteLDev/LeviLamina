@@ -28,6 +28,7 @@ public:
     PlayerTickComponent(struct PlayerTickComponent const &) = delete;
     PlayerTickComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PlayerTickComponent@@QEAA@V?$unique_ptr@UIPlayerTickPolicy@@U?$default_delete@UIPlayerTickPolicy@@@std@@@std@@@Z

@@ -90,6 +90,10 @@ public:
     MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
 
 private:
-MCAPI static struct BeardKernel mBeardKernel;
+    /**
+     * @symbol ?mBeardKernel@FeatureTerrainAdjustments@@0UBeardKernel@@A
+     * @hash   1560103042
+     */
+    MCAPI static struct BeardKernel mBeardKernel;
 
 };

@@ -28,6 +28,7 @@ public:
     BlockGeometryDescription(struct BlockGeometryDescription const &) = delete;
     BlockGeometryDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   972726700
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockGeometryDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   873274285
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockGeometryDescription@@SAXXZ
      * @hash   -838761837

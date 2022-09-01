@@ -62,6 +62,10 @@ public:
      * @hash   426340340
      */
     MCAPI EnderChestContainer();
-MCAPI static int const ITEMS_SIZE;
+    /**
+     * @symbol ?ITEMS_SIZE@EnderChestContainer@@2HB
+     * @hash   616375487
+     */
+    MCAPI static int const ITEMS_SIZE;
 
 };

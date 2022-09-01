@@ -26,6 +26,7 @@ public:
     SubpackInfo(struct SubpackInfo const &) = delete;
     SubpackInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1SubpackInfo@@QEAA@XZ

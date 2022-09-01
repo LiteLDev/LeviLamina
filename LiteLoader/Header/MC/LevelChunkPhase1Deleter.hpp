@@ -28,6 +28,7 @@ public:
     LevelChunkPhase1Deleter(struct LevelChunkPhase1Deleter const &) = delete;
     LevelChunkPhase1Deleter() = delete;
 #endif
+
 public:
     /**
      * @symbol ??RLevelChunkPhase1Deleter@@QEAAXPEAVLevelChunk@@@Z

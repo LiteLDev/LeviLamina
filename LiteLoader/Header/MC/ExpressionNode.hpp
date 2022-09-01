@@ -208,8 +208,16 @@ public:
      * @hash   798252624
      */
     MCAPI static class std::recursive_mutex & getQueryFunctionMutex();
-MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
-MCAPI static std::vector<std::string> mExpressionOpTokens;
+    /**
+     * @symbol ?mAliasOpTokens@ExpressionNode@@2V?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ExpressionOp@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ExpressionOp@@@std@@@2@@std@@A
+     * @hash   536980962
+     */
+    MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
+    /**
+     * @symbol ?mExpressionOpTokens@ExpressionNode@@2V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
+     * @hash   -841866382
+     */
+    MCAPI static std::vector<std::string> mExpressionOpTokens;
     /**
      * @symbol ?queryFunctionAccessorFromString@ExpressionNode@@SAPEBV?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4MolangVersion@@AEAW4MolangQueryFunctionReturnType@@_N@Z
      * @hash   -2088153924
@@ -374,10 +382,30 @@ MCAPI static std::vector<std::string> mExpressionOpTokens;
     MCAPI static void _writeScriptArgToMolangVariable(class MolangVariableMap &, enum MolangVariableIndex, struct MolangScriptArg const &);
 
 private:
-MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;
-MCAPI static class ExperimentStorage mExperiments;
-MCAPI static bool mMolangInitialized;
-MCAPI static class std::unordered_multimap<class HashedString, struct MolangQueryFunction, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct MolangQueryFunction>>> mQueryFunctionAccessors;
-MCAPI static class std::unordered_map<class HashedString, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>>>> mQuerySets;
+    /**
+     * @symbol ?_defaultUnknownQueryFunction@ExpressionNode@@0V?$function@$$A6AAEBUMolangScriptArg@@AEAVRenderParams@@AEBV?$vector@VExpressionNode@@V?$allocator@VExpressionNode@@@std@@@std@@@Z@std@@A
+     * @hash   1094217401
+     */
+    MCAPI static class std::function<struct MolangScriptArg const & (class RenderParams &, std::vector<class ExpressionNode> const &)> _defaultUnknownQueryFunction;
+    /**
+     * @symbol ?mExperiments@ExpressionNode@@0VExperimentStorage@@A
+     * @hash   120586372
+     */
+    MCAPI static class ExperimentStorage mExperiments;
+    /**
+     * @symbol ?mMolangInitialized@ExpressionNode@@0_NA
+     * @hash   -26627807
+     */
+    MCAPI static bool mMolangInitialized;
+    /**
+     * @symbol ?mQueryFunctionAccessors@ExpressionNode@@0V?$unordered_multimap@VHashedString@@UMolangQueryFunction@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@UMolangQueryFunction@@@std@@@4@@std@@A
+     * @hash   1969823930
+     */
+    MCAPI static class std::unordered_multimap<class HashedString, struct MolangQueryFunction, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct MolangQueryFunction>>> mQueryFunctionAccessors;
+    /**
+     * @symbol ?mQuerySets@ExpressionNode@@0V?$unordered_map@VHashedString@@V?$unordered_set@VHashedString@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@VHashedString@@@3@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$unordered_set@VHashedString@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@VHashedString@@@3@@std@@@std@@@3@@std@@A
+     * @hash   1002526654
+     */
+    MCAPI static class std::unordered_map<class HashedString, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString>>>>> mQuerySets;
 
 };

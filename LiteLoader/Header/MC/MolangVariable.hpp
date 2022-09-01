@@ -84,10 +84,30 @@ public:
     MCAPI static class std::recursive_mutex & _getMolangVariableIndexLock();
 
 private:
-MCAPI static bool mHasSetWatermark;
-MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap;
-MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap_LowWaterMark;
-MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap;
-MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap_LowWaterMark;
+    /**
+     * @symbol ?mHasSetWatermark@MolangVariable@@0_NA
+     * @hash   -1756507289
+     */
+    MCAPI static bool mHasSetWatermark;
+    /**
+     * @symbol ?mIndexToVariableNameMap@MolangVariable@@0V?$unordered_map@W4MolangVariableIndex@@VHashedString@@U?$hash@W4MolangVariableIndex@@@std@@U?$equal_to@W4MolangVariableIndex@@@4@V?$allocator@U?$pair@$$CBW4MolangVariableIndex@@VHashedString@@@std@@@4@@std@@A
+     * @hash   563366773
+     */
+    MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap;
+    /**
+     * @symbol ?mIndexToVariableNameMap_LowWaterMark@MolangVariable@@0V?$unordered_map@W4MolangVariableIndex@@VHashedString@@U?$hash@W4MolangVariableIndex@@@std@@U?$equal_to@W4MolangVariableIndex@@@4@V?$allocator@U?$pair@$$CBW4MolangVariableIndex@@VHashedString@@@std@@@4@@std@@A
+     * @hash   -1240757734
+     */
+    MCAPI static class std::unordered_map<enum MolangVariableIndex, class HashedString, struct std::hash<enum MolangVariableIndex>, struct std::equal_to<enum MolangVariableIndex>, class std::allocator<struct std::pair<enum MolangVariableIndex const, class HashedString>>> mIndexToVariableNameMap_LowWaterMark;
+    /**
+     * @symbol ?mVariableNameToIndexMap@MolangVariable@@0V?$unordered_map@_KW4MolangVariableIndex@@U?$hash@_K@std@@U?$equal_to@_K@3@V?$allocator@U?$pair@$$CB_KW4MolangVariableIndex@@@std@@@3@@std@@A
+     * @hash   -1350377157
+     */
+    MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap;
+    /**
+     * @symbol ?mVariableNameToIndexMap_LowWaterMark@MolangVariable@@0V?$unordered_map@_KW4MolangVariableIndex@@U?$hash@_K@std@@U?$equal_to@_K@3@V?$allocator@U?$pair@$$CB_KW4MolangVariableIndex@@@std@@@3@@std@@A
+     * @hash   578143448
+     */
+    MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex>>> mVariableNameToIndexMap_LowWaterMark;
 
 };

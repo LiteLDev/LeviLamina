@@ -28,6 +28,7 @@ public:
     BlockRotationComponent(struct BlockRotationComponent const &) = delete;
     BlockRotationComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockRotationComponent@@QEAA@AEBVVec3@@@Z

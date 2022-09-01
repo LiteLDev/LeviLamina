@@ -28,7 +28,12 @@ public:
     BiomeHeight(struct BiomeHeight const &) = delete;
     BiomeHeight() = delete;
 #endif
+
 public:
-MCAPI static float const MIN_DEPTH;
+    /**
+     * @symbol ?MIN_DEPTH@BiomeHeight@@2MB
+     * @hash   -272300719
+     */
+    MCAPI static float const MIN_DEPTH;
 
 };

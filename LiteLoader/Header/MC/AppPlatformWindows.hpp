@@ -126,7 +126,11 @@ public:
      * @hash   778008395
      */
     MCAPI AppPlatformWindows();
-MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
+    /**
+     * @symbol ?EXPERIMENTS_ACTIVE_KEY@AppPlatformWindows@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   946508795
+     */
+    MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
 //protected:
     /**

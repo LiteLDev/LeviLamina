@@ -278,7 +278,15 @@ public:
      * @hash   650674973
      */
     MCAPI Npc(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-MCAPI static std::string const SKIN_ID_TAG;
-MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;
+    /**
+     * @symbol ?SKIN_ID_TAG@Npc@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1405221425
+     */
+    MCAPI static std::string const SKIN_ID_TAG;
+    /**
+     * @symbol ?Skins@Npc@@2V?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@B
+     * @hash   -1298700106
+     */
+    MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;
 
 };

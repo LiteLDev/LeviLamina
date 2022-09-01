@@ -29,7 +29,11 @@ struct NbtToBlockCache {
 enum NBTState;
 
 #undef AFTER_EXTRA
-MCAPI extern class std::unordered_map<class HashedString, class std::function<void (int, class CompoundTag &)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<void (int, class CompoundTag &)>>>> BLOCK_REPLACE_DATA_MAP;
+    /**
+     * @symbol ?BLOCK_REPLACE_DATA_MAP@BlockSerializationUtils@@3V?$unordered_map@VHashedString@@V?$function@$$A6AXHAEAVCompoundTag@@@Z@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$function@$$A6AXHAEAVCompoundTag@@@Z@std@@@std@@@3@@std@@A
+     * @hash   1554692180
+     */
+    MCAPI extern class std::unordered_map<class HashedString, class std::function<void (int, class CompoundTag &)>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::function<void (int, class CompoundTag &)>>>> BLOCK_REPLACE_DATA_MAP;
     /**
      * @symbol ?clearBlockReplaceDataMap@BlockSerializationUtils@@YAXXZ
      * @hash   325445352

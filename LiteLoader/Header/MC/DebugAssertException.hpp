@@ -59,6 +59,10 @@ public:
 //private:
 
 private:
-MCAPI static char const *const WHAT;
+    /**
+     * @symbol ?WHAT@DebugAssertException@@0QEBDEB
+     * @hash   2136830612
+     */
+    MCAPI static char const *const WHAT;
 
 };

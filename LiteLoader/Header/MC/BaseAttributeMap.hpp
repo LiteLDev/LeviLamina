@@ -138,6 +138,10 @@ public:
 //private:
 
 private:
-MCAPI static class AttributeInstance mInvalidInstance;
+    /**
+     * @symbol ?mInvalidInstance@BaseAttributeMap@@0VAttributeInstance@@A
+     * @hash   -1497176272
+     */
+    MCAPI static class AttributeInstance mInvalidInstance;
 
 };

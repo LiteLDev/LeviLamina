@@ -30,6 +30,10 @@ public:
 #endif
 
 public:
-MCAPI static struct PackIdVersion const EDUResourcePack;
+    /**
+     * @symbol ?EDUResourcePack@EduAppConfigs@@2UPackIdVersion@@B
+     * @hash   -2073180207
+     */
+    MCAPI static struct PackIdVersion const EDUResourcePack;
 
 };

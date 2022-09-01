@@ -28,6 +28,7 @@ public:
     struct NpcDialogueButton& operator=(struct NpcDialogueButton const &) = delete;
     NpcDialogueButton(struct NpcDialogueButton const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0NpcDialogueButton@@QEAA@XZ

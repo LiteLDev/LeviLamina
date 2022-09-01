@@ -60,6 +60,10 @@ public:
 //private:
 
 private:
-MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
+    /**
+     * @symbol ?GAME_TEST_INSTANCE_PREFIX@GameTestInstanceLedger@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1618464229
+     */
+    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 
 };

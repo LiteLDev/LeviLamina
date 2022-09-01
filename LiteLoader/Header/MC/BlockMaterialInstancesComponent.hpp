@@ -28,6 +28,7 @@ public:
     BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent const &) = delete;
     BlockMaterialInstancesComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockMaterialInstancesComponent@@QEAA@$$QEAU0@@Z

@@ -26,6 +26,7 @@ public:
     BlockLightDampeningDescription(struct BlockLightDampeningDescription const &) = delete;
     BlockLightDampeningDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -67,7 +68,11 @@ public:
      * @hash   1847040411
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockLightDampeningDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1574419087
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockLightDampeningDescription@@SAXXZ
      * @hash   -1791166605

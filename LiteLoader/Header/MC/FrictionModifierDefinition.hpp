@@ -29,6 +29,7 @@ public:
     FrictionModifierDefinition(struct FrictionModifierDefinition const &) = delete;
     FrictionModifierDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@FrictionModifierDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFrictionModifierDefinition@@@JsonUtil@@@std@@@Z

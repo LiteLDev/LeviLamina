@@ -286,6 +286,10 @@ public:
 protected:
 
 private:
-MCAPI static float const HANGING_OFFSET;
+    /**
+     * @symbol ?HANGING_OFFSET@HangingActor@@0MB
+     * @hash   20645488
+     */
+    MCAPI static float const HANGING_OFFSET;
 
 };

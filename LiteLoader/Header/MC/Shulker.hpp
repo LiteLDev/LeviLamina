@@ -309,8 +309,16 @@ public:
      * @hash   1380284587
      */
     MCAPI void postNormalTick();
-MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
-MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
+    /**
+     * @symbol ?COVERED_ARMOR_MODIFIER@Shulker@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   410554550
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> COVERED_ARMOR_MODIFIER;
+    /**
+     * @symbol ?COVERED_ARMOR_MODIFIER_UUID@Shulker@@2VUUID@mce@@B
+     * @hash   -986460809
+     */
+    MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
     /**
      * @symbol ?setShulkerAttachPos@Shulker@@SAXAEAVSynchedActorData@@AEBVBlockPos@@@Z
      * @hash   615905107

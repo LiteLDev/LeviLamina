@@ -28,6 +28,7 @@ public:
     NpcActionsContainer(struct NpcActionsContainer const &) = delete;
     NpcActionsContainer() = delete;
 #endif
+
 public:
     /**
      * @symbol ?cloneActions@NpcActionsContainer@@QEBA?AV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@XZ

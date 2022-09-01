@@ -234,8 +234,16 @@ public:
      * @hash   999729816
      */
     MCAPI MyceliumBlock(std::string const &, int);
-MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;
-MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_SPREAD;
+    /**
+     * @symbol ?MIN_BRIGHTNESS_TO_PERSIST@MyceliumBlock@@2UBrightness@@B
+     * @hash   1920544482
+     */
+    MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_PERSIST;
+    /**
+     * @symbol ?MIN_BRIGHTNESS_TO_SPREAD@MyceliumBlock@@2UBrightness@@B
+     * @hash   -336111477
+     */
+    MCAPI static struct Brightness const MIN_BRIGHTNESS_TO_SPREAD;
 
 //private:
     /**

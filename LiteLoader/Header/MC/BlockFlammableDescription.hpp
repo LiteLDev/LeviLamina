@@ -28,6 +28,7 @@ public:
     BlockFlammableDescription(struct BlockFlammableDescription const &) = delete;
     BlockFlammableDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -46,9 +47,21 @@ public:
      * @hash   -1758236593
      */
     virtual void initializeComponent(class EntityContext &) const;
-MCAPI static int const CATCH_CHANCE_DEFAULT;
-MCAPI static int const DESTROY_CHANCE_DEFAULT;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?CATCH_CHANCE_DEFAULT@BlockFlammableDescription@@2HB
+     * @hash   -1009896317
+     */
+    MCAPI static int const CATCH_CHANCE_DEFAULT;
+    /**
+     * @symbol ?DESTROY_CHANCE_DEFAULT@BlockFlammableDescription@@2HB
+     * @hash   1226046729
+     */
+    MCAPI static int const DESTROY_CHANCE_DEFAULT;
+    /**
+     * @symbol ?NameID@BlockFlammableDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1394877877
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockFlammableDescription@@SAXXZ
      * @hash   -1355758097

@@ -25,6 +25,7 @@ public:
     struct ProjectileHitEvent& operator=(struct ProjectileHitEvent const &) = delete;
     ProjectileHitEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ProjectileHitEvent@@QEAA@AEBU0@@Z

@@ -342,6 +342,10 @@ public:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &) const;
 
 private:
-MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION@HopperBlock@@0VBaseGameVersion@@B
+     * @hash   -1719835653
+     */
+    MCAPI static class BaseGameVersion const HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

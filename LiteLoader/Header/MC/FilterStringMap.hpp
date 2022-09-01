@@ -27,6 +27,7 @@ public:
     struct FilterStringMap& operator=(struct FilterStringMap const &) = delete;
     FilterStringMap() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0FilterStringMap@@QEAA@V?$initializer_list@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UFilterInputDefinition@@@std@@@std@@@Z

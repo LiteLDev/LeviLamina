@@ -46,6 +46,10 @@ public:
 //private:
 
 private:
-MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
+    /**
+     * @symbol ?STRUCTURE_LOCATION_FOSSIL@FossilFeature@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1130449420
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
 };

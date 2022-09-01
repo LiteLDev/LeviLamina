@@ -27,6 +27,7 @@ public:
     struct PlayerActionComponent& operator=(struct PlayerActionComponent const &) = delete;
     PlayerActionComponent(struct PlayerActionComponent const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PlayerActionComponent@@QEAA@XZ

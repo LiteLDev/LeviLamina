@@ -22,6 +22,10 @@ namespace MissingTextureAtlasItem {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class TextureAtlasItem const missingTextureItem;
+    /**
+     * @symbol ?missingTextureItem@MissingTextureAtlasItem@@3VTextureAtlasItem@@B
+     * @hash   -2118862223
+     */
+    MCAPI extern class TextureAtlasItem const missingTextureItem;
 
 };

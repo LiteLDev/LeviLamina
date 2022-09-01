@@ -26,6 +26,7 @@ public:
     BlockPropertyComponent(struct BlockPropertyComponent const &) = delete;
     BlockPropertyComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getProperty@BlockPropertyComponent@@QEBA_NW4BlockProperty@@@Z

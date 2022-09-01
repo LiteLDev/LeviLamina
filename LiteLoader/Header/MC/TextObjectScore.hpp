@@ -59,9 +59,25 @@ public:
      * @hash   597217335
      */
     MCAPI TextObjectScore(std::string, std::string);
-MCAPI static std::string const RAW_TEXT_SCORE_KEY;
-MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
-MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;
-MCAPI static std::string const RAW_TEXT_SCORE_STAR;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -9349375
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_KEY;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_NAME_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1464754687
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_OBJECTIVE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -391753023
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_STAR@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   550185695
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_STAR;
 
 };

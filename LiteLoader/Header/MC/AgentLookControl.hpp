@@ -51,6 +51,10 @@ public:
      * @hash   379086821
      */
     MCAPI AgentLookControl();
-MCAPI static float sBaseYMax;
+    /**
+     * @symbol ?sBaseYMax@AgentLookControl@@2MA
+     * @hash   -216490309
+     */
+    MCAPI static float sBaseYMax;
 
 };

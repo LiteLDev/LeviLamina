@@ -26,6 +26,7 @@ public:
     PlayerDamageEvent(struct PlayerDamageEvent const &) = delete;
     PlayerDamageEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PlayerDamageEvent@@QEAA@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@@Z

@@ -46,7 +46,11 @@ public:
      * @hash   -1112723
      */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> const & getVolumeInstances(class AutomaticID<class Dimension, int>) const;
-MCAPI static bool isTriggerVolumesEnabled;
+    /**
+     * @symbol ?isTriggerVolumesEnabled@VolumeEntityManager@@2_NA
+     * @hash   2022685087
+     */
+    MCAPI static bool isTriggerVolumesEnabled;
     /**
      * @symbol ?registerComponentNetRelevancy@VolumeEntityManager@@SAXAEAVComponentNetRelevancyRegistry@@@Z
      * @hash   30598610

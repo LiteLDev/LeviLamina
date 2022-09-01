@@ -60,6 +60,10 @@ public:
      * @hash   643673446
      */
     MCAPI void setTargetFPS(unsigned int);
-MCAPI static float const AVERAGE_TASK_TOLERANCE;
+    /**
+     * @symbol ?AVERAGE_TASK_TOLERANCE@Scheduler@@2MB
+     * @hash   1230582957
+     */
+    MCAPI static float const AVERAGE_TASK_TOLERANCE;
 
 };

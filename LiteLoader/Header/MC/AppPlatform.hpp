@@ -1130,9 +1130,21 @@ public:
      * @hash   1662620285
      */
     MCAPI void notifyUserStorageInitialized();
-MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const HOME_PATH;
-MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const LOG_PATH;
-MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SETTINGS_PATH;
+    /**
+     * @symbol ?HOME_PATH@AppPlatform@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@B
+     * @hash   -1277722957
+     */
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const HOME_PATH;
+    /**
+     * @symbol ?LOG_PATH@AppPlatform@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@B
+     * @hash   1018234901
+     */
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const LOG_PATH;
+    /**
+     * @symbol ?SETTINGS_PATH@AppPlatform@@2V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@B
+     * @hash   -1088614461
+     */
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SETTINGS_PATH;
 
 //protected:
 
@@ -1144,9 +1156,17 @@ MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const S
     MCAPI void _initializeLoadProfiler();
 
 protected:
-MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;
+    /**
+     * @symbol ?SHADERCACHE_PATH@AppPlatform@@1V?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@B
+     * @hash   144736006
+     */
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const SHADERCACHE_PATH;
 
 private:
-MCAPI static bool mIsInitialized;
+    /**
+     * @symbol ?mIsInitialized@AppPlatform@@0_NA
+     * @hash   -2031994747
+     */
+    MCAPI static bool mIsInitialized;
 
 };

@@ -86,8 +86,16 @@ public:
      * @hash   1584472464
      */
     MCAPI bool spreadFromRandomFaceTowardRandomDirection(class IBlockWorldGenAPI &, class Block const &, class Block const &, class BlockPos const &) const;
-MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
-MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const SAME_POSITION_ONLY;
+    /**
+     * @symbol ?ALL_SPREAD_TYPES@MultifaceSpreader@@2V?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@B
+     * @hash   -2146446941
+     */
+    MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
+    /**
+     * @symbol ?SAME_POSITION_ONLY@MultifaceSpreader@@2V?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@B
+     * @hash   -577421257
+     */
+    MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const SAME_POSITION_ONLY;
 
 //protected:
     /**

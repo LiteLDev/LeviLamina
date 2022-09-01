@@ -127,6 +127,10 @@ public:
     MCAPI void _showTrialReminder(bool);
 
 private:
-MCAPI static bool mTrialHasEnded;
+    /**
+     * @symbol ?mTrialHasEnded@SurvivalMode@@0_NA
+     * @hash   6720428
+     */
+    MCAPI static bool mTrialHasEnded;
 
 };

@@ -83,6 +83,10 @@ public:
      * @hash   -147309815
      */
     MCAPI LabTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-MCAPI static int const INPUT_SLOTS;
+    /**
+     * @symbol ?INPUT_SLOTS@LabTableContainerManagerModel@@2HB
+     * @hash   438284445
+     */
+    MCAPI static int const INPUT_SLOTS;
 
 };

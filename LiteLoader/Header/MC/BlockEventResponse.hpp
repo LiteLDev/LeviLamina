@@ -22,6 +22,10 @@ namespace BlockEventResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
+    /**
+     * @symbol ?EVENT_RESPONSE_VERSION_1_16_100@BlockEventResponse@@3VSemVersion@@B
+     * @hash   -1834927775
+     */
+    MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
 
 };

@@ -154,8 +154,20 @@ public:
      * @hash   -1640967783
      */
     MCAPI ~LegacyStructureSettings();
-MCAPI static float const INTEGRITY_MAX;
-MCAPI static float const INTEGRITY_MIN;
-MCAPI static int const MAX_STRUCTURE_SIZE;
+    /**
+     * @symbol ?INTEGRITY_MAX@LegacyStructureSettings@@2MB
+     * @hash   671272029
+     */
+    MCAPI static float const INTEGRITY_MAX;
+    /**
+     * @symbol ?INTEGRITY_MIN@LegacyStructureSettings@@2MB
+     * @hash   -1517887043
+     */
+    MCAPI static float const INTEGRITY_MIN;
+    /**
+     * @symbol ?MAX_STRUCTURE_SIZE@LegacyStructureSettings@@2HB
+     * @hash   -384085897
+     */
+    MCAPI static int const MAX_STRUCTURE_SIZE;
 
 };

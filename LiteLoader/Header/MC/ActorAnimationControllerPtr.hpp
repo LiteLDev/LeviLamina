@@ -60,6 +60,10 @@ public:
      * @hash   -1027824561
      */
     MCAPI ~ActorAnimationControllerPtr();
-MCAPI static class ActorAnimationControllerPtr const NONE;
+    /**
+     * @symbol ?NONE@ActorAnimationControllerPtr@@2V1@B
+     * @hash   -2105353083
+     */
+    MCAPI static class ActorAnimationControllerPtr const NONE;
 
 };

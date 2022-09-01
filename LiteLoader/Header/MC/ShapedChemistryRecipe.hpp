@@ -48,6 +48,10 @@ public:
      * @hash   -1766429515
      */
     virtual class mce::UUID const & getId() const;
-MCAPI static class mce::UUID const ID;
+    /**
+     * @symbol ?ID@ShapedChemistryRecipe@@2VUUID@mce@@B
+     * @hash   -1272339713
+     */
+    MCAPI static class mce::UUID const ID;
 
 };

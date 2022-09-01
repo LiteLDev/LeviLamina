@@ -27,6 +27,7 @@ public:
     PageContent(struct PageContent const &) = delete;
     PageContent() = delete;
 #endif
+
 public:
     /**
      * @symbol ?createTag@PageContent@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
@@ -43,7 +44,11 @@ public:
      * @hash   21536966
      */
     MCAPI ~PageContent();
-MCAPI static struct PageContent const BLANK_PAGE;
+    /**
+     * @symbol ?BLANK_PAGE@PageContent@@2U1@B
+     * @hash   -658604340
+     */
+    MCAPI static struct PageContent const BLANK_PAGE;
     /**
      * @symbol ?read@PageContent@@SA?AU1@AEBVCompoundTag@@@Z
      * @hash   1966662838

@@ -136,7 +136,11 @@ public:
      * @hash   -92782789
      */
     MCAPI ~IdentityDefinition();
-MCAPI static class IdentityDefinition const Invalid;
+    /**
+     * @symbol ?Invalid@IdentityDefinition@@2V1@B
+     * @hash   1144452559
+     */
+    MCAPI static class IdentityDefinition const Invalid;
     /**
      * @symbol ?convertFakeToReal@IdentityDefinition@@SA_NAEAV1@AEBUPlayerScoreboardId@@@Z
      * @hash   173778702

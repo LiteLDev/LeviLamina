@@ -138,6 +138,10 @@ public:
 protected:
 
 private:
-MCAPI static class BackgroundTaskBase * gCurrentTask;
+    /**
+     * @symbol ?gCurrentTask@BackgroundTaskBase@@0PEAV1@EA
+     * @hash   -458357501
+     */
+    MCAPI static class BackgroundTaskBase * gCurrentTask;
 
 };

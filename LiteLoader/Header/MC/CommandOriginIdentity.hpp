@@ -26,6 +26,7 @@ public:
     CommandOriginIdentity(struct CommandOriginIdentity const &) = delete;
     CommandOriginIdentity() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1CommandOriginIdentity@@QEAA@XZ

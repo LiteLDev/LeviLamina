@@ -62,6 +62,10 @@ public:
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource &, class BlockPos, enum Rotation, class BlockPos);
 
 private:
-MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
+    /**
+     * @symbol ?STRUCTURE_SHIPWRECK_TYPES@ShipwreckPiece@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1025152768
+     */
+    MCAPI static std::string const STRUCTURE_SHIPWRECK_TYPES[];
 
 };

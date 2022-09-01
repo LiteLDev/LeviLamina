@@ -455,11 +455,31 @@ public:
      * @hash   1004803937
      */
     MCAPI void resetPlayerScore(struct ScoreboardId const &, class Objective &);
-MCAPI static std::string const DEFAULT_CRITERIA;
-MCAPI static std::string const DISPLAY_SLOT_BELOWNAME;
-MCAPI static std::string const DISPLAY_SLOT_LIST;
-MCAPI static std::string const DISPLAY_SLOT_SIDEBAR;
-MCAPI static char const * OBJECTIVES_ENUM;
+    /**
+     * @symbol ?DEFAULT_CRITERIA@Scoreboard@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   491570341
+     */
+    MCAPI static std::string const DEFAULT_CRITERIA;
+    /**
+     * @symbol ?DISPLAY_SLOT_BELOWNAME@Scoreboard@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -270901829
+     */
+    MCAPI static std::string const DISPLAY_SLOT_BELOWNAME;
+    /**
+     * @symbol ?DISPLAY_SLOT_LIST@Scoreboard@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   429835057
+     */
+    MCAPI static std::string const DISPLAY_SLOT_LIST;
+    /**
+     * @symbol ?DISPLAY_SLOT_SIDEBAR@Scoreboard@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   342426011
+     */
+    MCAPI static std::string const DISPLAY_SLOT_SIDEBAR;
+    /**
+     * @symbol ?OBJECTIVES_ENUM@Scoreboard@@2PEBDEB
+     * @hash   -1205328888
+     */
+    MCAPI static char const * OBJECTIVES_ENUM;
     /**
      * @symbol ?shouldClearScoresOnDeath@Scoreboard@@SA_NAEBVActor@@@Z
      * @hash   451424235

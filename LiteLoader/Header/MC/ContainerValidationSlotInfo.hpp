@@ -26,6 +26,7 @@ public:
     ContainerValidationSlotInfo(struct ContainerValidationSlotInfo const &) = delete;
     ContainerValidationSlotInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ContainerValidationSlotInfo@@QEAA@AEBUContainerValidationSlotData@@V?$shared_ptr@VSimpleSparseContainer@@@std@@V?$shared_ptr@$$CBVContainerValidationBase@@@3@@Z

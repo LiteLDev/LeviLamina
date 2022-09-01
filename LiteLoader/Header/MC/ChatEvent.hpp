@@ -25,6 +25,7 @@ public:
     struct ChatEvent& operator=(struct ChatEvent const &) = delete;
     ChatEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ChatEvent@@QEAA@AEBU0@@Z

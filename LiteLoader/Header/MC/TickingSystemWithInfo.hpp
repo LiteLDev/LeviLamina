@@ -26,6 +26,7 @@ public:
     TickingSystemWithInfo(struct TickingSystemWithInfo const &) = delete;
     TickingSystemWithInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0TickingSystemWithInfo@@QEAA@$$QEAU0@@Z

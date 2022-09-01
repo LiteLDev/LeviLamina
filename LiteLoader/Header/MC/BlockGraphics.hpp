@@ -45,7 +45,11 @@ public:
      * @hash   419158398
      */
     MCAPI bool isFullAndOpaque() const;
-MCAPI static float const SIZE_OFFSET;
+    /**
+     * @symbol ?SIZE_OFFSET@BlockGraphics@@2MB
+     * @hash   -589529589
+     */
+    MCAPI static float const SIZE_OFFSET;
     /**
      * @symbol ?getForBlock@BlockGraphics@@SAPEBV1@AEBVBlock@@@Z
      * @hash   1000996503
@@ -61,9 +65,21 @@ MCAPI static float const SIZE_OFFSET;
      * @hash   -1926061128
      */
     MCAPI static bool isInitialized();
-MCAPI static class std::unordered_map<std::string, class BlockGraphics *, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class BlockGraphics *>>> mBlockLookupMap;
-MCAPI static std::unique_ptr<class BlockGraphics> mDummyBlock;
-MCAPI static std::vector<std::unique_ptr<class BlockGraphics>> mOwnedBlocks;
+    /**
+     * @symbol ?mBlockLookupMap@BlockGraphics@@2V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVBlockGraphics@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVBlockGraphics@@@std@@@2@@std@@A
+     * @hash   -1716122133
+     */
+    MCAPI static class std::unordered_map<std::string, class BlockGraphics *, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class BlockGraphics *>>> mBlockLookupMap;
+    /**
+     * @symbol ?mDummyBlock@BlockGraphics@@2V?$unique_ptr@VBlockGraphics@@U?$default_delete@VBlockGraphics@@@std@@@std@@A
+     * @hash   -1537090113
+     */
+    MCAPI static std::unique_ptr<class BlockGraphics> mDummyBlock;
+    /**
+     * @symbol ?mOwnedBlocks@BlockGraphics@@2V?$vector@V?$unique_ptr@VBlockGraphics@@U?$default_delete@VBlockGraphics@@@std@@@std@@V?$allocator@V?$unique_ptr@VBlockGraphics@@U?$default_delete@VBlockGraphics@@@std@@@std@@@2@@std@@A
+     * @hash   1395107758
+     */
+    MCAPI static std::vector<std::unique_ptr<class BlockGraphics>> mOwnedBlocks;
     /**
      * @symbol ?setAtlasItemManager@BlockGraphics@@SAXV?$shared_ptr@VAtlasItemManager@@@std@@@Z
      * @hash   1258220733
@@ -75,13 +91,37 @@ MCAPI static std::vector<std::unique_ptr<class BlockGraphics>> mOwnedBlocks;
 //private:
 
 protected:
-MCAPI static class std::weak_ptr<class AtlasItemManager> mTerrainTextureAtlas;
+    /**
+     * @symbol ?mTerrainTextureAtlas@BlockGraphics@@1V?$weak_ptr@VAtlasItemManager@@@std@@A
+     * @hash   50321192
+     */
+    MCAPI static class std::weak_ptr<class AtlasItemManager> mTerrainTextureAtlas;
 
 private:
-MCAPI static class std::mutex mBlockModelAccess;
-MCAPI static class std::unordered_map<unsigned int, class BlockGraphics *, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, class BlockGraphics *>>> mBlocks;
-MCAPI static bool mInitialized;
-MCAPI static class std::map<std::string, std::unique_ptr<struct BlockGeometry::Model>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<struct BlockGeometry::Model>>>> mModels;
-MCAPI static class std::map<std::string, std::unique_ptr<class BlockGeometry::TessellatedModel>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class BlockGeometry::TessellatedModel>>>> mTessellatedModels;
+    /**
+     * @symbol ?mBlockModelAccess@BlockGraphics@@0Vmutex@std@@A
+     * @hash   -1777947924
+     */
+    MCAPI static class std::mutex mBlockModelAccess;
+    /**
+     * @symbol ?mBlocks@BlockGraphics@@0V?$unordered_map@IPEAVBlockGraphics@@U?$hash@I@std@@U?$equal_to@I@3@V?$allocator@U?$pair@$$CBIPEAVBlockGraphics@@@std@@@3@@std@@A
+     * @hash   888807601
+     */
+    MCAPI static class std::unordered_map<unsigned int, class BlockGraphics *, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, class BlockGraphics *>>> mBlocks;
+    /**
+     * @symbol ?mInitialized@BlockGraphics@@0_NA
+     * @hash   638229091
+     */
+    MCAPI static bool mInitialized;
+    /**
+     * @symbol ?mModels@BlockGraphics@@0V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@UModel@BlockGeometry@@U?$default_delete@UModel@BlockGeometry@@@std@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@UModel@BlockGeometry@@U?$default_delete@UModel@BlockGeometry@@@std@@@2@@std@@@2@@std@@A
+     * @hash   265559408
+     */
+    MCAPI static class std::map<std::string, std::unique_ptr<struct BlockGeometry::Model>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<struct BlockGeometry::Model>>>> mModels;
+    /**
+     * @symbol ?mTessellatedModels@BlockGraphics@@0V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VTessellatedModel@BlockGeometry@@U?$default_delete@VTessellatedModel@BlockGeometry@@@std@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VTessellatedModel@BlockGeometry@@U?$default_delete@VTessellatedModel@BlockGeometry@@@std@@@2@@std@@@2@@std@@A
+     * @hash   1430813900
+     */
+    MCAPI static class std::map<std::string, std::unique_ptr<class BlockGeometry::TessellatedModel>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class BlockGeometry::TessellatedModel>>>> mTessellatedModels;
 
 };

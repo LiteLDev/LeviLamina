@@ -26,6 +26,7 @@ public:
     RemovePassengersComponent(struct RemovePassengersComponent const &) = delete;
     RemovePassengersComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1RemovePassengersComponent@@QEAA@XZ

@@ -155,6 +155,10 @@ public:
     MCAPI bool _validateActorData(class CompoundTag &, struct ActorDefinitionIdentifier &, class Vec3 &, class LevelChunk const *) const;
 
 private:
-MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
+    /**
+     * @symbol ?builtinEntityMappings@ActorFactory@@0V?$vector@UVanillaActorData@@V?$allocator@UVanillaActorData@@@std@@@std@@A
+     * @hash   -1841269643
+     */
+    MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
 
 };

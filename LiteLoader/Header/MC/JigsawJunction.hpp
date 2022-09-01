@@ -26,6 +26,7 @@ public:
     JigsawJunction(struct JigsawJunction const &) = delete;
     JigsawJunction() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0JigsawJunction@@QEAA@HHHHW4Projection@@0@Z

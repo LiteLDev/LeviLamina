@@ -26,6 +26,7 @@ public:
     OverworldBlendRules(struct OverworldBlendRules const &) = delete;
     OverworldBlendRules() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1OverworldBlendRules@@QEAA@XZ

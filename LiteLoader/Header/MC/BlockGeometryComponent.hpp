@@ -28,6 +28,7 @@ public:
     BlockGeometryComponent(struct BlockGeometryComponent const &) = delete;
     BlockGeometryComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4BlockGeometryComponent@@QEAAAEAU0@$$QEAU0@@Z

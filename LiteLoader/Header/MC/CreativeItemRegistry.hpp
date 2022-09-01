@@ -104,7 +104,11 @@ public:
      * @hash   -523271344
      */
     MCAPI static void forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
-MCAPI static class std::mutex mCreativeListMutex;
+    /**
+     * @symbol ?mCreativeListMutex@CreativeItemRegistry@@2Vmutex@std@@A
+     * @hash   1899637247
+     */
+    MCAPI static class std::mutex mCreativeListMutex;
     /**
      * @symbol ?reset@CreativeItemRegistry@@SAXXZ
      * @hash   -743334783
@@ -124,6 +128,10 @@ MCAPI static class std::mutex mCreativeListMutex;
     MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance &)>);
 
 private:
-MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
+    /**
+     * @symbol ?mCurrentRegistry@CreativeItemRegistry@@0V?$unique_ptr@VCreativeItemRegistry@@U?$default_delete@VCreativeItemRegistry@@@std@@@std@@A
+     * @hash   877489007
+     */
+    MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
 
 };

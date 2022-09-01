@@ -89,11 +89,35 @@ public:
     MCAPI class std::optional<class BlockPos> _getSpawnPosFromNearestVillageToPlayerPos(class BlockPos const &, class BlockSource &);
 
 private:
-MCAPI static float const CHANCE_TO_SPAWN_IN_WILDERNESS;
-MCAPI static std::vector<float> const CHANCE_TO_SPAWN_PER_DAY;
-MCAPI static int const DISTANCE_IN_BLOCKS_FROM_MEETING_AREA;
-MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER;
-MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE;
-MCAPI static int const LENGTH_OF_DAY_IN_TICKS;
+    /**
+     * @symbol ?CHANCE_TO_SPAWN_IN_WILDERNESS@WanderingTraderScheduler@@0MB
+     * @hash   1740532274
+     */
+    MCAPI static float const CHANCE_TO_SPAWN_IN_WILDERNESS;
+    /**
+     * @symbol ?CHANCE_TO_SPAWN_PER_DAY@WanderingTraderScheduler@@0V?$vector@MV?$allocator@M@std@@@std@@B
+     * @hash   -730948801
+     */
+    MCAPI static std::vector<float> const CHANCE_TO_SPAWN_PER_DAY;
+    /**
+     * @symbol ?DISTANCE_IN_BLOCKS_FROM_MEETING_AREA@WanderingTraderScheduler@@0HB
+     * @hash   -855558419
+     */
+    MCAPI static int const DISTANCE_IN_BLOCKS_FROM_MEETING_AREA;
+    /**
+     * @symbol ?DISTANCE_IN_BLOCKS_FROM_PLAYER@WanderingTraderScheduler@@0HB
+     * @hash   1480639125
+     */
+    MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER;
+    /**
+     * @symbol ?DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE@WanderingTraderScheduler@@0HB
+     * @hash   -812269093
+     */
+    MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE;
+    /**
+     * @symbol ?LENGTH_OF_DAY_IN_TICKS@WanderingTraderScheduler@@0HB
+     * @hash   -645566458
+     */
+    MCAPI static int const LENGTH_OF_DAY_IN_TICKS;
 
 };

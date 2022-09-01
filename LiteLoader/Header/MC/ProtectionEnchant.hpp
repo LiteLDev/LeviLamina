@@ -108,7 +108,15 @@ public:
 //private:
 
 private:
-MCAPI static float const THORNS_CHANCE_PER_LEVEL;
-MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
+    /**
+     * @symbol ?THORNS_CHANCE_PER_LEVEL@ProtectionEnchant@@0MB
+     * @hash   1583411333
+     */
+    MCAPI static float const THORNS_CHANCE_PER_LEVEL;
+    /**
+     * @symbol ?VALID_ENCHANTMENTS@ProtectionEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
+     * @hash   1363626913
+     */
+    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

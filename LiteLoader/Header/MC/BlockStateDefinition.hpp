@@ -26,6 +26,7 @@ struct BlockStateDefinition {
 public:
     BlockStateDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockStateDefinition@@QEAA@AEBU0@@Z

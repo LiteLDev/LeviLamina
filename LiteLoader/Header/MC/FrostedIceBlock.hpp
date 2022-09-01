@@ -274,7 +274,15 @@ public:
 //private:
 
 private:
-MCAPI static int const MAX_AGE;
-MCAPI static int const MIN_NEIGHBORS;
+    /**
+     * @symbol ?MAX_AGE@FrostedIceBlock@@0HB
+     * @hash   108347099
+     */
+    MCAPI static int const MAX_AGE;
+    /**
+     * @symbol ?MIN_NEIGHBORS@FrostedIceBlock@@0HB
+     * @hash   1165963335
+     */
+    MCAPI static int const MIN_NEIGHBORS;
 
 };

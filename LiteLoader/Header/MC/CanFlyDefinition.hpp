@@ -29,6 +29,7 @@ public:
     CanFlyDefinition(struct CanFlyDefinition const &) = delete;
     CanFlyDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@CanFlyDefinition@@QEAAXAEAVEntityContext@@@Z

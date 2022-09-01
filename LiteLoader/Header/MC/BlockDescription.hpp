@@ -26,6 +26,7 @@ public:
     BlockDescription(struct BlockDescription const &) = delete;
     BlockDescription() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1BlockDescription@@QEAA@XZ

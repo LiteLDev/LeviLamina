@@ -352,11 +352,31 @@ public:
      * @hash   1435634898
      */
     MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;
-MCAPI static float const POST_HEIGHT;
-MCAPI static float const POST_WIDTH;
-MCAPI static float const WALL_HEIGHT;
-MCAPI static class std::array<std::string, 14> const WALL_NAMES;
-MCAPI static float const WALL_WIDTH;
+    /**
+     * @symbol ?POST_HEIGHT@WallBlock@@2MB
+     * @hash   1950375941
+     */
+    MCAPI static float const POST_HEIGHT;
+    /**
+     * @symbol ?POST_WIDTH@WallBlock@@2MB
+     * @hash   1782796597
+     */
+    MCAPI static float const POST_WIDTH;
+    /**
+     * @symbol ?WALL_HEIGHT@WallBlock@@2MB
+     * @hash   -1880390019
+     */
+    MCAPI static float const WALL_HEIGHT;
+    /**
+     * @symbol ?WALL_NAMES@WallBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$0O@@std@@B
+     * @hash   -1912976632
+     */
+    MCAPI static class std::array<std::string, 14> const WALL_NAMES;
+    /**
+     * @symbol ?WALL_WIDTH@WallBlock@@2MB
+     * @hash   1272814977
+     */
+    MCAPI static float const WALL_WIDTH;
 
 //private:
     /**
@@ -381,6 +401,10 @@ MCAPI static float const WALL_WIDTH;
     MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;
 
 private:
-MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION@WallBlock@@0VBaseGameVersion@@B
+     * @hash   292713195
+     */
+    MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

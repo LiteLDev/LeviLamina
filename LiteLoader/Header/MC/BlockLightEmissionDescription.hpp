@@ -28,6 +28,7 @@ public:
     BlockLightEmissionDescription(struct BlockLightEmissionDescription const &) = delete;
     BlockLightEmissionDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   143118779
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockLightEmissionDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1264819621
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockLightEmissionDescription@@SAXXZ
      * @hash   -1200817297

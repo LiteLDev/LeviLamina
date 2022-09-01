@@ -26,6 +26,7 @@ public:
     ClientChunkGenerationValidationData(struct ClientChunkGenerationValidationData const &) = delete;
     ClientChunkGenerationValidationData() = delete;
 #endif
+
 public:
     /**
      * @symbol ?captureServerChunkData@ClientChunkGenerationValidationData@@QEAAXAEAVChunkSource@@@Z

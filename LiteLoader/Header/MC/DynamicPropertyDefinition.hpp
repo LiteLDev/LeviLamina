@@ -26,6 +26,7 @@ public:
     DynamicPropertyDefinition(struct DynamicPropertyDefinition const &) = delete;
     DynamicPropertyDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1DynamicPropertyDefinition@@QEAA@XZ

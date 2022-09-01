@@ -26,6 +26,7 @@ public:
     OffsetsComponent(struct OffsetsComponent const &) = delete;
     OffsetsComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??8OffsetsComponent@@QEBA_NAEBU0@@Z

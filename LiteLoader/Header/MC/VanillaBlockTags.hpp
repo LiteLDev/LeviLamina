@@ -30,12 +30,40 @@ public:
 #endif
 
 public:
-MCAPI static char const Acacia[];
-MCAPI static char const Birch[];
-MCAPI static char const DarkOak[];
-MCAPI static char const Jungle[];
-MCAPI static char const Log[];
-MCAPI static char const Oak[];
-MCAPI static char const Spruce[];
+    /**
+     * @symbol ?Acacia@VanillaBlockTags@@2QBDB
+     * @hash   -1637286421
+     */
+    MCAPI static char const Acacia[];
+    /**
+     * @symbol ?Birch@VanillaBlockTags@@2QBDB
+     * @hash   637254545
+     */
+    MCAPI static char const Birch[];
+    /**
+     * @symbol ?DarkOak@VanillaBlockTags@@2QBDB
+     * @hash   -850694407
+     */
+    MCAPI static char const DarkOak[];
+    /**
+     * @symbol ?Jungle@VanillaBlockTags@@2QBDB
+     * @hash   2009336167
+     */
+    MCAPI static char const Jungle[];
+    /**
+     * @symbol ?Log@VanillaBlockTags@@2QBDB
+     * @hash   241788909
+     */
+    MCAPI static char const Log[];
+    /**
+     * @symbol ?Oak@VanillaBlockTags@@2QBDB
+     * @hash   -1477921583
+     */
+    MCAPI static char const Oak[];
+    /**
+     * @symbol ?Spruce@VanillaBlockTags@@2QBDB
+     * @hash   -1607930537
+     */
+    MCAPI static char const Spruce[];
 
 };

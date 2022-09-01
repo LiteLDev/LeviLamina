@@ -201,9 +201,25 @@ public:
 //private:
 
 private:
-MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
-MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
-MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
-MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
+    /**
+     * @symbol ?MAX_ENCHANTED_ARMOR_CHANCE@HumanoidMonster@@0MB
+     * @hash   -513944800
+     */
+    MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
+    /**
+     * @symbol ?MAX_ENCHANTED_WEAPON_CHANCE@HumanoidMonster@@0MB
+     * @hash   -1865302045
+     */
+    MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
+    /**
+     * @symbol ?MAX_PICKUP_LOOT_CHANCE@HumanoidMonster@@0MB
+     * @hash   -1682576311
+     */
+    MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
+    /**
+     * @symbol ?MAX_WEARING_ARMOR_CHANCE@HumanoidMonster@@0MB
+     * @hash   -261871795
+     */
+    MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
 
 };

@@ -26,6 +26,7 @@ public:
     MineshaftData(struct MineshaftData const &) = delete;
     MineshaftData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MineshaftData@@QEAA@_N@Z

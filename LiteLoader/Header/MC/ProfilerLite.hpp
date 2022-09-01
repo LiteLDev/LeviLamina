@@ -49,11 +49,19 @@ public:
      * @hash   -1536675903
      */
     MCAPI ~ProfilerLite();
-MCAPI static class std::thread::id sEmptyThreadID;
+    /**
+     * @symbol ?sEmptyThreadID@ProfilerLite@@2Vid@thread@std@@A
+     * @hash   -1232613237
+     */
+    MCAPI static class std::thread::id sEmptyThreadID;
 
 //private:
 
 private:
-MCAPI static class ProfilerLite gProfilerLiteInstance;
+    /**
+     * @symbol ?gProfilerLiteInstance@ProfilerLite@@0V1@A
+     * @hash   1483978300
+     */
+    MCAPI static class ProfilerLite gProfilerLiteInstance;
 
 };

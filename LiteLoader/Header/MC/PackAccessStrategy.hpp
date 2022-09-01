@@ -171,7 +171,11 @@ public:
      * @hash   855396540
      */
     MCAPI bool hasGeneratedAssetSet() const;
-MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
+    /**
+     * @symbol ?PACK_IMPORT_LOCK_FILE@PackAccessStrategy@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   701148248
+     */
+    MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
 
 //protected:
     /**

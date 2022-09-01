@@ -28,6 +28,7 @@ public:
     PlayerSnapshotComponent(struct PlayerSnapshotComponent const &) = delete;
     PlayerSnapshotComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ?hasStateFlag@PlayerSnapshotComponent@@QEBA_NW4PlayerSnapshotStateFlag@@@Z

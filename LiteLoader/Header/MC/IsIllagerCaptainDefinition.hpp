@@ -29,6 +29,7 @@ public:
     IsIllagerCaptainDefinition(struct IsIllagerCaptainDefinition const &) = delete;
     IsIllagerCaptainDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsIllagerCaptainDefinition@@QEAAXAEAVEntityContext@@@Z

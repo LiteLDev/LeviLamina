@@ -129,7 +129,15 @@ public:
     MCAPI static void _setupSurfaceMaterials();
 
 private:
-MCAPI static bool mInitialized;
-MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
+    /**
+     * @symbol ?mInitialized@Material@@0_NA
+     * @hash   1394351580
+     */
+    MCAPI static bool mInitialized;
+    /**
+     * @symbol ?mMaterials@Material@@0V?$vector@V?$unique_ptr@VMaterial@@U?$default_delete@VMaterial@@@std@@@std@@V?$allocator@V?$unique_ptr@VMaterial@@U?$default_delete@VMaterial@@@std@@@std@@@2@@std@@A
+     * @hash   68181757
+     */
+    MCAPI static std::vector<std::unique_ptr<class Material>> mMaterials;
 
 };

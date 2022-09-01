@@ -42,7 +42,11 @@ public:
 #endif
 
 public:
-MCAPI static char const NeutralLangCode[];
+    /**
+     * @symbol ?NeutralLangCode@I18n@@2QBDB
+     * @hash   1592957921
+     */
+    MCAPI static char const NeutralLangCode[];
     /**
      * @symbol ?addI18nObserver@I18n@@SAXAEAVI18nObserver@@@Z
      * @hash   -131021650
@@ -157,19 +161,75 @@ MCAPI static char const NeutralLangCode[];
     MCAPI static class Localization & _getPackKeywordLocale(std::string const &);
 
 private:
-MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
-MCAPI static class std::mutex mAdditionalTranslationsBackupMutex;
-MCAPI static class Localization const * mCurrentLanguage;
-MCAPI static class Localization const * mCurrentPackMetaLanguage;
-MCAPI static class Localization const mEmptyLanguage;
-MCAPI static class std::unordered_map<std::string, std::vector<std::string>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<std::string>>>> mFormatDictionary;
-MCAPI static std::vector<std::string> mLanguageCodes;
-MCAPI static class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> mLanguageNames;
-MCAPI static bool mLanguageSupportsHypenSplitting;
-MCAPI static std::vector<std::unique_ptr<class Localization>> mLanguages;
-MCAPI static std::vector<std::unique_ptr<class Localization>> mPackKeywordLanguages;
-MCAPI static std::vector<std::string> const mPackReservedKeys;
-MCAPI static class ResourcePackManager * mResourcePackManager;
-MCAPI static class Core::Subject<class I18nObserver, class Core::SingleThreadedLock> mSubject;
+    /**
+     * @symbol ?mAdditionalTranslationsBackup@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
+     * @hash   -946167257
+     */
+    MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
+    /**
+     * @symbol ?mAdditionalTranslationsBackupMutex@I18n@@0Vmutex@std@@A
+     * @hash   255308736
+     */
+    MCAPI static class std::mutex mAdditionalTranslationsBackupMutex;
+    /**
+     * @symbol ?mCurrentLanguage@I18n@@0PEBVLocalization@@EB
+     * @hash   -1556018074
+     */
+    MCAPI static class Localization const * mCurrentLanguage;
+    /**
+     * @symbol ?mCurrentPackMetaLanguage@I18n@@0PEBVLocalization@@EB
+     * @hash   115284236
+     */
+    MCAPI static class Localization const * mCurrentPackMetaLanguage;
+    /**
+     * @symbol ?mEmptyLanguage@I18n@@0VLocalization@@B
+     * @hash   -1049656651
+     */
+    MCAPI static class Localization const mEmptyLanguage;
+    /**
+     * @symbol ?mFormatDictionary@I18n@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@@2@@std@@A
+     * @hash   38943096
+     */
+    MCAPI static class std::unordered_map<std::string, std::vector<std::string>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<std::string>>>> mFormatDictionary;
+    /**
+     * @symbol ?mLanguageCodes@I18n@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
+     * @hash   480353556
+     */
+    MCAPI static std::vector<std::string> mLanguageCodes;
+    /**
+     * @symbol ?mLanguageNames@I18n@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@A
+     * @hash   -1914772621
+     */
+    MCAPI static class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> mLanguageNames;
+    /**
+     * @symbol ?mLanguageSupportsHypenSplitting@I18n@@0_NA
+     * @hash   -1322140945
+     */
+    MCAPI static bool mLanguageSupportsHypenSplitting;
+    /**
+     * @symbol ?mLanguages@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
+     * @hash   920557181
+     */
+    MCAPI static std::vector<std::unique_ptr<class Localization>> mLanguages;
+    /**
+     * @symbol ?mPackKeywordLanguages@I18n@@0V?$vector@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@V?$allocator@V?$unique_ptr@VLocalization@@U?$default_delete@VLocalization@@@std@@@std@@@2@@std@@A
+     * @hash   2057598775
+     */
+    MCAPI static std::vector<std::unique_ptr<class Localization>> mPackKeywordLanguages;
+    /**
+     * @symbol ?mPackReservedKeys@I18n@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@B
+     * @hash   -758336494
+     */
+    MCAPI static std::vector<std::string> const mPackReservedKeys;
+    /**
+     * @symbol ?mResourcePackManager@I18n@@0PEAVResourcePackManager@@EA
+     * @hash   -107932051
+     */
+    MCAPI static class ResourcePackManager * mResourcePackManager;
+    /**
+     * @symbol ?mSubject@I18n@@0V?$Subject@VI18nObserver@@VSingleThreadedLock@Core@@@Core@@A
+     * @hash   1589630676
+     */
+    MCAPI static class Core::Subject<class I18nObserver, class Core::SingleThreadedLock> mSubject;
 
 };

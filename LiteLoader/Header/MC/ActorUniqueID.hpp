@@ -49,7 +49,12 @@ public:
     ActorUniqueID(struct ActorUniqueID const &) = delete;
     ActorUniqueID() = delete;
 #endif
+
 public:
-MCAPI static struct ActorUniqueID const INVALID_ID;
+    /**
+     * @symbol ?INVALID_ID@ActorUniqueID@@2U1@B
+     * @hash   57319559
+     */
+    MCAPI static struct ActorUniqueID const INVALID_ID;
 
 };

@@ -29,6 +29,7 @@ public:
     ColorDefinition(struct ColorDefinition const &) = delete;
     ColorDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?setColorChoice@ColorDefinition@@QEAAXAEBH@Z

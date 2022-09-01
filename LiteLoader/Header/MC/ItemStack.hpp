@@ -260,7 +260,11 @@ public:
      * @hash   922448576
      */
     MCAPI enum ItemUseMethod useTimeDepleted(class Level *, class Player *);
-MCAPI static class ItemStack const EMPTY_ITEM;
+    /**
+     * @symbol ?EMPTY_ITEM@ItemStack@@2V1@B
+     * @hash   -539680811
+     */
+    MCAPI static class ItemStack const EMPTY_ITEM;
     /**
      * @symbol ?fromDescriptor@ItemStack@@SA?AV1@AEBVNetworkItemStackDescriptor@@AEAVBlockPalette@@_N@Z
      * @hash   45812289

@@ -26,6 +26,7 @@ public:
     ActorFactoryData(struct ActorFactoryData const &) = delete;
     ActorFactoryData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorFactoryData@@QEAA@XZ

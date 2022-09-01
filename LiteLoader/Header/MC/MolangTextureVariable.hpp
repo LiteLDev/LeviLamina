@@ -26,6 +26,7 @@ public:
     MolangTextureVariable(struct MolangTextureVariable const &) = delete;
     MolangTextureVariable() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MolangTextureVariable@@QEAA@XZ

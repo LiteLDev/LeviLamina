@@ -26,6 +26,7 @@ public:
     SideBySideValidationFailureComponent(struct SideBySideValidationFailureComponent const &) = delete;
     SideBySideValidationFailureComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1SideBySideValidationFailureComponent@@QEAA@XZ

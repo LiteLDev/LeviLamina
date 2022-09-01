@@ -28,6 +28,7 @@ public:
     BlockPlacementFilterComponent(struct BlockPlacementFilterComponent const &) = delete;
     BlockPlacementFilterComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z

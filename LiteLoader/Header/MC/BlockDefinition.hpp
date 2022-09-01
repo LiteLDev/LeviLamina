@@ -27,6 +27,7 @@ public:
     struct BlockDefinition& operator=(struct BlockDefinition const &) = delete;
     BlockDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockDefinition@@QEAA@AEBU0@@Z

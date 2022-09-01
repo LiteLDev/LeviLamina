@@ -217,8 +217,16 @@ public:
      * @hash   673338704
      */
     MCAPI int withdrawStoredXPReward();
-MCAPI static int const BURN_INTERVAL;
-MCAPI static float const DEFAULT_SMELTING_TIME;
+    /**
+     * @symbol ?BURN_INTERVAL@FurnaceBlockActor@@2HB
+     * @hash   996292199
+     */
+    MCAPI static int const BURN_INTERVAL;
+    /**
+     * @symbol ?DEFAULT_SMELTING_TIME@FurnaceBlockActor@@2MB
+     * @hash   1781840751
+     */
+    MCAPI static float const DEFAULT_SMELTING_TIME;
     /**
      * @symbol ?getAvailableFuelSetCount@FurnaceBlockActor@@SAHHAEBVItemStackBase@@@Z
      * @hash   -1548088104
@@ -277,14 +285,50 @@ MCAPI static float const DEFAULT_SMELTING_TIME;
 protected:
 
 private:
-MCAPI static std::string const BURN_DURATION_KEY;
-MCAPI static std::string const BURN_TIME_KEY;
-MCAPI static std::string const COOK_TIME_KEY;
-MCAPI static std::string const CUSTOM_NAME_KEY;
-MCAPI static std::string const ITEMS_LIST_KEY;
-MCAPI static std::string const LAST_FUEL_KEY;
-MCAPI static std::string const SLOT_KEY;
-MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
-MCAPI static std::string const STORED_XP_KEY;
+    /**
+     * @symbol ?BURN_DURATION_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1177737847
+     */
+    MCAPI static std::string const BURN_DURATION_KEY;
+    /**
+     * @symbol ?BURN_TIME_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -416039536
+     */
+    MCAPI static std::string const BURN_TIME_KEY;
+    /**
+     * @symbol ?COOK_TIME_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -831755849
+     */
+    MCAPI static std::string const COOK_TIME_KEY;
+    /**
+     * @symbol ?CUSTOM_NAME_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -578419444
+     */
+    MCAPI static std::string const CUSTOM_NAME_KEY;
+    /**
+     * @symbol ?ITEMS_LIST_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   317968304
+     */
+    MCAPI static std::string const ITEMS_LIST_KEY;
+    /**
+     * @symbol ?LAST_FUEL_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -103387374
+     */
+    MCAPI static std::string const LAST_FUEL_KEY;
+    /**
+     * @symbol ?SLOT_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   279826193
+     */
+    MCAPI static std::string const SLOT_KEY;
+    /**
+     * @symbol ?STORED_XP_DEPRECATED_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2012817233
+     */
+    MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
+    /**
+     * @symbol ?STORED_XP_KEY@FurnaceBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2076671943
+     */
+    MCAPI static std::string const STORED_XP_KEY;
 
 };

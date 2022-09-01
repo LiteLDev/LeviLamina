@@ -30,7 +30,15 @@ public:
 #endif
 
 public:
-MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const WORLD_SAVE_FLUSH_INTERVAL;
-MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const WORLD_SAVE_MENU_FLUSH_INTERVAL;
+    /**
+     * @symbol ?WORLD_SAVE_FLUSH_INTERVAL@LevelStorageSource@@2V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@B
+     * @hash   -241922302
+     */
+    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const WORLD_SAVE_FLUSH_INTERVAL;
+    /**
+     * @symbol ?WORLD_SAVE_MENU_FLUSH_INTERVAL@LevelStorageSource@@2V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@B
+     * @hash   -592346476
+     */
+    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const WORLD_SAVE_MENU_FLUSH_INTERVAL;
 
 };

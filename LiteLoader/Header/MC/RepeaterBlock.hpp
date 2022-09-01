@@ -335,11 +335,19 @@ public:
      * @hash   366673076
      */
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
-MCAPI static float const DELAY_RENDER_OFFSETS[];
+    /**
+     * @symbol ?DELAY_RENDER_OFFSETS@RepeaterBlock@@2QBMB
+     * @hash   1576807450
+     */
+    MCAPI static float const DELAY_RENDER_OFFSETS[];
 
 //private:
 
 private:
-MCAPI static int const DELAYS[];
+    /**
+     * @symbol ?DELAYS@RepeaterBlock@@0QBHB
+     * @hash   1679497497
+     */
+    MCAPI static int const DELAYS[];
 
 };

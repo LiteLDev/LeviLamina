@@ -25,6 +25,7 @@ public:
     struct ContainerValidationCraftResult& operator=(struct ContainerValidationCraftResult const &) = delete;
     ContainerValidationCraftResult(struct ContainerValidationCraftResult const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ContainerValidationCraftResult@@QEAA@$$QEAU0@@Z

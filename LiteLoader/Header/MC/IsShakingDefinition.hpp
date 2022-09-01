@@ -29,6 +29,7 @@ public:
     IsShakingDefinition(struct IsShakingDefinition const &) = delete;
     IsShakingDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsShakingDefinition@@QEAAXAEAVEntityContext@@@Z

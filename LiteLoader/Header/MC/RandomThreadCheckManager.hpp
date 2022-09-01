@@ -70,7 +70,15 @@ public:
 //private:
 
 private:
-MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
-MCAPI static class std::recursive_mutex mMutex;
+    /**
+     * @symbol ?mInstance@RandomThreadCheckManager@@0V?$unique_ptr@VRandomThreadCheckManager@@U?$default_delete@VRandomThreadCheckManager@@@std@@@std@@A
+     * @hash   -290392139
+     */
+    MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
+    /**
+     * @symbol ?mMutex@RandomThreadCheckManager@@0Vrecursive_mutex@std@@A
+     * @hash   -840463388
+     */
+    MCAPI static class std::recursive_mutex mMutex;
 
 };

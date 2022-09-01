@@ -42,6 +42,10 @@ public:
 //private:
 
 private:
-MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
+    /**
+     * @symbol ?mGameEventPairs@GameEventMapping@@0V?$vector@UGameEventPair@@V?$allocator@UGameEventPair@@@std@@@std@@B
+     * @hash   -1581458118
+     */
+    MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
 
 };

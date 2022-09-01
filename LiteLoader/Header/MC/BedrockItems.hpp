@@ -30,7 +30,11 @@ public:
 #endif
 
 public:
-MCAPI static class WeakPtr<class Item> mAir;
+    /**
+     * @symbol ?mAir@BedrockItems@@2V?$WeakPtr@VItem@@@@A
+     * @hash   92614936
+     */
+    MCAPI static class WeakPtr<class Item> mAir;
     /**
      * @symbol ?registerItems@BedrockItems@@SAXXZ
      * @hash   857063761

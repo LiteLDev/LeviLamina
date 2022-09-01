@@ -50,6 +50,10 @@ public:
      * @hash   -985370184
      */
     MCAPI std::string toString() const;
-MCAPI static class PropertyBag EMPTY;
+    /**
+     * @symbol ?EMPTY@PropertyBag@@2V1@A
+     * @hash   99971325
+     */
+    MCAPI static class PropertyBag EMPTY;
 
 };

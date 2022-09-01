@@ -28,6 +28,7 @@ public:
     BlockBakedMaterialDataComponent(struct BlockBakedMaterialDataComponent const &) = delete;
     BlockBakedMaterialDataComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ?isSolidOpaque@BlockBakedMaterialDataComponent@@QEBA_NXZ

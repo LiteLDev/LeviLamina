@@ -205,12 +205,40 @@ public:
 protected:
 
 private:
-MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
-MCAPI static int const ACTIVE_BIT;
-MCAPI static int const COLOR_BITS;
-MCAPI static int const COLOR_MASK;
-MCAPI static int const DAMAGE_BITS;
-MCAPI static int const DAMAGE_MASK;
-MCAPI static int const DAMAGE_START_BIT;
+    /**
+     * @symbol ?ACTIVATION_TIMESTAMP_TAG@ChemistryStickItem@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   287436812
+     */
+    MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
+    /**
+     * @symbol ?ACTIVE_BIT@ChemistryStickItem@@0HB
+     * @hash   -1226883311
+     */
+    MCAPI static int const ACTIVE_BIT;
+    /**
+     * @symbol ?COLOR_BITS@ChemistryStickItem@@0HB
+     * @hash   -1811213289
+     */
+    MCAPI static int const COLOR_BITS;
+    /**
+     * @symbol ?COLOR_MASK@ChemistryStickItem@@0HB
+     * @hash   -1002266943
+     */
+    MCAPI static int const COLOR_MASK;
+    /**
+     * @symbol ?DAMAGE_BITS@ChemistryStickItem@@0HB
+     * @hash   634142779
+     */
+    MCAPI static int const DAMAGE_BITS;
+    /**
+     * @symbol ?DAMAGE_MASK@ChemistryStickItem@@0HB
+     * @hash   1443089125
+     */
+    MCAPI static int const DAMAGE_MASK;
+    /**
+     * @symbol ?DAMAGE_START_BIT@ChemistryStickItem@@0HB
+     * @hash   -470961151
+     */
+    MCAPI static int const DAMAGE_START_BIT;
 
 };

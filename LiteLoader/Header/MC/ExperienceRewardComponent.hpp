@@ -69,6 +69,10 @@ public:
 //private:
 
 private:
-MCAPI static std::string const mIsExperienceDropEnabledTag;
+    /**
+     * @symbol ?mIsExperienceDropEnabledTag@ExperienceRewardComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1932720344
+     */
+    MCAPI static std::string const mIsExperienceDropEnabledTag;
 
 };

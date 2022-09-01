@@ -28,6 +28,7 @@ public:
     MolangMemberArray(struct MolangMemberArray const &) = delete;
     MolangMemberArray() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MolangMemberArray@@QEAA@W4MolangStruct_XYZ@@AEBVVec3@@@Z

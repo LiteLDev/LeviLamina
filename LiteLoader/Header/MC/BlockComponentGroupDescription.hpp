@@ -26,6 +26,7 @@ struct BlockComponentGroupDescription {
 public:
     struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockComponentGroupDescription@@QEAA@XZ

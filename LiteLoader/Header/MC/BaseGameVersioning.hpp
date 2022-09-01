@@ -22,8 +22,16 @@ namespace BaseGameVersioning {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class BaseGameVersion const PATCH_UPGRADE_VERSION;
-MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
+    /**
+     * @symbol ?PATCH_UPGRADE_VERSION@BaseGameVersioning@@3VBaseGameVersion@@B
+     * @hash   -1261359809
+     */
+    MCAPI extern class BaseGameVersion const PATCH_UPGRADE_VERSION;
+    /**
+     * @symbol ?REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT@BaseGameVersioning@@3VBaseGameVersion@@B
+     * @hash   927598123
+     */
+    MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
     /**
      * @symbol ?getAvailableBehaviorPackBaseGameVersions@BaseGameVersioning@@YAAEBV?$vector@VBaseGameVersion@@V?$allocator@VBaseGameVersion@@@std@@@std@@XZ
      * @hash   2119123311

@@ -85,7 +85,15 @@ public:
 //private:
 
 private:
-MCAPI static int const CHEW_CHANCE;
-MCAPI static int const EATING_TIME;
+    /**
+     * @symbol ?CHEW_CHANCE@EatCarriedItemGoal@@0HB
+     * @hash   -1972620856
+     */
+    MCAPI static int const CHEW_CHANCE;
+    /**
+     * @symbol ?EATING_TIME@EatCarriedItemGoal@@0HB
+     * @hash   -1834122166
+     */
+    MCAPI static int const EATING_TIME;
 
 };

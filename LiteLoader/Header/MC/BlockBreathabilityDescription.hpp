@@ -28,6 +28,7 @@ public:
     BlockBreathabilityDescription(struct BlockBreathabilityDescription const &) = delete;
     BlockBreathabilityDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   -397335730
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockBreathabilityDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -452261233
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockBreathabilityDescription@@SAXXZ
      * @hash   -1865465025

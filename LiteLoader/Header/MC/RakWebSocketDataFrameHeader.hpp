@@ -25,6 +25,7 @@ public:
     struct RakWebSocketDataFrameHeader& operator=(struct RakWebSocketDataFrameHeader const &) = delete;
     RakWebSocketDataFrameHeader(struct RakWebSocketDataFrameHeader const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0RakWebSocketDataFrameHeader@@QEAA@_N0000W4OpCode@@E@Z

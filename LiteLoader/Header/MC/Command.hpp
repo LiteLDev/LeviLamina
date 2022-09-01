@@ -114,7 +114,11 @@ public:
      * @hash   -1454333249
      */
     MCAPI void run(class CommandOrigin const &, class CommandOutput &) const;
-MCAPI static std::string const WILDCARD_TOKEN;
+    /**
+     * @symbol ?WILDCARD_TOKEN@Command@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -826739889
+     */
+    MCAPI static std::string const WILDCARD_TOKEN;
     /**
      * @symbol ?validRange@Command@@SA_NHHHAEAVCommandOutput@@@Z
      * @hash   354079810

@@ -28,6 +28,7 @@ public:
     CodeScreenCapabilities(struct CodeScreenCapabilities const &) = delete;
     CodeScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

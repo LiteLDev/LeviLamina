@@ -25,6 +25,7 @@ public:
     struct AdventureSettings& operator=(struct AdventureSettings const &) = delete;
     AdventureSettings(struct AdventureSettings const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0AdventureSettings@@QEAA@XZ

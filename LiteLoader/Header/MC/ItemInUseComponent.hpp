@@ -26,6 +26,7 @@ public:
     ItemInUseComponent(struct ItemInUseComponent const &) = delete;
     ItemInUseComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ItemInUseComponent@@QEAA@XZ

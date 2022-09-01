@@ -27,6 +27,7 @@ public:
     struct BeardKernel& operator=(struct BeardKernel const &) = delete;
     BeardKernel(struct BeardKernel const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BeardKernel@@QEAA@XZ

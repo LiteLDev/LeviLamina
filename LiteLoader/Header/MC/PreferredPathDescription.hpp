@@ -28,6 +28,7 @@ public:
     struct PreferredPathDescription& operator=(struct PreferredPathDescription const &) = delete;
     PreferredPathDescription(struct PreferredPathDescription const &) = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

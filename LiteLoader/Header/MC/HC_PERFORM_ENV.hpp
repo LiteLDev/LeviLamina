@@ -26,6 +26,7 @@ public:
     HC_PERFORM_ENV(struct HC_PERFORM_ENV const &) = delete;
     HC_PERFORM_ENV() = delete;
 #endif
+
 public:
 
 };

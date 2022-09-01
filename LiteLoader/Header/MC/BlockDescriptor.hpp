@@ -93,9 +93,21 @@ public:
      * @hash   1687295480
      */
     MCAPI ~BlockDescriptor();
-MCAPI static char const JSON_NAME_FIELD[];
-MCAPI static char const JSON_STATES_FIELD[];
-MCAPI static char const JSON_TAGS_FIELD[];
+    /**
+     * @symbol ?JSON_NAME_FIELD@BlockDescriptor@@2QBDB
+     * @hash   670923741
+     */
+    MCAPI static char const JSON_NAME_FIELD[];
+    /**
+     * @symbol ?JSON_STATES_FIELD@BlockDescriptor@@2QBDB
+     * @hash   -556938157
+     */
+    MCAPI static char const JSON_STATES_FIELD[];
+    /**
+     * @symbol ?JSON_TAGS_FIELD@BlockDescriptor@@2QBDB
+     * @hash   -1816641679
+     */
+    MCAPI static char const JSON_TAGS_FIELD[];
     /**
      * @symbol ?anyMatch@BlockDescriptor@@SA_NAEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@AEBV1@@Z
      * @hash   -249490293

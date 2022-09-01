@@ -40,6 +40,10 @@ public:
 //private:
 
 private:
-MCAPI static std::vector<std::string> mSaveAllFileList;
+    /**
+     * @symbol ?mSaveAllFileList@DedicatedServerCommands@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
+     * @hash   -1623235896
+     */
+    MCAPI static std::vector<std::string> mSaveAllFileList;
 
 };

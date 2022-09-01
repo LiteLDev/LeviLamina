@@ -256,12 +256,36 @@ public:
      * @hash   568985224
      */
     MCAPI ~Village();
-MCAPI static bool DEBUG_DRAWING;
-MCAPI static float const DWELLER_REMOVAL_TOLERANCE;
-MCAPI static int const MAX_VILLAGE_STANDING;
-MCAPI static int const MIN_VILLAGE_STANDING;
-MCAPI static std::string const STORAGE_KEY_PREFIX;
-MCAPI static int const VILLAGE_START_XZ_BOUNDS;
+    /**
+     * @symbol ?DEBUG_DRAWING@Village@@2_NA
+     * @hash   1208287755
+     */
+    MCAPI static bool DEBUG_DRAWING;
+    /**
+     * @symbol ?DWELLER_REMOVAL_TOLERANCE@Village@@2MB
+     * @hash   2003147897
+     */
+    MCAPI static float const DWELLER_REMOVAL_TOLERANCE;
+    /**
+     * @symbol ?MAX_VILLAGE_STANDING@Village@@2HB
+     * @hash   -2136384873
+     */
+    MCAPI static int const MAX_VILLAGE_STANDING;
+    /**
+     * @symbol ?MIN_VILLAGE_STANDING@Village@@2HB
+     * @hash   769149631
+     */
+    MCAPI static int const MIN_VILLAGE_STANDING;
+    /**
+     * @symbol ?STORAGE_KEY_PREFIX@Village@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1484543133
+     */
+    MCAPI static std::string const STORAGE_KEY_PREFIX;
+    /**
+     * @symbol ?VILLAGE_START_XZ_BOUNDS@Village@@2HB
+     * @hash   -1153321595
+     */
+    MCAPI static int const VILLAGE_START_XZ_BOUNDS;
     /**
      * @symbol ?isVillagePOI@Village@@SA_NAEBVBlockSource@@AEBVBlockPos@@@Z
      * @hash   -991250308
@@ -426,32 +450,140 @@ MCAPI static int const VILLAGE_START_XZ_BOUNDS;
     MCAPI void _updateUnclaimedPOIs(class BlockSource &);
 
 private:
-MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
-MCAPI static std::string const CELEBRATION_EVENT;
-MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
-MCAPI static std::string const RAID_EXPIRY_EVENT;
-MCAPI static int const RAID_FINISHED_DELAY_IN_TICKS;
-MCAPI static int const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
-MCAPI static int const RAID_LOCATION_HELP_DELAY_IN_TICKS;
-MCAPI static unsigned char const RAID_MAX_SPAWN_FAILURES;
-MCAPI static int const RAID_PREP_TIME_IN_TICKS;
-MCAPI static struct Tick const RAID_TIMEOUT_IN_TICKS;
-MCAPI static unsigned __int64 const STANDING_DECAY_INTERVAL_BAD;
-MCAPI static unsigned __int64 const STANDING_DECAY_INTERVAL_GOOD;
-MCAPI static std::string const STORAGE_KEY_DWELLERS;
-MCAPI static std::string const STORAGE_KEY_PLAYERS;
-MCAPI static std::string const STORAGE_KEY_POI;
-MCAPI static std::string const STORAGE_KEY_RAID;
-MCAPI static std::string const STORAGE_KEY_VILLAGE;
-MCAPI static int const UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS;
-MCAPI static __int64 const VILLAGER_EXPECTED_WORK_INTERVAL;
-MCAPI static int const VILLAGE_HERO_BESTOW_TIME;
-MCAPI static unsigned __int64 const VILLAGE_POI_PURGE_TIME;
-MCAPI static float const VILLAGE_RADIUS_APPROX_SCALAR;
-MCAPI static unsigned __int64 const VILLAGE_SAVE_TICK_DELAY;
-MCAPI static int const VILLAGE_START_HEIGHT;
-MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
-MCAPI static unsigned __int64 const VILLAGE_UPDATE_TICK_DELAY;
-MCAPI static unsigned char const VILLAGE_VERSION_CURRENT;
+    /**
+     * @symbol ?ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE@Village@@0MB
+     * @hash   -1594374592
+     */
+    MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
+    /**
+     * @symbol ?CELEBRATION_EVENT@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   417790692
+     */
+    MCAPI static std::string const CELEBRATION_EVENT;
+    /**
+     * @symbol ?RAID_BOUNDS_PADDING@Village@@0VVec3@@B
+     * @hash   -1466499227
+     */
+    MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
+    /**
+     * @symbol ?RAID_EXPIRY_EVENT@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   516256258
+     */
+    MCAPI static std::string const RAID_EXPIRY_EVENT;
+    /**
+     * @symbol ?RAID_FINISHED_DELAY_IN_TICKS@Village@@0HB
+     * @hash   1307832276
+     */
+    MCAPI static int const RAID_FINISHED_DELAY_IN_TICKS;
+    /**
+     * @symbol ?RAID_GROUP_COMPLETE_DELAY_IN_TICKS@Village@@0HB
+     * @hash   -1712702363
+     */
+    MCAPI static int const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
+    /**
+     * @symbol ?RAID_LOCATION_HELP_DELAY_IN_TICKS@Village@@0HB
+     * @hash   -1252183551
+     */
+    MCAPI static int const RAID_LOCATION_HELP_DELAY_IN_TICKS;
+    /**
+     * @symbol ?RAID_MAX_SPAWN_FAILURES@Village@@0EB
+     * @hash   58367476
+     */
+    MCAPI static unsigned char const RAID_MAX_SPAWN_FAILURES;
+    /**
+     * @symbol ?RAID_PREP_TIME_IN_TICKS@Village@@0HB
+     * @hash   2048358985
+     */
+    MCAPI static int const RAID_PREP_TIME_IN_TICKS;
+    /**
+     * @symbol ?RAID_TIMEOUT_IN_TICKS@Village@@0UTick@@B
+     * @hash   1530714327
+     */
+    MCAPI static struct Tick const RAID_TIMEOUT_IN_TICKS;
+    /**
+     * @symbol ?STANDING_DECAY_INTERVAL_BAD@Village@@0_KB
+     * @hash   -588542064
+     */
+    MCAPI static unsigned __int64 const STANDING_DECAY_INTERVAL_BAD;
+    /**
+     * @symbol ?STANDING_DECAY_INTERVAL_GOOD@Village@@0_KB
+     * @hash   -910003788
+     */
+    MCAPI static unsigned __int64 const STANDING_DECAY_INTERVAL_GOOD;
+    /**
+     * @symbol ?STORAGE_KEY_DWELLERS@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1605819799
+     */
+    MCAPI static std::string const STORAGE_KEY_DWELLERS;
+    /**
+     * @symbol ?STORAGE_KEY_PLAYERS@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1945126195
+     */
+    MCAPI static std::string const STORAGE_KEY_PLAYERS;
+    /**
+     * @symbol ?STORAGE_KEY_POI@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1442453669
+     */
+    MCAPI static std::string const STORAGE_KEY_POI;
+    /**
+     * @symbol ?STORAGE_KEY_RAID@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -232933843
+     */
+    MCAPI static std::string const STORAGE_KEY_RAID;
+    /**
+     * @symbol ?STORAGE_KEY_VILLAGE@Village@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -70162457
+     */
+    MCAPI static std::string const STORAGE_KEY_VILLAGE;
+    /**
+     * @symbol ?UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS@Village@@0HB
+     * @hash   -2131784932
+     */
+    MCAPI static int const UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS;
+    /**
+     * @symbol ?VILLAGER_EXPECTED_WORK_INTERVAL@Village@@0_JB
+     * @hash   -1931715145
+     */
+    MCAPI static __int64 const VILLAGER_EXPECTED_WORK_INTERVAL;
+    /**
+     * @symbol ?VILLAGE_HERO_BESTOW_TIME@Village@@0HB
+     * @hash   -2051848394
+     */
+    MCAPI static int const VILLAGE_HERO_BESTOW_TIME;
+    /**
+     * @symbol ?VILLAGE_POI_PURGE_TIME@Village@@0_KB
+     * @hash   -617283234
+     */
+    MCAPI static unsigned __int64 const VILLAGE_POI_PURGE_TIME;
+    /**
+     * @symbol ?VILLAGE_RADIUS_APPROX_SCALAR@Village@@0MB
+     * @hash   -830507978
+     */
+    MCAPI static float const VILLAGE_RADIUS_APPROX_SCALAR;
+    /**
+     * @symbol ?VILLAGE_SAVE_TICK_DELAY@Village@@0_KB
+     * @hash   696539749
+     */
+    MCAPI static unsigned __int64 const VILLAGE_SAVE_TICK_DELAY;
+    /**
+     * @symbol ?VILLAGE_START_HEIGHT@Village@@0HB
+     * @hash   -1625238233
+     */
+    MCAPI static int const VILLAGE_START_HEIGHT;
+    /**
+     * @symbol ?VILLAGE_UNCLAIMED_POI_CAP@Village@@0HB
+     * @hash   1220681345
+     */
+    MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
+    /**
+     * @symbol ?VILLAGE_UPDATE_TICK_DELAY@Village@@0_KB
+     * @hash   1478844113
+     */
+    MCAPI static unsigned __int64 const VILLAGE_UPDATE_TICK_DELAY;
+    /**
+     * @symbol ?VILLAGE_VERSION_CURRENT@Village@@0EB
+     * @hash   1431920725
+     */
+    MCAPI static unsigned char const VILLAGE_VERSION_CURRENT;
 
 };

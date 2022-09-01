@@ -29,6 +29,7 @@ public:
     OnHurtDefinition(struct OnHurtDefinition const &) = delete;
     OnHurtDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnHurtDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnHurtDefinition@@@JsonUtil@@@std@@@Z

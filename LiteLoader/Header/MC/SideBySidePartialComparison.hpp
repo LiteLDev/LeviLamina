@@ -25,6 +25,7 @@ public:
     struct SideBySidePartialComparison& operator=(struct SideBySidePartialComparison const &) = delete;
     SideBySidePartialComparison() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SideBySidePartialComparison@@QEAA@AEBU0@@Z

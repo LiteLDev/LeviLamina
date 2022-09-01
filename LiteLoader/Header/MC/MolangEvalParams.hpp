@@ -29,6 +29,7 @@ public:
     MolangEvalParams(struct MolangEvalParams const &) = delete;
     MolangEvalParams() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getActorFromArg@MolangEvalParams@@QEBAPEAVActor@@AEBUMolangScriptArg@@@Z

@@ -28,7 +28,12 @@ public:
     FogVolumetricCoefficientSetting(struct FogVolumetricCoefficientSetting const &) = delete;
     FogVolumetricCoefficientSetting() = delete;
 #endif
+
 public:
-MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
+    /**
+     * @symbol ?ZERO_SETTING@FogVolumetricCoefficientSetting@@2U1@B
+     * @hash   -1721827687
+     */
+    MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
 
 };

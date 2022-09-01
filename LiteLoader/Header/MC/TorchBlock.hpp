@@ -318,7 +318,15 @@ public:
 protected:
 
 private:
-MCAPI static enum TorchFacing const DATA_FROM_FACING[];
-MCAPI static unsigned short const FACING_FROM_DATA[];
+    /**
+     * @symbol ?DATA_FROM_FACING@TorchBlock@@0QBW4TorchFacing@@B
+     * @hash   1564714071
+     */
+    MCAPI static enum TorchFacing const DATA_FROM_FACING[];
+    /**
+     * @symbol ?FACING_FROM_DATA@TorchBlock@@0QBGB
+     * @hash   -682363627
+     */
+    MCAPI static unsigned short const FACING_FROM_DATA[];
 
 };

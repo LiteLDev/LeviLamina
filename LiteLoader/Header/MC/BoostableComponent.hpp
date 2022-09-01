@@ -83,7 +83,15 @@ public:
 //private:
 
 private:
-MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
-MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
+    /**
+     * @symbol ?SPEED_MODIFIER_BOOSTING@BoostableComponent@@0V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   1334484010
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
+    /**
+     * @symbol ?SPEED_MODIFIER_BOOSTING_UUID@BoostableComponent@@0VUUID@mce@@B
+     * @hash   -627898219
+     */
+    MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
 
 };

@@ -40,6 +40,10 @@ public:
 //private:
 
 private:
-MCAPI static class std::unordered_map<enum LogArea, bool, struct std::hash<enum LogArea>, struct std::equal_to<enum LogArea>, class std::allocator<struct std::pair<enum LogArea const, bool>>> const mAssertAreas;
+    /**
+     * @symbol ?mAssertAreas@DebugEndPoint@@0V?$unordered_map@W4LogArea@@_NU?$hash@W4LogArea@@@std@@U?$equal_to@W4LogArea@@@3@V?$allocator@U?$pair@$$CBW4LogArea@@_N@std@@@3@@std@@B
+     * @hash   962562124
+     */
+    MCAPI static class std::unordered_map<enum LogArea, bool, struct std::hash<enum LogArea>, struct std::equal_to<enum LogArea>, class std::allocator<struct std::pair<enum LogArea const, bool>>> const mAssertAreas;
 
 };

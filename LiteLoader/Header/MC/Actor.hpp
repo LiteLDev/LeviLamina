@@ -3695,17 +3695,61 @@ public:
      * @hash   -72690588
      */
     MCAPI bool wasLoadedFromNBTThisFrame() const;
-MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL;
-MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL_RANGE;
-MCAPI static float const DEFAULT_MOVEMENT_SOUND_DISTANCE_OFFSET;
-MCAPI static class Vec3 const LAVA_AABB_SHRINK_AMOUNT;
-MCAPI static float const LAVA_FLOW_STRENGTH_MULTIPLIER;
-MCAPI static int const MAX_BYTE_CHARGE_AMOUNT;
-MCAPI static int const PLAYER_HURT_EXPERIENCE_TIME;
-MCAPI static std::string const RIDING_TAG;
-MCAPI static int const TOTAL_AIR_SUPPLY;
-MCAPI static class Vec3 const WATER_AABB_SHRINK_AMOUNT;
-MCAPI static float const WATER_FLOW_STRENGTH_MULTIPLIER;
+    /**
+     * @symbol ?DEFAULT_AMBIENT_SOUND_INTERVAL@Actor@@2MB
+     * @hash   288502083
+     */
+    MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL;
+    /**
+     * @symbol ?DEFAULT_AMBIENT_SOUND_INTERVAL_RANGE@Actor@@2MB
+     * @hash   1713568323
+     */
+    MCAPI static float const DEFAULT_AMBIENT_SOUND_INTERVAL_RANGE;
+    /**
+     * @symbol ?DEFAULT_MOVEMENT_SOUND_DISTANCE_OFFSET@Actor@@2MB
+     * @hash   -1205945255
+     */
+    MCAPI static float const DEFAULT_MOVEMENT_SOUND_DISTANCE_OFFSET;
+    /**
+     * @symbol ?LAVA_AABB_SHRINK_AMOUNT@Actor@@2VVec3@@B
+     * @hash   -517310921
+     */
+    MCAPI static class Vec3 const LAVA_AABB_SHRINK_AMOUNT;
+    /**
+     * @symbol ?LAVA_FLOW_STRENGTH_MULTIPLIER@Actor@@2MB
+     * @hash   975694875
+     */
+    MCAPI static float const LAVA_FLOW_STRENGTH_MULTIPLIER;
+    /**
+     * @symbol ?MAX_BYTE_CHARGE_AMOUNT@Actor@@2HB
+     * @hash   1615402477
+     */
+    MCAPI static int const MAX_BYTE_CHARGE_AMOUNT;
+    /**
+     * @symbol ?PLAYER_HURT_EXPERIENCE_TIME@Actor@@2HB
+     * @hash   1984607185
+     */
+    MCAPI static int const PLAYER_HURT_EXPERIENCE_TIME;
+    /**
+     * @symbol ?RIDING_TAG@Actor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -21844637
+     */
+    MCAPI static std::string const RIDING_TAG;
+    /**
+     * @symbol ?TOTAL_AIR_SUPPLY@Actor@@2HB
+     * @hash   -298641647
+     */
+    MCAPI static int const TOTAL_AIR_SUPPLY;
+    /**
+     * @symbol ?WATER_AABB_SHRINK_AMOUNT@Actor@@2VVec3@@B
+     * @hash   1656183
+     */
+    MCAPI static class Vec3 const WATER_AABB_SHRINK_AMOUNT;
+    /**
+     * @symbol ?WATER_FLOW_STRENGTH_MULTIPLIER@Actor@@2MB
+     * @hash   27231623
+     */
+    MCAPI static float const WATER_FLOW_STRENGTH_MULTIPLIER;
     /**
      * @symbol ?_move@Actor@@SAXAEAUIActorMovementProxy@@AEBVVec3@@@Z
      * @hash   -648012449
@@ -3989,8 +4033,20 @@ MCAPI static float const WATER_FLOW_STRENGTH_MULTIPLIER;
 protected:
 
 private:
-MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
-MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
-MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
+    /**
+     * @symbol ?DAMAGE_NEARBY_MOBS_DURATION@Actor@@0HB
+     * @hash   -2031640509
+     */
+    MCAPI static int const DAMAGE_NEARBY_MOBS_DURATION;
+    /**
+     * @symbol ?DEFAULT_MAX_DISTANCE_OPTIMIZATION@Actor@@0MB
+     * @hash   -749287224
+     */
+    MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
+    /**
+     * @symbol ?DEFAULT_MAX_TICK_DELAY_OPTIMIZATION@Actor@@0_KB
+     * @hash   -1385050282
+     */
+    MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
 
 };

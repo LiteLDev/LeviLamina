@@ -55,8 +55,16 @@ public:
      * @hash   1226993069
      */
     MCAPI void setColor(class ItemStackBase &, class mce::Color const &) const;
-MCAPI static class mce::Color DEFAULT_HORSE_LEATHER_COLOR;
-MCAPI static class mce::Color DEFAULT_LEATHER_COLOR;
+    /**
+     * @symbol ?DEFAULT_HORSE_LEATHER_COLOR@DyeableComponent@@2VColor@mce@@A
+     * @hash   -1269463391
+     */
+    MCAPI static class mce::Color DEFAULT_HORSE_LEATHER_COLOR;
+    /**
+     * @symbol ?DEFAULT_LEATHER_COLOR@DyeableComponent@@2VColor@mce@@A
+     * @hash   -816833835
+     */
+    MCAPI static class mce::Color DEFAULT_LEATHER_COLOR;
     /**
      * @symbol ?ResetDefaultLeatherColor@DyeableComponent@@SAXXZ
      * @hash   -26564061

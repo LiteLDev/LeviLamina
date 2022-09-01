@@ -26,6 +26,7 @@ public:
     MolangActorArrayPtr(struct MolangActorArrayPtr const &) = delete;
     MolangActorArrayPtr() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MolangActorArrayPtr@@QEAA@XZ

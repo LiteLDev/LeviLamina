@@ -682,13 +682,41 @@ public:
      * @hash   1906822604
      */
     MCAPI bool updateComponent(std::string const &, class Json::Value const &);
-MCAPI static std::string const TAG_CAN_DESTROY;
-MCAPI static std::string const TAG_CAN_PLACE_ON;
-MCAPI static std::string const TAG_DISPLAY;
-MCAPI static std::string const TAG_DISPLAY_NAME;
-MCAPI static std::string const TAG_ENCHANTS;
-MCAPI static std::string const TAG_LORE;
-MCAPI static std::string const TAG_REPAIR_COST;
+    /**
+     * @symbol ?TAG_CAN_DESTROY@ItemStackBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   837034791
+     */
+    MCAPI static std::string const TAG_CAN_DESTROY;
+    /**
+     * @symbol ?TAG_CAN_PLACE_ON@ItemStackBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1387418249
+     */
+    MCAPI static std::string const TAG_CAN_PLACE_ON;
+    /**
+     * @symbol ?TAG_DISPLAY@ItemStackBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2087454535
+     */
+    MCAPI static std::string const TAG_DISPLAY;
+    /**
+     * @symbol ?TAG_DISPLAY_NAME@ItemStackBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   597338441
+     */
+    MCAPI static std::string const TAG_DISPLAY_NAME;
+    /**
+     * @symbol ?TAG_ENCHANTS@ItemStackBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2108273815
+     */
+    MCAPI static std::string const TAG_ENCHANTS;
+    /**
+     * @symbol ?TAG_LORE@ItemStackBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -221432535
+     */
+    MCAPI static std::string const TAG_LORE;
+    /**
+     * @symbol ?TAG_REPAIR_COST@ItemStackBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1469450055
+     */
+    MCAPI static std::string const TAG_REPAIR_COST;
 
 //protected:
     /**
@@ -820,11 +848,27 @@ MCAPI static std::string const TAG_REPAIR_COST;
     MCAPI void _updateCompareHashes();
 
 protected:
-MCAPI static std::string const TAG_CHARGED_ITEM;
-MCAPI static std::string const TAG_STORE_CAN_DESTROY;
-MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
+    /**
+     * @symbol ?TAG_CHARGED_ITEM@ItemStackBase@@1V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1483672764
+     */
+    MCAPI static std::string const TAG_CHARGED_ITEM;
+    /**
+     * @symbol ?TAG_STORE_CAN_DESTROY@ItemStackBase@@1V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -709156155
+     */
+    MCAPI static std::string const TAG_STORE_CAN_DESTROY;
+    /**
+     * @symbol ?TAG_STORE_CAN_PLACE_ON@ItemStackBase@@1V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   559051590
+     */
+    MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
 
 private:
-MCAPI static int const MAX_STACK_SIZE;
+    /**
+     * @symbol ?MAX_STACK_SIZE@ItemStackBase@@0HB
+     * @hash   100611237
+     */
+    MCAPI static int const MAX_STACK_SIZE;
 
 };

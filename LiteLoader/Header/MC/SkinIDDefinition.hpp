@@ -29,6 +29,7 @@ public:
     SkinIDDefinition(struct SkinIDDefinition const &) = delete;
     SkinIDDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@SkinIDDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@USkinIDDefinition@@@JsonUtil@@@std@@@Z

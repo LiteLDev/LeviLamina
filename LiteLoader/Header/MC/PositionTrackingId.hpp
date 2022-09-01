@@ -73,11 +73,19 @@ public:
      * @hash   -1146798918
      */
     MCAPI std::string const toString() const;
-MCAPI static class PositionTrackingId const INVALID_ID;
+    /**
+     * @symbol ?INVALID_ID@PositionTrackingId@@2V1@B
+     * @hash   -320491813
+     */
+    MCAPI static class PositionTrackingId const INVALID_ID;
 
 //protected:
 
 protected:
-MCAPI static unsigned int sNextId;
+    /**
+     * @symbol ?sNextId@PositionTrackingId@@1IA
+     * @hash   -1705354654
+     */
+    MCAPI static unsigned int sNextId;
 
 };

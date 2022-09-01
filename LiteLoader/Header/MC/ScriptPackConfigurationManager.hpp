@@ -51,6 +51,10 @@ public:
 //private:
 
 private:
-MCAPI static std::string const sDefaultConfigurationName;
+    /**
+     * @symbol ?sDefaultConfigurationName@ScriptPackConfigurationManager@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1478191083
+     */
+    MCAPI static std::string const sDefaultConfigurationName;
 
 };

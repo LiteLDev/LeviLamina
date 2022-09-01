@@ -136,8 +136,16 @@ public:
      * @hash   1686329569
      */
     MCAPI ~Recipes();
-MCAPI static int const RECIPE_MAXIMUM_HEIGHT;
-MCAPI static int const RECIPE_MAXIMUM_WIDTH;
+    /**
+     * @symbol ?RECIPE_MAXIMUM_HEIGHT@Recipes@@2HB
+     * @hash   -1038092717
+     */
+    MCAPI static int const RECIPE_MAXIMUM_HEIGHT;
+    /**
+     * @symbol ?RECIPE_MAXIMUM_WIDTH@Recipes@@2HB
+     * @hash   1913613291
+     */
+    MCAPI static int const RECIPE_MAXIMUM_WIDTH;
     /**
      * @symbol ?Shape@Recipes@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@00@Z
      * @hash   1680276298

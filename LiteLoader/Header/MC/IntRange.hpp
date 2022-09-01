@@ -29,6 +29,7 @@ public:
     IntRange(struct IntRange const &) = delete;
     IntRange() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0IntRange@@QEAA@H@Z
@@ -60,6 +61,10 @@ public:
      * @hash   -523310201
      */
     MCAPI bool parseJson(class Json::Value, int, int);
-MCAPI static struct IntRange const ZERO;
+    /**
+     * @symbol ?ZERO@IntRange@@2U1@B
+     * @hash   2073666808
+     */
+    MCAPI static struct IntRange const ZERO;
 
 };

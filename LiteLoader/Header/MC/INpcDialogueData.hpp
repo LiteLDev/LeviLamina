@@ -28,6 +28,7 @@ public:
     INpcDialogueData(struct INpcDialogueData const &) = delete;
     INpcDialogueData() = delete;
 #endif
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPCDIALOGUEDATA
     /**

@@ -49,7 +49,11 @@ public:
      * @hash   1425029097
      */
     MCAPI bool isCompatible(int) const;
-MCAPI static int const CurrentVersion;
+    /**
+     * @symbol ?CurrentVersion@CommandVersion@@2HB
+     * @hash   -175016479
+     */
+    MCAPI static int const CurrentVersion;
     /**
      * @symbol ?getVersionMapping@CommandVersion@@SA?BW4CurrentCmdVersion@@AEBVSemVersion@@@Z
      * @hash   -23826475

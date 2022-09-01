@@ -29,6 +29,7 @@ public:
     IsHiddenWhenInvisibleDefinition(struct IsHiddenWhenInvisibleDefinition const &) = delete;
     IsHiddenWhenInvisibleDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsHiddenWhenInvisibleDefinition@@QEAAXAEAVEntityContext@@@Z

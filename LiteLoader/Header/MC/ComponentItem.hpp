@@ -691,6 +691,10 @@ public:
     MCAPI void _loadItemTagsNetworkTag(class ListTag const &);
 
 private:
-MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
+    /**
+     * @symbol ?mDocumentUpgrader@ComponentItem@@0VCerealDocumentUpgrader@@A
+     * @hash   1645870996
+     */
+    MCAPI static class CerealDocumentUpgrader mDocumentUpgrader;
 
 };

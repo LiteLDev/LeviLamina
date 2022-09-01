@@ -26,6 +26,7 @@ public:
     ItemStackResponseContainerInfo(struct ItemStackResponseContainerInfo const &) = delete;
     ItemStackResponseContainerInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z

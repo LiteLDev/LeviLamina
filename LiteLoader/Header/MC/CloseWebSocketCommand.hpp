@@ -51,6 +51,10 @@ public:
 //private:
 
 private:
-MCAPI static class IMinecraftApp * mApp;
+    /**
+     * @symbol ?mApp@CloseWebSocketCommand@@0PEAVIMinecraftApp@@EA
+     * @hash   1337157163
+     */
+    MCAPI static class IMinecraftApp * mApp;
 
 };

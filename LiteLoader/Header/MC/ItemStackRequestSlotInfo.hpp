@@ -26,6 +26,7 @@ public:
     ItemStackRequestSlotInfo(struct ItemStackRequestSlotInfo const &) = delete;
     ItemStackRequestSlotInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ?matchesContainerAndSlot@ItemStackRequestSlotInfo@@QEBA_NAEBU1@@Z

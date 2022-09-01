@@ -38,19 +38,71 @@ public:
 #endif
 
 public:
-MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
-MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
-MCAPI static std::vector<unsigned char> const ALL_FACES;
-MCAPI static enum Facing::Name const BY2DDATA[];
-MCAPI static enum Facing::Name const DIRECTIONS[];
-MCAPI static class BlockPos const DIRECTION[];
-MCAPI static unsigned char const FACINGMASK[];
-MCAPI static unsigned char const FACINGMASK_INV[];
-MCAPI static class Vec3 const NORMAL[];
-MCAPI static unsigned char const OPPOSITE_FACING[];
-MCAPI static int const STEP_X[];
-MCAPI static int const STEP_Y[];
-MCAPI static int const STEP_Z[];
+    /**
+     * @symbol ?ALL_EXCEPT@Facing@@2V?$array@V?$vector@EV?$allocator@E@std@@@std@@$05@std@@B
+     * @hash   -364199173
+     */
+    MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
+    /**
+     * @symbol ?ALL_EXCEPT_AXIS_Y@Facing@@2V?$array@V?$vector@EV?$allocator@E@std@@@std@@$05@std@@B
+     * @hash   304382633
+     */
+    MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
+    /**
+     * @symbol ?ALL_FACES@Facing@@2V?$vector@EV?$allocator@E@std@@@std@@B
+     * @hash   -846258067
+     */
+    MCAPI static std::vector<unsigned char> const ALL_FACES;
+    /**
+     * @symbol ?BY2DDATA@Facing@@2QBW4Name@1@B
+     * @hash   1730635296
+     */
+    MCAPI static enum Facing::Name const BY2DDATA[];
+    /**
+     * @symbol ?DIRECTIONS@Facing@@2QBW4Name@1@B
+     * @hash   371635704
+     */
+    MCAPI static enum Facing::Name const DIRECTIONS[];
+    /**
+     * @symbol ?DIRECTION@Facing@@2QBVBlockPos@@B
+     * @hash   -1389575647
+     */
+    MCAPI static class BlockPos const DIRECTION[];
+    /**
+     * @symbol ?FACINGMASK@Facing@@2QBEB
+     * @hash   -1718104539
+     */
+    MCAPI static unsigned char const FACINGMASK[];
+    /**
+     * @symbol ?FACINGMASK_INV@Facing@@2QBEB
+     * @hash   -1471973395
+     */
+    MCAPI static unsigned char const FACINGMASK_INV[];
+    /**
+     * @symbol ?NORMAL@Facing@@2QBVVec3@@B
+     * @hash   1732225875
+     */
+    MCAPI static class Vec3 const NORMAL[];
+    /**
+     * @symbol ?OPPOSITE_FACING@Facing@@2QBEB
+     * @hash   -147540205
+     */
+    MCAPI static unsigned char const OPPOSITE_FACING[];
+    /**
+     * @symbol ?STEP_X@Facing@@2QBHB
+     * @hash   1184563798
+     */
+    MCAPI static int const STEP_X[];
+    /**
+     * @symbol ?STEP_Y@Facing@@2QBHB
+     * @hash   1561556366
+     */
+    MCAPI static int const STEP_Y[];
+    /**
+     * @symbol ?STEP_Z@Facing@@2QBHB
+     * @hash   1938548934
+     */
+    MCAPI static int const STEP_Z[];
     /**
      * @symbol ?convertDirectionToFacingDirection@Facing@@SAEW4Type@Direction@@@Z
      * @hash   -400436572

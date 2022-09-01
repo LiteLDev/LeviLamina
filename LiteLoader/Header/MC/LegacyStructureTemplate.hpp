@@ -71,21 +71,81 @@ public:
      * @hash   -1109664367
      */
     MCAPI void placeInWorldChunk(class BlockSource &, class BlockPos const &, class LegacyStructureSettings &, class Random &);
-MCAPI static std::string const AUTHOR_TAG;
-MCAPI static std::string const BLOCKS_TAG;
-MCAPI static std::string const BLOCK_TAG_NBT;
-MCAPI static std::string const BLOCK_TAG_POS;
-MCAPI static std::string const BLOCK_TAG_STATE;
-MCAPI static int const CHUNK_SIZE;
-MCAPI static std::string const ENTITIES_TAG;
-MCAPI static std::string const ENTITY_TAG_BLOCKPOS;
-MCAPI static std::string const ENTITY_TAG_NBT;
-MCAPI static std::string const ENTITY_TAG_POS;
-MCAPI static std::string const MINECRAFT_PREFIX;
-MCAPI static std::string const PALETTE_TAG;
-MCAPI static std::string const SIZE_TAG;
-MCAPI static int const STRUCTURE_VERSION;
-MCAPI static std::string const VERSION_TAG;
+    /**
+     * @symbol ?AUTHOR_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -516636459
+     */
+    MCAPI static std::string const AUTHOR_TAG;
+    /**
+     * @symbol ?BLOCKS_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1797941547
+     */
+    MCAPI static std::string const BLOCKS_TAG;
+    /**
+     * @symbol ?BLOCK_TAG_NBT@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   499095635
+     */
+    MCAPI static std::string const BLOCK_TAG_NBT;
+    /**
+     * @symbol ?BLOCK_TAG_POS@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -407268973
+     */
+    MCAPI static std::string const BLOCK_TAG_POS;
+    /**
+     * @symbol ?BLOCK_TAG_STATE@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1040072365
+     */
+    MCAPI static std::string const BLOCK_TAG_STATE;
+    /**
+     * @symbol ?CHUNK_SIZE@LegacyStructureTemplate@@2HB
+     * @hash   1220537969
+     */
+    MCAPI static int const CHUNK_SIZE;
+    /**
+     * @symbol ?ENTITIES_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   442308789
+     */
+    MCAPI static std::string const ENTITIES_TAG;
+    /**
+     * @symbol ?ENTITY_TAG_BLOCKPOS@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1002399085
+     */
+    MCAPI static std::string const ENTITY_TAG_BLOCKPOS;
+    /**
+     * @symbol ?ENTITY_TAG_NBT@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   999567733
+     */
+    MCAPI static std::string const ENTITY_TAG_NBT;
+    /**
+     * @symbol ?ENTITY_TAG_POS@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   93203125
+     */
+    MCAPI static std::string const ENTITY_TAG_POS;
+    /**
+     * @symbol ?MINECRAFT_PREFIX@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1437231029
+     */
+    MCAPI static std::string const MINECRAFT_PREFIX;
+    /**
+     * @symbol ?PALETTE_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -784390925
+     */
+    MCAPI static std::string const PALETTE_TAG;
+    /**
+     * @symbol ?SIZE_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1658824757
+     */
+    MCAPI static std::string const SIZE_TAG;
+    /**
+     * @symbol ?STRUCTURE_VERSION@LegacyStructureTemplate@@2HB
+     * @hash   -1823231999
+     */
+    MCAPI static int const STRUCTURE_VERSION;
+    /**
+     * @symbol ?VERSION_TAG@LegacyStructureTemplate@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   10083379
+     */
+    MCAPI static std::string const VERSION_TAG;
     /**
      * @symbol ?_mapPropertyToExtraBlock@LegacyStructureTemplate@@SAPEBVBlock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
      * @hash   1764185086
@@ -106,7 +166,11 @@ MCAPI static std::string const VERSION_TAG;
      * @hash   1570723844
      */
     MCAPI static class Block const * _mapToProperty(std::string const &, std::string const &, class Block const &);
-MCAPI static class LegacyStructureSettings const defaultSettings;
+    /**
+     * @symbol ?defaultSettings@LegacyStructureTemplate@@2VLegacyStructureSettings@@B
+     * @hash   -1578458511
+     */
+    MCAPI static class LegacyStructureSettings const defaultSettings;
     /**
      * @symbol ?getZeroPositionWithTransform@LegacyStructureTemplate@@SA?AVBlockPos@@AEBV2@W4Mirror@@W4Rotation@@HH@Z
      * @hash   -732787110

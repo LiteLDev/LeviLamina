@@ -25,6 +25,7 @@ public:
     struct SideBySideValidationExceptionComponent& operator=(struct SideBySideValidationExceptionComponent const &) = delete;
     SideBySideValidationExceptionComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SideBySideValidationExceptionComponent@@QEAA@$$QEAU0@@Z

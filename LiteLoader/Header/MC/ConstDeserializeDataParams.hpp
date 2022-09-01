@@ -26,6 +26,7 @@ public:
     ConstDeserializeDataParams(struct ConstDeserializeDataParams const &) = delete;
     ConstDeserializeDataParams() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ConstDeserializeDataParams@@QEAA@XZ

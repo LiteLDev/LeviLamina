@@ -28,6 +28,7 @@ public:
     BlockQueuedTickingComponent(struct BlockQueuedTickingComponent const &) = delete;
     BlockQueuedTickingComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockQueuedTickingComponent@@QEAA@$$QEAU0@@Z

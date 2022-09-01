@@ -50,9 +50,25 @@ public:
     MCAPI static void _addScatteredPieces(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random &, enum Rotation const &, class BlockPos const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Dimension &);
 
 private:
-MCAPI static class std::array<class gsl::basic_string_span<char const, -1>, 7> MSC_FEATURES;
-MCAPI static class gsl::basic_string_span<char const, -1> PILLAGER_LOOT;
-MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_WATCHTOWER;
-MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_WATCHTOWER_OVERGROWN;
+    /**
+     * @symbol ?MSC_FEATURES@PillagerOutpostPieces@@0V?$array@V?$basic_string_span@$$CBD$0?0@gsl@@$06@std@@A
+     * @hash   266780522
+     */
+    MCAPI static class std::array<class gsl::basic_string_span<char const, -1>, 7> MSC_FEATURES;
+    /**
+     * @symbol ?PILLAGER_LOOT@PillagerOutpostPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   -1970202273
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> PILLAGER_LOOT;
+    /**
+     * @symbol ?STRUCTURE_WATCHTOWER@PillagerOutpostPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   -1833361414
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_WATCHTOWER;
+    /**
+     * @symbol ?STRUCTURE_WATCHTOWER_OVERGROWN@PillagerOutpostPieces@@0V?$basic_string_span@$$CBD$0?0@gsl@@A
+     * @hash   -2093365822
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_WATCHTOWER_OVERGROWN;
 
 };

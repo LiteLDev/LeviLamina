@@ -27,6 +27,7 @@ public:
     OnExtractSideBySide(struct OnExtractSideBySide const &) = delete;
     OnExtractSideBySide() = delete;
 #endif
+
 public:
     /**
      * @symbol ?flagUnsupportedComparisonFrame@OnExtractSideBySide@@SAXAEAVActor@@V?$basic_string_view@DU?$char_traits@D@std@@@std@@USideBySidePartialComparison@@@Z

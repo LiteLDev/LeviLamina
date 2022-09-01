@@ -260,7 +260,11 @@ public:
      * @hash   -874431349
      */
     MCAPI void update(std::vector<class WeakEntityRef> const *);
-MCAPI static class std::shared_ptr<struct NetherNetInstance> mNetherNetInstance;
+    /**
+     * @symbol ?mNetherNetInstance@NetworkHandler@@2V?$shared_ptr@UNetherNetInstance@@@std@@A
+     * @hash   -583673356
+     */
+    MCAPI static class std::shared_ptr<struct NetherNetInstance> mNetherNetInstance;
 
 //private:
     /**

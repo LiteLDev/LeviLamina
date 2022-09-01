@@ -108,11 +108,35 @@ public:
     MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const &, class ItemDescriptor const &);
 
 private:
-MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
-MCAPI static std::vector<class PotionBrewing::Mix<class Item const &>> mContainerMixes;
-MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
-MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
-MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidIngredients;
-MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidRecipeInputs;
+    /**
+     * @symbol ?mChemistryMixes@PotionBrewing@@0V?$vector@V?$Mix@VItemInstance@@@PotionBrewing@@V?$allocator@V?$Mix@VItemInstance@@@PotionBrewing@@@std@@@std@@A
+     * @hash   -1606596213
+     */
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
+    /**
+     * @symbol ?mContainerMixes@PotionBrewing@@0V?$vector@V?$Mix@AEBVItem@@@PotionBrewing@@V?$allocator@V?$Mix@AEBVItem@@@PotionBrewing@@@std@@@std@@A
+     * @hash   -1134008298
+     */
+    MCAPI static std::vector<class PotionBrewing::Mix<class Item const &>> mContainerMixes;
+    /**
+     * @symbol ?mPotionMixes@PotionBrewing@@0V?$vector@V?$Mix@VItemDescriptor@@@PotionBrewing@@V?$allocator@V?$Mix@VItemDescriptor@@@PotionBrewing@@@std@@@std@@A
+     * @hash   643661618
+     */
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
+    /**
+     * @symbol ?mValidContainers@PotionBrewing@@0V?$vector@VIngredient@PotionBrewing@@V?$allocator@VIngredient@PotionBrewing@@@std@@@std@@A
+     * @hash   1388834741
+     */
+    MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
+    /**
+     * @symbol ?mValidIngredients@PotionBrewing@@0V?$unordered_set@VIngredient@PotionBrewing@@U?$hash@VIngredient@PotionBrewing@@@std@@U?$equal_to@VIngredient@PotionBrewing@@@4@V?$allocator@VIngredient@PotionBrewing@@@4@@std@@A
+     * @hash   -755659755
+     */
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidIngredients;
+    /**
+     * @symbol ?mValidRecipeInputs@PotionBrewing@@0V?$unordered_set@VIngredient@PotionBrewing@@U?$hash@VIngredient@PotionBrewing@@@std@@U?$equal_to@VIngredient@PotionBrewing@@@4@V?$allocator@VIngredient@PotionBrewing@@@4@@std@@A
+     * @hash   -491790968
+     */
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidRecipeInputs;
 
 };

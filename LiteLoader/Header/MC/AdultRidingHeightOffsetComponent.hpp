@@ -26,7 +26,12 @@ public:
     AdultRidingHeightOffsetComponent(struct AdultRidingHeightOffsetComponent const &) = delete;
     AdultRidingHeightOffsetComponent() = delete;
 #endif
+
 public:
-MCAPI static float const SITTING_ANIMATION_OFFSET;
+    /**
+     * @symbol ?SITTING_ANIMATION_OFFSET@AdultRidingHeightOffsetComponent@@2MB
+     * @hash   -1632525607
+     */
+    MCAPI static float const SITTING_ANIMATION_OFFSET;
 
 };

@@ -321,6 +321,10 @@ public:
     MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
 
 private:
-MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION@TrapDoorBlock@@0VBaseGameVersion@@B
+     * @hash   455866358
+     */
+    MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

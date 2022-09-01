@@ -27,6 +27,7 @@ public:
     struct SlotData& operator=(struct SlotData const &) = delete;
     SlotData(struct SlotData const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SlotData@@QEAA@XZ
@@ -38,6 +39,10 @@ public:
      * @hash   391152466
      */
     MCAPI ~SlotData();
-MCAPI static struct SlotData UNKNOWN_LOCATION;
+    /**
+     * @symbol ?UNKNOWN_LOCATION@SlotData@@2U1@A
+     * @hash   249070362
+     */
+    MCAPI static struct SlotData UNKNOWN_LOCATION;
 
 };

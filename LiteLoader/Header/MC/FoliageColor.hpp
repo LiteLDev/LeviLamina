@@ -86,15 +86,55 @@ public:
 //private:
 
 private:
-MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;
-MCAPI static class mce::Color const FOLIAGE_BOTTOM_RIGHT;
-MCAPI static class mce::Color const FOLIAGE_TOP_LEFT;
-MCAPI static class mce::Color const FOLIAGE_TOP_RIGHT;
-MCAPI static class mce::Color const GRASS_BOTTOM_LEFT;
-MCAPI static class mce::Color const GRASS_BOTTOM_RIGHT;
-MCAPI static class mce::Color const GRASS_TOP_LEFT;
-MCAPI static class mce::Color const GRASS_TOP_RIGHT;
-MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mFoliagePalettes;
-MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mGrassPalettes;
+    /**
+     * @symbol ?FOLIAGE_BOTTOM_LEFT@FoliageColor@@0VColor@mce@@B
+     * @hash   -49028985
+     */
+    MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;
+    /**
+     * @symbol ?FOLIAGE_BOTTOM_RIGHT@FoliageColor@@0VColor@mce@@B
+     * @hash   -1676178928
+     */
+    MCAPI static class mce::Color const FOLIAGE_BOTTOM_RIGHT;
+    /**
+     * @symbol ?FOLIAGE_TOP_LEFT@FoliageColor@@0VColor@mce@@B
+     * @hash   -2007942871
+     */
+    MCAPI static class mce::Color const FOLIAGE_TOP_LEFT;
+    /**
+     * @symbol ?FOLIAGE_TOP_RIGHT@FoliageColor@@0VColor@mce@@B
+     * @hash   2022922606
+     */
+    MCAPI static class mce::Color const FOLIAGE_TOP_RIGHT;
+    /**
+     * @symbol ?GRASS_BOTTOM_LEFT@FoliageColor@@0VColor@mce@@B
+     * @hash   -1769559772
+     */
+    MCAPI static class mce::Color const GRASS_BOTTOM_LEFT;
+    /**
+     * @symbol ?GRASS_BOTTOM_RIGHT@FoliageColor@@0VColor@mce@@B
+     * @hash   823786643
+     */
+    MCAPI static class mce::Color const GRASS_BOTTOM_RIGHT;
+    /**
+     * @symbol ?GRASS_TOP_LEFT@FoliageColor@@0VColor@mce@@B
+     * @hash   1554089260
+     */
+    MCAPI static class mce::Color const GRASS_TOP_LEFT;
+    /**
+     * @symbol ?GRASS_TOP_RIGHT@FoliageColor@@0VColor@mce@@B
+     * @hash   778614091
+     */
+    MCAPI static class mce::Color const GRASS_TOP_RIGHT;
+    /**
+     * @symbol ?mFoliagePalettes@FoliageColor@@0V?$array@V?$unique_ptr@V?$array@H$0BAAAA@@std@@U?$default_delete@V?$array@H$0BAAAA@@std@@@2@@std@@$04@std@@A
+     * @hash   -2014268500
+     */
+    MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mFoliagePalettes;
+    /**
+     * @symbol ?mGrassPalettes@FoliageColor@@0V?$array@V?$unique_ptr@V?$array@H$0BAAAA@@std@@U?$default_delete@V?$array@H$0BAAAA@@std@@@2@@std@@$04@std@@A
+     * @hash   -2099373775
+     */
+    MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 5> mGrassPalettes;
 
 };

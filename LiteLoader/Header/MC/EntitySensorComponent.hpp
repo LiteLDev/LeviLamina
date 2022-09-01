@@ -58,6 +58,10 @@ public:
 //private:
 
 private:
-MCAPI static int const NO_MAX_COUNT;
+    /**
+     * @symbol ?NO_MAX_COUNT@EntitySensorComponent@@0HB
+     * @hash   2141006226
+     */
+    MCAPI static int const NO_MAX_COUNT;
 
 };

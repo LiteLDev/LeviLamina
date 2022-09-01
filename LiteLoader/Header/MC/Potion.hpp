@@ -107,49 +107,221 @@ public:
      * @hash   -754459395
      */
     MCAPI ~Potion();
-MCAPI static class std::shared_ptr<class Potion const> const Awkward;
-MCAPI static class std::shared_ptr<class Potion const> const FireResistance;
-MCAPI static class std::shared_ptr<class Potion const> const Harming;
-MCAPI static class std::shared_ptr<class Potion const> const Healing;
-MCAPI static class std::shared_ptr<class Potion const> const Invisibility;
-MCAPI static class std::shared_ptr<class Potion const> const Leaping;
-MCAPI static class std::shared_ptr<class Potion const> const LongFireResistance;
-MCAPI static class std::shared_ptr<class Potion const> const LongInvisibility;
-MCAPI static class std::shared_ptr<class Potion const> const LongLeaping;
-MCAPI static class std::shared_ptr<class Potion const> const LongMundane;
-MCAPI static class std::shared_ptr<class Potion const> const LongNightvision;
-MCAPI static class std::shared_ptr<class Potion const> const LongPoison;
-MCAPI static class std::shared_ptr<class Potion const> const LongRegeneration;
-MCAPI static class std::shared_ptr<class Potion const> const LongSlowFalling;
-MCAPI static class std::shared_ptr<class Potion const> const LongSlowness;
-MCAPI static class std::shared_ptr<class Potion const> const LongStrength;
-MCAPI static class std::shared_ptr<class Potion const> const LongSwiftness;
-MCAPI static class std::shared_ptr<class Potion const> const LongTurtleMaster;
-MCAPI static class std::shared_ptr<class Potion const> const LongWaterBreathing;
-MCAPI static class std::shared_ptr<class Potion const> const LongWeakness;
-MCAPI static class std::shared_ptr<class Potion const> const Mundane;
-MCAPI static class std::shared_ptr<class Potion const> const Nightvision;
-MCAPI static class std::shared_ptr<class Potion const> const Poison;
-MCAPI static class std::shared_ptr<class Potion const> const Regeneration;
-MCAPI static class std::shared_ptr<class Potion const> const SlowFalling;
-MCAPI static class std::shared_ptr<class Potion const> const Slowness;
-MCAPI static class std::shared_ptr<class Potion const> const Strength;
-MCAPI static class std::shared_ptr<class Potion const> const StrongHarming;
-MCAPI static class std::shared_ptr<class Potion const> const StrongHealing;
-MCAPI static class std::shared_ptr<class Potion const> const StrongLeaping;
-MCAPI static class std::shared_ptr<class Potion const> const StrongPoison;
-MCAPI static class std::shared_ptr<class Potion const> const StrongRegeneration;
-MCAPI static class std::shared_ptr<class Potion const> const StrongSlowness;
-MCAPI static class std::shared_ptr<class Potion const> const StrongStrength;
-MCAPI static class std::shared_ptr<class Potion const> const StrongSwiftness;
-MCAPI static class std::shared_ptr<class Potion const> const StrongTurtleMaster;
-MCAPI static class std::shared_ptr<class Potion const> const Swiftness;
-MCAPI static class std::shared_ptr<class Potion const> const Thick;
-MCAPI static class std::shared_ptr<class Potion const> const TurtleMaster;
-MCAPI static class std::shared_ptr<class Potion const> const Water;
-MCAPI static class std::shared_ptr<class Potion const> const WaterBreathing;
-MCAPI static class std::shared_ptr<class Potion const> const Weakness;
-MCAPI static class std::shared_ptr<class Potion const> const Wither;
+    /**
+     * @symbol ?Awkward@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -888915900
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Awkward;
+    /**
+     * @symbol ?FireResistance@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1977554982
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const FireResistance;
+    /**
+     * @symbol ?Harming@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1230738908
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Harming;
+    /**
+     * @symbol ?Healing@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1237057412
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Healing;
+    /**
+     * @symbol ?Invisibility@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1932588310
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Invisibility;
+    /**
+     * @symbol ?Leaping@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -229031244
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Leaping;
+    /**
+     * @symbol ?LongFireResistance@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -508757194
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongFireResistance;
+    /**
+     * @symbol ?LongInvisibility@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -197355482
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongInvisibility;
+    /**
+     * @symbol ?LongLeaping@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -209078332
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongLeaping;
+    /**
+     * @symbol ?LongMundane@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1058119492
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongMundane;
+    /**
+     * @symbol ?LongNightvision@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -574947644
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongNightvision;
+    /**
+     * @symbol ?LongPoison@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -606817994
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongPoison;
+    /**
+     * @symbol ?LongRegeneration@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   2139084806
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongRegeneration;
+    /**
+     * @symbol ?LongSlowFalling@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1729394628
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongSlowFalling;
+    /**
+     * @symbol ?LongSlowness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1876448666
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongSlowness;
+    /**
+     * @symbol ?LongStrength@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1051224438
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongStrength;
+    /**
+     * @symbol ?LongSwiftness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1938223532
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongSwiftness;
+    /**
+     * @symbol ?LongTurtleMaster@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1741112842
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongTurtleMaster;
+    /**
+     * @symbol ?LongWaterBreathing@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   357632822
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongWaterBreathing;
+    /**
+     * @symbol ?LongWeakness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1005016422
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const LongWeakness;
+    /**
+     * @symbol ?Mundane@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1038166580
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Mundane;
+    /**
+     * @symbol ?Nightvision@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -783349324
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Nightvision;
+    /**
+     * @symbol ?Poison@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1886375462
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Poison;
+    /**
+     * @symbol ?Regeneration@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -25938698
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Regeneration;
+    /**
+     * @symbol ?SlowFalling@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1520992948
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const SlowFalling;
+    /**
+     * @symbol ?Slowness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1800439638
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Slowness;
+    /**
+     * @symbol ?Strength@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   433145446
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Strength;
+    /**
+     * @symbol ?StrongHarming@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   786707732
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongHarming;
+    /**
+     * @symbol ?StrongHealing@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1040463244
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongHealing;
+    /**
+     * @symbol ?StrongLeaping@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   1788430772
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongLeaping;
+    /**
+     * @symbol ?StrongPoison@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   2090031974
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongPoison;
+    /**
+     * @symbol ?StrongRegeneration@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1543804362
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongRegeneration;
+    /**
+     * @symbol ?StrongSlowness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -83669866
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongSlowness;
+    /**
+     * @symbol ?StrongStrength@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1450964058
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongStrength;
+    /**
+     * @symbol ?StrongSwiftness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   2097850436
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongSwiftness;
+    /**
+     * @symbol ?StrongTurtleMaster@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1129034714
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const StrongTurtleMaster;
+    /**
+     * @symbol ?Swiftness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   376625476
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Swiftness;
+    /**
+     * @symbol ?Thick@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1212706444
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Thick;
+    /**
+     * @symbol ?TurtleMaster@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   388830950
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const TurtleMaster;
+    /**
+     * @symbol ?Water@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   942976644
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Water;
+    /**
+     * @symbol ?WaterBreathing@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1451022298
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const WaterBreathing;
+    /**
+     * @symbol ?Weakness@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   386937430
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Weakness;
+    /**
+     * @symbol ?Wither@Potion@@2V?$shared_ptr@$$CBVPotion@@@std@@B
+     * @hash   -1041533130
+     */
+    MCAPI static class std::shared_ptr<class Potion const> const Wither;
     /**
      * @symbol ?getBasePotion@Potion@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PotionType@1@@Z
      * @hash   425961769
@@ -209,8 +381,20 @@ MCAPI static class std::shared_ptr<class Potion const> const Wither;
     MCAPI static void addPotion(class std::shared_ptr<class Potion const>);
 
 private:
-MCAPI static int mLastId;
-MCAPI static class std::shared_ptr<class Potion const> mPotionsById[];
-MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mPotionsByName;
+    /**
+     * @symbol ?mLastId@Potion@@0HA
+     * @hash   -80723874
+     */
+    MCAPI static int mLastId;
+    /**
+     * @symbol ?mPotionsById@Potion@@0PAV?$shared_ptr@$$CBVPotion@@@std@@A
+     * @hash   -1797236305
+     */
+    MCAPI static class std::shared_ptr<class Potion const> mPotionsById[];
+    /**
+     * @symbol ?mPotionsByName@Potion@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@std@@A
+     * @hash   848715934
+     */
+    MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> mPotionsByName;
 
 };

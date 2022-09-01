@@ -26,6 +26,7 @@ public:
     InsideBubbleColumnBlockComponent(struct InsideBubbleColumnBlockComponent const &) = delete;
     InsideBubbleColumnBlockComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4InsideBubbleColumnBlockComponent@@QEAAAEAU0@$$QEAU0@@Z

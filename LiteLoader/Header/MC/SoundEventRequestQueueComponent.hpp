@@ -26,6 +26,7 @@ public:
     SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent const &) = delete;
     SoundEventRequestQueueComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SoundEventRequestQueueComponent@@QEAA@$$QEAU0@@Z

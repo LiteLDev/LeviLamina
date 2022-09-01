@@ -95,47 +95,215 @@ public:
      * @hash   -1379768713
      */
     MCAPI static void initPatterns();
-MCAPI static class BannerPattern * mBase;
-MCAPI static class BannerPattern * mBorder;
-MCAPI static class BannerPattern * mBricks;
-MCAPI static class BannerPattern * mCircle;
-MCAPI static class BannerPattern * mCreeper;
-MCAPI static class BannerPattern * mCross;
-MCAPI static class BannerPattern * mCurlyBorder;
-MCAPI static class BannerPattern * mDiagonalLeft;
-MCAPI static class BannerPattern * mDiagonalRight;
-MCAPI static class BannerPattern * mDiagonalUpLeft;
-MCAPI static class BannerPattern * mDiagonalUpRight;
-MCAPI static class BannerPattern * mFlower;
-MCAPI static class BannerPattern * mGlobe;
-MCAPI static class BannerPattern * mGradient;
-MCAPI static class BannerPattern * mGradientUp;
-MCAPI static class BannerPattern * mHalfHorizontal;
-MCAPI static class BannerPattern * mHalfHorizontalBottom;
-MCAPI static class BannerPattern * mHalfVertical;
-MCAPI static class BannerPattern * mHalfVerticalRight;
-MCAPI static class BannerPattern * mMojang;
-MCAPI static std::vector<std::unique_ptr<class BannerPattern>> mPatterns;
-MCAPI static class BannerPattern * mPiglin;
-MCAPI static class BannerPattern * mRhombus;
-MCAPI static class BannerPattern * mSkull;
-MCAPI static class BannerPattern * mSmallStripes;
-MCAPI static class BannerPattern * mSquareBottomLeft;
-MCAPI static class BannerPattern * mSquareBottomRight;
-MCAPI static class BannerPattern * mSquareTopLeft;
-MCAPI static class BannerPattern * mSquareTopRight;
-MCAPI static class BannerPattern * mStraightCross;
-MCAPI static class BannerPattern * mStripeBottom;
-MCAPI static class BannerPattern * mStripeCenter;
-MCAPI static class BannerPattern * mStripeDownleft;
-MCAPI static class BannerPattern * mStripeDownright;
-MCAPI static class BannerPattern * mStripeLeft;
-MCAPI static class BannerPattern * mStripeMiddle;
-MCAPI static class BannerPattern * mStripeRight;
-MCAPI static class BannerPattern * mStripeTop;
-MCAPI static class BannerPattern * mTriangleBottom;
-MCAPI static class BannerPattern * mTriangleTop;
-MCAPI static class BannerPattern * mTrianglesBottom;
-MCAPI static class BannerPattern * mTrianglesTop;
+    /**
+     * @symbol ?mBase@BannerPattern@@2PEAV1@EA
+     * @hash   -598178534
+     */
+    MCAPI static class BannerPattern * mBase;
+    /**
+     * @symbol ?mBorder@BannerPattern@@2PEAV1@EA
+     * @hash   587016664
+     */
+    MCAPI static class BannerPattern * mBorder;
+    /**
+     * @symbol ?mBricks@BannerPattern@@2PEAV1@EA
+     * @hash   -69953108
+     */
+    MCAPI static class BannerPattern * mBricks;
+    /**
+     * @symbol ?mCircle@BannerPattern@@2PEAV1@EA
+     * @hash   33931312
+     */
+    MCAPI static class BannerPattern * mCircle;
+    /**
+     * @symbol ?mCreeper@BannerPattern@@2PEAV1@EA
+     * @hash   2015737182
+     */
+    MCAPI static class BannerPattern * mCreeper;
+    /**
+     * @symbol ?mCross@BannerPattern@@2PEAV1@EA
+     * @hash   1941469898
+     */
+    MCAPI static class BannerPattern * mCross;
+    /**
+     * @symbol ?mCurlyBorder@BannerPattern@@2PEAV1@EA
+     * @hash   -78083196
+     */
+    MCAPI static class BannerPattern * mCurlyBorder;
+    /**
+     * @symbol ?mDiagonalLeft@BannerPattern@@2PEAV1@EA
+     * @hash   1575040296
+     */
+    MCAPI static class BannerPattern * mDiagonalLeft;
+    /**
+     * @symbol ?mDiagonalRight@BannerPattern@@2PEAV1@EA
+     * @hash   -1867526416
+     */
+    MCAPI static class BannerPattern * mDiagonalRight;
+    /**
+     * @symbol ?mDiagonalUpLeft@BannerPattern@@2PEAV1@EA
+     * @hash   -818299602
+     */
+    MCAPI static class BannerPattern * mDiagonalUpLeft;
+    /**
+     * @symbol ?mDiagonalUpRight@BannerPattern@@2PEAV1@EA
+     * @hash   1247886794
+     */
+    MCAPI static class BannerPattern * mDiagonalUpRight;
+    /**
+     * @symbol ?mFlower@BannerPattern@@2PEAV1@EA
+     * @hash   -575125946
+     */
+    MCAPI static class BannerPattern * mFlower;
+    /**
+     * @symbol ?mGlobe@BannerPattern@@2PEAV1@EA
+     * @hash   1728466044
+     */
+    MCAPI static class BannerPattern * mGlobe;
+    /**
+     * @symbol ?mGradient@BannerPattern@@2PEAV1@EA
+     * @hash   -133584776
+     */
+    MCAPI static class BannerPattern * mGradient;
+    /**
+     * @symbol ?mGradientUp@BannerPattern@@2PEAV1@EA
+     * @hash   -52811786
+     */
+    MCAPI static class BannerPattern * mGradientUp;
+    /**
+     * @symbol ?mHalfHorizontal@BannerPattern@@2PEAV1@EA
+     * @hash   -1469480682
+     */
+    MCAPI static class BannerPattern * mHalfHorizontal;
+    /**
+     * @symbol ?mHalfHorizontalBottom@BannerPattern@@2PEAV1@EA
+     * @hash   193598388
+     */
+    MCAPI static class BannerPattern * mHalfHorizontalBottom;
+    /**
+     * @symbol ?mHalfVertical@BannerPattern@@2PEAV1@EA
+     * @hash   465009802
+     */
+    MCAPI static class BannerPattern * mHalfVertical;
+    /**
+     * @symbol ?mHalfVerticalRight@BannerPattern@@2PEAV1@EA
+     * @hash   -1482244720
+     */
+    MCAPI static class BannerPattern * mHalfVerticalRight;
+    /**
+     * @symbol ?mMojang@BannerPattern@@2PEAV1@EA
+     * @hash   751224108
+     */
+    MCAPI static class BannerPattern * mMojang;
+    /**
+     * @symbol ?mPatterns@BannerPattern@@2V?$vector@V?$unique_ptr@VBannerPattern@@U?$default_delete@VBannerPattern@@@std@@@std@@V?$allocator@V?$unique_ptr@VBannerPattern@@U?$default_delete@VBannerPattern@@@std@@@std@@@2@@std@@A
+     * @hash   -431320652
+     */
+    MCAPI static std::vector<std::unique_ptr<class BannerPattern>> mPatterns;
+    /**
+     * @symbol ?mPiglin@BannerPattern@@2PEAV1@EA
+     * @hash   1389203702
+     */
+    MCAPI static class BannerPattern * mPiglin;
+    /**
+     * @symbol ?mRhombus@BannerPattern@@2PEAV1@EA
+     * @hash   -815045806
+     */
+    MCAPI static class BannerPattern * mRhombus;
+    /**
+     * @symbol ?mSkull@BannerPattern@@2PEAV1@EA
+     * @hash   749619900
+     */
+    MCAPI static class BannerPattern * mSkull;
+    /**
+     * @symbol ?mSmallStripes@BannerPattern@@2PEAV1@EA
+     * @hash   -832488418
+     */
+    MCAPI static class BannerPattern * mSmallStripes;
+    /**
+     * @symbol ?mSquareBottomLeft@BannerPattern@@2PEAV1@EA
+     * @hash   2045519558
+     */
+    MCAPI static class BannerPattern * mSquareBottomLeft;
+    /**
+     * @symbol ?mSquareBottomRight@BannerPattern@@2PEAV1@EA
+     * @hash   -171030782
+     */
+    MCAPI static class BannerPattern * mSquareBottomRight;
+    /**
+     * @symbol ?mSquareTopLeft@BannerPattern@@2PEAV1@EA
+     * @hash   582995424
+     */
+    MCAPI static class BannerPattern * mSquareTopLeft;
+    /**
+     * @symbol ?mSquareTopRight@BannerPattern@@2PEAV1@EA
+     * @hash   1734900040
+     */
+    MCAPI static class BannerPattern * mSquareTopRight;
+    /**
+     * @symbol ?mStraightCross@BannerPattern@@2PEAV1@EA
+     * @hash   -1626630082
+     */
+    MCAPI static class BannerPattern * mStraightCross;
+    /**
+     * @symbol ?mStripeBottom@BannerPattern@@2PEAV1@EA
+     * @hash   -1241759040
+     */
+    MCAPI static class BannerPattern * mStripeBottom;
+    /**
+     * @symbol ?mStripeCenter@BannerPattern@@2PEAV1@EA
+     * @hash   -922755172
+     */
+    MCAPI static class BannerPattern * mStripeCenter;
+    /**
+     * @symbol ?mStripeDownleft@BannerPattern@@2PEAV1@EA
+     * @hash   -553861108
+     */
+    MCAPI static class BannerPattern * mStripeDownleft;
+    /**
+     * @symbol ?mStripeDownright@BannerPattern@@2PEAV1@EA
+     * @hash   850932716
+     */
+    MCAPI static class BannerPattern * mStripeDownright;
+    /**
+     * @symbol ?mStripeLeft@BannerPattern@@2PEAV1@EA
+     * @hash   -1606955304
+     */
+    MCAPI static class BannerPattern * mStripeLeft;
+    /**
+     * @symbol ?mStripeMiddle@BannerPattern@@2PEAV1@EA
+     * @hash   157139516
+     */
+    MCAPI static class BannerPattern * mStripeMiddle;
+    /**
+     * @symbol ?mStripeRight@BannerPattern@@2PEAV1@EA
+     * @hash   -1730669880
+     */
+    MCAPI static class BannerPattern * mStripeRight;
+    /**
+     * @symbol ?mStripeTop@BannerPattern@@2PEAV1@EA
+     * @hash   1170705474
+     */
+    MCAPI static class BannerPattern * mStripeTop;
+    /**
+     * @symbol ?mTriangleBottom@BannerPattern@@2PEAV1@EA
+     * @hash   -1480586762
+     */
+    MCAPI static class BannerPattern * mTriangleBottom;
+    /**
+     * @symbol ?mTriangleTop@BannerPattern@@2PEAV1@EA
+     * @hash   1365198108
+     */
+    MCAPI static class BannerPattern * mTriangleTop;
+    /**
+     * @symbol ?mTrianglesBottom@BannerPattern@@2PEAV1@EA
+     * @hash   2052989302
+     */
+    MCAPI static class BannerPattern * mTrianglesBottom;
+    /**
+     * @symbol ?mTrianglesTop@BannerPattern@@2PEAV1@EA
+     * @hash   1422711740
+     */
+    MCAPI static class BannerPattern * mTrianglesTop;
 
 };

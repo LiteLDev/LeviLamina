@@ -39,6 +39,10 @@ public:
 //private:
 
 private:
-MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
+    /**
+     * @symbol ?mAlwaysBlockableDamageCauses@ShieldItemUtils@@0V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@B
+     * @hash   -28867247
+     */
+    MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
 
 };

@@ -26,6 +26,7 @@ public:
     PersistentBlendData(struct PersistentBlendData const &) = delete;
     PersistentBlendData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PersistentBlendData@@QEAA@AEAVStringByteInput@@@Z

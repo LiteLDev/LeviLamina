@@ -29,6 +29,7 @@ public:
     JumpControlDescription(struct JumpControlDescription const &) = delete;
     JumpControlDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

@@ -60,36 +60,160 @@ public:
      * @hash   1269895028
      */
     MCAPI static class Motive const & getMotiveByName(std::string const &);
-MCAPI static class Motive const mAlban;
-MCAPI static class Motive const mAztec;
-MCAPI static class Motive const mAztec2;
-MCAPI static class Motive const mBomb;
-MCAPI static class Motive const mBurningSkull;
-MCAPI static class Motive const mBust;
-MCAPI static class Motive const mCourbet;
-MCAPI static class Motive const mCreebet;
-MCAPI static class Motive const & mDefaultImage;
-MCAPI static class Motive const mDonkeyKong;
-MCAPI static class Motive const mEarth;
-MCAPI static class Motive const mFighters;
-MCAPI static class Motive const mFire;
-MCAPI static class Motive const mGraham;
-MCAPI static class Motive const mKebab;
-MCAPI static class Motive const mMatch;
-MCAPI static class Motive const mPigscene;
-MCAPI static class Motive const mPlant;
-MCAPI static class Motive const mPointer;
-MCAPI static class Motive const mPool;
-MCAPI static class Motive const mSea;
-MCAPI static class Motive const mSkeleton;
-MCAPI static class Motive const mSkullAndRoses;
-MCAPI static class Motive const mStage;
-MCAPI static class Motive const mSunset;
-MCAPI static class Motive const mVoid;
-MCAPI static class Motive const mWanderer;
-MCAPI static class Motive const mWasteland;
-MCAPI static class Motive const mWater;
-MCAPI static class Motive const mWind;
-MCAPI static class Motive const mWither;
+    /**
+     * @symbol ?mAlban@Motive@@2V1@B
+     * @hash   -2113910140
+     */
+    MCAPI static class Motive const mAlban;
+    /**
+     * @symbol ?mAztec@Motive@@2V1@B
+     * @hash   -1850825428
+     */
+    MCAPI static class Motive const mAztec;
+    /**
+     * @symbol ?mAztec2@Motive@@2V1@B
+     * @hash   553516858
+     */
+    MCAPI static class Motive const mAztec2;
+    /**
+     * @symbol ?mBomb@Motive@@2V1@B
+     * @hash   -1760506478
+     */
+    MCAPI static class Motive const mBomb;
+    /**
+     * @symbol ?mBurningSkull@Motive@@2V1@B
+     * @hash   -1501393990
+     */
+    MCAPI static class Motive const mBurningSkull;
+    /**
+     * @symbol ?mBust@Motive@@2V1@B
+     * @hash   996282042
+     */
+    MCAPI static class Motive const mBust;
+    /**
+     * @symbol ?mCourbet@Motive@@2V1@B
+     * @hash   1998951700
+     */
+    MCAPI static class Motive const mCourbet;
+    /**
+     * @symbol ?mCreebet@Motive@@2V1@B
+     * @hash   55880572
+     */
+    MCAPI static class Motive const mCreebet;
+    /**
+     * @symbol ?mDefaultImage@Motive@@2AEBV1@EB
+     * @hash   984539332
+     */
+    MCAPI static class Motive const & mDefaultImage;
+    /**
+     * @symbol ?mDonkeyKong@Motive@@2V1@B
+     * @hash   -649786230
+     */
+    MCAPI static class Motive const mDonkeyKong;
+    /**
+     * @symbol ?mEarth@Motive@@2V1@B
+     * @hash   -1887987708
+     */
+    MCAPI static class Motive const mEarth;
+    /**
+     * @symbol ?mFighters@Motive@@2V1@B
+     * @hash   -1069838062
+     */
+    MCAPI static class Motive const mFighters;
+    /**
+     * @symbol ?mFire@Motive@@2V1@B
+     * @hash   -717521326
+     */
+    MCAPI static class Motive const mFire;
+    /**
+     * @symbol ?mGraham@Motive@@2V1@B
+     * @hash   -1789963190
+     */
+    MCAPI static class Motive const mGraham;
+    /**
+     * @symbol ?mKebab@Motive@@2V1@B
+     * @hash   1319957748
+     */
+    MCAPI static class Motive const mKebab;
+    /**
+     * @symbol ?mMatch@Motive@@2V1@B
+     * @hash   -381287804
+     */
+    MCAPI static class Motive const mMatch;
+    /**
+     * @symbol ?mPigscene@Motive@@2V1@B
+     * @hash   394519682
+     */
+    MCAPI static class Motive const mPigscene;
+    /**
+     * @symbol ?mPlant@Motive@@2V1@B
+     * @hash   1134017228
+     */
+    MCAPI static class Motive const mPlant;
+    /**
+     * @symbol ?mPointer@Motive@@2V1@B
+     * @hash   -36668724
+     */
+    MCAPI static class Motive const mPointer;
+    /**
+     * @symbol ?mPool@Motive@@2V1@B
+     * @hash   -105769990
+     */
+    MCAPI static class Motive const mPool;
+    /**
+     * @symbol ?mSea@Motive@@2V1@B
+     * @hash   -34551444
+     */
+    MCAPI static class Motive const mSea;
+    /**
+     * @symbol ?mSkeleton@Motive@@2V1@B
+     * @hash   689084818
+     */
+    MCAPI static class Motive const mSkeleton;
+    /**
+     * @symbol ?mSkullAndRoses@Motive@@2V1@B
+     * @hash   -504647356
+     */
+    MCAPI static class Motive const mSkullAndRoses;
+    /**
+     * @symbol ?mStage@Motive@@2V1@B
+     * @hash   -356931244
+     */
+    MCAPI static class Motive const mStage;
+    /**
+     * @symbol ?mSunset@Motive@@2V1@B
+     * @hash   -122253662
+     */
+    MCAPI static class Motive const mSunset;
+    /**
+     * @symbol ?mVoid@Motive@@2V1@B
+     * @hash   1070051114
+     */
+    MCAPI static class Motive const mVoid;
+    /**
+     * @symbol ?mWanderer@Motive@@2V1@B
+     * @hash   -485663534
+     */
+    MCAPI static class Motive const mWanderer;
+    /**
+     * @symbol ?mWasteland@Motive@@2V1@B
+     * @hash   842563652
+     */
+    MCAPI static class Motive const mWasteland;
+    /**
+     * @symbol ?mWater@Motive@@2V1@B
+     * @hash   894307468
+     */
+    MCAPI static class Motive const mWater;
+    /**
+     * @symbol ?mWind@Motive@@2V1@B
+     * @hash   946099418
+     */
+    MCAPI static class Motive const mWind;
+    /**
+     * @symbol ?mWither@Motive@@2V1@B
+     * @hash   -212306310
+     */
+    MCAPI static class Motive const mWither;
 
 };

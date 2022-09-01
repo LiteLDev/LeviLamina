@@ -25,6 +25,7 @@ public:
     struct BiomeDecorationFeature& operator=(struct BiomeDecorationFeature const &) = delete;
     BiomeDecorationFeature() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BiomeDecorationFeature@@QEAA@$$QEAU0@@Z

@@ -29,6 +29,7 @@ public:
     struct SubChunk& operator=(struct SubChunk const &) = delete;
     SubChunk(struct SubChunk const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SubChunk@@QEAA@XZ

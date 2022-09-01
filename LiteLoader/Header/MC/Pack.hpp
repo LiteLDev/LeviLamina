@@ -111,6 +111,10 @@ public:
 //private:
 
 private:
-MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
+    /**
+     * @symbol ?EDUCATION_METADATA_FILE@Pack@@0V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   438055887
+     */
+    MCAPI static class Core::PathBuffer<std::string> const EDUCATION_METADATA_FILE;
 
 };

@@ -261,6 +261,10 @@ public:
 //protected:
 
 protected:
-MCAPI static class NetworkIdentifier sUnknownSource;
+    /**
+     * @symbol ?sUnknownSource@CommandOrigin@@1VNetworkIdentifier@@A
+     * @hash   -1288343827
+     */
+    MCAPI static class NetworkIdentifier sUnknownSource;
 
 };

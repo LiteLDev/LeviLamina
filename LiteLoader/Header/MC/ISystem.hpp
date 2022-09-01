@@ -28,6 +28,7 @@ public:
     ISystem(struct ISystem const &) = delete;
     ISystem() = delete;
 #endif
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISYSTEM
     /**

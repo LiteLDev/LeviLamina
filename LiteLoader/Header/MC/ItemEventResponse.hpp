@@ -22,6 +22,10 @@ namespace ItemEventResponse {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
+    /**
+     * @symbol ?EVENT_RESPONSE_VERSION_1_16_100@ItemEventResponse@@3VSemVersion@@B
+     * @hash   1184188621
+     */
+    MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
 
 };

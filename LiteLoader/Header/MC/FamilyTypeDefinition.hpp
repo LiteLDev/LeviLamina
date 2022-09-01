@@ -29,6 +29,7 @@ public:
     FamilyTypeDefinition(struct FamilyTypeDefinition const &) = delete;
     FamilyTypeDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?addFamilyName@FamilyTypeDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

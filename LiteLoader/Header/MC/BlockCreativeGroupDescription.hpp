@@ -28,6 +28,7 @@ public:
     BlockCreativeGroupDescription(struct BlockCreativeGroupDescription const &) = delete;
     BlockCreativeGroupDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   -341210376
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockCreativeGroupDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -363732261
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCreativeGroupDescription@@SAXXZ
      * @hash   -1403988561

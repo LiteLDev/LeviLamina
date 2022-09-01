@@ -26,6 +26,7 @@ public:
     AttributesComponent(struct AttributesComponent const &) = delete;
     AttributesComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0AttributesComponent@@QEAA@$$QEAU0@@Z

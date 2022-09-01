@@ -53,6 +53,10 @@ public:
 //private:
 
 private:
-MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
+    /**
+     * @symbol ?WATER_BUCKET_USEABLE_VERSION@BucketableComponent@@0VBaseGameVersion@@B
+     * @hash   1984211487
+     */
+    MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
 
 };

@@ -25,6 +25,7 @@ public:
     struct BlockPatternEvent& operator=(struct BlockPatternEvent const &) = delete;
     BlockPatternEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockPatternEvent@@QEAA@AEBU0@@Z

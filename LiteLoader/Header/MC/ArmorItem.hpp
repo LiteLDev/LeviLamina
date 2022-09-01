@@ -252,14 +252,46 @@ public:
      * @hash   1939545135
      */
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum ArmorSlot);
-MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
-MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;
-MCAPI static class ArmorItem::ArmorMaterial const ELYTRA;
-MCAPI static class ArmorItem::ArmorMaterial const GOLD;
-MCAPI static class ArmorItem::ArmorMaterial const IRON;
-MCAPI static class ArmorItem::ArmorMaterial const LEATHER;
-MCAPI static class ArmorItem::ArmorMaterial const NETHERITE;
-MCAPI static class ArmorItem::ArmorMaterial const TURTLE;
+    /**
+     * @symbol ?CHAIN@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   -1570360102
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
+    /**
+     * @symbol ?DIAMOND@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   1247439008
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;
+    /**
+     * @symbol ?ELYTRA@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   516918616
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const ELYTRA;
+    /**
+     * @symbol ?GOLD@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   207562422
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const GOLD;
+    /**
+     * @symbol ?IRON@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   1062503270
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const IRON;
+    /**
+     * @symbol ?LEATHER@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   1389860682
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const LEATHER;
+    /**
+     * @symbol ?NETHERITE@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   -2079627876
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const NETHERITE;
+    /**
+     * @symbol ?TURTLE@ArmorItem@@2VArmorMaterial@1@B
+     * @hash   -2080635122
+     */
+    MCAPI static class ArmorItem::ArmorMaterial const TURTLE;
     /**
      * @symbol ?dispenseArmor@ArmorItem@@SA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@EW4ArmorSlot@@@Z
      * @hash   -704075775
@@ -275,7 +307,11 @@ MCAPI static class ArmorItem::ArmorMaterial const TURTLE;
      * @hash   -938224883
      */
     MCAPI static bool isDamageable(class ItemDescriptor const &);
-MCAPI static int const mHealthPerSlot[];
+    /**
+     * @symbol ?mHealthPerSlot@ArmorItem@@2QBHB
+     * @hash   -713774416
+     */
+    MCAPI static int const mHealthPerSlot[];
 
 //private:
     /**

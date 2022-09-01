@@ -26,6 +26,7 @@ public:
     LevelDataValue(struct LevelDataValue const &) = delete;
     LevelDataValue() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1LevelDataValue@@QEAA@XZ

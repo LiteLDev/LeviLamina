@@ -28,6 +28,7 @@ public:
     struct OverworldNoises3d& operator=(struct OverworldNoises3d const &) = delete;
     OverworldNoises3d() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0OverworldNoises3d@@QEAA@AEBU0@@Z

@@ -26,6 +26,7 @@ public:
     SideBySideSimulatorComponent(struct SideBySideSimulatorComponent const &) = delete;
     SideBySideSimulatorComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1SideBySideSimulatorComponent@@QEAA@XZ

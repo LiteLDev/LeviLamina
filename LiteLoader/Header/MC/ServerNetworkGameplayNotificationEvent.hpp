@@ -26,6 +26,7 @@ public:
     ServerNetworkGameplayNotificationEvent(struct ServerNetworkGameplayNotificationEvent const &) = delete;
     ServerNetworkGameplayNotificationEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ServerNetworkGameplayNotificationEvent@@QEAA@XZ

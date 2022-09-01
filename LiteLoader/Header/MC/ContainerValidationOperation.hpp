@@ -26,6 +26,7 @@ public:
     ContainerValidationOperation(struct ContainerValidationOperation const &) = delete;
     ContainerValidationOperation() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ContainerValidationOperation@@QEAA@W4ContainerValidationOperationType@@AEBUContainerValidationSlotData@@HAEBVItemStack@@@Z

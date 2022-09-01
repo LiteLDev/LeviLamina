@@ -136,6 +136,10 @@ public:
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
 
 private:
-MCAPI static int const ITEMS_SIZE;
+    /**
+     * @symbol ?ITEMS_SIZE@ShulkerBoxBlockActor@@0HB
+     * @hash   2139764729
+     */
+    MCAPI static int const ITEMS_SIZE;
 
 };

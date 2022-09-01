@@ -27,6 +27,7 @@ public:
     VibrationDamperDefinition(struct VibrationDamperDefinition const &) = delete;
     VibrationDamperDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@VibrationDamperDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UVibrationDamperDefinition@@@JsonUtil@@@std@@@Z

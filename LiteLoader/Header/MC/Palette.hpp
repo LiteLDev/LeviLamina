@@ -30,22 +30,86 @@ public:
 #endif
 
 public:
-MCAPI static class mce::Color const BLACK;
-MCAPI static class mce::Color const BLUE;
-MCAPI static class mce::Color const BROWN;
-MCAPI static class mce::Color const CYAN;
-MCAPI static class mce::Color const GRAY;
-MCAPI static class mce::Color const GREEN;
-MCAPI static class mce::Color const LIGHT_BLUE;
-MCAPI static class mce::Color const LIGHT_GREEN;
-MCAPI static class mce::Color const MAGENTA;
-MCAPI static class mce::Color const ORANGE;
-MCAPI static class mce::Color const PINK;
-MCAPI static class mce::Color const PURPLE;
-MCAPI static class mce::Color const RED;
-MCAPI static class mce::Color const SILVER;
-MCAPI static class mce::Color const WHITE;
-MCAPI static class mce::Color const YELLOW;
+    /**
+     * @symbol ?BLACK@Palette@@2VColor@mce@@B
+     * @hash   1915734113
+     */
+    MCAPI static class mce::Color const BLACK;
+    /**
+     * @symbol ?BLUE@Palette@@2VColor@mce@@B
+     * @hash   523110179
+     */
+    MCAPI static class mce::Color const BLUE;
+    /**
+     * @symbol ?BROWN@Palette@@2VColor@mce@@B
+     * @hash   -1954046831
+     */
+    MCAPI static class mce::Color const BROWN;
+    /**
+     * @symbol ?CYAN@Palette@@2VColor@mce@@B
+     * @hash   257525411
+     */
+    MCAPI static class mce::Color const CYAN;
+    /**
+     * @symbol ?GRAY@Palette@@2VColor@mce@@B
+     * @hash   1628182147
+     */
+    MCAPI static class mce::Color const GRAY;
+    /**
+     * @symbol ?GREEN@Palette@@2VColor@mce@@B
+     * @hash   -727033151
+     */
+    MCAPI static class mce::Color const GREEN;
+    /**
+     * @symbol ?LIGHT_BLUE@Palette@@2VColor@mce@@B
+     * @hash   415976835
+     */
+    MCAPI static class mce::Color const LIGHT_BLUE;
+    /**
+     * @symbol ?LIGHT_GREEN@Palette@@2VColor@mce@@B
+     * @hash   250490721
+     */
+    MCAPI static class mce::Color const LIGHT_GREEN;
+    /**
+     * @symbol ?MAGENTA@Palette@@2VColor@mce@@B
+     * @hash   219088401
+     */
+    MCAPI static class mce::Color const MAGENTA;
+    /**
+     * @symbol ?ORANGE@Palette@@2VColor@mce@@B
+     * @hash   -2077092157
+     */
+    MCAPI static class mce::Color const ORANGE;
+    /**
+     * @symbol ?PINK@Palette@@2VColor@mce@@B
+     * @hash   217654355
+     */
+    MCAPI static class mce::Color const PINK;
+    /**
+     * @symbol ?PURPLE@Palette@@2VColor@mce@@B
+     * @hash   1661466643
+     */
+    MCAPI static class mce::Color const PURPLE;
+    /**
+     * @symbol ?RED@Palette@@2VColor@mce@@B
+     * @hash   -524759215
+     */
+    MCAPI static class mce::Color const RED;
+    /**
+     * @symbol ?SILVER@Palette@@2VColor@mce@@B
+     * @hash   2047679635
+     */
+    MCAPI static class mce::Color const SILVER;
+    /**
+     * @symbol ?WHITE@Palette@@2VColor@mce@@B
+     * @hash   1927365041
+     */
+    MCAPI static class mce::Color const WHITE;
+    /**
+     * @symbol ?YELLOW@Palette@@2VColor@mce@@B
+     * @hash   1007465139
+     */
+    MCAPI static class mce::Color const YELLOW;
     /**
      * @symbol ?fromByte@Palette@@SA?AW4PaletteColor@@E@Z
      * @hash   110319988

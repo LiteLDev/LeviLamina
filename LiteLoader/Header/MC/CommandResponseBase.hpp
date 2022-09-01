@@ -33,7 +33,11 @@ public:
      * @hash   -433066407
      */
     MCAPI ~CommandResponseBase();
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@CommandResponseBase@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1720270821
+     */
+    MCAPI static std::string const NameID;
 
 //protected:
     /**

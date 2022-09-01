@@ -225,7 +225,11 @@ public:
      * @hash   -429246544
      */
     MCAPI ~ProjectileComponent();
-MCAPI static unsigned int const DELAY_ON_HIT;
+    /**
+     * @symbol ?DELAY_ON_HIT@ProjectileComponent@@2IB
+     * @hash   -1932678387
+     */
+    MCAPI static unsigned int const DELAY_ON_HIT;
 
 //private:
     /**

@@ -126,10 +126,26 @@ public:
      * @hash   2039694216
      */
     MCAPI void setStructureData(class StructureEditorData const &);
-MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
-MCAPI static class mce::Color const X_AXIS_COLOR;
-MCAPI static class mce::Color const Y_AXIS_COLOR;
-MCAPI static class mce::Color const Z_AXIS_COLOR;
+    /**
+     * @symbol ?MAX_WIREFRAME_RENDER_DISTANCE@StructureBlockActor@@2MB
+     * @hash   -1459034567
+     */
+    MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
+    /**
+     * @symbol ?X_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
+     * @hash   -421290301
+     */
+    MCAPI static class mce::Color const X_AXIS_COLOR;
+    /**
+     * @symbol ?Y_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
+     * @hash   -939568461
+     */
+    MCAPI static class mce::Color const Y_AXIS_COLOR;
+    /**
+     * @symbol ?Z_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
+     * @hash   -1457846621
+     */
+    MCAPI static class mce::Color const Z_AXIS_COLOR;
 
 //private:
     /**

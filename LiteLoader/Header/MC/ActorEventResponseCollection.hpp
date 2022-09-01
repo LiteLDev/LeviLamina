@@ -27,6 +27,7 @@ public:
     ActorEventResponseCollection(struct ActorEventResponseCollection const &) = delete;
     ActorEventResponseCollection() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@ActorEventResponseCollection@@SA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorEventResponseCollection@@@JsonUtil@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVSemVersion@@AEBV?$Factory@VActorEventResponse@@$$V@@@Z

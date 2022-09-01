@@ -70,8 +70,16 @@ public:
      * @hash   -1203120404
      */
     MCAPI ~TaskResult();
-MCAPI static class TaskResult const Done;
-MCAPI static class TaskResult const Requeue;
+    /**
+     * @symbol ?Done@TaskResult@@2V1@B
+     * @hash   228194608
+     */
+    MCAPI static class TaskResult const Done;
+    /**
+     * @symbol ?Requeue@TaskResult@@2V1@B
+     * @hash   311135670
+     */
+    MCAPI static class TaskResult const Requeue;
     /**
      * @symbol ?requeueAfter@TaskResult@@SA?AV1@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
      * @hash   -795924487

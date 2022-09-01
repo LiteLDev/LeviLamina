@@ -47,11 +47,35 @@ public:
      * @hash   -1709832460
      */
     MCAPI EndPodiumFeature(bool);
-MCAPI static float const CORNER_ROUNDING;
-MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
-MCAPI static class BlockPos const END_PODIUM_LOCATION;
-MCAPI static int const PODIUM_PILLAR_HEIGHT;
-MCAPI static int const PODIUM_RADIUS;
-MCAPI static int const RIM_RADIUS;
+    /**
+     * @symbol ?CORNER_ROUNDING@EndPodiumFeature@@2MB
+     * @hash   -212033581
+     */
+    MCAPI static float const CORNER_ROUNDING;
+    /**
+     * @symbol ?END_PODIUM_CHUNK_POSITION@EndPodiumFeature@@2VBlockPos@@B
+     * @hash   -1283767879
+     */
+    MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
+    /**
+     * @symbol ?END_PODIUM_LOCATION@EndPodiumFeature@@2VBlockPos@@B
+     * @hash   -1504653759
+     */
+    MCAPI static class BlockPos const END_PODIUM_LOCATION;
+    /**
+     * @symbol ?PODIUM_PILLAR_HEIGHT@EndPodiumFeature@@2HB
+     * @hash   178378197
+     */
+    MCAPI static int const PODIUM_PILLAR_HEIGHT;
+    /**
+     * @symbol ?PODIUM_RADIUS@EndPodiumFeature@@2HB
+     * @hash   -1983920209
+     */
+    MCAPI static int const PODIUM_RADIUS;
+    /**
+     * @symbol ?RIM_RADIUS@EndPodiumFeature@@2HB
+     * @hash   -1899458855
+     */
+    MCAPI static int const RIM_RADIUS;
 
 };

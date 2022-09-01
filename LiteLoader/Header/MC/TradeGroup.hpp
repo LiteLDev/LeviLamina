@@ -26,6 +26,7 @@ public:
     TradeGroup(struct TradeGroup const &) = delete;
     TradeGroup() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1TradeGroup@@QEAA@XZ

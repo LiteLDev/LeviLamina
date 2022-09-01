@@ -28,6 +28,7 @@ public:
     DefaultScreenCapabilities(struct DefaultScreenCapabilities const &) = delete;
     DefaultScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

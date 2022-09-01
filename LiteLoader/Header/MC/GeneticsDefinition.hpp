@@ -54,6 +54,10 @@ public:
 //private:
 
 private:
-MCAPI static float const DEFAULT_MUTATION_RATE;
+    /**
+     * @symbol ?DEFAULT_MUTATION_RATE@GeneticsDefinition@@0MB
+     * @hash   1854621702
+     */
+    MCAPI static float const DEFAULT_MUTATION_RATE;
 
 };

@@ -19,7 +19,8 @@ struct SystemInfo {
 
 #define AFTER_EXTRA
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0SystemInfo@@QEAA@XZ
      * @hash   1220707529

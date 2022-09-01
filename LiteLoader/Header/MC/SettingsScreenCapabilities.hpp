@@ -27,6 +27,7 @@ public:
     struct SettingsScreenCapabilities& operator=(struct SettingsScreenCapabilities const &) = delete;
     SettingsScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

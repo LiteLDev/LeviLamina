@@ -26,6 +26,7 @@ public:
     BlockCreativeGroupComponent(struct BlockCreativeGroupComponent const &) = delete;
     BlockCreativeGroupComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1BlockCreativeGroupComponent@@QEAA@XZ

@@ -25,6 +25,7 @@ public:
     Dependencies(struct Dependencies const &) = delete;
     Dependencies() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4Dependencies@@QEAAAEAU0@AEBU0@@Z

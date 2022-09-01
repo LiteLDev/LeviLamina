@@ -29,6 +29,7 @@ public:
     SkinData(struct SkinData const &) = delete;
     SkinData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SkinData@@QEAA@AEBVValue@Json@@@Z

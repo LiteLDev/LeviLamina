@@ -26,6 +26,7 @@ public:
     ReplaceRule(struct ReplaceRule const &) = delete;
     ReplaceRule() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ReplaceRule@@QEAA@VBlockDescriptor@@V?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z

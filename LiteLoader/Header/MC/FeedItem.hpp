@@ -32,6 +32,7 @@ public:
     struct FeedItem& operator=(struct FeedItem const &) = delete;
     FeedItem() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0FeedItem@@QEAA@AEBU0@@Z

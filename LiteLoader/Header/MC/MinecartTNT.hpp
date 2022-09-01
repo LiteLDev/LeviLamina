@@ -203,6 +203,10 @@ public:
 //private:
 
 private:
-MCAPI static int const DEFAULT_FUSE_LENGTH;
+    /**
+     * @symbol ?DEFAULT_FUSE_LENGTH@MinecartTNT@@0HB
+     * @hash   -1788534057
+     */
+    MCAPI static int const DEFAULT_FUSE_LENGTH;
 
 };

@@ -26,6 +26,7 @@ public:
     DrinkPotionData(struct DrinkPotionData const &) = delete;
     DrinkPotionData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1DrinkPotionData@@QEAA@XZ

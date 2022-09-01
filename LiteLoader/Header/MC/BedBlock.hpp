@@ -341,8 +341,16 @@ public:
      * @hash   1793120826
      */
     MCAPI BedBlock(std::string const &, int);
-MCAPI static unsigned short const HEAD_PIECE_DATA;
-MCAPI static unsigned short const OCCUPIED_DATA;
+    /**
+     * @symbol ?HEAD_PIECE_DATA@BedBlock@@2GB
+     * @hash   1487607100
+     */
+    MCAPI static unsigned short const HEAD_PIECE_DATA;
+    /**
+     * @symbol ?OCCUPIED_DATA@BedBlock@@2GB
+     * @hash   -1892964512
+     */
+    MCAPI static unsigned short const OCCUPIED_DATA;
     /**
      * @symbol ?findWakeupPosition@BedBlock@@SA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@_NAEBV?$optional@VVec3@@@3@@Z
      * @hash   1661031892

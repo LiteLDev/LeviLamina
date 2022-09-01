@@ -49,7 +49,15 @@ public:
 //private:
 
 private:
-MCAPI static class std::optional<unsigned short> sForcedPort;
-MCAPI static class IScriptDebugger * sServerScriptDebugger;
+    /**
+     * @symbol ?sForcedPort@ServerScriptDebugCommand@@0V?$optional@G@std@@A
+     * @hash   -173630998
+     */
+    MCAPI static class std::optional<unsigned short> sForcedPort;
+    /**
+     * @symbol ?sServerScriptDebugger@ServerScriptDebugCommand@@0PEAVIScriptDebugger@@EA
+     * @hash   1183150423
+     */
+    MCAPI static class IScriptDebugger * sServerScriptDebugger;
 
 };

@@ -31,10 +31,26 @@ public:
 #endif
 
 public:
-MCAPI static class Core::PathBuffer<std::string> const CUSTOM_ICON_FILENAME;
-MCAPI static std::string const DEFAULT_WORLD_ICON_FILENAME;
-MCAPI static std::string const INVALID_LEVEL_ID;
-MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
+    /**
+     * @symbol ?CUSTOM_ICON_FILENAME@LevelSummary@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   1201176250
+     */
+    MCAPI static class Core::PathBuffer<std::string> const CUSTOM_ICON_FILENAME;
+    /**
+     * @symbol ?DEFAULT_WORLD_ICON_FILENAME@LevelSummary@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -99582363
+     */
+    MCAPI static std::string const DEFAULT_WORLD_ICON_FILENAME;
+    /**
+     * @symbol ?INVALID_LEVEL_ID@LevelSummary@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   36183195
+     */
+    MCAPI static std::string const INVALID_LEVEL_ID;
+    /**
+     * @symbol ?WORLD_ICON_FILENAME@LevelSummary@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -894463592
+     */
+    MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
     /**
      * @symbol ?buildCustomIconPath@LevelSummary@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
      * @hash   -265465384

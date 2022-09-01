@@ -28,6 +28,7 @@ public:
     ActorAliasDescription(struct ActorAliasDescription const &) = delete;
     ActorAliasDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

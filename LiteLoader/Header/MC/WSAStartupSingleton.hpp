@@ -44,6 +44,10 @@ public:
 //protected:
 
 protected:
-MCAPI static int refCount;
+    /**
+     * @symbol ?refCount@WSAStartupSingleton@@1HA
+     * @hash   237731562
+     */
+    MCAPI static int refCount;
 
 };

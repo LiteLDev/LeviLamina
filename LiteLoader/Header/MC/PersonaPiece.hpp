@@ -37,6 +37,10 @@ public:
      * @hash   -1355145668
      */
     MCAPI ~PersonaPiece();
-MCAPI static class PersonaPiece const INVALID_PIECE;
+    /**
+     * @symbol ?INVALID_PIECE@PersonaPiece@@2V1@B
+     * @hash   7402014
+     */
+    MCAPI static class PersonaPiece const INVALID_PIECE;
 
 };

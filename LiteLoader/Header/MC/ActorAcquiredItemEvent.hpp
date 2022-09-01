@@ -25,6 +25,7 @@ public:
     struct ActorAcquiredItemEvent& operator=(struct ActorAcquiredItemEvent const &) = delete;
     ActorAcquiredItemEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ActorAcquiredItemEvent@@QEAA@AEBU0@@Z

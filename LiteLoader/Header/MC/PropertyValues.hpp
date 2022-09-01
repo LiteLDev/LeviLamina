@@ -25,6 +25,7 @@ public:
     struct PropertyValues& operator=(struct PropertyValues const &) = delete;
     PropertyValues() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PropertyValues@@QEAA@AEBU0@@Z

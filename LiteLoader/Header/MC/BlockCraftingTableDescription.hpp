@@ -26,6 +26,7 @@ public:
     BlockCraftingTableDescription(struct BlockCraftingTableDescription const &) = delete;
     BlockCraftingTableDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -67,7 +68,11 @@ public:
      * @hash   781791244
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockCraftingTableDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   924275259
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCraftingTableDescription@@SAXXZ
      * @hash   1932368319

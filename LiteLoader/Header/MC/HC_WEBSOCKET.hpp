@@ -26,6 +26,7 @@ public:
     HC_WEBSOCKET(struct HC_WEBSOCKET const &) = delete;
     HC_WEBSOCKET() = delete;
 #endif
+
 public:
     /**
      * @symbol ?AddRef@HC_WEBSOCKET@@QEAAXXZ

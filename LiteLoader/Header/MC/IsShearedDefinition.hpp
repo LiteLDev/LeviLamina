@@ -29,6 +29,7 @@ public:
     IsShearedDefinition(struct IsShearedDefinition const &) = delete;
     IsShearedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsShearedDefinition@@QEAAXAEAVEntityContext@@@Z

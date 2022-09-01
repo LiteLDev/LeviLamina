@@ -26,6 +26,7 @@ struct ActorInfo {
 public:
     ActorInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ActorInfo@@QEAA@AEBU0@@Z

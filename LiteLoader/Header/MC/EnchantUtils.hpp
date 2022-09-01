@@ -31,9 +31,21 @@ public:
 #endif
 
 public:
-MCAPI static int const MAX_EXP_REPAIR_COST;
-MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
-MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;
+    /**
+     * @symbol ?MAX_EXP_REPAIR_COST@EnchantUtils@@2HB
+     * @hash   -561101889
+     */
+    MCAPI static int const MAX_EXP_REPAIR_COST;
+    /**
+     * @symbol ?PROTECTIONFACTOR_PRIMARYCAP@EnchantUtils@@2HB
+     * @hash   -1006320617
+     */
+    MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
+    /**
+     * @symbol ?PROTECTIONFACTOR_SECONDARYCAP@EnchantUtils@@2HB
+     * @hash   -1770839653
+     */
+    MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;
     /**
      * @symbol ?appendEnchantToFormattedText@EnchantUtils@@SAXW4Type@Enchant@@V?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1410827168
@@ -218,6 +230,10 @@ MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;
     MCAPI static void _convertBookCheck(class ItemStackBase &);
 
 private:
-MCAPI static std::vector<std::string> mEnchantmentNames;
+    /**
+     * @symbol ?mEnchantmentNames@EnchantUtils@@0V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
+     * @hash   504765175
+     */
+    MCAPI static std::vector<std::string> mEnchantmentNames;
 
 };

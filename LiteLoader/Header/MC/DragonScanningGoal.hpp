@@ -85,8 +85,20 @@ public:
 //private:
 
 private:
-MCAPI static float SITTING_ATTACK_VIEW_RANGE;
-MCAPI static float SITTING_CHARGE_VIEW_RANGE;
-MCAPI static int SITTING_SCANNING_IDLE_TICKS;
+    /**
+     * @symbol ?SITTING_ATTACK_VIEW_RANGE@DragonScanningGoal@@0MA
+     * @hash   269801978
+     */
+    MCAPI static float SITTING_ATTACK_VIEW_RANGE;
+    /**
+     * @symbol ?SITTING_CHARGE_VIEW_RANGE@DragonScanningGoal@@0MA
+     * @hash   -1646636654
+     */
+    MCAPI static float SITTING_CHARGE_VIEW_RANGE;
+    /**
+     * @symbol ?SITTING_SCANNING_IDLE_TICKS@DragonScanningGoal@@0HA
+     * @hash   473225442
+     */
+    MCAPI static int SITTING_SCANNING_IDLE_TICKS;
 
 };

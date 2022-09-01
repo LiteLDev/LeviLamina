@@ -26,6 +26,7 @@ public:
     MovementInterpolatorComponent(struct MovementInterpolatorComponent const &) = delete;
     MovementInterpolatorComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ?isActive@MovementInterpolatorComponent@@QEBA_NXZ

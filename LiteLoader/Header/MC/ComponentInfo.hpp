@@ -25,6 +25,7 @@ public:
     ComponentInfo(struct ComponentInfo const &) = delete;
     ComponentInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4ComponentInfo@@QEAAAEAU0@AEBU0@@Z

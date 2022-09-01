@@ -85,7 +85,15 @@ public:
 //private:
 
 private:
-MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
-MCAPI static int const THROTTLE_COOLDOWN;
+    /**
+     * @symbol ?SPEED_MODIFIER_DRINKING_UUID@DrinkPotionGoal@@0VUUID@mce@@B
+     * @hash   -184042340
+     */
+    MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
+    /**
+     * @symbol ?THROTTLE_COOLDOWN@DrinkPotionGoal@@0HB
+     * @hash   1343222346
+     */
+    MCAPI static int const THROTTLE_COOLDOWN;
 
 };

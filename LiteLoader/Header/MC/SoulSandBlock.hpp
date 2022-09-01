@@ -256,6 +256,10 @@ public:
 //private:
 
 private:
-MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION@SoulSandBlock@@0VBaseGameVersion@@B
+     * @hash   -609433321
+     */
+    MCAPI static class BaseGameVersion const SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION;
 
 };

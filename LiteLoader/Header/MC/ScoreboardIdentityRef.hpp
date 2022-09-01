@@ -85,7 +85,11 @@ public:
      * @hash   -413584740
      */
     MCAPI bool removeFromObjective(class Scoreboard &, class Objective &);
-MCAPI static class ScoreboardIdentityRef const Undefined;
+    /**
+     * @symbol ?Undefined@ScoreboardIdentityRef@@2V1@B
+     * @hash   1247117033
+     */
+    MCAPI static class ScoreboardIdentityRef const Undefined;
     /**
      * @symbol ?serialize@ScoreboardIdentityRef@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
      * @hash   1255560535

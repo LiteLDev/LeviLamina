@@ -33,6 +33,7 @@ public:
     MCRESULT(struct MCRESULT const &) = delete;
     MCRESULT() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getFullCode@MCRESULT@@QEBAHXZ

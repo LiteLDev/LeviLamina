@@ -149,7 +149,15 @@ public:
     MCAPI void _savePlacementQueueItem(std::string const &, class StructureAnimationData &);
 
 private:
-MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
-MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
+    /**
+     * @symbol ?BEHAVIOR_PACK_STRUCTURES_FOLDER@StructureManager@@0PEBDEB
+     * @hash   2092646757
+     */
+    MCAPI static char const * BEHAVIOR_PACK_STRUCTURES_FOLDER;
+    /**
+     * @symbol ?LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX@StructureManager@@0PEBDEB
+     * @hash   100312661
+     */
+    MCAPI static char const * LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
 
 };

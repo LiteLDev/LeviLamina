@@ -26,6 +26,7 @@ public:
     ItemNotificationEvent(struct ItemNotificationEvent const &) = delete;
     ItemNotificationEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ItemNotificationEvent@@QEAA@XZ

@@ -315,6 +315,10 @@ public:
 //private:
 
 private:
-MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION@FenceBlock@@0VBaseGameVersion@@B
+     * @hash   1546147355
+     */
+    MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

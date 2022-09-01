@@ -136,6 +136,10 @@ public:
 //private:
 
 private:
-MCAPI static std::string const sTagName_Handle;
+    /**
+     * @symbol ?sTagName_Handle@LodestoneBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -100218273
+     */
+    MCAPI static std::string const sTagName_Handle;
 
 };

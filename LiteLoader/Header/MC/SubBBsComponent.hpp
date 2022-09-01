@@ -26,6 +26,7 @@ public:
     SubBBsComponent(struct SubBBsComponent const &) = delete;
     SubBBsComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1SubBBsComponent@@QEAA@XZ

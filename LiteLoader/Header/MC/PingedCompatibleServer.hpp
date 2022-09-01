@@ -27,6 +27,7 @@ public:
     struct PingedCompatibleServer& operator=(struct PingedCompatibleServer const &) = delete;
     PingedCompatibleServer() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PingedCompatibleServer@@QEAA@AEBU0@@Z

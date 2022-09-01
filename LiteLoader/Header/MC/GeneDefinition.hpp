@@ -28,6 +28,7 @@ public:
     GeneDefinition(struct GeneDefinition const &) = delete;
     GeneDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?addGeneticVariant@GeneDefinition@@QEAAXAEBUGeneticVariant@@@Z

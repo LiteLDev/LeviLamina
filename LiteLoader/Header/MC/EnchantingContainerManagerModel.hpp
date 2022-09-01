@@ -93,6 +93,10 @@ public:
      * @hash   98055705
      */
     MCAPI void recalculateOptions();
-MCAPI static int const NUM_OPTIONS;
+    /**
+     * @symbol ?NUM_OPTIONS@EnchantingContainerManagerModel@@2HB
+     * @hash   -1912813389
+     */
+    MCAPI static int const NUM_OPTIONS;
 
 };

@@ -26,6 +26,7 @@ public:
     BlockRandomTickingComponent(struct BlockRandomTickingComponent const &) = delete;
     BlockRandomTickingComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1BlockRandomTickingComponent@@QEAA@XZ

@@ -40,11 +40,19 @@ public:
      * @hash   1653105685
      */
     MCAPI static std::string const & getName(enum LevelSoundEvent);
-MCAPI static class std::initializer_list<struct std::pair<std::string, enum LevelSoundEvent>> const initializerData;
+    /**
+     * @symbol ?initializerData@LevelSoundEventMap@@2V?$initializer_list@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@@@std@@@std@@B
+     * @hash   -1886138609
+     */
+    MCAPI static class std::initializer_list<struct std::pair<std::string, enum LevelSoundEvent>> const initializerData;
 
 //private:
 
 private:
-MCAPI static class BidirectionalUnorderedMap<std::string, enum LevelSoundEvent> const map;
+    /**
+     * @symbol ?map@LevelSoundEventMap@@0V?$BidirectionalUnorderedMap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LevelSoundEvent@@@@B
+     * @hash   1981803707
+     */
+    MCAPI static class BidirectionalUnorderedMap<std::string, enum LevelSoundEvent> const map;
 
 };

@@ -42,17 +42,61 @@ public:
 #endif
 
 public:
-MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
-MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
-MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;
-MCAPI static std::string const RAW_TEXT_ERROR_PARSE_FAILED;
-MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING;
-MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NOT_OBJECT;
-MCAPI static std::string const RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING;
-MCAPI static std::string const RAW_TEXT_ERROR_SELECTOR_NOT_STRING;
-MCAPI static std::string const RAW_TEXT_ERROR_TEXT_NOT_STRING;
-MCAPI static std::string const RAW_TEXT_ERROR_TRANSLATE_NOT_STRING;
-MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_NOT_ARRAY@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1864173413
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_NOT_OBJECT@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   365612833
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_NO_DATA@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1139903921
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_PARSE_FAILED@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1719828925
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_PARSE_FAILED;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2034797449
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_SCORE_NOT_OBJECT@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   163180731
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_NOT_OBJECT;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2146505301
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_SELECTOR_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1594169083
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_SELECTOR_NOT_STRING;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_TEXT_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2039997921
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_TEXT_NOT_STRING;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_TRANSLATE_NOT_STRING@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1108151591
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_TRANSLATE_NOT_STRING;
+    /**
+     * @symbol ?RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT@TextObjectParser@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2124602005
+     */
+    MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
     /**
      * @symbol ?textObjectFromJsonServer@TextObjectParser@@SA_NAEBVValue@Json@@AEAVTextObjectRoot@@UServerData@1@AEAUErrorLocalization@1@@Z
      * @hash   495678562

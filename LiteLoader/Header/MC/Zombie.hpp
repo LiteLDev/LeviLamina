@@ -209,7 +209,15 @@ public:
 //protected:
 
 protected:
-MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
-MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
+    /**
+     * @symbol ?SPAWN_BONUS_UUID@Zombie@@1VUUID@mce@@B
+     * @hash   2080468553
+     */
+    MCAPI static class mce::UUID const SPAWN_BONUS_UUID;
+    /**
+     * @symbol ?SPAWN_REINFORCEMENTS_CHANCE@Zombie@@1VAttribute@@B
+     * @hash   751525619
+     */
+    MCAPI static class Attribute const SPAWN_REINFORCEMENTS_CHANCE;
 
 };

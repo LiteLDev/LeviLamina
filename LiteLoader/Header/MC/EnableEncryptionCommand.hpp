@@ -51,6 +51,10 @@ public:
 //private:
 
 private:
-MCAPI static class IMinecraftApp * mApp;
+    /**
+     * @symbol ?mApp@EnableEncryptionCommand@@0PEAVIMinecraftApp@@EA
+     * @hash   396235626
+     */
+    MCAPI static class IMinecraftApp * mApp;
 
 };

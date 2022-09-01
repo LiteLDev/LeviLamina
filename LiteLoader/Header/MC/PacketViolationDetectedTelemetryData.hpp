@@ -50,6 +50,10 @@ public:
 //private:
 
 private:
-MCAPI static std::string const mEventName;
+    /**
+     * @symbol ?mEventName@PacketViolationDetectedTelemetryData@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -921418801
+     */
+    MCAPI static std::string const mEventName;
 
 };

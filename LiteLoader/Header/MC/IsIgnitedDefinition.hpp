@@ -29,6 +29,7 @@ public:
     IsIgnitedDefinition(struct IsIgnitedDefinition const &) = delete;
     IsIgnitedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsIgnitedDefinition@@QEAAXAEAVEntityContext@@@Z

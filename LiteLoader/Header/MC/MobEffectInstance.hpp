@@ -191,8 +191,16 @@ public:
      * @hash   -1360952478
      */
     MCAPI ~MobEffectInstance();
-MCAPI static int const MAX_AMPLIFIER_COUNT;
-MCAPI static class MobEffectInstance const NO_EFFECT;
+    /**
+     * @symbol ?MAX_AMPLIFIER_COUNT@MobEffectInstance@@2HB
+     * @hash   145510333
+     */
+    MCAPI static int const MAX_AMPLIFIER_COUNT;
+    /**
+     * @symbol ?NO_EFFECT@MobEffectInstance@@2V1@B
+     * @hash   -1417045990
+     */
+    MCAPI static class MobEffectInstance const NO_EFFECT;
     /**
      * @symbol ?areAllEffectsAmbient@MobEffectInstance@@SA_NAEBV?$vector@VMobEffectInstance@@V?$allocator@VMobEffectInstance@@@std@@@std@@@Z
      * @hash   1763174405

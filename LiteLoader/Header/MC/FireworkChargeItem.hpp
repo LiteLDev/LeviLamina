@@ -139,12 +139,36 @@ public:
      * @hash   -569118196
      */
     MCAPI FireworkChargeItem(std::string const &, int);
-MCAPI static std::string const TAG_EXPLOSION;
-MCAPI static std::string const TAG_E_COLORS;
-MCAPI static std::string const TAG_E_FADECOLORS;
-MCAPI static std::string const TAG_E_FLICKER;
-MCAPI static std::string const TAG_E_TRAIL;
-MCAPI static std::string const TAG_E_TYPE;
+    /**
+     * @symbol ?TAG_EXPLOSION@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1796296473
+     */
+    MCAPI static std::string const TAG_EXPLOSION;
+    /**
+     * @symbol ?TAG_E_COLORS@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1278567819
+     */
+    MCAPI static std::string const TAG_E_COLORS;
+    /**
+     * @symbol ?TAG_E_FADECOLORS@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -607974387
+     */
+    MCAPI static std::string const TAG_E_FADECOLORS;
+    /**
+     * @symbol ?TAG_E_FLICKER@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2003236939
+     */
+    MCAPI static std::string const TAG_E_FLICKER;
+    /**
+     * @symbol ?TAG_E_TRAIL@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1298301049
+     */
+    MCAPI static std::string const TAG_E_TRAIL;
+    /**
+     * @symbol ?TAG_E_TYPE@FireworkChargeItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1509666985
+     */
+    MCAPI static std::string const TAG_E_TYPE;
     /**
      * @symbol ?getFormattedHoverText@FireworkChargeItem@@SAXAEBVCompoundTag@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV34@@Z
      * @hash   1084737358

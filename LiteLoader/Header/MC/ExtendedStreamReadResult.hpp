@@ -26,6 +26,7 @@ public:
     ExtendedStreamReadResult(struct ExtendedStreamReadResult const &) = delete;
     ExtendedStreamReadResult() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ExtendedStreamReadResult@@QEAA@W4StreamReadResult@@@Z

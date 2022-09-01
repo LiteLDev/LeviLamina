@@ -28,6 +28,7 @@ public:
     ScatterParamsMolangVariableIndices(struct ScatterParamsMolangVariableIndices const &) = delete;
     ScatterParamsMolangVariableIndices() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@ScatterParamsMolangVariableIndices@@QEAAXXZ

@@ -75,6 +75,10 @@ public:
     MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const &) const;
 
 private:
-MCAPI static class std::array<struct std::pair<int, int>, 13> const chunkOffset;
+    /**
+     * @symbol ?chunkOffset@Aquifer@@0V?$array@U?$pair@HH@std@@$0N@@std@@B
+     * @hash   -26257973
+     */
+    MCAPI static class std::array<struct std::pair<int, int>, 13> const chunkOffset;
 
 };

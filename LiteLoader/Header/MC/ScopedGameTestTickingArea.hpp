@@ -50,7 +50,11 @@ public:
      * @hash   -71559158
      */
     MCAPI ~ScopedGameTestTickingArea();
-MCAPI static std::string const TICKING_AREA_PREFIX;
+    /**
+     * @symbol ?TICKING_AREA_PREFIX@ScopedGameTestTickingArea@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1955407679
+     */
+    MCAPI static std::string const TICKING_AREA_PREFIX;
 
 //private:
     /**

@@ -30,6 +30,7 @@ public:
 public:
     struct PackIdVersion& operator=(struct PackIdVersion const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PackIdVersion@@QEAA@XZ

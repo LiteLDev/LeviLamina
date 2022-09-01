@@ -28,6 +28,7 @@ public:
     BlockComponentDescription(struct BlockComponentDescription const &) = delete;
     BlockComponentDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

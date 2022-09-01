@@ -26,6 +26,7 @@ public:
     OptionalString(struct OptionalString const &) = delete;
     OptionalString() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1OptionalString@@QEAA@XZ

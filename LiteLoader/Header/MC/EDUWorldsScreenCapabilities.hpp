@@ -28,6 +28,7 @@ public:
     EDUWorldsScreenCapabilities(struct EDUWorldsScreenCapabilities const &) = delete;
     EDUWorldsScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

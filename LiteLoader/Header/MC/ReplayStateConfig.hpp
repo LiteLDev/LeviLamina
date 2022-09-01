@@ -26,6 +26,7 @@ public:
     ReplayStateConfig(struct ReplayStateConfig const &) = delete;
     ReplayStateConfig() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z

@@ -26,6 +26,7 @@ public:
     ActorDefinitionIdentifierComponent(struct ActorDefinitionIdentifierComponent const &) = delete;
     ActorDefinitionIdentifierComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorDefinitionIdentifierComponent@@QEAA@XZ

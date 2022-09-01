@@ -180,6 +180,10 @@ public:
 //private:
 
 private:
-MCAPI static int const ITEMS_SIZE;
+    /**
+     * @symbol ?ITEMS_SIZE@MinecartChest@@0HB
+     * @hash   526714118
+     */
+    MCAPI static int const ITEMS_SIZE;
 
 };

@@ -300,14 +300,46 @@ public:
      * @hash   -1496746763
      */
     MCAPI void removeFace(class IBlockWorldGenAPI &, class BlockSource *, class Block const &, class BlockPos const &, unsigned char, bool) const;
-MCAPI static int const MULTIFACE_ALL;
-MCAPI static int const MULTIFACE_DOWN;
-MCAPI static int const MULTIFACE_EAST;
-MCAPI static int const MULTIFACE_NORTH;
-MCAPI static int const MULTIFACE_SIDES;
-MCAPI static int const MULTIFACE_SOUTH;
-MCAPI static int const MULTIFACE_UP;
-MCAPI static int const MULTIFACE_WEST;
+    /**
+     * @symbol ?MULTIFACE_ALL@MultifaceBlock@@2HB
+     * @hash   469096715
+     */
+    MCAPI static int const MULTIFACE_ALL;
+    /**
+     * @symbol ?MULTIFACE_DOWN@MultifaceBlock@@2HB
+     * @hash   -1223200239
+     */
+    MCAPI static int const MULTIFACE_DOWN;
+    /**
+     * @symbol ?MULTIFACE_EAST@MultifaceBlock@@2HB
+     * @hash   836797349
+     */
+    MCAPI static int const MULTIFACE_EAST;
+    /**
+     * @symbol ?MULTIFACE_NORTH@MultifaceBlock@@2HB
+     * @hash   -539212609
+     */
+    MCAPI static int const MULTIFACE_NORTH;
+    /**
+     * @symbol ?MULTIFACE_SIDES@MultifaceBlock@@2HB
+     * @hash   -281763929
+     */
+    MCAPI static int const MULTIFACE_SIDES;
+    /**
+     * @symbol ?MULTIFACE_SOUTH@MultifaceBlock@@2HB
+     * @hash   1630031799
+     */
+    MCAPI static int const MULTIFACE_SOUTH;
+    /**
+     * @symbol ?MULTIFACE_UP@MultifaceBlock@@2HB
+     * @hash   -1524355467
+     */
+    MCAPI static int const MULTIFACE_UP;
+    /**
+     * @symbol ?MULTIFACE_WEST@MultifaceBlock@@2HB
+     * @hash   -1900404771
+     */
+    MCAPI static int const MULTIFACE_WEST;
     /**
      * @symbol ?convertOldMultifaceToNewMultifaceValue@MultifaceBlock@@SAHH@Z
      * @hash   1408876455

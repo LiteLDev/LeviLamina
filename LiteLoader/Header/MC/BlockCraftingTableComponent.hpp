@@ -26,6 +26,7 @@ public:
     BlockCraftingTableComponent(struct BlockCraftingTableComponent const &) = delete;
     BlockCraftingTableComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z

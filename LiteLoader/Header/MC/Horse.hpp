@@ -382,7 +382,11 @@ public:
      * @hash   682242783
      */
     MCAPI void postTravel(class Actor *, bool, enum HorsePostTravelType);
-MCAPI static int const DONKEY_CHEST_COUNT;
+    /**
+     * @symbol ?DONKEY_CHEST_COUNT@Horse@@2HB
+     * @hash   -857689341
+     */
+    MCAPI static int const DONKEY_CHEST_COUNT;
     /**
      * @symbol ?getInterpolatedRidingOffset@Horse@@SA?AVVec3@@AEBVVec2@@MMM@Z
      * @hash   981837608
@@ -407,6 +411,10 @@ MCAPI static int const DONKEY_CHEST_COUNT;
     MCAPI bool setHorseType(enum ActorType &);
 
 private:
-MCAPI static int const DATA_AGE;
+    /**
+     * @symbol ?DATA_AGE@Horse@@0HB
+     * @hash   -62654935
+     */
+    MCAPI static int const DATA_AGE;
 
 };

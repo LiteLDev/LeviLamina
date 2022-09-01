@@ -28,6 +28,7 @@ public:
     PendingArea(struct PendingArea const &) = delete;
     PendingArea() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getDescription@PendingArea@@QEBA?AUTickingAreaDescription@@XZ

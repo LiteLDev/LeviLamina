@@ -26,6 +26,7 @@ public:
     FilterInputs(struct FilterInputs const &) = delete;
     FilterInputs() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1FilterInputs@@QEAA@XZ

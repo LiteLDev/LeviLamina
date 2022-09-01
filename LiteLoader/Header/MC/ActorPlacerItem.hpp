@@ -222,8 +222,20 @@ public:
     MCAPI static void _setAgentOwner(class Player &, class Agent &);
 
 private:
-MCAPI static class std::unordered_map<unsigned int, std::string, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, std::string>>> mCustomSpawnEggs;
-MCAPI static class std::unordered_map<class HashedString, struct TextureUVCoordinateSet, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct TextureUVCoordinateSet>>> mUVTextureMap;
-MCAPI static struct TextureUVCoordinateSet m_uvEggMask;
+    /**
+     * @symbol ?mCustomSpawnEggs@ActorPlacerItem@@0V?$unordered_map@IV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@I@2@U?$equal_to@I@2@V?$allocator@U?$pair@$$CBIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@A
+     * @hash   -343014234
+     */
+    MCAPI static class std::unordered_map<unsigned int, std::string, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, std::string>>> mCustomSpawnEggs;
+    /**
+     * @symbol ?mUVTextureMap@ActorPlacerItem@@0V?$unordered_map@VHashedString@@UTextureUVCoordinateSet@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@UTextureUVCoordinateSet@@@std@@@4@@std@@A
+     * @hash   1960994774
+     */
+    MCAPI static class std::unordered_map<class HashedString, struct TextureUVCoordinateSet, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct TextureUVCoordinateSet>>> mUVTextureMap;
+    /**
+     * @symbol ?m_uvEggMask@ActorPlacerItem@@0UTextureUVCoordinateSet@@A
+     * @hash   -1620979135
+     */
+    MCAPI static struct TextureUVCoordinateSet m_uvEggMask;
 
 };

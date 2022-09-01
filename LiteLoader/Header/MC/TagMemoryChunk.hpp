@@ -43,6 +43,7 @@ public:
     TagMemoryChunk(struct TagMemoryChunk const &) = delete;
     TagMemoryChunk() = delete;
 #endif
+
 public:
     /**
      * @symbol ?copy@TagMemoryChunk@@QEBA?AU1@XZ

@@ -26,6 +26,7 @@ public:
     BlockLegacyPtrProxy(struct BlockLegacyPtrProxy const &) = delete;
     BlockLegacyPtrProxy() = delete;
 #endif
+
 public:
     /**
      * @symbol ?setter@BlockLegacyPtrProxy@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

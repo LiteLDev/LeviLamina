@@ -29,6 +29,7 @@ public:
     OnDeathDefinition(struct OnDeathDefinition const &) = delete;
     OnDeathDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnDeathDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnDeathDefinition@@@JsonUtil@@@std@@@Z

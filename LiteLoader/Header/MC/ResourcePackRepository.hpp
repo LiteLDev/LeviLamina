@@ -343,8 +343,16 @@ public:
      * @hash   -1910475541
      */
     MCAPI ResourcePackRepository(class IMinecraftEventing &, class PackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentAccessibilityProvider>> const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, class PackSourceFactory &, bool);
-MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
-MCAPI static class mce::UUID const CHEMISTRY_SERVER_PACK_UUID;
+    /**
+     * @symbol ?CHEMISTRY_PACK_UUID@ResourcePackRepository@@2VUUID@mce@@B
+     * @hash   1284425361
+     */
+    MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
+    /**
+     * @symbol ?CHEMISTRY_SERVER_PACK_UUID@ResourcePackRepository@@2VUUID@mce@@B
+     * @hash   -5451645
+     */
+    MCAPI static class mce::UUID const CHEMISTRY_SERVER_PACK_UUID;
 
 //private:
     /**

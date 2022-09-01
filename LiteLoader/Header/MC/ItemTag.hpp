@@ -26,6 +26,7 @@ public:
     ItemTag(struct ItemTag const &) = delete;
     ItemTag() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ItemTag@@QEAA@XZ

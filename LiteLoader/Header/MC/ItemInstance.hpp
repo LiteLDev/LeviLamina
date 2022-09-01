@@ -107,7 +107,11 @@ public:
      * @hash   970619140
      */
     MCAPI class ItemInstance & operator=(class ItemInstance const &);
-MCAPI static class ItemInstance const EMPTY_ITEM;
+    /**
+     * @symbol ?EMPTY_ITEM@ItemInstance@@2V1@B
+     * @hash   -94592758
+     */
+    MCAPI static class ItemInstance const EMPTY_ITEM;
     /**
      * @symbol ?fromTag@ItemInstance@@SA?AV1@AEBVCompoundTag@@@Z
      * @hash   -1627027548

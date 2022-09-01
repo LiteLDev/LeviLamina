@@ -26,6 +26,7 @@ public:
     BlockDestructibleByExplosionDescription(struct BlockDestructibleByExplosionDescription const &) = delete;
     BlockDestructibleByExplosionDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -44,7 +45,11 @@ public:
      * @hash   -90957906
      */
     virtual void initializeComponent(class EntityContext &) const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockDestructibleByExplosionDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1128597857
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDestructibleByExplosionDescription@@SAXXZ
      * @hash   -1683774241

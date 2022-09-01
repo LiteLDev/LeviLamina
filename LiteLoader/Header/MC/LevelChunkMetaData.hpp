@@ -52,7 +52,11 @@ public:
      * @hash   1503028530
      */
     MCAPI ~LevelChunkMetaData();
-MCAPI static unsigned __int64 const INVALID_META_DATA;
+    /**
+     * @symbol ?INVALID_META_DATA@LevelChunkMetaData@@2_KB
+     * @hash   1096059398
+     */
+    MCAPI static unsigned __int64 const INVALID_META_DATA;
 
 //protected:
     /**

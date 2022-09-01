@@ -28,6 +28,7 @@ public:
     struct NavigationDescription& operator=(struct NavigationDescription const &) = delete;
     NavigationDescription(struct NavigationDescription const &) = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

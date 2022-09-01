@@ -63,6 +63,10 @@ public:
      * @hash   -459232620
      */
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
-MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
+    /**
+     * @symbol ?FILE_NAME@ContentLogFileEndPoint@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -383857013
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 
 };

@@ -27,6 +27,7 @@ public:
     struct EduSharedUriResource& operator=(struct EduSharedUriResource const &) = delete;
     EduSharedUriResource(struct EduSharedUriResource const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0EduSharedUriResource@@QEAA@XZ

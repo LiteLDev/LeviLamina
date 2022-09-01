@@ -26,6 +26,7 @@ public:
     PlayerStorageIds(struct PlayerStorageIds const &) = delete;
     PlayerStorageIds() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1PlayerStorageIds@@QEAA@XZ

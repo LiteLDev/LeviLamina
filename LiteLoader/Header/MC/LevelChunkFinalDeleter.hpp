@@ -28,6 +28,7 @@ public:
     LevelChunkFinalDeleter(struct LevelChunkFinalDeleter const &) = delete;
     LevelChunkFinalDeleter() = delete;
 #endif
+
 public:
     /**
      * @symbol ??RLevelChunkFinalDeleter@@QEAAXPEAVLevelChunk@@@Z

@@ -29,6 +29,7 @@ public:
     OnFriendlyAngerDefinition(struct OnFriendlyAngerDefinition const &) = delete;
     OnFriendlyAngerDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnFriendlyAngerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnFriendlyAngerDefinition@@@JsonUtil@@@std@@@Z

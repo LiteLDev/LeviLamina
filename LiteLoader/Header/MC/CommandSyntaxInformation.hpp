@@ -25,6 +25,7 @@ public:
     struct CommandSyntaxInformation& operator=(struct CommandSyntaxInformation const &) = delete;
     CommandSyntaxInformation(struct CommandSyntaxInformation const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0CommandSyntaxInformation@@QEAA@XZ

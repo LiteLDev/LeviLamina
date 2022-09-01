@@ -26,6 +26,7 @@ public:
     BeforeWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent const &) = delete;
     BeforeWatchdogTerminateEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1BeforeWatchdogTerminateEvent@@QEAA@XZ

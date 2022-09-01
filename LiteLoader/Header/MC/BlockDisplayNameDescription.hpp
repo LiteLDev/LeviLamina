@@ -28,6 +28,7 @@ public:
     BlockDisplayNameDescription(struct BlockDisplayNameDescription const &) = delete;
     BlockDisplayNameDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   -797091605
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockDisplayNameDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1557757883
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDisplayNameDescription@@SAXXZ
      * @hash   -141313777

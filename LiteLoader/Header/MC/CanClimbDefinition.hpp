@@ -29,6 +29,7 @@ public:
     CanClimbDefinition(struct CanClimbDefinition const &) = delete;
     CanClimbDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@CanClimbDefinition@@QEAAXAEAVEntityContext@@@Z

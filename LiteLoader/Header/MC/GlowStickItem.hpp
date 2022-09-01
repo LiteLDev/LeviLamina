@@ -131,7 +131,15 @@ public:
      * @hash   -1692187852
      */
     MCAPI GlowStickItem(std::string const &, int);
-MCAPI static enum ItemColor const COLORS[];
-MCAPI static int const MAX_ACTIVE_TICKS;
+    /**
+     * @symbol ?COLORS@GlowStickItem@@2QBW4ItemColor@@B
+     * @hash   562999941
+     */
+    MCAPI static enum ItemColor const COLORS[];
+    /**
+     * @symbol ?MAX_ACTIVE_TICKS@GlowStickItem@@2HB
+     * @hash   -1756439257
+     */
+    MCAPI static int const MAX_ACTIVE_TICKS;
 
 };

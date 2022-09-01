@@ -58,7 +58,11 @@ public:
      * @hash   525789704
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
-MCAPI static unsigned int const DEFAULT_MAX_CARRY_WEIGHT;
+    /**
+     * @symbol ?DEFAULT_MAX_CARRY_WEIGHT@StorageItemComponent@@2IB
+     * @hash   -2109010455
+     */
+    MCAPI static unsigned int const DEFAULT_MAX_CARRY_WEIGHT;
     /**
      * @symbol ?bindType@StorageItemComponent@@SAXXZ
      * @hash   954740259

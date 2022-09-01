@@ -20,49 +20,225 @@ namespace GameEventRegistry {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-MCAPI extern class GameEvent const blockActivate;
-MCAPI extern class GameEvent const blockAttach;
-MCAPI extern class GameEvent const blockChange;
-MCAPI extern class GameEvent const blockClose;
-MCAPI extern class GameEvent const blockDeactivate;
-MCAPI extern class GameEvent const blockDestroy;
-MCAPI extern class GameEvent const blockDetach;
-MCAPI extern class GameEvent const blockOpen;
-MCAPI extern class GameEvent const blockPlace;
-MCAPI extern class GameEvent const containerClose;
-MCAPI extern class GameEvent const containerOpen;
-MCAPI extern class GameEvent const dispenseFail;
-MCAPI extern class GameEvent const drink;
-MCAPI extern class GameEvent const eat;
-MCAPI extern class GameEvent const elytraGlide;
-MCAPI extern class GameEvent const entityDamage;
-MCAPI extern class GameEvent const entityDie;
-MCAPI extern class GameEvent const entityInteract;
-MCAPI extern class GameEvent const entityMove;
-MCAPI extern class GameEvent const entityPlace;
-MCAPI extern class GameEvent const entityRoar;
-MCAPI extern class GameEvent const entityShake;
-MCAPI extern class GameEvent const equip;
-MCAPI extern class GameEvent const explode;
-MCAPI extern class GameEvent const flap;
-MCAPI extern class GameEvent const fluidPickup;
-MCAPI extern class GameEvent const fluidPlace;
-MCAPI extern class GameEvent const hitGround;
-MCAPI extern class GameEvent const invalid;
-MCAPI extern class GameEvent const itemInteractFinish;
-MCAPI extern class GameEvent const itemInteractStart;
-MCAPI extern class GameEvent const lightningStrike;
-MCAPI extern class GameEvent const noteBlockPlay;
-MCAPI extern class GameEvent const pistonContract;
-MCAPI extern class GameEvent const pistonExtend;
-MCAPI extern class GameEvent const primeFuse;
-MCAPI extern class GameEvent const projectileLand;
-MCAPI extern class GameEvent const projectileShoot;
-MCAPI extern class GameEvent const sculkSensorTendrilsClicking;
-MCAPI extern class GameEvent const sculkTouch;
-MCAPI extern class GameEvent const shear;
-MCAPI extern class GameEvent const shriek;
-MCAPI extern class GameEvent const splash;
-MCAPI extern class GameEvent const swim;
+    /**
+     * @symbol ?blockActivate@GameEventRegistry@@3VGameEvent@@B
+     * @hash   194437209
+     */
+    MCAPI extern class GameEvent const blockActivate;
+    /**
+     * @symbol ?blockAttach@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -597880863
+     */
+    MCAPI extern class GameEvent const blockAttach;
+    /**
+     * @symbol ?blockChange@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -835129207
+     */
+    MCAPI extern class GameEvent const blockChange;
+    /**
+     * @symbol ?blockClose@GameEventRegistry@@3VGameEvent@@B
+     * @hash   993625331
+     */
+    MCAPI extern class GameEvent const blockClose;
+    /**
+     * @symbol ?blockDeactivate@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -815821671
+     */
+    MCAPI extern class GameEvent const blockDeactivate;
+    /**
+     * @symbol ?blockDestroy@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -447466365
+     */
+    MCAPI extern class GameEvent const blockDestroy;
+    /**
+     * @symbol ?blockDetach@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1806246839
+     */
+    MCAPI extern class GameEvent const blockDetach;
+    /**
+     * @symbol ?blockOpen@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1384308529
+     */
+    MCAPI extern class GameEvent const blockOpen;
+    /**
+     * @symbol ?blockPlace@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1571657413
+     */
+    MCAPI extern class GameEvent const blockPlace;
+    /**
+     * @symbol ?containerClose@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1487662883
+     */
+    MCAPI extern class GameEvent const containerClose;
+    /**
+     * @symbol ?containerOpen@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -2063416503
+     */
+    MCAPI extern class GameEvent const containerOpen;
+    /**
+     * @symbol ?dispenseFail@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1734859507
+     */
+    MCAPI extern class GameEvent const dispenseFail;
+    /**
+     * @symbol ?drink@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -439584583
+     */
+    MCAPI extern class GameEvent const drink;
+    /**
+     * @symbol ?eat@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1298333055
+     */
+    MCAPI extern class GameEvent const eat;
+    /**
+     * @symbol ?elytraGlide@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1494315511
+     */
+    MCAPI extern class GameEvent const elytraGlide;
+    /**
+     * @symbol ?entityDamage@GameEventRegistry@@3VGameEvent@@B
+     * @hash   471900211
+     */
+    MCAPI extern class GameEvent const entityDamage;
+    /**
+     * @symbol ?entityDie@GameEventRegistry@@3VGameEvent@@B
+     * @hash   203991225
+     */
+    MCAPI extern class GameEvent const entityDie;
+    /**
+     * @symbol ?entityInteract@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -842311901
+     */
+    MCAPI extern class GameEvent const entityInteract;
+    /**
+     * @symbol ?entityMove@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -507839925
+     */
+    MCAPI extern class GameEvent const entityMove;
+    /**
+     * @symbol ?entityPlace@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -937847247
+     */
+    MCAPI extern class GameEvent const entityPlace;
+    /**
+     * @symbol ?entityRoar@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -42411333
+     */
+    MCAPI extern class GameEvent const entityRoar;
+    /**
+     * @symbol ?entityShake@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1906164321
+     */
+    MCAPI extern class GameEvent const entityShake;
+    /**
+     * @symbol ?equip@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -2052378103
+     */
+    MCAPI extern class GameEvent const equip;
+    /**
+     * @symbol ?explode@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1520617935
+     */
+    MCAPI extern class GameEvent const explode;
+    /**
+     * @symbol ?flap@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1882375963
+     */
+    MCAPI extern class GameEvent const flap;
+    /**
+     * @symbol ?fluidPickup@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -863098335
+     */
+    MCAPI extern class GameEvent const fluidPickup;
+    /**
+     * @symbol ?fluidPlace@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1163483499
+     */
+    MCAPI extern class GameEvent const fluidPlace;
+    /**
+     * @symbol ?hitGround@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1484478321
+     */
+    MCAPI extern class GameEvent const hitGround;
+    /**
+     * @symbol ?invalid@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -820546935
+     */
+    MCAPI extern class GameEvent const invalid;
+    /**
+     * @symbol ?itemInteractFinish@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1990380389
+     */
+    MCAPI extern class GameEvent const itemInteractFinish;
+    /**
+     * @symbol ?itemInteractStart@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1934918817
+     */
+    MCAPI extern class GameEvent const itemInteractStart;
+    /**
+     * @symbol ?lightningStrike@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1660207625
+     */
+    MCAPI extern class GameEvent const lightningStrike;
+    /**
+     * @symbol ?noteBlockPlay@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1752328847
+     */
+    MCAPI extern class GameEvent const noteBlockPlay;
+    /**
+     * @symbol ?pistonContract@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -908563621
+     */
+    MCAPI extern class GameEvent const pistonContract;
+    /**
+     * @symbol ?pistonExtend@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1149963101
+     */
+    MCAPI extern class GameEvent const pistonExtend;
+    /**
+     * @symbol ?primeFuse@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1159096087
+     */
+    MCAPI extern class GameEvent const primeFuse;
+    /**
+     * @symbol ?projectileLand@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1452399699
+     */
+    MCAPI extern class GameEvent const projectileLand;
+    /**
+     * @symbol ?projectileShoot@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1398866681
+     */
+    MCAPI extern class GameEvent const projectileShoot;
+    /**
+     * @symbol ?sculkSensorTendrilsClicking@GameEventRegistry@@3VGameEvent@@B
+     * @hash   2098426305
+     */
+    MCAPI extern class GameEvent const sculkSensorTendrilsClicking;
+    /**
+     * @symbol ?sculkTouch@GameEventRegistry@@3VGameEvent@@B
+     * @hash   262572035
+     */
+    MCAPI extern class GameEvent const sculkTouch;
+    /**
+     * @symbol ?shear@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -2025665431
+     */
+    MCAPI extern class GameEvent const shear;
+    /**
+     * @symbol ?shriek@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -226095157
+     */
+    MCAPI extern class GameEvent const shriek;
+    /**
+     * @symbol ?splash@GameEventRegistry@@3VGameEvent@@B
+     * @hash   1152292627
+     */
+    MCAPI extern class GameEvent const splash;
+    /**
+     * @symbol ?swim@GameEventRegistry@@3VGameEvent@@B
+     * @hash   -1373686469
+     */
+    MCAPI extern class GameEvent const swim;
 
 };

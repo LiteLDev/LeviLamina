@@ -26,6 +26,7 @@ public:
     TradeItem(struct TradeItem const &) = delete;
     TradeItem() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4TradeItem@@QEAAAEAU0@$$QEAU0@@Z

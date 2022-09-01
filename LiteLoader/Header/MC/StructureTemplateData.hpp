@@ -118,7 +118,11 @@ public:
      * @hash   -344982966
      */
     MCAPI void setStructureWorldOrigin(class BlockPos const &);
-MCAPI static std::string const DEFAULT_PALETTE_NAME;
+    /**
+     * @symbol ?DEFAULT_PALETTE_NAME@StructureTemplateData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   960073287
+     */
+    MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
 //protected:
     /**

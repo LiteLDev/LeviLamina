@@ -28,6 +28,7 @@ public:
     BlockUnitCubeDescription(struct BlockUnitCubeDescription const &) = delete;
     BlockUnitCubeDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -64,7 +65,11 @@ public:
      * @hash   285086093
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockUnitCubeDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1513806405
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockUnitCubeDescription@@SAXXZ
      * @hash   -1543539661

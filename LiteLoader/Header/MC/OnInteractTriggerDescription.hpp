@@ -60,6 +60,10 @@ public:
      * @hash   1058325400
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@OnInteractTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -707192507
+     */
+    MCAPI static std::string const NameID;
 
 };

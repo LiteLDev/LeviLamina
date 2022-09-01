@@ -26,6 +26,7 @@ public:
     ClipParameters(struct ClipParameters const &) = delete;
     ClipParameters() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ClipParameters@@QEAA@AEBVVec3@@0AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z

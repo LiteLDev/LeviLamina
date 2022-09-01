@@ -258,6 +258,10 @@ public:
      * @hash   -1841383641
      */
     MCAPI StoneSlabBlock2(std::string const &, int, bool, class WeakPtr<class BlockLegacy>);
-MCAPI static class std::array<std::string, 8> const SLAB_NAMES;
+    /**
+     * @symbol ?SLAB_NAMES@StoneSlabBlock2@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$07@std@@B
+     * @hash   -2113415969
+     */
+    MCAPI static class std::array<std::string, 8> const SLAB_NAMES;
 
 };

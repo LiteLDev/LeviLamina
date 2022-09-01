@@ -275,6 +275,10 @@ public:
     MCAPI void _validateItem();
 
 private:
-MCAPI static int const LIFETIME;
+    /**
+     * @symbol ?LIFETIME@ItemActor@@0HB
+     * @hash   612066695
+     */
+    MCAPI static int const LIFETIME;
 
 };

@@ -26,6 +26,7 @@ public:
     MolangEntityVariable(struct MolangEntityVariable const &) = delete;
     MolangEntityVariable() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0MolangEntityVariable@@QEAA@AEBVHashedString@@@Z

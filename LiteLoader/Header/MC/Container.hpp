@@ -333,6 +333,10 @@ public:
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
 
 protected:
-MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
+    /**
+     * @symbol ?containerTypeMap@Container@@1V?$BidirectionalUnorderedMap@W4ContainerType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+     * @hash   989333048
+     */
+    MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;
 
 };

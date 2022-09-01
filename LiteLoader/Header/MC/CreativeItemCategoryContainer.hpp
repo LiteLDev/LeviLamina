@@ -26,6 +26,7 @@ public:
     CreativeItemCategoryContainer(struct CreativeItemCategoryContainer const &) = delete;
     CreativeItemCategoryContainer() = delete;
 #endif
+
 public:
     /**
      * @symbol ?fromString@CreativeItemCategoryContainer@@SAXAEAU1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

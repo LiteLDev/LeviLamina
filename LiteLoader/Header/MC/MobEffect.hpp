@@ -185,38 +185,166 @@ public:
      * @hash   -1401542273
      */
     MCAPI std::vector<struct std::pair<class Attribute const *, class std::shared_ptr<class AttributeModifier>>> const & viewAttributeModifiers() const;
-MCAPI static class MobEffect * ABSORPTION;
-MCAPI static class MobEffect * BAD_OMEN;
-MCAPI static class MobEffect * BLINDNESS;
-MCAPI static class MobEffect * CONDUIT_POWER;
-MCAPI static class MobEffect * CONFUSION;
-MCAPI static class MobEffect * DAMAGE_BOOST;
-MCAPI static class MobEffect * DAMAGE_RESISTANCE;
-MCAPI static class MobEffect * DARKNESS;
-MCAPI static class mce::Color const DEFAULT_COLOR;
-MCAPI static class MobEffect * DIG_SLOWDOWN;
-MCAPI static class MobEffect * DIG_SPEED;
-MCAPI static class MobEffect * EMPTY_EFFECT;
-MCAPI static class MobEffect * FATAL_POISON;
-MCAPI static class MobEffect * FIRE_RESISTANCE;
-MCAPI static class MobEffect * HARM;
-MCAPI static class MobEffect * HEAL;
-MCAPI static class MobEffect * HEALTH_BOOST;
-MCAPI static class MobEffect * HERO_OF_THE_VILLAGE;
-MCAPI static class MobEffect * HUNGER;
-MCAPI static class MobEffect * INVISIBILITY;
-MCAPI static class MobEffect * JUMP;
-MCAPI static class MobEffect * LEVITATION;
-MCAPI static class MobEffect * MOVEMENT_SLOWDOWN;
-MCAPI static class MobEffect * MOVEMENT_SPEED;
-MCAPI static class MobEffect * NIGHT_VISION;
-MCAPI static class MobEffect * POISON;
-MCAPI static class MobEffect * REGENERATION;
-MCAPI static class MobEffect * SATURATION;
-MCAPI static class MobEffect * SLOW_FALLING;
-MCAPI static class MobEffect * WATER_BREATHING;
-MCAPI static class MobEffect * WEAKNESS;
-MCAPI static class MobEffect * WITHER;
+    /**
+     * @symbol ?ABSORPTION@MobEffect@@2PEAV1@EA
+     * @hash   -403963955
+     */
+    MCAPI static class MobEffect * ABSORPTION;
+    /**
+     * @symbol ?BAD_OMEN@MobEffect@@2PEAV1@EA
+     * @hash   -1081813535
+     */
+    MCAPI static class MobEffect * BAD_OMEN;
+    /**
+     * @symbol ?BLINDNESS@MobEffect@@2PEAV1@EA
+     * @hash   -1438218383
+     */
+    MCAPI static class MobEffect * BLINDNESS;
+    /**
+     * @symbol ?CONDUIT_POWER@MobEffect@@2PEAV1@EA
+     * @hash   -1756755015
+     */
+    MCAPI static class MobEffect * CONDUIT_POWER;
+    /**
+     * @symbol ?CONFUSION@MobEffect@@2PEAV1@EA
+     * @hash   -2032938891
+     */
+    MCAPI static class MobEffect * CONFUSION;
+    /**
+     * @symbol ?DAMAGE_BOOST@MobEffect@@2PEAV1@EA
+     * @hash   -1409404851
+     */
+    MCAPI static class MobEffect * DAMAGE_BOOST;
+    /**
+     * @symbol ?DAMAGE_RESISTANCE@MobEffect@@2PEAV1@EA
+     * @hash   197344267
+     */
+    MCAPI static class MobEffect * DAMAGE_RESISTANCE;
+    /**
+     * @symbol ?DARKNESS@MobEffect@@2PEAV1@EA
+     * @hash   1758440009
+     */
+    MCAPI static class MobEffect * DARKNESS;
+    /**
+     * @symbol ?DEFAULT_COLOR@MobEffect@@2VColor@mce@@B
+     * @hash   -210761467
+     */
+    MCAPI static class mce::Color const DEFAULT_COLOR;
+    /**
+     * @symbol ?DIG_SLOWDOWN@MobEffect@@2PEAV1@EA
+     * @hash   632627551
+     */
+    MCAPI static class MobEffect * DIG_SLOWDOWN;
+    /**
+     * @symbol ?DIG_SPEED@MobEffect@@2PEAV1@EA
+     * @hash   -136506483
+     */
+    MCAPI static class MobEffect * DIG_SPEED;
+    /**
+     * @symbol ?EMPTY_EFFECT@MobEffect@@2PEAV1@EA
+     * @hash   1913127557
+     */
+    MCAPI static class MobEffect * EMPTY_EFFECT;
+    /**
+     * @symbol ?FATAL_POISON@MobEffect@@2PEAV1@EA
+     * @hash   77778189
+     */
+    MCAPI static class MobEffect * FATAL_POISON;
+    /**
+     * @symbol ?FIRE_RESISTANCE@MobEffect@@2PEAV1@EA
+     * @hash   -877941051
+     */
+    MCAPI static class MobEffect * FIRE_RESISTANCE;
+    /**
+     * @symbol ?HARM@MobEffect@@2PEAV1@EA
+     * @hash   584724639
+     */
+    MCAPI static class MobEffect * HARM;
+    /**
+     * @symbol ?HEAL@MobEffect@@2PEAV1@EA
+     * @hash   -472407169
+     */
+    MCAPI static class MobEffect * HEAL;
+    /**
+     * @symbol ?HEALTH_BOOST@MobEffect@@2PEAV1@EA
+     * @hash   1509197031
+     */
+    MCAPI static class MobEffect * HEALTH_BOOST;
+    /**
+     * @symbol ?HERO_OF_THE_VILLAGE@MobEffect@@2PEAV1@EA
+     * @hash   -87045633
+     */
+    MCAPI static class MobEffect * HERO_OF_THE_VILLAGE;
+    /**
+     * @symbol ?HUNGER@MobEffect@@2PEAV1@EA
+     * @hash   1183329261
+     */
+    MCAPI static class MobEffect * HUNGER;
+    /**
+     * @symbol ?INVISIBILITY@MobEffect@@2PEAV1@EA
+     * @hash   -184528867
+     */
+    MCAPI static class MobEffect * INVISIBILITY;
+    /**
+     * @symbol ?JUMP@MobEffect@@2PEAV1@EA
+     * @hash   1447100571
+     */
+    MCAPI static class MobEffect * JUMP;
+    /**
+     * @symbol ?LEVITATION@MobEffect@@2PEAV1@EA
+     * @hash   -484709223
+     */
+    MCAPI static class MobEffect * LEVITATION;
+    /**
+     * @symbol ?MOVEMENT_SLOWDOWN@MobEffect@@2PEAV1@EA
+     * @hash   -173865321
+     */
+    MCAPI static class MobEffect * MOVEMENT_SLOWDOWN;
+    /**
+     * @symbol ?MOVEMENT_SPEED@MobEffect@@2PEAV1@EA
+     * @hash   832273205
+     */
+    MCAPI static class MobEffect * MOVEMENT_SPEED;
+    /**
+     * @symbol ?NIGHT_VISION@MobEffect@@2PEAV1@EA
+     * @hash   595342941
+     */
+    MCAPI static class MobEffect * NIGHT_VISION;
+    /**
+     * @symbol ?POISON@MobEffect@@2PEAV1@EA
+     * @hash   -93955993
+     */
+    MCAPI static class MobEffect * POISON;
+    /**
+     * @symbol ?REGENERATION@MobEffect@@2PEAV1@EA
+     * @hash   441016869
+     */
+    MCAPI static class MobEffect * REGENERATION;
+    /**
+     * @symbol ?SATURATION@MobEffect@@2PEAV1@EA
+     * @hash   -883664357
+     */
+    MCAPI static class MobEffect * SATURATION;
+    /**
+     * @symbol ?SLOW_FALLING@MobEffect@@2PEAV1@EA
+     * @hash   1153571945
+     */
+    MCAPI static class MobEffect * SLOW_FALLING;
+    /**
+     * @symbol ?WATER_BREATHING@MobEffect@@2PEAV1@EA
+     * @hash   1944674109
+     */
+    MCAPI static class MobEffect * WATER_BREATHING;
+    /**
+     * @symbol ?WEAKNESS@MobEffect@@2PEAV1@EA
+     * @hash   -908156563
+     */
+    MCAPI static class MobEffect * WEAKNESS;
+    /**
+     * @symbol ?WITHER@MobEffect@@2PEAV1@EA
+     * @hash   1133060229
+     */
+    MCAPI static class MobEffect * WITHER;
     /**
      * @symbol ?getById@MobEffect@@SAPEAV1@H@Z
      * @hash   1211147568
@@ -237,7 +365,11 @@ MCAPI static class MobEffect * WITHER;
      * @hash   384705726
      */
     MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
-MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
+    /**
+     * @symbol ?mMobEffects@MobEffect@@2PAV?$unique_ptr@VMobEffect@@U?$default_delete@VMobEffect@@@std@@@std@@A
+     * @hash   247090863
+     */
+    MCAPI static std::unique_ptr<class MobEffect> mMobEffects[];
     /**
      * @symbol ?shutdownEffects@MobEffect@@SAXXZ
      * @hash   1821005867

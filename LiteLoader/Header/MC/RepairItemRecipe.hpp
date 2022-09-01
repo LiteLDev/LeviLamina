@@ -77,6 +77,10 @@ public:
      * @hash   235433313
      */
     MCAPI RepairItemRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
-MCAPI static class mce::UUID ID;
+    /**
+     * @symbol ?ID@RepairItemRecipe@@2VUUID@mce@@A
+     * @hash   -1171096769
+     */
+    MCAPI static class mce::UUID ID;
 
 };

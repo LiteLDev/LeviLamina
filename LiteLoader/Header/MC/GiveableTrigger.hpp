@@ -27,6 +27,7 @@ public:
     struct GiveableTrigger& operator=(struct GiveableTrigger const &) = delete;
     GiveableTrigger() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0GiveableTrigger@@QEAA@AEBU0@@Z

@@ -29,6 +29,7 @@ public:
     ChunkLoadTelemetryData(struct ChunkLoadTelemetryData const &) = delete;
     ChunkLoadTelemetryData() = delete;
 #endif
+
 public:
     /**
      * @symbol ?recordLoadedChunk@ChunkLoadTelemetryData@@QEAAXAEBVLevelChunk@@@Z

@@ -143,8 +143,16 @@ public:
      * @hash   -498530390
      */
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);
-MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
-MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
+    /**
+     * @symbol ?MAX_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
+     * @hash   -1788249757
+     */
+    MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
+    /**
+     * @symbol ?MIN_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
+     * @hash   -1452782817
+     */
+    MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
 
 //private:
     /**

@@ -25,6 +25,7 @@ public:
     struct ItemStackResponseInfo& operator=(struct ItemStackResponseInfo const &) = delete;
     ItemStackResponseInfo(struct ItemStackResponseInfo const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ItemStackResponseInfo@@QEAA@XZ

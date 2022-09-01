@@ -91,7 +91,11 @@ public:
      * @hash   989691348
      */
     MCAPI SoulSpeedEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
-MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
+    /**
+     * @symbol ?SOUL_SPEED_BOOST_UUID@SoulSpeedEnchant@@2VUUID@mce@@B
+     * @hash   1484800473
+     */
+    MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     /**
      * @symbol ?getLevel@SoulSpeedEnchant@@SAHAEBVActor@@@Z
      * @hash   -2099647737

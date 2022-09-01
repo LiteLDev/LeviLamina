@@ -310,11 +310,31 @@ public:
      * @hash   -696918238
      */
     MCAPI void growUp(class BlockSource &, class BlockPos const &, int) const;
-MCAPI static int const VINE_ALL;
-MCAPI static int const VINE_EAST;
-MCAPI static int const VINE_NORTH;
-MCAPI static int const VINE_SOUTH;
-MCAPI static int const VINE_WEST;
+    /**
+     * @symbol ?VINE_ALL@VineBlock@@2HB
+     * @hash   858817975
+     */
+    MCAPI static int const VINE_ALL;
+    /**
+     * @symbol ?VINE_EAST@VineBlock@@2HB
+     * @hash   -1225725411
+     */
+    MCAPI static int const VINE_EAST;
+    /**
+     * @symbol ?VINE_NORTH@VineBlock@@2HB
+     * @hash   1396626483
+     */
+    MCAPI static int const VINE_NORTH;
+    /**
+     * @symbol ?VINE_SOUTH@VineBlock@@2HB
+     * @hash   2135134911
+     */
+    MCAPI static int const VINE_SOUTH;
+    /**
+     * @symbol ?VINE_WEST@VineBlock@@2HB
+     * @hash   1483319173
+     */
+    MCAPI static int const VINE_WEST;
     /**
      * @symbol ?getBlockForFace@VineBlock@@SAAEBVBlock@@E@Z
      * @hash   -1959446566

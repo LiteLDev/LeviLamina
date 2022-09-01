@@ -127,12 +127,36 @@ public:
      * @hash   -520946042
      */
     MCAPI void setItemValues(class ItemStackBase const &);
-MCAPI static int const MAX_PATTERNS;
-MCAPI static std::string const TAG_BASE_COLOR;
-MCAPI static std::string const TAG_COLOR;
-MCAPI static std::string const TAG_PATTERN;
-MCAPI static std::string const TAG_PATTERNS;
-MCAPI static std::string const TAG_TYPE;
+    /**
+     * @symbol ?MAX_PATTERNS@BannerBlockActor@@2HB
+     * @hash   1298065597
+     */
+    MCAPI static int const MAX_PATTERNS;
+    /**
+     * @symbol ?TAG_BASE_COLOR@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1148192961
+     */
+    MCAPI static std::string const TAG_BASE_COLOR;
+    /**
+     * @symbol ?TAG_COLOR@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -374263991
+     */
+    MCAPI static std::string const TAG_COLOR;
+    /**
+     * @symbol ?TAG_PATTERN@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1534808381
+     */
+    MCAPI static std::string const TAG_PATTERN;
+    /**
+     * @symbol ?TAG_PATTERNS@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1342246725
+     */
+    MCAPI static std::string const TAG_PATTERNS;
+    /**
+     * @symbol ?TAG_TYPE@BannerBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -851519159
+     */
+    MCAPI static std::string const TAG_TYPE;
     /**
      * @symbol ?getBannerType@BannerBlockActor@@SA?AW4BannerBlockType@@PEBVCompoundTag@@@Z
      * @hash   -435180442

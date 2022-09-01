@@ -179,7 +179,11 @@ public:
      * @hash   1797337359
      */
     virtual unsigned __int64 hash() const = 0;
-MCAPI static std::string const NullString;
+    /**
+     * @symbol ?NullString@Tag@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1206214087
+     */
+    MCAPI static std::string const NullString;
     /**
      * @symbol ?getTagName@Tag@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z
      * @hash   -2026937166

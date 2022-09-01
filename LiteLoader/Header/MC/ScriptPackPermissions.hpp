@@ -50,6 +50,10 @@ public:
 //private:
 
 private:
-MCAPI static std::string const sWildCardModuleName;
+    /**
+     * @symbol ?sWildCardModuleName@ScriptPackPermissions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -4067273
+     */
+    MCAPI static std::string const sWildCardModuleName;
 
 };

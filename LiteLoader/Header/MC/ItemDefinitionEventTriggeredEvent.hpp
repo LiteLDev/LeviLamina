@@ -25,6 +25,7 @@ public:
     struct ItemDefinitionEventTriggeredEvent& operator=(struct ItemDefinitionEventTriggeredEvent const &) = delete;
     ItemDefinitionEventTriggeredEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ItemDefinitionEventTriggeredEvent@@QEAA@AEBU0@@Z

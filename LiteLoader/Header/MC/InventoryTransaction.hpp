@@ -118,6 +118,10 @@ public:
     MCAPI void addItemToContent(class ItemStack const &, int);
 
 private:
-MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
+    /**
+     * @symbol ?inventoryTransactionErrorMap@InventoryTransaction@@0V?$BidirectionalUnorderedMap@W4InventoryTransactionError@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+     * @hash   -504977753
+     */
+    MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
 
 };

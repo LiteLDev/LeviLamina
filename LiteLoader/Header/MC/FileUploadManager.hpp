@@ -110,9 +110,17 @@ public:
 //private:
 
 protected:
-MCAPI static int const CHUNK_UPLOAD_SIZE;
+    /**
+     * @symbol ?CHUNK_UPLOAD_SIZE@FileUploadManager@@1HB
+     * @hash   -923614013
+     */
+    MCAPI static int const CHUNK_UPLOAD_SIZE;
 
 private:
-MCAPI static std::string const BOUNDARY;
+    /**
+     * @symbol ?BOUNDARY@FileUploadManager@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   406708525
+     */
+    MCAPI static std::string const BOUNDARY;
 
 };

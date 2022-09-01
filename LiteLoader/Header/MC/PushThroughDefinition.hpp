@@ -29,6 +29,7 @@ public:
     PushThroughDefinition(struct PushThroughDefinition const &) = delete;
     PushThroughDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@PushThroughDefinition@@QEAAXAEAVEntityContext@@@Z

@@ -26,6 +26,7 @@ public:
     VehicleComponent(struct VehicleComponent const &) = delete;
     VehicleComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1VehicleComponent@@QEAA@XZ

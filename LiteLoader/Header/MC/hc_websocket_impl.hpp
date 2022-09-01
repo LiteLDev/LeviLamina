@@ -26,6 +26,7 @@ public:
     hc_websocket_impl(struct hc_websocket_impl const &) = delete;
     hc_websocket_impl() = delete;
 #endif
+
 public:
 
 };

@@ -26,6 +26,7 @@ struct BlockPlacementCondition {
 public:
     BlockPlacementCondition() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockPlacementCondition@@QEAA@AEBU0@@Z

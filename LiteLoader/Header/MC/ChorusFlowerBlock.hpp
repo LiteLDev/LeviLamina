@@ -289,9 +289,21 @@ public:
      * @hash   -1198756102
      */
     MCAPI ChorusFlowerBlock(std::string const &, int);
-MCAPI static int const BRANCH_DIRECTIONS;
-MCAPI static unsigned short const DEAD_AGE;
-MCAPI static int const GROW_RATE;
+    /**
+     * @symbol ?BRANCH_DIRECTIONS@ChorusFlowerBlock@@2HB
+     * @hash   -574621493
+     */
+    MCAPI static int const BRANCH_DIRECTIONS;
+    /**
+     * @symbol ?DEAD_AGE@ChorusFlowerBlock@@2GB
+     * @hash   -2042513500
+     */
+    MCAPI static unsigned short const DEAD_AGE;
+    /**
+     * @symbol ?GROW_RATE@ChorusFlowerBlock@@2HB
+     * @hash   -1877995459
+     */
+    MCAPI static int const GROW_RATE;
     /**
      * @symbol ?generatePlant@ChorusFlowerBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@H@Z
      * @hash   -1947973875

@@ -215,7 +215,11 @@ public:
      * @hash   1678054818
      */
     MCAPI BucketItem(std::string const &, int, enum BucketFillType);
-MCAPI static int const DRINK_DURATION;
+    /**
+     * @symbol ?DRINK_DURATION@BucketItem@@2HB
+     * @hash   -758735955
+     */
+    MCAPI static int const DRINK_DURATION;
 
 //protected:
     /**
@@ -264,6 +268,10 @@ MCAPI static int const DRINK_DURATION;
 protected:
 
 private:
-MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
+    /**
+     * @symbol ?mFillTypeToEntityType@BucketItem@@0V?$vector@U?$pair@W4BucketFillType@@W4ActorType@@@std@@V?$allocator@U?$pair@W4BucketFillType@@W4ActorType@@@std@@@2@@std@@B
+     * @hash   -1934307833
+     */
+    MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
 
 };

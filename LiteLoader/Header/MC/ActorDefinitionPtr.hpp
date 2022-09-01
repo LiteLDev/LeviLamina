@@ -53,6 +53,10 @@ public:
      * @hash   -69156016
      */
     MCAPI ~ActorDefinitionPtr();
-MCAPI static class ActorDefinitionPtr const NONE;
+    /**
+     * @symbol ?NONE@ActorDefinitionPtr@@2V1@B
+     * @hash   113017524
+     */
+    MCAPI static class ActorDefinitionPtr const NONE;
 
 };

@@ -59,6 +59,10 @@ public:
      * @hash   -1622148209
      */
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
-MCAPI static class mce::UUID const ID;
+    /**
+     * @symbol ?ID@ShulkerBoxRecipe@@2VUUID@mce@@B
+     * @hash   847733163
+     */
+    MCAPI static class mce::UUID const ID;
 
 };

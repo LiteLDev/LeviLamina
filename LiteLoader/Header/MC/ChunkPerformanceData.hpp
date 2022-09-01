@@ -27,6 +27,7 @@ public:
     struct ChunkPerformanceData& operator=(struct ChunkPerformanceData const &) = delete;
     ChunkPerformanceData(struct ChunkPerformanceData const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ChunkPerformanceData@@QEAA@XZ

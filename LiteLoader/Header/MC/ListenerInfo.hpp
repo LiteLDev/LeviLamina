@@ -34,6 +34,10 @@ public:
 //private:
 
 private:
-MCAPI static float const SQRT_FLT_MAX;
+    /**
+     * @symbol ?SQRT_FLT_MAX@ListenerInfo@@0MB
+     * @hash   -580555243
+     */
+    MCAPI static float const SQRT_FLT_MAX;
 
 };

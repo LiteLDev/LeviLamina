@@ -26,6 +26,7 @@ public:
     NetworkAddress(struct NetworkAddress const &) = delete;
     NetworkAddress() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1NetworkAddress@@QEAA@XZ

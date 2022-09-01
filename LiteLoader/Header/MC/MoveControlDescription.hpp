@@ -28,6 +28,7 @@ public:
     MoveControlDescription(struct MoveControlDescription const &) = delete;
     MoveControlDescription() = delete;
 #endif
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLDESCRIPTION
     /**

@@ -26,6 +26,7 @@ public:
     wspp_websocket_impl(struct wspp_websocket_impl const &) = delete;
     wspp_websocket_impl() = delete;
 #endif
+
 public:
     /**
      * @symbol ?close@wspp_websocket_impl@@QEAAJW4HCWebSocketCloseStatus@@@Z

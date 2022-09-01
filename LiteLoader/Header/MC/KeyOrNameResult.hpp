@@ -26,6 +26,7 @@ public:
     KeyOrNameResult(struct KeyOrNameResult const &) = delete;
     KeyOrNameResult() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1KeyOrNameResult@@QEAA@XZ

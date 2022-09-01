@@ -294,9 +294,21 @@ public:
      * @hash   679434566
      */
     MCAPI ChorusPlantBlock(std::string const &, int);
-MCAPI static float const PLANT_HEIGHT;
-MCAPI static float const PLANT_ITEM_DIMENSION;
-MCAPI static float const PLANT_WIDTH;
+    /**
+     * @symbol ?PLANT_HEIGHT@ChorusPlantBlock@@2MB
+     * @hash   1486174821
+     */
+    MCAPI static float const PLANT_HEIGHT;
+    /**
+     * @symbol ?PLANT_ITEM_DIMENSION@ChorusPlantBlock@@2MB
+     * @hash   1520510345
+     */
+    MCAPI static float const PLANT_ITEM_DIMENSION;
+    /**
+     * @symbol ?PLANT_WIDTH@ChorusPlantBlock@@2MB
+     * @hash   -1713778913
+     */
+    MCAPI static float const PLANT_WIDTH;
     /**
      * @symbol ?canGrowChorus@ChorusPlantBlock@@SA_NAEBVBlock@@@Z
      * @hash   -1797007021

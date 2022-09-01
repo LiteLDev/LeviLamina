@@ -25,6 +25,7 @@ public:
     struct CrashDump_AllData& operator=(struct CrashDump_AllData const &) = delete;
     CrashDump_AllData(struct CrashDump_AllData const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0CrashDump_AllData@@QEAA@XZ

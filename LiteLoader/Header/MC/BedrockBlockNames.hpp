@@ -20,9 +20,21 @@ namespace BedrockBlockNames {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-MCAPI extern class HashedString const Air;
-MCAPI extern class HashedString const ClientRequestPlaceholderBlock;
-MCAPI extern class HashedString const Unknown;
+    /**
+     * @symbol ?Air@BedrockBlockNames@@3VHashedString@@B
+     * @hash   969927743
+     */
+    MCAPI extern class HashedString const Air;
+    /**
+     * @symbol ?ClientRequestPlaceholderBlock@BedrockBlockNames@@3VHashedString@@B
+     * @hash   169777223
+     */
+    MCAPI extern class HashedString const ClientRequestPlaceholderBlock;
+    /**
+     * @symbol ?Unknown@BedrockBlockNames@@3VHashedString@@B
+     * @hash   -1519702545
+     */
+    MCAPI extern class HashedString const Unknown;
     /**
      * @symbol ?cleanupBedrockBlockNames@BedrockBlockNames@@YAXXZ
      * @hash   -242892186

@@ -29,6 +29,7 @@ public:
     EquipmentTableDefinition(struct EquipmentTableDefinition const &) = delete;
     EquipmentTableDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@EquipmentTableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEquipmentTableDefinition@@@JsonUtil@@@std@@@Z

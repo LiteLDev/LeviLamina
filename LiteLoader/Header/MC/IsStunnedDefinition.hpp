@@ -29,6 +29,7 @@ public:
     IsStunnedDefinition(struct IsStunnedDefinition const &) = delete;
     IsStunnedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsStunnedDefinition@@QEAAXAEAVEntityContext@@@Z

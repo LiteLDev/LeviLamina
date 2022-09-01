@@ -26,6 +26,7 @@ public:
     MountainAttributes(struct MountainAttributes const &) = delete;
     MountainAttributes() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MountainAttributes@@QEAA@XZ

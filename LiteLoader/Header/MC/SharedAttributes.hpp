@@ -30,16 +30,56 @@ public:
 #endif
 
 public:
-MCAPI static class Attribute const ABSORPTION;
-MCAPI static class Attribute const ATTACK_DAMAGE;
-MCAPI static class Attribute const FOLLOW_RANGE;
-MCAPI static class Attribute const HEALTH;
-MCAPI static class Attribute const JUMP_STRENGTH;
-MCAPI static class Attribute const KNOCKBACK_RESISTANCE;
-MCAPI static class Attribute const LAVA_MOVEMENT_SPEED;
-MCAPI static class Attribute const LUCK;
-MCAPI static class Attribute const MOVEMENT_SPEED;
-MCAPI static class Attribute const UNDERWATER_MOVEMENT_SPEED;
+    /**
+     * @symbol ?ABSORPTION@SharedAttributes@@2VAttribute@@B
+     * @hash   1649017935
+     */
+    MCAPI static class Attribute const ABSORPTION;
+    /**
+     * @symbol ?ATTACK_DAMAGE@SharedAttributes@@2VAttribute@@B
+     * @hash   -1097054745
+     */
+    MCAPI static class Attribute const ATTACK_DAMAGE;
+    /**
+     * @symbol ?FOLLOW_RANGE@SharedAttributes@@2VAttribute@@B
+     * @hash   -70442049
+     */
+    MCAPI static class Attribute const FOLLOW_RANGE;
+    /**
+     * @symbol ?HEALTH@SharedAttributes@@2VAttribute@@B
+     * @hash   518050209
+     */
+    MCAPI static class Attribute const HEALTH;
+    /**
+     * @symbol ?JUMP_STRENGTH@SharedAttributes@@2VAttribute@@B
+     * @hash   -1103320217
+     */
+    MCAPI static class Attribute const JUMP_STRENGTH;
+    /**
+     * @symbol ?KNOCKBACK_RESISTANCE@SharedAttributes@@2VAttribute@@B
+     * @hash   575055123
+     */
+    MCAPI static class Attribute const KNOCKBACK_RESISTANCE;
+    /**
+     * @symbol ?LAVA_MOVEMENT_SPEED@SharedAttributes@@2VAttribute@@B
+     * @hash   -148459505
+     */
+    MCAPI static class Attribute const LAVA_MOVEMENT_SPEED;
+    /**
+     * @symbol ?LUCK@SharedAttributes@@2VAttribute@@B
+     * @hash   866720267
+     */
+    MCAPI static class Attribute const LUCK;
+    /**
+     * @symbol ?MOVEMENT_SPEED@SharedAttributes@@2VAttribute@@B
+     * @hash   1854964095
+     */
+    MCAPI static class Attribute const MOVEMENT_SPEED;
+    /**
+     * @symbol ?UNDERWATER_MOVEMENT_SPEED@SharedAttributes@@2VAttribute@@B
+     * @hash   -158916647
+     */
+    MCAPI static class Attribute const UNDERWATER_MOVEMENT_SPEED;
     /**
      * @symbol ?checkIsDeprecated@SharedAttributes@@SA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   544498669

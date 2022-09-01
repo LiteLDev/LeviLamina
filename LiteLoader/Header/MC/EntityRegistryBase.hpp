@@ -54,6 +54,10 @@ public:
     MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
 
 protected:
-MCAPI static struct std::atomic<unsigned int> mRegistryCount;
+    /**
+     * @symbol ?mRegistryCount@EntityRegistryBase@@1U?$atomic@I@std@@A
+     * @hash   1038602328
+     */
+    MCAPI static struct std::atomic<unsigned int> mRegistryCount;
 
 };

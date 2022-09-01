@@ -26,6 +26,7 @@ public:
     ActorSpawnRuleDefinition(struct ActorSpawnRuleDefinition const &) = delete;
     ActorSpawnRuleDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorSpawnRuleDefinition@@QEAA@XZ

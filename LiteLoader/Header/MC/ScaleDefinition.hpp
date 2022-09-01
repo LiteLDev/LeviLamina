@@ -29,6 +29,7 @@ public:
     ScaleDefinition(struct ScaleDefinition const &) = delete;
     ScaleDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@ScaleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UScaleDefinition@@@JsonUtil@@@std@@@Z

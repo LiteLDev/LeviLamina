@@ -26,14 +26,27 @@ public:
     ActorSelectorArgs(struct ActorSelectorArgs const &) = delete;
     ActorSelectorArgs() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorSelectorArgs@@QEAA@XZ
      * @hash   1117095917
      */
     MCAPI ~ActorSelectorArgs();
-MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
-MCAPI static struct std::pair<float, float> const DEFAULT_X_ROTATION;
-MCAPI static struct std::pair<float, float> const DEFAULT_Y_ROTATION;
+    /**
+     * @symbol ?DEFAULT_LEVEL@ActorSelectorArgs@@2U?$pair@HH@std@@B
+     * @hash   1521936788
+     */
+    MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
+    /**
+     * @symbol ?DEFAULT_X_ROTATION@ActorSelectorArgs@@2U?$pair@MM@std@@B
+     * @hash   -704580386
+     */
+    MCAPI static struct std::pair<float, float> const DEFAULT_X_ROTATION;
+    /**
+     * @symbol ?DEFAULT_Y_ROTATION@ActorSelectorArgs@@2U?$pair@MM@std@@B
+     * @hash   -1217890682
+     */
+    MCAPI static struct std::pair<float, float> const DEFAULT_Y_ROTATION;
 
 };

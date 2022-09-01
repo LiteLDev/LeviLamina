@@ -192,6 +192,10 @@ public:
     MCAPI void _shootFirework(class ItemInstance const &, class Player &) const;
 
 private:
-MCAPI static int const DEFAULT_USE_DURATION;
+    /**
+     * @symbol ?DEFAULT_USE_DURATION@CrossbowItem@@0HB
+     * @hash   -177414527
+     */
+    MCAPI static int const DEFAULT_USE_DURATION;
 
 };

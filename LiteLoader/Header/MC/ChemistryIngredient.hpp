@@ -26,6 +26,7 @@ public:
     ChemistryIngredient(struct ChemistryIngredient const &) = delete;
     ChemistryIngredient() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ChemistryIngredient@@QEAA@XZ

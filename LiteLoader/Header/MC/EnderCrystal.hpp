@@ -205,6 +205,10 @@ public:
      * @hash   -636485576
      */
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal &, class ActorDamageSource const &)>);
-MCAPI static float const HEAL_DISTANCE;
+    /**
+     * @symbol ?HEAL_DISTANCE@EnderCrystal@@2MB
+     * @hash   2104723495
+     */
+    MCAPI static float const HEAL_DISTANCE;
 
 };

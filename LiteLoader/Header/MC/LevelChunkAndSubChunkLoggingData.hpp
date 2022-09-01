@@ -26,6 +26,7 @@ public:
     LevelChunkAndSubChunkLoggingData(struct LevelChunkAndSubChunkLoggingData const &) = delete;
     LevelChunkAndSubChunkLoggingData() = delete;
 #endif
+
 public:
     /**
      * @symbol ?logLevelChunkEvent@LevelChunkAndSubChunkLoggingData@@SAXAEBVChunkPos@@PEBD_N@Z

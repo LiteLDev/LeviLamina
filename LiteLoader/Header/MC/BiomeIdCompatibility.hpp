@@ -22,7 +22,11 @@ namespace BiomeIdCompatibility {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern unsigned int const MAX_CUSTOM_BIOMES;
+    /**
+     * @symbol ?MAX_CUSTOM_BIOMES@BiomeIdCompatibility@@3IB
+     * @hash   -1210440837
+     */
+    MCAPI extern unsigned int const MAX_CUSTOM_BIOMES;
     /**
      * @symbol ?adjustForReservedRanges@BiomeIdCompatibility@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -2115813665

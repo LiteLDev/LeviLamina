@@ -24,23 +24,91 @@ enum AnimatedTextureType;
 enum PieceType;
 
 #undef AFTER_EXTRA
-MCAPI extern std::string const ANIMATED_128X128_NAME;
-MCAPI extern std::string const ANIMATED_128X128_TEXTURE_CONTROLLER_FIRST_PERSON;
-MCAPI extern std::string const ANIMATED_128X128_TEXTURE_CONTROLLER_THIRD_PERSON;
-MCAPI extern class HashedString const ANIMATED_128X128_TEXTURE_FRAMES_VARIABLE;
-MCAPI extern std::string const ANIMATED_32X32_NAME;
-MCAPI extern std::string const ANIMATED_32X32_TEXTURE_CONTROLLER_FIRST_PERSON;
-MCAPI extern std::string const ANIMATED_32X32_TEXTURE_CONTROLLER_THIRD_PERSON;
-MCAPI extern class HashedString const ANIMATED_32X32_TEXTURE_FRAMES_VARIABLE;
-MCAPI extern std::string const ANIMATED_FACE_CONTROLLER_FIRST_PERSON;
-MCAPI extern std::string const ANIMATED_FACE_CONTROLLER_THIRD_PERSON;
-MCAPI extern std::string const ANIMATED_FACE_NAME;
-MCAPI extern class HashedString const ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE;
-MCAPI extern int const INVALID_INDEX;
-MCAPI extern class mce::UUID const NONE_PIECE_ID;
-MCAPI extern std::string const NONE_PIECE_PATH;
-MCAPI extern class mce::UUID const NO_PIECE_SELECTED;
-MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
+    /**
+     * @symbol ?ANIMATED_128X128_NAME@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -664355203
+     */
+    MCAPI extern std::string const ANIMATED_128X128_NAME;
+    /**
+     * @symbol ?ANIMATED_128X128_TEXTURE_CONTROLLER_FIRST_PERSON@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   258062143
+     */
+    MCAPI extern std::string const ANIMATED_128X128_TEXTURE_CONTROLLER_FIRST_PERSON;
+    /**
+     * @symbol ?ANIMATED_128X128_TEXTURE_CONTROLLER_THIRD_PERSON@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1070415743
+     */
+    MCAPI extern std::string const ANIMATED_128X128_TEXTURE_CONTROLLER_THIRD_PERSON;
+    /**
+     * @symbol ?ANIMATED_128X128_TEXTURE_FRAMES_VARIABLE@persona@@3VHashedString@@B
+     * @hash   320622281
+     */
+    MCAPI extern class HashedString const ANIMATED_128X128_TEXTURE_FRAMES_VARIABLE;
+    /**
+     * @symbol ?ANIMATED_32X32_NAME@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1935629219
+     */
+    MCAPI extern std::string const ANIMATED_32X32_NAME;
+    /**
+     * @symbol ?ANIMATED_32X32_TEXTURE_CONTROLLER_FIRST_PERSON@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1201414431
+     */
+    MCAPI extern std::string const ANIMATED_32X32_TEXTURE_CONTROLLER_FIRST_PERSON;
+    /**
+     * @symbol ?ANIMATED_32X32_TEXTURE_CONTROLLER_THIRD_PERSON@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2013768031
+     */
+    MCAPI extern std::string const ANIMATED_32X32_TEXTURE_CONTROLLER_THIRD_PERSON;
+    /**
+     * @symbol ?ANIMATED_32X32_TEXTURE_FRAMES_VARIABLE@persona@@3VHashedString@@B
+     * @hash   1319935261
+     */
+    MCAPI extern class HashedString const ANIMATED_32X32_TEXTURE_FRAMES_VARIABLE;
+    /**
+     * @symbol ?ANIMATED_FACE_CONTROLLER_FIRST_PERSON@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -486701187
+     */
+    MCAPI extern std::string const ANIMATED_FACE_CONTROLLER_FIRST_PERSON;
+    /**
+     * @symbol ?ANIMATED_FACE_CONTROLLER_THIRD_PERSON@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   325652413
+     */
+    MCAPI extern std::string const ANIMATED_FACE_CONTROLLER_THIRD_PERSON;
+    /**
+     * @symbol ?ANIMATED_FACE_NAME@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2045116673
+     */
+    MCAPI extern std::string const ANIMATED_FACE_NAME;
+    /**
+     * @symbol ?ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE@persona@@3VHashedString@@B
+     * @hash   -1544583095
+     */
+    MCAPI extern class HashedString const ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE;
+    /**
+     * @symbol ?INVALID_INDEX@persona@@3HB
+     * @hash   -1392933063
+     */
+    MCAPI extern int const INVALID_INDEX;
+    /**
+     * @symbol ?NONE_PIECE_ID@persona@@3VUUID@mce@@B
+     * @hash   -1309901703
+     */
+    MCAPI extern class mce::UUID const NONE_PIECE_ID;
+    /**
+     * @symbol ?NONE_PIECE_PATH@persona@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -977613315
+     */
+    MCAPI extern std::string const NONE_PIECE_PATH;
+    /**
+     * @symbol ?NO_PIECE_SELECTED@persona@@3VUUID@mce@@B
+     * @hash   -2132214985
+     */
+    MCAPI extern class mce::UUID const NO_PIECE_SELECTED;
+    /**
+     * @symbol ?USE_BLINKING_ANIMATION_VARIABLE@persona@@3VHashedString@@B
+     * @hash   2040780019
+     */
+    MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
     /**
      * @symbol ?pieceTypeFromString@persona@@YA?AW4PieceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -2135099815

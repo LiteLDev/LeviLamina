@@ -26,6 +26,7 @@ public:
     MolangGeometryVariable(struct MolangGeometryVariable const &) = delete;
     MolangGeometryVariable() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MolangGeometryVariable@@QEAA@XZ

@@ -58,6 +58,10 @@ public:
      * @hash   -1831919721
      */
     MCAPI ~BehaviorTreeDefinitionPtr();
-MCAPI static class BehaviorTreeDefinitionPtr const NONE;
+    /**
+     * @symbol ?NONE@BehaviorTreeDefinitionPtr@@2V1@B
+     * @hash   848879773
+     */
+    MCAPI static class BehaviorTreeDefinitionPtr const NONE;
 
 };

@@ -195,9 +195,21 @@ public:
      * @hash   546911347
      */
     MCAPI void playBreakSound(class Player *) const;
-MCAPI static int const EFFECTIVE_BLOCK_DELAY;
-MCAPI static int const IN_HAND_BLOCK_DURATION;
-MCAPI static std::string const TIMESTAMP_TAG;
+    /**
+     * @symbol ?EFFECTIVE_BLOCK_DELAY@ShieldItem@@2HB
+     * @hash   1455609359
+     */
+    MCAPI static int const EFFECTIVE_BLOCK_DELAY;
+    /**
+     * @symbol ?IN_HAND_BLOCK_DURATION@ShieldItem@@2HB
+     * @hash   -1712844843
+     */
+    MCAPI static int const IN_HAND_BLOCK_DURATION;
+    /**
+     * @symbol ?TIMESTAMP_TAG@ShieldItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -256107433
+     */
+    MCAPI static std::string const TIMESTAMP_TAG;
 
 //private:
     /**

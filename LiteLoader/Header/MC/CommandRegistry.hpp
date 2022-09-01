@@ -763,14 +763,46 @@ public:
      * @hash   -1194033564
      */
     MCAPI ~CommandRegistry();
-MCAPI static char const * COMMAND_NAME_ENUM_NAME;
-MCAPI static char const * FUNCTION_NAME_SOFTENUM_NAME;
-MCAPI static char const * HASITEM_PARAM_DATA;
-MCAPI static char const * HASITEM_PARAM_ITEM;
-MCAPI static char const * HASITEM_PARAM_LOCATION;
-MCAPI static char const * HASITEM_PARAM_QUANTITY;
-MCAPI static char const * HASITEM_PARAM_SLOT;
-MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
+    /**
+     * @symbol ?COMMAND_NAME_ENUM_NAME@CommandRegistry@@2PEBDEB
+     * @hash   634810018
+     */
+    MCAPI static char const * COMMAND_NAME_ENUM_NAME;
+    /**
+     * @symbol ?FUNCTION_NAME_SOFTENUM_NAME@CommandRegistry@@2PEBDEB
+     * @hash   1434550350
+     */
+    MCAPI static char const * FUNCTION_NAME_SOFTENUM_NAME;
+    /**
+     * @symbol ?HASITEM_PARAM_DATA@CommandRegistry@@2PEBDEB
+     * @hash   1200135676
+     */
+    MCAPI static char const * HASITEM_PARAM_DATA;
+    /**
+     * @symbol ?HASITEM_PARAM_ITEM@CommandRegistry@@2PEBDEB
+     * @hash   -890251002
+     */
+    MCAPI static char const * HASITEM_PARAM_ITEM;
+    /**
+     * @symbol ?HASITEM_PARAM_LOCATION@CommandRegistry@@2PEBDEB
+     * @hash   -1045517982
+     */
+    MCAPI static char const * HASITEM_PARAM_LOCATION;
+    /**
+     * @symbol ?HASITEM_PARAM_QUANTITY@CommandRegistry@@2PEBDEB
+     * @hash   1547483782
+     */
+    MCAPI static char const * HASITEM_PARAM_QUANTITY;
+    /**
+     * @symbol ?HASITEM_PARAM_SLOT@CommandRegistry@@2PEBDEB
+     * @hash   -107044420
+     */
+    MCAPI static char const * HASITEM_PARAM_SLOT;
+    /**
+     * @symbol ?TAG_VALUES_SOFTENUM_NAME@CommandRegistry@@2PEBDEB
+     * @hash   801013070
+     */
+    MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
 
 //private:
     /**
@@ -1025,6 +1057,10 @@ MCAPI static char const * TAG_VALUES_SOFTENUM_NAME;
     MCAPI static bool readRelativeCoordinate(bool &, float &, struct CommandRegistry::ParseToken const &, bool, std::string &, std::vector<std::string> &);
 
 private:
-MCAPI static struct std::pair<bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, class CommandRegistry::Symbol> const ParseRuleSymbols[];
+    /**
+     * @symbol ?ParseRuleSymbols@CommandRegistry@@0QBU?$pair@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@5@@ZVSymbol@1@@std@@B
+     * @hash   -206423100
+     */
+    MCAPI static struct std::pair<bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, class CommandRegistry::Symbol> const ParseRuleSymbols[];
 
 };

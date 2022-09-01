@@ -234,7 +234,15 @@ public:
 //private:
 
 private:
-MCAPI static int DEFAULT_HORN_COUNT;
-MCAPI static int SCREAMING_GOAT_VARIANT;
+    /**
+     * @symbol ?DEFAULT_HORN_COUNT@Goat@@0HA
+     * @hash   734316705
+     */
+    MCAPI static int DEFAULT_HORN_COUNT;
+    /**
+     * @symbol ?SCREAMING_GOAT_VARIANT@Goat@@0HA
+     * @hash   41342881
+     */
+    MCAPI static int SCREAMING_GOAT_VARIANT;
 
 };

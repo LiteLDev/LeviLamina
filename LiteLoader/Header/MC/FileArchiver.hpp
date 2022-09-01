@@ -43,11 +43,31 @@ public:
      * @hash   -1229906755
      */
     MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const &, class Core::Path const &, class std::function<void (struct FileArchiver::Result &)>);
-MCAPI static std::string const EXTENSION_ADDON;
-MCAPI static std::string const EXTENSION_RESOURCEPACK;
-MCAPI static std::string const EXTENSION_TEMPLATE;
-MCAPI static std::string const EXTENSION_VANILLA;
-MCAPI static std::string const IMPORT_LOCK_FILE;
+    /**
+     * @symbol ?EXTENSION_ADDON@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -795143491
+     */
+    MCAPI static std::string const EXTENSION_ADDON;
+    /**
+     * @symbol ?EXTENSION_RESOURCEPACK@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   741690633
+     */
+    MCAPI static std::string const EXTENSION_RESOURCEPACK;
+    /**
+     * @symbol ?EXTENSION_TEMPLATE@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1857396591
+     */
+    MCAPI static std::string const EXTENSION_TEMPLATE;
+    /**
+     * @symbol ?EXTENSION_VANILLA@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1747023155
+     */
+    MCAPI static std::string const EXTENSION_VANILLA;
+    /**
+     * @symbol ?IMPORT_LOCK_FILE@FileArchiver@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1115843513
+     */
+    MCAPI static std::string const IMPORT_LOCK_FILE;
 
 //private:
     /**

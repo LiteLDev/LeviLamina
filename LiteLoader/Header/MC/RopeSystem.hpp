@@ -69,9 +69,21 @@ public:
      * @hash   1015427867
      */
     MCAPI ~RopeSystem();
-MCAPI static float const sBucketLength;
-MCAPI static bool sEnabled;
-MCAPI static float const sEpsilon;
+    /**
+     * @symbol ?sBucketLength@RopeSystem@@2MB
+     * @hash   1366676583
+     */
+    MCAPI static float const sBucketLength;
+    /**
+     * @symbol ?sEnabled@RopeSystem@@2_NA
+     * @hash   892308101
+     */
+    MCAPI static bool sEnabled;
+    /**
+     * @symbol ?sEpsilon@RopeSystem@@2MB
+     * @hash   1369865861
+     */
+    MCAPI static float const sEpsilon;
 
 //private:
     /**

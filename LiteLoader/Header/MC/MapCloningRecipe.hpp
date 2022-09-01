@@ -77,7 +77,15 @@ public:
      * @hash   -1257205484
      */
     MCAPI MapCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-MCAPI static class mce::UUID const CartographyTableID;
-MCAPI static class mce::UUID const CraftingTableID;
+    /**
+     * @symbol ?CartographyTableID@MapCloningRecipe@@2VUUID@mce@@B
+     * @hash   -1845031637
+     */
+    MCAPI static class mce::UUID const CartographyTableID;
+    /**
+     * @symbol ?CraftingTableID@MapCloningRecipe@@2VUUID@mce@@B
+     * @hash   970546425
+     */
+    MCAPI static class mce::UUID const CraftingTableID;
 
 };

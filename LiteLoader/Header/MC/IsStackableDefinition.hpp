@@ -29,6 +29,7 @@ public:
     IsStackableDefinition(struct IsStackableDefinition const &) = delete;
     IsStackableDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsStackableDefinition@@QEAAXAEAVEntityContext@@@Z

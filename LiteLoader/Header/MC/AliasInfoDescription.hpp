@@ -25,6 +25,7 @@ public:
     struct AliasInfoDescription& operator=(struct AliasInfoDescription const &) = delete;
     AliasInfoDescription() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0AliasInfoDescription@@QEAA@AEBU0@@Z

@@ -105,11 +105,35 @@ public:
 protected:
 
 private:
-MCAPI static std::string const BUTTON_NAME_KEY;
-MCAPI static std::string const DATA_KEY;
-MCAPI static int const MAX_BUTTON_NAME_LENGTH;
-MCAPI static std::string const MODE_KEY;
-MCAPI static std::string const TEXT_KEY;
-MCAPI static std::string const TYPE_KEY;
+    /**
+     * @symbol ?BUTTON_NAME_KEY@NpcAction@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1438327092
+     */
+    MCAPI static std::string const BUTTON_NAME_KEY;
+    /**
+     * @symbol ?DATA_KEY@NpcAction@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1564974750
+     */
+    MCAPI static std::string const DATA_KEY;
+    /**
+     * @symbol ?MAX_BUTTON_NAME_LENGTH@NpcAction@@0HB
+     * @hash   1060530341
+     */
+    MCAPI static int const MAX_BUTTON_NAME_LENGTH;
+    /**
+     * @symbol ?MODE_KEY@NpcAction@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -983476521
+     */
+    MCAPI static std::string const MODE_KEY;
+    /**
+     * @symbol ?TEXT_KEY@NpcAction@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   867869121
+     */
+    MCAPI static std::string const TEXT_KEY;
+    /**
+     * @symbol ?TYPE_KEY@NpcAction@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1543624690
+     */
+    MCAPI static std::string const TYPE_KEY;
 
 };

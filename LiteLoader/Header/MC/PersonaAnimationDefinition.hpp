@@ -26,12 +26,17 @@ public:
     PersonaAnimationDefinition(struct PersonaAnimationDefinition const &) = delete;
     PersonaAnimationDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1PersonaAnimationDefinition@@QEAA@XZ
      * @hash   -48215259
      */
     MCAPI ~PersonaAnimationDefinition();
-MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;
+    /**
+     * @symbol ?INVALID_ANIMATION_DEFINITION@PersonaAnimationDefinition@@2U1@B
+     * @hash   -399018637
+     */
+    MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;
 
 };

@@ -29,6 +29,7 @@ public:
     IsChargedDefinition(struct IsChargedDefinition const &) = delete;
     IsChargedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsChargedDefinition@@QEAAXAEAVEntityContext@@@Z

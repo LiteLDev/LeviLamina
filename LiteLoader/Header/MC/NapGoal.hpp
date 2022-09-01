@@ -99,6 +99,10 @@ public:
     MCAPI void _setCooldown();
 
 private:
-MCAPI static float const MOB_DETECT_TIME;
+    /**
+     * @symbol ?MOB_DETECT_TIME@NapGoal@@0MB
+     * @hash   1433411085
+     */
+    MCAPI static float const MOB_DETECT_TIME;
 
 };

@@ -26,6 +26,7 @@ public:
     NamedMolangScript(struct NamedMolangScript const &) = delete;
     NamedMolangScript() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1NamedMolangScript@@QEAA@XZ

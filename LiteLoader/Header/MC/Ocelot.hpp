@@ -179,7 +179,15 @@ public:
      * @hash   1921802380
      */
     MCAPI Ocelot(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-MCAPI static float const SNEAK_SPEED_MOD;
-MCAPI static float const SPRINT_SPEED_MOD;
+    /**
+     * @symbol ?SNEAK_SPEED_MOD@Ocelot@@2MB
+     * @hash   2011346999
+     */
+    MCAPI static float const SNEAK_SPEED_MOD;
+    /**
+     * @symbol ?SPRINT_SPEED_MOD@Ocelot@@2MB
+     * @hash   736010845
+     */
+    MCAPI static float const SPRINT_SPEED_MOD;
 
 };

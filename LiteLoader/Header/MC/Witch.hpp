@@ -218,7 +218,15 @@ public:
 //private:
 
 private:
-MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_DRINKING;
-MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
+    /**
+     * @symbol ?SPEED_MODIFIER_DRINKING@Witch@@0V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   504281902
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_DRINKING;
+    /**
+     * @symbol ?SPEED_MODIFIER_DRINKING_UUID@Witch@@0VUUID@mce@@B
+     * @hash   2021120867
+     */
+    MCAPI static class mce::UUID const SPEED_MODIFIER_DRINKING_UUID;
 
 };

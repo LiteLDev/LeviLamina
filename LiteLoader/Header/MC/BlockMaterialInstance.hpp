@@ -25,6 +25,7 @@ public:
     BlockMaterialInstance(struct BlockMaterialInstance const &) = delete;
     BlockMaterialInstance() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4BlockMaterialInstance@@QEAAAEAU0@$$QEAU0@@Z
@@ -41,7 +42,15 @@ public:
      * @hash   1263705381
      */
     MCAPI ~BlockMaterialInstance();
-MCAPI static class std::initializer_list<struct std::pair<std::string, enum BlockRenderLayer>> const blockRenderLayerEnumValues;
-MCAPI static class BidirectionalUnorderedMap<std::string, enum BlockRenderLayer> const renderLayerNameBiMap;
+    /**
+     * @symbol ?blockRenderLayerEnumValues@BlockMaterialInstance@@2V?$initializer_list@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@@std@@@std@@B
+     * @hash   -871856993
+     */
+    MCAPI static class std::initializer_list<struct std::pair<std::string, enum BlockRenderLayer>> const blockRenderLayerEnumValues;
+    /**
+     * @symbol ?renderLayerNameBiMap@BlockMaterialInstance@@2V?$BidirectionalUnorderedMap@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockRenderLayer@@@@B
+     * @hash   828957626
+     */
+    MCAPI static class BidirectionalUnorderedMap<std::string, enum BlockRenderLayer> const renderLayerNameBiMap;
 
 };

@@ -28,6 +28,7 @@ public:
     VolumeIdentifier(struct VolumeIdentifier const &) = delete;
     VolumeIdentifier() = delete;
 #endif
+
 public:
     /**
      * @symbol ?bindType@VolumeIdentifier@@SAXXZ

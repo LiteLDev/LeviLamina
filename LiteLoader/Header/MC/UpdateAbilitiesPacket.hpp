@@ -81,6 +81,10 @@ public:
 //private:
 
 private:
-MCAPI static class std::array<enum UpdateAbilitiesPacket::SerializedAbilitiesLayer, 4> const ABILITIES_LAYER_MAP;
+    /**
+     * @symbol ?ABILITIES_LAYER_MAP@UpdateAbilitiesPacket@@0V?$array@W4SerializedAbilitiesLayer@UpdateAbilitiesPacket@@$03@std@@B
+     * @hash   -1326207825
+     */
+    MCAPI static class std::array<enum UpdateAbilitiesPacket::SerializedAbilitiesLayer, 4> const ABILITIES_LAYER_MAP;
 
 };

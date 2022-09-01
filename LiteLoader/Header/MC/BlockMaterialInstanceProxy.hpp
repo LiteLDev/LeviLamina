@@ -25,6 +25,7 @@ public:
     struct BlockMaterialInstanceProxy& operator=(struct BlockMaterialInstanceProxy const &) = delete;
     BlockMaterialInstanceProxy() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0BlockMaterialInstanceProxy@@QEAA@AEBU0@@Z

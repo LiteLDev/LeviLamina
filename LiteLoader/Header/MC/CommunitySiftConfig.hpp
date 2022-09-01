@@ -25,6 +25,7 @@ public:
     struct CommunitySiftConfig& operator=(struct CommunitySiftConfig const &) = delete;
     CommunitySiftConfig(struct CommunitySiftConfig const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0CommunitySiftConfig@@QEAA@XZ

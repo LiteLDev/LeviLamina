@@ -25,6 +25,7 @@ public:
     struct GeneticVariant& operator=(struct GeneticVariant const &) = delete;
     GeneticVariant() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0GeneticVariant@@QEAA@AEBU0@@Z

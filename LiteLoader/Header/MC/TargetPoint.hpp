@@ -26,6 +26,7 @@ public:
     TargetPoint(struct TargetPoint const &) = delete;
     TargetPoint() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0TargetPoint@@QEAA@MMMMMM@Z

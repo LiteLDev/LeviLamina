@@ -29,6 +29,7 @@ public:
     AmbientSoundIntervalDefinition(struct AmbientSoundIntervalDefinition const &) = delete;
     AmbientSoundIntervalDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?addDynamic@AmbientSoundIntervalDefinition@@QEAAXAEBUDynamicAmbientSound@@@Z

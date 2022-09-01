@@ -26,6 +26,7 @@ public:
     EntitySystemsInfo(struct EntitySystemsInfo const &) = delete;
     EntitySystemsInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ?bindType@EntitySystemsInfo@@SAXXZ

@@ -28,8 +28,20 @@ public:
 #endif
 
 public:
-MCAPI static char const CAN_ALWAYS_EAT[];
-MCAPI static char const NUTRITION[];
-MCAPI static char const SATURATION_MODIFIER[];
+    /**
+     * @symbol ?CAN_ALWAYS_EAT@IFoodItemComponent@@2QBDB
+     * @hash   -1481469501
+     */
+    MCAPI static char const CAN_ALWAYS_EAT[];
+    /**
+     * @symbol ?NUTRITION@IFoodItemComponent@@2QBDB
+     * @hash   -265837967
+     */
+    MCAPI static char const NUTRITION[];
+    /**
+     * @symbol ?SATURATION_MODIFIER@IFoodItemComponent@@2QBDB
+     * @hash   73272145
+     */
+    MCAPI static char const SATURATION_MODIFIER[];
 
 };

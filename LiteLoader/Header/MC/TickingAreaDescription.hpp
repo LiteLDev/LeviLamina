@@ -28,6 +28,7 @@ public:
     TickingAreaDescription(struct TickingAreaDescription const &) = delete;
     TickingAreaDescription() = delete;
 #endif
+
 public:
     /**
      * @symbol ?asString@TickingAreaDescription@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

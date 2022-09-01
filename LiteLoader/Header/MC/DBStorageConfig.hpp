@@ -26,6 +26,7 @@ public:
     DBStorageConfig(struct DBStorageConfig const &) = delete;
     DBStorageConfig() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1DBStorageConfig@@QEAA@XZ

@@ -59,6 +59,10 @@ public:
     MCAPI bool _simulateRoots(class IBlockWorldGenAPI &, class Random &, class BlockPos const &, class BlockPos const &, unsigned char, std::vector<class BlockPos> *, int, struct TreeHelper::TreeParams const &) const;
 
 private:
-MCAPI static float const RANDOM_SKEW_CHANCE;
+    /**
+     * @symbol ?RANDOM_SKEW_CHANCE@MangroveTreeRoots@@0MB
+     * @hash   -1932017706
+     */
+    MCAPI static float const RANDOM_SKEW_CHANCE;
 
 };

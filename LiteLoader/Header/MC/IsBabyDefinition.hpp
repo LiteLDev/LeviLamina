@@ -29,6 +29,7 @@ public:
     IsBabyDefinition(struct IsBabyDefinition const &) = delete;
     IsBabyDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsBabyDefinition@@QEAAXAEAVEntityContext@@@Z

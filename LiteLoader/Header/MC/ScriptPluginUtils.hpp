@@ -38,9 +38,21 @@ namespace ScriptPluginUtils {
      * @hash   -1981121244
      */
     MCAPI enum ScriptRuntimeType GetRuntimeTypeFromFileExtension(std::string const &);
-MCAPI extern std::string const INTERNAL_RELEASE;
-MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION;
-MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
+    /**
+     * @symbol ?INTERNAL_RELEASE@ScriptPluginUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1632828223
+     */
+    MCAPI extern std::string const INTERNAL_RELEASE;
+    /**
+     * @symbol ?JAVA_SCRIPT_RUNTIME_EXTENSION@ScriptPluginUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   753113983
+     */
+    MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION;
+    /**
+     * @symbol ?JAVA_SCRIPT_RUNTIME_NAME@ScriptPluginUtils@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -145948671
+     */
+    MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
     /**
      * @symbol ?SanitizeRuntimeName@ScriptPluginUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
      * @hash   724422454

@@ -191,9 +191,21 @@ public:
      * @hash   -248688257
      */
     MCAPI void unregisterDeleteCallback(void *);
-MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_BUG_ICON_PATH;
-MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
-MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
+    /**
+     * @symbol ?RESOURCE_PACK_BUG_ICON_PATH@ResourcePack@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -1200463800
+     */
+    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_BUG_ICON_PATH;
+    /**
+     * @symbol ?RESOURCE_PACK_ICON_PATH@ResourcePack@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -913889016
+     */
+    MCAPI static class Core::PathBuffer<std::string> const RESOURCE_PACK_ICON_PATH;
+    /**
+     * @symbol ?TEXTURES_LIST_PATH@ResourcePack@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   1022565258
+     */
+    MCAPI static class Core::PathBuffer<std::string> const TEXTURES_LIST_PATH;
 
 //private:
     /**

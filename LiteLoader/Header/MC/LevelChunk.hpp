@@ -1029,7 +1029,11 @@ public:
     MCAPI void _setBiome(class Biome const &, unsigned short, unsigned short, class Bedrock::Threading::UniqueLock<class std::shared_mutex> const &);
 
 protected:
-MCAPI static int const UPDATE_MAP_BIT_SHIFT;
+    /**
+     * @symbol ?UPDATE_MAP_BIT_SHIFT@LevelChunk@@1HB
+     * @hash   318037928
+     */
+    MCAPI static int const UPDATE_MAP_BIT_SHIFT;
 
 private:
 

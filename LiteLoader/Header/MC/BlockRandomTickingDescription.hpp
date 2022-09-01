@@ -28,6 +28,7 @@ public:
     BlockRandomTickingDescription(struct BlockRandomTickingDescription const &) = delete;
     BlockRandomTickingDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -46,7 +47,11 @@ public:
      * @hash   780481586
      */
     virtual void initializeComponent(class EntityContext &) const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockRandomTickingDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1402173159
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockRandomTickingDescription@@SAXXZ
      * @hash   -831649793

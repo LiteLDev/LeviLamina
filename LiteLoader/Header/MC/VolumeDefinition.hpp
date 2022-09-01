@@ -27,6 +27,7 @@ public:
     struct VolumeDefinition& operator=(struct VolumeDefinition const &) = delete;
     VolumeDefinition(struct VolumeDefinition const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0VolumeDefinition@@QEAA@XZ
@@ -38,7 +39,11 @@ public:
      * @hash   -891289321
      */
     MCAPI ~VolumeDefinition();
-MCAPI static std::string const NAME;
+    /**
+     * @symbol ?NAME@VolumeDefinition@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2020138823
+     */
+    MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@VolumeDefinition@@SAXXZ
      * @hash   -128145693

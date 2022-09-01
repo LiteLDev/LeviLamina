@@ -117,6 +117,10 @@ public:
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 
 protected:
-MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
+    /**
+     * @symbol ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
+     * @hash   -95545315
+     */
+    MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
 
 };

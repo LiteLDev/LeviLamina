@@ -106,10 +106,30 @@ public:
 //private:
 
 private:
-MCAPI static class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> mBlockAliasLookupMap;
-MCAPI static class std::map<class HashedString, class SharedPtr<class BlockLegacy>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>> mBlockLookupMap;
-MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
-MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> mKnownNamespaces;
-MCAPI static class std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
+    /**
+     * @symbol ?mBlockAliasLookupMap@BlockTypeRegistry@@0V?$unordered_map@VHashedString@@V1@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@A
+     * @hash   1254082634
+     */
+    MCAPI static class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> mBlockAliasLookupMap;
+    /**
+     * @symbol ?mBlockLookupMap@BlockTypeRegistry@@0V?$map@VHashedString@@V?$SharedPtr@VBlockLegacy@@@@U?$less@VHashedString@@@std@@V?$allocator@U?$pair@$$CBVHashedString@@V?$SharedPtr@VBlockLegacy@@@@@std@@@4@@std@@A
+     * @hash   -347057242
+     */
+    MCAPI static class std::map<class HashedString, class SharedPtr<class BlockLegacy>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>> mBlockLookupMap;
+    /**
+     * @symbol ?mEntities@BlockTypeRegistry@@0V?$OwnerPtrT@UEntityRegistryRefTraits@@@@A
+     * @hash   1216090067
+     */
+    MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
+    /**
+     * @symbol ?mKnownNamespaces@BlockTypeRegistry@@0V?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@A
+     * @hash   1591410004
+     */
+    MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> mKnownNamespaces;
+    /**
+     * @symbol ?mRWLock@BlockTypeRegistry@@0V?$shared_ptr@VBlockTypeRegistryRWLock@@@std@@A
+     * @hash   -1816769675
+     */
+    MCAPI static class std::shared_ptr<class BlockTypeRegistryRWLock> mRWLock;
 
 };

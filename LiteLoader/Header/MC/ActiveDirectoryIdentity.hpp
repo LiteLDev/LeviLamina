@@ -30,17 +30,49 @@ public:
 #endif
 
 public:
-MCAPI static std::string const IS_VALID_FIELD;
-MCAPI static std::string const JWT_EXPIRATION_FIELD;
-MCAPI static std::string const JWT_REQUEST_ID_FIELD;
-MCAPI static std::string const PAYLOAD_FIELD;
-MCAPI static std::string const PUBLIC_KEY;
-MCAPI static std::string const REQUEST_ID_FIELD;
-MCAPI static std::string const RESPONSE_FIELD;
+    /**
+     * @symbol ?IS_VALID_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -600998501
+     */
+    MCAPI static std::string const IS_VALID_FIELD;
+    /**
+     * @symbol ?JWT_EXPIRATION_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -101846853
+     */
+    MCAPI static std::string const JWT_EXPIRATION_FIELD;
+    /**
+     * @symbol ?JWT_REQUEST_ID_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2130610917
+     */
+    MCAPI static std::string const JWT_REQUEST_ID_FIELD;
+    /**
+     * @symbol ?PAYLOAD_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1430836263
+     */
+    MCAPI static std::string const PAYLOAD_FIELD;
+    /**
+     * @symbol ?PUBLIC_KEY@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   783215995
+     */
+    MCAPI static std::string const PUBLIC_KEY;
+    /**
+     * @symbol ?REQUEST_ID_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -184123269
+     */
+    MCAPI static std::string const REQUEST_ID_FIELD;
+    /**
+     * @symbol ?RESPONSE_FIELD@ActiveDirectoryIdentity@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   306869179
+     */
+    MCAPI static std::string const RESPONSE_FIELD;
 
 //private:
 
 private:
-MCAPI static std::string mCachedServiceEndpoint;
+    /**
+     * @symbol ?mCachedServiceEndpoint@ActiveDirectoryIdentity@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A
+     * @hash   1365042124
+     */
+    MCAPI static std::string mCachedServiceEndpoint;
 
 };

@@ -49,6 +49,10 @@ public:
 //private:
 
 private:
-MCAPI static class AllowListFile * mAllowListFile;
+    /**
+     * @symbol ?mAllowListFile@AllowListCommand@@0PEAVAllowListFile@@EA
+     * @hash   397964503
+     */
+    MCAPI static class AllowListFile * mAllowListFile;
 
 };

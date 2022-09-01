@@ -55,7 +55,11 @@ public:
      * @hash   -1962279014
      */
     MCAPI void registerToBlock(class BlockLegacy &);
-MCAPI static int const MAX_ENUM_SIZE;
+    /**
+     * @symbol ?MAX_ENUM_SIZE@BlockStateGroup@@2HB
+     * @hash   -633531167
+     */
+    MCAPI static int const MAX_ENUM_SIZE;
     /**
      * @symbol ?createFromItemState@BlockStateGroup@@SA?AV?$unique_ptr@UBlockStateDefinition@@U?$default_delete@UBlockStateDefinition@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVItemState@@@Z
      * @hash   -1354973886

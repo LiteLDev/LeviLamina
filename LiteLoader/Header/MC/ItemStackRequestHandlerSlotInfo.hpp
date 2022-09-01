@@ -27,6 +27,7 @@ public:
     struct ItemStackRequestHandlerSlotInfo& operator=(struct ItemStackRequestHandlerSlotInfo const &) = delete;
     ItemStackRequestHandlerSlotInfo(struct ItemStackRequestHandlerSlotInfo const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ItemStackRequestHandlerSlotInfo@@QEAA@XZ

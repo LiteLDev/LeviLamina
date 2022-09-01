@@ -26,6 +26,7 @@ public:
     ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo const &) = delete;
     ItemStackResponseSlotInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ItemStackResponseSlotInfo@@QEAA@$$QEAU0@@Z

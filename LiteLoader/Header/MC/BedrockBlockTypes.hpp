@@ -22,9 +22,21 @@ namespace BedrockBlockTypes {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class WeakPtr<class BlockLegacy> mAir;
-MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
-MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
+    /**
+     * @symbol ?mAir@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
+     * @hash   -1375757224
+     */
+    MCAPI extern class WeakPtr<class BlockLegacy> mAir;
+    /**
+     * @symbol ?mClientRequestPlaceholderBlock@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
+     * @hash   -92785912
+     */
+    MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
+    /**
+     * @symbol ?mUnknown@BedrockBlockTypes@@3V?$WeakPtr@VBlockLegacy@@@@A
+     * @hash   2074592232
+     */
+    MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
     /**
      * @symbol ?registerBlocks@BedrockBlockTypes@@YAXXZ
      * @hash   -846368850

@@ -587,10 +587,26 @@ public:
      * @hash   755206387
      */
     MCAPI void updateDimensionBlockSourceTick();
-MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
-MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
-MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
-MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1>> const STRUCTURE_PRUNE_INTERVAL;
+    /**
+     * @symbol ?CurrentLimboEntitiesVersion@Dimension@@2W4LimboEntitiesVersion@@B
+     * @hash   -1120954111
+     */
+    MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
+    /**
+     * @symbol ?LOW_CPU_PACKET_BLOCK_LIMIT@Dimension@@2IB
+     * @hash   -1102638065
+     */
+    MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
+    /**
+     * @symbol ?MOON_BRIGHTNESS_PER_PHASE@Dimension@@2QBMB
+     * @hash   -958066792
+     */
+    MCAPI static float const MOON_BRIGHTNESS_PER_PHASE[];
+    /**
+     * @symbol ?STRUCTURE_PRUNE_INTERVAL@Dimension@@2V?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@B
+     * @hash   172752257
+     */
+    MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1>> const STRUCTURE_PRUNE_INTERVAL;
 
 //protected:
     /**

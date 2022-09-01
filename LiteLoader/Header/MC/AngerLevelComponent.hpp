@@ -92,11 +92,31 @@ public:
      * @hash   -96298916
      */
     MCAPI ~AngerLevelComponent();
-MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
-MCAPI static int const DEFAULT_ANGRY_BOOST;
-MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
-MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
-MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
+    /**
+     * @symbol ?DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS@AngerLevelComponent@@2MB
+     * @hash   154470757
+     */
+    MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
+    /**
+     * @symbol ?DEFAULT_ANGRY_BOOST@AngerLevelComponent@@2HB
+     * @hash   -574596065
+     */
+    MCAPI static int const DEFAULT_ANGRY_BOOST;
+    /**
+     * @symbol ?DEFAULT_ANGRY_THRESHOLD@AngerLevelComponent@@2HB
+     * @hash   -1047599833
+     */
+    MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
+    /**
+     * @symbol ?DEFAULT_MAX_ANGER_LEVEL@AngerLevelComponent@@2HB
+     * @hash   368758315
+     */
+    MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
+    /**
+     * @symbol ?DEFAULT_SHOULD_REMOVE_TARGET@AngerLevelComponent@@2_NB
+     * @hash   -26682211
+     */
+    MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
 
 //private:
     /**

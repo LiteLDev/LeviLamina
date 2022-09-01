@@ -29,6 +29,7 @@ public:
     OnStartLandingDefinition(struct OnStartLandingDefinition const &) = delete;
     OnStartLandingDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnStartLandingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnStartLandingDefinition@@@JsonUtil@@@std@@@Z

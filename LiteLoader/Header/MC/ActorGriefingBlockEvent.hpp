@@ -25,6 +25,7 @@ public:
     struct ActorGriefingBlockEvent& operator=(struct ActorGriefingBlockEvent const &) = delete;
     ActorGriefingBlockEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ActorGriefingBlockEvent@@QEAA@AEBU0@@Z

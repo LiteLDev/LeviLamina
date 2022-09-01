@@ -28,6 +28,7 @@ public:
     PacksInfoData(struct PacksInfoData const &) = delete;
     PacksInfoData() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getBehaviorPackSize@PacksInfoData@@QEBA_KXZ

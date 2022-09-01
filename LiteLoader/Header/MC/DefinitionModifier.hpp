@@ -25,6 +25,7 @@ public:
     struct DefinitionModifier& operator=(struct DefinitionModifier const &) = delete;
     DefinitionModifier() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0DefinitionModifier@@QEAA@AEBU0@@Z

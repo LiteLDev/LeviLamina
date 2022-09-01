@@ -88,6 +88,10 @@ public:
 //private:
 
 private:
-MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
+    /**
+     * @symbol ?actionTypeMap@ItemStackRequestAction@@0V?$BidirectionalUnorderedMap@W4ItemStackRequestActionType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+     * @hash   -1080217533
+     */
+    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
 
 };

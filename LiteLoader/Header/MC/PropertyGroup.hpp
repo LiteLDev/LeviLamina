@@ -76,9 +76,21 @@ public:
      * @hash   1826659830
      */
     MCAPI ~PropertyGroup();
-MCAPI static unsigned __int64 const MAX_ENUM_SIZE;
-MCAPI static unsigned __int64 const MAX_ENUM_VALUE_SIZE;
-MCAPI static unsigned __int64 const MAX_PROPERTIES_COUNT;
+    /**
+     * @symbol ?MAX_ENUM_SIZE@PropertyGroup@@2_KB
+     * @hash   1576799096
+     */
+    MCAPI static unsigned __int64 const MAX_ENUM_SIZE;
+    /**
+     * @symbol ?MAX_ENUM_VALUE_SIZE@PropertyGroup@@2_KB
+     * @hash   1156859904
+     */
+    MCAPI static unsigned __int64 const MAX_ENUM_VALUE_SIZE;
+    /**
+     * @symbol ?MAX_PROPERTIES_COUNT@PropertyGroup@@2_KB
+     * @hash   157738218
+     */
+    MCAPI static unsigned __int64 const MAX_PROPERTIES_COUNT;
     /**
      * @symbol ?isValidEnumEntry@PropertyGroup@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   809926671

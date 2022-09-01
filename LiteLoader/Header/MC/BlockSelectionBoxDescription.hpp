@@ -26,6 +26,7 @@ public:
     BlockSelectionBoxDescription(struct BlockSelectionBoxDescription const &) = delete;
     BlockSelectionBoxDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -67,7 +68,11 @@ public:
      * @hash   -293447985
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockSelectionBoxDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -846352401
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockSelectionBoxDescription@@SAXXZ
      * @hash   -1792050125

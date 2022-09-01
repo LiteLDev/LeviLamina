@@ -29,6 +29,7 @@ public:
     GroundOffsetDefinition(struct GroundOffsetDefinition const &) = delete;
     GroundOffsetDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@GroundOffsetDefinition@@QEAAXAEAVEntityContext@@@Z

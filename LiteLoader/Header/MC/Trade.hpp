@@ -28,6 +28,7 @@ public:
     Trade(struct Trade const &) = delete;
     Trade() = delete;
 #endif
+
 public:
     /**
      * @symbol ??4Trade@@QEAAAEAU0@$$QEAU0@@Z

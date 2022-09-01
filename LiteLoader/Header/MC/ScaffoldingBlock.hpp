@@ -330,7 +330,11 @@ public:
      * @hash   -600225489
      */
     MCAPI ScaffoldingBlock(std::string const &, int);
-MCAPI static int const MAX_STABILITY;
+    /**
+     * @symbol ?MAX_STABILITY@ScaffoldingBlock@@2HB
+     * @hash   1109287455
+     */
+    MCAPI static int const MAX_STABILITY;
 
 //protected:
     /**

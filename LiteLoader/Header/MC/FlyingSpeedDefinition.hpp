@@ -29,6 +29,7 @@ public:
     FlyingSpeedDefinition(struct FlyingSpeedDefinition const &) = delete;
     FlyingSpeedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@FlyingSpeedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFlyingSpeedDefinition@@@JsonUtil@@@std@@@Z

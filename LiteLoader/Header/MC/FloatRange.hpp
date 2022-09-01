@@ -29,6 +29,7 @@ public:
     FloatRange(struct FloatRange const &) = delete;
     FloatRange() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getValue@FloatRange@@QEBAMAEAVRandom@@@Z

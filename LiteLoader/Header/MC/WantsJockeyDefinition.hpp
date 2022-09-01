@@ -29,6 +29,7 @@ public:
     WantsJockeyDefinition(struct WantsJockeyDefinition const &) = delete;
     WantsJockeyDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@WantsJockeyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWantsJockeyDefinition@@@JsonUtil@@@std@@@Z

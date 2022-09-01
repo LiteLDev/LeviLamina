@@ -63,9 +63,25 @@ public:
 //private:
 
 private:
-MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
-MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
-MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
-MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1965495841
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_IGLOO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -471954177
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_LABORATORY@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1679394118
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_LADDER@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -925837579
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
 
 };

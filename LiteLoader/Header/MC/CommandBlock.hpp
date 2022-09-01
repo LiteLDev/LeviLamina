@@ -358,6 +358,10 @@ public:
     MCAPI void _installCircuit(class BlockSource &, class BlockPos const &, bool) const;
 
 private:
-MCAPI static int mCBModeMap[];
+    /**
+     * @symbol ?mCBModeMap@CommandBlock@@0PAHA
+     * @hash   1392268844
+     */
+    MCAPI static int mCBModeMap[];
 
 };

@@ -120,6 +120,10 @@ public:
 //private:
 
 private:
-MCAPI static class mce::UUID const mInvalidUUID;
+    /**
+     * @symbol ?mInvalidUUID@AttributeModifier@@0VUUID@mce@@B
+     * @hash   -1190485524
+     */
+    MCAPI static class mce::UUID const mInvalidUUID;
 
 };

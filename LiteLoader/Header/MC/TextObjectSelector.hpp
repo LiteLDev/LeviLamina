@@ -59,7 +59,15 @@ public:
      * @hash   -2143860464
      */
     MCAPI TextObjectSelector(std::string);
-MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
-MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
+    /**
+     * @symbol ?RAW_TEXT_SELECTOR_KEY@TextObjectSelector@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   309422667
+     */
+    MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
+    /**
+     * @symbol ?RAW_TEXT_SELECTOR_STAR@TextObjectSelector@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -557675901
+     */
+    MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
 
 };

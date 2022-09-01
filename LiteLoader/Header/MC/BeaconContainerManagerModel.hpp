@@ -65,7 +65,11 @@ public:
      * @hash   429591564
      */
     MCAPI BeaconContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-MCAPI static int const PAYMENT_SLOT;
+    /**
+     * @symbol ?PAYMENT_SLOT@BeaconContainerManagerModel@@2HB
+     * @hash   -1993433483
+     */
+    MCAPI static int const PAYMENT_SLOT;
 
 //private:
     /**

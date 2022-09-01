@@ -285,19 +285,75 @@ public:
     MCAPI bool _trySwapItem(class Player &, enum EquipmentSlot);
 
 private:
-MCAPI static struct ArmorStand::Pose const POSE_ATHENA;
-MCAPI static struct ArmorStand::Pose const POSE_BRANDISH;
-MCAPI static struct ArmorStand::Pose const POSE_CANCAN_A;
-MCAPI static struct ArmorStand::Pose const POSE_CANCAN_B;
-MCAPI static struct ArmorStand::Pose const POSE_DEFAULT;
-MCAPI static struct ArmorStand::Pose const POSE_ENTERTAIN;
-MCAPI static struct ArmorStand::Pose const POSE_HERO;
-MCAPI static struct ArmorStand::Pose const POSE_HONOR;
-MCAPI static struct ArmorStand::Pose const POSE_RIPOSTE;
-MCAPI static struct ArmorStand::Pose const POSE_SALUTE;
-MCAPI static struct ArmorStand::Pose const POSE_SOLEMN;
-MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
-MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
-MCAPI static struct ArmorStand::Pose const * STAND_POSES[];
+    /**
+     * @symbol ?POSE_ATHENA@ArmorStand@@0UPose@1@B
+     * @hash   552815583
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_ATHENA;
+    /**
+     * @symbol ?POSE_BRANDISH@ArmorStand@@0UPose@1@B
+     * @hash   684109235
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_BRANDISH;
+    /**
+     * @symbol ?POSE_CANCAN_A@ArmorStand@@0UPose@1@B
+     * @hash   -601377986
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_CANCAN_A;
+    /**
+     * @symbol ?POSE_CANCAN_B@ArmorStand@@0UPose@1@B
+     * @hash   1550388991
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_CANCAN_B;
+    /**
+     * @symbol ?POSE_DEFAULT@ArmorStand@@0UPose@1@B
+     * @hash   -598430559
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_DEFAULT;
+    /**
+     * @symbol ?POSE_ENTERTAIN@ArmorStand@@0UPose@1@B
+     * @hash   -1434592854
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_ENTERTAIN;
+    /**
+     * @symbol ?POSE_HERO@ArmorStand@@0UPose@1@B
+     * @hash   796021302
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_HERO;
+    /**
+     * @symbol ?POSE_HONOR@ArmorStand@@0UPose@1@B
+     * @hash   359851914
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_HONOR;
+    /**
+     * @symbol ?POSE_RIPOSTE@ArmorStand@@0UPose@1@B
+     * @hash   1314695470
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_RIPOSTE;
+    /**
+     * @symbol ?POSE_SALUTE@ArmorStand@@0UPose@1@B
+     * @hash   -923996892
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_SALUTE;
+    /**
+     * @symbol ?POSE_SOLEMN@ArmorStand@@0UPose@1@B
+     * @hash   493955762
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_SOLEMN;
+    /**
+     * @symbol ?POSE_ZERO_ROTATION@ArmorStand@@0UPose@1@B
+     * @hash   -1240981483
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
+    /**
+     * @symbol ?POSE_ZOMBIE@ArmorStand@@0UPose@1@B
+     * @hash   -1845689278
+     */
+    MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
+    /**
+     * @symbol ?STAND_POSES@ArmorStand@@0PAPEBUPose@1@A
+     * @hash   -1563150078
+     */
+    MCAPI static struct ArmorStand::Pose const * STAND_POSES[];
 
 };

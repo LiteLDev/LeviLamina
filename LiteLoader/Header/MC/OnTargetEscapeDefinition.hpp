@@ -29,6 +29,7 @@ public:
     OnTargetEscapeDefinition(struct OnTargetEscapeDefinition const &) = delete;
     OnTargetEscapeDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnTargetEscapeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnTargetEscapeDefinition@@@JsonUtil@@@std@@@Z

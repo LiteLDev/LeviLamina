@@ -26,6 +26,7 @@ public:
     websocket_outgoing_message(struct websocket_outgoing_message const &) = delete;
     websocket_outgoing_message() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1websocket_outgoing_message@@QEAA@XZ

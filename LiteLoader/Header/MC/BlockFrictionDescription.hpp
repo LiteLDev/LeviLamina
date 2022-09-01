@@ -28,6 +28,7 @@ public:
     BlockFrictionDescription(struct BlockFrictionDescription const &) = delete;
     BlockFrictionDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   1543866932
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockFrictionDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1404750461
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockFrictionDescription@@SAXXZ
      * @hash   1289678467

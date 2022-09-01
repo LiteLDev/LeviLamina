@@ -275,6 +275,10 @@ public:
 //private:
 
 private:
-MCAPI static int const MAX_AGE;
+    /**
+     * @symbol ?MAX_AGE@NetherWartBlock@@0HB
+     * @hash   719251459
+     */
+    MCAPI static int const MAX_AGE;
 
 };

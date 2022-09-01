@@ -68,7 +68,11 @@ public:
      * @hash   491162142
      */
     MCAPI ~DynamicProperties();
-MCAPI static std::string const STORAGE_TAG;
+    /**
+     * @symbol ?STORAGE_TAG@DynamicProperties@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1129460001
+     */
+    MCAPI static std::string const STORAGE_TAG;
     /**
      * @symbol ?readFromLevelStorage@DynamicProperties@@SA?AV?$unique_ptr@VDynamicProperties@@U?$default_delete@VDynamicProperties@@@std@@@std@@AEAVLevelStorage@@@Z
      * @hash   2130049247

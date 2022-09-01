@@ -29,6 +29,7 @@ public:
     VariantDefinition(struct VariantDefinition const &) = delete;
     VariantDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@VariantDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UVariantDefinition@@@JsonUtil@@@std@@@Z

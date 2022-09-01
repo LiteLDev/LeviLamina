@@ -26,6 +26,7 @@ struct SlotDescriptor {
 public:
     struct SlotDescriptor& operator=(struct SlotDescriptor const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SlotDescriptor@@QEAA@XZ

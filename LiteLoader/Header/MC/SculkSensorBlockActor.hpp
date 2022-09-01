@@ -115,8 +115,16 @@ public:
      * @hash   -678414987
      */
     MCAPI void onStepOn(class BlockSource &, class Actor &);
-MCAPI static enum BlockActorType const TypeId;
-MCAPI static std::string const TypeString;
+    /**
+     * @symbol ?TypeId@SculkSensorBlockActor@@2W4BlockActorType@@B
+     * @hash   -1776205697
+     */
+    MCAPI static enum BlockActorType const TypeId;
+    /**
+     * @symbol ?TypeString@SculkSensorBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1055750183
+     */
+    MCAPI static std::string const TypeString;
     /**
      * @symbol ?tryGet@SculkSensorBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   -1923498024

@@ -26,6 +26,7 @@ public:
     EditorActorPauseTickNeededComponent(struct EditorActorPauseTickNeededComponent const &) = delete;
     EditorActorPauseTickNeededComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1EditorActorPauseTickNeededComponent@@QEAA@XZ

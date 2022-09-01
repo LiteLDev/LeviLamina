@@ -27,6 +27,7 @@ public:
     struct DirtyTicksCounter& operator=(struct DirtyTicksCounter const &) = delete;
     DirtyTicksCounter(struct DirtyTicksCounter const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0DirtyTicksCounter@@QEAA@XZ

@@ -149,9 +149,21 @@ public:
      * @hash   -1514801875
      */
     MCAPI ~ActorDefinitionIdentifier();
-MCAPI static std::string const EVENT_BEGIN;
-MCAPI static std::string const EVENT_END;
-MCAPI static std::string const NAMESPACE_SEPARATOR;
+    /**
+     * @symbol ?EVENT_BEGIN@ActorDefinitionIdentifier@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -223773671
+     */
+    MCAPI static std::string const EVENT_BEGIN;
+    /**
+     * @symbol ?EVENT_END@ActorDefinitionIdentifier@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1513421881
+     */
+    MCAPI static std::string const EVENT_END;
+    /**
+     * @symbol ?NAMESPACE_SEPARATOR@ActorDefinitionIdentifier@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1920042087
+     */
+    MCAPI static std::string const NAMESPACE_SEPARATOR;
 
 //private:
     /**

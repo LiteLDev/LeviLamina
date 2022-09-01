@@ -75,7 +75,11 @@ public:
      * @hash   402210918
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
-MCAPI static int const INVALID_ALLELE_VALUE;
+    /**
+     * @symbol ?INVALID_ALLELE_VALUE@GeneticsComponent@@2HB
+     * @hash   -797810771
+     */
+    MCAPI static int const INVALID_ALLELE_VALUE;
 
 //private:
     /**
@@ -85,8 +89,20 @@ MCAPI static int const INVALID_ALLELE_VALUE;
     MCAPI struct GeneticsComponent::Gene _crossParentGenes(struct GeneDefinition const &, struct GeneticsComponent::Gene &, struct GeneticsComponent::Gene &);
 
 private:
-MCAPI static std::string const GENE_ARRAY;
-MCAPI static std::string const HIDDEN_ALLELE;
-MCAPI static std::string const MAIN_ALLELE;
+    /**
+     * @symbol ?GENE_ARRAY@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1958181393
+     */
+    MCAPI static std::string const GENE_ARRAY;
+    /**
+     * @symbol ?HIDDEN_ALLELE@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1131642798
+     */
+    MCAPI static std::string const HIDDEN_ALLELE;
+    /**
+     * @symbol ?MAIN_ALLELE@GeneticsComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1938512157
+     */
+    MCAPI static std::string const MAIN_ALLELE;
 
 };

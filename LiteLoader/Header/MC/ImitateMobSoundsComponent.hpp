@@ -44,6 +44,10 @@ public:
 //private:
 
 private:
-MCAPI static class std::unordered_map<enum ActorType, enum LevelSoundEvent, struct std::hash<enum ActorType>, struct std::equal_to<enum ActorType>, class std::allocator<struct std::pair<enum ActorType const, enum LevelSoundEvent>>> const imitateMobMap;
+    /**
+     * @symbol ?imitateMobMap@ImitateMobSoundsComponent@@0V?$unordered_map@W4ActorType@@W4LevelSoundEvent@@U?$hash@W4ActorType@@@std@@U?$equal_to@W4ActorType@@@4@V?$allocator@U?$pair@$$CBW4ActorType@@W4LevelSoundEvent@@@std@@@4@@std@@B
+     * @hash   -889400048
+     */
+    MCAPI static class std::unordered_map<enum ActorType, enum LevelSoundEvent, struct std::hash<enum ActorType>, struct std::equal_to<enum ActorType>, class std::allocator<struct std::pair<enum ActorType const, enum LevelSoundEvent>>> const imitateMobMap;
 
 };

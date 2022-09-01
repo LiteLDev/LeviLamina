@@ -246,7 +246,15 @@ public:
      * @hash   -368297415
      */
     MCAPI WeightedPressurePlateBlock(std::string const &, int, class Material const &, int);
-MCAPI static int const MAX_WEIGHT_HEAVY;
-MCAPI static int const MAX_WEIGHT_LIGHT;
+    /**
+     * @symbol ?MAX_WEIGHT_HEAVY@WeightedPressurePlateBlock@@2HB
+     * @hash   1550459101
+     */
+    MCAPI static int const MAX_WEIGHT_HEAVY;
+    /**
+     * @symbol ?MAX_WEIGHT_LIGHT@WeightedPressurePlateBlock@@2HB
+     * @hash   774330425
+     */
+    MCAPI static int const MAX_WEIGHT_LIGHT;
 
 };

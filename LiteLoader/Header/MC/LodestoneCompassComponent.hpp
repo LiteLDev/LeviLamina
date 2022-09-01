@@ -79,6 +79,10 @@ public:
     MCAPI class LodestoneCompassComponentCalculator * _findCalculator(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
 
 private:
-MCAPI static class CompassSpriteCalculator mSpinningLodestone;
+    /**
+     * @symbol ?mSpinningLodestone@LodestoneCompassComponent@@0VCompassSpriteCalculator@@A
+     * @hash   -1761177748
+     */
+    MCAPI static class CompassSpriteCalculator mSpinningLodestone;
 
 };

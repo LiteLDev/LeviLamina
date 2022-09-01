@@ -33,6 +33,7 @@ public:
     CappedSurfaceAttributes(struct CappedSurfaceAttributes const &) = delete;
     CappedSurfaceAttributes() = delete;
 #endif
+
 public:
     /**
      * @symbol ?getCeilingMaterial@CappedSurfaceAttributes@@QEBAPEBVBlock@@AEBVVec3@@@Z

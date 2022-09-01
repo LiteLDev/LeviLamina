@@ -26,6 +26,7 @@ public:
     BlockCollisionBoxDescription(struct BlockCollisionBoxDescription const &) = delete;
     BlockCollisionBoxDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -67,7 +68,11 @@ public:
      * @hash   -109653451
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockCollisionBoxDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1012917733
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCollisionBoxDescription@@SAXXZ
      * @hash   -1506497501

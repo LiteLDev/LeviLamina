@@ -74,7 +74,15 @@ public:
     MCAPI static bool _recursiveChildren(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const &, enum EndCityPieces::SectionType, int, class EndCityPieces::EndCityPiece *, class BlockPos const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
 
 private:
-MCAPI static class LegacyStructureSettings mInsertSettings;
-MCAPI static class LegacyStructureSettings mOverwriteSettings;
+    /**
+     * @symbol ?mInsertSettings@EndCityPieces@@0VLegacyStructureSettings@@A
+     * @hash   -1294188300
+     */
+    MCAPI static class LegacyStructureSettings mInsertSettings;
+    /**
+     * @symbol ?mOverwriteSettings@EndCityPieces@@0VLegacyStructureSettings@@A
+     * @hash   1645808748
+     */
+    MCAPI static class LegacyStructureSettings mOverwriteSettings;
 
 };

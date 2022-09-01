@@ -111,8 +111,20 @@ public:
     MCAPI void _lookAt(class Actor *);
 
 private:
-MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
-MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
-MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
+    /**
+     * @symbol ?FIND_PARTNER_INTERVAL_TICKS@MingleGoal@@0HB
+     * @hash   2058621220
+     */
+    MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
+    /**
+     * @symbol ?SPEAK_INTERVAL_TICKS_MAX@MingleGoal@@0HB
+     * @hash   99605889
+     */
+    MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
+    /**
+     * @symbol ?SPEAK_INTERVAL_TICKS_MIN@MingleGoal@@0HB
+     * @hash   -795458005
+     */
+    MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
 
 };

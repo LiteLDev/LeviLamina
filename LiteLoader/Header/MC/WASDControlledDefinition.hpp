@@ -29,6 +29,7 @@ public:
     WASDControlledDefinition(struct WASDControlledDefinition const &) = delete;
     WASDControlledDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@WASDControlledDefinition@@QEAAXAEAVEntityContext@@@Z

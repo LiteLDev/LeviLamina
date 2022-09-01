@@ -29,6 +29,7 @@ public:
     IsChestedDefinition(struct IsChestedDefinition const &) = delete;
     IsChestedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsChestedDefinition@@QEAAXAEAVEntityContext@@@Z

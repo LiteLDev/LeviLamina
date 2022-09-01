@@ -26,6 +26,7 @@ public:
     OSInformation(struct OSInformation const &) = delete;
     OSInformation() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1OSInformation@@QEAA@XZ

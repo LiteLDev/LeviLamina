@@ -26,6 +26,7 @@ public:
     GameRuleId(struct GameRuleId const &) = delete;
     GameRuleId() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0GameRuleId@@QEAA@H@Z

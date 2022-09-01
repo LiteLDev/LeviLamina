@@ -26,6 +26,7 @@ public:
     MolangQueryFunctionPtr(struct MolangQueryFunctionPtr const &) = delete;
     MolangQueryFunctionPtr() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MolangQueryFunctionPtr@@QEAA@XZ

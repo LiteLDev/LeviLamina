@@ -28,6 +28,7 @@ public:
     BlockQueuedTickingDescription(struct BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -46,7 +47,11 @@ public:
      * @hash   -438877534
      */
     virtual void initializeComponent(class EntityContext &) const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockQueuedTickingDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1001747215
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockQueuedTickingDescription@@SAXXZ
      * @hash   -260920449

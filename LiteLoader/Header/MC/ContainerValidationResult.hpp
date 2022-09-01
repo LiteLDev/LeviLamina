@@ -28,6 +28,7 @@ public:
     ContainerValidationResult(struct ContainerValidationResult const &) = delete;
     ContainerValidationResult() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ContainerValidationResult@@QEAA@W4ContainerValidationOutcome@@@Z

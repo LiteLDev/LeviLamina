@@ -27,6 +27,7 @@ public:
     struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const &) = delete;
     PlayerScoreboardId(struct PlayerScoreboardId const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PlayerScoreboardId@@QEAA@XZ
@@ -48,6 +49,10 @@ public:
      * @hash   1773827781
      */
     MCAPI bool operator==(struct PlayerScoreboardId const &) const;
-MCAPI static struct PlayerScoreboardId const INVALID;
+    /**
+     * @symbol ?INVALID@PlayerScoreboardId@@2U1@B
+     * @hash   -2101780108
+     */
+    MCAPI static struct PlayerScoreboardId const INVALID;
 
 };

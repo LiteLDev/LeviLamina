@@ -26,6 +26,7 @@ public:
     PlayerFormCloseEvent(struct PlayerFormCloseEvent const &) = delete;
     PlayerFormCloseEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1PlayerFormCloseEvent@@QEAA@XZ

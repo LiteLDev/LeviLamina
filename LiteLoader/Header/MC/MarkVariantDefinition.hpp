@@ -29,6 +29,7 @@ public:
     MarkVariantDefinition(struct MarkVariantDefinition const &) = delete;
     MarkVariantDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@MarkVariantDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UMarkVariantDefinition@@@JsonUtil@@@std@@@Z

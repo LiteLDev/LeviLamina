@@ -24,6 +24,7 @@ struct ConstBlockSourceComponent {
 public:
     ConstBlockSourceComponent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ConstBlockSourceComponent@@QEAA@V?$not_null@PEBVIConstBlockSource@@@gsl@@@Z

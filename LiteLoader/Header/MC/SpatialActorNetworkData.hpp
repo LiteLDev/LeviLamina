@@ -130,7 +130,15 @@ public:
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(struct ActorUniqueID const &) const;
 
 private:
-MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
-MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
+    /**
+     * @symbol ?mDebugSendRateModifiers@SpatialActorNetworkData@@0UDebugSendRateModifiers@1@A
+     * @hash   -1001975811
+     */
+    MCAPI static struct SpatialActorNetworkData::DebugSendRateModifiers mDebugSendRateModifiers;
+    /**
+     * @symbol ?mDebugSpatialPacketModifiers@SpatialActorNetworkData@@0UDebugSpatialPacketModifiers@1@A
+     * @hash   1708951951
+     */
+    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers mDebugSpatialPacketModifiers;
 
 };

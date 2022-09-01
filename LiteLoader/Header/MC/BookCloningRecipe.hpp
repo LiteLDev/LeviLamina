@@ -82,6 +82,10 @@ public:
      * @hash   1179477228
      */
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
-MCAPI static class mce::UUID const ID;
+    /**
+     * @symbol ?ID@BookCloningRecipe@@2VUUID@mce@@B
+     * @hash   1560630623
+     */
+    MCAPI static class mce::UUID const ID;
 
 };

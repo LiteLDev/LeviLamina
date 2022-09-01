@@ -25,6 +25,7 @@ public:
     struct PlayerArmorExchangeEvent& operator=(struct PlayerArmorExchangeEvent const &) = delete;
     PlayerArmorExchangeEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PlayerArmorExchangeEvent@@QEAA@AEBU0@@Z

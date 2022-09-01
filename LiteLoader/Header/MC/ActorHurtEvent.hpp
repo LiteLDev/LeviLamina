@@ -26,6 +26,7 @@ public:
     ActorHurtEvent(struct ActorHurtEvent const &) = delete;
     ActorHurtEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorHurtEvent@@QEAA@XZ

@@ -90,19 +90,75 @@ public:
     MCAPI void _addValleys(std::vector<struct BiomeNoiseTarget> &, struct ClimateUtils::Parameter const &) const;
 
 private:
-MCAPI static struct ClimateUtils::Parameter const EROSIONS[];
-MCAPI static struct ClimateUtils::Parameter const FULL_RANGE;
-MCAPI static struct ClimateUtils::Parameter const HUMIDITIES[];
-MCAPI static struct ClimateUtils::Parameter const TEMPERATURES[];
-MCAPI static struct ClimateUtils::Parameter const coastContinentalness;
-MCAPI static struct ClimateUtils::Parameter const deepOceanContinentalness;
-MCAPI static struct ClimateUtils::Parameter const dripstoneCavesContinentalness;
-MCAPI static struct ClimateUtils::Parameter const farInlandContinentalness;
-MCAPI static struct ClimateUtils::Parameter const inlandContinentalness;
-MCAPI static struct ClimateUtils::Parameter const lushCavesHumidity;
-MCAPI static struct ClimateUtils::Parameter const midInlandContinentalness;
-MCAPI static struct ClimateUtils::Parameter const mushroomFieldsContinentalness;
-MCAPI static struct ClimateUtils::Parameter const nearInlandContinentalness;
-MCAPI static struct ClimateUtils::Parameter const oceanContinentalness;
+    /**
+     * @symbol ?EROSIONS@OverworldBiomeBuilder@@0QBUParameter@ClimateUtils@@B
+     * @hash   531381854
+     */
+    MCAPI static struct ClimateUtils::Parameter const EROSIONS[];
+    /**
+     * @symbol ?FULL_RANGE@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   1817600126
+     */
+    MCAPI static struct ClimateUtils::Parameter const FULL_RANGE;
+    /**
+     * @symbol ?HUMIDITIES@OverworldBiomeBuilder@@0QBUParameter@ClimateUtils@@B
+     * @hash   305904643
+     */
+    MCAPI static struct ClimateUtils::Parameter const HUMIDITIES[];
+    /**
+     * @symbol ?TEMPERATURES@OverworldBiomeBuilder@@0QBUParameter@ClimateUtils@@B
+     * @hash   -1882173343
+     */
+    MCAPI static struct ClimateUtils::Parameter const TEMPERATURES[];
+    /**
+     * @symbol ?coastContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   -1459058495
+     */
+    MCAPI static struct ClimateUtils::Parameter const coastContinentalness;
+    /**
+     * @symbol ?deepOceanContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   1925283269
+     */
+    MCAPI static struct ClimateUtils::Parameter const deepOceanContinentalness;
+    /**
+     * @symbol ?dripstoneCavesContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   1769583185
+     */
+    MCAPI static struct ClimateUtils::Parameter const dripstoneCavesContinentalness;
+    /**
+     * @symbol ?farInlandContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   421971856
+     */
+    MCAPI static struct ClimateUtils::Parameter const farInlandContinentalness;
+    /**
+     * @symbol ?inlandContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   1667775383
+     */
+    MCAPI static struct ClimateUtils::Parameter const inlandContinentalness;
+    /**
+     * @symbol ?lushCavesHumidity@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   1036839452
+     */
+    MCAPI static struct ClimateUtils::Parameter const lushCavesHumidity;
+    /**
+     * @symbol ?midInlandContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   -1274151025
+     */
+    MCAPI static struct ClimateUtils::Parameter const midInlandContinentalness;
+    /**
+     * @symbol ?mushroomFieldsContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   1779300662
+     */
+    MCAPI static struct ClimateUtils::Parameter const mushroomFieldsContinentalness;
+    /**
+     * @symbol ?nearInlandContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   355657055
+     */
+    MCAPI static struct ClimateUtils::Parameter const nearInlandContinentalness;
+    /**
+     * @symbol ?oceanContinentalness@OverworldBiomeBuilder@@0UParameter@ClimateUtils@@B
+     * @hash   427916873
+     */
+    MCAPI static struct ClimateUtils::Parameter const oceanContinentalness;
 
 };

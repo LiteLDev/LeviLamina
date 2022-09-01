@@ -54,7 +54,15 @@ public:
 //private:
 
 private:
-MCAPI static std::string const LEGACY_FIRE_TAG;
-MCAPI static std::string const ON_FIRE_TAG;
+    /**
+     * @symbol ?LEGACY_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -276481422
+     */
+    MCAPI static std::string const LEGACY_FIRE_TAG;
+    /**
+     * @symbol ?ON_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -831047300
+     */
+    MCAPI static std::string const ON_FIRE_TAG;
 
 };

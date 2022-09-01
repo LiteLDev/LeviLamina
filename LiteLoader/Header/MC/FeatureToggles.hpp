@@ -99,6 +99,10 @@ public:
     MCAPI void _setupDependencies();
 
 private:
-MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
+    /**
+     * @symbol ?mFeatureToggles@FeatureToggles@@0V?$unique_ptr@VFeatureToggles@@U?$default_delete@VFeatureToggles@@@std@@@std@@A
+     * @hash   -747446718
+     */
+    MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;
 
 };

@@ -44,6 +44,10 @@ public:
 //private:
 
 private:
-MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
+    /**
+     * @symbol ?map@ParticleTypeMap@@0V?$BidirectionalUnorderedMap@W4ParticleType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+     * @hash   -362443459
+     */
+    MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
 
 };

@@ -54,6 +54,10 @@ public:
      * @hash   120111659
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@TeleportResponse@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -232712441
+     */
+    MCAPI static std::string const NameID;
 
 };

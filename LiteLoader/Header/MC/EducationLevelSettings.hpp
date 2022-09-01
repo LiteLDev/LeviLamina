@@ -21,7 +21,8 @@ struct EducationLevelSettings {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0EducationLevelSettings@@QEAA@XZ
      * @hash   -14753573
@@ -52,6 +53,10 @@ struct EducationLevelSettings {
      * @hash   1128013305
      */
     MCAPI ~EducationLevelSettings();
-MCAPI static std::string const DEFAULT_BORDER_PATH;
+    /**
+     * @symbol ?DEFAULT_BORDER_PATH@EducationLevelSettings@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1094100413
+     */
+    MCAPI static std::string const DEFAULT_BORDER_PATH;
 
 };

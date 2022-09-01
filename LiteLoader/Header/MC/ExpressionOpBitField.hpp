@@ -28,6 +28,7 @@ public:
     ExpressionOpBitField(struct ExpressionOpBitField const &) = delete;
     ExpressionOpBitField() = delete;
 #endif
+
 public:
     /**
      * @symbol ?areBitsSet@ExpressionOpBitField@@QEBA_NW4ExpressionOp@@0000000@Z

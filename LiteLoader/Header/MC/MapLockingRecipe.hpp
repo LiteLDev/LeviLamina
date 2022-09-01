@@ -77,6 +77,10 @@ public:
      * @hash   1808175041
      */
     MCAPI MapLockingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-MCAPI static class mce::UUID const CartographyTableID;
+    /**
+     * @symbol ?CartographyTableID@MapLockingRecipe@@2VUUID@mce@@B
+     * @hash   1571227003
+     */
+    MCAPI static class mce::UUID const CartographyTableID;
 
 };

@@ -288,7 +288,15 @@ public:
 protected:
 
 private:
-MCAPI static int const ATTACK_TIME;
-MCAPI static int const FIRST_DAMAGE_TIME;
+    /**
+     * @symbol ?ATTACK_TIME@Guardian@@0HB
+     * @hash   -1814788461
+     */
+    MCAPI static int const ATTACK_TIME;
+    /**
+     * @symbol ?FIRST_DAMAGE_TIME@Guardian@@0HB
+     * @hash   -1400463903
+     */
+    MCAPI static int const FIRST_DAMAGE_TIME;
 
 };

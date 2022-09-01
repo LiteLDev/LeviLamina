@@ -21,7 +21,8 @@ struct CommandOriginData {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0CommandOriginData@@QEAA@XZ
      * @hash   -1053695449

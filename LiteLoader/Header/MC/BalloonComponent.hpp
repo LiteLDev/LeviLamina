@@ -84,11 +84,31 @@ public:
      * @hash   -1801272101
      */
     MCAPI bool shouldPop(class Actor &, bool &);
-MCAPI static std::string const ATTACHED_TAG;
-MCAPI static float const FENCE_BALLOON_RANGE;
-MCAPI static float const MAX_BALLOON_RANGE;
-MCAPI static std::string const MAX_HEIGHT_TAG;
-MCAPI static std::string const SHOULD_DROP_TAG;
+    /**
+     * @symbol ?ATTACHED_TAG@BalloonComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1273372741
+     */
+    MCAPI static std::string const ATTACHED_TAG;
+    /**
+     * @symbol ?FENCE_BALLOON_RANGE@BalloonComponent@@2MB
+     * @hash   1099063455
+     */
+    MCAPI static float const FENCE_BALLOON_RANGE;
+    /**
+     * @symbol ?MAX_BALLOON_RANGE@BalloonComponent@@2MB
+     * @hash   -1322667397
+     */
+    MCAPI static float const MAX_BALLOON_RANGE;
+    /**
+     * @symbol ?MAX_HEIGHT_TAG@BalloonComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -345961887
+     */
+    MCAPI static std::string const MAX_HEIGHT_TAG;
+    /**
+     * @symbol ?SHOULD_DROP_TAG@BalloonComponent@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1800320939
+     */
+    MCAPI static std::string const SHOULD_DROP_TAG;
     /**
      * @symbol ?getBalloonForActor@BalloonComponent@@SAPEAVActor@@AEBV2@@Z
      * @hash   -474734889

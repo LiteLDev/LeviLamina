@@ -44,6 +44,7 @@ public:
     ScorePacketInfo(struct ScorePacketInfo const &) = delete;
     ScorePacketInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ScorePacketInfo@@QEAA@XZ

@@ -28,6 +28,7 @@ public:
     BlockPlacementFilterDescription(struct BlockPlacementFilterDescription const &) = delete;
     BlockPlacementFilterDescription() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -69,7 +70,11 @@ public:
      * @hash   1809414859
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockPlacementFilterDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1933293989
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockPlacementFilterDescription@@SAXXZ
      * @hash   -1286219361

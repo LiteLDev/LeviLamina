@@ -116,12 +116,40 @@ public:
     MCAPI void _updateHand(class ItemStack const &);
 
 private:
-MCAPI static int const CHEW_CHANCE;
-MCAPI static int const EATING_TIME;
-MCAPI static float const PATH_RANGE;
-MCAPI static int const RANDOM_EATING_END;
-MCAPI static int const RANDOM_EATING_START;
-MCAPI static float const SEARCH_SIZE;
-MCAPI static float const STOP_DIST_SQRD;
+    /**
+     * @symbol ?CHEW_CHANCE@SnackGoal@@0HB
+     * @hash   1336806587
+     */
+    MCAPI static int const CHEW_CHANCE;
+    /**
+     * @symbol ?EATING_TIME@SnackGoal@@0HB
+     * @hash   -1438247491
+     */
+    MCAPI static int const EATING_TIME;
+    /**
+     * @symbol ?PATH_RANGE@SnackGoal@@0MB
+     * @hash   -1927857531
+     */
+    MCAPI static float const PATH_RANGE;
+    /**
+     * @symbol ?RANDOM_EATING_END@SnackGoal@@0HB
+     * @hash   -413849639
+     */
+    MCAPI static int const RANDOM_EATING_END;
+    /**
+     * @symbol ?RANDOM_EATING_START@SnackGoal@@0HB
+     * @hash   -1873937860
+     */
+    MCAPI static int const RANDOM_EATING_START;
+    /**
+     * @symbol ?SEARCH_SIZE@SnackGoal@@0MB
+     * @hash   1067607022
+     */
+    MCAPI static float const SEARCH_SIZE;
+    /**
+     * @symbol ?STOP_DIST_SQRD@SnackGoal@@0MB
+     * @hash   -1884138874
+     */
+    MCAPI static float const STOP_DIST_SQRD;
 
 };

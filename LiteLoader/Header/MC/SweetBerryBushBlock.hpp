@@ -360,7 +360,11 @@ public:
      * @hash   -1119826563
      */
     MCAPI SweetBerryBushBlock(std::string const &, int);
-MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
+    /**
+     * @symbol ?SLOWDOWN_MULTIPLIER@SweetBerryBushBlock@@2VVec3@@B
+     * @hash   -1907904203
+     */
+    MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
 
 //private:
     /**

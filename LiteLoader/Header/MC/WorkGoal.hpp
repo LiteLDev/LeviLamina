@@ -112,7 +112,15 @@ public:
     MCAPI bool _isInsideOrIsNotRaining();
 
 private:
-MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
-MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
+    /**
+     * @symbol ?RAIN_CHECK_MAX_COOLDOWN@WorkGoal@@0HB
+     * @hash   974250156
+     */
+    MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
+    /**
+     * @symbol ?WORK_TIMESTAMP_UPDATE_INVERVAL@WorkGoal@@0HB
+     * @hash   1239092458
+     */
+    MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
 
 };

@@ -204,16 +204,56 @@ public:
      * @hash   -1166319060
      */
     MCAPI bool isLastBuildBlockInteractive() const;
-MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
-MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM_SQR;
-MCAPI static float const PICKRANGE_GAMEPAD;
-MCAPI static float const PICKRANGE_MOUSE;
-MCAPI static float const PICKRANGE_SURVIVAL_MAXIMUM;
-MCAPI static float const PICKRANGE_SURVIVAL_MAXIMUM_SQR;
-MCAPI static float const PICKRANGE_TOUCH_CREATIVE;
-MCAPI static float const PICKRANGE_TOUCH_SURVIVAL;
-MCAPI static float const PICKRANGE_VR_CREATIVE;
-MCAPI static float const PICKRANGE_VR_SURVIVAL;
+    /**
+     * @symbol ?PICKRANGE_CREATIVE_MAXIMUM@GameMode@@2MB
+     * @hash   -479702631
+     */
+    MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
+    /**
+     * @symbol ?PICKRANGE_CREATIVE_MAXIMUM_SQR@GameMode@@2MB
+     * @hash   -1789527039
+     */
+    MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM_SQR;
+    /**
+     * @symbol ?PICKRANGE_GAMEPAD@GameMode@@2MB
+     * @hash   568387143
+     */
+    MCAPI static float const PICKRANGE_GAMEPAD;
+    /**
+     * @symbol ?PICKRANGE_MOUSE@GameMode@@2MB
+     * @hash   -996220797
+     */
+    MCAPI static float const PICKRANGE_MOUSE;
+    /**
+     * @symbol ?PICKRANGE_SURVIVAL_MAXIMUM@GameMode@@2MB
+     * @hash   361288501
+     */
+    MCAPI static float const PICKRANGE_SURVIVAL_MAXIMUM;
+    /**
+     * @symbol ?PICKRANGE_SURVIVAL_MAXIMUM_SQR@GameMode@@2MB
+     * @hash   -1384305251
+     */
+    MCAPI static float const PICKRANGE_SURVIVAL_MAXIMUM_SQR;
+    /**
+     * @symbol ?PICKRANGE_TOUCH_CREATIVE@GameMode@@2MB
+     * @hash   1191186285
+     */
+    MCAPI static float const PICKRANGE_TOUCH_CREATIVE;
+    /**
+     * @symbol ?PICKRANGE_TOUCH_SURVIVAL@GameMode@@2MB
+     * @hash   -1265938671
+     */
+    MCAPI static float const PICKRANGE_TOUCH_SURVIVAL;
+    /**
+     * @symbol ?PICKRANGE_VR_CREATIVE@GameMode@@2MB
+     * @hash   925096991
+     */
+    MCAPI static float const PICKRANGE_VR_CREATIVE;
+    /**
+     * @symbol ?PICKRANGE_VR_SURVIVAL@GameMode@@2MB
+     * @hash   -1532035653
+     */
+    MCAPI static float const PICKRANGE_VR_SURVIVAL;
 
 //private:
     /**

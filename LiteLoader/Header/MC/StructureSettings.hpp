@@ -263,7 +263,15 @@ public:
      * @hash   364045570
      */
     MCAPI ~StructureSettings();
-MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
-MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
+    /**
+     * @symbol ?DEFAULT_STRUCTURE_OFFSET@StructureSettings@@2VBlockPos@@B
+     * @hash   -1381485037
+     */
+    MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
+    /**
+     * @symbol ?DEFAULT_STRUCTURE_SIZE@StructureSettings@@2VBlockPos@@B
+     * @hash   662404895
+     */
+    MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
 
 };

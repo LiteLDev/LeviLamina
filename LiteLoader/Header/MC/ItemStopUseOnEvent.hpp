@@ -25,6 +25,7 @@ public:
     struct ItemStopUseOnEvent& operator=(struct ItemStopUseOnEvent const &) = delete;
     ItemStopUseOnEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ItemStopUseOnEvent@@QEAA@AEBU0@@Z

@@ -223,12 +223,36 @@ public:
      * @hash   1023569302
      */
     MCAPI ~StructureEditorData();
-MCAPI static std::string const DEFAULT_EXPORT_NAME;
-MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;
-MCAPI static class BlockPos const MAX_STRUCTURE_OFFSET;
-MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET;
-MCAPI static class BlockPos const MIN_STRUCTURE_SIZE;
-MCAPI static char const NAMESPACE_DELIMITER;
+    /**
+     * @symbol ?DEFAULT_EXPORT_NAME@StructureEditorData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1975257937
+     */
+    MCAPI static std::string const DEFAULT_EXPORT_NAME;
+    /**
+     * @symbol ?DEFAULT_STRUCTURE_NAMESPACE@StructureEditorData@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1292580079
+     */
+    MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;
+    /**
+     * @symbol ?MAX_STRUCTURE_OFFSET@StructureEditorData@@2VBlockPos@@B
+     * @hash   -1484610203
+     */
+    MCAPI static class BlockPos const MAX_STRUCTURE_OFFSET;
+    /**
+     * @symbol ?MIN_STRUCTURE_OFFSET@StructureEditorData@@2VBlockPos@@B
+     * @hash   -43671303
+     */
+    MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET;
+    /**
+     * @symbol ?MIN_STRUCTURE_SIZE@StructureEditorData@@2VBlockPos@@B
+     * @hash   -577110195
+     */
+    MCAPI static class BlockPos const MIN_STRUCTURE_SIZE;
+    /**
+     * @symbol ?NAMESPACE_DELIMITER@StructureEditorData@@2DB
+     * @hash   1904026768
+     */
+    MCAPI static char const NAMESPACE_DELIMITER;
     /**
      * @symbol ?getOrientedBounds@StructureEditorData@@SA?AVBlockPos@@AEBV2@W4Rotation@@@Z
      * @hash   -647993085
@@ -243,6 +267,10 @@ MCAPI static char const NAMESPACE_DELIMITER;
     MCAPI void _setPivotFromStructureSize();
 
 private:
-MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
+    /**
+     * @symbol ?DEFAULT_STRUCTURE_TYPE@StructureEditorData@@0W4StructureBlockType@@B
+     * @hash   1499611743
+     */
+    MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
 
 };

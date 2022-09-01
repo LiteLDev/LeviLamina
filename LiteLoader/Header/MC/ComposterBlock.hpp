@@ -380,7 +380,15 @@ public:
     MCAPI static std::vector<struct std::pair<int, signed char>> const & _getCompostableItems(class Experiments const &);
 
 private:
-MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
-MCAPI static class Vec3 const PARTICLE_OFFSET;
+    /**
+     * @symbol ?COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION@ComposterBlock@@0VBaseGameVersion@@B
+     * @hash   1096350651
+     */
+    MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?PARTICLE_OFFSET@ComposterBlock@@0VVec3@@B
+     * @hash   214720066
+     */
+    MCAPI static class Vec3 const PARTICLE_OFFSET;
 
 };

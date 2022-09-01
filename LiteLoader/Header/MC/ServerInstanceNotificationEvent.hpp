@@ -26,6 +26,7 @@ public:
     ServerInstanceNotificationEvent(struct ServerInstanceNotificationEvent const &) = delete;
     ServerInstanceNotificationEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ServerInstanceNotificationEvent@@QEAA@XZ

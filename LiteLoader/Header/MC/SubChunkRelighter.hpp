@@ -190,11 +190,35 @@ public:
     MCAPI struct SubChunkBrightnessStorage::LightPair _getLightPair(struct SubChunkLightIndex) const;
 
 private:
-MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
-MCAPI static class std::bitset<196608> mOuterEdgeOfComputationBits;
-MCAPI static class SpinLock sDarkSpinLock;
-MCAPI static struct SubChunk sFullyDarkSubChunk;
-MCAPI static struct SubChunk sFullyLitSubChunk;
-MCAPI static class SpinLock sLitSpinLock;
+    /**
+     * @symbol ?mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits@SubChunkRelighter@@0V?$bitset@$0DAAAA@@std@@A
+     * @hash   1396546089
+     */
+    MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
+    /**
+     * @symbol ?mOuterEdgeOfComputationBits@SubChunkRelighter@@0V?$bitset@$0DAAAA@@std@@A
+     * @hash   1926222865
+     */
+    MCAPI static class std::bitset<196608> mOuterEdgeOfComputationBits;
+    /**
+     * @symbol ?sDarkSpinLock@SubChunkRelighter@@0VSpinLock@@A
+     * @hash   -765662611
+     */
+    MCAPI static class SpinLock sDarkSpinLock;
+    /**
+     * @symbol ?sFullyDarkSubChunk@SubChunkRelighter@@0USubChunk@@A
+     * @hash   -1047935538
+     */
+    MCAPI static struct SubChunk sFullyDarkSubChunk;
+    /**
+     * @symbol ?sFullyLitSubChunk@SubChunkRelighter@@0USubChunk@@A
+     * @hash   -1304326367
+     */
+    MCAPI static struct SubChunk sFullyLitSubChunk;
+    /**
+     * @symbol ?sLitSpinLock@SubChunkRelighter@@0VSpinLock@@A
+     * @hash   -1816109752
+     */
+    MCAPI static class SpinLock sLitSpinLock;
 
 };

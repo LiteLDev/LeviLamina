@@ -26,6 +26,7 @@ public:
     ScriptSettings(struct ScriptSettings const &) = delete;
     ScriptSettings() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ScriptSettings@@QEAA@$$QEAU0@@Z

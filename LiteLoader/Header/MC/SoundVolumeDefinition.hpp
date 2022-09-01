@@ -29,6 +29,7 @@ public:
     SoundVolumeDefinition(struct SoundVolumeDefinition const &) = delete;
     SoundVolumeDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@SoundVolumeDefinition@@QEAAXAEAVEntityContext@@@Z

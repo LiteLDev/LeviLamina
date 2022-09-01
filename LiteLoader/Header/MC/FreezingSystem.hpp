@@ -46,7 +46,15 @@ public:
      * @hash   561001363
      */
     virtual void tick(class EntityRegistry &);
-MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
-MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
+    /**
+     * @symbol ?FREEZE_EFFECT_UUID@FreezingSystem@@2VUUID@mce@@B
+     * @hash   1353579811
+     */
+    MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
+    /**
+     * @symbol ?VULNERABLE_MOB_FREEZE_DAMAGE@FreezingSystem@@2HB
+     * @hash   1642856265
+     */
+    MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
 
 };

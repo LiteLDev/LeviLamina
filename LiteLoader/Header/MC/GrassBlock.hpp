@@ -300,7 +300,11 @@ public:
      * @hash   612086467
      */
     MCAPI bool fertilize(class BlockSource &, class BlockPos const &, class Randomize &) const;
-MCAPI static struct Brightness const MIN_BRIGHTNESS;
+    /**
+     * @symbol ?MIN_BRIGHTNESS@GrassBlock@@2UBrightness@@B
+     * @hash   -714116641
+     */
+    MCAPI static struct Brightness const MIN_BRIGHTNESS;
 
 //private:
     /**

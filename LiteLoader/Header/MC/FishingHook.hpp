@@ -204,7 +204,11 @@ public:
      * @hash   484350720
      */
     MCAPI int retrieve();
-MCAPI static float const BOBBER_SIZE;
+    /**
+     * @symbol ?BOBBER_SIZE@FishingHook@@2MB
+     * @hash   -1747967899
+     */
+    MCAPI static float const BOBBER_SIZE;
 
 //protected:
     /**

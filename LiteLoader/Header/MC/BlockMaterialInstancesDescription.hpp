@@ -27,6 +27,7 @@ public:
     struct BlockMaterialInstancesDescription& operator=(struct BlockMaterialInstancesDescription const &) = delete;
     BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const &) = delete;
 #endif
+
 public:
     /**
      * @vftbl  0
@@ -78,7 +79,11 @@ public:
      * @hash   1392517204
      */
     MCAPI struct BlockMaterialInstancesDescription & operator=(struct BlockMaterialInstancesDescription &&);
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockMaterialInstancesDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -195871047
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockMaterialInstancesDescription@@SAXXZ
      * @hash   -69882001

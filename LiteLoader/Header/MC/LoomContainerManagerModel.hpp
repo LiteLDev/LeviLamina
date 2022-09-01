@@ -83,9 +83,25 @@ public:
      * @hash   409625385
      */
     MCAPI LoomContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-MCAPI static int const BANNER_SLOT;
-MCAPI static int const DYE_SLOT;
-MCAPI static int const MATERIAL_SLOT;
-MCAPI static int const RESULT_SLOT;
+    /**
+     * @symbol ?BANNER_SLOT@LoomContainerManagerModel@@2HB
+     * @hash   135619651
+     */
+    MCAPI static int const BANNER_SLOT;
+    /**
+     * @symbol ?DYE_SLOT@LoomContainerManagerModel@@2HB
+     * @hash   -267445539
+     */
+    MCAPI static int const DYE_SLOT;
+    /**
+     * @symbol ?MATERIAL_SLOT@LoomContainerManagerModel@@2HB
+     * @hash   -332864171
+     */
+    MCAPI static int const MATERIAL_SLOT;
+    /**
+     * @symbol ?RESULT_SLOT@LoomContainerManagerModel@@2HB
+     * @hash   -624168659
+     */
+    MCAPI static int const RESULT_SLOT;
 
 };

@@ -137,9 +137,21 @@ public:
      * @hash   -1546811571
      */
     MCAPI FireworksItem(std::string const &, int);
-MCAPI static std::string const TAG_EXPLOSIONS;
-MCAPI static std::string const TAG_E_FLIGHT;
-MCAPI static std::string const TAG_FIREWORKS;
+    /**
+     * @symbol ?TAG_EXPLOSIONS@FireworksItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -232721129
+     */
+    MCAPI static std::string const TAG_EXPLOSIONS;
+    /**
+     * @symbol ?TAG_E_FLIGHT@FireworksItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -782814985
+     */
+    MCAPI static std::string const TAG_E_FLIGHT;
+    /**
+     * @symbol ?TAG_FIREWORKS@FireworksItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1588546667
+     */
+    MCAPI static std::string const TAG_FIREWORKS;
     /**
      * @symbol ?initFireworksRocketItem@FireworksItem@@SAAEBVItemInstance@@AEAV2@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@H@Z
      * @hash   -1640767361

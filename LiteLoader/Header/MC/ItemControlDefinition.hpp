@@ -29,6 +29,7 @@ public:
     ItemControlDefinition(struct ItemControlDefinition const &) = delete;
     ItemControlDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?addItemByName@ItemControlDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

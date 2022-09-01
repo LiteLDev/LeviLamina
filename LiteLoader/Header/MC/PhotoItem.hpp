@@ -30,8 +30,20 @@ public:
 #endif
 
 public:
-MCAPI static std::string const TAG_PHOTO_NAME;
-MCAPI static std::string const TAG_PHOTO_OWNER;
-MCAPI static std::string const TAG_PHOTO_UUID;
+    /**
+     * @symbol ?TAG_PHOTO_NAME@PhotoItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -817672501
+     */
+    MCAPI static std::string const TAG_PHOTO_NAME;
+    /**
+     * @symbol ?TAG_PHOTO_OWNER@PhotoItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   14815945
+     */
+    MCAPI static std::string const TAG_PHOTO_OWNER;
+    /**
+     * @symbol ?TAG_PHOTO_UUID@PhotoItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   104246443
+     */
+    MCAPI static std::string const TAG_PHOTO_UUID;
 
 };

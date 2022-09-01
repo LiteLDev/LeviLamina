@@ -329,6 +329,10 @@ public:
 //private:
 
 private:
-MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
+    /**
+     * @symbol ?ARM_DIRECTION_OFFSETS@PistonBlock@@0QBVBlockPos@@B
+     * @hash   1878129799
+     */
+    MCAPI static class BlockPos const ARM_DIRECTION_OFFSETS[];
 
 };

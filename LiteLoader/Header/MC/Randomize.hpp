@@ -80,6 +80,10 @@ public:
      * @hash   1815455805
      */
     MCAPI ~Randomize();
-MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
+    /**
+     * @symbol ?ChanceFloatGreaterThan_MinExcessiveImprobability@Randomize@@2MB
+     * @hash   -2106118545
+     */
+    MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
 
 };

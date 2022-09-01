@@ -26,6 +26,7 @@ public:
     DynamicAmbientSound(struct DynamicAmbientSound const &) = delete;
     DynamicAmbientSound() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1DynamicAmbientSound@@QEAA@XZ

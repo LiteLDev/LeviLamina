@@ -29,6 +29,7 @@ public:
     OnWakeWithOwnerDefinition(struct OnWakeWithOwnerDefinition const &) = delete;
     OnWakeWithOwnerDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnWakeWithOwnerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnWakeWithOwnerDefinition@@@JsonUtil@@@std@@@Z

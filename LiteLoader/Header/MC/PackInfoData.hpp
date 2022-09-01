@@ -40,6 +40,7 @@ public:
     PackInfoData(struct PackInfoData const &) = delete;
     PackInfoData() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0PackInfoData@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3AEBVContentIdentity@@_N5@Z

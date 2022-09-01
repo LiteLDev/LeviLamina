@@ -66,6 +66,10 @@ public:
     MCAPI void set(class CommandOrigin const &, class CommandOutput &) const;
 
 private:
-MCAPI static class PermissionsFile * mPermissionsFile;
+    /**
+     * @symbol ?mPermissionsFile@PermissionCommand@@0PEAVPermissionsFile@@EA
+     * @hash   -465380673
+     */
+    MCAPI static class PermissionsFile * mPermissionsFile;
 
 };

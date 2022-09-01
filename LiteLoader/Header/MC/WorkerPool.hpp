@@ -77,8 +77,16 @@ public:
     MCAPI bool _checkPendingWork();
 
 protected:
-MCAPI static class SmallSet<class WorkerPool *> sAllPools;
-MCAPI static class std::mutex sAllPoolsMutex;
+    /**
+     * @symbol ?sAllPools@WorkerPool@@1V?$SmallSet@PEAVWorkerPool@@@@A
+     * @hash   -567784847
+     */
+    MCAPI static class SmallSet<class WorkerPool *> sAllPools;
+    /**
+     * @symbol ?sAllPoolsMutex@WorkerPool@@1Vmutex@std@@A
+     * @hash   1954843251
+     */
+    MCAPI static class std::mutex sAllPoolsMutex;
 
 private:
 

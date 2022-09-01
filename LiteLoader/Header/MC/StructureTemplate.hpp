@@ -119,7 +119,11 @@ public:
      * @hash   -1313346055
      */
     MCAPI ~StructureTemplate();
-MCAPI static class BlockPos const INVALID_POSITION;
+    /**
+     * @symbol ?INVALID_POSITION@StructureTemplate@@2VBlockPos@@B
+     * @hash   1223862651
+     */
+    MCAPI static class BlockPos const INVALID_POSITION;
 
 //private:
     /**

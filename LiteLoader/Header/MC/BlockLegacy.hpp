@@ -1702,8 +1702,16 @@ public:
      * @hash   -1795090307
      */
     MCAPI class Block const * tryGetStateFromLegacyData(unsigned short) const;
-MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
-MCAPI static float const SIZE_OFFSET;
+    /**
+     * @symbol ?BLOCK_DESCRIPTION_PREFIX@BlockLegacy@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1927270567
+     */
+    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
+    /**
+     * @symbol ?SIZE_OFFSET@BlockLegacy@@2MB
+     * @hash   664708307
+     */
+    MCAPI static float const SIZE_OFFSET;
     /**
      * @symbol ?extractBlockNameInfo@BlockLegacy@@SA?AUNameInfo@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -2089571096

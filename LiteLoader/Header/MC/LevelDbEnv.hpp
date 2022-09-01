@@ -145,6 +145,10 @@ public:
 //private:
 
 private:
-MCAPI static class LevelDbEnv * sSingleton;
+    /**
+     * @symbol ?sSingleton@LevelDbEnv@@0PEAV1@EA
+     * @hash   2012544374
+     */
+    MCAPI static class LevelDbEnv * sSingleton;
 
 };

@@ -26,6 +26,7 @@ public:
     ActorDefinitionTriggeredEvent(struct ActorDefinitionTriggeredEvent const &) = delete;
     ActorDefinitionTriggeredEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorDefinitionTriggeredEvent@@QEAA@XZ

@@ -177,6 +177,10 @@ public:
      * @hash   1225915108
      */
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-MCAPI static float SPLASH_RANGE;
+    /**
+     * @symbol ?SPLASH_RANGE@DragonFireball@@2MA
+     * @hash   1405281613
+     */
+    MCAPI static float SPLASH_RANGE;
 
 };

@@ -29,6 +29,7 @@ public:
     IsTamedDefinition(struct IsTamedDefinition const &) = delete;
     IsTamedDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@IsTamedDefinition@@QEAAXAEAVEntityContext@@@Z

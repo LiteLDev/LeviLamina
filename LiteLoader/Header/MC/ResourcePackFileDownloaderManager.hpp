@@ -44,6 +44,10 @@ public:
 //private:
 
 private:
-MCAPI static int const MAX_CHUNK_ATTEMPTS;
+    /**
+     * @symbol ?MAX_CHUNK_ATTEMPTS@ResourcePackFileDownloaderManager@@0HB
+     * @hash   679671734
+     */
+    MCAPI static int const MAX_CHUNK_ATTEMPTS;
 
 };

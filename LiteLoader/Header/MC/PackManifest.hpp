@@ -407,7 +407,11 @@ public:
      * @hash   2064945860
      */
     MCAPI void setSourceIdentity(class ContentIdentity const &);
-MCAPI static std::string const MarioPackId;
+    /**
+     * @symbol ?MarioPackId@PackManifest@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   472217581
+     */
+    MCAPI static std::string const MarioPackId;
     /**
      * @symbol ?StringToPackScope@PackManifest@@SA?AW4PackScope@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1295409213
@@ -437,6 +441,10 @@ MCAPI static std::string const MarioPackId;
     MCAPI void _serializeVersion(class Json::Value &, class SemVersion const &) const;
 
 private:
-MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
+    /**
+     * @symbol ?STRING_TO_PACK_SCOPE@PackManifest@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@@std@@@2@@std@@B
+     * @hash   887683445
+     */
+    MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
 
 };

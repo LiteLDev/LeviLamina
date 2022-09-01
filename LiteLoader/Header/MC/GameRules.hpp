@@ -114,13 +114,41 @@ public:
      * @hash   443139697
      */
     MCAPI ~GameRules();
-MCAPI static unsigned int const DEFAULT_PLAYER_SPAWN_RADIUS;
-MCAPI static int const DEFAULT_RANDOMTICKSPEED;
-MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
-MCAPI static unsigned int const MAX_PLAYER_SPAWN_RADIUS;
-MCAPI static int const MAX_RANDOMTICKSPEED;
-MCAPI static unsigned int const MIN_PLAYER_SPAWN_RADIUS;
-MCAPI static std::string const WORLD_POLICY_TAG_NAME;
+    /**
+     * @symbol ?DEFAULT_PLAYER_SPAWN_RADIUS@GameRules@@2IB
+     * @hash   781852589
+     */
+    MCAPI static unsigned int const DEFAULT_PLAYER_SPAWN_RADIUS;
+    /**
+     * @symbol ?DEFAULT_RANDOMTICKSPEED@GameRules@@2HB
+     * @hash   56490363
+     */
+    MCAPI static int const DEFAULT_RANDOMTICKSPEED;
+    /**
+     * @symbol ?MAX_FUNCTIONCOMMANDLIMIT@GameRules@@2HB
+     * @hash   1407316245
+     */
+    MCAPI static int const MAX_FUNCTIONCOMMANDLIMIT;
+    /**
+     * @symbol ?MAX_PLAYER_SPAWN_RADIUS@GameRules@@2IB
+     * @hash   224269819
+     */
+    MCAPI static unsigned int const MAX_PLAYER_SPAWN_RADIUS;
+    /**
+     * @symbol ?MAX_RANDOMTICKSPEED@GameRules@@2HB
+     * @hash   162853829
+     */
+    MCAPI static int const MAX_RANDOMTICKSPEED;
+    /**
+     * @symbol ?MIN_PLAYER_SPAWN_RADIUS@GameRules@@2IB
+     * @hash   944521171
+     */
+    MCAPI static unsigned int const MIN_PLAYER_SPAWN_RADIUS;
+    /**
+     * @symbol ?WORLD_POLICY_TAG_NAME@GameRules@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   219708553
+     */
+    MCAPI static std::string const WORLD_POLICY_TAG_NAME;
 
 //private:
     /**

@@ -287,6 +287,10 @@ public:
 //private:
 
 private:
-MCAPI static class BaseGameVersion const THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION@ThinFenceBlock@@0VBaseGameVersion@@B
+     * @hash   -1688263096
+     */
+    MCAPI static class BaseGameVersion const THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

@@ -29,6 +29,7 @@ public:
     DyeableDefinition(struct DyeableDefinition const &) = delete;
     DyeableDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@DyeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UDyeableDefinition@@@JsonUtil@@@std@@@Z

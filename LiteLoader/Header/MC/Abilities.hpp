@@ -134,8 +134,16 @@ public:
      * @hash   1001812343
      */
     MCAPI void unSet();
-MCAPI static class Ability INVALID_ABILITY;
-MCAPI static std::string const SERIALIZATION_TAG;
+    /**
+     * @symbol ?INVALID_ABILITY@Abilities@@2VAbility@@A
+     * @hash   1452794941
+     */
+    MCAPI static class Ability INVALID_ABILITY;
+    /**
+     * @symbol ?SERIALIZATION_TAG@Abilities@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1613066765
+     */
+    MCAPI static std::string const SERIALIZATION_TAG;
     /**
      * @symbol ?getAbilityName@Abilities@@SAPEBDW4AbilitiesIndex@@@Z
      * @hash   629696552
@@ -155,6 +163,10 @@ MCAPI static std::string const SERIALIZATION_TAG;
 //private:
 
 private:
-MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
+    /**
+     * @symbol ?ABILITY_NAMES@Abilities@@0V?$array@PEBD$0BC@@std@@A
+     * @hash   -767147388
+     */
+    MCAPI static class std::array<char const *, 18> ABILITY_NAMES;
 
 };

@@ -29,6 +29,7 @@ public:
     CanPowerJumpDefinition(struct CanPowerJumpDefinition const &) = delete;
     CanPowerJumpDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?initialize@CanPowerJumpDefinition@@QEAAXAEAVEntityContext@@@Z

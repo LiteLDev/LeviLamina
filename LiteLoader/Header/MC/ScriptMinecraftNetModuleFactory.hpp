@@ -50,7 +50,15 @@ public:
 //private:
 
 private:
-MCAPI static char const * ModuleName;
-MCAPI static class mce::UUID const ModuleUUID;
+    /**
+     * @symbol ?ModuleName@ScriptMinecraftNetModuleFactory@@0PEBDEB
+     * @hash   986869263
+     */
+    MCAPI static char const * ModuleName;
+    /**
+     * @symbol ?ModuleUUID@ScriptMinecraftNetModuleFactory@@0VUUID@mce@@B
+     * @hash   1375377670
+     */
+    MCAPI static class mce::UUID const ModuleUUID;
 
 };

@@ -51,6 +51,10 @@ public:
 //private:
 
 private:
-MCAPI static class IMinecraftApp * mApp;
+    /**
+     * @symbol ?mApp@DedicatedWSServerCommand@@0PEAVIMinecraftApp@@EA
+     * @hash   -2107299390
+     */
+    MCAPI static class IMinecraftApp * mApp;
 
 };

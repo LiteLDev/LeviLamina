@@ -62,7 +62,15 @@ public:
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 
 private:
-MCAPI static char const * ModuleName;
-MCAPI static class mce::UUID ModuleUUID;
+    /**
+     * @symbol ?ModuleName@ScriptGameTestModuleFactory@@0PEBDEB
+     * @hash   1879095459
+     */
+    MCAPI static char const * ModuleName;
+    /**
+     * @symbol ?ModuleUUID@ScriptGameTestModuleFactory@@0VUUID@mce@@A
+     * @hash   -919607035
+     */
+    MCAPI static class mce::UUID ModuleUUID;
 
 };

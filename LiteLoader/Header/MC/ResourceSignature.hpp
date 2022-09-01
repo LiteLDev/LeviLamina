@@ -41,7 +41,11 @@ public:
      * @hash   1911833782
      */
     MCAPI ~ResourceSignature();
-MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
+    /**
+     * @symbol ?SIGNATURE_FILENAME@ResourceSignature@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -99960404
+     */
+    MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
 //private:
     /**

@@ -28,7 +28,11 @@ public:
 #endif
 
 public:
-MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
+    /**
+     * @symbol ?SLOWDOWN_MULTIPLIER@InsideWebBlockSystem@@2VVec3@@B
+     * @hash   -1376608735
+     */
+    MCAPI static class Vec3 const SLOWDOWN_MULTIPLIER;
     /**
      * @symbol ?_applySlowdown@InsideWebBlockSystem@@SAXAEAVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UBlockMovementSlowdownApplied@@@@@@@Z
      * @hash   -970286700

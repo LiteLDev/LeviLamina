@@ -192,6 +192,10 @@ public:
      * @hash   -561462440
      */
     MCAPI void setLinger(bool);
-MCAPI static float const SPLASH_RANGE;
+    /**
+     * @symbol ?SPLASH_RANGE@ThrownPotion@@2MB
+     * @hash   1170697721
+     */
+    MCAPI static float const SPLASH_RANGE;
 
 };

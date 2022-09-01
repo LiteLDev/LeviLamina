@@ -30,6 +30,10 @@ public:
 #endif
 
 public:
-MCAPI static class ColorChannel const INVALID;
+    /**
+     * @symbol ?INVALID@ColorChannel@@2V1@B
+     * @hash   349295316
+     */
+    MCAPI static class ColorChannel const INVALID;
 
 };

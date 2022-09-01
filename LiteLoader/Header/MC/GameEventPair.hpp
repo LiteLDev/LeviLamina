@@ -26,6 +26,7 @@ public:
     GameEventPair(struct GameEventPair const &) = delete;
     GameEventPair() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1GameEventPair@@QEAA@XZ

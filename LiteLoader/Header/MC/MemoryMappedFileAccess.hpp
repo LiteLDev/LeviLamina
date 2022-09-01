@@ -84,6 +84,10 @@ public:
      * @hash   -197016736
      */
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
-MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
+    /**
+     * @symbol ?EMPTY_TRANSFORMS@MemoryMappedFileAccess@@2VFileAccessTransforms@@B
+     * @hash   807493075
+     */
+    MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
 };

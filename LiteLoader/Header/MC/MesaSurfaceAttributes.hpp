@@ -26,6 +26,7 @@ public:
     MesaSurfaceAttributes(struct MesaSurfaceAttributes const &) = delete;
     MesaSurfaceAttributes() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1MesaSurfaceAttributes@@QEAA@XZ

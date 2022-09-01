@@ -28,6 +28,7 @@ public:
     DispatcherUpdateSystem(struct DispatcherUpdateSystem const &) = delete;
     DispatcherUpdateSystem() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

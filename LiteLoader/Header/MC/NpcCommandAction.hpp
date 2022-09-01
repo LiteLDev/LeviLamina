@@ -68,12 +68,24 @@ public:
      * @hash   -1525050482
      */
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);
-MCAPI static char const COMMAND_DELIMITER;
+    /**
+     * @symbol ?COMMAND_DELIMITER@NpcCommandAction@@2DB
+     * @hash   -1155516772
+     */
+    MCAPI static char const COMMAND_DELIMITER;
 
 //private:
 
 private:
-MCAPI static std::string const COMMAND_LINE_KEY;
-MCAPI static std::string const COMMAND_VERSION_KEY;
+    /**
+     * @symbol ?COMMAND_LINE_KEY@NpcCommandAction@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -596608269
+     */
+    MCAPI static std::string const COMMAND_LINE_KEY;
+    /**
+     * @symbol ?COMMAND_VERSION_KEY@NpcCommandAction@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   452173423
+     */
+    MCAPI static std::string const COMMAND_VERSION_KEY;
 
 };

@@ -26,7 +26,12 @@ public:
     FogSetting(struct FogSetting const &) = delete;
     FogSetting() = delete;
 #endif
+
 public:
-MCAPI static struct FogSetting const ZERO_SETTING;
+    /**
+     * @symbol ?ZERO_SETTING@FogSetting@@2U1@B
+     * @hash   -1624843860
+     */
+    MCAPI static struct FogSetting const ZERO_SETTING;
 
 };

@@ -98,8 +98,16 @@ namespace RakNet {
      * @hash   -1035448350
      */
     MCAPI int SplitPacketChannelComp(unsigned short const &, struct RakNet::SplitPacketChannel *const &);
-MCAPI extern struct RakNet::RakNetGUID const UNASSIGNED_RAKNET_GUID;
-MCAPI extern struct RakNet::SystemAddress const UNASSIGNED_SYSTEM_ADDRESS;
+    /**
+     * @symbol ?UNASSIGNED_RAKNET_GUID@RakNet@@3URakNetGUID@1@B
+     * @hash   262909303
+     */
+    MCAPI extern struct RakNet::RakNetGUID const UNASSIGNED_RAKNET_GUID;
+    /**
+     * @symbol ?UNASSIGNED_SYSTEM_ADDRESS@RakNet@@3USystemAddress@1@B
+     * @hash   405832985
+     */
+    MCAPI extern struct RakNet::SystemAddress const UNASSIGNED_SYSTEM_ADDRESS;
     /**
      * @symbol ?UpdateNetworkLoop@RakNet@@YAIPEAX@Z
      * @hash   612618969

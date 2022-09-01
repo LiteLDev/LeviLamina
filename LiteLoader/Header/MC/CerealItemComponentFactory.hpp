@@ -81,7 +81,15 @@ public:
     MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 
 private:
-MCAPI static class ComponentItem * mItemContext;
-MCAPI static class std::unordered_map<std::string, struct CerealItemComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>> mRegisteredComponents;
+    /**
+     * @symbol ?mItemContext@CerealItemComponentFactory@@0PEAVComponentItem@@EA
+     * @hash   -718065553
+     */
+    MCAPI static class ComponentItem * mItemContext;
+    /**
+     * @symbol ?mRegisteredComponents@CerealItemComponentFactory@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@CerealItemComponentFactory@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UConstructor@CerealItemComponentFactory@@@std@@@2@@std@@A
+     * @hash   106259191
+     */
+    MCAPI static class std::unordered_map<std::string, struct CerealItemComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>> mRegisteredComponents;
 
 };

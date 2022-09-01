@@ -29,6 +29,7 @@ public:
     OnIgniteDefinition(struct OnIgniteDefinition const &) = delete;
     OnIgniteDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@OnIgniteDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnIgniteDefinition@@@JsonUtil@@@std@@@Z

@@ -26,6 +26,7 @@ public:
     ActorEquippedArmorEvent(struct ActorEquippedArmorEvent const &) = delete;
     ActorEquippedArmorEvent() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1ActorEquippedArmorEvent@@QEAA@XZ

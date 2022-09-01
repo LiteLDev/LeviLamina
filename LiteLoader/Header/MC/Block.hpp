@@ -931,8 +931,16 @@ public:
      * @hash   -26228424
      */
     MCAPI bool use(class Player &, class BlockPos const &, unsigned char) const;
-MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
-MCAPI static float const SIZE_OFFSET;
+    /**
+     * @symbol ?BLOCK_DESCRIPTION_PREFIX@Block@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -337843125
+     */
+    MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
+    /**
+     * @symbol ?SIZE_OFFSET@Block@@2MB
+     * @hash   1225792379
+     */
+    MCAPI static float const SIZE_OFFSET;
 
 //protected:
     /**

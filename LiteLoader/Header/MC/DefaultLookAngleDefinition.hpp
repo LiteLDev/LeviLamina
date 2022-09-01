@@ -29,6 +29,7 @@ public:
     DefaultLookAngleDefinition(struct DefaultLookAngleDefinition const &) = delete;
     DefaultLookAngleDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@DefaultLookAngleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UDefaultLookAngleDefinition@@@JsonUtil@@@std@@@Z

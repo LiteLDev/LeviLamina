@@ -28,6 +28,7 @@ public:
     MolangProgramBuildState(struct MolangProgramBuildState const &) = delete;
     MolangProgramBuildState() = delete;
 #endif
+
 public:
     /**
      * @symbol ?allocateInstruction@MolangProgramBuildState@@QEAA_KXZ

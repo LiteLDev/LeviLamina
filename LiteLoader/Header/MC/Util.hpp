@@ -47,10 +47,26 @@ struct FormattedString {
 };
 
 #undef AFTER_EXTRA
-MCAPI extern int const COLOR_CODE;
-MCAPI extern std::string const EMPTY_GUID;
-MCAPI extern std::string const EMPTY_STRING;
-MCAPI extern std::string const NEW_LINE;
+    /**
+     * @symbol ?COLOR_CODE@Util@@3HB
+     * @hash   417157797
+     */
+    MCAPI extern int const COLOR_CODE;
+    /**
+     * @symbol ?EMPTY_GUID@Util@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   984319783
+     */
+    MCAPI extern std::string const EMPTY_GUID;
+    /**
+     * @symbol ?EMPTY_STRING@Util@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1721394889
+     */
+    MCAPI extern std::string const EMPTY_STRING;
+    /**
+     * @symbol ?NEW_LINE@Util@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1016895671
+     */
+    MCAPI extern std::string const NEW_LINE;
     /**
      * @symbol ?_breakIntoWordsAndFindProfanity@Util@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@HH@std@@V?$allocator@U?$pair@HH@std@@@2@@3@AEBV?$unordered_set@DU?$hash@D@std@@U?$equal_to@D@2@V?$allocator@D@2@@3@AEAV?$set@U?$pair@HH@std@@U?$less@U?$pair@HH@std@@@2@V?$allocator@U?$pair@HH@std@@@2@@3@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HU?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@std@@@2@@3@AEBV?$unordered_set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   1740063406

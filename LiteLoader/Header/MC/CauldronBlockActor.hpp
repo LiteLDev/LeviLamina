@@ -158,6 +158,10 @@ public:
      * @hash   -816554284
      */
     MCAPI void setPotionType(enum Potion::PotionType);
-MCAPI static class mce::Color WATER_COLOR;
+    /**
+     * @symbol ?WATER_COLOR@CauldronBlockActor@@2VColor@mce@@A
+     * @hash   -1827449689
+     */
+    MCAPI static class mce::Color WATER_COLOR;
 
 };

@@ -22,7 +22,11 @@ namespace BlockColorUtil {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class std::array<enum BlockColor, 16> RAINBOW;
+    /**
+     * @symbol ?RAINBOW@BlockColorUtil@@3V?$array@W4BlockColor@@$0BA@@std@@A
+     * @hash   -1483345664
+     */
+    MCAPI extern class std::array<enum BlockColor, 16> RAINBOW;
     /**
      * @symbol ?fromInt@BlockColorUtil@@YA?AW4BlockColor@@H@Z
      * @hash   1086227848

@@ -256,7 +256,15 @@ public:
      * @hash   -1327686961
      */
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, class CompoundTag const &, enum DBHelpers::Category);
-MCAPI static std::string const LEGACY_CONSOLE_PLAYER_PREFIX;
-MCAPI static std::string const LOCAL_PLAYER_TAG;
+    /**
+     * @symbol ?LEGACY_CONSOLE_PLAYER_PREFIX@LevelStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -384454151
+     */
+    MCAPI static std::string const LEGACY_CONSOLE_PLAYER_PREFIX;
+    /**
+     * @symbol ?LOCAL_PLAYER_TAG@LevelStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1675183851
+     */
+    MCAPI static std::string const LOCAL_PLAYER_TAG;
 
 };

@@ -148,7 +148,11 @@ public:
      * @hash   -20262879
      */
     MCAPI static unsigned __int64 computeHash(char const *);
-MCAPI static class HashedString defaultErrorValue;
+    /**
+     * @symbol ?defaultErrorValue@HashedString@@2V1@A
+     * @hash   -702862186
+     */
+    MCAPI static class HashedString defaultErrorValue;
     /**
      * @symbol ?getEmptyString@HashedString@@SAAEBV1@XZ
      * @hash   -2083064485

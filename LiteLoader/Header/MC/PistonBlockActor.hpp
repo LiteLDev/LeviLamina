@@ -238,6 +238,10 @@ public:
     MCAPI void _spawnMovingBlocks(class BlockSource &);
 
 private:
-MCAPI static float const ARM_ANIMATION_SPEED;
+    /**
+     * @symbol ?ARM_ANIMATION_SPEED@PistonBlockActor@@0MB
+     * @hash   166299731
+     */
+    MCAPI static float const ARM_ANIMATION_SPEED;
 
 };

@@ -25,6 +25,7 @@ public:
     struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier const &) = delete;
     ActorDefinitionModifier() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ActorDefinitionModifier@@QEAA@AEBU0@@Z

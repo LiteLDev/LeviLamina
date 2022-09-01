@@ -27,6 +27,7 @@ public:
     struct DamageSensorTrigger& operator=(struct DamageSensorTrigger const &) = delete;
     DamageSensorTrigger() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0DamageSensorTrigger@@QEAA@AEBU0@@Z

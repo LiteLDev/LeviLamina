@@ -29,6 +29,7 @@ public:
     WorldTemplateInfo(struct WorldTemplateInfo const &) = delete;
     WorldTemplateInfo() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0WorldTemplateInfo@@QEAA@AEBVWorldTemplatePackManifest@@@Z

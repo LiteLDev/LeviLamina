@@ -25,6 +25,7 @@ public:
     struct ContainerValidationSlotData& operator=(struct ContainerValidationSlotData const &) = delete;
     ContainerValidationSlotData(struct ContainerValidationSlotData const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0ContainerValidationSlotData@@QEAA@XZ
@@ -41,6 +42,10 @@ public:
      * @hash   663407324
      */
     MCAPI bool matches(struct ContainerValidationSlotData const &) const;
-MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
+    /**
+     * @symbol ?AUTOPLACE@ContainerValidationSlotData@@2U1@B
+     * @hash   -162321814
+     */
+    MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
 
 };

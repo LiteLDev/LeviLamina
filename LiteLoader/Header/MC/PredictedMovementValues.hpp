@@ -28,9 +28,22 @@ public:
     PredictedMovementValues(struct PredictedMovementValues const &) = delete;
     PredictedMovementValues() = delete;
 #endif
+
 public:
-MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
-MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
-MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
+    /**
+     * @symbol ?DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS@PredictedMovementValues@@2_JB
+     * @hash   -131491368
+     */
+    MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
+    /**
+     * @symbol ?DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL@PredictedMovementValues@@2_NB
+     * @hash   -1383568361
+     */
+    MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
+    /**
+     * @symbol ?SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS@PredictedMovementValues@@2_JB
+     * @hash   1810444256
+     */
+    MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
 
 };

@@ -120,6 +120,10 @@ public:
 //private:
 
 private:
-MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
+    /**
+     * @symbol ?VALID_ENCHANTMENTS@CrossbowEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
+     * @hash   67130538
+     */
+    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

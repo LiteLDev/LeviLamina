@@ -29,6 +29,7 @@ public:
     LootTableDefinition(struct LootTableDefinition const &) = delete;
     LootTableDefinition() = delete;
 #endif
+
 public:
     /**
      * @symbol ?buildSchema@LootTableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@ULootTableDefinition@@@JsonUtil@@@std@@@Z

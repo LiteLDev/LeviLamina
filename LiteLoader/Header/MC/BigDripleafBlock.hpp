@@ -354,7 +354,11 @@ public:
      * @hash   -948785848
      */
     MCAPI BigDripleafBlock(std::string const &, int);
-MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
+    /**
+     * @symbol ?MAX_DRIPLEAF_GROWTH_HEIGHT@BigDripleafBlock@@2HB
+     * @hash   -1532733167
+     */
+    MCAPI static int const MAX_DRIPLEAF_GROWTH_HEIGHT;
     /**
      * @symbol ?placeWithRandomHeight@BigDripleafBlock@@SAXAEAVBlockSource@@AEAVRandom@@VBlockPos@@H@Z
      * @hash   -679559829

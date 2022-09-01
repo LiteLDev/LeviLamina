@@ -27,6 +27,7 @@ public:
     struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes const &) = delete;
     SurfaceMaterialAttributes() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0SurfaceMaterialAttributes@@QEAA@AEBU0@@Z

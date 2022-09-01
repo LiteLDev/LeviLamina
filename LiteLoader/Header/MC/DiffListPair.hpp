@@ -26,6 +26,7 @@ public:
     DiffListPair(struct DiffListPair const &) = delete;
     DiffListPair() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0DiffListPair@@QEAA@_NPEAVActorDefinitionDescriptor@@@Z

@@ -83,8 +83,20 @@ public:
      * @hash   -581636759
      */
     MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-MCAPI static int const ADDITIONAL_SLOT;
-MCAPI static int const INPUT_SLOT;
-MCAPI static int const RESULT_SLOT;
+    /**
+     * @symbol ?ADDITIONAL_SLOT@GrindstoneContainerManagerModel@@2HB
+     * @hash   -1238835935
+     */
+    MCAPI static int const ADDITIONAL_SLOT;
+    /**
+     * @symbol ?INPUT_SLOT@GrindstoneContainerManagerModel@@2HB
+     * @hash   1393484725
+     */
+    MCAPI static int const INPUT_SLOT;
+    /**
+     * @symbol ?RESULT_SLOT@GrindstoneContainerManagerModel@@2HB
+     * @hash   716860345
+     */
+    MCAPI static int const RESULT_SLOT;
 
 };

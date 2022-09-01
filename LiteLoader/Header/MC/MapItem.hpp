@@ -172,13 +172,41 @@ public:
      * @hash   566722722
      */
     MCAPI void update(class Level &, class Actor &, class MapItemSavedData &) const;
-MCAPI static std::string const TAG_MAP_INIT;
-MCAPI static std::string const TAG_MAP_NAME_INDEX;
-MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
-MCAPI static std::string const TAG_MAP_REGENERATE;
-MCAPI static std::string const TAG_MAP_SCALE;
-MCAPI static std::string const TAG_MAP_SCALING;
-MCAPI static std::string const TAG_MAP_UUID;
+    /**
+     * @symbol ?TAG_MAP_INIT@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1330409391
+     */
+    MCAPI static std::string const TAG_MAP_INIT;
+    /**
+     * @symbol ?TAG_MAP_NAME_INDEX@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1077259505
+     */
+    MCAPI static std::string const TAG_MAP_NAME_INDEX;
+    /**
+     * @symbol ?TAG_MAP_PLAYER_DISPLAY@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   317054863
+     */
+    MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
+    /**
+     * @symbol ?TAG_MAP_REGENERATE@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   192790543
+     */
+    MCAPI static std::string const TAG_MAP_REGENERATE;
+    /**
+     * @symbol ?TAG_MAP_SCALE@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2028467635
+     */
+    MCAPI static std::string const TAG_MAP_SCALE;
+    /**
+     * @symbol ?TAG_MAP_SCALING@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -389404723
+     */
+    MCAPI static std::string const TAG_MAP_SCALING;
+    /**
+     * @symbol ?TAG_MAP_UUID@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2101034737
+     */
+    MCAPI static std::string const TAG_MAP_UUID;
     /**
      * @symbol ?doesDisplayPlayerMarkers@MapItem@@SA_NAEBVItemStack@@@Z
      * @hash   -1003598061

@@ -54,6 +54,10 @@ public:
      * @hash   -53430713
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@OnFallOnTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1676725213
+     */
+    MCAPI static std::string const NameID;
 
 };

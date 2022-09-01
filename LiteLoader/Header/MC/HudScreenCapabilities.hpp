@@ -28,6 +28,7 @@ public:
     HudScreenCapabilities(struct HudScreenCapabilities const &) = delete;
     HudScreenCapabilities() = delete;
 #endif
+
 public:
     /**
      * @vftbl  0

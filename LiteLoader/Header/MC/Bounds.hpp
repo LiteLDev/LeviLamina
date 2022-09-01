@@ -28,6 +28,7 @@ public:
     Bounds(struct Bounds const &) = delete;
     Bounds() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0Bounds@@QEAA@AEBVChunkPos@@0@Z

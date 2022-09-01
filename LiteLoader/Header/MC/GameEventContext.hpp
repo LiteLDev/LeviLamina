@@ -26,6 +26,7 @@ public:
     GameEventContext(struct GameEventContext const &) = delete;
     GameEventContext() = delete;
 #endif
+
 public:
     /**
      * @symbol ??0GameEventContext@@QEAA@AEBVVec3@@PEAVActor@@PEBVBlock@@@Z

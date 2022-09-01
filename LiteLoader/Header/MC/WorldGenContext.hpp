@@ -26,6 +26,7 @@ public:
     WorldGenContext(struct WorldGenContext const &) = delete;
     WorldGenContext() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1WorldGenContext@@QEAA@XZ

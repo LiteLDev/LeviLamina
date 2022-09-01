@@ -30,11 +30,35 @@ public:
 #endif
 
 public:
-MCAPI static class std::shared_ptr<class AttributeModifier> DAMAGE_BOOST;
-MCAPI static class std::shared_ptr<class AttributeModifier> HEALTH_BOOST;
-MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SLOWDOWN;
-MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SPEED;
-MCAPI static class std::shared_ptr<class AttributeModifier> SPRINTING_BOOST;
-MCAPI static class std::shared_ptr<class AttributeModifier> WEAKNESS;
+    /**
+     * @symbol ?DAMAGE_BOOST@SharedModifiers@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   -2082544408
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> DAMAGE_BOOST;
+    /**
+     * @symbol ?HEALTH_BOOST@SharedModifiers@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   1155839432
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> HEALTH_BOOST;
+    /**
+     * @symbol ?MOVEMENT_SLOWDOWN@SharedModifiers@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   -2086511514
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SLOWDOWN;
+    /**
+     * @symbol ?MOVEMENT_SPEED@SharedModifiers@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   -2038106824
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SPEED;
+    /**
+     * @symbol ?SPRINTING_BOOST@SharedModifiers@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   2086673014
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> SPRINTING_BOOST;
+    /**
+     * @symbol ?WEAKNESS@SharedModifiers@@2V?$shared_ptr@VAttributeModifier@@@std@@A
+     * @hash   -471484136
+     */
+    MCAPI static class std::shared_ptr<class AttributeModifier> WEAKNESS;
 
 };

@@ -237,6 +237,10 @@ public:
     MCAPI void _handleMending(class Player &);
 
 private:
-MCAPI static int const LIFETIME;
+    /**
+     * @symbol ?LIFETIME@ExperienceOrb@@0HB
+     * @hash   -12624908
+     */
+    MCAPI static int const LIFETIME;
 
 };

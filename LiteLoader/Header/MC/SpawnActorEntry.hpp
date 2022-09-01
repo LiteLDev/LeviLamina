@@ -26,6 +26,7 @@ public:
     SpawnActorEntry(struct SpawnActorEntry const &) = delete;
     SpawnActorEntry() = delete;
 #endif
+
 public:
     /**
      * @symbol ??1SpawnActorEntry@@QEAA@XZ

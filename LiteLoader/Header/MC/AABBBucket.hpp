@@ -27,6 +27,7 @@ public:
     struct AABBBucket& operator=(struct AABBBucket const &) = delete;
     AABBBucket(struct AABBBucket const &) = delete;
 #endif
+
 public:
     /**
      * @symbol ??0AABBBucket@@QEAA@XZ
