@@ -108,19 +108,19 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          cd Scripts
-          ./PackRelease.cmd action
-        shell: cmd
-
       - name: Compress Resource Packs
         run: |
           cd RELEASE/plugins/LiteLoader/ResourcePacks
           7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
           rm -r LiteLoaderBDS-CUI
         shell: bash
+
+        - name: Pack Release
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          cd Scripts
+          ./PackRelease.cmd action
+        shell: cmd
 
       - name: Move PDB to path
         working-directory: ${{ env.GITHUB_WORKSPACE }}
