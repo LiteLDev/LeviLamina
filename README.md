@@ -125,6 +125,8 @@ mc.listen("onServerStarted", () => {
 
 ### For Linux
 
+We do not recommend you to use Wine due to BDS 1.19.20 on Wine has a performance problem
+
 #### Installation script(Ubuntu)
 
 ```

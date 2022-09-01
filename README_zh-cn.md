@@ -117,6 +117,8 @@ mc.listen("onServerStarted", () => {
 
 ### 对于 Linux 用户
 
+我们不再建议使用Wine，因为BDS 1.19.20运行在Wine上会有严重的性能问题
+
 #### 安装脚本(Ubuntu)
 
 ```
