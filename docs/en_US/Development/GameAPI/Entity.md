@@ -135,15 +135,50 @@ Each entity object contains some member functions (member methods) that can be e
 
 #### Inflict Damage to Entities
 
-`en.hurt(damage)`
+`en.hurt(damage,type)`
 
 - Parameters: 
-  - damage : `Integer`  
+  - damage : `Float`  
     The amount of damage to deal to the entity.
+ - type : `Integer`  
+    Actor Damage Cause
 - Return value: Whether the damage was dealt.
 - Return value type:  `Boolean`
 
 Note that the damage dealt here is real damage and cannot be reduced by protective equipment such as armor.
+
+| ActorDamageCause ENUM    |
+| ------------------------ |
+| `ActorDamageCause.Override`|
+| `ActorDamageCause.Contact `   |
+| `ActorDamageCause.EntityAttack` |
+| `ActorDamageCause.Projectile`     |
+| `ActorDamageCause.Suffocation`    |
+| `ActorDamageCause.All`     |
+| `ActorDamageCause.Fire`  |
+| `ActorDamageCause.FireTick`    |
+| `ActorDamageCause.Lava`      |
+| `ActorDamageCause.Drowning `  |
+| `ActorDamageCause.BlockExplosion`   |
+| `ActorDamageCause.EntityExplosion`    |
+| `ActorDamageCause.Void`  |
+| `ActorDamageCause.Suicide`    |
+| `ActorDamageCause.Magic`     |
+| `ActorDamageCause.Wither`     |
+| `ActorDamageCause.Starve`   |
+| `ActorDamageCause.Anvil`    |
+| `ActorDamageCause.Thorns`  |
+| `ActorDamageCause.FallingBlock`    |
+| `ActorDamageCause.Piston`     |
+| `ActorDamageCause.FlyIntoWall`     |
+| `ActorDamageCause.Magma`    |
+| `ActorDamageCause.Fireworks`  |
+| `ActorDamageCause.Lightning`    |
+| `ActorDamageCause.Charging`     |
+| `ActorDamageCause.Temperature`     |
+| `ActorDamageCause.Freezing`  |
+| `ActorDamageCause.Stalactite`    |
+| `ActorDamageCause.Stalagmite`     |
 
 <br>
 

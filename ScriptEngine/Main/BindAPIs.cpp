@@ -60,6 +60,7 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(TextClassBuilder);
     engine->registerNativeClass(ParticleColorBuilder);
     engine->registerNativeClass(DirectionBuilder);
+    engine->registerNativeClass(ActorDamageCauseBuilder);
 
     engine->registerNativeClass(PermissionStaticBuilder);
     engine->registerNativeClass(ParamTypeStaticBuilder);
