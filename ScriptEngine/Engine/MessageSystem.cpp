@@ -8,6 +8,7 @@
 #include <processthreadsapi.h>
 #include <process.h>
 #include <exception>
+#include <LiteLoader/Main/Config.h>
 using namespace std;
 using namespace script;
 
@@ -21,7 +22,6 @@ using namespace script;
 
 //////////////////// 消息处理注册 ////////////////////
 
-#include "LoaderHelper.h"
 #include "RemoteCall.h"
 #include "TimeTaskSystem.h"
 
@@ -39,12 +39,12 @@ void ModuleMessage::handle(utils::Message& engineMsg) // Warning: Execute in ano
         case ModuleMessage::MessageType::RemoteSyncCallReturn:
             RemoteSyncCallReturn(msg);
             break;
-        case ModuleMessage::MessageType::RemoteLoadRequest:
+        /*case ModuleMessage::MessageType::RemoteLoadRequest:
             RemoteLoadRequest(msg);
             break;
         case ModuleMessage::MessageType::RemoteLoadReturn:
             RemoteLoadReturn(msg);
-            break;
+            break;*/
         default:
             break;
     }
@@ -315,7 +315,8 @@ void InitMessageSystem() {
         SetThreadDescription(GetCurrentThread(), L"LLSE MessageSystem " _CRT_WIDE(LLSE_MODULE_TYPE));
 #endif // DEBUG
        // Set global SEH-Exception handler
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        if (!LL::isDebugMode())
+            _set_se_translator(seh_exception::TranslateSEHtoCE);
 
         globalShareData->messageThreads[LLSE_BACKEND_TYPE] = GetCurrentThread();
         while (true) {

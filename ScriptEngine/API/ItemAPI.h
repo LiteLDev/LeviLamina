@@ -23,7 +23,7 @@ public:
 
     static Local<Object> newItem(ItemStack* p);
     static ItemStack* extract(Local<Value> v);
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> asPointer(const Arguments& args);
 
     Local<Value> getName();
     Local<Value> getType();

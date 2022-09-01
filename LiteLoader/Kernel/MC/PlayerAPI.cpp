@@ -65,13 +65,13 @@ std::string Player::getRealName() {
 int Player::getAvgPing() {
     if (isSimulatedPlayer())
         return -1;
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgping;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mAveragePing;
 }
 
 int Player::getLastPing() {
     if (isSimulatedPlayer())
         return -1;
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().ping;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mCurrentPing;
 }
 
 string Player::getIP() {
@@ -85,7 +85,7 @@ string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
     }
-    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
+    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto& iter : *map) {
         string s(iter.first.c_str());
         if (s.find("LanguageCode") != std::string::npos) {
@@ -99,7 +99,7 @@ string Player::getLanguageCode() {
 string Player::getServerAddress() {
     if (isSimulatedPlayer())
         return "unknown";
-    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
+    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).mRawToken.get()->mDataInfo.value_.map_;
     for (auto iter = map->begin(); iter != map->end(); ++iter) {
         string s(iter->first.c_str());
         if (s.find("ServerAddress") != s.npos) {
@@ -295,14 +295,14 @@ unsigned char Player::getClientSubId() {
 float Player::getAvgPacketLoss() {
     if (isSimulatedPlayer())
         return 0.f;
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgpacketloss;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mAveragePacketLoss;
 }
 
 float Player::getLastPacketLoss() {
     if (isSimulatedPlayer()) {
         return 0.f;
     }
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().packetloss;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mCurrentPacketLoss;
 }
 
 string Player::getClientId() {
@@ -524,7 +524,8 @@ bool Player::sendTextPacket(string text, TextType Type) const {
 }
 
 bool Player::sendToastPacket(string title, string msg) {
-    sendNetworkPacket(ToastRequestPacket(title, msg));
+    ToastRequestPacket pkt = ToastRequestPacket(title, msg);
+    sendNetworkPacket(pkt);
     return true;
 }
 
@@ -656,7 +657,8 @@ bool Player::sendTransferPacket(const string& address, short port) const {
 }
 
 bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const {
-    sendNetworkPacket(SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder)));
+    SetDisplayObjectivePacket pkt = SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder));
+    sendNetworkPacket(pkt);
     return true;
 }
 

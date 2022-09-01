@@ -6,6 +6,7 @@
 #include "EntityAPI.h"
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <MC/Level.hpp>
 #include <MC/Block.hpp>
 #include <MC/CompoundTag.hpp>
@@ -19,7 +20,7 @@
 ClassDefine<BlockClass> BlockClassBuilder =
     defineClass<BlockClass>("LLSE_Block")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &BlockClass::getRawPtr)
+        .instanceFunction("asPointer", &BlockClass::asPointer)
 
         .instanceProperty("name", &BlockClass::getName)
         .instanceProperty("type", &BlockClass::getType)
@@ -133,11 +134,11 @@ Local<Value> BlockClass::getTileData() {
     CATCH("Fail in getTileData!");
 }
 
-Local<Value> BlockClass::getRawPtr(const Arguments& args) {
+Local<Value> BlockClass::asPointer(const Arguments& args) {
     try {
-        return Number::newNumber((intptr_t)block);
+        return NativePointer::newNativePointer(block);
     }
-    CATCH("Fail in getRawPtr!");
+    CATCH("Fail in asPointer!");
 }
 
 Local<Value> BlockClass::destroyBlock(const Arguments& args) {

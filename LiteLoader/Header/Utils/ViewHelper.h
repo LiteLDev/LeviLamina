@@ -1,9 +1,8 @@
 ﻿#pragma once
 #include <string_view>
-using std::string_view;
 template <typename T, typename std::enable_if_t<!std::is_pointer_v<T>, int> = 0>
-inline static constexpr string_view to_view(T& x) {
-    return string_view((const char*)&x, sizeof(T));
+inline static constexpr std::string_view to_view(T& x) {
+    return std::string_view((const char*)&x, sizeof(T));
 }
 template <typename T = int>
 static constexpr T atoi(std::string_view sv) {

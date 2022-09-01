@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Nlohmann/json.hpp>
+
 #include <string>
 #include <thread>
 #include <LLAPI.h>
@@ -9,11 +10,6 @@
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
 constexpr const char* NoCrashLogger[] = {"AntiCheats"};
 #define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
-
-
-/////////////////////// SEH Protection ///////////////////////
-// Remove this to disable SEH all around LiteLoader
-#define ENABLE_SEH_PROTECTION
 
 
 /////////////////////// LL Configs ///////////////////////
@@ -62,6 +58,9 @@ struct LLConfig {
     bool enableEconomyCore = true;
     bool enableTpdimCommand = true;
     bool enableForceUtf8Input = false;
+    bool enableFixBDSCrash = false;
+    bool enableParticleAPI = false;
+    bool enablePermissionAPI = true;
     std::vector<std::string> outputFilterRegex = {};
 
     // Runtime Config

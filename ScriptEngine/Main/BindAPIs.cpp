@@ -25,8 +25,11 @@
 #include <API/McAPI.h>
 #include <API/GameUtilsAPI.h>
 #include <API/PacketAPI.h>
-#include <API/NativeApi.h>
+#include <API/NativeAPI.h>
 #include <API/NativeStdString.h>
+#include <API/PermissionAPI.h>
+#include <API/InternationalAPI.h>
+#include <API/ParticleAPI.h>
 
 void BindAPIs(ScriptEngine* engine)
 {
@@ -55,12 +58,20 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass(LlClassBuilder);
     engine->registerNativeClass(NbtStaticBuilder);
     engine->registerNativeClass(TextClassBuilder);
+    engine->registerNativeClass(ParticleColorBuilder);
+    engine->registerNativeClass(DirectionBuilder);
+    engine->registerNativeClass(ActorDamageCauseBuilder);
 
     engine->registerNativeClass(PermissionStaticBuilder);
     engine->registerNativeClass(ParamTypeStaticBuilder);
     engine->registerNativeClass(ParamOptionStaticBuilder);
     engine->registerNativeClass(OriginTypeStaticBuilder);
     engine->registerNativeClass(DamageCauseEnumBuilder);
+
+    engine->registerNativeClass(PermissionClassBuilder);
+
+    engine->registerNativeClass(I18nClassBuilder);
+
     //////////////// 实例类 ////////////////
 
     engine->registerNativeClass<IntPos>(IntPosBuilder);
@@ -102,6 +113,8 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<HttpRequestClass>(HttpRequestClassBuilder);
     engine->registerNativeClass<HttpResponseClass>(HttpResponseClassBuilder);
     engine->registerNativeClass<BinaryStreamClass>(BinaryStreamClassBuilder);
+    engine->registerNativeClass<RoleClass>(RoleClassBuilder);
+    engine->registerNativeClass<ParticleSpawner>(ParticleSpawnerBuilder);
 
     //////////////// NativeFFI ////////////////
     engine->registerNativeClass(NativeTypeEnumBuilder);
@@ -110,4 +123,5 @@ void BindAPIs(ScriptEngine* engine)
     engine->registerNativeClass<NativeStdString>(NativeStdStringBuilder);
     engine->registerNativeClass<DynamicHookData>(NativeHookBuilder);
     engine->registerNativeClass<NativePatch>(NativePatchBuilder);
+    engine->registerNativeClass<GlobalNativePointer>(GlobalNativePointerBuilder);
 }

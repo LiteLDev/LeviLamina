@@ -39,9 +39,6 @@
 #include <LLAPI.h>
 #include <Utils/WinHelper.h>
 
-using std::function;
-using std::string;
-
 class Actor;
 class ServerPlayer;
 class Player;
@@ -601,6 +598,11 @@ public:
         Unload,
         Reload
     };
+    enum class PluginType {
+        SingleFile,             // like .js / .lua
+        PluginPackage,          // like .llplugin
+        UncompressedPackage     // like plugins/nodejs/ABC
+    };
 
     Operation operation;
     std::string target;
@@ -608,6 +610,7 @@ public:
     std::string pluginExtention;
 
     bool success = false;
+    PluginType pluginType;
 };
 
 class MobSpawnEvent : public EventTemplate<MobSpawnEvent> {
@@ -622,6 +625,11 @@ public:
     ServerPlayer* mServerPlayer;
     unsigned mFormId;
     string mJsonData;
+};
+
+class ResourcePackInitEvent : public EventTemplate<ResourcePackInitEvent> {
+public:
+    ResourcePackRepository* mRepo;
 };
 
 }; // namespace Event

@@ -17,8 +17,8 @@ LiteLoaderSDK/
 RELEASE/*.dll
 RELEASE/LLPeEditor.exe
 !RELEASE/ChakraCore.dll
-RELEASE/plugins/LiteLoader/*.dll
-RELEASE/plugins/LiteLoader/*.pdb
+RELEASE/plugins/LiteLoader/LiteLoader.*.dll
+RELEASE/plugins/LiteLoader/LiteLoader.*.pdb
 RELEASE/plugins/LiteLoader/pdb
 !RELEASE/plugins/LiteLoader/CrashLogger.dll
 

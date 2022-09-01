@@ -14,7 +14,6 @@
 #    define DO_BUF_CHK()
 #    define BUF_CHK_VAR
 #endif
-using std::string, std::string_view;
 template <class T>
 struct is_safe_obj
     : std::integral_constant<bool, !std::is_class<std::remove_reference_t<T>>::value> {};
@@ -32,7 +31,7 @@ class RBStream {
         datamax += len;
 #endif
     }
-    RBStream(string_view x) { *this = {(void *)x.data(), (size_t)x.size()}; }
+    RBStream(std::string_view x) { *this = {(void *)x.data(), (size_t)x.size()}; }
 
   private:
     template <typename T1, typename T2>
@@ -69,7 +68,7 @@ class RBStream {
             x.push_back(std::move(local));
         }
     }
-    void __get(string &x) {
+    void __get(std::string &x) {
         bsize_t sz;
         __get(sz);
         x.reserve(sz);
@@ -131,11 +130,11 @@ class WBStreamImpl {
             __put(*i);
         }
     }
-    void __put(string const &x) {
+    void __put(std::string const &x) {
         __put((bsize_t)x.size());
         data.append(x);
     }
-    void __put(string_view const &x) {
+    void __put(std::string_view const &x) {
         __put((bsize_t)x.size());
         data.append(x);
     }
@@ -156,7 +155,7 @@ class WBStreamImpl {
         (__put(args), ...);
     }
     void write(const void *src, size_t n) { data.append((const char *)src, n); }
-    operator string_view() { return data; }
+    operator std::string_view() { return data; }
 };
 using WBStream = WBStreamImpl<std::string>;
 struct BinVariant {
@@ -184,7 +183,7 @@ struct BinVariant {
     BinVariant() { type = 0; }
     ~BinVariant() {
         if (type == 2) {
-            v.y.~string();
+            v.y.~basic_string();
         }
     }
     void unpack(RBStream &rs) {

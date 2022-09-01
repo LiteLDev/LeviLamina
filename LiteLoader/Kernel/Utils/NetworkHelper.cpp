@@ -5,6 +5,7 @@
 #include <Utils/DbgHelper.h>
 #include <thread>
 #include <I18nAPI.h>
+#include <Main/Config.h>
 
 using namespace std;
 
@@ -39,7 +40,8 @@ bool HttpGet(const string& url, const httplib::Headers& headers, const function<
         cli->set_connection_timeout(timeout, 0);
 
     std::thread([cli, headers, callback, path{std::move(path)}]() {
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        if (!LL::isDebugMode())
+            _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
             auto response = cli->Get(path.c_str(), headers);
             delete cli;
@@ -84,7 +86,8 @@ bool HttpPost(const string& url, const httplib::Headers& headers, const string& 
         cli->set_connection_timeout(timeout, 0);
 
     std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
-        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        if (!LL::isDebugMode())
+            _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
             auto response = cli->Post(path.c_str(), headers, data, type.c_str());
             delete cli;

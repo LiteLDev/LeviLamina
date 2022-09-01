@@ -22,6 +22,7 @@ ClassDefine<void> DataClassBuilder =
     defineClass("data")
         .function("xuid2name", &DataClass::xuid2name)
         .function("name2xuid", &DataClass::name2xuid)
+        .function("getAllPlayerInfo", &DataClass::getAllPlayerInfo)
         .function("parseJson", &DataClass::parseJson)
         .function("toJson", &DataClass::toJson)
         .function("toMD5", &DataClass::toMD5)
@@ -717,6 +718,24 @@ Local<Value> DataClass::name2xuid(const Arguments& args) {
         return String::newString(PlayerInfo::getXuid(args[0].toStr()));
     }
     CATCH("Fail in Name2Xuid!");
+}
+
+Local<Value> DataClass::getAllPlayerInfo(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 0);
+
+    try {
+        auto info = PlayerInfo::getAllPlayerInfo();
+        auto arr = Array::newArray();
+        for (const auto& it : info) {
+            auto obj = Object::newObject();
+            obj.set("name", String::newString(it.name));
+            obj.set("xuid", String::newString(it.xuid));
+            obj.set("uuid", String::newString(it.uuid));
+            arr.add(obj);
+        }
+        return arr;
+    }
+    CATCH("Fail in getAllPlayerInfo!");
 }
 
 Local<Value> DataClass::toJson(const Arguments& args) {

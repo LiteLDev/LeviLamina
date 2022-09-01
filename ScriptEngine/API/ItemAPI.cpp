@@ -4,6 +4,7 @@
 #include "McAPI.h"
 #include "EntityAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <MC/CompoundTag.hpp>
 #include <MC/ItemStack.hpp>
 #include <vector>
@@ -15,7 +16,7 @@
 ClassDefine<ItemClass> ItemClassBuilder =
     defineClass<ItemClass>("LLSE_Item")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &ItemClass::getRawPtr)
+        .instanceFunction("asPointer", &ItemClass::asPointer)
 
         .instanceProperty("name", &ItemClass::getName)
         .instanceProperty("type", &ItemClass::getType)
@@ -109,11 +110,11 @@ Local<Value> ItemClass::getAux() {
     CATCH("Fail in GetAux!");
 }
 
-Local<Value> ItemClass::getRawPtr(const Arguments& args) {
+Local<Value> ItemClass::asPointer(const Arguments& args) {
     try {
-        return Number::newNumber((intptr_t)item);
+        return NativePointer::newNativePointer(item);
     }
-    CATCH("Fail in getRawPtr!");
+    CATCH("Fail in asPointer!");
 }
 
 Local<Value> ItemClass::set(const Arguments& args) {

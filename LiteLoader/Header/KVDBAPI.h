@@ -8,7 +8,6 @@
 #include <functional>
 #include <string_view>
 #include <unordered_map>
-using std::string_view, std::string;
 
 class KVDB {
     leveldb::DB* db;
@@ -16,7 +15,7 @@ class KVDB {
     leveldb::WriteOptions wropt;
     leveldb::Options options;
     leveldb::Status status;
-    string dbpath;
+    std::string dbpath;
 
     void _init(const char* path, bool create, bool read_cache, int cache_sz, int Bfilter_bit);
 

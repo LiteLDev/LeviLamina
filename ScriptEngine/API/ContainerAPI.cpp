@@ -1,6 +1,7 @@
 #include "ContainerAPI.h"
 #include "APIHelp.h"
 #include "ItemAPI.h"
+#include "NativeAPI.h"
 #include <MC/ItemStack.hpp>
 #include <MC/Container.hpp>
 using namespace std;
@@ -10,7 +11,7 @@ using namespace std;
 ClassDefine<ContainerClass> ContainerClassBuilder =
     defineClass<ContainerClass>("LLSE_Container")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &ContainerClass::getRawPtr)
+        .instanceFunction("asPointer", &ContainerClass::asPointer)
 
         .instanceProperty("size", &ContainerClass::getSize)
         .instanceProperty("type", &ContainerClass::getType)
@@ -63,11 +64,11 @@ Local<Value> ContainerClass::getType() {
     CATCH("Fail in getType!")
 }
 
-Local<Value> ContainerClass::getRawPtr(const Arguments& args) {
+Local<Value> ContainerClass::asPointer(const Arguments& args) {
     try {
-        return Number::newNumber((intptr_t)container);
+        return NativePointer::newNativePointer(container);
     }
-    CATCH("Fail in getRawPtr!")
+    CATCH("Fail in asPointer!")
 }
 
 Local<Value> ContainerClass::addItem(const Arguments& args) {

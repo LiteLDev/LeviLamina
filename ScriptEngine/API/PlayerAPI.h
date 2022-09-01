@@ -20,7 +20,7 @@ public:
 
     static Local<Object> newPlayer(Player* p);
     static Player* extract(Local<Value> v);
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> asPointer(const Arguments& args);
 
     Local<Value> getName();
     Local<Value> getPos();
@@ -31,16 +31,50 @@ public:
     Local<Value> getUuid();
     Local<Value> getPermLevel();
     Local<Value> getGameMode();
+    Local<Value> getCanSleep();
+    Local<Value> getCanFly();
+    Local<Value> getCanBeSeenOnMap();
+    Local<Value> getCanFreeze();
+    Local<Value> getCanSeeDaylight();
+    Local<Value> getCanShowNameTag();
+    Local<Value> getCanStartSleepInBed();
+    Local<Value> getCanPickupItems();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
     Local<Value> getInAir();
     Local<Value> getInWater();
+    Local<Value> getInLava();
+    Local<Value> getInRain();
+    Local<Value> getInSnow();
+    Local<Value> getInWall();
+    Local<Value> getInWaterOrRain();
+    Local<Value> getInWorld();
+    Local<Value> getInClouds();
     Local<Value> getSneaking();
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
     Local<Value> getLangCode();
     Local<Value> isLoading();
+    Local<Value> isInvisible();
+    Local<Value> isInsidePortal();
+    Local<Value> isHurt();
+    Local<Value> isTrusting();
+    Local<Value> isTouchingDamageBlock();
+    Local<Value> isHungry();
+    Local<Value> isOnFire();
+    Local<Value> isOnGround();
+    Local<Value> isOnHotBlock();
+    Local<Value> isTrading();
+    Local<Value> isAdventure();
+    Local<Value> isGliding();
+    Local<Value> isSurvival();
+    Local<Value> isSpectator();
+    Local<Value> isRiding();
+    Local<Value> isDancing();
+    Local<Value> isCreative();
+    Local<Value> isFlying();
+    Local<Value> isSleeping();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
@@ -58,6 +92,7 @@ public:
     Local<Value> crash(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
+    Local<Value> setFire(const Arguments& args);
     Local<Value> refreshChunks(const Arguments& args);
     Local<Value> giveItem(const Arguments& args);
     Local<Value> clearItem(const Arguments& args);
