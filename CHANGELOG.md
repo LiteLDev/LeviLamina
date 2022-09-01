@@ -11,9 +11,11 @@ LiteLoaderBDS-2.6.0 update has been released, adapted to BDS-1.19.21, ProtocolVe
 - Add StaticVanillaBlocks (#704) by @OEOTYAN
 - Add PlayerInfoAPI for LLSE by @Jasonzyt
 - Add links to C++ documentation (#734) by @Futrime
-- Add Hot Reload for NodeJS Plugin  by @yqs112358
+- Add Hot Reload for NodeJS Plugin by @yqs112358
 - New methods and properties of LLAPI for LLSE (#726) by @shishkevichd & @Jasonzyt
 - Update 1.19.21 by @dreamguxiang
+- Add i18nAPI for LLSE by @Jasonzyt
+- Add ActorDamageCause enum for LLSE by @dreamguxiang
 - Add ResourcePackInitEvent by @dreamguxiang
 - Add fix BDS crashes(Beta) by @dreamguxiang
   - Default is off, please turn on `FixBDSCrash` from the configuration file

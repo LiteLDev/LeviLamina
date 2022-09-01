@@ -10,10 +10,12 @@ LiteLoaderBDS-2.6.0更新已发布，适应于BDS-1.19.21，协议版本545
 [*]添加一些定义（ChunkBlockPos） by @OEOTYAN
 [*]添加PermissionAPI by @Jasonzyt
 [*]添加StaticVanillaBlocks（#704） by @OEOTYAN
-[*]添加PlayerInfoAPI for LLSE by @Jasonzyt
+[*]添加PlayerInfoAPI (LLSE) by @Jasonzyt
 [*]添加C++文档的链接（#734） 作者：@Futrime
 [*]添加NodeJS插件热重载功能 by @yqs112358
 [*]添加ResourcePackInitEvent事件 by @dreamguxiang
+[*]添加i18nAPI(LLSE) by @Jasonzyt
+[*]添加ActorDamageCausee枚举(LLSE) by @dreamguxiang
 [*]为LLSE添加LLAPI的新方法和属性（#726） by @shishkevichd & @Jasonzyt
 [*]更新1.19.21 by @dreamguxiang
 [*]增加修复BDS崩溃（测试版） by @dreamguxiang
