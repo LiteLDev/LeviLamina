@@ -33,7 +33,8 @@ struct ItemStackNetIdVariant {
         id;
 
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0ItemStackNetIdVariant@@QEAA@$$QEAU0@@Z
      * @hash   -631870773

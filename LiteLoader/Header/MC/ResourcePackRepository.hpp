@@ -11,7 +11,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "ResourcePack.hpp"
 #undef BEFORE_EXTRA
 
 /**

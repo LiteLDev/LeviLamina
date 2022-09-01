@@ -23,7 +23,8 @@ struct ScoreboardId {
 public:
     __int64 id;
     void* null;
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0ScoreboardId@@QEAA@_J@Z
      * @hash   1642635605

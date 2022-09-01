@@ -27,7 +27,8 @@ std::string event;          // 64
 std::string fullname;       // 96
 HashedString canonicalHash; // 128
 
-#undef AFTER_EXTRApublic:
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@XZ
      * @hash   -1828672179

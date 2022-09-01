@@ -10,7 +10,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "UnverifiedCertificate.hpp"
 #undef BEFORE_EXTRA
 
 /**

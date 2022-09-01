@@ -10,6 +10,31 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum PackOrigin : int {
+    PackOrigin_Unknown = 0x0,
+    PackOrigin_RealmsUnknown = 0x1,
+    PackOrigin_Package = 0x2,
+    PackOrigin_Treatment = 0x3,
+    PackOrigin_Dev = 0x4,
+    PackOrigin_World = 0x5,
+    PackOrigin_User = 0x6,
+    PackOrigin_TempCache = 0x7,
+    PackOrigin_PremiumCache = 0x8,
+    PackOrigin_PremiumTempCache = 0x9,
+};
+
+enum PackType : char {
+    PackType_Invalid = 0x0,
+    PackType_Addon = 0x1,
+    PackType_Cached = 0x2,
+    PackType_CopyProtected = 0x3,
+    PackType_Behavior = 0x4,
+    PackType_PersonaPiece = 0x5,
+    PackType_Resources = 0x6,
+    PackType_Skins = 0x7,
+    PackType_WorldTemplate = 0x8,
+    PackType_Count = 0x9,
+};
 
 #undef BEFORE_EXTRA
 
