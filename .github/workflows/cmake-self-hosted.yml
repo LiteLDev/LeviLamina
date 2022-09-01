@@ -115,7 +115,7 @@ jobs:
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
-        - name: Pack Release
+      - name: Pack Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Scripts
@@ -179,12 +179,12 @@ jobs:
         env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
 
-      - name: Publish to MineBBS
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
-          -H "Accept: application/vnd.github.everest-preview+json" \
-          -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
-          --data '{"event_type": "webhook"}'
-        shell: bash
+      #- name: Publish to MineBBS
+      #  working-directory: ${{ env.GITHUB_WORKSPACE }}
+      #  if: startsWith(github.ref, 'refs/tags/')
+      #  run: |
+      #    curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
+      #    -H "Accept: application/vnd.github.everest-preview+json" \
+      #    -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
+      #    --data '{"event_type": "webhook"}'
+      #  shell: bash
