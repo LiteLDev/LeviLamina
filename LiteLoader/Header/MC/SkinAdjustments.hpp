@@ -27,10 +27,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKINADJUSTMENTS
-#endif
     /**
      * @symbol ??0SkinAdjustments@@QEAA@XZ
+     * @hash   -366869675
      */
     MCAPI SkinAdjustments();
 

@@ -27,10 +27,9 @@ public:
     DiffListPair() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIFFLISTPAIR
-#endif
     /**
      * @symbol ??0DiffListPair@@QEAA@_NPEAVActorDefinitionDescriptor@@@Z
+     * @hash   -1177392386
      */
     MCAPI DiffListPair(bool, class ActorDefinitionDescriptor *);
 

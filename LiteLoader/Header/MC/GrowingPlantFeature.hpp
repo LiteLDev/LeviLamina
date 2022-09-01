@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -945418008
      */
     virtual ~GrowingPlantFeature();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?place@GrowingPlantFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   1779603107
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWINGPLANTFEATURE
-#endif
     /**
      * @symbol ??0GrowingPlantFeature@@QEAA@XZ
+     * @hash   1195062150
      */
     MCAPI GrowingPlantFeature();
 

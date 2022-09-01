@@ -30,36 +30,41 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEENTITY
-#endif
     /**
      * @symbol ??8WeakStorageEntity@@QEBA_NAEBV0@@Z
+     * @hash   -1439691951
      */
     MCAPI bool operator==(class WeakStorageEntity const &) const;
 
 //protected:
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@W4VariadicInit@0@AEBVEntityContext@@@Z
+     * @hash   -1669459157
      */
     MCAPI WeakStorageEntity(enum WeakStorageEntity::VariadicInit, class EntityContext const &);
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@W4EmptyInit@0@@Z
+     * @hash   -698714046
      */
     MCAPI WeakStorageEntity(enum WeakStorageEntity::EmptyInit);
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@AEBVStackResultStorageEntity@@@Z
+     * @hash   -1556862531
      */
     MCAPI WeakStorageEntity(class StackResultStorageEntity const &);
     /**
      * @symbol ??0WeakStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
+     * @hash   1458894955
      */
     MCAPI WeakStorageEntity(class OwnerStorageEntity const &);
     /**
      * @symbol ?_isSet@WeakStorageEntity@@IEBA_NXZ
+     * @hash   285526463
      */
     MCAPI bool _isSet() const;
     /**
      * @symbol ?_reset@WeakStorageEntity@@IEAAXXZ
+     * @hash   -717554243
      */
     MCAPI void _reset();
 

@@ -27,10 +27,9 @@ public:
     KeyOrNameResult() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYORNAMERESULT
-#endif
     /**
      * @symbol ??1KeyOrNameResult@@QEAA@XZ
+     * @hash   -1000330026
      */
     MCAPI ~KeyOrNameResult();
 

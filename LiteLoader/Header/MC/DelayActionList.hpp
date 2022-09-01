@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYACTIONLIST
-#endif
     /**
      * @symbol ??0DelayActionList@@QEAA@XZ
+     * @hash   -802984301
      */
     MCAPI DelayActionList();
     /**
      * @symbol ?queueRequestOrExecuteAction@DelayActionList@@QEAA?AW4QueueRequestResult@@VDelayRequest@@AEAVServerLevel@@AEAVDimension@@_K_N@Z
+     * @hash   1869724186
      */
     MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, unsigned __int64, bool);
     /**
      * @symbol ?tick@DelayActionList@@QEAAXAEAVServerLevel@@AEAVDimension@@_K@Z
+     * @hash   -675410779
      */
     MCAPI void tick(class ServerLevel &, class Dimension &, unsigned __int64);
 

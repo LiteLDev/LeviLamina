@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   970153629
      */
     virtual ~TitleCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@TitleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1322556528
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TITLECOMMAND
-#endif
     /**
      * @symbol ?setup@TitleCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1214182380
      */
     MCAPI static void setup(class CommandRegistry &);
 

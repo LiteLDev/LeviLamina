@@ -33,38 +33,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1767820873
      */
     virtual ~BoolOption();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?save@BoolOption@@UEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
+     * @hash   1724875269
      */
     virtual void save(std::vector<struct std::pair<std::string, std::string>> &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?load@BoolOption@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2119908402
      */
     virtual void load(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOLOPTION
-#endif
     /**
      * @symbol ??0BoolOption@@QEAA@W4OptionID@@W4OptionOwnerType@@W4OptionResetFlags@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3_N@Z
+     * @hash   -1083589907
      */
     MCAPI BoolOption(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const &, std::string const &, bool);
     /**
      * @symbol ?getValue@BoolOption@@QEBA_NXZ
+     * @hash   -1446313162
      */
     MCAPI bool getValue() const;
     /**
      * @symbol ?set@BoolOption@@QEAAX_N0@Z
+     * @hash   -508230230
      */
     MCAPI void set(bool, bool);
 
 //private:
     /**
      * @symbol ?_set@BoolOption@@AEAAX_N0@Z
+     * @hash   -2085202432
      */
     MCAPI void _set(bool, bool);
 

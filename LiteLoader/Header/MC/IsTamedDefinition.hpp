@@ -30,18 +30,19 @@ public:
     IsTamedDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISTAMEDDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsTamedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -132479714
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsTamedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1072966100
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsTamedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsTamedDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1367982014
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsTamedDefinition>> &);
 

@@ -24,6 +24,7 @@ namespace IncomingDataHelpers {
 #undef AFTER_EXTRA
     /**
      * @symbol ?clearIncomingCachedData@IncomingDataHelpers@@YAX_K@Z
+     * @hash   1444666838
      */
     MCAPI void clearIncomingCachedData(unsigned __int64);
 MCAPI extern class std::recursive_mutex mDataMutex;

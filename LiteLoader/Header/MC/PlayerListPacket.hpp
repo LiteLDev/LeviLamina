@@ -42,47 +42,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -539529135
      */
     virtual ~PlayerListPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@PlayerListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -214465497
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@PlayerListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1445720788
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@PlayerListPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1859456525
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?readExtended@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1761313144
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@PlayerListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -513419725
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTPACKET
-#endif
     /**
      * @symbol ??0PlayerListPacket@@QEAA@XZ
+     * @hash   812090227
      */
     MCAPI PlayerListPacket();
     /**
      * @symbol ??0PlayerListPacket@@QEAA@AEBVUUID@mce@@@Z
+     * @hash   310065636
      */
     MCAPI PlayerListPacket(class mce::UUID const &);
     /**
      * @symbol ?emplace@PlayerListPacket@@QEAAX$$QEAVPlayerListEntry@@@Z
+     * @hash   -1383143812
      */
     MCAPI void emplace(class PlayerListEntry &&);
 

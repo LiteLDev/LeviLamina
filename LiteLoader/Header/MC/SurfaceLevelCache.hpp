@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1057260231
      */
     virtual ~SurfaceLevelCache();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getPreliminarySurfaceLevel@SurfaceLevelCache@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+     * @hash   262044358
      */
     virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACELEVELCACHE
-#endif
     /**
      * @symbol ??0SurfaceLevelCache@@QEAA@V?$DividedPos2d@$03@@AEBVIPreliminarySurfaceProvider@@_K@Z
+     * @hash   446241087
      */
     MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const &, unsigned __int64);
 

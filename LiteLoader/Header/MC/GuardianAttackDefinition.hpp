@@ -31,27 +31,29 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1232868170
      */
     virtual ~GuardianAttackDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?validateMobType@GuardianAttackDefinition@@UEAA_NAEAVMob@@@Z
+     * @hash   -475675813
      */
     virtual bool validateMobType(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIANATTACKDEFINITION
-#endif
     /**
      * @symbol ??0GuardianAttackDefinition@@QEAA@XZ
+     * @hash   618173672
      */
     MCAPI GuardianAttackDefinition();
     /**
      * @symbol ?initialize@GuardianAttackDefinition@@QEAAXAEAVEntityContext@@AEAVGuardianAttackGoal@@@Z
+     * @hash   -599968557
      */
     MCAPI void initialize(class EntityContext &, class GuardianAttackGoal &);
     /**
      * @symbol ?buildSchema@GuardianAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGuardianAttackDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -1999218141
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>> &);
 

@@ -26,18 +26,19 @@ public:
     BlockMaterialInstance() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCE
-#endif
     /**
      * @symbol ??4BlockMaterialInstance@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -780466382
      */
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance &&);
     /**
      * @symbol ??4BlockMaterialInstance@@QEAAAEAU0@AEBU0@@Z
+     * @hash   1023171854
      */
     MCAPI struct BlockMaterialInstance & operator=(struct BlockMaterialInstance const &);
     /**
      * @symbol ??1BlockMaterialInstance@@QEAA@XZ
+     * @hash   1263705381
      */
     MCAPI ~BlockMaterialInstance();
 MCAPI static class std::initializer_list<struct std::pair<std::string, enum BlockRenderLayer>> const blockRenderLayerEnumValues;

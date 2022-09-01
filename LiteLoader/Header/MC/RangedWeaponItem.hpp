@@ -33,113 +33,119 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -975153728
      */
     virtual ~RangedWeaponItem();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 52
-     * @symbol __unk_vfn_52
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @vtable 54
-     * @symbol __unk_vfn_54
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @vtable 64
+     * @vftbl  64
      * @symbol ?getEnchantValue@RangedWeaponItem@@UEBAHXZ
+     * @hash   941259683
      */
     virtual int getEnchantValue() const;
     /**
-     * @vtable 67
-     * @symbol __unk_vfn_67
+     * @vftbl  67
+     * @hash   -186360955
      */
     virtual void __unk_vfn_67();
     /**
-     * @vtable 71
-     * @symbol __unk_vfn_71
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @vtable 72
-     * @symbol __unk_vfn_72
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 76
-     * @symbol __unk_vfn_76
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 81
-     * @symbol __unk_vfn_81
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @vtable 85
+     * @vftbl  85
      * @symbol ?use@RangedWeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     * @hash   -506893224
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @vtable 88
+     * @vftbl  88
      * @symbol ?releaseUsing@RangedWeaponItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
+     * @hash   -1028187608
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
     /**
-     * @vtable 90
+     * @vftbl  90
      * @symbol ?hurtActor@RangedWeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     * @hash   530678132
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @vtable 94
+     * @vftbl  94
      * @symbol ?mineBlock@RangedWeaponItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+     * @hash   1530383653
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
-     * @vtable 120
+     * @vftbl  120
      * @symbol ?getAnimationFrameFor@RangedWeaponItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+     * @hash   -1146046513
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANGEDWEAPONITEM
-#endif
     /**
      * @symbol ??0RangedWeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -1254060076
      */
     MCAPI RangedWeaponItem(std::string const &, int);
     /**
      * @symbol ?getLaunchPower@RangedWeaponItem@@QEBAMHHH@Z
+     * @hash   2066977779
      */
     MCAPI float getLaunchPower(int, int, int) const;
 

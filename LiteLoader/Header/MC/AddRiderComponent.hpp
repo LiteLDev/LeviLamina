@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDRIDERCOMPONENT
-#endif
     /**
      * @symbol ?reloadComponent@AddRiderComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -199022030
      */
     MCAPI void reloadComponent(class Actor &);
     /**
      * @symbol ??1AddRiderComponent@@QEAA@XZ
+     * @hash   -1269956944
      */
     MCAPI ~AddRiderComponent();
 

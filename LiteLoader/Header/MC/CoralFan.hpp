@@ -32,309 +32,333 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2108043628
      */
     virtual ~CoralFan();
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?randomlyModifyPosition@CoralFan@@UEBA?AVVec3@@AEBVBlockPos@@@Z
+     * @hash   -1924187225
      */
     virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?getAABB@CoralFan@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
+     * @hash   987288434
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @vtable 19
-     * @symbol __unk_vfn_19
+     * @vftbl  19
+     * @hash   -327659668
      */
     virtual void __unk_vfn_19();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -276866013
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -275942492
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -275018971
      */
     virtual void __unk_vfn_34();
     /**
-     * @vtable 35
+     * @vftbl  35
      * @symbol ?isWaterBlocking@CoralFan@@UEBA_NXZ
+     * @hash   -780751208
      */
     virtual bool isWaterBlocking() const;
     /**
-     * @vtable 36
-     * @symbol __unk_vfn_36
+     * @vftbl  36
+     * @hash   -273171929
      */
     virtual void __unk_vfn_36();
     /**
-     * @vtable 37
-     * @symbol __unk_vfn_37
+     * @vftbl  37
+     * @hash   -272248408
      */
     virtual void __unk_vfn_37();
     /**
-     * @vtable 38
-     * @symbol __unk_vfn_38
+     * @vftbl  38
+     * @hash   -271324887
      */
     virtual void __unk_vfn_38();
     /**
-     * @vtable 39
-     * @symbol __unk_vfn_39
+     * @vftbl  39
+     * @hash   -270401366
      */
     virtual void __unk_vfn_39();
     /**
-     * @vtable 40
-     * @symbol __unk_vfn_40
+     * @vftbl  40
+     * @hash   -250083904
      */
     virtual void __unk_vfn_40();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 42
-     * @symbol __unk_vfn_42
+     * @vftbl  42
+     * @hash   -248236862
      */
     virtual void __unk_vfn_42();
     /**
-     * @vtable 44
-     * @symbol __unk_vfn_44
+     * @vftbl  44
+     * @hash   -246389820
      */
     virtual void __unk_vfn_44();
     /**
-     * @vtable 45
-     * @symbol __unk_vfn_45
+     * @vftbl  45
+     * @hash   -245466299
      */
     virtual void __unk_vfn_45();
     /**
-     * @vtable 46
-     * @symbol __unk_vfn_46
+     * @vftbl  46
+     * @hash   -244542778
      */
     virtual void __unk_vfn_46();
     /**
-     * @vtable 47
-     * @symbol __unk_vfn_47
+     * @vftbl  47
+     * @hash   -243619257
      */
     virtual void __unk_vfn_47();
     /**
-     * @vtable 48
-     * @symbol __unk_vfn_48
+     * @vftbl  48
+     * @hash   -242695736
      */
     virtual void __unk_vfn_48();
     /**
-     * @vtable 49
-     * @symbol __unk_vfn_49
+     * @vftbl  49
+     * @hash   -241772215
      */
     virtual void __unk_vfn_49();
     /**
-     * @vtable 54
+     * @vftbl  54
      * @symbol ?isValidAuxValue@CoralFan@@UEBA_NH@Z
+     * @hash   -317011928
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @vtable 59
-     * @symbol __unk_vfn_59
+     * @vftbl  59
+     * @hash   -219877752
      */
     virtual void __unk_vfn_59();
     /**
-     * @vtable 60
-     * @symbol __unk_vfn_60
+     * @vftbl  60
+     * @hash   -192825602
      */
     virtual void __unk_vfn_60();
     /**
-     * @vtable 61
+     * @vftbl  61
      * @symbol ?canContainLiquid@CoralFan@@UEBA_NXZ
+     * @hash   -797188970
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vtable 67
+     * @vftbl  67
      * @symbol ?checkIsPathable@CoralFan@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+     * @hash   -1296135354
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -135567300
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 85
+     * @vftbl  85
      * @symbol ?mayConsumeFertilizer@CoralFan@@UEBA_NAEAVBlockSource@@@Z
+     * @hash   1231135699
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @vtable 91
+     * @vftbl  91
      * @symbol ?mayPlaceOn@CoralFan@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -303607162
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vtable 98
+     * @vftbl  98
      * @symbol ?neighborChanged@CoralFan@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     * @hash   -839674044
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vtable 100
+     * @vftbl  100
      * @symbol ?getResourceCount@CoralFan@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   -564099288
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @vtable 101
+     * @vftbl  101
      * @symbol ?getResourceItem@CoralFan@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   -11024768
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vtable 102
+     * @vftbl  102
      * @symbol ?asItemInstance@CoralFan@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   695531765
      */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 103
+     * @vftbl  103
      * @symbol ?spawnResources@CoralFan@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@PEAV?$vector@PEBVItem@@V?$allocator@PEBVItem@@@std@@@std@@MH@Z
+     * @hash   1590859158
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, std::vector<class Item const *> *, float, int) const;
     /**
-     * @vtable 105
-     * @symbol __unk_vfn_105
+     * @vftbl  105
+     * @hash   1332020102
      */
     virtual void __unk_vfn_105();
     /**
-     * @vtable 124
-     * @symbol __unk_vfn_124
+     * @vftbl  124
+     * @hash   1388354883
      */
     virtual void __unk_vfn_124();
     /**
-     * @vtable 126
-     * @symbol __unk_vfn_126
+     * @vftbl  126
+     * @hash   1390201925
      */
     virtual void __unk_vfn_126();
     /**
-     * @vtable 127
-     * @symbol __unk_vfn_127
+     * @vftbl  127
+     * @hash   1391125446
      */
     virtual void __unk_vfn_127();
     /**
-     * @vtable 132
-     * @symbol __unk_vfn_132
+     * @vftbl  132
+     * @hash   1415136992
      */
     virtual void __unk_vfn_132();
     /**
-     * @vtable 134
+     * @vftbl  134
      * @symbol ?buildDescriptionId@CoralFan@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+     * @hash   1913781113
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @vtable 135
+     * @vftbl  135
      * @symbol ?isAuxValueRelevantForPicking@CoralFan@@UEBA_NXZ
+     * @hash   1467867682
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @vtable 136
+     * @vftbl  136
      * @symbol ?getColor@CoralFan@@UEBAHAEBVBlock@@@Z
+     * @hash   -47522988
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @vtable 137
+     * @vftbl  137
      * @symbol ?getColor@CoralFan@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   1684053790
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 147
+     * @vftbl  147
      * @symbol ?getVariant@CoralFan@@UEBAHAEBVBlock@@@Z
+     * @hash   1125110226
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vtable 148
-     * @symbol __unk_vfn_148
+     * @vftbl  148
+     * @hash   1442572581
      */
     virtual void __unk_vfn_148();
     /**
-     * @vtable 157
-     * @symbol __unk_vfn_157
+     * @vftbl  157
+     * @hash   1470278211
      */
     virtual void __unk_vfn_157();
     /**
-     * @vtable 158
+     * @vftbl  158
      * @symbol ?getSilkTouchItemInstance@CoralFan@@UEBA?AVItemInstance@@AEBVBlock@@@Z
+     * @hash   1033967433
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @vtable 168
-     * @symbol __unk_vfn_168
+     * @vftbl  168
+     * @hash   1457546883
      */
     virtual void __unk_vfn_168();
     /**
-     * @vtable 169
-     * @symbol __unk_vfn_169
+     * @vftbl  169
+     * @hash   1458470404
      */
     virtual void __unk_vfn_169();
     /**
-     * @vtable 170
-     * @symbol __unk_vfn_170
+     * @vftbl  170
+     * @hash   1478787866
      */
     virtual void __unk_vfn_170();
     /**
-     * @vtable 171
+     * @vftbl  171
      * @symbol ?onPlace@CoralFan@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1033494715
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vtable 173
+     * @vftbl  173
      * @symbol ?playerDestroy@CoralFan@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -239952698
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 177
-     * @symbol __unk_vfn_177
+     * @vftbl  177
+     * @hash   1534271201
      */
     virtual void __unk_vfn_177();
     /**
-     * @vtable 187
+     * @vftbl  187
      * @symbol ?getMapColor@CoralFan@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1006599412
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vtable 188
-     * @symbol __unk_vfn_188
+     * @vftbl  188
+     * @hash   1563823873
      */
     virtual void __unk_vfn_188();
     /**
-     * @vtable 192
+     * @vftbl  192
      * @symbol ?checkAlive@CoralFan@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   521100136
      */
     virtual void checkAlive(class BlockSource &, class BlockPos const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALFAN
     /**
-     * @vtable -1
      * @symbol ?canBeSilkTouched@CoralFan@@MEBA_NXZ
+     * @hash   1687887461
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
      * @symbol ??0CoralFan@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   42081168
      */
     MCAPI CoralFan(std::string const &, int);
 MCAPI static std::string const CORAL_FAN_NAMES[];

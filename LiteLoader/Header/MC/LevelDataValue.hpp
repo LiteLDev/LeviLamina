@@ -27,10 +27,9 @@ public:
     LevelDataValue() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDATAVALUE
-#endif
     /**
      * @symbol ??1LevelDataValue@@QEAA@XZ
+     * @hash   -1316262707
      */
     MCAPI ~LevelDataValue();
 

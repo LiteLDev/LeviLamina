@@ -29,30 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORCOMPONENT
-#endif
     /**
      * @symbol ??0BlockBreakSensorComponent@@QEAA@XZ
+     * @hash   -97188483
      */
     MCAPI BlockBreakSensorComponent();
     /**
      * @symbol ??0BlockBreakSensorComponent@@QEAA@$$QEAV0@@Z
+     * @hash   -696094357
      */
     MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent &&);
     /**
      * @symbol ?initialize@BlockBreakSensorComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -809601924
      */
     MCAPI void initialize(class Actor &);
     /**
      * @symbol ??4BlockBreakSensorComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -130675434
      */
     MCAPI class BlockBreakSensorComponent & operator=(class BlockBreakSensorComponent &&);
     /**
      * @symbol ?updateSensorPos@BlockBreakSensorComponent@@QEAAXAEBVVec3@@@Z
+     * @hash   -660921666
      */
     MCAPI void updateSensorPos(class Vec3 const &);
     /**
      * @symbol ??1BlockBreakSensorComponent@@QEAA@XZ
+     * @hash   1386867709
      */
     MCAPI ~BlockBreakSensorComponent();
 

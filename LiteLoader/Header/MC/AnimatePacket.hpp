@@ -45,46 +45,52 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -492014825
      */
     virtual ~AnimatePacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@AnimatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1169376213
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@AnimatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -309879166
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@AnimatePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   432013093
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@AnimatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1380763061
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEPACKET
-#endif
     /**
      * @symbol ??0AnimatePacket@@QEAA@XZ
+     * @hash   -762177467
      */
     MCAPI AnimatePacket();
     /**
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
+     * @hash   -1910661103
      */
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);
     /**
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
+     * @hash   -2133479536
      */
     MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
     /**
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
+     * @hash   -1620136214
      */
     MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor &);
 

@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1857342447
      */
     virtual ~TakeItemActorPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@TakeItemActorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1677366405
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@TakeItemActorPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1255602648
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@TakeItemActorPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   2033901439
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@TakeItemActorPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1228765343
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAKEITEMACTORPACKET
-#endif
     /**
      * @symbol ??0TakeItemActorPacket@@QEAA@XZ
+     * @hash   -1412928977
      */
     MCAPI TakeItemActorPacket();
     /**
      * @symbol ??0TakeItemActorPacket@@QEAA@VActorRuntimeID@@0@Z
+     * @hash   -76580997
      */
     MCAPI TakeItemActorPacket(class ActorRuntimeID, class ActorRuntimeID);
 

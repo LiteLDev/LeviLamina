@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -459322815
      */
     virtual ~LessonCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@LessonCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -39398256
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LESSONCOMMAND
-#endif
     /**
      * @symbol ?setup@LessonCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -2019311344
      */
     MCAPI static void setup(class CommandRegistry &);
 

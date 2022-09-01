@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -333043309
      */
     virtual ~InMemoryRandomAccessFile();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?Read@InMemoryRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z
+     * @hash   -916339630
      */
     virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYRANDOMACCESSFILE
-#endif
     /**
      * @symbol ??0InMemoryRandomAccessFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
+     * @hash   455303865
      */
     MCAPI InMemoryRandomAccessFile(class std::shared_ptr<class InMemoryFile>);
 

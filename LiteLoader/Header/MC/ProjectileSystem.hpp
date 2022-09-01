@@ -31,24 +31,24 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -327853886
      */
     virtual ~ProjectileSystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@ProjectileSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   591932344
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILESYSTEM
-#endif
     /**
      * @symbol ?_tickProjectileComponent@ProjectileSystem@@SAXPEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -773629648
      */
     MCAPI static void _tickProjectileComponent(class Actor *, class ProjectileComponent &);
 

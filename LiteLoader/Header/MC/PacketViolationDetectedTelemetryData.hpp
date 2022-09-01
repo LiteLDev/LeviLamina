@@ -31,18 +31,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETVIOLATIONDETECTEDTELEMETRYDATA
-#endif
     /**
      * @symbol ??0PacketViolationDetectedTelemetryData@@QEAA@AEBUExtendedStreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
+     * @hash   -580709438
      */
     MCAPI PacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
     /**
      * @symbol ?WriteEventData@PacketViolationDetectedTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
+     * @hash   1312191666
      */
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     /**
      * @symbol ??1PacketViolationDetectedTelemetryData@@QEAA@XZ
+     * @hash   -89026418
      */
     MCAPI ~PacketViolationDetectedTelemetryData();
 

@@ -24,10 +24,12 @@ namespace QuerySetIdentifier {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getDefaultCollection@QuerySetIdentifier@@YA?AV?$span@$$CBVHashedString@@$0?0@gsl@@XZ
+     * @hash   921624943
      */
     MCAPI class gsl::span<class HashedString const, -1> getDefaultCollection();
     /**
      * @symbol ?getTagsCollection@QuerySetIdentifier@@YA?AV?$span@$$CBVHashedString@@$0?0@gsl@@XZ
+     * @hash   1025167645
      */
     MCAPI class gsl::span<class HashedString const, -1> getTagsCollection();
 

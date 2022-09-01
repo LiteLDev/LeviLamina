@@ -34,33 +34,36 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1559472476
      */
     virtual ~SaveCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@SaveCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   38168453
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVECOMMAND
-#endif
     /**
      * @symbol ?setup@SaveCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   683147952
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?saveHold@SaveCommand@@CAXAEAVCommandOutput@@@Z
+     * @hash   10343238
      */
     MCAPI static void saveHold(class CommandOutput &);
     /**
      * @symbol ?saveResume@SaveCommand@@CAXAEAVCommandOutput@@@Z
+     * @hash   -809272392
      */
     MCAPI static void saveResume(class CommandOutput &);
     /**
      * @symbol ?saveState@SaveCommand@@CAXAEAVCommandOutput@@@Z
+     * @hash   -784063874
      */
     MCAPI static void saveState(class CommandOutput &);
 

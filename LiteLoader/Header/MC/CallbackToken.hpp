@@ -29,34 +29,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CALLBACKTOKEN
-#endif
     /**
      * @symbol ??0CallbackToken@@QEAA@$$QEAV0@@Z
+     * @hash   743733569
      */
     MCAPI CallbackToken(class CallbackToken &&);
     /**
      * @symbol ??0CallbackToken@@QEAA@V?$weak_ptr@VCallbackTokenCancelState@@@std@@@Z
+     * @hash   46255944
      */
     MCAPI CallbackToken(class std::weak_ptr<class CallbackTokenCancelState>);
     /**
      * @symbol ??0CallbackToken@@QEAA@XZ
+     * @hash   -237219744
      */
     MCAPI CallbackToken();
     /**
      * @symbol ?cancelCallback@CallbackToken@@QEAAXXZ
+     * @hash   -1636760735
      */
     MCAPI void cancelCallback();
     /**
      * @symbol ??4CallbackToken@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1517326108
      */
     MCAPI class CallbackToken & operator=(class CallbackToken &&);
     /**
      * @symbol ?release@CallbackToken@@QEAAXXZ
+     * @hash   -1069742765
      */
     MCAPI void release();
     /**
      * @symbol ??1CallbackToken@@QEAA@XZ
+     * @hash   -1303794112
      */
     MCAPI ~CallbackToken();
 

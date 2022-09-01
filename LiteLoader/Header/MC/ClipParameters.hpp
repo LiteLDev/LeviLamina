@@ -27,14 +27,14 @@ public:
     ClipParameters() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIPPARAMETERS
-#endif
     /**
      * @symbol ??0ClipParameters@@QEAA@AEBVVec3@@0AEBV?$function@$$A6A_NAEBVBlockSource@@AEBVBlock@@_N@Z@std@@@Z
+     * @hash   -1787601194
      */
     MCAPI ClipParameters(class Vec3 const &, class Vec3 const &, class std::function<bool (class BlockSource const &, class Block const &, bool)> const &);
     /**
      * @symbol ??1ClipParameters@@QEAA@XZ
+     * @hash   -604250716
      */
     MCAPI ~ClipParameters();
 

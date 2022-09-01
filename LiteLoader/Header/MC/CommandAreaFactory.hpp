@@ -30,40 +30,46 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREAFACTORY
-#endif
     /**
      * @symbol ??0CommandAreaFactory@@QEAA@AEAVDimension@@@Z
+     * @hash   -1073544129
      */
     MCAPI CommandAreaFactory(class Dimension &);
     /**
      * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
+     * @hash   -328662163
      */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool) const;
     /**
      * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0_N1@Z
+     * @hash   -787009731
      */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, bool, bool) const;
     /**
      * @symbol ?findArea@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H_N@Z
+     * @hash   1428002347
      */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, int, bool) const;
     /**
      * @symbol ?findAreaWithBuffer@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@0H_N@Z
+     * @hash   1624867465
      */
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
     /**
      * @symbol ?findAreaWithBuffer@CommandAreaFactory@@QEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBVBlockPos@@H_N@Z
+     * @hash   660647087
      */
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const &, int, bool) const;
     /**
      * @symbol ?shouldAllowNonTickingPlayerAndTickingAreaChunks@CommandAreaFactory@@SA_NH@Z
+     * @hash   -1375577703
      */
     MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int);
 
 //private:
     /**
      * @symbol ?_getArea@CommandAreaFactory@@AEBA?AV?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEBUBounds@@_N1@Z
+     * @hash   -1417624983
      */
     MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const &, bool, bool) const;
 

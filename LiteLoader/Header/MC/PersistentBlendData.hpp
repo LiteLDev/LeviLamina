@@ -27,14 +27,14 @@ public:
     PersistentBlendData() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSISTENTBLENDDATA
-#endif
     /**
      * @symbol ??0PersistentBlendData@@QEAA@AEAVStringByteInput@@@Z
+     * @hash   -237173401
      */
     MCAPI PersistentBlendData(class StringByteInput &);
     /**
      * @symbol ?serialize@PersistentBlendData@@QEBAXAEAVStringByteOutput@@@Z
+     * @hash   -990976050
      */
     MCAPI void serialize(class StringByteOutput &) const;
 

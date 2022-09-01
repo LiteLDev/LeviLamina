@@ -28,34 +28,39 @@ public:
     AABBBucket(struct AABBBucket const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABBBUCKET
-#endif
     /**
      * @symbol ??0AABBBucket@@QEAA@XZ
+     * @hash   489853670
      */
     MCAPI AABBBucket();
     /**
      * @symbol ?clearDirty@AABBBucket@@QEAAXXZ
+     * @hash   108070341
      */
     MCAPI void clearDirty();
     /**
      * @symbol ?clearNeedsFinalize@AABBBucket@@QEAAXXZ
+     * @hash   -409267211
      */
     MCAPI void clearNeedsFinalize();
     /**
      * @symbol ?isDirty@AABBBucket@@QEAA_NXZ
+     * @hash   -172094932
      */
     MCAPI bool isDirty();
     /**
      * @symbol ?markDirty@AABBBucket@@QEAAXXZ
+     * @hash   -13597581
      */
     MCAPI void markDirty();
     /**
      * @symbol ?mergeAABBs@AABBBucket@@QEAAXXZ
+     * @hash   -1553240123
      */
     MCAPI void mergeAABBs();
     /**
      * @symbol ?needsFinalize@AABBBucket@@QEBA_NXZ
+     * @hash   -1653307214
      */
     MCAPI bool needsFinalize() const;
 

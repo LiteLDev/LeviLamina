@@ -27,8 +27,6 @@ public:
     AdultRidingHeightOffsetComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADULTRIDINGHEIGHTOFFSETCOMPONENT
-#endif
 MCAPI static float const SITTING_ANIMATION_OFFSET;
 
 };

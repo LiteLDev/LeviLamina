@@ -34,44 +34,51 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMSTACKDESCRIPTOR
-#endif
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
+     * @hash   -1112845973
      */
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@AEBVItemStack@@@Z
+     * @hash   -1567195063
      */
     MCAPI NetworkItemStackDescriptor(class ItemStack const &);
     /**
      * @symbol ??0NetworkItemStackDescriptor@@QEAA@$$QEAV0@@Z
+     * @hash   661902821
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
     /**
      * @symbol ?read@NetworkItemStackDescriptor@@QEAAXAEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1644690074
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?setIncludeNetIds@NetworkItemStackDescriptor@@QEBAX_N@Z
+     * @hash   -1029300426
      */
     MCAPI void setIncludeNetIds(bool) const;
     /**
      * @symbol ?tryGetServerNetId@NetworkItemStackDescriptor@@QEBAPEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@XZ
+     * @hash   897369710
      */
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
     /**
      * @symbol ?write@NetworkItemStackDescriptor@@QEBAXAEAVBinaryStream@@@Z
+     * @hash   -1313731644
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1NetworkItemStackDescriptor@@QEAA@XZ
+     * @hash   1709350784
      */
     MCAPI ~NetworkItemStackDescriptor();
 
 //private:
     /**
      * @symbol ?getItemStack@NetworkItemStackDescriptor@@AEBA?AVItemStack@@AEBVBlockPalette@@@Z
+     * @hash   -1674561695
      */
     MCAPI class ItemStack getItemStack(class BlockPalette const &) const;
 

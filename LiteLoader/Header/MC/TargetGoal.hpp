@@ -31,90 +31,103 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1600389106
      */
     virtual ~TargetGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@WitherTargetHighestDamage@@UEAA_NXZ
+     * @hash   -332601497
      */
     virtual bool canUse() = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@TargetGoal@@UEAA_NXZ
+     * @hash   494640906
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?isTargetGoal@TargetGoal@@UEBA_NXZ
+     * @hash   369070594
      */
     virtual bool isTargetGoal() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@TargetGoal@@UEAAXXZ
+     * @hash   -1184871563
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@TargetGoal@@UEAAXXZ
+     * @hash   1143640389
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@TargetGoal@@UEAAXXZ
+     * @hash   -1390343584
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@TargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1346564644
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?_canAttack@TargetGoal@@MEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z
+     * @hash   1848880719
      */
     virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOAL
-#endif
     /**
      * @symbol ??0TargetGoal@@QEAA@AEAVMob@@_NH1M1H@Z
+     * @hash   717728767
      */
     MCAPI TargetGoal(class Mob &, bool, int, bool, float, bool, int);
     /**
      * @symbol ??0TargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_NH2M2H@Z
+     * @hash   -2020198150
      */
     MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
 
 //protected:
     /**
      * @symbol ?_canAttack@TargetGoal@@IEAA_NPEAVActor@@_NPEAPEBUMobDescriptor@@@Z
+     * @hash   731917358
      */
     MCAPI bool _canAttack(class Actor *, bool, struct MobDescriptor const **);
     /**
      * @symbol ?_canReach@TargetGoal@@IEAA_NAEAVActor@@@Z
+     * @hash   1346334652
      */
     MCAPI bool _canReach(class Actor &);
     /**
      * @symbol ?_canReachAfterDelay@TargetGoal@@IEAA_NAEAVActor@@@Z
+     * @hash   -1213134827
      */
     MCAPI bool _canReachAfterDelay(class Actor &);
     /**
      * @symbol ?_matchesTargetTypes@TargetGoal@@IEAA_NPEAVMob@@PEAVActor@@_NPEAPEBUMobDescriptor@@@Z
+     * @hash   -1925885963
      */
     MCAPI bool _matchesTargetTypes(class Mob *, class Actor *, bool, struct MobDescriptor const **);
     /**
      * @symbol ?_withinRange@TargetGoal@@IEAA_NAEBVActor@@@Z
+     * @hash   891504040
      */
     MCAPI bool _withinRange(class Actor const &);
 

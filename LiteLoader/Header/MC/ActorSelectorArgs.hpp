@@ -27,10 +27,9 @@ public:
     ActorSelectorArgs() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSELECTORARGS
-#endif
     /**
      * @symbol ??1ActorSelectorArgs@@QEAA@XZ
+     * @hash   1117095917
      */
     MCAPI ~ActorSelectorArgs();
 MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;

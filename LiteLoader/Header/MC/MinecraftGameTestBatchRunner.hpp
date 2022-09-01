@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   107693987
      */
     virtual ~MinecraftGameTestBatchRunner();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z
+     * @hash   -1049654782
      */
     virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?_runTest@MinecraftGameTestBatchRunner@@MEAAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z
+     * @hash   624760487
      */
     virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTBATCHRUNNER
-#endif
     /**
      * @symbol ??0MinecraftGameTestBatchRunner@@QEAA@$$QEAV?$vector@VGameTestBatch@gametest@@V?$allocator@VGameTestBatch@gametest@@@std@@@std@@AEAVGameTestTicker@gametest@@$$QEAUTestParameters@4@V?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@2@AEAVDimension@@@Z
+     * @hash   323380731
      */
     MCAPI MinecraftGameTestBatchRunner(std::vector<class gametest::GameTestBatch> &&, class gametest::GameTestTicker &, struct gametest::TestParameters &&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
 

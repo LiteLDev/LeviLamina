@@ -43,10 +43,12 @@ MCAPI extern class mce::UUID const NO_PIECE_SELECTED;
 MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
     /**
      * @symbol ?pieceTypeFromString@persona@@YA?AW4PieceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2135099815
      */
     MCAPI enum persona::PieceType pieceTypeFromString(std::string const &);
     /**
      * @symbol ?stringFromPieceType@persona@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PieceType@1@_N@Z
+     * @hash   -1448352244
      */
     MCAPI std::string const & stringFromPieceType(enum persona::PieceType, bool);
 

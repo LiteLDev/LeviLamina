@@ -32,24 +32,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -868937467
      */
     virtual ~InstantaneousMobEffect();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?isInstantaneous@InstantaneousMobEffect@@UEBA_NXZ
+     * @hash   -733021111
      */
     virtual bool isInstantaneous() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?isDurationEffectTick@InstantaneousMobEffect@@UEBA_NHH@Z
+     * @hash   2144516153
      */
     virtual bool isDurationEffectTick(int, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSMOBEFFECT
-#endif
     /**
      * @symbol ??0InstantaneousMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
+     * @hash   2099804478
      */
     MCAPI InstantaneousMobEffect(int, std::string const &, std::string const &, bool, int, int);
 

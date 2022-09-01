@@ -32,59 +32,64 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1119958926
      */
     virtual ~CursorContainerValidation();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     * @hash   -257696776
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
+     * @hash   -721228613
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1361576986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+     * @hash   -1248295521
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getContainerOffset@CursorContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
+     * @hash   1443296312
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
+     * @hash   905849996
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CURSORCONTAINERVALIDATION
     /**
-     * @vtable -1
      * @symbol ?canItemMoveToContainer@CursorContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
+     * @hash   -1776122213
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
 #endif

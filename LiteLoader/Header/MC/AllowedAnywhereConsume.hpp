@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWEDANYWHERECONSUME
-#endif
     /**
      * @symbol ??0AllowedAnywhereConsume@@QEAA@W4ContainerEnumName@@EE@Z
+     * @hash   -1508333428
      */
     MCAPI AllowedAnywhereConsume(enum ContainerEnumName, unsigned char, unsigned char);
 

@@ -26,18 +26,19 @@ public:
     BiomeDecorationFeature() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEDECORATIONFEATURE
-#endif
     /**
      * @symbol ??0BiomeDecorationFeature@@QEAA@$$QEAU0@@Z
+     * @hash   -210249655
      */
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature &&);
     /**
      * @symbol ??0BiomeDecorationFeature@@QEAA@AEBU0@@Z
+     * @hash   1486334623
      */
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const &);
     /**
      * @symbol ??1BiomeDecorationFeature@@QEAA@XZ
+     * @hash   -123050608
      */
     MCAPI ~BiomeDecorationFeature();
 

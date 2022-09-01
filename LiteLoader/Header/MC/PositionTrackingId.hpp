@@ -28,42 +28,49 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGID
-#endif
     /**
      * @symbol ??0PositionTrackingId@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1324119882
      */
     MCAPI PositionTrackingId(std::string const &);
     /**
      * @symbol ??0PositionTrackingId@@QEAA@$$QEAV0@@Z
+     * @hash   1871673711
      */
     MCAPI PositionTrackingId(class PositionTrackingId &&);
     /**
      * @symbol ??0PositionTrackingId@@QEAA@AEBV0@@Z
+     * @hash   -532946767
      */
     MCAPI PositionTrackingId(class PositionTrackingId const &);
     /**
      * @symbol ?fromTag@PositionTrackingId@@QEAAXPEBVTag@@@Z
+     * @hash   1085180603
      */
     MCAPI void fromTag(class Tag const *);
     /**
      * @symbol ?getTag@PositionTrackingId@@QEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   757240360
      */
     MCAPI std::unique_ptr<class Tag> getTag() const;
     /**
      * @symbol ?init@PositionTrackingId@@QEAAXXZ
+     * @hash   -241372427
      */
     MCAPI void init();
     /**
      * @symbol ??4PositionTrackingId@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1412762354
      */
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId &&);
     /**
      * @symbol ??4PositionTrackingId@@QEAAAEAV0@AEBV0@@Z
+     * @hash   -351456396
      */
     MCAPI class PositionTrackingId & operator=(class PositionTrackingId const &);
     /**
      * @symbol ?toString@PositionTrackingId@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1146798918
      */
     MCAPI std::string const toString() const;
 MCAPI static class PositionTrackingId const INVALID_ID;

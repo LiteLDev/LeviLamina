@@ -32,142 +32,147 @@ public:
 
 public:
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@EyeOfEnder@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   -1480943715
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   -1212551798
      */
     virtual ~EyeOfEnder();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 47
+     * @vftbl  47
      * @symbol ?lerpMotion@EyeOfEnder@@UEAAXAEBVVec3@@@Z
+     * @hash   426201198
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
-     * @vtable 49
+     * @vftbl  49
      * @symbol ?normalTick@EyeOfEnder@@UEAAXXZ
+     * @hash   -731827813
      */
     virtual void normalTick();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@EyeOfEnder@@UEBAMXZ
+     * @hash   -558209386
      */
     virtual float getShadowRadius() const;
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EYEOFENDER
-#endif
     /**
      * @symbol ??0EyeOfEnder@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   332650492
      */
     MCAPI EyeOfEnder(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?preNormalTick@EyeOfEnder@@QEAAXXZ
+     * @hash   1338926515
      */
     MCAPI void preNormalTick();
     /**
      * @symbol ?signalTo@EyeOfEnder@@QEAAXAEBVPlayer@@AEAVBlockPos@@@Z
+     * @hash   1695431953
      */
     MCAPI void signalTo(class Player const &, class BlockPos &);
 

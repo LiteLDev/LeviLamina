@@ -28,28 +28,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERSTORAGEFEATURE
-#endif
 
 //protected:
     /**
      * @symbol ??0OwnerStorageFeature@@IEAA@W4VariadicInit@0@AEAVFeatureRegistry@@@Z
+     * @hash   -626767185
      */
     MCAPI OwnerStorageFeature(enum OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
     /**
      * @symbol ??0OwnerStorageFeature@@IEAA@$$QEAV0@@Z
+     * @hash   -359953811
      */
     MCAPI OwnerStorageFeature(class OwnerStorageFeature &&);
     /**
      * @symbol ?_getStackRef@OwnerStorageFeature@@IEBAAEAVIFeature@@XZ
+     * @hash   -1124719061
      */
     MCAPI class IFeature & _getStackRef() const;
     /**
      * @symbol ?_hasValue@OwnerStorageFeature@@IEBA_NXZ
+     * @hash   2121506804
      */
     MCAPI bool _hasValue() const;
     /**
      * @symbol ??1OwnerStorageFeature@@IEAA@XZ
+     * @hash   -1894616460
      */
     MCAPI ~OwnerStorageFeature();
 

@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYOPTIONALOWNERREF
-#endif
     /**
      * @symbol ??0EntityOptionalOwnerRef@@QEAA@XZ
+     * @hash   -1628377153
      */
     MCAPI EntityOptionalOwnerRef();
     /**
      * @symbol ?isSet@EntityOptionalOwnerRef@@QEBA_NXZ
+     * @hash   -475132870
      */
     MCAPI bool isSet() const;
     /**
      * @symbol ?setOwnedRef@EntityOptionalOwnerRef@@QEAAXV?$OwnerPtrT@UEntityRefTraits@@@@@Z
+     * @hash   -155638223
      */
     MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>);
     /**
      * @symbol ?setWeakRef@EntityOptionalOwnerRef@@QEAAXV?$WeakRefT@UEntityRefTraits@@@@@Z
+     * @hash   1710304387
      */
     MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits>);
     /**
      * @symbol ?tryGet@EntityOptionalOwnerRef@@QEBA?AV?$StackRefResultT@UEntityRefTraits@@@@XZ
+     * @hash   -978576525
      */
     MCAPI class StackRefResultT<struct EntityRefTraits> tryGet() const;
 

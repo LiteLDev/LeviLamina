@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -140370488
      */
     virtual ~SmokerContainerManagerModel();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0SmokerContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -498376501
      */
     MCAPI SmokerContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 

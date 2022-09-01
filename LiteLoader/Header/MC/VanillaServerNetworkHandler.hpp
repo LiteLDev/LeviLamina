@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -244907064
      */
     virtual ~VanillaServerNetworkHandler();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?handle@VanillaServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
+     * @hash   -564886087
      */
     virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERNETWORKHANDLER
-#endif
     /**
      * @symbol ??0VanillaServerNetworkHandler@@QEAA@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@AEAVServerInstance@@@Z
+     * @hash   -1384863050
      */
     MCAPI VanillaServerNetworkHandler(class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, class ServerInstance &);
 

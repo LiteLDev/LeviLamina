@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1860586552
      */
     virtual ~DeadBushFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@DeadBushFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1087410756
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEADBUSHFEATURE
-#endif
 
 };

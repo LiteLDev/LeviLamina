@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1570665816
      */
     virtual ~ActivateToolDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@ActivateToolDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   -754266938
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVATETOOLDEFINITION
-#endif
 
 };

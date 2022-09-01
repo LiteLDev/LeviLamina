@@ -29,49 +29,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   557707147
      */
     virtual ~CroakGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@CroakGoal@@UEAA_NXZ
+     * @hash   417614243
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@CroakGoal@@UEAA_NXZ
+     * @hash   189441233
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@CroakGoal@@UEAAXXZ
+     * @hash   -662262932
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@CroakGoal@@UEAAXXZ
+     * @hash   1682666492
      */
     virtual void stop();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@CroakGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1244494403
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CROAKGOAL
-#endif
     /**
      * @symbol ??0CroakGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -233414912
      */
     MCAPI CroakGoal(class Mob &);
 

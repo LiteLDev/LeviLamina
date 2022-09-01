@@ -32,23 +32,24 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -262151273
      */
     virtual ~HopperContainerManagerModel();
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@HopperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   688249501
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -1772888244
      */
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+     * @hash   500542182
      */
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
 

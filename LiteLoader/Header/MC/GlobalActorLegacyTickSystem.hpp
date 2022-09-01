@@ -31,21 +31,20 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -365357867
      */
     virtual ~GlobalActorLegacyTickSystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@GlobalActorLegacyTickSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -1914545689
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOBALACTORLEGACYTICKSYSTEM
-#endif
 
 };

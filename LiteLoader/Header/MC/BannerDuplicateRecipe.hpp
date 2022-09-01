@@ -32,48 +32,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -47450629
      */
     virtual ~BannerDuplicateRecipe();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?assemble@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   -674949557
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@BannerDuplicateRecipe@@UEBAHXZ
+     * @hash   -1245600249
      */
     virtual int getCraftingSize() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getIngredient@BannerDuplicateRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   1676418136
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getResultItem@BannerDuplicateRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   -1435512380
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?matches@BannerDuplicateRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   -1494341159
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?size@BannerDuplicateRecipe@@UEBAHXZ
+     * @hash   -235989777
      */
     virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERDUPLICATERECIPE
-#endif
     /**
      * @symbol ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     * @hash   1430019445
      */
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
      * @symbol ??0BannerDuplicateRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   2048939226
      */
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>);
 MCAPI static class mce::UUID const ID;

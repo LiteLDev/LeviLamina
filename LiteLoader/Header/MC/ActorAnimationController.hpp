@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLER
-#endif
     /**
      * @symbol ??0ActorAnimationController@@QEAA@AEBVHashedString@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   988666820
      */
     MCAPI ActorAnimationController(class HashedString const &, class SemVersion const &, std::string const &);
     /**
      * @symbol ?addState@ActorAnimationController@@QEAAAEAV?$shared_ptr@VActorAnimationControllerState@@@std@@AEBVHashedString@@@Z
+     * @hash   -1027369410
      */
     MCAPI class std::shared_ptr<class ActorAnimationControllerState> & addState(class HashedString const &);
     /**
      * @symbol ?findStateIndex@ActorAnimationController@@QEBA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N_K@Z
+     * @hash   785921957
      */
     MCAPI unsigned __int64 findStateIndex(std::string const &, bool, unsigned __int64) const;
     /**
      * @symbol ?resolveTransitionStateIndices@ActorAnimationController@@QEAAXXZ
+     * @hash   717033827
      */
     MCAPI void resolveTransitionStateIndices();
 

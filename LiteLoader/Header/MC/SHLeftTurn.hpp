@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1157148733
      */
     virtual ~SHLeftTurn();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@SHLeftTurn@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   2113933042
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?addChildren@SHLeftTurn@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+     * @hash   -1473341858
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@SHLeftTurn@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   180551158
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHLEFTTURN
-#endif
 
 };

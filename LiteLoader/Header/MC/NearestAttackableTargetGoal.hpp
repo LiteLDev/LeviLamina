@@ -32,69 +32,77 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   635753042
      */
     virtual ~NearestAttackableTargetGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@NearestAttackableTargetGoal@@UEAA_NXZ
+     * @hash   2083830268
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@NearestAttackableTargetGoal@@UEAA_NXZ
+     * @hash   -399699846
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@NearestAttackableTargetGoal@@UEAAXXZ
+     * @hash   1899317749
      */
     virtual void start();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@NearestAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   105278420
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?_findTarget@NearestAttackableTargetGoal@@MEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z
+     * @hash   -629781167
      */
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTATTACKABLETARGETGOAL
-#endif
     /**
      * @symbol ??0NearestAttackableTargetGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -898074439
      */
     MCAPI NearestAttackableTargetGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_canStartSearching@NearestAttackableTargetGoal@@IEAA_NXZ
+     * @hash   -124282062
      */
     MCAPI bool _canStartSearching();
     /**
      * @symbol ?_getNearbyActors@NearestAttackableTargetGoal@@IEAA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@XZ
+     * @hash   -1314545990
      */
     MCAPI std::vector<struct DistanceSortedActor> _getNearbyActors();
     /**
      * @symbol ?_isTargetVisible@NearestAttackableTargetGoal@@IEBA_NAEBVMob@@MM@Z
+     * @hash   -208188825
      */
     MCAPI bool _isTargetVisible(class Mob const &, float, float) const;
 
 //private:
     /**
      * @symbol ?_selectTarget@NearestAttackableTargetGoal@@AEAA_NXZ
+     * @hash   -1601561250
      */
     MCAPI bool _selectTarget();
 

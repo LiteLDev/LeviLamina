@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -329540832
      */
     virtual ~CommandDispatcher();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z
+     * @hash   472483677
      */
     virtual int performCommand(class CommandOrigin const &, class Command &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDDISPATCHER
-#endif
     /**
      * @symbol ??0CommandDispatcher@@QEAA@XZ
+     * @hash   -966310482
      */
     MCAPI CommandDispatcher();
 

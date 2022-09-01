@@ -29,38 +29,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2046713399
      */
     virtual ~LessonProgressPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@LessonProgressPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   506120225
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@LessonProgressPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2034338098
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@LessonProgressPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1857861319
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@LessonProgressPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   977365769
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LESSONPROGRESSPACKET
-#endif
     /**
      * @symbol ??0LessonProgressPacket@@QEAA@XZ
+     * @hash   -1051436151
      */
     MCAPI LessonProgressPacket();
     /**
      * @symbol ??0LessonProgressPacket@@QEAA@W4LessonAction@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1479885226
      */
     MCAPI LessonProgressPacket(enum LessonAction, int, std::string const &);
 

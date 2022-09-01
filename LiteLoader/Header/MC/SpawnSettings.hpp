@@ -27,10 +27,9 @@ public:
     SpawnSettings() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNSETTINGS
-#endif
     /**
      * @symbol ??1SpawnSettings@@QEAA@XZ
+     * @hash   -858287318
      */
     MCAPI ~SpawnSettings();
 

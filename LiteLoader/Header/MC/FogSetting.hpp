@@ -27,8 +27,6 @@ public:
     FogSetting() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGSETTING
-#endif
 MCAPI static struct FogSetting const ZERO_SETTING;
 
 };

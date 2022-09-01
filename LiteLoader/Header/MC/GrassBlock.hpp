@@ -32,258 +32,272 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -460968255
      */
     virtual ~GrassBlock();
     /**
-     * @vtable 19
-     * @symbol __unk_vfn_19
+     * @vftbl  19
+     * @hash   -327659668
      */
     virtual void __unk_vfn_19();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -276866013
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -275942492
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -275018971
      */
     virtual void __unk_vfn_34();
     /**
-     * @vtable 36
-     * @symbol __unk_vfn_36
+     * @vftbl  36
+     * @hash   -273171929
      */
     virtual void __unk_vfn_36();
     /**
-     * @vtable 37
-     * @symbol __unk_vfn_37
+     * @vftbl  37
+     * @hash   -272248408
      */
     virtual void __unk_vfn_37();
     /**
-     * @vtable 38
-     * @symbol __unk_vfn_38
+     * @vftbl  38
+     * @hash   -271324887
      */
     virtual void __unk_vfn_38();
     /**
-     * @vtable 39
-     * @symbol __unk_vfn_39
+     * @vftbl  39
+     * @hash   -270401366
      */
     virtual void __unk_vfn_39();
     /**
-     * @vtable 40
-     * @symbol __unk_vfn_40
+     * @vftbl  40
+     * @hash   -250083904
      */
     virtual void __unk_vfn_40();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 42
-     * @symbol __unk_vfn_42
+     * @vftbl  42
+     * @hash   -248236862
      */
     virtual void __unk_vfn_42();
     /**
-     * @vtable 44
-     * @symbol __unk_vfn_44
+     * @vftbl  44
+     * @hash   -246389820
      */
     virtual void __unk_vfn_44();
     /**
-     * @vtable 45
-     * @symbol __unk_vfn_45
+     * @vftbl  45
+     * @hash   -245466299
      */
     virtual void __unk_vfn_45();
     /**
-     * @vtable 46
-     * @symbol __unk_vfn_46
+     * @vftbl  46
+     * @hash   -244542778
      */
     virtual void __unk_vfn_46();
     /**
-     * @vtable 47
-     * @symbol __unk_vfn_47
+     * @vftbl  47
+     * @hash   -243619257
      */
     virtual void __unk_vfn_47();
     /**
-     * @vtable 48
-     * @symbol __unk_vfn_48
+     * @vftbl  48
+     * @hash   -242695736
      */
     virtual void __unk_vfn_48();
     /**
-     * @vtable 49
-     * @symbol __unk_vfn_49
+     * @vftbl  49
+     * @hash   -241772215
      */
     virtual void __unk_vfn_49();
     /**
-     * @vtable 52
+     * @vftbl  52
      * @symbol ?canBeOriginalSurface@GrassBlock@@UEBA_NXZ
+     * @hash   -1802270966
      */
     virtual bool canBeOriginalSurface() const;
     /**
-     * @vtable 59
-     * @symbol __unk_vfn_59
+     * @vftbl  59
+     * @hash   -219877752
      */
     virtual void __unk_vfn_59();
     /**
-     * @vtable 60
-     * @symbol __unk_vfn_60
+     * @vftbl  60
+     * @hash   -192825602
      */
     virtual void __unk_vfn_60();
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -135567300
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 84
+     * @vftbl  84
      * @symbol ?onFertilized@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
+     * @hash   -2009539985
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
     /**
-     * @vtable 86
+     * @vftbl  86
      * @symbol ?canBeFertilized@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -1103551892
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 93
+     * @vftbl  93
      * @symbol ?tryToTill@GrassBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@AEAVItemStack@@@Z
+     * @hash   -1051367070
      */
     virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /**
-     * @vtable 98
+     * @vftbl  98
      * @symbol ?neighborChanged@GrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     * @hash   -1212169031
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vtable 101
+     * @vftbl  101
      * @symbol ?getResourceItem@GrassBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   -469654475
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vtable 105
-     * @symbol __unk_vfn_105
+     * @vftbl  105
+     * @hash   1332020102
      */
     virtual void __unk_vfn_105();
     /**
-     * @vtable 107
+     * @vftbl  107
      * @symbol ?calcVariant@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVColor@mce@@@Z
+     * @hash   -1240941287
      */
     virtual int calcVariant(class BlockSource &, class BlockPos const &, class mce::Color const &) const;
     /**
-     * @vtable 124
-     * @symbol __unk_vfn_124
+     * @vftbl  124
+     * @hash   1388354883
      */
     virtual void __unk_vfn_124();
     /**
-     * @vtable 126
-     * @symbol __unk_vfn_126
+     * @vftbl  126
+     * @hash   1390201925
      */
     virtual void __unk_vfn_126();
     /**
-     * @vtable 127
-     * @symbol __unk_vfn_127
+     * @vftbl  127
+     * @hash   1391125446
      */
     virtual void __unk_vfn_127();
     /**
-     * @vtable 132
-     * @symbol __unk_vfn_132
+     * @vftbl  132
+     * @hash   1415136992
      */
     virtual void __unk_vfn_132();
     /**
-     * @vtable 136
+     * @vftbl  136
      * @symbol ?getColor@GrassBlock@@UEBAHAEBVBlock@@@Z
+     * @hash   1176494009
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @vtable 137
+     * @vftbl  137
      * @symbol ?getColor@GrassBlock@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   1678118131
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 148
-     * @symbol __unk_vfn_148
+     * @vftbl  148
+     * @hash   1442572581
      */
     virtual void __unk_vfn_148();
     /**
-     * @vtable 157
-     * @symbol __unk_vfn_157
+     * @vftbl  157
+     * @hash   1470278211
      */
     virtual void __unk_vfn_157();
     /**
-     * @vtable 168
-     * @symbol __unk_vfn_168
+     * @vftbl  168
+     * @hash   1457546883
      */
     virtual void __unk_vfn_168();
     /**
-     * @vtable 169
-     * @symbol __unk_vfn_169
+     * @vftbl  169
+     * @hash   1458470404
      */
     virtual void __unk_vfn_169();
     /**
-     * @vtable 170
-     * @symbol __unk_vfn_170
+     * @vftbl  170
+     * @hash   1478787866
      */
     virtual void __unk_vfn_170();
     /**
-     * @vtable 175
+     * @vftbl  175
      * @symbol ?randomTick@GrassBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1072721114
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vtable 177
-     * @symbol __unk_vfn_177
+     * @vftbl  177
+     * @hash   1534271201
      */
     virtual void __unk_vfn_177();
     /**
-     * @vtable 179
+     * @vftbl  179
      * @symbol ?use@GrassBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+     * @hash   -525117492
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vtable 187
+     * @vftbl  187
      * @symbol ?getMapColor@GrassBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   2032349103
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vtable 188
-     * @symbol __unk_vfn_188
+     * @vftbl  188
+     * @hash   1563823873
      */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRASSBLOCK
     /**
-     * @vtable -1
      * @symbol ?waterSpreadCausesSpawn@GrassBlock@@UEBA_NXZ
+     * @hash   -90301432
      */
     MCVAPI bool waterSpreadCausesSpawn() const;
 #endif
     /**
      * @symbol ??0GrassBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -1144224203
      */
     MCAPI GrassBlock(std::string const &, int);
     /**
      * @symbol ?fertilize@GrassBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandomize@@@Z
+     * @hash   612086467
      */
     MCAPI bool fertilize(class BlockSource &, class BlockPos const &, class Randomize &) const;
 MCAPI static struct Brightness const MIN_BRIGHTNESS;
@@ -291,6 +305,7 @@ MCAPI static struct Brightness const MIN_BRIGHTNESS;
 //private:
     /**
      * @symbol ?_canBeGrass@GrassBlock@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1890110161
      */
     MCAPI bool _canBeGrass(class BlockSource const &, class BlockPos const &) const;
 

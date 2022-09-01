@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WSASTARTUPSINGLETON
-#endif
     /**
      * @symbol ?AddRef@WSAStartupSingleton@@SAXXZ
+     * @hash   1801473605
      */
     MCAPI static void AddRef();
     /**
      * @symbol ?Deref@WSAStartupSingleton@@SAXXZ
+     * @hash   -2121154105
      */
     MCAPI static void Deref();
 

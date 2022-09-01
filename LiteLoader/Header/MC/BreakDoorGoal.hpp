@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1236065998
      */
     virtual ~BreakDoorGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@BreakDoorGoal@@UEAA_NXZ
+     * @hash   1423945984
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@BreakDoorGoal@@UEAA_NXZ
+     * @hash   -2004179890
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@BreakDoorGoal@@UEAAXXZ
+     * @hash   -409814167
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@BreakDoorGoal@@UEAAXXZ
+     * @hash   -805431255
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@BreakDoorGoal@@UEAAXXZ
+     * @hash   -1289768556
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@BreakDoorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1534792480
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORGOAL
-#endif
     /**
      * @symbol ??0BreakDoorGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1106152445
      */
     MCAPI BreakDoorGoal(class Mob &);
 

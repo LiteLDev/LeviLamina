@@ -32,41 +32,46 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -139434590
      */
     virtual ~StructureCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@StructureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1696040853
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURECOMMAND
-#endif
     /**
      * @symbol ?setup@StructureCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   593894364
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_delete@StructureCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1457045445
      */
     MCAPI void _delete(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_getFullName@StructureCommand@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1342595680
      */
     MCAPI std::string _getFullName() const;
     /**
      * @symbol ?_isValidSize@StructureCommand@@AEBA_NAEBVBlockPos@@AEBVDimensionHeightRange@@AEAVCommandOutput@@@Z
+     * @hash   985210374
      */
     MCAPI bool _isValidSize(class BlockPos const &, class DimensionHeightRange const &, class CommandOutput &) const;
     /**
      * @symbol ?_load@StructureCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1083066576
      */
     MCAPI void _load(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_save@StructureCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1339104775
      */
     MCAPI void _save(class CommandOrigin const &, class CommandOutput &) const;
 

@@ -27,10 +27,9 @@ public:
     FilterInputs() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUTS
-#endif
     /**
      * @symbol ??1FilterInputs@@QEAA@XZ
+     * @hash   -1396264277
      */
     MCAPI ~FilterInputs();
 

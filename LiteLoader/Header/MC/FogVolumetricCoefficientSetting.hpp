@@ -29,8 +29,6 @@ public:
     FogVolumetricCoefficientSetting() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGVOLUMETRICCOEFFICIENTSETTING
-#endif
 MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
 
 };

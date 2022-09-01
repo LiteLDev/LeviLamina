@@ -27,10 +27,9 @@ public:
     VehicleComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEHICLECOMPONENT
-#endif
     /**
      * @symbol ??1VehicleComponent@@QEAA@XZ
+     * @hash   -5740693
      */
     MCAPI ~VehicleComponent();
 

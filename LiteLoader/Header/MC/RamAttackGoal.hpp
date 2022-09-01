@@ -31,73 +31,83 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   450183303
      */
     virtual ~RamAttackGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@RamAttackGoal@@UEAA_NXZ
+     * @hash   168535415
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RamAttackGoal@@UEAA_NXZ
+     * @hash   1035438341
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@RamAttackGoal@@UEAAXXZ
+     * @hash   -1865193408
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@RamAttackGoal@@UEAAXXZ
+     * @hash   2034202928
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@RamAttackGoal@@UEAAXXZ
+     * @hash   1549819499
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RamAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2085297847
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAMATTACKGOAL
-#endif
     /**
      * @symbol ??0RamAttackGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -519769116
      */
     MCAPI RamAttackGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_initiateRamAttack@RamAttackGoal@@IEAA_NXZ
+     * @hash   1632677074
      */
     MCAPI bool _initiateRamAttack();
 
 //private:
     /**
      * @symbol ?_hasChargePath@RamAttackGoal@@AEAA_NXZ
+     * @hash   10558017
      */
     MCAPI bool _hasChargePath();
     /**
      * @symbol ?_pathablePos@RamAttackGoal@@AEAA_NAEBVBlockSource@@VBlockPos@@@Z
+     * @hash   -281415858
      */
     MCAPI bool _pathablePos(class BlockSource const &, class BlockPos);
     /**
      * @symbol ?_resetCooldown@RamAttackGoal@@AEAAXXZ
+     * @hash   -1566058770
      */
     MCAPI void _resetCooldown();
     /**
      * @symbol ?_tryKnockbackTarget@RamAttackGoal@@AEAAXXZ
+     * @hash   -148648269
      */
     MCAPI void _tryKnockbackTarget();
 

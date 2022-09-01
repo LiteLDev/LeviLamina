@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1577606576
      */
     virtual ~HorseContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0HorseContainerScreenValidator@@QEAA@XZ
+     * @hash   -72107298
      */
     MCAPI HorseContainerScreenValidator();
 

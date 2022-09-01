@@ -32,17 +32,16 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1786912088
      */
     virtual ~FossilFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@FossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1003260436
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOSSILFEATURE
-#endif
 
 //private:
 

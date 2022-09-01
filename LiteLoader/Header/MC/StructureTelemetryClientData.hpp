@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETELEMETRYCLIENTDATA
-#endif
     /**
      * @symbol ?getMirrorEditCount@StructureTelemetryClientData@@QEBAIXZ
+     * @hash   -361995838
      */
     MCAPI unsigned int getMirrorEditCount() const;
     /**
      * @symbol ?getOffsetEditCount@StructureTelemetryClientData@@QEBAIXZ
+     * @hash   -886200782
      */
     MCAPI unsigned int getOffsetEditCount() const;
     /**
      * @symbol ?getRotationEditCount@StructureTelemetryClientData@@QEBAIXZ
+     * @hash   1578050162
      */
     MCAPI unsigned int getRotationEditCount() const;
     /**
      * @symbol ?getSizeEditCount@StructureTelemetryClientData@@QEBAIXZ
+     * @hash   1707719970
      */
     MCAPI unsigned int getSizeEditCount() const;
 

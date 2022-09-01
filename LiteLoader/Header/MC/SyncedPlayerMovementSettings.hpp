@@ -27,14 +27,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCEDPLAYERMOVEMENTSETTINGS
-#endif
     /**
      * @symbol ??0SyncedPlayerMovementSettings@@QEAA@XZ
+     * @hash   -1888485959
      */
     MCAPI SyncedPlayerMovementSettings();
     /**
      * @symbol ??0SyncedPlayerMovementSettings@@QEAA@AEBUPlayerMovementSettings@@@Z
+     * @hash   667254406
      */
     MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const &);
 

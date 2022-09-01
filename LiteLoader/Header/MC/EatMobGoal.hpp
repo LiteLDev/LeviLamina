@@ -29,49 +29,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1926557701
      */
     virtual ~EatMobGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@EatMobGoal@@UEAA_NXZ
+     * @hash   -262746539
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@EatMobGoal@@UEAA_NXZ
+     * @hash   210123331
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@EatMobGoal@@UEAAXXZ
+     * @hash   -1023381090
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@EatMobGoal@@UEAAXXZ
+     * @hash   -709292674
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@EatMobGoal@@UEAAXXZ
+     * @hash   -1227269383
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@EatMobGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -202791125
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATMOBGOAL
-#endif
     /**
      * @symbol ??0EatMobGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1375157026
      */
     MCAPI EatMobGoal(class Mob &);
 

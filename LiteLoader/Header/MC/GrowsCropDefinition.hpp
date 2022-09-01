@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWSCROPDEFINITION
-#endif
     /**
      * @symbol ??0GrowsCropDefinition@@QEAA@XZ
+     * @hash   -74038401
      */
     MCAPI GrowsCropDefinition();
     /**
      * @symbol ?initialize@GrowsCropDefinition@@QEAAXAEAVEntityContext@@AEAVGrowsCropComponent@@@Z
+     * @hash   1720160757
      */
     MCAPI void initialize(class EntityContext &, class GrowsCropComponent &);
     /**
      * @symbol ?buildSchema@GrowsCropDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGrowsCropDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -118652520
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GrowsCropDefinition>> &);
 

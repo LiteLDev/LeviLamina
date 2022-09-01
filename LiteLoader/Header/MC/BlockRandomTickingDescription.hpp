@@ -30,25 +30,26 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   887080629
      */
     virtual ~BlockRandomTickingDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@BlockRandomTickingDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -669169838
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockRandomTickingDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   780481586
      */
     virtual void initializeComponent(class EntityContext &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockRandomTickingDescription@@SAXXZ
+     * @hash   -831649793
      */
     MCAPI static void bindType();
 

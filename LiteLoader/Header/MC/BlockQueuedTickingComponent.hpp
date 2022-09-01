@@ -29,14 +29,14 @@ public:
     BlockQueuedTickingComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGCOMPONENT
-#endif
     /**
      * @symbol ??0BlockQueuedTickingComponent@@QEAA@$$QEAU0@@Z
+     * @hash   406501879
      */
     MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent &&);
     /**
      * @symbol ??1BlockQueuedTickingComponent@@QEAA@XZ
+     * @hash   -958277436
      */
     MCAPI ~BlockQueuedTickingComponent();
 

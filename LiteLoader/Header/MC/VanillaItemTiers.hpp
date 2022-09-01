@@ -31,8 +31,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTIERS
-#endif
 MCAPI static class Item::Tier const DIAMOND;
 MCAPI static class Item::Tier const GOLD;
 MCAPI static class Item::Tier const IRON;
@@ -41,6 +39,7 @@ MCAPI static class Item::Tier const STONE;
 MCAPI static class Item::Tier const WOOD;
     /**
      * @symbol ?getTierItems@VanillaItemTiers@@SA?BV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVTier@Item@@AEBVBaseGameVersion@@@Z
+     * @hash   -1546546088
      */
     MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const &, class BaseGameVersion const &);
 

@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1195926272
      */
     virtual ~LevelSoundEventPacketV1();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@LevelSoundEventPacketV1@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -142918740
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@LevelSoundEventPacketV1@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1379294551
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@LevelSoundEventPacketV1@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -299965538
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@LevelSoundEventPacketV1@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1010010706
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTPACKETV1
-#endif
     /**
      * @symbol ??0LevelSoundEventPacketV1@@QEAA@XZ
+     * @hash   -1101689538
      */
     MCAPI LevelSoundEventPacketV1();
 

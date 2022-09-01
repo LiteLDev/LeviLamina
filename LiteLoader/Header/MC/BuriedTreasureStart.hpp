@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   222318552
      */
     virtual ~BuriedTreasureStart();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURIEDTREASURESTART
-#endif
     /**
      * @symbol ??0BuriedTreasureStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
+     * @hash   -423796260
      */
     MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
 

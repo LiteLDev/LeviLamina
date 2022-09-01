@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2127528757
      */
     virtual ~FurnaceContainerScreenValidator();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?postCommitItemRemoved@FurnaceContainerScreenValidator@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
+     * @hash   392092988
      */
     virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0FurnaceContainerScreenValidator@@QEAA@XZ
+     * @hash   31742249
      */
     MCAPI FurnaceContainerScreenValidator();
 

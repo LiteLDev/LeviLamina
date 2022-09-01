@@ -27,18 +27,19 @@ public:
     struct TextureUVCoordinateSet& operator=(struct TextureUVCoordinateSet const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTUREUVCOORDINATESET
-#endif
     /**
      * @symbol ??0TextureUVCoordinateSet@@QEAA@XZ
+     * @hash   -1503034966
      */
     MCAPI TextureUVCoordinateSet();
     /**
      * @symbol ??0TextureUVCoordinateSet@@QEAA@AEBU0@@Z
+     * @hash   1363681471
      */
     MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const &);
     /**
      * @symbol ??1TextureUVCoordinateSet@@QEAA@XZ
+     * @hash   401892472
      */
     MCAPI ~TextureUVCoordinateSet();
 

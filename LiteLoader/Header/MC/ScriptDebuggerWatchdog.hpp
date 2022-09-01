@@ -31,33 +31,36 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1946266755
      */
     virtual ~ScriptDebuggerWatchdog();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?requireClose@ScriptDebuggerWatchdog@@UEBA_NXZ
+     * @hash   -2119127470
      */
     virtual bool requireClose() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?startListenTimeout@ScriptDebuggerWatchdog@@UEAAXXZ
+     * @hash   -1557638858
      */
     virtual void startListenTimeout();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?listenTimeoutExpired@ScriptDebuggerWatchdog@@UEBA_NXZ
+     * @hash   1360871322
      */
     virtual bool listenTimeoutExpired() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGERWATCHDOG
-#endif
     /**
      * @symbol ??0ScriptDebuggerWatchdog@@QEAA@V?$duration@HU?$ratio@$0DM@$00@std@@@chrono@std@@@Z
+     * @hash   -1888141865
      */
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
     /**
      * @symbol ?startLeaveGame@ScriptDebuggerWatchdog@@QEAAXXZ
+     * @hash   138261413
      */
     MCAPI void startLeaveGame();
 

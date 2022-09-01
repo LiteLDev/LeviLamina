@@ -33,26 +33,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2012151205
      */
     virtual ~ArrowEffectSubcomponent();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?writetoJSON@ArrowEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   260096456
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@ArrowEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -747043877
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@ArrowEffectSubcomponent@@UEAAPEBDXZ
+     * @hash   1948631222
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROWEFFECTSUBCOMPONENT
-#endif
 
 };

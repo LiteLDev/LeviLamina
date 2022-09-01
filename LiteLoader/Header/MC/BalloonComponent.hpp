@@ -29,50 +29,59 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONCOMPONENT
-#endif
     /**
      * @symbol ??0BalloonComponent@@QEAA@XZ
+     * @hash   -895532438
      */
     MCAPI BalloonComponent();
     /**
      * @symbol ?addAdditionalSaveData@BalloonComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -120729224
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?computeMaxHeight@BalloonComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -1277385446
      */
     MCAPI void computeMaxHeight(class Actor &);
     /**
      * @symbol ?detach@BalloonComponent@@QEAAXAEAVActor@@@Z
+     * @hash   254762042
      */
     MCAPI void detach(class Actor &);
     /**
      * @symbol ?getAttachedActor@BalloonComponent@@QEAAPEAVActor@@AEAV2@@Z
+     * @hash   111246275
      */
     MCAPI class Actor * getAttachedActor(class Actor &);
     /**
      * @symbol ?getMaxHeight@BalloonComponent@@QEBAMXZ
+     * @hash   -700052202
      */
     MCAPI float getMaxHeight() const;
     /**
      * @symbol ?integrate@BalloonComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -2007706788
      */
     MCAPI void integrate(class Actor &);
     /**
      * @symbol ?onRemoved@BalloonComponent@@QEAAXAEAVActor@@_N@Z
+     * @hash   -2014394179
      */
     MCAPI void onRemoved(class Actor &, bool);
     /**
      * @symbol ?readAdditionalSaveData@BalloonComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1647358874
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setAttachedActor@BalloonComponent@@QEAAXAEAVActor@@0@Z
+     * @hash   -1561109431
      */
     MCAPI void setAttachedActor(class Actor &, class Actor &);
     /**
      * @symbol ?shouldPop@BalloonComponent@@QEAA_NAEAVActor@@AEA_N@Z
+     * @hash   -1801272101
      */
     MCAPI bool shouldPop(class Actor &, bool &);
 MCAPI static std::string const ATTACHED_TAG;
@@ -82,6 +91,7 @@ MCAPI static std::string const MAX_HEIGHT_TAG;
 MCAPI static std::string const SHOULD_DROP_TAG;
     /**
      * @symbol ?getBalloonForActor@BalloonComponent@@SAPEAVActor@@AEBV2@@Z
+     * @hash   -474734889
      */
     MCAPI static class Actor * getBalloonForActor(class Actor const &);
 

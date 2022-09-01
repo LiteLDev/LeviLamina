@@ -29,41 +29,46 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?updateDecayDelay@SculkBlockBehavior@@UEBAHH@Z
+     * @hash   1081615723
      */
     virtual int updateDecayDelay(int) const;
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?updateFacingData@SculkBlockBehavior@@UEBAHHAEBVBlock@@@Z
+     * @hash   662299082
      */
     virtual int updateFacingData(int, class Block const &) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canChangeBlockOnSpread@SculkBlockBehavior@@UEBA_NXZ
+     * @hash   1135055708
      */
     virtual bool canChangeBlockOnSpread() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?attemptSpreadVeins@SculkBlockBehavior@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@HAEAVSculkSpreader@@@Z
+     * @hash   -1301825967
      */
     virtual bool attemptSpreadVeins(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, class SculkSpreader &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?attemptUseCharge@SculkBlockBehavior@@UEBAHAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@2HHAEAVRandom@@AEAVSculkSpreader@@_N@Z
+     * @hash   -939169327
      */
     virtual int attemptUseCharge(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class BlockPos const &, int, int, class Random &, class SculkSpreader &, bool) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?onDischarged@SculkBlockBehavior@@UEBAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -2048948048
      */
     virtual void onDischarged(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKBLOCKBEHAVIOR
-#endif
 
 //private:
     /**
      * @symbol ?_placeGrowthAt@SculkBlockBehavior@@CAXAEAVIBlockWorldGenAPI@@PEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVSculkSpreader@@@Z
+     * @hash   -878665966
      */
     MCAPI static void _placeGrowthAt(class IBlockWorldGenAPI &, class BlockSource *, class BlockPos const &, class Random &, class SculkSpreader &);
 

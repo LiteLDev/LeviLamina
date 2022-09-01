@@ -28,8 +28,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADINGPROGRESSTICKINGSYSTEM
-#endif
 
 //private:
 

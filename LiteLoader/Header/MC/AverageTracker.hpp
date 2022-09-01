@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVERAGETRACKER
-#endif
     /**
      * @symbol ?addSample@AverageTracker@@QEAAXV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
+     * @hash   -1554268649
      */
     MCAPI void addSample(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
 

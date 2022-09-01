@@ -34,14 +34,14 @@ public:
     MCRESULT() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MCRESULT
-#endif
     /**
      * @symbol ?getFullCode@MCRESULT@@QEBAHXZ
+     * @hash   1620716886
      */
     MCAPI int getFullCode() const;
     /**
      * @symbol ?isSuccess@MCRESULT@@QEBA_NXZ
+     * @hash   1264322972
      */
     MCAPI bool isSuccess() const;
 

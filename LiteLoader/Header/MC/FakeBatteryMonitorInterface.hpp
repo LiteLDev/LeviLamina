@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   141162469
      */
     virtual ~FakeBatteryMonitorInterface();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ
+     * @hash   -36210711
      */
     virtual enum BatteryStatus getBatteryStatus() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ
+     * @hash   1037348148
      */
     virtual float getBatteryLevel() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FAKEBATTERYMONITORINTERFACE
-#endif
     /**
      * @symbol ??0FakeBatteryMonitorInterface@@QEAA@XZ
+     * @hash   -707346253
      */
     MCAPI FakeBatteryMonitorInterface();
 

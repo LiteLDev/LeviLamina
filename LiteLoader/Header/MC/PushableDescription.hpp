@@ -30,29 +30,31 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@PushableDescription@@UEBAPEBDXZ
+     * @hash   -655561060
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   1123745590
      */
     virtual ~PushableDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@PushableDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1282796505
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@PushableDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   13917553
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLEDESCRIPTION
-#endif
     /**
      * @symbol ??0PushableDescription@@QEAA@XZ
+     * @hash   -1971838124
      */
     MCAPI PushableDescription();
 

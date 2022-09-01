@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -702641271
      */
     virtual ~UnburiedConstraint();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isSatisfied@UnburiedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
+     * @hash   130031640
      */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNBURIEDCONSTRAINT
-#endif
     /**
      * @symbol ??0UnburiedConstraint@@QEAA@AEAVStructureTemplate@@@Z
+     * @hash   1069893060
      */
     MCAPI UnburiedConstraint(class StructureTemplate &);
 

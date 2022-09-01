@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOLVEDTEXTOBJECT
-#endif
     /**
      * @symbol ?getAsJsonString@ResolvedTextObject@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -705889256
      */
     MCAPI std::string getAsJsonString() const;
     /**
      * @symbol ??1ResolvedTextObject@@QEAA@XZ
+     * @hash   1253784334
      */
     MCAPI ~ResolvedTextObject();
 

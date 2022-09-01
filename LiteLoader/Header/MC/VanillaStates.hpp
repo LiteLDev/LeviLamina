@@ -155,22 +155,27 @@ MCAPI extern class ItemStateVariant<int> const WeirdoDirection;
 MCAPI extern class ItemStateVariant<enum WoodType> const WoodType;
     /**
      * @symbol ?getDataState@VanillaStates@@YAPEBVItemState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1480790473
      */
     MCAPI class ItemState const * getDataState(std::string const &);
     /**
      * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@AEAUCachedItemStateMapPtr@1@@Z
+     * @hash   -1806930904
      */
     MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
     /**
      * @symbol ?getState@VanillaStates@@YAPEBVItemState@@AEBVHashedString@@@Z
+     * @hash   770601903
      */
     MCAPI class ItemState const * getState(class HashedString const &);
     /**
      * @symbol ?registerStates@VanillaStates@@YAXXZ
+     * @hash   1094491078
      */
     MCAPI void registerStates();
     /**
      * @symbol ?unregisterStates@VanillaStates@@YAXXZ
+     * @hash   194682568
      */
     MCAPI void unregisterStates();
 

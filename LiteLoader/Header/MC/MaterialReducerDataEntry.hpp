@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERDATAENTRY
-#endif
     /**
      * @symbol ??1MaterialReducerDataEntry@@QEAA@XZ
+     * @hash   1946744717
      */
     MCAPI ~MaterialReducerDataEntry();
 

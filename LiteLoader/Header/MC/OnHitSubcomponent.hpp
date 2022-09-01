@@ -30,40 +30,41 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1336478047
      */
     virtual ~OnHitSubcomponent();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   2229483
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   3153004
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   4076525
      */
     virtual void __unk_vfn_3() = 0;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@OnHitSubcomponent@@UEAAPEBDXZ
+     * @hash   -1041750692
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONHITSUBCOMPONENT
-#endif
     /**
      * @symbol ??0OnHitSubcomponent@@QEAA@XZ
+     * @hash   23894989
      */
     MCAPI OnHitSubcomponent();
 
 //protected:
     /**
      * @symbol ?_canAttack@OnHitSubcomponent@@IEBA_NPEAVActor@@0@Z
+     * @hash   1302538628
      */
     MCAPI bool _canAttack(class Actor *, class Actor *) const;
 

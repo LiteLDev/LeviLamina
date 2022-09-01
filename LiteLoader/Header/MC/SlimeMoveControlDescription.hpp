@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@SlimeMoveControlDescription@@UEBAPEBDXZ
+     * @hash   1605104844
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   656901702
      */
     virtual ~SlimeMoveControlDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@SlimeMoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1152668217
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@SlimeMoveControlDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   568945585
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEMOVECONTROLDESCRIPTION
-#endif
 
 };

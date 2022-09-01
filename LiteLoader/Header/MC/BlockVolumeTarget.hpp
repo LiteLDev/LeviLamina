@@ -31,174 +31,191 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1363761734
      */
     virtual ~BlockVolumeTarget();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1359459903
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getMinHeight@BlockVolumeTarget@@UEBAFXZ
+     * @hash   2076634969
      */
     virtual short getMinHeight() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?tryGetLiquidBlock@BlockVolumeTarget@@UEBAPEBVBlock@@AEBVBlockPos@@@Z
+     * @hash   188245398
      */
     virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1464236668
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1463313147
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getExtraBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+     * @hash   488536965
      */
     virtual class Block const & getExtraBlock(class BlockPos const &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?fetchBlocksInBox@BlockVolumeTarget@@UEAA?AV?$span@$$CBV?$BlockDataFetchResult@VBlock@@@@$0?0@gsl@@AEBVBoundingBox@@V?$function@$$A6A_NAEBVBlock@@@Z@std@@@Z
+     * @hash   -1890756153
      */
     virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const &, class std::function<bool (class Block const &)>);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?hasBiomeTag@BlockVolumeTarget@@UEBA_N_KAEBVBlockPos@@@Z
+     * @hash   1790319978
      */
     virtual bool hasBiomeTag(unsigned __int64, class BlockPos const &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setBlock@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z
+     * @hash   -1746283263
      */
     virtual bool setBlock(class BlockPos const &, class Block const &, int);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?setBlockSimple@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -1339615760
      */
     virtual bool setBlockSimple(class BlockPos const &, class Block const &);
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -341782524
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -340859003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -339011961
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?getMaxHeight@BlockVolumeTarget@@UEBAFXZ
+     * @hash   -1736084885
      */
     virtual short getMaxHeight() const;
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -342806950
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 18
+     * @vftbl  18
      * @symbol ?getHeightmap@BlockVolumeTarget@@UEAAFHH@Z
+     * @hash   -796957434
      */
     virtual short getHeightmap(int, int);
     /**
-     * @vtable 19
+     * @vftbl  19
      * @symbol ?isLegacyLevel@BlockVolumeTarget@@UEAA_NXZ
+     * @hash   -1627143054
      */
     virtual bool isLegacyLevel();
     /**
-     * @vtable 20
+     * @vftbl  20
      * @symbol ?getBiome@BlockVolumeTarget@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
+     * @hash   976521349
      */
     virtual class Biome const * getBiome(class BlockPos const &) const;
     /**
-     * @vtable 21
+     * @vftbl  21
      * @symbol ?isInBounds@BlockVolumeTarget@@UEBA_NAEBVPos@@@Z
+     * @hash   1224310783
      */
     virtual bool isInBounds(class Pos const &) const;
     /**
-     * @vtable 22
+     * @vftbl  22
      * @symbol ?getLocalWaterLevel@BlockVolumeTarget@@UEBAFAEBVBlockPos@@@Z
+     * @hash   -926289328
      */
     virtual short getLocalWaterLevel(class BlockPos const &) const;
     /**
-     * @vtable 23
+     * @vftbl  23
      * @symbol ?getLevelData@BlockVolumeTarget@@UEBAAEBVLevelData@@XZ
+     * @hash   -1802389993
      */
     virtual class LevelData const & getLevelData() const;
     /**
-     * @vtable 24
+     * @vftbl  24
      * @symbol ?getContext@BlockVolumeTarget@@UEAAAEBUWorldGenContext@@XZ
+     * @hash   -1621646151
      */
     virtual struct WorldGenContext const & getContext();
     /**
-     * @vtable 25
+     * @vftbl  25
      * @symbol ?disableBlockSimple@BlockVolumeTarget@@UEAAXXZ
+     * @hash   -663629690
      */
     virtual void disableBlockSimple();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKVOLUMETARGET
     /**
-     * @vtable -1
      * @symbol ?apply@BlockVolumeTarget@@UEBA_NXZ
+     * @hash   -529150738
      */
     MCVAPI bool apply() const;
     /**
-     * @vtable -1
      * @symbol ?canSurvive@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -1075938044
      */
     MCVAPI bool canSurvive(class BlockPos const &, class Block const &) const;
     /**
-     * @vtable -1
      * @symbol ?getBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+     * @hash   -1799899887
      */
     MCVAPI class Block const & getBlock(class BlockPos const &) const;
     /**
-     * @vtable -1
      * @symbol ?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z
+     * @hash   858428525
      */
     MCVAPI class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
     /**
-     * @vtable -1
      * @symbol ?mayPlace@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   226194084
      */
     MCVAPI bool mayPlace(class BlockPos const &, class Block const &) const;
     /**
-     * @vtable -1
      * @symbol ?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z
+     * @hash   -506622428
      */
     MCVAPI bool placeStructure(class BlockPos const &, class StructureTemplate &, class StructureSettings &);
     /**
-     * @vtable -1
      * @symbol ?shimPlaceForOldFeatures@BlockVolumeTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1161638001
      */
     MCVAPI bool shimPlaceForOldFeatures(class Feature const &, class BlockPos const &, class Random &) const;
 #endif
     /**
      * @symbol ??0BlockVolumeTarget@@QEAA@AEAVBlockVolume@@AEAVLevel@@AEBVBiomeSource@@V?$AutomaticID@VDimension@@H@@AEBUWorldGenContext@@@Z
+     * @hash   1571063541
      */
     MCAPI BlockVolumeTarget(class BlockVolume &, class Level &, class BiomeSource const &, class AutomaticID<class Dimension, int>, struct WorldGenContext const &);
 

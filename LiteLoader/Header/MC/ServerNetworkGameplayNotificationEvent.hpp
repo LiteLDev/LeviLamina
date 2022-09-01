@@ -27,10 +27,9 @@ public:
     ServerNetworkGameplayNotificationEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKGAMEPLAYNOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1ServerNetworkGameplayNotificationEvent@@QEAA@XZ
+     * @hash   1873247976
      */
     MCAPI ~ServerNetworkGameplayNotificationEvent();
 

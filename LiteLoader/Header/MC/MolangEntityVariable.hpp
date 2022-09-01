@@ -27,14 +27,14 @@ public:
     MolangEntityVariable() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGENTITYVARIABLE
-#endif
     /**
      * @symbol ??0MolangEntityVariable@@QEAA@AEBVHashedString@@@Z
+     * @hash   1210912260
      */
     MCAPI MolangEntityVariable(class HashedString const &);
     /**
      * @symbol ??1MolangEntityVariable@@QEAA@XZ
+     * @hash   -663985607
      */
     MCAPI ~MolangEntityVariable();
 

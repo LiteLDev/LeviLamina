@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTONCONDITIONDEFINITION
-#endif
     /**
      * @symbol ?addDamageCondition@HurtOnConditionDefinition@@QEAAXAEBUDamageCondition@@@Z
+     * @hash   432645974
      */
     MCAPI void addDamageCondition(struct DamageCondition const &);
     /**
      * @symbol ?buildSchema@HurtOnConditionDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHurtOnConditionDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1070156318
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HurtOnConditionDefinition>> &);
 

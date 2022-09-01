@@ -30,20 +30,21 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEFEATURE
-#endif
 
 //protected:
     /**
      * @symbol ??0StackResultStorageFeature@@IEAA@AEBVWeakStorageFeature@@@Z
+     * @hash   1228094499
      */
     MCAPI StackResultStorageFeature(class WeakStorageFeature const &);
     /**
      * @symbol ?_getStackRef@StackResultStorageFeature@@IEBAAEAVIFeature@@XZ
+     * @hash   1108897049
      */
     MCAPI class IFeature & _getStackRef() const;
     /**
      * @symbol ?_hasValue@StackResultStorageFeature@@IEBA_NXZ
+     * @hash   1351592034
      */
     MCAPI bool _hasValue() const;
 

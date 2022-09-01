@@ -27,14 +27,14 @@ public:
     ParticleEventRequestQueueComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLEEVENTREQUESTQUEUECOMPONENT
-#endif
     /**
      * @symbol ??0ParticleEventRequestQueueComponent@@QEAA@$$QEAU0@@Z
+     * @hash   -1224126453
      */
     MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent &&);
     /**
      * @symbol ??1ParticleEventRequestQueueComponent@@QEAA@XZ
+     * @hash   -627766831
      */
     MCAPI ~ParticleEventRequestQueueComponent();
 

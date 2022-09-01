@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1720388531
      */
     virtual ~ParticleCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@ParticleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1368183922
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLECOMMAND
-#endif
     /**
      * @symbol ?setup@ParticleCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1696671888
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELAYEDATTACKDEFINITION
-#endif
     /**
      * @symbol ??0DelayedAttackDefinition@@QEAA@XZ
+     * @hash   1408956937
      */
     MCAPI DelayedAttackDefinition();
     /**
      * @symbol ?initialize@DelayedAttackDefinition@@QEAAXAEAVEntityContext@@AEAVDelayedAttackGoal@@@Z
+     * @hash   -1901365351
      */
     MCAPI void initialize(class EntityContext &, class DelayedAttackGoal &);
     /**
      * @symbol ?buildSchema@DelayedAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDelayedAttackDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -813391309
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>> &);
 

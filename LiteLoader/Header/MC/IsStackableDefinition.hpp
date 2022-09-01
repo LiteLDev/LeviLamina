@@ -30,18 +30,19 @@ public:
     IsStackableDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSTACKABLEDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsStackableDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -888716066
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsStackableDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   928619116
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsStackableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsStackableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   700074852
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsStackableDefinition>> &);
 

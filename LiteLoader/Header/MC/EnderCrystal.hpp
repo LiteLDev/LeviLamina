@@ -32,167 +32,177 @@ public:
 
 public:
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@EnderCrystal@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   805218559
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?reloadHardcodedClient@EnderCrystal@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   -302455814
      */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   -1697331560
      */
     virtual ~EnderCrystal();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 49
+     * @vftbl  49
      * @symbol ?normalTick@EnderCrystal@@UEAAXXZ
+     * @hash   -1165808867
      */
     virtual void normalTick();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@EnderCrystal@@UEBAMXZ
+     * @hash   -1921763496
      */
     virtual float getShadowRadius() const;
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 95
+     * @vftbl  95
      * @symbol ?isPickable@EnderCrystal@@UEAA_NXZ
+     * @hash   1196505872
      */
     virtual bool isPickable();
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 135
+     * @vftbl  135
      * @symbol ?isInvulnerableTo@EnderCrystal@@UEBA_NAEBVActorDamageSource@@@Z
+     * @hash   154853788
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 270
+     * @vftbl  270
      * @symbol ?_hurt@EnderCrystal@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     * @hash   -1226084846
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vtable 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@EnderCrystal@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1213527047
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@EnderCrystal@@UEBAXAEAVCompoundTag@@@Z
+     * @hash   761721828
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCRYSTAL
-#endif
     /**
      * @symbol ??0EnderCrystal@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   1395442362
      */
     MCAPI EnderCrystal(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?setBeamTarget@EnderCrystal@@QEAAXAEBVBlockPos@@@Z
+     * @hash   -1871344510
      */
     MCAPI void setBeamTarget(class BlockPos const &);
     /**
      * @symbol ?setCrystalDamagedCallback@EnderCrystal@@QEAAXV?$function@$$A6AXAEAVEnderCrystal@@AEBVActorDamageSource@@@Z@std@@@Z
+     * @hash   -636485576
      */
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal &, class ActorDamageSource const &)>);
 MCAPI static float const HEAL_DISTANCE;

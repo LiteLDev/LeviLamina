@@ -31,10 +31,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTDESPAWNDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@InstantDespawnDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInstantDespawnDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -435950986
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InstantDespawnDefinition>> &);
 

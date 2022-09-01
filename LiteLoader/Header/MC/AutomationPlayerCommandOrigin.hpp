@@ -33,73 +33,84 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -442294617
      */
     virtual ~AutomationPlayerCommandOrigin();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getRequestId@AutomationPlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -86919421
      */
     virtual std::string const & getRequestId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@AutomationPlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -941552878
      */
     virtual std::string getName() const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?getPermissionsLevel@AutomationPlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+     * @hash   16561571
      */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?clone@AutomationPlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     * @hash   490161513
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?hasChatPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ
+     * @hash   -1865749872
      */
     virtual bool hasChatPerms() const;
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?hasTellPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ
+     * @hash   2093160247
      */
     virtual bool hasTellPerms() const;
     /**
-     * @vtable 19
+     * @vftbl  19
      * @symbol ?getSourceId@AutomationPlayerCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ
+     * @hash   1971441313
      */
     virtual class NetworkIdentifier const & getSourceId() const;
     /**
-     * @vtable 23
+     * @vftbl  23
      * @symbol ?getOriginType@AutomationPlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     * @hash   -130865208
      */
     virtual enum CommandOriginType getOriginType() const;
     /**
-     * @vtable 24
+     * @vftbl  24
      * @symbol ?toCommandOriginData@AutomationPlayerCommandOrigin@@UEBA?AUCommandOriginData@@XZ
+     * @hash   -478685706
      */
     virtual struct CommandOriginData toCommandOriginData() const;
     /**
-     * @vtable 29
+     * @vftbl  29
      * @symbol ?serialize@AutomationPlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ
+     * @hash   1006224687
      */
     virtual class CompoundTag serialize() const;
     /**
-     * @vtable 30
+     * @vftbl  30
      * @symbol ?isValid@AutomationPlayerCommandOrigin@@UEBA_NXZ
+     * @hash   1474377121
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUTOMATIONPLAYERCOMMANDORIGIN
-#endif
     /**
      * @symbol ??0AutomationPlayerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandPermissionLevel@@AEBVNetworkIdentifier@@@Z
+     * @hash   -1220410672
      */
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum CommandPermissionLevel, class NetworkIdentifier const &);
     /**
      * @symbol ??0AutomationPlayerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPlayer@@@Z
+     * @hash   -1759311767
      */
     MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);
 

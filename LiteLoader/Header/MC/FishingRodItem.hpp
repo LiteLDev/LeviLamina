@@ -33,134 +33,144 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1981670822
      */
     virtual ~FishingRodItem();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 50
+     * @vftbl  50
      * @symbol ?isHandEquipped@FishingRodItem@@UEBA_NXZ
+     * @hash   -525389024
      */
     virtual bool isHandEquipped() const;
     /**
-     * @vtable 52
-     * @symbol __unk_vfn_52
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @vtable 54
-     * @symbol __unk_vfn_54
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @vtable 60
+     * @vftbl  60
      * @symbol ?requiresInteract@FishingRodItem@@UEBA_NXZ
+     * @hash   837906668
      */
     virtual bool requiresInteract() const;
     /**
-     * @vtable 63
+     * @vftbl  63
      * @symbol ?getEnchantSlot@FishingRodItem@@UEBAHXZ
+     * @hash   -1504871076
      */
     virtual int getEnchantSlot() const;
     /**
-     * @vtable 64
+     * @vftbl  64
      * @symbol ?getEnchantValue@FishingRodItem@@UEBAHXZ
+     * @hash   -793379191
      */
     virtual int getEnchantValue() const;
     /**
-     * @vtable 67
-     * @symbol __unk_vfn_67
+     * @vftbl  67
+     * @hash   -186360955
      */
     virtual void __unk_vfn_67();
     /**
-     * @vtable 71
-     * @symbol __unk_vfn_71
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @vtable 72
-     * @symbol __unk_vfn_72
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 76
-     * @symbol __unk_vfn_76
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 81
-     * @symbol __unk_vfn_81
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @vtable 85
+     * @vftbl  85
      * @symbol ?use@FishingRodItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     * @hash   1443044974
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @vtable 90
+     * @vftbl  90
      * @symbol ?hurtActor@FishingRodItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     * @hash   431459534
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @vtable 94
+     * @vftbl  94
      * @symbol ?mineBlock@FishingRodItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+     * @hash   353032715
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
     /**
-     * @vtable 119
+     * @vftbl  119
      * @symbol ?getInteractText@FishingRodItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z
+     * @hash   1132475243
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @vtable 120
+     * @vftbl  120
      * @symbol ?getAnimationFrameFor@FishingRodItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
+     * @hash   -1322851835
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @vtable 123
+     * @vftbl  123
      * @symbol ?getIcon@FishingRodItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+     * @hash   190702483
      */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /**
-     * @vtable 125
+     * @vftbl  125
      * @symbol ?setIcon@FishingRodItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -1082996820
      */
     virtual class Item & setIcon(std::string const &, int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FISHINGRODITEM
-#endif
     /**
      * @symbol ??0FishingRodItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   769066990
      */
     MCAPI FishingRodItem(std::string const &, int);
 

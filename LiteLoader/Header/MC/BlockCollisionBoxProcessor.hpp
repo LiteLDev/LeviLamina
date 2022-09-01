@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOLLISIONBOXPROCESSOR
-#endif
     /**
      * @symbol ?_tryBake@BlockCollisionBoxProcessor@@SAXPEBUBlockRotationComponent@@PEAUBlockCollisionBoxComponent@@@Z
+     * @hash   389982479
      */
     MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockCollisionBoxComponent *);
     /**
      * @symbol ?getProcessor@BlockCollisionBoxProcessor@@SA?AV?$unique_ptr@VEntityComponentProcessor@Util@@U?$default_delete@VEntityComponentProcessor@Util@@@std@@@std@@XZ
+     * @hash   -1685552378
      */
     MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
 

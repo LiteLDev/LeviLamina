@@ -33,11 +33,9 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   875566467
      */
     virtual ~PlaceBlockDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLACEBLOCKDEFINITION
-#endif
 
 };

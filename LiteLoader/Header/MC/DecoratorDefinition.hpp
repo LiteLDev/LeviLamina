@@ -31,16 +31,16 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DECORATORDEFINITION
-#endif
     /**
      * @symbol ?get@DecoratorDefinition@@QEBAPEBVBehaviorDefinition@@XZ
+     * @hash   -801531233
      */
     MCAPI class BehaviorDefinition const * get() const;
 
 //protected:
     /**
      * @symbol ?_decoratorLoadChildBehavior@DecoratorDefinition@@KA?AV?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@VValue@Json@@AEBVBehaviorFactory@@VBehaviorTreeDefinitionPtr@@@Z
+     * @hash   2121443653
      */
     MCAPI static std::unique_ptr<class BehaviorDefinition> _decoratorLoadChildBehavior(class Json::Value, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 

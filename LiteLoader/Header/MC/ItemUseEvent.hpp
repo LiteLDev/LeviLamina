@@ -26,18 +26,19 @@ public:
     ItemUseEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEEVENT
-#endif
     /**
      * @symbol ??0ItemUseEvent@@QEAA@AEBU0@@Z
+     * @hash   -2066326353
      */
     MCAPI ItemUseEvent(struct ItemUseEvent const &);
     /**
      * @symbol ??0ItemUseEvent@@QEAA@$$QEAU0@@Z
+     * @hash   575368601
      */
     MCAPI ItemUseEvent(struct ItemUseEvent &&);
     /**
      * @symbol ??1ItemUseEvent@@QEAA@XZ
+     * @hash   -1750668528
      */
     MCAPI ~ItemUseEvent();
 

@@ -27,14 +27,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLISTEVENTMAP
-#endif
     /**
      * @symbol ??0BlockListEventMap@@QEAA@AEBV0@@Z
+     * @hash   -1626876175
      */
     MCAPI BlockListEventMap(class BlockListEventMap const &);
     /**
      * @symbol ??1BlockListEventMap@@QEAA@XZ
+     * @hash   -1152372119
      */
     MCAPI ~BlockListEventMap();
 

@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -611997684
      */
     virtual ~LookControl();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?initializeInternal@LookControl@@UEAAXAEAVMob@@@Z
+     * @hash   -928184810
      */
     virtual void initializeInternal(class Mob &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@LookControl@@UEAAXAEAVMob@@@Z
+     * @hash   -1035429354
      */
     virtual void tick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
-#endif
     /**
      * @symbol ??0LookControl@@QEAA@XZ
+     * @hash   -203689590
      */
     MCAPI LookControl();
 

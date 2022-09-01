@@ -31,61 +31,69 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1253630175
      */
     virtual ~SimpleRandom();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?nextInt@SimpleRandom@@UEAAHXZ
+     * @hash   -112861229
      */
     virtual int nextInt();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?nextInt@SimpleRandom@@UEAAHH@Z
+     * @hash   -1388995876
      */
     virtual int nextInt(int);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?nextLong@SimpleRandom@@UEAA_JXZ
+     * @hash   -237211776
      */
     virtual __int64 nextLong();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?nextBoolean@SimpleRandom@@UEAA_NXZ
+     * @hash   102789161
      */
     virtual bool nextBoolean();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?nextFloat@SimpleRandom@@UEAAMXZ
+     * @hash   -292202125
      */
     virtual float nextFloat();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?nextDouble@SimpleRandom@@UEAANXZ
+     * @hash   1858951481
      */
     virtual double nextDouble();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?nextGaussianDouble@SimpleRandom@@UEAANXZ
+     * @hash   -1931497836
      */
     virtual double nextGaussianDouble();
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?consumeCount@SimpleRandom@@UEAAXI@Z
+     * @hash   796026309
      */
     virtual void consumeCount(unsigned int);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?fork@SimpleRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+     * @hash   794919181
      */
     virtual std::unique_ptr<class IRandom> fork();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?forkPositional@SimpleRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
+     * @hash   45702491
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
-#endif
 
 };

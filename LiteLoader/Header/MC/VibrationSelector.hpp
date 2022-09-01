@@ -27,26 +27,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONSELECTOR
-#endif
     /**
      * @symbol ??0VibrationSelector@@QEAA@XZ
+     * @hash   130245789
      */
     MCAPI VibrationSelector();
     /**
      * @symbol ?addCandidate@VibrationSelector@@QEAAXUTick@@AEBVGameEvent@@AEBUGameEventContext@@AEBVBlockPos@@@Z
+     * @hash   838918405
      */
     MCAPI void addCandidate(struct Tick, class GameEvent const &, struct GameEventContext const &, class BlockPos const &);
     /**
      * @symbol ?consumeBestCandidate@VibrationSelector@@QEAA?AV?$optional@VVibrationInfo@@@std@@UTick@@@Z
+     * @hash   236361404
      */
     MCAPI class std::optional<class VibrationInfo> consumeBestCandidate(struct Tick);
     /**
      * @symbol ?load@VibrationSelector@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1511665447
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?save@VibrationSelector@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   1440083838
      */
     MCAPI void save(class CompoundTag &) const;
 

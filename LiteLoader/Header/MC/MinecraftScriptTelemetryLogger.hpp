@@ -29,34 +29,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1995117819
      */
     virtual ~MinecraftScriptTelemetryLogger();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?onPluginDiscovery@MinecraftScriptTelemetryLogger@@UEAAXAEBVScriptPluginResult@@@Z
+     * @hash   -542709662
      */
     virtual void onPluginDiscovery(class ScriptPluginResult const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?onPluginRun@MinecraftScriptTelemetryLogger@@UEAAXAEBVScriptPluginResult@@V?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@@Z
+     * @hash   -900746760
      */
     virtual void onPluginRun(class ScriptPluginResult const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000>>);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?onDebuggerListen@MinecraftScriptTelemetryLogger@@UEAAXXZ
+     * @hash   -1084026371
      */
     virtual void onDebuggerListen();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?onDebuggerConnect@MinecraftScriptTelemetryLogger@@UEAAXXZ
+     * @hash   -2038895200
      */
     virtual void onDebuggerConnect();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTSCRIPTTELEMETRYLOGGER
-#endif
     /**
      * @symbol ??0MinecraftScriptTelemetryLogger@@QEAA@AEAVIMinecraftEventing@@_N@Z
+     * @hash   58235413
      */
     MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing &, bool);
 

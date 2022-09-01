@@ -26,14 +26,14 @@ public:
     DefinitionModifier() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONMODIFIER
-#endif
     /**
      * @symbol ??0DefinitionModifier@@QEAA@AEBU0@@Z
+     * @hash   1942783967
      */
     MCAPI DefinitionModifier(struct DefinitionModifier const &);
     /**
      * @symbol ??1DefinitionModifier@@QEAA@XZ
+     * @hash   -2046504860
      */
     MCAPI ~DefinitionModifier();
 

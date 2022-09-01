@@ -29,38 +29,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTCOMPONENT
-#endif
     /**
      * @symbol ??0TrustComponent@@QEAA@XZ
+     * @hash   590168369
      */
     MCAPI TrustComponent();
     /**
      * @symbol ??0TrustComponent@@QEAA@$$QEAV0@@Z
+     * @hash   1679295219
      */
     MCAPI TrustComponent(class TrustComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@TrustComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   72834696
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?assignTrustedPlayer@TrustComponent@@QEAAXUActorUniqueID@@@Z
+     * @hash   -861761096
      */
     MCAPI void assignTrustedPlayer(struct ActorUniqueID);
     /**
      * @symbol ?getTrustedPlayerIDs@TrustComponent@@QEBAAEBV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@XZ
+     * @hash   -1058782144
      */
     MCAPI class std::unordered_set<struct ActorUniqueID, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct ActorUniqueID>> const & getTrustedPlayerIDs() const;
     /**
      * @symbol ?initFromDefinition@TrustComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -2130420870
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ??4TrustComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   918910614
      */
     MCAPI class TrustComponent & operator=(class TrustComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@TrustComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -2057964812
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 

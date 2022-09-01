@@ -30,18 +30,19 @@ public:
     IsChargedDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISCHARGEDDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsChargedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   1610622
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsChargedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1739595012
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsChargedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsChargedDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -743495808
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsChargedDefinition>> &);
 

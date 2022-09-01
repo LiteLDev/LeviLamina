@@ -30,10 +30,9 @@ public:
     LootTableDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTTABLEDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@LootTableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@ULootTableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   64745504
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct LootTableDefinition>> &);
 

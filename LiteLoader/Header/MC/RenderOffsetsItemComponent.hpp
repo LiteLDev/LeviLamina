@@ -42,53 +42,58 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1056747190
      */
     virtual ~RenderOffsetsItemComponent();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEBA_NXZ
+     * @hash   438282897
      */
     virtual bool isNetworkComponent() const;
     /**
      * @symbol ?_fromString@RenderOffsetsItemComponent@@CAXAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1125078294
      */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1356689340
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -702510653
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VRenderOffsetsItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   503792317
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RENDEROFFSETSITEMCOMPONENT
-#endif
     /**
      * @symbol ?bindType@RenderOffsetsItemComponent@@SAXXZ
+     * @hash   104487203
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@RenderOffsetsItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   2022408776
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
      * @symbol ?_fromString@RenderOffsetsItemComponent@@CAXAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1125078294
      */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 

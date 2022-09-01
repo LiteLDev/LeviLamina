@@ -31,48 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   842668611
      */
     virtual ~BaseMobSpawner();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?tick@BaseMobSpawner@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -1168781591
      */
     virtual void tick(class BlockSource &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?load@BaseMobSpawner@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -56824218
      */
     virtual void load(class CompoundTag const &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?save@BaseMobSpawner@@UEAAXAEAVCompoundTag@@@Z
+     * @hash   -1244678254
      */
     virtual void save(class CompoundTag &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
+     * @hash   826487639
      */
     virtual class BlockPos const & getPos() = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOBSPAWNER
-#endif
     /**
      * @symbol ??0BaseMobSpawner@@QEAA@UActorDefinitionIdentifier@@@Z
+     * @hash   532240146
      */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     /**
      * @symbol ?removeDisplayEntity@BaseMobSpawner@@QEAAXXZ
+     * @hash   1485734051
      */
     MCAPI void removeDisplayEntity();
     /**
      * @symbol ?setEntityId@BaseMobSpawner@@QEAAXUActorDefinitionIdentifier@@@Z
+     * @hash   2098057826
      */
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
 
 //protected:
     /**
      * @symbol ?_delay@BaseMobSpawner@@IEAAXAEAVBlockSource@@@Z
+     * @hash   -1352135866
      */
     MCAPI void _delay(class BlockSource &);
 

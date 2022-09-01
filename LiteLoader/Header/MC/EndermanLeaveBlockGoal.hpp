@@ -31,49 +31,51 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1865097787
      */
     virtual ~EndermanLeaveBlockGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@EndermanLeaveBlockGoal@@UEAA_NXZ
+     * @hash   1815267349
      */
     virtual bool canUse();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   518983733
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@EndermanLeaveBlockGoal@@UEAAXXZ
+     * @hash   -1771184039
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@EndermanLeaveBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -459909157
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMANLEAVEBLOCKGOAL
-#endif
     /**
      * @symbol ??0EndermanLeaveBlockGoal@@QEAA@AEAVEnderMan@@@Z
+     * @hash   -54935238
      */
     MCAPI EndermanLeaveBlockGoal(class EnderMan &);
 

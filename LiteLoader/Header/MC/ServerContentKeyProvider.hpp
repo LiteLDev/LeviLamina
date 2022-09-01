@@ -31,49 +31,51 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -985818076
      */
     virtual ~ServerContentKeyProvider();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getContentKey@ServerContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
+     * @hash   1909112596
      */
     virtual std::string getContentKey(class ContentIdentity const &) const;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1356689340
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1359732827
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?canAccess@ServerContentKeyProvider@@UEBA_NAEBVContentIdentity@@@Z
+     * @hash   877050302
      */
     virtual bool canAccess(class ContentIdentity const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCONTENTKEYPROVIDER
     /**
-     * @vtable -1
      * @symbol ?clearTempContentKeys@ServerContentKeyProvider@@UEAAXXZ
+     * @hash   1178831993
      */
     MCVAPI void clearTempContentKeys();
     /**
-     * @vtable -1
      * @symbol ?setTempContentKeys@ServerContentKeyProvider@@UEAAXAEBV?$unordered_map@VContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VContentIdentity@@@3@U?$equal_to@VContentIdentity@@@3@V?$allocator@U?$pair@$$CBVContentIdentity@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
+     * @hash   -755294458
      */
     MCVAPI void setTempContentKeys(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string>>> const &);
 #endif

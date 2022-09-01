@@ -38,10 +38,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEARCHIVER
-#endif
     /**
      * @symbol ?archivePack@FileArchiver@@QEAA?AV?$future@UResult@FileArchiver@@@std@@AEBVPath@Core@@0V?$function@$$A6AXAEAUResult@FileArchiver@@@Z@3@@Z
+     * @hash   -1229906755
      */
     MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const &, class Core::Path const &, class std::function<void (struct FileArchiver::Result &)>);
 MCAPI static std::string const EXTENSION_ADDON;
@@ -53,6 +52,7 @@ MCAPI static std::string const IMPORT_LOCK_FILE;
 //private:
     /**
      * @symbol ?_printLevelResultMessage@FileArchiver@@AEAAXAEBUResult@1@@Z
+     * @hash   703178537
      */
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const &);
 

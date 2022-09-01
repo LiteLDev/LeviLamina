@@ -33,41 +33,44 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1075868631
      */
     virtual ~ActorHasEquipmentTest();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?setup@ActorHasEquipmentTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+     * @hash   1800774815
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?evaluate@ActorHasEquipmentTest@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   -1376570995
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@ActorHasEquipmentTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   816168645
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?_serializeDomain@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
+     * @hash   -1743743463
      */
     virtual class Json::Value _serializeDomain() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_serializeValue@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ
+     * @hash   67599908
      */
     virtual class Json::Value _serializeValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHASEQUIPMENTTEST
-#endif
 
 };

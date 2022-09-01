@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1560649719
      */
     virtual ~SetCommandsEnabledPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@SetCommandsEnabledPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1614104721
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@SetCommandsEnabledPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   936519196
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@SetCommandsEnabledPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   735450859
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@SetCommandsEnabledPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1216502187
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETCOMMANDSENABLEDPACKET
-#endif
     /**
      * @symbol ??0SetCommandsEnabledPacket@@QEAA@_N@Z
+     * @hash   -510022508
      */
     MCAPI SetCommandsEnabledPacket(bool);
     /**
      * @symbol ??0SetCommandsEnabledPacket@@QEAA@XZ
+     * @hash   -791728869
      */
     MCAPI SetCommandsEnabledPacket();
 

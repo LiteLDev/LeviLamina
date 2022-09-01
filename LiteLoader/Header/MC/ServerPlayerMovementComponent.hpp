@@ -27,14 +27,14 @@ public:
     ServerPlayerMovementComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERMOVEMENTCOMPONENT
-#endif
     /**
      * @symbol ??0ServerPlayerMovementComponent@@QEAA@$$QEAU0@@Z
+     * @hash   -1563594661
      */
     MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent &&);
     /**
      * @symbol ??1ServerPlayerMovementComponent@@QEAA@XZ
+     * @hash   593404566
      */
     MCAPI ~ServerPlayerMovementComponent();
 

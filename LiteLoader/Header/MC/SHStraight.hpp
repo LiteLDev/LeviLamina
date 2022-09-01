@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1395923303
      */
     virtual ~SHStraight();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@SHStraight@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   1390621196
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?addChildren@SHStraight@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+     * @hash   -2123340140
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@SHStraight@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   599842780
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTRAIGHT
-#endif
     /**
      * @symbol ?createPiece@SHStraight@@SA?AV?$unique_ptr@VStrongholdPiece@@U?$default_delete@VStrongholdPiece@@@std@@@std@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z
+     * @hash   1655949024
      */
     MCAPI static std::unique_ptr<class StrongholdPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
 

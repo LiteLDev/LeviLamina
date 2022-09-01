@@ -31,52 +31,57 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   656827644
      */
     virtual ~PlanterItemComponent();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEBA_NXZ
+     * @hash   -125044257
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?useOn@PlanterItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+     * @hash   1570639345
      */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -581445151
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VPlanterItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   2134186255
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLANTERITEMCOMPONENT
-#endif
     /**
      * @symbol ?calculatePlacePos@PlanterItemComponent@@QEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z
+     * @hash   945376934
      */
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @symbol ?bindType@PlanterItemComponent@@SAXXZ
+     * @hash   -1048378925
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@PlanterItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   1087046068
      */
     MCAPI static class HashedString const & getIdentifier();
 

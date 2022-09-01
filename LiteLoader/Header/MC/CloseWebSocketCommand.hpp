@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -640556982
      */
     virtual ~CloseWebSocketCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@CloseWebSocketCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1808135175
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOSEWEBSOCKETCOMMAND
-#endif
     /**
      * @symbol ?setup@CloseWebSocketCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
+     * @hash   -1180811669
      */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 

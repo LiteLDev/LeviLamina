@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -35547262
      */
     virtual ~SmithingTableContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0SmithingTableContainerScreenValidator@@QEAA@XZ
+     * @hash   1172895120
      */
     MCAPI SmithingTableContainerScreenValidator();
 

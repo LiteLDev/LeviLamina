@@ -32,27 +32,28 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1824133228
      */
     virtual ~DecrementStackEventResponse();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@DecrementStackEventResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1270391533
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?executeAction@DecrementStackEventResponse@@UEBAXAEAVRenderParams@@@Z
+     * @hash   86013867
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?buildSchema@DecrementStackEventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     * @hash   1067818369
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DECREMENTSTACKEVENTRESPONSE
-#endif
 MCAPI static std::string const NameID;
 
 };

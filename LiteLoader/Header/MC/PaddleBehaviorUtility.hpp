@@ -22,10 +22,12 @@ namespace PaddleBehaviorUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?computePaddleForcesBasedOnGaze@PaddleBehaviorUtility@@YAXAEAVVec3@@AEAM1MMM@Z
+     * @hash   -386326799
      */
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3 &, float &, float &, float, float, float);
     /**
      * @symbol ?setPaddleForce@PaddleBehaviorUtility@@YA_NAEAUPaddle@@UTick@@M@Z
+     * @hash   -1248430290
      */
     MCAPI bool setPaddleForce(struct Paddle &, struct Tick, float);
 

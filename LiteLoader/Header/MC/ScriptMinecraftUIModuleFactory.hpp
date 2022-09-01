@@ -31,28 +31,30 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   326860850
      */
     virtual ~ScriptMinecraftUIModuleFactory();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTUIMODULEFACTORY
-#endif
     /**
      * @symbol ??0ScriptMinecraftUIModuleFactory@@QEAA@XZ
+     * @hash   1858716772
      */
     MCAPI ScriptMinecraftUIModuleFactory();
     /**
      * @symbol ?getModuleUUIDAsString@ScriptMinecraftUIModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -171371272
      */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
     /**
      * @symbol ?_addVersions@ScriptMinecraftUIModuleFactory@@AEAAXXZ
+     * @hash   -1412575311
      */
     MCAPI void _addVersions();
     /**
      * @symbol ?_generateBindings@ScriptMinecraftUIModuleFactory@@AEAA?AUModuleBinding@Scripting@@AEBUVersion@3@_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   -885851810
      */
     MCAPI struct Scripting::ModuleBinding _generateBindings(struct Scripting::Version const &, bool, std::vector<std::string> const &);
 

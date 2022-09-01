@@ -31,97 +31,99 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
     /**
-     * @vtable -1
      * @symbol ?onAppFocusGained@AppPlatformListener@@UEAAXXZ
+     * @hash   -1262944269
      */
     MCVAPI void onAppFocusGained();
     /**
-     * @vtable -1
      * @symbol ?onAppFocusLost@AppPlatformListener@@UEAAXXZ
+     * @hash   1278506105
      */
     MCVAPI void onAppFocusLost();
     /**
-     * @vtable -1
      * @symbol ?onAppPaused@AppPlatformListener@@UEAAXXZ
+     * @hash   394141583
      */
     MCVAPI void onAppPaused();
     /**
-     * @vtable -1
      * @symbol ?onAppPreSuspended@AppPlatformListener@@UEAAXXZ
+     * @hash   -139646695
      */
     MCVAPI void onAppPreSuspended();
     /**
-     * @vtable -1
      * @symbol ?onAppResumed@AppPlatformListener@@UEAAXXZ
+     * @hash   301225172
      */
     MCVAPI void onAppResumed();
     /**
-     * @vtable -1
      * @symbol ?onAppSuspended@AppPlatformListener@@UEAAXXZ
+     * @hash   917633752
      */
     MCVAPI void onAppSuspended();
     /**
-     * @vtable -1
      * @symbol ?onAppTerminated@AppPlatformListener@@UEAAXXZ
+     * @hash   -1612044700
      */
     MCVAPI void onAppTerminated();
     /**
-     * @vtable -1
      * @symbol ?onAppUnpaused@AppPlatformListener@@UEAAXXZ
+     * @hash   949068616
      */
     MCVAPI void onAppUnpaused();
     /**
-     * @vtable -1
      * @symbol ?onClipboardCopy@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -92186591
      */
     MCVAPI void onClipboardCopy(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?onClipboardPaste@AppPlatformListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2014948335
      */
     MCVAPI void onClipboardPaste(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?onDeviceLost@AppPlatformListener@@UEAAXXZ
+     * @hash   -1047263112
      */
     MCVAPI void onDeviceLost();
     /**
-     * @vtable -1
      * @symbol ?onLowMemory@AppPlatformListener@@UEAAXXZ
+     * @hash   -1127414123
      */
     MCVAPI void onLowMemory();
     /**
-     * @vtable -1
      * @symbol ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
+     * @hash   622137304
      */
     MCVAPI void onOperationModeChanged(enum OperationMode);
     /**
-     * @vtable -1
      * @symbol ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z
+     * @hash   -1023701811
      */
     MCVAPI void onPerformanceModeChanged(bool);
     /**
-     * @vtable -1
      * @symbol ?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z
+     * @hash   -112241469
      */
     MCVAPI void onPushNotificationReceived(class PushNotificationMessage const &);
     /**
-     * @vtable -1
      * @symbol ?onResizeBegin@AppPlatformListener@@UEAAXXZ
+     * @hash   1170142517
      */
     MCVAPI void onResizeBegin();
     /**
-     * @vtable -1
      * @symbol ?onResizeEnd@AppPlatformListener@@UEAAXXZ
+     * @hash   1209523559
      */
     MCVAPI void onResizeEnd();
 #endif
     /**
      * @symbol ??0AppPlatformListener@@QEAA@XZ
+     * @hash   -866833452
      */
     MCAPI AppPlatformListener();
     /**
      * @symbol ?terminate@AppPlatformListener@@QEAAXXZ
+     * @hash   -193483257
      */
     MCAPI void terminate();
 

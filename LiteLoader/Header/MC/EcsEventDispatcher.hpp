@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECSEVENTDISPATCHER
-#endif
     /**
      * @symbol ?update@EcsEventDispatcher@@QEAAXXZ
+     * @hash   1960889445
      */
     MCAPI void update();
 

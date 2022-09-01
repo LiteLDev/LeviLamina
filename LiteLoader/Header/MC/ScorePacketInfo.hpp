@@ -45,10 +45,9 @@ public:
     ScorePacketInfo() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREPACKETINFO
-#endif
     /**
      * @symbol ??1ScorePacketInfo@@QEAA@XZ
+     * @hash   1020697924
      */
     MCAPI ~ScorePacketInfo();
 

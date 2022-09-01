@@ -27,10 +27,9 @@ public:
     WebSocketPacketData() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBSOCKETPACKETDATA
-#endif
     /**
      * @symbol ??0WebSocketPacketData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -837367428
      */
     MCAPI WebSocketPacketData(std::string const &);
 

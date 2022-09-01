@@ -27,10 +27,9 @@ public:
     ItemNotificationEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMNOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1ItemNotificationEvent@@QEAA@XZ
+     * @hash   -852688856
      */
     MCAPI ~ItemNotificationEvent();
 

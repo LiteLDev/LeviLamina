@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEMETADATA
-#endif
     /**
      * @symbol ??1ResourceMetadata@@QEAA@XZ
+     * @hash   975330871
      */
     MCAPI ~ResourceMetadata();
 

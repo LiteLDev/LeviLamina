@@ -31,42 +31,48 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOL
-#endif
     /**
      * @symbol ??0WorkerPool@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_KAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@_N@Z
+     * @hash   -1143766886
      */
     MCAPI WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, bool);
     /**
      * @symbol ??0WorkerPool@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVScheduler@@@Z
+     * @hash   581789212
      */
     MCAPI WorkerPool(std::string, class Scheduler &);
     /**
      * @symbol ?queue@WorkerPool@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
+     * @hash   -865426922
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @symbol ?resortPriorityQueue@WorkerPool@@QEAAXXZ
+     * @hash   -187052029
      */
     MCAPI void resortPriorityQueue();
     /**
      * @symbol ?size@WorkerPool@@QEBA_KXZ
+     * @hash   1229285975
      */
     MCAPI unsigned __int64 size() const;
     /**
      * @symbol ?tryPop@WorkerPool@@QEAA?AV?$shared_ptr@VBackgroundTaskBase@@@std@@H@Z
+     * @hash   1860630396
      */
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
 
 //protected:
     /**
      * @symbol ?_registerPool@WorkerPool@@KAXAEAV1@@Z
+     * @hash   -291911909
      */
     MCAPI static void _registerPool(class WorkerPool &);
 
 //private:
     /**
      * @symbol ?_checkPendingWork@WorkerPool@@AEAA_NXZ
+     * @hash   1054525099
      */
     MCAPI bool _checkPendingWork();
 

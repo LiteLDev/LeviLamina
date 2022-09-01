@@ -32,49 +32,52 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1622757583
      */
     virtual ~BaseMoveToBlockGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@BaseMoveToBlockGoal@@UEAA_NXZ
+     * @hash   1746849517
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@BaseMoveToBlockGoal@@UEAA_NXZ
+     * @hash   -1712243189
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ
+     * @hash   -2062121281
      */
     virtual void _moveToBlock();
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ
+     * @hash   -887729831
      */
     virtual bool findTargetBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOBLOCKGOAL
-#endif
     /**
      * @symbol ??0BaseMoveToBlockGoal@@QEAA@AEAVMob@@MHHHMM@Z
+     * @hash   914118892
      */
     MCAPI BaseMoveToBlockGoal(class Mob &, float, int, int, int, float, float);
 

@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1588311499
      */
     virtual ~ServerNetworkController();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isDedicatedServer@ServerNetworkController@@UEBA_NXZ
+     * @hash   1799250617
      */
     virtual bool isDedicatedServer() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isHost@ServerNetworkController@@UEBA_NAEBVUUID@mce@@@Z
+     * @hash   -879033982
      */
     virtual bool isHost(class mce::UUID const &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?canChangePermission@ServerNetworkController@@UEBA_NAEBVUUID@mce@@AEBVServerPlayer@@@Z
+     * @hash   -1428603834
      */
     virtual bool canChangePermission(class mce::UUID const &, class ServerPlayer const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKCONTROLLER
-#endif
     /**
      * @symbol ??0ServerNetworkController@@QEAA@_NAEBVUUID@mce@@V?$function@$$A6A_NAEBVServerPlayer@@W4AbilitiesIndex@@@Z@std@@@Z
+     * @hash   243925418
      */
     MCAPI ServerNetworkController(bool, class mce::UUID const &, class std::function<bool (class ServerPlayer const &, enum AbilitiesIndex)>);
 

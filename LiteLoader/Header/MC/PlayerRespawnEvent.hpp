@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNEVENT
-#endif
     /**
      * @symbol ??1PlayerRespawnEvent@@QEAA@XZ
+     * @hash   430716349
      */
     MCAPI ~PlayerRespawnEvent();
 

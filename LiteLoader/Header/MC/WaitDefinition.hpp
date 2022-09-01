@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -115093646
      */
     virtual ~WaitDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@WaitDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   89559500
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WAITDEFINITION
-#endif
 
 };

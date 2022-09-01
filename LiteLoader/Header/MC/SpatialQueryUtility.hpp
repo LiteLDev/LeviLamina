@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPATIALQUERYUTILITY
-#endif
     /**
      * @symbol ?forEachBlockInAABB@SpatialQueryUtility@@SAXAEBVIConstBlockSource@@AEBVAABB@@AEBV?$function@$$A6AXAEBVBlock@@AEBVBlockPos@@@Z@std@@@Z
+     * @hash   1389699224
      */
     MCAPI static void forEachBlockInAABB(class IConstBlockSource const &, class AABB const &, class std::function<void (class Block const &, class BlockPos const &)> const &);
 

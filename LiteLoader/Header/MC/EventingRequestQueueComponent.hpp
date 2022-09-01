@@ -27,14 +27,14 @@ public:
     EventingRequestQueueComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUESTQUEUECOMPONENT
-#endif
     /**
      * @symbol ??0EventingRequestQueueComponent@@QEAA@$$QEAU0@@Z
+     * @hash   1044384141
      */
     MCAPI EventingRequestQueueComponent(struct EventingRequestQueueComponent &&);
     /**
      * @symbol ??1EventingRequestQueueComponent@@QEAA@XZ
+     * @hash   -898159313
      */
     MCAPI ~EventingRequestQueueComponent();
 

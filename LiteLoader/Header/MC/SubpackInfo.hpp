@@ -27,10 +27,9 @@ public:
     SubpackInfo() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBPACKINFO
-#endif
     /**
      * @symbol ??1SubpackInfo@@QEAA@XZ
+     * @hash   -2016149597
      */
     MCAPI ~SubpackInfo();
 

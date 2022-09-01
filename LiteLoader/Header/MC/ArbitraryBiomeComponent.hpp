@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARBITRARYBIOMECOMPONENT
-#endif
     /**
      * @symbol ??1ArbitraryBiomeComponent@@QEAA@XZ
+     * @hash   2130641131
      */
     MCAPI ~ArbitraryBiomeComponent();
 

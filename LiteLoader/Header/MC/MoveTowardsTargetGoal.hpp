@@ -31,49 +31,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1452351299
      */
     virtual ~MoveTowardsTargetGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@MoveTowardsTargetGoal@@UEAA_NXZ
+     * @hash   155748097
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MoveTowardsTargetGoal@@UEAA_NXZ
+     * @hash   1246461503
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@MoveTowardsTargetGoal@@UEAAXXZ
+     * @hash   562906058
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@MoveTowardsTargetGoal@@UEAAXXZ
+     * @hash   -1452144662
      */
     virtual void stop();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveTowardsTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   658985231
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSTARGETGOAL
-#endif
     /**
      * @symbol ??0MoveTowardsTargetGoal@@QEAA@AEAVMob@@MM@Z
+     * @hash   278905886
      */
     MCAPI MoveTowardsTargetGoal(class Mob &, float, float);
 

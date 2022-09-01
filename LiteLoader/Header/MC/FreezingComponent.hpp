@@ -30,42 +30,49 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZINGCOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@FreezingComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   1181101352
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?decreaseFreezingEffect@FreezingComponent@@QEAAXXZ
+     * @hash   -780320247
      */
     MCAPI void decreaseFreezingEffect();
     /**
      * @symbol ?getFreezingEffectStrength@FreezingComponent@@QEBAMXZ
+     * @hash   -955994978
      */
     MCAPI float getFreezingEffectStrength() const;
     /**
      * @symbol ?increaseFreezingEffect@FreezingComponent@@QEAAXXZ
+     * @hash   882227057
      */
     MCAPI void increaseFreezingEffect();
     /**
      * @symbol ?isFullyFrozen@FreezingComponent@@QEBA_NXZ
+     * @hash   -424996
      */
     MCAPI bool isFullyFrozen() const;
     /**
      * @symbol ?isFullyUnfrozen@FreezingComponent@@QEBA_NXZ
+     * @hash   -398205348
      */
     MCAPI bool isFullyUnfrozen() const;
     /**
      * @symbol ??8FreezingComponent@@QEBA_NAEBV0@@Z
+     * @hash   -1974973762
      */
     MCAPI bool operator==(class FreezingComponent const &) const;
     /**
      * @symbol ?readAdditionalSaveData@FreezingComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   893083106
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?resetFreezingEffect@FreezingComponent@@QEAAXXZ
+     * @hash   1875101837
      */
     MCAPI void resetFreezingEffect();
 

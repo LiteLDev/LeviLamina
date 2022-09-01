@@ -31,49 +31,52 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1529404833
      */
     virtual ~RunAroundLikeCrazyGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@RunAroundLikeCrazyGoal@@UEAA_NXZ
+     * @hash   -1168370213
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RunAroundLikeCrazyGoal@@UEAA_NXZ
+     * @hash   1534842361
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@RunAroundLikeCrazyGoal@@UEAAXXZ
+     * @hash   -1887809020
      */
     virtual void start();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RunAroundLikeCrazyGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   407096661
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNAROUNDLIKECRAZYGOAL
-#endif
     /**
      * @symbol ??0RunAroundLikeCrazyGoal@@QEAA@AEAVMob@@M@Z
+     * @hash   1833425209
      */
     MCAPI RunAroundLikeCrazyGoal(class Mob &, float);
 

@@ -32,88 +32,94 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -263188204
      */
     virtual ~SculkSensorBlockActor();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@SculkSensorBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1939447693
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?save@SculkSensorBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   1016567132
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?tick@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -1175636250
      */
     virtual void tick(class BlockSource &);
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?onRemoved@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   846373762
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 28
-     * @symbol __unk_vfn_28
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORBLOCKACTOR
-#endif
     /**
      * @symbol ??0SculkSensorBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   -1125251319
      */
     MCAPI SculkSensorBlockActor(class BlockPos const &);
     /**
      * @symbol ?getLatestReceivedVibrationFrequency@SculkSensorBlockActor@@QEBAHXZ
+     * @hash   187773496
      */
     MCAPI int getLatestReceivedVibrationFrequency() const;
     /**
      * @symbol ?onStepOn@SculkSensorBlockActor@@QEAAXAEAVBlockSource@@AEAVActor@@@Z
+     * @hash   -678414987
      */
     MCAPI void onStepOn(class BlockSource &, class Actor &);
 MCAPI static enum BlockActorType const TypeId;
 MCAPI static std::string const TypeString;
     /**
      * @symbol ?tryGet@SculkSensorBlockActor@@SAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1923498024
      */
     MCAPI static class SculkSensorBlockActor * tryGet(class BlockSource &, class BlockPos const &);
 

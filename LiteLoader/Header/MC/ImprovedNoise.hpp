@@ -30,28 +30,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMPROVEDNOISE
-#endif
     /**
      * @symbol ??0ImprovedNoise@@QEAA@AEAVIRandom@@UYBlendingBugSettings@@@Z
+     * @hash   1009187974
      */
     MCAPI ImprovedNoise(class IRandom &, struct YBlendingBugSettings);
     /**
      * @symbol ?_getValue@ImprovedNoise@@QEBAMAEBVVec3@@@Z
+     * @hash   -1033940183
      */
     MCAPI float _getValue(class Vec3 const &) const;
     /**
      * @symbol ?_readArea@ImprovedNoise@@QEBAXPEAMAEBVVec3@@HHH1M@Z
+     * @hash   872921952
      */
     MCAPI void _readArea(float *, class Vec3 const &, int, int, int, class Vec3 const &, float) const;
 
 //private:
     /**
      * @symbol ?_blendCubeCorners@ImprovedNoise@@AEBAXAEBVVec3@@HHHMAEAM111@Z
+     * @hash   870483447
      */
     MCAPI void _blendCubeCorners(class Vec3 const &, int, int, int, float, float &, float &, float &, float &) const;
     /**
      * @symbol ?_init@ImprovedNoise@@AEAAXAEBVVec3@@AEAVIRandom@@UYBlendingBugSettings@@@Z
+     * @hash   -306443456
      */
     MCAPI void _init(class Vec3 const &, class IRandom &, struct YBlendingBugSettings);
 

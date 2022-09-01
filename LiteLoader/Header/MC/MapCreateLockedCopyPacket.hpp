@@ -31,46 +31,52 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   150277869
      */
     virtual ~MapCreateLockedCopyPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@MapCreateLockedCopyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1828589249
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@MapCreateLockedCopyPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -514618388
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@MapCreateLockedCopyPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1167391899
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@MapCreateLockedCopyPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1268951909
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPCREATELOCKEDCOPYPACKET
-#endif
     /**
      * @symbol ??0MapCreateLockedCopyPacket@@QEAA@XZ
+     * @hash   -123272149
      */
     MCAPI MapCreateLockedCopyPacket();
     /**
      * @symbol ??0MapCreateLockedCopyPacket@@QEAA@UActorUniqueID@@0@Z
+     * @hash   -1085496375
      */
     MCAPI MapCreateLockedCopyPacket(struct ActorUniqueID, struct ActorUniqueID);
     /**
      * @symbol ?getNewMapId@MapCreateLockedCopyPacket@@QEBA?AUActorUniqueID@@XZ
+     * @hash   -643674750
      */
     MCAPI struct ActorUniqueID getNewMapId() const;
     /**
      * @symbol ?getOriginalMapId@MapCreateLockedCopyPacket@@QEBA?AUActorUniqueID@@XZ
+     * @hash   -1666272556
      */
     MCAPI struct ActorUniqueID getOriginalMapId() const;
 

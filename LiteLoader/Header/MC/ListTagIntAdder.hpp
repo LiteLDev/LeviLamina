@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAGINTADDER
-#endif
     /**
      * @symbol ??RListTagIntAdder@@QEAAAEAV0@H@Z
+     * @hash   -444429621
      */
     MCAPI class ListTagIntAdder & operator()(int);
     /**
      * @symbol ??1ListTagIntAdder@@QEAA@XZ
+     * @hash   -338138313
      */
     MCAPI ~ListTagIntAdder();
 

@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORLIMITEDLIFETIMECOMPONENT
-#endif
     /**
      * @symbol ??0ActorLimitedLifetimeComponent@@QEAA@XZ
+     * @hash   1101819547
      */
     MCAPI ActorLimitedLifetimeComponent();
     /**
      * @symbol ?addAdditionalSaveData@ActorLimitedLifetimeComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
+     * @hash   -575391255
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@ActorLimitedLifetimeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
+     * @hash   -1870667973
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertFromLegacyData@ActorLimitedLifetimeComponent@@SAXAEBVCompoundTag@@AEAV2@@Z
+     * @hash   827943236
      */
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     /**
      * @symbol ?needsLegacyConversion@ActorLimitedLifetimeComponent@@SA_NAEBVCompoundTag@@@Z
+     * @hash   1962244977
      */
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 

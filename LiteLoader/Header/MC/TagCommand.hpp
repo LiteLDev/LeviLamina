@@ -32,37 +32,41 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1969476507
      */
     virtual ~TagCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@TagCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   2011255938
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAGCOMMAND
-#endif
     /**
      * @symbol ?setup@TagCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1979284188
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_addTag@TagCommand@@AEBAXAEAVCommandOutput@@AEBV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@@Z
+     * @hash   -1098729321
      */
     MCAPI void _addTag(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
     /**
      * @symbol ?_getSelectorResults@TagCommand@@AEBA?AV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1242929497
      */
     MCAPI std::vector<class std::reference_wrapper<class Actor>> _getSelectorResults(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_listTags@TagCommand@@AEBAXAEAVCommandOutput@@AEBV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@@Z
+     * @hash   109626565
      */
     MCAPI void _listTags(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
     /**
      * @symbol ?_removeTag@TagCommand@@AEBAXAEAVCommandOutput@@AEBV?$vector@V?$reference_wrapper@VActor@@@std@@V?$allocator@V?$reference_wrapper@VActor@@@std@@@2@@std@@@Z
+     * @hash   1902345462
      */
     MCAPI void _removeTag(class CommandOutput &, std::vector<class std::reference_wrapper<class Actor>> const &) const;
 

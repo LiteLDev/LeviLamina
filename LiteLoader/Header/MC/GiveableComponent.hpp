@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GIVEABLECOMPONENT
-#endif
     /**
      * @symbol ?getInteraction@GiveableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   1173332983
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ??1GiveableComponent@@QEAA@XZ
+     * @hash   1905849582
      */
     MCAPI ~GiveableComponent();
 

@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   679358090
      */
     virtual ~PillagerOutpostStart();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?postProcess@PillagerOutpostStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   312029885
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PILLAGEROUTPOSTSTART
-#endif
 
 };

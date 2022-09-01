@@ -25,10 +25,12 @@ MCAPI extern class HashedString const ClientRequestPlaceholderBlock;
 MCAPI extern class HashedString const Unknown;
     /**
      * @symbol ?cleanupBedrockBlockNames@BedrockBlockNames@@YAXXZ
+     * @hash   -242892186
      */
     MCAPI void cleanupBedrockBlockNames();
     /**
      * @symbol ?initBedrockBlockNames@BedrockBlockNames@@YAXXZ
+     * @hash   -1425601248
      */
     MCAPI void initBedrockBlockNames();
 

@@ -31,26 +31,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   385691594
      */
     virtual ~GameCallbacks();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   1843395808
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   1844319329
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?onBeforeSimTick@GameCallbacks@@UEAAXXZ
+     * @hash   -1507791167
      */
     virtual void onBeforeSimTick();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMECALLBACKS
-#endif
 
 };

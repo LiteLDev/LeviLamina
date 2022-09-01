@@ -29,24 +29,26 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AQUIFERNOISES
-#endif
     /**
      * @symbol ??0AquiferNoises@@QEAA@AEBV0@@Z
+     * @hash   1745466065
      */
     MCAPI AquiferNoises(class AquiferNoises const &);
     /**
      * @symbol ??1AquiferNoises@@QEAA@XZ
+     * @hash   -750556524
      */
     MCAPI ~AquiferNoises();
     /**
      * @symbol ?make@AquiferNoises@@SA?AV1@AEBVXoroshiroPositionalRandomFactory@@@Z
+     * @hash   1965869018
      */
     MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const &);
 
 //private:
     /**
      * @symbol ??0AquiferNoises@@AEAA@V?$NormalNoiseImpl@$0A@V?$MultiOctaveNoiseImpl@$0A@V?$ParityImprovedNoiseImpl@$0A@@@@@@@000VXoroshiroPositionalRandomFactory@@@Z
+     * @hash   -2074753759
      */
     MCAPI AquiferNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
 

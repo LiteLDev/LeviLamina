@@ -31,10 +31,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGENDPOINT
-#endif
     /**
      * @symbol ?initializeContentLogging@DebugEndPoint@@QEAAXAEAVResourcePackManager@@AEBVPath@Core@@@Z
+     * @hash   921219553
      */
     MCAPI void initializeContentLogging(class ResourcePackManager &, class Core::Path const &);
 

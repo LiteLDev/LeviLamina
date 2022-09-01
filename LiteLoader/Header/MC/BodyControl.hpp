@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2062990039
      */
     virtual ~BodyControl();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?clientTick@BodyControl@@UEAAXAEAVMob@@@Z
+     * @hash   -1112512648
      */
     virtual void clientTick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROL
-#endif
     /**
      * @symbol ??0BodyControl@@QEAA@XZ
+     * @hash   -1879707049
      */
     MCAPI BodyControl();
 

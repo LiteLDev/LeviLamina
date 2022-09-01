@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1413882181
      */
     virtual ~NetherBrightnessRamp();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getBaseAmbientValue@NetherBrightnessRamp@@UEBAMXZ
+     * @hash   -857314253
      */
     virtual float getBaseAmbientValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERBRIGHTNESSRAMP
-#endif
 
 };

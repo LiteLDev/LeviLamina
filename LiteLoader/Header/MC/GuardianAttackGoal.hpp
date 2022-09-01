@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1396913226
      */
     virtual ~GuardianAttackGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@GuardianAttackGoal@@UEAA_NXZ
+     * @hash   113762388
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@GuardianAttackGoal@@UEAA_NXZ
+     * @hash   -1903813630
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@GuardianAttackGoal@@UEAAXXZ
+     * @hash   -34039171
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@GuardianAttackGoal@@UEAAXXZ
+     * @hash   1221455485
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@GuardianAttackGoal@@UEAAXXZ
+     * @hash   -955284920
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@GuardianAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   669407228
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUARDIANATTACKGOAL
-#endif
     /**
      * @symbol ??0GuardianAttackGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -1105358639
      */
     MCAPI GuardianAttackGoal(class Mob &);
 

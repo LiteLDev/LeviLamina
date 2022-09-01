@@ -31,47 +31,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2144674808
      */
     virtual ~FunctionAction();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@FunctionAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+     * @hash   1925826761
      */
     virtual void execute(class ServerLevel &, class Dimension &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?serialize@FunctionAction@@UEAAXAEAVCompoundTag@@@Z
+     * @hash   973885268
      */
     virtual void serialize(class CompoundTag &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ??8FunctionAction@@UEBA_NAEAVIRequestAction@@@Z
+     * @hash   1976959707
      */
     virtual bool operator==(class IRequestAction &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONACTION
-#endif
     /**
      * @symbol ??0FunctionAction@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@2@@Z
+     * @hash   -226792429
      */
     MCAPI FunctionAction(std::string const &, std::unique_ptr<class CommandOrigin>);
     /**
      * @symbol ?isValidTag@FunctionAction@@SA_NAEBVCompoundTag@@@Z
+     * @hash   6268095
      */
     MCAPI static bool isValidTag(class CompoundTag const &);
     /**
      * @symbol ?load@FunctionAction@@SA?AV?$unique_ptr@VFunctionAction@@U?$default_delete@VFunctionAction@@@std@@@std@@AEBVCompoundTag@@AEAVICommandOriginLoader@@@Z
+     * @hash   62503098
      */
     MCAPI static std::unique_ptr<class FunctionAction> load(class CompoundTag const &, class ICommandOriginLoader &);
 
 //private:
     /**
      * @symbol ?_printOriginInvalidError@FunctionAction@@AEAAXAEAVServerLevel@@@Z
+     * @hash   1251306872
      */
     MCAPI void _printOriginInvalidError(class ServerLevel &);
     /**
      * @symbol ?_printOutput@FunctionAction@@AEAAXAEAVServerLevel@@H@Z
+     * @hash   -983571151
      */
     MCAPI void _printOutput(class ServerLevel &, int);
 

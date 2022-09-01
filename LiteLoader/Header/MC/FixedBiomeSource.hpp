@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   96852113
      */
     virtual ~FixedBiomeSource();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?fillBiomes@FixedBiomeSource@@UEBAXAEAVLevelChunk@@AEBVChunkLocalNoiseCache@@@Z
+     * @hash   1045950581
      */
     virtual void fillBiomes(class LevelChunk &, class ChunkLocalNoiseCache const &) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+     * @hash   842786002
      */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getBiomeArea@FixedBiomeSource@@UEBA?AVBiomeArea@@AEBVBoundingBox@@IAEBUGetBiomeOptions@@@Z
+     * @hash   1907227284
      */
     virtual class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int, struct GetBiomeOptions const &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?containsOnly@FixedBiomeSource@@UEBA_NHHHHV?$span@$$CBH$0?0@gsl@@@Z
+     * @hash   1878968735
      */
     virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIXEDBIOMESOURCE
     /**
-     * @vtable -1
      * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBVBlockPos@@@Z
+     * @hash   -1797524092
      */
     MCVAPI class Biome const * getBiome(class BlockPos const &) const;
     /**
-     * @vtable -1
      * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
+     * @hash   1569001970
      */
     MCVAPI class Biome const * getBiome(struct GetBiomeOptions const &) const;
     /**
-     * @vtable -1
      * @symbol ?getBiome@FixedBiomeSource@@UEBAPEBVBiome@@HHH@Z
+     * @hash   1391248457
      */
     MCVAPI class Biome const * getBiome(int, int, int) const;
 #endif
     /**
      * @symbol ??0FixedBiomeSource@@QEAA@AEBVBiome@@@Z
+     * @hash   -2111881294
      */
     MCAPI FixedBiomeSource(class Biome const &);
 

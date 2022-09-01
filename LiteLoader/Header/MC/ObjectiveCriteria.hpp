@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVECRITERIA
-#endif
     /**
      * @symbol ??0ObjectiveCriteria@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NW4ObjectiveRenderType@@@Z
+     * @hash   -2098078445
      */
     MCAPI ObjectiveCriteria(std::string const &, bool, enum ObjectiveRenderType);
     /**
      * @symbol ?getName@ObjectiveCriteria@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -379535040
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?isReadOnly@ObjectiveCriteria@@QEBA_NXZ
+     * @hash   -1067186672
      */
     MCAPI bool isReadOnly() const;
     /**
      * @symbol ?deserialize@ObjectiveCriteria@@SA?AV?$unique_ptr@VObjectiveCriteria@@U?$default_delete@VObjectiveCriteria@@@std@@@std@@AEBVCompoundTag@@@Z
+     * @hash   1972448931
      */
     MCAPI static std::unique_ptr<class ObjectiveCriteria> deserialize(class CompoundTag const &);
     /**
      * @symbol ?serialize@ObjectiveCriteria@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
+     * @hash   1870554928
      */
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ObjectiveCriteria const &);
 

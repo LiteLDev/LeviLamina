@@ -26,10 +26,9 @@ public:
     HC_CALL(struct HC_CALL const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HC_CALL
-#endif
     /**
      * @symbol ??0HC_CALL@@QEAA@XZ
+     * @hash   944534942
      */
     MCAPI HC_CALL();
 

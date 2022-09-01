@@ -29,259 +29,275 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1373939058
      */
     virtual ~NBTSchemaReader();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isValid@NBTSchemaReader@@UEBA_NXZ
+     * @hash   1072041286
      */
     virtual bool isValid() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isString@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -797108225
      */
     virtual bool isString() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?isObject@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -106490435
      */
     virtual bool isObject() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isArray@NBTSchemaReader@@UEBA_NXZ
+     * @hash   275078323
      */
     virtual bool isArray() const;
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   1719729525
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   1720653046
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   1721530439
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   1722453960
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   1723331353
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -1555535565
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -1554750428
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -1553826907
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -1552903386
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?isFloat@NBTSchemaReader@@UEBA_NXZ
+     * @hash   651802662
      */
     virtual bool isFloat() const;
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?isDouble@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -2096852321
      */
     virtual bool isDouble() const;
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?asBool@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1062807808
      */
     virtual bool asBool() const;
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -1549916598
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 18
-     * @symbol __unk_vfn_18
+     * @vftbl  18
+     * @hash   -1548993077
      */
     virtual void __unk_vfn_18();
     /**
-     * @vtable 19
-     * @symbol __unk_vfn_19
+     * @vftbl  19
+     * @hash   -1548100308
      */
     virtual void __unk_vfn_19();
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   -1527782846
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 21
-     * @symbol __unk_vfn_21
+     * @vftbl  21
+     * @hash   -1526890077
      */
     virtual void __unk_vfn_21();
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -1525966556
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -1524950779
      */
     virtual void __unk_vfn_23();
     /**
-     * @vtable 24
-     * @symbol __unk_vfn_24
+     * @vftbl  24
+     * @hash   -1524027258
      */
     virtual void __unk_vfn_24();
     /**
-     * @vtable 25
+     * @vftbl  25
      * @symbol ?asFloat@NBTSchemaReader@@UEBAMXZ
+     * @hash   -408777612
      */
     virtual float asFloat() const;
     /**
-     * @vtable 26
+     * @vftbl  26
      * @symbol ?asDouble@NBTSchemaReader@@UEBANXZ
+     * @hash   2101779272
      */
     virtual double asDouble() const;
     /**
-     * @vtable 27
+     * @vftbl  27
      * @symbol ?asString@NBTSchemaReader@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1400497369
      */
     virtual std::string asString() const;
     /**
-     * @vtable 28
+     * @vftbl  28
      * @symbol ?members@NBTSchemaReader@@UEBA_KXZ
+     * @hash   -1880132795
      */
     virtual unsigned __int64 members() const;
     /**
-     * @vtable 29
+     * @vftbl  29
      * @symbol ?length@NBTSchemaReader@@UEBA_KXZ
+     * @hash   -1943402558
      */
     virtual unsigned __int64 length() const;
     /**
-     * @vtable 30
+     * @vftbl  30
      * @symbol ?pushMember@NBTSchemaReader@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
+     * @hash   740112553
      */
     virtual std::string pushMember(unsigned __int64);
     /**
-     * @vtable 31
+     * @vftbl  31
      * @symbol ?pushElement@NBTSchemaReader@@UEAAX_K@Z
+     * @hash   590404303
      */
     virtual void pushElement(unsigned __int64);
     /**
-     * @vtable 32
+     * @vftbl  32
      * @symbol ?pop@NBTSchemaReader@@UEAAXXZ
+     * @hash   -430788828
      */
     virtual void pop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
     /**
-     * @vtable -1
      * @symbol ?asInt16@NBTSchemaReader@@UEBAFXZ
+     * @hash   -317730148
      */
     MCVAPI short asInt16() const;
     /**
-     * @vtable -1
      * @symbol ?asInt32@NBTSchemaReader@@UEBAHXZ
+     * @hash   1532814371
      */
     MCVAPI int asInt32() const;
     /**
-     * @vtable -1
      * @symbol ?asInt64@NBTSchemaReader@@UEBA_JXZ
+     * @hash   1474093580
      */
     MCVAPI __int64 asInt64() const;
     /**
-     * @vtable -1
      * @symbol ?asInt8@NBTSchemaReader@@UEBACXZ
+     * @hash   -1556528041
      */
     MCVAPI signed char asInt8() const;
     /**
-     * @vtable -1
      * @symbol ?asUInt16@NBTSchemaReader@@UEBAGXZ
+     * @hash   233676118
      */
     MCVAPI unsigned short asUInt16() const;
     /**
-     * @vtable -1
      * @symbol ?asUInt32@NBTSchemaReader@@UEBAIXZ
+     * @hash   1925186973
      */
     MCVAPI unsigned int asUInt32() const;
     /**
-     * @vtable -1
      * @symbol ?asUInt64@NBTSchemaReader@@UEBA_KXZ
+     * @hash   -35201722
      */
     MCVAPI unsigned __int64 asUInt64() const;
     /**
-     * @vtable -1
      * @symbol ?asUInt8@NBTSchemaReader@@UEBAEXZ
+     * @hash   1802163649
      */
     MCVAPI unsigned char asUInt8() const;
     /**
-     * @vtable -1
      * @symbol ?isBool@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1824516440
      */
     MCVAPI bool isBool() const;
     /**
-     * @vtable -1
      * @symbol ?isInt16@NBTSchemaReader@@UEBA_NXZ
+     * @hash   546155342
      */
     MCVAPI bool isInt16() const;
     /**
-     * @vtable -1
      * @symbol ?isInt32@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1351013896
      */
     MCVAPI bool isInt32() const;
     /**
-     * @vtable -1
      * @symbol ?isInt64@NBTSchemaReader@@UEBA_NXZ
+     * @hash   1465617127
      */
     MCVAPI bool isInt64() const;
     /**
-     * @vtable -1
      * @symbol ?isInt8@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1677796793
      */
     MCVAPI bool isInt8() const;
     /**
-     * @vtable -1
      * @symbol ?isUInt16@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -484087603
      */
     MCVAPI bool isUInt16() const;
     /**
-     * @vtable -1
      * @symbol ?isUInt32@NBTSchemaReader@@UEBA_NXZ
+     * @hash   1913710455
      */
     MCVAPI bool isUInt32() const;
     /**
-     * @vtable -1
      * @symbol ?isUInt64@NBTSchemaReader@@UEBA_NXZ
+     * @hash   435374182
      */
     MCVAPI bool isUInt64() const;
     /**
-     * @vtable -1
      * @symbol ?isUInt8@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1295388440
      */
     MCVAPI bool isUInt8() const;
 #endif
     /**
      * @symbol ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
+     * @hash   -952949888
      */
     MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const *>);
 

@@ -30,11 +30,10 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PAUSEMANAGER
-#endif
 MCAPI static enum SimulationType const DEFAULT_SIMULATION_TYPE;
     /**
      * @symbol ?getSimulationType@PauseManager@@SA?AW4SimulationType@@V?$StackRefResultT@U?$SharePtrRefTraits@$$CBVPauseManager@@@@@@@Z
+     * @hash   -1303672737
      */
     MCAPI static enum SimulationType getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const>>);
 

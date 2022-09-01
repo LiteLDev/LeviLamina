@@ -28,29 +28,31 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   931818977
      */
     virtual ~BlockDestructibleByExplosionDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@BlockDestructibleByExplosionDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -208700170
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockDestructibleByExplosionDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -90957906
      */
     virtual void initializeComponent(class EntityContext &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESTRUCTIBLEBYEXPLOSIONDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDestructibleByExplosionDescription@@SAXXZ
+     * @hash   -1683774241
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDestructibleByExplosionDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   1471162686
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

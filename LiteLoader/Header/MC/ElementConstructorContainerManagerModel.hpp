@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1002398893
      */
     virtual ~ElementConstructorContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@ElementConstructorContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   9307856
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@ElementConstructorContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -2708929
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@ElementConstructorContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   509353912
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setData@ElementConstructorContainerManagerModel@@UEAAXHH@Z
+     * @hash   -2035107404
      */
     virtual void setData(int, int);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@ElementConstructorContainerManagerModel@@UEAAXXZ
+     * @hash   -1317059606
      */
     virtual void broadcastChanges();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?isValid@ElementConstructorContainerManagerModel@@UEAA_NM@Z
+     * @hash   1483827702
      */
     virtual bool isValid(float);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@ElementConstructorContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   1216560903
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTCONSTRUCTORCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0ElementConstructorContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -1073083818
      */
     MCAPI ElementConstructorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 

@@ -33,151 +33,149 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2114709447
      */
     virtual ~VanillaAppConfigs();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1359459903
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1358536382
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1356689340
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1354842298
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1352995256
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -335971357
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -341782524
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -340859003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -339935482
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -339011961
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 15
-     * @symbol __unk_vfn_15
+     * @vftbl  15
+     * @hash   -338088440
      */
     virtual void __unk_vfn_15();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -337164919
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -378525398
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 19
-     * @symbol __unk_vfn_19
+     * @vftbl  19
+     * @hash   -334394356
      */
     virtual void __unk_vfn_19();
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -305495164
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 24
-     * @symbol __unk_vfn_24
+     * @vftbl  24
+     * @hash   -352666810
      */
     virtual void __unk_vfn_24();
     /**
-     * @vtable 25
-     * @symbol __unk_vfn_25
+     * @vftbl  25
+     * @hash   -302724601
      */
     virtual void __unk_vfn_25();
     /**
-     * @vtable 26
-     * @symbol __unk_vfn_26
+     * @vftbl  26
+     * @hash   -301801080
      */
     virtual void __unk_vfn_26();
     /**
-     * @vtable 27
-     * @symbol __unk_vfn_27
+     * @vftbl  27
+     * @hash   -307612247
      */
     virtual void __unk_vfn_27();
     /**
-     * @vtable 28
-     * @symbol __unk_vfn_28
+     * @vftbl  28
+     * @hash   -299954038
      */
     virtual void __unk_vfn_28();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 31
-     * @symbol __unk_vfn_31
+     * @vftbl  31
+     * @hash   -277789534
      */
     virtual void __unk_vfn_31();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAAPPCONFIGS
-#endif
 
 };

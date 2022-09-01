@@ -30,52 +30,61 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANDERINGTRADERSCHEDULER
-#endif
     /**
      * @symbol ??0WanderingTraderScheduler@@QEAA@AEAVLevel@@@Z
+     * @hash   1362603325
      */
     MCAPI WanderingTraderScheduler(class Level &);
     /**
      * @symbol ?isWanderingTraderCurrentlyManaged@WanderingTraderScheduler@@QEAA_NAEBVActor@@@Z
+     * @hash   -675280185
      */
     MCAPI bool isWanderingTraderCurrentlyManaged(class Actor const &);
     /**
      * @symbol ?readSaveData@WanderingTraderScheduler@@QEAAXXZ
+     * @hash   -471906107
      */
     MCAPI void readSaveData();
     /**
      * @symbol ?tick@WanderingTraderScheduler@@QEAAXXZ
+     * @hash   -459873131
      */
     MCAPI void tick();
     /**
      * @symbol ?writeSaveData@WanderingTraderScheduler@@QEBAXXZ
+     * @hash   670726513
      */
     MCAPI void writeSaveData() const;
     /**
      * @symbol ??1WanderingTraderScheduler@@QEAA@XZ
+     * @hash   -1687807902
      */
     MCAPI ~WanderingTraderScheduler();
 
 //private:
     /**
      * @symbol ?_doesWanderingTraderExist@WanderingTraderScheduler@@AEBA_NXZ
+     * @hash   264567625
      */
     MCAPI bool _doesWanderingTraderExist() const;
     /**
      * @symbol ?_findValidSpawnPosUnder@WanderingTraderScheduler@@AEBA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z
+     * @hash   1657253363
      */
     MCAPI class std::optional<class BlockPos> _findValidSpawnPosUnder(class BlockPos const &, class BlockSource &) const;
     /**
      * @symbol ?_getRandomHeightmapPosAroundOrigin@WanderingTraderScheduler@@AEAA?AVBlockPos@@AEBVBlockSource@@AEBV2@H_N@Z
+     * @hash   -1653203240
      */
     MCAPI class BlockPos _getRandomHeightmapPosAroundOrigin(class BlockSource const &, class BlockPos const &, int, bool);
     /**
      * @symbol ?_getRandomPlayerInOverworld@WanderingTraderScheduler@@AEBAPEAVActor@@XZ
+     * @hash   -1870439830
      */
     MCAPI class Actor * _getRandomPlayerInOverworld() const;
     /**
      * @symbol ?_getSpawnPosFromNearestVillageToPlayerPos@WanderingTraderScheduler@@AEAA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEAVBlockSource@@@Z
+     * @hash   456017353
      */
     MCAPI class std::optional<class BlockPos> _getSpawnPosFromNearestVillageToPlayerPos(class BlockPos const &, class BlockSource &);
 

@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSONSAVER
-#endif
     /**
      * @symbol ?toString@JsonSaver@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   303409076
      */
     MCAPI std::string toString();
 

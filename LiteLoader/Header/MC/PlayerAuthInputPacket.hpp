@@ -33,58 +33,67 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1265487017
      */
     virtual ~PlayerAuthInputPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@PlayerAuthInputPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1553088597
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@PlayerAuthInputPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1486286046
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@PlayerAuthInputPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   787437621
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@PlayerAuthInputPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   216297125
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERAUTHINPUTPACKET
-#endif
     /**
      * @symbol ??0PlayerAuthInputPacket@@QEAA@XZ
+     * @hash   1453259973
      */
     MCAPI PlayerAuthInputPacket();
     /**
      * @symbol ??0PlayerAuthInputPacket@@QEAA@$$QEAV0@@Z
+     * @hash   -98752741
      */
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     /**
      * @symbol ?getInput@PlayerAuthInputPacket@@QEBA_NW4InputData@1@@Z
+     * @hash   1216265313
      */
     MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
     /**
      * @symbol ??4PlayerAuthInputPacket@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -293367114
      */
     MCAPI class PlayerAuthInputPacket & operator=(class PlayerAuthInputPacket &&);
     /**
      * @symbol ?readIntoComponent@PlayerAuthInputPacket@@QEBA?AUPlayerActionComponent@@XZ
+     * @hash   -1828444844
      */
     MCAPI struct PlayerActionComponent readIntoComponent() const;
     /**
      * @symbol ?setInput@PlayerAuthInputPacket@@QEAAXW4InputData@1@_N@Z
+     * @hash   1722420647
      */
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
     /**
      * @symbol ?takeCopy@PlayerAuthInputPacket@@QEBA?AV1@XZ
+     * @hash   -1994206258
      */
     MCAPI class PlayerAuthInputPacket takeCopy() const;
 

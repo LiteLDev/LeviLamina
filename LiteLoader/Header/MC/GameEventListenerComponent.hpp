@@ -27,30 +27,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENERCOMPONENT
-#endif
     /**
      * @symbol ??0GameEventListenerComponent@@QEAA@$$QEAV0@@Z
+     * @hash   -1346175957
      */
     MCAPI GameEventListenerComponent(class GameEventListenerComponent &&);
     /**
      * @symbol ??0GameEventListenerComponent@@QEAA@XZ
+     * @hash   -136421043
      */
     MCAPI GameEventListenerComponent();
     /**
      * @symbol ?initialize@GameEventListenerComponent@@QEAA_NV?$unique_ptr@VGameEventDynamicRegistration@@U?$default_delete@VGameEventDynamicRegistration@@@std@@@std@@@Z
+     * @hash   -1142975803
      */
     MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>);
     /**
      * @symbol ??4GameEventListenerComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -531257170
      */
     MCAPI class GameEventListenerComponent & operator=(class GameEventListenerComponent &&);
     /**
      * @symbol ?tryGetListenerRegistration@GameEventListenerComponent@@QEBAPEAVGameEventDynamicRegistration@@XZ
+     * @hash   -47508347
      */
     MCAPI class GameEventDynamicRegistration * tryGetListenerRegistration() const;
     /**
      * @symbol ??1GameEventListenerComponent@@QEAA@XZ
+     * @hash   -1675740885
      */
     MCAPI ~GameEventListenerComponent();
 

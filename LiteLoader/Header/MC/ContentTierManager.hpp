@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -70084612
      */
     virtual ~ContentTierManager();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getContentTierInfo@ContentTierManager@@UEBA?AVContentTierInfo@@XZ
+     * @hash   915862703
      */
     virtual class ContentTierInfo getContentTierInfo() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERMANAGER
-#endif
     /**
      * @symbol ??0ContentTierManager@@QEAA@XZ
+     * @hash   -1185260562
      */
     MCAPI ContentTierManager();
 

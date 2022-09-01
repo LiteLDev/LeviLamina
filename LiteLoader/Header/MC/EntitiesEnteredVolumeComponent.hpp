@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITIESENTEREDVOLUMECOMPONENT
-#endif
     /**
      * @symbol ??1EntitiesEnteredVolumeComponent@@QEAA@XZ
+     * @hash   -1266982825
      */
     MCAPI ~EntitiesEnteredVolumeComponent();
 

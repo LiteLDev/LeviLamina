@@ -30,49 +30,54 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   727398282
      */
     virtual ~BlockDisplayNameDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@BlockDisplayNameDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -58316355
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockDisplayNameDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   288976039
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockDisplayNameDescription@@UEBA_NXZ
+     * @hash   -1711608299
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockDisplayNameDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   1982462743
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockDisplayNameDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -797091605
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDISPLAYNAMEDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockDisplayNameDescription@@SAXXZ
+     * @hash   -141313777
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockDisplayNameDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   1698370320
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

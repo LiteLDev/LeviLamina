@@ -43,246 +43,292 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1781859791
      */
     virtual ~Container();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?init@Container@@UEAAXXZ
+     * @hash   497215446
      */
     virtual void init();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   -1488520011
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>) = 0;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?addContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
+     * @hash   114812610
      */
     virtual void addContentChangeListener(class ContainerContentChangeListener *);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?removeContentChangeListener@Container@@UEAAXPEAVContainerContentChangeListener@@@Z
+     * @hash   127204709
      */
     virtual void removeContentChangeListener(class ContainerContentChangeListener *);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
+     * @hash   -947143408
      */
     virtual class ItemStack const & getItem(int) const = 0;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?hasRoomForItem@Container@@UEAA_NAEBVItemStack@@@Z
+     * @hash   -1259290091
      */
     virtual bool hasRoomForItem(class ItemStack const &);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?addItem@Container@@UEAA_NAEAVItemStack@@@Z
+     * @hash   -204290053
      */
     virtual bool addItem(class ItemStack &);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?addItemToFirstEmptySlot@Container@@UEAA_NAEBVItemStack@@@Z
+     * @hash   810625762
      */
     virtual bool addItemToFirstEmptySlot(class ItemStack const &);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
+     * @hash   1156931643
      */
     virtual void setItem(int, class ItemStack const &) = 0;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?setItemWithForceBalance@Container@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -1017118363
      */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?removeItem@Container@@UEAAXHH@Z
+     * @hash   1070689085
      */
     virtual void removeItem(int, int);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?removeAllItems@Container@@UEAAXXZ
+     * @hash   145873449
      */
     virtual void removeAllItems();
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?dropContents@Container@@UEAAXAEAVBlockSource@@AEBVVec3@@_N@Z
+     * @hash   2079023423
      */
     virtual void dropContents(class BlockSource &, class Vec3 const &, bool);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?getContainerSize@SimpleContainer@@UEBAHXZ
+     * @hash   470228337
      */
     virtual int getContainerSize() const = 0;
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+     * @hash   -970906752
      */
     virtual int getMaxStackSize() const = 0;
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?startOpen@FillingContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   368544188
      */
     virtual void startOpen(class Player &) = 0;
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -64267396
      */
     virtual void stopOpen(class Player &) = 0;
     /**
-     * @vtable 18
+     * @vftbl  18
      * @symbol ?getSlotCopies@Container@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   1609927129
      */
     virtual std::vector<class ItemStack> getSlotCopies() const;
     /**
-     * @vtable 19
+     * @vftbl  19
      * @symbol ?getSlots@Container@@UEBA?BV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ
+     * @hash   1443060596
      */
     virtual std::vector<class ItemStack const *> const getSlots() const;
     /**
-     * @vtable 20
+     * @vftbl  20
      * @symbol ?getItemCount@Container@@UEBAHAEBVItemStack@@@Z
+     * @hash   -396265630
      */
     virtual int getItemCount(class ItemStack const &) const;
     /**
-     * @vtable 21
+     * @vftbl  21
      * @symbol ?findFirstSlotForItem@Container@@UEBAHAEBVItemStack@@@Z
+     * @hash   1862319457
      */
     virtual int findFirstSlotForItem(class ItemStack const &) const;
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
     /**
-     * @vtable 24
+     * @vftbl  24
      * @symbol ?setContainerChanged@Container@@UEAAXH@Z
+     * @hash   -1023347052
      */
     virtual void setContainerChanged(int);
     /**
-     * @vtable 25
+     * @vftbl  25
      * @symbol ?setContainerMoved@Container@@UEAAXXZ
+     * @hash   -1864327318
      */
     virtual void setContainerMoved();
     /**
-     * @vtable 26
+     * @vftbl  26
      * @symbol ?setCustomName@Container@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -611509224
      */
     virtual void setCustomName(std::string const &);
     /**
-     * @vtable 27
+     * @vftbl  27
      * @symbol ?hasCustomName@Container@@UEBA_NXZ
+     * @hash   1041538541
      */
     virtual bool hasCustomName() const;
     /**
-     * @vtable 28
+     * @vftbl  28
      * @symbol ?readAdditionalSaveData@Container@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -1735993344
      */
     virtual void readAdditionalSaveData(class CompoundTag const &);
     /**
-     * @vtable 29
+     * @vftbl  29
      * @symbol ?addAdditionalSaveData@Container@@UEAAXAEAVCompoundTag@@@Z
+     * @hash   1544782392
      */
     virtual void addAdditionalSaveData(class CompoundTag &);
     /**
-     * @vtable 30
+     * @vftbl  30
      * @symbol ?createTransactionContext@Container@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z
+     * @hash   -1150980493
      */
     virtual void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
     /**
-     * @vtable 31
+     * @vftbl  31
      * @symbol ?initializeContainerContents@Container@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -896522477
      */
     virtual void initializeContainerContents(class BlockSource &);
     /**
-     * @vtable 32
+     * @vftbl  32
      * @symbol ?isEmpty@Container@@UEBA_NXZ
+     * @hash   1043032298
      */
     virtual bool isEmpty() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINER
     /**
-     * @vtable -1
      * @symbol ?canPullOutItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     * @hash   -230203192
      */
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     /**
-     * @vtable -1
      * @symbol ?canPushInItem@Container@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     * @hash   -103837250
      */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
 #endif
     /**
      * @symbol ??0Container@@QEAA@W4ContainerType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   1915159688
      */
     MCAPI Container(enum ContainerType, std::string const &, bool);
     /**
      * @symbol ??0Container@@QEAA@W4ContainerType@@@Z
+     * @hash   658649256
      */
     MCAPI Container(enum ContainerType);
     /**
      * @symbol ??0Container@@QEAA@AEBV0@@Z
+     * @hash   -494627967
      */
     MCAPI Container(class Container const &);
     /**
      * @symbol ?getContainerType@Container@@QEBA?AW4ContainerType@@XZ
+     * @hash   331263116
      */
     MCAPI enum ContainerType getContainerType() const;
     /**
      * @symbol ?getGameplayContainerType@Container@@QEBA?AW4ContainerType@@XZ
+     * @hash   -1628534656
      */
     MCAPI enum ContainerType getGameplayContainerType() const;
     /**
      * @symbol ?getItemCount@Container@@QEAAHV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
+     * @hash   -337788061
      */
     MCAPI int getItemCount(class std::function<bool (class ItemStack const &)>);
     /**
      * @symbol ?getRedstoneSignalFromContainer@Container@@QEAAHAEAVBlockSource@@@Z
+     * @hash   -1247563609
      */
     MCAPI int getRedstoneSignalFromContainer(class BlockSource &);
     /**
      * @symbol ?getRuntimeId@Container@@QEBAAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@XZ
+     * @hash   1217346785
      */
     MCAPI class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const & getRuntimeId() const;
     /**
      * @symbol ?initRuntimeId@Container@@QEAAXXZ
+     * @hash   -184131573
      */
     MCAPI void initRuntimeId();
     /**
      * @symbol ?serverInitItemStackIdsAll@Container@@QEAAXV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   1159359438
      */
     MCAPI void serverInitItemStackIdsAll(class std::function<void (int, class ItemStack const &)>);
     /**
      * @symbol ?setGameplayContainerType@Container@@QEAAXW4ContainerType@@@Z
+     * @hash   1676051372
      */
     MCAPI void setGameplayContainerType(enum ContainerType);
     /**
      * @symbol ?triggerTransactionChange@Container@@QEAAXHAEBVItemStack@@0@Z
+     * @hash   -1618129431
      */
     MCAPI void triggerTransactionChange(int, class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ?getContainerTypeId@Container@@SA?AW4ContainerType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1204016659
      */
     MCAPI static enum ContainerType getContainerTypeId(std::string const &);
     /**
      * @symbol ?getContainerTypeName@Container@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ContainerType@@@Z
+     * @hash   -1649010403
      */
     MCAPI static std::string const & getContainerTypeName(enum ContainerType);
 
 //protected:
     /**
      * @symbol ?_initRuntimeId@Container@@IEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
+     * @hash   2042261833
      */
     MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?_serverInitId@Container@@IEAAXHAEAVItemStack@@V?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   2018960071
      */
     MCAPI void _serverInitId(int, class ItemStack &, class std::function<void (int, class ItemStack const &)>);
 

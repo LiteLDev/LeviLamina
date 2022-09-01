@@ -32,265 +32,280 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1809234289
      */
     virtual ~LanternBlock();
     /**
-     * @vtable 19
-     * @symbol __unk_vfn_19
+     * @vftbl  19
+     * @hash   -327659668
      */
     virtual void __unk_vfn_19();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -276866013
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -275942492
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -275018971
      */
     virtual void __unk_vfn_34();
     /**
-     * @vtable 36
-     * @symbol __unk_vfn_36
+     * @vftbl  36
+     * @hash   -273171929
      */
     virtual void __unk_vfn_36();
     /**
-     * @vtable 37
-     * @symbol __unk_vfn_37
+     * @vftbl  37
+     * @hash   -272248408
      */
     virtual void __unk_vfn_37();
     /**
-     * @vtable 38
-     * @symbol __unk_vfn_38
+     * @vftbl  38
+     * @hash   -271324887
      */
     virtual void __unk_vfn_38();
     /**
-     * @vtable 39
-     * @symbol __unk_vfn_39
+     * @vftbl  39
+     * @hash   -270401366
      */
     virtual void __unk_vfn_39();
     /**
-     * @vtable 40
-     * @symbol __unk_vfn_40
+     * @vftbl  40
+     * @hash   -250083904
      */
     virtual void __unk_vfn_40();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 42
-     * @symbol __unk_vfn_42
+     * @vftbl  42
+     * @hash   -248236862
      */
     virtual void __unk_vfn_42();
     /**
-     * @vtable 44
-     * @symbol __unk_vfn_44
+     * @vftbl  44
+     * @hash   -246389820
      */
     virtual void __unk_vfn_44();
     /**
-     * @vtable 45
-     * @symbol __unk_vfn_45
+     * @vftbl  45
+     * @hash   -245466299
      */
     virtual void __unk_vfn_45();
     /**
-     * @vtable 46
-     * @symbol __unk_vfn_46
+     * @vftbl  46
+     * @hash   -244542778
      */
     virtual void __unk_vfn_46();
     /**
-     * @vtable 47
-     * @symbol __unk_vfn_47
+     * @vftbl  47
+     * @hash   -243619257
      */
     virtual void __unk_vfn_47();
     /**
-     * @vtable 48
-     * @symbol __unk_vfn_48
+     * @vftbl  48
+     * @hash   -242695736
      */
     virtual void __unk_vfn_48();
     /**
-     * @vtable 49
-     * @symbol __unk_vfn_49
+     * @vftbl  49
+     * @hash   -241772215
      */
     virtual void __unk_vfn_49();
     /**
-     * @vtable 59
-     * @symbol __unk_vfn_59
+     * @vftbl  59
+     * @hash   -213143064
      */
     virtual void __unk_vfn_59();
     /**
-     * @vtable 60
-     * @symbol __unk_vfn_60
+     * @vftbl  60
+     * @hash   -192825602
      */
     virtual void __unk_vfn_60();
     /**
-     * @vtable 67
+     * @vftbl  67
      * @symbol ?checkIsPathable@LanternBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+     * @hash   1244603643
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 74
+     * @vftbl  74
      * @symbol ?movedByPiston@LanternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   2095469848
      */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -135567300
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 90
+     * @vftbl  90
      * @symbol ?mayPlace@LanternBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -576062999
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vtable 96
+     * @vftbl  96
      * @symbol ?playerWillDestroy@LanternBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -1460354021
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 98
+     * @vftbl  98
      * @symbol ?neighborChanged@LanternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     * @hash   -1982182215
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vtable 101
+     * @vftbl  101
      * @symbol ?getResourceItem@LanternBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   -228408699
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vtable 102
+     * @vftbl  102
      * @symbol ?asItemInstance@LanternBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   56329978
      */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 105
-     * @symbol __unk_vfn_105
+     * @vftbl  105
+     * @hash   1332020102
      */
     virtual void __unk_vfn_105();
     /**
-     * @vtable 106
+     * @vftbl  106
      * @symbol ?getPlacementBlock@LanternBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+     * @hash   -1126539706
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @vtable 124
-     * @symbol __unk_vfn_124
+     * @vftbl  124
+     * @hash   1388354883
      */
     virtual void __unk_vfn_124();
     /**
-     * @vtable 126
-     * @symbol __unk_vfn_126
+     * @vftbl  126
+     * @hash   1390201925
      */
     virtual void __unk_vfn_126();
     /**
-     * @vtable 127
-     * @symbol __unk_vfn_127
+     * @vftbl  127
+     * @hash   1391125446
      */
     virtual void __unk_vfn_127();
     /**
-     * @vtable 132
-     * @symbol __unk_vfn_132
+     * @vftbl  132
+     * @hash   1415136992
      */
     virtual void __unk_vfn_132();
     /**
-     * @vtable 144
+     * @vftbl  144
      * @symbol ?getVisualShape@LanternBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
+     * @hash   2020626225
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @vtable 148
-     * @symbol __unk_vfn_148
+     * @vftbl  148
+     * @hash   1442572581
      */
     virtual void __unk_vfn_148();
     /**
-     * @vtable 157
-     * @symbol __unk_vfn_157
+     * @vftbl  157
+     * @hash   1477012899
      */
     virtual void __unk_vfn_157();
     /**
-     * @vtable 158
+     * @vftbl  158
      * @symbol ?getSilkTouchItemInstance@LanternBlock@@UEBA?AVItemInstance@@AEBVBlock@@@Z
+     * @hash   1483367918
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @vtable 168
-     * @symbol __unk_vfn_168
+     * @vftbl  168
+     * @hash   1457546883
      */
     virtual void __unk_vfn_168();
     /**
-     * @vtable 169
-     * @symbol __unk_vfn_169
+     * @vftbl  169
+     * @hash   1458470404
      */
     virtual void __unk_vfn_169();
     /**
-     * @vtable 170
-     * @symbol __unk_vfn_170
+     * @vftbl  170
+     * @hash   1478787866
      */
     virtual void __unk_vfn_170();
     /**
-     * @vtable 173
+     * @vftbl  173
      * @symbol ?playerDestroy@LanternBlock@@UEBAXAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -774603205
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 174
+     * @vftbl  174
      * @symbol ?tick@LanternBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   277789661
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vtable 177
-     * @symbol __unk_vfn_177
+     * @vftbl  177
+     * @hash   1534271201
      */
     virtual void __unk_vfn_177();
     /**
-     * @vtable 180
+     * @vftbl  180
      * @symbol ?canSurvive@LanternBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1231206455
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vtable 188
-     * @symbol __unk_vfn_188
+     * @vftbl  188
+     * @hash   1563823873
      */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LANTERNBLOCK
     /**
-     * @vtable -1
      * @symbol ?canBeSilkTouched@LanternBlock@@UEBA_NXZ
+     * @hash   749309191
      */
     MCVAPI bool canBeSilkTouched() const;
 #endif
     /**
      * @symbol ??0LanternBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   1123619237
      */
     MCAPI LanternBlock(std::string const &, int);
 
 //private:
     /**
      * @symbol ?_couldHang@LanternBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -197364064
      */
     MCAPI bool _couldHang(class BlockSource &, class BlockPos const &) const;
 

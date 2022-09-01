@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1473219740
      */
     virtual ~FitDoubleYRoom();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?fits@FitDoubleYRoom@@UEBA_NAEBVRoomDefinition@@@Z
+     * @hash   -725461255
      */
     virtual bool fits(class RoomDefinition const &) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?create@FitDoubleYRoom@@UEAA?AV?$unique_ptr@VOceanMonumentPiece@@U?$default_delete@VOceanMonumentPiece@@@std@@@std@@AEAHV?$shared_ptr@VRoomDefinition@@@3@AEAVRandom@@@Z
+     * @hash   1457079618
      */
     virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FITDOUBLEYROOM
-#endif
 
 };

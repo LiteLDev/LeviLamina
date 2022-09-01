@@ -27,14 +27,14 @@ public:
     ImguiProfiler() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMGUIPROFILER
-#endif
     /**
      * @symbol ?getTimeAccumulator@ImguiProfiler@@QEAA?AVTimeAccumulator@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
+     * @hash   -2022786814
      */
     MCAPI class TimeAccumulator getTimeAccumulator(std::string const &, std::string const &, bool);
     /**
      * @symbol ?reset@ImguiProfiler@@QEAAXXZ
+     * @hash   -989201133
      */
     MCAPI void reset();
 

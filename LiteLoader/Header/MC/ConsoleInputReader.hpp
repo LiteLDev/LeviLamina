@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEINPUTREADER
-#endif
     /**
      * @symbol ??0ConsoleInputReader@@QEAA@XZ
+     * @hash   1857572674
      */
     MCAPI ConsoleInputReader();
     /**
      * @symbol ?getLine@ConsoleInputReader@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -650287555
      */
     MCAPI bool getLine(std::string &);
     /**
      * @symbol ?unblockReading@ConsoleInputReader@@QEAAXXZ
+     * @hash   1813345109
      */
     MCAPI void unblockReading();
     /**
      * @symbol ??1ConsoleInputReader@@QEAA@XZ
+     * @hash   -2074133008
      */
     MCAPI ~ConsoleInputReader();
 

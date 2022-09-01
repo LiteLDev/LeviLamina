@@ -32,22 +32,22 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2020868226
      */
     virtual ~ShapelessChemistryRecipe();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?matches@ShapelessChemistryRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   1435239710
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getId@ShapelessChemistryRecipe@@UEBAAEBVUUID@mce@@XZ
+     * @hash   1431273532
      */
     virtual class mce::UUID const & getId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPELESSCHEMISTRYRECIPE
-#endif
 MCAPI static class mce::UUID const ID;
 
 };

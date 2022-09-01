@@ -27,10 +27,9 @@ public:
     DynamicPropertyDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTYDEFINITION
-#endif
     /**
      * @symbol ??1DynamicPropertyDefinition@@QEAA@XZ
+     * @hash   -2053582365
      */
     MCAPI ~DynamicPropertyDefinition();
 

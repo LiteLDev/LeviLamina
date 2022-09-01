@@ -31,46 +31,50 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1187059879
      */
     virtual ~SquidIdleGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@SquidIdleGoal@@UEAA_NXZ
+     * @hash   -322401513
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SquidIdleGoal@@UEAA_NXZ
+     * @hash   984694725
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SquidIdleGoal@@UEAAXXZ
+     * @hash   811866064
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@SquidIdleGoal@@UEAAXXZ
+     * @hash   -1071831120
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@SquidIdleGoal@@UEAAXXZ
+     * @hash   -67411781
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SquidIdleGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1288136807
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDIDLEGOAL
-#endif
 
 };

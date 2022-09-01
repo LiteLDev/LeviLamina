@@ -29,55 +29,61 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -165877703
      */
     virtual ~GoAndGiveItemsToOwnerGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@GoAndGiveItemsToOwnerGoal@@UEAA_NXZ
+     * @hash   282437749
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@GoAndGiveItemsToOwnerGoal@@UEAA_NXZ
+     * @hash   770536419
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
+     * @hash   -524925506
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
+     * @hash   -1687052786
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@GoAndGiveItemsToOwnerGoal@@UEAAXXZ
+     * @hash   -738892039
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@GoAndGiveItemsToOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1242463995
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOANDGIVEITEMSTOOWNERGOAL
-#endif
     /**
      * @symbol ??0GoAndGiveItemsToOwnerGoal@@QEAA@AEAVMob@@@Z
+     * @hash   877395586
      */
     MCAPI GoAndGiveItemsToOwnerGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_attemptToGiveItem@GoAndGiveItemsToOwnerGoal@@AEAA_NXZ
+     * @hash   230974200
      */
     MCAPI bool _attemptToGiveItem();
 

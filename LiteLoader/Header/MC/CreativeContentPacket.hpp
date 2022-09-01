@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -491235136
      */
     virtual ~CreativeContentPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@CreativeContentPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1770562852
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@CreativeContentPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -300804727
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@CreativeContentPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -576197666
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@CreativeContentPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   182243886
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVECONTENTPACKET
-#endif
     /**
      * @symbol ??0CreativeContentPacket@@QEAA@XZ
+     * @hash   1398936318
      */
     MCAPI CreativeContentPacket();
     /**
      * @symbol ??0CreativeContentPacket@@QEAA@AEBV?$vector@VCreativeItemEntry@@V?$allocator@VCreativeItemEntry@@@std@@@std@@@Z
+     * @hash   -1058461773
      */
     MCAPI CreativeContentPacket(std::vector<class CreativeItemEntry> const &);
 

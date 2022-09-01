@@ -28,47 +28,55 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIES
-#endif
     /**
      * @symbol ?deserialize@DynamicProperties@@QEAAXAEBVCompoundTag@@@Z
+     * @hash   -1221118428
      */
     MCAPI void deserialize(class CompoundTag const &);
     /**
      * @symbol ?getCollectionCount@DynamicProperties@@QEBA_KXZ
+     * @hash   765391335
      */
     MCAPI unsigned __int64 getCollectionCount() const;
     /**
      * @symbol ?getDynamicProperty@DynamicProperties@@QEAAPEAV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0@Z
+     * @hash   -6836119
      */
     MCAPI class std::variant<float, bool, std::string> * getDynamicProperty(std::string const &, std::string const &);
     /**
      * @symbol ?removeDynamicProperty@DynamicProperties@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   -1183844239
      */
     MCAPI bool removeDynamicProperty(std::string const &, std::string const &);
     /**
      * @symbol ?serialize@DynamicProperties@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   421912446
      */
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
     /**
      * @symbol ?setDynamicProperty@DynamicProperties@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@0@Z
+     * @hash   -1497848298
      */
     MCAPI void setDynamicProperty(std::string const &, class std::variant<float, bool, std::string> const &, std::string const &);
     /**
      * @symbol ?writeToLevelStorage@DynamicProperties@@QEAAXAEAVLevelStorage@@@Z
+     * @hash   -2041691006
      */
     MCAPI void writeToLevelStorage(class LevelStorage &);
     /**
      * @symbol ??1DynamicProperties@@QEAA@XZ
+     * @hash   491162142
      */
     MCAPI ~DynamicProperties();
 MCAPI static std::string const STORAGE_TAG;
     /**
      * @symbol ?readFromLevelStorage@DynamicProperties@@SA?AV?$unique_ptr@VDynamicProperties@@U?$default_delete@VDynamicProperties@@@std@@@std@@AEAVLevelStorage@@@Z
+     * @hash   2130049247
      */
     MCAPI static std::unique_ptr<class DynamicProperties> readFromLevelStorage(class LevelStorage &);
     /**
      * @symbol ?validateDynamicProperty@DynamicProperties@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBUDynamicPropertyDefinition@@AEBV23@PEBV?$variant@M_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@@Z
+     * @hash   -1865531306
      */
     MCAPI static std::string validateDynamicProperty(struct DynamicPropertyDefinition const *, std::string const &, class std::variant<float, bool, std::string> const *);
 

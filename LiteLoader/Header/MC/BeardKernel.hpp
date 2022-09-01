@@ -28,20 +28,21 @@ public:
     BeardKernel(struct BeardKernel const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDKERNEL
-#endif
     /**
      * @symbol ??0BeardKernel@@QEAA@XZ
+     * @hash   1859312089
      */
     MCAPI BeardKernel();
     /**
      * @symbol ?getContribution@BeardKernel@@QEBAMHHH@Z
+     * @hash   583100375
      */
     MCAPI float getContribution(int, int, int) const;
 
 //private:
     /**
      * @symbol ?createBeardKernel@BeardKernel@@AEAA?BV?$array@M$0DGAA@@std@@XZ
+     * @hash   2126817190
      */
     MCAPI class std::array<float, 13824> const createBeardKernel();
 

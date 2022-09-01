@@ -31,21 +31,20 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1421071202
      */
     virtual ~ChunkBuildOrderPolicyBase();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   1387931532
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?registerForUpdates@ChunkBuildOrderPolicyBase@@UEAAIXZ
+     * @hash   -466752293
      */
     virtual unsigned int registerForUpdates();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICYBASE
-#endif
 
 };

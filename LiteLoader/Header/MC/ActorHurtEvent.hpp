@@ -27,10 +27,9 @@ public:
     ActorHurtEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORHURTEVENT
-#endif
     /**
      * @symbol ??1ActorHurtEvent@@QEAA@XZ
+     * @hash   -423895872
      */
     MCAPI ~ActorHurtEvent();
 

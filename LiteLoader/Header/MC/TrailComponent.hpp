@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILCOMPONENT
-#endif
     /**
      * @symbol ??0TrailComponent@@QEAA@XZ
+     * @hash   -1800896173
      */
     MCAPI TrailComponent();
     /**
      * @symbol ?initFromDefinition@TrailComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -488612838
      */
     MCAPI void initFromDefinition(class Actor &);
 

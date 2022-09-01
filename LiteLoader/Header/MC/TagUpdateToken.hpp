@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAGUPDATETOKEN
-#endif
     /**
      * @symbol ??1TagUpdateToken@@QEAA@XZ
+     * @hash   -1821365488
      */
     MCAPI ~TagUpdateToken();
 

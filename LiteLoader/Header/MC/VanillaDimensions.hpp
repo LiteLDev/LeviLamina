@@ -30,8 +30,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLADIMENSIONS
-#endif
 MCAPI static class AutomaticID<class Dimension, int> const Nether;
 MCAPI static class AutomaticID<class Dimension, int> const Overworld;
 MCAPI static class AutomaticID<class Dimension, int> const TheEnd;
@@ -39,22 +37,27 @@ MCAPI static class Vec3 const TheEndSpawnPoint;
 MCAPI static class AutomaticID<class Dimension, int> const Undefined;
     /**
      * @symbol ?convertPointBetweenDimensions@VanillaDimensions@@SA_NAEBVVec3@@AEAV2@V?$AutomaticID@VDimension@@H@@2AEBVDimensionConversionData@@@Z
+     * @hash   1815874583
      */
     MCAPI static bool convertPointBetweenDimensions(class Vec3 const &, class Vec3 &, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>, class DimensionConversionData const &);
     /**
      * @symbol ?fromSerializedInt@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@H@Z
+     * @hash   1649303929
      */
     MCAPI static class AutomaticID<class Dimension, int> fromSerializedInt(int);
     /**
      * @symbol ?fromString@VanillaDimensions@@SA?AV?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2127003165
      */
     MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const &);
     /**
      * @symbol ?toSerializedInt@VanillaDimensions@@SAHAEBV?$AutomaticID@VDimension@@H@@@Z
+     * @hash   -373959155
      */
     MCAPI static int toSerializedInt(class AutomaticID<class Dimension, int> const &);
     /**
      * @symbol ?toString@VanillaDimensions@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$AutomaticID@VDimension@@H@@@Z
+     * @hash   1679293153
      */
     MCAPI static std::string const toString(class AutomaticID<class Dimension, int> const &);
 

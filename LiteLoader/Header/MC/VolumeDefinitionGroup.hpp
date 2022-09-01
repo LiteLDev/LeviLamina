@@ -29,36 +29,41 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEDEFINITIONGROUP
-#endif
     /**
      * @symbol ??0VolumeDefinitionGroup@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVVolumeComponentFactory@@@Bedrock@@@gsl@@@Z
+     * @hash   22107895
      */
     MCAPI VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
     /**
      * @symbol ?loadDefinitions@VolumeDefinitionGroup@@QEAAXAEBVResourcePackManager@@_N@Z
+     * @hash   -2119747149
      */
     MCAPI void loadDefinitions(class ResourcePackManager const &, bool);
     /**
      * @symbol ?tryGetVolumeDefinition@VolumeDefinitionGroup@@QEBAPEBUVolumeDefinition@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1343252072
      */
     MCAPI struct VolumeDefinition const * tryGetVolumeDefinition(std::string const &) const;
     /**
      * @symbol ??1VolumeDefinitionGroup@@QEAA@XZ
+     * @hash   -888385938
      */
     MCAPI ~VolumeDefinitionGroup();
     /**
      * @symbol ?bindVolumeDefinitions@VolumeDefinitionGroup@@SAXXZ
+     * @hash   -2022074987
      */
     MCAPI static void bindVolumeDefinitions();
 
 //private:
     /**
      * @symbol ?_parseAndRegisterDefinition@VolumeDefinitionGroup@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@0@Z
+     * @hash   32252207
      */
     MCAPI bool _parseAndRegisterDefinition(std::string const &, class SemVersion const &, std::string const &);
     /**
      * @symbol ?_registerDefinition@VolumeDefinitionGroup@@AEAA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@AEBVSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1683528875
      */
     MCAPI bool _registerDefinition(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &, std::string const &);
 

@@ -44,18 +44,19 @@ public:
     TagMemoryChunk() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAGMEMORYCHUNK
-#endif
     /**
      * @symbol ?copy@TagMemoryChunk@@QEBA?AU1@XZ
+     * @hash   -1200898179
      */
     MCAPI struct TagMemoryChunk copy() const;
     /**
      * @symbol ??9TagMemoryChunk@@QEBA_NAEBU0@@Z
+     * @hash   -661080586
      */
     MCAPI bool operator!=(struct TagMemoryChunk const &) const;
     /**
      * @symbol ??1TagMemoryChunk@@QEAA@XZ
+     * @hash   -1266836228
      */
     MCAPI ~TagMemoryChunk();
 

@@ -29,59 +29,66 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -256698939
      */
     virtual ~VillagerCelebrationGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@VillagerCelebrationGoal@@UEAA_NXZ
+     * @hash   -1796799495
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@VillagerCelebrationGoal@@UEAA_NXZ
+     * @hash   1909878567
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@VillagerCelebrationGoal@@UEAAXXZ
+     * @hash   -808149038
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@VillagerCelebrationGoal@@UEAAXXZ
+     * @hash   -1268532142
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@VillagerCelebrationGoal@@UEAAXXZ
+     * @hash   -424280579
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@VillagerCelebrationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -554060345
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGERCELEBRATIONGOAL
-#endif
     /**
      * @symbol ??0VillagerCelebrationGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1886985686
      */
     MCAPI VillagerCelebrationGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_launchFirework@VillagerCelebrationGoal@@AEAAXXZ
+     * @hash   -1282536722
      */
     MCAPI void _launchFirework();
     /**
      * @symbol ?_setNextFireworkTick@VillagerCelebrationGoal@@AEAAXXZ
+     * @hash   1315090863
      */
     MCAPI void _setNextFireworkTick();
 

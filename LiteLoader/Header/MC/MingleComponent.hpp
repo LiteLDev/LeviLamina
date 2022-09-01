@@ -31,30 +31,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINGLECOMPONENT
-#endif
     /**
      * @symbol ??0MingleComponent@@QEAA@XZ
+     * @hash   -1563485973
      */
     MCAPI MingleComponent();
     /**
      * @symbol ?clearPreviousPartnerId@MingleComponent@@QEAAAEAV1@XZ
+     * @hash   226221490
      */
     MCAPI class MingleComponent & clearPreviousPartnerId();
     /**
      * @symbol ?fetchCurrentPartner@MingleComponent@@QEBAPEAVActor@@AEBV2@@Z
+     * @hash   241127143
      */
     MCAPI class Actor * fetchCurrentPartner(class Actor const &) const;
     /**
      * @symbol ?resetState@MingleComponent@@QEAAXXZ
+     * @hash   -1067243817
      */
     MCAPI void resetState();
     /**
      * @symbol ?setMingleState@MingleComponent@@QEAAAEAV1@W4MingleState@1@@Z
+     * @hash   2108805435
      */
     MCAPI class MingleComponent & setMingleState(enum MingleComponent::MingleState);
     /**
      * @symbol ?setPartnerId@MingleComponent@@QEAAAEAV1@UActorUniqueID@@@Z
+     * @hash   1620537669
      */
     MCAPI class MingleComponent & setPartnerId(struct ActorUniqueID);
 

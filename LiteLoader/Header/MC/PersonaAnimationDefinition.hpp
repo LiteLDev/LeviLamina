@@ -27,10 +27,9 @@ public:
     PersonaAnimationDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSONAANIMATIONDEFINITION
-#endif
     /**
      * @symbol ??1PersonaAnimationDefinition@@QEAA@XZ
+     * @hash   -48215259
      */
     MCAPI ~PersonaAnimationDefinition();
 MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;

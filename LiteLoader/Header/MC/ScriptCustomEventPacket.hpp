@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1767331156
      */
     virtual ~ScriptCustomEventPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@ScriptCustomEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   813635560
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@ScriptCustomEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -179318123
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@ScriptCustomEventPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1871173266
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@ScriptCustomEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1921671326
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCUSTOMEVENTPACKET
-#endif
     /**
      * @symbol ??0ScriptCustomEventPacket@@QEAA@XZ
+     * @hash   690732722
      */
     MCAPI ScriptCustomEventPacket();
 

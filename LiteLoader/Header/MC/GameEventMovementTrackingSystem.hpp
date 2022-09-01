@@ -29,30 +29,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2045714443
      */
     virtual ~GameEventMovementTrackingSystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@GameEventMovementTrackingSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   945060749
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMOVEMENTTRACKINGSYSTEM
-#endif
 
 //private:
     /**
      * @symbol ?_tickGameEventMovementTrackingComponent@GameEventMovementTrackingSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VGameEventMovementTrackingComponent@@@@@Z
+     * @hash   -1219186161
      */
     MCAPI static void _tickGameEventMovementTrackingComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GameEventMovementTrackingComponent> &);
     /**
      * @symbol ?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAVGameEventMovementTrackingComponent@@@Z
+     * @hash   294264340
      */
     MCAPI static void _trackMovement(class Actor &, class GameEventMovementTrackingComponent &);
 

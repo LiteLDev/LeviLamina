@@ -41,65 +41,73 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2096481536
      */
     virtual ~ComplexInventoryTransaction();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?postLoadItems@ComplexInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
+     * @hash   1889162565
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
+     * @hash   -179832225
      */
     virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?onTransactionError@ComplexInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
+     * @hash   -1532232962
      */
     virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXINVENTORYTRANSACTION
     /**
-     * @vtable -1
      * @symbol ?read@ComplexInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
+     * @hash   777937702
      */
     MCVAPI void read(class ReadOnlyBinaryStream &);
     /**
-     * @vtable -1
      * @symbol ?write@ComplexInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   665936670
      */
     MCVAPI void write(class BinaryStream &) const;
 #endif
     /**
      * @symbol ??0ComplexInventoryTransaction@@QEAA@W4Type@0@AEBVInventoryTransaction@@@Z
+     * @hash   663422464
      */
     MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     /**
      * @symbol ??0ComplexInventoryTransaction@@QEAA@W4Type@0@@Z
+     * @hash   -1507604037
      */
     MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
     /**
      * @symbol ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@@Z
+     * @hash   2059139744
      */
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     /**
      * @symbol ?fromType@ComplexInventoryTransaction@@SA?AV?$unique_ptr@VComplexInventoryTransaction@@U?$default_delete@VComplexInventoryTransaction@@@std@@@std@@W4Type@1@AEBVInventoryTransaction@@@Z
+     * @hash   166981447
      */
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const &);
     /**
      * @symbol ?getTransactionTypeName@ComplexInventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@1@@Z
+     * @hash   403629678
      */
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);
 

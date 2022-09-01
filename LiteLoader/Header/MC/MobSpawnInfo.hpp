@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNINFO
-#endif
     /**
      * @symbol ?categoryID@MobSpawnInfo@@SAHW4ActorType@@@Z
+     * @hash   1551765849
      */
     MCAPI static int categoryID(enum ActorType);
 

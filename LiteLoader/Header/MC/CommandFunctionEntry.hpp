@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1838022983
      */
     virtual ~CommandFunctionEntry();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@CommandFunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
+     * @hash   140765729
      */
     virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFUNCTIONENTRY
-#endif
     /**
      * @symbol ??0CommandFunctionEntry@@QEAA@V?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@Z
+     * @hash   619630442
      */
     MCAPI CommandFunctionEntry(std::unique_ptr<class Command>);
 

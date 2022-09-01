@@ -30,28 +30,29 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -511541314
      */
     virtual ~BehaviorNode();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   1846770984
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z
+     * @hash   -1232124018
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORNODE
-#endif
     /**
      * @symbol ??0BehaviorNode@@QEAA@XZ
+     * @hash   370415568
      */
     MCAPI BehaviorNode();
     /**
      * @symbol ?getBehaviorData@BehaviorNode@@QEAAAEAVBehaviorData@@XZ
+     * @hash   2029960802
      */
     MCAPI class BehaviorData & getBehaviorData();
 

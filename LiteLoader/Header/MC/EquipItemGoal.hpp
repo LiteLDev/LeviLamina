@@ -31,55 +31,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1309134564
      */
     virtual ~EquipItemGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@EquipItemGoal@@UEAA_NXZ
+     * @hash   2063385082
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@EquipItemGoal@@UEAA_NXZ
+     * @hash   -1802772280
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@EquipItemGoal@@UEAAXXZ
+     * @hash   -471110802
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@EquipItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -335039066
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPITEMGOAL
-#endif
     /**
      * @symbol ??0EquipItemGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -632462697
      */
     MCAPI EquipItemGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_dropItem@EquipItemGoal@@AEBAXAEBVItemStack@@@Z
+     * @hash   734412508
      */
     MCAPI void _dropItem(class ItemStack const &) const;
 

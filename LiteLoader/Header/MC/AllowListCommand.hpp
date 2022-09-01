@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   574145294
      */
     virtual ~AllowListCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@AllowListCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   167682223
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTCOMMAND
-#endif
     /**
      * @symbol ?setup@AllowListCommand@@SAXAEAVCommandRegistry@@AEAVAllowListFile@@@Z
+     * @hash   799884611
      */
     MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 

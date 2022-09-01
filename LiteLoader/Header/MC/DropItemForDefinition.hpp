@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPITEMFORDEFINITION
-#endif
     /**
      * @symbol ??0DropItemForDefinition@@QEAA@XZ
+     * @hash   -458405018
      */
     MCAPI DropItemForDefinition();
     /**
      * @symbol ?initialize@DropItemForDefinition@@QEAAXAEAVEntityContext@@AEAVDropItemForGoal@@@Z
+     * @hash   -525246273
      */
     MCAPI void initialize(class EntityContext &, class DropItemForGoal &);
     /**
      * @symbol ?buildSchema@DropItemForDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDropItemForDefinition@@@JsonUtil@@@3@@Z
+     * @hash   416198361
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DropItemForDefinition>> &);
 

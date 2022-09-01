@@ -30,52 +30,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   63707205
      */
     virtual ~BookEditPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@BookEditPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -258492653
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@BookEditPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1393960384
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@BookEditPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1167927417
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@BookEditPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1504014487
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOKEDITPACKET
-#endif
     /**
      * @symbol ??0BookEditPacket@@QEAA@XZ
+     * @hash   583015927
      */
     MCAPI BookEditPacket();
     /**
      * @symbol ??0BookEditPacket@@QEAA@AEBV0@@Z
+     * @hash   -967127407
      */
     MCAPI BookEditPacket(class BookEditPacket const &);
     /**
      * @symbol ?getPage@BookEditPacket@@QEBA?AUPageContent@@XZ
+     * @hash   1110635380
      */
     MCAPI struct PageContent getPage() const;
 
 //private:
     /**
      * @symbol ?_readPage@BookEditPacket@@AEAAXAEAVReadOnlyBinaryStream@@@Z
+     * @hash   642304500
      */
     MCAPI void _readPage(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?_writePage@BookEditPacket@@AEBAXAEAVBinaryStream@@@Z
+     * @hash   1342756314
      */
     MCAPI void _writePage(class BinaryStream &) const;
 

@@ -42,234 +42,277 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1611219851
      */
     virtual ~DBStorage();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?addStorageObserver@DBStorage@@UEAAXV?$unique_ptr@VLevelStorageObserver@@U?$default_delete@VLevelStorageObserver@@@std@@@std@@@Z
+     * @hash   459551747
      */
     virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getCompoundTag@DBStorage@@UEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
+     * @hash   1024342623
      */
     virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const &, enum DBHelpers::Category);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?hasKey@DBStorage@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@@Z
+     * @hash   2116715562
      */
     virtual bool hasKey(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?forEachKeyWithPrefix@DBStorage@@UEBAXV?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@AEBV?$function@$$A6AXV?$basic_string_span@$$CBD$0?0@gsl@@0@Z@std@@@Z
+     * @hash   -132354359
      */
     virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const &) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?loadLevelData@DBStorage@@UEAA_NAEAVLevelData@@@Z
+     * @hash   1764232106
      */
     virtual bool loadLevelData(class LevelData &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?createChunkStorage@DBStorage@@UEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
+     * @hash   1815407409
      */
     virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?saveLevelData@DBStorage@@UEAAXAEBVLevelData@@@Z
+     * @hash   -1502325792
      */
     virtual void saveLevelData(class LevelData const &);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getFullPath@DBStorage@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   111785801
      */
     virtual class Core::PathBuffer<std::string> const & getFullPath() const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@$$QEAV43@W4Category@DBHelpers@@@Z
+     * @hash   -777568215
      */
     virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, std::string &&, enum DBHelpers::Category);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBVLevelStorageWriteBatch@@@Z
+     * @hash   -588404266
      */
     virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(class LevelStorageWriteBatch const &);
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?deleteData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
+     * @hash   626100400
      */
     virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> deleteData(std::string const &, enum DBHelpers::Category);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?syncIO@DBStorage@@UEAAXXZ
+     * @hash   246160859
      */
     virtual void syncIO();
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1705171845
      */
     virtual void getStatistics(std::string &) const;
     /**
-     * @vtable 15
-     * @symbol __unk_vfn_15
+     * @vftbl  15
+     * @hash   1347882376
      */
     virtual void __unk_vfn_15();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?startShutdown@DBStorage@@UEAAXXZ
+     * @hash   1246463394
      */
     virtual void startShutdown();
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?isShuttingDown@DBStorage@@UEBA_NXZ
+     * @hash   127874953
      */
     virtual bool isShuttingDown() const;
     /**
-     * @vtable 18
+     * @vftbl  18
      * @symbol ?checkShutdownDone@DBStorage@@UEAA_NXZ
+     * @hash   -1373212292
      */
     virtual bool checkShutdownDone();
     /**
-     * @vtable 19
+     * @vftbl  19
      * @symbol ?loadData@DBStorage@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
+     * @hash   1583503300
      */
     virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string &, enum DBHelpers::Category) const;
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   1371893922
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 21
+     * @vftbl  21
      * @symbol ?createSnapshot@DBStorage@@UEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -158127549
      */
     virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const &);
     /**
-     * @vtable 22
+     * @vftbl  22
      * @symbol ?releaseSnapshot@DBStorage@@UEAAXXZ
+     * @hash   -61632715
      */
     virtual void releaseSnapshot();
     /**
-     * @vtable 23
+     * @vftbl  23
      * @symbol ?compactStorage@DBStorage@@UEAAXXZ
+     * @hash   438639890
      */
     virtual void compactStorage();
     /**
-     * @vtable 24
+     * @vftbl  24
      * @symbol ?syncAndSuspendStorage@DBStorage@@UEAAXXZ
+     * @hash   -1178351051
      */
     virtual void syncAndSuspendStorage();
     /**
-     * @vtable 25
+     * @vftbl  25
      * @symbol ?resumeStorage@DBStorage@@UEAAXXZ
+     * @hash   641973352
      */
     virtual void resumeStorage();
     /**
-     * @vtable 26
+     * @vftbl  26
      * @symbol ?setFlushAllowed@DBStorage@@UEAAX_N@Z
+     * @hash   -1547980212
      */
     virtual void setFlushAllowed(bool);
     /**
-     * @vtable 27
+     * @vftbl  27
      * @symbol ?flushToPermanentStorage@DBStorage@@UEAAXXZ
+     * @hash   451129766
      */
     virtual void flushToPermanentStorage();
     /**
-     * @vtable 28
+     * @vftbl  28
      * @symbol ?freeCaches@DBStorage@@UEAAXXZ
+     * @hash   -2026203257
      */
     virtual void freeCaches();
     /**
-     * @vtable 29
+     * @vftbl  29
      * @symbol ?setCompactionCallback@DBStorage@@UEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
+     * @hash   544802647
      */
     virtual void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
     /**
-     * @vtable 30
+     * @vftbl  30
      * @symbol ?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z
+     * @hash   632012029
      */
     virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /**
-     * @vtable 31
+     * @vftbl  31
      * @symbol ?corruptLevel@DBStorage@@UEAAXXZ
+     * @hash   1447795057
      */
     virtual void corruptLevel();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGE
     /**
-     * @vtable -1
      * @symbol ?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
+     * @hash   1503168568
      */
     MCVAPI struct Core::LevelStorageResult getLevelStorageState() const;
     /**
-     * @vtable -1
      * @symbol ?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ
+     * @hash   -2078571857
      */
     MCVAPI struct Core::LevelStorageResult getState() const;
 #endif
     /**
      * @symbol ??0DBStorage@@QEAA@UDBStorageConfig@@V?$not_null@V?$NonOwnerPointer@VLevelDbEnv@@@Bedrock@@@gsl@@@Z
+     * @hash   -28775647
      */
     MCAPI DBStorage(struct DBStorageConfig, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
     /**
      * @symbol ?_notifyChunkStorageDestroyed@DBStorage@@QEAAXAEAVDBChunkStorage@@@Z
+     * @hash   -87107908
      */
     MCAPI void _notifyChunkStorageDestroyed(class DBChunkStorage &);
     /**
      * @symbol ?tryRepair@DBStorage@@QEBA_NAEBVPath@Core@@@Z
+     * @hash   316487921
      */
     MCAPI bool tryRepair(class Core::Path const &) const;
 
 //protected:
     /**
      * @symbol ?_findCacheEntry@DBStorage@@IEAA?AU?$pair@PEAVLevelStorageWriteBatch@@V?$_Tree_iterator@V?$_Tree_val@U?$_Tree_simple_types@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UBatchEntry@LevelStorageWriteBatch@@@std@@@std@@@std@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -1177283781
      */
     MCAPI struct std::pair<class LevelStorageWriteBatch *, class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>>> _findCacheEntry(std::string const &);
     /**
      * @symbol ?_getAllPendingWrites@DBStorage@@IEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UPendingWriteResult@DBStorage@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UPendingWriteResult@DBStorage@@@std@@@2@@std@@XZ
+     * @hash   1753268027
      */
     MCAPI class std::map<std::string, struct DBStorage::PendingWriteResult, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, struct DBStorage::PendingWriteResult>>> _getAllPendingWrites() const;
     /**
      * @symbol ?_handleErrorStatus@DBStorage@@IEAAXAEBVStatus@leveldb@@@Z
+     * @hash   878678716
      */
     MCAPI void _handleErrorStatus(class leveldb::Status const &);
     /**
      * @symbol ?_mergeIntoWriteCache@DBStorage@@IEAAXAEBVLevelStorageWriteBatch@@@Z
+     * @hash   1889381877
      */
     MCAPI void _mergeIntoWriteCache(class LevelStorageWriteBatch const &);
     /**
      * @symbol ?_queueSaveCallback@DBStorage@@IEAAX_N@Z
+     * @hash   1321435002
      */
     MCAPI void _queueSaveCallback(bool);
     /**
      * @symbol ?_read@DBStorage@@IEBAXV?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@AEBV?$function@$$A6AXV?$basic_string_span@$$CBD$0?0@gsl@@0@Z@std@@@Z
+     * @hash   -1300964339
      */
     MCAPI void _read(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const &) const;
     /**
      * @symbol ?_readPendingWrite@DBStorage@@IEBA?AUPendingWriteResult@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
+     * @hash   1092754645
      */
     MCAPI struct DBStorage::PendingWriteResult _readPendingWrite(std::string const &, enum DBHelpers::Category) const;
 
 //private:
     /**
      * @symbol ?_flushWriteCacheToLevelDB@DBStorage@@AEAA?AVTaskResult@@XZ
+     * @hash   -1681321963
      */
     MCAPI class TaskResult _flushWriteCacheToLevelDB();
     /**
      * @symbol ?_getTelemetryMessage@DBStorage@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVStatus@leveldb@@@Z
+     * @hash   -1470742236
      */
     MCAPI std::string _getTelemetryMessage(class leveldb::Status const &) const;
     /**
      * @symbol ?_markAsCorrupted@DBStorage@@AEBAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   -752520515
      */
     MCAPI void _markAsCorrupted(class gsl::basic_string_span<char const, -1>) const;
     /**
      * @symbol ?_scheduleNextAutoCompaction@DBStorage@@AEAAXXZ
+     * @hash   1605523788
      */
     MCAPI void _scheduleNextAutoCompaction();
     /**
      * @symbol ?_suspendAndPerformSaveAction@DBStorage@@AEAA_NV?$function@$$A6A?AVTaskResult@@XZ@std@@V?$function@$$A6AXXZ@3@@Z
+     * @hash   1506028713
      */
     MCAPI bool _suspendAndPerformSaveAction(class std::function<class TaskResult (void)>, class std::function<void (void)>);
 

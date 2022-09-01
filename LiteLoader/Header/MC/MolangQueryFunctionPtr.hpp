@@ -27,10 +27,9 @@ public:
     MolangQueryFunctionPtr() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGQUERYFUNCTIONPTR
-#endif
     /**
      * @symbol ??1MolangQueryFunctionPtr@@QEAA@XZ
+     * @hash   1349312376
      */
     MCAPI ~MolangQueryFunctionPtr();
 

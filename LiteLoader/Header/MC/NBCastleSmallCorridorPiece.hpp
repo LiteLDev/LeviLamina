@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1841524595
      */
     virtual ~NBCastleSmallCorridorPiece();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@NBCastleSmallCorridorPiece@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   -1231430398
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?addChildren@NBCastleSmallCorridorPiece@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+     * @hash   1049517246
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@NBCastleSmallCorridorPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -498504218
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBCASTLESMALLCORRIDORPIECE
-#endif
 
 };

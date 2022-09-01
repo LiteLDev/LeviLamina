@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1596362363
      */
     virtual ~AnvilContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@AnvilContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   1661548702
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@AnvilContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -2116844943
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@AnvilContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   309368762
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setData@AnvilContainerManagerModel@@UEAAXHH@Z
+     * @hash   1755670242
      */
     virtual void setData(int, int);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@AnvilContainerManagerModel@@UEAAXXZ
+     * @hash   1897861528
      */
     virtual void broadcastChanges();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?isValid@AnvilContainerManagerModel@@UEAA_NM@Z
+     * @hash   -202020856
      */
     virtual bool isValid(float);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@AnvilContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -244503579
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0AnvilContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -51376380
      */
     MCAPI AnvilContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 MCAPI static int const INPUT_SLOT;

@@ -31,26 +31,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -837192329
      */
     virtual ~TerrainBurstReactionComponent();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?_onEnd@TerrainBurstReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+     * @hash   1984437973
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TERRAINBURSTREACTIONCOMPONENT
-#endif
 
 };

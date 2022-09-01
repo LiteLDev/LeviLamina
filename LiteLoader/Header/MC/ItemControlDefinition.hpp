@@ -30,14 +30,14 @@ public:
     ItemControlDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCONTROLDEFINITION
-#endif
     /**
      * @symbol ?addItemByName@ItemControlDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   55734720
      */
     MCAPI void addItemByName(std::string const &);
     /**
      * @symbol ?buildSchema@ItemControlDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UItemControlDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   768193064
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ItemControlDefinition>> &);
 

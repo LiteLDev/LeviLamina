@@ -50,8 +50,6 @@ public:
     ActorUniqueID() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUNIQUEID
-#endif
 MCAPI static struct ActorUniqueID const INVALID_ID;
 
 };

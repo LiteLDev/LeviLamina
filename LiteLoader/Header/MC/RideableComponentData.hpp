@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLECOMPONENTDATA
-#endif
     /**
      * @symbol ??1RideableComponentData@@QEAA@XZ
+     * @hash   1729840417
      */
     MCAPI ~RideableComponentData();
 

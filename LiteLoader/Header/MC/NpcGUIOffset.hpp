@@ -29,10 +29,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCGUIOFFSET
-#endif
     /**
      * @symbol ??0NpcGUIOffset@@QEAA@AEBVValue@Json@@@Z
+     * @hash   -2084439538
      */
     MCAPI NpcGUIOffset(class Json::Value const &);
 

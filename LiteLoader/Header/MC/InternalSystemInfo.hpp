@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALSYSTEMINFO
-#endif
     /**
      * @symbol ??1InternalSystemInfo@@QEAA@XZ
+     * @hash   -1463582876
      */
     MCAPI ~InternalSystemInfo();
 

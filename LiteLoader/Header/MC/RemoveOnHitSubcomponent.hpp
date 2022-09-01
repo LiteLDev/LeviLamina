@@ -30,44 +30,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1974797893
      */
     virtual ~RemoveOnHitSubcomponent();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@RemoveOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -1297232603
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@RemoveOnHitSubcomponent@@UEAAPEBDXZ
+     * @hash   -967230816
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEONHITSUBCOMPONENT
     /**
-     * @vtable -1
      * @symbol ?readfromJSON@RemoveOnHitSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   394195515
      */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @vtable -1
      * @symbol ?writetoJSON@RemoveOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -239090274
      */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     /**
      * @symbol ??0RemoveOnHitSubcomponent@@QEAA@XZ
+     * @hash   1638831241
      */
     MCAPI RemoveOnHitSubcomponent();
 

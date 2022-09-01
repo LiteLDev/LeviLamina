@@ -29,10 +29,9 @@ public:
     VolumeIdentifier() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEIDENTIFIER
-#endif
     /**
      * @symbol ?bindType@VolumeIdentifier@@SAXXZ
+     * @hash   1926753123
      */
     MCAPI static void bindType();
 

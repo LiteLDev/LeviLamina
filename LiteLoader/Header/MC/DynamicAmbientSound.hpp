@@ -27,10 +27,9 @@ public:
     DynamicAmbientSound() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICAMBIENTSOUND
-#endif
     /**
      * @symbol ??1DynamicAmbientSound@@QEAA@XZ
+     * @hash   1545301090
      */
     MCAPI ~DynamicAmbientSound();
 

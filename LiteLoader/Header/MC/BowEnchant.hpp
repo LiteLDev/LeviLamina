@@ -32,54 +32,57 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2120191353
      */
     virtual ~BowEnchant();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getMinCost@BowEnchant@@UEBAHH@Z
+     * @hash   486668216
      */
     virtual int getMinCost(int) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getMaxCost@BowEnchant@@UEBAHH@Z
+     * @hash   -11560442
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getMaxLevel@BowEnchant@@UEBAHXZ
+     * @hash   1156577202
      */
     virtual int getMaxLevel() const;
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -342706045
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@BowEnchant@@EEBA_NW4Type@Enchant@@@Z
+     * @hash   -1684421063
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOWENCHANT
-#endif
     /**
      * @symbol ??0BowEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
+     * @hash   2056991370
      */
     MCAPI BowEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

@@ -31,27 +31,29 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1996485356
      */
     virtual ~GameTestInstanceLedger();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   1506226450
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTINSTANCELEDGER
-#endif
     /**
      * @symbol ??0GameTestInstanceLedger@@QEAA@AEAVLevelStorage@@@Z
+     * @hash   954394663
      */
     MCAPI GameTestInstanceLedger(class LevelStorage &);
     /**
      * @symbol ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
+     * @hash   236023142
      */
     MCAPI void clear(class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?getBoundingBoxes@GameTestInstanceLedger@@QEBA?AV?$vector@VBoundingBox@@V?$allocator@VBoundingBox@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   -1823415713
      */
     MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
 

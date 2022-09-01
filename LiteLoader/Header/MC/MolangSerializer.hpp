@@ -23,18 +23,22 @@ namespace MolangSerializer {
 #undef AFTER_EXTRA
     /**
      * @symbol ?deserializeScriptArg@MolangSerializer@@YA?AV?$unique_ptr@UMolangScriptArg@@U?$default_delete@UMolangScriptArg@@@std@@@std@@AEBVValue@Json@@@Z
+     * @hash   -884679310
      */
     MCAPI std::unique_ptr<struct MolangScriptArg> deserializeScriptArg(class Json::Value const &);
     /**
      * @symbol ?deserializeVariable@MolangSerializer@@YA?AV?$unique_ptr@VMolangVariable@@U?$default_delete@VMolangVariable@@@std@@@std@@AEBVValue@Json@@@Z
+     * @hash   946508026
      */
     MCAPI std::unique_ptr<class MolangVariable> deserializeVariable(class Json::Value const &);
     /**
      * @symbol ?deserializeVariableMap@MolangSerializer@@YA?AV?$unique_ptr@VMolangVariableMap@@U?$default_delete@VMolangVariableMap@@@std@@@std@@AEBVValue@Json@@@Z
+     * @hash   -666163220
      */
     MCAPI std::unique_ptr<class MolangVariableMap> deserializeVariableMap(class Json::Value const &);
     /**
      * @symbol ?serializeScriptArg@MolangSerializer@@YA?AVValue@Json@@AEBUMolangScriptArg@@@Z
+     * @hash   915575130
      */
     MCAPI class Json::Value serializeScriptArg(struct MolangScriptArg const &);
 

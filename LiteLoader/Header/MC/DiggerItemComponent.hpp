@@ -31,60 +31,66 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -525372410
      */
     virtual ~DiggerItemComponent();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEBA_NXZ
+     * @hash   1775607705
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -1994165077
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDiggerItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   -705382347
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGERITEMCOMPONENT
-#endif
     /**
      * @symbol ?canDestroySpecial@DiggerItemComponent@@QEBA_NAEBVBlock@@@Z
+     * @hash   -1731268117
      */
     MCAPI bool canDestroySpecial(class Block const &) const;
     /**
      * @symbol ?getDestroySpeed@DiggerItemComponent@@QEAAMAEBVItemStackBase@@AEBVBlock@@@Z
+     * @hash   -167898584
      */
     MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
     /**
      * @symbol ?mineBlock@DiggerItemComponent@@QEAA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z
+     * @hash   -750354573
      */
     MCAPI bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *);
     /**
      * @symbol ?bindType@DiggerItemComponent@@SAXXZ
+     * @hash   712995119
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@DiggerItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   -1470758920
      */
     MCAPI static class HashedString const & getIdentifier();
 

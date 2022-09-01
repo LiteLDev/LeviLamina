@@ -31,42 +31,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1271265651
      */
     virtual ~SetDifficultyPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@SetDifficultyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1443351463
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@SetDifficultyPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1435857146
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@SetDifficultyPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1772063263
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@SetDifficultyPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -39778399
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETDIFFICULTYPACKET
-#endif
     /**
      * @symbol ??0SetDifficultyPacket@@QEAA@XZ
+     * @hash   -99329999
      */
     MCAPI SetDifficultyPacket();
     /**
      * @symbol ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
+     * @hash   -2052421730
      */
     MCAPI SetDifficultyPacket(enum Difficulty);
     /**
      * @symbol ?getDifficulty@SetDifficultyPacket@@QEBA?AW4Difficulty@@XZ
+     * @hash   -1559244618
      */
     MCAPI enum Difficulty getDifficulty() const;
 

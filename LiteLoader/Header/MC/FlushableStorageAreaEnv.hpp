@@ -33,19 +33,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   622997745
      */
     virtual ~FlushableStorageAreaEnv();
     /**
-     * @vtable 20
+     * @vftbl  20
      * @symbol ?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ
+     * @hash   1187343136
      */
     virtual void flushToPermanentStorage();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLESTORAGEAREAENV
-#endif
     /**
      * @symbol ??0FlushableStorageAreaEnv@@QEAA@PEAVEnv@leveldb@@V?$shared_ptr@VFileStorageArea@Core@@@std@@@Z
+     * @hash   329981609
      */
     MCAPI FlushableStorageAreaEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>);
 

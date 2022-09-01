@@ -32,59 +32,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -863328816
      */
     virtual ~SporeBlossomBlockActor();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?tick@SporeBlossomBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   963726694
      */
     virtual void tick(class BlockSource &);
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 28
-     * @symbol __unk_vfn_28
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPOREBLOSSOMBLOCKACTOR
-#endif
     /**
      * @symbol ??0SporeBlossomBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   -592287783
      */
     MCAPI SporeBlossomBlockActor(class BlockPos const &);
 

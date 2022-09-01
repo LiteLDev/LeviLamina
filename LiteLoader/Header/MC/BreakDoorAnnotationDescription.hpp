@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@BreakDoorAnnotationDescription@@UEBAPEBDXZ
+     * @hash   -1621391404
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   1138870474
      */
     virtual ~BreakDoorAnnotationDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@BreakDoorAnnotationDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1259984623
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@BreakDoorAnnotationDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1756886521
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORANNOTATIONDESCRIPTION
-#endif
 
 };

@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENERREGISTRY
-#endif
     /**
      * @symbol ?getListeners@GameEventListenerRegistry@@QEBA?AV?$vector@V?$reference_wrapper@VGameEventListener@@@std@@V?$allocator@V?$reference_wrapper@VGameEventListener@@@std@@@2@@std@@XZ
+     * @hash   -702261061
      */
     MCAPI std::vector<class std::reference_wrapper<class GameEventListener>> getListeners() const;
     /**
      * @symbol ?registerListener@GameEventListenerRegistry@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@AEAVGameEventListener@@@Z
+     * @hash   -1887054754
      */
     MCAPI class gsl::final_action<class std::function<void (void)>> registerListener(class GameEventListener &);
 

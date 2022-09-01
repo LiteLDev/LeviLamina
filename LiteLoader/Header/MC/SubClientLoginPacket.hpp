@@ -31,39 +31,43 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -949750928
      */
     virtual ~SubClientLoginPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@SubClientLoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1468106216
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@SubClientLoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1126722411
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@SubClientLoginPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -816398894
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?disallowBatching@SubClientLoginPacket@@UEBA_NXZ
+     * @hash   -1239141771
      */
     virtual bool disallowBatching() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@SubClientLoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -776828606
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCLIENTLOGINPACKET
-#endif
     /**
      * @symbol ??0SubClientLoginPacket@@QEAA@XZ
+     * @hash   666088706
      */
     MCAPI SubClientLoginPacket();
 

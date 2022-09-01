@@ -30,10 +30,9 @@ public:
     EquipmentTableDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPMENTTABLEDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@EquipmentTableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEquipmentTableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   569063050
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EquipmentTableDefinition>> &);
 

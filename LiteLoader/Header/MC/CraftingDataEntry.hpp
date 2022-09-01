@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGDATAENTRY
-#endif
     /**
      * @symbol ?fillFromMultiRecipe@CraftingDataEntry@@QEAAXAEBVMultiRecipe@@@Z
+     * @hash   -667311234
      */
     MCAPI void fillFromMultiRecipe(class MultiRecipe const &);
     /**
      * @symbol ?fillFromRecipe@CraftingDataEntry@@QEAAXAEBVRecipe@@@Z
+     * @hash   1453207256
      */
     MCAPI void fillFromRecipe(class Recipe const &);
     /**
      * @symbol ?write@CraftingDataEntry@@QEBAXAEAVBinaryStream@@@Z
+     * @hash   669357092
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1CraftingDataEntry@@QEAA@XZ
+     * @hash   279936050
      */
     MCAPI ~CraftingDataEntry();
 

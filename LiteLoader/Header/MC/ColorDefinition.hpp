@@ -30,14 +30,14 @@ public:
     ColorDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLORDEFINITION
-#endif
     /**
      * @symbol ?setColorChoice@ColorDefinition@@QEAAXAEBH@Z
+     * @hash   1937945323
      */
     MCAPI void setColorChoice(int const &);
     /**
      * @symbol ?buildSchema@ColorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UColorDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   778015370
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>> &);
 

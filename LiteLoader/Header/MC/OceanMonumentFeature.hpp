@@ -32,44 +32,49 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -55380965
      */
     virtual ~OceanMonumentFeature();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?shouldAddHardcodedSpawnAreas@OceanMonumentFeature@@UEBA_NXZ
+     * @hash   1019939568
      */
     virtual bool shouldAddHardcodedSpawnAreas() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?shouldPostProcessMobs@OceanMonumentFeature@@UEBA_NXZ
+     * @hash   -1858267306
      */
     virtual bool shouldPostProcessMobs() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@OceanMonumentFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
+     * @hash   2122380598
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?initMobSpawnTypes@OceanMonumentFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
+     * @hash   -1733589753
      */
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?isFeatureChunk@OceanMonumentFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+     * @hash   1986027063
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?createStructureStart@OceanMonumentFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+     * @hash   -694667846
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTFEATURE
-#endif
     /**
      * @symbol ??0OceanMonumentFeature@@QEAA@I@Z
+     * @hash   1255063448
      */
     MCAPI OceanMonumentFeature(unsigned int);
 

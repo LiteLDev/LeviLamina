@@ -33,154 +33,156 @@ public:
 
 public:
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   -1529973348
      */
     virtual ~CaveSpider();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -191902081
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -105361148
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 224
+     * @vftbl  224
      * @symbol ?getDebugText@CaveSpider@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   1012744633
      */
     virtual void getDebugText(std::vector<std::string> &);
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
     /**
-     * @vtable 285
-     * @symbol __unk_vfn_285
+     * @vftbl  285
+     * @hash   -1895428993
      */
     virtual void __unk_vfn_285();
     /**
-     * @vtable 313
-     * @symbol __unk_vfn_313
+     * @vftbl  313
+     * @hash   -1210176411
      */
     virtual void __unk_vfn_313();
     /**
-     * @vtable 317
-     * @symbol __unk_vfn_317
+     * @vftbl  317
+     * @hash   -1157463639
      */
     virtual void __unk_vfn_317();
     /**
-     * @vtable 351
-     * @symbol __unk_vfn_351
+     * @vftbl  351
+     * @hash   -1055222849
      */
     virtual void __unk_vfn_351();
     /**
-     * @vtable 365
-     * @symbol __unk_vfn_365
+     * @vftbl  365
+     * @hash   -1022899614
      */
     virtual void __unk_vfn_365();
     /**
-     * @vtable 368
+     * @vftbl  368
      * @symbol ?getModelScale@CaveSpider@@UEBAMXZ
+     * @hash   -363002429
      */
     virtual float getModelScale() const;
     /**
-     * @vtable 369
+     * @vftbl  369
      * @symbol ?getSpiderType@CaveSpider@@UEBA?AW4Type@Spider@@XZ
+     * @hash   507608460
      */
     virtual enum Spider::Type getSpiderType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVESPIDER
-#endif
     /**
      * @symbol ??0CaveSpider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   1642140926
      */
     MCAPI CaveSpider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

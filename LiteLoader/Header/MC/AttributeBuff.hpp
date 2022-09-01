@@ -31,83 +31,98 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   51159645
      */
     virtual ~AttributeBuff();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ
+     * @hash   -1884803248
      */
     virtual bool isInstantaneous() const = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ
+     * @hash   -1300054483
      */
     virtual bool isSerializable() const = 0;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?setDurationAmplifier@AttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
+     * @hash   -38720098
      */
     virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEBUFF
-#endif
     /**
      * @symbol ?getAmount@AttributeBuff@@QEBAMXZ
+     * @hash   902561666
      */
     MCAPI float getAmount() const;
     /**
      * @symbol ?getCause@AttributeBuff@@QEBA?AW4ActorDamageCause@@XZ
+     * @hash   -1992565600
      */
     MCAPI enum ActorDamageCause getCause() const;
     /**
      * @symbol ?getId@AttributeBuff@@QEBA_KXZ
+     * @hash   1419561211
      */
     MCAPI unsigned __int64 getId() const;
     /**
      * @symbol ?getOperand@AttributeBuff@@QEBAHXZ
+     * @hash   538048252
      */
     MCAPI int getOperand() const;
     /**
      * @symbol ?getSource@AttributeBuff@@QEBAAEBVActorDamageSource@@XZ
+     * @hash   -560471706
      */
     MCAPI class ActorDamageSource const & getSource() const;
     /**
      * @symbol ?getType@AttributeBuff@@QEBA?AW4AttributeBuffType@@XZ
+     * @hash   -508821464
      */
     MCAPI enum AttributeBuffType getType() const;
     /**
      * @symbol ??8AttributeBuff@@QEBA_NAEBV0@@Z
+     * @hash   -521311896
      */
     MCAPI bool operator==(class AttributeBuff const &) const;
     /**
      * @symbol ?setAmplificationAmount@AttributeBuff@@QEAAXHM@Z
+     * @hash   -1126638671
      */
     MCAPI void setAmplificationAmount(int, float);
     /**
      * @symbol ?setId@AttributeBuff@@QEAAX_K@Z
+     * @hash   1132049767
      */
     MCAPI void setId(unsigned __int64);
     /**
      * @symbol ?setOperand@AttributeBuff@@QEAAXH@Z
+     * @hash   -1724638486
      */
     MCAPI void setOperand(int);
     /**
      * @symbol ?setSource@AttributeBuff@@QEAAXPEAVActor@@@Z
+     * @hash   -344032851
      */
     MCAPI void setSource(class Actor *);
     /**
      * @symbol ?setValueAmplifier@AttributeBuff@@QEAAXV?$shared_ptr@VAmplifier@@@std@@@Z
+     * @hash   1173775681
      */
     MCAPI void setValueAmplifier(class std::shared_ptr<class Amplifier>);
     /**
      * @symbol ?buffTypeToDamageCause@AttributeBuff@@SA?AW4ActorDamageCause@@W4AttributeBuffType@@@Z
+     * @hash   -2012249419
      */
     MCAPI static enum ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType);
 
 //protected:
     /**
      * @symbol ??0AttributeBuff@@IEAA@MHW4AttributeBuffType@@@Z
+     * @hash   1664036289
      */
     MCAPI AttributeBuff(float, int, enum AttributeBuffType);
 

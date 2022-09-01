@@ -26,18 +26,19 @@ public:
     ItemStopUseOnEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTOPUSEONEVENT
-#endif
     /**
      * @symbol ??0ItemStopUseOnEvent@@QEAA@AEBU0@@Z
+     * @hash   -854661521
      */
     MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent const &);
     /**
      * @symbol ??0ItemStopUseOnEvent@@QEAA@$$QEAU0@@Z
+     * @hash   1284876399
      */
     MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent &&);
     /**
      * @symbol ??1ItemStopUseOnEvent@@QEAA@XZ
+     * @hash   2049476339
      */
     MCAPI ~ItemStopUseOnEvent();
 

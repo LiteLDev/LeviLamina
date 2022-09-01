@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   467778326
      */
     virtual ~BlockBlobFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@BlockBlobFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   926122790
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBLOBFEATURE
-#endif
     /**
      * @symbol ??0BlockBlobFeature@@QEAA@AEBVBlock@@H@Z
+     * @hash   -119240064
      */
     MCAPI BlockBlobFeature(class Block const &, int);
 

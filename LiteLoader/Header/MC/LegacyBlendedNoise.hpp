@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBLENDEDNOISE
-#endif
     /**
      * @symbol ??1LegacyBlendedNoise@@QEAA@XZ
+     * @hash   -8959107
      */
     MCAPI ~LegacyBlendedNoise();
     /**
      * @symbol ?make@LegacyBlendedNoise@@SA?AV1@AEAVIRandom@@@Z
+     * @hash   -1509579161
      */
     MCAPI static class LegacyBlendedNoise make(class IRandom &);
 

@@ -30,46 +30,54 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZE
-#endif
     /**
      * @symbol ??0Randomize@@QEAA@AEAVRandom@@@Z
+     * @hash   -693538530
      */
     MCAPI Randomize(class Random &);
     /**
      * @symbol ?chance@Randomize@@QEBA_NHH@Z
+     * @hash   925355238
      */
     MCAPI bool chance(int, int) const;
     /**
      * @symbol ?chanceAllButOneIn@Randomize@@QEBA_NH@Z
+     * @hash   -1726542563
      */
     MCAPI bool chanceAllButOneIn(int) const;
     /**
      * @symbol ?chanceFloatGreaterThan@Randomize@@QEBA_NM@Z
+     * @hash   1574787193
      */
     MCAPI bool chanceFloatGreaterThan(float) const;
     /**
      * @symbol ?chanceFloatLessOrEqual@Randomize@@QEBA_NM@Z
+     * @hash   668703545
      */
     MCAPI bool chanceFloatLessOrEqual(float) const;
     /**
      * @symbol ?chanceFloatLessThan@Randomize@@QEBA_NM@Z
+     * @hash   -169935301
      */
     MCAPI bool chanceFloatLessThan(float) const;
     /**
      * @symbol ?chanceOneIn@Randomize@@QEBA_NH@Z
+     * @hash   -462217363
      */
     MCAPI bool chanceOneIn(int) const;
     /**
      * @symbol ?nextFloat@Randomize@@QEBAMXZ
+     * @hash   -554396776
      */
     MCAPI float nextFloat() const;
     /**
      * @symbol ?nextIntInclusive@Randomize@@QEBAHHH@Z
+     * @hash   -2009924258
      */
     MCAPI int nextIntInclusive(int, int) const;
     /**
      * @symbol ??1Randomize@@QEAA@XZ
+     * @hash   1815455805
      */
     MCAPI ~Randomize();
 MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;

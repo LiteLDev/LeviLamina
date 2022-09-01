@@ -32,13 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTLISTENER
     /**
-     * @vtable -1
      * @symbol ?onEvent@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUServerNetworkGameplayNotificationEvent@@@Z
+     * @hash   -1789516056
      */
     MCVAPI enum EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const &);
     /**
-     * @vtable -1
      * @symbol ?onMessage@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUMessageEvent@@@Z
+     * @hash   -1876247450
      */
     MCVAPI enum EventResult onMessage(struct MessageEvent const &);
 #endif

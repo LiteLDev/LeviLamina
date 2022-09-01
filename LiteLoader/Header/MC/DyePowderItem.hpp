@@ -33,119 +33,126 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1193555658
      */
     virtual ~DyePowderItem();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 19
+     * @vftbl  19
      * @symbol ?isDye@DyePowderItem@@UEBA_NXZ
+     * @hash   1518238434
      */
     virtual bool isDye() const;
     /**
-     * @vtable 20
+     * @vftbl  20
      * @symbol ?getItemColor@DyePowderItem@@UEBA?AW4ItemColor@@XZ
+     * @hash   -2025781036
      */
     virtual enum ItemColor getItemColor() const;
     /**
-     * @vtable 21
+     * @vftbl  21
      * @symbol ?isFertilizer@DyePowderItem@@UEBA_NXZ
+     * @hash   798698712
      */
     virtual bool isFertilizer() const;
     /**
-     * @vtable 52
-     * @symbol __unk_vfn_52
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @vtable 54
-     * @symbol __unk_vfn_54
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @vtable 67
-     * @symbol __unk_vfn_67
+     * @vftbl  67
+     * @hash   -186360955
      */
     virtual void __unk_vfn_67();
     /**
-     * @vtable 68
+     * @vftbl  68
      * @symbol ?isValidAuxValue@DyePowderItem@@UEBA_NH@Z
+     * @hash   -915475646
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @vtable 71
-     * @symbol __unk_vfn_71
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @vtable 72
-     * @symbol __unk_vfn_72
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 76
-     * @symbol __unk_vfn_76
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 81
-     * @symbol __unk_vfn_81
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @vtable 86
+     * @vftbl  86
      * @symbol ?dispense@DyePowderItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     * @hash   505390040
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @vtable 96
+     * @vftbl  96
      * @symbol ?buildDescriptionId@DyePowderItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     * @hash   -1650683218
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @vtable 125
+     * @vftbl  125
      * @symbol ?setIcon@DyePowderItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -366372592
      */
     virtual class Item & setIcon(std::string const &, int);
     /**
-     * @vtable 136
+     * @vftbl  136
      * @symbol ?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+     * @hash   -1189521382
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
-#endif
     /**
      * @symbol ??0DyePowderItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemColor@@_N2@Z
+     * @hash   2017082954
      */
     MCAPI DyePowderItem(std::string const &, int, enum ItemColor, bool, bool);
 

@@ -32,44 +32,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -393577923
      */
     virtual ~RandomSwimmingGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@RandomSwimmingGoal@@UEAA_NXZ
+     * @hash   677092253
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RandomSwimmingGoal@@UEAA_NXZ
+     * @hash   -1340514517
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RandomSwimmingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1360170243
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?_setWantedPosition@RandomSwimmingGoal@@MEAA_NXZ
+     * @hash   -1704579542
      */
     virtual bool _setWantedPosition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSWIMMINGGOAL
-#endif
     /**
      * @symbol ??0RandomSwimmingGoal@@QEAA@AEAVMob@@MHHH_N@Z
+     * @hash   -1079855693
      */
     MCAPI RandomSwimmingGoal(class Mob &, float, int, int, int, bool);
 

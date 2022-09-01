@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICTIMER
-#endif
     /**
      * @symbol ??0BasicTimer@@QEAA@NV?$function@$$A6ANXZ@std@@@Z
+     * @hash   341253334
      */
     MCAPI BasicTimer(double, class std::function<double (void)>);
     /**
      * @symbol ?isFinished@BasicTimer@@QEBA_NXZ
+     * @hash   -1928342376
      */
     MCAPI bool isFinished() const;
     /**
      * @symbol ?resetTime@BasicTimer@@QEAAXXZ
+     * @hash   134410403
      */
     MCAPI void resetTime();
     /**
      * @symbol ??1BasicTimer@@QEAA@XZ
+     * @hash   -1106989551
      */
     MCAPI ~BasicTimer();
 

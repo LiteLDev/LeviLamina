@@ -29,18 +29,19 @@ public:
     PackedItemUseLegacyInventoryTransaction() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKEDITEMUSELEGACYINVENTORYTRANSACTION
-#endif
     /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction@@QEAA@$$QEAU0@@Z
+     * @hash   1955666117
      */
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
     /**
      * @symbol ??4PackedItemUseLegacyInventoryTransaction@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   1462535646
      */
     MCAPI struct PackedItemUseLegacyInventoryTransaction & operator=(struct PackedItemUseLegacyInventoryTransaction &&);
     /**
      * @symbol ??1PackedItemUseLegacyInventoryTransaction@@QEAA@XZ
+     * @hash   -6755437
      */
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
 

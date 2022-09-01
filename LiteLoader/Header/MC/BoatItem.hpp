@@ -33,124 +33,132 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1836903363
      */
     virtual ~BoatItem();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 47
+     * @vftbl  47
      * @symbol ?isStackedByData@BoatItem@@UEBA_NXZ
+     * @hash   1889766755
      */
     virtual bool isStackedByData() const;
     /**
-     * @vtable 52
-     * @symbol __unk_vfn_52
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @vtable 54
-     * @symbol __unk_vfn_54
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @vtable 58
+     * @vftbl  58
      * @symbol ?isLiquidClipItem@BoatItem@@UEBA_NH@Z
+     * @hash   -1830951361
      */
     virtual bool isLiquidClipItem(int) const;
     /**
-     * @vtable 67
-     * @symbol __unk_vfn_67
+     * @vftbl  67
+     * @hash   -186360955
      */
     virtual void __unk_vfn_67();
     /**
-     * @vtable 68
+     * @vftbl  68
      * @symbol ?isValidAuxValue@BoatItem@@UEBA_NH@Z
+     * @hash   -1852521511
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @vtable 71
-     * @symbol __unk_vfn_71
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @vtable 72
-     * @symbol __unk_vfn_72
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 76
-     * @symbol __unk_vfn_76
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 81
-     * @symbol __unk_vfn_81
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @vtable 86
+     * @vftbl  86
      * @symbol ?dispense@BoatItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     * @hash   1949270511
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @vtable 96
+     * @vftbl  96
      * @symbol ?buildDescriptionId@BoatItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     * @hash   -782543689
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @vtable 123
+     * @vftbl  123
      * @symbol ?getIcon@BoatItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+     * @hash   -402805210
      */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /**
-     * @vtable 125
+     * @vftbl  125
      * @symbol ?setIcon@BoatItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -748909095
      */
     virtual class Item & setIcon(std::string const &, int);
     /**
-     * @vtable 136
+     * @vftbl  136
      * @symbol ?_useOn@BoatItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+     * @hash   -941181279
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @vtable 137
+     * @vftbl  137
      * @symbol ?_getActorType@BoatItem@@EEBA?AW4ActorType@@XZ
+     * @hash   2140716126
      */
     virtual enum ActorType _getActorType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOATITEM
-#endif
     /**
      * @symbol ??0BoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
+     * @hash   -689273134
      */
     MCAPI BoatItem(std::string const &, int, int);
 

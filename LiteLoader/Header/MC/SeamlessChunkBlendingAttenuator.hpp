@@ -29,30 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEAMLESSCHUNKBLENDINGATTENUATOR
-#endif
     /**
      * @symbol ??0SeamlessChunkBlendingAttenuator@@QEAA@VChunkPos@@$$QEAV?$vector@V?$array@UAttenuationData@SeamlessChunkBlendingAttenuatorUtil@@$03@std@@V?$allocator@V?$array@UAttenuationData@SeamlessChunkBlendingAttenuatorUtil@@$03@std@@@2@@std@@F@Z
+     * @hash   1107644999
      */
     MCAPI SeamlessChunkBlendingAttenuator(class ChunkPos, std::vector<class std::array<struct SeamlessChunkBlendingAttenuatorUtil::AttenuationData, 4>> &&, short);
     /**
      * @symbol ?attenuateDensity@SeamlessChunkBlendingAttenuator@@QEBAMAEBV?$DividedPos2d@$03@@HM@Z
+     * @hash   -594685323
      */
     MCAPI float attenuateDensity(class DividedPos2d<4> const &, int, float) const;
     /**
      * @symbol ?attenuateTerrainInfo@SeamlessChunkBlendingAttenuator@@QEBA?AUTerrainInfo@@AEBV?$DividedPos2d@$03@@AEBU2@@Z
+     * @hash   -1950989155
      */
     MCAPI struct TerrainInfo attenuateTerrainInfo(class DividedPos2d<4> const &, struct TerrainInfo const &) const;
     /**
      * @symbol ?tryGetAttenuatedBiome@SeamlessChunkBlendingAttenuator@@QEBAPEBVBiome@@AEBV?$DividedPos@$03@@AEBVBiomeRegistry@@AEBV?$NormalNoiseImpl@$0A@V?$MultiOctaveNoiseImpl@$0A@V?$ParityImprovedNoiseImpl@$0A@@@@@@@@Z
+     * @hash   848161536
      */
     MCAPI class Biome const * tryGetAttenuatedBiome(class DividedPos<4> const &, class BiomeRegistry const &, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>> const &) const;
     /**
      * @symbol ?tryMoveWaterEdges@SeamlessChunkBlendingAttenuator@@QEBA?BUBlockGenerationResult@OverworldGeneratorMultinoise@@AEBVBlockPos@@U23@@Z
+     * @hash   51328143
      */
     MCAPI struct OverworldGeneratorMultinoise::BlockGenerationResult const tryMoveWaterEdges(class BlockPos const &, struct OverworldGeneratorMultinoise::BlockGenerationResult) const;
     /**
      * @symbol ??1SeamlessChunkBlendingAttenuator@@QEAA@XZ
+     * @hash   -365298316
      */
     MCAPI ~SeamlessChunkBlendingAttenuator();
 

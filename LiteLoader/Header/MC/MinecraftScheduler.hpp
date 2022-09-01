@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTSCHEDULER
-#endif
     /**
      * @symbol ?client@MinecraftScheduler@@SAAEAVScheduler@@XZ
+     * @hash   -2117538528
      */
     MCAPI static class Scheduler & client();
     /**
      * @symbol ?destroyClientSingleton@MinecraftScheduler@@SAXXZ
+     * @hash   -905031661
      */
     MCAPI static void destroyClientSingleton();
 

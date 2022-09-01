@@ -43,64 +43,71 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   696258685
      */
     virtual ~VarIntDataOutput();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   1266699393
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   1267622914
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?writeFloat@VarIntDataOutput@@UEAAXM@Z
+     * @hash   -562292095
      */
     virtual void writeFloat(float);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?writeDouble@VarIntDataOutput@@UEAAXN@Z
+     * @hash   857157737
      */
     virtual void writeDouble(double);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?writeByte@VarIntDataOutput@@UEAAXD@Z
+     * @hash   -1388727075
      */
     virtual void writeByte(char);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?writeShort@VarIntDataOutput@@UEAAXF@Z
+     * @hash   -1238634895
      */
     virtual void writeShort(short);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?writeInt@VarIntDataOutput@@UEAAXH@Z
+     * @hash   -963633109
      */
     virtual void writeInt(int);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?writeLongLong@VarIntDataOutput@@UEAAX_J@Z
+     * @hash   -989169170
      */
     virtual void writeLongLong(__int64);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z
+     * @hash   1886334435
      */
     virtual void writeBytes(void const *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
     /**
-     * @vtable -1
      * @symbol ?writeLongString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   -1995360189
      */
     MCVAPI void writeLongString(class gsl::basic_string_span<char const, -1>);
     /**
-     * @vtable -1
      * @symbol ?writeString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   194158943
      */
     MCVAPI void writeString(class gsl::basic_string_span<char const, -1>);
 #endif

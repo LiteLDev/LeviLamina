@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   151003516
      */
     virtual ~LootItemRandomDifficultyChanceCondition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?applies@LootItemRandomDifficultyChanceCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   10870593
      */
     virtual bool applies(class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMRANDOMDIFFICULTYCHANCECONDITION
-#endif
     /**
      * @symbol ?deserialize@LootItemRandomDifficultyChanceCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
+     * @hash   -677777191
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 

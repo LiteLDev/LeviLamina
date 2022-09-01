@@ -31,10 +31,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PEEKDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@PeekDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VPeekDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -622377370
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PeekDefinition>> &);
 

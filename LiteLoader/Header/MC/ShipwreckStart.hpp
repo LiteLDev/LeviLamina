@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   241154230
      */
     virtual ~ShipwreckStart();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIPWRECKSTART
-#endif
     /**
      * @symbol ??0ShipwreckStart@@QEAA@AEBVBiomeSource@@AEAVRandom@@HHF@Z
+     * @hash   -504561924
      */
     MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
 

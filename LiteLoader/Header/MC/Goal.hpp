@@ -30,90 +30,98 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -20629027
      */
     virtual ~Goal();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   2093982953
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@Goal@@UEAA_NXZ
+     * @hash   563742539
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@Goal@@UEAA_NXZ
+     * @hash   -337739627
      */
     virtual bool canBeInterrupted();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   2096753516
      */
     virtual void __unk_vfn_4() = 0;
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1402937465
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?isTargetGoal@Goal@@UEBA_NXZ
+     * @hash   1302635987
      */
     virtual bool isTargetGoal() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
     /**
-     * @vtable -1
      * @symbol ?onPlayerDimensionChanged@Goal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   990420595
      */
     MCVAPI void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
     /**
-     * @vtable -1
      * @symbol ?start@Goal@@UEAAXXZ
+     * @hash   1152116374
      */
     MCVAPI void start();
     /**
-     * @vtable -1
      * @symbol ?stop@Goal@@UEAAXXZ
+     * @hash   -1197248010
      */
     MCVAPI void stop();
     /**
-     * @vtable -1
      * @symbol ?tick@Goal@@UEAAXXZ
+     * @hash   -358923919
      */
     MCVAPI void tick();
 #endif
     /**
      * @symbol ??0Goal@@QEAA@XZ
+     * @hash   -343366209
      */
     MCAPI Goal();
     /**
      * @symbol ?getRequiredControlFlags@Goal@@QEBAHXZ
+     * @hash   464657894
      */
     MCAPI int getRequiredControlFlags() const;
     /**
      * @symbol ?getTypeId@Goal@@QEBAGXZ
+     * @hash   1201353333
      */
     MCAPI unsigned short getTypeId() const;
     /**
      * @symbol ?setRequiredControlFlags@Goal@@QEAAXH@Z
+     * @hash   229481016
      */
     MCAPI void setRequiredControlFlags(int);
     /**
      * @symbol ?setTypeId@Goal@@QEAAXG@Z
+     * @hash   -912004777
      */
     MCAPI void setTypeId(unsigned short);
 

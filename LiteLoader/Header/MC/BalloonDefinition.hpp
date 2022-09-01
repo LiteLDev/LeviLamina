@@ -31,10 +31,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@BalloonDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBalloonDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   383497158
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonDefinition>> &);
 

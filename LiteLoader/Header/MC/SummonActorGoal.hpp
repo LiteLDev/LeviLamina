@@ -31,59 +31,66 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -445584491
      */
     virtual ~SummonActorGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@SummonActorGoal@@UEAA_NXZ
+     * @hash   -33255911
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SummonActorGoal@@UEAA_NXZ
+     * @hash   707482967
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SummonActorGoal@@UEAAXXZ
+     * @hash   1191298994
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@SummonActorGoal@@UEAAXXZ
+     * @hash   2081388274
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@SummonActorGoal@@UEAAXXZ
+     * @hash   1920119853
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SummonActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   564971991
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUMMONACTORGOAL
-#endif
     /**
      * @symbol ??0SummonActorGoal@@QEAA@AEAVMob@@AEBV?$vector@USummonSpellData@@V?$allocator@USummonSpellData@@@std@@@std@@@Z
+     * @hash   -1069858125
      */
     MCAPI SummonActorGoal(class Mob &, std::vector<struct SummonSpellData> const &);
 
 //private:
     /**
      * @symbol ?_createSpellEntity@SummonActorGoal@@AEBAXMMMMMHUActorDefinitionIdentifier@@@Z
+     * @hash   -617911918
      */
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
     /**
      * @symbol ?_selectBestSpell@SummonActorGoal@@AEBAHAEAVActor@@@Z
+     * @hash   -693963005
      */
     MCAPI int _selectBestSpell(class Actor &) const;
 

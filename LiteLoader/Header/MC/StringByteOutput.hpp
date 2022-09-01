@@ -31,56 +31,63 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   662109540
      */
     virtual ~StringByteOutput();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   -232600634
      */
     virtual void writeString(class gsl::basic_string_span<char const, -1>);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   521460586
      */
     virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
+     * @hash   -5850968
      */
     virtual void writeFloat(float);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
+     * @hash   592515024
      */
     virtual void writeDouble(double);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?writeByte@BytesDataOutput@@UEAAXD@Z
+     * @hash   1001724452
      */
     virtual void writeByte(char);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
+     * @hash   -127429480
      */
     virtual void writeShort(short);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
+     * @hash   -94310638
      */
     virtual void writeInt(int);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+     * @hash   1607709333
      */
     virtual void writeLongLong(__int64);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?writeBytes@StringByteOutput@@UEAAXPEBX_K@Z
+     * @hash   -744284500
      */
     virtual void writeBytes(void const *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
-#endif
 
 };

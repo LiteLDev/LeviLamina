@@ -29,48 +29,56 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMONRESOURCEDEFINITIONMAP
-#endif
     /**
      * @symbol ??0CommonResourceDefinitionMap@@QEAA@XZ
+     * @hash   -580209684
      */
     MCAPI CommonResourceDefinitionMap();
     /**
      * @symbol ?getAnimateScriptArray@CommonResourceDefinitionMap@@QEBAAEBV?$vector@UNamedMolangScript@@V?$allocator@UNamedMolangScript@@@std@@@std@@XZ
+     * @hash   -992069062
      */
     MCAPI std::vector<struct NamedMolangScript> const & getAnimateScriptArray() const;
     /**
      * @symbol ?getAnimationControllers@CommonResourceDefinitionMap@@QEBAAEBV?$unordered_map@VHashedString@@VActorAnimationControllerPtr@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@VActorAnimationControllerPtr@@@std@@@4@@std@@XZ
+     * @hash   -463682977
      */
     MCAPI class std::unordered_map<class HashedString, class ActorAnimationControllerPtr, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class ActorAnimationControllerPtr>>> const & getAnimationControllers() const;
     /**
      * @symbol ?getAnimations@CommonResourceDefinitionMap@@QEBAAEBV?$unordered_map@VHashedString@@VActorSkeletalAnimationPtr@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@4@V?$allocator@U?$pair@$$CBVHashedString@@VActorSkeletalAnimationPtr@@@std@@@4@@std@@XZ
+     * @hash   1601312615
      */
     MCAPI class std::unordered_map<class HashedString, class ActorSkeletalAnimationPtr, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class ActorSkeletalAnimationPtr>>> const & getAnimations() const;
     /**
      * @symbol ?getVariableSettings@CommonResourceDefinitionMap@@QEBAAEBV?$vector@UMolangVariableSettings@@V?$allocator@UMolangVariableSettings@@@std@@@std@@XZ
+     * @hash   -435088770
      */
     MCAPI std::vector<struct MolangVariableSettings> const & getVariableSettings() const;
     /**
      * @symbol ?isCommonResourceDefinitionMapEmpty@CommonResourceDefinitionMap@@QEBA_NXZ
+     * @hash   -208750848
      */
     MCAPI bool isCommonResourceDefinitionMapEmpty() const;
     /**
      * @symbol ?mergeActorAnimateScriptArray@CommonResourceDefinitionMap@@QEAAXAEBV?$vector@UNamedMolangScript@@V?$allocator@UNamedMolangScript@@@std@@@std@@@Z
+     * @hash   -745211896
      */
     MCAPI void mergeActorAnimateScriptArray(std::vector<struct NamedMolangScript> const &);
     /**
      * @symbol ?mergeAnimation@CommonResourceDefinitionMap@@QEAAXAEBVHashedString@@VActorSkeletalAnimationPtr@@@Z
+     * @hash   1455313547
      */
     MCAPI void mergeAnimation(class HashedString const &, class ActorSkeletalAnimationPtr);
     /**
      * @symbol ?mergeAnimationController@CommonResourceDefinitionMap@@QEAAXAEBVHashedString@@VActorAnimationControllerPtr@@@Z
+     * @hash   398455677
      */
     MCAPI void mergeAnimationController(class HashedString const &, class ActorAnimationControllerPtr);
 
 //private:
     /**
      * @symbol ?_getAnimationResourceDefinitionLock@CommonResourceDefinitionMap@@CAAEAVrecursive_mutex@std@@XZ
+     * @hash   -985788484
      */
     MCAPI static class std::recursive_mutex & _getAnimationResourceDefinitionLock();
 

@@ -29,14 +29,14 @@ public:
     Shareable() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREABLE
-#endif
     /**
      * @symbol ?setCraftInto@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1683355250
      */
     MCAPI void setCraftInto(std::string const &);
     /**
      * @symbol ?setItem@Shareable@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1925224082
      */
     MCAPI void setItem(std::string const &);
 

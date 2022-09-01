@@ -32,34 +32,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1056839174
      */
     virtual ~EndCityFeature();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?shouldPostProcessMobs@EndCityFeature@@UEBA_NXZ
+     * @hash   -1826011209
      */
     virtual bool shouldPostProcessMobs() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@EndCityFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
+     * @hash   1035845815
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?isFeatureChunk@EndCityFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+     * @hash   1034012049
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?createStructureStart@EndCityFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+     * @hash   1230454233
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDCITYFEATURE
-#endif
     /**
      * @symbol ??0EndCityFeature@@QEAA@AEAVDimension@@AEAI@Z
+     * @hash   1426344653
      */
     MCAPI EndCityFeature(class Dimension &, unsigned int &);
 

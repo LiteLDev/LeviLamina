@@ -33,33 +33,36 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2044401530
      */
     virtual ~IRequestAction();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+     * @hash   283008406
      */
     virtual void execute(class ServerLevel &, class Dimension &) = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?serialize@IRequestAction@@UEAAXAEAVCompoundTag@@@Z
+     * @hash   -1570881614
      */
     virtual void serialize(class CompoundTag &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ??8IRequestAction@@UEBA_NAEAV0@@Z
+     * @hash   1692719657
      */
     virtual bool operator==(class IRequestAction &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IREQUESTACTION
-#endif
     /**
      * @symbol ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
+     * @hash   -2068339155
      */
     MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
     /**
      * @symbol ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z
+     * @hash   497694715
      */
     MCAPI static bool isValidTag(class CompoundTag const &);
 

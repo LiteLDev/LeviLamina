@@ -31,54 +31,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -908432175
      */
     virtual ~TransporterComponent();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?canConsumerPower@TransporterComponent@@UEBA_NXZ
+     * @hash   -104082032
      */
     virtual bool canConsumerPower() const;
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?addSource@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     * @hash   -2096929307
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?allowConnection@TransporterComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   -1239181673
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?evaluate@TransporterComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   -1754180287
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?cacheValues@TransporterComponent@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   -1252857510
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@TransporterComponent@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   -1514469057
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTERCOMPONENT
-#endif
     /**
      * @symbol ??0TransporterComponent@@QEAA@XZ
+     * @hash   -136003261
      */
     MCAPI TransporterComponent();
 

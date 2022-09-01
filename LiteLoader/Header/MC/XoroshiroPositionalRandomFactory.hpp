@@ -33,24 +33,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1195647840
      */
     virtual ~XoroshiroPositionalRandomFactory();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?forBlockPos@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z
+     * @hash   -1230503169
      */
     virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const &) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?forString@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   1152809423
      */
     virtual std::unique_ptr<class IRandom> forString(std::string const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIROPOSITIONALRANDOMFACTORY
-#endif
     /**
      * @symbol ?forStringImpl@XoroshiroPositionalRandomFactory@@QEBA?AVXoroshiroRandom@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -464912587
      */
     MCAPI class XoroshiroRandom forStringImpl(std::string const &) const;
 

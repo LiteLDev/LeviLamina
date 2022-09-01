@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@ProjectileDescription@@UEBAPEBDXZ
+     * @hash   687141185
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   1280680865
      */
     virtual ~ProjectileDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@ProjectileDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -766521726
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@ProjectileDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1728827476
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEDESCRIPTION
-#endif
     /**
      * @symbol ??0ProjectileDescription@@QEAA@XZ
+     * @hash   -1345201057
      */
     MCAPI ProjectileDescription();
 

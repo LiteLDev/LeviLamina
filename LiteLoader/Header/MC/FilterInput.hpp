@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUT
-#endif
     /**
      * @symbol ??0FilterInput@@QEAA@H@Z
+     * @hash   2146433725
      */
     MCAPI FilterInput(int);
     /**
      * @symbol ??4FilterInput@@QEAAAEAV0@AEBV0@@Z
+     * @hash   -1782219636
      */
     MCAPI class FilterInput & operator=(class FilterInput const &);
     /**
      * @symbol ??1FilterInput@@QEAA@XZ
+     * @hash   -110004386
      */
     MCAPI ~FilterInput();
 

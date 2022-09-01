@@ -32,48 +32,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -255946157
      */
     virtual ~OceanMonumentPiece();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?postProcessMobsAt@OceanMonumentPiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -2131770510
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?getWorldX@OceanMonumentPiece@@UEAAHHH@Z
+     * @hash   -240493857
      */
     virtual int getWorldX(int, int);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getWorldZ@OceanMonumentPiece@@UEAAHHH@Z
+     * @hash   -1784032799
      */
     virtual int getWorldZ(int, int);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?addHardcodedSpawnAreas@OceanMonumentPiece@@UEBAXAEAVLevelChunk@@@Z
+     * @hash   -201985722
      */
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTPIECE
-#endif
 
 //protected:
     /**
      * @symbol ??0OceanMonumentPiece@@IEAA@HAEAHV?$shared_ptr@VRoomDefinition@@@std@@HHH@Z
+     * @hash   -1828455176
      */
     MCAPI OceanMonumentPiece(int, int &, class std::shared_ptr<class RoomDefinition>, int, int, int);
     /**
      * @symbol ?chunkIntersects@OceanMonumentPiece@@IEAA_NAEBVBoundingBox@@HHHH@Z
+     * @hash   979855725
      */
     MCAPI bool chunkIntersects(class BoundingBox const &, int, int, int, int);
     /**
      * @symbol ?generateDefaultFloor@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HH_N@Z
+     * @hash   -897515476
      */
     MCAPI void generateDefaultFloor(class BlockSource &, class BoundingBox const &, int, int, bool);
     /**
      * @symbol ?spawnElder@OceanMonumentPiece@@IEAAXAEAVBlockSource@@AEBVBoundingBox@@HHH@Z
+     * @hash   1515190312
      */
     MCAPI void spawnElder(class BlockSource &, class BoundingBox const &, int, int, int);
 

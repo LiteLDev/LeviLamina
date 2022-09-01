@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@BehaviorTreeDescription@@UEBAPEBDXZ
+     * @hash   -25999176
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   -1530169062
      */
     virtual ~BehaviorTreeDescription();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@BehaviorTreeDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -449266379
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDESCRIPTION
-#endif
 
 };

@@ -40,53 +40,60 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1641056489
      */
     virtual ~StringTag();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?write@StringTag@@UEBAXAEAVIDataOutput@@@Z
+     * @hash   -827180134
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?load@StringTag@@UEAAXAEAVIDataInput@@@Z
+     * @hash   -109881111
      */
     virtual void load(class IDataInput &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?toString@StringTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -156570067
      */
     virtual std::string toString() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getId@StringTag@@UEBA?AW4Type@Tag@@XZ
+     * @hash   31130706
      */
     virtual enum Tag::Type getId() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?equals@StringTag@@UEBA_NAEBVTag@@@Z
+     * @hash   -760685505
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?copy@StringTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   -713561153
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?hash@StringTag@@UEBA_KXZ
+     * @hash   -1214461243
      */
     virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGTAG
-#endif
     /**
      * @symbol ??0StringTag@@QEAA@XZ
+     * @hash   2078960885
      */
     MCAPI StringTag();
     /**
      * @symbol ??0StringTag@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1004547758
      */
     MCAPI StringTag(std::string);
 

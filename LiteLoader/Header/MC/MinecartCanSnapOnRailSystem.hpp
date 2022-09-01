@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECARTCANSNAPONRAILSYSTEM
-#endif
     /**
      * @symbol ?getSnapOnRailBlockPos@MinecartCanSnapOnRailSystem@@SA?AV?$optional@VBlockPos@@@std@@AEBVBlockPos@@AEBVVec3@@AEBVIConstBlockSource@@@Z
+     * @hash   1708461238
      */
     MCAPI static class std::optional<class BlockPos> getSnapOnRailBlockPos(class BlockPos const &, class Vec3 const &, class IConstBlockSource const &);
 

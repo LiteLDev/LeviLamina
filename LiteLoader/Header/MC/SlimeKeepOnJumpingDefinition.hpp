@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEKEEPONJUMPINGDEFINITION
-#endif
     /**
      * @symbol ??0SlimeKeepOnJumpingDefinition@@QEAA@XZ
+     * @hash   373736439
      */
     MCAPI SlimeKeepOnJumpingDefinition();
     /**
      * @symbol ?initialize@SlimeKeepOnJumpingDefinition@@QEAAXAEAVEntityContext@@AEAVSlimeKeepOnJumpingGoal@@@Z
+     * @hash   629468087
      */
     MCAPI void initialize(class EntityContext &, class SlimeKeepOnJumpingGoal &);
     /**
      * @symbol ?buildSchema@SlimeKeepOnJumpingDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeKeepOnJumpingDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -2106307497
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeKeepOnJumpingDefinition>> &);
 

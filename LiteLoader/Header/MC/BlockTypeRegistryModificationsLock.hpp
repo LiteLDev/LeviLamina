@@ -28,16 +28,16 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRYMODIFICATIONSLOCK
-#endif
     /**
      * @symbol ??1BlockTypeRegistryModificationsLock@@QEAA@XZ
+     * @hash   529225208
      */
     MCAPI ~BlockTypeRegistryModificationsLock();
 
 //private:
     /**
      * @symbol ??0BlockTypeRegistryModificationsLock@@AEAA@V?$shared_ptr@VBlockTypeRegistryRWLock@@@std@@@Z
+     * @hash   1812285088
      */
     MCAPI BlockTypeRegistryModificationsLock(class std::shared_ptr<class BlockTypeRegistryRWLock>);
 

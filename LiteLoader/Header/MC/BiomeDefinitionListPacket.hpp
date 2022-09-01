@@ -31,39 +31,43 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -485464441
      */
     virtual ~BiomeDefinitionListPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@BiomeDefinitionListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -2069512555
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@BiomeDefinitionListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   917707074
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@BiomeDefinitionListPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   77933477
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?readExtended@BiomeDefinitionListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1062872598
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@BiomeDefinitionListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1183256347
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEDEFINITIONLISTPACKET
-#endif
     /**
      * @symbol ??0BiomeDefinitionListPacket@@QEAA@XZ
+     * @hash   -459679275
      */
     MCAPI BiomeDefinitionListPacket();
 

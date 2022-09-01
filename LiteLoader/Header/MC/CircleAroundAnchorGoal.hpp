@@ -31,63 +31,70 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1427636303
      */
     virtual ~CircleAroundAnchorGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@CircleAroundAnchorGoal@@UEAA_NXZ
+     * @hash   1097854939
      */
     virtual bool canUse();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   517136691
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@CircleAroundAnchorGoal@@UEAAXXZ
+     * @hash   -129703868
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@CircleAroundAnchorGoal@@UEAAXXZ
+     * @hash   -1827338876
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@CircleAroundAnchorGoal@@UEAAXXZ
+     * @hash   1739974991
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@CircleAroundAnchorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   569399637
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCLEAROUNDANCHORGOAL
-#endif
     /**
      * @symbol ??0CircleAroundAnchorGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -652123048
      */
     MCAPI CircleAroundAnchorGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_calculateHeightOffset@CircleAroundAnchorGoal@@AEBAMXZ
+     * @hash   1670273647
      */
     MCAPI float _calculateHeightOffset() const;
     /**
      * @symbol ?_selectNext@CircleAroundAnchorGoal@@AEAAXXZ
+     * @hash   -1055562619
      */
     MCAPI void _selectNext();
     /**
      * @symbol ?_setAnchorAboveTarget@CircleAroundAnchorGoal@@AEAAXXZ
+     * @hash   -1722370291
      */
     MCAPI void _setAnchorAboveTarget();
 

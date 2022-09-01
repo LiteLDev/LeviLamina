@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTIONBOXPROCESSOR
-#endif
     /**
      * @symbol ?_tryBake@BlockSelectionBoxProcessor@@SAXPEBUBlockRotationComponent@@PEAUBlockSelectionBoxComponent@@@Z
+     * @hash   -595752165
      */
     MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockSelectionBoxComponent *);
     /**
      * @symbol ?getProcessor@BlockSelectionBoxProcessor@@SA?AV?$unique_ptr@VEntityComponentProcessor@Util@@U?$default_delete@VEntityComponentProcessor@Util@@@std@@@std@@XZ
+     * @hash   -459981214
      */
     MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
 

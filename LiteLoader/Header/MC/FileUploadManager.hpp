@@ -33,66 +33,77 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1419574754
      */
     virtual ~FileUploadManager();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getUploadProgress@FileUploadManager@@UEBAMXZ
+     * @hash   1049772034
      */
     virtual float getUploadProgress() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z
+     * @hash   2017177756
      */
     virtual void uploadFileToRealmStorage(std::string const &, class Core::Path const &, int, std::string const &) = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEUPLOADMANAGER
-#endif
     /**
      * @symbol ??0FileUploadManager@@QEAA@AEAVTaskGroup@@V?$shared_ptr@VIFileChunkUploader@@@std@@@Z
+     * @hash   -2135730723
      */
     MCAPI FileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
     /**
      * @symbol ?addCallbackQueue@FileUploadManager@@QEAAXV?$function@$$A6AXXZ@std@@@Z
+     * @hash   683100438
      */
     MCAPI void addCallbackQueue(class std::function<void (void)>);
     /**
      * @symbol ?setFailed@FileUploadManager@@QEAAXW4UploadError@@@Z
+     * @hash   -571574470
      */
     MCAPI void setFailed(enum UploadError);
     /**
      * @symbol ?setUseStream@FileUploadManager@@QEAAX_N@Z
+     * @hash   -1418932468
      */
     MCAPI void setUseStream(bool);
     /**
      * @symbol ?update@FileUploadManager@@QEAAXXZ
+     * @hash   733886901
      */
     MCAPI void update();
     /**
      * @symbol ?uploadChunk@FileUploadManager@@QEAAXH@Z
+     * @hash   991034414
      */
     MCAPI void uploadChunk(int);
     /**
      * @symbol ?uploadFile@FileUploadManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@_NAEBVValue@Json@@@Z
+     * @hash   1435858729
      */
     MCAPI void uploadFile(std::string const &, class Core::Path const &, bool, class Json::Value const &);
 
 //protected:
     /**
      * @symbol ?_generateMultiPartHelper@FileUploadManager@@IEAAXXZ
+     * @hash   160906473
      */
     MCAPI void _generateMultiPartHelper();
     /**
      * @symbol ?_resumeUpload@FileUploadManager@@IEAAXXZ
+     * @hash   941643792
      */
     MCAPI void _resumeUpload();
     /**
      * @symbol ?_uploadChunk@FileUploadManager@@IEAAXAEBUFileChunkInfo@@@Z
+     * @hash   -1327236755
      */
     MCAPI void _uploadChunk(struct FileChunkInfo const &);
     /**
      * @symbol ?_uploadStream@FileUploadManager@@IEAAXXZ
+     * @hash   368019603
      */
     MCAPI void _uploadStream();
 

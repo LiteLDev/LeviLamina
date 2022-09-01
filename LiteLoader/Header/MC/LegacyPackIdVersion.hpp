@@ -29,18 +29,19 @@ public:
     LegacyPackIdVersion() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYPACKIDVERSION
-#endif
     /**
      * @symbol ??0LegacyPackIdVersion@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   847500542
      */
     MCAPI LegacyPackIdVersion(std::string const &, std::string const &);
     /**
      * @symbol ?getUpgradedPackId@LegacyPackIdVersion@@QEBA?AUPackIdVersion@@XZ
+     * @hash   -1404771276
      */
     MCAPI struct PackIdVersion getUpgradedPackId() const;
     /**
      * @symbol ??1LegacyPackIdVersion@@QEAA@XZ
+     * @hash   -1641388201
      */
     MCAPI ~LegacyPackIdVersion();
 

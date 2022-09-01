@@ -30,38 +30,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTDATA
-#endif
     /**
      * @symbol ?getActions@ItemStackRequestData@@QEBAAEBV?$vector@V?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@@2@@std@@XZ
+     * @hash   -1811056165
      */
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const & getActions() const;
     /**
      * @symbol ?getRequestId@ItemStackRequestData@@QEBAAEBV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ
+     * @hash   294213365
      */
     MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const & getRequestId() const;
     /**
      * @symbol ?getStringsToFilter@ItemStackRequestData@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     * @hash   1263757495
      */
     MCAPI std::vector<std::string> const & getStringsToFilter() const;
     /**
      * @symbol ?postLoadItems@ItemStackRequestData@@QEAAXAEAVBlockPalette@@_N@Z
+     * @hash   44916187
      */
     MCAPI void postLoadItems(class BlockPalette &, bool);
     /**
      * @symbol ?tryFindAction@ItemStackRequestData@@QEBAPEBVItemStackRequestAction@@W4ItemStackRequestActionType@@@Z
+     * @hash   -1599139296
      */
     MCAPI class ItemStackRequestAction const * tryFindAction(enum ItemStackRequestActionType) const;
     /**
      * @symbol ?write@ItemStackRequestData@@QEBAXAEAVBinaryStream@@@Z
+     * @hash   -1955462576
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1ItemStackRequestData@@QEAA@XZ
+     * @hash   -1356503394
      */
     MCAPI ~ItemStackRequestData();
     /**
      * @symbol ?read@ItemStackRequestData@@SA?AV?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1202503425
      */
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream &);
 

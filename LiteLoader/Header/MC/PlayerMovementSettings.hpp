@@ -29,11 +29,10 @@ public:
     PlayerMovementSettings() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERMOVEMENTSETTINGS
-#endif
 MCAPI static struct PlayerMovementSettings const INVALID;
     /**
      * @symbol ?getDefault@PlayerMovementSettings@@SA?AU1@XZ
+     * @hash   -1412363332
      */
     MCAPI static struct PlayerMovementSettings getDefault();
 

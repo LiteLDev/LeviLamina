@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   617608701
      */
     virtual ~FindActorDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@FindActorDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   533597349
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDACTORDEFINITION
-#endif
 
 };

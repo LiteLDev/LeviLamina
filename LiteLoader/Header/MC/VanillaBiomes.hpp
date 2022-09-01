@@ -30,36 +30,41 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABIOMES
-#endif
 MCAPI static class mce::Color const SWAMP_WATER_COLOR;
 MCAPI static class mce::Color const WATER_FOG_COLOR_SWAMP;
     /**
      * @symbol ?initBiomeComponents@VanillaBiomes@@SAXAEAVBiomeComponentFactory@@@Z
+     * @hash   -765033324
      */
     MCAPI static void initBiomeComponents(class BiomeComponentFactory &);
     /**
      * @symbol ?initBiomeDimensionComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
+     * @hash   360675474
      */
     MCAPI static void initBiomeDimensionComponent(class BiomeRegistry &);
     /**
      * @symbol ?initBiomes@VanillaBiomes@@SAXAEAVBiomeRegistry@@AEBUSpawnSettings@@AEBVBaseGameVersion@@AEBVExperiments@@@Z
+     * @hash   -1651549271
      */
     MCAPI static void initBiomes(class BiomeRegistry &, struct SpawnSettings const &, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?initClientOnlyComponents@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
+     * @hash   1867327352
      */
     MCAPI static void initClientOnlyComponents(class BiomeRegistry &);
     /**
      * @symbol ?initDefaultWorldGenComponents@VanillaBiomes@@SAXAEAVIWorldRegistriesProvider@@@Z
+     * @hash   -292718920
      */
     MCAPI static void initDefaultWorldGenComponents(class IWorldRegistriesProvider &);
     /**
      * @symbol ?initSurfaceBuilders@VanillaBiomes@@SAXAEAVSurfaceBuilderRegistry@@AEBVBaseGameVersion@@@Z
+     * @hash   354885515
      */
     MCAPI static void initSurfaceBuilders(class SurfaceBuilderRegistry &, class BaseGameVersion const &);
     /**
      * @symbol ?initVanillaBiomeTypeComponent@VanillaBiomes@@SAXAEAVBiomeRegistry@@@Z
+     * @hash   1823612084
      */
     MCAPI static void initVanillaBiomeTypeComponent(class BiomeRegistry &);
 MCAPI static class Biome * mBambooJungle;
@@ -140,6 +145,7 @@ MCAPI static class Biome * mTaigaHills;
 MCAPI static class Biome * mWarpedForest;
     /**
      * @symbol ?shutdownBiomes@VanillaBiomes@@SAXXZ
+     * @hash   -1511833741
      */
     MCAPI static void shutdownBiomes();
 

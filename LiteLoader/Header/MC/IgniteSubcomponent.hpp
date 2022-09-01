@@ -30,44 +30,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1677797297
      */
     virtual ~IgniteSubcomponent();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@IgniteSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   1745805771
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@IgniteSubcomponent@@UEAAPEBDXZ
+     * @hash   -1700017258
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGNITESUBCOMPONENT
     /**
-     * @vtable -1
      * @symbol ?readfromJSON@IgniteSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   -230257215
      */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @vtable -1
      * @symbol ?writetoJSON@IgniteSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1382474408
      */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     /**
      * @symbol ??0IgniteSubcomponent@@QEAA@XZ
+     * @hash   -595751213
      */
     MCAPI IgniteSubcomponent();
 

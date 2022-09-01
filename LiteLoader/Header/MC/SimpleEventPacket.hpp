@@ -33,42 +33,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   849963646
      */
     virtual ~SimpleEventPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@SimpleEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1571348702
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@SimpleEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   2058083211
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@SimpleEventPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   785196124
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@SimpleEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   2088976652
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEEVENTPACKET
-#endif
     /**
      * @symbol ??0SimpleEventPacket@@QEAA@XZ
+     * @hash   -1937596388
      */
     MCAPI SimpleEventPacket();
     /**
      * @symbol ??0SimpleEventPacket@@QEAA@AEBW4Subtype@0@@Z
+     * @hash   728695503
      */
     MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
     /**
      * @symbol ?getSubtype@SimpleEventPacket@@QEBAAEBW4Subtype@1@XZ
+     * @hash   151323023
      */
     MCAPI enum SimpleEventPacket::Subtype const & getSubtype() const;
 

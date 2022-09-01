@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCSTATEREF
-#endif
     /**
      * @symbol ??1AsyncStateRef@@QEAA@XZ
+     * @hash   1020547706
      */
     MCAPI ~AsyncStateRef();
 

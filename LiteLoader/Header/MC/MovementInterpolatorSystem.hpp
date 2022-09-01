@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATORSYSTEM
-#endif
     /**
      * @symbol ?onGroundPostTick@MovementInterpolatorSystem@@SAXAEBUMovementInterpolatorComponent@@AEAUStateVectorComponent@@@Z
+     * @hash   460895171
      */
     MCAPI static void onGroundPostTick(struct MovementInterpolatorComponent const &, struct StateVectorComponent &);
     /**
      * @symbol ?tick@MovementInterpolatorSystem@@SAXAEAVActor@@@Z
+     * @hash   209355328
      */
     MCAPI static void tick(class Actor &);
 

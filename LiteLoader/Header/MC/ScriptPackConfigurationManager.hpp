@@ -27,22 +27,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKCONFIGURATIONMANAGER
-#endif
     /**
      * @symbol ??0ScriptPackConfigurationManager@@QEAA@XZ
+     * @hash   508535959
      */
     MCAPI ScriptPackConfigurationManager();
     /**
      * @symbol ??0ScriptPackConfigurationManager@@QEAA@AEBV0@@Z
+     * @hash   1648978353
      */
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     /**
      * @symbol ?getPackConfiguration@ScriptPackConfigurationManager@@QEBAAEBVScriptPackConfiguration@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1564604751
      */
     MCAPI class ScriptPackConfiguration const & getPackConfiguration(std::string const &) const;
     /**
      * @symbol ?loadPackConfigs@ScriptPackConfigurationManager@@QEAAXAEBVPath@Core@@@Z
+     * @hash   -1356569340
      */
     MCAPI void loadPackConfigs(class Core::Path const &);
 

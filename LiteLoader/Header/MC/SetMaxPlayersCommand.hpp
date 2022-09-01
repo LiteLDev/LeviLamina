@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -922428859
      */
     virtual ~SetMaxPlayersCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@SetMaxPlayersCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1346461320
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETMAXPLAYERSCOMMAND
-#endif
     /**
      * @symbol ?setup@SetMaxPlayersCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -165000804
      */
     MCAPI static void setup(class CommandRegistry &);
 

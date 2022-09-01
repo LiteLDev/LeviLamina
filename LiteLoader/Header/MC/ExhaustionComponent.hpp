@@ -28,38 +28,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONCOMPONENT
-#endif
     /**
      * @symbol ?getAttackValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   -747233910
      */
     MCAPI float getAttackValue() const;
     /**
      * @symbol ?getHealValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   171963562
      */
     MCAPI float getHealValue() const;
     /**
      * @symbol ?getJumpValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   -1840956114
      */
     MCAPI float getJumpValue() const;
     /**
      * @symbol ?getMiningValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   -1561073318
      */
     MCAPI float getMiningValue() const;
     /**
      * @symbol ?getSprintJumpValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   -1033386598
      */
     MCAPI float getSprintJumpValue() const;
     /**
      * @symbol ?getSprintValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   -47024858
      */
     MCAPI float getSprintValue() const;
     /**
      * @symbol ?getSwimValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   -463114294
      */
     MCAPI float getSwimValue() const;
     /**
      * @symbol ?getWalkValue@ExhaustionComponent@@QEBAMXZ
+     * @hash   -158094872
      */
     MCAPI float getWalkValue() const;
 

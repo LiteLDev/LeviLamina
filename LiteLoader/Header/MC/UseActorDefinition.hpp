@@ -33,11 +33,9 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -82757653
      */
     virtual ~UseActorDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORDEFINITION
-#endif
 
 };

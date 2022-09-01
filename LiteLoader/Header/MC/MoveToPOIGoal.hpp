@@ -32,85 +32,95 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   680043775
      */
     virtual ~MoveToPOIGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@MoveToPOIGoal@@UEAA_NXZ
+     * @hash   1686054671
      */
     virtual bool canUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@MoveToPOIGoal@@UEAAXXZ
+     * @hash   1967383848
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@MoveToPOIGoal@@UEAAXXZ
+     * @hash   1482923539
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToPOIGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   302742913
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?isValidTarget@MoveToPOIGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1227551969
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?_moveToBlock@MoveToPOIGoal@@MEAAXXZ
+     * @hash   -1696146911
      */
     virtual void _moveToBlock();
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?_getTargetPosition@MoveToPOIGoal@@MEBA?AVVec3@@XZ
+     * @hash   117945385
      */
     virtual class Vec3 _getTargetPosition() const;
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
+     * @hash   -790883694
      */
     virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOPOIGOAL
-#endif
     /**
      * @symbol ??0MoveToPOIGoal@@QEAA@AEAVMob@@MW4POIType@@M@Z
+     * @hash   -504579365
      */
     MCAPI MoveToPOIGoal(class Mob &, float, enum POIType, float);
     /**
      * @symbol ?getPOI@MoveToPOIGoal@@QEAA_NW4POIType@@@Z
+     * @hash   -1834681707
      */
     MCAPI bool getPOI(enum POIType);
 
 //protected:
     /**
      * @symbol ?_canReachPOI@MoveToPOIGoal@@IEAA_NAEBVVec3@@M_N@Z
+     * @hash   1599893800
      */
     MCAPI bool _canReachPOI(class Vec3 const &, float, bool);
 
 //private:
     /**
      * @symbol ?_updatePOIBooking@MoveToPOIGoal@@AEAAXXZ
+     * @hash   -1749061214
      */
     MCAPI void _updatePOIBooking();
 

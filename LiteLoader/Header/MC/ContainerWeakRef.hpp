@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERWEAKREF
-#endif
     /**
      * @symbol ??0ContainerWeakRef@@QEAA@XZ
+     * @hash   -242574778
      */
     MCAPI ContainerWeakRef();
     /**
      * @symbol ??0ContainerWeakRef@@QEAA@AEBVBlockPos@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
+     * @hash   -1346243307
      */
     MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??0ContainerWeakRef@@QEAA@AEBUActorUniqueID@@W4ActorContainerType@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
+     * @hash   1191282798
      */
     MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??BContainerWeakRef@@QEBA_NXZ
+     * @hash   -598936660
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??1ContainerWeakRef@@QEAA@XZ
+     * @hash   233191684
      */
     MCAPI ~ContainerWeakRef();
 

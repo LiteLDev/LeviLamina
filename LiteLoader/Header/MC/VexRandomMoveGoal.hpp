@@ -31,49 +31,52 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1138955326
      */
     virtual ~VexRandomMoveGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@VexRandomMoveGoal@@UEAA_NXZ
+     * @hash   -945386256
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@VexRandomMoveGoal@@UEAA_NXZ
+     * @hash   1107273854
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@VexRandomMoveGoal@@UEAAXXZ
+     * @hash   -171786300
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@VexRandomMoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   967010368
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEXRANDOMMOVEGOAL
-#endif
     /**
      * @symbol ??0VexRandomMoveGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1843892429
      */
     MCAPI VexRandomMoveGoal(class Mob &);
 

@@ -32,149 +32,179 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1842135051
      */
     virtual ~RakWebSocket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
+     * @hash   -1400882468
      */
     virtual enum WSConnectionResult connect(std::string const &, std::vector<std::string> const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1821654621
      */
     virtual enum WSConnectionResult connect(std::string const &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?isReady@RakWebSocket@@UEBA_NXZ
+     * @hash   -1039934714
      */
     virtual bool isReady() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?setOnMessageReceivedHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXAEBVRakWebSocketDataFrame@@@Z@std@@@Z
+     * @hash   652516241
      */
     virtual void setOnMessageReceivedHandler(class std::function<void (class RakWebSocketDataFrame const &)> const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?setOnCloseHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXW4CloseStatusCode@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
+     * @hash   1870156814
      */
     virtual void setOnCloseHandler(class std::function<void (enum CloseStatusCode, std::string const &)> const &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?setOnConnectedHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
+     * @hash   1864298579
      */
     virtual void setOnConnectedHandler(class std::function<void (std::string const &)> const &);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?tick@RakWebSocket@@UEAAXXZ
+     * @hash   862084841
      */
     virtual void tick();
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?_updateState@RakWebSocketClient@@MEAAXXZ
+     * @hash   -400294103
      */
     virtual void _updateState() = 0;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?_genMaskingKey@RakWebSocketClient@@MEBAIXZ
+     * @hash   1983950249
      */
     virtual unsigned int _genMaskingKey() const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKET
-#endif
     /**
      * @symbol ??0RakWebSocket@@QEAA@V?$unique_ptr@VTcpProxy@@U?$default_delete@VTcpProxy@@@std@@@std@@_N@Z
+     * @hash   -2056863055
      */
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
     /**
      * @symbol ?close@RakWebSocket@@QEAAX_N0@Z
+     * @hash   1916478014
      */
     MCAPI void close(bool, bool);
     /**
      * @symbol ?getUri@RakWebSocket@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -308282638
      */
     MCAPI std::string getUri() const;
     /**
      * @symbol ?isDisconnected@RakWebSocket@@QEBA_NXZ
+     * @hash   716829970
      */
     MCAPI bool isDisconnected() const;
     /**
      * @symbol ?send@RakWebSocket@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1903220057
      */
     MCAPI bool send(std::string const &);
     /**
      * @symbol ?sendBinary@RakWebSocket@@QEAA_NPEBE_K@Z
+     * @hash   1625281294
      */
     MCAPI bool sendBinary(unsigned char const *, unsigned __int64);
 
 //protected:
     /**
      * @symbol ?_close@RakWebSocket@@IEAAXW4CloseStatusCode@@@Z
+     * @hash   -686874062
      */
     MCAPI void _close(enum CloseStatusCode);
     /**
      * @symbol ?_createWebSocketKey@RakWebSocket@@IEAAXXZ
+     * @hash   -1303230053
      */
     MCAPI void _createWebSocketKey();
     /**
      * @symbol ?_fail@RakWebSocket@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CloseStatusCode@@@Z
+     * @hash   -49698132
      */
     MCAPI void _fail(std::string const &, enum CloseStatusCode);
     /**
      * @symbol ?_generateBase64SHA1Key@RakWebSocket@@IEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     * @hash   -1459243903
      */
     MCAPI std::string _generateBase64SHA1Key(std::string const &);
     /**
      * @symbol ?_processClosingFrames@RakWebSocket@@IEAAXAEAVBitStream@RakNet@@@Z
+     * @hash   703501597
      */
     MCAPI void _processClosingFrames(class RakNet::BitStream &);
     /**
      * @symbol ?_processClosingHandshake@RakWebSocket@@IEAAX_N@Z
+     * @hash   1418830618
      */
     MCAPI void _processClosingHandshake(bool);
     /**
      * @symbol ?_processDataFrames@RakWebSocket@@IEAAXAEAVBitStream@RakNet@@@Z
+     * @hash   -1598704184
      */
     MCAPI void _processDataFrames(class RakNet::BitStream &);
     /**
      * @symbol ?_processOpenHandshakePackets@RakWebSocket@@IEAAXAEAVBitStream@RakNet@@@Z
+     * @hash   -1554985958
      */
     MCAPI void _processOpenHandshakePackets(class RakNet::BitStream &);
     /**
      * @symbol ?_processPacket@RakWebSocket@@IEAA_NAEBV?$function@$$A6AXAEAVBitStream@RakNet@@@Z@std@@_N@Z
+     * @hash   -707595561
      */
     MCAPI bool _processPacket(class std::function<void (class RakNet::BitStream &)> const &, bool);
     /**
      * @symbol ?_reset@RakWebSocket@@IEAAXXZ
+     * @hash   848220600
      */
     MCAPI void _reset();
     /**
      * @symbol ?_sendControlFrame@RakWebSocket@@IEAA_NPEBE_KW4OpCode@@@Z
+     * @hash   -1845371611
      */
     MCAPI bool _sendControlFrame(unsigned char const *, unsigned __int64, enum OpCode);
     /**
      * @symbol ?_sendDataFrame@RakWebSocket@@IEAA_NPEBEIW4OpCode@@_N@Z
+     * @hash   -674183534
      */
     MCAPI bool _sendDataFrame(unsigned char const *, unsigned int, enum OpCode, bool);
     /**
      * @symbol ?_sendNonControlFrame@RakWebSocket@@IEAA_NPEBE_KW4OpCode@@@Z
+     * @hash   197347510
      */
     MCAPI bool _sendNonControlFrame(unsigned char const *, unsigned __int64, enum OpCode);
     /**
      * @symbol ?_splitWebSocketURI@RakWebSocket@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@11@Z
+     * @hash   1824514027
      */
     MCAPI void _splitWebSocketURI(std::string const &, std::string &, std::string &, std::string &);
     /**
      * @symbol ?_subProcessHttpResponse@RakWebSocket@@IEAAXAEAVBitStream@RakNet@@@Z
+     * @hash   1518409841
      */
     MCAPI void _subProcessHttpResponse(class RakNet::BitStream &);
     /**
      * @symbol ?_validateFields@RakWebSocket@@IEAAXXZ
+     * @hash   -928232138
      */
     MCAPI void _validateFields();
     /**
      * @symbol ?_validateWebSocketURI@RakWebSocket@@IEAA_NXZ
+     * @hash   1838835500
      */
     MCAPI bool _validateWebSocketURI();
 

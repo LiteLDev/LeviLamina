@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGEABLECOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@AgeableComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -1434088664
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getAge@AgeableComponent@@QEBAHXZ
+     * @hash   -1039183752
      */
     MCAPI int getAge() const;
     /**
      * @symbol ?getInteraction@AgeableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   786832245
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?readAdditionalSaveData@AgeableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1688188210
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setAge@AgeableComponent@@QEAAXH@Z
+     * @hash   -1338034186
      */
     MCAPI void setAge(int);
 

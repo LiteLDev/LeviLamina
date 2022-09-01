@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTROLLEDBYPLAYERDEFINITION
-#endif
     /**
      * @symbol ??0ControlledByPlayerDefinition@@QEAA@XZ
+     * @hash   962588725
      */
     MCAPI ControlledByPlayerDefinition();
     /**
      * @symbol ?initialize@ControlledByPlayerDefinition@@QEAAXAEAVEntityContext@@AEAVControlledByPlayerGoal@@@Z
+     * @hash   241654319
      */
     MCAPI void initialize(class EntityContext &, class ControlledByPlayerGoal &);
     /**
      * @symbol ?buildSchema@ControlledByPlayerDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VControlledByPlayerDefinition@@@JsonUtil@@@3@@Z
+     * @hash   412866319
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ControlledByPlayerDefinition>> &);
 

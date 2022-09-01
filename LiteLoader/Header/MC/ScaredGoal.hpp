@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   981796445
      */
     virtual ~ScaredGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@ScaredGoal@@UEAA_NXZ
+     * @hash   -1951803075
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@ScaredGoal@@UEAA_NXZ
+     * @hash   -1478933205
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@ScaredGoal@@UEAAXXZ
+     * @hash   -1009510090
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@ScaredGoal@@UEAAXXZ
+     * @hash   -695467802
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@ScaredGoal@@UEAAXXZ
+     * @hash   -1214859103
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@ScaredGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   53117763
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCAREDGOAL
-#endif
     /**
      * @symbol ??0ScaredGoal@@QEAA@AEAVMob@@H@Z
+     * @hash   1885846297
      */
     MCAPI ScaredGoal(class Mob &, int);
 

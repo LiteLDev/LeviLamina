@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGERRESULT
-#endif
     /**
      * @symbol ?getOrCreatePluginResults@ScriptPluginManagerResult@@QEAAAEAVScriptPluginResult@@AEBUModuleDescriptor@Scripting@@@Z
+     * @hash   1573090451
      */
     MCAPI class ScriptPluginResult & getOrCreatePluginResults(struct Scripting::ModuleDescriptor const &);
     /**
      * @symbol ?writeToContentLog@ScriptPluginManagerResult@@QEBAXXZ
+     * @hash   1781669565
      */
     MCAPI void writeToContentLog() const;
     /**
      * @symbol ??1ScriptPluginManagerResult@@QEAA@XZ
+     * @hash   -1140749224
      */
     MCAPI ~ScriptPluginManagerResult();
 

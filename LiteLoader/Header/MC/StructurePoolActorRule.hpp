@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLACTORRULE
-#endif
     /**
      * @symbol ??0StructurePoolActorRule@@QEAA@$$QEAV?$unique_ptr@VIStructurePoolActorPredicate@@U?$default_delete@VIStructurePoolActorPredicate@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@2@@Z
+     * @hash   -2053150809
      */
     MCAPI StructurePoolActorRule(std::unique_ptr<class IStructurePoolActorPredicate> &&, std::string);
     /**
      * @symbol ?processRule@StructurePoolActorRule@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
+     * @hash   1799080038
      */
     MCAPI bool processRule(std::string const &, std::string &) const;
 

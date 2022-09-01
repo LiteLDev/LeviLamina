@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1373315289
      */
     virtual ~GetChunksCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@GetChunksCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   2060294740
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETCHUNKSCOMMAND
-#endif
     /**
      * @symbol ?setup@GetChunksCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   778514172
      */
     MCAPI static void setup(class CommandRegistry &);
 

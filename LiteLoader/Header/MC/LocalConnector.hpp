@@ -33,116 +33,123 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -712815892
      */
     virtual ~LocalConnector();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -213563503
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getLocalIp@LocalConnector@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1621305003
      */
     virtual std::string getLocalIp();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -211716461
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1369989580
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getConnectedGameInfo@LocalConnector@@UEBAAEBVGameConnectionInfo@Social@@XZ
+     * @hash   -265835141
      */
     virtual class Social::GameConnectionInfo const & getConnectedGameInfo() const;
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?getNatPunchInfo@LocalConnector@@UEBA?AUNatPunchInfo@Connector@@XZ
+     * @hash   -494642231
      */
     virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOCALCONNECTOR
     /**
-     * @vtable -1
      * @symbol ?addConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
+     * @hash   -1156153133
      */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
-     * @vtable -1
      * @symbol ?getIPv4Port@LocalConnector@@UEBAGXZ
+     * @hash   -1083632077
      */
     MCVAPI unsigned short getIPv4Port() const;
     /**
-     * @vtable -1
      * @symbol ?getIPv6Port@LocalConnector@@UEBAGXZ
+     * @hash   1005261941
      */
     MCVAPI unsigned short getIPv6Port() const;
     /**
-     * @vtable -1
      * @symbol ?getLocalIps@LocalConnector@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     * @hash   1330635610
      */
     MCVAPI std::vector<std::string> getLocalIps() const;
     /**
-     * @vtable -1
      * @symbol ?getPort@LocalConnector@@UEBAGXZ
+     * @hash   1591041966
      */
     MCVAPI unsigned short getPort() const;
     /**
-     * @vtable -1
      * @symbol ?getRefinedLocalIps@LocalConnector@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
+     * @hash   -1785220323
      */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
     /**
-     * @vtable -1
      * @symbol ?isIPv4Supported@LocalConnector@@UEBA_NXZ
+     * @hash   -1309134219
      */
     MCVAPI bool isIPv4Supported() const;
     /**
-     * @vtable -1
      * @symbol ?isIPv6Supported@LocalConnector@@UEBA_NXZ
+     * @hash   736343539
      */
     MCVAPI bool isIPv6Supported() const;
     /**
-     * @vtable -1
      * @symbol ?removeConnectionStateListener@LocalConnector@@UEAAXPEAVConnectionStateListener@Connector@@@Z
+     * @hash   -396396970
      */
     MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
-     * @vtable -1
      * @symbol ?setupNatPunch@LocalConnector@@UEAAX_N@Z
+     * @hash   -1284488131
      */
     MCVAPI void setupNatPunch(bool);
     /**
-     * @vtable -1
      * @symbol ?startNatPunchingClient@LocalConnector@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+     * @hash   -30115548
      */
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
 #endif
     /**
      * @symbol ??0LocalConnector@@QEAA@AEAVConnectionCallbacks@0@AEBVNetworkIdentifier@@@Z
+     * @hash   -1187048856
      */
     MCAPI LocalConnector(class LocalConnector::ConnectionCallbacks &, class NetworkIdentifier const &);
     /**
      * @symbol ?disconnect@LocalConnector@@QEAAXXZ
+     * @hash   -636621163
      */
     MCAPI void disconnect();
     /**
      * @symbol ?host@LocalConnector@@QEAAXAEBVNetworkIdentifier@@@Z
+     * @hash   -1362634318
      */
     MCAPI void host(class NetworkIdentifier const &);
     /**
      * @symbol ?runEvents@LocalConnector@@QEAAXXZ
+     * @hash   1103782083
      */
     MCAPI void runEvents();
 

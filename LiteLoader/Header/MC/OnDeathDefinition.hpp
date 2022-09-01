@@ -30,10 +30,9 @@ public:
     OnDeathDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONDEATHDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@OnDeathDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnDeathDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   703858718
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnDeathDefinition>> &);
 

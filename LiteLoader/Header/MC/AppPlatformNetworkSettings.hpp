@@ -28,19 +28,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1688589465
      */
     virtual ~AppPlatformNetworkSettings();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?requiresNetworkOutageMessaging@AppPlatformNetworkSettings@@UEBA_NXZ
+     * @hash   -606177170
      */
     virtual bool requiresNetworkOutageMessaging() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMNETWORKSETTINGS
-#endif
     /**
      * @symbol ??0AppPlatformNetworkSettings@@QEAA@XZ
+     * @hash   1741322073
      */
     MCAPI AppPlatformNetworkSettings();
 

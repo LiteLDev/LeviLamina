@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATRIX
-#endif
     /**
      * @symbol ??0Matrix@@QEAA@AEBU?$qua@M$0A@@glm@@@Z
+     * @hash   -486160027
      */
     MCAPI Matrix(struct glm::qua<float, 0> const &);
     /**
      * @symbol ?transform3@Matrix@@QEBAXAEAU?$vec@$02M$0A@@glm@@AEAM@Z
+     * @hash   -872829992
      */
     MCAPI void transform3(struct glm::vec<3, float, 0> &, float &) const;
 

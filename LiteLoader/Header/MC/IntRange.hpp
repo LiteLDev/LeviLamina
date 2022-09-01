@@ -30,30 +30,34 @@ public:
     IntRange() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTRANGE
-#endif
     /**
      * @symbol ??0IntRange@@QEAA@H@Z
+     * @hash   -339346975
      */
     MCAPI IntRange(int);
     /**
      * @symbol ??0IntRange@@QEAA@HH@Z
+     * @hash   1963984850
      */
     MCAPI IntRange(int, int);
     /**
      * @symbol ?getValue@IntRange@@QEBAHAEAVRandom@@@Z
+     * @hash   -1200829659
      */
     MCAPI int getValue(class Random &) const;
     /**
      * @symbol ?getValueInclusive@IntRange@@QEBAHAEAVRandom@@@Z
+     * @hash   -1515968409
      */
     MCAPI int getValueInclusive(class Random &) const;
     /**
      * @symbol ?isInRangeInclusive@IntRange@@QEBA_NH@Z
+     * @hash   1596431211
      */
     MCAPI bool isInRangeInclusive(int) const;
     /**
      * @symbol ?parseJson@IntRange@@QEAA_NVValue@Json@@HH@Z
+     * @hash   -523310201
      */
     MCAPI bool parseJson(class Json::Value, int, int);
 MCAPI static struct IntRange const ZERO;

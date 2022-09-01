@@ -32,98 +32,106 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   982061780
      */
     virtual ~ConduitBlockActor();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@ConduitBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -984843107
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?save@ConduitBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   109601196
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?tick@ConduitBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -900109738
      */
     virtual void tick(class BlockSource &);
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 18
+     * @vftbl  18
      * @symbol ?hasAlphaLayer@ConduitBlockActor@@UEBA_NXZ
+     * @hash   1027992991
      */
     virtual bool hasAlphaLayer() const;
     /**
-     * @vtable 28
-     * @symbol __unk_vfn_28
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
     /**
-     * @vtable 35
+     * @vftbl  35
      * @symbol ?_getUpdatePacket@ConduitBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   825972831
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vtable 36
+     * @vftbl  36
      * @symbol ?_onUpdatePacket@ConduitBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   -62594557
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDUITBLOCKACTOR
-#endif
     /**
      * @symbol ??0ConduitBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   218548441
      */
     MCAPI ConduitBlockActor(class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_animateTick@ConduitBlockActor@@AEBAXAEAVBlockSource@@@Z
+     * @hash   -1627728642
      */
     MCAPI void _animateTick(class BlockSource &) const;
     /**
      * @symbol ?_checkShape@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
+     * @hash   -2109219178
      */
     MCAPI void _checkShape(class BlockSource &);
     /**
      * @symbol ?_updateTarget@ConduitBlockActor@@AEAAXAEAVBlockSource@@@Z
+     * @hash   -893881755
      */
     MCAPI void _updateTarget(class BlockSource &);
 

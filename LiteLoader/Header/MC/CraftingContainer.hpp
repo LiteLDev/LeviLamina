@@ -32,68 +32,76 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1258889939
      */
     virtual ~CraftingContainer();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   -277533736
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1037565085
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
+     * @hash   -30348366
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?getContainerSize@CraftingContainer@@UEBAHXZ
+     * @hash   -1521221656
      */
     virtual int getContainerSize() const;
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?getMaxStackSize@CraftingContainer@@UEBAHXZ
+     * @hash   223005591
      */
     virtual int getMaxStackSize() const;
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1064196353
      */
     virtual void startOpen(class Player &);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1220708449
      */
     virtual void stopOpen(class Player &);
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
     /**
-     * @vtable 24
+     * @vftbl  24
      * @symbol ?setContainerChanged@CraftingContainer@@UEAAXH@Z
+     * @hash   -509296430
      */
     virtual void setContainerChanged(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINER
-#endif
     /**
      * @symbol ??0CraftingContainer@@QEAA@HH@Z
+     * @hash   772203043
      */
     MCAPI CraftingContainer(int, int);
     /**
      * @symbol ?getItem@CraftingContainer@@QEBAAEBVItemStack@@HH@Z
+     * @hash   -464070110
      */
     MCAPI class ItemStack const & getItem(int, int) const;
 

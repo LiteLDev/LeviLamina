@@ -32,99 +32,106 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXBLOCKACTOR
     /**
-     * @vtable -1
      * @symbol ?_detectEntityObstruction@ShulkerBoxBlockActor@@MEBA_NAEAVBlockSource@@@Z
+     * @hash   -1604034659
      */
     MCVAPI bool _detectEntityObstruction(class BlockSource &) const;
     /**
-     * @vtable -1
      * @symbol ?_getUpdatePacket@ShulkerBoxBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   657364288
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?_onUpdatePacket@ShulkerBoxBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   -1535072574
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?canPushInItem@ShulkerBoxBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     * @hash   -1925557144
      */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
     /**
-     * @vtable -1
      * @symbol ?getMaxStackSize@ShulkerBoxBlockActor@@UEBAHXZ
+     * @hash   -1727482881
      */
     MCVAPI int getMaxStackSize() const;
     /**
-     * @vtable -1
      * @symbol ?getName@ShulkerBoxBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   2077748532
      */
     MCVAPI std::string getName() const;
     /**
-     * @vtable -1
      * @symbol ?getObstructionAABB@ShulkerBoxBlockActor@@MEBA?AVAABB@@XZ
+     * @hash   1904832875
      */
     MCVAPI class AABB getObstructionAABB() const;
     /**
-     * @vtable -1
      * @symbol ?load@ShulkerBoxBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -977377730
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable -1
      * @symbol ?onPlace@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   1658580732
      */
     MCVAPI void onPlace(class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?playCloseSound@ShulkerBoxBlockActor@@MEAAXAEAVBlockSource@@@Z
+     * @hash   141081696
      */
     MCVAPI void playCloseSound(class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?playOpenSound@ShulkerBoxBlockActor@@MEAAXAEAVBlockSource@@@Z
+     * @hash   -436145046
      */
     MCVAPI void playOpenSound(class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?save@ShulkerBoxBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -1708269827
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
-     * @vtable -1
      * @symbol ?tick@ShulkerBoxBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -1744691801
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0ShulkerBoxBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
+     * @hash   743728865
      */
     MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
     /**
      * @symbol ?setFacingDir@ShulkerBoxBlockActor@@QEAAXE@Z
+     * @hash   75680647
      */
     MCAPI void setFacingDir(unsigned char);
     /**
      * @symbol ?itemAllowed@ShulkerBoxBlockActor@@SA_NAEBVItemStackBase@@@Z
+     * @hash   -493700793
      */
     MCAPI static bool itemAllowed(class ItemStackBase const &);
     /**
      * @symbol ?itemAllowedInSlot@ShulkerBoxBlockActor@@SA_NHAEBVItemStackBase@@H@Z
+     * @hash   -242055851
      */
     MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const &, int);
 
 //private:
     /**
      * @symbol ?_calculateBB@ShulkerBoxBlockActor@@AEAAXXZ
+     * @hash   242262524
      */
     MCAPI void _calculateBB();
     /**
      * @symbol ?_calculateMovementWithCollisions@ShulkerBoxBlockActor@@AEBA?AVVec3@@AEAVBlockSource@@PEAVActor@@@Z
+     * @hash   5412282
      */
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
     /**
      * @symbol ?_moveCollidedEntities@ShulkerBoxBlockActor@@AEBAXAEAVBlockSource@@@Z
+     * @hash   537962087
      */
     MCAPI void _moveCollidedEntities(class BlockSource &) const;
 

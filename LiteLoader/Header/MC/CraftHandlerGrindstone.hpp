@@ -32,42 +32,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1939112389
      */
     virtual ~CraftHandlerGrindstone();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandlerGrindstone@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+     * @hash   576405359
      */
     virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?_postCraftRequest@CraftHandlerGrindstone@@EEAAX_N@Z
+     * @hash   -745721312
      */
     virtual void _postCraftRequest(bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERGRINDSTONE
-#endif
     /**
      * @symbol ??0CraftHandlerGrindstone@@QEAA@AEAVPlayer@@AEAVItemStackRequestActionCraftHandler@@@Z
+     * @hash   -312109031
      */
     MCAPI CraftHandlerGrindstone(class Player &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**
      * @symbol ?_createResultItem@CraftHandlerGrindstone@@AEAA?AVItemStack@@AEBV2@0@Z
+     * @hash   876492976
      */
     MCAPI class ItemStack _createResultItem(class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ?_getExperienceFromItem@CraftHandlerGrindstone@@AEBAHAEBVItemStack@@@Z
+     * @hash   1761714863
      */
     MCAPI int _getExperienceFromItem(class ItemStack const &) const;
     /**
      * @symbol ?_getResultItemWithNoEnchants@CraftHandlerGrindstone@@AEAA?AVItemStack@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEA_N@Z
+     * @hash   56540986
      */
     MCAPI class ItemStack _getResultItemWithNoEnchants(std::vector<class ItemStack> const &, bool &);
     /**
      * @symbol ?_resolveNetIdAndValidate@CraftHandlerGrindstone@@AEAA_NW4ContainerEnumName@@EAEBUItemStackNetIdVariant@@@Z
+     * @hash   -1114901475
      */
     MCAPI bool _resolveNetIdAndValidate(enum ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const &);
 

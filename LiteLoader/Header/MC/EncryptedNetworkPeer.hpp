@@ -32,33 +32,36 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   241786518
      */
     virtual ~EncryptedNetworkPeer();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?sendPacket@EncryptedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
+     * @hash   -1782334469
      */
     virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?receivePacket@EncryptedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+     * @hash   -438445829
      */
     virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getNetworkStatus@EncryptedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+     * @hash   1013726018
      */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCRYPTEDNETWORKPEER
-#endif
     /**
      * @symbol ??0EncryptedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
+     * @hash   697778230
      */
     MCAPI EncryptedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
     /**
      * @symbol ?enableEncryption@EncryptedNetworkPeer@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -763081332
      */
     MCAPI void enableEncryption(std::string const &);
 

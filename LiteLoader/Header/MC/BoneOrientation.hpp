@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEORIENTATION
-#endif
     /**
      * @symbol ?applyShortestPathBlend@BoneOrientation@@QEAAXAEBV1@0MM@Z
+     * @hash   -366913020
      */
     MCAPI void applyShortestPathBlend(class BoneOrientation const &, class BoneOrientation const &, float, float);
     /**
      * @symbol ?getName@BoneOrientation@@QEBAAEBVHashedString@@XZ
+     * @hash   -1377689962
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?getPivot@BoneOrientation@@QEAAAEAVVec3@@XZ
+     * @hash   -1047200984
      */
     MCAPI class Vec3 & getPivot();
     /**
      * @symbol ?getPivot@BoneOrientation@@QEBAAEBVVec3@@XZ
+     * @hash   -1835639322
      */
     MCAPI class Vec3 const & getPivot() const;
     /**
      * @symbol ?setDefaultPose@BoneOrientation@@QEAAXXZ
+     * @hash   421330403
      */
     MCAPI void setDefaultPose();
 

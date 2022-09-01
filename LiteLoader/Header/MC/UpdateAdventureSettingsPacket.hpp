@@ -29,38 +29,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -814754176
      */
     virtual ~UpdateAdventureSettingsPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@UpdateAdventureSettingsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1133328444
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@UpdateAdventureSettingsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -692456727
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@UpdateAdventureSettingsPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1581248702
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@UpdateAdventureSettingsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1605647970
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEADVENTURESETTINGSPACKET
-#endif
     /**
      * @symbol ??0UpdateAdventureSettingsPacket@@QEAA@XZ
+     * @hash   354192286
      */
     MCAPI UpdateAdventureSettingsPacket();
     /**
      * @symbol ??0UpdateAdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@@Z
+     * @hash   -1531625869
      */
     MCAPI UpdateAdventureSettingsPacket(struct AdventureSettings const &);
 

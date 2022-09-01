@@ -24,26 +24,32 @@ namespace KnockbackRules {
 #undef AFTER_EXTRA
     /**
      * @symbol ?doKnockbackAttack@KnockbackRules@@YAXAEAVMob@@0AEBVVec2@@MM@Z
+     * @hash   275095758
      */
     MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec2 const &, float, float);
     /**
      * @symbol ?doKnockbackAttack@KnockbackRules@@YAXAEAVMob@@0AEBVVec3@@MM@Z
+     * @hash   1507448796
      */
     MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec3 const &, float, float);
     /**
      * @symbol ?getScaledKnockbackForce@KnockbackRules@@YAMAEBVActor@@M@Z
+     * @hash   504284149
      */
     MCAPI float getScaledKnockbackForce(class Actor const &, float);
     /**
      * @symbol ?isKnockbackResistant@KnockbackRules@@YA_NAEBVActor@@@Z
+     * @hash   103946464
      */
     MCAPI bool isKnockbackResistant(class Actor const &);
     /**
      * @symbol ?shouldApplyKnockback@KnockbackRules@@YA_NAEBVMob@@@Z
+     * @hash   -1134097966
      */
     MCAPI bool shouldApplyKnockback(class Mob const &);
     /**
      * @symbol ?useLegacyKnockback@KnockbackRules@@YA_NAEBVLevel@@@Z
+     * @hash   -331412780
      */
     MCAPI bool useLegacyKnockback(class Level const &);
 

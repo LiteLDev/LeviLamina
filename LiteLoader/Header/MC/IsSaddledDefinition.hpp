@@ -30,18 +30,19 @@ public:
     IsSaddledDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSADDLEDDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsSaddledDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1240374834
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsSaddledDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   1313340700
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsSaddledDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsSaddledDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -676456198
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsSaddledDefinition>> &);
 

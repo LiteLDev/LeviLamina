@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONGROUPPARSEMETADATA
-#endif
     /**
      * @symbol ??1ActorAnimationGroupParseMetaData@@QEAA@XZ
+     * @hash   150703164
      */
     MCAPI ~ActorAnimationGroupParseMetaData();
 

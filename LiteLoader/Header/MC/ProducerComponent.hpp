@@ -31,63 +31,70 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1838042151
      */
     virtual ~ProducerComponent();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?setStrength@ProducerComponent@@UEAAXH@Z
+     * @hash   -976189104
      */
     virtual void setStrength(int);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?canStopPower@ProducerComponent@@UEBA_NXZ
+     * @hash   -1006299440
      */
     virtual bool canStopPower() const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setStopPower@ProducerComponent@@UEAAX_N@Z
+     * @hash   -1661878305
      */
     virtual void setStopPower(bool);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?allowConnection@ProducerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   -637195381
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?evaluate@ProducerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   -547470243
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@ProducerComponent@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   820915259
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
     /**
-     * @vtable 24
+     * @vftbl  24
      * @symbol ?getPoweroutDirection@RepeaterCapacitor@@UEBAEXZ
+     * @hash   284835118
      */
     virtual unsigned char getPoweroutDirection() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRODUCERCOMPONENT
-#endif
     /**
      * @symbol ??0ProducerComponent@@QEAA@XZ
+     * @hash   837940999
      */
     MCAPI ProducerComponent();
     /**
      * @symbol ?allowAttachments@ProducerComponent@@QEAAX_N@Z
+     * @hash   -594883742
      */
     MCAPI void allowAttachments(bool);
 

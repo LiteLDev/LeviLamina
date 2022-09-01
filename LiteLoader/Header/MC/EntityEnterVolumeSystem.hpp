@@ -32,30 +32,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   390418060
      */
     virtual ~EntityEnterVolumeSystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@EntityEnterVolumeSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -1636173442
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYENTERVOLUMESYSTEM
-#endif
     /**
      * @symbol ??0EntityEnterVolumeSystem@@QEAA@V?$not_null@V?$NonOwnerPointer@$$CBVILevel@@@Bedrock@@@gsl@@@Z
+     * @hash   1307503227
      */
     MCAPI EntityEnterVolumeSystem(class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>);
 
 //private:
     /**
      * @symbol ?_tick@EntityEnterVolumeSystem@@AEBAXAEAVEntityContext@@AEAVVolumeBoundsComponent@@@Z
+     * @hash   -736991033
      */
     MCAPI void _tick(class EntityContext &, class VolumeBoundsComponent &) const;
 

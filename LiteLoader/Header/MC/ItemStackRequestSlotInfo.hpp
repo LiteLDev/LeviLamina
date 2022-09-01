@@ -27,14 +27,14 @@ public:
     ItemStackRequestSlotInfo() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTSLOTINFO
-#endif
     /**
      * @symbol ?matchesContainerAndSlot@ItemStackRequestSlotInfo@@QEBA_NAEBU1@@Z
+     * @hash   -1322921046
      */
     MCAPI bool matchesContainerAndSlot(struct ItemStackRequestSlotInfo const &) const;
     /**
      * @symbol ??1ItemStackRequestSlotInfo@@QEAA@XZ
+     * @hash   1766036336
      */
     MCAPI ~ItemStackRequestSlotInfo();
 

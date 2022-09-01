@@ -29,8 +29,6 @@ public:
     FogDistanceSetting() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGDISTANCESETTING
-#endif
 MCAPI static struct FogDistanceSetting const ZERO_SETTING;
 
 };

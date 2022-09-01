@@ -29,18 +29,19 @@ public:
     Bounds() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOUNDS
-#endif
     /**
      * @symbol ??0Bounds@@QEAA@AEBVChunkPos@@0@Z
+     * @hash   -2110578826
      */
     MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
     /**
      * @symbol ??0Bounds@@QEAA@AEBVBlockPos@@0HW4Option@0@@Z
+     * @hash   588572675
      */
     MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum Bounds::Option);
     /**
      * @symbol ??0Bounds@@QEAA@AEBVBlockPos@@HHFF@Z
+     * @hash   685757544
      */
     MCAPI Bounds(class BlockPos const &, int, int, short, short);
 

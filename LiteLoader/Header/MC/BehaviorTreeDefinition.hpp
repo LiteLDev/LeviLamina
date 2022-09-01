@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEDEFINITION
-#endif
     /**
      * @symbol ?getRoot@BehaviorTreeDefinition@@QEBAPEBVBehaviorDefinition@@XZ
+     * @hash   -2105675721
      */
     MCAPI class BehaviorDefinition const * getRoot() const;
 

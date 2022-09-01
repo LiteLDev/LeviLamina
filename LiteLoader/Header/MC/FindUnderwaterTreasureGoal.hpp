@@ -31,49 +31,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -329805020
      */
     virtual ~FindUnderwaterTreasureGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@FindUnderwaterTreasureGoal@@UEAA_NXZ
+     * @hash   -1283205738
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FindUnderwaterTreasureGoal@@UEAA_NXZ
+     * @hash   -82626140
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@FindUnderwaterTreasureGoal@@UEAA_NXZ
+     * @hash   -775327250
      */
     virtual bool canBeInterrupted();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@FindUnderwaterTreasureGoal@@UEAAXXZ
+     * @hash   -783449057
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@FindUnderwaterTreasureGoal@@UEAAXXZ
+     * @hash   -1810906993
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@FindUnderwaterTreasureGoal@@UEAAXXZ
+     * @hash   -555223974
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FindUnderwaterTreasureGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -301540694
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDUNDERWATERTREASUREGOAL
-#endif
     /**
      * @symbol ??0FindUnderwaterTreasureGoal@@QEAA@AEAVMob@@MHH@Z
+     * @hash   -1094447122
      */
     MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int, int);
 

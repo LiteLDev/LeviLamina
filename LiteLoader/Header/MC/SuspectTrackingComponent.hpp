@@ -28,22 +28,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPECTTRACKINGCOMPONENT
-#endif
     /**
      * @symbol ?clearSuspiciousPos@SuspectTrackingComponent@@QEAAXXZ
+     * @hash   -45731371
      */
     MCAPI void clearSuspiciousPos();
     /**
      * @symbol ?getSuspiciousPos@SuspectTrackingComponent@@QEBA?AV?$optional@VBlockPos@@@std@@XZ
+     * @hash   -1446668987
      */
     MCAPI class std::optional<class BlockPos> getSuspiciousPos() const;
     /**
      * @symbol ?getTicksSinceLastSuspect@SuspectTrackingComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
+     * @hash   1569356342
      */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const &) const;
     /**
      * @symbol ?setSuspiciousPos@SuspectTrackingComponent@@QEAAXV?$optional@VBlockPos@@@std@@UTick@@@Z
+     * @hash   1829672860
      */
     MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick);
 

@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1836572826
      */
     virtual ~CompoundCreatorContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@CompoundCreatorContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   1393891747
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@CompoundCreatorContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   2142968156
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@CompoundCreatorContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   -2101440555
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setData@CompoundCreatorContainerManagerModel@@UEAAXHH@Z
+     * @hash   -47238345
      */
     virtual void setData(int, int);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@CompoundCreatorContainerManagerModel@@UEAAXXZ
+     * @hash   404082477
      */
     virtual void broadcastChanges();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?isValid@CompoundCreatorContainerManagerModel@@UEAA_NM@Z
+     * @hash   1013941491
      */
     virtual bool isValid(float);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@CompoundCreatorContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   323284522
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0CompoundCreatorContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -1352838823
      */
     MCAPI CompoundCreatorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 

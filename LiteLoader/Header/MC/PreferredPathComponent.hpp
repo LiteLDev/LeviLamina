@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHCOMPONENT
-#endif
     /**
      * @symbol ?getPreferredPath@PreferredPathComponent@@QEAAAEBUPreferredPathDescription@@AEAVActor@@@Z
+     * @hash   1124802913
      */
     MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
     /**
      * @symbol ?initFromDefinition@PreferredPathComponent@@QEAAXAEAVActor@@@Z
+     * @hash   589275450
      */
     MCAPI void initFromDefinition(class Actor &);
 

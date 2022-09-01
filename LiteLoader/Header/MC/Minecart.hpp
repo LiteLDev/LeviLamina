@@ -32,266 +32,294 @@ public:
 
 public:
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   1421120170
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?reloadHardcodedClient@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   2061563333
      */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   -673510979
      */
     virtual ~Minecart();
     /**
-     * @vtable 33
+     * @vftbl  33
      * @symbol ?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z
+     * @hash   -835735631
      */
     virtual float getInterpolatedBodyYaw(float) const;
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 49
+     * @vftbl  49
      * @symbol ?normalTick@Minecart@@UEAAXXZ
+     * @hash   451764552
      */
     virtual void normalTick();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 79
+     * @vftbl  79
      * @symbol ?getShadowHeightOffs@Minecart@@UEAAMXZ
+     * @hash   -1115419875
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vtable 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@Minecart@@UEBAMXZ
+     * @hash   2138043875
      */
     virtual float getShadowRadius() const;
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 95
+     * @vftbl  95
      * @symbol ?isPickable@Minecart@@UEAA_NXZ
+     * @hash   417661883
      */
     virtual bool isPickable();
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 135
+     * @vftbl  135
      * @symbol ?isInvulnerableTo@Minecart@@UEBA_NAEBVActorDamageSource@@@Z
+     * @hash   -764877999
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vtable 140
+     * @vftbl  140
      * @symbol ?onBounceStarted@Minecart@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   231816704
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 184
+     * @vftbl  184
      * @symbol ?getControllingPlayer@Minecart@@UEBA?AUActorUniqueID@@XZ
+     * @hash   -445054892
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 252
+     * @vftbl  252
      * @symbol ?kill@Minecart@@MEAAXXZ
+     * @hash   1348780859
      */
     virtual void kill();
     /**
-     * @vtable 260
+     * @vftbl  260
      * @symbol ?interpolatorTick@Minecart@@UEAAXXZ
+     * @hash   2108101720
      */
     virtual void interpolatorTick();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1899974523
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 270
+     * @vftbl  270
      * @symbol ?_hurt@Minecart@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     * @hash   500490125
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vtable 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@Minecart@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   342561997
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@Minecart@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -785783136
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
     /**
-     * @vtable 284
+     * @vftbl  284
      * @symbol ?_onSizeUpdated@Minecart@@EEAAXXZ
+     * @hash   1358479202
      */
     virtual void _onSizeUpdated();
     /**
-     * @vtable 285
-     * @symbol __unk_vfn_285
+     * @vftbl  285
+     * @hash   -1895428993
      */
     virtual void __unk_vfn_285();
     /**
-     * @vtable 286
+     * @vftbl  286
      * @symbol ?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z
+     * @hash   -1612220992
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @vtable 287
+     * @vftbl  287
      * @symbol ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
+     * @hash   1753602812
      */
     virtual enum MinecartType getType() = 0;
     /**
-     * @vtable 288
+     * @vftbl  288
      * @symbol ?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ
+     * @hash   -1977633817
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
-     * @vtable 289
-     * @symbol __unk_vfn_289
+     * @vftbl  289
+     * @hash   -1856016461
      */
     virtual void __unk_vfn_289();
     /**
-     * @vtable 290
+     * @vftbl  290
      * @symbol ?getDefaultDisplayOffset@Minecart@@UEBAHXZ
+     * @hash   -636255614
      */
     virtual int getDefaultDisplayOffset() const;
     /**
-     * @vtable 291
+     * @vftbl  291
      * @symbol ?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z
+     * @hash   -1338590663
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
-     * @vtable 292
+     * @vftbl  292
      * @symbol ?_lazyInitDisplayBlock@Minecart@@EEAAXXZ
+     * @hash   -906046236
      */
     virtual void _lazyInitDisplayBlock();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECART
     /**
-     * @vtable -1
      * @symbol ?canMakeStepSound@Minecart@@EEBA_NXZ
+     * @hash   -1332684068
      */
     MCVAPI bool canMakeStepSound() const;
     /**
-     * @vtable -1
      * @symbol ?getDefaultDisplayData@Minecart@@UEBAHXZ
+     * @hash   -1686623959
      */
     MCVAPI int getDefaultDisplayData() const;
 #endif
     /**
      * @symbol ??0Minecart@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   1710010591
      */
     MCAPI Minecart(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?dropMinecartWithContentsAndRemove@Minecart@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@_N@Z
+     * @hash   383727047
      */
     MCAPI void dropMinecartWithContentsAndRemove(class gsl::basic_string_span<char const, -1>, bool);
     /**
      * @symbol ?postNormalTick@Minecart@@QEAAXAEBVBlockPos@@@Z
+     * @hash   921326730
      */
     MCAPI void postNormalTick(class BlockPos const &);
     /**
      * @symbol ?setCustomDisplay@Minecart@@QEAAX_N@Z
+     * @hash   -1537015706
      */
     MCAPI void setCustomDisplay(bool);
     /**
      * @symbol ?setDisplayBlock@Minecart@@QEAAXAEBVBlock@@@Z
+     * @hash   -1813836472
      */
     MCAPI void setDisplayBlock(class Block const &);
 
 //private:
     /**
      * @symbol ?_registerLoopingSounds@Minecart@@AEAAXXZ
+     * @hash   -1556830071
      */
     MCAPI void _registerLoopingSounds();
 

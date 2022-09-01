@@ -24,6 +24,7 @@ namespace VanillaBlocks {
 #undef AFTER_EXTRA
     /**
      * @symbol ?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z
+     * @hash   -521168841
      */
     MCAPI void assignBlocks(class Experiments const &);
 MCAPI extern class Block const * mAcaciaFenceGate;
@@ -645,6 +646,7 @@ MCAPI extern class Block const * mYellowCandleCake;
 MCAPI extern class Block const * mYellowFlower;
     /**
      * @symbol ?unassignBlocks@VanillaBlocks@@YAXXZ
+     * @hash   -1769265624
      */
     MCAPI void unassignBlocks();
 

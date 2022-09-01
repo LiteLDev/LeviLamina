@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCKINFO
-#endif
     /**
      * @symbol ??0JigsawBlockInfo@@QEAA@AEBVBlockPos@@PEBVBlock@@1VJigsawEditorData@@@Z
+     * @hash   1784229017
      */
     MCAPI JigsawBlockInfo(class BlockPos const &, class Block const *, class Block const *, class JigsawEditorData);
     /**
      * @symbol ??4JigsawBlockInfo@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -260410008
      */
     MCAPI class JigsawBlockInfo & operator=(class JigsawBlockInfo &&);
 

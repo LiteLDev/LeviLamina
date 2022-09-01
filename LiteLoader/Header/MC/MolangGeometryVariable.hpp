@@ -27,10 +27,9 @@ public:
     MolangGeometryVariable() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGGEOMETRYVARIABLE
-#endif
     /**
      * @symbol ??1MolangGeometryVariable@@QEAA@XZ
+     * @hash   -1204394200
      */
     MCAPI ~MolangGeometryVariable();
 

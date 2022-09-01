@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORKILLEDEVENT
-#endif
     /**
      * @symbol ??1ActorKilledEvent@@QEAA@XZ
+     * @hash   -607432462
      */
     MCAPI ~ActorKilledEvent();
 

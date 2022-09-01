@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENT
-#endif
     /**
      * @symbol ?getRadius@GameEvent@@QEBAMXZ
+     * @hash   -967452330
      */
     MCAPI float getRadius() const;
     /**
      * @symbol ?getRadiusSqrd@GameEvent@@QEBAMXZ
+     * @hash   856516422
      */
     MCAPI float getRadiusSqrd() const;
     /**
      * @symbol ?getType@GameEvent@@QEBA?BW4GameEventType@GameEventConfig@@XZ
+     * @hash   -568793866
      */
     MCAPI enum GameEventConfig::GameEventType const getType() const;
     /**
      * @symbol ?isCategory@GameEvent@@QEBA_NW4GameEventCategory@GameEventConfig@@@Z
+     * @hash   -484388705
      */
     MCAPI bool isCategory(enum GameEventConfig::GameEventCategory) const;
 

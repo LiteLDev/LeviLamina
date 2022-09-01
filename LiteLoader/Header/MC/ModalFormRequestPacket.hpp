@@ -34,38 +34,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1704183856
      */
     virtual ~ModalFormRequestPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@ModalFormRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1649374712
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@ModalFormRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1870458837
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@ModalFormRequestPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1821288046
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@ModalFormRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1263830606
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MODALFORMREQUESTPACKET
-#endif
     /**
      * @symbol ??0ModalFormRequestPacket@@QEAA@XZ
+     * @hash   1647274450
      */
     MCAPI ModalFormRequestPacket();
     /**
      * @symbol ??0ModalFormRequestPacket@@QEAA@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -709057130
      */
     MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
 

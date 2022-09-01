@@ -27,10 +27,9 @@ public:
     CommandOriginIdentity() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINIDENTITY
-#endif
     /**
      * @symbol ??1CommandOriginIdentity@@QEAA@XZ
+     * @hash   -1453919509
      */
     MCAPI ~CommandOriginIdentity();
 

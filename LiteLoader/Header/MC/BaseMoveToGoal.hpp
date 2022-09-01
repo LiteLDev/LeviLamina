@@ -31,116 +31,133 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1533750234
      */
     virtual ~BaseMoveToGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@BaseMoveToGoal@@UEAA_NXZ
+     * @hash   240072352
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@BaseMoveToGoal@@UEAA_NXZ
+     * @hash   297682558
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@BaseMoveToGoal@@UEAAXXZ
+     * @hash   -36234247
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@BaseMoveToGoal@@UEAAXXZ
+     * @hash   1218782121
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@BaseMoveToGoal@@UEAAXXZ
+     * @hash   1012869988
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@WorkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   52181067
      */
     virtual void appendDebugInfo(std::string &) const = 0;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?hasReachedTarget@BaseMoveToGoal@@UEBA_NXZ
+     * @hash   -1790098927
      */
     virtual bool hasReachedTarget() const;
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?isValidTarget@StompBlockGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -177670835
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?_nextStartTick@BaseMoveToGoal@@MEAAHXZ
+     * @hash   1247115762
      */
     virtual int _nextStartTick();
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?_canReach@BaseMoveToGoal@@MEAA_NAEBVBlockPos@@@Z
+     * @hash   2028266022
      */
     virtual bool _canReach(class BlockPos const &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?_moveToBlock@StompBlockGoal@@MEAAXXZ
+     * @hash   -1604154275
      */
     virtual void _moveToBlock() = 0;
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?_getTargetPosition@BaseMoveToGoal@@MEBA?AVVec3@@XZ
+     * @hash   -757472454
      */
     virtual class Vec3 _getTargetPosition() const;
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?_getRepathTime@BaseMoveToGoal@@MEBA_KXZ
+     * @hash   -1545835931
      */
     virtual unsigned __int64 _getRepathTime() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOVETOGOAL
-#endif
     /**
      * @symbol ??0BaseMoveToGoal@@QEAA@AEAVMob@@MMMHH@Z
+     * @hash   -1567001388
      */
     MCAPI BaseMoveToGoal(class Mob &, float, float, float, int, int);
     /**
      * @symbol ?setTargetPositionOffset@BaseMoveToGoal@@QEAAXAEBVVec3@@@Z
+     * @hash   -914956132
      */
     MCAPI void setTargetPositionOffset(class Vec3 const &);
 
 //protected:
     /**
      * @symbol ?_blockAboveTarget@BaseMoveToGoal@@IEBA?AVBlockPos@@XZ
+     * @hash   -1663621884
      */
     MCAPI class BlockPos _blockAboveTarget() const;
     /**
      * @symbol ?_checkIfStuck@BaseMoveToGoal@@IEAAXXZ
+     * @hash   142454121
      */
     MCAPI void _checkIfStuck();
     /**
      * @symbol ?_isCooldownActive@BaseMoveToGoal@@IEBA_NXZ
+     * @hash   511991014
      */
     MCAPI bool _isCooldownActive() const;
     /**
      * @symbol ?setInterval@BaseMoveToGoal@@IEAAXH@Z
+     * @hash   -193827115
      */
     MCAPI void setInterval(int);
 

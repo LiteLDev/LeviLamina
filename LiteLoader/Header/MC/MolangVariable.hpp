@@ -30,48 +30,56 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGVARIABLE
-#endif
     /**
      * @symbol ??0MolangVariable@@QEAA@W4MolangVariableIndex@@VHashedString@@UMolangScriptArg@@@Z
+     * @hash   -1442514379
      */
     MCAPI MolangVariable(enum MolangVariableIndex, class HashedString, struct MolangScriptArg);
     /**
      * @symbol ??1MolangVariable@@QEAA@XZ
+     * @hash   1684855622
      */
     MCAPI ~MolangVariable();
     /**
      * @symbol ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@AEBVHashedString@@@Z
+     * @hash   720087367
      */
     MCAPI static enum MolangVariableIndex getVariableIndex(class HashedString const &);
     /**
      * @symbol ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_K@Z
+     * @hash   329461330
      */
     MCAPI static enum MolangVariableIndex getVariableIndex(unsigned __int64);
     /**
      * @symbol ?getVariableIndex@MolangVariable@@SA?AW4MolangVariableIndex@@_KPEBD_N@Z
+     * @hash   -396537767
      */
     MCAPI static enum MolangVariableIndex getVariableIndex(unsigned __int64, char const *, bool);
     /**
      * @symbol ?getVariableName@MolangVariable@@SAAEBVHashedString@@W4MolangVariableIndex@@@Z
+     * @hash   -987096585
      */
     MCAPI static class HashedString const & getVariableName(enum MolangVariableIndex);
     /**
      * @symbol ?initVariableMaps@MolangVariable@@SAXXZ
+     * @hash   101405907
      */
     MCAPI static void initVariableMaps();
     /**
      * @symbol ?isValidName@MolangVariable@@SA_NPEBD@Z
+     * @hash   -1628821130
      */
     MCAPI static bool isValidName(char const *);
     /**
      * @symbol ?processWaterMark@MolangVariable@@SAXXZ
+     * @hash   432428275
      */
     MCAPI static void processWaterMark();
 
 //private:
     /**
      * @symbol ?_getMolangVariableIndexLock@MolangVariable@@CAAEAVrecursive_mutex@std@@XZ
+     * @hash   1537271281
      */
     MCAPI static class std::recursive_mutex & _getMolangVariableIndexLock();
 

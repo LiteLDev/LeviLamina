@@ -27,10 +27,9 @@ public:
     OSInformation() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OSINFORMATION
-#endif
     /**
      * @symbol ??1OSInformation@@QEAA@XZ
+     * @hash   97489908
      */
     MCAPI ~OSInformation();
 

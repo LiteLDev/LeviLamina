@@ -32,38 +32,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   941739165
      */
     virtual ~LootItemFunction();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?apply@SpecificEnchantFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   1867524650
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &) = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
+     * @hash   2060501860
      */
     virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?apply@SpecificEnchantFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   1901963519
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &) = 0;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?apply@LootItemFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z
+     * @hash   18298511
      */
     virtual int apply(class ItemInstance &, class Random &, struct Trade const &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTION
-#endif
     /**
      * @symbol ?getConditions@LootItemFunction@@QEBAAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@XZ
+     * @hash   -2106583563
      */
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     /**
      * @symbol ?deserialize@LootItemFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@@Z
+     * @hash   171731635
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
 

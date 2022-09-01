@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONENDEDEVENT
-#endif
     /**
      * @symbol ??1ActorDefinitionEndedEvent@@QEAA@XZ
+     * @hash   -1916458764
      */
     MCAPI ~ActorDefinitionEndedEvent();
 

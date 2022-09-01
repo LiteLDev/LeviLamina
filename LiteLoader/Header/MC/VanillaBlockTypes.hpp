@@ -641,10 +641,12 @@ MCAPI extern class WeakPtr<class BlockLegacy> mYellowCandleCake;
 MCAPI extern class WeakPtr<class BlockLegacy> mYellowFlower;
     /**
      * @symbol ?registerBlocks@VanillaBlockTypes@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
+     * @hash   452931044
      */
     MCAPI void registerBlocks(class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?unregisterBlocks@VanillaBlockTypes@@YAXXZ
+     * @hash   1096649376
      */
     MCAPI void unregisterBlocks();
 

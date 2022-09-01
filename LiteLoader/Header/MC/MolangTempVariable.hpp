@@ -27,14 +27,14 @@ public:
     MolangTempVariable() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGTEMPVARIABLE
-#endif
     /**
      * @symbol ??0MolangTempVariable@@QEAA@AEBVHashedString@@@Z
+     * @hash   704230485
      */
     MCAPI MolangTempVariable(class HashedString const &);
     /**
      * @symbol ??1MolangTempVariable@@QEAA@XZ
+     * @hash   -752795190
      */
     MCAPI ~MolangTempVariable();
 

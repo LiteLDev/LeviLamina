@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1151502044
      */
     virtual ~SHChestCorridor();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@SHChestCorridor@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   -1553578075
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?addChildren@SHChestCorridor@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+     * @hash   -706016965
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@SHChestCorridor@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   253367379
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHCHESTCORRIDOR
-#endif
 
 };

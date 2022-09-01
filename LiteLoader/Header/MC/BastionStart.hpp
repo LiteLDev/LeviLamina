@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1297708700
      */
     virtual ~BastionStart();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isValid@BastionStart@@UEBA_NXZ
+     * @hash   1817137200
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASTIONSTART
-#endif
 
 };

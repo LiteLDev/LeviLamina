@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   80956589
      */
     virtual ~LegacyForestFoliageFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@LegacyForestFoliageFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   341495133
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYFORESTFOLIAGEFEATURE
-#endif
     /**
      * @symbol ??0LegacyForestFoliageFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
+     * @hash   -1547996240
      */
     MCAPI LegacyForestFoliageFeature(enum LegacyForestFoliageFeature::Type, class FeatureRegistry &);
 

@@ -31,26 +31,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTICKNEEDEDCOMPONENT
-#endif
     /**
      * @symbol ??0ActorTickNeededComponent@@QEAA@AEAVBlockSource@@@Z
+     * @hash   1841963335
      */
     MCAPI ActorTickNeededComponent(class BlockSource &);
     /**
      * @symbol ??0ActorTickNeededComponent@@QEAA@$$QEAV0@@Z
+     * @hash   150060805
      */
     MCAPI ActorTickNeededComponent(class ActorTickNeededComponent &&);
     /**
      * @symbol ?getBlockSource@ActorTickNeededComponent@@QEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ
+     * @hash   -1270192932
      */
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
     /**
      * @symbol ??4ActorTickNeededComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -2141118040
      */
     MCAPI class ActorTickNeededComponent & operator=(class ActorTickNeededComponent &&);
     /**
      * @symbol ??1ActorTickNeededComponent@@QEAA@XZ
+     * @hash   -1842257792
      */
     MCAPI ~ActorTickNeededComponent();
 

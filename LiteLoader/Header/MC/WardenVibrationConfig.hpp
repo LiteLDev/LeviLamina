@@ -29,29 +29,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1048175837
      */
     virtual ~WardenVibrationConfig();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?onSignalReceive@WardenVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
+     * @hash   1430071343
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isValidVibration@WardenVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
+     * @hash   -1973305929
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?shouldListen@WardenVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
+     * @hash   -1939747754
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENVIBRATIONCONFIG
-#endif
     /**
      * @symbol ??0WardenVibrationConfig@@QEAA@AEAVActor@@G@Z
+     * @hash   2048540766
      */
     MCAPI WardenVibrationConfig(class Actor &, unsigned short);
 

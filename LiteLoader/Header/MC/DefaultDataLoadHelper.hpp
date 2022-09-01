@@ -32,164 +32,167 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1271369875
      */
     virtual ~DefaultDataLoadHelper();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -2080849503
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -2079925982
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -2078956333
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -2078032812
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -2077140043
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -2076185770
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -2075262249
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -2074323352
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -2073399831
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -1057299453
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -1056375932
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -1055498539
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -1054575018
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -1053651497
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?loadActorInternalComponentInfo@DefaultDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
+     * @hash   247690693
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?getType@DefaultDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
+     * @hash   -111619463
      */
     virtual enum DataLoadHelperType getType() const;
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?shouldResetTime@DefaultDataLoadHelper@@UEAA_NXZ
+     * @hash   1343481443
      */
     virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTDATALOADHELPER
     /**
-     * @vtable -1
      * @symbol ?loadActorUniqueID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     * @hash   1494172831
      */
     MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
-     * @vtable -1
      * @symbol ?loadBlockPosition@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     * @hash   1229667792
      */
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
     /**
-     * @vtable -1
      * @symbol ?loadBlockPositionOffset@DefaultDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     * @hash   -486515043
      */
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
-     * @vtable -1
      * @symbol ?loadDirection@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     * @hash   -1647382873
      */
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
     /**
-     * @vtable -1
      * @symbol ?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+     * @hash   2039899185
      */
     MCVAPI enum Direction::Type loadDirection(enum Direction::Type);
     /**
-     * @vtable -1
      * @symbol ?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z
+     * @hash   -1083459529
      */
     MCVAPI unsigned char loadFacingID(unsigned char);
     /**
-     * @vtable -1
      * @symbol ?loadMirror@DefaultDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
+     * @hash   1118592269
      */
     MCVAPI enum Mirror loadMirror(enum Mirror);
     /**
-     * @vtable -1
      * @symbol ?loadOwnerID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     * @hash   5269074
      */
     MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
-     * @vtable -1
      * @symbol ?loadPosition@DefaultDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     * @hash   1365679857
      */
     MCVAPI class Vec3 loadPosition(class Vec3 const &);
     /**
-     * @vtable -1
      * @symbol ?loadRotation@DefaultDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
+     * @hash   213078350
      */
     MCVAPI enum Rotation loadRotation(enum Rotation);
     /**
-     * @vtable -1
      * @symbol ?loadRotationDegreesX@DefaultDataLoadHelper@@UEAAMM@Z
+     * @hash   709231213
      */
     MCVAPI float loadRotationDegreesX(float);
     /**
-     * @vtable -1
      * @symbol ?loadRotationDegreesY@DefaultDataLoadHelper@@UEAAMM@Z
+     * @hash   -420324564
      */
     MCVAPI float loadRotationDegreesY(float);
     /**
-     * @vtable -1
      * @symbol ?loadRotationRadiansX@DefaultDataLoadHelper@@UEAAMM@Z
+     * @hash   60575768
      */
     MCVAPI float loadRotationRadiansX(float);
     /**
-     * @vtable -1
      * @symbol ?loadRotationRadiansY@DefaultDataLoadHelper@@UEAAMM@Z
+     * @hash   -1068980009
      */
     MCVAPI float loadRotationRadiansY(float);
 #endif

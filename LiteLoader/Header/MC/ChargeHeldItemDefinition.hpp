@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEHELDITEMDEFINITION
-#endif
     /**
      * @symbol ?initialize@ChargeHeldItemDefinition@@QEAAXAEAVEntityContext@@AEAVChargeHeldItemGoal@@@Z
+     * @hash   1417314823
      */
     MCAPI void initialize(class EntityContext &, class ChargeHeldItemGoal &);
     /**
      * @symbol ?buildSchema@ChargeHeldItemDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VChargeHeldItemDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -422791849
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeHeldItemDefinition>> &);
 

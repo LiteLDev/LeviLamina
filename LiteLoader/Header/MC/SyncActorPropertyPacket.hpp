@@ -31,43 +31,48 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1793741755
      */
     virtual ~SyncActorPropertyPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@SyncActorPropertyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   878674519
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@SyncActorPropertyPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1504681220
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@SyncActorPropertyPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1176989277
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?readExtended@SyncActorPropertyPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1702178456
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@SyncActorPropertyPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   731491939
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCACTORPROPERTYPACKET
-#endif
     /**
      * @symbol ??0SyncActorPropertyPacket@@QEAA@XZ
+     * @hash   -1413008861
      */
     MCAPI SyncActorPropertyPacket();
     /**
      * @symbol ??0SyncActorPropertyPacket@@QEAA@AEBVActor@@@Z
+     * @hash   -1297451352
      */
     MCAPI SyncActorPropertyPacket(class Actor const &);
 

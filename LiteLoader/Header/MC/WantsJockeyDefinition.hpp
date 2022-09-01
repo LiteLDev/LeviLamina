@@ -30,10 +30,9 @@ public:
     WantsJockeyDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WANTSJOCKEYDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@WantsJockeyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWantsJockeyDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1090532732
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct WantsJockeyDefinition>> &);
 

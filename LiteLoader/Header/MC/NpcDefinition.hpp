@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDEFINITION
-#endif
     /**
      * @symbol ?initialize@NpcDefinition@@QEAAXAEAVEntityContext@@AEAVNpcComponent@@@Z
+     * @hash   -84808635
      */
     MCAPI void initialize(class EntityContext &, class NpcComponent &);
     /**
      * @symbol ?buildSchema@NpcDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNpcDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   818997866
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NpcDefinition>> &);
 

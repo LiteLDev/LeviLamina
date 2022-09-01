@@ -30,27 +30,29 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1341439456
      */
     virtual ~DebugAssertException();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?what@DebugAssertException@@UEBAPEBDXZ
+     * @hash   12807577
      */
     virtual char const * what() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGASSERTEXCEPTION
-#endif
     /**
      * @symbol ??0DebugAssertException@@QEAA@PEBD00H00@Z
+     * @hash   392371549
      */
     MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
     /**
      * @symbol ??0DebugAssertException@@QEAA@AEBV0@@Z
+     * @hash   1289042897
      */
     MCAPI DebugAssertException(class DebugAssertException const &);
     /**
      * @symbol ?isEnabled@DebugAssertException@@SA_NXZ
+     * @hash   -877173076
      */
     MCAPI static bool isEnabled();
 

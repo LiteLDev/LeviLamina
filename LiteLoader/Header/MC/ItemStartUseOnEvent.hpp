@@ -26,18 +26,19 @@ public:
     ItemStartUseOnEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTARTUSEONEVENT
-#endif
     /**
      * @symbol ??0ItemStartUseOnEvent@@QEAA@AEBU0@@Z
+     * @hash   2074408277
      */
     MCAPI ItemStartUseOnEvent(struct ItemStartUseOnEvent const &);
     /**
      * @symbol ??0ItemStartUseOnEvent@@QEAA@$$QEAU0@@Z
+     * @hash   -303625827
      */
     MCAPI ItemStartUseOnEvent(struct ItemStartUseOnEvent &&);
     /**
      * @symbol ??1ItemStartUseOnEvent@@QEAA@XZ
+     * @hash   1234434191
      */
     MCAPI ~ItemStartUseOnEvent();
 

@@ -30,10 +30,9 @@ public:
     FrictionModifierDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FRICTIONMODIFIERDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@FrictionModifierDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFrictionModifierDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -2077426790
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FrictionModifierDefinition>> &);
 

@@ -27,10 +27,9 @@ public:
     DeserializeDataParams() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERIALIZEDATAPARAMS
-#endif
     /**
      * @symbol ??1DeserializeDataParams@@QEAA@XZ
+     * @hash   -143121493
      */
     MCAPI ~DeserializeDataParams();
 

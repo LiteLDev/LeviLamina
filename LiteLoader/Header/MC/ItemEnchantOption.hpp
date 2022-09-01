@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMENCHANTOPTION
-#endif
     /**
      * @symbol ??0ItemEnchantOption@@QEAA@$$QEAV0@@Z
+     * @hash   -1900147073
      */
     MCAPI ItemEnchantOption(class ItemEnchantOption &&);
     /**
      * @symbol ??1ItemEnchantOption@@QEAA@XZ
+     * @hash   -1801060569
      */
     MCAPI ~ItemEnchantOption();
 

@@ -31,49 +31,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   841112243
      */
     virtual ~AgentCommandExecutionGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@AgentCommandExecutionGoal@@UEAA_NXZ
+     * @hash   -518078821
      */
     virtual bool canUse();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   516213170
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@AgentCommandExecutionGoal@@UEAA_NXZ
+     * @hash   -615552797
      */
     virtual bool canBeInterrupted();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@AgentCommandExecutionGoal@@UEAAXXZ
+     * @hash   -1659655292
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@AgentCommandExecutionGoal@@UEAAXXZ
+     * @hash   1473138596
      */
     virtual void stop();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@AgentCommandExecutionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1214229771
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDEXECUTIONGOAL
-#endif
     /**
      * @symbol ??0AgentCommandExecutionGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1458747896
      */
     MCAPI AgentCommandExecutionGoal(class Mob &);
 

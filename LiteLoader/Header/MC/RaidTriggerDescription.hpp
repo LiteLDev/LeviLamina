@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@RaidTriggerDescription@@UEBAPEBDXZ
+     * @hash   950063526
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   -1292827112
      */
     virtual ~RaidTriggerDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@RaidTriggerDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1240599533
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@RaidTriggerDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1694661911
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERDESCRIPTION
-#endif
 
 };

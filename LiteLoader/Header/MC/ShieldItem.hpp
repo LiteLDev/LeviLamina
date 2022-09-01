@@ -33,152 +33,166 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   506024422
      */
     virtual ~ShieldItem();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 50
+     * @vftbl  50
      * @symbol ?isHandEquipped@ShieldItem@@UEBA_NXZ
+     * @hash   -1550008940
      */
     virtual bool isHandEquipped() const;
     /**
-     * @vtable 52
-     * @symbol __unk_vfn_52
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @vtable 54
-     * @symbol __unk_vfn_54
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @vtable 62
+     * @vftbl  62
      * @symbol ?isValidRepairItem@ShieldItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+     * @hash   -735137292
      */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
     /**
-     * @vtable 63
+     * @vftbl  63
      * @symbol ?getEnchantSlot@ShieldItem@@UEBAHXZ
+     * @hash   97109072
      */
     virtual int getEnchantSlot() const;
     /**
-     * @vtable 67
-     * @symbol __unk_vfn_67
+     * @vftbl  67
+     * @hash   -186360955
      */
     virtual void __unk_vfn_67();
     /**
-     * @vtable 71
-     * @symbol __unk_vfn_71
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @vtable 72
-     * @symbol __unk_vfn_72
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @vtable 73
-     * @symbol __unk_vfn_73
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @vtable 76
-     * @symbol __unk_vfn_76
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @vtable 80
-     * @symbol __unk_vfn_80
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @vtable 81
-     * @symbol __unk_vfn_81
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @vtable 85
+     * @vftbl  85
      * @symbol ?use@ShieldItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     * @hash   -1473303006
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @vtable 86
+     * @vftbl  86
      * @symbol ?dispense@ShieldItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     * @hash   -639649528
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @vtable 90
+     * @vftbl  90
      * @symbol ?hurtActor@ShieldItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     * @hash   -2059562790
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
     /**
-     * @vtable 99
+     * @vftbl  99
      * @symbol ?readUserData@ShieldItem@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1501992995
      */
     virtual void readUserData(class ItemStackBase &, class IDataInput &, class ReadOnlyBinaryStream &) const;
     /**
-     * @vtable 100
+     * @vftbl  100
      * @symbol ?writeUserData@ShieldItem@@UEBAXAEBVItemStackBase@@AEAVIDataOutput@@@Z
+     * @hash   1887251795
      */
     virtual void writeUserData(class ItemStackBase const &, class IDataOutput &) const;
     /**
-     * @vtable 102
+     * @vftbl  102
      * @symbol ?inventoryTick@ShieldItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+     * @hash   306729292
      */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /**
-     * @vtable 104
+     * @vftbl  104
      * @symbol ?getCooldownType@ShieldItem@@UEBAAEBVHashedString@@XZ
+     * @hash   1965016270
      */
     virtual class HashedString const & getCooldownType() const;
     /**
-     * @vtable 105
+     * @vftbl  105
      * @symbol ?getCooldownTime@ShieldItem@@UEBAHXZ
+     * @hash   -477153091
      */
     virtual int getCooldownTime() const;
     /**
-     * @vtable 111
+     * @vftbl  111
      * @symbol ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
+     * @hash   137080580
      */
     virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
     /**
-     * @vtable 112
+     * @vftbl  112
      * @symbol ?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+     * @hash   -936681316
      */
     virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEM
-#endif
     /**
      * @symbol ??0ShieldItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -437856646
      */
     MCAPI ShieldItem(std::string const &, int);
     /**
      * @symbol ?playBlockSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
+     * @hash   906200783
      */
     MCAPI void playBlockSound(class Player *) const;
     /**
      * @symbol ?playBreakSound@ShieldItem@@QEBAXPEAVPlayer@@@Z
+     * @hash   546911347
      */
     MCAPI void playBreakSound(class Player *) const;
 MCAPI static int const EFFECTIVE_BLOCK_DELAY;
@@ -188,6 +202,7 @@ MCAPI static std::string const TIMESTAMP_TAG;
 //private:
     /**
      * @symbol ?_getInHandUpdateType@ShieldItem@@AEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
+     * @hash   29309278
      */
     MCAPI enum InHandUpdateType _getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
 

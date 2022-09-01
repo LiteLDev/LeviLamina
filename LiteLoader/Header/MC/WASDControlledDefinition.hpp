@@ -30,18 +30,19 @@ public:
     WASDControlledDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WASDCONTROLLEDDEFINITION
-#endif
     /**
      * @symbol ?initialize@WASDControlledDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   1260751724
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@WASDControlledDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -133806164
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@WASDControlledDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UWASDControlledDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1764272698
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct WASDControlledDefinition>> &);
 

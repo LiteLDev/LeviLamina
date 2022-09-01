@@ -24,10 +24,12 @@ namespace BiomeSurfaceSystem {
 #undef AFTER_EXTRA
     /**
      * @symbol ?buildSurfaceAt@BiomeSurfaceSystem@@YAXAEBUBuildParameters@ISurfaceBuilder@@@Z
+     * @hash   -139270601
      */
     MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const &);
     /**
      * @symbol ?resolveBuilderImplementation@BiomeSurfaceSystem@@YAXAEAVEntityRegistry@@AEBVSurfaceBuilderRegistry@@I@Z
+     * @hash   -1872973067
      */
     MCAPI void resolveBuilderImplementation(class EntityRegistry &, class SurfaceBuilderRegistry const &, unsigned int);
 

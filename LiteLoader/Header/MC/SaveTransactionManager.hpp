@@ -30,28 +30,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVETRANSACTIONMANAGER
-#endif
     /**
      * @symbol ??0SaveTransactionManager@@QEAA@AEAVWorkerPool@@AEAVScheduler@@V?$function@$$A6AX_N@Z@std@@@Z
+     * @hash   28383408
      */
     MCAPI SaveTransactionManager(class WorkerPool &, class Scheduler &, class std::function<void (bool)>);
     /**
      * @symbol ?onBeginCompaction@SaveTransactionManager@@QEAAXXZ
+     * @hash   -1921056557
      */
     MCAPI void onBeginCompaction();
     /**
      * @symbol ?onEndCompaction@SaveTransactionManager@@QEAAXXZ
+     * @hash   -1940877853
      */
     MCAPI void onEndCompaction();
 
 //private:
     /**
      * @symbol ?_hideGlobalSaveIcon@SaveTransactionManager@@AEAAXXZ
+     * @hash   -748076646
      */
     MCAPI void _hideGlobalSaveIcon();
     /**
      * @symbol ?_showGlobalSaveIcon@SaveTransactionManager@@AEAAXXZ
+     * @hash   436867973
      */
     MCAPI void _showGlobalSaveIcon();
 

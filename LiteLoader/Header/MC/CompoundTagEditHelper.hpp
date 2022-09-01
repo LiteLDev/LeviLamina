@@ -30,24 +30,26 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGEDITHELPER
-#endif
     /**
      * @symbol ?getParent@CompoundTagEditHelper@@QEBAPEBVCompoundTag@@XZ
+     * @hash   1693747185
      */
     MCAPI class CompoundTag const * getParent() const;
     /**
      * @symbol ?replaceWith@CompoundTagEditHelper@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@3@@Z
+     * @hash   1387452755
      */
     MCAPI void replaceWith(std::string const &, std::unique_ptr<class Tag>);
     /**
      * @symbol ??1CompoundTagEditHelper@@QEAA@XZ
+     * @hash   -1639803485
      */
     MCAPI ~CompoundTagEditHelper();
 
 //private:
     /**
      * @symbol ?pushChild@CompoundTagEditHelper@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1812331611
      */
     MCAPI void pushChild(std::string const &);
 

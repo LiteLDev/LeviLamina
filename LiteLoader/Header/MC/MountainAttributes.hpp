@@ -27,10 +27,9 @@ public:
     MountainAttributes() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTAINATTRIBUTES
-#endif
     /**
      * @symbol ??1MountainAttributes@@QEAA@XZ
+     * @hash   105608894
      */
     MCAPI ~MountainAttributes();
 

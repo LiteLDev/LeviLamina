@@ -31,24 +31,26 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOROPTIONS
-#endif
     /**
      * @symbol ??0FlatWorldGeneratorOptions@@QEAA@AEBVValue@Json@@AEBVBlockPalette@@AEBVLevelData@@@Z
+     * @hash   -134442765
      */
     MCAPI FlatWorldGeneratorOptions(class Json::Value const &, class BlockPalette const &, class LevelData const &);
     /**
      * @symbol ??1FlatWorldGeneratorOptions@@QEAA@XZ
+     * @hash   -2111201696
      */
     MCAPI ~FlatWorldGeneratorOptions();
     /**
      * @symbol ?getLayers@FlatWorldGeneratorOptions@@SA?AVValue@Json@@AEBVLevelData@@@Z
+     * @hash   1187453613
      */
     MCAPI static class Json::Value getLayers(class LevelData const &);
 
 //protected:
     /**
      * @symbol ?_load@FlatWorldGeneratorOptions@@IEAA_NAEBVValue@Json@@AEBVBlockPalette@@AEBVLevelData@@@Z
+     * @hash   656796690
      */
     MCAPI bool _load(class Json::Value const &, class BlockPalette const &, class LevelData const &);
 

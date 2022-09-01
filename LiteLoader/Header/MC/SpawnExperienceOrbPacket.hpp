@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -772364596
      */
     virtual ~SpawnExperienceOrbPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@SpawnExperienceOrbPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   588146220
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@SpawnExperienceOrbPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -67242791
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@SpawnExperienceOrbPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1377695410
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@SpawnExperienceOrbPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -113062786
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNEXPERIENCEORBPACKET
-#endif
     /**
      * @symbol ??0SpawnExperienceOrbPacket@@QEAA@XZ
+     * @hash   441665198
      */
     MCAPI SpawnExperienceOrbPacket();
     /**
      * @symbol ??0SpawnExperienceOrbPacket@@QEAA@AEBVVec3@@H@Z
+     * @hash   -526169986
      */
     MCAPI SpawnExperienceOrbPacket(class Vec3 const &, int);
 

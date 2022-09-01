@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -772046486
      */
     virtual ~SnapshotWritableFile();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z
+     * @hash   884123259
      */
     virtual class leveldb::Status Append(class leveldb::Slice const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?Close@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
+     * @hash   -963918700
      */
     virtual class leveldb::Status Close();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?Flush@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
+     * @hash   853329280
      */
     virtual class leveldb::Status Flush();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?Sync@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ
+     * @hash   -491217705
      */
     virtual class leveldb::Status Sync();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTWRITABLEFILE
-#endif
     /**
      * @symbol ??0SnapshotWritableFile@@QEAA@$$QEAPEAVWritableFile@leveldb@@AEAVshared_mutex@std@@@Z
+     * @hash   1600843776
      */
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 

@@ -32,48 +32,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   613066979
      */
     virtual ~TradeContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@TradeContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -830488666
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@TradeContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -1913377399
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@TradeContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   446400146
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@TradeContainerManagerModel@@UEAAXXZ
+     * @hash   1791170352
      */
     virtual void broadcastChanges();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?isValid@TradeContainerManagerModel@@UEAA_NM@Z
+     * @hash   836961600
      */
     virtual bool isValid(float);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@TradeContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -1687515267
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADECONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0TradeContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+     * @hash   -1956301194
      */
     MCAPI TradeContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     /**
      * @symbol ?getEntity@TradeContainerManagerModel@@QEBAPEAVActor@@XZ
+     * @hash   28206551
      */
     MCAPI class Actor * getEntity() const;
 

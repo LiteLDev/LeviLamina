@@ -34,23 +34,25 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDVERSION
-#endif
     /**
      * @symbol ??0CommandVersion@@QEAA@HH@Z
+     * @hash   -305258063
      */
     MCAPI CommandVersion(int, int);
     /**
      * @symbol ?covers@CommandVersion@@QEBA_NAEBV1@@Z
+     * @hash   874530003
      */
     MCAPI bool covers(class CommandVersion const &) const;
     /**
      * @symbol ?isCompatible@CommandVersion@@QEBA_NH@Z
+     * @hash   1425029097
      */
     MCAPI bool isCompatible(int) const;
 MCAPI static int const CurrentVersion;
     /**
      * @symbol ?getVersionMapping@CommandVersion@@SA?BW4CurrentCmdVersion@@AEBVSemVersion@@@Z
+     * @hash   -23826475
      */
     MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 

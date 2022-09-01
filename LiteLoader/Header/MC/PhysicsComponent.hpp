@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHYSICSCOMPONENT
-#endif
     /**
      * @symbol ?_isAffectedByGravity@PhysicsComponent@@QEBA_NAEBVSynchedActorData@@@Z
+     * @hash   193513401
      */
     MCAPI bool _isAffectedByGravity(class SynchedActorData const &) const;
     /**
      * @symbol ?isAffectedByGravity@PhysicsComponent@@QEBA_NAEBUIActorMovementProxy@@@Z
+     * @hash   -595608391
      */
     MCAPI bool isAffectedByGravity(struct IActorMovementProxy const &) const;
     /**
      * @symbol ?setAffectedByGravity@PhysicsComponent@@QEBAXAEAUIActorMovementProxy@@_N@Z
+     * @hash   266913655
      */
     MCAPI void setAffectedByGravity(struct IActorMovementProxy &, bool) const;
     /**
      * @symbol ?setHasCollision@PhysicsComponent@@QEAAXAEAVActor@@_N@Z
+     * @hash   1219279295
      */
     MCAPI void setHasCollision(class Actor &, bool);
 

@@ -30,10 +30,9 @@ public:
     DyeableDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEABLEDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@DyeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UDyeableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -17943208
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DyeableDefinition>> &);
 

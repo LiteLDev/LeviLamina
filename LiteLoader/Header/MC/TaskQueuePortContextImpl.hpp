@@ -29,66 +29,76 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?AddRef@TaskQueuePortContextImpl@@UEAAIXZ
+     * @hash   1500546503
      */
     virtual unsigned int AddRef();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?Release@TaskQueuePortContextImpl@@UEAAIXZ
+     * @hash   2054033916
      */
     virtual unsigned int Release();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?QueryApi@TaskQueuePortContextImpl@@UEAAJW4ApiId@@PEAPEAX@Z
+     * @hash   1347356504
      */
     virtual long QueryApi(enum ApiId, void **);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?GetType@TaskQueuePortContextImpl@@UEAA?AW4XTaskQueuePort@@XZ
+     * @hash   428544938
      */
     virtual enum XTaskQueuePort GetType();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?GetStatus@TaskQueuePortContextImpl@@UEAA?AW4TaskQueuePortStatus@@XZ
+     * @hash   1142579150
      */
     virtual enum TaskQueuePortStatus GetStatus();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?GetQueue@TaskQueuePortContextImpl@@UEAAPEAUITaskQueue@@XZ
+     * @hash   1947611232
      */
     virtual struct ITaskQueue * GetQueue();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?GetPort@TaskQueuePortContextImpl@@UEAAPEAUITaskQueuePort@@XZ
+     * @hash   1076396427
      */
     virtual struct ITaskQueuePort * GetPort();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?TrySetStatus@TaskQueuePortContextImpl@@UEAA_NW4TaskQueuePortStatus@@0@Z
+     * @hash   722933776
      */
     virtual bool TrySetStatus(enum TaskQueuePortStatus, enum TaskQueuePortStatus);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?SetStatus@TaskQueuePortContextImpl@@UEAAXW4TaskQueuePortStatus@@@Z
+     * @hash   2064606642
      */
     virtual void SetStatus(enum TaskQueuePortStatus);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?ItemQueued@TaskQueuePortContextImpl@@UEAAXXZ
+     * @hash   871842331
      */
     virtual void ItemQueued();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?AddSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
+     * @hash   2143623554
      */
     virtual bool AddSuspend();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?RemoveSuspend@TaskQueuePortContextImpl@@UEAA_NXZ
+     * @hash   -1594495521
      */
     virtual bool RemoveSuspend();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTCONTEXTIMPL
-#endif
 
 };

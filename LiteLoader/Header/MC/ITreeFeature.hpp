@@ -32,8 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREEFEATURE
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1ITreeFeature@@UEAA@XZ
+     * @hash   243728596
      */
     MCVAPI ~ITreeFeature();
 #endif
@@ -41,6 +41,7 @@ public:
 //protected:
     /**
      * @symbol ?_place@ITreeFeature@@IEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   -405155789
      */
     MCAPI class std::optional<class BlockPos> _place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
 

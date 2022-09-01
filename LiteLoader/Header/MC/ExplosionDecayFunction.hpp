@@ -33,24 +33,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -281200921
      */
     virtual ~ExplosionDecayFunction();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?apply@ExplosionDecayFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -622439239
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?apply@ExplosionDecayFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   2082919150
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOSIONDECAYFUNCTION
-#endif
     /**
      * @symbol ?deserialize@ExplosionDecayFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
+     * @hash   289063279
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 

@@ -30,10 +30,9 @@ public:
     FloatsInLiquidDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATSINLIQUIDDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@FloatsInLiquidDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFloatsInLiquidDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1016185402
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FloatsInLiquidDefinition>> &);
 

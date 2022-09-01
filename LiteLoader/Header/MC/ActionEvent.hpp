@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIONEVENT
-#endif
     /**
      * @symbol ??0ActionEvent@@QEAA@HW4ActionState@0@_NW4FocusImpact@@@Z
+     * @hash   -27240850
      */
     MCAPI ActionEvent(int, enum ActionEvent::ActionState, bool, enum FocusImpact);
 

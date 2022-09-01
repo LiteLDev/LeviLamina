@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -322233832
      */
     virtual ~BasaltColumnsFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@BasaltColumnsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -2018463528
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASALTCOLUMNSFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_placeColumnCluster@BasaltColumnsFeature@@AEBA_NAEAVBlockSource@@VBlockPos@@HH@Z
+     * @hash   1453802955
      */
     MCAPI bool _placeColumnCluster(class BlockSource &, class BlockPos, int, int) const;
 

@@ -32,49 +32,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1766564504
      */
     virtual ~RealmsUnknownPackSource();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -2102375903
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -2101452382
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getPackOrigin@RealmsUnknownPackSource@@UEBA?AW4PackOrigin@@XZ
+     * @hash   -1188947636
      */
     virtual enum PackOrigin getPackOrigin() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getPackType@RealmsUnknownPackSource@@UEBA?AW4PackType@@XZ
+     * @hash   -1566396404
      */
     virtual enum PackType getPackType() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?load@RealmsUnknownPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+     * @hash   -83949495
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REALMSUNKNOWNPACKSOURCE
     /**
-     * @vtable -1
      * @symbol ?forEachPack@RealmsUnknownPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+     * @hash   -722996526
      */
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     /**
-     * @vtable -1
      * @symbol ?forEachPackConst@RealmsUnknownPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
+     * @hash   2139060401
      */
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     /**
      * @symbol ??0RealmsUnknownPackSource@@QEAA@W4PackType@@W4PackOrigin@@@Z
+     * @hash   -2141442714
      */
     MCAPI RealmsUnknownPackSource(enum PackType, enum PackOrigin);
 

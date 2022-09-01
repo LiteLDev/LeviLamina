@@ -31,124 +31,126 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -231732706
      */
     virtual ~BlockActorLevelListener();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1401090423
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -384990045
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
+     * @hash   -2016134441
      */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -382219482
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -381295961
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 15
-     * @symbol __unk_vfn_15
+     * @vftbl  15
+     * @hash   -380372440
      */
     virtual void __unk_vfn_15();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -378525398
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 18
-     * @symbol __unk_vfn_18
+     * @vftbl  18
+     * @hash   -377601877
      */
     virtual void __unk_vfn_18();
     /**
-     * @vtable 19
-     * @symbol __unk_vfn_19
+     * @vftbl  19
+     * @hash   -376678356
      */
     virtual void __unk_vfn_19();
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   -356360894
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 21
-     * @symbol __unk_vfn_21
+     * @vftbl  21
+     * @hash   -355437373
      */
     virtual void __unk_vfn_21();
     /**
-     * @vtable 22
+     * @vftbl  22
      * @symbol ?onChunkLoaded@BlockActorLevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+     * @hash   1204495377
      */
     virtual void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -353590331
      */
     virtual void __unk_vfn_23();
     /**
-     * @vtable 24
-     * @symbol __unk_vfn_24
+     * @vftbl  24
+     * @hash   -352666810
      */
     virtual void __unk_vfn_24();
     /**
-     * @vtable 25
+     * @vftbl  25
      * @symbol ?onChunkUnloaded@BlockActorLevelListener@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   1724847672
      */
     virtual void onChunkUnloaded(class LevelChunk &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTORLEVELLISTENER
-#endif
     /**
      * @symbol ??0BlockActorLevelListener@@QEAA@XZ
+     * @hash   -972242084
      */
     MCAPI BlockActorLevelListener();
 

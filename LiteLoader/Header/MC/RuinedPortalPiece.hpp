@@ -32,58 +32,67 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   637066345
      */
     virtual ~RuinedPortalPiece();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@RuinedPortalPiece@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   427838976
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@RuinedPortalPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1704558104
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALPIECE
-#endif
 
 //private:
     /**
      * @symbol ?_addNetherrackDripColumn@RuinedPortalPiece@@AEAAXAEAVRandom@@AEAVBlockSource@@VBlockPos@@@Z
+     * @hash   -2000847788
      */
     MCAPI void _addNetherrackDripColumn(class Random &, class BlockSource &, class BlockPos);
     /**
      * @symbol ?_maybeReplaceBlock@RuinedPortalPiece@@AEAAXAEAVRandom@@AEAVBlockSource@@VBlockPos@@AEBUPortalEnvironmentModifiers@@@Z
+     * @hash   -1146649309
      */
     MCAPI void _maybeReplaceBlock(class Random &, class BlockSource &, class BlockPos, struct PortalEnvironmentModifiers const &);
     /**
      * @symbol ?_maybeReplaceFullStoneBlock@RuinedPortalPiece@@AEAAXAEAVRandom@@AEAVBlockSource@@VBlockPos@@AEBVBlock@@AEBUPortalEnvironmentModifiers@@@Z
+     * @hash   -741142669
      */
     MCAPI void _maybeReplaceFullStoneBlock(class Random &, class BlockSource &, class BlockPos, class Block const &, struct PortalEnvironmentModifiers const &);
     /**
      * @symbol ?_maybeReplaceStairs@RuinedPortalPiece@@AEAAXAEAVRandom@@AEAVBlockSource@@VBlockPos@@AEBUPortalEnvironmentModifiers@@@Z
+     * @hash   -626621034
      */
     MCAPI void _maybeReplaceStairs(class Random &, class BlockSource &, class BlockPos, struct PortalEnvironmentModifiers const &);
     /**
      * @symbol ?_moveStructureBoundsToSuitableY@RuinedPortalPiece@@AEAAXAEAVRandom@@AEAVBlockSource@@AEBUPortalEnvironmentModifiers@@@Z
+     * @hash   1057412598
      */
     MCAPI void _moveStructureBoundsToSuitableY(class Random &, class BlockSource &, struct PortalEnvironmentModifiers const &);
     /**
      * @symbol ?_spreadNetherrack@RuinedPortalPiece@@AEAAXAEAVRandom@@AEAVBlockSource@@AEBUPortalEnvironmentModifiers@@@Z
+     * @hash   1949538388
      */
     MCAPI void _spreadNetherrack(class Random &, class BlockSource &, struct PortalEnvironmentModifiers const &);
     /**
      * @symbol ?_getRandomFacingStairs@RuinedPortalPiece@@CAAEBVBlock@@AEAVRandom@@AEBV2@@Z
+     * @hash   559167576
      */
     MCAPI static class Block const & _getRandomFacingStairs(class Random &, class Block const &);
     /**
      * @symbol ?_isLava@RuinedPortalPiece@@CA_NAEAVBlockSource@@VBlockPos@@@Z
+     * @hash   -383182272
      */
     MCAPI static bool _isLava(class BlockSource &, class BlockPos);
     /**
      * @symbol ?_willLavaFlowIn@RuinedPortalPiece@@CA_NAEAVBlockSource@@VBlockPos@@@Z
+     * @hash   -1227234469
      */
     MCAPI static bool _willLavaFlowIn(class BlockSource &, class BlockPos);
 

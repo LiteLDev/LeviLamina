@@ -29,16 +29,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   833941697
      */
     virtual ~ScriptingEventListener();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
+     * @hash   1992603618
      */
     virtual enum EventResult onEvent(struct ScriptingNotificationEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGEVENTLISTENER
-#endif
 
 };

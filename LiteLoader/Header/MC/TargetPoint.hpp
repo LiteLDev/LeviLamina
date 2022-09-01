@@ -27,10 +27,9 @@ public:
     TargetPoint() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETPOINT
-#endif
     /**
      * @symbol ??0TargetPoint@@QEAA@MMMMMM@Z
+     * @hash   932713651
      */
     MCAPI TargetPoint(float, float, float, float, float, float);
 

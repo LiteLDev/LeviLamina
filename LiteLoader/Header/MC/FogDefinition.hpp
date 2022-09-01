@@ -29,8 +29,6 @@ public:
     FogDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGDEFINITION
-#endif
 MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_AIR_SETTING;
 MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_RESISTANCE_SETTING;
 MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_SETTING;
@@ -51,6 +49,7 @@ MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFIC
 MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING;
     /**
      * @symbol ?isValidIdentifier@FogDefinition@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1135566161
      */
     MCAPI static bool isValidIdentifier(std::string const &);
 

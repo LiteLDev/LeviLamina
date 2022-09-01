@@ -30,32 +30,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPARSECONTAINER
-#endif
     /**
      * @symbol ?_isSlotInRange@SparseContainer@@QEBA_NH@Z
+     * @hash   1198004075
      */
     MCAPI bool _isSlotInRange(int) const;
     /**
      * @symbol ?addItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@V?$function@$$A6AXHAEBVItemStack@@0@Z@std@@@Z
+     * @hash   1977677787
      */
     MCAPI void addItemNetworkChangedCallback(enum ContainerEnumName, class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
     /**
      * @symbol ?isUsingLegacyScreenTransactions@SparseContainer@@QEBA_NXZ
+     * @hash   1552003036
      */
     MCAPI bool isUsingLegacyScreenTransactions() const;
     /**
      * @symbol ?removeItemNetworkChangedCallback@SparseContainer@@QEAAXW4ContainerEnumName@@@Z
+     * @hash   -643521686
      */
     MCAPI void removeItemNetworkChangedCallback(enum ContainerEnumName);
 
 //protected:
     /**
      * @symbol ?_onItemNetworkChanged@SparseContainer@@IEAAXHAEBVItemStack@@0@Z
+     * @hash   -322691162
      */
     MCAPI void _onItemNetworkChanged(int, class ItemStack const &, class ItemStack const &);
     /**
      * @symbol ?_setBackingContainerSlot@SparseContainer@@IEAAXHAEBVItemStack@@@Z
+     * @hash   1630969150
      */
     MCAPI void _setBackingContainerSlot(int, class ItemStack const &);
 

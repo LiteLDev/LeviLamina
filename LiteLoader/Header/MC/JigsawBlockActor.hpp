@@ -32,74 +32,77 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   447030003
      */
     virtual ~JigsawBlockActor();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@JigsawBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -12825872
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?save@JigsawBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   354305503
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 28
-     * @symbol __unk_vfn_28
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
     /**
-     * @vtable 35
+     * @vftbl  35
      * @symbol ?_getUpdatePacket@JigsawBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -1707459102
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vtable 36
+     * @vftbl  36
      * @symbol ?_onUpdatePacket@JigsawBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   1708487136
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWBLOCKACTOR
-#endif
     /**
      * @symbol ??0JigsawBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   1562121388
      */
     MCAPI JigsawBlockActor(class BlockPos const &);
 

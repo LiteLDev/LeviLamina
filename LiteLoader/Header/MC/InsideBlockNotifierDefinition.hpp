@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBLOCKNOTIFIERDEFINITION
-#endif
     /**
      * @symbol ?initialize@InsideBlockNotifierDefinition@@QEBAXAEAVEntityContext@@AEAVInsideBlockNotifierComponent@@@Z
+     * @hash   -1959883515
      */
     MCAPI void initialize(class EntityContext &, class InsideBlockNotifierComponent &) const;
     /**
      * @symbol ?buildSchema@InsideBlockNotifierDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInsideBlockNotifierDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1132663878
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsideBlockNotifierDefinition>> &);
 

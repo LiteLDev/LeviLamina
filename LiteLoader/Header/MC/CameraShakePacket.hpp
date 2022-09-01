@@ -31,42 +31,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   483502615
      */
     virtual ~CameraShakePacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@CameraShakePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -499564139
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@CameraShakePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1103273026
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@CameraShakePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1218145509
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@CameraShakePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1606757515
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKEPACKET
-#endif
     /**
      * @symbol ??0CameraShakePacket@@QEAA@XZ
+     * @hash   -383308283
      */
     MCAPI CameraShakePacket();
     /**
      * @symbol ??0CameraShakePacket@@QEAA@W4CameraShakeAction@@@Z
+     * @hash   -1169837384
      */
     MCAPI CameraShakePacket(enum CameraShakeAction);
     /**
      * @symbol ??0CameraShakePacket@@QEAA@MMW4CameraShakeType@@@Z
+     * @hash   2140092352
      */
     MCAPI CameraShakePacket(float, float, enum CameraShakeType);
 

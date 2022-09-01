@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1504373477
      */
     virtual ~DragonChargePlayerGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@DragonChargePlayerGoal@@UEAA_NXZ
+     * @hash   -674994651
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DragonChargePlayerGoal@@UEAA_NXZ
+     * @hash   2028171795
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@DragonChargePlayerGoal@@UEAAXXZ
+     * @hash   521763838
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@DragonChargePlayerGoal@@UEAAXXZ
+     * @hash   -1176163314
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@DragonChargePlayerGoal@@UEAAXXZ
+     * @hash   -1903801367
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DragonChargePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -493453141
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONCHARGEPLAYERGOAL
-#endif
     /**
      * @symbol ??0DragonChargePlayerGoal@@QEAA@AEAVMob@@@Z
+     * @hash   473877938
      */
     MCAPI DragonChargePlayerGoal(class Mob &);
 

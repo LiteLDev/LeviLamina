@@ -32,82 +32,89 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
     /**
-     * @vtable -1
      * @symbol ?consumeCount@Random@@UEAAXI@Z
+     * @hash   1491417811
      */
     MCVAPI void consumeCount(unsigned int);
     /**
-     * @vtable -1
      * @symbol ?fork@Random@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+     * @hash   -830901249
      */
     MCVAPI std::unique_ptr<class IRandom> fork();
     /**
-     * @vtable -1
      * @symbol ?nextBoolean@Random@@UEAA_NXZ
+     * @hash   408707419
      */
     MCVAPI bool nextBoolean();
     /**
-     * @vtable -1
      * @symbol ?nextDouble@Random@@UEAANXZ
+     * @hash   750000891
      */
     MCVAPI double nextDouble();
     /**
-     * @vtable -1
      * @symbol ?nextFloat@Random@@UEAAMXZ
+     * @hash   -218167515
      */
     MCVAPI float nextFloat();
     /**
-     * @vtable -1
      * @symbol ?nextGaussianDouble@Random@@UEAANXZ
+     * @hash   -662129562
      */
     MCVAPI double nextGaussianDouble();
     /**
-     * @vtable -1
      * @symbol ?nextInt@Random@@UEAAHH@Z
+     * @hash   -348121782
      */
     MCVAPI int nextInt(int);
     /**
-     * @vtable -1
      * @symbol ?nextInt@Random@@UEAAHXZ
+     * @hash   1663920693
      */
     MCVAPI int nextInt();
     /**
-     * @vtable -1
      * @symbol ?nextLong@Random@@UEAA_JXZ
+     * @hash   -741709422
      */
     MCVAPI __int64 nextLong();
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1Random@@UEAA@XZ
+     * @hash   1467770228
      */
     MCVAPI ~Random();
 #endif
     /**
      * @symbol ??0Random@@QEAA@XZ
+     * @hash   -395905489
      */
     MCAPI Random();
     /**
      * @symbol ??0Random@@QEAA@I_N@Z
+     * @hash   2136945963
      */
     MCAPI Random(unsigned int, bool);
     /**
      * @symbol ?nextGaussianFloat@Random@@QEAAMXZ
+     * @hash   -1857808250
      */
     MCAPI float nextGaussianFloat();
     /**
      * @symbol ?nextGaussianInt@Random@@QEAAHH@Z
+     * @hash   183144339
      */
     MCAPI int nextGaussianInt(int);
     /**
      * @symbol ?nextInt@Random@@QEAAHHH@Z
+     * @hash   -723926480
      */
     MCAPI int nextInt(int, int);
     /**
      * @symbol ?nextIntInclusive@Random@@QEAAHHH@Z
+     * @hash   -1679866910
      */
     MCAPI int nextIntInclusive(int, int);
     /**
      * @symbol ?getThreadLocal@Random@@SAAEAV1@XZ
+     * @hash   1502166420
      */
     MCAPI static class Random & getThreadLocal();
 

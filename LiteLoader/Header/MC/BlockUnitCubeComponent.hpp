@@ -29,8 +29,6 @@ public:
     BlockUnitCubeComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNITCUBECOMPONENT
-#endif
 MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
 
 };

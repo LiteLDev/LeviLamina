@@ -31,18 +31,18 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSUMMARY
-#endif
 MCAPI static class Core::PathBuffer<std::string> const CUSTOM_ICON_FILENAME;
 MCAPI static std::string const DEFAULT_WORLD_ICON_FILENAME;
 MCAPI static std::string const INVALID_LEVEL_ID;
 MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
     /**
      * @symbol ?buildCustomIconPath@LevelSummary@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
+     * @hash   -265465384
      */
     MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const &);
     /**
      * @symbol ?buildWorldIconPath@LevelSummary@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
+     * @hash   849094326
      */
     MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const &);
 

@@ -27,8 +27,6 @@ public:
     FogTransitionSetting() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGTRANSITIONSETTING
-#endif
 MCAPI static struct FogTransitionSetting const ZERO_SETTING;
 
 };

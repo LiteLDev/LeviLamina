@@ -27,50 +27,59 @@ public:
     struct SpawnActorParameters& operator=(struct SpawnActorParameters const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORPARAMETERS
-#endif
     /**
      * @symbol ??0SpawnActorParameters@@QEAA@XZ
+     * @hash   347683792
      */
     MCAPI SpawnActorParameters();
     /**
      * @symbol ??0SpawnActorParameters@@QEAA@AEBU0@@Z
+     * @hash   -1271846433
      */
     MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
     /**
      * @symbol ??0SpawnActorParameters@@QEAA@$$QEAU0@@Z
+     * @hash   -880353147
      */
     MCAPI SpawnActorParameters(struct SpawnActorParameters &&);
     /**
      * @symbol ?setItem@SpawnActorParameters@@QEAAXAEBVItemDescriptor@@@Z
+     * @hash   -1664658382
      */
     MCAPI void setItem(class ItemDescriptor const &);
     /**
      * @symbol ?setSpawnEntity@SpawnActorParameters@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   640321292
      */
     MCAPI void setSpawnEntity(std::string const &);
     /**
      * @symbol ?setSpawnEvent@SpawnActorParameters@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2130027854
      */
     MCAPI void setSpawnEvent(std::string const &);
     /**
      * @symbol ?setSpawnSound@SpawnActorParameters@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -220342082
      */
     MCAPI void setSpawnSound(std::string const &);
     /**
      * @symbol ?setSpawnTimeMax@SpawnActorParameters@@QEAAXAEBH@Z
+     * @hash   -1041381573
      */
     MCAPI void setSpawnTimeMax(int const &);
     /**
      * @symbol ?setSpawnTimeMin@SpawnActorParameters@@QEAAXAEBH@Z
+     * @hash   1792412543
      */
     MCAPI void setSpawnTimeMin(int const &);
     /**
      * @symbol ?spawnsItemStack@SpawnActorParameters@@QEBA_NXZ
+     * @hash   1569904466
      */
     MCAPI bool spawnsItemStack() const;
     /**
      * @symbol ??1SpawnActorParameters@@QEAA@XZ
+     * @hash   1499705454
      */
     MCAPI ~SpawnActorParameters();
 

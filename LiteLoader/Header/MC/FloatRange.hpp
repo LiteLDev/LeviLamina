@@ -30,14 +30,14 @@ public:
     FloatRange() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATRANGE
-#endif
     /**
      * @symbol ?getValue@FloatRange@@QEBAMAEAVRandom@@@Z
+     * @hash   1843931651
      */
     MCAPI float getValue(class Random &) const;
     /**
      * @symbol ?parseJson@FloatRange@@QEAA_NAEBVValue@Json@@MM@Z
+     * @hash   -372836239
      */
     MCAPI bool parseJson(class Json::Value const &, float, float);
 

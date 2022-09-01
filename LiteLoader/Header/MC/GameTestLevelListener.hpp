@@ -31,59 +31,60 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   363697122
      */
     virtual ~GameTestLevelListener();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1158526335
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1157602814
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1156679293
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1155755772
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1154832251
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?onLevelTick@GameTestLevelListener@@UEAA?AW4EventResult@@XZ
+     * @hash   151437966
      */
     virtual enum EventResult onLevelTick();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1152985209
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1152061688
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?onEvent@GameTestLevelListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
+     * @hash   225357692
      */
     virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTLEVELLISTENER
-#endif
     /**
      * @symbol ??0GameTestLevelListener@@QEAA@AEAVGameTestTicker@gametest@@@Z
+     * @hash   -1401613663
      */
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
 

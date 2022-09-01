@@ -33,21 +33,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -831774033
      */
     virtual ~ActorInBlockTest();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?evaluate@ActorInBlockTest@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   928836311
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@ActorInBlockTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   1728335963
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINBLOCKTEST
-#endif
 
 };

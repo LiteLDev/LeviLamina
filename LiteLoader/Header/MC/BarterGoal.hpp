@@ -31,55 +31,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   639109291
      */
     virtual ~BarterGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@BarterGoal@@UEAA_NXZ
+     * @hash   -2021184337
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@BarterGoal@@UEAA_NXZ
+     * @hash   -1554987651
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@BarterGoal@@UEAAXXZ
+     * @hash   411673731
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@BarterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1315560065
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERGOAL
-#endif
     /**
      * @symbol ??0BarterGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -865554596
      */
     MCAPI BarterGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_getThrowVector@BarterGoal@@AEAA?AVVec3@@XZ
+     * @hash   -441387913
      */
     MCAPI class Vec3 _getThrowVector();
 

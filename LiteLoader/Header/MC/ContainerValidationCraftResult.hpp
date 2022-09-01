@@ -26,18 +26,19 @@ public:
     ContainerValidationCraftResult(struct ContainerValidationCraftResult const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONCRAFTRESULT
-#endif
     /**
      * @symbol ??0ContainerValidationCraftResult@@QEAA@$$QEAU0@@Z
+     * @hash   479963635
      */
     MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult &&);
     /**
      * @symbol ??0ContainerValidationCraftResult@@QEAA@XZ
+     * @hash   877187487
      */
     MCAPI ContainerValidationCraftResult();
     /**
      * @symbol ??1ContainerValidationCraftResult@@QEAA@XZ
+     * @hash   -948017139
      */
     MCAPI ~ContainerValidationCraftResult();
 

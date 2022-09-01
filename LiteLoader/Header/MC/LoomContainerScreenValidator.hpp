@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2108676976
      */
     virtual ~LoomContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0LoomContainerScreenValidator@@QEAA@XZ
+     * @hash   44093842
      */
     MCAPI LoomContainerScreenValidator();
 

@@ -27,10 +27,9 @@ public:
     SpawnActorEntry() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORENTRY
-#endif
     /**
      * @symbol ??1SpawnActorEntry@@QEAA@XZ
+     * @hash   -1873393996
      */
     MCAPI ~SpawnActorEntry();
 

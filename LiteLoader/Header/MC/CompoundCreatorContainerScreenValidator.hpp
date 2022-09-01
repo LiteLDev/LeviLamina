@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1574186484
      */
     virtual ~CompoundCreatorContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0CompoundCreatorContainerScreenValidator@@QEAA@XZ
+     * @hash   -802624910
      */
     MCAPI CompoundCreatorContainerScreenValidator();
 

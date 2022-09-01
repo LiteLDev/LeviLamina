@@ -24,6 +24,7 @@ namespace LevelUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?projectToTimeOfDay@LevelUtils@@YAHHH@Z
+     * @hash   -1435728821
      */
     MCAPI int projectToTimeOfDay(int, int);
 

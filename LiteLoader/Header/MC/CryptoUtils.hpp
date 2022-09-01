@@ -25,10 +25,12 @@ namespace CryptoUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getDirectroyChecksum@CryptoUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z
+     * @hash   -192664116
      */
     MCAPI std::string getDirectroyChecksum(class Core::Path const &);
     /**
      * @symbol ?getFileChecksum@CryptoUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z
+     * @hash   807171406
      */
     MCAPI std::string getFileChecksum(class Core::Path const &);
 

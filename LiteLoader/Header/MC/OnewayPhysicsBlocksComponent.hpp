@@ -27,10 +27,9 @@ public:
     OnewayPhysicsBlocksComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONEWAYPHYSICSBLOCKSCOMPONENT
-#endif
     /**
      * @symbol ??1OnewayPhysicsBlocksComponent@@QEAA@XZ
+     * @hash   -371539469
      */
     MCAPI ~OnewayPhysicsBlocksComponent();
 

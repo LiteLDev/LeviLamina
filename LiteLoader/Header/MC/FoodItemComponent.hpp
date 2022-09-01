@@ -31,54 +31,59 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENT
     /**
-     * @vtable -1
      * @symbol ?canAlwaysEat@FoodItemComponent@@UEBA_NXZ
+     * @hash   2129534149
      */
     MCVAPI bool canAlwaysEat() const;
     /**
-     * @vtable -1
      * @symbol ?eatItem@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVActor@@AEAVLevel@@@Z
+     * @hash   1537312930
      */
     MCVAPI class Item const * eatItem(class ItemStack &, class Actor &, class Level &);
     /**
-     * @vtable -1
      * @symbol ?getNutrition@FoodItemComponent@@UEBAHXZ
+     * @hash   -1994821167
      */
     MCVAPI int getNutrition() const;
     /**
-     * @vtable -1
      * @symbol ?getSaturationModifier@FoodItemComponent@@UEBAMXZ
+     * @hash   -1527826287
      */
     MCVAPI float getSaturationModifier() const;
     /**
-     * @vtable -1
      * @symbol ?use@FoodItemComponent@@UEAA_NAEAVItemStack@@AEAVPlayer@@@Z
+     * @hash   224556592
      */
     MCVAPI bool use(class ItemStack &, class Player &);
     /**
-     * @vtable -1
      * @symbol ?useTimeDepleted@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
+     * @hash   -6637150
      */
     MCVAPI class Item const * useTimeDepleted(class ItemStack &, class Player &, class Level &);
 #endif
     /**
      * @symbol ?getUsingConvertsToItemDescriptor@FoodItemComponent@@QEBA?AVItemDescriptor@@XZ
+     * @hash   -1629108816
      */
     MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
     /**
      * @symbol ??4FoodItemComponent@@QEAAAEAV0@AEBV0@@Z
+     * @hash   -810355156
      */
     MCAPI class FoodItemComponent & operator=(class FoodItemComponent const &);
     /**
      * @symbol ?bindType@FoodItemComponent@@SAXXZ
+     * @hash   -1731535345
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@FoodItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   1978733776
      */
     MCAPI static class HashedString const & getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades@FoodItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   -1288610672
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

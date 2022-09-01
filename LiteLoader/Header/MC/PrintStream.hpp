@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   312396635
      */
     virtual ~PrintStream();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?print@PrintStream@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -402333787
      */
     virtual void print(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRINTSTREAM
-#endif
 
 };

@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERDEFINITION
-#endif
     /**
      * @symbol ?initialize@VibrationListenerDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   2119396654
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@VibrationListenerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VVibrationListenerDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1083101596
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VibrationListenerDefinition>> &);
 

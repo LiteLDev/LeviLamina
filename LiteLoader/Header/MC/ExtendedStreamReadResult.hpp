@@ -27,14 +27,14 @@ public:
     ExtendedStreamReadResult() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTENDEDSTREAMREADRESULT
-#endif
     /**
      * @symbol ??0ExtendedStreamReadResult@@QEAA@W4StreamReadResult@@@Z
+     * @hash   -1127577355
      */
     MCAPI ExtendedStreamReadResult(enum StreamReadResult);
     /**
      * @symbol ??1ExtendedStreamReadResult@@QEAA@XZ
+     * @hash   1046596342
      */
     MCAPI ~ExtendedStreamReadResult();
 

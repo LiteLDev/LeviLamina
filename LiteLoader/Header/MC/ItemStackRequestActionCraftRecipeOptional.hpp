@@ -30,43 +30,46 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2144931444
      */
     virtual ~ItemStackRequestActionCraftRecipeOptional();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1372744767
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getFilteredStringIndex@ItemStackRequestActionCraftRecipeOptional@@UEBAHXZ
+     * @hash   -60695807
      */
     virtual int getFilteredStringIndex() const;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftRecipeOptional@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -735762183
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftRecipeOptional@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
+     * @hash   879970033
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
-#endif
     /**
      * @symbol ??0ItemStackRequestActionCraftRecipeOptional@@QEAA@XZ
+     * @hash   633009338
      */
     MCAPI ItemStackRequestActionCraftRecipeOptional();
     /**
      * @symbol ?getRecipeNetId@ItemStackRequestActionCraftRecipeOptional@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
+     * @hash   446671077
      */
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
 

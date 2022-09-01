@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOOLRECIPES
-#endif
     /**
      * @symbol ?addRecipes@ToolRecipes@@SAXAEAVRecipes@@@Z
+     * @hash   459123530
      */
     MCAPI static void addRecipes(class Recipes &);
 

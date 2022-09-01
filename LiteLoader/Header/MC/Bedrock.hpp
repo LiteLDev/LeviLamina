@@ -114,18 +114,22 @@ public:
 #undef AFTER_EXTRA
     /**
      * @symbol ?getExceptionMessage@Bedrock@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@Vexception_ptr@3@@Z
+     * @hash   -622201798
      */
     MCAPI std::string getExceptionMessage(class std::exception_ptr);
     /**
      * @symbol ?strtoint32@Bedrock@@YAHPEBDPEAPEADH@Z
+     * @hash   1226254924
      */
     MCAPI int strtoint32(char const *, char **, int);
     /**
      * @symbol ?strtouint32@Bedrock@@YAIPEBDPEAPEADH@Z
+     * @hash   467177554
      */
     MCAPI unsigned int strtouint32(char const *, char **, int);
     /**
      * @symbol ?throw_system_error@Bedrock@@YAXW4errc@std@@@Z
+     * @hash   -940286991
      */
     MCAPI void throw_system_error(enum std::errc);
 

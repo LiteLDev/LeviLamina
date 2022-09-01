@@ -30,184 +30,190 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -754584026
      */
     virtual ~DebugInfoComponent();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
+     * @hash   -635291124
      */
     virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1157602814
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1156679293
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1155755772
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1154832251
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1153908730
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -1152985209
      */
     virtual void __unk_vfn_7();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1152061688
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1151138167
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -135037789
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -134114268
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -133190747
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -132267226
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
-     * @symbol __unk_vfn_14
+     * @vftbl  14
+     * @hash   -131343705
      */
     virtual void __unk_vfn_14();
     /**
-     * @vtable 15
-     * @symbol __unk_vfn_15
+     * @vftbl  15
+     * @hash   -130420184
      */
     virtual void __unk_vfn_15();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -129496663
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -128573142
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 18
-     * @symbol __unk_vfn_18
+     * @vftbl  18
+     * @hash   -127649621
      */
     virtual void __unk_vfn_18();
     /**
-     * @vtable 19
-     * @symbol __unk_vfn_19
+     * @vftbl  19
+     * @hash   -126726100
      */
     virtual void __unk_vfn_19();
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   -106408638
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 21
-     * @symbol __unk_vfn_21
+     * @vftbl  21
+     * @hash   -105485117
      */
     virtual void __unk_vfn_21();
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -104561596
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -103638075
      */
     virtual void __unk_vfn_23();
     /**
-     * @vtable 24
-     * @symbol __unk_vfn_24
+     * @vftbl  24
+     * @hash   -102714554
      */
     virtual void __unk_vfn_24();
     /**
-     * @vtable 25
-     * @symbol __unk_vfn_25
+     * @vftbl  25
+     * @hash   -101791033
      */
     virtual void __unk_vfn_25();
     /**
-     * @vtable 26
-     * @symbol __unk_vfn_26
+     * @vftbl  26
+     * @hash   -100867512
      */
     virtual void __unk_vfn_26();
     /**
-     * @vtable 27
-     * @symbol __unk_vfn_27
+     * @vftbl  27
+     * @hash   -99943991
      */
     virtual void __unk_vfn_27();
     /**
-     * @vtable 28
-     * @symbol __unk_vfn_28
+     * @vftbl  28
+     * @hash   -99020470
      */
     virtual void __unk_vfn_28();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -98096949
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
+     * @vftbl  30
      * @symbol ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
+     * @hash   1157676002
      */
     virtual enum EventResult onEvent(struct ActorDefinitionTriggeredEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGINFOCOMPONENT
-#endif
     /**
      * @symbol ??0DebugInfoComponent@@QEAA@AEBV0@@Z
+     * @hash   -621992031
      */
     MCAPI DebugInfoComponent(class DebugInfoComponent const &);
     /**
      * @symbol ??0DebugInfoComponent@@QEAA@$$QEAV0@@Z
+     * @hash   -2140861439
      */
     MCAPI DebugInfoComponent(class DebugInfoComponent &&);
     /**
      * @symbol ?addListener@DebugInfoComponent@@QEAAXAEBVHashedString@@VNetworkIdentifier@@W4SubClientId@@@Z
+     * @hash   1783075554
      */
     MCAPI void addListener(class HashedString const &, class NetworkIdentifier, enum SubClientId);
     /**
      * @symbol ?listenersEmpty@DebugInfoComponent@@QEBA_NXZ
+     * @hash   1632186226
      */
     MCAPI bool listenersEmpty() const;
     /**
      * @symbol ??4DebugInfoComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1204330676
      */
     MCAPI class DebugInfoComponent & operator=(class DebugInfoComponent &&);
     /**
      * @symbol ?removeListener@DebugInfoComponent@@QEAAXAEBVHashedString@@VNetworkIdentifier@@W4SubClientId@@@Z
+     * @hash   2125684128
      */
     MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, enum SubClientId);
 

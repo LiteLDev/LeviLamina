@@ -32,13 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERSYSTEM
     /**
-     * @vtable -1
      * @symbol ?onLevelAddedPlayer@WardenSpawnTrackerSystem@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+     * @hash   -315502602
      */
     MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
     /**
-     * @vtable -1
      * @symbol ?tick@WardenSpawnTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -1209486783
      */
     MCVAPI void tick(class EntityRegistry &);
 #endif

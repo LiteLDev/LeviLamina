@@ -32,25 +32,26 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   446000844
      */
     virtual ~AzaleaTreeAndRootsFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@AzaleaTreeAndRootsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -2103341720
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AZALEATREEANDROOTSFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_isLushGroundReplaceable@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1146514971
      */
     MCAPI bool _isLushGroundReplaceable(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_tryPlaceAzaleaTree@AzaleaTreeAndRootsFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@I@Z
+     * @hash   1417637919
      */
     MCAPI bool _tryPlaceAzaleaTree(class BlockSource &, class BlockPos const &, class Random &, unsigned int) const;
 

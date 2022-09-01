@@ -28,10 +28,9 @@ public:
     VibrationDamperDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONDAMPERDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@VibrationDamperDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UVibrationDamperDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -969071726
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct VibrationDamperDefinition>> &);
 

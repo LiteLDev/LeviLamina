@@ -22,6 +22,7 @@ namespace BlockRotationHelpers {
 #undef AFTER_EXTRA
     /**
      * @symbol ?fromVec3@BlockRotationHelpers@@YAXAEAUBlockRotationDescription@@AEBVVec3@@@Z
+     * @hash   -326438616
      */
     MCAPI void fromVec3(struct BlockRotationDescription &, class Vec3 const &);
 

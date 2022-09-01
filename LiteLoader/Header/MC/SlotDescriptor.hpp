@@ -27,22 +27,24 @@ public:
     struct SlotDescriptor& operator=(struct SlotDescriptor const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDESCRIPTOR
-#endif
     /**
      * @symbol ??0SlotDescriptor@@QEAA@XZ
+     * @hash   -777948855
      */
     MCAPI SlotDescriptor();
     /**
      * @symbol ??0SlotDescriptor@@QEAA@AEBU0@@Z
+     * @hash   -1690833521
      */
     MCAPI SlotDescriptor(struct SlotDescriptor const &);
     /**
      * @symbol ?addAcceptedItem@SlotDescriptor@@QEAAXAEBVItemDescriptor@@@Z
+     * @hash   2026733656
      */
     MCAPI void addAcceptedItem(class ItemDescriptor const &);
     /**
      * @symbol ??1SlotDescriptor@@QEAA@XZ
+     * @hash   375524391
      */
     MCAPI ~SlotDescriptor();
 

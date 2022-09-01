@@ -32,23 +32,23 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKLISTENER
     /**
-     * @vtable -1
      * @symbol ?onBaseGamePackDownloadComplete@ResourcePackListener@@UEAAXXZ
+     * @hash   -2112513848
      */
     MCVAPI void onBaseGamePackDownloadComplete();
     /**
-     * @vtable -1
      * @symbol ?onFullPackStackInvalid@ResourcePackListener@@UEAAXXZ
+     * @hash   -1193187166
      */
     MCVAPI void onFullPackStackInvalid();
     /**
-     * @vtable -1
      * @symbol ?onLanguageSubpacksChanged@ResourcePackListener@@UEAAXXZ
+     * @hash   589889167
      */
     MCVAPI void onLanguageSubpacksChanged();
     /**
-     * @vtable -1
      * @symbol ?onResourceManagerDestroyed@ResourcePackListener@@UEAAXAEAVResourcePackManager@@@Z
+     * @hash   -1213750911
      */
     MCVAPI void onResourceManagerDestroyed(class ResourcePackManager &);
 #endif

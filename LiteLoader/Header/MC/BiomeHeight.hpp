@@ -29,8 +29,6 @@ public:
     BiomeHeight() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEHEIGHT
-#endif
 MCAPI static float const MIN_DEPTH;
 
 };

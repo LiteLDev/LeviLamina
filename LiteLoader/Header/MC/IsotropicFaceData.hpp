@@ -27,10 +27,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISOTROPICFACEDATA
-#endif
     /**
      * @symbol ??0IsotropicFaceData@@QEAA@XZ
+     * @hash   794973649
      */
     MCAPI IsotropicFaceData();
 

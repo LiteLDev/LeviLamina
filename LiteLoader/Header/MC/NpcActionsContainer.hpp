@@ -29,34 +29,39 @@ public:
     NpcActionsContainer() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCACTIONSCONTAINER
-#endif
     /**
      * @symbol ?cloneActions@NpcActionsContainer@@QEBA?AV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@XZ
+     * @hash   -1787262799
      */
     MCAPI std::vector<std::unique_ptr<class NpcAction>> cloneActions() const;
     /**
      * @symbol ?getActionAt@NpcActionsContainer@@QEAAPEAVNpcAction@@_K@Z
+     * @hash   234273831
      */
     MCAPI class NpcAction * getActionAt(unsigned __int64);
     /**
      * @symbol ?getActionCount@NpcActionsContainer@@QEBA_KXZ
+     * @hash   941096033
      */
     MCAPI unsigned __int64 getActionCount() const;
     /**
      * @symbol ?getActions@NpcActionsContainer@@QEAAAEAV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@XZ
+     * @hash   1291587021
      */
     MCAPI std::vector<std::unique_ptr<class NpcAction>> & getActions();
     /**
      * @symbol ?getActions@NpcActionsContainer@@QEBAAEBV?$vector@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@V?$allocator@V?$unique_ptr@VNpcAction@@U?$default_delete@VNpcAction@@@std@@@std@@@2@@std@@XZ
+     * @hash   1615472135
      */
     MCAPI std::vector<std::unique_ptr<class NpcAction>> const & getActions() const;
     /**
      * @symbol ?getUrlCount@NpcActionsContainer@@QEBAHXZ
+     * @hash   1901985252
      */
     MCAPI int getUrlCount() const;
     /**
      * @symbol ??1NpcActionsContainer@@QEAA@XZ
+     * @hash   -2013148687
      */
     MCAPI ~NpcActionsContainer();
 

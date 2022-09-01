@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1161672279
      */
     virtual ~EndPodiumFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@EndPodiumFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1349021145
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPODIUMFEATURE
-#endif
     /**
      * @symbol ??0EndPodiumFeature@@QEAA@_N@Z
+     * @hash   -1709832460
      */
     MCAPI EndPodiumFeature(bool);
 MCAPI static float const CORNER_ROUNDING;

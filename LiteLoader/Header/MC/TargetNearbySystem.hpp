@@ -31,21 +31,20 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -248055287
      */
     virtual ~TargetNearbySystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@TargetNearbySystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -941386193
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETNEARBYSYSTEM
-#endif
 
 };

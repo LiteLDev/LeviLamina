@@ -24,6 +24,7 @@ namespace BedrockBlocks {
 #undef AFTER_EXTRA
     /**
      * @symbol ?assignBlocks@BedrockBlocks@@YAXXZ
+     * @hash   371600150
      */
     MCAPI void assignBlocks();
 MCAPI extern class Block const * mAir;
@@ -31,6 +32,7 @@ MCAPI extern class Block const * mClientRequestPlaceholderBlock;
 MCAPI extern class Block const * mUnknown;
     /**
      * @symbol ?unassignBlocks@BedrockBlocks@@YAXXZ
+     * @hash   1859031224
      */
     MCAPI void unassignBlocks();
 

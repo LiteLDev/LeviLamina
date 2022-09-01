@@ -30,38 +30,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERBUILDER
-#endif
     /**
      * @symbol ?edit@CompoundTagUpdaterBuilder@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAVCompoundTagEditHelper@@@Z@3@@Z
+     * @hash   -175321509
      */
     MCAPI class CompoundTagUpdaterBuilder & edit(std::string const &, class std::function<void (class CompoundTagEditHelper &)> &&);
     /**
      * @symbol ?match@CompoundTagUpdaterBuilder@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z
+     * @hash   691204810
      */
     MCAPI class CompoundTagUpdaterBuilder & match(std::string const &, std::string);
     /**
      * @symbol ?matchLiteral@CompoundTagUpdaterBuilder@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@@Z
+     * @hash   -1348706798
      */
     MCAPI class CompoundTagUpdaterBuilder & matchLiteral(std::string const &, std::string);
     /**
      * @symbol ?popVisit@CompoundTagUpdaterBuilder@@QEAAAEAV1@XZ
+     * @hash   -602515444
      */
     MCAPI class CompoundTagUpdaterBuilder & popVisit();
     /**
      * @symbol ?remove@CompoundTagUpdaterBuilder@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   942860021
      */
     MCAPI class CompoundTagUpdaterBuilder & remove(std::string const &);
     /**
      * @symbol ?rename@CompoundTagUpdaterBuilder@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   1695575139
      */
     MCAPI class CompoundTagUpdaterBuilder & rename(std::string const &, std::string const &);
     /**
      * @symbol ?tryEdit@CompoundTagUpdaterBuilder@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAVCompoundTagEditHelper@@@Z@3@@Z
+     * @hash   273402457
      */
     MCAPI class CompoundTagUpdaterBuilder & tryEdit(std::string const &, class std::function<void (class CompoundTagEditHelper &)> &&);
     /**
      * @symbol ?visit@CompoundTagUpdaterBuilder@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -484634057
      */
     MCAPI class CompoundTagUpdaterBuilder & visit(std::string const &);
 

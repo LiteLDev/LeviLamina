@@ -32,26 +32,26 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2075552208
      */
     virtual ~ActorEventResponse();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@ActorEventResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1492303907
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -780933545
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?buildSchema@ActorEventResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VActorEventResponse@@$$V@@@Z
+     * @hash   -595716631
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> &, class Factory<class ActorEventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSE
-#endif
 
 };

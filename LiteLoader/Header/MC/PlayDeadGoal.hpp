@@ -31,49 +31,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1278662219
      */
     virtual ~PlayDeadGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@PlayDeadGoal@@UEAA_NXZ
+     * @hash   -122646475
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@PlayDeadGoal@@UEAA_NXZ
+     * @hash   -60907437
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@PlayDeadGoal@@UEAAXXZ
+     * @hash   1409539214
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@PlayDeadGoal@@UEAAXXZ
+     * @hash   1514999134
      */
     virtual void stop();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@PlayDeadGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   385458939
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYDEADGOAL
-#endif
     /**
      * @symbol ??0PlayDeadGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -1567565774
      */
     MCAPI PlayDeadGoal(class Mob &);
 

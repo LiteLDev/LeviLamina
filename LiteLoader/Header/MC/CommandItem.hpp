@@ -32,34 +32,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDITEM
-#endif
     /**
      * @symbol ??0CommandItem@@QEAA@XZ
+     * @hash   818119610
      */
     MCAPI CommandItem();
     /**
      * @symbol ??0CommandItem@@QEAA@HF_N@Z
+     * @hash   -1530790894
      */
     MCAPI CommandItem(int, short, bool);
     /**
      * @symbol ??0CommandItem@@QEAA@_K@Z
+     * @hash   1724311790
      */
     MCAPI CommandItem(unsigned __int64);
     /**
      * @symbol ?createInstance@CommandItem@@QEBA?AV?$optional@VItemInstance@@@std@@HHPEAVCommandOutput@@_N@Z
+     * @hash   1060351318
      */
     MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput *, bool) const;
     /**
      * @symbol ?getId@CommandItem@@QEBAHXZ
+     * @hash   -693551734
      */
     MCAPI int getId() const;
     /**
      * @symbol ??BCommandItem@@QEBA_NXZ
+     * @hash   437906392
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??BCommandItem@@QEBA_KXZ
+     * @hash   -501584869
      */
     MCAPI operator unsigned __int64() const;
 

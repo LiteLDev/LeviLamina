@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2022520095
      */
     virtual ~SubtreeDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@SubtreeDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   263026259
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBTREEDEFINITION
-#endif
 
 };

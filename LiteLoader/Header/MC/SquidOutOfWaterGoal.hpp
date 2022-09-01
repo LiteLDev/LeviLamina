@@ -31,64 +31,66 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -460513755
      */
     virtual ~SquidOutOfWaterGoal();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   75804594
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   76728115
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SquidOutOfWaterGoal@@UEAAXXZ
+     * @hash   1608581554
      */
     virtual void start();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SquidOutOfWaterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1397366825
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDOUTOFWATERGOAL
     /**
-     * @vtable -1
      * @symbol ?canContinueToUse@SquidOutOfWaterGoal@@UEAA_NXZ
+     * @hash   -595970489
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @vtable -1
      * @symbol ?canUse@SquidOutOfWaterGoal@@UEAA_NXZ
+     * @hash   -1432029591
      */
     MCVAPI bool canUse();
     /**
-     * @vtable -1
      * @symbol ?stop@SquidOutOfWaterGoal@@UEAAXXZ
+     * @hash   1022204082
      */
     MCVAPI void stop();
     /**
-     * @vtable -1
      * @symbol ?tick@SquidOutOfWaterGoal@@UEAAXXZ
+     * @hash   -105798291
      */
     MCVAPI void tick();
 #endif

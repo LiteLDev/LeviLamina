@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1295377402
      */
     virtual ~OceanRuinStart();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANRUINSTART
-#endif
     /**
      * @symbol ?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
+     * @hash   -1744625155
      */
     MCAPI void createRuin(class Dimension &, class Random &, int, int);
 

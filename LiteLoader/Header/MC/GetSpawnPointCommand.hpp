@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1209839178
      */
     virtual ~GetSpawnPointCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@GetSpawnPointCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1466474915
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETSPAWNPOINTCOMMAND
-#endif
     /**
      * @symbol ?setup@GetSpawnPointCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -838790564
      */
     MCAPI static void setup(class CommandRegistry &);
 

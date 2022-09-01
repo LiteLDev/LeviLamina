@@ -32,33 +32,36 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1680516022
      */
     virtual ~PermissionCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@PermissionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   581511671
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONCOMMAND
-#endif
     /**
      * @symbol ?setup@PermissionCommand@@SAXAEAVCommandRegistry@@PEAVPermissionsFile@@@Z
+     * @hash   140597490
      */
     MCAPI static void setup(class CommandRegistry &, class PermissionsFile *);
 
 //private:
     /**
      * @symbol ?list@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   170026933
      */
     MCAPI void list(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?reload@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -135920272
      */
     MCAPI void reload(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?set@PermissionCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1126969319
      */
     MCAPI void set(class CommandOrigin const &, class CommandOutput &) const;
 

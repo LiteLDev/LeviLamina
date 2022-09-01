@@ -32,84 +32,86 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1509631800
      */
     virtual ~ClassroomModeListener();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1401090423
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -384990045
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
+     * @hash   -1826822915
      */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSROOMMODELISTENER
     /**
-     * @vtable -1
      * @symbol ?onAreaChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     * @hash   -146685737
      */
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
     /**
-     * @vtable -1
      * @symbol ?onBlockChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
+     * @hash   625755827
      */
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
     /**
-     * @vtable -1
      * @symbol ?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+     * @hash   1669327175
      */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /**
-     * @vtable -1
      * @symbol ?onChunkUnloaded@ClassroomModeListener@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   1972315522
      */
     MCVAPI void onChunkUnloaded(class LevelChunk &);
     /**
-     * @vtable -1
      * @symbol ?onEntityAdded@ClassroomModeListener@@UEAAXAEAVActor@@@Z
+     * @hash   -1235781316
      */
     MCVAPI void onEntityAdded(class Actor &);
     /**
-     * @vtable -1
      * @symbol ?onEntityRemoved@ClassroomModeListener@@UEAAXAEAVActor@@@Z
+     * @hash   472467804
      */
     MCVAPI void onEntityRemoved(class Actor &);
 #endif
     /**
      * @symbol ??0ClassroomModeListener@@QEAA@AEAVIMinecraftEventing@@@Z
+     * @hash   412844165
      */
     MCAPI ClassroomModeListener(class IMinecraftEventing &);
 

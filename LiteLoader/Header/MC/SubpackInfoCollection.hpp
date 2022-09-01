@@ -28,26 +28,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBPACKINFOCOLLECTION
-#endif
     /**
      * @symbol ?addSubpackInfo@SubpackInfoCollection@@QEAAX$$QEAUSubpackInfo@@@Z
+     * @hash   -621002964
      */
     MCAPI void addSubpackInfo(struct SubpackInfo &&);
     /**
      * @symbol ?getSubpackContentTier@SubpackInfoCollection@@QEBA?AVContentTierInfo@@H@Z
+     * @hash   -1143670283
      */
     MCAPI class ContentTierInfo getSubpackContentTier(int) const;
     /**
      * @symbol ?getSubpackFolderName@SubpackInfoCollection@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -1298506539
      */
     MCAPI std::string const & getSubpackFolderName(int) const;
     /**
      * @symbol ?getSubpackInfo@SubpackInfoCollection@@QEBAAEBV?$vector@USubpackInfo@@V?$allocator@USubpackInfo@@@std@@@std@@XZ
+     * @hash   -869463694
      */
     MCAPI std::vector<struct SubpackInfo> const & getSubpackInfo() const;
     /**
      * @symbol ?hasSubpacks@SubpackInfoCollection@@QEBA_NXZ
+     * @hash   1436256628
      */
     MCAPI bool hasSubpacks() const;
 

@@ -32,73 +32,81 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -958615029
      */
     virtual ~MingleGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@MingleGoal@@UEAA_NXZ
+     * @hash   729459839
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MingleGoal@@UEAA_NXZ
+     * @hash   1201929933
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@MingleGoal@@UEAAXXZ
+     * @hash   -1283751784
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@MingleGoal@@UEAAXXZ
+     * @hash   -969632616
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@MingleGoal@@UEAAXXZ
+     * @hash   -1488916285
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MingleGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -983580255
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINGLEGOAL
-#endif
     /**
      * @symbol ??0MingleGoal@@QEAA@AEAVMob@@MMMUActorDefinitionIdentifier@@M@Z
+     * @hash   -389330893
      */
     MCAPI MingleGoal(class Mob &, float, float, float, struct ActorDefinitionIdentifier, float);
 
 //private:
     /**
      * @symbol ?_findNewPartner@MingleGoal@@AEAAXUActorUniqueID@@@Z
+     * @hash   2100744346
      */
     MCAPI void _findNewPartner(struct ActorUniqueID);
     /**
      * @symbol ?_isWithinInteractRange@MingleGoal@@AEBA_NAEAVActor@@@Z
+     * @hash   356442830
      */
     MCAPI bool _isWithinInteractRange(class Actor &) const;
     /**
      * @symbol ?_lookAt@MingleGoal@@AEAAXPEAVActor@@@Z
+     * @hash   538367303
      */
     MCAPI void _lookAt(class Actor *);
 

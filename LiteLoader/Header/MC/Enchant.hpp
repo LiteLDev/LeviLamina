@@ -112,156 +112,180 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -734070233
      */
     virtual ~Enchant();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isCompatibleWith@Enchant@@UEBA_NW4Type@1@@Z
+     * @hash   -1704433902
      */
     virtual bool isCompatibleWith(enum Enchant::Type) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getMinCost@Enchant@@UEBAHH@Z
+     * @hash   940549058
      */
     virtual int getMinCost(int) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getMaxCost@Enchant@@UEBAHH@Z
+     * @hash   -667372784
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getMinLevel@Enchant@@UEBAHXZ
+     * @hash   2135706938
      */
     virtual int getMinLevel() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getMaxLevel@Enchant@@UEBAHXZ
+     * @hash   527815848
      */
     virtual int getMaxLevel() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getDamageProtection@Enchant@@UEBAHHAEBVActorDamageSource@@@Z
+     * @hash   -14767013
      */
     virtual int getDamageProtection(int, class ActorDamageSource const &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?getDamageBonus@Enchant@@UEBAMHAEBVActor@@@Z
+     * @hash   146662932
      */
     virtual float getDamageBonus(int, class Actor const &) const;
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?doPostAttack@Enchant@@UEBAXAEAVActor@@0H@Z
+     * @hash   1467387373
      */
     virtual void doPostAttack(class Actor &, class Actor &, int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?doPostHurt@Enchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z
+     * @hash   -564778870
      */
     virtual void doPostHurt(class ItemInstance &, class Actor &, class Actor &, int) const;
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -342706045
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@Enchant@@EEBA_NW4Type@1@@Z
+     * @hash   -51298085
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANT
     /**
-     * @vtable -1
      * @symbol ?isDiscoverable@Enchant@@UEBA_NXZ
+     * @hash   -1618022516
      */
     MCVAPI bool isDiscoverable() const;
     /**
-     * @vtable -1
      * @symbol ?isMeleeDamageEnchant@Enchant@@UEBA_NXZ
+     * @hash   1788592223
      */
     MCVAPI bool isMeleeDamageEnchant() const;
     /**
-     * @vtable -1
      * @symbol ?isProtectionEnchant@Enchant@@UEBA_NXZ
+     * @hash   -2001310731
      */
     MCVAPI bool isProtectionEnchant() const;
     /**
-     * @vtable -1
      * @symbol ?isTreasureOnly@Enchant@@UEBA_NXZ
+     * @hash   252490788
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
      * @symbol ??0Enchant@@QEAA@W4Type@0@W4Frequency@0@V?$basic_string_span@$$CBD$0?0@gsl@@2HH_N@Z
+     * @hash   1009281794
      */
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     /**
      * @symbol ??0Enchant@@QEAA@W4Type@0@W4Frequency@0@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
+     * @hash   -150515531
      */
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
     /**
      * @symbol ?canEnchant@Enchant@@QEBA_NH_N@Z
+     * @hash   -2141254214
      */
     MCAPI bool canEnchant(int, bool) const;
     /**
      * @symbol ?getDescription@Enchant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   281528204
      */
     MCAPI std::string getDescription() const;
     /**
      * @symbol ?getDescriptionId@Enchant@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -543942820
      */
     MCAPI std::string getDescriptionId() const;
     /**
      * @symbol ?getEnchantType@Enchant@@QEBA?AW4Type@1@XZ
+     * @hash   904435082
      */
     MCAPI enum Enchant::Type getEnchantType() const;
     /**
      * @symbol ?getFrequency@Enchant@@QEBA?AW4Frequency@1@XZ
+     * @hash   -2093483856
      */
     MCAPI enum Enchant::Frequency getFrequency() const;
     /**
      * @symbol ?getStringId@Enchant@@QEBAAEBVHashedString@@XZ
+     * @hash   -1156168788
      */
     MCAPI class HashedString const & getStringId() const;
     /**
      * @symbol ?isAvailable@Enchant@@QEBA_NXZ
+     * @hash   499272300
      */
     MCAPI bool isAvailable() const;
     /**
      * @symbol ?isDisabled@Enchant@@QEBA_NXZ
+     * @hash   1835732974
      */
     MCAPI bool isDisabled() const;
     /**
      * @symbol ?isLootable@Enchant@@QEBA_NXZ
+     * @hash   -1312022930
      */
     MCAPI bool isLootable() const;
     /**
      * @symbol ?enchantSlotFromString@Enchant@@SA?AW4Slot@1@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   1459248799
      */
     MCAPI static enum Enchant::Slot enchantSlotFromString(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?getEnchant@Enchant@@SAPEBV1@AEBW4Type@1@@Z
+     * @hash   -1098649038
      */
     MCAPI static class Enchant const * getEnchant(enum Enchant::Type const &);
     /**
      * @symbol ?initEnchants@Enchant@@SAXXZ
+     * @hash   -436107627
      */
     MCAPI static void initEnchants();
 MCAPI static class std::unordered_map<class HashedString, enum Enchant::Type, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, enum Enchant::Type>>> mEnchantNameToType;
@@ -270,10 +294,12 @@ MCAPI static class std::unordered_map<std::string, enum Enchant::Slot, struct st
 MCAPI static std::vector<std::unique_ptr<class Enchant>> mEnchants;
     /**
      * @symbol ?shutdownEnchants@Enchant@@SAXXZ
+     * @hash   -1594741983
      */
     MCAPI static void shutdownEnchants();
     /**
      * @symbol ?stringFromEnchantSlot@Enchant@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4Slot@1@@Z
+     * @hash   1618814745
      */
     MCAPI static std::string stringFromEnchantSlot(enum Enchant::Slot const &);
 

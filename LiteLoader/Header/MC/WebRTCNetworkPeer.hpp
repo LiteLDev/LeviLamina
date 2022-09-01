@@ -32,48 +32,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   712339025
      */
     virtual ~WebRTCNetworkPeer();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?sendPacket@WebRTCNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
+     * @hash   -1179166350
      */
     virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?receivePacket@WebRTCNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+     * @hash   -871295100
      */
     virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getNetworkStatus@WebRTCNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+     * @hash   -1589715973
      */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?update@WebRTCNetworkPeer@@UEAAXXZ
+     * @hash   2136403229
      */
     virtual void update();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBRTCNETWORKPEER
-#endif
     /**
      * @symbol ??0WebRTCNetworkPeer@@QEAA@AEBV?$shared_ptr@UNetherNetInstance@@@std@@@Z
+     * @hash   1109472621
      */
     MCAPI WebRTCNetworkPeer(class std::shared_ptr<struct NetherNetInstance> const &);
     /**
      * @symbol ?setRemoteUserID@WebRTCNetworkPeer@@QEAAX_K@Z
+     * @hash   -1842858097
      */
     MCAPI void setRemoteUserID(unsigned __int64);
     /**
      * @symbol ?pullIncomingData@WebRTCNetworkPeer@@SAXAEBV?$shared_ptr@UNetherNetInstance@@@std@@AEAVNetworkHandler@@@Z
+     * @hash   -208379426
      */
     MCAPI static void pullIncomingData(class std::shared_ptr<struct NetherNetInstance> const &, class NetworkHandler &);
 
 //private:
     /**
      * @symbol ?_updateConnectionStatus@WebRTCNetworkPeer@@AEAAXXZ
+     * @hash   2092596977
      */
     MCAPI void _updateConnectionStatus();
 

@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1192349613
      */
     virtual ~RandomLookAroundAndSitGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@RandomLookAroundAndSitGoal@@UEAA_NXZ
+     * @hash   357762359
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RandomLookAroundAndSitGoal@@UEAA_NXZ
+     * @hash   1558341957
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@RandomLookAroundAndSitGoal@@UEAAXXZ
+     * @hash   -473193632
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@RandomLookAroundAndSitGoal@@UEAAXXZ
+     * @hash   -1501789392
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@RandomLookAroundAndSitGoal@@UEAAXXZ
+     * @hash   -246167877
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RandomLookAroundAndSitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1239544055
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMLOOKAROUNDANDSITGOAL
-#endif
     /**
      * @symbol ??0RandomLookAroundAndSitGoal@@QEAA@AEAVMob@@HHHHM@Z
+     * @hash   1315083565
      */
     MCAPI RandomLookAroundAndSitGoal(class Mob &, int, int, int, int, float);
 

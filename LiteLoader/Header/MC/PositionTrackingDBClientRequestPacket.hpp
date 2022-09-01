@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1518025380
      */
     virtual ~PositionTrackingDBClientRequestPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@PositionTrackingDBClientRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1688849440
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@PositionTrackingDBClientRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1790218611
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@PositionTrackingDBClientRequestPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1744831642
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@PositionTrackingDBClientRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1830356058
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGDBCLIENTREQUESTPACKET
-#endif
     /**
      * @symbol ??0PositionTrackingDBClientRequestPacket@@QEAA@XZ
+     * @hash   -1927639958
      */
     MCAPI PositionTrackingDBClientRequestPacket();
 

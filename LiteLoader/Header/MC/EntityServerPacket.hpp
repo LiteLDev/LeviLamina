@@ -31,28 +31,30 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1056992760
      */
     virtual ~EntityServerPacket();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@EntityServerPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1420182218
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@EntityServerPacket@@MEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1763112499
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSERVERPACKET
-#endif
     /**
      * @symbol ??0EntityServerPacket@@QEAA@XZ
+     * @hash   1281459226
      */
     MCAPI EntityServerPacket();
     /**
      * @symbol ??0EntityServerPacket@@QEAA@AEBVEntityContext@@@Z
+     * @hash   2101706851
      */
     MCAPI EntityServerPacket(class EntityContext const &);
 

@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANAGEDWANDERINGTRADERCOMPONENT
-#endif
     /**
      * @symbol ?initFromDefinition@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -343473566
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?reloadComponent@ManagedWanderingTraderComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -1639916638
      */
     MCAPI void reloadComponent(class Actor &);
 

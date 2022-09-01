@@ -29,42 +29,49 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WARDENSPAWNTRACKERCOMPONENT
-#endif
     /**
      * @symbol ??0WardenSpawnTrackerComponent@@QEAA@XZ
+     * @hash   1016635479
      */
     MCAPI WardenSpawnTrackerComponent();
     /**
      * @symbol ?addAdditionalSaveData@WardenSpawnTrackerComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -331739096
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEBA_NXZ
+     * @hash   -452275062
      */
     MCAPI bool canIncreaseThreatLevel() const;
     /**
      * @symbol ?copyDataFrom@WardenSpawnTrackerComponent@@QEAAXAEBV1@@Z
+     * @hash   -476930572
      */
     MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const &);
     /**
      * @symbol ?readAdditionalSaveData@WardenSpawnTrackerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   2100263190
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?tick@WardenSpawnTrackerComponent@@QEAAXXZ
+     * @hash   1297583101
      */
     MCAPI void tick();
     /**
      * @symbol ?tryIncreaseThreatLevel@WardenSpawnTrackerComponent@@QEAAHXZ
+     * @hash   164796162
      */
     MCAPI int tryIncreaseThreatLevel();
     /**
      * @symbol ?getSoundEventForThreatLevel@WardenSpawnTrackerComponent@@SA?AV?$optional@W4LevelSoundEvent@@@std@@H@Z
+     * @hash   1142880138
      */
     MCAPI static class std::optional<enum LevelSoundEvent> getSoundEventForThreatLevel(int);
     /**
      * @symbol ?hasNearbyWarden@WardenSpawnTrackerComponent@@SA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1371014808
      */
     MCAPI static bool hasNearbyWarden(class BlockSource &, class BlockPos const &);
 

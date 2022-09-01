@@ -22,6 +22,7 @@ namespace SideBySideExtractionId {
 #undef AFTER_EXTRA
     /**
      * @symbol ?toString@SideBySideExtractionId@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@3@@Z
+     * @hash   112445813
      */
     MCAPI std::string toString(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside> const &);
 

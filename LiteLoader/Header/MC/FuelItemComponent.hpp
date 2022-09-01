@@ -31,48 +31,51 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1687321886
      */
     virtual ~FuelItemComponent();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VFuelItemComponent@@@@UEBA_NXZ
+     * @hash   -1119473603
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VFuelItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   86313903
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VFuelItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   622644305
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUELITEMCOMPONENT
-#endif
     /**
      * @symbol ?bindType@FuelItemComponent@@SAXXZ
+     * @hash   -755547889
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@FuelItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   -1505971488
      */
     MCAPI static class HashedString const & getIdentifier();
 

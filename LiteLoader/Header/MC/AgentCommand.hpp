@@ -32,65 +32,76 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -591855664
      */
     virtual ~AgentCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@AgentCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1923126637
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMAND
-#endif
     /**
      * @symbol ?setup@AgentCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   88080476
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?collect@AgentCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -468369449
      */
     MCAPI void collect(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?createAgent@AgentCommand@@AEBAXAEAVPlayer@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1193919187
      */
     MCAPI void createAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?createAgentOutputSuccess@AgentCommand@@AEBAXAEAVCommandOutput@@_N@Z
+     * @hash   797402546
      */
     MCAPI void createAgentOutputSuccess(class CommandOutput &, bool) const;
     /**
      * @symbol ?directionCommand@AgentCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -487506087
      */
     MCAPI void directionCommand(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?getPosition@AgentCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   2133757212
      */
     MCAPI void getPosition(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?itemCommand@AgentCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   2107734229
      */
     MCAPI void itemCommand(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?place@AgentCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1014877572
      */
     MCAPI void place(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?reportSuccess@AgentCommand@@AEBAX_NAEAVCommandOutput@@@Z
+     * @hash   -1633796320
      */
     MCAPI void reportSuccess(bool, class CommandOutput &) const;
     /**
      * @symbol ?setAgentOwner@AgentCommand@@AEBAXAEAVAgent@@AEAVPlayer@@@Z
+     * @hash   -2074707943
      */
     MCAPI void setAgentOwner(class Agent &, class Player &) const;
     /**
      * @symbol ?setItem@AgentCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   45253490
      */
     MCAPI void setItem(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?tpAgent@AgentCommand@@AEBAXAEAVPlayer@@AEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1331165069
      */
     MCAPI void tpAgent(class Player &, class CommandOrigin const &, class CommandOutput &) const;
 

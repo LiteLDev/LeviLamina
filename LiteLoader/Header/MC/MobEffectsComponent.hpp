@@ -27,10 +27,9 @@ public:
     MobEffectsComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTSCOMPONENT
-#endif
     /**
      * @symbol ??1MobEffectsComponent@@QEAA@XZ
+     * @hash   1459273559
      */
     MCAPI ~MobEffectsComponent();
 

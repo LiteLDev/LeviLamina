@@ -24,22 +24,27 @@ namespace FeatureHelper {
 #undef AFTER_EXTRA
     /**
      * @symbol ?isEmptyBlock@FeatureHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
+     * @hash   -1055546181
      */
     MCAPI bool isEmptyBlock(class IBlockWorldGenAPI const &, class BlockPos const &);
     /**
      * @symbol ?makeFeatureRenderParams@FeatureHelper@@YA?AVRenderParams@@AEAVBlockSource@@AEBVBlockPos@@AEAVMolangVariableMap@@@Z
+     * @hash   1443893684
      */
     MCAPI class RenderParams makeFeatureRenderParams(class BlockSource &, class BlockPos const &, class MolangVariableMap &);
     /**
      * @symbol ?passesAllowList@FeatureHelper@@YA_NAEBVBlock@@AEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
+     * @hash   -1202567825
      */
     MCAPI bool passesAllowList(class Block const &, std::vector<class BlockDescriptor> const &);
     /**
      * @symbol ?passesAllowList@FeatureHelper@@YA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBV?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
+     * @hash   904955882
      */
     MCAPI bool passesAllowList(class IBlockWorldGenAPI const &, class BlockPos const &, std::vector<class BlockDescriptor> const &);
     /**
      * @symbol ?placeBlock@FeatureHelper@@YA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -581141579
      */
     MCAPI class std::optional<class BlockPos> placeBlock(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &);
 

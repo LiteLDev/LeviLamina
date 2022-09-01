@@ -27,10 +27,9 @@ public:
     RemovePassengersComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEPASSENGERSCOMPONENT
-#endif
     /**
      * @symbol ??1RemovePassengersComponent@@QEAA@XZ
+     * @hash   -1646596708
      */
     MCAPI ~RemovePassengersComponent();
 

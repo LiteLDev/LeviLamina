@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   685018692
      */
     virtual ~RotateState();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?tick@RotateState@@UEAAXXZ
+     * @hash   1020947262
      */
     virtual void tick();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?start@PetSleepWithOwnerState@@UEAAXXZ
+     * @hash   -500624717
      */
     virtual void start();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
+     * @hash   738417891
      */
     virtual void stop();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROTATESTATE
-#endif
 
 };

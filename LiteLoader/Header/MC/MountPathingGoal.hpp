@@ -31,64 +31,70 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1421402177
      */
     virtual ~MountPathingGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@MountPathingGoal@@UEAA_NXZ
+     * @hash   843849225
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MountPathingGoal@@UEAA_NXZ
+     * @hash   1287678391
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@MountPathingGoal@@UEAAXXZ
+     * @hash   -1094454142
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@MountPathingGoal@@UEAAXXZ
+     * @hash   1394090258
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@MountPathingGoal@@UEAAXXZ
+     * @hash   -1679343587
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MountPathingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1779461353
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?_getAttackReachSqr@MountPathingGoal@@MEAAMXZ
+     * @hash   1347598369
      */
     virtual float _getAttackReachSqr();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOUNTPATHINGGOAL
-#endif
     /**
      * @symbol ??0MountPathingGoal@@QEAA@AEAVMob@@MM_N@Z
+     * @hash   -44108473
      */
     MCAPI MountPathingGoal(class Mob &, float, float, bool);
 

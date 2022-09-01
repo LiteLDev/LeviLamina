@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -303674182
      */
     virtual ~HoverMoveControl();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@HoverMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     * @hash   1677263558
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERMOVECONTROL
-#endif
     /**
      * @symbol ??0HoverMoveControl@@QEAA@XZ
+     * @hash   214183100
      */
     MCAPI HoverMoveControl();
 

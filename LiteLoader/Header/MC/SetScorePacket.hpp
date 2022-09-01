@@ -32,48 +32,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   697831106
      */
     virtual ~SetScorePacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@SetScorePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -849436442
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@SetScorePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1272123501
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@SetScorePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   103573332
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@SetScorePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1175579916
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETSCOREPACKET
-#endif
     /**
      * @symbol ?change@SetScorePacket@@SA?AV1@AEBUScoreboardId@@AEBVObjective@@@Z
+     * @hash   -1715812089
      */
     MCAPI static class SetScorePacket change(struct ScoreboardId const &, class Objective const &);
     /**
      * @symbol ?change@SetScorePacket@@SA?AV1@V?$vector@UScorePacketInfo@@V?$allocator@UScorePacketInfo@@@std@@@std@@@Z
+     * @hash   -300663604
      */
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo>);
     /**
      * @symbol ?remove@SetScorePacket@@SA?AV1@AEBUScoreboardId@@AEBVObjective@@@Z
+     * @hash   1269795519
      */
     MCAPI static class SetScorePacket remove(struct ScoreboardId const &, class Objective const &);
 
 //private:
     /**
      * @symbol ??0SetScorePacket@@AEAA@W4ScorePacketType@@AEBUScoreboardId@@AEBVObjective@@@Z
+     * @hash   -590290973
      */
     MCAPI SetScorePacket(enum ScorePacketType, struct ScoreboardId const &, class Objective const &);
 

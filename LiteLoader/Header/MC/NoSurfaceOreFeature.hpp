@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -339508786
      */
     virtual ~NoSurfaceOreFeature();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?place@NoSurfaceOreFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   826975933
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOSURFACEOREFEATURE
-#endif
     /**
      * @symbol ??0NoSurfaceOreFeature@@QEAA@UIntRange@@AEBVBlockDescriptor@@11@Z
+     * @hash   -2144294546
      */
     MCAPI NoSurfaceOreFeature(struct IntRange, class BlockDescriptor const &, class BlockDescriptor const &, class BlockDescriptor const &);
 

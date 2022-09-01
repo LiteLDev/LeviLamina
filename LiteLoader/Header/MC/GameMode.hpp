@@ -32,148 +32,176 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -322417793
      */
     virtual ~GameMode();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
+     * @hash   1527748222
      */
     virtual bool startDestroyBlock(class BlockPos const &, unsigned char, bool &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z
+     * @hash   2058479450
      */
     virtual bool destroyBlock(class BlockPos const &, unsigned char);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?continueDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEBVVec3@@AEA_N@Z
+     * @hash   11170505
      */
     virtual bool continueDestroyBlock(class BlockPos const &, unsigned char, class Vec3 const &, bool &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?stopDestroyBlock@GameMode@@UEAAXAEBVBlockPos@@@Z
+     * @hash   186492227
      */
     virtual void stopDestroyBlock(class BlockPos const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?startBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
+     * @hash   1390599878
      */
     virtual void startBuildBlock(class BlockPos const &, unsigned char);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?buildBlock@GameMode@@UEAA_NAEBVBlockPos@@E_N@Z
+     * @hash   -1678946250
      */
     virtual bool buildBlock(class BlockPos const &, unsigned char, bool);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?continueBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z
+     * @hash   -1334382613
      */
     virtual void continueBuildBlock(class BlockPos const &, unsigned char);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?stopBuildBlock@GameMode@@UEAAXXZ
+     * @hash   1729916323
      */
     virtual void stopBuildBlock();
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?tick@GameMode@@UEAAXXZ
+     * @hash   1351552255
      */
     virtual void tick();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?getPickRange@GameMode@@UEAAMAEBW4InputMode@@_N@Z
+     * @hash   -100234495
      */
     virtual float getPickRange(enum InputMode const &, bool);
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z
+     * @hash   461881081
      */
     virtual bool useItem(class ItemStack &);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
+     * @hash   91427539
      */
     virtual bool useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?interact@GameMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
+     * @hash   -644080283
      */
     virtual bool interact(class Actor &, class Vec3 const &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?attack@GameMode@@UEAA_NAEAVActor@@@Z
+     * @hash   -260111973
      */
     virtual bool attack(class Actor &);
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?releaseUsingItem@GameMode@@UEAAXXZ
+     * @hash   1028006562
      */
     virtual void releaseUsingItem();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?setTrialMode@GameMode@@UEAAX_N@Z
+     * @hash   -1494397117
      */
     virtual void setTrialMode(bool);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?isInTrialMode@GameMode@@UEAA_NXZ
+     * @hash   2059180366
      */
     virtual bool isInTrialMode();
     /**
-     * @vtable 18
+     * @vftbl  18
      * @symbol ?registerUpsellScreenCallback@GameMode@@UEAAXV?$function@$$A6AX_N@Z@std@@@Z
+     * @hash   608780140
      */
     virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODE
-#endif
     /**
      * @symbol ??0GameMode@@QEAA@AEAVPlayer@@V?$unique_ptr@UIGameModeTimer@@U?$default_delete@UIGameModeTimer@@@std@@@std@@V?$unique_ptr@UIGameModeMessenger@@U?$default_delete@UIGameModeMessenger@@@std@@@3@@Z
+     * @hash   1621347944
      */
     MCAPI GameMode(class Player &, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
     /**
      * @symbol ?_startDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_N@Z
+     * @hash   523090432
      */
     MCAPI bool _startDestroyBlock(class BlockPos const &, class Vec3 const &, unsigned char, bool &);
     /**
      * @symbol ?_tickContinueDestroyBlock@GameMode@@QEAA_NAEBVBlockPos@@AEBVVec3@@EAEA_NAEBV?$function@$$A6AXXZ@std@@@Z
+     * @hash   1904908417
      */
     MCAPI bool _tickContinueDestroyBlock(class BlockPos const &, class Vec3 const &, unsigned char, bool &, class std::function<void (void)> const &);
     /**
      * @symbol ?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z
+     * @hash   263688055
      */
     MCAPI bool baseUseItem(class ItemStack &);
     /**
      * @symbol ?createBlockBreakCaptureScope@GameMode@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@V?$function@$$A6AXAEBVItemStack@@0AEBVBlockPos@@@Z@std@@@Z
+     * @hash   -1671993444
      */
     MCAPI class gsl::final_action<class std::function<void (void)>> createBlockBreakCaptureScope(class std::function<void (class ItemStack const &, class ItemStack const &, class BlockPos const &)>);
     /**
      * @symbol ?getDestroyBlockFace@GameMode@@QEBAEXZ
+     * @hash   841746423
      */
     MCAPI unsigned char getDestroyBlockFace() const;
     /**
      * @symbol ?getDestroyBlockPos@GameMode@@QEBAAEBVBlockPos@@XZ
+     * @hash   1072002216
      */
     MCAPI class BlockPos const & getDestroyBlockPos() const;
     /**
      * @symbol ?getDestroyProgress@GameMode@@QEAAMXZ
+     * @hash   -1812804104
      */
     MCAPI float getDestroyProgress();
     /**
      * @symbol ?getDestroyRate@GameMode@@QEAAMAEBVBlock@@@Z
+     * @hash   -1619539389
      */
     MCAPI float getDestroyRate(class Block const &);
     /**
      * @symbol ?getMaxPickRange@GameMode@@QEAAMXZ
+     * @hash   -234476394
      */
     MCAPI float getMaxPickRange();
     /**
      * @symbol ?getMaxPickRangeSqr@GameMode@@QEAAMXZ
+     * @hash   814313576
      */
     MCAPI float getMaxPickRangeSqr();
     /**
      * @symbol ?isLastBuildBlockInteractive@GameMode@@QEBA_NXZ
+     * @hash   -1166319060
      */
     MCAPI bool isLastBuildBlockInteractive() const;
 MCAPI static float const PICKRANGE_CREATIVE_MAXIMUM;
@@ -190,14 +218,17 @@ MCAPI static float const PICKRANGE_VR_SURVIVAL;
 //private:
     /**
      * @symbol ?_canDestroy@GameMode@@AEAA_NAEBVBlockPos@@E@Z
+     * @hash   -1700439483
      */
     MCAPI bool _canDestroy(class BlockPos const &, unsigned char);
     /**
      * @symbol ?_canUseBlock@GameMode@@AEAA_NAEBVBlock@@@Z
+     * @hash   -360117916
      */
     MCAPI bool _canUseBlock(class Block const &);
     /**
      * @symbol ?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z
+     * @hash   616739117
      */
     MCAPI bool _creativeDestroyBlock(class BlockPos const &, unsigned char);
 

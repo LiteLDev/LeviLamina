@@ -27,10 +27,9 @@ public:
     MolangMemberVariable() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMEMBERVARIABLE
-#endif
     /**
      * @symbol ??1MolangMemberVariable@@QEAA@XZ
+     * @hash   -1017748672
      */
     MCAPI ~MolangMemberVariable();
 

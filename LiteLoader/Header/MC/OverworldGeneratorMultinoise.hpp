@@ -33,87 +33,91 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORMULTINOISE
     /**
-     * @vtable -1
      * @symbol ?_prepareHeights@OverworldGeneratorMultinoise@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z
+     * @hash   -1011386176
      */
     MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
     /**
-     * @vtable -1
      * @symbol ?createNoiseCache@OverworldGeneratorMultinoise@@EEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
+     * @hash   -1011405103
      */
     MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
     /**
-     * @vtable -1
      * @symbol ?decorateWorldGenPostProcess@OverworldGeneratorMultinoise@@EEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+     * @hash   892168610
      */
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
     /**
-     * @vtable -1
      * @symbol ?findSpawnPosition@OverworldGeneratorMultinoise@@UEBA?AVBlockPos@@XZ
+     * @hash   1221668589
      */
     MCVAPI class BlockPos findSpawnPosition() const;
     /**
-     * @vtable -1
      * @symbol ?generateDensityCellsForChunk@OverworldGeneratorMultinoise@@UEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@@Z
+     * @hash   802726755
      */
     MCVAPI class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const &) const;
     /**
-     * @vtable -1
      * @symbol ?getBiomeSource@OverworldGeneratorMultinoise@@UEBAAEBVBiomeSource@@XZ
+     * @hash   -1530980823
      */
     MCVAPI class BiomeSource const & getBiomeSource() const;
     /**
-     * @vtable -1
      * @symbol ?getLevelGenHeight@OverworldGeneratorMultinoise@@UEBAHXZ
+     * @hash   -1330687010
      */
     MCVAPI int getLevelGenHeight() const;
     /**
-     * @vtable -1
      * @symbol ?getMaterialAdjNoise@OverworldGeneratorMultinoise@@MEBAAEBV?$unique_ptr@VPerlinSimplexNoise@@U?$default_delete@VPerlinSimplexNoise@@@std@@@std@@XZ
+     * @hash   596711066
      */
     MCVAPI std::unique_ptr<class PerlinSimplexNoise> const & getMaterialAdjNoise() const;
     /**
-     * @vtable -1
      * @symbol ?getPreliminarySurfaceLevel@OverworldGeneratorMultinoise@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+     * @hash   -1162529775
      */
     MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
-     * @vtable -1
      * @symbol ?getSurfaceNoise@OverworldGeneratorMultinoise@@MEAAAEBVPerlinSimplexNoise@@XZ
+     * @hash   329419260
      */
     MCVAPI class PerlinSimplexNoise const & getSurfaceNoise();
     /**
-     * @vtable -1
      * @symbol ?getXoroshiroPositionalRandomFactory@OverworldGeneratorMultinoise@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ
+     * @hash   2068041120
      */
     MCVAPI class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const;
     /**
-     * @vtable -1
      * @symbol ?tryMakeAquifer@OverworldGeneratorMultinoise@@EEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
+     * @hash   743705377
      */
     MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1OverworldGeneratorMultinoise@@UEAA@XZ
+     * @hash   1691184708
      */
     MCVAPI ~OverworldGeneratorMultinoise();
 #endif
     /**
      * @symbol ??0OverworldGeneratorMultinoise@@QEAA@AEAVDimension@@VLevelSeed64@@PEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
+     * @hash   1763264601
      */
     MCAPI OverworldGeneratorMultinoise(class Dimension &, class LevelSeed64, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
     /**
      * @symbol ?_applySlides@OverworldGeneratorMultinoise@@SAMAEBVDimensionHeightRange@@ME@Z
+     * @hash   -1567645484
      */
     MCAPI static float _applySlides(class DimensionHeightRange const &, float, unsigned char);
 
 //private:
     /**
      * @symbol ?_attenuateOffsetAndFactor@OverworldGeneratorMultinoise@@AEBA?AUTerrainInfo@@V?$DividedPos2d@$03@@U2@@Z
+     * @hash   357657812
      */
     MCAPI struct TerrainInfo _attenuateOffsetAndFactor(class DividedPos2d<4>, struct TerrainInfo) const;
     /**
      * @symbol ?_generateDensityCellsForChunk@OverworldGeneratorMultinoise@@AEBA?AV?$MultidimensionalArray@M$04$04$0CJ@@Util@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVNoodleCavifier@@PEAVOreVeinifier@@@Z
+     * @hash   1243234545
      */
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const &, class WorldGenCache const &, class NoodleCavifier *, class OreVeinifier *) const;
 

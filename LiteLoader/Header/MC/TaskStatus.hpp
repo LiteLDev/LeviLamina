@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKSTATUS
-#endif
     /**
      * @symbol ??0TaskStatus@@QEAA@XZ
+     * @hash   606966515
      */
     MCAPI TaskStatus();
     /**
      * @symbol ?isComplete@TaskStatus@@QEBA_NXZ
+     * @hash   -1169196986
      */
     MCAPI bool isComplete() const;
     /**
      * @symbol ??BTaskStatus@@QEBA?AW4Value@0@XZ
+     * @hash   751778496
      */
     MCAPI operator enum TaskStatus::Value() const;
     /**
      * @symbol ?toAsyncStatus@TaskStatus@@QEBA?AW4AsyncStatus@Threading@Bedrock@@XZ
+     * @hash   -577171104
      */
     MCAPI enum Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     /**
      * @symbol ?toErrorCode@TaskStatus@@QEBA?AVerror_code@std@@XZ
+     * @hash   1163702464
      */
     MCAPI class std::error_code toErrorCode() const;
 

@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2061169078
      */
     virtual ~LoomContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@LoomContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -1554454957
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@LoomContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -1167067300
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@LoomContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   1333967861
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setData@LoomContainerManagerModel@@UEAAXHH@Z
+     * @hash   941796055
      */
     virtual void setData(int, int);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@LoomContainerManagerModel@@UEAAXXZ
+     * @hash   936100301
      */
     virtual void broadcastChanges();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?isValid@LoomContainerManagerModel@@UEAA_NM@Z
+     * @hash   1456507779
      */
     virtual bool isValid(float);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@LoomContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -349038246
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOMCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0LoomContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   409625385
      */
     MCAPI LoomContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 MCAPI static int const BANNER_SLOT;

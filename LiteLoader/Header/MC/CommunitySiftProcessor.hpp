@@ -30,61 +30,70 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   15556655
      */
     virtual ~CommunitySiftProcessor();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?processMessages@CommunitySiftProcessor@@UEAA?AVCallbackToken@@AEBVPlayer@@W4TextProcessingEventOrigin@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z@6@@Z
+     * @hash   161108226
      */
     virtual class CallbackToken processMessages(class Player const &, enum TextProcessingEventOrigin, std::vector<std::string> const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?processCommandsAndNames@CommunitySiftProcessor@@UEAA?AVCallbackToken@@AEBVPlayer@@W4TextProcessingEventOrigin@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z@6@@Z
+     * @hash   1027961279
      */
     virtual class CallbackToken processCommandsAndNames(class Player const &, enum TextProcessingEventOrigin, std::vector<std::string> const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?processJoinEvent@CommunitySiftProcessor@@UEAAXAEBVPlayer@@@Z
+     * @hash   1361862573
      */
     virtual void processJoinEvent(class Player const &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?processLeaveEvent@CommunitySiftProcessor@@UEAAXAEBVPlayer@@@Z
+     * @hash   -53968532
      */
     virtual void processLeaveEvent(class Player const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?onStartShutdown@CommunitySiftProcessor@@UEAAXXZ
+     * @hash   -1366402069
      */
     virtual void onStartShutdown();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMUNITYSIFTPROCESSOR
-#endif
     /**
      * @symbol ??0CommunitySiftProcessor@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVScheduler@@@Z
+     * @hash   -942117917
      */
     MCAPI CommunitySiftProcessor(std::string const &, std::string const &, class Scheduler &);
 
 //private:
     /**
      * @symbol ?_createRequest@CommunitySiftProcessor@@AEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@0PEAVIMinecraftEventing@@0W4TextProcessingEventOrigin@@V?$shared_ptr@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@3@3_N0@Z
+     * @hash   -239565665
      */
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> _createRequest(std::string const &, std::string const &, class IMinecraftEventing *, std::string const &, enum TextProcessingEventOrigin, class std::shared_ptr<std::vector<std::string>>, class std::shared_ptr<std::vector<std::string>>, bool, std::string const &);
     /**
      * @symbol ?_processEvent@CommunitySiftProcessor@@AEAAXAEBVPlayer@@W4TextProcessingEventOrigin@@PEBVUserEntityIdentifierComponent@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1489203792
      */
     MCAPI void _processEvent(class Player const &, enum TextProcessingEventOrigin, class UserEntityIdentifierComponent const *, std::string const &);
     /**
      * @symbol ?_processMessages@CommunitySiftProcessor@@AEAA?AVCallbackToken@@AEBVPlayer@@_NW4TextProcessingEventOrigin@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@6@V?$function@$$A6AXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@0@Z@6@@Z
+     * @hash   674631626
      */
     MCAPI class CallbackToken _processMessages(class Player const &, bool, enum TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
     /**
      * @symbol ?_validateCommunitySiftConfiguration@CommunitySiftProcessor@@AEAA_NXZ
+     * @hash   576416863
      */
     MCAPI bool _validateCommunitySiftConfiguration();
     /**
      * @symbol ?_createConfigFromJson@CommunitySiftProcessor@@CA?AUCommunitySiftConfig@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -562134391
      */
     MCAPI static struct CommunitySiftConfig _createConfigFromJson(std::string const &);
 

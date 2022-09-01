@@ -31,44 +31,51 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNVERIFIEDCERTIFICATE
-#endif
     /**
      * @symbol ??0UnverifiedCertificate@@QEAA@AEBV0@@Z
+     * @hash   1079421329
      */
     MCAPI UnverifiedCertificate(class UnverifiedCertificate const &);
     /**
      * @symbol ??0UnverifiedCertificate@@QEAA@$$QEAV0@@Z
+     * @hash   1155664261
      */
     MCAPI UnverifiedCertificate(class UnverifiedCertificate &&);
     /**
      * @symbol ?getIdentityPublicKey@UnverifiedCertificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   916441074
      */
     MCAPI std::string getIdentityPublicKey() const;
     /**
      * @symbol ?toString@UnverifiedCertificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1240979134
      */
     MCAPI std::string toString() const;
     /**
      * @symbol ?verify@UnverifiedCertificate@@QEBA?AV?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
+     * @hash   -619894840
      */
     MCAPI std::unique_ptr<class Certificate> verify(std::vector<std::string> const &) const;
     /**
      * @symbol ??1UnverifiedCertificate@@QEAA@XZ
+     * @hash   -568532814
      */
     MCAPI ~UnverifiedCertificate();
     /**
      * @symbol ?fromString@UnverifiedCertificate@@SA?AV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -214649978
      */
     MCAPI static class UnverifiedCertificate fromString(std::string const &);
 
 //private:
     /**
      * @symbol ??0UnverifiedCertificate@@AEAA@AEBVWebToken@@V?$unique_ptr@VUnverifiedCertificate@@U?$default_delete@VUnverifiedCertificate@@@std@@@std@@@Z
+     * @hash   -1494353585
      */
     MCAPI UnverifiedCertificate(class WebToken const &, std::unique_ptr<class UnverifiedCertificate>);
     /**
      * @symbol ?addToChain@UnverifiedCertificate@@AEBAXAEAVValue@Json@@@Z
+     * @hash   1695430839
      */
     MCAPI void addToChain(class Json::Value &) const;
 

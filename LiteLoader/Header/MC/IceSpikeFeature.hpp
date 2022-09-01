@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   904441097
      */
     virtual ~IceSpikeFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@IceSpikeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -283119419
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICESPIKEFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_isValidPlaceBlock@IceSpikeFeature@@AEBA_NAEBVBlock@@@Z
+     * @hash   -876462521
      */
     MCAPI bool _isValidPlaceBlock(class Block const &) const;
 

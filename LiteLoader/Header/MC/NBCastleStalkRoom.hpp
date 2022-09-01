@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1634347932
      */
     virtual ~NBCastleStalkRoom();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@NBCastleStalkRoom@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   -1499149123
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?addChildren@NBCastleStalkRoom@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+     * @hash   1926053667
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@NBCastleStalkRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1378136597
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBCASTLESTALKROOM
-#endif
 
 };

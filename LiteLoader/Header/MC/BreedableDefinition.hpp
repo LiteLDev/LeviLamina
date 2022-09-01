@@ -30,34 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLEDEFINITION
-#endif
     /**
      * @symbol ??0BreedableDefinition@@QEAA@XZ
+     * @hash   -1402469123
      */
     MCAPI BreedableDefinition();
     /**
      * @symbol ?addBreedItem@BreedableDefinition@@QEAAXAEBVItemDescriptor@@@Z
+     * @hash   -98477770
      */
     MCAPI void addBreedItem(class ItemDescriptor const &);
     /**
      * @symbol ?addBreedableType@BreedableDefinition@@QEAAXAEBUBreedableType@@@Z
+     * @hash   1111489254
      */
     MCAPI void addBreedableType(struct BreedableType const &);
     /**
      * @symbol ?addEnvironmentRequirement@BreedableDefinition@@QEAAXAEBUEnvironmentRequirement@@@Z
+     * @hash   1061240010
      */
     MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const &);
     /**
      * @symbol ?initialize@BreedableDefinition@@QEAAXAEAVEntityContext@@AEAVBreedableComponent@@@Z
+     * @hash   -1693642971
      */
     MCAPI void initialize(class EntityContext &, class BreedableComponent &);
     /**
      * @symbol ??1BreedableDefinition@@QEAA@XZ
+     * @hash   117483949
      */
     MCAPI ~BreedableDefinition();
     /**
      * @symbol ?buildSchema@BreedableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBreedableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   916298660
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>> &);
 

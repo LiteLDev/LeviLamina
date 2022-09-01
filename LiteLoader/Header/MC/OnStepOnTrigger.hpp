@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPONTRIGGER
-#endif
     /**
      * @symbol ??1OnStepOnTrigger@@QEAA@XZ
+     * @hash   -1076657782
      */
     MCAPI ~OnStepOnTrigger();
 

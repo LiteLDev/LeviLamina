@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -460138077
      */
     virtual ~HoldGroundGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@HoldGroundGoal@@UEAA_NXZ
+     * @hash   1224913479
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@HoldGroundGoal@@UEAA_NXZ
+     * @hash   1282492933
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@HoldGroundGoal@@UEAAXXZ
+     * @hash   -183638640
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@HoldGroundGoal@@UEAAXXZ
+     * @hash   1071808256
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@HoldGroundGoal@@UEAAXXZ
+     * @hash   866403531
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@HoldGroundGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -708179351
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDGROUNDGOAL
-#endif
     /**
      * @symbol ??0HoldGroundGoal@@QEAA@AEAVMob@@M_NMAEBVActorDefinitionTrigger@@@Z
+     * @hash   -858422124
      */
     MCAPI HoldGroundGoal(class Mob &, float, bool, float, class ActorDefinitionTrigger const &);
 

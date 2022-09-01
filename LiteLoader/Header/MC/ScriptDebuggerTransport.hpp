@@ -31,64 +31,73 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1980526155
      */
     virtual ~ScriptDebuggerTransport();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?listen@ScriptDebuggerTransport@@UEAA_NG@Z
+     * @hash   702265370
      */
     virtual bool listen(unsigned short);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?connect@ScriptDebuggerTransport@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+     * @hash   1233739367
      */
     virtual bool connect(std::string const &, unsigned short);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?selectClient@ScriptDebuggerTransport@@UEAA_NXZ
+     * @hash   308362019
      */
     virtual bool selectClient();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?connected@ScriptDebuggerTransport@@UEBA_NXZ
+     * @hash   155375316
      */
     virtual bool connected() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?lostConnection@ScriptDebuggerTransport@@UEBA_NXZ
+     * @hash   -1097733043
      */
     virtual bool lostConnection() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?readyClose@ScriptDebuggerTransport@@UEBA_NXZ
+     * @hash   -1311348048
      */
     virtual bool readyClose() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?close@ScriptDebuggerTransport@@UEAAXXZ
+     * @hash   -1911137934
      */
     virtual void close();
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?peek@ScriptDebuggerTransport@@UEBA_NXZ
+     * @hash   -1778312346
      */
     virtual bool peek() const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?receive@ScriptDebuggerTransport@@UEAA_NPEAD_K@Z
+     * @hash   -801315311
      */
     virtual bool receive(char *, unsigned __int64);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?send@ScriptDebuggerTransport@@UEAAXPEBD_K@Z
+     * @hash   -2127389097
      */
     virtual void send(char const *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGERTRANSPORT
-#endif
     /**
      * @symbol ??0ScriptDebuggerTransport@@QEAA@AEAVIScriptDebuggerWatchdog@@@Z
+     * @hash   -1110396020
      */
     MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog &);
 

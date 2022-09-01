@@ -31,26 +31,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1906030396
      */
     virtual ~AddOceanTemperatureOperationNode();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   1410111345
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   1307093106
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?_fillArea@AddOceanTemperatureOperationNode@@MEBAXAEAV?$WorkingData@W4BiomeTemperatureCategory@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
+     * @hash   811018585
      */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<enum BiomeTemperatureCategory, char> &, class Pos2d const &, class Pos2d const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDOCEANTEMPERATUREOPERATIONNODE
-#endif
 
 };

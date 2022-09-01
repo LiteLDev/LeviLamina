@@ -27,10 +27,9 @@ public:
     WorldTemplateManagerProxyCallbacks() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGERPROXYCALLBACKS
-#endif
     /**
      * @symbol ??1WorldTemplateManagerProxyCallbacks@@QEAA@XZ
+     * @hash   -1310771893
      */
     MCAPI ~WorldTemplateManagerProxyCallbacks();
 

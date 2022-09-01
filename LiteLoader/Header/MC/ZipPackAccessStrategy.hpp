@@ -34,105 +34,122 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   562344639
      */
     virtual ~ZipPackAccessStrategy();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getPackSize@ZipPackAccessStrategy@@UEBA_KXZ
+     * @hash   -1940713569
      */
     virtual unsigned __int64 getPackSize() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getPackLocation@ZipPackAccessStrategy@@UEBAAEBVResourceLocation@@XZ
+     * @hash   -92115811
      */
     virtual class ResourceLocation const & getPackLocation() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getPackName@ZipPackAccessStrategy@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1348927567
      */
     virtual std::string const & getPackName() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isWritable@ZipPackAccessStrategy@@UEBA_NXZ
+     * @hash   -1741302431
      */
     virtual bool isWritable() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?setIsTrusted@ZipPackAccessStrategy@@UEAAX_N@Z
+     * @hash   1671663771
      */
     virtual void setIsTrusted(bool);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?isTrusted@ZipPackAccessStrategy@@UEBA_NXZ
+     * @hash   403021844
      */
     virtual bool isTrusted() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?hasAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N@Z
+     * @hash   -191486012
      */
     virtual bool hasAsset(class Core::Path const &, bool) const;
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?hasFolder@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
+     * @hash   1987378068
      */
     virtual bool hasFolder(class Core::Path const &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?getAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   832540751
      */
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?deleteAsset@ZipPackAccessStrategy@@UEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
+     * @hash   440841907
      */
     virtual bool deleteAsset(class Core::PathBuffer<std::string> const &);
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?writeAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1630742944
      */
     virtual bool writeAsset(class Core::Path const &, std::string const &);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?forEachIn@ZipPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
+     * @hash   646607135
      */
     virtual void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const;
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
+     * @hash   1179380728
      */
     virtual enum PackAccessStrategyType getStrategyType() const;
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?getSubPath@ZipPackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -1282032374
      */
     virtual class Core::PathBuffer<std::string> const & getSubPath() const;
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?createSubPack@ZipPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
+     * @hash   280553262
      */
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const;
     /**
-     * @vtable 19
+     * @vftbl  19
      * @symbol ?unload@ZipPackAccessStrategy@@UEAAXXZ
+     * @hash   -1833867019
      */
     virtual void unload();
     /**
-     * @vtable 21
+     * @vftbl  21
      * @symbol ?readContentIdentity@ZipPackAccessStrategy@@UEBA?AVContentIdentity@@XZ
+     * @hash   216754608
      */
     virtual class ContentIdentity readContentIdentity() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZIPPACKACCESSSTRATEGY
-#endif
     /**
      * @symbol ??0ZipPackAccessStrategy@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@AEBVResourceLocation@@AEBVPath@Core@@@Z
+     * @hash   -1680779986
      */
     MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, class ResourceLocation const &, class Core::Path const &);
 
 //private:
     /**
      * @symbol ?_tryReadFromPendingQueue@ZipPackAccessStrategy@@AEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -804748140
      */
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const &, std::string &) const;
 

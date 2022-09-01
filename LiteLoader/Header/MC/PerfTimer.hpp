@@ -32,14 +32,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFTIMER
-#endif
     /**
      * @symbol ??0PerfTimer@@QEAA@Vid@thread@std@@@Z
+     * @hash   -1164487381
      */
     MCAPI PerfTimer(class std::thread::id);
     /**
      * @symbol ??1PerfTimer@@QEAA@XZ
+     * @hash   139223192
      */
     MCAPI ~PerfTimer();
 MCAPI static bool mEnabled;

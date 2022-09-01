@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCTRACKER
-#endif
     /**
      * @symbol ?hasAsyncOperationTimedOut@AsyncTracker@@QEAA_NXZ
+     * @hash   1552760848
      */
     MCAPI bool hasAsyncOperationTimedOut();
 

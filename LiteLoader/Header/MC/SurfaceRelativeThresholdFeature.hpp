@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1248400622
      */
     virtual ~SurfaceRelativeThresholdFeature();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?place@SurfaceRelativeThresholdFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   -1745250375
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACERELATIVETHRESHOLDFEATURE
-#endif
     /**
      * @symbol ??0SurfaceRelativeThresholdFeature@@QEAA@XZ
+     * @hash   1660639984
      */
     MCAPI SurfaceRelativeThresholdFeature();
 

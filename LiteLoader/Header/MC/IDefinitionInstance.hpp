@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   185699871
      */
     virtual ~IDefinitionInstance();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getRuntimeTypeId@IDefinitionInstance@@UEBAGXZ
+     * @hash   -1903157617
      */
     virtual unsigned short getRuntimeTypeId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
-#endif
 
 };

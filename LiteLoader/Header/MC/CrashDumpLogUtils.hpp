@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOGUTILS
-#endif
     /**
      * @symbol ?getTagFromOptions@CrashDumpLogUtils@@SA?AW4CrashDumpLogStringID@@_KV?$span@$$CBW4CrashDumpLogStringID@@$0?0@gsl@@@Z
+     * @hash   -775874369
      */
     MCAPI static enum CrashDumpLogStringID getTagFromOptions(unsigned __int64, class gsl::span<enum CrashDumpLogStringID const, -1>);
 

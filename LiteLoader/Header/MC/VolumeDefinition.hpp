@@ -28,27 +28,30 @@ public:
     VolumeDefinition(struct VolumeDefinition const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEDEFINITION
-#endif
     /**
      * @symbol ??0VolumeDefinition@@QEAA@XZ
+     * @hash   1169358393
      */
     MCAPI VolumeDefinition();
     /**
      * @symbol ??1VolumeDefinition@@QEAA@XZ
+     * @hash   -891289321
      */
     MCAPI ~VolumeDefinition();
 MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@VolumeDefinition@@SAXXZ
+     * @hash   -128145693
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getMaxSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
+     * @hash   746561776
      */
     MCAPI static class SemVersion const & getMaxSupportedVersion();
     /**
      * @symbol ?getMinSupportedVersion@VolumeDefinition@@SAAEBVSemVersion@@XZ
+     * @hash   -766215716
      */
     MCAPI static class SemVersion const & getMinSupportedVersion();
 

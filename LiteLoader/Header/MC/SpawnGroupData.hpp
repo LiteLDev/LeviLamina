@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNGROUPDATA
-#endif
     /**
      * @symbol ??0SpawnGroupData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVMobSpawnRules@@@Z
+     * @hash   -135813246
      */
     MCAPI SpawnGroupData(std::string const &, class MobSpawnRules &);
     /**
      * @symbol ?addSpawnRules@SpawnGroupData@@QEAAXAEAVMobSpawnRules@@@Z
+     * @hash   242610830
      */
     MCAPI void addSpawnRules(class MobSpawnRules &);
     /**
      * @symbol ?getIdentifier@SpawnGroupData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1083520252
      */
     MCAPI std::string const & getIdentifier() const;
     /**
      * @symbol ?getSpawnRules@SpawnGroupData@@QEBAAEBV?$vector@VMobSpawnRules@@V?$allocator@VMobSpawnRules@@@std@@@std@@XZ
+     * @hash   -817588532
      */
     MCAPI std::vector<class MobSpawnRules> const & getSpawnRules() const;
 

@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -812674941
      */
     virtual ~StonecutterContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@StonecutterContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -1413381834
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@StonecutterContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   2125783721
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@StonecutterContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1427273726
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setData@StonecutterContainerManagerModel@@UEAAXHH@Z
+     * @hash   -478488486
      */
     virtual void setData(int, int);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@StonecutterContainerManagerModel@@UEAAXXZ
+     * @hash   1480696080
      */
     virtual void broadcastChanges();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?isValid@StonecutterContainerManagerModel@@UEAA_NM@Z
+     * @hash   1072809616
      */
     virtual bool isValid(float);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@StonecutterContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   1325243837
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0StonecutterContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   589265836
      */
     MCAPI StonecutterContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 

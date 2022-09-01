@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -544805767
      */
     virtual ~FlushableEnv();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLEENV
-#endif
     /**
      * @symbol ??0FlushableEnv@@QEAA@PEAVEnv@leveldb@@@Z
+     * @hash   -456082351
      */
     MCAPI FlushableEnv(class leveldb::Env *);
 

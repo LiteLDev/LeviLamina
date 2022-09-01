@@ -27,10 +27,9 @@ public:
     ActorDefinitionStartedEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONSTARTEDEVENT
-#endif
     /**
      * @symbol ??1ActorDefinitionStartedEvent@@QEAA@XZ
+     * @hash   541300013
      */
     MCAPI ~ActorDefinitionStartedEvent();
 

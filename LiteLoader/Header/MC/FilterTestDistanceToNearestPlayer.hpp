@@ -33,21 +33,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1556561715
      */
     virtual ~FilterTestDistanceToNearestPlayer();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?evaluate@FilterTestDistanceToNearestPlayer@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   1113718119
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@FilterTestDistanceToNearestPlayer@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   259018859
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDISTANCETONEARESTPLAYER
-#endif
 
 };

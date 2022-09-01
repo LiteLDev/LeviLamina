@@ -32,16 +32,14 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -9258320
      */
     virtual ~LookAtPlayerGoal();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATPLAYERGOAL
-#endif
 
 };

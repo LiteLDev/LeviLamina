@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -794017916
      */
     virtual ~RepeatUntilFailureDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@RepeatUntilFailureDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   1754778858
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILUREDEFINITION
-#endif
 
 };

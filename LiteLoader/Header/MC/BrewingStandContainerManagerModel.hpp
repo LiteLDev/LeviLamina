@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1401342859
      */
     virtual ~BrewingStandContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@BrewingStandContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -842707416
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@BrewingStandContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -1307885257
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@BrewingStandContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   -200125840
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setData@BrewingStandContainerManagerModel@@UEAAXHH@Z
+     * @hash   -1384823156
      */
     virtual void setData(int, int);
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@BrewingStandContainerManagerModel@@UEAAXXZ
+     * @hash   678610578
      */
     virtual void broadcastChanges();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?isValid@BrewingStandContainerManagerModel@@UEAA_NM@Z
+     * @hash   -733307970
      */
     virtual bool isValid(float);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@BrewingStandContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   2121206303
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0BrewingStandContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -226323378
      */
     MCAPI BrewingStandContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 

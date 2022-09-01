@@ -32,8 +32,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTION
-#endif
 MCAPI static enum Direction::Type const DIRECTION_CLOCKWISE[];
 MCAPI static enum Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
 MCAPI static unsigned char const DIRECTION_FACING[];
@@ -43,10 +41,12 @@ MCAPI static int const STEP_X[];
 MCAPI static int const STEP_Z[];
     /**
      * @symbol ?convertFacingDirectionToDirection@Direction@@SA?AW4Type@1@E@Z
+     * @hash   -517666864
      */
     MCAPI static enum Direction::Type convertFacingDirectionToDirection(unsigned char);
     /**
      * @symbol ?getDirection@Direction@@SA?AW4Type@1@MM@Z
+     * @hash   2065096292
      */
     MCAPI static enum Direction::Type getDirection(float, float);
 

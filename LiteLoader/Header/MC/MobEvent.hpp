@@ -29,30 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEVENT
-#endif
     /**
      * @symbol ??0MobEvent@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
+     * @hash   660910836
      */
     MCAPI MobEvent(std::string, std::string, bool);
     /**
      * @symbol ??0MobEvent@@QEAA@AEBV0@@Z
+     * @hash   -2108730111
      */
     MCAPI MobEvent(class MobEvent const &);
     /**
      * @symbol ?getLocalizableName@MobEvent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -529878722
      */
     MCAPI std::string const & getLocalizableName() const;
     /**
      * @symbol ?getName@MobEvent@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1867903876
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?isEnabled@MobEvent@@QEBA_NXZ
+     * @hash   156208810
      */
     MCAPI bool isEnabled() const;
     /**
      * @symbol ??1MobEvent@@QEAA@XZ
+     * @hash   -1004277036
      */
     MCAPI ~MobEvent();
 

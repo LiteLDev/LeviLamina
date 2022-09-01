@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   885450031
      */
     virtual ~LargeDripstoneFeature();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?place@LargeDripstoneFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   -2085126676
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LARGEDRIPSTONEFEATURE
-#endif
 
 };

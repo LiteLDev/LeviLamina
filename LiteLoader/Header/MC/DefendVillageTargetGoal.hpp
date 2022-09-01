@@ -32,44 +32,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   452769608
      */
     virtual ~DefendVillageTargetGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@DefendVillageTargetGoal@@UEAA_NXZ
+     * @hash   -912714378
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DefendVillageTargetGoal@@UEAA_NXZ
+     * @hash   235474164
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@DefendVillageTargetGoal@@UEAAXXZ
+     * @hash   -1137916577
      */
     virtual void start();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DefendVillageTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -616475526
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDVILLAGETARGETGOAL
-#endif
     /**
      * @symbol ??0DefendVillageTargetGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1011915891
      */
     MCAPI DefendVillageTargetGoal(class Mob &);
 

@@ -32,59 +32,65 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1677937731
      */
     virtual ~SimpleContainer();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   57316568
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1846580125
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
+     * @hash   -1933738350
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?getContainerSize@SimpleContainer@@UEBAHXZ
+     * @hash   1170264856
      */
     virtual int getContainerSize() const;
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+     * @hash   -842007161
      */
     virtual int getMaxStackSize() const;
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1823791345
      */
     virtual void startOpen(class Player &);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   2008680367
      */
     virtual void stopOpen(class Player &);
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLECONTAINER
-#endif
     /**
      * @symbol ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
+     * @hash   -1509880399
      */
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 

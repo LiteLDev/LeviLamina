@@ -27,10 +27,9 @@ public:
     MolangMaterialVariable() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMATERIALVARIABLE
-#endif
     /**
      * @symbol ??1MolangMaterialVariable@@QEAA@XZ
+     * @hash   1282967357
      */
     MCAPI ~MolangMaterialVariable();
 

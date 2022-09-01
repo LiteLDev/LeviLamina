@@ -31,55 +31,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   160124510
      */
     virtual ~SkeletonHorseTrapGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@SkeletonHorseTrapGoal@@UEAA_NXZ
+     * @hash   -1757275504
      */
     virtual bool canUse();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   517136691
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SkeletonHorseTrapGoal@@UEAAXXZ
+     * @hash   -635033575
      */
     virtual void start();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@SkeletonHorseTrapGoal@@UEAAXXZ
+     * @hash   -645535404
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SkeletonHorseTrapGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1785167840
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKELETONHORSETRAPGOAL
-#endif
     /**
      * @symbol ??0SkeletonHorseTrapGoal@@QEAA@AEAVHorse@@HM@Z
+     * @hash   -704715551
      */
     MCAPI SkeletonHorseTrapGoal(class Horse &, int, float);
 
 //private:
     /**
      * @symbol ?_createSkeleton@SkeletonHorseTrapGoal@@AEAAPEAVSkeleton@@AEBW4Difficulty@@AEBVHorse@@@Z
+     * @hash   186749082
      */
     MCAPI class Skeleton * _createSkeleton(enum Difficulty const &, class Horse const &);
 

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1894269117
      */
     virtual ~TestForBlockCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@TestForBlockCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   583974526
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTFORBLOCKCOMMAND
-#endif
     /**
      * @symbol ?setup@TestForBlockCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   47874224
      */
     MCAPI static void setup(class CommandRegistry &);
 

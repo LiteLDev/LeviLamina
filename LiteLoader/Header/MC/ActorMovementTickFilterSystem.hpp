@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMOVEMENTTICKFILTERSYSTEM
-#endif
     /**
      * @symbol ?createBase@ActorMovementTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -904111810
      */
     MCAPI static struct TickingSystemWithInfo createBase();
     /**
      * @symbol ?createInputPacketDependentFilter@ActorMovementTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -890563874
      */
     MCAPI static struct TickingSystemWithInfo createInputPacketDependentFilter();
 

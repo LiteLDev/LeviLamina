@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUEST
-#endif
     /**
      * @symbol ??1EventingRequest@@QEAA@XZ
+     * @hash   -1761874541
      */
     MCAPI ~EventingRequest();
 

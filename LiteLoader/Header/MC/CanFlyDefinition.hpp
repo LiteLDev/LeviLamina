@@ -30,18 +30,19 @@ public:
     CanFlyDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANFLYDEFINITION
-#endif
     /**
      * @symbol ?initialize@CanFlyDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1972977332
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@CanFlyDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1072482484
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@CanFlyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCanFlyDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -112252358
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>> &);
 

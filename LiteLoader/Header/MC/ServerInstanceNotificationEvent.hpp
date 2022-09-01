@@ -27,10 +27,9 @@ public:
     ServerInstanceNotificationEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCENOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1ServerInstanceNotificationEvent@@QEAA@XZ
+     * @hash   78817075
      */
     MCAPI ~ServerInstanceNotificationEvent();
 

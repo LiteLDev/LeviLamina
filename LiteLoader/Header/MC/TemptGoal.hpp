@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -254272863
      */
     virtual ~TemptGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@TemptGoal@@UEAA_NXZ
+     * @hash   -1326946611
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@TemptGoal@@UEAA_NXZ
+     * @hash   -1555365637
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@TemptGoal@@UEAAXXZ
+     * @hash   -937899994
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@TemptGoal@@UEAAXXZ
+     * @hash   1407044806
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@TemptGoal@@UEAAXXZ
+     * @hash   81295905
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@TemptGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   536697875
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPTGOAL
-#endif
     /**
      * @symbol ??0TemptGoal@@QEAA@AEAVMob@@MAEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@W4LevelSoundEvent@@UFloatRange@@_NM44@Z
+     * @hash   -613371462
      */
     MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
 

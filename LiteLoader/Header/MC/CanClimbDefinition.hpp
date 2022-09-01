@@ -30,18 +30,19 @@ public:
     CanClimbDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANCLIMBDEFINITION
-#endif
     /**
      * @symbol ?initialize@CanClimbDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   52181788
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@CanClimbDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -2121195812
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@CanClimbDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCanClimbDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -407497542
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanClimbDefinition>> &);
 

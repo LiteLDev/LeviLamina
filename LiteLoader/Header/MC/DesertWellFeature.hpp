@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1871544641
      */
     virtual ~DesertWellFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@DesertWellFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -2113863667
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERTWELLFEATURE
-#endif
 
 };

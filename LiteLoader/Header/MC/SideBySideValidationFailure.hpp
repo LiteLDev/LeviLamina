@@ -28,18 +28,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONFAILURE
-#endif
     /**
      * @symbol ?generateMessage@SideBySideValidationFailure@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N00AEBV23@AEBVVec3@@@Z
+     * @hash   87366145
      */
     MCAPI std::string generateMessage(bool, bool, bool, std::string const &, class Vec3 const &) const;
     /**
      * @symbol ??1SideBySideValidationFailure@@QEAA@XZ
+     * @hash   1285012024
      */
     MCAPI ~SideBySideValidationFailure();
     /**
      * @symbol ?toString@SideBySideValidationFailure@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FailureReason@1@@Z
+     * @hash   2137667796
      */
     MCAPI static std::string toString(enum SideBySideValidationFailure::FailureReason);
 

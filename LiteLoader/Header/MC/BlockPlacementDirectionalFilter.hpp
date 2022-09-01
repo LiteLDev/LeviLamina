@@ -27,10 +27,9 @@ public:
     BlockPlacementDirectionalFilter() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTDIRECTIONALFILTER
-#endif
     /**
      * @symbol ?fromStringVector@BlockPlacementDirectionalFilter@@SAXAEAU1@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   -294791305
      */
     MCAPI static void fromStringVector(struct BlockPlacementDirectionalFilter &, std::vector<std::string>);
 

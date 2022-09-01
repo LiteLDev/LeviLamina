@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONTRIGGER
-#endif
     /**
      * @symbol ?canTrigger@DefinitionTrigger@@QEBA_NAEAVRenderParams@@@Z
+     * @hash   -1053776757
      */
     MCAPI bool canTrigger(class RenderParams &) const;
     /**
      * @symbol ??1DefinitionTrigger@@QEAA@XZ
+     * @hash   1013780641
      */
     MCAPI ~DefinitionTrigger();
     /**
      * @symbol ?bindType@DefinitionTrigger@@SAXXZ
+     * @hash   855886991
      */
     MCAPI static void bindType();
 

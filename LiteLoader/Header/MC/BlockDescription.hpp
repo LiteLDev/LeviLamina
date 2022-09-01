@@ -27,10 +27,9 @@ public:
     BlockDescription() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDESCRIPTION
-#endif
     /**
      * @symbol ??1BlockDescription@@QEAA@XZ
+     * @hash   493924025
      */
     MCAPI ~BlockDescription();
 

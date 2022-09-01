@@ -28,26 +28,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONPTR
-#endif
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@AEBV0@@Z
+     * @hash   -725108671
      */
     MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@AEAVActorDefinitionGroup@@AEAVActorDefinition@@@Z
+     * @hash   820015046
      */
     MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
     /**
      * @symbol ??0ActorDefinitionPtr@@QEAA@XZ
+     * @hash   1652950770
      */
     MCAPI ActorDefinitionPtr();
     /**
      * @symbol ??4ActorDefinitionPtr@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -2075140120
      */
     MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     /**
      * @symbol ??1ActorDefinitionPtr@@QEAA@XZ
+     * @hash   -69156016
      */
     MCAPI ~ActorDefinitionPtr();
 MCAPI static class ActorDefinitionPtr const NONE;

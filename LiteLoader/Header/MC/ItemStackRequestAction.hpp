@@ -37,45 +37,51 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1375268550
      */
     virtual ~ItemStackRequestAction();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ
+     * @hash   813873632
      */
     virtual class ItemStackRequestActionCraftBase const * getCraftAction() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ
+     * @hash   -994504033
      */
     virtual int getFilteredStringIndex() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z
+     * @hash   -2115247836
      */
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette &, bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTION
-#endif
     /**
      * @symbol ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
+     * @hash   -502064773
      */
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     /**
      * @symbol ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
+     * @hash   2052355280
      */
     MCAPI enum ItemStackRequestActionType getActionType() const;
     /**
      * @symbol ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
+     * @hash   1603973336
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z
+     * @hash   741044845
      */
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
     /**
      * @symbol ?read@ItemStackRequestAction@@SA?AV?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   2132846239
      */
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
 

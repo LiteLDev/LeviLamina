@@ -30,8 +30,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PALETTE
-#endif
 MCAPI static class mce::Color const BLACK;
 MCAPI static class mce::Color const BLUE;
 MCAPI static class mce::Color const BROWN;
@@ -50,10 +48,12 @@ MCAPI static class mce::Color const WHITE;
 MCAPI static class mce::Color const YELLOW;
     /**
      * @symbol ?fromByte@Palette@@SA?AW4PaletteColor@@E@Z
+     * @hash   110319988
      */
     MCAPI static enum PaletteColor fromByte(unsigned char);
     /**
      * @symbol ?getColor@Palette@@SAAEBVColor@mce@@W4PaletteColor@@@Z
+     * @hash   -129054999
      */
     MCAPI static class mce::Color const & getColor(enum PaletteColor);
 

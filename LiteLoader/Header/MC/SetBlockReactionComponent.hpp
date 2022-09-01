@@ -31,26 +31,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -976081897
      */
     virtual ~SetBlockReactionComponent();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?_onEnd@SetBlockReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+     * @hash   -1604749067
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBLOCKREACTIONCOMPONENT
-#endif
 
 };

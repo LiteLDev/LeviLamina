@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADERESUPPLYCOMPONENT
-#endif
     /**
      * @symbol ??0TradeResupplyComponent@@QEAA@XZ
+     * @hash   1223263075
      */
     MCAPI TradeResupplyComponent();
     /**
      * @symbol ?addAdditionalSaveData@TradeResupplyComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -1740185384
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?initFromDefinition@TradeResupplyComponent@@QEAAXAEAVActor@@@Z
+     * @hash   1557112122
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?readAdditionalSaveData@TradeResupplyComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1943725128
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?reloadComponent@TradeResupplyComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -25119172
      */
     MCAPI void reloadComponent(class Actor &);
 

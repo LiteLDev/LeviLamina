@@ -32,45 +32,51 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2001920739
      */
     virtual ~TickingAreaCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@TickingAreaCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1328362890
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREACOMMAND
-#endif
     /**
      * @symbol ?formatTickingAreaList@TickingAreaCommand@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@3@@Z
+     * @hash   -570121567
      */
     MCAPI static std::string formatTickingAreaList(std::vector<struct TickingAreaDescription> const &);
     /**
      * @symbol ?setup@TickingAreaCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   2010902684
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_add@TickingAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEAVDimension@@@Z
+     * @hash   -115551462
      */
     MCAPI void _add(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     /**
      * @symbol ?_list@TickingAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEAVDimension@@@Z
+     * @hash   -2059769771
      */
     MCAPI void _list(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     /**
      * @symbol ?_preload@TickingAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEAVDimension@@@Z
+     * @hash   -1239334030
      */
     MCAPI void _preload(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     /**
      * @symbol ?_remove@TickingAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEAVDimension@@@Z
+     * @hash   372152443
      */
     MCAPI void _remove(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
     /**
      * @symbol ?_removeAll@TickingAreaCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@AEAVLevel@@AEAVDimension@@@Z
+     * @hash   -575221610
      */
     MCAPI void _removeAll(class CommandOrigin const &, class CommandOutput &, class Level &, class Dimension &) const;
 

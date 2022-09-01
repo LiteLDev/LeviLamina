@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1497722337
      */
     virtual ~BatchedNetworkPeer();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?sendPacket@BatchedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
+     * @hash   -1231079258
      */
     virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?receivePacket@BatchedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+     * @hash   4465872
      */
     virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getNetworkStatus@BatchedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+     * @hash   -385579465
      */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?update@BatchedNetworkPeer@@UEAAXXZ
+     * @hash   -1863956199
      */
     virtual void update();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?flush@BatchedNetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z
+     * @hash   345985540
      */
     virtual void flush(class std::function<void (void)> &&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BATCHEDNETWORKPEER
-#endif
     /**
      * @symbol ??0BatchedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@AEAVScheduler@@@Z
+     * @hash   2101268330
      */
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler &);
     /**
      * @symbol ?setAsyncEnabled@BatchedNetworkPeer@@QEAAX_N@Z
+     * @hash   -2115667124
      */
     MCAPI void setAsyncEnabled(bool);
 
 //private:
     /**
      * @symbol ?_startSendTask@BatchedNetworkPeer@@AEAAXXZ
+     * @hash   -1929715419
      */
     MCAPI void _startSendTask();
 

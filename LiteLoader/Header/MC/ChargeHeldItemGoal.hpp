@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1521949639
      */
     virtual ~ChargeHeldItemGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@ChargeHeldItemGoal@@UEAA_NXZ
+     * @hash   -880142207
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@ChargeHeldItemGoal@@UEAA_NXZ
+     * @hash   1397341327
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@ChargeHeldItemGoal@@UEAAXXZ
+     * @hash   1059851162
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@ChargeHeldItemGoal@@UEAAXXZ
+     * @hash   -1979575350
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@ChargeHeldItemGoal@@UEAAXXZ
+     * @hash   138743797
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@ChargeHeldItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -213897505
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEHELDITEMGOAL
-#endif
     /**
      * @symbol ??0ChargeHeldItemGoal@@QEAA@AEAVMob@@@Z
+     * @hash   603924942
      */
     MCAPI ChargeHeldItemGoal(class Mob &);
 

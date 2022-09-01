@@ -30,28 +30,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORTREEGROUP
-#endif
     /**
      * @symbol ??0BehaviorTreeGroup@@QEAA@AEAVResourcePackManager@@AEAVBehaviorFactory@@@Z
+     * @hash   1229118351
      */
     MCAPI BehaviorTreeGroup(class ResourcePackManager &, class BehaviorFactory &);
     /**
      * @symbol ?tryGetDefinition@BehaviorTreeGroup@@QEAA?AVBehaviorTreeDefinitionPtr@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -965662861
      */
     MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const &);
     /**
      * @symbol ??1BehaviorTreeGroup@@QEAA@XZ
+     * @hash   80035851
      */
     MCAPI ~BehaviorTreeGroup();
 
 //private:
     /**
      * @symbol ?_addRef@BehaviorTreeGroup@@AEAAXAEAVBehaviorTreeDefinitionPtr@@@Z
+     * @hash   1490982595
      */
     MCAPI void _addRef(class BehaviorTreeDefinitionPtr &);
     /**
      * @symbol ?_removeRef@BehaviorTreeGroup@@AEAAXAEAVBehaviorTreeDefinitionPtr@@@Z
+     * @hash   1480697684
      */
     MCAPI void _removeRef(class BehaviorTreeDefinitionPtr &);
 

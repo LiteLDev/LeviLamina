@@ -28,38 +28,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMOVEMENTSLOWDOWNMULTIPLIERSYSTEM
-#endif
     /**
      * @symbol ?_adjustFallDistance@BlockMovementSlowdownMultiplierSystem@@SAXAEAVStrictEntityContext@@AEBUBlockMovementSlowdownMultiplierComponent@@AEAUFallDistanceComponent@@@Z
+     * @hash   604474828
      */
     MCAPI static void _adjustFallDistance(class StrictEntityContext &, struct BlockMovementSlowdownMultiplierComponent const &, struct FallDistanceComponent &);
     /**
      * @symbol ?_immunePlayer@BlockMovementSlowdownMultiplierSystem@@SAXAEAVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@AEBUAbilitiesComponent@@@Z
+     * @hash   675230242
      */
     MCAPI static void _immunePlayer(class StrictEntityContext &, struct BlockMovementSlowdownMultiplierComponent &, struct AbilitiesComponent const &);
     /**
      * @symbol ?_immuneSlowdown@BlockMovementSlowdownMultiplierSystem@@SAXAEAVStrictEntityContext@@AEAUBlockMovementSlowdownMultiplierComponent@@@Z
+     * @hash   -1252417597
      */
     MCAPI static void _immuneSlowdown(class StrictEntityContext &, struct BlockMovementSlowdownMultiplierComponent &);
     /**
      * @symbol ?createAdjustFallDistanceSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   419246384
      */
     MCAPI static struct TickingSystemWithInfo createAdjustFallDistanceSystem();
     /**
      * @symbol ?createCleanupSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -2123659586
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
      * @symbol ?createImmunePlayerSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   700852416
      */
     MCAPI static struct TickingSystemWithInfo createImmunePlayerSystem();
     /**
      * @symbol ?createImmuneSpiderSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   874899088
      */
     MCAPI static struct TickingSystemWithInfo createImmuneSpiderSystem();
     /**
      * @symbol ?createImmuneWitherBossSystem@BlockMovementSlowdownMultiplierSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   146145408
      */
     MCAPI static struct TickingSystemWithInfo createImmuneWitherBossSystem();
 

@@ -40,53 +40,60 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1862886080
      */
     virtual ~ByteTag();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?write@ByteTag@@UEBAXAEAVIDataOutput@@@Z
+     * @hash   929499331
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?load@ByteTag@@UEAAXAEAVIDataInput@@@Z
+     * @hash   1544939074
      */
     virtual void load(class IDataInput &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?toString@ByteTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   375453204
      */
     virtual std::string toString() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getId@ByteTag@@UEBA?AW4Type@Tag@@XZ
+     * @hash   -1023232231
      */
     virtual enum Tag::Type getId() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?equals@ByteTag@@UEBA_NAEBVTag@@@Z
+     * @hash   1321365000
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?copy@ByteTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   -959890170
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?hash@ByteTag@@UEBA_KXZ
+     * @hash   -1969971300
      */
     virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTETAG
-#endif
     /**
      * @symbol ??0ByteTag@@QEAA@XZ
+     * @hash   1623694526
      */
     MCAPI ByteTag();
     /**
      * @symbol ??0ByteTag@@QEAA@E@Z
+     * @hash   1845814030
      */
     MCAPI ByteTag(unsigned char);
 

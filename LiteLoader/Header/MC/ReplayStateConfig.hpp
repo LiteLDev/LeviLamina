@@ -27,14 +27,14 @@ public:
     ReplayStateConfig() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATECONFIG
-#endif
     /**
      * @symbol ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
+     * @hash   -975060455
      */
     MCAPI ReplayStateConfig(enum ReplayStateMode);
     /**
      * @symbol ?usesUnsupportedThresholds@ReplayStateConfig@@QEBA_NXZ
+     * @hash   1834518950
      */
     MCAPI bool usesUnsupportedThresholds() const;
 

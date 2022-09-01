@@ -29,10 +29,9 @@ public:
     CrashDumpKeyValueData() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPKEYVALUEDATA
-#endif
     /**
      * @symbol ??0CrashDumpKeyValueData@@QEAA@W4CrashDumpLogStringID@@0H_K@Z
+     * @hash   78483906
      */
     MCAPI CrashDumpKeyValueData(enum CrashDumpLogStringID, enum CrashDumpLogStringID, int, unsigned __int64);
 MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];

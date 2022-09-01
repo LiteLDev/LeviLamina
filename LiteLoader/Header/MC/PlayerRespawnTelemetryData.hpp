@@ -30,38 +30,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNTELEMETRYDATA
-#endif
     /**
      * @symbol ??0PlayerRespawnTelemetryData@@QEAA@XZ
+     * @hash   -151828632
      */
     MCAPI PlayerRespawnTelemetryData();
     /**
      * @symbol ?WriteEventData@PlayerRespawnTelemetryData@@QEBAXAEAVEvent@Events@Social@@@Z
+     * @hash   -305383102
      */
     MCAPI void WriteEventData(class Social::Events::Event &) const;
     /**
      * @symbol ?setChangedDimension@PlayerRespawnTelemetryData@@QEAAX_N@Z
+     * @hash   714020732
      */
     MCAPI void setChangedDimension(bool);
     /**
      * @symbol ?setJumpDistance@PlayerRespawnTelemetryData@@QEAAXN@Z
+     * @hash   1155981408
      */
     MCAPI void setJumpDistance(double);
     /**
      * @symbol ?setLongJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
+     * @hash   1719986192
      */
     MCAPI void setLongJumpCount(unsigned int);
     /**
      * @symbol ?setPositionSourceType@PlayerRespawnTelemetryData@@QEAAXI@Z
+     * @hash   1543857634
      */
     MCAPI void setPositionSourceType(unsigned int);
     /**
      * @symbol ?setSearchTime@PlayerRespawnTelemetryData@@QEAAXN@Z
+     * @hash   -1822526848
      */
     MCAPI void setSearchTime(double);
     /**
      * @symbol ?setShortJumpCount@PlayerRespawnTelemetryData@@QEAAXI@Z
+     * @hash   -1231433406
      */
     MCAPI void setShortJumpCount(unsigned int);
 

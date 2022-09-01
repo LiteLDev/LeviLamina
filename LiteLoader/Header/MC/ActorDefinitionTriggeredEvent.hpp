@@ -27,10 +27,9 @@ public:
     ActorDefinitionTriggeredEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONTRIGGEREDEVENT
-#endif
     /**
      * @symbol ??1ActorDefinitionTriggeredEvent@@QEAA@XZ
+     * @hash   -509932137
      */
     MCAPI ~ActorDefinitionTriggeredEvent();
 

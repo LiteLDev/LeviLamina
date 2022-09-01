@@ -28,22 +28,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICPROPERTIESCOMPONENT
-#endif
     /**
      * @symbol ??0DynamicPropertiesComponent@@QEAA@$$QEAV0@@Z
+     * @hash   279705663
      */
     MCAPI DynamicPropertiesComponent(class DynamicPropertiesComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@DynamicPropertiesComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   1610770456
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getProperties@DynamicPropertiesComponent@@QEAAAEAVDynamicProperties@@XZ
+     * @hash   -1737165038
      */
     MCAPI class DynamicProperties & getProperties();
     /**
      * @symbol ??4DynamicPropertiesComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1496075602
      */
     MCAPI class DynamicPropertiesComponent & operator=(class DynamicPropertiesComponent &&);
 

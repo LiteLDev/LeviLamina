@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@NavigationSwimDescription@@UEBAPEBDXZ
+     * @hash   -1053485116
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   -1785133714
      */
     virtual ~NavigationSwimDescription();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@NavigationSwimDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1330178983
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONSWIMDESCRIPTION
-#endif
 
 };

@@ -32,106 +32,114 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCKACTOR
     /**
-     * @vtable -1
      * @symbol ?_getUpdatePacket@LecternBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -1682072904
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?_onUpdatePacket@LecternBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   -631619446
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?getContainer@LecternBlockActor@@UEAAPEAVContainer@@XZ
+     * @hash   1427202304
      */
     MCVAPI class Container * getContainer();
     /**
-     * @vtable -1
      * @symbol ?getContainer@LecternBlockActor@@UEBAPEBVContainer@@XZ
+     * @hash   999480444
      */
     MCVAPI class Container const * getContainer() const;
     /**
-     * @vtable -1
      * @symbol ?getContainerSize@LecternBlockActor@@UEBAHXZ
+     * @hash   1603587768
      */
     MCVAPI int getContainerSize() const;
     /**
-     * @vtable -1
      * @symbol ?getItem@LecternBlockActor@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1008775053
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
-     * @vtable -1
      * @symbol ?getMaxStackSize@LecternBlockActor@@UEBAHXZ
+     * @hash   827029047
      */
     MCVAPI int getMaxStackSize() const;
     /**
-     * @vtable -1
      * @symbol ?load@LecternBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   2111101558
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable -1
      * @symbol ?onChanged@LecternBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -295983737
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?save@LecternBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -807959611
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
-     * @vtable -1
      * @symbol ?serverInitItemStackIds@LecternBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   1042995544
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @vtable -1
      * @symbol ?setItem@LecternBlockActor@@UEAAXHAEBVItemStack@@@Z
+     * @hash   -553731566
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
-     * @vtable -1
      * @symbol ?startOpen@LecternBlockActor@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1999669153
      */
     MCVAPI void startOpen(class Player &);
     /**
-     * @vtable -1
      * @symbol ?stopOpen@LecternBlockActor@@UEAAXAEAVPlayer@@@Z
+     * @hash   2138786047
      */
     MCVAPI void stopOpen(class Player &);
 #endif
     /**
      * @symbol ??0LecternBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   -133079406
      */
     MCAPI LecternBlockActor(class BlockPos const &);
     /**
      * @symbol ?dropBook@LecternBlockActor@@QEAAXAEAVBlockSource@@@Z
+     * @hash   1061845670
      */
     MCAPI void dropBook(class BlockSource &);
     /**
      * @symbol ?getPage@LecternBlockActor@@QEBAHXZ
+     * @hash   -130528814
      */
     MCAPI int getPage() const;
     /**
      * @symbol ?getTotalPages@LecternBlockActor@@QEBAHXZ
+     * @hash   1633840564
      */
     MCAPI int getTotalPages() const;
     /**
      * @symbol ?hasBook@LecternBlockActor@@QEBA_NXZ
+     * @hash   -133127824
      */
     MCAPI bool hasBook() const;
     /**
      * @symbol ?setItemFromBlock@LecternBlockActor@@QEAAXHAEBVItemStack@@@Z
+     * @hash   -1035661337
      */
     MCAPI void setItemFromBlock(int, class ItemStack const &);
     /**
      * @symbol ?setPageOnServer@LecternBlockActor@@QEAAXHAEAVBlockSource@@@Z
+     * @hash   -980748255
      */
     MCAPI void setPageOnServer(int, class BlockSource &);
     /**
      * @symbol ?setTotalPages@LecternBlockActor@@QEAAXH@Z
+     * @hash   -1844874718
      */
     MCAPI void setTotalPages(int);
 

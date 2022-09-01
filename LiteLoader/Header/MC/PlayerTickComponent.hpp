@@ -29,22 +29,24 @@ public:
     PlayerTickComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERTICKCOMPONENT
-#endif
     /**
      * @symbol ??0PlayerTickComponent@@QEAA@V?$unique_ptr@UIPlayerTickPolicy@@U?$default_delete@UIPlayerTickPolicy@@@std@@@std@@@Z
+     * @hash   -108315004
      */
     MCAPI PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
     /**
      * @symbol ??0PlayerTickComponent@@QEAA@$$QEAU0@@Z
+     * @hash   -990932811
      */
     MCAPI PlayerTickComponent(struct PlayerTickComponent &&);
     /**
      * @symbol ??4PlayerTickComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1102359986
      */
     MCAPI struct PlayerTickComponent & operator=(struct PlayerTickComponent &&);
     /**
      * @symbol ??1PlayerTickComponent@@QEAA@XZ
+     * @hash   -226924901
      */
     MCAPI ~PlayerTickComponent();
 

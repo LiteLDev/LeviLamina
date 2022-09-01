@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -129184344
      */
     virtual ~ShulkerPeekGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@ShulkerPeekGoal@@UEAA_NXZ
+     * @hash   1805759574
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@ShulkerPeekGoal@@UEAA_NXZ
+     * @hash   -1748361212
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@ShulkerPeekGoal@@UEAAXXZ
+     * @hash   1781512191
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@ShulkerPeekGoal@@UEAAXXZ
+     * @hash   -1624011617
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@ShulkerPeekGoal@@UEAAXXZ
+     * @hash   -1785233910
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@ShulkerPeekGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1964236170
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERPEEKGOAL
-#endif
     /**
      * @symbol ??0ShulkerPeekGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -198675693
      */
     MCAPI ShulkerPeekGoal(class Mob &);
 

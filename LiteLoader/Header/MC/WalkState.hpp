@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1535412714
      */
     virtual ~WalkState();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?tick@WalkState@@UEAAXXZ
+     * @hash   1401066988
      */
     virtual void tick();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?start@PetSleepWithOwnerState@@UEAAXXZ
+     * @hash   1425808801
      */
     virtual void start();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
+     * @hash   -1630115887
      */
     virtual void stop();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALKSTATE
-#endif
 
 };

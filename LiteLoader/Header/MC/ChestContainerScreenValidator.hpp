@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -817139852
      */
     virtual ~ChestContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0ChestContainerScreenValidator@@QEAA@XZ
+     * @hash   384971922
      */
     MCAPI ChestContainerScreenValidator();
 

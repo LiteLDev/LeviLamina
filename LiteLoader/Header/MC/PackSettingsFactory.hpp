@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSFACTORY
-#endif
     /**
      * @symbol ?getPackSettings@PackSettingsFactory@@QEAAPEAVPackSettings@@AEBVPackManifest@@@Z
+     * @hash   -253499764
      */
     MCAPI class PackSettings * getPackSettings(class PackManifest const &);
 

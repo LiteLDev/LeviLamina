@@ -32,34 +32,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -98277238
      */
     virtual ~HorseContainerManagerModel();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?getItemCopies@HorseContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   342288207
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setSlot@HorseContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   1569175728
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getSlot@HorseContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   -140907495
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@HorseContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -1957992330
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HORSECONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0HorseContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+     * @hash   69421181
      */
     MCAPI HorseContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
 

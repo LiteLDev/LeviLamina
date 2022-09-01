@@ -31,32 +31,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUOYANCYDEFINITION
-#endif
     /**
      * @symbol ??0BuoyancyDefinition@@QEAA@XZ
+     * @hash   -2017418097
      */
     MCAPI BuoyancyDefinition();
     /**
      * @symbol ?initialize@BuoyancyDefinition@@QEBAXAEAVEntityContext@@AEAVBuoyancyComponent@@@Z
+     * @hash   411695865
      */
     MCAPI void initialize(class EntityContext &, class BuoyancyComponent &) const;
     /**
      * @symbol ?uninitialize@BuoyancyDefinition@@QEBAXAEAVEntityContext@@AEAVBuoyancyComponent@@@Z
+     * @hash   1850732537
      */
     MCAPI void uninitialize(class EntityContext &, class BuoyancyComponent &) const;
     /**
      * @symbol ?buildSchema@BuoyancyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBuoyancyDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1514773910
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BuoyancyDefinition>> &);
 
 //private:
     /**
      * @symbol ?_addLiquidBlockDescriptor@BuoyancyDefinition@@AEAAXAEBVBlockDescriptor@@@Z
+     * @hash   -872094106
      */
     MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ?_serialize@BuoyancyDefinition@@AEBA?AVValue@Json@@XZ
+     * @hash   -1497130823
      */
     MCAPI class Json::Value _serialize() const;
 

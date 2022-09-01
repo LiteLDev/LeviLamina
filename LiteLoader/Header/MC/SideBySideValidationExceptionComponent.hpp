@@ -26,14 +26,14 @@ public:
     SideBySideValidationExceptionComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEVALIDATIONEXCEPTIONCOMPONENT
-#endif
     /**
      * @symbol ??0SideBySideValidationExceptionComponent@@QEAA@$$QEAU0@@Z
+     * @hash   663925941
      */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent &&);
     /**
      * @symbol ??0SideBySideValidationExceptionComponent@@QEAA@AEBU0@@Z
+     * @hash   920494415
      */
     MCAPI SideBySideValidationExceptionComponent(struct SideBySideValidationExceptionComponent const &);
 

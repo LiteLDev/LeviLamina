@@ -32,56 +32,61 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1104471005
      */
     virtual ~CartographyAdditionalContainerValidation();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     * @hash   -2032817683
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isItemAllowedInSlot@CartographyAdditionalContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
+     * @hash   -683594279
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
+     * @hash   -1055585242
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
+     * @hash   432034672
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+     * @hash   1650412756
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?getContainerOffset@CartographyAdditionalContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z
+     * @hash   1190522813
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?getContainerSize@ContainerValidationBase@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
+     * @hash   571493367
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYADDITIONALCONTAINERVALIDATION
-#endif
 
 };

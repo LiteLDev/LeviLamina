@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@NavigationFlyDescription@@UEBAPEBDXZ
+     * @hash   -1592949385
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   -321034361
      */
     virtual ~NavigationFlyDescription();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLYDESCRIPTION
-#endif
 
 };

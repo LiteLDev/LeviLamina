@@ -28,30 +28,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEREPORT
-#endif
     /**
      * @symbol ??0PackSourceReport@@QEAA@XZ
+     * @hash   1635634116
      */
     MCAPI PackSourceReport();
     /**
      * @symbol ??0PackSourceReport@@QEAA@AEBV0@@Z
+     * @hash   -746905247
      */
     MCAPI PackSourceReport(class PackSourceReport const &);
     /**
      * @symbol ?addReport@PackSourceReport@@QEAAXAEBUPackIdVersion@@$$QEAVPackReport@@@Z
+     * @hash   649180419
      */
     MCAPI void addReport(struct PackIdVersion const &, class PackReport &&);
     /**
      * @symbol ?getReports@PackSourceReport@@QEBAAEBV?$unordered_map@UPackIdVersion@@VPackReport@@U?$hash@UPackIdVersion@@@std@@U?$equal_to@UPackIdVersion@@@4@V?$allocator@U?$pair@$$CBUPackIdVersion@@VPackReport@@@std@@@4@@std@@XZ
+     * @hash   -512091415
      */
     MCAPI class std::unordered_map<struct PackIdVersion, class PackReport, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, class PackReport>>> const & getReports() const;
     /**
      * @symbol ?hasErrors@PackSourceReport@@QEBA_NXZ
+     * @hash   1816953706
      */
     MCAPI bool hasErrors() const;
     /**
      * @symbol ??1PackSourceReport@@QEAA@XZ
+     * @hash   1621279794
      */
     MCAPI ~PackSourceReport();
 

@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1081321109
      */
     virtual ~FindBlockDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@FindBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   -663648227
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDBLOCKDEFINITION
-#endif
 
 };

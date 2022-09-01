@@ -31,10 +31,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGSJSONVALIDATOR
-#endif
     /**
      * @symbol ?getValidator@PackSettingsJsonValidator@@SA?AVProperty@JsonValidator@@XZ
+     * @hash   984883112
      */
     MCAPI static class JsonValidator::Property getValidator();
 

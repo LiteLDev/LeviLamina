@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1940244000
      */
     virtual ~LootItemActorHasVariantCondition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?applies@LootItemActorHasVariantCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -892108423
      */
     virtual bool applies(class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMACTORHASVARIANTCONDITION
-#endif
     /**
      * @symbol ?deserialize@LootItemActorHasVariantCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
+     * @hash   -664244807
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 

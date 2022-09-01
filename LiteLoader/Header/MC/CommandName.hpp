@@ -27,10 +27,9 @@ public:
     CommandName() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDNAME
-#endif
     /**
      * @symbol ??1CommandName@@QEAA@XZ
+     * @hash   1196682114
      */
     MCAPI ~CommandName();
 

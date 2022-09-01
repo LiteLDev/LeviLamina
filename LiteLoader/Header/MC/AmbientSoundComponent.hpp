@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDCOMPONENT
-#endif
     /**
      * @symbol ?setAmbientSoundRemainingTime@AmbientSoundComponent@@SAXAEAVActor@@M@Z
+     * @hash   1685991015
      */
     MCAPI static void setAmbientSoundRemainingTime(class Actor &, float);
 

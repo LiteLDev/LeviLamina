@@ -27,14 +27,14 @@ public:
     AttributesComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTESCOMPONENT
-#endif
     /**
      * @symbol ??0AttributesComponent@@QEAA@$$QEAU0@@Z
+     * @hash   -1077327661
      */
     MCAPI AttributesComponent(struct AttributesComponent &&);
     /**
      * @symbol ??1AttributesComponent@@QEAA@XZ
+     * @hash   -55277758
      */
     MCAPI ~AttributesComponent();
 

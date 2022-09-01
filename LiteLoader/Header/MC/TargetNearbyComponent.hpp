@@ -30,34 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETNEARBYCOMPONENT
-#endif
     /**
      * @symbol ?getWasInsideRange@TargetNearbyComponent@@QEBA_NXZ
+     * @hash   -2141176652
      */
     MCAPI bool getWasInsideRange() const;
     /**
      * @symbol ?getWasOutsideRange@TargetNearbyComponent@@QEBA_NXZ
+     * @hash   -134875386
      */
     MCAPI bool getWasOutsideRange() const;
     /**
      * @symbol ?getWasSeenLastTick@TargetNearbyComponent@@QEBA_NXZ
+     * @hash   -1716526378
      */
     MCAPI bool getWasSeenLastTick() const;
     /**
      * @symbol ?setPreviousDistance@TargetNearbyComponent@@QEAAXM@Z
+     * @hash   2013517496
      */
     MCAPI void setPreviousDistance(float);
     /**
      * @symbol ?setWasInsideRange@TargetNearbyComponent@@QEAAX_N@Z
+     * @hash   -1348371096
      */
     MCAPI void setWasInsideRange(bool);
     /**
      * @symbol ?setWasOutsideRange@TargetNearbyComponent@@QEAAX_N@Z
+     * @hash   1622632342
      */
     MCAPI void setWasOutsideRange(bool);
     /**
      * @symbol ?setWasSeenLastTick@TargetNearbyComponent@@QEAAX_N@Z
+     * @hash   -391072762
      */
     MCAPI void setWasSeenLastTick(bool);
 

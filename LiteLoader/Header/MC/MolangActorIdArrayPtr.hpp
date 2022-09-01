@@ -27,14 +27,14 @@ public:
     MolangActorIdArrayPtr() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGACTORIDARRAYPTR
-#endif
     /**
      * @symbol ??0MolangActorIdArrayPtr@@QEAA@V?$vector@UActorUniqueID@@V?$allocator@UActorUniqueID@@@std@@@std@@@Z
+     * @hash   278825424
      */
     MCAPI MolangActorIdArrayPtr(std::vector<struct ActorUniqueID>);
     /**
      * @symbol ??1MolangActorIdArrayPtr@@QEAA@XZ
+     * @hash   1897471729
      */
     MCAPI ~MolangActorIdArrayPtr();
 

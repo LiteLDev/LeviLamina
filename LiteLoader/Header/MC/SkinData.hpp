@@ -30,22 +30,24 @@ public:
     SkinData() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKINDATA
-#endif
     /**
      * @symbol ??0SkinData@@QEAA@AEBVValue@Json@@@Z
+     * @hash   1786000280
      */
     MCAPI SkinData(class Json::Value const &);
     /**
      * @symbol ??0SkinData@@QEAA@AEBVActor@@@Z
+     * @hash   119473352
      */
     MCAPI SkinData(class Actor const &);
     /**
      * @symbol ?applyToActor@SkinData@@QEBAXAEAVActor@@@Z
+     * @hash   -345650294
      */
     MCAPI void applyToActor(class Actor &) const;
     /**
      * @symbol ?softMatch@SkinData@@QEBA_NAEBU1@AEA_N@Z
+     * @hash   -419829393
      */
     MCAPI bool softMatch(struct SkinData const &, bool &) const;
 

@@ -26,14 +26,14 @@ public:
     ActorGriefingBlockEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORGRIEFINGBLOCKEVENT
-#endif
     /**
      * @symbol ??0ActorGriefingBlockEvent@@QEAA@AEBU0@@Z
+     * @hash   -1462930107
      */
     MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const &);
     /**
      * @symbol ??1ActorGriefingBlockEvent@@QEAA@XZ
+     * @hash   1757020897
      */
     MCAPI ~ActorGriefingBlockEvent();
 

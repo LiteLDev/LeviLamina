@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDATA
-#endif
     /**
      * @symbol ??1ItemData@@QEAA@XZ
+     * @hash   -476554201
      */
     MCAPI ~ItemData();
 

@@ -30,44 +30,45 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1096096678
      */
     virtual ~ScriptTickListener();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1158526335
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1157602814
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1156679293
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?onLevelRemovedPlayer@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+     * @hash   -748782117
      */
     virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1154832251
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?onLevelTick@ScriptTickListener@@UEAA?AW4EventResult@@XZ
+     * @hash   -1287626138
      */
     virtual enum EventResult onLevelTick();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
-#endif
     /**
      * @symbol ??0ScriptTickListener@@QEAA@AEAVServerLevel@@AEAVScriptEngine@Scripting@@AEAVScriptFormPromiseTracker@@AEAVScriptCommandProcessor@@@Z
+     * @hash   -325702462
      */
     MCAPI ScriptTickListener(class ServerLevel &, class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptCommandProcessor &);
 

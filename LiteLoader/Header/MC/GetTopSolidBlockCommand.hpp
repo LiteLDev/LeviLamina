@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1209771320
      */
     virtual ~GetTopSolidBlockCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@GetTopSolidBlockCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -2076673847
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETTOPSOLIDBLOCKCOMMAND
-#endif
     /**
      * @symbol ?setup@GetTopSolidBlockCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1636511504
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -281429618
      */
     virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+     * @hash   -280474968
      */
     virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
-#endif
     /**
      * @symbol ??0CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
+     * @hash   -1575685933
      */
     MCAPI CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftHandler &);
 

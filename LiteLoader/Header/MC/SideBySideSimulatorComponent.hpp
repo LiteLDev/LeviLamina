@@ -27,10 +27,9 @@ public:
     SideBySideSimulatorComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDESIMULATORCOMPONENT
-#endif
     /**
      * @symbol ??1SideBySideSimulatorComponent@@QEAA@XZ
+     * @hash   -1999272424
      */
     MCAPI ~SideBySideSimulatorComponent();
 

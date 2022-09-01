@@ -32,33 +32,36 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -108098461
      */
     virtual ~TextObjectText();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?asString@TextObjectText@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1601493468
      */
     virtual std::string asString() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?asJsonValue@TextObjectText@@UEBA?AVValue@Json@@XZ
+     * @hash   2092842580
      */
     virtual class Json::Value asJsonValue() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?resolve@TextObjectText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+     * @hash   1348221003
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTTEXT
-#endif
     /**
      * @symbol ??0TextObjectText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -926214130
      */
     MCAPI TextObjectText(std::string);
     /**
      * @symbol ?asJsonValue@TextObjectText@@SA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -727764713
      */
     MCAPI static class Json::Value asJsonValue(std::string const &);
 

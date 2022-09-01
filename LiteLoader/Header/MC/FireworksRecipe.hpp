@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -925781240
      */
     virtual ~FireworksRecipe();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?assemble@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   -828454840
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@FireworksRecipe@@UEBAHXZ
+     * @hash   -1093921158
      */
     virtual int getCraftingSize() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getIngredient@FireworksRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   1870377803
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getResultItem@FireworksRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   -94758537
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?isShapeless@FireworksRecipe@@UEBA_NXZ
+     * @hash   519961518
      */
     virtual bool isShapeless() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?matches@FireworksRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   1934153596
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?size@FireworksRecipe@@UEBAHXZ
+     * @hash   -541063886
      */
     virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSRECIPE
-#endif
     /**
      * @symbol ??0FireworksRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@PEBVUUID@mce@@@Z
+     * @hash   -1400542259
      */
     MCAPI FireworksRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const *);
 MCAPI static class mce::UUID ID;

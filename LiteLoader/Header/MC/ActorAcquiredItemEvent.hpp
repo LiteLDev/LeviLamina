@@ -26,14 +26,14 @@ public:
     ActorAcquiredItemEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORACQUIREDITEMEVENT
-#endif
     /**
      * @symbol ??0ActorAcquiredItemEvent@@QEAA@AEBU0@@Z
+     * @hash   21245679
      */
     MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const &);
     /**
      * @symbol ??1ActorAcquiredItemEvent@@QEAA@XZ
+     * @hash   938323614
      */
     MCAPI ~ActorAcquiredItemEvent();
 

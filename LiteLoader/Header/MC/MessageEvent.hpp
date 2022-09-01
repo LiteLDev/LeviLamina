@@ -27,10 +27,9 @@ public:
     MessageEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGEEVENT
-#endif
     /**
      * @symbol ??1MessageEvent@@QEAA@XZ
+     * @hash   -1505364339
      */
     MCAPI ~MessageEvent();
 

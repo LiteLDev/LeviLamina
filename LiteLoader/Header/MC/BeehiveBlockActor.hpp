@@ -38,85 +38,91 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1635678408
      */
     virtual ~BeehiveBlockActor();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@BeehiveBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1850684865
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?save@BeehiveBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -877152608
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?tick@BeehiveBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   1160083242
      */
     virtual void tick(class BlockSource &);
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 16
-     * @symbol __unk_vfn_16
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @vtable 28
-     * @symbol __unk_vfn_28
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @vtable 29
-     * @symbol __unk_vfn_29
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @vtable 30
-     * @symbol __unk_vfn_30
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @vtable 32
-     * @symbol __unk_vfn_32
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @vtable 33
-     * @symbol __unk_vfn_33
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @vtable 34
-     * @symbol __unk_vfn_34
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEEHIVEBLOCKACTOR
-#endif
     /**
      * @symbol ??0BeehiveBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   1986933677
      */
     MCAPI BeehiveBlockActor(class BlockPos const &);
     /**
      * @symbol ?disableBeeSpawn@BeehiveBlockActor@@QEAAXXZ
+     * @hash   1236217079
      */
     MCAPI void disableBeeSpawn();
     /**
      * @symbol ?evictAll@BeehiveBlockActor@@QEAAXAEAVBlockSource@@_N@Z
+     * @hash   -989477933
      */
     MCAPI void evictAll(class BlockSource &, bool);
     /**
      * @symbol ?saveUserData@BeehiveBlockActor@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   297035076
      */
     MCAPI void saveUserData(class CompoundTag &) const;
     /**
      * @symbol ?tryAdmit@BeehiveBlockActor@@QEAA_NAEAVActor@@@Z
+     * @hash   999314947
      */
     MCAPI bool tryAdmit(class Actor &);
 MCAPI static unsigned int const MAX_OCCUPANCY;
@@ -126,14 +132,17 @@ MCAPI static std::string const TypeString;
 //private:
     /**
      * @symbol ?_revive@BeehiveBlockActor@@AEAAPEAVActor@@AEAVBlockSource@@AEBUOccupant@1@E@Z
+     * @hash   1057502221
      */
     MCAPI class Actor * _revive(class BlockSource &, struct BeehiveBlockActor::Occupant const &, unsigned char);
     /**
      * @symbol ?_tickOccupant@BeehiveBlockActor@@AEAA_NAEAVBlockSource@@AEAUOccupant@1@@Z
+     * @hash   2099043513
      */
     MCAPI bool _tickOccupant(class BlockSource &, struct BeehiveBlockActor::Occupant &);
     /**
      * @symbol ?_trySpawnBees@BeehiveBlockActor@@AEAAXAEAVBlockSource@@@Z
+     * @hash   -102153806
      */
     MCAPI void _trySpawnBees(class BlockSource &);
 

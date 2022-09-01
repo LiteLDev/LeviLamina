@@ -30,21 +30,20 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1827849271
      */
     virtual ~PlayerMovementRateSystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@PlayerMovementRateSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -929375169
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERMOVEMENTRATESYSTEM
-#endif
 
 };

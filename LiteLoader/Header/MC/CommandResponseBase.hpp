@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDRESPONSEBASE
-#endif
     /**
      * @symbol ??1CommandResponseBase@@QEAA@XZ
+     * @hash   -433066407
      */
     MCAPI ~CommandResponseBase();
 MCAPI static std::string const NameID;
@@ -39,16 +38,19 @@ MCAPI static std::string const NameID;
 //protected:
     /**
      * @symbol ?_addCommand@CommandResponseBase@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1925417363
      */
     MCAPI void _addCommand(std::string const &);
     /**
      * @symbol ?_executeAction@CommandResponseBase@@IEBAXAEAVRenderParams@@@Z
+     * @hash   369056733
      */
     MCAPI void _executeAction(class RenderParams &) const;
 
 //private:
     /**
      * @symbol ?_compileCommands@CommandResponseBase@@AEBAXAEAVLevel@@@Z
+     * @hash   -1462607140
      */
     MCAPI void _compileCommands(class Level &) const;
 

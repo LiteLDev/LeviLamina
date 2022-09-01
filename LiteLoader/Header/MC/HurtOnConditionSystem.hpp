@@ -31,21 +31,20 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   274362314
      */
     virtual ~HurtOnConditionSystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@HurtOnConditionSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   1545099564
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTONCONDITIONSYSTEM
-#endif
 
 };

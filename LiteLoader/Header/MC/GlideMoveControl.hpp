@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -590695631
      */
     virtual ~GlideMoveControl();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?initializeInternal@GlideMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+     * @hash   1414407710
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@GlideMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     * @hash   -666562833
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLIDEMOVECONTROL
-#endif
     /**
      * @symbol ??0GlideMoveControl@@QEAA@XZ
+     * @hash   1873048451
      */
     MCAPI GlideMoveControl();
 

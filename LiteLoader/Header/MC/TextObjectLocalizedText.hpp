@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1356665898
      */
     virtual ~TextObjectLocalizedText();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?asString@TextObjectLocalizedText@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1755426767
      */
     virtual std::string asString() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?asJsonValue@TextObjectLocalizedText@@UEBA?AVValue@Json@@XZ
+     * @hash   -1297024543
      */
     virtual class Json::Value asJsonValue() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?resolve@TextObjectLocalizedText@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+     * @hash   342069038
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTLOCALIZEDTEXT
-#endif
     /**
      * @symbol ??0TextObjectLocalizedText@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1209110593
      */
     MCAPI TextObjectLocalizedText(std::string);
 

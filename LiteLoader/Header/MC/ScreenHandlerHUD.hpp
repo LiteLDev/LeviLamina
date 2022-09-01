@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   172586403
      */
     virtual ~ScreenHandlerHUD();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+     * @hash   1442899735
      */
     virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERHUD
-#endif
 
 };

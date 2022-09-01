@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1914733835
      */
     virtual ~AbilityCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@AbilityCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1737668318
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABILITYCOMMAND
-#endif
     /**
      * @symbol ?setup@AbilityCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   79597004
      */
     MCAPI static void setup(class CommandRegistry &);
 

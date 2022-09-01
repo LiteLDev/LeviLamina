@@ -32,28 +32,31 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTSUMMARYDISPLAYER
     /**
-     * @vtable -1
      * @symbol ?onTestFailed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   1721567412
      */
     MCVAPI void onTestFailed(class gametest::BaseGameTestInstance &);
     /**
-     * @vtable -1
      * @symbol ?onTestPassed@TestSummaryDisplayer@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   1446042113
      */
     MCVAPI void onTestPassed(class gametest::BaseGameTestInstance &);
 #endif
     /**
      * @symbol ??0TestSummaryDisplayer@@QEAA@AEAVLevel@@AEAVMultipleTestTracker@gametest@@@Z
+     * @hash   -1222691055
      */
     MCAPI TestSummaryDisplayer(class Level &, class gametest::MultipleTestTracker &);
 
 //private:
     /**
      * @symbol ?_say@TestSummaryDisplayer@@AEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   2137613548
      */
     MCAPI void _say(std::string const &, std::string const &) const;
     /**
      * @symbol ?_showTestSummaryIfAllDone@TestSummaryDisplayer@@AEBAXXZ
+     * @hash   1418472190
      */
     MCAPI void _showTestSummaryIfAllDone() const;
 

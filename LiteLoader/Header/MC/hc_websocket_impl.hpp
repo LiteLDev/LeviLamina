@@ -27,7 +27,5 @@ public:
     hc_websocket_impl() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HC_WEBSOCKET_IMPL
-#endif
 
 };

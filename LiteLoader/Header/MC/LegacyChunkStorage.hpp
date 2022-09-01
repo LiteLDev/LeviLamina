@@ -32,51 +32,58 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   123097601
      */
     virtual ~LegacyChunkStorage();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?loadChunk@LegacyChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z
+     * @hash   -299278440
      */
     virtual void loadChunk(class LevelChunk &, bool);
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?saveLiveChunk@LegacyChunkStorage@@UEAA_NAEAVLevelChunk@@@Z
+     * @hash   -1610101851
      */
     virtual bool saveLiveChunk(class LevelChunk &);
     /**
-     * @vtable 18
+     * @vftbl  18
      * @symbol ?acquireDiscarded@LegacyChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
+     * @hash   4310013
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYCHUNKSTORAGE
-#endif
     /**
      * @symbol ??0LegacyChunkStorage@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@AEAVLevelStorage@@W4StorageVersion@@AEAVBiome@@@Z
+     * @hash   490026035
      */
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage &, enum StorageVersion, class Biome &);
 
 //private:
     /**
      * @symbol ?_isImported@LegacyChunkStorage@@AEAA_NAEBVChunkPos@@@Z
+     * @hash   -1296888442
      */
     MCAPI bool _isImported(class ChunkPos const &);
     /**
      * @symbol ?_loadChunk@LegacyChunkStorage@@AEAA_NAEAVLevelChunk@@@Z
+     * @hash   -1546371428
      */
     MCAPI bool _loadChunk(class LevelChunk &);
     /**
      * @symbol ?_loadEntities@LegacyChunkStorage@@AEAAXXZ
+     * @hash   756805387
      */
     MCAPI void _loadEntities();
     /**
      * @symbol ?_markChunkAsImported@LegacyChunkStorage@@AEAAXAEBVChunkPos@@@Z
+     * @hash   -10303226
      */
     MCAPI void _markChunkAsImported(class ChunkPos const &);
     /**
      * @symbol ?_openRegionFile@LegacyChunkStorage@@AEAA_NXZ
+     * @hash   1568135960
      */
     MCAPI bool _openRegionFile();
 

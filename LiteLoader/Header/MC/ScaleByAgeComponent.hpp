@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCALEBYAGECOMPONENT
-#endif
     /**
      * @symbol ??0ScaleByAgeComponent@@QEAA@XZ
+     * @hash   -171843317
      */
     MCAPI ScaleByAgeComponent();
     /**
      * @symbol ?_initializeScale@ScaleByAgeComponent@@QEAAXAEAVEntityContext@@@Z
+     * @hash   1375517816
      */
     MCAPI void _initializeScale(class EntityContext &);
 

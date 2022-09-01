@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLABASTIONJIGSAWSTRUCTUREBLOCKRULES
-#endif
     /**
      * @symbol ?initialize@VanillaBastionJigsawStructureBlockRules@@SAXAEAVJigsawStructureRegistry@@@Z
+     * @hash   964995134
      */
     MCAPI static void initialize(class JigsawStructureRegistry &);
 

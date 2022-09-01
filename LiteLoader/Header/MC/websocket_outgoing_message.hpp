@@ -27,10 +27,9 @@ public:
     websocket_outgoing_message() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBSOCKET_OUTGOING_MESSAGE
-#endif
     /**
      * @symbol ??1websocket_outgoing_message@@QEAA@XZ
+     * @hash   -810605706
      */
     MCAPI ~websocket_outgoing_message();
 

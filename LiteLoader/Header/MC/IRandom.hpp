@@ -31,61 +31,60 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1452047066
      */
     virtual ~IRandom();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -174523056
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -173599535
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -172676014
      */
     virtual void __unk_vfn_3() = 0;
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -171752493
      */
     virtual void __unk_vfn_4() = 0;
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -170828972
      */
     virtual void __unk_vfn_5() = 0;
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -169905451
      */
     virtual void __unk_vfn_6() = 0;
     /**
-     * @vtable 7
-     * @symbol __unk_vfn_7
+     * @vftbl  7
+     * @hash   -168981930
      */
     virtual void __unk_vfn_7() = 0;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -168058409
      */
     virtual void __unk_vfn_8() = 0;
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -167134888
      */
     virtual void __unk_vfn_9() = 0;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?forkPositional@IRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
+     * @hash   2019265348
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRANDOM
-#endif
 
 };

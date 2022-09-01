@@ -27,10 +27,9 @@ public:
     MolangMemberAccessor() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGMEMBERACCESSOR
-#endif
     /**
      * @symbol ??1MolangMemberAccessor@@QEAA@XZ
+     * @hash   -2142085253
      */
     MCAPI ~MolangMemberAccessor();
 

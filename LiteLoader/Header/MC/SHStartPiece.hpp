@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1807476107
      */
     virtual ~SHStartPiece();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@SHStartPiece@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   -1916288054
      */
     virtual enum StructurePieceType getType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHSTARTPIECE
-#endif
     /**
      * @symbol ??0SHStartPiece@@QEAA@HAEAVRandom@@HH@Z
+     * @hash   -1945073487
      */
     MCAPI SHStartPiece(int, class Random &, int, int);
 

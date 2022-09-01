@@ -30,40 +30,46 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXTBASE
-#endif
     /**
      * @symbol ??0EntityContextBase@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
+     * @hash   -340687233
      */
     MCAPI EntityContextBase(class EntityRegistryBase &, class EntityId);
     /**
      * @symbol ?isValid@EntityContextBase@@QEBA_NXZ
+     * @hash   -500140172
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??8EntityContextBase@@QEBA_NAEBV0@@Z
+     * @hash   207649498
      */
     MCAPI bool operator==(class EntityContextBase const &) const;
 
 //protected:
     /**
      * @symbol ?_assertValid@EntityContextBase@@IEBAXXZ
+     * @hash   1108610156
      */
     MCAPI void _assertValid() const;
     /**
      * @symbol ?_enttRegistry@EntityContextBase@@IEAAAEAV?$basic_registry@VEntityId@@@entt@@XZ
+     * @hash   -1577275350
      */
     MCAPI class entt::basic_registry<class EntityId> & _enttRegistry();
     /**
      * @symbol ?_enttRegistry@EntityContextBase@@IEBAAEBV?$basic_registry@VEntityId@@@entt@@XZ
+     * @hash   -1533440730
      */
     MCAPI class entt::basic_registry<class EntityId> const & _enttRegistry() const;
     /**
      * @symbol ?_getEntityId@EntityContextBase@@IEBA?AVEntityId@@XZ
+     * @hash   -1952955163
      */
     MCAPI class EntityId _getEntityId() const;
     /**
      * @symbol ?_getRegistryId@EntityContextBase@@IEBAIXZ
+     * @hash   -1994433148
      */
     MCAPI unsigned int _getRegistryId() const;
 

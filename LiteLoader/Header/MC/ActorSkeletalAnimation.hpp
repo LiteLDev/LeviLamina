@@ -30,86 +30,104 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATION
-#endif
     /**
      * @symbol ??0ActorSkeletalAnimation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   865853481
      */
     MCAPI ActorSkeletalAnimation(std::string const &, std::string const &);
     /**
      * @symbol ?addActorEvent@ActorSkeletalAnimation@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
+     * @hash   1472055022
      */
     MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
     /**
      * @symbol ?addBoneAnimation@ActorSkeletalAnimation@@QEAAAEAVBoneAnimation@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1961250087
      */
     MCAPI class BoneAnimation & addBoneAnimation(std::string const &);
     /**
      * @symbol ?addParticleEffectEvent@ActorSkeletalAnimation@@QEAAAEAVActorParticleEffectEvent@@M@Z
+     * @hash   1249053537
      */
     MCAPI class ActorParticleEffectEvent & addParticleEffectEvent(float);
     /**
      * @symbol ?addSoundEffectEvent@ActorSkeletalAnimation@@QEAAAEAVActorSoundEffectEvent@@M@Z
+     * @hash   -972263727
      */
     MCAPI class ActorSoundEffectEvent & addSoundEffectEvent(float);
     /**
      * @symbol ?calculateAnimationLength@ActorSkeletalAnimation@@QEAAXXZ
+     * @hash   1206785637
      */
     MCAPI void calculateAnimationLength();
     /**
      * @symbol ?getBoneAnimations@ActorSkeletalAnimation@@QEAAAEAV?$vector@VBoneAnimation@@V?$allocator@VBoneAnimation@@@std@@@std@@XZ
+     * @hash   1356642516
      */
     MCAPI std::vector<class BoneAnimation> & getBoneAnimations();
     /**
      * @symbol ?initPrecomputedInterpolation@ActorSkeletalAnimation@@QEAAXXZ
+     * @hash   1791254261
      */
     MCAPI void initPrecomputedInterpolation();
     /**
      * @symbol ?removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion@ActorSkeletalAnimation@@QEAAXXZ
+     * @hash   -400809565
      */
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
     /**
      * @symbol ?setAnimTimeUpdate@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
+     * @hash   570145390
      */
     MCAPI void setAnimTimeUpdate(class ExpressionNode const &);
     /**
      * @symbol ?setAnimationLength@ActorSkeletalAnimation@@QEAAXM@Z
+     * @hash   -533457004
      */
     MCAPI void setAnimationLength(float);
     /**
      * @symbol ?setBlendWeight@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
+     * @hash   -307312268
      */
     MCAPI void setBlendWeight(class ExpressionNode const &);
     /**
      * @symbol ?setLoopDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
+     * @hash   1179706648
      */
     MCAPI void setLoopDelay(class ExpressionNode const &);
     /**
      * @symbol ?setLoopMode@ActorSkeletalAnimation@@QEAAXW4AnimationLoopMode@@@Z
+     * @hash   1194007874
      */
     MCAPI void setLoopMode(enum AnimationLoopMode);
     /**
      * @symbol ?setShouldOverridePreviousAnimation@ActorSkeletalAnimation@@QEAAX_N@Z
+     * @hash   500994178
      */
     MCAPI void setShouldOverridePreviousAnimation(bool);
     /**
      * @symbol ?setStartDelay@ActorSkeletalAnimation@@QEAAXAEBVExpressionNode@@@Z
+     * @hash   724257706
      */
     MCAPI void setStartDelay(class ExpressionNode const &);
     /**
      * @symbol ?sortEvents@ActorSkeletalAnimation@@QEAAXXZ
+     * @hash   2070341109
      */
     MCAPI void sortEvents();
     /**
      * @symbol ?sortParticleEffectEvents@ActorSkeletalAnimation@@QEAAXXZ
+     * @hash   -555142555
      */
     MCAPI void sortParticleEffectEvents();
     /**
      * @symbol ?sortSoundEffectEvents@ActorSkeletalAnimation@@QEAAXXZ
+     * @hash   -749357757
      */
     MCAPI void sortSoundEffectEvents();
     /**
      * @symbol ??1ActorSkeletalAnimation@@QEAA@XZ
+     * @hash   -1674643952
      */
     MCAPI ~ActorSkeletalAnimation();
 

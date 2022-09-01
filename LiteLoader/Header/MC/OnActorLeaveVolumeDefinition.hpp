@@ -29,15 +29,15 @@ public:
     OnActorLeaveVolumeDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORLEAVEVOLUMEDEFINITION
-#endif
     /**
      * @symbol ?initialize@OnActorLeaveVolumeDefinition@@QEBAXAEAVEntityContext@@AEAVOnActorLeaveVolumeComponent@@@Z
+     * @hash   -15738289
      */
     MCAPI void initialize(class EntityContext &, class OnActorLeaveVolumeComponent &) const;
 MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@OnActorLeaveVolumeDefinition@@SAXXZ
+     * @hash   2105528275
      */
     MCAPI static void bindType();
 

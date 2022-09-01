@@ -32,11 +32,9 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   399379631
      */
     virtual ~OverworldBrightnessRamp();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBRIGHTNESSRAMP
-#endif
 
 };

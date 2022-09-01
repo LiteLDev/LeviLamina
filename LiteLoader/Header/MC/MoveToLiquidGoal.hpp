@@ -32,54 +32,58 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -376441979
      */
     virtual ~MoveToLiquidGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@MoveToLiquidGoal@@UEAA_NXZ
+     * @hash   -1653578827
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MoveToLiquidGoal@@UEAA_NXZ
+     * @hash   -1209734285
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToLiquidGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   31723995
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?isValidTarget@MoveToLiquidGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   350802551
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?findTargetBlock@MoveToLiquidGoal@@UEAA_NXZ
+     * @hash   1950872321
      */
     virtual bool findTargetBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLIQUIDGOAL
-#endif
     /**
      * @symbol ??0MoveToLiquidGoal@@QEAA@AEAVMob@@MHHHW4MaterialType@@M@Z
+     * @hash   1415473134
      */
     MCAPI MoveToLiquidGoal(class Mob &, float, int, int, int, enum MaterialType, float);
 

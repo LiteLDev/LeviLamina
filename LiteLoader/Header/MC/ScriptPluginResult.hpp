@@ -30,54 +30,64 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINRESULT
-#endif
     /**
      * @symbol ??0ScriptPluginResult@@QEAA@AEBV0@@Z
+     * @hash   -866846127
      */
     MCAPI ScriptPluginResult(class ScriptPluginResult const &);
     /**
      * @symbol ??0ScriptPluginResult@@QEAA@AEBUModuleDescriptor@Scripting@@@Z
+     * @hash   -1818994004
      */
     MCAPI ScriptPluginResult(struct Scripting::ModuleDescriptor const &);
     /**
      * @symbol ?addError@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   847019820
      */
     MCAPI void addError(std::string const &);
     /**
      * @symbol ?addErrors@ScriptPluginResult@@QEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   733322055
      */
     MCAPI void addErrors(std::vector<std::string> const &);
     /**
      * @symbol ?addInfo@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1998587250
      */
     MCAPI void addInfo(std::string const &);
     /**
      * @symbol ?addWarning@ScriptPluginResult@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -894402612
      */
     MCAPI void addWarning(std::string const &);
     /**
      * @symbol ?getErrors@ScriptPluginResult@@QEBAAEBV?$vector@UError@ScriptPluginResult@@V?$allocator@UError@ScriptPluginResult@@@std@@@std@@XZ
+     * @hash   -264166152
      */
     MCAPI std::vector<struct ScriptPluginResult::Error> const & getErrors() const;
     /**
      * @symbol ?getInfos@ScriptPluginResult@@QEBAAEBV?$vector@UInfo@ScriptPluginResult@@V?$allocator@UInfo@ScriptPluginResult@@@std@@@std@@XZ
+     * @hash   692324282
      */
     MCAPI std::vector<struct ScriptPluginResult::Info> const & getInfos() const;
     /**
      * @symbol ?getModuleDescriptor@ScriptPluginResult@@QEBAAEBUModuleDescriptor@Scripting@@XZ
+     * @hash   57488664
      */
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
     /**
      * @symbol ?getWarnings@ScriptPluginResult@@QEBAAEBV?$vector@UWarning@ScriptPluginResult@@V?$allocator@UWarning@ScriptPluginResult@@@std@@@std@@XZ
+     * @hash   -2055098760
      */
     MCAPI std::vector<struct ScriptPluginResult::Warning> const & getWarnings() const;
     /**
      * @symbol ?hasErrors@ScriptPluginResult@@QEBA_NXZ
+     * @hash   -1665460428
      */
     MCAPI bool hasErrors() const;
     /**
      * @symbol ??1ScriptPluginResult@@QEAA@XZ
+     * @hash   -2004796187
      */
     MCAPI ~ScriptPluginResult();
 

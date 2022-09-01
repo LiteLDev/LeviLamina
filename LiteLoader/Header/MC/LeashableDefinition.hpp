@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEASHABLEDEFINITION
-#endif
     /**
      * @symbol ??0LeashableDefinition@@QEAA@XZ
+     * @hash   1655011286
      */
     MCAPI LeashableDefinition();
     /**
      * @symbol ?buildSchema@LeashableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLeashableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   601906166
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>> &);
 

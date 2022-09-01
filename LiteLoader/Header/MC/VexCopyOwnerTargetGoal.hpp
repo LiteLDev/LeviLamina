@@ -32,39 +32,41 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1017937661
      */
     virtual ~VexCopyOwnerTargetGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@VexCopyOwnerTargetGoal@@UEAA_NXZ
+     * @hash   522742535
      */
     virtual bool canUse();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@VexCopyOwnerTargetGoal@@UEAAXXZ
+     * @hash   -370269856
      */
     virtual void start();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@VexCopyOwnerTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   251454089
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VEXCOPYOWNERTARGETGOAL
-#endif
     /**
      * @symbol ??0VexCopyOwnerTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
+     * @hash   2014935377
      */
     MCAPI VexCopyOwnerTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 

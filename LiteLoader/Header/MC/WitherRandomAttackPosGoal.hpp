@@ -32,44 +32,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1122084471
      */
     virtual ~WitherRandomAttackPosGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ
+     * @hash   2091613767
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@WitherRandomAttackPosGoal@@UEAA_NXZ
+     * @hash   -1715162603
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@WitherRandomAttackPosGoal@@UEAAXXZ
+     * @hash   642220000
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@WitherRandomAttackPosGoal@@UEAAXXZ
+     * @hash   -519938032
      */
     virtual void stop();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERRANDOMATTACKPOSGOAL
-#endif
     /**
      * @symbol ??0WitherRandomAttackPosGoal@@QEAA@AEAVMob@@MHH@Z
+     * @hash   -2069197683
      */
     MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
 

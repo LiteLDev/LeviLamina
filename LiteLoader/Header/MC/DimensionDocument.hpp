@@ -26,18 +26,19 @@ public:
     DimensionDocument(struct DimensionDocument const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDOCUMENT
-#endif
     /**
      * @symbol ??0DimensionDocument@@QEAA@XZ
+     * @hash   550291149
      */
     MCAPI DimensionDocument();
     /**
      * @symbol ??1DimensionDocument@@QEAA@XZ
+     * @hash   -1352657571
      */
     MCAPI ~DimensionDocument();
     /**
      * @symbol ?bindType@DimensionDocument@@SAXXZ
+     * @hash   -442980897
      */
     MCAPI static void bindType();
 

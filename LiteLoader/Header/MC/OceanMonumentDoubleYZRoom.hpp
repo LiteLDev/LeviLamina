@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1450168576
      */
     virtual ~OceanMonumentDoubleYZRoom();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@OceanMonumentDoubleYZRoom@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   1845243849
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@OceanMonumentDoubleYZRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -658150609
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTDOUBLEYZROOM
-#endif
 
 };

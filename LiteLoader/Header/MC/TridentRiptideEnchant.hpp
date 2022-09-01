@@ -32,39 +32,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2082629974
      */
     virtual ~TridentRiptideEnchant();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isCompatibleWith@TridentRiptideEnchant@@UEBA_NW4Type@Enchant@@@Z
+     * @hash   -71504115
      */
     virtual bool isCompatibleWith(enum Enchant::Type) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getMinCost@TridentRiptideEnchant@@UEBAHH@Z
+     * @hash   -739956235
      */
     virtual int getMinCost(int) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getMaxCost@TridentRiptideEnchant@@UEBAHH@Z
+     * @hash   -1874203357
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1155755772
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getMaxLevel@TridentRiptideEnchant@@UEBAHXZ
+     * @hash   -664845963
      */
     virtual int getMaxLevel() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTRIPTIDEENCHANT
-#endif
     /**
      * @symbol ??0TridentRiptideEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
+     * @hash   -1409847506
      */
     MCAPI TridentRiptideEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

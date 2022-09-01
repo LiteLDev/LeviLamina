@@ -33,11 +33,9 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1672139344
      */
     virtual ~ConsumeItemDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMDEFINITION
-#endif
 
 };

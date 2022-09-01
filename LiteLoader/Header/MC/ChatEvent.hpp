@@ -26,18 +26,19 @@ public:
     ChatEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHATEVENT
-#endif
     /**
      * @symbol ??0ChatEvent@@QEAA@AEBU0@@Z
+     * @hash   -741629515
      */
     MCAPI ChatEvent(struct ChatEvent const &);
     /**
      * @symbol ??0ChatEvent@@QEAA@$$QEAU0@@Z
+     * @hash   -894395077
      */
     MCAPI ChatEvent(struct ChatEvent &&);
     /**
      * @symbol ??1ChatEvent@@QEAA@XZ
+     * @hash   378761758
      */
     MCAPI ~ChatEvent();
 

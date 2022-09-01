@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   132072817
      */
     virtual ~PlaySoundPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@PlaySoundPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -788389685
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@PlaySoundPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1521793912
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@PlaySoundPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -36308593
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@PlaySoundPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -2129826273
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSOUNDPACKET
-#endif
     /**
      * @symbol ??0PlaySoundPacket@@QEAA@XZ
+     * @hash   1460653839
      */
     MCAPI PlaySoundPacket();
     /**
      * @symbol ??0PlaySoundPacket@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
+     * @hash   1812010339
      */
     MCAPI PlaySoundPacket(std::string, class Vec3 const &, float, float);
 

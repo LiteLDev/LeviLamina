@@ -33,90 +33,96 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THEENDGENERATOR
     /**
-     * @vtable -1
      * @symbol ?decorateWorldGenLoadChunk@TheEndGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+     * @hash   1292597386
      */
     MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
     /**
-     * @vtable -1
      * @symbol ?decorateWorldGenPostProcess@TheEndGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+     * @hash   1476084854
      */
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
     /**
-     * @vtable -1
      * @symbol ?findSpawnPosition@TheEndGenerator@@UEBA?AVBlockPos@@XZ
+     * @hash   371046794
      */
     MCVAPI class BlockPos findSpawnPosition() const;
     /**
-     * @vtable -1
      * @symbol ?getBiomeArea@TheEndGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+     * @hash   1980416864
      */
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /**
-     * @vtable -1
      * @symbol ?getBiomeSource@TheEndGenerator@@UEBAAEBVBiomeSource@@XZ
+     * @hash   -1662877674
      */
     MCVAPI class BiomeSource const & getBiomeSource() const;
     /**
-     * @vtable -1
      * @symbol ?getBlockVolumeDimensions@TheEndGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+     * @hash   215355956
      */
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
     /**
-     * @vtable -1
      * @symbol ?getPreliminarySurfaceLevel@TheEndGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+     * @hash   -227749244
      */
     MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
-     * @vtable -1
      * @symbol ?loadChunk@TheEndGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+     * @hash   -1006806634
      */
     MCVAPI void loadChunk(class LevelChunk &, bool);
     /**
-     * @vtable -1
      * @symbol ?postProcess@TheEndGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+     * @hash   -1439094432
      */
     MCVAPI bool postProcess(class ChunkViewSource &);
     /**
-     * @vtable -1
      * @symbol ?postProcessMobsAt@TheEndGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
+     * @hash   -61599520
      */
     MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     /**
-     * @vtable -1
      * @symbol ?prepareAndComputeHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
+     * @hash   329972453
      */
     MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
     /**
-     * @vtable -1
      * @symbol ?prepareHeights@TheEndGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+     * @hash   1246669140
      */
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
 #endif
     /**
      * @symbol ??0TheEndGenerator@@QEAA@AEAVDimension@@IPEBVBiome@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
+     * @hash   -920670210
      */
     MCAPI TheEndGenerator(class Dimension &, unsigned int, class Biome const *, std::unique_ptr<class StructureFeatureRegistry>);
     /**
      * @symbol ?buildSurfaces@TheEndGenerator@@QEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAVLevelChunk@@@Z
+     * @hash   -1538780658
      */
     MCAPI void buildSurfaces(class BlockVolume &, class ChunkPos const &, class LevelChunk &);
     /**
      * @symbol ?generateDensityCellsForChunk@TheEndGenerator@@QEBA?AV?$MultidimensionalArray@M$02$02$0CB@@Util@@AEBVChunkPos@@@Z
+     * @hash   -1496540152
      */
     MCAPI class Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(class ChunkPos const &) const;
     /**
      * @symbol ?isOutsideCentralIslandArea@TheEndGenerator@@SA_NAEBVChunkPos@@@Z
+     * @hash   -1204094847
      */
     MCAPI static bool isOutsideCentralIslandArea(class ChunkPos const &);
 
 //private:
     /**
      * @symbol ?_prepareHeights@TheEndGenerator@@AEAAXAEAVBlockVolume@@AEBVChunkPos@@_NPEAV?$vector@FV?$allocator@F@std@@@std@@H@Z
+     * @hash   -1018567007
      */
     MCAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, bool, std::vector<short> *, int);
     /**
      * @symbol ?getIslandHeightValue@TheEndGenerator@@AEBAMHHHH@Z
+     * @hash   2066078665
      */
     MCAPI float getIslandHeightValue(int, int, int, int) const;
 

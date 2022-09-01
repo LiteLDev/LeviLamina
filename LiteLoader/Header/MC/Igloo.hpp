@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -29297348
      */
     virtual ~Igloo();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getType@Igloo@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   -2083579427
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postProcess@Igloo@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   1737790971
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?postProcessMobsAt@Igloo@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1127535449
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGLOO
-#endif
     /**
      * @symbol ??0Igloo@@QEAA@FHH@Z
+     * @hash   -1650135626
      */
     MCAPI Igloo(short, int, int);
 

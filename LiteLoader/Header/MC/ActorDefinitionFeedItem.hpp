@@ -27,10 +27,9 @@ public:
     ActorDefinitionFeedItem() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONFEEDITEM
-#endif
     /**
      * @symbol ??1ActorDefinitionFeedItem@@QEAA@XZ
+     * @hash   -1517462907
      */
     MCAPI ~ActorDefinitionFeedItem();
 

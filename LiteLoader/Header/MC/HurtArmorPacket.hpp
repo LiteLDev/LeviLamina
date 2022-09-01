@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2090684570
      */
     virtual ~HurtArmorPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@HurtArmorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1428057210
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@HurtArmorPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1812532787
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@HurtArmorPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -345008364
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@HurtArmorPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1480864412
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTARMORPACKET
-#endif
     /**
      * @symbol ??0HurtArmorPacket@@QEAA@XZ
+     * @hash   1646998644
      */
     MCAPI HurtArmorPacket();
     /**
      * @symbol ??0HurtArmorPacket@@QEAA@W4ActorDamageCause@@HV?$bitset@$03@std@@@Z
+     * @hash   1550396961
      */
     MCAPI HurtArmorPacket(enum ActorDamageCause, int, class std::bitset<4>);
 

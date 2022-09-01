@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -421427865
      */
     virtual ~LayDownGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@LayDownGoal@@UEAA_NXZ
+     * @hash   868582439
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@LayDownGoal@@UEAA_NXZ
+     * @hash   1597084613
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@LayDownGoal@@UEAAXXZ
+     * @hash   822007840
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@LayDownGoal@@UEAAXXZ
+     * @hash   -1689110512
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@LayDownGoal@@UEAAXXZ
+     * @hash   -684210133
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@LayDownGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1262218455
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAYDOWNGOAL
-#endif
     /**
      * @symbol ??0LayDownGoal@@QEAA@AEAVMob@@HH@Z
+     * @hash   927635076
      */
     MCAPI LayDownGoal(class Mob &, int, int);
 

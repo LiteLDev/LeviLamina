@@ -31,24 +31,24 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   785694478
      */
     virtual ~BlockPosTrackerSystem();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@BlockPosTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   1661244000
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPOSTRACKERSYSTEM
-#endif
     /**
      * @symbol ?_tickBlockPosTrackerComponent@BlockPosTrackerSystem@@SAXPEAVActor@@AEAVBlockPosTrackerComponent@@@Z
+     * @hash   -1059440470
      */
     MCAPI static void _tickBlockPosTrackerComponent(class Actor *, class BlockPosTrackerComponent &);
 

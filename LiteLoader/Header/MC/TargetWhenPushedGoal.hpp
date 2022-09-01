@@ -31,54 +31,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1901480833
      */
     virtual ~TargetWhenPushedGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@TargetWhenPushedGoal@@UEAA_NXZ
+     * @hash   1351802745
      */
     virtual bool canUse();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1358536382
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@TargetWhenPushedGoal@@UEAAXXZ
+     * @hash   706174450
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@TargetWhenPushedGoal@@UEAAXXZ
+     * @hash   -764574990
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?appendDebugInfo@TargetWhenPushedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1378154153
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETWHENPUSHEDGOAL
     /**
-     * @vtable -1
      * @symbol ?canBeInterrupted@TargetWhenPushedGoal@@UEAA_NXZ
+     * @hash   888209233
      */
     MCVAPI bool canBeInterrupted();
     /**
-     * @vtable -1
      * @symbol ?canContinueToUse@TargetWhenPushedGoal@@UEAA_NXZ
+     * @hash   -1418143177
      */
     MCVAPI bool canContinueToUse();
 #endif
     /**
      * @symbol ??0TargetWhenPushedGoal@@QEAA@AEAVMob@@V?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@M@Z
+     * @hash   1174561966
      */
     MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
 

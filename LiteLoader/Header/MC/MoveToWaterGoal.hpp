@@ -32,29 +32,28 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1909743284
      */
     virtual ~MoveToWaterGoal();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWATERGOAL
-#endif
     /**
      * @symbol ??0MoveToWaterGoal@@QEAA@AEAVMob@@MHHHM@Z
+     * @hash   -1638486064
      */
     MCAPI MoveToWaterGoal(class Mob &, float, int, int, int, float);
 

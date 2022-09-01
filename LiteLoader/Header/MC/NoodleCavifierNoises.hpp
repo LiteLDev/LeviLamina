@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIERNOISES
-#endif
     /**
      * @symbol ??0NoodleCavifierNoises@@QEAA@AEBV0@@Z
+     * @hash   481865409
      */
     MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const &);
     /**
      * @symbol ??1NoodleCavifierNoises@@QEAA@XZ
+     * @hash   478220819
      */
     MCAPI ~NoodleCavifierNoises();
     /**
      * @symbol ?make@NoodleCavifierNoises@@SA?AV1@AEBVXoroshiroPositionalRandomFactory@@@Z
+     * @hash   796078179
      */
     MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const &);
 

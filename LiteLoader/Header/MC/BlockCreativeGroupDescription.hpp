@@ -30,45 +30,49 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1064017977
      */
     virtual ~BlockCreativeGroupDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@BlockCreativeGroupDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2120772128
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockCreativeGroupDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -1212566876
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockCreativeGroupDescription@@UEBA_NXZ
+     * @hash   -1109584744
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockCreativeGroupDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   1724287882
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockCreativeGroupDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -341210376
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCREATIVEGROUPDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCreativeGroupDescription@@SAXXZ
+     * @hash   -1403988561
      */
     MCAPI static void bindType();
 

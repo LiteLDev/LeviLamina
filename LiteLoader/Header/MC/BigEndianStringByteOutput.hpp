@@ -30,36 +30,39 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1389013315
      */
     virtual ~BigEndianStringByteOutput();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?writeFloat@BigEndianStringByteOutput@@UEAAXM@Z
+     * @hash   1039196467
      */
     virtual void writeFloat(float);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?writeDouble@BigEndianStringByteOutput@@UEAAXN@Z
+     * @hash   1637547083
      */
     virtual void writeDouble(double);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?writeShort@BigEndianStringByteOutput@@UEAAXF@Z
+     * @hash   917633331
      */
     virtual void writeShort(short);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?writeInt@BigEndianStringByteOutput@@UEAAXH@Z
+     * @hash   950752173
      */
     virtual void writeInt(int);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?writeLongLong@BigEndianStringByteOutput@@UEAAX_J@Z
+     * @hash   -1642179776
      */
     virtual void writeLongLong(__int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEOUTPUT
-#endif
 
 };

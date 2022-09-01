@@ -29,46 +29,52 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -848966963
      */
     virtual ~RequestAbilityPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@RequestAbilityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1732823349
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@RequestAbilityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1158751608
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@RequestAbilityPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1023916161
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@RequestAbilityPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1418304127
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REQUESTABILITYPACKET
-#endif
     /**
      * @symbol ??0RequestAbilityPacket@@QEAA@XZ
+     * @hash   363554847
      */
     MCAPI RequestAbilityPacket();
     /**
      * @symbol ??0RequestAbilityPacket@@QEAA@W4AbilitiesIndex@@_N@Z
+     * @hash   1785038611
      */
     MCAPI RequestAbilityPacket(enum AbilitiesIndex, bool);
     /**
      * @symbol ?getAbility@RequestAbilityPacket@@QEBA?AW4AbilitiesIndex@@XZ
+     * @hash   -635965372
      */
     MCAPI enum AbilitiesIndex getAbility() const;
     /**
      * @symbol ?tryGetBool@RequestAbilityPacket@@QEBA_NAEA_N@Z
+     * @hash   -445845922
      */
     MCAPI bool tryGetBool(bool &) const;
 

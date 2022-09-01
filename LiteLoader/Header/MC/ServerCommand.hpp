@@ -30,13 +30,14 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1ServerCommand@@UEAA@XZ
+     * @hash   -769714584
      */
     MCVAPI ~ServerCommand();
 #endif
     /**
      * @symbol ?setup@ServerCommand@@SAXAEAVMinecraft@@@Z
+     * @hash   -518883642
      */
     MCAPI static void setup(class Minecraft &);
 

@@ -32,44 +32,46 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1591294933
      */
     virtual ~StrollTowardsVillageGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@StrollTowardsVillageGoal@@UEAA_NXZ
+     * @hash   1997851455
      */
     virtual bool canUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@StrollTowardsVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -407729903
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ
+     * @hash   123871810
      */
     virtual class BlockPos _selectRandomPosInVillage();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STROLLTOWARDSVILLAGEGOAL
-#endif
     /**
      * @symbol ??0StrollTowardsVillageGoal@@QEAA@AEAVMob@@MMMHM@Z
+     * @hash   1024762355
      */
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
 

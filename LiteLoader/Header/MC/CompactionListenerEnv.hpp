@@ -32,23 +32,24 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1357893922
      */
     virtual ~CompactionListenerEnv();
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z
+     * @hash   1210113610
      */
     virtual void Schedule(void ( *)(void *), void *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPACTIONLISTENERENV
-#endif
     /**
      * @symbol ??0CompactionListenerEnv@@QEAA@PEAVEnv@leveldb@@@Z
+     * @hash   512881884
      */
     MCAPI CompactionListenerEnv(class leveldb::Env *);
     /**
      * @symbol ?setCompactionCallback@CompactionListenerEnv@@QEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
+     * @hash   758504364
      */
     MCAPI void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
 

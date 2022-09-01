@@ -32,29 +32,29 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -289541540
      */
     virtual ~SimplePlayerContainer();
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z
+     * @hash   976099
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEPLAYERCONTAINER
-#endif
     /**
      * @symbol ??0SimplePlayerContainer@@QEAA@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
+     * @hash   600875203
      */
     MCAPI SimplePlayerContainer(class Player &, std::string const &, bool, int, enum ContainerType);
 

@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1915675048
      */
     virtual ~ShootBowDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@ShootBowDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   1921844198
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTBOWDEFINITION
-#endif
 
 };

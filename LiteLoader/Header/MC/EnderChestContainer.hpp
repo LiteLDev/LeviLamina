@@ -31,34 +31,35 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -454387018
      */
     virtual ~EnderChestContainer();
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   1536228680
      */
     virtual void startOpen(class Player &);
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -922817992
      */
     virtual void stopOpen(class Player &);
     /**
-     * @vtable 22
-     * @symbol __unk_vfn_22
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @vtable 23
-     * @symbol __unk_vfn_23
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTCONTAINER
-#endif
     /**
      * @symbol ??0EnderChestContainer@@QEAA@XZ
+     * @hash   426340340
      */
     MCAPI EnderChestContainer();
 MCAPI static int const ITEMS_SIZE;

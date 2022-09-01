@@ -27,10 +27,9 @@ public:
     ActorFactoryData() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORYDATA
-#endif
     /**
      * @symbol ??1ActorFactoryData@@QEAA@XZ
+     * @hash   -1852526247
      */
     MCAPI ~ActorFactoryData();
 

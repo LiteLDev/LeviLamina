@@ -30,8 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETOBSERVER
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1IPacketObserver@@UEAA@XZ
+     * @hash   -1401305528
      */
     MCVAPI ~IPacketObserver();
 #endif

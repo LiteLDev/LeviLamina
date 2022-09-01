@@ -22,18 +22,22 @@ namespace VolumeInstanceData {
 #undef AFTER_EXTRA
     /**
      * @symbol ?bindVolumeStorageType@VolumeInstanceData@@YAXXZ
+     * @hash   -609714196
      */
     MCAPI void bindVolumeStorageType();
     /**
      * @symbol ?deserialize@VolumeInstanceData@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@AEAVEntityContext@@@Z
+     * @hash   -1551182301
      */
     MCAPI void deserialize(std::string const &, class CompoundTag const &, class EntityContext &);
     /**
      * @symbol ?getIdentifier@VolumeInstanceData@@YAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
+     * @hash   -1600154316
      */
     MCAPI std::string const & getIdentifier(class CompoundTag const &);
     /**
      * @symbol ?serialize@VolumeInstanceData@@YA?AVCompoundTag@@AEBVEntityContext@@@Z
+     * @hash   1226244494
      */
     MCAPI class CompoundTag serialize(class EntityContext const &);
 

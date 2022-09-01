@@ -28,16 +28,16 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTINGREQUESTSYSTEM
-#endif
     /**
      * @symbol ?createSystem@EventingRequestSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   315652386
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
      * @symbol ?_eventingRequestSystem@EventingRequestSystem@@CAXAEBVStrictEntityContext@@AEAUEventingRequestQueueComponent@@AEAVLevelComponent@@@Z
+     * @hash   1069057344
      */
     MCAPI static void _eventingRequestSystem(class StrictEntityContext const &, struct EventingRequestQueueComponent &, class LevelComponent &);
 

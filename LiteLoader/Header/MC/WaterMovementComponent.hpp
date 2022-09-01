@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERMOVEMENTCOMPONENT
-#endif
     /**
      * @symbol ??0WaterMovementComponent@@QEAA@XZ
+     * @hash   -2137332461
      */
     MCAPI WaterMovementComponent();
     /**
      * @symbol ?getDragFactor@WaterMovementComponent@@QEBAMXZ
+     * @hash   -483967324
      */
     MCAPI float getDragFactor() const;
     /**
      * @symbol ?initFromDefinition@WaterMovementComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -377410838
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?getDefaultDragFactor@WaterMovementComponent@@SAMXZ
+     * @hash   -1812276154
      */
     MCAPI static float getDefaultDragFactor();
 

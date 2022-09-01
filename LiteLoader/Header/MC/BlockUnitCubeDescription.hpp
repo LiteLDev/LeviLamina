@@ -30,40 +30,44 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1923766560
      */
     virtual ~BlockUnitCubeDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@BlockUnitCubeDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1633756275
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockUnitCubeDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -1863028911
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?initializeFromNetwork@BlockUnitCubeDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -689320907
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockUnitCubeDescription@@UEBA_NXZ
+     * @hash   886202107
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockUnitCubeDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   285086093
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKUNITCUBEDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockUnitCubeDescription@@SAXXZ
+     * @hash   -1543539661
      */
     MCAPI static void bindType();
 

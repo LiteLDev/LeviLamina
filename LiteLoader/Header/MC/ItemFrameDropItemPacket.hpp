@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   694069970
      */
     virtual ~ItemFrameDropItemPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@ItemFrameDropItemPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -418623430
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@ItemFrameDropItemPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   520243943
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@ItemFrameDropItemPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -212096224
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@ItemFrameDropItemPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1293438880
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEDROPITEMPACKET
-#endif
     /**
      * @symbol ??0ItemFrameDropItemPacket@@QEAA@XZ
+     * @hash   42062192
      */
     MCAPI ItemFrameDropItemPacket();
 

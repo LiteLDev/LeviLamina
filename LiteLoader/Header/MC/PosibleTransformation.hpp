@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSIBLETRANSFORMATION
-#endif
     /**
      * @symbol ??1PosibleTransformation@@QEAA@XZ
+     * @hash   -1889208277
      */
     MCAPI ~PosibleTransformation();
 

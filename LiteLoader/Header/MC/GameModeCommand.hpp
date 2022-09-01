@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1359092188
      */
     virtual ~GameModeCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@GameModeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1637376419
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODECOMMAND
-#endif
     /**
      * @symbol ?setup@GameModeCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   631042992
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -24,6 +24,7 @@ namespace VanillaBuiltInEntities {
 #undef AFTER_EXTRA
     /**
      * @symbol ?registerMappings@VanillaBuiltInEntities@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
+     * @hash   -754788588
      */
     MCAPI void registerMappings(class BaseGameVersion const &, class Experiments const &);
 

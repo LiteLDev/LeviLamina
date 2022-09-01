@@ -33,179 +33,192 @@ public:
 
 public:
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   1991775903
      */
     virtual ~FireworksRocketActor();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 47
+     * @vftbl  47
      * @symbol ?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z
+     * @hash   -1359361773
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
-     * @vtable 49
+     * @vftbl  49
      * @symbol ?normalTick@FireworksRocketActor@@UEAAXXZ
+     * @hash   -799142650
      */
     virtual void normalTick();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@FireworksRocketActor@@UEBAMXZ
+     * @hash   2142278657
      */
     virtual float getShadowRadius() const;
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 142
+     * @vftbl  142
      * @symbol ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
+     * @hash   -1160275055
      */
     virtual void handleEntityEvent(enum ActorEvent, int);
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 191
+     * @vftbl  191
      * @symbol ?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z
+     * @hash   2019280845
      */
     virtual void onSynchedDataUpdate(int);
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1865922235
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@FireworksRocketActor@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -926491294
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSROCKETACTOR
-#endif
     /**
      * @symbol ??0FireworksRocketActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -1076562655
      */
     MCAPI FireworksRocketActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?init@FireworksRocketActor@@QEAAXAEAVLevel@@AEBVVec3@@AEBVCompoundTag@@1UActorUniqueID@@_N@Z
+     * @hash   434518435
      */
     MCAPI void init(class Level &, class Vec3 const &, class CompoundTag const &, class Vec3 const &, struct ActorUniqueID, bool);
     /**
      * @symbol ?isAttachedToEntity@FireworksRocketActor@@QEBA_NXZ
+     * @hash   1484151916
      */
     MCAPI bool isAttachedToEntity() const;
     /**
      * @symbol ?postNormalTick@FireworksRocketActor@@QEAAXXZ
+     * @hash   -1465014491
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setDispensed@FireworksRocketActor@@QEAAX_N@Z
+     * @hash   1367395054
      */
     MCAPI void setDispensed(bool);
 
 //private:
     /**
      * @symbol ?checkAchievement@FireworksRocketActor@@AEBAXXZ
+     * @hash   -1263717747
      */
     MCAPI void checkAchievement() const;
     /**
      * @symbol ?dealExplosionDamage@FireworksRocketActor@@AEAAXXZ
+     * @hash   1701060639
      */
     MCAPI void dealExplosionDamage();
     /**
      * @symbol ?initTagData@FireworksRocketActor@@AEAAXAEAVRandom@@@Z
+     * @hash   950133822
      */
     MCAPI void initTagData(class Random &);
 

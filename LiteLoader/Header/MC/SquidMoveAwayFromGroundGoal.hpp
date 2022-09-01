@@ -31,64 +31,66 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1373154147
      */
     virtual ~SquidMoveAwayFromGroundGoal();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   75789218
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   76712739
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SquidMoveAwayFromGroundGoal@@UEAAXXZ
+     * @hash   -1578451548
      */
     virtual void start();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SquidMoveAwayFromGroundGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1568690475
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDMOVEAWAYFROMGROUNDGOAL
     /**
-     * @vtable -1
      * @symbol ?canContinueToUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ
+     * @hash   768215673
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @vtable -1
      * @symbol ?canUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ
+     * @hash   -1043559781
      */
     MCVAPI bool canUse();
     /**
-     * @vtable -1
      * @symbol ?stop@SquidMoveAwayFromGroundGoal@@UEAAXXZ
+     * @hash   44441972
      */
     MCVAPI void stop();
     /**
-     * @vtable -1
      * @symbol ?tick@SquidMoveAwayFromGroundGoal@@UEAAXXZ
+     * @hash   -2052616657
      */
     MCVAPI void tick();
 #endif

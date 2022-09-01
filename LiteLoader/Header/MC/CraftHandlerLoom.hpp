@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -228675435
      */
     virtual ~CraftHandlerLoom();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandlerLoom@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+     * @hash   1312434527
      */
     virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERLOOM
-#endif
     /**
      * @symbol ??0CraftHandlerLoom@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
+     * @hash   1129745994
      */
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler &);
 

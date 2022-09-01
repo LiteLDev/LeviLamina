@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERLOADSYNTAXINFORMATION
-#endif
     /**
      * @symbol ??0OverloadSyntaxInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@II@Z
+     * @hash   2123126742
      */
     MCAPI OverloadSyntaxInformation(std::string const &, unsigned int, unsigned int);
 

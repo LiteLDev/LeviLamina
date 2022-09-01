@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREBLOCKTAGRULESREGISTRY
-#endif
     /**
      * @symbol ?clear@JigsawStructureBlockTagRulesRegistry@@QEAAXXZ
+     * @hash   -974390221
      */
     MCAPI void clear();
     /**
      * @symbol ?lookupByName@JigsawStructureBlockTagRulesRegistry@@QEBAPEBV?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   314442533
      */
     MCAPI std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const * lookupByName(std::string) const;
     /**
      * @symbol ?registerBlockTagRules@JigsawStructureBlockTagRulesRegistry@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$unique_ptr@V?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@std@@U?$default_delete@V?$vector@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePoolBlockTagRule@@U?$default_delete@VStructurePoolBlockTagRule@@@std@@@std@@@2@@std@@@2@@3@@Z
+     * @hash   1349319590
      */
     MCAPI void registerBlockTagRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockTagRule, struct std::default_delete<class StructurePoolBlockTagRule>>>> &&);
     /**
      * @symbol ??1JigsawStructureBlockTagRulesRegistry@@QEAA@XZ
+     * @hash   330319727
      */
     MCAPI ~JigsawStructureBlockTagRulesRegistry();
 

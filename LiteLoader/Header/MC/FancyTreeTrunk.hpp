@@ -39,34 +39,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   967479351
      */
     virtual ~FancyTreeTrunk();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?placeTrunk@FancyTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
+     * @hash   -733942439
      */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getTreeHeight@FancyTreeTrunk@@UEBAHAEAVRandom@@@Z
+     * @hash   -563705050
      */
     virtual int getTreeHeight(class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FANCYTREETRUNK
-#endif
 
 //private:
     /**
      * @symbol ?_checkLine@FancyTreeTrunk@@AEBAHAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1AEBUTreeParams@TreeHelper@@@Z
+     * @hash   -110484078
      */
     MCAPI int _checkLine(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &, struct TreeHelper::TreeParams const &) const;
     /**
      * @symbol ?_placeBranches@FancyTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@HAEBV?$vector@VFoliageCoords@FancyTreeTrunk@@V?$allocator@VFoliageCoords@FancyTreeTrunk@@@std@@@std@@@Z
+     * @hash   -1354538552
      */
     MCAPI void _placeBranches(class IBlockWorldGenAPI &, class BlockPos const &, int, std::vector<class FancyTreeTrunk::FoliageCoords> const &) const;
     /**
      * @symbol ?_placeLimb@FancyTreeTrunk@@AEBAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@1@Z
+     * @hash   -231983014
      */
     MCAPI void _placeLimb(class IBlockWorldGenAPI &, class BlockPos const &, class BlockPos const &) const;
 

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1943064121
      */
     virtual ~DropperContainerManagerModel();
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_postInit@DropperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   488435207
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0DropperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -721388906
      */
     MCAPI DropperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 

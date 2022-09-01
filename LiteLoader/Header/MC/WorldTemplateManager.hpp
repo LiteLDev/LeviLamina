@@ -33,41 +33,46 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1052126123
      */
     virtual ~WorldTemplateManager();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?findInstalledWorldTemplateByUUID@WorldTemplateManager@@UEBAPEBUWorldTemplateInfo@@AEBV?$vector@VUUID@mce@@V?$allocator@VUUID@mce@@@std@@@std@@@Z
+     * @hash   -1151956205
      */
     virtual struct WorldTemplateInfo const * findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGER
-#endif
     /**
      * @symbol ??0WorldTemplateManager@@QEAA@AEAVPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@AEAVPackSourceFactory@@AEBV?$not_null@V?$NonOwnerPointer@VFilePathManager@Core@@@Bedrock@@@3@_N@Z
+     * @hash   -384756355
      */
     MCAPI WorldTemplateManager(class PackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &, class PackSourceFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const &, bool);
     /**
      * @symbol ?findInstalledWorldTemplate@WorldTemplateManager@@QEBAPEBUWorldTemplateInfo@@AEBUPackIdVersion@@@Z
+     * @hash   1432941264
      */
     MCAPI struct WorldTemplateInfo const * findInstalledWorldTemplate(struct PackIdVersion const &) const;
     /**
      * @symbol ?getWorldTemplatesPath@WorldTemplateManager@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   154569221
      */
     MCAPI class Core::PathBuffer<std::string> getWorldTemplatesPath() const;
 
 //private:
     /**
      * @symbol ?_initialize@WorldTemplateManager@@AEAAXXZ
+     * @hash   -1752427190
      */
     MCAPI void _initialize();
     /**
      * @symbol ?_initializePackSources@WorldTemplateManager@@AEAAXXZ
+     * @hash   886084331
      */
     MCAPI void _initializePackSources();
     /**
      * @symbol ?_onDiscoverWorldTemplate@WorldTemplateManager@@AEAAXAEBVPack@@@Z
+     * @hash   1835794576
      */
     MCAPI void _onDiscoverWorldTemplate(class Pack const &);
 

@@ -31,55 +31,60 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1100505810
      */
     virtual ~SwimWanderGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@SwimWanderGoal@@UEAA_NXZ
+     * @hash   -682368392
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SwimWanderGoal@@UEAA_NXZ
+     * @hash   -624742810
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SwimWanderGoal@@UEAAXXZ
+     * @hash   356754529
      */
     virtual void start();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@SwimWanderGoal@@UEAAXXZ
+     * @hash   1634423004
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SwimWanderGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -783768808
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWANDERGOAL
-#endif
     /**
      * @symbol ??0SwimWanderGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -117610875
      */
     MCAPI SwimWanderGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_setWantedPosition@SwimWanderGoal@@IEAA_NXZ
+     * @hash   1715290000
      */
     MCAPI bool _setWantedPosition();
 

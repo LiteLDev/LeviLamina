@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   320494368
      */
     virtual ~LevelDbLogger();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?Logv@LevelDbLogger@@EEAAXPEBDPEAD@Z
+     * @hash   -244267076
      */
     virtual void Logv(char const *, char *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBLOGGER
-#endif
 
 };

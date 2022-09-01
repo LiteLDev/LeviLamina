@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2078578806
      */
     virtual ~BlockEventResponseFactory();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z
+     * @hash   824103694
      */
     virtual void initializeFactory(class Experiments const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initSchema@BlockEventResponseFactory@@UEAAXXZ
+     * @hash   -1449401252
      */
     virtual void initSchema();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTRESPONSEFACTORY
-#endif
 
 };

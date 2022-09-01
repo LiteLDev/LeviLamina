@@ -31,48 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1142235511
      */
     virtual ~AdventureSettingsPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@AdventureSettingsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   179988083
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@AdventureSettingsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1963458272
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@AdventureSettingsPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1550973337
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@AdventureSettingsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   769313111
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADVENTURESETTINGSPACKET
-#endif
     /**
      * @symbol ??0AdventureSettingsPacket@@QEAA@XZ
+     * @hash   2061322199
      */
     MCAPI AdventureSettingsPacket();
     /**
      * @symbol ??0AdventureSettingsPacket@@QEAA@AEBUAdventureSettings@@AEBVLayeredAbilities@@UActorUniqueID@@@Z
+     * @hash   -1187227486
      */
     MCAPI AdventureSettingsPacket(struct AdventureSettings const &, class LayeredAbilities const &, struct ActorUniqueID);
 
 //private:
     /**
      * @symbol ?_initAbilitiesData@AdventureSettingsPacket@@AEAAXAEBVAbilities@@@Z
+     * @hash   803937789
      */
     MCAPI void _initAbilitiesData(class Abilities const &);
     /**
      * @symbol ?_initCustomCacheData@AdventureSettingsPacket@@AEAAXAEBVAbilities@@@Z
+     * @hash   -566984700
      */
     MCAPI void _initCustomCacheData(class Abilities const &);
 

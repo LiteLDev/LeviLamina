@@ -30,34 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTMENTINSTANCE
-#endif
     /**
      * @symbol ??0EnchantmentInstance@@QEAA@XZ
+     * @hash   -1877081656
      */
     MCAPI EnchantmentInstance();
     /**
      * @symbol ??0EnchantmentInstance@@QEAA@W4Type@Enchant@@H@Z
+     * @hash   1814227008
      */
     MCAPI EnchantmentInstance(enum Enchant::Type, int);
     /**
      * @symbol ?getEnchantLevel@EnchantmentInstance@@QEBAHXZ
+     * @hash   352117162
      */
     MCAPI int getEnchantLevel() const;
     /**
      * @symbol ?getEnchantType@EnchantmentInstance@@QEBA?AW4Type@Enchant@@XZ
+     * @hash   2082585112
      */
     MCAPI enum Enchant::Type getEnchantType() const;
     /**
      * @symbol ??8EnchantmentInstance@@QEBA_NAEBV0@@Z
+     * @hash   1915477851
      */
     MCAPI bool operator==(class EnchantmentInstance const &) const;
     /**
      * @symbol ?setEnchantLevel@EnchantmentInstance@@QEAAXH@Z
+     * @hash   2049343212
      */
     MCAPI void setEnchantLevel(int);
     /**
      * @symbol ?setEnchantType@EnchantmentInstance@@QEAAXW4Type@Enchant@@@Z
+     * @hash   -57022362
      */
     MCAPI void setEnchantType(enum Enchant::Type);
 

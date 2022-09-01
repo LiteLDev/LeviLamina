@@ -27,10 +27,9 @@ public:
     TradeGroup() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEGROUP
-#endif
     /**
      * @symbol ??1TradeGroup@@QEAA@XZ
+     * @hash   713908389
      */
     MCAPI ~TradeGroup();
 

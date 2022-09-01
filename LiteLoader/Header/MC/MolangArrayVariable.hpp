@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGARRAYVARIABLE
-#endif
     /**
      * @symbol ??1MolangArrayVariable@@QEAA@XZ
+     * @hash   1115559505
      */
     MCAPI ~MolangArrayVariable();
 

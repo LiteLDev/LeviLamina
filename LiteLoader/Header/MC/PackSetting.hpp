@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTING
-#endif
     /**
      * @symbol ?set@PackSetting@@QEAAXAEBVValue@Json@@@Z
+     * @hash   1341159880
      */
     MCAPI void set(class Json::Value const &);
     /**
      * @symbol ??1PackSetting@@QEAA@XZ
+     * @hash   1916719427
      */
     MCAPI ~PackSetting();
 

@@ -29,49 +29,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1232843506
      */
     virtual ~InvestigateSuspiciousLocationGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@InvestigateSuspiciousLocationGoal@@UEAA_NXZ
+     * @hash   559560076
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@InvestigateSuspiciousLocationGoal@@UEAA_NXZ
+     * @hash   -915829558
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@InvestigateSuspiciousLocationGoal@@UEAAXXZ
+     * @hash   1661334533
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@InvestigateSuspiciousLocationGoal@@UEAAXXZ
+     * @hash   -1583497083
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@InvestigateSuspiciousLocationGoal@@UEAAXXZ
+     * @hash   -1797731856
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@InvestigateSuspiciousLocationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   807133124
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVESTIGATESUSPICIOUSLOCATIONGOAL
-#endif
     /**
      * @symbol ??0InvestigateSuspiciousLocationGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -1743566263
      */
     MCAPI InvestigateSuspiciousLocationGoal(class Mob &);
 

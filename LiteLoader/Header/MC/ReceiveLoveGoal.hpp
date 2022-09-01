@@ -31,59 +31,62 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1496800778
      */
     virtual ~ReceiveLoveGoal();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   605057620
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   605981141
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@ReceiveLoveGoal@@UEAAXXZ
+     * @hash   -1904862820
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@ReceiveLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   789408216
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
     /**
-     * @vtable -1
      * @symbol ?canContinueToUse@ReceiveLoveGoal@@UEAA_NXZ
+     * @hash   1654739798
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @vtable -1
      * @symbol ?canUse@ReceiveLoveGoal@@UEAA_NXZ
+     * @hash   913847160
      */
     MCVAPI bool canUse();
 #endif
     /**
      * @symbol ??0ReceiveLoveGoal@@QEAA@AEAVVillagerBase@@@Z
+     * @hash   1504820317
      */
     MCAPI ReceiveLoveGoal(class VillagerBase &);
 

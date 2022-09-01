@@ -32,31 +32,33 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   565957000
      */
     virtual ~FreezeOnHitSubcomponent();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?readfromJSON@FreezeOnHitSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   1340812478
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?writetoJSON@FreezeOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1487200011
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@FreezeOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   1308793160
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@FreezeOnHitSubcomponent@@UEAAPEBDXZ
+     * @hash   -1023688285
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZEONHITSUBCOMPONENT
-#endif
 
 };

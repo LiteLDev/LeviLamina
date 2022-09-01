@@ -27,14 +27,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIONQUEUE
-#endif
     /**
      * @symbol ??0ActionQueue@@QEAA@XZ
+     * @hash   -1692121193
      */
     MCAPI ActionQueue();
     /**
      * @symbol ?pushBackActionEvent@ActionQueue@@QEAAXVActionEvent@@@Z
+     * @hash   -952942800
      */
     MCAPI void pushBackActionEvent(class ActionEvent);
 

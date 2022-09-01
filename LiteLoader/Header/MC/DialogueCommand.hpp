@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2072135391
      */
     virtual ~DialogueCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@DialogueCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   566904144
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIALOGUECOMMAND
-#endif
     /**
      * @symbol ?setup@DialogueCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1298508752
      */
     MCAPI static void setup(class CommandRegistry &);
 

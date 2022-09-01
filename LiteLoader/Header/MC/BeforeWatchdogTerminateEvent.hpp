@@ -27,10 +27,9 @@ public:
     BeforeWatchdogTerminateEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEFOREWATCHDOGTERMINATEEVENT
-#endif
     /**
      * @symbol ??1BeforeWatchdogTerminateEvent@@QEAA@XZ
+     * @hash   -1194598625
      */
     MCAPI ~BeforeWatchdogTerminateEvent();
 

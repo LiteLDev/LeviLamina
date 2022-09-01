@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -409729899
      */
     virtual ~BarrelContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0BarrelContainerScreenValidator@@QEAA@XZ
+     * @hash   50737159
      */
     MCAPI BarrelContainerScreenValidator();
 

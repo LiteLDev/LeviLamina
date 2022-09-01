@@ -30,16 +30,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1231062791
      */
     virtual ~ContainerScreenValidationActivate();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?tryActivate@ContainerScreenValidationActivate@@EEAA?AUContainerValidationResult@@XZ
+     * @hash   1144006843
      */
     virtual struct ContainerValidationResult tryActivate();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATIONACTIVATE
-#endif
 
 };

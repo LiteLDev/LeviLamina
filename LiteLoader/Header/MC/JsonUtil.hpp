@@ -51,58 +51,72 @@ public:
 #undef AFTER_EXTRA
     /**
      * @symbol ?LogMissingChildSchemaOption@JsonUtil@@YAXW4LogArea@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@22@Z
+     * @hash   486091751
      */
     MCAPI void LogMissingChildSchemaOption(enum LogArea, class Json::Value const &, std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?LogUnknownChildSchemaOption@JsonUtil@@YAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4LogArea@@AEBVValue@Json@@@Z
+     * @hash   -1742444923
      */
     MCAPI void LogUnknownChildSchemaOption(std::string const &, enum LogArea, class Json::Value const &);
     /**
      * @symbol ?eraseSchema@JsonUtil@@YAXAEBVHashedString@@AEBVSemVersion@@@Z
+     * @hash   -682626454
      */
     MCAPI void eraseSchema(class HashedString const &, class SemVersion const &);
     /**
      * @symbol ?getMemberByCaseInsensitiveName@JsonUtil@@YAAEAVValue@Json@@AEAV23@AEBV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   1304378131
      */
     MCAPI class Json::Value & getMemberByCaseInsensitiveName(class Json::Value &, class gsl::basic_string_span<char const, -1> const &);
     /**
      * @symbol ?getMemberByCaseInsensitiveNameConst@JsonUtil@@YAAEBVValue@Json@@AEBV23@AEBV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   191919593
      */
     MCAPI class Json::Value const & getMemberByCaseInsensitiveNameConst(class Json::Value const &, class gsl::basic_string_span<char const, -1> const &);
     /**
      * @symbol ?getSchemaMap@JsonUtil@@YAAEAV?$map@VHashedString@@V?$map@VSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@U?$less@VSemVersion@@@3@V?$allocator@U?$pair@$$CBVSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@@std@@@3@@std@@U?$less@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$map@VSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@U?$less@VSemVersion@@@3@V?$allocator@U?$pair@$$CBVSemVersion@@V?$shared_ptr@VJsonSchemaNodeBase@JsonUtil@@@std@@@std@@@3@@std@@@std@@@3@@std@@XZ
+     * @hash   -1819356987
      */
     MCAPI class std::map<class HashedString, class std::map<class SemVersion, class std::shared_ptr<class JsonUtil::JsonSchemaNodeBase>, struct std::less<class SemVersion>, class std::allocator<struct std::pair<class SemVersion const, class std::shared_ptr<class JsonUtil::JsonSchemaNodeBase>>>>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::map<class SemVersion, class std::shared_ptr<class JsonUtil::JsonSchemaNodeBase>, struct std::less<class SemVersion>, class std::allocator<struct std::pair<class SemVersion const, class std::shared_ptr<class JsonUtil::JsonSchemaNodeBase>>>>>>> & getSchemaMap();
     /**
      * @symbol ?getSchemaMapLock@JsonUtil@@YAAEAVmutex@std@@XZ
+     * @hash   -1213819837
      */
     MCAPI class std::mutex & getSchemaMapLock();
     /**
      * @symbol ?parseBannerBlockType@JsonUtil@@YA_NAEAW4BannerBlockType@@AEBVValue@Json@@@Z
+     * @hash   -194021829
      */
     MCAPI bool parseBannerBlockType(enum BannerBlockType &, class Json::Value const &);
     /**
      * @symbol ?parseItem@JsonUtil@@YA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAHAEBV23@@Z
+     * @hash   -893127518
      */
     MCAPI bool parseItem(std::string &, std::string &, int &, std::string const &);
     /**
      * @symbol ?parseItemColor@JsonUtil@@YA_NAEAW4ItemColor@@AEBVValue@Json@@@Z
+     * @hash   1607868373
      */
     MCAPI bool parseItemColor(enum ItemColor &, class Json::Value const &);
     /**
      * @symbol ?parseRange@JsonUtil@@YA_NAEBVValue@Json@@AEAH1@Z
+     * @hash   -724513838
      */
     MCAPI bool parseRange(class Json::Value const &, int &, int &);
     /**
      * @symbol ?parseVec3@JsonUtil@@YA_NAEAVVec3@@AEBVValue@Json@@@Z
+     * @hash   1543125733
      */
     MCAPI bool parseVec3(class Vec3 &, class Json::Value const &);
     /**
      * @symbol ?printJsonSchema_childNode@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@AEBVHashedString@@1_N_K411@Z
+     * @hash   -1517020685
      */
     MCAPI void printJsonSchema_childNode(std::string &, std::string const &, class HashedString const &, std::string const &, bool, unsigned __int64, unsigned __int64, std::string const &, std::string const &);
     /**
      * @symbol ?setDefaultPrettyName@JsonUtil@@YAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVHashedString@@@Z
+     * @hash   -32924552
      */
     MCAPI void setDefaultPrettyName(std::string &, class HashedString const &);
 

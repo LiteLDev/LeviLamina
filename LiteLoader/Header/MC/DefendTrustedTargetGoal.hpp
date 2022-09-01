@@ -32,45 +32,48 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1592637357
      */
     virtual ~DefendTrustedTargetGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@DefendTrustedTargetGoal@@UEAA_NXZ
+     * @hash   -758978421
      */
     virtual bool canUse();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@DefendTrustedTargetGoal@@UEAAXXZ
+     * @hash   -597075420
      */
     virtual void start();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DefendTrustedTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1118885083
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFENDTRUSTEDTARGETGOAL
-#endif
     /**
      * @symbol ??0DefendTrustedTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@MH_NHW4LevelSoundEvent@@AEBVActorDefinitionTrigger@@@Z
+     * @hash   -1960178769
      */
     MCAPI DefendTrustedTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, bool, int, enum LevelSoundEvent, class ActorDefinitionTrigger const &);
 
 //private:
     /**
      * @symbol ?_findTrustedTarget@DefendTrustedTargetGoal@@AEAA?AUActorUniqueID@@AEBVTrustComponent@@@Z
+     * @hash   210124610
      */
     MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const &);
 

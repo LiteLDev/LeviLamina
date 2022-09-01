@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORDEFINITION
-#endif
     /**
      * @symbol ??0EntitySensorDefinition@@QEAA@XZ
+     * @hash   667107804
      */
     MCAPI EntitySensorDefinition();
     /**
      * @symbol ?initialize@EntitySensorDefinition@@QEAAXAEAVEntityContext@@AEAVEntitySensorComponent@@@Z
+     * @hash   -948141099
      */
     MCAPI void initialize(class EntityContext &, class EntitySensorComponent &);
     /**
      * @symbol ?buildSchema@EntitySensorDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEntitySensorDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -31747690
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>> &);
 

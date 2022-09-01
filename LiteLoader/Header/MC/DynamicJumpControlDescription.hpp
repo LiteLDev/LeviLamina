@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@DynamicJumpControlDescription@@UEBAPEBDXZ
+     * @hash   -1829087560
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   88814874
      */
     virtual ~DynamicJumpControlDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@DynamicJumpControlDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1431469445
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@DynamicJumpControlDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1039856971
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROLDESCRIPTION
-#endif
 
 };

@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1610078358
      */
     virtual ~StartGamePacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@StartGamePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1834446098
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@StartGamePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   341075903
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@StartGamePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -434463192
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@StartGamePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1817871096
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STARTGAMEPACKET
-#endif
     /**
      * @symbol ??0StartGamePacket@@QEAA@XZ
+     * @hash   -584198504
      */
     MCAPI StartGamePacket();
     /**
      * @symbol ??0StartGamePacket@@QEAA@AEBVLevelSettings@@UActorUniqueID@@VActorRuntimeID@@W4GameType@@_NAEBVVec3@@AEBVVec2@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@7AEBVContentIdentity@@7AEBVBlockDefinitionGroup@@4VCompoundTag@@AEBUPlayerMovementSettings@@7AEBVUUID@mce@@_KH_K@Z
+     * @hash   -245410421
      */
     MCAPI StartGamePacket(class LevelSettings const &, struct ActorUniqueID, class ActorRuntimeID, enum GameType, bool, class Vec3 const &, class Vec2 const &, std::string const &, std::string const &, class ContentIdentity const &, std::string const &, class BlockDefinitionGroup const &, bool, class CompoundTag, struct PlayerMovementSettings const &, std::string const &, class mce::UUID const &, unsigned __int64, int, unsigned __int64);
 

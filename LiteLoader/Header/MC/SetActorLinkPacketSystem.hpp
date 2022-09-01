@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORLINKPACKETSYSTEM
-#endif
     /**
      * @symbol ?createSetActorLinkPacketSystem@SetActorLinkPacketSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1297062228
      */
     MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();
 

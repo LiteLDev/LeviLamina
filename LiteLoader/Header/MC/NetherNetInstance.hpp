@@ -32,123 +32,124 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETINSTANCE
     /**
-     * @vtable -1
      * @symbol ?_onDisable@NetherNetInstance@@UEAAXXZ
+     * @hash   629263415
      */
     MCVAPI void _onDisable();
     /**
-     * @vtable -1
      * @symbol ?_onEnable@NetherNetInstance@@UEAAXXZ
+     * @hash   1915223214
      */
     MCVAPI void _onEnable();
     /**
-     * @vtable -1
      * @symbol ?addConnectionStateListener@NetherNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z
+     * @hash   -1242871925
      */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
-     * @vtable -1
      * @symbol ?connect@NetherNetInstance@@UEAA_NPEAX@Z
+     * @hash   1564284907
      */
     MCVAPI bool connect(void *);
     /**
-     * @vtable -1
      * @symbol ?disconnect@NetherNetInstance@@UEAAXXZ
+     * @hash   -1716780279
      */
     MCVAPI void disconnect();
     /**
-     * @vtable -1
      * @symbol ?getConnectedGameInfo@NetherNetInstance@@UEBAAEBVGameConnectionInfo@Social@@XZ
+     * @hash   1745812723
      */
     MCVAPI class Social::GameConnectionInfo const & getConnectedGameInfo() const;
     /**
-     * @vtable -1
      * @symbol ?getIPv4Port@NetherNetInstance@@UEBAGXZ
+     * @hash   854788731
      */
     MCVAPI unsigned short getIPv4Port() const;
     /**
-     * @vtable -1
      * @symbol ?getIPv6Port@NetherNetInstance@@UEBAGXZ
+     * @hash   1737220157
      */
     MCVAPI unsigned short getIPv6Port() const;
     /**
-     * @vtable -1
      * @symbol ?getLocalIp@NetherNetInstance@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1344214195
      */
     MCVAPI std::string getLocalIp();
     /**
-     * @vtable -1
      * @symbol ?getLocalIps@NetherNetInstance@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     * @hash   -993768766
      */
     MCVAPI std::vector<std::string> getLocalIps() const;
     /**
-     * @vtable -1
      * @symbol ?getNatPunchInfo@NetherNetInstance@@UEBA?AUNatPunchInfo@Connector@@XZ
+     * @hash   303075025
      */
     MCVAPI struct Connector::NatPunchInfo getNatPunchInfo() const;
     /**
-     * @vtable -1
      * @symbol ?getPort@NetherNetInstance@@UEBAGXZ
+     * @hash   2082689334
      */
     MCVAPI unsigned short getPort() const;
     /**
-     * @vtable -1
      * @symbol ?getRefinedLocalIps@NetherNetInstance@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ
+     * @hash   -392551867
      */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
     /**
-     * @vtable -1
      * @symbol ?getTransportIdentifier@NetherNetInstance@@UEBA_KXZ
+     * @hash   688906130
      */
     MCVAPI unsigned __int64 getTransportIdentifier() const;
     /**
-     * @vtable -1
      * @symbol ?host@NetherNetInstance@@UEAA_NAEBUConnectionDefinition@@@Z
+     * @hash   -696033322
      */
     MCVAPI bool host(struct ConnectionDefinition const &);
     /**
-     * @vtable -1
      * @symbol ?isIPv4Supported@NetherNetInstance@@UEBA_NXZ
+     * @hash   1014621341
      */
     MCVAPI bool isIPv4Supported() const;
     /**
-     * @vtable -1
      * @symbol ?isIPv6Supported@NetherNetInstance@@UEBA_NXZ
+     * @hash   1423744923
      */
     MCVAPI bool isIPv6Supported() const;
     /**
-     * @vtable -1
      * @symbol ?isServer@NetherNetInstance@@UEBA_NXZ
+     * @hash   1748279339
      */
     MCVAPI bool isServer() const;
     /**
-     * @vtable -1
      * @symbol ?removeConnectionStateListener@NetherNetInstance@@UEAAXPEAVConnectionStateListener@Connector@@@Z
+     * @hash   -1490347826
      */
     MCVAPI void removeConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
-     * @vtable -1
      * @symbol ?runEvents@NetherNetInstance@@UEAAXXZ
+     * @hash   -1124671311
      */
     MCVAPI void runEvents();
     /**
-     * @vtable -1
      * @symbol ?setupNatPunch@NetherNetInstance@@UEAAX_N@Z
+     * @hash   -1827294987
      */
     MCVAPI void setupNatPunch(bool);
     /**
-     * @vtable -1
      * @symbol ?startNatPunchingClient@NetherNetInstance@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+     * @hash   -130276500
      */
     MCVAPI void startNatPunchingClient(std::string const &, unsigned short);
     /**
-     * @vtable -1
      * @symbol ?tick@NetherNetInstance@@UEAAXXZ
+     * @hash   1629615978
      */
     MCVAPI void tick();
 #endif
     /**
      * @symbol ??0NetherNetInstance@@QEAA@V?$shared_ptr@VLibHttpClientInstance@Http@Bedrock@@@std@@@Z
+     * @hash   -1107694570
      */
     MCAPI NetherNetInstance(class std::shared_ptr<class Bedrock::Http::LibHttpClientInstance>);
 

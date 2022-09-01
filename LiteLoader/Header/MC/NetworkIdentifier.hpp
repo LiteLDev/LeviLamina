@@ -34,52 +34,61 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKIDENTIFIER
-#endif
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@_K@Z
+     * @hash   1106865463
      */
     MCAPI NetworkIdentifier(unsigned __int64);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in@@@Z
+     * @hash   -1538305050
      */
     MCAPI NetworkIdentifier(struct sockaddr_in const &);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBUsockaddr_in6@@@Z
+     * @hash   -207520024
      */
     MCAPI NetworkIdentifier(struct sockaddr_in6 const &);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBURakNetGUID@RakNet@@@Z
+     * @hash   -1133443188
      */
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const &);
     /**
      * @symbol ??0NetworkIdentifier@@QEAA@AEBUNetworkID@NetherNet@@@Z
+     * @hash   1622502732
      */
     MCAPI NetworkIdentifier(struct NetherNet::NetworkID const &);
     /**
      * @symbol ?getAddress@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1279444464
      */
     MCAPI std::string getAddress() const;
     /**
      * @symbol ?getHash@NetworkIdentifier@@QEBA_KXZ
+     * @hash   296932955
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ?getNetherNetIDAsString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2082743232
      */
     MCAPI std::string getNetherNetIDAsString() const;
     /**
      * @symbol ?isUnassigned@NetworkIdentifier@@QEBA_NXZ
+     * @hash   -1732898142
      */
     MCAPI bool isUnassigned() const;
     /**
      * @symbol ?toString@NetworkIdentifier@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1030968880
      */
     MCAPI std::string toString() const;
 
 //private:
     /**
      * @symbol ?equalsTypeData@NetworkIdentifier@@AEBA_NAEBV1@@Z
+     * @hash   -976426433
      */
     MCAPI bool equalsTypeData(class NetworkIdentifier const &) const;
 

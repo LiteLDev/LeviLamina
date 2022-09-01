@@ -31,89 +31,99 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1201871929
      */
     virtual ~MoveInput();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?tick@MoveInput@@UEAAXAEAUIPlayerMovementProxy@@@Z
+     * @hash   949254385
      */
     virtual void tick(struct IPlayerMovementProxy &);
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?clearInputState@MoveInput@@UEAAXXZ
+     * @hash   -441735390
      */
     virtual void clearInputState();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?allowPicking@MoveInput@@UEAA_NMM@Z
+     * @hash   -1853283368
      */
     virtual bool allowPicking(float, float);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setJumping@MoveInput@@UEAAX_N@Z
+     * @hash   -1409396596
      */
     virtual void setJumping(bool);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?setAutoJumpingInWater@MoveInput@@UEAAX_N@Z
+     * @hash   -415612417
      */
     virtual void setAutoJumpingInWater(bool);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?isChangeHeight@MoveInput@@UEBA_NXZ
+     * @hash   -213520000
      */
     virtual bool isChangeHeight() const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?setSneakDown@MoveInput@@UEAAX_N@Z
+     * @hash   1726213178
      */
     virtual void setSneakDown(bool);
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?isPlayerMoving@MoveInput@@UEBA_NXZ
+     * @hash   936594968
      */
     virtual bool isPlayerMoving() const;
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?getGazeDirection@MoveInput@@UEBAAEBVVec3@@XZ
+     * @hash   930757865
      */
     virtual class Vec3 const & getGazeDirection() const;
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?extractInputComponent@MoveInput@@UEBA?AUMoveInputComponent@@XZ
+     * @hash   730625059
      */
     virtual struct MoveInputComponent extractInputComponent() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUT
     /**
-     * @vtable -1
      * @symbol ?clearMovementState@MoveInput@@UEAAXXZ
+     * @hash   877907331
      */
     MCVAPI void clearMovementState();
     /**
-     * @vtable -1
      * @symbol ?render@MoveInput@@UEAAXM@Z
+     * @hash   -1400860962
      */
     MCVAPI void render(float);
     /**
-     * @vtable -1
      * @symbol ?setKey@MoveInput@@UEAAXH_N@Z
+     * @hash   -12370696
      */
     MCVAPI void setKey(int, bool);
 #endif

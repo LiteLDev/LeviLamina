@@ -26,14 +26,14 @@ public:
     AliasInfoDescription() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALIASINFODESCRIPTION
-#endif
     /**
      * @symbol ??0AliasInfoDescription@@QEAA@AEBU0@@Z
+     * @hash   1156827967
      */
     MCAPI AliasInfoDescription(struct AliasInfoDescription const &);
     /**
      * @symbol ??1AliasInfoDescription@@QEAA@XZ
+     * @hash   2062591448
      */
     MCAPI ~AliasInfoDescription();
 

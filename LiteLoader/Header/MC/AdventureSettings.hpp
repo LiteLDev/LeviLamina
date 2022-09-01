@@ -26,10 +26,9 @@ public:
     AdventureSettings(struct AdventureSettings const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADVENTURESETTINGS
-#endif
     /**
      * @symbol ??0AdventureSettings@@QEAA@XZ
+     * @hash   -63785057
      */
     MCAPI AdventureSettings();
 

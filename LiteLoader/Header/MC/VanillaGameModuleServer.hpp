@@ -31,74 +31,83 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -711315510
      */
     virtual ~VanillaGameModuleServer();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?init@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@AEAVLevel@@@Z
+     * @hash   -1800238169
      */
     virtual void init(class ServerInstance &, class Level &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEAVIResourcePackRepository@@AEAVResourcePackStack@@AEBVBaseGameVersion@@@Z
+     * @hash   86240569
      */
     virtual void initializeBehaviorStack(class Experiments const &, class IResourcePackRepository &, class ResourcePackStack &, class BaseGameVersion const &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?configureLevel@VanillaGameModuleServer@@UEAAXAEAVLevel@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
+     * @hash   508526898
      */
     virtual void configureLevel(class Level &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@VItemRegistryRef@@@Z
+     * @hash   1776884406
      */
     virtual void configureDocumentation(class IGameModuleDocumentation &, class ItemRegistryRef);
     /**
-     * @vtable 6
-     * @symbol __unk_vfn_6
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?setupCommands@VanillaGameModuleServer@@UEAAXAEAVCommandRegistry@@@Z
+     * @hash   -19848012
      */
     virtual void setupCommands(class CommandRegistry &);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?configureServerNetworkHandler@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@V?$not_null@V?$NonOwnerPointer@VServerNetworkHandler@@@Bedrock@@@gsl@@@Z
+     * @hash   -96987426
      */
     virtual void configureServerNetworkHandler(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULESERVER
     /**
-     * @vtable -1
      * @symbol ?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z
+     * @hash   1880122733
      */
     MCVAPI void configureNewPlayer(class Player &);
     /**
-     * @vtable -1
      * @symbol ?tick@VanillaGameModuleServer@@UEAAXXZ
+     * @hash   1137936072
      */
     MCVAPI void tick();
 #endif
     /**
      * @symbol ??0VanillaGameModuleServer@@QEAA@XZ
+     * @hash   -487344168
      */
     MCAPI VanillaGameModuleServer();
 
 //private:
     /**
      * @symbol ?_configureWorldGen@VanillaGameModuleServer@@AEAAXAEAVIWorldRegistriesProvider@@AEBUSpawnSettings@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z
+     * @hash   74250597
      */
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     /**
      * @symbol ?_registerListeners@VanillaGameModuleServer@@AEAAXAEAVLevel@@@Z
+     * @hash   147756091
      */
     MCAPI void _registerListeners(class Level &);
 

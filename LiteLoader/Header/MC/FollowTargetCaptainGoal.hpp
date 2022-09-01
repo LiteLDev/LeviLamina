@@ -31,55 +31,61 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1413872093
      */
     virtual ~FollowTargetCaptainGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@FollowTargetCaptainGoal@@UEAA_NXZ
+     * @hash   37144043
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FollowTargetCaptainGoal@@UEAA_NXZ
+     * @hash   1185271081
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@FollowTargetCaptainGoal@@UEAAXXZ
+     * @hash   -672101772
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@FollowTargetCaptainGoal@@UEAAXXZ
+     * @hash   1174857652
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@FollowTargetCaptainGoal@@UEAAXXZ
+     * @hash   -288556209
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FollowTargetCaptainGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -481280635
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWTARGETCAPTAINGOAL
-#endif
     /**
      * @symbol ??0FollowTargetCaptainGoal@@QEAA@AEAVMob@@MMM@Z
+     * @hash   -1132732391
      */
     MCAPI FollowTargetCaptainGoal(class Mob &, float, float, float);
 
 //private:
     /**
      * @symbol ?_determineMovePos@FollowTargetCaptainGoal@@AEAAXXZ
+     * @hash   1844502390
      */
     MCAPI void _determineMovePos();
 

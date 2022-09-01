@@ -27,10 +27,9 @@ public:
     PlayerOpenContainerEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEROPENCONTAINEREVENT
-#endif
     /**
      * @symbol ??1PlayerOpenContainerEvent@@QEAA@XZ
+     * @hash   -1667440690
      */
     MCAPI ~PlayerOpenContainerEvent();
 

@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCELEAVEGAMEDONEEVENT
-#endif
     /**
      * @symbol ??1ServerInstanceLeaveGameDoneEvent@@QEAA@XZ
+     * @hash   -2099976111
      */
     MCAPI ~ServerInstanceLeaveGameDoneEvent();
 

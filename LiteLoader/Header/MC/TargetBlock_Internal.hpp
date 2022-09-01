@@ -24,6 +24,7 @@ namespace TargetBlock_Internal {
 #undef AFTER_EXTRA
     /**
      * @symbol ?createPoweredBlockComponentAtPos@TargetBlock_Internal@@YAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -185847802
      */
     MCAPI void createPoweredBlockComponentAtPos(class BlockSource &, class BlockPos const &);
 

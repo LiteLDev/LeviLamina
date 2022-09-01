@@ -27,10 +27,9 @@ public:
     BlockCreativeGroupComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCREATIVEGROUPCOMPONENT
-#endif
     /**
      * @symbol ??1BlockCreativeGroupComponent@@QEAA@XZ
+     * @hash   -1681311674
      */
     MCAPI ~BlockCreativeGroupComponent();
 

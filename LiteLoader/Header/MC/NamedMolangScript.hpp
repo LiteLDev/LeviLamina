@@ -27,10 +27,9 @@ public:
     NamedMolangScript() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEDMOLANGSCRIPT
-#endif
     /**
      * @symbol ??1NamedMolangScript@@QEAA@XZ
+     * @hash   -420109712
      */
     MCAPI ~NamedMolangScript();
 

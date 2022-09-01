@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1952510143
      */
     virtual ~GrantXPSubcomponent();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?readfromJSON@GrantXPSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   1705445751
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?writetoJSON@GrantXPSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1253829102
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@GrantXPSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -2040007215
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@GrantXPSubcomponent@@UEAAPEBDXZ
+     * @hash   1373729068
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRANTXPSUBCOMPONENT
-#endif
     /**
      * @symbol ??0GrantXPSubcomponent@@QEAA@XZ
+     * @hash   -831365379
      */
     MCAPI GrantXPSubcomponent();
 

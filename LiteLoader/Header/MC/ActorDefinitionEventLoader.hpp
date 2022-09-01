@@ -29,20 +29,21 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONEVENTLOADER
-#endif
     /**
      * @symbol ?loadEvent@ActorDefinitionEventLoader@@SA?AVActorDefinitionEvent@@VValue@Json@@AEBVSemVersion@@1PEBVActorEventResponseFactory@@@Z
+     * @hash   142492653
      */
     MCAPI static class ActorDefinitionEvent loadEvent(class Json::Value, class SemVersion const &, class SemVersion const &, class ActorEventResponseFactory const *);
 
 //private:
     /**
      * @symbol ?_loadCollection@ActorDefinitionEventLoader@@CAXAEAVActorDefinitionEvent@@AEBVValue@Json@@AEBVSemVersion@@PEBVActorEventResponseFactory@@@Z
+     * @hash   1542790985
      */
     MCAPI static void _loadCollection(class ActorDefinitionEvent &, class Json::Value const &, class SemVersion const &, class ActorEventResponseFactory const *);
     /**
      * @symbol ?_loadEvent@ActorDefinitionEventLoader@@CA?AVActorDefinitionEvent@@AEAVValue@Json@@AEBVSemVersion@@PEBVActorEventResponseFactory@@@Z
+     * @hash   667542837
      */
     MCAPI static class ActorDefinitionEvent _loadEvent(class Json::Value &, class SemVersion const &, class ActorEventResponseFactory const *);
 

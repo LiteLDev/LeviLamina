@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1215732976
      */
     virtual ~InventorySlotPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@InventorySlotPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1338010684
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@InventorySlotPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1717741289
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@InventorySlotPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1360778910
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@InventorySlotPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -491060546
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYSLOTPACKET
-#endif
     /**
      * @symbol ??0InventorySlotPacket@@QEAA@XZ
+     * @hash   -616175586
      */
     MCAPI InventorySlotPacket();
     /**
      * @symbol ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
+     * @hash   1509751099
      */
     MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const &);
 

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1065691754
      */
     virtual ~FillCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@FillCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1172870187
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILLCOMMAND
-#endif
     /**
      * @symbol ?setup@FillCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   986432432
      */
     MCAPI static void setup(class CommandRegistry &);
 

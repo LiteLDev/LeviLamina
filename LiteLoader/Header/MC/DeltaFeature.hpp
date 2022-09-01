@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1078720360
      */
     virtual ~DeltaFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@DeltaFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -632000776
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DELTAFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_isValidPlacement@DeltaFeature@@AEBA_NAEAVBlockSource@@VBlockPos@@@Z
+     * @hash   -527766255
      */
     MCAPI bool _isValidPlacement(class BlockSource &, class BlockPos) const;
 

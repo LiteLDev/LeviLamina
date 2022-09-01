@@ -29,36 +29,41 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CSHA1
-#endif
     /**
      * @symbol ??0CSHA1@@QEAA@XZ
+     * @hash   -1090286732
      */
     MCAPI CSHA1();
     /**
      * @symbol ?Final@CSHA1@@QEAAXXZ
+     * @hash   -1499282303
      */
     MCAPI void Final();
     /**
      * @symbol ?GetHash@CSHA1@@QEBAPEAEXZ
+     * @hash   -1962001505
      */
     MCAPI unsigned char * GetHash() const;
     /**
      * @symbol ?Reset@CSHA1@@QEAAXXZ
+     * @hash   -1633394301
      */
     MCAPI void Reset();
     /**
      * @symbol ?Update@CSHA1@@QEAAXPEBEI@Z
+     * @hash   -1283846830
      */
     MCAPI void Update(unsigned char const *, unsigned int);
     /**
      * @symbol ??1CSHA1@@QEAA@XZ
+     * @hash   1151153076
      */
     MCAPI ~CSHA1();
 
 //private:
     /**
      * @symbol ?Transform@CSHA1@@AEAAXPEAIPEBE@Z
+     * @hash   2097734480
      */
     MCAPI void Transform(unsigned int *, unsigned char const *);
 

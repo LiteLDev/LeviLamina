@@ -32,55 +32,60 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1584832125
      */
     virtual ~WitherTargetHighestDamage();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@WitherTargetHighestDamage@@UEAA_NXZ
+     * @hash   427376993
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@WitherTargetHighestDamage@@UEAA_NXZ
+     * @hash   915521791
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@WitherTargetHighestDamage@@UEAAXXZ
+     * @hash   -143801958
      */
     virtual void start();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@WitherTargetHighestDamage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   556673359
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?_canAttack@WitherTargetHighestDamage@@EEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z
+     * @hash   -650092431
      */
     virtual bool _canAttack(class Mob *, class Actor *, bool, bool, struct MobDescriptor const **);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WITHERTARGETHIGHESTDAMAGE
-#endif
     /**
      * @symbol ??0WitherTargetHighestDamage@@QEAA@AEAVWitherBoss@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
+     * @hash   -231483649
      */
     MCAPI WitherTargetHighestDamage(class WitherBoss &, std::vector<struct MobDescriptor> const &);
 
 //private:
     /**
      * @symbol ?getHighestDamageTarget@WitherTargetHighestDamage@@AEAAPEAVPlayer@@XZ
+     * @hash   -481549576
      */
     MCAPI class Player * getHighestDamageTarget();
 

@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1171072713
      */
     virtual ~ResourcePackStackPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@ResourcePackStackPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1722218923
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@ResourcePackStackPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -39984894
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@ResourcePackStackPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   438062821
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@ResourcePackStackPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1760255467
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKSTACKPACKET
-#endif
     /**
      * @symbol ??0ResourcePackStackPacket@@QEAA@XZ
+     * @hash   -675100091
      */
     MCAPI ResourcePackStackPacket();
     /**
      * @symbol ??0ResourcePackStackPacket@@QEAA@V?$vector@UPackInstanceId@@V?$allocator@UPackInstanceId@@@std@@@std@@0AEBVBaseGameVersion@@_NAEBVExperiments@@@Z
+     * @hash   -2042263798
      */
     MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const &, bool, class Experiments const &);
 

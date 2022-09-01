@@ -27,10 +27,9 @@ public:
     PlayerFormCloseEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERFORMCLOSEEVENT
-#endif
     /**
      * @symbol ??1PlayerFormCloseEvent@@QEAA@XZ
+     * @hash   1684762705
      */
     MCAPI ~PlayerFormCloseEvent();
 

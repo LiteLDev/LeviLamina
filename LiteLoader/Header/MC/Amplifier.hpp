@@ -31,26 +31,27 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1732924351
      */
     virtual ~Amplifier();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getAmount@Amplifier@@UEBAMHM@Z
+     * @hash   370103774
      */
     virtual float getAmount(int, float) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?shouldBuff@Amplifier@@UEBA_NHH@Z
+     * @hash   -465498867
      */
     virtual bool shouldBuff(int, int) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getTickInterval@Amplifier@@UEBAHH@Z
+     * @hash   1894558331
      */
     virtual int getTickInterval(int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPLIFIER
-#endif
 
 };

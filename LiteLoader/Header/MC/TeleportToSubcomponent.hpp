@@ -30,44 +30,47 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1518103597
      */
     virtual ~TeleportToSubcomponent();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@TeleportToSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   634987839
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@TeleportToSubcomponent@@UEAAPEBDXZ
+     * @hash   505213866
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTTOSUBCOMPONENT
     /**
-     * @vtable -1
      * @symbol ?readfromJSON@TeleportToSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   -1511823035
      */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @vtable -1
      * @symbol ?writetoJSON@TeleportToSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1427525036
      */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     /**
      * @symbol ??0TeleportToSubcomponent@@QEAA@XZ
+     * @hash   2061195887
      */
     MCAPI TeleportToSubcomponent();
 

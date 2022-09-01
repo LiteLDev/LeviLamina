@@ -32,48 +32,55 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?listen@ScriptDebugger@@UEAA_NG@Z
+     * @hash   -473487591
      */
     virtual bool listen(unsigned short);
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?connect@ScriptDebugger@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z
+     * @hash   -1279466920
      */
     virtual bool connect(std::string const &, unsigned short);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?close@ScriptDebugger@@UEAAXXZ
+     * @hash   984684643
      */
     virtual void close();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?startProfiler@ScriptDebugger@@UEAAXXZ
+     * @hash   1166809846
      */
     virtual void startProfiler();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?stopProfiler@ScriptDebugger@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   299499174
      */
     virtual void stopProfiler(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGGER
-#endif
     /**
      * @symbol ??0ScriptDebugger@@QEAA@AEAVScriptEngine@Scripting@@AEAVIScriptDebuggerWatchdog@@V?$unique_ptr@VIScriptTelemetryLogger@@U?$default_delete@VIScriptTelemetryLogger@@@std@@@std@@@Z
+     * @hash   849881349
      */
     MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class IScriptDebuggerWatchdog &, std::unique_ptr<class IScriptTelemetryLogger>);
     /**
      * @symbol ?checkConnections@ScriptDebugger@@QEAAXXZ
+     * @hash   -472502987
      */
     MCAPI void checkConnections();
 
 //private:
     /**
      * @symbol ?_createController@ScriptDebugger@@AEAAPEAVIDebuggerController@Scripting@@XZ
+     * @hash   -1403165146
      */
     MCAPI class Scripting::IDebuggerController * _createController();
     /**
      * @symbol ?_releaseController@ScriptDebugger@@AEAAXXZ
+     * @hash   1181343156
      */
     MCAPI void _releaseController();
 

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1663182348
      */
     virtual ~TimeCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@TimeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   719147221
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMECOMMAND
-#endif
     /**
      * @symbol ?setup@TimeCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -2002743760
      */
     MCAPI static void setup(class CommandRegistry &);
 

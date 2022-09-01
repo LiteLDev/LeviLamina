@@ -32,25 +32,26 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1169826697
      */
     virtual ~SpringFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@SpringFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1624559869
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPRINGFEATURE
-#endif
     /**
      * @symbol ??0SpringFeature@@QEAA@AEBVBlock@@@Z
+     * @hash   1135701222
      */
     MCAPI SpringFeature(class Block const &);
 
 //private:
     /**
      * @symbol ?isValidSpringBorderBlock@SpringFeature@@AEBA_NAEBVBlockLegacy@@AEAVBlockSource@@@Z
+     * @hash   -1255981921
      */
     MCAPI bool isValidSpringBorderBlock(class BlockLegacy const &, class BlockSource &) const;
 

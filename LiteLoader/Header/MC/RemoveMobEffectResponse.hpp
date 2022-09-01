@@ -32,27 +32,28 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1030912828
      */
     virtual ~RemoveMobEffectResponse();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@RemoveMobEffectResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1593577467
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?executeAction@RemoveMobEffectResponse@@UEBAXAEAVRenderParams@@@Z
+     * @hash   -1073258525
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?buildSchema@RemoveMobEffectResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     * @hash   -1589790327
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEMOBEFFECTRESPONSE
-#endif
 MCAPI static std::string const NameID;
 
 };

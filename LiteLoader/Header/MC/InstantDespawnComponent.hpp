@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTDESPAWNCOMPONENT
-#endif
     /**
      * @symbol ?onDespawn@InstantDespawnComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -264495084
      */
     MCAPI void onDespawn(class Actor &);
     /**
      * @symbol ?tick@InstantDespawnComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -1021250110
      */
     MCAPI void tick(class Actor &);
 

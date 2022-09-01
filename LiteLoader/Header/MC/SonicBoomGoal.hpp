@@ -29,49 +29,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -820878664
      */
     virtual ~SonicBoomGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@SonicBoomGoal@@UEAA_NXZ
+     * @hash   1979094534
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SonicBoomGoal@@UEAA_NXZ
+     * @hash   -1449000588
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SonicBoomGoal@@UEAAXXZ
+     * @hash   2009940831
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@SonicBoomGoal@@UEAAXXZ
+     * @hash   1614785023
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@SonicBoomGoal@@UEAAXXZ
+     * @hash   1130509226
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SonicBoomGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1563664250
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SONICBOOMGOAL
-#endif
     /**
      * @symbol ??0SonicBoomGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1335204707
      */
     MCAPI SonicBoomGoal(class Mob &);
 

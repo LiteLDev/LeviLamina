@@ -31,55 +31,61 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1724105334
      */
     virtual ~DragonTakeoffGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@DragonTakeoffGoal@@UEAA_NXZ
+     * @hash   658275784
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DragonTakeoffGoal@@UEAA_NXZ
+     * @hash   488345878
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@DragonTakeoffGoal@@UEAAXXZ
+     * @hash   -1596546591
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@DragonTakeoffGoal@@UEAAXXZ
+     * @hash   1609972273
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@DragonTakeoffGoal@@UEAAXXZ
+     * @hash   -1570416820
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DragonTakeoffGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   632824824
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONTAKEOFFGOAL
-#endif
     /**
      * @symbol ??0DragonTakeoffGoal@@QEAA@AEAVEnderDragon@@@Z
+     * @hash   77121183
      */
     MCAPI DragonTakeoffGoal(class EnderDragon &);
 
 //private:
     /**
      * @symbol ?_findNewTarget@DragonTakeoffGoal@@AEAAXXZ
+     * @hash   661080429
      */
     MCAPI void _findNewTarget();
 

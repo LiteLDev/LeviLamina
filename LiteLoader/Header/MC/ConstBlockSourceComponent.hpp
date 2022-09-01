@@ -25,22 +25,24 @@ public:
     ConstBlockSourceComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSTBLOCKSOURCECOMPONENT
-#endif
     /**
      * @symbol ??0ConstBlockSourceComponent@@QEAA@V?$not_null@PEBVIConstBlockSource@@@gsl@@@Z
+     * @hash   1883393500
      */
     MCAPI ConstBlockSourceComponent(class gsl::not_null<class IConstBlockSource const *>);
     /**
      * @symbol ??0ConstBlockSourceComponent@@QEAA@AEBU0@@Z
+     * @hash   -1930425803
      */
     MCAPI ConstBlockSourceComponent(struct ConstBlockSourceComponent const &);
     /**
      * @symbol ?getBlockSource@ConstBlockSourceComponent@@QEBAAEBVIConstBlockSource@@XZ
+     * @hash   -585134680
      */
     MCAPI class IConstBlockSource const & getBlockSource() const;
     /**
      * @symbol ??4ConstBlockSourceComponent@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -963225170
      */
     MCAPI struct ConstBlockSourceComponent & operator=(struct ConstBlockSourceComponent const &);
 

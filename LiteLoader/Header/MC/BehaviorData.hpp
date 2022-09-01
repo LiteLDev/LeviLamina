@@ -32,14 +32,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORDATA
-#endif
     /**
      * @symbol ?copyData@BehaviorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAV1@@Z
+     * @hash   517307418
      */
     MCAPI void copyData(std::string const &, std::string const &, class BehaviorData &);
     /**
      * @symbol ?hasDataOfType@BehaviorData@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DataType@1@@Z
+     * @hash   262436347
      */
     MCAPI bool hasDataOfType(std::string const &, enum BehaviorData::DataType) const;
 

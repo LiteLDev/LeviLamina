@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -923606180
      */
     virtual ~QueryTargetCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@QueryTargetCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   2067291681
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_QUERYTARGETCOMMAND
-#endif
     /**
      * @symbol ?setup@QueryTargetCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1633167708
      */
     MCAPI static void setup(class CommandRegistry &);
 

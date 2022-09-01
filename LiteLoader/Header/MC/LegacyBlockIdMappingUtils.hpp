@@ -22,10 +22,12 @@ namespace LegacyBlockIdMappingUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?addLegacyBlockIdMapping@LegacyBlockIdMappingUtils@@YAXAEBVBlockLegacy@@_K@Z
+     * @hash   1258568223
      */
     MCAPI void addLegacyBlockIdMapping(class BlockLegacy const &, unsigned __int64);
     /**
      * @symbol ?addLegacyBlockIdMappings@LegacyBlockIdMappingUtils@@YAXXZ
+     * @hash   -2013083982
      */
     MCAPI void addLegacyBlockIdMappings();
 MCAPI extern class std::unordered_map<unsigned int, class WeakPtr<class BlockLegacy>, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, class WeakPtr<class BlockLegacy>>>> mBlockIdToVanillaBlockTypesMap;

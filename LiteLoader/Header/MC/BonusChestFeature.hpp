@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2048197566
      */
     virtual ~BonusChestFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@BonusChestFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1958212130
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONUSCHESTFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_place@BonusChestFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1691048176
      */
     MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
 

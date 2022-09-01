@@ -30,16 +30,15 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1985007079
      */
     virtual ~HudScreenCapabilities();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?isOfType@?$TypedScreenCapabilities@UHudScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
+     * @hash   644378594
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDSCREENCAPABILITIES
-#endif
 
 };

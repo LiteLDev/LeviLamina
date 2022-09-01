@@ -30,14 +30,14 @@ public:
     GroundOffsetDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROUNDOFFSETDEFINITION
-#endif
     /**
      * @symbol ?initialize@GroundOffsetDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   1658018012
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@GroundOffsetDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UGroundOffsetDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1295906746
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct GroundOffsetDefinition>> &);
 

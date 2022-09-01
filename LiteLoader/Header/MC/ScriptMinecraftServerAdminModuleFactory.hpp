@@ -33,22 +33,23 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   571089442
      */
     virtual ~ScriptMinecraftServerAdminModuleFactory();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTSERVERADMINMODULEFACTORY
-#endif
     /**
      * @symbol ??0ScriptMinecraftServerAdminModuleFactory@@QEAA@V?$NonOwnerPointer@VScriptPackConfigurationManager@@@Bedrock@@@Z
+     * @hash   1734647876
      */
     MCAPI ScriptMinecraftServerAdminModuleFactory(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>);
     /**
      * @symbol ?getModuleUUIDAsString@ScriptMinecraftServerAdminModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1966199666
      */
     MCAPI static std::string getModuleUUIDAsString();
     /**
      * @symbol ?makeModuleDescriptorFor@ScriptMinecraftServerAdminModuleFactory@@SA?AUModuleDescriptor@Scripting@@UVersion@3@@Z
+     * @hash   -437344467
      */
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version);
 

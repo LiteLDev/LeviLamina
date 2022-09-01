@@ -30,29 +30,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1080666712
      */
     virtual ~SculkVeinMultifaceSpreader();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?_canSpreadFrom@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@E@Z
+     * @hash   1596412089
      */
     virtual bool _canSpreadFrom(class Block const &, unsigned char) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?_canSpreadInto@SculkVeinMultifaceSpreader@@UEBA_NAEAVIBlockWorldGenAPI@@AEBVBlock@@AEBVBlockPos@@E@Z
+     * @hash   1455555577
      */
     virtual bool _canSpreadInto(class IBlockWorldGenAPI &, class Block const &, class BlockPos const &, unsigned char) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?_isOtherBlockValidAsSource@SculkVeinMultifaceSpreader@@UEBA_NAEBVBlock@@@Z
+     * @hash   -1572688419
      */
     virtual bool _isOtherBlockValidAsSource(class Block const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKVEINMULTIFACESPREADER
-#endif
     /**
      * @symbol ??0SculkVeinMultifaceSpreader@@QEAA@AEBV?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@@Z
+     * @hash   -928175633
      */
     MCAPI SculkVeinMultifaceSpreader(std::vector<enum MultifaceSpreader::SpreadType> const &);
 

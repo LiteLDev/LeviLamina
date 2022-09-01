@@ -28,38 +28,44 @@ public:
     PlayerActionComponent(struct PlayerActionComponent const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONCOMPONENT
-#endif
     /**
      * @symbol ??0PlayerActionComponent@@QEAA@XZ
+     * @hash   669314978
      */
     MCAPI PlayerActionComponent();
     /**
      * @symbol ??0PlayerActionComponent@@QEAA@$$QEAU0@@Z
+     * @hash   -1251636381
      */
     MCAPI PlayerActionComponent(struct PlayerActionComponent &&);
     /**
      * @symbol ?addAbortDestroyBlock@PlayerActionComponent@@QEAAXAEBVBlockPos@@H@Z
+     * @hash   837301165
      */
     MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addContinueDestroyBlock@PlayerActionComponent@@QEAAXAEBVBlockPos@@H@Z
+     * @hash   -191938181
      */
     MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addStartDestroyBlock@PlayerActionComponent@@QEAAXAEBVBlockPos@@H@Z
+     * @hash   367959053
      */
     MCAPI void addStartDestroyBlock(class BlockPos const &, int);
     /**
      * @symbol ?addStopDestroyBlock@PlayerActionComponent@@QEAAXXZ
+     * @hash   -548921967
      */
     MCAPI void addStopDestroyBlock();
     /**
      * @symbol ??4PlayerActionComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -537509588
      */
     MCAPI struct PlayerActionComponent & operator=(struct PlayerActionComponent &&);
     /**
      * @symbol ??1PlayerActionComponent@@QEAA@XZ
+     * @hash   15595986
      */
     MCAPI ~PlayerActionComponent();
 

@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEPASSENGERSSYSTEMIMPL
-#endif
     /**
      * @symbol ?_removePassengersSystem@RemovePassengersSystemImpl@@SAXV?$ViewedEntityContextT@VStrictEntityContext@@URemovePassengersComponent@@UVehicleComponent@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UVehicleComponent@@V?$FlagComponent@URecalculateControlledByLocalInstanceRequestFlag@@@@@@@Z
+     * @hash   -121559694
      */
     MCAPI static void _removePassengersSystem(class ViewedEntityContextT<class StrictEntityContext, struct RemovePassengersComponent, struct VehicleComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct VehicleComponent, class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>>);
 

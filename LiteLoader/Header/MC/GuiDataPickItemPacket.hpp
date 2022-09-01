@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -478018129
      */
     virtual ~GuiDataPickItemPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@GuiDataPickItemPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -490029107
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@GuiDataPickItemPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1464198534
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@GuiDataPickItemPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -888650419
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@GuiDataPickItemPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   309540173
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUIDATAPICKITEMPACKET
-#endif
     /**
      * @symbol ??0GuiDataPickItemPacket@@QEAA@XZ
+     * @hash   747719389
      */
     MCAPI GuiDataPickItemPacket();
     /**
      * @symbol ??0GuiDataPickItemPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBH@Z
+     * @hash   -903220344
      */
     MCAPI GuiDataPickItemPacket(std::string const &, std::string const &, int const &);
 

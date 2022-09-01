@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORCOMPONENT
-#endif
     /**
      * @symbol ??0BehaviorComponent@@QEAA@XZ
+     * @hash   358137223
      */
     MCAPI BehaviorComponent();
     /**
      * @symbol ??0BehaviorComponent@@QEAA@$$QEAV0@@Z
+     * @hash   953241087
      */
     MCAPI BehaviorComponent(class BehaviorComponent &&);
     /**
      * @symbol ??4BehaviorComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -1744928934
      */
     MCAPI class BehaviorComponent & operator=(class BehaviorComponent &&);
     /**
      * @symbol ??1BehaviorComponent@@QEAA@XZ
+     * @hash   -885299513
      */
     MCAPI ~BehaviorComponent();
 

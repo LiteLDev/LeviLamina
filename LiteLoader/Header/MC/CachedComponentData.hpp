@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CACHEDCOMPONENTDATA
-#endif
     /**
      * @symbol ?cacheComponentData@CachedComponentData@@QEAAXAEBVBlock@@@Z
+     * @hash   1647709950
      */
     MCAPI void cacheComponentData(class Block const &);
 

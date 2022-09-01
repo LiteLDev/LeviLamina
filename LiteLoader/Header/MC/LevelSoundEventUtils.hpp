@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTUTILS
-#endif
     /**
      * @symbol ?serializePercentageToData@LevelSoundEventUtils@@SAHM@Z
+     * @hash   -811734633
      */
     MCAPI static int serializePercentageToData(float);
 

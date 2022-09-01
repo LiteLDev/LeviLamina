@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTINGCOMPONENT
-#endif
     /**
      * @symbol ??0TrustingComponent@@QEAA@XZ
+     * @hash   1996967631
      */
     MCAPI TrustingComponent();
     /**
      * @symbol ?getInteraction@TrustingComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   24846633
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 

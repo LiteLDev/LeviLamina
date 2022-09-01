@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1064365816
      */
     virtual ~TwistingVinesClusterFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@TwistingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -626367484
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TWISTINGVINESCLUSTERFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_placeVineString@TwistingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHH@Z
+     * @hash   -478544106
      */
     MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;
 

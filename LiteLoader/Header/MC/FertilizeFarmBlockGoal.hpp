@@ -30,76 +30,84 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1021698212
      */
     virtual ~FertilizeFarmBlockGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@FertilizeFarmBlockGoal@@UEAA_NXZ
+     * @hash   729952454
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FertilizeFarmBlockGoal@@UEAA_NXZ
+     * @hash   -861802268
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@FertilizeFarmBlockGoal@@UEAAXXZ
+     * @hash   -190018209
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@FertilizeFarmBlockGoal@@UEAAXXZ
+     * @hash   -1888083745
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@FertilizeFarmBlockGoal@@UEAAXXZ
+     * @hash   1679276250
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FertilizeFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -402177222
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?isValidTarget@FertilizeFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -796426431
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZEFARMBLOCKGOAL
-#endif
     /**
      * @symbol ??0FertilizeFarmBlockGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -1874832029
      */
     MCAPI FertilizeFarmBlockGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?tryFertilizeCrop@FertilizeFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1959881498
      */
     MCAPI bool tryFertilizeCrop(class BlockSource &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_findFertilizer@FertilizeFarmBlockGoal@@AEAA_NXZ
+     * @hash   -354675434
      */
     MCAPI bool _findFertilizer();
 

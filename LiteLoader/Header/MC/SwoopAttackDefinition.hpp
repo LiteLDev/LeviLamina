@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWOOPATTACKDEFINITION
-#endif
     /**
      * @symbol ??0SwoopAttackDefinition@@QEAA@XZ
+     * @hash   -1669465565
      */
     MCAPI SwoopAttackDefinition();
     /**
      * @symbol ?initialize@SwoopAttackDefinition@@QEAAXAEAVEntityContext@@AEAVSwoopAttackGoal@@@Z
+     * @hash   -1526233611
      */
     MCAPI void initialize(class EntityContext &, class SwoopAttackGoal &);
     /**
      * @symbol ?buildSchema@SwoopAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSwoopAttackDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -1493072561
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>> &);
 

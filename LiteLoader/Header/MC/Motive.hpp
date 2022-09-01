@@ -30,30 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOTIVE
-#endif
     /**
      * @symbol ?getHeight@Motive@@QEBAHXZ
+     * @hash   1204954422
      */
     MCAPI int getHeight() const;
     /**
      * @symbol ?getName@Motive@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -980954640
      */
     MCAPI std::string const getName() const;
     /**
      * @symbol ?getWidth@Motive@@QEBAHXZ
+     * @hash   -532199400
      */
     MCAPI int getWidth() const;
     /**
      * @symbol ?isPublic@Motive@@QEBA_NXZ
+     * @hash   25430296
      */
     MCAPI bool isPublic() const;
     /**
      * @symbol ?getAllMotivesAsList@Motive@@SA?AV?$vector@PEBVMotive@@V?$allocator@PEBVMotive@@@std@@@std@@XZ
+     * @hash   2097415678
      */
     MCAPI static std::vector<class Motive const *> getAllMotivesAsList();
     /**
      * @symbol ?getMotiveByName@Motive@@SAAEBV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1269895028
      */
     MCAPI static class Motive const & getMotiveByName(std::string const &);
 MCAPI static class Motive const mAlban;

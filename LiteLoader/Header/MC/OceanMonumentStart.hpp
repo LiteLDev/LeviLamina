@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1795944903
      */
     virtual ~OceanMonumentStart();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?postProcess@OceanMonumentStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1506684742
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTSTART
-#endif
     /**
      * @symbol ?createMonument@OceanMonumentStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z
+     * @hash   -824302583
      */
     MCAPI void createMonument(class Dimension &, class Random &, int, int);
 

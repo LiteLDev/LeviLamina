@@ -32,25 +32,26 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   587431592
      */
     virtual ~TellCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@TellCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1318469559
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELLCOMMAND
-#endif
     /**
      * @symbol ?setup@TellCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -695378752
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_sendMessageToPlayers@TellCommand@@AEBAXAEBV?$CommandSelectorResults@VPlayer@@@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEBUCommandOriginIdentity@@AEAVLevel@@@Z
+     * @hash   312318405
      */
     MCAPI void _sendMessageToPlayers(class CommandSelectorResults<class Player> const &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
 

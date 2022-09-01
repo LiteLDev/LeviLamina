@@ -29,32 +29,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONCOMPONENT
-#endif
     /**
      * @symbol ??0OpenDoorAnnotationComponent@@QEAA@XZ
+     * @hash   -1030360846
      */
     MCAPI OpenDoorAnnotationComponent();
     /**
      * @symbol ??0OpenDoorAnnotationComponent@@QEAA@$$QEAV0@@Z
+     * @hash   1408598965
      */
     MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     /**
      * @symbol ?checkPath@OpenDoorAnnotationComponent@@QEAAXAEAVMob@@@Z
+     * @hash   -359050006
      */
     MCAPI void checkPath(class Mob &);
     /**
      * @symbol ?initFromDefinition@OpenDoorAnnotationComponent@@QEAAXAEAVActor@@@Z
+     * @hash   1117063554
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?onComponentRemoved@OpenDoorAnnotationComponent@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -646342278
      */
     MCAPI void onComponentRemoved(class EntityContext &);
 
 //private:
     /**
      * @symbol ?_cleanUp@OpenDoorAnnotationComponent@@AEAAXAEAVMob@@@Z
+     * @hash   1934182593
      */
     MCAPI void _cleanUp(class Mob &);
 

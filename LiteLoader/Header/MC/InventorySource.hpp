@@ -59,14 +59,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYSOURCE
-#endif
     /**
      * @symbol ??8InventorySource@@QEBA_NAEBV0@@Z
+     * @hash   -974320336
      */
     MCAPI bool operator==(class InventorySource const &) const;
     /**
      * @symbol ?toString@InventorySource@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -923513648
      */
     MCAPI std::string toString() const;
 

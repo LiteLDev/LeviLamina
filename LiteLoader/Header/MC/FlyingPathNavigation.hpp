@@ -32,60 +32,68 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1778488530
      */
     virtual ~FlyingPathNavigation();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?initializeInternal@FlyingPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
+     * @hash   -108716365
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@FlyingPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   -163069314
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getTempMobPos@FlyingPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
+     * @hash   1946647880
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?createPath@FlyingPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
+     * @hash   -1232770307
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?createPath@FlyingPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
+     * @hash   1027439698
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?stop@FlyingPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   -1019398781
      */
     virtual void stop(class NavigationComponent &, class Mob &);
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?canUpdatePath@FlyingPathNavigation@@MEBA_NAEBVMob@@@Z
+     * @hash   58223552
      */
     virtual bool canUpdatePath(class Mob const &) const;
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?updatePath@FlyingPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   -1315674609
      */
     virtual void updatePath(class NavigationComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYINGPATHNAVIGATION
-#endif
 
 //private:
     /**
      * @symbol ?_restorePreviousGravityFlag@FlyingPathNavigation@@AEAAXAEAVMob@@@Z
+     * @hash   250479972
      */
     MCAPI void _restorePreviousGravityFlag(class Mob &);
     /**
      * @symbol ?_storePreviousGravityFlag@FlyingPathNavigation@@AEAAXAEAVMob@@@Z
+     * @hash   1003784695
      */
     MCAPI void _storePreviousGravityFlag(class Mob &);
 

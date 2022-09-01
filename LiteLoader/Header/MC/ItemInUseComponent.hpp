@@ -27,10 +27,9 @@ public:
     ItemInUseComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMINUSECOMPONENT
-#endif
     /**
      * @symbol ??1ItemInUseComponent@@QEAA@XZ
+     * @hash   -1361572920
      */
     MCAPI ~ItemInUseComponent();
 

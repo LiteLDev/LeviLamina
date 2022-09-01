@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENSINGCOMPONENT
-#endif
     /**
      * @symbol ?canSee@SensingComponent@@QEAA_NAEAVMob@@AEBVActor@@@Z
+     * @hash   843938202
      */
     MCAPI bool canSee(class Mob &, class Actor const &);
     /**
      * @symbol ?reset@SensingComponent@@QEAAXXZ
+     * @hash   -1174008797
      */
     MCAPI void reset();
     /**
      * @symbol ?withinFOV@SensingComponent@@QEAA_NAEAVMob@@AEBVVec3@@M@Z
+     * @hash   -1564959947
      */
     MCAPI bool withinFOV(class Mob &, class Vec3 const &, float);
 

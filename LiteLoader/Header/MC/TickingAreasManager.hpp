@@ -29,124 +29,151 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREASMANAGER
-#endif
     /**
      * @symbol ??0TickingAreasManager@@QEAA@XZ
+     * @hash   -1054537576
      */
     MCAPI TickingAreasManager();
     /**
      * @symbol ?addArea@TickingAreasManager@@QEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@2W4AreaLimitCheck@1@_NW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
+     * @hash   -1417854404
      */
     MCAPI enum AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, class BlockPos const &, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?addArea@TickingAreasManager@@QEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@HW4AreaLimitCheck@1@_NW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
+     * @hash   -251646045
      */
     MCAPI enum AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, int, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?addEntityArea@TickingAreasManager@@QEAAXV?$AutomaticID@VDimension@@H@@AEBUActorUniqueID@@AEBUBounds@@_NMAEAVLevelStorage@@@Z
+     * @hash   -448496803
      */
     MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, struct ActorUniqueID const &, struct Bounds const &, bool, float, class LevelStorage &);
     /**
      * @symbol ?addEntityArea@TickingAreasManager@@QEAAXV?$AutomaticID@VDimension@@H@@AEBVActor@@AEAVLevelStorage@@@Z
+     * @hash   1046137420
      */
     MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, class Actor const &, class LevelStorage &);
     /**
      * @symbol ?addTickingAreaListForDimension@TickingAreasManager@@QEAAXV?$AutomaticID@VDimension@@H@@AEBV?$shared_ptr@VTickingAreaList@@@std@@@Z
+     * @hash   1448011450
      */
     MCAPI void addTickingAreaListForDimension(class AutomaticID<class Dimension, int>, class std::shared_ptr<class TickingAreaList> const &);
     /**
      * @symbol ?countActiveStandaloneTickingAreas@TickingAreasManager@@QEBAIXZ
+     * @hash   -525718712
      */
     MCAPI unsigned int countActiveStandaloneTickingAreas() const;
     /**
      * @symbol ?countStandaloneTickingAreas@TickingAreasManager@@QEBAIXZ
+     * @hash   379827036
      */
     MCAPI unsigned int countStandaloneTickingAreas() const;
     /**
      * @symbol ?getPendingStandaloneAreaDescriptions@TickingAreasManager@@QEBA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   517290637
      */
     MCAPI std::vector<struct TickingAreaDescription> getPendingStandaloneAreaDescriptions(class AutomaticID<class Dimension, int>) const;
     /**
      * @symbol ?getPendingStandaloneAreaDescriptionsByName@TickingAreasManager@@QEBA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -858892826
      */
     MCAPI std::vector<struct TickingAreaDescription> getPendingStandaloneAreaDescriptionsByName(class AutomaticID<class Dimension, int>, std::string const &) const;
     /**
      * @symbol ?getPendingStandaloneAreaDescriptionsByPosition@TickingAreasManager@@QEBA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
+     * @hash   -2030843046
      */
     MCAPI std::vector<struct TickingAreaDescription> getPendingStandaloneAreaDescriptionsByPosition(class AutomaticID<class Dimension, int>, class BlockPos const &) const;
     /**
      * @symbol ?hasActiveAreas@TickingAreasManager@@QEBA_NXZ
+     * @hash   -2118628776
      */
     MCAPI bool hasActiveAreas() const;
     /**
      * @symbol ?isPreloadDone@TickingAreasManager@@QEBA_NXZ
+     * @hash   -905787002
      */
     MCAPI bool isPreloadDone() const;
     /**
      * @symbol ?loadArea@TickingAreasManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCompoundTag@@@Z
+     * @hash   1612953540
      */
     MCAPI void loadArea(std::string const &, class CompoundTag const *);
     /**
      * @symbol ?onTickingEntityAdded@TickingAreasManager@@QEAAXV?$AutomaticID@VDimension@@H@@AEAVActor@@AEAVLevelStorage@@@Z
+     * @hash   -1446416288
      */
     MCAPI void onTickingEntityAdded(class AutomaticID<class Dimension, int>, class Actor &, class LevelStorage &);
     /**
      * @symbol ?removePendingAreaByName@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAVLevelStorage@@@Z
+     * @hash   -853539015
      */
     MCAPI std::vector<struct TickingAreaDescription> removePendingAreaByName(class AutomaticID<class Dimension, int>, std::string const &, class LevelStorage &);
     /**
      * @symbol ?removePendingAreaByPosition@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@AEAVLevelStorage@@@Z
+     * @hash   -687747563
      */
     MCAPI std::vector<struct TickingAreaDescription> removePendingAreaByPosition(class AutomaticID<class Dimension, int>, class BlockPos const &, class LevelStorage &);
     /**
      * @symbol ?setPendingAreaLoadModeByName@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
+     * @hash   -1081058782
      */
     MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByName(class AutomaticID<class Dimension, int>, std::string const &, enum TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?setPendingAreaLoadModeByPosition@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@W4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
+     * @hash   180511478
      */
     MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByPosition(class AutomaticID<class Dimension, int>, class BlockPos const &, enum TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?tick@TickingAreasManager@@QEAAXAEBUTick@@@Z
+     * @hash   1325327956
      */
     MCAPI void tick(struct Tick const &);
     /**
      * @symbol ?update@TickingAreasManager@@QEAAXAEAVLevel@@AEAVLevelStorage@@@Z
+     * @hash   -1196237489
      */
     MCAPI void update(class Level &, class LevelStorage &);
     /**
      * @symbol ?getLimitCheck@TickingAreasManager@@SA?AW4AreaLimitCheck@1@AEBVLevel@@_N@Z
+     * @hash   374780369
      */
     MCAPI static enum TickingAreasManager::AreaLimitCheck getLimitCheck(class Level const &, bool);
 
 //private:
     /**
      * @symbol ?_addArea@TickingAreasManager@@AEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4AreaLimitCheck@1@3W4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
+     * @hash   502365771
      */
     MCAPI enum AddTickingAreaStatus _addArea(class AutomaticID<class Dimension, int>, std::string const &, struct Bounds const &, bool, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?_deletePendingArea@TickingAreasManager@@AEAAXAEAVLevelStorage@@AEBUPendingArea@@@Z
+     * @hash   -258579203
      */
     MCAPI void _deletePendingArea(class LevelStorage &, struct PendingArea const &);
     /**
      * @symbol ?_getPendingAreaDescriptionsFiltered@TickingAreasManager@@AEBA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@V?$function@$$A6A_NAEBUPendingArea@@@Z@3@@Z
+     * @hash   1009772424
      */
     MCAPI std::vector<struct TickingAreaDescription> _getPendingAreaDescriptionsFiltered(class AutomaticID<class Dimension, int>, class std::function<bool (struct PendingArea const &)>) const;
     /**
      * @symbol ?_hasPendingTickingAreaNamed@TickingAreasManager@@AEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@UPendingArea@@V?$allocator@UPendingArea@@@std@@@3@@Z
+     * @hash   1364870183
      */
     MCAPI bool _hasPendingTickingAreaNamed(std::string const &, std::vector<struct PendingArea> const &) const;
     /**
      * @symbol ?_processAdds@TickingAreasManager@@AEAAXAEAVLevel@@@Z
+     * @hash   1396934630
      */
     MCAPI void _processAdds(class Level &);
     /**
      * @symbol ?_processRemoves@TickingAreasManager@@AEAAXAEAVLevel@@AEAVLevelStorage@@@Z
+     * @hash   1830977052
      */
     MCAPI void _processRemoves(class Level &, class LevelStorage &);
     /**
      * @symbol ?_savePendingArea@TickingAreasManager@@AEAAXAEAVLevelStorage@@V?$AutomaticID@VDimension@@H@@AEBUPendingArea@@@Z
+     * @hash   350921229
      */
     MCAPI void _savePendingArea(class LevelStorage &, class AutomaticID<class Dimension, int>, struct PendingArea const &);
 

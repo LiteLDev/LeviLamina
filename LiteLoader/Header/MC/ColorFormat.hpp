@@ -56,10 +56,12 @@ MCAPI extern std::string const BLUE;
 MCAPI extern std::string const BOLD;
     /**
      * @symbol ?ColorCodeFromColor@ColorFormat@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
+     * @hash   1552007784
      */
     MCAPI std::string ColorCodeFromColor(class mce::Color const &);
     /**
      * @symbol ?ColorFromColorCode@ColorFormat@@YAPEBVColor@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1275048883
      */
     MCAPI class mce::Color const * ColorFromColorCode(std::string const &);
 MCAPI extern std::string const DARK_AQUA;
@@ -71,6 +73,7 @@ MCAPI extern std::string const DARK_RED;
 MCAPI extern std::string const ESCAPE;
     /**
      * @symbol ?FromString@ColorFormat@@YA?BV?$basic_string_span@$$CBD$0?0@gsl@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   576435190
      */
     MCAPI class gsl::basic_string_span<char const, -1> const FromString(std::string const &);
 MCAPI extern std::string const GOLD;

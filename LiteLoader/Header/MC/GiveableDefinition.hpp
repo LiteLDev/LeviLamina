@@ -31,18 +31,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GIVEABLEDEFINITION
-#endif
     /**
      * @symbol ?addGiveableTrigger@GiveableDefinition@@QEAAXAEBUGiveableTrigger@@@Z
+     * @hash   -1762267496
      */
     MCAPI void addGiveableTrigger(struct GiveableTrigger const &);
     /**
      * @symbol ?initialize@GiveableDefinition@@QEAAXAEAVEntityContext@@AEAVGiveableComponent@@@Z
+     * @hash   2089573377
      */
     MCAPI void initialize(class EntityContext &, class GiveableComponent &);
     /**
      * @symbol ?buildSchema@GiveableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGiveableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1901684454
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>> &);
 

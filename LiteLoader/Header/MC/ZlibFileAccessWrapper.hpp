@@ -31,18 +31,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ZLIBFILEACCESSWRAPPER
-#endif
     /**
      * @symbol ??0ZlibFileAccessWrapper@@QEAA@V?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@@Z
+     * @hash   -1334907839
      */
     MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
     /**
      * @symbol ?getZipFunctions@ZlibFileAccessWrapper@@QEBAPEAUzlib_filefunc64_32_def_s@@XZ
+     * @hash   -1253957831
      */
     MCAPI struct zlib_filefunc64_32_def_s * getZipFunctions() const;
     /**
      * @symbol ??1ZlibFileAccessWrapper@@QEAA@XZ
+     * @hash   -1671926860
      */
     MCAPI ~ZlibFileAccessWrapper();
 

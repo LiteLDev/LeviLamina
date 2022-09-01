@@ -22,10 +22,12 @@ namespace VibrationListenerUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getGameEventFrequency@VibrationListenerUtils@@YAHAEBVGameEvent@@@Z
+     * @hash   -731439192
      */
     MCAPI int getGameEventFrequency(class GameEvent const &);
     /**
      * @symbol ?ignoreVibrationIfSneaking@VibrationListenerUtils@@YA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
+     * @hash   1840353310
      */
     MCAPI bool ignoreVibrationIfSneaking(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
 

@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2107564254
      */
     virtual ~EatCarriedItemGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@EatCarriedItemGoal@@UEAA_NXZ
+     * @hash   -369177096
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@EatCarriedItemGoal@@UEAA_NXZ
+     * @hash   1908291062
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@EatCarriedItemGoal@@UEAAXXZ
+     * @hash   774447249
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@EatCarriedItemGoal@@UEAAXXZ
+     * @hash   2029803521
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@EatCarriedItemGoal@@UEAAXXZ
+     * @hash   -146967636
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@EatCarriedItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1861915720
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATCARRIEDITEMGOAL
-#endif
     /**
      * @symbol ??0EatCarriedItemGoal@@QEAA@AEAVMob@@H@Z
+     * @hash   -896522610
      */
     MCAPI EatCarriedItemGoal(class Mob &, int);
 

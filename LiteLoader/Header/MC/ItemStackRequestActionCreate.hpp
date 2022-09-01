@@ -30,43 +30,45 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1956793814
      */
     virtual ~ItemStackRequestActionCreate();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   2004456210
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1370913101
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCreate@@MEBAXAEAVBinaryStream@@@Z
+     * @hash   629487470
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCreate@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
+     * @hash   -351551962
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCREATE
-#endif
     /**
      * @symbol ??0ItemStackRequestActionCreate@@QEAA@XZ
+     * @hash   -708331624
      */
     MCAPI ItemStackRequestActionCreate();
     /**
      * @symbol ?getResultsIndex@ItemStackRequestActionCreate@@QEBAEXZ
+     * @hash   644892407
      */
     MCAPI unsigned char getResultsIndex() const;
 

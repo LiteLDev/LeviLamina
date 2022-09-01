@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATORSYSTEMIMPL
-#endif
     /**
      * @symbol ?_tickPosition@MovementInterpolatorSystemImpl@@SA?AV?$tuple@VVec3@@M@std@@AEAUMovementInterpolatorComponent@@AEBVVec3@@M@Z
+     * @hash   -567799487
      */
     MCAPI static class std::tuple<class Vec3, float> _tickPosition(struct MovementInterpolatorComponent &, class Vec3 const &, float);
     /**
      * @symbol ?_tickRotation@MovementInterpolatorSystemImpl@@SA?AV?$tuple@VVec2@@V1@@std@@AEAUMovementInterpolatorComponent@@AEBVVec2@@1@Z
+     * @hash   1891545540
      */
     MCAPI static class std::tuple<class Vec2, class Vec2> _tickRotation(struct MovementInterpolatorComponent &, class Vec2 const &, class Vec2 const &);
 

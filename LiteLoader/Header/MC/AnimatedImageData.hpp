@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEDIMAGEDATA
-#endif
     /**
      * @symbol ??0AnimatedImageData@@QEAA@W4AnimatedTextureType@persona@@W4AnimationExpression@2@AEBUImage@mce@@M@Z
+     * @hash   400382222
      */
     MCAPI AnimatedImageData(enum persona::AnimatedTextureType, enum persona::AnimationExpression, struct mce::Image const &, float);
     /**
      * @symbol ??0AnimatedImageData@@QEAA@AEBV0@@Z
+     * @hash   159234209
      */
     MCAPI AnimatedImageData(class AnimatedImageData const &);
 

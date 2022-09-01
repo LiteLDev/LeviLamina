@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTIO
-#endif
     /**
      * @symbol ?read@NbtIo@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVIDataInput@@@Z
+     * @hash   -1060321855
      */
     MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput &);
     /**
      * @symbol ?write@NbtIo@@SAXPEBVCompoundTag@@AEAVIDataOutput@@@Z
+     * @hash   578807094
      */
     MCAPI static void write(class CompoundTag const *, class IDataOutput &);
 

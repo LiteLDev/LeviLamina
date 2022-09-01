@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORLEAVEVOLUMECOMPONENT
-#endif
     /**
      * @symbol ??1OnActorLeaveVolumeComponent@@QEAA@XZ
+     * @hash   2018109822
      */
     MCAPI ~OnActorLeaveVolumeComponent();
 

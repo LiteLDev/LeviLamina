@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2067181117
      */
     virtual ~LegacyTreeFeature();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?place@LegacyTreeFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   -205903906
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTREEFEATURE
-#endif
     /**
      * @symbol ??0LegacyTreeFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
+     * @hash   861908490
      */
     MCAPI LegacyTreeFeature(enum LegacyTreeFeature::Type, class FeatureRegistry &);
 

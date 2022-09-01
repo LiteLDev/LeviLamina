@@ -29,76 +29,91 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATELEVELDATA
-#endif
     /**
      * @symbol ??0WorldTemplateLevelData@@QEAA@_N0AEBVBaseGameVersion@@1@Z
+     * @hash   1332091573
      */
     MCAPI WorldTemplateLevelData(bool, bool, class BaseGameVersion const &, class BaseGameVersion const &);
     /**
      * @symbol ??0WorldTemplateLevelData@@QEAA@XZ
+     * @hash   -1934840658
      */
     MCAPI WorldTemplateLevelData();
     /**
      * @symbol ?getBaseGameVersion@WorldTemplateLevelData@@QEBAAEBVBaseGameVersion@@XZ
+     * @hash   -89646488
      */
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
     /**
      * @symbol ?getContentIdentity@WorldTemplateLevelData@@QEBAAEBVContentIdentity@@XZ
+     * @hash   -1071768508
      */
     MCAPI class ContentIdentity const & getContentIdentity() const;
     /**
      * @symbol ?getTagData@WorldTemplateLevelData@@QEAAXAEBVCompoundTag@@@Z
+     * @hash   -379386878
      */
     MCAPI void getTagData(class CompoundTag const &);
     /**
      * @symbol ?getWorldTemplateIdentity@WorldTemplateLevelData@@QEBAAEBUPackIdVersion@@XZ
+     * @hash   1440678540
      */
     MCAPI struct PackIdVersion const & getWorldTemplateIdentity() const;
     /**
      * @symbol ?isFromWorldTemplate@WorldTemplateLevelData@@QEBA_NXZ
+     * @hash   -1576856980
      */
     MCAPI bool isFromWorldTemplate() const;
     /**
      * @symbol ?isWorldTemplateOptionLocked@WorldTemplateLevelData@@QEBA_NXZ
+     * @hash   -1143175730
      */
     MCAPI bool isWorldTemplateOptionLocked() const;
     /**
      * @symbol ?setBaseGameVersion@WorldTemplateLevelData@@QEAAXAEBVBaseGameVersion@@@Z
+     * @hash   -1243382138
      */
     MCAPI void setBaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?setContentIdentity@WorldTemplateLevelData@@QEAAXAEBVContentIdentity@@@Z
+     * @hash   -72847310
      */
     MCAPI void setContentIdentity(class ContentIdentity const &);
     /**
      * @symbol ?setIsWorldTemplateOptionLocked@WorldTemplateLevelData@@QEAAX_N@Z
+     * @hash   -2063462572
      */
     MCAPI void setIsWorldTemplateOptionLocked(bool);
     /**
      * @symbol ?setMaxBaseGameVersion@WorldTemplateLevelData@@QEAAXAEBVBaseGameVersion@@@Z
+     * @hash   367961080
      */
     MCAPI void setMaxBaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?setTagData@WorldTemplateLevelData@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   473961238
      */
     MCAPI void setTagData(class CompoundTag &) const;
     /**
      * @symbol ?setWorldTemplateIdentity@WorldTemplateLevelData@@QEAAXAEBUPackIdVersion@@@Z
+     * @hash   -1845091174
      */
     MCAPI void setWorldTemplateIdentity(struct PackIdVersion const &);
     /**
      * @symbol ??1WorldTemplateLevelData@@QEAA@XZ
+     * @hash   -1878592660
      */
     MCAPI ~WorldTemplateLevelData();
 
 //protected:
     /**
      * @symbol ?_getTagData@WorldTemplateLevelData@@IEAAXAEBVCompoundTag@@@Z
+     * @hash   376792252
      */
     MCAPI void _getTagData(class CompoundTag const &);
     /**
      * @symbol ?_setTagData@WorldTemplateLevelData@@IEBAXAEAVCompoundTag@@@Z
+     * @hash   1204018618
      */
     MCAPI void _setTagData(class CompoundTag &) const;
 

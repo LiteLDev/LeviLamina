@@ -28,50 +28,59 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERMISSIONSHANDLER
-#endif
     /**
      * @symbol ??0PermissionsHandler@@QEAA@XZ
+     * @hash   190582866
      */
     MCAPI PermissionsHandler();
     /**
      * @symbol ??0PermissionsHandler@@QEAA@AEBV0@@Z
+     * @hash   961088321
      */
     MCAPI PermissionsHandler(class PermissionsHandler const &);
     /**
      * @symbol ?addSaveData@PermissionsHandler@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   2116262296
      */
     MCAPI void addSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getCommandPermissions@PermissionsHandler@@QEBA?AW4CommandPermissionLevel@@XZ
+     * @hash   1169515862
      */
     MCAPI enum CommandPermissionLevel getCommandPermissions() const;
     /**
      * @symbol ?getPlayerPermissions@PermissionsHandler@@QEBA?AW4PlayerPermissionLevel@@XZ
+     * @hash   -1495389454
      */
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
     /**
      * @symbol ?loadSaveData@PermissionsHandler@@QEAA_NAEBVCompoundTag@@@Z
+     * @hash   -1461807861
      */
     MCAPI bool loadSaveData(class CompoundTag const &);
     /**
      * @symbol ??8PermissionsHandler@@QEBA_NAEBV0@@Z
+     * @hash   627594129
      */
     MCAPI bool operator==(class PermissionsHandler const &) const;
     /**
      * @symbol ?setCommandPermissions@PermissionsHandler@@QEAAXW4CommandPermissionLevel@@@Z
+     * @hash   2061812280
      */
     MCAPI void setCommandPermissions(enum CommandPermissionLevel);
     /**
      * @symbol ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
+     * @hash   634424782
      */
     MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
     /**
      * @symbol ?playerPermissionLevelFromString@PermissionsHandler@@SA?AW4PlayerPermissionLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1487468149
      */
     MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
     /**
      * @symbol ?playerPermissionLevelToString@PermissionsHandler@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4PlayerPermissionLevel@@@Z
+     * @hash   -1441723133
      */
     MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
 

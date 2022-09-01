@@ -27,38 +27,44 @@ public:
     MolangScriptArg() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGSCRIPTARG
-#endif
     /**
      * @symbol ??0MolangScriptArg@@QEAA@H@Z
+     * @hash   -472590172
      */
     MCAPI MolangScriptArg(int);
     /**
      * @symbol ??0MolangScriptArg@@QEAA@$$QEAU0@@Z
+     * @hash   -682730115
      */
     MCAPI MolangScriptArg(struct MolangScriptArg &&);
     /**
      * @symbol ??0MolangScriptArg@@QEAA@AEBU0@@Z
+     * @hash   -1861988027
      */
     MCAPI MolangScriptArg(struct MolangScriptArg const &);
     /**
      * @symbol ??0MolangScriptArg@@QEAA@M@Z
+     * @hash   -2047662414
      */
     MCAPI MolangScriptArg(float);
     /**
      * @symbol ?clear@MolangScriptArg@@QEAAXXZ
+     * @hash   -1034759729
      */
     MCAPI void clear();
     /**
      * @symbol ??4MolangScriptArg@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   129429654
      */
     MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg &&);
     /**
      * @symbol ??4MolangScriptArg@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -211516786
      */
     MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg const &);
     /**
      * @symbol ??1MolangScriptArg@@QEAA@XZ
+     * @hash   1456148231
      */
     MCAPI ~MolangScriptArg();
 MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;

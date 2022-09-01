@@ -30,29 +30,31 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@PreferredPathDescription@@UEBAPEBDXZ
+     * @hash   -553500290
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   -556708320
      */
     virtual ~PreferredPathDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@PreferredPathDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1222330037
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@PreferredPathDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1596564161
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHDESCRIPTION
-#endif
     /**
      * @symbol ??0PreferredPathDescription@@QEAA@XZ
+     * @hash   1996326466
      */
     MCAPI PreferredPathDescription();
 

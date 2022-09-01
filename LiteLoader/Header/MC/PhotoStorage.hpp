@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PHOTOSTORAGE
-#endif
     /**
      * @symbol ??0PhotoStorage@@QEAA@AEBVPath@Core@@@Z
+     * @hash   -1285217806
      */
     MCAPI PhotoStorage(class Core::Path const &);
     /**
      * @symbol ??1PhotoStorage@@QEAA@XZ
+     * @hash   -305957213
      */
     MCAPI ~PhotoStorage();
 MCAPI static std::string const BOOKS_DIR;
@@ -49,6 +49,7 @@ MCAPI static std::string const PHOTO_DIR;
 //private:
     /**
      * @symbol ?_readManifest@PhotoStorage@@AEAAXXZ
+     * @hash   222267095
      */
     MCAPI void _readManifest();
 

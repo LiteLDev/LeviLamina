@@ -33,202 +33,220 @@ public:
 
 public:
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@Arrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   279079844
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   278956631
      */
     virtual ~Arrow();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 49
+     * @vftbl  49
      * @symbol ?normalTick@Arrow@@UEAAXXZ
+     * @hash   -906872590
      */
     virtual void normalTick();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 89
+     * @vftbl  89
      * @symbol ?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z
+     * @hash   261425015
      */
     virtual void playerTouch(class Player &);
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 240
+     * @vftbl  240
      * @symbol ?setAuxValue@Arrow@@UEAAXH@Z
+     * @hash   -1311219806
      */
     virtual void setAuxValue(int);
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1899974523
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   227053687
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@Arrow@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   594798086
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
     /**
-     * @vtable 285
-     * @symbol __unk_vfn_285
+     * @vftbl  285
+     * @hash   -1895428993
      */
     virtual void __unk_vfn_285();
     /**
-     * @vtable 286
+     * @vftbl  286
      * @symbol ?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z
+     * @hash   -1201332059
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
-     * @vtable 288
+     * @vftbl  288
      * @symbol ?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ
+     * @hash   510668440
      */
     virtual class ItemStack _getPickupItem() const;
     /**
-     * @vtable 289
+     * @vftbl  289
      * @symbol ?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z
+     * @hash   -481612876
      */
     virtual void applyParticleColor(class Particle *);
     /**
-     * @vtable 290
+     * @vftbl  290
      * @symbol ?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ
+     * @hash   15891552
      */
     virtual class mce::Color getEffectColor();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARROW
     /**
-     * @vtable -1
      * @symbol ?canMakeStepSound@Arrow@@MEBA_NXZ
+     * @hash   139832205
      */
     MCVAPI bool canMakeStepSound() const;
 #endif
     /**
      * @symbol ??0Arrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -1974743099
      */
     MCAPI Arrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?addMobEffect@Arrow@@QEAAXVMobEffectInstance@@@Z
+     * @hash   -136662746
      */
     MCAPI void addMobEffect(class MobEffectInstance);
     /**
      * @symbol ?getAuxValue@Arrow@@QEBAHXZ
+     * @hash   -1612218274
      */
     MCAPI int getAuxValue() const;
     /**
      * @symbol ?setCritical@Arrow@@QEAAX_N@Z
+     * @hash   1104044720
      */
     MCAPI void setCritical(bool);
     /**
      * @symbol ?setEnchantFlame@Arrow@@QEAAXH@Z
+     * @hash   -362947042
      */
     MCAPI void setEnchantFlame(int);
     /**
      * @symbol ?setEnchantInfinity@Arrow@@QEAAXH@Z
+     * @hash   -397162598
      */
     MCAPI void setEnchantInfinity(int);
     /**
      * @symbol ?setEnchantPower@Arrow@@QEAAXH@Z
+     * @hash   1801670698
      */
     MCAPI void setEnchantPower(int);
     /**
      * @symbol ?setEnchantPunch@Arrow@@QEAAXH@Z
+     * @hash   -1592461096
      */
     MCAPI void setEnchantPunch(int);
 

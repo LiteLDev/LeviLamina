@@ -27,10 +27,9 @@ public:
     CreativeItemCategoryContainer() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMCATEGORYCONTAINER
-#endif
     /**
      * @symbol ?fromString@CreativeItemCategoryContainer@@SAXAEAU1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1983651827
      */
     MCAPI static void fromString(struct CreativeItemCategoryContainer &, std::string const &);
 

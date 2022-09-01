@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONPUSHEVENT
-#endif
     /**
      * @symbol ??1ButtonPushEvent@@QEAA@XZ
+     * @hash   912836010
      */
     MCAPI ~ButtonPushEvent();
 

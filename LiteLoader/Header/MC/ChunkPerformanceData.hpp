@@ -28,18 +28,19 @@ public:
     ChunkPerformanceData(struct ChunkPerformanceData const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKPERFORMANCEDATA
-#endif
     /**
      * @symbol ??0ChunkPerformanceData@@QEAA@XZ
+     * @hash   -1439644519
      */
     MCAPI ChunkPerformanceData();
     /**
      * @symbol ?recordLoadedChunk@ChunkPerformanceData@@QEAAXAEBVLevelChunk@@@Z
+     * @hash   1377312370
      */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     /**
      * @symbol ?resetAll@ChunkPerformanceData@@QEAAXXZ
+     * @hash   656821909
      */
     MCAPI void resetAll();
 

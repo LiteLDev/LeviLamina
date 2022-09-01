@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1214201535
      */
     virtual ~LootSystem();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?registerEvents@LootSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+     * @hash   683116179
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -1314725657
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
-#endif
 
 };

@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKFILEDOWNLOADERMANAGER
-#endif
     /**
      * @symbol ?cleanup@ResourcePackFileDownloaderManager@@QEAAXXZ
+     * @hash   -264975491
      */
     MCAPI void cleanup();
     /**
      * @symbol ?update@ResourcePackFileDownloaderManager@@QEAAXXZ
+     * @hash   -524347355
      */
     MCAPI void update();
 

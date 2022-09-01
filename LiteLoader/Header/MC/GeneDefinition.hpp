@@ -29,14 +29,14 @@ public:
     GeneDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENEDEFINITION
-#endif
     /**
      * @symbol ?addGeneticVariant@GeneDefinition@@QEAAXAEBUGeneticVariant@@@Z
+     * @hash   1586509092
      */
     MCAPI void addGeneticVariant(struct GeneticVariant const &);
     /**
      * @symbol ??1GeneDefinition@@QEAA@XZ
+     * @hash   1130780178
      */
     MCAPI ~GeneDefinition();
 

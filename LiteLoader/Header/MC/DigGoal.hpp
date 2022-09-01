@@ -29,49 +29,54 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   887981699
      */
     virtual ~DigGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@DigGoal@@UEAA_NXZ
+     * @hash   -537066421
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DigGoal@@UEAA_NXZ
+     * @hash   127711193
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@DigGoal@@UEAAXXZ
+     * @hash   1063476260
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@DigGoal@@UEAAXXZ
+     * @hash   -1658853900
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@DigGoal@@UEAAXXZ
+     * @hash   91252751
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DigGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -484014651
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGOAL
-#endif
     /**
      * @symbol ??0DigGoal@@QEAA@AEAVMob@@@Z
+     * @hash   953459688
      */
     MCAPI DigGoal(class Mob &);
 

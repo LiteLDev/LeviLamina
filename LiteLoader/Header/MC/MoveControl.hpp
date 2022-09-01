@@ -30,29 +30,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1932763238
      */
     virtual ~MoveControl();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?initializeInternal@MoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+     * @hash   -134069927
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     * @hash   1967012602
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?setWantedPosition@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
+     * @hash   1281249415
      */
     virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROL
-#endif
     /**
      * @symbol ??0MoveControl@@QEAA@XZ
+     * @hash   -1093407096
      */
     MCAPI MoveControl();
 MCAPI static float const MIN_DELTA_TO_JUMP;
@@ -62,16 +64,19 @@ MCAPI static float const MIN_SPEED;
 MCAPI static float const MIN_SPEED_SQR;
     /**
      * @symbol ?getDiffVector@MoveControl@@SA?AVVec3@@AEBV2@AEBVMob@@@Z
+     * @hash   -912672969
      */
     MCAPI static class Vec3 getDiffVector(class Vec3 const &, class Mob const &);
 
 //protected:
     /**
      * @symbol ?calculateMoveSpeed@MoveControl@@IEAAMAEBVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z
+     * @hash   250882683
      */
     MCAPI float calculateMoveSpeed(class MoveControlComponent const &, class Mob &, class Vec3 const &, float);
     /**
      * @symbol ?calculateYRotation@MoveControl@@IEAAMAEBVMoveControlComponent@@AEBVMob@@AEBVVec3@@M@Z
+     * @hash   -590516647
      */
     MCAPI float calculateYRotation(class MoveControlComponent const &, class Mob const &, class Vec3 const &, float);
 

@@ -32,18 +32,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTIONCOMPONENT
     /**
-     * @vtable -1
      * @symbol ?_onEnd@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+     * @hash   -1561219029
      */
     MCVAPI void _onEnd(class LabTableReaction &, class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?_onStart@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+     * @hash   1067449042
      */
     MCVAPI void _onStart(class LabTableReaction &, class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?_onTick@LabTableReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+     * @hash   1664205161
      */
     MCVAPI void _onTick(class LabTableReaction &, class BlockSource &);
 #endif

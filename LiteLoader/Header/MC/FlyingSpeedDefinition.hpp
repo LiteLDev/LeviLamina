@@ -30,10 +30,9 @@ public:
     FlyingSpeedDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYINGSPEEDDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@FlyingSpeedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFlyingSpeedDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1927163356
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FlyingSpeedDefinition>> &);
 

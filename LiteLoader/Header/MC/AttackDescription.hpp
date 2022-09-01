@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@AttackDescription@@UEBAPEBDXZ
+     * @hash   -1220013312
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   497432162
      */
     virtual ~AttackDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@AttackDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1709225763
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@AttackDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   296099277
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKDESCRIPTION
-#endif
 
 };

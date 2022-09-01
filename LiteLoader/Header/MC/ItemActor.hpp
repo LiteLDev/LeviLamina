@@ -36,219 +36,241 @@ public:
 
 public:
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@ItemActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   -1166544437
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   -1806437520
      */
     virtual ~ItemActor();
     /**
-     * @vtable 20
+     * @vftbl  20
      * @symbol ?isRuntimePredictedMovementEnabled@ItemActor@@UEBA_NXZ
+     * @hash   869657022
      */
     virtual bool isRuntimePredictedMovementEnabled() const;
     /**
-     * @vtable 40
+     * @vftbl  40
      * @symbol ?isFireImmune@ItemActor@@UEBA_NXZ
+     * @hash   -1993556695
      */
     virtual bool isFireImmune() const;
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 48
+     * @vftbl  48
      * @symbol ?tryCreateAddActorPacket@ItemActor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
+     * @hash   1814537131
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
-     * @vtable 49
+     * @vftbl  49
      * @symbol ?normalTick@ItemActor@@UEAAXXZ
+     * @hash   -2111743415
      */
     virtual void normalTick();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 89
+     * @vftbl  89
      * @symbol ?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1022665040
      */
     virtual void playerTouch(class Player &);
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 135
+     * @vftbl  135
      * @symbol ?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z
+     * @hash   602083120
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vtable 142
+     * @vftbl  142
      * @symbol ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
+     * @hash   -1619478764
      */
     virtual void handleEntityEvent(enum ActorEvent, int);
     /**
-     * @vtable 172
+     * @vftbl  172
      * @symbol ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
+     * @hash   303033380
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @vtable 176
+     * @vftbl  176
      * @symbol ?getLiquidAABB@ItemActor@@UEBA?AVAABB@@W4MaterialType@@@Z
+     * @hash   -57630926
      */
     virtual class AABB getLiquidAABB(enum MaterialType) const;
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 199
+     * @vftbl  199
      * @symbol ?canSynchronizeNewEntity@ItemActor@@UEBA_NXZ
+     * @hash   1787221993
      */
     virtual bool canSynchronizeNewEntity() const;
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1899974523
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 270
+     * @vftbl  270
      * @symbol ?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     * @hash   -1609175954
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vtable 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -907819378
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@ItemActor@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -2083438849
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACTOR
     /**
-     * @vtable -1
      * @symbol ?canMakeStepSound@ItemActor@@UEBA_NXZ
+     * @hash   1610238139
      */
     MCVAPI bool canMakeStepSound() const;
 #endif
     /**
      * @symbol ??0ItemActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -1526408754
      */
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@ItemActor@@QEAAXXZ
+     * @hash   2039073995
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setSourceEntity@ItemActor@@QEAAXPEBVActor@@@Z
+     * @hash   -1735658989
      */
     MCAPI void setSourceEntity(class Actor const *);
     /**
      * @symbol ?tryGetFromEntity@ItemActor@@SAPEAV1@AEAVEntityContext@@_N@Z
+     * @hash   2094099672
      */
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     /**
      * @symbol ?_addComponents@ItemActor@@AEAAXXZ
+     * @hash   1046733490
      */
     MCAPI void _addComponents();
     /**
      * @symbol ?_dropContents@ItemActor@@AEAAXXZ
+     * @hash   331935362
      */
     MCAPI void _dropContents();
     /**
      * @symbol ?_merge@ItemActor@@AEAA_NPEAV1@@Z
+     * @hash   608453481
      */
     MCAPI bool _merge(class ItemActor *);
     /**
      * @symbol ?_validateItem@ItemActor@@AEAAXXZ
+     * @hash   -1859255038
      */
     MCAPI void _validateItem();
 

@@ -27,14 +27,14 @@ public:
     ItemStackResponseContainerInfo() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSECONTAINERINFO
-#endif
     /**
      * @symbol ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
+     * @hash   512769356
      */
     MCAPI ItemStackResponseContainerInfo(enum ContainerEnumName);
     /**
      * @symbol ??1ItemStackResponseContainerInfo@@QEAA@XZ
+     * @hash   625444611
      */
     MCAPI ~ItemStackResponseContainerInfo();
 

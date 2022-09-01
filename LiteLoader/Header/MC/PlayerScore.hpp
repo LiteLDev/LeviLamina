@@ -27,14 +27,14 @@ public:
     PlayerScore() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSCORE
-#endif
     /**
      * @symbol ??0PlayerScore@@QEAA@AEBUScoreboardId@@H@Z
+     * @hash   -519265199
      */
     MCAPI PlayerScore(struct ScoreboardId const &, int);
     /**
      * @symbol ?getId@PlayerScore@@QEBAAEBUScoreboardId@@XZ
+     * @hash   633250504
      */
     MCAPI struct ScoreboardId const & getId() const;
 

@@ -69,52 +69,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1658066258
      */
     virtual ~Packet();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@UpdateTradePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   799490161
      */
     virtual enum MinecraftPacketIds getId() const = 0;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@UpdateTradePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -21487858
      */
     virtual std::string getName() const = 0;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@UpdateTradePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1878747727
      */
     virtual void write(class BinaryStream &) const = 0;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?readExtended@Packet@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   291178377
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?disallowBatching@Packet@@UEBA_NXZ
+     * @hash   1131847923
      */
     virtual bool disallowBatching() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@UpdateTradePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1142874111
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET
-#endif
     /**
      * @symbol ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z
+     * @hash   -943725859
      */
     MCAPI void handle(class NetworkIdentifier const &, class NetEventCallback &, class std::shared_ptr<class Packet> &);
     /**
      * @symbol ?readNoHeader@Packet@@QEAA_NAEAVReadOnlyBinaryStream@@AEBW4SubClientId@@AEAUExtendedStreamReadResult@@@Z
+     * @hash   2105829311
      */
     MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum SubClientId const &, struct ExtendedStreamReadResult &);
     /**
      * @symbol ?writeWithHeader@Packet@@QEBAXW4SubClientId@@AEAVBinaryStream@@@Z
+     * @hash   360376525
      */
     MCAPI void writeWithHeader(enum SubClientId, class BinaryStream &) const;
 

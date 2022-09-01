@@ -31,26 +31,27 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@ContainerDescription@@UEBAPEBDXZ
+     * @hash   -1938339399
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   668426117
      */
     virtual ~ContainerDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@ContainerDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1209409130
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@ContainerDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1063696084
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERDESCRIPTION
-#endif
 
 };

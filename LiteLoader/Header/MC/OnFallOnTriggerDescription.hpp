@@ -32,27 +32,28 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2047284167
      */
     virtual ~OnFallOnTriggerDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@OnFallOnTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -638261508
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@OnFallOnTriggerDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -1444403032
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?buildSchema@OnFallOnTriggerDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z
+     * @hash   -53430713
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGERDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
 
 };

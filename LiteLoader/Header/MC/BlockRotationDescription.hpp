@@ -30,45 +30,49 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1134729061
      */
     virtual ~BlockRotationDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@BlockRotationDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1440853400
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockRotationDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -2007731060
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockRotationDescription@@UEBA_NXZ
+     * @hash   2060190720
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockRotationDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   1232037602
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockRotationDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -23000176
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKROTATIONDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockRotationDescription@@SAXXZ
+     * @hash   1393299635
      */
     MCAPI static void bindType();
 

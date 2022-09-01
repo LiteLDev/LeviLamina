@@ -27,10 +27,9 @@ public:
     ChemistryIngredient() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYINGREDIENT
-#endif
     /**
      * @symbol ??1ChemistryIngredient@@QEAA@XZ
+     * @hash   1782186849
      */
     MCAPI ~ChemistryIngredient();
 

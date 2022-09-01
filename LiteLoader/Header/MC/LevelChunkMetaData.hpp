@@ -27,26 +27,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKMETADATA
-#endif
     /**
      * @symbol ??0LevelChunkMetaData@@QEAA@AEBV0@@Z
+     * @hash   -1458330575
      */
     MCAPI LevelChunkMetaData(class LevelChunkMetaData const &);
     /**
      * @symbol ??0LevelChunkMetaData@@QEAA@AEAVIDataInput@@@Z
+     * @hash   1118601981
      */
     MCAPI LevelChunkMetaData(class IDataInput &);
     /**
      * @symbol ?getCurrentHash@LevelChunkMetaData@@QEBA_KXZ
+     * @hash   1211810907
      */
     MCAPI unsigned __int64 getCurrentHash() const;
     /**
      * @symbol ?serialize@LevelChunkMetaData@@QEBAXAEAVIDataOutput@@@Z
+     * @hash   274380830
      */
     MCAPI void serialize(class IDataOutput &) const;
     /**
      * @symbol ??1LevelChunkMetaData@@QEAA@XZ
+     * @hash   1503028530
      */
     MCAPI ~LevelChunkMetaData();
 MCAPI static unsigned __int64 const INVALID_META_DATA;
@@ -54,10 +57,12 @@ MCAPI static unsigned __int64 const INVALID_META_DATA;
 //protected:
     /**
      * @symbol ?_deserialize@LevelChunkMetaData@@IEAAXAEAVIDataInput@@@Z
+     * @hash   1721402506
      */
     MCAPI void _deserialize(class IDataInput &);
     /**
      * @symbol ?_recomputeHash@LevelChunkMetaData@@IEBAXXZ
+     * @hash   -2088533315
      */
     MCAPI void _recomputeHash() const;
 

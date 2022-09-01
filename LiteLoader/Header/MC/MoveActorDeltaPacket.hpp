@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1961377126
      */
     virtual ~MoveActorDeltaPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@MoveActorDeltaPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1820271694
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@MoveActorDeltaPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -461297057
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@MoveActorDeltaPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1052462536
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@MoveActorDeltaPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -352000424
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEACTORDELTAPACKET
-#endif
     /**
      * @symbol ??0MoveActorDeltaPacket@@QEAA@XZ
+     * @hash   -1181632680
      */
     MCAPI MoveActorDeltaPacket();
     /**
      * @symbol ??0MoveActorDeltaPacket@@QEAA@AEBVMoveActorDeltaData@@@Z
+     * @hash   -52527263
      */
     MCAPI MoveActorDeltaPacket(class MoveActorDeltaData const &);
 

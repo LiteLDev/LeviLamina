@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -208443696
      */
     virtual ~PackManifestFactory();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?create@PackManifestFactory@@UEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBVResourceLocation@@AEAVPackReport@@PEAVSubpackInfoCollection@@@Z
+     * @hash   1551441770
      */
     virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy &, class ResourceLocation const &, class PackReport &, class SubpackInfoCollection *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMANIFESTFACTORY
-#endif
     /**
      * @symbol ??0PackManifestFactory@@QEAA@AEAVIPackTelemetry@@@Z
+     * @hash   -1205361657
      */
     MCAPI PackManifestFactory(class IPackTelemetry &);
 MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
@@ -55,6 +55,7 @@ MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD_BACKUP;
 MCAPI static class SemVersion const REQUIRED_VANILLA_FOR_OLD_PACKS;
     /**
      * @symbol ?contentKeyLookup@PackManifestFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     * @hash   -200789047
      */
     MCAPI static std::string contentKeyLookup(std::string const &);
 MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mAlternateContentKeys;

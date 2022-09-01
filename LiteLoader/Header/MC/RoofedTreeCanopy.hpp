@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   863779267
      */
     virtual ~RoofedTreeCanopy();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?placeCanopy@RoofedTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
+     * @hash   -83896035
      */
     virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROOFEDTREECANOPY
-#endif
 
 };

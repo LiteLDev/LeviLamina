@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -56881443
      */
     virtual ~ServerCorrectionPolicy();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?shouldCorrectMovement@ServerCorrectionPolicy@@UEAA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@_K@Z
+     * @hash   -982407811
      */
     virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCORRECTIONPOLICY
-#endif
 
 };

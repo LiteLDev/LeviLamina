@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   88879171
      */
     virtual ~AgentLookControl();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?initializeInternal@AgentLookControl@@UEAAXAEAVMob@@@Z
+     * @hash   -397219935
      */
     virtual void initializeInternal(class Mob &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@AgentLookControl@@UEAAXAEAVMob@@@Z
+     * @hash   -760808271
      */
     virtual void tick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTLOOKCONTROL
-#endif
     /**
      * @symbol ??0AgentLookControl@@QEAA@XZ
+     * @hash   379086821
      */
     MCAPI AgentLookControl();
 MCAPI static float sBaseYMax;

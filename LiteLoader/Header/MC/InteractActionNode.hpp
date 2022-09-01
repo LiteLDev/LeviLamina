@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   377357560
      */
     virtual ~InteractActionNode();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?tick@InteractActionNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -1940675925
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@InteractActionNode@@EEAAXAEAVActor@@@Z
+     * @hash   -543657441
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTACTIONNODE
-#endif
     /**
      * @symbol ??0InteractActionNode@@QEAA@XZ
+     * @hash   -971746502
      */
     MCAPI InteractActionNode();
 

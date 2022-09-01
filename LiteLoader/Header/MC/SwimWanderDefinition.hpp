@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWANDERDEFINITION
-#endif
     /**
      * @symbol ??0SwimWanderDefinition@@QEAA@XZ
+     * @hash   -1128321180
      */
     MCAPI SwimWanderDefinition();
     /**
      * @symbol ?initialize@SwimWanderDefinition@@QEAAXAEAVEntityContext@@AEAVSwimWanderGoal@@@Z
+     * @hash   -2009027309
      */
     MCAPI void initialize(class EntityContext &, class SwimWanderGoal &);
     /**
      * @symbol ?buildSchema@SwimWanderDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSwimWanderDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -922106957
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWanderDefinition>> &);
 

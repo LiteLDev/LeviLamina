@@ -33,52 +33,59 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -920771149
      */
     virtual ~BannerAddPatternRecipe();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?assemble@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   -265788745
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ
+     * @hash   410231435
      */
     virtual int getCraftingSize() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   724854364
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   822106376
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?matches@BannerAddPatternRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   -2146726147
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?size@BannerAddPatternRecipe@@UEBAHXZ
+     * @hash   517554675
      */
     virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERADDPATTERNRECIPE
-#endif
     /**
      * @symbol ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     * @hash   1204288657
      */
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
      * @symbol ??0BannerAddPatternRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   -732936714
      */
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?matchPatterns@BannerAddPatternRecipe@@QEBA?BV?$NonOwnerPointer@$$CBVBannerPattern@@@Bedrock@@AEAVCraftingContainer@@@Z
+     * @hash   -1890798184
      */
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
 MCAPI static class mce::UUID const ID;

@@ -37,32 +37,35 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1959780170
      */
     virtual ~NpcCommandAction();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?toJson@NpcCommandAction@@UEAA?AVValue@Json@@XZ
+     * @hash   -1481276870
      */
     virtual class Json::Value toJson();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?fromJson@NpcCommandAction@@UEAA_NAEBVValue@Json@@@Z
+     * @hash   -19860531
      */
     virtual bool fromJson(class Json::Value const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCCOMMANDACTION
-#endif
     /**
      * @symbol ??0NpcCommandAction@@QEAA@XZ
+     * @hash   -399016356
      */
     MCAPI NpcCommandAction();
     /**
      * @symbol ?getCommands@NpcCommandAction@@QEAAAEAV?$vector@USavedCommand@NpcCommandAction@@V?$allocator@USavedCommand@NpcCommandAction@@@std@@@std@@XZ
+     * @hash   -1565256196
      */
     MCAPI std::vector<struct NpcCommandAction::SavedCommand> & getCommands();
     /**
      * @symbol ?setCommands@NpcCommandAction@@QEAAX$$QEAV?$vector@USavedCommand@NpcCommandAction@@V?$allocator@USavedCommand@NpcCommandAction@@@std@@@std@@@Z
+     * @hash   -1525050482
      */
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);
 MCAPI static char const COMMAND_DELIMITER;

@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1917113233
      */
     virtual ~DiscFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@DiscFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1630203531
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISCFEATURE
-#endif
     /**
      * @symbol ??0DiscFeature@@QEAA@AEBVBlock@@H@Z
+     * @hash   -118325755
      */
     MCAPI DiscFeature(class Block const &, int);
 

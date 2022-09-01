@@ -35,26 +35,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOCALNOISECACHE
-#endif
     /**
      * @symbol ??0ChunkLocalNoiseCache@@QEAA@XZ
+     * @hash   1855387730
      */
     MCAPI ChunkLocalNoiseCache();
     /**
      * @symbol ??0ChunkLocalNoiseCache@@QEAA@V?$DividedPos2d@$03@@H@Z
+     * @hash   40557190
      */
     MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
     /**
      * @symbol ?getCacheEntry@ChunkLocalNoiseCache@@QEBAAEBUCacheEntry@1@AEBV?$DividedPos2d@$03@@@Z
+     * @hash   -1941254258
      */
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const & getCacheEntry(class DividedPos2d<4> const &) const;
     /**
      * @symbol ?setCacheEntry@ChunkLocalNoiseCache@@QEAAXAEBV?$DividedPos2d@$03@@AEBUCacheEntry@1@@Z
+     * @hash   997370998
      */
     MCAPI void setCacheEntry(class DividedPos2d<4> const &, struct ChunkLocalNoiseCache::CacheEntry const &);
     /**
      * @symbol ??1ChunkLocalNoiseCache@@QEAA@XZ
+     * @hash   -1636913008
      */
     MCAPI ~ChunkLocalNoiseCache();
 

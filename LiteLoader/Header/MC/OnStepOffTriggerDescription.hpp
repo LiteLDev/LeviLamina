@@ -32,17 +32,16 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -270752842
      */
     virtual ~OnStepOffTriggerDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@OnStepOffTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1292099935
      */
     virtual std::string const & getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPOFFTRIGGERDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
 
 };

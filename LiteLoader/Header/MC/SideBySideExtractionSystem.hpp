@@ -31,27 +31,29 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2138497509
      */
     virtual ~SideBySideExtractionSystem();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?registerEvents@SideBySideExtractionSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+     * @hash   1082388071
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDEEXTRACTIONSYSTEM
-#endif
     /**
      * @symbol ??0SideBySideExtractionSystem@@QEAA@AEBV?$tuple@U?$ExtractionDependencies@UTickBegin@SideBySideExtractionId@@@@U?$ExtractionDependencies@UBeginManagePassengers@SideBySideExtractionId@@@@U?$ExtractionDependencies@UManagePassengersStopRiding@SideBySideExtractionId@@@@U?$ExtractionDependencies@UManagePassengersPositioning@SideBySideExtractionId@@@@U?$ExtractionDependencies@UEntityInside@SideBySideExtractionId@@@@@std@@@Z
+     * @hash   -1265569236
      */
     MCAPI SideBySideExtractionSystem(class std::tuple<struct ExtractionDependencies<struct SideBySideExtractionId::TickBegin>, struct ExtractionDependencies<struct SideBySideExtractionId::BeginManagePassengers>, struct ExtractionDependencies<struct SideBySideExtractionId::ManagePassengersStopRiding>, struct ExtractionDependencies<struct SideBySideExtractionId::ManagePassengersPositioning>, struct ExtractionDependencies<struct SideBySideExtractionId::EntityInside>> const &);
     /**
      * @symbol ?_onSideBySideExtractionRequest@SideBySideExtractionSystem@@SAXAEBUExtractMethods@SideBySide@@AEBUOnExtractSideBySide@@@Z
+     * @hash   512984717
      */
     MCAPI static void _onSideBySideExtractionRequest(struct SideBySide::ExtractMethods const &, struct OnExtractSideBySide const &);
     /**
      * @symbol ?onStoreSideBySideResult@SideBySideExtractionSystem@@SAXAEBUOnStoreSideBySideResult@@@Z
+     * @hash   -2099257614
      */
     MCAPI static void onStoreSideBySideResult(struct OnStoreSideBySideResult const &);
 

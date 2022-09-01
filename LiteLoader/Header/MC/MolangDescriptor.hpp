@@ -32,51 +32,57 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?clone@MolangDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
+     * @hash   -948602645
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?sameItems@MolangDescriptor@@UEBA_NAEBUBaseDescriptor@ItemDescriptor@@_N@Z
+     * @hash   833722107
      */
     virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const &, bool) const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?sameItem@MolangDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
+     * @hash   -957810265
      */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getFullName@MolangDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1291164407
      */
     virtual std::string const & getFullName() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?toMap@MolangDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+     * @hash   945088289
      */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?save@MolangDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
+     * @hash   1053569445
      */
     virtual class std::optional<class CompoundTag> save() const;
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?serialize@MolangDescriptor@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -74461134
      */
     virtual void serialize(class Json::Value &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?getType@MolangDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
+     * @hash   645788864
      */
     virtual enum ItemDescriptor::InternalType getType() const;
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGDESCRIPTOR
-#endif
 
 };

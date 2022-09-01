@@ -28,18 +28,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEIGHTMAPWRAPPER
-#endif
     /**
      * @symbol ?empty@HeightmapWrapper@@QEBA_NXZ
+     * @hash   1731563966
      */
     MCAPI bool empty() const;
     /**
      * @symbol ?getHeightAt@HeightmapWrapper@@QEBAFAEBVPos@@@Z
+     * @hash   -1056405024
      */
     MCAPI short getHeightAt(class Pos const &) const;
     /**
      * @symbol ?create@HeightmapWrapper@@SA?AV1@PEBV?$vector@FV?$allocator@F@std@@@std@@F@Z
+     * @hash   -1331768909
      */
     MCAPI static class HeightmapWrapper create(std::vector<short> const *, short);
 

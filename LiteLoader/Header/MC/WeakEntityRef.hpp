@@ -29,30 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKENTITYREF
-#endif
     /**
      * @symbol ??0WeakEntityRef@@QEAA@V?$WeakRefT@UEntityRefTraits@@@@@Z
+     * @hash   1455515470
      */
     MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     /**
      * @symbol ??BWeakEntityRef@@QEBA?AV?$WeakRefT@UEntityRefTraits@@@@XZ
+     * @hash   2039326418
      */
     MCAPI operator class WeakRefT<struct EntityRefTraits>() const;
     /**
      * @symbol ??4WeakEntityRef@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -1600820636
      */
     MCAPI class WeakEntityRef & operator=(class WeakEntityRef &&);
     /**
      * @symbol ??8WeakEntityRef@@QEBA_NV?$WeakRefT@UEntityRefTraits@@@@@Z
+     * @hash   -1611309572
      */
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     /**
      * @symbol ??8WeakEntityRef@@QEBA_NV0@@Z
+     * @hash   -1033591409
      */
     MCAPI bool operator==(class WeakEntityRef) const;
     /**
      * @symbol ??1WeakEntityRef@@QEAA@XZ
+     * @hash   -124234204
      */
     MCAPI ~WeakEntityRef();
 

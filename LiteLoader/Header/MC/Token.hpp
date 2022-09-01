@@ -29,28 +29,31 @@ public:
     Token() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOKEN
-#endif
     /**
      * @symbol ??0Token@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1536585764
      */
     MCAPI Token(std::string const &);
     /**
      * @symbol ?getText@Token@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     * @hash   -1512153949
      */
     MCAPI std::string const & getText(std::string const &) const;
     /**
      * @symbol ??1Token@@QEAA@XZ
+     * @hash   1562490469
      */
     MCAPI ~Token();
     /**
      * @symbol ?tokenize@Token@@SA?AV?$vector@UToken@@V?$allocator@UToken@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -1995375987
      */
     MCAPI static std::vector<struct Token> tokenize(std::string const &);
 
 //protected:
     /**
      * @symbol ?_parseRandom@Token@@IEAA_NXZ
+     * @hash   -278608965
      */
     MCAPI bool _parseRandom();
 

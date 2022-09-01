@@ -32,41 +32,43 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   464543073
      */
     virtual ~BaseRailTransporter();
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?addSource@BaseRailTransporter@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     * @hash   -1597169559
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?allowConnection@BaseRailTransporter@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   1547728979
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?evaluate@BaseRailTransporter@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   664635461
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @vtable 17
-     * @symbol __unk_vfn_17
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @vtable 20
-     * @symbol __unk_vfn_20
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @vtable 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@BaseRailTransporter@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   176231475
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASERAILTRANSPORTER
-#endif
 
 };

@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@PersistentDescription@@UEBAPEBDXZ
+     * @hash   -381839841
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   -1935463117
      */
     virtual ~PersistentDescription();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@PersistentDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1594134382
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSISTENTDESCRIPTION
-#endif
 
 };

@@ -30,36 +30,41 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMENTRY
-#endif
     /**
      * @symbol ??0CreativeItemEntry@@QEAA@PEAVCreativeItemRegistry@@AEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@AEBVItemInstance@@I@Z
+     * @hash   -1765917706
      */
     MCAPI CreativeItemEntry(class CreativeItemRegistry *, class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &, class ItemInstance const &, unsigned int);
     /**
      * @symbol ??0CreativeItemEntry@@QEAA@$$QEAV0@@Z
+     * @hash   -128892423
      */
     MCAPI CreativeItemEntry(class CreativeItemEntry &&);
     /**
      * @symbol ?getCreativeNetId@CreativeItemEntry@@QEBAAEBV?$TypedServerNetId@UCreativeItemNetIdTag@@I$0A@@@XZ
+     * @hash   2073284787
      */
     MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const & getCreativeNetId() const;
     /**
      * @symbol ?getGroup@CreativeItemEntry@@QEBAPEAVCreativeGroupInfo@@XZ
+     * @hash   828530839
      */
     MCAPI class CreativeGroupInfo * getGroup() const;
     /**
      * @symbol ?getIndex@CreativeItemEntry@@QEBAIXZ
+     * @hash   -365924072
      */
     MCAPI unsigned int getIndex() const;
     /**
      * @symbol ?getItemInstance@CreativeItemEntry@@QEBAAEBVItemInstance@@XZ
+     * @hash   707933786
      */
     MCAPI class ItemInstance const & getItemInstance() const;
 
 //private:
     /**
      * @symbol ?_setGroup@CreativeItemEntry@@AEAAXPEAVCreativeGroupInfo@@@Z
+     * @hash   292359122
      */
     MCAPI void _setGroup(class CreativeGroupInfo *);
 

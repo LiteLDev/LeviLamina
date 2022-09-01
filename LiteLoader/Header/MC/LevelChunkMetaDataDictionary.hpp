@@ -28,28 +28,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCHUNKMETADATADICTIONARY
-#endif
     /**
      * @symbol ?checkAndSerialize@LevelChunkMetaDataDictionary@@QEBAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
+     * @hash   2086500065
      */
     MCAPI void checkAndSerialize(class std::function<void (std::string const &)>) const;
     /**
      * @symbol ?deserialize@LevelChunkMetaDataDictionary@@QEAAXAEAVIDataInput@@@Z
+     * @hash   -1964393190
      */
     MCAPI void deserialize(class IDataInput &);
     /**
      * @symbol ?getMetaData@LevelChunkMetaDataDictionary@@QEBA?AV?$shared_ptr@$$CBVLevelChunkMetaData@@@std@@_K@Z
+     * @hash   -1351682339
      */
     MCAPI class std::shared_ptr<class LevelChunkMetaData const> getMetaData(unsigned __int64) const;
     /**
      * @symbol ?registerMetaData@LevelChunkMetaDataDictionary@@QEAA?AV?$shared_ptr@VLevelChunkMetaData@@@std@@AEBVLevelChunkMetaData@@@Z
+     * @hash   2146419756
      */
     MCAPI class std::shared_ptr<class LevelChunkMetaData> registerMetaData(class LevelChunkMetaData const &);
 
 //protected:
     /**
      * @symbol ?_registerMetaData@LevelChunkMetaDataDictionary@@IEAA?AV?$shared_ptr@VLevelChunkMetaData@@@std@@AEBVLevelChunkMetaData@@@Z
+     * @hash   104866747
      */
     MCAPI class std::shared_ptr<class LevelChunkMetaData> _registerMetaData(class LevelChunkMetaData const &);
 

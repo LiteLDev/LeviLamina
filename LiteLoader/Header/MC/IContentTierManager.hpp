@@ -30,8 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1IContentTierManager@@UEAA@XZ
+     * @hash   -274688696
      */
     MCVAPI ~IContentTierManager();
 #endif

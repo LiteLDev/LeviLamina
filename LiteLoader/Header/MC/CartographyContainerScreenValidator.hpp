@@ -30,29 +30,30 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1048133011
      */
     virtual ~CartographyContainerScreenValidator();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   2003240545
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isCraftingImplemented@CartographyContainerScreenValidator@@UEAA_NXZ
+     * @hash   62454704
      */
     virtual bool isCraftingImplemented();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getCraftResult@CartographyContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+     * @hash   959994078
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0CartographyContainerScreenValidator@@QEAA@XZ
+     * @hash   -211518005
      */
     MCAPI CartographyContainerScreenValidator();
 

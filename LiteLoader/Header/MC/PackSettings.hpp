@@ -31,20 +31,21 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSETTINGS
-#endif
     /**
      * @symbol ?getAllSettings@PackSettings@@QEBAAEBVValue@Json@@XZ
+     * @hash   -2029178690
      */
     MCAPI class Json::Value const & getAllSettings() const;
     /**
      * @symbol ?loadPackSettings@PackSettings@@QEAAXAEBUPackIdVersion@@AEBVValue@Json@@@Z
+     * @hash   1637070539
      */
     MCAPI void loadPackSettings(struct PackIdVersion const &, class Json::Value const &);
 
 //private:
     /**
      * @symbol ?_initPackSetting@PackSettings@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
+     * @hash   -1992609524
      */
     MCAPI void _initPackSetting(std::string const &, class Json::Value const &);
 

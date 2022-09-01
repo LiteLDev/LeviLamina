@@ -27,10 +27,12 @@ MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
 MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
     /**
      * @symbol ?registerBlocks@BedrockBlockTypes@@YAXXZ
+     * @hash   -846368850
      */
     MCAPI void registerBlocks();
     /**
      * @symbol ?unregisterBlocks@BedrockBlockTypes@@YAXXZ
+     * @hash   -1484063904
      */
     MCAPI void unregisterBlocks();
 

@@ -31,34 +31,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEINFORMATION
-#endif
     /**
      * @symbol ??0ResourceInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@AEBVUUID@mce@@W4ResourceType@0@00@Z
+     * @hash   -2029362718
      */
     MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, enum ResourceInformation::ResourceType, std::string const &, std::string const &);
     /**
      * @symbol ??0ResourceInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@AEBVUUID@mce@@000@Z
+     * @hash   851713029
      */
     MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ??0ResourceInformation@@QEAA@AEBV0@@Z
+     * @hash   282307025
      */
     MCAPI ResourceInformation(class ResourceInformation const &);
     /**
      * @symbol ?satisfies@ResourceInformation@@QEBA_NAEBUPackIdVersion@@@Z
+     * @hash   -1728002405
      */
     MCAPI bool satisfies(struct PackIdVersion const &) const;
     /**
      * @symbol ??1ResourceInformation@@QEAA@XZ
+     * @hash   1940462362
      */
     MCAPI ~ResourceInformation();
     /**
      * @symbol ?ResourceTypeFromString@ResourceInformation@@SA?AW4ResourceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   701079220
      */
     MCAPI static enum ResourceInformation::ResourceType ResourceTypeFromString(std::string const &);
     /**
      * @symbol ?StringFromResourceType@ResourceInformation@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ResourceType@1@@Z
+     * @hash   1502756144
      */
     MCAPI static std::string const & StringFromResourceType(enum ResourceInformation::ResourceType);
 

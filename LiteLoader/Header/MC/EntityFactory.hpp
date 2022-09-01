@@ -28,18 +28,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYFACTORY
-#endif
     /**
      * @symbol ??0EntityFactory@@QEAA@V?$not_null@PEAVEntityRegistryBase@@@gsl@@@Z
+     * @hash   -217695237
      */
     MCAPI EntityFactory(class gsl::not_null<class EntityRegistryBase *>);
     /**
      * @symbol ?create@EntityFactory@@QEAA?AVStrictEntityContextOwner@@XZ
+     * @hash   -1549179320
      */
     MCAPI class StrictEntityContextOwner create();
     /**
      * @symbol ?destroy@EntityFactory@@QEAAX$$QEAVStrictEntityContextOwner@@@Z
+     * @hash   -1928267088
      */
     MCAPI void destroy(class StrictEntityContextOwner &&);
 

@@ -34,30 +34,34 @@ public:
     CappedSurfaceAttributes() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAPPEDSURFACEATTRIBUTES
-#endif
     /**
      * @symbol ?getCeilingMaterial@CappedSurfaceAttributes@@QEBAPEBVBlock@@AEBVVec3@@@Z
+     * @hash   1576425628
      */
     MCAPI class Block const * getCeilingMaterial(class Vec3 const &) const;
     /**
      * @symbol ?getFloorMaterial@CappedSurfaceAttributes@@QEBAPEBVBlock@@AEBVVec3@@@Z
+     * @hash   97431692
      */
     MCAPI class Block const * getFloorMaterial(class Vec3 const &) const;
     /**
      * @symbol ?initializeNoise@CappedSurfaceAttributes@@QEAAXI@Z
+     * @hash   -93600852
      */
     MCAPI void initializeNoise(unsigned int);
     /**
      * @symbol ??4CappedSurfaceAttributes@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1784668402
      */
     MCAPI struct CappedSurfaceAttributes & operator=(struct CappedSurfaceAttributes &&);
     /**
      * @symbol ??1CappedSurfaceAttributes@@QEAA@XZ
+     * @hash   -581644013
      */
     MCAPI ~CappedSurfaceAttributes();
     /**
      * @symbol ?getRandomBlock@CappedSurfaceAttributes@@SAPEBVBlock@@AEBV?$vector@UMaterialLayer@CappedSurfaceAttributes@@V?$allocator@UMaterialLayer@CappedSurfaceAttributes@@@std@@@std@@AEBVVec3@@@Z
+     * @hash   -1417701291
      */
     MCAPI static class Block const * getRandomBlock(std::vector<struct CappedSurfaceAttributes::MaterialLayer> const &, class Vec3 const &);
 

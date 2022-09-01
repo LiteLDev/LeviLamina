@@ -27,10 +27,9 @@ public:
     MesaSurfaceAttributes() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESASURFACEATTRIBUTES
-#endif
     /**
      * @symbol ??1MesaSurfaceAttributes@@QEAA@XZ
+     * @hash   -709197430
      */
     MCAPI ~MesaSurfaceAttributes();
 

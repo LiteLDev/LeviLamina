@@ -33,37 +33,41 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DROPPERBLOCKACTOR
     /**
-     * @vtable -1
      * @symbol ?_getUpdatePacket@DropperBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -286530353
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?_onUpdatePacket@DropperBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   532080883
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @vtable -1
      * @symbol ?getName@DropperBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -897801739
      */
     MCVAPI std::string getName() const;
 #endif
     /**
      * @symbol ??0DropperBlockActor@@QEAA@VBlockPos@@@Z
+     * @hash   1131969313
      */
     MCAPI DropperBlockActor(class BlockPos);
     /**
      * @symbol ?pushOutItems@DropperBlockActor@@QEAA_NAEAVBlockSource@@@Z
+     * @hash   -1034695163
      */
     MCAPI bool pushOutItems(class BlockSource &);
 
 //private:
     /**
      * @symbol ?_addItem@DropperBlockActor@@AEAA_NAEAVBlockSource@@AEAVContainer@@AEAVItemStack@@H@Z
+     * @hash   -1866860540
      */
     MCAPI bool _addItem(class BlockSource &, class Container &, class ItemStack &, int);
     /**
      * @symbol ?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z
+     * @hash   2079560550
      */
     MCAPI class Container * _getContainerAt(class BlockSource &, class Vec3 const &);
 

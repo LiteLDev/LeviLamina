@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -198304865
      */
     virtual ~SequenceBehaviorNode();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?tick@SequenceBehaviorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   1366704978
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@SequenceBehaviorNode@@MEAAXAEAVActor@@@Z
+     * @hash   170772815
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEQUENCEBEHAVIORNODE
-#endif
     /**
      * @symbol ??0SequenceBehaviorNode@@QEAA@XZ
+     * @hash   -1756028863
      */
     MCAPI SequenceBehaviorNode();
 

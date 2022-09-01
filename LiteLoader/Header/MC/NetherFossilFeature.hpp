@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -577368480
      */
     virtual ~NetherFossilFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@NetherFossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1345657748
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFOSSILFEATURE
-#endif
     /**
      * @symbol ??0NetherFossilFeature@@QEAA@$$QEAV?$vector@PEBVBlock@@V?$allocator@PEBVBlock@@@std@@@std@@_N@Z
+     * @hash   1139223284
      */
     MCAPI NetherFossilFeature(std::vector<class Block const *> &&, bool);
 

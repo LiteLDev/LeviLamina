@@ -33,186 +33,199 @@ public:
 
 public:
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?outOfWorld@ThrownTrident@@UEAAXXZ
+     * @hash   115425146
      */
     virtual void outOfWorld();
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@ThrownTrident@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   589202243
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vtable 14
-     * @symbol __unk_destructor_14
+     * @vftbl  14
+     * @hash   1039384216
      */
     virtual ~ThrownTrident();
     /**
-     * @vtable 41
-     * @symbol __unk_vfn_41
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @vtable 49
+     * @vftbl  49
      * @symbol ?normalTick@ThrownTrident@@UEAAXXZ
+     * @hash   2073188913
      */
     virtual void normalTick();
     /**
-     * @vtable 61
-     * @symbol __unk_vfn_61
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @vtable 68
-     * @symbol __unk_vfn_68
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @vtable 82
-     * @symbol __unk_vfn_82
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @vtable 85
-     * @symbol __unk_vfn_85
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @vtable 88
-     * @symbol __unk_vfn_88
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @vtable 89
+     * @vftbl  89
      * @symbol ?playerTouch@ThrownTrident@@UEAAXAEAVPlayer@@@Z
+     * @hash   494424392
      */
     virtual void playerTouch(class Player &);
     /**
-     * @vtable 96
-     * @symbol __unk_vfn_96
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @vtable 99
-     * @symbol __unk_vfn_99
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @vtable 106
-     * @symbol __unk_vfn_106
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @vtable 108
-     * @symbol __unk_vfn_108
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @vtable 109
-     * @symbol __unk_vfn_109
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @vtable 111
-     * @symbol __unk_vfn_111
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @vtable 130
+     * @vftbl  130
      * @symbol ?isEnchanted@ThrownTrident@@UEBA_NXZ
+     * @hash   -528951844
      */
     virtual bool isEnchanted() const;
     /**
-     * @vtable 150
+     * @vftbl  150
      * @symbol ?despawn@ThrownTrident@@UEAAXXZ
+     * @hash   -814871513
      */
     virtual void despawn();
     /**
-     * @vtable 182
-     * @symbol __unk_vfn_182
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @vtable 196
-     * @symbol __unk_vfn_196
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @vtable 222
-     * @symbol __unk_vfn_222
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @vtable 223
-     * @symbol __unk_vfn_223
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @vtable 248
-     * @symbol __unk_vfn_248
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @vtable 251
-     * @symbol __unk_vfn_251
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @vtable 269
-     * @symbol __unk_vfn_269
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @vtable 270
+     * @vftbl  270
      * @symbol ?_hurt@ThrownTrident@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     * @hash   1460906182
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vtable 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@ThrownTrident@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1688213990
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vtable 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@ThrownTrident@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -2076598329
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vtable 277
-     * @symbol __unk_vfn_277
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
     /**
-     * @vtable 285
-     * @symbol __unk_vfn_285
+     * @vftbl  285
+     * @hash   -1895428993
      */
     virtual void __unk_vfn_285();
     /**
-     * @vtable 286
+     * @vftbl  286
      * @symbol ?shoot@ThrownTrident@@UEAAXAEBVVec3@@MM0@Z
+     * @hash   -954133132
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
-     * @vtable 288
+     * @vftbl  288
      * @symbol ?_getPickupItem@ThrownTrident@@MEBA?AVItemStack@@XZ
+     * @hash   691037095
      */
     virtual class ItemStack _getPickupItem() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_THROWNTRIDENT
-#endif
     /**
      * @symbol ??0ThrownTrident@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -1362921354
      */
     MCAPI ThrownTrident(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?getPickupItem@ThrownTrident@@QEBA?AVItemStack@@XZ
+     * @hash   -297726862
      */
     MCAPI class ItemStack getPickupItem() const;
     /**
      * @symbol ?returnWithLoyalty@ThrownTrident@@QEAAXH@Z
+     * @hash   563611654
      */
     MCAPI void returnWithLoyalty(int);
     /**
      * @symbol ?setTridentItem@ThrownTrident@@QEAAXAEBVItemStack@@@Z
+     * @hash   1176923730
      */
     MCAPI void setTridentItem(class ItemStack const &);
 

@@ -28,22 +28,24 @@ public:
     SurfaceMaterialAttributes() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEMATERIALATTRIBUTES
-#endif
     /**
      * @symbol ??0SurfaceMaterialAttributes@@QEAA@AEBU0@@Z
+     * @hash   -1328339387
      */
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const &);
     /**
      * @symbol ??0SurfaceMaterialAttributes@@QEAA@$$QEAU0@@Z
+     * @hash   1426338781
      */
     MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes &&);
     /**
      * @symbol ??4SurfaceMaterialAttributes@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1044222794
      */
     MCAPI struct SurfaceMaterialAttributes & operator=(struct SurfaceMaterialAttributes &&);
     /**
      * @symbol ??1SurfaceMaterialAttributes@@QEAA@XZ
+     * @hash   193059895
      */
     MCAPI ~SurfaceMaterialAttributes();
 

@@ -29,15 +29,15 @@ public:
     OnActorEnterVolumeDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMEDEFINITION
-#endif
     /**
      * @symbol ?initialize@OnActorEnterVolumeDefinition@@QEBAXAEAVEntityContext@@AEAVOnActorEnterVolumeComponent@@@Z
+     * @hash   -1162787215
      */
     MCAPI void initialize(class EntityContext &, class OnActorEnterVolumeComponent &) const;
 MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@OnActorEnterVolumeDefinition@@SAXXZ
+     * @hash   -546283405
      */
     MCAPI static void bindType();
 

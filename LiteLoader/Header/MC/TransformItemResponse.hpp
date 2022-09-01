@@ -32,27 +32,28 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   456256718
      */
     virtual ~TransformItemResponse();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@TransformItemResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   421924073
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?executeAction@TransformItemResponse@@UEBAXAEAVRenderParams@@@Z
+     * @hash   -1637810827
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?buildSchema@TransformItemResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     * @hash   -538290665
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFORMITEMRESPONSE
-#endif
 MCAPI static std::string const NameID;
 
 };

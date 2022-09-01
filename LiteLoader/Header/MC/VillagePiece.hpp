@@ -32,39 +32,43 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1977000212
      */
     virtual ~VillagePiece();
     /**
-     * @vtable 13
+     * @vftbl  13
      * @symbol ?generateHeightAtPosition@VillagePiece@@UEBAHAEBVBlockPos@@AEAVDimension@@AEAVBlockVolume@@AEAV?$unordered_map@VChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@@std@@@3@@std@@@Z
+     * @hash   -554598203
      */
     virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const;
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?getSupportBlock@VillagePiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z
+     * @hash   -1174039226
      */
     virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vtable 15
+     * @vftbl  15
      * @symbol ?getBeardStabilizeBlock@VillagePiece@@UEBAAEBVBlock@@AEBV2@@Z
+     * @hash   468932996
      */
     virtual class Block const & getBeardStabilizeBlock(class Block const &) const;
     /**
-     * @vtable 16
+     * @vftbl  16
      * @symbol ?getTerrainAdjustmentEffect@VillagePiece@@UEBA?AW4AdjustmentEffect@@XZ
+     * @hash   -219173027
      */
     virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const;
     /**
-     * @vtable 17
+     * @vftbl  17
      * @symbol ?_needsPostProcessing@VillagePiece@@MEAA_NAEAVBlockSource@@@Z
+     * @hash   1080384579
      */
     virtual bool _needsPostProcessing(class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VILLAGEPIECE
-#endif
     /**
      * @symbol ?addPieces@VillagePiece@@SAXVBlockPos@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVJigsawStructureRegistry@@W4VanillaBiomeTypes@@AEAVDimension@@@Z
+     * @hash   874011312
      */
     MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class JigsawStructureRegistry &, enum VanillaBiomeTypes, class Dimension &);
 

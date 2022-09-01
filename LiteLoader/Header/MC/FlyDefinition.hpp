@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1785370636
      */
     virtual ~FlyDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@FlyDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   -701630690
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYDEFINITION
-#endif
 
 };

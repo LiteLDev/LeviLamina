@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATION
-#endif
     /**
      * @symbol ?addAnimationChannel@BoneAnimation@@QEAAAEAVBoneAnimationChannel@@W4BoneTransformType@@@Z
+     * @hash   1192005473
      */
     MCAPI class BoneAnimationChannel & addAnimationChannel(enum BoneTransformType);
     /**
      * @symbol ?setRotationRelativeMode@BoneAnimation@@QEAAXW4BoneAnimationRelativeMode@@@Z
+     * @hash   -1792765014
      */
     MCAPI void setRotationRelativeMode(enum BoneAnimationRelativeMode);
 

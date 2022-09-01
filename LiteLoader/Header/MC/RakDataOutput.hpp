@@ -31,56 +31,63 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1476750379
      */
     virtual ~RakDataOutput();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   -488868557
      */
     virtual void writeString(class gsl::basic_string_span<char const, -1>);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   265192663
      */
     virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?writeFloat@BytesDataOutput@@UEAAXM@Z
+     * @hash   -1839702475
      */
     virtual void writeFloat(float);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?writeDouble@BytesDataOutput@@UEAAXN@Z
+     * @hash   -721126051
      */
     virtual void writeDouble(double);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?writeByte@BytesDataOutput@@UEAAXD@Z
+     * @hash   745456529
      */
     virtual void writeByte(char);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?writeShort@BytesDataOutput@@UEAAXF@Z
+     * @hash   643709477
      */
     virtual void writeShort(short);
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?writeInt@BytesDataOutput@@UEAAXH@Z
+     * @hash   -1151333217
      */
     virtual void writeInt(int);
     /**
-     * @vtable 8
+     * @vftbl  8
      * @symbol ?writeLongLong@BytesDataOutput@@UEAAX_J@Z
+     * @hash   -1570274334
      */
     virtual void writeLongLong(__int64);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z
+     * @hash   -1044855729
      */
     virtual void writeBytes(void const *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAOUTPUT
-#endif
 
 };

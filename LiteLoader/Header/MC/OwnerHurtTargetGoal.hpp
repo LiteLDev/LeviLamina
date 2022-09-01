@@ -32,34 +32,35 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1873302636
      */
     virtual ~OwnerHurtTargetGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@OwnerHurtTargetGoal@@UEAA_NXZ
+     * @hash   -240226934
      */
     virtual bool canUse();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@OwnerHurtTargetGoal@@UEAAXXZ
+     * @hash   -1266951149
      */
     virtual void start();
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OWNERHURTTARGETGOAL
-#endif
     /**
      * @symbol ??0OwnerHurtTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
+     * @hash   575444228
      */
     MCAPI OwnerHurtTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &);
 

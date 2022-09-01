@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREEN
-#endif
     /**
      * @symbol ??0ItemStackNetManagerScreen@@QEAA@AEAVEntityRegistry@@@Z
+     * @hash   454560628
      */
     MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
     /**
      * @symbol ?getEntity@ItemStackNetManagerScreen@@QEAAAEAVEntityContext@@XZ
+     * @hash   1674165042
      */
     MCAPI class EntityContext & getEntity();
     /**
      * @symbol ?getEntity@ItemStackNetManagerScreen@@QEBAAEBVEntityContext@@XZ
+     * @hash   2005374956
      */
     MCAPI class EntityContext const & getEntity() const;
 

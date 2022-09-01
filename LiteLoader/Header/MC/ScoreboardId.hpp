@@ -24,50 +24,59 @@ public:
     __int64 id;
     void* null;
 #undef AFTER_EXTRApublic:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDID
-#endif
     /**
      * @symbol ??0ScoreboardId@@QEAA@_J@Z
+     * @hash   1642635605
      */
     MCAPI ScoreboardId(__int64);
     /**
      * @symbol ??0ScoreboardId@@QEAA@XZ
+     * @hash   -1019930181
      */
     MCAPI ScoreboardId();
     /**
      * @symbol ??0ScoreboardId@@QEAA@AEBU0@@Z
+     * @hash   1103680015
      */
     MCAPI ScoreboardId(struct ScoreboardId const &);
     /**
      * @symbol ?getHash@ScoreboardId@@QEBA_KXZ
+     * @hash   -895858683
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ?getIdentityDef@ScoreboardId@@QEBAAEBVIdentityDefinition@@XZ
+     * @hash   1478331932
      */
     MCAPI class IdentityDefinition const & getIdentityDef() const;
     /**
      * @symbol ?isValid@ScoreboardId@@QEBA_NXZ
+     * @hash   1010133974
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??BScoreboardId@@QEBA_NXZ
+     * @hash   837233458
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??9ScoreboardId@@QEBA_NAEBU0@@Z
+     * @hash   -1010342135
      */
     MCAPI bool operator!=(struct ScoreboardId const &) const;
     /**
      * @symbol ??EScoreboardId@@QEAAAEAU0@XZ
+     * @hash   -415373190
      */
     MCAPI struct ScoreboardId & operator++();
     /**
      * @symbol ??4ScoreboardId@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -2132899130
      */
     MCAPI struct ScoreboardId & operator=(struct ScoreboardId const &);
     /**
      * @symbol ??8ScoreboardId@@QEBA_NAEBU0@@Z
+     * @hash   -518476314
      */
     MCAPI bool operator==(struct ScoreboardId const &) const;
 MCAPI static struct ScoreboardId INVALID;

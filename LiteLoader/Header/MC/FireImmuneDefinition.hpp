@@ -30,18 +30,19 @@ public:
     FireImmuneDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREIMMUNEDEFINITION
-#endif
     /**
      * @symbol ?initialize@FireImmuneDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -344663700
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@FireImmuneDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1571964180
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@FireImmuneDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UFireImmuneDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1691854650
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FireImmuneDefinition>> &);
 

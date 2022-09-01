@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCALLBACKS
-#endif
     /**
      * @symbol ?SetBroadcastRequestCallback@NetworkCallbacks@@QEAAXAEBV?$function@$$A6A_NPEAXPEAH@Z@std@@@Z
+     * @hash   -712200312
      */
     MCAPI void SetBroadcastRequestCallback(class std::function<bool (void *, int *)> const &);
     /**
      * @symbol ?SetBroadcastResponseCallback@NetworkCallbacks@@QEAAXAEBV?$function@$$A6AXAEBUNetworkID@NetherNet@@PEBXH@Z@std@@@Z
+     * @hash   -1265632578
      */
     MCAPI void SetBroadcastResponseCallback(class std::function<void (struct NetherNet::NetworkID const &, void const *, int)> const &);
 

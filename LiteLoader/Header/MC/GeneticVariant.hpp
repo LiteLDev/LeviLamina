@@ -26,14 +26,14 @@ public:
     GeneticVariant() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICVARIANT
-#endif
     /**
      * @symbol ??0GeneticVariant@@QEAA@AEBU0@@Z
+     * @hash   -980561809
      */
     MCAPI GeneticVariant(struct GeneticVariant const &);
     /**
      * @symbol ??1GeneticVariant@@QEAA@XZ
+     * @hash   2141899942
      */
     MCAPI ~GeneticVariant();
 

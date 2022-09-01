@@ -29,8 +29,6 @@ public:
     TaskStartInfoBase() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKSTARTINFOBASE
-#endif
 MCAPI static class std::thread::id const NoAffinity;
 
 };

@@ -26,14 +26,14 @@ public:
     CommandSyntaxInformation(struct CommandSyntaxInformation const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDSYNTAXINFORMATION
-#endif
     /**
      * @symbol ??0CommandSyntaxInformation@@QEAA@XZ
+     * @hash   -1789875878
      */
     MCAPI CommandSyntaxInformation();
     /**
      * @symbol ??1CommandSyntaxInformation@@QEAA@XZ
+     * @hash   -195003432
      */
     MCAPI ~CommandSyntaxInformation();
 

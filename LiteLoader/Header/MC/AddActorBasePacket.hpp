@@ -30,8 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1AddActorBasePacket@@UEAA@XZ
+     * @hash   -107084908
      */
     MCVAPI ~AddActorBasePacket();
 #endif

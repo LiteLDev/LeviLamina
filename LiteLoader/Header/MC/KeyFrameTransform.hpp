@@ -30,50 +30,59 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYFRAMETRANSFORM
-#endif
     /**
      * @symbol ??0KeyFrameTransform@@QEAA@M@Z
+     * @hash   1974116287
      */
     MCAPI KeyFrameTransform(float);
     /**
      * @symbol ?getLerpMode@KeyFrameTransform@@QEAAAEAVKeyFrameLerpMode@@XZ
+     * @hash   1032925856
      */
     MCAPI class KeyFrameLerpMode & getLerpMode();
     /**
      * @symbol ??4KeyFrameTransform@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1550997472
      */
     MCAPI class KeyFrameTransform & operator=(class KeyFrameTransform &&);
     /**
      * @symbol ?optimizeAndGetDataValues@KeyFrameTransform@@QEAA_NAEAVVec3@@0@Z
+     * @hash   -557993116
      */
     MCAPI bool optimizeAndGetDataValues(class Vec3 &, class Vec3 &);
     /**
      * @symbol ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@@Z
+     * @hash   1050767138
      */
     MCAPI void set(class ExpressionNode const &);
     /**
      * @symbol ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@AEBVVec3@@@Z
+     * @hash   2091684323
      */
     MCAPI void set(class ExpressionNode const &, class Vec3 const &);
     /**
      * @symbol ?set@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
+     * @hash   -2050010527
      */
     MCAPI void set(class ExpressionNode const &, int);
     /**
      * @symbol ?setPost@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
+     * @hash   676483761
      */
     MCAPI void setPost(class ExpressionNode const &, int);
     /**
      * @symbol ?setPre@KeyFrameTransform@@QEAAXAEBVExpressionNode@@H@Z
+     * @hash   -1182312653
      */
     MCAPI void setPre(class ExpressionNode const &, int);
     /**
      * @symbol ??1KeyFrameTransform@@QEAA@XZ
+     * @hash   -1378240438
      */
     MCAPI ~KeyFrameTransform();
     /**
      * @symbol ?computeCubicPolynomial@KeyFrameTransform@@SAXPEAV1@AEAV1@10@Z
+     * @hash   -1662577289
      */
     MCAPI static void computeCubicPolynomial(class KeyFrameTransform *, class KeyFrameTransform &, class KeyFrameTransform &, class KeyFrameTransform *);
 

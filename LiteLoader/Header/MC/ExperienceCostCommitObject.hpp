@@ -29,29 +29,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1961760919
      */
     virtual ~ExperienceCostCommitObject();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?append@ExperienceCostCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
+     * @hash   1571998290
      */
     virtual bool append(class ContainerValidationCommitObject *);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canCommit@ExperienceCostCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z
+     * @hash   -904990229
      */
     virtual bool canCommit(class ContainerScreenContext const &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?commit@ExperienceCostCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
+     * @hash   -1581725506
      */
     virtual void commit(class ContainerScreenContext const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCECOSTCOMMITOBJECT
-#endif
     /**
      * @symbol ??0ExperienceCostCommitObject@@QEAA@H@Z
+     * @hash   -1022542190
      */
     MCAPI ExperienceCostCommitObject(int);
 

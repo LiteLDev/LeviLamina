@@ -29,38 +29,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   382815160
      */
     virtual ~DeathInfoPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@DeathInfoPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   731527476
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@DeathInfoPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1000705055
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@DeathInfoPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -407412186
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@DeathInfoPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1148973190
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEATHINFOPACKET
-#endif
     /**
      * @symbol ??0DeathInfoPacket@@QEAA@XZ
+     * @hash   -727928378
      */
     MCAPI DeathInfoPacket();
     /**
      * @symbol ??0DeathInfoPacket@@QEAA@AEBU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@@Z
+     * @hash   -659076850
      */
     MCAPI DeathInfoPacket(struct std::pair<std::string, std::vector<std::string>> const &);
 

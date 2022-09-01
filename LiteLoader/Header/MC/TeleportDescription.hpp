@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@TeleportDescription@@UEBAPEBDXZ
+     * @hash   -1339446541
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   406645407
      */
     virtual ~TeleportDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@TeleportDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1421233136
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@TeleportDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1535580586
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTDESCRIPTION
-#endif
     /**
      * @symbol ??0TeleportDescription@@QEAA@XZ
+     * @hash   -1690397907
      */
     MCAPI TeleportDescription();
 

@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   891949918
      */
     virtual ~TickingAreaList();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?removeDistantEntityAreasAndCheckForRemoved@TickingAreaList@@UEAA_NAEBV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@V?$function@$$A6AXAEBVITickingArea@@@Z@3@AEAVLevelStorage@@@Z
+     * @hash   886682222
      */
     virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const &, class std::function<void (class ITickingArea const &)>, class LevelStorage &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREALIST
-#endif
 
 };

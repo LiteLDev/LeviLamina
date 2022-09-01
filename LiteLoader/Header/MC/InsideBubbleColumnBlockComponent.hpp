@@ -27,14 +27,14 @@ public:
     InsideBubbleColumnBlockComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBUBBLECOLUMNBLOCKCOMPONENT
-#endif
     /**
      * @symbol ??4InsideBubbleColumnBlockComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -2044602848
      */
     MCAPI struct InsideBubbleColumnBlockComponent & operator=(struct InsideBubbleColumnBlockComponent &&);
     /**
      * @symbol ??1InsideBubbleColumnBlockComponent@@QEAA@XZ
+     * @hash   -1386513736
      */
     MCAPI ~InsideBubbleColumnBlockComponent();
 

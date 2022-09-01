@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREECANOPYWRAPPER
-#endif
     /**
      * @symbol ??1ITreeCanopyWrapper@@QEAA@XZ
+     * @hash   2051969566
      */
     MCAPI ~ITreeCanopyWrapper();
 

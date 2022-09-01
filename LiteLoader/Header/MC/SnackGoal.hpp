@@ -31,78 +31,87 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1363616305
      */
     virtual ~SnackGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@SnackGoal@@UEAA_NXZ
+     * @hash   2056349503
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SnackGoal@@UEAA_NXZ
+     * @hash   1828130365
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@SnackGoal@@UEAAXXZ
+     * @hash   2039591384
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@SnackGoal@@UEAAXXZ
+     * @hash   89814904
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@SnackGoal@@UEAAXXZ
+     * @hash   -1235611101
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SnackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   278951537
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?getRandomEatingEnd@SnackGoal@@MEBAHXZ
+     * @hash   1383729899
      */
     virtual int getRandomEatingEnd() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNACKGOAL
-#endif
     /**
      * @symbol ??0SnackGoal@@QEAA@AEAVMob@@AEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@MMM@Z
+     * @hash   217784680
      */
     MCAPI SnackGoal(class Mob &, std::vector<class ItemDescriptor> const &, float, float, float);
 
 //private:
     /**
      * @symbol ?_hasSnackableItems@SnackGoal@@AEAA_NXZ
+     * @hash   1852043528
      */
     MCAPI bool _hasSnackableItems();
     /**
      * @symbol ?_isSnackableItem@SnackGoal@@AEBA_NAEBVItemStack@@@Z
+     * @hash   1206696908
      */
     MCAPI bool _isSnackableItem(class ItemStack const &) const;
     /**
      * @symbol ?_updateHand@SnackGoal@@AEAAXAEBVItemStack@@@Z
+     * @hash   -530095438
      */
     MCAPI void _updateHand(class ItemStack const &);
 

@@ -27,10 +27,9 @@ public:
     BlockNotificationEvent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKNOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1BlockNotificationEvent@@QEAA@XZ
+     * @hash   1034310940
      */
     MCAPI ~BlockNotificationEvent();
 

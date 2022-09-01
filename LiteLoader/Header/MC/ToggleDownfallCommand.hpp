@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1777741128
      */
     virtual ~ToggleDownfallCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@ToggleDownfallCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   892965385
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOGGLEDOWNFALLCOMMAND
-#endif
     /**
      * @symbol ?setup@ToggleDownfallCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -23048400
      */
     MCAPI static void setup(class CommandRegistry &);
 

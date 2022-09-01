@@ -30,8 +30,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTAGS
-#endif
 MCAPI static struct ItemTag const Armor;
 MCAPI static struct ItemTag const Arrows;
 MCAPI static struct ItemTag const Banners;

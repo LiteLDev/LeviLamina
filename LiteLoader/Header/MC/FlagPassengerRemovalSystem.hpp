@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLAGPASSENGERREMOVALSYSTEM
-#endif
     /**
      * @symbol ?createDeferredSystem@FlagPassengerRemovalSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   872659222
      */
     MCAPI static struct TickingSystemWithInfo createDeferredSystem();
     /**
      * @symbol ?tickDeferredPassengerRemoval@FlagPassengerRemovalSystem@@SAXAEBVStrictEntityContext@@AEBUVehicleComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UStopRidingRequestFlag@@@@@@@@V?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UPendingRemovePassengersComponent@@@@@Z
+     * @hash   1128032031
      */
     MCAPI static void tickDeferredPassengerRemoval(class StrictEntityContext const &, struct VehicleComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PendingRemovePassengersComponent>);
 

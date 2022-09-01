@@ -31,26 +31,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMVALUEBOUNDS
-#endif
     /**
      * @symbol ?deserialize@RandomValueBounds@@QEAAXAEBVValue@Json@@@Z
+     * @hash   -1637273808
      */
     MCAPI void deserialize(class Json::Value const &);
     /**
      * @symbol ?getFloat@RandomValueBounds@@QEBAMAEAVRandom@@@Z
+     * @hash   545160091
      */
     MCAPI float getFloat(class Random &) const;
     /**
      * @symbol ?getInt@RandomValueBounds@@QEBAHAEAVRandom@@@Z
+     * @hash   -794073565
      */
     MCAPI int getInt(class Random &) const;
     /**
      * @symbol ?getMax@RandomValueBounds@@QEBAMXZ
+     * @hash   1221843696
      */
     MCAPI float getMax() const;
     /**
      * @symbol ?getMin@RandomValueBounds@@QEBAMXZ
+     * @hash   -1103894340
      */
     MCAPI float getMin() const;
 

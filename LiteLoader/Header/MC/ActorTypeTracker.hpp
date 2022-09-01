@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORTYPETRACKER
-#endif
     /**
      * @symbol ??0ActorTypeTracker@@QEAA@XZ
+     * @hash   1476290613
      */
     MCAPI ActorTypeTracker();
     /**
      * @symbol ?markSeenType@ActorTypeTracker@@QEAAXAEBVActor@@@Z
+     * @hash   1666198326
      */
     MCAPI void markSeenType(class Actor const &);
     /**
      * @symbol ?shouldSendPropertyUpdate@ActorTypeTracker@@QEAA_NAEBVActor@@@Z
+     * @hash   -168529315
      */
     MCAPI bool shouldSendPropertyUpdate(class Actor const &);
     /**
      * @symbol ??1ActorTypeTracker@@QEAA@XZ
+     * @hash   1810397987
      */
     MCAPI ~ActorTypeTracker();
 

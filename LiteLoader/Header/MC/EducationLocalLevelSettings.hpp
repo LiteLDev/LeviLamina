@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONLOCALLEVELSETTINGS
-#endif
     /**
      * @symbol ??1EducationLocalLevelSettings@@QEAA@XZ
+     * @hash   44156208
      */
     MCAPI ~EducationLocalLevelSettings();
 

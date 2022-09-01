@@ -32,62 +32,74 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTYPEREGISTRY
-#endif
     /**
      * @symbol ?computeBlockTypeRegistryChecksum@BlockTypeRegistry@@SA_KAEBVBaseGameVersion@@@Z
+     * @hash   1239520146
      */
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     /**
      * @symbol ?forEachBlock@BlockTypeRegistry@@SAXV?$function@$$A6A_NAEBVBlockLegacy@@@Z@std@@@Z
+     * @hash   1301557558
      */
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
     /**
      * @symbol ?getDefaultBlockState@BlockTypeRegistry@@SAAEBVBlock@@AEBVHashedString@@_N@Z
+     * @hash   -460747488
      */
     MCAPI static class Block const & getDefaultBlockState(class HashedString const &, bool);
     /**
      * @symbol ?getEntityRegistry@BlockTypeRegistry@@SA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ
+     * @hash   -1307409889
      */
     MCAPI static class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
     /**
      * @symbol ?initBlockEntities@BlockTypeRegistry@@SAXAEBVExperiments@@@Z
+     * @hash   714173630
      */
     MCAPI static void initBlockEntities(class Experiments const &);
     /**
      * @symbol ?initEntityRegistry@BlockTypeRegistry@@SAXXZ
+     * @hash   836658513
      */
     MCAPI static void initEntityRegistry();
     /**
      * @symbol ?isBlockDataDriven@BlockTypeRegistry@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   521534469
      */
     MCAPI static bool isBlockDataDriven(std::string const &);
     /**
      * @symbol ?lockAgainstRegistryModifications@BlockTypeRegistry@@SA?AVBlockTypeRegistryReadLock@@XZ
+     * @hash   756063530
      */
     MCAPI static class BlockTypeRegistryReadLock lockAgainstRegistryModifications();
     /**
      * @symbol ?lockForRegistryModifications@BlockTypeRegistry@@SA?AVBlockTypeRegistryModificationsLock@@XZ
+     * @hash   1202687370
      */
     MCAPI static class BlockTypeRegistryModificationsLock lockForRegistryModifications();
     /**
      * @symbol ?lookupByName@BlockTypeRegistry@@SA?AV?$WeakPtr@VBlockLegacy@@@@AEBVHashedString@@_N@Z
+     * @hash   -1929047923
      */
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
     /**
      * @symbol ?prepareBlocks@BlockTypeRegistry@@SAXI@Z
+     * @hash   548215916
      */
     MCAPI static void prepareBlocks(unsigned int);
     /**
      * @symbol ?registerAlias@BlockTypeRegistry@@SAXAEBVHashedString@@0@Z
+     * @hash   -368041733
      */
     MCAPI static void registerAlias(class HashedString const &, class HashedString const &);
     /**
      * @symbol ?unregisterBlock@BlockTypeRegistry@@SAXAEBVHashedString@@@Z
+     * @hash   -2071816288
      */
     MCAPI static void unregisterBlock(class HashedString const &);
     /**
      * @symbol ?unregisterBlocks@BlockTypeRegistry@@SAXXZ
+     * @hash   1520189077
      */
     MCAPI static void unregisterBlocks();
 

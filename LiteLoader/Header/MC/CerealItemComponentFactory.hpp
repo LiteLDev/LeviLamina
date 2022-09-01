@@ -37,40 +37,46 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALITEMCOMPONENTFACTORY
-#endif
     /**
      * @symbol ?addAllComponentUpgrades@CerealItemComponentFactory@@SAXAEAVCerealDocumentUpgrader@@@Z
+     * @hash   229371258
      */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
     /**
      * @symbol ?constructItemComponent@CerealItemComponentFactory@@SA?AV?$shared_ptr@VItemComponent@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   2070380470
      */
     MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
     /**
      * @symbol ?getItemContext@CerealItemComponentFactory@@SAPEAVComponentItem@@XZ
+     * @hash   -1253135309
      */
     MCAPI static class ComponentItem * getItemContext();
     /**
      * @symbol ?isRegisteredComponent@CerealItemComponentFactory@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1815757975
      */
     MCAPI static bool isRegisteredComponent(std::string const &);
     /**
      * @symbol ?registerComponentUpgrade@CerealItemComponentFactory@@SAXAEAVCerealDocumentUpgrader@@V?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z
+     * @hash   -442566800
      */
     MCAPI static void registerComponentUpgrade(class CerealDocumentUpgrader &, class std::shared_ptr<class CerealSchemaUpgrade>);
     /**
      * @symbol ?resetItemContext@CerealItemComponentFactory@@SAXXZ
+     * @hash   1760955299
      */
     MCAPI static void resetItemContext();
     /**
      * @symbol ?setItemContext@CerealItemComponentFactory@@SAXPEAVComponentItem@@@Z
+     * @hash   1584019559
      */
     MCAPI static void setItemContext(class ComponentItem *);
 
 //private:
     /**
      * @symbol ?_bindAllComponentSchemas@CerealItemComponentFactory@@CAXAEAVSchemaFactory@reflection@@AEBVSemVersion@@@Z
+     * @hash   808933064
      */
     MCAPI static void _bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
 

@@ -30,29 +30,31 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@NavigationWalkDescription@@UEBAPEBDXZ
+     * @hash   716389959
      */
     virtual char const * getJsonName() const = 0;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   851224598
      */
     virtual ~NavigationDescription();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1916711401
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?serializeData@NavigationDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -2134015039
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONDESCRIPTION
-#endif
     /**
      * @symbol ??0NavigationDescription@@QEAA@XZ
+     * @hash   36168676
      */
     MCAPI NavigationDescription();
 

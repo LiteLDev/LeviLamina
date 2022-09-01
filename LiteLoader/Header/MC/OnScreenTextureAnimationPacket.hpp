@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1994403942
      */
     virtual ~OnScreenTextureAnimationPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@OnScreenTextureAnimationPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1465499470
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@OnScreenTextureAnimationPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1406005409
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@OnScreenTextureAnimationPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -119045176
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@OnScreenTextureAnimationPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -419622456
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSCREENTEXTUREANIMATIONPACKET
-#endif
     /**
      * @symbol ??0OnScreenTextureAnimationPacket@@QEAA@XZ
+     * @hash   1838138104
      */
     MCAPI OnScreenTextureAnimationPacket();
     /**
      * @symbol ??0OnScreenTextureAnimationPacket@@QEAA@I@Z
+     * @hash   1257619357
      */
     MCAPI OnScreenTextureAnimationPacket(unsigned int);
 

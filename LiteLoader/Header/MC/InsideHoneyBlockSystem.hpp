@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEHONEYBLOCKSYSTEM
-#endif
     /**
      * @symbol ?createEventsSystem@InsideHoneyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -952245046
      */
     MCAPI static struct TickingSystemWithInfo createEventsSystem();
     /**
      * @symbol ?createMovementSystem@InsideHoneyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1414989690
      */
     MCAPI static struct TickingSystemWithInfo createMovementSystem();
 

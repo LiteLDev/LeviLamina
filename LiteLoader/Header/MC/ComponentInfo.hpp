@@ -26,22 +26,24 @@ public:
     ComponentInfo() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPONENTINFO
-#endif
     /**
      * @symbol ??4ComponentInfo@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -1862298850
      */
     MCAPI struct ComponentInfo & operator=(struct ComponentInfo const &);
     /**
      * @symbol ??4ComponentInfo@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   946847798
      */
     MCAPI struct ComponentInfo & operator=(struct ComponentInfo &&);
     /**
      * @symbol ??1ComponentInfo@@QEAA@XZ
+     * @hash   -47034601
      */
     MCAPI ~ComponentInfo();
     /**
      * @symbol ?bindType@ComponentInfo@@SAXXZ
+     * @hash   -1836262817
      */
     MCAPI static void bindType();
 

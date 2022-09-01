@@ -28,22 +28,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INITIALTICKFILTERSYSTEM
-#endif
     /**
      * @symbol ?blockFilterTickEntity@InitialTickFilterSystem@@SAXAEAVStrictEntityContext@@AEBV?$FlagComponent@UUsesECSMovementFlag@@@@AEBV?$FlagComponent@UActorMovementTickNeededFlag@@@@AEBUConstBlockSourceComponent@@AEBUStateVectorComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@Z
+     * @hash   -1361574403
      */
     MCAPI static void blockFilterTickEntity(class StrictEntityContext &, class FlagComponent<struct UsesECSMovementFlag> const &, class FlagComponent<struct ActorMovementTickNeededFlag> const &, struct ConstBlockSourceComponent const &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>> &);
     /**
      * @symbol ?createBlockFilterSystem@InitialTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   51509804
      */
     MCAPI static struct TickingSystemWithInfo createBlockFilterSystem();
     /**
      * @symbol ?createTickingAreaFilterSystem@InitialTickFilterSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1737372580
      */
     MCAPI static struct TickingSystemWithInfo createTickingAreaFilterSystem();
     /**
      * @symbol ?tickingAreaFilterTickEntity@InitialTickFilterSystem@@SAXAEAVStrictEntityContext@@AEBV?$FlagComponent@UUsesECSMovementFlag@@@@AEBV?$FlagComponent@UActorMovementTickNeededFlag@@@@AEAVTickWorldComponent@@AEBUCurrentTickComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UActorMovementTickNeededFlag@@@@@@@Z
+     * @hash   1279181385
      */
     MCAPI static void tickingAreaFilterTickEntity(class StrictEntityContext &, class FlagComponent<struct UsesECSMovementFlag> const &, class FlagComponent<struct ActorMovementTickNeededFlag> const &, class TickWorldComponent &, struct CurrentTickComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>> &);
 

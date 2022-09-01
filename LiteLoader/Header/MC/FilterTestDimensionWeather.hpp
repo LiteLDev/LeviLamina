@@ -33,31 +33,33 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1045220926
      */
     virtual ~FilterTestDimensionWeather();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?setup@FilterTestDimensionWeather@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+     * @hash   766751378
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?evaluate@FilterTestDimensionWeather@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   -600093574
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getName@FilterTestDimensionWeather@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   -415905912
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_serializeValue@FilterTestDimensionWeather@@MEBA?AVValue@Json@@XZ
+     * @hash   1283855943
      */
     virtual class Json::Value _serializeValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTDIMENSIONWEATHER
-#endif
 
 };

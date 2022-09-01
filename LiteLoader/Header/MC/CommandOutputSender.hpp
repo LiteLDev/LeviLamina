@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1388522575
      */
     virtual ~CommandOutputSender();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z
+     * @hash   -1560773437
      */
     virtual void send(class CommandOrigin const &, class CommandOutput const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?registerOutputCallback@CommandOutputSender@@UEAAXAEBV?$function@$$A6AXAEAVAutomationCmdOutput@@@Z@std@@@Z
+     * @hash   1216214744
      */
     virtual void registerOutputCallback(class std::function<void (class AutomationCmdOutput &)> const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTSENDER
-#endif
     /**
      * @symbol ??0CommandOutputSender@@QEAA@XZ
+     * @hash   1219416909
      */
     MCAPI CommandOutputSender();
     /**
      * @symbol ?sendToAdmins@CommandOutputSender@@QEAAXAEBVCommandOrigin@@AEBVCommandOutput@@W4CommandPermissionLevel@@@Z
+     * @hash   -496153756
      */
     MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum CommandPermissionLevel);
     /**
      * @symbol ?translate@CommandOutputSender@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV23@@Z
+     * @hash   -1266368645
      */
     MCAPI static std::vector<std::string> translate(std::vector<std::string> const &);
 
 //protected:
     /**
      * @symbol ?_toJson@CommandOutputSender@@IEBA?AVValue@Json@@AEBVCommandOutput@@@Z
+     * @hash   668400648
      */
     MCAPI class Json::Value _toJson(class CommandOutput const &) const;
 

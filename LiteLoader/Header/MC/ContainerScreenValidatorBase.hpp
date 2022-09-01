@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   387982656
      */
     virtual ~ContainerScreenValidatorBase();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?postCommitItemRemoved@ContainerScreenValidatorBase@@UEAA?AV?$shared_ptr@VContainerValidationCommitObject@@@std@@W4ContainerEnumName@@HAEBVItemStack@@@Z
+     * @hash   -1836202123
      */
     virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum ContainerEnumName, int, class ItemStack const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isCraftingImplemented@ContainerScreenValidatorBase@@UEAA_NXZ
+     * @hash   -975604999
      */
     virtual bool isCraftingImplemented();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getCraftResult@ContainerScreenValidatorBase@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+     * @hash   -1988263019
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATORBASE
-#endif
     /**
      * @symbol ?isValidContainerForScreen@ContainerScreenValidatorBase@@QEBA_NW4ContainerEnumName@@@Z
+     * @hash   662933023
      */
     MCAPI bool isValidContainerForScreen(enum ContainerEnumName) const;
 

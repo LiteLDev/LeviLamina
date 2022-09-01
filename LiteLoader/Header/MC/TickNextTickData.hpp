@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKNEXTTICKDATA
-#endif
     /**
      * @symbol ??0TickNextTickData@@QEAA@AEBVBlockPos@@AEBVBlock@@AEBUTick@@H@Z
+     * @hash   535105261
      */
     MCAPI TickNextTickData(class BlockPos const &, class Block const &, struct Tick const &, int);
     /**
      * @symbol ??8TickNextTickData@@QEBA_NAEBV0@@Z
+     * @hash   -1471047840
      */
     MCAPI bool operator==(class TickNextTickData const &) const;
     /**
      * @symbol ??OTickNextTickData@@QEBA_NAEBV0@@Z
+     * @hash   -1902730397
      */
     MCAPI bool operator>(class TickNextTickData const &) const;
 

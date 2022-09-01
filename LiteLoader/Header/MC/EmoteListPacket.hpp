@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1370897492
      */
     virtual ~EmoteListPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@EmoteListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   898329984
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@EmoteListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -791992275
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@EmoteListPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -397488678
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@EmoteListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1260696406
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMOTELISTPACKET
-#endif
     /**
      * @symbol ??0EmoteListPacket@@QEAA@XZ
+     * @hash   700306282
      */
     MCAPI EmoteListPacket();
     /**
      * @symbol ??0EmoteListPacket@@QEAA@VActorRuntimeID@@@Z
+     * @hash   842543803
      */
     MCAPI EmoteListPacket(class ActorRuntimeID);
 MCAPI static int const MAX_EMOTE_PIECE_IDS;

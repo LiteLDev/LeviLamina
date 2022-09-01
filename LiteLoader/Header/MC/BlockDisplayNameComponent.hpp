@@ -27,10 +27,9 @@ public:
     BlockDisplayNameComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDISPLAYNAMECOMPONENT
-#endif
     /**
      * @symbol ??1BlockDisplayNameComponent@@QEAA@XZ
+     * @hash   -864182615
      */
     MCAPI ~BlockDisplayNameComponent();
 

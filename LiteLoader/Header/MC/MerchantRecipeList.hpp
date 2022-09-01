@@ -44,60 +44,69 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2101863678
      */
     virtual ~MerchantRecipeList();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@0H@Z
+     * @hash   1972199023
      */
     virtual class MerchantRecipe * getRecipeFor(class ItemInstance const &, class ItemInstance const &, int);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?addIfNewOrBetter@MerchantRecipeList@@UEAAXPEAVMerchantRecipe@@@Z
+     * @hash   671815394
      */
     virtual void addIfNewOrBetter(class MerchantRecipe *);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBVItemInstance@@00@Z
+     * @hash   23293966
      */
     virtual class MerchantRecipe * getMatchingRecipeFor(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getMatchingRecipeFor@MerchantRecipeList@@UEAAPEAVMerchantRecipe@@AEBV2@@Z
+     * @hash   74043328
      */
     virtual class MerchantRecipe * getMatchingRecipeFor(class MerchantRecipe const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?load@MerchantRecipeList@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   718562673
      */
     virtual void load(class CompoundTag const &);
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?createTag@MerchantRecipeList@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
+     * @hash   -742258937
      */
     virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPELIST
-#endif
     /**
      * @symbol ??0MerchantRecipeList@@QEAA@XZ
+     * @hash   -1942988624
      */
     MCAPI MerchantRecipeList();
     /**
      * @symbol ?assignNetIds@MerchantRecipeList@@QEAAXXZ
+     * @hash   1548539381
      */
     MCAPI void assignNetIds();
     /**
      * @symbol ?getRecipeByNetId@MerchantRecipeList@@QEBAPEBVMerchantRecipe@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
+     * @hash   1121243077
      */
     MCAPI class MerchantRecipe const * getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
     /**
      * @symbol ?getRecipeIndexByNetId@MerchantRecipeList@@QEBA?AV?$optional@_K@std@@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
+     * @hash   430236125
      */
     MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &) const;
     /**
      * @symbol ?isRequiredItem@MerchantRecipeList@@QEAA_NAEBVItemInstance@@0@Z
+     * @hash   1776544190
      */
     MCAPI bool isRequiredItem(class ItemInstance const &, class ItemInstance const &);
 

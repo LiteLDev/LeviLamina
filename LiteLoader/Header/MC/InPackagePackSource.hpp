@@ -32,49 +32,53 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   586817187
      */
     virtual ~InPackagePackSource();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -2102498911
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -2101575390
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ
+     * @hash   -1704180895
      */
     virtual enum PackOrigin getPackOrigin() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?getPackType@InPackagePackSource@@UEBA?AW4PackType@@XZ
+     * @hash   -806552015
      */
     virtual enum PackType getPackType() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?load@InPackagePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+     * @hash   -679434706
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPACKAGEPACKSOURCE
     /**
-     * @vtable -1
      * @symbol ?forEachPack@InPackagePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+     * @hash   -297565075
      */
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     /**
-     * @vtable -1
      * @symbol ?forEachPackConst@InPackagePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
+     * @hash   1086741068
      */
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     /**
      * @symbol ??0InPackagePackSource@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@W4PackType@@@Z
+     * @hash   -231173102
      */
     MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
 

@@ -27,10 +27,9 @@ public:
     BlockRandomTickingComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGCOMPONENT
-#endif
     /**
      * @symbol ??1BlockRandomTickingComponent@@QEAA@XZ
+     * @hash   1319949860
      */
     MCAPI ~BlockRandomTickingComponent();
 

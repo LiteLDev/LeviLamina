@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1262978200
      */
     virtual ~BiomeRegistryMergeStrategy();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?mergeFiles@BiomeRegistryMergeStrategy@@UEAAXAEBV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@@Z
+     * @hash   1178869479
      */
     virtual void mergeFiles(std::vector<class LoadedResourceData> const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEREGISTRYMERGESTRATEGY
-#endif
 
 };

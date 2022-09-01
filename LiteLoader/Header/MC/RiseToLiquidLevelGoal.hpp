@@ -31,55 +31,58 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   2021738085
      */
     virtual ~RiseToLiquidLevelGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@RiseToLiquidLevelGoal@@UEAA_NXZ
+     * @hash   -483901607
      */
     virtual bool canUse();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
-     * @symbol __unk_vfn_4
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @vtable 5
-     * @symbol __unk_vfn_5
+     * @vftbl  5
+     * @hash   518983733
      */
     virtual void __unk_vfn_5();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@RiseToLiquidLevelGoal@@UEAAXXZ
+     * @hash   1197486749
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RiseToLiquidLevelGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2707881
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RISETOLIQUIDLEVELGOAL
-#endif
     /**
      * @symbol ??0RiseToLiquidLevelGoal@@QEAA@AEAVMob@@MMM@Z
+     * @hash   -1992216741
      */
     MCAPI RiseToLiquidLevelGoal(class Mob &, float, float, float);
 
 //private:
     /**
      * @symbol ?findLiquidLevel@RiseToLiquidLevelGoal@@AEAAMXZ
+     * @hash   1248816636
      */
     MCAPI float findLiquidLevel();
 

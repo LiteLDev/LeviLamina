@@ -40,1082 +40,1094 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
     /**
-     * @vtable -1
      * @symbol ?_createProxyResolver@AppPlatform@@EEAA?AV?$unique_ptr@VIProxyResolver@Http@Bedrock@@U?$default_delete@VIProxyResolver@Http@Bedrock@@@std@@@std@@XZ
+     * @hash   550472157
      */
     MCVAPI std::unique_ptr<class Bedrock::Http::IProxyResolver> _createProxyResolver();
     /**
-     * @vtable -1
      * @symbol ?_disableCPUBoost@AppPlatform@@MEAAXXZ
+     * @hash   383981120
      */
     MCVAPI void _disableCPUBoost();
     /**
-     * @vtable -1
      * @symbol ?_initializeFileStorageAreas@AppPlatform@@MEAAXXZ
+     * @hash   1876405714
      */
     MCVAPI void _initializeFileStorageAreas();
     /**
-     * @vtable -1
      * @symbol ?_onInitialize@AppPlatform@@EEAAXXZ
+     * @hash   -1903985453
      */
     MCVAPI void _onInitialize();
     /**
-     * @vtable -1
      * @symbol ?_onTeardown@AppPlatform@@EEAAXXZ
+     * @hash   98039367
      */
     MCVAPI void _onTeardown();
     /**
-     * @vtable -1
      * @symbol ?_teardownFileStorageAreas@AppPlatform@@MEAAXXZ
+     * @hash   2109204358
      */
     MCVAPI void _teardownFileStorageAreas();
     /**
-     * @vtable -1
      * @symbol ?_tryEnableCPUBoost@AppPlatform@@MEAA_NXZ
+     * @hash   -1280197064
      */
     MCVAPI bool _tryEnableCPUBoost();
     /**
-     * @vtable -1
      * @symbol ?addListener@AppPlatform@@UEAAXPEAVAppPlatformListener@@M@Z
+     * @hash   -218579494
      */
     MCVAPI void addListener(class AppPlatformListener *, float);
     /**
-     * @vtable -1
      * @symbol ?allowBetaXblSignIn@AppPlatform@@UEBA_NXZ
+     * @hash   -768028561
      */
     MCVAPI bool allowBetaXblSignIn() const;
     /**
-     * @vtable -1
      * @symbol ?allowContentLogWriteToDisk@AppPlatform@@UEAA_NXZ
+     * @hash   567730568
      */
     MCVAPI bool allowContentLogWriteToDisk();
     /**
-     * @vtable -1
      * @symbol ?allowsResourcePackDevelopment@AppPlatform@@UEBA_NXZ
+     * @hash   -207072626
      */
     MCVAPI bool allowsResourcePackDevelopment() const;
     /**
-     * @vtable -1
      * @symbol ?alwaysUseZippedPacksForDlc@AppPlatform@@UEBA_NXZ
+     * @hash   -1697034870
      */
     MCVAPI bool alwaysUseZippedPacksForDlc() const;
     /**
-     * @vtable -1
      * @symbol ?areThreadsFrozen@AppPlatform@@UEBA_NXZ
+     * @hash   306846601
      */
     MCVAPI bool areThreadsFrozen() const;
     /**
-     * @vtable -1
      * @symbol ?buyGame@AppPlatform@@UEAAXXZ
+     * @hash   -100847253
      */
     MCVAPI void buyGame();
     /**
-     * @vtable -1
      * @symbol ?calculateIfLowMemoryDevice@AppPlatform@@UEAAXXZ
+     * @hash   -436445189
      */
     MCVAPI void calculateIfLowMemoryDevice();
     /**
-     * @vtable -1
      * @symbol ?canLaunchUri@AppPlatform@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1432894
      */
     MCVAPI bool canLaunchUri(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?canManageLegacyData@AppPlatform@@UEBA_NXZ
+     * @hash   1018969900
      */
     MCVAPI bool canManageLegacyData() const;
     /**
-     * @vtable -1
      * @symbol ?canSwapVRMode@AppPlatform@@UEBA_N_N@Z
+     * @hash   -1746192012
      */
     MCVAPI bool canSwapVRMode(bool) const;
     /**
-     * @vtable -1
      * @symbol ?checkLicense@AppPlatform@@UEAAHXZ
+     * @hash   1873275905
      */
     MCVAPI int checkLicense();
     /**
-     * @vtable -1
      * @symbol ?collectGraphicsHardwareDetails@AppPlatform@@UEAAXXZ
+     * @hash   69033064
      */
     MCVAPI void collectGraphicsHardwareDetails();
     /**
-     * @vtable -1
      * @symbol ?compareAppReceiptToLocalReceipt@AppPlatform@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1918067677
      */
     MCVAPI bool compareAppReceiptToLocalReceipt(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?copyAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@0@Z
+     * @hash   -774235220
      */
     MCVAPI bool copyAssetFile(class Core::Path const &, class Core::Path const &);
     /**
-     * @vtable -1
      * @symbol ?copyImportFileToTempFolder@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
+     * @hash   1446506087
      */
     MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
     /**
-     * @vtable -1
      * @symbol ?createLoggingStorageArea@AppPlatform@@UEAA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@W4FileAccessType@Core@@AEBVPath@5@@Z
+     * @hash   13722005
      */
     MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum Core::FileAccessType, class Core::Path const &);
     /**
-     * @vtable -1
      * @symbol ?createUserInput@AppPlatform@@UEAAXH@Z
+     * @hash   -1899510519
      */
     MCVAPI void createUserInput(int);
     /**
-     * @vtable -1
      * @symbol ?createUserInput@AppPlatform@@UEAAXXZ
+     * @hash   -834047978
      */
     MCVAPI void createUserInput();
     /**
-     * @vtable -1
      * @symbol ?createWebview@AppPlatform@@UEBA?AV?$shared_ptr@VWebviewInterface@@@std@@$$QEAVPlatformArguments@Webview@@@Z
+     * @hash   -1624633709
      */
     MCVAPI class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments &&) const;
     /**
-     * @vtable -1
      * @symbol ?doesLANRequireMultiplayerRestrictions@AppPlatform@@UEBA_NXZ
+     * @hash   -1671444640
      */
     MCVAPI bool doesLANRequireMultiplayerRestrictions() const;
     /**
-     * @vtable -1
      * @symbol ?exitVRMode@AppPlatform@@UEAAXV?$function@$$A6AXXZ@std@@@Z
+     * @hash   -404561915
      */
     MCVAPI void exitVRMode(class std::function<void (void)>);
     /**
-     * @vtable -1
      * @symbol ?finish@AppPlatform@@UEAAXXZ
+     * @hash   1557466566
      */
     MCVAPI void finish();
     /**
-     * @vtable -1
      * @symbol ?getARVRPlatform@AppPlatform@@UEBA?AW4ARVRPlatform@@XZ
+     * @hash   -1644203070
      */
     MCVAPI enum ARVRPlatform getARVRPlatform() const;
     /**
-     * @vtable -1
      * @symbol ?getAndroidScopedStorageInfo@AppPlatform@@UEBAAEBUAndroidScopedStorageInfo@1@XZ
+     * @hash   1596324086
      */
     MCVAPI struct AppPlatform::AndroidScopedStorageInfo const & getAndroidScopedStorageInfo() const;
     /**
-     * @vtable -1
      * @symbol ?getAppLifecycleContext@AppPlatform@@UEAAAEAVAppLifecycleContext@@XZ
+     * @hash   -126960625
      */
     MCVAPI class AppLifecycleContext & getAppLifecycleContext();
     /**
-     * @vtable -1
      * @symbol ?getAssetFileFullPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
+     * @hash   1239206224
      */
     MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const &);
     /**
-     * @vtable -1
      * @symbol ?getBroadcastAddresses@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     * @hash   -781737495
      */
     MCVAPI std::vector<std::string> getBroadcastAddresses();
     /**
-     * @vtable -1
      * @symbol ?getBroadcastingMultiplayerServiceIds@AppPlatform@@UEBA?AV?$vector@W4MultiplayerServiceIdentifier@Social@@V?$allocator@W4MultiplayerServiceIdentifier@Social@@@std@@@std@@_N0@Z
+     * @hash   -1498822937
      */
     MCVAPI std::vector<enum Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const;
     /**
-     * @vtable -1
      * @symbol ?getBuildPlatform@AppPlatform@@UEBA?AW4BuildPlatform@@XZ
+     * @hash   1373250412
      */
     MCVAPI enum BuildPlatform getBuildPlatform() const;
     /**
-     * @vtable -1
      * @symbol ?getCacheStoragePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -1037309585
      */
     MCVAPI class Core::PathBuffer<std::string> getCacheStoragePath();
     /**
-     * @vtable -1
      * @symbol ?getCatalogSearchScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -725706897
      */
     MCVAPI class Core::PathBuffer<std::string> getCatalogSearchScratchPath();
     /**
-     * @vtable -1
      * @symbol ?getClientUpdateUrl@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -749630293
      */
     MCVAPI std::string getClientUpdateUrl() const;
     /**
-     * @vtable -1
      * @symbol ?getDefaultInputMode@AppPlatform@@UEBA?AW4InputMode@@XZ
+     * @hash   2130474183
      */
     MCVAPI enum InputMode getDefaultInputMode() const;
     /**
-     * @vtable -1
      * @symbol ?getDefaultNetworkMaxPlayers@AppPlatform@@UEBAHXZ
+     * @hash   899272072
      */
     MCVAPI int getDefaultNetworkMaxPlayers() const;
     /**
-     * @vtable -1
      * @symbol ?getDefaultSafeZoneScaleX@AppPlatform@@UEBAMXZ
+     * @hash   1222122188
      */
     MCVAPI float getDefaultSafeZoneScaleX() const;
     /**
-     * @vtable -1
      * @symbol ?getDefaultSafeZoneScaleY@AppPlatform@@UEBAMXZ
+     * @hash   429753901
      */
     MCVAPI float getDefaultSafeZoneScaleY() const;
     /**
-     * @vtable -1
      * @symbol ?getDefaultScreenPositionX@AppPlatform@@UEBAMXZ
+     * @hash   -1210326510
      */
     MCVAPI float getDefaultScreenPositionX() const;
     /**
-     * @vtable -1
      * @symbol ?getDefaultScreenPositionY@AppPlatform@@UEBAMXZ
+     * @hash   -2002694797
      */
     MCVAPI float getDefaultScreenPositionY() const;
     /**
-     * @vtable -1
      * @symbol ?getDeviceSunsetTier@AppPlatform@@UEBA?AW4DeviceSunsetTier@@XZ
+     * @hash   -759005886
      */
     MCVAPI enum DeviceSunsetTier getDeviceSunsetTier() const;
     /**
-     * @vtable -1
      * @symbol ?getDisplayHeight@AppPlatform@@UEAAHXZ
+     * @hash   1961780171
      */
     MCVAPI int getDisplayHeight();
     /**
-     * @vtable -1
      * @symbol ?getDisplayWidth@AppPlatform@@UEAAHXZ
+     * @hash   -1726246142
      */
     MCVAPI int getDisplayWidth();
     /**
-     * @vtable -1
      * @symbol ?getDpi@AppPlatform@@UEBAHXZ
+     * @hash   1929314622
      */
     MCVAPI int getDpi() const;
     /**
-     * @vtable -1
      * @symbol ?getEdition@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -607138706
      */
     MCVAPI std::string getEdition() const;
     /**
-     * @vtable -1
      * @symbol ?getExtraLevelSaveDataIconParams@AppPlatform@@UEBA?AV?$optional@UScreenshotOptions@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   475053991
      */
     MCVAPI class std::optional<struct ScreenshotOptions> getExtraLevelSaveDataIconParams(std::string const &) const;
     /**
-     * @vtable -1
      * @symbol ?getFeedbackBugsLink@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1257673718
      */
     MCVAPI std::string getFeedbackBugsLink() const;
     /**
-     * @vtable -1
      * @symbol ?getFeedbackHelpLink@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   956567884
      */
     MCVAPI std::string getFeedbackHelpLink() const;
     /**
-     * @vtable -1
      * @symbol ?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z
+     * @hash   1692158432
      */
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum ResourceFileSystem);
     /**
-     * @vtable -1
      * @symbol ?getFocusState@AppPlatform@@UEAA?AW4AppFocusState@@XZ
+     * @hash   -1910026104
      */
     MCVAPI enum AppFocusState getFocusState();
     /**
-     * @vtable -1
      * @symbol ?getHighPerformanceThreadsCount@AppPlatform@@UEBA_KXZ
+     * @hash   -818657382
      */
     MCVAPI unsigned __int64 getHighPerformanceThreadsCount() const;
     /**
-     * @vtable -1
      * @symbol ?getIPAddresses@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     * @hash   -1925898313
      */
     MCVAPI std::vector<std::string> getIPAddresses();
     /**
-     * @vtable -1
      * @symbol ?getInternalPackStoragePath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -536489010
      */
     MCVAPI class Core::PathBuffer<std::string> getInternalPackStoragePath() const;
     /**
-     * @vtable -1
      * @symbol ?getLevelInfoCachePath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -493943003
      */
     MCVAPI class Core::PathBuffer<std::string> getLevelInfoCachePath() const;
     /**
-     * @vtable -1
      * @symbol ?getLevelSaveInterval@AppPlatform@@UEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ
+     * @hash   -1038841545
      */
     MCVAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getLevelSaveInterval() const;
     /**
-     * @vtable -1
      * @symbol ?getLoggingPath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   2048132664
      */
     MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
     /**
-     * @vtable -1
      * @symbol ?getLowPhysicalMemoryThreshold@AppPlatform@@UEBA_KXZ
+     * @hash   1373479537
      */
     MCVAPI unsigned __int64 getLowPhysicalMemoryThreshold() const;
     /**
-     * @vtable -1
      * @symbol ?getMaxSimRadiusInChunks@AppPlatform@@UEBAHXZ
+     * @hash   -916943011
      */
     MCVAPI int getMaxSimRadiusInChunks() const;
     /**
-     * @vtable -1
      * @symbol ?getMaxSimultaneousDownloads@AppPlatform@@UEBAHXZ
+     * @hash   -915711527
      */
     MCVAPI int getMaxSimultaneousDownloads() const;
     /**
-     * @vtable -1
      * @symbol ?getMaxSimultaneousServiceRequests@AppPlatform@@UEBAIXZ
+     * @hash   -1079121822
      */
     MCVAPI unsigned int getMaxSimultaneousServiceRequests() const;
     /**
-     * @vtable -1
      * @symbol ?getMaximumUsedMemory@AppPlatform@@UEAA_KXZ
+     * @hash   728141813
      */
     MCVAPI unsigned __int64 getMaximumUsedMemory();
     /**
-     * @vtable -1
      * @symbol ?getModalErrorMessageProc@AppPlatform@@UEAAP6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@ZXZ
+     * @hash   1622619027
      */
     MCVAPI void ( *)(std::string const &, std::string const &) getModalErrorMessageProc();
     /**
-     * @vtable -1
      * @symbol ?getModelName@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   208800277
      */
     MCVAPI std::string getModelName();
     /**
-     * @vtable -1
      * @symbol ?getMultiplayerServiceListToRegister@AppPlatform@@UEBA?AV?$vector@V?$shared_ptr@VMultiplayerService@Social@@@std@@V?$allocator@V?$shared_ptr@VMultiplayerService@Social@@@std@@@2@@std@@XZ
+     * @hash   588731756
      */
     MCVAPI std::vector<class std::shared_ptr<class Social::MultiplayerService>> getMultiplayerServiceListToRegister() const;
     /**
-     * @vtable -1
      * @symbol ?getNumberOfParticleFramesToInterpolate@AppPlatform@@UEBAHXZ
+     * @hash   -1594597301
      */
     MCVAPI int getNumberOfParticleFramesToInterpolate() const;
     /**
-     * @vtable -1
      * @symbol ?getOSVersion@AppPlatform@@UEBA?AW4OsVersion@@XZ
+     * @hash   -242378420
      */
     MCVAPI enum OsVersion getOSVersion() const;
     /**
-     * @vtable -1
      * @symbol ?getOnDiskPackScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   58065391
      */
     MCVAPI class Core::PathBuffer<std::string> getOnDiskPackScratchPath();
     /**
-     * @vtable -1
      * @symbol ?getOnDiskScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -229101048
      */
     MCVAPI class Core::PathBuffer<std::string> getOnDiskScratchPath();
     /**
-     * @vtable -1
      * @symbol ?getOperationMode@AppPlatform@@UEBA?AV?$optional@W4OperationMode@@@std@@XZ
+     * @hash   1941516693
      */
     MCVAPI class std::optional<enum OperationMode> getOperationMode() const;
     /**
-     * @vtable -1
      * @symbol ?getOptimalLDBSize@AppPlatform@@UEAA_KXZ
+     * @hash   -2429444
      */
     MCVAPI unsigned __int64 getOptimalLDBSize();
     /**
-     * @vtable -1
      * @symbol ?getOptionsSaveInterval@AppPlatform@@UEBA?AV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@XZ
+     * @hash   1035292513
      */
     MCVAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getOptionsSaveInterval() const;
     /**
-     * @vtable -1
      * @symbol ?getPackageFamilyName@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1937207429
      */
     MCVAPI std::string getPackageFamilyName() const;
     /**
-     * @vtable -1
      * @symbol ?getPackagedShaderCachePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -1355250199
      */
     MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
     /**
-     * @vtable -1
      * @symbol ?getPixelsPerMillimeter@AppPlatform@@UEAAMXZ
+     * @hash   -1420900159
      */
     MCVAPI float getPixelsPerMillimeter();
     /**
-     * @vtable -1
      * @symbol ?getPlatformDpi@AppPlatform@@EEBAHXZ
+     * @hash   1439600717
      */
     MCVAPI int getPlatformDpi() const;
     /**
-     * @vtable -1
      * @symbol ?getPlatformStringVar@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -682526101
      */
     MCVAPI std::string getPlatformStringVar(int);
     /**
-     * @vtable -1
      * @symbol ?getPlatformTTSEnabled@AppPlatform@@UEBA_NXZ
+     * @hash   -1354434437
      */
     MCVAPI bool getPlatformTTSEnabled() const;
     /**
-     * @vtable -1
      * @symbol ?getPlatformTTSExists@AppPlatform@@UEBA_NXZ
+     * @hash   -1478207062
      */
     MCVAPI bool getPlatformTTSExists() const;
     /**
-     * @vtable -1
      * @symbol ?getPlatformType@AppPlatform@@UEBA?AW4PlatformType@@XZ
+     * @hash   -494136398
      */
     MCVAPI enum PlatformType getPlatformType() const;
     /**
-     * @vtable -1
      * @symbol ?getPlatformUIScalingRules@AppPlatform@@EEBA?AW4UIScalingRules@@XZ
+     * @hash   -446249881
      */
     MCVAPI enum UIScalingRules getPlatformUIScalingRules() const;
     /**
-     * @vtable -1
      * @symbol ?getRenderSurfaceParameters@AppPlatform@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ
+     * @hash   -2043346410
      */
     MCVAPI class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const;
     /**
-     * @vtable -1
      * @symbol ?getScreenHeight@AppPlatform@@UEBAHXZ
+     * @hash   1918818800
      */
     MCVAPI int getScreenHeight() const;
     /**
-     * @vtable -1
      * @symbol ?getScreenWidth@AppPlatform@@UEBAHXZ
+     * @hash   104328635
      */
     MCVAPI int getScreenWidth() const;
     /**
-     * @vtable -1
      * @symbol ?getSecureStorage@AppPlatform@@UEAA?AV?$unique_ptr@VSecureStorage@@U?$default_delete@VSecureStorage@@@std@@@std@@XZ
+     * @hash   -1530347894
      */
     MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
     /**
-     * @vtable -1
      * @symbol ?getSecureStorageKey@AppPlatform@@UEAA?AVSecureStorageKey@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   137887482
      */
     MCVAPI class SecureStorageKey getSecureStorageKey(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?getSettingsPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -47181687
      */
     MCVAPI class Core::PathBuffer<std::string> getSettingsPath();
     /**
-     * @vtable -1
      * @symbol ?getShaderCachePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -974323369
      */
     MCVAPI class Core::PathBuffer<std::string> getShaderCachePath();
     /**
-     * @vtable -1
      * @symbol ?getStoreNetworkFailureTimeout@AppPlatform@@UEBAMXZ
+     * @hash   1399070308
      */
     MCVAPI float getStoreNetworkFailureTimeout() const;
     /**
-     * @vtable -1
      * @symbol ?getThirdPartyPackUUID@AppPlatform@@UEBAAEBVUUID@mce@@XZ
+     * @hash   1459902312
      */
     MCVAPI class mce::UUID const & getThirdPartyPackUUID() const;
     /**
-     * @vtable -1
      * @symbol ?getTotalHardwareThreadsCount@AppPlatform@@UEBA_KXZ
+     * @hash   -1482027480
      */
     MCVAPI unsigned __int64 getTotalHardwareThreadsCount() const;
     /**
-     * @vtable -1
      * @symbol ?getUIScalingRules@AppPlatform@@UEBA?AW4UIScalingRules@@XZ
+     * @hash   2091142498
      */
     MCVAPI enum UIScalingRules getUIScalingRules() const;
     /**
-     * @vtable -1
      * @symbol ?getUserInput@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     * @hash   -1454356197
      */
     MCVAPI std::vector<std::string> getUserInput();
     /**
-     * @vtable -1
      * @symbol ?getUserInputStatus@AppPlatform@@UEAAHXZ
+     * @hash   -1509160445
      */
     MCVAPI int getUserInputStatus();
     /**
-     * @vtable -1
      * @symbol ?getUserStorageRootPath@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -704217125
      */
     MCVAPI class Core::PathBuffer<std::string> getUserStorageRootPath() const;
     /**
-     * @vtable -1
      * @symbol ?getUserdataPathForLevels@AppPlatform@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -696672686
      */
     MCVAPI class Core::PathBuffer<std::string> getUserdataPathForLevels() const;
     /**
-     * @vtable -1
      * @symbol ?getVRControllerType@AppPlatform@@UEBA?AW4VRControllerType@@XZ
+     * @hash   -826138750
      */
     MCVAPI enum VRControllerType getVRControllerType() const;
     /**
-     * @vtable -1
      * @symbol ?goToExternalConsumablesStoreListing@AppPlatform@@UEBAXXZ
+     * @hash   2127256791
      */
     MCVAPI void goToExternalConsumablesStoreListing() const;
     /**
-     * @vtable -1
      * @symbol ?handlePlatformSpecificCommerceError@AppPlatform@@UEAAXI@Z
+     * @hash   1927959879
      */
     MCVAPI void handlePlatformSpecificCommerceError(unsigned int);
     /**
-     * @vtable -1
      * @symbol ?hasAssetFile@AppPlatform@@UEAA_NAEBVPath@Core@@@Z
+     * @hash   315912478
      */
     MCVAPI bool hasAssetFile(class Core::Path const &);
     /**
-     * @vtable -1
      * @symbol ?hasBuyButtonWhenInvalidLicense@AppPlatform@@UEAA_NXZ
+     * @hash   1435564871
      */
     MCVAPI bool hasBuyButtonWhenInvalidLicense();
     /**
-     * @vtable -1
      * @symbol ?hasFastAlphaTest@AppPlatform@@UEBA_NXZ
+     * @hash   -522141826
      */
     MCVAPI bool hasFastAlphaTest() const;
     /**
-     * @vtable -1
      * @symbol ?hasIDEProfiler@AppPlatform@@UEAA_NXZ
+     * @hash   1025928126
      */
     MCVAPI bool hasIDEProfiler();
     /**
-     * @vtable -1
      * @symbol ?hasJournalingFilesystem@AppPlatform@@UEBA_NXZ
+     * @hash   1455761908
      */
     MCVAPI bool hasJournalingFilesystem() const;
     /**
-     * @vtable -1
      * @symbol ?hasPlatformSpecificInvites@AppPlatform@@UEBA_NXZ
+     * @hash   -1308126321
      */
     MCVAPI bool hasPlatformSpecificInvites() const;
     /**
-     * @vtable -1
      * @symbol ?hasSeparatedStorageAreasForContentAcquisition@AppPlatform@@UEBA_NXZ
+     * @hash   -284322993
      */
     MCVAPI bool hasSeparatedStorageAreasForContentAcquisition() const;
     /**
-     * @vtable -1
      * @symbol ?hideSplashScreen@AppPlatform@@UEAAXXZ
+     * @hash   -344486904
      */
     MCVAPI void hideSplashScreen();
     /**
-     * @vtable -1
      * @symbol ?importAsFlatFile@AppPlatform@@UEBA_NXZ
+     * @hash   -226166896
      */
     MCVAPI bool importAsFlatFile() const;
     /**
-     * @vtable -1
      * @symbol ?initAppPlatformNetworkSettings@AppPlatform@@UEAAXXZ
+     * @hash   118508928
      */
     MCVAPI void initAppPlatformNetworkSettings();
     /**
-     * @vtable -1
      * @symbol ?initialize@AppPlatform@@UEAAXXZ
+     * @hash   1141318259
      */
     MCVAPI void initialize();
     /**
-     * @vtable -1
      * @symbol ?initializeGameStreaming@AppPlatform@@UEAAXXZ
+     * @hash   548774835
      */
     MCVAPI void initializeGameStreaming();
     /**
-     * @vtable -1
      * @symbol ?initializeScreenDependentResources@AppPlatform@@UEAAXXZ
+     * @hash   -2020702475
      */
     MCVAPI void initializeScreenDependentResources();
     /**
-     * @vtable -1
      * @symbol ?isAutoCompactionEnabled@AppPlatform@@UEBA_NXZ
+     * @hash   293330759
      */
     MCVAPI bool isAutoCompactionEnabled() const;
     /**
-     * @vtable -1
      * @symbol ?isCentennial@AppPlatform@@UEBA_NXZ
+     * @hash   1320046341
      */
     MCVAPI bool isCentennial() const;
     /**
-     * @vtable -1
      * @symbol ?isContentAutoUpdateAllowed@AppPlatform@@UEBA_NXZ
+     * @hash   -1048420635
      */
     MCVAPI bool isContentAutoUpdateAllowed() const;
     /**
-     * @vtable -1
      * @symbol ?isCrossPlatformToggleVisible@AppPlatform@@UEBA_NXZ
+     * @hash   -1899873031
      */
     MCVAPI bool isCrossPlatformToggleVisible() const;
     /**
-     * @vtable -1
      * @symbol ?isDisplayInitialized@AppPlatform@@UEBA_NXZ
+     * @hash   -1904783040
      */
     MCVAPI bool isDisplayInitialized() const;
     /**
-     * @vtable -1
      * @symbol ?isDownloadAndImportBlocking@AppPlatform@@UEBA_NXZ
+     * @hash   -1296094397
      */
     MCVAPI bool isDownloadAndImportBlocking() const;
     /**
-     * @vtable -1
      * @symbol ?isDownloadBuffered@AppPlatform@@UEBA_NXZ
+     * @hash   -557226987
      */
     MCVAPI bool isDownloadBuffered() const;
     /**
-     * @vtable -1
      * @symbol ?isFireTV@AppPlatform@@UEBA_NXZ
+     * @hash   1555100646
      */
     MCVAPI bool isFireTV() const;
     /**
-     * @vtable -1
      * @symbol ?isJoinableViaExternalServers@AppPlatform@@UEBA_NXZ
+     * @hash   358639913
      */
     MCVAPI bool isJoinableViaExternalServers() const;
     /**
-     * @vtable -1
      * @symbol ?isLANAllowed@AppPlatform@@UEBA_NXZ
+     * @hash   -1115957891
      */
     MCVAPI bool isLANAllowed() const;
     /**
-     * @vtable -1
      * @symbol ?isLowMemoryDevice@AppPlatform@@UEBA_NXZ
+     * @hash   2099316357
      */
     MCVAPI bool isLowMemoryDevice() const;
     /**
-     * @vtable -1
      * @symbol ?isLowPhysicalMemoryDevice@AppPlatform@@UEBA_NXZ
+     * @hash   -865020308
      */
     MCVAPI bool isLowPhysicalMemoryDevice() const;
     /**
-     * @vtable -1
      * @symbol ?isNetworkAllowed@AppPlatform@@UEBA_NXZ
+     * @hash   1724532264
      */
     MCVAPI bool isNetworkAllowed() const;
     /**
-     * @vtable -1
      * @symbol ?isNetworkAvailable@AppPlatform@@UEBA_NXZ
+     * @hash   1873815753
      */
     MCVAPI bool isNetworkAvailable() const;
     /**
-     * @vtable -1
      * @symbol ?isNetworkEnabled@AppPlatform@@UEBA_N_N@Z
+     * @hash   894555865
      */
     MCVAPI bool isNetworkEnabled(bool) const;
     /**
-     * @vtable -1
      * @symbol ?isNetworkThrottled@AppPlatform@@UEBA_NXZ
+     * @hash   -1129049558
      */
     MCVAPI bool isNetworkThrottled() const;
     /**
-     * @vtable -1
      * @symbol ?isOnWifiConnectionTelemetryValue@AppPlatform@@UEAA?AV?$optional@_N@std@@XZ
+     * @hash   738842413
      */
     MCVAPI class std::optional<bool> isOnWifiConnectionTelemetryValue();
     /**
-     * @vtable -1
      * @symbol ?isQuitCapable@AppPlatform@@UEBA_NXZ
+     * @hash   742692311
      */
     MCVAPI bool isQuitCapable() const;
     /**
-     * @vtable -1
      * @symbol ?isRatingsPromptSupported@AppPlatform@@UEBA_NXZ
+     * @hash   -1759866750
      */
     MCVAPI bool isRatingsPromptSupported() const;
     /**
-     * @vtable -1
      * @symbol ?isRealmsEnabled@AppPlatform@@UEBA_NXZ
+     * @hash   -30339977
      */
     MCVAPI bool isRealmsEnabled() const;
     /**
-     * @vtable -1
      * @symbol ?isTelemetryAllowed@AppPlatform@@UEAA_NXZ
+     * @hash   1041995678
      */
     MCVAPI bool isTelemetryAllowed();
     /**
-     * @vtable -1
      * @symbol ?isTrialWorldsTransferToFullGameAllowed@AppPlatform@@UEBA_NXZ
+     * @hash   830380280
      */
     MCVAPI bool isTrialWorldsTransferToFullGameAllowed() const;
     /**
-     * @vtable -1
      * @symbol ?isWebviewSupported@AppPlatform@@UEBA_NXZ
+     * @hash   322248195
      */
     MCVAPI bool isWebviewSupported() const;
     /**
-     * @vtable -1
      * @symbol ?isWin10Arm@AppPlatform@@UEBA_NXZ
+     * @hash   -681748433
      */
     MCVAPI bool isWin10Arm() const;
     /**
-     * @vtable -1
      * @symbol ?launchLegacyVersion@AppPlatform@@UEAAXXZ
+     * @hash   1094442799
      */
     MCVAPI void launchLegacyVersion();
     /**
-     * @vtable -1
      * @symbol ?launchRatingsPrompt@AppPlatform@@UEAAXXZ
+     * @hash   -1375513862
      */
     MCVAPI void launchRatingsPrompt();
     /**
-     * @vtable -1
      * @symbol ?launchSettings@AppPlatform@@UEAAXXZ
+     * @hash   696141897
      */
     MCVAPI void launchSettings();
     /**
-     * @vtable -1
      * @symbol ?launchUri@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -152054944
      */
     MCVAPI void launchUri(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?listAssetFilesIn@AppPlatform@@UEBA?AV?$set@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@U?$less@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@std@@V?$allocator@V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@4@@std@@AEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -1404778721
      */
     MCVAPI class std::set<class Core::PathBuffer<std::string>, struct std::less<class Core::PathBuffer<std::string>>, class std::allocator<class Core::PathBuffer<std::string>>> listAssetFilesIn(class Core::Path const &, std::string const &) const;
     /**
-     * @vtable -1
      * @symbol ?maxFileDataRequestConcurrency@AppPlatform@@UEBAIXZ
+     * @hash   1812568832
      */
     MCVAPI unsigned int maxFileDataRequestConcurrency() const;
     /**
-     * @vtable -1
      * @symbol ?minimizeBackgroundDownloads@AppPlatform@@UEBA_NXZ
+     * @hash   -897699805
      */
     MCVAPI bool minimizeBackgroundDownloads() const;
     /**
-     * @vtable -1
      * @symbol ?multiplayerRequiresPremiumAccess@AppPlatform@@UEBA_NXZ
+     * @hash   1863926999
      */
     MCVAPI bool multiplayerRequiresPremiumAccess() const;
     /**
-     * @vtable -1
      * @symbol ?multiplayerRequiresUGCEnabled@AppPlatform@@UEBA_NXZ
+     * @hash   -39064036
      */
     MCVAPI bool multiplayerRequiresUGCEnabled() const;
     /**
-     * @vtable -1
      * @symbol ?notifyControllerConnectionStateChange@AppPlatform@@UEBA_NXZ
+     * @hash   -394422174
      */
     MCVAPI bool notifyControllerConnectionStateChange() const;
     /**
-     * @vtable -1
      * @symbol ?onPrimaryUserNetworkReady@AppPlatform@@UEAAXXZ
+     * @hash   554936246
      */
     MCVAPI void onPrimaryUserNetworkReady();
     /**
-     * @vtable -1
      * @symbol ?platformRequiresControllerApplet@AppPlatform@@UEBA_NXZ
+     * @hash   -889399941
      */
     MCVAPI bool platformRequiresControllerApplet() const;
     /**
-     * @vtable -1
      * @symbol ?readAssetFile@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z
+     * @hash   -1469325368
      */
     MCVAPI std::string readAssetFile(class Core::Path const &);
     /**
-     * @vtable -1
      * @symbol ?registerExperimentsActiveCrashDump@AppPlatform@@UEBAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   -1702169807
      */
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
     /**
-     * @vtable -1
      * @symbol ?registerFileForCollectionWithCrashDump@AppPlatform@@UEAAXAEBVPath@Core@@@Z
+     * @hash   1848198229
      */
     MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const &);
     /**
-     * @vtable -1
      * @symbol ?reloadRenderResourcesOnResume@AppPlatform@@UEBA_NXZ
+     * @hash   1777549094
      */
     MCVAPI bool reloadRenderResourcesOnResume() const;
     /**
-     * @vtable -1
      * @symbol ?removeListener@AppPlatform@@UEAAXPEAVAppPlatformListener@@@Z
+     * @hash   -23170843
      */
     MCVAPI void removeListener(class AppPlatformListener *);
     /**
-     * @vtable -1
      * @symbol ?requireControllerAtStartup@AppPlatform@@UEBA_NXZ
+     * @hash   -1358607059
      */
     MCVAPI bool requireControllerAtStartup() const;
     /**
-     * @vtable -1
      * @symbol ?requiresAutoSaveIconExplanationPopup@AppPlatform@@UEBA_NXZ
+     * @hash   -372665654
      */
     MCVAPI bool requiresAutoSaveIconExplanationPopup() const;
     /**
-     * @vtable -1
      * @symbol ?requiresLiveGoldForMultiplayer@AppPlatform@@UEBA_NXZ
+     * @hash   1546105903
      */
     MCVAPI bool requiresLiveGoldForMultiplayer() const;
     /**
-     * @vtable -1
      * @symbol ?requiresPatchNoticePopup@AppPlatform@@UEBA_NXZ
+     * @hash   -1645937410
      */
     MCVAPI bool requiresPatchNoticePopup() const;
     /**
-     * @vtable -1
      * @symbol ?requiresXboxLiveSigninToPlay@AppPlatform@@UEBA_NXZ
+     * @hash   343658306
      */
     MCVAPI bool requiresXboxLiveSigninToPlay() const;
     /**
-     * @vtable -1
      * @symbol ?restartApp@AppPlatform@@UEAAX_N@Z
+     * @hash   1798169127
      */
     MCVAPI void restartApp(bool);
     /**
-     * @vtable -1
      * @symbol ?restartRequested@AppPlatform@@UEAA_NXZ
+     * @hash   425056756
      */
     MCVAPI bool restartRequested();
     /**
-     * @vtable -1
      * @symbol ?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z
+     * @hash   2024857423
      */
     MCVAPI void setARVRPlatform(enum ARVRPlatform);
     /**
-     * @vtable -1
      * @symbol ?setDpi@AppPlatform@@UEAAXH@Z
+     * @hash   -570687983
      */
     MCVAPI void setDpi(int);
     /**
-     * @vtable -1
      * @symbol ?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z
+     * @hash   1849554675
      */
     MCVAPI void setFullscreenMode(enum FullscreenMode);
     /**
-     * @vtable -1
      * @symbol ?setNetworkAllowed@AppPlatform@@UEAAX_N@Z
+     * @hash   1485659293
      */
     MCVAPI void setNetworkAllowed(bool);
     /**
-     * @vtable -1
      * @symbol ?setScreenSize@AppPlatform@@UEAAXHH@Z
+     * @hash   -1308263326
      */
     MCVAPI void setScreenSize(int, int);
     /**
-     * @vtable -1
      * @symbol ?setSecureStorageKey@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSecureStorageKey@@@Z
+     * @hash   -1078329718
      */
     MCVAPI void setSecureStorageKey(std::string const &, class SecureStorageKey const &);
     /**
-     * @vtable -1
      * @symbol ?setSleepEnabled@AppPlatform@@UEAAX_N@Z
+     * @hash   1099927373
      */
     MCVAPI void setSleepEnabled(bool);
     /**
-     * @vtable -1
      * @symbol ?setThreadsFrozen@AppPlatform@@UEAAX_N@Z
+     * @hash   1074911362
      */
     MCVAPI void setThreadsFrozen(bool);
     /**
-     * @vtable -1
      * @symbol ?setUIScalingRules@AppPlatform@@UEAAXW4UIScalingRules@@@Z
+     * @hash   -1430613529
      */
     MCVAPI void setUIScalingRules(enum UIScalingRules);
     /**
-     * @vtable -1
      * @symbol ?setVRControllerType@AppPlatform@@UEAAXW4VRControllerType@@@Z
+     * @hash   -594207781
      */
     MCVAPI void setVRControllerType(enum VRControllerType);
     /**
-     * @vtable -1
      * @symbol ?setWindowSize@AppPlatform@@UEAAXHH@Z
+     * @hash   2072789606
      */
     MCVAPI void setWindowSize(int, int);
     /**
-     * @vtable -1
      * @symbol ?setWindowText@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2020332198
      */
     MCVAPI void setWindowText(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?shouldPauseDownloadsWhenEnterGame@AppPlatform@@UEBA_NXZ
+     * @hash   -1227104660
      */
     MCVAPI bool shouldPauseDownloadsWhenEnterGame() const;
     /**
-     * @vtable -1
      * @symbol ?shouldRemoveGraphicsDeviceOnAppTermination@AppPlatform@@UEBA_NXZ
+     * @hash   378174622
      */
     MCVAPI bool shouldRemoveGraphicsDeviceOnAppTermination() const;
     /**
-     * @vtable -1
      * @symbol ?showDialog@AppPlatform@@UEAAXH@Z
+     * @hash   540226839
      */
     MCVAPI void showDialog(int);
     /**
-     * @vtable -1
      * @symbol ?showPlatformEmptyStoreDialog@AppPlatform@@UEAAX$$QEAV?$function@$$A6AX_N@Z@std@@@Z
+     * @hash   85567215
      */
     MCVAPI void showPlatformEmptyStoreDialog(class std::function<void (bool)> &&);
     /**
-     * @vtable -1
      * @symbol ?showPlatformStoreIcon@AppPlatform@@UEAAX_N@Z
+     * @hash   593815535
      */
     MCVAPI void showPlatformStoreIcon(bool);
     /**
-     * @vtable -1
      * @symbol ?supportsAutoSaveOnDBCompaction@AppPlatform@@UEBA_NXZ
+     * @hash   981683190
      */
     MCVAPI bool supportsAutoSaveOnDBCompaction() const;
     /**
-     * @vtable -1
      * @symbol ?supportsClientUpdate@AppPlatform@@UEBA_NXZ
+     * @hash   -847472548
      */
     MCVAPI bool supportsClientUpdate() const;
     /**
-     * @vtable -1
      * @symbol ?supportsDayOneExperience@AppPlatform@@UEBA_NXZ
+     * @hash   106283900
      */
     MCVAPI bool supportsDayOneExperience() const;
     /**
-     * @vtable -1
      * @symbol ?supportsFliteTTS@AppPlatform@@UEBA_NXZ
+     * @hash   492432487
      */
     MCVAPI bool supportsFliteTTS() const;
     /**
-     * @vtable -1
      * @symbol ?supportsInPackageRecursion@AppPlatform@@UEBA_NXZ
+     * @hash   1964024073
      */
     MCVAPI bool supportsInPackageRecursion() const;
     /**
-     * @vtable -1
      * @symbol ?supportsLaunchingLegacyVersion@AppPlatform@@UEBA_NXZ
+     * @hash   607487880
      */
     MCVAPI bool supportsLaunchingLegacyVersion() const;
     /**
-     * @vtable -1
      * @symbol ?supportsLegacySinglePremiumCacheDirectory@AppPlatform@@UEBA_NXZ
+     * @hash   -53894191
      */
     MCVAPI bool supportsLegacySinglePremiumCacheDirectory() const;
     /**
-     * @vtable -1
      * @symbol ?supportsVRModeSwap@AppPlatform@@UEBA_NXZ
+     * @hash   462895514
      */
     MCVAPI bool supportsVRModeSwap() const;
     /**
-     * @vtable -1
      * @symbol ?supportsVibration@AppPlatform@@UEBA_NXZ
+     * @hash   -268815438
      */
     MCVAPI bool supportsVibration() const;
     /**
-     * @vtable -1
      * @symbol ?supportsWorldShare@AppPlatform@@UEBA_NXZ
+     * @hash   1517439573
      */
     MCVAPI bool supportsWorldShare() const;
     /**
-     * @vtable -1
      * @symbol ?supportsXboxLiveAchievements@AppPlatform@@UEBA_NXZ
+     * @hash   799838443
      */
     MCVAPI bool supportsXboxLiveAchievements() const;
     /**
-     * @vtable -1
      * @symbol ?teardown@AppPlatform@@UEAAXXZ
+     * @hash   1157553399
      */
     MCVAPI void teardown();
     /**
-     * @vtable -1
      * @symbol ?trackPurchaseEvent@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000000@Z
+     * @hash   939093249
      */
     MCVAPI void trackPurchaseEvent(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, std::string const &);
     /**
-     * @vtable -1
      * @symbol ?tryEnterVRMode@AppPlatform@@UEAAX_NV?$function@$$A6AX_N@Z@std@@@Z
+     * @hash   78378530
      */
     MCVAPI void tryEnterVRMode(bool, class std::function<void (bool)>);
     /**
-     * @vtable -1
      * @symbol ?updateLocalization@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1170100073
      */
     MCVAPI void updateLocalization(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?updateTextBoxText@AppPlatform@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1565389751
      */
     MCVAPI void updateTextBoxText(std::string const &);
     /**
-     * @vtable -1
      * @symbol ?useAppPlatformForTelemetryIPAddress@AppPlatform@@UEAA_NXZ
+     * @hash   -1505871915
      */
     MCVAPI bool useAppPlatformForTelemetryIPAddress();
     /**
-     * @vtable -1
      * @symbol ?useNativeStoreForRealmsPurchase@AppPlatform@@UEAA_NXZ
+     * @hash   1274639728
      */
     MCVAPI bool useNativeStoreForRealmsPurchase();
     /**
-     * @vtable -1
      * @symbol ?usePlatformProfilePicturesOnly@AppPlatform@@UEBA_NXZ
+     * @hash   526295284
      */
     MCVAPI bool usePlatformProfilePicturesOnly() const;
     /**
-     * @vtable -1
      * @symbol ?useXboxControlHelpers@AppPlatform@@UEBA_NXZ
+     * @hash   -1593003866
      */
     MCVAPI bool useXboxControlHelpers() const;
     /**
-     * @vtable -1
      * @symbol ?usesAsyncOptionSaving@AppPlatform@@UEBA_NXZ
+     * @hash   1510523459
      */
     MCVAPI bool usesAsyncOptionSaving() const;
     /**
-     * @vtable -1
      * @symbol ?usesHDRBrightness@AppPlatform@@UEBA_NXZ
+     * @hash   -1751051969
      */
     MCVAPI bool usesHDRBrightness() const;
     /**
-     * @vtable -1
      * @symbol ?vibrate@AppPlatform@@UEAAXH@Z
+     * @hash   -886594035
      */
     MCVAPI void vibrate(int);
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1AppPlatform@@UEAA@XZ
+     * @hash   -1915518696
      */
     MCVAPI ~AppPlatform();
 #endif
     /**
      * @symbol ??0AppPlatform@@QEAA@_N@Z
+     * @hash   -1695688055
      */
     MCAPI AppPlatform(bool);
     /**
      * @symbol ?_fireAppTerminated@AppPlatform@@QEAAXXZ
+     * @hash   -744190479
      */
     MCAPI void _fireAppTerminated();
     /**
      * @symbol ?accessPlatformRuntimeInformation_Shim@AppPlatform@@QEAAAEAV?$unique_ptr@UPlatformRuntimeInfo@Bedrock@@U?$default_delete@UPlatformRuntimeInfo@Bedrock@@@std@@@std@@XZ
+     * @hash   -1332850260
      */
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> & accessPlatformRuntimeInformation_Shim();
     /**
      * @symbol ?getCurrentStoragePath@AppPlatform@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -725279583
      */
     MCAPI class Core::PathBuffer<std::string> getCurrentStoragePath() const;
     /**
      * @symbol ?getInternalStoragePath@AppPlatform@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   1556303743
      */
     MCAPI class Core::PathBuffer<std::string> getInternalStoragePath() const;
     /**
      * @symbol ?getPlatformRuntimeInformation@AppPlatform@@QEBAAEBV?$unique_ptr@UPlatformRuntimeInfo@Bedrock@@U?$default_delete@UPlatformRuntimeInfo@Bedrock@@@std@@@std@@XZ
+     * @hash   1348463942
      */
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const & getPlatformRuntimeInformation() const;
     /**
      * @symbol ?getProxyResolver@AppPlatform@@QEAA?AV?$not_null@V?$NonOwnerPointer@VIProxyResolver@Http@Bedrock@@@Bedrock@@@gsl@@XZ
+     * @hash   153235574
      */
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Bedrock::Http::IProxyResolver>> getProxyResolver();
     /**
      * @symbol ?getScratchPath@AppPlatform@@QEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   1752797673
      */
     MCAPI class Core::PathBuffer<std::string> getScratchPath();
     /**
      * @symbol ?getUserdataPath@AppPlatform@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   66741591
      */
     MCAPI class Core::PathBuffer<std::string> getUserdataPath() const;
     /**
      * @symbol ?isEduMode@AppPlatform@@QEBA_NXZ
+     * @hash   1698260358
      */
     MCAPI bool isEduMode() const;
     /**
      * @symbol ?isTerminating@AppPlatform@@QEBA_NXZ
+     * @hash   1768091606
      */
     MCAPI bool isTerminating() const;
     /**
      * @symbol ?notifyUserStorageInitialized@AppPlatform@@QEAAXXZ
+     * @hash   1662620285
      */
     MCAPI void notifyUserStorageInitialized();
 MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const HOME_PATH;
@@ -1127,6 +1139,7 @@ MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const S
 //private:
     /**
      * @symbol ?_initializeLoadProfiler@AppPlatform@@AEAAXXZ
+     * @hash   28953414
      */
     MCAPI void _initializeLoadProfiler();
 

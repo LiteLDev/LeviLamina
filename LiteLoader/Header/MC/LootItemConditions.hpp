@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMCONDITIONS
-#endif
     /**
      * @symbol ?allApply@LootItemConditions@@SA_NAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   1157837742
      */
     MCAPI static bool allApply(std::vector<std::unique_ptr<class LootItemCondition>> const &, class Random &, class LootTableContext &);
     /**
      * @symbol ?deserialize@LootItemConditions@@SA?AV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@VValue@Json@@@Z
+     * @hash   -168957044
      */
     MCAPI static std::vector<std::unique_ptr<class LootItemCondition>> deserialize(class Json::Value);
 

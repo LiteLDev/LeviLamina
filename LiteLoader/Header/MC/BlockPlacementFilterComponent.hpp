@@ -29,22 +29,24 @@ public:
     BlockPlacementFilterComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTFILTERCOMPONENT
-#endif
     /**
      * @symbol ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   893805182
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?mayPlace@BlockPlacementFilterComponent@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
+     * @hash   1516008404
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ??4BlockPlacementFilterComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -550745398
      */
     MCAPI struct BlockPlacementFilterComponent & operator=(struct BlockPlacementFilterComponent &&);
     /**
      * @symbol ??1BlockPlacementFilterComponent@@QEAA@XZ
+     * @hash   -2076842135
      */
     MCAPI ~BlockPlacementFilterComponent();
 

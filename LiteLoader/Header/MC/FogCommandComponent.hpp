@@ -30,34 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGCOMMANDCOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@FogCommandComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -2076302232
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getFogSettingsStack@FogCommandComponent@@QEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
+     * @hash   -1805324107
      */
     MCAPI std::vector<std::string> getFogSettingsStack() const;
     /**
      * @symbol ??4FogCommandComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   982729908
      */
     MCAPI class FogCommandComponent & operator=(class FogCommandComponent &&);
     /**
      * @symbol ?popFogSetting@FogCommandComponent@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -358279645
      */
     MCAPI bool popFogSetting(std::string const &);
     /**
      * @symbol ?pushFogSetting@FogCommandComponent@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   33461015
      */
     MCAPI bool pushFogSetting(std::string const &, std::string const &);
     /**
      * @symbol ?readAdditionalSaveData@FogCommandComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1285124672
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?removeFogSettings@FogCommandComponent@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1255261363
      */
     MCAPI bool removeFogSettings(std::string const &);
 

@@ -32,25 +32,26 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1509148521
      */
     virtual ~FlowerFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@FlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1886868555
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERFEATURE
-#endif
     /**
      * @symbol ??0FlowerFeature@@QEAA@AEBVBlock@@@Z
+     * @hash   993955380
      */
     MCAPI FlowerFeature(class Block const &);
 
 //private:
     /**
      * @symbol ?_placeMushroom@FlowerFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandom@@@Z
+     * @hash   -2011165387
      */
     MCAPI bool _placeMushroom(class BlockSource &, class BlockPos const &, class Block const &, class Random &) const;
 

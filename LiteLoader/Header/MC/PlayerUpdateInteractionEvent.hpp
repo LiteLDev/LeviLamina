@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUPDATEINTERACTIONEVENT
-#endif
     /**
      * @symbol ??1PlayerUpdateInteractionEvent@@QEAA@XZ
+     * @hash   340763964
      */
     MCAPI ~PlayerUpdateInteractionEvent();
 

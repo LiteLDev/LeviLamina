@@ -27,10 +27,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPLIFECYCLECONTEXT
-#endif
     /**
      * @symbol ??0AppLifecycleContext@@QEAA@XZ
+     * @hash   1569382130
      */
     MCAPI AppLifecycleContext();
 

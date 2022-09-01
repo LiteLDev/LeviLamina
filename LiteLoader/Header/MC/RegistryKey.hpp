@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGISTRYKEY
-#endif
     /**
      * @symbol ??BRegistryKey@@QEBA_NXZ
+     * @hash   1191953376
      */
     MCAPI operator bool() const;
     /**
      * @symbol ?readValue@RegistryKey@@QEBA_NPEBDAEAK@Z
+     * @hash   -1539834813
      */
     MCAPI bool readValue(char const *, unsigned long &) const;
     /**
      * @symbol ?readValue@RegistryKey@@QEBA_NPEBDAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1774768947
      */
     MCAPI bool readValue(char const *, std::string &) const;
     /**
      * @symbol ??1RegistryKey@@QEAA@XZ
+     * @hash   -1629708338
      */
     MCAPI ~RegistryKey();
     /**
      * @symbol ?open@RegistryKey@@SA?AV1@PEAUHKEY__@@PEBDK@Z
+     * @hash   -998999675
      */
     MCAPI static class RegistryKey open(struct HKEY__*, char const *, unsigned long);
 

@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYCEREAL
-#endif
     /**
      * @symbol ??0EntityComponentFactoryCereal@@QEAA@XZ
+     * @hash   -316271732
      */
     MCAPI EntityComponentFactoryCereal();
     /**
      * @symbol ?serializeComponentDefinitions@EntityComponentFactoryCereal@@QEBAXAEAVDefinitionInstanceGroup@@AEAV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@AEBVSemVersion@@@Z
+     * @hash   928162201
      */
     MCAPI void serializeComponentDefinitions(class DefinitionInstanceGroup &, class rapidjson::GenericValue<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>> &, class SemVersion const &) const;
     /**
      * @symbol ?tryGetDefinitionSerializer@EntityComponentFactoryCereal@@QEBAPEAVICerealDefinitionSerializer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   76461656
      */
     MCAPI class ICerealDefinitionSerializer * tryGetDefinitionSerializer(std::string const &) const;
 

@@ -31,29 +31,28 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -811728827
      */
     virtual ~ItemStackRequestActionPlace();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   2004456210
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1370913101
      */
     virtual void __unk_vfn_3();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONPLACE
-#endif
     /**
      * @symbol ??0ItemStackRequestActionPlace@@QEAA@XZ
+     * @hash   -1378296237
      */
     MCAPI ItemStackRequestActionPlace();
 

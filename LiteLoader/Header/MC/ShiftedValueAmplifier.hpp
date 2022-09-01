@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -932510385
      */
     virtual ~ShiftedValueAmplifier();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getAmount@ShiftedValueAmplifier@@UEBAMHM@Z
+     * @hash   880575646
      */
     virtual float getAmount(int, float) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIFTEDVALUEAMPLIFIER
-#endif
     /**
      * @symbol ??0ShiftedValueAmplifier@@QEAA@HM@Z
+     * @hash   492638419
      */
     MCAPI ShiftedValueAmplifier(int, float);
 

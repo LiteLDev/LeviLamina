@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CIRCLEAROUNDANCHORDEFINITION
-#endif
     /**
      * @symbol ??0CircleAroundAnchorDefinition@@QEAA@XZ
+     * @hash   -940677711
      */
     MCAPI CircleAroundAnchorDefinition();
     /**
      * @symbol ?initialize@CircleAroundAnchorDefinition@@QEAAXAEAVEntityContext@@AEAVCircleAroundAnchorGoal@@@Z
+     * @hash   -1959710945
      */
     MCAPI void initialize(class EntityContext &, class CircleAroundAnchorGoal &);
     /**
      * @symbol ?buildSchema@CircleAroundAnchorDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VCircleAroundAnchorDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -1298332385
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CircleAroundAnchorDefinition>> &);
 

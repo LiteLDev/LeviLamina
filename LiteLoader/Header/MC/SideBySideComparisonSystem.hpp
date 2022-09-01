@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECOMPARISONSYSTEM
-#endif
     /**
      * @symbol ?createSideBySideComparisonSystem@SideBySideComparisonSystem@@SA?AUTickingSystemWithInfo@@V?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@std@@AEBV?$vector@IV?$allocator@I@std@@@4@@Z
+     * @hash   -1229389364
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideComparisonSystem(class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, std::vector<unsigned int> const &);
     /**
      * @symbol ?createSideBySideExceptionSystems@SideBySideComparisonSystem@@SA?AV?$array@UTickingSystemWithInfo@@$05@std@@XZ
+     * @hash   634854848
      */
     MCAPI static class std::array<struct TickingSystemWithInfo, 6> createSideBySideExceptionSystems();
 

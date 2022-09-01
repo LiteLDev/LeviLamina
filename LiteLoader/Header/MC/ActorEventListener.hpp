@@ -32,78 +32,78 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
     /**
-     * @vtable -1
      * @symbol ?onActorAttackedActor@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
+     * @hash   -997556657
      */
     MCVAPI enum EventResult onActorAttackedActor(class Actor &, class Actor &);
     /**
-     * @vtable -1
      * @symbol ?onActorCreated@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
+     * @hash   -670260274
      */
     MCVAPI enum EventResult onActorCreated(class Actor &);
     /**
-     * @vtable -1
      * @symbol ?onActorDeath@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
+     * @hash   -1328959021
      */
     MCVAPI enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
     /**
-     * @vtable -1
      * @symbol ?onActorDefinitionEvent@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@UActorDefinitionModifier@@V?$allocator@UActorDefinitionModifier@@@std@@@5@@Z
+     * @hash   -685986579
      */
     MCVAPI enum EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct ActorDefinitionModifier> &);
     /**
-     * @vtable -1
      * @symbol ?onActorMobInteraction@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InteractionType@MinecraftEventing@@W4ActorType@@@Z
+     * @hash   -1507425506
      */
     MCVAPI enum EventResult onActorMobInteraction(class Actor &, enum MinecraftEventing::InteractionType, enum ActorType);
     /**
-     * @vtable -1
      * @symbol ?onActorMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVVec3@@@Z
+     * @hash   1619493673
      */
     MCVAPI enum EventResult onActorMove(class Actor &, class Vec3 const &);
     /**
-     * @vtable -1
      * @symbol ?onActorPredictedMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
+     * @hash   111650805
      */
     MCVAPI enum EventResult onActorPredictedMove(class Actor &, enum MovePredictionType, class Vec3 const &);
     /**
-     * @vtable -1
      * @symbol ?onActorSneakChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N@Z
+     * @hash   1785239538
      */
     MCVAPI enum EventResult onActorSneakChanged(class Actor &, bool);
     /**
-     * @vtable -1
      * @symbol ?onActorStartRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
+     * @hash   -1169479528
      */
     MCVAPI enum EventResult onActorStartRiding(class Actor &, class Actor &);
     /**
-     * @vtable -1
      * @symbol ?onActorStopRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N11@Z
+     * @hash   -570018071
      */
     MCVAPI enum EventResult onActorStopRiding(class Actor &, bool, bool, bool);
     /**
-     * @vtable -1
      * @symbol ?onActorTargetAcquired@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z
+     * @hash   -225561908
      */
     MCVAPI enum EventResult onActorTargetAcquired(class Actor &, class Actor &);
     /**
-     * @vtable -1
      * @symbol ?onActorTeleported@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
+     * @hash   -1565318080
      */
     MCVAPI enum EventResult onActorTeleported(class Actor &);
     /**
-     * @vtable -1
      * @symbol ?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z
+     * @hash   -1902324563
      */
     MCVAPI enum EventResult onActorTick(class Actor &);
     /**
-     * @vtable -1
      * @symbol ?onActorUseItemOn@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemStack@@AEBVBlockPos@@E@Z
+     * @hash   1506814570
      */
     MCVAPI enum EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
     /**
-     * @vtable -1
      * @symbol ?onEvent@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
+     * @hash   72522530
      */
     MCVAPI enum EventResult onEvent(struct ActorNotificationEvent const &);
 #endif

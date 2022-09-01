@@ -27,10 +27,9 @@ public:
     AABBShapeComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABBSHAPECOMPONENT
-#endif
     /**
      * @symbol ?toString@AABBShapeComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1077996580
      */
     MCAPI std::string toString() const;
 

@@ -30,38 +30,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TIMER
-#endif
     /**
      * @symbol ??0Timer@@QEAA@MV?$function@$$A6A_JXZ@std@@@Z
+     * @hash   -27938869
      */
     MCAPI Timer(float, class std::function<__int64 (void)>);
     /**
      * @symbol ?advanceTime@Timer@@QEAAXM@Z
+     * @hash   869162774
      */
     MCAPI void advanceTime(float);
     /**
      * @symbol ?getTicks@Timer@@QEBA_KXZ
+     * @hash   784106945
      */
     MCAPI unsigned __int64 getTicks() const;
     /**
      * @symbol ?getTimeScale@Timer@@QEBAMXZ
+     * @hash   1050532050
      */
     MCAPI float getTimeScale() const;
     /**
      * @symbol ?resetTimePassed@Timer@@QEAAXXZ
+     * @hash   617790365
      */
     MCAPI void resetTimePassed();
     /**
      * @symbol ?setTimeScale@Timer@@QEAAXM@Z
+     * @hash   -659481936
      */
     MCAPI void setTimeScale(float);
     /**
      * @symbol ?stepTick@Timer@@QEAAXH@Z
+     * @hash   1754418598
      */
     MCAPI void stepTick(int);
     /**
      * @symbol ?stepping@Timer@@QEBA_NXZ
+     * @hash   1334741398
      */
     MCAPI bool stepping() const;
 

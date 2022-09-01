@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
+     * @vftbl  0
      * @symbol ?getJsonName@NavigationHoverDescription@@UEBAPEBDXZ
+     * @hash   27967552
      */
     virtual char const * getJsonName() const;
     /**
-     * @vtable 1
-     * @symbol __unk_destructor_1
+     * @vftbl  1
+     * @hash   -1481706722
      */
     virtual ~NavigationHoverDescription();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONHOVERDESCRIPTION
-#endif
 
 };

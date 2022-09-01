@@ -32,24 +32,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1892187637
      */
     virtual ~MultiRecipe();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?isShapeless@MultiRecipe@@EEBA_NXZ
+     * @hash   -1970575789
      */
     virtual bool isShapeless() const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?isMultiRecipe@MultiRecipe@@EEBA_NXZ
+     * @hash   896814080
      */
     virtual bool isMultiRecipe() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIRECIPE
-#endif
     /**
      * @symbol ??0MultiRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@VHashedString@@@Z
+     * @hash   178439145
      */
     MCAPI MultiRecipe(class gsl::basic_string_span<char const, -1>, class HashedString);
 

@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLECHECKER
-#endif
     /**
      * @symbol ??0RoleChecker@@QEAA@XZ
+     * @hash   266579643
      */
     MCAPI RoleChecker();
     /**
      * @symbol ?checkRole@RoleChecker@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4ADRole@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z@3@@Z
+     * @hash   -1200563287
      */
     MCAPI void checkRole(std::string const &, class std::function<void (enum ADRole, std::string const &, std::string const &)>);
     /**
      * @symbol ?lookupInProgress@RoleChecker@@QEBA_NXZ
+     * @hash   149612370
      */
     MCAPI bool lookupInProgress() const;
     /**
      * @symbol ??1RoleChecker@@QEAA@XZ
+     * @hash   68659835
      */
     MCAPI ~RoleChecker();
 

@@ -32,8 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSPORTINTERFACE
     /**
-     * @vtable -1
-     * @symbol __unk_destructor_-1
+     * @symbol ??1TransportInterface@@UEAA@XZ
+     * @hash   1121808724
      */
     MCVAPI ~TransportInterface();
 #endif

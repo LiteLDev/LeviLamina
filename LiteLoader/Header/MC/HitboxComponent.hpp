@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITBOXCOMPONENT
-#endif
     /**
      * @symbol ??0HitboxComponent@@QEAA@AEBV0@@Z
+     * @hash   321703841
      */
     MCAPI HitboxComponent(class HitboxComponent const &);
     /**
      * @symbol ?fromCompoundTag@HitboxComponent@@QEAAXAEBVCompoundTag@@@Z
+     * @hash   139487080
      */
     MCAPI void fromCompoundTag(class CompoundTag const &);
     /**
      * @symbol ??4HitboxComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -589245714
      */
     MCAPI class HitboxComponent & operator=(class HitboxComponent &&);
     /**
      * @symbol ?toCompoundTag@HitboxComponent@@QEAAXAEAVCompoundTag@@@Z
+     * @hash   -1552910546
      */
     MCAPI void toCompoundTag(class CompoundTag &);
     /**
      * @symbol ??1HitboxComponent@@QEAA@XZ
+     * @hash   1230685921
      */
     MCAPI ~HitboxComponent();
 

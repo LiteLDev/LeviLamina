@@ -24,6 +24,7 @@ namespace ActorUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?startFizzEffect@ActorUtil@@YAXAEAVActor@@@Z
+     * @hash   924901033
      */
     MCAPI void startFizzEffect(class Actor &);
 

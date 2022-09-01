@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1008962933
      */
     virtual ~ChangeSettingCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@ChangeSettingCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1696082376
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANGESETTINGCOMMAND
-#endif
     /**
      * @symbol ?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   607855628
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -28,22 +28,24 @@ public:
     PingedCompatibleServer() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PINGEDCOMPATIBLESERVER
-#endif
     /**
      * @symbol ??0PingedCompatibleServer@@QEAA@AEBU0@@Z
+     * @hash   1811473295
      */
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer const &);
     /**
      * @symbol ??0PingedCompatibleServer@@QEAA@$$QEAU0@@Z
+     * @hash   1934800045
      */
     MCAPI PingedCompatibleServer(struct PingedCompatibleServer &&);
     /**
      * @symbol ??4PingedCompatibleServer@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1010896172
      */
     MCAPI struct PingedCompatibleServer & operator=(struct PingedCompatibleServer &&);
     /**
      * @symbol ??1PingedCompatibleServer@@QEAA@XZ
+     * @hash   -2106563998
      */
     MCAPI ~PingedCompatibleServer();
 

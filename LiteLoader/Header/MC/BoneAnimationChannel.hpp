@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEANIMATIONCHANNEL
-#endif
     /**
      * @symbol ?addKeyFrame@BoneAnimationChannel@@QEAAAEAVKeyFrameTransform@@M@Z
+     * @hash   -1216953089
      */
     MCAPI class KeyFrameTransform & addKeyFrame(float);
     /**
      * @symbol ?sortKeyFrames@BoneAnimationChannel@@QEAAXXZ
+     * @hash   1114951379
      */
     MCAPI void sortKeyFrames();
 

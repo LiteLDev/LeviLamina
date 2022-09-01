@@ -30,18 +30,19 @@ public:
     IsStunnedDefinition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSTUNNEDDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsStunnedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1630793170
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsStunnedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   922922364
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsStunnedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsStunnedDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   601502822
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsStunnedDefinition>> &);
 

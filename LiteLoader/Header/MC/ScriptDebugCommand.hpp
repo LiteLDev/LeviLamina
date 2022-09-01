@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1531060179
      */
     virtual ~ScriptDebugCommand();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEBUGCOMMAND
-#endif
     /**
      * @symbol ??0ScriptDebugCommand@@QEAA@XZ
+     * @hash   463653103
      */
     MCAPI ScriptDebugCommand();
 
 //protected:
     /**
      * @symbol ?_handleDebuggerAttach@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DebuggerAction@1@1GAEAVCommandOutput@@@Z
+     * @hash   1212659906
      */
     MCAPI void _handleDebuggerAttach(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::DebuggerAction, std::string const &, unsigned short, class CommandOutput &) const;
     /**
      * @symbol ?_handleProfilerAction@ScriptDebugCommand@@IEBAXPEAVIScriptDebugger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ProfilerAction@1@AEAVCommandOutput@@@Z
+     * @hash   -2023085900
      */
     MCAPI void _handleProfilerAction(class IScriptDebugger *, std::string const &, enum ScriptDebugCommand::ProfilerAction, class CommandOutput &) const;
 

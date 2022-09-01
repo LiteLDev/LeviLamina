@@ -32,27 +32,28 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -393696374
      */
     virtual ~SetBlockProperty();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@SetBlockProperty@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   639203257
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?executeAction@SetBlockProperty@@UEBAXAEAVRenderParams@@@Z
+     * @hash   226333333
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?buildSchema@SetBlockProperty@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     * @hash   807352119
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBLOCKPROPERTY
-#endif
 MCAPI static std::string const NameID;
 
 };

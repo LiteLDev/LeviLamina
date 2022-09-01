@@ -32,32 +32,34 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   863912022
      */
     virtual ~OnPlayerPlacingTriggerDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@OnPlayerPlacingTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -991388559
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@OnPlayerPlacingTriggerDescription@@UEBA_NXZ
+     * @hash   -236863799
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@OnPlayerPlacingTriggerDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   1902547195
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@OnPlayerPlacingTriggerDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   1170124423
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGERDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
 
 };

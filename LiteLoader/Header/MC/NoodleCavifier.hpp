@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOODLECAVIFIER
-#endif
     /**
      * @symbol ??0NoodleCavifier@@QEAA@AEBVNoodleCavifierNoises@@F@Z
+     * @hash   -802411223
      */
     MCAPI NoodleCavifier(class NoodleCavifierNoises const &, short);
     /**
      * @symbol ?cavify@NoodleCavifier@@QEBAMMAEBVBlockPos@@@Z
+     * @hash   1878166764
      */
     MCAPI float cavify(float, class BlockPos const &) const;
     /**
      * @symbol ?fillNoiseAtPos@NoodleCavifier@@QEAAXAEBVVec3@@HM@Z
+     * @hash   -1447088282
      */
     MCAPI void fillNoiseAtPos(class Vec3 const &, int, float);
     /**
      * @symbol ?getInterpolators@NoodleCavifier@@QEAA?AV?$array@PEAVNoiseCellInterpolator@@$03@std@@HH@Z
+     * @hash   -1784622992
      */
     MCAPI class std::array<class NoiseCellInterpolator *, 4> getInterpolators(int, int);
 

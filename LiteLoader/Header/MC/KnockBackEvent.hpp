@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KNOCKBACKEVENT
-#endif
     /**
      * @symbol ??1KnockBackEvent@@QEAA@XZ
+     * @hash   1950286697
      */
     MCAPI ~KnockBackEvent();
 

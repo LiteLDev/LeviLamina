@@ -28,49 +28,54 @@ public:
 #endif
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -2145206016
      */
     virtual ~BlockCollisionBoxDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getName@BlockCollisionBoxDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1343451331
      */
     virtual std::string const & getName() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockCollisionBoxDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -1882529023
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockCollisionBoxDescription@@UEBA_NXZ
+     * @hash   127933915
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockCollisionBoxDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -1747897363
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockCollisionBoxDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -109653451
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOLLISIONBOXDESCRIPTION
-#endif
 MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockCollisionBoxDescription@@SAXXZ
+     * @hash   -1506497501
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockCollisionBoxDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   1787251978
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

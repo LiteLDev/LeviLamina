@@ -28,22 +28,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONDATACOMPONENT
-#endif
     /**
      * @symbol ?clearLastVibrationPos@VibrationDataComponent@@QEAAXXZ
+     * @hash   -833211437
      */
     MCAPI void clearLastVibrationPos();
     /**
      * @symbol ?getLastVibrationPos@VibrationDataComponent@@QEBAAEBV?$optional@VBlockPos@@@std@@XZ
+     * @hash   1969777851
      */
     MCAPI class std::optional<class BlockPos> const & getLastVibrationPos() const;
     /**
      * @symbol ?getTicksSinceLastVibration@VibrationDataComponent@@QEBA?AV?$optional@_K@std@@AEBVILevel@@@Z
+     * @hash   -1642075194
      */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const &) const;
     /**
      * @symbol ?setLastVibrationPos@VibrationDataComponent@@QEAAXVBlockPos@@UTick@@@Z
+     * @hash   -1262349699
      */
     MCAPI void setLastVibrationPos(class BlockPos, struct Tick);
 

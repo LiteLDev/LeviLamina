@@ -29,10 +29,9 @@ public:
     ScatterParamsMolangVariableIndices() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTERPARAMSMOLANGVARIABLEINDICES
-#endif
     /**
      * @symbol ?initialize@ScatterParamsMolangVariableIndices@@QEAAXXZ
+     * @hash   -649624603
      */
     MCAPI void initialize();
 

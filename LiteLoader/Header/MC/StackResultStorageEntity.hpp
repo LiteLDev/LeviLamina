@@ -35,28 +35,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STACKRESULTSTORAGEENTITY
-#endif
 
 //protected:
     /**
      * @symbol ??0StackResultStorageEntity@@IEAA@AEBVWeakStorageEntity@@@Z
+     * @hash   -1163492432
      */
     MCAPI StackResultStorageEntity(class WeakStorageEntity const &);
     /**
      * @symbol ??0StackResultStorageEntity@@IEAA@AEBVOwnerStorageEntity@@@Z
+     * @hash   1499468475
      */
     MCAPI StackResultStorageEntity(class OwnerStorageEntity const &);
     /**
      * @symbol ??0StackResultStorageEntity@@IEAA@$$QEAV0@@Z
+     * @hash   -1603207480
      */
     MCAPI StackResultStorageEntity(class StackResultStorageEntity &&);
     /**
      * @symbol ?_getStackRef@StackResultStorageEntity@@IEBAAEAVEntityContext@@XZ
+     * @hash   1159997601
      */
     MCAPI class EntityContext & _getStackRef() const;
     /**
      * @symbol ?_hasValue@StackResultStorageEntity@@IEBA_NXZ
+     * @hash   -1475278983
      */
     MCAPI bool _hasValue() const;
 

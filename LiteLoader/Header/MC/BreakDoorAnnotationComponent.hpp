@@ -29,40 +29,46 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKDOORANNOTATIONCOMPONENT
-#endif
     /**
      * @symbol ??0BreakDoorAnnotationComponent@@QEAA@XZ
+     * @hash   -294495699
      */
     MCAPI BreakDoorAnnotationComponent();
     /**
      * @symbol ?canMobBreakDoor@BreakDoorAnnotationComponent@@QEBA_NAEAVMob@@AEBVPath@@@Z
+     * @hash   -215094770
      */
     MCAPI bool canMobBreakDoor(class Mob &, class Path const &) const;
     /**
      * @symbol ?clearProgress@BreakDoorAnnotationComponent@@QEAAXAEAVMob@@@Z
+     * @hash   1667273830
      */
     MCAPI void clearProgress(class Mob &);
     /**
      * @symbol ?initFromDefinition@BreakDoorAnnotationComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -1842233686
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?obstructionCheck@BreakDoorAnnotationComponent@@QEAAXAEAVMob@@@Z
+     * @hash   -1846968316
      */
     MCAPI void obstructionCheck(class Mob &);
     /**
      * @symbol ?onComponentRemoved@BreakDoorAnnotationComponent@@QEAAXAEAVEntityContext@@@Z
+     * @hash   970406732
      */
     MCAPI void onComponentRemoved(class EntityContext &);
 
 //private:
     /**
      * @symbol ?_cleanUp@BreakDoorAnnotationComponent@@AEAAXAEAVMob@@@Z
+     * @hash   -424569924
      */
     MCAPI void _cleanUp(class Mob &);
     /**
      * @symbol ?_shouldBreakDoor@BreakDoorAnnotationComponent@@AEAA_NAEAVMob@@@Z
+     * @hash   666583484
      */
     MCAPI bool _shouldBreakDoor(class Mob &);
 

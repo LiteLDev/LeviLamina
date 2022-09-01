@@ -27,10 +27,9 @@ public:
     MolangTextureVariable() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGTEXTUREVARIABLE
-#endif
     /**
      * @symbol ??1MolangTextureVariable@@QEAA@XZ
+     * @hash   132511891
      */
     MCAPI ~MolangTextureVariable();
 

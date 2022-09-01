@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILLAGERBEASTBLOCKEDCOMPONENT
-#endif
     /**
      * @symbol ?initFromDefinition@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -114305382
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?onBlocked@IllagerBeastBlockedComponent@@QEAAXAEAVActor@@AEBVActorDamageSource@@0@Z
+     * @hash   571803168
      */
     MCAPI void onBlocked(class Actor &, class ActorDamageSource const &, class Actor &);
 

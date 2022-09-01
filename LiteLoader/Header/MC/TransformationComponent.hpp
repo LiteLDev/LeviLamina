@@ -29,34 +29,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSFORMATIONCOMPONENT
-#endif
     /**
      * @symbol ??0TransformationComponent@@QEAA@XZ
+     * @hash   1802155008
      */
     MCAPI TransformationComponent();
     /**
      * @symbol ?getDelayTicks@TransformationComponent@@QEBAHXZ
+     * @hash   -2014752534
      */
     MCAPI int getDelayTicks() const;
     /**
      * @symbol ?initFromDefinition@TransformationComponent@@QEAAXAEAVActor@@@Z
+     * @hash   1987472466
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z
+     * @hash   236836732
      */
     MCAPI void maintainOldData(class Actor &, class Actor &, struct TransformationDescription const &, struct ActorUniqueID const &, class Level const &);
     /**
      * @symbol ?reloadComponent@TransformationComponent@@QEAAXAEAVActor@@@Z
+     * @hash   1016072114
      */
     MCAPI void reloadComponent(class Actor &);
     /**
      * @symbol ?setDelayTicks@TransformationComponent@@QEAAXH@Z
+     * @hash   1839926076
      */
     MCAPI void setDelayTicks(int);
     /**
      * @symbol ?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@_N@Z
+     * @hash   -111284963
      */
     MCAPI void transformIfAble(class Actor &, bool);
 

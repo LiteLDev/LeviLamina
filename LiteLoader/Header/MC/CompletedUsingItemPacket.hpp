@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1739671906
      */
     virtual ~CompletedUsingItemPacket();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getId@CompletedUsingItemPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1409541766
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getName@CompletedUsingItemPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -782997465
      */
     virtual std::string getName() const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?write@CompletedUsingItemPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   601987328
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?_read@CompletedUsingItemPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   570420448
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLETEDUSINGITEMPACKET
-#endif
     /**
      * @symbol ??0CompletedUsingItemPacket@@QEAA@XZ
+     * @hash   1739001360
      */
     MCAPI CompletedUsingItemPacket();
     /**
      * @symbol ??0CompletedUsingItemPacket@@QEAA@FH@Z
+     * @hash   1492815843
      */
     MCAPI CompletedUsingItemPacket(short, int);
 

@@ -32,51 +32,57 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   533084483
      */
     virtual ~HoverPathNavigation();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?initializeInternal@HoverPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
+     * @hash   868379286
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?tick@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   1522162209
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getTempMobPos@HoverPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
+     * @hash   -1906811547
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
+     * @hash   1320396890
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?createPath@HoverPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
+     * @hash   -757943633
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?stop@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   -781134826
      */
     virtual void stop(class NavigationComponent &, class Mob &);
     /**
-     * @vtable 11
+     * @vftbl  11
      * @symbol ?canUpdatePath@HoverPathNavigation@@MEBA_NAEBVMob@@@Z
+     * @hash   -1682694755
      */
     virtual bool canUpdatePath(class Mob const &) const;
     /**
-     * @vtable 12
+     * @vftbl  12
      * @symbol ?updatePath@HoverPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   1745311058
      */
     virtual void updatePath(class NavigationComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERPATHNAVIGATION
-#endif
 
 };

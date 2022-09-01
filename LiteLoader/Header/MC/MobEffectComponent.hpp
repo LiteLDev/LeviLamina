@@ -29,34 +29,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTCOMPONENT
-#endif
     /**
      * @symbol ??0MobEffectComponent@@QEAA@XZ
+     * @hash   -411879336
      */
     MCAPI MobEffectComponent();
     /**
      * @symbol ??0MobEffectComponent@@QEAA@$$QEAV0@@Z
+     * @hash   1597879249
      */
     MCAPI MobEffectComponent(class MobEffectComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@MobEffectComponent@@QEBAXAEAVCompoundTag@@AEBVActor@@@Z
+     * @hash   1921246585
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &, class Actor const &) const;
     /**
      * @symbol ??4MobEffectComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -1129708156
      */
     MCAPI class MobEffectComponent & operator=(class MobEffectComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@MobEffectComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1373913678
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?tick@MobEffectComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -1608846182
      */
     MCAPI void tick(class Actor &);
     /**
      * @symbol ??1MobEffectComponent@@QEAA@XZ
+     * @hash   530170262
      */
     MCAPI ~MobEffectComponent();
 

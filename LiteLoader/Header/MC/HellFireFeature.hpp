@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -186938575
      */
     virtual ~HellFireFeature();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?place@HellFireFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -128552851
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HELLFIREFEATURE
-#endif
 
 };

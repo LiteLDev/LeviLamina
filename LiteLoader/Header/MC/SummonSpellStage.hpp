@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUMMONSPELLSTAGE
-#endif
     /**
      * @symbol ??1SummonSpellStage@@QEAA@XZ
+     * @hash   669971361
      */
     MCAPI ~SummonSpellStage();
 

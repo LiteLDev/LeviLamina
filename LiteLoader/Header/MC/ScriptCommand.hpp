@@ -29,30 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTCOMMAND
-#endif
     /**
      * @symbol ??0ScriptCommand@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -860544763
      */
     MCAPI ScriptCommand(std::string const &);
     /**
      * @symbol ?getMessages@ScriptCommand@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2025498084
      */
     MCAPI std::string getMessages() const;
     /**
      * @symbol ?getSuccessCount@ScriptCommand@@QEBAHXZ
+     * @hash   -1636423556
      */
     MCAPI int getSuccessCount() const;
     /**
      * @symbol ?serializeJsonOutput@ScriptCommand@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1965211612
      */
     MCAPI std::string serializeJsonOutput() const;
     /**
      * @symbol ?setJsonOutput@ScriptCommand@@QEAAX$$QEAVValue@Json@@@Z
+     * @hash   -2105366092
      */
     MCAPI void setJsonOutput(class Json::Value &&);
     /**
      * @symbol ?setOutput@ScriptCommand@@QEAAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   898383069
      */
     MCAPI void setOutput(int, std::string &&);
 

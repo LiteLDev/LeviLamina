@@ -31,59 +31,64 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1108601122
      */
     virtual ~DragonDeathGoal();
     /**
-     * @vtable 1
-     * @symbol __unk_vfn_1
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @vtable 2
-     * @symbol __unk_vfn_2
+     * @vftbl  2
+     * @hash   538031714
      */
     virtual void __unk_vfn_2();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   538955235
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@DragonDeathGoal@@UEAAXXZ
+     * @hash   84177749
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@DragonDeathGoal@@UEAAXXZ
+     * @hash   973528981
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@DragonDeathGoal@@UEAAXXZ
+     * @hash   812199056
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DragonDeathGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1231337716
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONDEATHGOAL
     /**
-     * @vtable -1
      * @symbol ?canContinueToUse@DragonDeathGoal@@UEAA_NXZ
+     * @hash   1315121722
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @vtable -1
      * @symbol ?canUse@DragonDeathGoal@@UEAA_NXZ
+     * @hash   574229084
      */
     MCVAPI bool canUse();
 #endif
     /**
      * @symbol ??0DragonDeathGoal@@QEAA@AEAVEnderDragon@@@Z
+     * @hash   -1324245037
      */
     MCAPI DragonDeathGoal(class EnderDragon &);
 

@@ -26,18 +26,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_THIRDPARTYINFO
-#endif
     /**
      * @symbol ??0ThirdPartyInfo@@QEAA@XZ
+     * @hash   -50085143
      */
     MCAPI ThirdPartyInfo();
     /**
      * @symbol ??0ThirdPartyInfo@@QEAA@AEBV0@@Z
+     * @hash   987205825
      */
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
     /**
      * @symbol ??1ThirdPartyInfo@@QEAA@XZ
+     * @hash   824667351
      */
     MCAPI ~ThirdPartyInfo();
 

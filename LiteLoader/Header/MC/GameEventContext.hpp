@@ -27,10 +27,9 @@ public:
     GameEventContext() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTCONTEXT
-#endif
     /**
      * @symbol ??0GameEventContext@@QEAA@AEBVVec3@@PEAVActor@@PEBVBlock@@@Z
+     * @hash   -397572186
      */
     MCAPI GameEventContext(class Vec3 const &, class Actor *, class Block const *);
 

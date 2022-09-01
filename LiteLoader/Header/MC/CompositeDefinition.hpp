@@ -32,28 +32,30 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -629229176
      */
     virtual ~CompositeDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEDEFINITION
-#endif
     /**
      * @symbol ??0CompositeDefinition@@QEAA@XZ
+     * @hash   2099434102
      */
     MCAPI CompositeDefinition();
     /**
      * @symbol ?get@CompositeDefinition@@QEBAPEBVBehaviorDefinition@@_K@Z
+     * @hash   -980683657
      */
     MCAPI class BehaviorDefinition const * get(unsigned __int64) const;
     /**
      * @symbol ?getCount@CompositeDefinition@@QEBA_KXZ
+     * @hash   1556183159
      */
     MCAPI unsigned __int64 getCount() const;
 
 //protected:
     /**
      * @symbol ?_compositeLoadChildrenBehaviors@CompositeDefinition@@KAXVValue@Json@@AEAV?$vector@V?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@V?$allocator@V?$unique_ptr@VBehaviorDefinition@@U?$default_delete@VBehaviorDefinition@@@std@@@std@@@2@@std@@AEBVBehaviorFactory@@VBehaviorTreeDefinitionPtr@@@Z
+     * @hash   838686428
      */
     MCAPI static void _compositeLoadChildrenBehaviors(class Json::Value, std::vector<std::unique_ptr<class BehaviorDefinition>> &, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 

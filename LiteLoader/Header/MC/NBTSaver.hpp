@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSAVER
-#endif
     /**
      * @symbol ?getSavedCompoundTag@NBTSaver@@QEAA?AVCompoundTag@@XZ
+     * @hash   792982694
      */
     MCAPI class CompoundTag getSavedCompoundTag();
 

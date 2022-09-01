@@ -32,74 +32,82 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1466647822
      */
     virtual ~WorkGoal();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?canUse@WorkGoal@@UEAA_NXZ
+     * @hash   788805148
      */
     virtual bool canUse();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@WorkGoal@@UEAA_NXZ
+     * @hash   -1124502022
      */
     virtual bool canContinueToUse();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?start@WorkGoal@@UEAAXXZ
+     * @hash   -482999979
      */
     virtual void start();
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?stop@WorkGoal@@UEAAXXZ
+     * @hash   1650298165
      */
     virtual void stop();
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?tick@WorkGoal@@UEAAXXZ
+     * @hash   -255546944
      */
     virtual void tick();
     /**
-     * @vtable 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@WorkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1332496508
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vtable 8
-     * @symbol __unk_vfn_8
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @vtable 9
-     * @symbol __unk_vfn_9
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @vtable 18
+     * @vftbl  18
      * @symbol ?useWorkstation@WorkGoal@@UEAAXXZ
+     * @hash   -479817425
      */
     virtual void useWorkstation();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKGOAL
-#endif
     /**
      * @symbol ??0WorkGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -165072199
      */
     MCAPI WorkGoal(class Mob &);
     /**
      * @symbol ?playPOISoundEvent@WorkGoal@@QEBAXXZ
+     * @hash   -429150191
      */
     MCAPI void playPOISoundEvent() const;
 
 //private:
     /**
      * @symbol ?_isInsideOrIsNotRaining@WorkGoal@@AEAA_NXZ
+     * @hash   -2108916785
      */
     MCAPI bool _isInsideOrIsNotRaining();
 

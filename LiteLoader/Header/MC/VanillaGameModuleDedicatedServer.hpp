@@ -31,31 +31,33 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1751017277
      */
     virtual ~VanillaGameModuleDedicatedServer();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?createGameModuleServer@VanillaGameModuleDedicatedServer@@UEAA?AV?$unique_ptr@VGameModuleServer@@U?$default_delete@VGameModuleServer@@@std@@@std@@XZ
+     * @hash   687466622
      */
     virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?createInPackagePacks@VanillaGameModuleDedicatedServer@@UEAA?AV?$shared_ptr@VIInPackagePacks@@@std@@XZ
+     * @hash   2072300667
      */
     virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?registerMolangQueries@VanillaGameModuleDedicatedServer@@UEAAXXZ
+     * @hash   308546897
      */
     virtual void registerMolangQueries();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?registerServerInstanceHandler@VanillaGameModuleDedicatedServer@@UEAAXAEAVServerInstanceEventCoordinator@@@Z
+     * @hash   846214089
      */
     virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULEDEDICATEDSERVER
-#endif
 
 };

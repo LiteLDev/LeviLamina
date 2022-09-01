@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1776664450
      */
     virtual ~GlobalPauseCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@GlobalPauseCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -288559317
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GLOBALPAUSECOMMAND
-#endif
     /**
      * @symbol ?setup@GlobalPauseCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1925362228
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -31,30 +31,32 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   140050037
      */
     virtual ~GetInteractionPositionForBlockNode();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?tick@GetInteractionPositionForBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   2051481192
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@GetInteractionPositionForBlockNode@@EEAAXAEAVActor@@@Z
+     * @hash   -913444804
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETINTERACTIONPOSITIONFORBLOCKNODE
-#endif
     /**
      * @symbol ??0GetInteractionPositionForBlockNode@@QEAA@XZ
+     * @hash   -535480329
      */
     MCAPI GetInteractionPositionForBlockNode();
 
 //private:
     /**
      * @symbol ?parseFacingNameFromString@GetInteractionPositionForBlockNode@@AEAA?AW4Name@Facing@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1999562971
      */
     MCAPI enum Facing::Name parseFacingNameFromString(std::string);
 

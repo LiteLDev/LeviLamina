@@ -26,14 +26,14 @@ public:
     CommunitySiftConfig(struct CommunitySiftConfig const &) = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMUNITYSIFTCONFIG
-#endif
     /**
      * @symbol ??0CommunitySiftConfig@@QEAA@XZ
+     * @hash   -2144565413
      */
     MCAPI CommunitySiftConfig();
     /**
      * @symbol ??1CommunitySiftConfig@@QEAA@XZ
+     * @hash   -241617749
      */
     MCAPI ~CommunitySiftConfig();
 

@@ -32,23 +32,24 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1812779878
      */
     virtual ~EndCityStart();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?isValid@EndCityStart@@UEBA_NXZ
+     * @hash   1511675566
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDCITYSTART
-#endif
     /**
      * @symbol ??0EndCityStart@@QEAA@AEAVDimension@@AEAVRandom@@AEBVChunkPos@@@Z
+     * @hash   574790771
      */
     MCAPI EndCityStart(class Dimension &, class Random &, class ChunkPos const &);
     /**
      * @symbol ?getYPositionForFeature@EndCityStart@@SAHAEBVChunkPos@@AEAVDimension@@@Z
+     * @hash   -284946494
      */
     MCAPI static int getYPositionForFeature(class ChunkPos const &, class Dimension &);
 

@@ -31,26 +31,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
-#endif
     /**
      * @symbol ?addConditionalBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
+     * @hash   1575631306
      */
     MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
     /**
      * @symbol ?addDefaultBandwidthOptimization@ConditionalBandwidthOptimizationDefinition@@QEAAXAEBUConditionalBandwidthOptimization@@@Z
+     * @hash   -588794256
      */
     MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const &);
     /**
      * @symbol ?initialize@ConditionalBandwidthOptimizationDefinition@@QEBAXAEAVEntityContext@@AEAVConditionalBandwidthOptimizationComponent@@@Z
+     * @hash   -661586567
      */
     MCAPI void initialize(class EntityContext &, class ConditionalBandwidthOptimizationComponent &) const;
     /**
      * @symbol ??1ConditionalBandwidthOptimizationDefinition@@QEAA@XZ
+     * @hash   206600197
      */
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
     /**
      * @symbol ?buildSchema@ConditionalBandwidthOptimizationDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VConditionalBandwidthOptimizationDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1746090662
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ConditionalBandwidthOptimizationDefinition>> &);
 

@@ -27,10 +27,9 @@ public:
     SynchedActorDataComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCHEDACTORDATACOMPONENT
-#endif
     /**
      * @symbol ??1SynchedActorDataComponent@@QEAA@XZ
+     * @hash   2018618278
      */
     MCAPI ~SynchedActorDataComponent();
 

@@ -40,49 +40,55 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1771396265
      */
     virtual ~DoubleTag();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?write@DoubleTag@@UEBAXAEAVIDataOutput@@@Z
+     * @hash   1740588794
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?load@DoubleTag@@UEAAXAEAVIDataInput@@@Z
+     * @hash   5418217
      */
     virtual void load(class IDataInput &);
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?toString@DoubleTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1428982499
      */
     virtual std::string toString() const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getId@DoubleTag@@UEBA?AW4Type@Tag@@XZ
+     * @hash   -1728676990
      */
     virtual enum Tag::Type getId() const;
     /**
-     * @vtable 6
+     * @vftbl  6
      * @symbol ?equals@DoubleTag@@UEBA_NAEBVTag@@@Z
+     * @hash   -192825313
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @vtable 9
+     * @vftbl  9
      * @symbol ?copy@DoubleTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   1130910511
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @vtable 10
+     * @vftbl  10
      * @symbol ?hash@DoubleTag@@UEBA_KXZ
+     * @hash   1774469621
      */
     virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUBLETAG
-#endif
     /**
      * @symbol ??0DoubleTag@@QEAA@XZ
+     * @hash   451391733
      */
     MCAPI DoubleTag();
 

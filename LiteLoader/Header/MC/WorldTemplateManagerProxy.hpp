@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGERPROXY
-#endif
     /**
      * @symbol ??0WorldTemplateManagerProxy@@QEAA@AEBUWorldTemplateManagerProxyCallbacks@@@Z
+     * @hash   -623241702
      */
     MCAPI WorldTemplateManagerProxy(struct WorldTemplateManagerProxyCallbacks const &);
     /**
      * @symbol ??1WorldTemplateManagerProxy@@QEAA@XZ
+     * @hash   715131129
      */
     MCAPI ~WorldTemplateManagerProxy();
 

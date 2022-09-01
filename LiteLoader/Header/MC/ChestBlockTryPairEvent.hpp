@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHESTBLOCKTRYPAIREVENT
-#endif
     /**
      * @symbol ??1ChestBlockTryPairEvent@@QEAA@XZ
+     * @hash   750177723
      */
     MCAPI ~ChestBlockTryPairEvent();
 

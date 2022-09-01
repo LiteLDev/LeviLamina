@@ -29,18 +29,19 @@ public:
     SurfaceMaterialAdjustmentEvaluated() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURFACEMATERIALADJUSTMENTEVALUATED
-#endif
     /**
      * @symbol ?empty@SurfaceMaterialAdjustmentEvaluated@@QEBA_NXZ
+     * @hash   2026334054
      */
     MCAPI bool empty() const;
     /**
      * @symbol ?makeAdjustments@SurfaceMaterialAdjustmentEvaluated@@QEBAXAEAUSurfaceMaterialBlocks@@H@Z
+     * @hash   2083479757
      */
     MCAPI void makeAdjustments(struct SurfaceMaterialBlocks &, int) const;
     /**
      * @symbol ??1SurfaceMaterialAdjustmentEvaluated@@QEAA@XZ
+     * @hash   -1261221788
      */
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
 

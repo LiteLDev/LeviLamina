@@ -32,54 +32,57 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -1295131450
      */
     virtual ~DiggingEnchant();
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?getMinCost@DiggingEnchant@@UEBAHH@Z
+     * @hash   -1926247451
      */
     virtual int getMinCost(int) const;
     /**
-     * @vtable 3
+     * @vftbl  3
      * @symbol ?getMaxCost@DiggingEnchant@@UEBAHH@Z
+     * @hash   1609939587
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vtable 5
+     * @vftbl  5
      * @symbol ?getMaxLevel@DiggingEnchant@@UEBAHXZ
+     * @hash   -1387974427
      */
     virtual int getMaxLevel() const;
     /**
-     * @vtable 10
-     * @symbol __unk_vfn_10
+     * @vftbl  10
+     * @hash   -342706045
      */
     virtual void __unk_vfn_10();
     /**
-     * @vtable 11
-     * @symbol __unk_vfn_11
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @vtable 12
-     * @symbol __unk_vfn_12
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @vtable 13
-     * @symbol __unk_vfn_13
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
     /**
-     * @vtable 14
+     * @vftbl  14
      * @symbol ?_isValidEnchantmentTypeForCategory@DiggingEnchant@@EEBA_NW4Type@Enchant@@@Z
+     * @hash   92505782
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIGGINGENCHANT
-#endif
     /**
      * @symbol ??0DiggingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
+     * @hash   96904077
      */
     MCAPI DiggingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

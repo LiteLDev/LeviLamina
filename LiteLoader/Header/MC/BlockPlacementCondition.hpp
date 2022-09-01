@@ -27,22 +27,24 @@ public:
     BlockPlacementCondition() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPLACEMENTCONDITION
-#endif
     /**
      * @symbol ??0BlockPlacementCondition@@QEAA@AEBU0@@Z
+     * @hash   -234020459
      */
     MCAPI BlockPlacementCondition(struct BlockPlacementCondition const &);
     /**
      * @symbol ??4BlockPlacementCondition@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   675132566
      */
     MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition &&);
     /**
      * @symbol ??4BlockPlacementCondition@@QEAAAEAU0@AEBU0@@Z
+     * @hash   796661918
      */
     MCAPI struct BlockPlacementCondition & operator=(struct BlockPlacementCondition const &);
     /**
      * @symbol ??1BlockPlacementCondition@@QEAA@XZ
+     * @hash   -1022101393
      */
     MCAPI ~BlockPlacementCondition();
 

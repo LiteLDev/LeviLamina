@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -821237124
      */
     virtual ~EnchantCommand();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?execute@EnchantCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -2021189919
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTCOMMAND
-#endif
     /**
      * @symbol ?setup@EnchantCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1866706612
      */
     MCAPI static void setup(class CommandRegistry &);
 

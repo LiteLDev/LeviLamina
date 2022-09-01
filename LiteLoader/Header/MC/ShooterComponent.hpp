@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTERCOMPONENT
-#endif
     /**
      * @symbol ??0ShooterComponent@@QEAA@XZ
+     * @hash   -583848051
      */
     MCAPI ShooterComponent();
     /**
      * @symbol ?getAuxValue@ShooterComponent@@QEAAHXZ
+     * @hash   1260334136
      */
     MCAPI int getAuxValue();
     /**
      * @symbol ?onShoot@ShooterComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -786589972
      */
     MCAPI void onShoot(class Actor &);
     /**
      * @symbol ??1ShooterComponent@@QEAA@XZ
+     * @hash   924698171
      */
     MCAPI ~ShooterComponent();
 

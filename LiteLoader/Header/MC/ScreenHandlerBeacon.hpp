@@ -31,40 +31,43 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1420995952
      */
     virtual ~ScreenHandlerBeacon();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?handleAction@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+     * @hash   896941072
      */
     virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
-     * @vtable 2
+     * @vftbl  2
      * @symbol ?endRequest@ScreenHandlerBeacon@@MEAA?AW4ItemStackNetResult@@XZ
+     * @hash   -231182361
      */
     virtual enum ItemStackNetResult endRequest();
     /**
-     * @vtable 3
-     * @symbol __unk_vfn_3
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @vtable 4
+     * @vftbl  4
      * @symbol ?postRequest@ScreenHandlerBeacon@@MEAAX_N@Z
+     * @hash   -192585169
      */
     virtual void postRequest(bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBEACON
-#endif
     /**
      * @symbol ??0ScreenHandlerBeacon@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
+     * @hash   -205975474
      */
     MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
     /**
      * @symbol ?_handleBeaconPaymentAction@ScreenHandlerBeacon@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionBeaconPayment@@@Z
+     * @hash   -73443025
      */
     MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
 

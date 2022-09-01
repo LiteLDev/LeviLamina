@@ -29,14 +29,14 @@ public:
     BlockBakedMaterialDataComponent() = delete;
 #endif
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBAKEDMATERIALDATACOMPONENT
-#endif
     /**
      * @symbol ?isSolidOpaque@BlockBakedMaterialDataComponent@@QEBA_NXZ
+     * @hash   -1122304510
      */
     MCAPI bool isSolidOpaque() const;
     /**
      * @symbol ??4BlockBakedMaterialDataComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -586302532
      */
     MCAPI struct BlockBakedMaterialDataComponent & operator=(struct BlockBakedMaterialDataComponent &&);
 

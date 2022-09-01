@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   -448255794
      */
     virtual ~MoveDefinition();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?load@MoveDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   2053953504
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEDEFINITION
-#endif
 
 };

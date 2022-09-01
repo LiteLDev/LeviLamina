@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @vtable 0
-     * @symbol __unk_destructor_0
+     * @vftbl  0
+     * @hash   1899559419
      */
     virtual ~IsSpawnableDescription();
     /**
-     * @vtable 1
+     * @vftbl  1
      * @symbol ?getJsonName@IsSpawnableDescription@@UEBAPEBDXZ
+     * @hash   801179251
      */
     virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSPAWNABLEDESCRIPTION
-#endif
     /**
      * @symbol ?parse@IsSpawnableDescription@@QEAAXAEBVValue@Json@@@Z
+     * @hash   -342278284
      */
     MCAPI void parse(class Json::Value const &);
 
