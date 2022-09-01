@@ -224,13 +224,12 @@ View related installation and usage instructions
 >
 > Of course, if you prefer to build the project yourself, or contribute code to LiteLoader, you can build the project yourself by following these instructions
 
-1. install the latest **Microsoft Visual Studio** and the standard C++ desktop development suite
+1. Install the latest version of **Microsoft Visual Studio** and the standard C++ desktop development suite (or you can just install the full **msbuild** compiler suite and configure the compilation environment)
 2. Install the latest **Windows SDK**.
-3. Open the `LiteLoader.sln` project file and click on the **Batch Generation** item in the **Generation** menu
-4. Bring up the batch generation dialog, check all the generation checkboxes on the right side of the dialog
-5. When you have finished selecting, click the **Generate** button in the dialog box to perform batch generation
-6. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.  
-   After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
+3. Use your familiar IDE (VS / VSCode / CLion, etc.) to open the project directory and compile the cmake project.
+4. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.
+5. After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
+6. If you need extra debugging symbols of LL, execute another `PackReleaseWithPDB.cmd` script, and the `RELEASE` folder will be filled with all necessary debugging symbols for easy debugging
 
 <br/>
 
@@ -238,10 +237,10 @@ View related installation and usage instructions
 
 You can use the following methods to contribute to the `LiteLoader` project
 
-1. Contribute code, maintain symbols
-2. Help us modify and optimize development documents
-3. Write the new API that you want in the format and submit a PR, or make good suggestions
-4. Help us promote `LiteLoader`, support our development
+1. Contribute code, maintain projects and symbols, add new APIs and events and infrastructure
+2. Help us modify and optimize the development documentation and usage documentation
+3. Give feedback on GitHub issues or Suggest good ideas
+4. Help us promote `LiteLoaderBDS` project to support our development
 
 ⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐
 

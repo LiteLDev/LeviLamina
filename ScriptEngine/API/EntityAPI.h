@@ -86,3 +86,4 @@ public:
     Local<Value> quickEvalMolangScript(const Arguments& args);
 };
 extern ClassDefine<EntityClass> EntityClassBuilder;
+extern ClassDefine<void> ActorDamageCauseBuilder;
