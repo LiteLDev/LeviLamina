@@ -10,6 +10,7 @@
   - [🎈 Entity Objects](/en_US/Development/GameAPI/Entity.md)
   - [🧰 Item Object](/en_US/Development/GameAPI/Item.md)
   - [📮 Block Entity Object](/en_US/Development/GameAPI/BlockEntity.md)
+  - [✨ Particle Spawner Object](zh_CN/Development/GameAPI/Particle.md)
   - [👜 Container Object](/en_US/Development/GameAPI/Container.md)
   - [📝 Scoreboard](/en_US/Development/GameAPI/ScoreBoard.md)
   - [📩 Packets](en_US/Development/GameAPI/Packet.md)

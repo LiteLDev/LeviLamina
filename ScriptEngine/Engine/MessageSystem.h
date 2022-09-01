@@ -48,10 +48,10 @@ public:
         MODULE_MESSAGE_REQUEST,
         RequireBroadcast,
         RemoteSyncCallRequest,
-        RemoteLoadRequest,
+        //RemoteLoadRequest,
         MODULE_MESSAGE_RETURN,
         RemoteSyncCallReturn,
-        RemoteLoadReturn,
+        //RemoteLoadReturn,
     };
     struct MessageHeader {
         MessageHeader() {

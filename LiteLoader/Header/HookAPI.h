@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 #include <thread>
-
+#include "third-party/ModUtils/ModUtils.h"
 
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);
@@ -13,6 +13,7 @@ extern "C" {
 LIAPI int HookFunction(void* oldfunc, void** poutold, void* newfunc);
 LIAPI void* dlsym_real(char const* name);
 }
+
 extern std::vector<std::string> dlsym_reverse(int addr);
 
 template <typename RTN = void, typename... Args>
@@ -36,6 +37,18 @@ template <typename T>
 inline const T& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
+
+namespace mem {
+inline std::string ptrToStr(uintptr_t ptr) {
+    std::ostringstream ss;
+    ss << std::hex << ((UINT64)ptr) << std::endl;
+    return ss.str();
+}
+
+inline void* uintptrToPtr(uintptr_t ptr) {
+    return (void*)ptr;
+}
+} // namespace mem
 
 #if _HAS_CXX20
 template <size_t N>
@@ -61,6 +74,20 @@ static inline auto __imp_Call() {
     return ((ret(*)(p...))(__dlsym_ptr_cache<Fn>));
 }
 
+template <FixedString Fn, typename ret, typename... p>
+static inline auto __imp_Call_Sig() {
+    return ((ret(*)(p...))((void*)ModUtils::FindSig(Fn)));
+}
+
+template <FixedString Fn, typename ret, typename... p>
+static inline auto __imp_Call_Addr() {
+    return ((ret(*)(p...))((void*)Fn));
+}
+
+#define AddrCall(fn, ret, ...) (__imp_Call_Addr<fn, ret, __VA_ARGS__>())
+#define SigCall(fn, ret, ...) (__imp_Call_Sig<fn, ret, __VA_ARGS__>())
+#define AddrCall2(name, fn, ret, ...) (__imp_Call_Addr<fn, ret, __VA_ARGS__>())
+#define SigCall2(name, fn, ret, ...) (__imp_Call_Sig<fn, ret, __VA_ARGS__>())
 #define SymCall(fn, ret, ...) (__imp_Call<fn, ret, __VA_ARGS__>())
 #define SYM(fn) (__dlsym_ptr_cache<fn>)
 #define dlsym(xx) SYM(xx)
@@ -124,6 +151,7 @@ public:
         THookRegister(address, hookUnion.b, org);
     }
 };
+
 #define VA_EXPAND(...) __VA_ARGS__
 template <CHash, CHash>
 struct THookTemplate;
@@ -181,6 +209,34 @@ extern THookRegister THookRegisterTemplate;
         : public type, iname, sym, ret, VA_EXPAND(__VA_ARGS__))
 #define _TStaticNoDefHook(iname, sym, ret, ...) \
     _TStaticHook(, iname, sym, ret, VA_EXPAND(__VA_ARGS__))
+
+#define SHook2(iname, ret, sig, ...) _TStaticNoDefHook(iname, (void*)ModUtils::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
+#define SHook(ret, sig, ...) SHook2(sig, ret, sig, VA_EXPAND(__VA_ARGS__))
+#define SStaticHook2(iname, ret, sig, type, ...) \
+    _TStaticDefHook(iname, (void*)ModUtils::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
+#define SStaticHook(ret, sig, type, ...) SStaticHook2(sig, ret, sig, type, VA_EXPAND(__VA_ARGS__))
+#define SClasslessInstanceHook2(iname, ret, sig, ...) \
+    _TInstanceNoDefHook(iname, (void*)ModUtils::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
+#define SClasslessInstanceHook(ret, sig, ...) \
+    SClasslessInstanceHook2(sig, ret, sig, VA_EXPAND(__VA_ARGS__))
+#define SInstanceHook2(iname, ret, sig, type, ...) \
+    _TInstanceDefHook(iname, (void*)ModUtils::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
+#define SInstanceHook(ret, sig, type, ...) \
+    SInstanceHook2(sig, ret, sig, type, VA_EXPAND(__VA_ARGS__))
+
+#define AHook2(iname, ret, addr, ...) _TStaticNoDefHook(iname, mem::uintptrToPtr(addr), ret, VA_EXPAND(__VA_ARGS__))
+#define AHook(ret, addr, ...) AHook2(std::to_string(addr), ret, addr, VA_EXPAND(__VA_ARGS__))
+#define AStaticHook2(iname, ret, addr, type, ...) \
+    _TStaticDefHook(iname, mem::uintptrToPtr(addr), ret, type, VA_EXPAND(__VA_ARGS__))
+#define AStaticHook(ret, addr, type, ...) AStaticHook2(std::to_string(addr), ret, addr, type, VA_EXPAND(__VA_ARGS__))
+#define AClasslessInstanceHook2(iname, ret, addr, ...) \
+    _TInstanceNoDefHook(iname, mem::uintptrToPtr(addr), ret, VA_EXPAND(__VA_ARGS__))
+#define AClasslessInstanceHook(ret, addr, ...) \
+    AClasslessInstanceHook2(std::to_string(addr), ret, addr, VA_EXPAND(__VA_ARGS__))
+#define AInstanceHook2(iname, ret, addr, type, ...) \
+    _TInstanceDefHook(iname, mem::uintptrToPtr(addr), ret, type, VA_EXPAND(__VA_ARGS__))
+#define AInstanceHook(ret, addr, type, ...) \
+    AInstanceHook2(std::to_string(addr), ret, addr, type, VA_EXPAND(__VA_ARGS__))
 
 #define THook2(iname, ret, sym, ...) _TStaticNoDefHook(iname, sym, ret, VA_EXPAND(__VA_ARGS__))
 #define THook(ret, sym, ...) THook2(sym, ret, sym, VA_EXPAND(__VA_ARGS__))

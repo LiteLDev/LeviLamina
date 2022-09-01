@@ -2,5 +2,5 @@
 #include <string>
 
 namespace LL {
-void LoadMain();
+	void LoadMain();
 } // namespace LL

@@ -239,6 +239,11 @@ std::string ValueKindToString(const ValueKind& kind);
         throw Exception(fmt::format("Invalid arguments count: {}, expect {}, in API {}", args.size(), count, __FUNCTION__)); \
     }
 
+#define CHECK_ARGS_LEAST_COUNT(count)                                                                                                 \
+    if (args.size() < count) {                                                                                                        \
+        throw Exception(fmt::format("Invalid arguments count: {}, expect at least {}, in API {}", args.size(), count, __FUNCTION__)); \
+    }
+
 #define CHECK_ARG_TYPE(index, type)                                                                                                                                                               \
     if (args[index].getKind() != ValueKind::type) {                                                                                                                                               \
         throw Exception(fmt::format("Wrong type of arguments[{}]: {}, expect {}, in API {}", index, ValueKindToString(args[index].getKind()), ValueKindToString(ValueKind::type), __FUNCTION__)); \

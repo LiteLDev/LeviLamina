@@ -8,7 +8,7 @@
 #include "../Global.h"
 #include "Core.hpp"
 #include "Bedrock.hpp"
-
+#include "ResourcePack.hpp"
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -28,6 +28,7 @@ struct KnownPackContainer {
     KnownPackContainer(KnownPackContainer const&) = delete;
     KnownPackContainer(KnownPackContainer const&&) = delete;
 };
+LIAPI void setCustomResourcePackPath(PackType, const std::string& path);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKREPOSITORY

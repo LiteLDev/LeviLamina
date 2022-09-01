@@ -37,7 +37,8 @@ ClassDefine<void> McClassBuilder =
         .function("getAllScoreObjectives", &McClass::getAllScoreObjectives)
         .function("setStructure", &McClass::setStructure)
         .function("getStructure", &McClass::getStructure)
-	
+        .function("newParticleSpawner", &McClass::newParticleSpawner)
+
         // For Compatity
         .function("getAllScoreObjective", &McClass::getAllScoreObjectives)
         .function("getDisplayObjectives", &McClass::getDisplayObjective)

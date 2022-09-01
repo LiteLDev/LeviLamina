@@ -22,16 +22,24 @@ class SemVersion {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum MatchType;
-enum ParseOption;
+enum MatchType : int {
+    Full = 0x0,
+    Partial = 0x1,
+    None = 0x2,
+};
+enum ParseOption : int {
+    AllowWildcards = 0x0,
+    NoWildcards = 0x1,
+};
 struct any_version_constructor {
     any_version_constructor() = delete;
     any_version_constructor(any_version_constructor const&) = delete;
     any_version_constructor(any_version_constructor const&&) = delete;
 };
-unsigned short major{}, minor{}, patch{};                 // 0, 2, 4
-std::string pre_release, build_meta, full_version_string; // 8, 40, 72
-bool valid_version{}, any_version{};                      // 104, 105
+unsigned short mMajor, mMinor, mPatch;              // 0, 2, 4
+std::string mPreRelease, mBuildMeta, mFullVersionString; // 8, 40, 72
+bool mValidVersion, mAnyVersion;                      // 104, 105
+
 #undef AFTER_EXTRA
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSION

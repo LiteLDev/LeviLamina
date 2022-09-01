@@ -3,7 +3,6 @@
 #include "LlAPI.h"
 #include <Engine/GlobalShareData.h>
 #include <Engine/EngineOwnData.h>
-#include <Engine/LoaderHelper.h>
 #include <Utils/NetworkHelper.h>
 #include <PluginManager.h>
 #include <Tools/Utils.h>
@@ -107,7 +106,7 @@ Local<Value> LlClass::registerPlugin(const Arguments& args) {
         }
 
         ENGINE_OWN_DATA()->pluginName = ENGINE_OWN_DATA()->logger.title = name;
-        return Boolean::newBoolean(PluginManager::registerPlugin(ENGINE_OWN_DATA()->pluginFilePath,
+        return Boolean::newBoolean(PluginManager::registerPlugin(ENGINE_OWN_DATA()->pluginFileOrDirPath,
                                                                  name, desc, ver, other));
     }
     CATCH("Fail in LLSERegisterPlugin!");

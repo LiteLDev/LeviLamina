@@ -22,7 +22,6 @@ using namespace script;
 
 //////////////////// 消息处理注册 ////////////////////
 
-#include "LoaderHelper.h"
 #include "RemoteCall.h"
 #include "TimeTaskSystem.h"
 
@@ -40,12 +39,12 @@ void ModuleMessage::handle(utils::Message& engineMsg) // Warning: Execute in ano
         case ModuleMessage::MessageType::RemoteSyncCallReturn:
             RemoteSyncCallReturn(msg);
             break;
-        case ModuleMessage::MessageType::RemoteLoadRequest:
+        /*case ModuleMessage::MessageType::RemoteLoadRequest:
             RemoteLoadRequest(msg);
             break;
         case ModuleMessage::MessageType::RemoteLoadReturn:
             RemoteLoadReturn(msg);
-            break;
+            break;*/
         default:
             break;
     }

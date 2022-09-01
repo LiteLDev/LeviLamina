@@ -13,6 +13,9 @@
 #include <chrono>
 
 //#include "ini.h"
+#define INRANGE(x, a, b) (x >= a && x <= b)
+#define GET_BYTE(x) (GET_BITS(x[0]) << 4 | GET_BITS(x[1]))
+#define GET_BITS(x) (INRANGE((x & (~0x20)), 'A', 'F') ? ((x & (~0x20)) - 'A' + 0xa) : (INRANGE(x, '0', '9') ? x - '0' : 0))
 
 namespace ModUtils {
 static std::string muModuleName = "";
@@ -182,6 +185,67 @@ inline void MemSet(uintptr_t address, unsigned char byte, size_t numBytes) {
     ToggleMemoryProtection(false, address, numBytes);
     memset((void*)address, byte, numBytes);
     ToggleMemoryProtection(true, address, numBytes);
+}
+
+inline std::vector<std::string> split(std::string str, std::string pattern) {
+    std::string::size_type pos;
+    std::vector<std::string> result;
+    str += pattern;
+    size_t size = str.size();
+    for (size_t i = 0; i < size; i++) {
+        pos = str.find(pattern, i);
+        if (pos < size) {
+            std::string s = str.substr(i, pos - i);
+            result.push_back(s);
+            i = pos + pattern.size() - 1;
+        }
+    }
+    return result;
+}
+
+inline uintptr_t FindSig(const char* szSignature) {
+    const char* pattern = szSignature;
+    uintptr_t firstMatch = 0;
+    DWORD processId = GetCurrentProcessId();
+    static const uintptr_t rangeStart = GetProcessBaseAddress(processId);
+    static MODULEINFO miModInfo;
+    static bool init = false;
+    if (!init) {
+        init = true;
+        GetModuleInformation(GetCurrentProcess(), (HMODULE)rangeStart, &miModInfo, sizeof(MODULEINFO));
+    }
+    static const uintptr_t rangeEnd = rangeStart + miModInfo.SizeOfImage;
+    BYTE patByte = GET_BYTE(pattern);
+    const char* oldPat = pattern;
+
+    for (uintptr_t pCur = rangeStart; pCur < rangeEnd; pCur++) {
+        if (!*pattern)
+            return firstMatch;
+
+        while (*(PBYTE)pattern == ' ')
+            pattern++;
+
+        if (!*pattern)
+            return firstMatch;
+
+        if (oldPat != pattern) {
+            oldPat = pattern;
+            if (*(PBYTE)pattern != '\?')
+                patByte = GET_BYTE(pattern);
+        }
+        if (*(PBYTE)pattern == '\?' || *(BYTE*)pCur == patByte) {
+            if (!firstMatch)
+                firstMatch = pCur;
+
+            if (!pattern[2] || !pattern[1])
+                return firstMatch;
+            pattern += 2;
+        } else {
+            pattern = szSignature;
+            firstMatch = 0;
+        }
+    }
+    return 0;
 }
 
 // Scans the whole memory of the main process module for the given signature.
