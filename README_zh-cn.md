@@ -6,12 +6,12 @@
 [
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+](https://github.com/LiteLDev/LiteLoader/releases/latest)  
 QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### [English](README.md) | 简体中文
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20&%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/main/docs/assets/LL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/LiteLDev/LiteLoaderBDS/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2Fdocs%2Fraw%2Fmain%2Fassets%2FLogo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版专用服务器——`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
@@ -43,7 +43,7 @@ void PluginInit()
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info(u8"玩家:{} 攻击了 {} | 坐标 {} 维度 {}",
-         player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
+        player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
             std::to_string(actor->getDimensionId()));
         return true;
     });
