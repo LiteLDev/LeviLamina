@@ -6,12 +6,12 @@
 [
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+](https://github.com/LiteLDev/LiteLoader/releases/latest)  
 QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20&%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https://github.com/LiteLDev/docs/raw/main/assets/Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/LiteLDev/LiteLoaderBDS/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2Fdocs%2Fraw%2Fmain%2Fassets%2FLogo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
@@ -49,7 +49,7 @@ void PluginInit()
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info("Player:{} attacks {} | at {} in Dimension {}",
-         player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
+        player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
             std::to_string(actor->getDimensionId()));
         return true;
     });
