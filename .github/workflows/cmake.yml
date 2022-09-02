@@ -1,6 +1,7 @@
 name: CMake
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - '**.cpp'
