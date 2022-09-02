@@ -726,6 +726,13 @@ enum class Difficulty : int {
     Hard     = 3
 };
 
+enum class PlayerPermissionLevel : int {
+    Visitor  = 0,
+    Member   = 1,
+    Operator = 2,
+    Custom   = 3
+};
+
 enum class UpdateBlockLayer : int {
     UpdateBlockDefault,
     UpdateBlockLiquid
