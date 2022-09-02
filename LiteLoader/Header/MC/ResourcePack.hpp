@@ -36,6 +36,15 @@ enum PackType : char {
     PackType_Count = 0x9,
 };
 
+enum PackCategory : int {
+    PackCategory_Unknown = 0x0,
+    PackCategory_RealmsUnknown = 0x1,
+    PackCategory_Standard = 0x2,
+    PackCategory_Premium = 0x3,
+    PackCategory_Custom = 0x4,
+    PackCategory_Subpack = 0x5,
+};
+
 #undef BEFORE_EXTRA
 
 /**
