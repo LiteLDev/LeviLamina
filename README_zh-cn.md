@@ -6,12 +6,12 @@
 [
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+](https://github.com/LiteLDev/LiteLoader/releases/latest)  
 QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### [English](README.md) | 简体中文
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20&%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/main/docs/assets/LL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/LiteLDev/LiteLoaderBDS/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2Fdocs%2Fraw%2Fmain%2Fassets%2FLogo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版专用服务器——`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
@@ -32,19 +32,20 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 #include <LLAPI.h>
 #include <MC/Player.hpp>
 #include <MC/Actor.hpp>
+
 Logger logger("AttackLog");
 
-void PluginInit()
-{
- LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
+void PluginInit() {
+    LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
     logger.info("插件 xxx 已加载.");
     //监听玩家攻击事件
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info(u8"玩家:{} 攻击了 {} | 坐标 {} 维度 {}",
-         player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
-            std::to_string(actor->getDimensionId()));
+            player->getRealName(), actor->getTypeName(), 
+            actor->getPos().toString(), std::to_string(actor->getDimensionId())
+        );
         return true;
     });
 }
@@ -59,7 +60,7 @@ mc.listen("onServerStarted", () => {
     cmd.overload();
     cmd.setCallback((_cmd, ori, out, _res) => {
         out.success("关服命令执行成功");
-        mc.broadcast(`玩家${ori.player.realName}执行了关服命令。服务器将在5秒之后关闭`);
+        mc.broadcast(`${ori.player.realName}执行了关服命令。服务器将在5秒之后关闭`);
 
         //执行关服命令
         setTimeout(() => mc.runcmd("stop"), 5000);
@@ -117,7 +118,7 @@ mc.listen("onServerStarted", () => {
 
 ### 对于 Linux 用户
 
-我们不再建议使用Wine，因为BDS 1.19.20运行在Wine上会有严重的性能问题
+我们不再建议使用Wine，因为BDS 1.19.20+运行在Wine上会有严重的性能问题
 
 #### 安装脚本(Ubuntu)
 
