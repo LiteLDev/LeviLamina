@@ -720,6 +720,27 @@ enum class ContainerType : char {
     SMITHING_TABLE         = 33,
 };
 
+enum GameType : int {
+    Survival  = 0,
+    Creative  = 1,
+    Adventure = 2,
+    Spectator = 6
+};
+
+enum Difficulty : int {
+    Peaceful = 0,
+    Easy     = 1,
+    Normal   = 2,
+    Hard     = 3
+};
+
+enum PlayerPermissionLevel : int {
+    Visitor  = 0,
+    Member   = 1,
+    Operator = 2,
+    Custom   = 3
+};
+
 enum class UpdateBlockLayer : int {
     UpdateBlockDefault,
     UpdateBlockLiquid
