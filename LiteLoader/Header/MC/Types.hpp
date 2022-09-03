@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HookAPI.h"
+#include "Utils/RNG.h"
 #include "../Global.h"
 #include "Vec2.hpp"
 #include "Vec3.hpp"
@@ -39,13 +40,19 @@ class UUID {
     uint64_t a, b;
 
 public:
+    UUID()
+    : a(RNG::rand<uint64_t>()), b(RNG::rand<uint64_t>()) {
+    }
+    UUID(uint64_t a, uint64_t b)
+    : a(a), b(b) {
+    }
     MCAPI std::string asString() const;
     MCAPI static UUID fromString(std::string const&);
     MCAPI bool isEmpty() const;
     MCAPI static UUID seedFromString(std::string const&);
     MCAPI static class mce::UUID EMPTY;
 
-    inline operator bool() const {
+    operator bool() const {
         return !isEmpty();
     }
 };
