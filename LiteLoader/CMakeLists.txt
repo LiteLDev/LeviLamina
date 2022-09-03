@@ -51,17 +51,13 @@ link_directories(${CMAKE_SOURCE_DIR}/x64/Release)
 
 add_library(LiteLoader SHARED ${SRC_FILES})
 
-add_library(sqlitecpp STATIC IMPORTED)
-set_property(TARGET sqlitecpp PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib")
-add_library(sqlite3 STATIC IMPORTED)
-set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/sqlite3.lib")
-add_library(mysql STATIC IMPORTED)
-set_property(TARGET mysql PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib")
-
-target_link_libraries(LiteLoader LLPreLoader sqlitecpp sqlite3 mysql
+target_link_libraries(LiteLoader LLPreLoader
         "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
+        "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib"
+        "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/sqlite3.lib"
+        "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncall_s.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncallback_s.lib"
