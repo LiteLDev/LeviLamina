@@ -260,7 +260,7 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to ðŸ‘
 
 | Project                                                                 | License                                                          |
 | ----------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra exceptions                                     |
+| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3                                                           |
 | [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                       |
 | [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 License                                               |
 | [SimpleIni](https://github.com/brofield/simpleini)                      | MIT License                                                      |
@@ -270,7 +270,7 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to ðŸ‘
 | [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT License                                                      |
 | [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                                                      |
 | [dyncall](https://www.dyncall.org/index)                                | [ISC License](https://www.dyncall.org/license)                   |
-| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT :icense                                                      |
+| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT License                                                      |
 | [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause License                                             |
 | [SQLiteCpp](https://github.com/SRombauts/SQLiteCpp)                     | MIT License                                                      |
 | [compact_enc_det](https://github.com/google/compact_enc_det)            | Apache-2.0 License                                               |
