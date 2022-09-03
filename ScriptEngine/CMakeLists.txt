@@ -78,7 +78,7 @@ link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_library(base64 STATIC IMPORTED)
 
-target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY} SymDBHelper
+target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
         "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libcrypto.lib"
         "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libssl.lib"
         "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdyncall_s.lib"
@@ -92,4 +92,5 @@ target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
         "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_api.lib"
         "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_var.lib"
+        SymDBHelper
 )
