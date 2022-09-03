@@ -237,7 +237,7 @@ View related installation and usage instructions
 
 ## 🎬 Participate in contribution
 
-You can use the following methods to contribute to the `LiteLoader` project
+It's highly appreciated if you're interested in developing this project and follow the method to contribute to the LiteLoaderBDS project
 
 1. Contribute code, maintain projects and symbols, add new APIs and events and infrastructure
 2. Help us modify and optimize the development documentation and usage documentation
