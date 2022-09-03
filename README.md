@@ -39,9 +39,10 @@ making it easy to learn and extremely flexible.
 #include <LLAPI.h>
 #include <MC/Actor.hpp>
 #include <MC/Player.hpp>
+
 Logger logger("AttackLog");
 
-void PluginInit(){
+void PluginInit() {
     logger.info("Plugin xxx has been loaded.");
     // Subscribe Player-Attack Event
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
@@ -66,7 +67,7 @@ mc.listen("onServerStarted", () => {
     cmd.setCallback((_cmd, ori, out, _res) => {
         out.success("stop command executed successfully");
         mc.broadcast(
-            `Player${ori.player.realName}Execute the stop command. The server will be shut down after 5 seconds`
+            `${ori.player.realName} executed the stop command. The server will be shutdown after 5 seconds`
         );
 
         // Execute stop command
@@ -125,7 +126,7 @@ mc.listen("onServerStarted", () => {
 
 ### For Linux
 
-We do not recommend you to use Wine due to BDS 1.19.20 on Wine has a performance problem
+We do not recommend you to use Wine due to BDS 1.19.20+ on Wine has a performance problem
 
 #### Installation script(Ubuntu)
 

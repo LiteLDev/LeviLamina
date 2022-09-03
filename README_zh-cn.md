@@ -32,9 +32,10 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 #include <LLAPI.h>
 #include <MC/Player.hpp>
 #include <MC/Actor.hpp>
+
 Logger logger("AttackLog");
 
-void PluginInit(){
+void PluginInit() {
     LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
     logger.info("插件 xxx 已加载.");
     //监听玩家攻击事件
@@ -59,7 +60,7 @@ mc.listen("onServerStarted", () => {
     cmd.overload();
     cmd.setCallback((_cmd, ori, out, _res) => {
         out.success("关服命令执行成功");
-        mc.broadcast(`玩家${ori.player.realName}执行了关服命令。服务器将在5秒之后关闭`);
+        mc.broadcast(`${ori.player.realName}执行了关服命令。服务器将在5秒之后关闭`);
 
         //执行关服命令
         setTimeout(() => mc.runcmd("stop"), 5000);
@@ -117,7 +118,7 @@ mc.listen("onServerStarted", () => {
 
 ### 对于 Linux 用户
 
-我们不再建议使用Wine，因为BDS 1.19.20运行在Wine上会有严重的性能问题
+我们不再建议使用Wine，因为BDS 1.19.20+运行在Wine上会有严重的性能问题
 
 #### 安装脚本(Ubuntu)
 
