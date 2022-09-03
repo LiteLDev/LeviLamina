@@ -34,17 +34,17 @@ QQ群: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ2群: [850517473](h
 #include <MC/Actor.hpp>
 Logger logger("AttackLog");
 
-void PluginInit()
-{
- LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
+void PluginInit(){
+    LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
     logger.info("插件 xxx 已加载.");
     //监听玩家攻击事件
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info(u8"玩家:{} 攻击了 {} | 坐标 {} 维度 {}",
-        player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
-            std::to_string(actor->getDimensionId()));
+            player->getRealName(), actor->getTypeName(), 
+            actor->getPos().toString(), std::to_string(actor->getDimensionId())
+        );
         return true;
     });
 }
