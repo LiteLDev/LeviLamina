@@ -15,7 +15,6 @@ on:
       - '**/CMakeLists.txt'
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
@@ -108,19 +107,19 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          cd Scripts
-          ./PackRelease.cmd action
-        shell: cmd
-
       - name: Compress Resource Packs
         run: |
           cd RELEASE/plugins/LiteLoader/ResourcePacks
           7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
           rm -r LiteLoaderBDS-CUI
         shell: bash
+
+      - name: Pack Release
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          cd Scripts
+          ./PackRelease.cmd action
+        shell: cmd
 
       - name: Move PDB to path
         working-directory: ${{ env.GITHUB_WORKSPACE }}
@@ -179,12 +178,12 @@ jobs:
         env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
 
-      - name: Publish to MineBBS
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
-          -H "Accept: application/vnd.github.everest-preview+json" \
-          -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
-          --data '{"event_type": "webhook"}'
-        shell: bash
+      #- name: Publish to MineBBS
+      #  working-directory: ${{ env.GITHUB_WORKSPACE }}
+      #  if: startsWith(github.ref, 'refs/tags/')
+      #  run: |
+      #    curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
+      #    -H "Accept: application/vnd.github.everest-preview+json" \
+      #    -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
+      #    --data '{"event_type": "webhook"}'
+      #  shell: bash

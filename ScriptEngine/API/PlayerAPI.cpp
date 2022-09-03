@@ -427,7 +427,7 @@ Local<Value> PlayerClass::getGameMode() {
         if (!player)
             return Local<Value>();
 
-        return Number::newNumber(player->getPlayerGameType()); //==========???
+        return Number::newNumber((int)player->getPlayerGameType()); //==========???
     }
     CATCH("Fail in getGameMode!")
 }
