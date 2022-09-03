@@ -279,7 +279,7 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to ðŸ‘
 | [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                                                      |
 | [entt](https://github.com/skypjack/entt)                                | MIT License                                                      |
 | [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst) |
-| [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                                      |
+| [gsl](https://github.com/microsoft/GSL)                                 | MIT License                                                      |
 | [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause License                                             |
 | [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 License                                               |
 | [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                                      |
