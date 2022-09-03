@@ -51,7 +51,7 @@ link_directories(${CMAKE_SOURCE_DIR}/x64/Release)
 
 add_library(LiteLoader SHARED ${SRC_FILES})
 
-target_link_libraries(LiteLoader LLPreLoader
+target_link_libraries(LiteLoader
         "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
@@ -67,4 +67,5 @@ target_link_libraries(LiteLoader LLPreLoader
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
+        LLPreLoader
 )
