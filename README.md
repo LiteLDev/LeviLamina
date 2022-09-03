@@ -37,20 +37,20 @@ making it easy to learn and extremely flexible.
 #include <EventAPI.h>
 #include <LoggerAPI.h>
 #include <LLAPI.h>
-#include <MC/Player.hpp>
 #include <MC/Actor.hpp>
+#include <MC/Player.hpp>
 Logger logger("AttackLog");
 
-void PluginInit()
-{
+void PluginInit(){
     logger.info("Plugin xxx has been loaded.");
     // Subscribe Player-Attack Event
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info("Player:{} attacks {} | at {} in Dimension {}",
-        player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
-            std::to_string(actor->getDimensionId()));
+            player->getRealName(), actor->getTypeName(), 
+            actor->getPos().toString(), std::to_string(actor->getDimensionId())
+        );
         return true;
     });
 }
