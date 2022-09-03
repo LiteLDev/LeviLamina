@@ -713,6 +713,13 @@ enum class ContainerType : char {
     SMITHING_TABLE         = 33,
 };
 
+enum GameType : int {
+    Survival  = 0,
+    Creative  = 1,
+    Adventure = 2,
+    Spectator = 6
+};
+
 enum Difficulty : int {
     Peaceful = 0,
     Easy     = 1,
