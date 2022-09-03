@@ -52,7 +52,7 @@ public:
     MCAPI static UUID seedFromString(std::string const&);
     MCAPI static class mce::UUID EMPTY;
 
-    operator bool() const {
+    inline operator bool() const {
         return !isEmpty();
     }
 };
