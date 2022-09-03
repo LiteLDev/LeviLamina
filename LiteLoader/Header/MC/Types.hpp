@@ -721,24 +721,24 @@ enum class ContainerType : char {
 };
 
 enum GameType : int {
-    Survival  = 0,
-    Creative  = 1,
-    Adventure = 2,
-    Spectator = 6
+    GameTypeSurvival  = 0,
+    GameTypeCreative  = 1,
+    GameTypeAdventure = 2,
+    GameTypeSpectator = 6
 };
 
 enum Difficulty : int {
-    Peaceful = 0,
-    Easy     = 1,
-    Normal   = 2,
-    Hard     = 3
+    DifficultyPeaceful = 0,
+    DifficultyEasy     = 1,
+    DifficultyNormal   = 2,
+    DifficultyHard     = 3
 };
 
 enum PlayerPermissionLevel : int {
-    Visitor  = 0,
-    Member   = 1,
-    Operator = 2,
-    Custom   = 3
+    PlayerPermissionLevelVisitor  = 0,
+    PlayerPermissionLevelMember   = 1,
+    PlayerPermissionLevelOperator = 2,
+    PlayerPermissionLevelCustom   = 3
 };
 
 enum class UpdateBlockLayer : int {
