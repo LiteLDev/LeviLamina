@@ -39,6 +39,13 @@ public:
         HEAD_ROTATION,
     };
 
+    enum GameType : int {
+        Survival  = 0,
+        Creative  = 1,
+        Adventure = 2,
+        Spectator = 6
+    };
+
     LIAPI std::string getName();
     LIAPI std::string getRealName();
     LIAPI std::string getUuid();

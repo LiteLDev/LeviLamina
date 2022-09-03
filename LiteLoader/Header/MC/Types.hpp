@@ -713,20 +713,14 @@ enum class ContainerType : char {
     SMITHING_TABLE         = 33,
 };
 
-enum class GameType : int {
-    Survival  = 0,
-    Creative  = 1,
-    Adventure = 2
-};
-
-enum class Difficulty : int {
+enum Difficulty : int {
     Peaceful = 0,
     Easy     = 1,
     Normal   = 2,
     Hard     = 3
 };
 
-enum class PlayerPermissionLevel : int {
+enum PlayerPermissionLevel : int {
     Visitor  = 0,
     Member   = 1,
     Operator = 2,
