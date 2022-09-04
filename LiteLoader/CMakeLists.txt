@@ -69,3 +69,7 @@ target_link_libraries(LiteLoader
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
         LLPreLoader
 )
+
+add_custom_command(TARGET LiteLoader PRE_BUILD
+        COMMAND cmd /c ${CMAKE_SOURCE_DIR}/Scripts/PrepareLibraries.cmd ${CMAKE_SOURCE_DIR}
+        )
