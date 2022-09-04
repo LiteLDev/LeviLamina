@@ -97,14 +97,13 @@ void CheckRunningBDS() {
     std::wstring current{buf, sz}; // Copy
     // Check the BDS process paths
     for (auto& pid : pids) {
-        WCHAR buf[8196] = {0};
         // Open process handle
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
         if (handle) {
-            DWORD sz = NULL;
-            WCHAR buf[8196] = {0};
+            sz = NULL;
+            buf[8196] = {0};
             // Get the full path of the process
-            if (sz = GetModuleFileNameEx(handle, nullptr, buf, 8196)) {
+            if ((sz = GetModuleFileNameEx(handle, nullptr, buf, 8196))) {
                 std::wstring path{buf, sz};
                 if (current == path) {
                     logger.error(tr("ll.main.checkRunningBDS.detected"));
@@ -208,6 +207,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
             }
             return TRUE;
         }
+        default:
+            break;
     }
     return FALSE;
 }
@@ -221,7 +222,10 @@ void UnixSignalHandler(int signum) {
             } else {
                 std::terminate();
             }
+            break;
         }
+        default:
+            break;
     }
 }
 
