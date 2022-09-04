@@ -24,14 +24,6 @@ copy /Y Tools\LibraryBuilder.exe LiteLoaderSDK\Tools
 copy /Y Tools\LLPeEditor.exe LiteLoaderSDK\Tools
 copy /Y Tools\*.cmd LiteLoaderSDK\Tools
 
-if [%1] neq [action] goto Zipped
-echo.
-echo [INFO] Zipping Files...
-cd LiteLoaderSDK
-..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=3 ..\LiteLoaderSDK.zip *
-cd ..
-:Zipped
-
 echo.
 echo [INFO] Packing LiteLoaderSDK... DONE!
 

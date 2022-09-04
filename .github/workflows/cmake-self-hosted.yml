@@ -114,11 +114,11 @@ jobs:
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
-      - name: Pack Release
+      - name: Copy Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Scripts
-          ./PackRelease.cmd action
+          ./CopyRelease.cmd action
         shell: cmd
 
       - name: Move PDB to path
@@ -158,13 +158,13 @@ jobs:
           name: PDB
           path: ${{ github.workspace }}\PDB
 
-      - name: Prepare for creating Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
+      - name: Pack Release
+        working-directory: ${{ env.GITHUB_WORKSPACE }}/RELEASE
         id: rel
         if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-          mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
+          7z a -y -tzip -mmt -mx=9 ../LiteLoader-${GITHUB_REF#refs/*/}.zip *
         shell: bash
 
       - name: Create New Release
