@@ -63,6 +63,7 @@
 #include <MC/DirectoryPackSource.hpp> 
 #include <MC/PackSource.hpp>
 #include <MC/BucketItem.hpp>
+#include <MC/BucketableComponent.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -1593,7 +1594,7 @@ TInstanceHook(bool, "?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@
     IF_LISTENED_END(PlayerUseBucketEvent)
     return original(this, blockSource, block, blockPos, actor, itemStack, face);
 }
-// 装水、牛奶
+// 装水
 TInstanceHook(bool, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
               ItemStack* itemStack, Actor* actor, BlockPos* blockPos) {
     IF_LISTENED(PlayerUseBucketEvent) {
@@ -1626,6 +1627,38 @@ TInstanceHook(bool, "?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor
     }
     IF_LISTENED_END(PlayerUseBucketEvent)
     return original(this, itemStack, actor, blockPos);
+}
+
+//拿桶与实体交互（装鱼、装牛奶），目前的办法是hook ItemStack::useOn来拦截
+//这个交互实现在BucketableComponent::implInteraction
+namespace {
+Player* mBucketPlayer;//传玩家指针
+std::mutex mBucketPlayerLuck;
+}
+THook(void, "?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z",
+              Actor* actor, Player* player) {
+    std::lock_guard<std::mutex> autoLock(mBucketPlayerLuck);
+    mBucketPlayer = player;
+    return original(actor, player);
+}
+
+TInstanceHook(bool, "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z", ItemStack,
+              Actor* actor, int x, int y, int z, unsigned char face, Vec3 clickPos) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        if (actor->getTypeName() != "minecraft:player") {
+            PlayerUseBucketEvent ev{};
+            ev.mPlayer = mBucketPlayer;
+            ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+            ev.mTargetPos = clickPos;
+            ev.mBucket = this;
+            ev.mTargetActor = actor;
+            ev.mFace = face;
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, actor, x, y, z, face, clickPos);
 }
 
 

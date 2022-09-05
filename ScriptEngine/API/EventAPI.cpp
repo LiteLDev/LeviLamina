@@ -559,9 +559,15 @@ void EnableEventListener(int eventId) {
                     IF_LISTENED_END(EVENT_TYPES::onUseBucketPlace);
                 } else if (ev.mEventType == PlayerUseBucketEvent::EventType::Take) {
                     IF_LISTENED(EVENT_TYPES::onUseBucketTake) {
-                        CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
-                                  ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
-                                  Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                        if (ev.mTargetActor) {
+                            CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
+                                      ItemClass::newItem(ev.mBucket), EntityClass::newEntity(ev.mTargetActor),
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                        } else {
+                            CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
+                                      ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                        }
                     }
                     IF_LISTENED_END(EVENT_TYPES::onUseBucketTake);
                 }

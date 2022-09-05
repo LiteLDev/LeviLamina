@@ -179,6 +179,7 @@ public:
     Player* mPlayer;
     ItemStack* mBucket;
     BlockInstance mBlockInstance;
+    Actor *mTargetActor;
     EventType mEventType;
     unsigned char mFace;
     Vec3 mTargetPos;
