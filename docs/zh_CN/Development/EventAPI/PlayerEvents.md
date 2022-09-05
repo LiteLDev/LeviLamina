@@ -213,6 +213,52 @@
 
 <br>
 
+#### `"onUseBucketPlace"` - 玩家使用桶倒出东西
+
+- 监听函数原型
+  `function(player,item,block,side,pos)`
+- 参数：
+  - player : `Player`  
+    使用物品的玩家对象
+  - item : `Item`  
+    被使用的物品对象
+  - block : `Block`  
+    被点击到的方块对象
+  - side : `Number`  
+    方块被点击的面  
+    依次为：`0`-下 `1`-上 `2`-北 `3`-南 `4`-西 `5`-东
+  - pos : `FloatPos`  
+    被点击的浮点位置
+
+- 拦截事件：函数返回`false`
+
+注：Win10客户端玩家右键会在服务端连续多次激发这个事件
+
+<br>
+
+#### `"onUseBucketTake"` - 玩家使用桶装进东西（除了空桶装牛奶）
+
+- 监听函数原型
+  `function(player,item,target,side,pos)`
+- 参数：
+  - player : `Player`  
+    使用物品的玩家对象
+  - item : `Item`  
+    被使用的物品对象
+  - target : `Block` / `Entity`  
+    被点击到的方块对象或者实体对象
+  - side : `Number`  
+    方块被点击的面  
+    依次为：`0`-下 `1`-上 `2`-北 `3`-南 `4`-西 `5`-东
+  - pos : `FloatPos`  
+    被点击的浮点位置
+
+- 拦截事件：函数返回`false`
+
+注：Win10客户端玩家右键会在服务端连续多次激发这个事件
+
+<br>
+
 #### `"onTakeItem"` - 玩家捡起物品
 
 - 监听函数原型

@@ -207,6 +207,52 @@ Note: Win10 client right-clicking on the player will trigger this event on the s
 
 <br>
 
+#### `"onUseBucketPlace"` - Players use bucket to pour things out on Block Event
+
+- Listener function prototype 
+  `function(player,item,block,side,pos)`
+- Parameters：
+  - player : `Player`  
+    The player that used the item.
+  - item : `Item`  
+    The item being used.
+  - block : `Block`  
+    The block that was right-clicked.
+  - side : `Number`  
+    The face of the object that was clicked.   
+    The faces: `0`-Down `1`-Up `2`-North `3`-South `4`-West `5`-East
+  - pos : `FloatPos`  
+    The position that was right-clicked.
+
+- Intercept events: function returns `false`
+
+Note: Win10 client right-clicking on the player will trigger this event on the server multiple times in a row.
+
+<br>
+
+#### `"onUseBucketTake"` - Players use bucket to pack in things (except empty buckets for milk)
+
+- Listener function prototype 
+  `function(player,item,target,side,pos)`
+- Parameters：
+  - player : `Player`  
+    The player that used the item.
+  - item : `Item`  
+    The item being used.
+  - target : `Block` / `Entity`  
+    The block or entity that was right-clicked.
+  - side : `Number`  
+    The face of the object that was clicked.   
+    The faces: `0`-Down `1`-Up `2`-North `3`-South `4`-West `5`-East
+  - pos : `FloatPos`  
+    The position that was right-clicked.
+
+- Intercept events: function returns `false`
+
+Note: Win10 client right-clicking on the player will trigger this event on the server multiple times in a row.
+
+<br>
+
 #### `"onTakeItem"` - Player Pickup Item Event
 
 - Listener function prototype 
