@@ -63,6 +63,7 @@ public:
     Local<Value> kill(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
+    Local<Value> setScale(const Arguments& args);
 
     Local<Value> isPlayer(const Arguments& args);
     Local<Value> toPlayer(const Arguments& args);
