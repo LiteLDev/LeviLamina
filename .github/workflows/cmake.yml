@@ -97,11 +97,11 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Pack Release
+      - name: Copy Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           cd Scripts
-          ./PackRelease.cmd action
+          ./CopyRelease.cmd action
         shell: cmd
 
       - name: Move PDB to path
