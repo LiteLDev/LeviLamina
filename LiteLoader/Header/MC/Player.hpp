@@ -24,8 +24,12 @@ class CompoundTag;
 #undef BEFORE_EXTRA
 
 /**
- * @brief MC class Player.
+ * \~chinese
+ * @brief 玩家
  *
+ * 
+ * \~english
+ * @brief The player
  */
 class Player : public Mob {
 
@@ -40,7 +44,25 @@ public:
     };
 
     LIAPI std::string getName();
+
+    /**
+     * \~chinese
+     * @brief 获取此玩家的真实名字。
+     * 
+     * @return 此玩家的真实名字
+     * 
+     * @note 此方法得到的是玩家的XBOX账户名。
+     * 
+     * 
+     * \~english
+     * @brief Get the real name of the player.
+     * 
+     * @return The real name of the player
+     * 
+     * @note This method gets the XBOX account name of the player.
+     */
     LIAPI std::string getRealName();
+
     LIAPI std::string getUuid();
     LIAPI unsigned char getClientSubId();
     LIAPI string getDeviceTypeName();
@@ -124,7 +146,23 @@ public:
     LIAPI bool kick(const string& msg);
     LIAPI bool crashClient();
     LIAPI bool talkAs(const string& msg);
+
+    /**
+     * \~chinese
+     * @brief 给予此玩家物品。
+     * 
+     * @param item 被给予的物品
+     * @return 若成功给予则为真；否则为假
+     * 
+     * 
+     * \~english
+     * @brief Give the player items.
+     * 
+     * @param item The items to give
+     * @return True if the player is successfully given the items; otherwise false
+     */
     LIAPI bool giveItem(ItemStack* item);
+
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);
     LIAPI bool transferServer(const string& address, unsigned short port);
@@ -151,7 +189,31 @@ public:
 
     // Packet
     LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW) const;
+
+    /**
+     * \~chinese
+     * @brief 在此玩家界面显示标题。
+     * 
+     * @param text 标题的文字内容
+     * @param Type 标题类型
+     * @param FadeInDuration 标题淡入时长
+     * @param RemainDuration 标题持续时长
+     * @param FadeOutDuration 标题淡出时长
+     * @return 若成功显示标题，则为真；否则为假
+     * 
+     * 
+     * \~english
+     * @brief Display a title on the player's screen.
+     * 
+     * @param text The texts of the title
+     * @param Type The type of the title
+     * @param FadeInDuration The fade in duration
+     * @param RemainDuration The lasting time
+     * @param FadeOutDuration The fade out duration
+     * @return True if the title is successfully shown; otherwise false
+     */
     LIAPI bool sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const;
+
     LIAPI bool sendNotePacket(unsigned int tone);
     LIAPI bool sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimid, string ParticleName, int64_t EntityUniqueID = -1) const;
     /*bad*/ LIAPI bool sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const;

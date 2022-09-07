@@ -21,8 +21,16 @@ class ItemInstance;
 #undef BEFORE_EXTRA
 
 /**
- * @brief MC class ItemStack.
+ * \~chinese
+ * @brief 物品栈
+ * 
+ * @par 物品栈是可以被指针选择拿起的多个相同物品的集合。
  *
+ * 
+ * \~english
+ * @brief The item stack
+ * 
+ * @par An item stack is a set of identical items that can be picked up with the pointer at a time.
  */
 class ItemStack : public ItemStackBase {
 
@@ -33,8 +41,29 @@ class ItemStack : public ItemStackBase {
 public:
     // The return value should be freed by the developer if it is no longer used
     LIAPI static ItemStack* create();
-    // The return value should be freed by the developer if it is no longer used
+    
+    /**
+     * \~chinese
+     * @brief 创建一个物品栈。
+     * 
+     * @param type 物品的标识符
+     * @param count 物品的数量
+     * @return 指向物品栈的指针
+     * 
+     * @note 为了防止内存泄漏，创建的物品栈应当被释放。
+     * 
+     * 
+     * \~english
+     * @brief Create an item stack.
+     * 
+     * @param type The identifier of the items
+     * @param count The number of the items
+     * @return A pointer to the item stack
+     * 
+     * @note To prevent memory leakage, the item stack created should be released.
+     */
     LIAPI static ItemStack* create(std::string type, int count = 1);
+
     // The return value should be freed by the developer if it is no longer used
     LIAPI static ItemStack* create(std::unique_ptr<CompoundTag> tag);
     // The return value should be freed by the developer if it is no longer used
