@@ -169,6 +169,11 @@ public:
     Vec3 mClickPos;
 };
 
+/**
+ * \~english @brief This event indicates that a player used a bucket.
+ * \~chinese @brief 此事件表明玩家使用了桶。
+ *
+ */
 class PlayerUseBucketEvent : public EventTemplate<PlayerUseBucketEvent> {
 public:
     enum class EventType

@@ -1604,12 +1604,45 @@ TInstanceHook(bool, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AE
         ev.mTargetPos = blockPos->toVec3();
         ev.mBucket = itemStack;
         ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
-        ev.mFace = 0;
+        ev.mFace = -1;
         if (!ev.call())
             return false;
     }
     IF_LISTENED_END(PlayerUseBucketEvent)
     return original(this, itemStack, actor, blockPos);
+}
+// 装牛奶
+/*
+ * 这个函数是InteractComponent::_runInteraction里面调用的lambda函数实现部分，
+ * 这个lambda函数实现了桶装牛奶、剪刀剪羊毛、打火石点苦力怕和紫水晶碎片给予悦灵
+ * 这些操作。
+ * a1的结构可以在这个lambda的__Copy函数看到：
+ * std::_Func_impl_no_alloc__lambda_f1efd4c97256fb90f8a5625718bf0fe5__void_::_Copy
+ */  
+struct BucketPlayerAndActor{
+    Player* player;
+    Actor* owner;
+};
+//也许这个结构体可以用偏移获取替代？
+THook(void, "<lambda_f1efd4c97256fb90f8a5625718bf0fe5>::operator()",
+      BucketPlayerAndActor* a1) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        BucketPlayerAndActor mBucketPlayerAndActor = *a1;
+        if (mBucketPlayerAndActor.owner->getTypeName() == "minecraft:cow" || 
+            mBucketPlayerAndActor.owner->getTypeName() == "minecraft:mooshroom") {
+            PlayerUseBucketEvent ev{};
+            ev.mPlayer = mBucketPlayerAndActor.player;
+            ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+            ev.mTargetPos = mBucketPlayerAndActor.owner->getPosition();
+            ev.mBucket = const_cast<ItemStack*>(&ev.mPlayer->getSelectedItem());
+            ev.mTargetActor = mBucketPlayerAndActor.owner;
+            ev.mFace = -1;
+            if (!ev.call())
+                return;
+        }
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(a1);
 }
 // 装细雪
 TInstanceHook(bool, "?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
@@ -1621,7 +1654,7 @@ TInstanceHook(bool, "?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor
         ev.mTargetPos = blockPos->toVec3();
         ev.mBucket = itemStack;
         ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
-        ev.mFace = 0;
+        ev.mFace = -1;
         if (!ev.call())
             return false;
     }
@@ -1629,7 +1662,7 @@ TInstanceHook(bool, "?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor
     return original(this, itemStack, actor, blockPos);
 }
 
-//拿桶与实体交互（装鱼、装牛奶），目前的办法是hook ItemStack::useOn来拦截
+//拿桶与实体交互（装鱼），目前的办法是hook ItemStack::useOn来拦截
 //这个交互实现在BucketableComponent::implInteraction
 namespace {
 Player* mBucketPlayer;//传玩家指针
