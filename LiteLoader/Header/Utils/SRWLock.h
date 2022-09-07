@@ -1,6 +1,5 @@
 #pragma once
 #include "../Global.h"
-#include <windows.h>
 
 class SRWLock {
     bool inited = false;
@@ -20,11 +19,11 @@ class SRWLockHolder {
     SRWLock& locker;
 
 public:
-    LIAPI SRWLockHolder(SRWLock& lock)
+    inline SRWLockHolder(SRWLock& lock)
     : locker(lock) {
         locker.lock();
     }
-    LIAPI ~SRWLockHolder() {
+    inline ~SRWLockHolder() {
         locker.unlock();
     }
 };
@@ -34,11 +33,11 @@ class SRWLockSharedHolder {
     SRWLock& locker;
 
 public:
-    LIAPI SRWLockSharedHolder(SRWLock& lock)
+    inline SRWLockSharedHolder(SRWLock& lock)
     : locker(lock) {
         locker.lock_shared();
     }
-    LIAPI ~SRWLockSharedHolder() {
+    inline ~SRWLockSharedHolder() {
         locker.unlock_shared();
     }
 };

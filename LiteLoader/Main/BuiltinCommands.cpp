@@ -235,7 +235,7 @@ void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool
         if (PluginManager::reloadPlugin(pluginName, true)) {
             output.trSuccess("ll.cmd.reloadPlugin.success", pluginName);
         } else {
-            output.trError("ll.cmd.reloadPlugin.success", pluginName);
+            output.trError("ll.cmd.reloadPlugin.fail", pluginName);
         }
     } else {
         int cnt = PluginManager::reloadAllPlugins(true);

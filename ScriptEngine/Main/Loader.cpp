@@ -1,7 +1,6 @@
 #include <API/APIHelp.h>
 #include <Engine/GlobalShareData.h>
 #include <Engine/EngineOwnData.h>
-#include <Engine/LoaderHelper.h>
 #include <Engine/EngineManager.h>
 #include <Tools/IniHelper.h>
 #include <PluginManager.h>
@@ -18,17 +17,17 @@
 
 extern ::Logger logger;
 
-// 基础库 & 依赖库
+// Baselibs dependency 
 std::unordered_map<std::string, std::string> depends;
 
-// 调试引擎
+// Debug engine
 ScriptEngine* debugEngine;
 bool globalDebug = false;
 
-// 前置声明
+// Pre-declared
 extern void BindAPIs(ScriptEngine* engine);
 
-// 预加载依赖库
+// Pre-load dependency
 void LoadDepends() {
 #ifdef LLSE_BACKEND_NODEJS
     return; // NodeJs backend load depends code in another place
@@ -54,17 +53,17 @@ void LoadDepends() {
     }
 }
 
-// 加载调试引擎
+// Load debug engine
 void LoadDebugEngine() {
 #ifdef LLSE_BACKEND_NODEJS
     return; // NodeJs backend didn't enable debug engine now
 #endif
 
-    // 启动引擎
+    //  Create engine
     debugEngine = EngineManager::newEngine(LLSE_DEBUG_ENGINE_NAME);
     EngineScope enter(debugEngine);
 
-    // 绑定API
+    // Bind APIs
     try {
         BindAPIs(debugEngine);
     } catch (const Exception& e) {
@@ -72,7 +71,7 @@ void LoadDebugEngine() {
         throw;
     }
 
-    // 加载libs依赖库
+    // Load baselibs
     try {
         for (auto& [path, content] : depends) {
             debugEngine->eval(content, path);
@@ -84,28 +83,32 @@ void LoadDebugEngine() {
 }
 
 
-// 主加载
-void LoadMain_NodeJs();
-
+// Main load procedure
+void LoadMain_Package();
 void LoadMain() {
-#ifdef LLSE_BACKEND_NODEJS
-    LoadMain_NodeJs(); // Process NodeJs backend's plugin load separately
-    return;
-#endif
 
+#if LLSE_IS_PLUGIN_PACKAGE
+    // Load plugin package
+    LoadMain_Package();
+
+#else
+
+    // Load simple file plugin
     logger.info(tr("llse.loader.loadMain.start", fmt::arg("type", LLSE_MODULE_TYPE)));
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION) {
-            if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string())))
+            if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
                 ++count;
         }
     }
     logger.info(tr("llse.loader.loadMain.done",
                    fmt::arg("count", count),
                    fmt::arg("type", LLSE_MODULE_TYPE)));
+#endif
 }
+
 
 
 #ifdef LLSE_BACKEND_NODEJS
@@ -115,37 +118,48 @@ void LoadMain_NodeJs() {
     int installCount = 0;
     int count = 0;
 
-    // Unpack .llplugin
-    std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
+    // Load plugins in NODEJS_ROOT_DIR
+    std::filesystem::directory_iterator files(LLSE_PLUGINS_ROOT_DIR);
     for (auto& i : files) {
-        if (i.is_regular_file() && EndsWith(i.path().u8string(), LLSE_PLUGINPACK_EXTENSION)) {
-            logger.info(tr("llse.loader.loadMain.nodejs.installPack.start", i.path().u8string()));
-            if (!NodeJsHelper::deployPluginPack(i.path().u8string())) {
+        std::filesystem::path pth = i.path();
+        if (i.is_directory() && pth.filename() != "node_modules") {
+            if (std::filesystem::exists(pth / "package.json")) {
+                if (PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
+                    ++count;
+                }
+            }
+            else {
+                logger.warn(tr("llse.loader.loadMain.nodejs.ignored", UTF82String(pth.filename().u8string())));
+            }
+        }
+    }
+
+    // Unpack .llplugin & install
+    // Tips: Must after plugins loaded in NODEJS_ROOT_DIR
+    files = std::filesystem::directory_iterator(LLSE_PLUGINS_LOAD_DIR);
+    for (auto& i : files) {
+        std::filesystem::path pth = i.path();
+        if (i.is_regular_file() && EndsWith(UTF82String(pth.u8string()), LLSE_PLUGIN_PACKAGE_EXTENSION)) {
+            logger.info(tr("llse.loader.loadMain.nodejs.installPack.start",
+                           fmt::arg("path", UTF82String(pth.u8string()))));
+            if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
                 logger.error(tr("llse.loader.loadMain.nodejs.installPack.fail"));
             }
             ++installCount;
         }
     }
-    logger.info(tr("llse.loader.loadMain.installPluginPack.done",
-                   fmt::arg("count", installCount),
-                   fmt::arg("type", "Node.js")));
 
-    // Load Plugins in NODEJS_ROOT_DIR
-    files = std::filesystem::directory_iterator(LLSE_NODEJS_ROOT_DIR);
-    for (auto& i : files) {
-        if (i.is_directory() && i.path().filename() != "temp" && i.path().filename() != "node_modules") {
-            std::filesystem::path pth = i.path();
-            if (std::filesystem::exists(pth / "package.json")) {
-                if (PluginManager::loadPlugin(i.path().u8string())) {
-                    ++count;
-                }
-            } else {
-                logger.warn(tr("llse.loader.loadMain.nodejs.ignored", i.path().filename().u8string()));
-            }
-        }
-    }
     logger.info(tr("llse.loader.loadMain.done",
                    fmt::arg("count", count),
                    fmt::arg("type", "Node.js")));
 }
 #endif
+
+void LoadMain_Package()
+{
+#ifdef LLSE_BACKEND_NODEJS
+    // Process NodeJs backend's plugin load separately
+    LoadMain_NodeJs();
+    return;
+#endif
+}

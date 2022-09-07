@@ -14,9 +14,9 @@ endif ()
 
 set(SCRIPTENGINE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
-set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64)
 
-set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
+set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release)
 
 file(GLOB_RECURSE SRC_FILES
         ${SCRIPTENGINE_DIR}/Main/*.cpp
@@ -33,11 +33,13 @@ file(GLOB_RECURSE SRC_FILES
         ${SCRIPTENGINE_DIR}/Tools/*.h
         ${SCRIPTENGINE_DIR}/Resource/*.rc
         ${SCRIPTENGINE_DIR}/Resource/*.h
-        )
+)
 
-add_definitions(-D "CPPHTTPLIB_OPENSSL_SUPPORT" -D "NDEBUG" -D "_CONSOLE" -D "_AMD64_"
-        -D "NOMINMAX" -D "SCRIPTX_BACKEND_TRAIT_PREFIX=../backend/${SCRIPTX_BACKEND}/trait/Trait"
-        -D "_WINDLL" -D "_UNICODE" -D "UNICODE" -D "LLSE_BACKEND_${LLSE_BACKEND}" -D "CMAKE")
+add_definitions(
+        -DCPPHTTPLIB_OPENSSL_SUPPORT -DNDEBUG -D_CONSOLE -D_AMD64_
+        -DNOMINMAX -DSCRIPTX_BACKEND_TRAIT_PREFIX=../backend/${SCRIPTX_BACKEND}/trait/Trait
+        -D_WINDLL -D_UNICODE -DUNICODE -D "LLSE_BACKEND_${LLSE_BACKEND}" -DCMAKE
+)
 
 add_compile_options(
         /permissive- /MP /GS /GL /W3 /Gy /Zc:wchar_t
@@ -49,8 +51,9 @@ add_compile_options(
 add_link_options(
         /MANIFEST /LTCG:incremental /NXCOMPAT
         /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO
-        /SUBSYSTEM:WINDOWS /MANIFESTUAC:"level='asInvoker' uiAccess='false'"
-        /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
+        /SUBSYSTEM:WINDOWS /MANIFESTUAC:NO
+        /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
+        /DELAYLOAD:bedrock_server.dll # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 )
 
 add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
@@ -75,7 +78,7 @@ link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_library(base64 STATIC IMPORTED)
 
-target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
+target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY} SymDBHelper
         "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libcrypto.lib"
         "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libssl.lib"
         "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdyncall_s.lib"
@@ -86,6 +89,7 @@ target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
         "${SCRIPTENGINE_DIR}/third-party/QuickJs/lib/quickjs.lib"
         "${SCRIPTENGINE_DIR}/third-party/Lua/lib/lua.lib"
         "${SCRIPTENGINE_DIR}/third-party/nbt-cpp/lib/nbt-cpp.lib"
+        # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
         "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_api.lib"
         "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_var.lib"
-        SymDBHelper)
+)

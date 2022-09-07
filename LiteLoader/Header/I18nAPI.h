@@ -76,28 +76,28 @@ public:
      * @return std::string  The translation
      * @see    I18nBase::defaultLocaleName
      */
-    virtual std::string get(const std::string& key, const std::string& localeName = "");
+    LIAPI virtual std::string get(const std::string& key, const std::string& localeName = "");
 
     /**
      * @breif Get the type of the i18n object.
      *
      * @return  The type of the i18n object
      */
-    virtual Type getType() = 0;
+    LIAPI virtual Type getType() = 0;
 
     /**
      * @brief Get the default language code of the i18n object.
      *
      * @return  The default language code of the i18n object
      */
-    virtual std::string getDefaultLocaleName();
+    LIAPI virtual std::string getDefaultLocaleName();
 
     /**
      * @brief Clone a new i18n object.
      *
      * @return  The new i18n object.
      */
-    virtual I18nBase* clone();
+    LIAPI virtual I18nBase* clone();
     
     static const constexpr char* POD_KEY = "ll_plugin_i18n"; ///< PluginOwnData key
 };

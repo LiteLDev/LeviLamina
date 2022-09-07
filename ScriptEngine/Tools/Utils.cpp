@@ -1,3 +1,6 @@
+// Windows ComBase API
+#include <combaseapi.h>
+
 #include "Utils.h"
 #include <string>
 #include <vector>

@@ -21,7 +21,7 @@ public:
     static Local<Object> newEntity(Actor* p);
     static Actor* extract(Local<Value> v);
     static std::optional<Actor*> tryExtractActor(Local<Value> v);
-    Local<Value> getRawPtr(const Arguments& args);
+    Local<Value> asPointer(const Arguments& args);
 
     Local<Value> getName();
     Local<Value> getType();
@@ -30,11 +30,34 @@ public:
     Local<Value> getBlockPos();
     Local<Value> getMaxHealth();
     Local<Value> getHealth();
+    Local<Value> getCanFly();
+    Local<Value> getCanFreeze();
+    Local<Value> getCanSeeDaylight();
+    Local<Value> getCanPickupItems();
     Local<Value> getInAir();
     Local<Value> getInWater();
+    Local<Value> getInClouds();
+    Local<Value> getInLava();
+    Local<Value> getInRain();
+    Local<Value> getInSnow();
+    Local<Value> getInWall();
+    Local<Value> getInWaterOrRain();
+    Local<Value> getInWorld();
     Local<Value> getSpeed();
     Local<Value> getDirection();
     Local<Value> getUniqueID();
+    Local<Value> isInvisible();
+    Local<Value> isInsidePortal();
+    Local<Value> isTrusting();
+    Local<Value> isTouchingDamageBlock();
+    Local<Value> isOnFire();
+    Local<Value> isOnGround();
+    Local<Value> isOnHotBlock();
+    Local<Value> isTrading();
+    Local<Value> isRiding();
+    Local<Value> isDancing();
+    Local<Value> isSleeping();
+    Local<Value> isAngry();
 
     Local<Value> teleport(const Arguments& args);
     Local<Value> kill(const Arguments& args);
@@ -63,3 +86,4 @@ public:
     Local<Value> quickEvalMolangScript(const Arguments& args);
 };
 extern ClassDefine<EntityClass> EntityClassBuilder;
+extern ClassDefine<void> ActorDamageCauseBuilder;

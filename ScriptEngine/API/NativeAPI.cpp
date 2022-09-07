@@ -26,6 +26,7 @@ Concurrency::concurrent_unordered_map<std::string, NativeFunction> NativeFunctio
 Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* funcSymbol, const Arguments& args) {
     if (args.size() < funcSymbol->mParams.size()) {
         logger.error("Too Few arguments!");
+        logger.error("In Component: NativeCall");
         logger.error("In Symbol: " + funcSymbol->mSymbol);
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
         return Local<Value>();
@@ -36,7 +37,7 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
         switch (funcSymbol->mParams[i]) {
             case NativeFunction::Types::Bool:
                 NATIVE_CHECK_ARG_TYPE(ValueKind::kBoolean);
-                dcArgBool(vm, args[i].asBoolean().value());
+                dcArgChar(vm, args[i].asBoolean().value());
                 break;
             case NativeFunction::Types::Char:
             case NativeFunction::Types::UnsignedChar:
@@ -72,8 +73,20 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
                 dcArgDouble(vm, args[i].asNumber().toDouble());
                 break;
             case NativeFunction::Types::Pointer:
-                NATIVE_CHECK_ARG_CLASS(NativePointer);
-                dcArgPointer(vm, NativePointer::extract(args[i]));
+                switch (args[i].getKind()) {
+                    case ValueKind::kObject:
+                        NATIVE_CHECK_ARG_CLASS(NativePointer);
+                        dcArgPointer(vm, NativePointer::extract(args[i]));
+                        break;
+                    case ValueKind::kNumber:
+                        NATIVE_CHECK_ARG_TYPE(ValueKind::kNumber);
+                        dcArgPointer(vm, (void*)args[i].asNumber().toInt64());
+                        break;
+                    case ValueKind::kNull:
+                    default:
+                        dcArgPointer(vm, nullptr);
+                        break;
+                }
                 break;
             default:
                 break;
@@ -85,9 +98,14 @@ Local<Value> NativeFunction::callNativeFunction(DCCallVM* vm, NativeFunction* fu
         case NativeFunction::Types::Void:
             dcCallVoid(vm, func);
             break;
-        case NativeFunction::Types::Bool:
-            res = Boolean::newBoolean(dcCallBool(vm, func));
+        case NativeFunction::Types::Bool: {
+            // in c, bool is the alias of int
+            // [c]#define bool int, sizeof(bool) == 4
+            // but in cpp, bool represent a true/false value
+            // it'a a builtin type, sizeof(bool) == sizeof(char) == 1
+            res = Boolean::newBoolean(dcCallChar(vm, func));
             break;
+        }
         case NativeFunction::Types::Char:
         case NativeFunction::Types::UnsignedChar:
             res = Number::newNumber(dcCallChar(vm, func));
@@ -329,11 +347,6 @@ Local<Value> ScriptNativeFunction::fromScript(const Arguments& args) {
 
 Local<Value> NativeFunction::getCallableFunction() {
     return Function::newFunction([this](const Arguments& args) -> Local<Value> {
-        if (args.size() < mParams.size()) {
-            logger.error("Too Few arguments!");
-            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-            return Local<Value>();
-        }
         return callNativeFunction(ENGINE_OWN_DATA()->dynamicCallVM, this, args);
     });
 }
@@ -396,7 +409,7 @@ char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue
 
         switch (hookInfo->mReturnVal) {
             case NativeFunction::Types::Bool:
-                result->B = res.asBoolean().value();
+                result->c = res.asBoolean().value();// pass bool by char
                 break;
             case NativeFunction::Types::Char:
                 result->c = (char)res.toInt();
@@ -435,13 +448,26 @@ char NativeFunction::nativeCallbackHandler(DCCallback* cb, DCArgs* args, DCValue
                 result->d = res.asNumber().toDouble();
                 break;
             case NativeFunction::Types::Pointer:
-                result->p = NativePointer::extract(res);
+                switch (res.getKind()) {
+                    case ValueKind::kObject:
+                        result->p = NativePointer::extract(res);
+                        break;
+                    case ValueKind::kNumber:
+                        result->p = (void*)res.asNumber().toInt64();
+                        break;
+                    case ValueKind::kNull:
+                    default:
+                        result->p = nullptr;
+                        break;
+                }
                 break;
             default:
                 break;
         }
     } catch (const Exception& e) {
         logger.error("Hook Callback Failed!");
+        logger.error("Message: {}",e.message());
+        logger.error("StackTrace: {}", e.stacktrace());
         logger.error("In Symbol: " + hookInfo->mSymbol);
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
     }

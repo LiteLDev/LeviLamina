@@ -48,10 +48,10 @@ using VarULong = VarInts<unsigned long long>;
 using VarUShort = VarInts<unsigned short>;
 
 struct MCString {
-    string_view view;
+    std::string_view view;
     MCString() {
     }
-    MCString(string_view sv)
+    MCString(std::string_view sv)
     : view(sv) {
     }
     template <typename T>
@@ -62,7 +62,7 @@ struct MCString {
     void unpack(RBStream& rs) {
         VarUInt sz;
         rs.apply(sz);
-        view = string_view((const char*)rs.data, sz.v);
+        view = std::string_view((const char*)rs.data, sz.v);
         rs.data += sz.v;
     }
 };

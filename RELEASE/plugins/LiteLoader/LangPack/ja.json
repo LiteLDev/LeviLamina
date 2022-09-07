@@ -1,275 +1,414 @@
 {
-    "base": {
-        "getDimName": {
-            "0": "オーバーワールド",
-            "1": "ネザー",
-            "2": "エンド",
-            "unknown": "その他のサイズ"
-        }
-    },
-    "ll": {
-        "main": {
-            "checkRunningBDS": {
-                "detected": "同じパスを持つ他のBDSプロセスを検出しました。",
-                "tip": "ネットワークポートとレベルが占有される可能性があります",
-                "ask": "PID {} でプロセスを終了しますか? (y=はい, n=いいえ)"
-            },
-            "fixAllowList": {
-                "removeEmptyAllowlist": "allowlist.json は空です。 削除中...",
-                "checkManually": "allowlist.json と whitelist.json の両方が存在しています。手動で確認してください。",
-                "renamed": "whitelist.jsonの名前をallowlist.jsonに変更しました"
-            },
-            "warning": {
-                "inDevMode": "現在開発モードです。",
-                "betaVersion": "現在使用しているのはベータ版です",
-                "productionEnv": "本番環境で使用しないでください。",
-                "protocolVersionNotMatch": {
-                    "1": "プロトコルバージョンが一致しません。ターゲットバージョン: {}、現在のバージョン: {}。",
-                    "2": "サーバーがクラッシュする可能性があります。BDS バージョンに一致する LiteLoader を使用してください。"
-                }
-            }
-        },
-        "antiAbnormalItem": {
-            "detected": "プレイヤー({}) のアイテムデータエラー",
-            "itemInfo": "アイテム: {}"
-        },
-        "cmd": {
-            "tpdim": {
-                "success": "{} を {} ({:2f}, {:2f}, {:2f}) にテレポートしました",
-                "error": {
-                    "noActorTeleported": "エンティティはテレポートされませんでした",
-                    "noActorSpecified": "エンティティが指定されていません"
-                },
-                "invalidDimid": "無効な値です: {}"
-            },
-            "listPlugin": {
-                "overview": "プラグインの一覧 [{}]",
-                "tip": "* 詳細については、コマンド \"ll list <Plugin Name>\" を使用してください"
-            },
-            "pluginInfo": {
-                "title": "プラグイン <{}>",
-                "error": {
-                    "pluginNotFound": "プラグイン <{}> が見つかりません。"
-                }
-            },
-            "version": {
-                "msg": "統合版マルチプレイサーバー {}\n- with LiteLoaderBDS {}\n- ネットワークプロトコル: {}"
-            },
-            "help": {
-                "msg": "[説明]\nLiteLoaderBDSは、BedrockDedicatedServerのためのの非公式プラグインローダーです。\n膨大な数のAPIやイベントシステム、多数の実用的なインターフェイス提供します。\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--"
-            },
-            "loadPlugin": {
-                "success": "プラグイン <{}> が読み込まれました。",
-                "fail": "プラグイン {} の読み込みに失敗しました"
-            },
-            "unloadPlugin": {
-                "success": "プラグイン <{}> がアンロードされました。",
-                "fail": "プラグイン <{}> のアンロードに失敗しました"
-            },
-            "reloadPlugin": {
-                "success": "プラグイン <{}> がリロードされました",
-                "fail": "プラグイン <{}> のリロードに失敗しました"
-            },
-            "reloadAllPlugins": {
-                "success": "{} プラグインが正常にリロードされました",
-                "fail": "プラグインのリロードに失敗しました"
-            },
-            "error": {
-                "noPathSpecified": "LiteLoader プラグインの有効なパスを指定してください",
-                "noNameSpecified": "LiteLoader プラグインの有効な名前を入力してください。"
-            }
-        },
-        "config": {
-            "save": {
-                "fail": "設定ファイルの保存(作成) に失敗しました。"
-            },
-            "creating": "LL Config File <{}> が見つかりません。 設定ファイルを作成しています...",
-            "warning": {
-                "configOutdated": "LL Config File <{}> は古いバージョンです。"
-            },
-            "updating": "設定ファイルを更新しています..."
-        },
-        "crashLogger": {
-            "existsingDebuggerDetected": "既存のデバッガが検出されました。内蔵のCrashLoggerは動作しません。",
-            "wineDetected": "Wine環境が検出されました。内蔵のCrashLoggerは動作しません。",
-            "error": {
-                "cannotCreateDaemonProcess": "CrashLogger Daemon Processを作成できませんでした。"
-            },
-            "warning": {
-                "crashLoggerDisabled": {
-                    "1": "Builtin CrashLogger が無効になっています。",
-                    "2": "未処理の例外が発生した場合、クラッシュログは作成されません。",
-                    "3": "クラッシュの原因と衝突の原因を調べられません",
-                    "4": "サーバーの安定性を保証するために有効にすることを強くお勧めします"
-                },
-                "conflicts": {
-                    "1": "プラグイン <{}> が競合しているため、Builtin CrashLogger が有効になっていません",
-                    "2": "未処理の例外が発生した場合、クラッシュログはありません。",
-                    "3": "クラッシュの原因と衝突の原因を調べられません",
-                    "4": "CrashLogger はサーバーの安定性を保証する重要なコンポーネントです。",
-                    "5": "プラグイン<{}>の修正をお勧めします"
-                }
-            },
-            "init": {
-                "fail": {
-                    "msg": "Builtin CrashLoggerの起動に失敗しました。",
-                    "tip": "未処理の例外が発生した場合、クラッシュログは生成されません。"
-                }
-            }
-        },
-        "addonsHelper": {
-            "error": {
-                "addonConfigNotFound": "アドオンの設定が見つかりません。",
-                "addonFileNotFound": "アドオンファイル \"{}\" が見つかりません。",
-                "addonNotFound": "アドオン <{}> が見つかりません。",
-                "outOfRange": "Addon index {} が範囲外です",
-                "unsupportedFileType": "サポートされていない種類のファイルが見つかりました。",
-                "parsingEnabledAddonsList": "有効なアドオンリストの解析中にエラーが発生しました",
-                "noAddonInstalled": "アドオンがインストールされていません。",
-                "installationAborted": "インストール処理が中止されました。"
-            },
-            "displayError": "エラー: {}",
-            "removeAddonFromList": {
-                "fail": "設定ファイルからアドオン<{}>を削除できませんでした。",
-                "success": "設定ファイルからアドオン<{}>を削除しました。"
-            },
-            "addAddonToList": {
-                "invalidList": "無効なアドオンリストファイル {}、{} にバックアップし、デフォルトにリセット",
-                "fail": "アドオン {} を {} に登録できませんでした。",
-                "success": "設定ファイルに addon <{}> を追加しました。"
-            },
-            "install": {
-                "installing": "アドオン <{}> をインストール中...",
-                "error": {
-                    "failToUncompress": {
-                        "msg": "アドオン{}の解凍に失敗しました",
-                        "exitCode": "終了コード: {}",
-                        "programOutput": "プログラム出力:\n{}"
-                    }
-                }
-            },
-            "uninstall": {
-                "success": "アドオン <{}> がアンインストールされました。"
-            },
-            "autoInstall": {
-                "tip": {
-                    "dirCreated": "ディレクトリが作成されました。圧縮されたアドオンファイルを {} に移動して次回起動時にインストールすることができます。"
-                },
-                "working": "{} 件の新しいアドオンがインストールされました。処理中です...",
-                "installed": "アドオン{} がインストールされました。",
-                "installedCount": "{} アドオンがインストールされました。"
-            },
-            "cmd": {
-                "output": {
-                    "list": {
-                        "overview": "アドオン: {} アドオンがインストールされました:"
-                    }
-                }
-            }
-        },
-        "loader": {
-            "loadScriptEngine": {
-                "error": {
-                    "versionNotMatch": "{} の Script Engine のファイル バージョン <{}> が LiteLoader のバージョン <{}> と一致しません"
-                },
-                "success": "* {} の ScriptEngine を読み込みました"
-            },
-            "loadDotNetEngine": {
-                "warning": {
-                    "notFinished": "LiteLoader.NETは終了していません。"
-                },
-                "error": {
-                    "versionNotMatch": "LiteLoader.NETのファイルバージョン<{}>がLiteLoaderのバージョン<{}>と一致しません"
-                },
-                "success": "* .NET エンジンが読み込まれました"
-            },
-            "loadMain": {
-                "loadingPlugins": "プラグインをロード中：",
-                "loadedShellLink": "シェルリンクされたプラグイン <{} => {}> 読み込みました",
-                "loadedPlugin": "プラグイン <{name}> がリロードされました",
-                "done": "{} プラグインがロードされました。",
-                "start": "ネイティブプラグインを読み込み中..."
-            },
-            "initNodeJsDirectories": {
-                "created": "NodeJs ランタイムファイルが見つかりませんでした。"
-            }
-        },
-        "notice": {
-            "newForum": "新しいフォーラムです-> {}",
-            "license": "LiteLoader は {} の下でライセンスされています。",
-            "translateText": "Help us translate & improve text in LL -> {}"
-        },
-        "pluginManager": {
-            "error": {
-                "invalidFileType": "{} の無効なプラグインファイルの種類 {}",
-                "noValidPluginFound": "{} で有効なプラグインが見つかりませんでした。",
-                "failToRegisterPlugin": "プラグイン <{}> の登録に失敗しました",
-                "hasBeenRegistered": "{} が登録されました",
-                "failToLoadPlugin": "プラグイン{} の読み込みに失敗しました。",
-                "pluginNotFound": "プラグイン <{}> が見つかりません"
-            },
-            "warning": {
-                "unloadDllNotFinished": "Dllプラグインのアンロード機能が終了していません。",
-                "reloadDllNotFinished": "Dllプラグインの機能の再読み込みが完了していません。"
-            },
-            "reloadPlugin": {
-                "fail": "プラグイン {} の読み込みに失敗しました"
-            }
-        }
-    },
-    "llse": {
-        "init": {
-            "llMoney": {
-                "notFound": "LLMoney.dll が見つかりません。ScriptEngine Economy Systemは動作しません"
-            }
-        },
-        "api": {
-            "ll": {
-                "require": {
-                    "success": " - プラグインが正常にロードされました。ロード: ",
-                    "fail": " - プラグインの読み込みに失敗しました",
-                    "download": {
-                        "success": " - 正常なダウンロードが必要です。パス: ",
-                        "fail": " - プラグインのダウンロードに失敗しました。 コード: "
-                    }
-                }
-            }
-        },
-        "apiHelp": {
-            "parseJson": {
-                "fail": "JSONの構文エラー"
-            }
-        },
-        "loader": {
-            "loadDepends": {
-                "success": "依存関係 {} が読み込まれました。",
-                "fail": "依存関係の読み込みに失敗しました {}"
-            },
-            "loadMain": {
-                "start": "{type} プラグインを読み込み中...",
-                "done": "{count} {type} プラグインが読み込まれました。",
-                "nodejs": {
-                    "install": {
-                        "fail": "プラグインパック {} のインストールに失敗しました。package.json ファイルを確認してください。",
-                        "start": "Node.js プラグインパック \"{path}\" が見つかりました。インストールを試してください..."
-                    },
-                    "ignored": "ディレクトリ {path}にpackage.json ファイルが見つかりませんでした。無視しました。"
-                },
-                "loadedPlugin": "{type} プラグイン <{name}> を読み込みました。",
-                "installPluginPack": {
-                    "done": "{count} {type} プラグインパックがインストールされました。"
-                }
-            },
-            "nodejs": {
-                "executeNpmInstall": {
-                    "success": "Npmは正常に終了しました。",
-                    "start": "プラグイン {name} の \"npm install\" を実行しています...",
-                    "fail": "エラーが発生しました。終了コード: {code}"
-                },
-                "register": {
-                    "fail": "プラグイン {name} の登録に失敗しました。"
-                }
-            }
-        }
+  "base": {
+    "getDimName": {
+      "0": "オーバーワールド",
+      "1": "ネザー",
+      "2": "エンド",
+      "unknown": "その他のサイズ"
     }
+  },
+  "ll": {
+    "main": {
+      "checkRunningBDS": {
+        "detected": "同じパスを持つ他のBDSプロセスを検出しました。",
+        "tip": "ネットワークポートとレベルが占有される可能性があります",
+        "ask": "PID {} のプロセスを終了しますか? (y=はい, n=いいえ)"
+      },
+      "fixAllowList": {
+        "removeEmptyAllowlist": "allowlist.json は空です。 削除中...",
+        "checkManually": "allowlist.json と whitelist.json の両方が存在しています。手動で確認してください。",
+        "renamed": "whitelist.jsonの名前をallowlist.jsonに変更しました"
+      },
+      "warning": {
+        "inDevMode": "現在開発モードです。",
+        "betaVersion": "現在使用しているのはベータ版です",
+        "productionEnv": "本番環境で使用しないでください。",
+        "protocolVersionNotMatch": {
+          "1": "プロトコルバージョンが一致しません。ターゲットバージョン: {}、現在のバージョン: {}。",
+          "2": "サーバーがクラッシュする可能性があります。BDS バージョンに一致する LiteLoader を使用してください。"
+        }
+      }
+    },
+    "antiAbnormalItem": {
+      "detected": "プレイヤー({}) のアイテムデータエラー",
+      "itemInfo": "アイテム: {}"
+    },
+    "cmd": {
+      "tpdim": {
+        "success": "{} を {} ({:2f}, {:2f}, {:2f}) にテレポートしました",
+        "error": {
+          "noActorTeleported": "エンティティはテレポートされませんでした",
+          "noActorSpecified": "エンティティが指定されていません"
+        },
+        "invalidDimid": "無効な値です: {}"
+      },
+      "listPlugin": {
+        "overview": "プラグインの一覧 [{}]",
+        "tip": "* 詳細については、コマンド \"ll list <Plugin Name>\" を使用してください"
+      },
+      "pluginInfo": {
+        "title": "プラグイン <{}>",
+        "error": {
+          "pluginNotFound": "プラグイン <{}> が見つかりません。"
+        }
+      },
+      "version": {
+        "msg": "統合版マルチプレイサーバー {}\n- with LiteLoaderBDS {}\n- ネットワークプロトコル: {}"
+      },
+      "help": {
+        "msg": "[説明]\nLiteLoaderBDSは、Bedrock Dedicated Serverのための非公式プラグインローダーです。\n膨大な数のAPIやイベントシステム、多数の実用的なインターフェイスを提供しています。\n[Github]\n--> https://github.com/LiteLDev/LiteLoaderBDS <--\nより詳しい情報を得るために、LiteLoaderBDSのGitHubをご覧ください。"
+      },
+      "loadPlugin": {
+        "success": "プラグイン <{}> が読み込まれました。",
+        "fail": "プラグイン {} の読み込みに失敗しました"
+      },
+      "unloadPlugin": {
+        "success": "プラグイン <{}> がアンロードされました。",
+        "fail": "プラグイン <{}> のアンロードに失敗しました"
+      },
+      "reloadPlugin": {
+        "success": "プラグイン <{}> がリロードされました",
+        "fail": "プラグイン <{}> のリロードに失敗しました"
+      },
+      "reloadAllPlugins": {
+        "success": "{} 個のプラグインが正常にリロードされました",
+        "fail": "プラグインのリロードに失敗しました"
+      },
+      "error": {
+        "noPathSpecified": "LiteLoader プラグインの有効なパスを指定してください。",
+        "noNameSpecified": "LiteLoader プラグインの有効な名前を入力してください。"
+      }
+    },
+    "config": {
+      "save": {
+        "fail": "設定ファイルの保存(作成) に失敗しました。"
+      },
+      "creating": "LL Config File <{}> が見つかりません。 設定ファイルを作成しています...",
+      "warning": {
+        "configOutdated": "古いバージョンのLL Config File <{}>を使用しています。"
+      },
+      "updating": "設定ファイルを更新しています..."
+    },
+    "crashLogger": {
+      "existsingDebuggerDetected": "既存のデバッガが検出されました。内蔵のCrashLoggerは動作しません。",
+      "wineDetected": "Wine環境が検出されました。内蔵のCrashLoggerは動作しません。",
+      "error": {
+        "cannotCreateDaemonProcess": "CrashLogger Daemon Processを作成できませんでした。"
+      },
+      "warning": {
+        "crashLoggerDisabled": {
+          "1": "内臓のCrashLoggerが無効になっています。",
+          "2": "未処理の例外が発生した場合、クラッシュログは作成されません。",
+          "3": "クラッシュの原因を突き止めることはほとんど不可能です。",
+          "4": "サーバーの安定性を保証するために有効にすることを強くお勧めします"
+        },
+        "conflicts": {
+          "1": "プラグイン <{}> が競合しているため、内臓のCrashLoggerが有効になっていません",
+          "2": "未処理の例外が発生した場合、クラッシュログは作成されません。",
+          "3": "クラッシュの原因と衝突の原因を調べられません",
+          "4": "CrashLoggerはサーバーの安定性を保証する重要なコンポーネントです。",
+          "5": "プラグイン<{}>の修正をお勧めします"
+        }
+      },
+      "init": {
+        "fail": {
+          "msg": "組み込みのCrashLoggerの起動に失敗しました！",
+          "tip": "未処理の例外が発生した場合、クラッシュログは生成されません。"
+        }
+      }
+    },
+    "addonsHelper": {
+      "error": {
+        "addonConfigNotFound": "アドオンの設定が見つかりません。",
+        "addonFileNotFound": "アドオンファイル \"{}\" が見つかりません。",
+        "addonNotFound": "アドオン <{}> が見つかりません。",
+        "outOfRange": "Addonの索引 {} が範囲外です",
+        "unsupportedFileType": "サポートされていない種類のファイルが見つかりました。",
+        "parsingEnabledAddonsList": "有効なアドオンリストの解析中にエラーが発生しました",
+        "noAddonInstalled": "アドオンがインストールされていません。",
+        "installationAborted": "インストールが中止されました。"
+      },
+      "displayError": "エラー: {}",
+      "removeAddonFromList": {
+        "fail": "設定ファイルからアドオン<{}>を削除できませんでした。",
+        "success": "設定ファイルからアドオン<{}>を削除しました。"
+      },
+      "addAddonToList": {
+        "invalidList": "無効なアドオンリストファイル {} は {} にバックアップし、アドオンリストをデフォルトにリセットしました",
+        "fail": "アドオン {} を {} に登録できませんでした。",
+        "success": "設定ファイルに addon <{}> を追加しました。"
+      },
+      "install": {
+        "installing": "アドオン <{}> をインストール中...",
+        "error": {
+          "failToUncompress": {
+            "msg": "アドオン {} の解凍に失敗しました",
+            "exitCode": "終了コード: {}",
+            "programOutput": "プログラム出力:\n{}"
+          }
+        }
+      },
+      "uninstall": {
+        "success": "アドオン <{}> がアンインストールされました。"
+      },
+      "autoInstall": {
+        "tip": {
+          "dirCreated": "ディレクトリが作成されました。圧縮されたアドオンファイルを {} に移動して、次回起動時にインストールすることができます。"
+        },
+        "working": "{} 件の新しいアドオンがインストールされました。処理中です...",
+        "installed": "アドオン{} がインストールされました。",
+        "installedCount": "{} アドオンがインストールされました。"
+      },
+      "cmd": {
+        "output": {
+          "list": {
+            "overview": "アドオン: {} アドオンがインストールされました:"
+          }
+        }
+      }
+    },
+    "loader": {
+      "loadScriptEngine": {
+        "error": {
+          "versionNotMatch": "{} の Script Engine のファイル バージョン <{}> が LiteLoader のバージョン <{}> と一致しません"
+        },
+        "success": "* {} の ScriptEngine を読み込みました"
+      },
+      "loadDotNetEngine": {
+        "error": {
+          "versionNotMatch": "LiteLoader.NETのファイルバージョン<{}>がLiteLoaderのバージョン<{}>と一致しません"
+        },
+        "success": "* .NET エンジンが読み込まれました"
+      },
+      "loadMain": {
+        "loadingPlugins": "プラグインを読み込み中...",
+        "loadedShellLink": "シェルリンクされたプラグイン <{} => {}> 読み込みました",
+        "loadedPlugin": "プラグイン <{name}> がリロードされました",
+        "done": "{} 個のネイティブプラグインがロードされました。",
+        "start": "ネイティブプラグインを読み込み中..."
+      },
+      "initNodeJsDirectories": {
+        "created": "NodeJs ランタイムファイルが見つかりませんでした。"
+      },
+      "loadPermissionAPI": {
+        "success": "* PermissionAPI loaded."
+      }
+    },
+    "notice": {
+      "newForum": "新しいフォーラムです-> {}",
+      "license": "LiteLoader は {} の下でライセンスされています。",
+      "translateText": "LLの文章の翻訳と改善にご協力ください -> {}"
+    },
+    "pluginManager": {
+      "error": {
+        "invalidFileType": "{} の無効なプラグインファイルの種類 {}",
+        "noValidPluginFound": "{} で有効なプラグインが見つかりませんでした。",
+        "failToRegisterPlugin": "プラグイン <{}> の登録に失敗しました",
+        "hasBeenRegistered": "{} が登録されました",
+        "failToLoadPlugin": "プラグイン{} の読み込みに失敗しました。",
+        "pluginNotFound": "プラグイン <{}> が見つかりません"
+      },
+      "warning": {
+        "unloadDllNotFinished": "DLLプラグインの関数のアンロードが終了していません。",
+        "reloadDllNotFinished": "Dllプラグインの機能の再読み込みが完了していません。"
+      },
+      "reloadPlugin": {
+        "fail": "プラグイン {} の読み込みに失敗しました"
+      }
+    }
+  },
+  "llse": {
+    "init": {
+      "llMoney": {
+        "notFound": "LLMoney.dll が見つかりません。ScriptEngine Economy Systemは動作しません"
+      }
+    },
+    "api": {
+      "ll": {
+        "require": {
+          "success": " - プラグインが正常にロードされました。ロード: ",
+          "fail": " - プラグインの読み込みに失敗しました",
+          "download": {
+            "success": " - 正常なダウンロードが必要です。パス: ",
+            "fail": " - プラグインのダウンロードに失敗しました。 コード: "
+          }
+        }
+      }
+    },
+    "apiHelp": {
+      "parseJson": {
+        "fail": "JSONの構文エラー"
+      }
+    },
+    "loader": {
+      "loadDepends": {
+        "success": "依存関係 {} が読み込まれました。",
+        "fail": "依存関係の読み込みに失敗しました {}"
+      },
+      "loadMain": {
+        "start": "{type} プラグインを読み込み中...",
+        "done": "{count} {type} プラグインが読み込まれました。",
+        "nodejs": {
+          "installPack": {
+            "fail": "プラグインパック {} のインストールに失敗しました。package.json ファイルを確認してください。",
+            "start": "Node.js プラグインパック \"{path}\" が見つかりました。インストールを試してください..."
+          },
+          "ignored": "ディレクトリ {path}にpackage.json ファイルが見つかりませんでした。無視しました。"
+        },
+        "loadedPlugin": "{type} プラグイン <{name}> を読み込みました。",
+        "installPluginPack": {
+          "done": "{count} {type} プラグインパックがインストールされました。"
+        }
+      },
+      "nodejs": {
+        "executeNpmInstall": {
+          "success": "Npmは正常に終了しました。",
+          "start": "プラグイン {name} の \"npm install\" を実行しています...",
+          "fail": "エラーが発生しました。終了コード: {code}"
+        },
+        "register": {
+          "fail": "プラグイン {name} の登録に失敗しました。"
+        }
+      }
+    }
+  },
+  "permapi": {
+    "data": {
+      "process": {
+        "fail": "データファイルの処理に失敗しました: {}"
+      },
+      "read": {
+        "fail": "データファイル {} の読み込みに失敗しました"
+      },
+      "save": {
+        "fail": "データファイルの保存に失敗しました: {}"
+      }
+    },
+    "cmd": {
+      "error": {
+        "invalidCommand": "無効なコマンドです。ヘルプを取得するには '/help perm' と入力してください。",
+        "internal": "内部エラーが発生しました。後でもう一度お試しください。",
+        "roleAlreadyExists": "ロールはすでに存在します。",
+        "permissionAlreadyExists": "権限は既に存在しています。",
+        "invalidPermissionName": "無効な権限名です。",
+        "roleNotFound": "ロールが見つかりません。",
+        "permissionNotFound": "権限が見つかりません。",
+        "playerNotFound": "プレイヤーが見つかりません。",
+        "modifyMembersOfEveryone": "このロールは全員のロールです。メンバーを変更することはできません。",
+        "jsonParsingError": "JSONの構文エラー: {}",
+        "missingArgument": "引数が見つかりません: {}",
+        "permissionDenied": "このコマンドを使用する権限がありません。"
+      },
+      "output": {
+        "create": {
+          "role": {
+            "success": "ロールが作成されました。"
+          },
+          "perm": {
+            "success": "権限が作成されました。"
+          }
+        },
+        "delete": {
+          "role": {
+            "success": "ロールが削除されました。"
+          },
+          "perm": {
+            "success": "権限が削除されました。"
+          }
+        },
+        "list": {
+          "role": {
+            "none": "表示するロールがありません。",
+            "header": "§b§lロールリスト:",
+            "isMember": "§r(§eメンバー§r)"
+          },
+          "perm": {
+            "none": "表示する権限がありません。",
+            "header": "§b§l権限リスト:"
+          }
+        },
+        "view": {
+          "player": {
+            "yourStatus": "§b§l現在の権限状態:",
+            "status": "§b§l{} の現在の権限状態:",
+            "rolesTitle": "- §eロール:",
+            "permissionsTitle": "- §e権限:"
+          },
+          "role": {
+            "header": "§b§lロール情報:",
+            "info": {
+              "name": "+ §e名前§r: {roleName}",
+              "displayName": "+ §eディスプレイネーム§r: {}",
+              "priority": "+ §e優先度§r: {}",
+              "membersNone": "+ §eメンバー§r: なし",
+              "members": "+ §eメンバー§r:",
+              "permissionsNone": "+ §e権限§r: なし",
+              "permissions": "+ §e権限§r:"
+            },
+            "note": {
+              "admin": "※ {}§rは特別なロールです。全ての権限はデフォルトで有効になります。",
+              "everyone": "※ {}§rは特別なロールです。すべてのプレイヤーはこのロールのメンバーです。"
+            },
+            "enabled": "§a(有効)§r",
+            "disabled": "§c(無効)§r",
+            "enabledWithExtra": "§b(追加制限付きで有効)§r"
+          },
+          "perm": {
+            "header": "§b§l権限情報:",
+            "info": {
+              "name": "+ §e名前§r: {permissionName}",
+              "desc": "+ §e説明§r: {}"
+            }
+          }
+        },
+        "update": {
+          "role": {
+            "member": {
+              "add": {
+                "success": "メンバー {name}§r({xuid}) がロール {roleDisplayName} に追加されました"
+              },
+              "remove": {
+                "success": "メンバー {name}§r({xuid}) がロール {roleDisplayName}§r から削除されました。"
+              }
+            },
+            "perm": {
+              "add": {
+                "success": "権限 {name}§r がロール {roleDisplayName}§rに追加されました"
+              },
+              "remove": {
+                "success": "権限 {name}§r がロール {roleDisplayName}§r から削除されました。"
+              },
+              "set": {
+                "enabled": "§a有効§r",
+                "disabled": "§c無効§r",
+                "success": "権限 {name}§r のロール {roleDisplayName}§r を {enable} に設定しました。"
+              }
+            },
+            "priority": {
+              "set": {
+                "success": "ロール {roleDisplayName} の優先度を {priority} に設定しました。"
+              }
+            },
+            "displayName": {
+              "set": {
+                "success": "表示名 <{roleName}§r> を {displayName}§rに設定しました。"
+              }
+            }
+          },
+          "player": {
+            "role": {
+              "add": {
+                "success": "プレイヤー {name}§r({xuid}) がロール {roleDisplayName}§r に追加されました。"
+              },
+              "remove": {
+                "success": "プレイヤー {name}§r({xuid}) がロール {roleDisplayName}§r から削除されました。"
+              }
+            }
+          }
+        },
+        "noDesc": "[説明なし]",
+        "permissionNameExamples": "権限名の例: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+      }
+    }
+  }
 }

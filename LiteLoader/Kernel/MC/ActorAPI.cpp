@@ -24,6 +24,8 @@
 #include <MC/TeleportRotationData.hpp>
 #include <MC/ClipDefaults.hpp>
 #include <MC/ItemStack.hpp>
+#include <MC/ActorDefinitionIdentifier.hpp>
+#include <MC/ActorDamageSource.hpp>
 
 class UserEntityIdentifierComponent;
 
@@ -64,20 +66,19 @@ bool Actor::isItemActor() const {
 bool Actor::isOnGround() const {
     return (dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
-#include <MC/ActorDefinitionIdentifier.hpp>
+
 std::string Actor::getTypeName() const {
     return getActorIdentifier().getCanonicalName();
 }
-
-#include <MC/ActorDamageSource.hpp>
-bool Actor::hurtEntity(float damage) {
-    char source[16];
-    (*(ActorDamageSource*)source).ActorDamageSource::ActorDamageSource(ActorDamageCause::Override);
-
-    auto res = ((Mob*)this)->_hurt((*(ActorDamageSource*)source), damage, true, false);
-    (*(ActorDamageSource*)source).~ActorDamageSource();
+ 
+bool Actor::hurtEntity(float damage, ActorDamageCause damageCause) {
+    auto ads = new ActorDamageSource(damageCause);
+    auto res = ((Mob*)this)->_hurt(*ads, damage, true, false);
+    ads->~ActorDamageSource();
+    delete ads;
     return res;
 }
+
 
 Vec2* Actor::getDirection() const {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
@@ -180,7 +181,7 @@ enum ActorLocation;
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();
-    auto& pos = getCameraPos();
+    auto pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
     auto viewPos = pos + (viewVec * maxDistance);
     auto player = isPlayer() ? (Player*)this : nullptr;

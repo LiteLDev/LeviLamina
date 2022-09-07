@@ -1,8 +1,12 @@
+#pragma warning(disable : 4251)
 #include "Configs.h"
 #if defined(LLSE_BACKEND_NODEJS)
 #include "Global.hpp"
 #include <ScheduleAPI.h>
-#include <EventAPI.h>
+#include <API/EventAPI.h>
+#include <API/CommandCompatibleAPI.h>
+#include <API/CommandAPI.h>
+#include <Engine/RemoteCall.h>
 #include <LLAPI.h>
 #include <Utils/StringHelper.h>
 #include "NodeJsHelper.h"
@@ -10,6 +14,9 @@
 #include "Engine/EngineOwnData.h"
 #include <NodeJs/include/uv/uv.h>
 #include <NodeJs/include/v8/v8.h>
+
+// pre-declare
+extern void BindAPIs(ScriptEngine* engine);
 
 namespace NodeJsHelper {
 
@@ -203,7 +210,7 @@ bool stopEngine(node::Environment* env)
 }
 
 bool stopEngine(script::ScriptEngine* engine) {
-    logger.warn("NodeJs plugin {} exited.", ENGINE_GET_DATA(engine)->pluginName);
+    logger.info("NodeJs plugin {} exited.", ENGINE_GET_DATA(engine)->pluginName);
     auto env = NodeJsHelper::getEnvironmentOf(engine);
     return stopEngine(env);
 }
@@ -216,37 +223,154 @@ script::ScriptEngine* getEngine(node::Environment* env)
     return nullptr;
 }
 
-bool deployPluginPack(const std::string& filePath) {
-    if (!EndsWith(filePath, LLSE_PLUGINPACK_EXTENSION)) {
-        return false;
-    }
-    error_code ec;
-    std::filesystem::create_directories(LLSE_NODEJS_TEMP_DIR, ec);
-    auto&& [exitCode, output] = NewProcessSync(fmt::format("{} x \"{}\" -o\"{}\" -aoa", LLSE_7Z_PATH, filePath, LLSE_NODEJS_TEMP_DIR "/"),
-                                               LLSE_NODEJS_UNCOMPRESS_TIMEOUT);
-    if (exitCode != 0) {
-        logger.error("Failed to uncompress Node.js plugin pack!");
-        logger.debug(output);
-        return false;
-    }
-    if (std::filesystem::exists(LLSE_NODEJS_TEMP_DIR "/package.json")) {
-        auto pluginName = NodeJsHelper::getPluginPackageName(LLSE_NODEJS_TEMP_DIR);
-        if (pluginName.empty())
-        {
-            pluginName = std::filesystem::path(filePath).stem().u8string().substr(0, pluginName.length() - 3);
-            // remove ".ll" at end
-        }
-        auto dest = std::filesystem::path(LLSE_NODEJS_ROOT_DIR).append(pluginName);
-        //if (filesystem::exists(dest))
-        //    filesystem::remove_all(dest, ec);
-        std::filesystem::copy(LLSE_NODEJS_TEMP_DIR "/", dest, 
-            filesystem::copy_options::overwrite_existing | filesystem::copy_options::recursive, ec);
+// Load NodeJs plugin
+// This function must be called in correct backend
+bool loadNodeJsPlugin(std::string dirPath, const std::string& packagePath, bool isHotLoad) {
+    // "dirPath" is always public temp dir (LLSE_PLUGIN_PACKAGE_TEMP_DIR)
+    if (dirPath == LLSE_PLUGIN_PACKAGE_TEMP_DIR)
+    {
+        // Need to copy from temp dir to installed dir
+        if (std::filesystem::exists(LLSE_PLUGIN_PACKAGE_TEMP_DIR "/package.json")) {
+            auto pluginName = NodeJsHelper::getPluginPackageName(LLSE_PLUGIN_PACKAGE_TEMP_DIR);
+            if (pluginName.empty())
+            {
+                pluginName = UTF82String(filesystem::path(packagePath).filename().replace_extension("").u8string());
+            }
+            auto dest = std::filesystem::path(LLSE_PLUGINS_ROOT_DIR).append(pluginName);
 
-        // delete installed plugin pack
-        std::filesystem::remove(filePath, ec);
+            // copy files
+            std::error_code ec;
+            //if (filesystem::exists(dest))
+            //    filesystem::remove_all(dest, ec);
+            std::filesystem::copy(LLSE_PLUGIN_PACKAGE_TEMP_DIR "/", dest,
+                filesystem::copy_options::overwrite_existing | filesystem::copy_options::recursive, ec);
+
+            // reset dirPath
+            dirPath = UTF82String(dest.u8string());
+        }
+        // remove temp dir
+        std::error_code ec;
+        std::filesystem::remove_all(LLSE_PLUGIN_PACKAGE_TEMP_DIR, ec);
     }
-    std::filesystem::remove_all(LLSE_NODEJS_TEMP_DIR, ec);
-    return true;
+
+    std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
+    if (entryPath.empty())
+        return false;
+    std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
+
+    // Run "npm install" if needed
+    if (NodeJsHelper::doesPluginPackHasDependency(dirPath) && !filesystem::exists(filesystem::path(dirPath) / "node_modules")) {
+        int exitCode = 0;
+        logger.info(tr("llse.loader.nodejs.executeNpmInstall.start", fmt::arg("name", UTF82String(filesystem::path(dirPath).filename().u8string()))));
+        if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
+            logger.info(tr("llse.loader.nodejs.executeNpmInstall.success"));
+        else
+            logger.error(tr("llse.loader.nodejs.executeNpmInstall.fail", fmt::arg("code", exitCode)));
+    }
+
+    // Create engine & Load plugin
+    ScriptEngine* engine = nullptr;
+    node::Environment* env = nullptr;
+    try {
+        engine = EngineManager::newEngine();
+        {
+            EngineScope enter(engine);
+            // setData
+            ENGINE_OWN_DATA()->pluginName = pluginName;
+            ENGINE_OWN_DATA()->pluginFileOrDirPath = dirPath;
+            ENGINE_OWN_DATA()->logger.title = pluginName;
+            // bindAPIs
+            BindAPIs(engine);
+        }
+        if (!NodeJsHelper::loadPluginCode(engine, entryPath, dirPath))
+            throw "Uncaught exception thrown in code";
+
+        if (!PluginManager::getPlugin(pluginName)) {
+            // Plugin did't register itself. Help to register it
+            string description = pluginName;
+            LL::Version ver(1, 0, 0);
+            std::map<string, string> others = {};
+
+            // Read information from package.json
+            try {
+                std::filesystem::path packageFilePath = std::filesystem::path(dirPath) / "package.json";
+                std::ifstream file(UTF82String(packageFilePath.make_preferred().u8string()));
+                nlohmann::json j;
+                file >> j;
+                file.close();
+
+                // description
+                if (j.contains("description")) {
+                    description = j["description"].get<std::string>();
+                }
+                // version
+                if (j.contains("version") && j["version"].is_string()) {
+                    ver = LL::Version::parse(j["version"].get<std::string>());
+                }
+                // license
+                if (j.contains("license") && j["license"].is_string()) {
+                    others["License"] = j["license"].get<std::string>();
+                }
+                else if (j["license"].is_object() && j["license"].contains("url")) {
+                    others["License"] = j["license"]["url"].get<std::string>();
+                }
+                // repository
+                if (j.contains("repository") && j["repository"].is_string()) {
+                    others["Repository"] = j["repository"].get<std::string>();
+                }
+                else if (j["repository"].is_object() && j["repository"].contains("url")) {
+                    others["Repository"] = j["repository"]["url"].get<std::string>();
+                }
+            }
+            catch (...) {
+                logger.warn(tr("llse.loader.nodejs.register.fail", fmt::arg("name", pluginName)));
+            }
+
+            // register
+            PluginManager::registerPlugin(dirPath, pluginName, description, ver, others);
+        }
+
+        // Call necessary events when at hot load
+        if (isHotLoad)
+            LLSECallEventsOnHotLoad(engine);
+
+        // Success
+        logger.info(tr("llse.loader.loadMain.loadedPlugin",
+            fmt::arg("type", "Node.js"),
+            fmt::arg("name", pluginName)));
+        return true;
+    }
+    catch (const Exception& e) {
+        logger.error("Fail to load " + dirPath + "!");
+        if (engine) {
+            EngineScope enter(engine);
+            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
+            PrintException(e);
+            ExitEngineScope exit;
+
+            // NodeJs use his own setTimeout, so no need to remove
+            // LLSERemoveTimeTaskData(engine);
+
+            LLSERemoveAllEventListeners(engine);
+            LLSERemoveCmdRegister(engine);
+            LLSERemoveCmdCallback(engine);
+            LLSERemoveAllExportedFuncs(engine);
+
+            engine->getData().reset();
+            EngineManager::unRegisterEngine(engine);
+        }
+        if (engine) {
+            NodeJsHelper::stopEngine(engine);
+        }
+    }
+    catch (const std::exception& e) {
+        logger.error("Fail to load " + dirPath + "!");
+        logger.error(TextEncoding::toUTF8(e.what()));
+    }
+    catch (...) {
+        logger.error("Fail to load " + dirPath + "!");
+    }
+    return false;
 }
 
 std::string findEntryScript(const std::string& dirPath)
@@ -258,7 +382,7 @@ std::string findEntryScript(const std::string& dirPath)
         return "";
 
     try {
-        std::ifstream file(packageFilePath.make_preferred().u8string());
+        std::ifstream file(UTF82String(packageFilePath.make_preferred().u8string()));
         nlohmann::json j;
         file >> j;
         std::string entryFile = "index.js";
@@ -269,7 +393,7 @@ std::string findEntryScript(const std::string& dirPath)
         if (!std::filesystem::exists(entryPath))
             return "";
         else
-            return entryPath.u8string();
+            return UTF82String(entryPath.u8string());
     }
     catch (...)
     {
@@ -286,7 +410,7 @@ std::string getPluginPackageName(const std::string& dirPath)
         return "";
 
     try {
-        std::ifstream file(packageFilePath.make_preferred().u8string());
+        std::ifstream file(UTF82String(packageFilePath.make_preferred().u8string()));
         nlohmann::json j;
         file >> j;
         std::string packageName = "";
@@ -310,7 +434,7 @@ bool doesPluginPackHasDependency(const std::string& dirPath)
         return false;
 
     try {
-        std::ifstream file(packageFilePath.make_preferred().u8string());
+        std::ifstream file(UTF82String(packageFilePath.make_preferred().u8string()));
         nlohmann::json j;
         file >> j;
         if (j.contains("dependencies")) {

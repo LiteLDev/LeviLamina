@@ -1,6 +1,7 @@
 name: CMake
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - '**.cpp'
@@ -12,20 +13,9 @@ on:
       - '**.hxx'
       - '**.h'
       - '.github/workflows/cmake.yml'
-  push:
-    paths:
-      - '**.cpp'
-      - '**.cc'
-      - '**.cxx'
-      - '**.c'
-      - '**.hpp'
-      - '**.hh'
-      - '**.hxx'
-      - '**.h'
-      - '.github/workflows/cmake.yml'
+      - '**/CMakeLists.txt'
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
@@ -35,7 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3.0.2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+          #submodules: 'true' 
 
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
@@ -83,11 +74,20 @@ jobs:
           sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
         shell: bash
 
+      - name: Get MSVC Path
+        working-directory: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\
+        run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
+        shell: bash
+
       - name: Configure CMake(MSVC)
-        run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        shell: cmd
 
       - name: Build
-        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        shell: cmd
 
       - name: Configure CMake(ClangCL)
         run: |

@@ -6,13 +6,13 @@
 
 Logger levelDBLogger("LevelDB");
 
-std::unique_ptr<KVDB> KVDB::create(const string& path, bool read_cache, int cache_sz, int Bfilter_bit) {
+std::unique_ptr<KVDB> KVDB::create(const std::string& path, bool read_cache, int cache_sz, int Bfilter_bit) {
     CreateDirs(path);
     auto db = std::make_unique<KVDB>();
     db->_init(path.c_str(), true, read_cache, cache_sz, Bfilter_bit);
     return db;
 }
-std::unique_ptr<KVDB> KVDB::open(const string& path, bool create, bool read_cache, int cache_sz, int Bfilter_bit) {
+std::unique_ptr<KVDB> KVDB::open(const std::string& path, bool create, bool read_cache, int cache_sz, int Bfilter_bit) {
     CreateDirs(path);
     auto db = std::make_unique<KVDB>();
     db->_init(path.c_str(), create, read_cache, cache_sz, Bfilter_bit);
@@ -49,7 +49,7 @@ KVDB::~KVDB() {
     delete db;
 }
 
-bool KVDB::get(string_view key, string& val) {
+bool KVDB::get(std::string_view key, std::string& val) {
     auto s = db->Get(rdopt, leveldb::Slice(key.data(), key.size()), &val);
     if (!s.ok()) {
         if (s.IsNotFound())
@@ -58,7 +58,7 @@ bool KVDB::get(string_view key, string& val) {
     }
     return true;
 }
-std::optional<std::string> KVDB::get(string_view key) {
+std::optional<std::string> KVDB::get(std::string_view key) {
     std::string result;
     auto s = db->Get(rdopt, leveldb::Slice(key.data(), key.size()), &result);
     if (!s.ok()) {
@@ -67,7 +67,7 @@ std::optional<std::string> KVDB::get(string_view key) {
     return result;
 }
 
-bool KVDB::set(string_view key, string_view val) {
+bool KVDB::set(std::string_view key, std::string_view val) {
     auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
                      leveldb::Slice(val.data(), val.size()));
     if (!s.ok()) {
@@ -76,7 +76,7 @@ bool KVDB::set(string_view key, string_view val) {
     return true;
 }
 
-bool KVDB::del(string_view key) {
+bool KVDB::del(std::string_view key) {
     auto s = db->Delete(wropt, leveldb::Slice(key.data(), key.size()));
     if (!s.ok()) {
         levelDBLogger.error("del %s %s\n", dbpath.c_str(), s.ToString().c_str());
@@ -84,7 +84,7 @@ bool KVDB::del(string_view key) {
     return true;
 }
 
-void KVDB::iter(std::function<bool(string_view key)> const& fn) {
+void KVDB::iter(std::function<bool(std::string_view key)> const& fn) {
     leveldb::Iterator* it = db->NewIterator(rdopt);
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
         auto k = it->key();
@@ -94,7 +94,7 @@ void KVDB::iter(std::function<bool(string_view key)> const& fn) {
     delete it;
 }
 
-void KVDB::iter(std::function<bool(string_view key, string_view val)> const& fn) {
+void KVDB::iter(std::function<bool(std::string_view key, std::string_view val)> const& fn) {
     leveldb::Iterator* it = db->NewIterator(rdopt);
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
         auto k = it->key();
@@ -105,10 +105,10 @@ void KVDB::iter(std::function<bool(string_view key, string_view val)> const& fn)
     delete it;
 }
 
-vector<string> KVDB::getAllKeys() {
-    vector<string> keyList;
-    iter([&keyList](const string_view& key) {
-        keyList.push_back(string(key));
+std::vector<std::string> KVDB::getAllKeys() {
+    std::vector<std::string> keyList;
+    iter([&keyList](const std::string_view& key) {
+        keyList.push_back(std::string(key));
         return true;
     });
     return keyList;

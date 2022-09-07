@@ -48,7 +48,7 @@ void _onCallError(std::string const& msg, HMODULE handle) {
 
 int removeNameSpace(std::string const& nameSpace) {
     int count = 0;
-    for (auto& iter = exportedFuncs.begin(); iter != exportedFuncs.end();) {
+    for (auto iter = exportedFuncs.begin(); iter != exportedFuncs.end();) {
         if (SplitStrWithPattern(iter->first, "::")[0] == nameSpace) {
             iter = exportedFuncs.erase(iter);
             ++count;

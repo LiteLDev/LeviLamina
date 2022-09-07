@@ -24,7 +24,6 @@
 using namespace std;
 
 // Global vars
-fifo_json globalConfig;
 ::Logger logger("LiteLoader");
 
 
@@ -34,33 +33,14 @@ extern void BindAPIs(ScriptEngine* engine);
 extern void LoadDebugEngine();
 
 
-void LoadConfigFile() {
-    try {
-        auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
-        if (content) {
-            globalConfig = fifo_json::parse(*content, nullptr, true, true);
-            return;
-        }
-    } catch (const nlohmann::json::exception& e) {
-        logger.error("Fail to parse config file <{}>!", LITELOADER_CONFIG_FILE);
-        logger.error("{}", TextEncoding::toUTF8(e.what()));
-    } catch (...) {
-        logger.error("Fail to load config file <{}>!", LITELOADER_CONFIG_FILE);
-    }
-    globalConfig = fifo_json::object();
-}
-
-
 void entry() {
     // Enable thread SEH protection
-    _set_se_translator(seh_exception::TranslateSEHtoCE);
+    if (!LL::isDebugMode())
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     // Register myself
     LL::registerPlugin(LLSE_LOADER_NAME, LLSE_LOADER_DESCRIPTION, LITELOADER_VERSION,
                        {{"GitHub", "github.com/LiteLDev/LiteLoaderBDS"}});
-
-    // Load config file
-    LoadConfigFile();
 
     // Load i18n files
     Translation::loadFromImpl(GetCurrentModule(), LL::getLoaderHandle());

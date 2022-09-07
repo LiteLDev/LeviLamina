@@ -1,5 +1,7 @@
 #include <Utils/FileHelper.h>
 #include <Utils/StringHelper.h>
+#include <Utils/WinHelper.h>
+#include <Main/Config.h>
 #include <io.h>
 #include <filesystem>
 using namespace std;
@@ -80,4 +82,14 @@ vector<string> GetFileNameList(const std::string& dir) {
 bool CreateDirs(const string path) {
     std::error_code ec;
     return std::filesystem::create_directories(std::filesystem::path(str2wstr(path)).remove_filename(), ec);
+}
+
+std::pair<int, std::string> UncompressFile(const std::string& filePath, const std::string& toDir, int processTimeout)
+{
+    error_code ec;
+    std::filesystem::create_directories(toDir, ec);
+    std::string realToDir = EndsWith(toDir, "/") ? toDir : toDir + "/";
+    auto&& [exitCode, output] = 
+        NewProcessSync(fmt::format("{} x \"{}\" -o\"{}\" -aoa", ZIP_PROGRAM_PATH, filePath, realToDir), processTimeout);
+    return { exitCode, std::move(output) };
 }

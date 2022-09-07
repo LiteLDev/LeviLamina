@@ -8,25 +8,38 @@
 #include <MC/StructureTemplate.hpp>
 
 Local<Value> McClass::getStructure(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 4);
+    CHECK_ARGS_COUNT(args, 2);
     if (!IsInstanceOf<IntPos>(args[0])) {
         LOG_WRONG_ARG_TYPE();
-        return Local<Value>(); 
+        return Local<Value>();
     }
+
     if (!IsInstanceOf<IntPos>(args[1])) {
         LOG_WRONG_ARG_TYPE();
         return Local<Value>();
     }
-    CHECK_ARG_TYPE(args[2], ValueKind::kBoolean);
-    CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+    auto argsSize = args.size();
+    bool ignoreBlocks = false;
+    bool ignoreEntities = false;
+    if (argsSize > 2) {
+        CHECK_ARG_TYPE(args[2], ValueKind::kBoolean);
+        ignoreBlocks = args[2].asBoolean().value();
+    }
+    if (argsSize > 3) {
+        CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+        ignoreEntities = args[3].asBoolean().value();
+    }
     try {
-		IntPos* pos1 = IntPos::extractPos(args[0]);
+        IntPos* pos1 = IntPos::extractPos(args[0]);
         IntPos* pos2 = IntPos::extractPos(args[1]);
         if (pos1->getDimensionId() != pos2->getDimensionId()) {
+            LOG_ERROR_WITH_SCRIPT_INFO("Pos should in the same dimension!");
             return Local<Value>();
         }
-		
-        auto Structure = StructureTemplate::fromWorld("", pos1->getDimensionId(), pos1->getBlockPos(), pos2->getBlockPos(), args[2].asBoolean().value(), args[3].asBoolean().value());
+
+        auto Structure = StructureTemplate::fromWorld("", pos1->getDimensionId(),
+        pos1->getBlockPos() + BlockPos(0, 1, 0), pos2->getBlockPos() + BlockPos(0, 1, 0), ignoreBlocks, ignoreEntities);
+
         return NbtCompoundClass::pack(std::move(Structure.toTag()));
     }
     CATCH("Fail in getStructure!");
@@ -34,7 +47,7 @@ Local<Value> McClass::getStructure(const Arguments& args) {
 
 
 Local<Value> McClass::setStructure(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 4);
+    CHECK_ARGS_COUNT(args, 2);
     auto nbt = NbtCompoundClass::extract(args[0]);
     if (!nbt) {
         LOG_WRONG_ARG_TYPE();
@@ -44,21 +57,30 @@ Local<Value> McClass::setStructure(const Arguments& args) {
         LOG_WRONG_ARG_TYPE();
         return Local<Value>();
     }
-
-	CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
-    CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-    try {
-		IntPos* pos = IntPos::extractPos(args[1]);
-        auto Structure = StructureTemplate::fromTag("", *nbt);
-        auto mirror = args[2].asNumber().toInt32();
-        auto rotation = args[3].asNumber().toInt32();
-        if (mirror > 3 && mirror < 0) {
-			return Local<Value>();
-        }
-        if (rotation > 4 && rotation < 0) {
+    auto argsSize = args.size();
+    Mirror mirror = None_15;
+    Rotation rotation = None_14;
+    if (argsSize > 2) {
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        auto rawMirror = args[2].asNumber().toInt32();
+        if (rawMirror > 3 || rawMirror < 0) {
             return Local<Value>();
         }
-        return Boolean::newBoolean(Structure.toWorld(pos->getDimensionId(), pos->getBlockPos(), (Mirror)mirror, (Rotation)rotation));
-    } 
-	 CATCH("Fail in setStructure!");
+        mirror = static_cast<Mirror>(rawMirror);
+    }
+    if (argsSize > 3) {
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+        auto rawRotation = args[3].asNumber().toInt32();
+        if (rawRotation > 4 || rawRotation < 0) {
+            return Local<Value>();
+        }
+        rotation = static_cast<Rotation>(rawRotation);
+    }
+    try {
+        IntPos* pos = IntPos::extractPos(args[1]);
+        auto Structure = StructureTemplate::fromTag("", *nbt);
+        return Boolean::newBoolean(Structure.toWorld(pos->getDimensionId(),
+        pos->getBlockPos() + BlockPos(0, 1, 0), mirror, rotation));
+    }
+    CATCH("Fail in setStructure!");
 }

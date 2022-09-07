@@ -55,5 +55,5 @@ bool OperationCount::hasReachMaxEngineCount() {
 }
 
 bool OperationCount::hasReachMaxBackendCount() {
-    return hasReachCount(LLSE_VALID_BACKENDS.size());
+    return hasReachCount(LLSE_VALID_BACKENDS_COUNT);
 }

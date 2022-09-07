@@ -6,6 +6,7 @@
 #include "EntityAPI.h"
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
+#include "NativeAPI.h"
 #include <MC/Packet.hpp>
 #include "PacketAPI.h"
 #include <MC/MinecraftPackets.hpp>
@@ -16,7 +17,7 @@
 ClassDefine<PacketClass> PacketClassBuilder =
     defineClass<PacketClass>("LLSE_Packet")
         .constructor(nullptr)
-        .instanceFunction("getRawPtr", &PacketClass::getRawPtr)
+        .instanceFunction("asPointer", &PacketClass::asPointer)
         .instanceFunction("getName", &PacketClass::getName)
         .instanceFunction("getId", &PacketClass::getId)
 	
@@ -72,15 +73,15 @@ std::shared_ptr<Packet> PacketClass::extract(Local<Value> v) {
 
 // member function
 
-Local<Value> PacketClass::getRawPtr(const Arguments& args) {
+Local<Value> PacketClass::asPointer(const Arguments& args) {
     try {
         std::shared_ptr<Packet> pkt = get();
         if (!pkt)
             return Local<Value>();
         else
-            return Number::newNumber((intptr_t)pkt.get());
+            return NativePointer::newNativePointer(pkt.get());
     }
-    CATCH("Fail in getRawPtr!")
+    CATCH("Fail in asPointer!")
 }
 
 Local<Value> PacketClass::getName() {

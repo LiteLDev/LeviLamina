@@ -6,7 +6,6 @@
 #include <Engine/GlobalShareData.h>
 #include <Engine/LocalShareData.h>
 #include <Engine/MessageSystem.h>
-#include <Engine/LoaderHelper.h>
 #include <Engine/RemoteCall.h>
 #include <Engine/TimeTaskSystem.h>
 #include <Engine/EngineManager.h>
@@ -14,12 +13,12 @@
 #include <LiteLoader/Main/PluginManager.h>
 #include <Loader.h>
 #include <ScheduleAPI.h>
-#include <API/EventAPI.h>
 #include <API/CommandAPI.h>
+#include <API/EventAPI.h>
 #include <Utils/Hash.h>
-#include <NodeJsHelper.h>
 #ifdef LLSE_BACKEND_NODEJS
-#include <NodeJs/include/node.h>
+#pragma warning(disable : 4251)
+#include <NodeJsHelper.h>
 #endif
 #define H(x) do_hash(x)
 using namespace std;
@@ -35,91 +34,104 @@ string RemoveRealAllExtension(string fileName) {
         return fileName.substr(0, pos);
 }
 
-// 加载插件
-bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule) {
-#ifdef LLSE_BACKEND_NODEJS
-    return loadNodeJsPlugin(filePath); // Process NodeJs plugin load separately
-#endif
-
-    if (filePath == LLSE_DEBUG_ENGINE_NAME)
+// Load plugin
+// - This function must be called in correct backend
+// - "filePath" can be a single-file plugin path, or a .llplugin compressed package path
+// or a dir path which contains uncompressed plugin package
+bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad, bool mustBeCurrentModule) {
+    if (fileOrDirPath == LLSE_DEBUG_ENGINE_NAME)
         return true;
 
-    string suffix = UTF82String(filesystem::path(str2wstr(filePath)).extension().u8string());
-    string moduleToBroadcast;
-    switch (H(suffix.c_str())) {
-        case H(".lua"):
-            moduleToBroadcast = LLSE_BACKEND_LUA_NAME;
-            break;
-        case H(".js"):
-            moduleToBroadcast = LLSE_BACKEND_QUICKJS_NAME;
-            break;
-        default:
-            logger.error("Do not support this type of plugin!");
-            return false;
-            break;
+    if (!filesystem::exists(str2wstr(fileOrDirPath))) {
+        logger.error("Plugin no found! Check the path you input again.");
+        return false;
     }
 
-    if (suffix != LLSE_PLUGINS_EXTENSION) {
-        if (mustBeCurrentModule)
-            return false;
+    // Get bacis information
+    bool isPluginPackage = filesystem::is_directory(fileOrDirPath);
+    string backendType = getPluginBackendType(fileOrDirPath);
+    if (backendType.empty())
+    {
+        logger.error(fileOrDirPath + " is not a valid plugin path!");
+        return false;
+    }
+    std::filesystem::path p(str2wstr(fileOrDirPath));
+    string pluginFileName = RemoveRealAllExtension(UTF82String(p.filename().stem().u8string()));
 
-        // Remote Load
-        // logger.debug("Remote Load begin");
+    // Uncompress plugin package if needed
+    string realPath = fileOrDirPath;
+    if (backendType == "PluginPackage")
+    {
+        // Get plugin package
+        // Clean temp dir first
+        std::error_code ec;
+        filesystem::remove_all(LLSE_PLUGIN_PACKAGE_TEMP_DIR, ec);
 
-        ostringstream sout;
-        sout << isHotLoad << "\n"
-             << filePath;
-        string request = sout.str();
-
-        auto result = ModuleMessage::sendToRandom(moduleToBroadcast, ModuleMessage::MessageType::RemoteLoadRequest, request);
-        if (!result) {
-            logger.error("Fail to send remote load request!");
+        // Uncompress package to temp dir
+        string uncompressToDir = LLSE_PLUGIN_PACKAGE_TEMP_DIR;
+        auto [exitCode, output] = UncompressFile(fileOrDirPath, uncompressToDir, LLSE_PLUGIN_PACKAGE_UNCOMPRESS_TIMEOUT);
+        if (exitCode != 0) {
+            logger.error("Fail to uncompress plugin package at " + fileOrDirPath + "!");
+            logger.debug(output);
             return false;
         }
 
-        if (!result.waitForAllResults(LLSE_MAXWAIT_REMOTE_LOAD)) {
-            logger.error("Remote Load Timeout!");
-            return false;
-        }
-        return true;
+        // Re-get backendType
+        isPluginPackage = true;
+        realPath = uncompressToDir;
+        backendType = getPluginBackendType(realPath);
     }
 
-    //判重
-    string pluginFileName = UTF82String(std::filesystem::path(str2wstr(filePath)).filename().u8string());
+    // Re-check backendType
+    if (backendType.empty() || backendType == "PluginPackage")
+    {
+        logger.error(pluginFileName + " is not a valid plugin!");
+        return false;
+    }
+    else if (backendType != LLSE_BACKEND_TYPE)
+    {
+        // Unmatched backend
+        // logger.error(pluginFileName + " is not a plugin of " + LLSE_BACKEND_TYPE + " engine!");
+        return false;
+    }
+    
+    // Plugin package
+    if (isPluginPackage)
+    {
+        return loadPluginPackage(realPath, fileOrDirPath, isHotLoad);
+    }
+
+    // Single file plugin
+    // Check duplicated
     if (PluginManager::getPlugin(pluginFileName)) {
         // logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
         return false;
     }
 
-    if (!filesystem::exists(str2wstr(filePath))) {
-        logger.error("Plugin no found! Check the path you input again.");
-        return false;
-    }
-
     ScriptEngine* engine = nullptr;
     try {
-        auto scripts = ReadAllFile(filePath);
+        auto scripts = ReadAllFile(realPath);
         if (!scripts) {
             throw std::runtime_error("Fail to open plugin file!");
         }
 
-        //启动引擎
+        // Create script engine
         engine = EngineManager::newEngine();
         EngineScope enter(engine);
 
         // setData
         ENGINE_OWN_DATA()->pluginName = pluginFileName;
-        ENGINE_OWN_DATA()->pluginFilePath = filePath;
-        ENGINE_OWN_DATA()->logger.title = RemoveRealAllExtension(pluginFileName);
+        ENGINE_OWN_DATA()->pluginFileOrDirPath = realPath;
+        ENGINE_OWN_DATA()->logger.title = pluginFileName;
 
-        //绑定API
+        // Bind APIs
         try {
             BindAPIs(engine);
         } catch (const Exception& e) {
             logger.error("Fail in Binding APIs!\n");
             throw;
         }
-        //加载libs依赖库
+        // Load depend libs
         try {
             for (auto& [path, content] : depends) {
                 engine->eval(content, path);
@@ -129,9 +141,9 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
             throw;
         }
 
-        //加载脚本
+        // Load script
         try {
-            engine->eval(*scripts, ENGINE_OWN_DATA()->pluginFilePath);
+            engine->eval(*scripts, ENGINE_OWN_DATA()->pluginFileOrDirPath);
         } catch (const Exception& e) {
             logger.error("Fail in Loading Script Plugin!\n");
             throw;
@@ -139,19 +151,21 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         std::string const& pluginName = ENGINE_OWN_DATA()->pluginName;
         ExitEngineScope exit;
 
-        //如果插件自身未注册则帮忙注册信息
+        // If plugin itself doesn't register, help it to do so
         if (!PluginManager::getPlugin(pluginName))
-            PluginManager::registerPlugin(filePath, pluginName, pluginName, LL::Version(1, 0, 0), {});
+            PluginManager::registerPlugin(realPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
 
-        //热加载完毕后补调用各启动事件
+        // Call necessary events when at hot load
         if (isHotLoad)
             LLSECallEventsOnHotLoad(engine);
+
+        // Success
         logger.info(tr("llse.loader.loadMain.loadedPlugin",
-                       fmt::arg("type", moduleToBroadcast),
+                       fmt::arg("type", backendType),
                        fmt::arg("name", pluginName)));
         return true;
     } catch (const Exception& e) {
-        logger.error("Fail to load " + filePath + "!");
+        logger.error("Fail to load " + realPath + "!");
         if (engine) {
             EngineScope enter(engine);
             logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
@@ -171,142 +185,50 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
             engine->destroy();
         }
     } catch (const std::exception& e) {
-        logger.error("Fail to load " + filePath + "!");
+        logger.error("Fail to load " + realPath + "!");
         logger.error(TextEncoding::toUTF8(e.what()));
     } catch (...) {
-        logger.error("Fail to load " + filePath + "!");
+        logger.error("Fail to load " + realPath + "!");
     }
     return false;
 }
 
+// Load plugin package
+// This function must be called in correct backend
+bool PluginManager::loadPluginPackage(const std::string& dirPath, const std::string& packagePath, bool isHotLoad)
+{
+    // "dirPath" is always public temp dir (LLSE_PLUGIN_PACKAGE_TEMP_DIR)
+    if (!filesystem::is_directory(dirPath))
+        return false;
+    bool result = false;
 
 #ifdef LLSE_BACKEND_NODEJS
-// 加载NodeJs插件
-bool PluginManager::loadNodeJsPlugin(const std::string& dirPath) {
-    // NodeJs plugins do not support features like hot-load or remote-load now
-
-    std::string entryPath = NodeJsHelper::findEntryScript(dirPath);
-    if (entryPath.empty())
-        return false;
-    std::string pluginName = NodeJsHelper::getPluginPackageName(dirPath);
-
-    // Run "npm install" if needed
-    if (NodeJsHelper::doesPluginPackHasDependency(dirPath) && !filesystem::exists(filesystem::path(dirPath) / "node_modules")) {
-        int exitCode = 0;
-        logger.info(tr("llse.loader.nodejs.executeNpmInstall.start", fmt::arg("name", filesystem::path(dirPath).filename().u8string())));
-        if ((exitCode = NodeJsHelper::executeNpmCommand("npm install", dirPath)) == 0)
-            logger.info(tr("llse.loader.nodejs.executeNpmInstall.success"));
-        else
-            logger.error(tr("llse.loader.nodejs.executeNpmInstall.fail", fmt::arg("code",exitCode)));
-    }
-
-    // Create engine & Load plugin
-    ScriptEngine* engine = nullptr;
-    node::Environment* env = nullptr;
-    try {
-        engine = EngineManager::newEngine();
-        {
-            EngineScope enter(engine);
-            // setData
-            ENGINE_OWN_DATA()->pluginName = pluginName;
-            ENGINE_OWN_DATA()->pluginFilePath = entryPath;
-            ENGINE_OWN_DATA()->logger.title = pluginName;
-            // bindAPIs
-            BindAPIs(engine);
-        }
-        if (!NodeJsHelper::loadPluginCode(engine, entryPath, dirPath))
-            throw "Uncaught exception thrown in code";
-
-        if (!PluginManager::getPlugin(pluginName)) {
-            // Plugin did't register itself. Help to register it
-            string description = pluginName;
-            LL::Version ver(1, 0, 0);
-            std::map<string, string> others = {};
-
-            // Read information from package.json
-            try {
-                std::filesystem::path packageFilePath = std::filesystem::path(dirPath) / "package.json";
-                std::ifstream file(packageFilePath.make_preferred().u8string());
-                nlohmann::json j;
-                file >> j;
-                file.close();
-
-                // description
-                if (j.contains("description")) {
-                    description = j["description"].get<std::string>();
-                }
-                // version
-                if (j.contains("version") && j["version"].is_string()) {
-                    ver = LL::Version::parse(j["version"].get<std::string>());
-                }
-                // license
-                if (j.contains("license") && j["license"].is_string()) {
-                    others["License"] = j["license"].get<std::string>();
-                } else if (j["license"].is_object() && j["license"].contains("url")) {
-                    others["License"] = j["license"]["url"].get<std::string>();
-                }
-                // repository
-                if (j.contains("repository") && j["repository"].is_string()) {
-                    others["Repository"] = j["repository"].get<std::string>();
-                } else if (j["repository"].is_object() && j["repository"].contains("url")) {
-                    others["Repository"] = j["repository"]["url"].get<std::string>();
-                }
-            } catch (...) {
-                logger.warn(tr("llse.loader.nodejs.register.fail", fmt::arg("name", pluginName)));
-            }
-
-            // register
-            PluginManager::registerPlugin(dirPath, pluginName, description, ver, others);
-        }
-
-        
-        logger.info(tr("llse.loader.loadMain.loadedPlugin",
-                       fmt::arg("type", "Node.js"),
-                       fmt::arg("name", pluginName)));
-        return true;
-    } catch (const Exception& e) {
-        logger.error("Fail to load " + dirPath + "!");
-        if (engine) {
-            EngineScope enter(engine);
-            logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);
-            PrintException(e);
-            ExitEngineScope exit;
-
-            //NodeJs use his own setTimeout, so no need to remove
-            //LLSERemoveTimeTaskData(engine);
-
-            LLSERemoveAllEventListeners(engine);
-            LLSERemoveCmdRegister(engine);
-            LLSERemoveCmdCallback(engine);
-            LLSERemoveAllExportedFuncs(engine);
-
-            engine->getData().reset();
-            EngineManager::unRegisterEngine(engine);
-        }
-        if (engine) {
-            NodeJsHelper::stopEngine(engine);
-        }
-    } catch (const std::exception& e) {
-        logger.error("Fail to load " + dirPath + "!");
-        logger.error(TextEncoding::toUTF8(e.what()));
-    } catch (...) {
-        logger.error("Fail to load " + dirPath + "!");
-    }
-    return false;
-}
+    result = NodeJsHelper::loadNodeJsPlugin(dirPath, packagePath, isHotLoad);
 #endif
 
-//卸载插件
+    if (result)
+    {
+        // OK now. Delete installed plugin package
+        std::error_code ec;
+        std::filesystem::remove(packagePath, ec);
+    }
+    return result;
+}
+
+// Unload plugin
 bool PluginManager::unloadPlugin(const std::string& name) {
     if (name == LLSE_DEBUG_ENGINE_NAME)
         return false;
 
-    auto engine = EngineManager::getEngine(name);
+    auto engine = EngineManager::getEngine(name, true);
     if (!engine)
         return false;
+    string pluginName = ENGINE_GET_DATA(engine)->pluginName;
 
     //NodeJs use his own setTimeout, so no need to remove
-    //LLSERemoveTimeTaskData(engine);
+#ifndef LLSE_BACKEND_NODEJS
+    LLSERemoveTimeTaskData(engine);
+#endif
 
     LLSECallEventsOnHotUnload(engine);
     LLSERemoveAllEventListeners(engine);
@@ -319,18 +241,18 @@ bool PluginManager::unloadPlugin(const std::string& name) {
 
     PluginManager::unRegisterPlugin(name);
     Schedule::nextTick([engine]() {
-#if defined(LLSE_BACKEND_NODEJS)
+#ifdef LLSE_BACKEND_NODEJS
         NodeJsHelper::stopEngine(engine);
 #else
         engine->destroy();
 #endif
     });
 
-    logger.info(name + " unloaded.");
+    logger.info(pluginName + " unloaded.");
     return true;
 }
 
-//重载插件
+// Reload plugin
 bool PluginManager::reloadPlugin(const std::string& name) {
     if (name == LLSE_DEBUG_ENGINE_NAME)
         return true;
@@ -345,7 +267,7 @@ bool PluginManager::reloadPlugin(const std::string& name) {
     return PluginManager::loadPlugin(filePath, true, true);
 }
 
-//重载全部插件
+// Reload all plugins
 bool PluginManager::reloadAllPlugins() {
     auto pluginsList = PluginManager::getLocalPlugins();
     for (auto& plugin : pluginsList)
@@ -357,7 +279,7 @@ LL::Plugin* PluginManager::getPlugin(std::string name) {
     return LL::PluginManager::getPlugin(name, true);
 }
 
-//获取当前语言的所有插件
+// Get all plugins of current language
 std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins() {
     std::unordered_map<std::string, LL::Plugin*> res;
 
@@ -381,7 +303,7 @@ std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllScriptPlugins(
     return res;
 }
 
-// 获取所有的插件
+// Get all plugins
 std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllPlugins() {
     return LL::PluginManager::getAllPlugins();
 }
@@ -395,4 +317,76 @@ bool PluginManager::registerPlugin(std::string filePath, std::string name, std::
 
 bool PluginManager::unRegisterPlugin(std::string name) {
     return LL::PluginManager::unRegisterPlugin(name);
+}
+
+// Get plugin backend type from its file path (single file plugin)
+// or its unpressed dir path (plugin package)
+std::string PluginManager::getPluginBackendType(const std::string& path)
+{
+    filesystem::path filePath(str2wstr(path));
+    if (!filesystem::exists(filePath))
+        return "";
+
+    if (filesystem::is_directory(filePath))
+    {
+        // Uncompressed plugin package
+        auto identifiers = LLSE_VALID_PLUGIN_PACKAGE_IDENTIFIER;
+        vector<string> filesExts = {};
+        for (int i = 0; i < identifiers.size(); ++i)
+            if (!identifiers.empty())
+            {
+                string id = identifiers[i];
+                if (id.empty())
+                    continue;
+
+                if (id.find("*") != std::string::npos)
+                {
+                    // match identifier like "*.py"
+                    if (filesExts.empty())
+                    {
+                        // build filesExts list
+                        std::filesystem::directory_iterator files(filePath);
+                        for (auto& i : files) {
+                            if (i.is_regular_file())
+                                filesExts.emplace_back(UTF82String(i.path().extension().u8string()));
+                        }
+                    }
+                    string compareExt = id.substr(id.find_last_of("."));
+                    if (std::find(filesExts.begin(), filesExts.end(), compareExt) != filesExts.end())
+                    {
+                        // match
+                        return LLSE_VALID_BACKENDS[i];
+                    }
+                }
+                else
+                {
+                    // match identifier like "package.json"
+                    if (filesystem::exists(filePath / id))
+                    {
+                        // match
+                        return LLSE_VALID_BACKENDS[i];
+                    }
+                }
+            }
+    }
+    else
+    {
+        // Common plugin file
+        string ext = UTF82String(filePath.extension().u8string());
+        if (ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
+        {
+            // Never consider .llplugin
+            // Just uncompress it and then come to check
+            return "PluginPackage";
+        }
+        auto validExts = LLSE_VALID_PLUGIN_EXTENSIONS;
+        for (int i = 0; i < validExts.size(); ++i)
+            if (!validExts[i].empty() && validExts[i] == ext)
+            {
+                // match
+                return LLSE_VALID_BACKENDS[i];
+            }
+    }
+    // none backend matched
+    return "";
 }

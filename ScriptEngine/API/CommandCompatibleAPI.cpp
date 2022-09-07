@@ -6,7 +6,6 @@
 #include <Engine/GlobalShareData.h>
 #include <Engine/LocalShareData.h>
 #include <Engine/EngineOwnData.h>
-#include <Engine/LoaderHelper.h>
 #include <Utils/STLHelper.h>
 #include <RegCommandAPI.h>
 #include <Global.hpp>

@@ -1,3 +1,4 @@
+#include <windows.h>
 #include <Utils/SRWLock.h>
 
 SRWLock::SRWLock() {

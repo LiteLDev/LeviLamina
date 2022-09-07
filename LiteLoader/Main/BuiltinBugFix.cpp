@@ -117,7 +117,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         }
         
         if (abnormal && !mayFromReducer) {
-            string cmd = ReplaceStr(globalConfig.antiGiveCommand, "{player}", "\"" + sp->getRealName() + "\"");
+            string cmd = globalConfig.antiGiveCommand;
+            ReplaceStr(cmd, "{player}", "\"" + sp->getRealName() + "\"");
             Level::runcmd(cmd);
             return;
         }
@@ -179,7 +180,7 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
               Player, class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
     if (validPosition(pos))
         return original(this, pos, dimid);
-    fixPlayerPosition(false);
+    fixPlayerPosition(this, false);
 }
 TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
                        BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6, __int64 a7) {
@@ -333,4 +334,93 @@ TClasslessInstanceHook(char, "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$
         return 0;
     }
     return original(this, a2, a3, a4, a5, a6, a7, a8, a9);
+}
+
+
+//Try Fix BDS Crash
+//Beta 
+
+THook(void*, "??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z",
+      void* self, char* a2, char* a3, char a4) {
+    if (LL::globalConfig.enableFixBDSCrash) {
+        return nullptr;
+    }
+    return original(self, a2, a3, a4);
+}
+
+THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ",
+      void* self) {
+    if (LL::globalConfig.enableFixBDSCrash) {
+        return;
+    }
+    return original(self);
+}
+
+SHook2("_tickDimensionTransition", __int64, "40 53 55 41 56 41 57 48 ?? ?? ?? ?? ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 33 "
+       "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
+      __int64 a1, ActorOwnerComponent* a2, __int64 a3, void* a4) {
+    if (LL::globalConfig.enableFixBDSCrash) {
+        auto ac = Actor::tryGetFromComponent(*a2, 0);
+        if (ac) {
+            auto bs = &ac->getRegionConst();
+            if (bs == nullptr || !bs)
+                return NULL;
+        }
+    }
+    return original(a1, a2, a3, a4);
+}
+
+THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAVGameEventMovementTrackingComponent@@@Z",
+      Actor* a1, void* self) {
+    if (LL::globalConfig.enableFixBDSCrash) {
+        auto bs = &a1->getRegionConst();
+        if (bs == nullptr || !bs) {
+            return;
+        }
+    }
+    original(a1, self);
+}
+
+#include <MC/LevelChunk.hpp>
+#include <MC/ChunkSource.hpp>
+
+THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z",
+      BlockSource* self, ChunkPos* a2) {
+    if (LL::globalConfig.enableFixBDSCrash) {
+        LevelChunk* ptr = nullptr;
+        try {
+            ptr = original(self, a2);
+        } catch (...) {
+            return nullptr;
+        }
+        return ptr;
+    }
+    return original(self, a2);
+}
+
+
+THook(__int64, "?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z",
+      __int64 a1, __int64 a2) {
+    if (LL::globalConfig.enableFixBDSCrash) {
+        __int64 ptr = NULL;
+        try {
+            ptr = original(a1, a2);
+        } catch (...) {
+            return NULL;
+        }
+        return ptr;
+    }
+    return original(a1, a2);
+}
+
+TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ",
+              Actor) {
+
+    auto bs = original(this);
+    if (LL::globalConfig.enableFixBDSCrash) {
+        if (!bs) {
+            return Level::getBlockSource(getDimensionId());
+        }
+    }
+    return bs;
 }

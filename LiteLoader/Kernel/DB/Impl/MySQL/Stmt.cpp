@@ -4,6 +4,7 @@
 #include <Utils/StringReader.h>
 #include <LoggerAPI.h>
 #define Wptr2MySQLSession(x) ((MySQLSession*)x.lock().get())
+#pragma warning(disable : 4267)
 #pragma warning(disable : 26812)
 
 template <>
@@ -589,7 +590,7 @@ DBType MySQLStmt::getType() const {
 }
 
 SharedPointer<Stmt> MySQLStmt::create(const std::weak_ptr<Session>& session, const std::string& sql, bool autoExecute) {
-    auto& s = session.lock();
+    auto s = session.lock();
     if (!s || s->getType() != DBType::MySQL) {
         throw std::invalid_argument("MySQLStmt::create: Session is invalid");
     }

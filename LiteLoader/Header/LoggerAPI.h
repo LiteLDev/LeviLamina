@@ -48,7 +48,6 @@
 #include <utility>
 
 class Player;
-using std::string;
 
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 

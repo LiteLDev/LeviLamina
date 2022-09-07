@@ -1,0 +1,189 @@
+name: CMake(self-hosted)
+
+on:
+  push:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
+      - '.github/workflows/cmake-self-hosted.yml'
+      - '**/CMakeLists.txt'
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3.0.2
+        with:
+          fetch-depth: 1
+          submodules: 'true'
+
+      - name: Cache Bedrock Dedicated Server Library
+        id: cache-bds-lib
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-bds-lib
+        with:
+          path: |
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
+            ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
+
+      - name: Download Server
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          mkdir Tools/Server
+          ServerLink=$(cat 'Scripts/LINK.txt')
+          curl -L -o Tools/Server/server.zip "$ServerLink"
+          unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
+        shell: bash
+
+      - name: Build Library
+        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          cd Tools
+          LibraryBuilder.exe Server
+        shell: cmd
+
+      - name: Change LITELOADER_VERSION_STATUS_BETA
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        if: false == startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
+          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
+          cat LiteLoader/Main/Version.h
+        shell: bash
+
+      - name: Change LITELOADER_VERSION_STATUS_RELEASE
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/Main/Version.h
+          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
+        shell: bash
+
+      - name: Get MSVC Path
+        working-directory: E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
+        run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
+        shell: bash
+
+      #- name: Configure CMake(MSVC)
+      #  run: |
+      #    set CC="E:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/${{env.MSVC_VER}}/bin/Hostx64/x64/cl.exe"
+      #    "E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja -DCMAKE_TRY_COMPILE_TARGET_TYPE="STATIC_LIBRARY" -DCMAKE_MAKE_PROGRAM="E:\PROGRAM FILES\MICROSOFT VISUAL STUDIO\2022\Community\COMMON7\IDE\COMMONEXTENSIONS\Microsoft\CMake\Ninja\ninja.exe"
+      #  shell: cmd
+
+      #- name: Build
+      #  run: |
+      #    "E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64 & cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      #  shell: cmd
+
+      - name: Configure CMake(MSVC)
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Build
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Configure CMake(ClangCL)
+        run: |
+          cmake -B ${{github.workspace}}/build_clang -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
+        shell: cmd
+
+      - name: Build SymDBHelper
+        run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
+
+      - name: Compress Resource Packs
+        run: |
+          cd RELEASE/plugins/LiteLoader/ResourcePacks
+          7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
+          rm -r LiteLoaderBDS-CUI
+        shell: bash
+
+      - name: Pack Release
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          cd Scripts
+          ./PackRelease.cmd action
+        shell: cmd
+
+      - name: Move PDB to path
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          mkdir PDB
+          cp x64/Release/*.pdb PDB
+        shell: bash
+
+      - name: Pack PDB
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: 7z a -tzip PDB.zip PDB
+        shell: bash
+
+      - name: Update LiteLoaderSDK
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cd Scripts
+          ./UploadSDK.cmd action
+        env:
+          REPO_KEY: ${{secrets.PUSH_TOKEN}}
+          USERNAME: github-actions[bot]
+        shell: cmd
+
+      - name: Upload LiteLoader
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: LiteLoader
+          path: ${{ github.workspace }}\RELEASE\
+
+      - name: Upload PDB
+        uses: actions/upload-artifact@v3.1.0
+        with:
+          name: PDB
+          path: ${{ github.workspace }}\PDB
+
+      - name: Prepare for creating Release
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        id: rel
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+          mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
+        shell: bash
+
+      - name: Create New Release
+        uses: softprops/action-gh-release@v0.1.14
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: ${{ github.workspace }}\CHANGELOG.md
+          files: |
+            ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
+            ${{ github.workspace }}\PDB.zip
+        env:
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
+
+      #- name: Publish to MineBBS
+      #  working-directory: ${{ env.GITHUB_WORKSPACE }}
+      #  if: startsWith(github.ref, 'refs/tags/')
+      #  run: |
+      #    curl -X POST https://api.github.com/repos/LiteLDev/AutoUpdate-MineBBS/dispatches \
+      #    -H "Accept: application/vnd.github.everest-preview+json" \
+      #    -H "Authorization: Bearer ${{ secrets.MB_TOKEN }}" \
+      #    --data '{"event_type": "webhook"}'
+      #  shell: bash

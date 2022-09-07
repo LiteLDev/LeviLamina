@@ -24,7 +24,7 @@
 #include <Engine/EngineOwnData.h>
 #include "APIHelp.h"
 
-#include "NativeApi.h"
+#include "NativeAPI.h"
 
 using namespace std;
 
@@ -89,6 +89,21 @@ void PrintValue(T& out, Local<Value> v) {
             if (IsInstanceOf<NativePointer>(v)) {
                 std::stringstream ss;
                 ss << std::hex << (intptr_t)EngineScope::currentEngine()->getNativeInstance<NativePointer>(v)->get();
+                out << ss.str();
+                break;
+            }
+            if (IsInstanceOf<ScriptNativeFunction>(v)) {
+                std::stringstream ss;
+                ScriptNativeFunction* func = EngineScope::currentEngine()->getNativeInstance<ScriptNativeFunction>(v);
+                ss << std::hex
+                   << "Address: " << (intptr_t)func->mFunction << " "
+                   << "Symbol: " << func->mSymbol << " "
+                   << "ReturnType: " << magic_enum::enum_name(func->mReturnVal) << " "
+                   << "Params: " << func->mParams.size();
+                for (size_t i = 0; i < func->mParams.size(); ++i) {
+                    ss << " [" << i << "]" << magic_enum::enum_name(func->mParams[i]);
+                }
+
                 out << ss.str();
                 break;
             }
@@ -496,4 +511,27 @@ std::string ValueToJson(Local<Value> v, int formatIndent) {
             break;
     }
     return result;
+}
+
+std::string ValueKindToString(const ValueKind& kind) {
+    switch (kind) {
+        case ValueKind::kString:
+            return "string";
+        case ValueKind::kNumber:
+            return "number";
+        case ValueKind::kBoolean:
+            return "boolean";
+        case ValueKind::kNull:
+            return "null";
+        case ValueKind::kObject:
+            return "object";
+        case ValueKind::kArray:
+            return "array";
+        case ValueKind::kFunction:
+            return "function";
+        case ValueKind::kByteBuffer:
+            return "bytebuffer";
+        default:
+            return "unknown";
+    }
 }
