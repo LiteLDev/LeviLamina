@@ -236,7 +236,7 @@
 
 <br>
 
-#### `"onUseBucketTake"` - 玩家使用桶装进东西（除了空桶装牛奶）
+#### `"onUseBucketTake"` - 玩家使用桶装进东西
 
 - 监听函数原型
   `function(player,item,target,side,pos)`

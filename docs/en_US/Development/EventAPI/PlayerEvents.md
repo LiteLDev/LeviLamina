@@ -230,7 +230,7 @@ Note: Win10 client right-clicking on the player will trigger this event on the s
 
 <br>
 
-#### `"onUseBucketTake"` - Players use bucket to pack in things (except empty buckets for milk)
+#### `"onUseBucketTake"` - Players use bucket to pack in things
 
 - Listener function prototype 
   `function(player,item,target,side,pos)`
