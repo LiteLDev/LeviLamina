@@ -30,6 +30,7 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceFunction("setNull", &ItemClass::setNull)
         .instanceFunction("setAux", &ItemClass::setAux)
         .instanceFunction("setLore", &ItemClass::setLore)
+        .instanceFunction("setDisplayName", &ItemClass::setDisplayName)
         .instanceFunction("setNbt", &ItemClass::setNbt)
         .instanceFunction("getNbt", &ItemClass::getNbt)
 
@@ -186,6 +187,17 @@ Local<Value> ItemClass::setLore(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in SetLore!");
+}
+
+Local<Value> ItemClass::setDisplayName(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        item->setCustomName(args[0].asString().toString());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setDisplayName!");
 }
 
 Local<Value> ItemClass::getNbt(const Arguments& args) {
