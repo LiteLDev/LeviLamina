@@ -23,6 +23,8 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("id", &ItemClass::getId)
         .instanceProperty("count", &ItemClass::getCount)
         .instanceProperty("aux", &ItemClass::getAux)
+        .instanceProperty("damage", &ItemClass::getDamage)
+        .instanceProperty("attackDamage", &ItemClass::getAttackDamage)
         .instanceProperty("isArmorItem", &ItemClass::isArmorItem)
         .instanceProperty("isBlock", &ItemClass::isBlock)
         .instanceProperty("isDamageableItem", &ItemClass::isDamageableItem)
@@ -126,6 +128,20 @@ Local<Value> ItemClass::getAux() {
         return Number::newNumber(aux);
     }
     CATCH("Fail in GetAux!");
+}
+
+Local<Value> ItemClass::getDamage() {
+    try {
+        return Number::newNumber(item->getDamageValue());
+    }
+    CATCH("Fail in GetDamage!");
+}
+
+Local<Value> ItemClass::getAttackDamage() {
+    try {
+        return Number::newNumber(item->getAttackDamage());
+    }
+    CATCH("Fail in GetAttackDamage!");
 }
 
 Local<Value> ItemClass::isArmorItem() {

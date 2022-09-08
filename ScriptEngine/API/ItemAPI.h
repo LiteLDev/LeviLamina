@@ -30,6 +30,8 @@ public:
     Local<Value> getId();
     Local<Value> getCount();
     Local<Value> getAux();
+    Local<Value> getDamage();
+    Local<Value> getAttackDamage();
 
     Local<Value> isArmorItem();
     Local<Value> isBlock();
