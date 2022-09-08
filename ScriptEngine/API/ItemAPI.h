@@ -30,7 +30,6 @@ public:
     Local<Value> getId();
     Local<Value> getCount();
     Local<Value> getAux();
-    Local<Value> getMaxUseDuration();
 
     Local<Value> isArmorItem();
     Local<Value> isBlock();
@@ -48,7 +47,6 @@ public:
     Local<Value> isPattern();
     Local<Value> isPotionItem();
     Local<Value> isStackable();
-    Local<Value> isWearableItem();
 
     Local<Value> set(const Arguments& args);
     Local<Value> clone(const Arguments& args);
@@ -57,6 +55,7 @@ public:
     Local<Value> setAux(const Arguments& args);
     Local<Value> setLore(const Arguments& args);
     Local<Value> setDisplayName(const Arguments& args);
+    Local<Value> setDamage(const Arguments& args);
     Local<Value> getNbt(const Arguments& args);
     Local<Value> setNbt(const Arguments& args);
 };

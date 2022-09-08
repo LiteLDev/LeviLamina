@@ -23,7 +23,6 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("id", &ItemClass::getId)
         .instanceProperty("count", &ItemClass::getCount)
         .instanceProperty("aux", &ItemClass::getAux)
-        .instanceProperty("maxUseDuration", &ItemClass::getMaxUseDuration)
         .instanceProperty("isArmorItem", &ItemClass::isArmorItem)
         .instanceProperty("isBlock", &ItemClass::isBlock)
         .instanceProperty("isDamageableItem", &ItemClass::isDamageableItem)
@@ -40,7 +39,6 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("isPattern", &ItemClass::isPattern)
         .instanceProperty("isPotionItem", &ItemClass::isPotionItem)
         .instanceProperty("isStackable", &ItemClass::isStackable)
-        .instanceProperty("isWearableItem", &ItemClass::isWearableItem)
 
         .instanceFunction("set", &ItemClass::set)
         .instanceFunction("clone", &ItemClass::clone)
@@ -49,6 +47,7 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceFunction("setAux", &ItemClass::setAux)
         .instanceFunction("setLore", &ItemClass::setLore)
         .instanceFunction("setDisplayName", &ItemClass::setDisplayName)
+        .instanceFunction("setDamage", &ItemClass::setDamage)
         .instanceFunction("setNbt", &ItemClass::setNbt)
         .instanceFunction("getNbt", &ItemClass::getNbt)
 
@@ -127,13 +126,6 @@ Local<Value> ItemClass::getAux() {
         return Number::newNumber(aux);
     }
     CATCH("Fail in GetAux!");
-}
-
-Local<Value> ItemClass::getMaxUseDuration() {
-    try {
-        return Number::newNumber(item->getMaxUseDuration());
-    }
-    CATCH("Fail in GetMaxUseDuration!");
 }
 
 Local<Value> ItemClass::isArmorItem() {
@@ -248,13 +240,6 @@ Local<Value> ItemClass::isStackable() {
     CATCH("Fail in isStackable!");
 }
 
-Local<Value> ItemClass::isWearableItem() {
-    try {
-        return Boolean::newBoolean(item->isWearableItem());
-    }
-    CATCH("Fail in isWearableItem!");
-}
-
 Local<Value> ItemClass::asPointer(const Arguments& args) {
     try {
         return NativePointer::newNativePointer(item);
@@ -342,6 +327,21 @@ Local<Value> ItemClass::setDisplayName(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setDisplayName!");
+}
+
+Local<Value> ItemClass::setDamage(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        if (item->isDamageableItem() && args[0].toInt() <= 32767) {
+            item->setDamageValue(args[0].toInt());
+            return Boolean::newBoolean(true);
+        } else {
+            return Boolean::newBoolean(false);
+        }
+    }
+    CATCH("Fail in setDamage!");
 }
 
 Local<Value> ItemClass::getNbt(const Arguments& args) {
