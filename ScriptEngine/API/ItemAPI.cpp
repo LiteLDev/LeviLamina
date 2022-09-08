@@ -262,7 +262,7 @@ Local<Value> ItemClass::isWearableItem() {
     try {
         return Boolean::newBoolean(item->isWearableItem());
     }
-    CATCH("Fail in isStackable!");
+    CATCH("Fail in isWearableItem!");
 }
 
 Local<Value> ItemClass::asPointer(const Arguments& args) {
