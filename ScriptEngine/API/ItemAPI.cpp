@@ -25,6 +25,7 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("aux", &ItemClass::getAux)
         .instanceProperty("damage", &ItemClass::getDamage)
         .instanceProperty("attackDamage", &ItemClass::getAttackDamage)
+        .instanceProperty("maxDamage", &ItemClass::getMaxDamage)
         .instanceProperty("isArmorItem", &ItemClass::isArmorItem)
         .instanceProperty("isBlock", &ItemClass::isBlock)
         .instanceProperty("isDamageableItem", &ItemClass::isDamageableItem)
@@ -143,6 +144,14 @@ Local<Value> ItemClass::getAttackDamage() {
     }
     CATCH("Fail in GetAttackDamage!");
 }
+
+Local<Value> ItemClass::getMaxDamage() {
+    try {
+        return Number::newNumber(item->getMaxDamage());
+    }
+    CATCH("Fail in GetMaxDamage!");
+}
+
 
 Local<Value> ItemClass::isArmorItem() {
     try {

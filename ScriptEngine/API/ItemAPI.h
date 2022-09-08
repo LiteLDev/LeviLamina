@@ -32,6 +32,7 @@ public:
     Local<Value> getAux();
     Local<Value> getDamage();
     Local<Value> getAttackDamage();
+    Local<Value> getMaxDamage();
 
     Local<Value> isArmorItem();
     Local<Value> isBlock();
