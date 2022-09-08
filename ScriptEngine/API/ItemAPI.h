@@ -37,6 +37,7 @@ public:
     Local<Value> setNull(const Arguments& args);
     Local<Value> setAux(const Arguments& args);
     Local<Value> setLore(const Arguments& args);
+    Local<Value> setDisplayName(const Arguments& args);
     Local<Value> getNbt(const Arguments& args);
     Local<Value> setNbt(const Arguments& args);
 };
