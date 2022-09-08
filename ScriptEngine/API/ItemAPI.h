@@ -30,6 +30,25 @@ public:
     Local<Value> getId();
     Local<Value> getCount();
     Local<Value> getAux();
+    Local<Value> getMaxUseDuration();
+
+    Local<Value> isArmorItem();
+    Local<Value> isBlock();
+    Local<Value> isDamageableItem();
+    Local<Value> isDamaged();
+    Local<Value> isEnchanted();
+    Local<Value> isEnchantingBook();
+    Local<Value> isFireResistant();
+    Local<Value> isFullStack();
+    Local<Value> isGlint();
+    Local<Value> isHorseArmorItem();
+    Local<Value> isLiquidClipItem();
+    Local<Value> isMusicDiscItem();
+    Local<Value> isOffhandItem();
+    Local<Value> isPattern();
+    Local<Value> isPotionItem();
+    Local<Value> isStackable();
+    Local<Value> isWearableItem();
 
     Local<Value> set(const Arguments& args);
     Local<Value> clone(const Arguments& args);

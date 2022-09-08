@@ -23,6 +23,24 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("id", &ItemClass::getId)
         .instanceProperty("count", &ItemClass::getCount)
         .instanceProperty("aux", &ItemClass::getAux)
+        .instanceProperty("maxUseDuration", &ItemClass::getMaxUseDuration)
+        .instanceProperty("isArmorItem", &ItemClass::isArmorItem)
+        .instanceProperty("isBlock", &ItemClass::isBlock)
+        .instanceProperty("isDamageableItem", &ItemClass::isDamageableItem)
+        .instanceProperty("isDamaged", &ItemClass::isDamaged)
+        .instanceProperty("isEnchanted", &ItemClass::isEnchanted)
+        .instanceProperty("isEnchantingBook", &ItemClass::isEnchantingBook)
+        .instanceProperty("isFireResistant", &ItemClass::isFireResistant)
+        .instanceProperty("isFullStack", &ItemClass::isFullStack)
+        .instanceProperty("isGlint", &ItemClass::isGlint)
+        .instanceProperty("isHorseArmorItem", &ItemClass::isHorseArmorItem)
+        .instanceProperty("isLiquidClipItem", &ItemClass::isLiquidClipItem)
+        .instanceProperty("isMusicDiscItem", &ItemClass::isMusicDiscItem)
+        .instanceProperty("isOffhandItem", &ItemClass::isOffhandItem)
+        .instanceProperty("isPattern", &ItemClass::isPattern)
+        .instanceProperty("isPotionItem", &ItemClass::isPotionItem)
+        .instanceProperty("isStackable", &ItemClass::isStackable)
+        .instanceProperty("isWearableItem", &ItemClass::isWearableItem)
 
         .instanceFunction("set", &ItemClass::set)
         .instanceFunction("clone", &ItemClass::clone)
@@ -109,6 +127,139 @@ Local<Value> ItemClass::getAux() {
         return Number::newNumber(aux);
     }
     CATCH("Fail in GetAux!");
+}
+
+Local<Value> ItemClass::getMaxUseDuration() {
+    try {
+        return Number::newNumber(item->getMaxUseDuration());
+    }
+    CATCH("Fail in GetMaxUseDuration!");
+}
+
+Local<Value> ItemClass::isArmorItem() {
+    try {
+        return Boolean::newBoolean(item->isArmorItem());
+    }
+    CATCH("Fail in isArmorItem!");
+}
+
+Local<Value> ItemClass::isArmorItem() {
+    try {
+        return Boolean::newBoolean(item->isArmorItem());
+    }
+    CATCH("Fail in isArmorItem!");
+}
+
+Local<Value> ItemClass::isBlock() {
+    try {
+        return Boolean::newBoolean(item->isBlock());
+    }
+    CATCH("Fail in isBlock!");
+}
+
+Local<Value> ItemClass::isDamageableItem() {
+    try {
+        return Boolean::newBoolean(item->isDamageableItem());
+    }
+    CATCH("Fail in isDamageableItem!");
+}
+
+Local<Value> ItemClass::isDamaged() {
+    try {
+        return Boolean::newBoolean(item->isDamaged());
+    }
+    CATCH("Fail in isDamaged!");
+}
+
+Local<Value> ItemClass::isEnchanted() {
+    try {
+        return Boolean::newBoolean(item->isEnchanted());
+    }
+    CATCH("Fail in isEnchanted!");
+}
+
+Local<Value> ItemClass::isEnchantingBook() {
+    try {
+        return Boolean::newBoolean(item->isEnchantingBook());
+    }
+    CATCH("Fail in isEnchantingBook!");
+}
+
+Local<Value> ItemClass::isFireResistant() {
+    try {
+        return Boolean::newBoolean(item->isFireResistant());
+    }
+    CATCH("Fail in isFireResistant!");
+}
+
+Local<Value> ItemClass::isFullStack() {
+    try {
+        return Boolean::newBoolean(item->isFullStack());
+    }
+    CATCH("Fail in isFullStack!");
+}
+
+Local<Value> ItemClass::isGlint() {
+    try {
+        return Boolean::newBoolean(item->isGlint());
+    }
+    CATCH("Fail in isGlint!");
+}
+
+Local<Value> ItemClass::isHorseArmorItem() {
+    try {
+        return Boolean::newBoolean(item->isHorseArmorItem());
+    }
+    CATCH("Fail in isHorseArmorItem!");
+}
+
+Local<Value> ItemClass::isLiquidClipItem() {
+    try {
+        return Boolean::newBoolean(item->isLiquidClipItem());
+    }
+    CATCH("Fail in isLiquidClipItem!");
+}
+
+Local<Value> ItemClass::isMusicDiscItem() {
+    try {
+        return Boolean::newBoolean(item->isMusicDiscItem());
+    }
+    CATCH("Fail in isMusicDiscItem!");
+}
+
+Local<Value> ItemClass::isOffhandItem() {
+    try {
+        return Boolean::newBoolean(item->isOffhandItem());
+    }
+    CATCH("Fail in isOffhandItem!");
+}
+
+Local<Value> ItemClass::isPattern() {
+    try {
+        return Boolean::newBoolean(item->isPattern());
+    }
+    CATCH("Fail in isPattern!");
+}
+
+Local<Value> ItemClass::isPotionItem() {
+    try {
+        return Boolean::newBoolean(item->isPotionItem());
+    }
+    CATCH("Fail in isPotionItem!");
+}
+
+Local<Value> ItemClass::isStackable() {
+    try {
+        return Boolean::newBoolean(item->isStackable());
+    }
+    CATCH("Fail in isStackable!");
+}
+
+Local<Value> ItemClass::isWearableItem() {
+    try {
+        return Boolean::newBoolean(item->isWearableItem());
+    }
+    CATCH("Fail in isWearableItem!");
 }
 
 Local<Value> ItemClass::asPointer(const Arguments& args) {
