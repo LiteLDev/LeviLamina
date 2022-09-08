@@ -299,6 +299,30 @@ public:
     Vec3 mClickPos;
 };
 
+ /**
+ * \~chinese
+ * @brief 当玩家使用桶时触发的事件。
+ * 
+ * \~english
+ * @brief An event that fires as players use bucket.
+ * 
+ */
+class PlayerUseBucketEvent : public EventTemplate<PlayerUseBucketEvent> {
+public:
+    enum class EventType
+    {
+        Place,
+        Take
+    };
+    Player* mPlayer;
+    ItemStack* mBucket;
+    BlockInstance mBlockInstance;
+    Actor *mTargetActor;
+    EventType mEventType;
+    unsigned char mFace;
+    Vec3 mTargetPos;
+};
+
 class PlayerChatEvent : public EventTemplate<PlayerChatEvent> {
 public:
     Player* mPlayer;

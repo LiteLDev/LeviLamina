@@ -61,6 +61,8 @@
 #include <MC/ResourcePackPaths.hpp>
 #include <MC/DirectoryPackSource.hpp> 
 #include <MC/PackSource.hpp>
+#include <MC/BucketItem.hpp>
+#include <MC/BucketableComponent.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -219,6 +221,7 @@ DECLARE_EVENT_DATA(PlayerRespawnEvent);
 DECLARE_EVENT_DATA(PlayerChatEvent);
 DECLARE_EVENT_DATA(PlayerUseItemEvent);
 DECLARE_EVENT_DATA(PlayerUseItemOnEvent);
+DECLARE_EVENT_DATA(PlayerUseBucketEvent);
 DECLARE_EVENT_DATA(PlayerChangeDimEvent);
 DECLARE_EVENT_DATA(PlayerJumpEvent);
 DECLARE_EVENT_DATA(PlayerSneakEvent);
@@ -1570,6 +1573,124 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
     return original(this, it, bp, side, clickPos, a6_block);
+}
+
+/////////////////// PlayerUseBucket ///////////////////
+// 倒出
+TInstanceHook(bool, "?_emptyBucket@BucketItem@@AEBA_NAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@PEAVActor@@AEBVItemStack@@E@Z", BucketItem,
+              BlockSource* blockSource, Block *block, BlockPos *blockPos, Actor* actor, ItemStack* itemStack, unsigned char face) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        PlayerUseBucketEvent ev{};
+        ev.mPlayer = (Player*)actor;
+        ev.mEventType = PlayerUseBucketEvent::EventType::Place;
+        ev.mTargetPos = blockPos->toVec3();
+        ev.mBucket = itemStack;
+        ev.mBlockInstance = BlockInstance::createBlockInstance(block,*blockPos,actor->getDimensionId());
+        ev.mFace = face;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, blockSource, block, blockPos, actor, itemStack, face);
+}
+// 装水
+TInstanceHook(bool, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
+              ItemStack* itemStack, Actor* actor, BlockPos* blockPos) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        PlayerUseBucketEvent ev{};
+        ev.mPlayer = (Player*)actor;
+        ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+        ev.mTargetPos = blockPos->toVec3();
+        ev.mBucket = itemStack;
+        ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
+        ev.mFace = -1;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, itemStack, actor, blockPos);
+}
+// 装牛奶
+/*
+ * 这个函数是InteractComponent::_runInteraction里面调用的lambda函数实现部分，
+ * 这个lambda函数实现了桶装牛奶、剪刀剪羊毛、打火石点苦力怕和紫水晶碎片给予悦灵
+ * 这些操作。
+ * a1的结构可以在这个lambda的__Copy函数看到：
+ * std::_Func_impl_no_alloc__lambda_f1efd4c97256fb90f8a5625718bf0fe5__void_::_Copy
+ */  
+struct BucketPlayerAndActor{
+    Player* player;
+    Actor* owner;
+};
+//也许这个结构体可以用偏移获取替代？
+THook(void, "<lambda_f1efd4c97256fb90f8a5625718bf0fe5>::operator()",
+      BucketPlayerAndActor* a1) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        BucketPlayerAndActor mBucketPlayerAndActor = *a1;
+        if (mBucketPlayerAndActor.owner->getTypeName() == "minecraft:cow" || 
+            mBucketPlayerAndActor.owner->getTypeName() == "minecraft:mooshroom") {
+            PlayerUseBucketEvent ev{};
+            ev.mPlayer = mBucketPlayerAndActor.player;
+            ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+            ev.mTargetPos = mBucketPlayerAndActor.owner->getPosition();
+            ev.mBucket = const_cast<ItemStack*>(&ev.mPlayer->getSelectedItem());
+            ev.mTargetActor = mBucketPlayerAndActor.owner;
+            ev.mFace = -1;
+            if (!ev.call())
+                return;
+        }
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(a1);
+}
+// 装细雪
+TInstanceHook(bool, "?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
+              ItemStack* itemStack, Actor* actor, BlockPos* blockPos) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        PlayerUseBucketEvent ev{};
+        ev.mPlayer = (Player*)actor;
+        ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+        ev.mTargetPos = blockPos->toVec3();
+        ev.mBucket = itemStack;
+        ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
+        ev.mFace = -1;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, itemStack, actor, blockPos);
+}
+
+//拿桶与实体交互（装鱼），目前的办法是hook ItemStack::useOn来拦截
+//这个交互实现在BucketableComponent::implInteraction
+namespace {
+Player* mBucketPlayer;//传玩家指针
+std::mutex mBucketPlayerLuck;
+}
+THook(void, "?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z",
+              Actor* actor, Player* player) {
+    std::lock_guard<std::mutex> autoLock(mBucketPlayerLuck);
+    mBucketPlayer = player;
+    return original(actor, player);
+}
+
+TInstanceHook(bool, "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z", ItemStack,
+              Actor* actor, int x, int y, int z, unsigned char face, Vec3 clickPos) {
+    IF_LISTENED(PlayerUseBucketEvent) {
+        if (actor->getTypeName() != "minecraft:player") {
+            PlayerUseBucketEvent ev{};
+            ev.mPlayer = mBucketPlayer;
+            ev.mEventType = PlayerUseBucketEvent::EventType::Take;
+            ev.mTargetPos = clickPos;
+            ev.mBucket = this;
+            ev.mTargetActor = actor;
+            ev.mFace = face;
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerUseBucketEvent)
+    return original(this, actor, x, y, z, face, clickPos);
 }
 
 
