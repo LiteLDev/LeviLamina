@@ -32,44 +32,49 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -651325392
      */
     virtual ~HudContainerManagerModel();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getItemCopies@HudContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -1626561079
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setSlot@HudContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   2071598838
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getSlot@HudContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   -2017561777
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setData@HudContainerManagerModel@@UEAAXHH@Z
+     * @hash   486150637
      */
     virtual void setData(int, int);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@HudContainerManagerModel@@UEAAXXZ
+     * @hash   1116065219
      */
     virtual void broadcastChanges();
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_postInit@HudContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -1649843744
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0HudContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
+     * @hash   -1568414614
      */
     MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
 

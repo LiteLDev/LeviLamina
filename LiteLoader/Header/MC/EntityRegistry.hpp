@@ -28,30 +28,33 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRY
-#endif
     /**
      * @symbol ?getWeakRef@EntityRegistry@@QEAA?AV?$WeakRefT@UEntityRegistryRefTraits@@@@XZ
+     * @hash   105651383
      */
     MCAPI class WeakRefT<struct EntityRegistryRefTraits> getWeakRef();
     /**
      * @symbol ??1EntityRegistry@@QEAA@XZ
+     * @hash   11096730
      */
     MCAPI ~EntityRegistry();
 
 //protected:
     /**
      * @symbol ??0EntityRegistry@@IEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2041026749
      */
     MCAPI EntityRegistry(std::string);
 
 //private:
     /**
      * @symbol ?_createEntity@EntityRegistry@@AEAA?AVEntityContext@@XZ
+     * @hash   -447213817
      */
     MCAPI class EntityContext _createEntity();
     /**
      * @symbol ?_destroyEntity@EntityRegistry@@AEAAXVEntityContext@@@Z
+     * @hash   -1902848035
      */
     MCAPI void _destroyEntity(class EntityContext);
 

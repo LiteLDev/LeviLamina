@@ -25,15 +25,16 @@ public:
     struct ActorInsideBlockEvent& operator=(struct ActorInsideBlockEvent const &) = delete;
     ActorInsideBlockEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINSIDEBLOCKEVENT
-#endif
     /**
      * @symbol ??0ActorInsideBlockEvent@@QEAA@AEBU0@@Z
+     * @hash   279562181
      */
     MCAPI ActorInsideBlockEvent(struct ActorInsideBlockEvent const &);
     /**
      * @symbol ??1ActorInsideBlockEvent@@QEAA@XZ
+     * @hash   -578743398
      */
     MCAPI ~ActorInsideBlockEvent();
 

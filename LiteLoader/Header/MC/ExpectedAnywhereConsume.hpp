@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPECTEDANYWHERECONSUME
-#endif
     /**
      * @symbol ??0ExpectedAnywhereConsume@@QEAA@AEBVItemStack@@I@Z
+     * @hash   669852135
      */
     MCAPI ExpectedAnywhereConsume(class ItemStack const &, unsigned int);
 

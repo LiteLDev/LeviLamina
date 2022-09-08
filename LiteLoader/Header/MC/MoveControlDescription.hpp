@@ -28,16 +28,17 @@ public:
     MoveControlDescription(struct MoveControlDescription const &) = delete;
     MoveControlDescription() = delete;
 #endif
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLDESCRIPTION
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1403310367
      */
     MCVAPI void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?serializeData@MoveControlDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   304491433
      */
     MCVAPI void serializeData(class Json::Value &) const;
 #endif

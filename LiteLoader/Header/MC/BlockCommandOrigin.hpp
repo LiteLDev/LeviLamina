@@ -33,113 +33,132 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1963400334
      */
     virtual ~BlockCommandOrigin();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   395649096
      */
     virtual std::string const & getRequestId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@BlockCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1420068551
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getBlockPosition@BlockCommandOrigin@@UEBA?AVBlockPos@@XZ
+     * @hash   1707077028
      */
     virtual class BlockPos getBlockPosition() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getWorldPosition@BlockCommandOrigin@@UEBA?AVVec3@@XZ
+     * @hash   585742129
      */
     virtual class Vec3 getWorldPosition() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getRotation@BlockCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+     * @hash   1353769856
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getLevel@BlockCommandOrigin@@UEBAPEAVLevel@@XZ
+     * @hash   -1370397702
      */
     virtual class Level * getLevel() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getDimension@BlockCommandOrigin@@UEBAPEAVDimension@@XZ
+     * @hash   -1393805798
      */
     virtual class Dimension * getDimension() const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getEntity@BlockCommandOrigin@@UEBAPEAVActor@@XZ
+     * @hash   1683559316
      */
     virtual class Actor * getEntity() const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getPermissionsLevel@BlockCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+     * @hash   1325003352
      */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?clone@BlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     * @hash   -1688469970
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@BlockCommandOrigin@@UEBA_NXZ
+     * @hash   87581516
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@BlockCommandOrigin@@UEBA_NXZ
+     * @hash   -1169933018
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
-     * @note   Virtual function table index: 23
+     * @vftbl  23
      * @symbol ?getOriginType@BlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     * @hash   -1447846387
      */
     virtual enum CommandOriginType getOriginType() const;
     /**
-     * @note   Virtual function table index: 29
+     * @vftbl  29
      * @symbol ?serialize@BlockCommandOrigin@@UEBA?AVCompoundTag@@XZ
+     * @hash   -1094389580
      */
     virtual class CompoundTag serialize() const;
     /**
-     * @note   Virtual function table index: 30
+     * @vftbl  30
      * @symbol ?isValid@BlockCommandOrigin@@UEBA_NXZ
+     * @hash   -1829934938
      */
     virtual bool isValid() const;
     /**
-     * @note   Virtual function table index: 32
+     * @vftbl  32
      * @symbol ?_getBaseCommandBlock@BlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z
+     * @hash   -1224932262
      */
     virtual class BaseCommandBlock * _getBaseCommandBlock(class BlockSource &) const;
     /**
-     * @note   Virtual function table index: 33
+     * @vftbl  33
      * @symbol ?_getBlockEntity@BlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z
+     * @hash   -469126781
      */
     virtual class CommandBlockActor * _getBlockEntity(class BlockSource &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMMANDORIGIN
-#endif
     /**
      * @symbol ??0BlockCommandOrigin@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z
+     * @hash   1885536942
      */
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
     /**
      * @symbol ??0BlockCommandOrigin@@QEAA@AEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1089019112
      */
     MCAPI BlockCommandOrigin(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?load@BlockCommandOrigin@@SA?AV?$unique_ptr@VBlockCommandOrigin@@U?$default_delete@VBlockCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
+     * @hash   -1916103650
      */
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 //protected:
     /**
      * @symbol ?_getName@BlockCommandOrigin@@IEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVBlockSource@@@Z
+     * @hash   953126262
      */
     MCAPI std::string _getName(class BlockSource &) const;
 

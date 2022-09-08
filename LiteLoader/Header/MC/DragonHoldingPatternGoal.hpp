@@ -31,55 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1142764739
      */
     virtual ~DragonHoldingPatternGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@DragonHoldingPatternGoal@@UEAA_NXZ
+     * @hash   -606375347
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DragonHoldingPatternGoal@@UEAA_NXZ
+     * @hash   -418276725
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@DragonHoldingPatternGoal@@UEAAXXZ
+     * @hash   -681006538
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@DragonHoldingPatternGoal@@UEAAXXZ
+     * @hash   -1431783914
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@DragonHoldingPatternGoal@@UEAAXXZ
+     * @hash   891977201
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DragonHoldingPatternGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1356359523
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONHOLDINGPATTERNGOAL
-#endif
     /**
      * @symbol ??0DragonHoldingPatternGoal@@QEAA@AEAVEnderDragon@@@Z
+     * @hash   -645444732
      */
     MCAPI DragonHoldingPatternGoal(class EnderDragon &);
 
 //private:
     /**
      * @symbol ?findNewTarget@DragonHoldingPatternGoal@@AEAAXXZ
+     * @hash   -1928746863
      */
     MCAPI void findNewTarget();
 

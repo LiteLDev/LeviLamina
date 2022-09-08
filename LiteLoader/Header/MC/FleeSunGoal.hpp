@@ -32,34 +32,35 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1437068921
      */
     virtual ~FleeSunGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@FleeSunGoal@@UEAA_NXZ
+     * @hash   -1002950089
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FleeSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   599834041
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLEESUNGOAL
-#endif
     /**
      * @symbol ??0FleeSunGoal@@QEAA@AEAVMob@@M@Z
+     * @hash   -1465123283
      */
     MCAPI FleeSunGoal(class Mob &, float);
 

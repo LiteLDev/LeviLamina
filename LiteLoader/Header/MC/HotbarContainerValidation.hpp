@@ -32,59 +32,64 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -8947422
      */
     virtual ~HotbarContainerValidation();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     * @hash   280278184
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
+     * @hash   404504075
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?isItemAllowedToRemove@HotbarContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
+     * @hash   -1766460494
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1361576986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+     * @hash   1281870415
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1366295496
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getContainerSize@HotbarContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
+     * @hash   -604121924
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOTBARCONTAINERVALIDATION
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canItemMoveToContainer@HotbarContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
+     * @hash   -1748994741
      */
     MCVAPI bool canItemMoveToContainer(class ItemStackBase const &) const;
 #endif

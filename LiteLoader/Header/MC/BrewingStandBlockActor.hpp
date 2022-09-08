@@ -32,136 +32,146 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDBLOCKACTOR
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canPullOutItem@BrewingStandBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     * @hash   1956199739
      */
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canPushInItem@BrewingStandBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     * @hash   -482948015
      */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getContainer@BrewingStandBlockActor@@UEAAPEAVContainer@@XZ
+     * @hash   1383095009
      */
     MCVAPI class Container * getContainer();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getContainer@BrewingStandBlockActor@@UEBAPEBVContainer@@XZ
+     * @hash   955373149
      */
     MCVAPI class Container const * getContainer() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getContainerSize@BrewingStandBlockActor@@UEBAHXZ
+     * @hash   1156847433
      */
     MCVAPI int getContainerSize() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getItem@BrewingStandBlockActor@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1697105134
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getMaxStackSize@BrewingStandBlockActor@@UEBAHXZ
+     * @hash   454691992
      */
     MCVAPI int getMaxStackSize() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getName@BrewingStandBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1174572851
      */
     MCVAPI std::string getName() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?load@BrewingStandBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1026696597
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onChanged@BrewingStandBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   136139222
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onMove@BrewingStandBlockActor@@UEAAXXZ
+     * @hash   1626806505
      */
     MCVAPI void onMove();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?save@BrewingStandBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -1058738812
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?serverInitItemStackIds@BrewingStandBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   1115677303
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setContainerChanged@BrewingStandBlockActor@@UEAAXH@Z
+     * @hash   24545649
      */
     MCVAPI void setContainerChanged(int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setItem@BrewingStandBlockActor@@UEAAXHAEBVItemStack@@@Z
+     * @hash   959708595
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?startOpen@BrewingStandBlockActor@@UEAAXAEAVPlayer@@@Z
+     * @hash   -470378338
      */
     MCVAPI void startOpen(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stopOpen@BrewingStandBlockActor@@UEAAXAEAVPlayer@@@Z
+     * @hash   906924222
      */
     MCVAPI void stopOpen(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tick@BrewingStandBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   1659412814
      */
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
      * @symbol ??0BrewingStandBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   1843060737
      */
     MCAPI BrewingStandBlockActor(class BlockPos const &);
     /**
      * @symbol ?brew@BrewingStandBlockActor@@QEAAXXZ
+     * @hash   -1866794875
      */
     MCAPI void brew();
     /**
      * @symbol ?getBrewTime@BrewingStandBlockActor@@QEBAHXZ
+     * @hash   -1385826970
      */
     MCAPI int getBrewTime() const;
     /**
      * @symbol ?getFuelAmount@BrewingStandBlockActor@@QEBAHXZ
+     * @hash   1898113798
      */
     MCAPI int getFuelAmount() const;
     /**
      * @symbol ?getFuelTotal@BrewingStandBlockActor@@QEBAHXZ
+     * @hash   -1137576536
      */
     MCAPI int getFuelTotal() const;
     /**
      * @symbol ?setBrewTime@BrewingStandBlockActor@@QEAAXH@Z
+     * @hash   -290310872
      */
     MCAPI void setBrewTime(int);
     /**
      * @symbol ?setFuelAmount@BrewingStandBlockActor@@QEAAXH@Z
+     * @hash   1731474552
      */
     MCAPI void setFuelAmount(int);
     /**
      * @symbol ?setFuelTotal@BrewingStandBlockActor@@QEAAXH@Z
+     * @hash   54423526
      */
     MCAPI void setFuelTotal(int);
     /**
      * @symbol ?isFuel@BrewingStandBlockActor@@SA_NAEBVItemDescriptor@@@Z
+     * @hash   99755585
      */
     MCAPI static bool isFuel(class ItemDescriptor const &);
 
 //private:
     /**
      * @symbol ?canBrew@BrewingStandBlockActor@@AEAA_NXZ
+     * @hash   1644089370
      */
     MCAPI bool canBrew();
 

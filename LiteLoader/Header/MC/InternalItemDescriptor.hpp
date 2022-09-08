@@ -30,56 +30,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?clone@InternalItemDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
+     * @hash   -1674247365
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   1886702849
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?sameItem@InternalItemDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
+     * @hash   -483645689
      */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getFullName@InternalItemDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1294938073
      */
     virtual std::string const & getFullName() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getItem@InternalItemDescriptor@@UEBA?AUItemEntry@ItemDescriptor@@XZ
+     * @hash   825468415
      */
     virtual struct ItemDescriptor::ItemEntry getItem() const;
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   1884215781
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?toMap@InternalItemDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+     * @hash   2094393105
      */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?save@InternalItemDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
+     * @hash   1583402469
      */
     virtual class std::optional<class CompoundTag> save() const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   1895012616
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getType@InternalItemDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
+     * @hash   -327747312
      */
     virtual enum ItemDescriptor::InternalType getType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALITEMDESCRIPTOR
-#endif
 
 };

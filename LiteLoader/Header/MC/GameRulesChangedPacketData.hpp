@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULESCHANGEDPACKETDATA
-#endif
     /**
      * @symbol ?addRule@GameRulesChangedPacketData@@QEAAXAEBVGameRule@@@Z
+     * @hash   -26020732
      */
     MCAPI void addRule(class GameRule const &);
     /**
      * @symbol ?getRules@GameRulesChangedPacketData@@QEBAAEBV?$vector@VGameRule@@V?$allocator@VGameRule@@@std@@@std@@XZ
+     * @hash   1058000082
      */
     MCAPI std::vector<class GameRule> const & getRules() const;
     /**
      * @symbol ?setRules@GameRulesChangedPacketData@@QEAAXV?$vector@VGameRule@@V?$allocator@VGameRule@@@std@@@std@@@Z
+     * @hash   -706609772
      */
     MCAPI void setRules(std::vector<class GameRule>);
     /**
      * @symbol ??1GameRulesChangedPacketData@@QEAA@XZ
+     * @hash   164845499
      */
     MCAPI ~GameRulesChangedPacketData();
 

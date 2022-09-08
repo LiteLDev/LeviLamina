@@ -29,34 +29,38 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getPosDeltaNonConst@UpdateEntityAfterFallOnActorProxy@@UEAAAEAVVec3@@XZ
+     * @hash   190954799
      */
     virtual class Vec3 & getPosDeltaNonConst();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isSneaking@UpdateEntityAfterFallOnActorProxy@@UEBA_NXZ
+     * @hash   1260439949
      */
     virtual bool isSneaking() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?onBounceStarted@UpdateEntityAfterFallOnActorProxy@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -1112465536
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getPosition@UpdateEntityAfterFallOnActorProxy@@UEBA?AVVec3@@XZ
+     * @hash   -371450324
      */
     virtual class Vec3 getPosition() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getRegion@UpdateEntityAfterFallOnActorProxy@@UEBAAEBVIConstBlockSource@@XZ
+     * @hash   397768910
      */
     virtual class IConstBlockSource const & getRegion() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEENTITYAFTERFALLONACTORPROXY
-#endif
     /**
      * @symbol ??0UpdateEntityAfterFallOnActorProxy@@QEAA@AEAUIActorMovementProxy@@@Z
+     * @hash   -1850768170
      */
     MCAPI UpdateEntityAfterFallOnActorProxy(struct IActorMovementProxy &);
 

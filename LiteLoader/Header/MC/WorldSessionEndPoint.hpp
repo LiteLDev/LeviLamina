@@ -32,33 +32,34 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDSESSIONENDPOINT
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?flush@WorldSessionEndPoint@@UEAAXXZ
+     * @hash   1010316882
      */
     MCVAPI void flush();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isEnabled@WorldSessionEndPoint@@UEBA_NXZ
+     * @hash   390861414
      */
     MCVAPI bool isEnabled() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?log@WorldSessionEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z
+     * @hash   1560120818
      */
     MCVAPI void log(enum LogArea, enum LogLevel, char const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?logOnlyOnce@WorldSessionEndPoint@@UEBA_NXZ
+     * @hash   1905934928
      */
     MCVAPI bool logOnlyOnce() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setEnabled@WorldSessionEndPoint@@UEAAX_N@Z
+     * @hash   -2136813809
      */
     MCVAPI void setEnabled(bool);
 #endif
     /**
      * @symbol ??0WorldSessionEndPoint@@QEAA@AEAVIMinecraftEventing@@@Z
+     * @hash   1922829156
      */
     MCAPI WorldSessionEndPoint(class IMinecraftEventing &);
 

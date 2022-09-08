@@ -31,35 +31,38 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -308414589
      */
     virtual ~SystemFilePicker();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initFilePick@SystemFilePicker@@UEAAXAEBVPath@Core@@V?$function@$$A6AX_NUFileInfo@@@Z@std@@@Z
+     * @hash   -450699974
      */
     virtual void initFilePick(class Core::Path const &, class std::function<void (bool, struct FileInfo)>);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?readBytes@SystemFilePicker@@UEAA_KAEBUFileInfo@@_K1AEAV?$vector@EV?$allocator@E@std@@@std@@@Z
+     * @hash   -1212250959
      */
     virtual unsigned __int64 readBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?writeBytes@SystemFilePicker@@UEAA_NAEBUFileInfo@@_K1AEBV?$vector@EV?$allocator@E@std@@@std@@@Z
+     * @hash   1939717757
      */
     virtual bool writeBytes(struct FileInfo const &, unsigned __int64, unsigned __int64, std::vector<unsigned char> const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYSTEMFILEPICKER
-#endif
     /**
      * @symbol ??0SystemFilePicker@@QEAA@XZ
+     * @hash   51509637
      */
     MCAPI SystemFilePicker();
 
 //protected:
     /**
      * @symbol ?_fillFileInfo@SystemFilePicker@@IEAA?AUFileInfo@@AEBVPath@Core@@@Z
+     * @hash   -1722832237
      */
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const &);
 

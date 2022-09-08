@@ -38,38 +38,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1209671569
      */
     virtual ~ResourcePackDataInfoPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@ResourcePackDataInfoPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   592194375
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@ResourcePackDataInfoPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   979761780
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@ResourcePackDataInfoPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1967499715
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@ResourcePackDataInfoPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1415660669
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKDATAINFOPACKET
-#endif
     /**
      * @symbol ??0ResourcePackDataInfoPacket@@QEAA@XZ
+     * @hash   972805539
      */
     MCAPI ResourcePackDataInfoPacket();
     /**
      * @symbol ??0ResourcePackDataInfoPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@IH_K0_NW4PackType@@@Z
+     * @hash   1164443464
      */
     MCAPI ResourcePackDataInfoPacket(std::string const &, unsigned int, int, unsigned __int64, std::string const &, bool, enum PackType);
 

@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@TrailDescription@@UEBAPEBDXZ
+     * @hash   -1078860946
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   507797088
      */
     virtual ~TrailDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@TrailDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   921091045
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@TrailDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1087233889
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILDESCRIPTION
-#endif
     /**
      * @symbol ??0TrailDescription@@QEAA@XZ
+     * @hash   -1047507166
      */
     MCAPI TrailDescription();
 

@@ -28,51 +28,61 @@ public:
     BlockGeometryDescription(struct BlockGeometryDescription const &) = delete;
     BlockGeometryDescription() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -265885401
      */
     virtual ~BlockGeometryDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@BlockGeometryDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   830049468
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockGeometryDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   553255752
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockGeometryDescription@@UEBA_NXZ
+     * @hash   1383040628
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockGeometryDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -95724794
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockGeometryDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   972726700
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGEOMETRYDESCRIPTION
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockGeometryDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   873274285
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockGeometryDescription@@SAXXZ
+     * @hash   -838761837
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockGeometryDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   1260889496
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

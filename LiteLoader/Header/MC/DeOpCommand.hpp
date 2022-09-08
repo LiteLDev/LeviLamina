@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1623477385
      */
     virtual ~DeOpCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@DeOpCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1842870598
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEOPCOMMAND
-#endif
     /**
      * @symbol ?setup@DeOpCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -522464976
      */
     MCAPI static void setup(class CommandRegistry &);
 

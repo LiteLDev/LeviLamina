@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASECHARGEEVENT
-#endif
     /**
      * @symbol ??1ItemReleaseChargeEvent@@QEAA@XZ
+     * @hash   1725244284
      */
     MCAPI ~ItemReleaseChargeEvent();
 

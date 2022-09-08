@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   714359814
      */
     virtual ~GetInteractionPositionForBlockDefinition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@GetInteractionPositionForBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   -1322473640
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETINTERACTIONPOSITIONFORBLOCKDEFINITION
-#endif
 
 };

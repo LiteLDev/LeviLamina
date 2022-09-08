@@ -32,113 +32,132 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1871792457
      */
     virtual ~CampfireBlockActor();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@CampfireBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -305496938
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?save@CampfireBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -1238533419
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?tick@CampfireBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -1496941009
      */
     virtual void tick(class BlockSource &);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?onChanged@CampfireBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -1024104745
      */
     virtual void onChanged(class BlockSource &);
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?getShadowRadius@CampfireBlockActor@@UEBAMAEAVBlockSource@@@Z
+     * @hash   1466783467
      */
     virtual float getShadowRadius(class BlockSource &) const;
     /**
-     * @note   Virtual function table index: 28
-     * @symbol 
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 35
+     * @vftbl  35
      * @symbol ?_getUpdatePacket@CampfireBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -2109467784
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @note   Virtual function table index: 36
+     * @vftbl  36
      * @symbol ?_onUpdatePacket@CampfireBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   615659914
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMPFIREBLOCKACTOR
-#endif
     /**
      * @symbol ??0CampfireBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   1869543074
      */
     MCAPI CampfireBlockActor(class BlockPos const &);
     /**
      * @symbol ?dropAllItems@CampfireBlockActor@@QEAAXAEAVBlockSource@@@Z
+     * @hash   1242122324
      */
     MCAPI void dropAllItems(class BlockSource &);
     /**
      * @symbol ?getCampfireTag@CampfireBlockActor@@QEBAAEBVHashedString@@AEBVBlockSource@@@Z
+     * @hash   -192368727
      */
     MCAPI class HashedString const & getCampfireTag(class BlockSource const &) const;
     /**
      * @symbol ?getCookingItem@CampfireBlockActor@@QEAAAEBVItemInstance@@H@Z
+     * @hash   1929921649
      */
     MCAPI class ItemInstance const & getCookingItem(int);
     /**
      * @symbol ?setItem@CampfireBlockActor@@QEAA_NAEAVBlockSource@@AEBVItemInstance@@@Z
+     * @hash   -498530390
      */
     MCAPI bool setItem(class BlockSource &, class ItemInstance const &);
-MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
-MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
+    /**
+     * @symbol ?MAX_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
+     * @hash   -1788249757
+     */
+    MCAPI static int const MAX_SMOKE_THRESHOLD_COUNTER;
+    /**
+     * @symbol ?MIN_SMOKE_THRESHOLD_COUNTER@CampfireBlockActor@@2HB
+     * @hash   -1452782817
+     */
+    MCAPI static int const MIN_SMOKE_THRESHOLD_COUNTER;
 
 //private:
     /**
      * @symbol ?_finishCooking@CampfireBlockActor@@AEAAXAEAVBlockSource@@H@Z
+     * @hash   1038866704
      */
     MCAPI void _finishCooking(class BlockSource &, int);
 

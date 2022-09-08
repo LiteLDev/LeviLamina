@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERRESPAWNBLOCKRADIUSRANDOMIZER
-#endif
     /**
      * @symbol ?getNextPosition@PlayerRespawnBlockRadiusRandomizer@@QEAA_NAEAVVec3@@_N@Z
+     * @hash   1962591418
      */
     MCAPI bool getNextPosition(class Vec3 &, bool);
     /**
      * @symbol ?init@PlayerRespawnBlockRadiusRandomizer@@QEAAXIAEAVRandom@@@Z
+     * @hash   1046650875
      */
     MCAPI void init(unsigned int, class Random &);
 

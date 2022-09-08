@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCKLOADCONTEXT
-#endif
     /**
      * @symbol ??0BedrockLoadContext@@QEAA@AEBVSemVersion@@@Z
+     * @hash   1672046938
      */
     MCAPI BedrockLoadContext(class SemVersion const &);
     /**
      * @symbol ??1BedrockLoadContext@@QEAA@XZ
+     * @hash   -1271766115
      */
     MCAPI ~BedrockLoadContext();
 

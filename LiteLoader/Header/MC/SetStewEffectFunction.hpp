@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1784239604
      */
     virtual ~SetStewEffectFunction();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?apply@SetStewEffectFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -47192342
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?apply@SetStewEffectFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   1284788383
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETSTEWEFFECTFUNCTION
-#endif
     /**
      * @symbol ?deserialize@SetStewEffectFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
+     * @hash   -2122060305
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 

@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -419429862
      */
     virtual ~UseActorNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@UseActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -2014685363
      */
     virtual enum BehaviorStatus tick(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORNODE
-#endif
     /**
      * @symbol ??0UseActorNode@@QEAA@XZ
+     * @hash   1654788956
      */
     MCAPI UseActorNode();
 

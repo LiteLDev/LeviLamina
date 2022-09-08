@@ -25,15 +25,16 @@ public:
     struct LeverActionEvent& operator=(struct LeverActionEvent const &) = delete;
     LeverActionEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVERACTIONEVENT
-#endif
     /**
      * @symbol ??0LeverActionEvent@@QEAA@AEBU0@@Z
+     * @hash   1416159327
      */
     MCAPI LeverActionEvent(struct LeverActionEvent const &);
     /**
      * @symbol ??1LeverActionEvent@@QEAA@XZ
+     * @hash   1387830004
      */
     MCAPI ~LeverActionEvent();
 

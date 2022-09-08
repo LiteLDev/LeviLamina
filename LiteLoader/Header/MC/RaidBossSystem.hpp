@@ -31,21 +31,20 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1806195984
      */
     virtual ~RaidBossSystem();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@RaidBossSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -175380506
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDBOSSSYSTEM
-#endif
 
 };

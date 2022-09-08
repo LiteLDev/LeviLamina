@@ -31,55 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1783449890
      */
     virtual ~AdmireItemGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@AdmireItemGoal@@UEAA_NXZ
+     * @hash   -90892424
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@AdmireItemGoal@@UEAA_NXZ
+     * @hash   -33174586
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@AdmireItemGoal@@UEAAXXZ
+     * @hash   1201908065
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@AdmireItemGoal@@UEAAXXZ
+     * @hash   -1837566207
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@AdmireItemGoal@@UEAAXXZ
+     * @hash   -2041756228
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@AdmireItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -965436808
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADMIREITEMGOAL
-#endif
     /**
      * @symbol ??0AdmireItemGoal@@QEAA@AEAVMob@@W4LevelSoundEvent@@UFloatRange@@AEBVActorDefinitionTrigger@@3@Z
+     * @hash   -1492290200
      */
     MCAPI AdmireItemGoal(class Mob &, enum LevelSoundEvent, struct FloatRange, class ActorDefinitionTrigger const &, class ActorDefinitionTrigger const &);
 
 //private:
     /**
      * @symbol ?_tryPlaceItemInInventory@AdmireItemGoal@@AEAAXAEAVContainerComponent@@AEBVShareableComponent@@@Z
+     * @hash   596018546
      */
     MCAPI void _tryPlaceItemInInventory(class ContainerComponent &, class ShareableComponent const &);
 

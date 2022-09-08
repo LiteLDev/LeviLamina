@@ -31,49 +31,50 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -120664673
      */
     virtual ~MoveTowardsHomeRestrictionGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@MoveTowardsHomeRestrictionGoal@@UEAA_NXZ
+     * @hash   -1101552565
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   673480820
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   642453974
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveTowardsHomeRestrictionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   247917925
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSHOMERESTRICTIONGOAL
-#endif
     /**
      * @symbol ??0MoveTowardsHomeRestrictionGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1865972616
      */
     MCAPI MoveTowardsHomeRestrictionGoal(class Mob &);
 

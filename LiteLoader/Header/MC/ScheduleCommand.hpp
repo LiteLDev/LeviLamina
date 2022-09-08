@@ -38,33 +38,36 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   449733378
      */
     virtual ~ScheduleCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@ScheduleCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -264509953
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULECOMMAND
-#endif
     /**
      * @symbol ?setup@ScheduleCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1261265296
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_delay@ScheduleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1269180211
      */
     MCAPI void _delay(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_onAreaLoaded@ScheduleCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1901402783
      */
     MCAPI void _onAreaLoaded(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_tryGetFunction@ScheduleCommand@@AEBA?AUFunctionInfo@1@AEAVFunctionManager@@AEAVCommandOutput@@@Z
+     * @hash   1067789060
      */
     MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager &, class CommandOutput &) const;
 

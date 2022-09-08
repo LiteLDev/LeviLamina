@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMEFOGCOMPONENT
-#endif
     /**
      * @symbol ??1VolumeFogComponent@@QEAA@XZ
+     * @hash   40842563
      */
     MCAPI ~VolumeFogComponent();
 

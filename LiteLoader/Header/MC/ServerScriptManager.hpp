@@ -30,101 +30,111 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   392964525
      */
     virtual ~ServerScriptManager();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
+     * @hash   -504891697
      */
     virtual enum EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1157602814
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1156679293
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1155755772
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?onServerUpdateStart@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   -1609642044
      */
     virtual enum EventResult onServerUpdateStart(class ServerInstance &);
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1153908730
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1152985209
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1152061688
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?onServerThreadStarted@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   -490058554
      */
     virtual enum EventResult onServerThreadStarted(class ServerInstance &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?onServerThreadStopped@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   1948292106
      */
     virtual enum EventResult onServerThreadStopped(class ServerInstance &);
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -134114268
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?onEvent@ServerScriptManager@@UEAA?AW4EventResult@@AEBUServerInstanceRequestResourceReload@@@Z
+     * @hash   -623272574
      */
     virtual enum EventResult onEvent(struct ServerInstanceRequestResourceReload const &);
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
+     * @hash   1735238592
      */
     virtual enum EventResult onEvent(struct ServerInstanceNotificationEvent const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
-#endif
     /**
      * @symbol ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z
+     * @hash   -1477599342
      */
     MCAPI ServerScriptManager(struct ScriptSettings, class Bedrock::NonOwnerPointer<class Scheduler>, class IMinecraftEventing &, bool);
     /**
      * @symbol ?onMainThreadStartLeaveGame@ServerScriptManager@@QEAAXXZ
+     * @hash   243930437
      */
     MCAPI void onMainThreadStartLeaveGame();
 
 //private:
     /**
      * @symbol ?_loadAndRunAllPlugins@ServerScriptManager@@AEAAXAEAVServerInstance@@AEAVServerLevel@@@Z
+     * @hash   -1661760260
      */
     MCAPI void _loadAndRunAllPlugins(class ServerInstance &, class ServerLevel &);
     /**
      * @symbol ?_registerEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
+     * @hash   -671721319
      */
     MCAPI void _registerEventHandlers(class Level &) const;
     /**
      * @symbol ?_sendInitializeEvent@ServerScriptManager@@AEBAXAEAVServerLevel@@@Z
+     * @hash   -2015870486
      */
     MCAPI void _sendInitializeEvent(class ServerLevel &) const;
     /**
      * @symbol ?_unregisterEventHandlers@ServerScriptManager@@AEBAXAEAVLevel@@@Z
+     * @hash   -1717287918
      */
     MCAPI void _unregisterEventHandlers(class Level &) const;
 

@@ -26,11 +26,11 @@ public:
     ContainerValidationOperation(struct ContainerValidationOperation const &) = delete;
     ContainerValidationOperation() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONOPERATION
-#endif
     /**
      * @symbol ??0ContainerValidationOperation@@QEAA@W4ContainerValidationOperationType@@AEBUContainerValidationSlotData@@HAEBVItemStack@@@Z
+     * @hash   -1139997187
      */
     MCAPI ContainerValidationOperation(enum ContainerValidationOperationType, struct ContainerValidationSlotData const &, int, class ItemStack const &);
 

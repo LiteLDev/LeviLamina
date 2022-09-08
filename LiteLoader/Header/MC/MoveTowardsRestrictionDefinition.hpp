@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONDEFINITION
-#endif
     /**
      * @symbol ??0MoveTowardsRestrictionDefinition@@QEAA@XZ
+     * @hash   933730192
      */
     MCAPI MoveTowardsRestrictionDefinition();
     /**
      * @symbol ?initialize@MoveTowardsRestrictionDefinition@@QEAAXAEAVEntityContext@@AEAVMoveTowardsRestrictionGoal@@@Z
+     * @hash   1908077651
      */
     MCAPI void initialize(class EntityContext &, class MoveTowardsRestrictionGoal &);
 

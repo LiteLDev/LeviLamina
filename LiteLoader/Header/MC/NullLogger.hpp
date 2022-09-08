@@ -31,17 +31,20 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1301078081
      */
     virtual ~NullLogger();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?Logv@NullLogger@@UEAAXPEBDPEAD@Z
+     * @hash   -1016232635
      */
     virtual void Logv(char const *, char *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLLOGGER
-#endif
-MCAPI static class NullLogger instance;
+    /**
+     * @symbol ?instance@NullLogger@@2V1@A
+     * @hash   65295151
+     */
+    MCAPI static class NullLogger instance;
 
 };

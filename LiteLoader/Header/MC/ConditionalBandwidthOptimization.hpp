@@ -27,19 +27,21 @@ public:
     ConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const &) = delete;
     ConditionalBandwidthOptimization() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATION
-#endif
     /**
      * @symbol ??4ConditionalBandwidthOptimization@@QEAAAEAU0@AEBU0@@Z
+     * @hash   484893350
      */
     MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization const &);
     /**
      * @symbol ??4ConditionalBandwidthOptimization@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1124079900
      */
     MCAPI struct ConditionalBandwidthOptimization & operator=(struct ConditionalBandwidthOptimization &&);
     /**
      * @symbol ??1ConditionalBandwidthOptimization@@QEAA@XZ
+     * @hash   -1075408894
      */
     MCAPI ~ConditionalBandwidthOptimization();
 

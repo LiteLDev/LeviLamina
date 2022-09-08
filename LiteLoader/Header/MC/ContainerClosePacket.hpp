@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   342599209
      */
     virtual ~ContainerClosePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@ContainerClosePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   759378927
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@ContainerClosePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1978376860
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@ContainerClosePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1468076629
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@ContainerClosePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -999055285
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCLOSEPACKET
-#endif
     /**
      * @symbol ??0ContainerClosePacket@@QEAA@XZ
+     * @hash   1094900731
      */
     MCAPI ContainerClosePacket();
     /**
      * @symbol ??0ContainerClosePacket@@QEAA@W4ContainerID@@_N@Z
+     * @hash   -560314859
      */
     MCAPI ContainerClosePacket(enum ContainerID, bool);
 

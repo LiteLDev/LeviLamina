@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1447166894
      */
     virtual ~SmokerContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0SmokerContainerScreenValidator@@QEAA@XZ
+     * @hash   1256310532
      */
     MCAPI SmokerContainerScreenValidator();
 

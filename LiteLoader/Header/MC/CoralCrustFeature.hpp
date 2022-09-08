@@ -32,37 +32,41 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -644776754
      */
     virtual ~CoralCrustFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@CoralCrustFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   536836906
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORALCRUSTFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_getCropOffsetFromRot@CoralCrustFeature@@AEBA?AVBlockPos@@HH@Z
+     * @hash   -20525024
      */
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
     /**
      * @symbol ?_getOffsetFromRot@CoralCrustFeature@@AEBA?AVBlockPos@@HH@Z
+     * @hash   333710736
      */
     MCAPI class BlockPos _getOffsetFromRot(int, int) const;
     /**
      * @symbol ?_placeCoral@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@std@@AEAV?$vector@U?$pair@VBlockPos@@E@std@@V?$allocator@U?$pair@VBlockPos@@E@std@@@2@@6@H@Z
+     * @hash   -1427832900
      */
     MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, int) const;
     /**
      * @symbol ?_placeCoralBase@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@AEAVLegacyStructureTemplate@@AEAVLegacyStructureSettings@@@Z
+     * @hash   -863150021
      */
     MCAPI void _placeCoralBase(class BlockSource &, class BlockPos const &, class Random &, class LegacyStructureTemplate &, class LegacyStructureSettings &) const;
     /**
      * @symbol ?_placeSideDecorations@CoralCrustFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@E@Z
+     * @hash   -1955332719
      */
     MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, unsigned char) const;
 

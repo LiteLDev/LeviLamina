@@ -28,11 +28,12 @@ public:
     ISystem(struct ISystem const &) = delete;
     ISystem() = delete;
 #endif
+
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISYSTEM
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?registerEvents@ISystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+     * @hash   842061380
      */
     MCVAPI void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
 #endif

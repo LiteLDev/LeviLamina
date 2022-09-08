@@ -30,15 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCKITEMS
-#endif
-MCAPI static class WeakPtr<class Item> mAir;
+    /**
+     * @symbol ?mAir@BedrockItems@@2V?$WeakPtr@VItem@@@@A
+     * @hash   92614936
+     */
+    MCAPI static class WeakPtr<class Item> mAir;
     /**
      * @symbol ?registerItems@BedrockItems@@SAXXZ
+     * @hash   857063761
      */
     MCAPI static void registerItems();
     /**
      * @symbol ?unregisterItems@BedrockItems@@SAXVItemRegistryRef@@@Z
+     * @hash   1424400960
      */
     MCAPI static void unregisterItems(class ItemRegistryRef);
 

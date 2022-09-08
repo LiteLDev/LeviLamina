@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   14634154
      */
     virtual ~StructureTemplateDataRequestPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@StructureTemplateDataRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   393655214
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@StructureTemplateDataRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -868548005
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@StructureTemplateDataRequestPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -868179252
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@StructureTemplateDataRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   773070108
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATEDATAREQUESTPACKET
-#endif
     /**
      * @symbol ??0StructureTemplateDataRequestPacket@@QEAA@XZ
+     * @hash   -871545028
      */
     MCAPI StructureTemplateDataRequestPacket();
 

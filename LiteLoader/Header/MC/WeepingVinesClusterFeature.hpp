@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -631592506
      */
     virtual ~WeepingVinesClusterFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@WeepingVinesClusterFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -132853034
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEEPINGVINESCLUSTERFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?_isInvalidPlacementLocation@WeepingVinesClusterFeature@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1405035789
      */
     MCAPI bool _isInvalidPlacementLocation(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?_placeRoofNetherWart@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -318803830
      */
     MCAPI void _placeRoofNetherWart(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
      * @symbol ?_placeRoofWeepingVines@WeepingVinesClusterFeature@@AEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   252998446
      */
     MCAPI void _placeRoofWeepingVines(class BlockSource &, class BlockPos const &, class Random &) const;
 

@@ -32,54 +32,58 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -494080076
      */
     virtual ~MoveToLandGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@MoveToLandGoal@@UEAA_NXZ
+     * @hash   -403821002
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MoveToLandGoal@@UEAA_NXZ
+     * @hash   -346133916
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToLandGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2027574410
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?isValidTarget@MoveToLandGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1363661528
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?_moveToBlock@MoveToLandGoal@@MEAAXXZ
+     * @hash   -1553960888
      */
     virtual void _moveToBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLANDGOAL
-#endif
     /**
      * @symbol ??0MoveToLandGoal@@QEAA@AEAVMob@@MHHHM@Z
+     * @hash   695242348
      */
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
 

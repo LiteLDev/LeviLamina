@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@TrustDescription@@UEBAPEBDXZ
+     * @hash   362446640
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1394891826
      */
     virtual ~TrustDescription();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@TrustDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   404010221
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTDESCRIPTION
-#endif
 
 };

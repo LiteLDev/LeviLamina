@@ -26,11 +26,11 @@ public:
     PlayerFormResponseEvent(struct PlayerFormResponseEvent const &) = delete;
     PlayerFormResponseEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERFORMRESPONSEEVENT
-#endif
     /**
      * @symbol ??1PlayerFormResponseEvent@@QEAA@XZ
+     * @hash   1932250832
      */
     MCAPI ~PlayerFormResponseEvent();
 

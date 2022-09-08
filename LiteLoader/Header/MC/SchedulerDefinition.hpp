@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULERDEFINITION
-#endif
     /**
      * @symbol ??0SchedulerDefinition@@QEAA@XZ
+     * @hash   -2072461526
      */
     MCAPI SchedulerDefinition();
     /**
      * @symbol ?initialize@SchedulerDefinition@@QEAAXAEAVEntityContext@@AEAVSchedulerComponent@@@Z
+     * @hash   -1270009691
      */
     MCAPI void initialize(class EntityContext &, class SchedulerComponent &);
     /**
      * @symbol ?setMaxDelayTicks@SchedulerDefinition@@QEAAXAEBM@Z
+     * @hash   -561490247
      */
     MCAPI void setMaxDelayTicks(float const &);
     /**
      * @symbol ?setMinDelayTicks@SchedulerDefinition@@QEAAXAEBM@Z
+     * @hash   1436149785
      */
     MCAPI void setMinDelayTicks(float const &);
     /**
      * @symbol ?buildSchema@SchedulerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSchedulerDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -2046959154
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>> &);
 

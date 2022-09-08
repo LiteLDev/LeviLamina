@@ -31,23 +31,30 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1016992301
      */
     virtual ~FreezingSystem();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@FreezingSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   561001363
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FREEZINGSYSTEM
-#endif
-MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
-MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
+    /**
+     * @symbol ?FREEZE_EFFECT_UUID@FreezingSystem@@2VUUID@mce@@B
+     * @hash   1353579811
+     */
+    MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;
+    /**
+     * @symbol ?VULNERABLE_MOB_FREEZE_DAMAGE@FreezingSystem@@2HB
+     * @hash   1642856265
+     */
+    MCAPI static int const VULNERABLE_MOB_FREEZE_DAMAGE;
 
 };

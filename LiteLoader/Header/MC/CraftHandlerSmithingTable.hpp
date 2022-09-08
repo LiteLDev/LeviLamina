@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   700669043
      */
     virtual ~CraftHandlerSmithingTable();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?_handleCraftAction@CraftHandlerSmithingTable@@EEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
+     * @hash   -195612208
      */
     virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_getLevelRecipes@CraftHandlerSmithingTable@@EEBAPEBVRecipes@@XZ
+     * @hash   1855504529
      */
     virtual class Recipes const * _getLevelRecipes() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTHANDLERSMITHINGTABLE
-#endif
     /**
      * @symbol ??0CraftHandlerSmithingTable@@QEAA@AEAVPlayer@@AEAVItemStackRequestActionCraftHandler@@@Z
+     * @hash   1656437187
      */
     MCAPI CraftHandlerSmithingTable(class Player &, class ItemStackRequestActionCraftHandler &);
 

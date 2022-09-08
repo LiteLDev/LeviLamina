@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIMENTSTORAGE
-#endif
     /**
      * @symbol ?isAnyToggleEnabled@ExperimentStorage@@QEBA_NXZ
+     * @hash   -1606926652
      */
     MCAPI bool isAnyToggleEnabled() const;
     /**
      * @symbol ??4ExperimentStorage@@QEAAAEAV0@AEBV0@@Z
+     * @hash   323403916
      */
     MCAPI class ExperimentStorage & operator=(class ExperimentStorage const &);
     /**
      * @symbol ?wereAnyExperimentsEverToggled@ExperimentStorage@@QEBA_NXZ
+     * @hash   2010343506
      */
     MCAPI bool wereAnyExperimentsEverToggled() const;
     /**
      * @symbol ??1ExperimentStorage@@QEAA@XZ
+     * @hash   201537290
      */
     MCAPI ~ExperimentStorage();
 

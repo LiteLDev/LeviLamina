@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -599321806
      */
     virtual ~TestAction();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z
+     * @hash   -262302833
      */
     virtual void execute(class ServerLevel &, class Dimension &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ??8TestAction@@UEBA_NAEAVIRequestAction@@@Z
+     * @hash   2127543573
      */
     virtual bool operator==(class IRequestAction &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTACTION
-#endif
     /**
      * @symbol ??0TestAction@@QEAA@XZ
+     * @hash   1375615780
      */
     MCAPI TestAction();
 

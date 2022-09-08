@@ -28,18 +28,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEBUBBLECOLUMNSYSTEM
-#endif
     /**
      * @symbol ?createBoatInsideBubbleColumnSystem@InsideBubbleColumnSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   106139860
      */
     MCAPI static struct TickingSystemWithInfo createBoatInsideBubbleColumnSystem();
     /**
      * @symbol ?createBubbleColumnMovementSystem@InsideBubbleColumnSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1071436234
      */
     MCAPI static struct TickingSystemWithInfo createBubbleColumnMovementSystem();
     /**
      * @symbol ?createSpawnBubbleColumnParticlesSystem@InsideBubbleColumnSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -944831336
      */
     MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
 

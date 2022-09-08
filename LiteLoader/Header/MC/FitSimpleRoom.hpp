@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1517762964
      */
     virtual ~FitSimpleRoom();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?fits@FitSimpleRoom@@UEBA_NAEBVRoomDefinition@@@Z
+     * @hash   -1769132843
      */
     virtual bool fits(class RoomDefinition const &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?create@FitSimpleRoom@@UEAA?AV?$unique_ptr@VOceanMonumentPiece@@U?$default_delete@VOceanMonumentPiece@@@std@@@std@@AEAHV?$shared_ptr@VRoomDefinition@@@3@AEAVRandom@@@Z
+     * @hash   614211486
      */
     virtual std::unique_ptr<class OceanMonumentPiece> create(int &, class std::shared_ptr<class RoomDefinition>, class Random &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FITSIMPLEROOM
-#endif
 
 };

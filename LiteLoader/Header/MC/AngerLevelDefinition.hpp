@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANGERLEVELDEFINITION
-#endif
     /**
      * @symbol ?addOnIncreaseSoundDefinition@AngerLevelDefinition@@QEAAXAEBVSoundDefinition@@@Z
+     * @hash   -1328480724
      */
     MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const &);
     /**
      * @symbol ?initialize@AngerLevelDefinition@@QEAAXAEAVEntityContext@@AEAVAngerLevelComponent@@@Z
+     * @hash   -912711115
      */
     MCAPI void initialize(class EntityContext &, class AngerLevelComponent &);
     /**
      * @symbol ?buildSchema@AngerLevelDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VAngerLevelDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1434957082
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngerLevelDefinition>> &);
 

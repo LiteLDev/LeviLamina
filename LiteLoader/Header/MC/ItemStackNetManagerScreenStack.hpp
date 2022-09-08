@@ -30,38 +30,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKNETMANAGERSCREENSTACK
-#endif
     /**
      * @symbol ?foreachScreen@ItemStackNetManagerScreenStack@@QEAAXV?$function@$$A6A_NAEAVItemStackNetManagerScreen@@@Z@std@@@Z
+     * @hash   -8727884
      */
     MCAPI void foreachScreen(class std::function<bool (class ItemStackNetManagerScreen &)>);
     /**
      * @symbol ?getScreenForRequest@ItemStackNetManagerScreenStack@@QEAAPEAVItemStackNetManagerScreen@@AEBVItemStackRequestData@@@Z
+     * @hash   -745748894
      */
     MCAPI class ItemStackNetManagerScreen * getScreenForRequest(class ItemStackRequestData const &);
     /**
      * @symbol ?pop@ItemStackNetManagerScreenStack@@QEAA_NXZ
+     * @hash   704157780
      */
     MCAPI bool pop();
     /**
      * @symbol ?push@ItemStackNetManagerScreenStack@@QEAAPEAVItemStackNetManagerScreen@@V?$unique_ptr@VItemStackNetManagerScreen@@U?$default_delete@VItemStackNetManagerScreen@@@std@@@std@@@Z
+     * @hash   2019200378
      */
     MCAPI class ItemStackNetManagerScreen * push(std::unique_ptr<class ItemStackNetManagerScreen>);
     /**
      * @symbol ?size@ItemStackNetManagerScreenStack@@QEBA_KXZ
+     * @hash   -1178736419
      */
     MCAPI unsigned __int64 size() const;
     /**
      * @symbol ?top@ItemStackNetManagerScreenStack@@QEAAPEAVItemStackNetManagerScreen@@XZ
+     * @hash   277182369
      */
     MCAPI class ItemStackNetManagerScreen * top();
     /**
      * @symbol ?top@ItemStackNetManagerScreenStack@@QEBAPEBVItemStackNetManagerScreen@@XZ
+     * @hash   -1825788133
      */
     MCAPI class ItemStackNetManagerScreen const * top() const;
     /**
      * @symbol ??1ItemStackNetManagerScreenStack@@QEAA@XZ
+     * @hash   861628721
      */
     MCAPI ~ItemStackNetManagerScreenStack();
 

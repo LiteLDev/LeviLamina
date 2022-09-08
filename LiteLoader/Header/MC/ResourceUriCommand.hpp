@@ -32,33 +32,36 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1120974903
      */
     virtual ~ResourceUriCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@ResourceUriCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -369656298
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEURICOMMAND
-#endif
     /**
      * @symbol ?setup@ResourceUriCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -771623044
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_executeClear@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
+     * @hash   772020458
      */
     MCAPI void _executeClear(class Level &, class Player *, class CommandOutput &) const;
     /**
      * @symbol ?_executeNamed@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
+     * @hash   -1160341762
      */
     MCAPI void _executeNamed(class Level &, class Player *, class CommandOutput &) const;
     /**
      * @symbol ?_executeUriOnly@ResourceUriCommand@@AEBAXAEAVLevel@@PEAVPlayer@@AEAVCommandOutput@@@Z
+     * @hash   976097119
      */
     MCAPI void _executeUriOnly(class Level &, class Player *, class CommandOutput &) const;
 

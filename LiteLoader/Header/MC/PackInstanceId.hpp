@@ -26,19 +26,21 @@ public:
     PackInstanceId(struct PackInstanceId const &) = delete;
     PackInstanceId() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKINSTANCEID
-#endif
     /**
      * @symbol ??0PackInstanceId@@QEAA@AEBUPackIdVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2067459617
      */
     MCAPI PackInstanceId(struct PackIdVersion const &, std::string const &);
     /**
      * @symbol ??0PackInstanceId@@QEAA@$$QEAU0@@Z
+     * @hash   1467013503
      */
     MCAPI PackInstanceId(struct PackInstanceId &&);
     /**
      * @symbol ??1PackInstanceId@@QEAA@XZ
+     * @hash   1961687267
      */
     MCAPI ~PackInstanceId();
 

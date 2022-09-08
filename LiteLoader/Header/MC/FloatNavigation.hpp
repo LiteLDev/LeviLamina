@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1110753826
      */
     virtual ~FloatNavigation();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?travel@FloatNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
+     * @hash   686800763
      */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATNAVIGATION
-#endif
 
 };

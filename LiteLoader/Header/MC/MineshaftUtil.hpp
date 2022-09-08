@@ -22,10 +22,12 @@ namespace MineshaftUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_isLava@MineshaftUtil@@YA_NAEBVBlockLegacy@@@Z
+     * @hash   -87317520
      */
     MCAPI bool _isLava(class BlockLegacy const &);
     /**
      * @symbol ?isCavesAndCliffs@MineshaftUtil@@YA_NAEBVLevel@@@Z
+     * @hash   2014757298
      */
     MCAPI bool isCavesAndCliffs(class Level const &);
 

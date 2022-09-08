@@ -24,6 +24,7 @@ namespace VanillaActors {
 #undef AFTER_EXTRA
     /**
      * @symbol ?registerVanillaActorData@VanillaActors@@YAXAEBVBaseGameVersion@@AEBVExperiments@@@Z
+     * @hash   1396076224
      */
     MCAPI void registerVanillaActorData(class BaseGameVersion const &, class Experiments const &);
 

@@ -36,36 +36,45 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPEINGREDIENT
-#endif
     /**
      * @symbol ??0RecipeIngredient@@QEAA@XZ
+     * @hash   166975851
      */
     MCAPI RecipeIngredient();
     /**
      * @symbol ??0RecipeIngredient@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HG@Z
+     * @hash   -1714414229
      */
     MCAPI RecipeIngredient(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBVItem@@HG@Z
+     * @hash   959836585
      */
     MCAPI RecipeIngredient(class Item const &, int, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBVBlockLegacy@@G@Z
+     * @hash   -1585443052
      */
     MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBVBlock@@G@Z
+     * @hash   -1966674078
      */
     MCAPI RecipeIngredient(class Block const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient@@QEAA@AEBV0@@Z
+     * @hash   -1253068639
      */
     MCAPI RecipeIngredient(class RecipeIngredient const &);
     /**
      * @symbol ??1RecipeIngredient@@QEAA@XZ
+     * @hash   -1602135319
      */
     MCAPI ~RecipeIngredient();
-MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
+    /**
+     * @symbol ?EMPTY_INGREDIENT@RecipeIngredient@@2V1@A
+     * @hash   -2105002769
+     */
+    MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
 
 };

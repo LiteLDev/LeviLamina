@@ -33,24 +33,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1443108401
      */
     virtual ~EnchantRandomlyFunction();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?apply@EnchantRandomlyFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -1249775107
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?apply@EnchantRandomlyFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -1678108590
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTRANDOMLYFUNCTION
-#endif
     /**
      * @symbol ?deserialize@EnchantRandomlyFunction@@SA?AV?$unique_ptr@VLootItemFunction@@U?$default_delete@VLootItemFunction@@@std@@@std@@VValue@Json@@AEAV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@3@@Z
+     * @hash   1949803839
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 

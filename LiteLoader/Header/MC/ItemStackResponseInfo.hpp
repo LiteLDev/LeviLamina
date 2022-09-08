@@ -25,15 +25,16 @@ public:
     struct ItemStackResponseInfo& operator=(struct ItemStackResponseInfo const &) = delete;
     ItemStackResponseInfo(struct ItemStackResponseInfo const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSEINFO
-#endif
     /**
      * @symbol ??0ItemStackResponseInfo@@QEAA@XZ
+     * @hash   1599264464
      */
     MCAPI ItemStackResponseInfo();
     /**
      * @symbol ??1ItemStackResponseInfo@@QEAA@XZ
+     * @hash   946160512
      */
     MCAPI ~ItemStackResponseInfo();
 

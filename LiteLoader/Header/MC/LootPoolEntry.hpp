@@ -31,22 +31,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOLENTRY
-#endif
     /**
      * @symbol ?createItem@LootPoolEntry@@QEAAXAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -1752311576
      */
     MCAPI void createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
     /**
      * @symbol ?getConditions@LootPoolEntry@@QEBAAEBV?$vector@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@V?$allocator@V?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@@2@@std@@XZ
+     * @hash   86375891
      */
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const & getConditions() const;
     /**
      * @symbol ?getWeight@LootPoolEntry@@QEBAHM@Z
+     * @hash   1219002275
      */
     MCAPI int getWeight(float) const;
     /**
      * @symbol ?deserialize@LootPoolEntry@@SA?AV?$unique_ptr@VLootPoolEntry@@U?$default_delete@VLootPoolEntry@@@std@@@std@@AEBVValue@Json@@@Z
+     * @hash   925221913
      */
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const &);
 

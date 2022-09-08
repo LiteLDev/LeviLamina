@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1202185088
      */
     virtual ~PineTreeCanopy();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?placeCanopy@PineTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
+     * @hash   -1017057856
      */
     virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PINETREECANOPY
-#endif
 
 };

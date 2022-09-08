@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   583771704
      */
     virtual ~ExploreOutskirtsGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@ExploreOutskirtsGoal@@UEAA_NXZ
+     * @hash   -863523406
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@ExploreOutskirtsGoal@@UEAA_NXZ
+     * @hash   -1764393520
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@ExploreOutskirtsGoal@@UEAAXXZ
+     * @hash   1167263787
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@ExploreOutskirtsGoal@@UEAAXXZ
+     * @hash   -303823925
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@ExploreOutskirtsGoal@@UEAAXXZ
+     * @hash   1016741782
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@ExploreOutskirtsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1130601758
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLOREOUTSKIRTSGOAL
-#endif
     /**
      * @symbol ??0ExploreOutskirtsGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -2147332929
      */
     MCAPI ExploreOutskirtsGoal(class Mob &);
 

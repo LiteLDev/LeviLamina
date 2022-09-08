@@ -22,26 +22,110 @@ namespace VanillaTags {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class HashedString const DiamondDiggable;
-MCAPI extern class HashedString const Dirt;
-MCAPI extern class HashedString const FertilizeArea;
-MCAPI extern class HashedString const GoldDiggable;
-MCAPI extern class HashedString const Grass;
-MCAPI extern class HashedString const Gravel;
-MCAPI extern class HashedString const IronDiggable;
-MCAPI extern class HashedString const Metal;
-MCAPI extern class HashedString const MobSpawner;
-MCAPI extern class HashedString const NotFeatureReplaceable;
-MCAPI extern class HashedString const Plant;
-MCAPI extern class HashedString const Pumpkin;
-MCAPI extern class HashedString const Rail;
-MCAPI extern class HashedString const Sand;
-MCAPI extern class HashedString const Snow;
-MCAPI extern class HashedString const Stone;
-MCAPI extern class HashedString const StoneDiggable;
-MCAPI extern class HashedString const TextSign;
-MCAPI extern class HashedString const Water;
-MCAPI extern class HashedString const Wood;
-MCAPI extern class HashedString const WoodDiggable;
+    /**
+     * @symbol ?DiamondDiggable@VanillaTags@@3VHashedString@@B
+     * @hash   1214475865
+     */
+    MCAPI extern class HashedString const DiamondDiggable;
+    /**
+     * @symbol ?Dirt@VanillaTags@@3VHashedString@@B
+     * @hash   -218189105
+     */
+    MCAPI extern class HashedString const Dirt;
+    /**
+     * @symbol ?FertilizeArea@VanillaTags@@3VHashedString@@B
+     * @hash   936796637
+     */
+    MCAPI extern class HashedString const FertilizeArea;
+    /**
+     * @symbol ?GoldDiggable@VanillaTags@@3VHashedString@@B
+     * @hash   821547775
+     */
+    MCAPI extern class HashedString const GoldDiggable;
+    /**
+     * @symbol ?Grass@VanillaTags@@3VHashedString@@B
+     * @hash   324526623
+     */
+    MCAPI extern class HashedString const Grass;
+    /**
+     * @symbol ?Gravel@VanillaTags@@3VHashedString@@B
+     * @hash   -774833553
+     */
+    MCAPI extern class HashedString const Gravel;
+    /**
+     * @symbol ?IronDiggable@VanillaTags@@3VHashedString@@B
+     * @hash   -1032549377
+     */
+    MCAPI extern class HashedString const IronDiggable;
+    /**
+     * @symbol ?Metal@VanillaTags@@3VHashedString@@B
+     * @hash   -2010723695
+     */
+    MCAPI extern class HashedString const Metal;
+    /**
+     * @symbol ?MobSpawner@VanillaTags@@3VHashedString@@B
+     * @hash   -1618331167
+     */
+    MCAPI extern class HashedString const MobSpawner;
+    /**
+     * @symbol ?NotFeatureReplaceable@VanillaTags@@3VHashedString@@B
+     * @hash   486977113
+     */
+    MCAPI extern class HashedString const NotFeatureReplaceable;
+    /**
+     * @symbol ?Plant@VanillaTags@@3VHashedString@@B
+     * @hash   362471161
+     */
+    MCAPI extern class HashedString const Plant;
+    /**
+     * @symbol ?Pumpkin@VanillaTags@@3VHashedString@@B
+     * @hash   1760310787
+     */
+    MCAPI extern class HashedString const Pumpkin;
+    /**
+     * @symbol ?Rail@VanillaTags@@3VHashedString@@B
+     * @hash   -98055595
+     */
+    MCAPI extern class HashedString const Rail;
+    /**
+     * @symbol ?Sand@VanillaTags@@3VHashedString@@B
+     * @hash   557699705
+     */
+    MCAPI extern class HashedString const Sand;
+    /**
+     * @symbol ?Snow@VanillaTags@@3VHashedString@@B
+     * @hash   -1596588665
+     */
+    MCAPI extern class HashedString const Snow;
+    /**
+     * @symbol ?Stone@VanillaTags@@3VHashedString@@B
+     * @hash   308140573
+     */
+    MCAPI extern class HashedString const Stone;
+    /**
+     * @symbol ?StoneDiggable@VanillaTags@@3VHashedString@@B
+     * @hash   1222833867
+     */
+    MCAPI extern class HashedString const StoneDiggable;
+    /**
+     * @symbol ?TextSign@VanillaTags@@3VHashedString@@B
+     * @hash   1467007365
+     */
+    MCAPI extern class HashedString const TextSign;
+    /**
+     * @symbol ?Water@VanillaTags@@3VHashedString@@B
+     * @hash   -1784829711
+     */
+    MCAPI extern class HashedString const Water;
+    /**
+     * @symbol ?Wood@VanillaTags@@3VHashedString@@B
+     * @hash   1425932347
+     */
+    MCAPI extern class HashedString const Wood;
+    /**
+     * @symbol ?WoodDiggable@VanillaTags@@3VHashedString@@B
+     * @hash   883384233
+     */
+    MCAPI extern class HashedString const WoodDiggable;
 
 };

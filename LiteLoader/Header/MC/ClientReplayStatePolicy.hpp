@@ -31,43 +31,48 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -799434753
      */
     virtual ~ClientReplayStatePolicy();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
+     * @hash   997315037
      */
     virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEAUIActorMovementProxy@@_K1@Z
+     * @hash   914835045
      */
     virtual bool canRewindToFrame(struct IActorMovementProxy &, unsigned __int64, unsigned __int64);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@_K@Z
+     * @hash   -1238219717
      */
     virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy &, class PlayerAuthInputPacket const &, unsigned __int64);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?flagUnsupportedMovement@ClientReplayStatePolicy@@UEAAX_K@Z
+     * @hash   1949583782
      */
     virtual void flagUnsupportedMovement(unsigned __int64);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?storeCurrentFrameSupported@ClientReplayStatePolicy@@UEAAX_KAEAUIActorMovementProxy@@@Z
+     * @hash   1829532967
      */
     virtual void storeCurrentFrameSupported(unsigned __int64, struct IActorMovementProxy &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTREPLAYSTATEPOLICY
-#endif
     /**
      * @symbol ?_checkSupportedFrame@ClientReplayStatePolicy@@QEBA_NAEAUIActorMovementProxy@@@Z
+     * @hash   1625182629
      */
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy &) const;
     /**
      * @symbol ?_isSupportedMovementMode@ClientReplayStatePolicy@@QEBA_NAEBUIMobMovementProxy@@@Z
+     * @hash   -861809913
      */
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const &) const;
 

@@ -32,25 +32,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -416845305
      */
     virtual ~DedicatedWSServerCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@DedicatedWSServerCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -501085898
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDWSSERVERCOMMAND
-#endif
     /**
      * @symbol ?setup@DedicatedWSServerCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
+     * @hash   182851791
      */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 //private:
 
 private:
-MCAPI static class IMinecraftApp * mApp;
+    /**
+     * @symbol ?mApp@DedicatedWSServerCommand@@0PEAVIMinecraftApp@@EA
+     * @hash   -2107299390
+     */
+    MCAPI static class IMinecraftApp * mApp;
 
 };

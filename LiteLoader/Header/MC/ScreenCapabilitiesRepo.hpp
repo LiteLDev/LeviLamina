@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENCAPABILITIESREPO
-#endif
     /**
      * @symbol ??0ScreenCapabilitiesRepo@@QEAA@XZ
+     * @hash   -456331936
      */
     MCAPI ScreenCapabilitiesRepo();
     /**
      * @symbol ?get@ScreenCapabilitiesRepo@@QEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -285446163
      */
     MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const &) const;
 

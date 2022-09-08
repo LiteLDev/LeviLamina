@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISTANCECONSTRAINT
-#endif
     /**
      * @symbol ??0DistanceConstraint@@QEAA@MMM@Z
+     * @hash   -1643447637
      */
     MCAPI DistanceConstraint(float, float, float);
     /**
      * @symbol ?setup@DistanceConstraint@@QEAAMAEBVVec3@@0MM@Z
+     * @hash   2036866047
      */
     MCAPI float setup(class Vec3 const &, class Vec3 const &, float, float);
     /**
      * @symbol ?solve@DistanceConstraint@@QEAAXAEAVVec3@@0@Z
+     * @hash   1378868199
      */
     MCAPI void solve(class Vec3 &, class Vec3 &);
 

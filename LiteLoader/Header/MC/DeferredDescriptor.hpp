@@ -32,60 +32,68 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?clone@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
+     * @hash   -1556039588
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?sameItem@DeferredDescriptor@@UEBA_NAEBUItemEntry@ItemDescriptor@@_N@Z
+     * @hash   1725484296
      */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const &, bool) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getFullName@DeferredDescriptor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1650684214
      */
     virtual std::string const & getFullName() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?toMap@DeferredDescriptor@@UEBA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+     * @hash   -1763282974
      */
     virtual class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> toMap() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?save@DeferredDescriptor@@UEBA?AV?$optional@VCompoundTag@@@std@@XZ
+     * @hash   -1268735418
      */
     virtual class std::optional<class CompoundTag> save() const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getType@DeferredDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
+     * @hash   -1114845567
      */
     virtual enum ItemDescriptor::InternalType getType() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?shouldResolve@DeferredDescriptor@@UEBA_NXZ
+     * @hash   -1712213597
      */
     virtual bool shouldResolve() const;
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -341782524
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?resolve@DeferredDescriptor@@UEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@XZ
+     * @hash   -1420433781
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFERREDDESCRIPTOR
-#endif
 
 //private:
     /**
      * @symbol ?_initFromBlockLegacy@DeferredDescriptor@@AEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@AEBVBlockLegacy@@$$QEAV?$WeakPtr@VItem@@@@@Z
+     * @hash   1963471029
      */
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromBlockLegacy(class BlockLegacy const &, class WeakPtr<class Item> &&) const;
     /**
      * @symbol ?_initFromItem@DeferredDescriptor@@AEBA?AV?$unique_ptr@UBaseDescriptor@ItemDescriptor@@U?$default_delete@UBaseDescriptor@ItemDescriptor@@@std@@@std@@$$QEAV?$WeakPtr@VItem@@@@F@Z
+     * @hash   -1700663717
      */
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromItem(class WeakPtr<class Item> &&, short) const;
 

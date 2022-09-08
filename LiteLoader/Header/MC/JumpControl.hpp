@@ -30,64 +30,68 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1133266147
      */
     virtual ~JumpControl();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?clone@JumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
+     * @hash   -89962889
      */
     virtual std::unique_ptr<class JumpControl> clone() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?tick@JumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
+     * @hash   -1271788044
      */
     virtual void tick(class JumpControlComponent &, class Mob &);
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1369989580
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getJumpPower@JumpControl@@MEBAMAEBVJumpControlComponent@@@Z
+     * @hash   1319684776
      */
     virtual float getJumpPower(class JumpControlComponent const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getJumpDelay@JumpControl@@MEBAHAEBVJumpControlComponent@@@Z
+     * @hash   1484375325
      */
     MCVAPI int getJumpDelay(class JumpControlComponent const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getJumpType@JumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
+     * @hash   641387905
      */
     MCVAPI enum JumpType getJumpType(class JumpControlComponent const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?initializeInternal@JumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
+     * @hash   1168684585
      */
     MCVAPI void initializeInternal(class Mob &, struct JumpControlDescription *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
+     * @hash   -1002648343
      */
     MCVAPI void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setJumpType@JumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
+     * @hash   -549717183
      */
     MCVAPI void setJumpType(class JumpControlComponent &, enum JumpType);
 #endif
     /**
      * @symbol ??0JumpControl@@QEAA@XZ
+     * @hash   855406955
      */
     MCAPI JumpControl();
 

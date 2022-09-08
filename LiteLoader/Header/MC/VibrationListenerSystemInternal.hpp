@@ -22,6 +22,7 @@ namespace VibrationListenerSystemInternal {
 #undef AFTER_EXTRA
     /**
      * @symbol ?tickComponent@VibrationListenerSystemInternal@@YAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@VVibrationListenerComponent@@@@@Z
+     * @hash   1638793876
      */
     MCAPI void tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class VibrationListenerComponent> &);
 

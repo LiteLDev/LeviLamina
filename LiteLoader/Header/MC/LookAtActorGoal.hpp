@@ -31,55 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1370319644
      */
     virtual ~LookAtActorGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@LookAtActorGoal@@UEAA_NXZ
+     * @hash   -85600982
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@LookAtActorGoal@@UEAA_NXZ
+     * @hash   655122520
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@LookAtActorGoal@@UEAAXXZ
+     * @hash   1818258835
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@LookAtActorGoal@@UEAAXXZ
+     * @hash   -1610129085
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@LookAtActorGoal@@UEAAXXZ
+     * @hash   -1748717906
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@LookAtActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1465378262
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATACTORGOAL
-#endif
     /**
      * @symbol ??0LookAtActorGoal@@QEAA@AEAVMob@@MMHHHH@Z
+     * @hash   1598944775
      */
     MCAPI LookAtActorGoal(class Mob &, float, float, int, int, int, int);
 
 //private:
     /**
      * @symbol ?_withinFieldOfView@LookAtActorGoal@@AEAA_NAEAVActor@@@Z
+     * @hash   -1893702213
      */
     MCAPI bool _withinFieldOfView(class Actor &);
 

@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1365210399
      */
     virtual ~WaitNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@WaitNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   595806212
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@WaitNode@@EEAAXAEAVActor@@@Z
+     * @hash   53679016
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WAITNODE
-#endif
     /**
      * @symbol ??0WaitNode@@QEAA@XZ
+     * @hash   -1211915901
      */
     MCAPI WaitNode();
 

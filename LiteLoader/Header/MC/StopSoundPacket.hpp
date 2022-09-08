@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   278319843
      */
     virtual ~StopSoundPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@StopSoundPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1258575479
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@StopSoundPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1548944438
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@StopSoundPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1398928833
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@StopSoundPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   2088734865
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPSOUNDPACKET
-#endif
     /**
      * @symbol ??0StopSoundPacket@@QEAA@XZ
+     * @hash   799830097
      */
     MCAPI StopSoundPacket();
     /**
      * @symbol ??0StopSoundPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   -131452031
      */
     MCAPI StopSoundPacket(std::string const &, bool);
 

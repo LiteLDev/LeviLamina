@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@ManagedWanderingTraderDescription@@UEBAPEBDXZ
+     * @hash   122567100
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   1371876550
      */
     virtual ~ManagedWanderingTraderDescription();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@ManagedWanderingTraderDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   573440737
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANAGEDWANDERINGTRADERDESCRIPTION
-#endif
 
 };

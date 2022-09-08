@@ -26,11 +26,11 @@ public:
     PistonActionEvent(struct PistonActionEvent const &) = delete;
     PistonActionEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONACTIONEVENT
-#endif
     /**
      * @symbol ??1PistonActionEvent@@QEAA@XZ
+     * @hash   2067714679
      */
     MCAPI ~PistonActionEvent();
 

@@ -26,11 +26,11 @@ public:
     DBStorageConfig(struct DBStorageConfig const &) = delete;
     DBStorageConfig() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGECONFIG
-#endif
     /**
      * @symbol ??1DBStorageConfig@@QEAA@XZ
+     * @hash   311350587
      */
     MCAPI ~DBStorageConfig();
 

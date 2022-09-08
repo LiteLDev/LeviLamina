@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGER
-#endif
     /**
      * @symbol ??1OnInteractTrigger@@QEAA@XZ
+     * @hash   -341381473
      */
     MCAPI ~OnInteractTrigger();
 

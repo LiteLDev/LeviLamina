@@ -27,10 +27,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONEORIENTATIONTRANSFORM
-#endif
     /**
      * @symbol ??0BoneOrientationTransform@@QEAA@XZ
+     * @hash   808331324
      */
     MCAPI BoneOrientationTransform();
 

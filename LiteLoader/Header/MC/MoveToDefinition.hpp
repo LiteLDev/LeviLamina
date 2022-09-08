@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1724909463
      */
     virtual ~MoveToDefinition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@MoveToDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   554578213
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETODEFINITION
-#endif
 
 };

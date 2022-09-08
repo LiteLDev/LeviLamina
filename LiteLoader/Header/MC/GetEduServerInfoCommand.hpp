@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   285838376
      */
     virtual ~GetEduServerInfoCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@GetEduServerInfoCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   700946729
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETEDUSERVERINFOCOMMAND
-#endif
     /**
      * @symbol ?setup@GetEduServerInfoCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -282104240
      */
     MCAPI static void setup(class CommandRegistry &);
 

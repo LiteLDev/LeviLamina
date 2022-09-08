@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   301525358
      */
     virtual ~ShulkerBoxContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHULKERBOXCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0ShulkerBoxContainerScreenValidator@@QEAA@XZ
+     * @hash   672418448
      */
     MCAPI ShulkerBoxContainerScreenValidator();
 

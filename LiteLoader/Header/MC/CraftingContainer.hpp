@@ -32,68 +32,76 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1258889939
      */
     virtual ~CraftingContainer();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   -277533736
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getItem@CraftingContainer@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1037565085
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setItem@CraftingContainer@@UEAAXHAEBVItemStack@@@Z
+     * @hash   -30348366
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?getContainerSize@CraftingContainer@@UEBAHXZ
+     * @hash   -1521221656
      */
     virtual int getContainerSize() const;
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?getMaxStackSize@CraftingContainer@@UEBAHXZ
+     * @hash   223005591
      */
     virtual int getMaxStackSize() const;
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1064196353
      */
     virtual void startOpen(class Player &);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1220708449
      */
     virtual void stopOpen(class Player &);
     /**
-     * @note   Virtual function table index: 22
-     * @symbol 
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @note   Virtual function table index: 23
-     * @symbol 
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
     /**
-     * @note   Virtual function table index: 24
+     * @vftbl  24
      * @symbol ?setContainerChanged@CraftingContainer@@UEAAXH@Z
+     * @hash   -509296430
      */
     virtual void setContainerChanged(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTINGCONTAINER
-#endif
     /**
      * @symbol ??0CraftingContainer@@QEAA@HH@Z
+     * @hash   772203043
      */
     MCAPI CraftingContainer(int, int);
     /**
      * @symbol ?getItem@CraftingContainer@@QEBAAEBVItemStack@@HH@Z
+     * @hash   -464070110
      */
     MCAPI class ItemStack const & getItem(int, int) const;
 

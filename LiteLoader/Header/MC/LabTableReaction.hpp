@@ -30,30 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEREACTION
-#endif
     /**
      * @symbol ?addComponent@LabTableReaction@@QEAAXV?$unique_ptr@VLabTableReactionComponent@@U?$default_delete@VLabTableReactionComponent@@@std@@@std@@@Z
+     * @hash   -1295736304
      */
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);
     /**
      * @symbol ?addResultItem@LabTableReaction@@QEAAXAEBVItemStack@@@Z
+     * @hash   1971564168
      */
     MCAPI void addResultItem(class ItemStack const &);
     /**
      * @symbol ?getReactionId@LabTableReaction@@QEAAHXZ
+     * @hash   1613240536
      */
     MCAPI int getReactionId();
     /**
      * @symbol ?getType@LabTableReaction@@QEAA?AW4LabTableReactionType@@XZ
+     * @hash   1948396956
      */
     MCAPI enum LabTableReactionType getType();
     /**
      * @symbol ?tick@LabTableReaction@@QEAA_NAEAVBlockSource@@@Z
+     * @hash   -1675973851
      */
     MCAPI bool tick(class BlockSource &);
     /**
      * @symbol ?createReaction@LabTableReaction@@SA?AV?$unique_ptr@VLabTableReaction@@U?$default_delete@VLabTableReaction@@@std@@@std@@W4LabTableReactionType@@AEBVBlockPos@@_N@Z
+     * @hash   125520013
      */
     MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum LabTableReactionType, class BlockPos const &, bool);
 

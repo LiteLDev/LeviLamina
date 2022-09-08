@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLOCKSPRITECALCULATOR
-#endif
     /**
      * @symbol ??0ClockSpriteCalculator@@QEAA@XZ
+     * @hash   671301585
      */
     MCAPI ClockSpriteCalculator();
     /**
      * @symbol ?getFrame@ClockSpriteCalculator@@QEBAHXZ
+     * @hash   -297860860
      */
     MCAPI int getFrame() const;
     /**
      * @symbol ?update@ClockSpriteCalculator@@QEAAHAEAVActor@@_N@Z
+     * @hash   -1225924014
      */
     MCAPI int update(class Actor &, bool);
     /**
      * @symbol ?update@ClockSpriteCalculator@@QEAAHAEBVBlockSource@@AEBVVec3@@_N@Z
+     * @hash   68911231
      */
     MCAPI int update(class BlockSource const &, class Vec3 const &, bool);
 

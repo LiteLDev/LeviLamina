@@ -32,34 +32,52 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -469111692
      */
     virtual ~TextObjectScore();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?asString@TextObjectScore@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1130383815
      */
     virtual std::string asString() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?asJsonValue@TextObjectScore@@UEBA?AVValue@Json@@XZ
+     * @hash   1328883687
      */
     virtual class Json::Value asJsonValue() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?resolve@TextObjectScore@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+     * @hash   -833947448
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTSCORE
-#endif
     /**
      * @symbol ??0TextObjectScore@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   597217335
      */
     MCAPI TextObjectScore(std::string, std::string);
-MCAPI static std::string const RAW_TEXT_SCORE_KEY;
-MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
-MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;
-MCAPI static std::string const RAW_TEXT_SCORE_STAR;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -9349375
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_KEY;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_NAME_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1464754687
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_OBJECTIVE_KEY@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -391753023
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;
+    /**
+     * @symbol ?RAW_TEXT_SCORE_STAR@TextObjectScore@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   550185695
+     */
+    MCAPI static std::string const RAW_TEXT_SCORE_STAR;
 
 };

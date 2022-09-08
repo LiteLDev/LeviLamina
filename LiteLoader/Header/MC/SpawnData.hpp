@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNDATA
-#endif
     /**
      * @symbol ??0SpawnData@@QEAA@AEBVCompoundTag@@@Z
+     * @hash   1074392582
      */
     MCAPI SpawnData(class CompoundTag const &);
     /**
      * @symbol ??0SpawnData@@QEAA@AEBV0@@Z
+     * @hash   866757073
      */
     MCAPI SpawnData(class SpawnData const &);
     /**
      * @symbol ?save@SpawnData@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -1271787894
      */
     MCAPI std::unique_ptr<class CompoundTag> save();
 

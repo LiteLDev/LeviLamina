@@ -30,88 +30,106 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKBASE
-#endif
     /**
      * @symbol ??0BackgroundTaskBase@@QEAA@V?$not_null@PEAVIBackgroundTaskOwner@@@gsl@@AEBUTaskStartInfoBase@@_N@Z
+     * @hash   375688574
      */
     MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner *>, struct TaskStartInfoBase const &, bool);
     /**
      * @symbol ?_makeOrphan@BackgroundTaskBase@@QEAAXXZ
+     * @hash   1803396051
      */
     MCAPI void _makeOrphan();
     /**
      * @symbol ?canBeRunBy@BackgroundTaskBase@@QEBA_NVid@thread@std@@@Z
+     * @hash   -159026627
      */
     MCAPI bool canBeRunBy(class std::thread::id) const;
     /**
      * @symbol ?getGroup@BackgroundTaskBase@@QEAAPEAVIBackgroundTaskOwner@@XZ
+     * @hash   -1587470493
      */
     MCAPI class IBackgroundTaskOwner * getGroup();
     /**
      * @symbol ?getGroupState@BackgroundTaskBase@@QEBA?AW4TaskGroupState@@XZ
+     * @hash   638602002
      */
     MCAPI enum TaskGroupState getGroupState() const;
     /**
      * @symbol ?getNext@BackgroundTaskBase@@QEAA?AV?$shared_ptr@VBackgroundTaskBase@@@std@@XZ
+     * @hash   1210949469
      */
     MCAPI class std::shared_ptr<class BackgroundTaskBase> getNext();
     /**
      * @symbol ?getPrev@BackgroundTaskBase@@QEAAPEAV1@XZ
+     * @hash   778784448
      */
     MCAPI class BackgroundTaskBase * getPrev();
     /**
      * @symbol ?getPriority@BackgroundTaskBase@@QEBAHXZ
+     * @hash   -437392746
      */
     MCAPI int getPriority() const;
     /**
      * @symbol ?getStartAfterTime@BackgroundTaskBase@@QEBA?AV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@XZ
+     * @hash   -611016595
      */
     MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getStartAfterTime() const;
     /**
      * @symbol ?hasAffinity@BackgroundTaskBase@@QEBA_NXZ
+     * @hash   -486477380
      */
     MCAPI bool hasAffinity() const;
     /**
      * @symbol ?isAsync@BackgroundTaskBase@@QEBA_NXZ
+     * @hash   -855407412
      */
     MCAPI bool isAsync() const;
     /**
      * @symbol ?isOrphaned@BackgroundTaskBase@@QEBA_NXZ
+     * @hash   -516557304
      */
     MCAPI bool isOrphaned() const;
     /**
      * @symbol ?isReadyToStart@BackgroundTaskBase@@QEBA_NV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+     * @hash   1752781248
      */
     MCAPI bool isReadyToStart(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>) const;
     /**
      * @symbol ?setNext@BackgroundTaskBase@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
+     * @hash   280249147
      */
     MCAPI void setNext(class std::shared_ptr<class BackgroundTaskBase>);
     /**
      * @symbol ?setPrev@BackgroundTaskBase@@QEAAXPEAV1@@Z
+     * @hash   1299699120
      */
     MCAPI void setPrev(class BackgroundTaskBase *);
     /**
      * @symbol ?setStartAfterTime@BackgroundTaskBase@@QEAAXV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+     * @hash   1015579503
      */
     MCAPI void setStartAfterTime(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
     /**
      * @symbol ?setSyncPriority@BackgroundTaskBase@@QEAAXXZ
+     * @hash   1453480899
      */
     MCAPI void setSyncPriority();
     /**
      * @symbol ?getCurrent@BackgroundTaskBase@@SAPEAV1@XZ
+     * @hash   -1461563444
      */
     MCAPI static class BackgroundTaskBase * getCurrent();
 
 //protected:
     /**
      * @symbol ?backDownPriority@BackgroundTaskBase@@IEAAXXZ
+     * @hash   -1829131908
      */
     MCAPI void backDownPriority();
     /**
      * @symbol ?taskComplete@BackgroundTaskBase@@IEAAXXZ
+     * @hash   -156996611
      */
     MCAPI void taskComplete();
 
@@ -120,6 +138,10 @@ public:
 protected:
 
 private:
-MCAPI static class BackgroundTaskBase * gCurrentTask;
+    /**
+     * @symbol ?gCurrentTask@BackgroundTaskBase@@0PEAV1@EA
+     * @hash   -458357501
+     */
+    MCAPI static class BackgroundTaskBase * gCurrentTask;
 
 };

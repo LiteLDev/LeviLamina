@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   209699303
      */
     virtual ~StickInGroundSubcomponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?readfromJSON@StickInGroundSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   1539400495
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?writetoJSON@StickInGroundSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1972276682
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@StickInGroundSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -1644757575
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@StickInGroundSubcomponent@@UEAAPEBDXZ
+     * @hash   -830826204
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STICKINGROUNDSUBCOMPONENT
-#endif
     /**
      * @symbol ??0StickInGroundSubcomponent@@QEAA@XZ
+     * @hash   -114929051
      */
     MCAPI StickInGroundSubcomponent();
 

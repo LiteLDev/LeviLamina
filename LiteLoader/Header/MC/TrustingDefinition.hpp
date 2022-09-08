@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTINGDEFINITION
-#endif
     /**
      * @symbol ??0TrustingDefinition@@QEAA@XZ
+     * @hash   -597287767
      */
     MCAPI TrustingDefinition();
     /**
      * @symbol ?addTrustItemByName@TrustingDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1916732348
      */
     MCAPI void addTrustItemByName(std::string const &);
     /**
      * @symbol ?initialize@TrustingDefinition@@QEBAXAEAVEntityContext@@AEAVTrustingComponent@@@Z
+     * @hash   -432165459
      */
     MCAPI void initialize(class EntityContext &, class TrustingComponent &) const;
     /**
      * @symbol ?buildSchema@TrustingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTrustingDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1883416378
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TrustingDefinition>> &);
 

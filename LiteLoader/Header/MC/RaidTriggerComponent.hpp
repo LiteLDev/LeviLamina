@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDTRIGGERCOMPONENT
-#endif
     /**
      * @symbol ?initFromDefinition@RaidTriggerComponent@@QEAAXAEAVActor@@@Z
+     * @hash   89634106
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?reloadComponent@RaidTriggerComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -2001713908
      */
     MCAPI void reloadComponent(class Actor &);
 

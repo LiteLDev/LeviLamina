@@ -37,19 +37,35 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKPOS
-#endif
     /**
      * @symbol ??0SubChunkPos@@QEAA@AEBVBlockPos@@@Z
+     * @hash   -1207617926
      */
     MCAPI SubChunkPos(class BlockPos const &);
     /**
      * @symbol ??BSubChunkPos@@QEBA?AVBlockPos@@XZ
+     * @hash   -1726023225
      */
     MCAPI operator class BlockPos() const;
-MCAPI static class SubChunkPos const MAX;
-MCAPI static class SubChunkPos const MIN;
-MCAPI static class SubChunkPos const ONE;
-MCAPI static class SubChunkPos const ZERO;
+    /**
+     * @symbol ?MAX@SubChunkPos@@2V1@B
+     * @hash   -458130485
+     */
+    MCAPI static class SubChunkPos const MAX;
+    /**
+     * @symbol ?MIN@SubChunkPos@@2V1@B
+     * @hash   -1476438121
+     */
+    MCAPI static class SubChunkPos const MIN;
+    /**
+     * @symbol ?ONE@SubChunkPos@@2V1@B
+     * @hash   -579542049
+     */
+    MCAPI static class SubChunkPos const ONE;
+    /**
+     * @symbol ?ZERO@SubChunkPos@@2V1@B
+     * @hash   1753332217
+     */
+    MCAPI static class SubChunkPos const ZERO;
 
 };

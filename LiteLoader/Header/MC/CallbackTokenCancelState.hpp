@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CALLBACKTOKENCANCELSTATE
-#endif
     /**
      * @symbol ??0CallbackTokenCancelState@@QEAA@XZ
+     * @hash   1273291151
      */
     MCAPI CallbackTokenCancelState();
     /**
      * @symbol ?wasCanceled@CallbackTokenCancelState@@QEBA_NXZ
+     * @hash   370237054
      */
     MCAPI bool wasCanceled() const;
 

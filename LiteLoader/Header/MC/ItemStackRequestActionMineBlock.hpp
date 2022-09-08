@@ -32,55 +32,60 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   529664184
      */
     virtual ~ItemStackRequestActionMineBlock();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   2004456210
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1370913101
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionMineBlock@@MEBAXAEAVBinaryStream@@@Z
+     * @hash   -635760964
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionMineBlock@@MEAA_NAEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1987350636
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONMINEBLOCK
-#endif
     /**
      * @symbol ??0ItemStackRequestActionMineBlock@@QEAA@XZ
+     * @hash   -1566683994
      */
     MCAPI ItemStackRequestActionMineBlock();
     /**
      * @symbol ?getPreValidationStatus@ItemStackRequestActionMineBlock@@QEBA?AW4PreValidationStatus@1@XZ
+     * @hash   -43184497
      */
     MCAPI enum ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     /**
      * @symbol ?getPredictedDurability@ItemStackRequestActionMineBlock@@QEBAHXZ
+     * @hash   1790784252
      */
     MCAPI int getPredictedDurability() const;
     /**
      * @symbol ?getSrc@ItemStackRequestActionMineBlock@@QEBA?AUItemStackRequestSlotInfo@@XZ
+     * @hash   -1726637396
      */
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     /**
      * @symbol ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
+     * @hash   1510675875
      */
     MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
 

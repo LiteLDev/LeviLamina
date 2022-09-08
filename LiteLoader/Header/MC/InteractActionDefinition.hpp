@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1070785463
      */
     virtual ~InteractActionDefinition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@InteractActionDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   883036277
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTACTIONDEFINITION
-#endif
 
 };

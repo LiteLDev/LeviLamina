@@ -32,38 +32,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -151052076
      */
     virtual ~SetHealthPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@SetHealthPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1713313400
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@SetHealthPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1301664037
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@SetHealthPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   2003838690
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@SetHealthPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   631014898
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETHEALTHPACKET
-#endif
     /**
      * @symbol ??0SetHealthPacket@@QEAA@XZ
+     * @hash   -2129433006
      */
     MCAPI SetHealthPacket();
     /**
      * @symbol ??0SetHealthPacket@@QEAA@H@Z
+     * @hash   -843319431
      */
     MCAPI SetHealthPacket(int);
 

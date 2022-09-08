@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@BucketableDescription@@UEBAPEBDXZ
+     * @hash   -1129182004
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -804949530
      */
     virtual ~BucketableDescription();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@BucketableDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1323329279
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLEDESCRIPTION
-#endif
 
 };

@@ -28,30 +28,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDINGDATA
-#endif
     /**
      * @symbol ?createDataForStorage@BlendingData@@QEBA?AUPersistentBlendData@@W4BlendVersion@@@Z
+     * @hash   -746697729
      */
     MCAPI struct PersistentBlendData createDataForStorage(enum BlendVersion) const;
     /**
      * @symbol ?getBiome@BlendingData@@QEBA?AV?$ScalarOptional@E@@HHH@Z
+     * @hash   175230508
      */
     MCAPI class ScalarOptional<unsigned char> getBiome(int, int, int) const;
     /**
      * @symbol ?getBlockType@BlendingData@@QEBA?AW4BlendingBlockType@@HHH@Z
+     * @hash   1798218939
      */
     MCAPI enum BlendingBlockType getBlockType(int, int, int) const;
     /**
      * @symbol ?getDensity@BlendingData@@QEBA?AV?$ScalarOptional@M@@HHH@Z
+     * @hash   -577029319
      */
     MCAPI class ScalarOptional<float> getDensity(int, int, int) const;
     /**
      * @symbol ?getHeight@BlendingData@@QEBA?AV?$ScalarOptional@F@@HH@Z
+     * @hash   -1674217667
      */
     MCAPI class ScalarOptional<short> getHeight(int, int) const;
     /**
      * @symbol ?hasBlendDataAt@BlendingData@@QEBA_NHH@Z
+     * @hash   1735774760
      */
     MCAPI bool hasBlendDataAt(int, int) const;
 

@@ -26,11 +26,11 @@ public:
     ActorDefinitionIdentifierComponent(struct ActorDefinitionIdentifierComponent const &) = delete;
     ActorDefinitionIdentifierComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONIDENTIFIERCOMPONENT
-#endif
     /**
      * @symbol ??1ActorDefinitionIdentifierComponent@@QEAA@XZ
+     * @hash   971703510
      */
     MCAPI ~ActorDefinitionIdentifierComponent();
 

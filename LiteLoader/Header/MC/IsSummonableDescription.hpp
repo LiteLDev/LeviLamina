@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1695377157
      */
     virtual ~IsSummonableDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getJsonName@IsSummonableDescription@@UEBAPEBDXZ
+     * @hash   -1000047811
      */
     virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSUMMONABLEDESCRIPTION
-#endif
     /**
      * @symbol ?parse@IsSummonableDescription@@QEAAXAEBVValue@Json@@@Z
+     * @hash   1824297128
      */
     MCAPI void parse(class Json::Value const &);
 

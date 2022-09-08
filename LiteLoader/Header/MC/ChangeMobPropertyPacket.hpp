@@ -36,34 +36,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1218971611
      */
     virtual ~ChangeMobPropertyPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@ChangeMobPropertyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -504806671
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@ChangeMobPropertyPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -543187554
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@ChangeMobPropertyPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -723451319
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@ChangeMobPropertyPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -309548775
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANGEMOBPROPERTYPACKET
-#endif
     /**
      * @symbol ??0ChangeMobPropertyPacket@@QEAA@XZ
+     * @hash   762089625
      */
     MCAPI ChangeMobPropertyPacket();
 

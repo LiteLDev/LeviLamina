@@ -27,19 +27,21 @@ public:
     struct GiveableTrigger& operator=(struct GiveableTrigger const &) = delete;
     GiveableTrigger() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GIVEABLETRIGGER
-#endif
     /**
      * @symbol ??0GiveableTrigger@@QEAA@AEBU0@@Z
+     * @hash   -860609371
      */
     MCAPI GiveableTrigger(struct GiveableTrigger const &);
     /**
      * @symbol ?addItem@GiveableTrigger@@QEAAXAEBVItemDescriptor@@@Z
+     * @hash   1867025056
      */
     MCAPI void addItem(class ItemDescriptor const &);
     /**
      * @symbol ??1GiveableTrigger@@QEAA@XZ
+     * @hash   281887833
      */
     MCAPI ~GiveableTrigger();
 

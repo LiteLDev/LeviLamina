@@ -30,29 +30,30 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1092630569
      */
     virtual ~StoneCutterContainerScreenValidator();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   2003240545
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isCraftingImplemented@StoneCutterContainerScreenValidator@@UEAA_NXZ
+     * @hash   1413112006
      */
     virtual bool isCraftingImplemented();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getCraftResult@StoneCutterContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+     * @hash   152259240
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STONECUTTERCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0StoneCutterContainerScreenValidator@@QEAA@XZ
+     * @hash   -305038059
      */
     MCAPI StoneCutterContainerScreenValidator();
 

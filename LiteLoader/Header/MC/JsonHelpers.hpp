@@ -25,26 +25,32 @@ namespace JsonHelpers {
 #undef AFTER_EXTRA
     /**
      * @symbol ?addObjectArrayField@JsonHelpers@@YAXAEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VValue@Json@@V?$allocator@VValue@Json@@@std@@@5@@Z
+     * @hash   466781411
      */
     MCAPI void addObjectArrayField(class Json::Value &, std::string const &, std::vector<class Json::Value> const &);
     /**
      * @symbol ?addObjectField@JsonHelpers@@YAXAEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     * @hash   -1044381197
      */
     MCAPI void addObjectField(class Json::Value &, std::string const &, class Json::Value const &);
     /**
      * @symbol ?addStringField@JsonHelpers@@YAXAEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+     * @hash   49603877
      */
     MCAPI void addStringField(class Json::Value &, std::string const &, std::string const &);
     /**
      * @symbol ?addUint32Field@JsonHelpers@@YAXAEAVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBI@Z
+     * @hash   -1569155290
      */
     MCAPI void addUint32Field(class Json::Value &, std::string const &, unsigned int const &);
     /**
      * @symbol ?parseJson@JsonHelpers@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVValue@Json@@@Z
+     * @hash   120651509
      */
     MCAPI bool parseJson(std::string const &, class Json::Value &);
     /**
      * @symbol ?serialize@JsonHelpers@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z
+     * @hash   1809975428
      */
     MCAPI std::string serialize(class Json::Value const &);
 

@@ -32,34 +32,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   137031504
      */
     virtual ~MineshaftRoom();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?moveBoundingBox@MineshaftRoom@@UEAAXHHH@Z
+     * @hash   702250804
      */
     virtual void moveBoundingBox(int, int, int);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getType@MineshaftRoom@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   1002650985
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?addChildren@MineshaftRoom@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+     * @hash   904304791
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?postProcess@MineshaftRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   1890292383
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTROOM
-#endif
     /**
      * @symbol ??0MineshaftRoom@@QEAA@AEAUMineshaftData@@HAEAVRandom@@HH@Z
+     * @hash   -708500449
      */
     MCAPI MineshaftRoom(struct MineshaftData &, int, class Random &, int, int);
 

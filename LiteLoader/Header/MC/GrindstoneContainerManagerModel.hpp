@@ -32,53 +32,71 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -325074022
      */
     virtual ~GrindstoneContainerManagerModel();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getItemCopies@GrindstoneContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   746475571
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setSlot@GrindstoneContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   1825571148
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getSlot@GrindstoneContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   1109937445
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setData@GrindstoneContainerManagerModel@@UEAAXHH@Z
+     * @hash   -190273529
      */
     virtual void setData(int, int);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@GrindstoneContainerManagerModel@@UEAAXXZ
+     * @hash   125577981
      */
     virtual void broadcastChanges();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?isValid@GrindstoneContainerManagerModel@@UEAA_NM@Z
+     * @hash   -374583021
      */
     virtual bool isValid(float);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_postInit@GrindstoneContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -363088998
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONECONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0GrindstoneContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -581636759
      */
     MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-MCAPI static int const ADDITIONAL_SLOT;
-MCAPI static int const INPUT_SLOT;
-MCAPI static int const RESULT_SLOT;
+    /**
+     * @symbol ?ADDITIONAL_SLOT@GrindstoneContainerManagerModel@@2HB
+     * @hash   -1238835935
+     */
+    MCAPI static int const ADDITIONAL_SLOT;
+    /**
+     * @symbol ?INPUT_SLOT@GrindstoneContainerManagerModel@@2HB
+     * @hash   1393484725
+     */
+    MCAPI static int const INPUT_SLOT;
+    /**
+     * @symbol ?RESULT_SLOT@GrindstoneContainerManagerModel@@2HB
+     * @hash   716860345
+     */
+    MCAPI static int const RESULT_SLOT;
 
 };

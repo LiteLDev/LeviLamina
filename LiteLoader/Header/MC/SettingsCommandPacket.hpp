@@ -31,42 +31,47 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -842019042
      */
     virtual ~SettingsCommandPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@SettingsCommandPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   929158702
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@SettingsCommandPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -589967141
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@SettingsCommandPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -620493476
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@SettingsCommandPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1948736236
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTINGSCOMMANDPACKET
-#endif
     /**
      * @symbol ??0SettingsCommandPacket@@QEAA@XZ
+     * @hash   1091958844
      */
     MCAPI SettingsCommandPacket();
     /**
      * @symbol ?getCommandString@SettingsCommandPacket@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   2126287736
      */
     MCAPI std::string const & getCommandString() const;
     /**
      * @symbol ?getSupressOutput@SettingsCommandPacket@@QEBA_NXZ
+     * @hash   71196416
      */
     MCAPI bool getSupressOutput() const;
 

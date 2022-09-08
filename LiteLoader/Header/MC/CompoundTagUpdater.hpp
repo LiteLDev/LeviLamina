@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATER
-#endif
     /**
      * @symbol ?update@CompoundTagUpdater@@QEBA_NAEAVCompoundTag@@@Z
+     * @hash   -1635223603
      */
     MCAPI bool update(class CompoundTag &) const;
     /**
      * @symbol ??1CompoundTagUpdater@@QEAA@XZ
+     * @hash   2136094836
      */
     MCAPI ~CompoundTagUpdater();
 

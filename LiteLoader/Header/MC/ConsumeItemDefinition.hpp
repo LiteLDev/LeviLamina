@@ -33,11 +33,9 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1672139344
      */
     virtual ~ConsumeItemDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMDEFINITION
-#endif
 
 };

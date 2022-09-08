@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1704857026
      */
     virtual ~AutomationClientConnectPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@AutomationClientConnectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1217942462
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@AutomationClientConnectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1686261355
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@AutomationClientConnectPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   903182012
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@AutomationClientConnectPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   2117720812
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AUTOMATIONCLIENTCONNECTPACKET
-#endif
     /**
      * @symbol ??0AutomationClientConnectPacket@@QEAA@XZ
+     * @hash   1925560444
      */
     MCAPI AutomationClientConnectPacket();
     /**
      * @symbol ??0AutomationClientConnectPacket@@QEAA@UWebSocketPacketData@@@Z
+     * @hash   -591269719
      */
     MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
 

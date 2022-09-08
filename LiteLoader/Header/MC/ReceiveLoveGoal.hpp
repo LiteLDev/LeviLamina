@@ -31,59 +31,62 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1496800778
      */
     virtual ~ReceiveLoveGoal();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   605057620
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   605981141
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@ReceiveLoveGoal@@UEAAXXZ
+     * @hash   -1904862820
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@ReceiveLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   789408216
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canContinueToUse@ReceiveLoveGoal@@UEAA_NXZ
+     * @hash   1654739798
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canUse@ReceiveLoveGoal@@UEAA_NXZ
+     * @hash   913847160
      */
     MCVAPI bool canUse();
 #endif
     /**
      * @symbol ??0ReceiveLoveGoal@@QEAA@AEAVVillagerBase@@@Z
+     * @hash   1504820317
      */
     MCAPI ReceiveLoveGoal(class VillagerBase &);
 

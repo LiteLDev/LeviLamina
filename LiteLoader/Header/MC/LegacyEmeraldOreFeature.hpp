@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1744210691
      */
     virtual ~LegacyEmeraldOreFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@LegacyEmeraldOreFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1280112377
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYEMERALDOREFEATURE
-#endif
 
 };

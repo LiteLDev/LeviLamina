@@ -32,279 +32,299 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -704707424
      */
     virtual ~TrapDoorBlock();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?getAABB@TrapDoorBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
+     * @hash   592865234
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -327659668
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?canProvideSupport@TrapDoorBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+     * @hash   659227569
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
     /**
-     * @note   Virtual function table index: 25
+     * @vftbl  25
      * @symbol ?canConnect@TrapDoorBlock@@UEBA_NAEBVBlock@@E0@Z
+     * @hash   -371889127
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -276866013
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -275942492
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -275018971
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 36
-     * @symbol 
+     * @vftbl  36
+     * @hash   -273171929
      */
     virtual void __unk_vfn_36();
     /**
-     * @note   Virtual function table index: 37
-     * @symbol 
+     * @vftbl  37
+     * @hash   -272248408
      */
     virtual void __unk_vfn_37();
     /**
-     * @note   Virtual function table index: 38
-     * @symbol 
+     * @vftbl  38
+     * @hash   -271324887
      */
     virtual void __unk_vfn_38();
     /**
-     * @note   Virtual function table index: 39
-     * @symbol 
+     * @vftbl  39
+     * @hash   -270401366
      */
     virtual void __unk_vfn_39();
     /**
-     * @note   Virtual function table index: 40
-     * @symbol 
+     * @vftbl  40
+     * @hash   -250083904
      */
     virtual void __unk_vfn_40();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 42
-     * @symbol 
+     * @vftbl  42
+     * @hash   -248236862
      */
     virtual void __unk_vfn_42();
     /**
-     * @note   Virtual function table index: 44
-     * @symbol 
+     * @vftbl  44
+     * @hash   -246389820
      */
     virtual void __unk_vfn_44();
     /**
-     * @note   Virtual function table index: 45
-     * @symbol 
+     * @vftbl  45
+     * @hash   -245466299
      */
     virtual void __unk_vfn_45();
     /**
-     * @note   Virtual function table index: 46
-     * @symbol 
+     * @vftbl  46
+     * @hash   -244542778
      */
     virtual void __unk_vfn_46();
     /**
-     * @note   Virtual function table index: 47
-     * @symbol 
+     * @vftbl  47
+     * @hash   -243619257
      */
     virtual void __unk_vfn_47();
     /**
-     * @note   Virtual function table index: 48
-     * @symbol 
+     * @vftbl  48
+     * @hash   -242695736
      */
     virtual void __unk_vfn_48();
     /**
-     * @note   Virtual function table index: 49
-     * @symbol 
+     * @vftbl  49
+     * @hash   -241772215
      */
     virtual void __unk_vfn_49();
     /**
-     * @note   Virtual function table index: 59
-     * @symbol 
+     * @vftbl  59
+     * @hash   -213143064
      */
     virtual void __unk_vfn_59();
     /**
-     * @note   Virtual function table index: 60
-     * @symbol 
+     * @vftbl  60
+     * @hash   -192825602
      */
     virtual void __unk_vfn_60();
     /**
-     * @note   Virtual function table index: 67
+     * @vftbl  67
      * @symbol ?checkIsPathable@TrapDoorBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z
+     * @hash   -1374527114
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 71
+     * @vftbl  71
      * @symbol ?onRedstoneUpdate@TrapDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z
+     * @hash   -290419309
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
-     * @note   Virtual function table index: 73
-     * @symbol 
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @note   Virtual function table index: 77
+     * @vftbl  77
      * @symbol ?setupRedstoneComponent@TrapDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1060239354
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 80
-     * @symbol 
+     * @vftbl  80
+     * @hash   -135567300
      */
     virtual void __unk_vfn_80();
     /**
-     * @note   Virtual function table index: 94
+     * @vftbl  94
      * @symbol ?breaksFallingBlocks@TrapDoorBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+     * @hash   -202589367
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @note   Virtual function table index: 100
+     * @vftbl  100
      * @symbol ?getResourceCount@TrapDoorBlock@@UEBAHAEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   1436093928
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @note   Virtual function table index: 101
+     * @vftbl  101
      * @symbol ?getResourceItem@TrapDoorBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   -675053040
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @note   Virtual function table index: 102
+     * @vftbl  102
      * @symbol ?asItemInstance@TrapDoorBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -1312922187
      */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @note   Virtual function table index: 105
-     * @symbol 
+     * @vftbl  105
+     * @hash   1332020102
      */
     virtual void __unk_vfn_105();
     /**
-     * @note   Virtual function table index: 106
+     * @vftbl  106
      * @symbol ?getPlacementBlock@TrapDoorBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+     * @hash   440457041
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @note   Virtual function table index: 124
-     * @symbol 
+     * @vftbl  124
+     * @hash   1388354883
      */
     virtual void __unk_vfn_124();
     /**
-     * @note   Virtual function table index: 126
-     * @symbol 
+     * @vftbl  126
+     * @hash   1390201925
      */
     virtual void __unk_vfn_126();
     /**
-     * @note   Virtual function table index: 127
-     * @symbol 
+     * @vftbl  127
+     * @hash   1391125446
      */
     virtual void __unk_vfn_127();
     /**
-     * @note   Virtual function table index: 132
-     * @symbol 
+     * @vftbl  132
+     * @hash   1415136992
      */
     virtual void __unk_vfn_132();
     /**
-     * @note   Virtual function table index: 144
+     * @vftbl  144
      * @symbol ?getVisualShape@TrapDoorBlock@@UEBAAEBVAABB@@AEBVBlock@@AEAV2@_N@Z
+     * @hash   1331877292
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @note   Virtual function table index: 148
-     * @symbol 
+     * @vftbl  148
+     * @hash   1442572581
      */
     virtual void __unk_vfn_148();
     /**
-     * @note   Virtual function table index: 157
-     * @symbol 
+     * @vftbl  157
+     * @hash   1477012899
      */
     virtual void __unk_vfn_157();
     /**
-     * @note   Virtual function table index: 168
-     * @symbol 
+     * @vftbl  168
+     * @hash   1457546883
      */
     virtual void __unk_vfn_168();
     /**
-     * @note   Virtual function table index: 169
-     * @symbol 
+     * @vftbl  169
+     * @hash   1458470404
      */
     virtual void __unk_vfn_169();
     /**
-     * @note   Virtual function table index: 170
-     * @symbol 
+     * @vftbl  170
+     * @hash   1478787866
      */
     virtual void __unk_vfn_170();
     /**
-     * @note   Virtual function table index: 171
+     * @vftbl  171
      * @symbol ?onPlace@TrapDoorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -2107002846
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 177
-     * @symbol 
+     * @vftbl  177
+     * @hash   1527536513
      */
     virtual void __unk_vfn_177();
     /**
-     * @note   Virtual function table index: 179
+     * @vftbl  179
      * @symbol ?use@TrapDoorBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+     * @hash   1047635287
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @note   Virtual function table index: 188
-     * @symbol 
+     * @vftbl  188
+     * @hash   1563823873
      */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAPDOORBLOCK
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canBeSilkTouched@TrapDoorBlock@@MEBA_NXZ
+     * @hash   -1309287531
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInteractiveBlock@TrapDoorBlock@@UEBA_NXZ
+     * @hash   672570331
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
      * @symbol ??0TrapDoorBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
+     * @hash   77685897
      */
     MCAPI TrapDoorBlock(std::string const &, int, class Material const &);
 
 //private:
     /**
      * @symbol ?_toggleOpen@TrapDoorBlock@@AEBAXAEAVBlockSource@@PEAVActor@@AEBVBlockPos@@@Z
+     * @hash   1001558347
      */
     MCAPI void _toggleOpen(class BlockSource &, class Actor *, class BlockPos const &) const;
 
 private:
-MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION@TrapDoorBlock@@0VBaseGameVersion@@B
+     * @hash   455866358
+     */
+    MCAPI static class BaseGameVersion const TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

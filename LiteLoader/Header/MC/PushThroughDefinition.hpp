@@ -29,15 +29,16 @@ public:
     PushThroughDefinition(struct PushThroughDefinition const &) = delete;
     PushThroughDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHTHROUGHDEFINITION
-#endif
     /**
      * @symbol ?initialize@PushThroughDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -251801586
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@PushThroughDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UPushThroughDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1223819802
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct PushThroughDefinition>> &);
 

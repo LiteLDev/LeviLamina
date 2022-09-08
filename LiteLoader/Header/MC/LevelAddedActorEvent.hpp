@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELADDEDACTOREVENT
-#endif
     /**
      * @symbol ??1LevelAddedActorEvent@@QEAA@XZ
+     * @hash   -410794821
      */
     MCAPI ~LevelAddedActorEvent();
 

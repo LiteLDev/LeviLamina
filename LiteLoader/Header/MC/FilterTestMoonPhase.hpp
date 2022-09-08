@@ -33,21 +33,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   821585214
      */
     virtual ~FilterTestMoonPhase();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?evaluate@FilterTestMoonPhase@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   -1269996302
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@FilterTestMoonPhase@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   1757727360
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTMOONPHASE
-#endif
 
 };

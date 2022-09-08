@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERGETEXPERIENCEORBEVENT
-#endif
     /**
      * @symbol ??1PlayerGetExperienceOrbEvent@@QEAA@XZ
+     * @hash   -1822051034
      */
     MCAPI ~PlayerGetExperienceOrbEvent();
 

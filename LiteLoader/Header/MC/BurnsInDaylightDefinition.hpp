@@ -31,10 +31,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURNSINDAYLIGHTDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@BurnsInDaylightDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBurnsInDaylightDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -2134360770
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BurnsInDaylightDefinition>> &);
 

@@ -29,19 +29,21 @@ public:
     IsIgnitedDefinition(struct IsIgnitedDefinition const &) = delete;
     IsIgnitedDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISIGNITEDDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsIgnitedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   478030030
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsIgnitedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   1475888060
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsIgnitedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsIgnitedDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   2069124372
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIgnitedDefinition>> &);
 

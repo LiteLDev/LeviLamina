@@ -32,295 +32,322 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1443393485
      */
     virtual ~RepeaterBlock();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -327659668
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -276866013
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -275942492
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -275018971
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 36
-     * @symbol 
+     * @vftbl  36
+     * @hash   -273171929
      */
     virtual void __unk_vfn_36();
     /**
-     * @note   Virtual function table index: 37
-     * @symbol 
+     * @vftbl  37
+     * @hash   -272248408
      */
     virtual void __unk_vfn_37();
     /**
-     * @note   Virtual function table index: 38
-     * @symbol 
+     * @vftbl  38
+     * @hash   -271324887
      */
     virtual void __unk_vfn_38();
     /**
-     * @note   Virtual function table index: 39
-     * @symbol 
+     * @vftbl  39
+     * @hash   -270401366
      */
     virtual void __unk_vfn_39();
     /**
-     * @note   Virtual function table index: 40
-     * @symbol 
+     * @vftbl  40
+     * @hash   -250083904
      */
     virtual void __unk_vfn_40();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 42
-     * @symbol 
+     * @vftbl  42
+     * @hash   -248236862
      */
     virtual void __unk_vfn_42();
     /**
-     * @note   Virtual function table index: 44
-     * @symbol 
+     * @vftbl  44
+     * @hash   -246389820
      */
     virtual void __unk_vfn_44();
     /**
-     * @note   Virtual function table index: 45
-     * @symbol 
+     * @vftbl  45
+     * @hash   -245466299
      */
     virtual void __unk_vfn_45();
     /**
-     * @note   Virtual function table index: 46
-     * @symbol 
+     * @vftbl  46
+     * @hash   -244542778
      */
     virtual void __unk_vfn_46();
     /**
-     * @note   Virtual function table index: 47
-     * @symbol 
+     * @vftbl  47
+     * @hash   -243619257
      */
     virtual void __unk_vfn_47();
     /**
-     * @note   Virtual function table index: 48
-     * @symbol 
+     * @vftbl  48
+     * @hash   -242695736
      */
     virtual void __unk_vfn_48();
     /**
-     * @note   Virtual function table index: 49
-     * @symbol 
+     * @vftbl  49
+     * @hash   -241772215
      */
     virtual void __unk_vfn_49();
     /**
-     * @note   Virtual function table index: 59
-     * @symbol 
+     * @vftbl  59
+     * @hash   -213143064
      */
     virtual void __unk_vfn_59();
     /**
-     * @note   Virtual function table index: 60
-     * @symbol 
+     * @vftbl  60
+     * @hash   -192825602
      */
     virtual void __unk_vfn_60();
     /**
-     * @note   Virtual function table index: 62
+     * @vftbl  62
      * @symbol ?shouldConnectToRedstone@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@H@Z
+     * @hash   2116240686
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @note   Virtual function table index: 73
-     * @symbol 
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @note   Virtual function table index: 77
+     * @vftbl  77
      * @symbol ?setupRedstoneComponent@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   716657635
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 80
-     * @symbol 
+     * @vftbl  80
+     * @hash   -135567300
      */
     virtual void __unk_vfn_80();
     /**
-     * @note   Virtual function table index: 90
+     * @vftbl  90
      * @symbol ?mayPlace@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -873508949
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 98
+     * @vftbl  98
      * @symbol ?neighborChanged@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     * @hash   -1423466185
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 101
+     * @vftbl  101
      * @symbol ?getResourceItem@RepeaterBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   1838640451
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @note   Virtual function table index: 102
+     * @vftbl  102
      * @symbol ?asItemInstance@RepeaterBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -279793160
      */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @note   Virtual function table index: 105
-     * @symbol 
+     * @vftbl  105
+     * @hash   1332020102
      */
     virtual void __unk_vfn_105();
     /**
-     * @note   Virtual function table index: 124
-     * @symbol 
+     * @vftbl  124
+     * @hash   1388354883
      */
     virtual void __unk_vfn_124();
     /**
-     * @note   Virtual function table index: 126
-     * @symbol 
+     * @vftbl  126
+     * @hash   1390201925
      */
     virtual void __unk_vfn_126();
     /**
-     * @note   Virtual function table index: 127
-     * @symbol 
+     * @vftbl  127
+     * @hash   1391125446
      */
     virtual void __unk_vfn_127();
     /**
-     * @note   Virtual function table index: 132
-     * @symbol 
+     * @vftbl  132
+     * @hash   1415136992
      */
     virtual void __unk_vfn_132();
     /**
-     * @note   Virtual function table index: 148
-     * @symbol 
+     * @vftbl  148
+     * @hash   1449307269
      */
     virtual void __unk_vfn_148();
     /**
-     * @note   Virtual function table index: 152
+     * @vftbl  152
      * @symbol ?animateTick@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   2025262874
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @note   Virtual function table index: 157
-     * @symbol 
+     * @vftbl  157
+     * @hash   1477012899
      */
     virtual void __unk_vfn_157();
     /**
-     * @note   Virtual function table index: 165
+     * @vftbl  165
      * @symbol ?onRemove@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1348280282
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 168
-     * @symbol 
+     * @vftbl  168
+     * @hash   1457546883
      */
     virtual void __unk_vfn_168();
     /**
-     * @note   Virtual function table index: 169
-     * @symbol 
+     * @vftbl  169
+     * @hash   1458470404
      */
     virtual void __unk_vfn_169();
     /**
-     * @note   Virtual function table index: 170
-     * @symbol 
+     * @vftbl  170
+     * @hash   1478787866
      */
     virtual void __unk_vfn_170();
     /**
-     * @note   Virtual function table index: 171
+     * @vftbl  171
      * @symbol ?onPlace@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -2087982433
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 174
+     * @vftbl  174
      * @symbol ?tick@RepeaterBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1019270011
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @note   Virtual function table index: 177
-     * @symbol 
+     * @vftbl  177
+     * @hash   1527536513
      */
     virtual void __unk_vfn_177();
     /**
-     * @note   Virtual function table index: 179
+     * @vftbl  179
      * @symbol ?use@RepeaterBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+     * @hash   2036025738
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @note   Virtual function table index: 180
+     * @vftbl  180
      * @symbol ?canSurvive@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1614731707
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 188
-     * @symbol 
+     * @vftbl  188
+     * @hash   1563823873
      */
     virtual void __unk_vfn_188();
     /**
-     * @note   Virtual function table index: 193
+     * @vftbl  193
      * @symbol ?isLocked@RepeaterBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1807603693
      */
     virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 199
+     * @vftbl  199
      * @symbol ?isAlternateInput@RepeaterBlock@@MEBA_NAEBVBlock@@@Z
+     * @hash   449005636
      */
     virtual bool isAlternateInput(class Block const &) const;
     /**
-     * @note   Virtual function table index: 203
+     * @vftbl  203
      * @symbol ?getTurnOnDelay@RepeaterBlock@@MEBAHAEBVBlock@@@Z
+     * @hash   -1979881030
      */
     virtual int getTurnOnDelay(class Block const &) const;
     /**
-     * @note   Virtual function table index: 204
+     * @vftbl  204
      * @symbol ?getOnBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+     * @hash   -1905376290
      */
     virtual class Block const * getOnBlock(class Block const *) const;
     /**
-     * @note   Virtual function table index: 205
+     * @vftbl  205
      * @symbol ?getOffBlock@RepeaterBlock@@MEBAPEBVBlock@@PEBV2@@Z
+     * @hash   1553591506
      */
     virtual class Block const * getOffBlock(class Block const *) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATERBLOCK
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canBeSilkTouched@RepeaterBlock@@UEBA_NXZ
+     * @hash   -168299063
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInteractiveBlock@RepeaterBlock@@UEBA_NXZ
+     * @hash   1580838152
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
      * @symbol ??0RepeaterBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
+     * @hash   2133057902
      */
     MCAPI RepeaterBlock(std::string const &, int, bool);
     /**
      * @symbol ?updateDelay@RepeaterBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@_N@Z
+     * @hash   366673076
      */
     MCAPI void updateDelay(class BlockSource &, class BlockPos const &, bool) const;
-MCAPI static float const DELAY_RENDER_OFFSETS[];
+    /**
+     * @symbol ?DELAY_RENDER_OFFSETS@RepeaterBlock@@2QBMB
+     * @hash   1576807450
+     */
+    MCAPI static float const DELAY_RENDER_OFFSETS[];
 
 //private:
 
 private:
-MCAPI static int const DELAYS[];
+    /**
+     * @symbol ?DELAYS@RepeaterBlock@@0QBHB
+     * @hash   1679497497
+     */
+    MCAPI static int const DELAYS[];
 
 };

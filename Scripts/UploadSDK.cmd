@@ -22,8 +22,8 @@ echo [INFO] Fetching LiteLoaderSDK to GitHub ...
 echo.
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
-for /f "delims=" %%i in ('git describe --tags') do set LL_NOW_TAG_LONG=%%i
-for /f "delims=-" %%i in ('git describe --tags') do set LL_NOW_TAG=%%i
+for /f "delims=" %%i in ('git describe --tags --always') do set LL_NOW_TAG_LONG=%%i
+for /f "delims=-" %%i in ('git describe --tags --always') do set LL_NOW_TAG=%%i
 
 echo LL_SDK_NOW_BRANCH %LL_SDK_NOW_BRANCH%
 echo LL_NOW_TAG_LONG %LL_NOW_TAG_LONG%
@@ -45,15 +45,12 @@ cd ..
 echo.
 echo [INFO] Fetching LiteLoaderSDK to GitHub finished
 echo.
-
-@REM if [%1] neq [action] (
-    cd Scripts
-    echo [INFO] Packing LiteLoaderSDK ...
-    start /wait cmd /c PackSDK.cmd
-    echo [INFO] Packing LiteLoaderSDK finished.
-    echo.
-    cd ..
-@REM )
+cd Scripts
+echo [INFO] Packing LiteLoaderSDK ...
+start /wait cmd /c CopySDK.cmd action
+echo [INFO] Packing LiteLoaderSDK finished.
+echo.
+cd ..
 
 cd LiteLoaderSDK
 for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i

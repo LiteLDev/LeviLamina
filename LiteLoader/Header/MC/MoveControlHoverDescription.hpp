@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@MoveControlHoverDescription@@UEBAPEBDXZ
+     * @hash   1239482120
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -258937638
      */
     virtual ~MoveControlHoverDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@MoveControlDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -752868005
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@MoveControlDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1851686939
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLHOVERDESCRIPTION
-#endif
 
 };

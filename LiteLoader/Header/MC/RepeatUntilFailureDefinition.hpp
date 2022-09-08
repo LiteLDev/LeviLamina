@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -794017916
      */
     virtual ~RepeatUntilFailureDefinition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@RepeatUntilFailureDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   1754778858
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILUREDEFINITION
-#endif
 
 };

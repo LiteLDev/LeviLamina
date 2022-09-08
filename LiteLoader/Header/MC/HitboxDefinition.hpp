@@ -31,18 +31,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HITBOXDEFINITION
-#endif
     /**
      * @symbol ?addAABB@HitboxDefinition@@QEAAXAEBUHitboxJson@@@Z
+     * @hash   -1317258774
      */
     MCAPI void addAABB(struct HitboxJson const &);
     /**
      * @symbol ?initialize@HitboxDefinition@@QEAAXAEAVEntityContext@@AEAVHitboxComponent@@@Z
+     * @hash   819760059
      */
     MCAPI void initialize(class EntityContext &, class HitboxComponent &);
     /**
      * @symbol ?buildSchema@HitboxDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHitboxDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   495279238
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>> &);
 

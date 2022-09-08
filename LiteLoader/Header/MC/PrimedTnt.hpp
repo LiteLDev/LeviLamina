@@ -33,183 +33,196 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   315265256
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?reloadHardcodedClient@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   -591918221
      */
     virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?initializeComponents@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   336587803
      */
     virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   20535427
      */
     virtual ~PrimedTnt();
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?getOwnerEntityType@PrimedTnt@@UEAA?AW4ActorType@@XZ
+     * @hash   -1843640195
      */
     virtual enum ActorType getOwnerEntityType();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 44
+     * @vftbl  44
      * @symbol ?teleportTo@PrimedTnt@@UEAAXAEBVVec3@@_NHH1@Z
+     * @hash   1224530338
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @note   Virtual function table index: 49
+     * @vftbl  49
      * @symbol ?normalTick@PrimedTnt@@UEAAXXZ
+     * @hash   910124806
      */
     virtual void normalTick();
     /**
-     * @note   Virtual function table index: 61
-     * @symbol 
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @note   Virtual function table index: 68
-     * @symbol 
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @note   Virtual function table index: 79
+     * @vftbl  79
      * @symbol ?getShadowHeightOffs@PrimedTnt@@UEAAMXZ
+     * @hash   -1881344869
      */
     virtual float getShadowHeightOffs();
     /**
-     * @note   Virtual function table index: 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@PrimedTnt@@UEBAMXZ
+     * @hash   -143847007
      */
     virtual float getShadowRadius() const;
     /**
-     * @note   Virtual function table index: 82
-     * @symbol 
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @note   Virtual function table index: 85
-     * @symbol 
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @note   Virtual function table index: 88
-     * @symbol 
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @note   Virtual function table index: 95
+     * @vftbl  95
      * @symbol ?isPickable@PrimedTnt@@UEAA_NXZ
+     * @hash   1752629049
      */
     virtual bool isPickable();
     /**
-     * @note   Virtual function table index: 96
-     * @symbol 
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @note   Virtual function table index: 99
-     * @symbol 
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @note   Virtual function table index: 106
-     * @symbol 
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @note   Virtual function table index: 108
-     * @symbol 
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @note   Virtual function table index: 109
-     * @symbol 
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @note   Virtual function table index: 111
-     * @symbol 
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @note   Virtual function table index: 172
+     * @vftbl  172
      * @symbol ?getSourceUniqueID@PrimedTnt@@UEBA?AUActorUniqueID@@XZ
+     * @hash   298566897
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @note   Virtual function table index: 182
-     * @symbol 
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @note   Virtual function table index: 196
-     * @symbol 
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @note   Virtual function table index: 222
-     * @symbol 
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @note   Virtual function table index: 223
-     * @symbol 
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @note   Virtual function table index: 248
-     * @symbol 
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @note   Virtual function table index: 251
-     * @symbol 
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @note   Virtual function table index: 269
-     * @symbol 
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @note   Virtual function table index: 270
+     * @vftbl  270
      * @symbol ?_hurt@PrimedTnt@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     * @hash   -1547796437
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @note   Virtual function table index: 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@PrimedTnt@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   582064635
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@PrimedTnt@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -1377109454
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 277
-     * @symbol 
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIMEDTNT
-#endif
     /**
      * @symbol ??0PrimedTnt@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -2077364607
      */
     MCAPI PrimedTnt(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@PrimedTnt@@QEAAXXZ
+     * @hash   -645295461
      */
     MCAPI void postNormalTick();
 

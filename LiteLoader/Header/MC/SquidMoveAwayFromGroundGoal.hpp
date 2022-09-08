@@ -31,64 +31,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1373154147
      */
     virtual ~SquidMoveAwayFromGroundGoal();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   75789218
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   76712739
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@SquidMoveAwayFromGroundGoal@@UEAAXXZ
+     * @hash   -1578451548
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SquidMoveAwayFromGroundGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1568690475
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDMOVEAWAYFROMGROUNDGOAL
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canContinueToUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ
+     * @hash   768215673
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ
+     * @hash   -1043559781
      */
     MCVAPI bool canUse();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stop@SquidMoveAwayFromGroundGoal@@UEAAXXZ
+     * @hash   44441972
      */
     MCVAPI void stop();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tick@SquidMoveAwayFromGroundGoal@@UEAAXXZ
+     * @hash   -2052616657
      */
     MCVAPI void tick();
 #endif

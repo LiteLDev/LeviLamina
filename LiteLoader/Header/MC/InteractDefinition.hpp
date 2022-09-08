@@ -31,18 +31,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTDEFINITION
-#endif
     /**
      * @symbol ?addInteraction@InteractDefinition@@QEAAXAEBUInteraction@@@Z
+     * @hash   -221016418
      */
     MCAPI void addInteraction(struct Interaction const &);
     /**
      * @symbol ?initialize@InteractDefinition@@QEBAXAEAVEntityContext@@AEAVInteractComponent@@@Z
+     * @hash   652653045
      */
     MCAPI void initialize(class EntityContext &, class InteractComponent &) const;
     /**
      * @symbol ?buildSchema@InteractDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VInteractDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1827459750
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>> &);
 

@@ -28,23 +28,26 @@ public:
     BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent const &) = delete;
     BlockMaterialInstancesComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCESCOMPONENT
-#endif
     /**
      * @symbol ??0BlockMaterialInstancesComponent@@QEAA@$$QEAU0@@Z
+     * @hash   -1023913331
      */
     MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent &&);
     /**
      * @symbol ?getRenderLayer@BlockMaterialInstancesComponent@@QEBA?AW4BlockRenderLayer@@XZ
+     * @hash   -1787198458
      */
     MCAPI enum BlockRenderLayer getRenderLayer() const;
     /**
      * @symbol ??4BlockMaterialInstancesComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1864739530
      */
     MCAPI struct BlockMaterialInstancesComponent & operator=(struct BlockMaterialInstancesComponent &&);
     /**
      * @symbol ??1BlockMaterialInstancesComponent@@QEAA@XZ
+     * @hash   -2065564897
      */
     MCAPI ~BlockMaterialInstancesComponent();
 

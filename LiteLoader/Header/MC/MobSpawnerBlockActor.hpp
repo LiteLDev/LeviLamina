@@ -32,88 +32,94 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -211640806
      */
     virtual ~MobSpawnerBlockActor();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@MobSpawnerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -597017577
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?save@MobSpawnerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -1236269914
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?tick@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   1055842640
      */
     virtual void tick(class BlockSource &);
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?onRemoved@MobSpawnerBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -1292456244
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 28
-     * @symbol 
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 35
+     * @vftbl  35
      * @symbol ?_getUpdatePacket@MobSpawnerBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -685842071
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @note   Virtual function table index: 36
+     * @vftbl  36
      * @symbol ?_onUpdatePacket@MobSpawnerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   -41385607
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERBLOCKACTOR
-#endif
     /**
      * @symbol ??0MobSpawnerBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   -103644909
      */
     MCAPI MobSpawnerBlockActor(class BlockPos const &);
     /**
      * @symbol ?getSpawner@MobSpawnerBlockActor@@QEAAAEAVBaseMobSpawner@@XZ
+     * @hash   -547852674
      */
     MCAPI class BaseMobSpawner & getSpawner();
 

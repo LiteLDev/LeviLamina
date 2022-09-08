@@ -32,44 +32,51 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINMANAGER
-#endif
     /**
      * @symbol ??0ScriptPluginManager@@QEAA@AEAVScriptEngine@Scripting@@_NV?$unique_ptr@VIScriptTelemetryLogger@@U?$default_delete@VIScriptTelemetryLogger@@@std@@@std@@@Z
+     * @hash   -404340786
      */
     MCAPI ScriptPluginManager(class Scripting::ScriptEngine &, bool, std::unique_ptr<class IScriptTelemetryLogger>);
     /**
      * @symbol ?discoverPlugins@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@W4ResourceType@ResourceInformation@@AEBVIScriptPluginSourceEnumerator@@AEBVScriptPackConfigurationManager@@@Z
+     * @hash   1475348347
      */
     MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &, class ScriptPackConfigurationManager const &);
     /**
      * @symbol ?getPlugins@ScriptPluginManager@@QEBAAEBV?$vector@VScriptPlugin@@V?$allocator@VScriptPlugin@@@std@@@std@@XZ
+     * @hash   1912551798
      */
     MCAPI std::vector<class ScriptPlugin> const & getPlugins() const;
     /**
      * @symbol ?releaseAll@ScriptPluginManager@@QEAAXXZ
+     * @hash   1422675735
      */
     MCAPI void releaseAll();
     /**
      * @symbol ?releasePlugins@ScriptPluginManager@@QEAAXXZ
+     * @hash   2050224949
      */
     MCAPI void releasePlugins();
     /**
      * @symbol ?runAll@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@XZ
+     * @hash   -255154132
      */
     MCAPI class ScriptPluginManagerResult runAll();
     /**
      * @symbol ??1ScriptPluginManager@@QEAA@XZ
+     * @hash   98729323
      */
     MCAPI ~ScriptPluginManager();
 
 //private:
     /**
      * @symbol ?_generateModuleDependencies@ScriptPluginManager@@AEBA?AV?$vector@UModuleDescriptor@Scripting@@V?$allocator@UModuleDescriptor@Scripting@@@std@@@std@@AEBV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@3@0@Z
+     * @hash   1938460684
      */
     MCAPI std::vector<struct Scripting::ModuleDescriptor> _generateModuleDependencies(std::vector<struct PackIdVersion> const &, std::vector<struct PackIdVersion> const &) const;
     /**
      * @symbol ?_reportContextResults@ScriptPluginManager@@AEAAXAEBUScriptContextResult@Scripting@@AEAVScriptPluginResult@@@Z
+     * @hash   786378284
      */
     MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const &, class ScriptPluginResult &);
 

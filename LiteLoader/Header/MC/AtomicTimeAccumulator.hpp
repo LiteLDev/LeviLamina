@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATOMICTIMEACCUMULATOR
-#endif
     /**
      * @symbol ??0AtomicTimeAccumulator@@QEAA@XZ
+     * @hash   822031914
      */
     MCAPI AtomicTimeAccumulator();
     /**
      * @symbol ?addTime@AtomicTimeAccumulator@@QEAAXAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z
+     * @hash   853311147
      */
     MCAPI void addTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const &);
     /**
      * @symbol ?reset@AtomicTimeAccumulator@@QEAAXXZ
+     * @hash   527492851
      */
     MCAPI void reset();
 

@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDINTEGERRANGE
-#endif
     /**
      * @symbol ??0CommandIntegerRange@@QEAA@XZ
+     * @hash   -2077189482
      */
     MCAPI CommandIntegerRange();
     /**
      * @symbol ??0CommandIntegerRange@@QEAA@HH_N@Z
+     * @hash   -697074593
      */
     MCAPI CommandIntegerRange(int, int, bool);
     /**
      * @symbol ?isWithinRange@CommandIntegerRange@@QEBA_NH@Z
+     * @hash   1413957599
      */
     MCAPI bool isWithinRange(int) const;
 

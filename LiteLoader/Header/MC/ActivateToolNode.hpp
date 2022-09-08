@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1698666857
      */
     virtual ~ActivateToolNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@ActivateToolNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -1891733126
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@ActivateToolNode@@EEAAXAEAVActor@@@Z
+     * @hash   -1831539090
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVATETOOLNODE
-#endif
     /**
      * @symbol ??0ActivateToolNode@@QEAA@XZ
+     * @hash   -1857979175
      */
     MCAPI ActivateToolNode();
 

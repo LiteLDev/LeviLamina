@@ -26,11 +26,11 @@ public:
     OffsetsComponent(struct OffsetsComponent const &) = delete;
     OffsetsComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OFFSETSCOMPONENT
-#endif
     /**
      * @symbol ??8OffsetsComponent@@QEBA_NAEBU0@@Z
+     * @hash   1593629544
      */
     MCAPI bool operator==(struct OffsetsComponent const &) const;
 

@@ -33,51 +33,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1686604162
      */
     virtual ~MemoryMappedFileAccess();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   505057812
      */
     virtual void * fopen(class Core::Path const &, std::string const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z
+     * @hash   672350650
      */
     virtual int fclose(void *);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z
+     * @hash   -346004220
      */
     virtual int fseek(void *, __int64, int);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z
+     * @hash   -1535370517
      */
     virtual __int64 ftell(void *);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ
+     * @hash   -112177189
      */
     virtual class IFileReadAccess const * getReadInterface() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getWriteInterface@MemoryMappedFileAccess@@UEAAPEAVIFileWriteAccess@@XZ
+     * @hash   1181759691
      */
     virtual class IFileWriteAccess * getWriteInterface();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?unload@MemoryMappedFileAccess@@UEAAXXZ
+     * @hash   898738386
      */
     virtual void unload();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MEMORYMAPPEDFILEACCESS
-#endif
     /**
      * @symbol ??0MemoryMappedFileAccess@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@V?$unique_ptr@VFileAccessTransforms@@U?$default_delete@VFileAccessTransforms@@@std@@@std@@@Z
+     * @hash   -197016736
      */
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
-MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
+    /**
+     * @symbol ?EMPTY_TRANSFORMS@MemoryMappedFileAccess@@2VFileAccessTransforms@@B
+     * @hash   807493075
+     */
+    MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
 };

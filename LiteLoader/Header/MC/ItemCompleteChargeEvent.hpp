@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPLETECHARGEEVENT
-#endif
     /**
      * @symbol ??1ItemCompleteChargeEvent@@QEAA@XZ
+     * @hash   -1776559482
      */
     MCAPI ~ItemCompleteChargeEvent();
 

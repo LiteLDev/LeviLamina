@@ -33,10 +33,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTROTATIONDATA
-#endif
     /**
      * @symbol ??0TeleportRotationData@@QEAA@AEBVRelativeFloat@@0AEBV?$optional@VVec2@@@std@@@Z
+     * @hash   954629233
      */
     MCAPI TeleportRotationData(class RelativeFloat const &, class RelativeFloat const &, class std::optional<class Vec2> const &);
 

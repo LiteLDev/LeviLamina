@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2130998045
      */
     virtual ~ContainerSetDataPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@ContainerSetDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1883580965
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@ContainerSetDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -359119736
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@ContainerSetDataPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -296460289
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@ContainerSetDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -2010926193
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSETDATAPACKET
-#endif
     /**
      * @symbol ??0ContainerSetDataPacket@@QEAA@XZ
+     * @hash   -1325805249
      */
     MCAPI ContainerSetDataPacket();
     /**
      * @symbol ??0ContainerSetDataPacket@@QEAA@W4ContainerID@@HH@Z
+     * @hash   -879171468
      */
     MCAPI ContainerSetDataPacket(enum ContainerID, int, int);
 

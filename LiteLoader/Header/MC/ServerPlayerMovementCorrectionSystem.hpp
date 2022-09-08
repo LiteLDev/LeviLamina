@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERMOVEMENTCORRECTIONSYSTEM
-#endif
     /**
      * @symbol ?_afterMovementSimulation@ServerPlayerMovementCorrectionSystem@@SAXAEAVPlayer@@AEBVPlayerAuthInputPacket@@AEBVReplayStateComponent@@@Z
+     * @hash   1418213204
      */
     MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &);
     /**
      * @symbol ?create@ServerPlayerMovementCorrectionSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1123973900
      */
     MCAPI static struct TickingSystemWithInfo create();
 

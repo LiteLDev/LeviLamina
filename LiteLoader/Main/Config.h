@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Nlohmann/json.hpp>
+
 #include <string>
 #include <thread>
 #include <LLAPI.h>
@@ -58,6 +59,8 @@ struct LLConfig {
     bool enableTpdimCommand = true;
     bool enableForceUtf8Input = false;
     bool enableFixBDSCrash = false;
+    bool enableParticleAPI = false;
+    bool enablePermissionAPI = true;
     std::vector<std::string> outputFilterRegex = {};
 
     // Runtime Config

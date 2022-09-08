@@ -26,27 +26,31 @@ public:
     ContainerValidationSlotInfo(struct ContainerValidationSlotInfo const &) = delete;
     ContainerValidationSlotInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONSLOTINFO
-#endif
     /**
      * @symbol ??0ContainerValidationSlotInfo@@QEAA@AEBUContainerValidationSlotData@@V?$shared_ptr@VSimpleSparseContainer@@@std@@V?$shared_ptr@$$CBVContainerValidationBase@@@3@@Z
+     * @hash   1931616671
      */
     MCAPI ContainerValidationSlotInfo(struct ContainerValidationSlotData const &, class std::shared_ptr<class SimpleSparseContainer>, class std::shared_ptr<class ContainerValidationBase const>);
     /**
      * @symbol ?getItem@ContainerValidationSlotInfo@@QEBAAEBVItemStack@@XZ
+     * @hash   -448848198
      */
     MCAPI class ItemStack const & getItem() const;
     /**
      * @symbol ??BContainerValidationSlotInfo@@QEBA_NXZ
+     * @hash   1643288200
      */
     MCAPI operator bool() const;
     /**
      * @symbol ?setItem@ContainerValidationSlotInfo@@QEAAXAEBVItemStack@@@Z
+     * @hash   -185404740
      */
     MCAPI void setItem(class ItemStack const &);
     /**
      * @symbol ??1ContainerValidationSlotInfo@@QEAA@XZ
+     * @hash   1709686530
      */
     MCAPI ~ContainerValidationSlotInfo();
 

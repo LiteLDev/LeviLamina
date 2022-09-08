@@ -22,34 +22,42 @@ namespace ActorMobilityUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?endJump@ActorMobilityUtils@@YAXAEBUStateVectorComponent@@AEAUMobJumpComponent@@AEAUSynchedActorDataComponent@@PEBUVehicleComponent@@V?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@V?$FlagComponent@UParrotFlag@@@@@@$$CBUPassengerComponent@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UExitFromPassengerFlag@@@@V?$FlagComponent@UStopRidingRequestFlag@@@@@@@Z
+     * @hash   327726543
      */
     MCAPI void endJump(struct StateVectorComponent const &, struct MobJumpComponent &, struct SynchedActorDataComponent &, struct VehicleComponent const *, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ParrotFlag>>, struct PassengerComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ExitFromPassengerFlag>, class FlagComponent<struct StopRidingRequestFlag>> &);
     /**
      * @symbol ?getJumpPower@ActorMobilityUtils@@YAMPEBVJumpControlComponent@@PEBV?$FlagComponent@USquidFlag@@@@@Z
+     * @hash   -346438838
      */
     MCAPI float getJumpPower(class JumpControlComponent const *, class FlagComponent<struct SquidFlag> const *);
     /**
      * @symbol ?getPosFromAABB@ActorMobilityUtils@@YA?AVVec3@@AEBVAABB@@MAEBVVec2@@@Z
+     * @hash   -1422131534
      */
     MCAPI class Vec3 getPosFromAABB(class AABB const &, float, class Vec2 const &);
     /**
      * @symbol ?isFlying@ActorMobilityUtils@@YA_NAEBUAbilitiesComponent@@@Z
+     * @hash   1008441550
      */
     MCAPI bool isFlying(struct AbilitiesComponent const &);
     /**
      * @symbol ?isFree@ActorMobilityUtils@@YA_NAEBVIConstBlockSource@@AEBVAABB@@AEBVVec3@@M@Z
+     * @hash   -1826198305
      */
     MCAPI bool isFree(class IConstBlockSource const &, class AABB const &, class Vec3 const &, float);
     /**
      * @symbol ?isImmersedInWater@ActorMobilityUtils@@YA_NAEBVVec3@@AEBVIConstBlockSource@@AEBVVec2@@@Z
+     * @hash   546425350
      */
     MCAPI bool isImmersedInWater(class Vec3 const &, class IConstBlockSource const &, class Vec2 const &);
     /**
      * @symbol ?isUnderLiquid@ActorMobilityUtils@@YA_NAEBVVec3@@0AEBVIConstBlockSource@@W4MaterialType@@@Z
+     * @hash   1965940048
      */
     MCAPI bool isUnderLiquid(class Vec3 const &, class Vec3 const &, class IConstBlockSource const &, enum MaterialType);
     /**
      * @symbol ?shouldApplyWaterGravity@ActorMobilityUtils@@YA_NPEBVNavigationComponent@@PEBVPhysicsComponent@@AEBVSynchedActorData@@AEBVVec3@@AEBVIConstBlockSource@@AEBVVec2@@@Z
+     * @hash   -886276681
      */
     MCAPI bool shouldApplyWaterGravity(class NavigationComponent const *, class PhysicsComponent const *, class SynchedActorData const &, class Vec3 const &, class IConstBlockSource const &, class Vec2 const &);
 

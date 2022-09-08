@@ -29,49 +29,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -853530768
      */
     virtual ~EmergeGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@EmergeGoal@@UEAA_NXZ
+     * @hash   -770090230
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@EmergeGoal@@UEAA_NXZ
+     * @hash   -297174232
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@EmergeGoal@@UEAAXXZ
+     * @hash   995972691
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@EmergeGoal@@UEAAXXZ
+     * @hash   1310014979
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@EmergeGoal@@UEAAXXZ
+     * @hash   -803612322
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@EmergeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1427792182
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMERGEGOAL
-#endif
     /**
      * @symbol ??0EmergeGoal@@QEAA@AEAVMob@@@Z
+     * @hash   218386535
      */
     MCAPI EmergeGoal(class Mob &);
 

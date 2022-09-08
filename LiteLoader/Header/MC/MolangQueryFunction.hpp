@@ -26,11 +26,11 @@ public:
     MolangQueryFunction(struct MolangQueryFunction const &) = delete;
     MolangQueryFunction() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGQUERYFUNCTION
-#endif
     /**
      * @symbol ??1MolangQueryFunction@@QEAA@XZ
+     * @hash   614583372
      */
     MCAPI ~MolangQueryFunction();
 

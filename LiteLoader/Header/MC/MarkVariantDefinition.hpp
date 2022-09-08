@@ -29,11 +29,11 @@ public:
     MarkVariantDefinition(struct MarkVariantDefinition const &) = delete;
     MarkVariantDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MARKVARIANTDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@MarkVariantDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UMarkVariantDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1801447300
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct MarkVariantDefinition>> &);
 

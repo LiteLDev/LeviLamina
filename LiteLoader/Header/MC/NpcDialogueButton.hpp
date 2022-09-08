@@ -28,19 +28,21 @@ public:
     struct NpcDialogueButton& operator=(struct NpcDialogueButton const &) = delete;
     NpcDialogueButton(struct NpcDialogueButton const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUEBUTTON
-#endif
     /**
      * @symbol ??0NpcDialogueButton@@QEAA@XZ
+     * @hash   703804791
      */
     MCAPI NpcDialogueButton();
     /**
      * @symbol ??1NpcDialogueButton@@QEAA@XZ
+     * @hash   -1199881977
      */
     MCAPI ~NpcDialogueButton();
     /**
      * @symbol ?parse@NpcDialogueButton@@SA?AU1@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   1060675225
      */
     MCAPI static struct NpcDialogueButton parse(class Json::Value const &, std::string const &, int);
 

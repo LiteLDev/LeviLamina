@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCHEDULERCOMPONENT
-#endif
     /**
      * @symbol ?getCurrentEventIndex@SchedulerComponent@@QEBAHXZ
+     * @hash   1544822328
      */
     MCAPI int getCurrentEventIndex() const;
     /**
      * @symbol ?setCurrentEventIndex@SchedulerComponent@@QEAAXH@Z
+     * @hash   -1195696826
      */
     MCAPI void setCurrentEventIndex(int);
 

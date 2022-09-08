@@ -32,199 +32,201 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -107438632
      */
     virtual ~WorkbenchBlock();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -327659668
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -283600701
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -275942492
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -275018971
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 36
-     * @symbol 
+     * @vftbl  36
+     * @hash   -273171929
      */
     virtual void __unk_vfn_36();
     /**
-     * @note   Virtual function table index: 37
-     * @symbol 
+     * @vftbl  37
+     * @hash   -272248408
      */
     virtual void __unk_vfn_37();
     /**
-     * @note   Virtual function table index: 38
-     * @symbol 
+     * @vftbl  38
+     * @hash   -271324887
      */
     virtual void __unk_vfn_38();
     /**
-     * @note   Virtual function table index: 39
-     * @symbol 
+     * @vftbl  39
+     * @hash   -270401366
      */
     virtual void __unk_vfn_39();
     /**
-     * @note   Virtual function table index: 40
-     * @symbol 
+     * @vftbl  40
+     * @hash   -250083904
      */
     virtual void __unk_vfn_40();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 42
-     * @symbol 
+     * @vftbl  42
+     * @hash   -248236862
      */
     virtual void __unk_vfn_42();
     /**
-     * @note   Virtual function table index: 44
-     * @symbol 
+     * @vftbl  44
+     * @hash   -246389820
      */
     virtual void __unk_vfn_44();
     /**
-     * @note   Virtual function table index: 45
-     * @symbol 
+     * @vftbl  45
+     * @hash   -245466299
      */
     virtual void __unk_vfn_45();
     /**
-     * @note   Virtual function table index: 46
-     * @symbol 
+     * @vftbl  46
+     * @hash   -244542778
      */
     virtual void __unk_vfn_46();
     /**
-     * @note   Virtual function table index: 47
-     * @symbol 
+     * @vftbl  47
+     * @hash   -243619257
      */
     virtual void __unk_vfn_47();
     /**
-     * @note   Virtual function table index: 48
-     * @symbol 
+     * @vftbl  48
+     * @hash   -242695736
      */
     virtual void __unk_vfn_48();
     /**
-     * @note   Virtual function table index: 49
-     * @symbol 
+     * @vftbl  49
+     * @hash   -241772215
      */
     virtual void __unk_vfn_49();
     /**
-     * @note   Virtual function table index: 59
-     * @symbol 
+     * @vftbl  59
+     * @hash   -213143064
      */
     virtual void __unk_vfn_59();
     /**
-     * @note   Virtual function table index: 60
-     * @symbol 
+     * @vftbl  60
+     * @hash   -192825602
      */
     virtual void __unk_vfn_60();
     /**
-     * @note   Virtual function table index: 73
-     * @symbol 
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @note   Virtual function table index: 80
-     * @symbol 
+     * @vftbl  80
+     * @hash   -135567300
      */
     virtual void __unk_vfn_80();
     /**
-     * @note   Virtual function table index: 105
-     * @symbol 
+     * @vftbl  105
+     * @hash   1332020102
      */
     virtual void __unk_vfn_105();
     /**
-     * @note   Virtual function table index: 124
-     * @symbol 
+     * @vftbl  124
+     * @hash   1388354883
      */
     virtual void __unk_vfn_124();
     /**
-     * @note   Virtual function table index: 126
-     * @symbol 
+     * @vftbl  126
+     * @hash   1390201925
      */
     virtual void __unk_vfn_126();
     /**
-     * @note   Virtual function table index: 127
-     * @symbol 
+     * @vftbl  127
+     * @hash   1391125446
      */
     virtual void __unk_vfn_127();
     /**
-     * @note   Virtual function table index: 132
-     * @symbol 
+     * @vftbl  132
+     * @hash   1415136992
      */
     virtual void __unk_vfn_132();
     /**
-     * @note   Virtual function table index: 148
-     * @symbol 
+     * @vftbl  148
+     * @hash   1442572581
      */
     virtual void __unk_vfn_148();
     /**
-     * @note   Virtual function table index: 157
-     * @symbol 
+     * @vftbl  157
+     * @hash   1470278211
      */
     virtual void __unk_vfn_157();
     /**
-     * @note   Virtual function table index: 168
-     * @symbol 
+     * @vftbl  168
+     * @hash   1457546883
      */
     virtual void __unk_vfn_168();
     /**
-     * @note   Virtual function table index: 169
-     * @symbol 
+     * @vftbl  169
+     * @hash   1458470404
      */
     virtual void __unk_vfn_169();
     /**
-     * @note   Virtual function table index: 170
-     * @symbol 
+     * @vftbl  170
+     * @hash   1478787866
      */
     virtual void __unk_vfn_170();
     /**
-     * @note   Virtual function table index: 177
-     * @symbol 
+     * @vftbl  177
+     * @hash   1534271201
      */
     virtual void __unk_vfn_177();
     /**
-     * @note   Virtual function table index: 179
+     * @vftbl  179
      * @symbol ?use@WorkbenchBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z
+     * @hash   359839971
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @note   Virtual function table index: 188
-     * @symbol 
+     * @vftbl  188
+     * @hash   1563823873
      */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKBENCHBLOCK
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isCraftingBlock@WorkbenchBlock@@UEBA_NXZ
+     * @hash   1721527659
      */
     MCVAPI bool isCraftingBlock() const;
 #endif
     /**
      * @symbol ??0WorkbenchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -2059734724
      */
     MCAPI WorkbenchBlock(std::string const &, int);
 

@@ -29,19 +29,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   560265417
      */
     virtual ~MangroveTreeCanopy();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?placeCanopy@MangroveTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z
+     * @hash   743407783
      */
     virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MANGROVETREECANOPY
-#endif
     /**
      * @symbol ??0MangroveTreeCanopy@@QEAA@XZ
+     * @hash   1177472763
      */
     MCAPI MangroveTreeCanopy();
 

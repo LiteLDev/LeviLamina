@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1773344585
      */
     virtual ~ImmutableWorldCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@ImmutableWorldCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1365716264
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMMUTABLEWORLDCOMMAND
-#endif
     /**
      * @symbol ?setup@ImmutableWorldCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1900610576
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -31,55 +31,62 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -530716306
      */
     virtual ~SwimWithEntityGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@SwimWithEntityGoal@@UEAA_NXZ
+     * @hash   1949451180
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SwimWithEntityGoal@@UEAA_NXZ
+     * @hash   -68293974
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@SwimWithEntityGoal@@UEAA_NXZ
+     * @hash   1028626628
      */
     virtual bool canBeInterrupted();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@SwimWithEntityGoal@@UEAAXXZ
+     * @hash   968614917
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@SwimWithEntityGoal@@UEAAXXZ
+     * @hash   1609869125
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@SwimWithEntityGoal@@UEAAXXZ
+     * @hash   47153904
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SwimWithEntityGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   895153828
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMWITHENTITYGOAL
-#endif
     /**
      * @symbol ??0SwimWithEntityGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1983245433
      */
     MCAPI SwimWithEntityGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_setWantedMob@SwimWithEntityGoal@@AEAA_NXZ
+     * @hash   2026835424
      */
     MCAPI bool _setWantedMob();
 

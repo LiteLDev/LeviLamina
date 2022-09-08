@@ -26,15 +26,16 @@ public:
     BlockPartVisibilityComponent(struct BlockPartVisibilityComponent const &) = delete;
     BlockPartVisibilityComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPARTVISIBILITYCOMPONENT
-#endif
     /**
      * @symbol ??4BlockPartVisibilityComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -160919414
      */
     MCAPI struct BlockPartVisibilityComponent & operator=(struct BlockPartVisibilityComponent &&);
     /**
      * @symbol ??1BlockPartVisibilityComponent@@QEAA@XZ
+     * @hash   392058709
      */
     MCAPI ~BlockPartVisibilityComponent();
 

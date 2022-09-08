@@ -35,189 +35,199 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -325965521
      */
     virtual ~Spider();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 49
+     * @vftbl  49
      * @symbol ?normalTick@Spider@@UEAAXXZ
+     * @hash   -789411898
      */
     virtual void normalTick();
     /**
-     * @note   Virtual function table index: 61
-     * @symbol 
+     * @vftbl  61
+     * @hash   -191902081
      */
     virtual void __unk_vfn_61();
     /**
-     * @note   Virtual function table index: 68
-     * @symbol 
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @note   Virtual function table index: 76
+     * @vftbl  76
      * @symbol ?setBlockMovementSlowdownMultiplier@Spider@@UEAAXAEBVBlockLegacy@@AEBVVec3@@@Z
+     * @hash   -884463169
      */
     virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
     /**
-     * @note   Virtual function table index: 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@Spider@@UEBAMXZ
+     * @hash   48360337
      */
     virtual float getShadowRadius() const;
     /**
-     * @note   Virtual function table index: 82
-     * @symbol 
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @note   Virtual function table index: 85
-     * @symbol 
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @note   Virtual function table index: 88
-     * @symbol 
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @note   Virtual function table index: 96
-     * @symbol 
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @note   Virtual function table index: 99
-     * @symbol 
+     * @vftbl  99
+     * @hash   -105361148
      */
     virtual void __unk_vfn_99();
     /**
-     * @note   Virtual function table index: 106
-     * @symbol 
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @note   Virtual function table index: 108
-     * @symbol 
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @note   Virtual function table index: 109
-     * @symbol 
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @note   Virtual function table index: 111
-     * @symbol 
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @note   Virtual function table index: 132
+     * @vftbl  132
      * @symbol ?shouldRender@Spider@@UEBA_NXZ
+     * @hash   520264540
      */
     virtual bool shouldRender() const;
     /**
-     * @note   Virtual function table index: 182
-     * @symbol 
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @note   Virtual function table index: 196
-     * @symbol 
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @note   Virtual function table index: 212
+     * @vftbl  212
      * @symbol ?canBeAffected@Spider@@UEBA_NAEBVMobEffectInstance@@@Z
+     * @hash   261471911
      */
     virtual bool canBeAffected(class MobEffectInstance const &) const;
     /**
-     * @note   Virtual function table index: 222
-     * @symbol 
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @note   Virtual function table index: 223
-     * @symbol 
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @note   Virtual function table index: 248
-     * @symbol 
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @note   Virtual function table index: 251
-     * @symbol 
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @note   Virtual function table index: 269
-     * @symbol 
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @note   Virtual function table index: 275
+     * @vftbl  275
      * @symbol ?_playStepSound@Spider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   -467829603
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
-     * @note   Virtual function table index: 277
-     * @symbol 
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
     /**
-     * @note   Virtual function table index: 285
-     * @symbol 
+     * @vftbl  285
+     * @hash   -1895428993
      */
     virtual void __unk_vfn_285();
     /**
-     * @note   Virtual function table index: 300
+     * @vftbl  300
      * @symbol ?aiStep@Spider@@UEAAXXZ
+     * @hash   -1168794346
      */
     virtual void aiStep();
     /**
-     * @note   Virtual function table index: 313
-     * @symbol 
+     * @vftbl  313
+     * @hash   -1210176411
      */
     virtual void __unk_vfn_313();
     /**
-     * @note   Virtual function table index: 317
-     * @symbol 
+     * @vftbl  317
+     * @hash   -1157463639
      */
     virtual void __unk_vfn_317();
     /**
-     * @note   Virtual function table index: 351
-     * @symbol 
+     * @vftbl  351
+     * @hash   -1055222849
      */
     virtual void __unk_vfn_351();
     /**
-     * @note   Virtual function table index: 365
-     * @symbol 
+     * @vftbl  365
+     * @hash   -1022899614
      */
     virtual void __unk_vfn_365();
     /**
-     * @note   Virtual function table index: 368
+     * @vftbl  368
      * @symbol ?getModelScale@Spider@@UEBAMXZ
+     * @hash   -1535420048
      */
     virtual float getModelScale() const;
     /**
-     * @note   Virtual function table index: 369
+     * @vftbl  369
      * @symbol ?getSpiderType@Spider@@UEBA?AW4Type@1@XZ
+     * @hash   1842029673
      */
     virtual enum Spider::Type getSpiderType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIDER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?useNewAi@Spider@@UEBA_NXZ
+     * @hash   -1523540012
      */
     MCVAPI bool useNewAi() const;
 #endif
     /**
      * @symbol ??0Spider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   88736977
      */
     MCAPI Spider(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
 

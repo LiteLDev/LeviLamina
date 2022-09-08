@@ -30,8 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IENTITYREGISTRYOWNER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1IEntityRegistryOwner@@MEAA@XZ
+     * @hash   -1167987251
      */
     MCVAPI ~IEntityRegistryOwner();
 #endif

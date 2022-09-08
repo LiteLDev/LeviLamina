@@ -24,6 +24,7 @@ namespace EntitySystemsCollection {
 #undef AFTER_EXTRA
     /**
      * @symbol ?create@EntitySystemsCollection@@YA?AV?$unique_ptr@UIEntitySystemsCollection@@U?$default_delete@UIEntitySystemsCollection@@@std@@@std@@XZ
+     * @hash   -1048517697
      */
     MCAPI std::unique_ptr<struct IEntitySystemsCollection> create();
 

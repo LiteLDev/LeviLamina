@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   472221069
      */
     virtual ~CartographyContainerManagerModel();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getItemCopies@CartographyContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   369539484
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setSlot@CartographyContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   657619699
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getSlot@CartographyContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   1222267292
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setData@CartographyContainerManagerModel@@UEAAXHH@Z
+     * @hash   1395574224
      */
     virtual void setData(int, int);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@CartographyContainerManagerModel@@UEAAXXZ
+     * @hash   1004434438
      */
     virtual void broadcastChanges();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?isValid@CartographyContainerManagerModel@@UEAA_NM@Z
+     * @hash   -830383782
      */
     virtual bool isValid(float);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_postInit@CartographyContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -1921049149
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CARTOGRAPHYCONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0CartographyContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -1859539662
      */
     MCAPI CartographyContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 

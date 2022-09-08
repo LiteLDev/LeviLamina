@@ -29,19 +29,21 @@ public:
     IsIllagerCaptainDefinition(struct IsIllagerCaptainDefinition const &) = delete;
     IsIllagerCaptainDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISILLAGERCAPTAINDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsIllagerCaptainDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -841121924
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsIllagerCaptainDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -769764900
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsIllagerCaptainDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsIllagerCaptainDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -637757958
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIllagerCaptainDefinition>> &);
 

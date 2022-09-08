@@ -33,11 +33,9 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -82757653
      */
     virtual ~UseActorDefinition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_USEACTORDEFINITION
-#endif
 
 };

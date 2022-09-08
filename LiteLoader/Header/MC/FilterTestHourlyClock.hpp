@@ -33,26 +33,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   194195169
      */
     virtual ~FilterTestHourlyClock();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?setup@FilterTestHourlyClock@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+     * @hash   1114471655
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?evaluate@FilterTestHourlyClock@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   -1424939915
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@FilterTestHourlyClock@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   -1111354323
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTHOURLYCLOCK
-#endif
 
 };

@@ -32,32 +32,35 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   849593457
      */
     virtual ~MineshaftPiece();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?isInInvalidLocation@MineshaftPiece@@UEAA_NAEAVBlockSource@@AEBVBoundingBox@@@Z
+     * @hash   317121085
      */
     virtual bool isInInvalidLocation(class BlockSource &, class BoundingBox const &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?canBeReplaced@MineshaftPiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z
+     * @hash   -2056361886
      */
     virtual bool canBeReplaced(class BlockSource &, int, int, int, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTPIECE
-#endif
     /**
      * @symbol ?createRandomShaftPiece@MineshaftPiece@@QEAA?AV?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@AEAUMineshaftData@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@3@AEAVRandom@@HHHHH@Z
+     * @hash   -2003115679
      */
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(struct MineshaftData &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     /**
      * @symbol ?generateAndAddPiece@MineshaftPiece@@QEAAPEAVStructurePiece@@AEAV2@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HHHHH@Z
+     * @hash   -883413973
      */
     MCAPI class StructurePiece * generateAndAddPiece(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, int, int, int, int, int);
     /**
      * @symbol ?setPlanksBlock@MineshaftPiece@@QEAAXAEAVBlockSource@@AEBVBlock@@HHH@Z
+     * @hash   -684979884
      */
     MCAPI void setPlanksBlock(class BlockSource &, class Block const &, int, int, int);
 

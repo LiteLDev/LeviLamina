@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -228324292
      */
     virtual ~DwellerSystem();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?registerEvents@DwellerSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+     * @hash   -2057086038
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -502294546
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERSYSTEM
-#endif
 
 };

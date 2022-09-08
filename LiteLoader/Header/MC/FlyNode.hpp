@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2075710237
      */
     virtual ~FlyNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@FlyNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -1569640078
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@FlyNode@@EEAAXAEAVActor@@@Z
+     * @hash   180704950
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYNODE
-#endif
     /**
      * @symbol ??0FlyNode@@QEAA@XZ
+     * @hash   -1294321743
      */
     MCAPI FlyNode();
 

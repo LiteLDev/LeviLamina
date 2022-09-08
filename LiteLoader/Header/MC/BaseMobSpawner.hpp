@@ -31,48 +31,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   842668611
      */
     virtual ~BaseMobSpawner();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@BaseMobSpawner@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -1168781591
      */
     virtual void tick(class BlockSource &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?load@BaseMobSpawner@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -56824218
      */
     virtual void load(class CompoundTag const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?save@BaseMobSpawner@@UEAAXAEAVCompoundTag@@@Z
+     * @hash   -1244678254
      */
     virtual void save(class CompoundTag &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
+     * @hash   826487639
      */
     virtual class BlockPos const & getPos() = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEMOBSPAWNER
-#endif
     /**
      * @symbol ??0BaseMobSpawner@@QEAA@UActorDefinitionIdentifier@@@Z
+     * @hash   532240146
      */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     /**
      * @symbol ?removeDisplayEntity@BaseMobSpawner@@QEAAXXZ
+     * @hash   1485734051
      */
     MCAPI void removeDisplayEntity();
     /**
      * @symbol ?setEntityId@BaseMobSpawner@@QEAAXUActorDefinitionIdentifier@@@Z
+     * @hash   2098057826
      */
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
 
 //protected:
     /**
      * @symbol ?_delay@BaseMobSpawner@@IEAAXAEAVBlockSource@@@Z
+     * @hash   -1352135866
      */
     MCAPI void _delay(class BlockSource &);
 

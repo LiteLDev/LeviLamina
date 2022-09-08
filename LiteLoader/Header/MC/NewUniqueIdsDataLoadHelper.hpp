@@ -30,159 +30,165 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2072662513
      */
     virtual ~NewUniqueIdsDataLoadHelper();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -2080803375
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -2079879854
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -2078987085
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -2078032812
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -2077109291
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -2076170394
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -2075246873
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -2074323352
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -2073399831
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -1057345581
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -1056422060
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -1055498539
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?loadActorUniqueID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     * @hash   1632592613
      */
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?loadOwnerID@NewUniqueIdsDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     * @hash   -136001992
      */
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?loadActorInternalComponentInfo@NewUniqueIdsDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
+     * @hash   -541169921
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?getType@NewUniqueIdsDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
+     * @hash   -1635457325
      */
     virtual enum DataLoadHelperType getType() const;
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?shouldResetTime@NewUniqueIdsDataLoadHelper@@UEAA_NXZ
+     * @hash   -1653111427
      */
     virtual bool shouldResetTime();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEWUNIQUEIDSDATALOADHELPER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadBlockPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     * @hash   -1970569290
      */
     MCVAPI class BlockPos loadBlockPosition(class BlockPos const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadBlockPositionOffset@NewUniqueIdsDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     * @hash   -1428289213
      */
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     * @hash   -98197811
      */
     MCVAPI class Vec3 loadDirection(class Vec3 const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+     * @hash   1815077975
      */
     MCVAPI enum Direction::Type loadDirection(enum Direction::Type);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
+     * @hash   -871553827
      */
     MCVAPI unsigned char loadFacingID(unsigned char);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
+     * @hash   981032755
      */
     MCVAPI enum Mirror loadMirror(enum Mirror);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     * @hash   -974371817
      */
     MCVAPI class Vec3 loadPosition(class Vec3 const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
+     * @hash   -734777420
      */
     MCVAPI enum Rotation loadRotation(enum Rotation);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     * @hash   204990611
      */
     MCVAPI float loadRotationDegreesX(float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadRotationDegreesY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     * @hash   943740178
      */
     MCVAPI float loadRotationDegreesY(float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadRotationRadiansX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     * @hash   -2088413954
      */
     MCVAPI float loadRotationRadiansX(float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadRotationRadiansY@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
+     * @hash   -1349664387
      */
     MCVAPI float loadRotationRadiansY(float);
 #endif
     /**
      * @symbol ??0NewUniqueIdsDataLoadHelper@@QEAA@AEAVILevel@@@Z
+     * @hash   -1285511854
      */
     MCAPI NewUniqueIdsDataLoadHelper(class ILevel &);
 

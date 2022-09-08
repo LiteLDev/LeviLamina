@@ -28,23 +28,23 @@ public:
     DispatcherUpdateSystem(struct DispatcherUpdateSystem const &) = delete;
     DispatcherUpdateSystem() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   529773033
      */
     virtual ~DispatcherUpdateSystem();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@DispatcherUpdateSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -491295265
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DISPATCHERUPDATESYSTEM
-#endif
 
 };

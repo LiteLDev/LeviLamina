@@ -31,43 +31,45 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -309443906
      */
     virtual ~ServerMoveInputHandler();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 15
-     * @symbol 
+     * @vftbl  15
+     * @hash   -380372440
      */
     virtual void __unk_vfn_15();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMOVEINPUTHANDLER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?registerInputHandlers@ServerMoveInputHandler@@UEAAXAEAVInputHandler@@@Z
+     * @hash   137988177
      */
     MCVAPI void registerInputHandlers(class InputHandler &);
 #endif
     /**
      * @symbol ??0ServerMoveInputHandler@@QEAA@XZ
+     * @hash   -1905087920
      */
     MCAPI ServerMoveInputHandler();
     /**
      * @symbol ?digestPlayerInputPacket@ServerMoveInputHandler@@QEAAXAEBVPlayerAuthInputPacket@@@Z
+     * @hash   -1995425712
      */
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
 

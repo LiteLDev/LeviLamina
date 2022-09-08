@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONCHUNKMOVESYSTEM
-#endif
     /**
      * @symbol ?createDimensionChunkMoveSystem@DimensionChunkMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1392283628
      */
     MCAPI static struct TickingSystemWithInfo createDimensionChunkMoveSystem();
 

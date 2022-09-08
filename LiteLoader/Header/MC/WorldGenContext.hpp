@@ -26,11 +26,11 @@ public:
     WorldGenContext(struct WorldGenContext const &) = delete;
     WorldGenContext() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCONTEXT
-#endif
     /**
      * @symbol ??1WorldGenContext@@QEAA@XZ
+     * @hash   -1887345283
      */
     MCAPI ~WorldGenContext();
 

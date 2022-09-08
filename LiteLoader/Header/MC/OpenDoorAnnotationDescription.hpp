@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@OpenDoorAnnotationDescription@@UEBAPEBDXZ
+     * @hash   1585925199
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -203256477
      */
     virtual ~OpenDoorAnnotationDescription();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@OpenDoorAnnotationDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1436328034
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONDESCRIPTION
-#endif
 
 };

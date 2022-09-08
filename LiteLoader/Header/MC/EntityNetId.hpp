@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYNETID
-#endif
     /**
      * @symbol ?_serverGetEntityNetId@EntityNetId@@SA?AV1@AEBVEntityContext@@@Z
+     * @hash   -1038889917
      */
     MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const &);
 

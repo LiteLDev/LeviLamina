@@ -25,15 +25,16 @@ public:
     struct PlayerInteractEvent& operator=(struct PlayerInteractEvent const &) = delete;
     PlayerInteractEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINTERACTEVENT
-#endif
     /**
      * @symbol ??0PlayerInteractEvent@@QEAA@AEBU0@@Z
+     * @hash   -2034245659
      */
     MCAPI PlayerInteractEvent(struct PlayerInteractEvent const &);
     /**
      * @symbol ??1PlayerInteractEvent@@QEAA@XZ
+     * @hash   1882707599
      */
     MCAPI ~PlayerInteractEvent();
 

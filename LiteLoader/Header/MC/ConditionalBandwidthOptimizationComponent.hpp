@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONDITIONALBANDWIDTHOPTIMIZATIONCOMPONENT
-#endif
     /**
      * @symbol ??0ConditionalBandwidthOptimizationComponent@@QEAA@$$QEAV0@@Z
+     * @hash   -2030341997
      */
     MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent &&);
     /**
      * @symbol ?getCurrentOptimizationValues@ConditionalBandwidthOptimizationComponent@@QEAA?AUConditionalBandwidthOptimization@@AEAVActor@@@Z
+     * @hash   586626445
      */
     MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor &);
     /**
      * @symbol ?initFromDefinition@ConditionalBandwidthOptimizationComponent@@QEAAXAEAVActor@@AEBVConditionalBandwidthOptimizationDefinition@@@Z
+     * @hash   1356480051
      */
     MCAPI void initFromDefinition(class Actor &, class ConditionalBandwidthOptimizationDefinition const &);
     /**
      * @symbol ??4ConditionalBandwidthOptimizationComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   528844446
      */
     MCAPI class ConditionalBandwidthOptimizationComponent & operator=(class ConditionalBandwidthOptimizationComponent &&);
     /**
      * @symbol ??1ConditionalBandwidthOptimizationComponent@@QEAA@XZ
+     * @hash   248352065
      */
     MCAPI ~ConditionalBandwidthOptimizationComponent();
 

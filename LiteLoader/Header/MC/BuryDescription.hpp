@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURYDESCRIPTION
-#endif
     /**
      * @symbol ??0BuryDescription@@QEAA@AEBVBoundingBox@@@Z
+     * @hash   -141712551
      */
     MCAPI BuryDescription(class BoundingBox const &);
     /**
      * @symbol ?calculateContribution@BuryDescription@@QEBAMAEBVBlockPos@@@Z
+     * @hash   1068530625
      */
     MCAPI float calculateContribution(class BlockPos const &) const;
 

@@ -28,43 +28,51 @@ public:
     PendingArea(struct PendingArea const &) = delete;
     PendingArea() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PENDINGAREA
-#endif
     /**
      * @symbol ?getDescription@PendingArea@@QEBA?AUTickingAreaDescription@@XZ
+     * @hash   379764628
      */
     MCAPI struct TickingAreaDescription getDescription() const;
     /**
      * @symbol ?isEntityOwned@PendingArea@@QEBA_NXZ
+     * @hash   1536945190
      */
     MCAPI bool isEntityOwned() const;
     /**
      * @symbol ??4PendingArea@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   481505656
      */
     MCAPI struct PendingArea & operator=(struct PendingArea &&);
     /**
      * @symbol ?serialize@PendingArea@@QEBA?AVCompoundTag@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   -903902985
      */
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
     /**
      * @symbol ??1PendingArea@@QEAA@XZ
+     * @hash   1762834496
      */
     MCAPI ~PendingArea();
     /**
      * @symbol ?createEntityTickingArea@PendingArea@@SA?AU1@VUUID@mce@@UActorUniqueID@@AEBUBounds@@_NM@Z
+     * @hash   1532094070
      */
     MCAPI static struct PendingArea createEntityTickingArea(class mce::UUID, struct ActorUniqueID, struct Bounds const &, bool, float);
     /**
      * @symbol ?createTickingArea@PendingArea@@SA?AU1@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
+     * @hash   -601478512
      */
     MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);
     /**
      * @symbol ?load@PendingArea@@SA?AU1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
+     * @hash   -1693877831
      */
     MCAPI static struct PendingArea load(std::string const &, class CompoundTag const &);
     /**
      * @symbol ?validTag@PendingArea@@SA_NAEBVCompoundTag@@@Z
+     * @hash   1446747737
      */
     MCAPI static bool validTag(class CompoundTag const &);
 

@@ -60,14 +60,17 @@ public:
 #undef AFTER_EXTRA
     /**
      * @symbol ?bindBlockLocation@ScriptModuleMinecraft@@YA?AV?$ClassBindingBuilder@VBlockPos@@@Scripting@@XZ
+     * @hash   1702767742
      */
     MCAPI class Scripting::ClassBindingBuilder<class BlockPos> bindBlockLocation();
     /**
      * @symbol ?bindFacingEnum@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptFacing@ScriptModuleMinecraft@@W412@@Scripting@@XZ
+     * @hash   -1622502536
      */
     MCAPI class Scripting::EnumBindingBuilder<enum ScriptModuleMinecraft::ScriptFacing, enum ScriptModuleMinecraft::ScriptFacing> bindFacingEnum();
     /**
      * @symbol ?bindMessageSourceType@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptMessageSourceType@ScriptModuleMinecraft@@W412@@Scripting@@XZ
+     * @hash   1121609342
      */
     MCAPI class Scripting::EnumBindingBuilder<enum ScriptModuleMinecraft::ScriptMessageSourceType, enum ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceType();
 

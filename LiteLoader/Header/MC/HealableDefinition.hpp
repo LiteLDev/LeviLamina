@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEALABLEDEFINITION
-#endif
     /**
      * @symbol ??0HealableDefinition@@QEAA@XZ
+     * @hash   1751757873
      */
     MCAPI HealableDefinition();
     /**
      * @symbol ?addFeedItem@HealableDefinition@@QEAAXAEBUFeedItem@@@Z
+     * @hash   2138309274
      */
     MCAPI void addFeedItem(struct FeedItem const &);
     /**
      * @symbol ?addFeedItemByName@HealableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   76794094
      */
     MCAPI void addFeedItemByName(std::string const &);
     /**
      * @symbol ?buildSchema@HealableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHealableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   975988086
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HealableDefinition>> &);
 

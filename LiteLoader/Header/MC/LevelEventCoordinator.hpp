@@ -29,38 +29,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTCOORDINATOR
-#endif
     /**
      * @symbol ??0LevelEventCoordinator@@QEAA@XZ
+     * @hash   1467411174
      */
     MCAPI LevelEventCoordinator();
     /**
      * @symbol ?registerLevelGameplayHandler@LevelEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VLevelGameplayHandler@@U?$default_delete@VLevelGameplayHandler@@@std@@@std@@@Z
+     * @hash   -739864624
      */
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler> &&);
     /**
      * @symbol ?sendEvent@LevelEventCoordinator@@QEAAXAEBV?$EventRef@U?$LevelGameplayEvent@X@@@@@Z
+     * @hash   116463462
      */
     MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void>> const &);
     /**
      * @symbol ?sendLevelBiomesRegistered@LevelEventCoordinator@@QEAAXAEAVIWorldRegistriesProvider@@@Z
+     * @hash   -1592419834
      */
     MCAPI void sendLevelBiomesRegistered(class IWorldRegistriesProvider &);
     /**
      * @symbol ?sendLevelInitialized@LevelEventCoordinator@@QEAAXAEAVLevel@@@Z
+     * @hash   -1161785250
      */
     MCAPI void sendLevelInitialized(class Level &);
     /**
      * @symbol ?sendLevelRemovedActor@LevelEventCoordinator@@QEAAXAEAVLevel@@AEAVActor@@@Z
+     * @hash   -1964949235
      */
     MCAPI void sendLevelRemovedActor(class Level &, class Actor &);
     /**
      * @symbol ?sendLevelTick@LevelEventCoordinator@@QEAAXXZ
+     * @hash   -1326308233
      */
     MCAPI void sendLevelTick();
     /**
      * @symbol ?sendLevelWeatherChanged@LevelEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
+     * @hash   1648363974
      */
     MCAPI void sendLevelWeatherChanged(std::string const &, bool, bool);
 

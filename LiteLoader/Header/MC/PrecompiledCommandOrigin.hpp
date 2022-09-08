@@ -33,106 +33,123 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1296132423
      */
     virtual ~PrecompiledCommandOrigin();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getRequestId@PrecompiledCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   452412703
      */
     virtual std::string const & getRequestId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@PrecompiledCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -835019170
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ
+     * @hash   1363926667
      */
     virtual class BlockPos getBlockPosition() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getWorldPosition@PrecompiledCommandOrigin@@UEBA?AVVec3@@XZ
+     * @hash   1802803256
      */
     virtual class Vec3 getWorldPosition() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getRotation@PrecompiledCommandOrigin@@UEBA?AV?$optional@VVec2@@@std@@XZ
+     * @hash   114836551
      */
     virtual class std::optional<class Vec2> getRotation() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getLevel@PrecompiledCommandOrigin@@UEBAPEAVLevel@@XZ
+     * @hash   -1184614303
      */
     virtual class Level * getLevel() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getDimension@PrecompiledCommandOrigin@@UEBAPEAVDimension@@XZ
+     * @hash   484251425
      */
     virtual class Dimension * getDimension() const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getEntity@PrecompiledCommandOrigin@@UEBAPEAVActor@@XZ
+     * @hash   1687305307
      */
     virtual class Actor * getEntity() const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getPermissionsLevel@PrecompiledCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+     * @hash   -1503353505
      */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?clone@PrecompiledCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     * @hash   2137823525
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?hasChatPerms@PrecompiledCommandOrigin@@UEBA_NXZ
+     * @hash   -1055144660
      */
     virtual bool hasChatPerms() const;
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?hasTellPerms@PrecompiledCommandOrigin@@UEBA_NXZ
+     * @hash   219599891
      */
     virtual bool hasTellPerms() const;
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?canUseAbility@PrecompiledCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
+     * @hash   1704626362
      */
     virtual bool canUseAbility(enum AbilitiesIndex) const;
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?isWorldBuilder@PrecompiledCommandOrigin@@UEBA_NXZ
+     * @hash   881804366
      */
     virtual bool isWorldBuilder() const;
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@PrecompiledCommandOrigin@@UEBA_NXZ
+     * @hash   706264659
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@PrecompiledCommandOrigin@@UEBA_NXZ
+     * @hash   -1090123731
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
-     * @note   Virtual function table index: 23
+     * @vftbl  23
      * @symbol ?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     * @hash   78681956
      */
     virtual enum CommandOriginType getOriginType() const;
     /**
-     * @note   Virtual function table index: 29
+     * @vftbl  29
      * @symbol ?serialize@PrecompiledCommandOrigin@@UEBA?AVCompoundTag@@XZ
+     * @hash   1101959051
      */
     virtual class CompoundTag serialize() const;
     /**
-     * @note   Virtual function table index: 30
+     * @vftbl  30
      * @symbol ?isValid@PrecompiledCommandOrigin@@UEBA_NXZ
+     * @hash   -372415571
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRECOMPILEDCOMMANDORIGIN
-#endif
 
 };

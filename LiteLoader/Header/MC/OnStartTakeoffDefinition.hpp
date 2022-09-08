@@ -29,11 +29,11 @@ public:
     OnStartTakeoffDefinition(struct OnStartTakeoffDefinition const &) = delete;
     OnStartTakeoffDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTARTTAKEOFFDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@OnStartTakeoffDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnStartTakeoffDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   90520570
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnStartTakeoffDefinition>> &);
 

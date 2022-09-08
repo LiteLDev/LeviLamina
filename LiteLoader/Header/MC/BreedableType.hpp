@@ -25,15 +25,16 @@ public:
     struct BreedableType& operator=(struct BreedableType const &) = delete;
     BreedableType() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREEDABLETYPE
-#endif
     /**
      * @symbol ??0BreedableType@@QEAA@AEBU0@@Z
+     * @hash   -1337096987
      */
     MCAPI BreedableType(struct BreedableType const &);
     /**
      * @symbol ??1BreedableType@@QEAA@XZ
+     * @hash   -115502492
      */
     MCAPI ~BreedableType();
 

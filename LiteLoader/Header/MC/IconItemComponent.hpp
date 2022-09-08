@@ -31,56 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   161670783
      */
     virtual ~IconItemComponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VIconItemComponent@@@@UEBA_NXZ
+     * @hash   -653519904
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VIconItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -1178317726
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VIconItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   1988871790
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONITEMCOMPONENT
-#endif
     /**
      * @symbol ??0IconItemComponent@@QEAA@PEAVComponentItem@@@Z
+     * @hash   -455841559
      */
     MCAPI IconItemComponent(class ComponentItem *);
     /**
      * @symbol ?setOwnerIcon@IconItemComponent@@QEAAXXZ
+     * @hash   1669096631
      */
     MCAPI void setOwnerIcon();
     /**
      * @symbol ?bindType@IconItemComponent@@SAXXZ
+     * @hash   -168705057
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@IconItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   769787238
      */
     MCAPI static class HashedString const & getIdentifier();
 

@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1583681102
      */
     virtual ~PlaceBlockNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@PlaceBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   1550600821
      */
     virtual enum BehaviorStatus tick(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLACEBLOCKNODE
-#endif
     /**
      * @symbol ??0PlaceBlockNode@@QEAA@XZ
+     * @hash   2117889156
      */
     MCAPI PlaceBlockNode();
 

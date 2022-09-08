@@ -33,16 +33,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1745624437
      */
     virtual ~BreakBlockDefinition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@BreakBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z
+     * @hash   1242246339
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKDEFINITION
-#endif
 
 };

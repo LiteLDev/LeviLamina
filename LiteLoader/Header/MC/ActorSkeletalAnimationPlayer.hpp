@@ -31,59 +31,67 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2131196735
      */
     virtual ~ActorSkeletalAnimationPlayer();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?applyToPose@ActorSkeletalAnimationPlayer@@UEAAXAEAVRenderParams@@AEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@M@Z
+     * @hash   1539725571
      */
     virtual void applyToPose(class RenderParams &, class std::unordered_map<enum SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum SkeletalHierarchyIndex>, struct std::equal_to<enum SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?resetAnimation@ActorSkeletalAnimationPlayer@@UEAAXXZ
+     * @hash   -2013189931
      */
     virtual void resetAnimation();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?buildBoneToPartMapping@ActorSkeletalAnimationPlayer@@UEAAXAEAVAnimationComponent@@@Z
+     * @hash   -320000515
      */
     virtual void buildBoneToPartMapping(class AnimationComponent &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?bindParticleEffects@ActorSkeletalAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V1@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V1@@std@@@3@@std@@@Z
+     * @hash   1498040851
      */
     virtual void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?bindSoundEffects@ActorSkeletalAnimationPlayer@@UEAAXAEBV?$unordered_map@VHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@VHashedString@@@3@U?$equal_to@VHashedString@@@3@V?$allocator@U?$pair@$$CBVHashedString@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@@Z
+     * @hash   -1242290552
      */
     virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?hasAnimationFinished@ActorSkeletalAnimationPlayer@@UEBA_NXZ
+     * @hash   -752901955
      */
     virtual bool hasAnimationFinished() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?findAnimation@ActorSkeletalAnimationPlayer@@UEAA?AV?$shared_ptr@VActorAnimationPlayer@@@std@@AEBVHashedString@@@Z
+     * @hash   -2006545168
      */
     virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const &);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getAnimationType@ActorSkeletalAnimationPlayer@@UEBA?AW4ActorAnimationType@@XZ
+     * @hash   -451764024
      */
     virtual enum ActorAnimationType getAnimationType() const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getRawName@ActorSkeletalAnimationPlayer@@UEBAAEBVHashedString@@XZ
+     * @hash   -1556004267
      */
     virtual class HashedString const & getRawName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPLAYER
-#endif
     /**
      * @symbol ??0ActorSkeletalAnimationPlayer@@QEAA@AEBVHashedString@@VActorSkeletalAnimationPtr@@AEAVAnimationComponent@@AEBVExpressionNode@@@Z
+     * @hash   -702452293
      */
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const &, class ActorSkeletalAnimationPtr, class AnimationComponent &, class ExpressionNode const &);
 

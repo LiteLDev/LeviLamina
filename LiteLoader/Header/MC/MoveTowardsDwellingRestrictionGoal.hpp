@@ -31,49 +31,50 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -155375122
      */
     virtual ~MoveTowardsDwellingRestrictionGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@MoveTowardsDwellingRestrictionGoal@@UEAA_NXZ
+     * @hash   -108896100
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   673480820
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   642453974
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveTowardsDwellingRestrictionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1467408052
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSDWELLINGRESTRICTIONGOAL
-#endif
     /**
      * @symbol ??0MoveTowardsDwellingRestrictionGoal@@QEAA@AEAVMob@@@Z
+     * @hash   617323993
      */
     MCAPI MoveTowardsDwellingRestrictionGoal(class Mob &);
 

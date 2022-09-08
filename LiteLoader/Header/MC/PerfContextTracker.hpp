@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKER
-#endif
     /**
      * @symbol ??0PerfContextTracker@@QEAA@XZ
+     * @hash   -1088708546
      */
     MCAPI PerfContextTracker();
     /**
      * @symbol ?incrementPacketReceivedInfo@PerfContextTracker@@QEAAXI@Z
+     * @hash   1530054498
      */
     MCAPI void incrementPacketReceivedInfo(unsigned int);
     /**
      * @symbol ?incrementPacketSentInfo@PerfContextTracker@@QEAAXI@Z
+     * @hash   -1422861294
      */
     MCAPI void incrementPacketSentInfo(unsigned int);
     /**
      * @symbol ?getInstance@PerfContextTracker@@SAAEAV1@XZ
+     * @hash   -682932359
      */
     MCAPI static class PerfContextTracker & getInstance();
 

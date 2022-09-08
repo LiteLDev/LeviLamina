@@ -29,44 +29,51 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OREVEINIFIERNOISES
-#endif
     /**
      * @symbol ??0OreVeinifierNoises@@QEAA@AEBV0@@Z
+     * @hash   1696234785
      */
     MCAPI OreVeinifierNoises(class OreVeinifierNoises const &);
     /**
      * @symbol ?getPositionalRandomFactory@OreVeinifierNoises@@QEBAAEBVXoroshiroPositionalRandomFactory@@XZ
+     * @hash   2043839520
      */
     MCAPI class XoroshiroPositionalRandomFactory const & getPositionalRandomFactory() const;
     /**
      * @symbol ?sampleGapNoise@OreVeinifierNoises@@QEBAMMMM@Z
+     * @hash   1270787185
      */
     MCAPI float sampleGapNoise(float, float, float) const;
     /**
      * @symbol ?sampleVeinNoiseA@OreVeinifierNoises@@QEBAMMMM@Z
+     * @hash   1291177185
      */
     MCAPI float sampleVeinNoiseA(float, float, float) const;
     /**
      * @symbol ?sampleVeinNoiseB@OreVeinifierNoises@@QEBAMMMM@Z
+     * @hash   850387473
      */
     MCAPI float sampleVeinNoiseB(float, float, float) const;
     /**
      * @symbol ?sampleVeininessNoise@OreVeinifierNoises@@QEBAMMMM@Z
+     * @hash   -1491651935
      */
     MCAPI float sampleVeininessNoise(float, float, float) const;
     /**
      * @symbol ??1OreVeinifierNoises@@QEAA@XZ
+     * @hash   -1394648506
      */
     MCAPI ~OreVeinifierNoises();
     /**
      * @symbol ?make@OreVeinifierNoises@@SA?AV1@AEBVXoroshiroPositionalRandomFactory@@@Z
+     * @hash   -108133428
      */
     MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const &);
 
 //private:
     /**
      * @symbol ??0OreVeinifierNoises@@AEAA@V?$NormalNoiseImpl@$0A@V?$MultiOctaveNoiseImpl@$0A@V?$ParityImprovedNoiseImpl@$0A@@@@@@@000VXoroshiroPositionalRandomFactory@@@Z
+     * @hash   -1284103135
      */
     MCAPI OreVeinifierNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
 

@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2074312215
      */
     virtual ~MineshaftCrossing();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getType@MineshaftCrossing@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   1144836946
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?addChildren@MineshaftCrossing@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z
+     * @hash   -1152052546
      */
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?postProcess@MineshaftCrossing@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1926352026
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTCROSSING
-#endif
     /**
      * @symbol ?_placeSupportPillar@MineshaftCrossing@@QEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHH@Z
+     * @hash   1277716317
      */
     MCAPI void _placeSupportPillar(class BlockSource &, class BoundingBox const &, int, int, int, int);
 

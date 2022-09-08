@@ -42,18 +42,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RELATIVEFLOAT
-#endif
     /**
      * @symbol ??0RelativeFloat@@QEAA@XZ
+     * @hash   1491997340
      */
     MCAPI RelativeFloat();
     /**
      * @symbol ??0RelativeFloat@@QEAA@M_N@Z
+     * @hash   -528987998
      */
     MCAPI RelativeFloat(float, bool);
     /**
      * @symbol ?getValue@RelativeFloat@@QEBAMM@Z
+     * @hash   -802423667
      */
     MCAPI float getValue(float) const;
 

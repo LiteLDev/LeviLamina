@@ -26,11 +26,11 @@ public:
     OptionalString(struct OptionalString const &) = delete;
     OptionalString() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPTIONALSTRING
-#endif
     /**
      * @symbol ??1OptionalString@@QEAA@XZ
+     * @hash   1384410971
      */
     MCAPI ~OptionalString();
 

@@ -29,24 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMREGISTRYMANAGER
-#endif
     /**
      * @symbol ?getItemRegistry@ItemRegistryManager@@SA?AVItemRegistryRef@@XZ
+     * @hash   1249529418
      */
     MCAPI static class ItemRegistryRef getItemRegistry();
     /**
      * @symbol ?resetItemRegistry@ItemRegistryManager@@SAXXZ
+     * @hash   -1955885375
      */
     MCAPI static void resetItemRegistry();
     /**
      * @symbol ?setItemRegistry@ItemRegistryManager@@SAXVItemRegistryRef@@@Z
+     * @hash   -920161312
      */
     MCAPI static void setItemRegistry(class ItemRegistryRef);
 
 //private:
 
 private:
-MCAPI static class Bedrock::Threading::ThreadLocalObject<class std::weak_ptr<class ItemRegistry>, class std::allocator<class std::weak_ptr<class ItemRegistry>>> mThreadLocalRegistry;
+    /**
+     * @symbol ?mThreadLocalRegistry@ItemRegistryManager@@0V?$ThreadLocalObject@V?$weak_ptr@VItemRegistry@@@std@@V?$allocator@V?$weak_ptr@VItemRegistry@@@std@@@2@@Threading@Bedrock@@A
+     * @hash   -1342579463
+     */
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class std::weak_ptr<class ItemRegistry>, class std::allocator<class std::weak_ptr<class ItemRegistry>>> mThreadLocalRegistry;
 
 };

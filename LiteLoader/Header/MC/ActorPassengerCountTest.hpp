@@ -33,21 +33,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1865628182
      */
     virtual ~ActorPassengerCountTest();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?evaluate@ActorPassengerCountTest@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   1945336030
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@ActorPassengerCountTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   1383082148
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPASSENGERCOUNTTEST
-#endif
 
 };

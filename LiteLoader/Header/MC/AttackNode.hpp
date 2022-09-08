@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -540019404
      */
     virtual ~AttackNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@AttackNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -1557656441
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@AttackNode@@EEAAXAEAVActor@@@Z
+     * @hash   1695263963
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKNODE
-#endif
     /**
      * @symbol ??0AttackNode@@QEAA@XZ
+     * @hash   280314182
      */
     MCAPI AttackNode();
 

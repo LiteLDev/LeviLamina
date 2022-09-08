@@ -31,33 +31,39 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1996485356
      */
     virtual ~GameTestInstanceLedger();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   1506226450
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTINSTANCELEDGER
-#endif
     /**
      * @symbol ??0GameTestInstanceLedger@@QEAA@AEAVLevelStorage@@@Z
+     * @hash   954394663
      */
     MCAPI GameTestInstanceLedger(class LevelStorage &);
     /**
      * @symbol ?clear@GameTestInstanceLedger@@QEAAXV?$AutomaticID@VDimension@@H@@@Z
+     * @hash   236023142
      */
     MCAPI void clear(class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?getBoundingBoxes@GameTestInstanceLedger@@QEBA?AV?$vector@VBoundingBox@@V?$allocator@VBoundingBox@@@std@@@std@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   -1823415713
      */
     MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
 
 //private:
 
 private:
-MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
+    /**
+     * @symbol ?GAME_TEST_INSTANCE_PREFIX@GameTestInstanceLedger@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1618464229
+     */
+    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 
 };

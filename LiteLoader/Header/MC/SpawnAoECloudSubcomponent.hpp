@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   341606244
      */
     virtual ~SpawnAoECloudSubcomponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?readfromJSON@SpawnAoECloudSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   -537705342
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?writetoJSON@SpawnAoECloudSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1880505655
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@SpawnAoECloudSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   392584748
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@SpawnAoECloudSubcomponent@@UEAAPEBDXZ
+     * @hash   -1452072249
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNAOECLOUDSUBCOMPONENT
-#endif
     /**
      * @symbol ??0SpawnAoECloudSubcomponent@@QEAA@XZ
+     * @hash   1975620898
      */
     MCAPI SpawnAoECloudSubcomponent();
 

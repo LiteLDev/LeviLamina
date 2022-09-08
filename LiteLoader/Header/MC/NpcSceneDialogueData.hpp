@@ -35,74 +35,80 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -803659465
      */
     virtual ~NpcSceneDialogueData();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getDialogueText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1373378054
      */
     virtual std::string const & getDialogueText() const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   516213170
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getNameText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1723928217
      */
     virtual std::string const & getNameText() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getNameRawText@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1988786497
      */
     virtual std::string const & getNameRawText() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getSceneName@NpcSceneDialogueData@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1006107324
      */
     virtual std::string const & getSceneName() const;
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   1185279094
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   1186202615
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getActorUniqueID@NpcSceneDialogueData@@UEAA?AUActorUniqueID@@XZ
+     * @hash   1910129768
      */
     virtual struct ActorUniqueID getActorUniqueID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getActionsContainer@NpcSceneDialogueData@@UEAAPEAUNpcActionsContainer@@XZ
+     * @hash   -334024896
      */
     MCVAPI struct NpcActionsContainer * getActionsContainer();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getActionsContainer@NpcSceneDialogueData@@UEBAPEBUNpcActionsContainer@@XZ
+     * @hash   -902066308
      */
     MCVAPI struct NpcActionsContainer const * getActionsContainer() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getActor@NpcSceneDialogueData@@UEAAPEAVActor@@XZ
+     * @hash   2072476066
      */
     MCVAPI class Actor * getActor();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getActor@NpcSceneDialogueData@@UEBAPEBVActor@@XZ
+     * @hash   1354439710
      */
     MCVAPI class Actor const * getActor() const;
 #endif
     /**
      * @symbol ??0NpcSceneDialogueData@@QEAA@VWeakEntityRef@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   797868339
      */
     MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const &);
 

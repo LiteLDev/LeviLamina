@@ -32,52 +32,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   323491844
      */
     virtual ~MapExtendingRecipe();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?assemble@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   2122381144
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@MapExtendingRecipe@@UEBAHXZ
+     * @hash   -531577334
      */
     virtual int getCraftingSize() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getIngredient@MapExtendingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   -118026357
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getResultItem@MapExtendingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   -1001793033
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?matches@MapExtendingRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   -250482196
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?size@MapExtendingRecipe@@UEBAHXZ
+     * @hash   -266356430
      */
     virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPEXTENDINGRECIPE
-#endif
     /**
      * @symbol ??0MapExtendingRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     * @hash   861873330
      */
     MCAPI MapExtendingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-MCAPI static class mce::UUID const CartographyTableID;
-MCAPI static class mce::UUID const CraftingTableID;
+    /**
+     * @symbol ?CartographyTableID@MapExtendingRecipe@@2VUUID@mce@@B
+     * @hash   164301195
+     */
+    MCAPI static class mce::UUID const CartographyTableID;
+    /**
+     * @symbol ?CraftingTableID@MapExtendingRecipe@@2VUUID@mce@@B
+     * @hash   -1828456487
+     */
+    MCAPI static class mce::UUID const CraftingTableID;
 
 //private:
     /**
      * @symbol ?_updateMapInstance@MapExtendingRecipe@@AEBAXAEAVItemInstance@@@Z
+     * @hash   -1568190168
      */
     MCAPI void _updateMapInstance(class ItemInstance &) const;
 

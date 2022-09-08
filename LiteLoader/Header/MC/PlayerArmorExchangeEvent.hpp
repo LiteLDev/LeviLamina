@@ -25,15 +25,16 @@ public:
     struct PlayerArmorExchangeEvent& operator=(struct PlayerArmorExchangeEvent const &) = delete;
     PlayerArmorExchangeEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERARMOREXCHANGEEVENT
-#endif
     /**
      * @symbol ??0PlayerArmorExchangeEvent@@QEAA@AEBU0@@Z
+     * @hash   549009679
      */
     MCAPI PlayerArmorExchangeEvent(struct PlayerArmorExchangeEvent const &);
     /**
      * @symbol ??1PlayerArmorExchangeEvent@@QEAA@XZ
+     * @hash   -398594797
      */
     MCAPI ~PlayerArmorExchangeEvent();
 

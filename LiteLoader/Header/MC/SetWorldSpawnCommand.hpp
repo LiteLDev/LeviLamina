@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1771140086
      */
     virtual ~SetWorldSpawnCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@SetWorldSpawnCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -964475133
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETWORLDSPAWNCOMMAND
-#endif
     /**
      * @symbol ?setup@SetWorldSpawnCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1450439412
      */
     MCAPI static void setup(class CommandRegistry &);
 

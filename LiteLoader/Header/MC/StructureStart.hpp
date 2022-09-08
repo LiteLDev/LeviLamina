@@ -31,42 +31,47 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   943355385
      */
     virtual ~StructureStart();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?postProcess@StructureStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1308578484
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isValid@StructureStart@@UEBA_NXZ
+     * @hash   1129685243
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURESTART
-#endif
     /**
      * @symbol ?postProcessMobsAt@StructureStart@@QEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1510634460
      */
     MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 //protected:
     /**
      * @symbol ?calculateBoundingBox@StructureStart@@IEAAXXZ
+     * @hash   1638120325
      */
     MCAPI void calculateBoundingBox();
     /**
      * @symbol ?moveBoundingBoxes@StructureStart@@IEAAXH@Z
+     * @hash   651779495
      */
     MCAPI void moveBoundingBoxes(int);
     /**
      * @symbol ?moveInsideHeights@StructureStart@@IEAAXAEAVRandom@@FF@Z
+     * @hash   242665574
      */
     MCAPI void moveInsideHeights(class Random &, short, short);
     /**
      * @symbol ?moveToBelowSeaLevel@StructureStart@@IEAAXFFAEAVRandom@@H@Z
+     * @hash   -375872732
      */
     MCAPI void moveToBelowSeaLevel(short, short, class Random &, int);
 

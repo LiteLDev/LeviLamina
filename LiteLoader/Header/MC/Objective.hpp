@@ -32,72 +32,86 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OBJECTIVE
-#endif
     /**
      * @symbol ??0Objective@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjectiveCriteria@@@Z
+     * @hash   1899223137
      */
     MCAPI Objective(std::string const &, class ObjectiveCriteria const &);
     /**
      * @symbol ?getCriteria@Objective@@QEBAAEBVObjectiveCriteria@@XZ
+     * @hash   2045062108
      */
     MCAPI class ObjectiveCriteria const & getCriteria() const;
     /**
      * @symbol ?getDisplayName@Objective@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   889869290
      */
     MCAPI std::string const & getDisplayName() const;
     /**
      * @symbol ?getName@Objective@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1522152720
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getPlayerScore@Objective@@QEBA?AUScoreInfo@@AEBUScoreboardId@@@Z
+     * @hash   -2069662789
      */
     MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const &) const;
     /**
      * @symbol ?getPlayerScoreRef@Objective@@QEAA_NAEBUScoreboardId@@AEAUScoreInfoRef@@@Z
+     * @hash   1752127890
      */
     MCAPI bool getPlayerScoreRef(struct ScoreboardId const &, struct ScoreInfoRef &);
     /**
      * @symbol ?getPlayers@Objective@@QEBA?AV?$vector@UScoreboardId@@V?$allocator@UScoreboardId@@@std@@@std@@XZ
+     * @hash   -205171942
      */
     MCAPI std::vector<struct ScoreboardId> getPlayers() const;
     /**
      * @symbol ?getScores@Objective@@QEBAAEBV?$unordered_map@UScoreboardId@@HU?$hash@UScoreboardId@@@std@@U?$equal_to@UScoreboardId@@@3@V?$allocator@U?$pair@$$CBUScoreboardId@@H@std@@@3@@std@@XZ
+     * @hash   497743947
      */
     MCAPI class std::unordered_map<struct ScoreboardId, int, struct std::hash<struct ScoreboardId>, struct std::equal_to<struct ScoreboardId>, class std::allocator<struct std::pair<struct ScoreboardId const, int>>> const & getScores() const;
     /**
      * @symbol ?hasScore@Objective@@QEBA_NAEBUScoreboardId@@@Z
+     * @hash   -285927855
      */
     MCAPI bool hasScore(struct ScoreboardId const &) const;
     /**
      * @symbol ?hasScores@Objective@@QEBA_NXZ
+     * @hash   16464124
      */
     MCAPI bool hasScores() const;
     /**
      * @symbol ?setDisplayName@Objective@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1789565112
      */
     MCAPI void setDisplayName(std::string const &);
     /**
      * @symbol ??1Objective@@QEAA@XZ
+     * @hash   -1955906011
      */
     MCAPI ~Objective();
     /**
      * @symbol ?deserialize@Objective@@SA?AV?$unique_ptr@VObjective@@U?$default_delete@VObjective@@@std@@@std@@AEBVCompoundTag@@AEAVScoreboard@@@Z
+     * @hash   -1904384622
      */
     MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const &, class Scoreboard &);
     /**
      * @symbol ?serialize@Objective@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV1@@Z
+     * @hash   -1205821377
      */
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const &);
 
 //private:
     /**
      * @symbol ?_modifyPlayerScore@Objective@@AEAA_NAEAHAEBUScoreboardId@@HW4PlayerScoreSetFunction@@@Z
+     * @hash   -595522981
      */
     MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum PlayerScoreSetFunction);
     /**
      * @symbol ?_resetPlayer@Objective@@AEAAXAEBUScoreboardId@@@Z
+     * @hash   -1214031389
      */
     MCAPI void _resetPlayer(struct ScoreboardId const &);
 

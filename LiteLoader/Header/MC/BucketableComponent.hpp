@@ -29,28 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLECOMPONENT
-#endif
     /**
      * @symbol ??0BucketableComponent@@QEAA@XZ
+     * @hash   521349797
      */
     MCAPI BucketableComponent();
     /**
      * @symbol ?getInteraction@BucketableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   1061326085
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?initFromDefinition@BucketableComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -1078915998
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z
+     * @hash   -295304807
      */
     MCAPI static void implInteraction(class Actor &, class Player &);
 
 //private:
 
 private:
-MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
+    /**
+     * @symbol ?WATER_BUCKET_USEABLE_VERSION@BucketableComponent@@0VBaseGameVersion@@B
+     * @hash   1984211487
+     */
+    MCAPI static class BaseGameVersion const WATER_BUCKET_USEABLE_VERSION;
 
 };

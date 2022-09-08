@@ -30,24 +30,26 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERACTCOMPONENT
-#endif
     /**
      * @symbol ?getCooldownCounter@InteractComponent@@QEBAFXZ
+     * @hash   1093414209
      */
     MCAPI short getCooldownCounter() const;
     /**
      * @symbol ?getInteraction@InteractComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   495091841
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?setCooldownCounter@InteractComponent@@QEAAXF@Z
+     * @hash   -30514337
      */
     MCAPI void setCooldownCounter(short);
 
 //private:
     /**
      * @symbol ?_runInteraction@InteractComponent@@AEAA_NAEAVActor@@AEBUInteraction@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   -1267620292
      */
     MCAPI bool _runInteraction(class Actor &, struct Interaction const &, class Player &, class ActorInteraction &);
 

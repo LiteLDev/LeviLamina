@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -281961129
      */
     virtual ~DebugInfoPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@DebugInfoPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1757703589
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@DebugInfoPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   101402706
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@DebugInfoPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   47965813
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@DebugInfoPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -975586107
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGINFOPACKET
-#endif
     /**
      * @symbol ??0DebugInfoPacket@@QEAA@XZ
+     * @hash   -1529776315
      */
     MCAPI DebugInfoPacket();
 

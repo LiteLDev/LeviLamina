@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1003866757
      */
     virtual ~BrewingStandContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREWINGSTANDCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0BrewingStandContainerScreenValidator@@QEAA@XZ
+     * @hash   -1783861145
      */
     MCAPI BrewingStandContainerScreenValidator();
 

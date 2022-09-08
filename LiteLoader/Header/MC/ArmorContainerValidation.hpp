@@ -32,56 +32,62 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -132216859
      */
     virtual ~ArmorContainerValidation();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     * @hash   1398057135
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isItemAllowedInSlot@ArmorContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
+     * @hash   -738471257
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getAvailableSetCount@ArmorContainerValidation@@UEBAHHAEBVItemStackBase@@@Z
+     * @hash   1037331556
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?isItemAllowedToAdd@ArmorContainerValidation@@UEBA_NAEBVItemStack@@@Z
+     * @hash   1791674394
      */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?isItemAllowedToRemove@ArmorContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z
+     * @hash   -1934171109
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?canItemMoveToContainer@ArmorContainerValidation@@UEBA_NAEBVItemStackBase@@@Z
+     * @hash   -68136334
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+     * @hash   1957893142
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1366295496
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getContainerSize@ArmorContainerValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
+     * @hash   -776254651
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORCONTAINERVALIDATION
-#endif
 
 };

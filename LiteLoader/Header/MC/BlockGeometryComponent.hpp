@@ -28,15 +28,16 @@ public:
     BlockGeometryComponent(struct BlockGeometryComponent const &) = delete;
     BlockGeometryComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGEOMETRYCOMPONENT
-#endif
     /**
      * @symbol ??4BlockGeometryComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1539227104
      */
     MCAPI struct BlockGeometryComponent & operator=(struct BlockGeometryComponent &&);
     /**
      * @symbol ??1BlockGeometryComponent@@QEAA@XZ
+     * @hash   810629720
      */
     MCAPI ~BlockGeometryComponent();
 

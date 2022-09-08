@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDESWEETBERRYBUSHBLOCKSYSTEM
-#endif
     /**
      * @symbol ?createSystem@InsideSweetBerryBushBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1897831786
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

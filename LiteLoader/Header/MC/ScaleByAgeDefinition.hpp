@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCALEBYAGEDEFINITION
-#endif
     /**
      * @symbol ??0ScaleByAgeDefinition@@QEAA@XZ
+     * @hash   -1413019395
      */
     MCAPI ScaleByAgeDefinition();
     /**
      * @symbol ?initialize@ScaleByAgeDefinition@@QEAAXAEAVEntityContext@@AEAVScaleByAgeComponent@@@Z
+     * @hash   520762215
      */
     MCAPI void initialize(class EntityContext &, class ScaleByAgeComponent &);
     /**
      * @symbol ?buildSchema@ScaleByAgeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VScaleByAgeDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1022221174
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>> &);
 

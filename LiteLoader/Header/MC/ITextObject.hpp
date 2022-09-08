@@ -30,11 +30,25 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEXTOBJECT
-#endif
-MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
-MCAPI static std::string const RAW_TEXT_TEXT_KEY;
-MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
-MCAPI static std::string const RAW_TEXT_WITH_KEY;
+    /**
+     * @symbol ?RAW_TEXT_OBJECT_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -723280751
+     */
+    MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
+    /**
+     * @symbol ?RAW_TEXT_TEXT_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1630945359
+     */
+    MCAPI static std::string const RAW_TEXT_TEXT_KEY;
+    /**
+     * @symbol ?RAW_TEXT_TRANSLATE_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1009029677
+     */
+    MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
+    /**
+     * @symbol ?RAW_TEXT_WITH_KEY@ITextObject@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1736937041
+     */
+    MCAPI static std::string const RAW_TEXT_WITH_KEY;
 
 };

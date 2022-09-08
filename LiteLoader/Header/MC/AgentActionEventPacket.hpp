@@ -30,38 +30,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -333559695
      */
     virtual ~AgentActionEventPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@AgentActionEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   469091399
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@AgentActionEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1362539252
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@AgentActionEventPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1715819389
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@AgentActionEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1078159309
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTACTIONEVENTPACKET
-#endif
     /**
      * @symbol ??0AgentActionEventPacket@@QEAA@XZ
+     * @hash   1838128915
      */
     MCAPI AgentActionEventPacket();
     /**
      * @symbol ??0AgentActionEventPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AgentActionType@@AEBVValue@Json@@@Z
+     * @hash   -857983226
      */
     MCAPI AgentActionEventPacket(std::string const &, enum AgentActionType, class Json::Value const &);
 

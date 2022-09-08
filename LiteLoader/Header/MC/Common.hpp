@@ -24,22 +24,27 @@ namespace Common {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getGameDevVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -823664671
      */
     MCAPI std::string getGameDevVersionString();
     /**
      * @symbol ?getGameSemVerString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   678221483
      */
     MCAPI std::string getGameSemVerString();
     /**
      * @symbol ?getGameVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   507823881
      */
     MCAPI std::string getGameVersionString();
     /**
      * @symbol ?getGameVersionStringNet@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -912730335
      */
     MCAPI std::string getGameVersionStringNet();
     /**
      * @symbol ?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1304974887
      */
     MCAPI std::string getServerVersionString();
 

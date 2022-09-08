@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1892478879
      */
     virtual ~ConsumeItemNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@ConsumeItemNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   1165200510
      */
     virtual enum BehaviorStatus tick(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMEITEMNODE
-#endif
     /**
      * @symbol ??0ConsumeItemNode@@QEAA@XZ
+     * @hash   1491536045
      */
     MCAPI ConsumeItemNode();
 

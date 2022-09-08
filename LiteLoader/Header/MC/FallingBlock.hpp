@@ -33,205 +33,224 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@FallingBlock@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   -1021568873
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   130642320
      */
     virtual ~FallingBlock();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 44
+     * @vftbl  44
      * @symbol ?teleportTo@FallingBlock@@UEAAXAEBVVec3@@_NHH1@Z
+     * @hash   1762659987
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @note   Virtual function table index: 49
+     * @vftbl  49
      * @symbol ?normalTick@FallingBlock@@UEAAXXZ
+     * @hash   1089656901
      */
     virtual void normalTick();
     /**
-     * @note   Virtual function table index: 61
-     * @symbol 
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @note   Virtual function table index: 68
-     * @symbol 
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @note   Virtual function table index: 79
+     * @vftbl  79
      * @symbol ?getShadowHeightOffs@FallingBlock@@UEAAMXZ
+     * @hash   -368897974
      */
     virtual float getShadowHeightOffs();
     /**
-     * @note   Virtual function table index: 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@FallingBlock@@UEBAMXZ
+     * @hash   210340624
      */
     virtual float getShadowRadius() const;
     /**
-     * @note   Virtual function table index: 82
-     * @symbol 
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @note   Virtual function table index: 85
-     * @symbol 
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @note   Virtual function table index: 88
-     * @symbol 
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @note   Virtual function table index: 95
+     * @vftbl  95
      * @symbol ?isPickable@FallingBlock@@UEAA_NXZ
+     * @hash   -412526168
      */
     virtual bool isPickable();
     /**
-     * @note   Virtual function table index: 96
-     * @symbol 
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @note   Virtual function table index: 99
-     * @symbol 
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @note   Virtual function table index: 106
-     * @symbol 
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @note   Virtual function table index: 108
-     * @symbol 
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @note   Virtual function table index: 109
-     * @symbol 
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @note   Virtual function table index: 111
-     * @symbol 
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @note   Virtual function table index: 181
+     * @vftbl  181
      * @symbol ?canChangeDimensionsUsingPortal@FallingBlock@@UEBA_NXZ
+     * @hash   499913877
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
-     * @note   Virtual function table index: 182
-     * @symbol 
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @note   Virtual function table index: 186
+     * @vftbl  186
      * @symbol ?causeFallDamage@FallingBlock@@UEAAXMMVActorDamageSource@@@Z
+     * @hash   -1631722200
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @note   Virtual function table index: 191
+     * @vftbl  191
      * @symbol ?onSynchedDataUpdate@FallingBlock@@UEAAXH@Z
+     * @hash   -1818324322
      */
     virtual void onSynchedDataUpdate(int);
     /**
-     * @note   Virtual function table index: 196
-     * @symbol 
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @note   Virtual function table index: 222
-     * @symbol 
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @note   Virtual function table index: 223
-     * @symbol 
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @note   Virtual function table index: 248
-     * @symbol 
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @note   Virtual function table index: 251
-     * @symbol 
+     * @vftbl  251
+     * @hash   -790110818
      */
     virtual void __unk_vfn_251();
     /**
-     * @note   Virtual function table index: 269
-     * @symbol 
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @note   Virtual function table index: 270
+     * @vftbl  270
      * @symbol ?_hurt@FallingBlock@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     * @hash   352776858
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @note   Virtual function table index: 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@FallingBlock@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1575014294
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@FallingBlock@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -1123390285
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 277
-     * @symbol 
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLINGBLOCK
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getDeletionDelayTimeSeconds@FallingBlock@@UEBAMXZ
+     * @hash   373613387
      */
     MCVAPI float getDeletionDelayTimeSeconds() const;
 #endif
     /**
      * @symbol ??0FallingBlock@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   1406931634
      */
     MCAPI FallingBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?doNormalTick@FallingBlock@@QEAAXXZ
+     * @hash   -188979419
      */
     MCAPI void doNormalTick();
     /**
      * @symbol ?getFallingBlock@FallingBlock@@QEBAAEBVBlock@@XZ
+     * @hash   1186998358
      */
     MCAPI class Block const & getFallingBlock() const;
     /**
      * @symbol ?setFallDamageAmount@FallingBlock@@QEAAXM@Z
+     * @hash   -291497466
      */
     MCAPI void setFallDamageAmount(float);
     /**
      * @symbol ?setFallingBlock@FallingBlock@@QEAAXAEBVBlock@@_N@Z
+     * @hash   1553017933
      */
     MCAPI void setFallingBlock(class Block const &, bool);
 
 //private:
     /**
      * @symbol ?_breakBlock@FallingBlock@@AEAAXXZ
+     * @hash   -1537170637
      */
     MCAPI void _breakBlock();
     /**
      * @symbol ?_waitRemoval@FallingBlock@@AEAAXXZ
+     * @hash   1539203118
      */
     MCAPI void _waitRemoval();
 

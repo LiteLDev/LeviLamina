@@ -32,46 +32,51 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   694000288
      */
     virtual ~BigEndianStringByteInput();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?readFloat@BigEndianStringByteInput@@UEAAMXZ
+     * @hash   837368783
      */
     virtual float readFloat();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?readDouble@BigEndianStringByteInput@@UEAANXZ
+     * @hash   612819595
      */
     virtual double readDouble();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?readShort@BigEndianStringByteInput@@UEAAFXZ
+     * @hash   511313887
      */
     virtual short readShort();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?readInt@BigEndianStringByteInput@@UEAAHXZ
+     * @hash   -1643487361
      */
     virtual int readInt();
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?readLongLong@BigEndianStringByteInput@@UEAA_JXZ
+     * @hash   71088974
      */
     virtual __int64 readLongLong();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
+     * @hash   939962056
      */
     virtual bool readBytes(void *, unsigned __int64);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z
+     * @hash   -302521063
      */
     virtual bool readBigEndianBytes(void *, unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
-#endif
 
 };

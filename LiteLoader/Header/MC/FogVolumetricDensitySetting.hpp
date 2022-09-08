@@ -28,11 +28,22 @@ public:
     FogVolumetricDensitySetting(struct FogVolumetricDensitySetting const &) = delete;
     FogVolumetricDensitySetting() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOGVOLUMETRICDENSITYSETTING
-#endif
-MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
-MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
-MCAPI static struct FogVolumetricDensitySetting const ZERO_SETTING;
+    /**
+     * @symbol ?UNIFORM_MAX_DENSITY_HEIGHT@FogVolumetricDensitySetting@@2MB
+     * @hash   1188484927
+     */
+    MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
+    /**
+     * @symbol ?UNIFORM_ZERO_DENSITY_HEIGHT@FogVolumetricDensitySetting@@2MB
+     * @hash   1338965745
+     */
+    MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
+    /**
+     * @symbol ?ZERO_SETTING@FogVolumetricDensitySetting@@2U1@B
+     * @hash   426457956
+     */
+    MCAPI static struct FogVolumetricDensitySetting const ZERO_SETTING;
 
 };

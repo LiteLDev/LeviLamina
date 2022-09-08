@@ -27,19 +27,21 @@ public:
     struct NameAction& operator=(struct NameAction const &) = delete;
     NameAction() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEACTION
-#endif
     /**
      * @symbol ??0NameAction@@QEAA@AEBU0@@Z
+     * @hash   725302479
      */
     MCAPI NameAction(struct NameAction const &);
     /**
      * @symbol ?addNameFilterByName@NameAction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   457522638
      */
     MCAPI void addNameFilterByName(std::string const &);
     /**
      * @symbol ??1NameAction@@QEAA@XZ
+     * @hash   -1507518197
      */
     MCAPI ~NameAction();
 

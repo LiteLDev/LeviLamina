@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOMPATTACKDEFINITION
-#endif
     /**
      * @symbol ??0StompAttackDefinition@@QEAA@XZ
+     * @hash   -1798962776
      */
     MCAPI StompAttackDefinition();
     /**
      * @symbol ?initialize@StompAttackDefinition@@QEAAXAEAVEntityContext@@AEAVStompAttackGoal@@@Z
+     * @hash   1070635195
      */
     MCAPI void initialize(class EntityContext &, class StompAttackGoal &);
     /**
      * @symbol ?buildSchema@StompAttackDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VStompAttackDefinition@@@JsonUtil@@@3@@Z
+     * @hash   -379397035
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition>> &);
 

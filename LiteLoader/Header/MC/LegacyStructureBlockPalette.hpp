@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSTRUCTUREBLOCKPALETTE
-#endif
     /**
      * @symbol ??0LegacyStructureBlockPalette@@QEAA@XZ
+     * @hash   1239367332
      */
     MCAPI LegacyStructureBlockPalette();
     /**
      * @symbol ?addMapping@LegacyStructureBlockPalette@@QEAAXHAEBVBlock@@@Z
+     * @hash   1432305045
      */
     MCAPI void addMapping(int, class Block const &);
     /**
      * @symbol ?clearMap@LegacyStructureBlockPalette@@QEAAXXZ
+     * @hash   -1256577967
      */
     MCAPI void clearMap();
     /**
      * @symbol ?getBlock@LegacyStructureBlockPalette@@QEAAAEBVBlock@@H@Z
+     * @hash   -1045572027
      */
     MCAPI class Block const & getBlock(int);
     /**
      * @symbol ??1LegacyStructureBlockPalette@@QEAA@XZ
+     * @hash   1304944804
      */
     MCAPI ~LegacyStructureBlockPalette();
 

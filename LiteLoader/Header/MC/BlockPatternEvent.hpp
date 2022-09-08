@@ -25,15 +25,16 @@ public:
     struct BlockPatternEvent& operator=(struct BlockPatternEvent const &) = delete;
     BlockPatternEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNEVENT
-#endif
     /**
      * @symbol ??0BlockPatternEvent@@QEAA@AEBU0@@Z
+     * @hash   1351138629
      */
     MCAPI BlockPatternEvent(struct BlockPatternEvent const &);
     /**
      * @symbol ??1BlockPatternEvent@@QEAA@XZ
+     * @hash   1824355395
      */
     MCAPI ~BlockPatternEvent();
 

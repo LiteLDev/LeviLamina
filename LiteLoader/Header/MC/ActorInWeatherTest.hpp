@@ -33,31 +33,33 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -468722154
      */
     virtual ~ActorInWeatherTest();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?setup@ActorInWeatherTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+     * @hash   -1763809426
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?evaluate@ActorInWeatherTest@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   373687134
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@ActorInWeatherTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   -1694470652
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_serializeValue@ActorInWeatherTest@@MEBA?AVValue@Json@@XZ
+     * @hash   -589080589
      */
     virtual class Json::Value _serializeValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINWEATHERTEST
-#endif
 
 };

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -901843006
      */
     virtual ~LegacySwampFoliageFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@LegacySwampFoliageFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1593038798
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSWAMPFOLIAGEFEATURE
-#endif
     /**
      * @symbol ??0LegacySwampFoliageFeature@@QEAA@AEAVFeatureRegistry@@@Z
+     * @hash   -374498733
      */
     MCAPI LegacySwampFoliageFeature(class FeatureRegistry &);
 

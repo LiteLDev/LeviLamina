@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLAYSTATESYSTEM
-#endif
     /**
      * @symbol ?createAddReplayStateComponentSystem@ReplayStateSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   825915178
      */
     MCAPI static struct TickingSystemWithInfo createAddReplayStateComponentSystem();
     /**
      * @symbol ?createReplayStateSystem@ReplayStateSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -210315462
      */
     MCAPI static struct TickingSystemWithInfo createReplayStateSystem();
 

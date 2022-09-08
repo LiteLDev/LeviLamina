@@ -28,31 +28,38 @@ public:
     BlockQueuedTickingDescription(struct BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   19351397
      */
     virtual ~BlockQueuedTickingDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@BlockQueuedTickingDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -377656734
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockQueuedTickingDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -438877534
      */
     virtual void initializeComponent(class EntityContext &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGDESCRIPTION
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockQueuedTickingDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1001747215
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockQueuedTickingDescription@@SAXXZ
+     * @hash   -260920449
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockQueuedTickingDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   -749658682
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

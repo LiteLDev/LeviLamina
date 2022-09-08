@@ -36,223 +36,249 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@ItemActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   -1166544437
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -1806437520
      */
     virtual ~ItemActor();
     /**
-     * @note   Virtual function table index: 20
+     * @vftbl  20
      * @symbol ?isRuntimePredictedMovementEnabled@ItemActor@@UEBA_NXZ
+     * @hash   869657022
      */
     virtual bool isRuntimePredictedMovementEnabled() const;
     /**
-     * @note   Virtual function table index: 40
+     * @vftbl  40
      * @symbol ?isFireImmune@ItemActor@@UEBA_NXZ
+     * @hash   -1993556695
      */
     virtual bool isFireImmune() const;
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 48
+     * @vftbl  48
      * @symbol ?tryCreateAddActorPacket@ItemActor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ
+     * @hash   1814537131
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
-     * @note   Virtual function table index: 49
+     * @vftbl  49
      * @symbol ?normalTick@ItemActor@@UEAAXXZ
+     * @hash   -2111743415
      */
     virtual void normalTick();
     /**
-     * @note   Virtual function table index: 61
-     * @symbol 
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @note   Virtual function table index: 68
-     * @symbol 
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @note   Virtual function table index: 82
-     * @symbol 
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @note   Virtual function table index: 85
-     * @symbol 
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @note   Virtual function table index: 88
-     * @symbol 
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @note   Virtual function table index: 89
+     * @vftbl  89
      * @symbol ?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1022665040
      */
     virtual void playerTouch(class Player &);
     /**
-     * @note   Virtual function table index: 96
-     * @symbol 
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @note   Virtual function table index: 99
-     * @symbol 
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @note   Virtual function table index: 106
-     * @symbol 
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @note   Virtual function table index: 108
-     * @symbol 
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @note   Virtual function table index: 109
-     * @symbol 
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @note   Virtual function table index: 111
-     * @symbol 
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @note   Virtual function table index: 135
+     * @vftbl  135
      * @symbol ?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z
+     * @hash   602083120
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @note   Virtual function table index: 142
+     * @vftbl  142
      * @symbol ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
+     * @hash   -1619478764
      */
     virtual void handleEntityEvent(enum ActorEvent, int);
     /**
-     * @note   Virtual function table index: 172
+     * @vftbl  172
      * @symbol ?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ
+     * @hash   303033380
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @note   Virtual function table index: 176
+     * @vftbl  176
      * @symbol ?getLiquidAABB@ItemActor@@UEBA?AVAABB@@W4MaterialType@@@Z
+     * @hash   -57630926
      */
     virtual class AABB getLiquidAABB(enum MaterialType) const;
     /**
-     * @note   Virtual function table index: 182
-     * @symbol 
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @note   Virtual function table index: 196
-     * @symbol 
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @note   Virtual function table index: 199
+     * @vftbl  199
      * @symbol ?canSynchronizeNewEntity@ItemActor@@UEBA_NXZ
+     * @hash   1787221993
      */
     virtual bool canSynchronizeNewEntity() const;
     /**
-     * @note   Virtual function table index: 222
-     * @symbol 
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @note   Virtual function table index: 223
-     * @symbol 
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @note   Virtual function table index: 248
-     * @symbol 
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @note   Virtual function table index: 251
-     * @symbol 
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @note   Virtual function table index: 269
-     * @symbol 
+     * @vftbl  269
+     * @hash   -1899974523
      */
     virtual void __unk_vfn_269();
     /**
-     * @note   Virtual function table index: 270
+     * @vftbl  270
      * @symbol ?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
+     * @hash   -1609175954
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @note   Virtual function table index: 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -907819378
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@ItemActor@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -2083438849
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 277
-     * @symbol 
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACTOR
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canMakeStepSound@ItemActor@@UEBA_NXZ
+     * @hash   1610238139
      */
     MCVAPI bool canMakeStepSound() const;
 #endif
     /**
      * @symbol ??0ItemActor@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -1526408754
      */
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?postNormalTick@ItemActor@@QEAAXXZ
+     * @hash   2039073995
      */
     MCAPI void postNormalTick();
     /**
      * @symbol ?setSourceEntity@ItemActor@@QEAAXPEBVActor@@@Z
+     * @hash   -1735658989
      */
     MCAPI void setSourceEntity(class Actor const *);
     /**
      * @symbol ?tryGetFromEntity@ItemActor@@SAPEAV1@AEAVEntityContext@@_N@Z
+     * @hash   2094099672
      */
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     /**
      * @symbol ?_addComponents@ItemActor@@AEAAXXZ
+     * @hash   1046733490
      */
     MCAPI void _addComponents();
     /**
      * @symbol ?_dropContents@ItemActor@@AEAAXXZ
+     * @hash   331935362
      */
     MCAPI void _dropContents();
     /**
      * @symbol ?_merge@ItemActor@@AEAA_NPEAV1@@Z
+     * @hash   608453481
      */
     MCAPI bool _merge(class ItemActor *);
     /**
      * @symbol ?_validateItem@ItemActor@@AEAAXXZ
+     * @hash   -1859255038
      */
     MCAPI void _validateItem();
 
 private:
-MCAPI static int const LIFETIME;
+    /**
+     * @symbol ?LIFETIME@ItemActor@@0HB
+     * @hash   612066695
+     */
+    MCAPI static int const LIFETIME;
 
 };

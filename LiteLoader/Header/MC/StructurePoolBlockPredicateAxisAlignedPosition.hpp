@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1906174109
      */
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z
+     * @hash   764894902
      */
     virtual bool test(class Block const &, class Randomize &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?test@StructurePoolBlockPredicateAxisAlignedPosition@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z
+     * @hash   1820619434
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREPOOLBLOCKPREDICATEAXISALIGNEDPOSITION
-#endif
     /**
      * @symbol ??0StructurePoolBlockPredicateAxisAlignedPosition@@QEAA@MMHHE@Z
+     * @hash   -782432787
      */
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
 

@@ -32,25 +32,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1693176133
      */
     virtual ~PlayAnimationCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@PlayAnimationCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1795007256
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYANIMATIONCOMMAND
-#endif
     /**
      * @symbol ?setup@PlayAnimationCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1312844060
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
 
 private:
-MCAPI static enum MolangVersion const mStopExpressionVersion;
+    /**
+     * @symbol ?mStopExpressionVersion@PlayAnimationCommand@@0W4MolangVersion@@B
+     * @hash   -2102380207
+     */
+    MCAPI static enum MolangVersion const mStopExpressionVersion;
 
 };

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -593821986
      */
     virtual ~DifficultyCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@DifficultyCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -616607293
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIFFICULTYCOMMAND
-#endif
     /**
      * @symbol ?setup@DifficultyCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1020509840
      */
     MCAPI static void setup(class CommandRegistry &);
 

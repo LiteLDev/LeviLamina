@@ -32,18 +32,18 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ILEVEL
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asLevel@ILevel@@UEAAPEAVLevel@@XZ
+     * @hash   -998432728
      */
     MCVAPI class Level * asLevel();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asMultiPlayerLevel@ILevel@@UEAAPEAVMultiPlayerLevel@@XZ
+     * @hash   -1871786620
      */
     MCVAPI class MultiPlayerLevel * asMultiPlayerLevel();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getTradeTables@ILevel@@UEAAPEAVTradeTables@@XZ
+     * @hash   2001339044
      */
     MCVAPI class TradeTables * getTradeTables();
 #endif

@@ -27,19 +27,21 @@ public:
     struct ItemStackRequestHandlerSlotInfo& operator=(struct ItemStackRequestHandlerSlotInfo const &) = delete;
     ItemStackRequestHandlerSlotInfo(struct ItemStackRequestHandlerSlotInfo const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTHANDLERSLOTINFO
-#endif
     /**
      * @symbol ??0ItemStackRequestHandlerSlotInfo@@QEAA@XZ
+     * @hash   362379640
      */
     MCAPI ItemStackRequestHandlerSlotInfo();
     /**
      * @symbol ??BItemStackRequestHandlerSlotInfo@@QEBA_NXZ
+     * @hash   175874892
      */
     MCAPI operator bool() const;
     /**
      * @symbol ??1ItemStackRequestHandlerSlotInfo@@QEAA@XZ
+     * @hash   -1138409272
      */
     MCAPI ~ItemStackRequestHandlerSlotInfo();
 

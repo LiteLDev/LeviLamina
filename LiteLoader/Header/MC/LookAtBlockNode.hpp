@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1412478699
      */
     virtual ~LookAtBlockNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@LookAtBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   155087018
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@LookAtBlockNode@@EEAAXAEAVActor@@@Z
+     * @hash   -916417922
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATBLOCKNODE
-#endif
     /**
      * @symbol ??0LookAtBlockNode@@QEAA@XZ
+     * @hash   -21712455
      */
     MCAPI LookAtBlockNode();
 

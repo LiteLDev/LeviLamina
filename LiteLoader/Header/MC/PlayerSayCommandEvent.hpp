@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSAYCOMMANDEVENT
-#endif
     /**
      * @symbol ??1PlayerSayCommandEvent@@QEAA@XZ
+     * @hash   -1741112843
      */
     MCAPI ~PlayerSayCommandEvent();
 

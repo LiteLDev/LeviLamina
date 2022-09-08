@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERINPUTSYSTEM
-#endif
     /**
      * @symbol ?create@ServerPlayerInputSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1081128748
      */
     MCAPI static struct TickingSystemWithInfo create();
 

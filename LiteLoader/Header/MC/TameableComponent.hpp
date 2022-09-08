@@ -29,28 +29,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAMEABLECOMPONENT
-#endif
     /**
      * @symbol ??0TameableComponent@@QEAA@XZ
+     * @hash   -1824448262
      */
     MCAPI TameableComponent();
     /**
      * @symbol ?getInteraction@TameableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   -1771590545
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?tame@TameableComponent@@QEAAXAEAVActor@@AEAVPlayer@@@Z
+     * @hash   1582714359
      */
     MCAPI void tame(class Actor &, class Player &);
 
 //private:
     /**
      * @symbol ?_attemptToTame@TameableComponent@@AEAA_NAEAVActor@@AEAVPlayer@@@Z
+     * @hash   -243711110
      */
     MCAPI bool _attemptToTame(class Actor &, class Player &);
     /**
      * @symbol ?_canTame@TameableComponent@@AEAA_NAEAVActor@@AEAVPlayer@@@Z
+     * @hash   2041641362
      */
     MCAPI bool _canTame(class Actor &, class Player &);
 

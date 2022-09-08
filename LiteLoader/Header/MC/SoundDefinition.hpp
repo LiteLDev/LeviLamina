@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDDEFINITION
-#endif
     /**
      * @symbol ??1SoundDefinition@@QEAA@XZ
+     * @hash   1965268366
      */
     MCAPI ~SoundDefinition();
 

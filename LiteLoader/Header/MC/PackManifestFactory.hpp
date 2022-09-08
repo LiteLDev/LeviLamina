@@ -32,32 +32,65 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -208443696
      */
     virtual ~PackManifestFactory();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?create@PackManifestFactory@@UEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBVResourceLocation@@AEAVPackReport@@PEAVSubpackInfoCollection@@@Z
+     * @hash   1551441770
      */
     virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy &, class ResourceLocation const &, class PackReport &, class SubpackInfoCollection *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMANIFESTFACTORY
-#endif
     /**
      * @symbol ??0PackManifestFactory@@QEAA@AEAVIPackTelemetry@@@Z
+     * @hash   -1205361657
      */
     MCAPI PackManifestFactory(class IPackTelemetry &);
-MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
-MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
-MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH;
-MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD;
-MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD_BACKUP;
-MCAPI static class SemVersion const REQUIRED_VANILLA_FOR_OLD_PACKS;
+    /**
+     * @symbol ?MANIFEST_LOG_PATH@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   1391981130
+     */
+    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
+    /**
+     * @symbol ?MANIFEST_PACK_UUID_UPGRADE_SALT@PackManifestFactory@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -53710001
+     */
+    MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
+    /**
+     * @symbol ?MANIFEST_PATH@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -1897325580
+     */
+    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH;
+    /**
+     * @symbol ?MANIFEST_PATH_OLD@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   105965860
+     */
+    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD;
+    /**
+     * @symbol ?MANIFEST_PATH_OLD_BACKUP@PackManifestFactory@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   -1858134928
+     */
+    MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH_OLD_BACKUP;
+    /**
+     * @symbol ?REQUIRED_VANILLA_FOR_OLD_PACKS@PackManifestFactory@@2VSemVersion@@B
+     * @hash   -1470537183
+     */
+    MCAPI static class SemVersion const REQUIRED_VANILLA_FOR_OLD_PACKS;
     /**
      * @symbol ?contentKeyLookup@PackManifestFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     * @hash   -200789047
      */
     MCAPI static std::string contentKeyLookup(std::string const &);
-MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mAlternateContentKeys;
-MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mContentKeys;
+    /**
+     * @symbol ?mAlternateContentKeys@PackManifestFactory@@2V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV?$vector@DV?$allocator@D@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV?$vector@DV?$allocator@D@std@@@2@@std@@@2@@std@@A
+     * @hash   -82856293
+     */
+    MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mAlternateContentKeys;
+    /**
+     * @symbol ?mContentKeys@PackManifestFactory@@2V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV?$vector@DV?$allocator@D@std@@@2@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV?$vector@DV?$allocator@D@std@@@2@@std@@@2@@std@@A
+     * @hash   1793851993
+     */
+    MCAPI static class std::unordered_map<std::string, std::vector<char> const, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<char> const>>> mContentKeys;
 
 };

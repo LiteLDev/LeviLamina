@@ -20,7 +20,15 @@ namespace ProcessGlobals {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-MCAPI extern struct std::atomic<struct XTaskQueueObject *> g_defaultProcessQueue;
-MCAPI extern struct std::atomic<struct XTaskQueueObject *> g_processQueue;
+    /**
+     * @symbol ?g_defaultProcessQueue@ProcessGlobals@@3U?$atomic@PEAUXTaskQueueObject@@@std@@A
+     * @hash   -1059055418
+     */
+    MCAPI extern struct std::atomic<struct XTaskQueueObject *> g_defaultProcessQueue;
+    /**
+     * @symbol ?g_processQueue@ProcessGlobals@@3U?$atomic@PEAUXTaskQueueObject@@@std@@A
+     * @hash   498144650
+     */
+    MCAPI extern struct std::atomic<struct XTaskQueueObject *> g_processQueue;
 
 };

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1049798791
      */
     virtual ~LegacyForestRockFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@LegacyForestRockFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   2115320501
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYFORESTROCKFEATURE
-#endif
     /**
      * @symbol ??0LegacyForestRockFeature@@QEAA@AEBVFeatureRegistry@@@Z
+     * @hash   -1210187256
      */
     MCAPI LegacyForestRockFeature(class FeatureRegistry const &);
 

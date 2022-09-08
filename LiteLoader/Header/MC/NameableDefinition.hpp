@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAMEABLEDEFINITION
-#endif
     /**
      * @symbol ??0NameableDefinition@@QEAA@XZ
+     * @hash   -1157830396
      */
     MCAPI NameableDefinition();
     /**
      * @symbol ?addNameAction@NameableDefinition@@QEAAXAEBUNameAction@@@Z
+     * @hash   -1185458496
      */
     MCAPI void addNameAction(struct NameAction const &);
     /**
      * @symbol ?initialize@NameableDefinition@@QEBAXAEAVEntityContext@@AEAVNameableComponent@@@Z
+     * @hash   1566556003
      */
     MCAPI void initialize(class EntityContext &, class NameableComponent &) const;
     /**
      * @symbol ??1NameableDefinition@@QEAA@XZ
+     * @hash   -795168446
      */
     MCAPI ~NameableDefinition();
     /**
      * @symbol ?buildSchema@NameableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VNameableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1562004266
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>> &);
 

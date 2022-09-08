@@ -33,119 +33,126 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1193555658
      */
     virtual ~DyePowderItem();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 19
+     * @vftbl  19
      * @symbol ?isDye@DyePowderItem@@UEBA_NXZ
+     * @hash   1518238434
      */
     virtual bool isDye() const;
     /**
-     * @note   Virtual function table index: 20
+     * @vftbl  20
      * @symbol ?getItemColor@DyePowderItem@@UEBA?AW4ItemColor@@XZ
+     * @hash   -2025781036
      */
     virtual enum ItemColor getItemColor() const;
     /**
-     * @note   Virtual function table index: 21
+     * @vftbl  21
      * @symbol ?isFertilizer@DyePowderItem@@UEBA_NXZ
+     * @hash   798698712
      */
     virtual bool isFertilizer() const;
     /**
-     * @note   Virtual function table index: 52
-     * @symbol 
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @note   Virtual function table index: 54
-     * @symbol 
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @note   Virtual function table index: 67
-     * @symbol 
+     * @vftbl  67
+     * @hash   -186360955
      */
     virtual void __unk_vfn_67();
     /**
-     * @note   Virtual function table index: 68
+     * @vftbl  68
      * @symbol ?isValidAuxValue@DyePowderItem@@UEBA_NH@Z
+     * @hash   -915475646
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @note   Virtual function table index: 71
-     * @symbol 
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @note   Virtual function table index: 72
-     * @symbol 
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @note   Virtual function table index: 73
-     * @symbol 
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @note   Virtual function table index: 76
-     * @symbol 
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @note   Virtual function table index: 80
-     * @symbol 
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @note   Virtual function table index: 81
-     * @symbol 
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @note   Virtual function table index: 86
+     * @vftbl  86
      * @symbol ?dispense@DyePowderItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z
+     * @hash   505390040
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @note   Virtual function table index: 96
+     * @vftbl  96
      * @symbol ?buildDescriptionId@DyePowderItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     * @hash   -1650683218
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @note   Virtual function table index: 125
+     * @vftbl  125
      * @symbol ?setIcon@DyePowderItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -366372592
      */
     virtual class Item & setIcon(std::string const &, int);
     /**
-     * @note   Virtual function table index: 136
+     * @vftbl  136
      * @symbol ?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z
+     * @hash   -1189521382
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
-#endif
     /**
      * @symbol ??0DyePowderItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemColor@@_N2@Z
+     * @hash   2017082954
      */
     MCAPI DyePowderItem(std::string const &, int, enum ItemColor, bool, bool);
 

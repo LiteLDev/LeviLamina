@@ -32,127 +32,150 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -513991935
      */
     virtual ~ServerScoreboard();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?setDisplayObjective@ServerScoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z
+     * @hash   -1488447100
      */
     virtual class DisplayObjective const * setDisplayObjective(std::string const &, class Objective const &, enum ObjectiveSortOrder);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?clearDisplayObjective@ServerScoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1537441757
      */
     virtual class Objective * clearDisplayObjective(std::string const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z
+     * @hash   -1020472144
      */
     virtual struct ScoreboardId const & createScoreboardId(class Player const &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z
+     * @hash   -172736924
      */
     virtual struct ScoreboardId const & createScoreboardId(class Actor const &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1683245076
      */
     virtual struct ScoreboardId const & createScoreboardId(std::string const &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?onObjectiveAdded@ServerScoreboard@@UEAAXAEBVObjective@@@Z
+     * @hash   -1579142406
      */
     virtual void onObjectiveAdded(class Objective const &);
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?onObjectiveRemoved@ServerScoreboard@@UEAAXAEAVObjective@@@Z
+     * @hash   2035018301
      */
     virtual void onObjectiveRemoved(class Objective &);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?onScoreChanged@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
+     * @hash   -1497760286
      */
     virtual void onScoreChanged(struct ScoreboardId const &, class Objective const &);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?onPlayerScoreRemoved@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z
+     * @hash   -902960705
      */
     virtual void onPlayerScoreRemoved(struct ScoreboardId const &, class Objective const &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?onPlayerJoined@ServerScoreboard@@UEAAXAEBVPlayer@@@Z
+     * @hash   -2078637641
      */
     virtual void onPlayerJoined(class Player const &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?onPlayerIdentityUpdated@ServerScoreboard@@UEAAXAEBUPlayerScoreboardId@@@Z
+     * @hash   1743193281
      */
     virtual void onPlayerIdentityUpdated(struct PlayerScoreboardId const &);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?tick@ServerScoreboard@@UEAAXXZ
+     * @hash   -837436723
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?setPacketSender@ServerScoreboard@@UEAAXPEAVPacketSender@@@Z
+     * @hash   1691601588
      */
     virtual void setPacketSender(class PacketSender *);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?writeToLevelStorage@ServerScoreboard@@UEAAXXZ
+     * @hash   -346040207
      */
     virtual void writeToLevelStorage();
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?isClientSide@ServerScoreboard@@MEBA_NXZ
+     * @hash   -2083290010
      */
     virtual bool isClientSide() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCOREBOARD
-#endif
     /**
      * @symbol ??0ServerScoreboard@@QEAA@VCommandSoftEnumRegistry@@PEAVLevelStorage@@@Z
+     * @hash   617862334
      */
     MCAPI ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage *);
     /**
      * @symbol ?deserialize@ServerScoreboard@@QEAAXV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@@Z
+     * @hash   -1290087614
      */
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?serialize@ServerScoreboard@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   272346614
      */
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
     /**
      * @symbol ?setClearDisplayObjectiveCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVDisplayObjective@@@Z@std@@@Z
+     * @hash   2051449076
      */
     MCAPI void setClearDisplayObjectiveCallback(class std::function<void (std::string const &, class DisplayObjective const &)>);
     /**
      * @symbol ?setIdentityUpdatedCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBUScoreboardId@@@Z@std@@@Z
+     * @hash   1543989843
      */
     MCAPI void setIdentityUpdatedCallback(class std::function<void (struct ScoreboardId const &)>);
     /**
      * @symbol ?setScoreChangedCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBUScoreboardId@@@Z@std@@@Z
+     * @hash   554307343
      */
     MCAPI void setScoreChangedCallback(class std::function<void (struct ScoreboardId const &)>);
     /**
      * @symbol ?setScoreRemovedCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBUScoreboardId@@@Z@std@@@Z
+     * @hash   -1172543913
      */
     MCAPI void setScoreRemovedCallback(class std::function<void (struct ScoreboardId const &)>);
     /**
      * @symbol ?setSetDisplayObjectiveCallback@ServerScoreboard@@QEAAXV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVDisplayObjective@@@Z@std@@@Z
+     * @hash   1725937124
      */
     MCAPI void setSetDisplayObjectiveCallback(class std::function<void (std::string const &, class DisplayObjective const &)>);
 
 //private:
     /**
      * @symbol ?_stopTrackingObjective@ServerScoreboard@@AEAAXAEBVObjective@@@Z
+     * @hash   -988004262
      */
     MCAPI void _stopTrackingObjective(class Objective const &);
     /**
      * @symbol ?_unpackIdentityDefToScorePacket@ServerScoreboard@@AEAA?AUScorePacketInfo@@AEBVScoreboardIdentityRef@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -1264239687
      */
     MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const &, std::string const &, int);
 

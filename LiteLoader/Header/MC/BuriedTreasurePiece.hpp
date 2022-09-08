@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1829572508
      */
     virtual ~BuriedTreasurePiece();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getType@BuriedTreasurePiece@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   2024725141
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?postProcess@BuriedTreasurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1537413245
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BURIEDTREASUREPIECE
-#endif
 
 //private:
     /**
      * @symbol ?_isCovered@BuriedTreasurePiece@@AEBA_NAEBVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   367865117
      */
     MCAPI bool _isCovered(class BlockSource const &, class BlockPos const &) const;
 

@@ -31,55 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1223666960
      */
     virtual ~FollowMobGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@FollowMobGoal@@UEAA_NXZ
+     * @hash   -648647010
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FollowMobGoal@@UEAA_NXZ
+     * @hash   218179036
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@FollowMobGoal@@UEAAXXZ
+     * @hash   -263129929
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@FollowMobGoal@@UEAAXXZ
+     * @hash   -658946905
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@FollowMobGoal@@UEAAXXZ
+     * @hash   -1143376462
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FollowMobGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   147503666
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWMOBGOAL
-#endif
     /**
      * @symbol ??0FollowMobGoal@@QEAA@AEAVMob@@MMH@Z
+     * @hash   -228264424
      */
     MCAPI FollowMobGoal(class Mob &, float, float, int);
 
 //private:
     /**
      * @symbol ?_setWantedMob@FollowMobGoal@@AEAA_NXZ
+     * @hash   -1169552606
      */
     MCAPI bool _setWantedMob();
 

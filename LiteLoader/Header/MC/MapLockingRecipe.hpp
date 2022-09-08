@@ -32,46 +32,55 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1162373613
      */
     virtual ~MapLockingRecipe();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?assemble@MapLockingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   1846429127
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@MapLockingRecipe@@UEBAHXZ
+     * @hash   1862249339
      */
     virtual int getCraftingSize() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getIngredient@MapLockingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   -1449247620
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getResultItem@MapLockingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   911855400
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?matches@MapLockingRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   -1813066371
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?size@MapLockingRecipe@@UEBAHXZ
+     * @hash   -206844253
      */
     virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPLOCKINGRECIPE
-#endif
     /**
      * @symbol ??0MapLockingRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     * @hash   1808175041
      */
     MCAPI MapLockingRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-MCAPI static class mce::UUID const CartographyTableID;
+    /**
+     * @symbol ?CartographyTableID@MapLockingRecipe@@2VUUID@mce@@B
+     * @hash   1571227003
+     */
+    MCAPI static class mce::UUID const CartographyTableID;
 
 };

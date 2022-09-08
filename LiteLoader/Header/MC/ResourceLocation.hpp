@@ -31,46 +31,54 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOCATION
-#endif
     /**
      * @symbol ??0ResourceLocation@@QEAA@XZ
+     * @hash   -1634245569
      */
     MCAPI ResourceLocation();
     /**
      * @symbol ??0ResourceLocation@@QEAA@AEBVPath@Core@@W4ResourceFileSystem@@@Z
+     * @hash   1492412047
      */
     MCAPI ResourceLocation(class Core::Path const &, enum ResourceFileSystem);
     /**
      * @symbol ??0ResourceLocation@@QEAA@AEBVPath@Core@@@Z
+     * @hash   806377176
      */
     MCAPI ResourceLocation(class Core::Path const &);
     /**
      * @symbol ?getFullPath@ResourceLocation@@QEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   597824421
      */
     MCAPI class Core::PathBuffer<std::string> getFullPath() const;
     /**
      * @symbol ?getRelativePath@ResourceLocation@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   1161541915
      */
     MCAPI class Core::PathBuffer<std::string> const & getRelativePath() const;
     /**
      * @symbol ??8ResourceLocation@@QEBA_NAEBV0@@Z
+     * @hash   639329988
      */
     MCAPI bool operator==(class ResourceLocation const &) const;
     /**
      * @symbol ?serialize@ResourceLocation@@QEBAXAEAVValue@Json@@@Z
+     * @hash   -598911442
      */
     MCAPI void serialize(class Json::Value &) const;
     /**
      * @symbol ?setRelativePath@ResourceLocation@@QEAAXAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
+     * @hash   2024106223
      */
     MCAPI void setRelativePath(class Core::PathBuffer<std::string> const &);
     /**
      * @symbol ??1ResourceLocation@@QEAA@XZ
+     * @hash   1855505837
      */
     MCAPI ~ResourceLocation();
     /**
      * @symbol ?getEmptyLocation@ResourceLocation@@SAAEBV1@XZ
+     * @hash   494938324
      */
     MCAPI static class ResourceLocation const & getEmptyLocation();
 

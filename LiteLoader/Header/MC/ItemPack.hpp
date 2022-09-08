@@ -27,18 +27,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMPACK
-#endif
     /**
      * @symbol ??0ItemPack@@QEAA@XZ
+     * @hash   95611592
      */
     MCAPI ItemPack();
     /**
      * @symbol ?add@ItemPack@@QEAAXAEBVRecipeIngredient@@H@Z
+     * @hash   1350905203
      */
     MCAPI void add(class RecipeIngredient const &, int);
     /**
      * @symbol ??1ItemPack@@QEAA@XZ
+     * @hash   -858048506
      */
     MCAPI ~ItemPack();
 

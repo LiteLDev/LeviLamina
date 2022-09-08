@@ -32,34 +32,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -939124616
      */
     virtual ~BastionFeature();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?shouldPostProcessMobs@BastionFeature@@UEBA_NXZ
+     * @hash   -335157063
      */
     virtual bool shouldPostProcessMobs() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@BastionFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
+     * @hash   -815186055
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?isFeatureChunk@BastionFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+     * @hash   -2008923718
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?createStructureStart@BastionFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+     * @hash   -1911601113
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASTIONFEATURE
-#endif
     /**
      * @symbol ??0BastionFeature@@QEAA@IAEBVBaseGameVersion@@@Z
+     * @hash   -108071912
      */
     MCAPI BastionFeature(unsigned int, class BaseGameVersion const &);
 

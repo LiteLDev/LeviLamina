@@ -32,48 +32,48 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onDownloadBegin@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     * @hash   -967391005
      */
     MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onDownloadCanceled@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     * @hash   1781206853
      */
     MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onDownloadComplete@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     * @hash   1814682277
      */
     MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onDownloadUpdate@WebviewObserver@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     * @hash   557336917
      */
     MCVAPI void onDownloadUpdate(struct WebviewDownloadInfo const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onError@WebviewObserver@@UEAAXAEBUWebviewError@@@Z
+     * @hash   -1577116738
      */
     MCVAPI void onError(struct WebviewError const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLoadingBegin@WebviewObserver@@UEAAXXZ
+     * @hash   -534106332
      */
     MCVAPI void onLoadingBegin();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLoadingEnd@WebviewObserver@@UEAAXXZ
+     * @hash   1567388886
      */
     MCVAPI void onLoadingEnd();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onMessageRecieved@WebviewObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1320754627
      */
     MCVAPI void onMessageRecieved(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onWebviewChanged@WebviewObserver@@UEAAXXZ
+     * @hash   542543442
      */
     MCVAPI void onWebviewChanged();
 #endif

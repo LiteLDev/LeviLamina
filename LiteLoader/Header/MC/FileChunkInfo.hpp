@@ -28,19 +28,21 @@ public:
     FileChunkInfo(struct FileChunkInfo const &) = delete;
     FileChunkInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKINFO
-#endif
     /**
      * @symbol ??0FileChunkInfo@@QEAA@H_K0@Z
+     * @hash   538322018
      */
     MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64);
     /**
      * @symbol ?isValid@FileChunkInfo@@QEBA_NXZ
+     * @hash   -1342741520
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?size@FileChunkInfo@@QEBAHXZ
+     * @hash   -847486440
      */
     MCAPI int size() const;
 

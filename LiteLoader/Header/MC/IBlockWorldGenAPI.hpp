@@ -32,13 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IBLOCKWORLDGENAPI
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canGetChunk@IBlockWorldGenAPI@@UEBA_NXZ
+     * @hash   -1303164921
      */
     MCVAPI bool canGetChunk() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getChunk@IBlockWorldGenAPI@@UEAAPEAVLevelChunk@@AEBVChunkPos@@@Z
+     * @hash   728892087
      */
     MCVAPI class LevelChunk * getChunk(class ChunkPos const &);
 #endif

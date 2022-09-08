@@ -31,26 +31,26 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   284716906
      */
     virtual ~ScriptScriptingEventHandler();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -2099474431
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?handleEvent@ScriptScriptingEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUBeforeWatchdogTerminateEvent@@@Z
+     * @hash   1427206400
      */
     virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTSCRIPTINGEVENTHANDLER
-#endif
 
 //private:
     /**
      * @symbol ?_handleWatchdogTerminateEvent@ScriptScriptingEventHandler@@AEBA_NAEAUBeforeWatchdogTerminateEvent@@AEBVWeakLifetimeScope@Scripting@@U?$TypedObjectHandle@VScriptSystemEvents@ScriptModuleMinecraft@@@4@@Z
+     * @hash   -2010185754
      */
     MCAPI bool _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemEvents>) const;
 

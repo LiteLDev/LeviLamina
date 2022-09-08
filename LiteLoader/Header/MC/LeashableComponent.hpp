@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEASHABLECOMPONENT
-#endif
     /**
      * @symbol ?getInteraction@LeashableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   1619816713
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
      * @symbol ?leash@LeashableComponent@@QEAAXAEAVActor@@0@Z
+     * @hash   -2006370089
      */
     MCAPI void leash(class Actor &, class Actor &);
     /**
      * @symbol ?unleash@LeashableComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -2023008340
      */
     MCAPI void unleash(class Actor &);
 

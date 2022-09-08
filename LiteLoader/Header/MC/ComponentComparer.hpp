@@ -20,6 +20,10 @@ namespace ComponentComparer {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-MCAPI extern std::string const TOSTRING_NOT_IMPLEMENTED;
+    /**
+     * @symbol ?TOSTRING_NOT_IMPLEMENTED@ComponentComparer@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1369547045
+     */
+    MCAPI extern std::string const TOSTRING_NOT_IMPLEMENTED;
 
 };

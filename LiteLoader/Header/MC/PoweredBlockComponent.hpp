@@ -32,59 +32,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1017733442
      */
     virtual ~PoweredBlockComponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getStrength@PoweredBlockComponent@@UEBAHXZ
+     * @hash   -1098362242
      */
     virtual int getStrength() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?canConsumerPower@PoweredBlockComponent@@UEBA_NXZ
+     * @hash   216415907
      */
     virtual bool canConsumerPower() const;
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?addSource@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     * @hash   2066978440
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?allowConnection@PoweredBlockComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   -223627836
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?evaluate@PoweredBlockComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   1035873140
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -314076894
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@PoweredBlockComponent@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   -596238318
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDBLOCKCOMPONENT
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?hasChildrenSource@PoweredBlockComponent@@UEBA_NXZ
+     * @hash   591468152
      */
     MCVAPI bool hasChildrenSource() const;
 #endif
     /**
      * @symbol ??0PoweredBlockComponent@@QEAA@E@Z
+     * @hash   530728268
      */
     MCAPI PoweredBlockComponent(unsigned char);
 

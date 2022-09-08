@@ -28,16 +28,21 @@ public:
     OnActorEnterVolumeDefinition(struct OnActorEnterVolumeDefinition const &) = delete;
     OnActorEnterVolumeDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMEDEFINITION
-#endif
     /**
      * @symbol ?initialize@OnActorEnterVolumeDefinition@@QEBAXAEAVEntityContext@@AEAVOnActorEnterVolumeComponent@@@Z
+     * @hash   -1162787215
      */
     MCAPI void initialize(class EntityContext &, class OnActorEnterVolumeComponent &) const;
-MCAPI static std::string const NAME;
+    /**
+     * @symbol ?NAME@OnActorEnterVolumeDefinition@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1495664859
+     */
+    MCAPI static std::string const NAME;
     /**
      * @symbol ?bindType@OnActorEnterVolumeDefinition@@SAXXZ
+     * @hash   -546283405
      */
     MCAPI static void bindType();
 

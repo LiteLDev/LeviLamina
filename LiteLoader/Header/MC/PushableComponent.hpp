@@ -29,44 +29,51 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLECOMPONENT
-#endif
     /**
      * @symbol ??0PushableComponent@@QEAA@XZ
+     * @hash   1210372645
      */
     MCAPI PushableComponent();
     /**
      * @symbol ?initFromDefinition@PushableComponent@@QEAAXAEAVActor@@@Z
+     * @hash   324001538
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?initFromDefinition@PushableComponent@@QEAAXAEAVActor@@AEBUPushableDescription@@@Z
+     * @hash   -1093735203
      */
     MCAPI void initFromDefinition(class Actor &, struct PushableDescription const &);
     /**
      * @symbol ?isPushable@PushableComponent@@QEAA_NXZ
+     * @hash   -1516197410
      */
     MCAPI bool isPushable();
     /**
      * @symbol ?isPushableByPiston@PushableComponent@@QEAA_NXZ
+     * @hash   2131041406
      */
     MCAPI bool isPushableByPiston();
     /**
      * @symbol ?push@PushableComponent@@QEAAXAEAVActor@@0_N@Z
+     * @hash   -662211926
      */
     MCAPI void push(class Actor &, class Actor &, bool);
     /**
      * @symbol ?push@PushableComponent@@QEAAXAEAVActor@@AEBVVec3@@@Z
+     * @hash   -1352509133
      */
     MCAPI void push(class Actor &, class Vec3 const &);
 
 //private:
     /**
      * @symbol ?_calculatePushVectorBoat@PushableComponent@@AEAA?AU?$pair@VVec3@@V1@@std@@AEAVActor@@0_N@Z
+     * @hash   906121950
      */
     MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorBoat(class Actor &, class Actor &, bool);
     /**
      * @symbol ?_calculatePushVectorMinecart@PushableComponent@@AEAA?AU?$pair@VVec3@@V1@@std@@AEAVActor@@0_N@Z
+     * @hash   -809357141
      */
     MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorMinecart(class Actor &, class Actor &, bool);
 

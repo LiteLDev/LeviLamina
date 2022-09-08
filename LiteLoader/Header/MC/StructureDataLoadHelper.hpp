@@ -33,114 +33,131 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1126998625
      */
     virtual ~StructureDataLoadHelper();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?loadPosition@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     * @hash   262874371
      */
     virtual class Vec3 loadPosition(class Vec3 const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?loadBlockPosition@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     * @hash   -690399134
      */
     virtual class BlockPos loadBlockPosition(class BlockPos const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?loadBlockPositionOffset@StructureDataLoadHelper@@UEAA?AVBlockPos@@AEBV2@@Z
+     * @hash   -209489489
      */
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   1764518852
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?loadRotationDegreesY@StructureDataLoadHelper@@UEAAMM@Z
+     * @hash   2060883742
      */
     virtual float loadRotationDegreesY(float);
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   1766365894
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?loadRotationRadiansY@StructureDataLoadHelper@@UEAAMM@Z
+     * @hash   -1341612727
      */
     virtual float loadRotationRadiansY(float);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?loadFacingID@StructureDataLoadHelper@@UEAAEE@Z
+     * @hash   -45452919
      */
     virtual unsigned char loadFacingID(unsigned char);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?loadDirection@StructureDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
+     * @hash   1854092841
      */
     virtual class Vec3 loadDirection(class Vec3 const &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?loadDirection@StructureDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
+     * @hash   -1866330013
      */
     virtual enum Direction::Type loadDirection(enum Direction::Type);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?loadRotation@StructureDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
+     * @hash   129180960
      */
     virtual enum Rotation loadRotation(enum Rotation);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?loadMirror@StructureDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
+     * @hash   -357159169
      */
     virtual enum Mirror loadMirror(enum Mirror);
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?loadActorUniqueID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     * @hash   1810333265
      */
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?loadOwnerID@StructureDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z
+     * @hash   85440596
      */
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?loadActorInternalComponentInfo@StructureDataLoadHelper@@UEAAPEBUComponentInfo@InternalComponentRegistry@@AEBV?$unordered_map@VHashedString@@UComponentInfo@InternalComponentRegistry@@U?$hash@VHashedString@@@std@@U?$equal_to@VHashedString@@@5@V?$allocator@U?$pair@$$CBVHashedString@@UComponentInfo@InternalComponentRegistry@@@std@@@5@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@5@@Z
+     * @hash   -1149407821
      */
     virtual struct InternalComponentRegistry::ComponentInfo const * loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const &, std::string const &);
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?getType@StructureDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
+     * @hash   94589719
      */
     virtual enum DataLoadHelperType getType() const;
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?shouldResetTime@StructureDataLoadHelper@@UEAA_NXZ
+     * @hash   772184273
      */
     virtual bool shouldResetTime();
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?_generateNewID@StructureDataLoadHelper@@MEAA?AUActorUniqueID@@XZ
+     * @hash   705172233
      */
     virtual struct ActorUniqueID _generateNewID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadRotationDegreesX@StructureDataLoadHelper@@UEAAMM@Z
+     * @hash   -1643557313
      */
     MCVAPI float loadRotationDegreesX(float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadRotationRadiansX@StructureDataLoadHelper@@UEAAMM@Z
+     * @hash   -751209494
      */
     MCVAPI float loadRotationRadiansX(float);
 #endif
     /**
      * @symbol ??0StructureDataLoadHelper@@QEAA@AEBVBlockPos@@0AEBVVec3@@UActorUniqueID@@W4Rotation@@W4Mirror@@AEAVLevel@@@Z
+     * @hash   614809903
      */
     MCAPI StructureDataLoadHelper(class BlockPos const &, class BlockPos const &, class Vec3 const &, struct ActorUniqueID, enum Rotation, enum Mirror, class Level &);
 

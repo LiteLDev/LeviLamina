@@ -31,21 +31,20 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   54785893
      */
     virtual ~BlockBreakSensorSystem();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@BlockBreakSensorSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -161355141
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREAKSENSORSYSTEM
-#endif
 
 };

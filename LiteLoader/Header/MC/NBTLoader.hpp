@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTLOADER
-#endif
     /**
      * @symbol ??0NBTLoader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
+     * @hash   -1903957167
      */
     MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>);
 

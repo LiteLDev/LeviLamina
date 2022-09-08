@@ -32,59 +32,64 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -556366294
      */
     virtual ~InspectBookshelfGoal();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@InspectBookshelfGoal@@UEAA_NXZ
+     * @hash   -1082336754
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@InspectBookshelfGoal@@UEAAXXZ
+     * @hash   -412713180
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@InspectBookshelfGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1306183200
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?isValidTarget@InspectBookshelfGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1131793506
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?_canReach@InspectBookshelfGoal@@MEAA_NAEBVBlockPos@@@Z
+     * @hash   1086181094
      */
     virtual bool _canReach(class BlockPos const &);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?findTargetBlock@InspectBookshelfGoal@@UEAA_NXZ
+     * @hash   1855660188
      */
     virtual bool findTargetBlock();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSPECTBOOKSHELFGOAL
-#endif
     /**
      * @symbol ??0InspectBookshelfGoal@@QEAA@AEAVMob@@MHHHM@Z
+     * @hash   689224818
      */
     MCAPI InspectBookshelfGoal(class Mob &, float, int, int, int, float);
 

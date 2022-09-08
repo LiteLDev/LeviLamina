@@ -32,24 +32,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2059048864
      */
     virtual ~RakWebSocketClient();
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?_updateState@RakWebSocketClient@@MEAAXXZ
+     * @hash   -930105517
      */
     virtual void _updateState();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?_genMaskingKey@RakWebSocketClient@@MEBAIXZ
+     * @hash   1454108083
      */
     virtual unsigned int _genMaskingKey() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETCLIENT
-#endif
     /**
      * @symbol ??0RakWebSocketClient@@QEAA@V?$unique_ptr@VTcpProxy@@U?$default_delete@VTcpProxy@@@std@@@std@@@Z
+     * @hash   1075847197
      */
     MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
 

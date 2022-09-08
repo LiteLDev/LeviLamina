@@ -28,12 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOADINGPROGRESSTICKINGSYSTEM
-#endif
 
 //private:
 
 private:
-MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
+    /**
+     * @symbol ?mChunksNeededForLoadOffsets@LoadingProgressTickingSystem@@0V?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@std@@B
+     * @hash   -1174668304
+     */
+    MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
 
 };

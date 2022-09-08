@@ -24,10 +24,12 @@ namespace ServerCommands {
 #undef AFTER_EXTRA
     /**
      * @symbol ?setupCommonEnums@ServerCommands@@YAXAEAVCommandRegistry@@@Z
+     * @hash   1803448847
      */
     MCAPI void setupCommonEnums(class CommandRegistry &);
     /**
      * @symbol ?setupStandardServer@ServerCommands@@YAXAEAVMinecraft@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1PEAVPermissionsFile@@@Z
+     * @hash   -1500158947
      */
     MCAPI void setupStandardServer(class Minecraft &, std::string const &, std::string const &, class PermissionsFile *);
 

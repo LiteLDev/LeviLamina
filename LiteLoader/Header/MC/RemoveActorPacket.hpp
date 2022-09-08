@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1773410553
      */
     virtual ~RemoveActorPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@RemoveActorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -132948587
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@RemoveActorPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -869877694
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@RemoveActorPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -708907835
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@RemoveActorPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -911408251
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEACTORPACKET
-#endif
     /**
      * @symbol ??0RemoveActorPacket@@QEAA@XZ
+     * @hash   -1637718507
      */
     MCAPI RemoveActorPacket();
     /**
      * @symbol ??0RemoveActorPacket@@QEAA@UActorUniqueID@@@Z
+     * @hash   -1595342094
      */
     MCAPI RemoveActorPacket(struct ActorUniqueID);
 

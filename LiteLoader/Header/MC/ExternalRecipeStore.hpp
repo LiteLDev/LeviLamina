@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALRECIPESTORE
-#endif
     /**
      * @symbol ?registerBlockReduction@ExternalRecipeStore@@QEAAXAEBVItemStack@@$$QEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
+     * @hash   1688407995
      */
     MCAPI void registerBlockReduction(class ItemStack const &, std::vector<class ItemStack> &&);
     /**
      * @symbol ?setBlockReducer@ExternalRecipeStore@@QEAAXPEAVBlockReducer@@@Z
+     * @hash   2133703977
      */
     MCAPI void setBlockReducer(class BlockReducer *);
 

@@ -30,30 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISECELLINTERPOLATOR
-#endif
     /**
      * @symbol ??0NoiseCellInterpolator@@QEAA@V?$span@$$CBM$0?0@gsl@@HH@Z
+     * @hash   646359727
      */
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
     /**
      * @symbol ??0NoiseCellInterpolator@@QEAA@V?$span@$$CBM$0?0@gsl@@@Z
+     * @hash   287245263
      */
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
     /**
      * @symbol ?getLerpedValue@NoiseCellInterpolator@@QEBAMXZ
+     * @hash   -1359470802
      */
     MCAPI float getLerpedValue() const;
     /**
      * @symbol ?selectCellXZ@NoiseCellInterpolator@@QEAAXHHHH@Z
+     * @hash   1794735227
      */
     MCAPI void selectCellXZ(int, int, int, int);
     /**
      * @symbol ?updateForX@NoiseCellInterpolator@@QEAAXE@Z
+     * @hash   -639710695
      */
     MCAPI void updateForX(unsigned char);
     /**
      * @symbol ?updateForZ@NoiseCellInterpolator@@QEAAXE@Z
+     * @hash   1468593109
      */
     MCAPI void updateForZ(unsigned char);
 

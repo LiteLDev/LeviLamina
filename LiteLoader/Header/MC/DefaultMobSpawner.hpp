@@ -32,16 +32,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   257652407
      */
     virtual ~DefaultMobSpawner();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ
+     * @hash   -1817854932
      */
     virtual class BlockPos const & getPos();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTMOBSPAWNER
-#endif
 
 };

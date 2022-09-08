@@ -31,80 +31,88 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   268324187
      */
     virtual ~MoveInputHandler();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@MoveInputHandler@@UEAAXAEAUIPlayerMovementProxy@@@Z
+     * @hash   -1091548135
      */
     virtual void tick(struct IPlayerMovementProxy &);
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?clearInputState@MoveInputHandler@@UEAAXXZ
+     * @hash   -1729873766
      */
     virtual void clearInputState();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?isChangeHeight@MoveInputHandler@@UEBA_NXZ
+     * @hash   -1191589416
      */
     virtual bool isChangeHeight() const;
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?isPlayerMoving@MoveInputHandler@@UEBA_NXZ
+     * @hash   1518972704
      */
     virtual bool isPlayerMoving() const;
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?getGazeDirection@MoveInputHandler@@UEBAAEBVVec3@@XZ
+     * @hash   344729313
      */
     virtual class Vec3 const & getGazeDirection() const;
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?extractInputComponent@MoveInputHandler@@UEBA?AUMoveInputComponent@@XZ
+     * @hash   1630557707
      */
     virtual struct MoveInputComponent extractInputComponent() const;
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?fillInputPacket@MoveInputHandler@@UEAAXAEAVPlayerAuthInputPacket@@@Z
+     * @hash   -2048163186
      */
     virtual void fillInputPacket(class PlayerAuthInputPacket &);
     /**
-     * @note   Virtual function table index: 15
-     * @symbol 
+     * @vftbl  15
+     * @hash   -699106350
      */
     virtual void __unk_vfn_15() = 0;
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?createSnapshot@MoveInputHandler@@UEAA?AV?$unique_ptr@UIReplayableActorInput@@U?$default_delete@UIReplayableActorInput@@@std@@@std@@XZ
+     * @hash   -120949143
      */
     virtual std::unique_ptr<struct IReplayableActorInput> createSnapshot();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTHANDLER
-#endif
     /**
      * @symbol ?wantsMoveForward@MoveInputHandler@@QEBA_NXZ
+     * @hash   -945892594
      */
     MCAPI bool wantsMoveForward() const;
 
 //protected:
     /**
      * @symbol ??0MoveInputHandler@@IEAA@XZ
+     * @hash   -1046247597
      */
     MCAPI MoveInputHandler();
 

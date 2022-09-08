@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTENDEDCERTIFICATE
-#endif
     /**
      * @symbol ?getIdentity@ExtendedCertificate@@SA?AVUUID@mce@@AEBVCertificate@@@Z
+     * @hash   250175559
      */
     MCAPI static class mce::UUID getIdentity(class Certificate const &);
     /**
      * @symbol ?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z
+     * @hash   -1660222607
      */
     MCAPI static std::string getIdentityName(class Certificate const &);
     /**
      * @symbol ?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z
+     * @hash   1277349521
      */
     MCAPI static std::string getXuid(class Certificate const &);
     /**
      * @symbol ?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVCertificate@@@Z
+     * @hash   -445176306
      */
     MCAPI static std::string getXuid(class Certificate const *);
 

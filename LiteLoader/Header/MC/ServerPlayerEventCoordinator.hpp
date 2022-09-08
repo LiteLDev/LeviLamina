@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYEREVENTCOORDINATOR
-#endif
     /**
      * @symbol ?sendPlayerAuthInputApplied@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
+     * @hash   2039013942
      */
     MCAPI void sendPlayerAuthInputApplied(class Player &);
     /**
      * @symbol ?sendPlayerAuthInputReceived@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
+     * @hash   -2081609480
      */
     MCAPI void sendPlayerAuthInputReceived(class Player &);
     /**
      * @symbol ?sendPlayerMovementAnomaly@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVVec3@@MM@Z
+     * @hash   1538646537
      */
     MCAPI void sendPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     /**
      * @symbol ?sendPlayerMovementCorrected@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@AEBVVec3@@MM@Z
+     * @hash   -1071482903
      */
     MCAPI void sendPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
     /**
      * @symbol ?sendPlayerOnGround@ServerPlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z
+     * @hash   973871424
      */
     MCAPI void sendPlayerOnGround(class Player &);
 

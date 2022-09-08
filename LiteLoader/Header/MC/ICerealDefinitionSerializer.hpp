@@ -30,8 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1ICerealDefinitionSerializer@@UEAA@XZ
+     * @hash   -1382234552
      */
     MCVAPI ~ICerealDefinitionSerializer();
 #endif

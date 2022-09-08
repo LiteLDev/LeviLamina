@@ -32,58 +32,67 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1225487112
      */
     virtual ~SetTitlePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@SetTitlePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1596830016
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@SetTitlePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1309949933
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@SetTitlePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -2070479782
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@SetTitlePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1242486374
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTITLEPACKET
-#endif
     /**
      * @symbol ??0SetTitlePacket@@QEAA@AEBV0@@Z
+     * @hash   2028357217
      */
     MCAPI SetTitlePacket(class SetTitlePacket const &);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@XZ
+     * @hash   1323016986
      */
     MCAPI SetTitlePacket();
     /**
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBVResolvedTextObject@@@Z
+     * @hash   -1657646678
      */
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1633281104
      */
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
+     * @hash   1785848041
      */
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@HHH@Z
+     * @hash   1259888529
      */
     MCAPI SetTitlePacket(int, int, int);
     /**
      * @symbol ??4SetTitlePacket@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -499608856
      */
     MCAPI class SetTitlePacket & operator=(class SetTitlePacket &&);
 

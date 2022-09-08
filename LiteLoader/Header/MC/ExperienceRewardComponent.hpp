@@ -30,40 +30,49 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@ExperienceRewardComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   951813720
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getIsExperienceDropEnabled@ExperienceRewardComponent@@QEBA_NXZ
+     * @hash   1666378968
      */
     MCAPI bool getIsExperienceDropEnabled() const;
     /**
      * @symbol ?getOnBredExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
+     * @hash   -343891319
      */
     MCAPI int getOnBredExperience(class Actor &) const;
     /**
      * @symbol ?getOnDeathExperience@ExperienceRewardComponent@@QEBAHAEAVActor@@@Z
+     * @hash   -1631114427
      */
     MCAPI int getOnDeathExperience(class Actor &) const;
     /**
      * @symbol ??4ExperienceRewardComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -1740191892
      */
     MCAPI class ExperienceRewardComponent & operator=(class ExperienceRewardComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@ExperienceRewardComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1790615208
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setIsExperienceDropEnabled@ExperienceRewardComponent@@QEAAX_N@Z
+     * @hash   -1813605900
      */
     MCAPI void setIsExperienceDropEnabled(bool);
 
 //private:
 
 private:
-MCAPI static std::string const mIsExperienceDropEnabledTag;
+    /**
+     * @symbol ?mIsExperienceDropEnabledTag@ExperienceRewardComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1932720344
+     */
+    MCAPI static std::string const mIsExperienceDropEnabledTag;
 
 };

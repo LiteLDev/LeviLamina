@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   195078004
      */
     virtual ~SetLastHurtByPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@SetLastHurtByPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   2089563048
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@SetLastHurtByPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2072777131
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@SetLastHurtByPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1968700798
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@SetLastHurtByPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1222863250
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETLASTHURTBYPACKET
-#endif
     /**
      * @symbol ??0SetLastHurtByPacket@@QEAA@XZ
+     * @hash   -1026058558
      */
     MCAPI SetLastHurtByPacket();
     /**
      * @symbol ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
+     * @hash   -1392191637
      */
     MCAPI SetLastHurtByPacket(enum ActorType);
 

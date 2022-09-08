@@ -27,25 +27,32 @@ public:
     struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const &) = delete;
     PlayerScoreboardId(struct PlayerScoreboardId const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSCOREBOARDID
-#endif
     /**
      * @symbol ??0PlayerScoreboardId@@QEAA@XZ
+     * @hash   482735564
      */
     MCAPI PlayerScoreboardId();
     /**
      * @symbol ??0PlayerScoreboardId@@QEAA@_J@Z
+     * @hash   -1512526026
      */
     MCAPI PlayerScoreboardId(__int64);
     /**
      * @symbol ?getHash@PlayerScoreboardId@@QEBA_KXZ
+     * @hash   1184267075
      */
     MCAPI unsigned __int64 getHash() const;
     /**
      * @symbol ??8PlayerScoreboardId@@QEBA_NAEBU0@@Z
+     * @hash   1773827781
      */
     MCAPI bool operator==(struct PlayerScoreboardId const &) const;
-MCAPI static struct PlayerScoreboardId const INVALID;
+    /**
+     * @symbol ?INVALID@PlayerScoreboardId@@2U1@B
+     * @hash   -2101780108
+     */
+    MCAPI static struct PlayerScoreboardId const INVALID;
 
 };

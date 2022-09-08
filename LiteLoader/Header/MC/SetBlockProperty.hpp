@@ -32,27 +32,32 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -393696374
      */
     virtual ~SetBlockProperty();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@SetBlockProperty@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   639203257
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?executeAction@SetBlockProperty@@UEBAXAEAVRenderParams@@@Z
+     * @hash   226333333
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?buildSchema@SetBlockProperty@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     * @hash   807352119
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBLOCKPROPERTY
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@SetBlockProperty@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -448242721
+     */
+    MCAPI static std::string const NameID;
 
 };

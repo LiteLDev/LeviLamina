@@ -31,59 +31,64 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1108601122
      */
     virtual ~DragonDeathGoal();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   538031714
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   538955235
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@DragonDeathGoal@@UEAAXXZ
+     * @hash   84177749
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@DragonDeathGoal@@UEAAXXZ
+     * @hash   973528981
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@DragonDeathGoal@@UEAAXXZ
+     * @hash   812199056
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DragonDeathGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1231337716
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONDEATHGOAL
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canContinueToUse@DragonDeathGoal@@UEAA_NXZ
+     * @hash   1315121722
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canUse@DragonDeathGoal@@UEAA_NXZ
+     * @hash   574229084
      */
     MCVAPI bool canUse();
 #endif
     /**
      * @symbol ??0DragonDeathGoal@@QEAA@AEAVEnderDragon@@@Z
+     * @hash   -1324245037
      */
     MCAPI DragonDeathGoal(class EnderDragon &);
 

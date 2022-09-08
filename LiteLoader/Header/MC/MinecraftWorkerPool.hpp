@@ -31,41 +31,89 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTWORKERPOOL
-#endif
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> CONNECTEDSTORAGE;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> DISK;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> INPUT;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB_COMPACTION;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> NETWORK;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> PYTHONRUNTIME;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> VR;
-MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> WATCHDOG;
+    /**
+     * @symbol ?ASYNC@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   -1472804426
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC;
+    /**
+     * @symbol ?CONNECTEDSTORAGE@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   -890066056
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> CONNECTEDSTORAGE;
+    /**
+     * @symbol ?DISK@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   1663654728
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> DISK;
+    /**
+     * @symbol ?INPUT@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   316706966
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> INPUT;
+    /**
+     * @symbol ?LEVELDB@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   13487478
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB;
+    /**
+     * @symbol ?LEVELDB_COMPACTION@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   299455784
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB_COMPACTION;
+    /**
+     * @symbol ?NETWORK@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   -1924374570
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> NETWORK;
+    /**
+     * @symbol ?PYTHONRUNTIME@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   579049286
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> PYTHONRUNTIME;
+    /**
+     * @symbol ?RENDERING@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   1154384998
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING;
+    /**
+     * @symbol ?VR@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   896142360
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> VR;
+    /**
+     * @symbol ?WATCHDOG@MinecraftWorkerPool@@2V?$NonOwnerPointer@VWorkerPool@@@Bedrock@@A
+     * @hash   1905040680
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> WATCHDOG;
     /**
      * @symbol ?configureMainThread@MinecraftWorkerPool@@SAXXZ
+     * @hash   -1766424683
      */
     MCAPI static void configureMainThread();
     /**
      * @symbol ?configureServerThread@MinecraftWorkerPool@@SAXXZ
+     * @hash   -714836823
      */
     MCAPI static void configureServerThread();
     /**
      * @symbol ?createSingletons@MinecraftWorkerPool@@SAXXZ
+     * @hash   1943970409
      */
     MCAPI static void createSingletons();
     /**
      * @symbol ?destroySingletons@MinecraftWorkerPool@@SAXXZ
+     * @hash   -1465354873
      */
     MCAPI static void destroySingletons();
     /**
      * @symbol ?initializeDefaults@MinecraftWorkerPool@@SAXXZ
+     * @hash   1925816005
      */
     MCAPI static void initializeDefaults();
     /**
      * @symbol ?loadWorkerConfigurations@MinecraftWorkerPool@@SAXII@Z
+     * @hash   1070193339
      */
     MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
 

@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENCLIMATEMAPPINGATTRIBUTES
-#endif
     /**
      * @symbol ??4WorldGenClimateMappingAttributes@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -646952136
      */
     MCAPI class WorldGenClimateMappingAttributes & operator=(class WorldGenClimateMappingAttributes &&);
     /**
      * @symbol ??1WorldGenClimateMappingAttributes@@QEAA@XZ
+     * @hash   -1027091656
      */
     MCAPI ~WorldGenClimateMappingAttributes();
 

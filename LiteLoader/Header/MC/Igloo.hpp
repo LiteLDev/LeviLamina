@@ -32,38 +32,56 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -29297348
      */
     virtual ~Igloo();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getType@Igloo@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   -2083579427
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?postProcess@Igloo@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   1737790971
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?postProcessMobsAt@Igloo@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1127535449
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGLOO
-#endif
     /**
      * @symbol ??0Igloo@@QEAA@FHH@Z
+     * @hash   -1650135626
      */
     MCAPI Igloo(short, int, int);
 
 //private:
 
 private:
-MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
-MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
-MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
-MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1965495841
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_IGLOO_TRAPDOOR@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -471954177
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_IGLOO_TRAPDOOR;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_LABORATORY@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1679394118
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_LABORATORY;
+    /**
+     * @symbol ?STRUCTURE_LOCATION_LADDER@Igloo@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -925837579
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_LADDER;
 
 };

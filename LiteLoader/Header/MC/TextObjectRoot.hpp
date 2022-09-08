@@ -32,41 +32,46 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   728688024
      */
     virtual ~TextObjectRoot();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?asString@TextObjectRoot@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -865801985
      */
     virtual std::string asString() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?asJsonValue@TextObjectRoot@@UEBA?AVValue@Json@@XZ
+     * @hash   -873354257
      */
     virtual class Json::Value asJsonValue() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?resolve@TextObjectRoot@@UEBA?AVValue@Json@@AEBUResolveData@@@Z
+     * @hash   275012656
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTOBJECTROOT
-#endif
     /**
      * @symbol ?addChild@TextObjectRoot@@QEAAXV?$unique_ptr@VITextObject@@U?$default_delete@VITextObject@@@std@@@std@@@Z
+     * @hash   874371650
      */
     MCAPI void addChild(std::unique_ptr<class ITextObject>);
     /**
      * @symbol ?clear@TextObjectRoot@@QEAAXXZ
+     * @hash   257542131
      */
     MCAPI void clear();
     /**
      * @symbol ?isEmpty@TextObjectRoot@@QEBA_NXZ
+     * @hash   1926503066
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?resolveRoot@TextObjectRoot@@QEBA?AVResolvedTextObject@@AEBVActor@@AEBVScoreboard@@@Z
+     * @hash   -838260254
      */
     MCAPI class ResolvedTextObject resolveRoot(class Actor const &, class Scoreboard const &) const;
 

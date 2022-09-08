@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1269178591
      */
     virtual ~FunctionCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@FunctionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   2011072368
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FUNCTIONCOMMAND
-#endif
     /**
      * @symbol ?setup@FunctionCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -957515488
      */
     MCAPI static void setup(class CommandRegistry &);
 

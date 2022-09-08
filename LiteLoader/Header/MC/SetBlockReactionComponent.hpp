@@ -31,26 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -976081897
      */
     virtual ~SetBlockReactionComponent();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?_onEnd@SetBlockReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z
+     * @hash   -1604749067
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETBLOCKREACTIONCOMPONENT
-#endif
 
 };

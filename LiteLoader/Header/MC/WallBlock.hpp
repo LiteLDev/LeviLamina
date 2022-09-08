@@ -32,329 +32,379 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1226410289
      */
     virtual ~WallBlock();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?getAABB@WallBlock@@UEBAAEBVAABB@@AEBVIConstBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z
+     * @hash   1326094243
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?getLiquidClipVolume@WallBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z
+     * @hash   -1791301477
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -327659668
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?canProvideSupport@WallBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
+     * @hash   2017990962
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
     /**
-     * @note   Virtual function table index: 25
+     * @vftbl  25
      * @symbol ?canConnect@WallBlock@@UEBA_NAEBVBlock@@E0@Z
+     * @hash   1938169578
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -299030517
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -278713055
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -276866013
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -275942492
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -275018971
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 36
-     * @symbol 
+     * @vftbl  36
+     * @hash   -273171929
      */
     virtual void __unk_vfn_36();
     /**
-     * @note   Virtual function table index: 37
-     * @symbol 
+     * @vftbl  37
+     * @hash   -272248408
      */
     virtual void __unk_vfn_37();
     /**
-     * @note   Virtual function table index: 38
-     * @symbol 
+     * @vftbl  38
+     * @hash   -278059575
      */
     virtual void __unk_vfn_38();
     /**
-     * @note   Virtual function table index: 39
-     * @symbol 
+     * @vftbl  39
+     * @hash   -270401366
      */
     virtual void __unk_vfn_39();
     /**
-     * @note   Virtual function table index: 40
-     * @symbol 
+     * @vftbl  40
+     * @hash   -250083904
      */
     virtual void __unk_vfn_40();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 42
-     * @symbol 
+     * @vftbl  42
+     * @hash   -248236862
      */
     virtual void __unk_vfn_42();
     /**
-     * @note   Virtual function table index: 44
-     * @symbol 
+     * @vftbl  44
+     * @hash   -246389820
      */
     virtual void __unk_vfn_44();
     /**
-     * @note   Virtual function table index: 45
-     * @symbol 
+     * @vftbl  45
+     * @hash   -245466299
      */
     virtual void __unk_vfn_45();
     /**
-     * @note   Virtual function table index: 46
-     * @symbol 
+     * @vftbl  46
+     * @hash   -244542778
      */
     virtual void __unk_vfn_46();
     /**
-     * @note   Virtual function table index: 47
-     * @symbol 
+     * @vftbl  47
+     * @hash   -243619257
      */
     virtual void __unk_vfn_47();
     /**
-     * @note   Virtual function table index: 48
-     * @symbol 
+     * @vftbl  48
+     * @hash   -242695736
      */
     virtual void __unk_vfn_48();
     /**
-     * @note   Virtual function table index: 49
-     * @symbol 
+     * @vftbl  49
+     * @hash   -241772215
      */
     virtual void __unk_vfn_49();
     /**
-     * @note   Virtual function table index: 59
-     * @symbol 
+     * @vftbl  59
+     * @hash   -213143064
      */
     virtual void __unk_vfn_59();
     /**
-     * @note   Virtual function table index: 60
-     * @symbol 
+     * @vftbl  60
+     * @hash   -192825602
      */
     virtual void __unk_vfn_60();
     /**
-     * @note   Virtual function table index: 61
+     * @vftbl  61
      * @symbol ?canContainLiquid@WallBlock@@UEBA_NXZ
+     * @hash   -1519738475
      */
     virtual bool canContainLiquid() const;
     /**
-     * @note   Virtual function table index: 73
-     * @symbol 
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @note   Virtual function table index: 75
+     * @vftbl  75
      * @symbol ?onStructureBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1489147351
      */
     virtual void onStructureBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 76
+     * @vftbl  76
      * @symbol ?onStructureNeighborBlockPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1451187001
      */
     virtual void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 80
-     * @symbol 
+     * @vftbl  80
+     * @hash   -135567300
      */
     virtual void __unk_vfn_80();
     /**
-     * @note   Virtual function table index: 94
+     * @vftbl  94
      * @symbol ?breaksFallingBlocks@WallBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z
+     * @hash   360333208
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @note   Virtual function table index: 98
+     * @vftbl  98
      * @symbol ?neighborChanged@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     * @hash   508175717
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 101
+     * @vftbl  101
      * @symbol ?getResourceItem@WallBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z
+     * @hash   1758326737
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @note   Virtual function table index: 102
+     * @vftbl  102
      * @symbol ?asItemInstance@WallBlock@@UEBA?AVItemInstance@@AEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   1070329318
      */
     virtual class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @note   Virtual function table index: 105
-     * @symbol 
+     * @vftbl  105
+     * @hash   1332020102
      */
     virtual void __unk_vfn_105();
     /**
-     * @note   Virtual function table index: 106
+     * @vftbl  106
      * @symbol ?getPlacementBlock@WallBlock@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
+     * @hash   1735410770
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @note   Virtual function table index: 124
-     * @symbol 
+     * @vftbl  124
+     * @hash   1388354883
      */
     virtual void __unk_vfn_124();
     /**
-     * @note   Virtual function table index: 126
-     * @symbol 
+     * @vftbl  126
+     * @hash   1390201925
      */
     virtual void __unk_vfn_126();
     /**
-     * @note   Virtual function table index: 127
-     * @symbol 
+     * @vftbl  127
+     * @hash   1391125446
      */
     virtual void __unk_vfn_127();
     /**
-     * @note   Virtual function table index: 132
-     * @symbol 
+     * @vftbl  132
+     * @hash   1415136992
      */
     virtual void __unk_vfn_132();
     /**
-     * @note   Virtual function table index: 134
+     * @vftbl  134
      * @symbol ?buildDescriptionId@WallBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z
+     * @hash   -986345030
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @note   Virtual function table index: 135
+     * @vftbl  135
      * @symbol ?isAuxValueRelevantForPicking@WallBlock@@UEBA_NXZ
+     * @hash   1282865697
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @note   Virtual function table index: 143
+     * @vftbl  143
      * @symbol ?getVisualShapeInWorld@WallBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVIConstBlockSource@@AEBVBlockPos@@AEAV2@_N@Z
+     * @hash   -695550779
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
-     * @note   Virtual function table index: 147
+     * @vftbl  147
      * @symbol ?getVariant@WallBlock@@UEBAHAEBVBlock@@@Z
+     * @hash   1960300371
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @note   Virtual function table index: 148
-     * @symbol 
+     * @vftbl  148
+     * @hash   1442572581
      */
     virtual void __unk_vfn_148();
     /**
-     * @note   Virtual function table index: 157
-     * @symbol 
+     * @vftbl  157
+     * @hash   1477012899
      */
     virtual void __unk_vfn_157();
     /**
-     * @note   Virtual function table index: 168
-     * @symbol 
+     * @vftbl  168
+     * @hash   1457546883
      */
     virtual void __unk_vfn_168();
     /**
-     * @note   Virtual function table index: 169
-     * @symbol 
+     * @vftbl  169
+     * @hash   1458470404
      */
     virtual void __unk_vfn_169();
     /**
-     * @note   Virtual function table index: 170
-     * @symbol 
+     * @vftbl  170
+     * @hash   1478787866
      */
     virtual void __unk_vfn_170();
     /**
-     * @note   Virtual function table index: 171
+     * @vftbl  171
      * @symbol ?onPlace@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1886837295
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 174
+     * @vftbl  174
      * @symbol ?tick@WallBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1607610521
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @note   Virtual function table index: 177
-     * @symbol 
+     * @vftbl  177
+     * @hash   1534271201
      */
     virtual void __unk_vfn_177();
     /**
-     * @note   Virtual function table index: 187
+     * @vftbl  187
      * @symbol ?getMapColor@WallBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1003052739
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &) const;
     /**
-     * @note   Virtual function table index: 188
-     * @symbol 
+     * @vftbl  188
+     * @hash   1563823873
      */
     virtual void __unk_vfn_188();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLBLOCK
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canBeSilkTouched@WallBlock@@MEBA_NXZ
+     * @hash   981230660
      */
     MCVAPI bool canBeSilkTouched() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isWallBlock@WallBlock@@UEBA_NXZ
+     * @hash   792418830
      */
     MCVAPI bool isWallBlock() const;
 #endif
     /**
      * @symbol ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@@Z
+     * @hash   -1029130758
      */
     MCAPI WallBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ??0WallBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@@Z
+     * @hash   -611534112
      */
     MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
     /**
      * @symbol ?tryFixWallStates@WallBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
+     * @hash   1435634898
      */
     MCAPI void tryFixWallStates(class BlockSource &, class BlockPos const &, int) const;
-MCAPI static float const POST_HEIGHT;
-MCAPI static float const POST_WIDTH;
-MCAPI static float const WALL_HEIGHT;
-MCAPI static class std::array<std::string, 14> const WALL_NAMES;
-MCAPI static float const WALL_WIDTH;
+    /**
+     * @symbol ?POST_HEIGHT@WallBlock@@2MB
+     * @hash   1950375941
+     */
+    MCAPI static float const POST_HEIGHT;
+    /**
+     * @symbol ?POST_WIDTH@WallBlock@@2MB
+     * @hash   1782796597
+     */
+    MCAPI static float const POST_WIDTH;
+    /**
+     * @symbol ?WALL_HEIGHT@WallBlock@@2MB
+     * @hash   -1880390019
+     */
+    MCAPI static float const WALL_HEIGHT;
+    /**
+     * @symbol ?WALL_NAMES@WallBlock@@2V?$array@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$0O@@std@@B
+     * @hash   -1912976632
+     */
+    MCAPI static class std::array<std::string, 14> const WALL_NAMES;
+    /**
+     * @symbol ?WALL_WIDTH@WallBlock@@2MB
+     * @hash   1272814977
+     */
+    MCAPI static float const WALL_WIDTH;
 
 //private:
     /**
      * @symbol ?_desiredConnectionState@WallBlock@@AEBA?AW4WallConnectionType@@AEAVBlockSource@@AEBVBlockPos@@E@Z
+     * @hash   -1134512099
      */
     MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?_isCovered@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVAABB@@@Z
+     * @hash   -660480550
      */
     MCAPI bool _isCovered(class BlockSource &, class BlockPos const &, class AABB const &) const;
     /**
      * @symbol ?_shouldBePost@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
+     * @hash   560270997
      */
     MCAPI bool _shouldBePost(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
      * @symbol ?_tryAddToTickingQueue@WallBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -588438612
      */
     MCAPI bool _tryAddToTickingQueue(class BlockSource &, class BlockPos const &) const;
 
 private:
-MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+    /**
+     * @symbol ?WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION@WallBlock@@0VBaseGameVersion@@B
+     * @hash   292713195
+     */
+    MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 
 };

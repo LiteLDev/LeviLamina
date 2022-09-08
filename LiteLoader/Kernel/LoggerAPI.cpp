@@ -145,7 +145,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
         if (!title.empty())
             title = "[" + title + "]";
 
-        auto& text = o.os.str();
+        auto text = o.os.str();
         bool filterBanned = false;
         // Output Filter
         if (LL::globalConfig.enableOutputFilter)

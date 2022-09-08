@@ -26,15 +26,16 @@ public:
     TickingSystemWithInfo(struct TickingSystemWithInfo const &) = delete;
     TickingSystemWithInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGSYSTEMWITHINFO
-#endif
     /**
      * @symbol ??0TickingSystemWithInfo@@QEAA@$$QEAU0@@Z
+     * @hash   41771607
      */
     MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo &&);
     /**
      * @symbol ??1TickingSystemWithInfo@@QEAA@XZ
+     * @hash   -1409878492
      */
     MCAPI ~TickingSystemWithInfo();
 

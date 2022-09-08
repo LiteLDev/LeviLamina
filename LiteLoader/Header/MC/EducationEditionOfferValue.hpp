@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONEDITIONOFFERVALUE
-#endif
     /**
      * @symbol ??4EducationEditionOfferValue@@QEAAAEAV0@W4EducationEditionOffer@@@Z
+     * @hash   420174833
      */
     MCAPI class EducationEditionOfferValue & operator=(enum EducationEditionOffer);
 

@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYMETADATA
-#endif
     /**
      * @symbol ??1PropertyMetadata@@QEAA@XZ
+     * @hash   -1509256178
      */
     MCAPI ~PropertyMetadata();
 

@@ -24,10 +24,12 @@ namespace LegacyTreeFeatureHelpers {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_placeTrees@LegacyTreeFeatureHelpers@@YAXAEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@V?$WeakRefT@UFeatureRefTraits@@@@AEBV?$function@$$A6A?AV?$WeakRefT@UFeatureRefTraits@@@@AEAVRandom@@@Z@std@@@Z
+     * @hash   210578720
      */
     MCAPI void _placeTrees(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, class WeakRefT<struct FeatureRefTraits>, class std::function<class WeakRefT<struct FeatureRefTraits> (class Random &)> const &);
     /**
      * @symbol ?_setupForestCount@LegacyTreeFeatureHelpers@@YAXMAEAHAEAVRandom@@@Z
+     * @hash   241228526
      */
     MCAPI void _setupForestCount(float, int &, class Random &);
 

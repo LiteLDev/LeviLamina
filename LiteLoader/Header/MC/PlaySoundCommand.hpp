@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1816827866
      */
     virtual ~PlaySoundCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@PlaySoundCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1560321981
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSOUNDCOMMAND
-#endif
     /**
      * @symbol ?setup@PlaySoundCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1229766228
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -26,11 +26,11 @@ public:
     GameRuleId(struct GameRuleId const &) = delete;
     GameRuleId() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMERULEID
-#endif
     /**
      * @symbol ??0GameRuleId@@QEAA@H@Z
+     * @hash   -1339543306
      */
     MCAPI GameRuleId(int);
 

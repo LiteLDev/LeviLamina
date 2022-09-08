@@ -24,6 +24,7 @@ namespace WorldGenMolangQueries {
 #undef AFTER_EXTRA
     /**
      * @symbol ?registerWorldGenMolangQueries@WorldGenMolangQueries@@YAXXZ
+     * @hash   -1816037992
      */
     MCAPI void registerWorldGenMolangQueries();
 

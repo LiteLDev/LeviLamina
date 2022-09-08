@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETENTITYINSIDESYSTEM
-#endif
     /**
      * @symbol ?createCleanupSystem@SetEntityInsideSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1796552132
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
      * @symbol ?createSystem@SetEntityInsideSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1415515538
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

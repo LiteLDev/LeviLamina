@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONTRANSITIONSYSTEM
-#endif
     /**
      * @symbol ?create@DimensionTransitionSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1734757450
      */
     MCAPI static struct TickingSystemWithInfo create();
 

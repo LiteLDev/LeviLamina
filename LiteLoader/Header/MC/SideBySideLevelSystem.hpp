@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDELEVELSYSTEM
-#endif
     /**
      * @symbol ?emptyEventingRequests@SideBySideLevelSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1236599456
      */
     MCAPI static struct TickingSystemWithInfo emptyEventingRequests();
     /**
      * @symbol ?emptySoundRequests@SideBySideLevelSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1495894670
      */
     MCAPI static struct TickingSystemWithInfo emptySoundRequests();
 

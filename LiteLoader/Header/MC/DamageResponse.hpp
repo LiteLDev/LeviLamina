@@ -32,32 +32,38 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   199855002
      */
     virtual ~DamageResponse();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@DamageResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1296432935
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?executeAction@DamageResponse@@UEBAXAEAVRenderParams@@@Z
+     * @hash   722877077
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?buildSchema@DamageResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z
+     * @hash   1175801351
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGERESPONSE
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@DamageResponse@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1542866623
+     */
+    MCAPI static std::string const NameID;
 
 //private:
     /**
      * @symbol ?repairOrHurtItem@DamageResponse@@AEBAXAEBHAEAVRenderParams@@@Z
+     * @hash   1347478235
      */
     MCAPI void repairOrHurtItem(int const &, class RenderParams &) const;
 

@@ -35,190 +35,235 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1830330474
      */
     virtual ~DBChunkStorage();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?shutdown@DBChunkStorage@@UEAAXXZ
+     * @hash   638342769
      */
     virtual void shutdown();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isShutdownDone@DBChunkStorage@@UEAA_NXZ
+     * @hash   -1521094705
      */
     virtual bool isShutdownDone();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?isChunkKnown@DBChunkStorage@@UEAA_NAEBVChunkPos@@@Z
+     * @hash   -1170333411
      */
     virtual bool isChunkKnown(class ChunkPos const &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?isChunkSaved@DBChunkStorage@@UEAA_NAEBVChunkPos@@@Z
+     * @hash   1875748825
      */
     virtual bool isChunkSaved(class ChunkPos const &);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?postProcess@DBChunkStorage@@UEAA_NAEAVChunkViewSource@@@Z
+     * @hash   -807589165
      */
     virtual bool postProcess(class ChunkViewSource &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?checkAndReplaceChunk@DBChunkStorage@@UEAAXAEAVChunkViewSource@@AEAVLevelChunk@@@Z
+     * @hash   1533344671
      */
     virtual void checkAndReplaceChunk(class ChunkViewSource &, class LevelChunk &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?loadChunk@DBChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z
+     * @hash   -1607155741
      */
     virtual void loadChunk(class LevelChunk &, bool);
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?saveLiveChunk@DBChunkStorage@@UEAA_NAEAVLevelChunk@@@Z
+     * @hash   314980154
      */
     virtual bool saveLiveChunk(class LevelChunk &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?writeEntityChunkTransfer@DBChunkStorage@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   54955178
      */
     virtual void writeEntityChunkTransfer(class LevelChunk &);
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?writeEntityChunkTransfersToUnloadedChunk@DBChunkStorage@@UEAAXAEBVChunkKey@@AEBV?$vector@UActorUnloadedChunkTransferEntry@@V?$allocator@UActorUnloadedChunkTransferEntry@@@std@@@std@@@Z
+     * @hash   2099518786
      */
     virtual void writeEntityChunkTransfersToUnloadedChunk(class ChunkKey const &, std::vector<struct ActorUnloadedChunkTransferEntry> const &);
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?hintDiscardBatchBegin@DBChunkStorage@@UEAAXXZ
+     * @hash   -136508591
      */
     virtual void hintDiscardBatchBegin();
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?hintDiscardBatchEnd@DBChunkStorage@@UEAAXXZ
+     * @hash   50186627
      */
     virtual void hintDiscardBatchEnd();
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?acquireDiscarded@DBChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
+     * @hash   -572207134
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
-     * @note   Virtual function table index: 20
+     * @vftbl  20
      * @symbol ?flushPendingDiscardedChunkWrites@DBChunkStorage@@UEAAXXZ
+     * @hash   51355538
      */
     virtual void flushPendingDiscardedChunkWrites();
     /**
-     * @note   Virtual function table index: 21
+     * @vftbl  21
      * @symbol ?flushThreadBatch@DBChunkStorage@@UEAAXXZ
+     * @hash   1914801095
      */
     virtual void flushThreadBatch();
     /**
-     * @note   Virtual function table index: 27
+     * @vftbl  27
      * @symbol ?tryGetBlendingDataProvider@DBChunkStorage@@UEAA?AV?$unique_ptr@VBlendingDataProvider@@U?$default_delete@VBlendingDataProvider@@@std@@@std@@XZ
+     * @hash   -1062063787
      */
     virtual std::unique_ptr<class BlendingDataProvider> tryGetBlendingDataProvider();
     /**
-     * @note   Virtual function table index: 28
+     * @vftbl  28
      * @symbol ?loadLevelChunkMetaDataDictionary@DBChunkStorage@@UEAA?AV?$shared_ptr@VLevelChunkMetaDataDictionary@@@std@@XZ
+     * @hash   2077188085
      */
     virtual class std::shared_ptr<class LevelChunkMetaDataDictionary> loadLevelChunkMetaDataDictionary();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBCHUNKSTORAGE
-#endif
     /**
      * @symbol ??0DBChunkStorage@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@AEAVDBStorage@@AEAVScheduler@@AEBVExperiments@@@Z
+     * @hash   1244647130
      */
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage &, class Scheduler &, class Experiments const &);
     /**
      * @symbol ?freeCaches@DBChunkStorage@@QEAAXXZ
+     * @hash   -1790403003
      */
     MCAPI void freeCaches();
     /**
      * @symbol ?getBlenderMode@DBChunkStorage@@QEAA?AW4BlenderMode@ConsoleChunkBlender@@AEBVLevelChunk@@@Z
+     * @hash   1299245135
      */
     MCAPI enum ConsoleChunkBlender::BlenderMode getBlenderMode(class LevelChunk const &);
     /**
      * @symbol ?deserializeActorStorageToString@DBChunkStorage@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBV23@V?$function@$$A6A_NV?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@3@@Z
+     * @hash   -285152037
      */
     MCAPI static std::string deserializeActorStorageToString(bool, std::string const &, class std::function<bool (class gsl::basic_string_span<char const, -1>, std::string &)>);
 
 //private:
     /**
      * @symbol ?_cacheSeamlessChunkBlendingData@DBChunkStorage@@AEAA?AU?$pair@_NV?$shared_ptr@VBlendingData@@@std@@@std@@VChunkPos@@_NV?$shared_ptr@VBlendingData@@@3@@Z
+     * @hash   -1961619442
      */
     MCAPI struct std::pair<bool, class std::shared_ptr<class BlendingData>> _cacheSeamlessChunkBlendingData(class ChunkPos, bool, class std::shared_ptr<class BlendingData>);
     /**
      * @symbol ?_checkSubChunksUseAbsoluteIndices@DBChunkStorage@@AEBA_NVDBChunkStorageKey@@AEBVLevelChunk@@AEA_N@Z
+     * @hash   -1871825239
      */
     MCAPI bool _checkSubChunksUseAbsoluteIndices(class DBChunkStorageKey, class LevelChunk const &, bool &) const;
     /**
      * @symbol ?_deserializeIndependentActorStorage@DBChunkStorage@@AEAAXAEAVLevelChunk@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1761139655
      */
     MCAPI void _deserializeIndependentActorStorage(class LevelChunk &, std::string const &);
     /**
      * @symbol ?_getChunkNeighbors@DBChunkStorage@@AEAA?AVNeighbors@LevelChunk@@VChunkPos@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   1048644360
      */
     MCAPI class LevelChunk::Neighbors _getChunkNeighbors(class ChunkPos, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?_getLevelChunkFormat@DBChunkStorage@@AEAA?AV?$optional@W4LevelChunkFormat@@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -1004093060
      */
     MCAPI class std::optional<enum LevelChunkFormat> _getLevelChunkFormat(class gsl::basic_string_span<char const, -1>, std::string &);
     /**
      * @symbol ?_hasChunk@DBChunkStorage@@AEAA_NAEBVDBChunkStorageKey@@@Z
+     * @hash   -152603398
      */
     MCAPI bool _hasChunk(class DBChunkStorageKey const &);
     /**
      * @symbol ?_hasChunkUncached@DBChunkStorage@@AEAA_NAEBVDBChunkStorageKey@@@Z
+     * @hash   1952984959
      */
     MCAPI bool _hasChunkUncached(class DBChunkStorageKey const &);
     /**
      * @symbol ?_levelChunkCanBeUsedForBlending@DBChunkStorage@@AEAA?AU?$pair@_NV?$unique_ptr@UPersistentBlendData@@U?$default_delete@UPersistentBlendData@@@std@@@std@@@std@@AEBVDBChunkStorageKey@@@Z
+     * @hash   -1204263965
      */
     MCAPI struct std::pair<bool, std::unique_ptr<struct PersistentBlendData>> _levelChunkCanBeUsedForBlending(class DBChunkStorageKey const &);
     /**
      * @symbol ?_loadChunkFromDB@DBChunkStorage@@AEAA_NAEAVLevelChunk@@0AEAVChunkViewSource@@@Z
+     * @hash   484022725
      */
     MCAPI bool _loadChunkFromDB(class LevelChunk &, class LevelChunk &, class ChunkViewSource &);
     /**
      * @symbol ?_saveBlendData@DBChunkStorage@@AEBAXAEAVLevelStorageWriteBatch@@AEBV?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UPersistentBlendData@@@Z
+     * @hash   -1047965608
      */
     MCAPI void _saveBlendData(class LevelStorageWriteBatch &, class gsl::basic_string_span<char const, -1> const &, std::string &, struct PersistentBlendData) const;
     /**
      * @symbol ?_serializeChunk@DBChunkStorage@@AEAAXAEAVLevelChunk@@AEAVLevelStorageWriteBatch@@_N@Z
+     * @hash   1192524785
      */
     MCAPI void _serializeChunk(class LevelChunk &, class LevelStorageWriteBatch &, bool);
     /**
      * @symbol ?_serializeEntities@DBChunkStorage@@AEAAXAEAVLevelChunk@@AEAVLevelStorageWriteBatch@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   1587647630
      */
     MCAPI void _serializeEntities(class LevelChunk &, class LevelStorageWriteBatch &, std::string &, bool);
     /**
      * @symbol ?_tryGetBlendingDataForChunk@DBChunkStorage@@AEAA?AU?$pair@_NV?$shared_ptr@VBlendingData@@@std@@@std@@AEBVChunkPos@@@Z
+     * @hash   920404704
      */
     MCAPI struct std::pair<bool, class std::shared_ptr<class BlendingData>> _tryGetBlendingDataForChunk(class ChunkPos const &);
     /**
      * @symbol ?_upgradeActorStorage@DBChunkStorage@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VChunkKey@@AEAV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   1300298434
      */
     MCAPI std::string _upgradeActorStorage(class ChunkKey, class gsl::basic_string_span<char const, -1> &);
     /**
      * @symbol ?_writeActorDigest@DBChunkStorage@@AEAAXAEAVLevelStorageWriteBatch@@AEBVChunkKey@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -582476314
      */
     MCAPI void _writeActorDigest(class LevelStorageWriteBatch &, class ChunkKey const &, std::string const &);
     /**
      * @symbol ?_writeActorDigestFormatVersion@DBChunkStorage@@AEAAXAEAVLevelStorageWriteBatch@@AEBVChunkKey@@W4ActorDigestFormat@@@Z
+     * @hash   -332536283
      */
     MCAPI void _writeActorDigestFormatVersion(class LevelStorageWriteBatch &, class ChunkKey const &, enum ActorDigestFormat);
     /**
      * @symbol ?_writeDiscardChunksBatch@DBChunkStorage@@AEAAXXZ
+     * @hash   -1677298986
      */
     MCAPI void _writeDiscardChunksBatch();
     /**
      * @symbol ?_deserializeChunkActorStorageKeys@DBChunkStorage@@CA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEAVIDataInput@@@Z
+     * @hash   844437287
      */
     MCAPI static std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput &);
 
 private:
-MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;
-MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string>> threadBuffer;
+    /**
+     * @symbol ?threadBatch@DBChunkStorage@@0V?$ThreadLocalObject@VLevelStorageWriteBatch@@V?$allocator@VLevelStorageWriteBatch@@@std@@@Threading@Bedrock@@A
+     * @hash   -898388899
+     */
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;
+    /**
+     * @symbol ?threadBuffer@DBChunkStorage@@0V?$ThreadLocalObject@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@Threading@Bedrock@@A
+     * @hash   -269356917
+     */
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string>> threadBuffer;
 
 };

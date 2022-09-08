@@ -32,32 +32,38 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   329368323
      */
     virtual ~OnInteractTriggerDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@OnInteractTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1443296176
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@OnInteractTriggerDescription@@UEBA_NXZ
+     * @hash   1359467672
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@OnInteractTriggerDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -1724851702
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@OnInteractTriggerDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   1058325400
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGERDESCRIPTION
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@OnInteractTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -707192507
+     */
+    MCAPI static std::string const NameID;
 
 };

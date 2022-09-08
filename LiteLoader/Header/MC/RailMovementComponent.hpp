@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAILMOVEMENTCOMPONENT
-#endif
     /**
      * @symbol ??0RailMovementComponent@@QEAA@XZ
+     * @hash   2107145544
      */
     MCAPI RailMovementComponent();
     /**
      * @symbol ?comeOffTrack@RailMovementComponent@@QEAAXAEAVActor@@@Z
+     * @hash   1391242076
      */
     MCAPI void comeOffTrack(class Actor &);
     /**
      * @symbol ?moveAlongTrack@RailMovementComponent@@QEAAXAEAVActor@@AEBVBlockPos@@@Z
+     * @hash   -1952159427
      */
     MCAPI void moveAlongTrack(class Actor &, class BlockPos const &);
     /**
      * @symbol ??8RailMovementComponent@@QEBA_NAEBV0@@Z
+     * @hash   488962539
      */
     MCAPI bool operator==(class RailMovementComponent const &) const;
 

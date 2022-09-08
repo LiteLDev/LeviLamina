@@ -46,49 +46,64 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREDICTEDMOVEMENTCOMPONENT
-#endif
     /**
      * @symbol ??0PredictedMovementComponent@@QEAA@AEAVActor@@@Z
+     * @hash   1752069421
      */
     MCAPI PredictedMovementComponent(class Actor &);
     /**
      * @symbol ?isEnabled@PredictedMovementComponent@@QEBA_NXZ
+     * @hash   1985307522
      */
     MCAPI bool isEnabled() const;
     /**
      * @symbol ?reset@PredictedMovementComponent@@QEAAXXZ
+     * @hash   1773940467
      */
     MCAPI void reset();
     /**
      * @symbol ?tick@PredictedMovementComponent@@QEAAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+     * @hash   1034480201
      */
     MCAPI void tick(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
     /**
      * @symbol ??1PredictedMovementComponent@@QEAA@XZ
+     * @hash   -432740240
      */
     MCAPI ~PredictedMovementComponent();
 
 //private:
     /**
      * @symbol ?_debugLog@PredictedMovementComponent@@AEBAXAEBUPredictionDbgData@1@@Z
+     * @hash   377306471
      */
     MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const &) const;
     /**
      * @symbol ?_isDebugLoggingEnabled@PredictedMovementComponent@@AEBA_NXZ
+     * @hash   -93440485
      */
     MCAPI bool _isDebugLoggingEnabled() const;
     /**
      * @symbol ?_tickNextPosition@PredictedMovementComponent@@AEAAXAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+     * @hash   1882518889
      */
     MCAPI void _tickNextPosition(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
     /**
      * @symbol ?_tryInterpolate@PredictedMovementComponent@@AEAA_NAEBV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+     * @hash   1126987538
      */
     MCAPI bool _tryInterpolate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const &);
 
 private:
-MCAPI static unsigned int const LERP_STEP_SIZE;
-MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
+    /**
+     * @symbol ?LERP_STEP_SIZE@PredictedMovementComponent@@0IB
+     * @hash   -1523864635
+     */
+    MCAPI static unsigned int const LERP_STEP_SIZE;
+    /**
+     * @symbol ?mGlobalRuntimePredictionData@PredictedMovementComponent@@0V?$unique_ptr@URuntimePredictionData@PredictedMovementComponent@@U?$default_delete@URuntimePredictionData@PredictedMovementComponent@@@std@@@std@@A
+     * @hash   643460776
+     */
+    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
 
 };

@@ -32,48 +32,48 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTLISTENER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onEvent@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
+     * @hash   586009218
      */
     MCVAPI enum EventResult onEvent(struct LevelNotificationEvent const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelAddedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+     * @hash   -940659715
      */
     MCVAPI enum EventResult onLevelAddedPlayer(class Level &, class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelBiomesRegistered@LevelEventListener@@UEAA?AW4EventResult@@AEAVIWorldRegistriesProvider@@@Z
+     * @hash   -1764279329
      */
     MCVAPI enum EventResult onLevelBiomesRegistered(class IWorldRegistriesProvider &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
+     * @hash   -879645197
      */
     MCVAPI enum EventResult onLevelInitialized(class Level &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelRemovedActor@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVActor@@@Z
+     * @hash   2138351567
      */
     MCVAPI enum EventResult onLevelRemovedActor(class Level &, class Actor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelRemovedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
+     * @hash   -1056949091
      */
     MCVAPI enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelSaveData@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVCompoundTag@@@Z
+     * @hash   697376615
      */
     MCVAPI enum EventResult onLevelSaveData(class Level &, class CompoundTag &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelTick@LevelEventListener@@UEAA?AW4EventResult@@XZ
+     * @hash   1252751720
      */
     MCVAPI enum EventResult onLevelTick();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
+     * @hash   847476767
      */
     MCVAPI enum EventResult onLevelWeatherChange(std::string const &, bool, bool);
 #endif

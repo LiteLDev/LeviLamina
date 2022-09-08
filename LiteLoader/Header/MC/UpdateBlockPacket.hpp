@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1195585722
      */
     virtual ~UpdateBlockPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@UpdateBlockPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -693721870
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@UpdateBlockPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1469309025
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@UpdateBlockPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   650749864
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@UpdateBlockPacket@@MEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1966913457
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEBLOCKPACKET
-#endif
     /**
      * @symbol ??0UpdateBlockPacket@@QEAA@XZ
+     * @hash   1039245272
      */
     MCAPI UpdateBlockPacket();
     /**
      * @symbol ??0UpdateBlockPacket@@QEAA@AEBVBlockPos@@IIE@Z
+     * @hash   -1581869915
      */
     MCAPI UpdateBlockPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char);
 

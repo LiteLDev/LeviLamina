@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1383008936
      */
     virtual ~AddPlayerPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@AddPlayerPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1363436764
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@AddPlayerPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1161287121
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@AddPlayerPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   598741846
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@AddPlayerPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1316398390
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDPLAYERPACKET
-#endif
     /**
      * @symbol ??0AddPlayerPacket@@QEAA@XZ
+     * @hash   101039062
      */
     MCAPI AddPlayerPacket();
     /**
      * @symbol ??0AddPlayerPacket@@QEAA@AEAVPlayer@@@Z
+     * @hash   -180769013
      */
     MCAPI AddPlayerPacket(class Player &);
 

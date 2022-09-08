@@ -30,12 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSCOMPONENTCALCULATOR
-#endif
 
 //private:
 
 private:
-MCAPI static float COOLDOWN_TIME_SECONDS;
+    /**
+     * @symbol ?COOLDOWN_TIME_SECONDS@LodestoneCompassComponentCalculator@@0MA
+     * @hash   -1446455031
+     */
+    MCAPI static float COOLDOWN_TIME_SECONDS;
 
 };

@@ -31,88 +31,100 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1858449276
      */
     virtual ~RedstoneTorchCapacitor();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getStrength@RedstoneTorchCapacitor@@UEBAHXZ
+     * @hash   1474208920
      */
     virtual int getStrength() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?removeSource@RedstoneTorchCapacitor@@UEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z
+     * @hash   1068842284
      */
     virtual bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?addSource@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     * @hash   -1297030766
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?allowConnection@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   -800141526
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?evaluate@RedstoneTorchCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   -1776019378
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?cacheValues@RedstoneTorchCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   -430069865
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?updateDependencies@RedstoneTorchCapacitor@@EEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z
+     * @hash   -1090790230
      */
     virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?isHalfPulse@RedstoneTorchCapacitor@@UEBA_NXZ
+     * @hash   816290874
      */
     virtual bool isHalfPulse() const;
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@RedstoneTorchCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   -1005038548
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
     /**
-     * @note   Virtual function table index: 24
+     * @vftbl  24
      * @symbol ?getPoweroutDirection@RedstoneTorchCapacitor@@UEBAEXZ
+     * @hash   982131327
      */
     virtual unsigned char getPoweroutDirection() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REDSTONETORCHCAPACITOR
-#endif
     /**
      * @symbol ??0RedstoneTorchCapacitor@@QEAA@XZ
+     * @hash   -1398737866
      */
     MCAPI RedstoneTorchCapacitor();
     /**
      * @symbol ?resetBurnOutCount@RedstoneTorchCapacitor@@QEAAXXZ
+     * @hash   -497250109
      */
     MCAPI void resetBurnOutCount();
     /**
      * @symbol ?setOn@RedstoneTorchCapacitor@@QEAAX_N@Z
+     * @hash   -759653586
      */
     MCAPI void setOn(bool);
 
 //private:
     /**
      * @symbol ?FindStrongestStrength@RedstoneTorchCapacitor@@AEAAHAEBVBlockPos@@AEAVCircuitSystem@@AEA_N@Z
+     * @hash   1150086170
      */
     MCAPI int FindStrongestStrength(class BlockPos const &, class CircuitSystem &, bool &);
 

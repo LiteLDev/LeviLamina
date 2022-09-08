@@ -33,202 +33,218 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@AbstractArrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   1932020278
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?initializeComponents@AbstractArrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   -1032972583
      */
     virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -2051965355
      */
     virtual ~AbstractArrow();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 47
+     * @vftbl  47
      * @symbol ?lerpMotion@AbstractArrow@@UEAAXAEBVVec3@@@Z
+     * @hash   -1816676459
      */
     virtual void lerpMotion(class Vec3 const &);
     /**
-     * @note   Virtual function table index: 61
-     * @symbol 
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @note   Virtual function table index: 68
-     * @symbol 
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @note   Virtual function table index: 79
+     * @vftbl  79
      * @symbol ?getShadowHeightOffs@AbstractArrow@@UEAAMXZ
+     * @hash   -185768503
      */
     virtual float getShadowHeightOffs();
     /**
-     * @note   Virtual function table index: 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@AbstractArrow@@UEBAMXZ
+     * @hash   -710329169
      */
     virtual float getShadowRadius() const;
     /**
-     * @note   Virtual function table index: 82
-     * @symbol 
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @note   Virtual function table index: 85
-     * @symbol 
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @note   Virtual function table index: 88
-     * @symbol 
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @note   Virtual function table index: 89
+     * @vftbl  89
      * @symbol ?playerTouch@AbstractArrow@@UEAAXAEAVPlayer@@@Z
+     * @hash   866363765
      */
     virtual void playerTouch(class Player &);
     /**
-     * @note   Virtual function table index: 96
-     * @symbol 
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @note   Virtual function table index: 99
-     * @symbol 
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @note   Virtual function table index: 106
-     * @symbol 
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @note   Virtual function table index: 108
-     * @symbol 
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @note   Virtual function table index: 109
-     * @symbol 
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @note   Virtual function table index: 111
-     * @symbol 
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @note   Virtual function table index: 172
+     * @vftbl  172
      * @symbol ?getSourceUniqueID@AbstractArrow@@MEBA?AUActorUniqueID@@XZ
+     * @hash   1712871544
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @note   Virtual function table index: 181
+     * @vftbl  181
      * @symbol ?canChangeDimensionsUsingPortal@AbstractArrow@@UEBA_NXZ
+     * @hash   8146356
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
-     * @note   Virtual function table index: 182
-     * @symbol 
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @note   Virtual function table index: 196
-     * @symbol 
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @note   Virtual function table index: 222
-     * @symbol 
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @note   Virtual function table index: 223
-     * @symbol 
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @note   Virtual function table index: 248
-     * @symbol 
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @note   Virtual function table index: 251
-     * @symbol 
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @note   Virtual function table index: 269
-     * @symbol 
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @note   Virtual function table index: 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@AbstractArrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1778736441
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@AbstractArrow@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -281685292
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 277
-     * @symbol 
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
     /**
-     * @note   Virtual function table index: 285
-     * @symbol 
+     * @vftbl  285
+     * @hash   -1895428993
      */
     virtual void __unk_vfn_285();
     /**
-     * @note   Virtual function table index: 286
+     * @vftbl  286
      * @symbol ?shoot@AbstractArrow@@UEAAXAEBVVec3@@MM0@Z
+     * @hash   -1581201209
      */
     virtual void shoot(class Vec3 const &, float, float, class Vec3 const &);
     /**
-     * @note   Virtual function table index: 287
+     * @vftbl  287
      * @symbol ?_playPickupSound@AbstractArrow@@MEAAXXZ
+     * @hash   -653968311
      */
     virtual void _playPickupSound();
     /**
-     * @note   Virtual function table index: 288
+     * @vftbl  288
      * @symbol ?_getPickupItem@ThrownTrident@@MEBA?AVItemStack@@XZ
+     * @hash   1279930741
      */
     virtual class ItemStack _getPickupItem() const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTARROW
-#endif
     /**
      * @symbol ??0AbstractArrow@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -302404157
      */
     MCAPI AbstractArrow(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?isPlayerOwned@AbstractArrow@@QEBA_NXZ
+     * @hash   -888906592
      */
     MCAPI bool isPlayerOwned() const;
     /**
      * @symbol ?setFavoredSlot@AbstractArrow@@QEAAXH@Z
+     * @hash   1880779222
      */
     MCAPI void setFavoredSlot(int);
     /**
      * @symbol ?setIsCreative@AbstractArrow@@QEAAX_N@Z
+     * @hash   -17683684
      */
     MCAPI void setIsCreative(bool);
 
 //protected:
     /**
      * @symbol ?_canPickup@AbstractArrow@@IEBA_NAEBVPlayer@@@Z
+     * @hash   1448389860
      */
     MCAPI bool _canPickup(class Player const &) const;
 

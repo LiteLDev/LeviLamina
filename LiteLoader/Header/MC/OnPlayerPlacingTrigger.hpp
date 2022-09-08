@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGER
-#endif
     /**
      * @symbol ??1OnPlayerPlacingTrigger@@QEAA@XZ
+     * @hash   828878798
      */
     MCAPI ~OnPlayerPlacingTrigger();
 

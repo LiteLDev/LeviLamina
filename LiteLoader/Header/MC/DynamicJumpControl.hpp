@@ -30,54 +30,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1664015194
      */
     virtual ~DynamicJumpControl();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initializeInternal@DynamicJumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
+     * @hash   -837095720
      */
     virtual void initializeInternal(class Mob &, struct JumpControlDescription *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?clone@DynamicJumpControl@@UEBA?AV?$unique_ptr@VJumpControl@@U?$default_delete@VJumpControl@@@std@@@std@@XZ
+     * @hash   1256259142
      */
     virtual std::unique_ptr<class JumpControl> clone() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?tick@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z
+     * @hash   1705892643
      */
     virtual void tick(class JumpControlComponent &, class Mob &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@@Z
+     * @hash   -1578627762
      */
     virtual int getJumpDelay(class JumpControlComponent const &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@@Z
+     * @hash   -1559497351
      */
     virtual float getJumpPower(class JumpControlComponent const &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
+     * @hash   1233404642
      */
     virtual enum JumpType getJumpType(class JumpControlComponent const &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
+     * @hash   -1495126752
      */
     virtual void setJumpType(class JumpControlComponent &, enum JumpType);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z
+     * @hash   685385832
      */
     virtual void resetSpeedModifier(class JumpControlComponent const &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYNAMICJUMPCONTROL
-#endif
     /**
      * @symbol ??0DynamicJumpControl@@QEAA@XZ
+     * @hash   1995693660
      */
     MCAPI DynamicJumpControl();
 

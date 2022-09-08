@@ -32,24 +32,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1412167071
      */
     virtual ~BlockPileFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@BlockPileFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   71831121
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getBlockToPlace@BlockPileFeature@@MEBAAEBVBlock@@AEAVRandom@@@Z
+     * @hash   -149315232
      */
     virtual class Block const & getBlockToPlace(class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPILEFEATURE
-#endif
     /**
      * @symbol ??0BlockPileFeature@@QEAA@AEBVBlock@@@Z
+     * @hash   -698900488
      */
     MCAPI BlockPileFeature(class Block const &);
 

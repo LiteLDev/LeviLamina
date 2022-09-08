@@ -31,49 +31,55 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   452271969
      */
     virtual ~FollowFlockGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@FollowFlockGoal@@UEAA_NXZ
+     * @hash   662164701
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FollowFlockGoal@@UEAA_NXZ
+     * @hash   1402995835
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@FollowFlockGoal@@UEAA_NXZ
+     * @hash   292509397
      */
     virtual bool canBeInterrupted();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@FollowFlockGoal@@UEAAXXZ
+     * @hash   2136258118
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@FollowFlockGoal@@UEAAXXZ
+     * @hash   -1269234938
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@FollowFlockGoal@@UEAAXXZ
+     * @hash   -1430580239
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FollowFlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2111415315
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWFLOCKGOAL
-#endif
     /**
      * @symbol ??0FollowFlockGoal@@QEAA@AEAVMob@@M@Z
+     * @hash   284775127
      */
     MCAPI FollowFlockGoal(class Mob &, float);
 

@@ -49,154 +49,189 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MERCHANTRECIPE
-#endif
     /**
      * @symbol ??0MerchantRecipe@@QEAA@AEBVItemInstance@@0@Z
+     * @hash   132598070
      */
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &);
     /**
      * @symbol ??0MerchantRecipe@@QEAA@AEBVItemInstance@@00@Z
+     * @hash   1818992743
      */
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     /**
      * @symbol ??0MerchantRecipe@@QEAA@PEBVCompoundTag@@@Z
+     * @hash   -1949279390
      */
     MCAPI MerchantRecipe(class CompoundTag const *);
     /**
      * @symbol ??0MerchantRecipe@@QEAA@AEBV0@@Z
+     * @hash   45100705
      */
     MCAPI MerchantRecipe(class MerchantRecipe const &);
     /**
      * @symbol ?calculateDemandPrices@MerchantRecipe@@QEAAXHHH_N@Z
+     * @hash   1258601965
      */
     MCAPI void calculateDemandPrices(int, int, int, bool);
     /**
      * @symbol ?createTag@MerchantRecipe@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@_N@Z
+     * @hash   -193745705
      */
     MCAPI std::unique_ptr<class CompoundTag> createTag(bool) const;
     /**
      * @symbol ?getBaseCountA@MerchantRecipe@@QEBAHXZ
+     * @hash   166684710
      */
     MCAPI int getBaseCountA() const;
     /**
      * @symbol ?getBaseCountB@MerchantRecipe@@QEBAHXZ
+     * @hash   308348182
      */
     MCAPI int getBaseCountB() const;
     /**
      * @symbol ?getBuyAItem@MerchantRecipe@@QEBAAEBVItemInstance@@XZ
+     * @hash   -1293277608
      */
     MCAPI class ItemInstance const & getBuyAItem() const;
     /**
      * @symbol ?getBuyBItem@MerchantRecipe@@QEBAAEBVItemInstance@@XZ
+     * @hash   -797675606
      */
     MCAPI class ItemInstance const & getBuyBItem() const;
     /**
      * @symbol ?getDemand@MerchantRecipe@@QEBAHXZ
+     * @hash   2047957670
      */
     MCAPI int getDemand() const;
     /**
      * @symbol ?getMaxUses@MerchantRecipe@@QEBAHXZ
+     * @hash   1532903640
      */
     MCAPI int getMaxUses() const;
     /**
      * @symbol ?getNetId@MerchantRecipe@@QEBAAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@XZ
+     * @hash   789864719
      */
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getNetId() const;
     /**
      * @symbol ?getSellItem@MerchantRecipe@@QEBAAEBVItemInstance@@XZ
+     * @hash   1380230150
      */
     MCAPI class ItemInstance const & getSellItem() const;
     /**
      * @symbol ?getTier@MerchantRecipe@@QEBAHXZ
+     * @hash   1977586822
      */
     MCAPI int getTier() const;
     /**
      * @symbol ?getTraderExp@MerchantRecipe@@QEBAIXZ
+     * @hash   -337555326
      */
     MCAPI unsigned int getTraderExp() const;
     /**
      * @symbol ?getUses@MerchantRecipe@@QEBAHXZ
+     * @hash   -2111757594
      */
     MCAPI int getUses() const;
     /**
      * @symbol ?hasSecondaryBuyItem@MerchantRecipe@@QEBA_NXZ
+     * @hash   -865162590
      */
     MCAPI bool hasSecondaryBuyItem() const;
     /**
      * @symbol ?increaseMaxUses@MerchantRecipe@@QEAAXH@Z
+     * @hash   -701928664
      */
     MCAPI void increaseMaxUses(int);
     /**
      * @symbol ?increaseUses@MerchantRecipe@@QEAAXXZ
+     * @hash   -336547531
      */
     MCAPI void increaseUses();
     /**
      * @symbol ?init@MerchantRecipe@@QEAAXAEBVItemInstance@@00@Z
+     * @hash   1044625142
      */
     MCAPI void init(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     /**
      * @symbol ?isOutOfUses@MerchantRecipe@@QEBA_NXZ
+     * @hash   -311421454
      */
     MCAPI bool isOutOfUses() const;
     /**
      * @symbol ?isSame@MerchantRecipe@@QEBA_NAEBV1@@Z
+     * @hash   -1941597462
      */
     MCAPI bool isSame(class MerchantRecipe const &) const;
     /**
      * @symbol ?isSameButBetter@MerchantRecipe@@QEBA_NAEAV1@@Z
+     * @hash   -1428285890
      */
     MCAPI bool isSameButBetter(class MerchantRecipe &) const;
     /**
      * @symbol ?legacyCalculateDemandPrices@MerchantRecipe@@QEAAXHH@Z
+     * @hash   2138904283
      */
     MCAPI void legacyCalculateDemandPrices(int, int);
     /**
      * @symbol ?load@MerchantRecipe@@QEAAXPEBVCompoundTag@@@Z
+     * @hash   -1622167329
      */
     MCAPI void load(class CompoundTag const *);
     /**
      * @symbol ?setDemand@MerchantRecipe@@QEAAXH@Z
+     * @hash   739362008
      */
     MCAPI void setDemand(int);
     /**
      * @symbol ?setMaxUses@MerchantRecipe@@QEAAXH@Z
+     * @hash   -1375238842
      */
     MCAPI void setMaxUses(int);
     /**
      * @symbol ?setNetId@MerchantRecipe@@QEAAXAEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
+     * @hash   1267296605
      */
     MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?setPriceMultiplierA@MerchantRecipe@@QEAAXM@Z
+     * @hash   822417782
      */
     MCAPI void setPriceMultiplierA(float);
     /**
      * @symbol ?setPriceMultiplierB@MerchantRecipe@@QEAAXM@Z
+     * @hash   1812676326
      */
     MCAPI void setPriceMultiplierB(float);
     /**
      * @symbol ?setRewardExp@MerchantRecipe@@QEAAX_N@Z
+     * @hash   -1271925902
      */
     MCAPI void setRewardExp(bool);
     /**
      * @symbol ?setTier@MerchantRecipe@@QEAAXH@Z
+     * @hash   2094744232
      */
     MCAPI void setTier(int);
     /**
      * @symbol ?setTraderExp@MerchantRecipe@@QEAAXI@Z
+     * @hash   1703000480
      */
     MCAPI void setTraderExp(unsigned int);
     /**
      * @symbol ?setUses@MerchantRecipe@@QEAAXH@Z
+     * @hash   -121803640
      */
     MCAPI void setUses(int);
     /**
      * @symbol ?shouldRewardExp@MerchantRecipe@@QEBA_NXZ
+     * @hash   -2020737110
      */
     MCAPI bool shouldRewardExp() const;
     /**
      * @symbol ??1MerchantRecipe@@QEAA@XZ
+     * @hash   -1838503536
      */
     MCAPI ~MerchantRecipe();
 

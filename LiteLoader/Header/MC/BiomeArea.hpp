@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEAREA
-#endif
     /**
      * @symbol ??0BiomeArea@@QEAA@AEBVBoundingBox@@I@Z
+     * @hash   -1509945041
      */
     MCAPI BiomeArea(class BoundingBox const &, unsigned int);
     /**
      * @symbol ??1BiomeArea@@QEAA@XZ
+     * @hash   172621401
      */
     MCAPI ~BiomeArea();
 

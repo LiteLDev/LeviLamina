@@ -29,28 +29,30 @@ public:
     JumpControlDescription(struct JumpControlDescription const &) = delete;
     JumpControlDescription() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@JumpControlDescription@@UEBAPEBDXZ
+     * @hash   122181607
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1796870793
      */
     virtual ~JumpControlDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@JumpControlDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1284786836
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@JumpControlDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1361572070
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLDESCRIPTION
-#endif
 
 };

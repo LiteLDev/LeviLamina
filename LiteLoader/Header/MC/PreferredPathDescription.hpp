@@ -28,31 +28,34 @@ public:
     struct PreferredPathDescription& operator=(struct PreferredPathDescription const &) = delete;
     PreferredPathDescription(struct PreferredPathDescription const &) = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@PreferredPathDescription@@UEBAPEBDXZ
+     * @hash   -553500290
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -556708320
      */
     virtual ~PreferredPathDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@PreferredPathDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1222330037
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@PreferredPathDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1596564161
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHDESCRIPTION
-#endif
     /**
      * @symbol ??0PreferredPathDescription@@QEAA@XZ
+     * @hash   1996326466
      */
     MCAPI PreferredPathDescription();
 

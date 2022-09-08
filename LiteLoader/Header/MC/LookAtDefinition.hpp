@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATDEFINITION
-#endif
     /**
      * @symbol ??0LookAtDefinition@@QEAA@XZ
+     * @hash   681412897
      */
     MCAPI LookAtDefinition();
     /**
      * @symbol ?initialize@LookAtDefinition@@QEBAXAEAVEntityContext@@AEAVLookAtComponent@@@Z
+     * @hash   1717669789
      */
     MCAPI void initialize(class EntityContext &, class LookAtComponent &) const;
     /**
      * @symbol ?buildSchema@LookAtDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLookAtDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -414358138
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LookAtDefinition>> &);
 

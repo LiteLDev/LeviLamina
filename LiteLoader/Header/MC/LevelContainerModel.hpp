@@ -36,101 +36,113 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?containerContentChanged@LevelContainerModel@@UEAAXH@Z
+     * @hash   -812774104
      */
     virtual void containerContentChanged(int);
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -12570342
      */
     virtual ~LevelContainerModel();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?postInit@LevelContainerModel@@UEAAXXZ
+     * @hash   33551947
      */
     virtual void postInit();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?releaseResources@LevelContainerModel@@UEAAXXZ
+     * @hash   1647592969
      */
     virtual void releaseResources();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getContainerWeakRef@LevelContainerModel@@UEBA?AVContainerWeakRef@@XZ
+     * @hash   -1098465863
      */
     virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?isValid@LevelContainerModel@@UEAA_NXZ
+     * @hash   -717448769
      */
     virtual bool isValid();
     /**
-     * @note   Virtual function table index: 15
-     * @symbol 
+     * @vftbl  15
+     * @hash   -331353752
      */
     virtual void __unk_vfn_15();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -376678356
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 20
+     * @vftbl  20
      * @symbol ?_getContainer@LevelContainerModel@@EEBAPEAVContainer@@XZ
+     * @hash   -1285684109
      */
     virtual class Container * _getContainer() const;
     /**
-     * @note   Virtual function table index: 21
+     * @vftbl  21
      * @symbol ?_getContainerOffset@LevelContainerModel@@MEBAHXZ
+     * @hash   -1691824443
      */
     virtual int _getContainerOffset() const;
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z
+     * @hash   -645548024
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCONTAINERMODEL
-#endif
     /**
      * @symbol ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@W4ContainerCategory@@@Z
+     * @hash   1970628248
      */
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, enum BlockActorType, class BlockPos const &, enum ContainerCategory);
     /**
      * @symbol ??0LevelContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@UActorUniqueID@@W4ContainerCategory@@@Z
+     * @hash   65172263
      */
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player &, struct ActorUniqueID, enum ContainerCategory);
     /**
      * @symbol ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+     * @hash   -185528077
      */
     MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
     /**
      * @symbol ?getContainerHelper@LevelContainerModel@@SAPEAVContainer@@AEAVPlayer@@W4BlockActorType@@AEBVBlockPos@@@Z
+     * @hash   2017547272
      */
     MCAPI static class Container * getContainerHelper(class Player &, enum BlockActorType, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_getEntity@LevelContainerModel@@AEBAPEAVActor@@XZ
+     * @hash   920644658
      */
     MCAPI class Actor * _getEntity() const;
     /**
      * @symbol ?_refreshSlot@LevelContainerModel@@AEAAXH@Z
+     * @hash   1565443285
      */
     MCAPI void _refreshSlot(int);
 

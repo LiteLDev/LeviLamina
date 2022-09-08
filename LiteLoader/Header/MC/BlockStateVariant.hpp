@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1060127535
      */
     virtual ~BlockStateVariant();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?toNBT@BlockStateVariant@@UEBAXAEAVCompoundTag@@H@Z
+     * @hash   -1904911076
      */
     virtual void toNBT(class CompoundTag &, int) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?fromNBT@BlockStateVariant@@UEBA_NAEBVCompoundTag@@AEAH@Z
+     * @hash   -1063337888
      */
     virtual bool fromNBT(class CompoundTag const &, int &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEVARIANT
-#endif
 
 };

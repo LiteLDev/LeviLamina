@@ -31,61 +31,69 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   740103630
      */
     virtual ~RakDataInput();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?readString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   384111326
      */
     virtual std::string readString();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?readLongString@BytesDataInput@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -873389286
      */
     virtual std::string readLongString();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?readFloat@BytesDataInput@@UEAAMXZ
+     * @hash   53270961
      */
     virtual float readFloat();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?readDouble@BytesDataInput@@UEAANXZ
+     * @hash   1007983709
      */
     virtual double readDouble();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?readByte@BytesDataInput@@UEAADXZ
+     * @hash   474753359
      */
     virtual char readByte();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?readShort@BytesDataInput@@UEAAFXZ
+     * @hash   -1740385775
      */
     virtual short readShort();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?readInt@BytesDataInput@@UEAAHXZ
+     * @hash   -2025344655
      */
     virtual int readInt();
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?readLongLong@BytesDataInput@@UEAA_JXZ
+     * @hash   211741968
      */
     virtual __int64 readLongLong();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?readBytes@RakDataInput@@UEAA_NPEAX_K@Z
+     * @hash   -1484946886
      */
     virtual bool readBytes(void *, unsigned __int64);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?numBytesLeft@RakDataInput@@UEBA_KXZ
+     * @hash   509279656
      */
     virtual unsigned __int64 numBytesLeft() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAINPUT
-#endif
 
 };

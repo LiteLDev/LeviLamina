@@ -32,42 +32,49 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTORCOUNT
-#endif
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@XZ
+     * @hash   -1512484071
      */
     MCAPI ItemDescriptorCount();
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@HG@Z
+     * @hash   -2002690807
      */
     MCAPI ItemDescriptorCount(class gsl::basic_string_span<char const, -1>, int, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVItemDescriptor@@G@Z
+     * @hash   -1866798568
      */
     MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVItem@@HG@Z
+     * @hash   -1286639993
      */
     MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVBlockLegacy@@G@Z
+     * @hash   1498321122
      */
     MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount@@QEAA@AEBVBlock@@G@Z
+     * @hash   311386016
      */
     MCAPI ItemDescriptorCount(class Block const &, unsigned short);
     /**
      * @symbol ?getStackSize@ItemDescriptorCount@@QEBAFXZ
+     * @hash   -149427887
      */
     MCAPI short getStackSize() const;
     /**
      * @symbol ?setStackSize@ItemDescriptorCount@@QEAAXF@Z
+     * @hash   387129343
      */
     MCAPI void setStackSize(short);
     /**
      * @symbol ??1ItemDescriptorCount@@QEAA@XZ
+     * @hash   685367481
      */
     MCAPI ~ItemDescriptorCount();
 

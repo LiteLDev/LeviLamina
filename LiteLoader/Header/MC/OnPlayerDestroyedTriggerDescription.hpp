@@ -32,17 +32,20 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1027049515
      */
     virtual ~OnPlayerDestroyedTriggerDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@OnPlayerDestroyedTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -934591476
      */
     virtual std::string const & getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGERDESCRIPTION
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@OnPlayerDestroyedTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1140189499
+     */
+    MCAPI static std::string const NameID;
 
 };

@@ -26,11 +26,11 @@ public:
     DrinkPotionData(struct DrinkPotionData const &) = delete;
     DrinkPotionData() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRINKPOTIONDATA
-#endif
     /**
      * @symbol ??1DrinkPotionData@@QEAA@XZ
+     * @hash   -1449598911
      */
     MCAPI ~DrinkPotionData();
 

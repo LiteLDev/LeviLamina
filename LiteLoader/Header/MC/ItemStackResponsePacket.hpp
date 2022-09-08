@@ -31,42 +31,47 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1566073332
      */
     virtual ~ItemStackResponsePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@ItemStackResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -2141454800
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@ItemStackResponsePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1854519517
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@ItemStackResponsePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1420385098
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@ItemStackResponsePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1617508106
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSEPACKET
-#endif
     /**
      * @symbol ??0ItemStackResponsePacket@@QEAA@XZ
+     * @hash   361538682
      */
     MCAPI ItemStackResponsePacket();
     /**
      * @symbol ??0ItemStackResponsePacket@@QEAA@$$QEAV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@@Z
+     * @hash   -2116693173
      */
     MCAPI ItemStackResponsePacket(std::vector<struct ItemStackResponseInfo> &&);
     /**
      * @symbol ?getResponses@ItemStackResponsePacket@@QEBAAEBV?$vector@UItemStackResponseInfo@@V?$allocator@UItemStackResponseInfo@@@std@@@std@@XZ
+     * @hash   -1923544336
      */
     MCAPI std::vector<struct ItemStackResponseInfo> const & getResponses() const;
 

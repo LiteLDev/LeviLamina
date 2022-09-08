@@ -32,49 +32,52 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2108488622
      */
     virtual ~CurseVanishingEnchant();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getMinCost@CurseVanishingEnchant@@UEBAHH@Z
+     * @hash   -1642969731
      */
     virtual int getMinCost(int) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getMaxCost@CurseVanishingEnchant@@UEBAHH@Z
+     * @hash   -403929653
      */
     virtual int getMaxCost(int) const;
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -342706045
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -341782524
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CURSEVANISHINGENCHANT
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isTreasureOnly@CurseVanishingEnchant@@UEBA_NXZ
+     * @hash   94006745
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
      * @symbol ??0CurseVanishingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH_N@Z
+     * @hash   561544418
      */
     MCAPI CurseVanishingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
 

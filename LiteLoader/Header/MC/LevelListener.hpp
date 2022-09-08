@@ -32,169 +32,170 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   569906470
      */
     virtual ~LevelListener();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1401090423
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -384990045
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
+     * @hash   32223567
      */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLISTENER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUTextureUVCoordinateSet@@_N@Z
+     * @hash   -2134806053
      */
     MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum ParticleType, struct TextureUVCoordinateSet const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
+     * @hash   170105818
      */
     MCVAPI void addParticleEffect(class HashedString const &, class Actor const &, class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVVec3@@AEBVMolangVariableMap@@@Z
+     * @hash   792154131
      */
     MCVAPI void addParticleEffect(class HashedString const &, class Vec3 const &, class MolangVariableMap const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addTerrainParticleEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
+     * @hash   1528986572
      */
     MCVAPI void addTerrainParticleEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z
+     * @hash   -15599121
      */
     MCVAPI void addTerrainSlideEffect(class BlockPos const &, class Block const &, class Vec3 const &, float, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?allChanged@LevelListener@@UEAAXXZ
+     * @hash   134357602
      */
     MCVAPI void allChanged();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
+     * @hash   1889828017
      */
     MCVAPI void levelEvent(enum LevelEvent, class CompoundTag const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
+     * @hash   1048828646
      */
     MCVAPI void levelEvent(enum LevelEvent, class Vec3 const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?levelSoundEvent@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
+     * @hash   2133883572
      */
     MCVAPI void levelSoundEvent(std::string const &, class Vec3 const &, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?levelSoundEvent@LevelListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
+     * @hash   525306505
      */
     MCVAPI void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+     * @hash   -1433576359
      */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onChunkReloaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
+     * @hash   1821153516
      */
     MCVAPI void onChunkReloaded(class ChunkSource &, class LevelChunk &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onChunkUnloaded@LevelListener@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   -407803856
      */
     MCVAPI void onChunkUnloaded(class LevelChunk &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onEntityAdded@LevelListener@@UEAAXAEAVActor@@@Z
+     * @hash   -22372502
      */
     MCVAPI void onEntityAdded(class Actor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onEntityRemoved@LevelListener@@UEAAXAEAVActor@@@Z
+     * @hash   372273034
      */
     MCVAPI void onEntityRemoved(class Actor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLevelDestruction@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1362995312
      */
     MCVAPI void onLevelDestruction(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onSubChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@F_N@Z
+     * @hash   -1041923391
      */
     MCVAPI void onSubChunkLoaded(class ChunkSource &, class LevelChunk &, short, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
+     * @hash   -1582689578
      */
     MCVAPI void playMusic(std::string const &, class Vec3 const &, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playStreamingMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
+     * @hash   -1091405111
      */
     MCVAPI void playStreamingMusic(std::string const &, int, int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playerListChanged@LevelListener@@UEAAXXZ
+     * @hash   1034309028
      */
     MCVAPI void playerListChanged();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
+     * @hash   490204364
      */
     MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stopAllSounds@LevelListener@@UEAAXXZ
+     * @hash   -813920590
      */
     MCVAPI void stopAllSounds();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stopSoundEvent@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -304200048
      */
     MCVAPI void stopSoundEvent(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z
+     * @hash   -1240909712
      */
     MCVAPI void takePicture(class cg::ImageBuffer &, class Actor *, class Actor *, struct ScreenshotOptions &);
 #endif

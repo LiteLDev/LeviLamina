@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSDWELLINGRESTRICTIONDEFINITION
-#endif
     /**
      * @symbol ??0MoveTowardsDwellingRestrictionDefinition@@QEAA@XZ
+     * @hash   524031904
      */
     MCAPI MoveTowardsDwellingRestrictionDefinition();
     /**
      * @symbol ?buildSchema@MoveTowardsDwellingRestrictionDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VMoveTowardsDwellingRestrictionDefinition@@@JsonUtil@@@3@@Z
+     * @hash   1020164803
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveTowardsDwellingRestrictionDefinition>> &);
 

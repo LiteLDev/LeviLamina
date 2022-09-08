@@ -26,15 +26,16 @@ public:
     BlockCraftingTableComponent(struct BlockCraftingTableComponent const &) = delete;
     BlockCraftingTableComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCRAFTINGTABLECOMPONENT
-#endif
     /**
      * @symbol ??4BlockCraftingTableComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -975345252
      */
     MCAPI struct BlockCraftingTableComponent & operator=(struct BlockCraftingTableComponent &&);
     /**
      * @symbol ??1BlockCraftingTableComponent@@QEAA@XZ
+     * @hash   108797434
      */
     MCAPI ~BlockCraftingTableComponent();
 

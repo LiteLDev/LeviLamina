@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   821751923
      */
     virtual ~RepeatUntilFailureNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@RepeatUntilFailureNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   1580623286
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@RepeatUntilFailureNode@@MEAAXAEAVActor@@@Z
+     * @hash   -1092654301
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPEATUNTILFAILURENODE
-#endif
     /**
      * @symbol ??0RepeatUntilFailureNode@@QEAA@XZ
+     * @hash   1039098053
      */
     MCAPI RepeatUntilFailureNode();
 

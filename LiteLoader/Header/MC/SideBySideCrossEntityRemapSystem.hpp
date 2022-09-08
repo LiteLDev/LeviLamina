@@ -28,16 +28,16 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECROSSENTITYREMAPSYSTEM
-#endif
     /**
      * @symbol ?_remapContext@SideBySideCrossEntityRemapSystem@@SAXAEAVStrictEntityContext@@AEBUSideBySideRemappingComponent@@@Z
+     * @hash   1522934499
      */
     MCAPI static void _remapContext(class StrictEntityContext &, struct SideBySideRemappingComponent const &);
 
 //private:
     /**
      * @symbol ?_removeNullStrictEntityContexts@SideBySideCrossEntityRemapSystem@@CAXAEAV?$vector@VStrictEntityContext@@V?$allocator@VStrictEntityContext@@@std@@@std@@@Z
+     * @hash   1644335704
      */
     MCAPI static void _removeNullStrictEntityContexts(std::vector<class StrictEntityContext> &);
 

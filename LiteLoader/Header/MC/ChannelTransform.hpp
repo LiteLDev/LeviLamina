@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANNELTRANSFORM
-#endif
     /**
      * @symbol ?getDataValues@ChannelTransform@@QEBA_NAEAVVec3@@0@Z
+     * @hash   860295746
      */
     MCAPI bool getDataValues(class Vec3 &, class Vec3 &) const;
 

@@ -46,11 +46,28 @@ void FixUpCWD() {
 #include <FMT/format.h>
 void UnzipNodeModules() {
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.tar")))) {
-        auto res = NewProcessSync(fmt::format("{} x \"{}\" -o\".\\plugins\\lib\\\" -aoa", ZIP_PROGRAM_PATH, ".\\plugins\\lib\\node_modules.tar"), 30000);
+        std::error_code ec;
+        //if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+        //    filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        auto res = NewProcessSync(fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\node_modules.tar)"), 30000);
         if (res.first != 0) {
             logger.error(tr("ll.unzipNodeModules.fail"));
         } else {
-            filesystem::remove(".\\plugins\\lib\\node_modules.tar");
+            filesystem::remove(R"(.\plugins\lib\node_modules.tar)", ec);
+        }
+    }
+}
+
+void DecompressResourcePacks() {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
+        std::error_code ec;
+        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        auto res = NewProcessSync(fmt::format(R"({} x "{}" -o".\plugins\LiteLoader\ResourcePacks\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)"), 30000);
+        if (res.first != 0) {
+            logger.error(tr("ll.decompressResourcePacks.fail"));
+        } else {
+            filesystem::remove(R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)", ec);
         }
     }
 }
@@ -80,14 +97,13 @@ void CheckRunningBDS() {
     std::wstring current{buf, sz}; // Copy
     // Check the BDS process paths
     for (auto& pid : pids) {
-        WCHAR buf[8196] = {0};
         // Open process handle
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
         if (handle) {
-            DWORD sz = NULL;
-            WCHAR buf[8196] = {0};
+            sz = NULL;
+            buf[8196] = {0};
             // Get the full path of the process
-            if (sz = GetModuleFileNameEx(handle, nullptr, buf, 8196)) {
+            if ((sz = GetModuleFileNameEx(handle, nullptr, buf, 8196))) {
                 std::wstring path{buf, sz};
                 if (current == path) {
                     logger.error(tr("ll.main.checkRunningBDS.detected"));
@@ -191,6 +207,8 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
             }
             return TRUE;
         }
+        default:
+            break;
     }
     return FALSE;
 }
@@ -204,13 +222,15 @@ void UnixSignalHandler(int signum) {
             } else {
                 std::terminate();
             }
+            break;
         }
+        default:
+            break;
     }
 }
 
 // extern
 extern void EndScheduleSystem();
-extern void InitParticle();
 namespace bstats {
 void registerBStats();
 }
@@ -235,8 +255,11 @@ void LLMain() {
     // Load Config
     LL::LoadLLConfig();
 
-    //Unzip Node Modules
+    //Unzip packed Node Modules
     UnzipNodeModules();
+
+    //Decompress resource packs
+    DecompressResourcePacks();
 
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
     if (!LL::isDebugMode())
@@ -262,9 +285,6 @@ void LLMain() {
 
     // Check Running BDS(Requires Config)
     CheckRunningBDS();
-
-    // Init LL Particle
-    InitParticle();
 
     // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);

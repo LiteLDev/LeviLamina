@@ -31,64 +31,71 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1851367129
      */
     virtual ~RecordItemComponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VRecordItemComponent@@@@UEBA_NXZ
+     * @hash   692312760
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VRecordItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   509503898
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VRecordItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   -44746026
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEMCOMPONENT
-#endif
     /**
      * @symbol ?getAlias@RecordItemComponent@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1629070308
      */
     MCAPI std::string getAlias() const;
     /**
      * @symbol ?getComparatorSignal@RecordItemComponent@@QEBAHXZ
+     * @hash   663458464
      */
     MCAPI int getComparatorSignal() const;
     /**
      * @symbol ?getDuration@RecordItemComponent@@QEBAMXZ
+     * @hash   -415268374
      */
     MCAPI float getDuration() const;
     /**
      * @symbol ?getSound@RecordItemComponent@@QEBA?AW4LevelSoundEvent@@XZ
+     * @hash   -1284898660
      */
     MCAPI enum LevelSoundEvent getSound() const;
     /**
      * @symbol ?bindType@RecordItemComponent@@SAXXZ
+     * @hash   -195574241
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@RecordItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   -397468490
      */
     MCAPI static class HashedString const & getIdentifier();
 

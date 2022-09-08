@@ -26,11 +26,11 @@ public:
     ConstDeserializeDataParams(struct ConstDeserializeDataParams const &) = delete;
     ConstDeserializeDataParams() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSTDESERIALIZEDATAPARAMS
-#endif
     /**
      * @symbol ??1ConstDeserializeDataParams@@QEAA@XZ
+     * @hash   -908149594
      */
     MCAPI ~ConstDeserializeDataParams();
 

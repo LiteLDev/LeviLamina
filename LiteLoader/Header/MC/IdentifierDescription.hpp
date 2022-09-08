@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1179117793
      */
     virtual ~IdentifierDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getJsonName@IdentifierDescription@@UEBAPEBDXZ
+     * @hash   -868618047
      */
     virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDENTIFIERDESCRIPTION
-#endif
 
 };

@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1422099241
      */
     virtual ~DimensionBrightnessRamp();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?buildBrightnessRamp@DimensionBrightnessRamp@@UEAAXXZ
+     * @hash   1630070575
      */
     virtual void buildBrightnessRamp();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getBaseAmbientValue@DimensionBrightnessRamp@@UEBAMXZ
+     * @hash   -669571803
      */
     virtual float getBaseAmbientValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONBRIGHTNESSRAMP
-#endif
     /**
      * @symbol ?getBrightnessRampValue@DimensionBrightnessRamp@@QEBAMH@Z
+     * @hash   -540640683
      */
     MCAPI float getBrightnessRampValue(int) const;
 

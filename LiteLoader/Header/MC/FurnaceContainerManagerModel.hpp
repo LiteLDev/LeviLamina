@@ -32,65 +32,74 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -882436113
      */
     virtual ~FurnaceContainerManagerModel();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getItemCopies@FurnaceContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   1108528970
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setSlot@FurnaceContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -598874379
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getSlot@FurnaceContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   744128974
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setData@FurnaceContainerManagerModel@@UEAAXHH@Z
+     * @hash   -2035946770
      */
     virtual void setData(int, int);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@FurnaceContainerManagerModel@@UEAAXXZ
+     * @hash   1831464948
      */
     virtual void broadcastChanges();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?isValid@FurnaceContainerManagerModel@@UEAA_NM@Z
+     * @hash   -1875547764
      */
     virtual bool isValid(float);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_postInit@FurnaceContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -46311359
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0FurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -1720161632
      */
     MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
 
 //protected:
     /**
      * @symbol ??0FurnaceContainerManagerModel@@IEAA@AEBVHashedString@@W4ContainerType@@W4BlockActorType@@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -757420654
      */
     MCAPI FurnaceContainerManagerModel(class HashedString const &, enum ContainerType, enum BlockActorType, enum ContainerID, class Player &, class BlockPos const &);
 
 //private:
     /**
      * @symbol ?_getFurnaceEntity@FurnaceContainerManagerModel@@AEAAPEAVFurnaceBlockActor@@XZ
+     * @hash   -555405943
      */
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     /**
      * @symbol ?_updateResultSlotInfo@FurnaceContainerManagerModel@@AEAAXXZ
+     * @hash   -440816152
      */
     MCAPI void _updateResultSlotInfo();
 

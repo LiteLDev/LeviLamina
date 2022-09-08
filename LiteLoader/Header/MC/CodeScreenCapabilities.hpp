@@ -28,18 +28,18 @@ public:
     CodeScreenCapabilities(struct CodeScreenCapabilities const &) = delete;
     CodeScreenCapabilities() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -258753447
      */
     virtual ~CodeScreenCapabilities();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isOfType@?$TypedScreenCapabilities@UCodeScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
+     * @hash   -1749922248
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODESCREENCAPABILITIES
-#endif
 
 };

@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -698898245
      */
     virtual ~AddPaintingPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@AddPaintingPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -697274767
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@AddPaintingPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   762005790
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@AddPaintingPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1806086281
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@AddPaintingPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -413043831
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDPAINTINGPACKET
-#endif
     /**
      * @symbol ??0AddPaintingPacket@@QEAA@XZ
+     * @hash   763415385
      */
     MCAPI AddPaintingPacket();
     /**
      * @symbol ??0AddPaintingPacket@@QEAA@AEBVPainting@@@Z
+     * @hash   -2084533402
      */
     MCAPI AddPaintingPacket(class Painting const &);
 

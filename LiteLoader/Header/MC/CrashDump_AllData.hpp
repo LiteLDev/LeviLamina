@@ -25,11 +25,11 @@ public:
     struct CrashDump_AllData& operator=(struct CrashDump_AllData const &) = delete;
     CrashDump_AllData(struct CrashDump_AllData const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMP_ALLDATA
-#endif
     /**
      * @symbol ??0CrashDump_AllData@@QEAA@XZ
+     * @hash   -1572530893
      */
     MCAPI CrashDump_AllData();
 

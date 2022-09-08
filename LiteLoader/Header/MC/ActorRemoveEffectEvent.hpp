@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORREMOVEEFFECTEVENT
-#endif
     /**
      * @symbol ??1ActorRemoveEffectEvent@@QEAA@XZ
+     * @hash   1059619114
      */
     MCAPI ~ActorRemoveEffectEvent();
 

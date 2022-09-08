@@ -33,31 +33,33 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1232055262
      */
     virtual ~FilterTestGameRule();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?setup@FilterTestGameRule@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z
+     * @hash   1141383378
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?evaluate@FilterTestGameRule@@UEBA_NAEBUFilterContext@@@Z
+     * @hash   1256163450
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@FilterTestGameRule@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
+     * @hash   1820570568
      */
     virtual class gsl::basic_string_span<char const, -1> getName() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_serializeValue@FilterTestGameRule@@MEBA?AVValue@Json@@XZ
+     * @hash   1269865063
      */
     virtual class Json::Value _serializeValue() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTGAMERULE
-#endif
 
 };

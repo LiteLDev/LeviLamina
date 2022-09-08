@@ -32,23 +32,24 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1919403811
      */
     virtual ~LootItemMatchToolCondition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?applies@LootItemMatchToolCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -1348224074
      */
     virtual bool applies(class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMMATCHTOOLCONDITION
-#endif
     /**
      * @symbol ??0LootItemMatchToolCondition@@QEAA@UIntRange@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@UEnchantInfo@LootItemMatchToolCondition@@V?$allocator@UEnchantInfo@LootItemMatchToolCondition@@@std@@@3@@Z
+     * @hash   -1459370378
      */
     MCAPI LootItemMatchToolCondition(struct IntRange, struct IntRange, std::string, std::vector<struct LootItemMatchToolCondition::EnchantInfo> const &);
     /**
      * @symbol ?deserialize@LootItemMatchToolCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
+     * @hash   1049946815
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 

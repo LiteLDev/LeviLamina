@@ -26,11 +26,11 @@ public:
     EditorActorPauseTickNeededComponent(struct EditorActorPauseTickNeededComponent const &) = delete;
     EditorActorPauseTickNeededComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDITORACTORPAUSETICKNEEDEDCOMPONENT
-#endif
     /**
      * @symbol ??1EditorActorPauseTickNeededComponent@@QEAA@XZ
+     * @hash   -1626190615
      */
     MCAPI ~EditorActorPauseTickNeededComponent();
 

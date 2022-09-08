@@ -32,44 +32,47 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -93935575
      */
     virtual ~SilverfishMergeWithStoneGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ
+     * @hash   -1325961039
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ
+     * @hash   -2044349185
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@SilverfishMergeWithStoneGoal@@UEAAXXZ
+     * @hash   561837690
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SilverfishMergeWithStoneGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -916016977
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SILVERFISHMERGEWITHSTONEGOAL
-#endif
     /**
      * @symbol ??0SilverfishMergeWithStoneGoal@@QEAA@AEAVSilverfish@@@Z
+     * @hash   1141743288
      */
     MCAPI SilverfishMergeWithStoneGoal(class Silverfish &);
 

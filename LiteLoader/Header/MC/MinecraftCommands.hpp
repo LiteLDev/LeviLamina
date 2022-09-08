@@ -59,72 +59,86 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTCOMMANDS
-#endif
     /**
      * @symbol ??0MinecraftCommands@@QEAA@AEAVMinecraft@@@Z
+     * @hash   1444887198
      */
     MCAPI MinecraftCommands(class Minecraft &);
     /**
      * @symbol ?compileCommand@MinecraftCommands@@QEAAPEAVCommand@@AEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@V?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
+     * @hash   -1394490980
      */
     MCAPI class Command * compileCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion, class std::function<void (std::string const &)>);
     /**
      * @symbol ?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z
+     * @hash   -1027422929
      */
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
     /**
      * @symbol ?getRegistry@MinecraftCommands@@QEAAAEAVCommandRegistry@@XZ
+     * @hash   291433374
      */
     MCAPI class CommandRegistry & getRegistry();
     /**
      * @symbol ?handleOutput@MinecraftCommands@@QEBAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z
+     * @hash   -1866212603
      */
     MCAPI void handleOutput(class CommandOrigin const &, class CommandOutput const &) const;
     /**
      * @symbol ?initCoreEnums@MinecraftCommands@@QEAAXVItemRegistryRef@@AEBVIWorldRegistriesProvider@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z
+     * @hash   -1861627778
      */
     MCAPI void initCoreEnums(class ItemRegistryRef, class IWorldRegistriesProvider const &, class ActorFactory const &, class Experiments const &, class BaseGameVersion const &);
     /**
      * @symbol ?initCoreEnumsServer@MinecraftCommands@@QEAAXAEBVActorDefinitionGroup@@@Z
+     * @hash   1487943686
      */
     MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const &);
     /**
      * @symbol ?requestCommandExecution@MinecraftCommands@@QEBA?AUMCRESULT@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@H_N@Z
+     * @hash   2019705297
      */
     MCAPI struct MCRESULT requestCommandExecution(std::unique_ptr<class CommandOrigin>, std::string const &, int, bool) const;
     /**
      * @symbol ?runCommand@MinecraftCommands@@QEAAXAEAVCommand@@AEAVCommandOrigin@@@Z
+     * @hash   1610188095
      */
     MCAPI void runCommand(class Command &, class CommandOrigin &);
     /**
      * @symbol ?runCommand@MinecraftCommands@@QEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CurrentCmdVersion@@@Z
+     * @hash   328182076
      */
     MCAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CurrentCmdVersion);
     /**
      * @symbol ?setRegistryNetworkUpdateCallback@MinecraftCommands@@QEBAXV?$function@$$A6AXAEBVPacket@@@Z@std@@@Z
+     * @hash   -1982428351
      */
     MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const &)>) const;
     /**
      * @symbol ?getOutputType@MinecraftCommands@@SA?AW4CommandOutputType@@AEBVCommandOrigin@@@Z
+     * @hash   -721427305
      */
     MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const &);
     /**
      * @symbol ?initBlockEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@AEBVBaseGameVersion@@@Z
+     * @hash   270286633
      */
     MCAPI static void initBlockEnum(class CommandRegistry &, class BaseGameVersion const &);
     /**
      * @symbol ?initItemEnum@MinecraftCommands@@SAXVItemRegistryRef@@AEAVCommandRegistry@@AEBVBaseGameVersion@@@Z
+     * @hash   780967824
      */
     MCAPI static void initItemEnum(class ItemRegistryRef, class CommandRegistry &, class BaseGameVersion const &);
     /**
      * @symbol ?initItemTagEnum@MinecraftCommands@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -482922790
      */
     MCAPI static void initItemTagEnum(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_registerSharedClientServerEnums@MinecraftCommands@@AEAAXXZ
+     * @hash   -304657980
      */
     MCAPI void _registerSharedClientServerEnums();
 

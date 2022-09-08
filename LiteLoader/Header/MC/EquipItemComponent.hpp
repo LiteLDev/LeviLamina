@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPITEMCOMPONENT
-#endif
     /**
      * @symbol ?onEquipItemPickedUp@EquipItemComponent@@QEAAXVItemStack@@H@Z
+     * @hash   691730775
      */
     MCAPI void onEquipItemPickedUp(class ItemStack, int);
     /**
      * @symbol ??1EquipItemComponent@@QEAA@XZ
+     * @hash   724127188
      */
     MCAPI ~EquipItemComponent();
 

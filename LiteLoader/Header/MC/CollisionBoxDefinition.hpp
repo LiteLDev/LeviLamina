@@ -29,21 +29,27 @@ public:
     CollisionBoxDefinition(struct CollisionBoxDefinition const &) = delete;
     CollisionBoxDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLLISIONBOXDEFINITION
-#endif
     /**
      * @symbol ?setHeight@CollisionBoxDefinition@@QEAAXAEBM@Z
+     * @hash   1142818371
      */
     MCAPI void setHeight(float const &);
     /**
      * @symbol ?setWidth@CollisionBoxDefinition@@QEAAXAEBM@Z
+     * @hash   425136015
      */
     MCAPI void setWidth(float const &);
     /**
      * @symbol ?buildSchema@CollisionBoxDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCollisionBoxDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1880112838
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CollisionBoxDefinition>> &);
-MCAPI static float const mBoxEpsilon;
+    /**
+     * @symbol ?mBoxEpsilon@CollisionBoxDefinition@@2MB
+     * @hash   -34482577
+     */
+    MCAPI static float const mBoxEpsilon;
 
 };

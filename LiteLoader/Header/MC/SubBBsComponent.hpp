@@ -26,11 +26,11 @@ public:
     SubBBsComponent(struct SubBBsComponent const &) = delete;
     SubBBsComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBBBSCOMPONENT
-#endif
     /**
      * @symbol ??1SubBBsComponent@@QEAA@XZ
+     * @hash   -758693018
      */
     MCAPI ~SubBBsComponent();
 

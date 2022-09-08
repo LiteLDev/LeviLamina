@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOLGLOBALSTATE
-#endif
     /**
      * @symbol ??1WorkerPoolGlobalState@@QEAA@XZ
+     * @hash   516188080
      */
     MCAPI ~WorkerPoolGlobalState();
 

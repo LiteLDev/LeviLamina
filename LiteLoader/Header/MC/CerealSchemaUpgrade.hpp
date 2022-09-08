@@ -30,81 +30,89 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1752406505
      */
     virtual ~CerealSchemaUpgrade();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   1967983905
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?upgradeToNext@CerealSchemaUpgrade@@UEBA_NAEAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z
+     * @hash   -337848131
      */
     virtual bool upgradeToNext(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &) const;
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   1109497091
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   1846273044
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   1846919797
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   1847981702
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   1848490071
      */
     virtual void __unk_vfn_7();
     /**
      * @symbol ?getPreviousVersion@CerealSchemaUpgrade@@QEBAAEBVSemVersion@@XZ
+     * @hash   2038791004
      */
     MCAPI class SemVersion const & getPreviousVersion() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALSCHEMAUPGRADE
-#endif
     /**
      * @symbol ??0CerealSchemaUpgrade@@QEAA@VSemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+     * @hash   -1637055842
      */
     MCAPI CerealSchemaUpgrade(class SemVersion, std::string const &, std::string const &);
     /**
      * @symbol ?bindLegacySchema@CerealSchemaUpgrade@@QEAAXAEAVSchemaFactory@reflection@@@Z
+     * @hash   160307984
      */
     MCAPI void bindLegacySchema(class reflection::SchemaFactory &);
     /**
      * @symbol ?getPreviousVersion@CerealSchemaUpgrade@@QEBAAEBVSemVersion@@XZ
+     * @hash   2038791004
      */
     MCAPI class SemVersion const & getPreviousVersion() const;
     /**
      * @symbol ?getPreviousVersionString@CerealSchemaUpgrade@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   748910804
      */
     MCAPI std::string const & getPreviousVersionString() const;
     /**
      * @symbol ?getSchemaKey@CerealSchemaUpgrade@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   2022607020
      */
     MCAPI std::string const & getSchemaKey() const;
     /**
      * @symbol ?getTargetVersion@CerealSchemaUpgrade@@QEBAAEBVSemVersion@@XZ
+     * @hash   1428238124
      */
     MCAPI class SemVersion const & getTargetVersion() const;
     /**
      * @symbol ?registerLegacySchema@CerealSchemaUpgrade@@QEAAXXZ
+     * @hash   -1037313779
      */
     MCAPI void registerLegacySchema();
     /**
      * @symbol ?setPreviousVersion@CerealSchemaUpgrade@@QEAAXAEBVSemVersion@@@Z
+     * @hash   2076446820
      */
     MCAPI void setPreviousVersion(class SemVersion const &);
 

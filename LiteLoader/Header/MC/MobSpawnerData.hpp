@@ -27,14 +27,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBSPAWNERDATA
-#endif
     /**
      * @symbol ??0MobSpawnerData@@QEAA@AEBV0@@Z
+     * @hash   -801394927
      */
     MCAPI MobSpawnerData(class MobSpawnerData const &);
     /**
      * @symbol ??1MobSpawnerData@@QEAA@XZ
+     * @hash   -1177632276
      */
     MCAPI ~MobSpawnerData();
 

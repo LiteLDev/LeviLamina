@@ -26,27 +26,42 @@ struct Brightness {
 public:
     Brightness() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRIGHTNESS
-#endif
     /**
      * @symbol ??0Brightness@@QEAA@AEBU0@@Z
+     * @hash   341023167
      */
     MCAPI Brightness(struct Brightness const &);
     /**
      * @symbol ??0Brightness@@QEAA@AEBE@Z
+     * @hash   291828602
      */
     MCAPI Brightness(unsigned char const &);
     /**
      * @symbol ??4Brightness@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -52696730
      */
     MCAPI struct Brightness & operator=(struct Brightness const &);
     /**
      * @symbol ??4Brightness@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   1018856374
      */
     MCAPI struct Brightness & operator=(struct Brightness &&);
-MCAPI static struct Brightness const INVALID;
-MCAPI static struct Brightness const MAX;
-MCAPI static struct Brightness const MIN;
+    /**
+     * @symbol ?INVALID@Brightness@@2U1@B
+     * @hash   -1410038252
+     */
+    MCAPI static struct Brightness const INVALID;
+    /**
+     * @symbol ?MAX@Brightness@@2U1@B
+     * @hash   -698154445
+     */
+    MCAPI static struct Brightness const MAX;
+    /**
+     * @symbol ?MIN@Brightness@@2U1@B
+     * @hash   1997331739
+     */
+    MCAPI static struct Brightness const MIN;
 
 };

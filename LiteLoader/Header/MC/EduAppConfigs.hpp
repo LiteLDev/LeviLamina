@@ -30,8 +30,10 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUAPPCONFIGS
-#endif
-MCAPI static struct PackIdVersion const EDUResourcePack;
+    /**
+     * @symbol ?EDUResourcePack@EduAppConfigs@@2UPackIdVersion@@B
+     * @hash   -2073180207
+     */
+    MCAPI static struct PackIdVersion const EDUResourcePack;
 
 };

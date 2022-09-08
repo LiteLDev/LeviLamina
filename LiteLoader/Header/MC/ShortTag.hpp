@@ -40,53 +40,60 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   91008968
      */
     virtual ~ShortTag();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?write@ShortTag@@UEBAXAEAVIDataOutput@@@Z
+     * @hash   -197876033
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?load@ShortTag@@UEAAXAEAVIDataInput@@@Z
+     * @hash   -1871596322
      */
     virtual void load(class IDataInput &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?toString@ShortTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -327545960
      */
     virtual std::string toString() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getId@ShortTag@@UEBA?AW4Type@Tag@@XZ
+     * @hash   148881533
      */
     virtual enum Tag::Type getId() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?equals@ShortTag@@UEBA_NAEBVTag@@@Z
+     * @hash   1247582932
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?copy@ShortTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   1230305338
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?hash@ShortTag@@UEBA_KXZ
+     * @hash   -1452939120
      */
     virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHORTTAG
-#endif
     /**
      * @symbol ??0ShortTag@@QEAA@XZ
+     * @hash   1780971946
      */
     MCAPI ShortTag();
     /**
      * @symbol ??0ShortTag@@QEAA@F@Z
+     * @hash   -1058370314
      */
     MCAPI ShortTag(short);
 

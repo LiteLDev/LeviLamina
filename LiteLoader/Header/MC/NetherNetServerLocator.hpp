@@ -38,109 +38,122 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1345915016
      */
     virtual ~NetherNetServerLocator();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2@Z
+     * @hash   1616401436
      */
     virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?stopAnnouncingServer@NetherNetServerLocator@@UEAAXXZ
+     * @hash   -1955933884
      */
     virtual void stopAnnouncingServer();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?startServerDiscovery@NetherNetServerLocator@@UEAAXUPortPair@@@Z
+     * @hash   1508509505
      */
     virtual void startServerDiscovery(struct PortPair);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?stopServerDiscovery@NetherNetServerLocator@@UEAAXXZ
+     * @hash   549557540
      */
     virtual void stopServerDiscovery();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1391153257
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1390229736
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getServerList@NetherNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ
+     * @hash   -1402992640
      */
     virtual std::vector<struct PingedCompatibleServer> getServerList() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?clearServerList@NetherNetServerLocator@@UEAAXXZ
+     * @hash   -441193193
      */
     virtual void clearServerList();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?update@NetherNetServerLocator@@UEAAXXZ
+     * @hash   -1737403038
      */
     virtual void update();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSERVERLOCATOR
-#endif
     /**
      * @symbol ??0NetherNetServerLocator@@QEAA@XZ
+     * @hash   803441354
      */
     MCAPI NetherNetServerLocator();
 
 //private:
     /**
      * @symbol ?_isNetherNetOverLANAllowed@NetherNetServerLocator@@AEBA_NXZ
+     * @hash   -562637946
      */
     MCAPI bool _isNetherNetOverLANAllowed() const;
     /**
      * @symbol ?_onBroadcastResponseCallback@NetherNetServerLocator@@AEAAX_KPEBXH@Z
+     * @hash   -198683525
      */
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const *, int);
     /**
      * @symbol ?_pruneStaleServers@NetherNetServerLocator@@AEAAXV?$duration@_JU?$ratio@$00$00@std@@@chrono@std@@@Z
+     * @hash   973211439
      */
     MCAPI void _pruneStaleServers(class std::chrono::duration<__int64, struct std::ratio<1, 1>>);
     /**
      * @symbol ?_setBroadcastDiscoveryResponse@NetherNetServerLocator@@AEAAXAEBUServerData@1@@Z
+     * @hash   1787652650
      */
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const &);
     /**
      * @symbol ?_setIsAnnouncing@NetherNetServerLocator@@AEAAX_N@Z
+     * @hash   -1772421565
      */
     MCAPI void _setIsAnnouncing(bool);
     /**
      * @symbol ?_setIsDiscovering@NetherNetServerLocator@@AEAAX_N@Z
+     * @hash   -445908934
      */
     MCAPI void _setIsDiscovering(bool);
     /**
      * @symbol ?_transformFrom@NetherNetServerLocator@@AEAA?AUPingedCompatibleServer@@_KAEBUServerData@1@@Z
+     * @hash   2091158434
      */
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const &);
 

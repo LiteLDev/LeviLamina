@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKENDRESETSYSTEM
-#endif
     /**
      * @symbol ?createSystem@TickEndResetSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   2068760338
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

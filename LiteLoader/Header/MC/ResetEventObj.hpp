@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESETEVENTOBJ
-#endif
     /**
      * @symbol ??0ResetEventObj@@QEAA@_N0@Z
+     * @hash   -2048218305
      */
     MCAPI ResetEventObj(bool, bool);
     /**
      * @symbol ?set@ResetEventObj@@QEAAXXZ
+     * @hash   1487504121
      */
     MCAPI void set();
     /**
      * @symbol ?wait@ResetEventObj@@QEAAXXZ
+     * @hash   -921750931
      */
     MCAPI void wait();
     /**
      * @symbol ?wait_until@ResetEventObj@@QEAA_NV?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@Z
+     * @hash   -1034710678
      */
     MCAPI bool wait_until(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
     /**
      * @symbol ??1ResetEventObj@@QEAA@XZ
+     * @hash   -1108696
      */
     MCAPI ~ResetEventObj();
 

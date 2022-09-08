@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADPRIORITY
-#endif
     /**
      * @symbol ?getPlayerChunkPriority@ChunkLoadPriority@@SAHAEBVChunkPos@@0AEBVVec3@@@Z
+     * @hash   1389599392
      */
     MCAPI static int getPlayerChunkPriority(class ChunkPos const &, class ChunkPos const &, class Vec3 const &);
     /**
      * @symbol ?getTickingAreaChunkPriority@ChunkLoadPriority@@SAHAEBVChunkPos@@0AEBVVec3@@_N@Z
+     * @hash   939073655
      */
     MCAPI static int getTickingAreaChunkPriority(class ChunkPos const &, class ChunkPos const &, class Vec3 const &, bool);
 

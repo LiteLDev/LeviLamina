@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@AnimationScriptsDescription@@UEBAPEBDXZ
+     * @hash   -1538645124
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -2145661498
      */
     virtual ~AnimationScriptsDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@AnimationScriptsDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1745573481
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@AnimationScriptsDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1963258305
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATIONSCRIPTSDESCRIPTION
-#endif
 
 };

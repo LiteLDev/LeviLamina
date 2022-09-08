@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSTANDONBLOCKEVENT
-#endif
     /**
      * @symbol ??1ActorStandOnBlockEvent@@QEAA@XZ
+     * @hash   -1085301833
      */
     MCAPI ~ActorStandOnBlockEvent();
 

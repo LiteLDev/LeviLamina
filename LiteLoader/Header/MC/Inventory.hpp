@@ -32,80 +32,91 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1710494422
      */
     virtual ~Inventory();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?init@Inventory@@UEAAXXZ
+     * @hash   67627035
      */
     virtual void init();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setItem@Inventory@@UEAAXHAEBVItemStack@@@Z
+     * @hash   1234849525
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?setItemWithForceBalance@Inventory@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -1669771712
      */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 22
-     * @symbol 
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @note   Virtual function table index: 23
-     * @symbol 
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
     /**
-     * @note   Virtual function table index: 33
+     * @vftbl  33
      * @symbol ?add@Inventory@@UEAA_NAEAVItemStack@@@Z
+     * @hash   -1203176231
      */
     virtual bool add(class ItemStack &);
     /**
-     * @note   Virtual function table index: 34
+     * @vftbl  34
      * @symbol ?canAdd@Inventory@@UEBA_NAEBVItemStack@@@Z
+     * @hash   -1285415595
      */
     virtual bool canAdd(class ItemStack const &) const;
     /**
-     * @note   Virtual function table index: 38
+     * @vftbl  38
      * @symbol ?getEmptySlotsCount@Inventory@@UEBAHXZ
+     * @hash   -1369345984
      */
     virtual int getEmptySlotsCount() const;
     /**
-     * @note   Virtual function table index: 39
+     * @vftbl  39
      * @symbol ?getFirstEmptySlot@Inventory@@UEBAHXZ
+     * @hash   -926995856
      */
     virtual int getFirstEmptySlot() const;
     /**
-     * @note   Virtual function table index: 40
+     * @vftbl  40
      * @symbol ?setContainerSize@Inventory@@UEAAXH@Z
+     * @hash   -946502796
      */
     virtual void setContainerSize(int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORY
-#endif
     /**
      * @symbol ??0Inventory@@QEAA@PEAVPlayer@@@Z
+     * @hash   -1455203928
      */
     MCAPI Inventory(class Player *);
     /**
      * @symbol ?dropSlot@Inventory@@QEAAXH_N00@Z
+     * @hash   1455655243
      */
     MCAPI void dropSlot(int, bool, bool, bool);
     /**
      * @symbol ?getComplexItems@Inventory@@QEAA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -1545412444
      */
     MCAPI std::vector<class ItemStack> getComplexItems();
     /**
      * @symbol ?setupDefault@Inventory@@QEAAXXZ
+     * @hash   1820683467
      */
     MCAPI void setupDefault();
     /**
      * @symbol ?tick@Inventory@@QEAAXH@Z
+     * @hash   1807035630
      */
     MCAPI void tick(int);
 

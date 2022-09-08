@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOPPERCOMPONENT
-#endif
     /**
      * @symbol ??0HopperComponent@@QEAA@XZ
+     * @hash   -434629403
      */
     MCAPI HopperComponent();
     /**
      * @symbol ?getLastPosition@HopperComponent@@QEBA?AVBlockPos@@XZ
+     * @hash   -1791949588
      */
     MCAPI class BlockPos getLastPosition() const;
     /**
      * @symbol ?pullInItems@HopperComponent@@QEAA_NAEAVActor@@@Z
+     * @hash   662791219
      */
     MCAPI bool pullInItems(class Actor &);
 

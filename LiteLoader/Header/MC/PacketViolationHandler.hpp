@@ -29,20 +29,21 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETVIOLATIONHANDLER
-#endif
     /**
      * @symbol ??0PacketViolationHandler@@QEAA@XZ
+     * @hash   -361450599
      */
     MCAPI PacketViolationHandler();
     /**
      * @symbol ?checkForViolation@PacketViolationHandler@@QEAA?AW4PacketViolationResponse@@W4MinecraftPacketIds@@W4StreamReadResult@@AEBVNetworkIdentifier@@PEA_N@Z
+     * @hash   820298270
      */
     MCAPI enum PacketViolationResponse checkForViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
 
 //private:
     /**
      * @symbol ?_handleViolation@PacketViolationHandler@@AEAA?AW4PacketViolationResponse@@W4MinecraftPacketIds@@W4StreamReadResult@@AEBVNetworkIdentifier@@PEA_N@Z
+     * @hash   1615645955
      */
     MCAPI enum PacketViolationResponse _handleViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const &, bool *);
 

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   566926880
      */
     virtual ~SandFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@SandFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1435271380
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SANDFEATURE
-#endif
     /**
      * @symbol ??0SandFeature@@QEAA@AEBVBlock@@H@Z
+     * @hash   1928889638
      */
     MCAPI SandFeature(class Block const &, int);
 

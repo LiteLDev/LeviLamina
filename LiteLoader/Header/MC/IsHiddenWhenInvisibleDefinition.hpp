@@ -29,19 +29,21 @@ public:
     IsHiddenWhenInvisibleDefinition(struct IsHiddenWhenInvisibleDefinition const &) = delete;
     IsHiddenWhenInvisibleDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISHIDDENWHENINVISIBLEDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsHiddenWhenInvisibleDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -6781378
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsHiddenWhenInvisibleDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   804438844
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsHiddenWhenInvisibleDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsHiddenWhenInvisibleDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1260772754
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsHiddenWhenInvisibleDefinition>> &);
 

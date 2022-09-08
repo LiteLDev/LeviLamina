@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBONPLAYERJUMPSYSTEM
-#endif
     /**
      * @symbol ?getPlayerJumpPendingScale@MobOnPlayerJumpSystem@@SAMH@Z
+     * @hash   849629417
      */
     MCAPI static float getPlayerJumpPendingScale(int);
 

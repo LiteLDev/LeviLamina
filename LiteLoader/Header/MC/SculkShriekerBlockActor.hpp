@@ -30,90 +30,97 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   459043897
      */
     virtual ~SculkShriekerBlockActor();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@SculkShriekerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   39568738
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?save@SculkShriekerBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -138663343
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?tick@SculkShriekerBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   1106635243
      */
     virtual void tick(class BlockSource &);
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?onRemoved@SculkShriekerBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   1137714823
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 28
-     * @symbol 
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERBLOCKACTOR
-#endif
     /**
      * @symbol ??0SculkShriekerBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   -436625234
      */
     MCAPI SculkShriekerBlockActor(class BlockPos const &);
     /**
      * @symbol ?tryRespond@SculkShriekerBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -2022966817
      */
     MCAPI void tryRespond(class BlockSource &, class BlockPos const &);
     /**
      * @symbol ?tryShriek@SculkShriekerBlockActor@@QEAA_NAEAVBlockSource@@VBlockPos@@AEAVPlayer@@@Z
+     * @hash   -1432466513
      */
     MCAPI bool tryShriek(class BlockSource &, class BlockPos, class Player &);
     /**
      * @symbol ?tryGet@SculkShriekerBlockActor@@SAPEAV1@AEAVBlockSource@@VBlockPos@@@Z
+     * @hash   -1684247579
      */
     MCAPI static class SculkShriekerBlockActor * tryGet(class BlockSource &, class BlockPos);
     /**
      * @symbol ?tryGetPlayerInHierarchy@SculkShriekerBlockActor@@SAPEAVPlayer@@PEAVActor@@@Z
+     * @hash   -354412969
      */
     MCAPI static class Player * tryGetPlayerInHierarchy(class Actor *);
 

@@ -28,18 +28,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTROLLEDBYLOCALINSTANCESYSTEM
-#endif
     /**
      * @symbol ?createRecalculateControlledByLocalInstanceSystemClient@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -95666774
      */
     MCAPI static struct TickingSystemWithInfo createRecalculateControlledByLocalInstanceSystemClient();
     /**
      * @symbol ?createRecalculateControlledByLocalInstanceSystemServer@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1096593834
      */
     MCAPI static struct TickingSystemWithInfo createRecalculateControlledByLocalInstanceSystemServer();
     /**
      * @symbol ?createWasControlledByLocalInstanceSystem@ControlledByLocalInstanceSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1230694966
      */
     MCAPI static struct TickingSystemWithInfo createWasControlledByLocalInstanceSystem();
 

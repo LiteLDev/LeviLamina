@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLEREMOVEPASSENGERSYSTEM
-#endif
     /**
      * @symbol ?boostableRemovePassenger@BoostableRemovePassengerSystem@@SAXAEAVStrictEntityContext@@AEBURemovePassengersComponent@@AEAV?$ViewT@VStrictEntityContext@@VEntityRegistryBase@@U?$Include@UPassengerComponent@@V?$FlagComponent@UPlayerComponentFlag@@@@@@UFOVModifierComponent@@@@@Z
+     * @hash   1594451403
      */
     MCAPI static void boostableRemovePassenger(class StrictEntityContext &, struct RemovePassengersComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent, class FlagComponent<struct PlayerComponentFlag>>, struct FOVModifierComponent> &);
     /**
      * @symbol ?createSystem@BoostableRemovePassengerSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   2111173090
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

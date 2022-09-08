@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1436885806
      */
     virtual ~DayLockCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@DayLockCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1354281551
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAYLOCKCOMMAND
-#endif
     /**
      * @symbol ?setup@DayLockCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -605357300
      */
     MCAPI static void setup(class CommandRegistry &);
 

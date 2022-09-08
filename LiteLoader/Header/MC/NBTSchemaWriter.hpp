@@ -28,155 +28,164 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   742037794
      */
     virtual ~NBTSchemaWriter();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   343888136
      */
     virtual bool write(std::string const &);
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1358536382
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@NBTSchemaWriter@@UEAA_NM@Z
+     * @hash   865076190
      */
     virtual bool write(float);
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   1720728004
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   1721651525
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   1722575046
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   1723590823
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   1724514344
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   1725530121
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -1553336797
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?pushMember@NBTSchemaWriter@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -816882557
      */
     virtual bool pushMember(std::string const &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?popMember@NBTSchemaWriter@@UEAAXXZ
+     * @hash   -1880399554
      */
     virtual void popMember();
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?openObject@NBTSchemaWriter@@UEAA_NXZ
+     * @hash   -940134210
      */
     virtual bool openObject();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?openArray@NBTSchemaWriter@@UEAA_NXZ
+     * @hash   -1491481180
      */
     virtual bool openArray();
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?close@NBTSchemaWriter@@UEAAXXZ
+     * @hash   -801791925
      */
     virtual void close();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAWRITER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NN@Z
+     * @hash   1481498889
      */
     MCVAPI bool write(double);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_N_K@Z
+     * @hash   36487840
      */
     MCVAPI bool write(unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_N_J@Z
+     * @hash   -708826315
      */
     MCVAPI bool write(__int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_N_N@Z
+     * @hash   1803361144
      */
     MCVAPI bool write(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NE@Z
+     * @hash   -1801633383
      */
     MCVAPI bool write(unsigned char);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NC@Z
+     * @hash   351442112
      */
     MCVAPI bool write(signed char);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NF@Z
+     * @hash   -847455202
      */
     MCVAPI bool write(short);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NG@Z
+     * @hash   -261174711
      */
     MCVAPI bool write(unsigned short);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NH@Z
+     * @hash   -1848356565
      */
     MCVAPI bool write(int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?write@NBTSchemaWriter@@UEAA_NI@Z
+     * @hash   1446135318
      */
     MCVAPI bool write(unsigned int);
 #endif
     /**
      * @symbol ??0NBTSchemaWriter@@QEAA@XZ
+     * @hash   72798336
      */
     MCAPI NBTSchemaWriter();
 
 //private:
     /**
      * @symbol ?_serializeTag@NBTSchemaWriter@@AEAA_NV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z
+     * @hash   253153412
      */
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
 

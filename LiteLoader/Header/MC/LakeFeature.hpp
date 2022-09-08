@@ -32,25 +32,26 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -386709451
      */
     virtual ~LakeFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@LakeFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   2054943441
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAKEFEATURE
-#endif
     /**
      * @symbol ??0LakeFeature@@QEAA@AEBVBlock@@V?$optional@VXoroshiroPositionalRandomFactory@@@std@@@Z
+     * @hash   -468175434
      */
     MCAPI LakeFeature(class Block const &, class std::optional<class XoroshiroPositionalRandomFactory>);
 
 //private:
     /**
      * @symbol ?_check@LakeFeature@@AEBA_NAEBVBlockPos@@V?$span@_N$0IAA@@gsl@@@Z
+     * @hash   -458954404
      */
     MCAPI bool _check(class BlockPos const &, class gsl::span<bool, 2048>) const;
 

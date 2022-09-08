@@ -29,38 +29,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2123324821
      */
     virtual ~TickingAreasLoadStatusPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@TickingAreasLoadStatusPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -731821763
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@TickingAreasLoadStatusPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1268615190
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@TickingAreasLoadStatusPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   887718797
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@TickingAreasLoadStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -894327091
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREASLOADSTATUSPACKET
-#endif
     /**
      * @symbol ??0TickingAreasLoadStatusPacket@@QEAA@_N@Z
+     * @hash   1724297862
      */
     MCAPI TickingAreasLoadStatusPacket(bool);
     /**
      * @symbol ??0TickingAreasLoadStatusPacket@@QEAA@XZ
+     * @hash   1757508621
      */
     MCAPI TickingAreasLoadStatusPacket();
 

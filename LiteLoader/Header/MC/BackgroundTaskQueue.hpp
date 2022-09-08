@@ -29,44 +29,51 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDTASKQUEUE
-#endif
     /**
      * @symbol ??0BackgroundTaskQueue@@QEAA@XZ
+     * @hash   -157135430
      */
     MCAPI BackgroundTaskQueue();
     /**
      * @symbol ?flush@BackgroundTaskQueue@@QEAAXXZ
+     * @hash   1784571325
      */
     MCAPI void flush();
     /**
      * @symbol ?getApproximateTaskCount@BackgroundTaskQueue@@QEBA_KXZ
+     * @hash   1269201405
      */
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     /**
      * @symbol ?getNextItemPriority@BackgroundTaskQueue@@QEAAHXZ
+     * @hash   1947743498
      */
     MCAPI int getNextItemPriority();
     /**
      * @symbol ?queue@BackgroundTaskQueue@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@_N@Z
+     * @hash   1179200778
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @symbol ?resortPriorityQueue@BackgroundTaskQueue@@QEAAXXZ
+     * @hash   1641316045
      */
     MCAPI void resortPriorityQueue();
     /**
      * @symbol ?tryPop@BackgroundTaskQueue@@QEAA?AV?$shared_ptr@VBackgroundTaskBase@@@std@@H@Z
+     * @hash   -998188590
      */
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
     /**
      * @symbol ??1BackgroundTaskQueue@@QEAA@XZ
+     * @hash   1744443770
      */
     MCAPI ~BackgroundTaskQueue();
 
 //private:
     /**
      * @symbol ?_fetchAllAvailableTasks@BackgroundTaskQueue@@AEAA_NXZ
+     * @hash   -167590093
      */
     MCAPI bool _fetchAllAvailableTasks();
 

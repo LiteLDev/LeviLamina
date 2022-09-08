@@ -31,42 +31,47 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   27509224
      */
     virtual ~LevelEventPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@LevelEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1313891168
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@LevelEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1753179251
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@LevelEventPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -348906198
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@LevelEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   923241098
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTPACKET
-#endif
     /**
      * @symbol ??0LevelEventPacket@@QEAA@XZ
+     * @hash   252356026
      */
     MCAPI LevelEventPacket();
     /**
      * @symbol ??0LevelEventPacket@@QEAA@W4LevelEvent@@MMMH@Z
+     * @hash   177770883
      */
     MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
     /**
      * @symbol ??0LevelEventPacket@@QEAA@W4LevelEvent@@AEBVVec3@@H@Z
+     * @hash   1749798983
      */
     MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const &, int);
 

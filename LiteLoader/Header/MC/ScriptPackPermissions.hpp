@@ -26,28 +26,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKPERMISSIONS
-#endif
     /**
      * @symbol ??0ScriptPackPermissions@@QEAA@XZ
+     * @hash   676095436
      */
     MCAPI ScriptPackPermissions();
     /**
      * @symbol ??0ScriptPackPermissions@@QEAA@AEBV0@@Z
+     * @hash   -1311019023
      */
     MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     /**
      * @symbol ?isModuleAllowed@ScriptPackPermissions@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -286771919
      */
     MCAPI bool isModuleAllowed(std::string const &) const;
     /**
      * @symbol ??4ScriptPackPermissions@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -1268200428
      */
     MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
 
 //private:
 
 private:
-MCAPI static std::string const sWildCardModuleName;
+    /**
+     * @symbol ?sWildCardModuleName@ScriptPackPermissions@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -4067273
+     */
+    MCAPI static std::string const sWildCardModuleName;
 
 };

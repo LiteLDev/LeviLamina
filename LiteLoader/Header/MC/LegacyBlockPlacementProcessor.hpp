@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBLOCKPLACEMENTPROCESSOR
-#endif
     /**
      * @symbol ??0LegacyBlockPlacementProcessor@@QEAA@AEBVLegacyStructureSettings@@@Z
+     * @hash   1451624990
      */
     MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const &);
     /**
      * @symbol ?applyBlockRules@LegacyBlockPlacementProcessor@@QEAAPEBVBlock@@AEAVBlockSource@@AEAVBlockPos@@PEBV2@AEBV4@@Z
+     * @hash   1909725212
      */
     MCAPI class Block const * applyBlockRules(class BlockSource &, class BlockPos &, class Block const *, class BlockPos const &);
     /**
      * @symbol ?applyGravity@LegacyBlockPlacementProcessor@@QEBAAEAVBlockPos@@AEAVBlockSource@@HAEAV2@@Z
+     * @hash   -489474584
      */
     MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
     /**
      * @symbol ?canPlace@LegacyBlockPlacementProcessor@@QEAA_NXZ
+     * @hash   1666317374
      */
     MCAPI bool canPlace();
     /**
      * @symbol ??1LegacyBlockPlacementProcessor@@QEAA@XZ
+     * @hash   -580466131
      */
     MCAPI ~LegacyBlockPlacementProcessor();
 

@@ -32,208 +32,208 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREVENTLISTENER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onCameraSetPlayerRot@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec2@@@Z
+     * @hash   1513323675
      */
     MCVAPI enum EventResult onCameraSetPlayerRot(class Player &, class Vec2 const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onEvent@PlayerEventListener@@UEAA?AW4EventResult@@AEBUPlayerNotificationEvent@@@Z
+     * @hash   -345142304
      */
     MCVAPI enum EventResult onEvent(struct PlayerNotificationEvent const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLocalPlayerDeath@PlayerEventListener@@UEAA?AW4EventResult@@AEAVIClientInstance@@AEAVLocalPlayer@@@Z
+     * @hash   -1140702905
      */
     MCVAPI enum EventResult onLocalPlayerDeath(class IClientInstance &, class LocalPlayer &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLocalPlayerRespawn@PlayerEventListener@@UEAA?AW4EventResult@@AEAVIClientInstance@@AEAVLocalPlayer@@@Z
+     * @hash   -1406771781
      */
     MCVAPI enum EventResult onLocalPlayerRespawn(class IClientInstance &, class LocalPlayer &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerAIStepBegin@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   -1458904005
      */
     MCVAPI enum EventResult onPlayerAIStepBegin(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerAIStepEnd@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   -2127257079
      */
     MCVAPI enum EventResult onPlayerAIStepEnd(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerAction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4PlayerActionType@@AEBVBlockPos@@H@Z
+     * @hash   1920449694
      */
     MCVAPI enum EventResult onPlayerAction(class Player &, enum PlayerActionType, class BlockPos const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerAttackedActor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
+     * @hash   1780714613
      */
     MCVAPI enum EventResult onPlayerAttackedActor(class Player &, class Actor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerAuthInputApplied@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   -1071671563
      */
     MCVAPI enum EventResult onPlayerAuthInputApplied(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerAuthInputReceived@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   -1162778035
      */
     MCVAPI enum EventResult onPlayerAuthInputReceived(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerAwardAchievement@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
+     * @hash   -57619194
      */
     MCVAPI enum EventResult onPlayerAwardAchievement(class Player &, enum MinecraftEventing::AchievementIds);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerCaravanChanged@PlayerEventListener@@UEAA?AW4EventResult@@AEBVActor@@H@Z
+     * @hash   986556380
      */
     MCVAPI enum EventResult onPlayerCaravanChanged(class Actor const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerCraftedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@_N22HHH22AEBV?$vector@FV?$allocator@F@std@@@std@@@Z
+     * @hash   -594517383
      */
     MCVAPI enum EventResult onPlayerCraftedItem(class Player &, class ItemInstance const &, bool, bool, bool, int, int, int, bool, bool, std::vector<short> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerCreated@PlayerEventListener@@UEAA?AW4EventResult@@AEAVLocalPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z
+     * @hash   -777801497
      */
     MCVAPI enum EventResult onPlayerCreated(class LocalPlayer &, std::string const &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@HHH@Z
+     * @hash   180360627
      */
     MCVAPI enum EventResult onPlayerDestroyedBlock(class Player &, int, int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerDestroyedBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockLegacy@@@Z
+     * @hash   -1898592809
      */
     MCVAPI enum EventResult onPlayerDestroyedBlock(class Player &, class BlockLegacy const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerEnchantedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemStack@@AEBVItemEnchants@@@Z
+     * @hash   1958928741
      */
     MCVAPI enum EventResult onPlayerEnchantedItem(class Player &, class ItemStack const &, class ItemEnchants const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerEquippedArmor@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
+     * @hash   -876203393
      */
     MCVAPI enum EventResult onPlayerEquippedArmor(class Player &, class ItemDescriptor const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerInput@PlayerEventListener@@UEAA?AW4EventResult@@AEAUIPlayerMovementProxy@@AEAVMoveInputHandler@@@Z
+     * @hash   -1851935436
      */
     MCVAPI enum EventResult onPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerItemEquipped@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@H@Z
+     * @hash   457119108
      */
     MCVAPI enum EventResult onPlayerItemEquipped(class Player &, class ItemInstance const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerItemPlaceInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z
+     * @hash   -181145673
      */
     MCVAPI enum EventResult onPlayerItemPlaceInteraction(class Player &, class ItemInstance const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerItemUseInteraction@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemInstance@@@Z
+     * @hash   -1723980809
      */
     MCVAPI enum EventResult onPlayerItemUseInteraction(class Player &, class ItemInstance const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerMove@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   1573510463
      */
     MCVAPI enum EventResult onPlayerMove(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerMovementAnomaly@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
+     * @hash   -1846417162
      */
     MCVAPI enum EventResult onPlayerMovementAnomaly(class Player &, class Vec3 const &, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerMovementCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVVec3@@MM@Z
+     * @hash   -472515204
      */
     MCVAPI enum EventResult onPlayerMovementCorrected(class Player &, class Vec3 const &, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerMovementRewindCorrected@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_K@Z
+     * @hash   110704643
      */
     MCVAPI enum EventResult onPlayerMovementRewindCorrected(class Player &, unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerNamedItem@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVItemDescriptor@@@Z
+     * @hash   2005825611
      */
     MCVAPI enum EventResult onPlayerNamedItem(class Player &, class ItemDescriptor const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerOnGround@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   1838112586
      */
     MCVAPI enum EventResult onPlayerOnGround(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerPiglinBarter@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   -1059440849
      */
     MCVAPI enum EventResult onPlayerPiglinBarter(class Player &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerPortalBuilt@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   684098850
      */
     MCVAPI enum EventResult onPlayerPortalBuilt(class Player &, class AutomaticID<class Dimension, int>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerPortalUsed@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$AutomaticID@VDimension@@H@@1@Z
+     * @hash   1765804559
      */
     MCVAPI enum EventResult onPlayerPortalUsed(class Player &, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerSaved@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   562961609
      */
     MCVAPI enum EventResult onPlayerSaved(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerSlide@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   693746335
      */
     MCVAPI enum EventResult onPlayerSlide(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerStartRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVActor@@@Z
+     * @hash   53685310
      */
     MCVAPI enum EventResult onPlayerStartRiding(class Player &, class Actor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerStopRiding@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@_N11@Z
+     * @hash   134822611
      */
     MCVAPI enum EventResult onPlayerStopRiding(class Player &, bool, bool, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerTargetBlockHit@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
+     * @hash   1473192246
      */
     MCVAPI enum EventResult onPlayerTargetBlockHit(class Player &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerTeleported@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   -1471781754
      */
     MCVAPI enum EventResult onPlayerTeleported(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerTick@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@@Z
+     * @hash   -1079542413
      */
     MCVAPI enum EventResult onPlayerTick(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerTurn@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEAVVec2@@@Z
+     * @hash   1345935811
      */
     MCVAPI enum EventResult onPlayerTurn(class Player &, class Vec2 &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerWaxOnWaxOff@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@H@Z
+     * @hash   836303501
      */
     MCVAPI enum EventResult onPlayerWaxOnWaxOff(class Player &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onStartDestroyBlock@PlayerEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@AEAE@Z
+     * @hash   -816141461
      */
     MCVAPI enum EventResult onStartDestroyBlock(class Player &, class BlockPos const &, unsigned char &);
 #endif

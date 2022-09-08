@@ -31,64 +31,67 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -566237355
      */
     virtual ~EndermanTakeBlockGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@EndermanTakeBlockGoal@@UEAA_NXZ
+     * @hash   1864966697
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   518983733
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@EndermanTakeBlockGoal@@UEAAXXZ
+     * @hash   -1915679795
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@EndermanTakeBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1368854489
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?getRandomNearbyBlockPos@EndermanTakeBlockGoal@@MEBA?AVBlockPos@@AEBVVec3@@@Z
+     * @hash   514801399
      */
     virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERMANTAKEBLOCKGOAL
-#endif
     /**
      * @symbol ??0EndermanTakeBlockGoal@@QEAA@AEAVEnderMan@@@Z
+     * @hash   1249877670
      */
     MCAPI EndermanTakeBlockGoal(class EnderMan &);
 

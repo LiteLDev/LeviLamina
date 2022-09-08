@@ -25,23 +25,26 @@ public:
     struct PropertyValues& operator=(struct PropertyValues const &) = delete;
     PropertyValues() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROPERTYVALUES
-#endif
     /**
      * @symbol ??0PropertyValues@@QEAA@AEBU0@@Z
+     * @hash   -863416705
      */
     MCAPI PropertyValues(struct PropertyValues const &);
     /**
      * @symbol ??4PropertyValues@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   711365842
      */
     MCAPI struct PropertyValues & operator=(struct PropertyValues &&);
     /**
      * @symbol ?resize@PropertyValues@@QEAAX_K000@Z
+     * @hash   -1111907639
      */
     MCAPI void resize(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
     /**
      * @symbol ??1PropertyValues@@QEAA@XZ
+     * @hash   -657821007
      */
     MCAPI ~PropertyValues();
 

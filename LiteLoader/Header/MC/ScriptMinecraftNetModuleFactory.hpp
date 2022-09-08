@@ -32,25 +32,33 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1218933135
      */
     virtual ~ScriptMinecraftNetModuleFactory();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMINECRAFTNETMODULEFACTORY
-#endif
     /**
      * @symbol ??0ScriptMinecraftNetModuleFactory@@QEAA@V?$NonOwnerPointer@VScheduler@@@Bedrock@@@Z
+     * @hash   1659655987
      */
     MCAPI ScriptMinecraftNetModuleFactory(class Bedrock::NonOwnerPointer<class Scheduler>);
     /**
      * @symbol ?getModuleUUIDAsString@ScriptMinecraftNetModuleFactory@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   148091648
      */
     MCAPI static std::string getModuleUUIDAsString();
 
 //private:
 
 private:
-MCAPI static char const * ModuleName;
-MCAPI static class mce::UUID const ModuleUUID;
+    /**
+     * @symbol ?ModuleName@ScriptMinecraftNetModuleFactory@@0PEBDEB
+     * @hash   986869263
+     */
+    MCAPI static char const * ModuleName;
+    /**
+     * @symbol ?ModuleUUID@ScriptMinecraftNetModuleFactory@@0VUUID@mce@@B
+     * @hash   1375377670
+     */
+    MCAPI static class mce::UUID const ModuleUUID;
 
 };

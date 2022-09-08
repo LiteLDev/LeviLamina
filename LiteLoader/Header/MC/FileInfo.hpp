@@ -27,15 +27,16 @@ public:
     FileInfo(struct FileInfo const &) = delete;
     FileInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEINFO
-#endif
     /**
      * @symbol ??0FileInfo@@QEAA@VPath@Core@@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   431207663
      */
     MCAPI FileInfo(class Core::Path, int, std::string);
     /**
      * @symbol ??1FileInfo@@QEAA@XZ
+     * @hash   535390676
      */
     MCAPI ~FileInfo();
 

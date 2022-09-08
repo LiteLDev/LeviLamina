@@ -1,31 +1,20 @@
-#pragma once
-////////////////////////////////////////////////////////////////////////
-//  Event System - Make it easier to subscribe game events
-//
-//  [Examples]
-//
-//  Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {        //Common situation - Const parameter "ev"
-//      ev.mPlayer->sendText("hello world~");
-//      return true;
-//  });
-//
-//  Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters - Reference parameter "ev"
-//      ev.mMessage = "[Plugin Modified] " + ev.mMessage;
-//      return true;
-//  });
-//
-//  auto listener = Event::PlayerPickupItemEvent::subscribe([](const Event::PlayerPickupItemEvent& ev) {
-//      if(ev.mPlayer->getName() == "Jack")
-//          return false;                           //Prevent events to be done - return false
-//      else
-//          return true;
-//  });
-//  ......
-//  ......
-//  listener.remove();                  //Remove this event listener
-//
-////////////////////////////////////////////////////////////////////////
+/*
+MIT License
 
+Copyright (c) 2022 LiteLDev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+*/
+
+#pragma once
 
 #include "Global.h"
 #include "LoggerAPI.h"
@@ -56,6 +45,66 @@ class ArmorStand;
 class Objective;
 struct ScoreboardId;
 
+/**
+ * \~chinese
+ * @brief 事件系统。
+ *
+ * @par 示例程序：
+ * @code
+ * // 大多数情况下，使用常参数回调。
+ * Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {
+ *     ev.mPlayer->sendText("hello world~");
+ *     return true;
+ * });
+ * 
+ * // 若需要修改事件参数，使用引用参数回调。
+ * Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {
+ *     ev.mMessage = "[Plugin Modified] " + ev.mMessage;
+ *     return true;
+ * });
+ * 
+ * auto listener = Event::PlayerPickupItemEvent::subscribe([](const Event::PlayerPickupItemEvent& ev) {
+ *     if (ev.mPlayer->getName() == "Jack")
+ *         // 返回 `false` 以阻止事件发生。
+ *         return false;
+ *     else
+ *         return true;
+ * });
+ * 
+ * // 事件监听器可以被移除。
+ * listener.remove();
+ * @endcode
+ *
+ *
+ * \~english
+ * @brief The event system.
+ *
+ * @par Example:
+ * @code
+ * // In most cases, use the callback with constant parameters.
+ * Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {
+ *     ev.mPlayer->sendText("hello world~");
+ *     return true;
+ * });
+ * 
+ * // If you would like to modify the parameters, use the callback with reference parameters.
+ * Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {
+ *     ev.mMessage = "[Plugin Modified] " + ev.mMessage;
+ *     return true;
+ * });
+ * 
+ * auto listener = Event::PlayerPickupItemEvent::subscribe([](const Event::PlayerPickupItemEvent& ev) {
+ *     if (ev.mPlayer->getName() == "Jack")
+ *         // Return false to suppress the event.
+ *         return false;
+ *     else
+ *         return true;
+ * });
+ * 
+ * // The event listener can be removed.
+ * listener.remove();
+ * @endcode
+ */
 namespace Event {
 ///////////////////////////// Impl /////////////////////////////
 
@@ -73,6 +122,18 @@ public:
     LIAPI static bool callToPlugin(std::string pluginName, EVENT& ev);
 };
 
+/**
+ * \~chinese
+ * @brief 事件监听器。
+ * 
+ * @tparam EVENT 监听的事件
+ * 
+ * 
+ * \~english
+ * @brief Event listener.
+ * 
+ * @tparam EVENT The event listening to
+ */
 template <typename EVENT>
 class EventListener {
 private:
@@ -84,6 +145,15 @@ public:
     : listenerId(id) {
     }
 
+    /**
+     * \~chinese
+     * @brief 停止监听事件，移除事件监听器。
+     * 
+     * 
+     * \~english
+     * @brief Stop listening to the event and remove the event listener.
+     * 
+     */
     void remove() {
         if (!deleted) {
             deleted = true;
@@ -95,11 +165,39 @@ public:
 template <typename EVENT>
 class EventTemplate {
 public:
+    /**
+     * \~chinese
+     * @brief 以常参数回调模式监听事件。
+     * 
+     * @param callback 当事件触发时调用的函数
+     * @return 事件监听器
+     * 
+     * 
+     * \~english
+     * @brief Subscribes to an event with constant parameters.
+     * 
+     * @param callback A function that executes when the event fires
+     * @return The event listener
+     */
     static EventListener<EVENT> subscribe(std::function<bool(EVENT)> callback) {
         auto plugin = LL::getPlugin(GetCurrentModule());
         return EventListener<EVENT>(EventManager<EVENT>::addEventListener(plugin ? plugin->name : "", callback));
     }
 
+    /**
+     * \~chinese
+     * @brief 以引用回调模式监听事件。
+     * 
+     * @param callback 当事件触发时调用的函数
+     * @return 事件监听器
+     * 
+     * 
+     * \~english
+     * @brief Subscribes to an event with reference parameters.
+     * 
+     * @param callback A function that executes when the event fires
+     * @return The event listener
+     */
     static EventListener<EVENT> subscribe_ref(std::function<bool(EVENT&)> callback) {
         auto plugin = LL::getPlugin(GetCurrentModule());
         return EventListener<EVENT>(EventManager<EVENT>::addEventListenerRef(plugin ? plugin->name : "", callback));
@@ -108,6 +206,19 @@ public:
     static void unsubscribe(const EventListener<EVENT>& listener) {
         listener.remove();
     }
+
+    /**
+     * \~chinese
+     * @brief 检查是否存在监听本事件的事件监听器。
+     * 
+     * @return 若存在则为真；否则为假
+     * 
+     * 
+     * \~english
+     * @brief Check if this event is being listened to
+     * 
+     * @return True if this event is being listened to; otherwise false
+     */
     static bool hasListener() {
         return EventManager<EVENT>::hasListener();
     }
@@ -115,6 +226,7 @@ public:
     bool call() {
         return EventManager<EVENT>::call(*(EVENT*)this);
     }
+    
     bool callToPlugin(std::string pluginName) {
         return EventManager<EVENT>::callToPlugin(pluginName, *(EVENT*)this);
     }
@@ -138,8 +250,26 @@ public:
     string mXUID;
 };
 
+/**
+ * \~chinese
+ * @brief 当玩家加入游戏时触发的事件。
+ * 
+ * @note 此事件无法被拦截。
+ * 
+ * \~english
+ * @brief An event that fires as players join the game.
+ * 
+ * @note This event cannot be suppressed.
+ */
 class PlayerJoinEvent : public EventTemplate<PlayerJoinEvent> {
 public:
+    /**
+     * \~chinese
+     * @brief 刚加入游戏的玩家
+     * 
+     * \~english
+     * @brief The player who has just joined the game
+     */
     Player* mPlayer;
 };
 
@@ -227,9 +357,41 @@ public:
     BlockInstance mBlockInstance;
 };
 
+/**
+ * \~chinese
+ * @brief 当玩家死亡时触发的事件。
+ * 
+ * 
+ * @note 此事件无法被拦截。
+ * 
+ * 
+ * \~english
+ * @brief An event that fires as players die.
+ * 
+ * @note This event cannot be suppressed.
+ */
 class PlayerDieEvent : public EventTemplate<PlayerDieEvent> {
 public:
+    /**
+     * \~chinese
+     * @brief 死亡的玩家
+     * 
+     * 
+     * \~english
+     * @brief The dead player
+     * 
+     */
     Player* mPlayer;
+
+    /**
+     * \~chinese
+     * @brief 导致玩家死亡的伤害来源
+     * 
+     * 
+     * \~english
+     * @brief The damage source causing the player death
+     * 
+     */
     ActorDamageSource* mDamageSource;
 };
 
@@ -585,6 +747,18 @@ public:
 class PostInitEvent : public EventTemplate<PostInitEvent> {
 };
 
+/**
+ * \~chinese
+ * @brief 当服务器启动完成时触发的事件。
+ * 
+ * @note 此事件不可被拦截。
+ * 
+ * 
+ * \~english
+ * @brief An event that fires as the server has started.
+ * 
+ * @note This event cannot be suppressed.
+ */
 class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {
 };
 
@@ -620,9 +794,9 @@ public:
         Reload
     };
     enum class PluginType {
-        SingleFile,             // like .js / .lua
-        PluginPackage,          // like .llplugin
-        UncompressedPackage     // like plugins/nodejs/ABC
+        SingleFile,         // like .js / .lua
+        PluginPackage,      // like .llplugin
+        UncompressedPackage // like plugins/nodejs/ABC
     };
 
     Operation operation;

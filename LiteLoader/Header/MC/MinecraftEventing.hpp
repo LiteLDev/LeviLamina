@@ -43,1522 +43,1559 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTEVENTING
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addCrashTelemetryToBatch@MinecraftEventing@@UEAAXV?$shared_ptr@VSessionInfo@Bedrock@@@std@@@Z
+     * @hash   787609338
      */
     MCVAPI void addCrashTelemetryToBatch(class std::shared_ptr<class Bedrock::SessionInfo>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addListener@MinecraftEventing@@UEAAXV?$unique_ptr@VIEventListener@Events@Social@@U?$default_delete@VIEventListener@Events@Social@@@std@@@std@@@Z
+     * @hash   -32114362
      */
     MCVAPI void addListener(std::unique_ptr<class Social::Events::IEventListener>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fileEventCloudWorldPullFailed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
+     * @hash   -861905491
      */
     MCVAPI void fileEventCloudWorldPullFailed(std::string const &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireChatUsedEvent@MinecraftEventing@@UEAAXI_N@Z
+     * @hash   -1292472333
      */
     MCVAPI void fireChatUsedEvent(unsigned int, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireClassroomSettingUpdated@MinecraftEventing@@UEAAXW4ClassroomSetting@@W4SettingsScreenMode@@@Z
+     * @hash   283766389
      */
     MCVAPI void fireClassroomSettingUpdated(enum ClassroomSetting, enum SettingsScreenMode);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireClubsEngagementEvent@MinecraftEventing@@UEAAXW4ClubsEngagementAction@IMinecraftEventing@@W4ClubsEngagementTargetType@3@PEBDURealmId@Realms@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -731588516
      */
     MCVAPI void fireClubsEngagementEvent(enum IMinecraftEventing::ClubsEngagementAction, enum IMinecraftEventing::ClubsEngagementTargetType, char const *, struct Realms::RealmId, std::string);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireClubsOpenFeedScreenEvent@MinecraftEventing@@UEAAXW4ClubsFeedScreenSource@IMinecraftEventing@@URealmId@Realms@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   376256089
      */
     MCVAPI void fireClubsOpenFeedScreenEvent(enum IMinecraftEventing::ClubsFeedScreenSource, struct Realms::RealmId, std::string);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireCodeCommandButtonPressed@MinecraftEventing@@UEAAXXZ
+     * @hash   -639459910
      */
     MCVAPI void fireCodeCommandButtonPressed();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireCommunitySIFTProcessEvent@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4TextProcessingEventOrigin@@G_NNDDAEBVValue@Json@@@Z
+     * @hash   -1537890902
      */
     MCVAPI void fireCommunitySIFTProcessEvent(std::string, enum TextProcessingEventOrigin, unsigned short, bool, double, char, char, class Json::Value const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireCourseButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   268747249
      */
     MCVAPI void fireCourseButtonPressed(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireCurrentInputUpdated@MinecraftEventing@@UEAAXAEBVIClientInstance@@@Z
+     * @hash   -975489510
      */
     MCVAPI void fireCurrentInputUpdated(class IClientInstance const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireDBStorageError@MinecraftEventing@@UEAAXAEBULevelStorageEventingContext@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1220180093
      */
     MCVAPI void fireDBStorageError(struct LevelStorageEventingContext const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireDayOneExperienceStateChanged@MinecraftEventing@@UEAAXW4DayOneExperienceState@IMinecraftEventing@@V?$optional@I@std@@V?$optional@_K@5@@Z
+     * @hash   -337627952
      */
     MCVAPI void fireDayOneExperienceStateChanged(enum IMinecraftEventing::DayOneExperienceState, class std::optional<unsigned int>, class std::optional<unsigned __int64>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEduServiceRequestFailed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00V?$buffer_span@U?$pair@V?$basic_string_span@$$CBD$0?0@gsl@@V12@@std@@@@@Z
+     * @hash   -765227372
      */
     MCVAPI void fireEduServiceRequestFailed(std::string const &, std::string const &, std::string const &, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventAchievementReceived@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   -911035426
      */
     MCVAPI void fireEventAchievementReceived(std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventActorValueValidationFailed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBD@Z
+     * @hash   1948907675
      */
     MCVAPI void fireEventActorValueValidationFailed(std::string const &, char const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventAndroidHelpRequest@MinecraftEventing@@UEAAXXZ
+     * @hash   -803404523
      */
     MCVAPI void fireEventAndroidHelpRequest();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventAndroidScopedStorageDebug@MinecraftEventing@@UEAAX_K@Z
+     * @hash   -1736182161
      */
     MCVAPI void fireEventAndroidScopedStorageDebug(unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventAppInitFileOpenStats@MinecraftEventing@@UEAAXAEBUFileCounters@Profile@Core@@0@Z
+     * @hash   694577758
      */
     MCVAPI void fireEventAppInitFileOpenStats(struct Core::Profile::FileCounters const &, struct Core::Profile::FileCounters const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventAppPaused@MinecraftEventing@@UEAAXXZ
+     * @hash   -721823987
      */
     MCVAPI void fireEventAppPaused();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventAppUnpaused@MinecraftEventing@@UEAAXXZ
+     * @hash   963396134
      */
     MCVAPI void fireEventAppUnpaused();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventArmorStandItemEquipped@MinecraftEventing@@UEAAXAEBVArmorStand@@AEBVItemDescriptor@@@Z
+     * @hash   589767476
      */
     MCVAPI void fireEventArmorStandItemEquipped(class ArmorStand const &, class ItemDescriptor const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventAssertFailed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   1858142249
      */
     MCVAPI void fireEventAssertFailed(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventBlockPlacedByCommand@MinecraftEventing@@UEAAXAEBVBlock@@H@Z
+     * @hash   1280231011
      */
     MCVAPI void fireEventBlockPlacedByCommand(class Block const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventBlockTypeRegistryChecksumMismatch@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_K10@Z
+     * @hash   2025194707
      */
     MCVAPI void fireEventBlockTypeRegistryChecksumMismatch(std::string const &, unsigned __int64 const &, unsigned __int64 const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventBoardTextUpdated@MinecraftEventing@@UEAAXAEAVChalkboardBlockActor@@@Z
+     * @hash   -566059917
      */
     MCVAPI void fireEventBoardTextUpdated(class ChalkboardBlockActor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventBundleSubOfferClicked@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N0@Z
+     * @hash   -1962947049
      */
     MCVAPI void fireEventBundleSubOfferClicked(int, int, std::string const &, std::string const &, bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventButtonPressed@MinecraftEventing@@UEBAXV?$basic_string_span@$$CBD$0?0@gsl@@V?$buffer_span@U?$pair@V?$basic_string_span@$$CBD$0?0@gsl@@V12@@std@@@@@Z
+     * @hash   -2047251886
      */
     MCVAPI void fireEventButtonPressed(class gsl::basic_string_span<char const, -1>, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCameraUsed@MinecraftEventing@@UEAAX_N@Z
+     * @hash   336524516
      */
     MCVAPI void fireEventCameraUsed(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventChatSettingsUpdated@MinecraftEventing@@UEBAXPEBVPlayer@@AEBV?$vector@VProperty@Events@Social@@V?$allocator@VProperty@Events@Social@@@std@@@std@@@Z
+     * @hash   -1244014064
      */
     MCVAPI void fireEventChatSettingsUpdated(class Player const *, std::vector<class Social::Events::Property> const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventChildAccountSignIn@MinecraftEventing@@UEAAX_N0@Z
+     * @hash   1532366481
      */
     MCVAPI void fireEventChildAccountSignIn(bool, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventChunkChanged@MinecraftEventing@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   1012158990
      */
     MCVAPI void fireEventChunkChanged(class LevelChunk &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventChunkLoaded@MinecraftEventing@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   253039595
      */
     MCVAPI void fireEventChunkLoaded(class LevelChunk &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventChunkUnloaded@MinecraftEventing@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   -1522236558
      */
     MCVAPI void fireEventChunkUnloaded(class LevelChunk &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventClientLeftGameDueToUnrecoverableError@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   139609548
      */
     MCVAPI void fireEventClientLeftGameDueToUnrecoverableError(std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCodeBuilderClosed@MinecraftEventing@@UEBAXXZ
+     * @hash   -619291945
      */
     MCVAPI void fireEventCodeBuilderClosed() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCodeBuilderLog@MinecraftEventing@@UEBAXAEBUTelemetryCommonProperties@Webview@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV45@@Z
+     * @hash   -1830683298
      */
     MCVAPI void fireEventCodeBuilderLog(struct Webview::TelemetryCommonProperties const &, std::string const &, std::string &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCodeBuilderRuntimeAction@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2077865707
      */
     MCVAPI void fireEventCodeBuilderRuntimeAction(std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCodeBuilderScoreChanged@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   1414665504
      */
     MCVAPI void fireEventCodeBuilderScoreChanged(std::string const &, int) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCompoundCreatorCreated@MinecraftEventing@@UEAAXHH@Z
+     * @hash   790047405
      */
     MCVAPI void fireEventCompoundCreatorCreated(int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventConnectedStorageError@MinecraftEventing@@UEAAXPEBDAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_J@Z
+     * @hash   1407912184
      */
     MCVAPI void fireEventConnectedStorageError(char const *, std::string const &, __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventConnectedStorageResult@MinecraftEventing@@UEAAXW4ConnectedStorageEventType@@_NIV?$optional@I@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@3_J222@Z
+     * @hash   468723906
      */
     MCVAPI void fireEventConnectedStorageResult(enum ConnectedStorageEventType, bool, unsigned int, class std::optional<unsigned int>, std::string const &, std::string const &, __int64, class std::optional<unsigned int>, class std::optional<unsigned int>, class std::optional<unsigned int>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventConnectionFailed@MinecraftEventing@@UEAAXW4ConnectionFailureReason@IConnectionEventing@@@Z
+     * @hash   511969818
      */
     MCVAPI void fireEventConnectionFailed(enum IConnectionEventing::ConnectionFailureReason);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventContentLogsInWorldSession@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@II@Z
+     * @hash   -2140527171
      */
     MCVAPI void fireEventContentLogsInWorldSession(std::string const &, unsigned int, unsigned int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventContentShared@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEBW4ShareMode@IMinecraftEventing@@@Z
+     * @hash   584114702
      */
     MCVAPI void fireEventContentShared(std::string const &, std::string const &, enum IMinecraftEventing::ShareMode const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventControlRemappedByPlayer@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4RawInputType@@H@Z
+     * @hash   -1894808615
      */
     MCVAPI void fireEventControlRemappedByPlayer(std::string const &, enum RawInputType, int) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCopyWorldEducationEnabled@MinecraftEventing@@UEAAXXZ
+     * @hash   -122019964
      */
     MCVAPI void fireEventCopyWorldEducationEnabled();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventCrashSystemFailedToInit@MinecraftEventing@@UEAAXXZ
+     * @hash   -1740845428
      */
     MCVAPI void fireEventCrashSystemFailedToInit();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventDefaultGameTypeChanged@MinecraftEventing@@UEAAXW4GameType@@0@Z
+     * @hash   -1354509643
      */
     MCVAPI void fireEventDefaultGameTypeChanged(enum GameType, enum GameType);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventDeviceAccountFailure@MinecraftEventing@@UEAAXW4SignInStage@IMinecraftEventing@@W4DeviceAccountFailurePhase@3@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -558710129
      */
     MCVAPI void fireEventDeviceAccountFailure(enum IMinecraftEventing::SignInStage, enum IMinecraftEventing::DeviceAccountFailurePhase, unsigned int, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventDeviceAccountSuccess@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1051577538
      */
     MCVAPI void fireEventDeviceAccountSuccess(bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventDeviceIdManagerFailOnIdentityGained@MinecraftEventing@@UEAAXXZ
+     * @hash   -1142187293
      */
     MCVAPI void fireEventDeviceIdManagerFailOnIdentityGained();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventDeviceLost@MinecraftEventing@@UEAAXXZ
+     * @hash   -798436304
      */
     MCVAPI void fireEventDeviceLost();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventDifficultySet@MinecraftEventing@@UEAAXW4Difficulty@@0@Z
+     * @hash   1117677757
      */
     MCVAPI void fireEventDifficultySet(enum Difficulty, enum Difficulty);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventDiskStatus@MinecraftEventing@@UEAAXW4DiskStatus@@W4LevelStorageState@Core@@_K@Z
+     * @hash   -1062924195
      */
     MCVAPI void fireEventDiskStatus(enum DiskStatus, enum Core::LevelStorageState, unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEduContentVerificationFailed@MinecraftEventing@@UEBAXXZ
+     * @hash   -1018263808
      */
     MCVAPI void fireEventEduContentVerificationFailed() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEduDemoConversion@MinecraftEventing@@UEAAXW4ADRole@@W4LastClickedSource@@@Z
+     * @hash   -1626630400
      */
     MCVAPI void fireEventEduDemoConversion(enum ADRole, enum LastClickedSource);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEduOptionSet@MinecraftEventing@@UEBAXAEBVOption@@@Z
+     * @hash   -1422021842
      */
     MCVAPI void fireEventEduOptionSet(class Option const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEduResources@MinecraftEventing@@UEBAXXZ
+     * @hash   1913624244
      */
     MCVAPI void fireEventEduResources() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEduServiceStatus@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HV?$buffer_span@U?$pair@V?$basic_string_span@$$CBD$0?0@gsl@@V12@@std@@@@@Z
+     * @hash   752801135
      */
     MCVAPI void fireEventEduServiceStatus(std::string const &, std::string const &, int, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEduiOSPurchaseTransaction@MinecraftEventing@@UEBAXAEBW4TransactionStatus@@@Z
+     * @hash   1954521475
      */
     MCVAPI void fireEventEduiOSPurchaseTransaction(enum TransactionStatus const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventElementConstructorUsed@MinecraftEventing@@UEAAXHHW4ElementConstructorUseType@IMinecraftEventing@@@Z
+     * @hash   -979665702
      */
     MCVAPI void fireEventElementConstructorUsed(int, int, enum IMinecraftEventing::ElementConstructorUseType);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEntitlementListInfo@MinecraftEventing@@UEAAXAEAV?$vector@VContentIdentity@@V?$allocator@VContentIdentity@@@std@@@std@@_N@Z
+     * @hash   146547647
      */
     MCVAPI void fireEventEntitlementListInfo(std::vector<class ContentIdentity> &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventEntitySpawned@MinecraftEventing@@UEAAXPEAVPlayer@@HI@Z
+     * @hash   -1928745387
      */
     MCVAPI void fireEventEntitySpawned(class Player *, int, unsigned int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1204312960
      */
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2129841976
      */
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -122182112
      */
     MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventGoogleAccountHoldWarning@MinecraftEventing@@UEAAX_N@Z
+     * @hash   1792554413
      */
     MCVAPI void fireEventGoogleAccountHoldWarning(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventHardwareInfo@MinecraftEventing@@UEAAXXZ
+     * @hash   -326013492
      */
     MCVAPI void fireEventHardwareInfo();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventHowToPlayTopicChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InputMode@@@Z
+     * @hash   788925939
      */
     MCVAPI void fireEventHowToPlayTopicChanged(std::string const &, enum InputMode);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventIAPPurchaseAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVOffer@@W4PurchasePath@@@Z
+     * @hash   -109869336
      */
     MCVAPI void fireEventIAPPurchaseAttempt(std::string const &, std::string const &, class Offer &, enum PurchasePath);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventIAPPurchaseResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVOffer@@W4PurchaseResult@IMinecraftEventing@@W4PurchasePath@@@Z
+     * @hash   228404237
      */
     MCVAPI void fireEventIAPPurchaseResolved(std::string const &, std::string const &, class Offer &, enum IMinecraftEventing::PurchaseResult, enum PurchasePath);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventIAPRedeemAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4PurchasePath@@@Z
+     * @hash   2131945649
      */
     MCVAPI void fireEventIAPRedeemAttempt(std::string const &, std::string const &, std::string const &, enum PurchasePath);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventIAPRedeemResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4PurchaseResult@IMinecraftEventing@@W4PurchasePath@@@Z
+     * @hash   1455267022
      */
     MCVAPI void fireEventIAPRedeemResolved(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::PurchaseResult, enum PurchasePath);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventJoinByCode@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -288329672
      */
     MCVAPI void fireEventJoinByCode(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventJoinCanceled@MinecraftEventing@@UEAAXW4LoadingState@@@Z
+     * @hash   608954438
      */
     MCVAPI void fireEventJoinCanceled(enum LoadingState);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventLabTableCreated@MinecraftEventing@@UEAAXHHH@Z
+     * @hash   -933581878
      */
     MCVAPI void fireEventLabTableCreated(int, int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventLevelChunkPerformanceData@MinecraftEventing@@UEAAX_N@Z
+     * @hash   1386153437
      */
     MCVAPI void fireEventLevelChunkPerformanceData(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventLevelDatLoadFailed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
+     * @hash   -1933700736
      */
     MCVAPI void fireEventLevelDatLoadFailed(std::string const &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventLevelDataOverride@MinecraftEventing@@UEBAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   1535064506
      */
     MCVAPI void fireEventLevelDataOverride(class gsl::basic_string_span<char const, -1>) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventLevelDestruct@MinecraftEventing@@UEAAXXZ
+     * @hash   -512244632
      */
     MCVAPI void fireEventLevelDestruct();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventLicenseCheck@MinecraftEventing@@UEAAX_NAEAUExtraLicenseData@@@Z
+     * @hash   -153801177
      */
     MCVAPI void fireEventLicenseCheck(bool, struct ExtraLicenseData &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventLockedItemGiven@MinecraftEventing@@UEAAXXZ
+     * @hash   831583166
      */
     MCVAPI void fireEventLockedItemGiven();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventMessageServiceImpression@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
+     * @hash   496484797
      */
     MCVAPI void fireEventMessageServiceImpression(std::string const &, std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventMultiplayerConnectionStateChanged@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1III1@Z
+     * @hash   -1259218763
      */
     MCVAPI void fireEventMultiplayerConnectionStateChanged(bool, std::string const &, std::string const &, unsigned int, unsigned int, unsigned int, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventMultiplayerSessionUpdate@MinecraftEventing@@UEAAXV?$not_null@PEBVLevel@@@gsl@@PEBVPlayer@@@Z
+     * @hash   -1086356334
      */
     MCVAPI void fireEventMultiplayerSessionUpdate(class gsl::not_null<class Level const *>, class Player const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventNewContentCheckCompleted@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   952511394
      */
     MCVAPI void fireEventNewContentCheckCompleted(std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventNpcPropertiesUpdated@MinecraftEventing@@UEAAXAEAVActor@@_N@Z
+     * @hash   -1380026078
      */
     MCVAPI void fireEventNpcPropertiesUpdated(class Actor &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOSKTextTruncation@MinecraftEventing@@UEAAXI@Z
+     * @hash   -1274843521
      */
     MCVAPI void fireEventOSKTextTruncation(unsigned int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOfferRated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHN@Z
+     * @hash   -1003915860
      */
     MCVAPI void fireEventOfferRated(std::string const &, int, int, int, double);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOnAppResume@MinecraftEventing@@UEAAXV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@std@@@Z
+     * @hash   -2034976654
      */
     MCVAPI void fireEventOnAppResume(std::vector<struct std::pair<std::string, float>>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOnAppStart@MinecraftEventing@@UEAAXV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@std@@@Z
+     * @hash   740519513
      */
     MCVAPI void fireEventOnAppStart(std::vector<struct std::pair<std::string, float>>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOnAppSuspend@MinecraftEventing@@UEAAXV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@std@@_N@Z
+     * @hash   -1878340515
      */
     MCVAPI void fireEventOnAppSuspend(std::vector<struct std::pair<std::string, float>>, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOnDeviceLost@MinecraftEventing@@UEAAXV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@std@@@Z
+     * @hash   129059072
      */
     MCVAPI void fireEventOnDeviceLost(std::vector<struct std::pair<std::string, float>>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOnSuccessfulClientLogin@MinecraftEventing@@UEAAXPEBVLevel@@@Z
+     * @hash   -822445970
      */
     MCVAPI void fireEventOnSuccessfulClientLogin(class Level const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOneDSPlayerReportPayload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1290820034
      */
     MCVAPI void fireEventOneDSPlayerReportPayload(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOptionsUpdated@MinecraftEventing@@UEAAXAEAVOptions@@W4InputMode@@_N@Z
+     * @hash   -192370486
      */
     MCVAPI void fireEventOptionsUpdated(class Options &, enum InputMode, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventOreUIError@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2000433633
      */
     MCVAPI void fireEventOreUIError(unsigned int const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPackHashChanged@MinecraftEventing@@UEAAXAEBVPackManifest@@@Z
+     * @hash   1599131358
      */
     MCVAPI void fireEventPackHashChanged(class PackManifest const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPackPlayed@MinecraftEventing@@UEAAXAEBVPackInstance@@I@Z
+     * @hash   282437769
      */
     MCVAPI void fireEventPackPlayed(class PackInstance const &, unsigned int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPackUpgradeAttempt@MinecraftEventing@@UEAAXAEBVPackManifest@@AEBVPackReport@@@Z
+     * @hash   -2137562197
      */
     MCVAPI void fireEventPackUpgradeAttempt(class PackManifest const &, class PackReport const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPacketViolationDetected@MinecraftEventing@@UEAAXAEBUExtendedStreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
+     * @hash   -1521643496
      */
     MCVAPI void fireEventPacketViolationDetected(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPerformanceContext@MinecraftEventing@@UEAAXAEBVPerfContextTrackerReport@@@Z
+     * @hash   -1936274826
      */
     MCVAPI void fireEventPerformanceContext(class PerfContextTrackerReport const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPerformanceMetrics@MinecraftEventing@@UEAAXAEBUProfilerLiteTelemetry@@_N@Z
+     * @hash   -1849339557
      */
     MCVAPI void fireEventPerformanceMetrics(struct ProfilerLiteTelemetry const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaAvatarUpdated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEBV?$vector@_NV?$allocator@_N@std@@@3@2_N3000311@Z
+     * @hash   837380463
      */
     MCVAPI void fireEventPersonaAvatarUpdated(std::string const &, std::vector<std::string> const &, std::vector<bool> const &, std::vector<bool> const &, bool, bool, std::string const &, std::string const &, std::string const &, bool, std::vector<std::string> const &, std::vector<std::string> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaAvatarsListed@MinecraftEventing@@UEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   363519862
      */
     MCVAPI void fireEventPersonaAvatarsListed(std::vector<std::string> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaCategoryInformation@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2125350532
      */
     MCVAPI void fireEventPersonaCategoryInformation(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaCreationFailed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N100@Z
+     * @hash   1032983102
      */
     MCVAPI void fireEventPersonaCreationFailed(std::string const &, std::string const &, bool, bool, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaEmotePlayed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
+     * @hash   -1603601526
      */
     MCVAPI void fireEventPersonaEmotePlayed(std::string const &, bool, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaGeneralError@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   193747730
      */
     MCVAPI void fireEventPersonaGeneralError(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaInitalizationEvent@MinecraftEventing@@UEAAXIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   1597906015
      */
     MCVAPI void fireEventPersonaInitalizationEvent(unsigned int, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaItemPreviewed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00IIW4PromotionType@IMinecraftEventing@@_N00NW4StoreType@5@@Z
+     * @hash   -1926222753
      */
     MCVAPI void fireEventPersonaItemPreviewed(std::string const &, std::string const &, std::string const &, unsigned int, unsigned int, enum IMinecraftEventing::PromotionType, bool, std::string const &, std::string const &, double, enum IMinecraftEventing::StoreType);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaLoadingPieces@MinecraftEventing@@UEAAXIN@Z
+     * @hash   49572878
      */
     MCVAPI void fireEventPersonaLoadingPieces(unsigned int, double);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaSkinChanged@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
+     * @hash   -1832522469
      */
     MCVAPI void fireEventPersonaSkinChanged(std::string const &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaStillLoading@MinecraftEventing@@UEAAX_N0000000@Z
+     * @hash   -1584885418
      */
     MCVAPI void fireEventPersonaStillLoading(bool, bool, bool, bool, bool, bool, bool, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaUserLoadedActive@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z
+     * @hash   140209788
      */
     MCVAPI void fireEventPersonaUserLoadedActive(std::string const &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPersonaXForgeResponses@MinecraftEventing@@UEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@H@Z
+     * @hash   -1338023611
      */
     MCVAPI void fireEventPersonaXForgeResponses(std::vector<std::string> const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayIntegrityCheck@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
+     * @hash   -217179142
      */
     MCVAPI void fireEventPlayIntegrityCheck(int, std::string const &, std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerBanned@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -240861849
      */
     MCVAPI void fireEventPlayerBanned(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerBounced@MinecraftEventing@@UEAAXPEAVPlayer@@AEBVBlock@@H@Z
+     * @hash   2135056153
      */
     MCVAPI void fireEventPlayerBounced(class Player *, class Block const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerDamaged@MinecraftEventing@@UEAAXPEAVPlayer@@W4ActorDamageCause@@@Z
+     * @hash   611044802
      */
     MCVAPI void fireEventPlayerDamaged(class Player *, enum ActorDamageCause);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerJoinWorld@MinecraftEventing@@UEAAXAEBIW4SubClientId@@W4PlayerJoinWorldAttemptState@IConnectionEventing@@H@Z
+     * @hash   -301710557
      */
     MCVAPI void fireEventPlayerJoinWorld(unsigned int const &, enum SubClientId, enum IConnectionEventing::PlayerJoinWorldAttemptState, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerKicked@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   1932317340
      */
     MCVAPI void fireEventPlayerKicked(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerMessageChat@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   1876788012
      */
     MCVAPI void fireEventPlayerMessageChat(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerMessageMe@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   -1220952276
      */
     MCVAPI void fireEventPlayerMessageMe(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerMessageSay@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   -1025081893
      */
     MCVAPI void fireEventPlayerMessageSay(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerMessageTell@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   88948455
      */
     MCVAPI void fireEventPlayerMessageTell(std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerMessageTitle@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   737789620
      */
     MCVAPI void fireEventPlayerMessageTitle(std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerReportSent@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+     * @hash   -428068759
      */
     MCVAPI void fireEventPlayerReportSent(bool, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z
+     * @hash   -230798927
      */
     MCVAPI void fireEventPlayerTravelled(class Player *, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPopupClosed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -799473259
      */
     MCVAPI void fireEventPopupClosed(std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPopupFiredEdu@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4ActiveDirectoryAction@@@Z
+     * @hash   -1524906101
      */
     MCVAPI void fireEventPopupFiredEdu(std::string const &, std::string const &, std::string const &, std::string const &, enum ActiveDirectoryAction);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPortfolioExported@MinecraftEventing@@UEAAXHH@Z
+     * @hash   1617574921
      */
     MCVAPI void fireEventPortfolioExported(int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventProgressionsSet@MinecraftEventing@@UEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   -642621105
      */
     MCVAPI void fireEventProgressionsSet(std::vector<std::string> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPromotionNotificationClicked@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1987875699
      */
     MCVAPI void fireEventPromotionNotificationClicked(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPurchaseAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4StoreType@IMinecraftEventing@@W4PurchasePath@@@Z
+     * @hash   194184861
      */
     MCVAPI void fireEventPurchaseAttempt(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::StoreType, enum PurchasePath);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPurchaseFailureDetails@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   883640748
      */
     MCVAPI void fireEventPurchaseFailureDetails(int, std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPurchaseGameAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   1689016036
      */
     MCVAPI void fireEventPurchaseGameAttempt(std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPurchaseResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4StoreType@IMinecraftEventing@@W4PurchaseResult@5@W4PurchasePath@@@Z
+     * @hash   -346236542
      */
     MCVAPI void fireEventPurchaseResolved(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::StoreType, enum IMinecraftEventing::PurchaseResult, enum PurchasePath);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPushNotificationOpened@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   -894724508
      */
     MCVAPI void fireEventPushNotificationOpened(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPushNotificationPermission@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -184769910
      */
     MCVAPI void fireEventPushNotificationPermission(bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventPushNotificationReceived@MinecraftEventing@@UEAAXAEBVPushNotificationMessage@@@Z
+     * @hash   1694112027
      */
     MCVAPI void fireEventPushNotificationReceived(class PushNotificationMessage const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmDownload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HHH@Z
+     * @hash   1711779498
      */
     MCVAPI void fireEventRealmDownload(std::string const &, std::string const &, int, int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmMemberlistCleared@MinecraftEventing@@UEAAXAEBURealmId@Realms@@AEBH@Z
+     * @hash   -380737481
      */
     MCVAPI void fireEventRealmMemberlistCleared(struct Realms::RealmId const &, int const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmShared@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4ShareMode@IMinecraftEventing@@AEBURealmId@Realms@@@Z
+     * @hash   1417129566
      */
     MCVAPI void fireEventRealmShared(std::string const &, enum IMinecraftEventing::ShareMode const &, struct Realms::RealmId const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmUpload@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0HHH_N@Z
+     * @hash   1897824379
      */
     MCVAPI void fireEventRealmUpload(std::string const &, std::string const &, int, int, int, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmUrlGenerated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBURealmId@Realms@@@Z
+     * @hash   1438301791
      */
     MCVAPI void fireEventRealmUrlGenerated(std::string const &, struct Realms::RealmId const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmsSubscriptionPurchaseFailed@MinecraftEventing@@UEAAXAEBUProductSku@@W4RealmsPurchaseIntent@@W4RealmsPurchaseFailureReason@@@Z
+     * @hash   339880441
      */
     MCVAPI void fireEventRealmsSubscriptionPurchaseFailed(struct ProductSku const &, enum RealmsPurchaseIntent, enum RealmsPurchaseFailureReason);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmsSubscriptionPurchaseStarted@MinecraftEventing@@UEAAXAEBUProductSku@@W4RealmsPurchaseIntent@@@Z
+     * @hash   100146768
      */
     MCVAPI void fireEventRealmsSubscriptionPurchaseStarted(struct ProductSku const &, enum RealmsPurchaseIntent);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRealmsSubscriptionPurchaseSucceeded@MinecraftEventing@@UEAAXAEBUProductSku@@W4RealmsPurchaseIntent@@@Z
+     * @hash   173736960
      */
     MCVAPI void fireEventRealmsSubscriptionPurchaseSucceeded(struct ProductSku const &, enum RealmsPurchaseIntent);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventReducerBlockEntered@MinecraftEventing@@UEAAXAEBVItemDescriptor@@@Z
+     * @hash   813136875
      */
     MCVAPI void fireEventReducerBlockEntered(class ItemDescriptor const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRenderingSizeChanged@MinecraftEventing@@UEAAXXZ
+     * @hash   -1468820931
      */
     MCVAPI void fireEventRenderingSizeChanged();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRespawn@MinecraftEventing@@UEAAXAEAVPlayer@@H@Z
+     * @hash   -1029353854
      */
     MCVAPI void fireEventRespawn(class Player &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventRespondedToAcceptContent@MinecraftEventing@@UEAAXAEBUPacksInfoData@@_N@Z
+     * @hash   1467551354
      */
     MCVAPI void fireEventRespondedToAcceptContent(struct PacksInfoData const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventScreenChanged@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
+     * @hash   -387174269
      */
     MCVAPI void fireEventScreenChanged(unsigned int const &, std::string const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventScreenLoaded@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NNN@Z
+     * @hash   1898161695
      */
     MCVAPI void fireEventScreenLoaded(unsigned int const &, std::string const &, double, double, double);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventScriptDebuggerConnect@MinecraftEventing@@UEAAX_N@Z
+     * @hash   -1341970384
      */
     MCVAPI void fireEventScriptDebuggerConnect(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventScriptDebuggerListen@MinecraftEventing@@UEAAX_N@Z
+     * @hash   93183779
      */
     MCVAPI void fireEventScriptDebuggerListen(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventScriptPluginDiscovery@MinecraftEventing@@UEAAXAEBVScriptPluginResult@@_N@Z
+     * @hash   456268966
      */
     MCVAPI void fireEventScriptPluginDiscovery(class ScriptPluginResult const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventScriptPluginRun@MinecraftEventing@@UEAAXAEBVScriptPluginResult@@V?$duration@_JU?$ratio@$00$0PECEA@@std@@@chrono@std@@_N@Z
+     * @hash   1476781064
      */
     MCVAPI void fireEventScriptPluginRun(class ScriptPluginResult const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000>>, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSearchCatalogRequest@MinecraftEventing@@UEAAXAEBVSearchRequestTelemetry@@@Z
+     * @hash   -1751123381
      */
     MCVAPI void fireEventSearchCatalogRequest(class SearchRequestTelemetry const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSearchItemSelected@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHH@Z
+     * @hash   313334287
      */
     MCVAPI void fireEventSearchItemSelected(int, int, std::string const &, int, int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventServerDrivenLayoutImagesLoaded@MinecraftEventing@@UEAAXAEAVRequestTelemetry@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_KHHHAEAV?$vector@GV?$allocator@G@std@@@4@@Z
+     * @hash   1329114376
      */
     MCVAPI void fireEventServerDrivenLayoutImagesLoaded(class RequestTelemetry &, std::string, int, unsigned __int64, int, int, int, std::vector<unsigned short> &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventServerDrivenLayoutPageLoaded@MinecraftEventing@@UEAAXAEAVRequestTelemetry@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHHHH@Z
+     * @hash   290786720
      */
     MCVAPI void fireEventServerDrivenLayoutPageLoaded(class RequestTelemetry &, std::string, int, int, int, int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventServerRespawnSearchTime@MinecraftEventing@@UEAAXAEAVPlayer@@AEBVPlayerRespawnTelemetryData@@@Z
+     * @hash   1265773578
      */
     MCVAPI void fireEventServerRespawnSearchTime(class Player &, class PlayerRespawnTelemetryData const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventServerShutdownDueToError@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   90189060
      */
     MCVAPI void fireEventServerShutdownDueToError(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSetMultiplayerCorrelationId@MinecraftEventing@@UEAAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z
+     * @hash   -1823647476
      */
     MCVAPI void fireEventSetMultiplayerCorrelationId(class Player *, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSetValidForAchievements@MinecraftEventing@@UEAAXPEAVPlayer@@_N@Z
+     * @hash   19972350
      */
     MCVAPI void fireEventSetValidForAchievements(class Player *, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSideBySideValidationError@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000_N11@Z
+     * @hash   -502914684
      */
     MCVAPI void fireEventSideBySideValidationError(std::string const &, std::string const &, std::string const &, std::string const &, bool, bool, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSidebarNavigation@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1H_N22@Z
+     * @hash   -1870452476
      */
     MCVAPI void fireEventSidebarNavigation(unsigned int const &, std::string const &, std::string const &, int, bool, bool, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSidebarVerboseToggled@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V23@_N@Z
+     * @hash   1107881405
      */
     MCVAPI void fireEventSidebarVerboseToggled(unsigned int const &, std::string const &, std::string, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSignInEdu@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ADRole@@W4EduSignInStage@IMinecraftEventing@@00AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@3@@Z
+     * @hash   -375451242
      */
     MCVAPI void fireEventSignInEdu(std::string const &, enum ADRole, enum IMinecraftEventing::EduSignInStage, std::string const &, std::string const &, std::vector<struct std::pair<std::string, std::string>> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSignInToIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4SignInTrigger@3@_NW4SignInStage@3@W4SignInResult@Social@@UPlayerIDs@7@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   325687882
      */
     MCVAPI void fireEventSignInToIdentity(enum IMinecraftEventing::SignInAccountType, enum IMinecraftEventing::SignInTrigger, bool, enum IMinecraftEventing::SignInStage, enum Social::SignInResult, struct Social::PlayerIDs, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSignOutOfIdentity@MinecraftEventing@@UEAAXW4SignInAccountType@IMinecraftEventing@@W4SignInTrigger@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2@Z
+     * @hash   -240811885
      */
     MCVAPI void fireEventSignOutOfIdentity(enum IMinecraftEventing::SignInAccountType, enum IMinecraftEventing::SignInTrigger, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventSplitScreenUpdated@MinecraftEventing@@UEAAXAEBVIClientInstance@@@Z
+     * @hash   888328853
      */
     MCVAPI void fireEventSplitScreenUpdated(class IClientInstance const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStackLoaded@MinecraftEventing@@UEAAXAEBUStackStats@@@Z
+     * @hash   -1829465236
      */
     MCVAPI void fireEventStackLoaded(struct StackStats const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStartClient@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   334445361
      */
     MCVAPI void fireEventStartClient(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStartWorld@MinecraftEventing@@UEAAXW4NetworkType@IMinecraftEventing@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MultiplayerServiceIdentifier@Social@@@Z
+     * @hash   -694813537
      */
     MCVAPI void fireEventStartWorld(enum IMinecraftEventing::NetworkType, std::string const &, enum Social::MultiplayerServiceIdentifier);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStorage@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   244602022
      */
     MCVAPI void fireEventStorage(int, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStorageAreaFull@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@UDirectoryEntry@Bedrock@@V?$allocator@UDirectoryEntry@Bedrock@@@std@@@3@@Z
+     * @hash   -494507728
      */
     MCVAPI void fireEventStorageAreaFull(std::string const &, std::vector<struct Bedrock::DirectoryEntry> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStorageReport@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   776151791
      */
     MCVAPI void fireEventStorageReport(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStoreDiscoveryRequestResponse@MinecraftEventing@@UEAAXGH@Z
+     * @hash   340085553
      */
     MCVAPI void fireEventStoreDiscoveryRequestResponse(unsigned short, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStoreLocalizationBinaryFetchResponse@MinecraftEventing@@UEAAXGI@Z
+     * @hash   -1989531261
      */
     MCVAPI void fireEventStoreLocalizationBinaryFetchResponse(unsigned short, unsigned int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStoreOfferClicked@MinecraftEventing@@UEAAXHHHHHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NH0@Z
+     * @hash   -151607729
      */
     MCVAPI void fireEventStoreOfferClicked(int, int, int, int, int, int, std::string const &, std::string const &, bool, int, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStorePlayFabRequestResponse@MinecraftEventing@@UEAAXG@Z
+     * @hash   433528993
      */
     MCVAPI void fireEventStorePlayFabRequestResponse(unsigned short);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStorePromotionNotification@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1404740983
      */
     MCVAPI void fireEventStorePromotionNotification(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStoreSearch@MinecraftEventing@@UEAAXAEBUTelemetryData@storeSearch@@@Z
+     * @hash   568425637
      */
     MCVAPI void fireEventStoreSearch(struct storeSearch::TelemetryData const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStoreSessionResponse@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@GH@Z
+     * @hash   770358402
      */
     MCVAPI void fireEventStoreSessionResponse(std::string const &, unsigned short, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventStructureExport@MinecraftEventing@@UEBAXAEBUglTFExportData@@W4ExportOutcome@IMinecraftEventing@@W4ExportStage@4@@Z
+     * @hash   -1669169401
      */
     MCVAPI void fireEventStructureExport(struct glTFExportData const &, enum IMinecraftEventing::ExportOutcome, enum IMinecraftEventing::ExportStage) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTagButtonPressed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   -335091685
      */
     MCVAPI void fireEventTagButtonPressed(std::string const &, bool) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTelemetryHttpError@MinecraftEventing@@UEAAXW4TelemetrySystemType@Events@Social@@VStatus@Http@Bedrock@@@Z
+     * @hash   356381386
      */
     MCVAPI void fireEventTelemetryHttpError(enum Social::Events::TelemetrySystemType, class Bedrock::Http::Status);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTreatmentPackApplied@MinecraftEventing@@UEAAXAEBVPackManifest@@@Z
+     * @hash   -1431562009
      */
     MCVAPI void fireEventTreatmentPackApplied(class PackManifest const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTreatmentPackDownloaded@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1001432952
      */
     MCVAPI void fireEventTreatmentPackDownloaded(std::string);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTreatmentPackRemoved@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -846705719
      */
     MCVAPI void fireEventTreatmentPackRemoved(std::string);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTreatmentsCleared@MinecraftEventing@@UEAAXXZ
+     * @hash   1691765439
      */
     MCVAPI void fireEventTreatmentsCleared();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTreatmentsSet@MinecraftEventing@@UEAAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   -1351941918
      */
     MCVAPI void fireEventTreatmentsSet(std::vector<std::string> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventTrialDeviceIdCorrelation@MinecraftEventing@@UEAAX_JAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@01@Z
+     * @hash   -1458893121
      */
     MCVAPI void fireEventTrialDeviceIdCorrelation(__int64, std::string const &, __int64, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventUgcDownloadCompleted@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH10@Z
+     * @hash   -481737713
      */
     MCVAPI void fireEventUgcDownloadCompleted(std::string const &, bool, int, bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventUnknownBlockReceived@MinecraftEventing@@UEAAXAEBUNewBlockID@@G@Z
+     * @hash   842182593
      */
     MCVAPI void fireEventUnknownBlockReceived(struct NewBlockID const &, unsigned short);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventUserListUpdated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00_N@Z
+     * @hash   -859672320
      */
     MCVAPI void fireEventUserListUpdated(std::string const &, std::string const &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventUwpToGdkMigrationComplete@MinecraftEventing@@UEAAXAEBUDeviceIdContext@Bedrock@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -983507698
      */
     MCVAPI void fireEventUwpToGdkMigrationComplete(struct Bedrock::DeviceIdContext const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventVRModeChanged@MinecraftEventing@@UEAAX_N@Z
+     * @hash   185224841
      */
     MCVAPI void fireEventVRModeChanged(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventVideoPlayed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   -879986020
      */
     MCVAPI void fireEventVideoPlayed(std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWebviewDownload@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUWebviewDownloadInfo@@@Z
+     * @hash   1767001375
      */
     MCVAPI void fireEventWebviewDownload(std::string const &, struct WebviewDownloadInfo const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWindowsPlatformStoreGetLicense@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NH@Z
+     * @hash   1859983508
      */
     MCVAPI void fireEventWindowsPlatformStoreGetLicense(std::string, double, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldCorruptionCausedWorldShutdown@MinecraftEventing@@UEAAXAEBULevelStorageEventingContext@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$optional@_N@4@@Z
+     * @hash   2063926610
      */
     MCVAPI void fireEventWorldCorruptionCausedWorldShutdown(struct LevelStorageEventingContext const &, std::string const &, class std::optional<bool>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldExported@MinecraftEventing@@UEAAX_J_K@Z
+     * @hash   1580613310
      */
     MCVAPI void fireEventWorldExported(__int64, unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldFilesListed@MinecraftEventing@@UEAAX_K000@Z
+     * @hash   2085164736
      */
     MCVAPI void fireEventWorldFilesListed(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldGenerated@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVLevelSettings@@_N@Z
+     * @hash   -832198813
      */
     MCVAPI void fireEventWorldGenerated(std::string const &, class LevelSettings const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldHistoryPackSourceMissingDuringUpgrade@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   358530027
      */
     MCVAPI void fireEventWorldHistoryPackSourceMissingDuringUpgrade(std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldImported@MinecraftEventing@@UEAAX_J_K@Z
+     * @hash   1426577871
      */
     MCVAPI void fireEventWorldImported(__int64, unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldLoaded@MinecraftEventing@@UEAAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1_N@Z
+     * @hash   -1182204382
      */
     MCVAPI void fireEventWorldLoaded(class Player *, std::string const &, std::string const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireEventWorldLoadedClassroomCustomization@MinecraftEventing@@UEAAXW4WorldClassroomCustomization@IMinecraftEventing@@V?$buffer_span@U?$pair@V?$basic_string_span@$$CBD$0?0@gsl@@V12@@std@@@@@Z
+     * @hash   919388177
      */
     MCVAPI void fireEventWorldLoadedClassroomCustomization(enum IMinecraftEventing::WorldClassroomCustomization, class buffer_span<struct std::pair<class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>>>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireExternalUriLaunched@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2108791316
      */
     MCVAPI void fireExternalUriLaunched(std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireGlobalResourcePackCrashRecovery@MinecraftEventing@@UEAAXAEAVPackInstance@@VUUID@mce@@H@Z
+     * @hash   -1207187298
      */
     MCVAPI void fireGlobalResourcePackCrashRecovery(class PackInstance &, class mce::UUID, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireIDESelected@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1840481434
      */
     MCVAPI void fireIDESelected(std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireInAppCodeBuilderActivated@MinecraftEventing@@UEBAXW4OpenCodeMethod@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   514981530
      */
     MCVAPI void fireInAppCodeBuilderActivated(enum OpenCodeMethod, std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireInAppCodeBuilderDismissed@MinecraftEventing@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1439379640
      */
     MCVAPI void fireInAppCodeBuilderDismissed(std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireInviteStatusReceived@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   714500938
      */
     MCVAPI void fireInviteStatusReceived(std::string);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireInviteStatusSentImpl@MinecraftEventing@@UEAAXIV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   551368506
      */
     MCVAPI void fireInviteStatusSentImpl(unsigned int, std::vector<std::string>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireLessonActionTaken@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4EducationLessonAction@IMinecraftEventing@@H@Z
+     * @hash   586325518
      */
     MCVAPI void fireLessonActionTaken(std::string const &, std::string const &, std::string const &, enum IMinecraftEventing::EducationLessonAction, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireLessonCompleteDialogOpened@MinecraftEventing@@UEBAXW4LessonCompleteDialogEntryPoint@IMinecraftEventing@@@Z
+     * @hash   -1476775922
      */
     MCVAPI void fireLessonCompleteDialogOpened(enum IMinecraftEventing::LessonCompleteDialogEntryPoint) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireLessonProgressEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0000H@Z
+     * @hash   -746748364
      */
     MCVAPI void fireLessonProgressEvent(std::string const &, std::string const &, std::string const &, std::string const &, std::string const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireLibraryButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   831698271
      */
     MCVAPI void fireLibraryButtonPressed(std::string const &, std::string const &, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireMinecraftVersionInviteAccepted@MinecraftEventing@@UEAAX_N_K@Z
+     * @hash   1551126011
      */
     MCVAPI void fireMinecraftVersionInviteAccepted(bool, unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireMinecraftVersionLaunched@MinecraftEventing@@UEAAX_N@Z
+     * @hash   939318055
      */
     MCVAPI void fireMinecraftVersionLaunched(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?firePackSettingsEvent@MinecraftEventing@@UEAAXAEBVPackSettings@@AEBVPackManifest@@@Z
+     * @hash   -1762179746
      */
     MCVAPI void firePackSettingsEvent(class PackSettings const &, class PackManifest const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?firePerfTestEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00II0AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@3@@Z
+     * @hash   -1839791510
      */
     MCVAPI void firePerfTestEvent(std::string const &, std::string const &, std::string const &, unsigned int, unsigned int, std::string const &, std::vector<struct std::pair<std::string, float>> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?firePermissionsSetEvent@MinecraftEventing@@UEAAXW4PlayerPermissionLevel@@W4CommandPermissionLevel@@01@Z
+     * @hash   -1965757224
      */
     MCVAPI void firePermissionsSetEvent(enum PlayerPermissionLevel, enum CommandPermissionLevel, enum PlayerPermissionLevel, enum CommandPermissionLevel);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireQueryOfferResult@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
+     * @hash   1328892624
      */
     MCVAPI void fireQueryOfferResult(std::string const &, int, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireQuickPlayEvent@MinecraftEventing@@UEAAXXZ
+     * @hash   2046920385
      */
     MCVAPI void fireQuickPlayEvent();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireRealmConnectionEventGenericLambdaCalled@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@W4RealmConnectionLambda@3@W4RealmConnectionResult@3@@Z
+     * @hash   318770643
      */
     MCVAPI void fireRealmConnectionEventGenericLambdaCalled(enum IMinecraftEventing::RealmConnectionFlow, enum IMinecraftEventing::RealmConnectionLambda, enum IMinecraftEventing::RealmConnectionResult);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireRealmConnectionEventRealmAPIRequest@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@@Z
+     * @hash   456981936
      */
     MCVAPI void fireRealmConnectionEventRealmAPIRequest(enum IMinecraftEventing::RealmConnectionFlow);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireRealmConnectionEventRealmAPIResponse@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@H@Z
+     * @hash   -659580499
      */
     MCVAPI void fireRealmConnectionEventRealmAPIResponse(enum IMinecraftEventing::RealmConnectionFlow, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireRealmConnectionEventStart@MinecraftEventing@@UEAAXW4RealmConnectionFlow@IMinecraftEventing@@@Z
+     * @hash   -1155056734
      */
     MCVAPI void fireRealmConnectionEventStart(enum IMinecraftEventing::RealmConnectionFlow);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireScreenLoadTimeUpdateEvent@MinecraftEventing@@UEAAXAEBIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@3@1@Z
+     * @hash   -2056273270
      */
     MCVAPI void fireScreenLoadTimeUpdateEvent(unsigned int const &, std::string const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireServerConnectionAttemptEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N0@Z
+     * @hash   1324337398
      */
     MCVAPI void fireServerConnectionAttemptEvent(std::string const &, bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireServerConnectionEvent@MinecraftEventing@@UEAAXW4ServerConnectionOutcome@IConnectionEventing@@INAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -22701436
      */
     MCVAPI void fireServerConnectionEvent(enum IConnectionEventing::ServerConnectionOutcome, unsigned int, double, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireServerShutdown@MinecraftEventing@@UEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1287143245
      */
     MCVAPI void fireServerShutdown(std::string);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireServerStarted@MinecraftEventing@@UEAAXW4ServerType@IMinecraftEventing@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -892197291
      */
     MCVAPI void fireServerStarted(enum IMinecraftEventing::ServerType, std::string);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireShareButtonPressed@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4EduShareUriType@@W4EduShareMethodType@@_N@Z
+     * @hash   134970758
      */
     MCVAPI void fireShareButtonPressed(std::string const &, enum EduShareUriType, enum EduShareMethodType, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireStorageMigrationEvent@MinecraftEventing@@UEAAX_NW4StorageMigrationType@StorageMigration@Bedrock@@HHV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@7@@Z
+     * @hash   -1661347520
      */
     MCVAPI void fireStorageMigrationEvent(bool, enum Bedrock::StorageMigration::StorageMigrationType, int, int, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireStructureBlockAction@MinecraftEventing@@UEAAXW4StructureBlockActionType@IMinecraftEventing@@AEBVStructureEditorData@@PEBVStructureTelemetryClientData@@@Z
+     * @hash   -1137422095
      */
     MCVAPI void fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, class StructureTelemetryClientData const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireStructureBlockRedstoneActivated@MinecraftEventing@@UEAAXW4StructureBlockActionType@IMinecraftEventing@@AEBVStructureEditorData@@PEBVStructureTelemetryClientData@@@Z
+     * @hash   -1301260758
      */
     MCVAPI void fireStructureBlockRedstoneActivated(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, class StructureTelemetryClientData const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireTextToSpeechToggled@MinecraftEventing@@UEAAX_N0@Z
+     * @hash   -1149411254
      */
     MCVAPI void fireTextToSpeechToggled(bool, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireUserGeneratedUriLaunchFailed@MinecraftEventing@@UEBAXW4UserGeneratedUriSource@@W4ValidationStatus@ResourceUri@Util@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1738027945
      */
     MCVAPI void fireUserGeneratedUriLaunchFailed(enum UserGeneratedUriSource, enum Util::ResourceUri::ValidationStatus, std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireUserGeneratedUriLaunched@MinecraftEventing@@UEBAXW4UserGeneratedUriSource@@@Z
+     * @hash   2037996014
      */
     MCVAPI void fireUserGeneratedUriLaunched(enum UserGeneratedUriSource) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireWorldConversionAttemptEvent@MinecraftEventing@@UEAAXAEBUWorldConversionReport@Legacy@@@Z
+     * @hash   1502275104
      */
     MCVAPI void fireWorldConversionAttemptEvent(struct Legacy::WorldConversionReport const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireWorldConversionInitiatedEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -127699623
      */
     MCVAPI void fireWorldConversionInitiatedEvent(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireWorldRecoveryTelemetryEvent@MinecraftEventing@@UEAAXAEBUWorldRecoveryTelemetryEvent@Bedrock@@@Z
+     * @hash   49661360
      */
     MCVAPI void fireWorldRecoveryTelemetryEvent(struct Bedrock::WorldRecoveryTelemetryEvent const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fireWorldUpgradedToCnCPart2@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVExperiments@@1VLevelSeed64@@M@Z
+     * @hash   -719060789
      */
     MCVAPI void fireWorldUpgradedToCnCPart2(bool, std::string const &, class Experiments const &, std::string const &, class LevelSeed64, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?flagEventDeepLink@MinecraftEventing@@UEAAXXZ
+     * @hash   -1411399482
      */
     MCVAPI void flagEventDeepLink();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?flagEventPlayerGameTypeDefault@MinecraftEventing@@UEAAX_N@Z
+     * @hash   -1073557788
      */
     MCVAPI void flagEventPlayerGameTypeDefault(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?forceSendEvents@MinecraftEventing@@UEAAXXZ
+     * @hash   1177364030
      */
     MCVAPI void forceSendEvents();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getAchievementsAlwaysEnabled@MinecraftEventing@@EEAA_NXZ
+     * @hash   -282755122
      */
     MCVAPI bool getAchievementsAlwaysEnabled();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getCrashTelemetryProcessor@MinecraftEventing@@UEAA?AV?$not_null@PEAVCrashTelemetryProcessor@Bedrock@@@gsl@@XZ
+     * @hash   847447404
      */
     MCVAPI class gsl::not_null<class Bedrock::CrashTelemetryProcessor *> getCrashTelemetryProcessor();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getEventManager@MinecraftEventing@@EEBAAEAVEventManager@Events@Social@@XZ
+     * @hash   1366008541
      */
     MCVAPI class Social::Events::EventManager & getEventManager() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getPlayerSessionId@MinecraftEventing@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1086082062
      */
     MCVAPI std::string const & getPlayerSessionId();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getPrimaryLocalUserId@MinecraftEventing@@EEBAIXZ
+     * @hash   557487048
      */
     MCVAPI unsigned int getPrimaryLocalUserId() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getSessionId@MinecraftEventing@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1525556385
      */
     MCVAPI std::string getSessionId();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getShouldHaveAchievementsEnabled@MinecraftEventing@@EEAA_NXZ
+     * @hash   357376018
      */
     MCVAPI bool getShouldHaveAchievementsEnabled();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?init@MinecraftEventing@@UEAAXAEBV?$not_null@V?$NonOwnerPointer@VIUserManager@Social@@@Bedrock@@@gsl@@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
+     * @hash   -710052947
      */
     MCVAPI void init(class gsl::not_null<class Bedrock::NonOwnerPointer<class Social::IUserManager>> const &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?initDeviceAndSessionIds@MinecraftEventing@@UEAAXXZ
+     * @hash   -48779227
      */
     MCVAPI void initDeviceAndSessionIds();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?prepEventSearchCatalogRequest@MinecraftEventing@@UEAAXAEBVSearchRequestTelemetry@@@Z
+     * @hash   -1810539806
      */
     MCVAPI void prepEventSearchCatalogRequest(class SearchRequestTelemetry const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?propertiesAsJsonValue@MinecraftEventing@@UEBA?AVValue@Json@@XZ
+     * @hash   -1819132459
      */
     MCVAPI class Json::Value propertiesAsJsonValue() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?registerOptionsObserver@MinecraftEventing@@UEAAXV?$shared_ptr@VOptions@@@std@@@Z
+     * @hash   -426019157
      */
     MCVAPI void registerOptionsObserver(class std::shared_ptr<class Options>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?removeTestRunIdTag@MinecraftEventing@@UEAAXXZ
+     * @hash   -974516932
      */
     MCVAPI void removeTestRunIdTag();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?removeTestTelemetryTag@MinecraftEventing@@UEAAXXZ
+     * @hash   746755865
      */
     MCVAPI void removeTestTelemetryTag();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?requestEventDeferment@MinecraftEventing@@UEAA?AV?$shared_ptr@PEAX@std@@XZ
+     * @hash   -911777907
      */
     MCVAPI class std::shared_ptr<void *> requestEventDeferment();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?sendBatchedCrashTelemetry@MinecraftEventing@@UEAAXXZ
+     * @hash   -36852763
      */
     MCVAPI void sendBatchedCrashTelemetry();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?sendCrashStatusTelemetry@MinecraftEventing@@UEAAXAEBUCrashUploadStatus@Bedrock@@@Z
+     * @hash   1280677928
      */
     MCVAPI void sendCrashStatusTelemetry(struct Bedrock::CrashUploadStatus const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?sendCrashTelemetryNow@MinecraftEventing@@UEAAXV?$shared_ptr@VSessionInfo@Bedrock@@@std@@@Z
+     * @hash   -1481284742
      */
     MCVAPI void sendCrashTelemetryNow(class std::shared_ptr<class Bedrock::SessionInfo>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setShouldHaveAchievementsEnabled@MinecraftEventing@@EEAAX_N@Z
+     * @hash   833614952
      */
     MCVAPI void setShouldHaveAchievementsEnabled(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setTestRunIdTag@MinecraftEventing@@UEAAXPEBD@Z
+     * @hash   330948149
      */
     MCVAPI void setTestRunIdTag(char const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setTestTelemetryTag@MinecraftEventing@@UEAAXPEBD@Z
+     * @hash   716144312
      */
     MCVAPI void setTestTelemetryTag(char const *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?shutdown@MinecraftEventing@@UEAAXXZ
+     * @hash   -369852824
      */
     MCVAPI void shutdown();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stopDebugEventLoggingForAllListeners@MinecraftEventing@@UEAAXXZ
+     * @hash   -1805014845
      */
     MCVAPI void stopDebugEventLoggingForAllListeners();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tick@MinecraftEventing@@UEAAXXZ
+     * @hash   -826884593
      */
     MCVAPI void tick();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tryFireEventProgressLoadTimes@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@3@@Z
+     * @hash   487513271
      */
     MCVAPI void tryFireEventProgressLoadTimes(std::string const &, std::vector<struct std::pair<std::string, float>>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?updateEditionType@MinecraftEventing@@UEAAXXZ
+     * @hash   1478704497
      */
     MCVAPI void updateEditionType();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?updateIsLegacyPlayer@MinecraftEventing@@UEAAX_N@Z
+     * @hash   -1140814195
      */
     MCVAPI void updateIsLegacyPlayer(bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?updateIsTrial@MinecraftEventing@@UEBAX_N@Z
+     * @hash   706177910
      */
     MCVAPI void updateIsTrial(bool) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?updatePlayerUndergroundStatus@MinecraftEventing@@UEAAXPEAVPlayer@@_N@Z
+     * @hash   -381140970
      */
     MCVAPI void updatePlayerUndergroundStatus(class Player *, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?updatePrimaryLocalUserId@MinecraftEventing@@UEAAXAEBI@Z
+     * @hash   -958523813
      */
     MCVAPI void updatePrimaryLocalUserId(unsigned int const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1MinecraftEventing@@UEAA@XZ
+     * @hash   2105797960
      */
     MCVAPI ~MinecraftEventing();
 #endif
     /**
      * @symbol ??0MinecraftEventing@@QEAA@AEBVPath@Core@@@Z
+     * @hash   671292454
      */
     MCAPI MinecraftEventing(class Core::Path const &);
     /**
      * @symbol ?init@MinecraftEventing@@QEAAXAEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
+     * @hash   853913587
      */
     MCAPI void init(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     /**
      * @symbol ?initForDedicatedServer@MinecraftEventing@@QEAAXAEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@_N@Z
+     * @hash   -1912416340
      */
     MCAPI void initForDedicatedServer(class Bedrock::NonOwnerPointer<class AppPlatform> const &, bool);
     /**
      * @symbol ?fireEventAwardAchievement@MinecraftEventing@@SAXPEAVPlayer@@W4AchievementIds@1@@Z
+     * @hash   -2123290870
      */
     MCAPI static void fireEventAwardAchievement(class Player *, enum MinecraftEventing::AchievementIds);
     /**
      * @symbol ?fireEventBehaviorErrored@MinecraftEventing@@SAXPEAVPlayer@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -5399730
      */
     MCAPI static void fireEventBehaviorErrored(class Player *, std::string);
     /**
      * @symbol ?fireEventBehaviorFailed@MinecraftEventing@@SAXPEAVPlayer@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -821452300
      */
     MCAPI static void fireEventBehaviorFailed(class Player *, std::string);
     /**
      * @symbol ?fireEventBellBlockUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1140958886
      */
     MCAPI static void fireEventBellBlockUsed(class Player *, std::string const &);
     /**
      * @symbol ?fireEventBlockBroken@MinecraftEventing@@SAXPEAVPlayer@@AEBVBlock@@W4BlockPlacementMethod@1@H@Z
+     * @hash   -792118476
      */
     MCAPI static void fireEventBlockBroken(class Player *, class Block const &, enum MinecraftEventing::BlockPlacementMethod, int);
     /**
      * @symbol ?fireEventBlockFound@MinecraftEventing@@SAXPEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -1860918338
      */
     MCAPI static void fireEventBlockFound(class Player *, class BlockPos const &);
     /**
      * @symbol ?fireEventCampfireBlockUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIBlockInteractionType@1@@Z
+     * @hash   -483289675
      */
     MCAPI static void fireEventCampfireBlockUsed(class Player *, std::string const &, enum MinecraftEventing::POIBlockInteractionType);
     /**
      * @symbol ?fireEventCaravanChanged@MinecraftEventing@@SAXAEAVMob@@H@Z
+     * @hash   490630913
      */
     MCAPI static void fireEventCaravanChanged(class Mob &, int);
     /**
      * @symbol ?fireEventItemUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBVItemDescriptor@@W4ItemUseMethod@@@Z
+     * @hash   -1177745825
      */
     MCAPI static void fireEventItemUsed(class Player *, class ItemDescriptor const &, enum ItemUseMethod);
     /**
      * @symbol ?fireEventJukeboxUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBVItemDescriptor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1764590139
      */
     MCAPI static void fireEventJukeboxUsed(class Player *, class ItemDescriptor const &, std::string const &);
     /**
      * @symbol ?fireEventLecternBlockUsed@MinecraftEventing@@SAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4POIBlockInteractionType@1@@Z
+     * @hash   965122627
      */
     MCAPI static void fireEventLecternBlockUsed(class Player *, std::string const &, enum MinecraftEventing::POIBlockInteractionType);
     /**
      * @symbol ?fireEventMobEffectChanged@MinecraftEventing@@SAXAEAVMob@@AEBVMobEffectInstance@@W4ChangeType@1@@Z
+     * @hash   433841018
      */
     MCAPI static void fireEventMobEffectChanged(class Mob &, class MobEffectInstance const &, enum MinecraftEventing::ChangeType);
     /**
      * @symbol ?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z
+     * @hash   1696081600
      */
     MCAPI static void fireEventPlayerTeleported(class Player *, float, enum MinecraftEventing::TeleportationCause, int);
     /**
      * @symbol ?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z
+     * @hash   534141500
      */
     MCAPI static void fireEventPlayerTransform(class Player &);
     /**
      * @symbol ?fireEventSlashCommandExecuted@MinecraftEventing@@SAXPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH1@Z
+     * @hash   1322684743
      */
     MCAPI static void fireEventSlashCommandExecuted(class Player *, std::string const &, int, int, std::string const &);
 
 //private:
     /**
      * @symbol ?_fireStructureBlockAction@MinecraftEventing@@AEAAXW4StructureBlockActionType@IMinecraftEventing@@AEBVStructureEditorData@@_NPEBVStructureTelemetryClientData@@@Z
+     * @hash   632776667
      */
     MCAPI void _fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const &, bool, class StructureTelemetryClientData const *);
     /**
      * @symbol ?_generateWorldSessionId@MinecraftEventing@@AEAAXXZ
+     * @hash   1264442762
      */
     MCAPI void _generateWorldSessionId();
     /**
      * @symbol ?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z
+     * @hash   -1387651511
      */
     MCAPI void fireEventPlayerMessage(std::string const &, std::string const &, std::string const &, std::string const &);
 
 private:
-MCAPI static std::unique_ptr<class Social::Events::AchievementEventing> mAchievementEventing;
-MCAPI static class std::unordered_map<enum ItemAcquisitionMethod, enum MinecraftEventing::AcquisitionMethod, struct std::hash<enum ItemAcquisitionMethod>, struct std::equal_to<enum ItemAcquisitionMethod>, class std::allocator<struct std::pair<enum ItemAcquisitionMethod const, enum MinecraftEventing::AcquisitionMethod>>> const mAcquisitionMethodMap;
-MCAPI static class std::unordered_map<enum ItemUseMethod, enum MinecraftEventing::UseMethod, struct std::hash<enum ItemUseMethod>, struct std::equal_to<enum ItemUseMethod>, class std::allocator<struct std::pair<enum ItemUseMethod const, enum MinecraftEventing::UseMethod>>> const mUseMethodMap;
-MCAPI static class std::mutex sMutex;
+    /**
+     * @symbol ?mAchievementEventing@MinecraftEventing@@0V?$unique_ptr@VAchievementEventing@Events@Social@@U?$default_delete@VAchievementEventing@Events@Social@@@std@@@std@@A
+     * @hash   -1544213130
+     */
+    MCAPI static std::unique_ptr<class Social::Events::AchievementEventing> mAchievementEventing;
+    /**
+     * @symbol ?mAcquisitionMethodMap@MinecraftEventing@@0V?$unordered_map@W4ItemAcquisitionMethod@@W4AcquisitionMethod@MinecraftEventing@@U?$hash@W4ItemAcquisitionMethod@@@std@@U?$equal_to@W4ItemAcquisitionMethod@@@5@V?$allocator@U?$pair@$$CBW4ItemAcquisitionMethod@@W4AcquisitionMethod@MinecraftEventing@@@std@@@5@@std@@B
+     * @hash   1544829321
+     */
+    MCAPI static class std::unordered_map<enum ItemAcquisitionMethod, enum MinecraftEventing::AcquisitionMethod, struct std::hash<enum ItemAcquisitionMethod>, struct std::equal_to<enum ItemAcquisitionMethod>, class std::allocator<struct std::pair<enum ItemAcquisitionMethod const, enum MinecraftEventing::AcquisitionMethod>>> const mAcquisitionMethodMap;
+    /**
+     * @symbol ?mUseMethodMap@MinecraftEventing@@0V?$unordered_map@W4ItemUseMethod@@W4UseMethod@MinecraftEventing@@U?$hash@W4ItemUseMethod@@@std@@U?$equal_to@W4ItemUseMethod@@@5@V?$allocator@U?$pair@$$CBW4ItemUseMethod@@W4UseMethod@MinecraftEventing@@@std@@@5@@std@@B
+     * @hash   188548675
+     */
+    MCAPI static class std::unordered_map<enum ItemUseMethod, enum MinecraftEventing::UseMethod, struct std::hash<enum ItemUseMethod>, struct std::equal_to<enum ItemUseMethod>, class std::allocator<struct std::pair<enum ItemUseMethod const, enum MinecraftEventing::UseMethod>>> const mUseMethodMap;
+    /**
+     * @symbol ?sMutex@MinecraftEventing@@0Vmutex@std@@A
+     * @hash   1053517870
+     */
+    MCAPI static class std::mutex sMutex;
 
 };

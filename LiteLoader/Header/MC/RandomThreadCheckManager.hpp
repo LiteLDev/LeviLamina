@@ -31,47 +31,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   514231068
      */
     virtual ~RandomThreadCheckManager();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?onAppResumed@RandomThreadCheckManager@@UEAAXXZ
+     * @hash   -1296287478
      */
     virtual void onAppResumed();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMTHREADCHECKMANAGER
-#endif
 
 //private:
 
 private:
-MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
-MCAPI static class std::recursive_mutex mMutex;
+    /**
+     * @symbol ?mInstance@RandomThreadCheckManager@@0V?$unique_ptr@VRandomThreadCheckManager@@U?$default_delete@VRandomThreadCheckManager@@@std@@@std@@A
+     * @hash   -290392139
+     */
+    MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
+    /**
+     * @symbol ?mMutex@RandomThreadCheckManager@@0Vrecursive_mutex@std@@A
+     * @hash   -840463388
+     */
+    MCAPI static class std::recursive_mutex mMutex;
 
 };

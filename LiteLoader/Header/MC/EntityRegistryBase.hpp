@@ -30,28 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYREGISTRYBASE
-#endif
     /**
      * @symbol ??0EntityRegistryBase@@QEAA@AEAV?$basic_registry@VEntityId@@@entt@@@Z
+     * @hash   1760265351
      */
     MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId> &);
     /**
      * @symbol ?isValidEntity@EntityRegistryBase@@QEBA_NAEBVEntityContextBase@@@Z
+     * @hash   -1405771327
      */
     MCAPI bool isValidEntity(class EntityContextBase const &) const;
     /**
      * @symbol ??1EntityRegistryBase@@QEAA@XZ
+     * @hash   -105198709
      */
     MCAPI ~EntityRegistryBase();
 
 //protected:
     /**
      * @symbol ?_assertValidRegistry@EntityRegistryBase@@IEBAXAEBVEntityContextBase@@@Z
+     * @hash   -722292235
      */
     MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
 
 protected:
-MCAPI static struct std::atomic<unsigned int> mRegistryCount;
+    /**
+     * @symbol ?mRegistryCount@EntityRegistryBase@@1U?$atomic@I@std@@A
+     * @hash   1038602328
+     */
+    MCAPI static struct std::atomic<unsigned int> mRegistryCount;
 
 };

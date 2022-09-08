@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOSTABLEDEFINITION
-#endif
     /**
      * @symbol ?initialize@BoostableDefinition@@QEAAXAEAVEntityContext@@AEAVBoostableComponent@@@Z
+     * @hash   1424741253
      */
     MCAPI void initialize(class EntityContext &, class BoostableComponent &);
     /**
      * @symbol ?buildSchema@BoostableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBoostableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1488849262
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BoostableDefinition>> &);
 

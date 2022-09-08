@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYFRAMETRANSFORMDATA
-#endif
     /**
      * @symbol ??0KeyFrameTransformData@@QEAA@AEBV0@@Z
+     * @hash   1506135489
      */
     MCAPI KeyFrameTransformData(class KeyFrameTransformData const &);
     /**
      * @symbol ?addChannelTransform@KeyFrameTransformData@@QEAAXAEBVExpressionNode@@H@Z
+     * @hash   1888158077
      */
     MCAPI void addChannelTransform(class ExpressionNode const &, int);
     /**
      * @symbol ??8KeyFrameTransformData@@QEBA_NAEBV0@@Z
+     * @hash   -2098996513
      */
     MCAPI bool operator==(class KeyFrameTransformData const &) const;
 

@@ -31,63 +31,70 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1109389510
      */
     virtual ~RandomHoverGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@RandomHoverGoal@@UEAA_NXZ
+     * @hash   -1450071308
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RandomHoverGoal@@UEAA_NXZ
+     * @hash   -709224798
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@RandomHoverGoal@@UEAAXXZ
+     * @hash   -2135727587
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@RandomHoverGoal@@UEAAXXZ
+     * @hash   -1407844664
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RandomHoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1455818892
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMHOVERGOAL
-#endif
     /**
      * @symbol ??0RandomHoverGoal@@QEAA@AEAVMob@@MHMMMUIntRange@@@Z
+     * @hash   -330845299
      */
     MCAPI RandomHoverGoal(class Mob &, float, int, float, float, float, struct IntRange);
 
 //protected:
     /**
      * @symbol ?_computeNewTarget@RandomHoverGoal@@IEAA_NXZ
+     * @hash   -522060534
      */
     MCAPI bool _computeNewTarget();
     /**
      * @symbol ?_mobMeetsPreconditions@RandomHoverGoal@@IEBA_NXZ
+     * @hash   1472404272
      */
     MCAPI bool _mobMeetsPreconditions() const;
     /**
      * @symbol ?_moveToTarget@RandomHoverGoal@@IEAAXXZ
+     * @hash   -102882045
      */
     MCAPI void _moveToTarget();
 

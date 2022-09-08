@@ -30,29 +30,30 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   385149631
      */
     virtual ~AnvilContainerScreenValidator();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   2003240545
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isCraftingImplemented@AnvilContainerScreenValidator@@UEAA_NXZ
+     * @hash   779647326
      */
     virtual bool isCraftingImplemented();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getCraftResult@AnvilContainerScreenValidator@@UEAA?AUContainerValidationCraftResult@@AEBVContainerScreenContext@@AEAVContainerScreenValidation@@V?$unique_ptr@UContainerValidationCraftInputs@@U?$default_delete@UContainerValidationCraftInputs@@@std@@@std@@@Z
+     * @hash   705852304
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0AnvilContainerScreenValidator@@QEAA@XZ
+     * @hash   1016458685
      */
     MCAPI AnvilContainerScreenValidator();
 

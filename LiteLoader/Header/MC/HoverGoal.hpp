@@ -31,49 +31,53 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1543647043
      */
     virtual ~HoverGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@HoverGoal@@UEAA_NXZ
+     * @hash   -1302718799
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   517136691
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@HoverGoal@@UEAAXXZ
+     * @hash   729764282
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@HoverGoal@@UEAAXXZ
+     * @hash   1075644570
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@HoverGoal@@UEAAXXZ
+     * @hash   1748668037
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@HoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1301869407
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOVERGOAL
-#endif
     /**
      * @symbol ??0HoverGoal@@QEAA@AEAVMob@@M@Z
+     * @hash   -1356613357
      */
     MCAPI HoverGoal(class Mob &, float);
 

@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDHELPER
-#endif
     /**
      * @symbol ??0BedHelper@@QEAA@HHHHMMMMMM@Z
+     * @hash   -2074919661
      */
     MCAPI BedHelper(int, int, int, int, float, float, float, float, float, float);
     /**
      * @symbol ??0BedHelper@@QEAA@HHHHMMMM@Z
+     * @hash   405033267
      */
     MCAPI BedHelper(int, int, int, int, float, float, float, float);
     /**
      * @symbol ?getBedRotation@BedHelper@@QEBAMH@Z
+     * @hash   1573376259
      */
     MCAPI float getBedRotation(int) const;
     /**
      * @symbol ?setBedPositionOffsets@BedHelper@@QEAAXHAEAM0AEAVVec3@@@Z
+     * @hash   964713467
      */
     MCAPI void setBedPositionOffsets(int, float &, float &, class Vec3 &);
 

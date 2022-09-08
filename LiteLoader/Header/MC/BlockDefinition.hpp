@@ -27,27 +27,31 @@ public:
     struct BlockDefinition& operator=(struct BlockDefinition const &) = delete;
     BlockDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDEFINITION
-#endif
     /**
      * @symbol ??0BlockDefinition@@QEAA@AEBU0@@Z
+     * @hash   -334841147
      */
     MCAPI BlockDefinition(struct BlockDefinition const &);
     /**
      * @symbol ??1BlockDefinition@@QEAA@XZ
+     * @hash   -361841940
      */
     MCAPI ~BlockDefinition();
     /**
      * @symbol ?createBlockAbstractCerealSchema@BlockDefinition@@SA?AUSchema@reflection@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1251703253
      */
     MCAPI static struct reflection::Schema createBlockAbstractCerealSchema(std::string const &);
     /**
      * @symbol ?registerBlockDefinitionTypes@BlockDefinition@@SAXXZ
+     * @hash   842277177
      */
     MCAPI static void registerBlockDefinitionTypes();
     /**
      * @symbol ?upgradeJson@BlockDefinition@@SA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@V?$optional@VSemVersion@@@3@@Z
+     * @hash   -5037274
      */
     MCAPI static bool upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
 

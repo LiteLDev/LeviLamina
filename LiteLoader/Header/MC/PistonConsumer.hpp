@@ -31,48 +31,52 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1503313959
      */
     virtual ~PistonConsumer();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?canConsumePowerAnyDirection@PistonConsumer@@UEBA_NXZ
+     * @hash   -493084203
      */
     virtual bool canConsumePowerAnyDirection() const;
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?addSource@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     * @hash   1618670749
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?allowConnection@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   -1695871889
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   -1118277977
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PISTONCONSUMER
-#endif
     /**
      * @symbol ??0PistonConsumer@@QEAA@XZ
+     * @hash   -1463858005
      */
     MCAPI PistonConsumer();
     /**
      * @symbol ?setBlockPowerFace@PistonConsumer@@QEAAXE@Z
+     * @hash   -685457431
      */
     MCAPI void setBlockPowerFace(unsigned char);
 

@@ -29,30 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROOMDEFINITION
-#endif
     /**
      * @symbol ??0RoomDefinition@@QEAA@H@Z
+     * @hash   -384075567
      */
     MCAPI RoomDefinition(int);
     /**
      * @symbol ??0RoomDefinition@@QEAA@AEBV0@@Z
+     * @hash   970197089
      */
     MCAPI RoomDefinition(class RoomDefinition const &);
     /**
      * @symbol ?findSource@RoomDefinition@@QEAA_NH@Z
+     * @hash   -2013266991
      */
     MCAPI bool findSource(int);
     /**
      * @symbol ?setConnection@RoomDefinition@@QEAAXAEBEV?$shared_ptr@VRoomDefinition@@@std@@@Z
+     * @hash   658137834
      */
     MCAPI void setConnection(unsigned char const &, class std::shared_ptr<class RoomDefinition>);
     /**
      * @symbol ?updateOpenings@RoomDefinition@@QEAAXXZ
+     * @hash   -1263646203
      */
     MCAPI void updateOpenings();
     /**
      * @symbol ??1RoomDefinition@@QEAA@XZ
+     * @hash   -629700296
      */
     MCAPI ~RoomDefinition();
 

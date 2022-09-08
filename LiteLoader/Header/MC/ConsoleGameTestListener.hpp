@@ -31,26 +31,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   911542973
      */
     virtual ~ConsoleGameTestListener();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onTestStructureLoaded@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   -1294790593
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?onTestPassed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   -148455355
      */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?onTestFailed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   -746019560
      */
     virtual void onTestFailed(class gametest::BaseGameTestInstance &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSOLEGAMETESTLISTENER
-#endif
 
 };

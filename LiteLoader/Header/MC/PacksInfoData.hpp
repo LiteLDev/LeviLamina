@@ -28,15 +28,16 @@ public:
     PacksInfoData(struct PacksInfoData const &) = delete;
     PacksInfoData() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSINFODATA
-#endif
     /**
      * @symbol ?getBehaviorPackSize@PacksInfoData@@QEBA_KXZ
+     * @hash   -1811770587
      */
     MCAPI unsigned __int64 getBehaviorPackSize() const;
     /**
      * @symbol ?getResourcePackSize@PacksInfoData@@QEBA_KXZ
+     * @hash   1394991397
      */
     MCAPI unsigned __int64 getResourcePackSize() const;
 

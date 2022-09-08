@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -390196566
      */
     virtual ~NBStartPiece();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getType@NBStartPiece@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   -588333973
      */
     virtual enum StructurePieceType getType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBSTARTPIECE
-#endif
     /**
      * @symbol ??0NBStartPiece@@QEAA@AEAVRandom@@HH@Z
+     * @hash   609240173
      */
     MCAPI NBStartPiece(class Random &, int, int);
 

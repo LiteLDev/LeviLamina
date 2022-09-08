@@ -28,51 +28,61 @@ public:
     BlockBreathabilityDescription(struct BlockBreathabilityDescription const &) = delete;
     BlockBreathabilityDescription() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1247436749
      */
     virtual ~BlockBreathabilityDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@BlockBreathabilityDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   378098458
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockBreathabilityDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   57200426
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockBreathabilityDescription@@UEBA_NXZ
+     * @hash   -1035762158
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockBreathabilityDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   1535802948
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockBreathabilityDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   -397335730
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKBREATHABILITYDESCRIPTION
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockBreathabilityDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -452261233
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockBreathabilityDescription@@SAXXZ
+     * @hash   -1865465025
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockBreathabilityDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   -1509364650
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

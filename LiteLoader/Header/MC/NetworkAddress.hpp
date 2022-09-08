@@ -26,11 +26,11 @@ public:
     NetworkAddress(struct NetworkAddress const &) = delete;
     NetworkAddress() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKADDRESS
-#endif
     /**
      * @symbol ??1NetworkAddress@@QEAA@XZ
+     * @hash   -1920301712
      */
     MCAPI ~NetworkAddress();
 

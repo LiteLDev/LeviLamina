@@ -32,56 +32,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1376315244
      */
     virtual ~CompoundCreatorInputValidation();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isValidSlotForContainer@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z
+     * @hash   -333790410
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isItemAllowedInSlot@CompoundCreatorInputValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z
+     * @hash   -447697424
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getAvailableSetCount@ContainerValidationBase@@UEBAHHAEBVItemStackBase@@@Z
+     * @hash   -1416419907
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1363424028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1362500507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?canItemMoveToContainer@ContainerValidationBase@@UEBA_NAEBVItemStackBase@@@Z
+     * @hash   1390226169
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z
+     * @hash   -1686363043
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getContainerOffset@CompoundCreatorInputValidation@@UEBAHAEBVContainerScreenContext@@@Z
+     * @hash   -504581482
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getContainerSize@CompoundCreatorInputValidation@@UEBAHAEBVContainerScreenContext@@AEBVContainer@@@Z
+     * @hash   -187465874
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDCREATORINPUTVALIDATION
-#endif
 
 };

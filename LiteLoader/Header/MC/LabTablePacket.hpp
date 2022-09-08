@@ -31,42 +31,47 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -167743373
      */
     virtual ~LabTablePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@LabTablePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1361718613
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@LabTablePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1774199806
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@LabTablePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1346928539
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@LabTablePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1904716117
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEPACKET
-#endif
     /**
      * @symbol ??0LabTablePacket@@QEAA@XZ
+     * @hash   -1290216443
      */
     MCAPI LabTablePacket();
     /**
      * @symbol ??0LabTablePacket@@QEAA@W4Type@0@AEBVBlockPos@@@Z
+     * @hash   -1464093100
      */
     MCAPI LabTablePacket(enum LabTablePacket::Type, class BlockPos const &);
     /**
      * @symbol ??0LabTablePacket@@QEAA@AEBVBlockPos@@W4LabTableReactionType@@@Z
+     * @hash   1656568931
      */
     MCAPI LabTablePacket(class BlockPos const &, enum LabTableReactionType);
 

@@ -32,49 +32,55 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   419301540
      */
     virtual ~NetworkChunkSource();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getExistingChunk@NetworkChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
+     * @hash   410494880
      */
     virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?createNewChunk@NetworkChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
+     * @hash   947102670
      */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getOrLoadChunk@NetworkChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z
+     * @hash   1232405113
      */
     virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?acquireDiscarded@NetworkChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z
+     * @hash   -1065570608
      */
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /**
-     * @note   Virtual function table index: 23
+     * @vftbl  23
      * @symbol ?getChunkMap@NetworkChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
+     * @hash   -1611167634
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
     /**
-     * @note   Virtual function table index: 24
+     * @vftbl  24
      * @symbol ?getStorage@NetworkChunkSource@@UEBAAEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ
+     * @hash   -1803905935
      */
     virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const & getStorage() const;
     /**
-     * @note   Virtual function table index: 26
+     * @vftbl  26
      * @symbol ?canCreateViews@NetworkChunkSource@@UEBA_NXZ
+     * @hash   -1785814976
      */
     virtual bool canCreateViews() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKSOURCE
-#endif
     /**
      * @symbol ??0NetworkChunkSource@@QEAA@AEAVDimension@@@Z
+     * @hash   1327005399
      */
     MCAPI NetworkChunkSource(class Dimension &);
 

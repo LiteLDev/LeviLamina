@@ -30,17 +30,55 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAREDBUFFS
-#endif
-MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
-MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
-MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
-MCAPI static class std::shared_ptr<class AttributeBuff> HARM;
-MCAPI static class std::shared_ptr<class AttributeBuff> HEAL;
-MCAPI static class std::shared_ptr<class AttributeBuff> POISON;
-MCAPI static class std::shared_ptr<class AttributeBuff> PUFFER_POSIONING;
-MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
-MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
-MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
+    /**
+     * @symbol ?ABSORPTION@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   1994421960
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
+    /**
+     * @symbol ?FATAL_POISON@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   -402805448
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
+    /**
+     * @symbol ?FOOD_POSIONING@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   1902877112
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
+    /**
+     * @symbol ?HARM@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   2140140024
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> HARM;
+    /**
+     * @symbol ?HEAL@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   1648149640
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> HEAL;
+    /**
+     * @symbol ?POISON@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   246969480
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> POISON;
+    /**
+     * @symbol ?PUFFER_POSIONING@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   1614130184
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> PUFFER_POSIONING;
+    /**
+     * @symbol ?REGENERATION@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   -1373687224
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
+    /**
+     * @symbol ?SATURATION@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   1736547608
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
+    /**
+     * @symbol ?WITHER@SharedBuffs@@2V?$shared_ptr@VAttributeBuff@@@std@@A
+     * @hash   -442267688
+     */
+    MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
 
 };

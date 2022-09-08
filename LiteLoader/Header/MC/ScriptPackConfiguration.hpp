@@ -27,50 +27,59 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPACKCONFIGURATION
-#endif
     /**
      * @symbol ??0ScriptPackConfiguration@@QEAA@$$QEAV0@@Z
+     * @hash   1000591517
      */
     MCAPI ScriptPackConfiguration(class ScriptPackConfiguration &&);
     /**
      * @symbol ??0ScriptPackConfiguration@@QEAA@XZ
+     * @hash   633150206
      */
     MCAPI ScriptPackConfiguration();
     /**
      * @symbol ??0ScriptPackConfiguration@@QEAA@AEBV0@@Z
+     * @hash   805758769
      */
     MCAPI ScriptPackConfiguration(class ScriptPackConfiguration const &);
     /**
      * @symbol ?getPermissions@ScriptPackConfiguration@@QEAAAEAVScriptPackPermissions@@XZ
+     * @hash   -102989662
      */
     MCAPI class ScriptPackPermissions & getPermissions();
     /**
      * @symbol ?getPermissions@ScriptPackConfiguration@@QEBAAEBVScriptPackPermissions@@XZ
+     * @hash   186760796
      */
     MCAPI class ScriptPackPermissions const & getPermissions() const;
     /**
      * @symbol ?getSecrets@ScriptPackConfiguration@@QEAAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+     * @hash   -1232898590
      */
     MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> & getSecrets();
     /**
      * @symbol ?getSecrets@ScriptPackConfiguration@@QEBAAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+     * @hash   -1819889376
      */
     MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const & getSecrets() const;
     /**
      * @symbol ?getVariables@ScriptPackConfiguration@@QEAAAEAV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@@2@@std@@XZ
+     * @hash   386991058
      */
     MCAPI class std::unordered_map<std::string, class Json::Value, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class Json::Value>>> & getVariables();
     /**
      * @symbol ?getVariables@ScriptPackConfiguration@@QEBAAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VValue@Json@@@std@@@2@@std@@XZ
+     * @hash   -880093168
      */
     MCAPI class std::unordered_map<std::string, class Json::Value, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class Json::Value>>> const & getVariables() const;
     /**
      * @symbol ??4ScriptPackConfiguration@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -1603790232
      */
     MCAPI class ScriptPackConfiguration & operator=(class ScriptPackConfiguration &&);
     /**
      * @symbol ??1ScriptPackConfiguration@@QEAA@XZ
+     * @hash   1175327694
      */
     MCAPI ~ScriptPackConfiguration();
 

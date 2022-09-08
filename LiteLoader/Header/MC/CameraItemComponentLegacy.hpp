@@ -34,84 +34,97 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1256548612
      */
     virtual ~CameraItemComponentLegacy();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?blackBarsDuration@CameraItemComponentLegacy@@UEBAMXZ
+     * @hash   -27781229
      */
     virtual float blackBarsDuration() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?blackBarsScreenRatio@CameraItemComponentLegacy@@UEBAMXZ
+     * @hash   -1618852912
      */
     virtual float blackBarsScreenRatio() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?shutterScreenRatio@CameraItemComponentLegacy@@UEBAMXZ
+     * @hash   1634035554
      */
     virtual float shutterScreenRatio() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?shutterDuration@CameraItemComponentLegacy@@UEBAMXZ
+     * @hash   1061495457
      */
     virtual float shutterDuration() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?pictureDuration@CameraItemComponentLegacy@@UEBAMXZ
+     * @hash   -1576461278
      */
     virtual float pictureDuration() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?slideAwayDuration@CameraItemComponentLegacy@@UEBAMXZ
+     * @hash   1826367715
      */
     virtual float slideAwayDuration() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?canPlace@CameraItemComponentLegacy@@UEBA_NAEBVItemStack@@AEAVActor@@AEBVBlockPos@@E@Z
+     * @hash   1799369575
      */
     virtual bool canPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?takePictureNow@CameraItemComponentLegacy@@UEAAXAEAVPlayer@@PEAVActor@@1@Z
+     * @hash   -613317237
      */
     virtual void takePictureNow(class Player &, class Actor *, class Actor *);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?registerCallbacks@CameraItemComponentLegacy@@UEAAXPEAVCameraCallbacks@@@Z
+     * @hash   633891947
      */
     virtual void registerCallbacks(class CameraCallbacks *);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?use@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@@Z
+     * @hash   -233210612
      */
     virtual void use(class ItemStack &, class Player &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?releaseUsing@CameraItemComponentLegacy@@UEAAXAEAVItemStack@@AEAVPlayer@@H@Z
+     * @hash   73914189
      */
     virtual void releaseUsing(class ItemStack &, class Player &, int);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?useOn@CameraItemComponentLegacy@@UEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+     * @hash   1664116398
      */
     virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERAITEMCOMPONENTLEGACY
-#endif
     /**
      * @symbol ??0CameraItemComponentLegacy@@QEAA@AEAVItem@@@Z
+     * @hash   -559432677
      */
     MCAPI CameraItemComponentLegacy(class Item &);
     /**
      * @symbol ?init@CameraItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   59784272
      */
     MCAPI bool init(class Json::Value &, class SemVersion const &);
 
 //private:
     /**
      * @symbol ?_tryPlace@CameraItemComponentLegacy@@AEBA?AW4UseAction@1@AEBVItemStack@@AEAVActor@@AEBVBlockPos@@EAEAVVec3@@@Z
+     * @hash   72519058
      */
     MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
 

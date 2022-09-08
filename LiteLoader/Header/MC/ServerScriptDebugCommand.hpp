@@ -30,26 +30,34 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1579550928
      */
     virtual ~ServerScriptDebugCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@ServerScriptDebugCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1602022717
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTDEBUGCOMMAND
-#endif
     /**
      * @symbol ?setup@ServerScriptDebugCommand@@SAXAEAVCommandRegistry@@PEAVIScriptDebugger@@AEBV?$optional@UScriptSettings@@@std@@@Z
+     * @hash   -2081197376
      */
     MCAPI static void setup(class CommandRegistry &, class IScriptDebugger *, class std::optional<struct ScriptSettings> const &);
 
 //private:
 
 private:
-MCAPI static class std::optional<unsigned short> sForcedPort;
-MCAPI static class IScriptDebugger * sServerScriptDebugger;
+    /**
+     * @symbol ?sForcedPort@ServerScriptDebugCommand@@0V?$optional@G@std@@A
+     * @hash   -173630998
+     */
+    MCAPI static class std::optional<unsigned short> sForcedPort;
+    /**
+     * @symbol ?sServerScriptDebugger@ServerScriptDebugCommand@@0PEAVIScriptDebugger@@EA
+     * @hash   1183150423
+     */
+    MCAPI static class IScriptDebugger * sServerScriptDebugger;
 
 };

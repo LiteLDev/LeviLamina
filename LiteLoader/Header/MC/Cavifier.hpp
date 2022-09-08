@@ -30,20 +30,21 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVIFIER
-#endif
     /**
      * @symbol ??0Cavifier@@QEAA@AEBVCavifierNoises@@MM@Z
+     * @hash   295669726
      */
     MCAPI Cavifier(class CavifierNoises const &, float, float);
     /**
      * @symbol ?cavify@Cavifier@@QEBAMVVec3@@HM@Z
+     * @hash   -2091782615
      */
     MCAPI float cavify(class Vec3, int, float) const;
 
 //private:
     /**
      * @symbol ?_getSpaghetti2d@Cavifier@@AEBAMVVec3@@@Z
+     * @hash   -2003335172
      */
     MCAPI float _getSpaghetti2d(class Vec3) const;
 

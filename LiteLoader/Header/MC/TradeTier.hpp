@@ -26,11 +26,11 @@ public:
     TradeTier(struct TradeTier const &) = delete;
     TradeTier() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADETIER
-#endif
     /**
      * @symbol ??1TradeTier@@QEAA@XZ
+     * @hash   2115230034
      */
     MCAPI ~TradeTier();
 

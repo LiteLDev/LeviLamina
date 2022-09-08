@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDINGDESCRIPTIONCACHE
-#endif
     /**
      * @symbol ??0BeardingDescriptionCache@@QEAA@AEBVBoundingBox@@H@Z
+     * @hash   555046624
      */
     MCAPI BeardingDescriptionCache(class BoundingBox const &, int);
 

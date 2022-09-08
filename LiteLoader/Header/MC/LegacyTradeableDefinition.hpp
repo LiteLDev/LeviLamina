@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYTRADEABLEDEFINITION
-#endif
     /**
      * @symbol ??0LegacyTradeableDefinition@@QEAA@XZ
+     * @hash   1125380676
      */
     MCAPI LegacyTradeableDefinition();
     /**
      * @symbol ?initialize@LegacyTradeableDefinition@@QEAAXAEAVEntityContext@@AEAVLegacyTradeableComponent@@@Z
+     * @hash   -1963851947
      */
     MCAPI void initialize(class EntityContext &, class LegacyTradeableComponent &);
     /**
      * @symbol ?buildSchema@LegacyTradeableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VLegacyTradeableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   489125410
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>> &);
 

@@ -31,34 +31,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1411949327
      */
     virtual ~HurtOwnerSubcomponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?readfromJSON@HurtOwnerSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   -1062611017
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?writetoJSON@HurtOwnerSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1065974846
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@HurtOwnerSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   984245265
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@HurtOwnerSubcomponent@@UEAAPEBDXZ
+     * @hash   2071803500
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTOWNERSUBCOMPONENT
-#endif
     /**
      * @symbol ??0HurtOwnerSubcomponent@@QEAA@XZ
+     * @hash   476791789
      */
     MCAPI HurtOwnerSubcomponent();
 

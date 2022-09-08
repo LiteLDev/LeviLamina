@@ -6,12 +6,12 @@
 [
 ![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
-](https://github.com/LiteLDev/LiteLoader/releases/latest)
+](https://github.com/LiteLDev/LiteLoader/releases/latest)  
 QQ Group: [656669024](https://jq.qq.com/?_wv=1027&k=lagwtrfh) QQ Group 2: [850517473](https://jq.qq.com/?_wv=1027&k=zeUbrETH)
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20&%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https://raw.githubusercontent.com/LiteLDev/LiteLoaderBDS/main/docs/assets/LL-Logo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
+![LiteLoaderBDS](https://socialify.git.ci/LiteLDev/LiteLoaderBDS/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2Fdocs%2Fraw%2Fmain%2Fassets%2FLogo.png&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
@@ -37,20 +37,21 @@ making it easy to learn and extremely flexible.
 #include <EventAPI.h>
 #include <LoggerAPI.h>
 #include <LLAPI.h>
-#include <MC/Player.hpp>
 #include <MC/Actor.hpp>
+#include <MC/Player.hpp>
+
 Logger logger("AttackLog");
 
-void PluginInit()
-{
+void PluginInit() {
     logger.info("Plugin xxx has been loaded.");
     // Subscribe Player-Attack Event
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
         Player* player = ev.mPlayer;
         Actor* actor = ev.mTarget;
         logger.info("Player:{} attacks {} | at {} in Dimension {}",
-         player->getRealName(), actor->getTypeName(), actor->getPos().toString(),
-            std::to_string(actor->getDimensionId()));
+            player->getRealName(), actor->getTypeName(), 
+            actor->getPos().toString(), std::to_string(actor->getDimensionId())
+        );
         return true;
     });
 }
@@ -66,7 +67,7 @@ mc.listen("onServerStarted", () => {
     cmd.setCallback((_cmd, ori, out, _res) => {
         out.success("stop command executed successfully");
         mc.broadcast(
-            `Player${ori.player.realName}Execute the stop command. The server will be shut down after 5 seconds`
+            `${ori.player.realName} executed the stop command. The server will be shutdown after 5 seconds`
         );
 
         // Execute stop command
@@ -124,6 +125,8 @@ mc.listen("onServerStarted", () => {
 5. Execute `bedrock_server_mod.exe` and enjoy it!
 
 ### For Linux
+
+We do not recommend you to use Wine due to BDS 1.19.20+ on Wine has a performance problem
 
 #### Installation script(Ubuntu)
 
@@ -224,24 +227,23 @@ View related installation and usage instructions
 >
 > Of course, if you prefer to build the project yourself, or contribute code to LiteLoader, you can build the project yourself by following these instructions
 
-1. install the latest **Microsoft Visual Studio** and the standard C++ desktop development suite
+1. Install the latest version of **Microsoft Visual Studio** and the standard C++ desktop development suite (or you can just install the full **msbuild** compiler suite and configure the compilation environment)
 2. Install the latest **Windows SDK**.
-3. Open the `LiteLoader.sln` project file and click on the **Batch Generation** item in the **Generation** menu
-4. Bring up the batch generation dialog, check all the generation checkboxes on the right side of the dialog
-5. When you have finished selecting, click the **Generate** button in the dialog box to perform batch generation
-6. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.  
-   After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
+3. Use your familiar IDE (VS / VSCode / CLion, etc.) to open the project directory and compile the cmake project.
+4. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.
+5. After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
+6. If you need extra debugging symbols of LL, execute another `PackReleaseWithPDB.cmd` script, and the `RELEASE` folder will be filled with all necessary debugging symbols for easy debugging
 
 <br/>
 
 ## 🎬 Participate in contribution
 
-You can use the following methods to contribute to the `LiteLoader` project
+It's highly appreciated if you're interested in developing this project and follow the method to contribute to the LiteLoaderBDS project
 
-1. Contribute code, maintain symbols
-2. Help us modify and optimize development documents
-3. Write the new API that you want in the format and submit a PR, or make good suggestions
-4. Help us promote `LiteLoader`, support our development
+1. Contribute code, maintain projects and symbols, add new APIs and events and infrastructure
+2. Help us modify and optimize the development documentation and usage documentation
+3. Give feedback on GitHub issues or Suggest good ideas
+4. Help us promote `LiteLoaderBDS` project to support our development
 
 ⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐
 
@@ -258,7 +260,7 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to �
 
 | Project                                                                 | License                                                          |
 | ----------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3 with extra exceptions                                     |
+| [LiteLoader](https://github.com/LiteLDev/LiteLoader)                    | LGPLv3                                                           |
 | [ScriptX](https://github.com/Tencent/ScriptX)                           | Apache License Version 2.0                                       |
 | [OpenSSL](https://github.com/openssl/openssl)                           | Apache-2.0 License                                               |
 | [SimpleIni](https://github.com/brofield/simpleini)                      | MIT License                                                      |
@@ -268,7 +270,7 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to �
 | [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) | MIT License                                                      |
 | [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                                                      |
 | [dyncall](https://www.dyncall.org/index)                                | [ISC License](https://www.dyncall.org/license)                   |
-| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT :icense                                                      |
+| [vcproxy](https://github.com/pr701/vcproxy)                             | MIT License                                                      |
 | [RawPDB](https://github.com/MolecularMatters/raw_pdb)                   | BSD 2-Clause License                                             |
 | [SQLiteCpp](https://github.com/SRombauts/SQLiteCpp)                     | MIT License                                                      |
 | [compact_enc_det](https://github.com/google/compact_enc_det)            | Apache-2.0 License                                               |
@@ -277,7 +279,7 @@ If you are interested in contributing to LiteLoaderBDS, feel free to come to �
 | [magic_enum](https://github.com/Neargye/magic_enum)                     | MIT License                                                      |
 | [entt](https://github.com/skypjack/entt)                                | MIT License                                                      |
 | [fmt](https://github.com/fmtlib/fmt)                                    | [License](https://github.com/fmtlib/fmt/blob/master/LICENSE.rst) |
-| [gsl](https://github.com/microsoft/GSL)                                 | MIT license                                                      |
+| [gsl](https://github.com/microsoft/GSL)                                 | MIT License                                                      |
 | [leveldb](https://github.com/google/leveldb)                            | BSD-3-Clause License                                             |
 | [parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap)        | Apache-2.0 License                                               |
 | [Base64](https://github.com/WangYneos/Base64)                           | MIT License                                                      |

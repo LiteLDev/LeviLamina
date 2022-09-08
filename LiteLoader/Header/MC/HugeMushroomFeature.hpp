@@ -31,33 +31,36 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -198520031
      */
     virtual ~HugeMushroomFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@HugeMushroomFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1672355971
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEMUSHROOMFEATURE
-#endif
     /**
      * @symbol ??0HugeMushroomFeature@@QEAA@XZ
+     * @hash   -777600017
      */
     MCAPI HugeMushroomFeature();
     /**
      * @symbol ??0HugeMushroomFeature@@QEAA@H@Z
+     * @hash   -496294820
      */
     MCAPI HugeMushroomFeature(int);
     /**
      * @symbol ?placeFixed@HugeMushroomFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@HH@Z
+     * @hash   -1727219740
      */
     MCAPI bool placeFixed(class BlockSource &, class BlockPos const &, int, int) const;
 
 //private:
     /**
      * @symbol ?_canSurvive@HugeMushroomFeature@@AEBA_NAEBVBlock@@@Z
+     * @hash   -575923257
      */
     MCAPI bool _canSurvive(class Block const &) const;
 

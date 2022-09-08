@@ -28,26 +28,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFINITIONEVENT
-#endif
     /**
      * @symbol ??0DefinitionEvent@@QEAA@$$QEAV0@@Z
+     * @hash   1919638327
      */
     MCAPI DefinitionEvent(class DefinitionEvent &&);
     /**
      * @symbol ??0DefinitionEvent@@QEAA@AEBV0@@Z
+     * @hash   -1574818815
      */
     MCAPI DefinitionEvent(class DefinitionEvent const &);
     /**
      * @symbol ?evaluateEvent@DefinitionEvent@@QEBAXAEAVRenderParams@@AEAV?$vector@UDefinitionModifier@@V?$allocator@UDefinitionModifier@@@std@@@std@@@Z
+     * @hash   -2038660157
      */
     MCAPI void evaluateEvent(class RenderParams &, std::vector<struct DefinitionModifier> &) const;
     /**
      * @symbol ??4DefinitionEvent@@QEAAAEAV0@AEBV0@@Z
+     * @hash   -1229219300
      */
     MCAPI class DefinitionEvent & operator=(class DefinitionEvent const &);
     /**
      * @symbol ??1DefinitionEvent@@QEAA@XZ
+     * @hash   -1292784829
      */
     MCAPI ~DefinitionEvent();
 

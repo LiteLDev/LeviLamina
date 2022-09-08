@@ -34,14 +34,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYTRANSACTIONITEMGROUP
-#endif
     /**
      * @symbol ?getItemInstance@InventoryTransactionItemGroup@@QEBA?AVItemStack@@XZ
+     * @hash   -1709050430
      */
     MCAPI class ItemStack getItemInstance() const;
     /**
      * @symbol ??1InventoryTransactionItemGroup@@QEAA@XZ
+     * @hash   -1163144922
      */
     MCAPI ~InventoryTransactionItemGroup();
 

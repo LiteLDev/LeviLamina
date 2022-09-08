@@ -30,28 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENETICSDEFINITION
-#endif
     /**
      * @symbol ??0GeneticsDefinition@@QEAA@XZ
+     * @hash   302344713
      */
     MCAPI GeneticsDefinition();
     /**
      * @symbol ?addGeneDefinition@GeneticsDefinition@@QEAAXAEBUGeneDefinition@@@Z
+     * @hash   360099262
      */
     MCAPI void addGeneDefinition(struct GeneDefinition const &);
     /**
      * @symbol ?initialize@GeneticsDefinition@@QEAAXAEAVEntityContext@@AEAVGeneticsComponent@@@Z
+     * @hash   1840293711
      */
     MCAPI void initialize(class EntityContext &, class GeneticsComponent &);
     /**
      * @symbol ?buildSchema@GeneticsDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VGeneticsDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1404847798
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GeneticsDefinition>> &);
 
 //private:
 
 private:
-MCAPI static float const DEFAULT_MUTATION_RATE;
+    /**
+     * @symbol ?DEFAULT_MUTATION_RATE@GeneticsDefinition@@0MB
+     * @hash   1854621702
+     */
+    MCAPI static float const DEFAULT_MUTATION_RATE;
 
 };

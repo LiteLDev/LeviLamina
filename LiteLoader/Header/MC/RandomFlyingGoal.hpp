@@ -32,45 +32,48 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   390206511
      */
     virtual ~RandomFlyingGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@RandomFlyingGoal@@UEAA_NXZ
+     * @hash   941509355
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RandomFlyingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1041958075
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?_setWantedPosition@RandomFlyingGoal@@MEAA_NXZ
+     * @hash   -343151160
      */
     virtual bool _setWantedPosition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMFLYINGGOAL
-#endif
     /**
      * @symbol ??0RandomFlyingGoal@@QEAA@AEAVMob@@MHH_N@Z
+     * @hash   327734238
      */
     MCAPI RandomFlyingGoal(class Mob &, float, int, int, bool);
 
 //private:
     /**
      * @symbol ?_getTreePos@RandomFlyingGoal@@AEBA_NAEAVVec3@@@Z
+     * @hash   2130739020
      */
     MCAPI bool _getTreePos(class Vec3 &) const;
 

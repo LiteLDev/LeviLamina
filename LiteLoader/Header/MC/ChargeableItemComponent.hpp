@@ -29,60 +29,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1266614282
      */
     virtual ~ChargeableItemComponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@ChargeableItemComponent@@UEBA_NXZ
+     * @hash   155367061
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@ChargeableItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   319239591
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@ChargeableItemComponent@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   -463860119
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHARGEABLEITEMCOMPONENT
-#endif
     /**
      * @symbol ?getMovementModifier@ChargeableItemComponent@@QEBAMXZ
+     * @hash   -287287730
      */
     MCAPI float getMovementModifier() const;
     /**
      * @symbol ?use@ChargeableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
+     * @hash   -1979731160
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
      * @symbol ?useTimeDepleted@ChargeableItemComponent@@QEBAXAEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z
+     * @hash   -1551673554
      */
     MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;
     /**
      * @symbol ?bindType@ChargeableItemComponent@@SAXXZ
+     * @hash   -697614673
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ChargeableItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   2122313440
      */
     MCAPI static class HashedString const & getIdentifier();
 

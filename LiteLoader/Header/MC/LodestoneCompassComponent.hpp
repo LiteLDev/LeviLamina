@@ -30,48 +30,59 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONECOMPASSCOMPONENT
-#endif
     /**
      * @symbol ??0LodestoneCompassComponent@@QEAA@$$QEAV0@@Z
+     * @hash   -970196671
      */
     MCAPI LodestoneCompassComponent(class LodestoneCompassComponent &&);
     /**
      * @symbol ?getAnimationFrame@LodestoneCompassComponent@@QEAAHAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@AEBVBlockPos@@AEBV?$AutomaticID@VDimension@@H@@@Z
+     * @hash   1494198683
      */
     MCAPI int getAnimationFrame(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, class BlockPos const &, class AutomaticID<class Dimension, int> const &);
     /**
      * @symbol ?initialize@LodestoneCompassComponent@@QEAAXAEBVPositionTrackingId@@@Z
+     * @hash   523825034
      */
     MCAPI void initialize(class PositionTrackingId const &);
     /**
      * @symbol ??4LodestoneCompassComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -947171972
      */
     MCAPI class LodestoneCompassComponent & operator=(class LodestoneCompassComponent &&);
     /**
      * @symbol ?setTrackOnlyInSameDimension@LodestoneCompassComponent@@QEAAXAEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
+     * @hash   1344137451
      */
     MCAPI void setTrackOnlyInSameDimension(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
     /**
      * @symbol ??1LodestoneCompassComponent@@QEAA@XZ
+     * @hash   -1481584088
      */
     MCAPI ~LodestoneCompassComponent();
     /**
      * @symbol ?getSpinningAnimationFrame@LodestoneCompassComponent@@SAHXZ
+     * @hash   -1832851902
      */
     MCAPI static int getSpinningAnimationFrame();
     /**
      * @symbol ?makeCalculatorId@LodestoneCompassComponent@@SA?AV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@AEBUActorUniqueID@@@Z
+     * @hash   -274624179
      */
     MCAPI static class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> makeCalculatorId(struct ActorUniqueID const &);
 
 //private:
     /**
      * @symbol ?_findCalculator@LodestoneCompassComponent@@AEAAPEAVLodestoneCompassComponentCalculator@@AEBV?$variant@UActorUniqueID@@U?$pair@VBlockPos@@V?$AutomaticID@VDimension@@H@@@std@@@std@@_N@Z
+     * @hash   -114679905
      */
     MCAPI class LodestoneCompassComponentCalculator * _findCalculator(class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &, bool);
 
 private:
-MCAPI static class CompassSpriteCalculator mSpinningLodestone;
+    /**
+     * @symbol ?mSpinningLodestone@LodestoneCompassComponent@@0VCompassSpriteCalculator@@A
+     * @hash   -1761177748
+     */
+    MCAPI static class CompassSpriteCalculator mSpinningLodestone;
 
 };

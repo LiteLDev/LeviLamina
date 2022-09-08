@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIQUIDPHYSICSSYSTEM
-#endif
     /**
      * @symbol ?applyPhysics@LiquidPhysicsSystem@@SAXW4MaterialType@@AEBVIConstBlockSource@@AEBUAABBShapeComponent@@AEAUStateVectorComponent@@@Z
+     * @hash   1254244373
      */
     MCAPI static void applyPhysics(enum MaterialType, class IConstBlockSource const &, struct AABBShapeComponent const &, struct StateVectorComponent &);
 

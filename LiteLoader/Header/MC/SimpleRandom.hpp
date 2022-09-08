@@ -31,61 +31,69 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1253630175
      */
     virtual ~SimpleRandom();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?nextInt@SimpleRandom@@UEAAHXZ
+     * @hash   -112861229
      */
     virtual int nextInt();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?nextInt@SimpleRandom@@UEAAHH@Z
+     * @hash   -1388995876
      */
     virtual int nextInt(int);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?nextLong@SimpleRandom@@UEAA_JXZ
+     * @hash   -237211776
      */
     virtual __int64 nextLong();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?nextBoolean@SimpleRandom@@UEAA_NXZ
+     * @hash   102789161
      */
     virtual bool nextBoolean();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?nextFloat@SimpleRandom@@UEAAMXZ
+     * @hash   -292202125
      */
     virtual float nextFloat();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?nextDouble@SimpleRandom@@UEAANXZ
+     * @hash   1858951481
      */
     virtual double nextDouble();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?nextGaussianDouble@SimpleRandom@@UEAANXZ
+     * @hash   -1931497836
      */
     virtual double nextGaussianDouble();
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?consumeCount@SimpleRandom@@UEAAXI@Z
+     * @hash   796026309
      */
     virtual void consumeCount(unsigned int);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?fork@SimpleRandom@@UEAA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@XZ
+     * @hash   794919181
      */
     virtual std::unique_ptr<class IRandom> fork();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?forkPositional@SimpleRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
+     * @hash   45702491
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
-#endif
 
 };

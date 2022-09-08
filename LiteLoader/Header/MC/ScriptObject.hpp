@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   607343924
      */
     virtual ~ScriptObject();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?_functionError@ScriptObject@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   135688439
      */
     virtual struct Scripting::Error _functionError(std::string const &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?_getPropertyError@ScriptObject@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1392933588
      */
     virtual struct Scripting::Error _getPropertyError(std::string const &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?_setPropertyError@ScriptObject@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1693084104
      */
     virtual struct Scripting::Error _setPropertyError(std::string const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTOBJECT
-#endif
     /**
      * @symbol ??0ScriptObject@@QEAA@AEBVWeakLifetimeScope@Scripting@@@Z
+     * @hash   -1086557015
      */
     MCAPI ScriptObject(class Scripting::WeakLifetimeScope const &);
 

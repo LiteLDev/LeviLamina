@@ -32,223 +32,245 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -828923838
      */
     virtual ~Weather();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1401090423
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -384990045
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
+     * @hash   710178867
      */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -382219482
      */
     virtual void __unk_vfn_13();
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -381295961
      */
     virtual void __unk_vfn_14();
     /**
-     * @note   Virtual function table index: 15
-     * @symbol 
+     * @vftbl  15
+     * @hash   -380372440
      */
     virtual void __unk_vfn_15();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -378525398
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 18
-     * @symbol 
+     * @vftbl  18
+     * @hash   -377601877
      */
     virtual void __unk_vfn_18();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -376678356
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -356360894
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 21
-     * @symbol 
+     * @vftbl  21
+     * @hash   -355437373
      */
     virtual void __unk_vfn_21();
     /**
-     * @note   Virtual function table index: 22
-     * @symbol 
+     * @vftbl  22
+     * @hash   -354513852
      */
     virtual void __unk_vfn_22();
     /**
-     * @note   Virtual function table index: 23
-     * @symbol 
+     * @vftbl  23
+     * @hash   -353590331
      */
     virtual void __unk_vfn_23();
     /**
-     * @note   Virtual function table index: 24
-     * @symbol 
+     * @vftbl  24
+     * @hash   -352666810
      */
     virtual void __unk_vfn_24();
     /**
-     * @note   Virtual function table index: 25
-     * @symbol 
+     * @vftbl  25
+     * @hash   -351743289
      */
     virtual void __unk_vfn_25();
     /**
-     * @note   Virtual function table index: 26
-     * @symbol 
+     * @vftbl  26
+     * @hash   -350819768
      */
     virtual void __unk_vfn_26();
     /**
-     * @note   Virtual function table index: 27
-     * @symbol 
+     * @vftbl  27
+     * @hash   -349896247
      */
     virtual void __unk_vfn_27();
     /**
-     * @note   Virtual function table index: 28
+     * @vftbl  28
      * @symbol ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
+     * @hash   2053765570
      */
     virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEATHER
-#endif
     /**
      * @symbol ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z
+     * @hash   -1784387220
      */
     MCAPI Weather(class Dimension &, class IRandom &);
     /**
      * @symbol ?calcSnowBlockDepth@Weather@@QEBAHAEAVBlockSource@@AEBVBlockPos@@H@Z
+     * @hash   1007041455
      */
     MCAPI int calcSnowBlockDepth(class BlockSource &, class BlockPos const &, int) const;
     /**
      * @symbol ?canPlaceTopSnow@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@_N2PEAH@Z
+     * @hash   -1765620482
      */
     MCAPI bool canPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool, int *) const;
     /**
      * @symbol ?getFogLevel@Weather@@QEBAMXZ
+     * @hash   -1530041442
      */
     MCAPI float getFogLevel() const;
     /**
      * @symbol ?getLightningLevel@Weather@@QEBAMM@Z
+     * @hash   2103003329
      */
     MCAPI float getLightningLevel(float) const;
     /**
      * @symbol ?getRainLevel@Weather@@QEBAMM@Z
+     * @hash   -1153937809
      */
     MCAPI float getRainLevel(float) const;
     /**
      * @symbol ?isLightning@Weather@@QEBA_NXZ
+     * @hash   482710550
      */
     MCAPI bool isLightning() const;
     /**
      * @symbol ?isPrecipitatingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1352368280
      */
     MCAPI bool isPrecipitatingAt(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?isRaining@Weather@@QEBA_NXZ
+     * @hash   -175751146
      */
     MCAPI bool isRaining() const;
     /**
      * @symbol ?isRainingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1284891542
      */
     MCAPI bool isRainingAt(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?isSnowingAt@Weather@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -2030289748
      */
     MCAPI bool isSnowingAt(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?serverTick@Weather@@QEAAXXZ
+     * @hash   -1594172669
      */
     MCAPI void serverTick();
     /**
      * @symbol ?setSkyFlashTime@Weather@@QEAAXH@Z
+     * @hash   495605370
      */
     MCAPI void setSkyFlashTime(int);
     /**
      * @symbol ?setTargetLightningLevel@Weather@@QEAAXM@Z
+     * @hash   -450200470
      */
     MCAPI void setTargetLightningLevel(float);
     /**
      * @symbol ?setTargetRainLevel@Weather@@QEAAXM@Z
+     * @hash   -613942084
      */
     MCAPI void setTargetRainLevel(float);
     /**
      * @symbol ?stop@Weather@@QEAAXXZ
+     * @hash   1396338711
      */
     MCAPI void stop();
     /**
      * @symbol ?tick@Weather@@QEAAXXZ
+     * @hash   2089080429
      */
     MCAPI void tick();
     /**
      * @symbol ?tryToPlaceTopSnow@Weather@@QEAA_NAEAVBlockSource@@AEBVBlockPos@@_N2@Z
+     * @hash   -1251509369
      */
     MCAPI bool tryToPlaceTopSnow(class BlockSource &, class BlockPos const &, bool, bool);
     /**
      * @symbol ?calcLightningCycleTime@Weather@@SAHAEAVIRandom@@@Z
+     * @hash   -1655589981
      */
     MCAPI static int calcLightningCycleTime(class IRandom &);
     /**
      * @symbol ?calcRainCycleTime@Weather@@SAHAEAVIRandom@@@Z
+     * @hash   1702002025
      */
     MCAPI static int calcRainCycleTime(class IRandom &);
     /**
      * @symbol ?calcRainDuration@Weather@@SAHAEAVIRandom@@@Z
+     * @hash   1632742533
      */
     MCAPI static int calcRainDuration(class IRandom &);
     /**
      * @symbol ?rebuildTopSnowToDepth@Weather@@SAXAEAVBlockSource@@AEBVBlockPos@@H@Z
+     * @hash   1612008402
      */
     MCAPI static void rebuildTopSnowToDepth(class BlockSource &, class BlockPos const &, int);
 

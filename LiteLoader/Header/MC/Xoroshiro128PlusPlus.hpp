@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRO128PLUSPLUS
-#endif
     /**
      * @symbol ?nextLong@Xoroshiro128PlusPlus@@QEAA_JXZ
+     * @hash   -1925552767
      */
     MCAPI __int64 nextLong();
 

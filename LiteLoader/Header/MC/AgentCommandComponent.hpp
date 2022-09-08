@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTCOMMANDCOMPONENT
-#endif
     /**
      * @symbol ??0AgentCommandComponent@@QEAA@XZ
+     * @hash   -2015560957
      */
     MCAPI AgentCommandComponent();
     /**
      * @symbol ?addCommand@AgentCommandComponent@@QEAA_NV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@@Z
+     * @hash   873508773
      */
     MCAPI bool addCommand(std::unique_ptr<class AgentCommands::Command>);
     /**
      * @symbol ?getCurrentCommand@AgentCommandComponent@@QEBAAEBV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@XZ
+     * @hash   -1678245518
      */
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;
     /**
      * @symbol ?initFromDefinition@AgentCommandComponent@@QEAAXAEAVActor@@@Z
+     * @hash   76630306
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?setCurrentCommand@AgentCommandComponent@@QEAAXV?$unique_ptr@VCommand@AgentCommands@@U?$default_delete@VCommand@AgentCommands@@@std@@@std@@@Z
+     * @hash   340149648
      */
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
 

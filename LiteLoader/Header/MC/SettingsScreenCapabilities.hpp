@@ -27,21 +27,22 @@ public:
     struct SettingsScreenCapabilities& operator=(struct SettingsScreenCapabilities const &) = delete;
     SettingsScreenCapabilities() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1711333135
      */
     virtual ~SettingsScreenCapabilities();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isOfType@?$TypedScreenCapabilities@USettingsScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
+     * @hash   -547106818
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTINGSSCREENCAPABILITIES
-#endif
     /**
      * @symbol ??0SettingsScreenCapabilities@@QEAA@AEBU0@@Z
+     * @hash   2115281391
      */
     MCAPI SettingsScreenCapabilities(struct SettingsScreenCapabilities const &);
 

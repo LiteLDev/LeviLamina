@@ -31,57 +31,74 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1005962593
      */
     virtual ~DragonScanningGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@DragonScanningGoal@@UEAA_NXZ
+     * @hash   -1745690103
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DragonScanningGoal@@UEAA_NXZ
+     * @hash   531455159
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@DragonScanningGoal@@UEAAXXZ
+     * @hash   59902114
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@DragonScanningGoal@@UEAAXXZ
+     * @hash   1315335266
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@DragonScanningGoal@@UEAAXXZ
+     * @hash   -861435891
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DragonScanningGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1242137431
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSCANNINGGOAL
-#endif
     /**
      * @symbol ??0DragonScanningGoal@@QEAA@AEAVEnderDragon@@@Z
+     * @hash   -1794420704
      */
     MCAPI DragonScanningGoal(class EnderDragon &);
 
 //private:
 
 private:
-MCAPI static float SITTING_ATTACK_VIEW_RANGE;
-MCAPI static float SITTING_CHARGE_VIEW_RANGE;
-MCAPI static int SITTING_SCANNING_IDLE_TICKS;
+    /**
+     * @symbol ?SITTING_ATTACK_VIEW_RANGE@DragonScanningGoal@@0MA
+     * @hash   269801978
+     */
+    MCAPI static float SITTING_ATTACK_VIEW_RANGE;
+    /**
+     * @symbol ?SITTING_CHARGE_VIEW_RANGE@DragonScanningGoal@@0MA
+     * @hash   -1646636654
+     */
+    MCAPI static float SITTING_CHARGE_VIEW_RANGE;
+    /**
+     * @symbol ?SITTING_SCANNING_IDLE_TICKS@DragonScanningGoal@@0HA
+     * @hash   473225442
+     */
+    MCAPI static int SITTING_SCANNING_IDLE_TICKS;
 
 };

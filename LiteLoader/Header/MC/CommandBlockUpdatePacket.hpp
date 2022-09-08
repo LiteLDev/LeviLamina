@@ -30,38 +30,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   924713885
      */
     virtual ~CommandBlockUpdatePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@CommandBlockUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -666325525
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@CommandBlockUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1421108072
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@CommandBlockUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1357424625
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@CommandBlockUpdatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   321027599
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKUPDATEPACKET
-#endif
     /**
      * @symbol ??0CommandBlockUpdatePacket@@QEAA@XZ
+     * @hash   771338079
      */
     MCAPI CommandBlockUpdatePacket();
     /**
      * @symbol ??0CommandBlockUpdatePacket@@QEAA@AEBV0@@Z
+     * @hash   682073953
      */
     MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &);
 

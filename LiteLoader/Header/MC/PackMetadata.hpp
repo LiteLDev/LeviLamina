@@ -27,14 +27,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKMETADATA
-#endif
     /**
      * @symbol ??0PackMetadata@@QEAA@XZ
+     * @hash   1026290164
      */
     MCAPI PackMetadata();
     /**
      * @symbol ??0PackMetadata@@QEAA@V?$unique_ptr@UEducationMetadata@@U?$default_delete@UEducationMetadata@@@std@@@std@@@Z
+     * @hash   -392251391
      */
     MCAPI PackMetadata(std::unique_ptr<struct EducationMetadata>);
 

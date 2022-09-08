@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMECOMPONENTFACTORY
-#endif
     /**
      * @symbol ?registerVolumeComponentDefinitions@VolumeComponentFactory@@QEAAX_N@Z
+     * @hash   1691330156
      */
     MCAPI void registerVolumeComponentDefinitions(bool);
 

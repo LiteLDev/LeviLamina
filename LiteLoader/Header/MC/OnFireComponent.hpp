@@ -30,29 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRECOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@OnFireComponent@@QEBAXAEBVActor@@AEAVCompoundTag@@@Z
+     * @hash   -1401538055
      */
     MCAPI void addAdditionalSaveData(class Actor const &, class CompoundTag &) const;
     /**
      * @symbol ?readAdditionalSaveData@OnFireComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@@Z
+     * @hash   -711580501
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &);
     /**
      * @symbol ?convertFromLegacyData@OnFireComponent@@SAXAEBVCompoundTag@@AEAV2@@Z
+     * @hash   655741714
      */
     MCAPI static void convertFromLegacyData(class CompoundTag const &, class CompoundTag &);
     /**
      * @symbol ?needsLegacyConversion@OnFireComponent@@SA_NAEBVCompoundTag@@@Z
+     * @hash   1024789219
      */
     MCAPI static bool needsLegacyConversion(class CompoundTag const &);
 
 //private:
 
 private:
-MCAPI static std::string const LEGACY_FIRE_TAG;
-MCAPI static std::string const ON_FIRE_TAG;
+    /**
+     * @symbol ?LEGACY_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -276481422
+     */
+    MCAPI static std::string const LEGACY_FIRE_TAG;
+    /**
+     * @symbol ?ON_FIRE_TAG@OnFireComponent@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -831047300
+     */
+    MCAPI static std::string const ON_FIRE_TAG;
 
 };

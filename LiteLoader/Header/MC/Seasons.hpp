@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEASONS
-#endif
     /**
      * @symbol ??0Seasons@@QEAA@AEAVDimension@@@Z
+     * @hash   -1440267823
      */
     MCAPI Seasons(class Dimension &);
     /**
      * @symbol ?postProcess@Seasons@@QEAAXAEAVLevelChunk@@AEAVBlockSource@@AEBVChunkPos@@@Z
+     * @hash   100759958
      */
     MCAPI void postProcess(class LevelChunk &, class BlockSource &, class ChunkPos const &);
     /**
      * @symbol ?tick@Seasons@@QEAAXXZ
+     * @hash   931032061
      */
     MCAPI void tick();
     /**
      * @symbol ??1Seasons@@QEAA@XZ
+     * @hash   2057046300
      */
     MCAPI ~Seasons();
 

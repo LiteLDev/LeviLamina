@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWSTRUCTUREBLOCKINFO
-#endif
     /**
      * @symbol ??0JigsawStructureBlockInfo@@QEAA@AEBVBlockPos@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVBlock@@@Z
+     * @hash   -2084103556
      */
     MCAPI JigsawStructureBlockInfo(class BlockPos const &, std::unique_ptr<class CompoundTag>, class Block const &);
     /**
      * @symbol ??0JigsawStructureBlockInfo@@QEAA@$$QEAV0@@Z
+     * @hash   -453864261
      */
     MCAPI JigsawStructureBlockInfo(class JigsawStructureBlockInfo &&);
     /**
      * @symbol ?getNonEmptyTag@JigsawStructureBlockInfo@@QEAAPEAVCompoundTag@@XZ
+     * @hash   2097995479
      */
     MCAPI class CompoundTag * getNonEmptyTag();
 

@@ -32,27 +32,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   579970840
      */
     virtual ~KeyManager();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isValid@KeyManager@@UEBA_NXZ
+     * @hash   -1931169380
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYMANAGER
-#endif
     /**
      * @symbol ??0KeyManager@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4System@Asymmetric@Crypto@@@Z
+     * @hash   1609740930
      */
     MCAPI KeyManager(std::string const &, enum Crypto::Asymmetric::System);
     /**
      * @symbol ?getPublicKey@KeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1084045440
      */
     MCAPI std::string getPublicKey() const;
     /**
      * @symbol ?verify@KeyManager@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4HashType@Hash@Crypto@@@Z
+     * @hash   81230186
      */
     MCAPI bool verify(std::string const &, std::string const &, enum Crypto::Hash::HashType) const;
 

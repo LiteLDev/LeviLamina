@@ -32,61 +32,67 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -211817215
      */
     virtual ~DoorInteractGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@DoorInteractGoal@@UEAA_NXZ
+     * @hash   -18811095
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DoorInteractGoal@@UEAA_NXZ
+     * @hash   425156455
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@DoorInteractGoal@@UEAAXXZ
+     * @hash   1667094498
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@DoorInteractGoal@@UEAAXXZ
+     * @hash   1031049101
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DoorInteractGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1956829767
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOORINTERACTGOAL
-#endif
     /**
      * @symbol ??0DoorInteractGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -117548714
      */
     MCAPI DoorInteractGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_doorBlocksPath@DoorInteractGoal@@IEBA_NXZ
+     * @hash   1179520797
      */
     MCAPI bool _doorBlocksPath() const;
 
 //private:
     /**
      * @symbol ?_findBlockingDoorAtPos@DoorInteractGoal@@CAPEBVDoorBlock@@AEBVBlockPos@@AEBVMob@@PEAVPath@@AEAW4Type@Direction@@3@Z
+     * @hash   1533412853
      */
     MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum Direction::Type &, enum Direction::Type &);
 

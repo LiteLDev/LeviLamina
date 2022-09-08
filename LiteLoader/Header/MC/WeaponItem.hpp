@@ -33,134 +33,144 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1444507239
      */
     virtual ~WeaponItem();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 45
+     * @vftbl  45
      * @symbol ?canDestroySpecial@WeaponItem@@UEBA_NAEBVBlock@@@Z
+     * @hash   -620708734
      */
     virtual bool canDestroySpecial(class Block const &) const;
     /**
-     * @note   Virtual function table index: 49
+     * @vftbl  49
      * @symbol ?getAttackDamage@WeaponItem@@UEBAHXZ
+     * @hash   -96480775
      */
     virtual int getAttackDamage() const;
     /**
-     * @note   Virtual function table index: 50
+     * @vftbl  50
      * @symbol ?isHandEquipped@WeaponItem@@UEBA_NXZ
+     * @hash   -2127224159
      */
     virtual bool isHandEquipped() const;
     /**
-     * @note   Virtual function table index: 52
-     * @symbol 
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @note   Virtual function table index: 54
-     * @symbol 
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @note   Virtual function table index: 56
+     * @vftbl  56
      * @symbol ?canDestroyInCreative@WeaponItem@@UEBA_NXZ
+     * @hash   1689142567
      */
     virtual bool canDestroyInCreative() const;
     /**
-     * @note   Virtual function table index: 61
+     * @vftbl  61
      * @symbol ?appendFormattedHovertext@WeaponItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   91621200
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
-     * @note   Virtual function table index: 62
+     * @vftbl  62
      * @symbol ?isValidRepairItem@WeaponItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z
+     * @hash   -1937205689
      */
     virtual bool isValidRepairItem(class ItemStackBase const &, class ItemStackBase const &, class BaseGameVersion const &) const;
     /**
-     * @note   Virtual function table index: 63
+     * @vftbl  63
      * @symbol ?getEnchantSlot@WeaponItem@@UEBAHXZ
+     * @hash   743178381
      */
     virtual int getEnchantSlot() const;
     /**
-     * @note   Virtual function table index: 64
+     * @vftbl  64
      * @symbol ?getEnchantValue@WeaponItem@@UEBAHXZ
+     * @hash   -1141023414
      */
     virtual int getEnchantValue() const;
     /**
-     * @note   Virtual function table index: 67
-     * @symbol 
+     * @vftbl  67
+     * @hash   -186360955
      */
     virtual void __unk_vfn_67();
     /**
-     * @note   Virtual function table index: 71
-     * @symbol 
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @note   Virtual function table index: 72
-     * @symbol 
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @note   Virtual function table index: 73
-     * @symbol 
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @note   Virtual function table index: 76
-     * @symbol 
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @note   Virtual function table index: 80
-     * @symbol 
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @note   Virtual function table index: 81
-     * @symbol 
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @note   Virtual function table index: 85
+     * @vftbl  85
      * @symbol ?use@WeaponItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z
+     * @hash   981168943
      */
     virtual class ItemStack & use(class ItemStack &, class Player &) const;
     /**
-     * @note   Virtual function table index: 89
+     * @vftbl  89
      * @symbol ?getDestroySpeed@WeaponItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z
+     * @hash   -765873557
      */
     virtual float getDestroySpeed(class ItemStackBase const &, class Block const &) const;
     /**
-     * @note   Virtual function table index: 90
+     * @vftbl  90
      * @symbol ?hurtActor@WeaponItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z
+     * @hash   -498574499
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAPONITEM
-#endif
     /**
      * @symbol ??0WeaponItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVTier@Item@@@Z
+     * @hash   -1186144054
      */
     MCAPI WeaponItem(std::string const &, int, class Item::Tier const &);
 

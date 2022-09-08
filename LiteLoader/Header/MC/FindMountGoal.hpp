@@ -31,53 +31,59 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1973109857
      */
     virtual ~FindMountGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@FindMountGoal@@UEAA_NXZ
+     * @hash   -2013964195
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FindMountGoal@@UEAA_NXZ
+     * @hash   -1147122773
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@FindMountGoal@@UEAAXXZ
+     * @hash   -561519978
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@FindMountGoal@@UEAAXXZ
+     * @hash   -957137066
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@FindMountGoal@@UEAAXXZ
+     * @hash   -1441474367
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FindMountGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1222339517
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FINDMOUNTGOAL
-#endif
     /**
      * @symbol ??0FindMountGoal@@QEAA@AEAVMob@@MH_N1MH@Z
+     * @hash   -1312690322
      */
     MCAPI FindMountGoal(class Mob &, float, int, bool, bool, float, int);
     /**
      * @symbol ?isInMountRange@FindMountGoal@@QEAA_NXZ
+     * @hash   1452880858
      */
     MCAPI bool isInMountRange();
 

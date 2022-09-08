@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   610219951
      */
     virtual ~BlastFurnaceContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLASTFURNACECONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0BlastFurnaceContainerScreenValidator@@QEAA@XZ
+     * @hash   195407233
      */
     MCAPI BlastFurnaceContainerScreenValidator();
 

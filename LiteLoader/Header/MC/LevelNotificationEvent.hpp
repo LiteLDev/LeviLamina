@@ -26,11 +26,11 @@ public:
     LevelNotificationEvent(struct LevelNotificationEvent const &) = delete;
     LevelNotificationEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELNOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1LevelNotificationEvent@@QEAA@XZ
+     * @hash   149064629
      */
     MCAPI ~LevelNotificationEvent();
 

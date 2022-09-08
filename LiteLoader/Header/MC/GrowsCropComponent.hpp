@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROWSCROPCOMPONENT
-#endif
     /**
      * @symbol ??0GrowsCropComponent@@QEAA@XZ
+     * @hash   -579764855
      */
     MCAPI GrowsCropComponent();
     /**
      * @symbol ?readAdditionalSaveData@GrowsCropComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   2140875956
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 

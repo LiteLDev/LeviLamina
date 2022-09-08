@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEAABB
-#endif
     /**
      * @symbol ?getContactPoint@RopeAABB@@QEBA_NAEBVVec3@@MAEAUAABBContactPoint@@@Z
+     * @hash   102253645
      */
     MCAPI bool getContactPoint(class Vec3 const &, float, struct AABBContactPoint &) const;
 

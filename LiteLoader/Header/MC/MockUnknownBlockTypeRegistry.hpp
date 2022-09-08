@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -757135474
      */
     virtual ~MockUnknownBlockTypeRegistry();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getUnknownBlock@MockUnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z
+     * @hash   -262839268
      */
     virtual class Block const & getUnknownBlock(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOCKUNKNOWNBLOCKTYPEREGISTRY
-#endif
 
 };

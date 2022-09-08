@@ -30,70 +30,84 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLECOMPONENT
-#endif
     /**
      * @symbol ??0BreathableComponent@@QEAA@XZ
+     * @hash   2023175215
      */
     MCAPI BreathableComponent();
     /**
      * @symbol ??0BreathableComponent@@QEAA@AEBV0@@Z
+     * @hash   -1217475743
      */
     MCAPI BreathableComponent(class BreathableComponent const &);
     /**
      * @symbol ?addAdditionalSaveData@BreathableComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   1967353544
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canBreathe@BreathableComponent@@QEBA_NAEBVActor@@@Z
+     * @hash   -2060432273
      */
     MCAPI bool canBreathe(class Actor const &) const;
     /**
      * @symbol ?generatesBubbles@BreathableComponent@@QEBA_NXZ
+     * @hash   -2051185670
      */
     MCAPI bool generatesBubbles() const;
     /**
      * @symbol ?getAirRegenPerTick@BreathableComponent@@QEBAHXZ
+     * @hash   1939982568
      */
     MCAPI int getAirRegenPerTick() const;
     /**
      * @symbol ?getAirSupply@BreathableComponent@@QEBAFXZ
+     * @hash   659097521
      */
     MCAPI short getAirSupply() const;
     /**
      * @symbol ?getBreathableState@BreathableComponent@@QEAAAEAW4BreathableState@1@XZ
+     * @hash   -1017860926
      */
     MCAPI enum BreathableComponent::BreathableState & getBreathableState();
     /**
      * @symbol ?getInhaleTime@BreathableComponent@@QEBAMXZ
+     * @hash   -1837285782
      */
     MCAPI float getInhaleTime() const;
     /**
      * @symbol ?getMaxAirSupply@BreathableComponent@@QEBAFXZ
+     * @hash   -617502029
      */
     MCAPI short getMaxAirSupply() const;
     /**
      * @symbol ?getSuffocateTime@BreathableComponent@@QEBAHXZ
+     * @hash   -695846788
      */
     MCAPI int getSuffocateTime() const;
     /**
      * @symbol ??4BreathableComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -839443366
      */
     MCAPI class BreathableComponent & operator=(class BreathableComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@BreathableComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -781543754
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setAirSupply@BreathableComponent@@QEAAXF@Z
+     * @hash   1262443215
      */
     MCAPI void setAirSupply(short);
     /**
      * @symbol ?updateBreathableState@BreathableComponent@@QEAAXAEAVActor@@@Z
+     * @hash   178740206
      */
     MCAPI void updateBreathableState(class Actor &);
     /**
      * @symbol ??1BreathableComponent@@QEAA@XZ
+     * @hash   -65086945
      */
     MCAPI ~BreathableComponent();
 

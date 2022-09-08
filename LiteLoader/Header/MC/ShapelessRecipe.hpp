@@ -32,64 +32,73 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -171797706
      */
     virtual ~ShapelessRecipe();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?assemble@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   -280850090
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@ShapelessRecipe@@UEBAHXZ
+     * @hash   -388032228
      */
     virtual int getCraftingSize() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getIngredient@ShapelessRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   1793080749
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getResultItem@ShapelessRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   -707100951
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?isShapeless@ShapelessRecipe@@UEBA_NXZ
+     * @hash   1427756800
      */
     virtual bool isShapeless() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?matches@ShapelessRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   824061934
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?size@ShapelessRecipe@@UEBAHXZ
+     * @hash   -48532332
      */
     virtual int size() const;
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?loadResultList@ShapelessRecipe@@UEBAXAEBVBlockPalette@@@Z
+     * @hash   197772834
      */
     virtual void loadResultList(class BlockPalette const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPELESSRECIPE
-#endif
     /**
      * @symbol ??0ShapelessRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBV?$vector@VRecipeIngredient@@V?$allocator@VRecipeIngredient@@@std@@@std@@AEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@4@VHashedString@@HPEBVUUID@mce@@@Z
+     * @hash   -1948053580
      */
     MCAPI ShapelessRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *);
     /**
      * @symbol ?generateUUID@ShapelessRecipe@@QEAAXXZ
+     * @hash   -1629298893
      */
     MCAPI void generateUUID();
 
 //private:
     /**
      * @symbol ?init@ShapelessRecipe@@AEAAXV?$basic_string_span@$$CBD$0?0@gsl@@HPEBVUUID@mce@@@Z
+     * @hash   1980476899
      */
     MCAPI void init(class gsl::basic_string_span<char const, -1>, int, class mce::UUID const *);
 

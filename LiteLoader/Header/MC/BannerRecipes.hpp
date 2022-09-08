@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BANNERRECIPES
-#endif
     /**
      * @symbol ?addRecipes@BannerRecipes@@SAXAEAVRecipes@@@Z
+     * @hash   -1869309558
      */
     MCAPI static void addRecipes(class Recipes &);
 

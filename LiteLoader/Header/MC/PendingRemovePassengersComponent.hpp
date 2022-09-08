@@ -26,11 +26,11 @@ public:
     PendingRemovePassengersComponent(struct PendingRemovePassengersComponent const &) = delete;
     PendingRemovePassengersComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PENDINGREMOVEPASSENGERSCOMPONENT
-#endif
     /**
      * @symbol ??1PendingRemovePassengersComponent@@QEAA@XZ
+     * @hash   -1027056605
      */
     MCAPI ~PendingRemovePassengersComponent();
 

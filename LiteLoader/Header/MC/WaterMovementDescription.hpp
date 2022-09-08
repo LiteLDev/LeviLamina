@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@WaterMovementDescription@@UEBAPEBDXZ
+     * @hash   1020286750
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -2008820864
      */
     virtual ~WaterMovementDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@WaterMovementDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1763275227
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@WaterMovementDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1960533423
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERMOVEMENTDESCRIPTION
-#endif
     /**
      * @symbol ??0WaterMovementDescription@@QEAA@XZ
+     * @hash   1686696642
      */
     MCAPI WaterMovementDescription();
 

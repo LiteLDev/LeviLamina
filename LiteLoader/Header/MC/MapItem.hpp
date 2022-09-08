@@ -34,185 +34,234 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -466146979
      */
     virtual ~MapItem();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1353918777
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -332277273
      */
     virtual void __unk_vfn_14();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 52
-     * @symbol 
+     * @vftbl  52
+     * @hash   -219607711
      */
     virtual void __unk_vfn_52();
     /**
-     * @note   Virtual function table index: 54
-     * @symbol 
+     * @vftbl  54
+     * @hash   -217760669
      */
     virtual void __unk_vfn_54();
     /**
-     * @note   Virtual function table index: 61
+     * @vftbl  61
      * @symbol ?appendFormattedHovertext@MapItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   -1955861936
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
-     * @note   Virtual function table index: 67
-     * @symbol 
+     * @vftbl  67
+     * @hash   -193095643
      */
     virtual void __unk_vfn_67();
     /**
-     * @note   Virtual function table index: 71
-     * @symbol 
+     * @vftbl  71
+     * @hash   -163272930
      */
     virtual void __unk_vfn_71();
     /**
-     * @note   Virtual function table index: 72
-     * @symbol 
+     * @vftbl  72
+     * @hash   -162349409
      */
     virtual void __unk_vfn_72();
     /**
-     * @note   Virtual function table index: 73
-     * @symbol 
+     * @vftbl  73
+     * @hash   -161425888
      */
     virtual void __unk_vfn_73();
     /**
-     * @note   Virtual function table index: 76
-     * @symbol 
+     * @vftbl  76
+     * @hash   -158655325
      */
     virtual void __unk_vfn_76();
     /**
-     * @note   Virtual function table index: 80
-     * @symbol 
+     * @vftbl  80
+     * @hash   -1115441236
      */
     virtual void __unk_vfn_80();
     /**
-     * @note   Virtual function table index: 81
-     * @symbol 
+     * @vftbl  81
+     * @hash   -1114517715
      */
     virtual void __unk_vfn_81();
     /**
-     * @note   Virtual function table index: 96
+     * @vftbl  96
      * @symbol ?buildDescriptionId@MapItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z
+     * @hash   -1041623093
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @note   Virtual function table index: 102
+     * @vftbl  102
      * @symbol ?inventoryTick@MapItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z
+     * @hash   1831704831
      */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /**
-     * @note   Virtual function table index: 103
+     * @vftbl  103
      * @symbol ?refreshedInContainer@MapItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@@Z
+     * @hash   -10243138
      */
     virtual void refreshedInContainer(class ItemStackBase const &, class Level &) const;
     /**
-     * @note   Virtual function table index: 107
+     * @vftbl  107
      * @symbol ?fixupCommon@MapItem@@UEBAXAEAVItemStackBase@@AEAVLevel@@@Z
+     * @hash   1728715140
      */
     virtual void fixupCommon(class ItemStackBase &, class Level &) const;
     /**
-     * @note   Virtual function table index: 117
+     * @vftbl  117
      * @symbol ?isSameItem@MapItem@@UEBA_NAEBVItemStackBase@@0@Z
+     * @hash   2030476556
      */
     virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
     /**
-     * @note   Virtual function table index: 123
+     * @vftbl  123
      * @symbol ?getIcon@MapItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z
+     * @hash   -1608047518
      */
     virtual struct TextureUVCoordinateSet const & getIcon(class ItemStackBase const &, int, bool) const;
     /**
-     * @note   Virtual function table index: 125
+     * @vftbl  125
      * @symbol ?setIcon@MapItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   726305965
      */
     virtual class Item & setIcon(std::string const &, int);
     /**
-     * @note   Virtual function table index: 137
+     * @vftbl  137
      * @symbol ?getUpdatePacket@MapItem@@UEBA?AV?$unique_ptr@VPacket@@U?$default_delete@VPacket@@@std@@@std@@AEBVItemStack@@AEAVLevel@@AEAVActor@@@Z
+     * @hash   -126387872
      */
     virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const &, class Level &, class Actor &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPITEM
-#endif
     /**
      * @symbol ??0MapItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z
+     * @hash   -695991342
      */
     MCAPI MapItem(std::string const &, short);
     /**
      * @symbol ?blockTick@MapItem@@QEBAXAEAVItemStack@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -623836792
      */
     MCAPI void blockTick(class ItemStack &, class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?update@MapItem@@QEBAXAEAVLevel@@AEAVActor@@AEAVMapItemSavedData@@@Z
+     * @hash   566722722
      */
     MCAPI void update(class Level &, class Actor &, class MapItemSavedData &) const;
-MCAPI static std::string const TAG_MAP_INIT;
-MCAPI static std::string const TAG_MAP_NAME_INDEX;
-MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
-MCAPI static std::string const TAG_MAP_REGENERATE;
-MCAPI static std::string const TAG_MAP_SCALE;
-MCAPI static std::string const TAG_MAP_SCALING;
-MCAPI static std::string const TAG_MAP_UUID;
+    /**
+     * @symbol ?TAG_MAP_INIT@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1330409391
+     */
+    MCAPI static std::string const TAG_MAP_INIT;
+    /**
+     * @symbol ?TAG_MAP_NAME_INDEX@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1077259505
+     */
+    MCAPI static std::string const TAG_MAP_NAME_INDEX;
+    /**
+     * @symbol ?TAG_MAP_PLAYER_DISPLAY@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   317054863
+     */
+    MCAPI static std::string const TAG_MAP_PLAYER_DISPLAY;
+    /**
+     * @symbol ?TAG_MAP_REGENERATE@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   192790543
+     */
+    MCAPI static std::string const TAG_MAP_REGENERATE;
+    /**
+     * @symbol ?TAG_MAP_SCALE@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2028467635
+     */
+    MCAPI static std::string const TAG_MAP_SCALE;
+    /**
+     * @symbol ?TAG_MAP_SCALING@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -389404723
+     */
+    MCAPI static std::string const TAG_MAP_SCALING;
+    /**
+     * @symbol ?TAG_MAP_UUID@MapItem@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -2101034737
+     */
+    MCAPI static std::string const TAG_MAP_UUID;
     /**
      * @symbol ?doesDisplayPlayerMarkers@MapItem@@SA_NAEBVItemStack@@@Z
+     * @hash   -1003598061
      */
     MCAPI static bool doesDisplayPlayerMarkers(class ItemStack const &);
     /**
      * @symbol ?getMapId@MapItem@@SA?AUActorUniqueID@@PEBVCompoundTag@@@Z
+     * @hash   1792390058
      */
     MCAPI static struct ActorUniqueID getMapId(class CompoundTag const *);
     /**
      * @symbol ?markForRegeneration@MapItem@@SAXAEAVItemInstance@@@Z
+     * @hash   4118260
      */
     MCAPI static void markForRegeneration(class ItemInstance &);
     /**
      * @symbol ?renderBiomePreviewMap@MapItem@@SAXAEAVDimension@@AEAVMapItemSavedData@@@Z
+     * @hash   1603917963
      */
     MCAPI static void renderBiomePreviewMap(class Dimension &, class MapItemSavedData &);
     /**
      * @symbol ?sampleMapData@MapItem@@SAXAEAVBlockSource@@HAEBVBlockPos@@1HHPEAV?$vector@UMapSample@@V?$allocator@UMapSample@@@std@@@std@@PEAVMapItemSavedData@@PEAVMapItemTrackedActor@@PEAV?$vector@UClientTerrainPixel@@V?$allocator@UClientTerrainPixel@@@std@@@5@@Z
+     * @hash   -1328759869
      */
     MCAPI static void sampleMapData(class BlockSource &, int, class BlockPos const &, class BlockPos const &, int, int, std::vector<struct MapSample> *, class MapItemSavedData *, class MapItemTrackedActor *, std::vector<struct ClientTerrainPixel> *);
     /**
      * @symbol ?serializeMapData@MapItem@@SAXAEBV?$vector@UMapSample@@V?$allocator@UMapSample@@@std@@@std@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   1494192917
      */
     MCAPI static void serializeMapData(std::vector<struct MapSample> const &, std::string &);
     /**
      * @symbol ?setItemInstanceInfo@MapItem@@SAXAEAVItemInstance@@AEAVMapItemSavedData@@@Z
+     * @hash   -958839019
      */
     MCAPI static void setItemInstanceInfo(class ItemInstance &, class MapItemSavedData &);
     /**
      * @symbol ?setItemInstanceInfo@MapItem@@SAXAEAVItemStack@@AEAVMapItemSavedData@@@Z
+     * @hash   2096735099
      */
     MCAPI static void setItemInstanceInfo(class ItemStack &, class MapItemSavedData &);
     /**
      * @symbol ?setMapNameIndex@MapItem@@SAXAEAVItemStack@@H@Z
+     * @hash   1542209185
      */
     MCAPI static void setMapNameIndex(class ItemStack &, int);
 
 //private:
     /**
      * @symbol ?_makeNewExplorationMap@MapItem@@AEBAXAEAVItemStack@@AEAVLevel@@PEAVActor@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   951751429
      */
     MCAPI void _makeNewExplorationMap(class ItemStack &, class Level &, class Actor *, std::string &) const;
     /**
      * @symbol ?_scheduleMapChunkRendering@MapItem@@CAXAEAVDimension@@AEBVMapItemSavedData@@UChunkBounds@3@V?$shared_ptr@_N@std@@@Z
+     * @hash   -235975099
      */
     MCAPI static void _scheduleMapChunkRendering(class Dimension &, class MapItemSavedData const &, struct MapItemSavedData::ChunkBounds, class std::shared_ptr<bool>);
 

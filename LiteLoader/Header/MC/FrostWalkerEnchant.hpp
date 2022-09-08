@@ -32,54 +32,58 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1849130199
      */
     virtual ~FrostWalkerEnchant();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getMinCost@FrostWalkerEnchant@@UEBAHH@Z
+     * @hash   1048060152
      */
     virtual int getMinCost(int) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getMaxCost@FrostWalkerEnchant@@UEBAHH@Z
+     * @hash   -1322916922
      */
     virtual int getMaxCost(int) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getMaxLevel@FrostWalkerEnchant@@UEBAHXZ
+     * @hash   2115606226
      */
     virtual int getMaxLevel() const;
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -342706045
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -341782524
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROSTWALKERENCHANT
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isTreasureOnly@FrostWalkerEnchant@@UEBA_NXZ
+     * @hash   -2095316610
      */
     MCVAPI bool isTreasureOnly() const;
 #endif
     /**
      * @symbol ??0FrostWalkerEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
+     * @hash   1722326106
      */
     MCAPI FrostWalkerEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 

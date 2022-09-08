@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2055518376
      */
     virtual ~StopSoundCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@StopSoundCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1747990373
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPSOUNDCOMMAND
-#endif
     /**
      * @symbol ?setup@StopSoundCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   1444776428
      */
     MCAPI static void setup(class CommandRegistry &);
 

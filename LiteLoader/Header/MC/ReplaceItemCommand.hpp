@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1488005934
      */
     virtual ~ReplaceItemCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@ReplaceItemCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1274841393
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLACEITEMCOMMAND
-#endif
     /**
      * @symbol ?setup@ReplaceItemCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -618498068
      */
     MCAPI static void setup(class CommandRegistry &);
 

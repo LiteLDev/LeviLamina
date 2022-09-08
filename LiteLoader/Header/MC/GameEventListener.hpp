@@ -30,8 +30,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTLISTENER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getDeliveryMode@GameEventListener@@UEBA?AW4DeliveryMode@1@XZ
+     * @hash   578319156
      */
     MCVAPI enum GameEventListener::DeliveryMode getDeliveryMode() const;
 #endif

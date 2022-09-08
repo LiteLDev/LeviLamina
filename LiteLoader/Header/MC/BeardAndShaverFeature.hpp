@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1291081466
      */
     virtual ~BeardAndShaverFeature();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?place@BeardAndShaverFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   -1978588363
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDANDSHAVERFEATURE
-#endif
     /**
      * @symbol ??0BeardAndShaverFeature@@QEAA@XZ
+     * @hash   -1372508812
      */
     MCAPI BeardAndShaverFeature();
 

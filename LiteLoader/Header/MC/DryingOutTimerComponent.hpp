@@ -30,34 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRYINGOUTTIMERCOMPONENT
-#endif
     /**
      * @symbol ??0DryingOutTimerComponent@@QEAA@$$QEAV0@@Z
+     * @hash   1538649831
      */
     MCAPI DryingOutTimerComponent(class DryingOutTimerComponent &&);
     /**
      * @symbol ?addAdditionalSaveData@DryingOutTimerComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -1083091848
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?canBeAffectedByWaterBottle@DryingOutTimerComponent@@QEBA_NXZ
+     * @hash   -896144350
      */
     MCAPI bool canBeAffectedByWaterBottle() const;
     /**
      * @symbol ??4DryingOutTimerComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   797624850
      */
     MCAPI class DryingOutTimerComponent & operator=(class DryingOutTimerComponent &&);
     /**
      * @symbol ?readAdditionalSaveData@DryingOutTimerComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   570894158
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?refillTimeWithWaterBottle@DryingOutTimerComponent@@QEAAXUTick@@@Z
+     * @hash   1026560600
      */
     MCAPI void refillTimeWithWaterBottle(struct Tick);
     /**
      * @symbol ??1DryingOutTimerComponent@@QEAA@XZ
+     * @hash   -1844269541
      */
     MCAPI ~DryingOutTimerComponent();
 

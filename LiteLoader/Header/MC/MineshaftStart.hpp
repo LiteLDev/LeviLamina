@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1393482779
      */
     virtual ~MineshaftStart();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTSTART
-#endif
     /**
      * @symbol ??0MineshaftStart@@QEAA@AEBVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+     * @hash   439413912
      */
     MCAPI MineshaftStart(class Dimension const &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
 

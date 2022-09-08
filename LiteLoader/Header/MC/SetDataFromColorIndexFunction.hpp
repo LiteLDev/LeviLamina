@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1627939317
      */
     virtual ~SetDataFromColorIndexFunction();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   1607817929
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?apply@SetDataFromColorIndexFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -369946210
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETDATAFROMCOLORINDEXFUNCTION
-#endif
 
 };

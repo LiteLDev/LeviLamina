@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAATTACKCOMPONENT
-#endif
     /**
      * @symbol ??0AreaAttackComponent@@QEAA@XZ
+     * @hash   -329434940
      */
     MCAPI AreaAttackComponent();
     /**
      * @symbol ??4AreaAttackComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   871119684
      */
     MCAPI class AreaAttackComponent & operator=(class AreaAttackComponent &&);
     /**
      * @symbol ??1AreaAttackComponent@@QEAA@XZ
+     * @hash   -2066540012
      */
     MCAPI ~AreaAttackComponent();
 

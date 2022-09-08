@@ -31,23 +31,24 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   714673938
      */
     virtual ~CommandOriginLoader();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@CommandOriginLoader@@UEAA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@@Z
+     * @hash   528490146
      */
     virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINLOADER
-#endif
     /**
      * @symbol ??0CommandOriginLoader@@QEAA@AEAVServerLevel@@@Z
+     * @hash   -1213063673
      */
     MCAPI CommandOriginLoader(class ServerLevel &);
     /**
      * @symbol ?load@CommandOriginLoader@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
+     * @hash   473221734
      */
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const &, class ServerLevel &);
 

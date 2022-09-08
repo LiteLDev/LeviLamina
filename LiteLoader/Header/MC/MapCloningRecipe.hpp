@@ -32,47 +32,60 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   468420182
      */
     virtual ~MapCloningRecipe();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?assemble@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   176112410
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@MapCloningRecipe@@UEBAHXZ
+     * @hash   -1436744600
      */
     virtual int getCraftingSize() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getIngredient@MapCloningRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   -547718727
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getResultItem@MapCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   -674197595
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?matches@MapCloningRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   1019507866
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?size@MapCloningRecipe@@UEBAHXZ
+     * @hash   1003362912
      */
     virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPCLONINGRECIPE
-#endif
     /**
      * @symbol ??0MapCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     * @hash   -1257205484
      */
     MCAPI MapCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
-MCAPI static class mce::UUID const CartographyTableID;
-MCAPI static class mce::UUID const CraftingTableID;
+    /**
+     * @symbol ?CartographyTableID@MapCloningRecipe@@2VUUID@mce@@B
+     * @hash   -1845031637
+     */
+    MCAPI static class mce::UUID const CartographyTableID;
+    /**
+     * @symbol ?CraftingTableID@MapCloningRecipe@@2VUUID@mce@@B
+     * @hash   970546425
+     */
+    MCAPI static class mce::UUID const CraftingTableID;
 
 };

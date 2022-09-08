@@ -26,11 +26,11 @@ public:
     ServerInstanceRequestResourceReload(struct ServerInstanceRequestResourceReload const &) = delete;
     ServerInstanceRequestResourceReload() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEREQUESTRESOURCERELOAD
-#endif
     /**
      * @symbol ??1ServerInstanceRequestResourceReload@@QEAA@XZ
+     * @hash   -525542838
      */
     MCAPI ~ServerInstanceRequestResourceReload();
 

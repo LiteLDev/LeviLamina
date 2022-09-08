@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HookAPI.h"
+#include "Utils/RNG.h"
 #include "../Global.h"
 #include "Vec2.hpp"
 #include "Vec3.hpp"
@@ -39,6 +40,12 @@ class UUID {
     uint64_t a, b;
 
 public:
+    UUID()
+    : a(RNG::rand<uint64_t>()), b(RNG::rand<uint64_t>()) {
+    }
+    UUID(uint64_t a, uint64_t b)
+    : a(a), b(b) {
+    }
     MCAPI std::string asString() const;
     MCAPI static UUID fromString(std::string const&);
     MCAPI bool isEmpty() const;
@@ -711,6 +718,27 @@ enum class ContainerType : char {
     STONECUTTER            = 29,
     HUD                    = 31,
     SMITHING_TABLE         = 33,
+};
+
+enum GameType : int {
+    GameTypeSurvival  = 0,
+    GameTypeCreative  = 1,
+    GameTypeAdventure = 2,
+    GameTypeSpectator = 6
+};
+
+enum Difficulty : int {
+    DifficultyPeaceful = 0,
+    DifficultyEasy     = 1,
+    DifficultyNormal   = 2,
+    DifficultyHard     = 3
+};
+
+enum PlayerPermissionLevel : int {
+    PlayerPermissionLevelVisitor  = 0,
+    PlayerPermissionLevelMember   = 1,
+    PlayerPermissionLevelOperator = 2,
+    PlayerPermissionLevelCustom   = 3
 };
 
 enum class UpdateBlockLayer : int {

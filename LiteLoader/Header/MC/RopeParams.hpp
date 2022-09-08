@@ -27,19 +27,21 @@ public:
     struct RopeParams& operator=(struct RopeParams const &) = delete;
     RopeParams(struct RopeParams const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROPEPARAMS
-#endif
     /**
      * @symbol ??0RopeParams@@QEAA@XZ
+     * @hash   1744979652
      */
     MCAPI RopeParams();
     /**
      * @symbol ??0RopeParams@@QEAA@AEBVVec3@@0M@Z
+     * @hash   1392058726
      */
     MCAPI RopeParams(class Vec3 const &, class Vec3 const &, float);
     /**
      * @symbol ?leadInit@RopeParams@@QEAAXXZ
+     * @hash   801996437
      */
     MCAPI void leadInit();
 

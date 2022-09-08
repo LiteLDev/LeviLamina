@@ -29,32 +29,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSENSORCOMPONENT
-#endif
     /**
      * @symbol ??0EntitySensorComponent@@QEAA@XZ
+     * @hash   407889484
      */
     MCAPI EntitySensorComponent();
     /**
      * @symbol ??0EntitySensorComponent@@QEAA@$$QEAV0@@Z
+     * @hash   59205993
      */
     MCAPI EntitySensorComponent(class EntitySensorComponent &&);
     /**
      * @symbol ?evaluateActor@EntitySensorComponent@@QEAAXAEAVActor@@@Z
+     * @hash   261764258
      */
     MCAPI void evaluateActor(class Actor &);
     /**
      * @symbol ??4EntitySensorComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1094594356
      */
     MCAPI class EntitySensorComponent & operator=(class EntitySensorComponent &&);
     /**
      * @symbol ??1EntitySensorComponent@@QEAA@XZ
+     * @hash   459579836
      */
     MCAPI ~EntitySensorComponent();
 
 //private:
 
 private:
-MCAPI static int const NO_MAX_COUNT;
+    /**
+     * @symbol ?NO_MAX_COUNT@EntitySensorComponent@@0HB
+     * @hash   2141006226
+     */
+    MCAPI static int const NO_MAX_COUNT;
 
 };

@@ -26,15 +26,16 @@ public:
     SendPacketsComponent(struct SendPacketsComponent const &) = delete;
     SendPacketsComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDPACKETSCOMPONENT
-#endif
     /**
      * @symbol ??4SendPacketsComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -244592120
      */
     MCAPI struct SendPacketsComponent & operator=(struct SendPacketsComponent &&);
     /**
      * @symbol ??1SendPacketsComponent@@QEAA@XZ
+     * @hash   -1424176588
      */
     MCAPI ~SendPacketsComponent();
 

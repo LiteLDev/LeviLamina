@@ -32,75 +32,83 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -113017247
      */
     virtual ~MoveToVillageGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@MoveToVillageGoal@@UEAA_NXZ
+     * @hash   1706897677
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MoveToVillageGoal@@UEAA_NXZ
+     * @hash   1536752507
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@MoveToVillageGoal@@UEAAXXZ
+     * @hash   1734494278
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@MoveToVillageGoal@@UEAAXXZ
+     * @hash   1760501041
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1511835117
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?isValidTarget@MoveToVillageGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1145246719
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?_moveToBlock@MoveToVillageGoal@@UEAAXXZ
+     * @hash   -1679081050
      */
     virtual void _moveToBlock();
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_selectRandomPosInVillage@MoveToVillageGoal@@MEAA?AVBlockPos@@XZ
+     * @hash   -485718576
      */
     virtual class BlockPos _selectRandomPosInVillage();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOVILLAGEGOAL
-#endif
     /**
      * @symbol ??0MoveToVillageGoal@@QEAA@AEAVMob@@MMMH@Z
+     * @hash   1279063260
      */
     MCAPI MoveToVillageGoal(class Mob &, float, float, float, int);
 
 //protected:
     /**
      * @symbol ?_tryGetCurrentVillage@MoveToVillageGoal@@IEAA?AV?$shared_ptr@VVillage@@@std@@XZ
+     * @hash   -1669185097
      */
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();
 

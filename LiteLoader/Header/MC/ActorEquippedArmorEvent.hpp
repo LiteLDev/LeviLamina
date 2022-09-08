@@ -26,11 +26,11 @@ public:
     ActorEquippedArmorEvent(struct ActorEquippedArmorEvent const &) = delete;
     ActorEquippedArmorEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREQUIPPEDARMOREVENT
-#endif
     /**
      * @symbol ??1ActorEquippedArmorEvent@@QEAA@XZ
+     * @hash   416537275
      */
     MCAPI ~ActorEquippedArmorEvent();
 

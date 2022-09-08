@@ -22,18 +22,22 @@ namespace UseItemGoalUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?finishUsingItem@UseItemGoalUtility@@YAXAEAVMob@@AEAUTick@@@Z
+     * @hash   2025805076
      */
     MCAPI void finishUsingItem(class Mob &, struct Tick &);
     /**
      * @symbol ?isUsingItem@UseItemGoalUtility@@YA_NAEBVMob@@@Z
+     * @hash   -1737988308
      */
     MCAPI bool isUsingItem(class Mob const &);
     /**
      * @symbol ?setUsingItem@UseItemGoalUtility@@YAXAEAVMob@@_N@Z
+     * @hash   1402975858
      */
     MCAPI void setUsingItem(class Mob &, bool);
     /**
      * @symbol ?startUsingItem@UseItemGoalUtility@@YA_NAEAVMob@@AEBVItemStack@@AEAUTick@@@Z
+     * @hash   -1170045534
      */
     MCAPI bool startUsingItem(class Mob &, class ItemStack const &, struct Tick &);
 

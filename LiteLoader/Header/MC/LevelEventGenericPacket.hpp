@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -175067849
      */
     virtual ~LevelEventGenericPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@LevelEventGenericPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1440684091
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@LevelEventGenericPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   568721026
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@LevelEventGenericPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1120107355
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@LevelEventGenericPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1421688267
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTGENERICPACKET
-#endif
     /**
      * @symbol ??0LevelEventGenericPacket@@QEAA@XZ
+     * @hash   1807238917
      */
     MCAPI LevelEventGenericPacket();
     /**
      * @symbol ??0LevelEventGenericPacket@@QEAA@W4LevelEvent@@AEBVCompoundTag@@@Z
+     * @hash   -32430733
      */
     MCAPI LevelEventGenericPacket(enum LevelEvent, class CompoundTag const &);
 

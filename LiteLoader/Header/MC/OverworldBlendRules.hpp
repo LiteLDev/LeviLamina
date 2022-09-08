@@ -26,11 +26,11 @@ public:
     OverworldBlendRules(struct OverworldBlendRules const &) = delete;
     OverworldBlendRules() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDBLENDRULES
-#endif
     /**
      * @symbol ??1OverworldBlendRules@@QEAA@XZ
+     * @hash   1217834112
      */
     MCAPI ~OverworldBlendRules();
 

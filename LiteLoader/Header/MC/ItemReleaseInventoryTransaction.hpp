@@ -31,36 +31,39 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -644158268
      */
     virtual ~ItemReleaseInventoryTransaction();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?read@ItemReleaseInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
+     * @hash   -760931446
      */
     virtual void read(class ReadOnlyBinaryStream &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?write@ItemReleaseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1903397662
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?postLoadItems@ItemReleaseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
+     * @hash   -1017528959
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?handle@ItemReleaseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
+     * @hash   1345812539
      */
     virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
+     * @hash   -1893010374
      */
     virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMRELEASEINVENTORYTRANSACTION
-#endif
 
 };

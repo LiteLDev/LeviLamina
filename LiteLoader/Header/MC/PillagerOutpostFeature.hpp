@@ -32,44 +32,49 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   646515742
      */
     virtual ~PillagerOutpostFeature();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?shouldAddHardcodedSpawnAreas@PillagerOutpostFeature@@UEBA_NXZ
+     * @hash   1723900973
      */
     virtual bool shouldAddHardcodedSpawnAreas() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?shouldPostProcessMobs@PillagerOutpostFeature@@UEBA_NXZ
+     * @hash   -1587220333
      */
     virtual bool shouldPostProcessMobs() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getNearestGeneratedFeature@PillagerOutpostFeature@@UEAA_NAEAVDimension@@AEBVBiomeSource@@AEBVBlockPos@@AEAV4@AEBVIPreliminarySurfaceProvider@@_N@Z
+     * @hash   292374851
      */
     virtual bool getNearestGeneratedFeature(class Dimension &, class BiomeSource const &, class BlockPos const &, class BlockPos &, class IPreliminarySurfaceProvider const &, bool);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?initMobSpawnTypes@PillagerOutpostFeature@@UEAAXAEAVHardcodedSpawnAreaRegistry@@@Z
+     * @hash   1755923642
      */
     virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?isFeatureChunk@PillagerOutpostFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z
+     * @hash   -1312778012
      */
     virtual bool isFeatureChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, class IPreliminarySurfaceProvider const &, class Dimension const &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?createStructureStart@PillagerOutpostFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z
+     * @hash   1203219245
      */
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension &, class BiomeSource const &, class Random &, class ChunkPos const &, class IPreliminarySurfaceProvider const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PILLAGEROUTPOSTFEATURE
-#endif
     /**
      * @symbol ??0PillagerOutpostFeature@@QEAA@I@Z
+     * @hash   -5109339
      */
     MCAPI PillagerOutpostFeature(unsigned int);
 

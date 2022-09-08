@@ -7,10 +7,10 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-#include "UnverifiedCertificate.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "UnverifiedCertificate.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -34,48 +34,56 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CERTIFICATE
-#endif
     /**
      * @symbol ??0Certificate@@QEAA@AEBV0@@Z
+     * @hash   212527089
      */
     MCAPI Certificate(class Certificate const &);
     /**
      * @symbol ?getExpirationDate@Certificate@@QEBA_JXZ
+     * @hash   -1437581279
      */
     MCAPI __int64 getExpirationDate() const;
     /**
      * @symbol ?getExtraData@Certificate@@QEBA?AVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
+     * @hash   -239085254
      */
     MCAPI class Json::Value getExtraData(std::string const &, class Json::Value const &) const;
     /**
      * @symbol ?getIdentityPublicKey@Certificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   848574656
      */
     MCAPI std::string getIdentityPublicKey() const;
     /**
      * @symbol ?getNotBeforeDate@Certificate@@QEBA_JXZ
+     * @hash   514962707
      */
     MCAPI __int64 getNotBeforeDate() const;
     /**
      * @symbol ?isValid@Certificate@@QEBA_NXZ
+     * @hash   -1198818016
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ?toString@Certificate@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -241046784
      */
     MCAPI std::string toString() const;
     /**
      * @symbol ?validate@Certificate@@QEAA_N_J@Z
+     * @hash   -459988550
      */
     MCAPI bool validate(__int64);
     /**
      * @symbol ??1Certificate@@QEAA@XZ
+     * @hash   1357432691
      */
     MCAPI ~Certificate();
 
 //private:
     /**
      * @symbol ??0Certificate@@AEAA@AEBVUnverifiedCertificate@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@@Z
+     * @hash   1568761310
      */
     MCAPI Certificate(class UnverifiedCertificate const &, std::unique_ptr<class Certificate>);
 

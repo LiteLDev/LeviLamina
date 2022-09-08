@@ -30,46 +30,54 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPLOG
-#endif
     /**
      * @symbol ?logEvent@CrashDumpLog@@SAXAEBUCrashDumpEventData@@@Z
+     * @hash   -2055813786
      */
     MCAPI static void logEvent(struct CrashDumpEventData const &);
     /**
      * @symbol ?logFrame@CrashDumpLog@@SAXAEBUCrashDumpFrameData@@@Z
+     * @hash   2059810554
      */
     MCAPI static void logFrame(struct CrashDumpFrameData const &);
     /**
      * @symbol ?logKeyValue@CrashDumpLog@@SAXAEBUCrashDumpKeyValueData@@@Z
+     * @hash   1996615020
      */
     MCAPI static void logKeyValue(struct CrashDumpKeyValueData const &);
     /**
      * @symbol ?setAssertMessage@CrashDumpLog@@SAXPEBDH00@Z
+     * @hash   1630113232
      */
     MCAPI static void setAssertMessage(char const *, int, char const *, char const *);
     /**
      * @symbol ?setDeviceSessionID@CrashDumpLog@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1840010547
      */
     MCAPI static bool setDeviceSessionID(std::string const &);
     /**
      * @symbol ?setGameVersion@CrashDumpLog@@SAXPEBD@Z
+     * @hash   300949053
      */
     MCAPI static void setGameVersion(char const *);
     /**
      * @symbol ?setPlatform@CrashDumpLog@@SAXPEBD@Z
+     * @hash   1943469017
      */
     MCAPI static void setPlatform(char const *);
     /**
      * @symbol ?setTotalMemory@CrashDumpLog@@SAX_K@Z
+     * @hash   -932432353
      */
     MCAPI static void setTotalMemory(unsigned __int64);
     /**
      * @symbol ?startCrashDumpLogThread@CrashDumpLog@@SA_NXZ
+     * @hash   1468126290
      */
     MCAPI static bool startCrashDumpLogThread();
     /**
      * @symbol ?stopCrashDumpLogThread@CrashDumpLog@@SAXXZ
+     * @hash   1983954099
      */
     MCAPI static void stopCrashDumpLogThread();
 
@@ -78,24 +86,77 @@ public:
 //private:
     /**
      * @symbol ?crashDumpLogThreadRoutine@CrashDumpLog@@CAXXZ
+     * @hash   882460456
      */
     MCAPI static void crashDumpLogThreadRoutine();
 
 protected:
-MCAPI static struct CrashDump_AllData * mAllData;
+    /**
+     * @symbol ?mAllData@CrashDumpLog@@1PEAUCrashDump_AllData@@EA
+     * @hash   -39974959
+     */
+    MCAPI static struct CrashDump_AllData * mAllData;
 
 private:
-MCAPI static class std::mutex mAssertDataMutex;
-MCAPI static std::unique_ptr<class std::thread> mCrashDumpLog_logThread;
-MCAPI static class std::mutex mCrashDumpThreadMutex;
-MCAPI static class std::condition_variable mCrashDumpThreadMutexCV;
-MCAPI static class std::mutex mEventDataMutex;
-MCAPI static class std::mutex mFrameDataMutex;
-MCAPI static class std::mutex mGameplayDataMutex;
-MCAPI static class std::mutex mGlobalDataMutex;
-MCAPI static bool mIsThreadRunning;
-MCAPI static class std::mutex mKeyValueDataMutex;
-MCAPI static class std::mutex mPlayerDataMutex;
-MCAPI static class std::mutex mRenderDataMutex;
+    /**
+     * @symbol ?mAssertDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   -371091760
+     */
+    MCAPI static class std::mutex mAssertDataMutex;
+    /**
+     * @symbol ?mCrashDumpLog_logThread@CrashDumpLog@@0V?$unique_ptr@Vthread@std@@U?$default_delete@Vthread@std@@@2@@std@@A
+     * @hash   599917441
+     */
+    MCAPI static std::unique_ptr<class std::thread> mCrashDumpLog_logThread;
+    /**
+     * @symbol ?mCrashDumpThreadMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   771345669
+     */
+    MCAPI static class std::mutex mCrashDumpThreadMutex;
+    /**
+     * @symbol ?mCrashDumpThreadMutexCV@CrashDumpLog@@0Vcondition_variable@std@@A
+     * @hash   -1642039435
+     */
+    MCAPI static class std::condition_variable mCrashDumpThreadMutexCV;
+    /**
+     * @symbol ?mEventDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   1153231382
+     */
+    MCAPI static class std::mutex mEventDataMutex;
+    /**
+     * @symbol ?mFrameDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   -1971843805
+     */
+    MCAPI static class std::mutex mFrameDataMutex;
+    /**
+     * @symbol ?mGameplayDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   51463744
+     */
+    MCAPI static class std::mutex mGameplayDataMutex;
+    /**
+     * @symbol ?mGlobalDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   1992909571
+     */
+    MCAPI static class std::mutex mGlobalDataMutex;
+    /**
+     * @symbol ?mIsThreadRunning@CrashDumpLog@@0_NA
+     * @hash   -593984871
+     */
+    MCAPI static bool mIsThreadRunning;
+    /**
+     * @symbol ?mKeyValueDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   -1744182668
+     */
+    MCAPI static class std::mutex mKeyValueDataMutex;
+    /**
+     * @symbol ?mPlayerDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   877011493
+     */
+    MCAPI static class std::mutex mPlayerDataMutex;
+    /**
+     * @symbol ?mRenderDataMutex@CrashDumpLog@@0Vmutex@std@@A
+     * @hash   153385952
+     */
+    MCAPI static class std::mutex mRenderDataMutex;
 
 };

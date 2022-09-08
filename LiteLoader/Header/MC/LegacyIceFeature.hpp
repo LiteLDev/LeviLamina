@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   198940638
      */
     virtual ~LegacyIceFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@LegacyIceFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1056563598
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYICEFEATURE
-#endif
     /**
      * @symbol ??0LegacyIceFeature@@QEAA@AEBVFeatureRegistry@@@Z
+     * @hash   -1004936401
      */
     MCAPI LegacyIceFeature(class FeatureRegistry const &);
 

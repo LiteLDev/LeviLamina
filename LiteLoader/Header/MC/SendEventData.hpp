@@ -25,15 +25,16 @@ public:
     struct SendEventData& operator=(struct SendEventData const &) = delete;
     SendEventData() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTDATA
-#endif
     /**
      * @symbol ??0SendEventData@@QEAA@AEBU0@@Z
+     * @hash   -1832775627
      */
     MCAPI SendEventData(struct SendEventData const &);
     /**
      * @symbol ??1SendEventData@@QEAA@XZ
+     * @hash   -363116248
      */
     MCAPI ~SendEventData();
 

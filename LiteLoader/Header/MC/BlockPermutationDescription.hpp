@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPERMUTATIONDESCRIPTION
-#endif
     /**
      * @symbol ??1BlockPermutationDescription@@QEAA@XZ
+     * @hash   -1825954561
      */
     MCAPI ~BlockPermutationDescription();
 

@@ -31,27 +31,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   529793310
      */
     virtual ~DragonFlamingDefinition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?validateMobType@DragonFlamingDefinition@@UEAA_NAEAVMob@@@Z
+     * @hash   1079941823
      */
     virtual bool validateMobType(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFLAMINGDEFINITION
-#endif
     /**
      * @symbol ??0DragonFlamingDefinition@@QEAA@XZ
+     * @hash   336174124
      */
     MCAPI DragonFlamingDefinition();
     /**
      * @symbol ?initialize@DragonFlamingDefinition@@QEAAXAEAVEntityContext@@AEAVDragonFlamingGoal@@@Z
+     * @hash   2009969715
      */
     MCAPI void initialize(class EntityContext &, class DragonFlamingGoal &);
     /**
      * @symbol ?buildSchema@DragonFlamingDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VDragonFlamingDefinition@@@JsonUtil@@@3@@Z
+     * @hash   1912204861
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition>> &);
 

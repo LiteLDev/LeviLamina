@@ -28,30 +28,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONINFO
-#endif
     /**
      * @symbol ??0VibrationInfo@@QEAA@AEBVGameEvent@@AEBUGameEventContext@@M@Z
+     * @hash   804268389
      */
     MCAPI VibrationInfo(class GameEvent const &, struct GameEventContext const &, float);
     /**
      * @symbol ??0VibrationInfo@@QEAA@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -390546814
      */
     MCAPI VibrationInfo(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?getProjectileOwner@VibrationInfo@@QEBAPEAVActor@@AEAVLevel@@@Z
+     * @hash   1125982352
      */
     MCAPI class Actor * getProjectileOwner(class Level &) const;
     /**
      * @symbol ?getSource@VibrationInfo@@QEBAPEAVActor@@AEAVLevel@@@Z
+     * @hash   -254003404
      */
     MCAPI class Actor * getSource(class Level &) const;
     /**
      * @symbol ?load@VibrationInfo@@QEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -1574043685
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?save@VibrationInfo@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   1777562686
      */
     MCAPI void save(class CompoundTag &) const;
 

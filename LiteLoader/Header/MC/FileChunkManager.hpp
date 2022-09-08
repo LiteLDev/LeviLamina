@@ -29,40 +29,46 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILECHUNKMANAGER
-#endif
     /**
      * @symbol ??0FileChunkManager@@QEAA@XZ
+     * @hash   -1274317496
      */
     MCAPI FileChunkManager();
     /**
      * @symbol ?getChunkInfo@FileChunkManager@@QEBA?AUFileChunkInfo@@H@Z
+     * @hash   545496755
      */
     MCAPI struct FileChunkInfo getChunkInfo(int) const;
     /**
      * @symbol ?getChunks@FileChunkManager@@QEBAAEBV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@XZ
+     * @hash   303051052
      */
     MCAPI std::vector<struct FileChunkInfo> const & getChunks() const;
     /**
      * @symbol ?getTotalNumberOfChunks@FileChunkManager@@QEAAHXZ
+     * @hash   1804496138
      */
     MCAPI int getTotalNumberOfChunks();
     /**
      * @symbol ?reset@FileChunkManager@@QEAAXXZ
+     * @hash   1945738915
      */
     MCAPI void reset();
     /**
      * @symbol ?reset@FileChunkManager@@QEAAX_KI@Z
+     * @hash   1478988044
      */
     MCAPI void reset(unsigned __int64, unsigned int);
     /**
      * @symbol ??1FileChunkManager@@QEAA@XZ
+     * @hash   -2106069162
      */
     MCAPI ~FileChunkManager();
 
 //private:
     /**
      * @symbol ?_generateChunkInfo@FileChunkManager@@AEAAXXZ
+     * @hash   -1404984969
      */
     MCAPI void _generateChunkInfo();
 

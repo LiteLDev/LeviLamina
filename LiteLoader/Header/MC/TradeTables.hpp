@@ -31,24 +31,26 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADETABLES
-#endif
     /**
      * @symbol ?fetchTable@TradeTables@@QEAAPEAUTradeTable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1383629968
      */
     MCAPI struct TradeTable * fetchTable(std::string const &);
     /**
      * @symbol ?reload@TradeTables@@QEAAXAEAVLevel@@@Z
+     * @hash   561289244
      */
     MCAPI void reload(class Level &);
     /**
      * @symbol ??1TradeTables@@QEAA@XZ
+     * @hash   -524523227
      */
     MCAPI ~TradeTables();
 
 //private:
     /**
      * @symbol ?_parseAndStoreTradeTable@TradeTables@@AEAAXVItemRegistryRef@@PEAVResourcePackManager@@AEBVPath@Core@@@Z
+     * @hash   -1600350360
      */
     MCAPI void _parseAndStoreTradeTable(class ItemRegistryRef, class ResourcePackManager *, class Core::Path const &);
 

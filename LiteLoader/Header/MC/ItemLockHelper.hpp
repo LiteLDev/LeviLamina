@@ -31,44 +31,51 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMLOCKHELPER
-#endif
     /**
      * @symbol ?addItemLockMode@ItemLockHelper@@SA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
+     * @hash   129142648
      */
     MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
     /**
      * @symbol ?addKeepOnDeath@ItemLockHelper@@SA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
+     * @hash   -1642907846
      */
     MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);
     /**
      * @symbol ?canMoveItemSlots@ItemLockHelper@@SA_NAEBVActor@@AEBVItemStackBase@@@Z
+     * @hash   -436246456
      */
     MCAPI static bool canMoveItemSlots(class Actor const &, class ItemStackBase const &);
     /**
      * @symbol ?getItemLockMode@ItemLockHelper@@SA?AW4ItemLockMode@@AEBVItemStackBase@@@Z
+     * @hash   -778715545
      */
     MCAPI static enum ItemLockMode getItemLockMode(class ItemStackBase const &);
     /**
      * @symbol ?isItemLocked@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z
+     * @hash   1873204127
      */
     MCAPI static bool isItemLocked(class ItemStackBase const &);
     /**
      * @symbol ?isItemLockedInSlot@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z
+     * @hash   1755631033
      */
     MCAPI static bool isItemLockedInSlot(class ItemStackBase const &);
     /**
      * @symbol ?shouldKeepOnDeath@ItemLockHelper@@SA_NAEBVActor@@AEBVItemStackBase@@@Z
+     * @hash   1183925010
      */
     MCAPI static bool shouldKeepOnDeath(class Actor const &, class ItemStackBase const &);
     /**
      * @symbol ?shouldKeepOnDeath@ItemLockHelper@@SA_NAEBVItemStackBase@@@Z
+     * @hash   -1001781567
      */
     MCAPI static bool shouldKeepOnDeath(class ItemStackBase const &);
 
 //private:
     /**
      * @symbol ?_parseItemLockMode@ItemLockHelper@@CA_NAEAVItemStackBase@@AEBVValue@Json@@@Z
+     * @hash   574477501
      */
     MCAPI static bool _parseItemLockMode(class ItemStackBase &, class Json::Value const &);
 

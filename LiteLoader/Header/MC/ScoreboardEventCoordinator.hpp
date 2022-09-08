@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTCOORDINATOR
-#endif
     /**
      * @symbol ?sendOnObjectiveAdded@ScoreboardEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1474098380
      */
     MCAPI void sendOnObjectiveAdded(std::string const &);
     /**
      * @symbol ?sendOnObjectiveRemoved@ScoreboardEventCoordinator@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -82313876
      */
     MCAPI void sendOnObjectiveRemoved(std::string const &);
     /**
      * @symbol ?sendOnScoreChanged@ScoreboardEventCoordinator@@QEAAXAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -1143463818
      */
     MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
      * @symbol ?sendOnScoreboardIdentityRemoved@ScoreboardEventCoordinator@@QEAAXAEBUScoreboardId@@@Z
+     * @hash   -1973219538
      */
     MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const &);
 

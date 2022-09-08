@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPTHBASEDBLOCKSUPPLIER
-#endif
     /**
      * @symbol ??0DepthBasedBlockSupplier@@QEAA@VXoroshiroPositionalRandomFactory@@PEBVBlock@@@Z
+     * @hash   704784880
      */
     MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const *);
     /**
      * @symbol ?getBlock@DepthBasedBlockSupplier@@QEBAPEBVBlock@@AEBVBlockPos@@PEBV2@@Z
+     * @hash   -2086727495
      */
     MCAPI class Block const * getBlock(class BlockPos const &, class Block const *) const;
 

@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -865318348
      */
     virtual ~RaiderCelebrationGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@RaiderCelebrationGoal@@UEAA_NXZ
+     * @hash   908415850
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RaiderCelebrationGoal@@UEAA_NXZ
+     * @hash   1999252264
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@RaiderCelebrationGoal@@UEAAXXZ
+     * @hash   -570813261
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@RaiderCelebrationGoal@@UEAAXXZ
+     * @hash   1709149443
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@RaiderCelebrationGoal@@UEAAXXZ
+     * @hash   1623684782
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RaiderCelebrationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2130493770
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAIDERCELEBRATIONGOAL
-#endif
     /**
      * @symbol ??0RaiderCelebrationGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -2011988121
      */
     MCAPI RaiderCelebrationGoal(class Mob &);
 

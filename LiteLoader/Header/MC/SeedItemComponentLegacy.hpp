@@ -31,32 +31,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEEDITEMCOMPONENTLEGACY
-#endif
     /**
      * @symbol ??0SeedItemComponentLegacy@@QEAA@AEAVItem@@@Z
+     * @hash   -719103297
      */
     MCAPI SeedItemComponentLegacy(class Item &);
     /**
      * @symbol ?init@SeedItemComponentLegacy@@QEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   1455183640
      */
     MCAPI bool init(class Json::Value &, class SemVersion const &);
     /**
      * @symbol ?isPlanting@SeedItemComponentLegacy@@QEBA_NXZ
+     * @hash   -800054228
      */
     MCAPI bool isPlanting() const;
     /**
      * @symbol ?setPlanting@SeedItemComponentLegacy@@QEAAX_N@Z
+     * @hash   1208647666
      */
     MCAPI void setPlanting(bool);
     /**
      * @symbol ?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+     * @hash   1524700620
      */
     MCAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
 
 //private:
     /**
      * @symbol ?_canPlant@SeedItemComponentLegacy@@AEBA_NAEBVBlock@@@Z
+     * @hash   -1736286259
      */
     MCAPI bool _canPlant(class Block const &) const;
 

@@ -30,16 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDEVENTUTILS
-#endif
     /**
      * @symbol ?serializePercentageToData@LevelSoundEventUtils@@SAHM@Z
+     * @hash   -811734633
      */
     MCAPI static int serializePercentageToData(float);
 
 //private:
 
 private:
-MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
+    /**
+     * @symbol ?MAX_INT_REPRESENTABLE_AS_FLOAT@LevelSoundEventUtils@@0HB
+     * @hash   -468502111
+     */
+    MCAPI static int const MAX_INT_REPRESENTABLE_AS_FLOAT;
 
 };

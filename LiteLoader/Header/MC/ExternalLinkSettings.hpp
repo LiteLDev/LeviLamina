@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXTERNALLINKSETTINGS
-#endif
     /**
      * @symbol ??1ExternalLinkSettings@@QEAA@XZ
+     * @hash   1721844418
      */
     MCAPI ~ExternalLinkSettings();
 

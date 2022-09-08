@@ -29,29 +29,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1749428729
      */
     virtual ~ExperienceRewardCommitObject();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?append@ExperienceRewardCommitObject@@UEAA_NPEAVContainerValidationCommitObject@@@Z
+     * @hash   -40786316
      */
     virtual bool append(class ContainerValidationCommitObject *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canCommit@ExperienceRewardCommitObject@@UEBA_NAEBVContainerScreenContext@@@Z
+     * @hash   -1512576179
      */
     virtual bool canCommit(class ContainerScreenContext const &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?commit@ExperienceRewardCommitObject@@UEAAXAEBVContainerScreenContext@@@Z
+     * @hash   -639594160
      */
     virtual void commit(class ContainerScreenContext const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDCOMMITOBJECT
-#endif
     /**
      * @symbol ??0ExperienceRewardCommitObject@@QEAA@H@Z
+     * @hash   1871182672
      */
     MCAPI ExperienceRewardCommitObject(int);
 

@@ -36,52 +36,64 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURETERRAINADJUSTMENTS
-#endif
     /**
      * @symbol ?at@FeatureTerrainAdjustments@@QEAA?AUDescriptions@1@AEBVChunkPos@@@Z
+     * @hash   354305603
      */
     MCAPI struct FeatureTerrainAdjustments::Descriptions at(class ChunkPos const &);
     /**
      * @symbol ?garbageCollectDescriptions@FeatureTerrainAdjustments@@QEAAXXZ
+     * @hash   2055131035
      */
     MCAPI void garbageCollectDescriptions();
     /**
      * @symbol ?setBeardAndShaver@FeatureTerrainAdjustments@@QEAA?AV?$shared_ptr@_N@std@@AEBVBoundingBox@@HMM@Z
+     * @hash   2125111414
      */
     MCAPI class std::shared_ptr<bool> setBeardAndShaver(class BoundingBox const &, int, float, float);
     /**
      * @symbol ?setBeardifier@FeatureTerrainAdjustments@@QEAA?AV?$shared_ptr@_N@std@@AEBVBoundingBox@@H@Z
+     * @hash   1952875574
      */
     MCAPI class std::shared_ptr<bool> setBeardifier(class BoundingBox const &, int);
     /**
      * @symbol ?setBury@FeatureTerrainAdjustments@@QEAA?AV?$shared_ptr@_N@std@@AEBVBoundingBox@@@Z
+     * @hash   -898316659
      */
     MCAPI class std::shared_ptr<bool> setBury(class BoundingBox const &);
     /**
      * @symbol ??1FeatureTerrainAdjustments@@QEAA@XZ
+     * @hash   414692227
      */
     MCAPI ~FeatureTerrainAdjustments();
     /**
      * @symbol ?calculateContribution@FeatureTerrainAdjustments@@SAMAEBUDescriptions@1@AEBVBlockPos@@M@Z
+     * @hash   -2097709227
      */
     MCAPI static float calculateContribution(struct FeatureTerrainAdjustments::Descriptions const &, class BlockPos const &, float);
     /**
      * @symbol ?getBeardKernel@FeatureTerrainAdjustments@@SAAEAUBeardKernel@@XZ
+     * @hash   469770298
      */
     MCAPI static struct BeardKernel & getBeardKernel();
     /**
      * @symbol ?shouldDoTerrainAdjustments@FeatureTerrainAdjustments@@SA_NAEBUDescriptions@1@@Z
+     * @hash   857560265
      */
     MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const &);
 
 //private:
     /**
      * @symbol ?_insertDescriptions@FeatureTerrainAdjustments@@AEAA?AV?$shared_ptr@_N@std@@AEBV?$vector@VChunkPos@@V?$allocator@VChunkPos@@@std@@@3@$$QEAV?$function@$$A6AXAEAUDescriptions@FeatureTerrainAdjustments@@V?$weak_ptr@_N@std@@@Z@3@@Z
+     * @hash   -139292642
      */
     MCAPI class std::shared_ptr<bool> _insertDescriptions(std::vector<class ChunkPos> const &, class std::function<void (struct FeatureTerrainAdjustments::Descriptions &, class std::weak_ptr<bool>)> &&);
 
 private:
-MCAPI static struct BeardKernel mBeardKernel;
+    /**
+     * @symbol ?mBeardKernel@FeatureTerrainAdjustments@@0UBeardKernel@@A
+     * @hash   1560103042
+     */
+    MCAPI static struct BeardKernel mBeardKernel;
 
 };

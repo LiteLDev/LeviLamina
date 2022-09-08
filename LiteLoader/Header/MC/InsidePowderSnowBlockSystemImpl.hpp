@@ -28,8 +28,10 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEPOWDERSNOWBLOCKSYSTEMIMPL
-#endif
-MCAPI static class Vec3 const SLOWDOWN_MODIFIER;
+    /**
+     * @symbol ?SLOWDOWN_MODIFIER@InsidePowderSnowBlockSystemImpl@@2VVec3@@B
+     * @hash   -722271791
+     */
+    MCAPI static class Vec3 const SLOWDOWN_MODIFIER;
 
 };

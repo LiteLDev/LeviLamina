@@ -31,10 +31,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETNEARBYDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@TargetNearbyDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTargetNearbyDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   83477094
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TargetNearbyDefinition>> &);
 

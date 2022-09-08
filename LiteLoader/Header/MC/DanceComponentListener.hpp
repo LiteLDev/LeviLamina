@@ -32,146 +32,146 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -403458264
      */
     virtual ~DanceComponentListener();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1401090423
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -384990045
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
+     * @hash   -472151991
      */
     virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -382219482
      */
     virtual void __unk_vfn_13();
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -381295961
      */
     virtual void __unk_vfn_14();
     /**
-     * @note   Virtual function table index: 15
-     * @symbol 
+     * @vftbl  15
+     * @hash   -380372440
      */
     virtual void __unk_vfn_15();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -378525398
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 18
-     * @symbol 
+     * @vftbl  18
+     * @hash   -377601877
      */
     virtual void __unk_vfn_18();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -376678356
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -356360894
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 21
-     * @symbol 
+     * @vftbl  21
+     * @hash   -355437373
      */
     virtual void __unk_vfn_21();
     /**
-     * @note   Virtual function table index: 22
-     * @symbol 
+     * @vftbl  22
+     * @hash   -354513852
      */
     virtual void __unk_vfn_22();
     /**
-     * @note   Virtual function table index: 23
-     * @symbol 
+     * @vftbl  23
+     * @hash   -353590331
      */
     virtual void __unk_vfn_23();
     /**
-     * @note   Virtual function table index: 24
-     * @symbol 
+     * @vftbl  24
+     * @hash   -352666810
      */
     virtual void __unk_vfn_24();
     /**
-     * @note   Virtual function table index: 25
-     * @symbol 
+     * @vftbl  25
+     * @hash   -351743289
      */
     virtual void __unk_vfn_25();
     /**
-     * @note   Virtual function table index: 26
-     * @symbol 
+     * @vftbl  26
+     * @hash   -350819768
      */
     virtual void __unk_vfn_26();
     /**
-     * @note   Virtual function table index: 27
-     * @symbol 
+     * @vftbl  27
+     * @hash   -349896247
      */
     virtual void __unk_vfn_27();
     /**
-     * @note   Virtual function table index: 28
-     * @symbol 
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -348049205
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
+     * @vftbl  30
      * @symbol ?levelSoundEvent@DanceComponentListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
+     * @hash   2122765603
      */
     virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENTLISTENER
-#endif
 
 };

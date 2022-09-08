@@ -30,34 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTE
-#endif
     /**
      * @symbol ??0Attribute@@QEAA@AEBVHashedString@@W4RedefinitionMode@@_N@Z
+     * @hash   1185972301
      */
     MCAPI Attribute(class HashedString const &, enum RedefinitionMode, bool);
     /**
      * @symbol ?getIDValue@Attribute@@QEBA?BIXZ
+     * @hash   -2019265232
      */
     MCAPI unsigned int const getIDValue() const;
     /**
      * @symbol ?getName@Attribute@@QEBAAEBVHashedString@@XZ
+     * @hash   -1107023690
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?getRedefinitionMode@Attribute@@QEBA?AW4RedefinitionMode@@XZ
+     * @hash   -1196232180
      */
     MCAPI enum RedefinitionMode getRedefinitionMode() const;
     /**
      * @symbol ?isClientSyncable@Attribute@@QEBA_NXZ
+     * @hash   384906104
      */
     MCAPI bool isClientSyncable() const;
     /**
      * @symbol ??8Attribute@@QEBA_NAEBV0@@Z
+     * @hash   -246321589
      */
     MCAPI bool operator==(class Attribute const &) const;
     /**
      * @symbol ?getByName@Attribute@@SAAEAV1@AEBVHashedString@@@Z
+     * @hash   -1689512428
      */
     MCAPI static class Attribute & getByName(class HashedString const &);
 

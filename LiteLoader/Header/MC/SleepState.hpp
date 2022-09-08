@@ -31,26 +31,26 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1357731012
      */
     virtual ~SleepState();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@SleepState@@UEAAXXZ
+     * @hash   2108898314
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?stop@SleepState@@UEAAXXZ
+     * @hash   1270645727
      */
     virtual void stop();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
-#endif
 
 };

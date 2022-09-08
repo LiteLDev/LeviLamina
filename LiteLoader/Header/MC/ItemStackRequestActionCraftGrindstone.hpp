@@ -30,48 +30,51 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1895211057
      */
     virtual ~ItemStackRequestActionCraftGrindstone();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   2004456210
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1370897725
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftGrindstone@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -344222660
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftGrindstone@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
+     * @hash   2058036564
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getRecipeNetId@ItemStackRequestActionCraftGrindstone@@UEBAAEBUItemStackNetIdVariant@@XZ
+     * @hash   -101926823
      */
     virtual struct ItemStackNetIdVariant const & getRecipeNetId() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTGRINDSTONE
-#endif
     /**
      * @symbol ??0ItemStackRequestActionCraftGrindstone@@QEAA@XZ
+     * @hash   -809978099
      */
     MCAPI ItemStackRequestActionCraftGrindstone();
     /**
      * @symbol ?getRepairCost@ItemStackRequestActionCraftGrindstone@@QEBAHXZ
+     * @hash   -475197144
      */
     MCAPI int getRepairCost() const;
 

@@ -26,15 +26,16 @@ public:
     PlayerDamageEvent(struct PlayerDamageEvent const &) = delete;
     PlayerDamageEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERDAMAGEEVENT
-#endif
     /**
      * @symbol ??0PlayerDamageEvent@@QEAA@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@@Z
+     * @hash   428261803
      */
     MCAPI PlayerDamageEvent(class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class ActorDamageSource>);
     /**
      * @symbol ??1PlayerDamageEvent@@QEAA@XZ
+     * @hash   -2071113498
      */
     MCAPI ~PlayerDamageEvent();
 

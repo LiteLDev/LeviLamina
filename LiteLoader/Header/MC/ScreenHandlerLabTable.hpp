@@ -31,40 +31,43 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -47721235
      */
     virtual ~ScreenHandlerLabTable();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?handleAction@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
+     * @hash   1709689405
      */
     virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?endRequest@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@XZ
+     * @hash   -1468289814
      */
     virtual enum ItemStackNetResult endRequest();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?postRequest@ScreenHandlerLabTable@@MEAAX_N@Z
+     * @hash   1672342780
      */
     virtual void postRequest(bool);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERLABTABLE
-#endif
     /**
      * @symbol ??0ScreenHandlerLabTable@@QEAA@AEBVContainerScreenContext@@AEAVItemStackRequestActionHandler@@@Z
+     * @hash   1305458641
      */
     MCAPI ScreenHandlerLabTable(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
     /**
      * @symbol ?_handleLabTableCombine@ScreenHandlerLabTable@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionDataless@$08@@@Z
+     * @hash   1626057114
      */
     MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const &);
 

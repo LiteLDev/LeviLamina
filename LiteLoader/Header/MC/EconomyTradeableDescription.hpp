@@ -32,26 +32,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@EconomyTradeableDescription@@UEBAPEBDXZ
+     * @hash   1959284440
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   1044218634
      */
     virtual ~EconomyTradeableDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@EconomyTradeableDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   2082866747
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@EconomyTradeableDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -510491259
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ECONOMYTRADEABLEDESCRIPTION
-#endif
 
 };

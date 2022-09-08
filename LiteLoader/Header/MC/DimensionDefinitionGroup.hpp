@@ -28,26 +28,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONDEFINITIONGROUP
-#endif
     /**
      * @symbol ??0DimensionDefinitionGroup@@QEAA@QEAVResourcePackManager@@_N@Z
+     * @hash   -879050833
      */
     MCAPI DimensionDefinitionGroup(class ResourcePackManager *const, bool);
     /**
      * @symbol ?getDimensionDefinition@DimensionDefinitionGroup@@QEBA?AV?$optional@UDimensionDefinition@DimensionDefinitionGroup@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -1454202474
      */
     MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition> getDimensionDefinition(std::string const &) const;
     /**
      * @symbol ?isEmpty@DimensionDefinitionGroup@@QEBA_NXZ
+     * @hash   472018010
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ?tryAddDimensionDefinitionByString@DimensionDefinitionGroup@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1447322201
      */
     MCAPI bool tryAddDimensionDefinitionByString(std::string const &);
     /**
      * @symbol ??1DimensionDefinitionGroup@@QEAA@XZ
+     * @hash   -1589447408
      */
     MCAPI ~DimensionDefinitionGroup();
 

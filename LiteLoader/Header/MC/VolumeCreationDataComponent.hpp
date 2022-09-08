@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VOLUMECREATIONDATACOMPONENT
-#endif
     /**
      * @symbol ??1VolumeCreationDataComponent@@QEAA@XZ
+     * @hash   -840198026
      */
     MCAPI ~VolumeCreationDataComponent();
 

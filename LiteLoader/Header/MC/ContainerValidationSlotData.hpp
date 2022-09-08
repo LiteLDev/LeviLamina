@@ -25,21 +25,27 @@ public:
     struct ContainerValidationSlotData& operator=(struct ContainerValidationSlotData const &) = delete;
     ContainerValidationSlotData(struct ContainerValidationSlotData const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONSLOTDATA
-#endif
     /**
      * @symbol ??0ContainerValidationSlotData@@QEAA@XZ
+     * @hash   -740770786
      */
     MCAPI ContainerValidationSlotData();
     /**
      * @symbol ??0ContainerValidationSlotData@@QEAA@W4ContainerEnumName@@H@Z
+     * @hash   466383696
      */
     MCAPI ContainerValidationSlotData(enum ContainerEnumName, int);
     /**
      * @symbol ?matches@ContainerValidationSlotData@@QEBA_NAEBU1@@Z
+     * @hash   663407324
      */
     MCAPI bool matches(struct ContainerValidationSlotData const &) const;
-MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
+    /**
+     * @symbol ?AUTOPLACE@ContainerValidationSlotData@@2U1@B
+     * @hash   -162321814
+     */
+    MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
 
 };

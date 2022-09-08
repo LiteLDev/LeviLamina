@@ -26,11 +26,11 @@ public:
     PlayerNotificationEvent(struct PlayerNotificationEvent const &) = delete;
     PlayerNotificationEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERNOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1PlayerNotificationEvent@@QEAA@XZ
+     * @hash   -1963647670
      */
     MCAPI ~PlayerNotificationEvent();
 

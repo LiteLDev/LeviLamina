@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EQUIPPABLEDEFINITION
-#endif
     /**
      * @symbol ?initialize@EquippableDefinition@@QEAAXAEAVEntityContext@@AEAVEquippableComponent@@@Z
+     * @hash   -907166305
      */
     MCAPI void initialize(class EntityContext &, class EquippableComponent &);
     /**
      * @symbol ?buildSchema@EquippableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VEquippableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -879835802
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition>> &);
 

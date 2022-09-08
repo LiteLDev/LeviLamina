@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -404839922
      */
     virtual ~MultiplyValueAmplifier();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z
+     * @hash   2108729867
      */
     virtual float getAmount(int, float) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIPLYVALUEAMPLIFIER
-#endif
     /**
      * @symbol ??0MultiplyValueAmplifier@@QEAA@M@Z
+     * @hash   -470676295
      */
     MCAPI MultiplyValueAmplifier(float);
 

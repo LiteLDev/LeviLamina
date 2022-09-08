@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1747102209
      */
     virtual ~BlockIntersectionConstraint();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isSatisfied@BlockIntersectionConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
+     * @hash   1542699916
      */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKINTERSECTIONCONSTRAINT
-#endif
     /**
      * @symbol ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z
+     * @hash   1905253808
      */
     MCAPI BlockIntersectionConstraint(class StructureTemplate &);
 

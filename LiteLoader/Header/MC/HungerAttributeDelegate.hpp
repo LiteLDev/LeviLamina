@@ -32,24 +32,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1172817180
      */
     virtual ~HungerAttributeDelegate();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@HungerAttributeDelegate@@UEAAXXZ
+     * @hash   -1643539834
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?notify@HungerAttributeDelegate@@UEAAX_J@Z
+     * @hash   -655274201
      */
     virtual void notify(__int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUNGERATTRIBUTEDELEGATE
-#endif
     /**
      * @symbol ??0HungerAttributeDelegate@@QEAA@AEBVAttributeInstance@@PEAVPlayer@@@Z
+     * @hash   -1980116871
      */
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);
 

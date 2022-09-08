@@ -30,13 +30,20 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBSTORAGEPERFORMANCEDATA
-#endif
     /**
      * @symbol ?resetAll@DBStoragePerformanceData@@QEAAXXZ
+     * @hash   -1785121339
      */
     MCAPI void resetAll();
-MCAPI static class std::array<char const *, 12> CATEGORY_NAMES;
-MCAPI static class std::array<char const *, 4> OPERATION_NAMES;
+    /**
+     * @symbol ?CATEGORY_NAMES@DBStoragePerformanceData@@2V?$array@PEBD$0M@@std@@A
+     * @hash   -1925693956
+     */
+    MCAPI static class std::array<char const *, 12> CATEGORY_NAMES;
+    /**
+     * @symbol ?OPERATION_NAMES@DBStoragePerformanceData@@2V?$array@PEBD$03@std@@A
+     * @hash   -626320731
+     */
+    MCAPI static class std::array<char const *, 4> OPERATION_NAMES;
 
 };

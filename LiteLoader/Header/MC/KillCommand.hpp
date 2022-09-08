@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2117867301
      */
     virtual ~KillCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@KillCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   898513142
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KILLCOMMAND
-#endif
     /**
      * @symbol ?setup@KillCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -2045183472
      */
     MCAPI static void setup(class CommandRegistry &);
 

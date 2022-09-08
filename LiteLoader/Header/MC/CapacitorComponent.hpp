@@ -29,34 +29,35 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -833224795
      */
     virtual ~CapacitorComponent();
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@CapacitorComponent@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   -140595941
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
     /**
-     * @note   Virtual function table index: 24
+     * @vftbl  24
      * @symbol ?getPoweroutDirection@CapacitorComponent@@UEBAEXZ
+     * @hash   -337209826
      */
     virtual unsigned char getPoweroutDirection() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAPACITORCOMPONENT
-#endif
     /**
      * @symbol ??0CapacitorComponent@@QEAA@XZ
+     * @hash   755559607
      */
     MCAPI CapacitorComponent();
 

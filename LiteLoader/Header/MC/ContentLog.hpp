@@ -29,40 +29,46 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOG
-#endif
     /**
      * @symbol ??0ContentLog@@QEAA@XZ
+     * @hash   2113833095
      */
     MCAPI ContentLog();
     /**
      * @symbol ?isEnabled@ContentLog@@QEBA_NXZ
+     * @hash   733501928
      */
     MCAPI bool isEnabled() const;
     /**
      * @symbol ?log@ContentLog@@QEAAX_NW4LogLevel@@W4LogArea@@ZZ
+     * @hash   290573865
      */
     MCAPI void log(bool, enum LogLevel, enum LogArea, ...);
     /**
      * @symbol ?unregisterEndPoint@ContentLog@@QEAAXV?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
+     * @hash   -163550543
      */
     MCAPI void unregisterEndPoint(class gsl::not_null<class ContentLogEndPoint *>);
     /**
      * @symbol ?updateEnabledStatus@ContentLog@@QEAAXXZ
+     * @hash   2034469427
      */
     MCAPI void updateEnabledStatus();
     /**
      * @symbol ?getLogAreaName@ContentLog@@SAPEBDW4LogArea@@@Z
+     * @hash   1567023636
      */
     MCAPI static char const * getLogAreaName(enum LogArea);
     /**
      * @symbol ?getLogLevelName@ContentLog@@SAPEBDW4LogLevel@@@Z
+     * @hash   475921450
      */
     MCAPI static char const * getLogLevelName(enum LogLevel);
 
 //private:
     /**
      * @symbol ?_writeToLog@ContentLog@@AEAAX_NW4LogArea@@W4LogLevel@@AEAPEAD@Z
+     * @hash   55686935
      */
     MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char *&);
 

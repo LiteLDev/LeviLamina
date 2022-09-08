@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   68918560
      */
     virtual ~LegacyFlowerFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@LegacyFlowerFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   407618156
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYFLOWERFEATURE
-#endif
     /**
      * @symbol ??0LegacyFlowerFeature@@QEAA@W4FlowerPlacementType@@@Z
+     * @hash   -287240843
      */
     MCAPI LegacyFlowerFeature(enum FlowerPlacementType);
 

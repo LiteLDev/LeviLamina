@@ -31,84 +31,97 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   742146533
      */
     virtual ~TickingAreaView();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?init@TickingAreaView@@UEAAXAEBUBounds@@_N@Z
+     * @hash   -1699767789
      */
     virtual void init(struct Bounds const &, bool);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@TickingAreaView@@UEAAXAEBUTick@@AEAVBlockSource@@_N2@Z
+     * @hash   564026168
      */
     virtual void tick(struct Tick const &, class BlockSource &, bool, bool);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?tickSeasons@TickingAreaView@@UEAAXAEAVBlockSource@@AEAVRandom@@@Z
+     * @hash   -1425147552
      */
     virtual void tickSeasons(class BlockSource &, class Random &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getDimensionId@TickingAreaView@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+     * @hash   -1610955536
      */
     virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getBounds@TickingAreaView@@UEBAAEBUBounds@@XZ
+     * @hash   -604325911
      */
     virtual struct Bounds const & getBounds() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?isCircle@TickingAreaView@@UEBA_NXZ
+     * @hash   893479947
      */
     virtual bool isCircle() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?isDoneLoading@TickingAreaView@@UEBA_NXZ
+     * @hash   -323061055
      */
     virtual bool isDoneLoading() const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?checkInitialLoadDone@TickingAreaView@@UEAA_NUTick@@@Z
+     * @hash   443411197
      */
     virtual bool checkInitialLoadDone(struct Tick);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?checkLoadedChunkNeighborsDone@TickingAreaView@@UEBA_NAEBVBlockSource@@_N@Z
+     * @hash   772616079
      */
     virtual bool checkLoadedChunkNeighborsDone(class BlockSource const &, bool) const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?move@TickingAreaView@@UEAAXAEBUBounds@@@Z
+     * @hash   342509048
      */
     virtual void move(struct Bounds const &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?createChildSource@TickingAreaView@@UEAA?AV?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@XZ
+     * @hash   910849554
      */
     virtual std::unique_ptr<class ChunkViewSource> createChildSource();
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?getAvailableChunk@TickingAreaView@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
+     * @hash   1842600943
      */
     virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREAVIEW
-#endif
     /**
      * @symbol ??0TickingAreaView@@QEAA@AEAVChunkSource@@@Z
+     * @hash   -2085162970
      */
     MCAPI TickingAreaView(class ChunkSource &);
     /**
      * @symbol ?unregisterChunkBuildOrderPolicy@TickingAreaView@@QEAAXAEAVChunkBuildOrderPolicyBase@@@Z
+     * @hash   1151443774
      */
     MCAPI void unregisterChunkBuildOrderPolicy(class ChunkBuildOrderPolicyBase &);
 
 //private:
     /**
      * @symbol ?_tickChunk@TickingAreaView@@AEAA_NAEBUTick@@AEAVBlockSource@@AEAVLevel@@AEBVChunkPos@@@Z
+     * @hash   -120641051
      */
     MCAPI bool _tickChunk(struct Tick const &, class BlockSource &, class Level &, class ChunkPos const &);
 

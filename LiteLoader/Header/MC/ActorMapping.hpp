@@ -28,23 +28,26 @@ public:
     ActorMapping(struct ActorMapping const &) = delete;
     ActorMapping() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORMAPPING
-#endif
     /**
      * @symbol ??0ActorMapping@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   388509324
      */
     MCAPI ActorMapping(std::string const &, std::string const &);
     /**
      * @symbol ??0ActorMapping@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
+     * @hash   975957612
      */
     MCAPI ActorMapping(std::string const &, std::string const &, std::string const &);
     /**
      * @symbol ?getMappingName@ActorMapping@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorTypeNamespaceRules@@@Z
+     * @hash   -959804045
      */
     MCAPI std::string getMappingName(enum ActorTypeNamespaceRules) const;
     /**
      * @symbol ??1ActorMapping@@QEAA@XZ
+     * @hash   -1633594797
      */
     MCAPI ~ActorMapping();
 

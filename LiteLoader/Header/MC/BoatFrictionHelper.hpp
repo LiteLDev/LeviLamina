@@ -24,6 +24,7 @@ namespace BoatFrictionHelper {
 #undef AFTER_EXTRA
     /**
      * @symbol ?getFrictionBasedOnCollision@BoatFrictionHelper@@YAMAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -1145255165
      */
     MCAPI float getFrictionBasedOnCollision(class BlockSource &, class BlockPos const &);
 

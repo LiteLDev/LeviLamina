@@ -32,23 +32,24 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1777194225
      */
     virtual ~BiomeFilterGroup();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
+     * @hash   1343084802
      */
     virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEFILTERGROUP
-#endif
     /**
      * @symbol ??0BiomeFilterGroup@@QEAA@AEBV0@@Z
+     * @hash   -421388207
      */
     MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
     /**
      * @symbol ?finalizeParsedValue@BiomeFilterGroup@@QEAAXAEAVIWorldRegistriesProvider@@@Z
+     * @hash   -1935751414
      */
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
 

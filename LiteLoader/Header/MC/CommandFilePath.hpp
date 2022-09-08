@@ -27,22 +27,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDFILEPATH
-#endif
     /**
      * @symbol ??0CommandFilePath@@QEAA@XZ
+     * @hash   -1737624984
      */
     MCAPI CommandFilePath();
     /**
      * @symbol ?findInvalidCharacter@CommandFilePath@@QEBAHXZ
+     * @hash   507892892
      */
     MCAPI int findInvalidCharacter() const;
     /**
      * @symbol ?getText@CommandFilePath@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -752515324
      */
     MCAPI std::string const & getText() const;
     /**
      * @symbol ??1CommandFilePath@@QEAA@XZ
+     * @hash   -267469320
      */
     MCAPI ~CommandFilePath();
 

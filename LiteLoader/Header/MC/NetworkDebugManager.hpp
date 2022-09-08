@@ -30,9 +30,15 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKDEBUGMANAGER
-#endif
-MCAPI static int const MAX_NUMBER_OF_SAMPLES;
-MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
+    /**
+     * @symbol ?MAX_NUMBER_OF_SAMPLES@NetworkDebugManager@@2HB
+     * @hash   -2058772267
+     */
+    MCAPI static int const MAX_NUMBER_OF_SAMPLES;
+    /**
+     * @symbol ?UPDATE_INTERVAL_MILLISECONDS@NetworkDebugManager@@2HB
+     * @hash   1355252259
+     */
+    MCAPI static int const UPDATE_INTERVAL_MILLISECONDS;
 
 };

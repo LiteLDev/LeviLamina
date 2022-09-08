@@ -29,32 +29,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPINLOCK
-#endif
     /**
      * @symbol ??0SpinLock@@QEAA@XZ
+     * @hash   -798280663
      */
     MCAPI SpinLock();
     /**
      * @symbol ?lock@SpinLock@@QEAAXXZ
+     * @hash   829063525
      */
     MCAPI void lock();
     /**
      * @symbol ?try_lock@SpinLock@@QEAA_NXZ
+     * @hash   -2021240590
      */
     MCAPI bool try_lock();
     /**
      * @symbol ?unlock@SpinLock@@QEAAXXZ
+     * @hash   -1354902315
      */
     MCAPI void unlock();
     /**
      * @symbol ??1SpinLock@@QEAA@XZ
+     * @hash   1269240151
      */
     MCAPI ~SpinLock();
 
 //private:
     /**
      * @symbol ?_getThreadId@SpinLock@@AEAA_KXZ
+     * @hash   -1104311331
      */
     MCAPI unsigned __int64 _getThreadId();
 

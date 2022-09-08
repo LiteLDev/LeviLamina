@@ -25,15 +25,16 @@ public:
     struct ActorCarriedItemChangedEvent& operator=(struct ActorCarriedItemChangedEvent const &) = delete;
     ActorCarriedItemChangedEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCARRIEDITEMCHANGEDEVENT
-#endif
     /**
      * @symbol ??0ActorCarriedItemChangedEvent@@QEAA@AEBU0@@Z
+     * @hash   -712706033
      */
     MCAPI ActorCarriedItemChangedEvent(struct ActorCarriedItemChangedEvent const &);
     /**
      * @symbol ??1ActorCarriedItemChangedEvent@@QEAA@XZ
+     * @hash   385592808
      */
     MCAPI ~ActorCarriedItemChangedEvent();
 

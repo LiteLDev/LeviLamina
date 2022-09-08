@@ -31,59 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   78255511
      */
     virtual ~IWebviewTelemetry();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?onDownloadBegin@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     * @hash   -947553027
      */
     virtual void onDownloadBegin(struct WebviewDownloadInfo const &);
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1402937465
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?onDownloadComplete@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     * @hash   -633677793
      */
     virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?onDownloadCanceled@IWebviewTelemetry@@UEAAXAEBUWebviewDownloadInfo@@@Z
+     * @hash   403601423
      */
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWEBVIEWTELEMETRY
-#endif
     /**
      * @symbol ??0IWebviewTelemetry@@QEAA@AEBVIMinecraftEventing@@@Z
+     * @hash   -1309911694
      */
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
 

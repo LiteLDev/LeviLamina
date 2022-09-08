@@ -31,39 +31,43 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1412679666
      */
     virtual ~ItemUseOnActorInventoryTransaction();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?read@ItemUseOnActorInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z
+     * @hash   1887796568
      */
     virtual void read(class ReadOnlyBinaryStream &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?write@ItemUseOnActorInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   94250416
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?postLoadItems@ItemUseOnActorInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z
+     * @hash   -1390320717
      */
     virtual void postLoadItems(class BlockPalette &, bool);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
+     * @hash   -424968435
      */
     virtual enum InventoryTransactionError handle(class Player &, bool) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?onTransactionError@ItemUseOnActorInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
+     * @hash   -1781872340
      */
     virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEONACTORINVENTORYTRANSACTION
-#endif
     /**
      * @symbol ?setSelectedItem@ItemUseOnActorInventoryTransaction@@QEAAAEAV1@AEBVItemStack@@@Z
+     * @hash   -481587880
      */
     MCAPI class ItemUseOnActorInventoryTransaction & setSelectedItem(class ItemStack const &);
 

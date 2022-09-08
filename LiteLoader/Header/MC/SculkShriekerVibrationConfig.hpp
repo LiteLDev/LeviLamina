@@ -29,26 +29,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1782969829
      */
     virtual ~SculkShriekerVibrationConfig();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onSignalReceive@SculkShriekerVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
+     * @hash   1230608989
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isValidVibration@SculkShriekerVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
+     * @hash   -382317415
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?shouldListen@SculkShriekerVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
+     * @hash   -2086601224
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSHRIEKERVIBRATIONCONFIG
-#endif
 
 };

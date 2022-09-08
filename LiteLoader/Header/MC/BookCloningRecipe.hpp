@@ -32,50 +32,60 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1982186259
      */
     virtual ~BookCloningRecipe();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?assemble@BookCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z
+     * @hash   1441149309
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getCraftingSize@BookCloningRecipe@@UEBAHXZ
+     * @hash   839227413
      */
     virtual int getCraftingSize() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getIngredient@BookCloningRecipe@@UEBAAEBVRecipeIngredient@@HH@Z
+     * @hash   -559413402
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getResultItem@BookCloningRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ
+     * @hash   837757010
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?matches@BookCloningRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z
+     * @hash   23157367
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?size@BookCloningRecipe@@UEBAHXZ
+     * @hash   1655068765
      */
     virtual int size() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOOKCLONINGRECIPE
-#endif
     /**
      * @symbol ??0BookCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@AEBVUUID@mce@@@Z
+     * @hash   432251527
      */
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
     /**
      * @symbol ??0BookCloningRecipe@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   1179477228
      */
     MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
-MCAPI static class mce::UUID const ID;
+    /**
+     * @symbol ?ID@BookCloningRecipe@@2VUUID@mce@@B
+     * @hash   1560630623
+     */
+    MCAPI static class mce::UUID const ID;
 
 };

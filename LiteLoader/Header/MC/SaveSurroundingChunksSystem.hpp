@@ -31,26 +31,26 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   92548746
      */
     virtual ~SaveSurroundingChunksSystem();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@SaveSurroundingChunksSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -250901492
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVESURROUNDINGCHUNKSSYSTEM
-#endif
 
 //private:
     /**
      * @symbol ?_tickSaveSurroundingChunks@SaveSurroundingChunksSystem@@CAXAEAV?$ViewedEntityContextT@VEntityContext@@V?$FlagComponent@UActorTickedFlag@@@@V?$FlagComponent@UActorFlag@@@@V?$FlagComponent@USaveSurroundingChunksFlag@@@@@@@Z
+     * @hash   501003606
      */
     MCAPI static void _tickSaveSurroundingChunks(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FlagComponent<struct SaveSurroundingChunksFlag>> &);
 

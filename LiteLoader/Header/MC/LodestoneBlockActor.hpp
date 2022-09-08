@@ -32,102 +32,114 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1995756361
      */
     virtual ~LodestoneBlockActor();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@LodestoneBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1391037248
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?save@LodestoneBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   -1360822897
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?tick@LodestoneBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   -807416983
      */
     virtual void tick(class BlockSource &);
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?onRemoved@LodestoneBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   557777173
      */
     virtual void onRemoved(class BlockSource &);
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 28
-     * @symbol 
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 35
+     * @vftbl  35
      * @symbol ?_getUpdatePacket@LodestoneBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -1005771358
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @note   Virtual function table index: 36
+     * @vftbl  36
      * @symbol ?_onUpdatePacket@LodestoneBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   1515653216
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LODESTONEBLOCKACTOR
-#endif
     /**
      * @symbol ??0LodestoneBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   446604780
      */
     MCAPI LodestoneBlockActor(class BlockPos const &);
     /**
      * @symbol ?getTrackingHandle@LodestoneBlockActor@@QEBAAEBVPositionTrackingId@@XZ
+     * @hash   1153886658
      */
     MCAPI class PositionTrackingId const & getTrackingHandle() const;
     /**
      * @symbol ?hasTrackingHandle@LodestoneBlockActor@@QEBA_NXZ
+     * @hash   1444100876
      */
     MCAPI bool hasTrackingHandle() const;
     /**
      * @symbol ?setTrackingHandle@LodestoneBlockActor@@QEAA_NAEBVPositionTrackingId@@@Z
+     * @hash   -1934330825
      */
     MCAPI bool setTrackingHandle(class PositionTrackingId const &);
 
 //private:
 
 private:
-MCAPI static std::string const sTagName_Handle;
+    /**
+     * @symbol ?sTagName_Handle@LodestoneBlockActor@@0V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -100218273
+     */
+    MCAPI static std::string const sTagName_Handle;
 
 };

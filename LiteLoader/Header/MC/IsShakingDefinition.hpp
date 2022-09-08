@@ -29,19 +29,21 @@ public:
     IsShakingDefinition(struct IsShakingDefinition const &) = delete;
     IsShakingDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSHAKINGDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsShakingDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   481480606
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsShakingDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1259771156
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsShakingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsShakingDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1464823238
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsShakingDefinition>> &);
 

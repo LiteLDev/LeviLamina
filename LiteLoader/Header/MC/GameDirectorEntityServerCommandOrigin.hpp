@@ -33,47 +33,53 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1989497029
      */
     virtual ~GameDirectorEntityServerCommandOrigin();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getPermissionsLevel@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
+     * @hash   -503377169
      */
     virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?clone@GameDirectorEntityServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
+     * @hash   -829656459
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ
+     * @hash   70988771
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ
+     * @hash   944376893
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
-     * @note   Virtual function table index: 23
+     * @vftbl  23
      * @symbol ?getOriginType@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
+     * @hash   -919692956
      */
     virtual enum CommandOriginType getOriginType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEDIRECTORENTITYSERVERCOMMANDORIGIN
-#endif
     /**
      * @symbol ??0GameDirectorEntityServerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@@Z
+     * @hash   -1994923453
      */
     MCAPI GameDirectorEntityServerCommandOrigin(struct ActorUniqueID, class Level &);
     /**
      * @symbol ??0GameDirectorEntityServerCommandOrigin@@QEAA@AEAVActor@@@Z
+     * @hash   -799529738
      */
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor &);
     /**
      * @symbol ?load@GameDirectorEntityServerCommandOrigin@@SA?AV?$unique_ptr@VGameDirectorEntityServerCommandOrigin@@U?$default_delete@VGameDirectorEntityServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVLevel@@@Z
+     * @hash   1738173118
      */
     MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const &, class Level &);
 

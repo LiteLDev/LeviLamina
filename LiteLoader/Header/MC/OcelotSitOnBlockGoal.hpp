@@ -32,64 +32,70 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   438810093
      */
     virtual ~OcelotSitOnBlockGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@OcelotSitOnBlockGoal@@UEAA_NXZ
+     * @hash   -2136063075
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@OcelotSitOnBlockGoal@@UEAAXXZ
+     * @hash   476284134
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@OcelotSitOnBlockGoal@@UEAAXXZ
+     * @hash   -994849706
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@OcelotSitOnBlockGoal@@UEAAXXZ
+     * @hash   325654497
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@OcelotSitOnBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1193155021
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?isValidTarget@OcelotSitOnBlockGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   309104735
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?_canReach@OcelotSitOnBlockGoal@@UEAA_NAEBVBlockPos@@@Z
+     * @hash   421618498
      */
     virtual bool _canReach(class BlockPos const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCELOTSITONBLOCKGOAL
-#endif
     /**
      * @symbol ??0OcelotSitOnBlockGoal@@QEAA@AEAVMob@@M@Z
+     * @hash   507585623
      */
     MCAPI OcelotSitOnBlockGoal(class Mob &, float);
 

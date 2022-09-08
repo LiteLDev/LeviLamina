@@ -31,49 +31,53 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   872427980
      */
     virtual ~TradeWithPlayerGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@TradeWithPlayerGoal@@UEAA_NXZ
+     * @hash   684120226
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@TradeWithPlayerGoal@@UEAA_NXZ
+     * @hash   1520102448
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@TradeWithPlayerGoal@@UEAAXXZ
+     * @hash   1372334539
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@TradeWithPlayerGoal@@UEAAXXZ
+     * @hash   186683659
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@TradeWithPlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1307756930
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEWITHPLAYERGOAL
-#endif
     /**
      * @symbol ??0TradeWithPlayerGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -1434500881
      */
     MCAPI TradeWithPlayerGoal(class Mob &);
 

@@ -30,43 +30,45 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2043847137
      */
     virtual ~ItemStackRequestActionCraftLoom();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   2004456210
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1370897725
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftLoom@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   579041084
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftLoom@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
+     * @hash   834076964
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTLOOM
-#endif
     /**
      * @symbol ??0ItemStackRequestActionCraftLoom@@QEAA@XZ
+     * @hash   1958283821
      */
     MCAPI ItemStackRequestActionCraftLoom();
     /**
      * @symbol ?getPatternNameId@ItemStackRequestActionCraftLoom@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -743324644
      */
     MCAPI std::string const & getPatternNameId() const;
 

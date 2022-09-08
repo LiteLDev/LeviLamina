@@ -30,25 +30,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   574145294
      */
     virtual ~AllowListCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@AllowListCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   167682223
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLOWLISTCOMMAND
-#endif
     /**
      * @symbol ?setup@AllowListCommand@@SAXAEAVCommandRegistry@@AEAVAllowListFile@@@Z
+     * @hash   799884611
      */
     MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 
 //private:
 
 private:
-MCAPI static class AllowListFile * mAllowListFile;
+    /**
+     * @symbol ?mAllowListFile@AllowListCommand@@0PEAVAllowListFile@@EA
+     * @hash   397964503
+     */
+    MCAPI static class AllowListFile * mAllowListFile;
 
 };

@@ -32,74 +32,80 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1717918709
      */
     virtual ~ResourceLoader();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@ResourceLoader@@UEBA_NAEBVResourceLocationPair@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
+     * @hash   1251458613
      */
     virtual bool load(class ResourceLocationPair const &, std::string &, std::vector<std::string> const &) const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   2001727870
      */
     virtual void __unk_vfn_4() = 0;
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   2002651391
      */
     virtual void __unk_vfn_5() = 0;
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   2003574912
      */
     virtual void __unk_vfn_6() = 0;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getPath@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
+     * @hash   -2014217260
      */
     virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const &) const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getPath@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   926637185
      */
     virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const &, std::vector<std::string> const &) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getPathContainingResource@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z
+     * @hash   -1576686264
      */
     virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &) const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?getPathContainingResource@ResourceLoader@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   1262963887
      */
     virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const &, std::vector<std::string>) const;
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?getPackStackIndexOfResource@ResourceLoader@@UEBA?AU?$pair@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
+     * @hash   -192293658
      */
     virtual struct std::pair<int, std::string const &> getPackStackIndexOfResource(class ResourceLocation const &, std::vector<std::string> const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInStreamableLocation@ResourceLoader@@UEBA_NAEBVResourceLocation@@@Z
+     * @hash   -1187164153
      */
     MCVAPI bool isInStreamableLocation(class ResourceLocation const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInStreamableLocation@ResourceLoader@@UEBA_NAEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   1508688510
      */
     MCVAPI bool isInStreamableLocation(class ResourceLocation const &, std::vector<std::string> const &) const;
 #endif

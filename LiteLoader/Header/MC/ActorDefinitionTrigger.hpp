@@ -27,26 +27,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORDEFINITIONTRIGGER
-#endif
     /**
      * @symbol ??0ActorDefinitionTrigger@@QEAA@$$QEAV0@@Z
+     * @hash   -2039053911
      */
     MCAPI ActorDefinitionTrigger(class ActorDefinitionTrigger &&);
     /**
      * @symbol ?canTrigger@ActorDefinitionTrigger@@QEBA_NAEBVActor@@AEBVVariantParameterList@@@Z
+     * @hash   -883131240
      */
     MCAPI bool canTrigger(class Actor const &, class VariantParameterList const &) const;
     /**
      * @symbol ??4ActorDefinitionTrigger@@QEAAAEAV0@AEBV0@@Z
+     * @hash   793659380
      */
     MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger const &);
     /**
      * @symbol ??4ActorDefinitionTrigger@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1268910860
      */
     MCAPI class ActorDefinitionTrigger & operator=(class ActorDefinitionTrigger &&);
     /**
      * @symbol ??1ActorDefinitionTrigger@@QEAA@XZ
+     * @hash   1948244986
      */
     MCAPI ~ActorDefinitionTrigger();
 

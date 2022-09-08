@@ -32,32 +32,33 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2005262490
      */
     virtual ~PlayerUIContainer();
     /**
-     * @note   Virtual function table index: 22
-     * @symbol 
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @note   Virtual function table index: 23
-     * @symbol 
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINER
-#endif
     /**
      * @symbol ??0PlayerUIContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NH@Z
+     * @hash   1911349961
      */
     MCAPI PlayerUIContainer(std::string const &, bool, int);
     /**
      * @symbol ?load@PlayerUIContainer@@QEAAXAEBVListTag@@AEBVSemVersion@@@Z
+     * @hash   2051099859
      */
     MCAPI void load(class ListTag const &, class SemVersion const &);
     /**
      * @symbol ?save@PlayerUIContainer@@QEBA?AV?$unique_ptr@VListTag@@U?$default_delete@VListTag@@@std@@@std@@XZ
+     * @hash   7672168
      */
     MCAPI std::unique_ptr<class ListTag> save() const;
 

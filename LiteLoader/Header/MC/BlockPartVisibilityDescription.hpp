@@ -27,55 +27,66 @@ public:
     struct BlockPartVisibilityDescription& operator=(struct BlockPartVisibilityDescription const &) = delete;
     BlockPartVisibilityDescription(struct BlockPartVisibilityDescription const &) = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1445855980
      */
     virtual ~BlockPartVisibilityDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@BlockPartVisibilityDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1278159217
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockPartVisibilityDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   1327244373
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?isNetworkComponent@BlockPartVisibilityDescription@@UEBA_NXZ
+     * @hash   -2141880505
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@BlockPartVisibilityDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   1743943497
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@BlockPartVisibilityDescription@@UEAAXAEBVCompoundTag@@@Z
+     * @hash   1020908217
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPARTVISIBILITYDESCRIPTION
-#endif
     /**
      * @symbol ??0BlockPartVisibilityDescription@@QEAA@XZ
+     * @hash   -358241802
      */
     MCAPI BlockPartVisibilityDescription();
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockPartVisibilityDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   2105553939
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockPartVisibilityDescription@@SAXXZ
+     * @hash   1818466755
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockPartVisibilityDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   1439960434
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

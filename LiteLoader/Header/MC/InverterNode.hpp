@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   93461359
      */
     virtual ~InverterNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@InverterNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -26235038
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@InverterNode@@MEAAXAEAVActor@@@Z
+     * @hash   -1297485537
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVERTERNODE
-#endif
     /**
      * @symbol ??0InverterNode@@QEAA@XZ
+     * @hash   -1465870191
      */
     MCAPI InverterNode();
 

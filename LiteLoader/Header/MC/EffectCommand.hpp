@@ -32,25 +32,26 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1488176056
      */
     virtual ~EffectCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@EffectCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -606766263
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EFFECTCOMMAND
-#endif
     /**
      * @symbol ?setup@EffectCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   751893440
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?clear@EffectCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -2045323802
      */
     MCAPI void clear(class CommandOrigin const &, class CommandOutput &) const;
 

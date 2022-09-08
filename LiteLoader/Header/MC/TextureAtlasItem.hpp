@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEXTUREATLASITEM
-#endif
     /**
      * @symbol ??1TextureAtlasItem@@QEAA@XZ
+     * @hash   1107491949
      */
     MCAPI ~TextureAtlasItem();
 

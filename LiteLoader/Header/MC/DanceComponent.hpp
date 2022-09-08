@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DANCECOMPONENT
-#endif
     /**
      * @symbol ??0DanceComponent@@QEAA@XZ
+     * @hash   310453686
      */
     MCAPI DanceComponent();
     /**
      * @symbol ?inListenDistance@DanceComponent@@QEBA_NAEBVVec3@@@Z
+     * @hash   -497450527
      */
     MCAPI bool inListenDistance(class Vec3 const &) const;
     /**
      * @symbol ?initFromDefinition@DanceComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -831057894
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
      * @symbol ?initFromDefinition@DanceComponent@@QEAAXAEAVActor@@M@Z
+     * @hash   1535494199
      */
     MCAPI void initFromDefinition(class Actor &, float);
 

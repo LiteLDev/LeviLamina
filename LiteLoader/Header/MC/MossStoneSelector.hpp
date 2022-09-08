@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -409165360
      */
     virtual ~MossStoneSelector();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?next@MossStoneSelector@@UEBAAEBVBlock@@AEAVRandom@@HHH_N@Z
+     * @hash   -536285021
      */
     virtual class Block const & next(class Random &, int, int, int, bool) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOSSSTONESELECTOR
-#endif
 
 };

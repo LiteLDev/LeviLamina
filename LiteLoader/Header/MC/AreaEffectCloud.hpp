@@ -32,218 +32,241 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?reloadHardcoded@AreaEffectCloud@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
+     * @hash   1156286854
      */
     virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -1813303003
      */
     virtual ~AreaEffectCloud();
     /**
-     * @note   Virtual function table index: 41
-     * @symbol 
+     * @vftbl  41
+     * @hash   -249160383
      */
     virtual void __unk_vfn_41();
     /**
-     * @note   Virtual function table index: 49
+     * @vftbl  49
      * @symbol ?normalTick@AreaEffectCloud@@UEAAXXZ
+     * @hash   -659852172
      */
     virtual void normalTick();
     /**
-     * @note   Virtual function table index: 61
-     * @symbol 
+     * @vftbl  61
+     * @hash   -198636769
      */
     virtual void __unk_vfn_61();
     /**
-     * @note   Virtual function table index: 68
-     * @symbol 
+     * @vftbl  68
+     * @hash   -185437434
      */
     virtual void __unk_vfn_68();
     /**
-     * @note   Virtual function table index: 80
+     * @vftbl  80
      * @symbol ?getShadowRadius@AreaEffectCloud@@UEBAMXZ
+     * @hash   293830527
      */
     virtual float getShadowRadius() const;
     /**
-     * @note   Virtual function table index: 82
-     * @symbol 
+     * @vftbl  82
+     * @hash   -133720258
      */
     virtual void __unk_vfn_82();
     /**
-     * @note   Virtual function table index: 85
-     * @symbol 
+     * @vftbl  85
+     * @hash   -137684383
      */
     virtual void __unk_vfn_85();
     /**
-     * @note   Virtual function table index: 88
-     * @symbol 
+     * @vftbl  88
+     * @hash   -128179132
      */
     virtual void __unk_vfn_88();
     /**
-     * @note   Virtual function table index: 96
-     * @symbol 
+     * @vftbl  96
+     * @hash   -108131711
      */
     virtual void __unk_vfn_96();
     /**
-     * @note   Virtual function table index: 99
-     * @symbol 
+     * @vftbl  99
+     * @hash   -98626460
      */
     virtual void __unk_vfn_99();
     /**
-     * @note   Virtual function table index: 106
-     * @symbol 
+     * @vftbl  106
+     * @hash   1332943623
      */
     virtual void __unk_vfn_106();
     /**
-     * @note   Virtual function table index: 108
-     * @symbol 
+     * @vftbl  108
+     * @hash   1334790665
      */
     virtual void __unk_vfn_108();
     /**
-     * @note   Virtual function table index: 109
-     * @symbol 
+     * @vftbl  109
+     * @hash   1328979498
      */
     virtual void __unk_vfn_109();
     /**
-     * @note   Virtual function table index: 111
-     * @symbol 
+     * @vftbl  111
+     * @hash   1356955169
      */
     virtual void __unk_vfn_111();
     /**
-     * @note   Virtual function table index: 119
+     * @vftbl  119
      * @symbol ?setOwner@AreaEffectCloud@@UEAAXUActorUniqueID@@@Z
+     * @hash   1209563196
      */
     virtual void setOwner(struct ActorUniqueID);
     /**
-     * @note   Virtual function table index: 182
-     * @symbol 
+     * @vftbl  182
+     * @hash   1509264059
      */
     virtual void __unk_vfn_182();
     /**
-     * @note   Virtual function table index: 196
-     * @symbol 
+     * @vftbl  196
+     * @hash   1590605982
      */
     virtual void __unk_vfn_196();
     /**
-     * @note   Virtual function table index: 222
-     * @symbol 
+     * @vftbl  222
+     * @hash   -2034256014
      */
     virtual void __unk_vfn_222();
     /**
-     * @note   Virtual function table index: 223
-     * @symbol 
+     * @vftbl  223
+     * @hash   -2020032253
      */
     virtual void __unk_vfn_223();
     /**
-     * @note   Virtual function table index: 248
-     * @symbol 
+     * @vftbl  248
+     * @hash   -2007175034
      */
     virtual void __unk_vfn_248();
     /**
-     * @note   Virtual function table index: 251
-     * @symbol 
+     * @vftbl  251
+     * @hash   -786620466
      */
     virtual void __unk_vfn_251();
     /**
-     * @note   Virtual function table index: 269
-     * @symbol 
+     * @vftbl  269
+     * @hash   -1906709211
      */
     virtual void __unk_vfn_269();
     /**
-     * @note   Virtual function table index: 273
+     * @vftbl  273
      * @symbol ?readAdditionalSaveData@AreaEffectCloud@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   1024360521
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 274
+     * @vftbl  274
      * @symbol ?addAdditionalSaveData@AreaEffectCloud@@MEBAXAEAVCompoundTag@@@Z
+     * @hash   -1844433804
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 277
-     * @symbol 
+     * @vftbl  277
+     * @hash   -1873192414
      */
     virtual void __unk_vfn_277();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AREAEFFECTCLOUD
-#endif
     /**
      * @symbol ??0AreaEffectCloud@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
+     * @hash   -1568836333
      */
     MCAPI AreaEffectCloud(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
      * @symbol ?addAreaEffect@AreaEffectCloud@@QEAAXVMobEffectInstance@@@Z
+     * @hash   -688583372
      */
     MCAPI void addAreaEffect(class MobEffectInstance);
     /**
      * @symbol ?getDuration@AreaEffectCloud@@QEBAHXZ
+     * @hash   1597684348
      */
     MCAPI int getDuration() const;
     /**
      * @symbol ?getEffectiveRadius@AreaEffectCloud@@QEBAMXZ
+     * @hash   1985829370
      */
     MCAPI float getEffectiveRadius() const;
     /**
      * @symbol ?getParticle@AreaEffectCloud@@QEBA?AW4ParticleType@@XZ
+     * @hash   780315944
      */
     MCAPI enum ParticleType getParticle() const;
     /**
      * @symbol ?notifyPickup@AreaEffectCloud@@QEAAXXZ
+     * @hash   -2126834851
      */
     MCAPI void notifyPickup();
     /**
      * @symbol ?setAffectOwner@AreaEffectCloud@@QEAAX_N@Z
+     * @hash   1010877530
      */
     MCAPI void setAffectOwner(bool);
     /**
      * @symbol ?setDuration@AreaEffectCloud@@QEAAXH@Z
+     * @hash   -396226502
      */
     MCAPI void setDuration(int);
     /**
      * @symbol ?setInitialRadius@AreaEffectCloud@@QEAAXM@Z
+     * @hash   911313438
      */
     MCAPI void setInitialRadius(float);
     /**
      * @symbol ?setParticle@AreaEffectCloud@@QEAAXW4ParticleType@@@Z
+     * @hash   -800211274
      */
     MCAPI void setParticle(enum ParticleType);
     /**
      * @symbol ?setParticleColor@AreaEffectCloud@@QEAAXAEAVColor@mce@@@Z
+     * @hash   -1216556582
      */
     MCAPI void setParticleColor(class mce::Color &);
     /**
      * @symbol ?setPotion@AreaEffectCloud@@QEAAXF@Z
+     * @hash   -113277039
      */
     MCAPI void setPotion(short);
     /**
      * @symbol ?setRadiusChangeOnPickup@AreaEffectCloud@@QEAAXM@Z
+     * @hash   87356390
      */
     MCAPI void setRadiusChangeOnPickup(float);
     /**
      * @symbol ?setRadiusOnUse@AreaEffectCloud@@QEAAXM@Z
+     * @hash   -1020017714
      */
     MCAPI void setRadiusOnUse(float);
     /**
      * @symbol ?setRadiusPerTick@AreaEffectCloud@@QEAAXM@Z
+     * @hash   1122590522
      */
     MCAPI void setRadiusPerTick(float);
     /**
      * @symbol ?setReapplicationDelay@AreaEffectCloud@@QEAAXH@Z
+     * @hash   285678454
      */
     MCAPI void setReapplicationDelay(int);
 
 //private:
     /**
      * @symbol ?_getTicksAlive@AreaEffectCloud@@AEBA_JXZ
+     * @hash   -1007430343
      */
     MCAPI __int64 _getTicksAlive() const;
     /**
      * @symbol ?_setSpawnTick@AreaEffectCloud@@AEAAX_J@Z
+     * @hash   -2145849785
      */
     MCAPI void _setSpawnTick(__int64);
     /**
      * @symbol ?_spawnParticles@AreaEffectCloud@@AEAAXAEAVRandom@@IM@Z
+     * @hash   1659480219
      */
     MCAPI void _spawnParticles(class Random &, unsigned int, float);
 

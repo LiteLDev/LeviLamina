@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1362113184
      */
     virtual ~AgentBodyControl();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z
+     * @hash   -1681593501
      */
     virtual void clientTick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTBODYCONTROL
-#endif
     /**
      * @symbol ??0AgentBodyControl@@QEAA@XZ
+     * @hash   -1295808190
      */
     MCAPI AgentBodyControl();
 

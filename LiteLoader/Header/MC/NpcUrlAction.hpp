@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   88821486
      */
     virtual ~NpcUrlAction();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?toJson@NpcUrlAction@@UEAA?AVValue@Json@@XZ
+     * @hash   -984265802
      */
     virtual class Json::Value toJson();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCURLACTION
-#endif
     /**
      * @symbol ??0NpcUrlAction@@QEAA@XZ
+     * @hash   -1501244176
      */
     MCAPI NpcUrlAction();
 

@@ -31,64 +31,71 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1205958910
      */
     virtual ~RandomStrollGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@RandomStrollGoal@@UEAA_NXZ
+     * @hash   1300591708
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RandomStrollGoal@@UEAA_NXZ
+     * @hash   1744574634
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@RandomBreachingGoal@@UEAA_NXZ
+     * @hash   -1850745388
      */
     virtual bool canBeInterrupted();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@RandomStrollGoal@@UEAAXXZ
+     * @hash   841920597
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@RandomStrollGoal@@UEAAXXZ
+     * @hash   -1014827947
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@RandomStrollGoal@@UEAAXXZ
+     * @hash   205875200
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RandomStrollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   467214500
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?_setWantedPosition@RandomStrollGoal@@MEAA_NXZ
+     * @hash   16008073
      */
     virtual bool _setWantedPosition();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMSTROLLGOAL
-#endif
     /**
      * @symbol ??0RandomStrollGoal@@QEAA@AEAVMob@@MHHH@Z
+     * @hash   2008957467
      */
     MCAPI RandomStrollGoal(class Mob &, float, int, int, int);
 

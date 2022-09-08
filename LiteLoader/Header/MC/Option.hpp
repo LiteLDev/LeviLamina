@@ -33,72 +33,84 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1418685761
      */
     virtual ~Option();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?save@BoolOption@@UEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
+     * @hash   -1624698346
      */
     virtual void save(std::vector<struct std::pair<std::string, std::string>> &) = 0;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?load@BoolOption@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1174284081
      */
     virtual void load(std::string const &) = 0;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?load@Option@@UEAAXAEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z
+     * @hash   1968997724
      */
     virtual void load(class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?load@Option@@UEAAXAEBVValue@Json@@@Z
+     * @hash   1938666816
      */
     virtual void load(class Json::Value const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPTION
-#endif
     /**
      * @symbol ??0Option@@QEAA@W4OptionID@@W4OptionOwnerType@@W4OptionResetFlags@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@3W4OptionType@@@Z
+     * @hash   225046195
      */
     MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const &, std::string const &, enum OptionType);
     /**
      * @symbol ?canModify@Option@@QEBA_NXZ
+     * @hash   -1704364870
      */
     MCAPI bool canModify() const;
     /**
      * @symbol ?getBool@Option@@QEBA_NXZ
+     * @hash   -1752338634
      */
     MCAPI bool getBool() const;
     /**
      * @symbol ?hasOverrideSource@Option@@QEBA_NXZ
+     * @hash   -799262424
      */
     MCAPI bool hasOverrideSource() const;
     /**
      * @symbol ?notifyOptionValueChanged@Option@@QEAAX_N@Z
+     * @hash   410843302
      */
     MCAPI void notifyOptionValueChanged(bool);
     /**
      * @symbol ?registerLock@Option@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEA_N@Z@std@@@Z
+     * @hash   -1176367707
      */
     MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool &)>);
     /**
      * @symbol ?registerObserver@Option@@QEAA?AVSubscription@PubSub@Bedrock@@V?$function@$$A6AXAEBVOption@@@Z@std@@@Z
+     * @hash   2054508292
      */
     MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const &)>);
     /**
      * @symbol ?setRequestSaveCallback@Option@@QEAAXV?$function@$$A6AX_N@Z@std@@@Z
+     * @hash   -770262153
      */
     MCAPI void setRequestSaveCallback(class std::function<void (bool)>);
     /**
      * @symbol ?read@Option@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEA_N@Z
+     * @hash   672622035
      */
     MCAPI static bool read(std::string const &, bool &);
 
 //private:
     /**
      * @symbol ?_updatePropertyVector@Option@@AEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
+     * @hash   -275348759
      */
     MCAPI void _updatePropertyVector(std::vector<struct std::pair<std::string, std::string>> &, std::string const &);
 

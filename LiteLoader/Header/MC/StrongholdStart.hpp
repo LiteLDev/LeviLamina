@@ -32,25 +32,26 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   59493498
      */
     virtual ~StrongholdStart();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isValid@StrongholdStart@@UEBA_NXZ
+     * @hash   -1271846754
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDSTART
-#endif
     /**
      * @symbol ??0StrongholdStart@@QEAA@AEAVDimension@@AEAVRandom@@HH@Z
+     * @hash   -106673894
      */
     MCAPI StrongholdStart(class Dimension &, class Random &, int, int);
 
 //private:
     /**
      * @symbol ?_initializePieceSet@StrongholdStart@@AEAAXAEAVRandom@@@Z
+     * @hash   1920833526
      */
     MCAPI void _initializePieceSet(class Random &);
 

@@ -27,11 +27,11 @@ public:
     ActorEventResponseCollection(struct ActorEventResponseCollection const &) = delete;
     ActorEventResponseCollection() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSECOLLECTION
-#endif
     /**
      * @symbol ?buildSchema@ActorEventResponseCollection@@SA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorEventResponseCollection@@@JsonUtil@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVSemVersion@@AEBV?$Factory@VActorEventResponse@@$$V@@@Z
+     * @hash   -2088626538
      */
     MCAPI static class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> buildSchema(std::string const &, class SemVersion const &, class Factory<class ActorEventResponse> const &);
 

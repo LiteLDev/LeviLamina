@@ -26,11 +26,11 @@ public:
     EntitySystemsInfo(struct EntitySystemsInfo const &) = delete;
     EntitySystemsInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMSINFO
-#endif
     /**
      * @symbol ?bindType@EntitySystemsInfo@@SAXXZ
+     * @hash   -751509985
      */
     MCAPI static void bindType();
 

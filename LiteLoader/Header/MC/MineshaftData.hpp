@@ -26,11 +26,11 @@ public:
     MineshaftData(struct MineshaftData const &) = delete;
     MineshaftData() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTDATA
-#endif
     /**
      * @symbol ??0MineshaftData@@QEAA@_N@Z
+     * @hash   1706795510
      */
     MCAPI MineshaftData(bool);
 

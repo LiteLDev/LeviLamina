@@ -28,15 +28,16 @@ public:
     Trade(struct Trade const &) = delete;
     Trade() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE
-#endif
     /**
      * @symbol ??4Trade@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -816319432
      */
     MCAPI struct Trade & operator=(struct Trade &&);
     /**
      * @symbol ??1Trade@@QEAA@XZ
+     * @hash   259984448
      */
     MCAPI ~Trade();
 

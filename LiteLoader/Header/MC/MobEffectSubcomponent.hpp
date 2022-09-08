@@ -31,40 +31,44 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1218137564
      */
     virtual ~MobEffectSubcomponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?readfromJSON@MobEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   730318650
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?writetoJSON@MobEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   490099919
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@MobEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -1966369804
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@MobEffectSubcomponent@@UEAAPEBDXZ
+     * @hash   -200125681
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTSUBCOMPONENT
-#endif
     /**
      * @symbol ??0MobEffectSubcomponent@@QEAA@XZ
+     * @hash   1097522954
      */
     MCAPI MobEffectSubcomponent();
 
 //private:
     /**
      * @symbol ?_addEffectFromJSON@MobEffectSubcomponent@@AEAAXAEAVValue@Json@@@Z
+     * @hash   1448596256
      */
     MCAPI void _addEffectFromJSON(class Json::Value &);
 

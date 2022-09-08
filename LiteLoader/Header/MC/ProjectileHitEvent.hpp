@@ -25,15 +25,16 @@ public:
     struct ProjectileHitEvent& operator=(struct ProjectileHitEvent const &) = delete;
     ProjectileHitEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEHITEVENT
-#endif
     /**
      * @symbol ??0ProjectileHitEvent@@QEAA@AEBU0@@Z
+     * @hash   764656399
      */
     MCAPI ProjectileHitEvent(struct ProjectileHitEvent const &);
     /**
      * @symbol ??1ProjectileHitEvent@@QEAA@XZ
+     * @hash   827104410
      */
     MCAPI ~ProjectileHitEvent();
 

@@ -30,60 +30,65 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -120882203
      */
     virtual ~MoveOutdoorsGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@MoveOutdoorsGoal@@UEAA_NXZ
+     * @hash   685102389
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@MoveOutdoorsGoal@@UEAAXXZ
+     * @hash   -2141781106
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@MoveOutdoorsGoal@@UEAAXXZ
+     * @hash   1516971657
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveOutdoorsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   488615947
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?isValidTarget@MoveOutdoorsGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1241786967
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEOUTDOORSGOAL
-#endif
     /**
      * @symbol ??0MoveOutdoorsGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -15126462
      */
     MCAPI MoveOutdoorsGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_setNextTargetTick@MoveOutdoorsGoal@@AEAAXXZ
+     * @hash   1884056037
      */
     MCAPI void _setNextTargetTick();
 

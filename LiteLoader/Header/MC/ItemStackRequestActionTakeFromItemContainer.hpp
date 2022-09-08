@@ -29,29 +29,28 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1933673883
      */
     virtual ~ItemStackRequestActionTakeFromItemContainer();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   2004456210
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1370913101
      */
     virtual void __unk_vfn_3();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTAKEFROMITEMCONTAINER
-#endif
     /**
      * @symbol ??0ItemStackRequestActionTakeFromItemContainer@@QEAA@XZ
+     * @hash   -1516524631
      */
     MCAPI ItemStackRequestActionTakeFromItemContainer();
 

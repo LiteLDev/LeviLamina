@@ -32,13 +32,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z
+     * @hash   -1139078164
      */
     MCVAPI std::string getAlternateContentKey(class ContentIdentity const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?requireEncryptedReads@IContentKeyProvider@@UEBA_NXZ
+     * @hash   1192323798
      */
     MCVAPI bool requireEncryptedReads() const;
 #endif

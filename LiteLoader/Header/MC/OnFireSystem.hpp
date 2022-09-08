@@ -30,32 +30,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFIRESYSTEM
-#endif
     /**
      * @symbol ?extinguishFire@OnFireSystem@@SAXAEAVActor@@@Z
+     * @hash   -1947443360
      */
     MCAPI static void extinguishFire(class Actor &);
     /**
      * @symbol ?onFireChanged@OnFireSystem@@SAXAEAVActor@@@Z
+     * @hash   529762082
      */
     MCAPI static void onFireChanged(class Actor &);
     /**
      * @symbol ?setOnFire@OnFireSystem@@SAXAEAVActor@@H@Z
+     * @hash   1907038149
      */
     MCAPI static void setOnFire(class Actor &, int);
     /**
      * @symbol ?setOnFireNoEffects@OnFireSystem@@SAXAEAVActor@@H@Z
+     * @hash   1088447671
      */
     MCAPI static void setOnFireNoEffects(class Actor &, int);
     /**
      * @symbol ?stopFire@OnFireSystem@@SAXAEAVActor@@@Z
+     * @hash   1980933104
      */
     MCAPI static void stopFire(class Actor &);
 
 //protected:
     /**
      * @symbol ?_extinguishFireIfInWater@OnFireSystem@@KA_NAEAVActor@@@Z
+     * @hash   554446568
      */
     MCAPI static bool _extinguishFireIfInWater(class Actor &);
 

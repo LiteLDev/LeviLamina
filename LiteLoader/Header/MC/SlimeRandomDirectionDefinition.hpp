@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMERANDOMDIRECTIONDEFINITION
-#endif
     /**
      * @symbol ??0SlimeRandomDirectionDefinition@@QEAA@XZ
+     * @hash   972416227
      */
     MCAPI SlimeRandomDirectionDefinition();
     /**
      * @symbol ?initialize@SlimeRandomDirectionDefinition@@QEAAXAEAVEntityContext@@AEAVSlimeRandomDirectionGoal@@@Z
+     * @hash   -2144928569
      */
     MCAPI void initialize(class EntityContext &, class SlimeRandomDirectionGoal &);
     /**
      * @symbol ?buildSchema@SlimeRandomDirectionDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSlimeRandomDirectionDefinition@@@JsonUtil@@@3@@Z
+     * @hash   1558501911
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>> &);
 

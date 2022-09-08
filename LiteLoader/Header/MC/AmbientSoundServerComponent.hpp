@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMBIENTSOUNDSERVERCOMPONENT
-#endif
     /**
      * @symbol ??4AmbientSoundServerComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -58091254
      */
     MCAPI class AmbientSoundServerComponent & operator=(class AmbientSoundServerComponent &&);
     /**
      * @symbol ??1AmbientSoundServerComponent@@QEAA@XZ
+     * @hash   1193406399
      */
     MCAPI ~AmbientSoundServerComponent();
 

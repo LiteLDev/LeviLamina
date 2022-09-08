@@ -29,35 +29,41 @@ public:
     WorldTemplateInfo(struct WorldTemplateInfo const &) = delete;
     WorldTemplateInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEINFO
-#endif
     /**
      * @symbol ??0WorldTemplateInfo@@QEAA@AEBVWorldTemplatePackManifest@@@Z
+     * @hash   -30932921
      */
     MCAPI WorldTemplateInfo(class WorldTemplatePackManifest const &);
     /**
      * @symbol ?addWorldTemplatePackSource@WorldTemplateInfo@@QEAAXAEAVWorldTemplatePackSource@@@Z
+     * @hash   2049528424
      */
     MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource &);
     /**
      * @symbol ?getPackManifest@WorldTemplateInfo@@QEBAAEBVWorldTemplatePackManifest@@XZ
+     * @hash   906256374
      */
     MCAPI class WorldTemplatePackManifest const & getPackManifest() const;
     /**
      * @symbol ?getWorldName@WorldTemplateInfo@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1871479574
      */
     MCAPI std::string const & getWorldName() const;
     /**
      * @symbol ?getWorldPath@WorldTemplateInfo@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   1655092911
      */
     MCAPI class Core::PathBuffer<std::string> const & getWorldPath() const;
     /**
      * @symbol ?isVirtualCatalogItem@WorldTemplateInfo@@QEBA_NXZ
+     * @hash   -782490036
      */
     MCAPI bool isVirtualCatalogItem() const;
     /**
      * @symbol ??1WorldTemplateInfo@@QEAA@XZ
+     * @hash   1404150806
      */
     MCAPI ~WorldTemplateInfo();
 

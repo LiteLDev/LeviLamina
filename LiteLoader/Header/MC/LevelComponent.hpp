@@ -28,18 +28,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELCOMPONENT
-#endif
     /**
      * @symbol ??0LevelComponent@@QEAA@V?$unique_ptr@VILevel@@U?$default_delete@VILevel@@@std@@@std@@@Z
+     * @hash   2028790576
      */
     MCAPI LevelComponent(std::unique_ptr<class ILevel>);
     /**
      * @symbol ?getLevel@LevelComponent@@QEAAAEAVILevel@@XZ
+     * @hash   -808215264
      */
     MCAPI class ILevel & getLevel();
     /**
      * @symbol ??1LevelComponent@@QEAA@XZ
+     * @hash   -861926989
      */
     MCAPI ~LevelComponent();
 

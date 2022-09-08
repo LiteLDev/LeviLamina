@@ -30,29 +30,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDGAMETESTTICKINGAREA
-#endif
     /**
      * @symbol ??0ScopedGameTestTickingArea@@QEAA@AEAVDimension@@AEBVBoundingBox@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -574559811
      */
     MCAPI ScopedGameTestTickingArea(class Dimension &, class BoundingBox const &, std::string const &);
     /**
      * @symbol ?areChunksLoaded@ScopedGameTestTickingArea@@QEAA_NXZ
+     * @hash   -1037310350
      */
     MCAPI bool areChunksLoaded();
     /**
      * @symbol ?getTickingArea@ScopedGameTestTickingArea@@QEBA?AV?$shared_ptr@VITickingArea@@@std@@XZ
+     * @hash   1471262355
      */
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea() const;
     /**
      * @symbol ??1ScopedGameTestTickingArea@@QEAA@XZ
+     * @hash   -71559158
      */
     MCAPI ~ScopedGameTestTickingArea();
-MCAPI static std::string const TICKING_AREA_PREFIX;
+    /**
+     * @symbol ?TICKING_AREA_PREFIX@ScopedGameTestTickingArea@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1955407679
+     */
+    MCAPI static std::string const TICKING_AREA_PREFIX;
 
 //private:
     /**
      * @symbol ?_removeTickingArea@ScopedGameTestTickingArea@@AEAAXXZ
+     * @hash   -170751987
      */
     MCAPI void _removeTickingArea();
 

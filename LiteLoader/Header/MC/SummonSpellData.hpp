@@ -25,15 +25,16 @@ public:
     struct SummonSpellData& operator=(struct SummonSpellData const &) = delete;
     SummonSpellData() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUMMONSPELLDATA
-#endif
     /**
      * @symbol ??0SummonSpellData@@QEAA@AEBU0@@Z
+     * @hash   -1448431531
      */
     MCAPI SummonSpellData(struct SummonSpellData const &);
     /**
      * @symbol ??1SummonSpellData@@QEAA@XZ
+     * @hash   -837599011
      */
     MCAPI ~SummonSpellData();
 

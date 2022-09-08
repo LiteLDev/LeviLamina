@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOPEDAUTORELEASEPOOL
-#endif
     /**
      * @symbol ??0ScopedAutoreleasePool@@QEAA@XZ
+     * @hash   -2023482320
      */
     MCAPI ScopedAutoreleasePool();
     /**
      * @symbol ?drain@ScopedAutoreleasePool@@QEAAXXZ
+     * @hash   -2051354923
      */
     MCAPI void drain();
     /**
      * @symbol ?drainNow@ScopedAutoreleasePool@@QEAAXXZ
+     * @hash   -1521638017
      */
     MCAPI void drainNow();
     /**
      * @symbol ?reset@ScopedAutoreleasePool@@QEAAXXZ
+     * @hash   1920955907
      */
     MCAPI void reset();
     /**
      * @symbol ??1ScopedAutoreleasePool@@QEAA@XZ
+     * @hash   1581986032
      */
     MCAPI ~ScopedAutoreleasePool();
 

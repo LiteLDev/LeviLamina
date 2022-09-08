@@ -32,38 +32,38 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERINSTANCEEVENTLISTENER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   592653977
      */
     MCVAPI enum EventResult onServerInitializeEnd(class ServerInstance &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   -440957422
      */
     MCVAPI enum EventResult onServerInitializeStart(class ServerInstance &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
+     * @hash   -1158291
      */
     MCVAPI enum EventResult onServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   -128836269
      */
     MCVAPI enum EventResult onServerResume(class ServerInstance &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   -2118735992
      */
     MCVAPI enum EventResult onServerSuspend(class ServerInstance &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   2123463410
      */
     MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
+     * @hash   -146687780
      */
     MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
 #endif

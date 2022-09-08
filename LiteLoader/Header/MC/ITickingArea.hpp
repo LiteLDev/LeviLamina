@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
-#endif
     /**
      * @symbol ?serialize@ITickingArea@@QEBA?AVCompoundTag@@XZ
+     * @hash   1644210274
      */
     MCAPI class CompoundTag serialize() const;
 

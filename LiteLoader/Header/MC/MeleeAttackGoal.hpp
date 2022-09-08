@@ -31,87 +31,101 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1356216611
      */
     virtual ~MeleeAttackGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@MeleeAttackGoal@@UEAA_NXZ
+     * @hash   1056676449
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MeleeAttackGoal@@UEAA_NXZ
+     * @hash   1797261567
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@MeleeAttackGoal@@UEAAXXZ
+     * @hash   294122698
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@MeleeAttackGoal@@UEAAXXZ
+     * @hash   1183473930
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@MeleeAttackGoal@@UEAAXXZ
+     * @hash   1023174197
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MeleeAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1515272063
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?_attemptMoveToTarget@MeleeAttackGoal@@MEAAXAEAVActor@@@Z
+     * @hash   983390811
      */
     virtual void _attemptMoveToTarget(class Actor &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?_attemptAttackTarget@MeleeAttackGoal@@MEAAXAEAVActor@@MMMM@Z
+     * @hash   -1872820481
      */
     virtual void _attemptAttackTarget(class Actor &, float, float, float, float);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEATTACKGOAL
-#endif
     /**
      * @symbol ??0MeleeAttackGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1596367262
      */
     MCAPI MeleeAttackGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?_attemptMoveToTargetPosition@MeleeAttackGoal@@IEAAXAEAVActor@@M@Z
+     * @hash   -1171558461
      */
     MCAPI void _attemptMoveToTargetPosition(class Actor &, float);
     /**
      * @symbol ?_getAttackReachSqr@MeleeAttackGoal@@IEBAMAEBVActor@@@Z
+     * @hash   1410739351
      */
     MCAPI float _getAttackReachSqr(class Actor const &) const;
     /**
      * @symbol ?_inSunlight@MeleeAttackGoal@@IEBA_NAEBVActor@@@Z
+     * @hash   1262381367
      */
     MCAPI bool _inSunlight(class Actor const &) const;
 
 protected:
-MCAPI static class BaseGameVersion const min3DAttackVersion;
+    /**
+     * @symbol ?min3DAttackVersion@MeleeAttackGoal@@1VBaseGameVersion@@B
+     * @hash   762391833
+     */
+    MCAPI static class BaseGameVersion const min3DAttackVersion;
 
 };

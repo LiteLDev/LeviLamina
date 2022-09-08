@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -729281907
      */
     virtual ~PlayerContainerSetter();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?setArmor@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
+     * @hash   1882951034
      */
     virtual void setArmor(int, class ItemStack const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?setOffhandSlot@PlayerContainerSetter@@UEAAXAEBVItemStack@@@Z
+     * @hash   -1045648014
      */
     virtual void setOffhandSlot(class ItemStack const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?setPlayerUIItem@PlayerContainerSetter@@UEAAXHAEBVItemStack@@@Z
+     * @hash   730721127
      */
     virtual void setPlayerUIItem(int, class ItemStack const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERCONTAINERSETTER
-#endif
     /**
      * @symbol ??0PlayerContainerSetter@@QEAA@AEAVPlayer@@@Z
+     * @hash   1962377616
      */
     MCAPI PlayerContainerSetter(class Player &);
 

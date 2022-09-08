@@ -32,18 +32,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REGIONFILE
-#endif
     /**
      * @symbol ??0RegionFile@@QEAA@AEBVPath@Core@@@Z
+     * @hash   1264318715
      */
     MCAPI RegionFile(class Core::Path const &);
     /**
      * @symbol ?open@RegionFile@@QEAA_NXZ
+     * @hash   1526216770
      */
     MCAPI bool open();
     /**
      * @symbol ?readChunk@RegionFile@@QEAA_NHHPEAPEAVBitStream@RakNet@@@Z
+     * @hash   320485498
      */
     MCAPI bool readChunk(int, int, class RakNet::BitStream **);
 

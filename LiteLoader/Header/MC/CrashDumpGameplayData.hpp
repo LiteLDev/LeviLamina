@@ -30,8 +30,10 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPGAMEPLAYDATA
-#endif
-MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    /**
+     * @symbol ?kFormat@CrashDumpGameplayData@@2QBUCrashDumpFormatEntryImpl@@B
+     * @hash   -1579659917
+     */
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 };

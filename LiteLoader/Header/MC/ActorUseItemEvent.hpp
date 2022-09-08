@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORUSEITEMEVENT
-#endif
     /**
      * @symbol ??1ActorUseItemEvent@@QEAA@XZ
+     * @hash   -1726587423
      */
     MCAPI ~ActorUseItemEvent();
 

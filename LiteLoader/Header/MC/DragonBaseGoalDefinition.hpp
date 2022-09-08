@@ -30,23 +30,24 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2045076044
      */
     virtual ~DragonBaseGoalDefinition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?validateMobType@DragonBaseGoalDefinition@@UEAA_NAEAVMob@@@Z
+     * @hash   1052304409
      */
     virtual bool validateMobType(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONBASEGOALDEFINITION
-#endif
     /**
      * @symbol ??0DragonBaseGoalDefinition@@QEAA@XZ
+     * @hash   1144332230
      */
     MCAPI DragonBaseGoalDefinition();
     /**
      * @symbol ?initialize@DragonBaseGoalDefinition@@QEAAXAEAVEntityContext@@AEAVDragonBaseGoal@@@Z
+     * @hash   704545441
      */
     MCAPI void initialize(class EntityContext &, class DragonBaseGoal &);
 

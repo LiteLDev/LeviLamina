@@ -33,71 +33,80 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   434767776
      */
     virtual ~WorldHistoryPackSource();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -2102621919
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -2101698398
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getPackOrigin@WorldHistoryPackSource@@UEBA?AW4PackOrigin@@XZ
+     * @hash   -1190366848
      */
     virtual enum PackOrigin getPackOrigin() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getPackType@WorldHistoryPackSource@@UEBA?AW4PackType@@XZ
+     * @hash   318133040
      */
     virtual enum PackType getPackType() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?load@WorldHistoryPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+     * @hash   -880743427
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDHISTORYPACKSOURCE
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?forEachPack@WorldHistoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+     * @hash   361955406
      */
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?forEachPackConst@WorldHistoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
+     * @hash   164341997
      */
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     /**
      * @symbol ??0WorldHistoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@@Z
+     * @hash   848271880
      */
     MCAPI WorldHistoryPackSource(class Core::Path const &, enum PackType);
     /**
      * @symbol ?getPathToWorld@WorldHistoryPackSource@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -331735939
      */
     MCAPI class Core::PathBuffer<std::string> const & getPathToWorld() const;
     /**
      * @symbol ?generateHistoryFilePath@WorldHistoryPackSource@@SA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@W4PackType@@@Z
+     * @hash   -1699007053
      */
     MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const &, enum PackType);
 
 //private:
     /**
      * @symbol ?_addPackFromHistoryPack@WorldHistoryPackSource@@AEAAXAEBVWorldPackHistory@@@Z
+     * @hash   -1394658494
      */
     MCAPI void _addPackFromHistoryPack(class WorldPackHistory const &);
     /**
      * @symbol ?_createPackFromHistoryPack@WorldHistoryPackSource@@AEAA?AV?$unique_ptr@VPack@@U?$default_delete@VPack@@@std@@@std@@AEBVWorldPackHistory@@@Z
+     * @hash   2146177744
      */
     MCAPI std::unique_ptr<class Pack> _createPackFromHistoryPack(class WorldPackHistory const &);
     /**
      * @symbol ?_readWorldHistoryFile@WorldHistoryPackSource@@AEAA_NXZ
+     * @hash   -978184253
      */
     MCAPI bool _readWorldHistoryFile();
 

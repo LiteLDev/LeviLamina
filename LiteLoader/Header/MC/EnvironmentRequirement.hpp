@@ -28,15 +28,16 @@ public:
     EnvironmentRequirement(struct EnvironmentRequirement const &) = delete;
     EnvironmentRequirement() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENVIRONMENTREQUIREMENT
-#endif
     /**
      * @symbol ?addBlockDescriptor@EnvironmentRequirement@@QEAAXAEBVBlockDescriptor@@@Z
+     * @hash   -239427864
      */
     MCAPI void addBlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ??1EnvironmentRequirement@@QEAA@XZ
+     * @hash   -2025017478
      */
     MCAPI ~EnvironmentRequirement();
 

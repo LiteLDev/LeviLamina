@@ -31,55 +31,62 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   192860794
      */
     virtual ~RollGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@RollGoal@@UEAA_NXZ
+     * @hash   278943792
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RollGoal@@UEAA_NXZ
+     * @hash   -1634271122
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@RollGoal@@UEAA_NXZ
+     * @hash   -971912296
      */
     virtual bool canBeInterrupted();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@RollGoal@@UEAAXXZ
+     * @hash   -17559671
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@RollGoal@@UEAAXXZ
+     * @hash   2115630841
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@RollGoal@@UEAAXXZ
+     * @hash   209539716
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -837869344
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ROLLGOAL
-#endif
     /**
      * @symbol ??0RollGoal@@QEAA@AEAVMob@@M@Z
+     * @hash   1477240852
      */
     MCAPI RollGoal(class Mob &, float);
 
 //private:
     /**
      * @symbol ?_handleRoll@RollGoal@@AEBAXHAEAVVec3@@AEAM1@Z
+     * @hash   1427344317
      */
     MCAPI void _handleRoll(int, class Vec3 &, float &, float &) const;
 

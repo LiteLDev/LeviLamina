@@ -26,29 +26,33 @@ struct BlockStateDefinition {
 public:
     BlockStateDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATEDEFINITION
-#endif
     /**
      * @symbol ??0BlockStateDefinition@@QEAA@AEBU0@@Z
+     * @hash   1401986975
      */
     MCAPI BlockStateDefinition(struct BlockStateDefinition const &);
     /**
      * @symbol ??4BlockStateDefinition@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -162557114
      */
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition const &);
     /**
      * @symbol ??4BlockStateDefinition@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   1002469266
      */
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition &&);
     /**
      * @symbol ??1BlockStateDefinition@@QEAA@XZ
+     * @hash   1954021185
      */
     MCAPI ~BlockStateDefinition();
 
 //private:
     /**
      * @symbol ?_copy@BlockStateDefinition@@AEAAXAEBU1@@Z
+     * @hash   744143190
      */
     MCAPI void _copy(struct BlockStateDefinition const &);
 

@@ -33,39 +33,43 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -717847009
      */
     virtual ~LoginPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@LoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1535095411
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@LoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -563303094
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@LoginPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1443873283
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?disallowBatching@LoginPacket@@UEBA_NXZ
+     * @hash   1562466378
      */
     virtual bool disallowBatching() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@LoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1036619363
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOGINPACKET
-#endif
     /**
      * @symbol ??0LoginPacket@@QEAA@XZ
+     * @hash   -1410197571
      */
     MCAPI LoginPacket();
 

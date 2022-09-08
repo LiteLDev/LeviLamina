@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTSTAGE
-#endif
     /**
      * @symbol ??1SendEventStage@@QEAA@XZ
+     * @hash   -1315041386
      */
     MCAPI ~SendEventStage();
 

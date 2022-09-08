@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1750924560
      */
     virtual ~GameSpecificNetEventCallback();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?handle@GameSpecificNetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
+     * @hash   1292702429
      */
     virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMESPECIFICNETEVENTCALLBACK
-#endif
 
 };

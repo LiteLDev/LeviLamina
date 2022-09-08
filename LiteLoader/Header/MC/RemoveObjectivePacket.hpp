@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   910754379
      */
     virtual ~RemoveObjectivePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@RemoveObjectivePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -690289583
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@RemoveObjectivePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2016354562
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@RemoveObjectivePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1708605417
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@RemoveObjectivePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -204068007
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEOBJECTIVEPACKET
-#endif
     /**
      * @symbol ??0RemoveObjectivePacket@@QEAA@XZ
+     * @hash   198057449
      */
     MCAPI RemoveObjectivePacket();
     /**
      * @symbol ??0RemoveObjectivePacket@@QEAA@AEBVObjective@@@Z
+     * @hash   -1457789302
      */
     MCAPI RemoveObjectivePacket(class Objective const &);
 

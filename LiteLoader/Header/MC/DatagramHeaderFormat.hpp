@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DATAGRAMHEADERFORMAT
-#endif
     /**
      * @symbol ?Deserialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
+     * @hash   507274497
      */
     MCAPI void Deserialize(class RakNet::BitStream *);
     /**
      * @symbol ?Serialize@DatagramHeaderFormat@@QEAAXPEAVBitStream@RakNet@@@Z
+     * @hash   576965151
      */
     MCAPI void Serialize(class RakNet::BitStream *);
 

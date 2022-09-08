@@ -32,26 +32,50 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1161672279
      */
     virtual ~EndPodiumFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@EndPodiumFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1349021145
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDPODIUMFEATURE
-#endif
     /**
      * @symbol ??0EndPodiumFeature@@QEAA@_N@Z
+     * @hash   -1709832460
      */
     MCAPI EndPodiumFeature(bool);
-MCAPI static float const CORNER_ROUNDING;
-MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
-MCAPI static class BlockPos const END_PODIUM_LOCATION;
-MCAPI static int const PODIUM_PILLAR_HEIGHT;
-MCAPI static int const PODIUM_RADIUS;
-MCAPI static int const RIM_RADIUS;
+    /**
+     * @symbol ?CORNER_ROUNDING@EndPodiumFeature@@2MB
+     * @hash   -212033581
+     */
+    MCAPI static float const CORNER_ROUNDING;
+    /**
+     * @symbol ?END_PODIUM_CHUNK_POSITION@EndPodiumFeature@@2VBlockPos@@B
+     * @hash   -1283767879
+     */
+    MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
+    /**
+     * @symbol ?END_PODIUM_LOCATION@EndPodiumFeature@@2VBlockPos@@B
+     * @hash   -1504653759
+     */
+    MCAPI static class BlockPos const END_PODIUM_LOCATION;
+    /**
+     * @symbol ?PODIUM_PILLAR_HEIGHT@EndPodiumFeature@@2HB
+     * @hash   178378197
+     */
+    MCAPI static int const PODIUM_PILLAR_HEIGHT;
+    /**
+     * @symbol ?PODIUM_RADIUS@EndPodiumFeature@@2HB
+     * @hash   -1983920209
+     */
+    MCAPI static int const PODIUM_RADIUS;
+    /**
+     * @symbol ?RIM_RADIUS@EndPodiumFeature@@2HB
+     * @hash   -1899458855
+     */
+    MCAPI static int const RIM_RADIUS;
 
 };

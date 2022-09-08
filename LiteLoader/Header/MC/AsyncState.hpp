@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCSTATE
-#endif
     /**
      * @symbol ?Release@AsyncState@@QEAAXXZ
+     * @hash   -351125165
      */
     MCAPI void Release();
 

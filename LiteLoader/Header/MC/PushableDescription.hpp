@@ -28,31 +28,34 @@ public:
     struct PushableDescription& operator=(struct PushableDescription const &) = delete;
     PushableDescription(struct PushableDescription const &) = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@PushableDescription@@UEBAPEBDXZ
+     * @hash   -655561060
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   1123745590
      */
     virtual ~PushableDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@PushableDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1282796505
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@PushableDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   13917553
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLEDESCRIPTION
-#endif
     /**
      * @symbol ??0PushableDescription@@QEAA@XZ
+     * @hash   -1971838124
      */
     MCAPI PushableDescription();
 

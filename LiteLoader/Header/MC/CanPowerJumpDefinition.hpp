@@ -29,19 +29,21 @@ public:
     CanPowerJumpDefinition(struct CanPowerJumpDefinition const &) = delete;
     CanPowerJumpDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANPOWERJUMPDEFINITION
-#endif
     /**
      * @symbol ?initialize@CanPowerJumpDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1235164612
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@CanPowerJumpDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   479547772
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@CanPowerJumpDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UCanPowerJumpDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -258597318
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanPowerJumpDefinition>> &);
 

@@ -22,9 +22,25 @@ namespace CraftingTag {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class HashedString const CARTOGRAPHY_TABLE;
-MCAPI extern class HashedString const CRAFTING_TABLE;
-MCAPI extern class HashedString const SMITHING_TABLE;
-MCAPI extern class HashedString const STONECUTTER;
+    /**
+     * @symbol ?CARTOGRAPHY_TABLE@CraftingTag@@3VHashedString@@B
+     * @hash   1046798421
+     */
+    MCAPI extern class HashedString const CARTOGRAPHY_TABLE;
+    /**
+     * @symbol ?CRAFTING_TABLE@CraftingTag@@3VHashedString@@B
+     * @hash   -1491782989
+     */
+    MCAPI extern class HashedString const CRAFTING_TABLE;
+    /**
+     * @symbol ?SMITHING_TABLE@CraftingTag@@3VHashedString@@B
+     * @hash   -1751521443
+     */
+    MCAPI extern class HashedString const SMITHING_TABLE;
+    /**
+     * @symbol ?STONECUTTER@CraftingTag@@3VHashedString@@B
+     * @hash   886020699
+     */
+    MCAPI extern class HashedString const STONECUTTER;
 
 };

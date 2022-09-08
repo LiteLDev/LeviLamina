@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   468520844
      */
     virtual ~ItemEventResponseFactory();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initializeFactory@ItemEventResponseFactory@@UEAAXAEBVExperiments@@@Z
+     * @hash   -2039822988
      */
     virtual void initializeFactory(class Experiments const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initSchema@ItemEventResponseFactory@@UEAAXXZ
+     * @hash   164138166
      */
     virtual void initSchema();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTRESPONSEFACTORY
-#endif
 
 };

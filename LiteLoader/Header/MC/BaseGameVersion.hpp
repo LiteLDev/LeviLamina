@@ -24,93 +24,124 @@ class BaseGameVersion {
 
 #undef AFTER_EXTRA
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGAMEVERSION
-#endif
     /**
      * @symbol ??0BaseGameVersion@@QEAA@XZ
+     * @hash   -504447983
      */
     MCAPI BaseGameVersion();
     /**
      * @symbol ??0BaseGameVersion@@QEAA@GII@Z
+     * @hash   1096778633
      */
     MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);
     /**
      * @symbol ??0BaseGameVersion@@QEAA@AEBVSemVersion@@@Z
+     * @hash   -736256692
      */
     MCAPI BaseGameVersion(class SemVersion const &);
     /**
      * @symbol ??0BaseGameVersion@@QEAA@AEBV0@@Z
+     * @hash   55561873
      */
     MCAPI BaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?asSemVersion@BaseGameVersion@@QEBAAEBVSemVersion@@XZ
+     * @hash   1829101960
      */
     MCAPI class SemVersion const & asSemVersion() const;
     /**
      * @symbol ?asString@BaseGameVersion@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1772450670
      */
     MCAPI std::string const & asString() const;
     /**
      * @symbol ?getMajor@BaseGameVersion@@QEBAGXZ
+     * @hash   1340568475
      */
     MCAPI unsigned short getMajor() const;
     /**
      * @symbol ?getMinor@BaseGameVersion@@QEBAGXZ
+     * @hash   221180579
      */
     MCAPI unsigned short getMinor() const;
     /**
      * @symbol ?getPatch@BaseGameVersion@@QEBAGXZ
+     * @hash   1569635481
      */
     MCAPI unsigned short getPatch() const;
     /**
      * @symbol ?isAnyVersion@BaseGameVersion@@QEBA_NXZ
+     * @hash   1956587350
      */
     MCAPI bool isAnyVersion() const;
     /**
      * @symbol ?isCompatibleWith@BaseGameVersion@@QEBA_NAEBV1@@Z
+     * @hash   -682118539
      */
     MCAPI bool isCompatibleWith(class BaseGameVersion const &) const;
     /**
      * @symbol ?isValid@BaseGameVersion@@QEBA_NXZ
+     * @hash   1761181156
      */
     MCAPI bool isValid() const;
     /**
      * @symbol ??9BaseGameVersion@@QEBA_NAEBV0@@Z
+     * @hash   -1753806905
      */
     MCAPI bool operator!=(class BaseGameVersion const &) const;
     /**
      * @symbol ??MBaseGameVersion@@QEBA_NAEBV0@@Z
+     * @hash   -1702841629
      */
     MCAPI bool operator<(class BaseGameVersion const &) const;
     /**
      * @symbol ??NBaseGameVersion@@QEBA_NAEBV0@@Z
+     * @hash   2121457671
      */
     MCAPI bool operator<=(class BaseGameVersion const &) const;
     /**
      * @symbol ??4BaseGameVersion@@QEAAAEAV0@AEBV0@@Z
+     * @hash   -1777798500
      */
     MCAPI class BaseGameVersion & operator=(class BaseGameVersion const &);
     /**
      * @symbol ??8BaseGameVersion@@QEBA_NAEBV0@@Z
+     * @hash   -489861438
      */
     MCAPI bool operator==(class BaseGameVersion const &) const;
     /**
      * @symbol ??OBaseGameVersion@@QEBA_NAEBV0@@Z
+     * @hash   -1717939133
      */
     MCAPI bool operator>(class BaseGameVersion const &) const;
     /**
      * @symbol ??PBaseGameVersion@@QEBA_NAEBV0@@Z
+     * @hash   -470858069
      */
     MCAPI bool operator>=(class BaseGameVersion const &) const;
     /**
      * @symbol ??1BaseGameVersion@@QEAA@XZ
+     * @hash   1970595377
      */
     MCAPI ~BaseGameVersion();
-MCAPI static class BaseGameVersion const ANY;
-MCAPI static class BaseGameVersion const EMPTY;
-MCAPI static class BaseGameVersion const INCOMPATIBLE;
+    /**
+     * @symbol ?ANY@BaseGameVersion@@2V1@B
+     * @hash   422027781
+     */
+    MCAPI static class BaseGameVersion const ANY;
+    /**
+     * @symbol ?EMPTY@BaseGameVersion@@2V1@B
+     * @hash   1364721671
+     */
+    MCAPI static class BaseGameVersion const EMPTY;
+    /**
+     * @symbol ?INCOMPATIBLE@BaseGameVersion@@2V1@B
+     * @hash   -2092869571
+     */
+    MCAPI static class BaseGameVersion const INCOMPATIBLE;
     /**
      * @symbol ?fromString@BaseGameVersion@@SA?AW4MatchType@SemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@@Z
+     * @hash   2114269382
      */
     MCAPI static enum SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
 

@@ -26,19 +26,21 @@ public:
     FilterInputDefinition(struct FilterInputDefinition const &) = delete;
     FilterInputDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERINPUTDEFINITION
-#endif
     /**
      * @symbol ??0FilterInputDefinition@@QEAA@VFilterInput@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -593953713
      */
     MCAPI FilterInputDefinition(class FilterInput, std::string const &);
     /**
      * @symbol ??0FilterInputDefinition@@QEAA@H@Z
+     * @hash   -1045692614
      */
     MCAPI FilterInputDefinition(int);
     /**
      * @symbol ??1FilterInputDefinition@@QEAA@XZ
+     * @hash   -1580523023
      */
     MCAPI ~FilterInputDefinition();
 

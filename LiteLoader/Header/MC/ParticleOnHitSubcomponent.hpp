@@ -31,40 +31,44 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -5564295
      */
     virtual ~ParticleOnHitSubcomponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?readfromJSON@ParticleOnHitSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   -369818627
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?writetoJSON@ParticleOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -1601529444
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@ParticleOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -1766418201
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@ParticleOnHitSubcomponent@@UEAAPEBDXZ
+     * @hash   -800213294
      */
     virtual char const * getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTICLEONHITSUBCOMPONENT
-#endif
     /**
      * @symbol ??0ParticleOnHitSubcomponent@@QEAA@XZ
+     * @hash   -2002845513
      */
     MCAPI ParticleOnHitSubcomponent();
 
 //private:
     /**
      * @symbol ?isParticleTypeIconBreak@ParticleOnHitSubcomponent@@AEBA_NXZ
+     * @hash   1960697766
      */
     MCAPI bool isParticleTypeIconBreak() const;
 

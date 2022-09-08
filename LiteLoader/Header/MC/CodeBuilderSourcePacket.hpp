@@ -29,34 +29,37 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   231821919
      */
     virtual ~CodeBuilderSourcePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@CodeBuilderSourcePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   519730445
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@CodeBuilderSourcePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   100028346
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@CodeBuilderSourcePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   252933869
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@CodeBuilderSourcePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1793659075
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERSOURCEPACKET
-#endif
     /**
      * @symbol ??0CodeBuilderSourcePacket@@QEAA@XZ
+     * @hash   686388669
      */
     MCAPI CodeBuilderSourcePacket();
 

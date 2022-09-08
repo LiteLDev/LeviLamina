@@ -21,27 +21,31 @@ struct RepairItemEntry {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRApublic:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPAIRITEMENTRY
-#endif
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0RepairItemEntry@@QEAA@XZ
+     * @hash   582526862
      */
     MCAPI RepairItemEntry();
     /**
      * @symbol ??0RepairItemEntry@@QEAA@AEBU0@@Z
+     * @hash   -1128945531
      */
     MCAPI RepairItemEntry(struct RepairItemEntry const &);
     /**
      * @symbol ??4RepairItemEntry@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   219397140
      */
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry &&);
     /**
      * @symbol ??4RepairItemEntry@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -1767809506
      */
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry const &);
     /**
      * @symbol ??1RepairItemEntry@@QEAA@XZ
+     * @hash   1653152542
      */
     MCAPI ~RepairItemEntry();
 

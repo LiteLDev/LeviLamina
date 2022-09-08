@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARVESTFARMBLOCKDEFINITION
-#endif
     /**
      * @symbol ??0HarvestFarmBlockDefinition@@QEAA@XZ
+     * @hash   -107710019
      */
     MCAPI HarvestFarmBlockDefinition();
     /**
      * @symbol ?initialize@HarvestFarmBlockDefinition@@QEAAXAEAVEntityContext@@AEAVHarvestFarmBlockGoal@@@Z
+     * @hash   -729160561
      */
     MCAPI void initialize(class EntityContext &, class HarvestFarmBlockGoal &);
     /**
      * @symbol ?buildSchema@HarvestFarmBlockDefinition@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VHarvestFarmBlockDefinition@@@JsonUtil@@@3@@Z
+     * @hash   2075867855
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HarvestFarmBlockDefinition>> &);
 

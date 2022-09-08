@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGEVALSTACKSTATE
-#endif
     /**
      * @symbol ??0MolangEvalStackState@@QEAA@AEAUMolangEvalParams@@@Z
+     * @hash   -755738542
      */
     MCAPI MolangEvalStackState(struct MolangEvalParams &);
 

@@ -29,14 +29,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   52057149
      */
     virtual ~Trade2ContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE2CONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0Trade2ContainerScreenValidator@@QEAA@XZ
+     * @hash   681511999
      */
     MCAPI Trade2ContainerScreenValidator();
 

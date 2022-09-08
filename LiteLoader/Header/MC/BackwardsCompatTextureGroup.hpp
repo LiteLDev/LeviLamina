@@ -30,12 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKWARDSCOMPATTEXTUREGROUP
-#endif
 
 //private:
 
 private:
-MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
+    /**
+     * @symbol ?invalidInfo@BackwardsCompatTextureGroup@@0VBackwardsCompatTextureInfo@@B
+     * @hash   367852556
+     */
+    MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
 
 };

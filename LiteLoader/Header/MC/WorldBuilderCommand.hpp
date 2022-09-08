@@ -32,23 +32,24 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1625214544
      */
     virtual ~WorldBuilderCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@WorldBuilderCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   2090200721
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDBUILDERCOMMAND
-#endif
     /**
      * @symbol ?setWorldBuilder@WorldBuilderCommand@@SAXAEAVLayeredAbilities@@_N@Z
+     * @hash   -1806537407
      */
     MCAPI static void setWorldBuilder(class LayeredAbilities &, bool);
     /**
      * @symbol ?setup@WorldBuilderCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -2084250784
      */
     MCAPI static void setup(class CommandRegistry &);
 

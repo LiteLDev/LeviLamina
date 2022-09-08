@@ -37,38 +37,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1260654630
      */
     virtual ~UpdateSoftEnumPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@UpdateSoftEnumPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   1027836562
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@UpdateSoftEnumPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1626613441
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@UpdateSoftEnumPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -2094142936
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@UpdateSoftEnumPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1117127544
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATESOFTENUMPACKET
-#endif
     /**
      * @symbol ??0UpdateSoftEnumPacket@@QEAA@XZ
+     * @hash   499812136
      */
     MCAPI UpdateSoftEnumPacket();
     /**
      * @symbol ??0UpdateSoftEnumPacket@@QEAA@W4SoftEnumUpdateType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
+     * @hash   -616242862
      */
     MCAPI UpdateSoftEnumPacket(enum SoftEnumUpdateType, std::string const &, std::vector<std::string> const &);
 

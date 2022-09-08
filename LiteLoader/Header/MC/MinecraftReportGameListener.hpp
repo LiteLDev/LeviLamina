@@ -31,55 +31,63 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1236440181
      */
     virtual ~MinecraftReportGameListener();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onTestStructureLoaded@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   1899846279
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?onTestPassed@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   -840297395
      */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?onTestFailed@MinecraftReportGameListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z
+     * @hash   1140828416
      */
     virtual void onTestFailed(class gametest::BaseGameTestInstance &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTREPORTGAMELISTENER
-#endif
     /**
      * @symbol ??0MinecraftReportGameListener@@QEAA@AEAVMinecraftGameTestInstance@@AEAVGameTestTicker@gametest@@@Z
+     * @hash   -2021655233
      */
     MCAPI MinecraftReportGameListener(class MinecraftGameTestInstance &, class gametest::GameTestTicker &);
 
 //private:
     /**
      * @symbol ?_generateErrorDescription@MinecraftReportGameListener@@AEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUGameTestError@gametest@@@Z
+     * @hash   1176468946
      */
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const &) const;
     /**
      * @symbol ?_reportFailure@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
+     * @hash   -626543596
      */
     MCAPI void _reportFailure(struct gametest::GameTestError const &, class BlockSource &);
     /**
      * @symbol ?_say@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   -401656655
      */
     MCAPI void _say(std::string const &, std::string const &);
     /**
      * @symbol ?_spawnBeacon@MinecraftReportGameListener@@AEAAXAEBVBlock@@@Z
+     * @hash   -568097865
      */
     MCAPI void _spawnBeacon(class Block const &);
     /**
      * @symbol ?_spawnLectern@MinecraftReportGameListener@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -511338612
      */
     MCAPI void _spawnLectern(std::string const &);
     /**
      * @symbol ?_visualizeFailedTest@MinecraftReportGameListener@@AEAAXAEBUGameTestError@gametest@@AEAVBlockSource@@@Z
+     * @hash   -939685855
      */
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const &, class BlockSource &);
 

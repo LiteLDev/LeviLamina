@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEARDANDSHAVERDESCRIPTION
-#endif
     /**
      * @symbol ??0BeardAndShaverDescription@@QEAA@VBeardingDescriptionCache@@AEBUBeardKernel@@MM@Z
+     * @hash   164658734
      */
     MCAPI BeardAndShaverDescription(class BeardingDescriptionCache, struct BeardKernel const &, float, float);
     /**
      * @symbol ?calculateContribution@BeardAndShaverDescription@@QEBAMAEBVBlockPos@@@Z
+     * @hash   1772517001
      */
     MCAPI float calculateContribution(class BlockPos const &) const;
     /**
      * @symbol ?getCache@BeardAndShaverDescription@@QEBAAEBVBeardingDescriptionCache@@XZ
+     * @hash   566232608
      */
     MCAPI class BeardingDescriptionCache const & getCache() const;
 

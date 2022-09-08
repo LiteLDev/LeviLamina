@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERMOVEMENTSYSTEM
-#endif
     /**
      * @symbol ?_foreachTransactionPacket@ServerPlayerMovementSystem@@SAXAEBUPlayerActionComponent@@_NAEBV?$function@$$A6AXAEAVInventoryTransactionPacket@@@Z@std@@@Z
+     * @hash   1354702167
      */
     MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const &, bool, class std::function<void (class InventoryTransactionPacket &)> const &);
     /**
      * @symbol ?create@ServerPlayerMovementSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   739976736
      */
     MCAPI static struct TickingSystemWithInfo create();
     /**
      * @symbol ?onPlayerAuthInputPacket@ServerPlayerMovementSystem@@SAXAEAUServerPlayerMovementComponent@@AEBVPlayerAuthInputPacket@@@Z
+     * @hash   1633914005
      */
     MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent &, class PlayerAuthInputPacket const &);
 

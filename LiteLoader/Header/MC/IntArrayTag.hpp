@@ -42,49 +42,55 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1189101346
      */
     virtual ~IntArrayTag();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?write@IntArrayTag@@UEBAXAEAVIDataOutput@@@Z
+     * @hash   1123585441
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?load@IntArrayTag@@UEAAXAEAVIDataInput@@@Z
+     * @hash   -185242288
      */
     virtual void load(class IDataInput &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?toString@IntArrayTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   2031730230
      */
     virtual std::string toString() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getId@IntArrayTag@@UEBA?AW4Type@Tag@@XZ
+     * @hash   392978475
      */
     virtual enum Tag::Type getId() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?equals@IntArrayTag@@UEBA_NAEBVTag@@@Z
+     * @hash   -365961946
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?copy@IntArrayTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   788339656
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?hash@IntArrayTag@@UEBA_KXZ
+     * @hash   -62054754
      */
     virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTARRAYTAG
-#endif
     /**
      * @symbol ??0IntArrayTag@@QEAA@XZ
+     * @hash   1194024828
      */
     MCAPI IntArrayTag();
 

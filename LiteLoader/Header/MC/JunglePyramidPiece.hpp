@@ -32,24 +32,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -119557339
      */
     virtual ~JunglePyramidPiece();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getType@JunglePyramidPiece@@UEBA?AW4StructurePieceType@@XZ
+     * @hash   958792640
      */
     virtual enum StructurePieceType getType() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?postProcess@JunglePyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -2123871832
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUNGLEPYRAMIDPIECE
-#endif
     /**
      * @symbol ??0JunglePyramidPiece@@QEAA@FHH@Z
+     * @hash   -1487439943
      */
     MCAPI JunglePyramidPiece(short, int, int);
 

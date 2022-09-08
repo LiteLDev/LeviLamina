@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -892260051
      */
     virtual ~GroundedConstraint();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isSatisfied@GroundedConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
+     * @hash   -439737780
      */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GROUNDEDCONSTRAINT
-#endif
     /**
      * @symbol ??0GroundedConstraint@@QEAA@AEAVStructureTemplate@@@Z
+     * @hash   231295024
      */
     MCAPI GroundedConstraint(class StructureTemplate &);
 

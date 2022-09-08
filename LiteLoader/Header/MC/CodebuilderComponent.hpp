@@ -28,22 +28,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERCOMPONENT
-#endif
     /**
      * @symbol ?getCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@XZ
+     * @hash   3330358
      */
     MCAPI enum CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
     /**
      * @symbol ?resetCodeStatus@CodebuilderComponent@@QEAAXXZ
+     * @hash   1619338323
      */
     MCAPI void resetCodeStatus();
     /**
      * @symbol ?setCodeStatus@CodebuilderComponent@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1631363438
      */
     MCAPI void setCodeStatus(std::string const &);
     /**
      * @symbol ?stringToCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -615970513
      */
     MCAPI enum CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const &) const;
 

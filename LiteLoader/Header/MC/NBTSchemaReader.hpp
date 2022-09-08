@@ -29,259 +29,275 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1373939058
      */
     virtual ~NBTSchemaReader();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isValid@NBTSchemaReader@@UEBA_NXZ
+     * @hash   1072041286
      */
     virtual bool isValid() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isString@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -797108225
      */
     virtual bool isString() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?isObject@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -106490435
      */
     virtual bool isObject() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?isArray@NBTSchemaReader@@UEBA_NXZ
+     * @hash   275078323
      */
     virtual bool isArray() const;
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   1719729525
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   1720653046
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   1721530439
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   1722453960
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   1723331353
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -1555535565
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -1554750428
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -1553826907
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -1552903386
      */
     virtual void __unk_vfn_13();
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?isFloat@NBTSchemaReader@@UEBA_NXZ
+     * @hash   651802662
      */
     virtual bool isFloat() const;
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?isDouble@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -2096852321
      */
     virtual bool isDouble() const;
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?asBool@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1062807808
      */
     virtual bool asBool() const;
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -1549916598
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 18
-     * @symbol 
+     * @vftbl  18
+     * @hash   -1548993077
      */
     virtual void __unk_vfn_18();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -1548100308
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -1527782846
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 21
-     * @symbol 
+     * @vftbl  21
+     * @hash   -1526890077
      */
     virtual void __unk_vfn_21();
     /**
-     * @note   Virtual function table index: 22
-     * @symbol 
+     * @vftbl  22
+     * @hash   -1525966556
      */
     virtual void __unk_vfn_22();
     /**
-     * @note   Virtual function table index: 23
-     * @symbol 
+     * @vftbl  23
+     * @hash   -1524950779
      */
     virtual void __unk_vfn_23();
     /**
-     * @note   Virtual function table index: 24
-     * @symbol 
+     * @vftbl  24
+     * @hash   -1524027258
      */
     virtual void __unk_vfn_24();
     /**
-     * @note   Virtual function table index: 25
+     * @vftbl  25
      * @symbol ?asFloat@NBTSchemaReader@@UEBAMXZ
+     * @hash   -408777612
      */
     virtual float asFloat() const;
     /**
-     * @note   Virtual function table index: 26
+     * @vftbl  26
      * @symbol ?asDouble@NBTSchemaReader@@UEBANXZ
+     * @hash   2101779272
      */
     virtual double asDouble() const;
     /**
-     * @note   Virtual function table index: 27
+     * @vftbl  27
      * @symbol ?asString@NBTSchemaReader@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1400497369
      */
     virtual std::string asString() const;
     /**
-     * @note   Virtual function table index: 28
+     * @vftbl  28
      * @symbol ?members@NBTSchemaReader@@UEBA_KXZ
+     * @hash   -1880132795
      */
     virtual unsigned __int64 members() const;
     /**
-     * @note   Virtual function table index: 29
+     * @vftbl  29
      * @symbol ?length@NBTSchemaReader@@UEBA_KXZ
+     * @hash   -1943402558
      */
     virtual unsigned __int64 length() const;
     /**
-     * @note   Virtual function table index: 30
+     * @vftbl  30
      * @symbol ?pushMember@NBTSchemaReader@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z
+     * @hash   740112553
      */
     virtual std::string pushMember(unsigned __int64);
     /**
-     * @note   Virtual function table index: 31
+     * @vftbl  31
      * @symbol ?pushElement@NBTSchemaReader@@UEAAX_K@Z
+     * @hash   590404303
      */
     virtual void pushElement(unsigned __int64);
     /**
-     * @note   Virtual function table index: 32
+     * @vftbl  32
      * @symbol ?pop@NBTSchemaReader@@UEAAXXZ
+     * @hash   -430788828
      */
     virtual void pop();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asInt16@NBTSchemaReader@@UEBAFXZ
+     * @hash   -317730148
      */
     MCVAPI short asInt16() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asInt32@NBTSchemaReader@@UEBAHXZ
+     * @hash   1532814371
      */
     MCVAPI int asInt32() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asInt64@NBTSchemaReader@@UEBA_JXZ
+     * @hash   1474093580
      */
     MCVAPI __int64 asInt64() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asInt8@NBTSchemaReader@@UEBACXZ
+     * @hash   -1556528041
      */
     MCVAPI signed char asInt8() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asUInt16@NBTSchemaReader@@UEBAGXZ
+     * @hash   233676118
      */
     MCVAPI unsigned short asUInt16() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asUInt32@NBTSchemaReader@@UEBAIXZ
+     * @hash   1925186973
      */
     MCVAPI unsigned int asUInt32() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asUInt64@NBTSchemaReader@@UEBA_KXZ
+     * @hash   -35201722
      */
     MCVAPI unsigned __int64 asUInt64() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?asUInt8@NBTSchemaReader@@UEBAEXZ
+     * @hash   1802163649
      */
     MCVAPI unsigned char asUInt8() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isBool@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1824516440
      */
     MCVAPI bool isBool() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInt16@NBTSchemaReader@@UEBA_NXZ
+     * @hash   546155342
      */
     MCVAPI bool isInt16() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInt32@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1351013896
      */
     MCVAPI bool isInt32() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInt64@NBTSchemaReader@@UEBA_NXZ
+     * @hash   1465617127
      */
     MCVAPI bool isInt64() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isInt8@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1677796793
      */
     MCVAPI bool isInt8() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isUInt16@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -484087603
      */
     MCVAPI bool isUInt16() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isUInt32@NBTSchemaReader@@UEBA_NXZ
+     * @hash   1913710455
      */
     MCVAPI bool isUInt32() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isUInt64@NBTSchemaReader@@UEBA_NXZ
+     * @hash   435374182
      */
     MCVAPI bool isUInt64() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isUInt8@NBTSchemaReader@@UEBA_NXZ
+     * @hash   -1295388440
      */
     MCVAPI bool isUInt8() const;
 #endif
     /**
      * @symbol ??0NBTSchemaReader@@QEAA@V?$not_null@PEBVCompoundTag@@@gsl@@@Z
+     * @hash   -952949888
      */
     MCAPI NBTSchemaReader(class gsl::not_null<class CompoundTag const *>);
 

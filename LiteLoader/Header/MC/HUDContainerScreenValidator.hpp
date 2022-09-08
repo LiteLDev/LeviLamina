@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1287818474
      */
     virtual ~HUDContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUDCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0HUDContainerScreenValidator@@QEAA@XZ
+     * @hash   -1615941688
      */
     MCAPI HUDContainerScreenValidator();
 

@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHABLEDEFINITION
-#endif
     /**
      * @symbol ??0BreathableDefinition@@QEAA@XZ
+     * @hash   -1675463079
      */
     MCAPI BreathableDefinition();
     /**
      * @symbol ?addBreathableBlockDescriptor@BreathableDefinition@@QEAAXAEBVBlockDescriptor@@@Z
+     * @hash   2076116776
      */
     MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ?addNonBreathableBlockDescriptor@BreathableDefinition@@QEAAXAEBVBlockDescriptor@@@Z
+     * @hash   -1790285014
      */
     MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const &);
     /**
      * @symbol ?initialize@BreathableDefinition@@QEAAXAEAVEntityContext@@AEAVBreathableComponent@@@Z
+     * @hash   1494114591
      */
     MCAPI void initialize(class EntityContext &, class BreathableComponent &);
     /**
      * @symbol ?buildSchema@BreathableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBreathableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -742874730
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreathableDefinition>> &);
 

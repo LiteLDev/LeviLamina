@@ -31,26 +31,27 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2063113045
      */
     virtual ~HoldBlockSystem();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?registerEvents@HoldBlockSystem@@UEAAXAEAV?$basic_dispatcher@V?$allocator@X@std@@@entt@@@Z
+     * @hash   -1548772055
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@HoldBlockSystem@@UEAAXAEAVEntityRegistry@@@Z
+     * @hash   -1976326067
      */
     virtual void tick(class EntityRegistry &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDBLOCKSYSTEM
-#endif
 
 //private:
     /**
      * @symbol ?_holdBlockSystemOnActorDie@HoldBlockSystem@@CAXAEAUActorDieEvent@@@Z
+     * @hash   2126140841
      */
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent &);
 

@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGER
-#endif
     /**
      * @symbol ??0OnFallOnTrigger@@QEAA@$$QEAV0@@Z
+     * @hash   -1532144665
      */
     MCAPI OnFallOnTrigger(class OnFallOnTrigger &&);
     /**
      * @symbol ??1OnFallOnTrigger@@QEAA@XZ
+     * @hash   -1683377509
      */
     MCAPI ~OnFallOnTrigger();
 

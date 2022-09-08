@@ -28,18 +28,18 @@ public:
     ActiveDirectoryScreenCapabilities(struct ActiveDirectoryScreenCapabilities const &) = delete;
     ActiveDirectoryScreenCapabilities() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1371123703
      */
     virtual ~ActiveDirectoryScreenCapabilities();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isOfType@?$TypedScreenCapabilities@UActiveDirectoryScreenCapabilities@@@@UEBA_NV?$typeid_t@VIScreenCapabilities@@@@@Z
+     * @hash   -453145278
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYSCREENCAPABILITIES
-#endif
 
 };

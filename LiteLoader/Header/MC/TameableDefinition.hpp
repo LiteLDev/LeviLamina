@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAMEABLEDEFINITION
-#endif
     /**
      * @symbol ??0TameableDefinition@@QEAA@XZ
+     * @hash   1197903838
      */
     MCAPI TameableDefinition();
     /**
      * @symbol ?addTamingItemByName@TameableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2009218690
      */
     MCAPI void addTamingItemByName(std::string const &);
     /**
      * @symbol ?initialize@TameableDefinition@@QEBAXAEAVEntityContext@@AEAVTameableComponent@@@Z
+     * @hash   -568481033
      */
     MCAPI void initialize(class EntityContext &, class TameableComponent &) const;
     /**
      * @symbol ?buildSchema@TameableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VTameableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1559698634
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>> &);
 

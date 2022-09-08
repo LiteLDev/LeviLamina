@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONACTORENTERVOLUMECOMPONENT
-#endif
     /**
      * @symbol ??1OnActorEnterVolumeComponent@@QEAA@XZ
+     * @hash   646459485
      */
     MCAPI ~OnActorEnterVolumeComponent();
 

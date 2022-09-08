@@ -30,38 +30,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1793839371
      */
     virtual ~StructureBlockUpdatePacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@StructureBlockUpdatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1084976093
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@StructureBlockUpdatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -874118448
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@StructureBlockUpdatePacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   2072850311
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@StructureBlockUpdatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   1668586855
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKUPDATEPACKET
-#endif
     /**
      * @symbol ??0StructureBlockUpdatePacket@@QEAA@XZ
+     * @hash   26671687
      */
     MCAPI StructureBlockUpdatePacket();
     /**
      * @symbol ??0StructureBlockUpdatePacket@@QEAA@AEBV0@@Z
+     * @hash   -1172907663
      */
     MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
 

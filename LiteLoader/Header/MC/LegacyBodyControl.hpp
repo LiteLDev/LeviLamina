@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -540468064
      */
     virtual ~LegacyBodyControl();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?clientTick@LegacyBodyControl@@UEAAXAEAVMob@@@Z
+     * @hash   -1862017313
      */
     virtual void clientTick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYBODYCONTROL
-#endif
     /**
      * @symbol ??0LegacyBodyControl@@QEAA@XZ
+     * @hash   -1901847970
      */
     MCAPI LegacyBodyControl();
 

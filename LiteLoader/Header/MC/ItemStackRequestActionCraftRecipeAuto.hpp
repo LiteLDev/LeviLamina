@@ -30,43 +30,45 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -28375973
      */
     virtual ~ItemStackRequestActionCraftRecipeAuto();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   2004456210
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1370897725
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?_write@ItemStackRequestActionCraftRecipeAuto@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   258775288
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?_read@ItemStackRequestActionCraftRecipeAuto@@UEAA_NAEAVReadOnlyBinaryStream@@@Z
+     * @hash   1697608256
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRECIPEAUTO
-#endif
     /**
      * @symbol ??0ItemStackRequestActionCraftRecipeAuto@@QEAA@XZ
+     * @hash   1272144105
      */
     MCAPI ItemStackRequestActionCraftRecipeAuto();
     /**
      * @symbol ?getNumCrafts@ItemStackRequestActionCraftRecipeAuto@@QEBAEXZ
+     * @hash   -290993715
      */
     MCAPI unsigned char getNumCrafts() const;
 

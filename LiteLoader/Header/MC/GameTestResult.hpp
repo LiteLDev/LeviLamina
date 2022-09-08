@@ -26,31 +26,36 @@ struct GameTestResult {
 public:
     GameTestResult() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTRESULT
-#endif
     /**
      * @symbol ??0GameTestResult@@QEAA@AEBU0@@Z
+     * @hash   1482987199
      */
     MCAPI GameTestResult(struct GameTestResult const &);
     /**
      * @symbol ??4GameTestResult@@QEAAAEAU0@AEBU0@@Z
+     * @hash   1173739206
      */
     MCAPI struct GameTestResult & operator=(struct GameTestResult const &);
     /**
      * @symbol ??4GameTestResult@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   302243014
      */
     MCAPI struct GameTestResult & operator=(struct GameTestResult &&);
     /**
      * @symbol ??8GameTestResult@@QEBA_NAEBU0@@Z
+     * @hash   -1699303820
      */
     MCAPI bool operator==(struct GameTestResult const &) const;
     /**
      * @symbol ??1GameTestResult@@QEAA@XZ
+     * @hash   1203706235
      */
     MCAPI ~GameTestResult();
     /**
      * @symbol ?bindType@GameTestResult@@SAXXZ
+     * @hash   -542180813
      */
     MCAPI static void bindType();
 

@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDCHAINEDSUBCOMMAND
-#endif
     /**
      * @symbol ?getCommand@CommandChainedSubcommand@@QEBAPEAVCommand@@XZ
+     * @hash   -1370585619
      */
     MCAPI class Command * getCommand() const;
     /**
      * @symbol ?setCommand@CommandChainedSubcommand@@QEAAXV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@Z
+     * @hash   -1758368798
      */
     MCAPI void setCommand(std::unique_ptr<class Command>);
 

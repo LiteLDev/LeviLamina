@@ -31,84 +31,95 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -803606796
      */
     virtual ~MinecraftGameTestInstance();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initialize@MinecraftGameTestInstance@@UEAAXXZ
+     * @hash   1608381649
      */
     virtual void initialize();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?hasStructureBlock@MinecraftGameTestInstance@@UEBA_NXZ
+     * @hash   -1846714442
      */
     virtual bool hasStructureBlock() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?clearStructure@MinecraftGameTestInstance@@UEAAXXZ
+     * @hash   663821735
      */
     virtual void clearStructure();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?spawnStructure@MinecraftGameTestInstance@@UEAAXXZ
+     * @hash   1381685673
      */
     virtual void spawnStructure();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getStructureBounds@MinecraftGameTestInstance@@UEBA?AV?$optional@VAABB@@@std@@XZ
+     * @hash   1053861694
      */
     virtual class std::optional<class AABB> getStructureBounds() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getStructureBlockPivot@MinecraftGameTestInstance@@UEBA?AV?$optional@VVec3@@@std@@XZ
+     * @hash   -1855186995
      */
     virtual class std::optional<class Vec3> getStructureBlockPivot() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getStructureBlockPosPivot@MinecraftGameTestInstance@@UEBA?AV?$optional@VVec3@@@std@@XZ
+     * @hash   -1597040471
      */
     virtual class std::optional<class Vec3> getStructureBlockPosPivot() const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getStructureBoundingBox@MinecraftGameTestInstance@@UEBA?AVBoundingBox@@XZ
+     * @hash   -526050524
      */
     virtual class BoundingBox getStructureBoundingBox() const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getStructureDimension@MinecraftGameTestInstance@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ
+     * @hash   2034384223
      */
     virtual class AutomaticID<class Dimension, int> getStructureDimension() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?_getLevelTick@MinecraftGameTestInstance@@MEBAHXZ
+     * @hash   1235613448
      */
     virtual int _getLevelTick() const;
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?_isTestReady@MinecraftGameTestInstance@@MEAA_NXZ
+     * @hash   -311688332
      */
     virtual bool _isTestReady();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -607560315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -606390778
      */
     virtual void __unk_vfn_13();
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?getBlockSource@MinecraftGameTestInstance@@UEBAAEAVBlockSource@@XZ
+     * @hash   1485618748
      */
     virtual class BlockSource & getBlockSource() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFTGAMETESTINSTANCE
-#endif
     /**
      * @symbol ??0MinecraftGameTestInstance@@QEAA@AEBVBaseGameTestFunction@gametest@@V?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@AEAVDimension@@@Z
+     * @hash   -1782208511
      */
     MCAPI MinecraftGameTestInstance(class gametest::BaseGameTestFunction const &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
 

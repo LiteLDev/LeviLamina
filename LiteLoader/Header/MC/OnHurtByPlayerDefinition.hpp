@@ -29,11 +29,11 @@ public:
     OnHurtByPlayerDefinition(struct OnHurtByPlayerDefinition const &) = delete;
     OnHurtByPlayerDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONHURTBYPLAYERDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@OnHurtByPlayerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnHurtByPlayerDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   2065175098
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnHurtByPlayerDefinition>> &);
 

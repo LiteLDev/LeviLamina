@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEWATERLILYBLOCKSYSTEM
-#endif
     /**
      * @symbol ?createDestroyWaterlilySystem@InsideWaterlilyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1807129246
      */
     MCAPI static struct TickingSystemWithInfo createDestroyWaterlilySystem();
     /**
      * @symbol ?createMovementSystem@InsideWaterlilyBlockSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1635423998
      */
     MCAPI static struct TickingSystemWithInfo createMovementSystem();
 

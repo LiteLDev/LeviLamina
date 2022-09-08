@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   801108935
      */
     virtual ~CodeBuilderCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@CodeBuilderCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -645893562
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDERCOMMAND
-#endif
     /**
      * @symbol ?setup@CodeBuilderCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1950316452
      */
     MCAPI static void setup(class CommandRegistry &);
 

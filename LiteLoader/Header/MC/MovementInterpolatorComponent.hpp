@@ -26,35 +26,41 @@ public:
     MovementInterpolatorComponent(struct MovementInterpolatorComponent const &) = delete;
     MovementInterpolatorComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEMENTINTERPOLATORCOMPONENT
-#endif
     /**
      * @symbol ?isActive@MovementInterpolatorComponent@@QEBA_NXZ
+     * @hash   1354367218
      */
     MCAPI bool isActive() const;
     /**
      * @symbol ?lerpTo@MovementInterpolatorComponent@@QEAAXAEBVVec3@@AEBVVec2@@H@Z
+     * @hash   -759788480
      */
     MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, int);
     /**
      * @symbol ?lerpToRotation@MovementInterpolatorComponent@@QEAAXAEBVVec2@@H@Z
+     * @hash   -1984471831
      */
     MCAPI void lerpToRotation(class Vec2 const &, int);
     /**
      * @symbol ?reset@MovementInterpolatorComponent@@QEAAXXZ
+     * @hash   1229269795
      */
     MCAPI void reset();
     /**
      * @symbol ?setHeadYawLerpTarget@MovementInterpolatorComponent@@QEAAXMH@Z
+     * @hash   -623088297
      */
     MCAPI void setHeadYawLerpTarget(float, int);
     /**
      * @symbol ?start@MovementInterpolatorComponent@@QEAAXXZ
+     * @hash   -1715511063
      */
     MCAPI void start();
     /**
      * @symbol ?stop@MovementInterpolatorComponent@@QEAAXXZ
+     * @hash   1779120087
      */
     MCAPI void stop();
 

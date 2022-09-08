@@ -30,16 +30,16 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BALLOONABLECOMPONENT
-#endif
     /**
      * @symbol ?getInteraction@BalloonableComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   1804331733
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 //private:
     /**
      * @symbol ?attach@BalloonableComponent@@AEAA_NAEAVActor@@0AEAVItemStack@@@Z
+     * @hash   -69403888
      */
     MCAPI bool attach(class Actor &, class Actor &, class ItemStack &);
 

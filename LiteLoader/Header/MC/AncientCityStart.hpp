@@ -30,16 +30,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2060015191
      */
     virtual ~AncientCityStart();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isValid@AncientCityStart@@UEBA_NXZ
+     * @hash   1612565035
      */
     virtual bool isValid() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANCIENTCITYSTART
-#endif
 
 };

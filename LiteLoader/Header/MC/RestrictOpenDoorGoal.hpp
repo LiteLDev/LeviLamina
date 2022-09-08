@@ -31,49 +31,53 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1512086001
      */
     virtual ~RestrictOpenDoorGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@RestrictOpenDoorGoal@@UEAA_NXZ
+     * @hash   212072153
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@RestrictOpenDoorGoal@@UEAA_NXZ
+     * @hash   -688859465
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@RestrictOpenDoorGoal@@UEAAXXZ
+     * @hash   916137506
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@RestrictOpenDoorGoal@@UEAAXXZ
+     * @hash   -554950206
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@RestrictOpenDoorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1447161993
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESTRICTOPENDOORGOAL
-#endif
     /**
      * @symbol ??0RestrictOpenDoorGoal@@QEAA@AEAVMob@@@Z
+     * @hash   100787110
      */
     MCAPI RestrictOpenDoorGoal(class Mob &);
 

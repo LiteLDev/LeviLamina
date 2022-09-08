@@ -32,85 +32,93 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?containerContentChanged@PlayerUIContainerModelBase@@UEAAXH@Z
+     * @hash   -732254646
      */
     virtual void containerContentChanged(int);
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -38010120
      */
     virtual ~PlayerUIContainerModelBase();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?postInit@PlayerUIContainerModelBase@@UEAAXXZ
+     * @hash   551626873
      */
     virtual void postInit();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?releaseResources@PlayerUIContainerModelBase@@UEAAXXZ
+     * @hash   -1978606169
      */
     virtual void releaseResources();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getContainerWeakRef@PlayerUIContainerModelBase@@UEBA?AVContainerWeakRef@@XZ
+     * @hash   189226391
      */
     virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?isValid@PlayerUIContainerModelBase@@UEAA_NXZ
+     * @hash   860094125
      */
     virtual bool isValid();
     /**
-     * @note   Virtual function table index: 15
-     * @symbol 
+     * @vftbl  15
+     * @hash   -331353752
      */
     virtual void __unk_vfn_15();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -376678356
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 20
+     * @vftbl  20
      * @symbol ?_getContainer@PlayerUIContainerModelBase@@MEBAPEAVContainer@@XZ
+     * @hash   -803251416
      */
     virtual class Container * _getContainer() const;
     /**
-     * @note   Virtual function table index: 21
+     * @vftbl  21
      * @symbol ?_getContainerOffset@PlayerUIContainerModelBase@@MEBAHXZ
+     * @hash   -297649581
      */
     virtual int _getContainerOffset() const;
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?_onItemChanged@PlayerUIContainerModelBase@@MEAAXHAEBVItemStack@@0@Z
+     * @hash   540253754
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODELBASE
-#endif
     /**
      * @symbol ??0PlayerUIContainerModelBase@@QEAA@W4ContainerEnumName@@AEAVPlayer@@HW4ContainerCategory@@@Z
+     * @hash   1369850724
      */
     MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player &, int, enum ContainerCategory);
 
 //protected:
     /**
      * @symbol ?_refreshContainer@PlayerUIContainerModelBase@@IEAAX_N@Z
+     * @hash   1712498202
      */
     MCAPI void _refreshContainer(bool);
 

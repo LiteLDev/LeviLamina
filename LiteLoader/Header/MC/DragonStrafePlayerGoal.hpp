@@ -31,59 +31,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1218137600
      */
     virtual ~DragonStrafePlayerGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@DragonStrafePlayerGoal@@UEAA_NXZ
+     * @hash   -864256198
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@DragonStrafePlayerGoal@@UEAA_NXZ
+     * @hash   1838971752
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@DragonStrafePlayerGoal@@UEAAXXZ
+     * @hash   -1398130349
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@DragonStrafePlayerGoal@@UEAAXXZ
+     * @hash   1199017427
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@DragonStrafePlayerGoal@@UEAAXXZ
+     * @hash   472055918
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@DragonStrafePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1275551546
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONSTRAFEPLAYERGOAL
-#endif
     /**
      * @symbol ??0DragonStrafePlayerGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -2026654665
      */
     MCAPI DragonStrafePlayerGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?navigateToNextPathNode@DragonStrafePlayerGoal@@AEAAXXZ
+     * @hash   2002558284
      */
     MCAPI void navigateToNextPathNode();
     /**
      * @symbol ?setTarget@DragonStrafePlayerGoal@@AEAAXPEAVActor@@@Z
+     * @hash   1630023418
      */
     MCAPI void setTarget(class Actor *);
 

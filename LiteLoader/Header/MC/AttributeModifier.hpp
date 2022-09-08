@@ -46,69 +46,84 @@ public:
 #undef AFTER_EXTRA
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1969531935
      */
     virtual ~AttributeModifier();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isInstantaneous@AttributeModifier@@UEBA_NXZ
+     * @hash   -658315951
      */
     virtual bool isInstantaneous() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEMODIFIER
-#endif
     /**
      * @symbol ??0AttributeModifier@@QEAA@XZ
+     * @hash   639361551
      */
     MCAPI AttributeModifier();
     /**
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MW4AttributeModifierOperation@@W4AttributeOperands@@_N@Z
+     * @hash   1112511687
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum AttributeModifierOperation, enum AttributeOperands, bool);
     /**
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MHH_N@Z
+     * @hash   568929905
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, int, int, bool);
     /**
      * @symbol ??0AttributeModifier@@QEAA@AEBV0@@Z
+     * @hash   -25434271
      */
     MCAPI AttributeModifier(class AttributeModifier const &);
     /**
      * @symbol ?getAmount@AttributeModifier@@QEBAMXZ
+     * @hash   -320308238
      */
     MCAPI float getAmount() const;
     /**
      * @symbol ?getId@AttributeModifier@@QEBAAEBVUUID@mce@@XZ
+     * @hash   45967904
      */
     MCAPI class mce::UUID const & getId() const;
     /**
      * @symbol ?getName@AttributeModifier@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2043150688
      */
     MCAPI std::string const & getName() const;
     /**
      * @symbol ?getOperand@AttributeModifier@@QEBAHXZ
+     * @hash   -15869396
      */
     MCAPI int getOperand() const;
     /**
      * @symbol ?getOperation@AttributeModifier@@QEBAHXZ
+     * @hash   -1414421544
      */
     MCAPI int getOperation() const;
     /**
      * @symbol ?isSerializable@AttributeModifier@@QEBA_NXZ
+     * @hash   828716074
      */
     MCAPI bool isSerializable() const;
     /**
      * @symbol ??4AttributeModifier@@QEAAAEAV0@AEBV0@@Z
+     * @hash   -376581012
      */
     MCAPI class AttributeModifier & operator=(class AttributeModifier const &);
     /**
      * @symbol ??8AttributeModifier@@QEBA_NAEBV0@@Z
+     * @hash   -1281042316
      */
     MCAPI bool operator==(class AttributeModifier const &) const;
 
 //private:
 
 private:
-MCAPI static class mce::UUID const mInvalidUUID;
+    /**
+     * @symbol ?mInvalidUUID@AttributeModifier@@0VUUID@mce@@B
+     * @hash   -1190485524
+     */
+    MCAPI static class mce::UUID const mInvalidUUID;
 
 };

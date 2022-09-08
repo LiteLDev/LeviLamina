@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SKININFODATA
-#endif
     /**
      * @symbol ?isValidSize@SkinInfoData@@SA_N_K@Z
+     * @hash   1375595750
      */
     MCAPI static bool isValidSize(unsigned __int64);
 

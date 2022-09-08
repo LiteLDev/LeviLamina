@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEMOVINGFLAGSYSTEM
-#endif
     /**
      * @symbol ?createUpdateMovingFlagSystem@UpdateMovingFlagSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1571138836
      */
     MCAPI static struct TickingSystemWithInfo createUpdateMovingFlagSystem();
 

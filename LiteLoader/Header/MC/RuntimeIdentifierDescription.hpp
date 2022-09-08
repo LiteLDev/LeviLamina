@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1706737509
      */
     virtual ~RuntimeIdentifierDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getJsonName@RuntimeIdentifierDescription@@UEBAPEBDXZ
+     * @hash   -913527511
      */
     virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUNTIMEIDENTIFIERDESCRIPTION
-#endif
     /**
      * @symbol ?parse@RuntimeIdentifierDescription@@QEAAXAEBVValue@Json@@@Z
+     * @hash   832887368
      */
     MCAPI void parse(class Json::Value const &);
 

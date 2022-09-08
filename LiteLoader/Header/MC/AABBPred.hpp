@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AABBPRED
-#endif
     /**
      * @symbol ??RAABBPred@@QEBA_NAEBVAABB@@0@Z
+     * @hash   1903341223
      */
     MCAPI bool operator()(class AABB const &, class AABB const &) const;
 

@@ -38,26 +38,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERLISTENTRY
-#endif
     /**
      * @symbol ??0PlayerListEntry@@QEAA@AEBVPlayer@@@Z
+     * @hash   567460882
      */
     MCAPI PlayerListEntry(class Player const &);
     /**
      * @symbol ?clone@PlayerListEntry@@QEBA?AV1@XZ
+     * @hash   2090113272
      */
     MCAPI class PlayerListEntry clone() const;
     /**
      * @symbol ?read@PlayerListEntry@@QEAA_NAEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1222856575
      */
     MCAPI bool read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write@PlayerListEntry@@QEBAXAEAVBinaryStream@@@Z
+     * @hash   -253574674
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1PlayerListEntry@@QEAA@XZ
+     * @hash   -794196033
      */
     MCAPI ~PlayerListEntry();
 

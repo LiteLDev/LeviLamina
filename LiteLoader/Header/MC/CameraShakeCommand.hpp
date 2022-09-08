@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -173750284
      */
     virtual ~CameraShakeCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@CameraShakeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -878156631
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKECOMMAND
-#endif
     /**
      * @symbol ?setup@CameraShakeCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1634103252
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
      * @symbol ?_executeAdd@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -629870924
      */
     MCAPI void _executeAdd(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?_executeStop@CameraShakeCommand@@AEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1192941471
      */
     MCAPI void _executeStop(class CommandOrigin const &, class CommandOutput &) const;
 

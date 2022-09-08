@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PEEKCOMPONENT
-#endif
     /**
      * @symbol ?getDuration@PeekComponent@@QEAAAEAHXZ
+     * @hash   -1310159889
      */
     MCAPI int & getDuration();
     /**
      * @symbol ?getHadTarget@PeekComponent@@QEBA_NXZ
+     * @hash   -257339956
      */
     MCAPI bool getHadTarget() const;
     /**
      * @symbol ?setHadTarget@PeekComponent@@QEAAX_N@Z
+     * @hash   675281872
      */
     MCAPI void setHadTarget(bool);
 

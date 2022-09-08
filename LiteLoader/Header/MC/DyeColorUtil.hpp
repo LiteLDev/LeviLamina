@@ -30,23 +30,40 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYECOLORUTIL
-#endif
-MCAPI static class std::array<short, 16> const COLOR_TO_AUX;
-MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
-MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;
+    /**
+     * @symbol ?COLOR_TO_AUX@DyeColorUtil@@2V?$array@F$0BA@@std@@B
+     * @hash   1798578754
+     */
+    MCAPI static class std::array<short, 16> const COLOR_TO_AUX;
+    /**
+     * @symbol ?DEPRECATED_DYE_AUX_VALUES@DyeColorUtil@@2V?$array@F$03@std@@B
+     * @hash   -1418052843
+     */
+    MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
+    /**
+     * @symbol ?DYE_AUX_VALUES@DyeColorUtil@@2V?$array@F$0BA@@std@@B
+     * @hash   899587546
+     */
+    MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;
     /**
      * @symbol ?getAuxValue@DyeColorUtil@@SAHW4ItemColor@@@Z
+     * @hash   -1404324903
      */
     MCAPI static int getAuxValue(enum ItemColor);
     /**
      * @symbol ?getItemColor@DyeColorUtil@@SA?AW4ItemColor@@H@Z
+     * @hash   -616530667
      */
     MCAPI static enum ItemColor getItemColor(int);
     /**
      * @symbol ?getRandomItemColor@DyeColorUtil@@SA?AW4ItemColor@@AEAVRandom@@@Z
+     * @hash   -295187645
      */
     MCAPI static enum ItemColor getRandomItemColor(class Random &);
-MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
+    /**
+     * @symbol ?mColorMap@DyeColorUtil@@2V?$array@W4ItemColor@@$0BE@@std@@B
+     * @hash   993319481
+     */
+    MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
 
 };

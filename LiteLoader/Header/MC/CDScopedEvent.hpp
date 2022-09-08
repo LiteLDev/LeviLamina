@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CDSCOPEDEVENT
-#endif
     /**
      * @symbol ??0CDScopedEvent@@QEAA@W4CrashDumpLogStringID@@00@Z
+     * @hash   -115398882
      */
     MCAPI CDScopedEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
     /**
      * @symbol ??1CDScopedEvent@@QEAA@XZ
+     * @hash   -1717133067
      */
     MCAPI ~CDScopedEvent();
 

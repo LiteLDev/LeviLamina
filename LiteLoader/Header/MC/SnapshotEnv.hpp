@@ -33,58 +33,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   226044247
      */
     virtual ~SnapshotEnv();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?NewSequentialFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z
+     * @hash   -871675719
      */
     virtual class leveldb::Status NewSequentialFile(std::string const &, class leveldb::SequentialFile **);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?NewRandomAccessFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z
+     * @hash   949115897
      */
     virtual class leveldb::Status NewRandomAccessFile(std::string const &, class leveldb::RandomAccessFile **);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?NewWritableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
+     * @hash   1888456715
      */
     virtual class leveldb::Status NewWritableFile(std::string const &, class leveldb::WritableFile **);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?NewAppendableFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z
+     * @hash   -2137363089
      */
     virtual class leveldb::Status NewAppendableFile(std::string const &, class leveldb::WritableFile **);
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?DeleteFileA@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1004971055
      */
     virtual class leveldb::Status DeleteFileA(std::string const &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?RenameFile@SnapshotEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
+     * @hash   570783933
      */
     virtual class leveldb::Status RenameFile(std::string const &, std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPSHOTENV
-#endif
     /**
      * @symbol ??0SnapshotEnv@@QEAA@PEAVEnv@leveldb@@@Z
+     * @hash   2093970375
      */
     MCAPI SnapshotEnv(class leveldb::Env *);
     /**
      * @symbol ?createSnapshot@SnapshotEnv@@QEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBVPath@Core@@@Z
+     * @hash   679268951
      */
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const &);
     /**
      * @symbol ?releaseSnapshot@SnapshotEnv@@QEAAXXZ
+     * @hash   887969819
      */
     MCAPI void releaseSnapshot();
 
 //private:
     /**
      * @symbol ?_isQueuedForRemoval@SnapshotEnv@@AEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
+     * @hash   -1100421732
      */
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const &);
 

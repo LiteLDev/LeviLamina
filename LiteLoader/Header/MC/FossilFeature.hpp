@@ -32,21 +32,24 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1786912088
      */
     virtual ~FossilFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@FossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1003260436
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOSSILFEATURE
-#endif
 
 //private:
 
 private:
-MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
+    /**
+     * @symbol ?STRUCTURE_LOCATION_FOSSIL@FossilFeature@@0QBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -1130449420
+     */
+    MCAPI static std::string const STRUCTURE_LOCATION_FOSSIL[];
 
 };

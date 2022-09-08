@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEHANDLE
-#endif
     /**
      * @symbol ?getInstance@AttributeInstanceHandle@@QEBAAEBVAttributeInstance@@XZ
+     * @hash   102827606
      */
     MCAPI class AttributeInstance const & getInstance() const;
     /**
      * @symbol ?getMutableInstance@AttributeInstanceHandle@@QEBAPEAVAttributeInstance@@XZ
+     * @hash   -2141049527
      */
     MCAPI class AttributeInstance * getMutableInstance() const;
     /**
      * @symbol ?inheritFrom@AttributeInstanceHandle@@QEAAXAEBV1@PEAVBaseAttributeMap@@@Z
+     * @hash   397706716
      */
     MCAPI void inheritFrom(class AttributeInstanceHandle const &, class BaseAttributeMap *);
     /**
      * @symbol ??8AttributeInstanceHandle@@QEBA_NAEBV0@@Z
+     * @hash   -383644642
      */
     MCAPI bool operator==(class AttributeInstanceHandle const &) const;
 

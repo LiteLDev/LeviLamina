@@ -37,46 +37,51 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   181215753
      */
     virtual ~EndTag();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?write@EndTag@@UEBAXAEAVIDataOutput@@@Z
+     * @hash   -456642128
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?load@EndTag@@UEAAXAEAVIDataInput@@@Z
+     * @hash   338552207
      */
     virtual void load(class IDataInput &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?toString@EndTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1866552215
      */
     virtual std::string toString() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getId@EndTag@@UEBA?AW4Type@Tag@@XZ
+     * @hash   -2129065940
      */
     virtual enum Tag::Type getId() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?equals@EndTag@@UEBA_NAEBVTag@@@Z
+     * @hash   -1761967211
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?copy@EndTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   14984297
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?hash@EndTag@@UEBA_KXZ
+     * @hash   -547506753
      */
     virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDTAG
-#endif
 
 };

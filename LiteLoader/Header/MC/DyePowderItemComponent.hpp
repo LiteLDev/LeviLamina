@@ -31,52 +31,56 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   656186539
      */
     virtual ~DyePowderItemComponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VDyePowderItemComponent@@@@UEBA_NXZ
+     * @hash   -704838032
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VDyePowderItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -313149966
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VDyePowderItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   1341369246
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEMCOMPONENT
-#endif
     /**
      * @symbol ?isValidAuxValue@DyePowderItemComponent@@QEBA_NH@Z
+     * @hash   1168455165
      */
     MCAPI bool isValidAuxValue(int) const;
     /**
      * @symbol ?bindType@DyePowderItemComponent@@SAXXZ
+     * @hash   2097049875
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@DyePowderItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   1518624806
      */
     MCAPI static class HashedString const & getIdentifier();
 

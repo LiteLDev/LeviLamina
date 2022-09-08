@@ -32,29 +32,28 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -938792023
      */
     virtual ~MoveToLavaGoal();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOLAVAGOAL
-#endif
     /**
      * @symbol ??0MoveToLavaGoal@@QEAA@AEAVMob@@MHHHM@Z
+     * @hash   -1836273439
      */
     MCAPI MoveToLavaGoal(class Mob &, float, int, int, int, float);
 

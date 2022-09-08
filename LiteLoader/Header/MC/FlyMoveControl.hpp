@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   643605539
      */
     virtual ~FlyMoveControl();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     * @hash   -1991386211
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYMOVECONTROL
-#endif
     /**
      * @symbol ??0FlyMoveControl@@QEAA@XZ
+     * @hash   314743621
      */
     MCAPI FlyMoveControl();
 

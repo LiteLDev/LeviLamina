@@ -25,19 +25,21 @@ public:
     struct BlockMaterialInstanceProxy& operator=(struct BlockMaterialInstanceProxy const &) = delete;
     BlockMaterialInstanceProxy() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKMATERIALINSTANCEPROXY
-#endif
     /**
      * @symbol ??0BlockMaterialInstanceProxy@@QEAA@AEBU0@@Z
+     * @hash   578841071
      */
     MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const &);
     /**
      * @symbol ??1BlockMaterialInstanceProxy@@QEAA@XZ
+     * @hash   1066830879
      */
     MCAPI ~BlockMaterialInstanceProxy();
     /**
      * @symbol ?bindType@BlockMaterialInstanceProxy@@SAXXZ
+     * @hash   -1641357357
      */
     MCAPI static void bindType();
 

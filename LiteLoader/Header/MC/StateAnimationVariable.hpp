@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STATEANIMATIONVARIABLE
-#endif
     /**
      * @symbol ?addKeyFrame@StateAnimationVariable@@QEAAXMM@Z
+     * @hash   -525136629
      */
     MCAPI void addKeyFrame(float, float);
 

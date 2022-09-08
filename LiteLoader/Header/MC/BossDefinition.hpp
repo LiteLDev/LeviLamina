@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSDEFINITION
-#endif
     /**
      * @symbol ??0BossDefinition@@QEAA@XZ
+     * @hash   1717092076
      */
     MCAPI BossDefinition();
     /**
      * @symbol ?initialize@BossDefinition@@QEAAXAEAVEntityContext@@AEAVBossComponent@@@Z
+     * @hash   1303153733
      */
     MCAPI void initialize(class EntityContext &, class BossComponent &);
     /**
      * @symbol ?buildSchema@BossDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VBossDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1608088470
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>> &);
 

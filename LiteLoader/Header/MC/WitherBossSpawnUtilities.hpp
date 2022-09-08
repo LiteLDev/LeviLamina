@@ -24,10 +24,12 @@ namespace WitherBossSpawnUtilities {
 #undef AFTER_EXTRA
     /**
      * @symbol ?createWitherBuilder@WitherBossSpawnUtilities@@YA?AV?$unique_ptr@VBlockPatternBuilder@@U?$default_delete@VBlockPatternBuilder@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   1631888258
      */
     MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilder(class BlockSource &);
     /**
      * @symbol ?createWitherBuilderForTShape@WitherBossSpawnUtilities@@YA?AV?$unique_ptr@VBlockPatternBuilder@@U?$default_delete@VBlockPatternBuilder@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -478598264
      */
     MCAPI std::unique_ptr<class BlockPatternBuilder> createWitherBuilderForTShape(class BlockSource &);
 

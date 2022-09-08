@@ -30,16 +30,16 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMBATREGENERATIONCOMPONENT
-#endif
     /**
      * @symbol ?tick@CombatRegenerationComponent@@QEAAXAEAVActor@@@Z
+     * @hash   -758203246
      */
     MCAPI void tick(class Actor &);
 
 //private:
     /**
      * @symbol ?_applyCombatBuffsToMob@CombatRegenerationComponent@@AEAAXAEAVActor@@0@Z
+     * @hash   920222326
      */
     MCAPI void _applyCombatBuffsToMob(class Actor &, class Actor &);
 

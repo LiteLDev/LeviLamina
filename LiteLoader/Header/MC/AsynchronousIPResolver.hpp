@@ -30,32 +30,36 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCHRONOUSIPRESOLVER
-#endif
     /**
      * @symbol ??0AsynchronousIPResolver@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1272780070
      */
     MCAPI AsynchronousIPResolver(std::string);
     /**
      * @symbol ?getIp@AsynchronousIPResolver@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1768314498
      */
     MCAPI std::string getIp() const;
     /**
      * @symbol ?getOriginalUrl@AsynchronousIPResolver@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1183631646
      */
     MCAPI std::string const & getOriginalUrl() const;
     /**
      * @symbol ?isDone@AsynchronousIPResolver@@QEBA_NXZ
+     * @hash   -155075748
      */
     MCAPI bool isDone() const;
     /**
      * @symbol ??1AsynchronousIPResolver@@QEAA@XZ
+     * @hash   -603421105
      */
     MCAPI ~AsynchronousIPResolver();
 
 //private:
     /**
      * @symbol ?_resolve@AsynchronousIPResolver@@AEAAXXZ
+     * @hash   938598148
      */
     MCAPI void _resolve();
 

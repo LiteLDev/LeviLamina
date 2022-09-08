@@ -30,28 +30,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEAKSTORAGEFEATURE
-#endif
 
 //protected:
     /**
      * @symbol ??0WeakStorageFeature@@IEAA@W4EmptyInit@0@@Z
+     * @hash   -45278851
      */
     MCAPI WeakStorageFeature(enum WeakStorageFeature::EmptyInit);
     /**
      * @symbol ??0WeakStorageFeature@@IEAA@AEBVOwnerStorageFeature@@@Z
+     * @hash   -550218088
      */
     MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
     /**
      * @symbol ??0WeakStorageFeature@@IEAA@$$QEAV0@@Z
+     * @hash   -59457150
      */
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
     /**
      * @symbol ?_isSet@WeakStorageFeature@@IEBA_NXZ
+     * @hash   385455890
      */
     MCAPI bool _isSet() const;
     /**
      * @symbol ??4WeakStorageFeature@@IEAAAEAV0@$$QEAV0@@Z
+     * @hash   292682848
      */
     MCAPI class WeakStorageFeature & operator=(class WeakStorageFeature &&);
 

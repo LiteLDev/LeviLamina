@@ -26,27 +26,31 @@ struct ActorInfo {
 public:
     ActorInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORINFO
-#endif
     /**
      * @symbol ??0ActorInfo@@QEAA@AEBU0@@Z
+     * @hash   -1419283883
      */
     MCAPI ActorInfo(struct ActorInfo const &);
     /**
      * @symbol ?load@ActorInfo@@QEAAXPEBVCompoundTag@@@Z
+     * @hash   1441450101
      */
     MCAPI void load(class CompoundTag const *);
     /**
      * @symbol ??4ActorInfo@@QEAAAEAU0@AEBU0@@Z
+     * @hash   1435524814
      */
     MCAPI struct ActorInfo & operator=(struct ActorInfo const &);
     /**
      * @symbol ?save@ActorInfo@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   1643456782
      */
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     /**
      * @symbol ??1ActorInfo@@QEAA@XZ
+     * @hash   -2106409777
      */
     MCAPI ~ActorInfo();
 

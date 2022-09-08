@@ -26,11 +26,11 @@ public:
     GameEventPair(struct GameEventPair const &) = delete;
     GameEventPair() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTPAIR
-#endif
     /**
      * @symbol ??1GameEventPair@@QEAA@XZ
+     * @hash   1249590254
      */
     MCAPI ~GameEventPair();
 

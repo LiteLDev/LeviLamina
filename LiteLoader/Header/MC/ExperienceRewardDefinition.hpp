@@ -31,22 +31,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPERIENCEREWARDDEFINITION
-#endif
     /**
      * @symbol ?addBredExpressionNode@ExperienceRewardDefinition@@QEAAXAEBVExpressionNode@@@Z
+     * @hash   1251612472
      */
     MCAPI void addBredExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ?addDeathExpressionNode@ExperienceRewardDefinition@@QEAAXAEBVExpressionNode@@@Z
+     * @hash   -1246766380
      */
     MCAPI void addDeathExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ?initialize@ExperienceRewardDefinition@@QEAAXAEAVEntityContext@@AEAVExperienceRewardComponent@@@Z
+     * @hash   155133885
      */
     MCAPI void initialize(class EntityContext &, class ExperienceRewardComponent &);
     /**
      * @symbol ?buildSchema@ExperienceRewardDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExperienceRewardDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -712280474
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>> &);
 

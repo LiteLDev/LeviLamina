@@ -32,36 +32,39 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   468549759
      */
     virtual ~WallClimberPathNavigation();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@WallClimberPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   790120581
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
+     * @hash   -268575290
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
+     * @hash   2080810027
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?moveTo@WallClimberPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z
+     * @hash   211396161
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?canUpdatePath@WallClimberPathNavigation@@MEBA_NAEBVMob@@@Z
+     * @hash   63431401
      */
     virtual bool canUpdatePath(class Mob const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WALLCLIMBERPATHNAVIGATION
-#endif
 
 };

@@ -30,12 +30,11 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLASSID
-#endif
 
 //private:
     /**
      * @symbol ?getNextID@ClassID@@CA_KXZ
+     * @hash   1731739731
      */
     MCAPI static unsigned __int64 getNextID();
 

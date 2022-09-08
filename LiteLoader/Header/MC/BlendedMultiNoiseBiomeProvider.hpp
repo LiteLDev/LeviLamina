@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLENDEDMULTINOISEBIOMEPROVIDER
-#endif
     /**
      * @symbol ??0BlendedMultiNoiseBiomeProvider@@QEAA@AEBUOverworldNoises3d@@VParameterList@@AEAVSeamlessChunkBlendingAttenuatorFactory@@AEBVBiomeRegistry@@@Z
+     * @hash   -251789290
      */
     MCAPI BlendedMultiNoiseBiomeProvider(struct OverworldNoises3d const &, class ParameterList, class SeamlessChunkBlendingAttenuatorFactory &, class BiomeRegistry const &);
     /**
      * @symbol ?tryGetBiome@BlendedMultiNoiseBiomeProvider@@QEBAPEBVBiome@@AEBUGetBiomeOptions@@@Z
+     * @hash   597502848
      */
     MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &) const;
     /**
      * @symbol ?tryGetBiome@BlendedMultiNoiseBiomeProvider@@QEBAPEBVBiome@@AEBUGetBiomeOptions@@AEBUCacheEntry@ChunkLocalNoiseCache@@PEAUHint@RTree@@@Z
+     * @hash   -512006245
      */
     MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &, struct ChunkLocalNoiseCache::CacheEntry const &, struct RTree::Hint *) const;
     /**
      * @symbol ??1BlendedMultiNoiseBiomeProvider@@QEAA@XZ
+     * @hash   -469541398
      */
     MCAPI ~BlendedMultiNoiseBiomeProvider();
 

@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1606009891
      */
     virtual ~RuinedPortalStart();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RUINEDPORTALSTART
-#endif
     /**
      * @symbol ??0RuinedPortalStart@@QEAA@AEAVBiomeRegistry@@AEBVBiomeSource@@HHAEBVIPreliminarySurfaceProvider@@@Z
+     * @hash   1596130776
      */
     MCAPI RuinedPortalStart(class BiomeRegistry &, class BiomeSource const &, int, int, class IPreliminarySurfaceProvider const &);
 

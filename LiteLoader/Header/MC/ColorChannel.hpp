@@ -30,8 +30,10 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COLORCHANNEL
-#endif
-MCAPI static class ColorChannel const INVALID;
+    /**
+     * @symbol ?INVALID@ColorChannel@@2V1@B
+     * @hash   349295316
+     */
+    MCAPI static class ColorChannel const INVALID;
 
 };

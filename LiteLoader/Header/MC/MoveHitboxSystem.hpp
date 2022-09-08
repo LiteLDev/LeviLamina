@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEHITBOXSYSTEM
-#endif
     /**
      * @symbol ?moveHitboxTo@MoveHitboxSystem@@SAXAEBVVec3@@AEAV?$vector@UHitbox@@V?$allocator@UHitbox@@@std@@@std@@@Z
+     * @hash   937520669
      */
     MCAPI static void moveHitboxTo(class Vec3 const &, std::vector<struct Hitbox> &);
 

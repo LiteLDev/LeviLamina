@@ -26,15 +26,16 @@ public:
     MolangContextVariable(struct MolangContextVariable const &) = delete;
     MolangContextVariable() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGCONTEXTVARIABLE
-#endif
     /**
      * @symbol ??0MolangContextVariable@@QEAA@AEBVHashedString@@@Z
+     * @hash   883434592
      */
     MCAPI MolangContextVariable(class HashedString const &);
     /**
      * @symbol ??1MolangContextVariable@@QEAA@XZ
+     * @hash   -1590939993
      */
     MCAPI ~MolangContextVariable();
 

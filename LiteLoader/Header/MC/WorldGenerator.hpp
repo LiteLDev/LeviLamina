@@ -38,79 +38,89 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDGENERATOR
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z
+     * @hash   1684004847
      */
     MCVAPI void addHardcodedSpawnAreas(class LevelChunk &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?debugRender@WorldGenerator@@UEAAXXZ
+     * @hash   -916125025
      */
     MCVAPI void debugRender();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?findNearestStructureFeature@WorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
+     * @hash   -949838222
      */
     MCVAPI bool findNearestStructureFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?findStructureFeatureTypeAt@WorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
+     * @hash   1865120126
      */
     MCVAPI enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?garbageCollectBlueprints@WorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
+     * @hash   -1001505884
      */
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z
+     * @hash   -703417892
      */
     MCVAPI class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isStructureFeatureTypeAt@WorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
+     * @hash   404441294
      */
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?postProcessMobsAt@WorldGenerator@@UEAAXAEAVBlockSource@@HHAEAVRandom@@@Z
+     * @hash   -1730541976
      */
     MCVAPI void postProcessMobsAt(class BlockSource &, int, int, class Random &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1WorldGenerator@@UEAA@XZ
+     * @hash   2129122788
      */
     MCVAPI ~WorldGenerator();
 #endif
     /**
      * @symbol ??0WorldGenerator@@QEAA@AEAVDimension@@V?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
+     * @hash   -1741218529
      */
     MCAPI WorldGenerator(class Dimension &, std::unique_ptr<class StructureFeatureRegistry>);
     /**
      * @symbol ??0WorldGenerator@@QEAA@AEAVDimension@@@Z
+     * @hash   48134864
      */
     MCAPI WorldGenerator(class Dimension &);
     /**
      * @symbol ?computeChunkHeightMap@WorldGenerator@@QEAA?AV?$vector@FV?$allocator@F@std@@@std@@AEBVChunkPos@@@Z
+     * @hash   -555208263
      */
     MCAPI std::vector<short> computeChunkHeightMap(class ChunkPos const &);
     /**
      * @symbol ?getStructureFeatureRegistry@WorldGenerator@@QEBAAEAVStructureFeatureRegistry@@XZ
+     * @hash   -1016223864
      */
     MCAPI class StructureFeatureRegistry & getStructureFeatureRegistry() const;
 
 //protected:
     /**
      * @symbol ?postProcessStructureFeatures@WorldGenerator@@IEAAXAEAVBlockSource@@AEAVRandom@@HH@Z
+     * @hash   1559362968
      */
     MCAPI void postProcessStructureFeatures(class BlockSource &, class Random &, int, int);
     /**
      * @symbol ?prepareStructureFeatureBlueprints@WorldGenerator@@IEAAXAEAVDimension@@AEBVChunkPos@@AEBVBiomeSource@@AEBVIPreliminarySurfaceProvider@@@Z
+     * @hash   2026790946
      */
     MCAPI void prepareStructureFeatureBlueprints(class Dimension &, class ChunkPos const &, class BiomeSource const &, class IPreliminarySurfaceProvider const &);
 
 protected:
-MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
+    /**
+     * @symbol ?TICKING_QUEUE_PASS_LIMIT@WorldGenerator@@1_KB
+     * @hash   -95545315
+     */
+    MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
 
 };

@@ -27,19 +27,21 @@ public:
     struct DamageSensorTrigger& operator=(struct DamageSensorTrigger const &) = delete;
     DamageSensorTrigger() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGESENSORTRIGGER
-#endif
     /**
      * @symbol ??0DamageSensorTrigger@@QEAA@AEBU0@@Z
+     * @hash   1786537269
      */
     MCAPI DamageSensorTrigger(struct DamageSensorTrigger const &);
     /**
      * @symbol ?setCause@DamageSensorTrigger@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1479225648
      */
     MCAPI void setCause(std::string const &);
     /**
      * @symbol ??1DamageSensorTrigger@@QEAA@XZ
+     * @hash   -760485701
      */
     MCAPI ~DamageSensorTrigger();
 

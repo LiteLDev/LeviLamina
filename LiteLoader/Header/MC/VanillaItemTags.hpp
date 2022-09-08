@@ -30,44 +30,190 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAITEMTAGS
-#endif
-MCAPI static struct ItemTag const Armor;
-MCAPI static struct ItemTag const Arrows;
-MCAPI static struct ItemTag const Banners;
-MCAPI static struct ItemTag const Boat;
-MCAPI static struct ItemTag const ChainmailTier;
-MCAPI static struct ItemTag const ChestBoat;
-MCAPI static struct ItemTag const Coal;
-MCAPI static struct ItemTag const Cooked;
-MCAPI static struct ItemTag const DiamondTier;
-MCAPI static struct ItemTag const Digger;
-MCAPI static struct ItemTag const Door;
-MCAPI static struct ItemTag const Fishes;
-MCAPI static struct ItemTag const Food;
-MCAPI static struct ItemTag const GoldenTier;
-MCAPI static struct ItemTag const HangingActor;
-MCAPI static struct ItemTag const Hatchet;
-MCAPI static struct ItemTag const Hoe;
-MCAPI static struct ItemTag const HorseArmor;
-MCAPI static struct ItemTag const IronTier;
-MCAPI static struct ItemTag const LeatherTier;
-MCAPI static struct ItemTag const LecternBooks;
-MCAPI static struct ItemTag const Meat;
-MCAPI static struct ItemTag const Minecart;
-MCAPI static struct ItemTag const MusicDiscs;
-MCAPI static struct ItemTag const NetheriteTier;
-MCAPI static struct ItemTag const Pickaxe;
-MCAPI static struct ItemTag const PiglinLoved;
-MCAPI static struct ItemTag const PiglinRepellents;
-MCAPI static struct ItemTag const Shovel;
-MCAPI static struct ItemTag const Sign;
-MCAPI static struct ItemTag const Signs;
-MCAPI static struct ItemTag const SpawnEgg;
-MCAPI static struct ItemTag const StoneTier;
-MCAPI static struct ItemTag const Sword;
-MCAPI static struct ItemTag const Tool;
-MCAPI static struct ItemTag const VibrationDamper;
-MCAPI static struct ItemTag const WoodenTier;
+    /**
+     * @symbol ?Armor@VanillaItemTags@@2UItemTag@@B
+     * @hash   -989201057
+     */
+    MCAPI static struct ItemTag const Armor;
+    /**
+     * @symbol ?Arrows@VanillaItemTags@@2UItemTag@@B
+     * @hash   -264855279
+     */
+    MCAPI static struct ItemTag const Arrows;
+    /**
+     * @symbol ?Banners@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1650885377
+     */
+    MCAPI static struct ItemTag const Banners;
+    /**
+     * @symbol ?Boat@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1730372623
+     */
+    MCAPI static struct ItemTag const Boat;
+    /**
+     * @symbol ?ChainmailTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   -763366849
+     */
+    MCAPI static struct ItemTag const ChainmailTier;
+    /**
+     * @symbol ?ChestBoat@VanillaItemTags@@2UItemTag@@B
+     * @hash   726013327
+     */
+    MCAPI static struct ItemTag const ChestBoat;
+    /**
+     * @symbol ?Coal@VanillaItemTags@@2UItemTag@@B
+     * @hash   631630369
+     */
+    MCAPI static struct ItemTag const Coal;
+    /**
+     * @symbol ?Cooked@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1094510575
+     */
+    MCAPI static struct ItemTag const Cooked;
+    /**
+     * @symbol ?DiamondTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   386018623
+     */
+    MCAPI static struct ItemTag const DiamondTier;
+    /**
+     * @symbol ?Digger@VanillaItemTags@@2UItemTag@@B
+     * @hash   -920568431
+     */
+    MCAPI static struct ItemTag const Digger;
+    /**
+     * @symbol ?Door@VanillaItemTags@@2UItemTag@@B
+     * @hash   529060993
+     */
+    MCAPI static struct ItemTag const Door;
+    /**
+     * @symbol ?Fishes@VanillaItemTags@@2UItemTag@@B
+     * @hash   -2080334479
+     */
+    MCAPI static struct ItemTag const Fishes;
+    /**
+     * @symbol ?Food@VanillaItemTags@@2UItemTag@@B
+     * @hash   1234521825
+     */
+    MCAPI static struct ItemTag const Food;
+    /**
+     * @symbol ?GoldenTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   1934774833
+     */
+    MCAPI static struct ItemTag const GoldenTier;
+    /**
+     * @symbol ?HangingActor@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1038130719
+     */
+    MCAPI static struct ItemTag const HangingActor;
+    /**
+     * @symbol ?Hatchet@VanillaItemTags@@2UItemTag@@B
+     * @hash   406063727
+     */
+    MCAPI static struct ItemTag const Hatchet;
+    /**
+     * @symbol ?Hoe@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1612829505
+     */
+    MCAPI static struct ItemTag const Hoe;
+    /**
+     * @symbol ?HorseArmor@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1317305199
+     */
+    MCAPI static struct ItemTag const HorseArmor;
+    /**
+     * @symbol ?IronTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   2048494593
+     */
+    MCAPI static struct ItemTag const IronTier;
+    /**
+     * @symbol ?LeatherTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1876038097
+     */
+    MCAPI static struct ItemTag const LeatherTier;
+    /**
+     * @symbol ?LecternBooks@VanillaItemTags@@2UItemTag@@B
+     * @hash   51038785
+     */
+    MCAPI static struct ItemTag const LecternBooks;
+    /**
+     * @symbol ?Meat@VanillaItemTags@@2UItemTag@@B
+     * @hash   111835249
+     */
+    MCAPI static struct ItemTag const Meat;
+    /**
+     * @symbol ?Minecart@VanillaItemTags@@2UItemTag@@B
+     * @hash   -675808479
+     */
+    MCAPI static struct ItemTag const Minecart;
+    /**
+     * @symbol ?MusicDiscs@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1389409455
+     */
+    MCAPI static struct ItemTag const MusicDiscs;
+    /**
+     * @symbol ?NetheriteTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1926608961
+     */
+    MCAPI static struct ItemTag const NetheriteTier;
+    /**
+     * @symbol ?Pickaxe@VanillaItemTags@@2UItemTag@@B
+     * @hash   1278142863
+     */
+    MCAPI static struct ItemTag const Pickaxe;
+    /**
+     * @symbol ?PiglinLoved@VanillaItemTags@@2UItemTag@@B
+     * @hash   168237311
+     */
+    MCAPI static struct ItemTag const PiglinLoved;
+    /**
+     * @symbol ?PiglinRepellents@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1546240239
+     */
+    MCAPI static struct ItemTag const PiglinRepellents;
+    /**
+     * @symbol ?Shovel@VanillaItemTags@@2UItemTag@@B
+     * @hash   713116289
+     */
+    MCAPI static struct ItemTag const Shovel;
+    /**
+     * @symbol ?Sign@VanillaItemTags@@2UItemTag@@B
+     * @hash   1928925873
+     */
+    MCAPI static struct ItemTag const Sign;
+    /**
+     * @symbol ?Signs@VanillaItemTags@@2UItemTag@@B
+     * @hash   1986352287
+     */
+    MCAPI static struct ItemTag const Signs;
+    /**
+     * @symbol ?SpawnEgg@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1399661967
+     */
+    MCAPI static struct ItemTag const SpawnEgg;
+    /**
+     * @symbol ?StoneTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   254288607
+     */
+    MCAPI static struct ItemTag const StoneTier;
+    /**
+     * @symbol ?Sword@VanillaItemTags@@2UItemTag@@B
+     * @hash   1464701135
+     */
+    MCAPI static struct ItemTag const Sword;
+    /**
+     * @symbol ?Tool@VanillaItemTags@@2UItemTag@@B
+     * @hash   -641567039
+     */
+    MCAPI static struct ItemTag const Tool;
+    /**
+     * @symbol ?VibrationDamper@VanillaItemTags@@2UItemTag@@B
+     * @hash   -1829188305
+     */
+    MCAPI static struct ItemTag const VibrationDamper;
+    /**
+     * @symbol ?WoodenTier@VanillaItemTags@@2UItemTag@@B
+     * @hash   -849763743
+     */
+    MCAPI static struct ItemTag const WoodenTier;
 
 };

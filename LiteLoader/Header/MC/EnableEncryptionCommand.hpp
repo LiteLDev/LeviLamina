@@ -32,25 +32,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1031070419
      */
     virtual ~EnableEncryptionCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@EnableEncryptionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   291105198
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENABLEENCRYPTIONCOMMAND
-#endif
     /**
      * @symbol ?setup@EnableEncryptionCommand@@SAXAEAVCommandRegistry@@AEAVIMinecraftApp@@@Z
+     * @hash   -1292624453
      */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
 //private:
 
 private:
-MCAPI static class IMinecraftApp * mApp;
+    /**
+     * @symbol ?mApp@EnableEncryptionCommand@@0PEAVIMinecraftApp@@EA
+     * @hash   396235626
+     */
+    MCAPI static class IMinecraftApp * mApp;
 
 };

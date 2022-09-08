@@ -29,30 +29,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMEVENTCOORDINATOR
-#endif
     /**
      * @symbol ??0ItemEventCoordinator@@QEAA@XZ
+     * @hash   1744887205
      */
     MCAPI ItemEventCoordinator();
     /**
      * @symbol ?getItemGameplayHandler@ItemEventCoordinator@@QEAAAEAVItemGameplayHandler@@XZ
+     * @hash   1731592806
      */
     MCAPI class ItemGameplayHandler & getItemGameplayHandler();
     /**
      * @symbol ?onItemModifiedActor@ItemEventCoordinator@@QEAAXAEBVItemStackBase@@AEBVActor@@@Z
+     * @hash   182042157
      */
     MCAPI void onItemModifiedActor(class ItemStackBase const &, class Actor const &);
     /**
      * @symbol ?onItemSpawnedActor@ItemEventCoordinator@@QEAAXAEBVItemStackBase@@AEBVActor@@@Z
+     * @hash   -1732919121
      */
     MCAPI void onItemSpawnedActor(class ItemStackBase const &, class Actor const &);
     /**
      * @symbol ?registerItemGameplayHandler@ItemEventCoordinator@@QEAAXV?$unique_ptr@VItemGameplayHandler@@U?$default_delete@VItemGameplayHandler@@@std@@@std@@@Z
+     * @hash   -372806960
      */
     MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);
     /**
      * @symbol ?sendEvent@ItemEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableItemGameplayEvent@W4CoordinatorResult@@@@@@@Z
+     * @hash   -1330513353
      */
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<enum CoordinatorResult>>);
 

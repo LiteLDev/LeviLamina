@@ -33,61 +33,68 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1662082223
      */
     virtual ~DirectoryPackSource();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -2102621919
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -2101698398
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getPackOrigin@DirectoryPackSource@@UEBA?AW4PackOrigin@@XZ
+     * @hash   1771794021
      */
     virtual enum PackOrigin getPackOrigin() const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getPackType@DirectoryPackSource@@UEBA?AW4PackType@@XZ
+     * @hash   1974703653
      */
     virtual enum PackType getPackType() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?load@DirectoryPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+     * @hash   -518105502
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTORYPACKSOURCE
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?forEachPack@DirectoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+     * @hash   -1306428039
      */
     MCVAPI void forEachPack(class std::function<void (class Pack &)>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?forEachPackConst@DirectoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
+     * @hash   77878104
      */
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
     /**
      * @symbol ??0DirectoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
+     * @hash   1683075945
      */
     MCAPI DirectoryPackSource(class Core::Path const &, enum PackType, enum PackOrigin, bool);
     /**
      * @symbol ?getPath@DirectoryPackSource@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -143771185
      */
     MCAPI class Core::PathBuffer<std::string> const & getPath() const;
     /**
      * @symbol ?removePack@DirectoryPackSource@@QEAA_NAEBVPath@Core@@@Z
+     * @hash   -698967255
      */
     MCAPI bool removePack(class Core::Path const &);
     /**
      * @symbol ?checkAndRemoveIncompletePacks@DirectoryPackSource@@SAXAEBVPath@Core@@@Z
+     * @hash   -123654010
      */
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const &);
 

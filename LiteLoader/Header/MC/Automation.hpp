@@ -23,7 +23,15 @@ namespace Automation {
     class AutomationClient;
     enum MessagePurpose;
 #undef AFTER_EXTRA
-MCAPI extern char const * BodyData;
-MCAPI extern char const * HeaderData;
+    /**
+     * @symbol ?BodyData@Automation@@3PEBDEB
+     * @hash   367514298
+     */
+    MCAPI extern char const * BodyData;
+    /**
+     * @symbol ?HeaderData@Automation@@3PEBDEB
+     * @hash   2015257554
+     */
+    MCAPI extern char const * HeaderData;
 
 };

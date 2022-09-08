@@ -32,41 +32,45 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1290504170
      */
     virtual ~WaterBoundPathNavigation();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initializeInternal@WaterBoundPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
+     * @hash   -1951312949
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   -1310552010
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getTempMobPos@WaterBoundPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
+     * @hash   1378504016
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?travel@WaterBoundPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
+     * @hash   1788264619
      */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?canUpdatePath@WaterBoundPathNavigation@@MEBA_NAEBVMob@@@Z
+     * @hash   826639256
      */
     virtual bool canUpdatePath(class Mob const &) const;
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?updatePath@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   470445223
      */
     virtual void updatePath(class NavigationComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WATERBOUNDPATHNAVIGATION
-#endif
 
 };

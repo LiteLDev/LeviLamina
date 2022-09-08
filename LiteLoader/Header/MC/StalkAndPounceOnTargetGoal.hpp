@@ -31,59 +31,67 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1961804543
      */
     virtual ~StalkAndPounceOnTargetGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ
+     * @hash   1775668091
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ
+     * @hash   -1318781111
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@StalkAndPounceOnTargetGoal@@UEAA_NXZ
+     * @hash   -102228925
      */
     virtual bool canBeInterrupted();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@StalkAndPounceOnTargetGoal@@UEAAXXZ
+     * @hash   1249682260
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@StalkAndPounceOnTargetGoal@@UEAAXXZ
+     * @hash   221132628
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@StalkAndPounceOnTargetGoal@@UEAAXXZ
+     * @hash   1476831023
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@StalkAndPounceOnTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1471610427
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STALKANDPOUNCEONTARGETGOAL
-#endif
     /**
      * @symbol ??0StalkAndPounceOnTargetGoal@@QEAA@AEAVMob@@AEBVActorFilterGroup@@MMMMMMMM_N@Z
+     * @hash   1217599068
      */
     MCAPI StalkAndPounceOnTargetGoal(class Mob &, class ActorFilterGroup const &, float, float, float, float, float, float, float, float, bool);
 
 //private:
     /**
      * @symbol ?_isStuckBlock@StalkAndPounceOnTargetGoal@@AEBA_NVBlockPos@@@Z
+     * @hash   1079405600
      */
     MCAPI bool _isStuckBlock(class BlockPos) const;
     /**
      * @symbol ?_preparePounce@StalkAndPounceOnTargetGoal@@AEAAXAEBVVec3@@0@Z
+     * @hash   -2127101911
      */
     MCAPI void _preparePounce(class Vec3 const &, class Vec3 const &);
 

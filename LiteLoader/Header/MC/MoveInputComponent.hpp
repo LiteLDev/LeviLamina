@@ -26,11 +26,11 @@ public:
     MoveInputComponent(struct MoveInputComponent const &) = delete;
     MoveInputComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTCOMPONENT
-#endif
     /**
      * @symbol ??4MoveInputComponent@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -1255174708
      */
     MCAPI struct MoveInputComponent & operator=(struct MoveInputComponent &&);
 

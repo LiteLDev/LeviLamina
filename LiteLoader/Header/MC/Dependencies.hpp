@@ -25,23 +25,26 @@ public:
     Dependencies(struct Dependencies const &) = delete;
     Dependencies() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEPENDENCIES
-#endif
     /**
      * @symbol ??4Dependencies@@QEAAAEAU0@AEBU0@@Z
+     * @hash   -2030689546
      */
     MCAPI struct Dependencies & operator=(struct Dependencies const &);
     /**
      * @symbol ??4Dependencies@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   627942278
      */
     MCAPI struct Dependencies & operator=(struct Dependencies &&);
     /**
      * @symbol ??1Dependencies@@QEAA@XZ
+     * @hash   253409795
      */
     MCAPI ~Dependencies();
     /**
      * @symbol ?bindType@Dependencies@@SAXXZ
+     * @hash   -192395693
      */
     MCAPI static void bindType();
 

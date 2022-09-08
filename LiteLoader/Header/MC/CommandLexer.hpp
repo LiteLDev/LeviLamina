@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDLEXER
-#endif
     /**
      * @symbol ??0CommandLexer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   304605364
      */
     MCAPI CommandLexer(std::string const &);
     /**
      * @symbol ?next@CommandLexer@@QEBAAEBUToken@1@XZ
+     * @hash   1872430100
      */
     MCAPI struct CommandLexer::Token const & next() const;
     /**
      * @symbol ?step@CommandLexer@@QEAAXXZ
+     * @hash   -1344501403
      */
     MCAPI void step();
     /**
      * @symbol ?isDigit@CommandLexer@@SA_ND@Z
+     * @hash   -562315234
      */
     MCAPI static bool isDigit(char);
     /**
      * @symbol ?isFilePathCharacter@CommandLexer@@SA_ND@Z
+     * @hash   1351783416
      */
     MCAPI static bool isFilePathCharacter(char);
 

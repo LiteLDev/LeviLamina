@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPECTTRACKINGDEFINITION
-#endif
     /**
      * @symbol ?initialize@SuspectTrackingDefinition@@QEAAXAEAVEntityContext@@AEAVSuspectTrackingComponent@@@Z
+     * @hash   1060430789
      */
     MCAPI void initialize(class EntityContext &, class SuspectTrackingComponent &);
     /**
      * @symbol ?buildSchema@SuspectTrackingDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VSuspectTrackingDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1070025716
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SuspectTrackingDefinition>> &);
 

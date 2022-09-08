@@ -28,15 +28,16 @@ public:
     TickingAreaDescription(struct TickingAreaDescription const &) = delete;
     TickingAreaDescription() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREADESCRIPTION
-#endif
     /**
      * @symbol ?asString@TickingAreaDescription@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -193928882
      */
     MCAPI std::string asString() const;
     /**
      * @symbol ??1TickingAreaDescription@@QEAA@XZ
+     * @hash   1613726564
      */
     MCAPI ~TickingAreaDescription();
 

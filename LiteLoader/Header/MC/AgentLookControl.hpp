@@ -30,26 +30,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   88879171
      */
     virtual ~AgentLookControl();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initializeInternal@AgentLookControl@@UEAAXAEAVMob@@@Z
+     * @hash   -397219935
      */
     virtual void initializeInternal(class Mob &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@AgentLookControl@@UEAAXAEAVMob@@@Z
+     * @hash   -760808271
      */
     virtual void tick(class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTLOOKCONTROL
-#endif
     /**
      * @symbol ??0AgentLookControl@@QEAA@XZ
+     * @hash   379086821
      */
     MCAPI AgentLookControl();
-MCAPI static float sBaseYMax;
+    /**
+     * @symbol ?sBaseYMax@AgentLookControl@@2MA
+     * @hash   -216490309
+     */
+    MCAPI static float sBaseYMax;
 
 };

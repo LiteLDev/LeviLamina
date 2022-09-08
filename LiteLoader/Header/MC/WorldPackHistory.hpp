@@ -30,54 +30,64 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDPACKHISTORY
-#endif
     /**
      * @symbol ??0WorldPackHistory@@QEAA@AEBV0@@Z
+     * @hash   -134517391
      */
     MCAPI WorldPackHistory(class WorldPackHistory const &);
     /**
      * @symbol ??0WorldPackHistory@@QEAA@$$QEAV0@@Z
+     * @hash   200165131
      */
     MCAPI WorldPackHistory(class WorldPackHistory &&);
     /**
      * @symbol ?getCanBeRedownloaded@WorldPackHistory@@QEBA_NXZ
+     * @hash   2127075290
      */
     MCAPI bool getCanBeRedownloaded() const;
     /**
      * @symbol ?getLocalizedNames@WorldPackHistory@@QEBAAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@XZ
+     * @hash   98176280
      */
     MCAPI class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const & getLocalizedNames() const;
     /**
      * @symbol ?getPackIdVersion@WorldPackHistory@@QEBAAEBUPackIdVersion@@XZ
+     * @hash   2083872812
      */
     MCAPI struct PackIdVersion const & getPackIdVersion() const;
     /**
      * @symbol ?getSourceUUID@WorldPackHistory@@QEBAAEBVUUID@mce@@XZ
+     * @hash   2094073758
      */
     MCAPI class mce::UUID const & getSourceUUID() const;
     /**
      * @symbol ?getSubpackCount@WorldPackHistory@@QEBAHXZ
+     * @hash   2078492022
      */
     MCAPI int getSubpackCount() const;
     /**
      * @symbol ?getUnlocalizedName@WorldPackHistory@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1992015346
      */
     MCAPI std::string const & getUnlocalizedName() const;
     /**
      * @symbol ?hasLocalizedNames@WorldPackHistory@@QEBA_NXZ
+     * @hash   1189844476
      */
     MCAPI bool hasLocalizedNames() const;
     /**
      * @symbol ?hasSourceUUID@WorldPackHistory@@QEBA_NXZ
+     * @hash   789163038
      */
     MCAPI bool hasSourceUUID() const;
     /**
      * @symbol ?hasSubpacks@WorldPackHistory@@QEBA_NXZ
+     * @hash   -385348778
      */
     MCAPI bool hasSubpacks() const;
     /**
      * @symbol ?initializeFromJson@WorldPackHistory@@QEAA_NAEBVValue@Json@@@Z
+     * @hash   186859231
      */
     MCAPI bool initializeFromJson(class Json::Value const &);
 

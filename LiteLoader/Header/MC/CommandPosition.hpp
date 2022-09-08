@@ -37,38 +37,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDPOSITION
-#endif
     /**
      * @symbol ??0CommandPosition@@QEAA@XZ
+     * @hash   -765015088
      */
     MCAPI CommandPosition();
     /**
      * @symbol ??0CommandPosition@@QEAA@AEBVVec3@@@Z
+     * @hash   -588153209
      */
     MCAPI CommandPosition(class Vec3 const &);
     /**
      * @symbol ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@AEBVCommandOrigin@@AEBVVec3@@@Z
+     * @hash   2073897362
      */
     MCAPI class BlockPos getBlockPos(class CommandOrigin const &, class Vec3 const &) const;
     /**
      * @symbol ?getBlockPos@CommandPosition@@QEBA?AVBlockPos@@AEBVVec3@@0@Z
+     * @hash   -1631881017
      */
     MCAPI class BlockPos getBlockPos(class Vec3 const &, class Vec3 const &) const;
     /**
      * @symbol ?getPosition@CommandPosition@@QEBA?AVVec3@@AEBV2@0@Z
+     * @hash   -2024382730
      */
     MCAPI class Vec3 getPosition(class Vec3 const &, class Vec3 const &) const;
     /**
      * @symbol ?getPosition@CommandPosition@@QEBA?AVVec3@@AEBVCommandOrigin@@AEBV2@@Z
+     * @hash   1686479507
      */
     MCAPI class Vec3 getPosition(class CommandOrigin const &, class Vec3 const &) const;
     /**
      * @symbol ?load@CommandPosition@@QEAAXAEBVCompoundTag@@@Z
+     * @hash   2078209640
      */
     MCAPI void load(class CompoundTag const &);
     /**
      * @symbol ?serialize@CommandPosition@@QEBA?AVCompoundTag@@XZ
+     * @hash   1316479498
      */
     MCAPI class CompoundTag serialize() const;
 

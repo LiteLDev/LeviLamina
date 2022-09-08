@@ -29,24 +29,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1741823040
      */
     virtual ~ScriptPluginPackSourceEnumerator();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getFullPackStack@ScriptPluginPackSourceEnumerator@@UEBAAEBV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@XZ
+     * @hash   -980146081
      */
     virtual std::vector<struct PackIdVersion> const & getFullPackStack() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getPluginSources@ScriptPluginPackSourceEnumerator@@UEBAAEBV?$vector@V?$unique_ptr@VIScriptPluginSource@@U?$default_delete@VIScriptPluginSource@@@std@@@std@@V?$allocator@V?$unique_ptr@VIScriptPluginSource@@U?$default_delete@VIScriptPluginSource@@@std@@@std@@@2@@std@@XZ
+     * @hash   1859312500
      */
     virtual std::vector<std::unique_ptr<class IScriptPluginSource>> const & getPluginSources() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINPACKSOURCEENUMERATOR
-#endif
     /**
      * @symbol ??0ScriptPluginPackSourceEnumerator@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VPackInstance@@V?$allocator@VPackInstance@@@std@@@2@1@Z
+     * @hash   559740401
      */
     MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &, std::vector<class PackInstance> const &);
 

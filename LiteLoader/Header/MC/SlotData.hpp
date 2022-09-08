@@ -27,17 +27,22 @@ public:
     struct SlotData& operator=(struct SlotData const &) = delete;
     SlotData(struct SlotData const &) = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLOTDATA
-#endif
     /**
      * @symbol ??0SlotData@@QEAA@XZ
+     * @hash   -1599639116
      */
     MCAPI SlotData();
     /**
      * @symbol ??1SlotData@@QEAA@XZ
+     * @hash   391152466
      */
     MCAPI ~SlotData();
-MCAPI static struct SlotData UNKNOWN_LOCATION;
+    /**
+     * @symbol ?UNKNOWN_LOCATION@SlotData@@2U1@A
+     * @hash   249070362
+     */
+    MCAPI static struct SlotData UNKNOWN_LOCATION;
 
 };

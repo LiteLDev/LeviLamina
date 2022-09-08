@@ -30,34 +30,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CELEBRATEHUNTCOMPONENT
-#endif
     /**
      * @symbol ?getCelebrateSound@CelebrateHuntComponent@@QEBA?BW4LevelSoundEvent@@AEBVMob@@@Z
+     * @hash   -1189634917
      */
     MCAPI enum LevelSoundEvent const getCelebrateSound(class Mob const &) const;
     /**
      * @symbol ?getCelebrateUntil@CelebrateHuntComponent@@QEBA?BUTick@@XZ
+     * @hash   -1282246608
      */
     MCAPI struct Tick const getCelebrateUntil() const;
     /**
      * @symbol ?getNextSoundEventTick@CelebrateHuntComponent@@QEBA?BUTick@@XZ
+     * @hash   809489184
      */
     MCAPI struct Tick const getNextSoundEventTick() const;
     /**
      * @symbol ?isCelebrating@CelebrateHuntComponent@@QEBA_NXZ
+     * @hash   1570641982
      */
     MCAPI bool isCelebrating() const;
     /**
      * @symbol ?setNextSoundEventTick@CelebrateHuntComponent@@QEAAXAEBVMob@@@Z
+     * @hash   -919278126
      */
     MCAPI void setNextSoundEventTick(class Mob const &);
     /**
      * @symbol ?startCelebrating@CelebrateHuntComponent@@QEAAXAEBUTick@@@Z
+     * @hash   1972582400
      */
     MCAPI void startCelebrating(struct Tick const &);
     /**
      * @symbol ?stopCelebrating@CelebrateHuntComponent@@QEAAXXZ
+     * @hash   -1779679565
      */
     MCAPI void stopCelebrating();
 

@@ -29,11 +29,11 @@ public:
     OnFriendlyAngerDefinition(struct OnFriendlyAngerDefinition const &) = delete;
     OnFriendlyAngerDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFRIENDLYANGERDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@OnFriendlyAngerDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnFriendlyAngerDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1453682466
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnFriendlyAngerDefinition>> &);
 

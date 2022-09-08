@@ -32,21 +32,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1641893518
      */
     virtual ~SimpleTreeTrunk();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?placeTrunk@SimpleTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@HAEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z
+     * @hash   -210874512
      */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getTreeHeight@SimpleTreeTrunk@@UEBAHAEAVRandom@@@Z
+     * @hash   -890204515
      */
     virtual int getTreeHeight(class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLETREETRUNK
-#endif
 
 };

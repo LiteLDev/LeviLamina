@@ -32,43 +32,44 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYMENU
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?_getContainer@InventoryMenu@@MEBAPEAVContainer@@XZ
+     * @hash   189419019
      */
     MCVAPI class Container * _getContainer() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getItemCopies@InventoryMenu@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -1749119004
      */
     MCVAPI std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getSlot@InventoryMenu@@UEBAAEBVItemStack@@H@Z
+     * @hash   477693604
      */
     MCVAPI class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?removeSlot@InventoryMenu@@UEAAXHH@Z
+     * @hash   -1052866066
      */
     MCVAPI void removeSlot(int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?serverInitItemStackIds@InventoryMenu@@UEAAXXZ
+     * @hash   984107362
      */
     MCVAPI void serverInitItemStackIds();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setSlot@InventoryMenu@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -948349445
      */
     MCVAPI void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1InventoryMenu@@UEAA@XZ
+     * @hash   156325976
      */
     MCVAPI ~InventoryMenu();
 #endif
     /**
      * @symbol ??0InventoryMenu@@QEAA@AEAVPlayer@@PEAVContainer@@@Z
+     * @hash   2107093920
      */
     MCAPI InventoryMenu(class Player &, class Container *);
 

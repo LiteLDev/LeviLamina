@@ -26,15 +26,16 @@ public:
     SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent const &) = delete;
     SoundEventRequestQueueComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDEVENTREQUESTQUEUECOMPONENT
-#endif
     /**
      * @symbol ??0SoundEventRequestQueueComponent@@QEAA@$$QEAU0@@Z
+     * @hash   -1211534681
      */
     MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent &&);
     /**
      * @symbol ??1SoundEventRequestQueueComponent@@QEAA@XZ
+     * @hash   -1891568356
      */
     MCAPI ~SoundEventRequestQueueComponent();
 

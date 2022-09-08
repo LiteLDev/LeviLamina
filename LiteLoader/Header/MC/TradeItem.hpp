@@ -26,15 +26,16 @@ public:
     TradeItem(struct TradeItem const &) = delete;
     TradeItem() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADEITEM
-#endif
     /**
      * @symbol ??4TradeItem@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   1302835198
      */
     MCAPI struct TradeItem & operator=(struct TradeItem &&);
     /**
      * @symbol ??1TradeItem@@QEAA@XZ
+     * @hash   -2024131661
      */
     MCAPI ~TradeItem();
 

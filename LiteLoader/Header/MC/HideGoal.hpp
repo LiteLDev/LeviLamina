@@ -32,64 +32,70 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1861772737
      */
     virtual ~HideGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@HideGoal@@UEAA_NXZ
+     * @hash   -811462581
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@HideGoal@@UEAA_NXZ
+     * @hash   1569936153
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@HideGoal@@UEAAXXZ
+     * @hash   -1504034268
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@HideGoal@@UEAAXXZ
+     * @hash   629217748
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@HideGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   530344261
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?_getRepathTime@HideGoal@@MEBA_KXZ
+     * @hash   2105722656
      */
     virtual unsigned __int64 _getRepathTime() const;
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
+     * @hash   552618582
      */
     virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDEGOAL
-#endif
     /**
      * @symbol ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
+     * @hash   -566635134
      */
     MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
 

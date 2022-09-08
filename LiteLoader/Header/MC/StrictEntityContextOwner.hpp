@@ -28,26 +28,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRICTENTITYCONTEXTOWNER
-#endif
     /**
      * @symbol ??0StrictEntityContextOwner@@QEAA@AEAVEntityRegistryBase@@VEntityId@@@Z
+     * @hash   996560716
      */
     MCAPI StrictEntityContextOwner(class EntityRegistryBase &, class EntityId);
     /**
      * @symbol ??0StrictEntityContextOwner@@QEAA@$$QEAV0@@Z
+     * @hash   -1987014759
      */
     MCAPI StrictEntityContextOwner(class StrictEntityContextOwner &&);
     /**
      * @symbol ?getStrictContext@StrictEntityContextOwner@@QEBA?AVStrictEntityContext@@XZ
+     * @hash   -779717078
      */
     MCAPI class StrictEntityContext getStrictContext() const;
     /**
      * @symbol ??4StrictEntityContextOwner@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1823118028
      */
     MCAPI class StrictEntityContextOwner & operator=(class StrictEntityContextOwner &&);
     /**
      * @symbol ??1StrictEntityContextOwner@@QEAA@XZ
+     * @hash   1363539930
      */
     MCAPI ~StrictEntityContextOwner();
 

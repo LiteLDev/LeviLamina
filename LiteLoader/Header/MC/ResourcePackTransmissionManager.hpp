@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKTRANSMISSIONMANAGER
-#endif
     /**
      * @symbol ??0ResourcePackTransmissionManager@@QEAA@AEAVScheduler@@@Z
+     * @hash   1013266613
      */
     MCAPI ResourcePackTransmissionManager(class Scheduler &);
     /**
      * @symbol ?cleanupResourcePackManager@ResourcePackTransmissionManager@@QEAAXAEBVNetworkIdentifier@@@Z
+     * @hash   256673312
      */
     MCAPI void cleanupResourcePackManager(class NetworkIdentifier const &);
     /**
      * @symbol ?getResourcePackUploadManager@ResourcePackTransmissionManager@@QEAAAEAVResourcePackFileUploadManager@@AEAVPacketSender@@AEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   430511277
      */
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
     /**
      * @symbol ?update@ResourcePackTransmissionManager@@QEAAXXZ
+     * @hash   -1999334219
      */
     MCAPI void update();
     /**
      * @symbol ??1ResourcePackTransmissionManager@@QEAA@XZ
+     * @hash   -1954437746
      */
     MCAPI ~ResourcePackTransmissionManager();
 

@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1002370638
      */
     virtual ~SubtreeNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@SubtreeNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -2051096835
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@SubtreeNode@@MEAAXAEAVActor@@@Z
+     * @hash   1032899354
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBTREENODE
-#endif
     /**
      * @symbol ??0SubtreeNode@@QEAA@XZ
+     * @hash   -1991599892
      */
     MCAPI SubtreeNode();
 

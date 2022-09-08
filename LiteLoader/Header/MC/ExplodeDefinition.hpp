@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXPLODEDEFINITION
-#endif
     /**
      * @symbol ??0ExplodeDefinition@@QEAA@XZ
+     * @hash   -1212307232
      */
     MCAPI ExplodeDefinition();
     /**
      * @symbol ?initialize@ExplodeDefinition@@QEBAXAEAVEntityContext@@AEAVExplodeComponent@@@Z
+     * @hash   1471831909
      */
     MCAPI void initialize(class EntityContext &, class ExplodeComponent &) const;
     /**
      * @symbol ?uninitialize@ExplodeDefinition@@QEBAXAEAVEntityContext@@@Z
+     * @hash   -5971972
      */
     MCAPI void uninitialize(class EntityContext &) const;
     /**
      * @symbol ?buildSchema@ExplodeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VExplodeDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -408347670
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExplodeDefinition>> &);
 

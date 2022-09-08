@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1541265869
      */
     virtual ~AddItemActorPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@AddItemActorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -190663227
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@AddItemActorPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   556491890
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@AddItemActorPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   914143829
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@AddItemActorPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   851165701
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDITEMACTORPACKET
-#endif
     /**
      * @symbol ??0AddItemActorPacket@@QEAA@XZ
+     * @hash   -589177995
      */
     MCAPI AddItemActorPacket();
     /**
      * @symbol ??0AddItemActorPacket@@QEAA@AEAVItemActor@@@Z
+     * @hash   1841108512
      */
     MCAPI AddItemActorPacket(class ItemActor &);
 

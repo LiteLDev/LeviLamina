@@ -28,20 +28,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMAPPING
-#endif
     /**
      * @symbol ?nameToEvent@GameEventMapping@@SAAEBVGameEvent@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1724862405
      */
     MCAPI static class GameEvent const & nameToEvent(std::string const &);
     /**
      * @symbol ?typeToEvent@GameEventMapping@@SAAEBVGameEvent@@W4GameEventType@GameEventConfig@@@Z
+     * @hash   -112469379
      */
     MCAPI static class GameEvent const & typeToEvent(enum GameEventConfig::GameEventType);
 
 //private:
 
 private:
-MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
+    /**
+     * @symbol ?mGameEventPairs@GameEventMapping@@0V?$vector@UGameEventPair@@V?$allocator@UGameEventPair@@@std@@@std@@B
+     * @hash   -1581458118
+     */
+    MCAPI static std::vector<struct GameEventPair> const mGameEventPairs;
 
 };

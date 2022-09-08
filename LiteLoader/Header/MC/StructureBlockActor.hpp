@@ -32,109 +32,135 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -350591735
      */
     virtual ~StructureBlockActor();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?load@StructureBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   139620034
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?save@StructureBlockActor@@UEBA_NAEAVCompoundTag@@@Z
+     * @hash   52245809
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?onChanged@StructureBlockActor@@UEAAXAEAVBlockSource@@@Z
+     * @hash   184132035
      */
     virtual void onChanged(class BlockSource &);
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -379448919
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 28
-     * @symbol 
+     * @vftbl  28
+     * @hash   -348972726
      */
     virtual void __unk_vfn_28();
     /**
-     * @note   Virtual function table index: 29
-     * @symbol 
+     * @vftbl  29
+     * @hash   -312330757
      */
     virtual void __unk_vfn_29();
     /**
-     * @note   Virtual function table index: 30
-     * @symbol 
+     * @vftbl  30
+     * @hash   -292013295
      */
     virtual void __unk_vfn_30();
     /**
-     * @note   Virtual function table index: 32
-     * @symbol 
+     * @vftbl  32
+     * @hash   -325884701
      */
     virtual void __unk_vfn_32();
     /**
-     * @note   Virtual function table index: 33
-     * @symbol 
+     * @vftbl  33
+     * @hash   -324961180
      */
     virtual void __unk_vfn_33();
     /**
-     * @note   Virtual function table index: 34
-     * @symbol 
+     * @vftbl  34
+     * @hash   -324037659
      */
     virtual void __unk_vfn_34();
     /**
-     * @note   Virtual function table index: 35
+     * @vftbl  35
      * @symbol ?_getUpdatePacket@StructureBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z
+     * @hash   -499036364
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @note   Virtual function table index: 36
+     * @vftbl  36
      * @symbol ?_onUpdatePacket@StructureBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z
+     * @hash   -1902115698
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREBLOCKACTOR
-#endif
     /**
      * @symbol ??0StructureBlockActor@@QEAA@AEBVBlockPos@@@Z
+     * @hash   -140186194
      */
     MCAPI StructureBlockActor(class BlockPos const &);
     /**
      * @symbol ?getStructureData@StructureBlockActor@@QEBAAEBVStructureEditorData@@XZ
+     * @hash   732844170
      */
     MCAPI class StructureEditorData const & getStructureData() const;
     /**
      * @symbol ?setPowered@StructureBlockActor@@QEAAXAEAVBlockSource@@AEBVBlockPos@@_N2@Z
+     * @hash   1887960904
      */
     MCAPI void setPowered(class BlockSource &, class BlockPos const &, bool, bool);
     /**
      * @symbol ?setStructureData@StructureBlockActor@@QEAAXAEBVStructureEditorData@@@Z
+     * @hash   2039694216
      */
     MCAPI void setStructureData(class StructureEditorData const &);
-MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
-MCAPI static class mce::Color const X_AXIS_COLOR;
-MCAPI static class mce::Color const Y_AXIS_COLOR;
-MCAPI static class mce::Color const Z_AXIS_COLOR;
+    /**
+     * @symbol ?MAX_WIREFRAME_RENDER_DISTANCE@StructureBlockActor@@2MB
+     * @hash   -1459034567
+     */
+    MCAPI static float const MAX_WIREFRAME_RENDER_DISTANCE;
+    /**
+     * @symbol ?X_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
+     * @hash   -421290301
+     */
+    MCAPI static class mce::Color const X_AXIS_COLOR;
+    /**
+     * @symbol ?Y_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
+     * @hash   -939568461
+     */
+    MCAPI static class mce::Color const Y_AXIS_COLOR;
+    /**
+     * @symbol ?Z_AXIS_COLOR@StructureBlockActor@@2VColor@mce@@B
+     * @hash   -1457846621
+     */
+    MCAPI static class mce::Color const Z_AXIS_COLOR;
 
 //private:
     /**
      * @symbol ?_loadStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@@Z
+     * @hash   2091129709
      */
     MCAPI bool _loadStructure(class BlockSource &, class BlockPos const &, class BaseGameVersion const &);
     /**
      * @symbol ?_saveStructure@StructureBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z
+     * @hash   -524635836
      */
     MCAPI bool _saveStructure(class BlockSource &, class BlockPos const &, bool);
     /**
      * @symbol ?_trigger@StructureBlockActor@@AEAAXAEAVBlockSource@@AEBVBlockPos@@AEBVBaseGameVersion@@_N@Z
+     * @hash   -797136840
      */
     MCAPI void _trigger(class BlockSource &, class BlockPos const &, class BaseGameVersion const &, bool);
 

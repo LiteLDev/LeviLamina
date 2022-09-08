@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERBROADCASTMOVESYSTEM
-#endif
     /**
      * @symbol ?create@ServerPlayerBroadcastMoveSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   903828228
      */
     MCAPI static struct TickingSystemWithInfo create();
 

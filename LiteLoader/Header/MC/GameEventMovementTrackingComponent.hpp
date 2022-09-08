@@ -28,22 +28,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTMOVEMENTTRACKINGCOMPONENT
-#endif
     /**
      * @symbol ?initializeFromCode@GameEventMovementTrackingComponent@@QEAAXAEAVActor@@_N@Z
+     * @hash   1010090213
      */
     MCAPI void initializeFromCode(class Actor &, bool);
     /**
      * @symbol ?shouldEmitEntityMoveGameEvent@GameEventMovementTrackingComponent@@QEAA_NXZ
+     * @hash   978203278
      */
     MCAPI bool shouldEmitEntityMoveGameEvent();
     /**
      * @symbol ?shouldEmitFlapGameEvent@GameEventMovementTrackingComponent@@QEAA_NXZ
+     * @hash   -60869476
      */
     MCAPI bool shouldEmitFlapGameEvent();
     /**
      * @symbol ?shouldEmitSwimGameEvent@GameEventMovementTrackingComponent@@QEAA_NXZ
+     * @hash   -1120250
      */
     MCAPI bool shouldEmitSwimGameEvent();
 

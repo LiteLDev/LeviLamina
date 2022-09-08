@@ -29,55 +29,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   530057531
      */
     virtual ~StayNearNoteblockGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@StayNearNoteblockGoal@@UEAA_NXZ
+     * @hash   960383539
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@StayNearNoteblockGoal@@UEAA_NXZ
+     * @hash   2051081569
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@StayNearNoteblockGoal@@UEAAXXZ
+     * @hash   474251948
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@StayNearNoteblockGoal@@UEAAXXZ
+     * @hash   -1694497268
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@StayNearNoteblockGoal@@UEAAXXZ
+     * @hash   -1626540201
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@StayNearNoteblockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1227405683
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAYNEARNOTEBLOCKGOAL
-#endif
     /**
      * @symbol ??0StayNearNoteblockGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1709258240
      */
     MCAPI StayNearNoteblockGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_hasLastVibrationAtNoteblock@StayNearNoteblockGoal@@AEAA?BV?$optional@VBlockPos@@@std@@XZ
+     * @hash   -723705514
      */
     MCAPI class std::optional<class BlockPos> const _hasLastVibrationAtNoteblock();
 

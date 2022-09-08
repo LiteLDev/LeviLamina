@@ -21,23 +21,26 @@ struct CommandOriginData {
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRApublic:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDORIGINDATA
-#endif
+#undef AFTER_EXTRA
+public:
     /**
      * @symbol ??0CommandOriginData@@QEAA@XZ
+     * @hash   -1053695449
      */
     MCAPI CommandOriginData();
     /**
      * @symbol ??0CommandOriginData@@QEAA@AEBU0@@Z
+     * @hash   1804172869
      */
     MCAPI CommandOriginData(struct CommandOriginData const &);
     /**
      * @symbol ??4CommandOriginData@@QEAAAEAU0@AEBU0@@Z
+     * @hash   1584332718
      */
     MCAPI struct CommandOriginData & operator=(struct CommandOriginData const &);
     /**
      * @symbol ??1CommandOriginData@@QEAA@XZ
+     * @hash   983531111
      */
     MCAPI ~CommandOriginData();
 

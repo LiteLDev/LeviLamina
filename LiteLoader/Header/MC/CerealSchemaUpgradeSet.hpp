@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREALSCHEMAUPGRADESET
-#endif
     /**
      * @symbol ?findNext@CerealSchemaUpgradeSet@@QEBA?AV?$shared_ptr@VCerealSchemaUpgrade@@@std@@AEBVSemVersion@@@Z
+     * @hash   -1218283590
      */
     MCAPI class std::shared_ptr<class CerealSchemaUpgrade> findNext(class SemVersion const &) const;
     /**
      * @symbol ?forEach@CerealSchemaUpgradeSet@@QEAA_NV?$function@$$A6A_NV?$shared_ptr@VCerealSchemaUpgrade@@@std@@@Z@std@@@Z
+     * @hash   -252614835
      */
     MCAPI bool forEach(class std::function<bool (class std::shared_ptr<class CerealSchemaUpgrade>)>);
 

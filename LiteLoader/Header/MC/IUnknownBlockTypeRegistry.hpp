@@ -32,8 +32,8 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1IUnknownBlockTypeRegistry@@UEAA@XZ
+     * @hash   -1593703208
      */
     MCVAPI ~IUnknownBlockTypeRegistry();
 #endif

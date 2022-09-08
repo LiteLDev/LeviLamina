@@ -26,11 +26,11 @@ public:
     MolangActorArrayPtr(struct MolangActorArrayPtr const &) = delete;
     MolangActorArrayPtr() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGACTORARRAYPTR
-#endif
     /**
      * @symbol ??1MolangActorArrayPtr@@QEAA@XZ
+     * @hash   -1627601770
      */
     MCAPI ~MolangActorArrayPtr();
 

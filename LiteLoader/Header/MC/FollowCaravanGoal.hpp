@@ -31,59 +31,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1030863738
      */
     virtual ~FollowCaravanGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@FollowCaravanGoal@@UEAA_NXZ
+     * @hash   -566977992
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FollowCaravanGoal@@UEAA_NXZ
+     * @hash   -737046282
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@FollowCaravanGoal@@UEAAXXZ
+     * @hash   937731025
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@FollowCaravanGoal@@UEAAXXZ
+     * @hash   -150809663
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@FollowCaravanGoal@@UEAAXXZ
+     * @hash   964475836
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FollowCaravanGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1152736776
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWCARAVANGOAL
-#endif
     /**
      * @symbol ??0FollowCaravanGoal@@QEAA@AEAVMob@@MHAEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@@Z
+     * @hash   1691053242
      */
     MCAPI FollowCaravanGoal(class Mob &, float, int, std::vector<struct MobDescriptor> const &);
 
 //private:
     /**
      * @symbol ?checkCaravanType@FollowCaravanGoal@@AEAA_NPEAVMob@@@Z
+     * @hash   -1668973134
      */
     MCAPI bool checkCaravanType(class Mob *);
     /**
      * @symbol ?firstIsLeashed@FollowCaravanGoal@@AEAA_NPEAVMob@@H@Z
+     * @hash   180684695
      */
     MCAPI bool firstIsLeashed(class Mob *, int);
 

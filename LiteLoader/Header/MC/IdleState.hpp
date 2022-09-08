@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -156408725
      */
     virtual ~IdleState();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@IdleState@@UEAAXXZ
+     * @hash   1950966183
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?start@IdleState@@UEAAXXZ
+     * @hash   -426058116
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?stop@PetSleepWithOwnerState@@UEAAXXZ
+     * @hash   -1830665188
      */
     virtual void stop();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDLESTATE
-#endif
     /**
      * @symbol ?create@IdleState@@SA?AV?$unique_ptr@VIdleState@@U?$default_delete@VIdleState@@@std@@@std@@AEAVPetSleepWithOwnerGoal@@@Z
+     * @hash   -1077772079
      */
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 

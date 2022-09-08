@@ -29,26 +29,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKATCOMPONENT
-#endif
     /**
      * @symbol ??0LookAtComponent@@QEAA@XZ
+     * @hash   848588583
      */
     MCAPI LookAtComponent();
     /**
      * @symbol ?getCoolingTime@LookAtComponent@@QEAAAEAHXZ
+     * @hash   441703183
      */
     MCAPI int & getCoolingTime();
     /**
      * @symbol ?getSearchRadius@LookAtComponent@@QEBAMXZ
+     * @hash   -197019306
      */
     MCAPI float getSearchRadius() const;
     /**
      * @symbol ?getTarget@LookAtComponent@@QEBA_NXZ
+     * @hash   952876472
      */
     MCAPI bool getTarget() const;
     /**
      * @symbol ?isLookingAtMe@LookAtComponent@@QEAA_NAEAVActor@@0@Z
+     * @hash   -2096063684
      */
     MCAPI bool isLookingAtMe(class Actor &, class Actor &);
 

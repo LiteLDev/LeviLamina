@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONGROUP
-#endif
     /**
      * @symbol ??0ActorAnimationGroup@@QEAA@XZ
+     * @hash   -2002450564
      */
     MCAPI ActorAnimationGroup();
     /**
      * @symbol ?getActorAnimation@ActorAnimationGroup@@QEAA?AVActorSkeletalAnimationPtr@@AEBVHashedString@@@Z
+     * @hash   159381853
      */
     MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const &);
     /**
      * @symbol ?getActorAnimationInfo@ActorAnimationGroup@@QEAA?AV?$shared_ptr@VActorAnimationInfo@@@std@@AEBVHashedString@@@Z
+     * @hash   -542743218
      */
     MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const &);
     /**
      * @symbol ?loadActorAnimation@ActorAnimationGroup@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVPackStats@@AEBVSemVersion@@W4CurrentCmdVersion@@_N@Z
+     * @hash   -1245986309
      */
     MCAPI void loadActorAnimation(std::string const &, class Core::Path const &, class PackStats &, class SemVersion const &, enum CurrentCmdVersion, bool);
     /**
      * @symbol ?loadActorAnimationsSync@ActorAnimationGroup@@QEAAXAEAVResourcePackManager@@@Z
+     * @hash   1682451158
      */
     MCAPI void loadActorAnimationsSync(class ResourcePackManager &);
 

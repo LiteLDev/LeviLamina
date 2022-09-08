@@ -30,30 +30,32 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1038752061
      */
     virtual ~MoveNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@MoveNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -1999678960
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@MoveNode@@EEAAXAEAVActor@@@Z
+     * @hash   1428738052
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVENODE
-#endif
     /**
      * @symbol ??0MoveNode@@QEAA@XZ
+     * @hash   -1933948689
      */
     MCAPI MoveNode();
 
 //private:
     /**
      * @symbol ?convertDirectionStringToKeyPress@MoveNode@@AEAAEV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1379300546
      */
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);
 

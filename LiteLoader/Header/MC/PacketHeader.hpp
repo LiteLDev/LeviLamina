@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETHEADER
-#endif
     /**
      * @symbol ?getChannel@PacketHeader@@QEBAIXZ
+     * @hash   72866242
      */
     MCAPI unsigned int getChannel() const;
 

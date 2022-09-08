@@ -31,1064 +31,1066 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1791494316
      */
     virtual ~NetEventCallback();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1753578758
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1402937465
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?onWebsocketRequest@NetEventCallback@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
+     * @hash   -1723466735
      */
     virtual void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1401090423
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -384990045
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?getGameSpecificNetEventCallback@NetEventCallback@@UEAAPEAVGameSpecificNetEventCallback@@XZ
+     * @hash   -1157266463
      */
     virtual class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETEVENTCALLBACK
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRequestPermissionsPacket@@@Z
+     * @hash   1114216735
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestPermissionsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorFallPacket@@@Z
+     * @hash   1582804620
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ActorFallPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVShowProfilePacket@@@Z
+     * @hash   677897904
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ShowProfilePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMobEquipmentPacket@@@Z
+     * @hash   1329188006
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MobEquipmentPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMapInfoRequestPacket@@@Z
+     * @hash   90567311
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MapInfoRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVScriptMessagePacket@@@Z
+     * @hash   254255328
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ScriptMessagePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddPaintingPacket@@@Z
+     * @hash   1882524311
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddPaintingPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVGameRulesChangedPacket@@@Z
+     * @hash   -1800140603
      */
     MCVAPI void handle(class NetworkIdentifier const &, class GameRulesChangedPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStopSoundPacket@@@Z
+     * @hash   1037493231
      */
     MCVAPI void handle(class NetworkIdentifier const &, class StopSoundPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVChunkRadiusUpdatedPacket@@@Z
+     * @hash   590253752
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ChunkRadiusUpdatedPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookEditPacket@@@Z
+     * @hash   -1987469055
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BookEditPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVContainerClosePacket@@@Z
+     * @hash   95753373
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ContainerClosePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMoveActorDeltaPacket@@@Z
+     * @hash   126171552
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MoveActorDeltaPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateSoftEnumPacket@@@Z
+     * @hash   1090836192
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateSoftEnumPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVToastRequestPacket@@@Z
+     * @hash   674294188
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ToastRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderPacket@@@Z
+     * @hash   -284533074
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetScoreboardIdentityPacket@@@Z
+     * @hash   195904808
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetScoreboardIdentityPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRequestChunkRadiusPacket@@@Z
+     * @hash   145694660
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlaySoundPacket@@@Z
+     * @hash   364495585
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlaySoundPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPassengerJumpPacket@@@Z
+     * @hash   -491086924
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PassengerJumpPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkChunkPublisherUpdatePacket@@@Z
+     * @hash   1067197590
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NetworkChunkPublisherUpdatePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetLocalPlayerAsInitializedPacket@@@Z
+     * @hash   1266341284
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetLocalPlayerAsInitializedPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetTimePacket@@@Z
+     * @hash   -1788436019
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetTimePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookAddPagePacket@@@Z
+     * @hash   -1631341963
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BookAddPagePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSimpleEventPacket@@@Z
+     * @hash   1534446740
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SimpleEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEducationSettingsPacket@@@Z
+     * @hash   -1928968911
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EducationSettingsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEmoteListPacket@@@Z
+     * @hash   1182391910
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EmoteListPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddItemActorPacket@@@Z
+     * @hash   2045165459
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddItemActorPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z
+     * @hash   1234772545
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z
+     * @hash   -209390038
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ModalFormResponsePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z
+     * @hash   624112487
      */
     MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VBlockActorDataPacket@@@std@@@Z
+     * @hash   890917831
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAgentActionEventPacket@@@Z
+     * @hash   -245322283
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AgentActionEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayStatusPacket@@@Z
+     * @hash   1910736334
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayStatusPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCommandRequestPacket@@@Z
+     * @hash   1811589712
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CommandRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCorrectPlayerMovePredictionPacket@@@Z
+     * @hash   -1419164655
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CorrectPlayerMovePredictionPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCameraShakePacket@@@Z
+     * @hash   -1240400837
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CameraShakePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerArmorDamagePacket@@@Z
+     * @hash   -1696715217
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerArmorDamagePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPhotoTransferPacket@@@Z
+     * @hash   1557849055
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PhotoTransferPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetDifficultyPacket@@@Z
+     * @hash   -187716001
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetDifficultyPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z
+     * @hash   529587320
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DisconnectPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelEventPacket@@@Z
+     * @hash   1315656862
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVContainerOpenPacket@@@Z
+     * @hash   211126449
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ContainerOpenPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheBlobStatusPacket@@@Z
+     * @hash   -110058794
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheBlobStatusPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateAttributesPacket@@@Z
+     * @hash   -1995171052
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateAttributesPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBossEventPacket@@@Z
+     * @hash   842105583
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BossEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z
+     * @hash   835957042
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InventoryTransactionPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerSettingsRequestPacket@@@Z
+     * @hash   -799352077
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ServerSettingsRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingDataPacket@@@Z
+     * @hash   -1142404728
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CraftingDataPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackStackPacket@@@Z
+     * @hash   1776713883
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackStackPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddMobPacket@@@Z
+     * @hash   1842395125
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddMobPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryContentPacket@@@Z
+     * @hash   1733636887
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InventoryContentPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerHotbarPacket@@@Z
+     * @hash   -776371539
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerHotbarPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateTradePacket@@@Z
+     * @hash   924250625
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateTradePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStructureTemplateDataResponsePacket@@@Z
+     * @hash   -1084638748
      */
     MCVAPI void handle(class NetworkIdentifier const &, class StructureTemplateDataResponsePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveObjectivePacket@@@Z
+     * @hash   -952098297
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RemoveObjectivePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEmotePacket@@@Z
+     * @hash   543254052
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EmotePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkRequestPacket@@@Z
+     * @hash   -577778214
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SubChunkRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerEnchantOptionsPacket@@@Z
+     * @hash   -1192077874
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerEnchantOptionsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacket@@@Z
+     * @hash   50119341
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdatePlayerGameTypePacket@@@Z
+     * @hash   -1910882914
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateAbilitiesPacket@@@Z
+     * @hash   731413405
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateAbilitiesPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VLevelChunkPacket@@@std@@@Z
+     * @hash   -523419458
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class LevelChunkPacket>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateAdventureSettingsPacket@@@Z
+     * @hash   -1830929902
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateAdventureSettingsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookSignPacket@@@Z
+     * @hash   1878340814
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BookSignPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VClientCacheMissResponsePacket@@@std@@@Z
+     * @hash   1987978375
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class ClientCacheMissResponsePacket>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z
+     * @hash   -1204519687
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestAbilityPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLessonProgressPacket@@@Z
+     * @hash   -1676898801
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LessonProgressPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemFrameDropItemPacket@@@Z
+     * @hash   -1637384000
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ItemFrameDropItemPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVChangeMobPropertyPacket@@@Z
+     * @hash   -820551945
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddPlayerPacket@@@Z
+     * @hash   -1611136070
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddPlayerPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddEntityPacket@@@Z
+     * @hash   -2117363784
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddEntityPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkSettingsPacket@@@Z
+     * @hash   762388651
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NetworkSettingsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackChunkRequestPacket@@@Z
+     * @hash   474378315
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCreativeContentPacket@@@Z
+     * @hash   -2027090478
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CreativeContentPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPacketViolationWarningPacket@@@Z
+     * @hash   1443873589
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PacketViolationWarningPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemStackResponsePacket@@@Z
+     * @hash   1312945670
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ItemStackResponsePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetActorMotionPacket@@@Z
+     * @hash   113393483
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetActorMotionPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVContainerSetDataPacket@@@Z
+     * @hash   -874046935
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ContainerSetDataPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVGuiDataPickItemPacket@@@Z
+     * @hash   -632611933
      */
     MCVAPI void handle(class NetworkIdentifier const &, class GuiDataPickItemPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z
+     * @hash   -1647773325
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderSourcePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VUpdateBlockPacket@@@std@@@Z
+     * @hash   -599951145
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockPacket>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetTitlePacket@@@Z
+     * @hash   1221331454
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetTitlePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddActorPacket@@@Z
+     * @hash   -108072384
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddActorPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSpawnParticleEffectPacket@@@Z
+     * @hash   -1696053878
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SpawnParticleEffectPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerSkinPacket@@@Z
+     * @hash   -1091574250
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerSkinPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetDisplayObjectivePacket@@@Z
+     * @hash   1900066819
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetDisplayObjectivePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveActorPacket@@@Z
+     * @hash   -1334056117
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RemoveActorPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLabTablePacket@@@Z
+     * @hash   1014342227
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LabTablePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheStatusPacket@@@Z
+     * @hash   813629139
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheStatusPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEventPacket@@@Z
+     * @hash   521806338
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetCommandsEnabledPacket@@@Z
+     * @hash   1432753597
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetCommandsEnabledPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientboundMapItemDataPacket@@@Z
+     * @hash   -760561714
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientboundMapItemDataPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNpcRequestPacket@@@Z
+     * @hash   -320419418
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NpcRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBServerBroadcastPacket@@@Z
+     * @hash   -423090116
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PositionTrackingDBServerBroadcastPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetDefaultGameTypePacket@@@Z
+     * @hash   -506005591
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetDefaultGameTypePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@V?$shared_ptr@VUpdateBlockSyncedPacket@@@std@@@Z
+     * @hash   -1956304015
      */
     MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockSyncedPacket>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddVolumeEntityPacket@@@Z
+     * @hash   -1063519554
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddVolumeEntityPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVShowCreditsPacket@@@Z
+     * @hash   397115967
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ShowCreditsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLecternUpdatePacket@@@Z
+     * @hash   1337484924
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LecternUpdatePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBlockPickRequestPacket@@@Z
+     * @hash   1341588531
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BlockPickRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelEventGenericPacket@@@Z
+     * @hash   -460215141
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelEventGenericPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookSwapPagesPacket@@@Z
+     * @hash   328777364
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BookSwapPagesPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMultiplayerSettingsPacket@@@Z
+     * @hash   -1466162817
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MultiplayerSettingsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorPickRequestPacket@@@Z
+     * @hash   -1145506149
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMovePlayerPacket@@@Z
+     * @hash   323043842
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MovePlayerPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSimulationTypePacket@@@Z
+     * @hash   -289107533
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SimulationTypePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemStackRequestPacket@@@Z
+     * @hash   1343947130
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ItemStackRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateEquipPacket@@@Z
+     * @hash   -132216523
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateEquipPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z
+     * @hash   982756137
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CommandBlockUpdatePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMobEffectPacket@@@Z
+     * @hash   -1385540757
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MobEffectPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInteractPacket@@@Z
+     * @hash   -1147820322
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InteractPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVFeatureRegistryPacket@@@Z
+     * @hash   -1343823671
      */
     MCVAPI void handle(class NetworkIdentifier const &, class FeatureRegistryPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackDataInfoPacket@@@Z
+     * @hash   2085118389
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackDataInfoPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientboundDebugRendererPacket@@@Z
+     * @hash   -928633039
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientboundDebugRendererPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBookDeletePagePacket@@@Z
+     * @hash   1954727409
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BookDeletePagePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNpcDialoguePacket@@@Z
+     * @hash   2038586179
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NpcDialoguePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAnimatePacket@@@Z
+     * @hash   1850570299
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AnimatePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStartGamePacket@@@Z
+     * @hash   1468614696
      */
     MCVAPI void handle(class NetworkIdentifier const &, class StartGamePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemComponentPacket@@@Z
+     * @hash   1934717298
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ItemComponentPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCameraPacket@@@Z
+     * @hash   -1821691281
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CameraPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientToServerHandshakePacket@@@Z
+     * @hash   2069190190
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientToServerHandshakePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerToClientHandshakePacket@@@Z
+     * @hash   1726045742
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ServerToClientHandshakePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAvailableActorIdentifiersPacket@@@Z
+     * @hash   -421282818
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AvailableActorIdentifiersPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAdventureSettingsPacket@@@Z
+     * @hash   -1125449271
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AdventureSettingsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetScorePacket@@@Z
+     * @hash   1278047940
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetScorePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVHurtArmorPacket@@@Z
+     * @hash   934476588
      */
     MCVAPI void handle(class NetworkIdentifier const &, class HurtArmorPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVNetworkStackLatencyPacket@@@Z
+     * @hash   -1910809608
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NetworkStackLatencyPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubClientLoginPacket@@@Z
+     * @hash   1613459478
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SubClientLoginPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerInputPacket@@@Z
+     * @hash   1998719411
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerInputPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStructureTemplateDataRequestPacket@@@Z
+     * @hash   19679708
      */
     MCVAPI void handle(class NetworkIdentifier const &, class StructureTemplateDataRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV1@@@Z
+     * @hash   256862226
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV1 const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLevelSoundEventPacketV2@@@Z
+     * @hash   -219143727
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV2 const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEduUriResourcePacket@@@Z
+     * @hash   43493136
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EduUriResourcePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVStructureBlockUpdatePacket@@@Z
+     * @hash   -2111746223
      */
     MCVAPI void handle(class NetworkIdentifier const &, class StructureBlockUpdatePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetPlayerGameTypePacket@@@Z
+     * @hash   906331597
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetPlayerGameTypePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVDebugInfoPacket@@@Z
+     * @hash   -1537217925
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DebugInfoPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMoveActorAbsolutePacket@@@Z
+     * @hash   -1774557471
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MoveActorAbsolutePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVFilterTextPacket@@@Z
+     * @hash   -1330143537
      */
     MCVAPI void handle(class NetworkIdentifier const &, class FilterTextPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAddBehaviorTreePacket@@@Z
+     * @hash   -1144604469
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AddBehaviorTreePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryActionPacket@@@Z
+     * @hash   17255658
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InventoryActionPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVDeathInfoPacket@@@Z
+     * @hash   239969626
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DeathInfoPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBiomeDefinitionListPacket@@@Z
+     * @hash   -1884076597
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BiomeDefinitionListPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVLoginPacket@@@Z
+     * @hash   -2144452941
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LoginPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveVolumeEntityPacket@@@Z
+     * @hash   595709779
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RemoveVolumeEntityPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCompletedUsingItemPacket@@@Z
+     * @hash   -1545852568
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMotionPredictionHintsPacket@@@Z
+     * @hash   40450101
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MotionPredictionHintsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPurchaseReceiptPacket@@@Z
+     * @hash   1160696357
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PurchaseReceiptPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerListPacket@@@Z
+     * @hash   -1659856523
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerListPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMobArmorEquipmentPacket@@@Z
+     * @hash   397553901
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MobArmorEquipmentPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVUpdateSubChunkBlocksPacket@@@Z
+     * @hash   1806131448
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateSubChunkBlocksPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetLastHurtByPacket@@@Z
+     * @hash   1152905630
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetLastHurtByPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPositionTrackingDBClientRequestPacket@@@Z
+     * @hash   -1570924490
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PositionTrackingDBClientRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerStartItemCooldownPacket@@@Z
+     * @hash   1670535133
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerStartItemCooldownPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTransferPacket@@@Z
+     * @hash   1970529705
      */
     MCVAPI void handle(class NetworkIdentifier const &, class TransferPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePacksInfoPacket@@@Z
+     * @hash   1548719554
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePacksInfoPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTickSyncPacket@@@Z
+     * @hash   2079612988
      */
     MCVAPI void handle(class NetworkIdentifier const &, class TickSyncPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetSpawnPositionPacket@@@Z
+     * @hash   -292428142
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetSpawnPositionPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSyncActorPropertyPacket@@@Z
+     * @hash   -304111859
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SyncActorPropertyPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAutomationClientConnectPacket@@@Z
+     * @hash   1675619284
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AutomationClientConnectPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVShowStoreOfferPacket@@@Z
+     * @hash   328845372
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ShowStoreOfferPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetActorDataPacket@@@Z
+     * @hash   1432078231
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetActorDataPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAnimateEntityPacket@@@Z
+     * @hash   -275002504
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AnimateEntityPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVBlockEventPacket@@@Z
+     * @hash   1012510087
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BlockEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTakeItemActorPacket@@@Z
+     * @hash   780589377
      */
     MCVAPI void handle(class NetworkIdentifier const &, class TakeItemActorPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVTickingAreasLoadStatusPacket@@@Z
+     * @hash   1878757595
      */
     MCVAPI void handle(class NetworkIdentifier const &, class TickingAreasLoadStatusPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVEditorNetworkPacket@@@Z
+     * @hash   -538887653
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EditorNetworkPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVDimensionDataPacket@@@Z
+     * @hash   -151330452
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DimensionDataPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVActorEventPacket@@@Z
+     * @hash   1400606191
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerAuthInputPacket@@@Z
+     * @hash   -1772781573
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerAuthInputPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVServerSettingsResponsePacket@@@Z
+     * @hash   -704820307
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ServerSettingsResponsePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSettingsCommandPacket@@@Z
+     * @hash   369143028
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SettingsCommandPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSpawnExperienceOrbPacket@@@Z
+     * @hash   1246925498
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SpawnExperienceOrbPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVChangeDimensionPacket@@@Z
+     * @hash   935994886
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ChangeDimensionPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVInventorySlotPacket@@@Z
+     * @hash   -552134878
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InventorySlotPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRespawnPacket@@@Z
+     * @hash   -144785036
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RespawnPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAvailableCommandsPacket@@@Z
+     * @hash   992336811
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AvailableCommandsPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetHealthPacket@@@Z
+     * @hash   -375229634
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetHealthPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVAnvilDamagePacket@@@Z
+     * @hash   2037747905
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AnvilDamagePacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSubChunkPacket@@@Z
+     * @hash   672165511
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SubChunkPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackChunkDataPacket@@@Z
+     * @hash   -1101248660
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkDataPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCraftingEventPacket@@@Z
+     * @hash   2122160548
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CraftingEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormRequestPacket@@@Z
+     * @hash   740650198
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ModalFormRequestPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z
+     * @hash   -1304488675
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerActionPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVRemoveEntityPacket@@@Z
+     * @hash   -1468153843
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RemoveEntityPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCreatePhotoPacket@@@Z
+     * @hash   -1296220922
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CreatePhotoPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVCommandOutputPacket@@@Z
+     * @hash   1460524400
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CommandOutputPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerFogPacket@@@Z
+     * @hash   677903359
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerFogPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVMapCreateLockedCopyPacket@@@Z
+     * @hash   241417445
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MapCreateLockedCopyPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVOnScreenTextureAnimationPacket@@@Z
+     * @hash   1879092768
      */
     MCVAPI void handle(class NetworkIdentifier const &, class OnScreenTextureAnimationPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVScriptCustomEventPacket@@@Z
+     * @hash   -1494296386
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ScriptCustomEventPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVSetActorLinkPacket@@@Z
+     * @hash   1430687559
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetActorLinkPacket const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onConnect@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@@Z
+     * @hash   1467456226
      */
     MCVAPI void onConnect(class NetworkIdentifier const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onDisconnect@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z
+     * @hash   -413362214
      */
     MCVAPI void onDisconnect(class NetworkIdentifier const &, std::string const &, bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onPlayerReady@NetEventCallback@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1175510901
      */
     MCVAPI void onPlayerReady(class Player &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onStoreOfferReceive@NetEventCallback@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   772105198
      */
     MCVAPI void onStoreOfferReceive(bool, std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onTick@NetEventCallback@@UEAAXXZ
+     * @hash   -1317178239
      */
     MCVAPI void onTick();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onTransferRequest@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   -1357999093
      */
     MCVAPI void onTransferRequest(class NetworkIdentifier const &, std::string const &, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onUnableToConnect@NetEventCallback@@UEAAXXZ
+     * @hash   -1868203998
      */
     MCVAPI void onUnableToConnect();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?sendPacketViolationDetectedTelemetryData@NetEventCallback@@UEAAXAEBUExtendedStreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
+     * @hash   -1449326244
      */
     MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
 #endif

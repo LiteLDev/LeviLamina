@@ -32,17 +32,20 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1624643850
      */
     virtual ~OnPlacedTriggerDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@OnPlacedTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1296853543
      */
     virtual std::string const & getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGERDESCRIPTION
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@OnPlacedTriggerDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   -891410305
+     */
+    MCAPI static std::string const NameID;
 
 };

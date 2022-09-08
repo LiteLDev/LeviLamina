@@ -83,6 +83,12 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
             {"FixBDSCrash", {
                 {"enabled", conf.enableFixBDSCrash}
             }},
+            {"ParticleAPI", {
+                {"enabled", conf.enableParticleAPI}
+            }},
+             {"PermissionAPI", {
+                {"enabled", conf.enablePermissionAPI}
+            }},
         }}
     };
     // clang-format on
@@ -190,6 +196,14 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.find("FixBDSCrash") != modules.end()) {
             const nlohmann::json& setting = modules.at("FixBDSCrash");
             conf.enableFixBDSCrash = setting.value("enabled", false);
+        }
+        if (modules.find("ParticleAPI") != modules.end()) {
+            const nlohmann::json& setting = modules.at("ParticleAPI");
+            conf.enableParticleAPI = setting.value("enabled", false);
+        }
+        if (modules.find("PermissionAPI") != modules.end()) {
+            const nlohmann::json& setting = modules.at("PermissionAPI");
+            conf.enablePermissionAPI = setting.value("enabled", false);
         }
     }
 }

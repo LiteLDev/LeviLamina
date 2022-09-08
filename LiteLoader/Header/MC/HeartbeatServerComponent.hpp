@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HEARTBEATSERVERCOMPONENT
-#endif
     /**
      * @symbol ??0HeartbeatServerComponent@@QEAA@$$QEAV0@@Z
+     * @hash   587155637
      */
     MCAPI HeartbeatServerComponent(class HeartbeatServerComponent &&);
     /**
      * @symbol ??1HeartbeatServerComponent@@QEAA@XZ
+     * @hash   -1371249544
      */
     MCAPI ~HeartbeatServerComponent();
 

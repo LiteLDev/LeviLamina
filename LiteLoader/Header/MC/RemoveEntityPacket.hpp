@@ -31,28 +31,30 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1515490617
      */
     virtual ~RemoveEntityPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@RemoveEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   740544863
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@RemoveEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -283941940
      */
     virtual std::string getName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEENTITYPACKET
-#endif
     /**
      * @symbol ??0RemoveEntityPacket@@QEAA@XZ
+     * @hash   1307352667
      */
     MCAPI RemoveEntityPacket();
     /**
      * @symbol ??0RemoveEntityPacket@@QEAA@AEAVEntityContext@@@Z
+     * @hash   1091517222
      */
     MCAPI RemoveEntityPacket(class EntityContext &);
 

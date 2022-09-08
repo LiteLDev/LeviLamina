@@ -31,105 +31,111 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMWINDOWS
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?_getCurrentStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   2052449199
      */
     MCVAPI class Core::PathBuffer<std::string> _getCurrentStoragePath() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?_getExternalStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -260438193
      */
     MCVAPI class Core::PathBuffer<std::string> _getExternalStoragePath() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?_getInternalStoragePath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -1834119155
      */
     MCVAPI class Core::PathBuffer<std::string> _getInternalStoragePath() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?_getUserdataPath@AppPlatformWindows@@EEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   1890672610
      */
     MCVAPI class Core::PathBuffer<std::string> _getUserdataPath() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?allowContentLogWriteToDisk@AppPlatformWindows@@UEAA_NXZ
+     * @hash   -1295446899
      */
     MCVAPI bool allowContentLogWriteToDisk();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?calculateAvailableDiskFreeSpace@AppPlatformWindows@@UEAA_KAEBVPath@Core@@@Z
+     * @hash   -1769900935
      */
     MCVAPI unsigned __int64 calculateAvailableDiskFreeSpace(class Core::Path const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canAppSelfTerminate@AppPlatformWindows@@UEBA_NXZ
+     * @hash   1369385229
      */
     MCVAPI bool canAppSelfTerminate() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?copyImportFileToTempFolder@AppPlatformWindows@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z
+     * @hash   -2033589630
      */
     MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getHighPerformanceThreadsCount@AppPlatformWindows@@UEBA_KXZ
+     * @hash   -781175857
      */
     MCVAPI unsigned __int64 getHighPerformanceThreadsCount() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getMainThreadQueue@AppPlatformWindows@@UEAAAEAV?$MPMCQueue@V?$function@$$A6AXXZ@std@@@@XZ
+     * @hash   251598382
      */
     MCVAPI class MPMCQueue<class std::function<void (void)>> & getMainThreadQueue();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getPackagedShaderCachePath@AppPlatformWindows@@MEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -569213369
      */
     MCVAPI class Core::PathBuffer<std::string> getPackagedShaderCachePath();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getPlatformTTSEnabled@AppPlatformWindows@@UEBA_NXZ
+     * @hash   -1938040688
      */
     MCVAPI bool getPlatformTTSEnabled() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getPlatformTTSExists@AppPlatformWindows@@UEBA_NXZ
+     * @hash   640543887
      */
     MCVAPI bool getPlatformTTSExists() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getPlatformTempPath@AppPlatformWindows@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -1678918751
      */
     MCVAPI class Core::PathBuffer<std::string> getPlatformTempPath() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getTotalHardwareThreadsCount@AppPlatformWindows@@UEBA_KXZ
+     * @hash   -668515363
      */
     MCVAPI unsigned __int64 getTotalHardwareThreadsCount() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?queueForMainThread_DEPRECATED@AppPlatformWindows@@UEAAXV?$function@$$A6AXXZ@std@@@Z
+     * @hash   924180710
      */
     MCVAPI void queueForMainThread_DEPRECATED(class std::function<void (void)>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?registerExperimentsActiveCrashDump@AppPlatformWindows@@UEBAXAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
+     * @hash   -714623396
      */
     MCVAPI void registerExperimentsActiveCrashDump(std::vector<std::string> const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1AppPlatformWindows@@UEAA@XZ
+     * @hash   -743838956
      */
     MCVAPI ~AppPlatformWindows();
 #endif
     /**
      * @symbol ??0AppPlatformWindows@@QEAA@XZ
+     * @hash   778008395
      */
     MCAPI AppPlatformWindows();
-MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
+    /**
+     * @symbol ?EXPERIMENTS_ACTIVE_KEY@AppPlatformWindows@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   946508795
+     */
+    MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
 //protected:
     /**
      * @symbol ?_findHighPerformanceThreadsCount@AppPlatformWindows@@IEBA_KXZ
+     * @hash   1803104433
      */
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
 

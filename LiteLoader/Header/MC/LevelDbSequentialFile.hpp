@@ -32,24 +32,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1396881195
      */
     virtual ~LevelDbSequentialFile();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?Read@LevelDbSequentialFile@@UEAA?AVStatus@leveldb@@_KPEAVSlice@3@PEAD@Z
+     * @hash   1725849905
      */
     virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?Skip@LevelDbSequentialFile@@UEAA?AVStatus@leveldb@@_K@Z
+     * @hash   -2025472106
      */
     virtual class leveldb::Status Skip(unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELDBSEQUENTIALFILE
-#endif
     /**
      * @symbol ??0LevelDbSequentialFile@@QEAA@$$QEAVFile@Core@@@Z
+     * @hash   1969664670
      */
     MCAPI LevelDbSequentialFile(class Core::File &&);
 

@@ -30,26 +30,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTBATCH
-#endif
     /**
      * @symbol ?getRequests@ItemStackRequestBatch@@QEBAAEBV?$vector@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@V?$allocator@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@@2@@std@@XZ
+     * @hash   1869064399
      */
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> const & getRequests() const;
     /**
      * @symbol ?takeRequests@ItemStackRequestBatch@@QEBA?AV?$vector@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@V?$allocator@V?$unique_ptr@VItemStackRequestData@@U?$default_delete@VItemStackRequestData@@@std@@@std@@@2@@std@@XZ
+     * @hash   -1447331893
      */
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> takeRequests() const;
     /**
      * @symbol ?write@ItemStackRequestBatch@@QEBAXAEAVBinaryStream@@@Z
+     * @hash   414447832
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1ItemStackRequestBatch@@QEAA@XZ
+     * @hash   -1433671156
      */
     MCAPI ~ItemStackRequestBatch();
     /**
      * @symbol ?read@ItemStackRequestBatch@@SA?AV?$unique_ptr@VItemStackRequestBatch@@U?$default_delete@VItemStackRequestBatch@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   665554281
      */
     MCAPI static std::unique_ptr<class ItemStackRequestBatch> read(class ReadOnlyBinaryStream &);
 

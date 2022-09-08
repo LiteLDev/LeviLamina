@@ -29,15 +29,16 @@ public:
     ClimateParameters(struct ClimateParameters const &) = delete;
     ClimateParameters() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIMATEPARAMETERS
-#endif
     /**
      * @symbol ??0ClimateParameters@@QEAA@UParameter@ClimateUtils@@00000M@Z
+     * @hash   -1081486218
      */
     MCAPI ClimateParameters(struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, float);
     /**
      * @symbol ?fitness@ClimateParameters@@QEBA_JAEBUTargetPoint@@@Z
+     * @hash   509783846
      */
     MCAPI __int64 fitness(struct TargetPoint const &) const;
 

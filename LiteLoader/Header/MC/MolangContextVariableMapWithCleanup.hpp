@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOLANGCONTEXTVARIABLEMAPWITHCLEANUP
-#endif
     /**
      * @symbol ??1MolangContextVariableMapWithCleanup@@QEAA@XZ
+     * @hash   123253737
      */
     MCAPI ~MolangContextVariableMapWithCleanup();
 

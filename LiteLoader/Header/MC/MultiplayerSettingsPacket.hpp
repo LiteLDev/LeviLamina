@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   854125011
      */
     virtual ~MultiplayerSettingsPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@MultiplayerSettingsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -1991171223
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@MultiplayerSettingsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1688797674
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@MultiplayerSettingsPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -96351551
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@MultiplayerSettingsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   -1136638575
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIPLAYERSETTINGSPACKET
-#endif
     /**
      * @symbol ??0MultiplayerSettingsPacket@@QEAA@XZ
+     * @hash   -1679303903
      */
     MCAPI MultiplayerSettingsPacket();
     /**
      * @symbol ??0MultiplayerSettingsPacket@@QEAA@W4MultiplayerSettingsPacketType@@@Z
+     * @hash   281613452
      */
     MCAPI MultiplayerSettingsPacket(enum MultiplayerSettingsPacketType);
 

@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVELEVENTCOORDINATOR
-#endif
     /**
      * @symbol ?sendLevelAddedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
+     * @hash   -1509686283
      */
     MCAPI void sendLevelAddedPlayer(class Level &, class Player &);
     /**
      * @symbol ?sendLevelRemovedPlayer@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVPlayer@@@Z
+     * @hash   -1673370635
      */
     MCAPI void sendLevelRemovedPlayer(class Level &, class Player &);
     /**
      * @symbol ?sendLevelSaveData@ServerLevelEventCoordinator@@QEAAXAEAVLevel@@AEAVCompoundTag@@@Z
+     * @hash   -1084135651
      */
     MCAPI void sendLevelSaveData(class Level &, class CompoundTag &);
 

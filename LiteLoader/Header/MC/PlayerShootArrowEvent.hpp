@@ -25,15 +25,16 @@ public:
     struct PlayerShootArrowEvent& operator=(struct PlayerShootArrowEvent const &) = delete;
     PlayerShootArrowEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSHOOTARROWEVENT
-#endif
     /**
      * @symbol ??0PlayerShootArrowEvent@@QEAA@AEBU0@@Z
+     * @hash   -2140785803
      */
     MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const &);
     /**
      * @symbol ??1PlayerShootArrowEvent@@QEAA@XZ
+     * @hash   1675426251
      */
     MCAPI ~PlayerShootArrowEvent();
 

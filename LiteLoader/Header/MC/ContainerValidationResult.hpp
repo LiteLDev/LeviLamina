@@ -28,27 +28,31 @@ public:
     ContainerValidationResult(struct ContainerValidationResult const &) = delete;
     ContainerValidationResult() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERVALIDATIONRESULT
-#endif
     /**
      * @symbol ??0ContainerValidationResult@@QEAA@W4ContainerValidationOutcome@@@Z
+     * @hash   1793047894
      */
     MCAPI ContainerValidationResult(enum ContainerValidationOutcome);
     /**
      * @symbol ??0ContainerValidationResult@@QEAA@$$QEAV?$vector@UContainerValidationOperation@@V?$allocator@UContainerValidationOperation@@@std@@@std@@W4ContainerValidationOutcome@@W4ContainerScreenRequestActionType@@@Z
+     * @hash   165544786
      */
     MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum ContainerValidationOutcome, enum ContainerScreenRequestActionType);
     /**
      * @symbol ?isSuccess@ContainerValidationResult@@QEBA_NXZ
+     * @hash   224060704
      */
     MCAPI bool isSuccess() const;
     /**
      * @symbol ?tryGetOperation@ContainerValidationResult@@QEBAPEBUContainerValidationOperation@@W4ContainerValidationOperationType@@@Z
+     * @hash   1450781744
      */
     MCAPI struct ContainerValidationOperation const * tryGetOperation(enum ContainerValidationOperationType) const;
     /**
      * @symbol ??1ContainerValidationResult@@QEAA@XZ
+     * @hash   -1541809453
      */
     MCAPI ~ContainerValidationResult();
 

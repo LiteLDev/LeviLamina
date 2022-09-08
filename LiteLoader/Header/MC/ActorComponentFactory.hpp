@@ -30,12 +30,11 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORCOMPONENTFACTORY
-#endif
 
 //private:
     /**
      * @symbol ?_initialize@ActorComponentFactory@@AEAAXAEBVExperiments@@@Z
+     * @hash   -1006643750
      */
     MCAPI void _initialize(class Experiments const &);
 

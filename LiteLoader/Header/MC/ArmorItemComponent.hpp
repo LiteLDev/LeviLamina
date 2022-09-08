@@ -31,56 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1555556747
      */
     virtual ~ArmorItemComponent();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isNetworkComponent@?$NetworkedItemComponent@VArmorItemComponent@@@@UEBA_NXZ
+     * @hash   1427385894
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1365271070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@?$NetworkedItemComponent@VArmorItemComponent@@@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   945585240
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?initializeFromNetwork@?$NetworkedItemComponent@VArmorItemComponent@@@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   199031752
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORITEMCOMPONENT
-#endif
     /**
      * @symbol ?getArmorTextureType@ArmorItemComponent@@QEBA?AW4ArmorTextureType@@XZ
+     * @hash   1841260622
      */
     MCAPI enum ArmorTextureType getArmorTextureType() const;
     /**
      * @symbol ?getArmorValue@ArmorItemComponent@@QEBAHXZ
+     * @hash   651217926
      */
     MCAPI int getArmorValue() const;
     /**
      * @symbol ?bindType@ArmorItemComponent@@SAXXZ
+     * @hash   -235388157
      */
     MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier@ArmorItemComponent@@SAAEBVHashedString@@XZ
+     * @hash   -582594494
      */
     MCAPI static class HashedString const & getIdentifier();
 

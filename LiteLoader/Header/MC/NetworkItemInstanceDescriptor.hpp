@@ -30,30 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
-#endif
     /**
      * @symbol ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemStackDescriptor@@@Z
+     * @hash   -954527748
      */
     MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
     /**
      * @symbol ??0NetworkItemInstanceDescriptor@@QEAA@AEBVItemInstance@@@Z
+     * @hash   -1632676650
      */
     MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
     /**
      * @symbol ?getItemInstance@NetworkItemInstanceDescriptor@@QEBA?AVItemInstance@@AEBVBlockPalette@@@Z
+     * @hash   1916384753
      */
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
     /**
      * @symbol ?read@NetworkItemInstanceDescriptor@@QEAAXAEAVReadOnlyBinaryStream@@@Z
+     * @hash   -899248226
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write@NetworkItemInstanceDescriptor@@QEBAXAEAVBinaryStream@@@Z
+     * @hash   -775725886
      */
     MCAPI void write(class BinaryStream &) const;
     /**
      * @symbol ??1NetworkItemInstanceDescriptor@@QEAA@XZ
+     * @hash   2109653505
      */
     MCAPI ~NetworkItemInstanceDescriptor();
 

@@ -32,59 +32,65 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1677937731
      */
     virtual ~SimpleContainer();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?serverInitItemStackIds@SimpleContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z
+     * @hash   57316568
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getItem@SimpleContainer@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1846580125
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setItem@SimpleContainer@@UEAAXHAEBVItemStack@@@Z
+     * @hash   -1933738350
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?getContainerSize@SimpleContainer@@UEBAHXZ
+     * @hash   1170264856
      */
     virtual int getContainerSize() const;
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?getMaxStackSize@SimpleContainer@@UEBAHXZ
+     * @hash   -842007161
      */
     virtual int getMaxStackSize() const;
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   -1823791345
      */
     virtual void startOpen(class Player &);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z
+     * @hash   2008680367
      */
     virtual void stopOpen(class Player &);
     /**
-     * @note   Virtual function table index: 22
-     * @symbol 
+     * @vftbl  22
+     * @hash   -312229852
      */
     virtual void __unk_vfn_22();
     /**
-     * @note   Virtual function table index: 23
-     * @symbol 
+     * @vftbl  23
+     * @hash   -311306331
      */
     virtual void __unk_vfn_23();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLECONTAINER
-#endif
     /**
      * @symbol ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
+     * @hash   -1509880399
      */
     MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
 

@@ -32,70 +32,77 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   325319819
      */
     virtual ~HarvestFarmBlockGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@HarvestFarmBlockGoal@@UEAA_NXZ
+     * @hash   -1773095745
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@HarvestFarmBlockGoal@@UEAA_NXZ
+     * @hash   1621016813
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@HarvestFarmBlockGoal@@UEAAXXZ
+     * @hash   -296380856
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@HarvestFarmBlockGoal@@UEAAXXZ
+     * @hash   -1767514696
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@HarvestFarmBlockGoal@@UEAAXXZ
+     * @hash   -72420381
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@HarvestFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -245849311
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?isValidTarget@HarvestFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   1419452554
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HARVESTFARMBLOCKGOAL
-#endif
     /**
      * @symbol ??0HarvestFarmBlockGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -1068865892
      */
     MCAPI HarvestFarmBlockGoal(class Mob &);
 
 //protected:
     /**
      * @symbol ?trySowCrop@HarvestFarmBlockGoal@@IEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -363077414
      */
     MCAPI bool trySowCrop(class BlockSource &, class BlockPos const &);
 

@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   890974088
      */
     virtual ~ClearCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@ClearCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1464756693
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLEARCOMMAND
-#endif
     /**
      * @symbol ?setup@ClearCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   680650636
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGER
-#endif
     /**
      * @symbol ??1OnPlayerDestroyedTrigger@@QEAA@XZ
+     * @hash   923795449
      */
     MCAPI ~OnPlayerDestroyedTrigger();
 

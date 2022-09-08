@@ -22,16 +22,60 @@ namespace VanillaGameVersions {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern class BaseGameVersion const BeeUpdate;
-MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate;
-MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U1;
-MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U3;
-MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1;
-MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1_U1;
-MCAPI extern class BaseGameVersion const LastLegacyGeneratorUpdate;
-MCAPI extern class BaseGameVersion const NetherUpdate;
-MCAPI extern class BaseGameVersion const NetherUpdate_U3;
-MCAPI extern class BaseGameVersion const WildUpdateVersion;
-MCAPI extern class BaseGameVersion const WildUpdateVersion_U1;
+    /**
+     * @symbol ?BeeUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   -186716085
+     */
+    MCAPI extern class BaseGameVersion const BeeUpdate;
+    /**
+     * @symbol ?CavesAndCliffsUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   -1215928787
+     */
+    MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate;
+    /**
+     * @symbol ?CavesAndCliffsUpdate_U1@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   -794475477
+     */
+    MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U1;
+    /**
+     * @symbol ?CavesAndCliffsUpdate_U3@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   1453074027
+     */
+    MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U3;
+    /**
+     * @symbol ?CavesAndCliffs_Part1@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   488851437
+     */
+    MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1;
+    /**
+     * @symbol ?CavesAndCliffs_Part1_U1@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   728192875
+     */
+    MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1_U1;
+    /**
+     * @symbol ?LastLegacyGeneratorUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   1409406091
+     */
+    MCAPI extern class BaseGameVersion const LastLegacyGeneratorUpdate;
+    /**
+     * @symbol ?NetherUpdate@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   -196662739
+     */
+    MCAPI extern class BaseGameVersion const NetherUpdate;
+    /**
+     * @symbol ?NetherUpdate_U3@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   2131176683
+     */
+    MCAPI extern class BaseGameVersion const NetherUpdate_U3;
+    /**
+     * @symbol ?WildUpdateVersion@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   109500555
+     */
+    MCAPI extern class BaseGameVersion const WildUpdateVersion;
+    /**
+     * @symbol ?WildUpdateVersion_U1@VanillaGameVersions@@3VBaseGameVersion@@B
+     * @hash   -966590451
+     */
+    MCAPI extern class BaseGameVersion const WildUpdateVersion_U1;
 
 };

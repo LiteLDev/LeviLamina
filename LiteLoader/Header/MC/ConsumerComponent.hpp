@@ -31,54 +31,59 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1101250059
      */
     virtual ~ConsumerComponent();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?canConsumerPower@ConsumerComponent@@UEBA_NXZ
+     * @hash   821154736
      */
     virtual bool canConsumerPower() const;
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?addSource@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z
+     * @hash   -1346272715
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?allowConnection@ConsumerComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   1840309191
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?evaluate@ConsumerComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   -484507391
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 21
+     * @vftbl  21
      * @symbol ?isSecondaryPowered@ConsumerComponent@@UEBA_NXZ
+     * @hash   1445574539
      */
     virtual bool isSecondaryPowered() const;
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@ConsumerComponent@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   1624507679
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMERCOMPONENT
-#endif
     /**
      * @symbol ??0ConsumerComponent@@QEAA@XZ
+     * @hash   973352387
      */
     MCAPI ConsumerComponent();
 

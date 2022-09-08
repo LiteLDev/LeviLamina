@@ -26,11 +26,11 @@ public:
     ActorSpawnRuleDefinition(struct ActorSpawnRuleDefinition const &) = delete;
     ActorSpawnRuleDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSPAWNRULEDEFINITION
-#endif
     /**
      * @symbol ??1ActorSpawnRuleDefinition@@QEAA@XZ
+     * @hash   61572719
      */
     MCAPI ~ActorSpawnRuleDefinition();
 

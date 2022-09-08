@@ -22,6 +22,7 @@ namespace CommandSelectorUtil {
 #undef AFTER_EXTRA
     /**
      * @symbol ?isValidSelector@CommandSelectorUtil@@YA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z
+     * @hash   1200477796
      */
     MCAPI bool isValidSelector(class gsl::basic_string_span<char const, -1>);
 

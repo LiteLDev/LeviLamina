@@ -30,48 +30,52 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1359774877
      */
     virtual ~DouseFireSubcomponent();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?doOnHitEffect@DouseFireSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z
+     * @hash   -546774477
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?getName@DouseFireSubcomponent@@UEAAPEBDXZ
+     * @hash   -937197506
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DOUSEFIRESUBCOMPONENT
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?readfromJSON@DouseFireSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   1857396825
      */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?writetoJSON@DouseFireSubcomponent@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -572769472
      */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     /**
      * @symbol ??0DouseFireSubcomponent@@QEAA@XZ
+     * @hash   -246234997
      */
     MCAPI DouseFireSubcomponent();
     /**
      * @symbol ?douseFire@DouseFireSubcomponent@@QEAAXAEAVActor@@AEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   -325922806
      */
     MCAPI void douseFire(class Actor &, class BlockSource &, class BlockPos const &);
 

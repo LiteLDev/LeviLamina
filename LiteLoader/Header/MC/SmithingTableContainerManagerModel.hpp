@@ -32,53 +32,71 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1520947352
      */
     virtual ~SmithingTableContainerManagerModel();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getItemCopies@SmithingTableContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -1631599295
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setSlot@SmithingTableContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -1617221314
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getSlot@SmithingTableContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   1508020471
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setData@SmithingTableContainerManagerModel@@UEAAXHH@Z
+     * @hash   756514309
      */
     virtual void setData(int, int);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@SmithingTableContainerManagerModel@@UEAAXXZ
+     * @hash   1495012731
      */
     virtual void broadcastChanges();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?isValid@SmithingTableContainerManagerModel@@UEAA_NM@Z
+     * @hash   -1157163515
      */
     virtual bool isValid(float);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_postInit@SmithingTableContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -41109144
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMITHINGTABLECONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0SmithingTableContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -2113036265
      */
     MCAPI SmithingTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-MCAPI static int const INPUT_SLOT;
-MCAPI static int const MATERIAL_SLOT;
-MCAPI static int const RESULT_SLOT;
+    /**
+     * @symbol ?INPUT_SLOT@SmithingTableContainerManagerModel@@2HB
+     * @hash   1257590221
+     */
+    MCAPI static int const INPUT_SLOT;
+    /**
+     * @symbol ?MATERIAL_SLOT@SmithingTableContainerManagerModel@@2HB
+     * @hash   963126351
+     */
+    MCAPI static int const MATERIAL_SLOT;
+    /**
+     * @symbol ?RESULT_SLOT@SmithingTableContainerManagerModel@@2HB
+     * @hash   -419652269
+     */
+    MCAPI static int const RESULT_SLOT;
 
 };

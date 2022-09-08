@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBCHUNKINTERLOCKER
-#endif
     /**
      * @symbol ?tryLock3x3xN@SubChunkInterlocker@@QEAA_NAEBVSubChunkPos@@H@Z
+     * @hash   -1752376930
      */
     MCAPI bool tryLock3x3xN(class SubChunkPos const &, int);
     /**
      * @symbol ?unlock3x3xN@SubChunkInterlocker@@QEAAXAEBVSubChunkPos@@H@Z
+     * @hash   1868336977
      */
     MCAPI void unlock3x3xN(class SubChunkPos const &, int);
 

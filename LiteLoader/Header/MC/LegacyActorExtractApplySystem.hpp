@@ -28,18 +28,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYACTOREXTRACTAPPLYSYSTEM
-#endif
     /**
      * @symbol ?createApplySystem@LegacyActorExtractApplySystem@@SA?AUTickingSystemWithInfo@@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z
+     * @hash   -2128377967
      */
     MCAPI static struct TickingSystemWithInfo createApplySystem(std::vector<unsigned int> const &);
     /**
      * @symbol ?createCleanupSystem@LegacyActorExtractApplySystem@@SA?AUTickingSystemWithInfo@@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z
+     * @hash   -94501979
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem(std::vector<unsigned int> const &);
     /**
      * @symbol ?createExtractSystem@LegacyActorExtractApplySystem@@SA?AUTickingSystemWithInfo@@AEBV?$vector@IV?$allocator@I@std@@@std@@@Z
+     * @hash   -1561879269
      */
     MCAPI static struct TickingSystemWithInfo createExtractSystem(std::vector<unsigned int> const &);
 

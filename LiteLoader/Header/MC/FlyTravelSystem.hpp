@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLYTRAVELSYSTEM
-#endif
     /**
      * @symbol ?getPlayerFlySpeed@FlyTravelSystem@@SAMAEBVLayeredAbilities@@AEBVSynchedActorData@@@Z
+     * @hash   1233554702
      */
     MCAPI static float getPlayerFlySpeed(class LayeredAbilities const &, class SynchedActorData const &);
 

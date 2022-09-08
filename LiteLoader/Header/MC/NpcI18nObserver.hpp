@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -734636445
      */
     virtual ~NpcI18nObserver();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onLanguageChanged@NpcI18nObserver@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   851979551
      */
     virtual void onLanguageChanged(std::string const &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCI18NOBSERVER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLanguageKeywordsLoadedFromPack@NpcI18nObserver@@UEAAXAEBVPackManifest@@@Z
+     * @hash   523455470
      */
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onLanguagesLoaded@NpcI18nObserver@@UEAAXXZ
+     * @hash   1471701171
      */
     MCVAPI void onLanguagesLoaded();
 #endif
@@ -56,6 +57,7 @@ public:
 //private:
     /**
      * @symbol ?_loadNpcData@NpcI18nObserver@@AEAAXXZ
+     * @hash   35692461
      */
     MCAPI void _loadNpcData();
 

@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -480303942
      */
     virtual ~BreakBlockNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@BreakBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   2067319773
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@BreakBlockNode@@EEAAXAEAVActor@@@Z
+     * @hash   841379089
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKNODE
-#endif
     /**
      * @symbol ??0BreakBlockNode@@QEAA@XZ
+     * @hash   431113724
      */
     MCAPI BreakBlockNode();
 

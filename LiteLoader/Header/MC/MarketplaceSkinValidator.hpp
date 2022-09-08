@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MARKETPLACESKINVALIDATOR
-#endif
     /**
      * @symbol ?checkIfValid@MarketplaceSkinValidator@@SA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   523333939
      */
     MCAPI static bool checkIfValid(std::string const &);
 

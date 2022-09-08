@@ -28,15 +28,16 @@ public:
     GameTestReport(struct GameTestReport const &) = delete;
     GameTestReport() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTREPORT
-#endif
     /**
      * @symbol ??1GameTestReport@@QEAA@XZ
+     * @hash   -541183102
      */
     MCAPI ~GameTestReport();
     /**
      * @symbol ?bindType@GameTestReport@@SAXXZ
+     * @hash   369097347
      */
     MCAPI static void bindType();
 

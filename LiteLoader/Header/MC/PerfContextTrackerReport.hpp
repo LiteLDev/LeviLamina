@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKERREPORT
-#endif
     /**
      * @symbol ??1PerfContextTrackerReport@@QEAA@XZ
+     * @hash   -1156351376
      */
     MCAPI ~PerfContextTrackerReport();
 

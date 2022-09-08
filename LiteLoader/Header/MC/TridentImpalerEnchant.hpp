@@ -32,54 +32,57 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   708641269
      */
     virtual ~TridentImpalerEnchant();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getMinCost@TridentImpalerEnchant@@UEBAHH@Z
+     * @hash   182718176
      */
     virtual int getMinCost(int) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getMaxCost@TridentImpalerEnchant@@UEBAHH@Z
+     * @hash   768093742
      */
     virtual int getMaxCost(int) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getMaxLevel@TridentImpalerEnchant@@UEBAHXZ
+     * @hash   1525107658
      */
     virtual int getMaxLevel() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getDamageBonus@TridentImpalerEnchant@@UEBAMHAEBVActor@@@Z
+     * @hash   -81626826
      */
     virtual float getDamageBonus(int, class Actor const &) const;
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -342706045
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -335047836
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -333200794
      */
     virtual void __unk_vfn_13();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRIDENTIMPALERENCHANT
-#endif
     /**
      * @symbol ??0TridentImpalerEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
+     * @hash   -1614876925
      */
     MCAPI TridentImpalerEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 

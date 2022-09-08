@@ -33,84 +33,86 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLATWORLDGENERATOR
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?decorateWorldGenLoadChunk@FlatWorldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+     * @hash   -1879045989
      */
     MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?decorateWorldGenPostProcess@FlatWorldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z
+     * @hash   -1803336715
      */
     MCVAPI void decorateWorldGenPostProcess(class Biome &, class LevelChunk &, class BlockSource &, class Random &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
+     * @hash   1688925769
      */
     MCVAPI bool findNearestStructureFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?findSpawnPosition@FlatWorldGenerator@@UEBA?AVBlockPos@@XZ
+     * @hash   -332238455
      */
     MCVAPI class BlockPos findSpawnPosition() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?findStructureFeatureTypeAt@FlatWorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
+     * @hash   -891100777
      */
     MCVAPI enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
+     * @hash   -1025905107
      */
     MCVAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getBiomeArea@FlatWorldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+     * @hash   154501615
      */
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getBiomeSource@FlatWorldGenerator@@UEBAAEBVBiomeSource@@XZ
+     * @hash   -1652886523
      */
     MCVAPI class BiomeSource const & getBiomeSource() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getBlockVolumeDimensions@FlatWorldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+     * @hash   -129887933
      */
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isStructureFeatureTypeAt@FlatWorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
+     * @hash   -739038891
      */
     MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadChunk@FlatWorldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+     * @hash   471994485
      */
     MCVAPI void loadChunk(class LevelChunk &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?postProcess@FlatWorldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+     * @hash   389973361
      */
     MCVAPI bool postProcess(class ChunkViewSource &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?prepareAndComputeHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
+     * @hash   1062406230
      */
     MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?prepareHeights@FlatWorldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+     * @hash   1388450069
      */
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
 #endif
     /**
      * @symbol ??0FlatWorldGenerator@@QEAA@AEAVDimension@@IAEBVValue@Json@@@Z
+     * @hash   1194786107
      */
     MCAPI FlatWorldGenerator(class Dimension &, unsigned int, class Json::Value const &);
 
 //private:
     /**
      * @symbol ?_generatePrototypeBlockValues@FlatWorldGenerator@@AEAAXAEBVFlatWorldGeneratorOptions@@F@Z
+     * @hash   845685232
      */
     MCAPI void _generatePrototypeBlockValues(class FlatWorldGeneratorOptions const &, short);
 

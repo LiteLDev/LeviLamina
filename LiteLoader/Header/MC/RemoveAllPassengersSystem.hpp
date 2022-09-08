@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEALLPASSENGERSSYSTEM
-#endif
     /**
      * @symbol ?createSystem@RemoveAllPassengersSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   -1326817964
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol ?removeAllPassengers@RemoveAllPassengersSystem@@SAXAEAVStrictEntityContext@@AEAUVehicleComponent@@V?$Optional@V?$FlagComponent@UActorIsBeingDestroyedFlag@@@@@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@V?$FlagComponent@UActorIsBeingDestroyedFlag@@@@V?$FlagComponent@UStopRidingRequestFlag@@@@@@@Z
+     * @hash   -1225193834
      */
     MCAPI static void removeAllPassengers(class StrictEntityContext &, struct VehicleComponent &, class Optional<class FlagComponent<struct ActorIsBeingDestroyedFlag>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorIsBeingDestroyedFlag>, class FlagComponent<struct StopRidingRequestFlag>> &);
 

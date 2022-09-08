@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONEVENT
-#endif
     /**
      * @symbol ??0ActorAnimationEvent@@QEAA@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
+     * @hash   2124654053
      */
     MCAPI ActorAnimationEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
     /**
      * @symbol ??0ActorAnimationEvent@@QEAA@$$QEAV0@@Z
+     * @hash   898616975
      */
     MCAPI ActorAnimationEvent(class ActorAnimationEvent &&);
     /**
      * @symbol ?fire@ActorAnimationEvent@@QEBAXAEAVRenderParams@@PEAVActor@@@Z
+     * @hash   -482839156
      */
     MCAPI void fire(class RenderParams &, class Actor *) const;
     /**
      * @symbol ??1ActorAnimationEvent@@QEAA@XZ
+     * @hash   -779729257
      */
     MCAPI ~ActorAnimationEvent();
 

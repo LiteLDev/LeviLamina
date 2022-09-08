@@ -31,18 +31,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RIDEABLEDEFINITION
-#endif
     /**
      * @symbol ?addFamilyTypeByName@RideableDefinition@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -329328786
      */
     MCAPI void addFamilyTypeByName(std::string const &);
     /**
      * @symbol ?initialize@RideableDefinition@@QEAAXAEAVEntityContext@@AEAVRideableComponent@@@Z
+     * @hash   1034000415
      */
     MCAPI void initialize(class EntityContext &, class RideableComponent &);
     /**
      * @symbol ?buildSchema@RideableDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VRideableDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1235234502
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RideableDefinition>> &);
 

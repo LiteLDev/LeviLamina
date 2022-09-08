@@ -32,51 +32,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -468275798
      */
     virtual ~LabTableContainerManagerModel();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getItemCopies@LabTableContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   2028869139
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setSlot@LabTableContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -1124978868
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getSlot@LabTableContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1897714619
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?setData@LabTableContainerManagerModel@@UEAAXHH@Z
+     * @hash   1167393399
      */
     virtual void setData(int, int);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@LabTableContainerManagerModel@@UEAAXXZ
+     * @hash   -1341472403
      */
     virtual void broadcastChanges();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?isValid@LabTableContainerManagerModel@@UEAA_NM@Z
+     * @hash   392553427
      */
     virtual bool isValid(float);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_postInit@LabTableContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   1783874042
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLECONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0LabTableContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
+     * @hash   -147309815
      */
     MCAPI LabTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
-MCAPI static int const INPUT_SLOTS;
+    /**
+     * @symbol ?INPUT_SLOTS@LabTableContainerManagerModel@@2HB
+     * @hash   438284445
+     */
+    MCAPI static int const INPUT_SLOTS;
 
 };

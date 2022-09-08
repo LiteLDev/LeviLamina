@@ -32,85 +32,93 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?containerContentChanged@InventoryContainerModel@@UEAAXH@Z
+     * @hash   -970672720
      */
     virtual void containerContentChanged(int);
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1797634062
      */
     virtual ~InventoryContainerModel();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?postInit@InventoryContainerModel@@UEAAXXZ
+     * @hash   1602731843
      */
     virtual void postInit();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?releaseResources@InventoryContainerModel@@UEAAXXZ
+     * @hash   -268937375
      */
     virtual void releaseResources();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?getContainerWeakRef@InventoryContainerModel@@UEBA?AVContainerWeakRef@@XZ
+     * @hash   -1425298527
      */
     virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -334124315
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?isValid@InventoryContainerModel@@UEAA_NXZ
+     * @hash   -1134356297
      */
     virtual bool isValid();
     /**
-     * @note   Virtual function table index: 15
-     * @symbol 
+     * @vftbl  15
+     * @hash   -331353752
      */
     virtual void __unk_vfn_15();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 19
-     * @symbol 
+     * @vftbl  19
+     * @hash   -376678356
      */
     virtual void __unk_vfn_19();
     /**
-     * @note   Virtual function table index: 20
+     * @vftbl  20
      * @symbol ?_getContainer@InventoryContainerModel@@EEBAPEAVContainer@@XZ
+     * @hash   -1930548725
      */
     virtual class Container * _getContainer() const;
     /**
-     * @note   Virtual function table index: 21
+     * @vftbl  21
      * @symbol ?_getContainerOffset@InventoryContainerModel@@MEBAHXZ
+     * @hash   -941697139
      */
     virtual int _getContainerOffset() const;
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?_onItemChanged@InventoryContainerModel@@EEAAXHAEBVItemStack@@0@Z
+     * @hash   1829911
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYCONTAINERMODEL
-#endif
     /**
      * @symbol ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
+     * @hash   -1263842549
      */
     MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player &);
 
 //private:
     /**
      * @symbol ?_refreshSlot@InventoryContainerModel@@AEAAXH@Z
+     * @hash   1684940157
      */
     MCAPI void _refreshSlot(int);
 

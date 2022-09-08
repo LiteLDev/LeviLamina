@@ -38,30 +38,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_USERENTITYIDENTIFIERCOMPONENT
-#endif
     /**
      * @symbol ??0UserEntityIdentifierComponent@@QEAA@AEBVNetworkIdentifier@@W4SubClientId@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@6@@Z
+     * @hash   -1104045304
      */
     MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, enum SubClientId, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
     /**
      * @symbol ??0UserEntityIdentifierComponent@@QEAA@$$QEAV0@@Z
+     * @hash   -724089323
      */
     MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent &&);
     /**
      * @symbol ?isPrimaryClient@UserEntityIdentifierComponent@@QEBA_NXZ
+     * @hash   1635757650
      */
     MCAPI bool isPrimaryClient() const;
     /**
      * @symbol ??4UserEntityIdentifierComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1811988464
      */
     MCAPI class UserEntityIdentifierComponent & operator=(class UserEntityIdentifierComponent &&);
     /**
      * @symbol ??1UserEntityIdentifierComponent@@QEAA@XZ
+     * @hash   -1505345454
      */
     MCAPI ~UserEntityIdentifierComponent();
     /**
      * @symbol ?tryGetFromEntity@UserEntityIdentifierComponent@@SAPEAV1@AEAVEntityContext@@@Z
+     * @hash   2007583331
      */
     MCAPI static class UserEntityIdentifierComponent * tryGetFromEntity(class EntityContext &);
 

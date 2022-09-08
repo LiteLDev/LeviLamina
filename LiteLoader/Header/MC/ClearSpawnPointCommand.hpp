@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   14362675
      */
     virtual ~ClearSpawnPointCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@ClearSpawnPointCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   1035235258
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLEARSPAWNPOINTCOMMAND
-#endif
     /**
      * @symbol ?setup@ClearSpawnPointCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -719182004
      */
     MCAPI static void setup(class CommandRegistry &);
 

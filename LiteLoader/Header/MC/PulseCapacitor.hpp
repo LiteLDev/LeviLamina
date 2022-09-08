@@ -31,64 +31,71 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2069468275
      */
     virtual ~PulseCapacitor();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getStrength@PulseCapacitor@@UEBAHXZ
+     * @hash   -1762067111
      */
     virtual int getStrength() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?setStrength@PulseCapacitor@@UEAAXH@Z
+     * @hash   -663251474
      */
     virtual void setStrength(int);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ
+     * @hash   691554075
      */
     virtual bool canConsumePowerAnyDirection() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?canConsumerPower@PulseCapacitor@@UEBA_NXZ
+     * @hash   1652748366
      */
     virtual bool canConsumerPower() const;
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z
+     * @hash   1139167705
      */
     virtual bool allowConnection(class CircuitSceneGraph &, class CircuitTrackingInfo const &, bool &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z
+     * @hash   -1436912785
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 17
-     * @symbol 
+     * @vftbl  17
+     * @hash   -329506710
      */
     virtual void __unk_vfn_17();
     /**
-     * @note   Virtual function table index: 20
-     * @symbol 
+     * @vftbl  20
+     * @hash   -307342206
      */
     virtual void __unk_vfn_20();
     /**
-     * @note   Virtual function table index: 22
+     * @vftbl  22
      * @symbol ?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ
+     * @hash   1449383661
      */
     virtual enum CircuitComponentType getCircuitComponentType() const;
     /**
-     * @note   Virtual function table index: 24
+     * @vftbl  24
      * @symbol ?getPoweroutDirection@PulseCapacitor@@UEBAEXZ
+     * @hash   -812910704
      */
     virtual unsigned char getPoweroutDirection() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PULSECAPACITOR
-#endif
     /**
      * @symbol ??0PulseCapacitor@@QEAA@XZ
+     * @hash   -215202731
      */
     MCAPI PulseCapacitor();
 

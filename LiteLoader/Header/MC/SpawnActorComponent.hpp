@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPAWNACTORCOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@SpawnActorComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   364015368
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getSpawnEntries@SpawnActorComponent@@QEAAAEAV?$vector@USpawnActorEntry@@V?$allocator@USpawnActorEntry@@@std@@@std@@XZ
+     * @hash   1847686934
      */
     MCAPI std::vector<struct SpawnActorEntry> & getSpawnEntries();
     /**
      * @symbol ?readAdditionalSaveData@SpawnActorComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -728742266
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 

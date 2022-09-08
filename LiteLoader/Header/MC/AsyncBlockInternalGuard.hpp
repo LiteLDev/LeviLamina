@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ASYNCBLOCKINTERNALGUARD
-#endif
     /**
      * @symbol ??0AsyncBlockInternalGuard@@QEAA@PEAUXAsyncBlock@@@Z
+     * @hash   -194795213
      */
     MCAPI AsyncBlockInternalGuard(struct XAsyncBlock *);
 

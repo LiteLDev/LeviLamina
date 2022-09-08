@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKPACKETEVENTCOORDINATOR
-#endif
     /**
      * @symbol ?sendPacketReceivedFrom@NetworkPacketEventCoordinator@@QEAAXAEBVPacketHeader@@AEBVPacket@@@Z
+     * @hash   247513889
      */
     MCAPI void sendPacketReceivedFrom(class PacketHeader const &, class Packet const &);
 

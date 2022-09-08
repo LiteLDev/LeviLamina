@@ -25,10 +25,12 @@ namespace FilterList {
 #undef AFTER_EXTRA
     /**
      * @symbol ?findFilterDefinition@FilterList@@YAPEBUDefinition@FilterTest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1335683389
      */
     MCAPI struct FilterTest::Definition const * findFilterDefinition(std::string const &);
     /**
      * @symbol ?initialize@FilterList@@YAXXZ
+     * @hash   1792908974
      */
     MCAPI void initialize();
 

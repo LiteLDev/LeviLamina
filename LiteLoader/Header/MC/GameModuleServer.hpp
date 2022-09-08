@@ -29,10 +29,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
-#endif
     /**
      * @symbol ??0GameModuleServer@@QEAA@XZ
+     * @hash   -376788691
      */
     MCAPI GameModuleServer();
 

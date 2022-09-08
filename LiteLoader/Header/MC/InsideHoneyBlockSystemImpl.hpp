@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSIDEHONEYBLOCKSYSTEMIMPL
-#endif
     /**
      * @symbol ?isSlidingDown@InsideHoneyBlockSystemImpl@@SA_NAEBVBlockPos@@AEBVVec3@@1AEBVVec2@@@Z
+     * @hash   -1886871358
      */
     MCAPI static bool isSlidingDown(class BlockPos const &, class Vec3 const &, class Vec3 const &, class Vec2 const &);
     /**
      * @symbol ?movementSystem@InsideHoneyBlockSystemImpl@@SAXAEBVStrictEntityContext@@AEBU?$InsideBlockWithPosAndBlockComponent@UHoneyBlockFlag@@@@AEBUAABBShapeComponent@@AEAUStateVectorComponent@@AEAUFallDistanceComponent@@@Z
+     * @hash   -1929780915
      */
     MCAPI static void movementSystem(class StrictEntityContext const &, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag> const &, struct AABBShapeComponent const &, struct StateVectorComponent &, struct FallDistanceComponent &);
 

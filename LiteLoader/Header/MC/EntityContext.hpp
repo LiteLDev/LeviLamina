@@ -32,20 +32,21 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCONTEXT
-#endif
     /**
      * @symbol ??0EntityContext@@QEAA@AEAVEntityRegistry@@VEntityId@@@Z
+     * @hash   -1816288866
      */
     MCAPI EntityContext(class EntityRegistry &, class EntityId);
     /**
      * @symbol ?getWeakRef@EntityContext@@QEBA?AV?$WeakRefT@UEntityRefTraits@@@@XZ
+     * @hash   -1475347449
      */
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 
 //protected:
     /**
      * @symbol ?_registry@EntityContext@@IEBAAEAVEntityRegistry@@XZ
+     * @hash   1684115492
      */
     MCAPI class EntityRegistry & _registry() const;
 

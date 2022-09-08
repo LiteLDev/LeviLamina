@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -903081707
      */
     virtual ~OpenDoorGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@OpenDoorGoal@@UEAA_NXZ
+     * @hash   -363962299
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@OpenDoorGoal@@UEAA_NXZ
+     * @hash   -302207885
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@OpenDoorGoal@@UEAAXXZ
+     * @hash   879840686
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@OpenDoorGoal@@UEAAXXZ
+     * @hash   985054590
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@OpenDoorGoal@@UEAAXXZ
+     * @hash   1600049513
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@OpenDoorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -2036140533
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORGOAL
-#endif
     /**
      * @symbol ??0OpenDoorGoal@@QEAA@AEAVMob@@_N@Z
+     * @hash   -618091069
      */
     MCAPI OpenDoorGoal(class Mob &, bool);
 

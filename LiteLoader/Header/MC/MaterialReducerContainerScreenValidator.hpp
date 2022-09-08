@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   442009752
      */
     virtual ~MaterialReducerContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0MaterialReducerContainerScreenValidator@@QEAA@XZ
+     * @hash   2126794198
      */
     MCAPI MaterialReducerContainerScreenValidator();
 

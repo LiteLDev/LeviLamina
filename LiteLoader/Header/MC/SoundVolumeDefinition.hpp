@@ -29,15 +29,16 @@ public:
     SoundVolumeDefinition(struct SoundVolumeDefinition const &) = delete;
     SoundVolumeDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDVOLUMEDEFINITION
-#endif
     /**
      * @symbol ?initialize@SoundVolumeDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1896755586
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@SoundVolumeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@USoundVolumeDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   1309662534
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SoundVolumeDefinition>> &);
 

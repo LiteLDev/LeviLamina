@@ -31,59 +31,65 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   868199811
      */
     virtual ~FollowOwnerGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@FollowOwnerGoal@@UEAA_NXZ
+     * @hash   681489051
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FollowOwnerGoal@@UEAA_NXZ
+     * @hash   1422058793
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@FollowOwnerGoal@@UEAAXXZ
+     * @hash   -579223756
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@FollowOwnerGoal@@UEAAXXZ
+     * @hash   310127476
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@FollowOwnerGoal@@UEAAXXZ
+     * @hash   150119887
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FollowOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1208934197
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1352995256
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?onPlayerDimensionChanged@FollowOwnerGoal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z
+     * @hash   2015189105
      */
     virtual void onPlayerDimensionChanged(class Player *, class AutomaticID<class Dimension, int>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWOWNERGOAL
-#endif
     /**
      * @symbol ??0FollowOwnerGoal@@QEAA@AEAVMob@@MMM_N1M@Z
+     * @hash   793954656
      */
     MCAPI FollowOwnerGoal(class Mob &, float, float, float, bool, bool, float);
 

@@ -24,10 +24,12 @@ namespace GoalSelectorUtility {
 #undef AFTER_EXTRA
     /**
      * @symbol ?tickGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
+     * @hash   1346784418
      */
     MCAPI void tickGoals(class Mob &, bool);
     /**
      * @symbol ?tryStartGoals@GoalSelectorUtility@@YAXAEAVMob@@_N@Z
+     * @hash   -363023918
      */
     MCAPI void tryStartGoals(class Mob &, bool);
 

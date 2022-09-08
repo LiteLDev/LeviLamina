@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTCOORDINATOR
-#endif
     /**
      * @symbol ?getServerNetworkEventHandler@ServerNetworkEventCoordinator@@QEAAAEAVServerNetworkEventHandler@@XZ
+     * @hash   -133730342
      */
     MCAPI class ServerNetworkEventHandler & getServerNetworkEventHandler();
     /**
      * @symbol ?registerServerNetworkEventHandler@ServerNetworkEventCoordinator@@QEAAX$$QEAV?$unique_ptr@VServerNetworkEventHandler@@U?$default_delete@VServerNetworkEventHandler@@@std@@@std@@@Z
+     * @hash   1849597432
      */
     MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler> &&);
     /**
      * @symbol ?sendEvent@ServerNetworkEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@@@Z
+     * @hash   -107517519
      */
     MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum CoordinatorResult>>);
     /**
      * @symbol ?sendMessage@ServerNetworkEventCoordinator@@QEAAXAEAUMessageEvent@@@Z
+     * @hash   -201619802
      */
     MCAPI void sendMessage(struct MessageEvent &);
 

@@ -30,37 +30,41 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -186416805
      */
     virtual ~Stopwatch();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?stop@Stopwatch@@UEAANXZ
+     * @hash   -785361713
      */
     virtual double stop();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?stopContinue@Stopwatch@@UEAANXZ
+     * @hash   936119190
      */
     virtual double stopContinue();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?print@Stopwatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -336813835
      */
     virtual void print(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPWATCH
-#endif
     /**
      * @symbol ??0Stopwatch@@QEAA@XZ
+     * @hash   486328377
      */
     MCAPI Stopwatch();
     /**
      * @symbol ?reset@Stopwatch@@QEAAXXZ
+     * @hash   1617568531
      */
     MCAPI void reset();
     /**
      * @symbol ?start@Stopwatch@@QEAAXXZ
+     * @hash   1316282457
      */
     MCAPI void start();
 

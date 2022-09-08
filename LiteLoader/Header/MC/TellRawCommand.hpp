@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1851941538
      */
     virtual ~TellRawCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@TellRawCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   924664671
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELLRAWCOMMAND
-#endif
     /**
      * @symbol ?setup@TellRawCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1399271876
      */
     MCAPI static void setup(class CommandRegistry &);
 

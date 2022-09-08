@@ -30,19 +30,24 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERCOMMAND
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1ServerCommand@@UEAA@XZ
+     * @hash   -769714584
      */
     MCVAPI ~ServerCommand();
 #endif
     /**
      * @symbol ?setup@ServerCommand@@SAXAEAVMinecraft@@@Z
+     * @hash   -518883642
      */
     MCAPI static void setup(class Minecraft &);
 
 //protected:
 
 protected:
-MCAPI static class Minecraft * mGame;
+    /**
+     * @symbol ?mGame@ServerCommand@@1PEAVMinecraft@@EA
+     * @hash   1961881618
+     */
+    MCAPI static class Minecraft * mGame;
 
 };

@@ -31,14 +31,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYTYPES
-#endif
     /**
      * @symbol ?parseJson@EntityTypes@@QEAA_NAEBVValue@Json@@@Z
+     * @hash   -1724197095
      */
     MCAPI bool parseJson(class Json::Value const &);
     /**
      * @symbol ??1EntityTypes@@QEAA@XZ
+     * @hash   1706031266
      */
     MCAPI ~EntityTypes();
 

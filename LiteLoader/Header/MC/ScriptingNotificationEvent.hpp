@@ -26,11 +26,11 @@ public:
     ScriptingNotificationEvent(struct ScriptingNotificationEvent const &) = delete;
     ScriptingNotificationEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTINGNOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1ScriptingNotificationEvent@@QEAA@XZ
+     * @hash   -1290013502
      */
     MCAPI ~ScriptingNotificationEvent();
 

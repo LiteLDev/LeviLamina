@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -812274246
      */
     virtual ~HellSpringFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@HellSpringFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -958409770
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HELLSPRINGFEATURE
-#endif
     /**
      * @symbol ??0HellSpringFeature@@QEAA@AEBVBlock@@_N@Z
+     * @hash   -1868251868
      */
     MCAPI HellSpringFeature(class Block const &, bool);
 

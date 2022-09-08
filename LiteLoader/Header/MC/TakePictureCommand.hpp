@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -108974434
      */
     virtual ~TakePictureCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@TakePictureCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -882236113
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAKEPICTURECOMMAND
-#endif
     /**
      * @symbol ?setup@TakePictureCommand@@SAXAEAVCommandRegistry@@@Z
+     * @hash   -1193136644
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -30,20 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WSASTARTUPSINGLETON
-#endif
     /**
      * @symbol ?AddRef@WSAStartupSingleton@@SAXXZ
+     * @hash   1801473605
      */
     MCAPI static void AddRef();
     /**
      * @symbol ?Deref@WSAStartupSingleton@@SAXXZ
+     * @hash   -2121154105
      */
     MCAPI static void Deref();
 
 //protected:
 
 protected:
-MCAPI static int refCount;
+    /**
+     * @symbol ?refCount@WSAStartupSingleton@@1HA
+     * @hash   237731562
+     */
+    MCAPI static int refCount;
 
 };

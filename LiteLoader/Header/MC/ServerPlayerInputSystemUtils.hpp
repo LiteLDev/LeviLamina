@@ -22,6 +22,7 @@ namespace ServerPlayerInputSystemUtils {
 #undef AFTER_EXTRA
     /**
      * @symbol ?_tickPlayerMovement@ServerPlayerInputSystemUtils@@YAXAEBUPlayerCurrentTickComponent@@AEAUServerPlayerMovementComponent@@AEAV?$EntityModifierT@VEntityRegistryBase@@VStrictEntityContext@@UServerPlayerCurrentMovementComponent@@@@AEAVStrictEntityContext@@@Z
+     * @hash   287649673
      */
     MCAPI void _tickPlayerMovement(struct PlayerCurrentTickComponent const &, struct ServerPlayerMovementComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ServerPlayerCurrentMovementComponent> &, class StrictEntityContext &);
 

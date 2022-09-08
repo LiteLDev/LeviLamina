@@ -31,74 +31,77 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1999088938
      */
     virtual ~BlockSourceListener();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?onSourceDestroyed@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
+     * @hash   137780538
      */
     virtual void onSourceDestroyed(class BlockSource &);
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?onBrightnessChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
+     * @hash   94587429
      */
     virtual void onBrightnessChanged(class BlockSource &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?onBlockEntityAboutToBeRemoved@BlockSourceListener@@UEAAXAEAVBlockSource@@V?$shared_ptr@VBlockActor@@@std@@@Z
+     * @hash   515448807
      */
     virtual void onBlockEntityAboutToBeRemoved(class BlockSource &, class std::shared_ptr<class BlockActor>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCELISTENER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onAreaChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@1@Z
+     * @hash   -527218935
      */
     MCVAPI void onAreaChanged(class BlockSource &, class BlockPos const &, class BlockPos const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onBlockChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@PEAVActor@@@Z
+     * @hash   -1366737051
      */
     MCVAPI void onBlockChanged(class BlockSource &, class BlockPos const &, unsigned int, class Block const &, class Block const &, int, struct ActorBlockSyncMessage const *, enum BlockChangedEventTarget, class Actor *);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onBlockEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVBlockActor@@@Z
+     * @hash   -2144222170
      */
     MCVAPI void onBlockEntityChanged(class BlockSource &, class BlockActor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onBlockEvent@BlockSourceListener@@UEAAXAEAVBlockSource@@HHHHH@Z
+     * @hash   1550700610
      */
     MCVAPI void onBlockEvent(class BlockSource &, int, int, int, int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onEntityChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEAVActor@@@Z
+     * @hash   -1640064400
      */
     MCVAPI void onEntityChanged(class BlockSource &, class Actor &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?onSourceCreated@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z
+     * @hash   1172913707
      */
     MCVAPI void onSourceCreated(class BlockSource &);
 #endif

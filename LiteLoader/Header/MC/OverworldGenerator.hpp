@@ -38,67 +38,69 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATOR
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?createNoiseCache@OverworldGenerator@@MEBA?AVChunkLocalNoiseCache@@VChunkPos@@@Z
+     * @hash   2047491145
      */
     MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?createWorldGenCache@OverworldGenerator@@MEBA?AVWorldGenCache@@VChunkPos@@@Z
+     * @hash   -1571222853
      */
     MCVAPI class WorldGenCache createWorldGenCache(class ChunkPos) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?decorateWorldGenLoadChunk@OverworldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z
+     * @hash   -109891274
      */
     MCVAPI void decorateWorldGenLoadChunk(class Biome &, class LevelChunk &, class BlockVolumeTarget &, class Random &, class ChunkPos const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getBiomeArea@OverworldGenerator@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z
+     * @hash   1041753028
      */
     MCVAPI class BiomeArea getBiomeArea(class BoundingBox const &, unsigned int) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getBlockVolumeDimensions@OverworldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ
+     * @hash   951708040
      */
     MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?loadChunk@OverworldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
+     * @hash   -39457862
      */
     MCVAPI void loadChunk(class LevelChunk &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?postProcess@OverworldGenerator@@UEAA_NAEAVChunkViewSource@@@Z
+     * @hash   960152492
      */
     MCVAPI bool postProcess(class ChunkViewSource &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?prepareAndComputeHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@AEAV?$vector@FV?$allocator@F@std@@@std@@_NH@Z
+     * @hash   1641308049
      */
     MCVAPI void prepareAndComputeHeights(class BlockVolume &, class ChunkPos const &, std::vector<short> &, bool, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?prepareHeights@OverworldGenerator@@UEAAXAEAVBlockVolume@@AEBVChunkPos@@_N@Z
+     * @hash   -267552784
      */
     MCVAPI void prepareHeights(class BlockVolume &, class ChunkPos const &, bool);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tryMakeAquifer@OverworldGenerator@@MEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z
+     * @hash   931091209
      */
     MCVAPI std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const &, class SurfaceLevelCache const &, short, short, short) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1OverworldGenerator@@UEAA@XZ
+     * @hash   -1657703100
      */
     MCVAPI ~OverworldGenerator();
 #endif
     /**
      * @symbol ??0OverworldGenerator@@QEAA@AEAVDimension@@_NV?$unique_ptr@VStructureFeatureRegistry@@U?$default_delete@VStructureFeatureRegistry@@@std@@@std@@@Z
+     * @hash   -1752067120
      */
     MCAPI OverworldGenerator(class Dimension &, bool, std::unique_ptr<class StructureFeatureRegistry>);
     /**
      * @symbol ?buildSurfaces@OverworldGenerator@@QEAAXAEAUThreadData@1@AEAVBlockVolume@@AEAVLevelChunk@@AEBVChunkPos@@AEBVSurfaceLevelCache@@@Z
+     * @hash   -233213356
      */
     MCAPI void buildSurfaces(struct OverworldGenerator::ThreadData &, class BlockVolume &, class LevelChunk &, class ChunkPos const &, class SurfaceLevelCache const &);
 

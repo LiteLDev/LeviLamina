@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCELOADMANAGER
-#endif
     /**
      * @symbol ?cancel@ResourceLoadManager@@QEAAXW4ResourceLoadType@@@Z
+     * @hash   1466719628
      */
     MCAPI void cancel(enum ResourceLoadType);
 

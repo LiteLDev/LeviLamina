@@ -30,24 +30,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1226505623
      */
     virtual ~ShootBowNode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@ShootBowNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
+     * @hash   -1469797750
      */
     virtual enum BehaviorStatus tick(class Actor &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeFromDefinition@ShootBowNode@@EEAAXAEAVActor@@@Z
+     * @hash   -2123174818
      */
     virtual void initializeFromDefinition(class Actor &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOOTBOWNODE
-#endif
     /**
      * @symbol ??0ShootBowNode@@QEAA@XZ
+     * @hash   488228681
      */
     MCAPI ShootBowNode();
 

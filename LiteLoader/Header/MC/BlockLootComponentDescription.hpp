@@ -26,31 +26,38 @@ public:
     BlockLootComponentDescription(struct BlockLootComponentDescription const &) = delete;
     BlockLootComponentDescription() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1566124546
      */
     virtual ~BlockLootComponentDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getName@BlockLootComponentDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   207058133
      */
     virtual std::string const & getName() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?initializeComponent@BlockLootComponentDescription@@UEBAXAEAVEntityContext@@@Z
+     * @hash   -1535504721
      */
     virtual void initializeComponent(class EntityContext &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLOOTCOMPONENTDESCRIPTION
-#endif
-MCAPI static std::string const NameID;
+    /**
+     * @symbol ?NameID@BlockLootComponentDescription@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
+     * @hash   1848229173
+     */
+    MCAPI static std::string const NameID;
     /**
      * @symbol ?bindType@BlockLootComponentDescription@@SAXXZ
+     * @hash   1035857519
      */
     MCAPI static void bindType();
     /**
      * @symbol ?registerVersionUpgrades@BlockLootComponentDescription@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   -1308363888
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

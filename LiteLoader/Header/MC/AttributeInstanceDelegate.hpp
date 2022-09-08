@@ -31,49 +31,55 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1535567164
      */
     virtual ~AttributeInstanceDelegate();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@AttributeInstanceDelegate@@UEAAXXZ
+     * @hash   -1223042226
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?notify@AttributeInstanceDelegate@@UEAAX_J@Z
+     * @hash   804190831
      */
     virtual void notify(__int64);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?willChange@AttributeInstanceDelegate@@UEAA_NMMAEBVAttributeBuff@@@Z
+     * @hash   -383658731
      */
     virtual bool willChange(float, float, class AttributeBuff const &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?change@AttributeInstanceDelegate@@UEAAMMMAEBVAttributeBuff@@@Z
+     * @hash   398799137
      */
     virtual float change(float, float, class AttributeBuff const &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getBuffValueWithModifiers@AttributeInstanceDelegate@@UEBAMAEBVAttributeBuff@@@Z
+     * @hash   1761767634
      */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEDELEGATE
-#endif
     /**
      * @symbol ??0AttributeInstanceDelegate@@QEAA@AEBVAttributeInstance@@@Z
+     * @hash   1227782417
      */
     MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
 
 //protected:
     /**
      * @symbol ?_getInstance@AttributeInstanceDelegate@@IEBAAEBVAttributeInstance@@XZ
+     * @hash   756719510
      */
     MCAPI class AttributeInstance const & _getInstance() const;
     /**
      * @symbol ?_getMutableInstance@AttributeInstanceDelegate@@IEBAPEAVAttributeInstance@@XZ
+     * @hash   217804989
      */
     MCAPI class AttributeInstance * _getMutableInstance() const;
 

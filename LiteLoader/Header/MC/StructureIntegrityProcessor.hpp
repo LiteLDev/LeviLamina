@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREINTEGRITYPROCESSOR
-#endif
     /**
      * @symbol ??0StructureIntegrityProcessor@@QEAA@MI@Z
+     * @hash   -1579643000
      */
     MCAPI StructureIntegrityProcessor(float, unsigned int);
     /**
      * @symbol ?generateFlagsForIndices@StructureIntegrityProcessor@@QEBA?AV?$vector@_NV?$allocator@_N@std@@@std@@HH@Z
+     * @hash   1558033608
      */
     MCAPI std::vector<bool> generateFlagsForIndices(int, int) const;
 

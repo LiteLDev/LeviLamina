@@ -31,49 +31,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1966170696
      */
     virtual ~FollowParentGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@FollowParentGoal@@UEAA_NXZ
+     * @hash   532992482
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@FollowParentGoal@@UEAA_NXZ
+     * @hash   976883152
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@FollowParentGoal@@UEAAXXZ
+     * @hash   210273035
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@FollowParentGoal@@UEAAXXZ
+     * @hash   -1646613893
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@FollowParentGoal@@UEAAXXZ
+     * @hash   -415547322
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@FollowParentGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2059174270
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOLLOWPARENTGOAL
-#endif
     /**
      * @symbol ??0FollowParentGoal@@QEAA@AEAVMob@@M@Z
+     * @hash   1203881202
      */
     MCAPI FollowParentGoal(class Mob &, float);
 

@@ -26,11 +26,11 @@ public:
     DeserializedChunkLoadedRequest(struct DeserializedChunkLoadedRequest const &) = delete;
     DeserializedChunkLoadedRequest() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESERIALIZEDCHUNKLOADEDREQUEST
-#endif
     /**
      * @symbol ??1DeserializedChunkLoadedRequest@@QEAA@XZ
+     * @hash   -1494295268
      */
     MCAPI ~DeserializedChunkLoadedRequest();
 

@@ -28,15 +28,16 @@ public:
     BlockRotationComponent(struct BlockRotationComponent const &) = delete;
     BlockRotationComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKROTATIONCOMPONENT
-#endif
     /**
      * @symbol ??0BlockRotationComponent@@QEAA@AEBVVec3@@@Z
+     * @hash   1403491781
      */
     MCAPI BlockRotationComponent(class Vec3 const &);
     /**
      * @symbol ?setRotationDegrees@BlockRotationComponent@@QEAAXAEBVVec3@@@Z
+     * @hash   -487878590
      */
     MCAPI void setRotationDegrees(class Vec3 const &);
 

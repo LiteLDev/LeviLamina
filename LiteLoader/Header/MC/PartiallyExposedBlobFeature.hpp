@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1431427221
      */
     virtual ~PartiallyExposedBlobFeature();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?place@PartiallyExposedBlobFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z
+     * @hash   -1497390266
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARTIALLYEXPOSEDBLOBFEATURE
-#endif
 
 //private:
     /**
      * @symbol ?isWaterOrAir@PartiallyExposedBlobFeature@@CA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@@Z
+     * @hash   -959223746
      */
     MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const &, class BlockPos const &);
 

@@ -31,59 +31,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   811474562
      */
     virtual ~BreatheAirGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@BreatheAirGoal@@UEAA_NXZ
+     * @hash   -2019340904
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@BreatheAirGoal@@UEAA_NXZ
+     * @hash   -1961653818
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?canBeInterrupted@BreatheAirGoal@@UEAA_NXZ
+     * @hash   23910320
      */
     virtual bool canBeInterrupted();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@BreatheAirGoal@@UEAAXXZ
+     * @hash   -571620223
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@BreatheAirGoal@@UEAAXXZ
+     * @hash   477391756
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@BreatheAirGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1186104248
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREATHEAIRGOAL
-#endif
     /**
      * @symbol ??0BreatheAirGoal@@QEAA@AEAVMob@@@Z
+     * @hash   1526801093
      */
     MCAPI BreatheAirGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_determineApproximateDepth@BreatheAirGoal@@AEAAHXZ
+     * @hash   -1773192020
      */
     MCAPI int _determineApproximateDepth();
     /**
      * @symbol ?_findAirPosition@BreatheAirGoal@@AEAAXXZ
+     * @hash   827889263
      */
     MCAPI void _findAirPosition();
 

@@ -28,15 +28,16 @@ public:
     PlayerSnapshotComponent(struct PlayerSnapshotComponent const &) = delete;
     PlayerSnapshotComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSNAPSHOTCOMPONENT
-#endif
     /**
      * @symbol ?hasStateFlag@PlayerSnapshotComponent@@QEBA_NW4PlayerSnapshotStateFlag@@@Z
+     * @hash   505181625
      */
     MCAPI bool hasStateFlag(enum PlayerSnapshotStateFlag) const;
     /**
      * @symbol ?setStateFlag@PlayerSnapshotComponent@@QEAAXW4PlayerSnapshotStateFlag@@_N@Z
+     * @hash   690468381
      */
     MCAPI void setStateFlag(enum PlayerSnapshotStateFlag, bool);
 

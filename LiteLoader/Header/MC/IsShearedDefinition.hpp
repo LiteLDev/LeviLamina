@@ -29,19 +29,21 @@ public:
     IsShearedDefinition(struct IsShearedDefinition const &) = delete;
     IsShearedDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISSHEAREDDEFINITION
-#endif
     /**
      * @symbol ?initialize@IsShearedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   89831214
      */
     MCAPI void initialize(class EntityContext &);
     /**
      * @symbol ?uninitialize@IsShearedDefinition@@QEAAXAEAVEntityContext@@@Z
+     * @hash   -1651420548
      */
     MCAPI void uninitialize(class EntityContext &);
     /**
      * @symbol ?buildSchema@IsShearedDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UIsShearedDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1360486496
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsShearedDefinition>> &);
 

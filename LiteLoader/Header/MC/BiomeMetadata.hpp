@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEMETADATA
-#endif
     /**
      * @symbol ??1BiomeMetadata@@QEAA@XZ
+     * @hash   1763513771
      */
     MCAPI ~BiomeMetadata();
 

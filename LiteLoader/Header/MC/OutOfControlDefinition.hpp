@@ -31,18 +31,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OUTOFCONTROLDEFINITION
-#endif
     /**
      * @symbol ?initialize@OutOfControlDefinition@@QEBAXAEAVEntityContext@@AEAVOutOfControlComponent@@@Z
+     * @hash   -1427398759
      */
     MCAPI void initialize(class EntityContext &, class OutOfControlComponent &) const;
     /**
      * @symbol ?uninitialize@OutOfControlDefinition@@QEBAXAEAVEntityContext@@AEAVOutOfControlComponent@@@Z
+     * @hash   -876866647
      */
     MCAPI void uninitialize(class EntityContext &, class OutOfControlComponent &) const;
     /**
      * @symbol ?buildSchema@OutOfControlDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@VOutOfControlDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   839422102
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OutOfControlDefinition>> &);
 

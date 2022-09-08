@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TESTCONFIG
-#endif
     /**
      * @symbol ?bindType@TestConfig@@SAXXZ
+     * @hash   1997337699
      */
     MCAPI static void bindType();
 

@@ -28,25 +28,27 @@ public:
     ActorPropertiesDescription(struct ActorPropertiesDescription const &) = delete;
     ActorPropertiesDescription() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2051398046
      */
     virtual ~ActorPropertiesDescription();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getJsonName@ActorPropertiesDescription@@UEBAPEBDXZ
+     * @hash   324104272
      */
     virtual char const * getJsonName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
-#endif
     /**
      * @symbol ??4ActorPropertiesDescription@@QEAAAEAU0@AEBU0@@Z
+     * @hash   1989277734
      */
     MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
     /**
      * @symbol ?parse@ActorPropertiesDescription@@QEAAXAEAVValue@Json@@AEBVSemVersion@@@Z
+     * @hash   -390783249
      */
     MCAPI void parse(class Json::Value &, class SemVersion const &);
 

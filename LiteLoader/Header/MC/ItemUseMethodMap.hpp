@@ -30,16 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMUSEMETHODMAP
-#endif
     /**
      * @symbol ?getItemUseMethodName@ItemUseMethodMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemUseMethod@@@Z
+     * @hash   1760248951
      */
     MCAPI static std::string const & getItemUseMethodName(enum ItemUseMethod);
 
 //private:
 
 private:
-MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string> const mMap;
+    /**
+     * @symbol ?mMap@ItemUseMethodMap@@0V?$BidirectionalUnorderedMap@W4ItemUseMethod@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
+     * @hash   -276383830
+     */
+    MCAPI static class BidirectionalUnorderedMap<enum ItemUseMethod, std::string> const mMap;
 
 };

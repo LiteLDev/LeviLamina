@@ -37,27 +37,45 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKPOS
-#endif
     /**
      * @symbol ??0ChunkPos@@QEAA@AEBVVec3@@@Z
+     * @hash   544910954
      */
     MCAPI ChunkPos(class Vec3 const &);
     /**
      * @symbol ??0ChunkPos@@QEAA@AEBVBlockPos@@@Z
+     * @hash   111873018
      */
     MCAPI ChunkPos(class BlockPos const &);
     /**
      * @symbol ?isWithinBounds@ChunkPos@@QEBA_NAEBV1@0@Z
+     * @hash   -1570986589
      */
     MCAPI bool isWithinBounds(class ChunkPos const &, class ChunkPos const &) const;
     /**
      * @symbol ?toBlockSpaceVec3@ChunkPos@@QEBA?AVVec3@@M@Z
+     * @hash   878086469
      */
     MCAPI class Vec3 toBlockSpaceVec3(float) const;
-MCAPI static class ChunkPos const INVALID;
-MCAPI static class ChunkPos const MAX;
-MCAPI static class ChunkPos const MIN;
-MCAPI static class ChunkPos const ONE;
+    /**
+     * @symbol ?INVALID@ChunkPos@@2V1@B
+     * @hash   1845128825
+     */
+    MCAPI static class ChunkPos const INVALID;
+    /**
+     * @symbol ?MAX@ChunkPos@@2V1@B
+     * @hash   263670569
+     */
+    MCAPI static class ChunkPos const MAX;
+    /**
+     * @symbol ?MIN@ChunkPos@@2V1@B
+     * @hash   -596557855
+     */
+    MCAPI static class ChunkPos const MIN;
+    /**
+     * @symbol ?ONE@ChunkPos@@2V1@B
+     * @hash   951975025
+     */
+    MCAPI static class ChunkPos const ONE;
 
 };

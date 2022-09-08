@@ -32,29 +32,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -287220291
      */
     virtual ~CompressedNetworkPeer();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?sendPacket@CompressedNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
+     * @hash   -1082732850
      */
     virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?receivePacket@CompressedNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
+     * @hash   -981871512
      */
     virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getNetworkStatus@CompressedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ
+     * @hash   1808106975
      */
     virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPRESSEDNETWORKPEER
-#endif
     /**
      * @symbol ??0CompressedNetworkPeer@@QEAA@V?$shared_ptr@VNetworkPeer@@@std@@@Z
+     * @hash   -460898679
      */
     MCAPI CompressedNetworkPeer(class std::shared_ptr<class NetworkPeer>);
 

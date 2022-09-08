@@ -29,14 +29,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONSTATESYSTEM
-#endif
     /**
      * @symbol ?isDimensionReady@DimensionStateSystem@@SA_NAEBVEntityContext@@@Z
+     * @hash   1747033903
      */
     MCAPI static bool isDimensionReady(class EntityContext const &);
     /**
      * @symbol ?setDimensionState@DimensionStateSystem@@SAXAEAVEntityContext@@W4DimensionState@DimensionStateComponent@@@Z
+     * @hash   804301925
      */
     MCAPI static void setDimensionState(class EntityContext &, enum DimensionStateComponent::DimensionState);
 

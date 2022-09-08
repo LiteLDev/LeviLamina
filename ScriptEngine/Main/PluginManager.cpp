@@ -3,9 +3,8 @@
 #include <Global.hpp>
 #include <Configs.h>
 #include <filesystem>
-#include <Engine/GlobalShareData.h>
+#include <utility>
 #include <Engine/LocalShareData.h>
-#include <Engine/MessageSystem.h>
 #include <Engine/RemoteCall.h>
 #include <Engine/TimeTaskSystem.h>
 #include <Engine/EngineManager.h>
@@ -43,7 +42,7 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
         return true;
 
     if (!filesystem::exists(str2wstr(fileOrDirPath))) {
-        logger.error("Plugin no found! Check the path you input again.");
+        logger.error("Plugin not found! Check the path you input again.");
         return false;
     }
 
@@ -276,7 +275,7 @@ bool PluginManager::reloadAllPlugins() {
 }
 
 LL::Plugin* PluginManager::getPlugin(std::string name) {
-    return LL::PluginManager::getPlugin(name, true);
+    return LL::PluginManager::getPlugin(std::move(name), true);
 }
 
 // Get all plugins of current language
@@ -311,12 +310,12 @@ std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllPlugins() {
 bool PluginManager::registerPlugin(std::string filePath, std::string name, std::string desc,
                                    LL::Version version, std::map<std::string, std::string> others) {
     others["PluginType"] = "Script Plugin";
-    others["PluginFilePath"] = filePath;
-    return LL::PluginManager::registerPlugin(NULL, name, desc, version, others);
+    others["PluginFilePath"] = std::move(filePath);
+    return LL::PluginManager::registerPlugin(nullptr, std::move(name), std::move(desc), version, others);
 }
 
 bool PluginManager::unRegisterPlugin(std::string name) {
-    return LL::PluginManager::unRegisterPlugin(name);
+    return LL::PluginManager::unRegisterPlugin(std::move(name));
 }
 
 // Get plugin backend type from its file path (single file plugin)
@@ -339,19 +338,19 @@ std::string PluginManager::getPluginBackendType(const std::string& path)
                 if (id.empty())
                     continue;
 
-                if (id.find("*") != std::string::npos)
+                if (id.find('*') != std::string::npos)
                 {
                     // match identifier like "*.py"
                     if (filesExts.empty())
                     {
                         // build filesExts list
                         std::filesystem::directory_iterator files(filePath);
-                        for (auto& i : files) {
-                            if (i.is_regular_file())
-                                filesExts.emplace_back(UTF82String(i.path().extension().u8string()));
+                        for (auto& item : files) {
+                            if (item.is_regular_file())
+                                filesExts.emplace_back(UTF82String(item.path().extension().u8string()));
                         }
                     }
-                    string compareExt = id.substr(id.find_last_of("."));
+                    string compareExt = id.substr(id.find_last_of('.'));
                     if (std::find(filesExts.begin(), filesExts.end(), compareExt) != filesExts.end())
                     {
                         // match

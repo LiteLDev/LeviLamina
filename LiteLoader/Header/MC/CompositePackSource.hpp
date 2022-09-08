@@ -31,51 +31,56 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1368884407
      */
     virtual ~CompositePackSource();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?forEachPackConst@CompositePackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z
+     * @hash   189180338
      */
     virtual void forEachPackConst(class std::function<void (class Pack const &)>) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?forEachPack@CompositePackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z
+     * @hash   -1195725469
      */
     virtual void forEachPack(class std::function<void (class Pack &)>);
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1356689340
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?load@CompositePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
+     * @hash   452280632
      */
     virtual class PackSourceReport load(class IPackManifestFactory &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOSITEPACKSOURCE
-#endif
     /**
      * @symbol ??0CompositePackSource@@QEAA@XZ
+     * @hash   -455847433
      */
     MCAPI CompositePackSource();
     /**
      * @symbol ??0CompositePackSource@@QEAA@$$QEAV?$vector@PEAVPackSource@@V?$allocator@PEAVPackSource@@@std@@@std@@@Z
+     * @hash   -1852568152
      */
     MCAPI CompositePackSource(std::vector<class PackSource *> &&);
     /**
      * @symbol ?addPackSource@CompositePackSource@@QEAAXPEAVPackSource@@@Z
+     * @hash   -1223223243
      */
     MCAPI void addPackSource(class PackSource *);
     /**
      * @symbol ?clear@CompositePackSource@@QEAAXXZ
+     * @hash   -2077782193
      */
     MCAPI void clear();
 

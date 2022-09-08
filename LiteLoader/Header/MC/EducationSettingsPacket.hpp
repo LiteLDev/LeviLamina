@@ -31,38 +31,42 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1298356513
      */
     virtual ~EducationSettingsPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@EducationSettingsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   2019034043
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@EducationSettingsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -2012832152
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@EducationSettingsPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   1620539871
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@EducationSettingsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   916258527
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONSETTINGSPACKET
-#endif
     /**
      * @symbol ??0EducationSettingsPacket@@QEAA@XZ
+     * @hash   951267423
      */
     MCAPI EducationSettingsPacket();
     /**
      * @symbol ??0EducationSettingsPacket@@QEAA@UEducationLevelSettings@@@Z
+     * @hash   -153605598
      */
     MCAPI EducationSettingsPacket(struct EducationLevelSettings);
 

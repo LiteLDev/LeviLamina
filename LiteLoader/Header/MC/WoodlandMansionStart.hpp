@@ -31,25 +31,26 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   383904661
      */
     virtual ~WoodlandMansionStart();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?postProcess@WoodlandMansionStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
+     * @hash   -1352513912
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WOODLANDMANSIONSTART
-#endif
 
 //private:
     /**
      * @symbol ?_create@WoodlandMansionStart@@AEAAXAEAVDimension@@AEAVRandom@@HH@Z
+     * @hash   -118120609
      */
     MCAPI void _create(class Dimension &, class Random &, int, int);
     /**
      * @symbol ?_makeStairs@WoodlandMansionStart@@AEAAXAEBVBlockPos@@AEBVBlock@@EEAEAVBlockSource@@AEBVBoundingBox@@@Z
+     * @hash   -1332458560
      */
     MCAPI void _makeStairs(class BlockPos const &, class Block const &, unsigned char, unsigned char, class BlockSource &, class BoundingBox const &);
 

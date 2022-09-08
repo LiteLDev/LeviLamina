@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGER
-#endif
     /**
      * @symbol ??1OnPlacedTrigger@@QEAA@XZ
+     * @hash   956039960
      */
     MCAPI ~OnPlacedTrigger();
 

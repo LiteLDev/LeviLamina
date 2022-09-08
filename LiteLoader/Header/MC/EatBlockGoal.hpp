@@ -31,53 +31,59 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1500946670
      */
     virtual ~EatBlockGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@EatBlockGoal@@UEAA_NXZ
+     * @hash   -355359048
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@EatBlockGoal@@UEAA_NXZ
+     * @hash   -293573882
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@EatBlockGoal@@UEAAXXZ
+     * @hash   1252269761
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@EatBlockGoal@@UEAAXXZ
+     * @hash   1357591297
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@EatBlockGoal@@UEAAXXZ
+     * @hash   1972493964
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@EatBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   167111432
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EATBLOCKGOAL
-#endif
     /**
      * @symbol ??0EatBlockGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -1657570219
      */
     MCAPI EatBlockGoal(class Mob &);
     /**
      * @symbol ?getEatSuccessChance@EatBlockGoal@@QEBAMAEAVActor@@@Z
+     * @hash   1513618489
      */
     MCAPI float getEatSuccessChance(class Actor &) const;
 

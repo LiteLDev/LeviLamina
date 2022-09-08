@@ -32,199 +32,201 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -868666217
      */
     virtual ~NullSoundPlayer();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1408478591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1407555070
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1406631549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1405708028
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -1402937465
      */
     virtual void __unk_vfn_7();
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1352995256
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1352071735
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 10
-     * @symbol 
+     * @vftbl  10
+     * @hash   -335971357
      */
     virtual void __unk_vfn_10();
     /**
-     * @note   Virtual function table index: 11
-     * @symbol 
+     * @vftbl  11
+     * @hash   -384066524
      */
     virtual void __unk_vfn_11();
     /**
-     * @note   Virtual function table index: 12
-     * @symbol 
+     * @vftbl  12
+     * @hash   -383143003
      */
     virtual void __unk_vfn_12();
     /**
-     * @note   Virtual function table index: 13
-     * @symbol 
+     * @vftbl  13
+     * @hash   -15772458
      */
     virtual void __unk_vfn_13();
     /**
-     * @note   Virtual function table index: 14
-     * @symbol 
+     * @vftbl  14
+     * @hash   -14848937
      */
     virtual void __unk_vfn_14();
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?getCurrentlyPlayingMusicName@NullSoundPlayer@@UEAA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   382530901
      */
     virtual class Core::PathBuffer<std::string> const getCurrentlyPlayingMusicName();
     /**
-     * @note   Virtual function table index: 16
-     * @symbol 
+     * @vftbl  16
+     * @hash   -330430231
      */
     virtual void __unk_vfn_16();
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?registerLoop@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXAEAULoopingSoundState@@@Z@3@MM@Z
+     * @hash   -24183215
      */
     virtual unsigned __int64 registerLoop(std::string const &, class std::function<void (struct LoopingSoundState &)>, float, float);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSOUNDPLAYER
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fadeOut@NullSoundPlayer@@UEAAX_KM@Z
+     * @hash   39157278
      */
     MCVAPI void fadeOut(unsigned __int64, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?fadeToStopMusic@NullSoundPlayer@@UEAAXM@Z
+     * @hash   -879475048
      */
     MCVAPI void fadeToStopMusic(float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getItem@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVSoundItem@@@Z
+     * @hash   2067744199
      */
     MCVAPI bool getItem(std::string const &, class Core::Path const &, class SoundItem &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isLoadingMusic@NullSoundPlayer@@UEBA_NXZ
+     * @hash   325964226
      */
     MCVAPI bool isLoadingMusic() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isPlayingMusic@NullSoundPlayer@@UEBA_NAEBVPath@Core@@@Z
+     * @hash   26519811
      */
     MCVAPI bool isPlayingMusic(class Core::Path const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isPlayingMusicEvent@NullSoundPlayer@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1064869570
      */
     MCVAPI bool isPlayingMusicEvent(std::string const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isPlayingSound@NullSoundPlayer@@UEBA_N_K@Z
+     * @hash   1677996168
      */
     MCVAPI bool isPlayingSound(unsigned __int64) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?play@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
+     * @hash   -1931575230
      */
     MCVAPI unsigned __int64 play(std::string const &, class Vec3 const &, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playAttached@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$function@$$A6AXAEAUSoundInstanceProperties@@@Z@3@@Z
+     * @hash   886640202
      */
     MCVAPI unsigned __int64 playAttached(std::string const &, class std::function<void (struct SoundInstanceProperties &)> &&);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z
+     * @hash   -99529549
      */
     MCVAPI void playMusic(std::string const &, float, unsigned int &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@Z
+     * @hash   763472613
      */
     MCVAPI void playMusic(std::string const &, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playUI@NullSoundPlayer@@UEAA_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MM@Z
+     * @hash   2117878140
      */
     MCVAPI unsigned __int64 playUI(std::string const &, float, float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z
+     * @hash   642881862
      */
     MCVAPI void setMusicVolumeMultiplier(float);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stop@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1317502836
      */
     MCVAPI void stop(std::string const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stop@NullSoundPlayer@@UEAAX_K@Z
+     * @hash   553359828
      */
     MCVAPI void stop(unsigned __int64);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stopAllDelayedSoundActions@NullSoundPlayer@@UEAAXXZ
+     * @hash   20481167
      */
     MCVAPI void stopAllDelayedSoundActions();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stopAllSounds@NullSoundPlayer@@UEAAXXZ
+     * @hash   -1347183935
      */
     MCVAPI void stopAllSounds();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stopMusic@NullSoundPlayer@@UEAAXXZ
+     * @hash   -890132063
      */
     MCVAPI void stopMusic();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tryGetLoopingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@ULoopingSoundAttributes@@@std@@_K@Z
+     * @hash   -1634134035
      */
     MCVAPI class std::optional<struct LoopingSoundAttributes> tryGetLoopingSoundAttributes(unsigned __int64) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tryGetPlayingSoundAttributes@NullSoundPlayer@@UEBA?AV?$optional@UPlayingSoundAttributes@@@std@@_K@Z
+     * @hash   -2105552179
      */
     MCVAPI class std::optional<struct PlayingSoundAttributes> tryGetPlayingSoundAttributes(unsigned __int64) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?unregisterLoop@NullSoundPlayer@@UEAAX_K_N@Z
+     * @hash   2144565206
      */
     MCVAPI void unregisterLoop(unsigned __int64, bool);
 #endif

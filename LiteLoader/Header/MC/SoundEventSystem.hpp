@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOUNDEVENTSYSTEM
-#endif
     /**
      * @symbol ?_tick@SoundEventSystem@@SAXAEBVStrictEntityContext@@AEAVLevelComponent@@AEAUSoundEventRequestQueueComponent@@@Z
+     * @hash   -1611825116
      */
     MCAPI static void _tick(class StrictEntityContext const &, class LevelComponent &, struct SoundEventRequestQueueComponent &);
     /**
      * @symbol ?create@SoundEventSystem@@SA?AUTickingSystemWithInfo@@XZ
+     * @hash   1771634512
      */
     MCAPI static struct TickingSystemWithInfo create();
 

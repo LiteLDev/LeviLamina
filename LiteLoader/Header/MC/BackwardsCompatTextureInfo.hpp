@@ -27,10 +27,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKWARDSCOMPATTEXTUREINFO
-#endif
     /**
      * @symbol ??0BackwardsCompatTextureInfo@@QEAA@XZ
+     * @hash   -701211341
      */
     MCAPI BackwardsCompatTextureInfo();
 

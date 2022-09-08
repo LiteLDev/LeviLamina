@@ -31,84 +31,97 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1471461987
      */
     virtual ~PathNavigation();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initializeInternal@PathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z
+     * @hash   -1802636430
      */
     virtual void initializeInternal(class Mob &, struct NavigationDescription *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   915601821
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getTempMobPos@PathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z
+     * @hash   -927963767
      */
     virtual class Vec3 getTempMobPos(class Mob const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?createPath@PathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z
+     * @hash   -2102309234
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?createPath@PathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z
+     * @hash   -1389165677
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEBVVec3@@M@Z
+     * @hash   -1647254898
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Vec3 const &, float);
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z
+     * @hash   -452879303
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?moveTo@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@V?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@M@Z
+     * @hash   2072702291
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, std::unique_ptr<class Path>, float);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?stop@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   -645519214
      */
     virtual void stop(class NavigationComponent &, class Mob &);
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?travel@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z
+     * @hash   1605072964
      */
     virtual bool travel(class NavigationComponent &, class Mob &, float &, float &, float &);
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?canUpdatePath@PathNavigation@@MEBA_NAEBVMob@@@Z
+     * @hash   -440620063
      */
     virtual bool canUpdatePath(class Mob const &) const;
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?updatePath@PathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z
+     * @hash   -551113634
      */
     virtual void updatePath(class NavigationComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PATHNAVIGATION
-#endif
 
 //protected:
     /**
      * @symbol ?_getHighestBlockHeight@PathNavigation@@IEBAMAEAVBlockSource@@AEAVMob@@AEBVVec3@@AEBVVec2@@@Z
+     * @hash   1382615953
      */
     MCAPI float _getHighestBlockHeight(class BlockSource &, class Mob &, class Vec3 const &, class Vec2 const &) const;
     /**
      * @symbol ?_isPositionOnlyInAir@PathNavigation@@IEBA_NAEBVBlockSource@@AEBVVec3@@AEBVVec2@@@Z
+     * @hash   74277302
      */
     MCAPI bool _isPositionOnlyInAir(class BlockSource const &, class Vec3 const &, class Vec2 const &) const;
     /**
      * @symbol ?isFree@PathNavigation@@IEAA?AW4NodeType@@AEAVNavigationComponent@@AEAVMob@@AEBVBlockPos@@22W4CanJumpIntoNode@@@Z
+     * @hash   663903687
      */
     MCAPI enum NodeType isFree(class NavigationComponent &, class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
 

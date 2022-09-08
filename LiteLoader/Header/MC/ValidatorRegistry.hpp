@@ -30,16 +30,16 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VALIDATORREGISTRY
-#endif
     /**
      * @symbol ?registerValidators@ValidatorRegistry@@SAXV?$basic_string_span@$$CBD$0?0@gsl@@V?$function@$$A6A?AVContentTierIncompatibleReason@@AEBVPackInstance@@AEBVContentTierInfo@@@Z@std@@V?$function@$$A6A?AVContentTierIncompatibleReason@@AEBUSubpackInfo@@AEBVContentTierInfo@@@Z@5@@Z
+     * @hash   -1214035024
      */
     MCAPI static void registerValidators(class gsl::basic_string_span<char const, -1>, class std::function<class ContentTierIncompatibleReason (class PackInstance const &, class ContentTierInfo const &)>, class std::function<class ContentTierIncompatibleReason (struct SubpackInfo const &, class ContentTierInfo const &)>);
 
 //private:
     /**
      * @symbol ?_get@ValidatorRegistry@@CA?AV?$ServiceReference@VValidatorRegistry@@@@XZ
+     * @hash   -2097042332
      */
     MCAPI static class ServiceReference<class ValidatorRegistry> _get();
 

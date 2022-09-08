@@ -31,67 +31,76 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1983079836
      */
     virtual ~GoHomeGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@GoHomeGoal@@UEAA_NXZ
+     * @hash   -1982026010
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@GoHomeGoal@@UEAA_NXZ
+     * @hash   -1509186892
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@GoHomeGoal@@UEAAXXZ
+     * @hash   946651567
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@GoHomeGoal@@UEAAXXZ
+     * @hash   1260770735
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@GoHomeGoal@@UEAAXXZ
+     * @hash   742440378
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@GoHomeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1407694710
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOHOMEGOAL
-#endif
     /**
      * @symbol ??0GoHomeGoal@@QEAA@AEAVMob@@@Z
+     * @hash   565966099
      */
     MCAPI GoHomeGoal(class Mob &);
 
 //private:
     /**
      * @symbol ?_getHomeDimension@GoHomeGoal@@AEBA?AV?$AutomaticID@VDimension@@H@@XZ
+     * @hash   -690932929
      */
     MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
     /**
      * @symbol ?_getHomePos@GoHomeGoal@@AEBA?AVBlockPos@@XZ
+     * @hash   714143649
      */
     MCAPI class BlockPos _getHomePos() const;
     /**
      * @symbol ?_hasRequiredComponents@GoHomeGoal@@AEBA_NXZ
+     * @hash   1720552203
      */
     MCAPI bool _hasRequiredComponents() const;
     /**
      * @symbol ?_triggerOnFailedEvents@GoHomeGoal@@AEAAXXZ
+     * @hash   -95372048
      */
     MCAPI void _triggerOnFailedEvents();
 

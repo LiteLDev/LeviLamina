@@ -29,22 +29,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PARAMETERLIST
-#endif
     /**
      * @symbol ??0ParameterList@@QEAA@AEBV?$vector@UBiomeNoiseTarget@@V?$allocator@UBiomeNoiseTarget@@@std@@@std@@@Z
+     * @hash   136144492
      */
     MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const &);
     /**
      * @symbol ??0ParameterList@@QEAA@$$QEAV0@@Z
+     * @hash   475239879
      */
     MCAPI ParameterList(class ParameterList &&);
     /**
      * @symbol ?findTarget@ParameterList@@QEBAPEAVBiome@@AEBUTargetPoint@@PEAUHint@RTree@@@Z
+     * @hash   -1636457454
      */
     MCAPI class Biome * findTarget(struct TargetPoint const &, struct RTree::Hint *) const;
     /**
      * @symbol ??1ParameterList@@QEAA@XZ
+     * @hash   1254568291
      */
     MCAPI ~ParameterList();
 

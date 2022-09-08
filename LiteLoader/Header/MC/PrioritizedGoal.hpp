@@ -30,30 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRIORITIZEDGOAL
-#endif
     /**
      * @symbol ?getPriority@PrioritizedGoal@@QEBAHXZ
+     * @hash   -1590715780
      */
     MCAPI int getPriority() const;
     /**
      * @symbol ?getToStart@PrioritizedGoal@@QEBA_NXZ
+     * @hash   -1586674896
      */
     MCAPI bool getToStart() const;
     /**
      * @symbol ?getUsed@PrioritizedGoal@@QEBA_NXZ
+     * @hash   1578691166
      */
     MCAPI bool getUsed() const;
     /**
      * @symbol ?setToStart@PrioritizedGoal@@QEAAX_N@Z
+     * @hash   -1996054356
      */
     MCAPI void setToStart(bool);
     /**
      * @symbol ?setUsed@PrioritizedGoal@@QEAAX_N@Z
+     * @hash   -904052642
      */
     MCAPI void setUsed(bool);
     /**
      * @symbol ??1PrioritizedGoal@@QEAA@XZ
+     * @hash   -1917316300
      */
     MCAPI ~PrioritizedGoal();
 

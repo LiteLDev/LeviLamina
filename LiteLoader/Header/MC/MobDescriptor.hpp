@@ -25,15 +25,16 @@ public:
     struct MobDescriptor& operator=(struct MobDescriptor const &) = delete;
     MobDescriptor() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBDESCRIPTOR
-#endif
     /**
      * @symbol ??0MobDescriptor@@QEAA@AEBU0@@Z
+     * @hash   -834854715
      */
     MCAPI MobDescriptor(struct MobDescriptor const &);
     /**
      * @symbol ??1MobDescriptor@@QEAA@XZ
+     * @hash   937844219
      */
     MCAPI ~MobDescriptor();
 

@@ -31,55 +31,61 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   2070689907
      */
     virtual ~SendEventGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@SendEventGoal@@UEAA_NXZ
+     * @hash   1848728715
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@SendEventGoal@@UEAA_NXZ
+     * @hash   -1579397159
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@SendEventGoal@@UEAAXXZ
+     * @hash   -1589142108
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@SendEventGoal@@UEAAXXZ
+     * @hash   -1984405548
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@SendEventGoal@@UEAAXXZ
+     * @hash   1826193695
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SendEventGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1497021995
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SENDEVENTGOAL
-#endif
     /**
      * @symbol ??0SendEventGoal@@QEAA@AEAVMob@@AEBV?$vector@USendEventData@@V?$allocator@USendEventData@@@std@@@std@@@Z
+     * @hash   192475573
      */
     MCAPI SendEventGoal(class Mob &, std::vector<struct SendEventData> const &);
 
 //private:
     /**
      * @symbol ?_selectBestSpell@SendEventGoal@@AEAAHXZ
+     * @hash   947456325
      */
     MCAPI int _selectBestSpell();
 

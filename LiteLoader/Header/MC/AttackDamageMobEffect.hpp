@@ -32,27 +32,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1408475032
      */
     virtual ~AttackDamageMobEffect();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z
+     * @hash   938787807
      */
     virtual float getAttributeModifierValue(int, class AttributeModifier const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKDAMAGEMOBEFFECT
-#endif
     /**
      * @symbol ??0AttackDamageMobEffect@@QEAA@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_NHH@Z
+     * @hash   1206668863
      */
     MCAPI AttackDamageMobEffect(int, std::string const &, std::string const &, bool, int, int);
     /**
      * @symbol ?getDamageAfterDamageBoost@AttackDamageMobEffect@@SAMMH@Z
+     * @hash   1983225994
      */
     MCAPI static float getDamageAfterDamageBoost(float, int);
     /**
      * @symbol ?getDamageAfterWeakness@AttackDamageMobEffect@@SAMMH@Z
+     * @hash   1528786538
      */
     MCAPI static float getDamageAfterWeakness(float, int);
 

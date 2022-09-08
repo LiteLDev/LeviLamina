@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   884674381
      */
     virtual ~ElementConstructorContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ELEMENTCONSTRUCTORCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0ElementConstructorContainerScreenValidator@@QEAA@XZ
+     * @hash   268174111
      */
     MCAPI ElementConstructorContainerScreenValidator();
 

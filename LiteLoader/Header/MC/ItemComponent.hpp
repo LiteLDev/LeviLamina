@@ -31,67 +31,72 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -992288008
      */
     virtual ~ItemComponent();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?writeSettings@ItemComponent@@UEAAXXZ
+     * @hash   -392091073
      */
     virtual void writeSettings();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -1356689340
      */
     virtual void __unk_vfn_4();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ
+     * @hash   -1631869335
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ
+     * @hash   1635948744
      */
     MCVAPI bool checkComponentDataForContentErrors() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?initializeFromNetwork@ItemComponent@@UEAA_NAEBVCompoundTag@@@Z
+     * @hash   1977106263
      */
     MCVAPI bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isNetworkComponent@ItemComponent@@UEBA_NXZ
+     * @hash   1379454215
      */
     MCVAPI bool isNetworkComponent() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?useOn@ItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z
+     * @hash   -739579495
      */
     MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
 #endif
     /**
      * @symbol ??0ItemComponent@@QEAA@PEAVComponentItem@@@Z
+     * @hash   -804576768
      */
     MCAPI ItemComponent(class ComponentItem *);
     /**
      * @symbol ?bindItemComponentType@ItemComponent@@SAXXZ
+     * @hash   -507523983
      */
     MCAPI static void bindItemComponentType();
     /**
      * @symbol ?registerVersionUpgrades@ItemComponent@@SAXAEAVCerealSchemaUpgradeSet@@@Z
+     * @hash   -602922820
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

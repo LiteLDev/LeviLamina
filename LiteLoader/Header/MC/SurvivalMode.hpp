@@ -32,88 +32,105 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -882245685
      */
     virtual ~SurvivalMode();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?startDestroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z
+     * @hash   909963370
      */
     virtual bool startDestroyBlock(class BlockPos const &, unsigned char, bool &);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z
+     * @hash   -1812017474
      */
     virtual bool destroyBlock(class BlockPos const &, unsigned char);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?startBuildBlock@SurvivalMode@@UEAAXAEBVBlockPos@@E@Z
+     * @hash   -1241709414
      */
     virtual void startBuildBlock(class BlockPos const &, unsigned char);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?buildBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E_N@Z
+     * @hash   -1813623454
      */
     virtual bool buildBlock(class BlockPos const &, unsigned char, bool);
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?tick@SurvivalMode@@UEAAXXZ
+     * @hash   -1383255629
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?useItem@SurvivalMode@@UEAA_NAEAVItemStack@@@Z
+     * @hash   1007032357
      */
     virtual bool useItem(class ItemStack &);
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?useItemOn@SurvivalMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z
+     * @hash   617118431
      */
     virtual bool useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?interact@SurvivalMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z
+     * @hash   -1228997223
      */
     virtual bool interact(class Actor &, class Vec3 const &);
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?attack@SurvivalMode@@UEAA_NAEAVActor@@@Z
+     * @hash   -1733301017
      */
     virtual bool attack(class Actor &);
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?setTrialMode@SurvivalMode@@UEAAX_N@Z
+     * @hash   1918593503
      */
     virtual void setTrialMode(bool);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?isInTrialMode@SurvivalMode@@UEAA_NXZ
+     * @hash   302933090
      */
     virtual bool isInTrialMode();
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?registerUpsellScreenCallback@SurvivalMode@@UEAAXV?$function@$$A6AX_N@Z@std@@@Z
+     * @hash   173637064
      */
     virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SURVIVALMODE
-#endif
     /**
      * @symbol ??0SurvivalMode@@QEAA@AEAVPlayer@@@Z
+     * @hash   -1307318974
      */
     MCAPI SurvivalMode(class Player &);
 
 //private:
     /**
      * @symbol ?_messagePlayers@SurvivalMode@@AEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -387916703
      */
     MCAPI void _messagePlayers(std::string);
     /**
      * @symbol ?_showTrialReminder@SurvivalMode@@AEAAX_N@Z
+     * @hash   -488793315
      */
     MCAPI void _showTrialReminder(bool);
 
 private:
-MCAPI static bool mTrialHasEnded;
+    /**
+     * @symbol ?mTrialHasEnded@SurvivalMode@@0_NA
+     * @hash   6720428
+     */
+    MCAPI static bool mTrialHasEnded;
 
 };

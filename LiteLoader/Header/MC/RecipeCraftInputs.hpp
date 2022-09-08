@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECIPECRAFTINPUTS
-#endif
     /**
      * @symbol ??0RecipeCraftInputs@@QEAA@AEBV?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@@Z
+     * @hash   478790139
      */
     MCAPI RecipeCraftInputs(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??1RecipeCraftInputs@@QEAA@XZ
+     * @hash   396685687
      */
     MCAPI ~RecipeCraftInputs();
 

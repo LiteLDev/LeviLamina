@@ -31,59 +31,63 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -252896555
      */
     virtual ~MoveThroughVillageGoal();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -1358536382
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1357612861
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@MoveThroughVillageGoal@@UEAAXXZ
+     * @hash   1259280398
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@MoveThroughVillageGoal@@UEAAXXZ
+     * @hash   1830471038
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveThroughVillageGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1350937271
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETHROUGHVILLAGEGOAL
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canContinueToUse@MoveThroughVillageGoal@@UEAA_NXZ
+     * @hash   -1802381213
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canUse@MoveThroughVillageGoal@@UEAA_NXZ
+     * @hash   -210687995
      */
     MCVAPI bool canUse();
 #endif
     /**
      * @symbol ??0MoveThroughVillageGoal@@QEAA@AEAVMob@@M_N@Z
+     * @hash   -533733148
      */
     MCAPI MoveThroughVillageGoal(class Mob &, float, bool);
 

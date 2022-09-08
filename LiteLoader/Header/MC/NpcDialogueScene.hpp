@@ -29,15 +29,16 @@ public:
     NpcDialogueScene(struct NpcDialogueScene const &) = delete;
     NpcDialogueScene() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCDIALOGUESCENE
-#endif
     /**
      * @symbol ??1NpcDialogueScene@@QEAA@XZ
+     * @hash   -161106931
      */
     MCAPI ~NpcDialogueScene();
     /**
      * @symbol ?parse@NpcDialogueScene@@SA?AU1@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
+     * @hash   1970398991
      */
     MCAPI static struct NpcDialogueScene parse(class Json::Value const &, std::string const &, int);
 

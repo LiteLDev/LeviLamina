@@ -24,26 +24,32 @@ namespace ItemTransactionLogger {
 #undef AFTER_EXTRA
     /**
      * @symbol ?initializeLogger@ItemTransactionLogger@@YAX_N@Z
+     * @hash   -1314310987
      */
     MCAPI void initializeLogger(bool);
     /**
      * @symbol ?log@ItemTransactionLogger@@YAXAEBVInventoryAction@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   984341010
      */
     MCAPI void log(class InventoryAction const &, std::string);
     /**
      * @symbol ?log@ItemTransactionLogger@@YAXAEBVInventoryTransactionPacket@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -400885646
      */
     MCAPI void log(class InventoryTransactionPacket const &, std::string);
     /**
      * @symbol ?log@ItemTransactionLogger@@YAXAEBVItemStack@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1011674286
      */
     MCAPI void log(class ItemStack const &, std::string);
     /**
      * @symbol ?log@ItemTransactionLogger@@YAXAEBVItemStackResponsePacket@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -456676814
      */
     MCAPI void log(class ItemStackResponsePacket const &, std::string);
     /**
      * @symbol ?log@ItemTransactionLogger@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   1172416935
      */
     MCAPI void log(std::string);
 

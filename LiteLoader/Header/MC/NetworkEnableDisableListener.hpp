@@ -31,38 +31,44 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKENABLEDISABLELISTENER
-#endif
     /**
      * @symbol ??0NetworkEnableDisableListener@@QEAA@AEBV?$NonOwnerPointer@VAppPlatform@@@Bedrock@@@Z
+     * @hash   -2053492451
      */
     MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     /**
      * @symbol ?disable@NetworkEnableDisableListener@@QEAAXXZ
+     * @hash   1755497491
      */
     MCAPI void disable();
     /**
      * @symbol ?isDisabled@NetworkEnableDisableListener@@QEBA_NXZ
+     * @hash   -1091449132
      */
     MCAPI bool isDisabled() const;
     /**
      * @symbol ?isEnabled@NetworkEnableDisableListener@@QEBA_NXZ
+     * @hash   -1256188312
      */
     MCAPI bool isEnabled() const;
     /**
      * @symbol ?isNetworkAllowed@NetworkEnableDisableListener@@QEBA_NXZ
+     * @hash   1360339440
      */
     MCAPI bool isNetworkAllowed() const;
     /**
      * @symbol ?isUninitialized@NetworkEnableDisableListener@@QEBA_NXZ
+     * @hash   547837068
      */
     MCAPI bool isUninitialized() const;
     /**
      * @symbol ?tryEnable@NetworkEnableDisableListener@@QEAAXXZ
+     * @hash   64006403
      */
     MCAPI void tryEnable();
     /**
      * @symbol ?uninitialize@NetworkEnableDisableListener@@QEAAXXZ
+     * @hash   -795546459
      */
     MCAPI void uninitialize();
 

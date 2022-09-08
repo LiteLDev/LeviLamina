@@ -30,44 +30,49 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1728972115
      */
     virtual ~ChunkBuildOrderPolicy();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getChunkRebuildPriority@ChunkBuildOrderPolicy@@UEBAHAEBVChunkPos@@@Z
+     * @hash   -1052703516
      */
     virtual int getChunkRebuildPriority(class ChunkPos const &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?registerForUpdates@ChunkBuildOrderPolicy@@UEAAIXZ
+     * @hash   -1193791236
      */
     virtual unsigned int registerForUpdates();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?unregisterForUpdates@ChunkBuildOrderPolicy@@UEAAXI@Z
+     * @hash   -1380696939
      */
     virtual void unregisterForUpdates(unsigned int);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?setPlayerInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@AEBVVec3@@@Z
+     * @hash   -508082728
      */
     virtual void setPlayerInfluence(unsigned int, class ChunkPos const &, class Vec3 const &);
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?setTickingAreaInfluence@ChunkBuildOrderPolicy@@UEAAXIAEBVChunkPos@@HH_N1@Z
+     * @hash   -160579499
      */
     virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const &, int, int, bool, bool);
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?updateInfluences@ChunkBuildOrderPolicy@@UEAAXXZ
+     * @hash   -84199569
      */
     virtual void updateInfluences();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKBUILDORDERPOLICY
-#endif
     /**
      * @symbol ??0ChunkBuildOrderPolicy@@QEAA@XZ
+     * @hash   -764777781
      */
     MCAPI ChunkBuildOrderPolicy();
 

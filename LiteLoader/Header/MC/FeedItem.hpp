@@ -32,23 +32,26 @@ public:
     struct FeedItem& operator=(struct FeedItem const &) = delete;
     FeedItem() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEEDITEM
-#endif
     /**
      * @symbol ??0FeedItem@@QEAA@AEBU0@@Z
+     * @hash   2009071039
      */
     MCAPI FeedItem(struct FeedItem const &);
     /**
      * @symbol ?addEffect@FeedItem@@QEAAXAEBUEffect@1@@Z
+     * @hash   1425422558
      */
     MCAPI void addEffect(struct FeedItem::Effect const &);
     /**
      * @symbol ??4FeedItem@@QEAAAEAU0@$$QEAU0@@Z
+     * @hash   -128559610
      */
     MCAPI struct FeedItem & operator=(struct FeedItem &&);
     /**
      * @symbol ??1FeedItem@@QEAA@XZ
+     * @hash   -219715749
      */
     MCAPI ~FeedItem();
 

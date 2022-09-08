@@ -22,19 +22,75 @@ namespace FoodConstants {
 // Add Member There
 
 #undef AFTER_EXTRA
-MCAPI extern float const FOOD_SATURATION_GOOD;
-MCAPI extern float const FOOD_SATURATION_LOW;
-MCAPI extern float const FOOD_SATURATION_MAX;
-MCAPI extern float const FOOD_SATURATION_NORMAL;
-MCAPI extern float const FOOD_SATURATION_POOR;
-MCAPI extern float const FOOD_SATURATION_SUPERNATURAL;
-MCAPI extern float const FOOD_SPRINT_LEVEL;
-MCAPI extern int const HEALTH_TICK_COUNT;
-MCAPI extern int const HEAL_LEVEL;
-MCAPI extern float const MAX_EXHAUSTION;
-MCAPI extern int const MAX_FOOD;
-MCAPI extern float const MAX_SATURATION;
-MCAPI extern float const START_SATURATION;
-MCAPI extern int const STARVE_LEVEL;
+    /**
+     * @symbol ?FOOD_SATURATION_GOOD@FoodConstants@@3MB
+     * @hash   -1198653535
+     */
+    MCAPI extern float const FOOD_SATURATION_GOOD;
+    /**
+     * @symbol ?FOOD_SATURATION_LOW@FoodConstants@@3MB
+     * @hash   1096842873
+     */
+    MCAPI extern float const FOOD_SATURATION_LOW;
+    /**
+     * @symbol ?FOOD_SATURATION_MAX@FoodConstants@@3MB
+     * @hash   1508605861
+     */
+    MCAPI extern float const FOOD_SATURATION_MAX;
+    /**
+     * @symbol ?FOOD_SATURATION_NORMAL@FoodConstants@@3MB
+     * @hash   1538349361
+     */
+    MCAPI extern float const FOOD_SATURATION_NORMAL;
+    /**
+     * @symbol ?FOOD_SATURATION_POOR@FoodConstants@@3MB
+     * @hash   -324459937
+     */
+    MCAPI extern float const FOOD_SATURATION_POOR;
+    /**
+     * @symbol ?FOOD_SATURATION_SUPERNATURAL@FoodConstants@@3MB
+     * @hash   67175115
+     */
+    MCAPI extern float const FOOD_SATURATION_SUPERNATURAL;
+    /**
+     * @symbol ?FOOD_SPRINT_LEVEL@FoodConstants@@3MB
+     * @hash   -190034783
+     */
+    MCAPI extern float const FOOD_SPRINT_LEVEL;
+    /**
+     * @symbol ?HEALTH_TICK_COUNT@FoodConstants@@3HB
+     * @hash   1590547889
+     */
+    MCAPI extern int const HEALTH_TICK_COUNT;
+    /**
+     * @symbol ?HEAL_LEVEL@FoodConstants@@3HB
+     * @hash   1835099149
+     */
+    MCAPI extern int const HEAL_LEVEL;
+    /**
+     * @symbol ?MAX_EXHAUSTION@FoodConstants@@3MB
+     * @hash   -47441047
+     */
+    MCAPI extern float const MAX_EXHAUSTION;
+    /**
+     * @symbol ?MAX_FOOD@FoodConstants@@3HB
+     * @hash   113997341
+     */
+    MCAPI extern int const MAX_FOOD;
+    /**
+     * @symbol ?MAX_SATURATION@FoodConstants@@3MB
+     * @hash   1686184905
+     */
+    MCAPI extern float const MAX_SATURATION;
+    /**
+     * @symbol ?START_SATURATION@FoodConstants@@3MB
+     * @hash   -340472431
+     */
+    MCAPI extern float const START_SATURATION;
+    /**
+     * @symbol ?STARVE_LEVEL@FoodConstants@@3HB
+     * @hash   -1515429617
+     */
+    MCAPI extern int const STARVE_LEVEL;
 
 };

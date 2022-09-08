@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDAREA
-#endif
     /**
      * @symbol ??0CommandArea@@QEAA@V?$unique_ptr@VChunkViewSource@@U?$default_delete@VChunkViewSource@@@std@@@std@@@Z
+     * @hash   -393660949
      */
     MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
     /**
      * @symbol ??1CommandArea@@QEAA@XZ
+     * @hash   -1104195068
      */
     MCAPI ~CommandArea();
 

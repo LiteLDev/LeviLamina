@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1906733650
      */
     virtual ~SlimeMoveControl();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@SlimeMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     * @hash   -1010794734
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIMEMOVECONTROL
-#endif
     /**
      * @symbol ??0SlimeMoveControl@@QEAA@XZ
+     * @hash   1403795568
      */
     MCAPI SlimeMoveControl();
 

@@ -26,11 +26,11 @@ public:
     DamageCondition(struct DamageCondition const &) = delete;
     DamageCondition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGECONDITION
-#endif
     /**
      * @symbol ??1DamageCondition@@QEAA@XZ
+     * @hash   1694630168
      */
     MCAPI ~DamageCondition();
 

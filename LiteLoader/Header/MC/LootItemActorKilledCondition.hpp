@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   880603438
      */
     virtual ~LootItemActorKilledCondition();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?applies@LootItemActorKilledCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z
+     * @hash   -760061621
      */
     virtual bool applies(class Random &, class LootTableContext &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMACTORKILLEDCONDITION
-#endif
     /**
      * @symbol ?deserialize@LootItemActorKilledCondition@@SA?AV?$unique_ptr@VLootItemCondition@@U?$default_delete@VLootItemCondition@@@std@@@std@@VValue@Json@@@Z
+     * @hash   -1649234555
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 

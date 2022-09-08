@@ -25,19 +25,21 @@ public:
     struct ItemDefinitionEventTriggeredEvent& operator=(struct ItemDefinitionEventTriggeredEvent const &) = delete;
     ItemDefinitionEventTriggeredEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDEFINITIONEVENTTRIGGEREDEVENT
-#endif
     /**
      * @symbol ??0ItemDefinitionEventTriggeredEvent@@QEAA@AEBU0@@Z
+     * @hash   98857669
      */
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &);
     /**
      * @symbol ??0ItemDefinitionEventTriggeredEvent@@QEAA@$$QEAU0@@Z
+     * @hash   369910517
      */
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent &&);
     /**
      * @symbol ??1ItemDefinitionEventTriggeredEvent@@QEAA@XZ
+     * @hash   -1897583373
      */
     MCAPI ~ItemDefinitionEventTriggeredEvent();
 

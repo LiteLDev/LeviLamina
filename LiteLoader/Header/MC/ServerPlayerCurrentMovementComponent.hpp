@@ -26,11 +26,11 @@ public:
     ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent const &) = delete;
     ServerPlayerCurrentMovementComponent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERPLAYERCURRENTMOVEMENTCOMPONENT
-#endif
     /**
      * @symbol ??1ServerPlayerCurrentMovementComponent@@QEAA@XZ
+     * @hash   -160814253
      */
     MCAPI ~ServerPlayerCurrentMovementComponent();
 

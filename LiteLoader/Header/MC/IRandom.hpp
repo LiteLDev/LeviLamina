@@ -31,61 +31,60 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1452047066
      */
     virtual ~IRandom();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -174523056
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   -173599535
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -172676014
      */
     virtual void __unk_vfn_3() = 0;
     /**
-     * @note   Virtual function table index: 4
-     * @symbol 
+     * @vftbl  4
+     * @hash   -171752493
      */
     virtual void __unk_vfn_4() = 0;
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -170828972
      */
     virtual void __unk_vfn_5() = 0;
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -169905451
      */
     virtual void __unk_vfn_6() = 0;
     /**
-     * @note   Virtual function table index: 7
-     * @symbol 
+     * @vftbl  7
+     * @hash   -168981930
      */
     virtual void __unk_vfn_7() = 0;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -168058409
      */
     virtual void __unk_vfn_8() = 0;
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -167134888
      */
     virtual void __unk_vfn_9() = 0;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?forkPositional@IRandom@@UEAA?AV?$unique_ptr@VIPositionalRandomFactory@@U?$default_delete@VIPositionalRandomFactory@@@std@@@std@@XZ
+     * @hash   2019265348
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRANDOM
-#endif
 
 };

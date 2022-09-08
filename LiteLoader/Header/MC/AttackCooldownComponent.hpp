@@ -30,18 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTACKCOOLDOWNCOMPONENT
-#endif
     /**
      * @symbol ??0AttackCooldownComponent@@QEAA@$$QEAV0@@Z
+     * @hash   1572240093
      */
     MCAPI AttackCooldownComponent(class AttackCooldownComponent &&);
     /**
      * @symbol ??4AttackCooldownComponent@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   1942285880
      */
     MCAPI class AttackCooldownComponent & operator=(class AttackCooldownComponent &&);
     /**
      * @symbol ??1AttackCooldownComponent@@QEAA@XZ
+     * @hash   1091535638
      */
     MCAPI ~AttackCooldownComponent();
 

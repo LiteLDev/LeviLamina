@@ -28,13 +28,17 @@ public:
     CrashDumpFrameData(struct CrashDumpFrameData const &) = delete;
     CrashDumpFrameData() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRASHDUMPFRAMEDATA
-#endif
     /**
      * @symbol ??0CrashDumpFrameData@@QEAA@HH_KMMMM@Z
+     * @hash   -1236177268
      */
     MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
-MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    /**
+     * @symbol ?kFormat@CrashDumpFrameData@@2QBUCrashDumpFormatEntryImpl@@B
+     * @hash   454731277
+     */
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
 
 };

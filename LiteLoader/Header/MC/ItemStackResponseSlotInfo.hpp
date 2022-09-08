@@ -26,15 +26,16 @@ public:
     ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo const &) = delete;
     ItemStackResponseSlotInfo() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKRESPONSESLOTINFO
-#endif
     /**
      * @symbol ??0ItemStackResponseSlotInfo@@QEAA@$$QEAU0@@Z
+     * @hash   66125627
      */
     MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo &&);
     /**
      * @symbol ??1ItemStackResponseSlotInfo@@QEAA@XZ
+     * @hash   -1027495506
      */
     MCAPI ~ItemStackResponseSlotInfo();
 

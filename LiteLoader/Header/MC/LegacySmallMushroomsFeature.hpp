@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1098467577
      */
     virtual ~LegacySmallMushroomsFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@LegacySmallMushroomsFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   1371126931
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEGACYSMALLMUSHROOMSFEATURE
-#endif
     /**
      * @symbol ??0LegacySmallMushroomsFeature@@QEAA@AEBVFeatureRegistry@@@Z
+     * @hash   840655018
      */
     MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const &);
 

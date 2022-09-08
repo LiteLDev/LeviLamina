@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEEVENTDISPATCHER
-#endif
     /**
      * @symbol ?post@GameEventDispatcher@@QEAAXAEAVBlockSource@@PEAVActor@@AEBVGameEvent@@AEBVBlockPos@@PEBVBlock@@@Z
+     * @hash   1262788188
      */
     MCAPI void post(class BlockSource &, class Actor *, class GameEvent const &, class BlockPos const &, class Block const *);
     /**
      * @symbol ?post@GameEventDispatcher@@QEAAXAEAVBlockSource@@PEAVActor@@AEBVGameEvent@@AEBVVec3@@PEBVBlock@@@Z
+     * @hash   -1839275780
      */
     MCAPI void post(class BlockSource &, class Actor *, class GameEvent const &, class Vec3 const &, class Block const *);
 

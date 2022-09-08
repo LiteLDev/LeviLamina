@@ -31,138 +31,166 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1906671418
      */
     virtual ~PackAccessStrategy();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getPackSize@ZipPackAccessStrategy@@UEBA_KXZ
+     * @hash   1158016347
      */
     virtual unsigned __int64 getPackSize() const = 0;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getPackLocation@ZipPackAccessStrategy@@UEBAAEBVResourceLocation@@XZ
+     * @hash   -1288337815
      */
     virtual class ResourceLocation const & getPackLocation() const = 0;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?getPackName@ZipPackAccessStrategy@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1728143757
      */
     virtual std::string const & getPackName() const = 0;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?isWritable@ZipPackAccessStrategy@@UEBA_NXZ
+     * @hash   1690364013
      */
     virtual bool isWritable() const = 0;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?setIsTrusted@ZipPackAccessStrategy@@UEAAX_N@Z
+     * @hash   2100942309
      */
     virtual void setIsTrusted(bool) = 0;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?isTrusted@ZipPackAccessStrategy@@UEBA_NXZ
+     * @hash   -795368176
      */
     virtual bool isTrusted() const = 0;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?hasAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@_N@Z
+     * @hash   -782877872
      */
     virtual bool hasAsset(class Core::Path const &, bool) const = 0;
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?hasFolder@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z
+     * @hash   -1875420002
      */
     virtual bool hasFolder(class Core::Path const &) const = 0;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?getAsset@ZipPackAccessStrategy@@UEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z
+     * @hash   -1442801895
      */
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const = 0;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?deleteAsset@ZipPackAccessStrategy@@UEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
+     * @hash   877070397
      */
     virtual bool deleteAsset(class Core::PathBuffer<std::string> const &) = 0;
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?writeAsset@ZipPackAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   2069265260
      */
     virtual bool writeAsset(class Core::Path const &, std::string const &) = 0;
     /**
-     * @note   Virtual function table index: 12
+     * @vftbl  12
      * @symbol ?forEachIn@ZipPackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@_N@Z
+     * @hash   -1627244039
      */
     virtual void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const = 0;
     /**
-     * @note   Virtual function table index: 13
+     * @vftbl  13
      * @symbol ?forEachInAssetSet@PackAccessStrategy@@UEBAXAEBVPath@Core@@V?$function@$$A6AXAEBVPath@Core@@@Z@std@@@Z
+     * @hash   1543370974
      */
     virtual void forEachInAssetSet(class Core::Path const &, class std::function<void (class Core::Path const &)>) const;
     /**
-     * @note   Virtual function table index: 14
+     * @vftbl  14
      * @symbol ?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
+     * @hash   -65084972
      */
     virtual enum PackAccessStrategyType getStrategyType() const = 0;
     /**
-     * @note   Virtual function table index: 15
+     * @vftbl  15
      * @symbol ?getSubPath@PackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
+     * @hash   -683046309
      */
     virtual class Core::PathBuffer<std::string> const & getSubPath() const;
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?createSubPack@ZipPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z
+     * @hash   717243032
      */
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const = 0;
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
+     * @hash   150993014
      */
     virtual enum PackAccessAssetGenerationResult generateAssetSet();
     /**
-     * @note   Virtual function table index: 18
+     * @vftbl  18
      * @symbol ?canRecurse@PackAccessStrategy@@UEBA_NXZ
+     * @hash   -310713737
      */
     virtual bool canRecurse() const;
     /**
-     * @note   Virtual function table index: 19
+     * @vftbl  19
      * @symbol ?unload@ZipPackAccessStrategy@@UEAAXXZ
+     * @hash   1260834385
      */
     virtual void unload() = 0;
     /**
-     * @note   Virtual function table index: 20
+     * @vftbl  20
      * @symbol ?hasUpgradeFiles@PackAccessStrategy@@UEBA_NXZ
+     * @hash   1660969629
      */
     virtual bool hasUpgradeFiles() const;
     /**
-     * @note   Virtual function table index: 21
+     * @vftbl  21
      * @symbol ?readContentIdentity@PackAccessStrategy@@UEBA?AVContentIdentity@@XZ
+     * @hash   -1268513567
      */
     virtual class ContentIdentity readContentIdentity() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKACCESSSTRATEGY
-#endif
     /**
      * @symbol ??0PackAccessStrategy@@QEAA@XZ
+     * @hash   1859422844
      */
     MCAPI PackAccessStrategy();
     /**
      * @symbol ?hasGeneratedAssetSet@PackAccessStrategy@@QEBA_NXZ
+     * @hash   855396540
      */
     MCAPI bool hasGeneratedAssetSet() const;
-MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
+    /**
+     * @symbol ?PACK_IMPORT_LOCK_FILE@PackAccessStrategy@@2V?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@B
+     * @hash   701148248
+     */
+    MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
 
 //protected:
     /**
      * @symbol ?_addToAssetSet@PackAccessStrategy@@IEAAXAEBVPath@Core@@@Z
+     * @hash   -521159197
      */
     MCAPI void _addToAssetSet(class Core::Path const &);
     /**
      * @symbol ?_deleteFromAssetSet@PackAccessStrategy@@IEAAXAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z
+     * @hash   607396559
      */
     MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string> const &);
     /**
      * @symbol ?_isInAssetSet@PackAccessStrategy@@IEBA_NAEBVPath@Core@@@Z
+     * @hash   -1073020681
      */
     MCAPI bool _isInAssetSet(class Core::Path const &) const;
 

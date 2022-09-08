@@ -29,15 +29,16 @@ public:
     ChunkLoadTelemetryData(struct ChunkLoadTelemetryData const &) = delete;
     ChunkLoadTelemetryData() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKLOADTELEMETRYDATA
-#endif
     /**
      * @symbol ?recordLoadedChunk@ChunkLoadTelemetryData@@QEAAXAEBVLevelChunk@@@Z
+     * @hash   -543944456
      */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     /**
      * @symbol ?toJson@ChunkLoadTelemetryData@@QEBA?AVValue@Json@@XZ
+     * @hash   -146943232
      */
     MCAPI class Json::Value toJson() const;
 

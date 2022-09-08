@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETELEMETRYSERVERDATA
-#endif
     /**
      * @symbol ??0StructureTelemetryServerData@@QEAA@XZ
+     * @hash   -320314865
      */
     MCAPI StructureTelemetryServerData();
     /**
      * @symbol ?hasBeenActivatedByRedstone@StructureTelemetryServerData@@QEAA_NXZ
+     * @hash   -202394156
      */
     MCAPI bool hasBeenActivatedByRedstone();
     /**
      * @symbol ?setHasBeenActivedByRedstone@StructureTelemetryServerData@@QEAAXXZ
+     * @hash   992118883
      */
     MCAPI void setHasBeenActivedByRedstone();
 

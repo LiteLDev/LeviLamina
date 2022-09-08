@@ -26,11 +26,11 @@ public:
     PlayerStorageIds(struct PlayerStorageIds const &) = delete;
     PlayerStorageIds() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSTORAGEIDS
-#endif
     /**
      * @symbol ??1PlayerStorageIds@@QEAA@XZ
+     * @hash   -1146825288
      */
     MCAPI ~PlayerStorageIds();
 

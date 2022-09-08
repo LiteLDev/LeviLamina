@@ -29,18 +29,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDWILDCARDINT
-#endif
     /**
      * @symbol ??0CommandWildcardInt@@QEAA@XZ
+     * @hash   529349606
      */
     MCAPI CommandWildcardInt();
     /**
      * @symbol ?getValue@CommandWildcardInt@@QEBAHXZ
+     * @hash   -21558584
      */
     MCAPI int getValue() const;
     /**
      * @symbol ?isWildcard@CommandWildcardInt@@QEBA_NXZ
+     * @hash   -1646541470
      */
     MCAPI bool isWildcard() const;
 

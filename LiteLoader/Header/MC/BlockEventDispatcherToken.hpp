@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTDISPATCHERTOKEN
-#endif
     /**
      * @symbol ??4BlockEventDispatcherToken@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   -754725442
      */
     MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     /**
      * @symbol ??1BlockEventDispatcherToken@@QEAA@XZ
+     * @hash   -1743962287
      */
     MCAPI ~BlockEventDispatcherToken();
 

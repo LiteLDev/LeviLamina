@@ -32,19 +32,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1364727535
      */
     virtual ~ExhaustionAttributeDelegate();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?tick@ExhaustionAttributeDelegate@@UEAAXXZ
+     * @hash   1814968113
      */
     virtual void tick();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EXHAUSTIONATTRIBUTEDELEGATE
-#endif
     /**
      * @symbol ??0ExhaustionAttributeDelegate@@QEAA@AEBVAttributeInstance@@@Z
+     * @hash   2082051732
      */
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
 

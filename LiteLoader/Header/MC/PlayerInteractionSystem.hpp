@@ -30,10 +30,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERINTERACTIONSYSTEM
-#endif
     /**
      * @symbol ?getInteraction@PlayerInteractionSystem@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
+     * @hash   -1957947565
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 

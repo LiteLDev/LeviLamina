@@ -30,30 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSOMNIACOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@InsomniaComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -752547880
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getInsomniaTimerTicks@InsomniaComponent@@QEBAHXZ
+     * @hash   -474629958
      */
     MCAPI int getInsomniaTimerTicks() const;
     /**
      * @symbol ?getTicksUntilInsomnia@InsomniaComponent@@QEBAHXZ
+     * @hash   882452248
      */
     MCAPI int getTicksUntilInsomnia() const;
     /**
      * @symbol ?incrementTimeSinceRest@InsomniaComponent@@QEAAHXZ
+     * @hash   1912074316
      */
     MCAPI int incrementTimeSinceRest();
     /**
      * @symbol ?readAdditionalSaveData@InsomniaComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -2033196490
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?restartTimer@InsomniaComponent@@QEAAXXZ
+     * @hash   -2019181505
      */
     MCAPI void restartTimer();
 

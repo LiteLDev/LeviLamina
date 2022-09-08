@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1686082677
      */
     virtual ~InMemorySequentialFile();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?Read@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_KPEAVSlice@3@PEAD@Z
+     * @hash   911203925
      */
     virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?Skip@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_K@Z
+     * @hash   315811754
      */
     virtual class leveldb::Status Skip(unsigned __int64);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYSEQUENTIALFILE
-#endif
     /**
      * @symbol ??0InMemorySequentialFile@@QEAA@V?$shared_ptr@VInMemoryFile@@@std@@@Z
+     * @hash   733300321
      */
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
 

@@ -30,16 +30,19 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHIELDITEMUTILS
-#endif
     /**
      * @symbol ?isBlockedDamageCause@ShieldItemUtils@@SA_NAEBVActorDamageSource@@@Z
+     * @hash   -393930517
      */
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
 
 //private:
 
 private:
-MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
+    /**
+     * @symbol ?mAlwaysBlockableDamageCauses@ShieldItemUtils@@0V?$vector@W4ActorDamageCause@@V?$allocator@W4ActorDamageCause@@@std@@@std@@B
+     * @hash   -28867247
+     */
+    MCAPI static std::vector<enum ActorDamageCause> const mAlwaysBlockableDamageCauses;
 
 };

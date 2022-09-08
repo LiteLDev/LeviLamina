@@ -29,29 +29,31 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   826374245
      */
     virtual ~AllayVibrationConfig();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onSignalReceive@AllayVibrationConfig@@UEAAXAEAVBlockSource@@VBlockPos@@AEBVGameEvent@@PEAVActor@@M3@Z
+     * @hash   -685808797
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?isValidVibration@AllayVibrationConfig@@UEAA_NAEBVGameEvent@@@Z
+     * @hash   -1277615933
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?shouldListen@AllayVibrationConfig@@UEAA_NAEAVBlockSource@@AEBVGameEvent@@AEBUGameEventContext@@@Z
+     * @hash   -1932384702
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ALLAYVIBRATIONCONFIG
-#endif
     /**
      * @symbol ??0AllayVibrationConfig@@QEAA@AEAVActor@@G@Z
+     * @hash   -448973446
      */
     MCAPI AllayVibrationConfig(class Actor &, unsigned short);
 

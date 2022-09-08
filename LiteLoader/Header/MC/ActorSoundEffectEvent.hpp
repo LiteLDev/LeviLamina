@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSOUNDEFFECTEVENT
-#endif
     /**
      * @symbol ??1ActorSoundEffectEvent@@QEAA@XZ
+     * @hash   -646375781
      */
     MCAPI ~ActorSoundEffectEvent();
 

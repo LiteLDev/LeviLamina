@@ -25,19 +25,21 @@ public:
     struct ItemChargeEvent& operator=(struct ItemChargeEvent const &) = delete;
     ItemChargeEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCHARGEEVENT
-#endif
     /**
      * @symbol ??0ItemChargeEvent@@QEAA@AEBU0@@Z
+     * @hash   -1665371067
      */
     MCAPI ItemChargeEvent(struct ItemChargeEvent const &);
     /**
      * @symbol ??0ItemChargeEvent@@QEAA@$$QEAU0@@Z
+     * @hash   -836477235
      */
     MCAPI ItemChargeEvent(struct ItemChargeEvent &&);
     /**
      * @symbol ??1ItemChargeEvent@@QEAA@XZ
+     * @hash   -1700824225
      */
     MCAPI ~ItemChargeEvent();
 

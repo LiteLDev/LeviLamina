@@ -30,30 +30,34 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DAMAGEOVERTIMECOMPONENT
-#endif
     /**
      * @symbol ?addAdditionalSaveData@DamageOverTimeComponent@@QEBAXAEAVCompoundTag@@@Z
+     * @hash   -934926728
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?getDamageTime@DamageOverTimeComponent@@QEBAHXZ
+     * @hash   -585871476
      */
     MCAPI int getDamageTime() const;
     /**
      * @symbol ?getDamageTimeInterval@DamageOverTimeComponent@@QEBAHXZ
+     * @hash   -327205898
      */
     MCAPI int getDamageTimeInterval() const;
     /**
      * @symbol ?getHurtValue@DamageOverTimeComponent@@QEBAHXZ
+     * @hash   1644716462
      */
     MCAPI int getHurtValue() const;
     /**
      * @symbol ?readAdditionalSaveData@DamageOverTimeComponent@@QEAAXAEAVActor@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
+     * @hash   -618898614
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
      * @symbol ?setDamageTime@DamageOverTimeComponent@@QEAAXH@Z
+     * @hash   -1357914694
      */
     MCAPI void setDamageTime(int);
 

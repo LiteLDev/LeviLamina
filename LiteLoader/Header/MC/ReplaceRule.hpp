@@ -26,15 +26,16 @@ public:
     ReplaceRule(struct ReplaceRule const &) = delete;
     ReplaceRule() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REPLACERULE
-#endif
     /**
      * @symbol ??0ReplaceRule@@QEAA@VBlockDescriptor@@V?$vector@VBlockDescriptor@@V?$allocator@VBlockDescriptor@@@std@@@std@@@Z
+     * @hash   1049944880
      */
     MCAPI ReplaceRule(class BlockDescriptor, std::vector<class BlockDescriptor>);
     /**
      * @symbol ??1ReplaceRule@@QEAA@XZ
+     * @hash   -859939636
      */
     MCAPI ~ReplaceRule();
 

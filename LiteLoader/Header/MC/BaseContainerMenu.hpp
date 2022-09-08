@@ -32,64 +32,66 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECONTAINERMENU
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?broadcastChanges@BaseContainerMenu@@UEAAXXZ
+     * @hash   -1412226854
      */
     MCVAPI void broadcastChanges();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?containerContentChanged@BaseContainerMenu@@UEAAXH@Z
+     * @hash   772151803
      */
     MCVAPI void containerContentChanged(int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ
+     * @hash   -1806322047
      */
     MCVAPI enum ContainerID getContainerId() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getContainerType@BaseContainerMenu@@UEBA?AW4ContainerType@@XZ
+     * @hash   935433281
      */
     MCVAPI enum ContainerType getContainerType() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isResultSlot@BaseContainerMenu@@UEAA_NH@Z
+     * @hash   2122424640
      */
     MCVAPI bool isResultSlot(int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?isSlotDirty@BaseContainerMenu@@UEAA_NH@Z
+     * @hash   -634382949
      */
     MCVAPI bool isSlotDirty(int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z
+     * @hash   1701367868
      */
     MCVAPI void setContainerId(enum ContainerID);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setContainerType@BaseContainerMenu@@UEAAXW4ContainerType@@@Z
+     * @hash   -1631592018
      */
     MCVAPI void setContainerType(enum ContainerType);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?setData@BaseContainerMenu@@UEAAXHH@Z
+     * @hash   -1846471324
      */
     MCVAPI void setData(int, int);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ??1BaseContainerMenu@@UEAA@XZ
+     * @hash   -1121050184
      */
     MCVAPI ~BaseContainerMenu();
 #endif
     /**
      * @symbol ??0BaseContainerMenu@@QEAA@AEAVPlayer@@W4ContainerType@@@Z
+     * @hash   -275272739
      */
     MCAPI BaseContainerMenu(class Player &, enum ContainerType);
 
 //protected:
     /**
      * @symbol ?_saveLastSlots@BaseContainerMenu@@IEAAXPEAVContainer@@@Z
+     * @hash   404073664
      */
     MCAPI void _saveLastSlots(class Container *);
 

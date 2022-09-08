@@ -28,14 +28,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUBMITCALLBACK
-#endif
     /**
      * @symbol ?Register@SubmitCallback@@QEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
+     * @hash   753821338
      */
     MCAPI long Register(void *, void ( *)(void *, struct XTaskQueueObject *, enum XTaskQueuePort), struct XTaskQueueRegistrationToken *);
     /**
      * @symbol ?Unregister@SubmitCallback@@QEAAXUXTaskQueueRegistrationToken@@@Z
+     * @hash   -170552402
      */
     MCAPI void Unregister(struct XTaskQueueRegistrationToken);
 

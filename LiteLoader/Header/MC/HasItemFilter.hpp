@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HASITEMFILTER
-#endif
     /**
      * @symbol ??1HasItemFilter@@QEAA@XZ
+     * @hash   -719197743
      */
     MCAPI ~HasItemFilter();
 

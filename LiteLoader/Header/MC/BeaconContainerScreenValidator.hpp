@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -210143181
      */
     virtual ~BeaconContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONCONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0BeaconContainerScreenValidator@@QEAA@XZ
+     * @hash   1586706853
      */
     MCAPI BeaconContainerScreenValidator();
 

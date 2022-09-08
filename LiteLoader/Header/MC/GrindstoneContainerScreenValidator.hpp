@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -2097042112
      */
     virtual ~GrindstoneContainerScreenValidator();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GRINDSTONECONTAINERSCREENVALIDATOR
-#endif
     /**
      * @symbol ??0GrindstoneContainerScreenValidator@@QEAA@XZ
+     * @hash   -1744120782
      */
     MCAPI GrindstoneContainerScreenValidator();
 

@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPATTERNPREEVENT
-#endif
     /**
      * @symbol ??1BlockPatternPreEvent@@QEAA@XZ
+     * @hash   1052601444
      */
     MCAPI ~BlockPatternPreEvent();
 

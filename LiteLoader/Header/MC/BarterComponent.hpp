@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARTERCOMPONENT
-#endif
     /**
      * @symbol ?onBarterItemPickedUp@BarterComponent@@QEAAXAEBVActor@@UActorUniqueID@@F@Z
+     * @hash   1467082329
      */
     MCAPI void onBarterItemPickedUp(class Actor const &, struct ActorUniqueID, short);
     /**
      * @symbol ?stopBarter@BarterComponent@@QEAAXXZ
+     * @hash   -1413360125
      */
     MCAPI void stopBarter();
 

@@ -29,28 +29,31 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGUPDATERCONTEXT
-#endif
     /**
      * @symbol ??0CompoundTagUpdaterContext@@QEAA@XZ
+     * @hash   44358929
      */
     MCAPI CompoundTagUpdaterContext();
     /**
      * @symbol ?addUpdater@CompoundTagUpdaterContext@@QEAA?AVCompoundTagUpdaterBuilder@@EEE@Z
+     * @hash   -1082604826
      */
     MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
     /**
      * @symbol ?sortUpdaters@CompoundTagUpdaterContext@@QEAAXXZ
+     * @hash   -301498701
      */
     MCAPI void sortUpdaters();
     /**
      * @symbol ?update@CompoundTagUpdaterContext@@QEAA?AW4CompoundTagUpdaterResult@@AEAVCompoundTag@@I@Z
+     * @hash   720761458
      */
     MCAPI enum CompoundTagUpdaterResult update(class CompoundTag &, unsigned int);
 
 //private:
     /**
      * @symbol ?comparisonPredicate@CompoundTagUpdaterContext@@CA_NAEBV?$unique_ptr@VCompoundTagUpdater@@U?$default_delete@VCompoundTagUpdater@@@std@@@std@@0@Z
+     * @hash   1648780947
      */
     MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const &, std::unique_ptr<class CompoundTagUpdater> const &);
 

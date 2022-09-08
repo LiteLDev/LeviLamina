@@ -28,31 +28,34 @@ public:
     struct NavigationDescription& operator=(struct NavigationDescription const &) = delete;
     NavigationDescription(struct NavigationDescription const &) = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@NavigationWalkDescription@@UEBAPEBDXZ
+     * @hash   716389959
      */
     virtual char const * getJsonName() const = 0;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   851224598
      */
     virtual ~NavigationDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@NavigationDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   -1916711401
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@NavigationDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   -2134015039
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONDESCRIPTION
-#endif
     /**
      * @symbol ??0NavigationDescription@@QEAA@XZ
+     * @hash   36168676
      */
     MCAPI NavigationDescription();
 

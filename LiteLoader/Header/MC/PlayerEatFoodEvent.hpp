@@ -28,10 +28,9 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYEREATFOODEVENT
-#endif
     /**
      * @symbol ??1PlayerEatFoodEvent@@QEAA@XZ
+     * @hash   1917547023
      */
     MCAPI ~PlayerEatFoodEvent();
 

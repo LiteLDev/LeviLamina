@@ -26,15 +26,16 @@ public:
     JigsawJunction(struct JigsawJunction const &) = delete;
     JigsawJunction() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JIGSAWJUNCTION
-#endif
     /**
      * @symbol ??0JigsawJunction@@QEAA@HHHHW4Projection@@0@Z
+     * @hash   -1066582701
      */
     MCAPI JigsawJunction(int, int, int, int, enum Projection, enum Projection);
     /**
      * @symbol ?getDeltaTargetY@JigsawJunction@@QEBAHXZ
+     * @hash   -1145927610
      */
     MCAPI int getDeltaTargetY() const;
 

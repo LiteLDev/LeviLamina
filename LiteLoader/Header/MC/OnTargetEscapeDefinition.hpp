@@ -29,11 +29,11 @@ public:
     OnTargetEscapeDefinition(struct OnTargetEscapeDefinition const &) = delete;
     OnTargetEscapeDefinition() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONTARGETESCAPEDEFINITION
-#endif
     /**
      * @symbol ?buildSchema@OnTargetEscapeDefinition@@SAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UOnTargetEscapeDefinition@@@JsonUtil@@@std@@@Z
+     * @hash   -1930795814
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnTargetEscapeDefinition>> &);
 

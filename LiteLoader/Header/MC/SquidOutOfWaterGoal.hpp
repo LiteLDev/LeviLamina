@@ -31,64 +31,66 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -460513755
      */
     virtual ~SquidOutOfWaterGoal();
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   -1366194591
      */
     virtual void __unk_vfn_1();
     /**
-     * @note   Virtual function table index: 2
-     * @symbol 
+     * @vftbl  2
+     * @hash   75804594
      */
     virtual void __unk_vfn_2();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   76728115
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@SquidOutOfWaterGoal@@UEAAXXZ
+     * @hash   1608581554
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
-     * @symbol 
+     * @vftbl  5
+     * @hash   -1404784507
      */
     virtual void __unk_vfn_5();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@SquidOutOfWaterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1397366825
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDOUTOFWATERGOAL
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canContinueToUse@SquidOutOfWaterGoal@@UEAA_NXZ
+     * @hash   -595970489
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canUse@SquidOutOfWaterGoal@@UEAA_NXZ
+     * @hash   -1432029591
      */
     MCVAPI bool canUse();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?stop@SquidOutOfWaterGoal@@UEAAXXZ
+     * @hash   1022204082
      */
     MCVAPI void stop();
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?tick@SquidOutOfWaterGoal@@UEAAXXZ
+     * @hash   -105798291
      */
     MCVAPI void tick();
 #endif

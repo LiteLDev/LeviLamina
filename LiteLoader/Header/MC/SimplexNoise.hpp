@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEXNOISE
-#endif
     /**
      * @symbol ??0SimplexNoise@@QEAA@AEAVIRandom@@_N@Z
+     * @hash   1323794010
      */
     MCAPI SimplexNoise(class IRandom &, bool);
     /**
      * @symbol ?_add@SimplexNoise@@QEBAXPEAMMMHHMMM@Z
+     * @hash   72676321
      */
     MCAPI void _add(float *, float, float, int, int, float, float, float) const;
     /**
      * @symbol ?_getValue@SimplexNoise@@QEBAMAEBVVec2@@@Z
+     * @hash   211654017
      */
     MCAPI float _getValue(class Vec2 const &) const;
     /**
      * @symbol ?_getValue@SimplexNoise@@QEBAMAEBVVec3@@@Z
+     * @hash   -264614289
      */
     MCAPI float _getValue(class Vec3 const &) const;
 

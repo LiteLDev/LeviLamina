@@ -32,44 +32,47 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1955149812
      */
     virtual ~HurtByTargetGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@HurtByTargetGoal@@UEAA_NXZ
+     * @hash   -908089066
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@HurtByTargetGoal@@UEAAXXZ
+     * @hash   -1549396241
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@HurtByTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1950266598
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @note   Virtual function table index: 8
-     * @symbol 
+     * @vftbl  8
+     * @hash   -1402013944
      */
     virtual void __unk_vfn_8();
     /**
-     * @note   Virtual function table index: 9
-     * @symbol 
+     * @vftbl  9
+     * @hash   -1358806423
      */
     virtual void __unk_vfn_9();
     /**
-     * @note   Virtual function table index: 11
+     * @vftbl  11
      * @symbol ?alertOther@HurtByTargetGoal@@MEAAXPEAVMob@@0@Z
+     * @hash   -205243798
      */
     virtual void alertOther(class Mob *, class Mob *);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTBYTARGETGOAL
-#endif
     /**
      * @symbol ??0HurtByTargetGoal@@QEAA@AEAVMob@@AEBV?$vector@UMobDescriptor@@V?$allocator@UMobDescriptor@@@std@@@std@@_N@Z
+     * @hash   -1861257013
      */
     MCAPI HurtByTargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool);
 

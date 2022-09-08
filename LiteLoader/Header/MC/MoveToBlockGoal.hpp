@@ -31,67 +31,76 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   1931791042
      */
     virtual ~MoveToBlockGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@MoveToBlockGoal@@UEAA_NXZ
+     * @hash   -111266196
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@MoveToBlockGoal@@UEAA_NXZ
+     * @hash   628780762
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@MoveToBlockGoal@@UEAAXXZ
+     * @hash   -2039408155
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@MoveToBlockGoal@@UEAAXXZ
+     * @hash   -1150056923
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@MoveToBlockGoal@@UEAAXXZ
+     * @hash   -1311386848
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@MoveToBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -1674906732
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOBLOCKGOAL
-#endif
     /**
      * @symbol ??0MoveToBlockGoal@@QEAA@AEAVMob@@MHHHHMVVec3@@MW4TargetSelectionMethod@@V?$vector@VActorDefinitionTrigger@@V?$allocator@VActorDefinitionTrigger@@@std@@@std@@3V?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@5@AEBVActorFilterGroup@@@Z
+     * @hash   -884873893
      */
     MCAPI MoveToBlockGoal(class Mob &, float, int, int, int, int, float, class Vec3, float, enum TargetSelectionMethod, std::vector<class ActorDefinitionTrigger>, std::vector<class ActorDefinitionTrigger>, std::vector<class ItemDescriptor>, class ActorFilterGroup const &);
 
 //private:
     /**
      * @symbol ?_checkIfStuck@MoveToBlockGoal@@AEAAXXZ
+     * @hash   -1943099682
      */
     MCAPI void _checkIfStuck();
     /**
      * @symbol ?_isValidTarget@MoveToBlockGoal@@AEBA_NAEBVBlock@@@Z
+     * @hash   802215013
      */
     MCAPI bool _isValidTarget(class Block const &) const;
     /**
      * @symbol ?_moveToBlock@MoveToBlockGoal@@AEAAXXZ
+     * @hash   1049959002
      */
     MCAPI void _moveToBlock();
     /**
      * @symbol ?_pathIsValid@MoveToBlockGoal@@AEAA_NPEBVPath@@@Z
+     * @hash   -1919433376
      */
     MCAPI bool _pathIsValid(class Path const *);
 

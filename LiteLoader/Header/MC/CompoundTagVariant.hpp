@@ -90,26 +90,29 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAGVARIANT
-#endif
     /**
      * @symbol ??0CompoundTagVariant@@QEAA@$$QEAVTag@@@Z
+     * @hash   -2137456803
      */
     MCAPI CompoundTagVariant(class Tag &&);
     /**
      * @symbol ?emplace@CompoundTagVariant@@QEAAAEAVTag@@$$QEAV2@@Z
+     * @hash   -459948903
      */
     MCAPI class Tag & emplace(class Tag &&);
     /**
      * @symbol ?get@CompoundTagVariant@@QEAAPEAVTag@@XZ
+     * @hash   -1073666769
      */
     MCAPI class Tag * get();
     /**
      * @symbol ?get@CompoundTagVariant@@QEBAPEBVTag@@XZ
+     * @hash   200063465
      */
     MCAPI class Tag const * get() const;
     /**
      * @symbol ??1CompoundTagVariant@@QEAA@XZ
+     * @hash   -635066976
      */
     MCAPI ~CompoundTagVariant();
 

@@ -22,8 +22,8 @@ namespace ModifyPack {
 THook(ResourcePack*, "??0ResourcePack@@QEAA@AEAVPack@@@Z",
       ResourcePack* self, Pack* a2) {
     auto Pack = original(self, a2);
-        auto packOrigin = Pack->getPackOrigin();
-        if (packOrigin == PackOrigin::PackOrigin_Dev) {
+        auto manifest = &Pack->getManifest();
+        if (manifest && manifest->getPackOrigin() == PackOrigin::PackOrigin_Dev) {
             ModifyPack::PackListCache.push_back(a2->getManifest().getIdentity());  
         }
     return Pack;

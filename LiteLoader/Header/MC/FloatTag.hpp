@@ -40,53 +40,60 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   477017576
      */
     virtual ~FloatTag();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?write@FloatTag@@UEBAXAEAVIDataOutput@@@Z
+     * @hash   2083706863
      */
     virtual void write(class IDataOutput &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?load@FloatTag@@UEAAXAEAVIDataInput@@@Z
+     * @hash   427502046
      */
     virtual void load(class IDataInput &);
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?toString@FloatTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -408486776
      */
     virtual std::string toString() const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?getId@FloatTag@@UEBA?AW4Type@Tag@@XZ
+     * @hash   -1781980803
      */
     virtual enum Tag::Type getId() const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?equals@FloatTag@@UEBA_NAEBVTag@@@Z
+     * @hash   -295559276
      */
     virtual bool equals(class Tag const &) const;
     /**
-     * @note   Virtual function table index: 9
+     * @vftbl  9
      * @symbol ?copy@FloatTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ
+     * @hash   -471675750
      */
     virtual std::unique_ptr<class Tag> copy() const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?hash@FloatTag@@UEBA_KXZ
+     * @hash   1745892624
      */
     virtual unsigned __int64 hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATTAG
-#endif
     /**
      * @symbol ??0FloatTag@@QEAA@XZ
+     * @hash   -1713209782
      */
     MCAPI FloatTag();
     /**
      * @symbol ??0FloatTag@@QEAA@M@Z
+     * @hash   -191860225
      */
     MCAPI FloatTag(float);
 

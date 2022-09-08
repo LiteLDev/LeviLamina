@@ -32,25 +32,29 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -277443145
      */
     virtual ~StopCommand();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z
+     * @hash   -1263427910
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPCOMMAND
-#endif
     /**
      * @symbol ?setup@StopCommand@@SAXAEAVCommandRegistry@@AEAVDedicatedServer@@@Z
+     * @hash   929662801
      */
     MCAPI static void setup(class CommandRegistry &, class DedicatedServer &);
 
 //private:
 
 private:
-MCAPI static class DedicatedServer * mServer;
+    /**
+     * @symbol ?mServer@StopCommand@@0PEAVDedicatedServer@@EA
+     * @hash   434984685
+     */
+    MCAPI static class DedicatedServer * mServer;
 
 };

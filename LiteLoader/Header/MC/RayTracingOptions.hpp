@@ -30,8 +30,10 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAYTRACINGOPTIONS
-#endif
-MCAPI static class gsl::basic_string_span<char const, -1> const RAY_TRACING_TAG;
+    /**
+     * @symbol ?RAY_TRACING_TAG@RayTracingOptions@@2V?$basic_string_span@$$CBD$0?0@gsl@@B
+     * @hash   -1974321303
+     */
+    MCAPI static class gsl::basic_string_span<char const, -1> const RAY_TRACING_TAG;
 
 };

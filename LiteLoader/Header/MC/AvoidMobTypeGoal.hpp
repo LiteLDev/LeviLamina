@@ -31,57 +31,64 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -859990238
      */
     virtual ~AvoidMobTypeGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@AvoidMobTypeGoal@@UEAA_NXZ
+     * @hash   -218643880
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@AvoidMobTypeGoal@@UEAA_NXZ
+     * @hash   224278102
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@AvoidMobTypeGoal@@UEAAXXZ
+     * @hash   -525160111
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@AvoidMobTypeGoal@@UEAAXXZ
+     * @hash   1913104769
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?tick@AvoidMobTypeGoal@@UEAAXXZ
+     * @hash   -1160298324
      */
     virtual void tick();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@AvoidMobTypeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   582569224
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVOIDMOBTYPEGOAL
-#endif
     /**
      * @symbol ??0AvoidMobTypeGoal@@QEAA@AEAVMob@@@Z
+     * @hash   -500764875
      */
     MCAPI AvoidMobTypeGoal(class Mob &);
     /**
      * @symbol ?canFindAvoidPath@AvoidMobTypeGoal@@QEAA_NPEAVActor@@@Z
+     * @hash   961363932
      */
     MCAPI bool canFindAvoidPath(class Actor *);
     /**
      * @symbol ?findNearestEntityToAvoid@AvoidMobTypeGoal@@QEAAPEAVActor@@M@Z
+     * @hash   -1036781986
      */
     MCAPI class Actor * findNearestEntityToAvoid(float);
 

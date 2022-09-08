@@ -29,28 +29,30 @@ public:
     ContainerDescription(struct ContainerDescription const &) = delete;
     ContainerDescription() = delete;
 #endif
+
 public:
     /**
-     * @note   Virtual function table index: 0
+     * @vftbl  0
      * @symbol ?getJsonName@ContainerDescription@@UEBAPEBDXZ
+     * @hash   -1938339399
      */
     virtual char const * getJsonName() const;
     /**
-     * @note   Virtual function table index: 1
-     * @symbol 
+     * @vftbl  1
+     * @hash   668426117
      */
     virtual ~ContainerDescription();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?deserializeData@ContainerDescription@@UEAAXUDeserializeDataParams@@@Z
+     * @hash   1209409130
      */
     virtual void deserializeData(struct DeserializeDataParams);
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?serializeData@ContainerDescription@@UEBAXAEAVValue@Json@@@Z
+     * @hash   1063696084
      */
     virtual void serializeData(class Json::Value &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERDESCRIPTION
-#endif
 
 };

@@ -31,67 +31,78 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1711742946
      */
     virtual ~NapGoal();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?canUse@NapGoal@@UEAA_NXZ
+     * @hash   -1868418064
      */
     virtual bool canUse();
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canContinueToUse@NapGoal@@UEAA_NXZ
+     * @hash   -1203717330
      */
     virtual bool canContinueToUse();
     /**
-     * @note   Virtual function table index: 3
-     * @symbol 
+     * @vftbl  3
+     * @hash   -1364347549
      */
     virtual void __unk_vfn_3();
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?start@NapGoal@@UEAAXXZ
+     * @hash   -887186759
      */
     virtual void start();
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?stop@NapGoal@@UEAAXXZ
+     * @hash   685235113
      */
     virtual void stop();
     /**
-     * @note   Virtual function table index: 6
-     * @symbol 
+     * @vftbl  6
+     * @hash   -1403860986
      */
     virtual void __unk_vfn_6();
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?appendDebugInfo@NapGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   460128
      */
     virtual void appendDebugInfo(std::string &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAPGOAL
-#endif
     /**
      * @symbol ??0NapGoal@@QEAA@AEAVMob@@MMMMAEBVActorFilterGroup@@1@Z
+     * @hash   1213038780
      */
     MCAPI NapGoal(class Mob &, float, float, float, float, class ActorFilterGroup const &, class ActorFilterGroup const &);
 
 //private:
     /**
      * @symbol ?_canSleep@NapGoal@@AEBA_NAEBUTick@@@Z
+     * @hash   73390044
      */
     MCAPI bool _canSleep(struct Tick const &) const;
     /**
      * @symbol ?_detectsMobs@NapGoal@@AEBA_NXZ
+     * @hash   1210534057
      */
     MCAPI bool _detectsMobs() const;
     /**
      * @symbol ?_setCooldown@NapGoal@@AEAAXXZ
+     * @hash   1631904346
      */
     MCAPI void _setCooldown();
 
 private:
-MCAPI static float const MOB_DETECT_TIME;
+    /**
+     * @symbol ?MOB_DETECT_TIME@NapGoal@@0MB
+     * @hash   1433411085
+     */
+    MCAPI static float const MOB_DETECT_TIME;
 
 };

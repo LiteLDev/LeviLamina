@@ -34,82 +34,100 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1137577066
      */
     virtual ~BackgroundWorker();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?isAsync@BackgroundWorker@@UEBA_NXZ
+     * @hash   955325118
      */
     virtual bool isAsync() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?canTaskRunAgain@BackgroundWorker@@UEBA_NXZ
+     * @hash   1171222726
      */
     virtual bool canTaskRunAgain() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDWORKER
-#endif
     /**
      * @symbol ??0BackgroundWorker@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBVOSThreadPriority@Threading@Bedrock@@V?$optional@_K@2@AEAVWorkerPool@@1@Z
+     * @hash   815075538
      */
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class WorkerPool &, bool);
     /**
      * @symbol ?getApproximateTaskCount@BackgroundWorker@@QEBA_KXZ
+     * @hash   102864315
      */
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     /**
      * @symbol ?getThreadId@BackgroundWorker@@QEBA?AVid@thread@std@@XZ
+     * @hash   -514901466
      */
     MCAPI class std::thread::id getThreadId() const;
     /**
      * @symbol ?isIdle@BackgroundWorker@@QEBA_NXZ
+     * @hash   -1684081966
      */
     MCAPI bool isIdle() const;
     /**
      * @symbol ?processTaskSync@BackgroundWorker@@QEAA_NXZ
+     * @hash   2122742662
      */
     MCAPI bool processTaskSync();
     /**
      * @symbol ?queue@BackgroundWorker@@QEAAXV?$shared_ptr@VBackgroundTaskBase@@@std@@@Z
+     * @hash   663803307
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>);
     /**
      * @symbol ?requestStop@BackgroundWorker@@QEAAX_N@Z
+     * @hash   665636322
      */
     MCAPI void requestStop(bool);
     /**
      * @symbol ?resetWorkerThreadID@BackgroundWorker@@QEAAXXZ
+     * @hash   2146035843
      */
     MCAPI void resetWorkerThreadID();
     /**
      * @symbol ?resortPriorityQueue@BackgroundWorker@@QEAAXXZ
+     * @hash   256452947
      */
     MCAPI void resortPriorityQueue();
     /**
      * @symbol ?start@BackgroundWorker@@QEAAXXZ
+     * @hash   -1299321629
      */
     MCAPI void start();
     /**
      * @symbol ?wake@BackgroundWorker@@QEAAXXZ
+     * @hash   -1575312491
      */
     MCAPI void wake();
     /**
      * @symbol ?getLocal@BackgroundWorker@@SAPEAV1@XZ
+     * @hash   310103784
      */
     MCAPI static class BackgroundWorker * getLocal();
 
 //private:
     /**
      * @symbol ?_processNextTask@BackgroundWorker@@AEAA_NXZ
+     * @hash   -2051642046
      */
     MCAPI bool _processNextTask();
     /**
      * @symbol ?_runOneTask@BackgroundWorker@@AEAA?AW4RunOneResult@1@XZ
+     * @hash   -1193796499
      */
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
 
 private:
-MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
+    /**
+     * @symbol ?gLocalWorkerMappingSingleton@BackgroundWorker@@0PEAV1@EA
+     * @hash   -292230109
+     */
+    MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
 
 };

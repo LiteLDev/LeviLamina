@@ -29,52 +29,62 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -561599179
      */
     virtual ~UpdateAbilitiesPacket();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?getId@UpdateAbilitiesPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     * @hash   -2130442585
      */
     virtual enum MinecraftPacketIds getId() const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?getName@UpdateAbilitiesPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   -1266441900
      */
     virtual std::string getName() const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?write@UpdateAbilitiesPacket@@UEBAXAEAVBinaryStream@@@Z
+     * @hash   -1552283789
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?_read@UpdateAbilitiesPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     * @hash   735699875
      */
     virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEABILITIESPACKET
-#endif
     /**
      * @symbol ??0UpdateAbilitiesPacket@@QEAA@XZ
+     * @hash   -231244845
      */
     MCAPI UpdateAbilitiesPacket();
     /**
      * @symbol ??0UpdateAbilitiesPacket@@QEAA@UActorUniqueID@@AEBVLayeredAbilities@@@Z
+     * @hash   185325019
      */
     MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const &);
     /**
      * @symbol ?fillIn@UpdateAbilitiesPacket@@QEBAXAEAVLayeredAbilities@@@Z
+     * @hash   -1009270426
      */
     MCAPI void fillIn(class LayeredAbilities &) const;
     /**
      * @symbol ?getTargetPlayer@UpdateAbilitiesPacket@@QEBA?AUActorUniqueID@@XZ
+     * @hash   -18934686
      */
     MCAPI struct ActorUniqueID getTargetPlayer() const;
 
 //private:
 
 private:
-MCAPI static class std::array<enum UpdateAbilitiesPacket::SerializedAbilitiesLayer, 4> const ABILITIES_LAYER_MAP;
+    /**
+     * @symbol ?ABILITIES_LAYER_MAP@UpdateAbilitiesPacket@@0V?$array@W4SerializedAbilitiesLayer@UpdateAbilitiesPacket@@$03@std@@B
+     * @hash   -1326207825
+     */
+    MCAPI static class std::array<enum UpdateAbilitiesPacket::SerializedAbilitiesLayer, 4> const ABILITIES_LAYER_MAP;
 
 };

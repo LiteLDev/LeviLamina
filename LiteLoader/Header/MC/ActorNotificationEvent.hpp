@@ -26,11 +26,11 @@ public:
     ActorNotificationEvent(struct ActorNotificationEvent const &) = delete;
     ActorNotificationEvent() = delete;
 #endif
+
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORNOTIFICATIONEVENT
-#endif
     /**
      * @symbol ??1ActorNotificationEvent@@QEAA@XZ
+     * @hash   -308125052
      */
     MCAPI ~ActorNotificationEvent();
 

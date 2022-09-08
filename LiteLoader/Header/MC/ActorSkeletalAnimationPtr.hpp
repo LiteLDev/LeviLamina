@@ -30,36 +30,45 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORSKELETALANIMATIONPTR
-#endif
     /**
      * @symbol ??0ActorSkeletalAnimationPtr@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VActorAnimationGroup@@@Bedrock@@@gsl@@AEBVHashedString@@@Z
+     * @hash   206731090
      */
     MCAPI ActorSkeletalAnimationPtr(class gsl::not_null<class Bedrock::NonOwnerPointer<class ActorAnimationGroup>> const &, class HashedString const &);
     /**
      * @symbol ?getName@ActorSkeletalAnimationPtr@@QEBAAEBVHashedString@@XZ
+     * @hash   338413406
      */
     MCAPI class HashedString const & getName() const;
     /**
      * @symbol ?isNull@ActorSkeletalAnimationPtr@@QEBA_NXZ
+     * @hash   336158960
      */
     MCAPI bool isNull() const;
     /**
      * @symbol ??CActorSkeletalAnimationPtr@@QEBAPEBVActorSkeletalAnimation@@XZ
+     * @hash   -66848993
      */
     MCAPI class ActorSkeletalAnimation const * operator->() const;
     /**
      * @symbol ??CActorSkeletalAnimationPtr@@QEAAPEAVActorSkeletalAnimation@@XZ
+     * @hash   903912353
      */
     MCAPI class ActorSkeletalAnimation * operator->();
     /**
      * @symbol ??4ActorSkeletalAnimationPtr@@QEAAAEAV0@AEBV0@@Z
+     * @hash   439017180
      */
     MCAPI class ActorSkeletalAnimationPtr & operator=(class ActorSkeletalAnimationPtr const &);
     /**
      * @symbol ??1ActorSkeletalAnimationPtr@@QEAA@XZ
+     * @hash   -744552540
      */
     MCAPI ~ActorSkeletalAnimationPtr();
-MCAPI static class ActorSkeletalAnimationPtr const NONE;
+    /**
+     * @symbol ?NONE@ActorSkeletalAnimationPtr@@2V1@B
+     * @hash   -2026236992
+     */
+    MCAPI static class ActorSkeletalAnimationPtr const NONE;
 
 };

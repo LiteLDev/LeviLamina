@@ -32,34 +32,39 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HTTPHEADERS
-#endif
     /**
      * @symbol ??0HttpHeaders@@QEAA@XZ
+     * @hash   701571370
      */
     MCAPI HttpHeaders();
     /**
      * @symbol ?clear@HttpHeaders@@QEAAXXZ
+     * @hash   41942879
      */
     MCAPI void clear();
     /**
      * @symbol ?getHeader@HttpHeaders@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z
+     * @hash   -1905635930
      */
     MCAPI bool getHeader(std::string const &, std::string &) const;
     /**
      * @symbol ?getState@HttpHeaders@@QEAA?AW4ParseState@1@XZ
+     * @hash   -714240253
      */
     MCAPI enum HttpHeaders::ParseState getState();
     /**
      * @symbol ?getStatusCode@HttpHeaders@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   3511008
      */
     MCAPI std::string getStatusCode() const;
     /**
      * @symbol ?parse@HttpHeaders@@QEAA?AW4ParseState@1@AEAVBitStream@RakNet@@@Z
+     * @hash   -338251478
      */
     MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream &);
     /**
      * @symbol ??1HttpHeaders@@QEAA@XZ
+     * @hash   503882202
      */
     MCAPI ~HttpHeaders();
 

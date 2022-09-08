@@ -32,36 +32,39 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   148045728
      */
     virtual ~ScriptPrintLogger();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?onInfo@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+     * @hash   1523287906
      */
     virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?onWarn@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+     * @hash   1229494922
      */
     virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?onError@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z
+     * @hash   -1741566530
      */
     virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /**
-     * @note   Virtual function table index: 4
+     * @vftbl  4
      * @symbol ?onException@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBUError@3@@Z
+     * @hash   -704165364
      */
     virtual void onException(struct Scripting::ContextId, struct Scripting::Error const &) const;
     /**
-     * @note   Virtual function table index: 5
+     * @vftbl  5
      * @symbol ?shouldPrintException@ScriptPrintLogger@@UEBA_NAEBUError@Scripting@@@Z
+     * @hash   330843560
      */
     virtual bool shouldPrintException(struct Scripting::Error const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPRINTLOGGER
-#endif
 
 };

@@ -31,24 +31,25 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1216478478
      */
     virtual ~SwimMoveControl();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?initializeInternal@SwimMoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z
+     * @hash   -2018156719
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @note   Virtual function table index: 2
+     * @vftbl  2
      * @symbol ?tick@SwimMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z
+     * @hash   -1141888846
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SWIMMOVECONTROL
-#endif
     /**
      * @symbol ??0SwimMoveControl@@QEAA@XZ
+     * @hash   -2020435008
      */
     MCAPI SwimMoveControl();
 

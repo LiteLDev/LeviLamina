@@ -32,39 +32,44 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDERCHESTBLOCKACTOR
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canPullOutItem@EnderChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     * @hash   -557427768
      */
     MCVAPI bool canPullOutItem(class BlockSource &, int, int, class ItemInstance const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?canPushInItem@EnderChestBlockActor@@UEBA_NAEAVBlockSource@@HHAEBVItemInstance@@@Z
+     * @hash   1560816318
      */
     MCVAPI bool canPushInItem(class BlockSource &, int, int, class ItemInstance const &) const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?getName@EnderChestBlockActor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     * @hash   1072419914
      */
     MCVAPI std::string getName() const;
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playCloseSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
+     * @hash   -501408646
      */
     MCVAPI void playCloseSound(class BlockSource &);
     /**
-     * @note   Virtual function table index: -1
      * @symbol ?playOpenSound@EnderChestBlockActor@@MEAAXAEAVBlockSource@@@Z
+     * @hash   -1078635388
      */
     MCVAPI void playOpenSound(class BlockSource &);
 #endif
     /**
      * @symbol ??0EnderChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
+     * @hash   611699943
      */
     MCAPI EnderChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
 
 //private:
 
 private:
-MCAPI static int const ITEMS_SIZE;
+    /**
+     * @symbol ?ITEMS_SIZE@EnderChestBlockActor@@0HB
+     * @hash   331169787
+     */
+    MCAPI static int const ITEMS_SIZE;
 
 };

@@ -30,14 +30,14 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
-#endif
     /**
      * @symbol ?initSchema@ActorEventResponseFactory@@QEAAXXZ
+     * @hash   2117977221
      */
     MCAPI void initSchema();
     /**
      * @symbol ?initializeFactory@ActorEventResponseFactory@@QEAAXAEBVExperiments@@@Z
+     * @hash   -1749596144
      */
     MCAPI void initializeFactory(class Experiments const &);
 

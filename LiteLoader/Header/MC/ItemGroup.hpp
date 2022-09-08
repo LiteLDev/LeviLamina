@@ -30,22 +30,24 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMGROUP
-#endif
     /**
      * @symbol ??0ItemGroup@@QEAA@AEBVItemInstance@@@Z
+     * @hash   987478205
      */
     MCAPI ItemGroup(class ItemInstance const &);
     /**
      * @symbol ?isEmpty@ItemGroup@@QEBA_NXZ
+     * @hash   -1102028074
      */
     MCAPI bool isEmpty() const;
     /**
      * @symbol ??4ItemGroup@@QEAAAEAV0@$$QEAV0@@Z
+     * @hash   874100940
      */
     MCAPI class ItemGroup & operator=(class ItemGroup &&);
     /**
      * @symbol ??1ItemGroup@@QEAA@XZ
+     * @hash   -756384680
      */
     MCAPI ~ItemGroup();
 

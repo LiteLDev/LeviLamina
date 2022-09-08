@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   69451947
      */
     virtual ~MonsterRoomFeature();
     /**
-     * @note   Virtual function table index: 3
+     * @vftbl  3
      * @symbol ?place@MonsterRoomFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
+     * @hash   -1215888517
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONSTERROOMFEATURE
-#endif
     /**
      * @symbol ??0MonsterRoomFeature@@QEAA@XZ
+     * @hash   1967211885
      */
     MCAPI MonsterRoomFeature();
 

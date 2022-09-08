@@ -31,16 +31,15 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   312396635
      */
     virtual ~PrintStream();
     /**
-     * @note   Virtual function table index: 1
+     * @vftbl  1
      * @symbol ?print@PrintStream@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
+     * @hash   -402333787
      */
     virtual void print(std::string const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRINTSTREAM
-#endif
 
 };

@@ -32,48 +32,54 @@ public:
 
 public:
     /**
-     * @note   Virtual function table index: 0
-     * @symbol 
+     * @vftbl  0
+     * @hash   -1048590915
      */
     virtual ~Trade2ContainerManagerModel();
     /**
-     * @note   Virtual function table index: 6
+     * @vftbl  6
      * @symbol ?getItemCopies@Trade2ContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ
+     * @hash   -1773066880
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @note   Virtual function table index: 7
+     * @vftbl  7
      * @symbol ?setSlot@Trade2ContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z
+     * @hash   -587246849
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @note   Virtual function table index: 8
+     * @vftbl  8
      * @symbol ?getSlot@Trade2ContainerManagerModel@@UEBAAEBVItemStack@@H@Z
+     * @hash   -1714433960
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @note   Virtual function table index: 10
+     * @vftbl  10
      * @symbol ?broadcastChanges@Trade2ContainerManagerModel@@UEAAXXZ
+     * @hash   -1691974182
      */
     virtual void broadcastChanges();
     /**
-     * @note   Virtual function table index: 16
+     * @vftbl  16
      * @symbol ?isValid@Trade2ContainerManagerModel@@UEAA_NM@Z
+     * @hash   1807568774
      */
     virtual bool isValid(float);
     /**
-     * @note   Virtual function table index: 17
+     * @vftbl  17
      * @symbol ?_postInit@Trade2ContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ
+     * @hash   -2002092809
      */
     virtual class ContainerScreenContext _postInit();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRADE2CONTAINERMANAGERMODEL
-#endif
     /**
      * @symbol ??0Trade2ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
+     * @hash   431924556
      */
     MCAPI Trade2ContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
     /**
      * @symbol ?getEntity@Trade2ContainerManagerModel@@QEBAPEAVActor@@XZ
+     * @hash   -319185333
      */
     MCAPI class Actor * getEntity() const;
 
