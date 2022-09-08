@@ -299,10 +299,13 @@ public:
     Vec3 mClickPos;
 };
 
-/**
- * \~english @brief This event indicates that a player used a bucket.
- * \~chinese @brief ´ËÊÂ¼ş±íÃ÷Íæ¼ÒÊ¹ÓÃÁËÍ°¡£
- *
+ /**
+ * \~chinese
+ * @brief å½“ç©å®¶ä½¿ç”¨æ¡¶æ—¶è§¦å‘çš„äº‹ä»¶ã€‚
+ * 
+ * \~english
+ * @brief An event that fires as players use bucket.
+ * 
  */
 class PlayerUseBucketEvent : public EventTemplate<PlayerUseBucketEvent> {
 public:
