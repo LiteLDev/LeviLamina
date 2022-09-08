@@ -36,9 +36,9 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("isLiquidClipItem", &ItemClass::isLiquidClipItem)
         .instanceProperty("isMusicDiscItem", &ItemClass::isMusicDiscItem)
         .instanceProperty("isOffhandItem", &ItemClass::isOffhandItem)
-        .instanceProperty("isPattern", &ItemClass::isPattern)
         .instanceProperty("isPotionItem", &ItemClass::isPotionItem)
         .instanceProperty("isStackable", &ItemClass::isStackable)
+        .instanceProperty("isWearableItem", &ItemClass::isWearableItem)
 
         .instanceFunction("set", &ItemClass::set)
         .instanceFunction("clone", &ItemClass::clone)
@@ -219,13 +219,6 @@ Local<Value> ItemClass::isOffhandItem() {
     CATCH("Fail in isOffhandItem!");
 }
 
-Local<Value> ItemClass::isPattern() {
-    try {
-        return Boolean::newBoolean(item->isPattern());
-    }
-    CATCH("Fail in isPattern!");
-}
-
 Local<Value> ItemClass::isPotionItem() {
     try {
         return Boolean::newBoolean(item->isPotionItem());
@@ -236,6 +229,13 @@ Local<Value> ItemClass::isPotionItem() {
 Local<Value> ItemClass::isStackable() {
     try {
         return Boolean::newBoolean(item->isStackable());
+    }
+    CATCH("Fail in isStackable!");
+}
+
+Local<Value> ItemClass::isWearableItem() {
+    try {
+        return Boolean::newBoolean(item->isWearableItem());
     }
     CATCH("Fail in isStackable!");
 }

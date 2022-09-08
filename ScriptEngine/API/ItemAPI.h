@@ -44,9 +44,9 @@ public:
     Local<Value> isLiquidClipItem();
     Local<Value> isMusicDiscItem();
     Local<Value> isOffhandItem();
-    Local<Value> isPattern();
     Local<Value> isPotionItem();
     Local<Value> isStackable();
+    Local<Value> isWearableItem();
 
     Local<Value> set(const Arguments& args);
     Local<Value> clone(const Arguments& args);
