@@ -143,13 +143,6 @@ Local<Value> ItemClass::isArmorItem() {
     CATCH("Fail in isArmorItem!");
 }
 
-Local<Value> ItemClass::isArmorItem() {
-    try {
-        return Boolean::newBoolean(item->isArmorItem());
-    }
-    CATCH("Fail in isArmorItem!");
-}
-
 Local<Value> ItemClass::isBlock() {
     try {
         return Boolean::newBoolean(item->isBlock());
