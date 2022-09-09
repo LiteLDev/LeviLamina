@@ -30,6 +30,26 @@ public:
     Local<Value> getId();
     Local<Value> getCount();
     Local<Value> getAux();
+    Local<Value> getDamage();
+    Local<Value> getAttackDamage();
+    Local<Value> getMaxDamage();
+
+    Local<Value> isArmorItem();
+    Local<Value> isBlock();
+    Local<Value> isDamageableItem();
+    Local<Value> isDamaged();
+    Local<Value> isEnchanted();
+    Local<Value> isEnchantingBook();
+    Local<Value> isFireResistant();
+    Local<Value> isFullStack();
+    Local<Value> isGlint();
+    Local<Value> isHorseArmorItem();
+    Local<Value> isLiquidClipItem();
+    Local<Value> isMusicDiscItem();
+    Local<Value> isOffhandItem();
+    Local<Value> isPotionItem();
+    Local<Value> isStackable();
+    Local<Value> isWearableItem();
 
     Local<Value> set(const Arguments& args);
     Local<Value> clone(const Arguments& args);
@@ -38,6 +58,7 @@ public:
     Local<Value> setAux(const Arguments& args);
     Local<Value> setLore(const Arguments& args);
     Local<Value> setDisplayName(const Arguments& args);
+    Local<Value> setDamage(const Arguments& args);
     Local<Value> getNbt(const Arguments& args);
     Local<Value> setNbt(const Arguments& args);
 };
