@@ -18,6 +18,7 @@ ClassDefine<DeviceClass> DeviceClassBuilder =
         .instanceProperty("lastPing", &DeviceClass::getLastPing)
         .instanceProperty("lastPacketLoss", &DeviceClass::getLastPacketLoss)
         .instanceProperty("os", &DeviceClass::getOs)
+        .instanceProperty("inputMode", &DeviceClass::getInputMode)
         .instanceProperty("serverAddress", &DeviceClass::getServerAddress)
         .instanceProperty("clientId", &DeviceClass::getClientId)
         .build();
@@ -136,4 +137,15 @@ Local<Value> DeviceClass::getClientId() {
         return String::newString(player->getClientId()); //=============???
     }
     CATCH("Fail in getClientId!")
+}
+
+Local<Value> DeviceClass::getInputMode() {
+    try {
+        Player* player = getPlayer();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber((int)player->getInputMode());
+    }
+    CATCH("Fail in getInputMode!")
 }

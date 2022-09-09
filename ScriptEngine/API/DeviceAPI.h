@@ -27,6 +27,7 @@ public:
     Local<Value> getLastPing();
     Local<Value> getLastPacketLoss();
     Local<Value> getOs();
+    Local<Value> getInputMode();
     Local<Value> getServerAddress();
     Local<Value> getClientId();
 };
