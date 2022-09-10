@@ -21,11 +21,11 @@ RTN inline VirtualCall(void const* _this, uintptr_t off, Args... args) {
     return (*(RTN(**)(void const*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
 }
 
-template <typename T, int off>
+template <typename T, uintptr_t off>
 inline T& dAccess(void* ptr) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
-template <typename T, int off>
+template <typename T, uintptr_t off>
 inline T const& dAccess(void const* ptr) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
