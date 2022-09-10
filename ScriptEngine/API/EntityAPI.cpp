@@ -10,6 +10,7 @@
 #include "NbtAPI.h"
 #include "NativeAPI.h"
 #include <MC/ServerPlayer.hpp>
+#include <MC/SynchedActorData.hpp>
 #include <MC/Level.hpp>
 #include <MC/ItemActor.hpp>
 #include <MC/SimpleContainer.hpp>
@@ -72,6 +73,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("hasContainer", &EntityClass::hasContainer)
         .instanceFunction("getContainer", &EntityClass::getContainer)
         .instanceFunction("refreshItems", &EntityClass::refreshItems)
+        .instanceFunction("setScale", &EntityClass::setScale)
         .instanceFunction("setNbt", &EntityClass::setNbt)
         .instanceFunction("getNbt", &EntityClass::getNbt)
         .instanceFunction("addTag", &EntityClass::addTag)
@@ -777,6 +779,21 @@ Local<Value> EntityClass::setOnFire(const Arguments& args) {
         return Boolean::newBoolean(result);
     }
     CATCH("Fail in setOnFire!")
+}
+
+Local<Value> EntityClass::setScale(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        entity->getEntityData().set(ActorDataKeys::SCALE, args[0].asNumber().toFloat());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setScale!")
 }
 
 Local<Value> EntityClass::getNbt(const Arguments& args) {

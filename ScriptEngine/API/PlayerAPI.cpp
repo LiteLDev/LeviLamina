@@ -23,6 +23,7 @@
 #include <MC/ScoreboardId.hpp>
 #include <MC/ListTag.hpp>
 #include <MC/CompoundTag.hpp>
+#include <MC/SynchedActorData.hpp>
 #include <MC/SimulatedPlayer.hpp>
 #include <MC/BlockSource.hpp>
 #include <PlayerInfoAPI.h>
@@ -143,6 +144,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("reduceLevel", &PlayerClass::reduceLevel)
         .instanceFunction("getLevel", &PlayerClass::getLevel)
         .instanceFunction("setLevel", &PlayerClass::setLevel)
+        .instanceFunction("setScale", &PlayerClass::setScale)
         .instanceFunction("resetLevel", &PlayerClass::resetLevel)
         .instanceFunction("addExperience", &PlayerClass::addExperience)
         .instanceFunction("reduceExperience", &PlayerClass::reduceExperience)
@@ -1356,6 +1358,21 @@ Local<Value> PlayerClass::setLevel(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in setLevel!");
+}
+
+Local<Value> PlayerClass::setScale(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        player->getEntityData().set(ActorDataKeys::SCALE, args[0].asNumber().toFloat());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setScale!");
 }
 
 Local<Value> PlayerClass::resetLevel(const Arguments& args) {

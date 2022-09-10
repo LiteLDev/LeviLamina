@@ -58,6 +58,8 @@ enum class EVENT_TYPES : int {
     onAttackBlock,
     onUseItem,
     onUseItemOn,
+    onUseBucketPlace,
+    onUseBucketTake,
     onTakeItem,
     onDropItem,
     onEat,
@@ -542,6 +544,33 @@ void EnableEventListener(int eventId) {
                               Number::newNumber(ev.mFace), FloatPos::newPos(ev.mClickPos));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onUseItemOn);
+            });
+            break;
+
+        case EVENT_TYPES::onUseBucketPlace:
+        case EVENT_TYPES::onUseBucketTake:
+            Event::PlayerUseBucketEvent::subscribe([](const PlayerUseBucketEvent& ev) {
+                if (ev.mEventType == PlayerUseBucketEvent::EventType::Place) {
+                    IF_LISTENED(EVENT_TYPES::onUseBucketPlace) {
+                        CallEvent(EVENT_TYPES::onUseBucketPlace, PlayerClass::newPlayer((Player*)ev.mPlayer),
+                                  ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
+                                  Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                    }
+                    IF_LISTENED_END(EVENT_TYPES::onUseBucketPlace);
+                } else if (ev.mEventType == PlayerUseBucketEvent::EventType::Take) {
+                    IF_LISTENED(EVENT_TYPES::onUseBucketTake) {
+                        if (ev.mTargetActor) {
+                            CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
+                                      ItemClass::newItem(ev.mBucket), EntityClass::newEntity(ev.mTargetActor),
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                        } else {
+                            CallEvent(EVENT_TYPES::onUseBucketTake, PlayerClass::newPlayer((Player*)ev.mPlayer),
+                                      ItemClass::newItem(ev.mBucket), BlockClass::newBlock(ev.mBlockInstance),
+                                      Number::newNumber(ev.mFace), FloatPos::newPos(ev.mTargetPos));
+                        }
+                    }
+                    IF_LISTENED_END(EVENT_TYPES::onUseBucketTake);
+                }
             });
             break;
 
