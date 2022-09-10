@@ -10,10 +10,7 @@
 #include <LLAPI.h>
 #include "PERM/Role.hpp"
 
-/**
- * @brief PermissionAPI (Dynamic dependency).
- * 
- */
+
 class DynPermissionAPI {
 
     using FuncCreateRole = void (*)(const std::string&, const std::string&, std::weak_ptr<PERM::Role>&);
@@ -276,10 +273,7 @@ public:
     }
 };
 
-/**
- * @brief Permission APIs.
- * 
- */
+
 class Permission {
 
 public:

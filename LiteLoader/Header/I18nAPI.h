@@ -43,10 +43,7 @@
 #include <string>
 #include "Utils/StringHelper.h"
 
-/**
- * @brief I18nBase API class.
- *
- */
+
 class I18nBase {
 
 public:
@@ -102,12 +99,7 @@ public:
     static const constexpr char* POD_KEY = "ll_plugin_i18n"; ///< PluginOwnData key
 };
 
-/**
- * @brief Lightweight and simple I18nBase support.
- *
- * @note  Use this, all the language data will be saved in a single JSON file.
- *        So it is not recommended to use it in large plugins(that have a lot of strings to translate)
- */
+
 class SingleFileI18N : public I18nBase {
 
 public:
