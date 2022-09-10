@@ -66,8 +66,6 @@ public:
     Local<Value> setScale(const Arguments& args);
 
     Local<Value> distanceToPos(const Arguments& args);
-    Local<Value> distanceToPlayer(const Arguments& args);
-    Local<Value> distanceToEntity(const Arguments& args);
 
     Local<Value> isPlayer(const Arguments& args);
     Local<Value> toPlayer(const Arguments& args);

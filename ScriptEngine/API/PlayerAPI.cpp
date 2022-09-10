@@ -121,8 +121,6 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("setSprinting", &PlayerClass::setSprinting)
         .instanceFunction("sendToast", &PlayerClass::sendToast)
         .instanceFunction("distanceToPos", &PlayerClass::distanceToPos)
-        .instanceFunction("distanceToPlayer", &PlayerClass::distanceToPlayer)
-        .instanceFunction("distanceToEntity", &PlayerClass::distanceToEntity)
 
         .instanceFunction("getBlockStandingOn", &PlayerClass::getBlockStandingOn)
         .instanceFunction("getDevice", &PlayerClass::getDevice)
@@ -2431,38 +2429,4 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
         return Number::newNumber(player->distanceTo(pos.getVec3()));
     }
     CATCH("Fail in distanceToPos!")
-}
-
-Local<Value> PlayerClass::distanceToPlayer(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-
-    try {
-        Player* targetPlayer = PlayerClass::extract(args[0]);
-        if (!targetPlayer)
-            return Local<Value>();
-
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Number::newNumber(player->distanceTo((Player&)targetPlayer));
-    }
-    CATCH("Fail in distanceToPlayer!")
-}
-
-Local<Value> PlayerClass::distanceToEntity(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-
-    try {
-        Actor* targetEntity = EntityClass::extract(args[0]);
-        if (!targetEntity)
-            return Local<Value>();
-
-        Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        return Number::newNumber(player->distanceTo((Actor&)targetEntity));
-    }
-    CATCH("Fail in distanceToEntity!")
 }

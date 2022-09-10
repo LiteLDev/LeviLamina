@@ -71,8 +71,6 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("getBlockStandingOn", &EntityClass::getBlockStandingOn)
         .instanceFunction("getArmor", &EntityClass::getArmor)
         .instanceFunction("distanceToPos", &EntityClass::distanceToPos)
-        .instanceFunction("distanceToPlayer", &EntityClass::distanceToPlayer)
-        .instanceFunction("distanceToEntity", &EntityClass::distanceToEntity)
         .instanceFunction("hasContainer", &EntityClass::hasContainer)
         .instanceFunction("getContainer", &EntityClass::getContainer)
         .instanceFunction("refreshItems", &EntityClass::refreshItems)
@@ -687,40 +685,6 @@ Local<Value> EntityClass::distanceToPos(const Arguments& args) {
         return Number::newNumber(entity->distanceTo(pos.getVec3()));
     }
     CATCH("Fail in distanceToPos!")
-}
-
-Local<Value> EntityClass::distanceToPlayer(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-
-    try {
-        Player* targetPlayer = PlayerClass::extract(args[0]);
-        if (!targetPlayer)
-            return Local<Value>();
-
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Number::newNumber(entity->distanceTo((Player&)targetPlayer));
-    }
-    CATCH("Fail in distanceToPlayer!")
-}
-
-Local<Value> EntityClass::distanceToEntity(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-
-    try {
-        Actor* targetEntity = EntityClass::extract(args[0]);
-        if (!targetEntity)
-            return Local<Value>();
-
-        Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
-
-        return Number::newNumber(entity->distanceTo((Actor&)targetEntity));
-    }
-    CATCH("Fail in distanceToEntity!")
 }
 
 Local<Value> EntityClass::kill(const Arguments& args) {
