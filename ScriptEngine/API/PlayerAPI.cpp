@@ -26,6 +26,7 @@
 #include <MC/SynchedActorData.hpp>
 #include <MC/SimulatedPlayer.hpp>
 #include <MC/BlockSource.hpp>
+#include <MC/Command.hpp>
 #include <PlayerInfoAPI.h>
 #include <SafeGuardRecord.h>
 #include <string>
@@ -119,6 +120,9 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("isSprinting", &PlayerClass::isSprinting)
         .instanceFunction("setSprinting", &PlayerClass::setSprinting)
         .instanceFunction("sendToast", &PlayerClass::sendToast)
+        .instanceFunction("distanceToPos", &PlayerClass::distanceToPos)
+        .instanceFunction("distanceToPlayer", &PlayerClass::distanceToPlayer)
+        .instanceFunction("distanceToEntity", &PlayerClass::distanceToEntity)
 
         .instanceFunction("getBlockStandingOn", &PlayerClass::getBlockStandingOn)
         .instanceFunction("getDevice", &PlayerClass::getDevice)
@@ -2366,4 +2370,99 @@ Local<Value> PlayerClass::sendToast(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in sendToast!");
+}
+
+Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    if (args.size() == 4) {
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+    }
+
+    try {
+        FloatVec4 pos;
+
+        if (args.size() == 1) {
+            if (IsInstanceOf<IntPos>(args[0])) {
+                // IntPos
+                IntPos* posObj = IntPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Boolean::newBoolean(false);
+                else {
+                    pos.x = posObj->x;
+                    pos.y = posObj->y;
+                    pos.z = posObj->z;
+                    pos.dim = posObj->dim;
+                }
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
+                // FloatPos
+                FloatPos* posObj = FloatPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Boolean::newBoolean(false);
+                else {
+                    pos = *posObj;
+                }
+            } else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+        } else if (args.size() == 4) {
+            // number pos
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+
+            pos.x = args[0].asNumber().toFloat();
+            pos.y = args[1].asNumber().toFloat();
+            pos.z = args[2].asNumber().toFloat();
+            pos.dim = args[3].toInt();
+        } else {
+            LOG_WRONG_ARGS_COUNT();
+            return Local<Value>();
+        }
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->distanceTo(pos.getVec3()));
+    }
+    CATCH("Fail in distanceToPos!")
+}
+
+Local<Value> PlayerClass::distanceToPlayer(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+
+    try {
+        Player* targetPlayer = PlayerClass::extract(args[0]);
+        if (!targetPlayer)
+            return Local<Value>();
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->distanceTo((Player&)targetPlayer));
+    }
+    CATCH("Fail in distanceToPlayer!")
+}
+
+Local<Value> PlayerClass::distanceToEntity(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+
+    try {
+        Actor* targetEntity = EntityClass::extract(args[0]);
+        if (!targetEntity)
+            return Local<Value>();
+
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Number::newNumber(player->distanceTo((Actor&)targetEntity));
+    }
+    CATCH("Fail in distanceToEntity!")
 }
