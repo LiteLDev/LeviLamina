@@ -643,7 +643,7 @@ Local<Value> EntityClass::distanceToPos(const Arguments& args) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
                 if (posObj->dim < 0)
-                    return Boolean::newBoolean(false);
+                    return Local<Value>();
                 else {
                     pos.x = posObj->x;
                     pos.y = posObj->y;
@@ -654,7 +654,7 @@ Local<Value> EntityClass::distanceToPos(const Arguments& args) {
                 // FloatPos
                 FloatPos* posObj = FloatPos::extractPos(args[0]);
                 if (posObj->dim < 0)
-                    return Boolean::newBoolean(false);
+                    return Local<Value>();
                 else {
                     pos = *posObj;
                 }
@@ -682,7 +682,12 @@ Local<Value> EntityClass::distanceToPos(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        return Number::newNumber(entity->distanceTo(pos.getVec3()));
+        if ((int)entity->getDimensionId() != pos.dim) {
+            return Local<Value>();
+        }
+        else {
+            return Number::newNumber(entity->distanceTo(pos.getVec3()));
+        }
     }
     CATCH("Fail in distanceToPos!")
 }

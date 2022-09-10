@@ -2387,7 +2387,7 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
                 // IntPos
                 IntPos* posObj = IntPos::extractPos(args[0]);
                 if (posObj->dim < 0)
-                    return Boolean::newBoolean(false);
+                    return Local<Value>();
                 else {
                     pos.x = posObj->x;
                     pos.y = posObj->y;
@@ -2398,7 +2398,7 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
                 // FloatPos
                 FloatPos* posObj = FloatPos::extractPos(args[0]);
                 if (posObj->dim < 0)
-                    return Boolean::newBoolean(false);
+                    return Local<Value>();
                 else {
                     pos = *posObj;
                 }
@@ -2426,7 +2426,11 @@ Local<Value> PlayerClass::distanceToPos(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        return Number::newNumber(player->distanceTo(pos.getVec3()));
+        if ((int)player->getDimensionId() != pos.dim) {
+            return Local<Value>();
+        } else {
+            return Number::newNumber(player->distanceTo(pos.getVec3()));
+        }
     }
     CATCH("Fail in distanceToPos!")
 }
