@@ -12,10 +12,7 @@
 
 namespace PERM {
 
-    /**
-     * @brief Permission instance.
-     * 
-     */
+
     struct PermInstance {
         std::string name;        ///< Name of the permission.
         bool enabled;            ///< Whether the permission is enabled.
@@ -45,10 +42,7 @@ namespace PERM {
         }
     };
 
-    /**
-     * @brief Permission information.
-     * 
-     */
+
     struct PermInfo {
         std::string name; ///< Name of the permission.
         std::string desc; ///< Description of the permission.

@@ -89,10 +89,7 @@ inline std::unordered_map<K, DB::Any> to_any_unordered_map(const std::unordered_
 namespace DB
 {
 
-/**
- * @brief Any class to store some SQL basic types
- * 
- */
+
 class Any
 {
 
