@@ -96,7 +96,6 @@ public:
         return (*this - b).lengthSqr();
     }
 
-
     float& operator[](int index) {
         if (index < 0 || index > 2) {
             return (&x)[0];
