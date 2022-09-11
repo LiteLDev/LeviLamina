@@ -8,10 +8,7 @@ namespace DB
 
 class MySQLSession;
 
-/**
- * @brief Fetched data receiver(buffer)
- * 
- */
+
 struct Receiver
 {
     MYSQL_FIELD field;

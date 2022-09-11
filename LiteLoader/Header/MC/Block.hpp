@@ -22,34 +22,39 @@ class Block {
 #define AFTER_EXTRA
     // Add new members to class
 public:
-
-public:
     LIAPI static Block* create(const string& str, unsigned short tileData);
     LIAPI static Block* create(CompoundTag* nbt);
 
     LIAPI string getTypeName() const;
     LIAPI int getId() const;
-    LIAPI unsigned short getTileData();
+    inline unsigned short getTileData(){
+        return static_cast<unsigned short>(getVariant());
+    }
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
 
-    inline bool operator==(class Block const& a2) const {
-        __int64 v2; // r8
-        __int64 v3; // rax
-        v2 = *(__int64*)(this + 16);
-        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0)
-            return false;
-        return v2 == v3 && *(unsigned short*)(this + 8) == *(unsigned short*)(&a2 + 8);
+    inline unsigned short getData() const {
+        return dAccess<unsigned short, 8>(this);
     }
 
-    inline bool operator!=(class Block const& a2) const {
-        __int64 v2; // r8
-        __int64 v3; // rax
+    inline class BlockLegacy const* getLegacyBlockPtr() const {
+        return &dAccess<BlockLegacy, 16>(this);
+    }
 
-        v2 = *(__int64*)(this + 16);
-        if (!v2 || (v3 = *(__int64*)(&a2 + 16)) == 0)
+    inline bool operator==(class Block const& block) const {
+        class BlockLegacy const* p1 = getLegacyBlockPtr();
+        class BlockLegacy const* p2 = block.getLegacyBlockPtr();
+        if (!p1 || !p2)
             return false;
-        return v2 != v3 || *(unsigned short*)(this + 8) != *(unsigned short*)(&a2 + 8);
+        return p1 == p2 && getData() == block.getData();
+    }
+
+    inline bool operator!=(class Block const& block) const {
+        class BlockLegacy const* p1 = getLegacyBlockPtr();
+        class BlockLegacy const* p2 = block.getLegacyBlockPtr();
+        if (!p1 || !p2)
+            return false;
+        return p1 != p2 || getData() != block.getData();
     }
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCK

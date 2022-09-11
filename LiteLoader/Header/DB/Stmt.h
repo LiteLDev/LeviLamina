@@ -13,12 +13,7 @@ extern Logger dbLogger;
 
 class Session;
 
-/**
- * @brief Structure to store a single value to bind to a prepared statement.
- *
- * @tparam T Type of sequence container, must have begin() and end() methods
- * @tparam The value type of the container must be DB::Any.
- */
+
 struct BindType
 {
     Any value;
@@ -26,27 +21,14 @@ struct BindType
     int idx = -1;
 };
 
-/**
- * @brief Structure to store a sequential container
- *        to bind multiple parameters at once.
- *
- * @tparam T Type of sequence container, must have begin() and end() methods
- * @tparam The value type of the container must be DB::Any.
- */
+
 template <typename T>
 struct BindSequenceType
 {
     T values;
     static_assert(std::is_same<typename T::value_type, Any>::value, "Container value type must be DB::Any");
 };
-/**
- * @brief Structure to store a map(relevance) container
- *        to bind multiple parameters at once.
- *
- * @tparam T Type of map container, must have begin() and end() methods
- * @note   The key type of the map must be std::string,
- *         and the value type of the map must be DB::Any.
- */
+
 template <typename T>
 struct BindMapType
 {

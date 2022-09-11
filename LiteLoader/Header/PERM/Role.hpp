@@ -12,10 +12,7 @@
 
 namespace PERM {
 
-    /**
-     * @brief Role instance.
-     * 
-     */
+
     class Role {
 
     protected:
@@ -176,10 +173,7 @@ namespace PERM {
         }
     };
 
-    /**
-     * @brief General role type.
-     * 
-     */
+
     class GeneralRole : public Role {
 
         using Base = Role;
@@ -209,10 +203,7 @@ namespace PERM {
         }
     };
 
-    /**
-     * @brief Everyone role type.
-     * 
-     */
+
     class EveryoneRole : public Role {
 
         using Base = Role;
@@ -242,10 +233,7 @@ namespace PERM {
         }
     };
 
-    /**
-     * @brief Admin role type.
-     * 
-     */
+
     class AdminRole : public Role {
 
         using Base = Role;
@@ -283,10 +271,7 @@ namespace PERM {
         }
     };
 
-    /**
-     * @brief Container to hold roles.
-     * 
-     */
+
     class Roles : public PermPtrContainer<Role> {
 
         using Base = PermPtrContainer<Role>;

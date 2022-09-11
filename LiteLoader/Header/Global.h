@@ -7,6 +7,10 @@
 #define LIAPI __declspec(dllimport)
 #endif
 
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif // NOMINMAX
+
 #define MCAPI __declspec(dllimport)
 #define MCVAPI __declspec(dllimport)
 #define MCINLINE inline

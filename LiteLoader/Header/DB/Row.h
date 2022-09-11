@@ -8,10 +8,7 @@ namespace DB
 
 class Row;
 
-/**
- * @brief The header of a row
- *
- */
+
 class RowHeader : private std::vector<std::string>
 {
 
@@ -127,10 +124,7 @@ public:
     RowHeader& operator=(const RowHeader& other) = default;
 };
 
-/**
- * @brief A row of data
- *
- */
+
 class Row : public std::vector<Any>
 {
 public:

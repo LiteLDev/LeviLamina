@@ -21,11 +21,11 @@ RTN inline VirtualCall(void const* _this, uintptr_t off, Args... args) {
     return (*(RTN(**)(void const*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
 }
 
-template <typename T, int off>
+template <typename T, uintptr_t off>
 inline T& dAccess(void* ptr) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
-template <typename T, int off>
+template <typename T, uintptr_t off>
 inline T const& dAccess(void const* ptr) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
@@ -50,15 +50,15 @@ inline void* uintptrToPtr(uintptr_t ptr) {
     return (void*)ptr;
 }
 template <typename dst_type = void*, typename src_type = int>
-void* toRawPtr(int src) {
+inline void* toRawPtr(int src) {
     return (void*)static_cast<__int64>(src);
 }
 template <typename dst_type = void*, typename src_type = __int64>
-void* toRawPtr(__int64 src) {
+inline void* toRawPtr(__int64 src) {
     return (void*)src;
 }
 template <typename dst_type, typename src_type>
-dst_type toRawPtr(src_type src) {
+inline dst_type toRawPtr(src_type src) {
     static_assert(std::is_pointer<src_type>() || std::is_member_pointer<src_type>(), "HookAPI PtrConv::toRawPtr:src_type should be a pointer");
     return *static_cast<dst_type*>(static_cast<void*>(&src));
 }
