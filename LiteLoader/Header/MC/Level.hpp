@@ -122,6 +122,7 @@ public:
     LIAPI static Actor* getEntity(ActorUniqueID id);
 
     /**
+     * \~chinese
      * @brief 获取某个维度中所有实体。
      *
      * @param dimId 维度的维度ID（主世界：0；下界：1；末地：2）
@@ -137,6 +138,7 @@ public:
     LIAPI static std::vector<Actor*> getAllEntities(int dimId);
 
     /**
+     * \~chinese
      * @brief 获取所有实体。
      *
      * @return 包含所有实体的列表
