@@ -20,8 +20,9 @@
 class ActorSpawnRuleBase {
 
 #define AFTER_EXTRA
-// Add Member There
-
+    // Add Member There
+public:
+    std::unordered_map<std::string, int> mSpawnDelayStartMap;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSPAWNRULEBASE
 public:

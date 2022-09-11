@@ -15,7 +15,8 @@ public:
 
 
     inline BoundingBox(class BoundingBox const& k) : min(k.min), max(k.max){};
-    inline BoundingBox(BlockPos const& p1, BlockPos const& p2) : min(p1), max(p2){};
+    inline BoundingBox(BlockPos const& pMin, BlockPos const& pMax)
+    : min(pMin), max(pMax){};
     inline BoundingBox() : min(BlockPos::MIN), max(BlockPos::MIN){};
 
     inline BlockPos& operator[](int index) {
@@ -74,11 +75,11 @@ public:
     }
 
     inline BoundingBox merge(BoundingBox const& a) {
-        return BoundingBox(BlockPos::min(a.min, min), BlockPos::max(a.max, max));
+        return BoundingBox(std::min(a.min, min), std::max(a.max, max));
     }
 
     inline BoundingBox merge(BlockPos const& a) {
-        return BoundingBox(BlockPos::min(a, min), BlockPos::max(a, max));
+        return BoundingBox(std::min(a, min), std::max(a, max));
     }
 
 public:

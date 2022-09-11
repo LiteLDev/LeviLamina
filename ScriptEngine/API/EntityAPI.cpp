@@ -70,6 +70,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("toItem", &EntityClass::toItem)
         .instanceFunction("getBlockStandingOn", &EntityClass::getBlockStandingOn)
         .instanceFunction("getArmor", &EntityClass::getArmor)
+        .instanceFunction("distanceToPos", &EntityClass::distanceToPos)
         .instanceFunction("hasContainer", &EntityClass::hasContainer)
         .instanceFunction("getContainer", &EntityClass::getContainer)
         .instanceFunction("refreshItems", &EntityClass::refreshItems)
@@ -623,6 +624,72 @@ Local<Value> EntityClass::teleport(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in teleportEntity!")
+}
+
+Local<Value> EntityClass::distanceToPos(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    if (args.size() == 4) {
+        CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+        CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+    }
+
+    try {
+        FloatVec4 pos;
+
+        if (args.size() == 1) {
+            if (IsInstanceOf<IntPos>(args[0])) {
+                // IntPos
+                IntPos* posObj = IntPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos.x = posObj->x;
+                    pos.y = posObj->y;
+                    pos.z = posObj->z;
+                    pos.dim = posObj->dim;
+                }
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
+                // FloatPos
+                FloatPos* posObj = FloatPos::extractPos(args[0]);
+                if (posObj->dim < 0)
+                    return Local<Value>();
+                else {
+                    pos = *posObj;
+                }
+            } else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+        } else if (args.size() == 4) {
+            // number pos
+            CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+
+            pos.x = args[0].asNumber().toFloat();
+            pos.y = args[1].asNumber().toFloat();
+            pos.z = args[2].asNumber().toFloat();
+            pos.dim = args[3].toInt();
+        } else {
+            LOG_WRONG_ARGS_COUNT();
+            return Local<Value>();
+        }
+
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        if ((int)entity->getDimensionId() != pos.dim) {
+            return Local<Value>();
+        }
+        else {
+            return Number::newNumber(entity->distanceTo(pos.getVec3()));
+        }
+    }
+    CATCH("Fail in distanceToPos!")
 }
 
 Local<Value> EntityClass::kill(const Arguments& args) {

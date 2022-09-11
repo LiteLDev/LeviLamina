@@ -19,8 +19,9 @@
 struct Brightness {
 
 #define AFTER_EXTRA
-// Add Member There
-
+    // Add Member There
+public:
+    unsigned char value;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRIGHTNESS
 public:
