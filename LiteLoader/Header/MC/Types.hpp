@@ -1,3 +1,15 @@
+/**
+ * @file MC/Types.hpp
+ * 
+ * \~chinese
+ * @brief 本文件包含各种类型定义。
+ * 
+ * 
+ * \~english
+ * @brief This file contains the definitions of types.
+ * 
+ */
+
 #pragma once
 
 #include "HookAPI.h"
@@ -775,17 +787,58 @@ enum class TextType : char {
     JSON          = 10
 };
 
+/**
+ * \~chinese
+ * @brief 标题类型
+ * 
+ * 
+ * \~english
+ * @brief The title type
+ * 
+ */
 enum class TitleType : int {
     Clear               = 0,
     Reset               = 1,
+
+    /**
+     * \~chinese
+     * @brief 主标题
+     * 
+     * 
+     * \~english
+     * @brief The main title
+     * 
+     */
     SetTitle            = 2,
+
+    /**
+     * \~chinese
+     * @brief 副标题
+     * 
+     * 
+     * \~english
+     * @brief The subtitle
+     * 
+     */
     SetSubtitle         = 3,
+
+    /**
+     * \~chinese
+     * @brief 快捷栏标题
+     * 
+     * 
+     * \~english
+     * @brief The actionbar title
+     * 
+     */
     SetActionBar        = 4,
+
     SetDurations        = 5,
     TitleTextObject     = 6,
     SubtitleTextObject  = 7,
     ActionbarTextObject = 8
 };
+
 enum class BossEvent : int {
     Show                    = 0,
     RegisterPlayer          = 1,
