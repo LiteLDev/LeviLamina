@@ -18,7 +18,12 @@ enum CommandOriginType : char;
 #undef BEFORE_EXTRA
 
 /**
- * @brief MC class CommandOrigin.
+ * \~chinese
+ * @brief 命令来源
+ * 
+ * 
+ * \~english
+ * @brief The command origin
  *
  */
 class CommandOrigin {
@@ -26,6 +31,19 @@ class CommandOrigin {
 #define AFTER_EXTRA
 // Add Member There
 public:
+
+/**
+ * \~chinese
+ * @brief 获取作为命令来源的玩家。
+ * 
+ * @return 作为命令来源的玩家，若命令来源不是玩家则为 `nullptr`
+ * 
+ * 
+ * \~english
+ * @brief Get the player as the command origin.
+ * 
+ * @return The player as the command origin, `nullptr` if the command origin is not a player
+ */
 LIAPI ServerPlayer* getPlayer() const;
 
 #undef AFTER_EXTRA

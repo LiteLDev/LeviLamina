@@ -38,97 +38,145 @@ class Scoreboard {
 #define ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
 public:
 
+    /**
+     * \~chinese
+     * @brief 创建一个记分项。
+     * 
+     * @param objname 记分项名称
+     * @param displayName 记分项显示名称
+     * @return 记分项
+     * 
+     * 
+     * \~chinese
+     * @brief Create a new objective.
+     * 
+     * @param objname The objective name
+     * @param displayName The display name of the objective
+     * @return The objective
+     */
     LIAPI static Objective* newObjective(const std::string& objname, const std::string& displayName);
+
     //LIAPI static bool setDisplayObjective(const std::string& objname, const std::string& slot, int sort);
     //LIAPI static Objective* clearDisplayObjective(const std::string& slot);
     //LIAPI static Objective* getDisplayObjective(const std::string& slot);
     LIAPI static bool removeFromObjective(const std::string& objname, const std::string& id);
+
+    /**
+     * \~chinese
+     * @brief 将一个玩家的分数从一个记分项中移除。
+     * 
+     * @param objname 记分项名称
+     * @param player 玩家
+     * @return 若成功移除则为真；否则为假。
+     * 
+     * 
+     * \~english
+     * @brief Remove the score of a player from an objective.
+     * 
+     * @param objname The objective name
+     * @param player The player
+     * @return True if removed; otherwise false.
+     */
     LIAPI static bool removeFromObjective(const std::string& objname, Player* player);
 
     LIAPI static struct ScoreboardId& getOrCreateScoreboardId(std::string const& id);
-
-    /**
-     * Get the score of the id in the specified objective.
-     * 
-     * @param  objname  Objective name
-     * @param  id       ScoreboardId name(string)
-     * @return int      The score
-     * @throws std::invalid_argument  if the objective is not found
-     *         std::runtime_error     if cannot get or create id/cannot get scores
-     * @note   If there is not a ScoreboardId named `id`, it will create a new one
-     */
     LIAPI static int getScore(const std::string& objname, const std::string& id);
-    /**
-     * Get the score of the id in the specified objective.
-     *
-     * @param      objname  Objective name
-     * @param      id       ScoreboardId name(string)
-     * @param[out] score    The score
-     * @return     bool     Success or not
-     * @note   If there is not a ScoreboardId named `id`, it will create a new one
-     */
     LIAPI static bool getScore(const std::string& objname, const std::string& id, int& score);
     LIAPI static std::optional<int> setScore(const std::string& objname, const std::string& id, int score);
     LIAPI static std::optional<int> addScore(const std::string& objname, const std::string& id, int score);
     LIAPI static std::optional<int> reduceScore(const std::string& objname, const std::string& id, int score);
 
     /**
-     * Get the score of the player in the specified objective.
+     * \~chinese
+     * @brief 获取玩家在记分项中的分数。
      *
-     * @param  objname  Objective name
-     * @param  player   The player
-     * @return int      The score
-     * @throws std::invalid_argument  if the objective is not found
-     *         std::runtime_error     if cannot get or create id/cannot get scores
+     * @param objname 记分项名称
+     * @param player 玩家
+     * @return 分数
+     * @exception std::invalid_argument 记分项不存在。
+     * @exception std::runtime_error 无法获取分数。
+     * 
+     * 
+     * \~english
+     * @brief Get the score of a player of an objective.
+     *
+     * @param objname The objective name
+     * @param player The player
+     * @return The score
+     * @exception std::invalid_argument The objective is not found.
+     * @exception std::runtime_error Failed to get the score.
      */
     LIAPI static int getScore(const std::string& objname, Player* player);
+
     LIAPI static int getScore(Player* player, const std::string& objname);
-    /**
-     * Get the score of the player in the specified objective.
-     *
-     * @param      objname  Objective name
-     * @param      player   The player
-     * @param[out] score    The score
-     * @return     bool     Success or not
-     */
     LIAPI static bool getScore(const std::string& objname, Player* player, int& score);
+
     /**
-     * Set the score of the player in the specified objective.
+     * \~chinese
+     * @brief 设置玩家在记分项中的分数。
+     *
+     * @param objname 记分项名称
+     * @param player 玩家
+     * @param value 分数
+     * @return 若设置成功则为真；否则为假。
      * 
-     * @param  objname  Objective name
-     * @param  player   The player
-     * @param  value    The score value to set
-     * @return bool     Success or not
+     * 
+     * \~english
+     * @brief Set the score of a player of an objective.
+     *
+     * @param objname The objective name
+     * @param player The player
+     * @param value The score
+     * @return True if set; otherwise false.
      */
     LIAPI static bool setScore(const std::string& objname, Player* player, int value);
+
     LIAPI static bool setScore(Player* player, const std::string& objname, int value);
+
     /**
-     * Add the score of the player in the specified objective.
+     * \~chinese
+     * @brief 增加玩家在记分项中的分数。
      *
-     * @param  objname  Objective name
-     * @param  player   The player
-     * @param  value    The score value to add
-     * @return bool     Success or not
+     * @param objname 记分项名称
+     * @param player 玩家
+     * @param value 增加的分数
+     * @return 若增加成功则为真；否则为假。
+     * 
+     * 
+     * \~english
+     * @brief Add the score of a player of an objective.
+     *
+     * @param objname The objective name
+     * @param player The player
+     * @param value The added score
+     * @return True if added; otherwise false.
      */
     LIAPI static bool addScore(const std::string& objname, Player* player, int value);
+
     LIAPI static bool addScore(Player* player, const std::string& objname, int value);
+
     /**
-     * Reduce the score of the player in the specified objective.
+     * \~chinese
+     * @brief 减少玩家在记分项中的分数。
      *
-     * @param  objname  Objective name
-     * @param  player   The player
-     * @param  value    The score value to reduce
-     * @return bool     Success or not
+     * @param objname 记分项名称
+     * @param player 玩家
+     * @param value 减少的分数
+     * @return 若减少成功则为真；否则为假。
+     * 
+     * 
+     * \~english
+     * @brief Reduce the score of a player of an objective.
+     *
+     * @param objname The objective name
+     * @param player The player
+     * @param value The reduced score
+     * @return True if reduced; otherwise false.
      */
     LIAPI static bool reduceScore(const std::string& objname, Player* player, int value);
+
     LIAPI static bool reduceScore(Player* player, const std::string& objname, int value);
-    /**
-     * Delete the score of the player from the specified objective.
-     *
-     * @param  objname  Objective name
-     * @param  player   The player
-     * @return bool     Success or not
-     */
+
     LIAPI static bool deleteScore(const std::string& objname, Player* player);
     LIAPI static bool deleteScore(Player* player, const std::string& objname);
 

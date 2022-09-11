@@ -20,46 +20,64 @@
 #undef BEFORE_EXTRA
 
 /**
- * @brief MC class CommandOutput.
+ * \~chinese
+ * @brief 命令执行输出
+ * 
+ * 
+ * \~english
+ * @brief Command execution output
  *
  */
 class CommandOutput {
 
-#define AFTER_EXTRA
-    // Add Member There
+#define AFTER_EXTRA // Add members here
 public:
     /**
-     * @brief Output a message(without I18nBase).
+     * \~chinese
+     * @brief 输出普通消息。
      *
-     * @param str  The message
+     * @param str 消息
+     * 
+     * 
+     * \~english
+     * @brief Output a normal message.
+     * 
+     * @param str The message
      */
     LIAPI void addMessage(const std::string& str);
+
     /**
-     * @brief Output a success message(without I18nBase).
+     * \~chinese
+     * @brief 输出执行成功消息。
      *
-     * @param str  The message
+     * @param str 消息
+     * 
+     * 
+     * \~english
+     * @brief Output a success message.
+     * 
+     * @param str The message
      */
     LIAPI void success(const string& str);
+
     /**
-     * @brief Output a success message(without I18nBase).
+     * \~chinese
+     * @brief 输出错误消息。
      *
-     * @param str  The message
+     * @param str 消息
+     * 
+     * 
+     * \~english
+     * @brief Output a error message.
+     * 
+     * @param str The message
      */
     LIAPI void error(const string& str);
 
-    /**
-     * @brief Set the output language code of this CommandOutput object.
-     *
-     * @param code  The language code
-     */
     inline void setLanguageCode(const std::string& code = "") {
         PluginOwnData::set<std::string>(POD_COMMANDOUTPUT_LANGCODE, code);
     }
-    /**
-     * @brief Set the output language code of this CommandOutput object(convenience func).
-     *
-     * @param ori  The command origin object for the CommandOutput object
-     */
+
     inline void setLanguageCode(const CommandOrigin& ori) {
         std::string code = "en_US";
         if (PluginOwnData::has(I18nBase::POD_KEY)) {
@@ -76,14 +94,6 @@ public:
         PluginOwnData::set<std::string>(POD_COMMANDOUTPUT_LANGCODE, code);
     }
 
-    /**
-     * @brief Output a message(I18nBase, convenience func).
-     *
-     * @tparam Args    ...
-     * @param  format  The str to translate and format
-     * @param  args    The format arguments
-     * @see    tr
-     */
     template <typename... Args>
     inline void trAddMessage(const std::string& format, Args&&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
@@ -92,14 +102,6 @@ public:
             this->addMessage(tr(format, std::forward<Args>(args)...));
     }
 
-    /**
-     * @brief Output a success message(I18nBase, convenience func).
-     *
-     * @tparam Args    ...
-     * @param  format  The str to translate and format
-     * @param  args    The format arguments
-     * @see    tr
-     */
     template <typename... Args>
     inline void trSuccess(const std::string& format, Args&&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
@@ -108,14 +110,6 @@ public:
             this->success(tr(format, std::forward<Args>(args)...));
     }
 
-    /**
-     * @brief Output a error message(I18nBase, convenience func).
-     *
-     * @tparam Args    ...
-     * @param  format  The str to translate and format
-     * @param  args    The format arguments
-     * @see    tr
-     */
     template <typename... Args>
     inline void trError(const std::string& format, Args&&... args) {
         if (PluginOwnData::has(POD_COMMANDOUTPUT_LANGCODE))
