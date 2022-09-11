@@ -9,7 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-// TODO: Need to verify
+
 enum Mirror : unsigned char {
     None_15=0,
     X,
