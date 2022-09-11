@@ -114,6 +114,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("transServer", &PlayerClass::transServer)
         .instanceFunction("crash", &PlayerClass::crash)
         .instanceFunction("hurt", &PlayerClass::hurt)
+        .instanceFunction("heal", &PlayerClass::heal)
         .instanceFunction("refreshChunks", &PlayerClass::refreshChunks)
         .instanceFunction("giveItem", &PlayerClass::giveItem)
         .instanceFunction("clearItem", &PlayerClass::clearItem)
