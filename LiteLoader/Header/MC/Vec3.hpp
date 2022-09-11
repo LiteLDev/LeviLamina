@@ -96,7 +96,6 @@ public:
         return (*this - b).lengthSqr();
     }
 
-
     float& operator[](int index) {
         if (index < 0 || index > 2) {
             return (&x)[0];
@@ -208,16 +207,19 @@ public:
         return {y * b.z - z * b.y, z * b.x - x * b.z, x * b.y - y * b.x};
     }
 
-    inline static Vec3 max(const Vec3& a, const Vec3& b) {
-        return {std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z)};
-    }
-
-    inline static Vec3 min(const Vec3& a, const Vec3& b) {
-        return {std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z)};
-    }
 };
 
 namespace std {
+
+template <>
+inline const Vec3& max<Vec3>(const Vec3& a, const Vec3& b) {
+    return {std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z)};
+}
+
+template <>
+inline const Vec3& min<Vec3>(const Vec3& a, const Vec3& b) {
+    return {std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z)};
+}
 
 template <>
 struct hash<Vec3> {

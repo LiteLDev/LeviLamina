@@ -20,8 +20,10 @@
 class SpawnGroupRegistry {
 
 #define AFTER_EXTRA
-// Add Member There
-
+    // Add Member There
+public:
+    std::vector<std::unique_ptr<class SpawnGroupData>> mSpawnGroupRegistry;
+    std::unordered_map<std::string, class SpawnGroupData*> mSpawnGroupLookupMap;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNGROUPREGISTRY
 public:

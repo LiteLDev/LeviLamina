@@ -28,7 +28,7 @@ public:
 
     LIAPI Block* toBlock(unsigned short tileData);
     LIAPI string getTypeName();
-    LIAPI bool applyBoneMeal(BlockSource*, BlockPos*);
+    LIAPI bool applyBoneMeal(class BlockSource* a1, class BlockPos const& a2);
     LIAPI ItemStack* getBlockDrops();
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACY
