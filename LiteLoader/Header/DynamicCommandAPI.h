@@ -1,25 +1,47 @@
+/*
+MIT License
+
+Copyright (c) 2022 LiteLDev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+*/
+
 #pragma once
-#include "Global.h"
-class Actor;
+
 #define USE_PARSE_ENUM_STRING
 //#define ENABLE_PARAMETER_TYPE_POSTFIX
+
+#include <third-party/magic_enum/magic_enum.hpp>
+
 #include "MC/Command.hpp"
 #include "MC/CommandOrigin.hpp"
 #include "MC/CommandOutput.hpp"
 #include "MC/CommandParameterData.hpp"
+#include "MC/CommandPosition.hpp"
 #include "MC/CommandRegistry.hpp"
 #include "MC/CommandSelector.hpp"
-#include "MC/CommandPosition.hpp"
+
+#include "Global.h"
+
 #include "Utils/WinHelper.h"
-#include <third-party/magic_enum/magic_enum.hpp>
 
 struct DCCallback;
 struct DCArgs;
 typedef union DCValue_ DCValue;
-class DynamicCommandInstance;
+
+class Actor;
 class CommandMessage;
 class CommandOutput;
 class CommandRegistry;
+class DynamicCommandInstance;
 class Player;
 
 
@@ -28,7 +50,7 @@ class Player;
 /**
  * \~chinese
  * @brief 动态命令
- * 
+ *
  * @par 示例程序：
  * @code
  * DynamicCommand::setup(
@@ -49,7 +71,7 @@ class Player;
  *   } // 回调函数
  * );
  * @endcode
- * 
+ *
  * @code
  * using ParamType = DynamicCommand::ParameterType;
  * using Param = DynamicCommand::ParameterData;
@@ -100,11 +122,11 @@ class Player;
  *   CommandPermissionLevel::GameMasters // 权限等级
  * );
  * @endcode
- * 
- * 
+ *
+ *
  * \~english
  * @brief The dynamic command
- * 
+ *
  * @par 示例程序：
  * @code
  * DynamicCommand::setup(
@@ -125,7 +147,7 @@ class Player;
  *   } // The callback function
  * );
  * @endcode
- * 
+ *
  * @code
  * using ParamType = DynamicCommand::ParameterType;
  * using Param = DynamicCommand::ParameterData;
@@ -177,7 +199,7 @@ class Player;
  *   CommandPermissionLevel::GameMasters // The permission level
  * );
  * @endcode
- * 
+ *
  */
 class DynamicCommand : public Command {
     template <typename _Ty, class... _Types>
@@ -188,22 +210,21 @@ class DynamicCommand : public Command {
     using enable_if_supported_t = std::enable_if_t<is_supported_result_type_v<_Ty>, Type>;
 
 public:
-
     /**
      * \~chinese
      * @brief 参数类型
-     * 
-     * 
+     *
+     *
      * \~english
      * @brief The parameter type
-     * 
+     *
      */
     enum class ParameterType {
         /**
          * \~chinese
          * @brief 布尔类型（ `bool` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The boolean type ( `bool` )
          */
@@ -212,125 +233,125 @@ public:
         /**
          * \~chinese
          * @brief 整数类型（ `int` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The integer type ( `int` )
-         * 
+         *
          */
         Int,
-        
+
         /**
          * \~chinese
          * @brief 浮点数类型（ `float` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The floating point type ( `float` )
-         * 
+         *
          */
         Float,
-        
+
         /**
          * \~chinese
          * @brief 字符串类型（ `std::string` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The string type ( 'std::string' )
-         * 
+         *
          */
         String,
-        
+
         /**
          * \~chinese
          * @brief 实体选择器类型（ `CommandSelector<Actor>` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The entity selector type ( `CommandSelector<Actor>` )
-         * 
+         *
          */
         Actor,
-        
+
         /**
          * \~chinese
          * @brief 玩家选择器类型（ `CommandSelector<Player>` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The player selector type ( `CommandSelector<Player>` )
-         * 
+         *
          */
         Player,
-        
+
         /**
          * \~chinese
          * @brief 整数位置类型（ `CommandPosition` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The integer position type ( `CommandPosition` )
-         * 
+         *
          */
         BlockPos,
-        
+
         /**
          * \~chinese
          * @brief 浮点数位置类型（ `CommandPositionFloat` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The floating point position type ( `CommandPositionFloat` )
-         * 
+         *
          */
         Vec3,
-        
-        RawText,          // CommandRawText
-        Message,          // CommandMessage
-        JsonValue,        // Json::Value
-        
+
+        RawText,   // CommandRawText
+        Message,   // CommandMessage
+        JsonValue, // Json::Value
+
         /**
          * \~chinese
          * @brief 物品类型（ `CommandItem` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The item type ( `CommandItem` )
-         * 
+         *
          */
         Item,
-        
+
         /**
          * \~chinese
          * @brief 方块类型（ `const* Block` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The block type ( `Const* Block` )
-         * 
+         *
          */
         Block,
-        
+
         /**
          * \~chinese
          * @brief 状态效果类型（ `const* MobEffect` ）
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The mob effect type ( `Const* MobEffect` )
-         * 
+         *
          */
-        Effect,           // MobEffect const*
-        
+        Effect, // MobEffect const*
+
         /**
          * \~chinese
          * @brief 枚举类型
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief The enumeration type
-         * 
+         *
          */
         Enum,
 
@@ -348,10 +369,10 @@ public:
     /**
      * \~chinese
      * @brief 命令参数捕获结果
-     * 
+     *
      * \~english
      * @brief The command parameter capture result
-     * 
+     *
      */
     struct Result {
         ParameterType const type;
@@ -369,13 +390,13 @@ public:
         /**
          * \~chinese
          * @brief 获取参数类型。
-         * 
+         *
          * @return 参数类型
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief Get the parameter type.
-         * 
+         *
          * @return The parameter type
          */
         LIAPI ParameterType getType() const;
@@ -416,14 +437,14 @@ public:
         /**
          * \~chinese
          * @brief 获取参数值
-         * 
+         *
          * @tparam T 以此类型获取
          * @return 以 `T` 类型获取的参数值
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief Get the value of the parameter
-         * 
+         *
          * @tparam T Get with this type
          * @return The value with type `T`
          */
@@ -494,11 +515,11 @@ public:
     /**
      * \~chinese
      * @brief 参数
-     * 
-     * 
+     *
+     *
      * \~english
      * @brief The parameter
-     * 
+     *
      */
     struct ParameterData {
     protected:
@@ -517,17 +538,17 @@ public:
         /**
          * \~chinese
          * @brief 构造一个参数。
-         * 
+         *
          * @param name 参数名
          * @param type 参数类型
          * @param optional 若为真，则为可选参数；否则非可选参数。
          * @param enumOptions 参数对应的枚举选项
          * @return 参数
-         * 
-         * 
+         *
+         *
          * \~english
          * @brief Construct a parameter.
-         * 
+         *
          * @param name The parameter name
          * @param type The parameter type
          * @param optional True if the parameter is optional; otherwise false.
@@ -668,7 +689,7 @@ public:
     /**
      * \~chinese
      * @brief 配置一个命令。
-     * 
+     *
      * @param name 命令名
      * @param description 命令描述
      * @param enums 命令枚举项
@@ -677,11 +698,11 @@ public:
      * @param callback 回调函数
      * @param permission 命令执行需要的权限
      * @return 命令实例
-     * 
-     * 
+     *
+     *
      * \~english
      * @brief Setup a command.
-     * 
+     *
      * @param name The command name
      * @param description The command description
      * @param enums The command enumerations
@@ -718,11 +739,11 @@ public:
 /**
  * \~chinese
  * @brief 动态命令实例
- * 
- * 
+ *
+ *
  * \~english
  * @brief The dynamic command instance
- * 
+ *
  */
 class DynamicCommandInstance {
 public:
