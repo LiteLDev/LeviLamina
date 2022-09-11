@@ -13,7 +13,7 @@ Block* Block::create(const string& name, unsigned short tileData) {
     auto blk = generator.getBlockLegacy(name);
     if (!blk)
         return nullptr;
-    return (Block*)((BlockLegacy*)blk)->toBlock(tileData);
+    return const_cast<BlockLegacy*>(blk)->toBlock(tileData);
 }
 
 Block* Block::create(CompoundTag* nbt) {
@@ -29,27 +29,6 @@ string Block::getTypeName() const {
 
 int Block::getId() const {
     return getLegacyBlock().getBlockItemId();
-}
-
-unsigned short Block::getTileData() {
-    // 等待大佬改进
-    auto tileData = dAccess<unsigned short, 8>(this);
-    auto blk = &getLegacyBlock();
-
-    if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this) {
-        return tileData;
-    }
-
-    for (unsigned short i = 0; i < 16; ++i) {
-        if (i == tileData) {
-            continue;
-        }
-        if (((BlockLegacy*)blk)->toBlock(i) == (Block*)this) {
-            return i;
-        }
-    }
-    logger.error("Error in GetTileData");
-    return 0;
 }
 
 std::unique_ptr<CompoundTag> Block::getNbt() {
