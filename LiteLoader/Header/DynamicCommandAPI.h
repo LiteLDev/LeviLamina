@@ -690,7 +690,7 @@ public:
      * \~chinese
      * @brief 配置一个命令。
      *
-     * @param name 命令名
+     * @param name 命令名（只能由小写字母和 `_` 组成）
      * @param description 命令描述
      * @param enums 命令枚举项
      * @param params 命令参数
@@ -698,12 +698,14 @@ public:
      * @param callback 回调函数
      * @param permission 命令执行需要的权限
      * @return 命令实例
+     * 
+     * @note 命令名只能由小写字母和 `_` 组成。
      *
      *
      * \~english
      * @brief Setup a command.
      *
-     * @param name The command name
+     * @param name The command name (lowercase letters and `_` )
      * @param description The command description
      * @param enums The command enumerations
      * @param params The command parameters
@@ -711,6 +713,8 @@ public:
      * @param callback The callback function
      * @param permission The permission required for command execution
      * @return The command instance
+     * 
+     * @note The command name only consists of lowercase letters and `_` .
      */
     inline static DynamicCommandInstance const* setup(
         std::string const& name,

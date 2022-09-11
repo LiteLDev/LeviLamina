@@ -1036,8 +1036,36 @@ enum class ItemStackRequestActionType : char {
     CraftResults_DEPRECATEDASKTYLAING        = 0x13,
 };
 
+/**
+ * \~chinese
+ * @brief 记分项排序方式
+ * 
+ * 
+ * \~english
+ * @brief Ranking method of the objective
+ * 
+ */
 enum class ObjectiveSortOrder : char {
+    /**
+     * \~chinese
+     * @brief 升序
+     * 
+     * 
+     * \~english
+     * @brief Ascending
+     * 
+     */
     Ascending  = 0,
+
+    /**
+     * \~chinese
+     * @brief 降序
+     * 
+     * 
+     * \~english
+     * @brief Descending
+     * 
+     */
     Descending = 1
 };
 
