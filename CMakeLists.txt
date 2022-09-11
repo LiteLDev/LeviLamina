@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(LL-Parent)
+project(LiteLoaderBDS)
 
 # Add sub directories
 add_subdirectory(PreLoader)

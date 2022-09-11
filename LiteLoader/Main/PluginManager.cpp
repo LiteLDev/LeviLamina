@@ -131,7 +131,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
                 Event::ScriptPluginManagerEvent ev;
                 ev.operation = Event::ScriptPluginManagerEvent::Operation::Load;
                 ev.target = pluginFilePath;
-                ev.pluginExtention = ext;
+                ev.pluginExtension = ext;
                 ev.pluginType = Event::ScriptPluginManagerEvent::PluginType::UncompressedPackage;
                 ev.call();
 
@@ -143,7 +143,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
                 Event::ScriptPluginManagerEvent ev;
                 ev.operation = Event::ScriptPluginManagerEvent::Operation::Load;
                 ev.target = pluginFilePath;
-                ev.pluginExtention = ext;
+                ev.pluginExtension = ext;
                 ev.pluginType = Event::ScriptPluginManagerEvent::PluginType::PluginPackage;
                 ev.call();
 
@@ -156,7 +156,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
                 Event::ScriptPluginManagerEvent ev;
                 ev.operation = Event::ScriptPluginManagerEvent::Operation::Load;
                 ev.target = pluginFilePath;
-                ev.pluginExtention = ext;
+                ev.pluginExtension = ext;
                 ev.pluginType = Event::ScriptPluginManagerEvent::PluginType::SingleFile;
                 ev.call();
 
@@ -257,7 +257,7 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
             Event::ScriptPluginManagerEvent ev;
             ev.operation = Event::ScriptPluginManagerEvent::Operation::Unload;
             ev.target = pluginName;
-            ev.pluginExtention = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
+            ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
             ev.call();
 
             return ev.success;
@@ -301,7 +301,7 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
             Event::ScriptPluginManagerEvent ev;
             ev.operation = Event::ScriptPluginManagerEvent::Operation::Reload;
             ev.target = pluginName;
-            ev.pluginExtention = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
+            ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
             ev.call();
             return ev.success;
         }
@@ -338,7 +338,7 @@ int LL::PluginManager::reloadAllPlugins(bool outputResult) {
                 Event::ScriptPluginManagerEvent ev;
                 ev.operation = Event::ScriptPluginManagerEvent::Operation::Reload;
                 ev.target = plugin->name;
-                ev.pluginExtention = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
+                ev.pluginExtension = UTF82String(filesystem::path(str2wstr(plugin->filePath)).extension().u8string());
                 ev.call();
 
                 if (ev.success) {

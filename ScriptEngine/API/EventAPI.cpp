@@ -81,6 +81,7 @@ enum class EVENT_TYPES : int {
     onOpenContainerScreen,
     onExperienceAdd,
     onBedEnter,
+    onOpenInventory,
     /* Entity Events */
     onMobDie,
     onMobHurt,
@@ -142,13 +143,13 @@ struct ListenerListType {
     script::Global<Function> func;
 };
 
-//监听器表
+// 监听器表
 static std::list<ListenerListType> listenerList[int(EVENT_TYPES::EVENT_COUNT)];
 
-//监听器历史
-static bool hasListened[int(EVENT_TYPES::EVENT_COUNT)] = {0};
+// 监听器历史
+static bool hasListened[int(EVENT_TYPES::EVENT_COUNT)] = {false};
 
-//监听器异常拦截
+// 监听器异常拦截
 string EventTypeToString(EVENT_TYPES e) {
     return string(magic_enum::enum_name(e));
 }
@@ -177,7 +178,7 @@ string EventTypeToString(EVENT_TYPES e) {
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     }
 
-//调用事件监听函数，拦截不执行original
+// 调用事件监听函数，拦截不执行original
 #define CallEventRtnVoid(TYPE, ...)                                        \
     std::list<ListenerListType>& nowList = listenerList[int(TYPE)];        \
     bool passToBDS = true;                                                 \
@@ -194,7 +195,7 @@ string EventTypeToString(EVENT_TYPES e) {
         return;                                                            \
     }
 
-//调用事件监听函数，拦截返回false
+// 调用事件监听函数，拦截返回false
 #define CallEvent(TYPE, ...)                                               \
     std::list<ListenerListType>& nowList = listenerList[int(TYPE)];        \
     bool passToBDS = true;                                                 \
@@ -209,7 +210,7 @@ string EventTypeToString(EVENT_TYPES e) {
     }                                                                      \
     return passToBDS;
 
-//调用事件监听函数，拦截返回RETURN_VALUE
+// 调用事件监听函数，拦截返回RETURN_VALUE
 #define CallEventRtnValue(TYPE, RETURN_VALUE, ...)                         \
     std::list<ListenerListType>& nowList = listenerList[int(TYPE)];        \
     bool passToBDS = true;                                                 \
@@ -226,7 +227,7 @@ string EventTypeToString(EVENT_TYPES e) {
         return RETURN_VALUE;                                               \
     }
 
-//模拟事件调用监听
+// 模拟事件调用监听
 #define FakeCallEvent(ENGINE, TYPE, ...)                                \
     {                                                                   \
         std::list<ListenerListType>& nowList = listenerList[int(TYPE)]; \
@@ -241,7 +242,7 @@ string EventTypeToString(EVENT_TYPES e) {
         }                                                               \
     }
 
-//延迟调用事件
+// 延迟调用事件
 #define CallEventDelayed(TYPE, ...)                                 \
     std::list<ListenerListType>& nowList = listenerList[int(TYPE)]; \
     for (auto& listener : nowList) {                                \
@@ -252,7 +253,7 @@ string EventTypeToString(EVENT_TYPES e) {
         LISTENER_CATCH(TYPE)                                        \
     }
 
-//异常检查
+// 异常检查
 #define IF_LISTENED(TYPE)                   \
     if (!listenerList[int(TYPE)].empty()) { \
         try
@@ -458,7 +459,7 @@ void EnableEventListener(int eventId) {
                     CallEvent(EVENT_TYPES::afterPlaceBlock, PlayerClass::newPlayer(ev.mPlayer), BlockClass::newBlock(ev.mBlockInstance));
                 }
                 IF_LISTENED_END(EVENT_TYPES::afterPlaceBlock);
-                });
+            });
             break;
 
         case EVENT_TYPES::onMove:
@@ -483,7 +484,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onDropItem:
             Event::PlayerDropItemEvent::subscribe([](const PlayerDropItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onDropItem) {
-                    CallEvent(EVENT_TYPES::onDropItem, PlayerClass::newPlayer(ev.mPlayer), ItemClass::newItem(ev.mItemStack)); //###### Q lost items ######
+                    CallEvent(EVENT_TYPES::onDropItem, PlayerClass::newPlayer(ev.mPlayer), ItemClass::newItem(ev.mItemStack)); // ###### Q lost items ######
                 }
                 IF_LISTENED_END(EVENT_TYPES::onDropItem);
             });
@@ -732,7 +733,7 @@ void EnableEventListener(int eventId) {
                     }
                     IF_LISTENED_END(EVENT_TYPES::onRespawnAnchorExplode);
                 }
-				return true;
+                return true;
             });
             break;
 
@@ -1037,7 +1038,16 @@ void EnableEventListener(int eventId) {
             });
             break;
 
-        /* DEPRECATED AND RECENTLY REMOVED - START */
+        case EVENT_TYPES::onOpenInventory:
+            Event::PlayerOpenInventoryEvent::subscribe([](const PlayerOpenInventoryEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onOpenInventory) {
+                    CallEvent(EVENT_TYPES::onOpenInventory, PlayerClass::newPlayer(ev.mPlayer));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onOpenInventory);
+            });
+            break;
+
+            /* DEPRECATED AND RECENTLY REMOVED - START */
 
         case EVENT_TYPES::onAttack:
             Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev) {
@@ -1085,7 +1095,7 @@ void EnableEventListener(int eventId) {
             });
             break;
 
-        /* DEPRECATED AND RECENTLY REMOVED - END */
+            /* DEPRECATED AND RECENTLY REMOVED - END */
 
         default:
             break;
@@ -1184,12 +1194,12 @@ void InitBasicEventListeners() {
                 break;
 
             case ScriptPluginManagerEvent::Operation::Unload:
-                if(PluginManager::unloadPlugin(ev.target))
+                if (PluginManager::unloadPlugin(ev.target))
                     ev.success = true;
                 break;
 
             case ScriptPluginManagerEvent::Operation::Reload:
-                if(PluginManager::reloadPlugin(ev.target))
+                if (PluginManager::reloadPlugin(ev.target))
                     ev.success = true;
                 break;
 
@@ -1197,7 +1207,7 @@ void InitBasicEventListeners() {
                 break;
         }
         if (ev.success)
-            return false;   // Success. No need to spread to next engine
+            return false; // Success. No need to spread to next engine
         return true;
     });
 
@@ -1205,7 +1215,7 @@ void InitBasicEventListeners() {
     Event::RegCmdEvent::subscribe([](const RegCmdEvent& ev) {
         isCmdRegisterEnabled = true;
 
-        //处理延迟注册
+        // 处理延迟注册
         ProcessRegCmdQueue();
         return true;
     });
@@ -1229,8 +1239,7 @@ inline bool CallTickEvent() {
 }
 
 // 植入tick
-THook(void, "?tick@ServerLevel@@UEAAXXZ",
-      void* _this) {
+TClasslessInstanceHook(void, "?tick@ServerLevel@@UEAAXXZ") {
 #ifndef LLSE_BACKEND_NODEJS
     try {
         std::list<ScriptEngine*> tmpList;
@@ -1251,7 +1260,7 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
     }
 #endif
     CallTickEvent();
-    return original(_this);
+    return original(this);
 }
 
 /* onTurnLectern // 由于还是不能拦截掉书，暂时注释
