@@ -764,6 +764,24 @@ Local<Value> PlayerClass::isHurt() {
     CATCH("Fail in isHurt!")
 }
 
+Local<Value> PlayerClass::heal(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        if (args[0].toInt() > 0) {
+            player->heal(args[0].toInt());
+            return Boolean::newBoolean(true);
+        } else {
+            return Boolean::newBoolean(false);
+        }
+    }
+    CATCH("Fail in heal!");
+}
+
 Local<Value> PlayerClass::isTrusting() {
     try {
         Player* player = get();

@@ -26,6 +26,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("asPointer", &EntityClass::asPointer)
 
         .instanceProperty("name", &EntityClass::getName)
+        .instanceProperty("nameTag", &EntityClass::getNameTag)
         .instanceProperty("type", &EntityClass::getType)
         .instanceProperty("id", &EntityClass::getId)
         .instanceProperty("pos", &EntityClass::getPos)
@@ -59,11 +60,15 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("isDancing", &EntityClass::isDancing)
         .instanceProperty("isSleeping", &EntityClass::isSleeping)
         .instanceProperty("isAngry", &EntityClass::isAngry)
+        .instanceProperty("isBaby", &EntityClass::isBaby)
 
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
         .instanceFunction("hurt", &EntityClass::hurt)
+        .instanceFunction("heal", &EntityClass::heal)
         .instanceFunction("setOnFire", &EntityClass::setOnFire)
+        .instanceFunction("setNameTag", &EntityClass::setNameTag)
+        .instanceFunction("setDisplayName", &EntityClass::setNameTag)
         .instanceFunction("isPlayer", &EntityClass::isPlayer)
         .instanceFunction("toPlayer", &EntityClass::toPlayer)
         .instanceFunction("isItemEntity", &EntityClass::isItemEntity)
@@ -320,6 +325,17 @@ Local<Value> EntityClass::isAngry() {
     CATCH("Fail in isAngry!")
 }
 
+Local<Value> EntityClass::isBaby() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isBaby());
+    }
+    CATCH("Fail in isBaby!")
+}
+
 #include <MC/CommandUtils.hpp>
 Local<Value> EntityClass::getName() {
     try {
@@ -330,6 +346,17 @@ Local<Value> EntityClass::getName() {
         return String::newString(CommandUtils::getActorName(*entity));
     }
     CATCH("Fail in getEntityName!")
+}
+
+Local<Value> EntityClass::getNameTag() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return String::newString(entity->getNameTag());
+    }
+    CATCH("Fail in getNameTag!")
 }
 
 Local<Value> EntityClass::getType() {
@@ -832,6 +859,24 @@ Local<Value> EntityClass::hurt(const Arguments& args) {
     CATCH("Fail in hurt!");
 }
 
+Local<Value> EntityClass::heal(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+        
+        if (args[0].toInt() > 0) {
+            entity->heal(args[0].toInt());
+            return Boolean::newBoolean(true);
+        } else {
+            return Boolean::newBoolean(false);
+        }
+    }
+    CATCH("Fail in heal!");
+}
+
 Local<Value> EntityClass::setOnFire(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -846,6 +891,21 @@ Local<Value> EntityClass::setOnFire(const Arguments& args) {
         return Boolean::newBoolean(result);
     }
     CATCH("Fail in setOnFire!")
+}
+
+Local<Value> EntityClass::setNameTag(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kString);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        entity->setNameTag(args[0].toStr());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setNameTag!")
 }
 
 Local<Value> EntityClass::setScale(const Arguments& args) {

@@ -24,6 +24,7 @@ public:
     Local<Value> asPointer(const Arguments& args);
 
     Local<Value> getName();
+    Local<Value> getNameTag();
     Local<Value> getType();
     Local<Value> getId();
     Local<Value> getPos();
@@ -58,12 +59,15 @@ public:
     Local<Value> isDancing();
     Local<Value> isSleeping();
     Local<Value> isAngry();
+    Local<Value> isBaby();
 
     Local<Value> teleport(const Arguments& args);
     Local<Value> kill(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
+    Local<Value> heal(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
     Local<Value> setScale(const Arguments& args);
+    Local<Value> setNameTag(const Arguments& args);
 
     Local<Value> distanceToPos(const Arguments& args);
 
