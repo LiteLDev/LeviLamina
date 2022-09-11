@@ -163,7 +163,9 @@ Local<Value> ParticleSpawner::drawNumber(const Arguments& args) {
         CHECK_ARG_TYPE(args[2], ValueKind::kString);
         color = args[2].asString().toString();
     }
-    if (args[1].getKind() == ValueKind::kNumber || args[1].getKind() == ValueKind::kString) {
+    if (args[1].getKind() == ValueKind::kNumber) {
+        numName = std::to_string(args[1].asNumber().toInt64());
+    } else if (args[1].getKind() == ValueKind::kString) {
         numName = args[1].asString().toString();
     } else {
         LOG_WRONG_ARG_TYPE();
@@ -267,7 +269,6 @@ Local<Value> ParticleSpawner::drawCuboid(const Arguments& args) {
             max = min + 1;
             CHECK_ARG_TYPE(args[1], ValueKind::kString);
             color = args[1].asString().toString();
-            return Local<Value>();
         }
     } else {
         max = min + 1;
