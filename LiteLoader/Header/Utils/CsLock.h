@@ -1,5 +1,5 @@
 #pragma once
-#include "../Global.h"
+#include <Global.h>
 
 // ===== Critical Section Locker =====
 // a simple lock which is much faster than std::mutex

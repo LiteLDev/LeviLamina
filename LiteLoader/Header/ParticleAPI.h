@@ -8,7 +8,7 @@
  */
 #pragma once
 #include <LLAPI.h>
-#include "Global.h"
+#include <Global.h>
 
 class ParticleAPI {
     using FuncSpawnParticle = void (*)(int, Vec3 const&, std::string const&, int);

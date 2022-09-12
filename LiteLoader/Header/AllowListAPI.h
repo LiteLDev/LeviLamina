@@ -1,6 +1,6 @@
 #pragma once
-#include "Global.h"
-#include "third-party/Nlohmann/json.hpp"
+#include <Global.h>
+#include <third-party/Nlohmann/json.hpp>
 
 //////////////////////////////////////////////////////
 // For managing AllowList

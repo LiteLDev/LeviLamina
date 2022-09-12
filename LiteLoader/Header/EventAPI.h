@@ -16,10 +16,10 @@ copies or substantial portions of the Software.
 
 #pragma once
 
-#include "Global.h"
-#include "LoggerAPI.h"
-#include "MC/BlockInstance.hpp"
-#include "MC/MCRESULT.hpp"
+#include <Global.h>
+#include <LoggerAPI.h>
+#include <MC/BlockInstance.hpp>
+#include <MC/MCRESULT.hpp>
 #include <functional>
 #include <iterator>
 #include <list>

@@ -7,7 +7,7 @@
  * 
  */
 #pragma once
-#include "Foundation.hpp"
+#include <PERM/Foundation.hpp>
 
 namespace PERM {
 

@@ -33,15 +33,15 @@
 //
 //////////////////////////////////////////////////////
 
-#include "Global.h"
-#include "LLAPI.h"
-#include "Utils/FileHelper.h"
-#include "Utils/PluginOwnData.h"
-#include "third-party/Nlohmann/json.hpp"
-#include "third-party/FMT/core.h"
-#include "third-party/FMT/os.h"
+#include <Global.h>
+#include <LLAPI.h>
+#include <Utils/FileHelper.h>
+#include <Utils/PluginOwnData.h>
+#include <third-party/Nlohmann/json.hpp>
+#include <third-party/FMT/core.h>
+#include <third-party/FMT/os.h>
 #include <string>
-#include "Utils/StringHelper.h"
+#include <Utils/StringHelper.h>
 
 
 class I18nBase {
@@ -181,10 +181,10 @@ public:
 };
 
 #ifdef UNICODE
-#include "third-party/compact_enc_det/compact_enc_det.h"
+#include <third-party/compact_enc_det/compact_enc_det.h>
 #define UNICODE
 #else
-#include "third-party/compact_enc_det/compact_enc_det.h"
+#include <third-party/compact_enc_det/compact_enc_det.h>
 #endif
 
 namespace Translation {

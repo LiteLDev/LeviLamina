@@ -7,8 +7,8 @@
  * 
  */
 #pragma once
-#include "Member.hpp"
-#include "Permission.hpp"
+#include <PERM/Member.hpp>
+#include <PERM/Permission.hpp>
 
 namespace PERM {
 

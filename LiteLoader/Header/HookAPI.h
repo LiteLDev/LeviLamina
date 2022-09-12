@@ -1,10 +1,10 @@
 ﻿#pragma once
-#include "Global.h"
-#include "Utils/Hash.h"
+#include <Global.h>
+#include <Utils/Hash.h>
 #include <vector>
 #include <string>
 #include <thread>
-#include "third-party/ModUtils/ModUtils.h"
+#include <third-party/ModUtils/ModUtils.h>
 
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);

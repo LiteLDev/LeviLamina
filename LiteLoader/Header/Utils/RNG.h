@@ -7,8 +7,8 @@
  *
  */
 #pragma once
-#include "../Global.h"
-#include "../third-party/pcg/pcg_random.hpp"
+#include <Global.h>
+#include <third-party/pcg/pcg_random.hpp>
 namespace RNG {
 
 template <class T>

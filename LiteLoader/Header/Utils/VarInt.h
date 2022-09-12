@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Bstream.h"
+#include <Bstream.h>
 template <typename T>
 struct VarInts {
     T v;
