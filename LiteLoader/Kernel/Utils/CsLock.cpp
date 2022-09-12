@@ -1,4 +1,5 @@
 #include <Utils/CsLock.h>
+#include <Windows.h>
 
 CsLock::CsLock() {
     if (!inited) {

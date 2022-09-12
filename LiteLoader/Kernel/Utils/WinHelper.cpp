@@ -7,6 +7,7 @@
 #include <Psapi.h>
 #include <string>
 #include <Main/Config.h>
+#include <Windows.h>
 
 using namespace std;
 

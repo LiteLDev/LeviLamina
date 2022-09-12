@@ -18,6 +18,7 @@
 #include <MC/PropertiesSettings.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <ScheduleAPI.h>
+#include <Windows.h>
 
 using namespace LL;
 
@@ -97,12 +98,12 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                     logger.warn(tr("ll.antiAbnormalItem.detected", sp->getRealName()));
                     mayFromReducer = false;
                 }
-            }			
+            }
             if (action.first.type == InventorySourceType::NONIMPLEMENTEDTODO) {
                 for (auto& a : action.second) {
                     auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
-                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);					
-                    if ( isContainer || !itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
+                    auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
+                    if (isContainer || !itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
                         if (mayFromReducer) {
                             logger.warn(tr("ll.antiAbnormalItem.detected", sp->getRealName()));
                         }
@@ -115,7 +116,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                 abnormal = true;
             }
         }
-        
+
         if (abnormal && !mayFromReducer) {
             string cmd = globalConfig.antiGiveCommand;
             ReplaceStr(cmd, "{player}", "\"" + sp->getRealName() + "\"");
@@ -185,7 +186,7 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
 TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
                        BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6, __int64 a7) {
     if (validPosition(a2))
-        return original(this, a2, a3, a4,a5,a6,a7);
+        return original(this, a2, a3, a4, a5, a6, a7);
     fixPlayerPosition(movingViewPlayer);
     return 0;
 }
@@ -337,8 +338,8 @@ TClasslessInstanceHook(char, "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$
 }
 
 
-//Try Fix BDS Crash
-//Beta 
+// Try Fix BDS Crash
+// Beta
 
 THook(void*, "??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z",
       void* self, char* a2, char* a3, char a4) {
@@ -357,8 +358,8 @@ THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ",
 }
 
 SHook2("_tickDimensionTransition", __int64, "40 53 55 41 56 41 57 48 ?? ?? ?? ?? ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 33 "
-       "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
-      __int64 a1, ActorOwnerComponent* a2, __int64 a3, void* a4) {
+                                            "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
+       __int64 a1, ActorOwnerComponent* a2, __int64 a3, void* a4) {
     if (LL::globalConfig.enableFixBDSCrash) {
         auto ac = Actor::tryGetFromComponent(*a2, 0);
         if (ac) {

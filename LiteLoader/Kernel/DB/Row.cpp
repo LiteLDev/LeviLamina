@@ -1,4 +1,5 @@
 #include <DB/Row.h>
+#include <HookAPI.h>
 
 namespace DB {
 
