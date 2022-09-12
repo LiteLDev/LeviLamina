@@ -90,7 +90,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     std::cout.rdbuf(&tmpBuf);
     auto rv = original(this, origin, output);
     std::cout.rdbuf(oldBuf);
-    if (LL::isDebugMode() && LL::globalConfig.tickThreadId != std::this_thread::get_id()) {
+    if (LL::isDebugMode() && LL::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
         logger.warn("The thread executing the CommandOutputSender::send is not the \"MC_SERVER\" thread");
         logger.warn("Output: {}", tmpBuf.str());
     }

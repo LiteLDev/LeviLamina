@@ -181,7 +181,7 @@ ScheduleTaskQueueType taskQueue;
 
 namespace Schedule {
 ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handle) {
-    if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
+    if (LL::globalRuntimeConfig.serverStatus >= LL::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
     ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handle);
     locker.lock();
@@ -191,7 +191,7 @@ ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay,
 }
 
 ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handle) {
-    if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
+    if (LL::globalRuntimeConfig.serverStatus >= LL::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
     ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                    : ScheduleTaskData::TaskType::Repeat;
@@ -204,7 +204,7 @@ ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepea
 
 ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
                          unsigned long long tickRepeat, int maxCount, HMODULE handle) {
-    if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
+    if (LL::globalRuntimeConfig.serverStatus >= LL::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
     ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                    : ScheduleTaskData::TaskType::Repeat;
@@ -216,7 +216,7 @@ ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tick
 }
 
 ScheduleTask nextTick(std::function<void(void)> task, HMODULE handle) {
-    if (LL::globalConfig.serverStatus >= LL::LLServerStatus::Stopping)
+    if (LL::globalRuntimeConfig.serverStatus >= LL::LLServerStatus::Stopping)
         return ScheduleTask((unsigned)-1);
     ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handle);
     locker.lock();

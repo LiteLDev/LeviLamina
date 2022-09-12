@@ -107,7 +107,7 @@ LL::Version LL::Version::parse(const std::string& str) {
 }
 
 LL::ServerStatus LL::getServerStatus() {
-    return (LL::ServerStatus)(LL::globalConfig.serverStatus);
+    return (LL::ServerStatus)(LL::globalRuntimeConfig.serverStatus);
 }
 
 bool LL::isServerStarting() {

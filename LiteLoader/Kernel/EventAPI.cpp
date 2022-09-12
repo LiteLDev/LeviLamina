@@ -1066,7 +1066,7 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
         return rtn;
     }
 
-    if (LL::isDebugMode() && LL::globalConfig.tickThreadId != std::this_thread::get_id()) {
+    if (LL::isDebugMode() && LL::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
         logger.warn(R"(The thread executing the command "{}" is not the "MC_SERVER" thread)", cmd);
     }
     if (sp) {
@@ -2086,11 +2086,11 @@ TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordi
     if (!LL::isDebugMode())
         _set_se_translator(seh_exception::TranslateSEHtoCE);
 
-    LL::globalConfig.tickThreadId = std::this_thread::get_id();
+    LL::globalRuntimeConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     // Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
-    LL::globalConfig.serverStatus = LL::LLServerStatus::Running;
+    LL::globalRuntimeConfig.serverStatus = LL::LLServerStatus::Running;
 
     IF_LISTENED(ServerStartedEvent) {
         ServerStartedEvent ev{};
@@ -2103,7 +2103,7 @@ TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordi
 
 ////////////// ServerStopped //////////////
 TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ") {
-    LL::globalConfig.serverStatus = LL::LLServerStatus::Stopping;
+    LL::globalRuntimeConfig.serverStatus = LL::LLServerStatus::Stopping;
 
     IF_LISTENED(ServerStoppedEvent) {
         ServerStoppedEvent ev{};
@@ -2114,7 +2114,7 @@ TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ") {
 }
 TClasslessInstanceHook(void, "?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
                        class CommandOrigin const& origin, class CommandOutput& output) {
-    LL::globalConfig.serverStatus = LL::LLServerStatus::Stopping;
+    LL::globalRuntimeConfig.serverStatus = LL::LLServerStatus::Stopping;
     original(this, origin, output);
 }
 
