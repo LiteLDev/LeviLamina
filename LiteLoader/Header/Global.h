@@ -62,7 +62,6 @@
 
 #include <third-party/entt/entt.hpp>
 #include <third-party/gsl/gsl>
-#include <third-party/seh_exception/seh_exception.hpp>
 #include <third-party/FMT/chrono.h>
 #include <third-party/FMT/color.h>
 #include <third-party/FMT/core.h>
@@ -71,6 +70,7 @@
 
 #include <GlobalServiceAPI.h>
 #include <Utils/Optional.h>
+#include <Utils/SehTranslator.h>
 
 // basic mc types
 #include <MC/Types.hpp>

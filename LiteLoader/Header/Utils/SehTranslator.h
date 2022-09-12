@@ -1,7 +1,7 @@
 #pragma once
 /*
-* @brief This file is a simple header-only SEH-Expection convert helper with minwindef
-*/
+ * @brief This file is a simple header-only SEH-Exception convert helper with minwindef
+ */
 #ifndef _AMD64_
 #define _AMD64_
 #endif
@@ -43,19 +43,19 @@ public:
     : _expCode(ExpCode), _expInfo(ExpInfo) {
     }
 
-    virtual ~seh_exception() {
+    ~seh_exception() override {
         if (_expMsg) {
             WinAPI::LocalFree((char*)_expMsg);
             _expMsg = nullptr;
         }
     };
 
-    const char* what() const noexcept {
+    [[nodiscard]] const char* what() const noexcept override {
 
         unsigned long messageLength = WinAPI::FormatMessageA(
             WinAPI::FormatMessageFlags::ALLOCATE_BUFFER | WinAPI::FormatMessageFlags::FROM_SYSTEM | WinAPI::FormatMessageFlags::FROM_HMODULE,
             nullptr,
-            WinAPI::RtlNtStatusToDosError(_expCode),
+            WinAPI::RtlNtStatusToDosError((long)_expCode),
             0,
             (char*)&_expMsg,
             0,
@@ -68,17 +68,17 @@ public:
         return "SEH_UNKNOW_ERROR";
     }
 
-    const SEH_EXP_INFO_POINTER info() const {
+    [[nodiscard]] const SEH_EXP_INFO_POINTER info() const {
         return _expInfo;
     }
 
-    const unsigned int code() const {
+    [[nodiscard]] unsigned int code() const {
         return _expCode;
     }
 
     /*
-    * @brief Translate SEH Expection to C++ Expection, enable /EHa(Enable SEH Expection) and call _set_se_translator(seh_exception::TranslateSEHtoCE) in new thread
-    */
+     * @brief Translate SEH Exception to C++ Exception, enable /EHa(Enable SEH Exception) and call _set_se_translator(seh_exception::TranslateSEHtoCE) in new thread
+     */
     static void __cdecl TranslateSEHtoCE(unsigned int ExpCode, struct _EXCEPTION_POINTERS* ExpInfo) {
         throw seh_exception(ExpCode, ExpInfo);
     }

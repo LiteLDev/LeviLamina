@@ -6,7 +6,7 @@
 #include <LoggerAPI.h>
 #include <Utils/StringHelper.h>
 #include <Utils/FileHelper.h>
-#include <seh_exception/seh_exception.hpp>
+#include <Utils/SehTranslator.h>
 #include <ServerAPI.h>
 #include <HookAPI.h>
 #include "Config.h"
