@@ -1,5 +1,4 @@
 /**
- * @file   Members.hpp
  * @author LiteLDev (https://github.com/LiteLDev)
  * @brief  Member type for PermissionAPI
  * 

@@ -203,7 +203,7 @@ public:
     /**
      * @brief Get the value of a column
      *
-     * @param  column  The name of the column
+     * @param  name  The name of the column
      * @return Any&    The value of the column
      * @note   It will create a new Any object if the column doesn't exist
      */
@@ -211,7 +211,7 @@ public:
     /**
      * @brief Get the value of a column
      *
-     * @param  column  The name of the column
+     * @param  name  The name of the column
      * @return Any&    The value of the column
      * @see    Row::at
      */
