@@ -74,6 +74,29 @@
         "success": "{} 插件已成功重新加载。",
         "fail": "无法重新加载任何插件"
       },
+      "settings": {
+        "set": {
+          "success": "成功将 {} 设置为 {} 。"
+        },
+        "get": {
+          "success": "设置读取 {} 成功。值： "
+        },
+        "delete": {
+          "success": "设置成功删除 {} 。",
+          "error": {
+            "emptyKey": "JsonPointer 不能为空！"
+          }
+        },
+        "reload": {
+          "success": "成功重新加载设置。"
+        },
+        "save": {
+          "success": "成功保存设置。"
+        },
+        "list": {
+          "success": "设置列表："
+        }
+      },
       "error": {
         "noPathSpecified": "您必须提供LiteLoader插件的有效路径！",
         "noNameSpecified": "必须提供LiteLoaderBDS插件的有效名称!"
@@ -189,9 +212,6 @@
       },
       "initNodeJsDirectories": {
         "created": "NodeJs运行库文件夹未找到，已自动创建"
-      },
-      "loadPermissionAPI": {
-        "success": "* PermissionAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +235,9 @@
       "reloadPlugin": {
         "fail": "重载插件 {} 失败！"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "解压缩node_modules.tar失败"
     }
   },
   "llse": {

@@ -74,6 +74,29 @@
         "success": "{} plugins reloaded successfully.",
         "fail": "Failed to reload any plugin"
       },
+      "settings": {
+        "set": {
+          "success": "Settings set {} to {} successfully."
+        },
+        "get": {
+          "success": "Settings get {} successfully. Value: "
+        },
+        "delete": {
+          "success": "Settings delete {} successfully.",
+          "error": {
+            "emptyKey": "JsonPointer cannot be empty!"
+          }
+        },
+        "reload": {
+          "success": "Settings reloaded successfully."
+        },
+        "save": {
+          "success": "Settings saved successfully."
+        },
+        "list": {
+          "success": "Settings list:"
+        }
+      },
       "error": {
         "noPathSpecified": "You must provide a valid path of LiteLoader plugin!",
         "noNameSpecified": "You must provide a valid name of LiteLoader plugin!"
@@ -192,6 +215,9 @@
       },
       "loadPermissionAPI": {
         "success": "* PermissionAPI loaded."
+      },
+      "loadParticleAPI": {
+        "success": "* ParticleAPI loaded."
       }
     },
     "notice": {
@@ -215,6 +241,9 @@
       "reloadPlugin": {
         "fail": "Failed to reload plugin {}!"
       }
+    },
+    "unzipNodeModules": {
+      "fail": "Failed to unzip node_modules.tar"
     }
   },
   "llse": {
