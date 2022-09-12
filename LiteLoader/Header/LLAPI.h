@@ -11,8 +11,6 @@
 #define NOMINMAX
 #endif
 
-#include <windows.h>
-
 #include "Global.h"
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
