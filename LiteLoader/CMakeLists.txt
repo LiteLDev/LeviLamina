@@ -4,11 +4,8 @@ project(LiteLoader)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release) # Always uses Release mode to build BDS plugin for ABI Compatibility
 
-set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
-
-set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
-
-file(GLOB_RECURSE SRC_FILES
+file(
+        GLOB_RECURSE SRC_FILES
         ${PROJECT_SOURCE_DIR}/Lib/third-party/nbt-cpp/*.cpp
         ${PROJECT_SOURCE_DIR}/Header/*.cpp
         ${PROJECT_SOURCE_DIR}/Header/*.hpp
@@ -51,7 +48,8 @@ link_directories(${CMAKE_SOURCE_DIR}/x64/Release)
 
 add_library(LiteLoader SHARED ${SRC_FILES})
 
-target_link_libraries(LiteLoader
+target_link_libraries(
+        LiteLoader
         "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
@@ -70,6 +68,24 @@ target_link_libraries(LiteLoader
         LLPreLoader
 )
 
-add_custom_command(TARGET LiteLoader PRE_BUILD
+add_custom_command(
+        TARGET LiteLoader PRE_BUILD
         COMMAND cmd /c ${CMAKE_SOURCE_DIR}/Scripts/PrepareLibraries.cmd ${CMAKE_SOURCE_DIR}
-        )
+)
+
+# Copy the built DLL and PDB to the output directory
+add_custom_command(
+        TARGET LiteLoader POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:LiteLoader> ${CMAKE_BINARY_DIR}/output/
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_PDB_FILE:LiteLoader> ${CMAKE_BINARY_DIR}/pdb/
+        COMMENT "Copying LiteLoader DLL and PDB to output directory"
+        VERBATIM
+)
+
+# Copy the built lib to the SDK directory
+add_custom_command(
+        TARGET LiteLoader POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_LINKER_FILE:LiteLoader> ${CMAKE_BINARY_DIR}/sdk/lib/
+        COMMENT "Copying LiteLoader Lib to SDK directory"
+        VERBATIM
+)

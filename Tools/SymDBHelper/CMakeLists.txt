@@ -3,7 +3,6 @@ project(SymDBHelper)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/LiteLoader/Lib/)
 
 add_definitions(-D"NDEBUG" -D"_LIB" -D"_UNICODE" -D"UNICODE")
 
@@ -14,3 +13,11 @@ add_compile_options(
 
 add_library(SymDBHelper STATIC SymDBHelper.cpp)
 target_link_libraries(SymDBHelper Demangler)
+
+# use hardcode path to avoid the problem of different build path
+add_custom_command(
+        TARGET SymDBHelper POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:SymDBHelper> ${CMAKE_SOURCE_DIR}/build/sdk/lib/
+        COMMENT "Copying lib to sdk directory"
+        VERBATIM
+)

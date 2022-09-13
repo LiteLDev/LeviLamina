@@ -36,14 +36,14 @@ jobs:
           path: |
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('scripts/LINK.txt') }}
 
       - name: Download Server
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir Tools/Server
-          ServerLink=$(cat 'Scripts/LINK.txt')
+          ServerLink=$(cat 'scripts/LINK.txt')
           curl -L -o Tools/Server/server.zip "$ServerLink"
           unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
         shell: bash
@@ -107,31 +107,28 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
+      - name: Configure CMake(MSVC)
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Pack output and SDK
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackSDK
+        shell: cmd
+
       - name: Compress Resource Packs
         run: |
-          cd RELEASE/plugins/LiteLoader/ResourcePacks
+          cd build/output/plugins/LiteLoader/ResourcePacks
           7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
-      - name: Copy Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          cd Scripts
-          ./CopyRelease.cmd action
-        shell: cmd
-
-      - name: Move PDB to path
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          mkdir PDB
-          cp x64/Release/*.pdb PDB
-        shell: bash
-
-      - name: Pack PDB
+      - name: Pack PDB for Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
-        run: 7z a -tzip PDB.zip PDB
+        run: 7z a -tzip PDB.zip build/pdb
         shell: bash
 
       - name: Update LiteLoaderSDK
@@ -139,7 +136,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cd Scripts
+          cd scripts
           ./UploadSDK.cmd action
         env:
           REPO_KEY: ${{secrets.PUSH_TOKEN}}
@@ -150,16 +147,16 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
-          path: ${{ github.workspace }}\RELEASE\
+          path: ${{ github.workspace }}\build\output\
 
       - name: Upload PDB
         uses: actions/upload-artifact@v3.1.0
         with:
           name: PDB
-          path: ${{ github.workspace }}\PDB
+          path: ${{ github.workspace }}\build\pdb\
 
       - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}/RELEASE
+        working-directory: ${{ env.GITHUB_WORKSPACE }}/build/output
         id: rel
         if: startsWith(github.ref, 'refs/tags/')
         run: |
