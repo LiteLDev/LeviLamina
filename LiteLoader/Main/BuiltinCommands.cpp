@@ -247,20 +247,92 @@ void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool
     }
 }
 
-class LLCommand : public Command {
+enum class LLSettingsOperation {
+    Get,
+    Set,
+    Delete,
+    Reload,
+    Save,
+    List
+};
 
+void LLSettingsCommand(CommandOutput& output, LLSettingsOperation operation, const string& key, const string& value) {
+    try {
+        switch (operation) {
+            case LLSettingsOperation::Get: {
+                nlohmann::json j;
+                LL::to_json(j, LL::globalConfig);
+                auto path = nlohmann::json::json_pointer(key);
+                auto val = j[path];
+                output.trSuccess("ll.cmd.settings.get.success", key);
+                output.success(val.dump(4));
+                break;
+            }
+            case LLSettingsOperation::Set: {
+                nlohmann::json j;
+                LL::to_json(j, LL::globalConfig);
+                // use nlohmann::json to set value
+                auto path = nlohmann::json::json_pointer(key);
+                j[path] = nlohmann::json::parse(value);
+                LL::from_json(j, LL::globalConfig);
+                output.trSuccess("ll.cmd.settings.set.success", key, j[path].dump());
+                break;
+            }
+            case LLSettingsOperation::Delete: {
+                if (key == ""){
+                    output.trError("ll.cmd.settings.delete.error.emptyKey");
+                    break;
+                }
+                nlohmann::json j;
+                LL::to_json(j, LL::globalConfig);
+                auto path = nlohmann::json::json_pointer(key);
+                j.erase(path);
+                LL::from_json(j, LL::globalConfig);
+                output.trSuccess("ll.cmd.settings.delete.success", key);
+                break;
+            }
+            case LLSettingsOperation::List: {
+                nlohmann::json j;
+                LL::to_json(j, LL::globalConfig);
+                output.trSuccess("ll.cmd.settings.list.success");
+                output.success(j.dump(4));
+                break;
+            }
+            case LLSettingsOperation::Reload:
+                LL::LoadLLConfig();
+                output.trSuccess("ll.cmd.settings.reload.success");
+                break;
+            case LLSettingsOperation::Save:
+                LL::SaveLLConfig();
+                output.trSuccess("ll.cmd.settings.save.success");
+                break;
+            default:
+                output.error("Unknown operation");
+        }
+    } catch (const std::exception& e) {
+        output.trError("{}", e.what());
+    }
+}
+
+class LLCommand : public Command {
+public:
     enum class Operation {
         Version,
         List,
         Help,
         Load,
         Unload,
-        Reload
+        Reload,
+        Settings
     };
 
     Operation operation;
-    bool hasUpgradeOption, hasPluginNameSet;
+    LLSettingsOperation settingsOperation;
+
+    bool hasUpgradeOption, hasPluginNameSet, hasKeySet, hasValueSet;
     CommandRawText pluginNameToDoOperation;
+    CommandRawText key;
+    CommandRawText value;
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
@@ -301,6 +373,17 @@ public:
                 else
                     LLReloadPluginCommand(output, "", true);
                 break;
+            case Operation::Settings:
+                if (hasKeySet) {
+                    if (hasValueSet) {
+                        LLSettingsCommand(output, settingsOperation, key, value);
+                    } else {
+                        LLSettingsCommand(output, settingsOperation, key, "");
+                    }
+                } else {
+                    LLSettingsCommand(output, settingsOperation, "", "");
+                }
+                break;
             case Operation::Help:
                 LLHelpCommand(output);
                 break;
@@ -327,6 +410,21 @@ public:
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Common").addOptions((CommandParameterOption)1));
+
+        // ll settings
+        registry->addEnum<Operation>("Operation_Settings", {{"settings", Operation::Settings}});
+        registry->addEnum<LLSettingsOperation>("SettingsOperation", {{"get", LLSettingsOperation::Get},
+                                                                     {"set", LLSettingsOperation::Set},
+                                                                     {"delete", LLSettingsOperation::Delete},
+                                                                     {"reload", LLSettingsOperation::Reload},
+                                                                     {"save", LLSettingsOperation::Save},
+                                                                     {"list", LLSettingsOperation::List}});
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Settings").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::settingsOperation, "SettingsOperation", "SettingsOperation").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::key, "JsonPointer", "A path starting with /", &LLCommand::hasKeySet),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::value, "Value", "The value you'd like to set.", &LLCommand::hasValueSet));
 
         // ll load
         registry->addEnum<Operation>("Operation_FreeFilePath", {

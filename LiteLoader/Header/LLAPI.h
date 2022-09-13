@@ -11,11 +11,9 @@
 #define NOMINMAX
 #endif
 
-#include <windows.h>
-
-#include "Global.h"
-#include "Utils/WinHelper.h"
-#include "Utils/PluginOwnData.h"
+#include <Global.h>
+#include <Utils/WinHelper.h>
+#include <Utils/PluginOwnData.h>
 
 // LL types
 namespace LL {
@@ -166,7 +164,7 @@ LIAPI LL::Plugin* getPlugin(std::string name);
 /**
  * @brief Get a loaded plugin by HMODULE handle
  *
- * @param  name         The name of the plugin
+ * @param  handle       The HMODULE handle of the plugin
  * @return LL::Plugin*  The plugin(nullptr if not found)
  */
 LIAPI LL::Plugin* getPlugin(HMODULE handle);
@@ -187,7 +185,7 @@ LIAPI bool hasPlugin(std::string name);
 LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
 /**
- * @breif Get the handle of LiteLoader.dll.
+ * @brief Get the handle of LiteLoader.dll.
  *
  * @return HMODULE  The handle
  */

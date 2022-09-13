@@ -696,7 +696,7 @@ inline DynamicCommandInstance::~DynamicCommandInstance() {
 }
 
 inline std::unique_ptr<DynamicCommandInstance> DynamicCommandInstance::create(std::string const& name, std::string const& description, CommandPermissionLevel permission, CommandFlag flag, HMODULE handle) {
-    if (LL::globalConfig.serverStatus != LL::LLServerStatus::Running) {
+    if (LL::globalRuntimeConfig.serverStatus != LL::LLServerStatus::Running) {
         for (auto& cmd : delaySetupCommandInstances) {
             if (cmd->name == name) {
                 logger.error("Command \"{}\" already exists", name);
@@ -1277,7 +1277,7 @@ TClasslessInstanceHook2("startServerThread_RegisterDebugCommand", void, "?startS
 
 TClasslessInstanceHook(void, "?compile@BaseCommandBlock@@AEAAXAEBVCommandOrigin@@AEAVLevel@@@Z",
                        class CommandOrigin const& origin, class Level& level) {
-    if (LL::globalConfig.tickThreadId != std::this_thread::get_id()) {
+    if (LL::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
         SRWLockSharedHolder locker(delaySetupLock);
         return original(this, origin, level);
     }

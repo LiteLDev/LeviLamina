@@ -7,6 +7,7 @@
 #include <map>
 #include <Configs.h>
 #include "LocalShareData.h"
+#include <Windows.h>
 using namespace std;
 
 

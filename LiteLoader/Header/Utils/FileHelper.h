@@ -1,8 +1,8 @@
 #pragma once
-#include "../Global.h"
 #include <fstream>
 #include <optional>
 #include <string>
+#include <Global.h>
 
 LIAPI FILE* GetFILEfromFstream(std::fstream& fs);
 LIAPI HANDLE GetHANDLEfromFstream(std::fstream& fs);

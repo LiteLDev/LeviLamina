@@ -1,6 +1,6 @@
 #include <HookAPI.h>
 #include <LoggerAPI.h>
-#include <seh_exception/seh_exception.hpp>
+#include <Utils/SehTranslator.h>
 #include <Utils/DbgHelper.h>
 #include <Utils/StringHelper.h>
 #include <sstream>

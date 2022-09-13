@@ -1,10 +1,9 @@
 ﻿#pragma once
-#include "Global.h"
-#include "Utils/Hash.h"
+#include <Global.h>
+#include <Utils/Hash.h>
 #include <vector>
 #include <string>
 #include <thread>
-#include "third-party/ModUtils/ModUtils.h"
 
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);
@@ -14,6 +13,9 @@ LIAPI int HookFunction(void* oldfunc, void** poutold, void* newfunc);
 LIAPI void* dlsym_real(char const* name);
 }
 
+namespace LL::Hook {
+LIAPI uintptr_t findSig(const char* szSignature);
+} // namespace LL::Hook
 extern std::vector<std::string> dlsym_reverse(int addr);
 
 template <typename RTN = void, typename... Args>
@@ -91,7 +93,7 @@ static __forceinline auto __imp_Call() {
 }
 
 template <FixedString Sig>
-__declspec(selectany) void* __sigfind_ptr_cache = (void*)ModUtils::FindSig(Sig);
+__declspec(selectany) void* __sigfind_ptr_cache = (void*)LL::Hook::findSig(Sig);
 template <FixedString Sig, typename ret, typename... p>
 static __forceinline auto __imp_Call_Sig() {
     return ((ret(*)(p...))(__sigfind_ptr_cache<Sig>));
@@ -226,17 +228,17 @@ extern THookRegister THookRegisterTemplate;
 #define _TStaticNoDefHook(iname, sym, ret, ...) \
     _TStaticHook(, iname, sym, ret, VA_EXPAND(__VA_ARGS__))
 
-#define SHook2(iname, ret, sig, ...) _TStaticNoDefHook(iname, (void*)ModUtils::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
+#define SHook2(iname, ret, sig, ...) _TStaticNoDefHook(iname, (void*)LL::Hook::findSig(sig), ret, VA_EXPAND(__VA_ARGS__))
 #define SHook(ret, sig, ...) SHook2(sig, ret, sig, VA_EXPAND(__VA_ARGS__))
 #define SStaticHook2(iname, ret, sig, type, ...) \
-    _TStaticDefHook(iname, (void*)ModUtils::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
+    _TStaticDefHook(iname, (void*)LL::Hook::findSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
 #define SStaticHook(ret, sig, type, ...) SStaticHook2(sig, ret, sig, type, VA_EXPAND(__VA_ARGS__))
 #define SClasslessInstanceHook2(iname, ret, sig, ...) \
-    _TInstanceNoDefHook(iname, (void*)ModUtils::FindSig(sig), ret, VA_EXPAND(__VA_ARGS__))
+    _TInstanceNoDefHook(iname, (void*)LL::Hook::findSig(sig), ret, VA_EXPAND(__VA_ARGS__))
 #define SClasslessInstanceHook(ret, sig, ...) \
     SClasslessInstanceHook2(sig, ret, sig, VA_EXPAND(__VA_ARGS__))
 #define SInstanceHook2(iname, ret, sig, type, ...) \
-    _TInstanceDefHook(iname, (void*)ModUtils::FindSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
+    _TInstanceDefHook(iname, (void*)LL::Hook::findSig(sig), ret, type, VA_EXPAND(__VA_ARGS__))
 #define SInstanceHook(ret, sig, type, ...) \
     SInstanceHook2(sig, ret, sig, type, VA_EXPAND(__VA_ARGS__))
 

@@ -87,8 +87,7 @@ bool IsExistScriptPlugin() {
                 ext = UTF82String(path.extension().u8string());
             }
 
-            if ((!ext.empty() && std::find(scriptExts.begin(), scriptExts.end(), ext) != scriptExts.end())
-                || ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
+            if ((!ext.empty() && std::find(scriptExts.begin(), scriptExts.end(), ext) != scriptExts.end()) || ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
                 return true;
         }
     }
@@ -171,7 +170,6 @@ void LoadPermissionAPI() {
     std::string path = "plugins/LiteLoader/PermissionAPI.dll";
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
-        logger.info(tr("ll.loader.loadPermissionAPI.success"));
         Permission::init(lib);
     } else {
         logger.error("Fail to load PermissionAPI!");
@@ -183,7 +181,6 @@ void LoadParticleAPI() {
     std::string path = "plugins/LiteLoader/ParticleAPI.dll";
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
-        logger.info(tr("ll.loader.loadParticleAPI.success"));
         ParticleCUI::init(lib);
     } else {
         logger.error("Fail to load ParticleAPI!");
@@ -283,15 +280,15 @@ void LL::LoadMain() {
     }
 
     // Load PermissionAPI
-    if(LL::globalConfig.enablePermissionAPI) {
+    if (LL::globalConfig.enablePermissionAPI) {
         if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
-        LoadPermissionAPI();
+            LoadPermissionAPI();
         }
     }
 
-    if(LL::globalConfig.enableParticleAPI) {
+    if (LL::globalConfig.enableParticleAPI) {
         if (filesystem::exists("plugins/LiteLoader/ParticleAPI.dll")) {
-        LoadParticleAPI();
+            LoadParticleAPI();
         }
     }
 

@@ -17,10 +17,10 @@
 
 
 #include <unordered_map>
-#include "WinHelper.h"
+#include <Utils/WinHelper.h>
 #include <minwindef.h>
 #include <string_view>
-#include "../Global.h"
+#include <Global.h>
 
 LIAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string, void*>> ll_PluginOwnData;
 

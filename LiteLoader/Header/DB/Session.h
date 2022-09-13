@@ -44,7 +44,7 @@ public:
      * @brief Change current user and database.
      *
      * @param  user  Username
-     * @param  pass  Password
+     * @param  password  Password
      * @param  db    Database name
      * @return bool  Success or not
      * @throws std::runtime_error  If not implemented

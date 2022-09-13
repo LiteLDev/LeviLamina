@@ -18,8 +18,8 @@ copies or substantial portions of the Software.
 
 #include <functional>
 
-#include "Global.h"
-#include "Utils/WinHelper.h"
+#include <Global.h>
+#include <Utils/WinHelper.h>
 
 /**
  * \~chinese

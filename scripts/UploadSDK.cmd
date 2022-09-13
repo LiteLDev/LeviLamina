@@ -1,6 +1,6 @@
 @echo off
 
-cd ..
+cd %~dp0..
 setlocal enabledelayedexpansion
 
 set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
@@ -45,12 +45,17 @@ cd ..
 echo.
 echo [INFO] Fetching LiteLoaderSDK to GitHub finished
 echo.
-cd Scripts
-echo [INFO] Packing LiteLoaderSDK ...
-start /wait cmd /c CopySDK.cmd action
-echo [INFO] Packing LiteLoaderSDK finished.
-echo.
-cd ..
+
+@REM remove all directory except .git in LiteLoaderSDK
+for /f "delims=" %%i in ('dir /b /ad LiteLoaderSDK') do (
+    if not "%%i"==".git" (
+        echo [INFO] Removing LiteLoaderSDK\%%i
+        rd /s /q LiteLoaderSDK\%%i
+    )
+)
+
+@REM copy all from build/sdk to LiteLoaderSDK
+xcopy /e /y /i /q build\SDK\* LiteLoaderSDK
 
 cd LiteLoaderSDK
 for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i

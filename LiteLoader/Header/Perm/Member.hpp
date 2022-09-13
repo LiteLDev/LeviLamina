@@ -1,5 +1,4 @@
 /**
- * @file   Members.hpp
  * @author LiteLDev (https://github.com/LiteLDev)
  * @brief  Member type for PermissionAPI
  * 
@@ -7,7 +6,7 @@
  * 
  */
 #pragma once
-#include "Foundation.hpp"
+#include <PERM/Foundation.hpp>
 
 namespace PERM {
 

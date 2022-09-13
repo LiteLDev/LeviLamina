@@ -63,6 +63,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
         .instanceFunction("hurt", &EntityClass::hurt)
+        .instanceFunction("heal", &EntityClass::heal)
         .instanceFunction("setOnFire", &EntityClass::setOnFire)
         .instanceFunction("isPlayer", &EntityClass::isPlayer)
         .instanceFunction("toPlayer", &EntityClass::toPlayer)
@@ -830,6 +831,20 @@ Local<Value> EntityClass::hurt(const Arguments& args) {
         return Boolean::newBoolean(entity->hurtEntity(damage,(ActorDamageCause)type));
     }
     CATCH("Fail in hurt!");
+}
+
+Local<Value> EntityClass::heal(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        entity->heal(args[0].toInt());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in heal!");
 }
 
 Local<Value> EntityClass::setOnFire(const Arguments& args) {

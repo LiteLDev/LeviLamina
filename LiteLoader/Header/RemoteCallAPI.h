@@ -1,15 +1,15 @@
 #pragma once
-#include "Global.h"
-#include "Utils/WinHelper.h"
-#include "third-party/Nlohmann/json.hpp"
-#include "MC/CompoundTag.hpp"
-#include "MC/Container.hpp"
-#include "MC/ItemStack.hpp"
-#include "MC/BlockInstance.hpp"
-#include "MC/VanillaDimensions.hpp"
-#include "MC/Player.hpp"
-#include "MC/Block.hpp"
-#include "MC/BlockActor.hpp"
+#include <Global.h>
+#include <Utils/WinHelper.h>
+#include <third-party/Nlohmann/json.hpp>
+#include <MC/CompoundTag.hpp>
+#include <MC/Container.hpp>
+#include <MC/ItemStack.hpp>
+#include <MC/BlockInstance.hpp>
+#include <MC/VanillaDimensions.hpp>
+#include <MC/Player.hpp>
+#include <MC/Block.hpp>
+#include <MC/BlockActor.hpp>
 #define TEST_NEW_VALUE_TYPE
 
 ///////////////////////////////////////////////////////

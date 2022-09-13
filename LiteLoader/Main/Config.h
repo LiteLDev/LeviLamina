@@ -62,12 +62,15 @@ struct LLConfig {
     bool enableParticleAPI = false;
     bool enablePermissionAPI = true;
     std::vector<std::string> outputFilterRegex = {};
+};
 
-    // Runtime Config
+struct LLRuntimConfig {
     LLServerStatus serverStatus = LLServerStatus::Starting;
     std::thread::id tickThreadId;
 };
+
 LIAPI extern LLConfig globalConfig;
+LIAPI extern LLRuntimConfig globalRuntimeConfig;
 LIAPI extern CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf);

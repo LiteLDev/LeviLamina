@@ -1,8 +1,8 @@
 #pragma once
 
 #include <cstdlib>
-#include "../Global.h"
-#include "../FormUI.h"
+#include <Global.h>
+#include <FormUI.h>
 #include <MC/Player.hpp>
 
 LIAPI unsigned NewFormId();

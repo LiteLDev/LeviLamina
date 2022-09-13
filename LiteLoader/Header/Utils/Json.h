@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Global.h"
+#include <Global.h>
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>

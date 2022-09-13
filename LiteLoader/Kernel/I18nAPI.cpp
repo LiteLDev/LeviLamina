@@ -1,6 +1,7 @@
 #include <I18nAPI.h>
 #include <Utils/StringHelper.h>
 #include <Main/LiteLoader.h>
+#include <stringapiset.h>
 using namespace std;
 namespace fs = std::filesystem;
 

@@ -6,6 +6,7 @@
 #include <filesystem>
 #include <MC/Common.hpp>
 #include <MC/SharedConstants.hpp>
+#include <Windows.h>
 using namespace std;
 using namespace LL;
 

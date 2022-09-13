@@ -1,6 +1,5 @@
 #pragma once
 #include <Global.h>
-#include <windows.h>
 #include <string>
 #include <unordered_map>
 
