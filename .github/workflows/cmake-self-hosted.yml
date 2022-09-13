@@ -107,6 +107,17 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
+      - name: Configure CMake(MSVC)
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Pack output and SDK
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackSDK
+        shell: cmd
+
       - name: Compress Resource Packs
         run: |
           cd build/output/plugins/LiteLoader/ResourcePacks

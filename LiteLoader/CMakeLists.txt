@@ -81,3 +81,11 @@ add_custom_command(
         COMMENT "Copying LiteLoader DLL and PDB to output directory"
         VERBATIM
 )
+
+# Copy the built lib to the SDK directory
+add_custom_command(
+        TARGET LiteLoader POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_LINKER_FILE:LiteLoader> ${CMAKE_BINARY_DIR}/sdk/lib/
+        COMMENT "Copying LiteLoader Lib to SDK directory"
+        VERBATIM
+)

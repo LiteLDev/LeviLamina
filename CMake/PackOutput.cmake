@@ -2,7 +2,7 @@ execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/p
 execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/output)
 execute_process(COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/output/plugins/LiteLoader/)
 
-add_custom_target(PackOutput ALL DEPENDS LiteLoaderBDS)
+add_custom_target(PackOutput)
 
 # Copy assets to output after build all.
 add_custom_command(

@@ -13,3 +13,11 @@ add_compile_options(
 
 add_library(SymDBHelper STATIC SymDBHelper.cpp)
 target_link_libraries(SymDBHelper Demangler)
+
+# use hardcode path to avoid the problem of different build path
+add_custom_command(
+        TARGET SymDBHelper POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:SymDBHelper> ${CMAKE_SOURCE_DIR}/build/sdk/lib/
+        COMMENT "Copying lib to sdk directory"
+        VERBATIM
+)
