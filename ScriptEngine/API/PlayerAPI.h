@@ -91,6 +91,7 @@ public:
     Local<Value> transServer(const Arguments& args);
     Local<Value> crash(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
+    Local<Value> heal(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
     Local<Value> setFire(const Arguments& args);
     Local<Value> refreshChunks(const Arguments& args);

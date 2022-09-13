@@ -114,6 +114,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("transServer", &PlayerClass::transServer)
         .instanceFunction("crash", &PlayerClass::crash)
         .instanceFunction("hurt", &PlayerClass::hurt)
+        .instanceFunction("heal", &PlayerClass::heal)
         .instanceFunction("refreshChunks", &PlayerClass::refreshChunks)
         .instanceFunction("giveItem", &PlayerClass::giveItem)
         .instanceFunction("clearItem", &PlayerClass::clearItem)
@@ -1978,6 +1979,20 @@ Local<Value> PlayerClass::hurt(const Arguments& args) {
         return Boolean::newBoolean(player->hurtEntity(damage));
     }
     CATCH("Fail in hurt!");
+}
+
+Local<Value> PlayerClass::heal(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        player->heal(args[0].toInt());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in heal!");
 }
 
 Local<Value> PlayerClass::setFire(const Arguments& args) {
