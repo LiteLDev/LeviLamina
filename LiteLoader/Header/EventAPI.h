@@ -351,6 +351,11 @@ public:
     bool mIsSneaking = false;
 };
 
+class PlayerSwingEvent : public EventTemplate<PlayerSwingEvent> {
+public:
+    Player* mPlayer = nullptr;
+};
+
 class PlayerAttackEvent : public EventTemplate<PlayerAttackEvent> {
 public:
     Player* mPlayer = nullptr;

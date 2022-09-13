@@ -63,6 +63,7 @@
 #include <MC/PackSource.hpp>
 #include <MC/BucketItem.hpp>
 #include <MC/BucketableComponent.hpp>
+#include <MC/AnimatePacket.hpp>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -289,6 +290,7 @@ DECLARE_EVENT_DATA(MobSpawnEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
+DECLARE_EVENT_DATA(PlayerSwingEvent);
 
 #define IF_LISTENED(EVENT)      \
     if (EVENT::hasListener()) { \
@@ -444,6 +446,23 @@ TClasslessInstanceHook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAA
     return original(this, ac, isSneaking);
 }
 
+
+/////////////////// PlayerSwing ///////////////////
+THook(void,
+      "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@"
+      "AEBVAnimatePacket@@@Z",
+      ServerNetworkHandler* serverNetworkHandler,
+      NetworkIdentifier const& networkIdentifier,
+      AnimatePacket const& animatePacket) {
+    if (animatePacket.mAction == AnimatePacket::Action::Swing) {
+        IF_LISTENED(PlayerSwingEvent) {
+            PlayerSwingEvent ev{};
+            ev.mPlayer = serverNetworkHandler->getServerPlayer(networkIdentifier);
+        }
+        IF_LISTENED_END(PlayerSwingEvent)
+    }
+    return original(serverNetworkHandler, networkIdentifier, animatePacket);
+}
 
 /////////////////// PlayerAttackEntity ///////////////////
 TInstanceHook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",

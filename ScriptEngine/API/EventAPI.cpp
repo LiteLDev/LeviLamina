@@ -54,6 +54,7 @@ enum class EVENT_TYPES : int {
     onChangeDim,
     onJump,
     onSneak,
+    onPlayerSwing,
     onAttackEntity,
     onAttackBlock,
     onUseItem,
@@ -379,6 +380,15 @@ void EnableEventListener(int eventId) {
                     CallEvent(EVENT_TYPES::onChangeDim, PlayerClass::newPlayer(ev.mPlayer), Number::newNumber(ev.mToDimensionId)); //======???
                 }
                 IF_LISTENED_END(EVENT_TYPES::onChangeDim);
+            });
+            break;
+
+        case EVENT_TYPES::onPlayerSwing:
+            Event::PlayerSwingEvent::subscribe([](const PlayerSwingEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onPlayerSwing) {
+                        CallEvent(EVENT_TYPES::onPlayerSwing, PlayerClass::newPlayer(ev.mPlayer));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onPlayerSwing);
             });
             break;
 
