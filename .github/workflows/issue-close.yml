@@ -13,4 +13,4 @@ jobs:
         if: ${{ !github.event.issue.pull_request }}
         with:
           actions: 'remove-labels'
-          labels: 'status: pending,status: waiting for feedback'
+          labels: 'status: need review,status: more information needed'
