@@ -12,3 +12,6 @@ add_subdirectory(ScriptEngine/third-party/ScriptX/CMake/ScriptX-Lua)
 add_subdirectory(ScriptEngine/third-party/ScriptX/CMake/ScriptX-QuickJs)
 add_subdirectory(ScriptEngine/third-party/ScriptX/CMake/ScriptX-NodeJs)
 add_subdirectory(Tools/SymDBHelper)
+
+include(${CMAKE_SOURCE_DIR}/CMake/PackOutput.cmake)
+include(${CMAKE_SOURCE_DIR}/CMake/CleanOutput.cmake)

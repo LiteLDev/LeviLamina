@@ -97,31 +97,14 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          cd scripts
-          ./PackOutput.cmd action
-        shell: cmd
-
-      - name: Pack PDB
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          mkdir pdb
-          cp build/LiteLoader/Release/LiteLoader.pdb pdb
-          cp build/ScriptEngine/CMake/ScriptEngine-QuickJs/Release/LiteLoader.Js.pdb pdb
-          cp build/ScriptEngine/CMake/ScriptEngine-NodeJs/Release/LiteLoader.NodeJs.pdb pdb
-          cp build/ScriptEngine/CMake/ScriptEngine-Lua/Release/LiteLoader.Lua.pdb pdb
-        shell: bash
-
       - name: Upload LiteLoader
         uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
-          path: ${{ github.workspace }}\output\
+          path: ${{ github.workspace }}\build\output\
 
       - name: Upload PDB
         uses: actions/upload-artifact@v3.1.0
         with:
           name: PDB
-          path: ${{ github.workspace }}\pdb\
+          path: ${{ github.workspace }}\build\pdb\

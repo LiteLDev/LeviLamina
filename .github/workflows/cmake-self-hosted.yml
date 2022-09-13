@@ -109,32 +109,15 @@ jobs:
 
       - name: Compress Resource Packs
         run: |
-          cd output/plugins/LiteLoader/ResourcePacks
+          cd build/output/plugins/LiteLoader/ResourcePacks
           7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
           rm -r LiteLoaderBDS-CUI
-        shell: bash
-
-      - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          cd scripts
-          ./PackOutput.cmd action
-        shell: cmd
-
-      - name: Pack PDB
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          mkdir pdb
-          cp build/LiteLoader/Release/LiteLoader.pdb pdb
-          cp build/ScriptEngine/CMake/ScriptEngine-QuickJs/Release/LiteLoader.Js.pdb pdb
-          cp build/ScriptEngine/CMake/ScriptEngine-NodeJs/Release/LiteLoader.NodeJs.pdb pdb
-          cp build/ScriptEngine/CMake/ScriptEngine-Lua/Release/LiteLoader.Lua.pdb pdb
         shell: bash
 
       - name: Pack PDB for Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
-        run: 7z a -tzip PDB.zip PDB
+        run: 7z a -tzip PDB.zip build/pdb
         shell: bash
 
       - name: Update LiteLoaderSDK
@@ -153,16 +136,16 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
-          path: ${{ github.workspace }}\output\
+          path: ${{ github.workspace }}\build\output\
 
       - name: Upload PDB
         uses: actions/upload-artifact@v3.1.0
         with:
           name: PDB
-          path: ${{ github.workspace }}\pdb\
+          path: ${{ github.workspace }}\build\pdb\
 
       - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}/output
+        working-directory: ${{ env.GITHUB_WORKSPACE }}/build/output
         id: rel
         if: startsWith(github.ref, 'refs/tags/')
         run: |

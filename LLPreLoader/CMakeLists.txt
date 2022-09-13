@@ -23,5 +23,16 @@ link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 aux_source_directory(../LiteLoader/Lib/third-party/rawpdb DIR_LIB_SRCS)
 add_library(LLPreLoader SHARED dllmain.cpp SymDB.cpp PreLoader.cpp Utils.cpp ${DIR_LIB_SRCS})
-target_link_libraries(LLPreLoader SymDBHelper Demangler
-        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/detours/detours.lib")
+target_link_libraries(
+        LLPreLoader SymDBHelper Demangler
+        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/detours/detours.lib"
+)
+
+# Copy the dll and pdb to the output directory
+add_custom_command(
+        TARGET LLPreLoader POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:LLPreLoader> ${CMAKE_BINARY_DIR}/output/
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_PDB_FILE:LLPreLoader> ${CMAKE_BINARY_DIR}/pdb/
+        COMMENT "Copying dll and pdb to output directory"
+        VERBATIM
+)

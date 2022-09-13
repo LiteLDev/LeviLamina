@@ -9,3 +9,12 @@ set(SCRIPTX_BACKEND Lua)
 set(LLSE_BACKEND_LIBRARY Lua)
 
 include(../../CMakeLists.txt)
+
+# copy target DLL and PDB to output directory
+add_custom_command(
+        TARGET LiteLoader.Lua POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:LiteLoader.Lua> ${CMAKE_BINARY_DIR}/output/plugins/LiteLoader/
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_PDB_FILE:LiteLoader.Lua> ${CMAKE_BINARY_DIR}/pdb/
+        COMMENT "Copying LiteLoader.Lua DLL and PDB to output directory"
+        VERBATIM
+)
