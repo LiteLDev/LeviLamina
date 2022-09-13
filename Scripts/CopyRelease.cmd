@@ -12,9 +12,13 @@ echo [INFO] Copying RELEASE...
 echo.
 
 copy /Y ScriptEngine\BaseLib\* RELEASE\plugins\lib
-copy /Y x64\Release\LLPreLoader.dll RELEASE\LLPreLoader.dll
-copy /Y x64\Release\LiteLoader.dll RELEASE\LiteLoader.dll
-copy /Y x64\Release\LiteLoader.*.dll RELEASE\plugins\LiteLoader\
+copy /Y build\LLPreLoader\Release\LLPreLoader.dll RELEASE\LLPreLoader.dll
+copy /Y build\LiteLoader\Release\LiteLoader.dll RELEASE\LiteLoader.dll
+
+copy /Y build\ScriptEngine\CMake\ScriptEngine-QuickJs\Release\LiteLoader.Js.dll RELEASE\plugins\LiteLoader\
+copy /Y build\ScriptEngine\CMake\ScriptEngine-NodeJs\Release\LiteLoader.NodeJs.dll RELEASE\plugins\LiteLoader\
+copy /Y build\ScriptEngine\CMake\ScriptEngine-Lua\Release\LiteLoader.Lua.dll RELEASE\plugins\LiteLoader\
+
 copy /Y Tools\LLPeEditor.exe RELEASE\LLPeEditor.exe
 copy /Y ScriptEngine\BaseLib\* RELEASE\plugins\lib\
 

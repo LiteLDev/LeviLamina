@@ -3,7 +3,6 @@ project(SymDBHelper)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/LiteLoader/Lib/)
 
 add_definitions(-D"NDEBUG" -D"_LIB" -D"_UNICODE" -D"UNICODE")
 

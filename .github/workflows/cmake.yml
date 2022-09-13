@@ -108,7 +108,10 @@ jobs:
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir PDB
-          cp x64/Release/*.pdb PDB
+          cp build/LiteLoader/Release/LiteLoader.pdb PDB
+          cp build/ScriptEngine/CMake/ScriptEngine-QuickJs/Release/LiteLoader.Js.pdb PDB
+          cp build/ScriptEngine/CMake/ScriptEngine-NodeJs/Release/LiteLoader.NodeJs.pdb PDB
+          cp build/ScriptEngine/CMake/ScriptEngine-Lua/Release/LiteLoader.Lua.pdb PDB
         shell: bash
 
       - name: Upload LiteLoader

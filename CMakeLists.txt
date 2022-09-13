@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.21)
 project(LiteLoaderBDS)
 
 # Add sub directories
-add_subdirectory(PreLoader)
+add_subdirectory(LLPreLoader)
 add_subdirectory(LiteLoader)
 add_subdirectory(ScriptEngine/CMake/ScriptEngine-Lua)
 add_subdirectory(ScriptEngine/CMake/ScriptEngine-QuickJs)
