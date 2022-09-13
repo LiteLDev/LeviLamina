@@ -47,7 +47,7 @@ echo [INFO] Fetching LiteLoaderSDK to GitHub finished
 echo.
 cd Scripts
 echo [INFO] Packing LiteLoaderSDK ...
-start /wait cmd /c CopySDK.cmd action
+start /wait cmd /c PackSDK.cmd action
 echo [INFO] Packing LiteLoaderSDK finished.
 echo.
 cd ..

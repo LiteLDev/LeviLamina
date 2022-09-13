@@ -37,14 +37,14 @@ jobs:
           path: |
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('scripts/LINK.txt') }}
 
       - name: Download Server
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir Tools/Server
-          ServerLink=$(cat 'Scripts/LINK.txt')
+          ServerLink=$(cat 'scripts/LINK.txt')
           curl -L -o Tools/Server/server.zip "$ServerLink"
           unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
         shell: bash
@@ -97,31 +97,31 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Copy Release
+      - name: Pack Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          cd Scripts
-          ./CopyRelease.cmd action
+          cd scripts
+          ./PackOutput.cmd action
         shell: cmd
 
-      - name: Move PDB to path
+      - name: Pack PDB
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          mkdir PDB
-          cp build/LiteLoader/Release/LiteLoader.pdb PDB
-          cp build/ScriptEngine/CMake/ScriptEngine-QuickJs/Release/LiteLoader.Js.pdb PDB
-          cp build/ScriptEngine/CMake/ScriptEngine-NodeJs/Release/LiteLoader.NodeJs.pdb PDB
-          cp build/ScriptEngine/CMake/ScriptEngine-Lua/Release/LiteLoader.Lua.pdb PDB
+          mkdir pdb
+          cp build/LiteLoader/Release/LiteLoader.pdb pdb
+          cp build/ScriptEngine/CMake/ScriptEngine-QuickJs/Release/LiteLoader.Js.pdb pdb
+          cp build/ScriptEngine/CMake/ScriptEngine-NodeJs/Release/LiteLoader.NodeJs.pdb pdb
+          cp build/ScriptEngine/CMake/ScriptEngine-Lua/Release/LiteLoader.Lua.pdb pdb
         shell: bash
 
       - name: Upload LiteLoader
         uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
-          path: ${{ github.workspace }}\RELEASE\
+          path: ${{ github.workspace }}\output\
 
       - name: Upload PDB
         uses: actions/upload-artifact@v3.1.0
         with:
           name: PDB
-          path: ${{ github.workspace }}\PDB
+          path: ${{ github.workspace }}\pdb\

@@ -2,9 +2,7 @@
 
 cd ..
 
-rmdir LiteLoaderSDK\Header /S /Q 2>nul
-rmdir LiteLoaderSDK\Lib /S /Q 2>nul
-rmdir LiteLoaderSDK\Tools /S /Q 2>nul
+rmdir LiteLoaderSDK /S /Q 2>nul
 
 echo [INFO] Packing LiteLoaderSDK...
 echo.
@@ -12,14 +10,12 @@ echo.
 mkdir LiteLoaderSDK\Header 2>nul
 mkdir LiteLoaderSDK\Lib 2>nul
 mkdir LiteLoaderSDK\Tools 2>nul
-mkdir LiteLoaderSDK\Tools\llvm-dlltool-msys2 2>nul
 
 xcopy LiteLoader\Header\* LiteLoaderSDK\Header /E /Q /Y
 
 copy /Y build\Tools\SymDBHelper\Release\SymDBHelper.lib LiteLoaderSDK\Lib
 copy /Y build\LiteLoader\Release\LiteLoader.lib LiteLoaderSDK\Lib
 
-xcopy Tools\llvm-dlltool-msys2\* LiteLoaderSDK\Tools\llvm-dlltool-msys2 /E /Q /Y
 copy /Y Tools\LibraryBuilder.exe LiteLoaderSDK\Tools
 copy /Y Tools\LLPeEditor.exe LiteLoaderSDK\Tools
 copy /Y Tools\*.cmd LiteLoaderSDK\Tools

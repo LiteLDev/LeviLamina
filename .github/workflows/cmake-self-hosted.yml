@@ -36,14 +36,14 @@ jobs:
           path: |
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('scripts/LINK.txt') }}
 
       - name: Download Server
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir Tools/Server
-          ServerLink=$(cat 'Scripts/LINK.txt')
+          ServerLink=$(cat 'scripts/LINK.txt')
           curl -L -o Tools/Server/server.zip "$ServerLink"
           unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
         shell: bash
@@ -109,29 +109,29 @@ jobs:
 
       - name: Compress Resource Packs
         run: |
-          cd RELEASE/plugins/LiteLoader/ResourcePacks
+          cd output/plugins/LiteLoader/ResourcePacks
           7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
-      - name: Copy Release
+      - name: Pack Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          cd Scripts
-          ./CopyRelease.cmd action
+          cd scripts
+          ./PackOutput.cmd action
         shell: cmd
 
-      - name: Move PDB to path
+      - name: Pack PDB
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          mkdir PDB
-          cp build/LiteLoader/Release/LiteLoader.pdb PDB
-          cp build/ScriptEngine/CMake/ScriptEngine-QuickJs/Release/LiteLoader.Js.pdb PDB
-          cp build/ScriptEngine/CMake/ScriptEngine-NodeJs/Release/LiteLoader.NodeJs.pdb PDB
-          cp build/ScriptEngine/CMake/ScriptEngine-Lua/Release/LiteLoader.Lua.pdb PDB
+          mkdir pdb
+          cp build/LiteLoader/Release/LiteLoader.pdb pdb
+          cp build/ScriptEngine/CMake/ScriptEngine-QuickJs/Release/LiteLoader.Js.pdb pdb
+          cp build/ScriptEngine/CMake/ScriptEngine-NodeJs/Release/LiteLoader.NodeJs.pdb pdb
+          cp build/ScriptEngine/CMake/ScriptEngine-Lua/Release/LiteLoader.Lua.pdb pdb
         shell: bash
 
-      - name: Pack PDB
+      - name: Pack PDB for Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: startsWith(github.ref, 'refs/tags/')
         run: 7z a -tzip PDB.zip PDB
@@ -142,7 +142,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cd Scripts
+          cd scripts
           ./UploadSDK.cmd action
         env:
           REPO_KEY: ${{secrets.PUSH_TOKEN}}
@@ -153,16 +153,16 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
-          path: ${{ github.workspace }}\RELEASE\
+          path: ${{ github.workspace }}\output\
 
       - name: Upload PDB
         uses: actions/upload-artifact@v3.1.0
         with:
           name: PDB
-          path: ${{ github.workspace }}\PDB
+          path: ${{ github.workspace }}\pdb\
 
       - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}/RELEASE
+        working-directory: ${{ env.GITHUB_WORKSPACE }}/output
         id: rel
         if: startsWith(github.ref, 'refs/tags/')
         run: |
