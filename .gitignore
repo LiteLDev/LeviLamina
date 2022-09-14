@@ -7,7 +7,6 @@
 
 # Idea related
 .idea/**
-!.idea/cmake.xml
 
 # Build related
 /build

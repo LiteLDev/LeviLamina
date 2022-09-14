@@ -6,19 +6,21 @@ set(CMAKE_BUILD_TYPE Release) # Always uses Release mode to build BDS plugin for
 
 file(
         GLOB_RECURSE SRC_FILES
-        ${PROJECT_SOURCE_DIR}/Lib/third-party/nbt-cpp/*.cpp
-        ${PROJECT_SOURCE_DIR}/Header/*.cpp
-        ${PROJECT_SOURCE_DIR}/Header/*.hpp
-        ${PROJECT_SOURCE_DIR}/Header/*.h
-        ${PROJECT_SOURCE_DIR}/Kernel/*.cpp
-        ${PROJECT_SOURCE_DIR}/Kernel/*.hpp
-        ${PROJECT_SOURCE_DIR}/Kernel/*.h
-        ${PROJECT_SOURCE_DIR}/Main/*.cpp
-        ${PROJECT_SOURCE_DIR}/Main/*.hpp
-        ${PROJECT_SOURCE_DIR}/Main/*.h
-        ${PROJECT_SOURCE_DIR}/Resource/*.rc
-        ${PROJECT_SOURCE_DIR}/Resource/*.h
+        ${PROJECT_SOURCE_DIR}/third-party/include/*.h
+        ${PROJECT_SOURCE_DIR}/third-party/include/*.hpp
+        ${PROJECT_SOURCE_DIR}/include/*.h
+        ${PROJECT_SOURCE_DIR}/include/*.hpp
+        ${PROJECT_SOURCE_DIR}/src/*.cpp
+        ${PROJECT_SOURCE_DIR}/src/*.hpp
+        ${PROJECT_SOURCE_DIR}/src/*.h
+        ${PROJECT_SOURCE_DIR}/src/*.rc
 )
+
+# third-party source files
+file(GLOB_RECURSE THIRD_PARTY_SRC_FILES ${PROJECT_SOURCE_DIR}/third-party/src/*)
+
+# third-party library files
+file(GLOB_RECURSE THIRD_PARTY_LIB_FILES ${PROJECT_SOURCE_DIR}/third-party/lib/*.lib)
 
 add_definitions(
         -DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
@@ -38,34 +40,22 @@ add_link_options(
         /DELAYLOAD:bedrock_server.dll # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 )
 
-include_directories(${PROJECT_SOURCE_DIR})
-include_directories(${PROJECT_SOURCE_DIR}/Header)
-include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
-include_directories(${CMAKE_SOURCE_DIR})
-
-link_directories(${PROJECT_SOURCE_DIR})
-link_directories(${CMAKE_SOURCE_DIR}/x64/Release)
-
-add_library(LiteLoader SHARED ${SRC_FILES})
+add_library(LiteLoader SHARED ${SRC_FILES} ${THIRD_PARTY_SRC_FILES})
 
 target_link_libraries(
         LiteLoader
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/sqlite3.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/mysql/mysqlclient.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncall_s.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dyncallback_s.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dyncall/dynload_s.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/compact_enc_det/ced.lib"
-        "${PROJECT_SOURCE_DIR}/Lib/third-party/dbghelp/dbghelp.lib"
+        ${THIRD_PARTY_LIB_FILES}
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
         LLPreLoader
+)
+
+target_include_directories(
+        LiteLoader
+        PRIVATE ${PROJECT_SOURCE_DIR}/include/
+        PRIVATE ${PROJECT_SOURCE_DIR}/third-party/include
+        PRIVATE ${CMAKE_SOURCE_DIR}
 )
 
 add_custom_command(

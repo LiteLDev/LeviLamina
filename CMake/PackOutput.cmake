@@ -15,7 +15,7 @@ add_custom_command(
 # Copy ScriptEngine BaseLib to output after build all.
 add_custom_command(
         TARGET PackOutput POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/ScriptEngine/BaseLib ${CMAKE_BINARY_DIR}/output/plugins/lib/
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/ScriptEngine/assets ${CMAKE_BINARY_DIR}/output/plugins/lib/
         COMMENT "Copying ScriptEngine BaseLib to output"
         VERBATIM
 )
