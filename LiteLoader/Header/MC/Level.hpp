@@ -32,11 +32,6 @@ class Packet;
 #undef BEFORE_EXTRA
 
 /**
- * \~chinese
- * @brief Minecraft中的“世界”，一切的集合。
- *
- *
- * \~english
  * @brief The "world" of Minecraft, a collection of everything.
  *
  */
@@ -52,13 +47,6 @@ public:
     // LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> callback);
 
     /**
-     * \~chinese
-     * @brief 获取所有玩家。
-     *
-     * @return 包含所有玩家的列表
-     *
-     *
-     * \~english
      * @brief Get all players.
      *
      * @return A list containing all player
@@ -66,16 +54,6 @@ public:
     LIAPI static std::vector<Player*> getAllPlayers();
 
     /**
-     * \~chinese
-     * @brief 根据玩家名字或XUID获取玩家。
-     *
-     * @param info 玩家名字或XUID
-     * @return 被获取的玩家，若不存在则为 `nullptr`
-     *
-     * @note 请使用 `Global<Level>->getPlayer()` 来调用此方法。
-     *
-     *
-     * \~english
      * @brief Get a player by his/her name or XUID.
      *
      * @param info The name or the XUID
@@ -86,16 +64,6 @@ public:
     LIAPI Player* getPlayer(const string& info);
 
     /**
-     * \~chinese
-     * @brief 根据唯一ID获取玩家。
-     *
-     * @param id 唯一ID
-     * @return 被获取的玩家，若不存在则为 `nullptr`
-     *
-     * @note 请使用 `Global<Level>->getPlayer()` 来调用此函数。
-     *
-     *
-     * \~english
      * @brief Get a player by a unique ID.
      *
      * @param id The unique ID
@@ -106,14 +74,6 @@ public:
     LIAPI Player* getPlayer(ActorUniqueID id);
 
     /**
-     * \~chinese
-     * @brief 根据唯一ID获取实体。
-     *
-     * @param id 唯一ID
-     * @return 被获取的实体，若不存在则为 `nullptr`
-     *
-     *
-     * \~english
      * @brief Get an entity by a unique ID.
      *
      * @param id The unique ID
@@ -122,14 +82,6 @@ public:
     LIAPI static Actor* getEntity(ActorUniqueID id);
 
     /**
-     * \~chinese
-     * @brief 获取某个维度中所有实体。
-     *
-     * @param dimId 维度的维度ID（主世界：0；下界：1；末地：2）
-     * @return 包含该维度中所有实体的列表
-     *
-     *
-     * \~english
      * @brief Get all entities in a dimension.
      *
      * @param dimId The dimension ID of the dimension (Overworld: 0; Nether: 1; Ender: 2)
@@ -138,13 +90,6 @@ public:
     LIAPI static std::vector<Actor*> getAllEntities(int dimId);
 
     /**
-     * \~chinese
-     * @brief 获取所有实体。
-     *
-     * @return 包含所有实体的列表
-     *
-     *
-     * \~english
      * @brief Get all entities.
      *
      * @return A list containing all entities
@@ -152,16 +97,6 @@ public:
     LIAPI static std::vector<Actor*> getAllEntities();
 
     /**
-     * \~chinese
-     * @brief 生成一个生物。
-     *
-     * @param pos 生物的位置
-     * @param dimId 生物所在维度的维度ID（主世界：0；下界：1；末地：2）
-     * @param typeName 生物的类别
-     * @return 生成的生物，若生成失败则为 `nullptr`
-     *
-     *
-     * \~english
      * @brief Spawn a mob.
      *
      * @param pos The position of the mob
@@ -176,16 +111,6 @@ public:
     // LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
 
     /**
-     * \~chinese
-     * @brief 克隆一个生物。
-     *
-     * @param pos 克隆得到的生物的位置
-     * @param dimId 克隆得到的生物所在维度的维度ID（主世界：0；下界：1；末地：2）
-     * @param ac 被克隆的生物
-     * @return 克隆得到的生物，若克隆失败则为 `nullptr`
-     *
-     *
-     * \~english
      * @brief Clone a mob.
      *
      * @param pos The position of the cloned mob
@@ -200,15 +125,6 @@ public:
     LIAPI static Block* getBlock(BlockPos* pos, BlockSource* blockSource);
 
     /**
-     * \~chinese
-     * @brief 根据位置获取方块。
-     *
-     * @param pos 方块的位置
-     * @param dimId 方块所在维度的维度ID（主世界：0；下界：1；末地：2）
-     * @return 被获取的方块，若不存在则为 `nullptr`
-     *
-     *
-     * \~english
      * @brief Get a block by a position
      *
      * @param pos The position of the block
@@ -227,15 +143,6 @@ public:
     LIAPI static BlockActor* getBlockEntity(BlockPos* pos, BlockSource* blockSource);
 
     /**
-     * \~chinese
-     * @brief 根据位置获取方块的方块实体。
-     *
-     * @param pos 方块的位置
-     * @param dimId 方块所在维度的维度ID（主世界：0；下界：1；末地：2）
-     * @return 被获取的方块实体，若不存在则为 `nullptr`
-     *
-     *
-     * \~english
      * @brief Get the block entity of a block by a position
      *
      * @param pos The position of the block
@@ -247,16 +154,6 @@ public:
     LIAPI static BlockActor* getBlockEntity(const BlockPos& pos, BlockSource* blockSource);
 
     /**
-     * \~chinese
-     * @brief 放置一个方块。
-     * 
-     * @param pos 方块的位置
-     * @param dim 方块的维度（主世界：0；下界：1；末地：2）
-     * @param block 方块
-     * @return 若放置成功，则为真；否则为假
-     * 
-     * 
-     * \~english
      * @brief Place a block.
      * 
      * @param pos The position of the block
@@ -270,17 +167,6 @@ public:
     LIAPI static bool setBlock(const BlockPos& pos, int dim, CompoundTag* nbt);
 
     /**
-     * \~chinese
-     * @brief 自然破坏一个方块。
-     * 
-     * @param bs 方块所在维度的方块源
-     * @param pos 方块的位置
-     * @return 若破坏成功，则为真；否则为假
-     * 
-     * @par “自然”表示模拟方块被使用某种物品破坏。
-     * 
-     * 
-     * \~english
      * @brief Break a block naturally.
      * 
      * @param bs The block source of the dimension of the block
@@ -304,14 +190,6 @@ public:
 
     // Helper
     /**
-     * \~chinese
-     * @brief 获取方块源。
-     * 
-     * @param dimid 方块源对应的维度的维度ID（主世界：0；下界：1；末地：2）
-     * @return 被获取的方块源，若不存在则为 `nullptr`
-     * 
-     * 
-     * \~english
      * @brief Get a block source.
      * 
      * @param dimid The dimension ID of the dimension of the block source (Overworld: 0; Nether: 1; Ender: 2)
@@ -331,13 +209,6 @@ public:
     LIAPI static void sendPacketForAllPlayers(Packet& pkt);
 
     /**
-     * \~chinese
-     * @brief 获取当前世界的名称。
-     * 
-     * @return 当前的世界名称
-     * 
-     * 
-     * \~english
      * @brief Get the name of the level
      * 
      * @return The name of the level

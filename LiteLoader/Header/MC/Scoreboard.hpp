@@ -39,38 +39,6 @@ class Scoreboard {
 public:
 
     /**
-     * \~chinese
-     * @brief 创建一个记分项。
-     * 
-     * @param objname 记分项名称
-     * @param displayName 记分项显示名称
-     * @return 记分项
-     * 
-     * 
-     * \~chinese
-     * @brief Create a new objective.
-     * 
-     * @param objname The objective name
-     * @param displayName The display name of the objective
-     * @return The objective
-     */
-    LIAPI static Objective* newObjective(const std::string& objname, const std::string& displayName);
-
-    //LIAPI static bool setDisplayObjective(const std::string& objname, const std::string& slot, int sort);
-    //LIAPI static Objective* clearDisplayObjective(const std::string& slot);
-    //LIAPI static Objective* getDisplayObjective(const std::string& slot);
-    LIAPI static bool removeFromObjective(const std::string& objname, const std::string& id);
-
-    /**
-     * \~chinese
-     * @brief 将一个玩家的分数从一个记分项中移除。
-     * 
-     * @param objname 记分项名称
-     * @param player 玩家
-     * @return 若成功移除则为真；否则为假。
-     * 
-     * 
-     * \~english
      * @brief Remove the score of a player from an objective.
      * 
      * @param objname The objective name
@@ -87,17 +55,6 @@ public:
     LIAPI static std::optional<int> reduceScore(const std::string& objname, const std::string& id, int score);
 
     /**
-     * \~chinese
-     * @brief 获取玩家在记分项中的分数。
-     *
-     * @param objname 记分项名称
-     * @param player 玩家
-     * @return 分数
-     * @exception std::invalid_argument 记分项不存在。
-     * @exception std::runtime_error 无法获取分数。
-     * 
-     * 
-     * \~english
      * @brief Get the score of a player of an objective.
      *
      * @param objname The objective name
@@ -112,16 +69,6 @@ public:
     LIAPI static bool getScore(const std::string& objname, Player* player, int& score);
 
     /**
-     * \~chinese
-     * @brief 设置玩家在记分项中的分数。
-     *
-     * @param objname 记分项名称
-     * @param player 玩家
-     * @param value 分数
-     * @return 若设置成功则为真；否则为假。
-     * 
-     * 
-     * \~english
      * @brief Set the score of a player of an objective.
      *
      * @param objname The objective name
@@ -134,16 +81,6 @@ public:
     LIAPI static bool setScore(Player* player, const std::string& objname, int value);
 
     /**
-     * \~chinese
-     * @brief 增加玩家在记分项中的分数。
-     *
-     * @param objname 记分项名称
-     * @param player 玩家
-     * @param value 增加的分数
-     * @return 若增加成功则为真；否则为假。
-     * 
-     * 
-     * \~english
      * @brief Add the score of a player of an objective.
      *
      * @param objname The objective name
@@ -156,16 +93,6 @@ public:
     LIAPI static bool addScore(Player* player, const std::string& objname, int value);
 
     /**
-     * \~chinese
-     * @brief 减少玩家在记分项中的分数。
-     *
-     * @param objname 记分项名称
-     * @param player 玩家
-     * @param value 减少的分数
-     * @return 若减少成功则为真；否则为假。
-     * 
-     * 
-     * \~english
      * @brief Reduce the score of a player of an objective.
      *
      * @param objname The objective name
