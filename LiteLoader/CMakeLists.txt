@@ -40,8 +40,7 @@ add_link_options(
         /DELAYLOAD:bedrock_server.dll # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 )
 
-include_directories(${PROJECT_SOURCE_DIR}/include/public)
-include_directories(${PROJECT_SOURCE_DIR}/include/main)
+include_directories(${PROJECT_SOURCE_DIR}/include/)
 include_directories(${PROJECT_SOURCE_DIR}/third-party/include)
 include_directories(${CMAKE_SOURCE_DIR})
 

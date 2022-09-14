@@ -1,4 +1,4 @@
-#include "AddonsHelper.h"
+#include <main/AddonsHelper.h>
 #include <Config.h>
 #include <EventAPI.h>
 #include <RegCommandAPI.h>
