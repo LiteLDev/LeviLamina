@@ -6,8 +6,11 @@ set(CMAKE_BUILD_TYPE Release)
 
 add_definitions(-D"NDEBUG" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"UNICODE")
 
-include_directories(${LiteLoader_SOURCE_DIR}/Header/)
-include_directories(${LiteLoader_SOURCE_DIR}/Header/third-party)
+include_directories(${LiteLoader_SOURCE_DIR}/include/public)
+include_directories(${LiteLoader_SOURCE_DIR}/third-party/include)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+include_directories(${PROJECT_SOURCE_DIR}/third-party)
+include_directories(${Demangler_SOURCE_DIR}/include)
 
 add_compile_options(
         /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
@@ -19,13 +22,13 @@ add_link_options(
         /SUBSYSTEM:WINDOWS /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
 )
 
-link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
+aux_source_directory(${PROJECT_SOURCE_DIR}/third-party/rawpdb DIR_LIB_SRCS)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src PROJECT_SRCS)
 
-aux_source_directory(../LiteLoader/Lib/third-party/rawpdb DIR_LIB_SRCS)
-add_library(LLPreLoader SHARED dllmain.cpp SymDB.cpp PreLoader.cpp Utils.cpp ${DIR_LIB_SRCS})
+add_library(LLPreLoader SHARED ${PROJECT_SRCS} ${DIR_LIB_SRCS})
 target_link_libraries(
         LLPreLoader SymDBHelper Demangler
-        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/detours/detours.lib"
+        "${LiteLoader_SOURCE_DIR}/third-party/lib/detours/detours.lib"
 )
 
 # Copy the dll and pdb to the output directory
