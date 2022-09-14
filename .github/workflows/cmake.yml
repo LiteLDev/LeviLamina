@@ -97,6 +97,16 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
+      - name: Configure CMake(MSVC)
+        run: |
+          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+        shell: cmd
+
+      - name: Pack output
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
+        shell: cmd
+
       - name: Upload LiteLoader
         uses: actions/upload-artifact@v3.1.0
         with:
