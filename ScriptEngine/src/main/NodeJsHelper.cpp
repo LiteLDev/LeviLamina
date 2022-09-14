@@ -2,18 +2,18 @@
 #include "Configs.h"
 #if defined(LLSE_BACKEND_NODEJS)
 #include "Global.hpp"
-#include <ScheduleAPI.h>
+#include <llapi/ScheduleAPI.h>
 #include "../api/EventAPI.h"
 #include "../api/CommandCompatibleAPI.h"
 #include "../api/CommandAPI.h"
 #include "../engine/RemoteCall.h"
-#include <LLAPI.h>
-#include <Utils/StringHelper.h>
+#include <llapi/LLAPI.h>
+#include <llapi/utils/StringHelper.h>
 #include "NodeJsHelper.h"
-#include "Engine/EngineManager.h"
-#include "Engine/EngineOwnData.h"
-#include <NodeJs/include/uv/uv.h>
-#include <NodeJs/include/v8/v8.h>
+#include "../engine/EngineManager.h"
+#include "../engine/EngineOwnData.h"
+#include <NodeJs/uv/uv.h>
+#include <NodeJs/v8/v8.h>
 
 // pre-declare
 extern void BindAPIs(ScriptEngine* engine);

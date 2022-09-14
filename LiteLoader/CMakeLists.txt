@@ -40,10 +40,6 @@ add_link_options(
         /DELAYLOAD:bedrock_server.dll # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 )
 
-include_directories(${PROJECT_SOURCE_DIR}/include/)
-include_directories(${PROJECT_SOURCE_DIR}/third-party/include)
-include_directories(${CMAKE_SOURCE_DIR})
-
 add_library(LiteLoader SHARED ${SRC_FILES} ${THIRD_PARTY_SRC_FILES})
 
 target_link_libraries(
@@ -53,6 +49,13 @@ target_link_libraries(
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"
         LLPreLoader
+)
+
+target_include_directories(
+        LiteLoader
+        PRIVATE ${PROJECT_SOURCE_DIR}/include/
+        PRIVATE ${PROJECT_SOURCE_DIR}/third-party/include
+        PRIVATE ${CMAKE_SOURCE_DIR}
 )
 
 add_custom_command(

@@ -20,7 +20,7 @@
 #include "../../src/types.h"
 
 SCRIPTX_BEGIN_INCLUDE_LIBRARY
-#include <QuickJs/quickjs.h>
+#include <quickjs.h>
 SCRIPTX_END_INCLUDE_LIBRARY
 
 namespace script::qjs_backend {

@@ -55,11 +55,15 @@ add_link_options(
 
 add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 
-include_directories(${CMAKE_SOURCE_DIR})
-include_directories(${LiteLoader_SOURCE_DIR}/include/)
-include_directories(${LiteLoader_SOURCE_DIR}/third-party/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include)
+target_include_directories(
+        ${PROJECT_NAME}
+        PRIVATE
+        ${CMAKE_SOURCE_DIR}
+        ${LiteLoader_SOURCE_DIR}/include/
+        ${LiteLoader_SOURCE_DIR}/third-party/include
+        ${SCRIPTENGINE_DIR}/third-party/include
+        ${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include
+)
 
 file(
         GLOB_RECURSE SCRIPTENGINE_THIRD_PARTY_LIBS

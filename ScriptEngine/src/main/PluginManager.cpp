@@ -17,7 +17,7 @@
 #include <llapi/utils/Hash.h>
 #ifdef LLSE_BACKEND_NODEJS
 #pragma warning(disable : 4251)
-#include <NodeJsHelper.h>
+#include "NodeJsHelper.h"
 #endif
 #define H(x) do_hash(x)
 using namespace std;

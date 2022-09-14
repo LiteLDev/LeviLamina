@@ -6,12 +6,6 @@ set(CMAKE_BUILD_TYPE Release)
 
 add_definitions(-D"NDEBUG" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"UNICODE")
 
-include_directories(${LiteLoader_SOURCE_DIR}/include/)
-include_directories(${LiteLoader_SOURCE_DIR}/third-party/include)
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${PROJECT_SOURCE_DIR}/third-party)
-include_directories(${Demangler_SOURCE_DIR}/include)
-
 add_compile_options(
         /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
         /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /EHsc /nologo /diagnostics:column
@@ -29,6 +23,16 @@ add_library(LLPreLoader SHARED ${PROJECT_SRCS} ${DIR_LIB_SRCS})
 target_link_libraries(
         LLPreLoader SymDBHelper Demangler
         "${LiteLoader_SOURCE_DIR}/third-party/lib/detours/detours.lib"
+)
+
+target_include_directories(
+        LLPreLoader
+        PRIVATE ${LiteLoader_SOURCE_DIR}/include/
+        PRIVATE ${LiteLoader_SOURCE_DIR}/include/
+        PRIVATE ${LiteLoader_SOURCE_DIR}/third-party/include
+        PRIVATE ${PROJECT_SOURCE_DIR}/include
+        PRIVATE ${PROJECT_SOURCE_DIR}/third-party
+        PRIVATE ${Demangler_SOURCE_DIR}/include
 )
 
 # Copy the dll and pdb to the output directory
