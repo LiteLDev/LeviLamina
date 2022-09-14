@@ -7,11 +7,11 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #endif
 
-#include <Configs.h>
-#include <Global.h>
-#include <Tools/JsonHelper.h>
-#include <MC/Types.hpp>
-#include <LoggerAPI.h>
+#include "Configs.h"
+#include <llapi/Global.h>
+#include "../Tools/JsonHelper.h"
+#include <llapi/mc/Types.hpp>
+#include <llapi/LoggerAPI.h>
 #include <vector>
 #include <string>
 using std::string;

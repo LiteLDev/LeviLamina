@@ -1,8 +1,8 @@
-#include <Engine/LocalShareData.h>
+#include "../Engine/LocalShareData.h"
 #include "EconomicSystem.h"
-#include "API/EventAPI.h"
-#include <LLAPI.h>
-#include <LoggerAPI.h>
+#include "../API/EventAPI.h"
+#include <llapi/LLAPI.h>
+#include <llapi/LoggerAPI.h>
 #include <string>
 Logger economicLogger("EconomicSystem");
 

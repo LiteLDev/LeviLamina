@@ -1,4 +1,4 @@
-#include <API/APIHelp.h>
+#include "../API/APIHelp.h"
 #include "Global.hpp"
 #include "Configs.h"
 #include <filesystem>
@@ -11,10 +11,10 @@
 #include <PluginManager.h>
 #include "PluginManager.h"
 #include "Loader.h"
-#include <ScheduleAPI.h>
-#include <API/CommandAPI.h>
-#include <API/EventAPI.h>
-#include <Utils/Hash.h>
+#include <llapi/ScheduleAPI.h>
+#include "../API/CommandAPI.h"
+#include "../API/EventAPI.h"
+#include <llapi/utils/Hash.h>
 #ifdef LLSE_BACKEND_NODEJS
 #pragma warning(disable : 4251)
 #include <NodeJsHelper.h>

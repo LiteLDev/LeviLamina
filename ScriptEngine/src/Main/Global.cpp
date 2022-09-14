@@ -1,4 +1,4 @@
-#include "Global.h"
+#include "Global.hpp"
 using namespace std;
 
 //声明

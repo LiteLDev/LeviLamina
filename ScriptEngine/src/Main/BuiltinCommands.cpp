@@ -1,8 +1,8 @@
 #include "BuiltinCommands.h"
-#include <API/APIHelp.h>
-#include <Utils/StringHelper.h>
+#include "../API/APIHelp.h"
+#include <llapi/utils/StringHelper.h>
 #include <string>
-#include <LoggerAPI.h>
+#include <llapi/LoggerAPI.h>
 using namespace std;
 extern Logger logger;
 

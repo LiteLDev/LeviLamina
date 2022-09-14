@@ -2,9 +2,9 @@
 #if defined(LLSE_BACKEND_NODEJS)
 #pragma warning(disable : 4251)
 #include <map>
-#include <NodeJs/include/node.h>
+#include <NodeJs/node.h>
 #include <ScriptX/ScriptX.h>
-#include <Configs.h>
+#include "Configs.h"
 #include <string>
 
 namespace NodeJsHelper {

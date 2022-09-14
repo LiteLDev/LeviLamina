@@ -1,13 +1,13 @@
-#include <Config.h>
-#include <API/APIHelp.h>
-#include <API/EventAPI.h>
-#include <Engine/GlobalShareData.h>
-#include <Engine/EngineOwnData.h>
-#include <Engine/LocalShareData.h>
-#include <Engine/RemoteCall.h>
-#include <Engine/MessageSystem.h>
-#include <Engine/EngineManager.h>
-#include <SafeGuardRecord.h>
+#include <liteloader/Config.h>
+#include "../API/APIHelp.h"
+#include "../API/EventAPI.h"
+#include "../Engine/GlobalShareData.h"
+#include "../Engine/EngineOwnData.h"
+#include "../Engine/LocalShareData.h"
+#include "../Engine/RemoteCall.h"
+#include "../Engine/MessageSystem.h"
+#include "../Engine/EngineManager.h"
+#include "SafeGuardRecord.h"
 #include <windows.h>
 #include <string>
 #include <exception>
@@ -15,12 +15,12 @@
 #include <chrono>
 #include <memory>
 #include <filesystem>
-#include <Configs.h>
-#include <LoggerAPI.h>
-#include <Version.h>
-#include <Utils/FileHelper.h>
-#include <Tools/JsonHelper.h>
-#include <EconomicSystem.h>
+#include "Configs.h"
+#include <llapi/LoggerAPI.h>
+#include <liteloader/Version.h>
+#include <llapi/utils/FileHelper.h>
+#include "../Tools/JsonHelper.h"
+#include "EconomicSystem.h"
 using namespace std;
 
 // Global vars

@@ -3,10 +3,10 @@
 #if defined(LLSE_BACKEND_NODEJS)
 #include "Global.hpp"
 #include <ScheduleAPI.h>
-#include <API/EventAPI.h>
-#include <API/CommandCompatibleAPI.h>
-#include <API/CommandAPI.h>
-#include <Engine/RemoteCall.h>
+#include "../API/EventAPI.h"
+#include "../API/CommandCompatibleAPI.h"
+#include "../API/CommandAPI.h"
+#include "../Engine/RemoteCall.h"
 #include <LLAPI.h>
 #include <Utils/StringHelper.h>
 #include "NodeJsHelper.h"
