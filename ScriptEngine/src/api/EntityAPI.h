@@ -64,6 +64,8 @@ public:
     Local<Value> hurt(const Arguments& args);
     Local<Value> heal(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
+    Local<Value> setFire(const Arguments& args);
+    Local<Value> stopFire(const Arguments& args);
     Local<Value> setScale(const Arguments& args);
 
     Local<Value> distanceToPos(const Arguments& args);

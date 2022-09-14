@@ -64,7 +64,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("kill", &EntityClass::kill)
         .instanceFunction("hurt", &EntityClass::hurt)
         .instanceFunction("heal", &EntityClass::heal)
-        .instanceFunction("setOnFire", &EntityClass::setOnFire)
+        .instanceFunction("setFire", &EntityClass::setFire)
+        .instanceFunction("stopFire", &EntityClass::stopFire)
         .instanceFunction("isPlayer", &EntityClass::isPlayer)
         .instanceFunction("toPlayer", &EntityClass::toPlayer)
         .instanceFunction("isItemEntity", &EntityClass::isItemEntity)
@@ -88,6 +89,7 @@ ClassDefine<EntityClass> EntityClassBuilder =
 
         // For Compatibility
         .instanceFunction("setTag", &EntityClass::setNbt)
+        .instanceFunction("setOnFire", &EntityClass::setOnFire)
         .instanceFunction("getTag", &EntityClass::getNbt)
         .build();
 
@@ -847,6 +849,7 @@ Local<Value> EntityClass::heal(const Arguments& args) {
     CATCH("Fail in heal!");
 }
 
+// For Compatibility
 Local<Value> EntityClass::setOnFire(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -861,6 +864,36 @@ Local<Value> EntityClass::setOnFire(const Arguments& args) {
         return Boolean::newBoolean(result);
     }
     CATCH("Fail in setOnFire!")
+}
+
+Local<Value> EntityClass::setFire(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kBoolean);
+
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        int time = args[0].toInt();
+        bool isEffect = args[1].asBoolean().value();
+
+        bool result = entity->setOnFire(time, isEffect);
+        return Boolean::newBoolean(result);
+    }
+    CATCH("Fail in setFire!")
+}
+
+Local<Value> EntityClass::stopFire(const Arguments& args) {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->stopFire());
+    }
+    CATCH("Fail in stopFire!")
 }
 
 Local<Value> EntityClass::setScale(const Arguments& args) {

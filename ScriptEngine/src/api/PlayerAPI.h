@@ -94,6 +94,7 @@ public:
     Local<Value> heal(const Arguments& args);
     Local<Value> setOnFire(const Arguments& args);
     Local<Value> setFire(const Arguments& args);
+    Local<Value> stopFire(const Arguments& args);
     Local<Value> refreshChunks(const Arguments& args);
     Local<Value> giveItem(const Arguments& args);
     Local<Value> clearItem(const Arguments& args);
