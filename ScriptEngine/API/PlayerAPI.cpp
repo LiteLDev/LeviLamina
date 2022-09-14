@@ -111,6 +111,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("sendText", &PlayerClass::tell)
         .instanceFunction("rename", &PlayerClass::rename)
         .instanceFunction("setFire", &PlayerClass::setFire)
+        .instanceFunction("stopFire", &PlayerClass::stopFire)
         .instanceFunction("transServer", &PlayerClass::transServer)
         .instanceFunction("crash", &PlayerClass::crash)
         .instanceFunction("hurt", &PlayerClass::hurt)
@@ -2011,7 +2012,18 @@ Local<Value> PlayerClass::setFire(const Arguments& args) {
         bool result = player->setOnFire(time, isEffectValue);
         return Boolean::newBoolean(result);
     }
-    CATCH("Fail in setOnFire!");
+    CATCH("Fail in setFire!");
+}
+
+Local<Value> PlayerClass::stopFire(const Arguments& args) {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return Boolean::newBoolean(player->stopFire());
+    }
+    CATCH("Fail in stopFire!");
 }
 
 // For Compatibility
