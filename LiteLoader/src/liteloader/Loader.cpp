@@ -17,7 +17,7 @@
 #include <liteloader/Config.h>
 #include <liteloader/Version.h>
 #include <llapi/ParticleAPI.h>
-#include <ScriptEngine/Main/Configs.h>
+#include <ScriptEngine/src/Main/Configs.h>
 
 using namespace std;
 

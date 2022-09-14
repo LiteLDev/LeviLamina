@@ -12,7 +12,7 @@
 #include <llapi/mc/VanillaDimensions.hpp>
 #include <liteloader/Config.h>
 #include <liteloader/PluginManager.h>
-#include "../../../ScriptEngine/Main/Configs.h"
+#include <ScriptEngine/src/Main/Configs.h>
 
 using namespace RegisterCommandHelper;
 using namespace LL;

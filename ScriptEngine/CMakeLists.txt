@@ -15,20 +15,20 @@ endif ()
 set(SCRIPTENGINE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 file(GLOB_RECURSE SRC_FILES
-        ${SCRIPTENGINE_DIR}/Main/*.cpp
-        ${SCRIPTENGINE_DIR}/Main/*.hpp
-        ${SCRIPTENGINE_DIR}/Main/*.h
-        ${SCRIPTENGINE_DIR}/API/*.cpp
-        ${SCRIPTENGINE_DIR}/API/*.hpp
-        ${SCRIPTENGINE_DIR}/API/*.h
-        ${SCRIPTENGINE_DIR}/Engine/*.cpp
-        ${SCRIPTENGINE_DIR}/Engine/*.hpp
-        ${SCRIPTENGINE_DIR}/Engine/*.h
-        ${SCRIPTENGINE_DIR}/Tools/*.cpp
-        ${SCRIPTENGINE_DIR}/Tools/*.hpp
-        ${SCRIPTENGINE_DIR}/Tools/*.h
-        ${SCRIPTENGINE_DIR}/Resource/*.rc
-        ${SCRIPTENGINE_DIR}/Resource/*.h
+        ${SCRIPTENGINE_DIR}/src/Main/*.cpp
+        ${SCRIPTENGINE_DIR}/src/Main/*.hpp
+        ${SCRIPTENGINE_DIR}/src/Main/*.h
+        ${SCRIPTENGINE_DIR}/src/API/*.cpp
+        ${SCRIPTENGINE_DIR}/src/API/*.hpp
+        ${SCRIPTENGINE_DIR}/src/API/*.h
+        ${SCRIPTENGINE_DIR}/src/Engine/*.cpp
+        ${SCRIPTENGINE_DIR}/src/Engine/*.hpp
+        ${SCRIPTENGINE_DIR}/src/Engine/*.h
+        ${SCRIPTENGINE_DIR}/src/Tools/*.cpp
+        ${SCRIPTENGINE_DIR}/src/Tools/*.hpp
+        ${SCRIPTENGINE_DIR}/src/Tools/*.h
+        ${SCRIPTENGINE_DIR}/src/Resource/*.rc
+        ${SCRIPTENGINE_DIR}/src/Resource/*.h
         )
 
 add_definitions(
@@ -54,12 +54,10 @@ add_link_options(
 
 add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 
-include_directories(${SCRIPTENGINE_DIR}/)
-include_directories(${LiteLoader_SOURCE_DIR}/include/main)
-include_directories(${LiteLoader_SOURCE_DIR}/include/public)
+include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${LiteLoader_SOURCE_DIR}/include/)
 include_directories(${LiteLoader_SOURCE_DIR}/third-party/include)
 include_directories(${SCRIPTENGINE_DIR}/third-party/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include/ScriptX)
 include_directories(${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include)
 
 file(
