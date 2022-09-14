@@ -57,8 +57,8 @@ add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 include_directories(${SCRIPTENGINE_DIR}/)
 include_directories(${SCRIPTENGINE_DIR}/Main)
 include_directories(${SCRIPTENGINE_DIR}/..)
-include_directories(${LiteLoader_SOURCE_DIR}/Header)
-include_directories(${LiteLoader_SOURCE_DIR}/Header/third-party)
+include_directories(${LiteLoader_SOURCE_DIR}/include/public)
+include_directories(${LiteLoader_SOURCE_DIR}/third-party/include)
 include_directories(${SCRIPTENGINE_DIR}/third-party)
 include_directories(${SCRIPTENGINE_DIR}/third-party/Lua/include)
 include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include)
@@ -70,7 +70,6 @@ include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include/v8)
 include_directories(${SCRIPTENGINE_DIR}/third-party/gsl)
 
 link_directories(${SCRIPTENGINE_DIR}/)
-link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_library(base64 STATIC IMPORTED)
 
@@ -86,7 +85,7 @@ target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
         "${SCRIPTENGINE_DIR}/third-party/Lua/lib/lua.lib"
         "${SCRIPTENGINE_DIR}/third-party/nbt-cpp/lib/nbt-cpp.lib"
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
-        "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_api.lib"
-        "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_var.lib"
+        "${LiteLoader_SOURCE_DIR}/lib/bedrock_server_api.lib"
+        "${LiteLoader_SOURCE_DIR}/lib/bedrock_server_var.lib"
         SymDBHelper
 )

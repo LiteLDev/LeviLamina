@@ -1,6 +1,6 @@
 #include "Global.h"
 #include <Config.h>
-#include <MC/CommandParameterData.hpp>
+#include <mc/CommandParameterData.hpp>
 #include <LoggerAPI.h>
 /////////////////// Built in UnlockCmd ///////////////////
 
@@ -39,10 +39,10 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
     return original(this, a2);
 }
 
-//#include <MC/AllowListCommand.hpp>
-//#include <MC/CommandVersion.hpp>
-//#include <MC/CommandRegistry.hpp>
-//#include <MC/CommandParameterData.hpp>
+//#include <mc/AllowListCommand.hpp>
+//#include <mc/CommandVersion.hpp>
+//#include <mc/CommandRegistry.hpp>
+//#include <mc/CommandParameterData.hpp>
 // inline void tryChangeStringToRawText(CommandParameterData& data)
 //{
 //    if (false /* config.xxxx*/ && data.tid.value == type_id<CommandRegistry, std::string>().value)

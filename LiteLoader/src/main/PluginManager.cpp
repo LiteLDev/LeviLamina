@@ -7,8 +7,8 @@
 #include <Utils/WinHelper.h>
 #include <Utils/STLHelper.h>
 #include <I18nAPI.h>
-#include <MC/Level.hpp>
-#include <MC/Player.hpp>
+#include <mc/Level.hpp>
+#include <mc/Player.hpp>
 #include <windows.h>
 #include <string>
 #include <unordered_map>

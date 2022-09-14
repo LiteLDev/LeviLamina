@@ -73,7 +73,7 @@
 #include <Utils/SehTranslator.h>
 
 // basic mc types
-#include <MC/Types.hpp>
+#include <mc/Types.hpp>
 // clang-format off
 #define M_E        2.71828182845904523536    // e
 #define M_LOG2E    1.44269504088896340736    // log2(e)

@@ -18,8 +18,8 @@ copies or substantial portions of the Software.
 
 #include <Global.h>
 #include <LoggerAPI.h>
-#include <MC/BlockInstance.hpp>
-#include <MC/MCRESULT.hpp>
+#include <mc/BlockInstance.hpp>
+#include <mc/MCRESULT.hpp>
 #include <functional>
 #include <iterator>
 #include <list>

@@ -5,18 +5,18 @@
 #include <HookAPI.h>
 #include <LoggerAPI.h>
 
-#include <MC/InventoryTransactionPacket.hpp>
-#include <MC/NetworkIdentifier.hpp>
-#include <MC/Player.hpp>
-#include <MC/ServerPlayer.hpp>
-#include <MC/ServerNetworkHandler.hpp>
-#include <MC/ClientCacheBlobStatusPacket.hpp>
-#include <MC/BinaryStream.hpp>
+#include <mc/InventoryTransactionPacket.hpp>
+#include <mc/NetworkIdentifier.hpp>
+#include <mc/Player.hpp>
+#include <mc/ServerPlayer.hpp>
+#include <mc/ServerNetworkHandler.hpp>
+#include <mc/ClientCacheBlobStatusPacket.hpp>
+#include <mc/BinaryStream.hpp>
 #include <EventAPI.h>
 
-#include <MC/SharedConstants.hpp>
-#include <MC/PropertiesSettings.hpp>
-#include <MC/ServerPlayer.hpp>
+#include <mc/SharedConstants.hpp>
+#include <mc/PropertiesSettings.hpp>
+#include <mc/ServerPlayer.hpp>
 #include <ScheduleAPI.h>
 #include <Windows.h>
 
@@ -70,13 +70,13 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
 }
 
 // Fix abnormal items
-#include <MC/InventorySource.hpp>
-#include <MC/InventoryTransaction.hpp>
-#include <MC/InventoryAction.hpp>
-#include <MC/Level.hpp>
-#include <MC/ElementBlock.hpp>
-#include <MC/IContainerManager.hpp>
-#include <MC/ColorFormat.hpp>
+#include <mc/InventorySource.hpp>
+#include <mc/InventoryTransaction.hpp>
+#include <mc/InventoryAction.hpp>
+#include <mc/Level.hpp>
+#include <mc/ElementBlock.hpp>
+#include <mc/IContainerManager.hpp>
+#include <mc/ColorFormat.hpp>
 #include <magic_enum/magic_enum.hpp>
 
 inline bool itemMayFromReducer(ItemStack const& item) {
@@ -153,7 +153,7 @@ TInstanceHook(void, "?moveView@Player@@UEAAXXZ",
     original(this);
     movingViewPlayer = nullptr;
 }
-#include <MC/ChunkViewSource.hpp>
+#include <mc/ChunkViewSource.hpp>
 inline bool Interval(int a1) {
     if (a1 < 0x5ffffff && a1 > -0x5ffffff)
         return true;
@@ -382,8 +382,8 @@ THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAV
     original(a1, self);
 }
 
-#include <MC/LevelChunk.hpp>
-#include <MC/ChunkSource.hpp>
+#include <mc/LevelChunk.hpp>
+#include <mc/ChunkSource.hpp>
 
 THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z",
       BlockSource* self, ChunkPos* a2) {

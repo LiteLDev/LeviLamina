@@ -1,19 +1,19 @@
 #include <Global.h>
-#include <MC/Core.hpp>
+#include <mc/Core.hpp>
 #include "LiteLoader.h"
-#include <MC/ResourcePack.hpp>
-#include <MC/Pack.hpp>
-#include <MC/ResourceLocation.hpp>
-#include <MC/ResourcePackRepository.hpp>
-#include <MC/Types.hpp>
-#include <MC/SemVersion.hpp>
-#include <MC/PackManifest.hpp>
-#include <MC/ResourcePackStack.hpp>
-#include <MC/PackSettingsFactory.hpp>
-#include <MC/PackSettings.hpp>
-#include <MC/PackInstance.hpp>
-#include <MC/IResourcePackRepository.hpp>
-#include <MC/PackIdVersion.hpp>
+#include <mc/ResourcePack.hpp>
+#include <mc/Pack.hpp>
+#include <mc/ResourceLocation.hpp>
+#include <mc/ResourcePackRepository.hpp>
+#include <mc/Types.hpp>
+#include <mc/SemVersion.hpp>
+#include <mc/PackManifest.hpp>
+#include <mc/ResourcePackStack.hpp>
+#include <mc/PackSettingsFactory.hpp>
+#include <mc/PackSettings.hpp>
+#include <mc/PackInstance.hpp>
+#include <mc/IResourcePackRepository.hpp>
+#include <mc/PackIdVersion.hpp>
 
 namespace ModifyPack {
     vector<PackIdVersion> PackListCache;

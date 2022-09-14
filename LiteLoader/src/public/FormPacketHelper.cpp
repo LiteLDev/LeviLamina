@@ -8,10 +8,10 @@
 #include <Utils/DbgHelper.h>
 #include <LiteLoader.h>
 
-#include <MC/ServerNetworkHandler.hpp>
-#include <MC/NetworkIdentifier.hpp>
-#include <MC/Player.hpp>
-#include <MC/ServerPlayer.hpp>
+#include <mc/ServerNetworkHandler.hpp>
+#include <mc/NetworkIdentifier.hpp>
+#include <mc/Player.hpp>
+#include <mc/ServerPlayer.hpp>
 
 using namespace std;
 

@@ -4,8 +4,8 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <filesystem>
-#include <MC/Common.hpp>
-#include <MC/SharedConstants.hpp>
+#include <mc/Common.hpp>
+#include <mc/SharedConstants.hpp>
 #include <Windows.h>
 using namespace std;
 using namespace LL;

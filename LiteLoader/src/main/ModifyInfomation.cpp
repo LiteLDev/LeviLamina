@@ -55,7 +55,7 @@ THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_st
 }
 
 #include "LiteLoader.h"
-#include <MC/BedrockLog.hpp>
+#include <mc/BedrockLog.hpp>
 namespace ModifyInfomation {
 int telemetryText = 0;
 }
@@ -79,9 +79,9 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
     return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, a8, va);
 }
 
-#include <MC/ColorFormat.hpp>
-#include <MC/CommandOrigin.hpp>
-#include <MC/CommandOutput.hpp>
+#include <mc/ColorFormat.hpp>
+#include <mc/CommandOrigin.hpp>
+#include <mc/CommandOutput.hpp>
 extern std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
                        class CommandOrigin const& origin, class CommandOutput const& output) {

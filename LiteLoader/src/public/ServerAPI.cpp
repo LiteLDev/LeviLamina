@@ -1,7 +1,7 @@
-#include <MC/Common.hpp>
-#include <MC/SharedConstants.hpp>
-#include <MC/Minecraft.hpp>
-#include <MC/ServerNetworkHandler.hpp>
+#include <mc/Common.hpp>
+#include <mc/SharedConstants.hpp>
+#include <mc/Minecraft.hpp>
+#include <mc/ServerNetworkHandler.hpp>
 #include <ServerAPI.h>
 #include <string>
 class UserEntityIdentifierComponent;

@@ -1,14 +1,14 @@
 #pragma once
 #include <Global.h>
 #include <Utils/WinHelper.h>
-#include <MC/CompoundTag.hpp>
-#include <MC/Container.hpp>
-#include <MC/ItemStack.hpp>
-#include <MC/BlockInstance.hpp>
-#include <MC/VanillaDimensions.hpp>
-#include <MC/Player.hpp>
-#include <MC/Block.hpp>
-#include <MC/BlockActor.hpp>
+#include <mc/CompoundTag.hpp>
+#include <mc/Container.hpp>
+#include <mc/ItemStack.hpp>
+#include <mc/BlockInstance.hpp>
+#include <mc/VanillaDimensions.hpp>
+#include <mc/Player.hpp>
+#include <mc/Block.hpp>
+#include <mc/BlockActor.hpp>
 #define TEST_NEW_VALUE_TYPE
 
 ///////////////////////////////////////////////////////

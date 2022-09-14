@@ -1,11 +1,11 @@
 #include <Global.h>
-#include <MC/SimulatedPlayer.hpp>
-#include <MC/BlockInstance.hpp>
-#include <MC/ServerNetworkHandler.hpp>
-#include <MC/Minecraft.hpp>
-#include <MC/StackResultStorageEntity.hpp>
-#include <MC/OwnerStorageEntity.hpp>
-#include <MC/Level.hpp>
+#include <mc/SimulatedPlayer.hpp>
+#include <mc/BlockInstance.hpp>
+#include <mc/ServerNetworkHandler.hpp>
+#include <mc/Minecraft.hpp>
+#include <mc/StackResultStorageEntity.hpp>
+#include <mc/OwnerStorageEntity.hpp>
+#include <mc/Level.hpp>
 
 // static_assert(sizeof(ScriptNavigationResult) == 32);
 

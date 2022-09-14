@@ -3,7 +3,7 @@
 #include <GlobalServiceAPI.h>
 #include <AllowListAPI.h>
 #include <Utils/FileHelper.h>
-#include <MC/AllowListFile.hpp>
+#include <mc/AllowListFile.hpp>
 #pragma warning(disable : 26812)
 
 Logger allowListLogger("AllowList");

@@ -3,12 +3,12 @@
 #include <EventAPI.h>
 #include <RegCommandAPI.h>
 #include <LLAPI.h>
-#include <MC/CommandOrigin.hpp>
-#include <MC/CommandOutput.hpp>
-#include <MC/CommandPosition.hpp>
-#include <MC/CommandRegistry.hpp>
-#include <MC/PropertiesSettings.hpp>
-#include <MC/Level.hpp>
+#include <mc/CommandOrigin.hpp>
+#include <mc/CommandOutput.hpp>
+#include <mc/CommandPosition.hpp>
+#include <mc/CommandRegistry.hpp>
+#include <mc/PropertiesSettings.hpp>
+#include <mc/Level.hpp>
 #include <GlobalServiceAPI.h>
 #include <Utils/WinHelper.h>
 #include <Utils/FileHelper.h>
@@ -19,7 +19,7 @@
 #include <filesystem>
 #include <set>
 #include <vector>
-#include <MC/ColorFormat.hpp>
+#include <mc/ColorFormat.hpp>
 #include <magic_enum/magic_enum.hpp>
 using namespace std;
 using namespace RegisterCommandHelper;
@@ -49,7 +49,7 @@ inline bool isManifestFile(std::string const& filename) {
     return filename == "manifest.json" || filename == "pack_manifest.json";
 }
 
-#include <MC/JsonHelpers.hpp>
+#include <mc/JsonHelpers.hpp>
 inline std::string FixMojangJson(std::string const& content) {
     Json::Value value;
     JsonHelpers::parseJson(content, value);

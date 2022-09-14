@@ -6,7 +6,7 @@
 
 #include <LoggerAPI.h>
 #include "Config.h"
-#include <MC/Player.hpp>
+#include <mc/Player.hpp>
 #include <unordered_map>
 #include <regex>
 

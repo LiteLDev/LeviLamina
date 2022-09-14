@@ -88,7 +88,7 @@ static_assert(RemoteCall::is_supported_type_v<CompoundTag*>);
 
 #ifdef DEBUG
 #include <ScheduleAPI.h>
-#include <MC/Player.hpp>
+#include <mc/Player.hpp>
 inline bool testExtra = ([]() {
     std::vector<std::string> input{"aa", "abcd", "test"};
     auto output = RemoteCall::extract<decltype(input)>(RemoteCall::pack(input));

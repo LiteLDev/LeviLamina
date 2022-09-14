@@ -6,10 +6,10 @@
 #include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
 #include <Utils/NetworkHelper.h>
-#include <MC/Level.hpp>
-#include <MC/PropertiesSettings.hpp>
-#include <MC/ServerNetworkHandler.hpp>
-#include <MC/ServerPlayer.hpp>
+#include <mc/Level.hpp>
+#include <mc/PropertiesSettings.hpp>
+#include <mc/ServerNetworkHandler.hpp>
+#include <mc/ServerPlayer.hpp>
 #include <Nlohmann/json.hpp>
 
 #define BSTATS_JSON(key, val)                     \

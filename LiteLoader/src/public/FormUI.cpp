@@ -3,9 +3,9 @@
 #include <Nlohmann/fifo_json.hpp>
 #include <Impl/FormPacketHelper.h>
 
-#include <MC/BinaryStream.hpp>
-#include <MC/Packet.hpp>
-#include <MC/ServerPlayer.hpp>
+#include <mc/BinaryStream.hpp>
+#include <mc/Packet.hpp>
+#include <mc/ServerPlayer.hpp>
 #include <LiteLoader.h>
 #include <utility>
 #include <LLAPI.h>

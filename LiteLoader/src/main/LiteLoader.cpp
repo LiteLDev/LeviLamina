@@ -15,7 +15,7 @@
 #include "AddonsHelper.h"
 #include <EventAPI.h>
 #include "Version.h"
-#include "MC/Minecraft.hpp"
+#include "mc/Minecraft.hpp"
 #include <csignal>
 
 using namespace std;
