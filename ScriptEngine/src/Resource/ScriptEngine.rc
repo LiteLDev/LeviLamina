@@ -8,8 +8,8 @@
 // Generated from the TEXTINCLUDE 2 resource.
 //
 #include "winres.h"
-#include "../LiteLoader/Main/Version.h"
-#include "Configs.h"
+#include <liteloader/Version.h>
+#include "../Main/Configs.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
