@@ -1,6 +1,11 @@
 /**
  * @file MC/Types.hpp
  * 
+ * \~chinese
+ * @brief 本文件包含各种类型定义。
+ * 
+ * 
+ * \~english
  * @brief This file contains the definitions of types.
  * 
  */
@@ -782,6 +787,11 @@ enum class TextType : char {
 };
 
 /**
+ * \~chinese
+ * @brief 标题类型
+ * 
+ * 
+ * \~english
  * @brief The title type
  * 
  */
@@ -790,18 +800,33 @@ enum class TitleType : int {
     Reset               = 1,
 
     /**
+     * \~chinese
+     * @brief 主标题
+     * 
+     * 
+     * \~english
      * @brief The main title
      * 
      */
     SetTitle            = 2,
 
     /**
+     * \~chinese
+     * @brief 副标题
+     * 
+     * 
+     * \~english
      * @brief The subtitle
      * 
      */
     SetSubtitle         = 3,
 
     /**
+     * \~chinese
+     * @brief 快捷栏标题
+     * 
+     * 
+     * \~english
      * @brief The actionbar title
      * 
      */
@@ -1011,17 +1036,32 @@ enum class ItemStackRequestActionType : char {
 };
 
 /**
+ * \~chinese
+ * @brief 记分项排序方式
+ * 
+ * 
+ * \~english
  * @brief Ranking method of the objective
  * 
  */
 enum class ObjectiveSortOrder : char {
     /**
+     * \~chinese
+     * @brief 升序
+     * 
+     * 
+     * \~english
      * @brief Ascending
      * 
      */
     Ascending  = 0,
 
     /**
+     * \~chinese
+     * @brief 降序
+     * 
+     * 
+     * \~english
      * @brief Descending
      * 
      */

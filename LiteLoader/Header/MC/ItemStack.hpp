@@ -21,6 +21,13 @@ class ItemInstance;
 #undef BEFORE_EXTRA
 
 /**
+ * \~chinese
+ * @brief 物品栈
+ * 
+ * @par 物品栈是可以被指针选择拿起的多个相同物品的集合。
+ *
+ * 
+ * \~english
  * @brief The item stack
  * 
  * @par An item stack is a set of identical items that can be picked up with the pointer at a time.
@@ -36,6 +43,17 @@ public:
     LIAPI static ItemStack* create();
     
     /**
+     * \~chinese
+     * @brief 创建一个物品栈。
+     * 
+     * @param type 物品的标识符
+     * @param count 物品的数量
+     * @return 指向物品栈的指针
+     * 
+     * @note 为了防止内存泄漏，创建的物品栈应当被释放。
+     * 
+     * 
+     * \~english
      * @brief Create an item stack.
      * 
      * @param type The identifier of the items

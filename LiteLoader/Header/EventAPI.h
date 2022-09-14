@@ -46,6 +46,37 @@ class Objective;
 struct ScoreboardId;
 
 /**
+ * \~chinese
+ * @brief 事件系统。
+ *
+ * @par 示例程序
+ * @code
+ * // 大多数情况下，使用常参数回调。
+ * Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {
+ *     ev.mPlayer->sendText("hello world~");
+ *     return true;
+ * });
+ *
+ * // 若需要修改事件参数，使用引用参数回调。
+ * Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {
+ *     ev.mMessage = "[Plugin Modified] " + ev.mMessage;
+ *     return true;
+ * });
+ *
+ * auto listener = Event::PlayerPickupItemEvent::subscribe([](const Event::PlayerPickupItemEvent& ev) {
+ *     if (ev.mPlayer->getName() == "Jack")
+ *         // 返回 `false` 以阻止事件发生。
+ *         return false;
+ *     else
+ *         return true;
+ * });
+ *
+ * // 事件监听器可以被移除。
+ * listener.remove();
+ * @endcode
+ *
+ *
+ * \~english
  * @brief The event system.
  *
  * @par Example
@@ -94,6 +125,13 @@ public:
 };
 
 /**
+ * \~chinese
+ * @brief 事件监听器。
+ *
+ * @tparam EVENT 监听的事件
+ *
+ *
+ * \~english
  * @brief Event listener.
  *
  * @tparam EVENT The event listening to
@@ -110,6 +148,11 @@ public:
     }
 
     /**
+     * \~chinese
+     * @brief 停止监听事件，移除事件监听器。
+     *
+     *
+     * \~english
      * @brief Stop listening to the event and remove the event listener.
      *
      */
@@ -125,6 +168,14 @@ template <typename EVENT>
 class EventTemplate {
 public:
     /**
+     * \~chinese
+     * @brief 以常参数回调模式监听事件。
+     *
+     * @param callback 当事件触发时调用的函数
+     * @return 事件监听器
+     *
+     *
+     * \~english
      * @brief Subscribes to an event with constant parameters.
      *
      * @param callback A function that executes when the event fires
@@ -136,6 +187,14 @@ public:
     }
 
     /**
+     * \~chinese
+     * @brief 以引用回调模式监听事件。
+     *
+     * @param callback 当事件触发时调用的函数
+     * @return 事件监听器
+     *
+     *
+     * \~english
      * @brief Subscribes to an event with reference parameters.
      *
      * @param callback A function that executes when the event fires
@@ -151,6 +210,13 @@ public:
     }
 
     /**
+     * \~chinese
+     * @brief 检查是否存在监听本事件的事件监听器。
+     *
+     * @return 若存在则为真；否则为假
+     *
+     *
+     * \~english
      * @brief Check if this event is being listened to
      *
      * @return True if this event is being listened to; otherwise false
@@ -189,6 +255,12 @@ public:
 };
 
 /**
+ * \~chinese
+ * @brief 当玩家加入游戏时触发的事件。
+ *
+ * @note 此事件无法被拦截。
+ *
+ * \~english
  * @brief An event that fires as players join the game.
  *
  * @note This event cannot be suppressed.
@@ -196,6 +268,10 @@ public:
 class PlayerJoinEvent : public EventTemplate<PlayerJoinEvent> {
 public:
     /**
+     * \~chinese
+     * @brief 刚加入游戏的玩家
+     *
+     * \~english
      * @brief The player who has just joined the game
      */
     Player* mPlayer;
@@ -228,6 +304,10 @@ public:
 };
 
 /**
+ * \~chinese
+ * @brief 当玩家使用桶时触发的事件。
+ *
+ * \~english
  * @brief An event that fires as players use bucket.
  *
  */
@@ -291,6 +371,13 @@ public:
 };
 
 /**
+ * \~chinese
+ * @brief 当玩家死亡时触发的事件。
+ *
+ * @note 此事件无法被拦截。
+ *
+ *
+ * \~english
  * @brief An event that fires as players die.
  *
  * @note This event cannot be suppressed.
@@ -298,12 +385,22 @@ public:
 class PlayerDieEvent : public EventTemplate<PlayerDieEvent> {
 public:
     /**
+     * \~chinese
+     * @brief 死亡的玩家
+     *
+     *
+     * \~english
      * @brief The dead player
      *
      */
     Player* mPlayer;
 
     /**
+     * \~chinese
+     * @brief 导致玩家死亡的伤害来源
+     *
+     *
+     * \~english
      * @brief The damage source causing the player death
      *
      */
@@ -691,6 +788,13 @@ class PostInitEvent : public EventTemplate<PostInitEvent> {
 };
 
 /**
+ * \~chinese
+ * @brief 当服务器启动完成时触发的事件。
+ *
+ * @note 此事件不可被拦截。
+ *
+ *
+ * \~english
  * @brief An event that fires as the server has started.
  *
  * @note This event cannot be suppressed.

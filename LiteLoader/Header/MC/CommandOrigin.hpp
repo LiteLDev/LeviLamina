@@ -18,6 +18,11 @@ enum CommandOriginType : char;
 #undef BEFORE_EXTRA
 
 /**
+ * \~chinese
+ * @brief 命令来源
+ * 
+ * 
+ * \~english
  * @brief The command origin
  *
  */
@@ -28,6 +33,13 @@ class CommandOrigin {
 public:
 
 /**
+ * \~chinese
+ * @brief 获取作为命令来源的玩家。
+ * 
+ * @return 作为命令来源的玩家，若命令来源不是玩家则为 `nullptr`
+ * 
+ * 
+ * \~english
  * @brief Get the player as the command origin.
  * 
  * @return The player as the command origin, `nullptr` if the command origin is not a player

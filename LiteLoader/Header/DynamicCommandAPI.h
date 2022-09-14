@@ -48,6 +48,83 @@ class Player;
 #define AllResultType bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*, CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandRawText const*, CommandMessage const*, Json::Value const*, CommandItem const*, Block const* const*, MobEffect const* const*, ActorDefinitionIdentifier const* const*, std::unique_ptr<Command> const*
 
 /**
+ * \~chinese
+ * @brief 动态命令
+ *
+ * @par 示例程序：
+ * @code
+ * DynamicCommand::setup(
+ *   "example_command", // 命令
+ *   "Example description", // 命令描述
+ *   {}, // 命令枚举
+ *   {}, // 命令参数
+ *   {{},}, // 命令重载
+ *   [](
+ *     DynamicCommand const& command,
+ *     CommandOrigin const& origin,
+ *     CommandOutput& output,
+ *     std::unordered_map<std::string, DynamicCommand::Result>& results
+ *   ) {
+ *     output.success(
+ *       "Example success"
+ *     );
+ *   } // 回调函数
+ * );
+ * @endcode
+ *
+ * @code
+ * using ParamType = DynamicCommand::ParameterType;
+ * using Param = DynamicCommand::ParameterData;
+ * DynamicCommand::setup(
+ *   "example_command", // 命令
+ *   "Example description", // 命令描述
+ *   {
+ *     {"enum_1", {"add", "remove"}},
+ *     {"enum_2", {"list"}},
+ *   }, // 命令枚举
+ *   {
+ *     Param("testEnum", ParamType::Enum, "enum_1"),
+ *     Param("testEnum", ParamType::Enum, "enum_2"),
+ *     Param("testInt", ParamType::Int, true),
+ *   }, // 命令参数
+ *   {
+ *     {"enum_1", "testInt"}, // example_command <add|remove> [testInt]
+ *     {"enum_2"}, // example_command <list>
+ *   }, // 命令重载
+ *   [](
+ *     DynamicCommand const& command,
+ *     CommandOrigin const& origin,
+ *     CommandOutput& output,
+ *     std::unordered_map<std::string, DynamicCommand::Result>& results
+ *   ) {
+ *     auto& action = results["testEnum"].get<std::string>();
+ *     switch (do_hash(action.c_str()))
+ *     {
+ *       case do_hash("add"):
+ *         if (results["testInt"].isSet)
+ *           output.success(fmt::format("add {}", results["testInt"].getRaw<int>()));
+ *         else
+ *           output.success("add nothing");
+ *         break;
+ *       case do_hash("remove"):
+ *         if (results["testInt"].isSet)
+ *           output.success(fmt::format("remove {}", results["testInt"].getRaw<int>()));
+ *         else
+ *           output.success("remove nothing");
+ *         break;
+ *       case do_hash("list"):
+ *         output.success("list");
+ *         break;
+ *       default:
+ *         break;
+ *     }
+ *   }, // 回调函数
+ *   CommandPermissionLevel::GameMasters // 权限等级
+ * );
+ * @endcode
+ *
+ *
+ * \~english
  * @brief The dynamic command
  *
  * @par 示例程序：
@@ -134,52 +211,97 @@ class DynamicCommand : public Command {
 
 public:
     /**
+     * \~chinese
+     * @brief 参数类型
+     *
+     *
+     * \~english
      * @brief The parameter type
      *
      */
     enum class ParameterType {
         /**
+         * \~chinese
+         * @brief 布尔类型（ `bool` ）
+         *
+         *
+         * \~english
          * @brief The boolean type ( `bool` )
          */
         Bool,
 
         /**
+         * \~chinese
+         * @brief 整数类型（ `int` ）
+         *
+         *
+         * \~english
          * @brief The integer type ( `int` )
          *
          */
         Int,
 
         /**
+         * \~chinese
+         * @brief 浮点数类型（ `float` ）
+         *
+         *
+         * \~english
          * @brief The floating point type ( `float` )
          *
          */
         Float,
 
         /**
+         * \~chinese
+         * @brief 字符串类型（ `std::string` ）
+         *
+         *
+         * \~english
          * @brief The string type ( 'std::string' )
          *
          */
         String,
 
         /**
+         * \~chinese
+         * @brief 实体选择器类型（ `CommandSelector<Actor>` ）
+         *
+         *
+         * \~english
          * @brief The entity selector type ( `CommandSelector<Actor>` )
          *
          */
         Actor,
 
         /**
+         * \~chinese
+         * @brief 玩家选择器类型（ `CommandSelector<Player>` ）
+         *
+         *
+         * \~english
          * @brief The player selector type ( `CommandSelector<Player>` )
          *
          */
         Player,
 
         /**
+         * \~chinese
+         * @brief 整数位置类型（ `CommandPosition` ）
+         *
+         *
+         * \~english
          * @brief The integer position type ( `CommandPosition` )
          *
          */
         BlockPos,
 
         /**
+         * \~chinese
+         * @brief 浮点数位置类型（ `CommandPositionFloat` ）
+         *
+         *
+         * \~english
          * @brief The floating point position type ( `CommandPositionFloat` )
          *
          */
@@ -190,24 +312,44 @@ public:
         JsonValue, // Json::Value
 
         /**
+         * \~chinese
+         * @brief 物品类型（ `CommandItem` ）
+         *
+         *
+         * \~english
          * @brief The item type ( `CommandItem` )
          *
          */
         Item,
 
         /**
+         * \~chinese
+         * @brief 方块类型（ `const* Block` ）
+         *
+         *
+         * \~english
          * @brief The block type ( `Const* Block` )
          *
          */
         Block,
 
         /**
+         * \~chinese
+         * @brief 状态效果类型（ `const* MobEffect` ）
+         *
+         *
+         * \~english
          * @brief The mob effect type ( `Const* MobEffect` )
          *
          */
         Effect, // MobEffect const*
 
         /**
+         * \~chinese
+         * @brief 枚举类型
+         *
+         *
+         * \~english
          * @brief The enumeration type
          *
          */
@@ -225,6 +367,10 @@ public:
     struct ParameterPtr;
 
     /**
+     * \~chinese
+     * @brief 命令参数捕获结果
+     *
+     * \~english
      * @brief The command parameter capture result
      *
      */
@@ -242,6 +388,13 @@ public:
         LIAPI std::string const& getEnumValue() const;
 
         /**
+         * \~chinese
+         * @brief 获取参数类型。
+         *
+         * @return 参数类型
+         *
+         *
+         * \~english
          * @brief Get the parameter type.
          *
          * @return The parameter type
@@ -282,6 +435,14 @@ public:
         }
 
         /**
+         * \~chinese
+         * @brief 获取参数值
+         *
+         * @tparam T 以此类型获取
+         * @return 以 `T` 类型获取的参数值
+         *
+         *
+         * \~english
          * @brief Get the value of the parameter
          *
          * @tparam T Get with this type
@@ -352,6 +513,11 @@ public:
     };
 
     /**
+     * \~chinese
+     * @brief 参数
+     *
+     *
+     * \~english
      * @brief The parameter
      *
      */
@@ -370,6 +536,17 @@ public:
         LIAPI ParameterData(ParameterData const&);
 
         /**
+         * \~chinese
+         * @brief 构造一个参数。
+         *
+         * @param name 参数名
+         * @param type 参数类型
+         * @param optional 若为真，则为可选参数；否则非可选参数。
+         * @param enumOptions 参数对应的枚举选项
+         * @return 参数
+         *
+         *
+         * \~english
          * @brief Construct a parameter.
          *
          * @param name The parameter name
@@ -510,6 +687,22 @@ public:
     LIAPI static DynamicCommandInstance const* setup(std::unique_ptr<class DynamicCommandInstance> commandInstance);
 
     /**
+     * \~chinese
+     * @brief 配置一个命令。
+     *
+     * @param name 命令名（只能由小写字母和 `_` 组成）
+     * @param description 命令描述
+     * @param enums 命令枚举项
+     * @param params 命令参数
+     * @param overloads 命令重载
+     * @param callback 回调函数
+     * @param permission 命令执行需要的权限
+     * @return 命令实例
+     * 
+     * @note 命令名只能由小写字母和 `_` 组成。
+     *
+     *
+     * \~english
      * @brief Setup a command.
      *
      * @param name The command name (lowercase letters and `_` )
@@ -548,6 +741,11 @@ public:
 };
 
 /**
+ * \~chinese
+ * @brief 动态命令实例
+ *
+ *
+ * \~english
  * @brief The dynamic command instance
  *
  */
