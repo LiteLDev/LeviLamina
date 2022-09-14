@@ -8,5 +8,5 @@ set(SCRIPTX_BACKEND Lua)
 
 project(ScriptX-Lua)
 
-include_directories(../../../Lua/include)
+include_directories(${SCRIPTENGINE_SOURCE_DIR}/third-party/include/)
 include(../../CMakeLists.txt)

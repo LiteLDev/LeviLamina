@@ -8,5 +8,5 @@ set(SCRIPTX_BACKEND V8)
 
 project(ScriptX-NodeJs)
 
-include_directories(../../../NodeJs/include/v8)
+include_directories(${SCRIPTENGINE_SOURCE_DIR}/third-party/include/)
 include(../../CMakeLists.txt)

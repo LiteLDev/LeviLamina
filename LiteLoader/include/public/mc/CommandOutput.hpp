@@ -13,7 +13,7 @@
 #include "CommandOrigin.hpp"
 #include "Command.hpp"
 #include "ServerPlayer.hpp"
-#include "../Utils/PluginOwnData.h"
+#include "../utils/PluginOwnData.h"
 #include "../I18nAPI.h"
 
 #define POD_COMMANDOUTPUT_LANGCODE ("_ll_plugin_cmdoutp_langcode_" + std::to_string((uint64_t)this))

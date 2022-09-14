@@ -1,7 +1,7 @@
 #define NEW_DEFINES
 #include "InternationalAPI.h"
 #include <I18nAPI.h>
-#include <third-party/FMT/args.h>
+#include <FMT/args.h>
 
 void FormatHelper(std::vector<Local<Value>>& args, const std::vector<char*>& names, bool enableObject,
                   fmt::dynamic_format_arg_store<fmt::format_context>& s,

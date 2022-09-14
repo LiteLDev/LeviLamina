@@ -1,6 +1,6 @@
 #include "NativeAPI.h"
 
-#include <third-party/ModUtils/ModUtils.h>
+#include <ModUtils/ModUtils.h>
 #include <Utils/TypeConversionHelper.hpp>
 
 Local<Value> NativePatch::search(const Arguments& args) {

@@ -1,7 +1,6 @@
 #include <API/APIHelp.h>
-#include "PluginManager.h"
-#include <Global.hpp>
-#include <Configs.h>
+#include "Global.hpp"
+#include "Configs.h"
 #include <filesystem>
 #include <utility>
 #include <Engine/LocalShareData.h>
@@ -9,8 +8,9 @@
 #include <Engine/TimeTaskSystem.h>
 #include <Engine/EngineManager.h>
 #include <Utils/STLHelper.h>
-#include <LiteLoader/Main/PluginManager.h>
-#include <Loader.h>
+#include <PluginManager.h>
+#include "PluginManager.h"
+#include "Loader.h"
 #include <ScheduleAPI.h>
 #include <API/CommandAPI.h>
 #include <API/EventAPI.h>

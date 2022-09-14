@@ -7,7 +7,7 @@
  *
  */
 #pragma once
-#include <Global.h>
+#include "../Global.h"
 #include <pcg/pcg_random.hpp>
 namespace RNG {
 

@@ -4,7 +4,7 @@
 #pragma once
 #include "APIHelp.h"
 #include <Global.hpp>
-#include "../../LiteLoader/Header/ParticleAPI.h"
+#include <ParticleAPI.h>
 
 class ParticleSpawner : public ParticleCUI, public ScriptClass {
 public:

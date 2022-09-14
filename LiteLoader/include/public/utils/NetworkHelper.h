@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Global.h>
+#include "../Global.h"
 #include <string>
 #include <functional>
 #include <httplib/httplib.h>

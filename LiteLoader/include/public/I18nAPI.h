@@ -33,15 +33,15 @@
 //
 //////////////////////////////////////////////////////
 
-#include <Global.h>
-#include <LLAPI.h>
-#include <Utils/FileHelper.h>
-#include <Utils/PluginOwnData.h>
+#include "Global.h"
+#include "LLAPI.h"
+#include "utils/FileHelper.h"
+#include "utils/PluginOwnData.h"
 #include <Nlohmann/json.hpp>
 #include <FMT/core.h>
 #include <FMT/os.h>
 #include <string>
-#include <Utils/StringHelper.h>
+#include "utils/StringHelper.h"
 
 
 class I18nBase {

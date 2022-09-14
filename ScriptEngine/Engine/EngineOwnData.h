@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include <memory>
 #include <LoggerAPI.h>
-#include <ScriptEngine/third-party/dyncall/include/dyncall.h>
+#include <dyncall/dyncall.h>
 
 struct FormCallbackData {
     script::ScriptEngine* engine;

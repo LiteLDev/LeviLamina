@@ -1,4 +1,4 @@
-#include <LiteLoader/Main/Config.h>
+#include <Config.h>
 #include <API/APIHelp.h>
 #include <API/EventAPI.h>
 #include <Engine/GlobalShareData.h>
@@ -17,7 +17,7 @@
 #include <filesystem>
 #include <Configs.h>
 #include <LoggerAPI.h>
-#include <LiteLoader/Main/Version.h>
+#include <Version.h>
 #include <Utils/FileHelper.h>
 #include <Tools/JsonHelper.h>
 #include <EconomicSystem.h>

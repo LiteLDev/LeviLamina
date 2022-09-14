@@ -29,7 +29,7 @@ file(GLOB_RECURSE SRC_FILES
         ${SCRIPTENGINE_DIR}/Tools/*.h
         ${SCRIPTENGINE_DIR}/Resource/*.rc
         ${SCRIPTENGINE_DIR}/Resource/*.h
-)
+        )
 
 add_definitions(
         -DCPPHTTPLIB_OPENSSL_SUPPORT -DNDEBUG -D_CONSOLE -D_AMD64_
@@ -55,35 +55,23 @@ add_link_options(
 add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 
 include_directories(${SCRIPTENGINE_DIR}/)
-include_directories(${SCRIPTENGINE_DIR}/Main)
-include_directories(${SCRIPTENGINE_DIR}/..)
+include_directories(${LiteLoader_SOURCE_DIR}/include/main)
 include_directories(${LiteLoader_SOURCE_DIR}/include/public)
 include_directories(${LiteLoader_SOURCE_DIR}/third-party/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party)
-include_directories(${SCRIPTENGINE_DIR}/third-party/Lua/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/QuickJs/include)
+include_directories(${SCRIPTENGINE_DIR}/third-party/include)
 include_directories(${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include/ScriptX)
 include_directories(${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include/v8)
-include_directories(${SCRIPTENGINE_DIR}/third-party/gsl)
 
-link_directories(${SCRIPTENGINE_DIR}/)
+file(
+        GLOB_RECURSE SCRIPTENGINE_THIRD_PARTY_LIBS
+        ${SCRIPTENGINE_DIR}/third-party/lib/*.lib
+)
 
-add_library(base64 STATIC IMPORTED)
-
-target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
-        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libcrypto.lib"
-        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libssl.lib"
-        "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdyncall_s.lib"
-        "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdyncallback_s.lib"
-        "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdynload_s.lib"
-        "${SCRIPTENGINE_DIR}/third-party/LightWebSocketClient/lib/LightWSClient.lib"
-        "${SCRIPTENGINE_DIR}/third-party/NodeJs/lib/libnode.lib"
-        "${SCRIPTENGINE_DIR}/third-party/QuickJs/lib/quickjs.lib"
-        "${SCRIPTENGINE_DIR}/third-party/Lua/lib/lua.lib"
-        "${SCRIPTENGINE_DIR}/third-party/nbt-cpp/lib/nbt-cpp.lib"
+target_link_libraries(
+        ${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
+        "${LiteLoader_SOURCE_DIR}/third-party/lib/openssl/libcrypto.lib"
+        "${LiteLoader_SOURCE_DIR}/third-party/lib/openssl/libssl.lib"
+        ${SCRIPTENGINE_THIRD_PARTY_LIBS}
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
         "${LiteLoader_SOURCE_DIR}/lib/bedrock_server_api.lib"
         "${LiteLoader_SOURCE_DIR}/lib/bedrock_server_var.lib"

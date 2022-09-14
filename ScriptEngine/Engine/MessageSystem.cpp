@@ -8,7 +8,7 @@
 #include <processthreadsapi.h>
 #include <process.h>
 #include <exception>
-#include <LiteLoader/Main/Config.h>
+#include <Config.h>
 using namespace std;
 using namespace script;
 

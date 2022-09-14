@@ -1,5 +1,5 @@
 #pragma once
-#include <Global.h>
+#include "../Global.h"
 #include <minwinbase.h>
 
 // ===== Critical Section Locker =====

@@ -6,7 +6,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "VehicleUtils.hpp"
+#include "Vehicleutils.hpp"
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares

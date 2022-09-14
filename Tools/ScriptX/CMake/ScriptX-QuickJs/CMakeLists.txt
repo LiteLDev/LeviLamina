@@ -8,5 +8,5 @@ set(SCRIPTX_BACKEND QuickJs)
 
 project(ScriptX-QuickJs)
 
-include_directories(../../../QuickJs/include)
+include_directories(${SCRIPTENGINE_SOURCE_DIR}/third-party/include/)
 include(../../CMakeLists.txt)

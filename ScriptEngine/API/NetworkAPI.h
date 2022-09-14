@@ -2,8 +2,8 @@
 #include "APIHelp.h"
 
 #include <list>
-#include <third-party/LightWebSocketClient/include/WebSocketClient.h>
-#include <third-party/httplib/httplib.h>
+#include <LightWebSocketClient/WebSocketClient.h>
+#include <httplib/httplib.h>
 using namespace cyanray;
 
 //////////////////// Types ////////////////////

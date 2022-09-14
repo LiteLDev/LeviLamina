@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.21)
 project(LiteLoaderBDS)
 
+set(SCRIPTENGINE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/ScriptEngine)
+set(SCRIPTX_SOURCE_DIR ${CMAKE_SOURCE_DIR}/ScriptX)
+
 # Add sub directories
 add_subdirectory(LLPreLoader)
 add_subdirectory(LiteLoader)
@@ -8,9 +11,9 @@ add_subdirectory(ScriptEngine/CMake/ScriptEngine-Lua)
 add_subdirectory(ScriptEngine/CMake/ScriptEngine-QuickJs)
 add_subdirectory(ScriptEngine/CMake/ScriptEngine-NodeJs)
 add_subdirectory(Tools/Demangler)
-add_subdirectory(ScriptEngine/third-party/ScriptX/CMake/ScriptX-Lua)
-add_subdirectory(ScriptEngine/third-party/ScriptX/CMake/ScriptX-QuickJs)
-add_subdirectory(ScriptEngine/third-party/ScriptX/CMake/ScriptX-NodeJs)
+add_subdirectory(Tools/ScriptX/CMake/ScriptX-Lua)
+add_subdirectory(Tools/ScriptX/CMake/ScriptX-QuickJs)
+add_subdirectory(Tools/ScriptX/CMake/ScriptX-NodeJs)
 add_subdirectory(Tools/SymDBHelper)
 
 include(${CMAKE_SOURCE_DIR}/CMake/PackOutput.cmake)

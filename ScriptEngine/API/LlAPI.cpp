@@ -1,12 +1,12 @@
 #include "APIHelp.h"
-#include <LiteLoader/Main/Config.h>
+#include <Config.h>
 #include "LlAPI.h"
 #include <Engine/GlobalShareData.h>
 #include <Engine/EngineOwnData.h>
 #include <Utils/NetworkHelper.h>
 #include <PluginManager.h>
 #include <Tools/Utils.h>
-#include <LiteLoader/Main/Version.h>
+#include <Version.h>
 #include <string>
 #include <filesystem>
 #include <map>

@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include <HookAPI.h>
-#include <Utils/RNG.h>
+#include "../HookAPI.h"
+#include "../utils/RNG.h"
 #include "Vec2.hpp"
 #include "Vec3.hpp"
 #include "BlockPos.hpp"

@@ -6,7 +6,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "CaveFeatureUtils.hpp"
+#include "CaveFeatureutils.hpp"
 #include "CaveFeature.hpp"
 
 #define BEFORE_EXTRA

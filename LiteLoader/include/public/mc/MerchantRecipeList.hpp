@@ -9,7 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include <mc/MerchantRecipe.hpp>
+#include "MerchantRecipe.hpp"
 
 #undef BEFORE_EXTRA
 

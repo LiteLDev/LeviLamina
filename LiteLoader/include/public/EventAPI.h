@@ -16,17 +16,17 @@ copies or substantial portions of the Software.
 
 #pragma once
 
-#include <Global.h>
-#include <LoggerAPI.h>
-#include <mc/BlockInstance.hpp>
-#include <mc/MCRESULT.hpp>
+#include "Global.h"
+#include "LoggerAPI.h"
+#include "mc/BlockInstance.hpp"
+#include "mc/MCRESULT.hpp"
 #include <functional>
 #include <iterator>
 #include <list>
 #include <string>
 #include <unordered_map>
-#include <LLAPI.h>
-#include <Utils/WinHelper.h>
+#include "LLAPI.h"
+#include "utils/WinHelper.h"
 
 class Actor;
 class ServerPlayer;

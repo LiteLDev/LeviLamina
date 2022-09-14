@@ -2,7 +2,7 @@
 #include <API/APIHelp.h>
 #include <map>
 #include <string>
-#include <third-party/ThreadPool/ThreadPool.hpp>
+#include <ThreadPool/ThreadPool.hpp>
 #include <mutex>
 
 

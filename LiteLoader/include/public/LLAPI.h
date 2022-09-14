@@ -11,9 +11,9 @@
 #define NOMINMAX
 #endif
 
-#include <Global.h>
-#include <Utils/WinHelper.h>
-#include <Utils/PluginOwnData.h>
+#include "Global.h"
+#include "utils/WinHelper.h"
+#include "utils/PluginOwnData.h"
 
 // LL types
 namespace LL {

@@ -9,7 +9,6 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include "Global.h"
 #include <Nlohmann/fifo_json.hpp>
 #include <map>
 #include <string>

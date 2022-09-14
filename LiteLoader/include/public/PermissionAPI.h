@@ -7,8 +7,8 @@
  *
  */
 #pragma once
-#include <LLAPI.h>
-#include <PERM/Role.hpp>
+#include "LLAPI.h"
+#include "perm/Role.hpp"
 
 
 class DynPermissionAPI {
