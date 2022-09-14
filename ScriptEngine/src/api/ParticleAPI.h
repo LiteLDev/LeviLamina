@@ -3,8 +3,8 @@
 //
 #pragma once
 #include "APIHelp.h"
-#include <Global.hpp>
-#include <ParticleAPI.h>
+#include "../main/Global.hpp"
+#include <llapi/ParticleAPI.h>
 
 class ParticleSpawner : public ParticleCUI, public ScriptClass {
 public:

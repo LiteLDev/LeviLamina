@@ -21,10 +21,10 @@ using script::String;
 using script::Value;
 using script::ValueKind;
 
-#include <Global.hpp>
-#include <Engine/EngineOwnData.h>
-#include <Tools/JsonHelper.h>
-#include <MC/Level.hpp>
+#include "../main/Global.hpp"
+#include "../Engine/EngineOwnData.h"
+#include "../utils/JsonHelper.h"
+#include <llapi/mc/Level.hpp>
 #include <string>
 #include <vector>
 #include <exception>

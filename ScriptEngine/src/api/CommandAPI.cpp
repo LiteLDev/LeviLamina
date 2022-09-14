@@ -6,23 +6,23 @@
 #include "BlockAPI.h"
 #include "CommandOriginAPI.h"
 #include "CommandOutputAPI.h"
-#include <Tools/Utils.h>
-#include <Engine/GlobalShareData.h>
-#include <Engine/LocalShareData.h>
-#include <Engine/EngineOwnData.h>
-#include <Utils/STLHelper.h>
-#include <RegCommandAPI.h>
+#include "../utils/Utils.h"
+#include "../engine/GlobalShareData.h"
+#include "../engine/LocalShareData.h"
+#include "../engine/EngineOwnData.h"
+#include <llapi/Utils/STLHelper.h>
+#include <llapi/RegCommandAPI.h>
 #include <filesystem>
-#include <Configs.h>
+#include "../main/Configs.h"
 #include <vector>
 #include <string>
-#include <MC/ItemInstance.hpp>
-#include <MC/ItemStack.hpp>
-#include <MC/Dimension.hpp>
-#include <ScriptEngine/API/BaseAPI.h>
-#include <ScriptEngine/API/EntityAPI.h>
+#include <llapi/mc/ItemInstance.hpp>
+#include <llapi/mc/ItemStack.hpp>
+#include <llapi/mc/Dimension.hpp>
+#include "BaseAPI.h"
+#include "EntityAPI.h"
 #include <magic_enum/magic_enum.hpp>
-#include <MC/JsonHelpers.hpp>
+#include <llapi/mc/JsonHelpers.hpp>
 
 
 //////////////////// Class Definition ////////////////////

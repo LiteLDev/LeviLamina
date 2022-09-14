@@ -1,7 +1,7 @@
 #include "NativeAPI.h"
 
 #include <ModUtils/ModUtils.h>
-#include <Utils/TypeConversionHelper.hpp>
+#include <llapi/utils/TypeConversionHelper.hpp>
 
 Local<Value> NativePatch::search(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);

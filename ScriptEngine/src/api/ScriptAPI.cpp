@@ -1,9 +1,9 @@
 #include "ScriptAPI.h"
 #include "APIHelp.h"
-#include <Engine/EngineOwnData.h>
-#include <Engine/LocalShareData.h>
-#include <Engine/GlobalShareData.h>
-#include <Engine/TimeTaskSystem.h>
+#include "../engine/EngineOwnData.h"
+#include "../engine/LocalShareData.h"
+#include "../engine/GlobalShareData.h"
+#include "../engine/TimeTaskSystem.h"
 #include <sstream>
 #include <windows.h>
 #include <chrono>

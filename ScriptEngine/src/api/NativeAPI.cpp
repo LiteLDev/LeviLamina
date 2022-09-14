@@ -1,8 +1,8 @@
 #include "NativeAPI.h"
 
-#include <HookAPI.h>
+#include <llapi/HookAPI.h>
 #include <magic_enum/magic_enum.hpp>
-#include "../utils/Demangler/include/MicrosoftDemangle.h"
+#include <Tools/Demangler/include/MicrosoftDemangle.h>
 
 
 Concurrency::concurrent_unordered_map<std::string, NativeFunction> NativeFunction::parsedSymbol;

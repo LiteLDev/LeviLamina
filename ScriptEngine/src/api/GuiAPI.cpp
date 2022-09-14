@@ -2,11 +2,11 @@
 #include "GuiAPI.h"
 #include "PlayerAPI.h"
 #include "McAPI.h"
-#include <Engine/GlobalShareData.h>
-#include <Engine/LocalShareData.h>
-#include <Engine/EngineOwnData.h>
-#include <SendPacketAPI.h>
-#include <MC/Player.hpp>
+#include "../engine/GlobalShareData.h"
+#include "../engine/LocalShareData.h"
+#include "../engine/EngineOwnData.h"
+#include <llapi/SendPacketAPI.h>
+#include <llapi/mc/Player.hpp>
 #include <iostream>
 
 using namespace std;

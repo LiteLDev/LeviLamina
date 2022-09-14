@@ -1,6 +1,6 @@
 #pragma once
 #include "CommandCompatibleAPI.h"
-#include <DynamicCommandAPI.h>
+#include <llapi/DynamicCommandAPI.h>
 
 extern ClassDefine<void> ParamTypeStaticBuilder;
 extern ClassDefine<void> PermissionStaticBuilder;

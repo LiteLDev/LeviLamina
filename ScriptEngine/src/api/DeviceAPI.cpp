@@ -1,9 +1,9 @@
 #include "APIHelp.h"
 #include "DeviceAPI.h"
 #include <string>
-#include <MC/Player.hpp>
-#include <MC/Level.hpp>
-#include <MC/NetworkIdentifier.hpp>
+#include <llapi/mc/Player.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/NetworkIdentifier.hpp>
 using namespace std;
 
 

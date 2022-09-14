@@ -1,6 +1,7 @@
 #include "MessageSystem.h"
 #include "../api/APIHelp.h"
 #include "../utils/IniHelper.h"
+#include "../utils/Utils.h"
 #include <llapi/LLAPI.h>
 #include <llapi/EventAPI.h>
 #include "LocalShareData.h"

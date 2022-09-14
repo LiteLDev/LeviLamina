@@ -7,12 +7,12 @@
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
 #include "NativeAPI.h"
-#include <MC/Level.hpp>
-#include <MC/Block.hpp>
-#include <MC/CompoundTag.hpp>
-#include <MC/BlockSource.hpp>
-#include <MC/BlockInstance.hpp>
-#include <MC/BlockActor.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/Block.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/BlockInstance.hpp>
+#include <llapi/mc/BlockActor.hpp>
 #include <exception>
 
 //////////////////// Class Definition ////////////////////

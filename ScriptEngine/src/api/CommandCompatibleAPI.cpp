@@ -2,15 +2,15 @@
 #include "APIHelp.h"
 #include "McAPI.h"
 #include "PlayerAPI.h"
-#include <Tools/Utils.h>
-#include <Engine/GlobalShareData.h>
-#include <Engine/LocalShareData.h>
-#include <Engine/EngineOwnData.h>
-#include <Utils/STLHelper.h>
-#include <RegCommandAPI.h>
-#include <Global.hpp>
+#include "../utils/Utils.h"
+#include "../engine/GlobalShareData.h"
+#include "../engine/LocalShareData.h"
+#include "../engine/EngineOwnData.h"
+#include <llapi/utils/STLHelper.h>
+#include <llapi/RegCommandAPI.h>
+#include "../main/Global.hpp"
 #include <filesystem>
-#include <Configs.h>
+#include "../main/Configs.h"
 #include <vector>
 #include <string>
 using namespace std;

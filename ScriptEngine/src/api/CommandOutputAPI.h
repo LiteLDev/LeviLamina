@@ -1,6 +1,6 @@
 #pragma once
 #include "APIHelp.h"
-#include <MC/CommandOutput.hpp>
+#include <llapi/mc/CommandOutput.hpp>
 
 class CommandOutputClass;
 extern ClassDefine<CommandOutputClass> CommandOutputClassBuilder;

@@ -4,17 +4,17 @@
 #include <string>
 #include "ItemAPI.h"
 #include "BlockAPI.h"
-#include <MC/EndTag.hpp>
-#include <MC/ByteTag.hpp>
-#include <MC/ShortTag.hpp>
-#include <MC/IntTag.hpp>
-#include <MC/Int64Tag.hpp>
-#include <MC/FloatTag.hpp>
-#include <MC/DoubleTag.hpp>
-#include <MC/ByteArrayTag.hpp>
-#include <MC/StringTag.hpp>
-#include <MC/ListTag.hpp>
-#include <MC/CompoundTag.hpp>
+#include <llapi/mc/EndTag.hpp>
+#include <llapi/mc/ByteTag.hpp>
+#include <llapi/mc/ShortTag.hpp>
+#include <llapi/mc/IntTag.hpp>
+#include <llapi/mc/Int64Tag.hpp>
+#include <llapi/mc/FloatTag.hpp>
+#include <llapi/mc/DoubleTag.hpp>
+#include <llapi/mc/ByteArrayTag.hpp>
+#include <llapi/mc/StringTag.hpp>
+#include <llapi/mc/ListTag.hpp>
+#include <llapi/mc/CompoundTag.hpp>
 
 using namespace std;
 

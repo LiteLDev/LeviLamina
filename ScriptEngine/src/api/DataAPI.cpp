@@ -5,13 +5,13 @@
 #include <string>
 #include <sstream>
 #include <exception>
-#include <Engine/EngineOwnData.h>
-#include <PlayerInfoAPI.h>
-#include <Utils/CryptHelper.h>
-#include <Utils/FileHelper.h>
-#include <Utils/StringHelper.h>
-#include <Tools/JsonHelper.h>
-#include <EconomicSystem.h>
+#include "../engine/EngineOwnData.h"
+#include <llapi/PlayerInfoAPI.h>
+#include <llapi/utils/CryptHelper.h>
+#include <llapi/utils/FileHelper.h>
+#include <llapi/utils/StringHelper.h>
+#include "../utils/JsonHelper.h"
+#include "../main/EconomicSystem.h"
 #include <Base64/Base64.hpp>
 using namespace std;
 

@@ -1,6 +1,6 @@
 #define NEW_DEFINES
 #include "InternationalAPI.h"
-#include <I18nAPI.h>
+#include <llapi/I18nAPI.h>
 #include <FMT/args.h>
 
 void FormatHelper(std::vector<Local<Value>>& args, const std::vector<char*>& names, bool enableObject,

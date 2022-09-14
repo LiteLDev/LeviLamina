@@ -1,6 +1,6 @@
 #pragma once
 #include "APIHelp.h"
-#include <MC/CommandOrigin.hpp>
+#include <llapi/mc/CommandOrigin.hpp>
 
 class CommandOriginClass;
 extern ClassDefine<void> OriginTypeStaticBuilder;

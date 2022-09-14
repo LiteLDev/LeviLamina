@@ -2,10 +2,10 @@
 #include "BaseAPI.h"
 #include "McAPI.h"
 #include "NbtAPI.h"
-#include <MC/ListTag.hpp>
-#include <MC/CompoundTag.hpp>
-#include <MC/Block.hpp>
-#include <MC/StructureTemplate.hpp>
+#include <llapi/mc/ListTag.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/Block.hpp>
+#include <llapi/mc/StructureTemplate.hpp>
 
 Local<Value> McClass::getStructure(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);

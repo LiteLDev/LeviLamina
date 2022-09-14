@@ -1,15 +1,15 @@
 #include "APIHelp.h"
-#include <Utils/NetworkHelper.h>
-#include <Engine/TimeTaskSystem.h>
-#include <Engine/EngineManager.h>
+#include <llapi/utils/NetworkHelper.h>
+#include "../engine/TimeTaskSystem.h"
+#include "../engine/EngineManager.h"
 #include <httplib/httplib.h>
 #include <LightWebSocketClient/WebSocketClient.h>
 #include "NetworkAPI.h"
-#include <SafeGuardRecord.h>
+#include "../main/SafeGuardRecord.h"
 #include <string>
 #include <vector>
-#include <ScheduleAPI.h>
-#include <LiteLoader/Main/Config.h>
+#include <llapi/ScheduleAPI.h>
+#include <liteloader/Config.h>
 using namespace std;
 
 using namespace cyanray;

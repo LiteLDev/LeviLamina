@@ -5,8 +5,8 @@
 #include "EntityAPI.h"
 #include "NbtAPI.h"
 #include "NativeAPI.h"
-#include <MC/CompoundTag.hpp>
-#include <MC/ItemStack.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/ItemStack.hpp>
 #include <vector>
 #include <string>
 

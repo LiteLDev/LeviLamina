@@ -1,7 +1,7 @@
 #pragma once
 #include "APIHelp.h"
-#include <MC/BlockInstance.hpp>
-#include <Global.hpp>
+#include <llapi/mc/BlockInstance.hpp>
+#include "../main/Global.hpp"
 #include <string>
 
 

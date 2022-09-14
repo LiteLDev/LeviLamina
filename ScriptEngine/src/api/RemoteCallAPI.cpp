@@ -1,5 +1,5 @@
 ﻿#include "RemoteCallAPI.h"
-#include <RemoteCallAPI.h>
+#include <llapi/RemoteCallAPI.h>
 #include "PlayerAPI.h"
 #include "EntityAPI.h"
 #include "ItemAPI.h"
@@ -8,16 +8,16 @@
 #include "BaseAPI.h"
 #include "ContainerAPI.h"
 #include "NbtAPI.h"
-#include <API/APIHelp.h>
-#include <API/LlAPI.h>
-#include <Engine/GlobalShareData.h>
-#include <Engine/MessageSystem.h>
-#include <Utils/STLHelper.h>
+#include "../api/APIHelp.h"
+#include "../api/LlAPI.h"
+#include "../engine/GlobalShareData.h"
+#include "../engine/MessageSystem.h"
+#include <llapi/utils/STLHelper.h>
 #include <sstream>
 #include <string>
 #include <map>
 #include <process.h>
-#include <Configs.h>
+#include "../main/Configs.h"
 
 using namespace std;
 

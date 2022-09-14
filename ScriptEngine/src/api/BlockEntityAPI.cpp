@@ -4,9 +4,9 @@
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
 #include "NativeAPI.h"
-#include <Global.hpp>
-#include <MC/BlockActor.hpp>
-#include <MC/CompoundTag.hpp>
+#include "../main/Global.hpp"
+#include <llapi/mc/BlockActor.hpp>
+#include <llapi/mc/CompoundTag.hpp>
 
 //////////////////// Class Definition ////////////////////
 

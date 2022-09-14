@@ -7,9 +7,9 @@
 #include "BlockEntityAPI.h"
 #include "NbtAPI.h"
 #include "NativeAPI.h"
-#include <MC/Packet.hpp>
+#include <llapi/mc/Packet.hpp>
 #include "PacketAPI.h"
-#include <MC/MinecraftPackets.hpp>
+#include <llapi/mc/MinecraftPackets.hpp>
 
 
 //////////////////// Class Definition ////////////////////

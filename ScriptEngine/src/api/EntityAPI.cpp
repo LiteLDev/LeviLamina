@@ -9,13 +9,13 @@
 #include "ContainerAPI.h"
 #include "NbtAPI.h"
 #include "NativeAPI.h"
-#include <MC/ServerPlayer.hpp>
-#include <MC/SynchedActorData.hpp>
-#include <MC/Level.hpp>
-#include <MC/ItemActor.hpp>
-#include <MC/SimpleContainer.hpp>
-#include <MC/CompoundTag.hpp>
-#include <MC/Mob.hpp>
+#include <llapi/mc/ServerPlayer.hpp>
+#include <llapi/mc/SynchedActorData.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/ItemActor.hpp>
+#include <llapi/mc/SimpleContainer.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/Mob.hpp>
 
 
 //////////////////// Class Definition ////////////////////
@@ -321,7 +321,7 @@ Local<Value> EntityClass::isAngry() {
     CATCH("Fail in isAngry!")
 }
 
-#include <MC/CommandUtils.hpp>
+#include <llapi/mc/CommandUtils.hpp>
 Local<Value> EntityClass::getName() {
     try {
         Actor* entity = get();
