@@ -1,4 +1,4 @@
-#include <mc/CommandOutput.hpp>
+#include <llapi/mc/CommandOutput.hpp>
 
 void CommandOutput::addMessage(const std::string& str) {
     this->addMessage(str, {}, (CommandOutputMessageType)0);

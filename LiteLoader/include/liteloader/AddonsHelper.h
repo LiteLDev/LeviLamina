@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "../public/LLAPI.h"
+#include "../llapi/LLAPI.h"
 
 void InitAddonsHelper();
 

@@ -1,22 +1,22 @@
-#include <Loader.h>
+#include <liteloader/Loader.h>
 #include <windows.h>
 #include <filesystem>
 #include <string>
 #include <vector>
 
-#include <LoggerAPI.h>
-#include <PermissionAPI.h>
-#include <PluginManager.h>
-#include <LiteLoader.h>
-#include <Utils/StringHelper.h>
-#include <Utils/WinHelper.h>
-#include <Utils/DbgHelper.h>
-#include <Utils/ShellLinkFile.h>
-#include <LLAPI.h>
-#include <I18nAPI.h>
-#include "Config.h"
-#include "Version.h"
-#include <ParticleAPI.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/PermissionAPI.h>
+#include <liteloader/PluginManager.h>
+#include <liteloader/LiteLoader.h>
+#include <llapi/utils/StringHelper.h>
+#include <llapi/utils/WinHelper.h>
+#include <llapi/Utils/DbgHelper.h>
+#include <llapi/Utils/ShellLinkFile.h>
+#include <llapi/LLAPI.h>
+#include <llapi/I18nAPI.h>
+#include <liteloader/Config.h>
+#include <liteloader/Version.h>
+#include <llapi/ParticleAPI.h>
 #include <ScriptEngine/Main/Configs.h>
 
 using namespace std;

@@ -1,10 +1,10 @@
 #define COMMAND_REGISTRY_EXTRA
-#include <mc/CommandRegistry.hpp>
-#include <mc/CommandParameterData.hpp>
-#include <mc/AvailableCommandsPacket.hpp>
+#include <llapi/mc/CommandRegistry.hpp>
+#include <llapi/mc/CommandParameterData.hpp>
+#include <llapi/mc/AvailableCommandsPacket.hpp>
 #include <vector>
-#include <RegCommandAPI.h>
-#include <LoggerAPI.h>
+#include <llapi/RegCommandAPI.h>
+#include <llapi/LoggerAPI.h>
 static_assert(offsetof(CommandParameterData, options) == 73);
 static_assert(offsetof(CommandParameterData, name) == 16);
 static_assert(offsetof(CommandParameterData, unk56) == 56);
@@ -91,7 +91,7 @@ std::string CommandRegistry::getCommandFullName(std::string const& name) {
     return "";
 }
 
-#include <Config.h>
+#include <liteloader/Config.h>
 bool CommandRegistry::unregisterCommand(std::string const& name) {
     if (!LL::globalConfig.debugMode) {
         logger.error("unregister command is only enabled in debug mode");

@@ -1,10 +1,10 @@
-#include <HookAPI.h>
-#include <LLAPI.h>
-#include <LoggerAPI.h>
-#include <ServerAPI.h>
+#include <llapi/HookAPI.h>
+#include <llapi/LLAPI.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/ServerAPI.h>
 #include <regex>
 #include <string>
-#include "Config.h"
+#include <liteloader/Config.h>
 using namespace std;
 
 Logger serverLogger("Server");

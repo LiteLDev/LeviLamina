@@ -1,14 +1,14 @@
-#include <FormUI.h>
+#include <llapi/FormUI.h>
 #include <memory>
 #include <Nlohmann/fifo_json.hpp>
-#include <Impl/FormPacketHelper.h>
+#include <llapi/Impl/FormPacketHelper.h>
 
-#include <mc/BinaryStream.hpp>
-#include <mc/Packet.hpp>
-#include <mc/ServerPlayer.hpp>
-#include <LiteLoader.h>
+#include <llapi/mc/BinaryStream.hpp>
+#include <llapi/mc/Packet.hpp>
+#include <llapi/mc/ServerPlayer.hpp>
+#include <liteloader/LiteLoader.h>
 #include <utility>
-#include <LLAPI.h>
+#include <llapi/LLAPI.h>
 
 using namespace std;
 

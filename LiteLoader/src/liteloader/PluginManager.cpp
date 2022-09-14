@@ -1,18 +1,18 @@
-#include "PluginManager.h"
-#include <LLAPI.h>
-#include <LoggerAPI.h>
-#include <EventAPI.h>
-#include <ScheduleAPI.h>
-#include <Utils/StringHelper.h>
-#include <Utils/WinHelper.h>
-#include <Utils/STLHelper.h>
-#include <I18nAPI.h>
-#include <mc/Level.hpp>
-#include <mc/Player.hpp>
+#include <liteloader/PluginManager.h>
+#include <llapi/LLAPI.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/EventAPI.h>
+#include <llapi/ScheduleAPI.h>
+#include <llapi/utils/StringHelper.h>
+#include <llapi/utils/WinHelper.h>
+#include <llapi/Utils/STLHelper.h>
+#include <llapi/I18nAPI.h>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/Player.hpp>
 #include <windows.h>
 #include <string>
 #include <unordered_map>
-#include "../../../ScriptEngine/Main/Configs.h"
+#include <ScriptEngine/Main/Configs.h>
 using namespace std;
 
 extern Logger logger;

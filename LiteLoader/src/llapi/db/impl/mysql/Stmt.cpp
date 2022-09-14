@@ -1,8 +1,8 @@
 #include <mysql/mysql.h>
-#include <db/impl/mysql/Stmt.h>
-#include <db/impl/mysql/Session.h>
-#include <Utils/StringReader.h>
-#include <LoggerAPI.h>
+#include <llapi/db/impl/mysql/Stmt.h>
+#include <llapi/db/impl/mysql/Session.h>
+#include <llapi/Utils/StringReader.h>
+#include <llapi/LoggerAPI.h>
 #define Wptr2MySQLSession(x) ((MySQLSession*)x.lock().get())
 #pragma warning(disable : 4267)
 #pragma warning(disable : 26812)

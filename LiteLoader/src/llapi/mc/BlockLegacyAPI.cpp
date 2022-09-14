@@ -1,7 +1,7 @@
-#include <mc/Block.hpp>
-#include <mc/BlockLegacy.hpp>
-#include <mc/BlockSource.hpp>
-#include <mc/ComposterBlock.hpp>
+#include <llapi/mc/Block.hpp>
+#include <llapi/mc/BlockLegacy.hpp>
+#include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/ComposterBlock.hpp>
 Block* BlockLegacy::toBlock(unsigned short tileData) {
     auto* bl = const_cast<Block*>(&getStateFromLegacyData(tileData));
     if (bl && &bl->getLegacyBlock() == (BlockLegacy*)this)

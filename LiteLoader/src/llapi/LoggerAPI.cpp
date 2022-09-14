@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include <LoggerAPI.h>
+#include <llapi/LoggerAPI.h>
 #include "Config.h"
-#include <mc/Player.hpp>
+#include <llapi/mc/Player.hpp>
 #include <unordered_map>
 #include <regex>
 

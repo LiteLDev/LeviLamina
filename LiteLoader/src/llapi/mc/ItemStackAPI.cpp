@@ -6,7 +6,7 @@
 #include "mc/ItemInstance.hpp"
 #include "mc/I18n.hpp"
 #include "mc/PropertiesSettings.hpp"
-#include <mc/CompoundTag.hpp>
+#include <llapi/mc/CompoundTag.hpp>
 #include <string>
 #include <utility>
 #include <vector>
@@ -32,7 +32,7 @@ ItemStack* ItemStack::create(std::unique_ptr<CompoundTag> tag) {
     return item;
 }
 
-#include <mc/ItemRegistry.hpp>
+#include <llapi/mc/ItemRegistry.hpp>
 ItemStack* ItemStack::create(short itemId, int aux, int count) {
     auto item = ItemRegistry::getItem(itemId);
     if (item)

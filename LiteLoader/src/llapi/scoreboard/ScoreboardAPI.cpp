@@ -1,14 +1,14 @@
-#include <mc/DisplayObjective.hpp>
-#include <mc/Objective.hpp>
-#include <mc/ObjectiveCriteria.hpp>
-#include <mc/Player.hpp>
-#include <mc/Scoreboard.hpp>
-#include <mc/ScoreboardId.hpp>
-#include <mc/ScoreboardIdentityRef.hpp>
-#include <mc/ServerScoreboard.hpp>
-#include <mc/setScorePacket.hpp>
-#include <mc/Level.hpp>
-#include <mc/IdentityDefinition.hpp>
+#include <llapi/mc/DisplayObjective.hpp>
+#include <llapi/mc/Objective.hpp>
+#include <llapi/mc/ObjectiveCriteria.hpp>
+#include <llapi/mc/Player.hpp>
+#include <llapi/mc/Scoreboard.hpp>
+#include <llapi/mc/ScoreboardId.hpp>
+#include <llapi/mc/ScoreboardIdentityRef.hpp>
+#include <llapi/mc/ServerScoreboard.hpp>
+#include <llapi/mc/setScorePacket.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/IdentityDefinition.hpp>
 
 LIAPI Objective* Scoreboard::newObjective(const std::string& objname, const std::string& displayName) {
     std::string criteria = "dummy";

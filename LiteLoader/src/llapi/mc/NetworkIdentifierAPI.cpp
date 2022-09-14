@@ -1,5 +1,5 @@
-#include <mc/NetworkIdentifier.hpp>
-#include <mc/RakNet.hpp>
+#include <llapi/mc/NetworkIdentifier.hpp>
+#include <llapi/mc/RakNet.hpp>
 
 string NetworkIdentifier::getIP() {
     string rv = Global<RakNet::RakPeer>->getAdr(*this).ToString(true, ':');

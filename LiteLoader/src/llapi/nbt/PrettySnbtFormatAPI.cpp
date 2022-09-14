@@ -1,5 +1,5 @@
-#include <mc/PrettySnbtFormat.hpp>
-#include <mc/ColorFormat.hpp>
+#include <llapi/mc/PrettySnbtFormat.hpp>
+#include <llapi/mc/ColorFormat.hpp>
 
 #define ForEachTagType(op)    \
     op(Tag::Type::End);       \

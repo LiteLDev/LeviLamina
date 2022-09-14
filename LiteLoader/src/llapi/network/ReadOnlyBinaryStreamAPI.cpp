@@ -1,5 +1,5 @@
-#include <mc/ReadOnlyBinaryStream.hpp>
-#include <mc/CompoundTag.hpp>
+#include <llapi/mc/ReadOnlyBinaryStream.hpp>
+#include <llapi/mc/CompoundTag.hpp>
 
 std::string const& ReadOnlyBinaryStream::getData() const {
     return *pBuf;

@@ -1,11 +1,11 @@
-#include <Utils/NetworkHelper.h>
-#include <LoggerAPI.h>
-#include <LiteLoader.h>
+#include <llapi/Utils/NetworkHelper.h>
+#include <llapi/LoggerAPI.h>
+#include <liteloader/LiteLoader.h>
 #include <httplib/httplib.h>
-#include <Utils/DbgHelper.h>
+#include <llapi/Utils/DbgHelper.h>
 #include <thread>
-#include <I18nAPI.h>
-#include <Config.h>
+#include <llapi/I18nAPI.h>
+#include <liteloader/Config.h>
 
 using namespace std;
 

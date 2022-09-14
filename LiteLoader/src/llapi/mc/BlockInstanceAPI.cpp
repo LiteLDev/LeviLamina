@@ -1,15 +1,15 @@
-#include <Global.h>
-#include <mc/Block.hpp>
-#include <mc/Material.hpp>
-#include <mc/BlockActor.hpp>
-#include <mc/BlockInstance.hpp>
-#include <mc/BlockLegacy.hpp>
-#include <mc/BlockSource.hpp>
-#include <mc/ChestBlockActor.hpp>
-#include <mc/ItemInstance.hpp>
-#include <mc/ItemStack.hpp>
-#include <mc/Level.hpp>
-#include <mc/ItemInstance.hpp>
+#include <llapi/Global.h>
+#include <llapi/mc/Block.hpp>
+#include <llapi/mc/Material.hpp>
+#include <llapi/mc/BlockActor.hpp>
+#include <llapi/mc/BlockInstance.hpp>
+#include <llapi/mc/BlockLegacy.hpp>
+#include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/ChestBlockActor.hpp>
+#include <llapi/mc/ItemInstance.hpp>
+#include <llapi/mc/ItemStack.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/ItemInstance.hpp>
 
 BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID)
 : block(block)
@@ -103,5 +103,5 @@ bool BlockInstance::isNull() {
     return *this == BlockInstance::Null;
 }
 
-#include <mc/VanillaDimensions.hpp>
+#include <llapi/mc/VanillaDimensions.hpp>
 const BlockInstance BlockInstance::Null = BlockInstance(nullptr, BlockPos::MIN, VanillaDimensions::Undefined);

@@ -1,10 +1,10 @@
 #pragma comment(lib, "version")
-#include <Config.h>
-#include <LLAPI.h>
-#include <PluginManager.h>
-#include <Utils/WinHelper.h>
-#include <Utils/StringHelper.h>
-#include <Version.h>
+#include <liteloader/Config.h>
+#include <llapi/LLAPI.h>
+#include <llapi/PluginManager.h>
+#include <llapi/Utils/WinHelper.h>
+#include <llapi/Utils/StringHelper.h>
+#include <liteloader/Version.h>
 #include <filesystem>
 #include <string>
 

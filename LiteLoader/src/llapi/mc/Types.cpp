@@ -1,6 +1,6 @@
-﻿#include <mc/Types.hpp>
-#include <mc/ColorFormat.hpp>
-#include <LoggerAPI.h>
+﻿#include <llapi/mc/Types.hpp>
+#include <llapi/mc/ColorFormat.hpp>
+#include <llapi/LoggerAPI.h>
 
 // ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
 //{

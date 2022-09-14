@@ -1,7 +1,7 @@
 #include "RemoteCallAPI.h"
-#include <LoggerAPI.h>
-#include <Utils/StringHelper.h>
-#include <LLAPI.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/Utils/StringHelper.h>
+#include <llapi/LLAPI.h>
 
 extern Logger logger;
 
@@ -87,8 +87,8 @@ static_assert(RemoteCall::is_supported_type_v<CompoundTag*>);
 
 
 #ifdef DEBUG
-#include <ScheduleAPI.h>
-#include <mc/Player.hpp>
+#include <llapi/ScheduleAPI.h>
+#include <llapi/mc/Player.hpp>
 inline bool testExtra = ([]() {
     std::vector<std::string> input{"aa", "abcd", "test"};
     auto output = RemoteCall::extract<decltype(input)>(RemoteCall::pack(input));
@@ -132,7 +132,7 @@ std::unique_ptr<CompoundTag> TestSimulatedPlayerLL(Player* player) {
 void exportTestSimulatedPlayerLL() {
     RemoteCall::exportAs("TestRemoteCall", "TestSimulatedPlayerLL", TestSimulatedPlayerLL);
 }
-#include <EventAPI.h>
+#include <llapi/EventAPI.h>
 auto TestRemoteCall = ([]() -> bool {
     std::thread([]() {
         Sleep(5000);

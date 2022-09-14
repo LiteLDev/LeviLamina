@@ -3,19 +3,19 @@
 #include <Psapi.h>
 #include <string>
 #include <iostream>
-#include <LoggerAPI.h>
-#include <Utils/StringHelper.h>
-#include <Utils/FileHelper.h>
-#include <Utils/SehTranslator.h>
-#include <ServerAPI.h>
-#include <HookAPI.h>
-#include "Config.h"
-#include "Loader.h"
-#include "CrashLogger.h"
-#include "AddonsHelper.h"
-#include <EventAPI.h>
-#include "Version.h"
-#include "mc/Minecraft.hpp"
+#include <llapi/LoggerAPI.h>
+#include <llapi/utils/StringHelper.h>
+#include <llapi/utils/FileHelper.h>
+#include <llapi/utils/SehTranslator.h>
+#include <llapi/ServerAPI.h>
+#include <llapi/HookAPI.h>
+#include <liteloader/Config.h>
+#include <liteloader/Loader.h>
+#include <liteloader/CrashLogger.h>
+#include <liteloader/AddonsHelper.h>
+#include <llapi/EventAPI.h>
+#include <liteloader/Version.h>
+#include <llapi/mc/Minecraft.hpp>
 #include <csignal>
 
 using namespace std;

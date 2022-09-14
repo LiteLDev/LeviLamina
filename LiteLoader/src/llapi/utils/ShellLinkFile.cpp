@@ -1,6 +1,6 @@
 #include <ShlObj.h>
-#include <Utils/ShellLinkFile.h>
-#include <Utils/StringHelper.h>
+#include <llapi/Utils/ShellLinkFile.h>
+#include <llapi/Utils/StringHelper.h>
 
 void ShellLinkFile::_Init() {
     auto res = ::CoInitialize(nullptr);

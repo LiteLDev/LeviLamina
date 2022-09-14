@@ -1,7 +1,7 @@
-﻿#include <mc/ColorFormat.hpp>
-#include <LoggerAPI.h>
+﻿#include <llapi/mc/ColorFormat.hpp>
+#include <llapi/LoggerAPI.h>
 extern Logger logger;
-#include <mc/Util.hpp>
+#include <llapi/mc/Util.hpp>
 namespace ColorFormat {
 std::unordered_map<std::string, const char*> const colorCodeToConsoleMap = {
     {"§0", "\x1b[38;2;000;000;000m"}, // BLACK

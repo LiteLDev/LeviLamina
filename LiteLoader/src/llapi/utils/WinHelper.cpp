@@ -1,12 +1,12 @@
-#include <Utils/StringHelper.h>
-#include <Utils/WinHelper.h>
-#include <LiteLoader.h>
-#include <Utils/DbgHelper.h>
-#include <LoggerAPI.h>
-#include <I18nAPI.h>
+#include <llapi/Utils/StringHelper.h>
+#include <llapi/Utils/WinHelper.h>
+#include <liteloader/LiteLoader.h>
+#include <llapi/Utils/DbgHelper.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/I18nAPI.h>
 #include <Psapi.h>
 #include <string>
-#include <Config.h>
+#include <liteloader/Config.h>
 #include <Windows.h>
 
 using namespace std;

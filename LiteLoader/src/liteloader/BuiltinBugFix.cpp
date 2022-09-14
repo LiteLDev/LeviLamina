@@ -1,23 +1,23 @@
 ﻿#include <unordered_map>
 
-#include <Config.h>
-#include <LiteLoader.h>
-#include <HookAPI.h>
-#include <LoggerAPI.h>
+#include <liteloader/Config.h>
+#include <liteloader/LiteLoader.h>
+#include <llapi/HookAPI.h>
+#include <llapi/LoggerAPI.h>
 
-#include <mc/InventoryTransactionPacket.hpp>
-#include <mc/NetworkIdentifier.hpp>
-#include <mc/Player.hpp>
-#include <mc/ServerPlayer.hpp>
-#include <mc/ServerNetworkHandler.hpp>
-#include <mc/ClientCacheBlobStatusPacket.hpp>
-#include <mc/BinaryStream.hpp>
-#include <EventAPI.h>
+#include <llapi/mc/InventoryTransactionPacket.hpp>
+#include <llapi/mc/NetworkIdentifier.hpp>
+#include <llapi/mc/Player.hpp>
+#include <llapi/mc/ServerPlayer.hpp>
+#include <llapi/mc/ServerNetworkHandler.hpp>
+#include <llapi/mc/ClientCacheBlobStatusPacket.hpp>
+#include <llapi/mc/BinaryStream.hpp>
+#include <llapi/EventAPI.h>
 
-#include <mc/SharedConstants.hpp>
-#include <mc/PropertiesSettings.hpp>
-#include <mc/ServerPlayer.hpp>
-#include <ScheduleAPI.h>
+#include <llapi/mc/SharedConstants.hpp>
+#include <llapi/mc/PropertiesSettings.hpp>
+#include <llapi/mc/ServerPlayer.hpp>
+#include <llapi/ScheduleAPI.h>
 #include <Windows.h>
 
 using namespace LL;
@@ -70,13 +70,13 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
 }
 
 // Fix abnormal items
-#include <mc/InventorySource.hpp>
-#include <mc/InventoryTransaction.hpp>
-#include <mc/InventoryAction.hpp>
-#include <mc/Level.hpp>
-#include <mc/ElementBlock.hpp>
-#include <mc/IContainerManager.hpp>
-#include <mc/ColorFormat.hpp>
+#include <llapi/mc/InventorySource.hpp>
+#include <llapi/mc/InventoryTransaction.hpp>
+#include <llapi/mc/InventoryAction.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/ElementBlock.hpp>
+#include <llapi/mc/IContainerManager.hpp>
+#include <llapi/mc/ColorFormat.hpp>
 #include <magic_enum/magic_enum.hpp>
 
 inline bool itemMayFromReducer(ItemStack const& item) {
@@ -153,7 +153,7 @@ TInstanceHook(void, "?moveView@Player@@UEAAXXZ",
     original(this);
     movingViewPlayer = nullptr;
 }
-#include <mc/ChunkViewSource.hpp>
+#include <llapi/mc/ChunkViewSource.hpp>
 inline bool Interval(int a1) {
     if (a1 < 0x5ffffff && a1 > -0x5ffffff)
         return true;
@@ -382,8 +382,8 @@ THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAV
     original(a1, self);
 }
 
-#include <mc/LevelChunk.hpp>
-#include <mc/ChunkSource.hpp>
+#include <llapi/mc/LevelChunk.hpp>
+#include <llapi/mc/ChunkSource.hpp>
 
 THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z",
       BlockSource* self, ChunkPos* a2) {

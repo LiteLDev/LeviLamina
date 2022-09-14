@@ -1,7 +1,7 @@
-#include <Global.h>
-#include <mc/Container.hpp>
-#include <mc/ItemStack.hpp>
-#include <mc/Level.hpp>
+#include <llapi/Global.h>
+#include <llapi/mc/Container.hpp>
+#include <llapi/mc/ItemStack.hpp>
+#include <llapi/mc/Level.hpp>
 
 LIAPI std::string Container::getTypeName() {
     // ContainerType type = dAccess<ContainerType>(this, 8); //IDA Container::Container

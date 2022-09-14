@@ -1,4 +1,4 @@
-#include <mc/HitResult.hpp>
+#include <llapi/mc/HitResult.hpp>
 
 FaceID HitResult::getFacing() {
     return dAccess<FaceID>(this, 28);

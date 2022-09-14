@@ -1,11 +1,11 @@
-#include <mc/CompoundTag.hpp>
-#include <mc/Block.hpp>
-#include <mc/BlockActorDataPacket.hpp>
-#include <mc/Dimension.hpp>
-#include <mc/BlockSource.hpp>
-#include <mc/StructureBlockActor.hpp>
-#include <mc/StructureBlockPalette.hpp>
-#include <mc/StructureEditorData.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/Block.hpp>
+#include <llapi/mc/BlockActorDataPacket.hpp>
+#include <llapi/mc/Dimension.hpp>
+#include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/StructureBlockActor.hpp>
+#include <llapi/mc/StructureBlockPalette.hpp>
+#include <llapi/mc/StructureEditorData.hpp>
 
 unsigned int BlockActor::getBlockEntityType(Block* block) {
     return block->getBlockEntityType(); // IDA Block::getBlockEntityType

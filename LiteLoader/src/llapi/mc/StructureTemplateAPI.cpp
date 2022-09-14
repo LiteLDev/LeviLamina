@@ -1,9 +1,9 @@
-#include <mc/CompoundTag.hpp>
-#include <mc/Dimension.hpp>
-#include <mc/Level.hpp>
-#include <mc/StructureSettings.hpp>
-#include <mc/StructureTemplate.hpp>
-#include <mc/StructureTemplateData.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/Dimension.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/StructureSettings.hpp>
+#include <llapi/mc/StructureTemplate.hpp>
+#include <llapi/mc/StructureTemplateData.hpp>
 
 StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag const& tag) {
     StructureTemplate st(name);
@@ -39,7 +39,7 @@ StructureTemplate StructureTemplate::fromWorld(std::string name, int dimID, Bloc
     return st;
 }
 
-#include <mc/BlockPalette.hpp>
+#include <llapi/mc/BlockPalette.hpp>
 bool StructureTemplate::toWorld(int dimID, BlockPos const& p1, Mirror mirror, Rotation rotation) {
     auto& palette = Global<Level>->getBlockPalette();
     auto bs = Level::getBlockSource(dimID);

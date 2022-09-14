@@ -1,25 +1,25 @@
-﻿#include <mc/Actor.hpp>
-#include <mc/Block.hpp>
-#include <mc/BlockActor.hpp>
-#include <mc/ByteArrayTag.hpp>
-#include <mc/ByteTag.hpp>
-#include <mc/CompoundTag.hpp>
-#include <mc/CompoundTagVariant.hpp>
-#include <mc/DoubleTag.hpp>
-#include <mc/FloatTag.hpp>
-#include <mc/Int64Tag.hpp>
-#include <mc/IntArrayTag.hpp>
-#include <mc/IntTag.hpp>
-#include <mc/ItemStack.hpp>
-#include <mc/ListTag.hpp>
-#include <mc/NbtIo.hpp>
-#include <mc/Player.hpp>
-#include <mc/ServerPlayer.hpp>
-#include <mc/ShortTag.hpp>
-#include <mc/EndTag.hpp>
-#include <mc/StringTag.hpp>
-#include <mc/Tag.hpp>
-#include <I18nAPI.h>
+﻿#include <llapi/mc/Actor.hpp>
+#include <llapi/mc/Block.hpp>
+#include <llapi/mc/BlockActor.hpp>
+#include <llapi/mc/ByteArrayTag.hpp>
+#include <llapi/mc/ByteTag.hpp>
+#include <llapi/mc/CompoundTag.hpp>
+#include <llapi/mc/CompoundTagVariant.hpp>
+#include <llapi/mc/DoubleTag.hpp>
+#include <llapi/mc/FloatTag.hpp>
+#include <llapi/mc/Int64Tag.hpp>
+#include <llapi/mc/IntArrayTag.hpp>
+#include <llapi/mc/IntTag.hpp>
+#include <llapi/mc/ItemStack.hpp>
+#include <llapi/mc/ListTag.hpp>
+#include <llapi/mc/NbtIo.hpp>
+#include <llapi/mc/Player.hpp>
+#include <llapi/mc/ServerPlayer.hpp>
+#include <llapi/mc/ShortTag.hpp>
+#include <llapi/mc/EndTag.hpp>
+#include <llapi/mc/StringTag.hpp>
+#include <llapi/mc/Tag.hpp>
+#include <llapi/I18nAPI.h>
 #include <map>
 #include <nbt-cpp/nbt.hpp>
 #include <sstream>
@@ -186,7 +186,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBlockActor(BlockActor* blockActor)
 using namespace nbt;
 using namespace std;
 
-#include <LoggerAPI.h>
+#include <llapi/LoggerAPI.h>
 extern Logger logger;
 
 inline void OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat, std::string const& functionName) {
@@ -328,7 +328,7 @@ std::vector<std::unique_ptr<CompoundTag>> CompoundTag::nbtListFromBinary(std::st
 #pragma region To Network NBT
 
 //////////////////// To Network ////////////////////
-#include <mc/BinaryStream.hpp>
+#include <llapi/mc/BinaryStream.hpp>
 std::string CompoundTag::toNetworkNBT() const {
     BinaryStream bs;
     bs.writeCompoundTag(*this);
@@ -1150,7 +1150,7 @@ string CompoundTag::toSNBT(int indent, SnbtFormat snbtFormat) {
 #pragma endregion
 
 #pragma region To Pretty SNBT
-#include <mc/PrettySnbtFormat.hpp>
+#include <llapi/mc/PrettySnbtFormat.hpp>
 
 void __appendPrettyString(std::ostringstream& oss, std::string const& str, PrettySnbtFormat const& format) {
     for (auto& c : str) {

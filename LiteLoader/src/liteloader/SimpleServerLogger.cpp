@@ -1,10 +1,10 @@
-#include <LoggerAPI.h>
-#include <mc/ServerPlayer.hpp>
-#include <EventAPI.h>
-#include <Config.h>
-#include <mc/ItemStack.hpp>
-#include <mc/CommandParameterData.hpp>
-#include <mc/CommandRegistry.hpp>
+#include <llapi/LoggerAPI.h>
+#include <llapi/mc/ServerPlayer.hpp>
+#include <llapi/EventAPI.h>
+#include <liteloader/Config.h>
+#include <llapi/mc/ItemStack.hpp>
+#include <llapi/mc/CommandParameterData.hpp>
+#include <llapi/mc/CommandRegistry.hpp>
 #include <magic_enum/magic_enum.hpp>
 using namespace Event;
 

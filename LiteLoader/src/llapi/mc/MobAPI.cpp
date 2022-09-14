@@ -1,9 +1,9 @@
 //#include "MobAPI.h"
-#include <Global.h>
-#include <mc/Actor.hpp>
-#include <mc/Mob.hpp>
-#include <mc/ActorDefinitionIdentifier.hpp>
-#include <mc/PathNavigation.hpp>
+#include <llapi/Global.h>
+#include <llapi/mc/Actor.hpp>
+#include <llapi/mc/Mob.hpp>
+#include <llapi/mc/ActorDefinitionIdentifier.hpp>
+#include <llapi/mc/PathNavigation.hpp>
 
 bool Mob::refreshInventory() {
     sendInventory(true);

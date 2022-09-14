@@ -1,7 +1,7 @@
-#include "Global.h"
-#include <Config.h>
-#include <mc/CommandParameterData.hpp>
-#include <LoggerAPI.h>
+#include <llapi/Global.h>
+#include <liteloader/Config.h>
+#include <llapi/mc/CommandParameterData.hpp>
+#include <llapi/LoggerAPI.h>
 /////////////////// Built in UnlockCmd ///////////////////
 
 bool isUnlockCmdEnabled = true;

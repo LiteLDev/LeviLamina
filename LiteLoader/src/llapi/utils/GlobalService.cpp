@@ -1,14 +1,14 @@
-#include <Global.h>
-#include <mc/Level.hpp>
-#include <mc/Minecraft.hpp>
-#include <mc/ServerNetworkHandler.hpp>
-#include <mc/MinecraftCommands.hpp>
-#include <mc/DBStorage.hpp>
-#include <mc/RakNetServerLocator.hpp>
-#include <mc/RakNet.hpp>
-#include <mc/Scoreboard.hpp>
-#include <mc/AllowListFile.hpp>
-#include <GlobalServiceAPI.h>
+#include <llapi/Global.h>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/Minecraft.hpp>
+#include <llapi/mc/ServerNetworkHandler.hpp>
+#include <llapi/mc/MinecraftCommands.hpp>
+#include <llapi/mc/DBStorage.hpp>
+#include <llapi/mc/RakNetServerLocator.hpp>
+#include <llapi/mc/RakNet.hpp>
+#include <llapi/mc/Scoreboard.hpp>
+#include <llapi/mc/AllowListFile.hpp>
+#include <llapi/GlobalServiceAPI.h>
 
 // Minecraft
 TInstanceHook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft) {
@@ -83,7 +83,7 @@ TInstanceHook(void*, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer) {
     return original(this);
 }
 // Scoreboard
-#include <mc/CommandSoftEnumRegistry.hpp>
+#include <llapi/mc/CommandSoftEnumRegistry.hpp>
 TInstanceHook(Scoreboard*, "??0ServerScoreboard@@QEAA@VCommandSoftEnumRegistry@@PEAVLevelStorage@@@Z",
               Scoreboard, void** a2, class LevelStorage* a3) {
     Scoreboard* sc = original(this, a2, a3);

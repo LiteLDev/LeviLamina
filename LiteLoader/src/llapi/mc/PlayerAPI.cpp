@@ -1,45 +1,45 @@
-﻿#include <mc/Minecraft.hpp>
+﻿#include <llapi/mc/Minecraft.hpp>
 
-#include <mc/Actor.hpp>
-#include <mc/Mob.hpp>
-#include <mc/Player.hpp>
-#include <mc/ServerPlayer.hpp>
+#include <llapi/mc/Actor.hpp>
+#include <llapi/mc/Mob.hpp>
+#include <llapi/mc/Player.hpp>
+#include <llapi/mc/ServerPlayer.hpp>
 
-#include <mc/Certificate.hpp>
-#include <mc/CompoundTag.hpp>
+#include <llapi/mc/Certificate.hpp>
+#include <llapi/mc/CompoundTag.hpp>
 
-#include <mc/NetworkHandler.hpp>
-#include <mc/ServerNetworkHandler.hpp>
-#include <mc/NetworkIdentifier.hpp>
-#include <mc/NetworkPeer.hpp>
-#include <mc/ToastRequestPacket.hpp>
+#include <llapi/mc/NetworkHandler.hpp>
+#include <llapi/mc/ServerNetworkHandler.hpp>
+#include <llapi/mc/NetworkIdentifier.hpp>
+#include <llapi/mc/NetworkPeer.hpp>
+#include <llapi/mc/ToastRequestPacket.hpp>
 
-#include <mc/ExtendedCertificate.hpp>
-#include <mc/ConnectionRequest.hpp>
-#include <mc/MinecraftPackets.hpp>
-#include <mc/CommandRequestPacket.hpp>
-#include <mc/TextPacket.hpp>
-#include <mc/ScorePacketInfo.hpp>
-#include <mc/BinaryStream.hpp>
-#include <mc/TransferPacket.hpp>
+#include <llapi/mc/ExtendedCertificate.hpp>
+#include <llapi/mc/ConnectionRequest.hpp>
+#include <llapi/mc/MinecraftPackets.hpp>
+#include <llapi/mc/CommandRequestPacket.hpp>
+#include <llapi/mc/TextPacket.hpp>
+#include <llapi/mc/ScorePacketInfo.hpp>
+#include <llapi/mc/BinaryStream.hpp>
+#include <llapi/mc/TransferPacket.hpp>
 
-#include <mc/Level.hpp>
-#include <mc/ItemStack.hpp>
-#include <mc/Container.hpp>
-#include <mc/SimpleContainer.hpp>
-#include <mc/Scoreboard.hpp>
-#include <mc/PlaySoundPacket.hpp>
-#include <mc/SetDisplayObjectivePacket.hpp>
-#include <mc/Block.hpp>
-#include <mc/AttributeInstance.hpp>
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/ItemStack.hpp>
+#include <llapi/mc/Container.hpp>
+#include <llapi/mc/SimpleContainer.hpp>
+#include <llapi/mc/Scoreboard.hpp>
+#include <llapi/mc/PlaySoundPacket.hpp>
+#include <llapi/mc/SetDisplayObjectivePacket.hpp>
+#include <llapi/mc/Block.hpp>
+#include <llapi/mc/AttributeInstance.hpp>
 
-#include <Impl/ObjectivePacketHelper.h>
-#include <Impl/FormPacketHelper.h>
-#include <EventAPI.h>
+#include <llapi/Impl/ObjectivePacketHelper.h>
+#include <llapi/Impl/FormPacketHelper.h>
+#include <llapi/EventAPI.h>
 #include <bitset>
-#include <mc/ItemStackDescriptor.hpp>
-#include <mc/NetworkItemStackDescriptor.hpp>
-#include <mc/ToastRequestPacket.hpp>
+#include <llapi/mc/ItemStackDescriptor.hpp>
+#include <llapi/mc/NetworkItemStackDescriptor.hpp>
+#include <llapi/mc/ToastRequestPacket.hpp>
 
 extern Logger logger;
 
@@ -80,7 +80,7 @@ string Player::getIP() {
     return getNetworkIdentifier()->getIP();
 }
 
-#include <mc/Localization.hpp>
+#include <llapi/mc/Localization.hpp>
 string Player::getLanguageCode() {
     if (isSimulatedPlayer()) {
         return I18n::getCurrentLanguage()->getFullLanguageCode();
@@ -252,10 +252,10 @@ bool Player::setNbt(CompoundTag* nbt) {
     nbt->setPlayer(this);
     return true;
 }
-#include <mc/Attribute.hpp>
-#include <mc/AttributeInstance.hpp>
-#include <mc/HashedString.hpp>
-#include <SendPacketAPI.h>
+#include <llapi/mc/Attribute.hpp>
+#include <llapi/mc/AttributeInstance.hpp>
+#include <llapi/mc/HashedString.hpp>
+#include <llapi/SendPacketAPI.h>
 bool Player::refreshAttribute(class Attribute const& attribute) {
     return refreshAttributes({&attribute});
 }
@@ -590,7 +590,7 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
     return true;
 }
 
-#include <SendPacketAPI.h>
+#include <llapi/SendPacketAPI.h>
 bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const {
     BinaryStream wp;
     wp.writeVarInt64(runtimeID);                                // RuntimeId
@@ -724,7 +724,7 @@ bool Player::sendCommandRequestPacket(const string& cmd) {
 bool Player::sendTextTalkPacket(const string& msg) {
     return sendTextTalkPacket(msg, nullptr);
 }
-#include <Utils/DbgHelper.h>
+#include <llapi/Utils/DbgHelper.h>
 bool Player::sendTextTalkPacket(const string& msg, Player* target) {
     auto packet = TextPacket::createChat(getName(), msg, getXuid(), "");
     if (target == nullptr) {

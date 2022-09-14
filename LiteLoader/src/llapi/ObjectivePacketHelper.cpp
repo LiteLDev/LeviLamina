@@ -1,5 +1,5 @@
 #include <set>
-#include <Impl/ObjectivePacketHelper.h>
+#include <llapi/Impl/ObjectivePacketHelper.h>
 std::set<uint64_t> scoreIds;
 
 #define RAND_SCORE_ID() (uint64_t)((rand() << 16) + rand() + 1145140)

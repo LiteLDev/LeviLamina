@@ -1,9 +1,9 @@
 #include <filesystem>
-#include <LoggerAPI.h>
-#include <GlobalServiceAPI.h>
-#include <AllowListAPI.h>
-#include <Utils/FileHelper.h>
-#include <mc/AllowListFile.hpp>
+#include <llapi/LoggerAPI.h>
+#include <llapi/GlobalServiceAPI.h>
+#include <llapi/AllowListAPI.h>
+#include <llapi/Utils/FileHelper.h>
+#include <llapi/mc/AllowListFile.hpp>
 #pragma warning(disable : 26812)
 
 Logger allowListLogger("AllowList");
