@@ -13,11 +13,6 @@
 #undef BEFORE_EXTRA
 
 /**
- * \~chinese
- * @brief 记分项
- * 
- * 
- * \~english
  * @brief The scoreboard objective
  *
  */
@@ -27,15 +22,6 @@ class Objective {
 // Add Member There
 public:
     /**
-     * \~chinese
-     * @brief 设置记分项显示方式。
-     * 
-     * @param slotName 显示位置（暂停菜单右侧列表：`list` ；侧边栏： `sidebar` ；名字条下方： `belowName` ）
-     * @param sort 排序方式
-     * @return 若成功设置则为真；否则为假。
-     * 
-     * 
-     * \~english
      * @brief Set the display mode of the objective.
      * 
      * @param slotName The display position (The right of the escape menu: `list` ; The sidebar: `sidebar` ; Below the name bar: `belowName` )

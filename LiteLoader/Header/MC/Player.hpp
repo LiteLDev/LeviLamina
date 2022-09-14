@@ -24,11 +24,6 @@ class CompoundTag;
 #undef BEFORE_EXTRA
 
 /**
- * \~chinese
- * @brief 玩家
- *
- * 
- * \~english
  * @brief The player
  */
 class Player : public Mob {
@@ -46,15 +41,6 @@ public:
     LIAPI std::string getName();
 
     /**
-     * \~chinese
-     * @brief 获取此玩家的真实名字。
-     * 
-     * @return 此玩家的真实名字
-     * 
-     * @note 此方法得到的是玩家的XBOX账户名。
-     * 
-     * 
-     * \~english
      * @brief Get the real name of the player.
      * 
      * @return The real name of the player
@@ -125,14 +111,6 @@ public:
     LIAPI bool talkAs(const string& msg);
 
     /**
-     * \~chinese
-     * @brief 给予此玩家物品。
-     * 
-     * @param item 被给予的物品
-     * @return 若成功给予则为真；否则为假
-     * 
-     * 
-     * \~english
      * @brief Give the player items.
      * 
      * @param item The items to give
@@ -168,18 +146,6 @@ public:
     LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW) const;
 
     /**
-     * \~chinese
-     * @brief 在此玩家界面显示标题。
-     * 
-     * @param text 标题的文字内容
-     * @param Type 标题类型
-     * @param FadeInDuration 标题淡入时长
-     * @param RemainDuration 标题持续时长
-     * @param FadeOutDuration 标题淡出时长
-     * @return 若成功显示标题，则为真；否则为假
-     * 
-     * 
-     * \~english
      * @brief Display a title on the player's screen.
      * 
      * @param text The texts of the title
