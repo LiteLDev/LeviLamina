@@ -14,22 +14,23 @@ endif ()
 
 set(SCRIPTENGINE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
-file(GLOB_RECURSE SRC_FILES
-        ${SCRIPTENGINE_DIR}/src/Main/*.cpp
-        ${SCRIPTENGINE_DIR}/src/Main/*.hpp
-        ${SCRIPTENGINE_DIR}/src/Main/*.h
-        ${SCRIPTENGINE_DIR}/src/API/*.cpp
-        ${SCRIPTENGINE_DIR}/src/API/*.hpp
-        ${SCRIPTENGINE_DIR}/src/API/*.h
-        ${SCRIPTENGINE_DIR}/src/Engine/*.cpp
-        ${SCRIPTENGINE_DIR}/src/Engine/*.hpp
-        ${SCRIPTENGINE_DIR}/src/Engine/*.h
-        ${SCRIPTENGINE_DIR}/src/Tools/*.cpp
-        ${SCRIPTENGINE_DIR}/src/Tools/*.hpp
-        ${SCRIPTENGINE_DIR}/src/Tools/*.h
-        ${SCRIPTENGINE_DIR}/src/Resource/*.rc
-        ${SCRIPTENGINE_DIR}/src/Resource/*.h
-        )
+file(
+        GLOB_RECURSE SRC_FILES
+        ${SCRIPTENGINE_DIR}/src/main/*.cpp
+        ${SCRIPTENGINE_DIR}/src/main/*.hpp
+        ${SCRIPTENGINE_DIR}/src/main/*.h
+        ${SCRIPTENGINE_DIR}/src/api/*.cpp
+        ${SCRIPTENGINE_DIR}/src/api/*.hpp
+        ${SCRIPTENGINE_DIR}/src/api/*.h
+        ${SCRIPTENGINE_DIR}/src/engine/*.cpp
+        ${SCRIPTENGINE_DIR}/src/engine/*.hpp
+        ${SCRIPTENGINE_DIR}/src/engine/*.h
+        ${SCRIPTENGINE_DIR}/src/utils/*.cpp
+        ${SCRIPTENGINE_DIR}/src/utils/*.hpp
+        ${SCRIPTENGINE_DIR}/src/utils/*.h
+        ${SCRIPTENGINE_DIR}/src/res/*.rc
+        ${SCRIPTENGINE_DIR}/src/res/*.h
+)
 
 add_definitions(
         -DCPPHTTPLIB_OPENSSL_SUPPORT -DNDEBUG -D_CONSOLE -D_AMD64_
