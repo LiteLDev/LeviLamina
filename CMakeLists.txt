@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.21)
 project(LiteLoaderBDS)
 
+set(LiteLoader_SOURCE_DIR ${CMAKE_SOURCE_DIR}/LiteLoader)
+set(Demangler_SOURCE_DIR ${CMAKE_SOURCE_DIR}/Tools/Demangler)
 set(SCRIPTENGINE_SOURCE_DIR ${CMAKE_SOURCE_DIR}/ScriptEngine)
 set(SCRIPTX_SOURCE_DIR ${CMAKE_SOURCE_DIR}/ScriptX)
 

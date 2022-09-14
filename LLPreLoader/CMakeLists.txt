@@ -18,8 +18,9 @@ add_link_options(
 
 aux_source_directory(${PROJECT_SOURCE_DIR}/third-party/rawpdb DIR_LIB_SRCS)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src PROJECT_SRCS)
+aux_source_directory(${PROJECT_SOURCE_DIR}/include PROJECT_INCLUDES)
 
-add_library(LLPreLoader SHARED ${PROJECT_SRCS} ${DIR_LIB_SRCS})
+add_library(LLPreLoader SHARED ${PROJECT_INCLUDES} ${PROJECT_SRCS} ${DIR_LIB_SRCS})
 target_link_libraries(
         LLPreLoader SymDBHelper Demangler
         "${LiteLoader_SOURCE_DIR}/third-party/lib/detours/detours.lib"
@@ -27,8 +28,7 @@ target_link_libraries(
 
 target_include_directories(
         LLPreLoader
-        PRIVATE ${LiteLoader_SOURCE_DIR}/include/
-        PRIVATE ${LiteLoader_SOURCE_DIR}/include/
+        PRIVATE ${LiteLoader_SOURCE_DIR}/include
         PRIVATE ${LiteLoader_SOURCE_DIR}/third-party/include
         PRIVATE ${PROJECT_SOURCE_DIR}/include
         PRIVATE ${PROJECT_SOURCE_DIR}/third-party
