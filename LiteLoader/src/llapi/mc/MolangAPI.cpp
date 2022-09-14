@@ -18,7 +18,7 @@
 //      //     }
 
 
-#include "Global.h"
+#include <llapi/Global.h>
 #include <llapi/mc/ExpressionNode.hpp>
 #include <llapi/mc/Actor.hpp>
 #include <llapi/mc/MolangScriptArg.hpp>

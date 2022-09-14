@@ -6,7 +6,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 add_definitions(-D"NDEBUG" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"UNICODE")
 
-include_directories(${LiteLoader_SOURCE_DIR}/include/public)
+include_directories(${LiteLoader_SOURCE_DIR}/include/)
 include_directories(${LiteLoader_SOURCE_DIR}/third-party/include)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/third-party)

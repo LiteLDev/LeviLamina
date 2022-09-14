@@ -2250,7 +2250,7 @@ TInstanceHook(Mob*, "?spawnMob@Spawner@@QEAAPEAVMob@@AEAVBlockSource@@AEBUActorD
     return original(this, a2, a3, a4, a5, a6, a7, a8);
 }
 
-#include "Impl/FormPacketHelper.h"
+#include <llapi/Impl/FormPacketHelper.h>
 #include <llapi/mc/Json.hpp>
 ////////////// FormResponsePacket //////////////
 

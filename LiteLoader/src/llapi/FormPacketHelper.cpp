@@ -4,9 +4,9 @@
 #include <llapi/I18nAPI.h>
 
 #include <llapi/Impl/FormPacketHelper.h>
-#include <llapi/Nlohmann/fifo_json.hpp>
+#include <Nlohmann/fifo_json.hpp>
 #include <llapi/Utils/DbgHelper.h>
-#include <llapi/LiteLoader.h>
+#include <liteloader/LiteLoader.h>
 
 #include <llapi/mc/ServerNetworkHandler.hpp>
 #include <llapi/mc/NetworkIdentifier.hpp>

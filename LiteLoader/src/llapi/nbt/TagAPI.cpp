@@ -1,4 +1,4 @@
-#include "Global.h"
+#include <llapi/Global.h>
 #include <llapi/mc/ByteArrayTag.hpp>
 #include <llapi/mc/ByteTag.hpp>
 #include <llapi/mc/CompoundTag.hpp>

@@ -11,8 +11,8 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "ItemStackNetIdVariant.hpp"
-#include "mc/I18n.hpp"
-#include "mc/PropertiesSettings.hpp"
+#include "I18n.hpp"
+#include "PropertiesSettings.hpp"
 class Tag;
 class ItemActor;
 class CompoundTag;

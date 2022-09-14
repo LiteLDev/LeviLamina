@@ -1,4 +1,4 @@
-#include "Global.h"
+#include <llapi/Global.h>
 #include <llapi/mc/ItemActor.hpp>
 
 ItemStack* ItemActor::getItemStack() {

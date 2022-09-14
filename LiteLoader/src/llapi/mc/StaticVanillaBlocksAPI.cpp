@@ -1,7 +1,7 @@
-#include "mc/StaticVanillaBlocks.hpp"
-#include "mc/BlockTypeRegistry.hpp"
-#include "mc/HashedString.hpp"
-#include "mc/VanillaBlockTypeIds.hpp"
+#include <llapi/mc/StaticVanillaBlocks.hpp>
+#include <llapi/mc/BlockTypeRegistry.hpp>
+#include <llapi/mc/HashedString.hpp>
+#include <llapi/mc/VanillaBlockTypeIds.hpp>
 
 namespace StaticVanillaBlocks {
 

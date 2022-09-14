@@ -1,10 +1,10 @@
 //
 // Created by OEOTYAN on 2022/08/27.
 //
-#include "ParticleAPI.h"
-#include "mc/Player.hpp"
-#include "mc/Dimension.hpp"
-#include "mc/Level.hpp"
+#include "llapi/ParticleAPI.h"
+#include "llapi/mc/Player.hpp"
+#include "llapi/mc/Dimension.hpp"
+#include "llapi/mc/Level.hpp"
 #include <llapi/mc/ResourcePackRepository.hpp>
 #include <llapi/mc/ResourcePackStack.hpp>
 #include <llapi/EventAPI.h>

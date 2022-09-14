@@ -5,7 +5,7 @@
 #pragma once
 
 #include <llapi/LoggerAPI.h>
-#include "Config.h"
+#include <liteloader/Config.h>
 #include <llapi/mc/Player.hpp>
 #include <unordered_map>
 #include <regex>

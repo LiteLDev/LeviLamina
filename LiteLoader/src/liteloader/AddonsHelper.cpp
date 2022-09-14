@@ -48,7 +48,7 @@ inline bool isManifestFile(std::string const& filename) {
     return filename == "manifest.json" || filename == "pack_manifest.json";
 }
 
-#include <mc/JsonHelpers.hpp>
+#include <llapi/mc/JsonHelpers.hpp>
 inline std::string FixMojangJson(std::string const& content) {
     Json::Value value;
     JsonHelpers::parseJson(content, value);

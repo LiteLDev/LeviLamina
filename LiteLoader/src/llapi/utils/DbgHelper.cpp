@@ -1,6 +1,6 @@
 ﻿#include <llapi/Utils/DbgHelper.h>
 #include <windows.h>
-#include <llapi/dbghelp/dbghelp.h>
+#include <dbghelp/dbghelp.h>
 #include <llapi/Utils/WinHelper.h>
 #include <llapi/Utils/StringHelper.h>
 #include <liteloader/Config.h>
