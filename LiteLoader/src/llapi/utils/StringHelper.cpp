@@ -98,11 +98,11 @@ std::string FixCurlyBracket(std::string str) {
     return str;
 }
 
-
+#ifdef __cpp_lib_char8_t
 LIAPI std::string UTF82String(std::u8string str) {
     return reinterpret_cast<std::string&>(str);
 }
-
+#endif
 LIAPI std::string UTF82String(std::string str) {
     return str;
 }

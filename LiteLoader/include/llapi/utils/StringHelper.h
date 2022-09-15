@@ -26,11 +26,10 @@ LIAPI bool EndsWith(const std::string& str, const std::string& end);
 // "hello {Jim}" -> "hello {{Jim}}"  (for FMT bug)
 LIAPI std::string FixCurlyBracket(std::string str);
 
-#if _HAS_CXX20
+#ifdef __cpp_lib_char8_t
 LIAPI std::string UTF82String(std::u8string str);
-#else
-LIAPI std::string UTF82String(std::string str);
 #endif
+LIAPI std::string UTF82String(std::string str);
 /**
  * @brief Integer to hex string.
  *

@@ -64,13 +64,13 @@ struct LLConfig {
     std::vector<std::string> outputFilterRegex = {};
 };
 
-struct LLRuntimConfig {
+struct LLRuntimeConfig {
     LLServerStatus serverStatus = LLServerStatus::Starting;
     std::thread::id tickThreadId;
 };
 
 LIAPI extern LLConfig globalConfig;
-LIAPI extern LLRuntimConfig globalRuntimeConfig;
+LIAPI extern LLRuntimeConfig globalRuntimeConfig;
 LIAPI extern CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf);

@@ -1,3 +1,7 @@
+#include <filesystem>
+#include <set>
+#include <utility>
+#include <vector>
 #include <liteloader/AddonsHelper.h>
 #include <liteloader/Config.h>
 #include <llapi/EventAPI.h>
@@ -15,9 +19,6 @@
 #include <Nlohmann/json.hpp>
 #include <llapi/LoggerAPI.h>
 #include <llapi/I18nAPI.h>
-#include <filesystem>
-#include <set>
-#include <vector>
 #include <llapi/mc/ColorFormat.hpp>
 #include <magic_enum/magic_enum.hpp>
 using namespace std;
@@ -55,7 +56,7 @@ inline std::string FixMojangJson(std::string const& content) {
     return JsonHelpers::serialize(value);
 }
 
-std::optional<Addon> parseAddonFromPath(std::filesystem::path addonPath) {
+std::optional<Addon> parseAddonFromPath(const std::filesystem::path& addonPath) {
     try {
         auto manifestPath = addonPath;
         manifestPath.append("manifest.json");
@@ -179,7 +180,7 @@ bool AddAddonToList(Addon& addon) {
         return false;
     }
 }
-bool InstallAddonToLevel(std::string addonDir, std::string addonName) {
+bool InstallAddonToLevel(const std::string& addonDir, const std::string& addonName) {
     auto addon = parseAddonFromPath(str2wstr(addonDir));
     if (!addon.has_value())
         return false;
@@ -213,14 +214,16 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName) {
     return AddAddonToList(*addon);
 }
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "misc-no-recursion"
 void FindManifest(vector<string>& result, const string& path) {
     filesystem::directory_iterator ent(str2wstr(path));
 
     bool foundManifest = false;
     for (auto& file : ent) {
-        auto path = file.path();
-        if (isManifestFile(UTF82String(path.filename().u8string()))) {
-            result.push_back(UTF82String(filesystem::canonical(path).parent_path().u8string()));
+        const auto& file_path = file.path();
+        if (isManifestFile(UTF82String(file_path.filename().u8string()))) {
+            result.push_back(UTF82String(filesystem::canonical(file_path).parent_path().u8string()));
             foundManifest = true;
             break;
         }
@@ -234,8 +237,8 @@ void FindManifest(vector<string>& result, const string& path) {
                     FindManifest(result, UTF82String(file.path().u8string()));
         }
     }
-    return;
 }
+#pragma clang diagnostic pop
 
 std::string Addon::getPrintName() const {
     if (LL::globalConfig.colorLog)
@@ -371,7 +374,7 @@ std::vector<Addon*> AddonsManager::getAllAddons() {
     return res;
 }
 
-Addon* AddonsManager::findAddon(std::string nameOrUuid, bool fuzzy) {
+Addon* AddonsManager::findAddon(const std::string& nameOrUuid, bool fuzzy) {
     Addon* possible = nullptr;
     bool multiMatch = false;
     for (auto& addon : addons) {
@@ -454,7 +457,6 @@ class AddonsCommand : public Command {
     bool index_isSet = false;
 
     inline Addon* getSelectedAddon(CommandOutput& output) const {
-        Addon* addon = nullptr;
         if (target_isSet) {
             auto addon = AddonsManager::findAddon(target, true);
             if (addon) {
