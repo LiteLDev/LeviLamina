@@ -184,16 +184,6 @@ public:
 namespace std {
 
 template <>
-inline const BlockPos& max<BlockPos>(const BlockPos& a, const BlockPos& b) {
-    return {std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z)};
-}
-
-template <>
-inline const BlockPos& min<BlockPos>(const BlockPos& a, const BlockPos& b) {
-    return {std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z)};
-}
-
-template <>
 struct hash<BlockPos> {
     std::size_t operator()(BlockPos const& pos) const noexcept {
         //??$hash3@HHH@Math@mce@@SA_KAEBH00@Z

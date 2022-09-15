@@ -16,3 +16,5 @@
 # Misc
 LiteLoaderSDK/
 /output/
+/.cache/
+/out/

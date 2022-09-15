@@ -22,7 +22,7 @@ using script::Value;
 using script::ValueKind;
 
 #include "../main/Global.hpp"
-#include "../Engine/EngineOwnData.h"
+#include "../engine/EngineOwnData.h"
 #include "../utils/JsonHelper.h"
 #include <llapi/mc/Level.hpp>
 #include <string>
