@@ -123,7 +123,7 @@ mc.listen("onServerStarted", () => {
 #### 安装脚本(Ubuntu)
 
 ```
-wget https://github.com/LiteLDev/LiteLoaderBDS/raw/beta/Scripts/install.sh
+wget https://github.com/LiteLDev/LiteLoaderBDS/raw/beta/scripts/install.sh
 chmod +x install.sh
 ./install.sh
 ```
