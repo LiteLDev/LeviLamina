@@ -1,21 +1,22 @@
 ﻿# Visual Studio related
-/.vs/
+/.vs
 /CMakeSettings.json
+/out
 
 # Visual Studio Code related
-/.vscode/
+/.vscode
+/build
 
 # Idea related
-.idea/**
-
-# Build related
-/build
-/.cache/
-/out/
+/.idea
 /cmake-build-*
 
+# Build related
 **/bedrock_server_api.lib
 **/bedrock_server_var.lib
 
 # Misc
-LiteLoaderSDK/
+/LiteLoaderSDK
+
+# Clangd cache
+/.cache
