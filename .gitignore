@@ -10,11 +10,12 @@
 
 # Build related
 /build
+/.cache/
+/out/
+/cmake-build-*
+
 **/bedrock_server_api.lib
 **/bedrock_server_var.lib
 
 # Misc
 LiteLoaderSDK/
-/output/
-/.cache/
-/out/
