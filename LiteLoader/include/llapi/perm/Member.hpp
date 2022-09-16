@@ -8,7 +8,7 @@
 #pragma once
 #include "Foundation.hpp"
 
-namespace PERM {
+namespace ll::perm {
 
     using Members = PermVector<xuid_t>;
 

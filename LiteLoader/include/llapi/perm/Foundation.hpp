@@ -9,7 +9,7 @@
 #pragma once
 #include "../Global.h"
 
-namespace PERM {
+namespace ll::perm {
 
 
     template <typename T>

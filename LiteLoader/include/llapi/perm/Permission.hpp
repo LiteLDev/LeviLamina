@@ -10,7 +10,7 @@
 #include <Nlohmann/json.hpp>
 #include "Foundation.hpp"
 
-namespace PERM {
+namespace ll::perm {
 
 
     struct PermInstance {

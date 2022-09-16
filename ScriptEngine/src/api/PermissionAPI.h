@@ -4,9 +4,9 @@
 
 class RoleClass : public ScriptClass {
 
-    std::weak_ptr<PERM::Role> role;
+    std::weak_ptr<ll::perm::Role> role;
 
-    inline std::shared_ptr<PERM::Role> lock() {
+    inline std::shared_ptr<ll::perm::Role> lock() {
         if (role.expired()) {
             throw Exception("Role pointer expired!");
         }
@@ -14,9 +14,9 @@ class RoleClass : public ScriptClass {
     }
 
 public:
-    RoleClass(const Local<Object>& scriptObj, std::weak_ptr<PERM::Role> role);
+    RoleClass(const Local<Object>& scriptObj, std::weak_ptr<ll::perm::Role> role);
 
-    RoleClass(std::weak_ptr<PERM::Role> role);
+    RoleClass(std::weak_ptr<ll::perm::Role> role);
 
     static RoleClass* constructor(const Arguments& args);
 

@@ -10,7 +10,7 @@
 #include "Member.hpp"
 #include "Permission.hpp"
 
-namespace PERM {
+namespace ll::perm {
 
 
     class Role {
