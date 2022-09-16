@@ -74,13 +74,14 @@ public:
                 }
     }
 
-    inline BoundingBox merge(BoundingBox const& a) {
-        return BoundingBox(std::min(a.min, min), std::max(a.max, max));
-    }
+    // TODO: remove this
+    // inline BoundingBox merge(BoundingBox const& a) {
+    //     return BoundingBox(std::min(a.min, min), std::max(a.max, max));
+    // }
 
-    inline BoundingBox merge(BlockPos const& a) {
-        return BoundingBox(std::min(a, min), std::max(a, max));
-    }
+    // inline BoundingBox merge(BlockPos const& a) {
+    //     return BoundingBox(std::min(a, min), std::max(a, max));
+    // }
 
 public:
     MCAPI BoundingBox(class BlockPos const&, class BlockPos const&, enum Rotation);
