@@ -8,11 +8,11 @@
 
 using namespace std;
 
-namespace LL {
+namespace ll {
 
 LIAPI LLConfig globalConfig;
 LIAPI LLRuntimeConfig globalRuntimeConfig;
-LIAPI LL::CommandLineOption commandLineOption;
+LIAPI ll::CommandLineOption commandLineOption;
 
 void inline to_json(nlohmann::json& j, const LLConfig& conf) {
     // clang-format off
@@ -97,7 +97,7 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
 
 void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     conf.debugMode = j.value("DebugMode", false);
-    if (LL::commandLineOption.noColorOption)
+    if (ll::commandLineOption.noColorOption)
         conf.colorLog = false;
     else
         conf.colorLog = j.value("ColorLog", true);
@@ -241,12 +241,12 @@ void ChooseLanguage() {
     std::cin >> selected;
     std::cin.ignore();
     if (!languages[selected].empty()) {
-        LL::globalConfig.language = languages[selected];
+        ll::globalConfig.language = languages[selected];
     }
 }
 */
 
-bool LL::LoadLLConfig() {
+bool ll::LoadLLConfig() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
 
@@ -256,17 +256,17 @@ bool LL::LoadLLConfig() {
             //     ChooseLanguage();
             // }
             filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
-            LL::SaveLLConfig();
+            ll::SaveLLConfig();
         } else {
             try {
                 auto out = nlohmann::json::parse(*content, nullptr, false, true);
-                LL::globalConfig = out;
-                auto config = nlohmann::json(LL::globalConfig);
+                ll::globalConfig = out;
+                auto config = nlohmann::json(ll::globalConfig);
                 if (out != config) {
                     logger.warn(tr("ll.config.warning.configOutdated", LITELOADER_CONFIG_FILE));
                     logger.warn(tr("ll.config.updating"));
-                    LL::globalConfig.language = "system";
-                    config = nlohmann::json(LL::globalConfig);
+                    ll::globalConfig.language = "system";
+                    config = nlohmann::json(ll::globalConfig);
                     return SaveConfig(config);
                 }
                 return true;
@@ -274,7 +274,7 @@ bool LL::LoadLLConfig() {
                 logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
                 logger.error("{}", e.what());
                 logger.error("Using default config file...");
-                return LL::SaveLLConfig();
+                return ll::SaveLLConfig();
             }
         }
     } catch (const nlohmann::json::exception& e) {
@@ -288,7 +288,7 @@ bool LL::LoadLLConfig() {
     return true;
 }
 
-bool LL::SaveLLConfig() {
-    auto config = nlohmann::json(LL::globalConfig);
+bool ll::SaveLLConfig() {
+    auto config = nlohmann::json(ll::globalConfig);
     return SaveConfig(config);
 }

@@ -88,14 +88,14 @@ Logger::OutputStream::OutputStream(Logger* logger, int level, std::string&& cons
 bool checkLogLevel(int level, int outLevel) {
     if (level >= outLevel)
         return true;
-    if (level == -1 && LL::globalConfig.logLevel >= outLevel)
+    if (level == -1 && ll::globalConfig.logLevel >= outLevel)
         return true;
     return false;
 }
 #define H do_hash
-fmt::text_style getModeColor(string a1) {
-    if (!LL::globalConfig.colorLog)
-        return fmt::text_style();
+fmt::text_style getModeColor(const string& a1) {
+    if (!ll::globalConfig.colorLog)
+        return {};
     switch (H(a1.c_str())) {
         case H("INFO"):
             return fmt::fg(fmt::color::light_sea_green);
@@ -148,8 +148,8 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
         auto text = o.os.str();
         bool filterBanned = false;
         // Output Filter
-        if (LL::globalConfig.enableOutputFilter)
-            for (auto& regexStr : LL::globalConfig.outputFilterRegex) {
+        if (ll::globalConfig.enableOutputFilter)
+            for (auto& regexStr : ll::globalConfig.outputFilterRegex) {
                 try {
                     std::regex re(regexStr);
                     if (std::regex_search(text, re) || std::regex_search(title, re)) {
@@ -162,14 +162,14 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
         if (checkLogLevel(o.logger->consoleLevel, o.level) && !filterBanned) {
             fmt::print(
                 o.consoleFormat,
-                applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
+                applyTextStyle(ll::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
                                fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
                 applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix),
-                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
-                applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), text));
+                applyTextStyle(ll::globalConfig.colorLog ? o.style : fmt::text_style(), title),
+                applyTextStyle(ll::globalConfig.colorLog ? o.style : fmt::text_style(), text));
         }
 
-        if (checkLogLevel(o.logger->fileLevel, o.level) && (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
+        if (checkLogLevel(o.logger->fileLevel, o.level) && (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
             if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE)) {
                 auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text);
                 if (o.logger->ofs.is_open())
@@ -180,7 +180,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
             }
         }
 
-        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) && (LL::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
+        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) && (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
             o.logger->player->sendTextPacket(
                 fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text));
         }

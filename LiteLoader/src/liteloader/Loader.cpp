@@ -189,7 +189,7 @@ void LoadParticleAPI() {
 }
 
 
-void LL::LoadMain() {
+void ll::LoadMain() {
     logger.info(tr("ll.loader.loadMain.start"));
     CleanOldScriptEngine();
 
@@ -260,9 +260,9 @@ void LL::LoadMain() {
             }
 
             if (PluginManager::getPlugin(lib) == nullptr) {
-                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {})) {
+                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
                     logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", UTF82String(path.u8string())));
-                    if (getPlugin(pluginFileName)) {
+                    if (PluginManager::getPlugin(pluginFileName)) {
                         logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
                     }
                 }
@@ -280,22 +280,22 @@ void LL::LoadMain() {
     }
 
     // Load PermissionAPI
-    if (LL::globalConfig.enablePermissionAPI) {
+    if (ll::globalConfig.enablePermissionAPI) {
         if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
             LoadPermissionAPI();
         }
     }
 
-    if (LL::globalConfig.enableParticleAPI) {
+    if (ll::globalConfig.enableParticleAPI) {
         if (filesystem::exists("plugins/LiteLoader/ParticleAPI.dll")) {
             LoadParticleAPI();
         }
     }
 
     // Load ScriptEngine
-    if (LL::globalConfig.enableScriptEngine) {
+    if (ll::globalConfig.enableScriptEngine) {
         InitNodeJsDirectories();
-        if (LL::globalConfig.alwaysLaunchScriptEngine || IsExistNodeJsPlugin() || IsExistScriptPlugin()) {
+        if (ll::globalConfig.alwaysLaunchScriptEngine || IsExistNodeJsPlugin() || IsExistScriptPlugin()) {
             LoadScriptEngine();
         }
     }

@@ -37,7 +37,7 @@ public:
 
     void inline init(HMODULE hModule = nullptr) {
         if (!hModule) {
-            auto pPtr = LL::getPlugin("ParticleAPI");
+            auto pPtr = ll::getPlugin("ParticleAPI");
             if (!pPtr) {
                 throw std::runtime_error("Cannot get ParticleAPI.dll");
             }

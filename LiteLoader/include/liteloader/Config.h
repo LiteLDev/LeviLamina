@@ -8,14 +8,15 @@
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char* NoCrashLogger[] = {"AntiCheats"};
 #define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
 
 
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
-namespace LL {
+namespace ll {
+
+constexpr const char* kNoCrashLoggerPluginList[] = {"AntiCheats"};
 struct CommandLineOption {
     bool noColorOption = false;
 };
@@ -80,7 +81,7 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf);
 bool LoadLLConfig();
 
 bool SaveLLConfig();
-} // namespace LL
+} // namespace ll
 
 /////////////////////// Addon Helper ///////////////////////
 

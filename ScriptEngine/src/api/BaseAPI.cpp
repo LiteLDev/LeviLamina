@@ -241,14 +241,14 @@ Local<Value> McClass::newFloatPos(const Arguments& args) {
 
 Local<Value> McClass::getBDSVersion(const Arguments& args) {
     try {
-        return String::newString(LL::getBdsVersion());
+        return String::newString(ll::getBdsVersion());
     }
     CATCH("Fail in GetBDSVersion!")
 }
 
 Local<Value> McClass::getServerProtocolVersion(const Arguments& args) {
     try {
-        return Number::newNumber(LL::getServerProtocolVersion());
+        return Number::newNumber(ll::getServerProtocolVersion());
     }
     CATCH("Fail in GetServerProtocolVersion!")
 }

@@ -41,7 +41,7 @@ bool removeFunc(std::string const& nameSpace, std::string const& funcName) {
 
 void _onCallError(std::string const& msg, HMODULE handle) {
     logger.error(msg);
-    auto plugin = LL::getPlugin(handle);
+    auto plugin = ll::getPlugin(handle);
     if (plugin)
         logger.error("In plugin <{}>", plugin->name);
 }

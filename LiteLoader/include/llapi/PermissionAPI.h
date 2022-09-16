@@ -13,18 +13,18 @@
 
 class DynPermissionAPI {
 
-    using FuncCreateRole = void (*)(const std::string&, const std::string&, std::weak_ptr<PERM::Role>&);
+    using FuncCreateRole = void (*)(const std::string&, const std::string&, std::weak_ptr<ll::perm::Role>&);
     using FuncRoleExists = bool (*)(const std::string&);
-    using FuncGetRole = void (*)(const std::string&, std::weak_ptr<PERM::Role>&);
-    using FuncGetOrCreateRole = void (*)(const std::string&, std::weak_ptr<PERM::Role>&);
-    using FuncDeleteRole = void(*)(const std::string&);
+    using FuncGetRole = void (*)(const std::string&, std::weak_ptr<ll::perm::Role>&);
+    using FuncGetOrCreateRole = void (*)(const std::string&, std::weak_ptr<ll::perm::Role>&);
+    using FuncDeleteRole = void (*)(const std::string&);
     using FuncRegisterPermission = void (*)(const std::string&, const std::string&);
     using FuncDeletePermission = void (*)(const std::string&);
     using FuncPermissionExists = bool (*)(const std::string&);
     using FuncCheckPermission = bool (*)(const xuid_t&, const std::string&);
     using FuncIsMemberOf = bool (*)(const xuid_t&, const std::string&);
-    using FuncGetPlayerRoles = void (*)(const xuid_t&, PERM::Roles&);
-    using FuncGetPlayerPermissions = void (*)(const xuid_t&, PERM::Permissions&);
+    using FuncGetPlayerRoles = void (*)(const xuid_t&, ll::perm::Roles&);
+    using FuncGetPlayerPermissions = void (*)(const xuid_t&, ll::perm::Permissions&);
     using FuncSaveData = void (*)();
 
     HMODULE handle = nullptr;
@@ -48,22 +48,20 @@ class DynPermissionAPI {
     }
 
 public:
-
     DynPermissionAPI() = default;
 
     /**
      * @brief Init APIs by GetAddressProc.
-     * 
+     *
      */
     void init(HMODULE hModule = nullptr) {
         if (!hModule) {
-            auto pPtr = LL::getPlugin("PermissionAPI");
+            auto pPtr = ll::getPlugin("PermissionAPI");
             if (!pPtr) {
                 throw std::runtime_error("Cannot get the plugin object");
             }
             handle = pPtr->handle;
-        }
-        else {
+        } else {
             handle = hModule;
         }
         funcCreateRole = getFunc<FuncCreateRole>("PERM_CreateRole");
@@ -100,11 +98,11 @@ public:
      * }
      * @endcode
      */
-    std::weak_ptr<PERM::Role> createRole(const std::string& name, const std::string& displayName) {
+    std::weak_ptr<ll::perm::Role> createRole(const std::string& name, const std::string& displayName) {
         if (funcCreateRole == nullptr) {
             throw std::runtime_error("Function not found");
         }
-        std::weak_ptr<PERM::Role> ptr{};
+        std::weak_ptr<ll::perm::Role> ptr{};
         funcCreateRole(name, displayName, ptr);
         return ptr;
     }
@@ -129,11 +127,11 @@ public:
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      * @throws std::invalid_argument      If the role does not exist.
      */
-    std::weak_ptr<PERM::Role> getRole(const std::string& name) {
+    std::weak_ptr<ll::perm::Role> getRole(const std::string& name) {
         if (funcGetRole == nullptr) {
             throw std::runtime_error("Function not found");
         }
-        std::weak_ptr<PERM::Role> ptr{};
+        std::weak_ptr<ll::perm::Role> ptr{};
         funcGetRole(name, ptr);
         return ptr;
     }
@@ -144,11 +142,11 @@ public:
      * @param  name                       The name of the role.
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      */
-    std::weak_ptr<PERM::Role> getOrCreateRole(const std::string& name) {
+    std::weak_ptr<ll::perm::Role> getOrCreateRole(const std::string& name) {
         if (funcGetOrCreateRole == nullptr) {
             throw std::runtime_error("Function not found");
         }
-        std::weak_ptr<PERM::Role> ptr{};
+        std::weak_ptr<ll::perm::Role> ptr{};
         funcGetOrCreateRole(name, ptr);
         return ptr;
     }
@@ -238,11 +236,11 @@ public:
      * @param  xuid         The xuid of the player.
      * @return PERM::Roles  The roles of the player.
      */
-    PERM::Roles getPlayerRoles(const xuid_t& xuid) {
+    ll::perm::Roles getPlayerRoles(const xuid_t& xuid) {
         if (funcGetPlayerRoles == nullptr) {
             throw std::runtime_error("Function not found");
         }
-        PERM::Roles roles;
+        ll::perm::Roles roles;
         funcGetPlayerRoles(xuid, roles);
         return roles;
     }
@@ -253,11 +251,11 @@ public:
      * @param  xuid               The xuid of the player.
      * @return PERM::Permissions  The permissions of the player.
      */
-    PERM::Permissions getPlayerPermissions(const xuid_t& xuid) {
+    ll::perm::Permissions getPlayerPermissions(const xuid_t& xuid) {
         if (funcGetPlayerPermissions == nullptr) {
             throw std::runtime_error("Function not found");
         }
-        PERM::Permissions permissions;
+        ll::perm::Permissions permissions;
         funcGetPlayerPermissions(xuid, permissions);
         return permissions;
     }
@@ -301,7 +299,7 @@ public:
      * }
      * @endcode
      */
-    static std::weak_ptr<PERM::Role> createRole(const std::string& name, const std::string& displayName) {
+    static std::weak_ptr<ll::perm::Role> createRole(const std::string& name, const std::string& displayName) {
         return api.createRole(name, displayName);
     }
 
@@ -322,17 +320,17 @@ public:
      * }
      * @endcode
      */
-    static std::weak_ptr<PERM::Role> getRole(const std::string& name) {
+    static std::weak_ptr<ll::perm::Role> getRole(const std::string& name) {
         return api.getRole(name);
     }
 
     /**
      * @brief Get or create a role object.
-     * 
+     *
      * @param  name  The name of the role.
      * @return std::weak_ptr<PERM::Role>  The role(weak ref).
      */
-    static std::weak_ptr<PERM::Role> getOrCreateRole(const std::string& name) {
+    static std::weak_ptr<ll::perm::Role> getOrCreateRole(const std::string& name) {
         return api.getOrCreateRole(name);
     }
 
@@ -420,7 +418,7 @@ public:
 
     /**
      * @brief Check whether a player is member of a role.
-     * 
+     *
      * @param  xuid  The xuid of the player.
      * @param  name  The name of the role.
      * @return bool  True If the player is member of the role, false otherwise.
@@ -432,21 +430,21 @@ public:
 
     /**
      * @brief Get the roles of a player.
-     * 
+     *
      * @param  xuid         The xuid of the player.
      * @return PERM::Roles  The roles of the player.
      */
-    static PERM::Roles getPlayerRoles(const xuid_t& xuid) {
+    static ll::perm::Roles getPlayerRoles(const xuid_t& xuid) {
         return api.getPlayerRoles(xuid);
     }
 
     /**
      * @brief Get the permissions of a player.
-     * 
+     *
      * @param  xuid               The xuid of the player.
      * @return PERM::Permissions  The permissions of the player.
      */
-    static PERM::Permissions getPlayerPermissions(const xuid_t& xuid) {
+    static ll::perm::Permissions getPlayerPermissions(const xuid_t& xuid) {
         return api.getPlayerPermissions(xuid);
     }
 
@@ -457,5 +455,4 @@ public:
     static void saveData() {
         api.saveData();
     }
-
 };

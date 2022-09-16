@@ -135,7 +135,7 @@ inline void OutputError(std::string errorMsg, int errorCode, const std::string& 
     logger.error("Error: Code [{}] {}", errorCode, errorWhat);
     logger.error("In Event ({})", eventName);
     if (!pluginName.empty()) {
-        auto plugin = LL::getPlugin(pluginName);
+        auto plugin = ll::getPlugin(pluginName);
         if (plugin) {
             logger.error("In Plugin <{} {}>", plugin->name, plugin->version.toString());
         } else {
@@ -1085,7 +1085,7 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
         return rtn;
     }
 
-    if (LL::isDebugMode() && LL::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
+    if (ll::isDebugMode() && ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
         logger.warn(R"(The thread executing the command "{}" is not the "MC_SERVER" thread)", cmd);
     }
     if (sp) {
@@ -2102,14 +2102,14 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 ////////////// ServerStarted //////////////
 TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordinator@@QEAAXAEAVServerInstance@@@Z",
                        class ServerInstance& ins) {
-    if (!LL::isDebugMode())
+    if (!ll::isDebugMode())
         _set_se_translator(seh_exception::TranslateSEHtoCE);
 
-    LL::globalRuntimeConfig.tickThreadId = std::this_thread::get_id();
+    ll::globalRuntimeConfig.tickThreadId = std::this_thread::get_id();
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     // Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
-    LL::globalRuntimeConfig.serverStatus = LL::LLServerStatus::Running;
+    ll::globalRuntimeConfig.serverStatus = ll::LLServerStatus::Running;
 
     IF_LISTENED(ServerStartedEvent) {
         ServerStartedEvent ev{};
@@ -2122,7 +2122,7 @@ TClasslessInstanceHook(void, "?sendServerThreadStarted@ServerInstanceEventCoordi
 
 ////////////// ServerStopped //////////////
 TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ") {
-    LL::globalRuntimeConfig.serverStatus = LL::LLServerStatus::Stopping;
+    ll::globalRuntimeConfig.serverStatus = ll::LLServerStatus::Stopping;
 
     IF_LISTENED(ServerStoppedEvent) {
         ServerStoppedEvent ev{};
@@ -2133,7 +2133,7 @@ TClasslessInstanceHook(void, "??1DedicatedServer@@UEAA@XZ") {
 }
 TClasslessInstanceHook(void, "?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z",
                        class CommandOrigin const& origin, class CommandOutput& output) {
-    LL::globalRuntimeConfig.serverStatus = LL::LLServerStatus::Stopping;
+    ll::globalRuntimeConfig.serverStatus = ll::LLServerStatus::Stopping;
     original(this, origin, output);
 }
 

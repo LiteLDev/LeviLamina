@@ -8,11 +8,11 @@
 #include <llapi/mc/SharedConstants.hpp>
 #include <Windows.h>
 using namespace std;
-using namespace LL;
+using namespace ll;
 
 Logger crashLogger("CrashLogger");
 
-bool LL::StartCrashLoggerProcess() {
+bool ll::StartCrashLoggerProcess() {
     if (IsDebuggerPresent()) {
         crashLogger.info(tr("ll.crashLogger.existsingDebuggerDetected"));
         return true;
@@ -46,7 +46,7 @@ bool LL::StartCrashLoggerProcess() {
     return true;
 }
 
-void LL::InitCrashLogger(bool enableCrashLogger) {
+void ll::InitCrashLogger(bool enableCrashLogger) {
     // Enable PreLog Module
     try {
         LoadLibrary(CL_PRELOG_MODULE);
@@ -70,7 +70,7 @@ void LL::InitCrashLogger(bool enableCrashLogger) {
             auto path = UTF82String(i.path().u8string());
 
             // Check crashLogger
-            for (auto name : NoCrashLogger) {
+            for (auto name : ll::kNoCrashLoggerPluginList) {
                 if (path.find(name) != string::npos) {
                     noCrashLoggerReason = string(name) + ".dll";
                     break;

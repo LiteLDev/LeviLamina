@@ -225,8 +225,8 @@ nlohmann::json addAdvancedPie(const string& key, const unordered_map<string, int
 nlohmann::json getCustomCharts() {
     nlohmann::json pluginsJson;
 
-    pluginsJson.emplace_back(addSimplePie("liteloaderbds_version", LL::getLoaderVersion().toString(false)));
-    pluginsJson.emplace_back(addSimplePie("bds_version", LL::getBdsVersion().substr(1)));
+    pluginsJson.emplace_back(addSimplePie("liteloaderbds_version", ll::getLoaderVersion().toString(false)));
+    pluginsJson.emplace_back(addSimplePie("bds_version", ll::getBdsVersion().substr(1)));
     pluginsJson.emplace_back(addSimplePie("xbox_auth", isOnlineAuth ? "Required" : "Not required"));
     pluginsJson.emplace_back(addAdvancedPie("player_platform", playerPlatList));
 
@@ -322,7 +322,7 @@ void scheduleThread() {
         Schedule::nextTick(submitTask);
 
         std::this_thread::sleep_for(std::chrono::milliseconds(secondDelay));
-        while (!LL::isServerStopping()) {
+        while (!ll::isServerStopping()) {
             Schedule::nextTick(submitTask);
             std::this_thread::sleep_for(std::chrono::milliseconds(period));
         }

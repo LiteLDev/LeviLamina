@@ -39,7 +39,7 @@ struct dynamicSymbolsMap_type
 
 bool EconomySystem::init()
 {
-    auto llmoney = LL::getPlugin("LLMoney");
+    auto llmoney = ll::getPlugin("LLMoney");
     if (!llmoney)
     {
         if (localShareData->isFirstInstance) {

@@ -54,7 +54,7 @@ Local<Value> LlClass::registerPlugin(const Arguments& args) {
         string name = args[0].toStr();
         string desc = args.size() >= 2 ? args[1].toStr() : "";
 
-        LL::Version ver = LL::Version(1, 0, 0);
+        ll::Version ver = ll::Version(1, 0, 0);
         if (args.size() >= 3) {
             if (args[2].isArray()) {
                 Local<Array> verInfo = args[2].asArray();
@@ -118,7 +118,7 @@ Local<Value> LlClass::getPluginInfo(const Arguments& args) {
 
     try {
         std::string name = args[0].toStr();
-        auto plugin = LL::getPlugin(name);
+        auto plugin = ll::getPlugin(name);
         if (plugin) {
             auto result = Object::newObject();
 
@@ -150,11 +150,11 @@ Local<Value> LlClass::getVersionStatus(const Arguments& args) {
     try {
         int versionStatusValue;
 
-        if (LITELOADER_VERSION_STATUS == LL::Version::Status::Release) {
+        if (LITELOADER_VERSION_STATUS == ll::Version::Status::Release) {
             versionStatusValue = 0;
-        } else if (LITELOADER_VERSION_STATUS == LL::Version::Status::Beta) {
+        } else if (LITELOADER_VERSION_STATUS == ll::Version::Status::Beta) {
             versionStatusValue = 1;
-        } else if (LITELOADER_VERSION_STATUS == LL::Version::Status::Dev) {
+        } else if (LITELOADER_VERSION_STATUS == ll::Version::Status::Dev) {
             versionStatusValue = 2;
         }
 
@@ -169,9 +169,9 @@ Local<Value> LlClass::version(const Arguments& args) {
         ver.set("major", LITELOADER_VERSION_MAJOR);
         ver.set("minor", LITELOADER_VERSION_MINOR);
         ver.set("revision", LITELOADER_VERSION_REVISION);
-        ver.set("isBeta", LITELOADER_VERSION_STATUS == LL::Version::Status::Beta);
-        ver.set("isRelease", LITELOADER_VERSION_STATUS == LL::Version::Status::Release);
-        ver.set("isDev", LITELOADER_VERSION_STATUS == LL::Version::Status::Dev);
+        ver.set("isBeta", LITELOADER_VERSION_STATUS == ll::Version::Status::Beta);
+        ver.set("isRelease", LITELOADER_VERSION_STATUS == ll::Version::Status::Release);
+        ver.set("isDev", LITELOADER_VERSION_STATUS == ll::Version::Status::Dev);
         return ver;
     }
     CATCH("Fail in LLSEGetVersion!")
@@ -179,21 +179,21 @@ Local<Value> LlClass::version(const Arguments& args) {
 
 Local<Value> LlClass::getLanguage() {
     try {
-        return String::newString(PluginOwnData::getImpl<I18nBase>(LL::getLoaderHandle(), I18nBase::POD_KEY).defaultLocaleName);
+        return String::newString(PluginOwnData::getImpl<I18nBase>(ll::getLoaderHandle(), I18nBase::POD_KEY).defaultLocaleName);
     }
     CATCH("Fail in LLSEGetLanguage")
 }
 
 Local<Value> LlClass::isDebugMode(const Arguments& args) {
     try {
-        return Boolean::newBoolean(LL::isDebugMode());
+        return Boolean::newBoolean(ll::isDebugMode());
     }
     CATCH("Fail in LLSEGetIsDebugMode")
 }
 
 Local<Value> LlClass::versionString(const Arguments& args) {
     try {
-        return String::newString(LL::getLoaderVersionString());
+        return String::newString(ll::getLoaderVersionString());
     }
     CATCH("Fail in LLSEGetVersionString!")
 }

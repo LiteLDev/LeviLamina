@@ -11,14 +11,14 @@ Local<Value> McClass::setMotd(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
     try {
-        return Boolean::newBoolean(LL::setServerMotd(args[0].asString().toString()));
+        return Boolean::newBoolean(ll::setServerMotd(args[0].asString().toString()));
     }
     CATCH("Fail in SetServerMotd!")
 }
 
 Local<Value> McClass::crashBDS(const Arguments& args) //===========???
 {
-    if (LL::isDebugMode()) {
+    if (ll::isDebugMode()) {
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "Crash Server", "Execute mc.crash() to crash server.");
         throw;
         return Boolean::newBoolean(true);

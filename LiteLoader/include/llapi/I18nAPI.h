@@ -328,8 +328,8 @@ inline I18nBase* load(Args&&... args) {
  * @return I18nBase*   The pointer to the I18nBase object in PluginOwnData, null if failed
  */
 inline I18nBase* loadFrom(const std::string& plugin) {
-    if (LL::hasPlugin(plugin)) {
-        auto p = LL::getPlugin(plugin);
+    if (ll::hasPlugin(plugin)) {
+        auto p = ll::getPlugin(plugin);
         if (p) {
             return loadFromImpl(GetCurrentModule(), p->handle);
         }

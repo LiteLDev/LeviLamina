@@ -19,10 +19,10 @@ TInstanceHook(void, "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@D
             throw std::runtime_error("There is already a command named " + name);
         }
     }
-    if (LL::globalConfig.enableUnlockCmd) {
+    if (ll::globalConfig.enableUnlockCmd) {
         flag1 |= 0x80;
     }
-    if (LL::globalConfig.debugMode) {
+    if (ll::globalConfig.debugMode) {
         LogCommandRegistration(name, description, perm, flag1, flag2);
     }
     return original(this, name, description, perm, flag1, flag2);
@@ -32,7 +32,7 @@ class CommandSelectorBase;
 class CommandOrigin;
 TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@@Z",
                        CommandOrigin* a2) {
-    if (LL::globalConfig.enableUnlockCmd) {
+    if (ll::globalConfig.enableUnlockCmd) {
         original(this, a2);
         return true;
     }
@@ -87,7 +87,7 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
 // }
 TClasslessInstanceHook(void, "?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z",
                        std::string const& enumName, std::vector<std::string> const& enumValues, SemanticConstraint constraint) {
-    if (!LL::globalConfig.enableUnlockCmd)
+    if (!ll::globalConfig.enableUnlockCmd)
         return original(this, enumName, enumValues, constraint);
     if (constraint & SemanticConstraint::RequiresCheatsEnabled) {
         constraint = (SemanticConstraint)(constraint & (~SemanticConstraint::RequiresCheatsEnabled));

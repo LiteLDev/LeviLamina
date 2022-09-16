@@ -316,16 +316,16 @@ void InitMessageSystem() {
         SetThreadDescription(GetCurrentThread(), L"LLSE MessageSystem " _CRT_WIDE(LLSE_MODULE_TYPE));
 #endif // DEBUG
        // Set global SEH-Exception handler
-        if (!LL::isDebugMode())
+        if (!ll::isDebugMode())
             _set_se_translator(seh_exception::TranslateSEHtoCE);
 
         globalShareData->messageThreads[LLSE_BACKEND_TYPE] = GetCurrentThread();
         while (true) {
             MessageSystemLoopOnce();
-            if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
+            if (ll::getServerStatus() >= ll::ServerStatus::Stopping)
                 return;
             SleepEx(5, true);
-            if (LL::getServerStatus() >= LL::ServerStatus::Stopping)
+            if (ll::getServerStatus() >= ll::ServerStatus::Stopping)
                 return;
         }
     }).detach();

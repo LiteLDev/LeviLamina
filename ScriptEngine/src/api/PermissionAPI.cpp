@@ -1,7 +1,7 @@
 #define NEW_DEFINES
 #include "PermissionAPI.h"
 
-using namespace PERM;
+using namespace ll::perm;
 
 Local<Value> PermInstanceToObject(const PermInstance& perm) {
     Local<Object> obj = Object::newObject();
@@ -50,12 +50,12 @@ ClassDefine<void> PermissionClassBuilder =
         .function("saveData", &PermissionClass::saveData)
         .build();
 
-RoleClass::RoleClass(const Local<Object>& scriptObj, std::weak_ptr<PERM::Role> role)
+RoleClass::RoleClass(const Local<Object>& scriptObj, std::weak_ptr<ll::perm::Role> role)
 : ScriptClass(scriptObj)
 , role(role) {
 }
 
-RoleClass::RoleClass(std::weak_ptr<PERM::Role> role)
+RoleClass::RoleClass(std::weak_ptr<ll::perm::Role> role)
 : ScriptClass(ScriptClass::ConstructFromCpp<RoleClass>())
 , role(role) {
 }

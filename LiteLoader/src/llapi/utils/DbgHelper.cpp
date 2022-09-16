@@ -105,7 +105,7 @@ wstring MapModuleFromAddr(HANDLE hProcess, void* address) {
 
 bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
     Logger& debugLogger = l ? *l : logger;
-    if (!LL::globalConfig.enableErrorStackTraceback) {
+    if (!ll::globalConfig.enableErrorStackTraceback) {
         logger.error("* Stack traceback is disabled by config file.");
         return true;
     }
@@ -113,7 +113,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
     HANDLE hProcess = GetCurrentProcess();
     HANDLE hThread = GetCurrentThread();
     DWORD threadId = GetCurrentThreadId();
-    bool cacheSymbol = LL::globalConfig.cacheErrorStackTracebackSymbol;
+    bool cacheSymbol = ll::globalConfig.cacheErrorStackTracebackSymbol;
     bool res = false;
 
     std::thread printThread([e, hProcess, hThread, threadId, cacheSymbol, &res, &debugLogger]() {
