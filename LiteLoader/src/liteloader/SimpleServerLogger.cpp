@@ -10,7 +10,7 @@ using namespace Event;
 
 
 void RegisterSimpleServerLogger() {
-    if (LL::globalConfig.enableSimpleServerLogger) {
+    if (ll::globalConfig.enableSimpleServerLogger) {
         Event::PlayerChatEvent::subscribe([](const Event::PlayerChatEvent& ev) {
             static Logger logger("Chat");
             logger.info("<{}> {}", ev.mPlayer->getRealName(), ev.mMessage);
@@ -27,7 +27,7 @@ void RegisterSimpleServerLogger() {
 #include <llapi/mc/Command.hpp>
 TInstanceHook(void, "?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z",
               Player, CommandPermissionLevel perm) {
-    if (LL::globalConfig.enableSimpleServerLogger) {
+    if (ll::globalConfig.enableSimpleServerLogger) {
         static Logger logger("Permissions");
         logger.info("<{}> {}({}) -> {}({})",
                     getRealName(), magic_enum::enum_name(getCommandPermissionLevel()), (int)getCommandPermissionLevel(), magic_enum::enum_name(perm), (int)perm);

@@ -74,7 +74,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
     std::thread([hRead{hRead}, hProcess{pi.hProcess},
                  callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}]() {
-        if (!LL::isDebugMode())
+        if (!ll::isDebugMode())
             _set_se_translator(seh_exception::TranslateSEHtoCE);
         if (timeLimit == -1)
             WaitForSingleObject(hProcess, INFINITE);

@@ -52,9 +52,13 @@ target_link_libraries(
 )
 
 target_include_directories(
+        LiteLoader SYSTEM
+        PRIVATE ${PROJECT_SOURCE_DIR}/third-party/include
+)
+
+target_include_directories(
         LiteLoader
         PRIVATE ${PROJECT_SOURCE_DIR}/include/
-        PRIVATE ${PROJECT_SOURCE_DIR}/third-party/include
         PRIVATE ${CMAKE_SOURCE_DIR}
 )
 

@@ -152,7 +152,7 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
 
         // If plugin itself doesn't register, help it to do so
         if (!PluginManager::getPlugin(pluginName))
-            PluginManager::registerPlugin(realPath, pluginName, pluginName, LL::Version(1, 0, 0), {});
+            PluginManager::registerPlugin(realPath, pluginName, pluginName, ll::Version(1, 0, 0), {});
 
         // Call necessary events when at hot load
         if (isHotLoad)
@@ -274,19 +274,19 @@ bool PluginManager::reloadAllPlugins() {
     return true;
 }
 
-LL::Plugin* PluginManager::getPlugin(std::string name) {
-    return LL::PluginManager::getPlugin(std::move(name), true);
+ll::Plugin* PluginManager::getPlugin(std::string name) {
+    return ll::PluginManager::getPlugin(std::move(name), true);
 }
 
 // Get all plugins of current language
-std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins() {
-    std::unordered_map<std::string, LL::Plugin*> res;
+std::unordered_map<std::string, ll::Plugin*> PluginManager::getLocalPlugins() {
+    std::unordered_map<std::string, ll::Plugin*> res;
 
     auto engines = EngineManager::getLocalEngines();
     for (auto& engine : engines) {
         string name = ENGINE_GET_DATA(engine)->pluginName;
         if (name != LLSE_DEBUG_ENGINE_NAME) {
-            LL::Plugin* plugin = PluginManager::getPlugin(name);
+            ll::Plugin* plugin = PluginManager::getPlugin(name);
             if (plugin)
                 res[plugin->name] = plugin;
         }
@@ -294,28 +294,28 @@ std::unordered_map<std::string, LL::Plugin*> PluginManager::getLocalPlugins() {
     return res;
 }
 
-std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllScriptPlugins() {
+std::unordered_map<std::string, ll::Plugin*> PluginManager::getAllScriptPlugins() {
     auto res = getAllPlugins();
     erase_if(res, [](auto& item) {
-        return item.second->type != LL::Plugin::PluginType::ScriptPlugin;
+        return item.second->type != ll::Plugin::PluginType::ScriptPlugin;
     });
     return res;
 }
 
 // Get all plugins
-std::unordered_map<std::string, LL::Plugin*> PluginManager::getAllPlugins() {
-    return LL::PluginManager::getAllPlugins();
+std::unordered_map<std::string, ll::Plugin*> PluginManager::getAllPlugins() {
+    return ll::PluginManager::getAllPlugins();
 }
 
 bool PluginManager::registerPlugin(std::string filePath, std::string name, std::string desc,
-                                   LL::Version version, std::map<std::string, std::string> others) {
+                                   ll::Version version, std::map<std::string, std::string> others) {
     others["PluginType"] = "Script Plugin";
     others["PluginFilePath"] = std::move(filePath);
-    return LL::PluginManager::registerPlugin(nullptr, std::move(name), std::move(desc), version, others);
+    return ll::PluginManager::registerPlugin(nullptr, std::move(name), std::move(desc), version, others);
 }
 
 bool PluginManager::unRegisterPlugin(std::string name) {
-    return LL::PluginManager::unRegisterPlugin(std::move(name));
+    return ll::PluginManager::unRegisterPlugin(std::move(name));
 }
 
 // Get plugin backend type from its file path (single file plugin)

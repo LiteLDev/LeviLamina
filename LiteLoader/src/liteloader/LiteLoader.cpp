@@ -73,7 +73,7 @@ void DecompressResourcePacks() {
 }
 
 void CheckRunningBDS() {
-    if (!LL::globalConfig.enableCheckRunningBDS)
+    if (!ll::globalConfig.enableCheckRunningBDS)
         return;
     std::vector<DWORD> pids;
     PROCESSENTRY32 pe32{};
@@ -150,7 +150,7 @@ extern bool InitPlayerDatabase();
 extern void RegisterSimpleServerLogger();
 
 void Welcome() {
-    if (!LL::globalConfig.enableWelcomeText)
+    if (!ll::globalConfig.enableWelcomeText)
         return;
 
 
@@ -175,19 +175,19 @@ void Welcome() {
 }
 
 void CheckDevMode() {
-    if (LL::globalConfig.debugMode)
+    if (ll::globalConfig.debugMode)
         logger.warn(tr("ll.main.warning.inDevMode"));
 }
 
 void CheckBetaVersion() {
-    if (LITELOADER_VERSION_STATUS != LL::Version::Release) {
+    if (LITELOADER_VERSION_STATUS != ll::Version::Release) {
         logger.warn(tr("ll.main.warning.betaVersion"));
         logger.warn(tr("ll.main.warning.productionEnv"));
     }
 }
 
 void CheckProtocolVersion() {
-    auto currentProtocol = LL::getServerProtocolVersion();
+    auto currentProtocol = ll::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
         logger.warn(tr("ll.main.warning.protocolVersionNotMatch.1"), TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
         logger.warn(tr("ll.main.warning.protocolVersionNotMatch.2"));
@@ -253,7 +253,7 @@ void LLMain() {
     auto i18n = Translation::load("plugins/LiteLoader/LangPack/");
 
     // Load Config
-    LL::LoadLLConfig();
+    ll::LoadLLConfig();
 
     //Unzip packed Node Modules
     UnzipNodeModules();
@@ -262,12 +262,12 @@ void LLMain() {
     DecompressResourcePacks();
 
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
-    if (!LL::isDebugMode())
+    if (!ll::isDebugMode())
         _set_se_translator(oldSeTranslator);
 
     // Update default language
-    if (i18n && LL::globalConfig.language != "system") {
-        i18n->defaultLocaleName = LL::globalConfig.language;
+    if (i18n && ll::globalConfig.language != "system") {
+        i18n->defaultLocaleName = ll::globalConfig.language;
     }
 
     // Check Protocol Version
@@ -287,14 +287,14 @@ void LLMain() {
     CheckRunningBDS();
 
     // Builtin CrashLogger
-    LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
+    ll::InitCrashLogger(ll::globalConfig.enableCrashLogger);
 
     // Initialize Player Database
     InitPlayerDatabase();
 
     // Rename Window
     HWND hwnd = GetConsoleWindow();
-    std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
+    std::wstring s = L"Bedrock Dedicated Server " + str2wstr(ll::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
     // Register Exit Event Handler.
@@ -309,12 +309,12 @@ void LLMain() {
     CheckDevMode();
 
     // Addon Helper
-    if (LL::globalConfig.enableAddonsHelper) {
+    if (ll::globalConfig.enableAddonsHelper) {
         InitAddonsHelper();
     }
 
     // Load plugins
-    LL::LoadMain();
+    ll::LoadMain();
 
     // Register built-in commands
     RegisterCommands();
@@ -347,7 +347,7 @@ THook(int, "main", int a, void* b) {
     char** str = static_cast<char**>(b);
     for (int i = 0; i < a; ++i) {
         if (strcmp(str[i], "--noColor") == 0) {
-            LL::commandLineOption.noColorOption = true;
+            ll::commandLineOption.noColorOption = true;
             break;
         }
     }

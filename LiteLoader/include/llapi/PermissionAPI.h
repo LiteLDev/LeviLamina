@@ -57,7 +57,7 @@ public:
      */
     void init(HMODULE hModule = nullptr) {
         if (!hModule) {
-            auto pPtr = LL::getPlugin("PermissionAPI");
+            auto pPtr = ll::getPlugin("PermissionAPI");
             if (!pPtr) {
                 throw std::runtime_error("Cannot get the plugin object");
             }

@@ -12,7 +12,7 @@
 
 #define TARGET_BDS_PROTOCOL_VERSION 545
 
-#define LITELOADER_VERSION LL::getLoaderVersion()
+#define LITELOADER_VERSION ll::getLoaderVersion()
 
 
 #define TO_VERSION_STRING(ver) #ver

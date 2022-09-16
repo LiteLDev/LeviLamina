@@ -233,7 +233,7 @@ bool LLSEExportFunc(ScriptEngine* engine, const Local<Function>& func, const str
     // script::Global<Function> callback = script::Global<Function>(func);
     std::string identifier = nameSpace + "::" + funcName;
     RemoteCall::CallbackFn cb = [engine, identifier /*, scriptCallback = std::move(callback)*/](std::vector<RemoteCall::ValueType> params) -> RemoteCall::ValueType {
-        if (LL::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
+        if (ll::isServerStopping() || !EngineManager::isValid(engine) || engine->isDestroying())
             return "";
         EngineScope enter(engine);
         try {

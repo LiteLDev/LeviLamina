@@ -40,7 +40,7 @@ Local<Value> SystemClass::cmd(const Arguments& args) {
             [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int exitCode, string output) {
                 Schedule::nextTick(
                     [engine, callback = std::move(callback), exitCode, output = std::move(output)]() {
-                        if (LL::isServerStopping())
+                        if (ll::isServerStopping())
                             return;
                         if (!EngineManager::isValid(engine))
                             return;
@@ -75,7 +75,7 @@ Local<Value> SystemClass::newProcess(const Arguments& args) {
             [callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}](int exitCode, string output) {
                 Schedule::nextTick(
                     [engine, callback = std::move(callback), exitCode, output = std::move(output)]() {
-                        if (LL::isServerStopping())
+                        if (ll::isServerStopping())
                             return;
                         if (!EngineManager::isValid(engine))
                             return;

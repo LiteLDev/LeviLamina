@@ -11,7 +11,7 @@ Logger serverLogger("Server");
 extern void CheckBetaVersion();
 THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ") {
     CheckBetaVersion();
-    return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with " + fmt::format(LL::globalConfig.colorLog ? fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic : fmt::text_style(), "LiteLoaderBDS " + LL::getLoaderVersion().toString(true));
+    return original() + "(ProtocolVersion " + to_string(ll::getServerProtocolVersion()) + ") with " + fmt::format(ll::globalConfig.colorLog ? fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic : fmt::text_style(), "LiteLoaderBDS " + ll::getLoaderVersion().toString(true));
 }
 
 
@@ -90,7 +90,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     std::cout.rdbuf(&tmpBuf);
     auto rv = original(this, origin, output);
     std::cout.rdbuf(oldBuf);
-    if (LL::isDebugMode() && LL::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
+    if (ll::isDebugMode() && ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
         logger.warn("The thread executing the CommandOutputSender::send is not the \"MC_SERVER\" thread");
         logger.warn("Output: {}", tmpBuf.str());
     }
@@ -106,7 +106,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
             resultOfOrigin.erase(it);
             return rv;
         } catch (...) {
-            if (LL::isDebugMode()) {
+            if (ll::isDebugMode()) {
                 logger.warn("Output: {}", tmpBuf.str());
                 logger.warn("size of resultOfOrigin: {}", resultOfOrigin.size());
             }
@@ -119,7 +119,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     std::istringstream iss(tmpBuf.str());
     string line;
     while (getline(iss, line)) {
-        if (LL::globalConfig.colorLog)
+        if (ll::globalConfig.colorLog)
             log << ColorFormat::convertToConsole(line, false) << Logger::endl;
         else
             log << ColorFormat::removeColorCode(line) << Logger::endl;

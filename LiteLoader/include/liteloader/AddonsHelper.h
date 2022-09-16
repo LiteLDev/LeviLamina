@@ -13,7 +13,7 @@ struct Addon {
     std::string name;
     std::string description;
     Type type;
-    LL::Version version;
+    ll::Version version;
     std::string uuid;
     std::string directory;
     bool enable = false;

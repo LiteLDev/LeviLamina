@@ -20,7 +20,7 @@
 #include <llapi/ScheduleAPI.h>
 #include <Windows.h>
 
-using namespace LL;
+using namespace ll;
 
 // Fix bug
 TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
@@ -129,7 +129,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 
 TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file) {
     auto out = original(this, file);
-    if (LL::globalConfig.enableUnoccupyPort19132) {
+    if (ll::globalConfig.enableUnoccupyPort19132) {
         // logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
         DWORD v4Flag, v6Flag;
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePort, 4, PAGE_READWRITE, &v4Flag);
@@ -203,7 +203,7 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
 TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer , ActorDamageSource* ds)
 {
     original(this, ds);
-    if (LL::globalConfig.enableFixMcBug)
+    if (ll::globalConfig.enableFixMcBug)
     {
         auto name = getRealName();
         Schedule::delay([name]() {
@@ -217,7 +217,7 @@ TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerP
 
 // Fix Fishing Hook changeDimension Crash
 TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z", Actor, unsigned int a1) {
-    if (!LL::globalConfig.enableFixMcBug)
+    if (!ll::globalConfig.enableFixMcBug)
         return original(this, a1);
     if ((int)this->getEntityTypeId() == 0x4D)
         return 0;
@@ -225,7 +225,7 @@ TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@
 }
 
 TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAVActor@@@Z", Actor* a1) {
-    if (!LL::globalConfig.enableFixMcBug)
+    if (!ll::globalConfig.enableFixMcBug)
         return original(this, a1);
     if ((int)a1->getEntityTypeId() == 0x4D)
         return 0;
@@ -253,33 +253,33 @@ TClasslessInstanceHook(enum StartupResult, "?Startup@RakPeer@RakNet@@UEAA?AW4Sta
 // Fix command crash when server is stopping
 TClasslessInstanceHook(void, "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z",
                        std::string const& a1, std::string const& a2, std::string const& a3, std::string const& a4) {
-    if (LL::isServerStopping())
+    if (ll::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
 TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z",
                        class Player& a1) {
-    if (LL::isServerStopping())
+    if (ll::isServerStopping())
         return;
     original(this, a1);
 }
 
 TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z",
                        class Player& a1, float a2) {
-    if (LL::isServerStopping())
+    if (ll::isServerStopping())
         return;
     original(this, a1, a2);
 }
 TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z",
                        class Player* a1, float a2, int a3, int a4) {
-    if (LL::isServerStopping())
+    if (ll::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
 
 // Set stdin mode to text mode if in wine environment
 inline bool _tryFixConsoleInputMode() {
-    if ((LL::globalConfig.enableFixMcBug && IsWineEnvironment()) || LL::globalConfig.enableForceUtf8Input) {
+    if ((ll::globalConfig.enableFixMcBug && IsWineEnvironment()) || ll::globalConfig.enableForceUtf8Input) {
         int result = _setmode(_fileno(stdin), _O_U8TEXT);
         if (result == -1) {
             logger.error("Cannot set stdin to utf8 text mode");
@@ -303,14 +303,14 @@ THook(std::wistream&,
 
 // Fix server broadcast bug.
 TClasslessInstanceHook(bool, "?getLANBroadcast@LevelData@@QEBA_NXZ") {
-    if (LL::globalConfig.enableFixBroadcastBug) {
+    if (ll::globalConfig.enableFixBroadcastBug) {
         return true;
     }
     return original(this);
 }
 
 TClasslessInstanceHook(bool, "?getLANBroadcastIntent@LevelData@@QEBA_NXZ") {
-    if (LL::globalConfig.enableFixBroadcastBug) {
+    if (ll::globalConfig.enableFixBroadcastBug) {
         return true;
     }
     return original(this);
@@ -320,7 +320,7 @@ TClasslessInstanceHook(bool, "?getLANBroadcastIntent@LevelData@@QEBA_NXZ") {
 bool pauseBLogging = false;
 THook(__int64, "std::_Func_impl_no_alloc<<lambda_bc4a73e92ba7b703b39f322d94bb55f6>,TaskResult>::_Do_call",
       __int64 a1, __int64 a2) {
-    if (LL::globalConfig.disableAutoCompactionLog) {
+    if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;
         auto v = original(a1, a2);
         pauseBLogging = false;
@@ -331,7 +331,7 @@ THook(__int64, "std::_Func_impl_no_alloc<<lambda_bc4a73e92ba7b703b39f322d94bb55f
 
 TClasslessInstanceHook(char, "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
                        char a2, int a3, int a4, unsigned int a5, __int64 a6, int a7, __int64 a8, __int64 a9) {
-    if (LL::globalConfig.disableAutoCompactionLog && pauseBLogging) {
+    if (ll::globalConfig.disableAutoCompactionLog && pauseBLogging) {
         return 0;
     }
     return original(this, a2, a3, a4, a5, a6, a7, a8, a9);
@@ -343,7 +343,7 @@ TClasslessInstanceHook(char, "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$
 
 THook(void*, "??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z",
       void* self, char* a2, char* a3, char a4) {
-    if (LL::globalConfig.enableFixBDSCrash) {
+    if (ll::globalConfig.enableFixBDSCrash) {
         return nullptr;
     }
     return original(self, a2, a3, a4);
@@ -351,7 +351,7 @@ THook(void*, "??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z",
 
 THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ",
       void* self) {
-    if (LL::globalConfig.enableFixBDSCrash) {
+    if (ll::globalConfig.enableFixBDSCrash) {
         return;
     }
     return original(self);
@@ -360,7 +360,7 @@ THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ",
 SHook2("_tickDimensionTransition", __int64, "40 53 55 41 56 41 57 48 ?? ?? ?? ?? ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 33 "
                                             "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
        __int64 a1, ActorOwnerComponent* a2, __int64 a3, void* a4) {
-    if (LL::globalConfig.enableFixBDSCrash) {
+    if (ll::globalConfig.enableFixBDSCrash) {
         auto ac = Actor::tryGetFromComponent(*a2, 0);
         if (ac) {
             auto bs = &ac->getRegionConst();
@@ -373,7 +373,7 @@ SHook2("_tickDimensionTransition", __int64, "40 53 55 41 56 41 57 48 ?? ?? ?? ??
 
 THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAVGameEventMovementTrackingComponent@@@Z",
       Actor* a1, void* self) {
-    if (LL::globalConfig.enableFixBDSCrash) {
+    if (ll::globalConfig.enableFixBDSCrash) {
         auto bs = &a1->getRegionConst();
         if (bs == nullptr || !bs) {
             return;
@@ -387,7 +387,7 @@ THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAV
 
 THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z",
       BlockSource* self, ChunkPos* a2) {
-    if (LL::globalConfig.enableFixBDSCrash) {
+    if (ll::globalConfig.enableFixBDSCrash) {
         LevelChunk* ptr = nullptr;
         try {
             ptr = original(self, a2);
@@ -402,7 +402,7 @@ THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z"
 
 THook(__int64, "?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z",
       __int64 a1, __int64 a2) {
-    if (LL::globalConfig.enableFixBDSCrash) {
+    if (ll::globalConfig.enableFixBDSCrash) {
         __int64 ptr = NULL;
         try {
             ptr = original(a1, a2);
@@ -418,7 +418,7 @@ TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ",
               Actor) {
 
     auto bs = original(this);
-    if (LL::globalConfig.enableFixBDSCrash) {
+    if (ll::globalConfig.enableFixBDSCrash) {
         if (!bs) {
             return Level::getBlockSource(getDimensionId());
         }

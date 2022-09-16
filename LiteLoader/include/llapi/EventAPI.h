@@ -131,7 +131,7 @@ public:
      * @return The event listener
      */
     static EventListener<EVENT> subscribe(std::function<bool(EVENT)> callback) {
-        auto plugin = LL::getPlugin(GetCurrentModule());
+        auto plugin = ll::getPlugin(GetCurrentModule());
         return EventListener<EVENT>(EventManager<EVENT>::addEventListener(plugin ? plugin->name : "", callback));
     }
 
@@ -142,7 +142,7 @@ public:
      * @return The event listener
      */
     static EventListener<EVENT> subscribe_ref(std::function<bool(EVENT&)> callback) {
-        auto plugin = LL::getPlugin(GetCurrentModule());
+        auto plugin = ll::getPlugin(GetCurrentModule());
         return EventListener<EVENT>(EventManager<EVENT>::addEventListenerRef(plugin ? plugin->name : "", callback));
     }
 

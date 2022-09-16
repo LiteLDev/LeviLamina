@@ -85,7 +85,7 @@ Local<Value> ColorLog(const Arguments& args) {
                 LOG_ERROR_WITH_SCRIPT_INFO("Invalid color!");
                 break;
         }
-        // if (!LL::globalConfig.colorLog)
+        // if (!ll::globalConfig.colorLog)
         //     prefix = "";
         auto& infoOut = ENGINE_OWN_DATA()->logger.info;
         infoOut << prefix;

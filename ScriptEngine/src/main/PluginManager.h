@@ -16,13 +16,13 @@ public:
     static bool reloadPlugin(const std::string& name);
     static bool reloadAllPlugins();
 
-    static LL::Plugin* getPlugin(std::string name);
-    static std::unordered_map<std::string, LL::Plugin*> getLocalPlugins();
-    static std::unordered_map<std::string, LL::Plugin*> getAllScriptPlugins();
-    static std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
+    static ll::Plugin* getPlugin(std::string name);
+    static std::unordered_map<std::string, ll::Plugin*> getLocalPlugins();
+    static std::unordered_map<std::string, ll::Plugin*> getAllScriptPlugins();
+    static std::unordered_map<std::string, ll::Plugin*> getAllPlugins();
 
     static std::string getPluginBackendType(const std::string &path);
 
     static bool registerPlugin(std::string filePath, std::string name, std::string desc,
-        LL::Version version, std::map<std::string, std::string> others);
+        ll::Version version, std::map<std::string, std::string> others);
 };

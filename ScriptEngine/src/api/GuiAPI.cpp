@@ -58,7 +58,7 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
 
     return form->sendTo(player,
                         [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, int chosen) {
-                            if (LL::isServerStopping())
+                            if (ll::isServerStopping())
                                 return;
                             if (!EngineManager::isValid(engine))
                                 return;
@@ -140,7 +140,7 @@ bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::L
 
     return form->sendToForRawJson(player,
                                   [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}](Player* pl, string data) {
-                                      if (LL::isServerStopping())
+                                      if (ll::isServerStopping())
                                           return;
                                       if (!EngineManager::isValid(engine))
                                           return;

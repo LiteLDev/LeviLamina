@@ -150,11 +150,11 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
 
         // Start libuv event loop
         uvLoopTask[env] = Schedule::repeat([engine, env, isRunningMap{&isRunning}, eventLoop{it->second->event_loop()}]() {
-            if (!LL::isServerStopping() && (*isRunningMap)[env]) {
+            if (!ll::isServerStopping() && (*isRunningMap)[env]) {
                 EngineScope enter(engine);
                 uv_run(eventLoop, UV_RUN_NOWAIT);
             }
-            if (LL::isServerStopping()) {
+            if (ll::isServerStopping()) {
                 uv_stop(eventLoop);
                 logger.debug("Destroy ServerStopping");
             }
@@ -288,7 +288,7 @@ bool loadNodeJsPlugin(std::string dirPath, const std::string& packagePath, bool 
         if (!PluginManager::getPlugin(pluginName)) {
             // Plugin did't register itself. Help to register it
             string description = pluginName;
-            LL::Version ver(1, 0, 0);
+            ll::Version ver(1, 0, 0);
             std::map<string, string> others = {};
 
             // Read information from package.json
@@ -305,7 +305,7 @@ bool loadNodeJsPlugin(std::string dirPath, const std::string& packagePath, bool 
                 }
                 // version
                 if (j.contains("version") && j["version"].is_string()) {
-                    ver = LL::Version::parse(j["version"].get<std::string>());
+                    ver = ll::Version::parse(j["version"].get<std::string>());
                 }
                 // license
                 if (j.contains("license") && j["license"].is_string()) {

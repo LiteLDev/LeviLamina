@@ -5,7 +5,7 @@
 #include <llapi/ScheduleAPI.h>
 #include <llapi/utils/StringHelper.h>
 #include <llapi/utils/WinHelper.h>
-#include <llapi/Utils/STLHelper.h>
+#include <llapi/utils/STLHelper.h>
 #include <llapi/I18nAPI.h>
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/Player.hpp>
@@ -16,9 +16,10 @@
 using namespace std;
 
 extern Logger logger;
-std::unordered_map<std::string, LL::Plugin> plugins;
+std::unordered_map<std::string, ll::Plugin> plugins;
 
-bool LL::PluginManager::registerPlugin(HMODULE handle, std::string name, std::string desc, LL::Version version,
+
+bool ll::PluginManager::registerPlugin(HMODULE handle, std::string name, std::string desc, ll::Version version,
                                        std::map<std::string, std::string> others) {
     if (handle != nullptr) // DLL Plugin
     {
@@ -31,7 +32,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handle, std::string name, std::st
         }
     }
 
-    LL::Plugin plugin{name, desc, version, others};
+    ll::Plugin plugin{name, desc, version, others};
     plugin.handle = handle;
     try {
         plugin.type = others.at("PluginType") == "Script Plugin" ? Plugin::PluginType::ScriptPlugin : Plugin::PluginType::DllPlugin;
@@ -52,7 +53,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handle, std::string name, std::st
     return true;
 }
 
-bool LL::PluginManager::unRegisterPlugin(std::string name) {
+bool ll::PluginManager::unRegisterPlugin(std::string name) {
     auto plugin = getPlugin(name);
     if (plugin == nullptr) {
         return false;
@@ -63,10 +64,10 @@ bool LL::PluginManager::unRegisterPlugin(std::string name) {
 }
 
 // Helper
-LL::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
+ll::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
     for (auto& it : plugins) {
         if (it.second.name == name || UTF82String(filesystem::path(str2wstr(it.second.filePath)).filename().u8string()) == name) {
-            if (!includeScriptPlugin && it.second.type == LL::Plugin::PluginType::ScriptPlugin)
+            if (!includeScriptPlugin && it.second.type == ll::Plugin::PluginType::ScriptPlugin)
                 continue;
             return &it.second;
         }
@@ -74,7 +75,7 @@ LL::Plugin* GetPlugin_Raw(std::string name, bool includeScriptPlugin) {
     return nullptr;
 }
 
-LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlugin) {
+ll::Plugin* ll::PluginManager::getPlugin(std::string name, bool includeScriptPlugin) {
     auto res = GetPlugin_Raw(name, includeScriptPlugin);
     if (res)
         return res;
@@ -90,7 +91,7 @@ LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlu
     return nullptr;
 }
 
-LL::Plugin* LL::PluginManager::getPlugin(HMODULE handle) {
+ll::Plugin* ll::PluginManager::getPlugin(HMODULE handle) {
     if (!handle)
         return nullptr;
 
@@ -102,12 +103,12 @@ LL::Plugin* LL::PluginManager::getPlugin(HMODULE handle) {
     return nullptr;
 }
 
-bool LL::PluginManager::hasPlugin(std::string name, bool includeScriptPlugin) {
+bool ll::PluginManager::hasPlugin(std::string name, bool includeScriptPlugin) {
     return getPlugin(name, includeScriptPlugin) != nullptr;
 }
 
-std::unordered_map<std::string, LL::Plugin*> LL::PluginManager::getAllPlugins(bool includeScriptPlugin) {
-    std::unordered_map<std::string, LL::Plugin*> res;
+std::unordered_map<std::string, ll::Plugin*> ll::PluginManager::getAllPlugins(bool includeScriptPlugin) {
+    std::unordered_map<std::string, ll::Plugin*> res;
     for (auto& [k, v] : plugins) {
         if (!includeScriptPlugin && v.type == Plugin::PluginType::ScriptPlugin)
             continue;
@@ -116,8 +117,8 @@ std::unordered_map<std::string, LL::Plugin*> LL::PluginManager::getAllPlugins(bo
     return res;
 }
 
-bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, bool isHotLoad) {
-    // if (!LL::isDebugMode())
+bool ll::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, bool isHotLoad) {
+    // if (!ll::isDebugMode())
     //     return false;
     try {
         filesystem::path path(filesystem::path(str2wstr(pluginFilePath)).lexically_normal());
@@ -179,7 +180,7 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
         auto lib = LoadLibrary(str2wstr(pluginFilePath).c_str());
         if (lib) {
             if (getPlugin(lib) == nullptr) {
-                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {})) {
+                if (!RegisterPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
                     logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", pluginFilePath));
                     if (getPlugin(pluginFileName)) {
                         logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
@@ -240,11 +241,11 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
     }
 }
 
-bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
-    // if (!LL::isDebugMode())
+bool ll::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
+    // if (!ll::isDebugMode())
     //     return false;
     try {
-        LL::Plugin* plugin = getPlugin(pluginName);
+        ll::Plugin* plugin = getPlugin(pluginName);
         if (!plugin) {
             if (outputResult) {
                 logger.error(tr("ll.pluginManager.error.pluginNotFound"));
@@ -284,11 +285,11 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult) {
     }
 }
 
-bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
-    // if (!LL::isDebugMode())
+bool ll::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
+    // if (!ll::isDebugMode())
     //     return false;
     try {
-        LL::Plugin* plugin = getPlugin(pluginName);
+        ll::Plugin* plugin = getPlugin(pluginName);
         if (!plugin) {
             if (outputResult) {
                 logger.error(tr("ll.pluginManager.error.pluginNotFound"));
@@ -327,8 +328,8 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult) {
     }
 }
 
-int LL::PluginManager::reloadAllPlugins(bool outputResult) {
-    // if (!LL::isDebugMode())
+int ll::PluginManager::reloadAllPlugins(bool outputResult) {
+    // if (!ll::isDebugMode())
     //     return false;
     try {
         auto plugins = getAllPlugins(true);
@@ -367,8 +368,8 @@ int LL::PluginManager::reloadAllPlugins(bool outputResult) {
     }
 }
 
-bool LL::PluginManager::callEventAtHotLoad(std::string pluginName) {
-    // if (!LL::isDebugMode())
+bool ll::PluginManager::callEventAtHotLoad(std::string pluginName) {
+    // if (!ll::isDebugMode())
     //     return false;
     Schedule::nextTick([pluginName]() {
         Event::ServerStartedEvent().callToPlugin(pluginName); // ServerStartedEvent
@@ -395,8 +396,8 @@ bool LL::PluginManager::callEventAtHotLoad(std::string pluginName) {
     return true;
 }
 
-bool LL::PluginManager::callEventAtHotUnload(std::string pluginName) {
-    // if (!LL::isDebugMode())
+bool ll::PluginManager::callEventAtHotUnload(std::string pluginName) {
+    // if (!ll::isDebugMode())
     //     return false;
     auto players = Level::getAllPlayers();
     for (auto& pl : players) // PlayerLeftEvent
@@ -412,9 +413,17 @@ bool LL::PluginManager::callEventAtHotUnload(std::string pluginName) {
 }
 
 // Helper
+LIAPI bool RegisterPlugin(HMODULE handle, std::string name, std::string desc, ll::Version version,
+                          std::map<std::string, std::string> others) {
+    others["PluginType"] = "DLL Plugin";
+    others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
+    return ll::PluginManager::registerPlugin(handle, name, desc, version, others);
+}
+
+// for abi compatibility
 LIAPI bool RegisterPlugin(HMODULE handle, std::string name, std::string desc, LL::Version version,
                           std::map<std::string, std::string> others) {
     others["PluginType"] = "DLL Plugin";
     others["PluginFilePath"] = handle ? GetModulePath(handle) : name;
-    return LL::PluginManager::registerPlugin(handle, name, desc, version, others);
+    return ll::PluginManager::registerPlugin(handle, name, desc, version.toNewVersion(), others);
 }
