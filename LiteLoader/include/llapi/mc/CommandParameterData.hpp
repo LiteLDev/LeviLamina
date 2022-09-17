@@ -11,6 +11,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <string_view>
+#include "typeid_t.hpp"
 
 enum class CommandParameterDataType {
     NORMAL,

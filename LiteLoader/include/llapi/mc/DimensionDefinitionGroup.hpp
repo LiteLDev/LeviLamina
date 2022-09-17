@@ -18,6 +18,7 @@
 class DimensionDefinitionGroup {
 
 #define AFTER_EXTRA
+public:
     struct DimensionDefinition{};
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDEFINITIONGROUP

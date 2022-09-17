@@ -410,7 +410,7 @@ public:
                 (int)offset + std::max(8, (int)sizeof(T))};
             param.addOptions(option);
             // logger.warn(Global<CommandRegistry>->describe(param));
-            return std::move(param);
+            return param;
         }
 
         inline void setOptional(bool optional) {
@@ -520,7 +520,7 @@ public:
      * @param callback The callback function
      * @param permission The permission required for command execution
      * @return The command instance
-     * 
+     *
      * @note The command name only consists of lowercase letters and `_` .
      */
     inline static DynamicCommandInstance const* setup(

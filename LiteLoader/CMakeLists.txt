@@ -22,25 +22,23 @@ file(GLOB_RECURSE THIRD_PARTY_SRC_FILES ${PROJECT_SOURCE_DIR}/third-party/src/*)
 # third-party library files
 file(GLOB_RECURSE THIRD_PARTY_LIB_FILES ${PROJECT_SOURCE_DIR}/third-party/lib/*.lib)
 
-add_definitions(
-        -DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
-        -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS
-        -D_USRDLL -D_AMD64_ -DNOMINMAX
-)
-
-add_compile_options(
-        /permissive /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
-        /external:W1 /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /EHa /nologo /Ot /diagnostics:column
-        /utf-8
-)
-
-add_link_options(
-        /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO /SUBSYSTEM:CONSOLE
-        /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
-        /DELAYLOAD:bedrock_server.dll # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
-)
-
 add_library(LiteLoader SHARED ${SRC_FILES} ${THIRD_PARTY_SRC_FILES})
+
+# use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
+target_compile_options(
+        LiteLoader
+        PRIVATE /permissive /EHa /MD /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /FC /nologo /Ot /diagnostics:column /utf-8
+)
+
+target_compile_definitions(
+        LiteLoader
+        PRIVATE -DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS -D_USRDLL -D_AMD64_ -DNOMINMAX
+)
+
+target_link_options(
+        LiteLoader
+        PRIVATE /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO /SUBSYSTEM:CONSOLE /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
+)
 
 target_link_libraries(
         LiteLoader

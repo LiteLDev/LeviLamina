@@ -1,10 +1,12 @@
 ﻿#pragma once
 #pragma warning(disable : 4250)
 
+#ifndef LIAPI
 #ifdef LITELOADER_EXPORTS
 #define LIAPI __declspec(dllexport)
 #else
 #define LIAPI __declspec(dllimport)
+#endif
 #endif
 
 #ifndef NOMINMAX
