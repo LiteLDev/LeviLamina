@@ -11,7 +11,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "CommandFlag.hpp"
-enum CommandPermissionLevel : char;
+enum class CommandPermissionLevel : char;
 
 #undef BEFORE_EXTRA
 

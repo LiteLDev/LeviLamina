@@ -76,7 +76,7 @@ public:
      * @symbol ?getCommandPermissions@LayeredAbilities@@QEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -164274382
      */
-    MCAPI enum CommandPermissionLevel getCommandPermissions() const;
+    MCAPI enum class CommandPermissionLevel getCommandPermissions() const;
     /**
      * @symbol ?getFloat@LayeredAbilities@@QEBAMW4AbilitiesIndex@@@Z
      * @hash   969986809
@@ -136,7 +136,7 @@ public:
      * @symbol ?setCommandPermissions@LayeredAbilities@@QEAAXW4CommandPermissionLevel@@@Z
      * @hash   -1487787700
      */
-    MCAPI void setCommandPermissions(enum CommandPermissionLevel);
+    MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
     /**
      * @symbol ?setPermissions@LayeredAbilities@@QEAAXAEBVPermissionsHandler@@@Z
      * @hash   1533504682

@@ -630,7 +630,7 @@ public:
      * @symbol ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
      * @hash   48780604
      */
-    MCAPI void registerCommand(std::string const&, char const*, enum CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
+    MCAPI void registerCommand(std::string const&, char const*, enum class CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
     /**
      * @symbol ?removeSoftEnumValues@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   -444001900
@@ -807,7 +807,7 @@ public:
      * @symbol ?checkOriginCommandFlags@CommandRegistry@@AEBA_NAEBVCommandOrigin@@UCommandFlag@@W4CommandPermissionLevel@@@Z
      * @hash   2085605810
      */
-    MCAPI bool checkOriginCommandFlags(class CommandOrigin const&, struct CommandFlag, enum CommandPermissionLevel) const;
+    MCAPI bool checkOriginCommandFlags(class CommandOrigin const&, struct CommandFlag, enum class CommandPermissionLevel) const;
     /**
      * @symbol ?createCommand@CommandRegistry@@AEBA?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   -1544501703

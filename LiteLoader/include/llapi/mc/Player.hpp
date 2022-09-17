@@ -562,7 +562,7 @@ public:
      * @symbol ?getCommandPermissionLevel@Player@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   1551790741
      */
-    virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
+    virtual enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @vftbl  217
      * @symbol ?canObstructSpawningAndBlockPlacement@Player@@UEBA_NXZ
@@ -2027,7 +2027,7 @@ public:
      * @symbol ?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z
      * @hash   754251730
      */
-    MCAPI void setPermissions(enum CommandPermissionLevel);
+    MCAPI void setPermissions(enum class CommandPermissionLevel);
     /**
      * @symbol ?setPlatformOnlineId@Player@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -202373730

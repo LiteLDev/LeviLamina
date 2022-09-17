@@ -1303,7 +1303,7 @@ public:
      * @symbol ?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -1266996735
      */
-    virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
+    virtual enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @vftbl  205
      * @symbol ?isClientSide@Actor@@UEBA_NXZ

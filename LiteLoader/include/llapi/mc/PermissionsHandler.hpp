@@ -47,7 +47,7 @@ public:
      * @symbol ?getCommandPermissions@PermissionsHandler@@QEBA?AW4CommandPermissionLevel@@XZ
      * @hash   1169515862
      */
-    MCAPI enum CommandPermissionLevel getCommandPermissions() const;
+    MCAPI enum class CommandPermissionLevel getCommandPermissions() const;
     /**
      * @symbol ?getPlayerPermissions@PermissionsHandler@@QEBA?AW4PlayerPermissionLevel@@XZ
      * @hash   -1495389454
@@ -67,7 +67,7 @@ public:
      * @symbol ?setCommandPermissions@PermissionsHandler@@QEAAXW4CommandPermissionLevel@@@Z
      * @hash   2061812280
      */
-    MCAPI void setCommandPermissions(enum CommandPermissionLevel);
+    MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
     /**
      * @symbol ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
      * @hash   634424782

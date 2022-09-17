@@ -1186,7 +1186,7 @@ public:
      * @symbol ?firePermissionsSetEvent@MinecraftEventing@@UEAAXW4PlayerPermissionLevel@@W4CommandPermissionLevel@@01@Z
      * @hash   -1965757224
      */
-    MCVAPI void firePermissionsSetEvent(enum PlayerPermissionLevel, enum CommandPermissionLevel, enum PlayerPermissionLevel, enum CommandPermissionLevel);
+    MCVAPI void firePermissionsSetEvent(enum PlayerPermissionLevel, enum class CommandPermissionLevel, enum PlayerPermissionLevel, enum class CommandPermissionLevel);
     /**
      * @symbol ?fireQueryOfferResult@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H_N@Z
      * @hash   1328892624

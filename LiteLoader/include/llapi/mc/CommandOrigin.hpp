@@ -100,7 +100,7 @@ public:
      * @symbol ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -1646859962
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const = 0;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const = 0;
     /**
      * @vftbl  10
      * @symbol ?clone@VirtualCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ

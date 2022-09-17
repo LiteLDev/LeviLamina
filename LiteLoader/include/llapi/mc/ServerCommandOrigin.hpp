@@ -90,7 +90,7 @@ public:
      * @symbol ?getPermissionsLevel@ServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -510198994
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
@@ -131,7 +131,7 @@ public:
      * @symbol ??0ServerCommandOrigin@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVServerLevel@@W4CommandPermissionLevel@@V?$AutomaticID@VDimension@@H@@@Z
      * @hash   -381070572
      */
-    MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum CommandPermissionLevel, class AutomaticID<class Dimension, int>);
+    MCAPI ServerCommandOrigin(std::string const &, class ServerLevel &, enum class CommandPermissionLevel, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?load@ServerCommandOrigin@@SA?AV?$unique_ptr@VServerCommandOrigin@@U?$default_delete@VServerCommandOrigin@@@std@@@std@@AEBVCompoundTag@@AEAVServerLevel@@@Z
      * @hash   -865373954

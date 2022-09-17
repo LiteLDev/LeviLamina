@@ -155,7 +155,7 @@ public:
      * @symbol ?getOpPermissionLevel@PropertiesSettings@@QEBA?AW4CommandPermissionLevel@@XZ
      * @hash   1061282530
      */
-    MCAPI enum CommandPermissionLevel getOpPermissionLevel() const;
+    MCAPI enum class CommandPermissionLevel getOpPermissionLevel() const;
     /**
      * @symbol ?getPlayerMovementSettings@PropertiesSettings@@QEBAAEBUPlayerMovementSettings@@XZ
      * @hash   967673706

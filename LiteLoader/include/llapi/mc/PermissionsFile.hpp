@@ -41,7 +41,7 @@ public:
      * @symbol ?applyPlayerPermissionsFromDisk@PermissionsFile@@QEAAXAEAVPlayer@@AEBVUserEntityIdentifierComponent@@W4CommandPermissionLevel@@@Z
      * @hash   581155816
      */
-    MCAPI void applyPlayerPermissionsFromDisk(class Player &, class UserEntityIdentifierComponent const &, enum CommandPermissionLevel);
+    MCAPI void applyPlayerPermissionsFromDisk(class Player &, class UserEntityIdentifierComponent const &, enum class CommandPermissionLevel);
     /**
      * @symbol ?getPermissions@PermissionsFile@@QEBAAEBV?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PlayerPermissionLevel@@@std@@@2@@std@@XZ
      * @hash   -1250256422
@@ -83,7 +83,7 @@ public:
      * @symbol ?setDefaultPlayerPermission@PermissionsFile@@AEAAXAEAVPlayer@@W4CommandPermissionLevel@@@Z
      * @hash   442925634
      */
-    MCAPI void setDefaultPlayerPermission(class Player &, enum CommandPermissionLevel);
+    MCAPI void setDefaultPlayerPermission(class Player &, enum class CommandPermissionLevel);
 
 private:
 

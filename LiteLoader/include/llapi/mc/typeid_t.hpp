@@ -29,7 +29,7 @@ namespace Json {
 class Value;
 }
 class CommandIntegerRange;
-class ActorDefinitionIdentifier;
+struct ActorDefinitionIdentifier;
 class CommandItem;
 
 template <>

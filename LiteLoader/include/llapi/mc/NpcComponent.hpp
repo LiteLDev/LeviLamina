@@ -78,7 +78,7 @@ public:
      * @symbol ?getCommandPermissionLevel@NpcComponent@@QEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -1412339572
      */
-    MCAPI enum CommandPermissionLevel getCommandPermissionLevel() const;
+    MCAPI enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @symbol ?getInteraction@NpcComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
      * @hash   -1615262075
