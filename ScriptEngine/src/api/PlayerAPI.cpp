@@ -422,7 +422,7 @@ Local<Value> PlayerClass::getPermLevel() {
         if (!player)
             return Local<Value>();
 
-        return Number::newNumber(player->getCommandPermissionLevel());
+        return Number::newNumber(static_cast<int>(player->getCommandPermissionLevel()));
     }
     CATCH("Fail in getPlayerPermLevel!")
 }
