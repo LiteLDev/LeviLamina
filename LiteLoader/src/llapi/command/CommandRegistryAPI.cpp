@@ -254,3 +254,10 @@ inline void CommandRegistry::printSize() const {
         logger.warn("{}{}", k, v);
     }
 }
+
+void CommandRegistry::registerOverload(
+    std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args) {
+    auto* signature = const_cast<Signature*>(findCommand(name));
+    auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
+    registerOverloadInternal(*signature, overload);
+}

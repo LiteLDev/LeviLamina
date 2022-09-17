@@ -1,5 +1,6 @@
 #include "nbt_internal.hpp"
 
+#include <nbt-cpp/nbt.hpp>
 #include <stdexcept>
 #include <cstdlib>
 #include <cassert>
@@ -262,7 +263,7 @@ tag_id deduce_tag(std::istream & input) {
 	}
 	if (std::isdigit(a) || a == '-' || a == '+') {
 		std::string buffer(&a, 1);
-		tag_id deduced;
+		tag_id deduced = static_cast<tag_id>(-1);
 		for (;;) {
 			char b = cheof(input);
 			buffer.push_back(b);
@@ -577,7 +578,7 @@ std::unique_ptr<end_list_tag> end_list_tag::read_content(std::istream & input) {
     } else {
         char c = cheof(input);
         if (c != ']')
-            throw std::runtime_error("']' expected, got "+c);
+            throw std::runtime_error(std::string("']' expected, got ") + c);
     }
 	return std::make_unique<end_list_tag>();
 }
@@ -801,8 +802,8 @@ tag_list_tag compound_list_tag::as_tags() {
 
 void read_compound_text(std::istream & input, tags::compound_tag & compound, const context & ctxt) {
 	skip_space(input);
-	char a = cheof(input);
-	if (a != '{')
+	char start_char = cheof(input);
+	if (start_char != '{')
 		throw std::runtime_error("failed to open compound");
 	for (;;) {
 		tag_id key_type = deduce_tag(input);
@@ -822,19 +823,19 @@ void read_compound_text(std::istream & input, tags::compound_tag & compound, con
 		std::string key = tags::read_string(input, ctxt);
         //std::cout << key << std::endl;
         skip_space(input);
-		char a = cheof(input);
-		if (a != ':')
-			throw std::runtime_error(std::string("key-value delimiter expected, got ") + a);
+		char next_char = cheof(input);
+		if (next_char != ':')
+			throw std::runtime_error(std::string("key-value delimiter expected, got ") + next_char);
 		tag_id value_type = deduce_tag(input);
 		if (value_type == tag_id::tag_end)
 			throw std::runtime_error(std::string("value expected"));
 		compound.value.emplace(std::move(key), tags::read(value_type, input));
 		skip_space(input);
-		a = cheof(input);
-		if (a == '}')
+		next_char = cheof(input);
+		if (next_char == '}')
 			return;
-		if (a != ',' && a != ';')
-			throw std::runtime_error(std::string("next tag or end expected, got ") + a);
+		if (next_char != ',' && next_char != ';')
+			throw std::runtime_error(std::string("next tag or end expected, got ") + next_char);
 	}
 }
 

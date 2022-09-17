@@ -5,6 +5,7 @@
 #include <llapi/RegCommandAPI.h>
 #include <llapi/mc/CommandOrigin.hpp>
 #include <llapi/mc/CommandOutput.hpp>
+#include <llapi/mc/CommandParameterData.hpp>
 #include <llapi/mc/CommandPosition.hpp>
 #include <llapi/mc/CommandRegistry.hpp>
 #include <llapi/mc/Packet.hpp>
