@@ -54,6 +54,9 @@ jobs:
         run: |
           cd Tools
           LibraryBuilder.exe Server
+          mkdir ..\LiteLoader\lib
+          move bedrock_server_api.lib ..\LiteLoader\lib
+          move bedrock_server_var.lib ..\LiteLoader\lib
         shell: cmd
 
       - name: Change LITELOADER_VERSION_STATUS_BETA
