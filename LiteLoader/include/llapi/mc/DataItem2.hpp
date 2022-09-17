@@ -35,8 +35,11 @@ public:
     {
         return std::unique_ptr<DataItem>(new DataItem2(key, value));
     }
-    static DataItemType const DATA_ITEM_TYPE = (DataItemType)-1;
+    static DataItemType const DATA_ITEM_TYPE;
 };
+
+template <typename T>
+DataItemType const DataItem2<T>::DATA_ITEM_TYPE = static_cast<DataItemType>(-1);
 
 template <> DataItemType const DataItem2<signed char>::DATA_ITEM_TYPE = DataItemType::Byte;
 template <> DataItemType const DataItem2<short>::DATA_ITEM_TYPE       = DataItemType::Short;

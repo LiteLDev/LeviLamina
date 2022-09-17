@@ -6,35 +6,12 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "CommandRegistry.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <string_view>
 #include "typeid_t.hpp"
-
-enum class CommandParameterDataType {
-    NORMAL,
-    ENUM,
-    SOFT_ENUM,
-    POSIFIX,
-};
-enum SemanticConstraint: unsigned char
-{
-    NoneConstraint = 0,
-    RequiresCheatsEnabled=1,
-    RequiresElevatedPermissions=2,
-    RequiresHostPermissions=4,
-    VALUE_MASK=8,
-};
-enum CommandParameterOption : unsigned char
-{
-    None = 0,
-    EnumAutocompleteExpansion = 1,
-    HasSemanticConstraint = 2, //be used in block or item name enum
-    EnumAsChainedCommand = 4,  //be used in NewExecuteCommand
-};
-class CommandRegistry;
+#include "CommandRegistry.hpp"
 
 #undef BEFORE_EXTRA
 

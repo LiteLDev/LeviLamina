@@ -8,16 +8,11 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
+#include <memory>
 #include "typeid_t.hpp"
 // Include Headers or Declare Types Here
-enum CommandPermissionLevel : char;
-enum class CommandFlagValue : unsigned short;
-enum SemanticConstraint : unsigned char;
 class CommandParameterData;
 #include "CommandFlag.hpp"
-#include <memory>
-//#include "typeid_t.hpp"
-//#include "Command.hpp"
 #include "CommandPosition.hpp"
 #include "CommandPositionFloat.hpp"
 #include "CommandMessage.hpp"
@@ -52,10 +47,10 @@ public:
         inline bool operator==(Symbol const& right) const {
             return val == right.val;
         }
-        inline std::string toString() const {
+        [[nodiscard]] inline std::string toString() const {
             return Global<CommandRegistry>->symbolToString(*this);
         }
-        inline std::string toDebugString() const {
+        [[nodiscard]] inline std::string toDebugString() const {
             return fmt::format("<Symbol {}({})>", toString(), val);
         }
     };
@@ -85,7 +80,7 @@ public:
         //    auto v11 = v8->text;
         //    return std::string(v11, v10 - v11);
         //};
-        inline std::string toDebugString() const {
+        [[nodiscard]] inline std::string toDebugString() const {
             return fmt::format("<ParseToken {}>", toString());
         }
     };
@@ -345,18 +340,15 @@ public:
         static_assert(offsetof(CommandRegistry, mArgs) == 552);
         static_assert(offsetof(CommandRegistry, mCommandOverrideFunctor) == 640);
     }
-#endif COMMAND_REGISTRY_EXTRA
+#endif // COMMAND_REGISTRY_EXTRA
 
     template <typename T>
     inline static std::unique_ptr<class Command> allocateCommand() {
         return std::make_unique<T>();
     }
-    inline void registerOverload(
-        std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args) {
-        Signature* signature = const_cast<Signature*>(findCommand(name));
-        auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
-        registerOverloadInternal(*signature, overload);
-    }
+
+    LIAPI void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args);
+
     template <typename T, typename... Params>
     inline void registerOverload(std::string const& name, Params... params) {
         registerOverload(name, &allocateCommand<T>, {params...});

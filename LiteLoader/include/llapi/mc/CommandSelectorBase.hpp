@@ -9,9 +9,9 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <functional>
 #include "ActorDefinitionIdentifier.hpp"
 #include "CommandPosition.hpp"
-#include <functional>
 class CommandOrigin;
 class Actor;
 class Player;
