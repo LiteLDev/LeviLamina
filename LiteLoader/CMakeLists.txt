@@ -27,7 +27,6 @@ add_library(LiteLoader SHARED ${SRC_FILES} ${THIRD_PARTY_SRC_FILES})
 # Replace Compile Flag /EHsc to /EHa
 string(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 
-# use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 target_compile_options(
         LiteLoader
         PRIVATE /permissive- /MD /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /FC /nologo /Ot /diagnostics:column /utf-8
@@ -38,9 +37,10 @@ target_compile_definitions(
         PRIVATE -DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS -D_USRDLL -D_AMD64_ -DNOMINMAX
 )
 
+# use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 target_link_options(
         LiteLoader
-        PRIVATE /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO /SUBSYSTEM:CONSOLE /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
+        PRIVATE /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO /SUBSYSTEM:CONSOLE /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1 /DELAYLOAD:bedrock_server.dll
 )
 
 target_link_libraries(
