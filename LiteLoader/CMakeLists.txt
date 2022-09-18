@@ -30,7 +30,7 @@ string(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 target_compile_options(
         LiteLoader
-        PRIVATE /permissive /MD /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /FC /nologo /Ot /diagnostics:column /utf-8
+        PRIVATE /permissive- /MD /MP /analyze:external- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /FC /nologo /Ot /diagnostics:column /utf-8
 )
 
 target_compile_definitions(

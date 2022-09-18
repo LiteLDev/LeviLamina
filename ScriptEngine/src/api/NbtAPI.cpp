@@ -15,6 +15,9 @@
 #include <llapi/mc/StringTag.hpp>
 #include <llapi/mc/ListTag.hpp>
 #include <llapi/mc/CompoundTag.hpp>
+#include <magic_enum/magic_enum.hpp>
+
+using magic_enum::enum_cast;
 
 using namespace std;
 
@@ -1854,7 +1857,7 @@ Local<Value> NbtStatic::newTag(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
 
     try {
-        auto type = args[0].toInt();
+        auto type = enum_cast<Tag::Type>(args[0].toInt()).value();
 
         Local<Value> res;
         switch (type) {

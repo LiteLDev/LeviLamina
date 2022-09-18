@@ -16,6 +16,9 @@
 #include <llapi/mc/SimpleContainer.hpp>
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/Mob.hpp>
+#include <magic_enum/magic_enum.hpp>
+
+using magic_enum::enum_integer;
 
 
 //////////////////// Class Definition ////////////////////
@@ -352,7 +355,7 @@ Local<Value> EntityClass::getId() {
         if (!entity)
             return Local<Value>();
 
-        return Number::newNumber(entity->getEntityTypeId());
+        return Number::newNumber(enum_integer(entity->getEntityTypeId()));
     }
     CATCH("Fail in getEntityId!")
 }

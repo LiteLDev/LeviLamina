@@ -38,11 +38,14 @@ add_definitions(
         -D_WINDLL -D_UNICODE -DUNICODE -D "LLSE_BACKEND_${LLSE_BACKEND}" -DCMAKE
 )
 
+# Replace Compile Flag /EHsc to /EHa
+string(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+
 add_compile_options(
         /permissive- /MP /GS /GL /W3 /Gy /Zc:wchar_t
         /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
         /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC
-        /EHa /nologo /diagnostics:column /utf-8
+        /nologo /diagnostics:column /utf-8
 )
 
 add_link_options(

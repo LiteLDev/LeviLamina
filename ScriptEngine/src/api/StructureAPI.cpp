@@ -58,8 +58,8 @@ Local<Value> McClass::setStructure(const Arguments& args) {
         return Local<Value>();
     }
     auto argsSize = args.size();
-    Mirror mirror = None_15;
-    Rotation rotation = None_14;
+    Mirror mirror = Mirror::None_15;
+    Rotation rotation = Rotation::None_14;
     if (argsSize > 2) {
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
         auto rawMirror = args[2].asNumber().toInt32();
