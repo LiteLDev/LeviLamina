@@ -21,8 +21,8 @@ class Ability {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Options;
-enum Type;
+enum class Options;
+enum class Type;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITY
@@ -36,7 +36,7 @@ public:
      * @symbol ??0Ability@@QEAA@_NW4Options@0@@Z
      * @hash   2139479844
      */
-    MCAPI Ability(bool, enum Ability::Options);
+    MCAPI Ability(bool, enum class Ability::Options);
     /**
      * @symbol ??0Ability@@QEAA@XZ
      * @hash   -21106202
@@ -56,12 +56,12 @@ public:
      * @symbol ?getType@Ability@@QEBA?AW4Type@1@XZ
      * @hash   -885752415
      */
-    MCAPI enum Ability::Type getType() const;
+    MCAPI enum class Ability::Type getType() const;
     /**
      * @symbol ?hasOption@Ability@@QEBA_NW4Options@1@@Z
      * @hash   866479498
      */
-    MCAPI bool hasOption(enum Ability::Options) const;
+    MCAPI bool hasOption(enum class Ability::Options) const;
     /**
      * @symbol ?isSet@Ability@@QEBA_NXZ
      * @hash   35308954

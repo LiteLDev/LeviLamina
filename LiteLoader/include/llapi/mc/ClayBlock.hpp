@@ -162,7 +162,7 @@ public:
      * @symbol ?onFertilized@ClayBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      * @hash   215972234
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  85
      * @symbol ?mayConsumeFertilizer@ClayBlock@@UEBA_NAEAVBlockSource@@@Z

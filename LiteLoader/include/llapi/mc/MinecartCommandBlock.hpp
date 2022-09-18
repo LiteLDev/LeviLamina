@@ -37,7 +37,7 @@ public:
      * @symbol ?initializeComponents@MinecartCommandBlock@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   1404678923
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -152520865
@@ -171,7 +171,7 @@ public:
      * @symbol ?getType@MinecartCommandBlock@@UEAA?AW4MinecartType@@XZ
      * @hash   1720771359
      */
-    virtual enum MinecartType getType();
+    virtual enum class MinecartType getType();
     /**
      * @vftbl  288
      * @symbol ?getDefaultDisplayBlock@MinecartCommandBlock@@UEBAPEBVBlock@@XZ

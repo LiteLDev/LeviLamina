@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@NpcRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -100585384
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@NpcRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@NpcRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1404404030
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0NpcRequestPacket@@QEAA@XZ
      * @hash   -1128859006
@@ -105,7 +105,7 @@ public:
      * @symbol ??0NpcRequestPacket@@AEAA@VActorRuntimeID@@W4RequestType@0@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@E@Z
      * @hash   441016261
      */
-    MCAPI NpcRequestPacket(class ActorRuntimeID, enum NpcRequestPacket::RequestType, std::string, unsigned char);
+    MCAPI NpcRequestPacket(class ActorRuntimeID, enum class NpcRequestPacket::RequestType, std::string, unsigned char);
 
 private:
 

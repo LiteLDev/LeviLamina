@@ -57,7 +57,7 @@ public:
      * @symbol ?handleEvent@ScriptActorGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUActorDefinitionStartedEvent@@@Z
      * @hash   1709747792
      */
-    virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ActorDefinitionStartedEvent &);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ActorDefinitionStartedEvent &);
 
 //private:
     /**

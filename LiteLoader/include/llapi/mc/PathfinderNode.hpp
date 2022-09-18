@@ -33,7 +33,7 @@ public:
      * @symbol ??0PathfinderNode@@QEAA@AEBVBlockPos@@W4NodeType@@@Z
      * @hash   -2039038041
      */
-    MCAPI PathfinderNode(class BlockPos const &, enum NodeType);
+    MCAPI PathfinderNode(class BlockPos const &, enum class NodeType);
     /**
      * @symbol ??0PathfinderNode@@QEAA@AEBV0@@Z
      * @hash   1360156577
@@ -63,7 +63,7 @@ public:
      * @symbol ?getType@PathfinderNode@@QEBA?AW4NodeType@@XZ
      * @hash   524943334
      */
-    MCAPI enum NodeType getType() const;
+    MCAPI enum class NodeType getType() const;
     /**
      * @symbol ?inOpenSet@PathfinderNode@@QEAA_NXZ
      * @hash   1053089676

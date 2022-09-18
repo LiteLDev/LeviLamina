@@ -85,7 +85,7 @@ public:
      * @symbol ?_fetchNearbySniffableActors@SniffGoal@@AEBA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@W4ActorType@@@Z
      * @hash   1991199628
      */
-    MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum ActorType) const;
+    MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum class ActorType) const;
     /**
      * @symbol ?_fetchNearestSniffableActor@SniffGoal@@AEBA?AV?$optional@UDistanceSortedActor@@@std@@XZ
      * @hash   -326246458

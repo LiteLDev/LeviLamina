@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@SHStartPiece@@UEBA?AW4StructurePieceType@@XZ
      * @hash   -1916288054
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @symbol ??0SHStartPiece@@QEAA@HAEAVRandom@@HH@Z
      * @hash   -1945073487

@@ -54,7 +54,7 @@ public:
      * @symbol ?onLevelRemovedPlayer@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
      * @hash   -748782117
      */
-    virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
+    virtual enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
      * @vftbl  5
      * @hash   -1154832251
@@ -65,7 +65,7 @@ public:
      * @symbol ?onLevelTick@ScriptTickListener@@UEAA?AW4EventResult@@XZ
      * @hash   -1287626138
      */
-    virtual enum EventResult onLevelTick();
+    virtual enum class EventResult onLevelTick();
     /**
      * @symbol ??0ScriptTickListener@@QEAA@AEAVServerLevel@@AEAVScriptEngine@Scripting@@AEAVScriptFormPromiseTracker@@AEAVScriptCommandProcessor@@@Z
      * @hash   -325702462

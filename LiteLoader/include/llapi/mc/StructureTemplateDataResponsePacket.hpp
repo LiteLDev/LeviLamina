@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@StructureTemplateDataResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -1125787874
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@StructureTemplateDataResponsePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@StructureTemplateDataResponsePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1518145876
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0StructureTemplateDataResponsePacket@@QEAA@XZ
      * @hash   -412187380
@@ -68,7 +68,7 @@ public:
      * @symbol ??0StructureTemplateDataResponsePacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@2@W4StructureTemplateResponseType@@@Z
      * @hash   -3717586
      */
-    MCAPI StructureTemplateDataResponsePacket(std::string const &, std::unique_ptr<class CompoundTag>, enum StructureTemplateResponseType);
+    MCAPI StructureTemplateDataResponsePacket(std::string const &, std::unique_ptr<class CompoundTag>, enum class StructureTemplateResponseType);
     /**
      * @symbol ??4StructureTemplateDataResponsePacket@@QEAAAEAV0@$$QEAV0@@Z
      * @hash   1900319364

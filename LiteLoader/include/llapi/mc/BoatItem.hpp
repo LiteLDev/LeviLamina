@@ -155,7 +155,7 @@ public:
      * @symbol ?_getActorType@BoatItem@@EEBA?AW4ActorType@@XZ
      * @hash   2140716126
      */
-    virtual enum ActorType _getActorType() const;
+    virtual enum class ActorType _getActorType() const;
     /**
      * @symbol ??0BoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z
      * @hash   -689273134

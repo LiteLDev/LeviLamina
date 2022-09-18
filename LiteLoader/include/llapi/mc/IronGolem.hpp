@@ -108,7 +108,7 @@ public:
      * @symbol ?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z
      * @hash   -2123400638
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059
@@ -194,7 +194,7 @@ public:
      * @symbol ?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
      * @hash   -1180379270
      */
-    virtual bool doHurtTarget(class Actor *, enum ActorDamageCause const &);
+    virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
      * @vftbl  317
      * @hash   -1157463639

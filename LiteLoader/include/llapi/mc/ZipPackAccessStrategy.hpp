@@ -115,7 +115,7 @@ public:
      * @symbol ?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
      * @hash   1179380728
      */
-    virtual enum PackAccessStrategyType getStrategyType() const;
+    virtual enum class PackAccessStrategyType getStrategyType() const;
     /**
      * @vftbl  15
      * @symbol ?getSubPath@ZipPackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ

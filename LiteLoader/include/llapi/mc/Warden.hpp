@@ -204,7 +204,7 @@ public:
      * @symbol ?doHurtTarget@Warden@@MEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z
      * @hash   -1748547678
      */
-    virtual bool doHurtTarget(class Actor *, enum ActorDamageCause const &);
+    virtual bool doHurtTarget(class Actor *, enum class ActorDamageCause const &);
     /**
      * @vftbl  317
      * @hash   -1157463639

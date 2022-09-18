@@ -102,7 +102,7 @@ public:
      * @symbol ?handleEntityEvent@Sheep@@UEAAXW4ActorEvent@@H@Z
      * @hash   -725222437
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059

@@ -21,7 +21,7 @@ class ItemStackNetResultMap {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    inline static class BidirectionalUnorderedMap<enum ItemStackNetResult, std::string > const& getMap() {
+    inline static class BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string > const& getMap() {
         return mMap;
     }
 
@@ -38,7 +38,7 @@ public:
      * @symbol ?getItemStackNetResultName@ItemStackNetResultMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackNetResult@@@Z
      * @hash   -1776603107
      */
-    MCAPI static std::string const & getItemStackNetResultName(enum ItemStackNetResult);
+    MCAPI static std::string const & getItemStackNetResultName(enum class ItemStackNetResult);
 
 //private:
 
@@ -47,6 +47,6 @@ private:
      * @symbol ?mMap@ItemStackNetResultMap@@0V?$BidirectionalUnorderedMap@W4ItemStackNetResult@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      * @hash   791836570
      */
-    MCAPI static class BidirectionalUnorderedMap<enum ItemStackNetResult, std::string> const mMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const mMap;
 
 };

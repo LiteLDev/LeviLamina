@@ -120,7 +120,7 @@ public:
      * @symbol ?getStrategyType@DirectoryPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
      * @hash   1728318940
      */
-    virtual enum PackAccessStrategyType getStrategyType() const;
+    virtual enum class PackAccessStrategyType getStrategyType() const;
     /**
      * @vftbl  16
      * @symbol ?createSubPack@DirectoryPackAccessStrategy@@UEBA?AV?$unique_ptr@VPackAccessStrategy@@U?$default_delete@VPackAccessStrategy@@@std@@@std@@AEBVPath@Core@@@Z

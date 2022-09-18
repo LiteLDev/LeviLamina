@@ -22,7 +22,7 @@ class ShowCreditsPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    enum CreditsState :int {
+    enum class CreditsState :int {
         START_CREDITS,
         END_CREDITS,
     };
@@ -31,7 +31,7 @@ public:
 
     inline std::string toDebugString() {
         return fmt::format("{}: state: {}", __super::toDebugString(),
-            state == START_CREDITS ? "START_CREDITS" : "END_CREDITS");
+                           state == CreditsState::START_CREDITS ? "START_CREDITS" : "END_CREDITS");
     }
 
 
@@ -53,7 +53,7 @@ public:
      * @symbol ?getId@ShowCreditsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   464555961
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ShowCreditsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -71,7 +71,7 @@ public:
      * @symbol ?_read@ShowCreditsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1656235743
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ShowCreditsPacket@@QEAA@XZ
      * @hash   -1633577551
@@ -81,6 +81,6 @@ public:
      * @symbol ??0ShowCreditsPacket@@QEAA@VActorRuntimeID@@W4CreditsState@0@@Z
      * @hash   -1116580806
      */
-    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum ShowCreditsPacket::CreditsState);
+    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState);
 
 };

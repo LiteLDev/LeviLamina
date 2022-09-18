@@ -70,7 +70,7 @@ public:
      * @symbol ?getChatRestrictionLevel@PropertiesSettings@@QEBA?AW4ChatRestrictionLevel@@XZ
      * @hash   1714450856
      */
-    MCAPI enum ChatRestrictionLevel getChatRestrictionLevel() const;
+    MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const;
     /**
      * @symbol ?getCompressionThresholdBytesize@PropertiesSettings@@QEBAGXZ
      * @hash   -1377274859
@@ -85,17 +85,17 @@ public:
      * @symbol ?getDefaultPlayerPermissionLevel@PropertiesSettings@@QEBA?BW4PlayerPermissionLevel@@XZ
      * @hash   -131981650
      */
-    MCAPI enum PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
+    MCAPI enum class PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
     /**
      * @symbol ?getDesiredHttpImplementation@PropertiesSettings@@QEBA?AW4Implementation@Http@Bedrock@@XZ
      * @hash   939402350
      */
-    MCAPI enum Bedrock::Http::Implementation getDesiredHttpImplementation() const;
+    MCAPI enum class Bedrock::Http::Implementation getDesiredHttpImplementation() const;
     /**
      * @symbol ?getDifficulty@PropertiesSettings@@QEBA?AW4Difficulty@@XZ
      * @hash   -2058072616
      */
-    MCAPI enum Difficulty getDifficulty() const;
+    MCAPI enum class Difficulty getDifficulty() const;
     /**
      * @symbol ?getExtraTrustedKeys@PropertiesSettings@@QEBAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
      * @hash   1020957157
@@ -105,7 +105,7 @@ public:
      * @symbol ?getGameMode@PropertiesSettings@@QEBA?AW4GameType@@XZ
      * @hash   -14224886
      */
-    MCAPI enum GameType getGameMode() const;
+    MCAPI enum class GameType getGameMode() const;
     /**
      * @symbol ?getLanguage@PropertiesSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -409417492
@@ -205,7 +205,7 @@ public:
      * @symbol ?getTransportLayerType@PropertiesSettings@@QEBA?AW4TransportLayer@@XZ
      * @hash   -1524103476
      */
-    MCAPI enum TransportLayer getTransportLayerType() const;
+    MCAPI enum class TransportLayer getTransportLayerType() const;
     /**
      * @symbol ?isContentLogFileEnabled@PropertiesSettings@@QEBA_NXZ
      * @hash   1550473748
@@ -265,6 +265,6 @@ public:
      * @symbol ?parseGameMode@PropertiesSettings@@SA?AW4GameType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1388292967
      */
-    MCAPI static enum GameType parseGameMode(std::string const &);
+    MCAPI static enum class GameType parseGameMode(std::string const &);
 
 };

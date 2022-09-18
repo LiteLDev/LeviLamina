@@ -1,5 +1,6 @@
 #pragma once
 #include "../Global.h"
+#include "Vec3.hpp"
 
 class AABB {
 

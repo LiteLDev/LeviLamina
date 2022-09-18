@@ -38,7 +38,7 @@ public:
      * @symbol ??0JigsawEditorData@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000W4JigsawJointType@@@Z
      * @hash   1522946338
      */
-    MCAPI JigsawEditorData(std::string const &, std::string const &, std::string const &, std::string const &, enum JigsawJointType);
+    MCAPI JigsawEditorData(std::string const &, std::string const &, std::string const &, std::string const &, enum class JigsawJointType);
     /**
      * @symbol ??0JigsawEditorData@@QEAA@$$QEAV0@@Z
      * @hash   2140627929
@@ -53,7 +53,7 @@ public:
      * @symbol ?getJointType@JigsawEditorData@@QEBAAEBW4JigsawJointType@@XZ
      * @hash   664262234
      */
-    MCAPI enum JigsawJointType const & getJointType() const;
+    MCAPI enum class JigsawJointType const & getJointType() const;
     /**
      * @symbol ?getName@JigsawEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -1138604100
@@ -88,7 +88,7 @@ public:
      * @symbol ?setJointType@JigsawEditorData@@QEAAXAEBW4JigsawJointType@@@Z
      * @hash   -696188774
      */
-    MCAPI void setJointType(enum JigsawJointType const &);
+    MCAPI void setJointType(enum class JigsawJointType const &);
     /**
      * @symbol ?setName@JigsawEditorData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1377501486

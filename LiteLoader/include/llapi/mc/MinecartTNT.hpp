@@ -108,7 +108,7 @@ public:
      * @symbol ?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z
      * @hash   -320606017
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059
@@ -177,7 +177,7 @@ public:
      * @symbol ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
      * @hash   381116029
      */
-    virtual enum MinecartType getType();
+    virtual enum class MinecartType getType();
     /**
      * @vftbl  288
      * @symbol ?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ
@@ -198,7 +198,7 @@ public:
      * @symbol ?primeFuse@MinecartTNT@@QEAAXW4ActorDamageCause@@@Z
      * @hash   -286163012
      */
-    MCAPI void primeFuse(enum ActorDamageCause);
+    MCAPI void primeFuse(enum class ActorDamageCause);
 
 //private:
 

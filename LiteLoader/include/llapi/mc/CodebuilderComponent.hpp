@@ -32,7 +32,7 @@ public:
      * @symbol ?getCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@XZ
      * @hash   3330358
      */
-    MCAPI enum CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
+    MCAPI enum class CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
     /**
      * @symbol ?resetCodeStatus@CodebuilderComponent@@QEAAXXZ
      * @hash   1619338323
@@ -47,6 +47,6 @@ public:
      * @symbol ?stringToCodeStatus@CodebuilderComponent@@QEBA?AW4CodeStatus@CodeBuilderExecutionState@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -615970513
      */
-    MCAPI enum CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const &) const;
+    MCAPI enum class CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const &) const;
 
 };

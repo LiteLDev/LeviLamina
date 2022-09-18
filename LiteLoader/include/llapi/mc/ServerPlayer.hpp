@@ -38,7 +38,7 @@ public:
      * @symbol ?initializeComponents@ServerPlayer@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   2125779612
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?_serverInitItemStackIds@ServerPlayer@@EEAAXXZ
@@ -127,13 +127,13 @@ public:
      * @symbol ?handleEntityEvent@ServerPlayer@@UEAAXW4ActorEvent@@H@Z
      * @hash   -135887518
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  153
      * @symbol ?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
      * @hash   -1809709705
      */
-    virtual void setArmor(enum ArmorSlot, class ItemStack const &);
+    virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @vftbl  163
      * @symbol ?setOffhandSlot@ServerPlayer@@UEAAXAEBVItemStack@@@Z
@@ -278,7 +278,7 @@ public:
      * @symbol ?setDamagedArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
      * @hash   -1421081818
      */
-    virtual void setDamagedArmor(enum ArmorSlot, class ItemStack const &);
+    virtual void setDamagedArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @vftbl  327
      * @symbol ?sendArmorDamage@ServerPlayer@@UEAAXV?$bitset@$03@std@@@Z
@@ -491,7 +491,7 @@ public:
      * @symbol ?setPlayerGameType@ServerPlayer@@UEAAXW4GameType@@@Z
      * @hash   1850604150
      */
-    virtual void setPlayerGameType(enum GameType);
+    virtual void setPlayerGameType(enum class GameType);
     /**
      * @vftbl  421
      * @hash   -260172173
@@ -574,19 +574,19 @@ public:
      * @symbol ?getInputMode@ServerPlayer@@UEBA?AW4InputMode@@XZ
      * @hash   1803831868
      */
-    virtual enum InputMode getInputMode() const;
+    virtual enum class InputMode getInputMode() const;
     /**
      * @vftbl  446
      * @symbol ?getPlayMode@ServerPlayer@@UEBA?AW4ClientPlayMode@@XZ
      * @hash   1587696071
      */
-    virtual enum ClientPlayMode getPlayMode() const;
+    virtual enum class ClientPlayMode getPlayMode() const;
     /**
      * @vftbl  447
      * @symbol ?reportMovementTelemetry@ServerPlayer@@UEAAXW4MovementEventType@@@Z
      * @hash   -494440676
      */
-    virtual void reportMovementTelemetry(enum MovementEventType);
+    virtual void reportMovementTelemetry(enum class MovementEventType);
     /**
      * @vftbl  448
      * @hash   -183148984
@@ -626,7 +626,7 @@ public:
      * @symbol ??0ServerPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@9V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
      * @hash   784794884
      */
-    MCAPI ServerPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, enum SubClientId, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
+    MCAPI ServerPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum class GameType, class NetworkIdentifier const &, enum class SubClientId, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     /**
      * @symbol ?checkCheating@ServerPlayer@@QEAAXAEBVVec3@@@Z
      * @hash   2139517204
@@ -671,7 +671,7 @@ public:
      * @symbol ?openUnmanagedContainer@ServerPlayer@@QEAA?AW4ContainerID@@XZ
      * @hash   -720631516
      */
-    MCAPI enum ContainerID openUnmanagedContainer();
+    MCAPI enum class ContainerID openUnmanagedContainer();
     /**
      * @symbol ?postLoad@ServerPlayer@@QEAAX_N@Z
      * @hash   1842942042
@@ -696,7 +696,7 @@ public:
      * @symbol ?setInputMode@ServerPlayer@@QEAAXAEBW4InputMode@@@Z
      * @hash   1617323612
      */
-    MCAPI void setInputMode(enum InputMode const &);
+    MCAPI void setInputMode(enum class InputMode const &);
     /**
      * @symbol ?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ
      * @hash   776489123
@@ -706,7 +706,7 @@ public:
      * @symbol ?setPlayMode@ServerPlayer@@QEAAXAEBW4ClientPlayMode@@@Z
      * @hash   892290468
      */
-    MCAPI void setPlayMode(enum ClientPlayMode const &);
+    MCAPI void setPlayMode(enum class ClientPlayMode const &);
     /**
      * @symbol ?setPlayerInput@ServerPlayer@@QEAAXMM_N0@Z
      * @hash   -919806248
@@ -738,12 +738,12 @@ public:
      * @symbol ?_logCDEvent@ServerPlayer@@AEAAXW4CrashDumpLogStringID@@000@Z
      * @hash   -1471733492
      */
-    MCAPI void _logCDEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
+    MCAPI void _logCDEvent(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, enum class CrashDumpLogStringID);
     /**
      * @symbol ?_nextContainerCounter@ServerPlayer@@AEAA?AW4ContainerID@@XZ
      * @hash   -557103415
      */
-    MCAPI enum ContainerID _nextContainerCounter();
+    MCAPI enum class ContainerID _nextContainerCounter();
     /**
      * @symbol ?_removeNearbyEntities@ServerPlayer@@AEAAXXZ
      * @hash   -1242633061

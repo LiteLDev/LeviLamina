@@ -98,7 +98,7 @@ public:
      * @symbol ?getCircuitComponentType@RedstoneTorchCapacitor@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   -1005038548
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  24
      * @symbol ?getPoweroutDirection@RedstoneTorchCapacitor@@UEBAEXZ

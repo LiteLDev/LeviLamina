@@ -56,7 +56,7 @@ using LargestInt = Int64;
 using LargestUInt = UInt64;
 using ArrayIndex = unsigned;
 
-enum CommentPlacement {
+enum class CommentPlacement {
     commentBefore = 0,      ///< a comment placed on the line before a value
     commentAfterOnSameLine, ///< a comment just after a value on the same line
     commentAfter,           ///< a comment on the line after a value (only make sense for
@@ -382,7 +382,7 @@ public:
     MCAPI std::string getFormattedErrorMessages() const;
 
 private:
-    enum TokenType {
+    enum class TokenType {
         tokenEndOfStream = 0,
         tokenObjectBegin,
         tokenObjectEnd,

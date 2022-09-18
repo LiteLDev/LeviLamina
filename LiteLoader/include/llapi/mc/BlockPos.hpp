@@ -1,5 +1,6 @@
 #pragma once
 #include "../Global.h"
+
 class Vec3;
 class BlockPos {
 public:
@@ -19,7 +20,7 @@ public:
 
     MCAPI class BlockPos neighbor(unsigned char) const;
     MCAPI class BlockPos relative(unsigned char, int) const;
-    MCAPI class BlockPos transform(enum Rotation, enum Mirror, class Vec3 const&) const;
+    MCAPI class BlockPos transform(enum class Rotation, enum class Mirror, class Vec3 const&) const;
 
     MCAPI int randomSeed() const;
 

@@ -33,7 +33,7 @@ public:
      * @symbol ??0CommandOutputMessage@@QEAA@W4CommandOutputMessageType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   213572255
      */
-    MCAPI CommandOutputMessage(enum CommandOutputMessageType, std::string const &, std::vector<std::string> &&);
+    MCAPI CommandOutputMessage(enum class CommandOutputMessageType, std::string const &, std::vector<std::string> &&);
     /**
      * @symbol ??0CommandOutputMessage@@QEAA@AEBV0@@Z
      * @hash   245399105
@@ -58,7 +58,7 @@ public:
      * @symbol ?getType@CommandOutputMessage@@QEBA?AW4CommandOutputMessageType@@XZ
      * @hash   1988996440
      */
-    MCAPI enum CommandOutputMessageType getType() const;
+    MCAPI enum class CommandOutputMessageType getType() const;
     /**
      * @symbol ?getUserMessage@CommandOutputMessage@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -2002429086

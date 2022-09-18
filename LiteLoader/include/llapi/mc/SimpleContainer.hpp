@@ -92,6 +92,6 @@ public:
      * @symbol ??0SimpleContainer@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NHW4ContainerType@@@Z
      * @hash   -1509880399
      */
-    MCAPI SimpleContainer(std::string const &, bool, int, enum ContainerType);
+    MCAPI SimpleContainer(std::string const &, bool, int, enum class ContainerType);
 
 };

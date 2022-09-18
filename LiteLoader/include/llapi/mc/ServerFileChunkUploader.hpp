@@ -81,7 +81,7 @@ public:
      * @symbol ?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ
      * @hash   -606803566
      */
-    virtual enum UploadError getInitErrorCode() const;
+    virtual enum class UploadError getInitErrorCode() const;
     /**
      * @vftbl  10
      * @symbol ?getUploadProgress@ServerFileChunkUploader@@UEBAMAEBUFileInfo@@@Z

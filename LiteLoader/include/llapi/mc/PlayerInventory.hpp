@@ -87,7 +87,7 @@ public:
      * @symbol ?clearSlot@PlayerInventory@@QEAAXHW4ContainerID@@@Z
      * @hash   1730498795
      */
-    MCAPI void clearSlot(int, enum ContainerID);
+    MCAPI void clearSlot(int, enum class ContainerID);
     /**
      * @symbol ?clearVanishEnchantedItemsOnDeath@PlayerInventory@@QEAAXXZ
      * @hash   232814765
@@ -102,12 +102,12 @@ public:
      * @symbol ?getAllContainerIds@PlayerInventory@@QEAAAEBV?$vector@W4ContainerID@@V?$allocator@W4ContainerID@@@std@@@std@@XZ
      * @hash   805225960
      */
-    MCAPI std::vector<enum ContainerID> const & getAllContainerIds();
+    MCAPI std::vector<enum class ContainerID> const & getAllContainerIds();
     /**
      * @symbol ?getComplexItems@PlayerInventory@@QEBAAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@W4ContainerID@@@Z
      * @hash   1297185111
      */
-    MCAPI std::vector<class ItemStack> const & getComplexItems(enum ContainerID) const;
+    MCAPI std::vector<class ItemStack> const & getComplexItems(enum class ContainerID) const;
     /**
      * @symbol ?getContainer@PlayerInventory@@QEAAAEAVContainer@@XZ
      * @hash   -1436392854
@@ -117,7 +117,7 @@ public:
      * @symbol ?getContainerSize@PlayerInventory@@QEBAHW4ContainerID@@@Z
      * @hash   -137269165
      */
-    MCAPI int getContainerSize(enum ContainerID) const;
+    MCAPI int getContainerSize(enum class ContainerID) const;
     /**
      * @symbol ?getFirstEmptySlot@PlayerInventory@@QEBAHXZ
      * @hash   -1196508118
@@ -132,7 +132,7 @@ public:
      * @symbol ?getItem@PlayerInventory@@QEBAAEBVItemStack@@HW4ContainerID@@@Z
      * @hash   764652202
      */
-    MCAPI class ItemStack const & getItem(int, enum ContainerID) const;
+    MCAPI class ItemStack const & getItem(int, enum class ContainerID) const;
     /**
      * @symbol ?getItemCount@PlayerInventory@@QEAAHV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
      * @hash   -1357861849
@@ -142,7 +142,7 @@ public:
      * @symbol ?getSelectedContainerId@PlayerInventory@@QEAA?AW4ContainerID@@XZ
      * @hash   57554744
      */
-    MCAPI enum ContainerID getSelectedContainerId();
+    MCAPI enum class ContainerID getSelectedContainerId();
     /**
      * @symbol ?getSelectedItem@PlayerInventory@@QEAAAEBVItemStack@@XZ
      * @hash   1035655042
@@ -177,7 +177,7 @@ public:
      * @symbol ?removeItem@PlayerInventory@@QEAAXHHW4ContainerID@@@Z
      * @hash   -1613746462
      */
-    MCAPI void removeItem(int, int, enum ContainerID);
+    MCAPI void removeItem(int, int, enum class ContainerID);
     /**
      * @symbol ?removeListener@PlayerInventory@@QEAAXPEAVContainerContentChangeListener@@@Z
      * @hash   1864067299
@@ -202,7 +202,7 @@ public:
      * @symbol ?selectSlot@PlayerInventory@@QEAA_NHW4ContainerID@@@Z
      * @hash   -1013236358
      */
-    MCAPI bool selectSlot(int, enum ContainerID);
+    MCAPI bool selectSlot(int, enum class ContainerID);
     /**
      * @symbol ?serverInitItemStackId@PlayerInventory@@QEAAXH@Z
      * @hash   -1759102148
@@ -222,7 +222,7 @@ public:
      * @symbol ?setItem@PlayerInventory@@QEAAXHAEBVItemStack@@W4ContainerID@@_N@Z
      * @hash   83424655
      */
-    MCAPI void setItem(int, class ItemStack const &, enum ContainerID, bool);
+    MCAPI void setItem(int, class ItemStack const &, enum class ContainerID, bool);
     /**
      * @symbol ?setSelectedItem@PlayerInventory@@QEAAXAEBVItemStack@@@Z
      * @hash   2094001558

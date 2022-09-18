@@ -49,7 +49,7 @@ public:
      * @symbol ?isFree@PathFinder@@QEAA?AW4NodeType@@AEAVActor@@AEBVBlockPos@@11W4CanJumpIntoNode@@W4CanClimbIntoNode@@@Z
      * @hash   989418678
      */
-    MCAPI enum NodeType isFree(class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode, enum CanClimbIntoNode);
+    MCAPI enum class NodeType isFree(class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode, enum class CanClimbIntoNode);
     /**
      * @symbol ??1PathFinder@@QEAA@XZ
      * @hash   -2103971179
@@ -66,7 +66,7 @@ public:
      * @symbol ?_checkBlockAndNeighborsProperty@PathFinder@@AEAA_NAEAVActor@@AEBVBlockPos@@AEBVBlock@@W4BlockProperty@@HPEBVBreakBlocksComponent@@V?$function@$$A6A_NAEBVBlock@@AEBVBlockPos@@@Z@std@@@Z
      * @hash   1798672932
      */
-    MCAPI bool _checkBlockAndNeighborsProperty(class Actor &, class BlockPos const &, class Block const &, enum BlockProperty, int, class BreakBlocksComponent const *, class std::function<bool (class Block const &, class BlockPos const &)>);
+    MCAPI bool _checkBlockAndNeighborsProperty(class Actor &, class BlockPos const &, class Block const &, enum class BlockProperty, int, class BreakBlocksComponent const *, class std::function<bool (class Block const &, class BlockPos const &)>);
     /**
      * @symbol ?_checkForDamagingBlock@PathFinder@@AEAA_NAEAVActor@@AEBVBlockPos@@AEBVBlock@@HPEBVBreakBlocksComponent@@@Z
      * @hash   -301358365
@@ -76,12 +76,12 @@ public:
      * @symbol ?_classifyDoorNode@PathFinder@@AEAA?AW4NodeType@@AEAVActor@@AEBVBlock@@AEBVBlockPos@@2@Z
      * @hash   380646815
      */
-    MCAPI enum NodeType _classifyDoorNode(class Actor &, class Block const &, class BlockPos const &, class BlockPos const &);
+    MCAPI enum class NodeType _classifyDoorNode(class Actor &, class Block const &, class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?_classifyNode@PathFinder@@AEAA?AW4NodeType@@AEAVActor@@AEBVBlockPos@@AEBVBlock@@1W4CanJumpIntoNode@@W4CanClimbIntoNode@@@Z
      * @hash   1858152728
      */
-    MCAPI enum NodeType _classifyNode(class Actor &, class BlockPos const &, class Block const &, class BlockPos const &, enum CanJumpIntoNode, enum CanClimbIntoNode);
+    MCAPI enum class NodeType _classifyNode(class Actor &, class BlockPos const &, class Block const &, class BlockPos const &, enum class CanJumpIntoNode, enum class CanClimbIntoNode);
     /**
      * @symbol ?_findNearestPathableNeighbor@PathFinder@@AEAA_NAEAVBlockPos@@AEAVActor@@AEBV2@@Z
      * @hash   1663837662
@@ -131,27 +131,27 @@ public:
      * @symbol ?_getNode@PathFinder@@AEAAPEAVPathfinderNode@@AEAVActor@@AEBVBlockPos@@1AEBV2@MW4CanClimbIntoNode@@@Z
      * @hash   1917321843
      */
-    MCAPI class PathfinderNode * _getNode(class Actor &, class BlockPos const &, class BlockPos const &, class PathfinderNode const &, float, enum CanClimbIntoNode);
+    MCAPI class PathfinderNode * _getNode(class Actor &, class BlockPos const &, class BlockPos const &, class PathfinderNode const &, float, enum class CanClimbIntoNode);
     /**
      * @symbol ?_getNode@PathFinder@@AEAAPEAVPathfinderNode@@AEBVBlockPos@@W4NodeType@@@Z
      * @hash   203846937
      */
-    MCAPI class PathfinderNode * _getNode(class BlockPos const &, enum NodeType);
+    MCAPI class PathfinderNode * _getNode(class BlockPos const &, enum class NodeType);
     /**
      * @symbol ?_getPartialBlockNodeType@PathFinder@@AEAA?AV?$optional@W4NodeType@@@std@@AEBVBlockPos@@0AEAVActor@@@Z
      * @hash   2104081658
      */
-    MCAPI class std::optional<enum NodeType> _getPartialBlockNodeType(class BlockPos const &, class BlockPos const &, class Actor &);
+    MCAPI class std::optional<enum class NodeType> _getPartialBlockNodeType(class BlockPos const &, class BlockPos const &, class Actor &);
     /**
      * @symbol ?_getPathfindingMalus@PathFinder@@AEAAMAEAVActor@@W4NodeType@@AEBVBlockPos@@@Z
      * @hash   -187741945
      */
-    MCAPI float _getPathfindingMalus(class Actor &, enum NodeType, class BlockPos const &);
+    MCAPI float _getPathfindingMalus(class Actor &, enum class NodeType, class BlockPos const &);
     /**
      * @symbol ?_getUnderneathSupportedNode@PathFinder@@AEAAPEAVPathfinderNode@@PEAV2@AEAVActor@@AEBVBlockPos@@AEBV2@W4CanClimbIntoNode@@@Z
      * @hash   -1071796758
      */
-    MCAPI class PathfinderNode * _getUnderneathSupportedNode(class PathfinderNode *, class Actor &, class BlockPos const &, class PathfinderNode const &, enum CanClimbIntoNode);
+    MCAPI class PathfinderNode * _getUnderneathSupportedNode(class PathfinderNode *, class Actor &, class BlockPos const &, class PathfinderNode const &, enum class CanClimbIntoNode);
     /**
      * @symbol ?_getWaterNode@PathFinder@@AEAAPEAVPathfinderNode@@AEAVActor@@AEBVBlockPos@@1@Z
      * @hash   2054868723
@@ -161,17 +161,17 @@ public:
      * @symbol ?_isFreeStartNode@PathFinder@@AEAA?AW4NodeType@@AEAVActor@@AEBVAABB@@AEBVBlockPos@@2@Z
      * @hash   -1248256568
      */
-    MCAPI enum NodeType _isFreeStartNode(class Actor &, class AABB const &, class BlockPos const &, class BlockPos const &);
+    MCAPI enum class NodeType _isFreeStartNode(class Actor &, class AABB const &, class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?_isFreeWaterNode@PathFinder@@AEAA?AW4NodeType@@AEAVActor@@AEBVBlockPos@@1@Z
      * @hash   -873204164
      */
-    MCAPI enum NodeType _isFreeWaterNode(class Actor &, class BlockPos const &, class BlockPos const &);
+    MCAPI enum class NodeType _isFreeWaterNode(class Actor &, class BlockPos const &, class BlockPos const &);
     /**
      * @symbol ?_reconstructPath@PathFinder@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@PEAVPathfinderNode@@W4PathCompletionType@@UActorUniqueID@@@Z
      * @hash   -837656775
      */
-    MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode *, enum PathCompletionType, struct ActorUniqueID);
+    MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode *, enum class PathCompletionType, struct ActorUniqueID);
 
 private:
 

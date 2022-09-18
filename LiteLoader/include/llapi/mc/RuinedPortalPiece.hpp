@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@RuinedPortalPiece@@UEBA?AW4StructurePieceType@@XZ
      * @hash   427838976
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@RuinedPortalPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

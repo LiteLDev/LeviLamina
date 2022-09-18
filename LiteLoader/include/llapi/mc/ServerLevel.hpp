@@ -116,12 +116,12 @@ public:
      * @symbol ?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z
      * @hash   360940986
      */
-    MCVAPI void runCommand(class Command &, class CommandOrigin &, enum CommandOriginSystem);
+    MCVAPI void runCommand(class Command &, class CommandOrigin &, enum class CommandOriginSystem);
     /**
      * @symbol ?runCommand@ServerLevel@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z
      * @hash   -2090370009
      */
-    MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CommandOriginSystem, enum CurrentCmdVersion);
+    MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum class CommandOriginSystem, enum class CurrentCmdVersion);
     /**
      * @symbol ?saveAdditionalData@ServerLevel@@UEAAXXZ
      * @hash   2055608900

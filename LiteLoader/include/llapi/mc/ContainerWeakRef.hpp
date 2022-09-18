@@ -43,7 +43,7 @@ public:
      * @symbol ??0ContainerWeakRef@@QEAA@AEBUActorUniqueID@@W4ActorContainerType@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
      * @hash   1191282798
      */
-    MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
+    MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum class ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??BContainerWeakRef@@QEBA_NXZ
      * @hash   -598936660

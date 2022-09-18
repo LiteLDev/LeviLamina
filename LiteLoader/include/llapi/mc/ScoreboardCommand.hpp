@@ -89,7 +89,7 @@ public:
      * @symbol ?addPlayerScore@ScoreboardCommand@@AEBAXAEAVScoreboard@@W4PlayerScoreSetFunction@@AEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
      * @hash   -1945166415
      */
-    MCAPI void addPlayerScore(class Scoreboard &, enum PlayerScoreSetFunction, struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &, struct ScoreboardCommand::SetScoreOutput &) const;
+    MCAPI void addPlayerScore(class Scoreboard &, enum class PlayerScoreSetFunction, struct ScoreboardId const &, class Objective &, class std::function<std::string const & (struct ActorUniqueID)> const &, class CommandOutput &, struct ScoreboardCommand::SetScoreOutput &) const;
     /**
      * @symbol ?applyPlayerOperation@ScoreboardCommand@@AEBA_NAEAVScoreboard@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEBUScoreboardId@@AEAVObjective@@3AEBVCommandOrigin@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
      * @hash   582456877
@@ -129,7 +129,7 @@ public:
      * @symbol ?setDisplayObjective@ScoreboardCommand@@AEBAXAEAVScoreboard@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4ObjectiveSortOrder@@AEAVCommandOutput@@@Z
      * @hash   753426244
      */
-    MCAPI void setDisplayObjective(class Scoreboard &, std::string const &, std::string const &, enum ObjectiveSortOrder, class CommandOutput &) const;
+    MCAPI void setDisplayObjective(class Scoreboard &, std::string const &, std::string const &, enum class ObjectiveSortOrder, class CommandOutput &) const;
     /**
      * @symbol ?setPlayerRandomScore@ScoreboardCommand@@AEBA_NAEAVScoreboard@@AEBUScoreboardId@@AEAVObjective@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@std@@AEAVCommandOutput@@AEAUSetScoreOutput@1@@Z
      * @hash   1935502180

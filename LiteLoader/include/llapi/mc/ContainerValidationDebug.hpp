@@ -32,6 +32,6 @@ public:
      * @symbol ??0ContainerValidationDebug@@QEAA@W4ContainerValidationCaller@@@Z
      * @hash   -782837380
      */
-    MCAPI ContainerValidationDebug(enum ContainerValidationCaller);
+    MCAPI ContainerValidationDebug(enum class ContainerValidationCaller);
 
 };

@@ -57,7 +57,7 @@ public:
      * @symbol ??0PackError@@QEAA@W4PackErrorType@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
      * @hash   -2136234892
      */
-    MCAPI PackError(enum PackErrorType, std::vector<std::string> const &);
+    MCAPI PackError(enum class PackErrorType, std::vector<std::string> const &);
     /**
      * @symbol ??0PackError@@QEAA@AEBV0@@Z
      * @hash   2079405793

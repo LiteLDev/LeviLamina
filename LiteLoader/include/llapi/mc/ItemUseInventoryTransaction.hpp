@@ -21,7 +21,7 @@ class ItemUseInventoryTransaction {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum ActionType;
+enum class ActionType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEINVENTORYTRANSACTION
@@ -58,13 +58,13 @@ public:
      * @symbol ?handle@ItemUseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
      * @hash   -273930309
      */
-    virtual enum InventoryTransactionError handle(class Player &, bool) const;
+    virtual enum class InventoryTransactionError handle(class Player &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onTransactionError@ItemUseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
      * @hash   -1405817430
      */
-    virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
+    virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
     /**
      * @symbol ??0ItemUseInventoryTransaction@@QEAA@AEBV0@@Z
      * @hash   -1883557583
@@ -98,6 +98,6 @@ private:
      * @symbol ?actionTypeMap@ItemUseInventoryTransaction@@0V?$BidirectionalUnorderedMap@W4ActionType@ItemUseInventoryTransaction@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      * @hash   289404509
      */
-    MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;
 
 };

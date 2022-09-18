@@ -52,7 +52,7 @@ public:
      * @symbol ??0InstantaneousAttributeBuff@@QEAA@MW4AttributeBuffType@@@Z
      * @hash   -1947804691
      */
-    MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
+    MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
     /**
      * @symbol ??0InstantaneousAttributeBuff@@QEAA@MAEBVActorDamageSource@@@Z
      * @hash   -1009747381

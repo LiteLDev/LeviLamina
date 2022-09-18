@@ -76,7 +76,7 @@ public:
      * @symbol ?getPackCategory@PackInstance@@QEBA?AW4PackCategory@@XZ
      * @hash   -829758088
      */
-    MCAPI enum PackCategory getPackCategory() const;
+    MCAPI enum class PackCategory getPackCategory() const;
     /**
      * @symbol ?getPackId@PackInstance@@QEBA?BVUUID@mce@@XZ
      * @hash   -130768856
@@ -86,7 +86,7 @@ public:
      * @symbol ?getPackOrigin@PackInstance@@QEBA?AW4PackOrigin@@XZ
      * @hash   782496776
      */
-    MCAPI enum PackOrigin getPackOrigin() const;
+    MCAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getPackStats@PackInstance@@QEAAAEAVPackStats@@XZ
      * @hash   -645036276

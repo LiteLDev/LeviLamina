@@ -197,7 +197,7 @@ public:
      * @symbol ?getBlockShape@ComponentItem@@UEBA?AW4BlockShape@@XZ
      * @hash   665191654
      */
-    virtual enum BlockShape getBlockShape() const;
+    virtual enum class BlockShape getBlockShape() const;
     /**
      * @vftbl  44
      * @symbol ?canBeDepleted@ComponentItem@@UEBA_NXZ
@@ -380,7 +380,7 @@ public:
      * @symbol ?useTimeDepleted@ComponentItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
      * @hash   1305502784
      */
-    virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @vftbl  88
      * @symbol ?releaseUsing@ComponentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z

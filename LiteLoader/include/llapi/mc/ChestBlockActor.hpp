@@ -246,7 +246,7 @@ public:
      * @symbol ??0ChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@_N@Z
      * @hash   1598339508
      */
-    MCAPI ChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &, bool);
+    MCAPI ChestBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &, bool);
     /**
      * @symbol ?canOpen@ChestBlockActor@@QEBA_NAEAVBlockSource@@@Z
      * @hash   -589263189

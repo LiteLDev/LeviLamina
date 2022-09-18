@@ -19,16 +19,16 @@
 namespace CodeBuilder {
 
 #define AFTER_EXTRA
-enum ProtocolVersion;
-enum EncryptionCipherMode;
+enum class ProtocolVersion;
+enum class EncryptionCipherMode;
 struct RequestHeader;
-enum RequestPurpose;
+enum class RequestPurpose;
 struct AgentMessage;
 struct ChatMessage;
 struct CommandMessage;
 struct ErrorMessage;
 struct EncryptionResult;
-enum ResponsePurpose;
+enum class ResponsePurpose;
 struct EventMessage;
 
 #undef AFTER_EXTRA
@@ -41,12 +41,12 @@ struct EventMessage;
      * @symbol ?fromString@CodeBuilder@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAW4EncryptionCipherMode@1@@Z
      * @hash   -215075440
      */
-    MCAPI bool fromString(std::string const &, enum CodeBuilder::EncryptionCipherMode &);
+    MCAPI bool fromString(std::string const &, enum class CodeBuilder::EncryptionCipherMode &);
     /**
      * @symbol ?fromString@CodeBuilder@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAW4RequestPurpose@1@@Z
      * @hash   -1221350720
      */
-    MCAPI bool fromString(std::string const &, enum CodeBuilder::RequestPurpose &);
+    MCAPI bool fromString(std::string const &, enum class CodeBuilder::RequestPurpose &);
     /**
      * @symbol ?serialize@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUAgentMessage@1@@Z
      * @hash   -370144595
@@ -86,6 +86,6 @@ struct EventMessage;
      * @symbol ?toString@CodeBuilder@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ResponsePurpose@1@@Z
      * @hash   -941762517
      */
-    MCAPI std::string toString(enum CodeBuilder::ResponsePurpose);
+    MCAPI std::string toString(enum class CodeBuilder::ResponsePurpose);
 
 };

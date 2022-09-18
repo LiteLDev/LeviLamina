@@ -31,6 +31,6 @@ namespace InternalHelpers {
      * @symbol ?toString@InternalHelpers@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MovePredictionType@@@Z
      * @hash   -1115734696
      */
-    MCAPI std::string toString(enum MovePredictionType);
+    MCAPI std::string toString(enum class MovePredictionType);
 
 };

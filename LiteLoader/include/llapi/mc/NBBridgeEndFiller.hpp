@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@NBBridgeEndFiller@@UEBA?AW4StructurePieceType@@XZ
      * @hash   2013921933
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@NBBridgeEndFiller@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

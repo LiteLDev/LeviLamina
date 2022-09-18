@@ -11,6 +11,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "BoundingBox.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -23,7 +24,7 @@ class LevelChunk {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Finalization : int {
+enum class Finalization : int {
     Requeue = 0x0,
     Done = 0x1,
     Noop = 0x2,
@@ -36,7 +37,7 @@ public:
     Neighbors(Neighbors const&&) = delete;
 };
 
-enum HardcodedSpawnAreaType : char {
+enum class HardcodedSpawnAreaType : char {
     NONE = 0,
     NETHER_FORTRESS = 1,
     SWAMP_HUT = 2,
@@ -47,7 +48,7 @@ enum HardcodedSpawnAreaType : char {
 
 struct HardcodedSpawningArea {
     class BoundingBox aabb;
-    enum HardcodedSpawnAreaType type;
+    enum class HardcodedSpawnAreaType type;
 };
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNK
@@ -62,17 +63,17 @@ public:
      * @symbol ??0LevelChunk@@QEAA@AEAVDimension@@AEBVChunkPos@@_NW4SubChunkInitMode@@2@Z
      * @hash   1087291743
      */
-    MCAPI LevelChunk(class Dimension &, class ChunkPos const &, bool, enum SubChunkInitMode, bool);
+    MCAPI LevelChunk(class Dimension &, class ChunkPos const &, bool, enum class SubChunkInitMode, bool);
     /**
      * @symbol ?_changeTerrainDataState@LevelChunk@@QEAAXW4ChunkTerrainDataState@@0@Z
      * @hash   -361489395
      */
-    MCAPI void _changeTerrainDataState(enum ChunkTerrainDataState, enum ChunkTerrainDataState);
+    MCAPI void _changeTerrainDataState(enum class ChunkTerrainDataState, enum class ChunkTerrainDataState);
     /**
      * @symbol ?_getTerrainDataState@LevelChunk@@QEBA?AW4ChunkTerrainDataState@@XZ
      * @hash   1962315404
      */
-    MCAPI enum ChunkTerrainDataState _getTerrainDataState() const;
+    MCAPI enum class ChunkTerrainDataState _getTerrainDataState() const;
     /**
      * @symbol ?_onRandomTickingQueueChanged@LevelChunk@@QEAAXXZ
      * @hash   71322917
@@ -107,7 +108,7 @@ public:
      * @symbol ?addHardcodedSpawningArea@LevelChunk@@QEAAXAEBVBoundingBox@@W4HardcodedSpawnAreaType@@@Z
      * @hash   349342673
      */
-    MCAPI void addHardcodedSpawningArea(class BoundingBox const &, enum HardcodedSpawnAreaType);
+    MCAPI void addHardcodedSpawningArea(class BoundingBox const &, enum class HardcodedSpawnAreaType);
     /**
      * @symbol ?addSubChunkBlockEntitiesToLevelChunk@LevelChunk@@QEAAXAEAV?$unordered_map@VChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@U?$hash@VChunkBlockPos@@@3@U?$equal_to@VChunkBlockPos@@@3@V?$allocator@U?$pair@$$CBVChunkBlockPos@@V?$shared_ptr@VBlockActor@@@std@@@std@@@3@@std@@@Z
      * @hash   1470415199
@@ -122,7 +123,7 @@ public:
      * @symbol ?changeState@LevelChunk@@QEAAXW4ChunkState@@0@Z
      * @hash   -1775940858
      */
-    MCAPI void changeState(enum ChunkState, enum ChunkState);
+    MCAPI void changeState(enum class ChunkState, enum class ChunkState);
     /**
      * @symbol ?checkSeasonsPostProcessDirty@LevelChunk@@QEAA_NXZ
      * @hash   -851579790
@@ -302,7 +303,7 @@ public:
      * @symbol ?getEntities@LevelChunk@@QEBAXW4ActorType@@AEBVAABB@@AEAV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@_N@Z
      * @hash   -824655215
      */
-    MCAPI void getEntities(enum ActorType, class AABB const &, std::vector<class Actor *> &, bool) const;
+    MCAPI void getEntities(enum class ActorType, class AABB const &, std::vector<class Actor *> &, bool) const;
     /**
      * @symbol ?getEntity@LevelChunk@@QEBAPEAVActor@@AEBUActorUniqueID@@@Z
      * @hash   -1205401956
@@ -317,7 +318,7 @@ public:
      * @symbol ?getFinalized@LevelChunk@@QEBA?AW4Finalization@1@XZ
      * @hash   1921870468
      */
-    MCAPI enum LevelChunk::Finalization getFinalized() const;
+    MCAPI enum class LevelChunk::Finalization getFinalized() const;
     /**
      * @symbol ?getGameEventListenerRegistry@LevelChunk@@QEBAAEAVGameEventListenerRegistry@@XZ
      * @hash   458959060
@@ -367,7 +368,7 @@ public:
      * @symbol ?getLoadedFormat@LevelChunk@@QEBA?AV?$optional@W4LevelChunkFormat@@@std@@XZ
      * @hash   -734147087
      */
-    MCAPI class std::optional<enum LevelChunkFormat> getLoadedFormat() const;
+    MCAPI class std::optional<enum class LevelChunkFormat> getLoadedFormat() const;
     /**
      * @symbol ?getMax@LevelChunk@@QEBAAEBVBlockPos@@XZ
      * @hash   1398660518
@@ -447,7 +448,7 @@ public:
      * @symbol ?getState@LevelChunk@@QEBAAEBU?$atomic@W4ChunkState@@@std@@XZ
      * @hash   813204193
      */
-    MCAPI struct std::atomic<enum ChunkState> const & getState() const;
+    MCAPI struct std::atomic<enum class ChunkState> const & getState() const;
     /**
      * @symbol ?getSubChunk@LevelChunk@@QEBAPEBUSubChunk@@F@Z
      * @hash   -899603873
@@ -642,7 +643,7 @@ public:
      * @symbol ?removeHardcodedSpawningArea@LevelChunk@@QEAAXW4HardcodedSpawnAreaType@@@Z
      * @hash   -1290336444
      */
-    MCAPI void removeHardcodedSpawningArea(enum HardcodedSpawnAreaType);
+    MCAPI void removeHardcodedSpawningArea(enum class HardcodedSpawnAreaType);
     /**
      * @symbol ?runtimeRelightSubchunk@LevelChunk@@QEAAXAEAVBlockSource@@_KAEBV?$vector@USubChunkLightUpdate@@V?$allocator@USubChunkLightUpdate@@@std@@@std@@AEAV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@4@@Z
      * @hash   759283643
@@ -777,7 +778,7 @@ public:
      * @symbol ?setFinalized@LevelChunk@@QEAAXW4Finalization@1@@Z
      * @hash   -332765152
      */
-    MCAPI void setFinalized(enum LevelChunk::Finalization);
+    MCAPI void setFinalized(enum class LevelChunk::Finalization);
     /**
      * @symbol ?setHadSerializedEntities@LevelChunk@@QEAAXXZ
      * @hash   -22663643
@@ -857,7 +858,7 @@ public:
      * @symbol ?tryChangeState@LevelChunk@@QEAA_NW4ChunkState@@0@Z
      * @hash   -1786859457
      */
-    MCAPI bool tryChangeState(enum ChunkState, enum ChunkState);
+    MCAPI bool tryChangeState(enum class ChunkState, enum class ChunkState);
     /**
      * @symbol ?trySpawnSkeletonTrap@LevelChunk@@QEAAXAEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   789791813
@@ -892,7 +893,7 @@ public:
      * @symbol ?createNew@LevelChunk@@SA?AV?$unique_ptr@VLevelChunk@@ULevelChunkPhase1Deleter@@@std@@AEAVDimension@@VChunkPos@@_NW4SubChunkInitMode@@@Z
      * @hash   -146091285
      */
-    MCAPI static class std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter> createNew(class Dimension &, class ChunkPos, bool, enum SubChunkInitMode);
+    MCAPI static class std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter> createNew(class Dimension &, class ChunkPos, bool, enum class SubChunkInitMode);
     /**
      * @symbol ?deserialize2DData@LevelChunk@@SA?AV?$tuple@V?$array@VChunkLocalHeight@@$0BAA@@std@@V?$array@UBiomeChunkData@@$0BAA@@2@@std@@AEAVIDataInput@@@Z
      * @hash   -270353479
@@ -922,7 +923,7 @@ public:
      * @symbol ?getTagAndSubIndexFromKey@LevelChunk@@SA?AU?$pair@W4LevelChunkTag@@F@std@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
      * @hash   -386861768
      */
-    MCAPI static struct std::pair<enum LevelChunkTag, short> getTagAndSubIndexFromKey(class gsl::basic_string_span<char const, -1>);
+    MCAPI static struct std::pair<enum class LevelChunkTag, short> getTagAndSubIndexFromKey(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?serializeEntities@LevelChunk@@SAXAEBV?$vector@VWeakEntityRef@@V?$allocator@VWeakEntityRef@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV43@_NV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@3@44@Z
      * @hash   2001863043

@@ -28,7 +28,7 @@ public:
     ValidationError(ValidationError const&) = delete;
     ValidationError(ValidationError const&&) = delete;
 };
-enum Type;
+enum class Type;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULE
@@ -87,7 +87,7 @@ public:
      * @symbol ?getType@GameRule@@QEBA?AW4Type@1@XZ
      * @hash   85434877
      */
-    MCAPI enum GameRule::Type getType() const;
+    MCAPI enum class GameRule::Type getType() const;
     /**
      * @symbol ?getValue@GameRule@@QEBAAEBTValue@1@XZ
      * @hash   87232446
@@ -107,7 +107,7 @@ public:
      * @symbol ?resetType@GameRule@@QEAAXW4Type@1@@Z
      * @hash   648255805
      */
-    MCAPI void resetType(enum GameRule::Type);
+    MCAPI void resetType(enum class GameRule::Type);
     /**
      * @symbol ?setBool@GameRule@@QEAA_N_NPEA_NPEAVValidationError@1@@Z
      * @hash   1904985847

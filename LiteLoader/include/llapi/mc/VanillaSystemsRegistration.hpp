@@ -33,7 +33,7 @@ namespace VanillaSystemsRegistration {
      * @symbol ?registerExtractApplyBlock@VanillaSystemsRegistration@@YAXAEAUDependencyInfo@1@W4ExtractApplyMode@1@V?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@std@@AEAVEntitySystems@@AEBURegistrationOptions@1@AEBV?$function@$$A6AXAEAVIEntitySystems@@@Z@5@@Z
      * @hash   1884570925
      */
-    MCAPI void registerExtractApplyBlock(struct VanillaSystemsRegistration::DependencyInfo &, enum VanillaSystemsRegistration::ExtractApplyMode, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::function<void (class IEntitySystems &)> const &);
+    MCAPI void registerExtractApplyBlock(struct VanillaSystemsRegistration::DependencyInfo &, enum class VanillaSystemsRegistration::ExtractApplyMode, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::function<void (class IEntitySystems &)> const &);
     /**
      * @symbol ?registerSharedVanillaPlayerInteractionSystems@VanillaSystemsRegistration@@YAXAEAVEntitySystems@@@Z
      * @hash   1534960191

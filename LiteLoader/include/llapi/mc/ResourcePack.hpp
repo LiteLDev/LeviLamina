@@ -10,7 +10,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum PackOrigin : int {
+enum class PackOrigin : int {
     PackOrigin_Unknown = 0x0,
     PackOrigin_RealmsUnknown = 0x1,
     PackOrigin_Package = 0x2,
@@ -23,7 +23,7 @@ enum PackOrigin : int {
     PackOrigin_PremiumTempCache = 0x9,
 };
 
-enum PackType : char {
+enum class PackType : char {
     PackType_Invalid = 0x0,
     PackType_Addon = 0x1,
     PackType_Cached = 0x2,
@@ -36,7 +36,7 @@ enum PackType : char {
     PackType_Count = 0x9,
 };
 
-enum PackCategory : int {
+enum class PackCategory : int {
     PackCategory_Unknown = 0x0,
     PackCategory_RealmsUnknown = 0x1,
     PackCategory_Standard = 0x2,
@@ -104,7 +104,7 @@ public:
      * @symbol ?getPackCategory@ResourcePack@@QEBA?AW4PackCategory@@XZ
      * @hash   -1503972810
      */
-    MCAPI enum PackCategory getPackCategory() const;
+    MCAPI enum class PackCategory getPackCategory() const;
     /**
      * @symbol ?getPackId@ResourcePack@@QEBAAEBVUUID@mce@@XZ
      * @hash   469922510
@@ -114,7 +114,7 @@ public:
      * @symbol ?getPackOrigin@ResourcePack@@QEBA?AW4PackOrigin@@XZ
      * @hash   -1220632010
      */
-    MCAPI enum PackOrigin getPackOrigin() const;
+    MCAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getResource@ResourcePack@@QEBA_NAEBVPath@Core@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
      * @hash   -2002845759
@@ -169,7 +169,7 @@ public:
      * @symbol ?isType@ResourcePack@@QEBA_NW4PackType@@@Z
      * @hash   1638964919
      */
-    MCAPI bool isType(enum PackType) const;
+    MCAPI bool isType(enum class PackType) const;
     /**
      * @symbol ?isZipped@ResourcePack@@QEBA_NXZ
      * @hash   290463216

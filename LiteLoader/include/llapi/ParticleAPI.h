@@ -9,6 +9,10 @@
 #pragma once
 #include "LLAPI.h"
 #include "Global.h"
+#include "mc/BlockPos.hpp"
+#include "mc/Vec3.hpp"
+#include "mc/BoundingBox.hpp"
+#include "mc/AABB.hpp"
 
 class ParticleAPI {
     using FuncSpawnParticle = void (*)(int, Vec3 const&, std::string const&, int);

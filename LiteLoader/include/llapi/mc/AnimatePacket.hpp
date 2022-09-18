@@ -22,7 +22,7 @@ class AnimatePacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    enum Action
+    enum class Action
     {
         NoAction = 0,
         Swing = 1,
@@ -54,7 +54,7 @@ public:
      * @symbol ?getId@AnimatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1169376213
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AnimatePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -72,7 +72,7 @@ public:
      * @symbol ?_read@AnimatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1380763061
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AnimatePacket@@QEAA@XZ
      * @hash   -762177467
@@ -82,16 +82,16 @@ public:
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
      * @hash   -1910661103
      */
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID, float);
     /**
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
      * @hash   -2133479536
      */
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID);
     /**
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
      * @hash   -1620136214
      */
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor &);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor &);
 
 };

@@ -44,11 +44,11 @@ public:
      * @symbol ?getType@GameEvent@@QEBA?BW4GameEventType@GameEventConfig@@XZ
      * @hash   -568793866
      */
-    MCAPI enum GameEventConfig::GameEventType const getType() const;
+    MCAPI enum class GameEventConfig::GameEventType const getType() const;
     /**
      * @symbol ?isCategory@GameEvent@@QEBA_NW4GameEventCategory@GameEventConfig@@@Z
      * @hash   -484388705
      */
-    MCAPI bool isCategory(enum GameEventConfig::GameEventCategory) const;
+    MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const;
 
 };

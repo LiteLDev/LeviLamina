@@ -32,6 +32,6 @@ public:
      * @symbol ??0ActionEvent@@QEAA@HW4ActionState@0@_NW4FocusImpact@@@Z
      * @hash   -27240850
      */
-    MCAPI ActionEvent(int, enum ActionEvent::ActionState, bool, enum FocusImpact);
+    MCAPI ActionEvent(int, enum class ActionEvent::ActionState, bool, enum class FocusImpact);
 
 };

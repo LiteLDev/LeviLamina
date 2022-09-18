@@ -52,7 +52,7 @@ public:
      * @symbol ?getPlayerPermissions@PermissionsHandler@@QEBA?AW4PlayerPermissionLevel@@XZ
      * @hash   -1495389454
      */
-    MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
+    MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
      * @symbol ?loadSaveData@PermissionsHandler@@QEAA_NAEBVCompoundTag@@@Z
      * @hash   -1461807861
@@ -72,16 +72,16 @@ public:
      * @symbol ?setPlayerPermissions@PermissionsHandler@@QEAAXW4PlayerPermissionLevel@@@Z
      * @hash   634424782
      */
-    MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
+    MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel);
     /**
      * @symbol ?playerPermissionLevelFromString@PermissionsHandler@@SA?AW4PlayerPermissionLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1487468149
      */
-    MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
+    MCAPI static enum class PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);
     /**
      * @symbol ?playerPermissionLevelToString@PermissionsHandler@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBW4PlayerPermissionLevel@@@Z
      * @hash   -1441723133
      */
-    MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const &);
+    MCAPI static std::string playerPermissionLevelToString(enum class PlayerPermissionLevel const &);
 
 };

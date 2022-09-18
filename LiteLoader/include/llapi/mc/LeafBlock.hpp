@@ -46,7 +46,7 @@ public:
      * @symbol ?canProvideSupport@LeafBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   -1363238706
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  24
      * @symbol ?canProvideMultifaceSupport@LeafBlock@@UEBA_NAEBVBlock@@E@Z
@@ -289,7 +289,7 @@ public:
      * @symbol ?getRenderLayer@LeafBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   2092969608
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  187
      * @symbol ?getMapColor@LeafBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z
@@ -333,7 +333,7 @@ public:
      * @symbol ?_isTransparent@LeafBlock@@KA_NAEBVBlock@@AEBW4BlockProperty@@@Z
      * @hash   977266109
      */
-    MCAPI static bool _isTransparent(class Block const &, enum BlockProperty const &);
+    MCAPI static bool _isTransparent(class Block const &, enum class BlockProperty const &);
 
 protected:
 

@@ -39,7 +39,7 @@ public:
      * @symbol ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
      * @hash   -635291124
      */
-    virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
+    virtual enum class EventResult onEvent(struct ActorNotificationEvent const &);
     /**
      * @vftbl  2
      * @hash   -1157602814
@@ -185,7 +185,7 @@ public:
      * @symbol ?onEvent@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionTriggeredEvent@@@Z
      * @hash   1157676002
      */
-    virtual enum EventResult onEvent(struct ActorDefinitionTriggeredEvent const &);
+    virtual enum class EventResult onEvent(struct ActorDefinitionTriggeredEvent const &);
     /**
      * @symbol ??0DebugInfoComponent@@QEAA@AEBV0@@Z
      * @hash   -621992031
@@ -200,7 +200,7 @@ public:
      * @symbol ?addListener@DebugInfoComponent@@QEAAXAEBVHashedString@@VNetworkIdentifier@@W4SubClientId@@@Z
      * @hash   1783075554
      */
-    MCAPI void addListener(class HashedString const &, class NetworkIdentifier, enum SubClientId);
+    MCAPI void addListener(class HashedString const &, class NetworkIdentifier, enum class SubClientId);
     /**
      * @symbol ?listenersEmpty@DebugInfoComponent@@QEBA_NXZ
      * @hash   1632186226
@@ -215,6 +215,6 @@ public:
      * @symbol ?removeListener@DebugInfoComponent@@QEAAXAEBVHashedString@@VNetworkIdentifier@@W4SubClientId@@@Z
      * @hash   2125684128
      */
-    MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, enum SubClientId);
+    MCAPI void removeListener(class HashedString const &, class NetworkIdentifier, enum class SubClientId);
 
 };

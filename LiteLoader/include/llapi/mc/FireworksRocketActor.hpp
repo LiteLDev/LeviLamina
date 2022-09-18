@@ -120,7 +120,7 @@ public:
      * @symbol ?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z
      * @hash   -1160275055
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059

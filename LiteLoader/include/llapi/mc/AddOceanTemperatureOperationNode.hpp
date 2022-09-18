@@ -50,6 +50,6 @@ public:
      * @symbol ?_fillArea@AddOceanTemperatureOperationNode@@MEBAXAEAV?$WorkingData@W4BiomeTemperatureCategory@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
      * @hash   811018585
      */
-    virtual void _fillArea(class OperationNodeDetails::WorkingData<enum BiomeTemperatureCategory, char> &, class Pos2d const &, class Pos2d const &) const;
+    virtual void _fillArea(class OperationNodeDetails::WorkingData<enum class BiomeTemperatureCategory, char> &, class Pos2d const &, class Pos2d const &) const;
 
 };

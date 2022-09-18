@@ -76,13 +76,13 @@ public:
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
      * @hash   32223567
      */
-    virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLISTENER
     /**
      * @symbol ?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUTextureUVCoordinateSet@@_N@Z
      * @hash   -2134806053
      */
-    MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum ParticleType, struct TextureUVCoordinateSet const &, bool);
+    MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum class ParticleType, struct TextureUVCoordinateSet const &, bool);
     /**
      * @symbol ?addParticleEffect@LevelListener@@UEAAXAEBVHashedString@@AEBVActor@@0AEBVVec3@@AEBVMolangVariableMap@@@Z
      * @hash   170105818
@@ -112,12 +112,12 @@ public:
      * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
      * @hash   1889828017
      */
-    MCVAPI void levelEvent(enum LevelEvent, class CompoundTag const &);
+    MCVAPI void levelEvent(enum class LevelEvent, class CompoundTag const &);
     /**
      * @symbol ?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
      * @hash   1048828646
      */
-    MCVAPI void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    MCVAPI void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /**
      * @symbol ?levelSoundEvent@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
      * @hash   2133883572
@@ -127,7 +127,7 @@ public:
      * @symbol ?levelSoundEvent@LevelListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
      * @hash   525306505
      */
-    MCVAPI void levelSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void levelSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @symbol ?onChunkLoaded@LevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z
      * @hash   -1433576359
@@ -182,7 +182,7 @@ public:
      * @symbol ?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
      * @hash   490204364
      */
-    MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
+    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
     /**
      * @symbol ?stopAllSounds@LevelListener@@UEAAXXZ
      * @hash   -813920590

@@ -21,7 +21,7 @@ class MingleComponent {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum MingleState;
+enum class MingleState;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINGLECOMPONENT
@@ -55,7 +55,7 @@ public:
      * @symbol ?setMingleState@MingleComponent@@QEAAAEAV1@W4MingleState@1@@Z
      * @hash   2108805435
      */
-    MCAPI class MingleComponent & setMingleState(enum MingleComponent::MingleState);
+    MCAPI class MingleComponent & setMingleState(enum class MingleComponent::MingleState);
     /**
      * @symbol ?setPartnerId@MingleComponent@@QEAAAEAV1@UActorUniqueID@@@Z
      * @hash   1620537669

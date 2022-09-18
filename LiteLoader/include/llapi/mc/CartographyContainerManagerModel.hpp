@@ -82,6 +82,6 @@ public:
      * @symbol ??0CartographyContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   -1859539662
      */
-    MCAPI CartographyContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI CartographyContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

@@ -22,7 +22,7 @@ class ComparatorCapacitor : public ProducerComponent {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Mode;
+enum class Mode;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORCAPACITOR
@@ -100,7 +100,7 @@ public:
      * @symbol ?getCircuitComponentType@ComparatorCapacitor@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   -1969225958
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  24
      * @symbol ?getPoweroutDirection@ComparatorCapacitor@@UEBAEXZ
@@ -136,6 +136,6 @@ public:
      * @symbol ?setMode@ComparatorCapacitor@@QEAAXW4Mode@1@@Z
      * @hash   -1494954927
      */
-    MCAPI void setMode(enum ComparatorCapacitor::Mode);
+    MCAPI void setMode(enum class ComparatorCapacitor::Mode);
 
 };

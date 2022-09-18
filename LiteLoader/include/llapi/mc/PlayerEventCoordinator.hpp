@@ -40,7 +40,7 @@ public:
      * @symbol ?sendEvent@PlayerEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$PlayerGameplayEvent@W4CoordinatorResult@@@@@@@Z
      * @hash   -1283638101
      */
-    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct PlayerGameplayEvent<enum CoordinatorResult>> const &);
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct PlayerGameplayEvent<enum class CoordinatorResult>> const &);
     /**
      * @symbol ?sendEvent@PlayerEventCoordinator@@QEAAXAEBV?$EventRef@U?$PlayerGameplayEvent@X@@@@@Z
      * @hash   -1120576118
@@ -50,7 +50,7 @@ public:
      * @symbol ?sendPlayerAwardAchievement@PlayerEventCoordinator@@QEAAXAEAVPlayer@@W4AchievementIds@MinecraftEventing@@@Z
      * @hash   929720553
      */
-    MCAPI void sendPlayerAwardAchievement(class Player &, enum MinecraftEventing::AchievementIds);
+    MCAPI void sendPlayerAwardAchievement(class Player &, enum class MinecraftEventing::AchievementIds);
     /**
      * @symbol ?sendPlayerCaravanChanged@PlayerEventCoordinator@@QEAAXAEBVActor@@H@Z
      * @hash   1932286893

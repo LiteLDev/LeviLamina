@@ -61,7 +61,7 @@ public:
      * @symbol ??0EnderChestBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
      * @hash   611699943
      */
-    MCAPI EnderChestBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
+    MCAPI EnderChestBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &);
 
 //private:
 

@@ -91,7 +91,7 @@ public:
      * @symbol ?isResourcePackLoaded@ResourcePackRepository@@UEAA_NAEBUPackIdVersion@@AEBW4PackOrigin@@@Z
      * @hash   -1132578199
      */
-    virtual bool isResourcePackLoaded(struct PackIdVersion const &, enum PackOrigin const &);
+    virtual bool isResourcePackLoaded(struct PackIdVersion const &, enum class PackOrigin const &);
     /**
      * @vftbl  9
      * @symbol ?getPackLoadingReport@ResourcePackRepository@@UEBAPEBVPackSourceReport@@XZ
@@ -205,7 +205,7 @@ public:
      * @symbol ?getKnownPacksPath@ResourcePackRepository@@UEBA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@W4KnownPackType@@@Z
      * @hash   1806260534
      */
-    virtual class Core::PathBuffer<std::string> const getKnownPacksPath(enum KnownPackType) const;
+    virtual class Core::PathBuffer<std::string> const getKnownPacksPath(enum class KnownPackType) const;
     /**
      * @vftbl  28
      * @symbol ?getKnownValidPacksPath@ResourcePackRepository@@UEBA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -265,13 +265,13 @@ public:
      * @symbol ?getPacksByResourceLocation@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackOrigin@@@Z
      * @hash   420545577
      */
-    virtual std::vector<class ResourcePack *> getPacksByResourceLocation(enum PackOrigin) const;
+    virtual std::vector<class ResourcePack *> getPacksByResourceLocation(enum class PackOrigin) const;
     /**
      * @vftbl  38
      * @symbol ?getPacksByType@ResourcePackRepository@@UEBA?AV?$vector@PEAVResourcePack@@V?$allocator@PEAVResourcePack@@@std@@@std@@W4PackType@@@Z
      * @hash   -1930887138
      */
-    virtual std::vector<class ResourcePack *> getPacksByType(enum PackType) const;
+    virtual std::vector<class ResourcePack *> getPacksByType(enum class PackType) const;
     /**
      * @vftbl  39
      * @symbol ?addKnownPackFromImport@ResourcePackRepository@@UEAAXAEBVPackManifest@@@Z
@@ -283,13 +283,13 @@ public:
      * @symbol ?addInvalidPack@ResourcePackRepository@@UEAAXAEBVResourceLocation@@W4PackType@@@Z
      * @hash   803426968
      */
-    virtual void addInvalidPack(class ResourceLocation const &, enum PackType);
+    virtual void addInvalidPack(class ResourceLocation const &, enum class PackType);
     /**
      * @vftbl  41
      * @symbol ?getInvalidPacks@ResourcePackRepository@@UEBAAEBV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@W4PackType@@@Z
      * @hash   -1353846388
      */
-    virtual std::vector<class ResourceLocation> const & getInvalidPacks(enum PackType) const;
+    virtual std::vector<class ResourceLocation> const & getInvalidPacks(enum class PackType) const;
     /**
      * @vftbl  42
      * @symbol ?getInvalidPacks@ResourcePackRepository@@UEBA?AV?$vector@VResourceLocation@@V?$allocator@VResourceLocation@@@std@@@std@@AEBUInvalidPacksFilterGroup@@@Z
@@ -359,7 +359,7 @@ public:
      * @symbol ?_detectKnownPacksChange@ResourcePackRepository@@AEAAXAEAUKnownPackContainer@1@AEBU21@W4KnownPackType@@@Z
      * @hash   -1410909421
      */
-    MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer &, struct ResourcePackRepository::KnownPackContainer const &, enum KnownPackType);
+    MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer &, struct ResourcePackRepository::KnownPackContainer const &, enum class KnownPackType);
     /**
      * @symbol ?_findVanillaPacks@ResourcePackRepository@@AEAAXXZ
      * @hash   -361657518
@@ -389,7 +389,7 @@ public:
      * @symbol ?_loadLastKnownUserPacks@ResourcePackRepository@@AEAAXAEAUKnownPackContainer@1@W4KnownPackType@@@Z
      * @hash   1899065859
      */
-    MCAPI void _loadLastKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
+    MCAPI void _loadLastKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum class KnownPackType);
     /**
      * @symbol ?_loadPacks@ResourcePackRepository@@AEAAX_N@Z
      * @hash   783823284
@@ -399,7 +399,7 @@ public:
      * @symbol ?_packExists@ResourcePackRepository@@AEBA_NAEBVUUID@mce@@AEBVSemVersion@@W4PackOrigin@@@Z
      * @hash   514669286
      */
-    MCAPI bool _packExists(class mce::UUID const &, class SemVersion const &, enum PackOrigin) const;
+    MCAPI bool _packExists(class mce::UUID const &, class SemVersion const &, enum class PackOrigin) const;
     /**
      * @symbol ?_reloadUserPacks@ResourcePackRepository@@AEAAXXZ
      * @hash   2145504898
@@ -414,7 +414,7 @@ public:
      * @symbol ?_saveKnownUserPacks@ResourcePackRepository@@AEAAXAEAUKnownPackContainer@1@W4KnownPackType@@@Z
      * @hash   773896404
      */
-    MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum KnownPackType);
+    MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer &, enum class KnownPackType);
     /**
      * @symbol ?_triggerRemoveResourcePackCallback@ResourcePackRepository@@AEAAXPEAVResourcePack@@@Z
      * @hash   1053210061

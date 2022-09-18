@@ -45,6 +45,6 @@ public:
      * @symbol ??0LegacyTreeFeature@@QEAA@W4Type@0@AEAVFeatureRegistry@@@Z
      * @hash   861908490
      */
-    MCAPI LegacyTreeFeature(enum LegacyTreeFeature::Type, class FeatureRegistry &);
+    MCAPI LegacyTreeFeature(enum class LegacyTreeFeature::Type, class FeatureRegistry &);
 
 };

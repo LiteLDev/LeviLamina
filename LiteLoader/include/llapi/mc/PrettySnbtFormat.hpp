@@ -26,7 +26,7 @@ protected:
     LIAPI void setDefaultColor();
 
     template <typename T>
-    friend void __appendPrettySNBT(std::ostringstream& oss, T&, unsigned int level, PrettySnbtFormat const& format);
+    friend void __appendPrettySNBT(std::ostringstream& oss, T&, unsigned int level, PrettySnbtFormat const& format) = delete;
     friend void __appendPrettySpace(std::ostringstream& oss, unsigned int level, PrettySnbtFormat const& format);
     friend void __appendPrettyReturnSpace(std::ostringstream& oss, unsigned int level, PrettySnbtFormat const& format);
     template <typename type>

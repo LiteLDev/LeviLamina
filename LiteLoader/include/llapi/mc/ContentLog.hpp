@@ -43,7 +43,7 @@ public:
      * @symbol ?log@ContentLog@@QEAAX_NW4LogLevel@@W4LogArea@@ZZ
      * @hash   290573865
      */
-    MCAPI void log(bool, enum LogLevel, enum LogArea, ...);
+    MCAPI void log(bool, enum class LogLevel, enum class LogArea, ...);
     /**
      * @symbol ?unregisterEndPoint@ContentLog@@QEAAXV?$not_null@PEAVContentLogEndPoint@@@gsl@@@Z
      * @hash   -163550543
@@ -58,19 +58,19 @@ public:
      * @symbol ?getLogAreaName@ContentLog@@SAPEBDW4LogArea@@@Z
      * @hash   1567023636
      */
-    MCAPI static char const * getLogAreaName(enum LogArea);
+    MCAPI static char const * getLogAreaName(enum class LogArea);
     /**
      * @symbol ?getLogLevelName@ContentLog@@SAPEBDW4LogLevel@@@Z
      * @hash   475921450
      */
-    MCAPI static char const * getLogLevelName(enum LogLevel);
+    MCAPI static char const * getLogLevelName(enum class LogLevel);
 
 //private:
     /**
      * @symbol ?_writeToLog@ContentLog@@AEAAX_NW4LogArea@@W4LogLevel@@AEAPEAD@Z
      * @hash   55686935
      */
-    MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char *&);
+    MCAPI void _writeToLog(bool, enum class LogArea, enum class LogLevel, char *&);
 
 private:
 

@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@LabTablePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1361718613
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LabTablePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@LabTablePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1904716117
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LabTablePacket@@QEAA@XZ
      * @hash   -1290216443
@@ -68,11 +68,11 @@ public:
      * @symbol ??0LabTablePacket@@QEAA@W4Type@0@AEBVBlockPos@@@Z
      * @hash   -1464093100
      */
-    MCAPI LabTablePacket(enum LabTablePacket::Type, class BlockPos const &);
+    MCAPI LabTablePacket(enum class LabTablePacket::Type, class BlockPos const &);
     /**
      * @symbol ??0LabTablePacket@@QEAA@AEBVBlockPos@@W4LabTableReactionType@@@Z
      * @hash   1656568931
      */
-    MCAPI LabTablePacket(class BlockPos const &, enum LabTableReactionType);
+    MCAPI LabTablePacket(class BlockPos const &, enum class LabTableReactionType);
 
 };

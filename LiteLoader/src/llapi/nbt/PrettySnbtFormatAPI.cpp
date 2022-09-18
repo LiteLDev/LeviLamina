@@ -1,5 +1,6 @@
 #include <llapi/mc/PrettySnbtFormat.hpp>
 #include <llapi/mc/ColorFormat.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 #define ForEachTagType(op)    \
     op(Tag::Type::End);       \
@@ -16,7 +17,7 @@
     op(Tag::Type::IntArray);
 namespace {
 template <Tag::Type T>
-std::string const& DefaultSuffix;
+std::string const& DefaultSuffix = "";
 template <Tag::Type T>
 std::string const& DefaultPrefix = "";
 template <>
@@ -64,42 +65,42 @@ inline void PrettySnbtFormat::ValueFormat::toConsoleFormat() {
     ColorFormat::convertToConsole(mSuffix);
 }
 PrettySnbtFormat::PrettySnbtFormat() {
-#define InitFormat(type) mValueFormats[type] = {DefaultPrefix<type>, DefaultSuffix<type>};
+#define InitFormat(type) mValueFormats[magic_enum::enum_integer(type)] = {DefaultPrefix<type>, DefaultSuffix<type>};
     ForEachTagType(InitFormat)
-    mExpandInList[Tag::Type::End] = false;
-    mExpandInList[Tag::Type::Byte] = false;
-    mExpandInList[Tag::Type::Short] = false;
-    mExpandInList[Tag::Type::Int] = false;
-    mExpandInList[Tag::Type::Int64] = false;
-    mExpandInList[Tag::Type::Float] = false;
-    mExpandInList[Tag::Type::Double] = false;
-    mExpandInList[Tag::Type::ByteArray] = true;
-    mExpandInList[Tag::Type::String] = true;
-    mExpandInList[Tag::Type::List] = true;
-    mExpandInList[Tag::Type::Compound] = true;
-    mExpandInList[Tag::Type::IntArray] = true;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::End)] = false;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::Byte)] = false;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::Short)] = false;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::Int)] = false;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::Int64)] = false;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::Float)] = false;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::Double)] = false;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::ByteArray)] = true;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::String)] = true;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::List)] = true;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::Compound)] = true;
+    mExpandInList[magic_enum::enum_integer(Tag::Type::IntArray)] = true;
 #undef InitFormat
 }
 template <Tag::Type type>
 inline bool PrettySnbtFormat::setValueColor(mce::Color const& color) {
     if constexpr (type == Tag::Type::String)
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>, DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[magic_enum::enum_integer(type)] = {getColorCode(color) + DefaultPrefix<type>, DefaultSuffix<type> + getResetColorCode()};
     else if constexpr (type >= Tag::Type::ByteArray)
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type> + getResetColorCode(), getColorCode(color) + DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[magic_enum::enum_integer(type)] = {getColorCode(color) + DefaultPrefix<type> + getResetColorCode(), getColorCode(color) + DefaultSuffix<type> + getResetColorCode()};
     else
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>, getItalicCode() + DefaultSuffix<type> + getResetColorCode()};
+        mValueFormats[magic_enum::enum_integer(type)] = {getColorCode(color) + DefaultPrefix<type>, getItalicCode() + DefaultSuffix<type> + getResetColorCode()};
     return true;
 }
 
 template <Tag::Type type>
 inline bool PrettySnbtFormat::setValueFormat(std::string const& prefix, std::string const& suffix) {
-    mValueFormats[type] = {prefix, suffix};
+    mValueFormats[magic_enum::enum_integer(type)] = {prefix, suffix};
     return true;
 }
 
 template <Tag::Type type>
 inline bool PrettySnbtFormat::setExpand(bool expand) {
-    mExpandInList[type] = expand;
+    mExpandInList[magic_enum::enum_integer(type)] = expand;
     return true;
 }
 

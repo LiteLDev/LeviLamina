@@ -452,7 +452,7 @@ private:
 public:
     template <typename T>
     inline static ParseFn getParseFn() {
-        if constexpr (!std::is_same_v<enum CommandOperator, T> && std::is_enum_v<T>)
+        if constexpr (!std::is_same_v<enum class CommandOperator, T> && std::is_enum_v<T>)
             return &fakeParse<T>;
         // else
         //     return &parse<T>;
@@ -560,7 +560,7 @@ public:
      * @symbol ?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z
      * @hash   217149377
      */
-    MCAPI void addEnumValueConstraints(std::string const&, std::vector<std::string> const&, enum SemanticConstraint);
+    MCAPI void addEnumValueConstraints(std::string const&, std::vector<std::string> const&, enum class SemanticConstraint);
     /**
      * @symbol ?addEnumValues@CommandRegistry@@QEAAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   -1898541035
@@ -610,12 +610,12 @@ public:
      * @symbol ?getCommandStatus@CommandRegistry@@QEBA?AW4CommandStatus@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   111398003
      */
-    MCAPI enum CommandStatus getCommandStatus(std::string const&) const;
+    MCAPI enum class CommandStatus getCommandStatus(std::string const&) const;
     /**
      * @symbol ?isCommandOfType@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandTypeFlag@@@Z
      * @hash   -705011682
      */
-    MCAPI bool isCommandOfType(std::string const&, enum CommandTypeFlag) const;
+    MCAPI bool isCommandOfType(std::string const&, enum class CommandTypeFlag) const;
     /**
      * @symbol ?isValidCommand@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   187274015
@@ -717,7 +717,7 @@ public:
      * @symbol ?_addEnumValueConstraintsInternal@CommandRegistry@@AEAAXAEBV?$vector@U?$pair@_KI@std@@V?$allocator@U?$pair@_KI@std@@@2@@std@@W4SemanticConstraint@@@Z
      * @hash   -1563069781
      */
-    MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const&, enum SemanticConstraint);
+    MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const&, enum class SemanticConstraint);
     /**
      * @symbol ?_addEnumValuesInternal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@std@@@2@@4@V?$typeid_t@VCommandRegistry@@@@P81@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV34@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z@Z
      * @hash   1090872952
@@ -747,7 +747,7 @@ public:
      * @symbol ?_matchesEnumConstraintsSet@CommandRegistry@@AEBA_NAEBVSymbol@1@AEBVCommandOrigin@@0W4SemanticConstraint@@@Z
      * @hash   -851089027
      */
-    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const&, class CommandOrigin const&, class CommandRegistry::Symbol const&, enum SemanticConstraint) const;
+    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const&, class CommandOrigin const&, class CommandRegistry::Symbol const&, enum class SemanticConstraint) const;
     /**
      * @symbol ?addEnumValuesToExisting@CommandRegistry@@AEAAXIAEBV?$vector@U?$pair@_K_K@std@@V?$allocator@U?$pair@_K_K@std@@@2@@std@@@Z
      * @hash   -1419483221
@@ -767,7 +767,7 @@ public:
      * @symbol ?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z
      * @hash   927616881
      */
-    MCAPI void addSemanticConstraint(enum SemanticConstraint);
+    MCAPI void addSemanticConstraint(enum class SemanticConstraint);
     /**
      * @symbol ?addSoftTerminal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1776235944

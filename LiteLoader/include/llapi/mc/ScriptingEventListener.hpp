@@ -38,6 +38,6 @@ public:
      * @symbol ?onEvent@ScriptingEventListener@@UEAA?AW4EventResult@@AEBUScriptingNotificationEvent@@@Z
      * @hash   1992603618
      */
-    virtual enum EventResult onEvent(struct ScriptingNotificationEvent const &);
+    virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const &);
 
 };

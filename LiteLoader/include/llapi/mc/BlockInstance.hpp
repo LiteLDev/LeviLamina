@@ -1,5 +1,6 @@
 #pragma once
 #include "../Global.h"
+#include "BlockPos.hpp"
 class BlockSource;
 class Block;
 class ItemStack;

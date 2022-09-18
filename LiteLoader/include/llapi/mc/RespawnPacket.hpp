@@ -10,7 +10,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum PlayerRespawnState :char {
+enum class PlayerRespawnState :char {
     SERVER_SEARCHING = 0,
     SERVER_READY,
     CLIENT_READY,
@@ -66,7 +66,7 @@ public:
      * @symbol ?getId@RespawnPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -314214882
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@RespawnPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -84,7 +84,7 @@ public:
      * @symbol ?_read@RespawnPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1304819652
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0RespawnPacket@@QEAA@XZ
      * @hash   2114244428
@@ -94,6 +94,6 @@ public:
      * @symbol ??0RespawnPacket@@QEAA@AEBVVec3@@AEBW4PlayerRespawnState@@@Z
      * @hash   -153596980
      */
-    MCAPI RespawnPacket(class Vec3 const &, enum PlayerRespawnState const &);
+    MCAPI RespawnPacket(class Vec3 const &, enum class PlayerRespawnState const &);
 
 };

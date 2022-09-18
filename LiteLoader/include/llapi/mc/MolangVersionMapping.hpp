@@ -34,6 +34,6 @@ public:
      * @symbol ?getVersion@MolangVersionMapping@@SA?BW4MolangVersion@@AEBVSemVersion@@@Z
      * @hash   1281718989
      */
-    MCAPI static enum MolangVersion const getVersion(class SemVersion const &);
+    MCAPI static enum class MolangVersion const getVersion(class SemVersion const &);
 
 };

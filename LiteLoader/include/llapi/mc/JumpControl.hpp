@@ -72,7 +72,7 @@ public:
      * @symbol ?getJumpType@JumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
      * @hash   641387905
      */
-    MCVAPI enum JumpType getJumpType(class JumpControlComponent const &) const;
+    MCVAPI enum class JumpType getJumpType(class JumpControlComponent const &) const;
     /**
      * @symbol ?initializeInternal@JumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z
      * @hash   1168684585
@@ -87,7 +87,7 @@ public:
      * @symbol ?setJumpType@JumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
      * @hash   -549717183
      */
-    MCVAPI void setJumpType(class JumpControlComponent &, enum JumpType);
+    MCVAPI void setJumpType(class JumpControlComponent &, enum class JumpType);
 #endif
     /**
      * @symbol ??0JumpControl@@QEAA@XZ

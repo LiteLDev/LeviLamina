@@ -101,7 +101,7 @@ public:
      * @symbol ??0ShulkerBoxBlockActor@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorRendererId@@AEBVBlockPos@@@Z
      * @hash   743728865
      */
-    MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const &, enum BlockActorRendererId, class BlockPos const &);
+    MCAPI ShulkerBoxBlockActor(enum class BlockActorType, std::string const &, enum class BlockActorRendererId, class BlockPos const &);
     /**
      * @symbol ?setFacingDir@ShulkerBoxBlockActor@@QEAAXE@Z
      * @hash   75680647

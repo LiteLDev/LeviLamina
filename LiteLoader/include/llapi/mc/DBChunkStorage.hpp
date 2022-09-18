@@ -155,7 +155,7 @@ public:
      * @symbol ?getBlenderMode@DBChunkStorage@@QEAA?AW4BlenderMode@ConsoleChunkBlender@@AEBVLevelChunk@@@Z
      * @hash   1299245135
      */
-    MCAPI enum ConsoleChunkBlender::BlenderMode getBlenderMode(class LevelChunk const &);
+    MCAPI enum class ConsoleChunkBlender::BlenderMode getBlenderMode(class LevelChunk const &);
     /**
      * @symbol ?deserializeActorStorageToString@DBChunkStorage@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NAEBV23@V?$function@$$A6A_NV?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@3@@Z
      * @hash   -285152037
@@ -187,7 +187,7 @@ public:
      * @symbol ?_getLevelChunkFormat@DBChunkStorage@@AEAA?AV?$optional@W4LevelChunkFormat@@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
      * @hash   -1004093060
      */
-    MCAPI class std::optional<enum LevelChunkFormat> _getLevelChunkFormat(class gsl::basic_string_span<char const, -1>, std::string &);
+    MCAPI class std::optional<enum class LevelChunkFormat> _getLevelChunkFormat(class gsl::basic_string_span<char const, -1>, std::string &);
     /**
      * @symbol ?_hasChunk@DBChunkStorage@@AEAA_NAEBVDBChunkStorageKey@@@Z
      * @hash   -152603398
@@ -242,7 +242,7 @@ public:
      * @symbol ?_writeActorDigestFormatVersion@DBChunkStorage@@AEAAXAEAVLevelStorageWriteBatch@@AEBVChunkKey@@W4ActorDigestFormat@@@Z
      * @hash   -332536283
      */
-    MCAPI void _writeActorDigestFormatVersion(class LevelStorageWriteBatch &, class ChunkKey const &, enum ActorDigestFormat);
+    MCAPI void _writeActorDigestFormatVersion(class LevelStorageWriteBatch &, class ChunkKey const &, enum class ActorDigestFormat);
     /**
      * @symbol ?_writeDiscardChunksBatch@DBChunkStorage@@AEAAXXZ
      * @hash   -1677298986

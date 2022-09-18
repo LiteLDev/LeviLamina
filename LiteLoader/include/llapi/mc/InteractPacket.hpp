@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@InteractPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   759411120
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@InteractPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@InteractPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   898834714
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0InteractPacket@@QEAA@XZ
      * @hash   -1178918582
@@ -68,6 +68,6 @@ public:
      * @symbol ??0InteractPacket@@QEAA@W4Action@0@VActorRuntimeID@@AEBVVec3@@@Z
      * @hash   -155800659
      */
-    MCAPI InteractPacket(enum InteractPacket::Action, class ActorRuntimeID, class Vec3 const &);
+    MCAPI InteractPacket(enum class InteractPacket::Action, class ActorRuntimeID, class Vec3 const &);
 
 };

@@ -21,7 +21,7 @@ class ProjectileComponent {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum EAxis;
+enum class EAxis;
 
 #undef AFTER_EXTRA
 public:
@@ -44,7 +44,7 @@ public:
      * @symbol ?getAnchor@ProjectileComponent@@QEAA?AW4ProjectileAnchor@@XZ
      * @hash   1780104482
      */
-    MCAPI enum ProjectileAnchor getAnchor();
+    MCAPI enum class ProjectileAnchor getAnchor();
     /**
      * @symbol ?getCatchFire@ProjectileComponent@@QEBA_NXZ
      * @hash   -265153208
@@ -84,7 +84,7 @@ public:
      * @symbol ?getShootSound@ProjectileComponent@@QEAA?AW4LevelSoundEvent@@XZ
      * @hash   -981420230
      */
-    MCAPI enum LevelSoundEvent getShootSound();
+    MCAPI enum class LevelSoundEvent getShootSound();
     /**
      * @symbol ?getShootTarget@ProjectileComponent@@QEAA_NXZ
      * @hash   1470122888
@@ -104,7 +104,7 @@ public:
      * @symbol ?getUncertainty@ProjectileComponent@@QEBAMW4Difficulty@@@Z
      * @hash   289015977
      */
-    MCAPI float getUncertainty(enum Difficulty) const;
+    MCAPI float getUncertainty(enum class Difficulty) const;
     /**
      * @symbol ?getUncertaintyBase@ProjectileComponent@@QEBAMXZ
      * @hash   -2105887866
@@ -241,7 +241,7 @@ public:
      * @symbol ?_selectNextMoveDirection@ProjectileComponent@@AEAAXAEAVActor@@W4EAxis@1@@Z
      * @hash   -153016613
      */
-    MCAPI void _selectNextMoveDirection(class Actor &, enum ProjectileComponent::EAxis);
+    MCAPI void _selectNextMoveDirection(class Actor &, enum class ProjectileComponent::EAxis);
 
 private:
 

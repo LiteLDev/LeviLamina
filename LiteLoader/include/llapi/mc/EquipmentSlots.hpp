@@ -26,16 +26,16 @@ namespace EquipmentSlots {
      * @symbol ?equipmentSlotToString@EquipmentSlots@@YAPEBDW4EquipmentSlot@@@Z
      * @hash   -329576695
      */
-    MCAPI char const * equipmentSlotToString(enum EquipmentSlot);
+    MCAPI char const * equipmentSlotToString(enum class EquipmentSlot);
     /**
      * @symbol ?hashToEquipmentSlot@EquipmentSlots@@YA?AW4EquipmentSlot@@AEB_K@Z
      * @hash   -1810161022
      */
-    MCAPI enum EquipmentSlot hashToEquipmentSlot(unsigned __int64 const &);
+    MCAPI enum class EquipmentSlot hashToEquipmentSlot(unsigned __int64 const &);
     /**
      * @symbol ?stringToEquipmentSlot@EquipmentSlots@@YA?AW4EquipmentSlot@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1543575050
      */
-    MCAPI enum EquipmentSlot stringToEquipmentSlot(std::string const &);
+    MCAPI enum class EquipmentSlot stringToEquipmentSlot(std::string const &);
 
 };

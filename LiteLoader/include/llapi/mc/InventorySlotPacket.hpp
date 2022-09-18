@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@InventorySlotPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1338010684
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@InventorySlotPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@InventorySlotPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -491060546
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0InventorySlotPacket@@QEAA@XZ
      * @hash   -616175586
@@ -68,6 +68,6 @@ public:
      * @symbol ??0InventorySlotPacket@@QEAA@W4ContainerID@@IAEBVItemStack@@@Z
      * @hash   1509751099
      */
-    MCAPI InventorySlotPacket(enum ContainerID, unsigned int, class ItemStack const &);
+    MCAPI InventorySlotPacket(enum class ContainerID, unsigned int, class ItemStack const &);
 
 };

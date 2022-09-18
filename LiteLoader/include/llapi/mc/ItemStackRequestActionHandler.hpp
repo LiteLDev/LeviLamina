@@ -21,7 +21,7 @@ class ItemStackRequestActionHandler {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum RemoveType;
+enum class RemoveType;
 struct RequestSlotIdAssignment {
     RequestSlotIdAssignment() = delete;
     RequestSlotIdAssignment(RequestSlotIdAssignment const&) = delete;
@@ -56,7 +56,7 @@ public:
      * @symbol ?_cacheLegacySlotIdAssignment@ItemStackRequestActionHandler@@QEAAXW4ContainerEnumName@@EAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
      * @hash   -68232728
      */
-    MCAPI void _cacheLegacySlotIdAssignment(enum ContainerEnumName, unsigned char, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
+    MCAPI void _cacheLegacySlotIdAssignment(enum class ContainerEnumName, unsigned char, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
     /**
      * @symbol ?_cacheSlotIdAssigment@ItemStackRequestActionHandler@@QEAAXAEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@EEAEBV?$TypedServerNetId@UItemStackNetIdTag@@H$0A@@@@Z
      * @hash   -2065670503
@@ -66,12 +66,12 @@ public:
      * @symbol ?_getOrInitSparseContainer@ItemStackRequestActionHandler@@QEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z
      * @hash   -856614284
      */
-    MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum ContainerEnumName);
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum class ContainerEnumName);
     /**
      * @symbol ?_handleRemove@ItemStackRequestActionHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionTransferBase@@AEAVItemStack@@W4RemoveType@1@@Z
      * @hash   834734684
      */
-    MCAPI enum ItemStackNetResult _handleRemove(class ItemStackRequestActionTransferBase const &, class ItemStack &, enum ItemStackRequestActionHandler::RemoveType);
+    MCAPI enum class ItemStackNetResult _handleRemove(class ItemStackRequestActionTransferBase const &, class ItemStack &, enum class ItemStackRequestActionHandler::RemoveType);
     /**
      * @symbol ?_initScreen@ItemStackRequestActionHandler@@QEAAXAEAVItemStackNetManagerScreen@@@Z
      * @hash   1082029372
@@ -96,7 +96,7 @@ public:
      * @symbol ?endRequest@ItemStackRequestActionHandler@@QEAA?AV?$tuple@W4ItemStackNetResult@@V?$vector@UItemStackResponseContainerInfo@@V?$allocator@UItemStackResponseContainerInfo@@@std@@@std@@@std@@W4ItemStackNetResult@@@Z
      * @hash   -363349062
      */
-    MCAPI class std::tuple<enum ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(enum ItemStackNetResult);
+    MCAPI class std::tuple<enum class ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(enum class ItemStackNetResult);
     /**
      * @symbol ?endRequestBatch@ItemStackRequestActionHandler@@QEAAXXZ
      * @hash   2035930737
@@ -121,7 +121,7 @@ public:
      * @symbol ?handleRequestAction@ItemStackRequestActionHandler@@QEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
      * @hash   -1436590547
      */
-    MCAPI enum ItemStackNetResult handleRequestAction(class ItemStackRequestAction const &);
+    MCAPI enum class ItemStackNetResult handleRequestAction(class ItemStackRequestAction const &);
     /**
      * @symbol ?hasFilteredStrings@ItemStackRequestActionHandler@@QEBA_NV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@@Z
      * @hash   -1936886034
@@ -153,22 +153,22 @@ public:
      * @symbol ?_handleDestroy@ItemStackRequestActionHandler@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionDestroy@@@Z
      * @hash   25815021
      */
-    MCAPI enum ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const &);
+    MCAPI enum class ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const &);
     /**
      * @symbol ?_handlePlaceInItemContainer@ItemStackRequestActionHandler@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionPlaceInItemContainer@@@Z
      * @hash   1379698255
      */
-    MCAPI enum ItemStackNetResult _handlePlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &);
+    MCAPI enum class ItemStackNetResult _handlePlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &);
     /**
      * @symbol ?_handleTakeFromItemContainer@ItemStackRequestActionHandler@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionTakeFromItemContainer@@@Z
      * @hash   -2091473513
      */
-    MCAPI enum ItemStackNetResult _handleTakeFromItemContainer(class ItemStackRequestActionTakeFromItemContainer const &);
+    MCAPI enum class ItemStackNetResult _handleTakeFromItemContainer(class ItemStackRequestActionTakeFromItemContainer const &);
     /**
      * @symbol ?_handleTransfer@ItemStackRequestActionHandler@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionTransferBase@@_N11@Z
      * @hash   466682056
      */
-    MCAPI enum ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const &, bool, bool, bool);
+    MCAPI enum class ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const &, bool, bool, bool);
     /**
      * @symbol ?_resolveSlotIdAssignment@ItemStackRequestActionHandler@@AEAA?AV?$optional@URequestSlotIdAssignment@ItemStackRequestActionHandler@@@std@@AEBUItemStackRequestSlotInfo@@AEBV?$TypedRuntimeId@UContainerRuntimeIdTag@@I$0A@@@@Z
      * @hash   -453995940

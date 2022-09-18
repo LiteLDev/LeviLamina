@@ -22,7 +22,7 @@ class VillagerBase : public Mob {
 
 #define AFTER_EXTRA
 // Add Member There
-    enum BiomeType;
+    enum class BiomeType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERBASE
@@ -38,7 +38,7 @@ public:
      * @symbol ?reloadComponents@VillagerBase@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -1602350030
      */
-    virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -1348017151
@@ -115,7 +115,7 @@ public:
      * @symbol ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
      * @hash   -1546952865
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059
@@ -261,14 +261,14 @@ public:
      * @symbol ?BiomeStrToEnum@VillagerBase@@SA?AW4BiomeType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   127678963
      */
-    MCAPI static enum VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
+    MCAPI static enum class VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
 
 //private:
     /**
      * @symbol ?_addParticlesAroundSelf@VillagerBase@@AEAAXW4ParticleType@@@Z
      * @hash   1633688531
      */
-    MCAPI void _addParticlesAroundSelf(enum ParticleType);
+    MCAPI void _addParticlesAroundSelf(enum class ParticleType);
 
 private:
 

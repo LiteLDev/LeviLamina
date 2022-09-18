@@ -22,7 +22,7 @@ class SimpleEventPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Subtype;
+enum class Subtype;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEEVENTPACKET
@@ -42,7 +42,7 @@ public:
      * @symbol ?getId@SimpleEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1571348702
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SimpleEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -60,7 +60,7 @@ public:
      * @symbol ?_read@SimpleEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   2088976652
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SimpleEventPacket@@QEAA@XZ
      * @hash   -1937596388
@@ -70,11 +70,11 @@ public:
      * @symbol ??0SimpleEventPacket@@QEAA@AEBW4Subtype@0@@Z
      * @hash   728695503
      */
-    MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
+    MCAPI SimpleEventPacket(enum class SimpleEventPacket::Subtype const &);
     /**
      * @symbol ?getSubtype@SimpleEventPacket@@QEBAAEBW4Subtype@1@XZ
      * @hash   151323023
      */
-    MCAPI enum SimpleEventPacket::Subtype const & getSubtype() const;
+    MCAPI enum class SimpleEventPacket::Subtype const & getSubtype() const;
 
 };

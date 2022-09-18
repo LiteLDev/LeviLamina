@@ -71,13 +71,13 @@ public:
      * @symbol ?getEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ
      * @hash   614068517
      */
-    virtual enum ActorType getEntityType() const;
+    virtual enum class ActorType getEntityType() const;
     /**
      * @vftbl  15
      * @symbol ?getEntityCategories@ActorDamageByActorSource@@UEBA?AW4ActorCategory@@XZ
      * @hash   -369846877
      */
-    virtual enum ActorCategory getEntityCategories() const;
+    virtual enum class ActorCategory getEntityCategories() const;
     /**
      * @vftbl  18
      * @symbol ?getDamagingEntityUniqueID@ActorDamageByActorSource@@UEBA?AUActorUniqueID@@XZ
@@ -89,7 +89,7 @@ public:
      * @symbol ?getDamagingEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ
      * @hash   -1791781839
      */
-    virtual enum ActorType getDamagingEntityType() const;
+    virtual enum class ActorType getDamagingEntityType() const;
     /**
      * @vftbl  21
      * @symbol ?clone@ActorDamageByActorSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
@@ -100,6 +100,6 @@ public:
      * @symbol ??0ActorDamageByActorSource@@QEAA@AEAVActor@@W4ActorDamageCause@@@Z
      * @hash   775768521
      */
-    MCAPI ActorDamageByActorSource(class Actor &, enum ActorDamageCause);
+    MCAPI ActorDamageByActorSource(class Actor &, enum class ActorDamageCause);
 
 };

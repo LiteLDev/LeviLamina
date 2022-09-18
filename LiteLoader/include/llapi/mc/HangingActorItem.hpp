@@ -112,6 +112,6 @@ public:
      * @symbol ??0HangingActorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ActorType@@@Z
      * @hash   -348244209
      */
-    MCAPI HangingActorItem(std::string const &, int, enum ActorType);
+    MCAPI HangingActorItem(std::string const &, int, enum class ActorType);
 
 };

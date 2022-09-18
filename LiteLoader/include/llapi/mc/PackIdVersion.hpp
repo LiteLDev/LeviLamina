@@ -41,7 +41,7 @@ public:
      * @symbol ??0PackIdVersion@@QEAA@AEBVUUID@mce@@AEBVSemVersion@@W4PackType@@@Z
      * @hash   -826033383
      */
-    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum PackType);
+    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum class PackType);
     /**
      * @symbol ??0PackIdVersion@@QEAA@AEBU0@@Z
      * @hash   149462645

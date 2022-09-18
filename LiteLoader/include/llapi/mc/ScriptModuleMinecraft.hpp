@@ -43,7 +43,7 @@ enum class ScriptFacing {
     East = 5,
 };
 
-enum ScriptMessageSourceType;
+enum class ScriptMessageSourceType;
 struct ScriptNavigationResult {
 public:
     bool mIsFullPath;
@@ -67,11 +67,11 @@ public:
      * @symbol ?bindFacingEnum@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptFacing@ScriptModuleMinecraft@@W412@@Scripting@@XZ
      * @hash   -1622502536
      */
-    MCAPI class Scripting::EnumBindingBuilder<enum ScriptModuleMinecraft::ScriptFacing, enum ScriptModuleMinecraft::ScriptFacing> bindFacingEnum();
+    MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptFacing, enum class ScriptModuleMinecraft::ScriptFacing> bindFacingEnum();
     /**
      * @symbol ?bindMessageSourceType@ScriptModuleMinecraft@@YA?AV?$EnumBindingBuilder@W4ScriptMessageSourceType@ScriptModuleMinecraft@@W412@@Scripting@@XZ
      * @hash   1121609342
      */
-    MCAPI class Scripting::EnumBindingBuilder<enum ScriptModuleMinecraft::ScriptMessageSourceType, enum ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceType();
+    MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptMessageSourceType, enum class ScriptModuleMinecraft::ScriptMessageSourceType> bindMessageSourceType();
 
 };

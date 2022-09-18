@@ -32,7 +32,7 @@ public:
      * @symbol ??0JigsawJunction@@QEAA@HHHHW4Projection@@0@Z
      * @hash   -1066582701
      */
-    MCAPI JigsawJunction(int, int, int, int, enum Projection, enum Projection);
+    MCAPI JigsawJunction(int, int, int, int, enum class Projection, enum class Projection);
     /**
      * @symbol ?getDeltaTargetY@JigsawJunction@@QEBAHXZ
      * @hash   -1145927610

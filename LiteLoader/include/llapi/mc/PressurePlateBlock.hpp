@@ -245,6 +245,6 @@ public:
      * @symbol ??0PressurePlateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVMaterial@@W4Sensitivity@0@@Z
      * @hash   610963618
      */
-    MCAPI PressurePlateBlock(std::string const &, int, class Material const &, enum PressurePlateBlock::Sensitivity);
+    MCAPI PressurePlateBlock(std::string const &, int, class Material const &, enum class PressurePlateBlock::Sensitivity);
 
 };

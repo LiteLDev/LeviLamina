@@ -142,7 +142,7 @@ public:
      * @symbol ?getPotionType@CauldronBlockActor@@QEBA?AW4PotionType@Potion@@XZ
      * @hash   1185460228
      */
-    MCAPI enum Potion::PotionType getPotionType() const;
+    MCAPI enum class Potion::PotionType getPotionType() const;
     /**
      * @symbol ?mixDyes@CauldronBlockActor@@QEAAXXZ
      * @hash   -318277501
@@ -157,7 +157,7 @@ public:
      * @symbol ?setPotionType@CauldronBlockActor@@QEAAXW4PotionType@Potion@@@Z
      * @hash   -816554284
      */
-    MCAPI void setPotionType(enum Potion::PotionType);
+    MCAPI void setPotionType(enum class Potion::PotionType);
     /**
      * @symbol ?WATER_COLOR@CauldronBlockActor@@2VColor@mce@@A
      * @hash   -1827449689

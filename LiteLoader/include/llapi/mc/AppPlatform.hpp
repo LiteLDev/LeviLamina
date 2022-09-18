@@ -158,7 +158,7 @@ public:
      * @symbol ?createLoggingStorageArea@AppPlatform@@UEAA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@W4FileAccessType@Core@@AEBVPath@5@@Z
      * @hash   13722005
      */
-    MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum Core::FileAccessType, class Core::Path const &);
+    MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum class Core::FileAccessType, class Core::Path const &);
     /**
      * @symbol ?createUserInput@AppPlatform@@UEAAXH@Z
      * @hash   -1899510519
@@ -193,7 +193,7 @@ public:
      * @symbol ?getARVRPlatform@AppPlatform@@UEBA?AW4ARVRPlatform@@XZ
      * @hash   -1644203070
      */
-    MCVAPI enum ARVRPlatform getARVRPlatform() const;
+    MCVAPI enum class ARVRPlatform getARVRPlatform() const;
     /**
      * @symbol ?getAndroidScopedStorageInfo@AppPlatform@@UEBAAEBUAndroidScopedStorageInfo@1@XZ
      * @hash   1596324086
@@ -218,12 +218,12 @@ public:
      * @symbol ?getBroadcastingMultiplayerServiceIds@AppPlatform@@UEBA?AV?$vector@W4MultiplayerServiceIdentifier@Social@@V?$allocator@W4MultiplayerServiceIdentifier@Social@@@std@@@std@@_N0@Z
      * @hash   -1498822937
      */
-    MCVAPI std::vector<enum Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const;
+    MCVAPI std::vector<enum class Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool, bool) const;
     /**
      * @symbol ?getBuildPlatform@AppPlatform@@UEBA?AW4BuildPlatform@@XZ
      * @hash   1373250412
      */
-    MCVAPI enum BuildPlatform getBuildPlatform() const;
+    MCVAPI enum class BuildPlatform getBuildPlatform() const;
     /**
      * @symbol ?getCacheStoragePath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
      * @hash   -1037309585
@@ -243,7 +243,7 @@ public:
      * @symbol ?getDefaultInputMode@AppPlatform@@UEBA?AW4InputMode@@XZ
      * @hash   2130474183
      */
-    MCVAPI enum InputMode getDefaultInputMode() const;
+    MCVAPI enum class InputMode getDefaultInputMode() const;
     /**
      * @symbol ?getDefaultNetworkMaxPlayers@AppPlatform@@UEBAHXZ
      * @hash   899272072
@@ -273,7 +273,7 @@ public:
      * @symbol ?getDeviceSunsetTier@AppPlatform@@UEBA?AW4DeviceSunsetTier@@XZ
      * @hash   -759005886
      */
-    MCVAPI enum DeviceSunsetTier getDeviceSunsetTier() const;
+    MCVAPI enum class DeviceSunsetTier getDeviceSunsetTier() const;
     /**
      * @symbol ?getDisplayHeight@AppPlatform@@UEAAHXZ
      * @hash   1961780171
@@ -313,12 +313,12 @@ public:
      * @symbol ?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z
      * @hash   1692158432
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum ResourceFileSystem);
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> getFileAccess(enum class ResourceFileSystem);
     /**
      * @symbol ?getFocusState@AppPlatform@@UEAA?AW4AppFocusState@@XZ
      * @hash   -1910026104
      */
-    MCVAPI enum AppFocusState getFocusState();
+    MCVAPI enum class AppFocusState getFocusState();
     /**
      * @symbol ?getHighPerformanceThreadsCount@AppPlatform@@UEBA_KXZ
      * @hash   -818657382
@@ -398,7 +398,7 @@ public:
      * @symbol ?getOSVersion@AppPlatform@@UEBA?AW4OsVersion@@XZ
      * @hash   -242378420
      */
-    MCVAPI enum OsVersion getOSVersion() const;
+    MCVAPI enum class OsVersion getOSVersion() const;
     /**
      * @symbol ?getOnDiskPackScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
      * @hash   58065391
@@ -413,7 +413,7 @@ public:
      * @symbol ?getOperationMode@AppPlatform@@UEBA?AV?$optional@W4OperationMode@@@std@@XZ
      * @hash   1941516693
      */
-    MCVAPI class std::optional<enum OperationMode> getOperationMode() const;
+    MCVAPI class std::optional<enum class OperationMode> getOperationMode() const;
     /**
      * @symbol ?getOptimalLDBSize@AppPlatform@@UEAA_KXZ
      * @hash   -2429444
@@ -463,12 +463,12 @@ public:
      * @symbol ?getPlatformType@AppPlatform@@UEBA?AW4PlatformType@@XZ
      * @hash   -494136398
      */
-    MCVAPI enum PlatformType getPlatformType() const;
+    MCVAPI enum class PlatformType getPlatformType() const;
     /**
      * @symbol ?getPlatformUIScalingRules@AppPlatform@@EEBA?AW4UIScalingRules@@XZ
      * @hash   -446249881
      */
-    MCVAPI enum UIScalingRules getPlatformUIScalingRules() const;
+    MCVAPI enum class UIScalingRules getPlatformUIScalingRules() const;
     /**
      * @symbol ?getRenderSurfaceParameters@AppPlatform@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ
      * @hash   -2043346410
@@ -523,7 +523,7 @@ public:
      * @symbol ?getUIScalingRules@AppPlatform@@UEBA?AW4UIScalingRules@@XZ
      * @hash   2091142498
      */
-    MCVAPI enum UIScalingRules getUIScalingRules() const;
+    MCVAPI enum class UIScalingRules getUIScalingRules() const;
     /**
      * @symbol ?getUserInput@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ
      * @hash   -1454356197
@@ -548,7 +548,7 @@ public:
      * @symbol ?getVRControllerType@AppPlatform@@UEBA?AW4VRControllerType@@XZ
      * @hash   -826138750
      */
-    MCVAPI enum VRControllerType getVRControllerType() const;
+    MCVAPI enum class VRControllerType getVRControllerType() const;
     /**
      * @symbol ?goToExternalConsumablesStoreListing@AppPlatform@@UEBAXXZ
      * @hash   2127256791
@@ -868,7 +868,7 @@ public:
      * @symbol ?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z
      * @hash   2024857423
      */
-    MCVAPI void setARVRPlatform(enum ARVRPlatform);
+    MCVAPI void setARVRPlatform(enum class ARVRPlatform);
     /**
      * @symbol ?setDpi@AppPlatform@@UEAAXH@Z
      * @hash   -570687983
@@ -878,7 +878,7 @@ public:
      * @symbol ?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z
      * @hash   1849554675
      */
-    MCVAPI void setFullscreenMode(enum FullscreenMode);
+    MCVAPI void setFullscreenMode(enum class FullscreenMode);
     /**
      * @symbol ?setNetworkAllowed@AppPlatform@@UEAAX_N@Z
      * @hash   1485659293
@@ -908,12 +908,12 @@ public:
      * @symbol ?setUIScalingRules@AppPlatform@@UEAAXW4UIScalingRules@@@Z
      * @hash   -1430613529
      */
-    MCVAPI void setUIScalingRules(enum UIScalingRules);
+    MCVAPI void setUIScalingRules(enum class UIScalingRules);
     /**
      * @symbol ?setVRControllerType@AppPlatform@@UEAAXW4VRControllerType@@@Z
      * @hash   -594207781
      */
-    MCVAPI void setVRControllerType(enum VRControllerType);
+    MCVAPI void setVRControllerType(enum class VRControllerType);
     /**
      * @symbol ?setWindowSize@AppPlatform@@UEAAXHH@Z
      * @hash   2072789606

@@ -65,7 +65,7 @@ public:
      * @symbol ?getState@TaskGroup@@UEBA?AW4TaskGroupState@@XZ
      * @hash   -1870602886
      */
-    virtual enum TaskGroupState getState() const;
+    virtual enum class TaskGroupState getState() const;
     /**
      * @vftbl  6
      * @symbol ?processCoroutines@TaskGroup@@UEAAXXZ

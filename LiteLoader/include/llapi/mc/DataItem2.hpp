@@ -1,6 +1,10 @@
 #pragma once
 #include "DataItem.hpp"
 #include "CompoundTag.hpp"
+#include "Vec2.hpp"
+#include "Vec3.hpp"
+#include "BlockPos.hpp"
+
 template <typename T>
 class DataItem2 : public DataItem
 {

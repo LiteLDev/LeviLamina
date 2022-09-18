@@ -48,7 +48,7 @@ public:
      * @symbol ?initializeComponents@SimulatedPlayer@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   360345375
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   285979023
@@ -318,7 +318,7 @@ public:
      * @symbol ??0SimulatedPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@V?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H_NAEAVEntityContext@@@Z
      * @hash   15818504
      */
-    MCAPI SimulatedPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum GameType, class NetworkIdentifier const &, enum SubClientId, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
+    MCAPI SimulatedPlayer(class Level &, class PacketSender &, class NetworkHandler &, class ClientBlobCache::Server::ActiveTransfersManager &, enum class GameType, class NetworkIdentifier const &, enum class SubClientId, class std::function<void (class ServerPlayer &)>, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>, int, bool, class EntityContext &);
     /**
      * @symbol ?getGameTestHelper@SimulatedPlayer@@QEBA?AV?$NonOwnerPointer@VBaseGameTestHelper@gametest@@@Bedrock@@XZ
      * @hash   -1225916579
@@ -353,7 +353,7 @@ public:
      * @symbol ?simulateDestroyBlock@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
      * @hash   742733596
      */
-    MCAPI bool simulateDestroyBlock(class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing);
+    MCAPI bool simulateDestroyBlock(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
      * @symbol ?simulateDisconnect@SimulatedPlayer@@QEAAXXZ
      * @hash   -1011165453
@@ -373,7 +373,7 @@ public:
      * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@@Z
      * @hash   -2083045988
      */
-    MCAPI bool simulateInteract(class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing);
+    MCAPI bool simulateInteract(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
      * @symbol ?simulateInteract@SimulatedPlayer@@QEAA_NXZ
      * @hash   -578800722
@@ -468,12 +468,12 @@ public:
      * @symbol ?simulateUseItemInSlotOnBlock@SimulatedPlayer@@QEAA_NHAEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
      * @hash   547011182
      */
-    MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
+    MCAPI bool simulateUseItemInSlotOnBlock(int, class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
     /**
      * @symbol ?simulateUseItemOnBlock@SimulatedPlayer@@QEAA_NAEAVItemStack@@AEBVBlockPos@@W4ScriptFacing@ScriptModuleMinecraft@@AEBVVec3@@@Z
      * @hash   1971783384
      */
-    MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, enum ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
+    MCAPI bool simulateUseItemOnBlock(class ItemStack &, class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing, class Vec3 const &);
     /**
      * @symbol ?simulateWorldMove@SimulatedPlayer@@QEAAXAEBVVec3@@M@Z
      * @hash   835216547

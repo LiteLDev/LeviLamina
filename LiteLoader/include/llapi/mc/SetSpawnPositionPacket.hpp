@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@SetSpawnPositionPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   198045428
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetSpawnPositionPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@SetSpawnPositionPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -684236714
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetSpawnPositionPacket@@QEAA@XZ
      * @hash   2116461094
@@ -68,7 +68,7 @@ public:
      * @symbol ??0SetSpawnPositionPacket@@QEAA@W4SpawnPositionType@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z
      * @hash   -500346671
      */
-    MCAPI SetSpawnPositionPacket(enum SpawnPositionType, class AutomaticID<class Dimension, int>, class BlockPos const &);
+    MCAPI SetSpawnPositionPacket(enum class SpawnPositionType, class AutomaticID<class Dimension, int>, class BlockPos const &);
     /**
      * @symbol ??0SetSpawnPositionPacket@@QEAA@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@1@Z
      * @hash   -1005074841

@@ -41,7 +41,7 @@ public:
      * @symbol ?getId@GameRulesChangedPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -238659849
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@GameRulesChangedPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -59,6 +59,6 @@ public:
      * @symbol ?_read@GameRulesChangedPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -714822861
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
 
 };

@@ -263,19 +263,19 @@ public:
      * @symbol ??0ColoredTorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ColoredTorchColor@@@Z
      * @hash   -2018209280
      */
-    MCAPI ColoredTorchBlock(std::string const &, int, enum ColoredTorchColor);
+    MCAPI ColoredTorchBlock(std::string const &, int, enum class ColoredTorchColor);
     /**
      * @symbol ?getItemForColor@ColoredTorchBlock@@SA?AVItemInstance@@W4ColoredTorchColor@@@Z
      * @hash   1378163495
      */
-    MCAPI static class ItemInstance getItemForColor(enum ColoredTorchColor);
+    MCAPI static class ItemInstance getItemForColor(enum class ColoredTorchColor);
 
 //private:
     /**
      * @symbol ?_getColor@ColoredTorchBlock@@AEBA?AW4ColoredTorchColor@@AEBVBlock@@@Z
      * @hash   2020778879
      */
-    MCAPI enum ColoredTorchColor _getColor(class Block const &) const;
+    MCAPI enum class ColoredTorchColor _getColor(class Block const &) const;
 
 private:
 

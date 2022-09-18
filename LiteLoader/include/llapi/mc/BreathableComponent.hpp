@@ -21,7 +21,7 @@ class BreathableComponent {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum BreathableState;
+enum class BreathableState;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLECOMPONENT
@@ -69,7 +69,7 @@ public:
      * @symbol ?getBreathableState@BreathableComponent@@QEAAAEAW4BreathableState@1@XZ
      * @hash   -1017860926
      */
-    MCAPI enum BreathableComponent::BreathableState & getBreathableState();
+    MCAPI enum class BreathableComponent::BreathableState & getBreathableState();
     /**
      * @symbol ?getInhaleTime@BreathableComponent@@QEBAMXZ
      * @hash   -1837285782

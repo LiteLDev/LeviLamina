@@ -37,7 +37,7 @@ public:
      * @symbol ?initializeComponents@Goat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -435735707
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -13240859
@@ -108,13 +108,13 @@ public:
      * @symbol ?getAmbientSound@Goat@@UEBA?AW4LevelSoundEvent@@XZ
      * @hash   -1912240663
      */
-    virtual enum LevelSoundEvent getAmbientSound() const;
+    virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  142
      * @symbol ?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z
      * @hash   1984263515
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059
@@ -183,13 +183,13 @@ public:
      * @symbol ?getHurtSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ
      * @hash   413425287
      */
-    virtual enum LevelSoundEvent getHurtSound();
+    virtual enum class LevelSoundEvent getHurtSound();
     /**
      * @vftbl  290
      * @symbol ?getDeathSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ
      * @hash   1682263870
      */
-    virtual enum LevelSoundEvent getDeathSound();
+    virtual enum class LevelSoundEvent getDeathSound();
     /**
      * @vftbl  313
      * @hash   -1210176411

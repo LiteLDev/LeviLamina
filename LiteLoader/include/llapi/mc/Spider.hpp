@@ -23,7 +23,7 @@ class Spider : public Monster {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Type;
+enum class Type;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPIDER
@@ -217,7 +217,7 @@ public:
      * @symbol ?getSpiderType@Spider@@UEBA?AW4Type@1@XZ
      * @hash   1842029673
      */
-    virtual enum Spider::Type getSpiderType() const;
+    virtual enum class Spider::Type getSpiderType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIDER
     /**
      * @symbol ?useNewAi@Spider@@UEBA_NXZ

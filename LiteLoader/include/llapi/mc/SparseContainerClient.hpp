@@ -21,7 +21,7 @@ class SparseContainerClient {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum PushSlotPredictionResult;
+enum class PushSlotPredictionResult;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPARSECONTAINERCLIENT
@@ -45,6 +45,6 @@ private:
      * @symbol ?pushSlotPredictionResultMap@SparseContainerClient@@0V?$BidirectionalUnorderedMap@W4PushSlotPredictionResult@SparseContainerClient@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      * @hash   -1357243731
      */
-    MCAPI static class BidirectionalUnorderedMap<enum SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
 
 };

@@ -82,7 +82,7 @@ public:
      * @symbol ??0SimpleSparseContainer@@QEAA@AEAVContainer@@W4SparseContainerBackingSetType@@V?$unique_ptr@VISparseContainerSetListener@@U?$default_delete@VISparseContainerSetListener@@@std@@@std@@V?$unique_ptr@VIPlayerContainerSetter@@U?$default_delete@VIPlayerContainerSetter@@@std@@@4@@Z
      * @hash   -141180020
      */
-    MCAPI SimpleSparseContainer(class Container &, enum SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
+    MCAPI SimpleSparseContainer(class Container &, enum class SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
     /**
      * @symbol ?clearItem@SimpleSparseContainer@@QEAAXH@Z
      * @hash   -983062154

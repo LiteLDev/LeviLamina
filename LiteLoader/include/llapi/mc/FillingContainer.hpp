@@ -139,7 +139,7 @@ public:
      * @symbol ??0FillingContainer@@QEAA@PEAVPlayer@@HW4ContainerType@@@Z
      * @hash   -1342970744
      */
-    MCAPI FillingContainer(class Player *, int, enum ContainerType);
+    MCAPI FillingContainer(class Player *, int, enum class ContainerType);
     /**
      * @symbol ?getHotbarSize@FillingContainer@@QEBAHXZ
      * @hash   -1687754698

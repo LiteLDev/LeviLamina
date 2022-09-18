@@ -38,7 +38,7 @@ public:
      * @symbol ?addChunkLoadedRequest@ChunkLoadActionList@@QEAAXVChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ChunksLoadedStatus@@AEAVLevelStorage@@@Z
      * @hash   125627663
      */
-    MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
+    MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum class ChunksLoadedStatus, class LevelStorage &);
     /**
      * @symbol ?loadRequests@ChunkLoadActionList@@QEAAXAEAVLevelStorage@@AEAVICommandOriginLoader@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1565723122
@@ -58,7 +58,7 @@ public:
      * @symbol ?queueRequestOrExecuteAction@ChunkLoadActionList@@QEAA?AW4QueueRequestResult@@VChunkLoadedRequest@@AEAVServerLevel@@AEAVLevelStorage@@AEAVDimension@@@Z
      * @hash   -1092931576
      */
-    MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class ChunkLoadedRequest, class ServerLevel &, class LevelStorage &, class Dimension &);
+    MCAPI enum class QueueRequestResult queueRequestOrExecuteAction(class ChunkLoadedRequest, class ServerLevel &, class LevelStorage &, class Dimension &);
     /**
      * @symbol ?tickRequests@ChunkLoadActionList@@QEAAXAEAVServerLevel@@AEAVDimension@@@Z
      * @hash   -1585312045
@@ -75,22 +75,22 @@ public:
      * @symbol ?_addChunkLoadedRequest@ChunkLoadActionList@@AEAAXVChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ChunksLoadedStatus@@AEAVLevelStorage@@@Z
      * @hash   1694793360
      */
-    MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum ChunksLoadedStatus, class LevelStorage &);
+    MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum class ChunksLoadedStatus, class LevelStorage &);
     /**
      * @symbol ?_saveRequest@ChunkLoadActionList@@AEAAXAEAVChunkLoadedRequest@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ChunkRequestListType@@AEAVLevelStorage@@@Z
      * @hash   -528156408
      */
-    MCAPI void _saveRequest(class ChunkLoadedRequest &, std::string const &, enum ChunkRequestListType, class LevelStorage &);
+    MCAPI void _saveRequest(class ChunkLoadedRequest &, std::string const &, enum class ChunkRequestListType, class LevelStorage &);
     /**
      * @symbol ?_updateAsyncList@ChunkLoadActionList@@AEAAXAEAVLevelStorage@@AEAVDimension@@V?$function@$$A6A?AW4ChunksLoadedStatus@@AEAVChunkLoadedRequest@@@Z@std@@@Z
      * @hash   1954270088
      */
-    MCAPI void _updateAsyncList(class LevelStorage &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
+    MCAPI void _updateAsyncList(class LevelStorage &, class Dimension &, class std::function<enum class ChunksLoadedStatus (class ChunkLoadedRequest &)>);
     /**
      * @symbol ?_updateTickingList@ChunkLoadActionList@@AEAAXAEAVServerLevel@@AEAVDimension@@V?$function@$$A6A?AW4ChunksLoadedStatus@@AEAVChunkLoadedRequest@@@Z@std@@@Z
      * @hash   966651445
      */
-    MCAPI void _updateTickingList(class ServerLevel &, class Dimension &, class std::function<enum ChunksLoadedStatus (class ChunkLoadedRequest &)>);
+    MCAPI void _updateTickingList(class ServerLevel &, class Dimension &, class std::function<enum class ChunksLoadedStatus (class ChunkLoadedRequest &)>);
 
 private:
 

@@ -59,7 +59,7 @@ public:
      * @symbol ?canProvideSupport@CauldronBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   1926092938
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @hash   -299030517
@@ -340,7 +340,7 @@ public:
      * @symbol ?setLiquidLevel@CauldronBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@HW4CauldronLiquidType@@@Z
      * @hash   -1560659767
      */
-    MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int, enum CauldronLiquidType) const;
+    MCAPI void setLiquidLevel(class BlockSource &, class BlockPos const &, int, enum class CauldronLiquidType) const;
     /**
      * @symbol ?FILL_LEVEL_PER_DRIP@CauldronBlock@@2HB
      * @hash   -1083319155
@@ -350,7 +350,7 @@ public:
      * @symbol ?canReceiveStalactiteDrip@CauldronBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@W4MaterialType@@@Z
      * @hash   1302781557
      */
-    MCAPI static bool canReceiveStalactiteDrip(class BlockSource &, class BlockPos const &, enum MaterialType);
+    MCAPI static bool canReceiveStalactiteDrip(class BlockSource &, class BlockPos const &, enum class MaterialType);
     /**
      * @symbol ?spawnPotionParticles@CauldronBlock@@SAXAEAVLevel@@AEBVVec3@@AEAVRandom@@HH@Z
      * @hash   -2062274542
@@ -372,12 +372,12 @@ public:
      * @symbol ?_sendCauldronUsedEventToClient@CauldronBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
      * @hash   -1547201742
      */
-    MCAPI void _sendCauldronUsedEventToClient(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;
+    MCAPI void _sendCauldronUsedEventToClient(class Player const &, short, enum class MinecraftEventing::POIBlockInteractionType) const;
     /**
      * @symbol ?_spawnCauldronEvent@CauldronBlock@@AEBAXAEAVBlockSource@@AEBVBlockPos@@W4LevelEvent@@@Z
      * @hash   267156986
      */
-    MCAPI void _spawnCauldronEvent(class BlockSource &, class BlockPos const &, enum LevelEvent) const;
+    MCAPI void _spawnCauldronEvent(class BlockSource &, class BlockPos const &, enum class LevelEvent) const;
     /**
      * @symbol ?_useDyeableComponent@CauldronBlock@@AEBA_NAEAVItemStack@@AEAVPlayer@@AEBVBlockPos@@AEAVCauldronBlockActor@@AEAVBlockSource@@H_N55@Z
      * @hash   -826345026

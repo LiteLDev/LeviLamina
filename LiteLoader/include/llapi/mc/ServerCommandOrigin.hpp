@@ -114,7 +114,7 @@ public:
      * @symbol ?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   -2143092221
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ServerCommandOrigin@@UEBA?AVCompoundTag@@XZ

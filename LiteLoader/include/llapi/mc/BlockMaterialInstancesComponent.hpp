@@ -39,7 +39,7 @@ public:
      * @symbol ?getRenderLayer@BlockMaterialInstancesComponent@@QEBA?AW4BlockRenderLayer@@XZ
      * @hash   -1787198458
      */
-    MCAPI enum BlockRenderLayer getRenderLayer() const;
+    MCAPI enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @symbol ??4BlockMaterialInstancesComponent@@QEAAAEAU0@$$QEAU0@@Z
      * @hash   -1864739530

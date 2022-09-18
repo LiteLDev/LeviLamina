@@ -43,7 +43,7 @@ public:
      * @symbol ?tryTrigger@OnExtractSideBySide@@SAXAEAVActor@@V?$variant@UTickBegin@SideBySideExtractionId@@UBeginManagePassengers@2@UManagePassengersStopRiding@2@UManagePassengersPositioning@2@UEntityInside@2@@std@@W4SideBySideExtractionStep@@@Z
      * @hash   1802897513
      */
-    MCAPI static void tryTrigger(class Actor &, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, enum SideBySideExtractionStep);
+    MCAPI static void tryTrigger(class Actor &, class std::variant<struct SideBySideExtractionId::TickBegin, struct SideBySideExtractionId::BeginManagePassengers, struct SideBySideExtractionId::ManagePassengersStopRiding, struct SideBySideExtractionId::ManagePassengersPositioning, struct SideBySideExtractionId::EntityInside>, enum class SideBySideExtractionStep);
     /**
      * @symbol ?usesEcsMovement@OnExtractSideBySide@@SA_NAEBVActor@@@Z
      * @hash   -427306075

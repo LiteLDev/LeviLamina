@@ -31,21 +31,21 @@ enum class ContainerType : char {
     SMITHING_TABLE         = 33,
 };
 
-enum GameType : int {
+enum class GameType : int {
     GameTypeSurvival  = 0,
     GameTypeCreative  = 1,
     GameTypeAdventure = 2,
     GameTypeSpectator = 6
 };
 
-enum Difficulty : int {
+enum class Difficulty : int {
     DifficultyPeaceful = 0,
     DifficultyEasy     = 1,
     DifficultyNormal   = 2,
     DifficultyHard     = 3
 };
 
-enum PlayerPermissionLevel : int {
+enum class PlayerPermissionLevel : int {
     PlayerPermissionLevelVisitor  = 0,
     PlayerPermissionLevelMember   = 1,
     PlayerPermissionLevelOperator = 2,
@@ -89,7 +89,7 @@ enum class CommandParameterDataType {
     POSIFIX,
 };
 
-enum SemanticConstraint: unsigned char
+enum class SemanticConstraint: unsigned char
 {
     NoneConstraint = 0,
     RequiresCheatsEnabled=1,
@@ -98,7 +98,7 @@ enum SemanticConstraint: unsigned char
     VALUE_MASK=8,
 };
 
-enum CommandParameterOption : unsigned char
+enum class CommandParameterOption : unsigned char
 {
     None = 0,
     EnumAutocompleteExpansion = 1,
@@ -603,7 +603,7 @@ enum class MinecraftPacketIds : int {
     FeatureRegistry                   = 0XBF   
 };
 
-enum ItemStackNetResult : unsigned char {
+enum class ItemStackNetResult : unsigned char {
     Success                                          = 0,
     Error                                            = 1,
     InvalidRequestActionType                         = 2,
@@ -699,4 +699,19 @@ enum class InventorySourceType {
     UntrackedInteractionUI = 100,
     NONIMPLEMENTEDTODO     = 99999
 };
+
+enum class Mirror : unsigned char {
+    None_15=0,
+    X,
+    Z,
+    XZ,
+};
+enum class Rotation : unsigned char {
+    None_14=0,
+    Rotate90,
+    Rotate180,
+    Rotate270,
+    Total,
+};
+
 // clang-format on

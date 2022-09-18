@@ -53,7 +53,7 @@ public:
      * @symbol ?uploadResourcePack@ResourcePackFileUploadManager@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVResourceLocation@@_N2W4PackType@@@Z
      * @hash   -216709649
      */
-    MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum PackType);
+    MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum class PackType);
 
 //private:
     /**

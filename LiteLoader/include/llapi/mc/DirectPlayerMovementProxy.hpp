@@ -75,12 +75,12 @@ public:
      * @symbol ?getAbilityBool@DirectPlayerMovementProxy@@UEBA_NW4AbilitiesIndex@@@Z
      * @hash   -366175913
      */
-    MCVAPI bool getAbilityBool(enum AbilitiesIndex) const;
+    MCVAPI bool getAbilityBool(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getAbilityFloat@DirectPlayerMovementProxy@@UEBAMW4AbilitiesIndex@@@Z
      * @hash   1902332871
      */
-    MCVAPI float getAbilityFloat(enum AbilitiesIndex) const;
+    MCVAPI float getAbilityFloat(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getBob@DirectPlayerMovementProxy@@UEBAMXZ
      * @hash   -2086644200
@@ -110,7 +110,7 @@ public:
      * @symbol ?getInputMode@DirectPlayerMovementProxy@@UEBA?AW4InputMode@@XZ
      * @hash   1026948507
      */
-    MCVAPI enum InputMode getInputMode() const;
+    MCVAPI enum class InputMode getInputMode() const;
     /**
      * @symbol ?getItemUseMovementModifier@DirectPlayerMovementProxy@@UEBAMXZ
      * @hash   1712849293
@@ -140,7 +140,7 @@ public:
      * @symbol ?getLoadingState@DirectPlayerMovementProxy@@UEBA?AW4LoadingState@@XZ
      * @hash   -741851807
      */
-    MCVAPI enum LoadingState getLoadingState() const;
+    MCVAPI enum class LoadingState getLoadingState() const;
     /**
      * @symbol ?getMoveInputHandler@DirectPlayerMovementProxy@@UEAAPEAVMoveInputHandler@@XZ
      * @hash   -1080719442
@@ -150,12 +150,12 @@ public:
      * @symbol ?getPlayMode@DirectPlayerMovementProxy@@UEBA?AW4ClientPlayMode@@XZ
      * @hash   -216913818
      */
-    MCVAPI enum ClientPlayMode getPlayMode() const;
+    MCVAPI enum class ClientPlayMode getPlayMode() const;
     /**
      * @symbol ?getPlayerPaddleForce@DirectPlayerMovementProxy@@UEBAMW4Side@@@Z
      * @hash   1224582024
      */
-    MCVAPI float getPlayerPaddleForce(enum Side) const;
+    MCVAPI float getPlayerPaddleForce(enum class Side) const;
     /**
      * @symbol ?getVRMoveAdjustAngle@DirectPlayerMovementProxy@@UEBAMXZ
      * @hash   -1224066806
@@ -205,7 +205,7 @@ public:
      * @symbol ?isPaddling@DirectPlayerMovementProxy@@UEBA_NW4Side@@@Z
      * @hash   1996127607
      */
-    MCVAPI bool isPaddling(enum Side) const;
+    MCVAPI bool isPaddling(enum class Side) const;
     /**
      * @symbol ?isServerAuthoritativeMovement@DirectPlayerMovementProxy@@UEBA_NXZ
      * @hash   983044356
@@ -280,17 +280,17 @@ public:
      * @symbol ?sendRequestAbilityPacket@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z
      * @hash   -307290705
      */
-    MCVAPI void sendRequestAbilityPacket(enum AbilitiesIndex, bool);
+    MCVAPI void sendRequestAbilityPacket(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setAbilityBool@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z
      * @hash   62473686
      */
-    MCVAPI void setAbilityBool(enum AbilitiesIndex, bool);
+    MCVAPI void setAbilityBool(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setAbilityFloat@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@M@Z
      * @hash   766417950
      */
-    MCVAPI void setAbilityFloat(enum AbilitiesIndex, float);
+    MCVAPI void setAbilityFloat(enum class AbilitiesIndex, float);
     /**
      * @symbol ?setAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z
      * @hash   83622663
@@ -345,7 +345,7 @@ public:
      * @symbol ?setPlayerPaddleForce@DirectPlayerMovementProxy@@UEAAXW4Side@@M@Z
      * @hash   895629237
      */
-    MCVAPI void setPlayerPaddleForce(enum Side, float);
+    MCVAPI void setPlayerPaddleForce(enum class Side, float);
     /**
      * @symbol ?setWasAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z
      * @hash   -1998783492

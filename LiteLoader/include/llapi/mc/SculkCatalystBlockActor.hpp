@@ -35,7 +35,7 @@ public:
      * @symbol ?getDeliveryMode@SculkCatalystBlockActor@@UEBA?AW4DeliveryMode@GameEventListener@@XZ
      * @hash   -1258693629
      */
-    MCVAPI enum GameEventListener::DeliveryMode getDeliveryMode() const;
+    MCVAPI enum class GameEventListener::DeliveryMode getDeliveryMode() const;
     /**
      * @symbol ?getPositionSource@SculkCatalystBlockActor@@UEBAAEBVPositionSource@GameEvents@@XZ
      * @hash   532015579
@@ -86,7 +86,7 @@ public:
      * @symbol ?TypeId@SculkCatalystBlockActor@@2W4BlockActorType@@B
      * @hash   -1116539431
      */
-    MCAPI static enum BlockActorType const TypeId;
+    MCAPI static enum class BlockActorType const TypeId;
     /**
      * @symbol ?TypeString@SculkCatalystBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
      * @hash   -1510058293

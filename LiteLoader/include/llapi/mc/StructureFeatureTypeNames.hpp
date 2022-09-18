@@ -24,11 +24,11 @@ namespace StructureFeatureTypeNames {
      * @symbol ?getFeatureName@StructureFeatureTypeNames@@YA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@W4StructureFeatureType@@@Z
      * @hash   784245938
      */
-    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> getFeatureName(enum StructureFeatureType);
+    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> getFeatureName(enum class StructureFeatureType);
     /**
      * @symbol ?getFeatureType@StructureFeatureTypeNames@@YA?AW4StructureFeatureType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1485511220
      */
-    MCAPI enum StructureFeatureType getFeatureType(std::string const &);
+    MCAPI enum class StructureFeatureType getFeatureType(std::string const &);
 
 };

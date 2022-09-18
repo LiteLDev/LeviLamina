@@ -21,7 +21,7 @@ class DateManager {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum TimeZoneType;
+enum class TimeZoneType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATEMANAGER
@@ -46,7 +46,7 @@ public:
      * @symbol ?toDateTime@DateManager@@SA?AUtm@@_JW4TimeZoneType@1@@Z
      * @hash   -908380027
      */
-    MCAPI static struct tm toDateTime(__int64, enum DateManager::TimeZoneType);
+    MCAPI static struct tm toDateTime(__int64, enum class DateManager::TimeZoneType);
     /**
      * @symbol ?toString@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUtm@@AEBV23@@Z
      * @hash   1000432896
@@ -56,16 +56,16 @@ public:
      * @symbol ?toString@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_JW4TimeZoneType@1@AEBV23@@Z
      * @hash   1684551365
      */
-    MCAPI static std::string toString(__int64 const &, enum DateManager::TimeZoneType, std::string const &);
+    MCAPI static std::string toString(__int64 const &, enum class DateManager::TimeZoneType, std::string const &);
     /**
      * @symbol ?toString_DateTime@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUtm@@W4TimeZoneType@1@@Z
      * @hash   -1261729526
      */
-    MCAPI static std::string toString_DateTime(struct tm const &, enum DateManager::TimeZoneType);
+    MCAPI static std::string toString_DateTime(struct tm const &, enum class DateManager::TimeZoneType);
     /**
      * @symbol ?toString_DateTime@DateManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEB_JW4TimeZoneType@1@@Z
      * @hash   1081276254
      */
-    MCAPI static std::string toString_DateTime(__int64 const &, enum DateManager::TimeZoneType);
+    MCAPI static std::string toString_DateTime(__int64 const &, enum class DateManager::TimeZoneType);
 
 };

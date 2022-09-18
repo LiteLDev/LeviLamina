@@ -40,25 +40,25 @@ public:
      * @symbol ?getContainerId@ContainerManagerModel@@UEBA?AW4ContainerID@@XZ
      * @hash   1843364115
      */
-    virtual enum ContainerID getContainerId() const;
+    virtual enum class ContainerID getContainerId() const;
     /**
      * @vftbl  2
      * @symbol ?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z
      * @hash   -1563064342
      */
-    virtual void setContainerId(enum ContainerID);
+    virtual void setContainerId(enum class ContainerID);
     /**
      * @vftbl  3
      * @symbol ?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ
      * @hash   542949075
      */
-    virtual enum ContainerType getContainerType() const;
+    virtual enum class ContainerType getContainerType() const;
     /**
      * @vftbl  4
      * @symbol ?setContainerType@ContainerManagerModel@@UEAAXW4ContainerType@@@Z
      * @hash   1292843356
      */
-    virtual void setContainerType(enum ContainerType);
+    virtual void setContainerType(enum class ContainerType);
     /**
      * @vftbl  5
      * @symbol ?serverInitItemStackIds@ContainerManagerModel@@UEAAXXZ
@@ -141,7 +141,7 @@ public:
      * @symbol ??0ContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
      * @hash   1703565171
      */
-    MCAPI ContainerManagerModel(enum ContainerID, class Player &);
+    MCAPI ContainerManagerModel(enum class ContainerID, class Player &);
     /**
      * @symbol ?getPlayer@ContainerManagerModel@@QEBAAEAVPlayer@@XZ
      * @hash   1329839024
@@ -173,7 +173,7 @@ public:
      * @symbol ?_getContainer@ContainerManagerModel@@IEBA?AV?$shared_ptr@VContainerModel@@@std@@W4ContainerEnumName@@@Z
      * @hash   1750987756
      */
-    MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum ContainerEnumName) const;
+    MCAPI class std::shared_ptr<class ContainerModel> _getContainer(enum class ContainerEnumName) const;
     /**
      * @symbol ?_isPlayerInRangeOfPosition@ContainerManagerModel@@IEBA_NAEBVBlockPos@@M@Z
      * @hash   -1013122467

@@ -10,6 +10,7 @@
 #include <llapi/mc/ActorDamageSource.hpp>
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/ChunkBlockPos.hpp>
 #include <llapi/mc/CommandContext.hpp>
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/Dimension.hpp>

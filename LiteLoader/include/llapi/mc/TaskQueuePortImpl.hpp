@@ -120,7 +120,7 @@ public:
      * @symbol ?Initialize@TaskQueuePortImpl@@QEAAJW4XTaskQueueDispatchMode@@@Z
      * @hash   874283716
      */
-    MCAPI long Initialize(enum XTaskQueueDispatchMode);
+    MCAPI long Initialize(enum class XTaskQueueDispatchMode);
     /**
      * @symbol ??0TaskQueuePortImpl@@QEAA@XZ
      * @hash   -793087383

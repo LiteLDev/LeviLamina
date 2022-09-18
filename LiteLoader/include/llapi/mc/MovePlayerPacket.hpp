@@ -11,7 +11,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum TeleportationCause {
+enum class TeleportationCause {
     UNKNOWN,
     PROJECTILE,
     CHORUS_FRUIT,
@@ -64,7 +64,7 @@ public:
      * @symbol ?getId@MovePlayerPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1622393124
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MovePlayerPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -82,7 +82,7 @@ public:
      * @symbol ?_read@MovePlayerPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   933792598
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MovePlayerPacket@@QEAA@XZ
      * @hash   -345115498
@@ -92,7 +92,7 @@ public:
      * @symbol ??0MovePlayerPacket@@QEAA@AEBVPlayer@@W4PositionMode@1@HH@Z
      * @hash   498594556
      */
-    MCAPI MovePlayerPacket(class Player const &, enum Player::PositionMode, int, int);
+    MCAPI MovePlayerPacket(class Player const &, enum class Player::PositionMode, int, int);
     /**
      * @symbol ??0MovePlayerPacket@@QEAA@AEBVPlayer@@AEBVVec3@@@Z
      * @hash   1767287600

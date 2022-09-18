@@ -56,6 +56,6 @@ public:
      * @symbol ??0SculkVeinMultifaceSpreader@@QEAA@AEBV?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@@Z
      * @hash   -928175633
      */
-    MCAPI SculkVeinMultifaceSpreader(std::vector<enum MultifaceSpreader::SpreadType> const &);
+    MCAPI SculkVeinMultifaceSpreader(std::vector<enum class MultifaceSpreader::SpreadType> const &);
 
 };

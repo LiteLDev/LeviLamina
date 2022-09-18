@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@BiomeDefinitionListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -2069512555
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BiomeDefinitionListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -64,7 +64,7 @@ public:
      * @symbol ?_read@BiomeDefinitionListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1183256347
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0BiomeDefinitionListPacket@@QEAA@XZ
      * @hash   -459679275

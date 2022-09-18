@@ -9,6 +9,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "Vec3.hpp"
+#include "BlockPos.hpp"
 
 class StackResultStorageEntity;
 

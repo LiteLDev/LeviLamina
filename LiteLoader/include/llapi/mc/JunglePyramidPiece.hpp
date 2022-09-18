@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@JunglePyramidPiece@@UEBA?AW4StructurePieceType@@XZ
      * @hash   958792640
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@JunglePyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

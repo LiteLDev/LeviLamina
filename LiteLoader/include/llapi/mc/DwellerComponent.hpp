@@ -21,7 +21,7 @@ class DwellerComponent {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum DwellingType;
+enum class DwellingType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DWELLERCOMPONENT
@@ -75,7 +75,7 @@ public:
      * @symbol ?getDwellerRole@DwellerComponent@@QEBA?AW4DwellerRole@@XZ
      * @hash   2127996432
      */
-    MCAPI enum DwellerRole getDwellerRole() const;
+    MCAPI enum class DwellerRole getDwellerRole() const;
     /**
      * @symbol ?getDwellingUniqueID@DwellerComponent@@QEBA?AVUUID@mce@@XZ
      * @hash   -225875894
@@ -229,11 +229,11 @@ private:
      * @symbol ?DWELLING_ROLES@DwellerComponent@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DwellerRole@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DwellerRole@@@std@@@2@@std@@B
      * @hash   -199478915
      */
-    MCAPI static class std::unordered_map<std::string, enum DwellerRole, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum DwellerRole>>> const DWELLING_ROLES;
+    MCAPI static class std::unordered_map<std::string, enum class DwellerRole, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum class DwellerRole>>> const DWELLING_ROLES;
     /**
      * @symbol ?DWELLING_TYPES@DwellerComponent@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DwellingType@DwellerComponent@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DwellingType@DwellerComponent@@@std@@@2@@std@@B
      * @hash   -416843163
      */
-    MCAPI static class std::unordered_map<std::string, enum DwellerComponent::DwellingType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum DwellerComponent::DwellingType>>> const DWELLING_TYPES;
+    MCAPI static class std::unordered_map<std::string, enum class DwellerComponent::DwellingType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum class DwellerComponent::DwellingType>>> const DWELLING_TYPES;
 
 };

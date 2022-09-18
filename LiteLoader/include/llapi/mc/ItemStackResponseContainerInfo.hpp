@@ -32,7 +32,7 @@ public:
      * @symbol ??0ItemStackResponseContainerInfo@@QEAA@W4ContainerEnumName@@@Z
      * @hash   512769356
      */
-    MCAPI ItemStackResponseContainerInfo(enum ContainerEnumName);
+    MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName);
     /**
      * @symbol ??1ItemStackResponseContainerInfo@@QEAA@XZ
      * @hash   625444611

@@ -125,7 +125,7 @@ public:
      * @symbol ??0RecordItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4LevelSoundEvent@@@Z
      * @hash   1153655939
      */
-    MCAPI RecordItem(std::string const &, int, enum LevelSoundEvent);
+    MCAPI RecordItem(std::string const &, int, enum class LevelSoundEvent);
     /**
      * @symbol ?getDuration@RecordItem@@QEBAMXZ
      * @hash   2051208436
@@ -135,6 +135,6 @@ public:
      * @symbol ?getSound@RecordItem@@QEBA?AW4LevelSoundEvent@@XZ
      * @hash   373451084
      */
-    MCAPI enum LevelSoundEvent getSound() const;
+    MCAPI enum class LevelSoundEvent getSound() const;
 
 };

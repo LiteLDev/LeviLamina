@@ -20,7 +20,7 @@ namespace VanillaLevelChunkUpgrade {
 
 #define AFTER_EXTRA
 // Add Member There
-enum Axis;
+enum class Axis;
 
 #undef AFTER_EXTRA
     /**
@@ -87,7 +87,7 @@ enum Axis;
      * @symbol ?fixBlockStatesOnChunkBorderAxis@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@AEBVLevelChunk@@EVBlockPos@@W4Axis@1@@Z
      * @hash   759838711
      */
-    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, unsigned char, class BlockPos, enum VanillaLevelChunkUpgrade::Axis);
+    MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource &, class LevelChunk const &, unsigned char, class BlockPos, enum class VanillaLevelChunkUpgrade::Axis);
     /**
      * @symbol ?fixStemBlockStates@VanillaLevelChunkUpgrade@@YAXAEAVBlockSource@@VBlockPos@@AEBVBlock@@@Z
      * @hash   725381591
@@ -137,7 +137,7 @@ enum Axis;
      * @symbol ?upgradeOldLimboEntity@VanillaLevelChunkUpgrade@@YAXAEAVCompoundTag@@W4LimboEntitiesVersion@@_N@Z
      * @hash   541173567
      */
-    MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion, bool);
+    MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion, bool);
     /**
      * @symbol ?upgradeWorldHeight@VanillaLevelChunkUpgrade@@YAXAEAVLevelChunk@@0AEAVBlockSource@@@Z
      * @hash   1387525221

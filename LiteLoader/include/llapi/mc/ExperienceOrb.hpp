@@ -22,7 +22,7 @@ class ExperienceOrb : public Actor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum DropType;
+enum class DropType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEORB
@@ -38,7 +38,7 @@ public:
      * @symbol ?reloadHardcoded@ExperienceOrb@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   2029947608
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -1038951581
@@ -222,12 +222,12 @@ public:
      * @symbol ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HHW4DropType@1@PEAVPlayer@@@Z
      * @hash   -409836436
      */
-    MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum ExperienceOrb::DropType, class Player *);
+    MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum class ExperienceOrb::DropType, class Player *);
     /**
      * @symbol ?spawnOrbs@ExperienceOrb@@SAXAEAVBlockSource@@AEBVVec3@@HW4DropType@1@PEAVPlayer@@@Z
      * @hash   -1980091095
      */
-    MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, enum ExperienceOrb::DropType, class Player *);
+    MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, enum class ExperienceOrb::DropType, class Player *);
 
 //private:
     /**

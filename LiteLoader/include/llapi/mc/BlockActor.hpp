@@ -306,7 +306,7 @@ public:
      * @symbol ??0BlockActor@@QEAA@W4BlockActorType@@AEBVBlockPos@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -200902349
      */
-    MCAPI BlockActor(enum BlockActorType, class BlockPos const &, std::string const &);
+    MCAPI BlockActor(enum class BlockActorType, class BlockPos const &, std::string const &);
     /**
      * @symbol ?assignBlockIfNotAssigned@BlockActor@@QEAAXAEAVBlockSource@@@Z
      * @hash   599866020
@@ -336,7 +336,7 @@ public:
      * @symbol ?getType@BlockActor@@QEBAAEBW4BlockActorType@@XZ
      * @hash   -47190254
      */
-    MCAPI enum BlockActorType const & getType() const;
+    MCAPI enum class BlockActorType const & getType() const;
     /**
      * @symbol ?ignoreLighting@BlockActor@@QEBA?B_NXZ
      * @hash   -1214803500
@@ -346,7 +346,7 @@ public:
      * @symbol ?isType@BlockActor@@QEBA_NW4BlockActorType@@@Z
      * @hash   -802557751
      */
-    MCAPI bool isType(enum BlockActorType) const;
+    MCAPI bool isType(enum class BlockActorType) const;
     /**
      * @symbol ?moveTo@BlockActor@@QEAAXAEBVBlockPos@@@Z
      * @hash   -212961900
@@ -386,7 +386,7 @@ public:
      * @symbol ?isType@BlockActor@@SA_NAEAV1@W4BlockActorType@@@Z
      * @hash   -1396681385
      */
-    MCAPI static bool isType(class BlockActor &, enum BlockActorType);
+    MCAPI static bool isType(class BlockActor &, enum class BlockActorType);
     /**
      * @symbol ?loadStatic@BlockActor@@SA?AV?$shared_ptr@VBlockActor@@@std@@AEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z
      * @hash   781568750
@@ -405,7 +405,7 @@ public:
      * @symbol ?_createIdClassMap@BlockActor@@CA?AV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@@std@@@2@@std@@XZ
      * @hash   -717597063
      */
-    MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> _createIdClassMap();
+    MCAPI static class std::map<std::string, enum class BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum class BlockActorType>>> _createIdClassMap();
 
 protected:
 
@@ -414,11 +414,11 @@ private:
      * @symbol ?mClassIdMap@BlockActor@@0V?$map@W4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@W4BlockActorType@@@3@V?$allocator@U?$pair@$$CBW4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@B
      * @hash   -1590200034
      */
-    MCAPI static class std::map<enum BlockActorType, std::string, struct std::less<enum BlockActorType>, class std::allocator<struct std::pair<enum BlockActorType const, std::string>>> const mClassIdMap;
+    MCAPI static class std::map<enum class BlockActorType, std::string, struct std::less<enum class BlockActorType>, class std::allocator<struct std::pair<enum class BlockActorType const, std::string>>> const mClassIdMap;
     /**
      * @symbol ?mIdClassMap@BlockActor@@0V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4BlockActorType@@@std@@@2@@std@@B
      * @hash   -2054046046
      */
-    MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> const mIdClassMap;
+    MCAPI static class std::map<std::string, enum class BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum class BlockActorType>>> const mIdClassMap;
 
 };

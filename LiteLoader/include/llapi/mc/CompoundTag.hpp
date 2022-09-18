@@ -135,7 +135,7 @@ public:
      * @symbol ?getId@CompoundTag@@UEBA?AW4Type@Tag@@XZ
      * @hash   442707708
      */
-    virtual enum Tag::Type getId() const;
+    virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@CompoundTag@@UEBA_NAEBVTag@@@Z
@@ -199,7 +199,7 @@ public:
      * @symbol ?contains@CompoundTag@@QEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@W4Type@Tag@@@Z
      * @hash   1433847094
      */
-    MCAPI bool contains(class gsl::basic_string_span<char const, -1>, enum Tag::Type) const;
+    MCAPI bool contains(class gsl::basic_string_span<char const, -1>, enum class Tag::Type) const;
     /**
      * @symbol ?deepCopy@CompoundTag@@QEAAXAEBV1@@Z
      * @hash   -418609480

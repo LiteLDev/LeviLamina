@@ -89,7 +89,7 @@ public:
      * @symbol ?getType@ItemTagDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
      * @hash   1719664697
      */
-    virtual enum ItemDescriptor::InternalType getType() const;
+    virtual enum class ItemDescriptor::InternalType getType() const;
     /**
      * @vftbl  10
      * @symbol ?shouldResolve@DeferredDescriptor@@UEBA_NXZ

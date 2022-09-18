@@ -38,7 +38,7 @@ public:
      * @symbol ?getId@RequestPermissionsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -42042079
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@RequestPermissionsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -56,7 +56,7 @@ public:
      * @symbol ?_read@RequestPermissionsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1572355993
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0RequestPermissionsPacket@@QEAA@XZ
      * @hash   1238754377
@@ -66,12 +66,12 @@ public:
      * @symbol ?getCustomAbilityValue@RequestPermissionsPacket@@QEBA_NW4AbilitiesIndex@@@Z
      * @hash   39912027
      */
-    MCAPI bool getCustomAbilityValue(enum AbilitiesIndex) const;
+    MCAPI bool getCustomAbilityValue(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getPlayerPermissions@RequestPermissionsPacket@@QEBA?AW4PlayerPermissionLevel@@XZ
      * @hash   -73762382
      */
-    MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
+    MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
      * @symbol ?getTargetPlayerId@RequestPermissionsPacket@@QEBA?AUActorUniqueID@@XZ
      * @hash   -1816825762

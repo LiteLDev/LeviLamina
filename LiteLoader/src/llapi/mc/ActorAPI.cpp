@@ -26,6 +26,8 @@
 #include <llapi/mc/ItemStack.hpp>
 #include <llapi/mc/ActorDefinitionIdentifier.hpp>
 #include <llapi/mc/ActorDamageSource.hpp>
+#include <llapi/mc/Vec2.hpp>
+#include <llapi/mc/AABB.hpp>
 
 class UserEntityIdentifierComponent;
 
@@ -177,7 +179,7 @@ Tick* Actor::getLastTick() const {
         return nullptr;
     return (Tick*)&lc->getLastTick();
 }
-enum ActorLocation;
+enum class ActorLocation;
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();

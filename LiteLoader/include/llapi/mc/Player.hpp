@@ -31,7 +31,7 @@ class Player : public Mob {
 #define AFTER_EXTRA
     // Add new members to class
 public:
-    enum PositionMode : char {
+    enum class PositionMode : char {
         NORMAL,
         RESPAWN,
         TELEPORT,
@@ -199,13 +199,13 @@ public:
      * @symbol ?reloadHardcoded@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -1586025204
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  10
      * @symbol ?initializeComponents@Player@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   1613898895
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  12
      * @symbol ?_serverInitItemStackIds@Player@@MEAAXXZ
@@ -234,7 +234,7 @@ public:
      * @symbol ?getAttachPos@Player@@UEBA?AVVec3@@W4ActorLocation@@M@Z
      * @hash   1033059034
      */
-    virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
+    virtual class Vec3 getAttachPos(enum class ActorLocation, float) const;
     /**
      * @vftbl  28
      * @symbol ?move@Player@@UEAAXAEBVVec3@@@Z
@@ -402,7 +402,7 @@ public:
      * @symbol ?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z
      * @hash   -1199309978
      */
-    virtual bool attack(class Actor &, enum ActorDamageCause const &);
+    virtual bool attack(class Actor &, enum class ActorDamageCause const &);
     /**
      * @vftbl  129
      * @symbol ?isJumping@Player@@UEBA_NXZ
@@ -432,7 +432,7 @@ public:
      * @symbol ?handleEntityEvent@Player@@UEAAXW4ActorEvent@@H@Z
      * @hash   -2057445115
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  144
      * @symbol ?getActorRendererId@Player@@UEBAAEBVHashedString@@XZ
@@ -450,7 +450,7 @@ public:
      * @symbol ?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
      * @hash   1515549466
      */
-    virtual void setArmor(enum ArmorSlot, class ItemStack const &);
+    virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @vftbl  161
      * @symbol ?setCarriedItem@Player@@UEAAXAEBVItemStack@@@Z
@@ -486,7 +486,7 @@ public:
      * @symbol ?getEntityTypeId@Player@@UEBA?AW4ActorType@@XZ
      * @hash   161072516
      */
-    virtual enum ActorType getEntityTypeId() const;
+    virtual enum class ActorType getEntityTypeId() const;
     /**
      * @vftbl  174
      * @symbol ?canFreeze@Player@@UEBA_NXZ
@@ -580,7 +580,7 @@ public:
      * @symbol ?useItem@Player@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
      * @hash   945869997
      */
-    virtual void useItem(class ItemStackBase &, enum ItemUseMethod, bool);
+    virtual void useItem(class ItemStackBase &, enum class ItemUseMethod, bool);
     /**
      * @vftbl  222
      * @hash   -2034256014
@@ -702,13 +702,13 @@ public:
      * @symbol ?_shouldProvideFeedbackOnHandContainerItemSet@Player@@MEBA_NW4HandSlot@@AEBVItemStack@@@Z
      * @hash   -1810461251
      */
-    virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum HandSlot, class ItemStack const &) const;
+    virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum class HandSlot, class ItemStack const &) const;
     /**
      * @vftbl  266
      * @symbol ?_shouldProvideFeedbackOnArmorSet@Player@@MEBA_NW4ArmorSlot@@AEBVItemStack@@@Z
      * @hash   1464738765
      */
-    virtual bool _shouldProvideFeedbackOnArmorSet(enum ArmorSlot, class ItemStack const &) const;
+    virtual bool _shouldProvideFeedbackOnArmorSet(enum class ArmorSlot, class ItemStack const &) const;
     /**
      * @vftbl  269
      * @hash   -1906709211
@@ -976,7 +976,7 @@ public:
      * @symbol ?getTravelledMethod@Player@@UEBA?AW4TravelMethod@@XZ
      * @hash   -1540908816
      */
-    virtual enum TravelMethod getTravelledMethod() const;
+    virtual enum class TravelMethod getTravelledMethod() const;
     /**
      * @vftbl  381
      * @symbol ?checkMovementStats@Player@@UEAAXAEBVVec3@@@Z
@@ -1111,7 +1111,7 @@ public:
      * @symbol ?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z
      * @hash   2117769110
      */
-    virtual enum BedSleepingResult startSleepInBed(class BlockPos const &);
+    virtual enum class BedSleepingResult startSleepInBed(class BlockPos const &);
     /**
      * @vftbl  405
      * @symbol ?stopSleepInBed@Player@@UEAAX_N0@Z
@@ -1186,7 +1186,7 @@ public:
      * @symbol ?setPlayerGameType@Player@@UEAAXW4GameType@@@Z
      * @hash   -452886669
      */
-    virtual void setPlayerGameType(enum GameType);
+    virtual void setPlayerGameType(enum class GameType);
     /**
      * @vftbl  418
      * @symbol ?initHUDContainerManager@Player@@UEAAXXZ
@@ -1353,19 +1353,19 @@ public:
      * @symbol ?getInputMode@ServerPlayer@@UEBA?AW4InputMode@@XZ
      * @hash   1036289354
      */
-    virtual enum InputMode getInputMode() const = 0;
+    virtual enum class InputMode getInputMode() const = 0;
     /**
      * @vftbl  446
      * @symbol ?getPlayMode@ServerPlayer@@UEBA?AW4ClientPlayMode@@XZ
      * @hash   820122805
      */
-    virtual enum ClientPlayMode getPlayMode() const = 0;
+    virtual enum class ClientPlayMode getPlayMode() const = 0;
     /**
      * @vftbl  447
      * @symbol ?reportMovementTelemetry@Player@@UEAAXW4MovementEventType@@@Z
      * @hash   1426113961
      */
-    virtual void reportMovementTelemetry(enum MovementEventType);
+    virtual void reportMovementTelemetry(enum class MovementEventType);
     /**
      * @vftbl  448
      * @hash   -183148984
@@ -1426,7 +1426,7 @@ public:
      * @symbol ?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ
      * @hash   -1538061640
      */
-    MCVAPI enum StructureFeatureType getCurrentStructureFeature() const;
+    MCVAPI enum class StructureFeatureType getCurrentStructureFeature() const;
     /**
      * @symbol ?getUserId@Player@@UEBAIXZ
      * @hash   -926234623
@@ -1507,7 +1507,7 @@ public:
      * @symbol ??0Player@@QEAA@AEAVLevel@@AEAVPacketSender@@W4GameType@@AEBVNetworkIdentifier@@W4SubClientId@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@9@AEAVEntityContext@@66@Z
      * @hash   2045624232
      */
-    MCAPI Player(class Level &, class PacketSender &, enum GameType, class NetworkIdentifier const &, enum SubClientId, class mce::UUID, std::string const &, std::string const &, std::unique_ptr<class Certificate>, class EntityContext &, std::string const &, std::string const &);
+    MCAPI Player(class Level &, class PacketSender &, enum class GameType, class NetworkIdentifier const &, enum class SubClientId, class mce::UUID, std::string const &, std::string const &, std::unique_ptr<class Certificate>, class EntityContext &, std::string const &, std::string const &);
     /**
      * @symbol ?applyExhaustion@Player@@QEAAXAEBVVec3@@@Z
      * @hash   1184048916
@@ -1517,7 +1517,7 @@ public:
      * @symbol ?broadcastPlayerSpawnedMobEvent@Player@@QEAAXW4ActorType@@W4MobSpawnMethod@@@Z
      * @hash   -1066008865
      */
-    MCAPI void broadcastPlayerSpawnedMobEvent(enum ActorType, enum MobSpawnMethod);
+    MCAPI void broadcastPlayerSpawnedMobEvent(enum class ActorType, enum class MobSpawnMethod);
     /**
      * @symbol ?canBeSeenOnMap@Player@@QEBA_NXZ
      * @hash   -1238133174
@@ -1542,7 +1542,7 @@ public:
      * @symbol ?canUseAbility@Player@@QEBA_NW4AbilitiesIndex@@@Z
      * @hash   60145195
      */
-    MCAPI bool canUseAbility(enum AbilitiesIndex) const;
+    MCAPI bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @symbol ?canUseOperatorBlocks@Player@@QEBA_NXZ
      * @hash   1356292766
@@ -1727,7 +1727,7 @@ public:
      * @symbol ?getPlatform@Player@@QEBA?AW4BuildPlatform@@XZ
      * @hash   -1904026218
      */
-    MCAPI enum BuildPlatform getPlatform() const;
+    MCAPI enum class BuildPlatform getPlatform() const;
     /**
      * @symbol ?getPlatformOnlineId@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   1568454316
@@ -1737,7 +1737,7 @@ public:
      * @symbol ?getPlayerGameType@Player@@QEBA?AW4GameType@@XZ
      * @hash   481706196
      */
-    MCAPI enum GameType getPlayerGameType() const;
+    MCAPI enum class GameType getPlayerGameType() const;
     /**
      * @symbol ?getPlayerIndex@Player@@QEBAHXZ
      * @hash   -109426280
@@ -1752,7 +1752,7 @@ public:
      * @symbol ?getPlayerPermissionLevel@Player@@QEBA?AW4PlayerPermissionLevel@@XZ
      * @hash   1937328130
      */
-    MCAPI enum PlayerPermissionLevel getPlayerPermissionLevel() const;
+    MCAPI enum class PlayerPermissionLevel getPlayerPermissionLevel() const;
     /**
      * @symbol ?getPlayerSessionId@Player@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -904337666
@@ -1762,7 +1762,7 @@ public:
      * @symbol ?getPlayerUIItem@Player@@QEAAAEBVItemStack@@W4PlayerUISlot@@@Z
      * @hash   1981365271
      */
-    MCAPI class ItemStack const & getPlayerUIItem(enum PlayerUISlot);
+    MCAPI class ItemStack const & getPlayerUIItem(enum class PlayerUISlot);
     /**
      * @symbol ?getRespawnAnchorPosition@Player@@QEBAAEBVBlockPos@@XZ
      * @hash   -2082731542
@@ -1822,7 +1822,7 @@ public:
      * @symbol ?getUnmappedPlayerGameType@Player@@QEBA?AW4GameType@@XZ
      * @hash   -1298780964
      */
-    MCAPI enum GameType getUnmappedPlayerGameType() const;
+    MCAPI enum class GameType getUnmappedPlayerGameType() const;
     /**
      * @symbol ?getUsedPotion@Player@@QEAA_NXZ
      * @hash   -1356680950
@@ -1847,7 +1847,7 @@ public:
      * @symbol ?hasOpenContainerOfContainerType@Player@@QEBA_NW4ContainerType@@@Z
      * @hash   558934903
      */
-    MCAPI bool hasOpenContainerOfContainerType(enum ContainerType) const;
+    MCAPI bool hasOpenContainerOfContainerType(enum class ContainerType) const;
     /**
      * @symbol ?hasOwnedChunkSource@Player@@QEBA_NXZ
      * @hash   -773621832
@@ -2042,7 +2042,7 @@ public:
      * @symbol ?setPlayerUIItem@Player@@QEAAXW4PlayerUISlot@@AEBVItemStack@@@Z
      * @hash   -749497627
      */
-    MCAPI void setPlayerUIItem(enum PlayerUISlot, class ItemStack const &);
+    MCAPI void setPlayerUIItem(enum class PlayerUISlot, class ItemStack const &);
     /**
      * @symbol ?setRespawnPosition@Player@@QEAAXAEBVBlockPos@@V?$AutomaticID@VDimension@@H@@@Z
      * @hash   -982663647
@@ -2147,7 +2147,7 @@ public:
      * @symbol ?useSelectedItem@Player@@QEAAXW4ItemUseMethod@@_N@Z
      * @hash   -2012542459
      */
-    MCAPI void useSelectedItem(enum ItemUseMethod, bool);
+    MCAPI void useSelectedItem(enum class ItemUseMethod, bool);
     /**
      * @symbol ?DEFAULT_BB_HEIGHT@Player@@2MB
      * @hash   -1385213937
@@ -2461,7 +2461,7 @@ public:
      * @symbol ?_sendShieldUpdatePacket@Player@@AEAAXAEBVShieldItem@@AEBVItemStack@@1W4ContainerID@@H@Z
      * @hash   -9005182
      */
-    MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum ContainerID, int);
+    MCAPI void _sendShieldUpdatePacket(class ShieldItem const &, class ItemStack const &, class ItemStack const &, enum class ContainerID, int);
 
 protected:
 

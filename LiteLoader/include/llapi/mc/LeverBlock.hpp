@@ -344,7 +344,7 @@ public:
      * @symbol ?getLeverFacing@LeverBlock@@SA?AW4LeverDirection@@H@Z
      * @hash   435724051
      */
-    MCAPI static enum LeverDirection getLeverFacing(int);
+    MCAPI static enum class LeverDirection getLeverFacing(int);
 
 //private:
     /**

@@ -21,8 +21,8 @@ class ChunkSource {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    enum LoadMode;
-    enum ChunkSourceViewGenerateMode;
+    enum class LoadMode;
+    enum class ChunkSourceViewGenerateMode;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKSOURCE
 public:
@@ -78,13 +78,13 @@ public:
      * @symbol ?createNewChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@1@_N@Z
      * @hash   858323924
      */
-    virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
+    virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
      * @vftbl  8
      * @symbol ?getOrLoadChunk@ChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@1@_N@Z
      * @hash   -670251905
      */
-    virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum ChunkSource::LoadMode, bool);
+    virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
      * @vftbl  9
      * @symbol ?postProcess@ChunkSource@@UEAA_NAEAVChunkViewSource@@@Z
@@ -224,7 +224,7 @@ public:
      * @symbol ?createEmptyView@ChunkSource@@QEAA?AV?$GridArea@V?$shared_ptr@VLevelChunk@@@std@@@@W4LoadMode@1@_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@W4ChunkSourceViewGenerateMode@1@UActorUniqueID@@@Z
      * @hash   -885808007
      */
-    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum ChunkSource::ChunkSourceViewGenerateMode, struct ActorUniqueID);
+    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum class ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum class ChunkSource::ChunkSourceViewGenerateMode, struct ActorUniqueID);
     /**
      * @symbol ?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z
      * @hash   591043364
@@ -276,7 +276,7 @@ public:
      * @symbol ?_checkAndDispatchTaskForLevelChunk@ChunkSource@@IEAA_NAEBU?$pair@VChunkPos@@W4ChunkState@@@std@@_N@Z
      * @hash   -1698734363
      */
-    MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const &, bool);
+    MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum class ChunkState> const &, bool);
     /**
      * @symbol ?_checkForReplacementDataTask@ChunkSource@@IEAAXAEAVLevelChunk@@AEAVChunkViewSource@@@Z
      * @hash   1781475144
@@ -291,7 +291,7 @@ public:
      * @symbol ?_checkLevelChunkForNextStage@ChunkSource@@IEAAXAEBVLevelChunk@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@W4ChunkState@@@Z
      * @hash   1985491556
      */
-    MCAPI void _checkLevelChunkForNextStage(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, enum ChunkState);
+    MCAPI void _checkLevelChunkForNextStage(class LevelChunk const &, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>> &, enum class ChunkState);
     /**
      * @symbol ?_checkLevelChunkForPostProcessing@ChunkSource@@IEAAXAEBVLevelChunk@@AEAV?$LevelChunkGridAreaElement@V?$weak_ptr@VLevelChunk@@@std@@@@@Z
      * @hash   1692313370
@@ -301,7 +301,7 @@ public:
      * @symbol ?_chunkAtStage@ChunkSource@@IEAA_NV?$weak_ptr@VLevelChunk@@@std@@W4ChunkState@@@Z
      * @hash   1856086514
      */
-    MCAPI bool _chunkAtStage(class std::weak_ptr<class LevelChunk>, enum ChunkState);
+    MCAPI bool _chunkAtStage(class std::weak_ptr<class LevelChunk>, enum class ChunkState);
     /**
      * @symbol ?_freeChunkGenerationGridMap@ChunkSource@@IEAAXAEBVChunkPos@@_N@Z
      * @hash   -1049412775

@@ -72,7 +72,7 @@ public:
      * @symbol ?getSlot@WearableItemComponent@@QEBA?AW4EquipmentSlot@@XZ
      * @hash   -1288045510
      */
-    MCAPI enum EquipmentSlot getSlot() const;
+    MCAPI enum class EquipmentSlot getSlot() const;
     /**
      * @symbol ?use@WearableItemComponent@@QEBA_NAEAVItemStack@@AEAVPlayer@@@Z
      * @hash   -1977201016

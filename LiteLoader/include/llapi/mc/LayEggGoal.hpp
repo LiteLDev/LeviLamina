@@ -103,7 +103,7 @@ public:
      * @symbol ??0LayEggGoal@@QEAA@AEAVMob@@MHHMAEBV?$vector@VItemDescriptor@@V?$allocator@VItemDescriptor@@@std@@@std@@AEBV?$vector@W4MaterialType@@V?$allocator@W4MaterialType@@@std@@@3@_N3MAEBVItemDescriptor@@AEBVActorDefinitionTrigger@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
      * @hash   -2026273713
      */
-    MCAPI LayEggGoal(class Mob &, float, int, int, float, std::vector<class ItemDescriptor> const &, std::vector<enum MaterialType> const &, bool, bool, float, class ItemDescriptor const &, class ActorDefinitionTrigger const &, std::string const &);
+    MCAPI LayEggGoal(class Mob &, float, int, int, float, std::vector<class ItemDescriptor> const &, std::vector<enum class MaterialType> const &, bool, bool, float, class ItemDescriptor const &, class ActorDefinitionTrigger const &, std::string const &);
 
 //protected:
     /**

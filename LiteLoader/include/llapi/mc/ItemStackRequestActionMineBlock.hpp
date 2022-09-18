@@ -21,7 +21,7 @@ class ItemStackRequestActionMineBlock {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum PreValidationStatus;
+enum class PreValidationStatus;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONMINEBLOCK
@@ -72,7 +72,7 @@ public:
      * @symbol ?getPreValidationStatus@ItemStackRequestActionMineBlock@@QEBA?AW4PreValidationStatus@1@XZ
      * @hash   -43184497
      */
-    MCAPI enum ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
+    MCAPI enum class ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     /**
      * @symbol ?getPredictedDurability@ItemStackRequestActionMineBlock@@QEBAHXZ
      * @hash   1790784252
@@ -87,6 +87,6 @@ public:
      * @symbol ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
      * @hash   1510675875
      */
-    MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
+    MCAPI void setPreValidationStatus(enum class ItemStackRequestActionMineBlock::PreValidationStatus) const;
 
 };

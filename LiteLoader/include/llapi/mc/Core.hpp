@@ -21,9 +21,9 @@ namespace Core {
 #define AFTER_EXTRA
 // Add Member There
 class IFileSystem;
-enum FileBufferingMode;
-enum LevelStorageState;
-enum DirectoryIterationFlags;
+enum class FileBufferingMode;
+enum class LevelStorageState;
+enum class DirectoryIterationFlags;
 template <typename T0, int i1>
 class StackString {
 public:
@@ -127,7 +127,7 @@ Profile() = delete;
 Profile(Profile const&) = delete;
 Profile(Profile const&&) = delete;
 };
-enum FileAccessType;
+enum class FileAccessType;
 
 #undef AFTER_EXTRA
     /**
@@ -149,12 +149,12 @@ enum FileAccessType;
      * @symbol ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
      * @hash   -1628559639
      */
-    MCAPI unsigned __int64 operator&(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
+    MCAPI unsigned __int64 operator&(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
      * @symbol ??UCore@@YA?AW4DirectoryIterationFlags@0@W410@0@Z
      * @hash   1187489555
      */
-    MCAPI enum Core::DirectoryIterationFlags operator|(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
+    MCAPI enum class Core::DirectoryIterationFlags operator|(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
      * @symbol ?sRootStorageArea@Core@@3V?$shared_ptr@VFileStorageArea@Core@@@std@@A
      * @hash   -650198642

@@ -42,7 +42,7 @@ public:
      * @symbol ?_getPOITypeFromString@GoalDefinition@@QEAA?AW4POIType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -259385009
      */
-    MCAPI enum POIType _getPOITypeFromString(std::string);
+    MCAPI enum class POIType _getPOITypeFromString(std::string);
     /**
      * @symbol ??4GoalDefinition@@QEAAAEAU0@AEBU0@@Z
      * @hash   -1677581930

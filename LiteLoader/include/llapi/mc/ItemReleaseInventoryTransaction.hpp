@@ -58,12 +58,12 @@ public:
      * @symbol ?handle@ItemReleaseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
      * @hash   1345812539
      */
-    virtual enum InventoryTransactionError handle(class Player &, bool) const;
+    virtual enum class InventoryTransactionError handle(class Player &, bool) const;
     /**
      * @vftbl  5
      * @symbol ?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z
      * @hash   -1893010374
      */
-    virtual void onTransactionError(class Player &, enum InventoryTransactionError) const;
+    virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
 
 };

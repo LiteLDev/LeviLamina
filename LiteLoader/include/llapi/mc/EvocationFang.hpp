@@ -113,7 +113,7 @@ public:
      * @symbol ?handleEntityEvent@EvocationFang@@UEAAXW4ActorEvent@@H@Z
      * @hash   1010579522
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  172
      * @symbol ?getSourceUniqueID@EvocationFang@@UEBA?AUActorUniqueID@@XZ

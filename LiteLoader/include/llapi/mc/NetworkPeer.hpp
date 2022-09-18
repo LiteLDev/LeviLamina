@@ -21,20 +21,20 @@ class NetworkPeer {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Reliability : int {
+enum class Reliability : int {
     Reliable = 0x0,
     ReliableOrdered = 0x1,
     Unreliable = 0x2,
     UnreliableSequenced = 0x3,
 };
 
-enum DataStatus : int {
+enum class DataStatus : int {
         HasData = 0x0,
         NoData = 0x1,
         BrokenData = 0x2,
 };
 
-enum NetworkLoad : __int32 {
+enum class NetworkLoad : __int32 {
     Unrestricted = 0x0,
     Low = 0x1,
     Medium = 0x2,
@@ -74,13 +74,13 @@ public:
      * @symbol ?sendPacket@WebRTCNetworkPeer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Reliability@NetworkPeer@@HGW4Compressibility@@@Z
      * @hash   -1303590118
      */
-    virtual void sendPacket(std::string const &, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility) = 0;
+    virtual void sendPacket(std::string const &, enum class NetworkPeer::Reliability, int, unsigned short, enum class Compressibility) = 0;
     /**
      * @vftbl  2
      * @symbol ?receivePacket@WebRTCNetworkPeer@@UEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z
      * @hash   -1824418398
      */
-    virtual enum NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &) = 0;
+    virtual enum class NetworkPeer::DataStatus receivePacket(std::string &, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const &) = 0;
     /**
      * @vftbl  3
      * @symbol ?getNetworkStatus@WebRTCNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ

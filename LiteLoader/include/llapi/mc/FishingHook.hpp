@@ -36,7 +36,7 @@ public:
      * @symbol ?reloadHardcoded@FishingHook@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   1897099897
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -1233442405
@@ -119,7 +119,7 @@ public:
      * @symbol ?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z
      * @hash   22640633
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  166
      * @symbol ?save@FishingHook@@UEBA_NAEAVCompoundTag@@@Z

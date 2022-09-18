@@ -24,6 +24,6 @@ namespace SideBySideErrorHandling {
      * @symbol ?createSideBySideErrorHandlingSystem@SideBySideErrorHandling@@YA?AUTickingSystemWithInfo@@W4ErrorLevel@1@_N@Z
      * @hash   -2082625946
      */
-    MCAPI struct TickingSystemWithInfo createSideBySideErrorHandlingSystem(enum SideBySideErrorHandling::ErrorLevel, bool);
+    MCAPI struct TickingSystemWithInfo createSideBySideErrorHandlingSystem(enum class SideBySideErrorHandling::ErrorLevel, bool);
 
 };

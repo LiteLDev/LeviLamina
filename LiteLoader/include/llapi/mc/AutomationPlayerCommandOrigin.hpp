@@ -84,7 +84,7 @@ public:
      * @symbol ?getOriginType@AutomationPlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   -130865208
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  24
      * @symbol ?toCommandOriginData@AutomationPlayerCommandOrigin@@UEBA?AUCommandOriginData@@XZ

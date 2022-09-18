@@ -69,13 +69,13 @@ public:
      * @symbol ?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@@Z
      * @hash   1233404642
      */
-    virtual enum JumpType getJumpType(class JumpControlComponent const &) const;
+    virtual enum class JumpType getJumpType(class JumpControlComponent const &) const;
     /**
      * @vftbl  7
      * @symbol ?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@W4JumpType@@@Z
      * @hash   -1495126752
      */
-    virtual void setJumpType(class JumpControlComponent &, enum JumpType);
+    virtual void setJumpType(class JumpControlComponent &, enum class JumpType);
     /**
      * @vftbl  8
      * @symbol ?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z

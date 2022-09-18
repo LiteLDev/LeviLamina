@@ -34,7 +34,7 @@ public:
      * @symbol ??0ObjectiveCriteria@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NW4ObjectiveRenderType@@@Z
      * @hash   -2098078445
      */
-    MCAPI ObjectiveCriteria(std::string const &, bool, enum ObjectiveRenderType);
+    MCAPI ObjectiveCriteria(std::string const &, bool, enum class ObjectiveRenderType);
     /**
      * @symbol ?getName@ObjectiveCriteria@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -379535040

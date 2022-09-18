@@ -108,7 +108,7 @@ public:
      * @symbol ?getAmbientSound@Panda@@UEBA?AW4LevelSoundEvent@@XZ
      * @hash   1207841786
      */
-    virtual enum LevelSoundEvent getAmbientSound() const;
+    virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  182
      * @hash   1509264059

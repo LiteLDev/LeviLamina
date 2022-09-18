@@ -45,7 +45,7 @@ public:
      * @symbol ?handleEvent@ScriptScriptingEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUBeforeWatchdogTerminateEvent@@@Z
      * @hash   1427206400
      */
-    virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent &);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent &);
 
 //private:
     /**

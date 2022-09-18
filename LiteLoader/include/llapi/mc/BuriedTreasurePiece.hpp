@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@BuriedTreasurePiece@@UEBA?AW4StructurePieceType@@XZ
      * @hash   2024725141
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@BuriedTreasurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

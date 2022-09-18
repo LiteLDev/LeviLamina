@@ -61,6 +61,6 @@ public:
      * @symbol ??0RandomizableBlockActorFillingContainer@@QEAA@W4BlockActorType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@HW4ContainerType@@@Z
      * @hash   -1197011621
      */
-    MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const &, class BlockPos const &, int, enum ContainerType);
+    MCAPI RandomizableBlockActorFillingContainer(enum class BlockActorType, std::string const &, class BlockPos const &, int, enum class ContainerType);
 
 };

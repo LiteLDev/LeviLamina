@@ -22,7 +22,7 @@ class BackgroundWorker {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum RunOneResult;
+enum class RunOneResult;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDWORKER
@@ -121,7 +121,7 @@ public:
      * @symbol ?_runOneTask@BackgroundWorker@@AEAA?AW4RunOneResult@1@XZ
      * @hash   -1193796499
      */
-    MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
+    MCAPI enum class BackgroundWorker::RunOneResult _runOneTask();
 
 private:
     /**

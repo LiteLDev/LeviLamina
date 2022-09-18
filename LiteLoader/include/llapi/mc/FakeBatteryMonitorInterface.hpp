@@ -39,7 +39,7 @@ public:
      * @symbol ?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ
      * @hash   -36210711
      */
-    virtual enum BatteryStatus getBatteryStatus() const;
+    virtual enum class BatteryStatus getBatteryStatus() const;
     /**
      * @vftbl  2
      * @symbol ?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ

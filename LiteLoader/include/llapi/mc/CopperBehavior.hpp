@@ -34,12 +34,12 @@ public:
      * @symbol ??0CopperBehavior@@QEAA@W4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@AEBV?$function@$$A6AAEBVBlock@@AEBVBlockLegacy@@AEBV1@@Z@std@@@Z
      * @hash   -612382172
      */
-    MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
+    MCAPI CopperBehavior(enum class CopperType, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
     /**
      * @symbol ??0CopperBehavior@@QEAA@W4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@11AEBV?$function@$$A6AAEBVBlock@@AEBVBlockLegacy@@AEBV1@@Z@std@@@Z
      * @hash   -622446876
      */
-    MCAPI CopperBehavior(enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
+    MCAPI CopperBehavior(enum class CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class std::function<class Block const & (class BlockLegacy const &, class Block const &)> const &);
     /**
      * @symbol ?canDecrementAge@CopperBehavior@@QEBA_NXZ
      * @hash   -798749582

@@ -21,7 +21,7 @@ class StrongholdPiece {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum SmallDoorType;
+enum class SmallDoorType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDPIECE
@@ -58,7 +58,7 @@ public:
      * @symbol ?generateSmallDoor@StrongholdPiece@@QEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@W4SmallDoorType@1@HHH@Z
      * @hash   642473199
      */
-    MCAPI void generateSmallDoor(class BlockSource &, class Random &, class BoundingBox const &, enum StrongholdPiece::SmallDoorType, int, int, int);
+    MCAPI void generateSmallDoor(class BlockSource &, class Random &, class BoundingBox const &, enum class StrongholdPiece::SmallDoorType, int, int, int);
     /**
      * @symbol ?generateSmallDoorChildForward@StrongholdPiece@@QEAAPEAVStructurePiece@@AEAVSHStartPiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@HH@Z
      * @hash   960124935

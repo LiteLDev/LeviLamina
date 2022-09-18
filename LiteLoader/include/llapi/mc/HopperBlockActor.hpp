@@ -163,12 +163,12 @@ public:
      * @symbol ?isAttachedToContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
      * @hash   -845663417
      */
-    MCAPI bool isAttachedToContainerType(class BlockSource &, enum ContainerType);
+    MCAPI bool isAttachedToContainerType(class BlockSource &, enum class ContainerType);
     /**
      * @symbol ?isSourceOfContainerType@HopperBlockActor@@AEAA_NAEAVBlockSource@@W4ContainerType@@@Z
      * @hash   256377188
      */
-    MCAPI bool isSourceOfContainerType(class BlockSource &, enum ContainerType);
+    MCAPI bool isSourceOfContainerType(class BlockSource &, enum class ContainerType);
 
 private:
 

@@ -7,15 +7,17 @@
 
 #pragma once
 
+// enum
+#include "inc/enums.inc"
 #include "../HookAPI.h"
 #include "../utils/RNG.h"
-#include "Vec2.hpp"
-#include "Vec3.hpp"
-#include "BlockPos.hpp"
-#include "AABB.hpp"
-#include "BoundingBox.hpp"
-#include "ChunkPos.hpp"
-#include "ChunkBlockPos.hpp"
+class Vec2;
+class Vec3;
+class BlockPos;
+class AABB;
+class BoundingBox;
+class ChunkPos;
+class ChunkBlockPos;
 
 typedef std::string xuid_t;
 typedef unsigned long long QWORD;
@@ -158,22 +160,6 @@ public:
     MCAPI int toABGR(void) const;
     MCAPI int toARGB(void) const;
     MCAPI std::string toHexString(void) const;
-
-    inline Vec3 toVec3() const {
-        return {r, g, b};
-    }
-
-    inline static Color fromVec3(const Vec3& k) {
-        return {k.x, k.y, k.z, 1.0f};
-    }
-
-    inline BlockPos toBlockPos() const {
-        return {r * 255.0f, g * 255.0f, b * 255.0f};
-    }
-
-    inline static Color fromBlockPos(const BlockPos& k) {
-        return {k.x / 255.0f, k.y / 255.0f, k.z / 255.0f, 1.0f};
-    }
 
     inline bool operator!=(const Color& c) const {
         return !(c == *this);
@@ -421,7 +407,7 @@ struct TestParameters;
 }; // namespace gametest
 
 namespace DBHelpers {
-enum Category;
+enum class Category;
 }; // namespace DBHelpers
 
 class AgentCommands {
@@ -490,13 +476,13 @@ public:
 };
 
 struct GameEventConfig {
-    enum GameEvents;
+    enum class GameEvents;
 };
 
 #include "IMinecraftEventing.hpp"
 
 struct OperationNodeValues {
-    enum Terrain;
+    enum class Terrain;
 };
 class Editor {
 public:
@@ -504,7 +490,7 @@ public:
 };
 
 struct SubChunkStorageUnit {
-    enum PruneType;
+    enum class PruneType;
 };
 
 // Templates
@@ -693,9 +679,6 @@ struct TaskStartInfoEx;
 
 template <typename T1>
 class WildcardCommandSelector;
-
-// enum
-#include "inc/enums.inc"
 
 template <typename T>
 struct InvertableFilter {

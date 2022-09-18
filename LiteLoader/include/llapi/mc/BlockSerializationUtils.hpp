@@ -26,7 +26,7 @@ struct NbtToBlockCache {
     NbtToBlockCache(NbtToBlockCache const&) = delete;
     NbtToBlockCache(NbtToBlockCache const&&) = delete;
 };
-enum NBTState;
+enum class NBTState;
 
 #undef AFTER_EXTRA
     /**
@@ -53,6 +53,6 @@ enum NBTState;
      * @symbol ?tryGetBlockFromNBT@BlockSerializationUtils@@YA?AU?$pair@W4NBTState@BlockSerializationUtils@@PEBVBlock@@@std@@AEBVCompoundTag@@PEAUNbtToBlockCache@1@@Z
      * @hash   1166099472
      */
-    MCAPI struct std::pair<enum BlockSerializationUtils::NBTState, class Block const *> tryGetBlockFromNBT(class CompoundTag const &, struct BlockSerializationUtils::NbtToBlockCache *);
+    MCAPI struct std::pair<enum class BlockSerializationUtils::NBTState, class Block const *> tryGetBlockFromNBT(class CompoundTag const &, struct BlockSerializationUtils::NbtToBlockCache *);
 
 };

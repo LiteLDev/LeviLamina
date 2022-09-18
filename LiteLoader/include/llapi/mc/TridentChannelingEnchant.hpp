@@ -41,7 +41,7 @@ public:
      * @symbol ?isCompatibleWith@TridentChannelingEnchant@@UEBA_NW4Type@Enchant@@@Z
      * @hash   -1577378199
      */
-    virtual bool isCompatibleWith(enum Enchant::Type) const;
+    virtual bool isCompatibleWith(enum class Enchant::Type) const;
     /**
      * @vftbl  2
      * @symbol ?getMinCost@TridentChannelingEnchant@@UEBAHH@Z
@@ -64,6 +64,6 @@ public:
      * @symbol ??0TridentChannelingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
      * @hash   -1103897374
      */
-    MCAPI TridentChannelingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
+    MCAPI TridentChannelingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 };

@@ -50,6 +50,6 @@ public:
      * @symbol ?_fillArea@IslandOperationNode@@EEBAXAEAV?$WorkingData@W4Terrain@OperationNodeValues@@D@OperationNodeDetails@@AEBVPos2d@@1@Z
      * @hash   1386237570
      */
-    virtual void _fillArea(class OperationNodeDetails::WorkingData<enum OperationNodeValues::Terrain, char> &, class Pos2d const &, class Pos2d const &) const;
+    virtual void _fillArea(class OperationNodeDetails::WorkingData<enum class OperationNodeValues::Terrain, char> &, class Pos2d const &, class Pos2d const &) const;
 
 };

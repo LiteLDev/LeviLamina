@@ -34,7 +34,7 @@ public:
      * @symbol ??0DisplayObjective@@QEAA@AEBVObjective@@W4ObjectiveSortOrder@@@Z
      * @hash   265762821
      */
-    MCAPI DisplayObjective(class Objective const &, enum ObjectiveSortOrder);
+    MCAPI DisplayObjective(class Objective const &, enum class ObjectiveSortOrder);
     /**
      * @symbol ?getBelowNameStringForId@DisplayObjective@@QEBA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUScoreboardId@@@Z
      * @hash   -1547047059
@@ -49,7 +49,7 @@ public:
      * @symbol ?getSortOrder@DisplayObjective@@QEBA?AW4ObjectiveSortOrder@@XZ
      * @hash   2018224430
      */
-    MCAPI enum ObjectiveSortOrder getSortOrder() const;
+    MCAPI enum class ObjectiveSortOrder getSortOrder() const;
     /**
      * @symbol ?isDisplaying@DisplayObjective@@QEBA_NAEBVObjective@@@Z
      * @hash   -1535606419

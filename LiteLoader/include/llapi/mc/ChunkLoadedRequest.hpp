@@ -50,7 +50,7 @@ public:
      * @symbol ?areAllChunksLoaded@ChunkLoadedRequest@@QEBA?AW4ChunksLoadedStatus@@AEAVDimension@@UTick@@@Z
      * @hash   525536338
      */
-    MCAPI enum ChunksLoadedStatus areAllChunksLoaded(class Dimension &, struct Tick) const;
+    MCAPI enum class ChunksLoadedStatus areAllChunksLoaded(class Dimension &, struct Tick) const;
     /**
      * @symbol ?areaContainsChunk@ChunkLoadedRequest@@QEBA_NAEBVLevelChunk@@@Z
      * @hash   197948031
@@ -75,7 +75,7 @@ public:
      * @symbol ?serialize@ChunkLoadedRequest@@QEAA?AVCompoundTag@@W4ChunkRequestListType@@@Z
      * @hash   -1692280353
      */
-    MCAPI class CompoundTag serialize(enum ChunkRequestListType);
+    MCAPI class CompoundTag serialize(enum class ChunkRequestListType);
     /**
      * @symbol ?setSerializationId@ChunkLoadedRequest@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1261267796

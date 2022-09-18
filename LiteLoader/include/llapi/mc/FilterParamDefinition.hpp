@@ -32,6 +32,6 @@ public:
      * @symbol ??0FilterParamDefinition@@QEAA@W4FilterParamType@@W4FilterParamRequirement@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VFilterInput@@UFilterStringMap@@@Z
      * @hash   -1832228083
      */
-    MCAPI FilterParamDefinition(enum FilterParamType, enum FilterParamRequirement, std::string, class FilterInput, struct FilterStringMap);
+    MCAPI FilterParamDefinition(enum class FilterParamType, enum class FilterParamRequirement, std::string, class FilterInput, struct FilterStringMap);
 
 };

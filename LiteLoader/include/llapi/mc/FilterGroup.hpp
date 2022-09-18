@@ -23,7 +23,7 @@ class FilterGroup {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum CollectionType;
+enum class CollectionType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERGROUP
@@ -43,7 +43,7 @@ public:
      * @symbol ?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z
      * @hash   -1204391635
      */
-    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const = 0;
+    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const = 0;
     /**
      * @vftbl  2
      * @symbol ?_setupContext@FilterGroup@@MEBA_NAEBVFilterTest@@AEAUFilterContext@@@Z

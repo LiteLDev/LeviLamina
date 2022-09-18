@@ -26,6 +26,6 @@ namespace NetherStructureFeatureHelper {
      * @symbol ?getStructureFeatureTypeForChunk@NetherStructureFeatureHelper@@YA?AW4StructureFeatureType@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBV?$vector@HV?$allocator@H@std@@@std@@@Z
      * @hash   -1444563336
      */
-    MCAPI enum StructureFeatureType getStructureFeatureTypeForChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, std::vector<int> const &);
+    MCAPI enum class StructureFeatureType getStructureFeatureTypeForChunk(class BiomeSource const &, class Random &, class ChunkPos const &, unsigned int, std::vector<int> const &);
 
 };

@@ -299,7 +299,7 @@ public:
      * @symbol ??0FenceGateBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4WoodType@@@Z
      * @hash   -307501498
      */
-    MCAPI FenceGateBlock(std::string const &, int, enum WoodType);
+    MCAPI FenceGateBlock(std::string const &, int, enum class WoodType);
     /**
      * @symbol ?resolveIsInWall@FenceGateBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   -1837417987

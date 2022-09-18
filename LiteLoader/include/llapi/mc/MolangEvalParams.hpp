@@ -65,7 +65,7 @@ public:
      * @symbol ?popMissingVariableOrActorAddress@MolangEvalParams@@QEAA_KW4MolangVariableIndex@@@Z
      * @hash   32451124
      */
-    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum MolangVariableIndex);
+    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum class MolangVariableIndex);
     /**
      * @symbol ?popPublicAccessMode@MolangEvalParams@@QEAA_NXZ
      * @hash   1317780014

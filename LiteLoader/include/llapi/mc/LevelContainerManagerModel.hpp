@@ -82,12 +82,12 @@ public:
      * @symbol ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
      * @hash   -1112712894
      */
-    MCAPI LevelContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
+    MCAPI LevelContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID);
     /**
      * @symbol ??0LevelContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
      * @hash   -1082580607
      */
-    MCAPI LevelContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
+    MCAPI LevelContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &, enum class BlockActorType);
     /**
      * @symbol ?getBlockPos@LevelContainerManagerModel@@QEBAAEBVBlockPos@@XZ
      * @hash   2100628390

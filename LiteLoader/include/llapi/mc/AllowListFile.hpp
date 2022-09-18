@@ -40,7 +40,7 @@ public:
      * @symbol ?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ
      * @hash   1173930340
      */
-    MCAPI enum FileReadResult reload();
+    MCAPI enum class FileReadResult reload();
     /**
      * @symbol ?syncToDisc@AllowListFile@@QEAAXXZ
      * @hash   -422021735

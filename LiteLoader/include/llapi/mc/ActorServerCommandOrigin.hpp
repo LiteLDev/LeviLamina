@@ -60,7 +60,7 @@ public:
      * @symbol ?getOriginType@ActorServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   817924200
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@ActorServerCommandOrigin@@UEBA?AVCompoundTag@@XZ

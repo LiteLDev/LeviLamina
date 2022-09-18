@@ -76,7 +76,7 @@ public:
      * @symbol ?canProvideSupport@StairBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   -2046649517
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@StairBlock@@UEBA_NAEBVBlock@@E0@Z
@@ -193,7 +193,7 @@ public:
      * @symbol ?getRedstoneProperty@StairBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   -1799161451
      */
-    virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  80
      * @hash   -135567300

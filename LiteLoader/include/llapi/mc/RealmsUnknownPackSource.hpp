@@ -51,13 +51,13 @@ public:
      * @symbol ?getPackOrigin@RealmsUnknownPackSource@@UEBA?AW4PackOrigin@@XZ
      * @hash   -1188947636
      */
-    virtual enum PackOrigin getPackOrigin() const;
+    virtual enum class PackOrigin getPackOrigin() const;
     /**
      * @vftbl  4
      * @symbol ?getPackType@RealmsUnknownPackSource@@UEBA?AW4PackType@@XZ
      * @hash   -1566396404
      */
-    virtual enum PackType getPackType() const;
+    virtual enum class PackType getPackType() const;
     /**
      * @vftbl  5
      * @symbol ?load@RealmsUnknownPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
@@ -80,6 +80,6 @@ public:
      * @symbol ??0RealmsUnknownPackSource@@QEAA@W4PackType@@W4PackOrigin@@@Z
      * @hash   -2141442714
      */
-    MCAPI RealmsUnknownPackSource(enum PackType, enum PackOrigin);
+    MCAPI RealmsUnknownPackSource(enum class PackType, enum class PackOrigin);
 
 };

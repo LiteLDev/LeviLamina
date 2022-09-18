@@ -125,7 +125,7 @@ public:
      * @symbol ?getEducationEditionOffering@AppConfigs@@UEBA?AW4EducationEditionOffer@@XZ
      * @hash   4140626
      */
-    virtual enum EducationEditionOffer getEducationEditionOffering() const;
+    virtual enum class EducationEditionOffer getEducationEditionOffering() const;
     /**
      * @vftbl  19
      * @hash   -334394356
@@ -257,7 +257,7 @@ public:
      * @symbol ?canUseMaelstrom@AppConfigs@@UEBA?AW4MaelstromEduUsabilityStatus@1@XZ
      * @hash   796509071
      */
-    MCVAPI enum AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
+    MCVAPI enum class AppConfigs::MaelstromEduUsabilityStatus canUseMaelstrom() const;
     /**
      * @symbol ?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ
      * @hash   -644102118

@@ -315,7 +315,7 @@ public:
      * @symbol ??0ChestBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ChestType@0@W4MaterialType@@@Z
      * @hash   -449428774
      */
-    MCAPI ChestBlock(std::string const &, int, enum ChestBlock::ChestType, enum MaterialType);
+    MCAPI ChestBlock(std::string const &, int, enum class ChestBlock::ChestType, enum class MaterialType);
     /**
      * @symbol ?updateSignalStrength@ChestBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@H@Z
      * @hash   -1129494926

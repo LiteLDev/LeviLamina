@@ -69,7 +69,7 @@ public:
      * @symbol ?getId@IntArrayTag@@UEBA?AW4Type@Tag@@XZ
      * @hash   392978475
      */
-    virtual enum Tag::Type getId() const;
+    virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@IntArrayTag@@UEBA_NAEBVTag@@@Z

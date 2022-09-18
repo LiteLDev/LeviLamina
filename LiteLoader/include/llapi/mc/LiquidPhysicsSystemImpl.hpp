@@ -32,6 +32,6 @@ public:
      * @symbol ?_getLiquidBlocksInAABB@LiquidPhysicsSystemImpl@@SAXAEAV?$vector@ULiquidBlockEntry@LiquidPhysicsSystemImpl@@V?$allocator@ULiquidBlockEntry@LiquidPhysicsSystemImpl@@@std@@@std@@AEBVIConstBlockSource@@AEBVAABB@@W4MaterialType@@@Z
      * @hash   1662223689
      */
-    MCAPI static void _getLiquidBlocksInAABB(std::vector<struct LiquidPhysicsSystemImpl::LiquidBlockEntry> &, class IConstBlockSource const &, class AABB const &, enum MaterialType);
+    MCAPI static void _getLiquidBlocksInAABB(std::vector<struct LiquidPhysicsSystemImpl::LiquidBlockEntry> &, class IConstBlockSource const &, class AABB const &, enum class MaterialType);
 
 };

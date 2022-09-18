@@ -21,7 +21,7 @@ class DenyList {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Duration;
+enum class Duration;
 struct Entry {
     Entry() = delete;
     Entry(Entry const&) = delete;
@@ -46,7 +46,7 @@ public:
      * @symbol ?getDuration@DenyList@@QEBA?AW4Duration@1@AEBUEntry@1@@Z
      * @hash   1569458749
      */
-    MCAPI enum DenyList::Duration getDuration(struct DenyList::Entry const &) const;
+    MCAPI enum class DenyList::Duration getDuration(struct DenyList::Entry const &) const;
     /**
      * @symbol ?getMessage@DenyList@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUEntry@1@@Z
      * @hash   -1942895824

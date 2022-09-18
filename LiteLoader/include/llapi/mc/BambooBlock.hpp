@@ -186,7 +186,7 @@ public:
      * @symbol ?onFertilized@BambooBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      * @hash   -775275987
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  85
      * @symbol ?mayConsumeFertilizer@BambooBlock@@UEBA_NAEAVBlockSource@@@Z
@@ -383,12 +383,12 @@ public:
      * @symbol ?_getLeafSize@BambooBlock@@AEBA?AW4LeafSize@@AEBVBlock@@@Z
      * @hash   1501628911
      */
-    MCAPI enum LeafSize _getLeafSize(class Block const &) const;
+    MCAPI enum class LeafSize _getLeafSize(class Block const &) const;
     /**
      * @symbol ?_getStalkThickness@BambooBlock@@AEBA?AW4StalkThickness@@AEBVBlock@@@Z
      * @hash   1261703887
      */
-    MCAPI enum StalkThickness _getStalkThickness(class Block const &) const;
+    MCAPI enum class StalkThickness _getStalkThickness(class Block const &) const;
 
 private:
 

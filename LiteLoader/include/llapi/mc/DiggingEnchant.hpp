@@ -79,12 +79,12 @@ public:
      * @symbol ?_isValidEnchantmentTypeForCategory@DiggingEnchant@@EEBA_NW4Type@Enchant@@@Z
      * @hash   92505782
      */
-    virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
     /**
      * @symbol ??0DiggingEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
      * @hash   96904077
      */
-    MCAPI DiggingEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
+    MCAPI DiggingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
 //private:
 
@@ -93,6 +93,6 @@ private:
      * @symbol ?VALID_ENCHANTMENTS@DiggingEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
      * @hash   -1639755787
      */
-    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

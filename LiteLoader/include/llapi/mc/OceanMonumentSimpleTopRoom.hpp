@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@OceanMonumentSimpleTopRoom@@UEBA?AW4StructurePieceType@@XZ
      * @hash   -302999502
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@OceanMonumentSimpleTopRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

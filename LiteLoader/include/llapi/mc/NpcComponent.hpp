@@ -200,7 +200,7 @@ public:
      * @symbol ?_defineEntityDataString@NpcComponent@@AEAAXAEAVActor@@W4ActorDataIDs@@@Z
      * @hash   866431620
      */
-    MCAPI void _defineEntityDataString(class Actor &, enum ActorDataIDs);
+    MCAPI void _defineEntityDataString(class Actor &, enum class ActorDataIDs);
     /**
      * @symbol ?_deserializeData@NpcComponent@@AEAAXXZ
      * @hash   -1441035510

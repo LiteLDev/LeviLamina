@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@MonumentBuilding@@UEBA?AW4StructurePieceType@@XZ
      * @hash   2066256976
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@MonumentBuilding@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

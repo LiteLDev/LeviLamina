@@ -59,15 +59,15 @@ public:
     MultiplayerService(MultiplayerService const&) = delete;
     MultiplayerService(MultiplayerService const&&) = delete;
 };
-enum SignInResult;
-enum MultiplayerServiceIdentifier;
+enum class SignInResult;
+enum class MultiplayerServiceIdentifier;
 class GameConnectionInfo {
 public:
     GameConnectionInfo() = delete;
     GameConnectionInfo(GameConnectionInfo const&) = delete;
     GameConnectionInfo(GameConnectionInfo const&&) = delete;
 };
-enum GamePublishSetting;
+enum class GamePublishSetting;
 class IUserManager {
 public:
     IUserManager() = delete;

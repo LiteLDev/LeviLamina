@@ -10,20 +10,6 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-enum Mirror : unsigned char {
-    None_15=0,
-    X,
-    Z,
-    XZ,
-};
-enum Rotation : unsigned char {
-    None_14=0,
-    Rotate90,
-    Rotate180,
-    Rotate270,
-    Total,
-};
-
 #undef BEFORE_EXTRA
 
 /**
@@ -67,7 +53,7 @@ public:
      * @symbol ?getAnimationMode@StructureSettings@@QEBA?AW4AnimationMode@@XZ
      * @hash   1750866524
      */
-    MCAPI enum AnimationMode getAnimationMode() const;
+    MCAPI enum class AnimationMode getAnimationMode() const;
     /**
      * @symbol ?getAnimationSeconds@StructureSettings@@QEBAMXZ
      * @hash   1840276840
@@ -117,7 +103,7 @@ public:
      * @symbol ?getMirror@StructureSettings@@QEBA?AW4Mirror@@XZ
      * @hash   -2128575652
      */
-    MCAPI enum Mirror getMirror() const;
+    MCAPI enum class Mirror getMirror() const;
     /**
      * @symbol ?getPaletteName@StructureSettings@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -152731780
@@ -137,7 +123,7 @@ public:
      * @symbol ?getRotation@StructureSettings@@QEBA?AW4Rotation@@XZ
      * @hash   136701486
      */
-    MCAPI enum Rotation getRotation() const;
+    MCAPI enum class Rotation getRotation() const;
     /**
      * @symbol ?getStructureOffset@StructureSettings@@QEBAAEBVBlockPos@@XZ
      * @hash   798282418
@@ -172,7 +158,7 @@ public:
      * @symbol ?setAnimationMode@StructureSettings@@QEAAXW4AnimationMode@@@Z
      * @hash   -785899344
      */
-    MCAPI void setAnimationMode(enum AnimationMode);
+    MCAPI void setAnimationMode(enum class AnimationMode);
     /**
      * @symbol ?setAnimationSeconds@StructureSettings@@QEAAXM@Z
      * @hash   1702692330
@@ -222,7 +208,7 @@ public:
      * @symbol ?setMirror@StructureSettings@@QEAAXW4Mirror@@@Z
      * @hash   484322950
      */
-    MCAPI void setMirror(enum Mirror);
+    MCAPI void setMirror(enum class Mirror);
     /**
      * @symbol ?setPaletteName@StructureSettings@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   159192120
@@ -242,7 +228,7 @@ public:
      * @symbol ?setRotation@StructureSettings@@QEAAXW4Rotation@@@Z
      * @hash   7956616
      */
-    MCAPI void setRotation(enum Rotation);
+    MCAPI void setRotation(enum class Rotation);
     /**
      * @symbol ?setStructureOffset@StructureSettings@@QEAAXAEBVBlockPos@@@Z
      * @hash   -485980394

@@ -53,7 +53,7 @@ public:
      * @symbol ?executeFull@InventoryTransaction@@QEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
      * @hash   197758036
      */
-    MCAPI enum InventoryTransactionError executeFull(class Player &, bool) const;
+    MCAPI enum class InventoryTransactionError executeFull(class Player &, bool) const;
     /**
      * @symbol ?forceBalanceTransaction@InventoryTransaction@@QEAAXXZ
      * @hash   1704957763
@@ -68,7 +68,7 @@ public:
      * @symbol ?getVerifyFunction@InventoryTransaction@@QEBA?AV?$function@$$A6A?AW4InventoryTransactionError@@AEAVPlayer@@AEBVInventoryAction@@_N@Z@std@@AEBVInventorySource@@@Z
      * @hash   -124287544
      */
-    MCAPI class std::function<enum InventoryTransactionError (class Player &, class InventoryAction const &, bool)> getVerifyFunction(class InventorySource const &) const;
+    MCAPI class std::function<enum class InventoryTransactionError (class Player &, class InventoryAction const &, bool)> getVerifyFunction(class InventorySource const &) const;
     /**
      * @symbol ?postLoadItems@InventoryTransaction@@QEAAXAEAVBlockPalette@@_N@Z
      * @hash   510248571
@@ -88,7 +88,7 @@ public:
      * @symbol ?verifyFull@InventoryTransaction@@QEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z
      * @hash   1898689846
      */
-    MCAPI enum InventoryTransactionError verifyFull(class Player &, bool) const;
+    MCAPI enum class InventoryTransactionError verifyFull(class Player &, bool) const;
     /**
      * @symbol ??1InventoryTransaction@@QEAA@XZ
      * @hash   -1435214340
@@ -103,7 +103,7 @@ public:
      * @symbol ?getInventoryTransactionErrorName@InventoryTransaction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4InventoryTransactionError@@@Z
      * @hash   -1064515265
      */
-    MCAPI static std::string const getInventoryTransactionErrorName(enum InventoryTransactionError);
+    MCAPI static std::string const getInventoryTransactionErrorName(enum class InventoryTransactionError);
 
 //private:
     /**
@@ -122,6 +122,6 @@ private:
      * @symbol ?inventoryTransactionErrorMap@InventoryTransaction@@0V?$BidirectionalUnorderedMap@W4InventoryTransactionError@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      * @hash   -504977753
      */
-    MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class InventoryTransactionError, std::string> const inventoryTransactionErrorMap;
 
 };

@@ -83,7 +83,7 @@ public:
      * @symbol ?getChatRestrictionLevel@LevelSettings@@QEBA?AW4ChatRestrictionLevel@@XZ
      * @hash   1729584936
      */
-    MCAPI enum ChatRestrictionLevel getChatRestrictionLevel() const;
+    MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const;
     /**
      * @symbol ?getCustomSkinsDisabled@LevelSettings@@QEBA_NXZ
      * @hash   -1640202494
@@ -113,7 +113,7 @@ public:
      * @symbol ?getEducationEditionOffer@LevelSettings@@QEBA?AW4EducationEditionOffer@@XZ
      * @hash   -1886368596
      */
-    MCAPI enum EducationEditionOffer getEducationEditionOffer() const;
+    MCAPI enum class EducationEditionOffer getEducationEditionOffer() const;
     /**
      * @symbol ?getEducationLevelSettings@LevelSettings@@QEBAAEBV?$optional@UEducationLevelSettings@@@std@@XZ
      * @hash   -763988397
@@ -128,7 +128,7 @@ public:
      * @symbol ?getGameDifficulty@LevelSettings@@QEBA?AW4Difficulty@@XZ
      * @hash   -1322405198
      */
-    MCAPI enum Difficulty getGameDifficulty() const;
+    MCAPI enum class Difficulty getGameDifficulty() const;
     /**
      * @symbol ?getGameRules@LevelSettings@@QEBAAEBVGameRules@@XZ
      * @hash   1193412356
@@ -138,12 +138,12 @@ public:
      * @symbol ?getGameType@LevelSettings@@QEBA?AW4GameType@@XZ
      * @hash   -1926890560
      */
-    MCAPI enum GameType getGameType() const;
+    MCAPI enum class GameType getGameType() const;
     /**
      * @symbol ?getGenerator@LevelSettings@@QEBA?AW4GeneratorType@@XZ
      * @hash   33064024
      */
-    MCAPI enum GeneratorType getGenerator() const;
+    MCAPI enum class GeneratorType getGenerator() const;
     /**
      * @symbol ?getImmutableWorld@LevelSettings@@QEBA_NXZ
      * @hash   -674952336
@@ -178,7 +178,7 @@ public:
      * @symbol ?getNetherType@LevelSettings@@QEBA?AW4NetherWorldType@@XZ
      * @hash   -878948734
      */
-    MCAPI enum NetherWorldType getNetherType() const;
+    MCAPI enum class NetherWorldType getNetherType() const;
     /**
      * @symbol ?getOnlySpawnV1Villagers@LevelSettings@@QEBA_NXZ
      * @hash   -1941184352
@@ -193,7 +193,7 @@ public:
      * @symbol ?getPlatformBroadcastIntent@LevelSettings@@QEBA?AW4GamePublishSetting@Social@@XZ
      * @hash   -1929897944
      */
-    MCAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
+    MCAPI enum class Social::GamePublishSetting getPlatformBroadcastIntent() const;
     /**
      * @symbol ?getRainLevel@LevelSettings@@QEBAMXZ
      * @hash   1481597784
@@ -223,12 +223,12 @@ public:
      * @symbol ?getWorldVersion@LevelSettings@@QEBA?AW4WorldVersion@@XZ
      * @hash   -137436836
      */
-    MCAPI enum WorldVersion getWorldVersion() const;
+    MCAPI enum class WorldVersion getWorldVersion() const;
     /**
      * @symbol ?getXBLBroadcastIntent@LevelSettings@@QEBA?AW4GamePublishSetting@Social@@XZ
      * @hash   -1717823884
      */
-    MCAPI enum Social::GamePublishSetting getXBLBroadcastIntent() const;
+    MCAPI enum class Social::GamePublishSetting getXBLBroadcastIntent() const;
     /**
      * @symbol ?hasAchievementsDisabled@LevelSettings@@QEBA_NXZ
      * @hash   1585103728
@@ -308,7 +308,7 @@ public:
      * @symbol ?setChatRestrictionLevel@LevelSettings@@QEAAAEAV1@W4ChatRestrictionLevel@@@Z
      * @hash   -848302561
      */
-    MCAPI class LevelSettings & setChatRestrictionLevel(enum ChatRestrictionLevel);
+    MCAPI class LevelSettings & setChatRestrictionLevel(enum class ChatRestrictionLevel);
     /**
      * @symbol ?setCommandsEnabled@LevelSettings@@QEAAAEAV1@_N@Z
      * @hash   624204989
@@ -323,12 +323,12 @@ public:
      * @symbol ?setDefaultPlayerPermissions@LevelSettings@@QEAAAEAV1@W4PlayerPermissionLevel@@@Z
      * @hash   53843947
      */
-    MCAPI class LevelSettings & setDefaultPlayerPermissions(enum PlayerPermissionLevel);
+    MCAPI class LevelSettings & setDefaultPlayerPermissions(enum class PlayerPermissionLevel);
     /**
      * @symbol ?setDifficulty@LevelSettings@@QEAAAEAV1@W4Difficulty@@@Z
      * @hash   543445187
      */
-    MCAPI class LevelSettings & setDifficulty(enum Difficulty);
+    MCAPI class LevelSettings & setDifficulty(enum class Difficulty);
     /**
      * @symbol ?setDisablePlayerInteractions@LevelSettings@@QEAAAEAV1@_N@Z
      * @hash   1058127915
@@ -363,12 +363,12 @@ public:
      * @symbol ?setGameType@LevelSettings@@QEAAAEAV1@W4GameType@@@Z
      * @hash   552465167
      */
-    MCAPI class LevelSettings & setGameType(enum GameType);
+    MCAPI class LevelSettings & setGameType(enum class GameType);
     /**
      * @symbol ?setGeneratorType@LevelSettings@@QEAAAEAV1@W4GeneratorType@@@Z
      * @hash   -1992278729
      */
-    MCAPI class LevelSettings & setGeneratorType(enum GeneratorType);
+    MCAPI class LevelSettings & setGeneratorType(enum class GeneratorType);
     /**
      * @symbol ?setIsEditorWorld@LevelSettings@@QEAAAEAV1@_N@Z
      * @hash   -1427500183
@@ -388,7 +388,7 @@ public:
      * @symbol ?setPlatformBroadcastIntent@LevelSettings@@QEAAAEAV1@W4GamePublishSetting@Social@@@Z
      * @hash   -2054956711
      */
-    MCAPI class LevelSettings & setPlatformBroadcastIntent(enum Social::GamePublishSetting);
+    MCAPI class LevelSettings & setPlatformBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setRandomSeed@LevelSettings@@QEAAAEAV1@VLevelSeed64@@@Z
      * @hash   391155931
@@ -418,7 +418,7 @@ public:
      * @symbol ?setXblBroadcastIntent@LevelSettings@@QEAAAEAV1@W4GamePublishSetting@Social@@@Z
      * @hash   -1894839781
      */
-    MCAPI class LevelSettings & setXblBroadcastIntent(enum Social::GamePublishSetting);
+    MCAPI class LevelSettings & setXblBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?shouldOverrideSavedSettings@LevelSettings@@QEBA_NXZ
      * @hash   -373173584

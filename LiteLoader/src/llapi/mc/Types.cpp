@@ -1,5 +1,9 @@
 ﻿#include <llapi/mc/Types.hpp>
 #include <llapi/mc/ColorFormat.hpp>
+#include <llapi/mc/Vec3.hpp>
+#include <llapi/mc/BlockPos.hpp>
+#include <llapi/mc/BoundingBox.hpp>
+#include <llapi/mc/AABB.hpp>
 #include <llapi/LoggerAPI.h>
 
 // ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)

@@ -38,13 +38,13 @@ public:
      * @symbol ?GetPortContext@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAPEAUITaskQueuePortContext@@@Z
      * @hash   192805310
      */
-    virtual long GetPortContext(enum XTaskQueuePort, struct ITaskQueuePortContext **);
+    virtual long GetPortContext(enum class XTaskQueuePort, struct ITaskQueuePortContext **);
     /**
      * @vftbl  5
      * @symbol ?RegisterWaitHandle@TaskQueueImpl@@UEAAJW4XTaskQueuePort@@PEAX1P6AX1_N@ZPEAUXTaskQueueRegistrationToken@@@Z
      * @hash   1088605089
      */
-    virtual long RegisterWaitHandle(enum XTaskQueuePort, void *, void *, void ( *)(void *, bool), struct XTaskQueueRegistrationToken *);
+    virtual long RegisterWaitHandle(enum class XTaskQueuePort, void *, void *, void ( *)(void *, bool), struct XTaskQueueRegistrationToken *);
     /**
      * @vftbl  6
      * @symbol ?UnregisterWaitHandle@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
@@ -56,7 +56,7 @@ public:
      * @symbol ?RegisterSubmitCallback@TaskQueueImpl@@UEAAJPEAXP6AX0PEAUXTaskQueueObject@@W4XTaskQueuePort@@@ZPEAUXTaskQueueRegistrationToken@@@Z
      * @hash   -426800304
      */
-    virtual long RegisterSubmitCallback(void *, void ( *)(void *, struct XTaskQueueObject *, enum XTaskQueuePort), struct XTaskQueueRegistrationToken *);
+    virtual long RegisterSubmitCallback(void *, void ( *)(void *, struct XTaskQueueObject *, enum class XTaskQueuePort), struct XTaskQueueRegistrationToken *);
     /**
      * @vftbl  8
      * @symbol ?UnregisterSubmitCallback@TaskQueueImpl@@UEAAXUXTaskQueueRegistrationToken@@@Z
@@ -101,7 +101,7 @@ public:
      * @symbol ?Initialize@TaskQueueImpl@@QEAAJW4XTaskQueueDispatchMode@@0_N1@Z
      * @hash   542934257
      */
-    MCAPI long Initialize(enum XTaskQueueDispatchMode, enum XTaskQueueDispatchMode, bool, bool);
+    MCAPI long Initialize(enum class XTaskQueueDispatchMode, enum class XTaskQueueDispatchMode, bool, bool);
     /**
      * @symbol ??0TaskQueueImpl@@QEAA@XZ
      * @hash   -1823709192

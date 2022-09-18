@@ -39,7 +39,7 @@ public:
      * @symbol ??0EnchantmentInstance@@QEAA@W4Type@Enchant@@H@Z
      * @hash   1814227008
      */
-    MCAPI EnchantmentInstance(enum Enchant::Type, int);
+    MCAPI EnchantmentInstance(enum class Enchant::Type, int);
     /**
      * @symbol ?getEnchantLevel@EnchantmentInstance@@QEBAHXZ
      * @hash   352117162
@@ -49,7 +49,7 @@ public:
      * @symbol ?getEnchantType@EnchantmentInstance@@QEBA?AW4Type@Enchant@@XZ
      * @hash   2082585112
      */
-    MCAPI enum Enchant::Type getEnchantType() const;
+    MCAPI enum class Enchant::Type getEnchantType() const;
     /**
      * @symbol ??8EnchantmentInstance@@QEBA_NAEBV0@@Z
      * @hash   1915477851
@@ -64,6 +64,6 @@ public:
      * @symbol ?setEnchantType@EnchantmentInstance@@QEAAXW4Type@Enchant@@@Z
      * @hash   -57022362
      */
-    MCAPI void setEnchantType(enum Enchant::Type);
+    MCAPI void setEnchantType(enum class Enchant::Type);
 
 };

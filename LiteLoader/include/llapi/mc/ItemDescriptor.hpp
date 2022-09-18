@@ -182,7 +182,7 @@ public:
      * @symbol ?_initFromTagExpression@ItemDescriptor@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4MolangVersion@@@Z
      * @hash   -2081253367
      */
-    MCAPI void _initFromTagExpression(std::string const &, enum MolangVersion);
+    MCAPI void _initFromTagExpression(std::string const &, enum class MolangVersion);
     /**
      * @symbol ?_resolve@ItemDescriptor@@AEBAXXZ
      * @hash   -416470650

@@ -82,6 +82,6 @@ public:
      * @symbol ??0FileSystemFileAccess@@QEAA@W4FileSystemMode@@@Z
      * @hash   -1758826530
      */
-    MCAPI FileSystemFileAccess(enum FileSystemMode);
+    MCAPI FileSystemFileAccess(enum class FileSystemMode);
 
 };

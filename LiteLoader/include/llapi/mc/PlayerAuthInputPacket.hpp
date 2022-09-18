@@ -22,7 +22,7 @@ class PlayerAuthInputPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum InputData;
+enum class InputData;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERAUTHINPUTPACKET
@@ -42,7 +42,7 @@ public:
      * @symbol ?getId@PlayerAuthInputPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1553088597
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerAuthInputPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -60,7 +60,7 @@ public:
      * @symbol ?_read@PlayerAuthInputPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   216297125
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayerAuthInputPacket@@QEAA@XZ
      * @hash   1453259973
@@ -75,7 +75,7 @@ public:
      * @symbol ?getInput@PlayerAuthInputPacket@@QEBA_NW4InputData@1@@Z
      * @hash   1216265313
      */
-    MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
+    MCAPI bool getInput(enum class PlayerAuthInputPacket::InputData) const;
     /**
      * @symbol ??4PlayerAuthInputPacket@@QEAAAEAV0@$$QEAV0@@Z
      * @hash   -293367114
@@ -90,7 +90,7 @@ public:
      * @symbol ?setInput@PlayerAuthInputPacket@@QEAAXW4InputData@1@_N@Z
      * @hash   1722420647
      */
-    MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
+    MCAPI void setInput(enum class PlayerAuthInputPacket::InputData, bool);
     /**
      * @symbol ?takeCopy@PlayerAuthInputPacket@@QEBA?AV1@XZ
      * @hash   -1994206258

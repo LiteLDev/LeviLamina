@@ -76,7 +76,7 @@ public:
      * @symbol ?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
      * @hash   710178867
      */
-    virtual class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    virtual class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
      * @vftbl  12
      * @hash   -383143003
@@ -162,7 +162,7 @@ public:
      * @symbol ?levelEvent@Weather@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
      * @hash   2053765570
      */
-    virtual void levelEvent(enum LevelEvent, class Vec3 const &, int);
+    virtual void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /**
      * @symbol ??0Weather@@QEAA@AEAVDimension@@AEAVIRandom@@@Z
      * @hash   -1784387220

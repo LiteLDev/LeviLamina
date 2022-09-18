@@ -38,7 +38,7 @@ public:
      * @symbol ??0LegacyStructureSettings@@QEAA@W4Mirror@@W4Rotation@@PEBVBlock@@AEBVBoundingBox@@@Z
      * @hash   -168418870
      */
-    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const *, class BoundingBox const &);
+    MCAPI LegacyStructureSettings(enum class Mirror, enum class Rotation, class Block const *, class BoundingBox const &);
     /**
      * @symbol ?addSwapAuxValue@LegacyStructureSettings@@QEAAXHH@Z
      * @hash   124327119
@@ -58,7 +58,7 @@ public:
      * @symbol ?getMirror@LegacyStructureSettings@@QEBAAEBW4Mirror@@XZ
      * @hash   2130546516
      */
-    MCAPI enum Mirror const & getMirror() const;
+    MCAPI enum class Mirror const & getMirror() const;
     /**
      * @symbol ?getRefPos@LegacyStructureSettings@@QEBAAEBVBlockPos@@XZ
      * @hash   1719831106
@@ -68,7 +68,7 @@ public:
      * @symbol ?getRotation@LegacyStructureSettings@@QEBAAEBW4Rotation@@XZ
      * @hash   -112084812
      */
-    MCAPI enum Rotation const & getRotation() const;
+    MCAPI enum class Rotation const & getRotation() const;
     /**
      * @symbol ?getSwappedBlock@LegacyStructureSettings@@QEBAAEBVBlock@@AEBVBlockPalette@@AEBV2@@Z
      * @hash   -622537037
@@ -123,12 +123,12 @@ public:
      * @symbol ?setMirror@LegacyStructureSettings@@QEAAXW4Mirror@@@Z
      * @hash   -57655436
      */
-    MCAPI void setMirror(enum Mirror);
+    MCAPI void setMirror(enum class Mirror);
     /**
      * @symbol ?setProjection@LegacyStructureSettings@@QEAAXW4Projection@@@Z
      * @hash   1464422196
      */
-    MCAPI void setProjection(enum Projection);
+    MCAPI void setProjection(enum class Projection);
     /**
      * @symbol ?setRefPos@LegacyStructureSettings@@QEAAXAEBVBlockPos@@@Z
      * @hash   1897936006
@@ -138,7 +138,7 @@ public:
      * @symbol ?setRotation@LegacyStructureSettings@@QEAAXW4Rotation@@@Z
      * @hash   -1539606586
      */
-    MCAPI void setRotation(enum Rotation);
+    MCAPI void setRotation(enum class Rotation);
     /**
      * @symbol ?setSeed@LegacyStructureSettings@@QEAAXI@Z
      * @hash   1291598122

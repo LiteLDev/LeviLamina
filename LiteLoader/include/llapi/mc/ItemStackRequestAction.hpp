@@ -23,7 +23,7 @@ class ItemStackRequestAction {
 public:
     ItemStackRequestActionType mType;
 
-    static inline std::unordered_map<enum ItemStackRequestActionType, std::string> const& getActionTypeMap() {
+    static inline std::unordered_map<enum class ItemStackRequestActionType, std::string> const& getActionTypeMap() {
         return actionTypeMap.mMap1;
     }
 
@@ -63,12 +63,12 @@ public:
      * @symbol ??0ItemStackRequestAction@@QEAA@W4ItemStackRequestActionType@@@Z
      * @hash   -502064773
      */
-    MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
+    MCAPI ItemStackRequestAction(enum class ItemStackRequestActionType);
     /**
      * @symbol ?getActionType@ItemStackRequestAction@@QEBA?AW4ItemStackRequestActionType@@XZ
      * @hash   2052355280
      */
-    MCAPI enum ItemStackRequestActionType getActionType() const;
+    MCAPI enum class ItemStackRequestActionType getActionType() const;
     /**
      * @symbol ?write@ItemStackRequestAction@@QEBAXAEAVBinaryStream@@@Z
      * @hash   1603973336
@@ -78,7 +78,7 @@ public:
      * @symbol ?getActionTypeName@ItemStackRequestAction@@SA?BV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ItemStackRequestActionType@@@Z
      * @hash   741044845
      */
-    MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
+    MCAPI static std::string const getActionTypeName(enum class ItemStackRequestActionType);
     /**
      * @symbol ?read@ItemStackRequestAction@@SA?AV?$unique_ptr@VItemStackRequestAction@@U?$default_delete@VItemStackRequestAction@@@std@@@std@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   2132846239
@@ -92,6 +92,6 @@ private:
      * @symbol ?actionTypeMap@ItemStackRequestAction@@0V?$BidirectionalUnorderedMap@W4ItemStackRequestActionType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      * @hash   -1080217533
      */
-    MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string> const actionTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const actionTypeMap;
 
 };

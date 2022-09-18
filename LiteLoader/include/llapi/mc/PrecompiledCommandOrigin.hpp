@@ -114,7 +114,7 @@ public:
      * @symbol ?canUseAbility@PrecompiledCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
      * @hash   1704626362
      */
-    virtual bool canUseAbility(enum AbilitiesIndex) const;
+    virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @vftbl  16
      * @symbol ?isWorldBuilder@PrecompiledCommandOrigin@@UEBA_NXZ
@@ -138,7 +138,7 @@ public:
      * @symbol ?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   78681956
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@PrecompiledCommandOrigin@@UEBA?AVCompoundTag@@XZ
