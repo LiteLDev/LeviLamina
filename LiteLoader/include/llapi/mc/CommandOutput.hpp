@@ -104,7 +104,7 @@ public:
      * @symbol ??0CommandOutput@@QEAA@W4CommandOutputType@@@Z
      * @hash   -1906512777
      */
-    MCAPI CommandOutput(enum CommandOutputType);
+    MCAPI CommandOutput(enum class CommandOutputType);
     /**
      * @symbol ??0CommandOutput@@QEAA@AEBV0@@Z
      * @hash   -1418144527
@@ -154,7 +154,7 @@ public:
      * @symbol ?getType@CommandOutput@@QEBA?AW4CommandOutputType@@XZ
      * @hash   -1159705490
      */
-    MCAPI enum CommandOutputType getType() const;
+    MCAPI enum class CommandOutputType getType() const;
     /**
      * @symbol ?hasPlayerText@CommandOutput@@QEBA_NXZ
      * @hash   1611387254
@@ -164,7 +164,7 @@ public:
      * @symbol ?load@CommandOutput@@QEAAXW4CommandOutputType@@H$$QEAV?$vector@VCommandOutputMessage@@V?$allocator@VCommandOutputMessage@@@std@@@std@@$$QEAV?$unique_ptr@VCommandPropertyBag@@U?$default_delete@VCommandPropertyBag@@@std@@@4@@Z
      * @hash   847267746
      */
-    MCAPI void load(enum CommandOutputType, int, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);
+    MCAPI void load(enum class CommandOutputType, int, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);
     /**
      * @symbol ?setHasPlayerText@CommandOutput@@QEAAXXZ
      * @hash   1334051535
@@ -196,7 +196,7 @@ public:
      * @symbol ?addMessage@CommandOutput@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@W4CommandOutputMessageType@@@Z
      * @hash   -2124484666
      */
-    MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum CommandOutputMessageType);
+    MCAPI void addMessage(std::string const &, std::vector<class CommandOutputParameter> const &, enum class CommandOutputMessageType);
 
 private:
 

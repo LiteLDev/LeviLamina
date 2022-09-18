@@ -34,7 +34,7 @@ public:
      * @symbol ??0ActorAnimationEvent@@QEAA@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
      * @hash   2124654053
      */
-    MCAPI ActorAnimationEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI ActorAnimationEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ??0ActorAnimationEvent@@QEAA@$$QEAV0@@Z
      * @hash   898616975

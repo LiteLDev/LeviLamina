@@ -46,7 +46,7 @@ public:
      * @symbol ?findNearestStructureFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z
      * @hash   1688925769
      */
-    MCVAPI bool findNearestStructureFeature(enum StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
+    MCVAPI bool findNearestStructureFeature(enum class StructureFeatureType, class BlockPos const &, class BlockPos &, bool);
     /**
      * @symbol ?findSpawnPosition@FlatWorldGenerator@@UEBA?AVBlockPos@@XZ
      * @hash   -332238455
@@ -56,7 +56,7 @@ public:
      * @symbol ?findStructureFeatureTypeAt@FlatWorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z
      * @hash   -891100777
      */
-    MCVAPI enum StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
+    MCVAPI enum class StructureFeatureType findStructureFeatureTypeAt(class BlockPos const &);
     /**
      * @symbol ?garbageCollectBlueprints@FlatWorldGenerator@@UEAAXV?$buffer_span@VChunkPos@@@@@Z
      * @hash   -1025905107
@@ -81,7 +81,7 @@ public:
      * @symbol ?isStructureFeatureTypeAt@FlatWorldGenerator@@UEBA_NAEBVBlockPos@@W4StructureFeatureType@@@Z
      * @hash   -739038891
      */
-    MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum StructureFeatureType) const;
+    MCVAPI bool isStructureFeatureTypeAt(class BlockPos const &, enum class StructureFeatureType) const;
     /**
      * @symbol ?loadChunk@FlatWorldGenerator@@UEAAXAEAVLevelChunk@@_N@Z
      * @hash   471994485

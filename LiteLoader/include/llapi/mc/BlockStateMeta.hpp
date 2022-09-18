@@ -70,7 +70,7 @@ public:
      * @symbol ?getType@BlockStateMeta@@QEBA?BW4Type@Tag@@XZ
      * @hash   388513240
      */
-    MCAPI enum Tag::Type const getType() const;
+    MCAPI enum class Tag::Type const getType() const;
     /**
      * @symbol ?indexOf@BlockStateMeta@@QEBAHAEB_K@Z
      * @hash   1158174113

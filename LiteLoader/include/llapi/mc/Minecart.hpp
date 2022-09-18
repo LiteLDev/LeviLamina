@@ -36,13 +36,13 @@ public:
      * @symbol ?reloadHardcoded@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   1421120170
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   2061563333
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -673510979
@@ -248,7 +248,7 @@ public:
      * @symbol ?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ
      * @hash   1753602812
      */
-    virtual enum MinecartType getType() = 0;
+    virtual enum class MinecartType getType() = 0;
     /**
      * @vftbl  288
      * @symbol ?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ

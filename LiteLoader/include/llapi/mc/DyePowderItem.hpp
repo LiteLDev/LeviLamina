@@ -68,7 +68,7 @@ public:
      * @symbol ?getItemColor@DyePowderItem@@UEBA?AW4ItemColor@@XZ
      * @hash   -2025781036
      */
-    virtual enum ItemColor getItemColor() const;
+    virtual enum class ItemColor getItemColor() const;
     /**
      * @vftbl  21
      * @symbol ?isFertilizer@DyePowderItem@@UEBA_NXZ
@@ -154,6 +154,6 @@ public:
      * @symbol ??0DyePowderItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4ItemColor@@_N2@Z
      * @hash   2017082954
      */
-    MCAPI DyePowderItem(std::string const &, int, enum ItemColor, bool, bool);
+    MCAPI DyePowderItem(std::string const &, int, enum class ItemColor, bool, bool);
 
 };

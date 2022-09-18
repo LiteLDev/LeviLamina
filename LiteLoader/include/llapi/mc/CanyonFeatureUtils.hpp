@@ -24,6 +24,6 @@ namespace CanyonFeatureUtils {
      * @symbol ?getCurrentConfiguration@CanyonFeatureUtils@@YAAEBUCanyonConfiguration@1@W4TerrainGenVersion@1@@Z
      * @hash   83336678
      */
-    MCAPI struct CanyonFeatureUtils::CanyonConfiguration const & getCurrentConfiguration(enum CanyonFeatureUtils::TerrainGenVersion);
+    MCAPI struct CanyonFeatureUtils::CanyonConfiguration const & getCurrentConfiguration(enum class CanyonFeatureUtils::TerrainGenVersion);
 
 };

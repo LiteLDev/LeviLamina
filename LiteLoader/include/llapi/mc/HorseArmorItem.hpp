@@ -23,7 +23,7 @@ class HorseArmorItem : public Item {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Tier;
+enum class Tier;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSEARMORITEM
@@ -156,12 +156,12 @@ public:
      * @symbol ??0HorseArmorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HHW4Tier@0@@Z
      * @hash   793226624
      */
-    MCAPI HorseArmorItem(std::string const &, int, int, enum HorseArmorItem::Tier);
+    MCAPI HorseArmorItem(std::string const &, int, int, enum class HorseArmorItem::Tier);
     /**
      * @symbol ?getTier@HorseArmorItem@@QEBA?AW4Tier@1@XZ
      * @hash   917830886
      */
-    MCAPI enum HorseArmorItem::Tier getTier() const;
+    MCAPI enum class HorseArmorItem::Tier getTier() const;
     /**
      * @symbol ?mHealthPerTier@HorseArmorItem@@2QBHB
      * @hash   -2123272282

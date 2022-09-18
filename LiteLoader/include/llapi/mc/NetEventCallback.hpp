@@ -1092,7 +1092,7 @@ public:
      * @symbol ?sendPacketViolationDetectedTelemetryData@NetEventCallback@@UEAAXAEBUExtendedStreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z
      * @hash   -1449326244
      */
-    MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const &);
+    MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &);
 #endif
 
 };

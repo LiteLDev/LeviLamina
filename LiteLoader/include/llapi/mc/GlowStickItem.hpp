@@ -135,7 +135,7 @@ public:
      * @symbol ?COLORS@GlowStickItem@@2QBW4ItemColor@@B
      * @hash   562999941
      */
-    MCAPI static enum ItemColor const COLORS[];
+    MCAPI static enum class ItemColor const COLORS[];
     /**
      * @symbol ?MAX_ACTIVE_TICKS@GlowStickItem@@2HB
      * @hash   -1756439257

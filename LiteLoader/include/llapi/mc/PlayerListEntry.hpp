@@ -25,7 +25,7 @@ public:
     ActorUniqueID uid;
     mce::UUID uuid;
     std::string name, xuid, platform_online_id;
-    enum BuildPlatform platform;
+    enum class BuildPlatform platform;
     SerializedSkin skin;
     bool teacher, host;
 

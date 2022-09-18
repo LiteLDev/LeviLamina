@@ -35,37 +35,37 @@ public:
      * @symbol ?onServerInitializeEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   592653977
      */
-    MCVAPI enum EventResult onServerInitializeEnd(class ServerInstance &);
+    MCVAPI enum class EventResult onServerInitializeEnd(class ServerInstance &);
     /**
      * @symbol ?onServerInitializeStart@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   -440957422
      */
-    MCVAPI enum EventResult onServerInitializeStart(class ServerInstance &);
+    MCVAPI enum class EventResult onServerInitializeStart(class ServerInstance &);
     /**
      * @symbol ?onServerMinecraftInitialized@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@AEBV?$not_null@V?$NonOwnerPointer@VMinecraft@@@Bedrock@@@gsl@@@Z
      * @hash   -1158291
      */
-    MCVAPI enum EventResult onServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
+    MCVAPI enum class EventResult onServerMinecraftInitialized(class ServerInstance &, class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &);
     /**
      * @symbol ?onServerResume@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   -128836269
      */
-    MCVAPI enum EventResult onServerResume(class ServerInstance &);
+    MCVAPI enum class EventResult onServerResume(class ServerInstance &);
     /**
      * @symbol ?onServerSuspend@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   -2118735992
      */
-    MCVAPI enum EventResult onServerSuspend(class ServerInstance &);
+    MCVAPI enum class EventResult onServerSuspend(class ServerInstance &);
     /**
      * @symbol ?onServerUpdateEnd@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   2123463410
      */
-    MCVAPI enum EventResult onServerUpdateEnd(class ServerInstance &);
+    MCVAPI enum class EventResult onServerUpdateEnd(class ServerInstance &);
     /**
      * @symbol ?onStartLeaveGame@ServerInstanceEventListener@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   -146687780
      */
-    MCVAPI enum EventResult onStartLeaveGame(class ServerInstance &);
+    MCVAPI enum class EventResult onStartLeaveGame(class ServerInstance &);
 #endif
 
 };

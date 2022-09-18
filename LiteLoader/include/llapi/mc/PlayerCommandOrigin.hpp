@@ -90,7 +90,7 @@ public:
      * @symbol ?getPermissionsLevel@PlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   170061916
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@PlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
@@ -114,7 +114,7 @@ public:
      * @symbol ?canUseAbility@PlayerCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
      * @hash   -1301230291
      */
-    virtual bool canUseAbility(enum AbilitiesIndex) const;
+    virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @vftbl  18
      * @symbol ?isSelectorExpansionAllowed@PlayerCommandOrigin@@UEBA_NXZ
@@ -132,7 +132,7 @@ public:
      * @symbol ?getSourceSubId@PlayerCommandOrigin@@UEBA?AW4SubClientId@@XZ
      * @hash   -1210186310
      */
-    virtual enum SubClientId getSourceSubId() const;
+    virtual enum class SubClientId getSourceSubId() const;
     /**
      * @vftbl  22
      * @symbol ?getIdentity@PlayerCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ
@@ -144,7 +144,7 @@ public:
      * @symbol ?getOriginType@PlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   366321601
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  29
      * @symbol ?serialize@PlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ

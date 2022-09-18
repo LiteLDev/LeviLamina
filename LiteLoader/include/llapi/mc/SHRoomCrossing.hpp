@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@SHRoomCrossing@@UEBA?AW4StructurePieceType@@XZ
      * @hash   374237193
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  3
      * @symbol ?addChildren@SHRoomCrossing@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z

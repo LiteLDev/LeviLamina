@@ -40,7 +40,7 @@ public:
      * @symbol ?applyToPose@ActorAnimationControllerStatePlayer@@UEAAXAEAVRenderParams@@AEAV?$unordered_map@W4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@U?$hash@W4SkeletalHierarchyIndex@@@3@U?$equal_to@W4SkeletalHierarchyIndex@@@3@V?$allocator@U?$pair@$$CBW4SkeletalHierarchyIndex@@V?$vector@VBoneOrientation@@V?$allocator@VBoneOrientation@@@std@@@std@@@std@@@3@@std@@M@Z
      * @hash   241670595
      */
-    virtual void applyToPose(class RenderParams &, class std::unordered_map<enum SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum SkeletalHierarchyIndex>, struct std::equal_to<enum SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
+    virtual void applyToPose(class RenderParams &, class std::unordered_map<enum class SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum class SkeletalHierarchyIndex>, struct std::equal_to<enum class SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum class SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
     /**
      * @vftbl  2
      * @symbol ?resetAnimation@ActorAnimationControllerStatePlayer@@UEAAXXZ
@@ -79,7 +79,7 @@ public:
      * @symbol ?getAnimationType@ActorAnimationControllerStatePlayer@@UEBA?AW4ActorAnimationType@@XZ
      * @hash   308826104
      */
-    virtual enum ActorAnimationType getAnimationType() const;
+    virtual enum class ActorAnimationType getAnimationType() const;
     /**
      * @vftbl  9
      * @symbol ?getRawName@ActorAnimationControllerStatePlayer@@UEBAAEBVHashedString@@XZ

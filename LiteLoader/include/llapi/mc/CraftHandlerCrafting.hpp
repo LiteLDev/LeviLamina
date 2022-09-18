@@ -40,13 +40,13 @@ public:
      * @symbol ?handleConsumedItem@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z
      * @hash   1544536833
      */
-    virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const &);
+    virtual enum class ItemStackNetResult handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const &);
     /**
      * @vftbl  2
      * @symbol ?preHandleAction@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z
      * @hash   104925129
      */
-    virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
+    virtual enum class ItemStackNetResult preHandleAction(enum class ItemStackRequestActionType);
     /**
      * @vftbl  3
      * @hash   -1406631549
@@ -57,7 +57,7 @@ public:
      * @symbol ?_handleCraftAction@CraftHandlerCrafting@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
      * @hash   241626464
      */
-    virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @vftbl  5
      * @hash   -1404784507
@@ -80,12 +80,12 @@ public:
      * @symbol ?_handleAutoCraft@CraftHandlerCrafting@@AEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftRecipeAuto@@@Z
      * @hash   -1557843387
      */
-    MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const &);
+    MCAPI enum class ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const &);
     /**
      * @symbol ?_handleCraftOutput@CraftHandlerCrafting@@AEAA?AW4ItemStackNetResult@@AEBV?$ItemStackRequestActionCraft@V?$TypedServerNetId@URecipeNetIdTag@@I$0A@@@$0M@@@@Z
      * @hash   -12994399
      */
-    MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
+    MCAPI enum class ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const &);
 
 private:
 

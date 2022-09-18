@@ -80,7 +80,7 @@ public:
      * @symbol ?getCircuitComponentType@ProducerComponent@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   820915259
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  24
      * @symbol ?getPoweroutDirection@RepeaterCapacitor@@UEBAEXZ

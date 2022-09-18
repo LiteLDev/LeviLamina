@@ -67,7 +67,7 @@ public:
      * @symbol ?getId@FloatTag@@UEBA?AW4Type@Tag@@XZ
      * @hash   -1781980803
      */
-    virtual enum Tag::Type getId() const;
+    virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@FloatTag@@UEBA_NAEBVTag@@@Z

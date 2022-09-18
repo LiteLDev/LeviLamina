@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@RemoveEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   740544863
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@RemoveEntityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

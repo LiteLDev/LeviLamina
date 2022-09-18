@@ -45,19 +45,19 @@ public:
      * @symbol ?QueryApi@TaskQueuePortContextImpl@@UEAAJW4ApiId@@PEAPEAX@Z
      * @hash   1347356504
      */
-    virtual long QueryApi(enum ApiId, void **);
+    virtual long QueryApi(enum class ApiId, void **);
     /**
      * @vftbl  3
      * @symbol ?GetType@TaskQueuePortContextImpl@@UEAA?AW4XTaskQueuePort@@XZ
      * @hash   428544938
      */
-    virtual enum XTaskQueuePort GetType();
+    virtual enum class XTaskQueuePort GetType();
     /**
      * @vftbl  4
      * @symbol ?GetStatus@TaskQueuePortContextImpl@@UEAA?AW4TaskQueuePortStatus@@XZ
      * @hash   1142579150
      */
-    virtual enum TaskQueuePortStatus GetStatus();
+    virtual enum class TaskQueuePortStatus GetStatus();
     /**
      * @vftbl  5
      * @symbol ?GetQueue@TaskQueuePortContextImpl@@UEAAPEAUITaskQueue@@XZ
@@ -75,13 +75,13 @@ public:
      * @symbol ?TrySetStatus@TaskQueuePortContextImpl@@UEAA_NW4TaskQueuePortStatus@@0@Z
      * @hash   722933776
      */
-    virtual bool TrySetStatus(enum TaskQueuePortStatus, enum TaskQueuePortStatus);
+    virtual bool TrySetStatus(enum class TaskQueuePortStatus, enum class TaskQueuePortStatus);
     /**
      * @vftbl  8
      * @symbol ?SetStatus@TaskQueuePortContextImpl@@UEAAXW4TaskQueuePortStatus@@@Z
      * @hash   2064606642
      */
-    virtual void SetStatus(enum TaskQueuePortStatus);
+    virtual void SetStatus(enum class TaskQueuePortStatus);
     /**
      * @vftbl  9
      * @symbol ?ItemQueued@TaskQueuePortContextImpl@@UEAAXXZ

@@ -64,7 +64,7 @@ public:
      * @symbol ??0BeaconContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   429591564
      */
-    MCAPI BeaconContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI BeaconContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?PAYMENT_SLOT@BeaconContainerManagerModel@@2HB
      * @hash   -1993433483

@@ -42,6 +42,6 @@ public:
      * @symbol ?toString@SideBySideValidationFailure@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4FailureReason@1@@Z
      * @hash   2137667796
      */
-    MCAPI static std::string toString(enum SideBySideValidationFailure::FailureReason);
+    MCAPI static std::string toString(enum class SideBySideValidationFailure::FailureReason);
 
 };

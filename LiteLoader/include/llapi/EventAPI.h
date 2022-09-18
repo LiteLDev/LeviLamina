@@ -27,6 +27,7 @@ copies or substantial portions of the Software.
 #include <unordered_map>
 #include "LLAPI.h"
 #include "utils/WinHelper.h"
+#include "mc/AABB.hpp"
 
 class Actor;
 class ServerPlayer;

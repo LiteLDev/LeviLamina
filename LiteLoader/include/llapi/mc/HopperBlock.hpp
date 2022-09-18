@@ -58,7 +58,7 @@ public:
      * @symbol ?canProvideSupport@HopperBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   -899832888
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @hash   -299030517
@@ -181,7 +181,7 @@ public:
      * @symbol ?getRedstoneProperty@HopperBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   1564390752
      */
-    virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  80
      * @hash   -135567300

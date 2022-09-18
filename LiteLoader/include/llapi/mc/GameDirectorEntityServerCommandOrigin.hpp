@@ -42,7 +42,7 @@ public:
      * @symbol ?getPermissionsLevel@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -503377169
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@GameDirectorEntityServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
@@ -66,7 +66,7 @@ public:
      * @symbol ?getOriginType@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   -919692956
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @symbol ??0GameDirectorEntityServerCommandOrigin@@QEAA@UActorUniqueID@@AEAVLevel@@@Z
      * @hash   -1994923453

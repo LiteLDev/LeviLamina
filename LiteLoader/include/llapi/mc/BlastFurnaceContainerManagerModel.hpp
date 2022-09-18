@@ -40,6 +40,6 @@ public:
      * @symbol ??0BlastFurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   -739696776
      */
-    MCAPI BlastFurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI BlastFurnaceContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

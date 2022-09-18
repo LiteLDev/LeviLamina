@@ -132,7 +132,7 @@ public:
      * @symbol ?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z
      * @hash   -2126915561
      */
-    virtual enum ContainerExpandStatus getItemExpandStatus(int) const;
+    virtual enum class ContainerExpandStatus getItemExpandStatus(int) const;
     /**
      * @vftbl  18
      * @symbol ?getItemGroupName@ContainerModel@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
@@ -193,7 +193,7 @@ public:
      * @symbol ??0ContainerModel@@QEAA@W4ContainerEnumName@@HW4ContainerCategory@@_N@Z
      * @hash   -580920730
      */
-    MCAPI ContainerModel(enum ContainerEnumName, int, enum ContainerCategory, bool);
+    MCAPI ContainerModel(enum class ContainerEnumName, int, enum class ContainerCategory, bool);
     /**
      * @symbol ?_useLegacyTransactions@ContainerModel@@QEBA_NXZ
      * @hash   -1337694934
@@ -203,7 +203,7 @@ public:
      * @symbol ?getContainerEnumName@ContainerModel@@QEBA?AW4ContainerEnumName@@XZ
      * @hash   754952240
      */
-    MCAPI enum ContainerEnumName getContainerEnumName() const;
+    MCAPI enum class ContainerEnumName getContainerEnumName() const;
     /**
      * @symbol ?getContainerSlot@ContainerModel@@QEBAHH@Z
      * @hash   37321201

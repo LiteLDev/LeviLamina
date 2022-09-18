@@ -68,7 +68,7 @@ public:
      * @symbol ?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   -1118277977
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0PistonConsumer@@QEAA@XZ
      * @hash   -1463858005

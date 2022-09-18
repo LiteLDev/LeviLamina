@@ -50,7 +50,7 @@ public:
      * @symbol ?appendEnchantToFormattedText@EnchantUtils@@SAXW4Type@Enchant@@V?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1410827168
      */
-    MCAPI static void appendEnchantToFormattedText(enum Enchant::Type, class gsl::basic_string_span<char const, -1>, std::string &);
+    MCAPI static void appendEnchantToFormattedText(enum class Enchant::Type, class gsl::basic_string_span<char const, -1>, std::string &);
     /**
      * @symbol ?applyEnchant@EnchantUtils@@SAHAEAVItemStackBase@@AEBVItemEnchants@@_N@Z
      * @hash   1053376765
@@ -65,7 +65,7 @@ public:
      * @symbol ?applyEnchant@EnchantUtils@@SA_NAEAVItemStackBase@@W4Type@Enchant@@H_N@Z
      * @hash   -1641864606
      */
-    MCAPI static bool applyEnchant(class ItemStackBase &, enum Enchant::Type, int, bool);
+    MCAPI static bool applyEnchant(class ItemStackBase &, enum class Enchant::Type, int, bool);
     /**
      * @symbol ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@AEBVEnchantmentInstance@@_N@Z
      * @hash   1929719065
@@ -75,7 +75,7 @@ public:
      * @symbol ?canEnchant@EnchantUtils@@SA?AUEnchantResult@@AEBVItemStackBase@@W4Type@Enchant@@H_N@Z
      * @hash   954770842
      */
-    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const &, enum Enchant::Type, int, bool);
+    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const &, enum class Enchant::Type, int, bool);
     /**
      * @symbol ?combineEnchantedItems@EnchantUtils@@SAHAEBVItemStack@@0AEAV2@_N@Z
      * @hash   -24990222
@@ -85,12 +85,12 @@ public:
      * @symbol ?determineActivation@EnchantUtils@@SAHW4Type@Enchant@@@Z
      * @hash   1988684369
      */
-    MCAPI static int determineActivation(enum Enchant::Type);
+    MCAPI static int determineActivation(enum class Enchant::Type);
     /**
      * @symbol ?determineCompatibility@EnchantUtils@@SAHW4Type@Enchant@@@Z
      * @hash   1455830219
      */
-    MCAPI static int determineCompatibility(enum Enchant::Type);
+    MCAPI static int determineCompatibility(enum class Enchant::Type);
     /**
      * @symbol ?doPostDamageEffects@EnchantUtils@@SAXAEAVActor@@0@Z
      * @hash   1074668933
@@ -135,12 +135,12 @@ public:
      * @symbol ?getEnchantLevel@EnchantUtils@@SAHW4Type@Enchant@@AEBVItemStackBase@@@Z
      * @hash   -1475030236
      */
-    MCAPI static int getEnchantLevel(enum Enchant::Type, class ItemStackBase const &);
+    MCAPI static int getEnchantLevel(enum class Enchant::Type, class ItemStackBase const &);
     /**
      * @symbol ?getEnchantNameAndLevel@EnchantUtils@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Type@Enchant@@H@Z
      * @hash   -1177930494
      */
-    MCAPI static std::string getEnchantNameAndLevel(enum Enchant::Type, int);
+    MCAPI static std::string getEnchantNameAndLevel(enum class Enchant::Type, int);
     /**
      * @symbol ?getEnchantingTablePositions@EnchantUtils@@SA?AV?$vector@VVec3@@V?$allocator@VVec3@@@std@@@std@@AEAVBlockSource@@AEBVVec3@@@Z
      * @hash   -235614592
@@ -150,7 +150,7 @@ public:
      * @symbol ?getEnchantmentId@EnchantUtils@@SA?AW4Type@Enchant@@AEBVHashedString@@@Z
      * @hash   35864515
      */
-    MCAPI static enum Enchant::Type getEnchantmentId(class HashedString const &);
+    MCAPI static enum class Enchant::Type getEnchantmentId(class HashedString const &);
     /**
      * @symbol ?getLegalEnchants@EnchantUtils@@SA?AV?$vector@HV?$allocator@H@std@@@std@@PEBVItem@@@Z
      * @hash   -552981668
@@ -175,7 +175,7 @@ public:
      * @symbol ?getRandomItemWith@EnchantUtils@@SAAEBVItemStack@@W4Type@Enchant@@AEBVMob@@W4EquipmentFilter@@@Z
      * @hash   603718191
      */
-    MCAPI static class ItemStack const & getRandomItemWith(enum Enchant::Type, class Mob const &, enum EquipmentFilter);
+    MCAPI static class ItemStack const & getRandomItemWith(enum class Enchant::Type, class Mob const &, enum class EquipmentFilter);
     /**
      * @symbol ?getRandomName@EnchantUtils@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   1359815360
@@ -185,7 +185,7 @@ public:
      * @symbol ?getTotalProtectionLevels@EnchantUtils@@SAHW4Type@Enchant@@AEBVMob@@@Z
      * @hash   1784047992
      */
-    MCAPI static int getTotalProtectionLevels(enum Enchant::Type, class Mob const &);
+    MCAPI static int getTotalProtectionLevels(enum class Enchant::Type, class Mob const &);
     /**
      * @symbol ?hasCurse@EnchantUtils@@SA_NAEBVItemStackBase@@@Z
      * @hash   175926213
@@ -195,12 +195,12 @@ public:
      * @symbol ?hasEnchant@EnchantUtils@@SA_NW4Type@Enchant@@AEBVItemStackBase@@@Z
      * @hash   1131295850
      */
-    MCAPI static bool hasEnchant(enum Enchant::Type, class ItemStackBase const &);
+    MCAPI static bool hasEnchant(enum class Enchant::Type, class ItemStackBase const &);
     /**
      * @symbol ?isCurse@EnchantUtils@@SA_NW4Type@Enchant@@@Z
      * @hash   386816957
      */
-    MCAPI static bool isCurse(enum Enchant::Type);
+    MCAPI static bool isCurse(enum class Enchant::Type);
     /**
      * @symbol ?randomlyEnchant@EnchantUtils@@SAXAEAVItemStack@@HH_N@Z
      * @hash   -1197099453

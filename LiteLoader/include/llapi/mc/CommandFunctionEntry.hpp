@@ -40,7 +40,7 @@ public:
      * @symbol ?execute@CommandFunctionEntry@@UEAAXAEAVFunctionManager@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
      * @hash   140765729
      */
-    virtual void execute(class FunctionManager &, class CommandOrigin const &, enum FunctionQueueOrder);
+    virtual void execute(class FunctionManager &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
      * @symbol ??0CommandFunctionEntry@@QEAA@V?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@Z
      * @hash   619630442

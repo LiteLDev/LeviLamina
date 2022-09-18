@@ -46,11 +46,11 @@ public:
      * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   -1772888244
      */
-    MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ??0HopperContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
      * @hash   500542182
      */
-    MCAPI HopperContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
+    MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
 
 };

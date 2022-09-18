@@ -37,7 +37,7 @@ public:
      * @symbol ?initializeComponents@TropicalFish@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   175962436
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   1526345958

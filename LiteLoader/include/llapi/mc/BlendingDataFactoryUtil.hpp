@@ -25,12 +25,12 @@ namespace BlendingDataFactoryUtil {
      * @symbol ?_deduceBlockTypeFromBlock@BlendingDataFactoryUtil@@YA?AW4BlendingBlockType@@AEBVBlock@@0@Z
      * @hash   1935905460
      */
-    MCAPI enum BlendingBlockType _deduceBlockTypeFromBlock(class Block const &, class Block const &);
+    MCAPI enum class BlendingBlockType _deduceBlockTypeFromBlock(class Block const &, class Block const &);
     /**
      * @symbol ?_processBlockTypeFromCellEntry@BlendingDataFactoryUtil@@YA?AW4BlendingBlockType@@AEAV?$vector@W4BlendingBlockType@@V?$allocator@W4BlendingBlockType@@@std@@@std@@@Z
      * @hash   516879236
      */
-    MCAPI enum BlendingBlockType _processBlockTypeFromCellEntry(std::vector<enum BlendingBlockType> &);
+    MCAPI enum class BlendingBlockType _processBlockTypeFromCellEntry(std::vector<enum class BlendingBlockType> &);
     /**
      * @symbol ?calculateSurfaceDensity@BlendingDataFactoryUtil@@YAXAEAVBlendingData@@_K@Z
      * @hash   1666436483

@@ -38,7 +38,7 @@ public:
      * @symbol ?getId@TickingAreasLoadStatusPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -731821763
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@TickingAreasLoadStatusPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -56,7 +56,7 @@ public:
      * @symbol ?_read@TickingAreasLoadStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -894327091
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0TickingAreasLoadStatusPacket@@QEAA@_N@Z
      * @hash   1724297862

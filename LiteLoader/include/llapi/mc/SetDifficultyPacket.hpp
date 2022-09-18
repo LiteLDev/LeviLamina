@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@SetDifficultyPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -1443351463
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetDifficultyPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@SetDifficultyPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -39778399
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetDifficultyPacket@@QEAA@XZ
      * @hash   -99329999
@@ -68,11 +68,11 @@ public:
      * @symbol ??0SetDifficultyPacket@@QEAA@W4Difficulty@@@Z
      * @hash   -2052421730
      */
-    MCAPI SetDifficultyPacket(enum Difficulty);
+    MCAPI SetDifficultyPacket(enum class Difficulty);
     /**
      * @symbol ?getDifficulty@SetDifficultyPacket@@QEBA?AW4Difficulty@@XZ
      * @hash   -1559244618
      */
-    MCAPI enum Difficulty getDifficulty() const;
+    MCAPI enum class Difficulty getDifficulty() const;
 
 };

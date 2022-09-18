@@ -34,11 +34,11 @@ public:
      * @symbol ?hasStateFlag@PlayerSnapshotComponent@@QEBA_NW4PlayerSnapshotStateFlag@@@Z
      * @hash   505181625
      */
-    MCAPI bool hasStateFlag(enum PlayerSnapshotStateFlag) const;
+    MCAPI bool hasStateFlag(enum class PlayerSnapshotStateFlag) const;
     /**
      * @symbol ?setStateFlag@PlayerSnapshotComponent@@QEAAXW4PlayerSnapshotStateFlag@@_N@Z
      * @hash   690468381
      */
-    MCAPI void setStateFlag(enum PlayerSnapshotStateFlag, bool);
+    MCAPI void setStateFlag(enum class PlayerSnapshotStateFlag, bool);
 
 };

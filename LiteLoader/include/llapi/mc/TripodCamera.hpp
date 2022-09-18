@@ -37,7 +37,7 @@ public:
      * @symbol ?reloadHardcoded@TripodCamera@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   742434110
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -790139063

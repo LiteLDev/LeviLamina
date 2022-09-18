@@ -12,7 +12,7 @@
 struct ItemStackNetIdTag;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
-enum ItemStackNetIdType : unsigned char {
+enum class ItemStackNetIdType : unsigned char {
     ItemStackNetId_TypedServerNetId = 0,
     ItemStackRequestId_TypedClientNetId = 1,
     ItemStackLegacyRequestId_TypedClientNetId = 2,

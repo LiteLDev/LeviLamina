@@ -76,7 +76,7 @@ public:
      * @symbol ?findNextSpawnBlockUnder@Spawner@@SA_NAEBVBlockSource@@AEAVBlockPos@@W4MaterialType@@W4SpawnBlockRequirements@@@Z
      * @hash   -1743359258
      */
-    MCAPI static bool findNextSpawnBlockUnder(class BlockSource const &, class BlockPos &, enum MaterialType, enum SpawnBlockRequirements);
+    MCAPI static bool findNextSpawnBlockUnder(class BlockSource const &, class BlockPos &, enum class MaterialType, enum class SpawnBlockRequirements);
     /**
      * @symbol ?isSpawnPositionOk@Spawner@@SA_NAEBVMobSpawnRules@@AEAVBlockSource@@AEBVBlockPos@@_N@Z
      * @hash   -2103933520

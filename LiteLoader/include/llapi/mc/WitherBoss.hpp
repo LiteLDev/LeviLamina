@@ -37,13 +37,13 @@ public:
      * @symbol ?reloadHardcoded@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   1729405197
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   73814680
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   1304473546
@@ -144,7 +144,7 @@ public:
      * @symbol ?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z
      * @hash   215119862
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  174
      * @symbol ?canFreeze@WitherBoss@@UEBA_NXZ
@@ -331,7 +331,7 @@ public:
      * @symbol ?preAiStep@WitherBoss@@QEAA?AW4PreAiStepResult@1@XZ
      * @hash   2137326997
      */
-    MCAPI enum WitherBoss::PreAiStepResult preAiStep();
+    MCAPI enum class WitherBoss::PreAiStepResult preAiStep();
     /**
      * @symbol ?removeSkeleton@WitherBoss@@QEAAXXZ
      * @hash   169538741
@@ -381,14 +381,14 @@ public:
      * @symbol ?canDestroy@WitherBoss@@SA_NAEBVBlock@@W4WitherAttackType@1@@Z
      * @hash   1790099095
      */
-    MCAPI static bool canDestroy(class Block const &, enum WitherBoss::WitherAttackType);
+    MCAPI static bool canDestroy(class Block const &, enum class WitherBoss::WitherAttackType);
 
 //private:
     /**
      * @symbol ?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@HW4WitherAttackType@1@@Z
      * @hash   -1898298882
      */
-    MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int, enum WitherBoss::WitherAttackType);
+    MCAPI void _destroyBlocks(class Level &, class AABB const &, class BlockSource &, int, enum class WitherBoss::WitherAttackType);
     /**
      * @symbol ?_performRangedAttack@WitherBoss@@AEAAXHAEAVActor@@@Z
      * @hash   672356149

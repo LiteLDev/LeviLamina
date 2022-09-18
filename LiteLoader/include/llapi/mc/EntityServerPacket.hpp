@@ -46,7 +46,7 @@ public:
      * @symbol ?_read@EntityServerPacket@@MEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1763112499
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0EntityServerPacket@@QEAA@XZ
      * @hash   1281459226

@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@UpdateEquipPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   913343183
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateEquipPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@UpdateEquipPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1979527685
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateEquipPacket@@QEAA@XZ
      * @hash   1745198443
@@ -68,6 +68,6 @@ public:
      * @symbol ??0UpdateEquipPacket@@QEAA@W4ContainerID@@W4ContainerType@@H$$QEAVCompoundTag@@AEBUActorUniqueID@@@Z
      * @hash   -1936230524
      */
-    MCAPI UpdateEquipPacket(enum ContainerID, enum ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
+    MCAPI UpdateEquipPacket(enum class ContainerID, enum class ContainerType, int, class CompoundTag &&, struct ActorUniqueID const &);
 
 };

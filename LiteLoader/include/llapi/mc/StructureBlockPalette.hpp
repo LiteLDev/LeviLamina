@@ -82,17 +82,17 @@ public:
      * @symbol ?_parseBlockPalette@StructureBlockPalette@@IEAA?AW4StructureBlockPaletteLoadResult@@AEBVCompoundTag@@@Z
      * @hash   -339068710
      */
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const &);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const &);
     /**
      * @symbol ?_parseBlockPositionData@StructureBlockPalette@@IEAA?AW4StructureBlockPaletteLoadResult@@AEBVCompoundTag@@H@Z
      * @hash   1545621951
      */
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const &, int);
     /**
      * @symbol ?_parseBlockPositionDataList@StructureBlockPalette@@IEAA?AW4StructureBlockPaletteLoadResult@@AEBVCompoundTag@@@Z
      * @hash   -1576811038
      */
-    MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const &);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const &);
     /**
      * @symbol ?_saveBlockPositionDataList@StructureBlockPalette@@IEBAXAEAVCompoundTag@@@Z
      * @hash   -441533080

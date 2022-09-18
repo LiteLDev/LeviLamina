@@ -52,7 +52,7 @@ public:
      * @symbol ?canProvideSupport@TrapDoorBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   659227569
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  25
      * @symbol ?canConnect@TrapDoorBlock@@UEBA_NAEBVBlock@@E0@Z

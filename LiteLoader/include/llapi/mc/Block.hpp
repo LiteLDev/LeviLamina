@@ -75,7 +75,7 @@ public:
      * @symbol ?getRenderLayer@Block@@UEBA?AW4BlockRenderLayer@@XZ
      * @hash   -1172442742
      */
-    virtual enum BlockRenderLayer getRenderLayer() const;
+    virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @symbol ??0Block@@QEAA@GV?$not_null@PEAVBlockLegacy@@@gsl@@@Z
      * @hash   686264165
@@ -210,7 +210,7 @@ public:
      * @symbol ?canProvideSupport@Block@@QEBA_NEW4BlockSupportType@@@Z
      * @hash   -1556258083
      */
-    MCAPI bool canProvideSupport(unsigned char, enum BlockSupportType) const;
+    MCAPI bool canProvideSupport(unsigned char, enum class BlockSupportType) const;
     /**
      * @symbol ?canSlide@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   967978748
@@ -290,7 +290,7 @@ public:
      * @symbol ?getBlockEntityType@Block@@QEBA?AW4BlockActorType@@XZ
      * @hash   -1713631910
      */
-    MCAPI enum BlockActorType getBlockEntityType() const;
+    MCAPI enum class BlockActorType getBlockEntityType() const;
     /**
      * @symbol ?getBurnOdds@Block@@QEBAHXZ
      * @hash   1460586874
@@ -325,7 +325,7 @@ public:
      * @symbol ?getCreativeCategory@Block@@QEBA?AW4CreativeItemCategory@@XZ
      * @hash   786767276
      */
-    MCAPI enum CreativeItemCategory getCreativeCategory() const;
+    MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @symbol ?getCreativeGroup@Block@@QEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ
      * @hash   1403573852
@@ -480,12 +480,12 @@ public:
      * @symbol ?hasProperty@Block@@QEBA_NW4BlockProperty@@@Z
      * @hash   698490913
      */
-    MCAPI bool hasProperty(enum BlockProperty) const;
+    MCAPI bool hasProperty(enum class BlockProperty) const;
     /**
      * @symbol ?hasPropertyNoLock@Block@@QEBA_NW4BlockProperty@@@Z
      * @hash   1271815457
      */
-    MCAPI bool hasPropertyNoLock(enum BlockProperty) const;
+    MCAPI bool hasPropertyNoLock(enum class BlockProperty) const;
     /**
      * @symbol ?hasRuntimeId@Block@@QEBA?B_NXZ
      * @hash   -1978901376
@@ -585,7 +585,7 @@ public:
      * @symbol ?isFilteredOut@Block@@QEBA_NW4BlockRenderLayer@@@Z
      * @hash   1282007655
      */
-    MCAPI bool isFilteredOut(enum BlockRenderLayer) const;
+    MCAPI bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
      * @symbol ?isHeavy@Block@@QEBA_NXZ
      * @hash   -1538259356
@@ -755,7 +755,7 @@ public:
      * @symbol ?onFertilized@Block@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      * @hash   -1344750445
      */
-    MCAPI bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    MCAPI bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @symbol ?onLightningHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   1582692075

@@ -77,7 +77,7 @@ public:
      * @symbol ?getTerrainAdjustmentEffect@VillagePiece@@UEBA?AW4AdjustmentEffect@@XZ
      * @hash   1228253391
      */
-    virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
+    virtual enum class AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
     /**
      * @vftbl  17
      * @symbol ?_needsPostProcessing@PoolElementStructurePiece@@MEAA_NAEAVBlockSource@@@Z
@@ -88,7 +88,7 @@ public:
      * @symbol ??0PoolElementStructurePiece@@QEAA@AEBVStructurePoolElement@@VBlockPos@@W4Rotation@@HAEAUJigsawJunction@@AEBVBoundingBox@@1@Z
      * @hash   -1468735500
      */
-    MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
+    MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum class Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
     /**
      * @symbol ?getElement@PoolElementStructurePiece@@QEBAAEBVStructurePoolElement@@XZ
      * @hash   -356340244

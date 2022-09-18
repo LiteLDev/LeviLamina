@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@AddBehaviorTreePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   2009142245
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AddBehaviorTreePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@AddBehaviorTreePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1444726805
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AddBehaviorTreePacket@@QEAA@XZ
      * @hash   -1882040107

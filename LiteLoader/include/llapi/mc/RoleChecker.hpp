@@ -38,7 +38,7 @@ public:
      * @symbol ?checkRole@RoleChecker@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4ADRole@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1@Z@3@@Z
      * @hash   -1200563287
      */
-    MCAPI void checkRole(std::string const &, class std::function<void (enum ADRole, std::string const &, std::string const &)>);
+    MCAPI void checkRole(std::string const &, class std::function<void (enum class ADRole, std::string const &, std::string const &)>);
     /**
      * @symbol ?lookupInProgress@RoleChecker@@QEBA_NXZ
      * @hash   149612370

@@ -39,7 +39,7 @@ public:
      * @symbol ?_registerCompound@CraftableCompounds@@MEAAXAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z
      * @hash   769766840
      */
-    virtual void _registerCompound(std::vector<class ItemStack> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
+    virtual void _registerCompound(std::vector<class ItemStack> const &, class ItemStack const &, enum class LabTableReactionType, enum class CompoundContainerType);
     /**
      * @symbol ??0CraftableCompounds@@QEAA@XZ
      * @hash   508310954
@@ -59,7 +59,7 @@ public:
      * @symbol ?getReaction@CraftableCompounds@@QEAA?AW4LabTableReactionType@@AEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z
      * @hash   -1828083649
      */
-    MCAPI enum LabTableReactionType getReaction(std::vector<class ItemStack> const &);
+    MCAPI enum class LabTableReactionType getReaction(std::vector<class ItemStack> const &);
     /**
      * @symbol ?registerCompounds@CraftableCompounds@@QEAAXXZ
      * @hash   -291317533
@@ -76,12 +76,12 @@ public:
      * @symbol ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z
      * @hash   -1583385791
      */
-    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, class ItemStack const &, enum LabTableReactionType, enum CompoundContainerType);
+    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, class ItemStack const &, enum class LabTableReactionType, enum class CompoundContainerType);
     /**
      * @symbol ?_registerCompound@CraftableCompounds@@IEAAXAEBV?$vector@UChemistryIngredient@@V?$allocator@UChemistryIngredient@@@std@@@std@@W4CompoundType@@W4LabTableReactionType@@W4CompoundContainerType@@H@Z
      * @hash   -276894917
      */
-    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, enum CompoundType, enum LabTableReactionType, enum CompoundContainerType, int);
+    MCAPI void _registerCompound(std::vector<struct ChemistryIngredient> const &, enum class CompoundType, enum class LabTableReactionType, enum class CompoundContainerType, int);
 
 protected:
 

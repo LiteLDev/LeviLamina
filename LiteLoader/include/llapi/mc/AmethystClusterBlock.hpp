@@ -46,7 +46,7 @@ public:
      * @symbol ?canProvideSupport@AmethystClusterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   390243711
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @hash   -299030517

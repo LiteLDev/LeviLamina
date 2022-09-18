@@ -108,7 +108,7 @@ public:
      * @symbol ?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z
      * @hash   -956164447
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059

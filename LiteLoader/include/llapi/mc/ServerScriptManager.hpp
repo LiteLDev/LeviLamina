@@ -39,7 +39,7 @@ public:
      * @symbol ?onServerLevelInitialized@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z
      * @hash   -504891697
      */
-    virtual enum EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
+    virtual enum class EventResult onServerLevelInitialized(class ServerInstance &, class Level &);
     /**
      * @vftbl  2
      * @hash   -1157602814
@@ -60,7 +60,7 @@ public:
      * @symbol ?onServerUpdateStart@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   -1609642044
      */
-    virtual enum EventResult onServerUpdateStart(class ServerInstance &);
+    virtual enum class EventResult onServerUpdateStart(class ServerInstance &);
     /**
      * @vftbl  6
      * @hash   -1153908730
@@ -81,13 +81,13 @@ public:
      * @symbol ?onServerThreadStarted@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   -490058554
      */
-    virtual enum EventResult onServerThreadStarted(class ServerInstance &);
+    virtual enum class EventResult onServerThreadStarted(class ServerInstance &);
     /**
      * @vftbl  10
      * @symbol ?onServerThreadStopped@ServerScriptManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z
      * @hash   1948292106
      */
-    virtual enum EventResult onServerThreadStopped(class ServerInstance &);
+    virtual enum class EventResult onServerThreadStopped(class ServerInstance &);
     /**
      * @vftbl  11
      * @hash   -134114268
@@ -98,13 +98,13 @@ public:
      * @symbol ?onEvent@ServerScriptManager@@UEAA?AW4EventResult@@AEBUServerInstanceRequestResourceReload@@@Z
      * @hash   -623272574
      */
-    virtual enum EventResult onEvent(struct ServerInstanceRequestResourceReload const &);
+    virtual enum class EventResult onEvent(struct ServerInstanceRequestResourceReload const &);
     /**
      * @vftbl  13
      * @symbol ?onEvent@?$EventListenerDispatcher@VServerInstanceEventListener@@@@MEAA?AW4EventResult@@AEBUServerInstanceNotificationEvent@@@Z
      * @hash   1735238592
      */
-    virtual enum EventResult onEvent(struct ServerInstanceNotificationEvent const &);
+    virtual enum class EventResult onEvent(struct ServerInstanceNotificationEvent const &);
     /**
      * @symbol ??0ServerScriptManager@@QEAA@UScriptSettings@@V?$NonOwnerPointer@VScheduler@@@Bedrock@@AEAVIMinecraftEventing@@_N@Z
      * @hash   -1477599342

@@ -41,7 +41,7 @@ public:
      * @symbol ?_handleCraftAction@CraftHandlerGrindstone@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
      * @hash   576405359
      */
-    virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @vftbl  5
      * @symbol ?_postCraftRequest@CraftHandlerGrindstone@@EEAAX_N@Z
@@ -74,7 +74,7 @@ public:
      * @symbol ?_resolveNetIdAndValidate@CraftHandlerGrindstone@@AEAA_NW4ContainerEnumName@@EAEBUItemStackNetIdVariant@@@Z
      * @hash   -1114901475
      */
-    MCAPI bool _resolveNetIdAndValidate(enum ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const &);
+    MCAPI bool _resolveNetIdAndValidate(enum class ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const &);
 
 private:
 

@@ -180,7 +180,7 @@ public:
      * @symbol ?onFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      * @hash   -158538012
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  86
      * @symbol ?canBeFertilized@FlowerBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
@@ -289,13 +289,13 @@ public:
      * @symbol ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@XZ
      * @hash   1662623653
      */
-    virtual enum BlockRenderLayer getRenderLayer() const;
+    virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  182
      * @symbol ?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   1828325003
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  187
      * @symbol ?getMapColor@FlowerBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z
@@ -311,6 +311,6 @@ public:
      * @symbol ??0FlowerBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@AEBVMaterial@@@Z
      * @hash   118218738
      */
-    MCAPI FlowerBlock(std::string const &, int, enum FlowerBlock::Type, class Material const &);
+    MCAPI FlowerBlock(std::string const &, int, enum class FlowerBlock::Type, class Material const &);
 
 };

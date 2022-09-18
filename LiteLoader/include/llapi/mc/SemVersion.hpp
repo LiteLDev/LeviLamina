@@ -22,12 +22,12 @@ class SemVersion {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum MatchType : int {
+enum class MatchType : int {
     Full = 0x0,
     Partial = 0x1,
     None = 0x2,
 };
-enum ParseOption : int {
+enum class ParseOption : int {
     AllowWildcards = 0x0,
     NoWildcards = 0x1,
 };
@@ -146,17 +146,17 @@ public:
      * @symbol ?fromJson@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@W4ParseOption@1@@Z
      * @hash   504310661
      */
-    MCAPI static enum SemVersion::MatchType fromJson(class Json::Value const &, class SemVersion &, enum SemVersion::ParseOption);
+    MCAPI static enum class SemVersion::MatchType fromJson(class Json::Value const &, class SemVersion &, enum class SemVersion::ParseOption);
     /**
      * @symbol ?fromJsonArray@SemVersion@@SA?AW4MatchType@1@AEBVValue@Json@@AEAV1@@Z
      * @hash   -1384560622
      */
-    MCAPI static enum SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
+    MCAPI static enum class SemVersion::MatchType fromJsonArray(class Json::Value const &, class SemVersion &);
     /**
      * @symbol ?fromString@SemVersion@@SA?AW4MatchType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@W4ParseOption@1@@Z
      * @hash   1249078065
      */
-    MCAPI static enum SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum SemVersion::ParseOption);
+    MCAPI static enum class SemVersion::MatchType fromString(std::string const &, class SemVersion &, enum class SemVersion::ParseOption);
 
 //private:
     /**

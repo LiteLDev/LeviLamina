@@ -36,12 +36,12 @@ public:
      * @symbol ?getPackOrigin@PackSource@@UEBA?AW4PackOrigin@@XZ
      * @hash   -315241134
      */
-    MCVAPI enum PackOrigin getPackOrigin() const;
+    MCVAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getPackType@PackSource@@UEBA?AW4PackType@@XZ
      * @hash   1522874258
      */
-    MCVAPI enum PackType getPackType() const;
+    MCVAPI enum class PackType getPackType() const;
     /**
      * @symbol ??1PackSource@@UEAA@XZ
      * @hash   -1033336940

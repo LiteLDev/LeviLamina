@@ -31,7 +31,7 @@ class PlayerListPacket : public Packet {
 public:
 public:
     std::vector<class PlayerListEntry> entries;
-    enum PlayerListPacketType type;
+    enum class PlayerListPacketType type;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERLISTPACKET
@@ -51,7 +51,7 @@ public:
      * @symbol ?getId@PlayerListPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -214465497
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -75,7 +75,7 @@ public:
      * @symbol ?_read@PlayerListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -513419725
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayerListPacket@@QEAA@XZ
      * @hash   812090227

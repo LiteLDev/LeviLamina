@@ -206,7 +206,7 @@ public:
      * @symbol ?getTrailParticle@Fireball@@MEAA?AW4ParticleType@@XZ
      * @hash   2125915611
      */
-    virtual enum ParticleType getTrailParticle();
+    virtual enum class ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREBALL
     /**
      * @symbol ?canMakeStepSound@Fireball@@MEBA_NXZ

@@ -51,7 +51,7 @@ struct PointedDripstoneBasePos {
      * @symbol ?getPlacementBlock@DripstoneUtils@@YAAEBVBlock@@EAEBW4DripstoneThickness@@@Z
      * @hash   -975823824
      */
-    MCAPI class Block const & getPlacementBlock(unsigned char, enum DripstoneThickness const &);
+    MCAPI class Block const & getPlacementBlock(unsigned char, enum class DripstoneThickness const &);
     /**
      * @symbol ?getPointedDripstoneBasePos@DripstoneUtils@@YA?AV?$optional@UPointedDripstoneBasePos@DripstoneUtils@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@@Z
      * @hash   -981291143

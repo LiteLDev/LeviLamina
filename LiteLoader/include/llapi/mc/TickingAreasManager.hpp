@@ -38,12 +38,12 @@ public:
      * @symbol ?addArea@TickingAreasManager@@QEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@2W4AreaLimitCheck@1@_NW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
      * @hash   -1417854404
      */
-    MCAPI enum AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, class BlockPos const &, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
+    MCAPI enum class AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, class BlockPos const &, enum class TickingAreasManager::AreaLimitCheck, bool, enum class TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?addArea@TickingAreasManager@@QEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@HW4AreaLimitCheck@1@_NW4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
      * @hash   -251646045
      */
-    MCAPI enum AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, int, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
+    MCAPI enum class AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, int, enum class TickingAreasManager::AreaLimitCheck, bool, enum class TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?addEntityArea@TickingAreasManager@@QEAAXV?$AutomaticID@VDimension@@H@@AEBUActorUniqueID@@AEBUBounds@@_NMAEAVLevelStorage@@@Z
      * @hash   -448496803
@@ -118,12 +118,12 @@ public:
      * @symbol ?setPendingAreaLoadModeByName@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
      * @hash   -1081058782
      */
-    MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByName(class AutomaticID<class Dimension, int>, std::string const &, enum TickingAreaLoadMode, class LevelStorage &);
+    MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByName(class AutomaticID<class Dimension, int>, std::string const &, enum class TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?setPendingAreaLoadModeByPosition@TickingAreasManager@@QEAA?AV?$vector@UTickingAreaDescription@@V?$allocator@UTickingAreaDescription@@@std@@@std@@V?$AutomaticID@VDimension@@H@@AEBVBlockPos@@W4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
      * @hash   180511478
      */
-    MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByPosition(class AutomaticID<class Dimension, int>, class BlockPos const &, enum TickingAreaLoadMode, class LevelStorage &);
+    MCAPI std::vector<struct TickingAreaDescription> setPendingAreaLoadModeByPosition(class AutomaticID<class Dimension, int>, class BlockPos const &, enum class TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?tick@TickingAreasManager@@QEAAXAEBUTick@@@Z
      * @hash   1325327956
@@ -138,14 +138,14 @@ public:
      * @symbol ?getLimitCheck@TickingAreasManager@@SA?AW4AreaLimitCheck@1@AEBVLevel@@_N@Z
      * @hash   374780369
      */
-    MCAPI static enum TickingAreasManager::AreaLimitCheck getLimitCheck(class Level const &, bool);
+    MCAPI static enum class TickingAreasManager::AreaLimitCheck getLimitCheck(class Level const &, bool);
 
 //private:
     /**
      * @symbol ?_addArea@TickingAreasManager@@AEAA?AW4AddTickingAreaStatus@@V?$AutomaticID@VDimension@@H@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4AreaLimitCheck@1@3W4TickingAreaLoadMode@@AEAVLevelStorage@@@Z
      * @hash   502365771
      */
-    MCAPI enum AddTickingAreaStatus _addArea(class AutomaticID<class Dimension, int>, std::string const &, struct Bounds const &, bool, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage &);
+    MCAPI enum class AddTickingAreaStatus _addArea(class AutomaticID<class Dimension, int>, std::string const &, struct Bounds const &, bool, enum class TickingAreasManager::AreaLimitCheck, bool, enum class TickingAreaLoadMode, class LevelStorage &);
     /**
      * @symbol ?_deletePendingArea@TickingAreasManager@@AEAAXAEAVLevelStorage@@AEBUPendingArea@@@Z
      * @hash   -258579203

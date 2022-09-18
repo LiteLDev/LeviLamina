@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@BlockEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1960924073
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BlockEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@BlockEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   17042625
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0BlockEventPacket@@QEAA@XZ
      * @hash   -816335503

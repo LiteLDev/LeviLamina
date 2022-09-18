@@ -37,7 +37,7 @@ public:
      * @symbol ?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   802299061
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   766107030
@@ -239,7 +239,7 @@ public:
      * @symbol ?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ
      * @hash   -2094589182
      */
-    virtual enum LevelSoundEvent getSquishSound();
+    virtual enum class LevelSoundEvent getSquishSound();
     /**
      * @vftbl  370
      * @symbol ?setSlimeSize@Slime@@MEAAXH@Z

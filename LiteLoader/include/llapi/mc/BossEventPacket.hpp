@@ -10,7 +10,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum BossEventUpdateType
+enum class BossEventUpdateType
 {
     BossEventShow = 0,
     // BossEventRegisterPlayer is sent by the client to the server to request being shown the boss bar.
@@ -52,7 +52,7 @@ public:
      * @symbol ?getId@BossEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -1421822007
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@BossEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -70,7 +70,7 @@ public:
      * @symbol ?_read@BossEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -863586719
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0BossEventPacket@@QEAA@XZ
      * @hash   855963185
@@ -80,11 +80,11 @@ public:
      * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@UActorUniqueID@@AEAVBossComponent@@@Z
      * @hash   585915502
      */
-    MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
+    MCAPI BossEventPacket(enum class BossEventUpdateType, struct ActorUniqueID, class BossComponent &);
     /**
      * @symbol ??0BossEventPacket@@QEAA@W4BossEventUpdateType@@AEAVRaidBossComponent@@@Z
      * @hash   388598923
      */
-    MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent &);
+    MCAPI BossEventPacket(enum class BossEventUpdateType, class RaidBossComponent &);
 
 };

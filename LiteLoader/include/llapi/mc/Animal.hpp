@@ -37,7 +37,7 @@ public:
      * @symbol ?reloadHardcoded@Animal@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -585258214
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   1808760006

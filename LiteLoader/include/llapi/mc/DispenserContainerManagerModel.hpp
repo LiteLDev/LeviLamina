@@ -46,6 +46,6 @@ public:
      * @symbol ??0DispenserContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   1108043789
      */
-    MCAPI DispenserContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI DispenserContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

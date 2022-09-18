@@ -222,7 +222,7 @@ public:
      * @symbol ?getFaceFlip@JigsawBlock@@UEBA?AW4Flip@@EAEBVBlock@@@Z
      * @hash   181681542
      */
-    virtual enum Flip getFaceFlip(unsigned char, class Block const &) const;
+    virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
      * @vftbl  157
      * @hash   1477012899

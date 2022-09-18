@@ -38,7 +38,7 @@ public:
      * @symbol ?getId@CodeBuilderSourcePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   519730445
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@CodeBuilderSourcePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -56,7 +56,7 @@ public:
      * @symbol ?_read@CodeBuilderSourcePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1793659075
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CodeBuilderSourcePacket@@QEAA@XZ
      * @hash   686388669

@@ -126,6 +126,6 @@ public:
      * @symbol ?ring@BellBlockActor@@QEAA_NW4Type@Direction@@AEAVBlockSource@@PEAVActor@@_N@Z
      * @hash   1468360483
      */
-    MCAPI bool ring(enum Direction::Type, class BlockSource &, class Actor *, bool);
+    MCAPI bool ring(enum class Direction::Type, class BlockSource &, class Actor *, bool);
 
 };

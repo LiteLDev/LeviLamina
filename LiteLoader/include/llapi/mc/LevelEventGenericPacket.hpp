@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@LevelEventGenericPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -1440684091
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LevelEventGenericPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@LevelEventGenericPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1421688267
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LevelEventGenericPacket@@QEAA@XZ
      * @hash   1807238917
@@ -68,6 +68,6 @@ public:
      * @symbol ??0LevelEventGenericPacket@@QEAA@W4LevelEvent@@AEBVCompoundTag@@@Z
      * @hash   -32430733
      */
-    MCAPI LevelEventGenericPacket(enum LevelEvent, class CompoundTag const &);
+    MCAPI LevelEventGenericPacket(enum class LevelEvent, class CompoundTag const &);
 
 };

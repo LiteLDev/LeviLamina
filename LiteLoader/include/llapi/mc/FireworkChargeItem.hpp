@@ -23,7 +23,7 @@ class FireworkChargeItem : public Item {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Shape;
+enum class Shape;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREWORKCHARGEITEM
@@ -178,12 +178,12 @@ public:
      * @symbol ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemInstance@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
      * @hash   -1328237617
      */
-    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static class ItemInstance const & initFireworkChargeItem(class ItemInstance &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     /**
      * @symbol ?initFireworkChargeItem@FireworkChargeItem@@SAAEBVItemStack@@AEAV2@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
      * @hash   -838134514
      */
-    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static class ItemStack const & initFireworkChargeItem(class ItemStack &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     /**
      * @symbol ?setColor@FireworkChargeItem@@SAXAEAVItemStackBase@@@Z
      * @hash   1756559902
@@ -195,7 +195,7 @@ public:
      * @symbol ?_initFireworkChargeItem@FireworkChargeItem@@CAXAEAVItemStackBase@@W4Shape@1@V?$vector@EV?$allocator@E@std@@@std@@2_N3@Z
      * @hash   1574742240
      */
-    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
+    MCAPI static void _initFireworkChargeItem(class ItemStackBase &, enum class FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     /**
      * @symbol ?appendColors@FireworkChargeItem@@CAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@EV?$allocator@E@std@@@3@@Z
      * @hash   1811674684

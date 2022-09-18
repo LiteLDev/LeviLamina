@@ -148,7 +148,7 @@ public:
      * @symbol ?_onChanged@JukeboxBlockActor@@AEAAXAEAVBlockSource@@W4LevelSoundEvent@@@Z
      * @hash   766912571
      */
-    MCAPI void _onChanged(class BlockSource &, enum LevelSoundEvent);
+    MCAPI void _onChanged(class BlockSource &, enum class LevelSoundEvent);
     /**
      * @symbol ?_spawnMusicParticles@JukeboxBlockActor@@AEAAXAEAVLevel@@M@Z
      * @hash   1297258972

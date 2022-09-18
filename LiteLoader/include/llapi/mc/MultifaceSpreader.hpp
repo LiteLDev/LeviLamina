@@ -55,7 +55,7 @@ public:
      * @symbol ??0MultifaceSpreader@@QEAA@AEBV?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@@Z
      * @hash   652383911
      */
-    MCAPI MultifaceSpreader(std::vector<enum MultifaceSpreader::SpreadType> const &);
+    MCAPI MultifaceSpreader(std::vector<enum class MultifaceSpreader::SpreadType> const &);
     /**
      * @symbol ?getSpreadFromFaceTowardDirection@MultifaceSpreader@@QEBA?AV?$optional@U?$pair@$$CBVBlockPos@@$$CBE@std@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlock@@1AEBVBlockPos@@EE@Z
      * @hash   1962286482
@@ -90,12 +90,12 @@ public:
      * @symbol ?ALL_SPREAD_TYPES@MultifaceSpreader@@2V?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@B
      * @hash   -2146446941
      */
-    MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
+    MCAPI static std::vector<enum class MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
     /**
      * @symbol ?SAME_POSITION_ONLY@MultifaceSpreader@@2V?$vector@W4SpreadType@MultifaceSpreader@@V?$allocator@W4SpreadType@MultifaceSpreader@@@std@@@std@@B
      * @hash   -577421257
      */
-    MCAPI static std::vector<enum MultifaceSpreader::SpreadType> const SAME_POSITION_ONLY;
+    MCAPI static std::vector<enum class MultifaceSpreader::SpreadType> const SAME_POSITION_ONLY;
 
 //protected:
     /**

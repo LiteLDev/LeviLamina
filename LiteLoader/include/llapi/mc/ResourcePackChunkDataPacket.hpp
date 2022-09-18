@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@ResourcePackChunkDataPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   462221590
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ResourcePackChunkDataPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@ResourcePackChunkDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   948308660
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ResourcePackChunkDataPacket@@QEAA@XZ
      * @hash   -1159914012

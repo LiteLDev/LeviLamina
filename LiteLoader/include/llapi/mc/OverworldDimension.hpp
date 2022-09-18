@@ -35,12 +35,12 @@ public:
      * @symbol ?_upgradeOldLimboEntity@OverworldDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z
      * @hash   77366244
      */
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum LimboEntitiesVersion);
+    MCVAPI void _upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion);
     /**
      * @symbol ?_wrapStorageForVersionCompatibility@OverworldDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
      * @hash   38162925
      */
-    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum StorageVersion);
+    MCVAPI std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum class StorageVersion);
     /**
      * @symbol ?createGenerator@OverworldDimension@@UEAA?AV?$unique_ptr@VWorldGenerator@@U?$default_delete@VWorldGenerator@@@std@@@std@@XZ
      * @hash   1242818617

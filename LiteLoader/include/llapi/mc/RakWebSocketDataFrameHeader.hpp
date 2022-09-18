@@ -31,7 +31,7 @@ public:
      * @symbol ??0RakWebSocketDataFrameHeader@@QEAA@_N0000W4OpCode@@E@Z
      * @hash   1806182859
      */
-    MCAPI RakWebSocketDataFrameHeader(bool, bool, bool, bool, bool, enum OpCode, unsigned char);
+    MCAPI RakWebSocketDataFrameHeader(bool, bool, bool, bool, bool, enum class OpCode, unsigned char);
     /**
      * @symbol ??0RakWebSocketDataFrameHeader@@QEAA@XZ
      * @hash   -301195279
@@ -51,7 +51,7 @@ public:
      * @symbol ?getOpCode@RakWebSocketDataFrameHeader@@QEBA?AW4OpCode@@XZ
      * @hash   1307814512
      */
-    MCAPI enum OpCode getOpCode() const;
+    MCAPI enum class OpCode getOpCode() const;
     /**
      * @symbol ?getPayloadLength@RakWebSocketDataFrameHeader@@QEBAEXZ
      * @hash   -873727885

@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@PlayerSkinPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -1488851080
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerSkinPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -64,7 +64,7 @@ public:
      * @symbol ?_read@PlayerSkinPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   183158898
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0PlayerSkinPacket@@QEAA@XZ
      * @hash   -1997077790

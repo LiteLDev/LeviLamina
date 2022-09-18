@@ -10,8 +10,8 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-enum NodeType;
-enum PathCompletionType;
+enum class NodeType;
+enum class PathCompletionType;
 
 #undef BEFORE_EXTRA
 
@@ -27,12 +27,12 @@ public:
     class Node
     {
         BlockPos mPos;
-        enum NodeType mType;
+        enum class NodeType mType;
     };
 
     std::vector<Node> mNodes;
     size_t mIndex;
-    enum PathCompletionType mCompletionType;
+    enum class PathCompletionType mCompletionType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATH
@@ -66,7 +66,7 @@ public:
      * @symbol ?getCompletionType@Path@@QEBA?AW4PathCompletionType@@XZ
      * @hash   1546240032
      */
-    MCAPI enum PathCompletionType getCompletionType() const;
+    MCAPI enum class PathCompletionType getCompletionType() const;
     /**
      * @symbol ?getEndPos@Path@@QEBA?AVVec3@@XZ
      * @hash   -491483296
@@ -91,7 +91,7 @@ public:
      * @symbol ?getNodeType@Path@@QEBA?AW4NodeType@@_K@Z
      * @hash   -1766241016
      */
-    MCAPI enum NodeType getNodeType(unsigned __int64) const;
+    MCAPI enum class NodeType getNodeType(unsigned __int64) const;
     /**
      * @symbol ?getPos@Path@@QEBA?AVVec3@@PEBVActor@@_K@Z
      * @hash   227775566
@@ -148,7 +148,7 @@ public:
      * @symbol ?buildFromNodes@Path@@AEAAX$$QEAV?$vector@VNode@Path@@V?$allocator@VNode@Path@@@std@@@std@@W4PathCompletionType@@@Z
      * @hash   -217442867
      */
-    MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum PathCompletionType);
+    MCAPI void buildFromNodes(std::vector<class Path::Node> &&, enum class PathCompletionType);
 
 private:
 

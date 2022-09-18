@@ -81,7 +81,7 @@ public:
      * @symbol ?getCircuitComponentType@PoweredBlockComponent@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   -596238318
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POWEREDBLOCKCOMPONENT
     /**
      * @symbol ?hasChildrenSource@PoweredBlockComponent@@UEBA_NXZ

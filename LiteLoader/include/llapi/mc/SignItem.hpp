@@ -119,6 +119,6 @@ public:
      * @symbol ??0SignItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4SignType@SignBlockActor@@@Z
      * @hash   1761499469
      */
-    MCAPI SignItem(std::string const &, int, enum SignBlockActor::SignType);
+    MCAPI SignItem(std::string const &, int, enum class SignBlockActor::SignType);
 
 };

@@ -40,7 +40,7 @@ public:
      * @symbol ?execute@FunctionManager@@QEAAHAEAVFunctionEntry@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
      * @hash   -899128539
      */
-    MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, enum FunctionQueueOrder);
+    MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
      * @symbol ?getCommandDispatcher@FunctionManager@@QEAAAEAVICommandDispatcher@@XZ
      * @hash   1464853442
@@ -60,7 +60,7 @@ public:
      * @symbol ?queueCommands@FunctionManager@@QEAAXAEBV?$vector@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@V?$allocator@V?$unique_ptr@VIFunctionEntry@@U?$default_delete@VIFunctionEntry@@@std@@@std@@@2@@std@@AEBVCommandOrigin@@W4FunctionQueueOrder@@@Z
      * @hash   712422915
      */
-    MCAPI void queueCommands(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &, enum FunctionQueueOrder);
+    MCAPI void queueCommands(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
      * @symbol ?tick@FunctionManager@@QEAAXXZ
      * @hash   558976829
@@ -70,19 +70,19 @@ public:
      * @symbol ?getQueueOrderForCommandVersion@FunctionManager@@SA?AW4FunctionQueueOrder@@W4CurrentCmdVersion@@@Z
      * @hash   -601503725
      */
-    MCAPI static enum FunctionQueueOrder getQueueOrderForCommandVersion(enum CurrentCmdVersion);
+    MCAPI static enum class FunctionQueueOrder getQueueOrderForCommandVersion(enum class CurrentCmdVersion);
 
 //protected:
     /**
      * @symbol ?_addTickFunctionsFromJson@FunctionManager@@IEAAXAEBVValue@Json@@W4CurrentCmdVersion@@@Z
      * @hash   2089550447
      */
-    MCAPI void _addTickFunctionsFromJson(class Json::Value const &, enum CurrentCmdVersion);
+    MCAPI void _addTickFunctionsFromJson(class Json::Value const &, enum class CurrentCmdVersion);
     /**
      * @symbol ?_processFunctionEntry@FunctionManager@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAV43@W4CurrentCmdVersion@@AEBVCommandRegistry@@@Z
      * @hash   -2068409595
      */
-    MCAPI void _processFunctionEntry(std::string const &, std::vector<std::string> const &, std::vector<std::string> &, enum CurrentCmdVersion, class CommandRegistry const &);
+    MCAPI void _processFunctionEntry(std::string const &, std::vector<std::string> const &, std::vector<std::string> &, enum class CurrentCmdVersion, class CommandRegistry const &);
 
 //private:
     /**

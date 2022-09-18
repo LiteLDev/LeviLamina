@@ -49,21 +49,21 @@ public:
      * @symbol ?getAuxValue@DyeColorUtil@@SAHW4ItemColor@@@Z
      * @hash   -1404324903
      */
-    MCAPI static int getAuxValue(enum ItemColor);
+    MCAPI static int getAuxValue(enum class ItemColor);
     /**
      * @symbol ?getItemColor@DyeColorUtil@@SA?AW4ItemColor@@H@Z
      * @hash   -616530667
      */
-    MCAPI static enum ItemColor getItemColor(int);
+    MCAPI static enum class ItemColor getItemColor(int);
     /**
      * @symbol ?getRandomItemColor@DyeColorUtil@@SA?AW4ItemColor@@AEAVRandom@@@Z
      * @hash   -295187645
      */
-    MCAPI static enum ItemColor getRandomItemColor(class Random &);
+    MCAPI static enum class ItemColor getRandomItemColor(class Random &);
     /**
      * @symbol ?mColorMap@DyeColorUtil@@2V?$array@W4ItemColor@@$0BE@@std@@B
      * @hash   993319481
      */
-    MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
+    MCAPI static class std::array<enum class ItemColor, 20> const mColorMap;
 
 };

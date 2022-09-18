@@ -11,7 +11,7 @@
 // Include Headers or Declare Types Here
 class Actor;
 
-enum ActorDamageCause : int {
+enum class ActorDamageCause : int {
     ActorDamageCause_None = -0x01,
     ActorDamageCause_Override = 0x00,
     ActorDamageCause_Contact = 0x01,
@@ -159,13 +159,13 @@ public:
      * @symbol ?getEntityType@ActorDamageSource@@UEBA?AW4ActorType@@XZ
      * @hash   499740523
      */
-    virtual enum ActorType getEntityType() const;
+    virtual enum class ActorType getEntityType() const;
     /**
      * @vftbl  15
      * @symbol ?getEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ
      * @hash   -692219207
      */
-    virtual enum ActorCategory getEntityCategories() const;
+    virtual enum class ActorCategory getEntityCategories() const;
     /**
      * @vftbl  16
      * @symbol ?getDamagingEntityIsCreative@ActorDamageSource@@UEBA_NXZ
@@ -189,13 +189,13 @@ public:
      * @symbol ?getDamagingEntityType@ActorDamageSource@@UEBA?AW4ActorType@@XZ
      * @hash   1973690231
      */
-    virtual enum ActorType getDamagingEntityType() const;
+    virtual enum class ActorType getDamagingEntityType() const;
     /**
      * @vftbl  20
      * @symbol ?getDamagingEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ
      * @hash   -1585722939
      */
-    virtual enum ActorCategory getDamagingEntityCategories() const;
+    virtual enum class ActorCategory getDamagingEntityCategories() const;
     /**
      * @vftbl  21
      * @symbol ?clone@ActorDamageSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ
@@ -206,36 +206,36 @@ public:
      * @symbol ??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z
      * @hash   1250691028
      */
-    MCAPI ActorDamageSource(enum ActorDamageCause);
+    MCAPI ActorDamageSource(enum class ActorDamageCause);
     /**
      * @symbol ?getCause@ActorDamageSource@@QEBA?AW4ActorDamageCause@@XZ
      * @hash   1194149472
      */
-    MCAPI enum ActorDamageCause getCause() const;
+    MCAPI enum class ActorDamageCause getCause() const;
     /**
      * @symbol ?setCause@ActorDamageSource@@QEAAXW4ActorDamageCause@@@Z
      * @hash   1954879882
      */
-    MCAPI void setCause(enum ActorDamageCause);
+    MCAPI void setCause(enum class ActorDamageCause);
     /**
      * @symbol ?generateDamageCauseCommandEnum@ActorDamageSource@@SA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@std@@@2@@std@@XZ
      * @hash   -2115435175
      */
-    MCAPI static std::vector<struct std::pair<std::string, enum ActorDamageCause>> generateDamageCauseCommandEnum();
+    MCAPI static std::vector<struct std::pair<std::string, enum class ActorDamageCause>> generateDamageCauseCommandEnum();
     /**
      * @symbol ?isDamageCausedByMob@ActorDamageSource@@SA_NW4ActorDamageCause@@@Z
      * @hash   1793163583
      */
-    MCAPI static bool isDamageCausedByMob(enum ActorDamageCause);
+    MCAPI static bool isDamageCausedByMob(enum class ActorDamageCause);
     /**
      * @symbol ?lookupCause@ActorDamageSource@@SA?AW4ActorDamageCause@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -25597523
      */
-    MCAPI static enum ActorDamageCause lookupCause(std::string const &);
+    MCAPI static enum class ActorDamageCause lookupCause(std::string const &);
     /**
      * @symbol ?lookupCauseName@ActorDamageSource@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorDamageCause@@@Z
      * @hash   1512723741
      */
-    MCAPI static std::string const & lookupCauseName(enum ActorDamageCause);
+    MCAPI static std::string const & lookupCauseName(enum class ActorDamageCause);
 
 };

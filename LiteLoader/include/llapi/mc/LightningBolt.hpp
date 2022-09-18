@@ -36,13 +36,13 @@ public:
      * @symbol ?reloadHardcoded@LightningBolt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   222858910
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@LightningBolt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   959052569
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   1139815885

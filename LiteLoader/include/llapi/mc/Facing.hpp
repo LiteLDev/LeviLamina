@@ -26,8 +26,8 @@ class Facing {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Rotation : unsigned int;
-enum Name : unsigned char;
+enum class Rotation : unsigned int;
+enum class Name : unsigned char;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACING
@@ -57,12 +57,12 @@ public:
      * @symbol ?BY2DDATA@Facing@@2QBW4Name@1@B
      * @hash   1730635296
      */
-    MCAPI static enum Facing::Name const BY2DDATA[];
+    MCAPI static enum class Facing::Name const BY2DDATA[];
     /**
      * @symbol ?DIRECTIONS@Facing@@2QBW4Name@1@B
      * @hash   371635704
      */
-    MCAPI static enum Facing::Name const DIRECTIONS[];
+    MCAPI static enum class Facing::Name const DIRECTIONS[];
     /**
      * @symbol ?DIRECTION@Facing@@2QBVBlockPos@@B
      * @hash   -1389575647
@@ -107,12 +107,12 @@ public:
      * @symbol ?convertDirectionToFacingDirection@Facing@@SAEW4Type@Direction@@@Z
      * @hash   -400436572
      */
-    MCAPI static unsigned char convertDirectionToFacingDirection(enum Direction::Type);
+    MCAPI static unsigned char convertDirectionToFacingDirection(enum class Direction::Type);
     /**
      * @symbol ?convertWeirdoDirectionToFacingDirection@Facing@@SAEW4WeirdoDirection@@@Z
      * @hash   2056158622
      */
-    MCAPI static unsigned char convertWeirdoDirectionToFacingDirection(enum WeirdoDirection);
+    MCAPI static unsigned char convertWeirdoDirectionToFacingDirection(enum class WeirdoDirection);
     /**
      * @symbol ?convertYRotationToFacingDirection@Facing@@SAEM@Z
      * @hash   -1737458650
@@ -122,7 +122,7 @@ public:
      * @symbol ?from2DDataValue@Facing@@SA?AW4Name@1@H@Z
      * @hash   -575601250
      */
-    MCAPI static enum Facing::Name from2DDataValue(int);
+    MCAPI static enum class Facing::Name from2DDataValue(int);
     /**
      * @symbol ?fromVec3@Facing@@SAEAEBVVec3@@@Z
      * @hash   -686835096
@@ -137,7 +137,7 @@ public:
      * @symbol ?getClosestRotation@Facing@@SA?AW4Rotation@1@M@Z
      * @hash   409289850
      */
-    MCAPI static enum Facing::Rotation getClosestRotation(float);
+    MCAPI static enum class Facing::Rotation getClosestRotation(float);
     /**
      * @symbol ?getCounterClockWise@Facing@@SAEE@Z
      * @hash   -570130375
@@ -177,7 +177,7 @@ public:
      * @symbol ?getRotationMatrix@Facing@@SA?AU?$mat@$02$02M$0A@@glm@@EW4Rotation@1@@Z
      * @hash   -766060055
      */
-    MCAPI static struct glm::mat<3, 3, float, 0> getRotationMatrix(unsigned char, enum Facing::Rotation);
+    MCAPI static struct glm::mat<3, 3, float, 0> getRotationMatrix(unsigned char, enum class Facing::Rotation);
     /**
      * @symbol ?getShuffledDirections@Facing@@SA?AV?$vector@EV?$allocator@E@std@@@std@@AEAVRandom@@@Z
      * @hash   -1973145249
@@ -212,12 +212,12 @@ public:
      * @symbol ?rotateFace@Facing@@SAEEW4Rotation@1@@Z
      * @hash   644863705
      */
-    MCAPI static unsigned char rotateFace(unsigned char, enum Facing::Rotation);
+    MCAPI static unsigned char rotateFace(unsigned char, enum class Facing::Rotation);
     /**
      * @symbol ?rotateFaceAroundGivenFace@Facing@@SAEEEW4Rotation@1@@Z
      * @hash   -1239165631
      */
-    MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum Facing::Rotation);
+    MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum class Facing::Rotation);
     /**
      * @symbol ?toString@Facing@@SA?AV?$basic_string_span@$$CBD$0?0@gsl@@E@Z
      * @hash   1918900542

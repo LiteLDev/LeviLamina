@@ -90,7 +90,7 @@ public:
      * @symbol ?getPermissionsLevel@ClientAutomationCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   898980461
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ClientAutomationCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
@@ -114,7 +114,7 @@ public:
      * @symbol ?getOriginType@ClientAutomationCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   1848732258
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  24
      * @symbol ?toCommandOriginData@ClientAutomationCommandOrigin@@UEBA?AUCommandOriginData@@XZ

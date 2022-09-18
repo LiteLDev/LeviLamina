@@ -23,7 +23,7 @@ class Zombie : public HumanoidMonster {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum ZombieType;
+enum class ZombieType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZOMBIE
@@ -39,7 +39,7 @@ public:
      * @symbol ?reloadHardcoded@Zombie@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   377035655
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   1109671920
@@ -204,7 +204,7 @@ public:
      * @symbol ?setZombieType@Zombie@@QEAAXW4ZombieType@1@@Z
      * @hash   -54284443
      */
-    MCAPI void setZombieType(enum Zombie::ZombieType);
+    MCAPI void setZombieType(enum class Zombie::ZombieType);
 
 //protected:
 

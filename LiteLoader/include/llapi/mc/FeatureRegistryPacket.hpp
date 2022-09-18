@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@FeatureRegistryPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   362580819
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@FeatureRegistryPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@FeatureRegistryPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1477321145
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0FeatureRegistryPacket@@QEAA@AEBV?$vector@UFeatureBinaryJsonFormat@FeatureRegistry@@V?$allocator@UFeatureBinaryJsonFormat@FeatureRegistry@@@std@@@std@@@Z
      * @hash   787937536

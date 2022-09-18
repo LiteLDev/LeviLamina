@@ -56,7 +56,7 @@ public:
      * @symbol ?sendToAdmins@CommandOutputSender@@QEAAXAEBVCommandOrigin@@AEBVCommandOutput@@W4CommandPermissionLevel@@@Z
      * @hash   -496153756
      */
-    MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum CommandPermissionLevel);
+    MCAPI void sendToAdmins(class CommandOrigin const &, class CommandOutput const &, enum class CommandPermissionLevel);
     /**
      * @symbol ?translate@CommandOutputSender@@SA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@AEBV23@@Z
      * @hash   -1266368645

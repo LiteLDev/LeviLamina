@@ -99,7 +99,7 @@ public:
      * @symbol ?_makeCommonNodeGraph@OverworldGenerator2d@@CA?AV?$shared_ptr@V?$OperationNode@PEAVBiome@@VPos2d@@@@@std@@W4GeneratorType@@AEBVBiomeRegistry@@@Z
      * @hash   -1797028899
      */
-    MCAPI static class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> _makeCommonNodeGraph(enum GeneratorType, class BiomeRegistry const &);
+    MCAPI static class std::shared_ptr<class OperationNode<class Biome *, class Pos2d>> _makeCommonNodeGraph(enum class GeneratorType, class BiomeRegistry const &);
 
 private:
 

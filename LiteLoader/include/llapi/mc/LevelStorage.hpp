@@ -48,19 +48,19 @@ public:
      * @symbol ?getCompoundTag@DBStorage@@UEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
      * @hash   1441904704
      */
-    virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const &, enum DBHelpers::Category) = 0;
+    virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const &, enum class DBHelpers::Category) = 0;
     /**
      * @vftbl  3
      * @symbol ?hasKey@DBStorage@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@@Z
      * @hash   -1761566085
      */
-    virtual bool hasKey(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category) const = 0;
+    virtual bool hasKey(class gsl::basic_string_span<char const, -1>, enum class DBHelpers::Category) const = 0;
     /**
      * @vftbl  4
      * @symbol ?forEachKeyWithPrefix@DBStorage@@UEBAXV?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@AEBV?$function@$$A6AXV?$basic_string_span@$$CBD$0?0@gsl@@0@Z@std@@@Z
      * @hash   1612440878
      */
-    virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const &) const = 0;
+    virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, enum class DBHelpers::Category, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const &) const = 0;
     /**
      * @vftbl  5
      * @symbol ?loadLevelData@DBStorage@@UEAA_NAEAVLevelData@@@Z
@@ -72,7 +72,7 @@ public:
      * @symbol ?createChunkStorage@DBStorage@@UEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z
      * @hash   -2058199934
      */
-    virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion) = 0;
+    virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum class StorageVersion) = 0;
     /**
      * @vftbl  7
      * @symbol ?saveLevelData@DBStorage@@UEAAXAEBVLevelData@@@Z
@@ -90,7 +90,7 @@ public:
      * @symbol ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@$$QEAV43@W4Category@DBHelpers@@@Z
      * @hash   964951374
      */
-    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, std::string &&, enum DBHelpers::Category) = 0;
+    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, std::string &&, enum class DBHelpers::Category) = 0;
     /**
      * @vftbl  10
      * @symbol ?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBVLevelStorageWriteBatch@@@Z
@@ -102,7 +102,7 @@ public:
      * @symbol ?deleteData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z
      * @hash   1044661921
      */
-    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> deleteData(std::string const &, enum DBHelpers::Category) = 0;
+    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> deleteData(std::string const &, enum class DBHelpers::Category) = 0;
     /**
      * @vftbl  12
      * @symbol ?syncIO@DBStorage@@UEAAXXZ
@@ -149,7 +149,7 @@ public:
      * @symbol ?loadData@LevelStorage@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
      * @hash   770778702
      */
-    virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string &, enum DBHelpers::Category) const;
+    virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string &, enum class DBHelpers::Category) const;
     /**
      * @vftbl  20
      * @hash   538818278
@@ -208,7 +208,7 @@ public:
      * @symbol ?setCompactionCallback@DBStorage@@UEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z
      * @hash   1748025404
      */
-    virtual void setCompactionCallback(class std::function<void (enum CompactionStatus)>) = 0;
+    virtual void setCompactionCallback(class std::function<void (enum class CompactionStatus)>) = 0;
     /**
      * @vftbl  30
      * @symbol ?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z
@@ -255,7 +255,7 @@ public:
      * @symbol ?saveData@LevelStorage@@QEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEBVCompoundTag@@W4Category@DBHelpers@@@Z
      * @hash   -1327686961
      */
-    MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, class CompoundTag const &, enum DBHelpers::Category);
+    MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const &, class CompoundTag const &, enum class DBHelpers::Category);
     /**
      * @symbol ?LEGACY_CONSOLE_PLAYER_PREFIX@LevelStorage@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B
      * @hash   -384454151

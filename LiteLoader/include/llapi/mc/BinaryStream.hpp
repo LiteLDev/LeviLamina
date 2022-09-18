@@ -6,6 +6,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Vec3.hpp"
 #include "ReadOnlyBinaryStream.hpp"
 
 #define BEFORE_EXTRA

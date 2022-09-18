@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@SHFillerCorridor@@UEBA?AW4StructurePieceType@@XZ
      * @hash   2102081724
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@SHFillerCorridor@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

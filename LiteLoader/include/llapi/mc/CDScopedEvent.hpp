@@ -32,7 +32,7 @@ public:
      * @symbol ??0CDScopedEvent@@QEAA@W4CrashDumpLogStringID@@00@Z
      * @hash   -115398882
      */
-    MCAPI CDScopedEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
+    MCAPI CDScopedEvent(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, enum class CrashDumpLogStringID);
     /**
      * @symbol ??1CDScopedEvent@@QEAA@XZ
      * @hash   -1717133067

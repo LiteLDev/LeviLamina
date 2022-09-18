@@ -77,7 +77,7 @@ public:
      * @symbol ?getMirror@StructureEditorData@@QEBA?AW4Mirror@@XZ
      * @hash   -2016216028
      */
-    MCAPI enum Mirror getMirror() const;
+    MCAPI enum class Mirror getMirror() const;
     /**
      * @symbol ?getPivot@StructureEditorData@@QEBAAEBVVec3@@XZ
      * @hash   -1977066598
@@ -87,12 +87,12 @@ public:
      * @symbol ?getRedstoneSaveMode@StructureEditorData@@QEBA?AW4StructureRedstoneSaveMode@@XZ
      * @hash   1006988912
      */
-    MCAPI enum StructureRedstoneSaveMode getRedstoneSaveMode() const;
+    MCAPI enum class StructureRedstoneSaveMode getRedstoneSaveMode() const;
     /**
      * @symbol ?getRotation@StructureEditorData@@QEBA?AW4Rotation@@XZ
      * @hash   587227974
      */
-    MCAPI enum Rotation getRotation() const;
+    MCAPI enum class Rotation getRotation() const;
     /**
      * @symbol ?getShowBoundingBox@StructureEditorData@@QEBA_NXZ
      * @hash   -2105267988
@@ -102,7 +102,7 @@ public:
      * @symbol ?getStructureBlockType@StructureEditorData@@QEBA?AW4StructureBlockType@@XZ
      * @hash   1998339322
      */
-    MCAPI enum StructureBlockType getStructureBlockType() const;
+    MCAPI enum class StructureBlockType getStructureBlockType() const;
     /**
      * @symbol ?getStructureName@StructureEditorData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   952355436
@@ -142,7 +142,7 @@ public:
      * @symbol ?setAnimationMode@StructureEditorData@@QEAAXW4AnimationMode@@@Z
      * @hash   -631982096
      */
-    MCAPI void setAnimationMode(enum AnimationMode);
+    MCAPI void setAnimationMode(enum class AnimationMode);
     /**
      * @symbol ?setAnimationSeconds@StructureEditorData@@QEAAXM@Z
      * @hash   -180487254
@@ -187,12 +187,12 @@ public:
      * @symbol ?setMirror@StructureEditorData@@QEAAXW4Mirror@@@Z
      * @hash   -136912306
      */
-    MCAPI void setMirror(enum Mirror);
+    MCAPI void setMirror(enum class Mirror);
     /**
      * @symbol ?setRotation@StructureEditorData@@QEAAXW4Rotation@@@Z
      * @hash   -1369671936
      */
-    MCAPI void setRotation(enum Rotation);
+    MCAPI void setRotation(enum class Rotation);
     /**
      * @symbol ?setShowBoundingBox@StructureEditorData@@QEAAX_N@Z
      * @hash   -70366528
@@ -202,7 +202,7 @@ public:
      * @symbol ?setStructureBlockType@StructureEditorData@@QEAAXW4StructureBlockType@@@Z
      * @hash   -1799272700
      */
-    MCAPI void setStructureBlockType(enum StructureBlockType);
+    MCAPI void setStructureBlockType(enum class StructureBlockType);
     /**
      * @symbol ?setStructureName@StructureEditorData@@QEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z
      * @hash   -711607288
@@ -257,7 +257,7 @@ public:
      * @symbol ?getOrientedBounds@StructureEditorData@@SA?AVBlockPos@@AEBV2@W4Rotation@@@Z
      * @hash   -647993085
      */
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum Rotation);
+    MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum class Rotation);
 
 //private:
     /**
@@ -271,6 +271,6 @@ private:
      * @symbol ?DEFAULT_STRUCTURE_TYPE@StructureEditorData@@0W4StructureBlockType@@B
      * @hash   1499611743
      */
-    MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
+    MCAPI static enum class StructureBlockType const DEFAULT_STRUCTURE_TYPE;
 
 };

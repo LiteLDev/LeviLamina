@@ -37,7 +37,7 @@ public:
      * @symbol ?reloadHardcoded@Squid@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -1276217532
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -1460073728
@@ -108,7 +108,7 @@ public:
      * @symbol ?handleEntityEvent@Squid@@UEAAXW4ActorEvent@@H@Z
      * @hash   -304023516
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059
@@ -209,7 +209,7 @@ public:
      * @symbol ?_getInkSquirtSoundEvent@Squid@@MEBA?AW4LevelSoundEvent@@XZ
      * @hash   -1897324836
      */
-    virtual enum LevelSoundEvent _getInkSquirtSoundEvent() const;
+    virtual enum class LevelSoundEvent _getInkSquirtSoundEvent() const;
     /**
      * @symbol ??0Squid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@AEBVColor@mce@@@Z
      * @hash   256558745

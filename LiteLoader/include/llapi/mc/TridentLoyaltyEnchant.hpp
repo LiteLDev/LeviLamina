@@ -78,6 +78,6 @@ public:
      * @symbol ??0TridentLoyaltyEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
      * @hash   -1069328763
      */
-    MCAPI TridentLoyaltyEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
+    MCAPI TridentLoyaltyEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 };

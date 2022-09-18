@@ -35,39 +35,39 @@ public:
      * @symbol ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4CommonDirection@@@Z
      * @hash   61536970
      */
-    MCAPI static class Block const * transformBlock(class Block const &, enum CommonDirection);
+    MCAPI static class Block const * transformBlock(class Block const &, enum class CommonDirection);
     /**
      * @symbol ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Name@Facing@@@Z
      * @hash   -1253974416
      */
-    MCAPI static class Block const * transformBlock(class Block const &, enum Facing::Name);
+    MCAPI static class Block const * transformBlock(class Block const &, enum class Facing::Name);
     /**
      * @symbol ?transformBlock@VanillaBlockStateTransformUtils@@SAPEBVBlock@@AEBV2@W4Rotation@@W4Mirror@@@Z
      * @hash   1010915709
      */
-    MCAPI static class Block const * transformBlock(class Block const &, enum Rotation, enum Mirror);
+    MCAPI static class Block const * transformBlock(class Block const &, enum class Rotation, enum class Mirror);
 
 //private:
     /**
      * @symbol ?_mirror@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Mirror@@@Z
      * @hash   -268081155
      */
-    MCAPI static enum CommonDirection _mirror(enum CommonDirection, enum Mirror);
+    MCAPI static enum class CommonDirection _mirror(enum class CommonDirection, enum class Mirror);
     /**
      * @symbol ?_mirrorFrontBack@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
      * @hash   1598004944
      */
-    MCAPI static enum CommonDirection _mirrorFrontBack(enum CommonDirection);
+    MCAPI static enum class CommonDirection _mirrorFrontBack(enum class CommonDirection);
     /**
      * @symbol ?_mirrorLeftRight@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@@Z
      * @hash   -407115189
      */
-    MCAPI static enum CommonDirection _mirrorLeftRight(enum CommonDirection);
+    MCAPI static enum class CommonDirection _mirrorLeftRight(enum class CommonDirection);
     /**
      * @symbol ?_rotate@VanillaBlockStateTransformUtils@@CA?AW4CommonDirection@@W42@W4Rotation@@@Z
      * @hash   1243833818
      */
-    MCAPI static enum CommonDirection _rotate(enum CommonDirection, enum Rotation);
+    MCAPI static enum class CommonDirection _rotate(enum class CommonDirection, enum class Rotation);
 
 private:
 

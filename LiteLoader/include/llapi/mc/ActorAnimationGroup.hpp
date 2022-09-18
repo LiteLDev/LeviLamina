@@ -49,7 +49,7 @@ public:
      * @symbol ?loadActorAnimation@ActorAnimationGroup@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@AEAVPackStats@@AEBVSemVersion@@W4CurrentCmdVersion@@_N@Z
      * @hash   -1245986309
      */
-    MCAPI void loadActorAnimation(std::string const &, class Core::Path const &, class PackStats &, class SemVersion const &, enum CurrentCmdVersion, bool);
+    MCAPI void loadActorAnimation(std::string const &, class Core::Path const &, class PackStats &, class SemVersion const &, enum class CurrentCmdVersion, bool);
     /**
      * @symbol ?loadActorAnimationsSync@ActorAnimationGroup@@QEAAXAEAVResourcePackManager@@@Z
      * @hash   1682451158

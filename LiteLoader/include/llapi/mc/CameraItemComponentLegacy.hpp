@@ -22,7 +22,7 @@ class CameraItemComponentLegacy {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum UseAction;
+enum class UseAction;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAITEMCOMPONENTLEGACY
@@ -126,7 +126,7 @@ public:
      * @symbol ?_tryPlace@CameraItemComponentLegacy@@AEBA?AW4UseAction@1@AEBVItemStack@@AEAVActor@@AEBVBlockPos@@EAEAVVec3@@@Z
      * @hash   72519058
      */
-    MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
+    MCAPI enum class CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char, class Vec3 &) const;
 
 private:
 

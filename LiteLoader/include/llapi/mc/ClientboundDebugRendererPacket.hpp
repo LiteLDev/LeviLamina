@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@ClientboundDebugRendererPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1930415763
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ClientboundDebugRendererPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@ClientboundDebugRendererPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1602218057
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ClientboundDebugRendererPacket@@QEAA@XZ
      * @hash   -189121257
@@ -68,7 +68,7 @@ public:
      * @symbol ??0ClientboundDebugRendererPacket@@QEAA@W4Type@0@@Z
      * @hash   -330387525
      */
-    MCAPI ClientboundDebugRendererPacket(enum ClientboundDebugRendererPacket::Type);
+    MCAPI ClientboundDebugRendererPacket(enum class ClientboundDebugRendererPacket::Type);
     /**
      * @symbol ??0ClientboundDebugRendererPacket@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@AEBVVec3@@V?$duration@_JU?$ratio@$00$0DOI@@std@@@chrono@2@@Z
      * @hash   -2013552656

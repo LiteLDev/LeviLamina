@@ -33,13 +33,14 @@
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/AttributeInstance.hpp>
 
-#include <llapi/Impl/ObjectivePacketHelper.h>
-#include <llapi/Impl/FormPacketHelper.h>
+#include <llapi/impl/ObjectivePacketHelper.h>
+#include <llapi/impl/FormPacketHelper.h>
 #include <llapi/EventAPI.h>
 #include <bitset>
 #include <llapi/mc/ItemStackDescriptor.hpp>
 #include <llapi/mc/NetworkItemStackDescriptor.hpp>
 #include <llapi/mc/ToastRequestPacket.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 extern Logger logger;
 
@@ -312,7 +313,7 @@ string Player::getClientId() {
 }
 
 int Player::getDeviceType() {
-    return getPlatform();
+    return magic_enum::enum_integer(getPlatform());
 }
 
 bool Player::isOperator() {

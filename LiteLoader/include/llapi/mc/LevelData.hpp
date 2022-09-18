@@ -42,7 +42,7 @@ public:
      * @symbol ??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z
      * @hash   -1071038506
      */
-    MCAPI LevelData(class LevelSettings const &, std::string const &, enum GeneratorType, class BlockPos const &, bool, enum EducationEditionOffer, float, float);
+    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
     /**
      * @symbol ?_getValue@LevelData@@QEBAPEBULevelDataValue@@AEBVHashedString@@@Z
      * @hash   416214712
@@ -97,7 +97,7 @@ public:
      * @symbol ?getChatRestrictionLevel@LevelData@@QEBA?AW4ChatRestrictionLevel@@XZ
      * @hash   197150602
      */
-    MCAPI enum ChatRestrictionLevel getChatRestrictionLevel() const;
+    MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const;
     /**
      * @symbol ?getCurrentTick@LevelData@@QEBAAEBUTick@@XZ
      * @hash   756854212
@@ -132,7 +132,7 @@ public:
      * @symbol ?getEducationEditionOffer@LevelData@@QEBA?AW4EducationEditionOffer@@XZ
      * @hash   -235195988
      */
-    MCAPI enum EducationEditionOffer getEducationEditionOffer() const;
+    MCAPI enum class EducationEditionOffer getEducationEditionOffer() const;
     /**
      * @symbol ?getEducationProductId@LevelData@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -1169266562
@@ -162,7 +162,7 @@ public:
      * @symbol ?getGameDifficulty@LevelData@@QEBA?AW4Difficulty@@XZ
      * @hash   -653200540
      */
-    MCAPI enum Difficulty getGameDifficulty() const;
+    MCAPI enum class Difficulty getGameDifficulty() const;
     /**
      * @symbol ?getGameRules@LevelData@@QEAAAEAVGameRules@@XZ
      * @hash   -1616425318
@@ -177,12 +177,12 @@ public:
      * @symbol ?getGameType@LevelData@@QEBA?AW4GameType@@XZ
      * @hash   -674180430
      */
-    MCAPI enum GameType getGameType() const;
+    MCAPI enum class GameType getGameType() const;
     /**
      * @symbol ?getGenerator@LevelData@@QEBA?AW4GeneratorType@@XZ
      * @hash   815297416
      */
-    MCAPI enum GeneratorType getGenerator() const;
+    MCAPI enum class GeneratorType getGenerator() const;
     /**
      * @symbol ?getLANBroadcast@LevelData@@QEBA_NXZ
      * @hash   -331990430
@@ -242,7 +242,7 @@ public:
      * @symbol ?getNetherType@LevelData@@QEBA?AW4NetherWorldType@@XZ
      * @hash   1281242834
      */
-    MCAPI enum NetherWorldType getNetherType() const;
+    MCAPI enum class NetherWorldType getNetherType() const;
     /**
      * @symbol ?getOnlySpawnV1Villagers@LevelData@@QEBA_NXZ
      * @hash   1263725266
@@ -257,12 +257,12 @@ public:
      * @symbol ?getPlatformBroadcastIntent@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
      * @hash   1951572808
      */
-    MCAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
+    MCAPI enum class Social::GamePublishSetting getPlatformBroadcastIntent() const;
     /**
      * @symbol ?getPlatformBroadcastMode@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
      * @hash   140032486
      */
-    MCAPI enum Social::GamePublishSetting getPlatformBroadcastMode() const;
+    MCAPI enum class Social::GamePublishSetting getPlatformBroadcastMode() const;
     /**
      * @symbol ?getPremiumTemplateContentIdentity@LevelData@@QEBAAEBVContentIdentity@@XZ
      * @hash   -1794105380
@@ -302,12 +302,12 @@ public:
      * @symbol ?getStorageVersion@LevelData@@QEBA?AW4StorageVersion@@XZ
      * @hash   1178788368
      */
-    MCAPI enum StorageVersion getStorageVersion() const;
+    MCAPI enum class StorageVersion getStorageVersion() const;
     /**
      * @symbol ?getStoredGenerator@LevelData@@QEBA?AW4GeneratorType@@XZ
      * @hash   1785877554
      */
-    MCAPI enum GeneratorType getStoredGenerator() const;
+    MCAPI enum class GeneratorType getStoredGenerator() const;
     /**
      * @symbol ?getTagData@LevelData@@QEAAXAEBVCompoundTag@@@Z
      * @hash   -732735800
@@ -342,17 +342,17 @@ public:
      * @symbol ?getWorldVersion@LevelData@@QEBA?AW4WorldVersion@@XZ
      * @hash   -264379202
      */
-    MCAPI enum WorldVersion getWorldVersion() const;
+    MCAPI enum class WorldVersion getWorldVersion() const;
     /**
      * @symbol ?getXBLBroadcastIntent@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
      * @hash   577719812
      */
-    MCAPI enum Social::GamePublishSetting getXBLBroadcastIntent() const;
+    MCAPI enum class Social::GamePublishSetting getXBLBroadcastIntent() const;
     /**
      * @symbol ?getXBLBroadcastMode@LevelData@@QEBA?AW4GamePublishSetting@Social@@XZ
      * @hash   374737826
      */
-    MCAPI enum Social::GamePublishSetting getXBLBroadcastMode() const;
+    MCAPI enum class Social::GamePublishSetting getXBLBroadcastMode() const;
     /**
      * @symbol ?hasAchievementsDisabled@LevelData@@QEBA_NXZ
      * @hash   279656082
@@ -477,7 +477,7 @@ public:
      * @symbol ?setChatRestrictionLevel@LevelData@@QEAAXW4ChatRestrictionLevel@@@Z
      * @hash   -74096252
      */
-    MCAPI void setChatRestrictionLevel(enum ChatRestrictionLevel);
+    MCAPI void setChatRestrictionLevel(enum class ChatRestrictionLevel);
     /**
      * @symbol ?setCommandsEnabled@LevelData@@QEAAX_N@Z
      * @hash   -137126584
@@ -492,7 +492,7 @@ public:
      * @symbol ?setDataDrivenGenerator@LevelData@@QEAAXW4GeneratorType@@@Z
      * @hash   -630194088
      */
-    MCAPI void setDataDrivenGenerator(enum GeneratorType);
+    MCAPI void setDataDrivenGenerator(enum class GeneratorType);
     /**
      * @symbol ?setEduSharedUriResource@LevelData@@QEAAXAEBUEduSharedUriResource@@@Z
      * @hash   -11419706
@@ -502,7 +502,7 @@ public:
      * @symbol ?setEducationEditionOffer@LevelData@@QEAAXW4EducationEditionOffer@@@Z
      * @hash   -1391393628
      */
-    MCAPI void setEducationEditionOffer(enum EducationEditionOffer);
+    MCAPI void setEducationEditionOffer(enum class EducationEditionOffer);
     /**
      * @symbol ?setEducationOid@LevelData@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1581589284
@@ -517,17 +517,17 @@ public:
      * @symbol ?setGameDifficulty@LevelData@@QEAAXW4Difficulty@@@Z
      * @hash   2090012510
      */
-    MCAPI void setGameDifficulty(enum Difficulty);
+    MCAPI void setGameDifficulty(enum class Difficulty);
     /**
      * @symbol ?setGameType@LevelData@@QEAAXW4GameType@@@Z
      * @hash   1064928044
      */
-    MCAPI void setGameType(enum GameType);
+    MCAPI void setGameType(enum class GameType);
     /**
      * @symbol ?setGenerator@LevelData@@QEAAXW4GeneratorType@@@Z
      * @hash   164977212
      */
-    MCAPI void setGenerator(enum GeneratorType);
+    MCAPI void setGenerator(enum class GeneratorType);
     /**
      * @symbol ?setHasLockedBehaviorPack@LevelData@@QEAAX_N@Z
      * @hash   -679383608
@@ -587,12 +587,12 @@ public:
      * @symbol ?setPlatformBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
      * @hash   -370062448
      */
-    MCAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting);
+    MCAPI void setPlatformBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setPlatformBroadcastMode@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
      * @hash   709117714
      */
-    MCAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting);
+    MCAPI void setPlatformBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setPremiumTemplateContentIdentity@LevelData@@QEAAXAEBVContentIdentity@@@Z
      * @hash   1839245362
@@ -627,7 +627,7 @@ public:
      * @symbol ?setStorageVersion@LevelData@@QEAAXW4StorageVersion@@@Z
      * @hash   -557752230
      */
-    MCAPI void setStorageVersion(enum StorageVersion);
+    MCAPI void setStorageVersion(enum class StorageVersion);
     /**
      * @symbol ?setTagData@LevelData@@QEBAXAEAVCompoundTag@@@Z
      * @hash   1098452644
@@ -662,17 +662,17 @@ public:
      * @symbol ?setWorldVersion@LevelData@@QEAAXW4WorldVersion@@@Z
      * @hash   982597432
      */
-    MCAPI void setWorldVersion(enum WorldVersion);
+    MCAPI void setWorldVersion(enum class WorldVersion);
     /**
      * @symbol ?setXBLBroadcastIntent@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
      * @hash   -1117385788
      */
-    MCAPI void setXBLBroadcastIntent(enum Social::GamePublishSetting);
+    MCAPI void setXBLBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setXBLBroadcastMode@LevelData@@QEAAXW4GamePublishSetting@Social@@@Z
      * @hash   1427063878
      */
-    MCAPI void setXBLBroadcastMode(enum Social::GamePublishSetting);
+    MCAPI void setXBLBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @symbol ?touchLastLoadedWithVersion@LevelData@@QEAAXXZ
      * @hash   267765891
@@ -687,7 +687,7 @@ public:
      * @symbol ?v1_read@LevelData@@QEAAXAEAVBitStream@RakNet@@W4StorageVersion@@@Z
      * @hash   670189465
      */
-    MCAPI void v1_read(class RakNet::BitStream &, enum StorageVersion);
+    MCAPI void v1_read(class RakNet::BitStream &, enum class StorageVersion);
     /**
      * @symbol ??1LevelData@@QEAA@XZ
      * @hash   1273834874

@@ -11,7 +11,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "CommandFlag.hpp"
-enum CommandPermissionLevel : char;
+enum class CommandPermissionLevel : char;
 
 #undef BEFORE_EXTRA
 
@@ -138,7 +138,7 @@ public:
      * @symbol ?getId@AvailableCommandsPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -383371659
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AvailableCommandsPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -156,7 +156,7 @@ public:
      * @symbol ?_read@AvailableCommandsPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1457506149
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AvailableCommandsPacket@@QEAA@XZ
      * @hash   -1253213659

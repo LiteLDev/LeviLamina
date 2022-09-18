@@ -269,11 +269,11 @@ public:
      * @symbol ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@@Z
      * @hash   986562387
      */
-    MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum CopperType, class WeakPtr<class BlockLegacy> &);
+    MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum class CopperType, class WeakPtr<class BlockLegacy> &);
     /**
      * @symbol ??0CutCopperStairs@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVBlockLegacy@@W4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@33@Z
      * @hash   -376822365
      */
-    MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
+    MCAPI CutCopperStairs(std::string const &, int, class BlockLegacy const &, enum class CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
 
 };

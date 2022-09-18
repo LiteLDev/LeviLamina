@@ -108,7 +108,7 @@ public:
      * @symbol ?handleEntityEvent@GlowSquid@@UEAAXW4ActorEvent@@H@Z
      * @hash   -785952367
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059
@@ -191,7 +191,7 @@ public:
      * @symbol ?_getInkSquirtSoundEvent@GlowSquid@@MEBA?AW4LevelSoundEvent@@XZ
      * @hash   527492617
      */
-    virtual enum LevelSoundEvent _getInkSquirtSoundEvent() const;
+    virtual enum class LevelSoundEvent _getInkSquirtSoundEvent() const;
     /**
      * @symbol ??0GlowSquid@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
      * @hash   -183462751

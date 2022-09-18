@@ -82,7 +82,7 @@ public:
      * @symbol ??0GrindstoneContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   -581636759
      */
-    MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI GrindstoneContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @symbol ?ADDITIONAL_SLOT@GrindstoneContainerManagerModel@@2HB
      * @hash   -1238835935

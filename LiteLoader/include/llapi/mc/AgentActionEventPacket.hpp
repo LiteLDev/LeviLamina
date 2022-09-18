@@ -39,7 +39,7 @@ public:
      * @symbol ?getId@AgentActionEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   469091399
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@AgentActionEventPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -57,7 +57,7 @@ public:
      * @symbol ?_read@AgentActionEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1078159309
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AgentActionEventPacket@@QEAA@XZ
      * @hash   1838128915
@@ -67,6 +67,6 @@ public:
      * @symbol ??0AgentActionEventPacket@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AgentActionType@@AEBVValue@Json@@@Z
      * @hash   -857983226
      */
-    MCAPI AgentActionEventPacket(std::string const &, enum AgentActionType, class Json::Value const &);
+    MCAPI AgentActionEventPacket(std::string const &, enum class AgentActionType, class Json::Value const &);
 
 };

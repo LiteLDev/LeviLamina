@@ -27,7 +27,6 @@
 
 #include <FakeSymbol.hpp>
 
-using std::list;
 using std::string, std::string_view;
 using std::unordered_map, std::unordered_multimap, std::vector;
 struct aphash {

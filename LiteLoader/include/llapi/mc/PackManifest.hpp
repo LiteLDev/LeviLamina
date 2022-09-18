@@ -51,7 +51,7 @@ public:
      * @symbol ??0PackManifest@@QEAA@W4ManifestType@@@Z
      * @hash   -1924036075
      */
-    MCAPI PackManifest(enum ManifestType);
+    MCAPI PackManifest(enum class ManifestType);
     /**
      * @symbol ??0PackManifest@@QEAA@AEBV0@@Z
      * @hash   -2015772895
@@ -106,7 +106,7 @@ public:
      * @symbol ?getFormatVersion@PackManifest@@QEBA?AW4PackManifestFormat@@XZ
      * @hash   -1428496466
      */
-    MCAPI enum PackManifestFormat getFormatVersion() const;
+    MCAPI enum class PackManifestFormat getFormatVersion() const;
     /**
      * @symbol ?getIdentity@PackManifest@@QEBAAEBUPackIdVersion@@XZ
      * @hash   -1756874534
@@ -126,7 +126,7 @@ public:
      * @symbol ?getManifestOrigin@PackManifest@@QEBA?AW4ManifestOrigin@@XZ
      * @hash   -1532213036
      */
-    MCAPI enum ManifestOrigin getManifestOrigin() const;
+    MCAPI enum class ManifestOrigin getManifestOrigin() const;
     /**
      * @symbol ?getMetaData@PackManifest@@QEBAAEBVResourceMetadata@@XZ
      * @hash   -344709988
@@ -156,22 +156,22 @@ public:
      * @symbol ?getOriginalFormatVersion@PackManifest@@QEBA?AW4PackManifestFormat@@XZ
      * @hash   1508345740
      */
-    MCAPI enum PackManifestFormat getOriginalFormatVersion() const;
+    MCAPI enum class PackManifestFormat getOriginalFormatVersion() const;
     /**
      * @symbol ?getPackCategory@PackManifest@@QEBA?AW4PackCategory@@XZ
      * @hash   -2133859852
      */
-    MCAPI enum PackCategory getPackCategory() const;
+    MCAPI enum class PackCategory getPackCategory() const;
     /**
      * @symbol ?getPackOrigin@PackManifest@@QEBA?AW4PackOrigin@@XZ
      * @hash   1084661892
      */
-    MCAPI enum PackOrigin getPackOrigin() const;
+    MCAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getPackScope@PackManifest@@QEBA?AW4PackScope@@XZ
      * @hash   421745316
      */
-    MCAPI enum PackScope getPackScope() const;
+    MCAPI enum class PackScope getPackScope() const;
     /**
      * @symbol ?getPackSettings@PackManifest@@QEBAAEBVValue@Json@@XZ
      * @hash   -49323296
@@ -186,7 +186,7 @@ public:
      * @symbol ?getPackType@PackManifest@@QEBA?AW4PackType@@XZ
      * @hash   230833476
      */
-    MCAPI enum PackType getPackType() const;
+    MCAPI enum class PackType getPackType() const;
     /**
      * @symbol ?getRequiredBaseGameVersion@PackManifest@@QEBAAEBVBaseGameVersion@@XZ
      * @hash   -1804483288
@@ -256,7 +256,7 @@ public:
      * @symbol ?serialize@PackManifest@@QEBAXW4PackManifestFormat@@AEAVValue@Json@@@Z
      * @hash   -1886230765
      */
-    MCAPI void serialize(enum PackManifestFormat, class Json::Value &) const;
+    MCAPI void serialize(enum class PackManifestFormat, class Json::Value &) const;
     /**
      * @symbol ?setCanBeRedownloaded@PackManifest@@QEAAX_N@Z
      * @hash   -536726632
@@ -276,7 +276,7 @@ public:
      * @symbol ?setFormatVersion@PackManifest@@QEAAXW4PackManifestFormat@@@Z
      * @hash   1929011676
      */
-    MCAPI void setFormatVersion(enum PackManifestFormat);
+    MCAPI void setFormatVersion(enum class PackManifestFormat);
     /**
      * @symbol ?setHasClientScript@PackManifest@@QEAAXXZ
      * @hash   -829011579
@@ -331,7 +331,7 @@ public:
      * @symbol ?setManifestOrigin@PackManifest@@QEAAXAEBW4ManifestOrigin@@@Z
      * @hash   -854894546
      */
-    MCAPI void setManifestOrigin(enum ManifestOrigin const &);
+    MCAPI void setManifestOrigin(enum class ManifestOrigin const &);
     /**
      * @symbol ?setMetadata@PackManifest@@QEAAXAEBVResourceMetadata@@@Z
      * @hash   858112268
@@ -351,12 +351,12 @@ public:
      * @symbol ?setOptionLockedState@PackManifest@@QEAAXW4TemplateLockState@@@Z
      * @hash   1589236302
      */
-    MCAPI void setOptionLockedState(enum TemplateLockState);
+    MCAPI void setOptionLockedState(enum class TemplateLockState);
     /**
      * @symbol ?setOriginalFormatVersion@PackManifest@@QEAAXW4PackManifestFormat@@@Z
      * @hash   2146275662
      */
-    MCAPI void setOriginalFormatVersion(enum PackManifestFormat);
+    MCAPI void setOriginalFormatVersion(enum class PackManifestFormat);
     /**
      * @symbol ?setPackCapabilitiesTrusted@PackManifest@@QEAAXXZ
      * @hash   -463245435
@@ -366,17 +366,17 @@ public:
      * @symbol ?setPackCategory@PackManifest@@QEAAXW4PackCategory@@@Z
      * @hash   1181304070
      */
-    MCAPI void setPackCategory(enum PackCategory);
+    MCAPI void setPackCategory(enum class PackCategory);
     /**
      * @symbol ?setPackOrigin@PackManifest@@QEAAXW4PackOrigin@@@Z
      * @hash   -664505930
      */
-    MCAPI void setPackOrigin(enum PackOrigin);
+    MCAPI void setPackOrigin(enum class PackOrigin);
     /**
      * @symbol ?setPackScope@PackManifest@@QEAAXW4PackScope@@@Z
      * @hash   -526984544
      */
-    MCAPI void setPackScope(enum PackScope);
+    MCAPI void setPackScope(enum class PackScope);
     /**
      * @symbol ?setPackSettings@PackManifest@@QEAAXAEBVValue@Json@@@Z
      * @hash   1924433404
@@ -391,7 +391,7 @@ public:
      * @symbol ?setPackType@PackManifest@@QEAAXW4PackType@@@Z
      * @hash   -1782748698
      */
-    MCAPI void setPackType(enum PackType);
+    MCAPI void setPackType(enum class PackType);
     /**
      * @symbol ?setPlatformLocked@PackManifest@@QEAAX_N@Z
      * @hash   621749854
@@ -416,7 +416,7 @@ public:
      * @symbol ?StringToPackScope@PackManifest@@SA?AW4PackScope@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1295409213
      */
-    MCAPI static enum PackScope StringToPackScope(std::string const &);
+    MCAPI static enum class PackScope StringToPackScope(std::string const &);
 
 //private:
     /**
@@ -445,6 +445,6 @@ private:
      * @symbol ?STRING_TO_PACK_SCOPE@PackManifest@@0V?$unordered_map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@U?$hash@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@U?$equal_to@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4PackScope@@@std@@@2@@std@@B
      * @hash   887683445
      */
-    MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum PackScope>>> const STRING_TO_PACK_SCOPE;
+    MCAPI static class std::unordered_map<std::string, enum class PackScope, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum class PackScope>>> const STRING_TO_PACK_SCOPE;
 
 };

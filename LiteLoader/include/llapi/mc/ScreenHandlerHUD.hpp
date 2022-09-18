@@ -40,6 +40,6 @@ public:
      * @symbol ?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z
      * @hash   1442899735
      */
-    virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const &);
+    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
 
 };

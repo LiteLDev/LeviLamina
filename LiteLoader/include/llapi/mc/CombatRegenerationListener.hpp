@@ -80,6 +80,6 @@ public:
      * @symbol ?onActorDeath@CombatRegenerationListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
      * @hash   530832461
      */
-    virtual enum EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
+    virtual enum class EventResult onActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
 
 };

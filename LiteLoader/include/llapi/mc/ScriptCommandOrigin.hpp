@@ -88,7 +88,7 @@ public:
      * @symbol ?getPermissionsLevel@ScriptCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -562366122
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@ScriptCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
@@ -112,7 +112,7 @@ public:
      * @symbol ?getOriginType@ScriptCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   -314647509
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  26
      * @symbol ?handleCommandOutputCallback@ScriptCommandOrigin@@UEBAXH$$QEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAVValue@Json@@@Z

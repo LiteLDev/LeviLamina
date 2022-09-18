@@ -40,7 +40,7 @@ public:
      * @symbol ?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z
      * @hash   997315037
      */
-    virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
+    virtual bool isReplayNeeded(enum class AdvanceFrameResult) const;
     /**
      * @vftbl  2
      * @symbol ?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEAUIActorMovementProxy@@_K1@Z

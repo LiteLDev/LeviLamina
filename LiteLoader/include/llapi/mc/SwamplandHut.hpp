@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@SwamplandHut@@UEBA?AW4StructurePieceType@@XZ
      * @hash   697898799
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@SwamplandHut@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z

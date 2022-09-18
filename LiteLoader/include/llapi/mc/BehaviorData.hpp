@@ -21,7 +21,7 @@ class BehaviorData {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum DataType;
+enum class DataType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORDATA
@@ -41,6 +41,6 @@ public:
      * @symbol ?hasDataOfType@BehaviorData@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DataType@1@@Z
      * @hash   262436347
      */
-    MCAPI bool hasDataOfType(std::string const &, enum BehaviorData::DataType) const;
+    MCAPI bool hasDataOfType(std::string const &, enum class BehaviorData::DataType) const;
 
 };

@@ -92,11 +92,11 @@ public:
      * @symbol ?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
      * @hash   552618582
      */
-    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
+    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum class POIType) const;
     /**
      * @symbol ??0HideGoal@@QEAA@AEAVMob@@MMMW4POIType@@@Z
      * @hash   -566635134
      */
-    MCAPI HideGoal(class Mob &, float, float, float, enum POIType);
+    MCAPI HideGoal(class Mob &, float, float, float, enum class POIType);
 
 };

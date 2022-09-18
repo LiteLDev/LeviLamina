@@ -41,7 +41,7 @@ public:
      * @symbol ?getId@SetScoreboardIdentityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   759373746
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetScoreboardIdentityPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -59,7 +59,7 @@ public:
      * @symbol ?_read@SetScoreboardIdentityPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -960964616
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?change@SetScoreboardIdentityPacket@@SA?AV1@AEBUScoreboardId@@AEBUPlayerScoreboardId@@@Z
      * @hash   -16933123

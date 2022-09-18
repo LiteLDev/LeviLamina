@@ -52,7 +52,7 @@ public:
      * @symbol ?canProvideSupport@SeaPickle@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   -1771214648
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @hash   -299030517
@@ -174,7 +174,7 @@ public:
      * @symbol ?onFertilized@SeaPickle@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      * @hash   -858208579
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  85
      * @symbol ?mayConsumeFertilizer@SeaPickle@@UEBA_NAEAVBlockSource@@@Z

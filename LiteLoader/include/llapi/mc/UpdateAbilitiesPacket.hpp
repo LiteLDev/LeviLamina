@@ -38,7 +38,7 @@ public:
      * @symbol ?getId@UpdateAbilitiesPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -2130442585
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateAbilitiesPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -56,7 +56,7 @@ public:
      * @symbol ?_read@UpdateAbilitiesPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   735699875
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateAbilitiesPacket@@QEAA@XZ
      * @hash   -231244845
@@ -85,6 +85,6 @@ private:
      * @symbol ?ABILITIES_LAYER_MAP@UpdateAbilitiesPacket@@0V?$array@W4SerializedAbilitiesLayer@UpdateAbilitiesPacket@@$03@std@@B
      * @hash   -1326207825
      */
-    MCAPI static class std::array<enum UpdateAbilitiesPacket::SerializedAbilitiesLayer, 4> const ABILITIES_LAYER_MAP;
+    MCAPI static class std::array<enum class UpdateAbilitiesPacket::SerializedAbilitiesLayer, 4> const ABILITIES_LAYER_MAP;
 
 };

@@ -77,7 +77,7 @@ public:
      * @symbol ?peerStartup@RakPeerHelper@@QEAA?AW4StartupResult@RakNet@@PEAVRakPeerInterface@3@AEBUConnectionDefinition@@@Z
      * @hash   245475105
      */
-    MCAPI enum RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &);
+    MCAPI enum class RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &);
     /**
      * @symbol ?reset@RakPeerHelper@@QEAAXXZ
      * @hash   -790647869
@@ -99,7 +99,7 @@ public:
      * @symbol ?_startupInternal@RakPeerHelper@@AEAA?AW4StartupResult@RakNet@@V?$not_null@PEAVRakPeerInterface@RakNet@@@gsl@@AEBUConnectionDefinition@@PEAUSocketDescriptor@3@AEAHH@Z
      * @hash   -840951999
      */
-    MCAPI enum RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int &, int);
+    MCAPI enum class RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface *>, struct ConnectionDefinition const &, struct RakNet::SocketDescriptor *, int &, int);
 
 private:
 

@@ -7,13 +7,17 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #endif
 
-#include "Configs.h"
-#include <llapi/Global.h>
-#include "../utils/JsonHelper.h"
-#include <llapi/mc/Types.hpp>
-#include <llapi/LoggerAPI.h>
 #include <vector>
 #include <string>
+#include "Configs.h"
+#include "../utils/JsonHelper.h"
+
+#include <llapi/Global.h>
+#include <llapi/mc/Types.hpp>
+#include <llapi/mc/BlockPos.hpp>
+#include <llapi/mc/Vec3.hpp>
+#include <llapi/LoggerAPI.h>
+
 using std::string;
 using std::vector;
 

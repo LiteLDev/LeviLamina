@@ -11,7 +11,7 @@
 // Include Headers or Declare Types Here
 
 // clang-format off
-enum CircuitComponentType : uint64_t {
+enum class CircuitComponentType : uint64_t {
     UNDEFINED        = 0LL,
     CAPACITOR        = 1129530177LL,
     CONSUMER         = 1129530179LL,
@@ -181,13 +181,13 @@ public:
      * @symbol ?getCircuitComponentType@BaseCircuitComponent@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   -486167679
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  23
      * @symbol ?getCircuitComponentGroupType@BaseCircuitComponent@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   1962059676
      */
-    virtual enum CircuitComponentType getCircuitComponentGroupType() const;
+    virtual enum class CircuitComponentType getCircuitComponentGroupType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
     /**
      * @symbol ?allowIndirect@BaseCircuitComponent@@UEBA_NXZ

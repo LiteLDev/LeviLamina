@@ -56,7 +56,7 @@ public:
      * @symbol ?getEntityTypeId@GetCollisionShapeActorProxy@@UEBA?AW4ActorType@@XZ
      * @hash   -1246112505
      */
-    virtual enum ActorType getEntityTypeId() const;
+    virtual enum class ActorType getEntityTypeId() const;
     /**
      * @vftbl  5
      * @symbol ?isWearingLeatherBoots@GetCollisionShapeActorProxy@@UEBA_NXZ

@@ -106,7 +106,7 @@ public:
      * @symbol ?isSameType@ChemistryTableBlockActor@@QEBA_NW4ChemistryTableType@@@Z
      * @hash   124442261
      */
-    MCAPI bool isSameType(enum ChemistryTableType) const;
+    MCAPI bool isSameType(enum class ChemistryTableType) const;
     /**
      * @symbol ?playerOpenLabTable@ChemistryTableBlockActor@@QEAAXAEAVPlayer@@@Z
      * @hash   -2039025162
@@ -143,7 +143,7 @@ public:
      * @symbol ?_updateType@ChemistryTableBlockActor@@AEAA?AW4ChemistryTableType@@AEAVBlockSource@@@Z
      * @hash   -1376507830
      */
-    MCAPI enum ChemistryTableType _updateType(class BlockSource &);
+    MCAPI enum class ChemistryTableType _updateType(class BlockSource &);
 
 private:
 

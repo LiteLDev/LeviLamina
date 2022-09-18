@@ -64,7 +64,7 @@ public:
      * @symbol ?canProvideSupport@ComposterBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   -1356297010
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @hash   -299030517
@@ -372,7 +372,7 @@ public:
      * @symbol ?_notifyClientComposterUsed@ComposterBlock@@AEBAXAEBVPlayer@@FW4POIBlockInteractionType@MinecraftEventing@@@Z
      * @hash   -844701496
      */
-    MCAPI void _notifyClientComposterUsed(class Player const &, short, enum MinecraftEventing::POIBlockInteractionType) const;
+    MCAPI void _notifyClientComposterUsed(class Player const &, short, enum class MinecraftEventing::POIBlockInteractionType) const;
     /**
      * @symbol ?_getCompostableItems@ComposterBlock@@CAAEBV?$vector@U?$pair@HC@std@@V?$allocator@U?$pair@HC@std@@@2@@std@@AEBVExperiments@@@Z
      * @hash   -589617171

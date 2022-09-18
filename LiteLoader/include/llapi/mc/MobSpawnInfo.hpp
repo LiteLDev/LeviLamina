@@ -34,6 +34,6 @@ public:
      * @symbol ?categoryID@MobSpawnInfo@@SAHW4ActorType@@@Z
      * @hash   1551765849
      */
-    MCAPI static int categoryID(enum ActorType);
+    MCAPI static int categoryID(enum class ActorType);
 
 };

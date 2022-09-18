@@ -68,12 +68,12 @@ public:
      * @symbol ?getPackType@PackReport@@QEBA?AW4PackType@@XZ
      * @hash   1477671482
      */
-    MCAPI enum PackType getPackType() const;
+    MCAPI enum class PackType getPackType() const;
     /**
      * @symbol ?hasErrors@PackReport@@QEAA_NW4PackErrorType@@@Z
      * @hash   30598297
      */
-    MCAPI bool hasErrors(enum PackErrorType);
+    MCAPI bool hasErrors(enum class PackErrorType);
     /**
      * @symbol ?hasErrors@PackReport@@QEBA_NXZ
      * @hash   1135676176
@@ -108,7 +108,7 @@ public:
      * @symbol ?setPackType@PackReport@@QEAAXW4PackType@@@Z
      * @hash   -1606940560
      */
-    MCAPI void setPackType(enum PackType);
+    MCAPI void setPackType(enum class PackType);
     /**
      * @symbol ?setUpgradeSuccess@PackReport@@QEAAXXZ
      * @hash   1387285523

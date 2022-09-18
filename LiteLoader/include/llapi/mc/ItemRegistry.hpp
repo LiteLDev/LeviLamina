@@ -51,7 +51,7 @@ public:
      * @symbol ?_parseItemDefinition@ItemRegistry@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@3@1W4ItemVersion@@W4PackType@@@Z
      * @hash   -528964872
      */
-    MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
+    MCAPI static std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
     /**
      * @symbol ?addItemToTagMap@ItemRegistry@@SAXAEBVItem@@@Z
      * @hash   -819749094
@@ -131,7 +131,7 @@ public:
      * @symbol ?initServerData@ItemRegistry@@SAXAEAVResourcePackManager@@AEBVExperiments@@W4ItemVersion@@@Z
      * @hash   -1145355258
      */
-    MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum ItemVersion);
+    MCAPI static void initServerData(class ResourcePackManager &, class Experiments const &, enum class ItemVersion);
     /**
      * @symbol ?isComponentBasedItemSchema@ItemRegistry@@SA_NAEBVSemVersion@@@Z
      * @hash   -1930211685
@@ -293,7 +293,7 @@ public:
      * @symbol ?_loadItemDefinition@ItemRegistry@@CAXAEAVValue@Json@@_NV?$function@$$A6AXAEAV?$WeakPtr@VItem@@@@AEAVValue@Json@@AEBVSemVersion@@@Z@std@@1W4ItemVersion@@W4PackType@@@Z
      * @hash   1013870045
      */
-    MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum ItemVersion, enum PackType);
+    MCAPI static void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
 
 private:
     /**

@@ -21,7 +21,7 @@ class IRequestAction {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum RequestActionType;
+enum class RequestActionType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IREQUESTACTION
@@ -59,7 +59,7 @@ public:
      * @symbol ??0IRequestAction@@QEAA@AEBW4RequestActionType@0@@Z
      * @hash   -2068339155
      */
-    MCAPI IRequestAction(enum IRequestAction::RequestActionType const &);
+    MCAPI IRequestAction(enum class IRequestAction::RequestActionType const &);
     /**
      * @symbol ?isValidTag@IRequestAction@@SA_NAEBVCompoundTag@@@Z
      * @hash   497694715

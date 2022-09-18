@@ -158,7 +158,7 @@ public:
      * @symbol ??0CommandBlockActor@@QEAA@AEBVBlockPos@@W4CommandBlockMode@@@Z
      * @hash   -350182661
      */
-    MCAPI CommandBlockActor(class BlockPos const &, enum CommandBlockMode);
+    MCAPI CommandBlockActor(class BlockPos const &, enum class CommandBlockMode);
     /**
      * @symbol ?getBaseCommandBlock@CommandBlockActor@@QEAAAEAVBaseCommandBlock@@XZ
      * @hash   1933211136
@@ -188,7 +188,7 @@ public:
      * @symbol ?getMode@CommandBlockActor@@QEBA?AW4CommandBlockMode@@AEAVBlockSource@@@Z
      * @hash   -678386879
      */
-    MCAPI enum CommandBlockMode getMode(class BlockSource &) const;
+    MCAPI enum class CommandBlockMode getMode(class BlockSource &) const;
     /**
      * @symbol ?getPowered@CommandBlockActor@@QEBA_NXZ
      * @hash   616707210
@@ -243,7 +243,7 @@ public:
      * @symbol ?updateBlock@CommandBlockActor@@QEAAXAEAVBlockSource@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4CommandBlockMode@@_N33H3@Z
      * @hash   -1711145504
      */
-    MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum CommandBlockMode, bool, bool, bool, int, bool);
+    MCAPI void updateBlock(class BlockSource &, std::string const &, std::string const &, enum class CommandBlockMode, bool, bool, bool, int, bool);
     /**
      * @symbol ?wasConditionMet@CommandBlockActor@@QEAA_NXZ
      * @hash   -284382280
@@ -255,7 +255,7 @@ public:
      * @symbol ?_setAutomatic@CommandBlockActor@@AEAAXAEAVBlockSource@@_NW4CommandBlockMode@@@Z
      * @hash   1613947286
      */
-    MCAPI void _setAutomatic(class BlockSource &, bool, enum CommandBlockMode);
+    MCAPI void _setAutomatic(class BlockSource &, bool, enum class CommandBlockMode);
 
 private:
 

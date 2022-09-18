@@ -117,7 +117,7 @@ public:
      * @symbol ?getType@NewUniqueIdsDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ
      * @hash   -1635457325
      */
-    virtual enum DataLoadHelperType getType() const;
+    virtual enum class DataLoadHelperType getType() const;
     /**
      * @vftbl  17
      * @symbol ?shouldResetTime@NewUniqueIdsDataLoadHelper@@UEAA_NXZ
@@ -144,7 +144,7 @@ public:
      * @symbol ?loadDirection@NewUniqueIdsDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z
      * @hash   1815077975
      */
-    MCVAPI enum Direction::Type loadDirection(enum Direction::Type);
+    MCVAPI enum class Direction::Type loadDirection(enum class Direction::Type);
     /**
      * @symbol ?loadFacingID@NewUniqueIdsDataLoadHelper@@UEAAEE@Z
      * @hash   -871553827
@@ -154,7 +154,7 @@ public:
      * @symbol ?loadMirror@NewUniqueIdsDataLoadHelper@@UEAA?AW4Mirror@@W42@@Z
      * @hash   981032755
      */
-    MCVAPI enum Mirror loadMirror(enum Mirror);
+    MCVAPI enum class Mirror loadMirror(enum class Mirror);
     /**
      * @symbol ?loadPosition@NewUniqueIdsDataLoadHelper@@UEAA?AVVec3@@AEBV2@@Z
      * @hash   -974371817
@@ -164,7 +164,7 @@ public:
      * @symbol ?loadRotation@NewUniqueIdsDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z
      * @hash   -734777420
      */
-    MCVAPI enum Rotation loadRotation(enum Rotation);
+    MCVAPI enum class Rotation loadRotation(enum class Rotation);
     /**
      * @symbol ?loadRotationDegreesX@NewUniqueIdsDataLoadHelper@@UEAAMM@Z
      * @hash   204990611

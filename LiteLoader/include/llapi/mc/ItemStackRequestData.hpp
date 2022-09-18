@@ -54,7 +54,7 @@ public:
      * @symbol ?tryFindAction@ItemStackRequestData@@QEBAPEBVItemStackRequestAction@@W4ItemStackRequestActionType@@@Z
      * @hash   -1599139296
      */
-    MCAPI class ItemStackRequestAction const * tryFindAction(enum ItemStackRequestActionType) const;
+    MCAPI class ItemStackRequestAction const * tryFindAction(enum class ItemStackRequestActionType) const;
     /**
      * @symbol ?write@ItemStackRequestData@@QEBAXAEAVBinaryStream@@@Z
      * @hash   -1955462576

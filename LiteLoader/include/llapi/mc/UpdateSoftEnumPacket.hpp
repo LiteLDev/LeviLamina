@@ -10,7 +10,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum SoftEnumUpdateType : char
+enum class SoftEnumUpdateType : char
 {
     Add = 0,
     Remove = 1,
@@ -46,7 +46,7 @@ public:
      * @symbol ?getId@UpdateSoftEnumPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1027836562
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateSoftEnumPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -64,7 +64,7 @@ public:
      * @symbol ?_read@UpdateSoftEnumPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1117127544
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0UpdateSoftEnumPacket@@QEAA@XZ
      * @hash   499812136
@@ -74,6 +74,6 @@ public:
      * @symbol ??0UpdateSoftEnumPacket@@QEAA@W4SoftEnumUpdateType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   -616242862
      */
-    MCAPI UpdateSoftEnumPacket(enum SoftEnumUpdateType, std::string const &, std::vector<std::string> const &);
+    MCAPI UpdateSoftEnumPacket(enum class SoftEnumUpdateType, std::string const &, std::vector<std::string> const &);
 
 };

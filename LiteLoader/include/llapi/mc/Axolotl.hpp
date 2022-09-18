@@ -37,7 +37,7 @@ public:
      * @symbol ?initializeComponents@Axolotl@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   1397874509
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -1935141087

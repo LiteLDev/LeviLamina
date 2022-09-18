@@ -49,12 +49,12 @@ public:
      * @symbol ?addEntryActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
      * @hash   1022437450
      */
-    MCAPI class ActorAnimationEvent & addEntryActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI class ActorAnimationEvent & addEntryActorEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ?addExitActorEvent@ActorAnimationControllerState@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
      * @hash   1020487976
      */
-    MCAPI class ActorAnimationEvent & addExitActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI class ActorAnimationEvent & addExitActorEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ?addParticleEffect@ActorAnimationControllerState@@QEAAAEAVActorParticleEffect@@XZ
      * @hash   1950573840
@@ -69,7 +69,7 @@ public:
      * @symbol ?addTransition@ActorAnimationControllerState@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4MolangVersion@@_N@Z
      * @hash   1407261696
      */
-    MCAPI void addTransition(std::string const &, std::string const &, enum MolangVersion, bool);
+    MCAPI void addTransition(std::string const &, std::string const &, enum class MolangVersion, bool);
     /**
      * @symbol ?addVariable@ActorAnimationControllerState@@QEAAAEAVStateAnimationVariable@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1362697169

@@ -37,19 +37,19 @@ public:
      * @symbol ?reloadHardcoded@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   315265256
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -591918221
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  10
      * @symbol ?initializeComponents@PrimedTnt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   336587803
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   20535427
@@ -60,7 +60,7 @@ public:
      * @symbol ?getOwnerEntityType@PrimedTnt@@UEAA?AW4ActorType@@XZ
      * @hash   -1843640195
      */
-    virtual enum ActorType getOwnerEntityType();
+    virtual enum class ActorType getOwnerEntityType();
     /**
      * @vftbl  41
      * @hash   -249160383

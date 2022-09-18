@@ -21,7 +21,7 @@ class ResourceInformation {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum ResourceType;
+enum class ResourceType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEINFORMATION
@@ -35,7 +35,7 @@ public:
      * @symbol ??0ResourceInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@AEBVUUID@mce@@W4ResourceType@0@00@Z
      * @hash   -2029362718
      */
-    MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, enum ResourceInformation::ResourceType, std::string const &, std::string const &);
+    MCAPI ResourceInformation(std::string const &, class SemVersion const &, class mce::UUID const &, enum class ResourceInformation::ResourceType, std::string const &, std::string const &);
     /**
      * @symbol ??0ResourceInformation@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVSemVersion@@AEBVUUID@mce@@000@Z
      * @hash   851713029
@@ -60,11 +60,11 @@ public:
      * @symbol ?ResourceTypeFromString@ResourceInformation@@SA?AW4ResourceType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   701079220
      */
-    MCAPI static enum ResourceInformation::ResourceType ResourceTypeFromString(std::string const &);
+    MCAPI static enum class ResourceInformation::ResourceType ResourceTypeFromString(std::string const &);
     /**
      * @symbol ?StringFromResourceType@ResourceInformation@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ResourceType@1@@Z
      * @hash   1502756144
      */
-    MCAPI static std::string const & StringFromResourceType(enum ResourceInformation::ResourceType);
+    MCAPI static std::string const & StringFromResourceType(enum class ResourceInformation::ResourceType);
 
 };

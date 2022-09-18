@@ -85,6 +85,6 @@ public:
      * @symbol ?getType@InternalItemDescriptor@@UEBA?AW4InternalType@ItemDescriptor@@XZ
      * @hash   -327747312
      */
-    virtual enum ItemDescriptor::InternalType getType() const;
+    virtual enum class ItemDescriptor::InternalType getType() const;
 
 };

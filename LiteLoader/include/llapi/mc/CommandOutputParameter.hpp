@@ -18,7 +18,7 @@
 class CommandOutputParameter {
 
 #define AFTER_EXTRA
-    enum NoCountType;
+    enum class NoCountType;
     std::string str;
     int type;
 #undef AFTER_EXTRA
@@ -38,7 +38,7 @@ public:
      * @symbol ??0CommandOutputParameter@@QEAA@W4NoCountType@0@@Z
      * @hash   704575447
      */
-    MCAPI CommandOutputParameter(enum CommandOutputParameter::NoCountType);
+    MCAPI CommandOutputParameter(enum class CommandOutputParameter::NoCountType);
     /**
      * @symbol ??0CommandOutputParameter@@QEAA@VBlockPos@@@Z
      * @hash   -1444216838

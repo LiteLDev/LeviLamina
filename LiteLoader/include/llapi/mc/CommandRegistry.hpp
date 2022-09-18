@@ -8,16 +8,11 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
+#include <memory>
 #include "typeid_t.hpp"
 // Include Headers or Declare Types Here
-enum CommandPermissionLevel : char;
-enum class CommandFlagValue : unsigned short;
-enum SemanticConstraint : unsigned char;
 class CommandParameterData;
 #include "CommandFlag.hpp"
-#include <memory>
-//#include "typeid_t.hpp"
-//#include "Command.hpp"
 #include "CommandPosition.hpp"
 #include "CommandPositionFloat.hpp"
 #include "CommandMessage.hpp"
@@ -52,10 +47,10 @@ public:
         inline bool operator==(Symbol const& right) const {
             return val == right.val;
         }
-        inline std::string toString() const {
+        [[nodiscard]] inline std::string toString() const {
             return Global<CommandRegistry>->symbolToString(*this);
         }
-        inline std::string toDebugString() const {
+        [[nodiscard]] inline std::string toDebugString() const {
             return fmt::format("<Symbol {}({})>", toString(), val);
         }
     };
@@ -85,7 +80,7 @@ public:
         //    auto v11 = v8->text;
         //    return std::string(v11, v10 - v11);
         //};
-        inline std::string toDebugString() const {
+        [[nodiscard]] inline std::string toDebugString() const {
             return fmt::format("<ParseToken {}>", toString());
         }
     };
@@ -345,18 +340,15 @@ public:
         static_assert(offsetof(CommandRegistry, mArgs) == 552);
         static_assert(offsetof(CommandRegistry, mCommandOverrideFunctor) == 640);
     }
-#endif COMMAND_REGISTRY_EXTRA
+#endif // COMMAND_REGISTRY_EXTRA
 
     template <typename T>
     inline static std::unique_ptr<class Command> allocateCommand() {
         return std::make_unique<T>();
     }
-    inline void registerOverload(
-        std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args) {
-        Signature* signature = const_cast<Signature*>(findCommand(name));
-        auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
-        registerOverloadInternal(*signature, overload);
-    }
+
+    LIAPI void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args);
+
     template <typename T, typename... Params>
     inline void registerOverload(std::string const& name, Params... params) {
         registerOverload(name, &allocateCommand<T>, {params...});
@@ -460,7 +452,7 @@ private:
 public:
     template <typename T>
     inline static ParseFn getParseFn() {
-        if constexpr (!std::is_same_v<enum CommandOperator, T> && std::is_enum_v<T>)
+        if constexpr (!std::is_same_v<enum class CommandOperator, T> && std::is_enum_v<T>)
             return &fakeParse<T>;
         // else
         //     return &parse<T>;
@@ -568,7 +560,7 @@ public:
      * @symbol ?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z
      * @hash   217149377
      */
-    MCAPI void addEnumValueConstraints(std::string const&, std::vector<std::string> const&, enum SemanticConstraint);
+    MCAPI void addEnumValueConstraints(std::string const&, std::vector<std::string> const&, enum class SemanticConstraint);
     /**
      * @symbol ?addEnumValues@CommandRegistry@@QEAAHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   -1898541035
@@ -618,12 +610,12 @@ public:
      * @symbol ?getCommandStatus@CommandRegistry@@QEBA?AW4CommandStatus@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   111398003
      */
-    MCAPI enum CommandStatus getCommandStatus(std::string const&) const;
+    MCAPI enum class CommandStatus getCommandStatus(std::string const&) const;
     /**
      * @symbol ?isCommandOfType@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CommandTypeFlag@@@Z
      * @hash   -705011682
      */
-    MCAPI bool isCommandOfType(std::string const&, enum CommandTypeFlag) const;
+    MCAPI bool isCommandOfType(std::string const&, enum class CommandTypeFlag) const;
     /**
      * @symbol ?isValidCommand@CommandRegistry@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   187274015
@@ -638,7 +630,7 @@ public:
      * @symbol ?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z
      * @hash   48780604
      */
-    MCAPI void registerCommand(std::string const&, char const*, enum CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
+    MCAPI void registerCommand(std::string const&, char const*, enum class CommandPermissionLevel, struct CommandFlag, struct CommandFlag);
     /**
      * @symbol ?removeSoftEnumValues@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   -444001900
@@ -725,7 +717,7 @@ public:
      * @symbol ?_addEnumValueConstraintsInternal@CommandRegistry@@AEAAXAEBV?$vector@U?$pair@_KI@std@@V?$allocator@U?$pair@_KI@std@@@2@@std@@W4SemanticConstraint@@@Z
      * @hash   -1563069781
      */
-    MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const&, enum SemanticConstraint);
+    MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const&, enum class SemanticConstraint);
     /**
      * @symbol ?_addEnumValuesInternal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@std@@@2@@4@V?$typeid_t@VCommandRegistry@@@@P81@EBA_NPEAXAEBUParseToken@1@AEBVCommandOrigin@@HAEAV34@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z@Z
      * @hash   1090872952
@@ -755,7 +747,7 @@ public:
      * @symbol ?_matchesEnumConstraintsSet@CommandRegistry@@AEBA_NAEBVSymbol@1@AEBVCommandOrigin@@0W4SemanticConstraint@@@Z
      * @hash   -851089027
      */
-    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const&, class CommandOrigin const&, class CommandRegistry::Symbol const&, enum SemanticConstraint) const;
+    MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const&, class CommandOrigin const&, class CommandRegistry::Symbol const&, enum class SemanticConstraint) const;
     /**
      * @symbol ?addEnumValuesToExisting@CommandRegistry@@AEAAXIAEBV?$vector@U?$pair@_K_K@std@@V?$allocator@U?$pair@_K_K@std@@@2@@std@@@Z
      * @hash   -1419483221
@@ -775,7 +767,7 @@ public:
      * @symbol ?addSemanticConstraint@CommandRegistry@@AEAAXW4SemanticConstraint@@@Z
      * @hash   927616881
      */
-    MCAPI void addSemanticConstraint(enum SemanticConstraint);
+    MCAPI void addSemanticConstraint(enum class SemanticConstraint);
     /**
      * @symbol ?addSoftTerminal@CommandRegistry@@AEAA?AVSymbol@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1776235944
@@ -815,7 +807,7 @@ public:
      * @symbol ?checkOriginCommandFlags@CommandRegistry@@AEBA_NAEBVCommandOrigin@@UCommandFlag@@W4CommandPermissionLevel@@@Z
      * @hash   2085605810
      */
-    MCAPI bool checkOriginCommandFlags(class CommandOrigin const&, struct CommandFlag, enum CommandPermissionLevel) const;
+    MCAPI bool checkOriginCommandFlags(class CommandOrigin const&, struct CommandFlag, enum class CommandPermissionLevel) const;
     /**
      * @symbol ?createCommand@CommandRegistry@@AEBA?AV?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@AEBUParseToken@1@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z
      * @hash   -1544501703

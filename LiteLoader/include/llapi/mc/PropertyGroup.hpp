@@ -127,17 +127,17 @@ public:
      * @symbol ?_addPropertyMetadata@PropertyGroup@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_NW4ContainedPropertyType@PropertyMetadata@@@Z
      * @hash   1814902652
      */
-    MCAPI void _addPropertyMetadata(std::string const &, bool, enum PropertyMetadata::ContainedPropertyType);
+    MCAPI void _addPropertyMetadata(std::string const &, bool, enum class PropertyMetadata::ContainedPropertyType);
     /**
      * @symbol ?_getFriendlyJsonTypeString@PropertyGroup@@AEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ContainedPropertyType@PropertyMetadata@@@Z
      * @hash   -1234370765
      */
-    MCAPI std::string const & _getFriendlyJsonTypeString(enum PropertyMetadata::ContainedPropertyType);
+    MCAPI std::string const & _getFriendlyJsonTypeString(enum class PropertyMetadata::ContainedPropertyType);
     /**
      * @symbol ?_loadPropertyFromJson@PropertyGroup@@AEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@W4MolangVersion@@@Z
      * @hash   -667979578
      */
-    MCAPI bool _loadPropertyFromJson(std::string const &, class Json::Value const &, enum MolangVersion);
+    MCAPI bool _loadPropertyFromJson(std::string const &, class Json::Value const &, enum class MolangVersion);
     /**
      * @symbol ?_reserveSpaceForTypes@PropertyGroup@@AEAAXAEBV?$vector@_KV?$allocator@_K@std@@@std@@@Z
      * @hash   434318092
@@ -147,12 +147,12 @@ public:
      * @symbol ?_validateDataType@PropertyGroup@@AEAA_NAEBVValue@Json@@W4ContainedPropertyType@PropertyMetadata@@@Z
      * @hash   -1745747567
      */
-    MCAPI bool _validateDataType(class Json::Value const &, enum PropertyMetadata::ContainedPropertyType);
+    MCAPI bool _validateDataType(class Json::Value const &, enum class PropertyMetadata::ContainedPropertyType);
     /**
      * @symbol ?_getJsonPropertyType@PropertyGroup@@CA?AW4ContainedPropertyType@PropertyMetadata@@AEBVValue@Json@@@Z
      * @hash   -1855704178
      */
-    MCAPI static enum PropertyMetadata::ContainedPropertyType _getJsonPropertyType(class Json::Value const &);
+    MCAPI static enum class PropertyMetadata::ContainedPropertyType _getJsonPropertyType(class Json::Value const &);
 
 private:
 

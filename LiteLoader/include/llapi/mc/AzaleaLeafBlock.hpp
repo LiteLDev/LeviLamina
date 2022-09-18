@@ -247,7 +247,7 @@ public:
      * @symbol ?getRenderLayer@AzaleaLeafBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   -1745003304
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  187
      * @symbol ?getMapColor@AzaleaLeafBlock@@UEBA?AVColor@mce@@AEAVBlockSource@@AEBVBlockPos@@@Z

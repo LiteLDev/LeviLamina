@@ -1126,8 +1126,8 @@ void InitBasicEventListeners() {
         if (!prefix.empty()) {
             // LLSE Registered Cmd
             int perm = localShareData->playerCmdCallbacks[prefix].perm;
-
-            if (player->getCommandPermissionLevel() >= perm) {
+            auto permission_level = player->getCommandPermissionLevel();
+            if (static_cast<int>(permission_level) >= perm) {
                 bool callbackRes = CallPlayerCmdCallback(player, prefix, paras);
                 IF_LISTENED(EVENT_TYPES::onPlayerCmd) {
                     CallEvent(EVENT_TYPES::onPlayerCmd, PlayerClass::newPlayer(player), String::newString(cmd));

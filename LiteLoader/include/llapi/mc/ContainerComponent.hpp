@@ -159,7 +159,7 @@ public:
      * @symbol ?rebuildContainer@ContainerComponent@@QEAAXAEAVActor@@W4ContainerType@@H_NH2@Z
      * @hash   -1928812726
      */
-    MCAPI void rebuildContainer(class Actor &, enum ContainerType, int, bool, int, bool);
+    MCAPI void rebuildContainer(class Actor &, enum class ContainerType, int, bool, int, bool);
     /**
      * @symbol ?removeItem@ContainerComponent@@QEAAXHH@Z
      * @hash   -1205048579

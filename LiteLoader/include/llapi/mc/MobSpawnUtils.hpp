@@ -31,6 +31,6 @@ namespace MobSpawnUtils {
      * @symbol ?trySpawnMob@MobSpawnUtils@@YAPEAVMob@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@VBlockPos@@HHHAEBV?$function@$$A6A_NVBlockPos@@@Z@std@@W4SurfaceDetectionType@1@@Z
      * @hash   1729850932
      */
-    MCAPI class Mob * trySpawnMob(class BlockSource &, struct ActorDefinitionIdentifier const &, class BlockPos, int, int, int, class std::function<bool (class BlockPos)> const &, enum MobSpawnUtils::SurfaceDetectionType);
+    MCAPI class Mob * trySpawnMob(class BlockSource &, struct ActorDefinitionIdentifier const &, class BlockPos, int, int, int, class std::function<bool (class BlockPos)> const &, enum class MobSpawnUtils::SurfaceDetectionType);
 
 };

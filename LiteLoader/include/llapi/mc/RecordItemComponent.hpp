@@ -87,7 +87,7 @@ public:
      * @symbol ?getSound@RecordItemComponent@@QEBA?AW4LevelSoundEvent@@XZ
      * @hash   -1284898660
      */
-    MCAPI enum LevelSoundEvent getSound() const;
+    MCAPI enum class LevelSoundEvent getSound() const;
     /**
      * @symbol ?bindType@RecordItemComponent@@SAXXZ
      * @hash   -195574241

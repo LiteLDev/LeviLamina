@@ -54,7 +54,7 @@ public:
      * @symbol ?findFirstOfType@PlayerBlockActions@@QEBAPEBUPlayerBlockActionData@@W4PlayerActionType@@@Z
      * @hash   -1812824522
      */
-    MCAPI struct PlayerBlockActionData const * findFirstOfType(enum PlayerActionType) const;
+    MCAPI struct PlayerBlockActionData const * findFirstOfType(enum class PlayerActionType) const;
     /**
      * @symbol ?get@PlayerBlockActions@@QEBA?AV?$span@$$CBUPlayerBlockActionData@@$0?0@gsl@@XZ
      * @hash   1872092088

@@ -43,7 +43,7 @@ public:
      * @symbol ?getId@ModalFormRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1649374712
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ModalFormRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -61,7 +61,7 @@ public:
      * @symbol ?_read@ModalFormRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1263830606
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ModalFormRequestPacket@@QEAA@XZ
      * @hash   1647274450

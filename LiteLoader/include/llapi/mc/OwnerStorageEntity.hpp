@@ -36,12 +36,12 @@ public:
      * @symbol ??0OwnerStorageEntity@@IEAA@W4VariadicInit@0@AEAVEntityRegistry@@@Z
      * @hash   37643437
      */
-    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::VariadicInit, class EntityRegistry &);
+    MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::VariadicInit, class EntityRegistry &);
     /**
      * @symbol ??0OwnerStorageEntity@@IEAA@W4EmptyInit@0@@Z
      * @hash   352890405
      */
-    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::EmptyInit);
+    MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::EmptyInit);
     /**
      * @symbol ??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z
      * @hash   -1393819046

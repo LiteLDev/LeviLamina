@@ -41,7 +41,7 @@ public:
      * @symbol ?getId@PlayerArmorDamagePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -425917943
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@PlayerArmorDamagePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -59,6 +59,6 @@ public:
      * @symbol ?_read@PlayerArmorDamagePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1384640145
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
 
 };

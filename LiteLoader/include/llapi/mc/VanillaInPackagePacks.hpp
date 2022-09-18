@@ -40,6 +40,6 @@ public:
      * @symbol ?getPacks@VanillaInPackagePacks@@UEBA?AV?$vector@UMetaData@IInPackagePacks@@V?$allocator@UMetaData@IInPackagePacks@@@std@@@std@@W4PackType@@@Z
      * @hash   -1102186574
      */
-    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum PackType) const;
+    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum class PackType) const;
 
 };

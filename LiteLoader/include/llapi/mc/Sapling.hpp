@@ -162,7 +162,7 @@ public:
      * @symbol ?onFertilized@Sapling@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@W4FertilizerType@@@Z
      * @hash   1964061950
      */
-    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum FertilizerType) const;
+    virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
      * @vftbl  86
      * @symbol ?canBeFertilized@Sapling@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@@Z
@@ -271,13 +271,13 @@ public:
      * @symbol ?getRenderLayer@Sapling@@UEBA?AW4BlockRenderLayer@@XZ
      * @hash   -1720054721
      */
-    virtual enum BlockRenderLayer getRenderLayer() const;
+    virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @vftbl  182
      * @symbol ?getRenderLayer@Sapling@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   472071473
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  188
      * @hash   1563823873

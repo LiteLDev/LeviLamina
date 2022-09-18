@@ -47,12 +47,12 @@ public:
      * @symbol ?getConstScriptArgReference@MolangVariableMap@@QEBAPEBUMolangScriptArg@@AEBW4MolangVariableIndex@@@Z
      * @hash   -289688746
      */
-    MCAPI struct MolangScriptArg const * getConstScriptArgReference(enum MolangVariableIndex const &) const;
+    MCAPI struct MolangScriptArg const * getConstScriptArgReference(enum class MolangVariableIndex const &) const;
     /**
      * @symbol ?getMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@AEBW4MolangVariableIndex@@AEA_N@Z
      * @hash   674854773
      */
-    MCAPI struct MolangScriptArg const & getMolangVariable(enum MolangVariableIndex const &, bool &) const;
+    MCAPI struct MolangScriptArg const & getMolangVariable(enum class MolangVariableIndex const &, bool &) const;
     /**
      * @symbol ?getMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@AEB_KAEA_N@Z
      * @hash   -1580586973
@@ -67,17 +67,17 @@ public:
      * @symbol ?getNonConstScriptArgReference@MolangVariableMap@@QEAAPEAUMolangScriptArg@@AEBW4MolangVariableIndex@@@Z
      * @hash   1527086872
      */
-    MCAPI struct MolangScriptArg * getNonConstScriptArgReference(enum MolangVariableIndex const &);
+    MCAPI struct MolangScriptArg * getNonConstScriptArgReference(enum class MolangVariableIndex const &);
     /**
      * @symbol ?getOrAddNonConstScriptArgReference@MolangVariableMap@@QEAAPEAUMolangScriptArg@@AEBW4MolangVariableIndex@@@Z
      * @hash   -1140617290
      */
-    MCAPI struct MolangScriptArg * getOrAddNonConstScriptArgReference(enum MolangVariableIndex const &);
+    MCAPI struct MolangScriptArg * getOrAddNonConstScriptArgReference(enum class MolangVariableIndex const &);
     /**
      * @symbol ?getPublicMolangVariable@MolangVariableMap@@QEBAAEBUMolangScriptArg@@AEBW4MolangVariableIndex@@AEA_N@Z
      * @hash   1176647797
      */
-    MCAPI struct MolangScriptArg const & getPublicMolangVariable(enum MolangVariableIndex const &, bool &) const;
+    MCAPI struct MolangScriptArg const & getPublicMolangVariable(enum class MolangVariableIndex const &, bool &) const;
     /**
      * @symbol ?getVariables@MolangVariableMap@@QEBAAEBV?$vector@V?$unique_ptr@VMolangVariable@@U?$default_delete@VMolangVariable@@@std@@@std@@V?$allocator@V?$unique_ptr@VMolangVariable@@U?$default_delete@VMolangVariable@@@std@@@std@@@2@@std@@XZ
      * @hash   415336379
@@ -107,7 +107,7 @@ public:
      * @symbol ?setMolangVariable@MolangVariableMap@@QEAAXW4MolangVariableIndex@@AEBUMolangScriptArg@@@Z
      * @hash   -163520869
      */
-    MCAPI void setMolangVariable(enum MolangVariableIndex, struct MolangScriptArg const &);
+    MCAPI void setMolangVariable(enum class MolangVariableIndex, struct MolangScriptArg const &);
     /**
      * @symbol ?setMolangVariable@MolangVariableMap@@QEAAX_KPEBDAEBUMolangScriptArg@@@Z
      * @hash   1327404648
@@ -129,7 +129,7 @@ public:
      * @symbol ?_getMolangVariable@MolangVariableMap@@AEBAPEBVMolangVariable@@W4MolangVariableIndex@@@Z
      * @hash   -130054059
      */
-    MCAPI class MolangVariable const * _getMolangVariable(enum MolangVariableIndex) const;
+    MCAPI class MolangVariable const * _getMolangVariable(enum class MolangVariableIndex) const;
     /**
      * @symbol ?_getOrAddMolangVariable@MolangVariableMap@@AEAAPEAVMolangVariable@@AEB_KPEBD_N@Z
      * @hash   -92584069
@@ -139,7 +139,7 @@ public:
      * @symbol ?_getOrAddMolangVariable@MolangVariableMap@@AEAAPEAVMolangVariable@@W4MolangVariableIndex@@@Z
      * @hash   280197427
      */
-    MCAPI class MolangVariable * _getOrAddMolangVariable(enum MolangVariableIndex);
+    MCAPI class MolangVariable * _getOrAddMolangVariable(enum class MolangVariableIndex);
 
 private:
 

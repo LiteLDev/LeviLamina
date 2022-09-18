@@ -71,6 +71,6 @@ public:
      * @symbol ??0PlayerUIContainerModel@@QEAA@W4ContainerEnumName@@AEAVPlayer@@@Z
      * @hash   -330236061
      */
-    MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player &);
+    MCAPI PlayerUIContainerModel(enum class ContainerEnumName, class Player &);
 
 };

@@ -21,7 +21,7 @@ class EndDragonFight {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum GatewayTask;
+enum class GatewayTask;
 struct GateWayGenerator {
     GateWayGenerator() = delete;
     GateWayGenerator(GateWayGenerator const&) = delete;
@@ -128,7 +128,7 @@ public:
      * @symbol ?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAnimation@@@Z
      * @hash   796175101
      */
-    MCAPI void _setRespawnStage(enum RespawnAnimation);
+    MCAPI void _setRespawnStage(enum class RespawnAnimation);
     /**
      * @symbol ?_spawnExitPortal@EndDragonFight@@AEAAX_N@Z
      * @hash   -392526508
@@ -138,7 +138,7 @@ public:
      * @symbol ?_spawnNewGatewayChunksTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
      * @hash   2027809512
      */
-    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
+    MCAPI void _spawnNewGatewayChunksTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
     /**
      * @symbol ?_spawnNewGatewayPair@EndDragonFight@@AEAAXXZ
      * @hash   2126324740
@@ -158,7 +158,7 @@ public:
      * @symbol ?_verifyExitPositionsTask@EndDragonFight@@AEAAXAEAV?$tuple@W4GatewayTask@EndDragonFight@@UGateWayGenerator@2@U32@@std@@@Z
      * @hash   1563635946
      */
-    MCAPI void _verifyExitPositionsTask(class std::tuple<enum EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
+    MCAPI void _verifyExitPositionsTask(class std::tuple<enum class EndDragonFight::GatewayTask, struct EndDragonFight::GateWayGenerator, struct EndDragonFight::GateWayGenerator> &);
 
 private:
     /**

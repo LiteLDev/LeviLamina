@@ -129,27 +129,27 @@ public:
      * @symbol ?_parseBlockIndices@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
      * @hash   -1470047898
      */
-    MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseBlockIndices(class CompoundTag const &);
     /**
      * @symbol ?_parseEntities@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
      * @hash   -447112337
      */
-    MCAPI enum StructureLoadResult _parseEntities(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseEntities(class CompoundTag const &);
     /**
      * @symbol ?_parseFormatVersion@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
      * @hash   -1317705225
      */
-    MCAPI enum StructureLoadResult _parseFormatVersion(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseFormatVersion(class CompoundTag const &);
     /**
      * @symbol ?_parsePalettes@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
      * @hash   -225618088
      */
-    MCAPI enum StructureLoadResult _parsePalettes(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parsePalettes(class CompoundTag const &);
     /**
      * @symbol ?_parseSize@StructureTemplateData@@IEAA?AW4StructureLoadResult@@AEBVCompoundTag@@@Z
      * @hash   -1835999937
      */
-    MCAPI enum StructureLoadResult _parseSize(class CompoundTag const &);
+    MCAPI enum class StructureLoadResult _parseSize(class CompoundTag const &);
     /**
      * @symbol ?_saveBlockIndices@StructureTemplateData@@IEBAXAEAVCompoundTag@@@Z
      * @hash   815076746

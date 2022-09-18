@@ -47,7 +47,7 @@ public:
 	
 };
 struct StorageMigration {
-    enum StorageMigrationType;
+    enum class StorageMigrationType;
     StorageMigration() = delete;
     StorageMigration(StorageMigration const&) = delete;
     StorageMigration(StorageMigration const&&) = delete;
@@ -65,7 +65,7 @@ public:
 };
 } // namespace PubSub
 namespace Threading {
-enum AsyncStatus;
+enum class AsyncStatus;
 template <typename T0>
 class UniqueLock;
 
@@ -101,7 +101,7 @@ class LockGuard
 class ScopeExit;
 class Http {
 public:
-    enum Implementation;
+    enum class Implementation;
 };
 class SessionInfo
 {
@@ -131,6 +131,6 @@ public:
      * @symbol ?throw_system_error@Bedrock@@YAXW4errc@std@@@Z
      * @hash   -940286991
      */
-    MCAPI void throw_system_error(enum std::errc);
+    MCAPI void throw_system_error(enum class std::errc);
 
 };

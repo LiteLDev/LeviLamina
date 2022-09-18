@@ -33,7 +33,7 @@ public:
      * @symbol ??0CreativeGroupInfo@@QEAA@PEAVCreativeItemRegistry@@W4CreativeItemCategory@@AEBVHashedString@@IAEBVItemInstance@@@Z
      * @hash   355218044
      */
-    MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
+    MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum class CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
     /**
      * @symbol ??0CreativeGroupInfo@@QEAA@AEBV0@@Z
      * @hash   -2002162927

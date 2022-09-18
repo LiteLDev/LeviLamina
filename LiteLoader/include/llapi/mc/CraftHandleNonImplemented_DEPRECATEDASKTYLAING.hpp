@@ -41,7 +41,7 @@ public:
      * @symbol ?_handleCraftAction@CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z
      * @hash   -280474968
      */
-    virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
      * @symbol ??0CraftHandleNonImplemented_DEPRECATEDASKTYLAING@@QEAA@AEAVItemStackRequestActionCraftHandler@@@Z
      * @hash   -1575685933

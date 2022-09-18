@@ -21,7 +21,7 @@ class FoliageColor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum PaletteName;
+enum class PaletteName;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLIAGECOLOR
@@ -56,7 +56,7 @@ public:
      * @symbol ?getFoliageColor@FoliageColor@@SAHW4PaletteName@1@MM@Z
      * @hash   269654280
      */
-    MCAPI static int getFoliageColor(enum FoliageColor::PaletteName, float, float);
+    MCAPI static int getFoliageColor(enum class FoliageColor::PaletteName, float, float);
     /**
      * @symbol ?getMapBirchColor@FoliageColor@@SAHMM@Z
      * @hash   -1029864688

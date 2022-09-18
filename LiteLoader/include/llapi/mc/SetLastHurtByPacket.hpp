@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@SetLastHurtByPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   2089563048
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetLastHurtByPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@SetLastHurtByPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1222863250
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetLastHurtByPacket@@QEAA@XZ
      * @hash   -1026058558
@@ -68,6 +68,6 @@ public:
      * @symbol ??0SetLastHurtByPacket@@QEAA@W4ActorType@@@Z
      * @hash   -1392191637
      */
-    MCAPI SetLastHurtByPacket(enum ActorType);
+    MCAPI SetLastHurtByPacket(enum class ActorType);
 
 };

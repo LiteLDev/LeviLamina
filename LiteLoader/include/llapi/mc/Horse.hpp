@@ -37,7 +37,7 @@ public:
      * @symbol ?reloadHardcoded@Horse@@EEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -36273230
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -323893205
@@ -156,7 +156,7 @@ public:
      * @symbol ?handleEntityEvent@Horse@@UEAAXW4ActorEvent@@H@Z
      * @hash   627284553
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  174
      * @symbol ?canFreeze@Horse@@UEBA_NXZ
@@ -381,7 +381,7 @@ public:
      * @symbol ?postTravel@Horse@@QEAAXPEAVActor@@_NW4HorsePostTravelType@@@Z
      * @hash   682242783
      */
-    MCAPI void postTravel(class Actor *, bool, enum HorsePostTravelType);
+    MCAPI void postTravel(class Actor *, bool, enum class HorsePostTravelType);
     /**
      * @symbol ?DONKEY_CHEST_COUNT@Horse@@2HB
      * @hash   -857689341
@@ -403,12 +403,12 @@ public:
      * @symbol ?setHorseFlag@Horse@@AEAAXW4HorseFlags@@_N@Z
      * @hash   -1541147032
      */
-    MCAPI void setHorseFlag(enum HorseFlags, bool);
+    MCAPI void setHorseFlag(enum class HorseFlags, bool);
     /**
      * @symbol ?setHorseType@Horse@@AEAA_NAEAW4ActorType@@@Z
      * @hash   -954912122
      */
-    MCAPI bool setHorseType(enum ActorType &);
+    MCAPI bool setHorseType(enum class ActorType &);
 
 private:
     /**

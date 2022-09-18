@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@ServerSettingsResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -213182449
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ServerSettingsResponsePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@ServerSettingsResponsePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   194068475
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ServerSettingsResponsePacket@@QEAA@XZ
      * @hash   -1825733589

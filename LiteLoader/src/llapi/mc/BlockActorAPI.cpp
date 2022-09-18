@@ -6,9 +6,10 @@
 #include <llapi/mc/StructureBlockActor.hpp>
 #include <llapi/mc/StructureBlockPalette.hpp>
 #include <llapi/mc/StructureEditorData.hpp>
+#include <magic_enum/magic_enum.hpp>
 
 unsigned int BlockActor::getBlockEntityType(Block* block) {
-    return block->getBlockEntityType(); // IDA Block::getBlockEntityType
+    return static_cast<unsigned int>(block->getBlockEntityType()); // IDA Block::getBlockEntityType
 }
 
 bool BlockActor::refreshData() {

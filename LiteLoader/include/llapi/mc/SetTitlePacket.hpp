@@ -22,7 +22,7 @@ class SetTitlePacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum TitleType;
+enum class TitleType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTITLEPACKET
@@ -41,7 +41,7 @@ public:
      * @symbol ?getId@SetTitlePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   1596830016
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetTitlePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -59,7 +59,7 @@ public:
      * @symbol ?_read@SetTitlePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -1242486374
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@AEBV0@@Z
      * @hash   2028357217
@@ -74,17 +74,17 @@ public:
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBVResolvedTextObject@@@Z
      * @hash   -1657646678
      */
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, class ResolvedTextObject const &);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1633281104
      */
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, std::string const &);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
      * @hash   1785848041
      */
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
      * @symbol ??0SetTitlePacket@@QEAA@HHH@Z
      * @hash   1259888529

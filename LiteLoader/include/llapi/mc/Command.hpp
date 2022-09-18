@@ -13,36 +13,6 @@
 #include "CommandParameterData.hpp"
 #include "CommandFlag.hpp"
 class CommandRegistry;
-// class CommandRegistry::Symbol;
-enum CommandPermissionLevel : char {
-    Any = 0,
-    GameMasters = 1,
-    Admin = 2,
-    HostPlayer = 3,
-    Console = 4,
-    Internal = 5,
-};
-
-enum class OriginType : char {
-    Player = 0,
-    Block = 1,
-    MinecartBlock = 2,
-    DevConsole = 3,
-    Test = 4,
-    AutomationPlayer = 5,
-    ClientAutomation = 6,
-    Server = 7,
-    Actor = 8,
-    Virtual = 9,
-    GameArgument = 10,
-    ActorServer = 11,
-    Precompiled = 12,
-    GameDirectorEntity = 13,
-    Script = 14,
-    ExecuteContext = 15,
-
-    DedicatedServer = 7, // Server
-};
 
 class CommandOutput;
 

@@ -55,7 +55,7 @@ public:
      * @symbol ?onScoreChanged@PlayerScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
      * @hash   -1168320278
      */
-    virtual enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
+    virtual enum class EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
      * @symbol ?getPlayerSubscriptions@PlayerScoreboardEventListener@@QEAAAEAVSubscribedObjectives@@AEBUScoreboardId@@AEBVPlayer@@@Z
      * @hash   -2108001026

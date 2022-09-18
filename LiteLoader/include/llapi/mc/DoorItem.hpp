@@ -113,7 +113,7 @@ public:
      * @symbol ??0DoorItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4DoorType@DoorBlock@@@Z
      * @hash   1526979396
      */
-    MCAPI DoorItem(std::string const &, int, enum DoorBlock::DoorType);
+    MCAPI DoorItem(std::string const &, int, enum class DoorBlock::DoorType);
     /**
      * @symbol ?place@DoorItem@@SA_NPEAVBlockSource@@HHHHPEBVBlock@@@Z
      * @hash   -1874642288

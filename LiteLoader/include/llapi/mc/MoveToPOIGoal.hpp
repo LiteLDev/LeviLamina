@@ -98,17 +98,17 @@ public:
      * @symbol ?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z
      * @hash   -790883694
      */
-    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
+    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum class POIType) const;
     /**
      * @symbol ??0MoveToPOIGoal@@QEAA@AEAVMob@@MW4POIType@@M@Z
      * @hash   -504579365
      */
-    MCAPI MoveToPOIGoal(class Mob &, float, enum POIType, float);
+    MCAPI MoveToPOIGoal(class Mob &, float, enum class POIType, float);
     /**
      * @symbol ?getPOI@MoveToPOIGoal@@QEAA_NW4POIType@@@Z
      * @hash   -1834681707
      */
-    MCAPI bool getPOI(enum POIType);
+    MCAPI bool getPOI(enum class POIType);
 
 //protected:
     /**

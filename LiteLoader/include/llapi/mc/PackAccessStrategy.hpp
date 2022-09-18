@@ -118,7 +118,7 @@ public:
      * @symbol ?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
      * @hash   -65084972
      */
-    virtual enum PackAccessStrategyType getStrategyType() const = 0;
+    virtual enum class PackAccessStrategyType getStrategyType() const = 0;
     /**
      * @vftbl  15
      * @symbol ?getSubPath@PackAccessStrategy@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
@@ -136,7 +136,7 @@ public:
      * @symbol ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
      * @hash   150993014
      */
-    virtual enum PackAccessAssetGenerationResult generateAssetSet();
+    virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
      * @vftbl  18
      * @symbol ?canRecurse@PackAccessStrategy@@UEBA_NXZ

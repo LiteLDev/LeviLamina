@@ -2,6 +2,7 @@
 #include <liteloader/Config.h>
 #include <llapi/mc/CommandParameterData.hpp>
 #include <llapi/LoggerAPI.h>
+#include <magic_enum/magic_enum.hpp>
 /////////////////// Built in UnlockCmd ///////////////////
 
 bool isUnlockCmdEnabled = true;
@@ -87,9 +88,10 @@ TClasslessInstanceHook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEB
 // }
 TClasslessInstanceHook(void, "?addEnumValueConstraints@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@W4SemanticConstraint@@@Z",
                        std::string const& enumName, std::vector<std::string> const& enumValues, SemanticConstraint constraint) {
+    using namespace magic_enum::bitwise_operators;
     if (!ll::globalConfig.enableUnlockCmd)
         return original(this, enumName, enumValues, constraint);
-    if (constraint & SemanticConstraint::RequiresCheatsEnabled) {
+    if (magic_enum::enum_integer(constraint & SemanticConstraint::RequiresCheatsEnabled)) {
         constraint = (SemanticConstraint)(constraint & (~SemanticConstraint::RequiresCheatsEnabled));
         constraint = (SemanticConstraint)(constraint | SemanticConstraint::RequiresElevatedPermissions);
     }

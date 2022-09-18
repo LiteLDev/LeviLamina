@@ -39,7 +39,7 @@ public:
      * @symbol ?addActorEvent@ActorSkeletalAnimation@@QEAAAEAVActorAnimationEvent@@MAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CurrentCmdVersion@@W4MolangVersion@@@Z
      * @hash   1472055022
      */
-    MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum CurrentCmdVersion, enum MolangVersion);
+    MCAPI class ActorAnimationEvent & addActorEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
     /**
      * @symbol ?addBoneAnimation@ActorSkeletalAnimation@@QEAAAEAVBoneAnimation@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1961250087
@@ -99,7 +99,7 @@ public:
      * @symbol ?setLoopMode@ActorSkeletalAnimation@@QEAAXW4AnimationLoopMode@@@Z
      * @hash   1194007874
      */
-    MCAPI void setLoopMode(enum AnimationLoopMode);
+    MCAPI void setLoopMode(enum class AnimationLoopMode);
     /**
      * @symbol ?setShouldOverridePreviousAnimation@ActorSkeletalAnimation@@QEAAX_N@Z
      * @hash   500994178

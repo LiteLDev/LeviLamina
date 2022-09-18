@@ -90,7 +90,7 @@ public:
      * @symbol ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -656918794
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @vftbl  10
      * @symbol ?clone@VirtualCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
@@ -114,7 +114,7 @@ public:
      * @symbol ?canUseAbility@VirtualCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
      * @hash   1278279427
      */
-    virtual bool canUseAbility(enum AbilitiesIndex) const;
+    virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @vftbl  17
      * @symbol ?canUseCommandsWithoutCheatsEnabled@VirtualCommandOrigin@@UEBA_NXZ
@@ -150,7 +150,7 @@ public:
      * @symbol ?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   464264027
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @vftbl  27
      * @symbol ?updateValues@VirtualCommandOrigin@@UEAAXXZ

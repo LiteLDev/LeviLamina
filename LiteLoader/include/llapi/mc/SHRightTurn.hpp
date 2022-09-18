@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@SHRightTurn@@UEBA?AW4StructurePieceType@@XZ
      * @hash   684821607
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  3
      * @symbol ?addChildren@SHRightTurn@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z

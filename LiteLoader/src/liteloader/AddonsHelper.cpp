@@ -214,8 +214,6 @@ bool InstallAddonToLevel(const std::string& addonDir, const std::string& addonNa
     return AddAddonToList(*addon);
 }
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "misc-no-recursion"
 void FindManifest(vector<string>& result, const string& path) {
     filesystem::directory_iterator ent(str2wstr(path));
 
@@ -238,7 +236,6 @@ void FindManifest(vector<string>& result, const string& path) {
         }
     }
 }
-#pragma clang diagnostic pop
 
 std::string Addon::getPrintName() const {
     if (ll::globalConfig.colorLog)

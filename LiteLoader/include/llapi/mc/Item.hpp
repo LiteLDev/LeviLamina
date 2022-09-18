@@ -158,7 +158,7 @@ public:
      * @symbol ?getItemColor@Item@@UEBA?AW4ItemColor@@XZ
      * @hash   -724944051
      */
-    virtual enum ItemColor getItemColor() const;
+    virtual enum class ItemColor getItemColor() const;
     /**
      * @vftbl  21
      * @symbol ?isFertilizer@Item@@UEBA_NXZ
@@ -236,7 +236,7 @@ public:
      * @symbol ?setUseAnimation@Item@@UEAAAEAV1@W4UseAnimation@@@Z
      * @hash   -622765443
      */
-    virtual class Item & setUseAnimation(enum UseAnimation);
+    virtual class Item & setUseAnimation(enum class UseAnimation);
     /**
      * @vftbl  34
      * @symbol ?setMaxUseDuration@Item@@UEAAAEAV1@H@Z
@@ -296,7 +296,7 @@ public:
      * @symbol ?getBlockShape@Item@@UEBA?AW4BlockShape@@XZ
      * @hash   -890145085
      */
-    virtual enum BlockShape getBlockShape() const;
+    virtual enum class BlockShape getBlockShape() const;
     /**
      * @vftbl  44
      * @symbol ?canBeDepleted@Item@@UEBA_NXZ
@@ -551,7 +551,7 @@ public:
      * @symbol ?useTimeDepleted@Item@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
      * @hash   -1351773965
      */
-    virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @vftbl  88
      * @symbol ?releaseUsing@Item@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z
@@ -695,13 +695,13 @@ public:
      * @symbol ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
      * @hash   1703907947
      */
-    virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
+    virtual enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
     /**
      * @vftbl  112
      * @symbol ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
      * @hash   -472721117
      */
-    virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+    virtual enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
     /**
      * @vftbl  113
      * @symbol ?validFishInteraction@Item@@UEBA_NH@Z
@@ -719,13 +719,13 @@ public:
      * @symbol ?getEquipLocation@Item@@UEBA?AW4ActorLocation@@XZ
      * @hash   -455189128
      */
-    virtual enum ActorLocation getEquipLocation() const;
+    virtual enum class ActorLocation getEquipLocation() const;
     /**
      * @vftbl  116
      * @symbol ?getEquipSound@Item@@UEBA?AW4LevelSoundEvent@@XZ
      * @hash   495550873
      */
-    virtual enum LevelSoundEvent getEquipSound() const;
+    virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @vftbl  117
      * @symbol ?isSameItem@Item@@UEBA_NAEBVItemStackBase@@0@Z
@@ -972,7 +972,7 @@ public:
      * @symbol ?getCreativeCategory@Item@@QEBA?AW4CreativeItemCategory@@XZ
      * @hash   1592131528
      */
-    MCAPI enum CreativeItemCategory getCreativeCategory() const;
+    MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @symbol ?getCreativeGroup@Item@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -305202402
@@ -1032,7 +1032,7 @@ public:
      * @symbol ?getUseAnimation@Item@@QEBA?AW4UseAnimation@@XZ
      * @hash   -947775506
      */
-    MCAPI enum UseAnimation getUseAnimation() const;
+    MCAPI enum class UseAnimation getUseAnimation() const;
     /**
      * @symbol ?hasTag@Item@@QEBA_NAEB_K@Z
      * @hash   119323727
@@ -1072,7 +1072,7 @@ public:
      * @symbol ?setCategory@Item@@QEAAAEAV1@W4CreativeItemCategory@@@Z
      * @hash   -1822011551
      */
-    MCAPI class Item & setCategory(enum CreativeItemCategory);
+    MCAPI class Item & setCategory(enum class CreativeItemCategory);
     /**
      * @symbol ?setCreativeGroup@Item@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   787304689
@@ -1234,7 +1234,7 @@ public:
      * @symbol ?_helpChangeInventoryItemInPlace@Item@@IEBAXAEAVActor@@AEAVItemStack@@1W4ItemAcquisitionMethod@@@Z
      * @hash   128973754
      */
-    MCAPI void _helpChangeInventoryItemInPlace(class Actor &, class ItemStack &, class ItemStack &, enum ItemAcquisitionMethod) const;
+    MCAPI void _helpChangeInventoryItemInPlace(class Actor &, class ItemStack &, class ItemStack &, enum class ItemAcquisitionMethod) const;
 
 //private:
     /**

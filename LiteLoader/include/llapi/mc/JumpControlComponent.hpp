@@ -92,7 +92,7 @@ public:
      * @symbol ?setJumpType@JumpControlComponent@@QEAAXW4JumpType@@@Z
      * @hash   -1364496514
      */
-    MCAPI void setJumpType(enum JumpType);
+    MCAPI void setJumpType(enum class JumpType);
     /**
      * @symbol ?setJumping@JumpControlComponent@@QEAAX_N@Z
      * @hash   -1997419098

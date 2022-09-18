@@ -91,7 +91,7 @@ public:
      * @symbol ?_isValidEnchantmentTypeForCategory@ProtectionEnchant@@EEBA_NW4Type@Enchant@@@Z
      * @hash   653377402
      */
-    virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROTECTIONENCHANT
     /**
      * @symbol ?isProtectionEnchant@ProtectionEnchant@@UEBA_NXZ
@@ -103,7 +103,7 @@ public:
      * @symbol ??0ProtectionEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2HH@Z
      * @hash   1386380649
      */
-    MCAPI ProtectionEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
+    MCAPI ProtectionEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
 
 //private:
 
@@ -117,6 +117,6 @@ private:
      * @symbol ?VALID_ENCHANTMENTS@ProtectionEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
      * @hash   1363626913
      */
-    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

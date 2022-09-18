@@ -39,7 +39,7 @@ public:
      * @symbol ?tick@BreakBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z
      * @hash   2067319773
      */
-    virtual enum BehaviorStatus tick(class Actor &);
+    virtual enum class BehaviorStatus tick(class Actor &);
     /**
      * @vftbl  2
      * @symbol ?initializeFromDefinition@BreakBlockNode@@EEAAXAEAVActor@@@Z

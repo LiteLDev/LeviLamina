@@ -82,14 +82,14 @@ public:
      * @symbol ??0FurnaceContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   -1720161632
      */
-    MCAPI FurnaceContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI FurnaceContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 //protected:
     /**
      * @symbol ??0FurnaceContainerManagerModel@@IEAA@AEBVHashedString@@W4ContainerType@@W4BlockActorType@@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      * @hash   -757420654
      */
-    MCAPI FurnaceContainerManagerModel(class HashedString const &, enum ContainerType, enum BlockActorType, enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI FurnaceContainerManagerModel(class HashedString const &, enum class ContainerType, enum class BlockActorType, enum class ContainerID, class Player &, class BlockPos const &);
 
 //private:
     /**

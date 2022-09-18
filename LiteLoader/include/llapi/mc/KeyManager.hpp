@@ -46,7 +46,7 @@ public:
      * @symbol ??0KeyManager@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4System@Asymmetric@Crypto@@@Z
      * @hash   1609740930
      */
-    MCAPI KeyManager(std::string const &, enum Crypto::Asymmetric::System);
+    MCAPI KeyManager(std::string const &, enum class Crypto::Asymmetric::System);
     /**
      * @symbol ?getPublicKey@KeyManager@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   1084045440
@@ -56,6 +56,6 @@ public:
      * @symbol ?verify@KeyManager@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4HashType@Hash@Crypto@@@Z
      * @hash   81230186
      */
-    MCAPI bool verify(std::string const &, std::string const &, enum Crypto::Hash::HashType) const;
+    MCAPI bool verify(std::string const &, std::string const &, enum class Crypto::Hash::HashType) const;
 
 };

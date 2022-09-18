@@ -179,7 +179,7 @@ public:
      * @symbol ?getSpiderType@CaveSpider@@UEBA?AW4Type@Spider@@XZ
      * @hash   507608460
      */
-    virtual enum Spider::Type getSpiderType() const;
+    virtual enum class Spider::Type getSpiderType() const;
     /**
      * @symbol ??0CaveSpider@@QEAA@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z
      * @hash   1642140926

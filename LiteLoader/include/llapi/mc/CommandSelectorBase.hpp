@@ -9,9 +9,10 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <functional>
 #include "ActorDefinitionIdentifier.hpp"
 #include "CommandPosition.hpp"
-#include <functional>
+#include "BlockPos.hpp"
 class CommandOrigin;
 class Actor;
 class Player;
@@ -69,12 +70,12 @@ public:
      * @symbol ?addGameModeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@W4GameType@@@@@Z
      * @hash   -200630813
      */
-    MCAPI void addGameModeFilter(struct InvertableFilter<enum GameType> const &);
+    MCAPI void addGameModeFilter(struct InvertableFilter<enum class GameType> const &);
     /**
      * @symbol ?addHasItemFilter@CommandSelectorBase@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEBVCommandIntegerRange@@W4EquipmentSlot@@1@Z
      * @hash   -1879375813
      */
-    MCAPI void addHasItemFilter(std::string const &, int, class CommandIntegerRange const &, enum EquipmentSlot, class CommandIntegerRange const &);
+    MCAPI void addHasItemFilter(std::string const &, int, class CommandIntegerRange const &, enum class EquipmentSlot, class CommandIntegerRange const &);
     /**
      * @symbol ?addLevelFilter@CommandSelectorBase@@QEAAXAEBU?$pair@HH@std@@@Z
      * @hash   1525762279
@@ -124,7 +125,7 @@ public:
      * @symbol ?getOrder@CommandSelectorBase@@QEBA?AW4CommandSelectionOrder@@XZ
      * @hash   -631703970
      */
-    MCAPI enum CommandSelectionOrder getOrder() const;
+    MCAPI enum class CommandSelectionOrder getOrder() const;
     /**
      * @symbol ?hasName@CommandSelectorBase@@QEBA_NXZ
      * @hash   -1150313768
@@ -159,7 +160,7 @@ public:
      * @symbol ?setOrder@CommandSelectorBase@@QEAAXW4CommandSelectionOrder@@@Z
      * @hash   -513630378
      */
-    MCAPI void setOrder(enum CommandSelectionOrder);
+    MCAPI void setOrder(enum class CommandSelectionOrder);
     /**
      * @symbol ?setPosition@CommandSelectorBase@@QEAAXAEBVCommandPosition@@@Z
      * @hash   -1653690942
@@ -184,7 +185,7 @@ public:
      * @symbol ?setType@CommandSelectorBase@@QEAAXW4CommandSelectionType@@@Z
      * @hash   265432520
      */
-    MCAPI void setType(enum CommandSelectionType);
+    MCAPI void setType(enum class CommandSelectionType);
     /**
      * @symbol ?setVersion@CommandSelectorBase@@QEAAXH@Z
      * @hash   360161084

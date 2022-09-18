@@ -54,11 +54,11 @@ public:
      * @symbol ?getGameType@WorldTemplatePackManifest@@QEBA?AW4GameType@@XZ
      * @hash   856698422
      */
-    MCAPI enum GameType getGameType() const;
+    MCAPI enum class GameType getGameType() const;
     /**
      * @symbol ?setGameType@WorldTemplatePackManifest@@QEAAXW4GameType@@@Z
      * @hash   -913548632
      */
-    MCAPI void setGameType(enum GameType);
+    MCAPI void setGameType(enum class GameType);
 
 };

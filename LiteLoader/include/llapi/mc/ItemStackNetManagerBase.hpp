@@ -82,13 +82,13 @@ public:
      * @symbol ?initOpenContainer@ItemStackNetManagerBase@@UEAAPEAVSparseContainer@@AEAVBlockSource@@W4ContainerEnumName@@AEBVContainerWeakRef@@@Z
      * @hash   -1414105063
      */
-    virtual class SparseContainer * initOpenContainer(class BlockSource &, enum ContainerEnumName, class ContainerWeakRef const &);
+    virtual class SparseContainer * initOpenContainer(class BlockSource &, enum class ContainerEnumName, class ContainerWeakRef const &);
     /**
      * @vftbl  9
      * @symbol ?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z
      * @hash   1424969098
      */
-    virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum ContainerType, int);
+    virtual void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen &, enum class ContainerType, int);
     /**
      * @vftbl  10
      * @symbol ?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z
@@ -129,7 +129,7 @@ public:
      * @symbol ?setPlayerContainer@ItemStackNetManagerBase@@SA_NAEAVPlayer@@W4ContainerType@@HAEBVItemStack@@AEAV4@AEBV?$function@$$A6AXAEBVItemStack@@@Z@std@@@Z
      * @hash   1870194946
      */
-    MCAPI static bool setPlayerContainer(class Player &, enum ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
+    MCAPI static bool setPlayerContainer(class Player &, enum class ContainerType, int, class ItemStack const &, class ItemStack &, class std::function<void (class ItemStack const &)> const &);
 
 //protected:
     /**

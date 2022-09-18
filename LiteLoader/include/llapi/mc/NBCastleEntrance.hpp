@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@NBCastleEntrance@@UEBA?AW4StructurePieceType@@XZ
      * @hash   -962094279
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  3
      * @symbol ?addChildren@NBCastleEntrance@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z

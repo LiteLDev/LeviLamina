@@ -35,7 +35,7 @@ public:
      * @symbol ?allowIncomingPacketId@ClassroomModeNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z
      * @hash   267083400
      */
-    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum MinecraftPacketIds);
+    MCVAPI bool allowIncomingPacketId(class NetworkIdentifier const &, enum class MinecraftPacketIds);
     /**
      * @symbol ?onWebsocketRequest@ClassroomModeNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z
      * @hash   -1353689343

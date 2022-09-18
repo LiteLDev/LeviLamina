@@ -37,7 +37,7 @@ public:
      * @symbol ?reloadHardcoded@ZombieVillager@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -1891633855
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -1294930346
@@ -108,7 +108,7 @@ public:
      * @symbol ?handleEntityEvent@ZombieVillager@@UEAAXW4ActorEvent@@H@Z
      * @hash   767138138
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  182
      * @hash   1509264059

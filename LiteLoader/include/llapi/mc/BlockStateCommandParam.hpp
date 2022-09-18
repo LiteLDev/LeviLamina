@@ -34,7 +34,7 @@ public:
      * @symbol ??0BlockStateCommandParam@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Type@0@@Z
      * @hash   58438712
      */
-    MCAPI BlockStateCommandParam(std::string, std::string, enum BlockStateCommandParam::Type);
+    MCAPI BlockStateCommandParam(std::string, std::string, enum class BlockStateCommandParam::Type);
     /**
      * @symbol ?setBlockState@BlockStateCommandParam@@QEBA_NPEAPEBVBlock@@AEAVCommandOutput@@@Z
      * @hash   -1225431315

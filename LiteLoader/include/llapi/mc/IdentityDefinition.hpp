@@ -75,7 +75,7 @@ public:
      * @symbol ?getIdentityType@IdentityDefinition@@QEBA?AW4Type@1@XZ
      * @hash   753051994
      */
-    MCAPI enum IdentityDefinition::Type getIdentityType() const;
+    MCAPI enum class IdentityDefinition::Type getIdentityType() const;
     /**
      * @symbol ?getName@IdentityDefinition@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@3@@Z
      * @hash   632172426

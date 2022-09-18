@@ -143,6 +143,6 @@ public:
      * @symbol ?fromString@BaseGameVersion@@SA?AW4MatchType@SemVersion@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV1@@Z
      * @hash   2114269382
      */
-    MCAPI static enum SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
+    MCAPI static enum class SemVersion::MatchType fromString(std::string const &, class BaseGameVersion &);
 
 };

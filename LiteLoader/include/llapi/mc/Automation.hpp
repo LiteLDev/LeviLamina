@@ -21,7 +21,7 @@ namespace Automation {
 #define AFTER_EXTRA
 // Add Member There
     class AutomationClient;
-    enum MessagePurpose;
+    enum class MessagePurpose;
 #undef AFTER_EXTRA
     /**
      * @symbol ?BodyData@Automation@@3PEBDEB

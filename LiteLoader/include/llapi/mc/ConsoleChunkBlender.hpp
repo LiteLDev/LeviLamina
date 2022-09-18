@@ -21,8 +21,8 @@ class ConsoleChunkBlender {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum ShiftBlockTypes;
-enum BlenderMode;
+enum class ShiftBlockTypes;
+enum class BlenderMode;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLECHUNKBLENDER
@@ -41,7 +41,7 @@ public:
      * @symbol ?blendChunk@ConsoleChunkBlender@@QEAAXAEAVLevelChunk@@0W4BlenderMode@1@@Z
      * @hash   1271005811
      */
-    MCAPI void blendChunk(class LevelChunk &, class LevelChunk &, enum ConsoleChunkBlender::BlenderMode);
+    MCAPI void blendChunk(class LevelChunk &, class LevelChunk &, enum class ConsoleChunkBlender::BlenderMode);
     /**
      * @symbol ?setInterpolants@ConsoleChunkBlender@@QEAAXMMMM@Z
      * @hash   -861288101
@@ -68,7 +68,7 @@ public:
      * @symbol ?_blendChunkOverworld@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0W4ShiftBlockTypes@1@@Z
      * @hash   95209432
      */
-    MCAPI void _blendChunkOverworld(class LevelChunk &, class LevelChunk &, enum ConsoleChunkBlender::ShiftBlockTypes);
+    MCAPI void _blendChunkOverworld(class LevelChunk &, class LevelChunk &, enum class ConsoleChunkBlender::ShiftBlockTypes);
     /**
      * @symbol ?_copyColumnFromGeneratedChunkNether@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0HH@Z
      * @hash   -976216043
@@ -78,7 +78,7 @@ public:
      * @symbol ?_copyColumnFromGeneratedChunkOverworld@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@0HHW4ShiftBlockTypes@1@@Z
      * @hash   1722437183
      */
-    MCAPI void _copyColumnFromGeneratedChunkOverworld(class LevelChunk &, class LevelChunk &, int, int, enum ConsoleChunkBlender::ShiftBlockTypes);
+    MCAPI void _copyColumnFromGeneratedChunkOverworld(class LevelChunk &, class LevelChunk &, int, int, enum class ConsoleChunkBlender::ShiftBlockTypes);
     /**
      * @symbol ?_findTopMostWaterHeight@ConsoleChunkBlender@@IEAA?AVChunkLocalHeight@@AEAVLevelChunk@@HHAEBV?$unordered_set@PEBVBlockLegacy@@U?$hash@PEBVBlockLegacy@@@std@@U?$equal_to@PEBVBlockLegacy@@@3@V?$allocator@PEBVBlockLegacy@@@3@@std@@@Z
      * @hash   703872629
@@ -93,7 +93,7 @@ public:
      * @symbol ?_shiftColumnBySetBlocks@ConsoleChunkBlender@@IEAAXAEAVLevelChunk@@HHH_NVChunkLocalHeight@@W4ShiftBlockTypes@1@AEBUOverworldBlendRules@@@Z
      * @hash   -829964485
      */
-    MCAPI void _shiftColumnBySetBlocks(class LevelChunk &, int, int, int, bool, class ChunkLocalHeight, enum ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const &);
+    MCAPI void _shiftColumnBySetBlocks(class LevelChunk &, int, int, int, bool, class ChunkLocalHeight, enum class ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const &);
 
 protected:
 

@@ -270,7 +270,7 @@ public:
      * @symbol ?useTimeDepleted@ItemStack@@QEAA?AW4ItemUseMethod@@PEAVLevel@@PEAVPlayer@@@Z
      * @hash   922448576
      */
-    MCAPI enum ItemUseMethod useTimeDepleted(class Level *, class Player *);
+    MCAPI enum class ItemUseMethod useTimeDepleted(class Level *, class Player *);
     /**
      * @symbol ?EMPTY_ITEM@ItemStack@@2V1@B
      * @hash   -539680811

@@ -49,6 +49,6 @@ public:
      * @symbol ?parseFile@NpcDialogueStorage@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4CurrentCmdVersion@@@Z
      * @hash   -679547292
      */
-    MCAPI bool parseFile(std::string const &, std::string const &, enum CurrentCmdVersion);
+    MCAPI bool parseFile(std::string const &, std::string const &, enum class CurrentCmdVersion);
 
 };

@@ -32,7 +32,7 @@ public:
      * @symbol ??0ReplayStateConfig@@QEAA@W4ReplayStateMode@@@Z
      * @hash   -975060455
      */
-    MCAPI ReplayStateConfig(enum ReplayStateMode);
+    MCAPI ReplayStateConfig(enum class ReplayStateMode);
     /**
      * @symbol ?usesUnsupportedThresholds@ReplayStateConfig@@QEBA_NXZ
      * @hash   1834518950

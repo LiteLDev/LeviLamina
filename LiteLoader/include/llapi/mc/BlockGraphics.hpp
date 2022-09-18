@@ -34,7 +34,7 @@ public:
      * @symbol ?getBlockShape@BlockGraphics@@QEBA?AW4BlockShape@@XZ
      * @hash   1209377566
      */
-    MCAPI enum BlockShape getBlockShape() const;
+    MCAPI enum class BlockShape getBlockShape() const;
     /**
      * @symbol ?getIconTexture@BlockGraphics@@QEBAAEBUTextureUVCoordinateSet@@H@Z
      * @hash   -1127794021

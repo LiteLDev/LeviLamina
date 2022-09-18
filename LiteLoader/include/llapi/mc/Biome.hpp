@@ -9,7 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum VanillaBiomeTypes;
+enum class VanillaBiomeTypes;
 
 #undef BEFORE_EXTRA
 
@@ -22,7 +22,7 @@ class Biome {
 #define AFTER_EXTRA
     // Add Member There
 public:
-    enum BiomeTempCategory;
+    enum class BiomeTempCategory;
     LIAPI int getId() const;
     LIAPI std::string const& getName() const;
     LIAPI static Biome* fromId(int id);
@@ -57,7 +57,7 @@ public:
      * @symbol ?getBiomeType@Biome@@QEBA?AW4VanillaBiomeTypes@@XZ
      * @hash   -1562246696
      */
-    MCAPI enum VanillaBiomeTypes getBiomeType() const;
+    MCAPI enum class VanillaBiomeTypes getBiomeType() const;
     /**
      * @symbol ?getBirchFoliageColor@Biome@@QEBAHAEBVBlockPos@@@Z
      * @hash   -1587574909
@@ -127,7 +127,7 @@ public:
      * @symbol ?getTemperatureCategory@Biome@@QEBA?AW4BiomeTempCategory@1@XZ
      * @hash   181269609
      */
-    MCAPI enum Biome::BiomeTempCategory getTemperatureCategory() const;
+    MCAPI enum class Biome::BiomeTempCategory getTemperatureCategory() const;
     /**
      * @symbol ?getTemperatureWorldGen@Biome@@QEBAMAEBVBlockPos@@F@Z
      * @hash   -2143528325

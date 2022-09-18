@@ -40,7 +40,7 @@ public:
      * @symbol ?isSatisfied@BlockIntersectionConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
      * @hash   1542699916
      */
-    virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
+    virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum class Rotation const &) const;
     /**
      * @symbol ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z
      * @hash   1905253808

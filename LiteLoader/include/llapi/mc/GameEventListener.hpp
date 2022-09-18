@@ -33,7 +33,7 @@ public:
      * @symbol ?getDeliveryMode@GameEventListener@@UEBA?AW4DeliveryMode@1@XZ
      * @hash   578319156
      */
-    MCVAPI enum GameEventListener::DeliveryMode getDeliveryMode() const;
+    MCVAPI enum class GameEventListener::DeliveryMode getDeliveryMode() const;
 #endif
 
 };

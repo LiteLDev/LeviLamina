@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@SHChestCorridor@@UEBA?AW4StructurePieceType@@XZ
      * @hash   -1553578075
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  3
      * @symbol ?addChildren@SHChestCorridor@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z

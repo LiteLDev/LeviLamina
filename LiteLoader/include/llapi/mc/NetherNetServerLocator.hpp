@@ -52,7 +52,7 @@ public:
      * @symbol ?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N2@Z
      * @hash   1616401436
      */
-    virtual void startAnnouncingServer(std::string const &, std::string const &, enum GameType, int, int, bool, bool);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool);
     /**
      * @vftbl  4
      * @symbol ?stopAnnouncingServer@NetherNetServerLocator@@UEAAXXZ

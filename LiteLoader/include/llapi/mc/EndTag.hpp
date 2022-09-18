@@ -64,7 +64,7 @@ public:
      * @symbol ?getId@EndTag@@UEBA?AW4Type@Tag@@XZ
      * @hash   -2129065940
      */
-    virtual enum Tag::Type getId() const;
+    virtual enum class Tag::Type getId() const;
     /**
      * @vftbl  6
      * @symbol ?equals@EndTag@@UEBA_NAEBVTag@@@Z

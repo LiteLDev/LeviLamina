@@ -37,7 +37,7 @@ public:
      * @symbol ?getSize@FeaturePoolElement@@UEBA?AVBlockPos@@W4Rotation@@@Z
      * @hash   -493301265
      */
-    virtual class BlockPos getSize(enum Rotation) const;
+    virtual class BlockPos getSize(enum class Rotation) const;
     /**
      * @vftbl  2
      * @symbol ?getJigsawMarkers@FeaturePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@AEAVLegacyStructureSettings@@PEAVBlockSource@@@Z
@@ -49,7 +49,7 @@ public:
      * @symbol ?place@FeaturePoolElement@@UEBA_NAEAVBlockSource@@VBlockPos@@W4Rotation@@VBoundingBox@@AEAVRandom@@AEAV?$unordered_map@VBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@U?$hash@VBlockPos@@@3@U?$equal_to@VBlockPos@@@3@V?$allocator@U?$pair@$$CBVBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@@std@@@3@@std@@1@Z
      * @hash   1867608531
      */
-    virtual bool place(class BlockSource &, class BlockPos, enum Rotation, class BoundingBox, class Random &, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>> &, class BlockPos) const;
+    virtual bool place(class BlockSource &, class BlockPos, enum class Rotation, class BoundingBox, class Random &, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>> &, class BlockPos) const;
     /**
      * @symbol ??0FeaturePoolElement@@QEAA@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@gsl@@V?$WeakRefT@UFeatureRefTraits@@@@@Z
      * @hash   -889239661

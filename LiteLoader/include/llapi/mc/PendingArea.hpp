@@ -64,7 +64,7 @@ public:
      * @symbol ?createTickingArea@PendingArea@@SA?AU1@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUBounds@@_NW4TickingAreaLoadMode@@@Z
      * @hash   -601478512
      */
-    MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const &, struct Bounds const &, bool, enum TickingAreaLoadMode);
+    MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
     /**
      * @symbol ?load@PendingArea@@SA?AU1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
      * @hash   -1693877831

@@ -39,11 +39,11 @@ public:
      * @symbol ?createContainerValidator@ContainerValidatorFactory@@SA?AV?$shared_ptr@$$CBVContainerValidationBase@@@std@@W4ContainerEnumName@@AEBVContainerScreenContext@@W4ContainerValidationCaller@@@Z
      * @hash   -1153241252
      */
-    MCAPI static class std::shared_ptr<class ContainerValidationBase const> createContainerValidator(enum ContainerEnumName, class ContainerScreenContext const &, enum ContainerValidationCaller);
+    MCAPI static class std::shared_ptr<class ContainerValidationBase const> createContainerValidator(enum class ContainerEnumName, class ContainerScreenContext const &, enum class ContainerValidationCaller);
     /**
      * @symbol ?getBackingContainer@ContainerValidatorFactory@@SAPEAVContainer@@W4ContainerEnumName@@AEBVContainerScreenContext@@@Z
      * @hash   359875975
      */
-    MCAPI static class Container * getBackingContainer(enum ContainerEnumName, class ContainerScreenContext const &);
+    MCAPI static class Container * getBackingContainer(enum class ContainerEnumName, class ContainerScreenContext const &);
 
 };

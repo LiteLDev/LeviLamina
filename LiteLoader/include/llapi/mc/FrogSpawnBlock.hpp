@@ -50,7 +50,7 @@ public:
      * @symbol ?canProvideSupport@FrogSpawnBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z
      * @hash   -1752152075
      */
-    virtual bool canProvideSupport(class Block const &, unsigned char, enum BlockSupportType) const;
+    virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
      * @vftbl  29
      * @hash   -299030517

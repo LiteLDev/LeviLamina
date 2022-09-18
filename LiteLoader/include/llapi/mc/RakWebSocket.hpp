@@ -41,13 +41,13 @@ public:
      * @symbol ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z
      * @hash   -1400882468
      */
-    virtual enum WSConnectionResult connect(std::string const &, std::vector<std::string> const &);
+    virtual enum class WSConnectionResult connect(std::string const &, std::vector<std::string> const &);
     /**
      * @vftbl  2
      * @symbol ?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1821654621
      */
-    virtual enum WSConnectionResult connect(std::string const &);
+    virtual enum class WSConnectionResult connect(std::string const &);
     /**
      * @vftbl  3
      * @symbol ?isReady@RakWebSocket@@UEBA_NXZ
@@ -65,7 +65,7 @@ public:
      * @symbol ?setOnCloseHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXW4CloseStatusCode@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
      * @hash   1870156814
      */
-    virtual void setOnCloseHandler(class std::function<void (enum CloseStatusCode, std::string const &)> const &);
+    virtual void setOnCloseHandler(class std::function<void (enum class CloseStatusCode, std::string const &)> const &);
     /**
      * @vftbl  6
      * @symbol ?setOnConnectedHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z
@@ -126,7 +126,7 @@ public:
      * @symbol ?_close@RakWebSocket@@IEAAXW4CloseStatusCode@@@Z
      * @hash   -686874062
      */
-    MCAPI void _close(enum CloseStatusCode);
+    MCAPI void _close(enum class CloseStatusCode);
     /**
      * @symbol ?_createWebSocketKey@RakWebSocket@@IEAAXXZ
      * @hash   -1303230053
@@ -136,7 +136,7 @@ public:
      * @symbol ?_fail@RakWebSocket@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4CloseStatusCode@@@Z
      * @hash   -49698132
      */
-    MCAPI void _fail(std::string const &, enum CloseStatusCode);
+    MCAPI void _fail(std::string const &, enum class CloseStatusCode);
     /**
      * @symbol ?_generateBase64SHA1Key@RakWebSocket@@IEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z
      * @hash   -1459243903
@@ -176,17 +176,17 @@ public:
      * @symbol ?_sendControlFrame@RakWebSocket@@IEAA_NPEBE_KW4OpCode@@@Z
      * @hash   -1845371611
      */
-    MCAPI bool _sendControlFrame(unsigned char const *, unsigned __int64, enum OpCode);
+    MCAPI bool _sendControlFrame(unsigned char const *, unsigned __int64, enum class OpCode);
     /**
      * @symbol ?_sendDataFrame@RakWebSocket@@IEAA_NPEBEIW4OpCode@@_N@Z
      * @hash   -674183534
      */
-    MCAPI bool _sendDataFrame(unsigned char const *, unsigned int, enum OpCode, bool);
+    MCAPI bool _sendDataFrame(unsigned char const *, unsigned int, enum class OpCode, bool);
     /**
      * @symbol ?_sendNonControlFrame@RakWebSocket@@IEAA_NPEBE_KW4OpCode@@@Z
      * @hash   197347510
      */
-    MCAPI bool _sendNonControlFrame(unsigned char const *, unsigned __int64, enum OpCode);
+    MCAPI bool _sendNonControlFrame(unsigned char const *, unsigned __int64, enum class OpCode);
     /**
      * @symbol ?_splitWebSocketURI@RakWebSocket@@IEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@11@Z
      * @hash   1824514027

@@ -34,12 +34,12 @@ public:
      * @symbol ?getParticleName@ParticleTypeMap@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ParticleType@@@Z
      * @hash   -474561439
      */
-    MCAPI static std::string const & getParticleName(enum ParticleType);
+    MCAPI static std::string const & getParticleName(enum class ParticleType);
     /**
      * @symbol ?getParticleTypeId@ParticleTypeMap@@SA?AW4ParticleType@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   1699667149
      */
-    MCAPI static enum ParticleType getParticleTypeId(std::string const &);
+    MCAPI static enum class ParticleType getParticleTypeId(std::string const &);
 
 //private:
 
@@ -48,6 +48,6 @@ private:
      * @symbol ?map@ParticleTypeMap@@0V?$BidirectionalUnorderedMap@W4ParticleType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@B
      * @hash   -362443459
      */
-    MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string> const map;
+    MCAPI static class BidirectionalUnorderedMap<enum class ParticleType, std::string> const map;
 
 };

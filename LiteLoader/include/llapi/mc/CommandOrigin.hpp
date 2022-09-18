@@ -13,7 +13,7 @@
 // Include Headers or Declare Types Here
 class ServerPlayer;
 class CommandArea;
-enum CommandOriginType : char;
+enum class CommandOriginType : char;
 
 #undef BEFORE_EXTRA
 
@@ -100,7 +100,7 @@ public:
      * @symbol ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      * @hash   -1646859962
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const = 0;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const = 0;
     /**
      * @vftbl  10
      * @symbol ?clone@VirtualCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ
@@ -136,7 +136,7 @@ public:
      * @symbol ?canUseAbility@CommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
      * @hash   913415374
      */
-    virtual bool canUseAbility(enum AbilitiesIndex) const;
+    virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @vftbl  16
      * @symbol ?isWorldBuilder@CommandOrigin@@UEBA_NXZ
@@ -166,7 +166,7 @@ public:
      * @symbol ?getSourceSubId@CommandOrigin@@UEBA?AW4SubClientId@@XZ
      * @hash   1948080601
      */
-    virtual enum SubClientId getSourceSubId() const;
+    virtual enum class SubClientId getSourceSubId() const;
     /**
      * @vftbl  21
      * @symbol ?getOutputReceiver@CommandOrigin@@UEBAAEBV1@XZ
@@ -184,7 +184,7 @@ public:
      * @symbol ?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      * @hash   -139744133
      */
-    virtual enum CommandOriginType getOriginType() const = 0;
+    virtual enum class CommandOriginType getOriginType() const = 0;
     /**
      * @vftbl  24
      * @symbol ?toCommandOriginData@CommandOrigin@@UEBA?AUCommandOriginData@@XZ
@@ -262,7 +262,7 @@ public:
      * @symbol ?fromCommandOriginData@CommandOrigin@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBUCommandOriginData@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
      * @hash   1174831933
      */
-    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, enum SubClientId);
+    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, enum class SubClientId);
 
 //protected:
 

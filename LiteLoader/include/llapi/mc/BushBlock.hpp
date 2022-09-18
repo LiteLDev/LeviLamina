@@ -263,6 +263,6 @@ public:
      * @symbol ?growCrops@BushBlock@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@W4FertilizerType@@@Z
      * @hash   -81640391
      */
-    MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum FertilizerType) const;
+    MCAPI bool growCrops(class BlockSource &, class BlockPos const &, enum class FertilizerType) const;
 
 };

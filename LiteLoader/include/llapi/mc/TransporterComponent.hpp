@@ -80,7 +80,7 @@ public:
      * @symbol ?getCircuitComponentType@TransporterComponent@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   -1514469057
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @symbol ??0TransporterComponent@@QEAA@XZ
      * @hash   -136003261

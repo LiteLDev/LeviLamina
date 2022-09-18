@@ -114,7 +114,7 @@ public:
      * @symbol ?getAmbientSound@EnderMan@@UEBA?AW4LevelSoundEvent@@XZ
      * @hash   -977132366
      */
-    virtual enum LevelSoundEvent getAmbientSound() const;
+    virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @vftbl  182
      * @hash   1509264059

@@ -41,7 +41,7 @@ public:
      * @symbol ?discoverPlugins@ScriptPluginManager@@QEAA?AVScriptPluginManagerResult@@W4ResourceType@ResourceInformation@@AEBVIScriptPluginSourceEnumerator@@AEBVScriptPackConfigurationManager@@@Z
      * @hash   1475348347
      */
-    MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &, class ScriptPackConfigurationManager const &);
+    MCAPI class ScriptPluginManagerResult discoverPlugins(enum class ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const &, class ScriptPackConfigurationManager const &);
     /**
      * @symbol ?getPlugins@ScriptPluginManager@@QEBAAEBV?$vector@VScriptPlugin@@V?$allocator@VScriptPlugin@@@std@@@std@@XZ
      * @hash   1912551798

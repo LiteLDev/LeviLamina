@@ -14,7 +14,7 @@ class ReadOnlyBinaryStream;
 class BinaryStream;
 class ServerPlayer;
 class NetworkIdentifier;
-enum StreamReadResult;
+enum class StreamReadResult;
 enum class PacketReliability {
     Relible,
     RelibleOrdered
@@ -50,7 +50,7 @@ public:
     {
         return handler->getServerPlayer(*netId, dAccess<char>(this, 16));
     }
-    inline enum StreamReadResult read(class ReadOnlyBinaryStream& binaryStream)
+    inline enum class StreamReadResult read(class ReadOnlyBinaryStream& binaryStream)
     {
         return _read(binaryStream);
     }
@@ -78,7 +78,7 @@ public:
      * @symbol ?getId@UpdateTradePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   799490161
      */
-    virtual enum MinecraftPacketIds getId() const = 0;
+    virtual enum class MinecraftPacketIds getId() const = 0;
     /**
      * @vftbl  2
      * @symbol ?getName@UpdateTradePacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -108,7 +108,7 @@ public:
      * @symbol ?_read@UpdateTradePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1142874111
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
     /**
      * @symbol ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z
      * @hash   -943725859
@@ -118,11 +118,11 @@ public:
      * @symbol ?readNoHeader@Packet@@QEAA_NAEAVReadOnlyBinaryStream@@AEBW4SubClientId@@AEAUExtendedStreamReadResult@@@Z
      * @hash   2105829311
      */
-    MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum SubClientId const &, struct ExtendedStreamReadResult &);
+    MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum class SubClientId const &, struct ExtendedStreamReadResult &);
     /**
      * @symbol ?writeWithHeader@Packet@@QEBAXW4SubClientId@@AEAVBinaryStream@@@Z
      * @hash   360376525
      */
-    MCAPI void writeWithHeader(enum SubClientId, class BinaryStream &) const;
+    MCAPI void writeWithHeader(enum class SubClientId, class BinaryStream &) const;
 
 };

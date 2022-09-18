@@ -22,7 +22,7 @@ class SaveCommand : public Command {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum State;
+enum class State;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVECOMMAND
@@ -82,6 +82,6 @@ private:
      * @symbol ?mState@SaveCommand@@0W4State@1@A
      * @hash   -507441169
      */
-    MCAPI static enum SaveCommand::State mState;
+    MCAPI static enum class SaveCommand::State mState;
 
 };

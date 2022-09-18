@@ -22,7 +22,7 @@ class IFileChunkUploader {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum UploadStreamResult;
+enum class UploadStreamResult;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILECHUNKUPLOADER
@@ -70,7 +70,7 @@ public:
      * @symbol ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
      * @hash   201159078
      */
-    virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum IFileChunkUploader::UploadStreamResult)>);
+    virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum class IFileChunkUploader::UploadStreamResult)>);
     /**
      * @vftbl  7
      * @symbol ?canCancelUpload@ServerFileChunkUploader@@UEBA_NAEBUFileInfo@@@Z
@@ -87,7 +87,7 @@ public:
      * @symbol ?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ
      * @hash   547337715
      */
-    virtual enum UploadError getInitErrorCode() const = 0;
+    virtual enum class UploadError getInitErrorCode() const = 0;
     /**
      * @vftbl  10
      * @symbol ?getUploadProgress@ServerFileChunkUploader@@UEBAMAEBUFileInfo@@@Z

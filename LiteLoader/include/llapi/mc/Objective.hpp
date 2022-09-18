@@ -113,7 +113,7 @@ public:
      * @symbol ?_modifyPlayerScore@Objective@@AEAA_NAEAHAEBUScoreboardId@@HW4PlayerScoreSetFunction@@@Z
      * @hash   -595522981
      */
-    MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum PlayerScoreSetFunction);
+    MCAPI bool _modifyPlayerScore(int &, struct ScoreboardId const &, int, enum class PlayerScoreSetFunction);
     /**
      * @symbol ?_resetPlayer@Objective@@AEAAXAEBUScoreboardId@@@Z
      * @hash   -1214031389

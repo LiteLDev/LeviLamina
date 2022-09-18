@@ -34,11 +34,11 @@ public:
      * @symbol ?pathFromString@ResourceUtil@@SA?AW4ResourceFileSystem@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z
      * @hash   -657373719
      */
-    MCAPI static enum ResourceFileSystem pathFromString(class gsl::basic_string_span<char const, -1>);
+    MCAPI static enum class ResourceFileSystem pathFromString(class gsl::basic_string_span<char const, -1>);
     /**
      * @symbol ?stringFromPath@ResourceUtil@@SA?AV?$basic_string_span@$$CBD$0?0@gsl@@W4ResourceFileSystem@@@Z
      * @hash   -2096456711
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> stringFromPath(enum ResourceFileSystem);
+    MCAPI static class gsl::basic_string_span<char const, -1> stringFromPath(enum class ResourceFileSystem);
 
 };

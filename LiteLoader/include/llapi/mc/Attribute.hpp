@@ -34,7 +34,7 @@ public:
      * @symbol ??0Attribute@@QEAA@AEBVHashedString@@W4RedefinitionMode@@_N@Z
      * @hash   1185972301
      */
-    MCAPI Attribute(class HashedString const &, enum RedefinitionMode, bool);
+    MCAPI Attribute(class HashedString const &, enum class RedefinitionMode, bool);
     /**
      * @symbol ?getIDValue@Attribute@@QEBA?BIXZ
      * @hash   -2019265232
@@ -49,7 +49,7 @@ public:
      * @symbol ?getRedefinitionMode@Attribute@@QEBA?AW4RedefinitionMode@@XZ
      * @hash   -1196232180
      */
-    MCAPI enum RedefinitionMode getRedefinitionMode() const;
+    MCAPI enum class RedefinitionMode getRedefinitionMode() const;
     /**
      * @symbol ?isClientSyncable@Attribute@@QEBA_NXZ
      * @hash   384906104

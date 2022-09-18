@@ -38,7 +38,7 @@ public:
      * @symbol ?getId@LessonProgressPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   506120225
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@LessonProgressPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -56,7 +56,7 @@ public:
      * @symbol ?_read@LessonProgressPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   977365769
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LessonProgressPacket@@QEAA@XZ
      * @hash   -1051436151
@@ -66,6 +66,6 @@ public:
      * @symbol ??0LessonProgressPacket@@QEAA@W4LessonAction@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1479885226
      */
-    MCAPI LessonProgressPacket(enum LessonAction, int, std::string const &);
+    MCAPI LessonProgressPacket(enum class LessonAction, int, std::string const &);
 
 };

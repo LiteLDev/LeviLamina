@@ -277,7 +277,7 @@ public:
      * @symbol ?getRenderLayer@TorchBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   -254768854
      */
-    virtual enum BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  188
      * @hash   1563823873
@@ -299,14 +299,14 @@ public:
      * @symbol ??0TorchBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4MaterialType@@@Z
      * @hash   -426531918
      */
-    MCAPI TorchBlock(std::string const &, int, enum MaterialType);
+    MCAPI TorchBlock(std::string const &, int, enum class MaterialType);
 
 //protected:
     /**
      * @symbol ?_flameParticlePos@TorchBlock@@IEBA?AVVec3@@AEBVBlockPos@@W4TorchFacing@@@Z
      * @hash   -748488377
      */
-    MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum TorchFacing) const;
+    MCAPI class Vec3 _flameParticlePos(class BlockPos const &, enum class TorchFacing) const;
     /**
      * @symbol ?canBePlacedOn@TorchBlock@@IEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z
      * @hash   1307969363
@@ -322,7 +322,7 @@ private:
      * @symbol ?DATA_FROM_FACING@TorchBlock@@0QBW4TorchFacing@@B
      * @hash   1564714071
      */
-    MCAPI static enum TorchFacing const DATA_FROM_FACING[];
+    MCAPI static enum class TorchFacing const DATA_FROM_FACING[];
     /**
      * @symbol ?FACING_FROM_DATA@TorchBlock@@0QBGB
      * @hash   -682363627

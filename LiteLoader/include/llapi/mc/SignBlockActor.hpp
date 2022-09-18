@@ -22,7 +22,7 @@ class SignBlockActor : public BlockActor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum SignType;
+enum class SignType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIGNBLOCKACTOR
@@ -164,6 +164,6 @@ public:
      * @symbol ?setType@SignBlockActor@@QEAAXW4SignType@1@@Z
      * @hash   1308749990
      */
-    MCAPI void setType(enum SignBlockActor::SignType);
+    MCAPI void setType(enum class SignBlockActor::SignType);
 
 };

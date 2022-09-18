@@ -52,13 +52,13 @@ public:
      * @symbol ?getPackOrigin@DirectoryPackSource@@UEBA?AW4PackOrigin@@XZ
      * @hash   1771794021
      */
-    virtual enum PackOrigin getPackOrigin() const;
+    virtual enum class PackOrigin getPackOrigin() const;
     /**
      * @vftbl  4
      * @symbol ?getPackType@DirectoryPackSource@@UEBA?AW4PackType@@XZ
      * @hash   1974703653
      */
-    virtual enum PackType getPackType() const;
+    virtual enum class PackType getPackType() const;
     /**
      * @vftbl  5
      * @symbol ?load@DirectoryPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
@@ -81,7 +81,7 @@ public:
      * @symbol ??0DirectoryPackSource@@QEAA@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z
      * @hash   1683075945
      */
-    MCAPI DirectoryPackSource(class Core::Path const &, enum PackType, enum PackOrigin, bool);
+    MCAPI DirectoryPackSource(class Core::Path const &, enum class PackType, enum class PackOrigin, bool);
     /**
      * @symbol ?getPath@DirectoryPackSource@@QEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ
      * @hash   -143771185

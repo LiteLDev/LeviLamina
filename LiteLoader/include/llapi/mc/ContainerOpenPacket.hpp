@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@ContainerOpenPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -324539749
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@ContainerOpenPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@ContainerOpenPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   430283423
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0ContainerOpenPacket@@QEAA@XZ
      * @hash   1246876655
@@ -68,6 +68,6 @@ public:
      * @symbol ??0ContainerOpenPacket@@QEAA@W4ContainerID@@W4ContainerType@@AEBVBlockPos@@AEBUActorUniqueID@@@Z
      * @hash   -51937193
      */
-    MCAPI ContainerOpenPacket(enum ContainerID, enum ContainerType, class BlockPos const &, struct ActorUniqueID const &);
+    MCAPI ContainerOpenPacket(enum class ContainerID, enum class ContainerType, class BlockPos const &, struct ActorUniqueID const &);
 
 };

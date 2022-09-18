@@ -40,7 +40,7 @@ public:
      * @symbol ?parse@ActorDefinition@@QEAAXUDeserializeDataParams@@AEAVActorDefinitionDescriptor@@AEAVActorFactory@@W4LogArea@@@Z
      * @hash   1382086273
      */
-    MCAPI void parse(struct DeserializeDataParams, class ActorDefinitionDescriptor &, class ActorFactory &, enum LogArea);
+    MCAPI void parse(struct DeserializeDataParams, class ActorDefinitionDescriptor &, class ActorFactory &, enum class LogArea);
     /**
      * @symbol ?parseAttributes@ActorDefinition@@QEAAXUDeserializeDataParams@@AEAVActorDefinitionDescriptor@@@Z
      * @hash   -401026691

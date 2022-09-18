@@ -22,7 +22,7 @@ struct SubChunk {
 
 #define AFTER_EXTRA
 // Add Member There
-    enum SubChunkState;
+    enum class SubChunkState;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNK
 public:
@@ -75,7 +75,7 @@ public:
      * @symbol ?getSubChunkState@SubChunk@@QEBA?AW4SubChunkState@1@XZ
      * @hash   -809825932
      */
-    MCAPI enum SubChunk::SubChunkState getSubChunkState() const;
+    MCAPI enum class SubChunk::SubChunkState getSubChunkState() const;
     /**
      * @symbol ?initialize@SubChunk@@QEAAXPEBVBlock@@_N1AEAVSpinLock@@C@Z
      * @hash   -1535376019
@@ -110,7 +110,7 @@ public:
      * @symbol ?prune@SubChunk@@QEAAXW4PruneType@SubChunkStorageUnit@@@Z
      * @hash   2102085554
      */
-    MCAPI void prune(enum SubChunkStorageUnit::PruneType);
+    MCAPI void prune(enum class SubChunkStorageUnit::PruneType);
     /**
      * @symbol ?recalculateHash@SubChunk@@QEAAX_N@Z
      * @hash   -894922540
@@ -175,7 +175,7 @@ public:
      * @symbol ?setSubChunkState@SubChunk@@QEAAXW4SubChunkState@1@@Z
      * @hash   -1663311206
      */
-    MCAPI void setSubChunkState(enum SubChunk::SubChunkState);
+    MCAPI void setSubChunkState(enum class SubChunk::SubChunkState);
     /**
      * @symbol ?shutdown@SubChunk@@QEAAXXZ
      * @hash   1610005573

@@ -32,7 +32,7 @@ public:
      * @symbol ?log@ContextMessageLogger@@QEAAXW4LogArea@@W4LogLevel@@PEBD@Z
      * @hash   2028967533
      */
-    MCAPI void log(enum LogArea, enum LogLevel, char const *);
+    MCAPI void log(enum class LogArea, enum class LogLevel, char const *);
     /**
      * @symbol ?shouldMessagePostToParentMessageLoggers@ContextMessageLogger@@QEAA_NXZ
      * @hash   -385073862

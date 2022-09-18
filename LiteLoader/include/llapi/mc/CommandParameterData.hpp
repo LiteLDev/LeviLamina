@@ -6,35 +6,12 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "CommandRegistry.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <string_view>
 #include "typeid_t.hpp"
-
-enum class CommandParameterDataType {
-    NORMAL,
-    ENUM,
-    SOFT_ENUM,
-    POSIFIX,
-};
-enum SemanticConstraint: unsigned char
-{
-    NoneConstraint = 0,
-    RequiresCheatsEnabled=1,
-    RequiresElevatedPermissions=2,
-    RequiresHostPermissions=4,
-    VALUE_MASK=8,
-};
-enum CommandParameterOption : unsigned char
-{
-    None = 0,
-    EnumAutocompleteExpansion = 1,
-    HasSemanticConstraint = 2, //be used in block or item name enum
-    EnumAsChainedCommand = 4,  //be used in NewExecuteCommand
-};
-class CommandRegistry;
+#include "CommandRegistry.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -92,7 +69,7 @@ public:
      * @symbol ??0CommandParameterData@@QEAA@V?$typeid_t@VCommandRegistry@@@@P8CommandRegistry@@EBA_NPEAXAEBUParseToken@2@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@6@@ZPEBDW4CommandParameterDataType@@7H_NH@Z
      * @hash   2003322151
      */
-    MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum CommandParameterDataType, char const *, int, bool, int);
+    MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum class CommandParameterDataType, char const *, int, bool, int);
     /**
      * @symbol ??0CommandParameterData@@QEAA@AEBV0@@Z
      * @hash   -2080259791
@@ -102,7 +79,7 @@ public:
      * @symbol ?addOptions@CommandParameterData@@QEAAAEAV1@W4CommandParameterOption@@@Z
      * @hash   -163358610
      */
-    MCAPI class CommandParameterData & addOptions(enum CommandParameterOption);
+    MCAPI class CommandParameterData & addOptions(enum class CommandParameterOption);
     /**
      * @symbol ??1CommandParameterData@@QEAA@XZ
      * @hash   287027618

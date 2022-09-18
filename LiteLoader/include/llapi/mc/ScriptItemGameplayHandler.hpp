@@ -80,19 +80,19 @@ public:
      * @symbol ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemDefinitionEventTriggeredEvent@@@Z
      * @hash   465311526
      */
-    virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent &);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent &);
     /**
      * @vftbl  10
      * @symbol ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseOnEvent@@@Z
      * @hash   -234403032
      */
-    virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ItemUseOnEvent &);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseOnEvent &);
     /**
      * @vftbl  11
      * @symbol ?handleEvent@ScriptItemGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUItemUseEvent@@@Z
      * @hash   -387495351
      */
-    virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ItemUseEvent &);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseEvent &);
 
 //private:
     /**

@@ -9,7 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum AttributeModifierOperation : int {
+enum class AttributeModifierOperation : int {
     OPERATION_ADDITION = 0x0,
     OPERATION_MULTIPLY_BASE = 0x1,
     OPERATION_MULTIPLY_TOTAL = 0x2,
@@ -18,7 +18,7 @@ enum AttributeModifierOperation : int {
     OPERATION_INVALID = 0x4,
 };
 
-enum AttributeOperands : int {
+enum class AttributeOperands : int {
     OPERAND_MIN = 0x0,
     OPERAND_MAX = 0x1,
     OPERAND_CURRENT = 0x2,
@@ -65,7 +65,7 @@ public:
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MW4AttributeModifierOperation@@W4AttributeOperands@@_N@Z
      * @hash   1112511687
      */
-    MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum AttributeModifierOperation, enum AttributeOperands, bool);
+    MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum class AttributeModifierOperation, enum class AttributeOperands, bool);
     /**
      * @symbol ??0AttributeModifier@@QEAA@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MHH_N@Z
      * @hash   568929905

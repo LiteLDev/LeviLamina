@@ -202,7 +202,7 @@ public:
      * @symbol ?isFree@NavigationComponent@@QEAA?AW4NodeType@@AEAVMob@@AEBVBlockPos@@11W4CanJumpIntoNode@@@Z
      * @hash   -1504806605
      */
-    MCAPI enum NodeType isFree(class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
+    MCAPI enum class NodeType isFree(class Mob &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode);
     /**
      * @symbol ?isStuck@NavigationComponent@@QEBA_NH@Z
      * @hash   389343117

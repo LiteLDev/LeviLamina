@@ -48,7 +48,7 @@ public:
      * @symbol ?getCircuitComponentType@CapacitorComponent@@UEBA?AW4CircuitComponentType@@XZ
      * @hash   -140595941
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl  24
      * @symbol ?getPoweroutDirection@CapacitorComponent@@UEBAEXZ

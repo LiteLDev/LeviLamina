@@ -22,7 +22,7 @@ class HttpHeaders {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum ParseState;
+enum class ParseState;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HTTPHEADERS
@@ -51,7 +51,7 @@ public:
      * @symbol ?getState@HttpHeaders@@QEAA?AW4ParseState@1@XZ
      * @hash   -714240253
      */
-    MCAPI enum HttpHeaders::ParseState getState();
+    MCAPI enum class HttpHeaders::ParseState getState();
     /**
      * @symbol ?getStatusCode@HttpHeaders@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   3511008
@@ -61,7 +61,7 @@ public:
      * @symbol ?parse@HttpHeaders@@QEAA?AW4ParseState@1@AEAVBitStream@RakNet@@@Z
      * @hash   -338251478
      */
-    MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream &);
+    MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream &);
     /**
      * @symbol ??1HttpHeaders@@QEAA@XZ
      * @hash   503882202

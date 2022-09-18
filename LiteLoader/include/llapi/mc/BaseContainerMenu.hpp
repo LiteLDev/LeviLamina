@@ -45,12 +45,12 @@ public:
      * @symbol ?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ
      * @hash   -1806322047
      */
-    MCVAPI enum ContainerID getContainerId() const;
+    MCVAPI enum class ContainerID getContainerId() const;
     /**
      * @symbol ?getContainerType@BaseContainerMenu@@UEBA?AW4ContainerType@@XZ
      * @hash   935433281
      */
-    MCVAPI enum ContainerType getContainerType() const;
+    MCVAPI enum class ContainerType getContainerType() const;
     /**
      * @symbol ?isResultSlot@BaseContainerMenu@@UEAA_NH@Z
      * @hash   2122424640
@@ -65,12 +65,12 @@ public:
      * @symbol ?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z
      * @hash   1701367868
      */
-    MCVAPI void setContainerId(enum ContainerID);
+    MCVAPI void setContainerId(enum class ContainerID);
     /**
      * @symbol ?setContainerType@BaseContainerMenu@@UEAAXW4ContainerType@@@Z
      * @hash   -1631592018
      */
-    MCVAPI void setContainerType(enum ContainerType);
+    MCVAPI void setContainerType(enum class ContainerType);
     /**
      * @symbol ?setData@BaseContainerMenu@@UEAAXHH@Z
      * @hash   -1846471324
@@ -86,7 +86,7 @@ public:
      * @symbol ??0BaseContainerMenu@@QEAA@AEAVPlayer@@W4ContainerType@@@Z
      * @hash   -275272739
      */
-    MCAPI BaseContainerMenu(class Player &, enum ContainerType);
+    MCAPI BaseContainerMenu(class Player &, enum class ContainerType);
 
 //protected:
     /**

@@ -51,13 +51,13 @@ public:
      * @symbol ?getPackOrigin@InPackagePackSource@@UEBA?AW4PackOrigin@@XZ
      * @hash   -1704180895
      */
-    virtual enum PackOrigin getPackOrigin() const;
+    virtual enum class PackOrigin getPackOrigin() const;
     /**
      * @vftbl  4
      * @symbol ?getPackType@InPackagePackSource@@UEBA?AW4PackType@@XZ
      * @hash   -806552015
      */
-    virtual enum PackType getPackType() const;
+    virtual enum class PackType getPackType() const;
     /**
      * @vftbl  5
      * @symbol ?load@InPackagePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBV?$not_null@V?$NonOwnerPointer@$$CBVIContentKeyProvider@@@Bedrock@@@gsl@@@Z
@@ -80,6 +80,6 @@ public:
      * @symbol ??0InPackagePackSource@@QEAA@AEBV?$shared_ptr@VIInPackagePacks@@@std@@W4PackType@@@Z
      * @hash   -231173102
      */
-    MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum PackType);
+    MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const &, enum class PackType);
 
 };

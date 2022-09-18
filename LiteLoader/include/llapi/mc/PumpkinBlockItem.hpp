@@ -113,13 +113,13 @@ public:
      * @symbol ?getEquipLocation@PumpkinBlockItem@@UEBA?AW4ActorLocation@@XZ
      * @hash   -1443287773
      */
-    virtual enum ActorLocation getEquipLocation() const;
+    virtual enum class ActorLocation getEquipLocation() const;
     /**
      * @vftbl  116
      * @symbol ?getEquipSound@PumpkinBlockItem@@UEBA?AW4LevelSoundEvent@@XZ
      * @hash   -1029699964
      */
-    virtual enum LevelSoundEvent getEquipSound() const;
+    virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @symbol ??0PumpkinBlockItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
      * @hash   -559904410

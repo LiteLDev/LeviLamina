@@ -22,7 +22,7 @@ class WorldPacksHistoryFile {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum ParseResult;
+enum class ParseResult;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDPACKSHISTORYFILE
@@ -46,7 +46,7 @@ public:
      * @symbol ?initializeFromJson@WorldPacksHistoryFile@@QEAA?AW4ParseResult@1@AEBVValue@Json@@@Z
      * @hash   -498302018
      */
-    MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
+    MCAPI enum class WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const &);
     /**
      * @symbol ??1WorldPacksHistoryFile@@QEAA@XZ
      * @hash   459062212

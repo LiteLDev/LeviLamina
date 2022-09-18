@@ -125,7 +125,7 @@ public:
      * @symbol ?registerEntityMapping@ActorFactory@@SAXAEBW4ActorType@@_NAEBQ6A?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@ZV?$optional@H@4@@Z
      * @hash   1050669482
      */
-    MCAPI static void registerEntityMapping(enum ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &), class std::optional<int>);
+    MCAPI static void registerEntityMapping(enum class ActorType const &, bool, std::unique_ptr<class Actor> ( *const &)(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &), class std::optional<int>);
 
 //private:
     /**

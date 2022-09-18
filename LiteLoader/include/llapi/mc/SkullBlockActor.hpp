@@ -22,7 +22,7 @@ class SkullBlockActor : public BlockActor {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum SkullType;
+enum class SkullType;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKULLBLOCKACTOR
@@ -123,7 +123,7 @@ public:
      * @symbol ?getSkullType@SkullBlockActor@@QEBA?AW4SkullType@1@XZ
      * @hash   -1525370924
      */
-    MCAPI enum SkullBlockActor::SkullType getSkullType() const;
+    MCAPI enum class SkullBlockActor::SkullType getSkullType() const;
     /**
      * @symbol ?setRotation@SkullBlockActor@@QEAAXM@Z
      * @hash   2004055892

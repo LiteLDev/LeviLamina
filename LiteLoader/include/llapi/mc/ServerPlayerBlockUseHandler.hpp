@@ -21,14 +21,14 @@ namespace ServerPlayerBlockUseHandler {
 
 #define AFTER_EXTRA
 // Add Member There
-enum PredictionValidationError;
+enum class PredictionValidationError;
 
 #undef AFTER_EXTRA
     /**
      * @symbol ?getErrorForRejectedRequest@ServerPlayerBlockUseHandler@@YA?AW4PredictionValidationError@1@AEAVServerPlayer@@AEBVItemStackRequestActionMineBlock@@@Z
      * @hash   1825347710
      */
-    MCAPI enum ServerPlayerBlockUseHandler::PredictionValidationError getErrorForRejectedRequest(class ServerPlayer &, class ItemStackRequestActionMineBlock const &);
+    MCAPI enum class ServerPlayerBlockUseHandler::PredictionValidationError getErrorForRejectedRequest(class ServerPlayer &, class ItemStackRequestActionMineBlock const &);
     /**
      * @symbol ?onAbortDestroyBlock@ServerPlayerBlockUseHandler@@YAXAEAVServerPlayer@@AEBVBlockPos@@H@Z
      * @hash   -1986082357
@@ -63,6 +63,6 @@ enum PredictionValidationError;
      * @symbol ?validateClientBlockBreakPrediction@ServerPlayerBlockUseHandler@@YA?AW4PredictionValidationError@1@AEAVServerPlayer@@PEBVItemStackRequestActionMineBlock@@AEBVBlockPos@@AEBVItemStack@@3PEBUPlayerBlockActionData@@@Z
      * @hash   2110564136
      */
-    MCAPI enum ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(class ServerPlayer &, class ItemStackRequestActionMineBlock const *, class BlockPos const &, class ItemStack const &, class ItemStack const &, struct PlayerBlockActionData const *);
+    MCAPI enum class ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(class ServerPlayer &, class ItemStackRequestActionMineBlock const *, class BlockPos const &, class ItemStack const &, class ItemStack const &, struct PlayerBlockActionData const *);
 
 };

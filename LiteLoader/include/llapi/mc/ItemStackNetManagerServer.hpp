@@ -76,7 +76,7 @@ public:
      * @symbol ?_handleLegacyTransactionRequest@ItemStackNetManagerServer@@QEAAXAEBV?$TypedClientNetId@UItemStackLegacyRequestIdTag@@H$0A@@@AEBV?$vector@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@V?$allocator@U?$pair@W4ContainerEnumName@@V?$vector@EV?$allocator@E@std@@@std@@@std@@@2@@std@@@Z
      * @hash   -1591897761
      */
-    MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
+    MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &, std::vector<struct std::pair<enum class ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char>>>> const &);
     /**
      * @symbol ?_retainSetItemStackNetIdVariantScope@ItemStackNetManagerServer@@QEAA?AV?$final_action@V?$function@$$A6AXXZ@std@@@gsl@@XZ
      * @hash   1286207445

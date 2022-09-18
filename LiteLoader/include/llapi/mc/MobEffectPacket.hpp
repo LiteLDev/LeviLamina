@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@MobEffectPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -1948570603
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@MobEffectPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@MobEffectPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   1777591157
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0MobEffectPacket@@QEAA@XZ
      * @hash   873386501
@@ -68,6 +68,6 @@ public:
      * @symbol ??0MobEffectPacket@@QEAA@VActorRuntimeID@@W4Event@0@HHH_N@Z
      * @hash   66873736
      */
-    MCAPI MobEffectPacket(class ActorRuntimeID, enum MobEffectPacket::Event, int, int, int, bool);
+    MCAPI MobEffectPacket(class ActorRuntimeID, enum class MobEffectPacket::Event, int, int, int, bool);
 
 };

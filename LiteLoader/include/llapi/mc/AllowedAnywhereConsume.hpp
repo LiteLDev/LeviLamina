@@ -32,6 +32,6 @@ public:
      * @symbol ??0AllowedAnywhereConsume@@QEAA@W4ContainerEnumName@@EE@Z
      * @hash   -1508333428
      */
-    MCAPI AllowedAnywhereConsume(enum ContainerEnumName, unsigned char, unsigned char);
+    MCAPI AllowedAnywhereConsume(enum class ContainerEnumName, unsigned char, unsigned char);
 
 };

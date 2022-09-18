@@ -53,7 +53,7 @@ public:
      * @symbol ?getAnimationFrames@SerializedSkin@@QEBAMW4AnimatedTextureType@persona@@@Z
      * @hash   -1412470127
      */
-    MCAPI float getAnimationFrames(enum persona::AnimatedTextureType) const;
+    MCAPI float getAnimationFrames(enum class persona::AnimatedTextureType) const;
     /**
      * @symbol ?getName@SerializedSkin@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   -1386450932

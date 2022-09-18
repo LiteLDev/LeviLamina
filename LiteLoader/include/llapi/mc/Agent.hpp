@@ -37,7 +37,7 @@ public:
      * @symbol ?initializeComponents@Agent@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   -1494498213
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -396133549
@@ -144,7 +144,7 @@ public:
      * @symbol ?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z
      * @hash   -1222773215
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  161
      * @symbol ?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z
@@ -325,7 +325,7 @@ public:
      * @symbol ?doServerTravel@Agent@@QEAA?AVVec3@@VAABB@@W4AgentTravelType@@@Z
      * @hash   -563215022
      */
-    MCAPI class Vec3 doServerTravel(class AABB, enum AgentTravelType);
+    MCAPI class Vec3 doServerTravel(class AABB, enum class AgentTravelType);
     /**
      * @symbol ?getMoveSpeedScalar@Agent@@QEBAMXZ
      * @hash   2112457324

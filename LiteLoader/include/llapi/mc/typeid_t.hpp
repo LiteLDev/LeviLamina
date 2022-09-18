@@ -20,7 +20,7 @@ typeid_t<T> type_id() {
 }
 
 class CommandRegistry;
-enum ActorDamageCause : int;
+enum class ActorDamageCause : int;
 template <typename, typename>
 class AutomaticID;
 template <typename>
@@ -29,7 +29,7 @@ namespace Json {
 class Value;
 }
 class CommandIntegerRange;
-class ActorDefinitionIdentifier;
+struct ActorDefinitionIdentifier;
 class CommandItem;
 
 template <>
@@ -52,7 +52,7 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimen
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
 template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum CommandOperator>();
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class CommandOperator>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template <>
@@ -64,7 +64,7 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<c
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
 template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum EquipmentSlot>();
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template <>
@@ -72,7 +72,7 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
 template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum Mirror>();
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template <>

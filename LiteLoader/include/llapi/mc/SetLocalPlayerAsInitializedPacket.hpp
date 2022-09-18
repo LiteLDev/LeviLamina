@@ -40,7 +40,7 @@ public:
      * @symbol ?getId@SetLocalPlayerAsInitializedPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      * @hash   -852803234
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl  2
      * @symbol ?getName@SetLocalPlayerAsInitializedPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -58,7 +58,7 @@ public:
      * @symbol ?_read@SetLocalPlayerAsInitializedPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      * @hash   -952288900
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SetLocalPlayerAsInitializedPacket@@QEAA@XZ
      * @hash   -802504564

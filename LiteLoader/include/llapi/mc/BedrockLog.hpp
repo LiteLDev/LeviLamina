@@ -11,7 +11,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum LogAreaID;
+enum class LogAreaID;
 
 #undef BEFORE_EXTRA
 
@@ -29,9 +29,9 @@ public:
     LogAreaFilter(LogAreaFilter const&) = delete;
     LogAreaFilter(LogAreaFilter const&&) = delete;
 };
-enum LogChannel;
-enum LogRule;
-enum LogCategory;
+enum class LogChannel;
+enum class LogRule;
+enum class LogCategory;
 struct LogDetails {
     LogDetails() = delete;
     LogDetails(LogDetails const&) = delete;
@@ -53,7 +53,7 @@ struct LogDetails {
      * @symbol ?_getLog@BedrockLog@@YAAEAULogDetails@1@W4LogCategory@1@W4LogChannel@1@@Z
      * @hash   -695346904
      */
-    MCAPI struct BedrockLog::LogDetails & _getLog(enum BedrockLog::LogCategory, enum BedrockLog::LogChannel);
+    MCAPI struct BedrockLog::LogDetails & _getLog(enum class BedrockLog::LogCategory, enum class BedrockLog::LogChannel);
     /**
      * @symbol ?_initAreaFilterMap@BedrockLog@@YAXXZ
      * @hash   -979368498
@@ -73,7 +73,7 @@ struct LogDetails {
      * @symbol ?_openChannel@BedrockLog@@YAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4LogCategory@1@W4LogChannel@1@_NPEAVLogSettingsUpdater@@N@Z
      * @hash   -1363969253
      */
-    MCAPI void _openChannel(class Core::Path const &, std::string const &, std::string const &, enum BedrockLog::LogCategory, enum BedrockLog::LogChannel, bool, class LogSettingsUpdater *, double);
+    MCAPI void _openChannel(class Core::Path const &, std::string const &, std::string const &, enum class BedrockLog::LogCategory, enum class BedrockLog::LogChannel, bool, class LogSettingsUpdater *, double);
     /**
      * @symbol ?_priorityFilterString@BedrockLog@@YAPEBDI@Z
      * @hash   241321569
@@ -93,7 +93,7 @@ struct LogDetails {
      * @symbol ?createLog@BedrockLog@@YAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1W4LogCategory@1@V?$bitset@$02@5@_NPEAVLogSettingsUpdater@@N@Z
      * @hash   -1868719764
      */
-    MCAPI void createLog(class Core::Path const &, std::string const &, std::string const &, enum BedrockLog::LogCategory, class std::bitset<3>, bool, class LogSettingsUpdater *, double);
+    MCAPI void createLog(class Core::Path const &, std::string const &, std::string const &, enum class BedrockLog::LogCategory, class std::bitset<3>, bool, class LogSettingsUpdater *, double);
     /**
      * @symbol ?flushAllLogs@BedrockLog@@YAXXZ
      * @hash   630439310
@@ -113,12 +113,12 @@ struct LogDetails {
      * @symbol ?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ
      * @hash   -876325210
      */
-    MCAPI void log(enum BedrockLog::LogCategory, class std::bitset<3>, enum BedrockLog::LogRule, enum LogAreaID, unsigned int, char const *, int, char const *, ...);
+    MCAPI void log(enum class BedrockLog::LogCategory, class std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, unsigned int, char const *, int, char const *, ...);
     /**
      * @symbol ?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z
      * @hash   -1767202517
      */
-    MCAPI void log_va(enum BedrockLog::LogCategory, class std::bitset<3>, enum BedrockLog::LogRule, enum LogAreaID, unsigned int, char const *, int, char const *, char *);
+    MCAPI void log_va(enum class BedrockLog::LogCategory, class std::bitset<3>, enum class BedrockLog::LogRule, enum class LogAreaID, unsigned int, char const *, int, char const *, char *);
     /**
      * @symbol ?rakDebugLog@BedrockLog@@YAHPEBDZZ
      * @hash   136491670

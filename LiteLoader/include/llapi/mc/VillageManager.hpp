@@ -21,7 +21,7 @@ class VillageManager {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum BedAvailabilityState;
+enum class BedAvailabilityState;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGEMANAGER
@@ -76,7 +76,7 @@ public:
      * @symbol ?hasPOI@VillageManager@@QEBA_NAEBVBlockPos@@W4POIType@@@Z
      * @hash   -1319230808
      */
-    MCAPI bool hasPOI(class BlockPos const &, enum POIType) const;
+    MCAPI bool hasPOI(class BlockPos const &, enum class POIType) const;
     /**
      * @symbol ?insertPOI@VillageManager@@QEAAX$$QEAV?$shared_ptr@VPOIInstance@@@std@@@Z
      * @hash   250411829
@@ -168,7 +168,7 @@ public:
      * @symbol ?_getVillageWithBedsAvailableMap@VillageManager@@AEBA?AV?$unordered_map@PEBVVillage@@W4BedAvailabilityState@VillageManager@@U?$hash@PEBVVillage@@@std@@U?$equal_to@PEBVVillage@@@5@V?$allocator@U?$pair@QEBVVillage@@W4BedAvailabilityState@VillageManager@@@std@@@5@@std@@XZ
      * @hash   1203723404
      */
-    MCAPI class std::unordered_map<class Village const *, enum VillageManager::BedAvailabilityState, struct std::hash<class Village const *>, struct std::equal_to<class Village const *>, class std::allocator<struct std::pair<class Village const *const, enum VillageManager::BedAvailabilityState>>> _getVillageWithBedsAvailableMap() const;
+    MCAPI class std::unordered_map<class Village const *, enum class VillageManager::BedAvailabilityState, struct std::hash<class Village const *>, struct std::equal_to<class Village const *>, class std::allocator<struct std::pair<class Village const *const, enum class VillageManager::BedAvailabilityState>>> _getVillageWithBedsAvailableMap() const;
     /**
      * @symbol ?_loadPOIBlueprints@VillageManager@@AEAAXXZ
      * @hash   374505024

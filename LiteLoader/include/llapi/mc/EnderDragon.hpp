@@ -37,7 +37,7 @@ public:
      * @symbol ?reloadHardcoded@EnderDragon@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      * @hash   536722498
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @hash   -1172919607
@@ -144,7 +144,7 @@ public:
      * @symbol ?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z
      * @hash   -1007678421
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  181
      * @symbol ?canChangeDimensionsUsingPortal@EnderDragon@@UEBA_NXZ
@@ -403,7 +403,7 @@ public:
      * @symbol ?_reconstructPath@EnderDragon@@AEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVPathfinderNode@@0W4PathCompletionType@@@Z
      * @hash   -828738453
      */
-    MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode &, class PathfinderNode &, enum PathCompletionType);
+    MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode &, class PathfinderNode &, enum class PathCompletionType);
     /**
      * @symbol ?_isDragonImmuneBlock@EnderDragon@@CA_NAEBVBlockLegacy@@@Z
      * @hash   787916186

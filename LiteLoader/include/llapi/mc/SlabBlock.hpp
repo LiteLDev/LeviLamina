@@ -175,7 +175,7 @@ public:
      * @symbol ?getRedstoneProperty@SlabBlock@@UEBA?AW4BlockProperty@@AEAVBlockSource@@AEBVBlockPos@@@Z
      * @hash   1722154534
      */
-    virtual enum BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
+    virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
      * @vftbl  80
      * @hash   -135567300

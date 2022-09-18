@@ -41,7 +41,7 @@ public:
      * @symbol ?isCompatibleWith@CrossbowEnchant@@UEBA_NW4Type@Enchant@@@Z
      * @hash   -1204163440
      */
-    virtual bool isCompatibleWith(enum Enchant::Type) const;
+    virtual bool isCompatibleWith(enum class Enchant::Type) const;
     /**
      * @vftbl  2
      * @symbol ?getMinCost@CrossbowEnchant@@UEBAHH@Z
@@ -110,12 +110,12 @@ public:
      * @symbol ?_isValidEnchantmentTypeForCategory@CrossbowEnchant@@EEBA_NW4Type@Enchant@@@Z
      * @hash   1259830745
      */
-    virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
+    virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
     /**
      * @symbol ??0CrossbowEnchant@@QEAA@W4Type@Enchant@@W4Frequency@2@V?$basic_string_span@$$CBD$0?0@gsl@@2H_NH@Z
      * @hash   1603439227
      */
-    MCAPI CrossbowEnchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
+    MCAPI CrossbowEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, bool, int);
 
 //private:
 
@@ -124,6 +124,6 @@ private:
      * @symbol ?VALID_ENCHANTMENTS@CrossbowEnchant@@0V?$vector@W4Type@Enchant@@V?$allocator@W4Type@Enchant@@@std@@@std@@B
      * @hash   67130538
      */
-    MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 
 };

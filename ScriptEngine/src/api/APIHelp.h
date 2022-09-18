@@ -61,9 +61,9 @@ std::string ValueKindToString(const ValueKind& kind);
 #if !defined(NEW_DEFINES)
 
 // 输出脚本调用堆栈，API名称，以及插件名
-#define LOG_ERROR_WITH_SCRIPT_INFO(...)    \
-    PrintScriptStackTrace(__VA_ARGS__);    \
-    logger.error("In API: " __FUNCTION__); \
+#define LOG_ERROR_WITH_SCRIPT_INFO(...)       \
+    PrintScriptStackTrace(__VA_ARGS__);       \
+    logger.error("In API: {}", __FUNCTION__); \
     logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName)
 
 // 参数类型错误输出
@@ -92,7 +92,7 @@ std::string ValueKindToString(const ValueKind& kind);
 // 截获引擎异常
 #define CATCH(LOG)                                                   \
     catch (const script::Exception& e) {                             \
-        logger.error(LOG##"\n");                                     \
+        logger.error(LOG "\n");                                      \
         PrintException(e);                                           \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>();                                       \
@@ -139,7 +139,7 @@ std::string ValueKindToString(const ValueKind& kind);
 // 截获引擎异常_Constructor
 #define CATCH_C(LOG)                                                 \
     catch (const Exception& e) {                                     \
-        logger.error(LOG##"\n");                                     \
+        logger.error(LOG "\n");                                      \
         PrintException(e);                                           \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return nullptr;                                              \
@@ -165,7 +165,7 @@ std::string ValueKindToString(const ValueKind& kind);
 // 截获引擎异常_Setter
 #define CATCH_S(LOG)                                                 \
     catch (const Exception& e) {                                     \
-        logger.error(LOG##"\n");                                     \
+        logger.error(LOG "\n");                                      \
         PrintException(e);                                           \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return;                                                      \
@@ -192,7 +192,7 @@ std::string ValueKindToString(const ValueKind& kind);
 // 截获引擎异常_Constructor
 #define CATCH_WITHOUT_RETURN(LOG)                                    \
     catch (const Exception& e) {                                     \
-        logger.error(LOG##"\n");                                     \
+        logger.error(LOG "\n");                                      \
         PrintException(e);                                           \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
     }                                                                \
@@ -263,9 +263,6 @@ bool CheckIsFloat(const Local<Value>& num);
 template <typename T>
 void PrintValue(T& out, Local<Value> v);
 
-template void PrintValue(std::ostream& out, Local<Value> v);
-template void PrintValue(Logger::OutputStream& out, Local<Value> v);
-
 std::string ValueToString(Local<Value> v);
 
 // Json 序列化 反序列化
@@ -289,7 +286,7 @@ struct EnumDefineBuilder {
             }
             return arr;
         } catch (const std::exception&) {
-            logger.error("Error in " __FUNCTION__);
+            logger.error("Error in {}", __FUNCTION__);
         }
         return Local<Value>();
     }
@@ -301,7 +298,7 @@ struct EnumDefineBuilder {
             }
             return obj;
         } catch (const std::exception&) {
-            logger.error("Error in " __FUNCTION__);
+            logger.error("Error in {}", __FUNCTION__);
         }
         return Local<Value>();
     }
@@ -315,7 +312,7 @@ struct EnumDefineBuilder {
                 return String::newString(magic_enum::enum_name(static_cast<Type>(args[0].toInt())));
             return Local<Value>();
         } catch (const std::exception&) {
-            logger.error("Error in " __FUNCTION__);
+            logger.error("Error in {}", __FUNCTION__);
         }
         return Local<Value>();
     }
@@ -324,7 +321,7 @@ struct EnumDefineBuilder {
         try {
             return String::newString(typeid(Type).name() + 5);
         } catch (const std::exception&) {
-            logger.error("Error in " __FUNCTION__);
+            logger.error("Error in {}", __FUNCTION__);
         }
         return Local<Value>();
     }
@@ -346,11 +343,13 @@ struct EnumDefineBuilder {
 
         for (auto& [val, name] : magic_enum::enum_entries<Type>()) {
             // fmt::print("{} = {},\n", name, static_cast<int>(val));
+            auto _val = val;
+            auto _name = name;
             builder.property(std::string(name), [=]() -> Local<Value> {
                 try {
-                    return Number::newNumber(static_cast<int>(val));
+                    return Number::newNumber(static_cast<int>(_val));
                 } catch (const std::exception&) {
-                    logger.error("Error in get {}.{}", enumName, name);
+                    logger.error("Error in get {}.{}", enumName, _name);
                 }
                 return Local<Value>();
             });

@@ -253,7 +253,7 @@ public:
      * @symbol ??0FurnaceBlockActor@@IEAA@W4BlockActorType@@AEBVBlockPos@@AEBVHashedString@@W4LevelSoundEvent@@W4ContainerType@@HAEBVBlock@@5@Z
      * @hash   -1020687845
      */
-    MCAPI FurnaceBlockActor(enum BlockActorType, class BlockPos const &, class HashedString const &, enum LevelSoundEvent, enum ContainerType, int, class Block const &, class Block const &);
+    MCAPI FurnaceBlockActor(enum class BlockActorType, class BlockPos const &, class HashedString const &, enum class LevelSoundEvent, enum class ContainerType, int, class Block const &, class Block const &);
 
 //private:
     /**

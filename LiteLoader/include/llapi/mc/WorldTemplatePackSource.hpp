@@ -66,7 +66,7 @@ public:
      * @symbol ??0WorldTemplatePackSource@@QEAA@AEBVWorldTemplateManager@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z
      * @hash   -1329038216
      */
-    MCAPI WorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum PackType, enum PackOrigin);
+    MCAPI WorldTemplatePackSource(class WorldTemplateManager const &, class mce::UUID const &, enum class PackType, enum class PackOrigin);
     /**
      * @symbol ?getWorldTemplateId@WorldTemplatePackSource@@QEBAAEBVUUID@mce@@XZ
      * @hash   -1170178152

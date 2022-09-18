@@ -39,7 +39,7 @@ public:
      * @symbol ?createDataPacket@EquippableComponent@@QEBA?AVUpdateEquipPacket@@AEAVActor@@W4ContainerID@@@Z
      * @hash   244476938
      */
-    MCAPI class UpdateEquipPacket createDataPacket(class Actor &, enum ContainerID) const;
+    MCAPI class UpdateEquipPacket createDataPacket(class Actor &, enum class ContainerID) const;
     /**
      * @symbol ?createTag@EquippableComponent@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVActor@@@Z
      * @hash   463368897

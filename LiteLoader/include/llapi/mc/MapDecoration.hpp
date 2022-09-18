@@ -21,7 +21,7 @@ class MapDecoration {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum Type;
+enum class Type;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPDECORATION
@@ -40,7 +40,7 @@ public:
      * @symbol ??0MapDecoration@@QEAA@W4Type@0@CCCAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVColor@mce@@@Z
      * @hash   -647409468
      */
-    MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
+    MCAPI MapDecoration(enum class MapDecoration::Type, signed char, signed char, signed char, std::string const &, class mce::Color const &);
     /**
      * @symbol ?getColor@MapDecoration@@QEBAAEBVColor@mce@@XZ
      * @hash   -79079420
@@ -50,7 +50,7 @@ public:
      * @symbol ?getImg@MapDecoration@@QEBA?AW4Type@1@XZ
      * @hash   1889105959
      */
-    MCAPI enum MapDecoration::Type getImg() const;
+    MCAPI enum class MapDecoration::Type getImg() const;
     /**
      * @symbol ?getLabel@MapDecoration@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
      * @hash   889173272

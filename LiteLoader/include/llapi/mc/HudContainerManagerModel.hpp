@@ -76,6 +76,6 @@ public:
      * @symbol ??0HudContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@@Z
      * @hash   -1568414614
      */
-    MCAPI HudContainerManagerModel(enum ContainerID, class Player &);
+    MCAPI HudContainerManagerModel(enum class ContainerID, class Player &);
 
 };

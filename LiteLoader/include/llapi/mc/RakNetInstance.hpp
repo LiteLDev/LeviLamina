@@ -30,7 +30,7 @@ public:
     RakNetNetworkPeer(RakNetNetworkPeer const&) = delete;
     RakNetNetworkPeer(RakNetNetworkPeer const&&) = delete;
 };
-enum NATState;
+enum class NATState;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNETINSTANCE
@@ -184,7 +184,7 @@ public:
      * @symbol ?_changeNatState@RakNetInstance@@AEAAXW4NATState@1@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   -1565325282
      */
-    MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const &);
+    MCAPI void _changeNatState(enum class RakNetInstance::NATState, int, std::string const &);
     /**
      * @symbol ?_createPeer@RakNetInstance@@AEAA?AV?$shared_ptr@VRakNetNetworkPeer@RakNetInstance@@@std@@AEBVNetworkIdentifier@@@Z
      * @hash   120408888

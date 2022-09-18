@@ -128,7 +128,7 @@ public:
      * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@W4BlockActorType@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      * @hash   464532785
      */
-    MCAPI ItemFrameBlockActor(class BlockPos, enum BlockActorType, std::string);
+    MCAPI ItemFrameBlockActor(class BlockPos, enum class BlockActorType, std::string);
     /**
      * @symbol ??0ItemFrameBlockActor@@QEAA@VBlockPos@@@Z
      * @hash   -1451420811

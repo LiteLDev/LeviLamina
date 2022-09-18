@@ -41,7 +41,7 @@ public:
      * @symbol ?getType@NBMonsterThrone@@UEBA?AW4StructurePieceType@@XZ
      * @hash   -1756363987
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl  4
      * @symbol ?postProcess@NBMonsterThrone@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z
