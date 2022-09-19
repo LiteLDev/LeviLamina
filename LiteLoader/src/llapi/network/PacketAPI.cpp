@@ -1,6 +1,7 @@
 ﻿#include <llapi/mc/Packet.hpp>
 #include <llapi/mc/MinecraftPackets.hpp>
 #include <llapi/LoggerAPI.h>
+#include <liteloader/LiteLoader.h>
 
 #define INCLUDE_ALL_PACKET
 #define SIZE_STATIC_ASSERT_IF_DEFINE
@@ -8,7 +9,7 @@
 //#define GENERATE_PACKET
 //#define FILL_PACKET
 
-extern Logger logger;
+using ll::logger;
 
 #ifdef INCLUDE_ALL_PACKET
 
@@ -482,7 +483,7 @@ inline size_t getPacketSize() {
 #include <llapi/DynamicCommandAPI.h>
 #include <llapi/mc/Minecraft.hpp>
 #include <filesystem>
-#include <llapi/Utils/FileHelper.h>
+#include <llapi/utils/FileHelper.h>
 using Param = DynamicCommand::ParameterData;
 using ParamType = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;

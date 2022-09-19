@@ -1,5 +1,5 @@
 #include <llapi/db/ConnParams.h>
-#include <llapi/Utils/StringHelper.h>
+#include <llapi/utils/StringHelper.h>
 #include <llapi/LoggerAPI.h>
 
 namespace DB {

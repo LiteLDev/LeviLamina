@@ -1,4 +1,7 @@
-﻿#include <llapi/mc/Minecraft.hpp>
+﻿#include <bitset>
+#include <magic_enum/magic_enum.hpp>
+
+#include <llapi/mc/Minecraft.hpp>
 
 #include <llapi/mc/Actor.hpp>
 #include <llapi/mc/Mob.hpp>
@@ -33,16 +36,17 @@
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/AttributeInstance.hpp>
 
-#include <llapi/impl/ObjectivePacketHelper.h>
-#include <llapi/impl/FormPacketHelper.h>
-#include <llapi/EventAPI.h>
-#include <bitset>
 #include <llapi/mc/ItemStackDescriptor.hpp>
 #include <llapi/mc/NetworkItemStackDescriptor.hpp>
 #include <llapi/mc/ToastRequestPacket.hpp>
-#include <magic_enum/magic_enum.hpp>
 
-extern Logger logger;
+#include <llapi/impl/ObjectivePacketHelper.h>
+#include <llapi/impl/FormPacketHelper.h>
+#include <llapi/EventAPI.h>
+
+#include <liteloader/LiteLoader.h>
+
+using ll::logger;
 
 NetworkIdentifier* Player::getNetworkIdentifier() {
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
@@ -725,7 +729,7 @@ bool Player::sendCommandRequestPacket(const string& cmd) {
 bool Player::sendTextTalkPacket(const string& msg) {
     return sendTextTalkPacket(msg, nullptr);
 }
-#include <llapi/Utils/DbgHelper.h>
+#include <llapi/utils/DbgHelper.h>
 bool Player::sendTextTalkPacket(const string& msg, Player* target) {
     auto packet = TextPacket::createChat(getName(), msg, getXuid(), "");
     if (target == nullptr) {

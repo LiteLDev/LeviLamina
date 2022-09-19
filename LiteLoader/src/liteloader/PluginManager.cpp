@@ -1,21 +1,30 @@
 #include <liteloader/PluginManager.h>
+
+#include <string>
+#include <unordered_map>
+#include <ScriptEngine/src/main/Configs.h>
+
+#include <llapi/utils/StringHelper.h>
+#include <llapi/utils/WinHelper.h>
+#include <llapi/utils/STLHelper.h>
+
+#include <llapi/mc/Level.hpp>
+#include <llapi/mc/Player.hpp>
+
 #include <llapi/LLAPI.h>
 #include <llapi/LoggerAPI.h>
 #include <llapi/EventAPI.h>
 #include <llapi/ScheduleAPI.h>
-#include <llapi/utils/StringHelper.h>
-#include <llapi/utils/WinHelper.h>
-#include <llapi/utils/STLHelper.h>
 #include <llapi/I18nAPI.h>
-#include <llapi/mc/Level.hpp>
-#include <llapi/mc/Player.hpp>
+
+#include <liteloader/LiteLoader.h>
+
 #include <windows.h>
-#include <string>
-#include <unordered_map>
-#include <ScriptEngine/src/Main/Configs.h>
+
 using namespace std;
 
-extern Logger logger;
+using ll::logger;
+
 std::unordered_map<std::string, ll::Plugin> plugins;
 
 

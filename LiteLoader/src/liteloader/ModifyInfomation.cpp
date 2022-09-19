@@ -91,8 +91,8 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
     auto rv = original(this, origin, output);
     std::cout.rdbuf(oldBuf);
     if (ll::isDebugMode() && ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
-        logger.warn("The thread executing the CommandOutputSender::send is not the \"MC_SERVER\" thread");
-        logger.warn("Output: {}", tmpBuf.str());
+        ll::logger.warn("The thread executing the CommandOutputSender::send is not the \"MC_SERVER\" thread");
+        ll::logger.warn("Output: {}", tmpBuf.str());
     }
 
     auto it = resultOfOrigin.find(&origin);
@@ -107,8 +107,8 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
             return rv;
         } catch (...) {
             if (ll::isDebugMode()) {
-                logger.warn("Output: {}", tmpBuf.str());
-                logger.warn("size of resultOfOrigin: {}", resultOfOrigin.size());
+                ll::logger.warn("Output: {}", tmpBuf.str());
+                ll::logger.warn("size of resultOfOrigin: {}", resultOfOrigin.size());
             }
 #ifdef DEBUG
             __debugbreak();

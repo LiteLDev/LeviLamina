@@ -1,13 +1,18 @@
-#include <llapi/Utils/StringHelper.h>
-#include <llapi/Utils/WinHelper.h>
-#include <liteloader/LiteLoader.h>
-#include <llapi/Utils/DbgHelper.h>
+#include <llapi/utils/WinHelper.h>
+
+#include <string>
+
+#include <llapi/utils/StringHelper.h>
+#include <llapi/utils/DbgHelper.h>
+
 #include <llapi/LoggerAPI.h>
 #include <llapi/I18nAPI.h>
-#include <Psapi.h>
-#include <string>
+
 #include <liteloader/Config.h>
+#include <liteloader/LiteLoader.h>
+
 #include <Windows.h>
+#include <Psapi.h>
 
 using namespace std;
 
@@ -101,12 +106,12 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
             if (callback)
                 callback((int)exitCode, strOutput);
         } catch (const seh_exception& e) {
-            logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
-            logger.error("In NewProcess callback");
+            ll::logger.error("SEH Uncaught Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            ll::logger.error("In NewProcess callback");
             PrintCurrentStackTraceback();
         } catch (...) {
-            logger.error("NewProcess Callback Failed!");
-            logger.error("Uncaught Exception Detected!");
+            ll::logger.error("NewProcess Callback Failed!");
+            ll::logger.error("Uncaught Exception Detected!");
             PrintCurrentStackTraceback();
         }
     }).detach();

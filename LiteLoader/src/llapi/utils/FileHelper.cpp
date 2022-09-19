@@ -1,9 +1,13 @@
-#include <llapi/Utils/FileHelper.h>
-#include <llapi/Utils/StringHelper.h>
-#include <llapi/Utils/WinHelper.h>
-#include <liteloader/Config.h>
+#include <llapi/utils/FileHelper.h>
+
 #include <io.h>
+
 #include <filesystem>
+
+#include <llapi/utils/StringHelper.h>
+#include <llapi/utils/WinHelper.h>
+
+#include <liteloader/Config.h>
 using namespace std;
 
 ///////////// Hacker to get private FILE* /////////////

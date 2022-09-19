@@ -26,7 +26,7 @@ string Button::serialize() {
         }
         return button.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Button in Simple Form serialize!");
+        ll::logger.error("Fail to generate Button in Simple Form serialize!");
         return "";
     }
 }
@@ -62,7 +62,7 @@ string SimpleForm::serialize() {
         }
         return form.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Simple Form in serialize!");
+        ll::logger.error("Fail to generate Simple Form in serialize!");
         return "";
     }
 }
@@ -108,7 +108,7 @@ string ModalForm::serialize() {
         form["button2"] = cancelButton;
         return form.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Modal Form in serialize!");
+        ll::logger.error("Fail to generate Modal Form in serialize!");
         return "";
     }
 }
@@ -170,7 +170,7 @@ string Label::serialize() {
         itemAdd["text"] = text;
         return itemAdd.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Label in Custom Form serialize!");
+        ll::logger.error("Fail to generate Label in Custom Form serialize!");
         return "";
     }
 }
@@ -186,7 +186,7 @@ string Input::serialize() {
             itemAdd["default"] = def;
         return itemAdd.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Input in Custom Form serialize!");
+        ll::logger.error("Fail to generate Input in Custom Form serialize!");
         return "";
     }
 }
@@ -200,7 +200,7 @@ string Toggle::serialize() {
             itemAdd["default"] = def;
         return itemAdd.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Toggle in Custom Form serialize!");
+        ll::logger.error("Fail to generate Toggle in Custom Form serialize!");
         return "";
     }
 }
@@ -220,7 +220,7 @@ string Dropdown::serialize() {
             itemAdd["default"] = def;
         return itemAdd.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Dropdown in Custom Form serialize!");
+        ll::logger.error("Fail to generate Dropdown in Custom Form serialize!");
         return "";
     }
 }
@@ -243,7 +243,7 @@ string Slider::serialize() {
 
         return itemAdd.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Slider in Custom Form serialize!");
+        ll::logger.error("Fail to generate Slider in Custom Form serialize!");
         return "";
     }
 }
@@ -265,7 +265,7 @@ string StepSlider::serialize() {
         }
         return itemAdd.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate StepSlider in Custom Form serialize!");
+        ll::logger.error("Fail to generate StepSlider in Custom Form serialize!");
         return "";
     }
 }
@@ -340,7 +340,7 @@ string CustomForm::serialize() {
         }
         return form.dump();
     } catch (const fifo_json::exception&) {
-        logger.error("Fail to generate Custom Form in serialize!");
+        ll::logger.error("Fail to generate Custom Form in serialize!");
         return "";
     }
 }

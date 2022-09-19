@@ -24,7 +24,7 @@ BinPackArguments: true
 BinPackParameters: true
 ConstructorInitializerIndentWidth: 0
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
-ColumnLimit: 0
+ColumnLimit: 120
 CommentPragmas: '^ IWYU pragma:'
 PointerAlignment: Left
 IndentWidth: 4

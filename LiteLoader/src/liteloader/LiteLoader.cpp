@@ -1,28 +1,36 @@
-#include <windows.h>
-#include <TlHelp32.h>
-#include <Psapi.h>
+#include <liteloader/LiteLoader.h>
+
+#include <csignal>
 #include <string>
 #include <iostream>
-#include <llapi/LoggerAPI.h>
+
 #include <llapi/utils/StringHelper.h>
 #include <llapi/utils/FileHelper.h>
 #include <llapi/utils/SehTranslator.h>
+
+#include <llapi/LoggerAPI.h>
 #include <llapi/ServerAPI.h>
 #include <llapi/HookAPI.h>
+#include <llapi/EventAPI.h>
+
+#include <llapi/mc/Minecraft.hpp>
+
 #include <liteloader/Config.h>
 #include <liteloader/Loader.h>
 #include <liteloader/CrashLogger.h>
 #include <liteloader/AddonsHelper.h>
-#include <llapi/EventAPI.h>
 #include <liteloader/Version.h>
-#include <llapi/mc/Minecraft.hpp>
-#include <csignal>
+
+#include <windows.h>
+#include <TlHelp32.h>
+#include <Psapi.h>
+
+Logger ll::logger("LiteLoader");
+time_t ll::startTime;
+time_t ll::endTime;
 
 using namespace std;
-
-Logger logger("LiteLoader");
-time_t startTime;
-time_t endTime;
+using namespace ll;
 
 // Add plugins folder to path
 void FixPluginsLibDir() {

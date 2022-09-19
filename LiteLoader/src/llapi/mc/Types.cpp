@@ -6,6 +6,8 @@
 #include <llapi/mc/AABB.hpp>
 #include <llapi/LoggerAPI.h>
 
+#include <liteloader/LiteLoader.h>
+
 // ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
 //{
 //     this->x = (char)pos.x & 0xf;
@@ -13,7 +15,8 @@
 //     this->y = (short)(pos.y - minHeight);
 // }
 
-extern Logger logger;
+using ll::logger;
+
 namespace mce {
 std::string mce::Color::toConsoleCode(bool foreground) const {
     fmt::v8::rgb rgb;

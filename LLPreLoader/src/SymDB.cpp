@@ -10,7 +10,7 @@
 #include <vector>
 #include <mutex>
 
-#include <llapi/Utils/Hash.h>
+#include <llapi/utils/Hash.h>
 #include <detours/detours.h>
 #include <rawpdb/PDB.h>
 #include <rawpdb/PDB_RawFile.h>
