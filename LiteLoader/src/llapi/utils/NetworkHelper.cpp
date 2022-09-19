@@ -9,6 +9,7 @@
 #include <llapi/I18nAPI.h>
 
 #include <liteloader/Config.h>
+#include <liteloader/LiteLoader.h>
 
 using namespace std;
 
@@ -54,16 +55,16 @@ bool HttpGet(const string& url, const httplib::Headers& headers, const function<
             else
                 callback(response->status, response->body);
         } catch (const seh_exception& e) {
-            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
-            logger.error("In HttpGet callback");
+            ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            ll::logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         } catch (const std::exception& e) {
-            logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
-            logger.error("In HttpGet callback");
+            ll::logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            ll::logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         } catch (...) {
-            logger.error("HttpGet Callback Failed!");
-            logger.error("Uncaught Exception Detected!");
+            ll::logger.error("HttpGet Callback Failed!");
+            ll::logger.error("Uncaught Exception Detected!");
             PrintCurrentStackTraceback();
         }
     }).detach();
@@ -99,16 +100,16 @@ bool HttpPost(const string& url, const httplib::Headers& headers, const string& 
             else
                 callback(response->status, response->body);
         } catch (const seh_exception& e) {
-            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
-            logger.error("In HttpPost callback");
+            ll::logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            ll::logger.error("In HttpPost callback");
             PrintCurrentStackTraceback();
         } catch (const std::exception& e) {
-            logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
-            logger.error("In HttpGet callback");
+            ll::logger.error("Uncaught C++ Exception Detected!\n{}", TextEncoding::toUTF8(e.what()));
+            ll::logger.error("In HttpGet callback");
             PrintCurrentStackTraceback();
         } catch (...) {
-            logger.error("HttpPost Callback Failed!");
-            logger.error("Uncaught Exception Detected!");
+            ll::logger.error("HttpPost Callback Failed!");
+            ll::logger.error("Uncaught Exception Detected!");
             PrintCurrentStackTraceback();
         }
     }).detach();

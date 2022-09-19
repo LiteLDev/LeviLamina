@@ -2,7 +2,9 @@
 #include <llapi/Global.h>
 #include <llapi/LoggerAPI.h>
 #include <llapi/ScheduleAPI.h>
-extern Logger logger;
+#include <liteloader/LiteLoader.h>
+
+using ll::logger;
 
 LIAPI void OutputEventError(const std::string& errorMsg, const std::string& eventName, const std::string& pluginName) {
     logger.error("Please upgrade the plugin <{}>, or it will not work properly!!!", pluginName);

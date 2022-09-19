@@ -9,8 +9,11 @@
 #include <llapi/HookAPI.h>
 #include <llapi/LoggerAPI.h>
 
+#include <liteloader/LiteLoader.h>
+
 using namespace std;
-extern Logger logger;
+
+using ll::logger;
 
 // Have problems, need to be fixed.
 

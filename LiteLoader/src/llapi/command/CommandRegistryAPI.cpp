@@ -1,10 +1,15 @@
 #define COMMAND_REGISTRY_EXTRA
+#include <vector>
+
 #include <llapi/mc/CommandRegistry.hpp>
 #include <llapi/mc/CommandParameterData.hpp>
 #include <llapi/mc/AvailableCommandsPacket.hpp>
-#include <vector>
 #include <llapi/RegCommandAPI.h>
 #include <llapi/LoggerAPI.h>
+
+#include <liteloader/LiteLoader.h>
+
+using ll::logger;
 static_assert(offsetof(CommandParameterData, options) == 73);
 static_assert(offsetof(CommandParameterData, name) == 16);
 static_assert(offsetof(CommandParameterData, unk56) == 56);
@@ -19,8 +24,6 @@ void CommandRegistry::registerOverload(std::string const& name, Overload::Factor
     auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
     registerOverloadInternal(*signature, overload);
 }*/
-
-extern Logger logger;
 
 CommandRegistry::Overload::Overload(CommandVersion version,
                                     FactoryFn factory,

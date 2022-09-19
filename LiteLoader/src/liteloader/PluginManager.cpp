@@ -17,11 +17,14 @@
 #include <llapi/ScheduleAPI.h>
 #include <llapi/I18nAPI.h>
 
+#include <liteloader/LiteLoader.h>
+
 #include <windows.h>
 
 using namespace std;
 
-extern Logger logger;
+using ll::logger;
+
 std::unordered_map<std::string, ll::Plugin> plugins;
 
 

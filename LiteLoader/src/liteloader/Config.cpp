@@ -8,6 +8,8 @@
 #include <llapi/utils/FileHelper.h>
 #include <llapi/LoggerAPI.h>
 
+#include <liteloader/LiteLoader.h>
+
 using namespace std;
 
 namespace ll {
@@ -218,7 +220,7 @@ inline bool SaveConfig(nlohmann::json& config) {
         of << config.dump(4);
         return true;
     } else {
-        logger.error(tr("ll.config.save.fail"));
+        ll::logger.error(tr("ll.config.save.fail"));
         return false;
     }
 }
@@ -227,16 +229,16 @@ inline bool SaveConfig(nlohmann::json& config) {
 
 void ChooseLanguage() { 
     std::unordered_map<std::string, std::string> languageList = {{"en", "English"}, {"zh_CN", "简体中文"}, {"zh_TW", "繁体中文"}, {"ja", "日本語"}, {"ru", "Русский"}, {"id", "Indonesian"}, {"th", "ไทย"}, {"it", "Italiano"}, {"vi", "tiếng việt"}};
-    logger.info("Please select your language first");
+    ll::logger.info("Please select your language first");
     std::unordered_map<unsigned short, std::string> languages;
     unsigned short languageCode = 0;
-    logger.info("0. Default(System)");
+    ll::logger.info("0. Default(System)");
     for (std::filesystem::directory_entry i : std::filesystem::directory_iterator("plugins/LiteLoader/LangPack")) {
         languageCode++;
         std::string langFile = i.path().filename().string();
         std::string lang = langFile.replace(langFile.find(".json"), 5,"");
         languages[languageCode] = lang;
-        logger.info("{}. {}", languageCode, languageList[lang]);
+        ll::logger.info("{}. {}", languageCode, languageList[lang]);
     }
     unsigned short selected = 0;
     std::cout << "(Number)> ";
@@ -253,7 +255,7 @@ bool ll::LoadLLConfig() {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
 
         if (!content || content.value().empty()) {
-            logger.warn(tr("ll.config.creating", LITELOADER_CONFIG_FILE));
+            ll::logger.warn(tr("ll.config.creating", LITELOADER_CONFIG_FILE));
             // if (IsWineEnvironment()) {
             //     ChooseLanguage();
             // }
@@ -265,26 +267,26 @@ bool ll::LoadLLConfig() {
                 ll::globalConfig = out;
                 auto config = nlohmann::json(ll::globalConfig);
                 if (out != config) {
-                    logger.warn(tr("ll.config.warning.configOutdated", LITELOADER_CONFIG_FILE));
-                    logger.warn(tr("ll.config.updating"));
+                    ll::logger.warn(tr("ll.config.warning.configOutdated", LITELOADER_CONFIG_FILE));
+                    ll::logger.warn(tr("ll.config.updating"));
                     ll::globalConfig.language = "system";
                     config = nlohmann::json(ll::globalConfig);
                     return SaveConfig(config);
                 }
                 return true;
             } catch (const nlohmann::json::exception& e) {
-                logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
-                logger.error("{}", e.what());
-                logger.error("Using default config file...");
+                ll::logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+                ll::logger.error("{}", e.what());
+                ll::logger.error("Using default config file...");
                 return ll::SaveLLConfig();
             }
         }
     } catch (const nlohmann::json::exception& e) {
-        logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
-        logger.error("{}", e.what());
+        ll::logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+        ll::logger.error("{}", e.what());
         return false;
     } catch (...) {
-        logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
+        ll::logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
         return false;
     }
     return true;

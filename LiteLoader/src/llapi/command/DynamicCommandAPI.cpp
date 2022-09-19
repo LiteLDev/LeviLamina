@@ -1,4 +1,6 @@
 ﻿//#define COMMAND_REGISTRY_EXTRA
+#include <dyncall/dyncall_callback.h>
+
 #include <llapi/DynamicCommandAPI.h>
 #include <llapi/I18nAPI.h>
 #include <llapi/LLAPI.h>
@@ -16,11 +18,12 @@
 #include <llapi/ScheduleAPI.h>
 #include <llapi/mc/Minecraft.hpp>
 #include <llapi/mc/LoopbackPacketSender.hpp>
-#include <dyncall/dyncall_callback.h>
 #include <llapi/mc/CommandUtils.hpp>
 #include <llapi/mc/CommandSoftEnumRegistry.hpp>
 
-extern Logger logger;
+#include <liteloader/LiteLoader.h>
+
+using ll::logger;
 
 #define ForEachParameterType(func) \
     func(Bool);                    \

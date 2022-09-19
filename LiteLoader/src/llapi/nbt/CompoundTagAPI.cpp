@@ -1,4 +1,10 @@
-﻿#include <llapi/mc/Actor.hpp>
+﻿#include <map>
+#include <sstream>
+#include <vector>
+#include <nbt-cpp/nbt.hpp>
+#include <magic_enum/magic_enum.hpp>
+
+#include <llapi/mc/Actor.hpp>
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/BlockActor.hpp>
 #include <llapi/mc/ByteArrayTag.hpp>
@@ -20,13 +26,11 @@
 #include <llapi/mc/StringTag.hpp>
 #include <llapi/mc/Tag.hpp>
 #include <llapi/I18nAPI.h>
-#include <map>
-#include <nbt-cpp/nbt.hpp>
-#include <sstream>
-#include <vector>
-#include <magic_enum/magic_enum.hpp>
+
+#include <liteloader/LiteLoader.h>
 
 using magic_enum::enum_integer;
+using ll::logger;
 
 class DataLoadHelper;
 
@@ -190,7 +194,6 @@ using namespace nbt;
 using namespace std;
 
 #include <llapi/LoggerAPI.h>
-extern Logger logger;
 
 inline void OutputNBTError(std::string const& errorMsg, int errorCode, std::string errorWhat, std::string const& functionName) {
     logger.error(errorMsg);

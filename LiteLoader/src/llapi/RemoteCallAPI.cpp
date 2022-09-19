@@ -1,9 +1,13 @@
 #include <llapi/RemoteCallAPI.h>
-#include <llapi/LoggerAPI.h>
-#include <llapi/utils/StringHelper.h>
-#include <llapi/LLAPI.h>
 
-extern Logger logger;
+#include <llapi/utils/StringHelper.h>
+
+#include <llapi/LLAPI.h>
+#include <llapi/LoggerAPI.h>
+
+#include <liteloader/LiteLoader.h>
+
+using ll::logger;
 
 namespace RemoteCall {
 CallbackFn const EMPTY_FUNC{};

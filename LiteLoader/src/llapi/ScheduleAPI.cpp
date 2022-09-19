@@ -144,27 +144,27 @@ public:
                             break;
                     }
                 } catch (const seh_exception& e) {
-                    logger.error("SEH exception occurred in ScheduleTask!");
-                    logger.error("{}", TextEncoding::toUTF8(e.what()));
-                    logger.error("TaskId: {}", t.taskId);
+                    ll::logger.error("SEH exception occurred in ScheduleTask!");
+                    ll::logger.error("{}", TextEncoding::toUTF8(e.what()));
+                    ll::logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = ll::getPlugin(t.handle))
-                        logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
+                        ll::logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 } catch (const std::exception& e) {
-                    logger.error("Exception occurred in ScheduleTask!");
-                    logger.error("{}", TextEncoding::toUTF8(e.what()));
-                    logger.error("TaskId: {}", t.taskId);
+                    ll::logger.error("Exception occurred in ScheduleTask!");
+                    ll::logger.error("{}", TextEncoding::toUTF8(e.what()));
+                    ll::logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = ll::getPlugin(t.handle))
-                        logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
+                        ll::logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 } catch (...) {
-                    logger.error("Exception occurred in ScheduleTask!");
-                    logger.error("TaskId: {}", t.taskId);
+                    ll::logger.error("Exception occurred in ScheduleTask!");
+                    ll::logger.error("TaskId: {}", t.taskId);
                     if (auto plugin = ll::getPlugin(t.handle))
-                        logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
+                        ll::logger.error("In Plugin: <{} {}>", plugin->name, plugin->version.toString());
                 }
                 pop();
             }
         } catch (...) {
-            logger.error("Exception occurred in ScheduleTask!");
+            ll::logger.error("Exception occurred in ScheduleTask!");
         }
     }
 

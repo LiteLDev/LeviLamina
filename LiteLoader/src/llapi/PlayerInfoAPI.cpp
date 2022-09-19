@@ -7,15 +7,13 @@
 #include <exception>
 #include <llapi/db/Session.h>
 
-#define PLAYER_DATABASE_PATH "plugins/LiteLoader/PlayerDB.db"
-#define SQL_CREATE_PLAYER_TABLE \
-    R"(
+constexpr auto kPlayerDatabasePath = "plugins/LiteLoader/PlayerDB.db";
+constexpr auto kSqlCreatePlayerTable = R"(
 CREATE TABLE IF NOT EXISTS player (
     NAME TEXT PRIMARY KEY NOT NULL,
     XUID TEXT NOT NULL,
     UUID TEXT NOT NULL
-) WITHOUT ROWID;
-)"
+) WITHOUT ROWID; )";
 
 DB::SharedPointer<DB::Session> db;
 
@@ -70,7 +68,7 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
             data.push_back({name, xuid, uuid});
             db << "insert into player (NAME, XUID, UUID) values(?,?,?)", DB::use(DB::Row{name, xuid, uuid});
         } catch (const std::exception& e) {
-            logger.error("PlayerDB Error: {}", e.what());
+            ll::logger.error("PlayerDB Error: {}", e.what());
             return false;
         }
     } else {
@@ -85,7 +83,7 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
                 }
             }
         } catch (std::exception const& e) {
-            logger.error("PlayerDB Error: {}", e.what());
+            ll::logger.error("PlayerDB Error: {}", e.what());
             return false;
         }
     }
@@ -124,7 +122,7 @@ void forEachInfo(std::function<bool(std::string_view name, std::string_view xuid
 
 template <>
 PlayerInfo::Info row_to(const DB::Row& row) {
-    //logger.debug("{} {} {}", row["NAME"].get<std::string>(), row["XUID"].get<std::string>(), row["UUID"].get<std::string>());
+    //ll::logger.debug("{} {} {}", row["NAME"].get<std::string>(), row["XUID"].get<std::string>(), row["UUID"].get<std::string>());
     return {
         row["NAME"].get<std::string>(),
         row["XUID"].get<std::string>(),
@@ -135,15 +133,15 @@ PlayerInfo::Info row_to(const DB::Row& row) {
 bool InitPlayerDatabase() {
     using namespace PlayerInfo;
     try {
-        db = DB::Session::create(DB::DBType::SQLite, std::string(PLAYER_DATABASE_PATH));
+        db = DB::Session::create(DB::DBType::SQLite, std::string(kPlayerDatabasePath));
 
-        db->execute(SQL_CREATE_PLAYER_TABLE);
+        db->execute(kSqlCreatePlayerTable);
 
         PlayerInfo::data = db->prepare("select NAME, XUID, UUID from player")->execute()->fetchAll<Info>();
 
         // Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent&) {
         //     if (Global<PropertiesSettings> && !Global<PropertiesSettings>->useOnlineAuthentication()) {
-        //         logger.warn("Online Authentication(online-mode in server.properties) is disabled!");
+        //         ll::logger.warn("Online Authentication(online-mode in server.properties) is disabled!");
         //     }
         //     return true;
         // });
@@ -154,7 +152,7 @@ bool InitPlayerDatabase() {
             return true;
         });
     } catch (std::exception const& e) {
-        logger.error("Read PlayerDB Error: {}", e.what());
+        ll::logger.error("Read PlayerDB Error: {}", e.what());
         return false;
     }
     return true;

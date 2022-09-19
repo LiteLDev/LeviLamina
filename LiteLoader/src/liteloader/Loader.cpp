@@ -18,6 +18,7 @@
 #include <llapi/ParticleAPI.h>
 
 #include <liteloader/PluginManager.h>
+#include <liteloader/LiteLoader.h>
 #include <liteloader/Config.h>
 #include <liteloader/Version.h>
 
@@ -126,7 +127,7 @@ void InitNodeJsDirectories() {
     if (!filesystem::exists(package_json_path)) {
         ofstream fout(package_json_path.c_str());
         fout << DEFAULT_ROOT_PACKAGE_JSON;
-        logger.warn(tr("ll.loader.initNodeJsDirectories.created"));
+        ll::logger.warn(tr("ll.loader.initNodeJsDirectories.created"));
     }
 }
 
@@ -136,17 +137,17 @@ void LoadScriptEngine() {
         std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
         std::string version = GetFileVersionString(path, true);
         if (version != llVersion) {
-            logger.warn(tr("ll.loader.loadScriptEngine.error.versionNotMatch", version, backend, llVersion));
+            ll::logger.warn(tr("ll.loader.loadScriptEngine.error.versionNotMatch", version, backend, llVersion));
         }
         auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
         if (lib) {
-            logger.info(tr("ll.loader.loadScriptEngine.success", backend));
+            ll::logger.info(tr("ll.loader.loadScriptEngine.success", backend));
             // Fake Register
             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
                            {{"GitHub", "https://github.com/LiteLDev/LiteLoaderBDS"}});
         } else {
-            logger.error("Fail to load ScriptEngine for {}!", backend);
-            logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+            ll::logger.error("Fail to load ScriptEngine for {}!", backend);
+            ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
         }
     }
 }
@@ -156,17 +157,17 @@ void LoadDotNETEngine() {
     std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
     std::string version = GetFileVersionString(path, true);
     if (version != llVersion) {
-        logger.warn(tr("ll.loader.loadDotNetEngine.error.versionNotMatch", version, llVersion));
+        ll::logger.warn(tr("ll.loader.loadDotNetEngine.error.versionNotMatch", version, llVersion));
     }
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
-        logger.info(tr("ll.loader.loadDotNetEngine.success"));
+        ll::logger.info(tr("ll.loader.loadDotNetEngine.success"));
         // Fake Register
         RegisterPlugin(lib, "LiteLoader.NET", "LiteLoader.NET", LITELOADER_VERSION,
                        {{"GitHub", "https://github.com/LiteLDev/LiteLoader.NET"}});
     } else {
-        logger.error("Fail to load LiteLoader.NET!");
-        logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+        ll::logger.error("Fail to load LiteLoader.NET!");
+        ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
     }
 }
 
@@ -176,8 +177,8 @@ void LoadPermissionAPI() {
     if (lib) {
         Permission::init(lib);
     } else {
-        logger.error("Fail to load PermissionAPI!");
-        logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+        ll::logger.error("Fail to load PermissionAPI!");
+        ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
     }
 }
 
@@ -187,14 +188,14 @@ void LoadParticleAPI() {
     if (lib) {
         ParticleCUI::init(lib);
     } else {
-        logger.error("Fail to load ParticleAPI!");
-        logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+        ll::logger.error("Fail to load ParticleAPI!");
+        ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
     }
 }
 
 
 void ll::LoadMain() {
-    logger.info(tr("ll.loader.loadMain.start"));
+    ll::logger.info(tr("ll.loader.loadMain.start"));
     CleanOldScriptEngine();
 
     // Load plugins
@@ -257,17 +258,17 @@ void ll::LoadMain() {
             ++pluginCount;
 
             if (isShellLink) {
-                logger.info(tr("ll.loader.loadMain.loadedShellLink",
+                ll::logger.info(tr("ll.loader.loadMain.loadedShellLink",
                                UTF82String(file.path().filename().u8string()), UTF82String(path.u8string())));
             } else {
-                logger.info(tr("ll.loader.loadMain.loadedPlugin", fmt::arg("name", pluginFileName)));
+                ll::logger.info(tr("ll.loader.loadMain.loadedPlugin", fmt::arg("name", pluginFileName)));
             }
 
             if (PluginManager::getPlugin(lib) == nullptr) {
                 if (!RegisterPlugin(lib, pluginFileName, pluginFileName, ll::Version(1, 0, 0), {})) {
-                    logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", UTF82String(path.u8string())));
+                    ll::logger.error(tr("ll.pluginManager.error.failToRegisterPlugin", UTF82String(path.u8string())));
                     if (PluginManager::getPlugin(pluginFileName)) {
-                        logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
+                        ll::logger.error(tr("ll.pluginManager.error.hasBeenRegistered", pluginFileName));
                     }
                 }
             }
@@ -278,8 +279,8 @@ void ll::LoadMain() {
             if (!fileVersion.empty()) {
                 info += " [" + fileVersion + "]";
             }
-            logger.error("Fail to load plugin <{}>!", info);
-            logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
+            ll::logger.error("Fail to load plugin <{}>!", info);
+            ll::logger.error("Error: Code[{}] {}", lastError, GetLastErrorMessage(lastError));
         }
     }
 
@@ -322,19 +323,19 @@ void ll::LoadMain() {
                 if (!fileVersion.empty()) {
                     info += "<" + fileVersion + ">";
                 }
-                logger.error("Plugin <{}> throws an std::exception in onPostInit!", info);
-                logger.error("Exception: {}", TextEncoding::toUTF8(e.what()));
-                logger.error("Fail to init plugin <{}>!", info);
+                ll::logger.error("Plugin <{}> throws an std::exception in onPostInit!", info);
+                ll::logger.error("Exception: {}", TextEncoding::toUTF8(e.what()));
+                ll::logger.error("Fail to init plugin <{}>!", info);
             } catch (...) {
                 std::string fileVersion = GetFileVersionString(plugin->handle, true);
                 std::string info = name;
                 if (!fileVersion.empty()) {
                     info += "<" + fileVersion + ">";
                 }
-                logger.error("Plugin <{}> throws an exception in onPostInit!", info);
-                logger.error("Fail to init plugin <{}>!", info);
+                ll::logger.error("Plugin <{}> throws an exception in onPostInit!", info);
+                ll::logger.error("Fail to init plugin <{}>!", info);
             }
         }
     }
-    logger.info(tr("ll.loader.loadMain.done", pluginCount));
+    ll::logger.info(tr("ll.loader.loadMain.done", pluginCount));
 }

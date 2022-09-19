@@ -123,7 +123,7 @@ void initJson(nlohmann::json json) {
 void writeDefaultConfig(const std::string& fileName) {
     std::ofstream file(fileName);
     if (!file.is_open()) {
-        logger.error("Can't open file {}", fileName);
+        ll::logger.error("Can't open file {}", fileName);
         return;
     }
     auto json = globalJson();
@@ -138,7 +138,7 @@ void writeDefaultConfig(const std::string& fileName) {
 void writeConfig(const std::string& fileName) {
     std::ofstream file(fileName);
     if (!file.is_open()) {
-        logger.error("Can't open file {}", fileName);
+        ll::logger.error("Can't open file {}", fileName);
         return;
     }
     auto json = globalJson();
@@ -152,7 +152,7 @@ void writeConfig(const std::string& fileName) {
 void loadConfigFromJson(const std::string& fileName) {
     std::ifstream file(fileName);
     if (!file.is_open()) {
-        logger.error("Can't open file {}", fileName);
+        ll::logger.error("Can't open file {}", fileName);
         return;
     }
     auto json = nlohmann::json::parse(file, nullptr, true, true);
@@ -170,7 +170,7 @@ void reloadJson(const std::string& fileName) {
         file << "//This has nearly no effect on the server performance!Check out https://bStats.org/ to learn more\n";
         file << globalJson().dump(4);
     } else {
-        logger.error("Configuration File Creation failed!");
+        ll::logger.error("Configuration File Creation failed!");
     }
     file.close();
 }
@@ -282,12 +282,12 @@ void createJsonConfig() {
         try {
             bstatsSettings::loadConfigFromJson("plugins/bStats/config.json");
         } catch (std::exception& e) {
-            logger.error("Config File isInvalid, Err {}", e.what());
+            ll::logger.error("Config File isInvalid, Err {}", e.what());
         } catch (...) {
-            logger.error("Config File isInvalid");
+            ll::logger.error("Config File isInvalid");
         }
     } else {
-        logger.info("Config with default values created");
+        ll::logger.info("Config with default values created");
         bstatsSettings::writeDefaultConfig("plugins/bStats/config.json");
     }
 }

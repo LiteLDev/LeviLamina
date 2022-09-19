@@ -69,6 +69,7 @@
 #include <llapi/ScheduleAPI.h>
 
 #include <liteloader/Config.h>
+#include <liteloader/LiteLoader.h>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);
@@ -82,7 +83,7 @@ static_assert(offsetof(InventoryTransaction, items) == 0x40);
 
 using namespace Event;
 using std::vector;
-extern Logger logger;
+using ll::logger;
 
 /////////////////////////////// Event Data ///////////////////////////////
 

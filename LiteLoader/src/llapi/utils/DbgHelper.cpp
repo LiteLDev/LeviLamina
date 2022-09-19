@@ -1,16 +1,24 @@
-#include <windows.h>
-#include <dbghelp/dbghelp.h>
-#include <liteloader/Config.h>
+﻿#include <llapi/utils/DbgHelper.h>
+
 #include <thread>
 #include <string>
 #include <map>
-#include <llapi/LoggerAPI.h>
+
+#include <windows.h>
 #include <Psapi.h>
+
+#include <dbghelp/dbghelp.h>
 
 #include <llapi/utils/WinHelper.h>
 #include <llapi/utils/StringHelper.h>
+#include <llapi/LoggerAPI.h>
+
+#include <liteloader/Config.h>
+#include <liteloader/LiteLoader.h>
+
 using namespace std;
-extern Logger logger;
+
+using ll::logger;
 
 #define DBGHELP_TRANSLATE_TCHAR
 

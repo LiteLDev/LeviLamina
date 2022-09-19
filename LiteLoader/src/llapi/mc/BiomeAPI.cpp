@@ -35,7 +35,10 @@ std::vector<Biome*> Biome::getBiomesByType(VanillaBiomeTypes type) {
 
 #include <llapi/LoggerAPI.h>
 #include <llapi/mc/Minecraft.hpp>
-extern Logger logger;
+
+#include <liteloader/LiteLoader.h>
+
+using ll::logger;
 
 TClasslessInstanceHook2("startServerThread_TestBiome", void, "?startServerThread@ServerInstance@@QEAAXXZ") {
     Global<Level> = Global<Minecraft>->getLevel();

@@ -21,14 +21,16 @@
 #include <liteloader/AddonsHelper.h>
 #include <liteloader/Version.h>
 
-using namespace std;
 #include <windows.h>
 #include <TlHelp32.h>
 #include <Psapi.h>
 
-Logger logger("LiteLoader");
-time_t startTime;
-time_t endTime;
+Logger ll::logger("LiteLoader");
+time_t ll::startTime;
+time_t ll::endTime;
+
+using namespace std;
+using namespace ll;
 
 // Add plugins folder to path
 void FixPluginsLibDir() {

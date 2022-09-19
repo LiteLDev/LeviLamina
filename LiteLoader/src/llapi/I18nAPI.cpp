@@ -151,7 +151,7 @@ void MultiFileI18N::load(const std::string& dirName) {
     this->dirPath = dirName;
     if (!fs::exists(dirName) || fs::is_empty(dirName)) {
         if (this->defaultLangData.empty()) {
-            logger.error("Language files NOT FOUND! This may cause many errors!");
+            ll::logger.error("Language files NOT FOUND! This may cause many errors!");
             return;
         }
         this->langData = this->defaultLangData;
@@ -221,9 +221,9 @@ I18nBase* loadI18nImpl(HMODULE hPlugin, const std::string& path, const std::stri
         }
         return &PluginOwnData::setWithoutNewImpl<I18nBase>(hPlugin, I18nBase::POD_KEY, res);
     } catch (const std::exception& e) {
-        logger.error("Fail to load translation file <{}> !", path);
-        logger.error("- {}", TextEncoding::toUTF8(e.what()));
-    } catch (...) { logger.error("Fail to load translation file <{}> !", path); }
+        ll::logger.error("Fail to load translation file <{}> !", path);
+        ll::logger.error("- {}", TextEncoding::toUTF8(e.what()));
+    } catch (...) { ll::logger.error("Fail to load translation file <{}> !", path); }
     return nullptr;
 }
 
@@ -232,9 +232,9 @@ I18nBase* loadFromImpl(HMODULE hPlugin, HMODULE hTarget) {
         auto& i18n = PluginOwnData::getImpl<I18nBase>(hTarget, I18nBase::POD_KEY);
         return &PluginOwnData::setWithoutNewImpl<I18nBase>(hPlugin, I18nBase::POD_KEY, i18n.clone());
     } catch (const std::exception& e) {
-        logger.error("Fail to load translation from another plugin!", e.what());
-        logger.error("- {}", e.what());
-    } catch (...) { logger.error("Fail to load translation from another plugin!"); }
+        ll::logger.error("Fail to load translation from another plugin!", e.what());
+        ll::logger.error("- {}", e.what());
+    } catch (...) { ll::logger.error("Fail to load translation from another plugin!"); }
     return nullptr;
 }
 
