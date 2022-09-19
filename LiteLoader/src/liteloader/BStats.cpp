@@ -5,7 +5,7 @@
 #include <llapi/ServerAPI.h>
 #include <llapi/utils/WinHelper.h>
 #include <llapi/utils/StringHelper.h>
-#include <llapi/Utils/NetworkHelper.h>
+#include <llapi/utils/NetworkHelper.h>
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/PropertiesSettings.hpp>
 #include <llapi/mc/ServerNetworkHandler.hpp>

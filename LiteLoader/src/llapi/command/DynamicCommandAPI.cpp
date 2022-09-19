@@ -12,7 +12,7 @@
 #include <llapi/mc/ActorDefinitionIdentifier.hpp>
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/Block.hpp>
-#include <llapi/Utils/SRWLock.h>
+#include <llapi/utils/SRWLock.h>
 #include <llapi/ScheduleAPI.h>
 #include <llapi/mc/Minecraft.hpp>
 #include <llapi/mc/LoopbackPacketSender.hpp>

@@ -1,7 +1,12 @@
-#include <liteloader/Config.h>
 #include <llapi/EventAPI.h>
-#include <llapi/Global.h>
-#include <llapi/LoggerAPI.h>
+
+#include <functional>
+#include <tuple>
+#include <iostream>
+#include <string>
+#include <typeinfo>
+#include <vector>
+
 #include <llapi/mc/ActorDamageSource.hpp>
 #include <llapi/mc/BaseCommandBlock.hpp>
 #include <llapi/mc/Block.hpp>
@@ -36,24 +41,11 @@
 #include <llapi/mc/ServerNetworkHandler.hpp>
 #include <llapi/mc/VanillaBlocks.hpp>
 #include <llapi/mc/ActorDamageSource.hpp>
-#include <llapi/ScheduleAPI.h>
 #include <llapi/mc/ServerPlayer.hpp>
-#include <llapi/RegCommandAPI.h>
-#include <llapi/Utils/StringHelper.h>
-#include <llapi/Utils/DbgHelper.h>
-#include <llapi/I18nAPI.h>
-#include <functional>
-#include <tuple>
-#include <iostream>
-#include <string>
-#include <typeinfo>
-#include <vector>
 #include <llapi/mc/ComplexInventoryTransaction.hpp>
 #include <llapi/mc/InventoryTransaction.hpp>
 #include <llapi/mc/InventoryAction.hpp>
 #include <llapi/mc/InventorySource.hpp>
-#include <llapi/mc/Util.hpp>
-#include <llapi/DynamicCommandAPI.h>
 #include <llapi/mc/ResourcePackManager.hpp>
 #include <llapi/mc/ResourceLocation.hpp>
 #include <llapi/mc/PackSourceFactory.hpp>
@@ -64,6 +56,19 @@
 #include <llapi/mc/BucketItem.hpp>
 #include <llapi/mc/BucketableComponent.hpp>
 #include <llapi/mc/AnimatePacket.hpp>
+#include <llapi/mc/Util.hpp>
+
+#include <llapi/utils/StringHelper.h>
+#include <llapi/utils/DbgHelper.h>
+
+#include <llapi/Global.h>
+#include <llapi/DynamicCommandAPI.h>
+#include <llapi/RegCommandAPI.h>
+#include <llapi/I18nAPI.h>
+#include <llapi/LoggerAPI.h>
+#include <llapi/ScheduleAPI.h>
+
+#include <liteloader/Config.h>
 
 static_assert(offsetof(InventoryAction, source) == 0x0);
 static_assert(offsetof(InventoryAction, slot) == 0x0c);

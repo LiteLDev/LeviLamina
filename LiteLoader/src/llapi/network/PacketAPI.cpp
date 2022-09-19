@@ -482,7 +482,7 @@ inline size_t getPacketSize() {
 #include <llapi/DynamicCommandAPI.h>
 #include <llapi/mc/Minecraft.hpp>
 #include <filesystem>
-#include <llapi/Utils/FileHelper.h>
+#include <llapi/utils/FileHelper.h>
 using Param = DynamicCommand::ParameterData;
 using ParamType = DynamicCommand::ParameterType;
 using ParamIndex = DynamicCommandInstance::ParameterIndex;

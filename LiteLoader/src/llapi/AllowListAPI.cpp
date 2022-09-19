@@ -2,7 +2,7 @@
 #include <llapi/LoggerAPI.h>
 #include <llapi/GlobalServiceAPI.h>
 #include <llapi/AllowListAPI.h>
-#include <llapi/Utils/FileHelper.h>
+#include <llapi/utils/FileHelper.h>
 #include <llapi/mc/AllowListFile.hpp>
 #pragma warning(disable : 26812)
 

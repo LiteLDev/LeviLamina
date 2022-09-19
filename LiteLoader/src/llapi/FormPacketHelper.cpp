@@ -5,7 +5,7 @@
 
 #include <llapi/Impl/FormPacketHelper.h>
 #include <Nlohmann/fifo_json.hpp>
-#include <llapi/Utils/DbgHelper.h>
+#include <llapi/utils/DbgHelper.h>
 #include <liteloader/LiteLoader.h>
 
 #include <llapi/mc/ServerNetworkHandler.hpp>

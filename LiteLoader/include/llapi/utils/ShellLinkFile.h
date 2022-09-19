@@ -1,5 +1,6 @@
 #pragma once
 #include "../Global.h"
+#include <windef.h>
 
 struct IShellLinkW;
 struct IPersistFile;

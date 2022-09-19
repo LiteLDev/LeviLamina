@@ -1,9 +1,11 @@
+#include <liteloader/Config.h>
+
 #include <filesystem>
 #include <fstream>
+
 #include <Nlohmann/json.hpp>
-#include <llapi/Utils/FileHelper.h>
-#include <liteloader/Config.h>
-#include <liteloader/LiteLoader.h>
+
+#include <llapi/utils/FileHelper.h>
 #include <llapi/LoggerAPI.h>
 
 using namespace std;

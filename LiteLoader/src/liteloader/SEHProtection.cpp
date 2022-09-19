@@ -1,11 +1,14 @@
-#include <llapi/HookAPI.h>
-#include <llapi/LoggerAPI.h>
-#include <llapi/utils/SehTranslator.h>
-#include <llapi/Utils/DbgHelper.h>
-#include <llapi/utils/StringHelper.h>
 #include <sstream>
 #include <string>
 #include <set>
+
+#include <llapi/utils/SehTranslator.h>
+#include <llapi/utils/DbgHelper.h>
+#include <llapi/utils/StringHelper.h>
+
+#include <llapi/HookAPI.h>
+#include <llapi/LoggerAPI.h>
+
 using namespace std;
 extern Logger logger;
 
