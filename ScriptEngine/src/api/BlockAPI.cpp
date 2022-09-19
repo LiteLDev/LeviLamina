@@ -27,6 +27,23 @@ ClassDefine<BlockClass> BlockClassBuilder =
         .instanceProperty("id", &BlockClass::getId)
         .instanceProperty("pos", &BlockClass::getPos)
         .instanceProperty("tileData", &BlockClass::getTileData)
+        .instanceProperty("variant", &BlockClass::getVariant)
+        .instanceProperty("translucency", &BlockClass::getTranslucency)
+        .instanceProperty("thickness", &BlockClass::getThickness)
+
+        .instanceProperty("isAir", &BlockClass::isAir)
+        .instanceProperty("isBounceBlock", &BlockClass::isBounceBlock)
+        .instanceProperty("isButtonBlock", &BlockClass::isButtonBlock)
+        .instanceProperty("isCropBlock", &BlockClass::isCropBlock)
+        .instanceProperty("isDoorBlock", &BlockClass::isDoorBlock)
+        .instanceProperty("isFenceBlock", &BlockClass::isFenceBlock)
+        .instanceProperty("isFenceGateBlock", &BlockClass::isFenceGateBlock)
+        .instanceProperty("isThinFenceBlock", &BlockClass::isThinFenceBlock)
+        .instanceProperty("isHeavyBlock", &BlockClass::isHeavyBlock)
+        .instanceProperty("isStemBlock", &BlockClass::isStemBlock)
+        .instanceProperty("isSlabBlock", &BlockClass::isSlabBlock)
+        .instanceProperty("isUnbreakable", &BlockClass::isUnbreakable)
+        .instanceProperty("isWaterBlockingBlock", &BlockClass::isWaterBlockingBlock)
 
         .instanceFunction("setNbt", &BlockClass::setNbt)
         .instanceFunction("getNbt", &BlockClass::getNbt)
@@ -132,6 +149,118 @@ Local<Value> BlockClass::getTileData() {
         return Number::newNumber(block->getTileData());
     }
     CATCH("Fail in getTileData!");
+}
+
+Local<Value> BlockClass::getVariant() {
+    try {
+        return Number::newNumber(block->getVariant());
+    }
+    CATCH("Fail in getVariant!");
+}
+
+Local<Value> BlockClass::getTranslucency() {
+    try {
+        return Number::newNumber(block->getTranslucency());
+    }
+    CATCH("Fail in getTranslucency!");
+}
+
+Local<Value> BlockClass::getThickness() {
+    try {
+        return Number::newNumber(block->getThickness());
+    }
+    CATCH("Fail in getThickness!");
+}
+
+Local<Value> BlockClass::isAir() {
+    try {
+        return Boolean::newBoolean(block->isAir());
+    }
+    CATCH("Fail in isAir!");
+}
+
+Local<Value> BlockClass::isBounceBlock() {
+    try {
+        return Boolean::newBoolean(block->isBounceBlock());
+    }
+    CATCH("Fail in isBounceBlock!");
+}
+
+Local<Value> BlockClass::isButtonBlock() {
+    try {
+        return Boolean::newBoolean(block->isButtonBlock());
+    }
+    CATCH("Fail in isButtonBlock!");
+}
+
+Local<Value> BlockClass::isCropBlock() {
+    try {
+        return Boolean::newBoolean(block->isCropBlock());
+    }
+    CATCH("Fail in isCropBlock!");
+}
+
+Local<Value> BlockClass::isDoorBlock() {
+    try {
+        return Boolean::newBoolean(block->isDoorBlock());
+    }
+    CATCH("Fail in isDoorBlock!");
+}
+
+Local<Value> BlockClass::isFenceBlock() {
+    try {
+        return Boolean::newBoolean(block->isFenceBlock());
+    }
+    CATCH("Fail in isFenceBlock!");
+}
+
+Local<Value> BlockClass::isFenceGateBlock() {
+    try {
+        return Boolean::newBoolean(block->isFenceGateBlock());
+    }
+    CATCH("Fail in isFenceGateBlock!");
+}
+
+Local<Value> BlockClass::isThinFenceBlock() {
+    try {
+        return Boolean::newBoolean(block->isThinFenceBlock());
+    }
+    CATCH("Fail in isThinFenceBlock!");
+}
+
+Local<Value> BlockClass::isHeavyBlock() {
+    try {
+        return Boolean::newBoolean(block->isHeavy());
+    }
+    CATCH("Fail in isHeavyBlock!");
+}
+
+Local<Value> BlockClass::isStemBlock() {
+    try {
+        return Boolean::newBoolean(block->isStemBlock());
+    }
+    CATCH("Fail in isStemBlock!");
+}
+
+Local<Value> BlockClass::isSlabBlock() {
+    try {
+        return Boolean::newBoolean(block->isSlabBlock());
+    }
+    CATCH("Fail in isSlabBlock!");
+}
+
+Local<Value> BlockClass::isUnbreakable() {
+    try {
+        return Boolean::newBoolean(block->isUnbreakable());
+    }
+    CATCH("Fail in isUnbreakable!");
+}
+
+Local<Value> BlockClass::isWaterBlockingBlock() {
+    try {
+        return Boolean::newBoolean(block->isWaterBlocking());
+    }
+    CATCH("Fail in isWaterBlockingBlock!");
 }
 
 Local<Value> BlockClass::asPointer(const Arguments& args) {

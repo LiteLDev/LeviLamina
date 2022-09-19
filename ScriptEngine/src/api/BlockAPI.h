@@ -43,6 +43,23 @@ public:
     Local<Value> getId();
     Local<Value> getPos();
     Local<Value> getTileData();
+    Local<Value> getVariant();
+    Local<Value> getTranslucency();
+    Local<Value> getThickness();
+
+    Local<Value> isAir();
+    Local<Value> isBounceBlock();
+    Local<Value> isButtonBlock();
+    Local<Value> isCropBlock();
+    Local<Value> isDoorBlock();
+    Local<Value> isFenceBlock();
+    Local<Value> isFenceGateBlock();
+    Local<Value> isThinFenceBlock();
+    Local<Value> isHeavyBlock();
+    Local<Value> isStemBlock();
+    Local<Value> isSlabBlock();
+    Local<Value> isUnbreakable();
+    Local<Value> isWaterBlockingBlock();
 
     Local<Value> getNbt(const Arguments& args);
     Local<Value> setNbt(const Arguments& args);
