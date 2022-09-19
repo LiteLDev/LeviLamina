@@ -7,6 +7,8 @@
 
 #include <ShlObj.h>
 
+constexpr int kMaxPathLen = 8192;
+
 void ShellLinkFile::_Init() {
     auto res = ::CoInitialize(nullptr);
     if (res != S_OK && res != S_FALSE) {
@@ -14,7 +16,8 @@ void ShellLinkFile::_Init() {
     }
 
     // Init IShellLink
-    res = ::CoCreateInstance(CLSID_ShellLink, nullptr, CLSCTX_INPROC_SERVER, IID_IShellLinkW, (LPVOID*)&this->shellLink);
+    res =
+        ::CoCreateInstance(CLSID_ShellLink, nullptr, CLSCTX_INPROC_SERVER, IID_IShellLinkW, (LPVOID*)&this->shellLink);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::ShellLinkFile:: Error when creating the IShellLink instance");
     }
@@ -33,6 +36,7 @@ ShellLinkFile::ShellLinkFile(const std::string& path) {
         lnkPath = str2wstr(path);
     }
 }
+
 ShellLinkFile::ShellLinkFile(const std::wstring& path) {
     _Init();
     if (!path.empty()) {
@@ -48,6 +52,7 @@ ShellLinkFile::~ShellLinkFile() {
 ShellLinkFile& ShellLinkFile::load(const std::string& path) {
     return load(str2wstr(path));
 }
+
 ShellLinkFile& ShellLinkFile::load(const std::wstring& path) {
     if (path.empty()) {
         throw std::exception("ShellLinkFile::load:: The path is empty");
@@ -66,6 +71,7 @@ ShellLinkFile& ShellLinkFile::load(const std::wstring& path) {
 ShellLinkFile& ShellLinkFile::save(const std::string& path) {
     return save(str2wstr(path));
 }
+
 ShellLinkFile& ShellLinkFile::save(const std::wstring& path) {
     if (!presistFile) {
         throw std::exception("ShellLinkFile::save: presistFile is null");
@@ -99,20 +105,25 @@ void ShellLinkFile::close() {
 std::string ShellLinkFile::getPath() {
     return wstr2str(getPathW());
 }
+
 std::wstring ShellLinkFile::getPathW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getPathW: shellLink is null");
     }
-    wchar_t buf[8192] = {0};
-    auto res = shellLink->GetPath(buf, 8192, nullptr, 0);
+    std::wstring path;
+    path.reserve(kMaxPathLen);
+    auto res = shellLink->GetPath(path.data(), kMaxPathLen, nullptr, 0);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getPathW: Failed to get the path");
     }
-    return std::wstring(buf);
+    path.resize(wcslen(path.data()));
+    return path;
 }
+
 ShellLinkFile& ShellLinkFile::setPath(const std::string& path) {
     return setPath(str2wstr(path));
 }
+
 ShellLinkFile& ShellLinkFile::setPath(const std::wstring& path) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setPath: shellLink is null");
@@ -127,25 +138,31 @@ ShellLinkFile& ShellLinkFile::setPath(const std::wstring& path) {
 std::string ShellLinkFile::getWorkingDirectory() {
     return wstr2str(getWorkingDirectoryW());
 }
+
 std::wstring ShellLinkFile::getWorkingDirectoryW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: shellLink is null");
     }
-    wchar_t buf[8192] = {0};
-    auto res = shellLink->GetWorkingDirectory(buf, 8192);
+    std::wstring path;
+    path.reserve(kMaxPathLen);
+
+    auto res = shellLink->GetWorkingDirectory(path.data(), kMaxPathLen);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: Failed to get the working directory");
     }
-    return std::wstring(buf);
+    path.resize(wcslen(path.data()));
+    return path;
 }
+
 ShellLinkFile& ShellLinkFile::setWorkingDirectory(const std::string& path) {
     return setWorkingDirectory(str2wstr(path));
 }
+
 ShellLinkFile& ShellLinkFile::setWorkingDirectory(const std::wstring& path) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setWorkingDirectory: shellLink is null");
     }
-    auto res = shellLink->SetWorkingDirectory(path.c_str());
+    auto res = shellLink->SetWorkingDirectory(path.data());
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::setWorkingDirectory: Failed to set the working directory");
     }
@@ -155,20 +172,26 @@ ShellLinkFile& ShellLinkFile::setWorkingDirectory(const std::wstring& path) {
 std::string ShellLinkFile::getDescription() {
     return wstr2str(getDescriptionW());
 }
+
 std::wstring ShellLinkFile::getDescriptionW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getDescriptionW: shellLink is null");
     }
-    wchar_t buf[8192] = {0};
-    auto res = shellLink->GetDescription(buf, 8192);
+    std::wstring path;
+    path.reserve(kMaxPathLen);
+
+    auto res = shellLink->GetDescription(path.data(), kMaxPathLen);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getDescriptionW: Failed to get the description");
     }
-    return std::wstring(buf);
+    path.resize(wcslen(path.data()));
+    return path;
 }
+
 ShellLinkFile& ShellLinkFile::setDescription(const std::string& desc) {
     return setDescription(str2wstr(desc));
 }
+
 ShellLinkFile& ShellLinkFile::setDescription(const std::wstring& desc) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setDescription: shellLink is null");
@@ -183,20 +206,26 @@ ShellLinkFile& ShellLinkFile::setDescription(const std::wstring& desc) {
 std::string ShellLinkFile::getArguments() {
     return wstr2str(getArgumentsW());
 }
+
 std::wstring ShellLinkFile::getArgumentsW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getArgumentsW: shellLink is null");
     }
-    wchar_t buf[8192] = {0};
-    auto res = shellLink->GetArguments(buf, 8192);
+    std::wstring path;
+    path.reserve(kMaxPathLen);
+
+    auto res = shellLink->GetArguments(path.data(), kMaxPathLen);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getArgumentsW: Failed to get the arguments");
     }
-    return std::wstring(buf);
+    path.resize(wcslen(path.data()));
+    return path;
 }
+
 ShellLinkFile& ShellLinkFile::setArguments(const std::string& arguments) {
     return setArguments(str2wstr(arguments));
 }
+
 ShellLinkFile& ShellLinkFile::setArguments(const std::wstring& arguments) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setArguments: shellLink is null");
@@ -211,20 +240,26 @@ ShellLinkFile& ShellLinkFile::setArguments(const std::wstring& arguments) {
 std::string ShellLinkFile::getIconLocation() {
     return wstr2str(getIconLocationW());
 }
+
 std::wstring ShellLinkFile::getIconLocationW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getIconLocationW: shellLink is null");
     }
-    wchar_t buf[8192] = {0};
-    auto res = shellLink->GetIconLocation(buf, 8192, 0);
+    std::wstring path;
+    path.reserve(kMaxPathLen);
+    int _;
+    auto res = shellLink->GetIconLocation(path.data(), kMaxPathLen, &_);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getIconLocationW: Failed to get the icon location");
     }
-    return std::wstring(buf);
+    path.resize(wcslen(path.data()));
+    return path;
 }
+
 ShellLinkFile& ShellLinkFile::setIconLocation(const std::string& iconLocation) {
     return setIconLocation(str2wstr(iconLocation));
 }
+
 ShellLinkFile& ShellLinkFile::setIconLocation(const std::wstring& iconLocation) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setIconLocation: shellLink is null");
@@ -247,6 +282,7 @@ int ShellLinkFile::getShowCmd() {
     }
     return showCmd;
 }
+
 ShellLinkFile& ShellLinkFile::setShowCmd(int showCmd) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setShowCmd: shellLink is null");
@@ -262,28 +298,33 @@ ShellLinkFile::HotKey ShellLinkFile::getHotKey() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getHotKey: shellLink is null");
     }
+
     union {
         HotKey out;
         // The address of the keyboard shortcut. The virtual key code is in the low-order byte,
         //  and the modifier flags are in the high-order byte.
         WORD in;
     } hotKey;
+
     auto res = shellLink->GetHotkey(&hotKey.in);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getHotKey: Failed to get the hot key");
     }
     return hotKey.out;
 }
+
 ShellLinkFile& ShellLinkFile::setHotKey(const HotKey& hotKey) {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::setHotKey: shellLink is null");
     }
+
     union {
         HotKey in;
         // The address of the keyboard shortcut. The virtual key code is in the low-order byte,
         //  and the modifier flags are in the high-order byte.
         WORD out;
     } hotKey1;
+
     hotKey1.in = hotKey;
     auto res = shellLink->SetHotkey(hotKey1.out);
     if (res != S_OK) {
