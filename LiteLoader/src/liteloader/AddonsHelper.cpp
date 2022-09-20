@@ -462,9 +462,9 @@ class AddonsCommand : public Command {
                 output.trError("ll.addonsHelper.error.addonNotfound", target);
             }
         } else {
-            auto addons = AddonsManager::getAllAddons();
-            if (index - 1 >= 0 && index - 1 < static_cast<int>(addons.size()))
-                return addons[index - 1];
+            auto allAddons = AddonsManager::getAllAddons();
+            if (index - 1 >= 0 && index - 1 < static_cast<int>(allAddons.size()))
+                return allAddons[index - 1];
             else
                 output.trError("ll.addonsHelper.error.outOfRange", index);
         }
@@ -637,14 +637,14 @@ bool AutoInstallAddons(string path) {
 
     addonLogger.info(tr("ll.addonsHelper.autoInstall.working", toInstallList.size()));
     int cnt = 0;
-    for (auto& path : toInstallList) {
-        addonLogger.debug("Installing \"{}\"...", path);
-        if (!AddonsManager::install(path)) {
+    for (auto& addonPath : toInstallList) {
+        addonLogger.debug("Installing \"{}\"...", addonPath);
+        if (!AddonsManager::install(addonPath)) {
             // filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
             break;
         } else {
             ++cnt;
-            addonLogger.info(tr("ll.addonsHelper.autoInstall.installed", path));
+            addonLogger.info(tr("ll.addonsHelper.autoInstall.installed", addonPath));
         }
     }
 

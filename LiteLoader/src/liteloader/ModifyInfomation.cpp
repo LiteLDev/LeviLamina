@@ -8,9 +8,9 @@
 using namespace std;
 
 Logger serverLogger("Server");
-extern void CheckBetaVersion();
+extern void checkBetaVersion();
 THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ") {
-    CheckBetaVersion();
+    checkBetaVersion();
     return original() + "(ProtocolVersion " + to_string(ll::getServerProtocolVersion()) + ") with " + fmt::format(ll::globalConfig.colorLog ? fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic : fmt::text_style(), "LiteLoaderBDS " + ll::getLoaderVersion().toString(true));
 }
 

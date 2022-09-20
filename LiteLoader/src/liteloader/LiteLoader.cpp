@@ -1,6 +1,8 @@
 #include <liteloader/LiteLoader.h>
 
 #include <csignal>
+#include <minwindef.h>
+#include <processenv.h>
 #include <string>
 #include <iostream>
 
@@ -21,6 +23,7 @@
 #include <liteloader/AddonsHelper.h>
 #include <liteloader/Version.h>
 
+#include <utility>
 #include <windows.h>
 #include <TlHelp32.h>
 #include <Psapi.h>
@@ -33,31 +36,41 @@ using namespace std;
 using namespace ll;
 
 // Add plugins folder to path
-void FixPluginsLibDir() {
-    auto buffer = new WCHAR[8192];
-    auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
-    std::wstring PATH{buffer, sz};
-    sz = GetCurrentDirectoryW(8192, buffer);
-    std::wstring CWD{buffer, sz};
-    SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins;" + PATH).c_str());
-    delete[] buffer;
+void fixPluginsLibDir() {
+    constexpr const DWORD MAX_PATH_LEN = 32767;
+    // get environment path
+    std::wstring envPath;
+    envPath.reserve(MAX_PATH_LEN);
+    envPath.resize(GetEnvironmentVariableW(L"PATH", envPath.data(), MAX_PATH_LEN));
+
+    // get plugins path
+    std::wstring pluginsPath;
+    pluginsPath.reserve(MAX_PATH_LEN);
+    pluginsPath.resize(GetCurrentDirectoryW(MAX_PATH_LEN, pluginsPath.data()));
+
+    // append plugins path to environment path
+    SetEnvironmentVariableW(L"PATH", (pluginsPath + L"\\plugins;" + envPath).c_str());
 }
 
-void FixUpCWD() {
-    string buf;
-    buf.assign(8192, '\0');
-    GetModuleFileNameA(nullptr, buf.data(), 8192);
-    buf = buf.substr(0, buf.find_last_of('\\'));
-    SetCurrentDirectoryA(buf.c_str());
+void fixUpCWD() {
+    constexpr const DWORD MAX_PATH_LEN = 32767;
+    // get current module file path
+    std::wstring modulePath;
+    modulePath.reserve(MAX_PATH_LEN);
+    modulePath.resize(GetModuleFileNameW(NULL, modulePath.data(), MAX_PATH_LEN));
+
+    // set current directory to module path
+    SetCurrentDirectoryW(modulePath.substr(0, modulePath.find_last_of(L'\\')).c_str());
 }
 
-#include <FMT/format.h>
-void UnzipNodeModules() {
+void unzipNodeModules() {
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\lib\\node_modules.tar")))) {
         std::error_code ec;
-        //if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
-        //    filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
-        auto res = NewProcessSync(fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\node_modules.tar)"), 30000);
+        // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
+        //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
+        auto res = NewProcessSync(
+            fmt::format(R"({} x "{}" -o".\plugins\lib\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\lib\node_modules.tar)"),
+            30000);
         if (res.first != 0) {
             logger.error(tr("ll.unzipNodeModules.fail"));
         } else {
@@ -66,12 +79,16 @@ void UnzipNodeModules() {
     }
 }
 
-void DecompressResourcePacks() {
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
+void decompressResourcePacks() {
+    if (std::filesystem::exists(
+            std::filesystem::path(TEXT(".\\plugins\\LiteLoader\\ResourcePacks\\LiteLoaderBDS-CUI.tar")))) {
         std::error_code ec;
         // if(std::filesystem::exists(".\\plugins\\lib\\node_modules\\"))
         //     filesystem::remove_all(".\\plugins\\lib\\node_modules\\", ec);
-        auto res = NewProcessSync(fmt::format(R"({} x "{}" -o".\plugins\LiteLoader\ResourcePacks\" -aoa)", ZIP_PROGRAM_PATH, R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)"), 30000);
+        auto res =
+            NewProcessSync(fmt::format(R"({} x "{}" -o".\plugins\LiteLoader\ResourcePacks\" -aoa)", ZIP_PROGRAM_PATH,
+                                       R"(.\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar)"),
+                           30000);
         if (res.first != 0) {
             logger.error(tr("ll.decompressResourcePacks.fail"));
         } else {
@@ -80,58 +97,65 @@ void DecompressResourcePacks() {
     }
 }
 
-void CheckRunningBDS() {
+void checkRunningBDS() {
     if (!ll::globalConfig.enableCheckRunningBDS)
         return;
+
+    // get all processes id with name "bedrock_server.exe" or "bedrock_server_mod.exe"
+    // and pid is not current process
     std::vector<DWORD> pids;
-    PROCESSENTRY32 pe32{};
-    pe32.dwSize = sizeof(pe32);
+    PROCESSENTRY32 pe32;
+    pe32.dwSize = sizeof(PROCESSENTRY32);
     HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-    if (hProcessSnap == INVALID_HANDLE_VALUE)
+    if (hProcessSnap == INVALID_HANDLE_VALUE) {
         return;
-    bool res = Process32First(hProcessSnap, &pe32); // Start traversing
-    while (res) {
-        std::wstring name = pe32.szExeFile;
-        auto pid = pe32.th32ProcessID;
-        if (_getpid() != pid && (name == L"bedrock_server.exe" || name == L"bedrock_server_mod.exe")) {
-            pids.push_back(pid);
-        }
-        res = Process32Next(hProcessSnap, &pe32);
+    }
+    if (Process32First(hProcessSnap, &pe32)) {
+        do {
+            if (pe32.th32ProcessID != GetCurrentProcessId() &&
+                (wcscmp(pe32.szExeFile, L"bedrock_server.exe") == 0 ||
+                 wcscmp(pe32.szExeFile, L"bedrock_server_mod.exe") == 0)) {
+                pids.push_back(pe32.th32ProcessID);
+            }
+        } while (Process32Next(hProcessSnap, &pe32));
     }
     CloseHandle(hProcessSnap);
+
     // Get current process path
-    WCHAR buf[8196] = {0};
-    auto sz = GetModuleFileName(nullptr, buf, 8196);
-    std::wstring current{buf, sz}; // Copy
-    // Check the BDS process paths
+    std::wstring currentPath;
+    currentPath.reserve(8192);
+    currentPath.resize(GetModuleFileNameW(nullptr, currentPath.data(), 8192));
+
+    // Get the BDS process paths
     for (auto& pid : pids) {
         // Open process handle
         auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
         if (handle) {
-            sz = NULL;
-            buf[8196] = {0};
             // Get the full path of the process
-            if ((sz = GetModuleFileNameEx(handle, nullptr, buf, 8196))) {
-                std::wstring path{buf, sz};
-                if (current == path) {
-                    logger.error(tr("ll.main.checkRunningBDS.detected"));
-                    logger.error(tr("ll.main.checkRunningBDS.tip"));
-                    logger.error(tr("ll.main.checkRunningBDS.ask", pid));
-                    char ch;
-                    cin >> ch;
-                    if (ch == 'y' || ch == 'Y') {
-                        // auto cmd = "taskkill /F /PID " + std::to_string(pid);
-                        // system(cmd.c_str());
-                        TerminateProcess(handle, 1);
-                    }
+            std::wstring path;
+            path.reserve(8192);
+            path.resize(GetModuleFileNameExW(handle, nullptr, path.data(), 8192));
+
+            // Compare the path
+            if (path == currentPath) {
+                logger.error(tr("ll.main.checkRunningBDS.detected"));
+                logger.error(tr("ll.main.checkRunningBDS.tip"));
+                logger.error(tr("ll.main.checkRunningBDS.ask", pid));
+                char ch;
+                cin >> ch;
+                if (ch == 'y' || ch == 'Y') {
+                    // auto cmd = "taskkill /F /PID " + std::to_string(pid);
+                    // system(cmd.c_str());
+                    TerminateProcess(handle, 1);
                 }
             }
+
             CloseHandle(handle);
         }
     }
 }
 
-void FixAllowList() {
+void fixAllowList() {
     if (filesystem::exists("whitelist.json")) {
         if (filesystem::exists("allowlist.json")) {
             auto res = ReadAllFile("allowlist.json");
@@ -151,50 +175,36 @@ void FixAllowList() {
     }
 }
 
-extern void RegisterCommands();
-
-extern bool InitPlayerDatabase();
-
-extern void RegisterSimpleServerLogger();
-
-void Welcome() {
+void printLogo() {
     if (!ll::globalConfig.enableWelcomeText)
         return;
 
-
-    cout << "\r"
-         << R"(                                                                       )" << endl
-         << "\r"
-         << R"(          _     _ _       _                    _                       )" << endl
-         << "\r"
-         << R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )" << endl
-         << "\r"
-         << R"(         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            )" << endl
-         << "\r"
-         << R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )" << endl
-         << "\r"
-         << R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )" << endl
-         << "\r"
-         << R"(                                                                       )" << endl
-         << "\r"
-         << R"(       --------   Light-Weight BDS Plugin Loader   ----------          )" << endl
-         << "\r"
-         << R"(                                                                       )" << endl;
+    cout << R"(
+                                                                       
+          _     _ _       _                    _                       
+         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             
+         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            
+         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               
+         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               
+                                                                       
+       --------   Light-Weight BDS Plugin Loader   ----------          
+                                                                       
+    )" << endl;
 }
 
-void CheckDevMode() {
+void checkDevMode() {
     if (ll::globalConfig.debugMode)
         logger.warn(tr("ll.main.warning.inDevMode"));
 }
 
-void CheckBetaVersion() {
-    if (LITELOADER_VERSION_STATUS != ll::Version::Release) {
+void checkBetaVersion() {
+    if constexpr (LITELOADER_VERSION_STATUS != ll::Version::Release) {
         logger.warn(tr("ll.main.warning.betaVersion"));
         logger.warn(tr("ll.main.warning.productionEnv"));
     }
 }
 
-void CheckProtocolVersion() {
+void checkProtocolVersion() {
     auto currentProtocol = ll::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
         logger.warn(tr("ll.main.warning.protocolVersionNotMatch.1"), TARGET_BDS_PROTOCOL_VERSION, currentProtocol);
@@ -221,7 +231,7 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
     return FALSE;
 }
 
-void UnixSignalHandler(int signum) {
+void unixSignalHandler(int signum) {
     switch (signum) {
         case SIGINT:
         case SIGTERM: {
@@ -238,12 +248,20 @@ void UnixSignalHandler(int signum) {
 }
 
 // extern
+
+extern void RegisterCommands();
+
+extern bool InitPlayerDatabase();
+
+extern void RegisterSimpleServerLogger();
+
 extern void EndScheduleSystem();
+
 namespace bstats {
 void registerBStats();
 }
 
-void LLMain() {
+void liteloaderMain() {
     // Set global SEH-Exception handler
     auto oldSeTranslator = _set_se_translator(seh_exception::TranslateSEHtoCE);
 
@@ -263,11 +281,11 @@ void LLMain() {
     // Load Config
     ll::LoadLLConfig();
 
-    //Unzip packed Node Modules
-    UnzipNodeModules();
+    // Unzip packed Node Modules
+    unzipNodeModules();
 
-    //Decompress resource packs
-    DecompressResourcePacks();
+    // Decompress resource packs
+    decompressResourcePacks();
 
     // If SEH Protection is not enabled (Debug mode), restore old SE translator
     if (!ll::isDebugMode())
@@ -279,20 +297,20 @@ void LLMain() {
     }
 
     // Check Protocol Version
-    CheckProtocolVersion();
+    checkProtocolVersion();
 
     // Fix problems
-    FixUpCWD();
-    FixPluginsLibDir();
+    fixUpCWD();
+    fixPluginsLibDir();
 
     // Check whether allowlist.json exists/is empty or not
-    FixAllowList();
+    fixAllowList();
 
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
     // Check Running BDS(Requires Config)
-    CheckRunningBDS();
+    checkRunningBDS();
 
     // Builtin CrashLogger
     ll::InitCrashLogger(ll::globalConfig.enableCrashLogger);
@@ -307,14 +325,14 @@ void LLMain() {
 
     // Register Exit Event Handler.
     SetConsoleCtrlHandler(ConsoleExitHandler, TRUE);
-    signal(SIGTERM, UnixSignalHandler);
-    signal(SIGINT, UnixSignalHandler);
+    signal(SIGTERM, unixSignalHandler);
+    signal(SIGINT, unixSignalHandler);
 
     // Welcome
-    Welcome();
+    printLogo();
 
     // DebugMode
-    CheckDevMode();
+    checkDevMode();
 
     // Addon Helper
     if (ll::globalConfig.enableAddonsHelper) {
@@ -359,6 +377,6 @@ THook(int, "main", int a, void* b) {
             break;
         }
     }
-    LLMain();
+    liteloaderMain();
     return original(a, b);
 }
