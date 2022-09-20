@@ -12,7 +12,8 @@
 //  if(pl)
 //      logger.setPlayer(pl);                   // Optional, also record log to a Player
 //  ......
-//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like this)
+//  logger.setFile(nullptr);                    // Stop record log to File (Passing nullptr to setPlayer works like
+//  this)
 //
 //
 //  [Use Logger]
