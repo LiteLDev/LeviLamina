@@ -7,8 +7,8 @@
 #include <exception>
 #include <llapi/db/Session.h>
 
-constexpr auto kPlayerDatabasePath = "plugins/LiteLoader/PlayerDB.db";
-constexpr auto kSqlCreatePlayerTable = R"(
+constexpr auto PLAYER_DATABASE_PATH = "plugins/LiteLoader/PlayerDB.db";
+constexpr auto SQL_CREATE_PLAYER_TABLE = R"(
 CREATE TABLE IF NOT EXISTS player (
     NAME TEXT PRIMARY KEY NOT NULL,
     XUID TEXT NOT NULL,
@@ -133,9 +133,9 @@ PlayerInfo::Info row_to(const DB::Row& row) {
 bool InitPlayerDatabase() {
     using namespace PlayerInfo;
     try {
-        db = DB::Session::create(DB::DBType::SQLite, std::string(kPlayerDatabasePath));
+        db = DB::Session::create(DB::DBType::SQLite, std::string(PLAYER_DATABASE_PATH));
 
-        db->execute(kSqlCreatePlayerTable);
+        db->execute(SQL_CREATE_PLAYER_TABLE);
 
         PlayerInfo::data = db->prepare("select NAME, XUID, UUID from player")->execute()->fetchAll<Info>();
 

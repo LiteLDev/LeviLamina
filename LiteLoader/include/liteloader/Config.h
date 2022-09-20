@@ -16,7 +16,7 @@
 
 namespace ll {
 
-constexpr const char* kNoCrashLoggerPluginList[] = {"AntiCheats"};
+constexpr const char* NO_CRASH_LOGGER_PLUGIN_LIST[] = {"AntiCheats"};
 struct CommandLineOption {
     bool noColorOption = false;
 };

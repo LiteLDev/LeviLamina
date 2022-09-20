@@ -70,7 +70,7 @@ void ll::InitCrashLogger(bool enableCrashLogger) {
             auto path = UTF82String(i.path().u8string());
 
             // Check crashLogger
-            for (auto name : ll::kNoCrashLoggerPluginList) {
+            for (auto name : ll::NO_CRASH_LOGGER_PLUGIN_LIST) {
                 if (path.find(name) != string::npos) {
                     noCrashLoggerReason = string(name) + ".dll";
                     break;

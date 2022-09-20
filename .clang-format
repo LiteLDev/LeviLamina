@@ -36,6 +36,7 @@ SpaceBeforeAssignmentOperators: true
 SpacesInContainerLiterals: true
 IndentWrappedFunctionNames: true
 KeepEmptyLinesAtTheStartOfBlocks: true
+SeparateDefinitionBlocks: Always
 BreakConstructorInitializersBeforeComma: true
 SpaceAfterCStyleCast: false
 IndentCaseLabels: true

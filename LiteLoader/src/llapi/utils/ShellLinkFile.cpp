@@ -7,7 +7,7 @@
 
 #include <ShlObj.h>
 
-constexpr int kMaxPathLen = 8192;
+constexpr int MAX_PATH_LENGTH = 8192;
 
 void ShellLinkFile::_Init() {
     auto res = ::CoInitialize(nullptr);
@@ -111,8 +111,8 @@ std::wstring ShellLinkFile::getPathW() {
         throw std::exception("ShellLinkFile::getPathW: shellLink is null");
     }
     std::wstring path;
-    path.reserve(kMaxPathLen);
-    auto res = shellLink->GetPath(path.data(), kMaxPathLen, nullptr, 0);
+    path.reserve(MAX_PATH_LENGTH);
+    auto res = shellLink->GetPath(path.data(), MAX_PATH_LENGTH, nullptr, 0);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getPathW: Failed to get the path");
     }
@@ -144,9 +144,9 @@ std::wstring ShellLinkFile::getWorkingDirectoryW() {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: shellLink is null");
     }
     std::wstring path;
-    path.reserve(kMaxPathLen);
+    path.reserve(MAX_PATH_LENGTH);
 
-    auto res = shellLink->GetWorkingDirectory(path.data(), kMaxPathLen);
+    auto res = shellLink->GetWorkingDirectory(path.data(), MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: Failed to get the working directory");
     }
@@ -178,9 +178,9 @@ std::wstring ShellLinkFile::getDescriptionW() {
         throw std::exception("ShellLinkFile::getDescriptionW: shellLink is null");
     }
     std::wstring path;
-    path.reserve(kMaxPathLen);
+    path.reserve(MAX_PATH_LENGTH);
 
-    auto res = shellLink->GetDescription(path.data(), kMaxPathLen);
+    auto res = shellLink->GetDescription(path.data(), MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getDescriptionW: Failed to get the description");
     }
@@ -212,9 +212,9 @@ std::wstring ShellLinkFile::getArgumentsW() {
         throw std::exception("ShellLinkFile::getArgumentsW: shellLink is null");
     }
     std::wstring path;
-    path.reserve(kMaxPathLen);
+    path.reserve(MAX_PATH_LENGTH);
 
-    auto res = shellLink->GetArguments(path.data(), kMaxPathLen);
+    auto res = shellLink->GetArguments(path.data(), MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getArgumentsW: Failed to get the arguments");
     }
@@ -246,9 +246,9 @@ std::wstring ShellLinkFile::getIconLocationW() {
         throw std::exception("ShellLinkFile::getIconLocationW: shellLink is null");
     }
     std::wstring path;
-    path.reserve(kMaxPathLen);
+    path.reserve(MAX_PATH_LENGTH);
     int _;
-    auto res = shellLink->GetIconLocation(path.data(), kMaxPathLen, &_);
+    auto res = shellLink->GetIconLocation(path.data(), MAX_PATH_LENGTH, &_);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getIconLocationW: Failed to get the icon location");
     }
