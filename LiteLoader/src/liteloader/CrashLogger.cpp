@@ -1,5 +1,5 @@
-#include "liteloader/CrashLogger.h"
-#include "liteloader/Config.h"
+#include <liteloader/CrashLogger.h>
+#include <liteloader/Config.h>
 #include <llapi/LoggerAPI.h>
 #include <llapi/utils/StringHelper.h>
 #include <llapi/utils/WinHelper.h>
@@ -12,7 +12,7 @@ using namespace ll;
 
 Logger crashLogger("CrashLogger");
 
-bool ll::StartCrashLoggerProcess() {
+bool ll::CrashLogger::startCrashLoggerProcess() {
     if (IsDebuggerPresent()) {
         crashLogger.info(tr("ll.crashLogger.existsingDebuggerDetected"));
         return true;
@@ -33,8 +33,10 @@ bool ll::StartCrashLoggerProcess() {
     sa.nLength = sizeof(SECURITY_ATTRIBUTES);
 
     wchar_t daemonCmd[MAX_PATH];
-    std::string serverVersion = fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
-    wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(), str2wstr(serverVersion).c_str());
+    std::string serverVersion =
+        fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
+    wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(),
+             str2wstr(serverVersion).c_str());
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error(tr("ll.crashLogger.error.cannotCreateDaemonProcess"));
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
@@ -46,11 +48,10 @@ bool ll::StartCrashLoggerProcess() {
     return true;
 }
 
-void ll::InitCrashLogger(bool enableCrashLogger) {
-    // Enable PreLog Module
-    try {
-        LoadLibrary(CL_PRELOG_MODULE);
-    } catch (...) {}
+void ll::CrashLogger::initCrashLogger(bool enableCrashLogger) {
+    constexpr auto DEPRECATED_CRASH_LOGGER_PATH = "plugins/LiteLoader/CrashLogger.dll";
+    // Remove deprecated CrashLogger
+    std::filesystem::remove(DEPRECATED_CRASH_LOGGER_PATH);
 
     if (!enableCrashLogger) {
         crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.1"));
@@ -60,14 +61,14 @@ void ll::InitCrashLogger(bool enableCrashLogger) {
         crashLogger.warn(tr("ll.crashLogger.warning.crashLoggerDisabled.4"));
         return;
     }
-    string noCrashLoggerReason = "";
+    string noCrashLoggerReason;
 
     // Get file list
     filesystem::directory_iterator ent("plugins");
 
     for (auto& i : ent) {
-        if (i.is_regular_file() && i.path().extension().u8string() == u8".dll") {
-            auto path = UTF82String(i.path().u8string());
+        if (i.is_regular_file() && i.path().extension() == ".dll") {
+            auto path = i.path().string();
 
             // Check crashLogger
             for (auto name : ll::NO_CRASH_LOGGER_PLUGIN_LIST) {
@@ -79,7 +80,7 @@ void ll::InitCrashLogger(bool enableCrashLogger) {
         }
     }
 
-    if (noCrashLoggerReason != "") {
+    if (!noCrashLoggerReason.empty()) {
         // Plugin conflicts with CrashLogger
         crashLogger.warn(tr("ll.crashLogger.warning.conflicts.1", noCrashLoggerReason));
         crashLogger.warn(tr("ll.crashLogger.warning.conflicts.2"));
@@ -91,7 +92,7 @@ void ll::InitCrashLogger(bool enableCrashLogger) {
     }
 
     // Start CrashLogger
-    if (StartCrashLoggerProcess()) {
+    if (startCrashLoggerProcess()) {
         // Logger::Info("CrashLogger Daemon Process attached.");
     } else {
         crashLogger.warn(tr("ll.crashLogger.init.fail.msg"));

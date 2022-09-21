@@ -16,14 +16,14 @@
 
 #include <llapi/mc/SharedConstants.hpp>
 #include <llapi/mc/PropertiesSettings.hpp>
-#include <llapi/mc/ServerPlayer.hpp>
 #include <llapi/ScheduleAPI.h>
 #include <Windows.h>
 
 using namespace ll;
 
 // Fix bug
-TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+TClasslessInstanceHook(bool,
+                       "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
                        ReadOnlyBinaryStream* a2) {
     ReadOnlyBinaryStream pkt(a2->getData(), false);
     pkt.getUnsignedVarInt();
@@ -54,7 +54,8 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
             isFirstLog = false;
             original(this);
             endTime = clock();
-            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"");
+            Logger("Server").info("Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
+                                  R"(s)! For help, type "help" or "?")");
             return 1;
         }
         return 0;
@@ -62,7 +63,8 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
         original(this);
         if (!isFirstLog) {
             endTime = clock();
-            Logger("Server").info("Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"");
+            Logger("Server").info("Done (" + fmt::format("{:.1f}", static_cast<double>(endTime - startTime) / 1000) +
+                                  R"(s)! For help, type "help" or "?")");
         }
         isFirstLog = false;
         return 1;
@@ -70,14 +72,11 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
 }
 
 // Fix abnormal items
-#include <llapi/mc/InventorySource.hpp>
 #include <llapi/mc/InventoryTransaction.hpp>
 #include <llapi/mc/InventoryAction.hpp>
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/ElementBlock.hpp>
 #include <llapi/mc/IContainerManager.hpp>
-#include <llapi/mc/ColorFormat.hpp>
-#include <magic_enum/magic_enum.hpp>
 
 inline bool itemMayFromReducer(ItemStack const& item) {
     return item.isNull() || (ElementBlock::isElement(item) && !item.hasUserData());
@@ -103,7 +102,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
                 for (auto& a : action.second) {
                     auto fromDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
                     auto toDesc = ItemStack::fromDescriptor(a.fromDescriptor, Global<Level>->getBlockPalette(), true);
-                    if (isContainer || !itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) || !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
+                    if (isContainer || !itemMayFromReducer(fromDesc) || !itemMayFromReducer(toDesc) ||
+                        !itemMayFromReducer(a.fromItem) || !itemMayFromReducer(a.toItem)) {
                         if (mayFromReducer) {
                             logger.warn(tr("ll.antiAbnormalItem.detected", sp->getRealName()));
                         }
@@ -127,7 +127,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     return original(this, netid, pk);
 }
 
-TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file) {
+TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+              PropertiesSettings, const std::string& file) {
     auto out = original(this, file);
     if (ll::globalConfig.enableUnoccupyPort19132) {
         // logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
@@ -147,24 +148,27 @@ TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_t
 
 // Fix move view crash (ref PlayerAuthInput[MoveView])
 Player* movingViewPlayer = nullptr;
-TInstanceHook(void, "?moveView@Player@@UEAAXXZ",
-              Player) {
+
+TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player) {
     movingViewPlayer = this;
     original(this);
     movingViewPlayer = nullptr;
 }
+
 #include <llapi/mc/ChunkViewSource.hpp>
+
 inline bool Interval(int a1) {
     if (a1 < 0x5ffffff && a1 > -0x5ffffff)
         return true;
     return false;
 }
-template <typename T>
-inline bool validPosition(T const& pos) {
+
+template <typename T> inline bool validPosition(T const& pos) {
     if (isnan(static_cast<float>(pos.x)) || isnan(static_cast<float>(pos.z)))
         return false;
     return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) && Interval(static_cast<int>(pos.z));
 }
+
 inline void fixPlayerPosition(Player* pl, bool kick = true) {
     if (pl->isPlayer()) {
         logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
@@ -177,14 +181,19 @@ inline void fixPlayerPosition(Player* pl, bool kick = true) {
             pl->kick("error move");
     }
 }
-TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z",
-              Player, class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
+
+TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z", Player,
+              class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
     if (validPosition(pos))
         return original(this, pos, dimid);
     fixPlayerPosition(this, false);
 }
-TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
-                       BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6, __int64 a7) {
+
+TClasslessInstanceHook(
+    __int64,
+    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@ChunkSource@@V?$function@$$A6AXV?$"
+    "buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@UActorUniqueID@@@Z",
+    BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6, __int64 a7) {
     if (validPosition(a2))
         return original(this, a2, a3, a4, a5, a6, a7);
     fixPlayerPosition(movingViewPlayer);
@@ -196,7 +205,6 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
         return original(this, pos);
     logger.warn << "Player(" << this->getRealName() << ") sent invalid Move Packet!" << Logger::endl;
     this->kick("error move");
-    return;
 }
 
 #if false
@@ -242,8 +250,10 @@ TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
     }
 }
 
-TClasslessInstanceHook(enum StartupResult, "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
-                       unsigned int maxConnections, class SocketDescriptor* socketDescriptors, unsigned socketDescriptorCount, int threadPriority) {
+TClasslessInstanceHook(enum StartupResult,
+                       "?Startup@RakPeer@RakNet@@UEAA?AW4StartupResult@2@IPEAUSocketDescriptor@2@IH@Z",
+                       unsigned int maxConnections, class SocketDescriptor* socketDescriptors,
+                       unsigned socketDescriptorCount, int threadPriority) {
     if (maxConnections > 0xFFFF) {
         maxConnections = 0xFFFF;
     }
@@ -251,25 +261,28 @@ TClasslessInstanceHook(enum StartupResult, "?Startup@RakPeer@RakNet@@UEAA?AW4Sta
 }
 
 // Fix command crash when server is stopping
-TClasslessInstanceHook(void, "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@000@Z",
+TClasslessInstanceHook(void,
+                       "?fireEventPlayerMessage@MinecraftEventing@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$"
+                       "allocator@D@2@@std@@000@Z",
                        std::string const& a1, std::string const& a2, std::string const& a3, std::string const& a4) {
     if (ll::isServerStopping())
         return;
     original(this, a1, a2, a3, a4);
 }
-TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z",
-                       class Player& a1) {
+
+TClasslessInstanceHook(void, "?fireEventPlayerTransform@MinecraftEventing@@SAXAEAVPlayer@@@Z", class Player& a1) {
     if (ll::isServerStopping())
         return;
     original(this, a1);
 }
 
-TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z",
-                       class Player& a1, float a2) {
+TClasslessInstanceHook(void, "?fireEventPlayerTravelled@MinecraftEventing@@UEAAXPEAVPlayer@@M@Z", class Player& a1,
+                       float a2) {
     if (ll::isServerStopping())
         return;
     original(this, a1, a2);
 }
+
 TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXPEAVPlayer@@MW4TeleportationCause@1@H@Z",
                        class Player* a1, float a2, int a3, int a4) {
     if (ll::isServerStopping())
@@ -278,7 +291,7 @@ TClasslessInstanceHook(void, "?fireEventPlayerTeleported@MinecraftEventing@@SAXP
 }
 
 // Set stdin mode to text mode if in wine environment
-inline bool _tryFixConsoleInputMode() {
+inline bool tryFixConsoleInputMode() {
     if ((ll::globalConfig.enableFixMcBug && IsWineEnvironment()) || ll::globalConfig.enableForceUtf8Input) {
         int result = _setmode(_fileno(stdin), _O_U8TEXT);
         if (result == -1) {
@@ -296,7 +309,7 @@ THook(std::wistream&,
       "QEAV10@AEAV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@0@_W@Z",
       std::wistream&& ret, std::wstring& a1, wchar_t a2) {
     if (&ret == &std::wcin) {
-        static bool fixed = _tryFixConsoleInputMode();
+        static bool fixed = tryFixConsoleInputMode();
     }
     return original(std::move(ret), a1, a2);
 }
@@ -318,8 +331,9 @@ TClasslessInstanceHook(bool, "?getLANBroadcastIntent@LevelData@@QEBA_NXZ") {
 
 // Disable 'Running AutoCompaction...' log.
 bool pauseBLogging = false;
-THook(__int64, "std::_Func_impl_no_alloc<<lambda_6a2afbe2cc72d5b28a061e9f93b837cd>,TaskResult>::_Do_call",
-      __int64 a1, __int64 a2) {
+
+THook(__int64, "std::_Func_impl_no_alloc<<lambda_6a2afbe2cc72d5b28a061e9f93b837cd>,TaskResult>::_Do_call", __int64 a1,
+      __int64 a2) {
     if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;
         auto v = original(a1, a2);
@@ -329,39 +343,38 @@ THook(__int64, "std::_Func_impl_no_alloc<<lambda_6a2afbe2cc72d5b28a061e9f93b837c
     return original(a1, a2);
 }
 
-TClasslessInstanceHook(char, "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
-                       char a2, int a3, int a4, unsigned int a5, __int64 a6, int a7, __int64 a8, __int64 a9) {
+TClasslessInstanceHook(
+    char, "?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z", char a2,
+    int a3, int a4, unsigned int a5, __int64 a6, int a7, __int64 a8, __int64 a9) {
     if (ll::globalConfig.disableAutoCompactionLog && pauseBLogging) {
         return 0;
     }
     return original(this, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
-
 // Try Fix BDS Crash
 // Beta
 
-THook(void*, "??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z",
-      void* self, char* a2, char* a3, char a4) {
+THook(void*, "??0ScopedTimer@ImguiProfiler@@QEAA@PEBD0_N@Z", void* self, char* a2, char* a3, char a4) {
     if (ll::globalConfig.enableFixBDSCrash) {
         return nullptr;
     }
     return original(self, a2, a3, a4);
 }
 
-THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ",
-      void* self) {
+THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ", void* self) {
     if (ll::globalConfig.enableFixBDSCrash) {
         return;
     }
     return original(self);
 }
 
-SHook2("_tickDimensionTransition", __int64, "40 53 55 41 56 41 57 48 ?? ?? ?? ?? ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 33 "
-                                            "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
+SHook2("_tickDimensionTransition", __int64,
+       "40 53 55 41 56 41 57 48 ?? ?? ?? ?? ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 33 "
+       "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
        __int64 a1, ActorOwnerComponent* a2, __int64 a3, void* a4) {
     if (ll::globalConfig.enableFixBDSCrash) {
-        auto ac = Actor::tryGetFromComponent(*a2, 0);
+        auto ac = Actor::tryGetFromComponent(*a2, false);
         if (ac) {
             auto bs = &ac->getRegionConst();
             if (bs == nullptr || !bs)
@@ -385,37 +398,30 @@ THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAV
 #include <llapi/mc/LevelChunk.hpp>
 #include <llapi/mc/ChunkSource.hpp>
 
-THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z",
-      BlockSource* self, ChunkPos* a2) {
+THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z", BlockSource* self, ChunkPos* a2) {
     if (ll::globalConfig.enableFixBDSCrash) {
         LevelChunk* ptr = nullptr;
         try {
             ptr = original(self, a2);
-        } catch (...) {
-            return nullptr;
-        }
+        } catch (...) { return nullptr; }
         return ptr;
     }
     return original(self, a2);
 }
 
-
-THook(__int64, "?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z",
-      __int64 a1, __int64 a2) {
+THook(__int64, "?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z", __int64 a1,
+      __int64 a2) {
     if (ll::globalConfig.enableFixBDSCrash) {
         __int64 ptr = NULL;
         try {
             ptr = original(a1, a2);
-        } catch (...) {
-            return NULL;
-        }
+        } catch (...) { return NULL; }
         return ptr;
     }
     return original(a1, a2);
 }
 
-TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ",
-              Actor) {
+TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", Actor) {
 
     auto bs = original(this);
     if (ll::globalConfig.enableFixBDSCrash) {
@@ -424,4 +430,77 @@ TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ",
         }
     }
     return bs;
+}
+
+#include <llapi/mc/NetworkHandler.hpp>
+#include <llapi/mc/NetworkPeer.hpp>
+#include <llapi/mc/ReadOnlyBinaryStream.hpp>
+
+static inline bool checkPktId(unsigned int id) {
+    id &= 0x3ff;
+    // printf("id %d\n", id);
+    return id == 1 || id == 0x5e || id == 193;
+}
+
+static inline bool& connState(void* conn) {
+    return *(bool*)(((char*)conn) + 250);
+}
+
+TInstanceHook(NetworkPeer::DataStatus,
+              "?receivePacket@Connection@NetworkHandler@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_"
+              "traits@D@std@@V?$allocator@D@2@@std@@AEAV2@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$"
+              "duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@6@@Z",
+              NetworkHandler::Connection, std::string* data) {
+    auto status = original(this, data);
+    // printf("hi %d\n", status);
+    if (status == NetworkPeer::DataStatus::HasData && !data->empty()) {
+        auto stream = ReadOnlyBinaryStream(*data, false);
+        auto packetId = stream.getUnsignedVarInt();
+        if (checkPktId(packetId)) {
+            // is login packet,modify connection state
+            connState(this) = true;
+        } else {
+            if (!connState(this)) {
+                data->clear();
+                return NetworkPeer::DataStatus::NoData;
+            }
+        }
+    }
+    return status;
+}
+
+THook(void*,
+      "??0Connection@NetworkHandler@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@"
+      "Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@4@_NV?$NonOwnerPointer@"
+      "VIPacketObserver@@@Bedrock@@AEAVScheduler@@@Z",
+      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
+    auto res = original(thi, a1, a2, a3, a4, a5, a6);
+    connState(thi) = false;
+    return res;
+}
+
+THook(void*, "?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+      ReadOnlyBinaryStream* bs, void* res) {
+    auto oldptr = bs->getReadPointer();
+    auto size = bs->getUnsignedVarInt();
+    if (size > 0x3fffff) {
+        // reject
+        new (res) std::string();
+        return res;
+    }
+    bs->setReadPointer(oldptr);
+    return original(bs, res);
+}
+
+THook(bool,
+      "?getString@ReadOnlyBinaryStream@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      ReadOnlyBinaryStream* bs, void* res) {
+    auto oldptr = bs->getReadPointer();
+    auto size = bs->getUnsignedVarInt();
+    if (size > 0x3fffff) {
+        // reject
+        return false;
+    }
+    bs->setReadPointer(oldptr);
+    return original(bs, res);
 }

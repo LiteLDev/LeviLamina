@@ -320,7 +320,7 @@ void liteloaderMain() {
     checkRunningBDS();
 
     // Builtin CrashLogger
-    ll::InitCrashLogger(ll::globalConfig.enableCrashLogger);
+    ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
 
     // Initialize Player Database
     InitPlayerDatabase();
