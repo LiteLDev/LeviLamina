@@ -10,10 +10,8 @@ wstring str2wstr(const string& str) {
 
 std::wstring str2wstr(const std::string& str, UINT codePage) {
     auto len = MultiByteToWideChar(codePage, 0, str.c_str(), -1, nullptr, 0);
-    auto* buffer = new wchar_t[len + 1];
-    MultiByteToWideChar(codePage, 0, str.c_str(), -1, buffer, len + 1);
-    buffer[len] = L'\0';
-
+    auto* buffer = new wchar_t[len];
+    MultiByteToWideChar(codePage, 0, str.c_str(), -1, buffer, len);
     wstring result = wstring(buffer);
     delete[] buffer;
     return result;
@@ -25,10 +23,8 @@ string wstr2str(const wstring& wstr) {
 
 std::string wstr2str(const std::wstring& wstr, UINT codePage) {
     auto len = WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
-    char* buffer = new char[len + 1];
-    WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, buffer, len + 1, nullptr, nullptr);
-    buffer[len] = '\0';
-
+    char* buffer = new char[len];
+    WideCharToMultiByte(codePage, 0, wstr.c_str(), -1, buffer, len, nullptr, nullptr);
     string result = string(buffer);
     delete[] buffer;
     return result;

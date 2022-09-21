@@ -110,13 +110,13 @@ std::wstring ShellLinkFile::getPathW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getPathW: shellLink is null");
     }
-    std::wstring path;
-    path.reserve(MAX_PATH_LENGTH);
-    auto res = shellLink->GetPath(path.data(), MAX_PATH_LENGTH, nullptr, 0);
+    auto buffer = new wchar_t[MAX_PATH_LENGTH];
+    auto res = shellLink->GetPath(buffer, MAX_PATH_LENGTH, nullptr, 0);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getPathW: Failed to get the path");
     }
-    path.resize(wcslen(path.data()));
+    std::wstring path = buffer;
+    delete[] buffer;
     return path;
 }
 
@@ -143,14 +143,13 @@ std::wstring ShellLinkFile::getWorkingDirectoryW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: shellLink is null");
     }
-    std::wstring path;
-    path.reserve(MAX_PATH_LENGTH);
-
-    auto res = shellLink->GetWorkingDirectory(path.data(), MAX_PATH_LENGTH);
+    auto buffer = new wchar_t[MAX_PATH_LENGTH];
+    auto res = shellLink->GetWorkingDirectory(buffer, MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getWorkingDirectoryW: Failed to get the working directory");
     }
-    path.resize(wcslen(path.data()));
+    std::wstring path = buffer;
+    delete[] buffer;
     return path;
 }
 
@@ -177,14 +176,13 @@ std::wstring ShellLinkFile::getDescriptionW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getDescriptionW: shellLink is null");
     }
-    std::wstring path;
-    path.reserve(MAX_PATH_LENGTH);
-
-    auto res = shellLink->GetDescription(path.data(), MAX_PATH_LENGTH);
+    auto buffer = new wchar_t[MAX_PATH_LENGTH];
+    auto res = shellLink->GetDescription(buffer, MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getDescriptionW: Failed to get the description");
     }
-    path.resize(wcslen(path.data()));
+    std::wstring path = buffer;
+    delete[] buffer;
     return path;
 }
 
@@ -211,14 +209,13 @@ std::wstring ShellLinkFile::getArgumentsW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getArgumentsW: shellLink is null");
     }
-    std::wstring path;
-    path.reserve(MAX_PATH_LENGTH);
-
-    auto res = shellLink->GetArguments(path.data(), MAX_PATH_LENGTH);
+    auto buffer = new wchar_t[MAX_PATH_LENGTH];
+    auto res = shellLink->GetArguments(buffer, MAX_PATH_LENGTH);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getArgumentsW: Failed to get the arguments");
     }
-    path.resize(wcslen(path.data()));
+    std::wstring path = buffer;
+    delete[] buffer;
     return path;
 }
 
@@ -245,14 +242,14 @@ std::wstring ShellLinkFile::getIconLocationW() {
     if (!shellLink) {
         throw std::exception("ShellLinkFile::getIconLocationW: shellLink is null");
     }
-    std::wstring path;
-    path.reserve(MAX_PATH_LENGTH);
+    auto buffer = new wchar_t[MAX_PATH_LENGTH];
     int _;
-    auto res = shellLink->GetIconLocation(path.data(), MAX_PATH_LENGTH, &_);
+    auto res = shellLink->GetIconLocation(buffer, MAX_PATH_LENGTH, &_);
     if (res != S_OK) {
         throw std::exception("ShellLinkFile::getIconLocationW: Failed to get the icon location");
     }
-    path.resize(wcslen(path.data()));
+    std::wstring path = buffer;
+    delete[] buffer;
     return path;
 }
 
@@ -304,7 +301,7 @@ ShellLinkFile::HotKey ShellLinkFile::getHotKey() {
         // The address of the keyboard shortcut. The virtual key code is in the low-order byte,
         //  and the modifier flags are in the high-order byte.
         WORD in;
-    } hotKey;
+    } hotKey{};
 
     auto res = shellLink->GetHotkey(&hotKey.in);
     if (res != S_OK) {
@@ -323,7 +320,7 @@ ShellLinkFile& ShellLinkFile::setHotKey(const HotKey& hotKey) {
         // The address of the keyboard shortcut. The virtual key code is in the low-order byte,
         //  and the modifier flags are in the high-order byte.
         WORD out;
-    } hotKey1;
+    } hotKey1{};
 
     hotKey1.in = hotKey;
     auto res = shellLink->SetHotkey(hotKey1.out);
