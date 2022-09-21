@@ -467,7 +467,7 @@ enum class MinecraftPacketIds : int {
     CraftingData                      = 0x34,
     CraftingEvent                     = 0x35,
     GuiDataPickItem                   = 0x36,
-    AdventureSettings                 = 0x37,
+    AdventureSettings                 = 0x37,// removed
     BlockActorData                    = 0x38,
     PlayerInput                       = 0x39,
     LevelChunk                        = 0x3A,
@@ -598,9 +598,14 @@ enum class MinecraftPacketIds : int {
     ToastRequest                      = 0xBA,
     UpdateAbilities                   = 0xBB,
     UpdateAdventureSettings           = 0xBC,
-    DeathInfo                         = 0XBD,
-    EditorNetwork                     = 0XBE,
-    FeatureRegistry                   = 0XBF
+    DeathInfo                         = 0xBD,
+    EditorNetwork                     = 0xBE,
+    FeatureRegistry                   = 0xBF,
+    ServerStats                       = 0xC0,
+	RequestNetworkSettings            = 0xC1,
+	GameTestRequest                   = 0XC2,
+	GameTestResults                   = 0xC3
+	
 };
 
 enum class ItemStackNetResult : unsigned char {
