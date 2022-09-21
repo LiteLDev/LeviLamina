@@ -179,7 +179,6 @@ Tick* Actor::getLastTick() const {
         return nullptr;
     return (Tick*)&lc->getLastTick();
 }
-enum class ActorLocation;
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();

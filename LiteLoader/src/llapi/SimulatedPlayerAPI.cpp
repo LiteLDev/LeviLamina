@@ -6,7 +6,6 @@
 #include <llapi/mc/StackResultStorageEntity.hpp>
 #include <llapi/mc/OwnerStorageEntity.hpp>
 #include <llapi/mc/Level.hpp>
-
 // static_assert(sizeof(ScriptNavigationResult) == 32);
 
 // For compatibility

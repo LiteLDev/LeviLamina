@@ -65,7 +65,6 @@ using ll::logger;
 #include <llapi/mc/CraftingDataPacket.hpp>
 #include <llapi/mc/CraftingEventPacket.hpp>
 #include <llapi/mc/GuiDataPickItemPacket.hpp>
-#include <llapi/mc/AdventureSettingsPacket.hpp>
 #include <llapi/mc/BlockActorDataPacket.hpp>
 #include <llapi/mc/PlayerInputPacket.hpp>
 #include <llapi/mc/LevelChunkPacket.hpp>
@@ -864,7 +863,6 @@ static_assert(sizeof(ContainerSetDataPacket) == 0x40 || sizeof(ContainerSetDataP
 static_assert(sizeof(CraftingDataPacket) == 0x98 || sizeof(CraftingDataPacket) == 48, "size of CraftingDataPacket should be 152 or 48(default)");
 static_assert(sizeof(CraftingEventPacket) == 0x78 || sizeof(CraftingEventPacket) == 48, "size of CraftingEventPacket should be 120 or 48(default)");
 static_assert(sizeof(GuiDataPickItemPacket) == 0x78 || sizeof(GuiDataPickItemPacket) == 48, "size of GuiDataPickItemPacket should be 120 or 48(default)");
-static_assert(sizeof(AdventureSettingsPacket) == 0x50 || sizeof(AdventureSettingsPacket) == 48, "size of AdventureSettingsPacket should be 80 or 48(default)");
 static_assert(sizeof(BlockActorDataPacket) == 0x58 || sizeof(BlockActorDataPacket) == 48, "size of BlockActorDataPacket should be 88 or 48(default)");
 static_assert(sizeof(PlayerInputPacket) == 0x40 || sizeof(PlayerInputPacket) == 48, "size of PlayerInputPacket should be 64 or 48(default)");
 static_assert(sizeof(LevelChunkPacket) == 0x88 || sizeof(LevelChunkPacket) == 48, "size of LevelChunkPacket should be 136 or 48(default)");

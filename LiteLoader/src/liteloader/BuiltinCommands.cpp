@@ -34,7 +34,7 @@ class TeleportDimensionCommand : public Command {
 
     Vec3 getTargetPos(CommandOrigin const& ori, Actor* actor) const {
         if (CommandPos_isSet)
-            return CommandPos.getPosition(ori, {0, 0, 0});
+            return CommandPos.getPosition(0,ori, {0, 0, 0});
         auto pos = actor->getPosition();
         Vec3 result = pos;
         int actorDimensionId = actor->getDimensionId();
@@ -84,7 +84,7 @@ class TeleportDimensionCommand : public Command {
         } else {
             std::string message = fmt::format("Teleported {} to {}", names.substr(2), dim);
             if (CommandPos_isSet) {
-                auto pos = CommandPos.getPosition(ori, {0, 0, 0});
+                auto pos = CommandPos.getPosition(0,ori, {0, 0, 0});
                 message.append(fmt::format(" ({:2f}, {:2f}, {:2f})", pos.x, pos.y, pos.z));
             }
             output.addMessage(message);

@@ -324,12 +324,12 @@ public:
         template <>
         inline BlockPos get<BlockPos>() const {
             auto& pos = getRaw<CommandPosition>();
-            return pos.getBlockPos(*origin, Vec3::ZERO);
+            return pos.getBlockPos(0,*origin, Vec3::ZERO);
         }
         template <>
         inline Vec3 get<Vec3>() const {
             auto& pos = getRaw<CommandPositionFloat>();
-            return pos.getPosition(*origin, Vec3::ZERO);
+            return pos.getPosition(0,*origin, Vec3::ZERO);
         }
     };
 
