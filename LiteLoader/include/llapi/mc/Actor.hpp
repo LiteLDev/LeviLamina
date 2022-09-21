@@ -60,7 +60,7 @@ public:
     LIAPI bool setOnFire(int time, bool isEffect);
     LIAPI bool stopFire();
     LIAPI bool hasTag(const string& tag);
-    LIAPI bool hurtEntity(float damage, ActorDamageCause damageCause = ActorDamageCause::ActorDamageCause_Override);
+    LIAPI bool hurtEntity(float damage, ActorDamageCause damageCause = ActorDamageCause::Override);
     LIAPI bool teleport(Vec3 to, int dimID, float x, float y);
     LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();

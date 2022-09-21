@@ -1739,7 +1739,7 @@ TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
 }
 
 TInstanceHook(float, "?getDamageAfterResistanceEffect@Mob@@UEBAMAEBVActorDamageSource@@M@Z", Mob, ActorDamageSource* src, float damage) {
-    if (src->getCause() == ActorDamageCause::ActorDamageCause_Magic) {
+    if (src->getCause() == ActorDamageCause::Magic) {
         IF_LISTENED(MobHurtEvent) {
             MobHurtEvent ev{};
             ev.mMob = this;
