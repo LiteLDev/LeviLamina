@@ -11,15 +11,21 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build:
+  init_repo:
+    name: "Init Repo"
     runs-on: self-hosted
-
     steps:
       - uses: actions/checkout@v3.0.2
         with:
           fetch-depth: 1
           submodules: 'true'
 
+  prepare_bds_lib:
+    name: "Prepare BDS Lib"
+    runs-on: self-hosted
+    needs:
+      - init_repo
+    steps:
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
         uses: actions/cache@v3
@@ -52,6 +58,12 @@ jobs:
           move bedrock_server_var.lib ..\LiteLoader\lib
         shell: cmd
 
+  configure_version:
+    name: "Configure Version"
+    runs-on: self-hosted
+    needs:
+      - prepare_bds_lib
+    steps:
       - name: Change LITELOADER_VERSION_STATUS_BETA
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         if: github.ref == 'refs/heads/beta'
@@ -69,6 +81,12 @@ jobs:
           sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/include/liteloader/Version.h
         shell: bash
 
+  build:
+    name: "Build"
+    runs-on: self-hosted
+    needs:
+      - configure_version
+    steps:
       - name: Get MSVC Path
         working-directory: E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
         run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
@@ -97,6 +115,12 @@ jobs:
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
         shell: cmd
 
+  package:
+    name: "Package"
+    runs-on: self-hosted
+    needs:
+      - build
+    steps:
       - name: Pack output and SDK
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
@@ -112,9 +136,16 @@ jobs:
 
       - name: Pack PDB for Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}
+        if: startsWith(github.ref, 'refs/tags/')
         run: 7z a -tzip PDB.zip build/pdb
         shell: bash
 
+  upload:
+    name: "Upload"
+    runs-on: self-hosted
+    needs:
+      - package
+    steps:
       - name: Update LiteLoaderSDK
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
@@ -139,6 +170,12 @@ jobs:
           name: PDB
           path: ${{ github.workspace }}\build\pdb\
 
+  create_release:
+    name: "Create Release"
+    runs-on: self-hosted
+    needs:
+      - upload
+    steps:
       - name: Pack Release
         working-directory: ${{ env.GITHUB_WORKSPACE }}/build/output
         id: rel
