@@ -19,6 +19,7 @@ env:
 
 jobs:
   init_repo:
+    name: "Init Repo"
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3.0.2
@@ -27,6 +28,7 @@ jobs:
           submodules: 'true'
 
   prepare_bds_lib:
+    name: "Prepare BDS Lib"
     runs-on: self-hosted
     needs:
       - init_repo
@@ -64,6 +66,7 @@ jobs:
         shell: cmd
 
   build:
+    name: "Build"
     runs-on: self-hosted
     needs:
       - prepare_bds_lib
@@ -97,6 +100,7 @@ jobs:
         shell: cmd
 
   package:
+    name: "Package"
     runs-on: self-hosted
     needs:
       - build
@@ -121,6 +125,7 @@ jobs:
         shell: bash
 
   upload:
+    name: "Upload"
     runs-on: self-hosted
     needs:
       - package
