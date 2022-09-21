@@ -22,6 +22,7 @@
 #include <liteloader/CrashLogger.h>
 #include <liteloader/AddonsHelper.h>
 #include <liteloader/Version.h>
+#include <liteloader/SimpleServerLogger.h>
 
 #include <utility>
 #include <windows.h>
@@ -346,7 +347,7 @@ void liteloaderMain() {
     RegisterCommands();
 
     // Register simple server logger
-    RegisterSimpleServerLogger();
+    ll::SimpleServerLogger::registerSimpleServerLogger();
 
     // Register BStats
     bstats::registerBStats();
