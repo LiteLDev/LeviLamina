@@ -1,6 +1,8 @@
-<!-- Version: 2.6.3-beta -->
+<!-- Version: 2.7.0 -->
 
-# LiteLoader Beta Release Note
+# LiteLoader Release Note
+
+**Adapted to BDS-1.19.30.04**
 
 ## Bug Fixes
 
