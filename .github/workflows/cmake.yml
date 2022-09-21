@@ -60,23 +60,6 @@ jobs:
           move bedrock_server_var.lib ..\LiteLoader\lib
         shell: cmd
 
-      - name: Change LITELOADER_VERSION_STATUS_BETA
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: false == startsWith(github.ref, 'refs/tags/')
-        run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/include/liteloader/Version.h
-          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/include/liteloader/Version.h
-          cat LiteLoader/include/liteloader/Version.h
-        shell: bash
-
-      - name: Change LITELOADER_VERSION_STATUS_RELEASE
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/include/liteloader/Version.h
-          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/include/liteloader/Version.h
-        shell: bash
-
       - name: Get MSVC Path
         working-directory: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\
         run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
