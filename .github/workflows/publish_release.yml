@@ -177,17 +177,16 @@ jobs:
       - upload
     steps:
       - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}/build/output
+        working-directory: ${{ github.workspace }}/build/output
         id: rel
         run: |
-          echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-          7z a -y -tzip -mmt -mx=9 ../LiteLoader-${GITHUB_REF#refs/*/}.zip *
+          7z a -y -tzip -mmt -mx=9 ../LiteLoader-${{ github.event.inputs.tag }}.zip *
         shell: bash
 
       - name: Create New Release
         uses: softprops/action-gh-release@v0.1.14
         with:
-          prerelease: ${{ github.ref != 'refs/heads/main' }}
+          prerelease: github.ref != 'refs/heads/main'
           tag_name: ${{ github.event.inputs.tag }}
           body_path: ${{ github.workspace }}\CHANGELOG.md
           files: |
