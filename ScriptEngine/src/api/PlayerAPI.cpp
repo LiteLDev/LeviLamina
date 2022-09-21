@@ -27,6 +27,7 @@
 #include <llapi/mc/SimulatedPlayer.hpp>
 #include <llapi/mc/BlockSource.hpp>
 #include <llapi/mc/Command.hpp>
+#include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
 #include <llapi/PlayerInfoAPI.h>
 #include "../main/SafeGuardRecord.h"
 #include <string>

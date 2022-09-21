@@ -14,7 +14,11 @@
 class SynchedActorDataEntityWrapper {
 
 #define AFTER_EXTRA
-
+public:
+    template <typename T>
+    MCAPI void define(unsigned short, T const&);
+    template <typename T>
+    MCAPI void set(unsigned short, T const&);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCHEDACTORDATAENTITYWRAPPER
 public:
