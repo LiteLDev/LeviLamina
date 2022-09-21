@@ -30,7 +30,7 @@ inline void LoadConfigFromJson(const std::string& fileName) {
     }
 }
 
-inline void loadconfig() {
+inline void loadConfig() {
     if (std::filesystem::exists("plugins/LiteLoader/LiteLoader.json")) {
         try {
             LoadConfigFromJson("plugins/LiteLoader/LiteLoader.json");
