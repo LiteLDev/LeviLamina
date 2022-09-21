@@ -100,12 +100,6 @@ jobs:
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
-      - name: Pack PDB for Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: 7z a -tzip PDB.zip build/pdb
-        shell: bash
-
       - name: Update LiteLoaderSDK
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
