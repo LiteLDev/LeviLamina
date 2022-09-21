@@ -18,15 +18,19 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build:
+  init_repo:
     runs-on: self-hosted
-
     steps:
       - uses: actions/checkout@v3.0.2
         with:
           fetch-depth: 1
           submodules: 'true'
 
+  prepare_bds_lib:
+    runs-on: self-hosted
+    needs:
+      - init_repo
+    steps:
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
         uses: actions/cache@v3
@@ -59,6 +63,11 @@ jobs:
           move bedrock_server_var.lib ..\LiteLoader\lib
         shell: cmd
 
+  build:
+    runs-on: self-hosted
+    needs:
+      - prepare_bds_lib
+    steps:
       - name: Get MSVC Path
         working-directory: E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
         run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
@@ -87,6 +96,11 @@ jobs:
           cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
         shell: cmd
 
+  package:
+    runs-on: self-hosted
+    needs:
+      - build
+    steps:
       - name: Pack output and SDK
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
@@ -106,6 +120,11 @@ jobs:
         run: 7z a -tzip PDB.zip build/pdb
         shell: bash
 
+  upload:
+    runs-on: self-hosted
+    needs:
+      - package
+    steps:
       - name: Update LiteLoaderSDK
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
@@ -129,23 +148,3 @@ jobs:
         with:
           name: PDB
           path: ${{ github.workspace }}\build\pdb\
-
-      - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}/build/output
-        id: rel
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-          7z a -y -tzip -mmt -mx=9 ../LiteLoader-${GITHUB_REF#refs/*/}.zip *
-        shell: bash
-
-      - name: Create New Release
-        uses: softprops/action-gh-release@v0.1.14
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          body_path: ${{ github.workspace }}\CHANGELOG.md
-          files: |
-            ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
-            ${{ github.workspace }}\PDB.zip
-        env:
-          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
