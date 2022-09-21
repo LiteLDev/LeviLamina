@@ -228,7 +228,7 @@ BOOL WINAPI ConsoleExitHandler(DWORD CEvent) {
         case CTRL_CLOSE_EVENT:
         case CTRL_SHUTDOWN_EVENT: {
             if (Global<Minecraft>) {
-                Global<Minecraft>->requestServerShutdown();
+                Global<Minecraft>->requestServerShutdown("");
             } else {
                 std::terminate();
             }
@@ -245,7 +245,7 @@ void unixSignalHandler(int signum) {
         case SIGINT:
         case SIGTERM: {
             if (Global<Minecraft>) {
-                Global<Minecraft>->requestServerShutdown();
+                Global<Minecraft>->requestServerShutdown("");
             } else {
                 std::terminate();
             }
@@ -320,7 +320,7 @@ void liteloaderMain() {
     checkRunningBDS();
 
     // Builtin CrashLogger
-    ll::InitCrashLogger(ll::globalConfig.enableCrashLogger);
+    ll::CrashLogger::initCrashLogger(ll::globalConfig.enableCrashLogger);
 
     // Initialize Player Database
     InitPlayerDatabase();

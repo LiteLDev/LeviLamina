@@ -467,7 +467,7 @@ enum class MinecraftPacketIds : int {
     CraftingData                      = 0x34,
     CraftingEvent                     = 0x35,
     GuiDataPickItem                   = 0x36,
-    AdventureSettings                 = 0x37,
+    AdventureSettings                 = 0x37,// removed
     BlockActorData                    = 0x38,
     PlayerInput                       = 0x39,
     LevelChunk                        = 0x3A,
@@ -598,9 +598,14 @@ enum class MinecraftPacketIds : int {
     ToastRequest                      = 0xBA,
     UpdateAbilities                   = 0xBB,
     UpdateAdventureSettings           = 0xBC,
-    DeathInfo                         = 0XBD,
-    EditorNetwork                     = 0XBE,
-    FeatureRegistry                   = 0XBF   
+    DeathInfo                         = 0xBD,
+    EditorNetwork                     = 0xBE,
+    FeatureRegistry                   = 0xBF,
+    ServerStats                       = 0xC0,
+	RequestNetworkSettings            = 0xC1,
+	GameTestRequest                   = 0XC2,
+	GameTestResults                   = 0xC3
+	
 };
 
 enum class ItemStackNetResult : unsigned char {
@@ -712,6 +717,88 @@ enum class Rotation : unsigned char {
     Rotate180,
     Rotate270,
     Total,
+};
+
+enum class EquipmentSlot : int {
+    _none = 0xFF,
+    _begin = 0x0,
+    _handSlot = 0x0,
+    Mainhand = 0x0,
+    Offhand = 0x1,
+    _armorSlot = 0x2,
+    Head = 0x2,
+    Torso = 0x3,
+    Legs = 0x4,
+    Feet = 0x5,
+    _containerSlot = 0x6,
+    Hotbar = 0x6,
+    Inventory = 0x7,
+    EnderChest = 0x8,
+    Saddle = 0x9,
+    EntityArmor = 0xA,
+    Chest = 0xB,
+    _count = 0xC,
+};
+
+enum class CommandOperator : unsigned char {
+    Invalid = 0x0,
+    Equals = 0x1,
+    PlusEquals = 0x2,
+    MinusEquals = 0x3,
+    TimesEquals = 0x4,
+    DivideEquals = 0x5,
+    ModEquals = 0x6,
+    MinEquals = 0x7,
+    MaxEquals = 0x8,
+    Swap = 0x9,
+};
+
+enum class ActorLocation : int {
+    Feet = 0x0,
+    Body = 0x1,
+    WeaponAttachPoint = 0x2,
+    Head = 0x3,
+    DropAttachPoint = 0x4,
+    ExplosionPoint = 0x5,
+    Eyes = 0x6,
+    BreathingPoint = 0x7,
+    Mouth = 0x8,
+};
+
+enum class StreamReadResult : int {
+    Malformed = 0x0,
+    Valid = 0x1,
+};
+
+enum class BossEventUpdateType
+{
+    BossEventShow = 0,
+    // BossEventRegisterPlayer is sent by the client to the server to request being shown the boss bar.
+    BossEventRegisterPlayer = 1,
+    BossEventHide = 2,
+    // BossEventUnregisterPlayer is sent by the client to request the removal of the boss bar.
+    BossEventUnregisterPlayer = 3,
+    BossEventHealthPercentage = 4,
+    BossEventTitle = 5,
+    BossEventAppearanceProperties = 6,
+    BossEventTexture = 7,
+};
+
+enum class BuildPlatform : int {
+    Android = 0x1,
+    iOS = 0x2,
+    OSX = 0x3,
+    Amazon = 0x4,
+    GearVR = 0x5,
+    WIN10 = 0x7,
+    Win32 = 0x8,
+    Dedicated = 0x9,
+    PS4 = 0xB,
+    Nx = 0xC,
+    Xbox = 0xD,
+    WindowsPhone = 0xE,
+    Linux = 0xF,
+    Unknown = 0xFF,
 };
 
 // clang-format on

@@ -4,7 +4,7 @@
 #include <llapi/mc/Level.hpp>
 
 int Biome::getId() const {
-    return dAccess<int, 120>(this);
+    return dAccess<int, 136>(this);
 }
 
 std::string const& Biome::getName() const {

@@ -1,17 +1,11 @@
-#include <llapi/Global.h>
 #include <llapi/FormUI.h>
-#include <llapi/LLAPI.h>
-#include <llapi/I18nAPI.h>
 
 #include <llapi/Impl/FormPacketHelper.h>
 #include <Nlohmann/fifo_json.hpp>
 #include <llapi/utils/DbgHelper.h>
-#include <liteloader/LiteLoader.h>
 
-#include <llapi/mc/ServerNetworkHandler.hpp>
-#include <llapi/mc/NetworkIdentifier.hpp>
+
 #include <llapi/mc/Player.hpp>
-#include <llapi/mc/ServerPlayer.hpp>
 
 using namespace std;
 

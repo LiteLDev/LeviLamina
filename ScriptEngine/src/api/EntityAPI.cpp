@@ -16,6 +16,7 @@
 #include <llapi/mc/SimpleContainer.hpp>
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/Mob.hpp>
+#include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
 #include <magic_enum/magic_enum.hpp>
 
 using magic_enum::enum_integer;
