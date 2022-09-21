@@ -318,7 +318,7 @@ TClasslessInstanceHook(bool, "?getLANBroadcastIntent@LevelData@@QEBA_NXZ") {
 
 // Disable 'Running AutoCompaction...' log.
 bool pauseBLogging = false;
-THook(__int64, "std::_Func_impl_no_alloc<<lambda_bc4a73e92ba7b703b39f322d94bb55f6>,TaskResult>::_Do_call",
+THook(__int64, "std::_Func_impl_no_alloc<<lambda_6a2afbe2cc72d5b28a061e9f93b837cd>,TaskResult>::_Do_call",
       __int64 a1, __int64 a2) {
     if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;
