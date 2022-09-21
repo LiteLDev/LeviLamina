@@ -143,7 +143,7 @@ jobs:
         working-directory: ${{ github.workspace }}/build/output
         id: rel
         run: |
-          7z a -y -tzip -mmt -mx=9 ../LiteLoader-${{ github.event.inputs.tag }}.zip *
+          7z a -y -tzip -mmt -mx=9 ../../LiteLoader-${{ github.event.inputs.tag }}.zip *
         shell: bash
 
       - name: Create New Release
