@@ -351,7 +351,6 @@ using ll::logger;
     Func(PlayerActionPacket);                      \
     Func(ItemStackRequestPacket);                  \
     Func(ItemStackResponsePacket);                 \
-    Func(AdventureSettingsPacket);                 \
     Func(BlockActorDataPacket);                    \
     Func(EventPacket);                             \
     Func(SetHealthPacket);                         \
