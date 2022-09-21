@@ -66,7 +66,7 @@ bool Actor::isItemActor() const {
 }
 
 bool Actor::isOnGround() const {
-    return (dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+    return (dAccess<bool, 448>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {
