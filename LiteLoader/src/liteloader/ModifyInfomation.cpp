@@ -24,6 +24,42 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
     }
     return str;
 }
+THook(void, "?BedrockLogOut@@YAXIPEBDZZ", 
+    int a1, char * a2,...)
+{
+    char Buffer[4096];
+    va_list va;
+    va_start(va, a2);
+    auto v1 = vsprintf(Buffer,a2,va);
+	va_end(va);
+	  if ( v1 < 0 )
+    v1 = -1;
+      if ( v1 < 0 )
+		return original(a1,a2,va);
+	string input = Buffer;
+
+	
+    input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
+    switch (a1) {
+        case 1u:
+            serverLogger.debug << input << Logger::endl;
+            return;
+        case 2u:
+            serverLogger.info << input << Logger::endl;
+            return;
+        case 4u:
+            serverLogger.warn << input << Logger::endl;
+            return;
+        case 8u:
+            serverLogger.error << input << Logger::endl;
+            return;
+        default:
+            serverLogger.info << input << Logger::endl;
+            return;
+    }	
+	
+	return original(a1,a2,va);
+}
 
 // Standardize BDS's output
 THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts) {
