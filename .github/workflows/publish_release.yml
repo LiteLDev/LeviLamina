@@ -84,19 +84,6 @@ jobs:
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
         shell: cmd
 
-      - name: Configure CMake(ClangCL)
-        run: |
-          cmake -B ${{github.workspace}}/build_clang -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
-        shell: cmd
-
-      - name: Build SymDBHelper
-        run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
-
-      - name: Configure CMake(MSVC)
-        run: |
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-        shell: cmd
-
       - name: Pack output and SDK
         run: |
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
@@ -114,30 +101,6 @@ jobs:
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: 7z a -tzip PDB.zip build/pdb
         shell: bash
-
-      - name: Update LiteLoaderSDK
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cd scripts
-          ./UploadSDK.cmd action
-        env:
-          REPO_KEY: ${{secrets.PUSH_TOKEN}}
-          USERNAME: github-actions[bot]
-        shell: cmd
-
-      - name: Upload LiteLoader
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LiteLoader
-          path: ${{ github.workspace }}\build\output\
-
-      - name: Upload PDB
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: PDB
-          path: ${{ github.workspace }}\build\pdb\
 
       - name: Pack Release
         working-directory: ${{ github.workspace }}/build/output
