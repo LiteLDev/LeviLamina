@@ -341,9 +341,9 @@ int ll::PluginManager::reloadAllPlugins(bool outputResult) {
     // if (!ll::isDebugMode())
     //     return false;
     try {
-        auto plugins = getAllPlugins(true);
+        auto allPlugins = getAllPlugins(true);
         int cnt = 0;
-        for (auto& [name, plugin] : plugins) {
+        for (auto& [name, plugin] : allPlugins) {
             if (plugin->type == Plugin::PluginType::ScriptPlugin) {
                 Event::ScriptPluginManagerEvent ev;
                 ev.operation = Event::ScriptPluginManagerEvent::Operation::Reload;

@@ -24,7 +24,6 @@
 #include <liteloader/Version.h>
 #include <liteloader/SimpleServerLogger.h>
 
-#include <utility>
 #include <windows.h>
 #include <TlHelp32.h>
 #include <Psapi.h>
@@ -39,29 +38,32 @@ using namespace ll;
 // Add plugins folder to path
 void fixPluginsLibDir() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
-    // get environment path
-    std::wstring envPath;
-    envPath.reserve(MAX_PATH_LEN);
-    envPath.resize(GetEnvironmentVariableW(L"PATH", envPath.data(), MAX_PATH_LEN));
 
-    // get plugins path
-    std::wstring pluginsPath;
-    pluginsPath.reserve(MAX_PATH_LEN);
-    pluginsPath.resize(GetCurrentDirectoryW(MAX_PATH_LEN, pluginsPath.data()));
+    auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
+    if (!buffer)
+        return;
+
+    GetEnvironmentVariableW(L"PATH", buffer, MAX_PATH_LEN);
+    wstring path(buffer);
+
+    GetCurrentDirectoryW(MAX_PATH_LEN, buffer);
+    wstring currentDir(buffer);
 
     // append plugins path to environment path
-    SetEnvironmentVariableW(L"PATH", (pluginsPath + L"\\plugins;" + envPath).c_str());
+    SetEnvironmentVariableW(L"PATH", (currentDir + L"\\plugins;" + path).c_str());
 }
 
 void fixUpCWD() {
     constexpr const DWORD MAX_PATH_LEN = 32767;
-    // get current module file path
-    std::wstring modulePath;
-    modulePath.reserve(MAX_PATH_LEN);
-    modulePath.resize(GetModuleFileNameW(NULL, modulePath.data(), MAX_PATH_LEN));
 
-    // set current directory to module path
-    SetCurrentDirectoryW(modulePath.substr(0, modulePath.find_last_of(L'\\')).c_str());
+    auto* buffer = new (nothrow) wchar_t[MAX_PATH_LEN];
+    if (!buffer)
+        return;
+
+    GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
+    wstring path(buffer);
+
+    SetCurrentDirectoryW(path.substr(0, path.find_last_of(L'\\')).c_str());
 }
 
 void unzipNodeModules() {
@@ -99,6 +101,10 @@ void decompressResourcePacks() {
 }
 
 void checkRunningBDS() {
+
+    constexpr const DWORD MAX_PATH_LEN = 32767;
+    auto* buffer = new wchar_t[MAX_PATH_LEN];
+
     if (!ll::globalConfig.enableCheckRunningBDS)
         return;
 
@@ -124,8 +130,8 @@ void checkRunningBDS() {
 
     // Get current process path
     std::wstring currentPath;
-    currentPath.reserve(8192);
-    currentPath.resize(GetModuleFileNameW(nullptr, currentPath.data(), 8192));
+    GetModuleFileNameW(nullptr, buffer, MAX_PATH_LEN);
+    currentPath = buffer;
 
     // Get the BDS process paths
     for (auto& pid : pids) {
@@ -134,8 +140,8 @@ void checkRunningBDS() {
         if (handle) {
             // Get the full path of the process
             std::wstring path;
-            path.reserve(8192);
-            path.resize(GetModuleFileNameExW(handle, nullptr, path.data(), 8192));
+            GetModuleFileNameExW(handle, nullptr, buffer, MAX_PATH_LEN);
+            path = buffer;
 
             // Compare the path
             if (path == currentPath) {
@@ -154,6 +160,8 @@ void checkRunningBDS() {
             CloseHandle(handle);
         }
     }
+
+    delete[] buffer;
 }
 
 void fixAllowList() {
@@ -253,8 +261,6 @@ void unixSignalHandler(int signum) {
 extern void RegisterCommands();
 
 extern bool InitPlayerDatabase();
-
-extern void RegisterSimpleServerLogger();
 
 extern void EndScheduleSystem();
 

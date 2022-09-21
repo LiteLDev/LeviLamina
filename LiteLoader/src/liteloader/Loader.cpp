@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include <ScriptEngine/src/Main/Configs.h>
+#include <ScriptEngine/src/main/Configs.h>
 
 #include <llapi/utils/StringHelper.h>
 #include <llapi/utils/WinHelper.h>
@@ -26,31 +26,36 @@
 
 using namespace std;
 
-vector<std::wstring> GetPreloadList() {
-    // 若在preload.conf中，则不加载
-    vector<std::wstring> preloadList{};
+inline vector<std::string> getPreloadList() {
+    // Not load if is already loaded in preloader
+    vector<std::string> preloadList{};
 
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
-        std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
-        if (dllList) {
-            std::wstring dllName;
-            while (getline(dllList, dllName)) {
-                if (dllName.back() == TEXT('\n'))
-                    dllName.pop_back();
-                if (dllName.back() == TEXT('\r'))
-                    dllName.pop_back();
+    if (std::filesystem::exists(std::filesystem::path(".\\plugins\\preload.conf"))) {
+        std::ifstream preloadConf{".\\plugins\\preload.conf"};
+        if (preloadConf) {
+            std::string preloadName;
+            while (getline(preloadConf, preloadName)) {
+                if (preloadName.back() == '\n')
+                    preloadName.pop_back();
+                if (preloadName.back() == '\r')
+                    preloadName.pop_back();
 
-                if (dllName.empty() || dllName.front() == TEXT('#'))
+                if (preloadName.empty() || preloadName.front() == '#')
                     continue;
-                preloadList.push_back(dllName);
+                if (preloadName.find("LiteLoader.dll") != std::string::npos)
+                    continue;
+                if (preloadName.find("LiteXLoader.dll") != std::string::npos)
+                    continue;
+
+                preloadList.emplace_back(preloadName);
             }
-            dllList.close();
+            preloadConf.close();
         }
     }
     return preloadList;
 }
 
-void CleanOldScriptEngine() {
+inline void cleanOldScriptEngine() {
     std::error_code ec;
     if (filesystem::exists("plugins/LiteXLoader", ec))
         filesystem::remove_all("plugins/LiteXLoader", ec);
@@ -60,8 +65,7 @@ void CleanOldScriptEngine() {
         filesystem::remove("plugins/LiteXLoader.Lua.dll", ec);
 }
 
-
-const char* DEFAULT_ROOT_PACKAGE_JSON =
+constexpr auto DEFAULT_ROOT_PACKAGE_JSON =
     R"({
     "name": "llse-nodejs-root",
     "version" : "1.0.0",
@@ -72,7 +76,7 @@ const char* DEFAULT_ROOT_PACKAGE_JSON =
     "license" : "LGPL-3.0"
 })";
 
-bool IsExistScriptPlugin() {
+inline bool isExistScriptPlugin() {
     std::vector<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
@@ -92,14 +96,15 @@ bool IsExistScriptPlugin() {
                 ext = UTF82String(path.extension().u8string());
             }
 
-            if ((!ext.empty() && std::find(scriptExts.begin(), scriptExts.end(), ext) != scriptExts.end()) || ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
+            if ((!ext.empty() && std::find(scriptExts.begin(), scriptExts.end(), ext) != scriptExts.end()) ||
+                ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
                 return true;
         }
     }
     return false;
 }
 
-bool IsExistNodeJsPlugin() {
+inline bool isExistNodeJsPlugin() {
     if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
         return false;
 
@@ -114,7 +119,7 @@ bool IsExistNodeJsPlugin() {
     return exist;
 }
 
-void InitNodeJsDirectories() {
+inline void initNodeJsDirectories() {
     // Check & Create nodejs directories
     if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR)) {
         filesystem::create_directories(LLSE_NODEJS_ROOT_DIR);
@@ -131,7 +136,7 @@ void InitNodeJsDirectories() {
     }
 }
 
-void LoadScriptEngine() {
+inline void loadScriptEngine() {
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     for (const string& backend : LLSE_VALID_BACKENDS) {
         std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
@@ -152,7 +157,7 @@ void LoadScriptEngine() {
     }
 }
 
-void LoadDotNETEngine() {
+inline void loadDotNETEngine() {
     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
     std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
     std::string version = GetFileVersionString(path, true);
@@ -171,7 +176,7 @@ void LoadDotNETEngine() {
     }
 }
 
-void LoadPermissionAPI() {
+inline void loadPermissionAPI() {
     std::string path = "plugins/LiteLoader/PermissionAPI.dll";
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
@@ -182,7 +187,7 @@ void LoadPermissionAPI() {
     }
 }
 
-void LoadParticleAPI() {
+inline void loadParticleApi() {
     std::string path = "plugins/LiteLoader/ParticleAPI.dll";
     auto lib = LoadLibrary(str2wstr(path).c_str());
     if (lib) {
@@ -193,14 +198,13 @@ void LoadParticleAPI() {
     }
 }
 
-
 void ll::LoadMain() {
     ll::logger.info(tr("ll.loader.loadMain.start"));
-    CleanOldScriptEngine();
+    cleanOldScriptEngine();
 
     // Load plugins
     int pluginCount = 0;
-    vector<std::wstring> preloadList = GetPreloadList();
+    vector<std::string> preloadList = getPreloadList();
 
     filesystem::directory_iterator ent("plugins");
     for (auto& file : ent) {
@@ -245,7 +249,7 @@ void ll::LoadMain() {
         string pluginFileName = UTF82String(path.filename().u8string());
         bool loaded = false;
         for (auto& p : preloadList)
-            if (p.find(str2wstr(pluginFileName)) != std::wstring::npos) {
+            if (p.find(pluginFileName) != std::wstring::npos) {
                 loaded = true;
                 break;
             }
@@ -258,8 +262,8 @@ void ll::LoadMain() {
             ++pluginCount;
 
             if (isShellLink) {
-                ll::logger.info(tr("ll.loader.loadMain.loadedShellLink",
-                               UTF82String(file.path().filename().u8string()), UTF82String(path.u8string())));
+                ll::logger.info(tr("ll.loader.loadMain.loadedShellLink", UTF82String(file.path().filename().u8string()),
+                                   UTF82String(path.u8string())));
             } else {
                 ll::logger.info(tr("ll.loader.loadMain.loadedPlugin", fmt::arg("name", pluginFileName)));
             }
@@ -287,27 +291,27 @@ void ll::LoadMain() {
     // Load PermissionAPI
     if (ll::globalConfig.enablePermissionAPI) {
         if (filesystem::exists("plugins/LiteLoader/PermissionAPI.dll")) {
-            LoadPermissionAPI();
+            loadPermissionAPI();
         }
     }
 
     if (ll::globalConfig.enableParticleAPI) {
         if (filesystem::exists("plugins/LiteLoader/ParticleAPI.dll")) {
-            LoadParticleAPI();
+            loadParticleApi();
         }
     }
 
     // Load ScriptEngine
     if (ll::globalConfig.enableScriptEngine) {
-        InitNodeJsDirectories();
-        if (ll::globalConfig.alwaysLaunchScriptEngine || IsExistNodeJsPlugin() || IsExistScriptPlugin()) {
-            LoadScriptEngine();
+        initNodeJsDirectories();
+        if (ll::globalConfig.alwaysLaunchScriptEngine || isExistNodeJsPlugin() || isExistScriptPlugin()) {
+            loadScriptEngine();
         }
     }
 
     // Load .NET Engine
     if (filesystem::exists("plugins/LiteLoader/LiteLoader.NET.dll")) {
-        LoadDotNETEngine();
+        loadDotNETEngine();
     }
 
     // Call onPostInit
