@@ -1,11 +1,11 @@
-#include <llapi/mc/CompoundTag.hpp>
-#include <llapi/mc/Block.hpp>
-#include <llapi/mc/BlockActorDataPacket.hpp>
-#include <llapi/mc/Dimension.hpp>
-#include <llapi/mc/BlockSource.hpp>
-#include <llapi/mc/StructureBlockActor.hpp>
-#include <llapi/mc/StructureBlockPalette.hpp>
-#include <llapi/mc/StructureEditorData.hpp>
+#include "llapi/mc/CompoundTag.hpp"
+#include "llapi/mc/Block.hpp"
+#include "llapi/mc/BlockActorDataPacket.hpp"
+#include "llapi/mc/Dimension.hpp"
+#include "llapi/mc/BlockSource.hpp"
+#include "llapi/mc/StructureBlockActor.hpp"
+#include "llapi/mc/StructureBlockPalette.hpp"
+#include "llapi/mc/StructureEditorData.hpp"
 #include <magic_enum/magic_enum.hpp>
 
 unsigned int BlockActor::getBlockEntityType(Block* block) {

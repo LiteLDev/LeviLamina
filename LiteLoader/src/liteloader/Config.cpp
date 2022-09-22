@@ -1,14 +1,14 @@
-#include <liteloader/Config.h>
+#include "liteloader/Config.h"
 
 #include <filesystem>
 #include <fstream>
 
 #include <Nlohmann/json.hpp>
 
-#include <llapi/utils/FileHelper.h>
-#include <llapi/LoggerAPI.h>
+#include "llapi/utils/FileHelper.h"
+#include "llapi/LoggerAPI.h"
 
-#include <liteloader/LiteLoader.h>
+#include "liteloader/LiteLoader.h"
 
 using namespace std;
 

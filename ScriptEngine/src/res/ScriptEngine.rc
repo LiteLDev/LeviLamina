@@ -9,7 +9,7 @@
 //
 #include "winres.h"
 #include <liteloader/Version.h>
-#include "../main/Configs.h"
+#include "main/Configs.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS

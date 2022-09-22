@@ -1,7 +1,7 @@
 #pragma once
-#include "APIHelp.h"
+#include "api/APIHelp.h"
 
-#include "../main/EconomicSystem.h"
+#include "main/EconomicSystem.h"
 
 //////////////////// Funcs ////////////////////
 

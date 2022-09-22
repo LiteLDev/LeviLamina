@@ -1,15 +1,15 @@
-#include <llapi/utils/WinHelper.h>
+#include "llapi/utils/WinHelper.h"
 
 #include <string>
 
-#include <llapi/utils/StringHelper.h>
-#include <llapi/utils/DbgHelper.h>
+#include "llapi/utils/StringHelper.h"
+#include "llapi/utils/DbgHelper.h"
 
-#include <llapi/LoggerAPI.h>
-#include <llapi/I18nAPI.h>
+#include "llapi/LoggerAPI.h"
+#include "llapi/I18nAPI.h"
 
-#include <liteloader/Config.h>
-#include <liteloader/LiteLoader.h>
+#include "liteloader/Config.h"
+#include "liteloader/LiteLoader.h"
 
 #include <Windows.h>
 #include <Psapi.h>

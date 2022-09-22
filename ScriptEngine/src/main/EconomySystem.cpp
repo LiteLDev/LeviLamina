@@ -1,6 +1,6 @@
-#include "../engine/LocalShareData.h"
-#include "EconomicSystem.h"
-#include "../api/EventAPI.h"
+#include "engine/LocalShareData.h"
+#include "main/EconomicSystem.h"
+#include "api/EventAPI.h"
 #include <llapi/LLAPI.h>
 #include <llapi/LoggerAPI.h>
 #include <string>

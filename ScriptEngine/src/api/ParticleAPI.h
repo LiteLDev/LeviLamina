@@ -2,8 +2,8 @@
 // Created by OEOTYAN on 2022/08/27.
 //
 #pragma once
-#include "APIHelp.h"
-#include "../main/Global.hpp"
+#include "api/APIHelp.h"
+#include "main/Global.hpp"
 #include <llapi/ParticleAPI.h>
 
 class ParticleSpawner : public ParticleCUI, public ScriptClass {

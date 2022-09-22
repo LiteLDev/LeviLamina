@@ -1,6 +1,6 @@
 #pragma once
-#include "RowSet.h"
-#include "Pointer.h"
+#include "llapi/db/RowSet.h"
+#include "llapi/db/Pointer.h"
 
 #define IF_ENDBG if (debugOutput)
 

@@ -21,17 +21,17 @@ copies or substantial portions of the Software.
 
 #include <magic_enum/magic_enum.hpp>
 
-#include "mc/Command.hpp"
-#include "mc/CommandOrigin.hpp"
-#include "mc/CommandOutput.hpp"
-#include "mc/CommandParameterData.hpp"
-#include "mc/CommandPosition.hpp"
-#include "mc/CommandRegistry.hpp"
-#include "mc/CommandSelector.hpp"
+#include "llapi/mc/Command.hpp"
+#include "llapi/mc/CommandOrigin.hpp"
+#include "llapi/mc/CommandOutput.hpp"
+#include "llapi/mc/CommandParameterData.hpp"
+#include "llapi/mc/CommandPosition.hpp"
+#include "llapi/mc/CommandRegistry.hpp"
+#include "llapi/mc/CommandSelector.hpp"
 
-#include "Global.h"
+#include "llapi/Global.h"
 
-#include "utils/WinHelper.h"
+#include "llapi/utils/WinHelper.h"
 
 struct DCCallback;
 struct DCArgs;

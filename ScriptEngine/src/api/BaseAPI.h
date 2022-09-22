@@ -1,6 +1,8 @@
 #pragma once
-#include "APIHelp.h"
-#include "../main/Global.hpp"
+
+#include "api/APIHelp.h"
+#include "main/Global.hpp"
+
 #include <string>
 class BlockSource;
 

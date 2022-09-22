@@ -1,10 +1,10 @@
-#include "APIHelp.h"
-#include "BaseAPI.h"
-#include "ItemAPI.h"
-#include "McAPI.h"
-#include "EntityAPI.h"
-#include "NbtAPI.h"
-#include "NativeAPI.h"
+#include "api/APIHelp.h"
+#include "api/BaseAPI.h"
+#include "api/ItemAPI.h"
+#include "api/McAPI.h"
+#include "api/EntityAPI.h"
+#include "api/NbtAPI.h"
+#include "api/NativeAPI.h"
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/ItemStack.hpp>
 #include <vector>

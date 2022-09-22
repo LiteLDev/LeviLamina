@@ -1,7 +1,7 @@
 #pragma once
-#include "../api/APIHelp.h"
+#include "api/APIHelp.h"
 #include <vector>
-#include "MessageSystem.h"
+#include "engine/MessageSystem.h"
 
 ///////////////////////// API /////////////////////////
 

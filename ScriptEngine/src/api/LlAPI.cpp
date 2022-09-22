@@ -1,11 +1,11 @@
-#include "APIHelp.h"
+#include "api/APIHelp.h"
 #include <liteloader/Config.h>
-#include "LlAPI.h"
-#include "../engine/GlobalShareData.h"
-#include "../engine/EngineOwnData.h"
+#include "api/LlAPI.h"
+#include "engine/GlobalShareData.h"
+#include "engine/EngineOwnData.h"
 #include <llapi/utils/NetworkHelper.h>
 #include <liteloader/PluginManager.h>
-#include "../utils/Utils.h"
+#include "utils/Utils.h"
 #include <liteloader/Version.h>
 #include <string>
 #include <filesystem>

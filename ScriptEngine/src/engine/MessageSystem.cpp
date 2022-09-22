@@ -1,11 +1,11 @@
-#include "MessageSystem.h"
-#include "../api/APIHelp.h"
-#include "../utils/IniHelper.h"
-#include "../utils/Utils.h"
+#include "engine/MessageSystem.h"
+#include "api/APIHelp.h"
+#include "utils/IniHelper.h"
+#include "utils/Utils.h"
 #include <llapi/LLAPI.h>
 #include <llapi/EventAPI.h>
-#include "LocalShareData.h"
-#include "GlobalShareData.h"
+#include "engine/LocalShareData.h"
+#include "engine/GlobalShareData.h"
 #include <processthreadsapi.h>
 #include <process.h>
 #include <exception>
@@ -23,8 +23,8 @@ using namespace script;
 
 //////////////////// 消息处理注册 ////////////////////
 
-#include "RemoteCall.h"
-#include "TimeTaskSystem.h"
+#include "engine/RemoteCall.h"
+#include "engine/TimeTaskSystem.h"
 
 void ModuleMessage::handle(utils::Message& engineMsg) // Warning: Execute in another thread
 {

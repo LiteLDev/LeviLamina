@@ -55,6 +55,7 @@ target_include_directories(
         ${CMAKE_SOURCE_DIR}
         ${LiteLoader_SOURCE_DIR}/include/
         ${LiteLoader_SOURCE_DIR}/third-party/include
+        ${SCRIPTENGINE_DIR}/src
         ${SCRIPTENGINE_DIR}/third-party/include
         ${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include
 )

@@ -1,4 +1,4 @@
-﻿#include <llapi/utils/DbgHelper.h>
+﻿#include "llapi/utils/DbgHelper.h"
 
 #include <thread>
 #include <string>
@@ -9,12 +9,12 @@
 
 #include <dbghelp/dbghelp.h>
 
-#include <llapi/utils/WinHelper.h>
-#include <llapi/utils/StringHelper.h>
-#include <llapi/LoggerAPI.h>
+#include "llapi/utils/WinHelper.h"
+#include "llapi/utils/StringHelper.h"
+#include "llapi/LoggerAPI.h"
 
-#include <liteloader/Config.h>
-#include <liteloader/LiteLoader.h>
+#include "liteloader/Config.h"
+#include "liteloader/LiteLoader.h"
 
 using namespace std;
 

@@ -1,10 +1,10 @@
-#include "APIHelp.h"
-#include "APIHelp.h"
-#include "ServerAPI.h"
+#include "api/APIHelp.h"
+#include "api/APIHelp.h"
+#include "api/ServerAPI.h"
 #include <llapi/ServerAPI.h>
-#include "McAPI.h"
+#include "api/McAPI.h"
 #include <llapi/mc/ServerNetworkHandler.hpp>
-#include "../main/SafeGuardRecord.h"
+#include "main/SafeGuardRecord.h"
 
 Local<Value> McClass::setMotd(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)

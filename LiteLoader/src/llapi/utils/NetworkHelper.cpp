@@ -1,15 +1,15 @@
-#include <llapi/utils/NetworkHelper.h>
+#include "llapi/utils/NetworkHelper.h"
 
 #include <thread>
 #include <httplib/httplib.h>
 
-#include <llapi/utils/DbgHelper.h>
+#include "llapi/utils/DbgHelper.h"
 
-#include <llapi/LoggerAPI.h>
-#include <llapi/I18nAPI.h>
+#include "llapi/LoggerAPI.h"
+#include "llapi/I18nAPI.h"
 
-#include <liteloader/Config.h>
-#include <liteloader/LiteLoader.h>
+#include "liteloader/Config.h"
+#include "liteloader/LiteLoader.h"
 
 using namespace std;
 

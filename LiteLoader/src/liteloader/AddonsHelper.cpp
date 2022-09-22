@@ -2,24 +2,24 @@
 #include <set>
 #include <utility>
 #include <vector>
-#include <liteloader/AddonsHelper.h>
-#include <liteloader/Config.h>
-#include <llapi/EventAPI.h>
-#include <llapi/RegCommandAPI.h>
-#include <llapi/LLAPI.h>
-#include <llapi/mc/CommandOrigin.hpp>
-#include <llapi/mc/CommandOutput.hpp>
-#include <llapi/mc/CommandPosition.hpp>
-#include <llapi/mc/CommandRegistry.hpp>
-#include <llapi/mc/PropertiesSettings.hpp>
-#include <llapi/mc/Level.hpp>
-#include <llapi/GlobalServiceAPI.h>
-#include <llapi/utils/WinHelper.h>
-#include <llapi/utils/FileHelper.h>
+#include "liteloader/AddonsHelper.h"
+#include "liteloader/Config.h"
+#include "llapi/EventAPI.h"
+#include "llapi/RegCommandAPI.h"
+#include "llapi/LLAPI.h"
+#include "llapi/mc/CommandOrigin.hpp"
+#include "llapi/mc/CommandOutput.hpp"
+#include "llapi/mc/CommandPosition.hpp"
+#include "llapi/mc/CommandRegistry.hpp"
+#include "llapi/mc/PropertiesSettings.hpp"
+#include "llapi/mc/Level.hpp"
+#include "llapi/GlobalServiceAPI.h"
+#include "llapi/utils/WinHelper.h"
+#include "llapi/utils/FileHelper.h"
 #include <Nlohmann/json.hpp>
-#include <llapi/LoggerAPI.h>
-#include <llapi/I18nAPI.h>
-#include <llapi/mc/ColorFormat.hpp>
+#include "llapi/LoggerAPI.h"
+#include "llapi/I18nAPI.h"
+#include "llapi/mc/ColorFormat.hpp"
 #include <magic_enum/magic_enum.hpp>
 using namespace std;
 using namespace RegisterCommandHelper;
@@ -49,7 +49,7 @@ inline bool isManifestFile(std::string const& filename) {
     return filename == "manifest.json" || filename == "pack_manifest.json";
 }
 
-#include <llapi/mc/JsonHelpers.hpp>
+#include "llapi/mc/JsonHelpers.hpp"
 inline std::string FixMojangJson(std::string const& content) {
     Json::Value value;
     JsonHelpers::parseJson(content, value);

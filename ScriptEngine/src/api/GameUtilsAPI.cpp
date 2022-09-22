@@ -1,5 +1,5 @@
-#include "APIHelp.h"
-#include "GameUtilsAPI.h"
+#include "api/APIHelp.h"
+#include "api/GameUtilsAPI.h"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
-#include "APIHelp.h"
-#include "NativeAPI.h"
-#include "NativeStdString.h"
+#include "api/APIHelp.h"
+#include "api/NativeAPI.h"
+#include "api/NativeStdString.h"
 #include <llapi/utils/TypeConversionHelper.hpp>
 
 //////////////////// NativePointer ////////////////////

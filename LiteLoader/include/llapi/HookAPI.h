@@ -1,6 +1,6 @@
 ﻿#pragma once
-#include "Global.h"
-#include "utils/Hash.h"
+#include "llapi/Global.h"
+#include "llapi/utils/Hash.h"
 #include <vector>
 #include <string>
 #include <thread>

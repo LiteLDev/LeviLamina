@@ -1,14 +1,14 @@
-#include "APIHelp.h"
-#include "BaseAPI.h"
-#include "McAPI.h"
-#include "BlockAPI.h"
-#include "ContainerAPI.h"
-#include "EntityAPI.h"
-#include "BlockEntityAPI.h"
-#include "NbtAPI.h"
-#include "NativeAPI.h"
+#include "api/APIHelp.h"
+#include "api/BaseAPI.h"
+#include "api/McAPI.h"
+#include "api/BlockAPI.h"
+#include "api/ContainerAPI.h"
+#include "api/EntityAPI.h"
+#include "api/BlockEntityAPI.h"
+#include "api/NbtAPI.h"
+#include "api/NativeAPI.h"
 #include <llapi/mc/Packet.hpp>
-#include "PacketAPI.h"
+#include "api/PacketAPI.h"
 #include <llapi/mc/MinecraftPackets.hpp>
 
 

@@ -1,10 +1,10 @@
-#include "APIHelp.h"
-#include "BaseAPI.h"
-#include "BlockAPI.h"
-#include "BlockEntityAPI.h"
-#include "NbtAPI.h"
-#include "NativeAPI.h"
-#include "../main/Global.hpp"
+#include "api/APIHelp.h"
+#include "api/BaseAPI.h"
+#include "api/BlockAPI.h"
+#include "api/BlockEntityAPI.h"
+#include "api/NbtAPI.h"
+#include "api/NativeAPI.h"
+#include "main/Global.hpp"
 #include <llapi/mc/BlockActor.hpp>
 #include <llapi/mc/CompoundTag.hpp>
 

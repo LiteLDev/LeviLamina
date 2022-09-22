@@ -1,6 +1,6 @@
-#include <llapi/I18nAPI.h>
-#include <llapi/utils/StringHelper.h>
-#include <liteloader/LiteLoader.h>
+#include "llapi/I18nAPI.h"
+#include "llapi/utils/StringHelper.h"
+#include "liteloader/LiteLoader.h"
 #include <stringapiset.h>
 using namespace std;
 namespace fs = std::filesystem;

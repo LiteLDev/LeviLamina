@@ -1,17 +1,17 @@
-#include "APIHelp.h"
-#include "DataAPI.h"
-#include "DatabaseAPI.h"
+#include "api/APIHelp.h"
+#include "api/DataAPI.h"
+#include "api/DatabaseAPI.h"
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <exception>
-#include "../engine/EngineOwnData.h"
+#include "engine/EngineOwnData.h"
 #include <llapi/PlayerInfoAPI.h>
 #include <llapi/utils/CryptHelper.h>
 #include <llapi/utils/FileHelper.h>
 #include <llapi/utils/StringHelper.h>
-#include "../utils/JsonHelper.h"
-#include "../main/EconomicSystem.h"
+#include "utils/JsonHelper.h"
+#include "main/EconomicSystem.h"
 #include <Base64/Base64.hpp>
 using namespace std;
 

@@ -1,12 +1,15 @@
-#include "BaseAPI.h"
-#include "APIHelp.h"
-#include "../main/Global.hpp"
+#include "api/BaseAPI.h"
+
+#include <cmath>
+
 #include <llapi/mc/BlockSource.hpp>
 #include <llapi/mc/Facing.hpp>
 #include <llapi/ServerAPI.h>
-#include "McAPI.h"
-#include <cmath>
 #include <llapi/mc/ActorDamageSource.hpp>
+
+#include "main/Global.hpp"
+#include "api/APIHelp.h"
+#include "api/McAPI.h"
 
 ///////////////////// Enum //////////////////////
 ClassDefine<void> DamageCauseEnumBuilder = EnumDefineBuilder<ActorDamageCause>::build("DamageCause");

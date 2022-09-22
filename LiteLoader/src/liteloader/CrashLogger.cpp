@@ -1,11 +1,11 @@
-#include <liteloader/CrashLogger.h>
-#include <liteloader/Config.h>
-#include <llapi/LoggerAPI.h>
-#include <llapi/utils/StringHelper.h>
-#include <llapi/utils/WinHelper.h>
+#include "liteloader/CrashLogger.h"
+#include "liteloader/Config.h"
+#include "llapi/LoggerAPI.h"
+#include "llapi/utils/StringHelper.h"
+#include "llapi/utils/WinHelper.h"
 #include <filesystem>
-#include <llapi/mc/Common.hpp>
-#include <llapi/mc/SharedConstants.hpp>
+#include "llapi/mc/Common.hpp"
+#include "llapi/mc/SharedConstants.hpp"
 #include <Windows.h>
 using namespace std;
 using namespace ll;

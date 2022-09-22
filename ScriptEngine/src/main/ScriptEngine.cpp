@@ -1,13 +1,13 @@
 #include <liteloader/Config.h>
-#include "../api/APIHelp.h"
-#include "../api/EventAPI.h"
-#include "../engine/GlobalShareData.h"
-#include "../engine/EngineOwnData.h"
-#include "../engine/LocalShareData.h"
-#include "../engine/RemoteCall.h"
-#include "../engine/MessageSystem.h"
-#include "../engine/EngineManager.h"
-#include "SafeGuardRecord.h"
+#include "api/APIHelp.h"
+#include "api/EventAPI.h"
+#include "engine/GlobalShareData.h"
+#include "engine/EngineOwnData.h"
+#include "engine/LocalShareData.h"
+#include "engine/RemoteCall.h"
+#include "engine/MessageSystem.h"
+#include "engine/EngineManager.h"
+#include "main/SafeGuardRecord.h"
 #include <windows.h>
 #include <string>
 #include <exception>
@@ -15,12 +15,12 @@
 #include <chrono>
 #include <memory>
 #include <filesystem>
-#include "Configs.h"
+#include "main/Configs.h"
 #include <llapi/LoggerAPI.h>
 #include <liteloader/Version.h>
 #include <llapi/utils/FileHelper.h>
-#include "../utils/JsonHelper.h"
-#include "EconomicSystem.h"
+#include "utils/JsonHelper.h"
+#include "main/EconomicSystem.h"
 using namespace std;
 
 // Global vars

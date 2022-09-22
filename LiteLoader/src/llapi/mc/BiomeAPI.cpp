@@ -1,7 +1,7 @@
-#include <llapi/mc/Biome.hpp>
-#include <llapi/mc/BiomeRegistry.hpp>
-#include <llapi/mc/VanillaBiomes.hpp>
-#include <llapi/mc/Level.hpp>
+#include "llapi/mc/Biome.hpp"
+#include "llapi/mc/BiomeRegistry.hpp"
+#include "llapi/mc/VanillaBiomes.hpp"
+#include "llapi/mc/Level.hpp"
 
 int Biome::getId() const {
     return dAccess<int, 136>(this);
@@ -33,10 +33,10 @@ std::vector<Biome*> Biome::getBiomesByType(VanillaBiomeTypes type) {
 
 #ifdef DEBUG
 
-#include <llapi/LoggerAPI.h>
-#include <llapi/mc/Minecraft.hpp>
+#include "llapi/LoggerAPI.h"
+#include "llapi/mc/Minecraft.hpp"
 
-#include <liteloader/LiteLoader.h>
+#include "liteloader/LiteLoader.h"
 
 using ll::logger;
 
