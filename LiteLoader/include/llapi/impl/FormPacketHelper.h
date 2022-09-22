@@ -1,9 +1,9 @@
 #pragma once
 
 #include <cstdlib>
-#include "../Global.h"
-#include "../FormUI.h"
-#include "../mc/Player.hpp"
+#include "llapi/Global.h"
+#include "llapi/FormUI.h"
+#include "llapi/mc/Player.hpp"
 
 LIAPI unsigned NewFormId();
 

@@ -70,12 +70,12 @@
 #include <FMT/os.h>
 #include <FMT/printf.h>
 
-#include "GlobalServiceAPI.h"
-#include "utils/Optional.h"
-#include "utils/SehTranslator.h"
+#include "llapi/GlobalServiceAPI.h"
+#include "llapi/utils/Optional.h"
+#include "llapi/utils/SehTranslator.h"
 
 // basic mc types
-#include "mc/Types.hpp"
+#include "llapi/mc/Types.hpp"
 // clang-format off
 #define M_E        2.71828182845904523536    // e
 #define M_LOG2E    1.44269504088896340736    // log2(e)

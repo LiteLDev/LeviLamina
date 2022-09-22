@@ -4,7 +4,7 @@
 
 #include <string>
 #include <thread>
-#include "../llapi/LLAPI.h"
+#include "llapi/LLAPI.h"
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash

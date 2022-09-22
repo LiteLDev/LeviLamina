@@ -20,7 +20,7 @@
 #include "WinHelper.h"
 #include <minwindef.h>
 #include <string_view>
-#include "../Global.h"
+#include "llapi/Global.h"
 
 LIAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string, void*>> ll_PluginOwnData;
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "../Global.h"
+#include "llapi/Global.h"
 
 class StringReader {
 
