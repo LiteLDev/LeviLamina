@@ -6,7 +6,7 @@ AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: None
 AlignConsecutiveDeclarations: None
 AlignOperands: Align
-AlwaysBreakTemplateDeclarations : MultiLine
+AlwaysBreakTemplateDeclarations : Yes
 AlignTrailingComments: true
 AllowAllArgumentsOnNextLine : true
 AllowAllParametersOfDeclarationOnNextLine: true
@@ -40,7 +40,6 @@ SpaceAfterCStyleCast: false
 IndentCaseLabels: true
 TabWidth: 4
 UseTab: Never
-
 BreakBeforeBraces: Custom
 BraceWrapping:
   # case 语句后面
