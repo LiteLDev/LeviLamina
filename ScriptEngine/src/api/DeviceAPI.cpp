@@ -1,5 +1,5 @@
-#include "APIHelp.h"
-#include "DeviceAPI.h"
+#include "api/APIHelp.h"
+#include "api/DeviceAPI.h"
 #include <string>
 #include <llapi/mc/Player.hpp>
 #include <llapi/mc/Level.hpp>

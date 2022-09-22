@@ -1,10 +1,10 @@
-#include "APIHelp.h"
-#include "GuiAPI.h"
-#include "PlayerAPI.h"
-#include "McAPI.h"
-#include "../engine/GlobalShareData.h"
-#include "../engine/LocalShareData.h"
-#include "../engine/EngineOwnData.h"
+#include "api/APIHelp.h"
+#include "api/GuiAPI.h"
+#include "api/PlayerAPI.h"
+#include "api/McAPI.h"
+#include "engine/GlobalShareData.h"
+#include "engine/LocalShareData.h"
+#include "engine/EngineOwnData.h"
 #include <llapi/SendPacketAPI.h>
 #include <llapi/mc/Player.hpp>
 #include <iostream>

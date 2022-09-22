@@ -1,6 +1,6 @@
 #pragma once
 #include <llapi/PermissionAPI.h>
-#include "APIHelp.h"
+#include "api/APIHelp.h"
 
 class RoleClass : public ScriptClass {
 

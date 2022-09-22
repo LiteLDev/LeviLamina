@@ -1,5 +1,5 @@
 #pragma once
-#include "CommandCompatibleAPI.h"
+#include "api/CommandCompatibleAPI.h"
 #include <llapi/DynamicCommandAPI.h>
 
 extern ClassDefine<void> ParamTypeStaticBuilder;

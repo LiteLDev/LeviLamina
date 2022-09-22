@@ -11,8 +11,8 @@
 
 #include <llapi/LoggerAPI.h>
 
-#include "../main/Configs.h"
-#include "../utils/UsingScriptX.inc"
+#include "main/Configs.h"
+#include "utils/UsingScriptX.inc"
 
 
 struct FormCallbackData {

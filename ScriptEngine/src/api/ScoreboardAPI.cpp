@@ -1,10 +1,10 @@
-#include "APIHelp.h"
+#include "api/APIHelp.h"
 #include <llapi/mc/Scoreboard.hpp>
 #include <llapi/mc/Objective.hpp>
 #include <llapi/mc/Player.hpp>
-#include "ScoreboardAPI.h"
-#include "McAPI.h"
-#include "PlayerAPI.h"
+#include "api/ScoreboardAPI.h"
+#include "api/McAPI.h"
+#include "api/PlayerAPI.h"
 #include <optional>
 using namespace std;
 

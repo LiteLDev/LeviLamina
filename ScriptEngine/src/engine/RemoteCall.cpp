@@ -1,14 +1,14 @@
-#include "../api/APIHelp.h"
-#include "../api/LlAPI.h"
-#include "RemoteCall.h"
-#include "GlobalShareData.h"
-#include "MessageSystem.h"
+#include "api/APIHelp.h"
+#include "api/LlAPI.h"
+#include "engine/RemoteCall.h"
+#include "engine/GlobalShareData.h"
+#include "engine/MessageSystem.h"
 #include <llapi/utils/STLHelper.h>
 #include <sstream>
 #include <string>
 #include <map>
 #include <process.h>
-#include "../main/Configs.h"
+#include "main/Configs.h"
 
 using namespace std;
 

@@ -1,10 +1,10 @@
-#include "../api/APIHelp.h"
-#include "../engine/GlobalShareData.h"
-#include "../engine/EngineOwnData.h"
-#include "../engine/EngineManager.h"
-#include "../utils/IniHelper.h"
-#include "PluginManager.h"
-#include "NodeJsHelper.h"
+#include "api/APIHelp.h"
+#include "engine/GlobalShareData.h"
+#include "engine/EngineOwnData.h"
+#include "engine/EngineManager.h"
+#include "utils/IniHelper.h"
+#include "main/PluginManager.h"
+#include "main/NodeJsHelper.h"
 #include <list>
 #include <string>
 #include <vector>
@@ -13,7 +13,7 @@
 #include <exception>
 #include <filesystem>
 #include <memory>
-#include "Configs.h"
+#include "main/Configs.h"
 
 extern ::Logger logger;
 

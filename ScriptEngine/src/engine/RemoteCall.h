@@ -1,5 +1,5 @@
 #pragma once
-#include "../api/APIHelp.h"
+#include "api/APIHelp.h"
 #include <string>
 
 //////////////////// Funcs ////////////////////

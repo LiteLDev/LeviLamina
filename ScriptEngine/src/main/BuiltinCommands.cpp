@@ -1,5 +1,5 @@
-#include "BuiltinCommands.h"
-#include "../api/APIHelp.h"
+#include "main/BuiltinCommands.h"
+#include "api/APIHelp.h"
 #include <llapi/utils/StringHelper.h>
 #include <string>
 #include <llapi/LoggerAPI.h>

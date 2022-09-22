@@ -1,23 +1,23 @@
-﻿#include "RemoteCallAPI.h"
+﻿#include "api/RemoteCallAPI.h"
 #include <llapi/RemoteCallAPI.h>
-#include "PlayerAPI.h"
-#include "EntityAPI.h"
-#include "ItemAPI.h"
-#include "BlockAPI.h"
-#include "BlockEntityAPI.h"
-#include "BaseAPI.h"
-#include "ContainerAPI.h"
-#include "NbtAPI.h"
-#include "../api/APIHelp.h"
-#include "../api/LlAPI.h"
-#include "../engine/GlobalShareData.h"
-#include "../engine/MessageSystem.h"
+#include "api/PlayerAPI.h"
+#include "api/EntityAPI.h"
+#include "api/ItemAPI.h"
+#include "api/BlockAPI.h"
+#include "api/BlockEntityAPI.h"
+#include "api/BaseAPI.h"
+#include "api/ContainerAPI.h"
+#include "api/NbtAPI.h"
+#include "api/APIHelp.h"
+#include "api/LlAPI.h"
+#include "engine/GlobalShareData.h"
+#include "engine/MessageSystem.h"
 #include <llapi/utils/STLHelper.h>
 #include <sstream>
 #include <string>
 #include <map>
 #include <process.h>
-#include "../main/Configs.h"
+#include "main/Configs.h"
 
 using namespace std;
 

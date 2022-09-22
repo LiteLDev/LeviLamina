@@ -1,10 +1,10 @@
 //
 // Created by OEOTYAN on 2022/08/27.
 //
-#include "ParticleAPI.h"
-#include "McAPI.h"
-#include "APIHelp.h"
-#include "BaseAPI.h"
+#include "api/ParticleAPI.h"
+#include "api/McAPI.h"
+#include "api/APIHelp.h"
+#include "api/BaseAPI.h"
 
 #define GETVEC3(v, d, u)                                                          \
     if (IsInstanceOf<IntPos>(u)) {                                                \

@@ -9,8 +9,8 @@
 
 #include <vector>
 #include <string>
-#include "Configs.h"
-#include "../utils/JsonHelper.h"
+#include "main/Configs.h"
+#include "utils/JsonHelper.h"
 
 #include <llapi/Global.h>
 #include <llapi/mc/Types.hpp>

@@ -4,7 +4,7 @@
 #include <map>
 #include <NodeJs/node.h>
 #include <ScriptX/ScriptX.h>
-#include "Configs.h"
+#include "main/Configs.h"
 #include <string>
 
 namespace NodeJsHelper {

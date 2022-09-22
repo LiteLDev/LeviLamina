@@ -1,17 +1,17 @@
 #pragma warning(disable : 4251)
-#include "Configs.h"
+#include "main/Configs.h"
 #if defined(LLSE_BACKEND_NODEJS)
-#include "Global.hpp"
+#include "main/Global.hpp"
 #include <llapi/ScheduleAPI.h>
-#include "../api/EventAPI.h"
-#include "../api/CommandCompatibleAPI.h"
-#include "../api/CommandAPI.h"
-#include "../engine/RemoteCall.h"
+#include "api/EventAPI.h"
+#include "api/CommandCompatibleAPI.h"
+#include "api/CommandAPI.h"
+#include "engine/RemoteCall.h"
 #include <llapi/LLAPI.h>
 #include <llapi/utils/StringHelper.h>
-#include "NodeJsHelper.h"
-#include "../engine/EngineManager.h"
-#include "../engine/EngineOwnData.h"
+#include "main/NodeJsHelper.h"
+#include "engine/EngineManager.h"
+#include "engine/EngineOwnData.h"
 #include <NodeJs/uv/uv.h>
 #include <NodeJs/v8/v8.h>
 

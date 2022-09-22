@@ -1,9 +1,9 @@
-﻿#include "APIHelp.h"
-#include "NbtAPI.h"
+﻿#include "api/APIHelp.h"
+#include "api/NbtAPI.h"
 #include <vector>
 #include <string>
-#include "ItemAPI.h"
-#include "BlockAPI.h"
+#include "api/ItemAPI.h"
+#include "api/BlockAPI.h"
 #include <llapi/mc/EndTag.hpp>
 #include <llapi/mc/ByteTag.hpp>
 #include <llapi/mc/ShortTag.hpp>

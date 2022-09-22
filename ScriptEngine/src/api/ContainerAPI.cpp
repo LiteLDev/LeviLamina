@@ -1,7 +1,7 @@
-#include "ContainerAPI.h"
-#include "APIHelp.h"
-#include "ItemAPI.h"
-#include "NativeAPI.h"
+#include "api/ContainerAPI.h"
+#include "api/APIHelp.h"
+#include "api/ItemAPI.h"
+#include "api/NativeAPI.h"
 #include <llapi/mc/ItemStack.hpp>
 #include <llapi/mc/Container.hpp>
 using namespace std;

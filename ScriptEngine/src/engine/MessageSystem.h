@@ -1,8 +1,8 @@
 #pragma once
 #include <ScriptX/ScriptX.h>
 #include <windows.h>
-#include "../api/APIHelp.h"
-#include "OperationCount.h"
+#include "api/APIHelp.h"
+#include "engine/OperationCount.h"
 #include <string>
 #include <map>
 #include <vector>

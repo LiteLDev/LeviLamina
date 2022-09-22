@@ -9,10 +9,10 @@
 
 #include <llapi/mc/Level.hpp>
 
-#include "../utils/UsingScriptX.inc"
-#include "../utils/JsonHelper.h"
-#include "../main/Global.hpp"
-#include "../engine/EngineOwnData.h"
+#include "utils/UsingScriptX.inc"
+#include "utils/JsonHelper.h"
+#include "main/Global.hpp"
+#include "engine/EngineOwnData.h"
 
 
 // 输出异常信息
