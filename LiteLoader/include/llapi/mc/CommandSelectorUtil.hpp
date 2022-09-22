@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandSelectorUtil.hpp
+ * @file  CommandSelectorUtil.hpp
  *
  */
 #pragma once

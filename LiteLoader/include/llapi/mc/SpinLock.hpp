@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpinLock.hpp
+ * @file  SpinLock.hpp
  *
  */
 #pragma once

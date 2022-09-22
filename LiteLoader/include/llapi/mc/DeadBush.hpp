@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeadBush.hpp
+ * @file  DeadBush.hpp
  *
  */
 #pragma once

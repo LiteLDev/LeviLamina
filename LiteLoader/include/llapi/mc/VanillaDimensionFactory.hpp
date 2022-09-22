@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaDimensionFactory.hpp
+ * @file  VanillaDimensionFactory.hpp
  *
  */
 #pragma once

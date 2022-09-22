@@ -1,5 +1,5 @@
 /**
- * @file  MC/InventoryContentPacket.hpp
+ * @file  InventoryContentPacket.hpp
  *
  */
 #pragma once

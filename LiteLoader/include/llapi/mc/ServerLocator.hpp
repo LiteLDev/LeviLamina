@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerLocator.hpp
+ * @file  ServerLocator.hpp
  *
  */
 #pragma once

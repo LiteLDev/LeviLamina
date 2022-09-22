@@ -1,5 +1,5 @@
 /**
- * @file  MC/PageContent.hpp
+ * @file  PageContent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestBiomeHasTag.hpp
+ * @file  FilterTestBiomeHasTag.hpp
  *
  */
 #pragma once

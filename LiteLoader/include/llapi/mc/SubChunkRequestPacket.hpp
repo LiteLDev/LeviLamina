@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunkRequestPacket.hpp
+ * @file  SubChunkRequestPacket.hpp
  *
  */
 #pragma once

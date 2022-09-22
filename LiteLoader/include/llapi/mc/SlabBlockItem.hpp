@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlabBlockItem.hpp
+ * @file  SlabBlockItem.hpp
  *
  */
 #pragma once

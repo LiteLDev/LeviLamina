@@ -1,5 +1,5 @@
 /**
- * @file  MC/WitherSkull.hpp
+ * @file  WitherSkull.hpp
  *
  */
 #pragma once

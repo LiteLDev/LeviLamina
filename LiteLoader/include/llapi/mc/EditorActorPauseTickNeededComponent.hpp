@@ -1,5 +1,5 @@
 /**
- * @file  MC/EditorActorPauseTickNeededComponent.hpp
+ * @file  EditorActorPauseTickNeededComponent.hpp
  *
  */
 #pragma once

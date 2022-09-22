@@ -1,5 +1,5 @@
 /**
- * @file  MC/SuspiciousStewItem.hpp
+ * @file  SuspiciousStewItem.hpp
  *
  */
 #pragma once

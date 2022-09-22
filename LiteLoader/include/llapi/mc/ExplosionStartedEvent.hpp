@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExplosionStartedEvent.hpp
+ * @file  ExplosionStartedEvent.hpp
  *
  */
 #pragma once

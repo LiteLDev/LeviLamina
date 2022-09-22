@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantCommand.hpp
+ * @file  EnchantCommand.hpp
  *
  */
 #pragma once

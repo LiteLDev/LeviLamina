@@ -1,5 +1,5 @@
 /**
- * @file  MC/OwnerStorageEntity.hpp
+ * @file  OwnerStorageEntity.hpp
  *
  */
 #pragma once

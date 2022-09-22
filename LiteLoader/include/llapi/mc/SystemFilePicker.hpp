@@ -1,5 +1,5 @@
 /**
- * @file  MC/SystemFilePicker.hpp
+ * @file  SystemFilePicker.hpp
  *
  */
 #pragma once

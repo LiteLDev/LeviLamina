@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveControlSwayDescription.hpp
+ * @file  MoveControlSwayDescription.hpp
  *
  */
 #pragma once

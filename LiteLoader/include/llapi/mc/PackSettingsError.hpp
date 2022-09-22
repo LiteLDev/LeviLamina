@@ -1,5 +1,5 @@
 /**
- * @file  MC/PackSettingsError.hpp
+ * @file  PackSettingsError.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockEventResponseFactory.hpp
+ * @file  BlockEventResponseFactory.hpp
  *
  */
 #pragma once

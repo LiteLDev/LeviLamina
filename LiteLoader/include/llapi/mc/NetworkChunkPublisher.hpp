@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkChunkPublisher.hpp
+ * @file  NetworkChunkPublisher.hpp
  *
  */
 #pragma once

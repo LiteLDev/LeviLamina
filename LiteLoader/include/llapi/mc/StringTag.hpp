@@ -1,5 +1,5 @@
 /**
- * @file  MC/StringTag.hpp
+ * @file  StringTag.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/InstantaneousMobEffect.hpp
+ * @file  InstantaneousMobEffect.hpp
  *
  */
 #pragma once

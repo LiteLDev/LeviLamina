@@ -1,5 +1,5 @@
 /**
- * @file  MC/AbilityCommand.hpp
+ * @file  AbilityCommand.hpp
  *
  */
 #pragma once

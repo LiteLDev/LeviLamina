@@ -1,5 +1,5 @@
 /**
- * @file  MC/FireworkChargeItem.hpp
+ * @file  FireworkChargeItem.hpp
  *
  */
 #pragma once

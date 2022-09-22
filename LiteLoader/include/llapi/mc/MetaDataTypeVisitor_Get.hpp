@@ -1,5 +1,5 @@
 /**
- * @file  MC/MetaDataTypeVisitor_Get.hpp
+ * @file  MetaDataTypeVisitor_Get.hpp
  *
  */
 #pragma once

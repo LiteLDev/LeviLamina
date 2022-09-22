@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockUnwalkableDescription.hpp
+ * @file  BlockUnwalkableDescription.hpp
  *
  */
 #pragma once

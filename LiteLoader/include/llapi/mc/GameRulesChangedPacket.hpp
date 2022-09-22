@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameRulesChangedPacket.hpp
+ * @file  GameRulesChangedPacket.hpp
  *
  */
 #pragma once

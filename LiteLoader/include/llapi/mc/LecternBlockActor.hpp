@@ -1,5 +1,5 @@
 /**
- * @file  MC/LecternBlockActor.hpp
+ * @file  LecternBlockActor.hpp
  *
  */
 #pragma once

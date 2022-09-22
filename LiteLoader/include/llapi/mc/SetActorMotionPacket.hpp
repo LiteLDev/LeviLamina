@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetActorMotionPacket.hpp
+ * @file  SetActorMotionPacket.hpp
  *
  */
 #pragma once

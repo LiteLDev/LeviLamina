@@ -1,5 +1,5 @@
 /**
- * @file  MC/PointedDripstoneBlock.hpp
+ * @file  PointedDripstoneBlock.hpp
  *
  */
 #pragma once

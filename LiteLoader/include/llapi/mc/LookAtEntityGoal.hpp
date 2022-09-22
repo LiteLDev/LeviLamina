@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookAtEntityGoal.hpp
+ * @file  LookAtEntityGoal.hpp
  *
  */
 #pragma once

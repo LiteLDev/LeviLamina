@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaItems.hpp
+ * @file  VanillaItems.hpp
  *
  */
 #pragma once

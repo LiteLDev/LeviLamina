@@ -1,5 +1,5 @@
 /**
- * @file  MC/JigsawStructureBlockInfo.hpp
+ * @file  JigsawStructureBlockInfo.hpp
  *
  */
 #pragma once

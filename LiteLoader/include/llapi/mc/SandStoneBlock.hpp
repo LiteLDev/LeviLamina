@@ -1,5 +1,5 @@
 /**
- * @file  MC/SandStoneBlock.hpp
+ * @file  SandStoneBlock.hpp
  *
  */
 #pragma once

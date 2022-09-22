@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeardAndShaverFeature.hpp
+ * @file  BeardAndShaverFeature.hpp
  *
  */
 #pragma once

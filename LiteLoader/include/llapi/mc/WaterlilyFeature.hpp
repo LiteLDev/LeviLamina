@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaterlilyFeature.hpp
+ * @file  WaterlilyFeature.hpp
  *
  */
 #pragma once

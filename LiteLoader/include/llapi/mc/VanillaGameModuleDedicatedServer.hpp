@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaGameModuleDedicatedServer.hpp
+ * @file  VanillaGameModuleDedicatedServer.hpp
  *
  */
 #pragma once

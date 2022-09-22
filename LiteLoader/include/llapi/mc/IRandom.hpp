@@ -1,5 +1,5 @@
 /**
- * @file  MC/IRandom.hpp
+ * @file  IRandom.hpp
  *
  */
 #pragma once

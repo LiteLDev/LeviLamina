@@ -1,5 +1,5 @@
 /**
- * @file  MC/BossbarManager.hpp
+ * @file  BossbarManager.hpp
  *
  */
 #pragma once

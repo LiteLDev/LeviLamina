@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideCactusBlockSystem.hpp
+ * @file  InsideCactusBlockSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunkPacket.hpp
+ * @file  SubChunkPacket.hpp
  *
  */
 #pragma once

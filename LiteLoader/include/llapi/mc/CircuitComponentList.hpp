@@ -1,5 +1,5 @@
 /**
- * @file  MC/CircuitComponentList.hpp
+ * @file  CircuitComponentList.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TropicalFishInfo.hpp
+ * @file  TropicalFishInfo.hpp
  *
  */
 #pragma once

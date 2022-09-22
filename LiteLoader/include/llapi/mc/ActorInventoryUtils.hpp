@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInventoryUtils.hpp
+ * @file  ActorInventoryUtils.hpp
  *
  */
 #pragma once

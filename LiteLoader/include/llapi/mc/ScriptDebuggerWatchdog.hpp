@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptDebuggerWatchdog.hpp
+ * @file  ScriptDebuggerWatchdog.hpp
  *
  */
 #pragma once

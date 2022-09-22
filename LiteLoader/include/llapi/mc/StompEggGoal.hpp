@@ -1,5 +1,5 @@
 /**
- * @file  MC/StompEggGoal.hpp
+ * @file  StompEggGoal.hpp
  *
  */
 #pragma once

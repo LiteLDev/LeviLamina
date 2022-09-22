@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomSpreadTreeCanopy.hpp
+ * @file  RandomSpreadTreeCanopy.hpp
  *
  */
 #pragma once

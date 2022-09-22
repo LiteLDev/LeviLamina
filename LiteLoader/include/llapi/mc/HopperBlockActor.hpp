@@ -1,5 +1,5 @@
 /**
- * @file  MC/HopperBlockActor.hpp
+ * @file  HopperBlockActor.hpp
  *
  */
 #pragma once

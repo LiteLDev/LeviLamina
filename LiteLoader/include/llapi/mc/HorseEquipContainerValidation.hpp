@@ -1,5 +1,5 @@
 /**
- * @file  MC/HorseEquipContainerValidation.hpp
+ * @file  HorseEquipContainerValidation.hpp
  *
  */
 #pragma once

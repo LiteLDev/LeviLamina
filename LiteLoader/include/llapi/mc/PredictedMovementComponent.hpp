@@ -1,5 +1,5 @@
 /**
- * @file  MC/PredictedMovementComponent.hpp
+ * @file  PredictedMovementComponent.hpp
  *
  */
 #pragma once

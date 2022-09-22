@@ -1,5 +1,5 @@
 /**
- * @file  MC/AbstractArrow.hpp
+ * @file  AbstractArrow.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/HayBlockBlock.hpp
+ * @file  HayBlockBlock.hpp
  *
  */
 #pragma once

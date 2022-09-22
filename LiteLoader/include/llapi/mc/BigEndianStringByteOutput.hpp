@@ -1,5 +1,5 @@
 /**
- * @file  MC/BigEndianStringByteOutput.hpp
+ * @file  BigEndianStringByteOutput.hpp
  *
  */
 #pragma once

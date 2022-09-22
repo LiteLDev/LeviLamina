@@ -1,5 +1,5 @@
 /**
- * @file  MC/HomeComponent.hpp
+ * @file  HomeComponent.hpp
  *
  */
 #pragma once

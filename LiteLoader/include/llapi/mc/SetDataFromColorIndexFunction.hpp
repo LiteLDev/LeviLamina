@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetDataFromColorIndexFunction.hpp
+ * @file  SetDataFromColorIndexFunction.hpp
  *
  */
 #pragma once

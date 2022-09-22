@@ -1,5 +1,5 @@
 /**
- * @file  MC/TransformationComponent.hpp
+ * @file  TransformationComponent.hpp
  *
  */
 #pragma once

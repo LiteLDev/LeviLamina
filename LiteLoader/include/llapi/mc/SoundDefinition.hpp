@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoundDefinition.hpp
+ * @file  SoundDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaEntityInitializerServer.hpp
+ * @file  VanillaEntityInitializerServer.hpp
  *
  */
 #pragma once

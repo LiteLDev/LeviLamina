@@ -1,5 +1,5 @@
 /**
- * @file  MC/CoralBlock.hpp
+ * @file  CoralBlock.hpp
  *
  */
 #pragma once

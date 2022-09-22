@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyChunkStorage.hpp
+ * @file  LegacyChunkStorage.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/GoatHornItem.hpp
+ * @file  GoatHornItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHPrisonHall.hpp
+ * @file  SHPrisonHall.hpp
  *
  */
 #pragma once

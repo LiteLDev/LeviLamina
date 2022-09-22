@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetBookContentsFunction.hpp
+ * @file  SetBookContentsFunction.hpp
  *
  */
 #pragma once

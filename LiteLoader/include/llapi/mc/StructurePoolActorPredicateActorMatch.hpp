@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolActorPredicateActorMatch.hpp
+ * @file  StructurePoolActorPredicateActorMatch.hpp
  *
  */
 #pragma once

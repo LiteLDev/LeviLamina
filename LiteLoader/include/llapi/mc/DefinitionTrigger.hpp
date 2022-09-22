@@ -1,5 +1,5 @@
 /**
- * @file  MC/DefinitionTrigger.hpp
+ * @file  DefinitionTrigger.hpp
  *
  */
 #pragma once

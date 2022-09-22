@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShooterComponent.hpp
+ * @file  ShooterComponent.hpp
  *
  */
 #pragma once

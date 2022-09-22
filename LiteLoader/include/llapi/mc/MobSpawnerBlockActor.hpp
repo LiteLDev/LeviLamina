@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobSpawnerBlockActor.hpp
+ * @file  MobSpawnerBlockActor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Scoreboard.hpp
+ * @file  Scoreboard.hpp
  *
  */
 #pragma once

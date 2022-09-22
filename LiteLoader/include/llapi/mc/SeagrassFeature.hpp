@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeagrassFeature.hpp
+ * @file  SeagrassFeature.hpp
  *
  */
 #pragma once

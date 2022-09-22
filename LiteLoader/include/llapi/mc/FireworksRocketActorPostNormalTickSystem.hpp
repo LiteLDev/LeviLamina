@@ -1,5 +1,5 @@
 /**
- * @file  MC/FireworksRocketActorPostNormalTickSystem.hpp
+ * @file  FireworksRocketActorPostNormalTickSystem.hpp
  *
  */
 #pragma once

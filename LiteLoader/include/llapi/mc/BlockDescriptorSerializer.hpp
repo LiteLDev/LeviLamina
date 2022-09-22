@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockDescriptorSerializer.hpp
+ * @file  BlockDescriptorSerializer.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPlanterItem.hpp
+ * @file  BlockPlanterItem.hpp
  *
  */
 #pragma once

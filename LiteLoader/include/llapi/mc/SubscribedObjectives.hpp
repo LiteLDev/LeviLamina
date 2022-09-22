@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubscribedObjectives.hpp
+ * @file  SubscribedObjectives.hpp
  *
  */
 #pragma once

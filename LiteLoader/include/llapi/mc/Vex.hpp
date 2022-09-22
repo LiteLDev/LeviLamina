@@ -1,5 +1,5 @@
 /**
- * @file  MC/Vex.hpp
+ * @file  Vex.hpp
  *
  */
 #pragma once

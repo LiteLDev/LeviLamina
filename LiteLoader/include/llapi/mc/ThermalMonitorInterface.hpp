@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThermalMonitorInterface.hpp
+ * @file  ThermalMonitorInterface.hpp
  *
  */
 #pragma once

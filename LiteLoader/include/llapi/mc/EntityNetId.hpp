@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityNetId.hpp
+ * @file  EntityNetId.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShapedChemistryRecipe.hpp
+ * @file  ShapedChemistryRecipe.hpp
  *
  */
 #pragma once

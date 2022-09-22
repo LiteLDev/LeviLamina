@@ -1,5 +1,5 @@
 /**
- * @file  MC/EncryptedFileAccessStrategy.hpp
+ * @file  EncryptedFileAccessStrategy.hpp
  *
  */
 #pragma once

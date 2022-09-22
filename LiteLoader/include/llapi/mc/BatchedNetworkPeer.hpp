@@ -1,5 +1,5 @@
 /**
- * @file  MC/BatchedNetworkPeer.hpp
+ * @file  BatchedNetworkPeer.hpp
  *
  */
 #pragma once

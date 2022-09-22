@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherFungusBlock.hpp
+ * @file  NetherFungusBlock.hpp
  *
  */
 #pragma once

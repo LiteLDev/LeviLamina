@@ -1,5 +1,5 @@
 /**
- * @file  MC/ControlledByPlayerGoal.hpp
+ * @file  ControlledByPlayerGoal.hpp
  *
  */
 #pragma once

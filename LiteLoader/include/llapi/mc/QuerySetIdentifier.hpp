@@ -1,5 +1,5 @@
 /**
- * @file  MC/QuerySetIdentifier.hpp
+ * @file  QuerySetIdentifier.hpp
  *
  */
 #pragma once

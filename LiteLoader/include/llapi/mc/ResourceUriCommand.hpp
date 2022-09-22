@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourceUriCommand.hpp
+ * @file  ResourceUriCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DelayedAttackGoal.hpp
+ * @file  DelayedAttackGoal.hpp
  *
  */
 #pragma once

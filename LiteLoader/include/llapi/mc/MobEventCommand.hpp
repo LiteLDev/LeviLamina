@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobEventCommand.hpp
+ * @file  MobEventCommand.hpp
  *
  */
 #pragma once

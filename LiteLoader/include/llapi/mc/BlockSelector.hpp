@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockSelector.hpp
+ * @file  BlockSelector.hpp
  *
  */
 #pragma once

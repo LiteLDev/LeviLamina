@@ -1,5 +1,5 @@
 /**
- * @file  MC/FoodItemComponentLegacy.hpp
+ * @file  FoodItemComponentLegacy.hpp
  *
  */
 #pragma once

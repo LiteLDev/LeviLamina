@@ -1,5 +1,5 @@
 /**
- * @file  MC/ZlibFileAccessWrapper.hpp
+ * @file  ZlibFileAccessWrapper.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnGroupData.hpp
+ * @file  SpawnGroupData.hpp
  *
  */
 #pragma once

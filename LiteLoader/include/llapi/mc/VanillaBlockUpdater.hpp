@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaBlockUpdater.hpp
+ * @file  VanillaBlockUpdater.hpp
  *
  */
 #pragma once

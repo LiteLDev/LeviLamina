@@ -1,5 +1,5 @@
 /**
- * @file  MC/ImguiProfiler.hpp
+ * @file  ImguiProfiler.hpp
  *
  */
 #pragma once

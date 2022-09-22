@@ -1,5 +1,5 @@
 /**
- * @file  MC/CryingObsidianBlock.hpp
+ * @file  CryingObsidianBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameEvent.hpp
+ * @file  GameEvent.hpp
  *
  */
 #pragma once

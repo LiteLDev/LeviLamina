@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockIsNameTest.hpp
+ * @file  BlockIsNameTest.hpp
  *
  */
 #pragma once

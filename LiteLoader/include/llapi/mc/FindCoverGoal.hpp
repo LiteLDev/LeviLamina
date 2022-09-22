@@ -1,5 +1,5 @@
 /**
- * @file  MC/FindCoverGoal.hpp
+ * @file  FindCoverGoal.hpp
  *
  */
 #pragma once

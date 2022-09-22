@@ -1,5 +1,5 @@
 /**
- * @file  MC/InventoryContainerValidation.hpp
+ * @file  InventoryContainerValidation.hpp
  *
  */
 #pragma once

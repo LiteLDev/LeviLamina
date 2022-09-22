@@ -1,5 +1,5 @@
 /**
- * @file  MC/ICerealDefinitionSerializer.hpp
+ * @file  ICerealDefinitionSerializer.hpp
  *
  */
 #pragma once

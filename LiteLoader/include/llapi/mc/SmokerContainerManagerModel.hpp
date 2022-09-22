@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmokerContainerManagerModel.hpp
+ * @file  SmokerContainerManagerModel.hpp
  *
  */
 #pragma once

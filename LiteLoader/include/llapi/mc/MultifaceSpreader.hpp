@@ -1,5 +1,5 @@
 /**
- * @file  MC/MultifaceSpreader.hpp
+ * @file  MultifaceSpreader.hpp
  *
  */
 #pragma once

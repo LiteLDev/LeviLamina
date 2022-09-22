@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScoreboardEventListener.hpp
+ * @file  ScoreboardEventListener.hpp
  *
  */
 #pragma once

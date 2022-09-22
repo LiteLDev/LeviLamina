@@ -1,5 +1,5 @@
 /**
- * @file  MC/FleeSunGoal.hpp
+ * @file  FleeSunGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScopedSideBySideTrigger.hpp
+ * @file  ScopedSideBySideTrigger.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateAdventureSettingsPacket.hpp
+ * @file  UpdateAdventureSettingsPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemInUseComponent.hpp
+ * @file  ItemInUseComponent.hpp
  *
  */
 #pragma once

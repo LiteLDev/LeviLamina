@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureTemplateData.hpp
+ * @file  StructureTemplateData.hpp
  *
  */
 #pragma once

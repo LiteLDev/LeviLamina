@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemDescriptor.hpp
+ * @file  ItemDescriptor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MossVegetationFeature.hpp
+ * @file  MossVegetationFeature.hpp
  *
  */
 #pragma once

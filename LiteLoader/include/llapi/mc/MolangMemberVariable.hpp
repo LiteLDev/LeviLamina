@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangMemberVariable.hpp
+ * @file  MolangMemberVariable.hpp
  *
  */
 #pragma once

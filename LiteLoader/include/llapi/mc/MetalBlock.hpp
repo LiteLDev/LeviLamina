@@ -1,5 +1,5 @@
 /**
- * @file  MC/MetalBlock.hpp
+ * @file  MetalBlock.hpp
  *
  */
 #pragma once

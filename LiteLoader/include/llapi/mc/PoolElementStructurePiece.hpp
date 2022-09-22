@@ -1,5 +1,5 @@
 /**
- * @file  MC/PoolElementStructurePiece.hpp
+ * @file  PoolElementStructurePiece.hpp
  *
  */
 #pragma once

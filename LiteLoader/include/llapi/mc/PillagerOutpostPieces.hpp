@@ -1,5 +1,5 @@
 /**
- * @file  MC/PillagerOutpostPieces.hpp
+ * @file  PillagerOutpostPieces.hpp
  *
  */
 #pragma once

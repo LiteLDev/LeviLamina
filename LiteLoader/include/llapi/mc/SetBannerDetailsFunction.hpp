@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetBannerDetailsFunction.hpp
+ * @file  SetBannerDetailsFunction.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ProjectileDescription.hpp
+ * @file  ProjectileDescription.hpp
  *
  */
 #pragma once

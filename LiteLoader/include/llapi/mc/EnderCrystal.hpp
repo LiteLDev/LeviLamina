@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnderCrystal.hpp
+ * @file  EnderCrystal.hpp
  *
  */
 #pragma once

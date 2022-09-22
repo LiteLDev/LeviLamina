@@ -1,5 +1,5 @@
 /**
- * @file  MC/NearestAttackableTargetDefinition.hpp
+ * @file  NearestAttackableTargetDefinition.hpp
  *
  */
 #pragma once

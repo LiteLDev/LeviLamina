@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsTamedDefinition.hpp
+ * @file  IsTamedDefinition.hpp
  *
  */
 #pragma once

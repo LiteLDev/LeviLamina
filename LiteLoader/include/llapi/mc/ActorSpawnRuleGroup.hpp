@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorSpawnRuleGroup.hpp
+ * @file  ActorSpawnRuleGroup.hpp
  *
  */
 #pragma once

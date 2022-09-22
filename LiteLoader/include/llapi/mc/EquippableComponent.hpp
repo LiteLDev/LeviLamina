@@ -1,5 +1,5 @@
 /**
- * @file  MC/EquippableComponent.hpp
+ * @file  EquippableComponent.hpp
  *
  */
 #pragma once

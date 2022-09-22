@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextObjectScore.hpp
+ * @file  TextObjectScore.hpp
  *
  */
 #pragma once

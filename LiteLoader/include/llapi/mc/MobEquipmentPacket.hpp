@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobEquipmentPacket.hpp
+ * @file  MobEquipmentPacket.hpp
  *
  */
 #pragma once

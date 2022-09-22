@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHStraight.hpp
+ * @file  SHStraight.hpp
  *
  */
 #pragma once

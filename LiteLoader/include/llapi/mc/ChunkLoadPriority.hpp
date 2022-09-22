@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkLoadPriority.hpp
+ * @file  ChunkLoadPriority.hpp
  *
  */
 #pragma once

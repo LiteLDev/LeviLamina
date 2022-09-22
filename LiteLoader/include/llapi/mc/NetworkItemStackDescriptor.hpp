@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkItemStackDescriptor.hpp
+ * @file  NetworkItemStackDescriptor.hpp
  *
  */
 #pragma once

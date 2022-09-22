@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeKeepOnJumpingGoal.hpp
+ * @file  SlimeKeepOnJumpingGoal.hpp
  *
  */
 #pragma once

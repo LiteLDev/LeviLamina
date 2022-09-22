@@ -1,5 +1,5 @@
 /**
- * @file  MC/CreativeItemRegistry.hpp
+ * @file  CreativeItemRegistry.hpp
  *
  */
 #pragma once

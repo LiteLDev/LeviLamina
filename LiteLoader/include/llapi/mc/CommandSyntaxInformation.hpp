@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandSyntaxInformation.hpp
+ * @file  CommandSyntaxInformation.hpp
  *
  */
 #pragma once

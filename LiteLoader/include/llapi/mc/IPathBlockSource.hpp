@@ -1,5 +1,5 @@
 /**
- * @file  MC/IPathBlockSource.hpp
+ * @file  IPathBlockSource.hpp
  *
  */
 #pragma once

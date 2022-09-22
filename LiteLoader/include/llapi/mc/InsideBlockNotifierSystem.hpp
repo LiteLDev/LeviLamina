@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideBlockNotifierSystem.hpp
+ * @file  InsideBlockNotifierSystem.hpp
  *
  */
 #pragma once

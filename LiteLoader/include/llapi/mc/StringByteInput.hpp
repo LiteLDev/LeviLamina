@@ -1,5 +1,5 @@
 /**
- * @file  MC/StringByteInput.hpp
+ * @file  StringByteInput.hpp
  *
  */
 #pragma once

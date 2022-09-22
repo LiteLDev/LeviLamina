@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangGeometryVariable.hpp
+ * @file  MolangGeometryVariable.hpp
  *
  */
 #pragma once

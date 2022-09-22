@@ -1,5 +1,5 @@
 /**
- * @file  MC/IdleState.hpp
+ * @file  IdleState.hpp
  *
  */
 #pragma once

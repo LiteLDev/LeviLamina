@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsVariantTest.hpp
+ * @file  ActorIsVariantTest.hpp
  *
  */
 #pragma once

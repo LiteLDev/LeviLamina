@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangMaterialVariable.hpp
+ * @file  MolangMaterialVariable.hpp
  *
  */
 #pragma once

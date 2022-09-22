@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnHitSubcomponent.hpp
+ * @file  OnHitSubcomponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/RayTracingOptionsUtil.hpp
+ * @file  RayTracingOptionsUtil.hpp
  *
  */
 #pragma once

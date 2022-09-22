@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaterlilyBlock.hpp
+ * @file  WaterlilyBlock.hpp
  *
  */
 #pragma once

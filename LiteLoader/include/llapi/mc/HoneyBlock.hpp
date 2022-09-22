@@ -1,5 +1,5 @@
 /**
- * @file  MC/HoneyBlock.hpp
+ * @file  HoneyBlock.hpp
  *
  */
 #pragma once

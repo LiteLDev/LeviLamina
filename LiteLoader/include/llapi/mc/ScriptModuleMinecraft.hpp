@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptModuleMinecraft.hpp
+ * @file  ScriptModuleMinecraft.hpp
  *
  */
 #pragma once

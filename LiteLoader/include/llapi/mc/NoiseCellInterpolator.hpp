@@ -1,5 +1,5 @@
 /**
- * @file  MC/NoiseCellInterpolator.hpp
+ * @file  NoiseCellInterpolator.hpp
  *
  */
 #pragma once

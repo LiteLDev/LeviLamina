@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScaredGoal.hpp
+ * @file  ScaredGoal.hpp
  *
  */
 #pragma once

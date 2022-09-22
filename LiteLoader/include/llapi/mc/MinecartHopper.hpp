@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecartHopper.hpp
+ * @file  MinecartHopper.hpp
  *
  */
 #pragma once

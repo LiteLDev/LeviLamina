@@ -1,5 +1,5 @@
 /**
- * @file  MC/IConnectionEventing.hpp
+ * @file  IConnectionEventing.hpp
  *
  */
 #pragma once

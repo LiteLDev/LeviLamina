@@ -1,5 +1,5 @@
 /**
- * @file  MC/GeneDefinition.hpp
+ * @file  GeneDefinition.hpp
  *
  */
 #pragma once

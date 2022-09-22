@@ -1,5 +1,5 @@
 /**
- * @file  MC/VexCopyOwnerTargetGoal.hpp
+ * @file  VexCopyOwnerTargetGoal.hpp
  *
  */
 #pragma once

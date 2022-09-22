@@ -1,5 +1,5 @@
 /**
- * @file  MC/AuxDataBlockItem.hpp
+ * @file  AuxDataBlockItem.hpp
  *
  */
 #pragma once

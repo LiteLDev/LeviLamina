@@ -1,5 +1,5 @@
 /**
- * @file  MC/AllowList.hpp
+ * @file  AllowList.hpp
  *
  */
 #pragma once

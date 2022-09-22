@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaitTicksNode.hpp
+ * @file  WaitTicksNode.hpp
  *
  */
 #pragma once

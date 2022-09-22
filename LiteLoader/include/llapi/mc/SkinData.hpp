@@ -1,5 +1,5 @@
 /**
- * @file  MC/SkinData.hpp
+ * @file  SkinData.hpp
  *
  */
 #pragma once

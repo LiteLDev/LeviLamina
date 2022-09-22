@@ -1,5 +1,5 @@
 /**
- * @file  MC/FrostedIceBlock.hpp
+ * @file  FrostedIceBlock.hpp
  *
  */
 #pragma once

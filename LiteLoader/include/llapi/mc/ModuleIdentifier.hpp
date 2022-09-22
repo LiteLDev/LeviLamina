@@ -1,5 +1,5 @@
 /**
- * @file  MC/ModuleIdentifier.hpp
+ * @file  ModuleIdentifier.hpp
  *
  */
 #pragma once

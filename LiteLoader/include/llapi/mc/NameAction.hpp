@@ -1,5 +1,5 @@
 /**
- * @file  MC/NameAction.hpp
+ * @file  NameAction.hpp
  *
  */
 #pragma once

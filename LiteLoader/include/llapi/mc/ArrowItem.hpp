@@ -1,5 +1,5 @@
 /**
- * @file  MC/ArrowItem.hpp
+ * @file  ArrowItem.hpp
  *
  */
 #pragma once

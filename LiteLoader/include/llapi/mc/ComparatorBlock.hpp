@@ -1,5 +1,5 @@
 /**
- * @file  MC/ComparatorBlock.hpp
+ * @file  ComparatorBlock.hpp
  *
  */
 #pragma once

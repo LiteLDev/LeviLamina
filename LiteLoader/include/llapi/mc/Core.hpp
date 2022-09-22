@@ -1,5 +1,5 @@
 /**
- * @file  MC/Core.hpp
+ * @file  Core.hpp
  *
  */
 #pragma once

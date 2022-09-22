@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChanceInformation.hpp
+ * @file  ChanceInformation.hpp
  *
  */
 #pragma once

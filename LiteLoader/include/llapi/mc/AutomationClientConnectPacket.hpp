@@ -1,5 +1,5 @@
 /**
- * @file  MC/AutomationClientConnectPacket.hpp
+ * @file  AutomationClientConnectPacket.hpp
  *
  */
 #pragma once

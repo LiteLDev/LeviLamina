@@ -1,5 +1,5 @@
 /**
- * @file  MC/JournaledFile.hpp
+ * @file  JournaledFile.hpp
  *
  */
 #pragma once

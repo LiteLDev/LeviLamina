@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClientChunkGenerationValidationData.hpp
+ * @file  ClientChunkGenerationValidationData.hpp
  *
  */
 #pragma once

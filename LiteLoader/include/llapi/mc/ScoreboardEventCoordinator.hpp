@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScoreboardEventCoordinator.hpp
+ * @file  ScoreboardEventCoordinator.hpp
  *
  */
 #pragma once

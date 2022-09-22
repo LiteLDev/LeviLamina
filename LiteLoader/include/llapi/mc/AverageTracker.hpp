@@ -1,5 +1,5 @@
 /**
- * @file  MC/AverageTracker.hpp
+ * @file  AverageTracker.hpp
  *
  */
 #pragma once

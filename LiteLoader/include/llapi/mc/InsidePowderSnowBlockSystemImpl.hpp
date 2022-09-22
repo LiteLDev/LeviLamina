@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsidePowderSnowBlockSystemImpl.hpp
+ * @file  InsidePowderSnowBlockSystemImpl.hpp
  *
  */
 #pragma once

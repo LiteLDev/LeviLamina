@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangScriptArg.hpp
+ * @file  MolangScriptArg.hpp
  *
  */
 #pragma once

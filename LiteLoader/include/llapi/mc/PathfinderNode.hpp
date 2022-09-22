@@ -1,5 +1,5 @@
 /**
- * @file  MC/PathfinderNode.hpp
+ * @file  PathfinderNode.hpp
  *
  */
 #pragma once

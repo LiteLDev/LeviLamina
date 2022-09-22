@@ -1,5 +1,5 @@
 /**
- * @file  MC/BarterGoal.hpp
+ * @file  BarterGoal.hpp
  *
  */
 #pragma once

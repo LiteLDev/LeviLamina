@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideCrossEntityRemapSystem.hpp
+ * @file  SideBySideCrossEntityRemapSystem.hpp
  *
  */
 #pragma once

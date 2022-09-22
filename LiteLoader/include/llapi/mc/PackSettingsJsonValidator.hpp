@@ -1,5 +1,5 @@
 /**
- * @file  MC/PackSettingsJsonValidator.hpp
+ * @file  PackSettingsJsonValidator.hpp
  *
  */
 #pragma once

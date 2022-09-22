@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerGetExperienceOrbEvent.hpp
+ * @file  PlayerGetExperienceOrbEvent.hpp
  *
  */
 #pragma once

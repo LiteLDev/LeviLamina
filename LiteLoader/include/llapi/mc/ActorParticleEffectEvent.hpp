@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorParticleEffectEvent.hpp
+ * @file  ActorParticleEffectEvent.hpp
  *
  */
 #pragma once

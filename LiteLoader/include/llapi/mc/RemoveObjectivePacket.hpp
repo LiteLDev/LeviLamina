@@ -1,5 +1,5 @@
 /**
- * @file  MC/RemoveObjectivePacket.hpp
+ * @file  RemoveObjectivePacket.hpp
  *
  */
 #pragma once

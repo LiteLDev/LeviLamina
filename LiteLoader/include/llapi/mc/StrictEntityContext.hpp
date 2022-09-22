@@ -1,5 +1,5 @@
 /**
- * @file  MC/StrictEntityContext.hpp
+ * @file  StrictEntityContext.hpp
  *
  */
 #pragma once

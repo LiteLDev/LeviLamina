@@ -1,5 +1,5 @@
 /**
- * @file  MC/RotateState.hpp
+ * @file  RotateState.hpp
  *
  */
 #pragma once

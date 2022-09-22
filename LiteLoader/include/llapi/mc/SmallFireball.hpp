@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmallFireball.hpp
+ * @file  SmallFireball.hpp
  *
  */
 #pragma once

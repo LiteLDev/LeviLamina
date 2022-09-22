@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerInteractEvent.hpp
+ * @file  PlayerInteractEvent.hpp
  *
  */
 #pragma once

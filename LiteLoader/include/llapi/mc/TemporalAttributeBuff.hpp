@@ -1,5 +1,5 @@
 /**
- * @file  MC/TemporalAttributeBuff.hpp
+ * @file  TemporalAttributeBuff.hpp
  *
  */
 #pragma once

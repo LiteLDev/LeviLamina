@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExplodeComponent.hpp
+ * @file  ExplodeComponent.hpp
  *
  */
 #pragma once

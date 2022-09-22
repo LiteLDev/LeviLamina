@@ -1,5 +1,5 @@
 /**
- * @file  MC/WSServerCommand.hpp
+ * @file  WSServerCommand.hpp
  *
  */
 #pragma once

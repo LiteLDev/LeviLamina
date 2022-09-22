@@ -1,5 +1,5 @@
 /**
- * @file  MC/EyeOfEnder.hpp
+ * @file  EyeOfEnder.hpp
  *
  */
 #pragma once

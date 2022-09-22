@@ -1,5 +1,5 @@
 /**
- * @file  MC/SyncActorPropertyPacket.hpp
+ * @file  SyncActorPropertyPacket.hpp
  *
  */
 #pragma once

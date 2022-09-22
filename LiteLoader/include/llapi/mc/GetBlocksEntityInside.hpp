@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetBlocksEntityInside.hpp
+ * @file  GetBlocksEntityInside.hpp
  *
  */
 #pragma once

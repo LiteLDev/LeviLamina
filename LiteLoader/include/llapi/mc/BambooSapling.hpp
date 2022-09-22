@@ -1,5 +1,5 @@
 /**
- * @file  MC/BambooSapling.hpp
+ * @file  BambooSapling.hpp
  *
  */
 #pragma once

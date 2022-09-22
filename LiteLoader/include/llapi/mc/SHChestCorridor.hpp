@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHChestCorridor.hpp
+ * @file  SHChestCorridor.hpp
  *
  */
 #pragma once

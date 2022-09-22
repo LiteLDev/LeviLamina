@@ -1,5 +1,5 @@
 /**
- * @file  MC/SparseContainer.hpp
+ * @file  SparseContainer.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkStatistics.hpp
+ * @file  NetworkStatistics.hpp
  *
  */
 #pragma once

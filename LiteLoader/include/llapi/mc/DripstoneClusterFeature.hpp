@@ -1,5 +1,5 @@
 /**
- * @file  MC/DripstoneClusterFeature.hpp
+ * @file  DripstoneClusterFeature.hpp
  *
  */
 #pragma once

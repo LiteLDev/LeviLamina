@@ -1,5 +1,5 @@
 /**
- * @file  MC/AutomationPlayerCommandOrigin.hpp
+ * @file  AutomationPlayerCommandOrigin.hpp
  *
  */
 #pragma once

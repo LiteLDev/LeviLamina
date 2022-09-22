@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlaceBlockNode.hpp
+ * @file  PlaceBlockNode.hpp
  *
  */
 #pragma once

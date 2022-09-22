@@ -1,5 +1,5 @@
 /**
- * @file  MC/BinaryHeap.hpp
+ * @file  BinaryHeap.hpp
  *
  */
 #pragma once

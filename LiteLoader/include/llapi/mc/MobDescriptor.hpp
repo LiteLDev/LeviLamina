@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobDescriptor.hpp
+ * @file  MobDescriptor.hpp
  *
  */
 #pragma once

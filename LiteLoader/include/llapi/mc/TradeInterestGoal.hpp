@@ -1,5 +1,5 @@
 /**
- * @file  MC/TradeInterestGoal.hpp
+ * @file  TradeInterestGoal.hpp
  *
  */
 #pragma once

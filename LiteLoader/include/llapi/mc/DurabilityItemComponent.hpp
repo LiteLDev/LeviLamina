@@ -1,5 +1,5 @@
 /**
- * @file  MC/DurabilityItemComponent.hpp
+ * @file  DurabilityItemComponent.hpp
  *
  */
 #pragma once

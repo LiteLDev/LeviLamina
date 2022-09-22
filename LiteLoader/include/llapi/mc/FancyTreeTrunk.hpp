@@ -1,5 +1,5 @@
 /**
- * @file  MC/FancyTreeTrunk.hpp
+ * @file  FancyTreeTrunk.hpp
  *
  */
 #pragma once

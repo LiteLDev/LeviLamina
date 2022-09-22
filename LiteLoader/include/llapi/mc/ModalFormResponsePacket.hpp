@@ -1,5 +1,5 @@
 /**
- * @file  MC/ModalFormResponsePacket.hpp
+ * @file  ModalFormResponsePacket.hpp
  *
  */
 #pragma once

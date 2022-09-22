@@ -1,5 +1,5 @@
 /**
- * @file  MC/MultiplyValueAmplifier.hpp
+ * @file  MultiplyValueAmplifier.hpp
  *
  */
 #pragma once

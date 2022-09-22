@@ -1,5 +1,5 @@
 /**
- * @file  MC/DieEventResponse.hpp
+ * @file  DieEventResponse.hpp
  *
  */
 #pragma once

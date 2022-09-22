@@ -1,5 +1,5 @@
 /**
- * @file  MC/CloseWebSocketCommand.hpp
+ * @file  CloseWebSocketCommand.hpp
  *
  */
 #pragma once

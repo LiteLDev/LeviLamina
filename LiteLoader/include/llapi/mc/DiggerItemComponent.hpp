@@ -1,5 +1,5 @@
 /**
- * @file  MC/DiggerItemComponent.hpp
+ * @file  DiggerItemComponent.hpp
  *
  */
 #pragma once

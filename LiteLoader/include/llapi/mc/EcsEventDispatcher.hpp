@@ -1,5 +1,5 @@
 /**
- * @file  MC/EcsEventDispatcher.hpp
+ * @file  EcsEventDispatcher.hpp
  *
  */
 #pragma once

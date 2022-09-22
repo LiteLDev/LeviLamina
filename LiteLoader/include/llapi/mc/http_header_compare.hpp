@@ -1,5 +1,5 @@
 /**
- * @file  MC/http_header_compare.hpp
+ * @file  http_header_compare.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideExtractionSystem.hpp
+ * @file  SideBySideExtractionSystem.hpp
  *
  */
 #pragma once

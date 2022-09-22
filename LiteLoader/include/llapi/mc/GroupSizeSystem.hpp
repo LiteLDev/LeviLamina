@@ -1,5 +1,5 @@
 /**
- * @file  MC/GroupSizeSystem.hpp
+ * @file  GroupSizeSystem.hpp
  *
  */
 #pragma once

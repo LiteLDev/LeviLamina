@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureIntegrityProcessor.hpp
+ * @file  StructureIntegrityProcessor.hpp
  *
  */
 #pragma once

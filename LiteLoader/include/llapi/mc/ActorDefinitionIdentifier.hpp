@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDefinitionIdentifier.hpp
+ * @file  ActorDefinitionIdentifier.hpp
  *
  */
 #pragma once

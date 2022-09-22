@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelEventGenericPacket.hpp
+ * @file  LevelEventGenericPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoomContainerManagerModel.hpp
+ * @file  LoomContainerManagerModel.hpp
  *
  */
 #pragma once

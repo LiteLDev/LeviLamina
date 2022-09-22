@@ -1,5 +1,5 @@
 /**
- * @file  MC/KnockbackArmorUpdater.hpp
+ * @file  KnockbackArmorUpdater.hpp
  *
  */
 #pragma once

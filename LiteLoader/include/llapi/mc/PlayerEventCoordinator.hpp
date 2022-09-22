@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerEventCoordinator.hpp
+ * @file  PlayerEventCoordinator.hpp
  *
  */
 #pragma once

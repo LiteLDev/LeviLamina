@@ -1,5 +1,5 @@
 /**
- * @file  MC/PacketViolationDetectedTelemetryData.hpp
+ * @file  PacketViolationDetectedTelemetryData.hpp
  *
  */
 #pragma once

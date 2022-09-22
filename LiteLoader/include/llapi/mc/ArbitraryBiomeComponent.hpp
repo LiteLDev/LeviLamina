@@ -1,5 +1,5 @@
 /**
- * @file  MC/ArbitraryBiomeComponent.hpp
+ * @file  ArbitraryBiomeComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PropertiesSettings.hpp
+ * @file  PropertiesSettings.hpp
  *
  */
 #pragma once

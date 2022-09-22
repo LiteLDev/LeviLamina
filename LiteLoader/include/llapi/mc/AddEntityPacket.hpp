@@ -1,5 +1,5 @@
 /**
- * @file  MC/AddEntityPacket.hpp
+ * @file  AddEntityPacket.hpp
  *
  */
 #pragma once

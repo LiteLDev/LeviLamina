@@ -1,5 +1,5 @@
 /**
- * @file  MC/WoodlandMansionPieces.hpp
+ * @file  WoodlandMansionPieces.hpp
  *
  */
 #pragma once

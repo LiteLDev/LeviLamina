@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorkDefinition.hpp
+ * @file  WorkDefinition.hpp
  *
  */
 #pragma once

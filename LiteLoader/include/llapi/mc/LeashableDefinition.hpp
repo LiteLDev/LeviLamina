@@ -1,5 +1,5 @@
 /**
- * @file  MC/LeashableDefinition.hpp
+ * @file  LeashableDefinition.hpp
  *
  */
 #pragma once

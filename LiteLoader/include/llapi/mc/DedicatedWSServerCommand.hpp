@@ -1,5 +1,5 @@
 /**
- * @file  MC/DedicatedWSServerCommand.hpp
+ * @file  DedicatedWSServerCommand.hpp
  *
  */
 #pragma once

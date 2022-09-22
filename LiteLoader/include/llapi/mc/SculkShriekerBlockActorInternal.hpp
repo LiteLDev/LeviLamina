@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkShriekerBlockActorInternal.hpp
+ * @file  SculkShriekerBlockActorInternal.hpp
  *
  */
 #pragma once

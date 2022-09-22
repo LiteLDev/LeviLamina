@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockSourceListener.hpp
+ * @file  BlockSourceListener.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantBookForTradingFunction.hpp
+ * @file  EnchantBookForTradingFunction.hpp
  *
  */
 #pragma once

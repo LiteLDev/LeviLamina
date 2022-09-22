@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptResourceStats.hpp
+ * @file  ScriptResourceStats.hpp
  *
  */
 #pragma once

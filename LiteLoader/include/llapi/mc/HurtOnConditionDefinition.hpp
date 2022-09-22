@@ -1,5 +1,5 @@
 /**
- * @file  MC/HurtOnConditionDefinition.hpp
+ * @file  HurtOnConditionDefinition.hpp
  *
  */
 #pragma once

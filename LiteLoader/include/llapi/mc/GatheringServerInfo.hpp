@@ -1,5 +1,5 @@
 /**
- * @file  MC/GatheringServerInfo.hpp
+ * @file  GatheringServerInfo.hpp
  *
  */
 #pragma once

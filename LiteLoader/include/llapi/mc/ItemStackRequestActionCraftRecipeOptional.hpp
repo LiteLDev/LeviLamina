@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestActionCraftRecipeOptional.hpp
+ * @file  ItemStackRequestActionCraftRecipeOptional.hpp
  *
  */
 #pragma once

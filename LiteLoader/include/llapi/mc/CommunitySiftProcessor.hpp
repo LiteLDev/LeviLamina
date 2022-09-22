@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommunitySiftProcessor.hpp
+ * @file  CommunitySiftProcessor.hpp
  *
  */
 #pragma once

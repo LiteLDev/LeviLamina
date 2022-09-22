@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcSystem.hpp
+ * @file  NpcSystem.hpp
  *
  */
 #pragma once

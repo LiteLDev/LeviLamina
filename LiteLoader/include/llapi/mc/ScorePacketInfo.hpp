@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScorePacketInfo.hpp
+ * @file  ScorePacketInfo.hpp
  *
  */
 #pragma once

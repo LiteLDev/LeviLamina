@@ -1,5 +1,5 @@
 /**
- * @file  MC/DebugInfoComponent.hpp
+ * @file  DebugInfoComponent.hpp
  *
  */
 #pragma once

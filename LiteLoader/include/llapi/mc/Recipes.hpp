@@ -1,5 +1,5 @@
 /**
- * @file  MC/Recipes.hpp
+ * @file  Recipes.hpp
  *
  */
 #pragma once

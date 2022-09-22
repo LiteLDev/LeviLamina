@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExhaustionAttributeDelegate.hpp
+ * @file  ExhaustionAttributeDelegate.hpp
  *
  */
 #pragma once

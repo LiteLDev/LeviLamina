@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerPlayerInputSystemUtils.hpp
+ * @file  ServerPlayerInputSystemUtils.hpp
  *
  */
 #pragma once

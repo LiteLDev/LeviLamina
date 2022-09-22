@@ -1,5 +1,5 @@
 /**
- * @file  MC/AdmireItemDefinition.hpp
+ * @file  AdmireItemDefinition.hpp
  *
  */
 #pragma once

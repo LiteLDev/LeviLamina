@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpongeBlock.hpp
+ * @file  SpongeBlock.hpp
  *
  */
 #pragma once

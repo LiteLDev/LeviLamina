@@ -1,5 +1,5 @@
 /**
- * @file  MC/SittableDefinition.hpp
+ * @file  SittableDefinition.hpp
  *
  */
 #pragma once

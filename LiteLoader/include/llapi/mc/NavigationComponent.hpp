@@ -1,5 +1,5 @@
 /**
- * @file  MC/NavigationComponent.hpp
+ * @file  NavigationComponent.hpp
  *
  */
 #pragma once

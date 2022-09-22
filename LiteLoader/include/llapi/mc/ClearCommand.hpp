@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClearCommand.hpp
+ * @file  ClearCommand.hpp
  *
  */
 #pragma once

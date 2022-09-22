@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockRotationDescription.hpp
+ * @file  BlockRotationDescription.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CavifierNoises.hpp
+ * @file  CavifierNoises.hpp
  *
  */
 #pragma once

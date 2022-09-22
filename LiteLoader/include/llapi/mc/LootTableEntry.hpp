@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootTableEntry.hpp
+ * @file  LootTableEntry.hpp
  *
  */
 #pragma once

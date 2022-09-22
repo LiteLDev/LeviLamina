@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldTemplateManagerProxyCallbacks.hpp
+ * @file  WorldTemplateManagerProxyCallbacks.hpp
  *
  */
 #pragma once

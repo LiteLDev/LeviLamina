@@ -1,5 +1,5 @@
 /**
- * @file  MC/StrippedLogBlock.hpp
+ * @file  StrippedLogBlock.hpp
  *
  */
 #pragma once

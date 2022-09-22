@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntitySystemsInfo.hpp
+ * @file  EntitySystemsInfo.hpp
  *
  */
 #pragma once

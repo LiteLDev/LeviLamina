@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayAnimationCommand.hpp
+ * @file  PlayAnimationCommand.hpp
  *
  */
 #pragma once

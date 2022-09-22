@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerValidationCommitObject.hpp
+ * @file  ContainerValidationCommitObject.hpp
  *
  */
 #pragma once

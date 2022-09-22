@@ -1,5 +1,5 @@
 /**
- * @file  MC/SonicBoomGoal.hpp
+ * @file  SonicBoomGoal.hpp
  *
  */
 #pragma once

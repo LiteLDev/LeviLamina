@@ -1,5 +1,5 @@
 /**
- * @file  MC/PetSleepWithOwnerGoal.hpp
+ * @file  PetSleepWithOwnerGoal.hpp
  *
  */
 #pragma once

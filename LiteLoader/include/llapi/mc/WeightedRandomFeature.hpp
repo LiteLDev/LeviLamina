@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeightedRandomFeature.hpp
+ * @file  WeightedRandomFeature.hpp
  *
  */
 #pragma once

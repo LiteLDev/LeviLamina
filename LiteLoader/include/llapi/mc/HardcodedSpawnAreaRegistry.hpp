@@ -1,5 +1,5 @@
 /**
- * @file  MC/HardcodedSpawnAreaRegistry.hpp
+ * @file  HardcodedSpawnAreaRegistry.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SkeletonPassengerRotationSystem.hpp
+ * @file  SkeletonPassengerRotationSystem.hpp
  *
  */
 #pragma once

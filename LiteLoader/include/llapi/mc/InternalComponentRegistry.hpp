@@ -1,5 +1,5 @@
 /**
- * @file  MC/InternalComponentRegistry.hpp
+ * @file  InternalComponentRegistry.hpp
  *
  */
 #pragma once

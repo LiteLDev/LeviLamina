@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetDisplayObjectivePacket.hpp
+ * @file  SetDisplayObjectivePacket.hpp
  *
  */
 #pragma once

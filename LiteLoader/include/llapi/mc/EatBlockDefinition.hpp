@@ -1,5 +1,5 @@
 /**
- * @file  MC/EatBlockDefinition.hpp
+ * @file  EatBlockDefinition.hpp
  *
  */
 #pragma once

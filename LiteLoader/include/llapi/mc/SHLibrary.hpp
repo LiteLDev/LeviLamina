@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHLibrary.hpp
+ * @file  SHLibrary.hpp
  *
  */
 #pragma once

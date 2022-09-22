@@ -1,5 +1,5 @@
 /**
- * @file  MC/EmptyLootItem.hpp
+ * @file  EmptyLootItem.hpp
  *
  */
 #pragma once

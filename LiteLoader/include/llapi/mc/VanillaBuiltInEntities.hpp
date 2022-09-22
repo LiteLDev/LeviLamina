@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaBuiltInEntities.hpp
+ * @file  VanillaBuiltInEntities.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/HumanoidMonster.hpp
+ * @file  HumanoidMonster.hpp
  *
  */
 #pragma once

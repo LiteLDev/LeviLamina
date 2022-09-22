@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDefinitionDiffList.hpp
+ * @file  ActorDefinitionDiffList.hpp
  *
  */
 #pragma once

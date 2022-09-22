@@ -1,5 +1,5 @@
 /**
- * @file  MC/RakDataInput.hpp
+ * @file  RakDataInput.hpp
  *
  */
 #pragma once

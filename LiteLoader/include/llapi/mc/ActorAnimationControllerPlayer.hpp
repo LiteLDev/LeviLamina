@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorAnimationControllerPlayer.hpp
+ * @file  ActorAnimationControllerPlayer.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BedItem.hpp
+ * @file  BedItem.hpp
  *
  */
 #pragma once

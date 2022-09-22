@@ -1,5 +1,5 @@
 /**
- * @file  MC/AppPlatformListener.hpp
+ * @file  AppPlatformListener.hpp
  *
  */
 #pragma once

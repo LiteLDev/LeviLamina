@@ -1,5 +1,5 @@
 /**
- * @file  MC/VerticalCollisionSystem.hpp
+ * @file  VerticalCollisionSystem.hpp
  *
  */
 #pragma once

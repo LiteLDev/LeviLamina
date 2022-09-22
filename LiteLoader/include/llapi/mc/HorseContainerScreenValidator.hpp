@@ -1,5 +1,5 @@
 /**
- * @file  MC/HorseContainerScreenValidator.hpp
+ * @file  HorseContainerScreenValidator.hpp
  *
  */
 #pragma once

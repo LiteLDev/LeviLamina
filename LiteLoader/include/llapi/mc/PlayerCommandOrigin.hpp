@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerCommandOrigin.hpp
+ * @file  PlayerCommandOrigin.hpp
  *
  */
 #pragma once

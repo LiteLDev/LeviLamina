@@ -1,5 +1,5 @@
 /**
- * @file  MC/NameableDefinition.hpp
+ * @file  NameableDefinition.hpp
  *
  */
 #pragma once

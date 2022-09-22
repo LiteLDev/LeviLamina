@@ -1,5 +1,5 @@
 /**
- * @file  MC/CerealHelpers.hpp
+ * @file  CerealHelpers.hpp
  *
  */
 #pragma once

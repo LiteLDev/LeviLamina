@@ -1,5 +1,5 @@
 /**
- * @file  MC/SkullItem.hpp
+ * @file  SkullItem.hpp
  *
  */
 #pragma once

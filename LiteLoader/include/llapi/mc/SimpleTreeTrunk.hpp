@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimpleTreeTrunk.hpp
+ * @file  SimpleTreeTrunk.hpp
  *
  */
 #pragma once

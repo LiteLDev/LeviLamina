@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkPerformanceData.hpp
+ * @file  ChunkPerformanceData.hpp
  *
  */
 #pragma once

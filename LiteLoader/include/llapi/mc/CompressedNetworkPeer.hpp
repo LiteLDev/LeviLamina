@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompressedNetworkPeer.hpp
+ * @file  CompressedNetworkPeer.hpp
  *
  */
 #pragma once

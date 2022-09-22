@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShieldItem.hpp
+ * @file  ShieldItem.hpp
  *
  */
 #pragma once

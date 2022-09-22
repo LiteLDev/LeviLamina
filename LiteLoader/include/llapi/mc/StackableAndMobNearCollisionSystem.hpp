@@ -1,5 +1,5 @@
 /**
- * @file  MC/StackableAndMobNearCollisionSystem.hpp
+ * @file  StackableAndMobNearCollisionSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeadBushFeature.hpp
+ * @file  DeadBushFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AmethystClusterBlock.hpp
+ * @file  AmethystClusterBlock.hpp
  *
  */
 #pragma once

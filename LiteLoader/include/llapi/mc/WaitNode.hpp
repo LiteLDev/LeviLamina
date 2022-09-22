@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaitNode.hpp
+ * @file  WaitNode.hpp
  *
  */
 #pragma once

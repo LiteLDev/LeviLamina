@@ -1,5 +1,5 @@
 /**
- * @file  MC/PieceWeight.hpp
+ * @file  PieceWeight.hpp
  *
  */
 #pragma once

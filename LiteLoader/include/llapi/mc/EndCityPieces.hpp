@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndCityPieces.hpp
+ * @file  EndCityPieces.hpp
  *
  */
 #pragma once

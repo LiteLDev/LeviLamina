@@ -1,5 +1,5 @@
 /**
- * @file  MC/VehicleServerMolangSeatPositionSystem.hpp
+ * @file  VehicleServerMolangSeatPositionSystem.hpp
  *
  */
 #pragma once

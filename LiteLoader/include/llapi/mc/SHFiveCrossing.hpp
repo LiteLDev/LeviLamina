@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHFiveCrossing.hpp
+ * @file  SHFiveCrossing.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChargeableItemComponent.hpp
+ * @file  ChargeableItemComponent.hpp
  *
  */
 #pragma once

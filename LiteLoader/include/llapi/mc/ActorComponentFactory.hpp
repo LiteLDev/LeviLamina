@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorComponentFactory.hpp
+ * @file  ActorComponentFactory.hpp
  *
  */
 #pragma once

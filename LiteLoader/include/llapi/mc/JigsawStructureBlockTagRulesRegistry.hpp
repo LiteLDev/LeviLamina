@@ -1,5 +1,5 @@
 /**
- * @file  MC/JigsawStructureBlockTagRulesRegistry.hpp
+ * @file  JigsawStructureBlockTagRulesRegistry.hpp
  *
  */
 #pragma once

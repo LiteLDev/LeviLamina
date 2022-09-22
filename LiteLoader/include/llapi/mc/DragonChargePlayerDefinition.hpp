@@ -1,5 +1,5 @@
 /**
- * @file  MC/DragonChargePlayerDefinition.hpp
+ * @file  DragonChargePlayerDefinition.hpp
  *
  */
 #pragma once

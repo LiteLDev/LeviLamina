@@ -1,5 +1,5 @@
 /**
- * @file  MC/ImpactDamageSubcomponent.hpp
+ * @file  ImpactDamageSubcomponent.hpp
  *
  */
 #pragma once

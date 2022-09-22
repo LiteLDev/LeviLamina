@@ -1,5 +1,5 @@
 /**
- * @file  MC/ToolRecipes.hpp
+ * @file  ToolRecipes.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnderChestBlock.hpp
+ * @file  EnderChestBlock.hpp
  *
  */
 #pragma once

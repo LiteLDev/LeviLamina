@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecraftEventing.hpp
+ * @file  MinecraftEventing.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookControlSystem.hpp
+ * @file  LookControlSystem.hpp
  *
  */
 #pragma once

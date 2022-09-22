@@ -1,5 +1,5 @@
 /**
- * @file  MC/PacksInfoData.hpp
+ * @file  PacksInfoData.hpp
  *
  */
 #pragma once

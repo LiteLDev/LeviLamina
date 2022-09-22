@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemUseInventoryTransaction.hpp
+ * @file  ItemUseInventoryTransaction.hpp
  *
  */
 #pragma once

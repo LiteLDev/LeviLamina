@@ -1,5 +1,5 @@
 /**
- * @file  MC/BookshelfBlock.hpp
+ * @file  BookshelfBlock.hpp
  *
  */
 #pragma once

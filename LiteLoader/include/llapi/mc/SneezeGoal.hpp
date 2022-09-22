@@ -1,5 +1,5 @@
 /**
- * @file  MC/SneezeGoal.hpp
+ * @file  SneezeGoal.hpp
  *
  */
 #pragma once

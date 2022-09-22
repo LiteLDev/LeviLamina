@@ -1,5 +1,5 @@
 /**
- * @file  MC/SuspectTrackingDefinition.hpp
+ * @file  SuspectTrackingDefinition.hpp
  *
  */
 #pragma once

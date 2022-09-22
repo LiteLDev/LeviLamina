@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerInputPacket.hpp
+ * @file  PlayerInputPacket.hpp
  *
  */
 #pragma once

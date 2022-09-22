@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnvilInputContainerValidation.hpp
+ * @file  AnvilInputContainerValidation.hpp
  *
  */
 #pragma once

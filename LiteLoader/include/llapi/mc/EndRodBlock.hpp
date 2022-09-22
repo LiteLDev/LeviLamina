@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndRodBlock.hpp
+ * @file  EndRodBlock.hpp
  *
  */
 #pragma once

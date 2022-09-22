@@ -1,5 +1,5 @@
 /**
- * @file  MC/SignBlockActor.hpp
+ * @file  SignBlockActor.hpp
  *
  */
 #pragma once

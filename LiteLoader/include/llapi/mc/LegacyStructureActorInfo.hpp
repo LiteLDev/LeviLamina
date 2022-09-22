@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyStructureActorInfo.hpp
+ * @file  LegacyStructureActorInfo.hpp
  *
  */
 #pragma once

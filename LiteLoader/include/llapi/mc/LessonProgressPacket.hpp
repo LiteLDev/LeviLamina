@@ -1,5 +1,5 @@
 /**
- * @file  MC/LessonProgressPacket.hpp
+ * @file  LessonProgressPacket.hpp
  *
  */
 #pragma once

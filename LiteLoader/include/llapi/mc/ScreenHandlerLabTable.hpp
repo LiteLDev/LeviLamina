@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScreenHandlerLabTable.hpp
+ * @file  ScreenHandlerLabTable.hpp
  *
  */
 #pragma once

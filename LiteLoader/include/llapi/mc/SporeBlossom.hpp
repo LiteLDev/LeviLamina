@@ -1,5 +1,5 @@
 /**
- * @file  MC/SporeBlossom.hpp
+ * @file  SporeBlossom.hpp
  *
  */
 #pragma once

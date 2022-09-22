@@ -1,5 +1,5 @@
 /**
- * @file  MC/Silverfish.hpp
+ * @file  Silverfish.hpp
  *
  */
 #pragma once

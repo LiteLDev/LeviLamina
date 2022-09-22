@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestTemperatureType.hpp
+ * @file  FilterTestTemperatureType.hpp
  *
  */
 #pragma once

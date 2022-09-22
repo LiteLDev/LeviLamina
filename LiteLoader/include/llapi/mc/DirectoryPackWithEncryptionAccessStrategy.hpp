@@ -1,5 +1,5 @@
 /**
- * @file  MC/DirectoryPackWithEncryptionAccessStrategy.hpp
+ * @file  DirectoryPackWithEncryptionAccessStrategy.hpp
  *
  */
 #pragma once

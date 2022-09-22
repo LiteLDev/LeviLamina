@@ -1,5 +1,5 @@
 /**
- * @file  MC/Agent.hpp
+ * @file  Agent.hpp
  *
  */
 #pragma once

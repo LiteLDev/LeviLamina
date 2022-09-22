@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackNetManagerServer.hpp
+ * @file  ItemStackNetManagerServer.hpp
  *
  */
 #pragma once

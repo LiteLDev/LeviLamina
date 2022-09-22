@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerHotbarPacket.hpp
+ * @file  PlayerHotbarPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Chicken.hpp
+ * @file  Chicken.hpp
  *
  */
 #pragma once

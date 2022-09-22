@@ -1,5 +1,5 @@
 /**
- * @file  MC/FindUnderwaterTreasureGoal.hpp
+ * @file  FindUnderwaterTreasureGoal.hpp
  *
  */
 #pragma once

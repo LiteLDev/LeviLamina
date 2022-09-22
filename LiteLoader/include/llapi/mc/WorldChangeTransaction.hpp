@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldChangeTransaction.hpp
+ * @file  WorldChangeTransaction.hpp
  *
  */
 #pragma once

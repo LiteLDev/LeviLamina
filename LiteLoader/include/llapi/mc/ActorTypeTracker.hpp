@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorTypeTracker.hpp
+ * @file  ActorTypeTracker.hpp
  *
  */
 #pragma once

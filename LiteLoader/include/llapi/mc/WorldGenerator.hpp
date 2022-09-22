@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldGenerator.hpp
+ * @file  WorldGenerator.hpp
  *
  */
 #pragma once

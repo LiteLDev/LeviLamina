@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoundPlayerInterface.hpp
+ * @file  SoundPlayerInterface.hpp
  *
  */
 #pragma once

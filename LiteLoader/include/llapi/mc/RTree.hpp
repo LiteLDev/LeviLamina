@@ -1,5 +1,5 @@
 /**
- * @file  MC/RTree.hpp
+ * @file  RTree.hpp
  *
  */
 #pragma once

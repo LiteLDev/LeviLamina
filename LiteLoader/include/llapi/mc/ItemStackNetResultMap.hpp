@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackNetResultMap.hpp
+ * @file  ItemStackNetResultMap.hpp
  *
  */
 #pragma once

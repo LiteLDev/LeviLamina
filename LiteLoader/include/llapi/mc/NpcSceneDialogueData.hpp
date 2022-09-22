@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcSceneDialogueData.hpp
+ * @file  NpcSceneDialogueData.hpp
  *
  */
 #pragma once

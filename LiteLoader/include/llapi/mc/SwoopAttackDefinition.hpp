@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwoopAttackDefinition.hpp
+ * @file  SwoopAttackDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScaleByAgeComponent.hpp
+ * @file  ScaleByAgeComponent.hpp
  *
  */
 #pragma once

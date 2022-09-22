@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcDialogueStorage.hpp
+ * @file  NpcDialogueStorage.hpp
  *
  */
 #pragma once

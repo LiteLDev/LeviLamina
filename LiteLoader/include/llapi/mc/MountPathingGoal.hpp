@@ -1,5 +1,5 @@
 /**
- * @file  MC/MountPathingGoal.hpp
+ * @file  MountPathingGoal.hpp
  *
  */
 #pragma once

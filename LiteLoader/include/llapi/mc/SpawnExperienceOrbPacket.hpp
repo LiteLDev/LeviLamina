@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnExperienceOrbPacket.hpp
+ * @file  SpawnExperienceOrbPacket.hpp
  *
  */
 #pragma once

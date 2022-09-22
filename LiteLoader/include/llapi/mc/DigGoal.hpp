@@ -1,5 +1,5 @@
 /**
- * @file  MC/DigGoal.hpp
+ * @file  DigGoal.hpp
  *
  */
 #pragma once

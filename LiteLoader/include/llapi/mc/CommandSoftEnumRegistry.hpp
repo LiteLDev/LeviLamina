@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandSoftEnumRegistry.hpp
+ * @file  CommandSoftEnumRegistry.hpp
  *
  */
 #pragma once

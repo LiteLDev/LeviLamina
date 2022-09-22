@@ -1,5 +1,5 @@
 /**
- * @file  MC/SnackGoal.hpp
+ * @file  SnackGoal.hpp
  *
  */
 #pragma once

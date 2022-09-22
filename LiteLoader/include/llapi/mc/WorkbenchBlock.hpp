@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorkbenchBlock.hpp
+ * @file  WorkbenchBlock.hpp
  *
  */
 #pragma once

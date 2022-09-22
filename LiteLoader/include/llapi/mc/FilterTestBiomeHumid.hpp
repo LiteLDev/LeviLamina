@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestBiomeHumid.hpp
+ * @file  FilterTestBiomeHumid.hpp
  *
  */
 #pragma once

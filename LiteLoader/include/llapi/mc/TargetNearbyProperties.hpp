@@ -1,5 +1,5 @@
 /**
- * @file  MC/TargetNearbyProperties.hpp
+ * @file  TargetNearbyProperties.hpp
  *
  */
 #pragma once

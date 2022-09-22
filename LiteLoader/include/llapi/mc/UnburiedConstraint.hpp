@@ -1,5 +1,5 @@
 /**
- * @file  MC/UnburiedConstraint.hpp
+ * @file  UnburiedConstraint.hpp
  *
  */
 #pragma once

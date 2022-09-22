@@ -1,5 +1,5 @@
 /**
- * @file  MC/LargeDripstoneFeature.hpp
+ * @file  LargeDripstoneFeature.hpp
  *
  */
 #pragma once

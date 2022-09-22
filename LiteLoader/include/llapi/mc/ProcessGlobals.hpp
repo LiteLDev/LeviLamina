@@ -1,5 +1,5 @@
 /**
- * @file  MC/ProcessGlobals.hpp
+ * @file  ProcessGlobals.hpp
  *
  */
 #pragma once

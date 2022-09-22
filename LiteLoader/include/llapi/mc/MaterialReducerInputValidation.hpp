@@ -1,5 +1,5 @@
 /**
- * @file  MC/MaterialReducerInputValidation.hpp
+ * @file  MaterialReducerInputValidation.hpp
  *
  */
 #pragma once

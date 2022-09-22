@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChangeSettingCommand.hpp
+ * @file  ChangeSettingCommand.hpp
  *
  */
 #pragma once

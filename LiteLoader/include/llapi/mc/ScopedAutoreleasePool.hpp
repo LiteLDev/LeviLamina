@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScopedAutoreleasePool.hpp
+ * @file  ScopedAutoreleasePool.hpp
  *
  */
 #pragma once

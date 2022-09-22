@@ -1,5 +1,5 @@
 /**
- * @file  MC/Trade2ContainerScreenValidator.hpp
+ * @file  Trade2ContainerScreenValidator.hpp
  *
  */
 #pragma once

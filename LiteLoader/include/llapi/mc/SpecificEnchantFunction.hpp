@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpecificEnchantFunction.hpp
+ * @file  SpecificEnchantFunction.hpp
  *
  */
 #pragma once

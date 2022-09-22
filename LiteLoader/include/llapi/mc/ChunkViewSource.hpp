@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkViewSource.hpp
+ * @file  ChunkViewSource.hpp
  *
  */
 #pragma once

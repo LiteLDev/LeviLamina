@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerRespawnTelemetryData.hpp
+ * @file  PlayerRespawnTelemetryData.hpp
  *
  */
 #pragma once

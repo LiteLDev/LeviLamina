@@ -1,5 +1,5 @@
 /**
- * @file  MC/SweetBerryBushBlock.hpp
+ * @file  SweetBerryBushBlock.hpp
  *
  */
 #pragma once

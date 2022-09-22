@@ -1,5 +1,5 @@
 /**
- * @file  MC/Objective.hpp
+ * @file  Objective.hpp
  *
  */
 #pragma once

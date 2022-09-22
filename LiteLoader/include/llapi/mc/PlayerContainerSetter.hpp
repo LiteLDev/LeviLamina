@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerContainerSetter.hpp
+ * @file  PlayerContainerSetter.hpp
  *
  */
 #pragma once

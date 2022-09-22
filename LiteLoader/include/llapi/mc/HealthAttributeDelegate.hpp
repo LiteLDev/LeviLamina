@@ -1,5 +1,5 @@
 /**
- * @file  MC/HealthAttributeDelegate.hpp
+ * @file  HealthAttributeDelegate.hpp
  *
  */
 #pragma once

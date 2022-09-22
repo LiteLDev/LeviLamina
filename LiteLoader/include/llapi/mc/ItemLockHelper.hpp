@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemLockHelper.hpp
+ * @file  ItemLockHelper.hpp
  *
  */
 #pragma once

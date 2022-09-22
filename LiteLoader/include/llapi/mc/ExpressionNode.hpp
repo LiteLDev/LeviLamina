@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExpressionNode.hpp
+ * @file  ExpressionNode.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompassSpriteCalculator.hpp
+ * @file  CompassSpriteCalculator.hpp
  *
  */
 #pragma once

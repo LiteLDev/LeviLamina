@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptPlugin.hpp
+ * @file  ScriptPlugin.hpp
  *
  */
 #pragma once

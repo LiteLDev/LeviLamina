@@ -1,5 +1,5 @@
 /**
- * @file  MC/StateAnimationVariable.hpp
+ * @file  StateAnimationVariable.hpp
  *
  */
 #pragma once

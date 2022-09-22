@@ -1,5 +1,5 @@
 /**
- * @file  MC/KeyOrNameResult.hpp
+ * @file  KeyOrNameResult.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AdmireItemGoal.hpp
+ * @file  AdmireItemGoal.hpp
  *
  */
 #pragma once

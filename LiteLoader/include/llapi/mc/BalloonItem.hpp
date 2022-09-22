@@ -1,5 +1,5 @@
 /**
- * @file  MC/BalloonItem.hpp
+ * @file  BalloonItem.hpp
  *
  */
 #pragma once

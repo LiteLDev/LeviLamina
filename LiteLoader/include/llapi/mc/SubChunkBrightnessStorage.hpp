@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunkBrightnessStorage.hpp
+ * @file  SubChunkBrightnessStorage.hpp
  *
  */
 #pragma once

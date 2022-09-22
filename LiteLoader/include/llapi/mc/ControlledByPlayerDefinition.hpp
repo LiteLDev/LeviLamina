@@ -1,5 +1,5 @@
 /**
- * @file  MC/ControlledByPlayerDefinition.hpp
+ * @file  ControlledByPlayerDefinition.hpp
  *
  */
 #pragma once

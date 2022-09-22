@@ -1,5 +1,5 @@
 /**
- * @file  MC/CreativeContentPacket.hpp
+ * @file  CreativeContentPacket.hpp
  *
  */
 #pragma once

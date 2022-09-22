@@ -1,5 +1,5 @@
 /**
- * @file  MC/AdmireItemComponent.hpp
+ * @file  AdmireItemComponent.hpp
  *
  */
 #pragma once

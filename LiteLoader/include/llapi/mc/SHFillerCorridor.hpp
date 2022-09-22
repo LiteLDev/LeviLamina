@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHFillerCorridor.hpp
+ * @file  SHFillerCorridor.hpp
  *
  */
 #pragma once

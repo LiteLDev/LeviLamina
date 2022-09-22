@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetEventCallback.hpp
+ * @file  NetEventCallback.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActivateToolDefinition.hpp
+ * @file  ActivateToolDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClientAutomationCommandOrigin.hpp
+ * @file  ClientAutomationCommandOrigin.hpp
  *
  */
 #pragma once

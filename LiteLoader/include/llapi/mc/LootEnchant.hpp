@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootEnchant.hpp
+ * @file  LootEnchant.hpp
  *
  */
 #pragma once

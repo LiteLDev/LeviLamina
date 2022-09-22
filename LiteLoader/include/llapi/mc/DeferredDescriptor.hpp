@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeferredDescriptor.hpp
+ * @file  DeferredDescriptor.hpp
  *
  */
 #pragma once

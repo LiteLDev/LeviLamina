@@ -1,5 +1,5 @@
 /**
- * @file  MC/InfestedBlock.hpp
+ * @file  InfestedBlock.hpp
  *
  */
 #pragma once

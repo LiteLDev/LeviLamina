@@ -1,5 +1,5 @@
 /**
- * @file  MC/DiodeBlock.hpp
+ * @file  DiodeBlock.hpp
  *
  */
 #pragma once

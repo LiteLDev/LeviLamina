@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameSpecificNetEventCallback.hpp
+ * @file  GameSpecificNetEventCallback.hpp
  *
  */
 #pragma once

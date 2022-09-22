@@ -1,5 +1,5 @@
 /**
- * @file  MC/LlamaSpit.hpp
+ * @file  LlamaSpit.hpp
  *
  */
 #pragma once

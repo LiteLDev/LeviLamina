@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConsoleInputReader.hpp
+ * @file  ConsoleInputReader.hpp
  *
  */
 #pragma once

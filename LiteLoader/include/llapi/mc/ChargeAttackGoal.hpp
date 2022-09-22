@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChargeAttackGoal.hpp
+ * @file  ChargeAttackGoal.hpp
  *
  */
 #pragma once

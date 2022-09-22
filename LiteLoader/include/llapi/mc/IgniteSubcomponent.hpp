@@ -1,5 +1,5 @@
 /**
- * @file  MC/IgniteSubcomponent.hpp
+ * @file  IgniteSubcomponent.hpp
  *
  */
 #pragma once

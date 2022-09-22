@@ -1,5 +1,5 @@
 /**
- * @file  MC/ParticlesBlockExplosionEvent.hpp
+ * @file  ParticlesBlockExplosionEvent.hpp
  *
  */
 #pragma once

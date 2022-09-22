@@ -1,5 +1,5 @@
 /**
- * @file  MC/HttpHeaders.hpp
+ * @file  HttpHeaders.hpp
  *
  */
 #pragma once

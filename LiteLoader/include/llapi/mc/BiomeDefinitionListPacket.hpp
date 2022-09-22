@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeDefinitionListPacket.hpp
+ * @file  BiomeDefinitionListPacket.hpp
  *
  */
 #pragma once

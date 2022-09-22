@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetPropertyResponse.hpp
+ * @file  SetPropertyResponse.hpp
  *
  */
 #pragma once

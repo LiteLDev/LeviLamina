@@ -1,5 +1,5 @@
 /**
- * @file  MC/PhotoStorage.hpp
+ * @file  PhotoStorage.hpp
  *
  */
 #pragma once

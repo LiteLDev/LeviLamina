@@ -1,5 +1,5 @@
 /**
- * @file  MC/Llama.hpp
+ * @file  Llama.hpp
  *
  */
 #pragma once

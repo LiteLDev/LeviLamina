@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockDisplayNameComponent.hpp
+ * @file  BlockDisplayNameComponent.hpp
  *
  */
 #pragma once

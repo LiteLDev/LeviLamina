@@ -1,5 +1,5 @@
 /**
- * @file  MC/BastionPiece.hpp
+ * @file  BastionPiece.hpp
  *
  */
 #pragma once

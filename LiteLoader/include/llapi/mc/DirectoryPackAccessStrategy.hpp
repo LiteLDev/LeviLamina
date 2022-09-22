@@ -1,5 +1,5 @@
 /**
- * @file  MC/DirectoryPackAccessStrategy.hpp
+ * @file  DirectoryPackAccessStrategy.hpp
  *
  */
 #pragma once

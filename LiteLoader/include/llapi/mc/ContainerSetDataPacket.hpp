@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerSetDataPacket.hpp
+ * @file  ContainerSetDataPacket.hpp
  *
  */
 #pragma once

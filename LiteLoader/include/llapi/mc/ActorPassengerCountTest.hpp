@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorPassengerCountTest.hpp
+ * @file  ActorPassengerCountTest.hpp
  *
  */
 #pragma once

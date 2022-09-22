@@ -1,5 +1,5 @@
 /**
- * @file  MC/SurfaceMaterialAttributes.hpp
+ * @file  SurfaceMaterialAttributes.hpp
  *
  */
 #pragma once

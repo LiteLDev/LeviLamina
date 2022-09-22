@@ -1,5 +1,5 @@
 /**
- * @file  MC/CrashDumpFrameData.hpp
+ * @file  CrashDumpFrameData.hpp
  *
  */
 #pragma once

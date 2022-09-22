@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourceHelper.hpp
+ * @file  ResourceHelper.hpp
  *
  */
 #pragma once

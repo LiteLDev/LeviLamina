@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoatFrictionHelper.hpp
+ * @file  BoatFrictionHelper.hpp
  *
  */
 #pragma once

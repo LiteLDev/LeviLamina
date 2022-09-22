@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldBlockTarget.hpp
+ * @file  WorldBlockTarget.hpp
  *
  */
 #pragma once

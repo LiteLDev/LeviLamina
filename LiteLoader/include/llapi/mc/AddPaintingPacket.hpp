@@ -1,5 +1,5 @@
 /**
- * @file  MC/AddPaintingPacket.hpp
+ * @file  AddPaintingPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/JigsawJunction.hpp
+ * @file  JigsawJunction.hpp
  *
  */
 #pragma once

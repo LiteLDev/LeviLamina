@@ -1,5 +1,5 @@
 /**
- * @file  MC/DisconnectPacket.hpp
+ * @file  DisconnectPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/InteractActionDefinition.hpp
+ * @file  InteractActionDefinition.hpp
  *
  */
 #pragma once

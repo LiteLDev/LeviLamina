@@ -1,5 +1,5 @@
 /**
- * @file  MC/ComposterBlock.hpp
+ * @file  ComposterBlock.hpp
  *
  */
 #pragma once

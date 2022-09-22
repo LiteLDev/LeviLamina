@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerSkinPacket.hpp
+ * @file  PlayerSkinPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapConstants.hpp
+ * @file  MapConstants.hpp
  *
  */
 #pragma once

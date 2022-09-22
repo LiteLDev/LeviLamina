@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveControlDolphinDescription.hpp
+ * @file  MoveControlDolphinDescription.hpp
  *
  */
 #pragma once

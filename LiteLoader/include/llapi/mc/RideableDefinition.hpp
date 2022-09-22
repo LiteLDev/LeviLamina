@@ -1,5 +1,5 @@
 /**
- * @file  MC/RideableDefinition.hpp
+ * @file  RideableDefinition.hpp
  *
  */
 #pragma once

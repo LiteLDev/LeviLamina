@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveToRandomBlockGoal.hpp
+ * @file  MoveToRandomBlockGoal.hpp
  *
  */
 #pragma once

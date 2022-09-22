@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStopUseOnEvent.hpp
+ * @file  ItemStopUseOnEvent.hpp
  *
  */
 #pragma once

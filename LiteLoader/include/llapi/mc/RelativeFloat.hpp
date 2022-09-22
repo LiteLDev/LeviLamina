@@ -1,5 +1,5 @@
 /**
- * @file  MC/RelativeFloat.hpp
+ * @file  RelativeFloat.hpp
  *
  */
 #pragma once

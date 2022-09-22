@@ -1,5 +1,5 @@
 /**
- * @file  MC/FaceDirectionalActorBlock.hpp
+ * @file  FaceDirectionalActorBlock.hpp
  *
  */
 #pragma once

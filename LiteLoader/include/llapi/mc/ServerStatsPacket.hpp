@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerStatsPacket.hpp
+ * @file  ServerStatsPacket.hpp
  *
  */
 #pragma once

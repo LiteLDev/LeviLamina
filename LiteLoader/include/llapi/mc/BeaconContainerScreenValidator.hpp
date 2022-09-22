@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeaconContainerScreenValidator.hpp
+ * @file  BeaconContainerScreenValidator.hpp
  *
  */
 #pragma once

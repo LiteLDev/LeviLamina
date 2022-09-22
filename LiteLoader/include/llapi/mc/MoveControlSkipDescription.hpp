@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveControlSkipDescription.hpp
+ * @file  MoveControlSkipDescription.hpp
  *
  */
 #pragma once

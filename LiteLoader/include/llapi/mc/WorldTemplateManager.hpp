@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldTemplateManager.hpp
+ * @file  WorldTemplateManager.hpp
  *
  */
 #pragma once

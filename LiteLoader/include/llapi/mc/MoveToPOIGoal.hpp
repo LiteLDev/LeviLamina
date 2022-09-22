@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveToPOIGoal.hpp
+ * @file  MoveToPOIGoal.hpp
  *
  */
 #pragma once

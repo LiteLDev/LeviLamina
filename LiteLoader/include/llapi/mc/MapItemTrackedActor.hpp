@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapItemTrackedActor.hpp
+ * @file  MapItemTrackedActor.hpp
  *
  */
 #pragma once

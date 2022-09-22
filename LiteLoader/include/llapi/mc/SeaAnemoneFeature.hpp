@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeaAnemoneFeature.hpp
+ * @file  SeaAnemoneFeature.hpp
  *
  */
 #pragma once

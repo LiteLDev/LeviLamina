@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunkInterlocker.hpp
+ * @file  SubChunkInterlocker.hpp
  *
  */
 #pragma once

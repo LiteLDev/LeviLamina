@@ -1,5 +1,5 @@
 /**
- * @file  MC/MultifaceFeature.hpp
+ * @file  MultifaceFeature.hpp
  *
  */
 #pragma once

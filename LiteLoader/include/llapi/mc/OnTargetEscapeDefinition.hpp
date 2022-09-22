@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnTargetEscapeDefinition.hpp
+ * @file  OnTargetEscapeDefinition.hpp
  *
  */
 #pragma once

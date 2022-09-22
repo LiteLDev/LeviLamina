@@ -1,5 +1,5 @@
 /**
- * @file  MC/LabTableContainerScreenValidator.hpp
+ * @file  LabTableContainerScreenValidator.hpp
  *
  */
 #pragma once

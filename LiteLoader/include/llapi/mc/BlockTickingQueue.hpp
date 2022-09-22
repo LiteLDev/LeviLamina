@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockTickingQueue.hpp
+ * @file  BlockTickingQueue.hpp
  *
  */
 #pragma once

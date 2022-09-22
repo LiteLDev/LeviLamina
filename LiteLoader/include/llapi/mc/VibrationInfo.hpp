@@ -1,5 +1,5 @@
 /**
- * @file  MC/VibrationInfo.hpp
+ * @file  VibrationInfo.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelSoundEventMap.hpp
+ * @file  LevelSoundEventMap.hpp
  *
  */
 #pragma once

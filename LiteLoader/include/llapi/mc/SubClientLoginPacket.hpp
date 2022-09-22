@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubClientLoginPacket.hpp
+ * @file  SubClientLoginPacket.hpp
  *
  */
 #pragma once

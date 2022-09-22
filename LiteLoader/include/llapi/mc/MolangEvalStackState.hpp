@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangEvalStackState.hpp
+ * @file  MolangEvalStackState.hpp
  *
  */
 #pragma once

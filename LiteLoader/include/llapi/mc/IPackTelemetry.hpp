@@ -1,5 +1,5 @@
 /**
- * @file  MC/IPackTelemetry.hpp
+ * @file  IPackTelemetry.hpp
  *
  */
 #pragma once

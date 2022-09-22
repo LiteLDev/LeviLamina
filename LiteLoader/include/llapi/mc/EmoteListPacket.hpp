@@ -1,5 +1,5 @@
 /**
- * @file  MC/EmoteListPacket.hpp
+ * @file  EmoteListPacket.hpp
  *
  */
 #pragma once

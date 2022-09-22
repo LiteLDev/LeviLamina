@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootItemMatchToolCondition.hpp
+ * @file  LootItemMatchToolCondition.hpp
  *
  */
 #pragma once

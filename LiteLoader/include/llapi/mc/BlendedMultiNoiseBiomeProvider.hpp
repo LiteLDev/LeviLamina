@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlendedMultiNoiseBiomeProvider.hpp
+ * @file  BlendedMultiNoiseBiomeProvider.hpp
  *
  */
 #pragma once

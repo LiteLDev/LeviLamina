@@ -1,5 +1,5 @@
 /**
- * @file  MC/FitDoubleXYRoom.hpp
+ * @file  FitDoubleXYRoom.hpp
  *
  */
 #pragma once

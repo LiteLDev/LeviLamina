@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherFossilFeature.hpp
+ * @file  NetherFossilFeature.hpp
  *
  */
 #pragma once

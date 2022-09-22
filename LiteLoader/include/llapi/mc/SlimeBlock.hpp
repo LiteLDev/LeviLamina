@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeBlock.hpp
+ * @file  SlimeBlock.hpp
  *
  */
 #pragma once

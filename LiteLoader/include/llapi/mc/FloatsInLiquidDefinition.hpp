@@ -1,5 +1,5 @@
 /**
- * @file  MC/FloatsInLiquidDefinition.hpp
+ * @file  FloatsInLiquidDefinition.hpp
  *
  */
 #pragma once

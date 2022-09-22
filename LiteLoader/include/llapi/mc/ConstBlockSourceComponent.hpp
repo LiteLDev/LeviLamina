@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConstBlockSourceComponent.hpp
+ * @file  ConstBlockSourceComponent.hpp
  *
  */
 #pragma once

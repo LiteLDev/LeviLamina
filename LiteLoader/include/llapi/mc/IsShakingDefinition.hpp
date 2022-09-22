@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsShakingDefinition.hpp
+ * @file  IsShakingDefinition.hpp
  *
  */
 #pragma once

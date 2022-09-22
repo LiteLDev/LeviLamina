@@ -1,5 +1,5 @@
 /**
- * @file  MC/AncientCityStart.hpp
+ * @file  AncientCityStart.hpp
  *
  */
 #pragma once

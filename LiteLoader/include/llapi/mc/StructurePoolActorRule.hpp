@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolActorRule.hpp
+ * @file  StructurePoolActorRule.hpp
  *
  */
 #pragma once

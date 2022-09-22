@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateAttributesPacket.hpp
+ * @file  UpdateAttributesPacket.hpp
  *
  */
 #pragma once

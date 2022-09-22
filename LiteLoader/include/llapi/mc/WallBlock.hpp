@@ -1,5 +1,5 @@
 /**
- * @file  MC/WallBlock.hpp
+ * @file  WallBlock.hpp
  *
  */
 #pragma once

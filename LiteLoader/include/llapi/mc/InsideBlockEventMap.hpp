@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideBlockEventMap.hpp
+ * @file  InsideBlockEventMap.hpp
  *
  */
 #pragma once

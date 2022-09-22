@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeRandomDirectionDefinition.hpp
+ * @file  SlimeRandomDirectionDefinition.hpp
  *
  */
 #pragma once

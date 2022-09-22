@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookAtBlockDefinition.hpp
+ * @file  LookAtBlockDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChemistryItem.hpp
+ * @file  ChemistryItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AsynchronousIPResolver.hpp
+ * @file  AsynchronousIPResolver.hpp
  *
  */
 #pragma once

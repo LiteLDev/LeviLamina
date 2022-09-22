@@ -1,5 +1,5 @@
 /**
- * @file  MC/AutomaticFeatureRules.hpp
+ * @file  AutomaticFeatureRules.hpp
  *
  */
 #pragma once

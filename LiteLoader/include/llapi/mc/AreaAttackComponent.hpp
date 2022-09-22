@@ -1,5 +1,5 @@
 /**
- * @file  MC/AreaAttackComponent.hpp
+ * @file  AreaAttackComponent.hpp
  *
  */
 #pragma once

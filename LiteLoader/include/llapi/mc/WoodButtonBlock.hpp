@@ -1,5 +1,5 @@
 /**
- * @file  MC/WoodButtonBlock.hpp
+ * @file  WoodButtonBlock.hpp
  *
  */
 #pragma once

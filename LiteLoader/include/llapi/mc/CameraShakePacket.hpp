@@ -1,5 +1,5 @@
 /**
- * @file  MC/CameraShakePacket.hpp
+ * @file  CameraShakePacket.hpp
  *
  */
 #pragma once

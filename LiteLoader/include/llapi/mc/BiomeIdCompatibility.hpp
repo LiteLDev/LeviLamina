@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeIdCompatibility.hpp
+ * @file  BiomeIdCompatibility.hpp
  *
  */
 #pragma once

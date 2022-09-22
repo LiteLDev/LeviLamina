@@ -1,5 +1,5 @@
 /**
- * @file  MC/BuoyancyComponent.hpp
+ * @file  BuoyancyComponent.hpp
  *
  */
 #pragma once

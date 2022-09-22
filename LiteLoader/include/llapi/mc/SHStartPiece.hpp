@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHStartPiece.hpp
+ * @file  SHStartPiece.hpp
  *
  */
 #pragma once

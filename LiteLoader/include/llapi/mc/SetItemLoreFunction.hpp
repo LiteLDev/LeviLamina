@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetItemLoreFunction.hpp
+ * @file  SetItemLoreFunction.hpp
  *
  */
 #pragma once

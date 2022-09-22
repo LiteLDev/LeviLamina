@@ -1,5 +1,5 @@
 /**
- * @file  MC/IResourcePackRepository.hpp
+ * @file  IResourcePackRepository.hpp
  *
  */
 #pragma once

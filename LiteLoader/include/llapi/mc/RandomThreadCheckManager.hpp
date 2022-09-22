@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomThreadCheckManager.hpp
+ * @file  RandomThreadCheckManager.hpp
  *
  */
 #pragma once

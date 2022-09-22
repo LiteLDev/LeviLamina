@@ -1,5 +1,5 @@
 /**
- * @file  MC/ITreeCanopyWrapper.hpp
+ * @file  ITreeCanopyWrapper.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExperiencePotionItem.hpp
+ * @file  ExperiencePotionItem.hpp
  *
  */
 #pragma once

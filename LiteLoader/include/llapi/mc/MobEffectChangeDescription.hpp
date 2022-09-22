@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobEffectChangeDescription.hpp
+ * @file  MobEffectChangeDescription.hpp
  *
  */
 #pragma once

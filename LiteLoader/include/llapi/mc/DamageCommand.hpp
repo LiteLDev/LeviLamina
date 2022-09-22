@@ -1,5 +1,5 @@
 /**
- * @file  MC/DamageCommand.hpp
+ * @file  DamageCommand.hpp
  *
  */
 #pragma once

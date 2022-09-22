@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorPickRequestPacket.hpp
+ * @file  ActorPickRequestPacket.hpp
  *
  */
 #pragma once

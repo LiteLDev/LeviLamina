@@ -1,5 +1,5 @@
 /**
- * @file  MC/BedrockLog.hpp
+ * @file  BedrockLog.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TorchBlock.hpp
+ * @file  TorchBlock.hpp
  *
  */
 #pragma once

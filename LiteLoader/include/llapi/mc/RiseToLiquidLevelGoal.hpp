@@ -1,5 +1,5 @@
 /**
- * @file  MC/RiseToLiquidLevelGoal.hpp
+ * @file  RiseToLiquidLevelGoal.hpp
  *
  */
 #pragma once

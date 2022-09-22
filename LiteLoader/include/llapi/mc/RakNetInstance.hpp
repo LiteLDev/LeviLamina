@@ -1,5 +1,5 @@
 /**
- * @file  MC/RakNetInstance.hpp
+ * @file  RakNetInstance.hpp
  *
  */
 #pragma once

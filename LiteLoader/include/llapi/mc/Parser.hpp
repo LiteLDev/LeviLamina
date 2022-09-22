@@ -1,5 +1,5 @@
 /**
- * @file  MC/Parser.hpp
+ * @file  Parser.hpp
  *
  */
 #pragma once

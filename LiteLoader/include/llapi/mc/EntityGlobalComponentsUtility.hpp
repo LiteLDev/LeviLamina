@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityGlobalComponentsUtility.hpp
+ * @file  EntityGlobalComponentsUtility.hpp
  *
  */
 #pragma once

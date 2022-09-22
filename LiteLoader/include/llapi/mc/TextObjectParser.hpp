@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextObjectParser.hpp
+ * @file  TextObjectParser.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/GroundedConstraint.hpp
+ * @file  GroundedConstraint.hpp
  *
  */
 #pragma once

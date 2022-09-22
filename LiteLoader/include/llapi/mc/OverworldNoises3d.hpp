@@ -1,5 +1,5 @@
 /**
- * @file  MC/OverworldNoises3d.hpp
+ * @file  OverworldNoises3d.hpp
  *
  */
 #pragma once

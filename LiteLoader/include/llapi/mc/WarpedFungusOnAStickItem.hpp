@@ -1,5 +1,5 @@
 /**
- * @file  MC/WarpedFungusOnAStickItem.hpp
+ * @file  WarpedFungusOnAStickItem.hpp
  *
  */
 #pragma once

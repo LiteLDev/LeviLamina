@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangEvalParams.hpp
+ * @file  MolangEvalParams.hpp
  *
  */
 #pragma once

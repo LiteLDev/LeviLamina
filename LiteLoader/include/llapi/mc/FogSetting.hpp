@@ -1,5 +1,5 @@
 /**
- * @file  MC/FogSetting.hpp
+ * @file  FogSetting.hpp
  *
  */
 #pragma once

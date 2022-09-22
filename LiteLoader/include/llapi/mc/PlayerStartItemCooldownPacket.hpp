@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerStartItemCooldownPacket.hpp
+ * @file  PlayerStartItemCooldownPacket.hpp
  *
  */
 #pragma once

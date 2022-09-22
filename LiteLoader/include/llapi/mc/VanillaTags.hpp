@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaTags.hpp
+ * @file  VanillaTags.hpp
  *
  */
 #pragma once

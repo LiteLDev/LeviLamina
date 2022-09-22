@@ -1,5 +1,5 @@
 /**
- * @file  MC/TridentItem.hpp
+ * @file  TridentItem.hpp
  *
  */
 #pragma once

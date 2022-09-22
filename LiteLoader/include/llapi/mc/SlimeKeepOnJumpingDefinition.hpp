@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeKeepOnJumpingDefinition.hpp
+ * @file  SlimeKeepOnJumpingDefinition.hpp
  *
  */
 #pragma once

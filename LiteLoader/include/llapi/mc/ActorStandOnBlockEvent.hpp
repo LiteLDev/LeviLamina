@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorStandOnBlockEvent.hpp
+ * @file  ActorStandOnBlockEvent.hpp
  *
  */
 #pragma once

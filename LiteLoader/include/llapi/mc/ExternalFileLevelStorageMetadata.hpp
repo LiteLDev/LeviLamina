@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExternalFileLevelStorageMetadata.hpp
+ * @file  ExternalFileLevelStorageMetadata.hpp
  *
  */
 #pragma once

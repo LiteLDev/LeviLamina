@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapUpgradingRecipe.hpp
+ * @file  MapUpgradingRecipe.hpp
  *
  */
 #pragma once

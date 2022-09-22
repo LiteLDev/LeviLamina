@@ -1,5 +1,5 @@
 /**
- * @file  MC/CauldronBlock.hpp
+ * @file  CauldronBlock.hpp
  *
  */
 #pragma once

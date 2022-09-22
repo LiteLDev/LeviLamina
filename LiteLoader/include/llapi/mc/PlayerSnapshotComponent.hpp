@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerSnapshotComponent.hpp
+ * @file  PlayerSnapshotComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Predicate.hpp
+ * @file  Predicate.hpp
  *
  */
 #pragma once

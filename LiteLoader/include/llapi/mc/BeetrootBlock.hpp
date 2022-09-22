@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeetrootBlock.hpp
+ * @file  BeetrootBlock.hpp
  *
  */
 #pragma once

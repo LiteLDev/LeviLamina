@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetChunkDataCommand.hpp
+ * @file  GetChunkDataCommand.hpp
  *
  */
 #pragma once

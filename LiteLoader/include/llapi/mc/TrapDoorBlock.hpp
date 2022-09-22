@@ -1,5 +1,5 @@
 /**
- * @file  MC/TrapDoorBlock.hpp
+ * @file  TrapDoorBlock.hpp
  *
  */
 #pragma once

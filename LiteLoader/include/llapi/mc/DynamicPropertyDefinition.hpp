@@ -1,5 +1,5 @@
 /**
- * @file  MC/DynamicPropertyDefinition.hpp
+ * @file  DynamicPropertyDefinition.hpp
  *
  */
 #pragma once

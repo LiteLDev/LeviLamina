@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeComponentLoading.hpp
+ * @file  BiomeComponentLoading.hpp
  *
  */
 #pragma once

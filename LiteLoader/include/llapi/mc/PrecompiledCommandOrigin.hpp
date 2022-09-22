@@ -1,5 +1,5 @@
 /**
- * @file  MC/PrecompiledCommandOrigin.hpp
+ * @file  PrecompiledCommandOrigin.hpp
  *
  */
 #pragma once

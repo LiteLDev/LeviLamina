@@ -1,5 +1,5 @@
 /**
- * @file  MC/MendingEnchant.hpp
+ * @file  MendingEnchant.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/OwnerHurtByTargetGoal.hpp
+ * @file  OwnerHurtByTargetGoal.hpp
  *
  */
 #pragma once

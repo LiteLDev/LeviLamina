@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestBatch.hpp
+ * @file  ItemStackRequestBatch.hpp
  *
  */
 #pragma once

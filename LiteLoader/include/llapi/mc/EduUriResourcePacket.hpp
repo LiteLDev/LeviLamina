@@ -1,5 +1,5 @@
 /**
- * @file  MC/EduUriResourcePacket.hpp
+ * @file  EduUriResourcePacket.hpp
  *
  */
 #pragma once

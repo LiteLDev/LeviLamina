@@ -1,5 +1,5 @@
 /**
- * @file  MC/SequenceBehaviorNode.hpp
+ * @file  SequenceBehaviorNode.hpp
  *
  */
 #pragma once

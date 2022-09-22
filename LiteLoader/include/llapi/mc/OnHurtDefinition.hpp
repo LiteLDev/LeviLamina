@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnHurtDefinition.hpp
+ * @file  OnHurtDefinition.hpp
  *
  */
 #pragma once

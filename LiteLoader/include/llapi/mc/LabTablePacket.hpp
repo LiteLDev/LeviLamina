@@ -1,5 +1,5 @@
 /**
- * @file  MC/LabTablePacket.hpp
+ * @file  LabTablePacket.hpp
  *
  */
 #pragma once

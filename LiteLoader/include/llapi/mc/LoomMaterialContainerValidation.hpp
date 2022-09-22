@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoomMaterialContainerValidation.hpp
+ * @file  LoomMaterialContainerValidation.hpp
  *
  */
 #pragma once

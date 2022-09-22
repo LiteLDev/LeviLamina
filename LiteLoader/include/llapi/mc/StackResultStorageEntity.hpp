@@ -1,5 +1,5 @@
 /**
- * @file  MC/StackResultStorageEntity.hpp
+ * @file  StackResultStorageEntity.hpp
  *
  */
 #pragma once

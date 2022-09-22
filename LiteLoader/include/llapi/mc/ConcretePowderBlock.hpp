@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConcretePowderBlock.hpp
+ * @file  ConcretePowderBlock.hpp
  *
  */
 #pragma once

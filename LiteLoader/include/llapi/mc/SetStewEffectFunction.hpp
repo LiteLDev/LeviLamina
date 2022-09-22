@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetStewEffectFunction.hpp
+ * @file  SetStewEffectFunction.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PreferredPathDescription.hpp
+ * @file  PreferredPathDescription.hpp
  *
  */
 #pragma once

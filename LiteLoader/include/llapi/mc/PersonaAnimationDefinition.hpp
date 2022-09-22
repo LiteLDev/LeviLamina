@@ -1,5 +1,5 @@
 /**
- * @file  MC/PersonaAnimationDefinition.hpp
+ * @file  PersonaAnimationDefinition.hpp
  *
  */
 #pragma once

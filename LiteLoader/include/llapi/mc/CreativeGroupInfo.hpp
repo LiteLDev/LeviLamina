@@ -1,5 +1,5 @@
 /**
- * @file  MC/CreativeGroupInfo.hpp
+ * @file  CreativeGroupInfo.hpp
  *
  */
 #pragma once

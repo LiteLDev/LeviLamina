@@ -1,5 +1,5 @@
 /**
- * @file  MC/AttributeCollection.hpp
+ * @file  AttributeCollection.hpp
  *
  */
 #pragma once

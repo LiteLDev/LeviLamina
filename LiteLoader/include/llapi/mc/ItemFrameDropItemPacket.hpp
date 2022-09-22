@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemFrameDropItemPacket.hpp
+ * @file  ItemFrameDropItemPacket.hpp
  *
  */
 #pragma once

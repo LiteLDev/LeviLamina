@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerLevelEventCoordinator.hpp
+ * @file  ServerLevelEventCoordinator.hpp
  *
  */
 #pragma once

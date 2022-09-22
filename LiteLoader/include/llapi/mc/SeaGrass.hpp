@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeaGrass.hpp
+ * @file  SeaGrass.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/HorseContainerManagerModel.hpp
+ * @file  HorseContainerManagerModel.hpp
  *
  */
 #pragma once

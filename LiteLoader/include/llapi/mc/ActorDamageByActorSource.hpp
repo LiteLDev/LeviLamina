@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDamageByActorSource.hpp
+ * @file  ActorDamageByActorSource.hpp
  *
  */
 #pragma once

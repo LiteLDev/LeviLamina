@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeatDescriptionUtility.hpp
+ * @file  SeatDescriptionUtility.hpp
  *
  */
 #pragma once

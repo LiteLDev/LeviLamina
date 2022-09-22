@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlushableStorageAreaEnv.hpp
+ * @file  FlushableStorageAreaEnv.hpp
  *
  */
 #pragma once

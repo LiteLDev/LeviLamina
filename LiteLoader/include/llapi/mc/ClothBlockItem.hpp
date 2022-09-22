@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClothBlockItem.hpp
+ * @file  ClothBlockItem.hpp
  *
  */
 #pragma once

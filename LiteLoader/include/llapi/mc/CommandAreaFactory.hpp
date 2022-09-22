@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandAreaFactory.hpp
+ * @file  CommandAreaFactory.hpp
  *
  */
 #pragma once

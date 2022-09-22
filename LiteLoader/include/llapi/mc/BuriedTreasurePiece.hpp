@@ -1,5 +1,5 @@
 /**
- * @file  MC/BuriedTreasurePiece.hpp
+ * @file  BuriedTreasurePiece.hpp
  *
  */
 #pragma once

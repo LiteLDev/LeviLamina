@@ -1,5 +1,5 @@
 /**
- * @file  MC/BrewingStandInputContainerValidation.hpp
+ * @file  BrewingStandInputContainerValidation.hpp
  *
  */
 #pragma once

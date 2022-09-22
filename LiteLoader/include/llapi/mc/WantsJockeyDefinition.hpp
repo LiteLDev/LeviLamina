@@ -1,5 +1,5 @@
 /**
- * @file  MC/WantsJockeyDefinition.hpp
+ * @file  WantsJockeyDefinition.hpp
  *
  */
 #pragma once

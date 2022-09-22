@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmithingTableContainerScreenValidator.hpp
+ * @file  SmithingTableContainerScreenValidator.hpp
  *
  */
 #pragma once

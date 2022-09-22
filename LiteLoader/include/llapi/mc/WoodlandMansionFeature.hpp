@@ -1,5 +1,5 @@
 /**
- * @file  MC/WoodlandMansionFeature.hpp
+ * @file  WoodlandMansionFeature.hpp
  *
  */
 #pragma once

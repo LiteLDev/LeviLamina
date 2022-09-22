@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacySpringsFeature.hpp
+ * @file  LegacySpringsFeature.hpp
  *
  */
 #pragma once

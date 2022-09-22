@@ -1,5 +1,5 @@
 /**
- * @file  MC/StainedGlassBlock.hpp
+ * @file  StainedGlassBlock.hpp
  *
  */
 #pragma once

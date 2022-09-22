@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShulkerBoxContainerScreenValidator.hpp
+ * @file  ShulkerBoxContainerScreenValidator.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockGraphics.hpp
+ * @file  BlockGraphics.hpp
  *
  */
 #pragma once

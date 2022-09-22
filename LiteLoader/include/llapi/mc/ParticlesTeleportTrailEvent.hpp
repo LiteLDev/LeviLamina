@@ -1,5 +1,5 @@
 /**
- * @file  MC/ParticlesTeleportTrailEvent.hpp
+ * @file  ParticlesTeleportTrailEvent.hpp
  *
  */
 #pragma once

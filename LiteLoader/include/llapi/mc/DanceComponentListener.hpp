@@ -1,5 +1,5 @@
 /**
- * @file  MC/DanceComponentListener.hpp
+ * @file  DanceComponentListener.hpp
  *
  */
 #pragma once

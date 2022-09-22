@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackBaseComponentsHelper.hpp
+ * @file  ItemStackBaseComponentsHelper.hpp
  *
  */
 #pragma once

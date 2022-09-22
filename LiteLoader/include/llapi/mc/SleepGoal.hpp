@@ -1,5 +1,5 @@
 /**
- * @file  MC/SleepGoal.hpp
+ * @file  SleepGoal.hpp
  *
  */
 #pragma once

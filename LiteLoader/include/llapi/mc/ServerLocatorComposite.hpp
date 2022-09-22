@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerLocatorComposite.hpp
+ * @file  ServerLocatorComposite.hpp
  *
  */
 #pragma once

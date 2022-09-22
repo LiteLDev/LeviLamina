@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaBlockTypes.hpp
+ * @file  VanillaBlockTypes.hpp
  *
  */
 #pragma once

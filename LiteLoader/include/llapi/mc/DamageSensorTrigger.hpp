@@ -1,5 +1,5 @@
 /**
- * @file  MC/DamageSensorTrigger.hpp
+ * @file  DamageSensorTrigger.hpp
  *
  */
 #pragma once

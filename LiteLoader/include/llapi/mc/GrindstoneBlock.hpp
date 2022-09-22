@@ -1,5 +1,5 @@
 /**
- * @file  MC/GrindstoneBlock.hpp
+ * @file  GrindstoneBlock.hpp
  *
  */
 #pragma once

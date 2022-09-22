@@ -1,5 +1,5 @@
 /**
- * @file  MC/DefinitionModifier.hpp
+ * @file  DefinitionModifier.hpp
  *
  */
 #pragma once

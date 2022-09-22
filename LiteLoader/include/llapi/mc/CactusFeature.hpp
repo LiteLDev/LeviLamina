@@ -1,5 +1,5 @@
 /**
- * @file  MC/CactusFeature.hpp
+ * @file  CactusFeature.hpp
  *
  */
 #pragma once

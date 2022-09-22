@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestActionSwap.hpp
+ * @file  ItemStackRequestActionSwap.hpp
  *
  */
 #pragma once

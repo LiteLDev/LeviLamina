@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureDataLoadHelper.hpp
+ * @file  StructureDataLoadHelper.hpp
  *
  */
 #pragma once

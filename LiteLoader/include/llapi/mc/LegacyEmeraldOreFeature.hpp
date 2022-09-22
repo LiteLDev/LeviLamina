@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyEmeraldOreFeature.hpp
+ * @file  LegacyEmeraldOreFeature.hpp
  *
  */
 #pragma once

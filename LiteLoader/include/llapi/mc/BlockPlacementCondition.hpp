@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPlacementCondition.hpp
+ * @file  BlockPlacementCondition.hpp
  *
  */
 #pragma once

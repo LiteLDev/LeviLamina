@@ -1,5 +1,5 @@
 /**
- * @file  MC/ProjectileHitEvent.hpp
+ * @file  ProjectileHitEvent.hpp
  *
  */
 #pragma once

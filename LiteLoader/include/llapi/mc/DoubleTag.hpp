@@ -1,5 +1,5 @@
 /**
- * @file  MC/DoubleTag.hpp
+ * @file  DoubleTag.hpp
  *
  */
 #pragma once

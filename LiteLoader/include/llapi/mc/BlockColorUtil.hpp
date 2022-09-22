@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockColorUtil.hpp
+ * @file  BlockColorUtil.hpp
  *
  */
 #pragma once

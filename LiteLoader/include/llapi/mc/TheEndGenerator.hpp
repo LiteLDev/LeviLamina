@@ -1,5 +1,5 @@
 /**
- * @file  MC/TheEndGenerator.hpp
+ * @file  TheEndGenerator.hpp
  *
  */
 #pragma once

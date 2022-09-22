@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExpiringTick.hpp
+ * @file  ExpiringTick.hpp
  *
  */
 #pragma once

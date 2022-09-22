@@ -1,5 +1,5 @@
 /**
- * @file  MC/FurnaceResultContainerValidation.hpp
+ * @file  FurnaceResultContainerValidation.hpp
  *
  */
 #pragma once

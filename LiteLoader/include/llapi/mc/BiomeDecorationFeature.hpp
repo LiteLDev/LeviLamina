@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeDecorationFeature.hpp
+ * @file  BiomeDecorationFeature.hpp
  *
  */
 #pragma once

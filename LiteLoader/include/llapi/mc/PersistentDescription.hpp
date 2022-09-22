@@ -1,5 +1,5 @@
 /**
- * @file  MC/PersistentDescription.hpp
+ * @file  PersistentDescription.hpp
  *
  */
 #pragma once

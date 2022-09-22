@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandChainedSubcommand.hpp
+ * @file  CommandChainedSubcommand.hpp
  *
  */
 #pragma once

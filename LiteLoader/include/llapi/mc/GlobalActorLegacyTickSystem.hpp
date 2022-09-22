@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlobalActorLegacyTickSystem.hpp
+ * @file  GlobalActorLegacyTickSystem.hpp
  *
  */
 #pragma once

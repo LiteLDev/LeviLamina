@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnderDragon.hpp
+ * @file  EnderDragon.hpp
  *
  */
 #pragma once

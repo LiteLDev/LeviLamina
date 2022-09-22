@@ -1,5 +1,5 @@
 /**
- * @file  MC/HatchetItem.hpp
+ * @file  HatchetItem.hpp
  *
  */
 #pragma once

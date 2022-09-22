@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsChestedDefinition.hpp
+ * @file  IsChestedDefinition.hpp
  *
  */
 #pragma once

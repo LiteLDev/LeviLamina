@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptTickListener.hpp
+ * @file  ScriptTickListener.hpp
  *
  */
 #pragma once

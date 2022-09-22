@@ -1,5 +1,5 @@
 /**
- * @file  MC/AttackDefinition.hpp
+ * @file  AttackDefinition.hpp
  *
  */
 #pragma once

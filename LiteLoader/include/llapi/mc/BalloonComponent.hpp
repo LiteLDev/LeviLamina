@@ -1,5 +1,5 @@
 /**
- * @file  MC/BalloonComponent.hpp
+ * @file  BalloonComponent.hpp
  *
  */
 #pragma once

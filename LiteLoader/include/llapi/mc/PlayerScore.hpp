@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerScore.hpp
+ * @file  PlayerScore.hpp
  *
  */
 #pragma once

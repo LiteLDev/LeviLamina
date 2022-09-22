@@ -1,5 +1,5 @@
 /**
- * @file  MC/PassengerFreezeMovementSystem.hpp
+ * @file  PassengerFreezeMovementSystem.hpp
  *
  */
 #pragma once

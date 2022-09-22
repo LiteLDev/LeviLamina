@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoadingProgressTickingSystem.hpp
+ * @file  LoadingProgressTickingSystem.hpp
  *
  */
 #pragma once

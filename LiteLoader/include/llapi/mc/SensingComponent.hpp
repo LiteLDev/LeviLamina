@@ -1,5 +1,5 @@
 /**
- * @file  MC/SensingComponent.hpp
+ * @file  SensingComponent.hpp
  *
  */
 #pragma once

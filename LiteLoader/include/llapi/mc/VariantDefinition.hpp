@@ -1,5 +1,5 @@
 /**
- * @file  MC/VariantDefinition.hpp
+ * @file  VariantDefinition.hpp
  *
  */
 #pragma once

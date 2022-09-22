@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerOpenPacket.hpp
+ * @file  ContainerOpenPacket.hpp
  *
  */
 #pragma once

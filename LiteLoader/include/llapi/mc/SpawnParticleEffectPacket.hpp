@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnParticleEffectPacket.hpp
+ * @file  SpawnParticleEffectPacket.hpp
  *
  */
 #pragma once

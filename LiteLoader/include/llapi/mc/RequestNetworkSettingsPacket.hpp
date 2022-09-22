@@ -1,5 +1,5 @@
 /**
- * @file  MC/RequestNetworkSettingsPacket.hpp
+ * @file  RequestNetworkSettingsPacket.hpp
  *
  */
 #pragma once

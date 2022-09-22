@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlowerFeature.hpp
+ * @file  FlowerFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacySwampFoliageFeature.hpp
+ * @file  LegacySwampFoliageFeature.hpp
  *
  */
 #pragma once

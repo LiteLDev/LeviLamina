@@ -1,5 +1,5 @@
 /**
- * @file  MC/Spider.hpp
+ * @file  Spider.hpp
  *
  */
 #pragma once

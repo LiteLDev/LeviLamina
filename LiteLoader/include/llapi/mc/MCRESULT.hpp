@@ -1,5 +1,5 @@
 /**
- * @file  MC/MCRESULT.hpp
+ * @file  MCRESULT.hpp
  *
  */
 #pragma once

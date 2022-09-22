@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourceDefinition.hpp
+ * @file  ResourceDefinition.hpp
  *
  */
 #pragma once

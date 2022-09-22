@@ -1,5 +1,5 @@
 /**
- * @file  MC/JunglePyramidPiece.hpp
+ * @file  JunglePyramidPiece.hpp
  *
  */
 #pragma once

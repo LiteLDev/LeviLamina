@@ -1,5 +1,5 @@
 /**
- * @file  MC/RedStoneDustItem.hpp
+ * @file  RedStoneDustItem.hpp
  *
  */
 #pragma once

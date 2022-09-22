@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemReactionComponent.hpp
+ * @file  ItemReactionComponent.hpp
  *
  */
 #pragma once

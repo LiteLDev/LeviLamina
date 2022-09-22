@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelEventCoordinator.hpp
+ * @file  LevelEventCoordinator.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClayBlock.hpp
+ * @file  ClayBlock.hpp
  *
  */
 #pragma once

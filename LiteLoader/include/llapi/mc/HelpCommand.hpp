@@ -1,5 +1,5 @@
 /**
- * @file  MC/HelpCommand.hpp
+ * @file  HelpCommand.hpp
  *
  */
 #pragma once

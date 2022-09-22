@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoginPacket.hpp
+ * @file  LoginPacket.hpp
  *
  */
 #pragma once

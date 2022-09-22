@@ -1,5 +1,5 @@
 /**
- * @file  MC/Shulker.hpp
+ * @file  Shulker.hpp
  *
  */
 #pragma once

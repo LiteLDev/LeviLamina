@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnimatedImageData.hpp
+ * @file  AnimatedImageData.hpp
  *
  */
 #pragma once

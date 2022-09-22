@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomValueBounds.hpp
+ * @file  RandomValueBounds.hpp
  *
  */
 #pragma once

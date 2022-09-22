@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextureUVCoordinateSet.hpp
+ * @file  TextureUVCoordinateSet.hpp
  *
  */
 #pragma once

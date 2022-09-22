@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScaleDefinition.hpp
+ * @file  ScaleDefinition.hpp
  *
  */
 #pragma once

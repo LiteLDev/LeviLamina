@@ -1,5 +1,5 @@
 /**
- * @file  MC/EditorBootstrapper.hpp
+ * @file  EditorBootstrapper.hpp
  *
  */
 #pragma once

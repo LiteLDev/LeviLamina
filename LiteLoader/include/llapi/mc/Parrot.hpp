@@ -1,5 +1,5 @@
 /**
- * @file  MC/Parrot.hpp
+ * @file  Parrot.hpp
  *
  */
 #pragma once

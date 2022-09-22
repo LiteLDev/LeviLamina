@@ -1,5 +1,5 @@
 /**
- * @file  MC/PackedItemUseLegacyInventoryTransaction.hpp
+ * @file  PackedItemUseLegacyInventoryTransaction.hpp
  *
  */
 #pragma once

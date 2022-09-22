@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookAtActorDefinition.hpp
+ * @file  LookAtActorDefinition.hpp
  *
  */
 #pragma once

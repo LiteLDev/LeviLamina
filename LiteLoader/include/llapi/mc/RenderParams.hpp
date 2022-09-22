@@ -1,5 +1,5 @@
 /**
- * @file  MC/RenderParams.hpp
+ * @file  RenderParams.hpp
  *
  */
 #pragma once

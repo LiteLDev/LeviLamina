@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntitySensorDefinition.hpp
+ * @file  EntitySensorDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FungusStem.hpp
+ * @file  FungusStem.hpp
  *
  */
 #pragma once

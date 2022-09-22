@@ -1,5 +1,5 @@
 /**
- * @file  MC/CutCopperStairs.hpp
+ * @file  CutCopperStairs.hpp
  *
  */
 #pragma once

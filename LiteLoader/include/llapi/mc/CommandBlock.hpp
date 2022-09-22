@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandBlock.hpp
+ * @file  CommandBlock.hpp
  *
  */
 #pragma once

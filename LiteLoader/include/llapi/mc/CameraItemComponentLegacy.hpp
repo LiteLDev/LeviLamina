@@ -1,5 +1,5 @@
 /**
- * @file  MC/CameraItemComponentLegacy.hpp
+ * @file  CameraItemComponentLegacy.hpp
  *
  */
 #pragma once

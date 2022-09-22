@@ -1,5 +1,5 @@
 /**
- * @file  MC/Blaze.hpp
+ * @file  Blaze.hpp
  *
  */
 #pragma once

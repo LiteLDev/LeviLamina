@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeMoveControlDescription.hpp
+ * @file  SlimeMoveControlDescription.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Allay.hpp
+ * @file  Allay.hpp
  *
  */
 #pragma once

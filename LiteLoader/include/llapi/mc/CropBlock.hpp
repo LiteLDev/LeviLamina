@@ -1,5 +1,5 @@
 /**
- * @file  MC/CropBlock.hpp
+ * @file  CropBlock.hpp
  *
  */
 #pragma once

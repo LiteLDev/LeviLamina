@@ -1,5 +1,5 @@
 /**
- * @file  MC/HurtOwnerSubcomponent.hpp
+ * @file  HurtOwnerSubcomponent.hpp
  *
  */
 #pragma once

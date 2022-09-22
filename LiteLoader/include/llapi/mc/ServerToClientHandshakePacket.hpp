@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerToClientHandshakePacket.hpp
+ * @file  ServerToClientHandshakePacket.hpp
  *
  */
 #pragma once

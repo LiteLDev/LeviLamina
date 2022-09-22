@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunkRelighter.hpp
+ * @file  SubChunkRelighter.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHRoomCrossing.hpp
+ * @file  SHRoomCrossing.hpp
  *
  */
 #pragma once

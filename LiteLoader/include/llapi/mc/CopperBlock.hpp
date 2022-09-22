@@ -1,5 +1,5 @@
 /**
- * @file  MC/CopperBlock.hpp
+ * @file  CopperBlock.hpp
  *
  */
 #pragma once

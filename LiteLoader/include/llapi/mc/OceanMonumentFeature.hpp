@@ -1,5 +1,5 @@
 /**
- * @file  MC/OceanMonumentFeature.hpp
+ * @file  OceanMonumentFeature.hpp
  *
  */
 #pragma once

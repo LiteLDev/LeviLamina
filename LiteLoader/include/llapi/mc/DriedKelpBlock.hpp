@@ -1,5 +1,5 @@
 /**
- * @file  MC/DriedKelpBlock.hpp
+ * @file  DriedKelpBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DebugInfoPacket.hpp
+ * @file  DebugInfoPacket.hpp
  *
  */
 #pragma once

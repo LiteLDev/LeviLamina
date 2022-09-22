@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockMaterialInstancesComponent.hpp
+ * @file  BlockMaterialInstancesComponent.hpp
  *
  */
 #pragma once

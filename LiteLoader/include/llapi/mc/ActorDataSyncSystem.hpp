@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDataSyncSystem.hpp
+ * @file  ActorDataSyncSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInWaterOrRainTest.hpp
+ * @file  ActorInWaterOrRainTest.hpp
  *
  */
 #pragma once

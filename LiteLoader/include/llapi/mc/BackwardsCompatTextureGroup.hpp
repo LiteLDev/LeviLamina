@@ -1,5 +1,5 @@
 /**
- * @file  MC/BackwardsCompatTextureGroup.hpp
+ * @file  BackwardsCompatTextureGroup.hpp
  *
  */
 #pragma once

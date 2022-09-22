@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimWithEntityGoal.hpp
+ * @file  SwimWithEntityGoal.hpp
  *
  */
 #pragma once

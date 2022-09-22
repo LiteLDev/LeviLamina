@@ -1,5 +1,5 @@
 /**
- * @file  MC/TickWorldDescription.hpp
+ * @file  TickWorldDescription.hpp
  *
  */
 #pragma once

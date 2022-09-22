@@ -1,5 +1,5 @@
 /**
- * @file  MC/StopCommand.hpp
+ * @file  StopCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BookEditPacket.hpp
+ * @file  BookEditPacket.hpp
  *
  */
 #pragma once

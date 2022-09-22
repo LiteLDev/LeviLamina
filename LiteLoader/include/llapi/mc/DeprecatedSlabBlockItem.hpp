@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeprecatedSlabBlockItem.hpp
+ * @file  DeprecatedSlabBlockItem.hpp
  *
  */
 #pragma once

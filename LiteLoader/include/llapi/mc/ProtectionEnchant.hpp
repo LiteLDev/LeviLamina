@@ -1,5 +1,5 @@
 /**
- * @file  MC/ProtectionEnchant.hpp
+ * @file  ProtectionEnchant.hpp
  *
  */
 #pragma once

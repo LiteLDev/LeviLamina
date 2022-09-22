@@ -1,5 +1,5 @@
 /**
- * @file  MC/StalkAndPounceOnTargetGoal.hpp
+ * @file  StalkAndPounceOnTargetGoal.hpp
  *
  */
 #pragma once

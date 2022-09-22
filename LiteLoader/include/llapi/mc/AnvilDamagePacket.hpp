@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnvilDamagePacket.hpp
+ * @file  AnvilDamagePacket.hpp
  *
  */
 #pragma once

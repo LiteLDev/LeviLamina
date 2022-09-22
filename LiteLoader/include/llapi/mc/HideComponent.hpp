@@ -1,5 +1,5 @@
 /**
- * @file  MC/HideComponent.hpp
+ * @file  HideComponent.hpp
  *
  */
 #pragma once

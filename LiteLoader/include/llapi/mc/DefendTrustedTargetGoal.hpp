@@ -1,5 +1,5 @@
 /**
- * @file  MC/DefendTrustedTargetGoal.hpp
+ * @file  DefendTrustedTargetGoal.hpp
  *
  */
 #pragma once

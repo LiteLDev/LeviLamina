@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInactivityTimerTest.hpp
+ * @file  ActorInactivityTimerTest.hpp
  *
  */
 #pragma once

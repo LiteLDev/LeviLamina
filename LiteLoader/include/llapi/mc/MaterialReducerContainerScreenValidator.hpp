@@ -1,5 +1,5 @@
 /**
- * @file  MC/MaterialReducerContainerScreenValidator.hpp
+ * @file  MaterialReducerContainerScreenValidator.hpp
  *
  */
 #pragma once

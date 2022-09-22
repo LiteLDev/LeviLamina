@@ -1,5 +1,5 @@
 /**
- * @file  MC/Creeper.hpp
+ * @file  Creeper.hpp
  *
  */
 #pragma once

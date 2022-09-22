@@ -1,5 +1,5 @@
 /**
- * @file  MC/SharedAttributes.hpp
+ * @file  SharedAttributes.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Squid.hpp
+ * @file  Squid.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetLastHurtByPacket.hpp
+ * @file  SetLastHurtByPacket.hpp
  *
  */
 #pragma once

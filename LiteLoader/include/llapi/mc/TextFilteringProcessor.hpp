@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextFilteringProcessor.hpp
+ * @file  TextFilteringProcessor.hpp
  *
  */
 #pragma once

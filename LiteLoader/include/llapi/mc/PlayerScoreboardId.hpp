@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerScoreboardId.hpp
+ * @file  PlayerScoreboardId.hpp
  *
  */
 #pragma once

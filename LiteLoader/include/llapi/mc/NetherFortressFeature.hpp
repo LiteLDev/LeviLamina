@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherFortressFeature.hpp
+ * @file  NetherFortressFeature.hpp
  *
  */
 #pragma once

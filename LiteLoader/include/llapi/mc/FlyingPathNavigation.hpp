@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlyingPathNavigation.hpp
+ * @file  FlyingPathNavigation.hpp
  *
  */
 #pragma once

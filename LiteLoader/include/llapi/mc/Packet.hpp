@@ -1,5 +1,5 @@
 /**
- * @file  MC/Packet.hpp
+ * @file  Packet.hpp
  *
  */
 #pragma once

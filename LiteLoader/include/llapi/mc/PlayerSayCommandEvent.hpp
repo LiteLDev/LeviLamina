@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerSayCommandEvent.hpp
+ * @file  PlayerSayCommandEvent.hpp
  *
  */
 #pragma once

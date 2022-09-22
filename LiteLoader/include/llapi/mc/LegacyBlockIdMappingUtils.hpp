@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyBlockIdMappingUtils.hpp
+ * @file  LegacyBlockIdMappingUtils.hpp
  *
  */
 #pragma once

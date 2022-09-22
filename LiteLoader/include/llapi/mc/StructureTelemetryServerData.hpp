@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureTelemetryServerData.hpp
+ * @file  StructureTelemetryServerData.hpp
  *
  */
 #pragma once

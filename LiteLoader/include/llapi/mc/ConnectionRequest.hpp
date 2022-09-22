@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConnectionRequest.hpp
+ * @file  ConnectionRequest.hpp
  *
  */
 #pragma once

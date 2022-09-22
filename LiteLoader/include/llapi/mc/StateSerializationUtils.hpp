@@ -1,5 +1,5 @@
 /**
- * @file  MC/StateSerializationUtils.hpp
+ * @file  StateSerializationUtils.hpp
  *
  */
 #pragma once

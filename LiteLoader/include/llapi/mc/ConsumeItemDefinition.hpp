@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConsumeItemDefinition.hpp
+ * @file  ConsumeItemDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlotData.hpp
+ * @file  SlotData.hpp
  *
  */
 #pragma once

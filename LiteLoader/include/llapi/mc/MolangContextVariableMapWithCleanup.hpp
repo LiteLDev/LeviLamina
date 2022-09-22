@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangContextVariableMapWithCleanup.hpp
+ * @file  MolangContextVariableMapWithCleanup.hpp
  *
  */
 #pragma once

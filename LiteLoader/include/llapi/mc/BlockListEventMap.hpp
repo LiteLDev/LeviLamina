@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockListEventMap.hpp
+ * @file  BlockListEventMap.hpp
  *
  */
 #pragma once

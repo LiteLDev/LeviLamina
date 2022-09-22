@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaBlockStateTransformUtils.hpp
+ * @file  VanillaBlockStateTransformUtils.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimpleBoolFilterTest.hpp
+ * @file  SimpleBoolFilterTest.hpp
  *
  */
 #pragma once

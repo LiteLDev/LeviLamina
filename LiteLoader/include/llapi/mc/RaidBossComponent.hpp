@@ -1,5 +1,5 @@
 /**
- * @file  MC/RaidBossComponent.hpp
+ * @file  RaidBossComponent.hpp
  *
  */
 #pragma once

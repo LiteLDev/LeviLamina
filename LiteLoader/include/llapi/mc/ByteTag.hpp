@@ -1,5 +1,5 @@
 /**
- * @file  MC/ByteTag.hpp
+ * @file  ByteTag.hpp
  *
  */
 #pragma once

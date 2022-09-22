@@ -1,5 +1,5 @@
 /**
- * @file  MC/AmbientSoundIntervalDefinition.hpp
+ * @file  AmbientSoundIntervalDefinition.hpp
  *
  */
 #pragma once

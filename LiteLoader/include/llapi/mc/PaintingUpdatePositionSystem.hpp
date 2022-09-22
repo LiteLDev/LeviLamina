@@ -1,5 +1,5 @@
 /**
- * @file  MC/PaintingUpdatePositionSystem.hpp
+ * @file  PaintingUpdatePositionSystem.hpp
  *
  */
 #pragma once

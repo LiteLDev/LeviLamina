@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveTowardsRestrictionDefinition.hpp
+ * @file  MoveTowardsRestrictionDefinition.hpp
  *
  */
 #pragma once

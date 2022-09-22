@@ -1,5 +1,5 @@
 /**
- * @file  MC/BytesDataOutput.hpp
+ * @file  BytesDataOutput.hpp
  *
  */
 #pragma once

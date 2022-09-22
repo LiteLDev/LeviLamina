@@ -1,5 +1,5 @@
 /**
- * @file  MC/LabTableReaction.hpp
+ * @file  LabTableReaction.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TameableComponent.hpp
+ * @file  TameableComponent.hpp
  *
  */
 #pragma once

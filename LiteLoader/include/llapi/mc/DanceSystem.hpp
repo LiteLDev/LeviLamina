@@ -1,5 +1,5 @@
 /**
- * @file  MC/DanceSystem.hpp
+ * @file  DanceSystem.hpp
  *
  */
 #pragma once

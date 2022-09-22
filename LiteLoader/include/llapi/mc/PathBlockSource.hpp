@@ -1,5 +1,5 @@
 /**
- * @file  MC/PathBlockSource.hpp
+ * @file  PathBlockSource.hpp
  *
  */
 #pragma once

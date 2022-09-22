@@ -1,5 +1,5 @@
 /**
- * @file  MC/LanternBlock.hpp
+ * @file  LanternBlock.hpp
  *
  */
 #pragma once

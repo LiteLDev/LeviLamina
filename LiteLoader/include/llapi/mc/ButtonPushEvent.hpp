@@ -1,5 +1,5 @@
 /**
- * @file  MC/ButtonPushEvent.hpp
+ * @file  ButtonPushEvent.hpp
  *
  */
 #pragma once

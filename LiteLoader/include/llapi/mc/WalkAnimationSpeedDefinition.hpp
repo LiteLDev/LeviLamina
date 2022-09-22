@@ -1,5 +1,5 @@
 /**
- * @file  MC/WalkAnimationSpeedDefinition.hpp
+ * @file  WalkAnimationSpeedDefinition.hpp
  *
  */
 #pragma once

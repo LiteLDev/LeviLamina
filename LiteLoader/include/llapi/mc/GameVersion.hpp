@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameVersion.hpp
+ * @file  GameVersion.hpp
  *
  */
 #pragma once

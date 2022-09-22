@@ -1,5 +1,5 @@
 /**
- * @file  MC/CoralHangFeature.hpp
+ * @file  CoralHangFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBTLoader.hpp
+ * @file  NBTLoader.hpp
  *
  */
 #pragma once

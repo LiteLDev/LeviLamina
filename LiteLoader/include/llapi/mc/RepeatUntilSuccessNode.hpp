@@ -1,5 +1,5 @@
 /**
- * @file  MC/RepeatUntilSuccessNode.hpp
+ * @file  RepeatUntilSuccessNode.hpp
  *
  */
 #pragma once

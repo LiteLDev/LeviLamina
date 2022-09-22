@@ -1,5 +1,5 @@
 /**
- * @file  MC/CoralFanBlockItem.hpp
+ * @file  CoralFanBlockItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChestContainerScreenValidator.hpp
+ * @file  ChestContainerScreenValidator.hpp
  *
  */
 #pragma once

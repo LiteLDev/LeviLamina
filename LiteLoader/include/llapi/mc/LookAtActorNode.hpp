@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookAtActorNode.hpp
+ * @file  LookAtActorNode.hpp
  *
  */
 #pragma once

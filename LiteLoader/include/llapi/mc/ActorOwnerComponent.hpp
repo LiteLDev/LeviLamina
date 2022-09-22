@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorOwnerComponent.hpp
+ * @file  ActorOwnerComponent.hpp
  *
  */
 #pragma once

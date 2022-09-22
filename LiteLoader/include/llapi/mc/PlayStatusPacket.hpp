@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayStatusPacket.hpp
+ * @file  PlayStatusPacket.hpp
  *
  */
 #pragma once

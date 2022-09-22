@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompassItem.hpp
+ * @file  CompassItem.hpp
  *
  */
 #pragma once

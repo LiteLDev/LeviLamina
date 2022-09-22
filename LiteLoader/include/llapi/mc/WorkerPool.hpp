@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorkerPool.hpp
+ * @file  WorkerPool.hpp
  *
  */
 #pragma once

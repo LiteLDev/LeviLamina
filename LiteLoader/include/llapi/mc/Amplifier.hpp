@@ -1,5 +1,5 @@
 /**
- * @file  MC/Amplifier.hpp
+ * @file  Amplifier.hpp
  *
  */
 #pragma once

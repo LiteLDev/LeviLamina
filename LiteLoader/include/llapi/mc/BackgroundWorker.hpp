@@ -1,5 +1,5 @@
 /**
- * @file  MC/BackgroundWorker.hpp
+ * @file  BackgroundWorker.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DyeableComponent.hpp
+ * @file  DyeableComponent.hpp
  *
  */
 #pragma once

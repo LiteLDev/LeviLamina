@@ -1,5 +1,5 @@
 /**
- * @file  MC/Pufferfish.hpp
+ * @file  Pufferfish.hpp
  *
  */
 #pragma once

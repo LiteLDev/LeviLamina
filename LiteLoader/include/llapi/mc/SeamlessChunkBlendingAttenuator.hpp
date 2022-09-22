@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeamlessChunkBlendingAttenuator.hpp
+ * @file  SeamlessChunkBlendingAttenuator.hpp
  *
  */
 #pragma once

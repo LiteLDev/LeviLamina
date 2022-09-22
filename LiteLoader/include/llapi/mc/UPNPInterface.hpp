@@ -1,5 +1,5 @@
 /**
- * @file  MC/UPNPInterface.hpp
+ * @file  UPNPInterface.hpp
  *
  */
 #pragma once

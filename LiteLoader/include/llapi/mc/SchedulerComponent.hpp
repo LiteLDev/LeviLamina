@@ -1,5 +1,5 @@
 /**
- * @file  MC/SchedulerComponent.hpp
+ * @file  SchedulerComponent.hpp
  *
  */
 #pragma once

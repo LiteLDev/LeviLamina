@@ -1,5 +1,5 @@
 /**
- * @file  MC/BaseRailTransporter.hpp
+ * @file  BaseRailTransporter.hpp
  *
  */
 #pragma once

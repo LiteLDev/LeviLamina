@@ -1,5 +1,5 @@
 /**
- * @file  MC/CraftHandlerEnchant.hpp
+ * @file  CraftHandlerEnchant.hpp
  *
  */
 #pragma once

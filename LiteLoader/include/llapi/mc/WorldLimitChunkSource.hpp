@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldLimitChunkSource.hpp
+ * @file  WorldLimitChunkSource.hpp
  *
  */
 #pragma once

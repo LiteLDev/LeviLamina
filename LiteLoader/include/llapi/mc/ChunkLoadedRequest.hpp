@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkLoadedRequest.hpp
+ * @file  ChunkLoadedRequest.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorkComposterGoal.hpp
+ * @file  WorkComposterGoal.hpp
  *
  */
 #pragma once

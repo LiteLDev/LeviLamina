@@ -1,5 +1,5 @@
 /**
- * @file  MC/HopperContainerManagerModel.hpp
+ * @file  HopperContainerManagerModel.hpp
  *
  */
 #pragma once

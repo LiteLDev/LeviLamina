@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScatteredFeaturePiece.hpp
+ * @file  ScatteredFeaturePiece.hpp
  *
  */
 #pragma once

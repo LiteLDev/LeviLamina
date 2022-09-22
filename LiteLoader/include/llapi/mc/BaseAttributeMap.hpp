@@ -1,5 +1,5 @@
 /**
- * @file  MC/BaseAttributeMap.hpp
+ * @file  BaseAttributeMap.hpp
  *
  */
 #pragma once

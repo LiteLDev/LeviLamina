@@ -1,5 +1,5 @@
 /**
- * @file  MC/PermissionsHandler.hpp
+ * @file  PermissionsHandler.hpp
  *
  */
 #pragma once

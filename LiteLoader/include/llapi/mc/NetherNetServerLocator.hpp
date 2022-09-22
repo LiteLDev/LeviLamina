@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherNetServerLocator.hpp
+ * @file  NetherNetServerLocator.hpp
  *
  */
 #pragma once

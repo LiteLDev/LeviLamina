@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoomContainerScreenValidator.hpp
+ * @file  LoomContainerScreenValidator.hpp
  *
  */
 #pragma once

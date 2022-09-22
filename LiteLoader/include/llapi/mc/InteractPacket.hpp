@@ -1,5 +1,5 @@
 /**
- * @file  MC/InteractPacket.hpp
+ * @file  InteractPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Salmon.hpp
+ * @file  Salmon.hpp
  *
  */
 #pragma once

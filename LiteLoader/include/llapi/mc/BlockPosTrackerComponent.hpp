@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPosTrackerComponent.hpp
+ * @file  BlockPosTrackerComponent.hpp
  *
  */
 #pragma once

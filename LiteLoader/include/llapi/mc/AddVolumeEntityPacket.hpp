@@ -1,5 +1,5 @@
 /**
- * @file  MC/AddVolumeEntityPacket.hpp
+ * @file  AddVolumeEntityPacket.hpp
  *
  */
 #pragma once

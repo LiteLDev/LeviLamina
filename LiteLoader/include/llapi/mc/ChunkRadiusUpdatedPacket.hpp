@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkRadiusUpdatedPacket.hpp
+ * @file  ChunkRadiusUpdatedPacket.hpp
  *
  */
 #pragma once

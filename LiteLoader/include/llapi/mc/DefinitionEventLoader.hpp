@@ -1,5 +1,5 @@
 /**
- * @file  MC/DefinitionEventLoader.hpp
+ * @file  DefinitionEventLoader.hpp
  *
  */
 #pragma once

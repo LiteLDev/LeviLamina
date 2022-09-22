@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandBlockActor.hpp
+ * @file  CommandBlockActor.hpp
  *
  */
 #pragma once

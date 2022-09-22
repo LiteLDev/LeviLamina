@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBTSchemaReader.hpp
+ * @file  NBTSchemaReader.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/StrongholdPiece.hpp
+ * @file  StrongholdPiece.hpp
  *
  */
 #pragma once

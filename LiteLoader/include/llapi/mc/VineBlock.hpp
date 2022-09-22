@@ -1,5 +1,5 @@
 /**
- * @file  MC/VineBlock.hpp
+ * @file  VineBlock.hpp
  *
  */
 #pragma once

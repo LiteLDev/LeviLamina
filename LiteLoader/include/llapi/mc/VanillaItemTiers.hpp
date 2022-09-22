@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaItemTiers.hpp
+ * @file  VanillaItemTiers.hpp
  *
  */
 #pragma once

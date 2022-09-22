@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPileFeature.hpp
+ * @file  BlockPileFeature.hpp
  *
  */
 #pragma once

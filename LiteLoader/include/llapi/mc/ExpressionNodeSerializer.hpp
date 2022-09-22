@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExpressionNodeSerializer.hpp
+ * @file  ExpressionNodeSerializer.hpp
  *
  */
 #pragma once

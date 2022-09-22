@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClientCacheMissResponsePacket.hpp
+ * @file  ClientCacheMissResponsePacket.hpp
  *
  */
 #pragma once

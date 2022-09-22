@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnderpearlItem.hpp
+ * @file  EnderpearlItem.hpp
  *
  */
 #pragma once

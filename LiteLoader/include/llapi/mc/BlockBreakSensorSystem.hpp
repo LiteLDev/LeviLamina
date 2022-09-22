@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockBreakSensorSystem.hpp
+ * @file  BlockBreakSensorSystem.hpp
  *
  */
 #pragma once

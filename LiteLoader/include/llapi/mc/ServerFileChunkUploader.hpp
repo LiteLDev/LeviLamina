@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerFileChunkUploader.hpp
+ * @file  ServerFileChunkUploader.hpp
  *
  */
 #pragma once

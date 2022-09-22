@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourceLocation.hpp
+ * @file  ResourceLocation.hpp
  *
  */
 #pragma once

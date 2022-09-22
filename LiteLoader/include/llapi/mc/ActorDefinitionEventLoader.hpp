@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDefinitionEventLoader.hpp
+ * @file  ActorDefinitionEventLoader.hpp
  *
  */
 #pragma once

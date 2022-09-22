@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChalkboardBlockActor.hpp
+ * @file  ChalkboardBlockActor.hpp
  *
  */
 #pragma once

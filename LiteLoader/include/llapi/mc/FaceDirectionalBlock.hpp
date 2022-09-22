@@ -1,5 +1,5 @@
 /**
- * @file  MC/FaceDirectionalBlock.hpp
+ * @file  FaceDirectionalBlock.hpp
  *
  */
 #pragma once

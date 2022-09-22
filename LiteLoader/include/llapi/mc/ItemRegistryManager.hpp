@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemRegistryManager.hpp
+ * @file  ItemRegistryManager.hpp
  *
  */
 #pragma once

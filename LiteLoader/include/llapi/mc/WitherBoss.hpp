@@ -1,5 +1,5 @@
 /**
- * @file  MC/WitherBoss.hpp
+ * @file  WitherBoss.hpp
  *
  */
 #pragma once

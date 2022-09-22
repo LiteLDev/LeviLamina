@@ -1,5 +1,5 @@
 /**
- * @file  MC/RakPeerHelper.hpp
+ * @file  RakPeerHelper.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MarketplaceSkinValidator.hpp
+ * @file  MarketplaceSkinValidator.hpp
  *
  */
 #pragma once

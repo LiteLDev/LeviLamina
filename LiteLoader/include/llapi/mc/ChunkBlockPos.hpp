@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkBlockPos.hpp
+ * @file  ChunkBlockPos.hpp
  *
  */
 #pragma once

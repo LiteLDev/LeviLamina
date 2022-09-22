@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockBreathabilityDescription.hpp
+ * @file  BlockBreathabilityDescription.hpp
  *
  */
 #pragma once

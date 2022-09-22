@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkSensorVibrationConfig.hpp
+ * @file  SculkSensorVibrationConfig.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaTagMaps.hpp
+ * @file  VanillaTagMaps.hpp
  *
  */
 #pragma once

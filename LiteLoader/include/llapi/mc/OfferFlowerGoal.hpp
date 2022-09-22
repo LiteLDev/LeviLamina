@@ -1,5 +1,5 @@
 /**
- * @file  MC/OfferFlowerGoal.hpp
+ * @file  OfferFlowerGoal.hpp
  *
  */
 #pragma once

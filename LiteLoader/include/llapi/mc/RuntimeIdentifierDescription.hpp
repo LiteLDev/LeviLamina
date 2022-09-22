@@ -1,5 +1,5 @@
 /**
- * @file  MC/RuntimeIdentifierDescription.hpp
+ * @file  RuntimeIdentifierDescription.hpp
  *
  */
 #pragma once

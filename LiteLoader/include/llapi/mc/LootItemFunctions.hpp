@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootItemFunctions.hpp
+ * @file  LootItemFunctions.hpp
  *
  */
 #pragma once

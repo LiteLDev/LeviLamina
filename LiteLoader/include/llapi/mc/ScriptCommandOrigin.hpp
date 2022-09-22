@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptCommandOrigin.hpp
+ * @file  ScriptCommandOrigin.hpp
  *
  */
 #pragma once

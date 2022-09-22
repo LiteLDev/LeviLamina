@@ -1,5 +1,5 @@
 /**
- * @file  MC/WebviewObserver.hpp
+ * @file  WebviewObserver.hpp
  *
  */
 #pragma once

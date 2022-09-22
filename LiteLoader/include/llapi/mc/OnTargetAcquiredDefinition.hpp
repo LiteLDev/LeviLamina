@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnTargetAcquiredDefinition.hpp
+ * @file  OnTargetAcquiredDefinition.hpp
  *
  */
 #pragma once

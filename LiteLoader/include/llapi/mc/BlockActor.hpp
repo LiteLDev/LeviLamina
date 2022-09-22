@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockActor.hpp
+ * @file  BlockActor.hpp
  *
  */
 #pragma once

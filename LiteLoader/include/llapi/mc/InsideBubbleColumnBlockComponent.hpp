@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideBubbleColumnBlockComponent.hpp
+ * @file  InsideBubbleColumnBlockComponent.hpp
  *
  */
 #pragma once

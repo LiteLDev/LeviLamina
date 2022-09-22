@@ -1,5 +1,5 @@
 /**
- * @file  MC/LocalConnector.hpp
+ * @file  LocalConnector.hpp
  *
  */
 #pragma once

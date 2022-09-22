@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExperienceRewardDefinition.hpp
+ * @file  ExperienceRewardDefinition.hpp
  *
  */
 #pragma once

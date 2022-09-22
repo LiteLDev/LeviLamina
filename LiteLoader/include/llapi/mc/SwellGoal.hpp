@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwellGoal.hpp
+ * @file  SwellGoal.hpp
  *
  */
 #pragma once

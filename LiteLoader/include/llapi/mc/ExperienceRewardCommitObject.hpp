@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExperienceRewardCommitObject.hpp
+ * @file  ExperienceRewardCommitObject.hpp
  *
  */
 #pragma once

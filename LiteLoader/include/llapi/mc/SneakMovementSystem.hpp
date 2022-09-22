@@ -1,5 +1,5 @@
 /**
- * @file  MC/SneakMovementSystem.hpp
+ * @file  SneakMovementSystem.hpp
  *
  */
 #pragma once

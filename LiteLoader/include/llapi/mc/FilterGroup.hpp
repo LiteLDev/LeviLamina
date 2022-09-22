@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterGroup.hpp
+ * @file  FilterGroup.hpp
  *
  */
 #pragma once

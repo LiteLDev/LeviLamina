@@ -1,5 +1,5 @@
 /**
- * @file  MC/GossipTypeManager.hpp
+ * @file  GossipTypeManager.hpp
  *
  */
 #pragma once

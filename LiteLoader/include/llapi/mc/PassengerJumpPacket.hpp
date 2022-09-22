@@ -1,5 +1,5 @@
 /**
- * @file  MC/PassengerJumpPacket.hpp
+ * @file  PassengerJumpPacket.hpp
  *
  */
 #pragma once

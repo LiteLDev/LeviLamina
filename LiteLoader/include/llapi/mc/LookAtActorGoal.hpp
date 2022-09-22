@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookAtActorGoal.hpp
+ * @file  LookAtActorGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Item.hpp
+ * @file  Item.hpp
  *
  */
 #pragma once

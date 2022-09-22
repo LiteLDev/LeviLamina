@@ -1,5 +1,5 @@
 /**
- * @file  MC/MegaTreeTrunk.hpp
+ * @file  MegaTreeTrunk.hpp
  *
  */
 #pragma once

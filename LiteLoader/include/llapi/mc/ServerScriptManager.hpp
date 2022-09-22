@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerScriptManager.hpp
+ * @file  ServerScriptManager.hpp
  *
  */
 #pragma once

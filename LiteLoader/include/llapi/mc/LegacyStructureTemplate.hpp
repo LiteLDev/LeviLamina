@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyStructureTemplate.hpp
+ * @file  LegacyStructureTemplate.hpp
  *
  */
 #pragma once

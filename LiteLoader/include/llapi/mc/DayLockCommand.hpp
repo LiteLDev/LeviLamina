@@ -1,5 +1,5 @@
 /**
- * @file  MC/DayLockCommand.hpp
+ * @file  DayLockCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TripWireHookBlock.hpp
+ * @file  TripWireHookBlock.hpp
  *
  */
 #pragma once

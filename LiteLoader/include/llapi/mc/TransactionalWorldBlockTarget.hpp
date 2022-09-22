@@ -1,5 +1,5 @@
 /**
- * @file  MC/TransactionalWorldBlockTarget.hpp
+ * @file  TransactionalWorldBlockTarget.hpp
  *
  */
 #pragma once

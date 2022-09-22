@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShiftedDurationAmplifier.hpp
+ * @file  ShiftedDurationAmplifier.hpp
  *
  */
 #pragma once

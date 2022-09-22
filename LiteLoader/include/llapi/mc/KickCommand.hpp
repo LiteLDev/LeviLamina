@@ -1,5 +1,5 @@
 /**
- * @file  MC/KickCommand.hpp
+ * @file  KickCommand.hpp
  *
  */
 #pragma once

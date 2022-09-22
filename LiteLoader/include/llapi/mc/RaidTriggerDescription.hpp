@@ -1,5 +1,5 @@
 /**
- * @file  MC/RaidTriggerDescription.hpp
+ * @file  RaidTriggerDescription.hpp
  *
  */
 #pragma once

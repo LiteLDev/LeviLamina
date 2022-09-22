@@ -1,5 +1,5 @@
 /**
- * @file  MC/BarrierBlock.hpp
+ * @file  BarrierBlock.hpp
  *
  */
 #pragma once

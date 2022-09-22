@@ -1,5 +1,5 @@
 /**
- * @file  MC/ErrorPathStack.hpp
+ * @file  ErrorPathStack.hpp
  *
  */
 #pragma once

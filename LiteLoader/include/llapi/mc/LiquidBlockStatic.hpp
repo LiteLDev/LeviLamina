@@ -1,5 +1,5 @@
 /**
- * @file  MC/LiquidBlockStatic.hpp
+ * @file  LiquidBlockStatic.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ToastRequestPacket.hpp
+ * @file  ToastRequestPacket.hpp
  *
  */
 #pragma once

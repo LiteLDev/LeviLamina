@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideMoveSystem.hpp
+ * @file  SideBySideMoveSystem.hpp
  *
  */
 #pragma once

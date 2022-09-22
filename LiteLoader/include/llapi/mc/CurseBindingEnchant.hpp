@@ -1,5 +1,5 @@
 /**
- * @file  MC/CurseBindingEnchant.hpp
+ * @file  CurseBindingEnchant.hpp
  *
  */
 #pragma once

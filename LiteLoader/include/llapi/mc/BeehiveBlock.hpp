@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeehiveBlock.hpp
+ * @file  BeehiveBlock.hpp
  *
  */
 #pragma once

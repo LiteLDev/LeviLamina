@@ -1,5 +1,5 @@
 /**
- * @file  MC/SequenceDefinition.hpp
+ * @file  SequenceDefinition.hpp
  *
  */
 #pragma once

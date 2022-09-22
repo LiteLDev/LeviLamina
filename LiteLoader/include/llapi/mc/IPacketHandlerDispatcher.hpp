@@ -1,5 +1,5 @@
 /**
- * @file  MC/IPacketHandlerDispatcher.hpp
+ * @file  IPacketHandlerDispatcher.hpp
  *
  */
 #pragma once

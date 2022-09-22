@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorMoveNotifierSystem.hpp
+ * @file  ActorMoveNotifierSystem.hpp
  *
  */
 #pragma once

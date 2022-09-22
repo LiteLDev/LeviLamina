@@ -1,5 +1,5 @@
 /**
- * @file  MC/CarrotOnAStickItem.hpp
+ * @file  CarrotOnAStickItem.hpp
  *
  */
 #pragma once

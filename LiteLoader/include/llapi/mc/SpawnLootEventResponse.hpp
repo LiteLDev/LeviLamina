@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnLootEventResponse.hpp
+ * @file  SpawnLootEventResponse.hpp
  *
  */
 #pragma once

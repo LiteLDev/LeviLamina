@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelChunkFinalDeleter.hpp
+ * @file  LevelChunkFinalDeleter.hpp
  *
  */
 #pragma once

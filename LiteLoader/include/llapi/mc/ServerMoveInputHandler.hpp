@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerMoveInputHandler.hpp
+ * @file  ServerMoveInputHandler.hpp
  *
  */
 #pragma once

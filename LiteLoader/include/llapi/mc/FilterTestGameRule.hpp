@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestGameRule.hpp
+ * @file  FilterTestGameRule.hpp
  *
  */
 #pragma once

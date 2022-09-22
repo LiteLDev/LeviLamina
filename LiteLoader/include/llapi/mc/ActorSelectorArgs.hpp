@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorSelectorArgs.hpp
+ * @file  ActorSelectorArgs.hpp
  *
  */
 #pragma once

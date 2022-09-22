@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestLightLevel.hpp
+ * @file  FilterTestLightLevel.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BarrelBlock.hpp
+ * @file  BarrelBlock.hpp
  *
  */
 #pragma once

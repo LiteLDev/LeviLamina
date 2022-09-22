@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameDirectorEntityServerCommandOrigin.hpp
+ * @file  GameDirectorEntityServerCommandOrigin.hpp
  *
  */
 #pragma once

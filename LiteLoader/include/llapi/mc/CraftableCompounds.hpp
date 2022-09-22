@@ -1,5 +1,5 @@
 /**
- * @file  MC/CraftableCompounds.hpp
+ * @file  CraftableCompounds.hpp
  *
  */
 #pragma once

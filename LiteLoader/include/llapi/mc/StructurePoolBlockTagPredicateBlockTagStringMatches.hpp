@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolBlockTagPredicateBlockTagStringMatches.hpp
+ * @file  StructurePoolBlockTagPredicateBlockTagStringMatches.hpp
  *
  */
 #pragma once

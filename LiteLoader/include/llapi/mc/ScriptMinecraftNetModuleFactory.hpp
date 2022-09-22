@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptMinecraftNetModuleFactory.hpp
+ * @file  ScriptMinecraftNetModuleFactory.hpp
  *
  */
 #pragma once

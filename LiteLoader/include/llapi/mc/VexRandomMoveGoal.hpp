@@ -1,5 +1,5 @@
 /**
- * @file  MC/VexRandomMoveGoal.hpp
+ * @file  VexRandomMoveGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsStunnedDefinition.hpp
+ * @file  IsStunnedDefinition.hpp
  *
  */
 #pragma once

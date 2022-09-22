@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldGenCache.hpp
+ * @file  WorldGenCache.hpp
  *
  */
 #pragma once

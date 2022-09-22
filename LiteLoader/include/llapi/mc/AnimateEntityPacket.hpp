@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnimateEntityPacket.hpp
+ * @file  AnimateEntityPacket.hpp
  *
  */
 #pragma once

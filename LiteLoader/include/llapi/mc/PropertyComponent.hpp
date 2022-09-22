@@ -1,5 +1,5 @@
 /**
- * @file  MC/PropertyComponent.hpp
+ * @file  PropertyComponent.hpp
  *
  */
 #pragma once

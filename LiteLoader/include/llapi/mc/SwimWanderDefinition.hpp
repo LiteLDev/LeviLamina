@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimWanderDefinition.hpp
+ * @file  SwimWanderDefinition.hpp
  *
  */
 #pragma once

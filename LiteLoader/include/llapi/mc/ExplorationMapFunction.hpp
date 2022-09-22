@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExplorationMapFunction.hpp
+ * @file  ExplorationMapFunction.hpp
  *
  */
 #pragma once

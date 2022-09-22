@@ -1,5 +1,5 @@
 /**
- * @file  MC/StartScreenCapabilities.hpp
+ * @file  StartScreenCapabilities.hpp
  *
  */
 #pragma once

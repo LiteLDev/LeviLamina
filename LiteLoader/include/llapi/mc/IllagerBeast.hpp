@@ -1,5 +1,5 @@
 /**
- * @file  MC/IllagerBeast.hpp
+ * @file  IllagerBeast.hpp
  *
  */
 #pragma once

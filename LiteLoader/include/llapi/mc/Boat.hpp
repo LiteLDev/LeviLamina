@@ -1,5 +1,5 @@
 /**
- * @file  MC/Boat.hpp
+ * @file  Boat.hpp
  *
  */
 #pragma once

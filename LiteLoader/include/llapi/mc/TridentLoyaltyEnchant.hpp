@@ -1,5 +1,5 @@
 /**
- * @file  MC/TridentLoyaltyEnchant.hpp
+ * @file  TridentLoyaltyEnchant.hpp
  *
  */
 #pragma once

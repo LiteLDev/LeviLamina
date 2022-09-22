@@ -1,5 +1,5 @@
 /**
- * @file  MC/SplashPotionItem.hpp
+ * @file  SplashPotionItem.hpp
  *
  */
 #pragma once

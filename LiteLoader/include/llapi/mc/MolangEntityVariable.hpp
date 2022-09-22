@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangEntityVariable.hpp
+ * @file  MolangEntityVariable.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockDestructibleByExplosionDescription.hpp
+ * @file  BlockDestructibleByExplosionDescription.hpp
  *
  */
 #pragma once

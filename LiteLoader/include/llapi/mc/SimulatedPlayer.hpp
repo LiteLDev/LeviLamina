@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimulatedPlayer.hpp
+ * @file  SimulatedPlayer.hpp
  *
  */
 #pragma once

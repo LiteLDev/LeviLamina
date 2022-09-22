@@ -1,5 +1,5 @@
 /**
- * @file  MC/PackAccessStrategy.hpp
+ * @file  PackAccessStrategy.hpp
  *
  */
 #pragma once

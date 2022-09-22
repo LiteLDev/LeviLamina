@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlueIceFeature.hpp
+ * @file  BlueIceFeature.hpp
  *
  */
 #pragma once

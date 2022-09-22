@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookAtSystem.hpp
+ * @file  LookAtSystem.hpp
  *
  */
 #pragma once

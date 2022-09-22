@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantedBookItem.hpp
+ * @file  EnchantedBookItem.hpp
  *
  */
 #pragma once

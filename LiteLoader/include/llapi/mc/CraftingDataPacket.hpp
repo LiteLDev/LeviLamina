@@ -1,5 +1,5 @@
 /**
- * @file  MC/CraftingDataPacket.hpp
+ * @file  CraftingDataPacket.hpp
  *
  */
 #pragma once

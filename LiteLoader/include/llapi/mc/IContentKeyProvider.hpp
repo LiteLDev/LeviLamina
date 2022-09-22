@@ -1,5 +1,5 @@
 /**
- * @file  MC/IContentKeyProvider.hpp
+ * @file  IContentKeyProvider.hpp
  *
  */
 #pragma once

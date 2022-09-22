@@ -1,5 +1,5 @@
 /**
- * @file  MC/Token.hpp
+ * @file  Token.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TimeAccumulator.hpp
+ * @file  TimeAccumulator.hpp
  *
  */
 #pragma once

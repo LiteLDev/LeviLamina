@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptPackPermissions.hpp
+ * @file  ScriptPackPermissions.hpp
  *
  */
 #pragma once

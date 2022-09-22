@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideValidationFailure.hpp
+ * @file  SideBySideValidationFailure.hpp
  *
  */
 #pragma once

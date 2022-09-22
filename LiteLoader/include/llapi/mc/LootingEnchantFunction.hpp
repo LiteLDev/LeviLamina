@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootingEnchantFunction.hpp
+ * @file  LootingEnchantFunction.hpp
  *
  */
 #pragma once

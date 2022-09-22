@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantingContainerScreenValidator.hpp
+ * @file  EnchantingContainerScreenValidator.hpp
  *
  */
 #pragma once

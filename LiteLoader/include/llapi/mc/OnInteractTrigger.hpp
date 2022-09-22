@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnInteractTrigger.hpp
+ * @file  OnInteractTrigger.hpp
  *
  */
 #pragma once

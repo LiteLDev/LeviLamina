@@ -1,5 +1,5 @@
 /**
- * @file  MC/TreeHelper.hpp
+ * @file  TreeHelper.hpp
  *
  */
 #pragma once

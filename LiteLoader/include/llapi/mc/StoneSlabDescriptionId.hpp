@@ -1,5 +1,5 @@
 /**
- * @file  MC/StoneSlabDescriptionId.hpp
+ * @file  StoneSlabDescriptionId.hpp
  *
  */
 #pragma once

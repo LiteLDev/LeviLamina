@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeathInfoPacket.hpp
+ * @file  DeathInfoPacket.hpp
  *
  */
 #pragma once

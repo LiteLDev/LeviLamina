@@ -1,5 +1,5 @@
 /**
- * @file  MC/VibrationDamperDefinition.hpp
+ * @file  VibrationDamperDefinition.hpp
  *
  */
 #pragma once

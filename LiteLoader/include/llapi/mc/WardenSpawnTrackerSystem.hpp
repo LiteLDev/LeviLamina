@@ -1,5 +1,5 @@
 /**
- * @file  MC/WardenSpawnTrackerSystem.hpp
+ * @file  WardenSpawnTrackerSystem.hpp
  *
  */
 #pragma once

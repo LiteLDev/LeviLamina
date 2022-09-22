@@ -1,5 +1,5 @@
 /**
- * @file  MC/SaveSurroundingChunksSystem.hpp
+ * @file  SaveSurroundingChunksSystem.hpp
  *
  */
 #pragma once

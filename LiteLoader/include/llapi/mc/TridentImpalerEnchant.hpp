@@ -1,5 +1,5 @@
 /**
- * @file  MC/TridentImpalerEnchant.hpp
+ * @file  TridentImpalerEnchant.hpp
  *
  */
 #pragma once

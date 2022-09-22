@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetTitlePacket.hpp
+ * @file  SetTitlePacket.hpp
  *
  */
 #pragma once

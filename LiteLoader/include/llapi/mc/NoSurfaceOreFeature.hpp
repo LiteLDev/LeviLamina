@@ -1,5 +1,5 @@
 /**
- * @file  MC/NoSurfaceOreFeature.hpp
+ * @file  NoSurfaceOreFeature.hpp
  *
  */
 #pragma once

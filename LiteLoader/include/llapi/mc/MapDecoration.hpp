@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapDecoration.hpp
+ * @file  MapDecoration.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/StoneButtonBlock.hpp
+ * @file  StoneButtonBlock.hpp
  *
  */
 #pragma once

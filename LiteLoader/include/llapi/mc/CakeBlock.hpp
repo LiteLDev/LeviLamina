@@ -1,5 +1,5 @@
 /**
- * @file  MC/CakeBlock.hpp
+ * @file  CakeBlock.hpp
  *
  */
 #pragma once

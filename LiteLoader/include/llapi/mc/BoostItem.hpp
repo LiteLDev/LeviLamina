@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoostItem.hpp
+ * @file  BoostItem.hpp
  *
  */
 #pragma once

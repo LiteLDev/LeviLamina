@@ -1,5 +1,5 @@
 /**
- * @file  MC/LadderBlock.hpp
+ * @file  LadderBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShowCreditsPacket.hpp
+ * @file  ShowCreditsPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherDimension.hpp
+ * @file  NetherDimension.hpp
  *
  */
 #pragma once

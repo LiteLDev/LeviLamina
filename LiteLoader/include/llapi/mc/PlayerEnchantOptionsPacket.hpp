@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerEnchantOptionsPacket.hpp
+ * @file  PlayerEnchantOptionsPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReplaceItemCommand.hpp
+ * @file  ReplaceItemCommand.hpp
  *
  */
 #pragma once

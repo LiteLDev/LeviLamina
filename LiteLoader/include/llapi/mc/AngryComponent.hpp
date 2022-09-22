@@ -1,5 +1,5 @@
 /**
- * @file  MC/AngryComponent.hpp
+ * @file  AngryComponent.hpp
  *
  */
 #pragma once

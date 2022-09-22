@@ -1,5 +1,5 @@
 /**
- * @file  MC/InverterDefinition.hpp
+ * @file  InverterDefinition.hpp
  *
  */
 #pragma once

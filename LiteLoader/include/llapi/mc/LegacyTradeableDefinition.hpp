@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyTradeableDefinition.hpp
+ * @file  LegacyTradeableDefinition.hpp
  *
  */
 #pragma once

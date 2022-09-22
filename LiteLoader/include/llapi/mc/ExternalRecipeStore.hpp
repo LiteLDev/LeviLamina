@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExternalRecipeStore.hpp
+ * @file  ExternalRecipeStore.hpp
  *
  */
 #pragma once

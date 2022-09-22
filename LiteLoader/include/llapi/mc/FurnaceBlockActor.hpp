@@ -1,5 +1,5 @@
 /**
- * @file  MC/FurnaceBlockActor.hpp
+ * @file  FurnaceBlockActor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ComponentComparer.hpp
+ * @file  ComponentComparer.hpp
  *
  */
 #pragma once

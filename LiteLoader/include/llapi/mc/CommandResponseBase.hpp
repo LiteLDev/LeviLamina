@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandResponseBase.hpp
+ * @file  CommandResponseBase.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsOwnerTest.hpp
+ * @file  ActorIsOwnerTest.hpp
  *
  */
 #pragma once

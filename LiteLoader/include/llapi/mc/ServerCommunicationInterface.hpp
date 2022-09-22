@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerCommunicationInterface.hpp
+ * @file  ServerCommunicationInterface.hpp
  *
  */
 #pragma once

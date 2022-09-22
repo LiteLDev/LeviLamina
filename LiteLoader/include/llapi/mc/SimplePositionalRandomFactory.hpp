@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimplePositionalRandomFactory.hpp
+ * @file  SimplePositionalRandomFactory.hpp
  *
  */
 #pragma once

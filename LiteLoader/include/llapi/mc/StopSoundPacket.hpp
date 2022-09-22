@@ -1,5 +1,5 @@
 /**
- * @file  MC/StopSoundPacket.hpp
+ * @file  StopSoundPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestDifficulty.hpp
+ * @file  FilterTestDifficulty.hpp
  *
  */
 #pragma once

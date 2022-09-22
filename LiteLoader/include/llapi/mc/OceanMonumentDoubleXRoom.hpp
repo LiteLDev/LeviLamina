@@ -1,5 +1,5 @@
 /**
- * @file  MC/OceanMonumentDoubleXRoom.hpp
+ * @file  OceanMonumentDoubleXRoom.hpp
  *
  */
 #pragma once

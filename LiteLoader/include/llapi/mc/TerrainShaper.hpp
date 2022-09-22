@@ -1,5 +1,5 @@
 /**
- * @file  MC/TerrainShaper.hpp
+ * @file  TerrainShaper.hpp
  *
  */
 #pragma once

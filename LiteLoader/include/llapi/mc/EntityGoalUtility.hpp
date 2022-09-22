@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityGoalUtility.hpp
+ * @file  EntityGoalUtility.hpp
  *
  */
 #pragma once

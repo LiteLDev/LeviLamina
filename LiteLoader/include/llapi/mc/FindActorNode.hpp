@@ -1,5 +1,5 @@
 /**
- * @file  MC/FindActorNode.hpp
+ * @file  FindActorNode.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/InMemoryWritableFile.hpp
+ * @file  InMemoryWritableFile.hpp
  *
  */
 #pragma once

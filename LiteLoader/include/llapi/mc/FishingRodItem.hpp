@@ -1,5 +1,5 @@
 /**
- * @file  MC/FishingRodItem.hpp
+ * @file  FishingRodItem.hpp
  *
  */
 #pragma once

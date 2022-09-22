@@ -1,5 +1,5 @@
 /**
- * @file  MC/WallClimberPathNavigation.hpp
+ * @file  WallClimberPathNavigation.hpp
  *
  */
 #pragma once

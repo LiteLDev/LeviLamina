@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlaySoundCommand.hpp
+ * @file  PlaySoundCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/IMinecraftApp.hpp
+ * @file  IMinecraftApp.hpp
  *
  */
 #pragma once

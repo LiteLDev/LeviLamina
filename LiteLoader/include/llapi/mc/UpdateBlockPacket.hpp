@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateBlockPacket.hpp
+ * @file  UpdateBlockPacket.hpp
  *
  */
 #pragma once

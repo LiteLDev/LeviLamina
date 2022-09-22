@@ -1,5 +1,5 @@
 /**
- * @file  MC/PolarBear.hpp
+ * @file  PolarBear.hpp
  *
  */
 #pragma once

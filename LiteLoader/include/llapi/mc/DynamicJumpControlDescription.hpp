@@ -1,5 +1,5 @@
 /**
- * @file  MC/DynamicJumpControlDescription.hpp
+ * @file  DynamicJumpControlDescription.hpp
  *
  */
 #pragma once

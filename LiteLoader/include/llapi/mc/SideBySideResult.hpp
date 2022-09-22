@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideResult.hpp
+ * @file  SideBySideResult.hpp
  *
  */
 #pragma once

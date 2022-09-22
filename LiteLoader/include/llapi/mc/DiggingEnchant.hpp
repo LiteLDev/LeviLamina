@@ -1,5 +1,5 @@
 /**
- * @file  MC/DiggingEnchant.hpp
+ * @file  DiggingEnchant.hpp
  *
  */
 #pragma once

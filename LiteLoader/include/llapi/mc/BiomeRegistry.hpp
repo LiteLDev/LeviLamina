@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeRegistry.hpp
+ * @file  BiomeRegistry.hpp
  *
  */
 #pragma once

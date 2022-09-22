@@ -1,5 +1,5 @@
 /**
- * @file  MC/OffhandContainerValidation.hpp
+ * @file  OffhandContainerValidation.hpp
  *
  */
 #pragma once

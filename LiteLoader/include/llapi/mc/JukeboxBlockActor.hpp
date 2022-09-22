@@ -1,5 +1,5 @@
 /**
- * @file  MC/JukeboxBlockActor.hpp
+ * @file  JukeboxBlockActor.hpp
  *
  */
 #pragma once

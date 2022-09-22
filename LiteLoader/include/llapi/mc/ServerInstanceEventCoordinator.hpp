@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerInstanceEventCoordinator.hpp
+ * @file  ServerInstanceEventCoordinator.hpp
  *
  */
 #pragma once

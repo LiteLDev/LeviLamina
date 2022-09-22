@@ -1,5 +1,5 @@
 /**
- * @file  MC/OreVeinifier.hpp
+ * @file  OreVeinifier.hpp
  *
  */
 #pragma once

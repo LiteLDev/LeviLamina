@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeDecorationSystem.hpp
+ * @file  BiomeDecorationSystem.hpp
  *
  */
 #pragma once

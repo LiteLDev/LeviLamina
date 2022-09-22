@@ -1,5 +1,5 @@
 /**
- * @file  MC/SnapshotWritableFile.hpp
+ * @file  SnapshotWritableFile.hpp
  *
  */
 #pragma once

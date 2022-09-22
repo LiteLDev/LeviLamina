@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlowLichenBlock.hpp
+ * @file  GlowLichenBlock.hpp
  *
  */
 #pragma once

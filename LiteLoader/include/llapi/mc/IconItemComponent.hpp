@@ -1,5 +1,5 @@
 /**
- * @file  MC/IconItemComponent.hpp
+ * @file  IconItemComponent.hpp
  *
  */
 #pragma once

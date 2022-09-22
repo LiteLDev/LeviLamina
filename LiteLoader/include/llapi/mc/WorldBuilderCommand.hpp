@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldBuilderCommand.hpp
+ * @file  WorldBuilderCommand.hpp
  *
  */
 #pragma once

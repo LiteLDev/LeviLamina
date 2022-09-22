@@ -1,5 +1,5 @@
 /**
- * @file  MC/CanyonFeatureUtils.hpp
+ * @file  CanyonFeatureUtils.hpp
  *
  */
 #pragma once

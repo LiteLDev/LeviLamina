@@ -1,5 +1,5 @@
 /**
- * @file  MC/GeneticsComponent.hpp
+ * @file  GeneticsComponent.hpp
  *
  */
 #pragma once

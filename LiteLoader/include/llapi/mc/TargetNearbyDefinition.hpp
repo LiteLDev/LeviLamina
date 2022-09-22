@@ -1,5 +1,5 @@
 /**
- * @file  MC/TargetNearbyDefinition.hpp
+ * @file  TargetNearbyDefinition.hpp
  *
  */
 #pragma once

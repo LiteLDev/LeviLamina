@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcI18nObserver.hpp
+ * @file  NpcI18nObserver.hpp
  *
  */
 #pragma once

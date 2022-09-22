@@ -1,5 +1,5 @@
 /**
- * @file  MC/GiveableComponent.hpp
+ * @file  GiveableComponent.hpp
  *
  */
 #pragma once

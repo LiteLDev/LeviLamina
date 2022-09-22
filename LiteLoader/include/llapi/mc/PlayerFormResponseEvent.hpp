@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerFormResponseEvent.hpp
+ * @file  PlayerFormResponseEvent.hpp
  *
  */
 #pragma once

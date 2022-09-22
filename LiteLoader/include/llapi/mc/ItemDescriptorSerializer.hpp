@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemDescriptorSerializer.hpp
+ * @file  ItemDescriptorSerializer.hpp
  *
  */
 #pragma once

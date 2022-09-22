@@ -1,5 +1,5 @@
 /**
- * @file  MC/ObsidianBlock.hpp
+ * @file  ObsidianBlock.hpp
  *
  */
 #pragma once

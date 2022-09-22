@@ -1,5 +1,5 @@
 /**
- * @file  MC/CloneCommand.hpp
+ * @file  CloneCommand.hpp
  *
  */
 #pragma once

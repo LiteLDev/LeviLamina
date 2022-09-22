@@ -1,5 +1,5 @@
 /**
- * @file  MC/JsonLoader.hpp
+ * @file  JsonLoader.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockFrictionDescription.hpp
+ * @file  BlockFrictionDescription.hpp
  *
  */
 #pragma once

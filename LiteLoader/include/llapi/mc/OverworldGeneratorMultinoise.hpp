@@ -1,5 +1,5 @@
 /**
- * @file  MC/OverworldGeneratorMultinoise.hpp
+ * @file  OverworldGeneratorMultinoise.hpp
  *
  */
 #pragma once

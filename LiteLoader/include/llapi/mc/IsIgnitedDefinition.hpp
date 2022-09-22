@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsIgnitedDefinition.hpp
+ * @file  IsIgnitedDefinition.hpp
  *
  */
 #pragma once

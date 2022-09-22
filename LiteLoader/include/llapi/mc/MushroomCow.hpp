@@ -1,5 +1,5 @@
 /**
- * @file  MC/MushroomCow.hpp
+ * @file  MushroomCow.hpp
  *
  */
 #pragma once

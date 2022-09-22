@@ -1,5 +1,5 @@
 /**
- * @file  MC/SignItem.hpp
+ * @file  SignItem.hpp
  *
  */
 #pragma once

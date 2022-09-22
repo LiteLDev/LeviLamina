@@ -1,5 +1,5 @@
 /**
- * @file  MC/InspectBookshelfGoal.hpp
+ * @file  InspectBookshelfGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourcePackFileDownloaderManager.hpp
+ * @file  ResourcePackFileDownloaderManager.hpp
  *
  */
 #pragma once

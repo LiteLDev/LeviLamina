@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConsumerComponent.hpp
+ * @file  ConsumerComponent.hpp
  *
  */
 #pragma once

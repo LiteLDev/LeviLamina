@@ -1,5 +1,5 @@
 /**
- * @file  MC/HangingRoots.hpp
+ * @file  HangingRoots.hpp
  *
  */
 #pragma once

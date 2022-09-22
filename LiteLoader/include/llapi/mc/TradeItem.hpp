@@ -1,5 +1,5 @@
 /**
- * @file  MC/TradeItem.hpp
+ * @file  TradeItem.hpp
  *
  */
 #pragma once

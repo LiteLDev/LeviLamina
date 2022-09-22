@@ -1,5 +1,5 @@
 /**
- * @file  MC/Stopwatch.hpp
+ * @file  Stopwatch.hpp
  *
  */
 #pragma once

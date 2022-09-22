@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityPlacerItemComponent.hpp
+ * @file  EntityPlacerItemComponent.hpp
  *
  */
 #pragma once

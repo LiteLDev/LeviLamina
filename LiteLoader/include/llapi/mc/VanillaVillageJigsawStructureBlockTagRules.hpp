@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaVillageJigsawStructureBlockTagRules.hpp
+ * @file  VanillaVillageJigsawStructureBlockTagRules.hpp
  *
  */
 #pragma once

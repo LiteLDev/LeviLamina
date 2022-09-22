@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExperienceRewardComponent.hpp
+ * @file  ExperienceRewardComponent.hpp
  *
  */
 #pragma once

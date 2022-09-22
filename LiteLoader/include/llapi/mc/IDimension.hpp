@@ -1,5 +1,5 @@
 /**
- * @file  MC/IDimension.hpp
+ * @file  IDimension.hpp
  *
  */
 #pragma once

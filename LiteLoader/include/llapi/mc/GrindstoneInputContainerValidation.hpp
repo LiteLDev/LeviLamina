@@ -1,5 +1,5 @@
 /**
- * @file  MC/GrindstoneInputContainerValidation.hpp
+ * @file  GrindstoneInputContainerValidation.hpp
  *
  */
 #pragma once

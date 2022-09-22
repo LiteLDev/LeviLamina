@@ -1,5 +1,5 @@
 /**
- * @file  MC/OcelotSitOnBlockGoal.hpp
+ * @file  OcelotSitOnBlockGoal.hpp
  *
  */
 #pragma once

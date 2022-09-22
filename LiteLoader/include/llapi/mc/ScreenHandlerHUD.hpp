@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScreenHandlerHUD.hpp
+ * @file  ScreenHandlerHUD.hpp
  *
  */
 #pragma once

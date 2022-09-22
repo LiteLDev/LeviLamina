@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherBrightnessRamp.hpp
+ * @file  NetherBrightnessRamp.hpp
  *
  */
 #pragma once

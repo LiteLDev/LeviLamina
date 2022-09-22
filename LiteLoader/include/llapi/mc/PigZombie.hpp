@@ -1,5 +1,5 @@
 /**
- * @file  MC/PigZombie.hpp
+ * @file  PigZombie.hpp
  *
  */
 #pragma once

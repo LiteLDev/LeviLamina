@@ -1,5 +1,5 @@
 /**
- * @file  MC/AtlasItemManager.hpp
+ * @file  AtlasItemManager.hpp
  *
  */
 #pragma once

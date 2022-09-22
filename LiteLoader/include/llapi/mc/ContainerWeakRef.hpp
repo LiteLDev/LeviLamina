@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerWeakRef.hpp
+ * @file  ContainerWeakRef.hpp
  *
  */
 #pragma once

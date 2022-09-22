@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecartTNT.hpp
+ * @file  MinecartTNT.hpp
  *
  */
 #pragma once

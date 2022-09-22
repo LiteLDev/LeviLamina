@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlendingData.hpp
+ * @file  BlendingData.hpp
  *
  */
 #pragma once

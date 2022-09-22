@@ -1,5 +1,5 @@
 /**
- * @file  MC/RotatedPillarInfestedBlock.hpp
+ * @file  RotatedPillarInfestedBlock.hpp
  *
  */
 #pragma once

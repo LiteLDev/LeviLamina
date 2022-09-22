@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourcePackDataInfoPacket.hpp
+ * @file  ResourcePackDataInfoPacket.hpp
  *
  */
 #pragma once

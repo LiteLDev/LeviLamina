@@ -1,5 +1,5 @@
 /**
- * @file  MC/WearableItemComponent.hpp
+ * @file  WearableItemComponent.hpp
  *
  */
 #pragma once

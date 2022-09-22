@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShowProfilePacket.hpp
+ * @file  ShowProfilePacket.hpp
  *
  */
 #pragma once

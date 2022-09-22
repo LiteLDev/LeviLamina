@@ -1,5 +1,5 @@
 /**
- * @file  MC/BorderBlock.hpp
+ * @file  BorderBlock.hpp
  *
  */
 #pragma once

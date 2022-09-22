@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityContextBase.hpp
+ * @file  EntityContextBase.hpp
  *
  */
 #pragma once

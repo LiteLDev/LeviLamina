@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlockingDefinition.hpp
+ * @file  FlockingDefinition.hpp
  *
  */
 #pragma once

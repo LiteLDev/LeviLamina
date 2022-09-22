@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerPlayerMovementSystemUtils.hpp
+ * @file  ServerPlayerMovementSystemUtils.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/WoodBlock.hpp
+ * @file  WoodBlock.hpp
  *
  */
 #pragma once

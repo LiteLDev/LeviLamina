@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChemistryTableBlockActor.hpp
+ * @file  ChemistryTableBlockActor.hpp
  *
  */
 #pragma once

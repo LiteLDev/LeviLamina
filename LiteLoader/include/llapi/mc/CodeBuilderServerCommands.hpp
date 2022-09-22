@@ -1,5 +1,5 @@
 /**
- * @file  MC/CodeBuilderServerCommands.hpp
+ * @file  CodeBuilderServerCommands.hpp
  *
  */
 #pragma once

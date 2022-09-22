@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorUnderwaterTest.hpp
+ * @file  ActorUnderwaterTest.hpp
  *
  */
 #pragma once

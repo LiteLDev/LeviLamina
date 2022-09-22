@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandDispatcher.hpp
+ * @file  CommandDispatcher.hpp
  *
  */
 #pragma once

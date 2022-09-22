@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockCollisionBoxDescription.hpp
+ * @file  BlockCollisionBoxDescription.hpp
  *
  */
 #pragma once

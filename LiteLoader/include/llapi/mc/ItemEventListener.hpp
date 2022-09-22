@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemEventListener.hpp
+ * @file  ItemEventListener.hpp
  *
  */
 #pragma once

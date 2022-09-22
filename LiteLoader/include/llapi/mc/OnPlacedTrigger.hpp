@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnPlacedTrigger.hpp
+ * @file  OnPlacedTrigger.hpp
  *
  */
 #pragma once

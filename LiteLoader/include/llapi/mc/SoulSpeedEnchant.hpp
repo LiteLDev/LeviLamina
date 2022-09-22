@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoulSpeedEnchant.hpp
+ * @file  SoulSpeedEnchant.hpp
  *
  */
 #pragma once

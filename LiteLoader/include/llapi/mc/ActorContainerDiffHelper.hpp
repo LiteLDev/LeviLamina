@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorContainerDiffHelper.hpp
+ * @file  ActorContainerDiffHelper.hpp
  *
  */
 #pragma once

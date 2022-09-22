@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecartBlockCommandOrigin.hpp
+ * @file  MinecartBlockCommandOrigin.hpp
  *
  */
 #pragma once

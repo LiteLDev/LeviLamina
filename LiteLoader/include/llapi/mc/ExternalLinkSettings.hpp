@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExternalLinkSettings.hpp
+ * @file  ExternalLinkSettings.hpp
  *
  */
 #pragma once

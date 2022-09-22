@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaFeatures.hpp
+ * @file  VanillaFeatures.hpp
  *
  */
 #pragma once

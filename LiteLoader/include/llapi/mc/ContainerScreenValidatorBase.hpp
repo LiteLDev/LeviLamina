@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerScreenValidatorBase.hpp
+ * @file  ContainerScreenValidatorBase.hpp
  *
  */
 #pragma once

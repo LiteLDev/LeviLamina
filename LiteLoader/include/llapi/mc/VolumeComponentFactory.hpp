@@ -1,5 +1,5 @@
 /**
- * @file  MC/VolumeComponentFactory.hpp
+ * @file  VolumeComponentFactory.hpp
  *
  */
 #pragma once

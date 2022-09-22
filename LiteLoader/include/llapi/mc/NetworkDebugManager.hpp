@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkDebugManager.hpp
+ * @file  NetworkDebugManager.hpp
  *
  */
 #pragma once

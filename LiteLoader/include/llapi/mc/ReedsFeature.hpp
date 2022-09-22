@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReedsFeature.hpp
+ * @file  ReedsFeature.hpp
  *
  */
 #pragma once

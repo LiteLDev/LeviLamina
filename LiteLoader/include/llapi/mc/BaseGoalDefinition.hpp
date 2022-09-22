@@ -1,5 +1,5 @@
 /**
- * @file  MC/BaseGoalDefinition.hpp
+ * @file  BaseGoalDefinition.hpp
  *
  */
 #pragma once

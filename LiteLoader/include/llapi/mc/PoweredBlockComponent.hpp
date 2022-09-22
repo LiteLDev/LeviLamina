@@ -1,5 +1,5 @@
 /**
- * @file  MC/PoweredBlockComponent.hpp
+ * @file  PoweredBlockComponent.hpp
  *
  */
 #pragma once

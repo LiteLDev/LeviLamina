@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPermutationDescription.hpp
+ * @file  BlockPermutationDescription.hpp
  *
  */
 #pragma once

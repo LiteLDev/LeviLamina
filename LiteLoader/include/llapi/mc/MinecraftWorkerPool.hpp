@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecraftWorkerPool.hpp
+ * @file  MinecraftWorkerPool.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldGenMolangQueries.hpp
+ * @file  WorldGenMolangQueries.hpp
  *
  */
 #pragma once

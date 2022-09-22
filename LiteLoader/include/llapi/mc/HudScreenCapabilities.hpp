@@ -1,5 +1,5 @@
 /**
- * @file  MC/HudScreenCapabilities.hpp
+ * @file  HudScreenCapabilities.hpp
  *
  */
 #pragma once

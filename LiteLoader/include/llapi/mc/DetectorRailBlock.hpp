@@ -1,5 +1,5 @@
 /**
- * @file  MC/DetectorRailBlock.hpp
+ * @file  DetectorRailBlock.hpp
  *
  */
 #pragma once

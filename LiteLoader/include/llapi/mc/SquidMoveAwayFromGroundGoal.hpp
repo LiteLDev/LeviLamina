@@ -1,5 +1,5 @@
 /**
- * @file  MC/SquidMoveAwayFromGroundGoal.hpp
+ * @file  SquidMoveAwayFromGroundGoal.hpp
  *
  */
 #pragma once

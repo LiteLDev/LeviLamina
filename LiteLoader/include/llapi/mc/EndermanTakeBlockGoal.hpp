@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndermanTakeBlockGoal.hpp
+ * @file  EndermanTakeBlockGoal.hpp
  *
  */
 #pragma once

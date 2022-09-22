@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBCastleEntrance.hpp
+ * @file  NBCastleEntrance.hpp
  *
  */
 #pragma once

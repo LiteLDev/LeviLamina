@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideHoneyBlockSystemImpl.hpp
+ * @file  InsideHoneyBlockSystemImpl.hpp
  *
  */
 #pragma once

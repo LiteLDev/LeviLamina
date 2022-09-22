@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompletedUsingItemPacket.hpp
+ * @file  CompletedUsingItemPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EquippableDefinition.hpp
+ * @file  EquippableDefinition.hpp
  *
  */
 #pragma once

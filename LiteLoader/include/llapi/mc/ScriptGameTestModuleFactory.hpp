@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptGameTestModuleFactory.hpp
+ * @file  ScriptGameTestModuleFactory.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TargetNearbyComponent.hpp
+ * @file  TargetNearbyComponent.hpp
  *
  */
 #pragma once

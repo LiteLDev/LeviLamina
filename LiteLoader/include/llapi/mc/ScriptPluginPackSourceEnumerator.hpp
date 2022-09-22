@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptPluginPackSourceEnumerator.hpp
+ * @file  ScriptPluginPackSourceEnumerator.hpp
  *
  */
 #pragma once

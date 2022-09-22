@@ -1,5 +1,5 @@
 /**
- * @file  MC/BodyControlComponent.hpp
+ * @file  BodyControlComponent.hpp
  *
  */
 #pragma once

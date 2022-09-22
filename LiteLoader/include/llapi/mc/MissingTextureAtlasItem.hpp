@@ -1,5 +1,5 @@
 /**
- * @file  MC/MissingTextureAtlasItem.hpp
+ * @file  MissingTextureAtlasItem.hpp
  *
  */
 #pragma once

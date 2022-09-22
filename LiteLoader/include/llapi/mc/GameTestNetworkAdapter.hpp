@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameTestNetworkAdapter.hpp
+ * @file  GameTestNetworkAdapter.hpp
  *
  */
 #pragma once

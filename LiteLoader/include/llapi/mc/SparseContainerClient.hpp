@@ -1,5 +1,5 @@
 /**
- * @file  MC/SparseContainerClient.hpp
+ * @file  SparseContainerClient.hpp
  *
  */
 #pragma once

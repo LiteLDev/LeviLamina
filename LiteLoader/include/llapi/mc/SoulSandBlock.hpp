@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoulSandBlock.hpp
+ * @file  SoulSandBlock.hpp
  *
  */
 #pragma once

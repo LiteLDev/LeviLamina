@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerTickComponent.hpp
+ * @file  PlayerTickComponent.hpp
  *
  */
 #pragma once

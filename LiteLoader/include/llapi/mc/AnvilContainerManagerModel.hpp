@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnvilContainerManagerModel.hpp
+ * @file  AnvilContainerManagerModel.hpp
  *
  */
 #pragma once

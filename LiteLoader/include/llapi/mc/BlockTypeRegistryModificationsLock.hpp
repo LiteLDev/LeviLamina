@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockTypeRegistryModificationsLock.hpp
+ * @file  BlockTypeRegistryModificationsLock.hpp
  *
  */
 #pragma once

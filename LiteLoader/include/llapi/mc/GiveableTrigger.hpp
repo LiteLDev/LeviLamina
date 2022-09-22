@@ -1,5 +1,5 @@
 /**
- * @file  MC/GiveableTrigger.hpp
+ * @file  GiveableTrigger.hpp
  *
  */
 #pragma once

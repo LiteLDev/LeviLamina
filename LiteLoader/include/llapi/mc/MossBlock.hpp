@@ -1,5 +1,5 @@
 /**
- * @file  MC/MossBlock.hpp
+ * @file  MossBlock.hpp
  *
  */
 #pragma once

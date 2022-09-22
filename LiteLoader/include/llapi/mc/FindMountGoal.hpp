@@ -1,5 +1,5 @@
 /**
- * @file  MC/FindMountGoal.hpp
+ * @file  FindMountGoal.hpp
  *
  */
 #pragma once

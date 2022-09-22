@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompoundItem.hpp
+ * @file  CompoundItem.hpp
  *
  */
 #pragma once

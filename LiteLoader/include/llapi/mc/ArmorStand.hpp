@@ -1,5 +1,5 @@
 /**
- * @file  MC/ArmorStand.hpp
+ * @file  ArmorStand.hpp
  *
  */
 #pragma once

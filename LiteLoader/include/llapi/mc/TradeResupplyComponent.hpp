@@ -1,5 +1,5 @@
 /**
- * @file  MC/TradeResupplyComponent.hpp
+ * @file  TradeResupplyComponent.hpp
  *
  */
 #pragma once

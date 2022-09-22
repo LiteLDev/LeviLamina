@@ -1,5 +1,5 @@
 /**
- * @file  MC/IBlockWorldGenAPI.hpp
+ * @file  IBlockWorldGenAPI.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PerlinSimplexNoise.hpp
+ * @file  PerlinSimplexNoise.hpp
  *
  */
 #pragma once

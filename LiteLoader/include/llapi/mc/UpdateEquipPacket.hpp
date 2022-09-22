@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateEquipPacket.hpp
+ * @file  UpdateEquipPacket.hpp
  *
  */
 #pragma once

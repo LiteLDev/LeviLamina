@@ -1,5 +1,5 @@
 /**
- * @file  MC/BambooBlockItem.hpp
+ * @file  BambooBlockItem.hpp
  *
  */
 #pragma once

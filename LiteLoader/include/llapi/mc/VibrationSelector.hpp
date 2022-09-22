@@ -1,5 +1,5 @@
 /**
- * @file  MC/VibrationSelector.hpp
+ * @file  VibrationSelector.hpp
  *
  */
 #pragma once

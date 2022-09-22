@@ -1,5 +1,5 @@
 /**
- * @file  MC/SkullBlock.hpp
+ * @file  SkullBlock.hpp
  *
  */
 #pragma once

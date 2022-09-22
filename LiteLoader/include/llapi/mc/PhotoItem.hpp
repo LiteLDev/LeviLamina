@@ -1,5 +1,5 @@
 /**
- * @file  MC/PhotoItem.hpp
+ * @file  PhotoItem.hpp
  *
  */
 #pragma once

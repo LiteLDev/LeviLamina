@@ -1,5 +1,5 @@
 /**
- * @file  MC/IcePatchFeature.hpp
+ * @file  IcePatchFeature.hpp
  *
  */
 #pragma once

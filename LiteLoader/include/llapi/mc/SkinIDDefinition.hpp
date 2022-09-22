@@ -1,5 +1,5 @@
 /**
- * @file  MC/SkinIDDefinition.hpp
+ * @file  SkinIDDefinition.hpp
  *
  */
 #pragma once

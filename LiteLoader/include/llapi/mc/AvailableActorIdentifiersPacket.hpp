@@ -1,5 +1,5 @@
 /**
- * @file  MC/AvailableActorIdentifiersPacket.hpp
+ * @file  AvailableActorIdentifiersPacket.hpp
  *
  */
 #pragma once

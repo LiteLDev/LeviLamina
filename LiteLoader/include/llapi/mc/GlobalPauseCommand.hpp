@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlobalPauseCommand.hpp
+ * @file  GlobalPauseCommand.hpp
  *
  */
 #pragma once

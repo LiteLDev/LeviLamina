@@ -1,5 +1,5 @@
 /**
- * @file  MC/CrossbowItem.hpp
+ * @file  CrossbowItem.hpp
  *
  */
 #pragma once

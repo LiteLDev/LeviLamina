@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemUseMethodMap.hpp
+ * @file  ItemUseMethodMap.hpp
  *
  */
 #pragma once

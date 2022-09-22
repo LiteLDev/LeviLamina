@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompoundTagUpdaterContext.hpp
+ * @file  CompoundTagUpdaterContext.hpp
  *
  */
 #pragma once

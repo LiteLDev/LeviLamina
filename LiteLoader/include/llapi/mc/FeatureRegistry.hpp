@@ -1,5 +1,5 @@
 /**
- * @file  MC/FeatureRegistry.hpp
+ * @file  FeatureRegistry.hpp
  *
  */
 #pragma once

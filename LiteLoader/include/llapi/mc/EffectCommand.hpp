@@ -1,5 +1,5 @@
 /**
- * @file  MC/EffectCommand.hpp
+ * @file  EffectCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHStraightStairsDown.hpp
+ * @file  SHStraightStairsDown.hpp
  *
  */
 #pragma once

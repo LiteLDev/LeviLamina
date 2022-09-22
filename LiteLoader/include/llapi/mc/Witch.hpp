@@ -1,5 +1,5 @@
 /**
- * @file  MC/Witch.hpp
+ * @file  Witch.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResetEventObj.hpp
+ * @file  ResetEventObj.hpp
  *
  */
 #pragma once

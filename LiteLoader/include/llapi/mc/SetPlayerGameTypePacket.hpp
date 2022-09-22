@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetPlayerGameTypePacket.hpp
+ * @file  SetPlayerGameTypePacket.hpp
  *
  */
 #pragma once

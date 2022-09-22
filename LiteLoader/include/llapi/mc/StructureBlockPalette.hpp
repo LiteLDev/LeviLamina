@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureBlockPalette.hpp
+ * @file  StructureBlockPalette.hpp
  *
  */
 #pragma once

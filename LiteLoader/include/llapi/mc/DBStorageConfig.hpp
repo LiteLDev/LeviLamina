@@ -1,5 +1,5 @@
 /**
- * @file  MC/DBStorageConfig.hpp
+ * @file  DBStorageConfig.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/RepeaterCapacitor.hpp
+ * @file  RepeaterCapacitor.hpp
  *
  */
 #pragma once

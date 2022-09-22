@@ -1,5 +1,5 @@
 /**
- * @file  MC/BossEventPacket.hpp
+ * @file  BossEventPacket.hpp
  *
  */
 #pragma once

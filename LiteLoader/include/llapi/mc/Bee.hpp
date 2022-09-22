@@ -1,5 +1,5 @@
 /**
- * @file  MC/Bee.hpp
+ * @file  Bee.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LeafBlock.hpp
+ * @file  LeafBlock.hpp
  *
  */
 #pragma once

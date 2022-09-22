@@ -1,5 +1,5 @@
 /**
- * @file  MC/NoodleCavifier.hpp
+ * @file  NoodleCavifier.hpp
  *
  */
 #pragma once

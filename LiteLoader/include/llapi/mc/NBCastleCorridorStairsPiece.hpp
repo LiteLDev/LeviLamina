@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBCastleCorridorStairsPiece.hpp
+ * @file  NBCastleCorridorStairsPiece.hpp
  *
  */
 #pragma once

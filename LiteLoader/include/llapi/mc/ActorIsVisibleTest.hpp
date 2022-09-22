@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsVisibleTest.hpp
+ * @file  ActorIsVisibleTest.hpp
  *
  */
 #pragma once

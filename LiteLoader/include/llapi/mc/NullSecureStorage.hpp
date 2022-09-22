@@ -1,5 +1,5 @@
 /**
- * @file  MC/NullSecureStorage.hpp
+ * @file  NullSecureStorage.hpp
  *
  */
 #pragma once

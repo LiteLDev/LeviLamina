@@ -1,5 +1,5 @@
 /**
- * @file  MC/RiverFollowingGoal.hpp
+ * @file  RiverFollowingGoal.hpp
  *
  */
 #pragma once

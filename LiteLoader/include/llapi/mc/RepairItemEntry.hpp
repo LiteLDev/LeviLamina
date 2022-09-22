@@ -1,5 +1,5 @@
 /**
- * @file  MC/RepairItemEntry.hpp
+ * @file  RepairItemEntry.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChorusFlowerBlock.hpp
+ * @file  ChorusFlowerBlock.hpp
  *
  */
 #pragma once

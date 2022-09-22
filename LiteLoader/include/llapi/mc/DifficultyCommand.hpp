@@ -1,5 +1,5 @@
 /**
- * @file  MC/DifficultyCommand.hpp
+ * @file  DifficultyCommand.hpp
  *
  */
 #pragma once

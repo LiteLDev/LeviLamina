@@ -1,5 +1,5 @@
 /**
- * @file  MC/EditorNetworkPacket.hpp
+ * @file  EditorNetworkPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockDescriptor.hpp
+ * @file  BlockDescriptor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandRawText.hpp
+ * @file  CommandRawText.hpp
  *
  */
 #pragma once

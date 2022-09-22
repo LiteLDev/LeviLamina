@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndPortalShape.hpp
+ * @file  EndPortalShape.hpp
  *
  */
 #pragma once

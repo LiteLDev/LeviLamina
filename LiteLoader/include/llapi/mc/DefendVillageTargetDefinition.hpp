@@ -1,5 +1,5 @@
 /**
- * @file  MC/DefendVillageTargetDefinition.hpp
+ * @file  DefendVillageTargetDefinition.hpp
  *
  */
 #pragma once

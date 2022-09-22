@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaSystemsRegistration.hpp
+ * @file  VanillaSystemsRegistration.hpp
  *
  */
 #pragma once

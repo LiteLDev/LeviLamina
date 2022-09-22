@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorHasRangedWeaponTest.hpp
+ * @file  ActorHasRangedWeaponTest.hpp
  *
  */
 #pragma once

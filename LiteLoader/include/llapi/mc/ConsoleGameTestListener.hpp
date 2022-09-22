@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConsoleGameTestListener.hpp
+ * @file  ConsoleGameTestListener.hpp
  *
  */
 #pragma once

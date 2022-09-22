@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextureAtlasItem.hpp
+ * @file  TextureAtlasItem.hpp
  *
  */
 #pragma once

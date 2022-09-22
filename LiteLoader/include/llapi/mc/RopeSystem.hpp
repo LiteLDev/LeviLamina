@@ -1,5 +1,5 @@
 /**
- * @file  MC/RopeSystem.hpp
+ * @file  RopeSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FileArchiver.hpp
+ * @file  FileArchiver.hpp
  *
  */
 #pragma once

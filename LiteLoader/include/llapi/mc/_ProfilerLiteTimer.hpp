@@ -1,5 +1,5 @@
 /**
- * @file  MC/_ProfilerLiteTimer.hpp
+ * @file  _ProfilerLiteTimer.hpp
  *
  */
 #pragma once

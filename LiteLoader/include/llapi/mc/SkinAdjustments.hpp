@@ -1,5 +1,5 @@
 /**
- * @file  MC/SkinAdjustments.hpp
+ * @file  SkinAdjustments.hpp
  *
  */
 #pragma once

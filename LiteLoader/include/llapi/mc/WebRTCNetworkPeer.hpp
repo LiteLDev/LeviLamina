@@ -1,5 +1,5 @@
 /**
- * @file  MC/WebRTCNetworkPeer.hpp
+ * @file  WebRTCNetworkPeer.hpp
  *
  */
 #pragma once

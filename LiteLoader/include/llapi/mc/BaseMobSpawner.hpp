@@ -1,5 +1,5 @@
 /**
- * @file  MC/BaseMobSpawner.hpp
+ * @file  BaseMobSpawner.hpp
  *
  */
 #pragma once

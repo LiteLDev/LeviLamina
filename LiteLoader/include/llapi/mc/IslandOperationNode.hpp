@@ -1,5 +1,5 @@
 /**
- * @file  MC/IslandOperationNode.hpp
+ * @file  IslandOperationNode.hpp
  *
  */
 #pragma once

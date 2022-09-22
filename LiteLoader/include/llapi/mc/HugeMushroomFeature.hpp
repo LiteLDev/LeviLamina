@@ -1,5 +1,5 @@
 /**
- * @file  MC/HugeMushroomFeature.hpp
+ * @file  HugeMushroomFeature.hpp
  *
  */
 #pragma once

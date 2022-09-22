@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimWithEntityDefinition.hpp
+ * @file  SwimWithEntityDefinition.hpp
  *
  */
 #pragma once

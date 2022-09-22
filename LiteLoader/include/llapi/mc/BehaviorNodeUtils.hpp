@@ -1,5 +1,5 @@
 /**
- * @file  MC/BehaviorNodeUtils.hpp
+ * @file  BehaviorNodeUtils.hpp
  *
  */
 #pragma once

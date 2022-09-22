@@ -1,5 +1,5 @@
 /**
- * @file  MC/LightGemBlock.hpp
+ * @file  LightGemBlock.hpp
  *
  */
 #pragma once

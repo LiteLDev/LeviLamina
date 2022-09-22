@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChemistryAuxDataBlockItem.hpp
+ * @file  ChemistryAuxDataBlockItem.hpp
  *
  */
 #pragma once

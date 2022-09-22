@@ -1,5 +1,5 @@
 /**
- * @file  MC/DecrementStackEventResponse.hpp
+ * @file  DecrementStackEventResponse.hpp
  *
  */
 #pragma once

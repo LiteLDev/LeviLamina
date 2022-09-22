@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetRidingHeightUtility.hpp
+ * @file  GetRidingHeightUtility.hpp
  *
  */
 #pragma once

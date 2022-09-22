@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockVolume.hpp
+ * @file  BlockVolume.hpp
  *
  */
 #pragma once

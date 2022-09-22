@@ -1,5 +1,5 @@
 /**
- * @file  MC/CodeBuilderActorInfoCommand.hpp
+ * @file  CodeBuilderActorInfoCommand.hpp
  *
  */
 #pragma once

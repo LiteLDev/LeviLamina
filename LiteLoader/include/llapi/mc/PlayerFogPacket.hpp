@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerFogPacket.hpp
+ * @file  PlayerFogPacket.hpp
  *
  */
 #pragma once

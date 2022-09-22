@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetCommandsEnabledPacket.hpp
+ * @file  SetCommandsEnabledPacket.hpp
  *
  */
 #pragma once

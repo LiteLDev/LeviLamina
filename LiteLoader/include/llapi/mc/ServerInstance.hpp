@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerInstance.hpp
+ * @file  ServerInstance.hpp
  *
  */
 #pragma once

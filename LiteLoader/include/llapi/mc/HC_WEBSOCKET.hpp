@@ -1,5 +1,5 @@
 /**
- * @file  MC/HC_WEBSOCKET.hpp
+ * @file  HC_WEBSOCKET.hpp
  *
  */
 #pragma once

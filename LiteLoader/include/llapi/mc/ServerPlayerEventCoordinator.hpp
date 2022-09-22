@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerPlayerEventCoordinator.hpp
+ * @file  ServerPlayerEventCoordinator.hpp
  *
  */
 #pragma once

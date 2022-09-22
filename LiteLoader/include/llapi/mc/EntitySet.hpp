@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntitySet.hpp
+ * @file  EntitySet.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangMemberAccessor.hpp
+ * @file  MolangMemberAccessor.hpp
  *
  */
 #pragma once

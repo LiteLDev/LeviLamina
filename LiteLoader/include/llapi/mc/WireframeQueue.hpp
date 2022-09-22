@@ -1,5 +1,5 @@
 /**
- * @file  MC/WireframeQueue.hpp
+ * @file  WireframeQueue.hpp
  *
  */
 #pragma once

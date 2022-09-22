@@ -1,5 +1,5 @@
 /**
- * @file  MC/DispenserBlock.hpp
+ * @file  DispenserBlock.hpp
  *
  */
 #pragma once

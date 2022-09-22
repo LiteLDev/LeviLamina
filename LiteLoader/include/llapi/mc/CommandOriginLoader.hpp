@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandOriginLoader.hpp
+ * @file  CommandOriginLoader.hpp
  *
  */
 #pragma once

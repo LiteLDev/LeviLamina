@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerTickPolicy.hpp
+ * @file  PlayerTickPolicy.hpp
  *
  */
 #pragma once

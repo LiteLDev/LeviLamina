@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerEatFoodEvent.hpp
+ * @file  PlayerEatFoodEvent.hpp
  *
  */
 #pragma once

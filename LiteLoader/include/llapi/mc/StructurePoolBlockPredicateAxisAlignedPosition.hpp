@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolBlockPredicateAxisAlignedPosition.hpp
+ * @file  StructurePoolBlockPredicateAxisAlignedPosition.hpp
  *
  */
 #pragma once

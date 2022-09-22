@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING.hpp
+ * @file  ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING.hpp
  *
  */
 #pragma once

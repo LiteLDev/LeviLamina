@@ -1,5 +1,5 @@
 /**
- * @file  MC/MultiplayerSettingsPacket.hpp
+ * @file  MultiplayerSettingsPacket.hpp
  *
  */
 #pragma once

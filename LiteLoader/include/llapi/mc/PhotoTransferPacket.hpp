@@ -1,5 +1,5 @@
 /**
- * @file  MC/PhotoTransferPacket.hpp
+ * @file  PhotoTransferPacket.hpp
  *
  */
 #pragma once

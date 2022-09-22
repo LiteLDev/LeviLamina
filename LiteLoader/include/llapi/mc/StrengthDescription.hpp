@@ -1,5 +1,5 @@
 /**
- * @file  MC/StrengthDescription.hpp
+ * @file  StrengthDescription.hpp
  *
  */
 #pragma once

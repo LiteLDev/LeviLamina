@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShootBowDefinition.hpp
+ * @file  ShootBowDefinition.hpp
  *
  */
 #pragma once

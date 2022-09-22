@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkVeinBlockBehavior.hpp
+ * @file  SculkVeinBlockBehavior.hpp
  *
  */
 #pragma once

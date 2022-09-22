@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResetPositionModeSystem.hpp
+ * @file  ResetPositionModeSystem.hpp
  *
  */
 #pragma once

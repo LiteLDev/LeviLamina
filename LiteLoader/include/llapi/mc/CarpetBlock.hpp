@@ -1,5 +1,5 @@
 /**
- * @file  MC/CarpetBlock.hpp
+ * @file  CarpetBlock.hpp
  *
  */
 #pragma once

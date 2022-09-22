@@ -1,5 +1,5 @@
 /**
- * @file  MC/MonsterEggBlock.hpp
+ * @file  MonsterEggBlock.hpp
  *
  */
 #pragma once

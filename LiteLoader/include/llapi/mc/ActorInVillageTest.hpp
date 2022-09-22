@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInVillageTest.hpp
+ * @file  ActorInVillageTest.hpp
  *
  */
 #pragma once

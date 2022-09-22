@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContentTierIncompatibleReason.hpp
+ * @file  ContentTierIncompatibleReason.hpp
  *
  */
 #pragma once

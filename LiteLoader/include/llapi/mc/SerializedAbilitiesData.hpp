@@ -1,5 +1,5 @@
 /**
- * @file  MC/SerializedAbilitiesData.hpp
+ * @file  SerializedAbilitiesData.hpp
  *
  */
 #pragma once

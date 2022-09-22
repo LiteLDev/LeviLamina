@@ -1,5 +1,5 @@
 /**
- * @file  MC/RenderOffsetsItemComponent.hpp
+ * @file  RenderOffsetsItemComponent.hpp
  *
  */
 #pragma once

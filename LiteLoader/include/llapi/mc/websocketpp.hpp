@@ -1,5 +1,5 @@
 /**
- * @file  MC/websocketpp.hpp
+ * @file  websocketpp.hpp
  *
  */
 #pragma once

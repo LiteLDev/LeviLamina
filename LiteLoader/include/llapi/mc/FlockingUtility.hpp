@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlockingUtility.hpp
+ * @file  FlockingUtility.hpp
  *
  */
 #pragma once

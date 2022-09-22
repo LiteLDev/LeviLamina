@@ -1,5 +1,5 @@
 /**
- * @file  MC/SnapToSurfaceFeature.hpp
+ * @file  SnapToSurfaceFeature.hpp
  *
  */
 #pragma once

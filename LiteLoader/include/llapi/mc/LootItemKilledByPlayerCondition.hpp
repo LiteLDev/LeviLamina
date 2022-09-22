@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootItemKilledByPlayerCondition.hpp
+ * @file  LootItemKilledByPlayerCondition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/StemBlock.hpp
+ * @file  StemBlock.hpp
  *
  */
 #pragma once

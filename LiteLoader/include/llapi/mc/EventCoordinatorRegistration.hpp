@@ -1,5 +1,5 @@
 /**
- * @file  MC/EventCoordinatorRegistration.hpp
+ * @file  EventCoordinatorRegistration.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SerializerTraits.hpp
+ * @file  SerializerTraits.hpp
  *
  */
 #pragma once

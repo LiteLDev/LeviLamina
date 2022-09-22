@@ -1,5 +1,5 @@
 /**
- * @file  MC/Axolotl.hpp
+ * @file  Axolotl.hpp
  *
  */
 #pragma once

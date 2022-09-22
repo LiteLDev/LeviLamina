@@ -1,5 +1,5 @@
 /**
- * @file  MC/IPacketObserver.hpp
+ * @file  IPacketObserver.hpp
  *
  */
 #pragma once

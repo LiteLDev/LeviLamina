@@ -1,5 +1,5 @@
 /**
- * @file  MC/MonsterRoomFeature.hpp
+ * @file  MonsterRoomFeature.hpp
  *
  */
 #pragma once

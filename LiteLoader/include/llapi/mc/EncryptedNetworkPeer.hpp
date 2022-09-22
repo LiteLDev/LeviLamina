@@ -1,5 +1,5 @@
 /**
- * @file  MC/EncryptedNetworkPeer.hpp
+ * @file  EncryptedNetworkPeer.hpp
  *
  */
 #pragma once

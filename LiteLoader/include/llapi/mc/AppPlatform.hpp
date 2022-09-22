@@ -1,5 +1,5 @@
 /**
- * @file  MC/AppPlatform.hpp
+ * @file  AppPlatform.hpp
  *
  */
 #pragma once

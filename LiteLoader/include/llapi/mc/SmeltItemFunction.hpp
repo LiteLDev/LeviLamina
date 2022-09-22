@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmeltItemFunction.hpp
+ * @file  SmeltItemFunction.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmithingTableMaterialContainerValidation.hpp
+ * @file  SmithingTableMaterialContainerValidation.hpp
  *
  */
 #pragma once

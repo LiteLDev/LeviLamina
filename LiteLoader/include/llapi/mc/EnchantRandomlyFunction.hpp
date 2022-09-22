@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantRandomlyFunction.hpp
+ * @file  EnchantRandomlyFunction.hpp
  *
  */
 #pragma once

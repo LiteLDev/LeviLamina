@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnFriendlyAngerDefinition.hpp
+ * @file  OnFriendlyAngerDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoostableComponent.hpp
+ * @file  BoostableComponent.hpp
  *
  */
 #pragma once

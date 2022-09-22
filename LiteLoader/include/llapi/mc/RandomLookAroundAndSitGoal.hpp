@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomLookAroundAndSitGoal.hpp
+ * @file  RandomLookAroundAndSitGoal.hpp
  *
  */
 #pragma once

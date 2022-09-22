@@ -1,5 +1,5 @@
 /**
- * @file  MC/websocket_outgoing_message.hpp
+ * @file  websocket_outgoing_message.hpp
  *
  */
 #pragma once

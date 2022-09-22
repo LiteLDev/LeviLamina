@@ -1,5 +1,5 @@
 /**
- * @file  MC/BaseGamePackSlices.hpp
+ * @file  BaseGamePackSlices.hpp
  *
  */
 #pragma once

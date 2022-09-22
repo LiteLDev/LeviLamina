@@ -1,5 +1,5 @@
 /**
- * @file  MC/EventCommand.hpp
+ * @file  EventCommand.hpp
  *
  */
 #pragma once

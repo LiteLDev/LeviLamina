@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetBlockReactionComponent.hpp
+ * @file  SetBlockReactionComponent.hpp
  *
  */
 #pragma once

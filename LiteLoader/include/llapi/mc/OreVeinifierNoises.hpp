@@ -1,5 +1,5 @@
 /**
- * @file  MC/OreVeinifierNoises.hpp
+ * @file  OreVeinifierNoises.hpp
  *
  */
 #pragma once

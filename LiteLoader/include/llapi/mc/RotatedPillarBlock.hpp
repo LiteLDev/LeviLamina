@@ -1,5 +1,5 @@
 /**
- * @file  MC/RotatedPillarBlock.hpp
+ * @file  RotatedPillarBlock.hpp
  *
  */
 #pragma once

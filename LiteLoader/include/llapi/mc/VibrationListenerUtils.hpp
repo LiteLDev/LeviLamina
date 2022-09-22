@@ -1,5 +1,5 @@
 /**
- * @file  MC/VibrationListenerUtils.hpp
+ * @file  VibrationListenerUtils.hpp
  *
  */
 #pragma once

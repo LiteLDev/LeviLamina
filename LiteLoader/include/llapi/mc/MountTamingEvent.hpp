@@ -1,5 +1,5 @@
 /**
- * @file  MC/MountTamingEvent.hpp
+ * @file  MountTamingEvent.hpp
  *
  */
 #pragma once

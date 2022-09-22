@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConsumeItemNode.hpp
+ * @file  ConsumeItemNode.hpp
  *
  */
 #pragma once

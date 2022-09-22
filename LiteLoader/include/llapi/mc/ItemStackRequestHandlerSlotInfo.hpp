@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestHandlerSlotInfo.hpp
+ * @file  ItemStackRequestHandlerSlotInfo.hpp
  *
  */
 #pragma once

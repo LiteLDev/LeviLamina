@@ -1,5 +1,5 @@
 /**
- * @file  MC/AllowedAnywhereConsume.hpp
+ * @file  AllowedAnywhereConsume.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/StrongholdFeature.hpp
+ * @file  StrongholdFeature.hpp
  *
  */
 #pragma once

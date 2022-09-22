@@ -1,5 +1,5 @@
 /**
- * @file  MC/MaterialReducerDataEntry.hpp
+ * @file  MaterialReducerDataEntry.hpp
  *
  */
 #pragma once

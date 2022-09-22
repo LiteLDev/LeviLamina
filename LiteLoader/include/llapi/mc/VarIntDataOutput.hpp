@@ -1,5 +1,5 @@
 /**
- * @file  MC/VarIntDataOutput.hpp
+ * @file  VarIntDataOutput.hpp
  *
  */
 #pragma once

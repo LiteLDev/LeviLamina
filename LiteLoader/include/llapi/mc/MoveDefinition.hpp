@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveDefinition.hpp
+ * @file  MoveDefinition.hpp
  *
  */
 #pragma once

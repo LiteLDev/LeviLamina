@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlideMoveControlDescription.hpp
+ * @file  GlideMoveControlDescription.hpp
  *
  */
 #pragma once

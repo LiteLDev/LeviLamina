@@ -1,5 +1,5 @@
 /**
- * @file  MC/VolumeFogDefinition.hpp
+ * @file  VolumeFogDefinition.hpp
  *
  */
 #pragma once

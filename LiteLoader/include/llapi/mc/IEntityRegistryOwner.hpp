@@ -1,5 +1,5 @@
 /**
- * @file  MC/IEntityRegistryOwner.hpp
+ * @file  IEntityRegistryOwner.hpp
  *
  */
 #pragma once

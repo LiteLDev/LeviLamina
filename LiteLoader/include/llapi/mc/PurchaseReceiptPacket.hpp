@@ -1,5 +1,5 @@
 /**
- * @file  MC/PurchaseReceiptPacket.hpp
+ * @file  PurchaseReceiptPacket.hpp
  *
  */
 #pragma once

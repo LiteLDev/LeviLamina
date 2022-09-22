@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorLegacySaveConverter.hpp
+ * @file  ActorLegacySaveConverter.hpp
  *
  */
 #pragma once

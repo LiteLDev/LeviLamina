@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyBodyControl.hpp
+ * @file  LegacyBodyControl.hpp
  *
  */
 #pragma once

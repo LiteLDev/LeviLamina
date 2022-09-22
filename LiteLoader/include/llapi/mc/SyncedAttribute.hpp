@@ -1,5 +1,5 @@
 /**
- * @file  MC/SyncedAttribute.hpp
+ * @file  SyncedAttribute.hpp
  *
  */
 #pragma once

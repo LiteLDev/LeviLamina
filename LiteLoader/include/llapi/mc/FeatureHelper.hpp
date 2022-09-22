@@ -1,5 +1,5 @@
 /**
- * @file  MC/FeatureHelper.hpp
+ * @file  FeatureHelper.hpp
  *
  */
 #pragma once

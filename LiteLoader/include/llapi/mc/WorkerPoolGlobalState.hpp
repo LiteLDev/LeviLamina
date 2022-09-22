@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorkerPoolGlobalState.hpp
+ * @file  WorkerPoolGlobalState.hpp
  *
  */
 #pragma once

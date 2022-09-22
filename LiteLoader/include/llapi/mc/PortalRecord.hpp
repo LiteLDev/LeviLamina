@@ -1,5 +1,5 @@
 /**
- * @file  MC/PortalRecord.hpp
+ * @file  PortalRecord.hpp
  *
  */
 #pragma once

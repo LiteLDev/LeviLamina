@@ -1,5 +1,5 @@
 /**
- * @file  MC/AgentCommandExecutionGoal.hpp
+ * @file  AgentCommandExecutionGoal.hpp
  *
  */
 #pragma once

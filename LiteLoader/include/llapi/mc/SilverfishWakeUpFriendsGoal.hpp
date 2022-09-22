@@ -1,5 +1,5 @@
 /**
- * @file  MC/SilverfishWakeUpFriendsGoal.hpp
+ * @file  SilverfishWakeUpFriendsGoal.hpp
  *
  */
 #pragma once

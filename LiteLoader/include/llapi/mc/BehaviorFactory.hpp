@@ -1,5 +1,5 @@
 /**
- * @file  MC/BehaviorFactory.hpp
+ * @file  BehaviorFactory.hpp
  *
  */
 #pragma once

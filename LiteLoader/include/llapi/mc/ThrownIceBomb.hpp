@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThrownIceBomb.hpp
+ * @file  ThrownIceBomb.hpp
  *
  */
 #pragma once

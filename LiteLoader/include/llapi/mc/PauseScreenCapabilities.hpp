@@ -1,5 +1,5 @@
 /**
- * @file  MC/PauseScreenCapabilities.hpp
+ * @file  PauseScreenCapabilities.hpp
  *
  */
 #pragma once

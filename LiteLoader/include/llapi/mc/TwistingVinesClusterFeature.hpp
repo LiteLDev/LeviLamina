@@ -1,5 +1,5 @@
 /**
- * @file  MC/TwistingVinesClusterFeature.hpp
+ * @file  TwistingVinesClusterFeature.hpp
  *
  */
 #pragma once

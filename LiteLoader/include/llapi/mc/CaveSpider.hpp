@@ -1,5 +1,5 @@
 /**
- * @file  MC/CaveSpider.hpp
+ * @file  CaveSpider.hpp
  *
  */
 #pragma once

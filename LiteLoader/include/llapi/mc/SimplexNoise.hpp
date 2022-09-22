@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimplexNoise.hpp
+ * @file  SimplexNoise.hpp
  *
  */
 #pragma once

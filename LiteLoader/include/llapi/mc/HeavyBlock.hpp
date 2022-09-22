@@ -1,5 +1,5 @@
 /**
- * @file  MC/HeavyBlock.hpp
+ * @file  HeavyBlock.hpp
  *
  */
 #pragma once

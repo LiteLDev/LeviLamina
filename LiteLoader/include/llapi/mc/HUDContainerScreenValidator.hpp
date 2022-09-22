@@ -1,5 +1,5 @@
 /**
- * @file  MC/HUDContainerScreenValidator.hpp
+ * @file  HUDContainerScreenValidator.hpp
  *
  */
 #pragma once

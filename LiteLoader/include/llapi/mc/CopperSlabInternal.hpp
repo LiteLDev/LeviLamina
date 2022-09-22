@@ -1,5 +1,5 @@
 /**
- * @file  MC/CopperSlabInternal.hpp
+ * @file  CopperSlabInternal.hpp
  *
  */
 #pragma once

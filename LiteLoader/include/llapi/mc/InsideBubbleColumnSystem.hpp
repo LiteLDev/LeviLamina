@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideBubbleColumnSystem.hpp
+ * @file  InsideBubbleColumnSystem.hpp
  *
  */
 #pragma once

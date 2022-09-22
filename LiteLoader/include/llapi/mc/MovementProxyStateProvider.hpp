@@ -1,5 +1,5 @@
 /**
- * @file  MC/MovementProxyStateProvider.hpp
+ * @file  MovementProxyStateProvider.hpp
  *
  */
 #pragma once

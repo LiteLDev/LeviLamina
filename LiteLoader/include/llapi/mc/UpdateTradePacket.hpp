@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateTradePacket.hpp
+ * @file  UpdateTradePacket.hpp
  *
  */
 #pragma once

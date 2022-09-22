@@ -1,5 +1,5 @@
 /**
- * @file  MC/RefreshAABBSystem.hpp
+ * @file  RefreshAABBSystem.hpp
  *
  */
 #pragma once

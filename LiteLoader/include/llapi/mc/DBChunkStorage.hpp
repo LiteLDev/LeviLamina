@@ -1,5 +1,5 @@
 /**
- * @file  MC/DBChunkStorage.hpp
+ * @file  DBChunkStorage.hpp
  *
  */
 #pragma once

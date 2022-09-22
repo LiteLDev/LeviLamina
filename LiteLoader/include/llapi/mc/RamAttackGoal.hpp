@@ -1,5 +1,5 @@
 /**
- * @file  MC/RamAttackGoal.hpp
+ * @file  RamAttackGoal.hpp
  *
  */
 #pragma once

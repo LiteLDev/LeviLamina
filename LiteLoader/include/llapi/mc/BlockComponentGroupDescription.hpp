@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockComponentGroupDescription.hpp
+ * @file  BlockComponentGroupDescription.hpp
  *
  */
 #pragma once

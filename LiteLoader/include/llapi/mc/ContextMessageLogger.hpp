@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContextMessageLogger.hpp
+ * @file  ContextMessageLogger.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkPeer.hpp
+ * @file  NetworkPeer.hpp
  *
  */
 #pragma once

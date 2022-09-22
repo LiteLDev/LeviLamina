@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClientboundDebugRendererPacket.hpp
+ * @file  ClientboundDebugRendererPacket.hpp
  *
  */
 #pragma once

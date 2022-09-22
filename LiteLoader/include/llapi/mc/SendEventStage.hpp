@@ -1,5 +1,5 @@
 /**
- * @file  MC/SendEventStage.hpp
+ * @file  SendEventStage.hpp
  *
  */
 #pragma once

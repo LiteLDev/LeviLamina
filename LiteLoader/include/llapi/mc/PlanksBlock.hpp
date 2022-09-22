@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlanksBlock.hpp
+ * @file  PlanksBlock.hpp
  *
  */
 #pragma once

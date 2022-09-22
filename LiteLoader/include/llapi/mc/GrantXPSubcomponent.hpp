@@ -1,5 +1,5 @@
 /**
- * @file  MC/GrantXPSubcomponent.hpp
+ * @file  GrantXPSubcomponent.hpp
  *
  */
 #pragma once

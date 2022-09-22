@@ -1,5 +1,5 @@
 /**
- * @file  MC/Spawner.hpp
+ * @file  Spawner.hpp
  *
  */
 #pragma once

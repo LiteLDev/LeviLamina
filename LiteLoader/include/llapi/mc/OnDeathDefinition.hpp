@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnDeathDefinition.hpp
+ * @file  OnDeathDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BigDripleafBlock.hpp
+ * @file  BigDripleafBlock.hpp
  *
  */
 #pragma once

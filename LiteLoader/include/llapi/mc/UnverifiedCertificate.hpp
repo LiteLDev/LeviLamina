@@ -1,5 +1,5 @@
 /**
- * @file  MC/UnverifiedCertificate.hpp
+ * @file  UnverifiedCertificate.hpp
  *
  */
 #pragma once

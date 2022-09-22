@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimIdleDefinition.hpp
+ * @file  SwimIdleDefinition.hpp
  *
  */
 #pragma once

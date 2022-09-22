@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetActorLinkPacketSystemImpl.hpp
+ * @file  SetActorLinkPacketSystemImpl.hpp
  *
  */
 #pragma once

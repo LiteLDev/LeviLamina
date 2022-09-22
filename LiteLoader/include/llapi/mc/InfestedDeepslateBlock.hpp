@@ -1,5 +1,5 @@
 /**
- * @file  MC/InfestedDeepslateBlock.hpp
+ * @file  InfestedDeepslateBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/IllagerBeastBlockedDescription.hpp
+ * @file  IllagerBeastBlockedDescription.hpp
  *
  */
 #pragma once

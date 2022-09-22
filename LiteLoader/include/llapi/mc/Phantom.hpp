@@ -1,5 +1,5 @@
 /**
- * @file  MC/Phantom.hpp
+ * @file  Phantom.hpp
  *
  */
 #pragma once

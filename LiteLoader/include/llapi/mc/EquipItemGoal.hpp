@@ -1,5 +1,5 @@
 /**
- * @file  MC/EquipItemGoal.hpp
+ * @file  EquipItemGoal.hpp
  *
  */
 #pragma once

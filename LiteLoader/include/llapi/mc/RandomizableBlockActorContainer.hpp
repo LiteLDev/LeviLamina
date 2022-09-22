@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomizableBlockActorContainer.hpp
+ * @file  RandomizableBlockActorContainer.hpp
  *
  */
 #pragma once

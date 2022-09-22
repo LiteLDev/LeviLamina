@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootItemRandomChanceWithLootingCondition.hpp
+ * @file  LootItemRandomChanceWithLootingCondition.hpp
  *
  */
 #pragma once

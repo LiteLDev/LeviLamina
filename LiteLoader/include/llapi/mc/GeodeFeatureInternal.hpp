@@ -1,5 +1,5 @@
 /**
- * @file  MC/GeodeFeatureInternal.hpp
+ * @file  GeodeFeatureInternal.hpp
  *
  */
 #pragma once

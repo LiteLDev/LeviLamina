@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubmitCallback.hpp
+ * @file  SubmitCallback.hpp
  *
  */
 #pragma once

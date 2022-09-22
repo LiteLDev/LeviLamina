@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerPlayerBlockUseHandler.hpp
+ * @file  ServerPlayerBlockUseHandler.hpp
  *
  */
 #pragma once

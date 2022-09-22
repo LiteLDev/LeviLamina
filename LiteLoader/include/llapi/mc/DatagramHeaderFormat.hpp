@@ -1,5 +1,5 @@
 /**
- * @file  MC/DatagramHeaderFormat.hpp
+ * @file  DatagramHeaderFormat.hpp
  *
  */
 #pragma once

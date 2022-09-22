@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockActorDataPacket.hpp
+ * @file  BlockActorDataPacket.hpp
  *
  */
 #pragma once

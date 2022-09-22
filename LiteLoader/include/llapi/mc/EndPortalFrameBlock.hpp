@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndPortalFrameBlock.hpp
+ * @file  EndPortalFrameBlock.hpp
  *
  */
 #pragma once

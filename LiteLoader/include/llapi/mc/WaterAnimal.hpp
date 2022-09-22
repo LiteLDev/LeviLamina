@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaterAnimal.hpp
+ * @file  WaterAnimal.hpp
  *
  */
 #pragma once

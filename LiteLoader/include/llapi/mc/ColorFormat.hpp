@@ -1,5 +1,5 @@
 /**
- * @file  MC/ColorFormat.hpp
+ * @file  ColorFormat.hpp
  *
  */
 #pragma once

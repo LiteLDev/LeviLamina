@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameTestClearTask.hpp
+ * @file  GameTestClearTask.hpp
  *
  */
 #pragma once

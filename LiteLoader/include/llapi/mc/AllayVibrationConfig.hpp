@@ -1,5 +1,5 @@
 /**
- * @file  MC/AllayVibrationConfig.hpp
+ * @file  AllayVibrationConfig.hpp
  *
  */
 #pragma once

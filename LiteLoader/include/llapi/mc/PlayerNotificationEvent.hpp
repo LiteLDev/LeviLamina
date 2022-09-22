@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerNotificationEvent.hpp
+ * @file  PlayerNotificationEvent.hpp
  *
  */
 #pragma once

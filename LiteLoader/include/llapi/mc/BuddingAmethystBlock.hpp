@@ -1,5 +1,5 @@
 /**
- * @file  MC/BuddingAmethystBlock.hpp
+ * @file  BuddingAmethystBlock.hpp
  *
  */
 #pragma once

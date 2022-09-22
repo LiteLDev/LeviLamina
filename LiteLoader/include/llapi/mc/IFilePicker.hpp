@@ -1,5 +1,5 @@
 /**
- * @file  MC/IFilePicker.hpp
+ * @file  IFilePicker.hpp
  *
  */
 #pragma once

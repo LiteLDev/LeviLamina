@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameEventListenerRegistry.hpp
+ * @file  GameEventListenerRegistry.hpp
  *
  */
 #pragma once

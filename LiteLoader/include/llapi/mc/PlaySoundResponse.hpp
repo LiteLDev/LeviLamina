@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlaySoundResponse.hpp
+ * @file  PlaySoundResponse.hpp
  *
  */
 #pragma once

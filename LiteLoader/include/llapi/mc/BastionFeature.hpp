@@ -1,5 +1,5 @@
 /**
- * @file  MC/BastionFeature.hpp
+ * @file  BastionFeature.hpp
  *
  */
 #pragma once

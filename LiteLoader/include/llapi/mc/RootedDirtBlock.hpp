@@ -1,5 +1,5 @@
 /**
- * @file  MC/RootedDirtBlock.hpp
+ * @file  RootedDirtBlock.hpp
  *
  */
 #pragma once

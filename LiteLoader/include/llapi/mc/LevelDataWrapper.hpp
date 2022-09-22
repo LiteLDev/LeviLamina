@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelDataWrapper.hpp
+ * @file  LevelDataWrapper.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapItemSavedData.hpp
+ * @file  MapItemSavedData.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerValidationSlotInfo.hpp
+ * @file  ContainerValidationSlotInfo.hpp
  *
  */
 #pragma once

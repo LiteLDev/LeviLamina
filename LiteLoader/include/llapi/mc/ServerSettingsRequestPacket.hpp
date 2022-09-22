@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerSettingsRequestPacket.hpp
+ * @file  ServerSettingsRequestPacket.hpp
  *
  */
 #pragma once

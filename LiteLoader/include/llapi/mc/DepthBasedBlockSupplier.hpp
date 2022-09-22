@@ -1,5 +1,5 @@
 /**
- * @file  MC/DepthBasedBlockSupplier.hpp
+ * @file  DepthBasedBlockSupplier.hpp
  *
  */
 #pragma once

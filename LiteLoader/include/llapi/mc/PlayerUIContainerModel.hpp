@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerUIContainerModel.hpp
+ * @file  PlayerUIContainerModel.hpp
  *
  */
 #pragma once

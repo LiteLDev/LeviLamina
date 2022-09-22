@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnvilMaterialContainerValidation.hpp
+ * @file  AnvilMaterialContainerValidation.hpp
  *
  */
 #pragma once

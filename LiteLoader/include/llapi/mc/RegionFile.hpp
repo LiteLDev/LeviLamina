@@ -1,5 +1,5 @@
 /**
- * @file  MC/RegionFile.hpp
+ * @file  RegionFile.hpp
  *
  */
 #pragma once

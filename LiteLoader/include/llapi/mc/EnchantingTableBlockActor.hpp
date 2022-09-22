@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantingTableBlockActor.hpp
+ * @file  EnchantingTableBlockActor.hpp
  *
  */
 #pragma once

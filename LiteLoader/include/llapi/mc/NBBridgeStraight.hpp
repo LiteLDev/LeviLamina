@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBBridgeStraight.hpp
+ * @file  NBBridgeStraight.hpp
  *
  */
 #pragma once

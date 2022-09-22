@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerBlockActions.hpp
+ * @file  PlayerBlockActions.hpp
  *
  */
 #pragma once

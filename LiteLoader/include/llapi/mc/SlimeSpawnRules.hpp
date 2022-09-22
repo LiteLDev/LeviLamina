@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeSpawnRules.hpp
+ * @file  SlimeSpawnRules.hpp
  *
  */
 #pragma once

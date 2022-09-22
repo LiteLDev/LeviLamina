@@ -1,5 +1,5 @@
 /**
- * @file  MC/RideableComponentData.hpp
+ * @file  RideableComponentData.hpp
  *
  */
 #pragma once

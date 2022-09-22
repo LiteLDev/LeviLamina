@@ -1,5 +1,5 @@
 /**
- * @file  MC/CerealDocumentUpgradeStep.hpp
+ * @file  CerealDocumentUpgradeStep.hpp
  *
  */
 #pragma once

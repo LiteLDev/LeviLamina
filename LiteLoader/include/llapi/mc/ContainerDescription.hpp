@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerDescription.hpp
+ * @file  ContainerDescription.hpp
  *
  */
 #pragma once

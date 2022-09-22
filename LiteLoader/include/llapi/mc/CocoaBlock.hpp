@@ -1,5 +1,5 @@
 /**
- * @file  MC/CocoaBlock.hpp
+ * @file  CocoaBlock.hpp
  *
  */
 #pragma once

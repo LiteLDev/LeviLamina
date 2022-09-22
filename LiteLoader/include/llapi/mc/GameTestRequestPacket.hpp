@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameTestRequestPacket.hpp
+ * @file  GameTestRequestPacket.hpp
  *
  */
 #pragma once

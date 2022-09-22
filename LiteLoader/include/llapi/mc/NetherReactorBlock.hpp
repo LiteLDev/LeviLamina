@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherReactorBlock.hpp
+ * @file  NetherReactorBlock.hpp
  *
  */
 #pragma once

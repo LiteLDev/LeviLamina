@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoundEventSystem.hpp
+ * @file  SoundEventSystem.hpp
  *
  */
 #pragma once

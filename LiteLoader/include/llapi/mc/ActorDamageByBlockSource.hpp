@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDamageByBlockSource.hpp
+ * @file  ActorDamageByBlockSource.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DyeColorUtil.hpp
+ * @file  DyeColorUtil.hpp
  *
  */
 #pragma once

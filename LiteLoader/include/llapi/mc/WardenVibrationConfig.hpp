@@ -1,5 +1,5 @@
 /**
- * @file  MC/WardenVibrationConfig.hpp
+ * @file  WardenVibrationConfig.hpp
  *
  */
 #pragma once

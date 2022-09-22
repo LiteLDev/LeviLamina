@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterParamDefinition.hpp
+ * @file  FilterParamDefinition.hpp
  *
  */
 #pragma once

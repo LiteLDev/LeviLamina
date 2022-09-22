@@ -1,5 +1,5 @@
 /**
- * @file  MC/LightningBolt.hpp
+ * @file  LightningBolt.hpp
  *
  */
 #pragma once

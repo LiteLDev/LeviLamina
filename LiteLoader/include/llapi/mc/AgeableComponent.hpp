@@ -1,5 +1,5 @@
 /**
- * @file  MC/AgeableComponent.hpp
+ * @file  AgeableComponent.hpp
  *
  */
 #pragma once

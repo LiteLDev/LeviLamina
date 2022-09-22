@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChainBlock.hpp
+ * @file  ChainBlock.hpp
  *
  */
 #pragma once

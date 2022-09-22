@@ -1,5 +1,5 @@
 /**
- * @file  MC/GrowingPlantFeature.hpp
+ * @file  GrowingPlantFeature.hpp
  *
  */
 #pragma once

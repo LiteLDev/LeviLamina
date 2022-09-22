@@ -1,5 +1,5 @@
 /**
- * @file  MC/GenericMoveControlDescription.hpp
+ * @file  GenericMoveControlDescription.hpp
  *
  */
 #pragma once

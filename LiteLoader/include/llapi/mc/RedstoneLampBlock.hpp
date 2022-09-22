@@ -1,5 +1,5 @@
 /**
- * @file  MC/RedstoneLampBlock.hpp
+ * @file  RedstoneLampBlock.hpp
  *
  */
 #pragma once

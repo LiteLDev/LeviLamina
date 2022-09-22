@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextObjectRoot.hpp
+ * @file  TextObjectRoot.hpp
  *
  */
 #pragma once

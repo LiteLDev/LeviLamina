@@ -1,5 +1,5 @@
 /**
- * @file  MC/TrustComponent.hpp
+ * @file  TrustComponent.hpp
  *
  */
 #pragma once

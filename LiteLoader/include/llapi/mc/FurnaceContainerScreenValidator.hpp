@@ -1,5 +1,5 @@
 /**
- * @file  MC/FurnaceContainerScreenValidator.hpp
+ * @file  FurnaceContainerScreenValidator.hpp
  *
  */
 #pragma once

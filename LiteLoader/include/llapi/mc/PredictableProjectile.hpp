@@ -1,5 +1,5 @@
 /**
- * @file  MC/PredictableProjectile.hpp
+ * @file  PredictableProjectile.hpp
  *
  */
 #pragma once

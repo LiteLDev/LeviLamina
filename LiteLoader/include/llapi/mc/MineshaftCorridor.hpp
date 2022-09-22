@@ -1,5 +1,5 @@
 /**
- * @file  MC/MineshaftCorridor.hpp
+ * @file  MineshaftCorridor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResetActionStopSystem.hpp
+ * @file  ResetActionStopSystem.hpp
  *
  */
 #pragma once

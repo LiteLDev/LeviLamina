@@ -1,5 +1,5 @@
 /**
- * @file  MC/TntBlock.hpp
+ * @file  TntBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorStopRidingEventSystem.hpp
+ * @file  ActorStopRidingEventSystem.hpp
  *
  */
 #pragma once

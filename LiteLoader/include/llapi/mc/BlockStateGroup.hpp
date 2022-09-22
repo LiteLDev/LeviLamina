@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockStateGroup.hpp
+ * @file  BlockStateGroup.hpp
  *
  */
 #pragma once

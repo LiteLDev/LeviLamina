@@ -1,5 +1,5 @@
 /**
- * @file  MC/LightBlock.hpp
+ * @file  LightBlock.hpp
  *
  */
 #pragma once

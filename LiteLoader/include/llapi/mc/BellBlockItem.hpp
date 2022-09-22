@@ -1,5 +1,5 @@
 /**
- * @file  MC/BellBlockItem.hpp
+ * @file  BellBlockItem.hpp
  *
  */
 #pragma once

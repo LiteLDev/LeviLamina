@@ -1,5 +1,5 @@
 /**
- * @file  MC/Horse.hpp
+ * @file  Horse.hpp
  *
  */
 #pragma once

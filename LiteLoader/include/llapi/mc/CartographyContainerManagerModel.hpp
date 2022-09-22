@@ -1,5 +1,5 @@
 /**
- * @file  MC/CartographyContainerManagerModel.hpp
+ * @file  CartographyContainerManagerModel.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MovementInterpolatorSystemImpl.hpp
+ * @file  MovementInterpolatorSystemImpl.hpp
  *
  */
 #pragma once

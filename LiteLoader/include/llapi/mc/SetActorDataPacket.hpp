@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetActorDataPacket.hpp
+ * @file  SetActorDataPacket.hpp
  *
  */
 #pragma once

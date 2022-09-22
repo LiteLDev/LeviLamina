@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorTrustsSubjectTest.hpp
+ * @file  ActorTrustsSubjectTest.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnderMan.hpp
+ * @file  EnderMan.hpp
  *
  */
 #pragma once

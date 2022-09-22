@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityComponentFactoryJson.hpp
+ * @file  EntityComponentFactoryJson.hpp
  *
  */
 #pragma once

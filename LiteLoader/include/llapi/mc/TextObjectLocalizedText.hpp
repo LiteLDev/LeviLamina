@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextObjectLocalizedText.hpp
+ * @file  TextObjectLocalizedText.hpp
  *
  */
 #pragma once

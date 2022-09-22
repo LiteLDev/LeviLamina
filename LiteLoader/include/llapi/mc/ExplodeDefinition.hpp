@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExplodeDefinition.hpp
+ * @file  ExplodeDefinition.hpp
  *
  */
 #pragma once

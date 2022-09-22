@@ -1,5 +1,5 @@
 /**
- * @file  MC/ParticleEffectResponse.hpp
+ * @file  ParticleEffectResponse.hpp
  *
  */
 #pragma once

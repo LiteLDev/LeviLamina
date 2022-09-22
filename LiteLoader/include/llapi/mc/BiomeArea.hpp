@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeArea.hpp
+ * @file  BiomeArea.hpp
  *
  */
 #pragma once

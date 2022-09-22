@@ -1,5 +1,5 @@
 /**
- * @file  MC/OverworldGeneratorVoid.hpp
+ * @file  OverworldGeneratorVoid.hpp
  *
  */
 #pragma once

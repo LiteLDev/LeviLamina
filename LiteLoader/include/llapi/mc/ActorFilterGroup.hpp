@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorFilterGroup.hpp
+ * @file  ActorFilterGroup.hpp
  *
  */
 #pragma once

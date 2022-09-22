@@ -1,5 +1,5 @@
 /**
- * @file  MC/DimensionTransitionSystem.hpp
+ * @file  DimensionTransitionSystem.hpp
  *
  */
 #pragma once

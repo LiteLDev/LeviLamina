@@ -1,5 +1,5 @@
 /**
- * @file  MC/PressurePlateBlock.hpp
+ * @file  PressurePlateBlock.hpp
  *
  */
 #pragma once

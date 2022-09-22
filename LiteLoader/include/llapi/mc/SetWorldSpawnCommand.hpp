@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetWorldSpawnCommand.hpp
+ * @file  SetWorldSpawnCommand.hpp
  *
  */
 #pragma once

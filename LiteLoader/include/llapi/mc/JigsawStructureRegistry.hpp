@@ -1,5 +1,5 @@
 /**
- * @file  MC/JigsawStructureRegistry.hpp
+ * @file  JigsawStructureRegistry.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EventingRequestQueueComponent.hpp
+ * @file  EventingRequestQueueComponent.hpp
  *
  */
 #pragma once

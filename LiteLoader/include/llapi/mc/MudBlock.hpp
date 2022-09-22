@@ -1,5 +1,5 @@
 /**
- * @file  MC/MudBlock.hpp
+ * @file  MudBlock.hpp
  *
  */
 #pragma once

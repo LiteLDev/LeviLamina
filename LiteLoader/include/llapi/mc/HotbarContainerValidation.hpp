@@ -1,5 +1,5 @@
 /**
- * @file  MC/HotbarContainerValidation.hpp
+ * @file  HotbarContainerValidation.hpp
  *
  */
 #pragma once

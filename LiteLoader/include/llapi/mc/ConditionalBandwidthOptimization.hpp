@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConditionalBandwidthOptimization.hpp
+ * @file  ConditionalBandwidthOptimization.hpp
  *
  */
 #pragma once

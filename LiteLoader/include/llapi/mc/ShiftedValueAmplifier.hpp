@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShiftedValueAmplifier.hpp
+ * @file  ShiftedValueAmplifier.hpp
  *
  */
 #pragma once

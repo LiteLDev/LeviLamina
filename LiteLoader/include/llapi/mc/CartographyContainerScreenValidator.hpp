@@ -1,5 +1,5 @@
 /**
- * @file  MC/CartographyContainerScreenValidator.hpp
+ * @file  CartographyContainerScreenValidator.hpp
  *
  */
 #pragma once

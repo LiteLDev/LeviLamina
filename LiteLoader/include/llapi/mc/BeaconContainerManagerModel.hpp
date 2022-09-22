@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeaconContainerManagerModel.hpp
+ * @file  BeaconContainerManagerModel.hpp
  *
  */
 #pragma once

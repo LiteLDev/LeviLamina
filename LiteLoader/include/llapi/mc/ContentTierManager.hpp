@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContentTierManager.hpp
+ * @file  ContentTierManager.hpp
  *
  */
 #pragma once

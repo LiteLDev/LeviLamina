@@ -1,5 +1,5 @@
 /**
- * @file  MC/BaseCircuitComponent.hpp
+ * @file  BaseCircuitComponent.hpp
  *
  */
 #pragma once

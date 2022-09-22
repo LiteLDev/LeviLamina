@@ -1,5 +1,5 @@
 /**
- * @file  MC/VolumeIdentifier.hpp
+ * @file  VolumeIdentifier.hpp
  *
  */
 #pragma once

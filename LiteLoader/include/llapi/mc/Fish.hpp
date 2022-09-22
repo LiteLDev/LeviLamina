@@ -1,5 +1,5 @@
 /**
- * @file  MC/Fish.hpp
+ * @file  Fish.hpp
  *
  */
 #pragma once

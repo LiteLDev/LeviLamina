@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaServerGameplayEventListener.hpp
+ * @file  VanillaServerGameplayEventListener.hpp
  *
  */
 #pragma once

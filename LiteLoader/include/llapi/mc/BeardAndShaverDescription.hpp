@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeardAndShaverDescription.hpp
+ * @file  BeardAndShaverDescription.hpp
  *
  */
 #pragma once

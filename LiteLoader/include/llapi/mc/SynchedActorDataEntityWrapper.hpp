@@ -1,5 +1,5 @@
 /**
- * @file  MC/SynchedActorDataEntityWrapper.hpp
+ * @file  SynchedActorDataEntityWrapper.hpp
  *
  */
 #pragma once

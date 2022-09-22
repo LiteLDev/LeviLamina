@@ -1,5 +1,5 @@
 /**
- * @file  MC/TellCommand.hpp
+ * @file  TellCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CrashDumpPlayerData.hpp
+ * @file  CrashDumpPlayerData.hpp
  *
  */
 #pragma once

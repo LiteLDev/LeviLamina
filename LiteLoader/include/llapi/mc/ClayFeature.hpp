@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClayFeature.hpp
+ * @file  ClayFeature.hpp
  *
  */
 #pragma once

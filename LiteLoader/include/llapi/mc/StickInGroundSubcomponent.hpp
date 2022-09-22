@@ -1,5 +1,5 @@
 /**
- * @file  MC/StickInGroundSubcomponent.hpp
+ * @file  StickInGroundSubcomponent.hpp
  *
  */
 #pragma once

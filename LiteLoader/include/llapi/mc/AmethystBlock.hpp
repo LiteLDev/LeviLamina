@@ -1,5 +1,5 @@
 /**
- * @file  MC/AmethystBlock.hpp
+ * @file  AmethystBlock.hpp
  *
  */
 #pragma once

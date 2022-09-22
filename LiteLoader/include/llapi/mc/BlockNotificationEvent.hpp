@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockNotificationEvent.hpp
+ * @file  BlockNotificationEvent.hpp
  *
  */
 #pragma once

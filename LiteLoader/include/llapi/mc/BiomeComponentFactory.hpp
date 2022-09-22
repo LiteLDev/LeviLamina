@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeComponentFactory.hpp
+ * @file  BiomeComponentFactory.hpp
  *
  */
 #pragma once

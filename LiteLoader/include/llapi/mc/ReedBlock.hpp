@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReedBlock.hpp
+ * @file  ReedBlock.hpp
  *
  */
 #pragma once

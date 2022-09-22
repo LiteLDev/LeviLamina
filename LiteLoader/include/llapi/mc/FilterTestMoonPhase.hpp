@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestMoonPhase.hpp
+ * @file  FilterTestMoonPhase.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MesaSurfaceAttributes.hpp
+ * @file  MesaSurfaceAttributes.hpp
  *
  */
 #pragma once

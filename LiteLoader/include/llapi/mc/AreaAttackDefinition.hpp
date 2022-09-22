@@ -1,5 +1,5 @@
 /**
- * @file  MC/AreaAttackDefinition.hpp
+ * @file  AreaAttackDefinition.hpp
  *
  */
 #pragma once

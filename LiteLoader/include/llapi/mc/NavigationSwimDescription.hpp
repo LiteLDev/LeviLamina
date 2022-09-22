@@ -1,5 +1,5 @@
 /**
- * @file  MC/NavigationSwimDescription.hpp
+ * @file  NavigationSwimDescription.hpp
  *
  */
 #pragma once

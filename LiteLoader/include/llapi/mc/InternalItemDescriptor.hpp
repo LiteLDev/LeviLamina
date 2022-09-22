@@ -1,5 +1,5 @@
 /**
- * @file  MC/InternalItemDescriptor.hpp
+ * @file  InternalItemDescriptor.hpp
  *
  */
 #pragma once

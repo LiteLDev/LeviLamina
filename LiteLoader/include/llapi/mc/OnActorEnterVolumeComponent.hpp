@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnActorEnterVolumeComponent.hpp
+ * @file  OnActorEnterVolumeComponent.hpp
  *
  */
 #pragma once

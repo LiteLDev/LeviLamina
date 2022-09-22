@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaterMovementComponent.hpp
+ * @file  WaterMovementComponent.hpp
  *
  */
 #pragma once

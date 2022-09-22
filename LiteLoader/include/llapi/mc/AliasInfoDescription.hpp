@@ -1,5 +1,5 @@
 /**
- * @file  MC/AliasInfoDescription.hpp
+ * @file  AliasInfoDescription.hpp
  *
  */
 #pragma once

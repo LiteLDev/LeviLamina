@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelChunkTickingSystem.hpp
+ * @file  LevelChunkTickingSystem.hpp
  *
  */
 #pragma once

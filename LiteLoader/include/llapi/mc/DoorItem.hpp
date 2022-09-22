@@ -1,5 +1,5 @@
 /**
- * @file  MC/DoorItem.hpp
+ * @file  DoorItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Material.hpp
+ * @file  Material.hpp
  *
  */
 #pragma once

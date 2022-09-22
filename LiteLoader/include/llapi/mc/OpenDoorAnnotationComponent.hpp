@@ -1,5 +1,5 @@
 /**
- * @file  MC/OpenDoorAnnotationComponent.hpp
+ * @file  OpenDoorAnnotationComponent.hpp
  *
  */
 #pragma once

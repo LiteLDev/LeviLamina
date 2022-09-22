@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorMovementProxyComponent.hpp
+ * @file  ActorMovementProxyComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DispenserContainerManagerModel.hpp
+ * @file  DispenserContainerManagerModel.hpp
  *
  */
 #pragma once

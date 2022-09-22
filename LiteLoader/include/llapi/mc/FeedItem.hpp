@@ -1,5 +1,5 @@
 /**
- * @file  MC/FeedItem.hpp
+ * @file  FeedItem.hpp
  *
  */
 #pragma once

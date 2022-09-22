@@ -1,5 +1,5 @@
 /**
- * @file  MC/VillagerCelebrationGoal.hpp
+ * @file  VillagerCelebrationGoal.hpp
  *
  */
 #pragma once

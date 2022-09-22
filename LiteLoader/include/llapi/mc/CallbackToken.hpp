@@ -1,5 +1,5 @@
 /**
- * @file  MC/CallbackToken.hpp
+ * @file  CallbackToken.hpp
  *
  */
 #pragma once

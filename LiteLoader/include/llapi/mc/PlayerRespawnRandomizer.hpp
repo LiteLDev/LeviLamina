@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerRespawnRandomizer.hpp
+ * @file  PlayerRespawnRandomizer.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SquidOutOfWaterGoal.hpp
+ * @file  SquidOutOfWaterGoal.hpp
  *
  */
 #pragma once

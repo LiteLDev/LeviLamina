@@ -1,5 +1,5 @@
 /**
- * @file  MC/BrewingStandContainerManagerModel.hpp
+ * @file  BrewingStandContainerManagerModel.hpp
  *
  */
 #pragma once

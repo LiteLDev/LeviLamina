@@ -1,5 +1,5 @@
 /**
- * @file  MC/LodestoneBlock.hpp
+ * @file  LodestoneBlock.hpp
  *
  */
 #pragma once

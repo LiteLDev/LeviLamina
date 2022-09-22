@@ -1,5 +1,5 @@
 /**
- * @file  MC/BuryDescription.hpp
+ * @file  BuryDescription.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/WrittenBookItem.hpp
+ * @file  WrittenBookItem.hpp
  *
  */
 #pragma once

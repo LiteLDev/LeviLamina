@@ -1,5 +1,5 @@
 /**
- * @file  MC/DiscFeature.hpp
+ * @file  DiscFeature.hpp
  *
  */
 #pragma once

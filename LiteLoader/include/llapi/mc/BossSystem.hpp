@@ -1,5 +1,5 @@
 /**
- * @file  MC/BossSystem.hpp
+ * @file  BossSystem.hpp
  *
  */
 #pragma once

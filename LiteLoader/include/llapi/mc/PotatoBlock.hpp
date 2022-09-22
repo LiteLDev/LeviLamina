@@ -1,5 +1,5 @@
 /**
- * @file  MC/PotatoBlock.hpp
+ * @file  PotatoBlock.hpp
  *
  */
 #pragma once

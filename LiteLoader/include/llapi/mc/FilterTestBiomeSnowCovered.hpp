@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestBiomeSnowCovered.hpp
+ * @file  FilterTestBiomeSnowCovered.hpp
  *
  */
 #pragma once

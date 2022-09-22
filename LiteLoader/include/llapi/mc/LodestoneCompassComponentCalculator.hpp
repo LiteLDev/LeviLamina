@@ -1,5 +1,5 @@
 /**
- * @file  MC/LodestoneCompassComponentCalculator.hpp
+ * @file  LodestoneCompassComponentCalculator.hpp
  *
  */
 #pragma once

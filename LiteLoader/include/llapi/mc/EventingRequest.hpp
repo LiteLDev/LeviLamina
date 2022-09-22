@@ -1,5 +1,5 @@
 /**
- * @file  MC/EventingRequest.hpp
+ * @file  EventingRequest.hpp
  *
  */
 #pragma once

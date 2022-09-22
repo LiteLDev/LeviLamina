@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndTag.hpp
+ * @file  EndTag.hpp
  *
  */
 #pragma once

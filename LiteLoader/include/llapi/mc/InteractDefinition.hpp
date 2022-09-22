@@ -1,5 +1,5 @@
 /**
- * @file  MC/InteractDefinition.hpp
+ * @file  InteractDefinition.hpp
  *
  */
 #pragma once

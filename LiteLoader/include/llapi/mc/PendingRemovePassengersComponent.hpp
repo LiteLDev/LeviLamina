@@ -1,5 +1,5 @@
 /**
- * @file  MC/PendingRemovePassengersComponent.hpp
+ * @file  PendingRemovePassengersComponent.hpp
  *
  */
 #pragma once

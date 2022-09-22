@@ -1,5 +1,5 @@
 /**
- * @file  MC/LecternUpdatePacket.hpp
+ * @file  LecternUpdatePacket.hpp
  *
  */
 #pragma once

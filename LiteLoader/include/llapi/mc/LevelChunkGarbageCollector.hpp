@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelChunkGarbageCollector.hpp
+ * @file  LevelChunkGarbageCollector.hpp
  *
  */
 #pragma once

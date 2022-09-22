@@ -1,5 +1,5 @@
 /**
- * @file  MC/ConsoleChunkBlender.hpp
+ * @file  ConsoleChunkBlender.hpp
  *
  */
 #pragma once

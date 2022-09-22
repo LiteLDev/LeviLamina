@@ -1,5 +1,5 @@
 /**
- * @file  MC/EncryptedProxyEnv.hpp
+ * @file  EncryptedProxyEnv.hpp
  *
  */
 #pragma once

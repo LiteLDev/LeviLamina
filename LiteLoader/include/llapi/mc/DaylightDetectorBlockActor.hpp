@@ -1,5 +1,5 @@
 /**
- * @file  MC/DaylightDetectorBlockActor.hpp
+ * @file  DaylightDetectorBlockActor.hpp
  *
  */
 #pragma once

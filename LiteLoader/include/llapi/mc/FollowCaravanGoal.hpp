@@ -1,5 +1,5 @@
 /**
- * @file  MC/FollowCaravanGoal.hpp
+ * @file  FollowCaravanGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourcePackTransmissionManager.hpp
+ * @file  ResourcePackTransmissionManager.hpp
  *
  */
 #pragma once

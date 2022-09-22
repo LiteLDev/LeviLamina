@@ -1,5 +1,5 @@
 /**
- * @file  MC/AppPlatformNetworkSettings.hpp
+ * @file  AppPlatformNetworkSettings.hpp
  *
  */
 #pragma once

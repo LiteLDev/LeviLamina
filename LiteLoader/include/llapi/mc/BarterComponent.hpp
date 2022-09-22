@@ -1,5 +1,5 @@
 /**
- * @file  MC/BarterComponent.hpp
+ * @file  BarterComponent.hpp
  *
  */
 #pragma once

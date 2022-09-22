@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkUtils.hpp
+ * @file  SculkUtils.hpp
  *
  */
 #pragma once

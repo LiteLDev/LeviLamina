@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemColorUtil.hpp
+ * @file  ItemColorUtil.hpp
  *
  */
 #pragma once

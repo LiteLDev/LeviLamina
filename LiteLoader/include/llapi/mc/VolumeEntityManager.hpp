@@ -1,5 +1,5 @@
 /**
- * @file  MC/VolumeEntityManager.hpp
+ * @file  VolumeEntityManager.hpp
  *
  */
 #pragma once

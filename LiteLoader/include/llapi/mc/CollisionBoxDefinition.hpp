@@ -1,5 +1,5 @@
 /**
- * @file  MC/CollisionBoxDefinition.hpp
+ * @file  CollisionBoxDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShulkerUpdatePositionSystem.hpp
+ * @file  ShulkerUpdatePositionSystem.hpp
  *
  */
 #pragma once

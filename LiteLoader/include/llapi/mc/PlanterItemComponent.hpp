@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlanterItemComponent.hpp
+ * @file  PlanterItemComponent.hpp
  *
  */
 #pragma once

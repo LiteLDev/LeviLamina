@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeaconBlock.hpp
+ * @file  BeaconBlock.hpp
  *
  */
 #pragma once

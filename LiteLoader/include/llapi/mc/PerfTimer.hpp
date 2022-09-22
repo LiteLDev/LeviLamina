@@ -1,5 +1,5 @@
 /**
- * @file  MC/PerfTimer.hpp
+ * @file  PerfTimer.hpp
  *
  */
 #pragma once

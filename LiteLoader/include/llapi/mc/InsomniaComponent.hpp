@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsomniaComponent.hpp
+ * @file  InsomniaComponent.hpp
  *
  */
 #pragma once

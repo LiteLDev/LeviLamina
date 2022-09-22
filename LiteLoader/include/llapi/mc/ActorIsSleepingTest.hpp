@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsSleepingTest.hpp
+ * @file  ActorIsSleepingTest.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FileChunkManager.hpp
+ * @file  FileChunkManager.hpp
  *
  */
 #pragma once

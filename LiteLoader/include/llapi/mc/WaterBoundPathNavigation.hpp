@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaterBoundPathNavigation.hpp
+ * @file  WaterBoundPathNavigation.hpp
  *
  */
 #pragma once

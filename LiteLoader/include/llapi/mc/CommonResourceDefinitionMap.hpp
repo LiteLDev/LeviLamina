@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommonResourceDefinitionMap.hpp
+ * @file  CommonResourceDefinitionMap.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MangroveRootBlock.hpp
+ * @file  MangroveRootBlock.hpp
  *
  */
 #pragma once

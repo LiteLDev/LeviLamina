@@ -1,5 +1,5 @@
 /**
- * @file  MC/OldLogBlock.hpp
+ * @file  OldLogBlock.hpp
  *
  */
 #pragma once

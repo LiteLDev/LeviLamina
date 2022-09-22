@@ -1,5 +1,5 @@
 /**
- * @file  MC/RaidGardenGoal.hpp
+ * @file  RaidGardenGoal.hpp
  *
  */
 #pragma once

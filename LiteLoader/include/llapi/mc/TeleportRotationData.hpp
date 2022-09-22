@@ -1,5 +1,5 @@
 /**
- * @file  MC/TeleportRotationData.hpp
+ * @file  TeleportRotationData.hpp
  *
  */
 #pragma once

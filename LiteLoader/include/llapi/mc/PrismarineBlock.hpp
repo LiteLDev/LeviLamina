@@ -1,5 +1,5 @@
 /**
- * @file  MC/PrismarineBlock.hpp
+ * @file  PrismarineBlock.hpp
  *
  */
 #pragma once

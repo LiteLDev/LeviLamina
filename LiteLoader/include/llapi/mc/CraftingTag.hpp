@@ -1,5 +1,5 @@
 /**
- * @file  MC/CraftingTag.hpp
+ * @file  CraftingTag.hpp
  *
  */
 #pragma once

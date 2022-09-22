@@ -1,5 +1,5 @@
 /**
- * @file  MC/PendingArea.hpp
+ * @file  PendingArea.hpp
  *
  */
 #pragma once

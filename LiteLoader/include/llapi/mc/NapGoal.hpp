@@ -1,5 +1,5 @@
 /**
- * @file  MC/NapGoal.hpp
+ * @file  NapGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockLightDampeningDescription.hpp
+ * @file  BlockLightDampeningDescription.hpp
  *
  */
 #pragma once

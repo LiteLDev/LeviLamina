@@ -1,5 +1,5 @@
 /**
- * @file  MC/HeartbeatDefinition.hpp
+ * @file  HeartbeatDefinition.hpp
  *
  */
 #pragma once

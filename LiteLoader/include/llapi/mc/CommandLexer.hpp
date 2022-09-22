@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandLexer.hpp
+ * @file  CommandLexer.hpp
  *
  */
 #pragma once

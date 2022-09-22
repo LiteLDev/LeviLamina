@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeFloatDefinition.hpp
+ * @file  SlimeFloatDefinition.hpp
  *
  */
 #pragma once

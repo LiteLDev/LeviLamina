@@ -1,5 +1,5 @@
 /**
- * @file  MC/HangingActor.hpp
+ * @file  HangingActor.hpp
  *
  */
 #pragma once

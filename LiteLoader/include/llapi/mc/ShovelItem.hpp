@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShovelItem.hpp
+ * @file  ShovelItem.hpp
  *
  */
 #pragma once

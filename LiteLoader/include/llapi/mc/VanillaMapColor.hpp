@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaMapColor.hpp
+ * @file  VanillaMapColor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlaceBlockDefinition.hpp
+ * @file  PlaceBlockDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpyglassItem.hpp
+ * @file  SpyglassItem.hpp
  *
  */
 #pragma once

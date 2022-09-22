@@ -1,5 +1,5 @@
 /**
- * @file  MC/BribeableSystem.hpp
+ * @file  BribeableSystem.hpp
  *
  */
 #pragma once

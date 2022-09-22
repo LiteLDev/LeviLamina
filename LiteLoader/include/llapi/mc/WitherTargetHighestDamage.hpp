@@ -1,5 +1,5 @@
 /**
- * @file  MC/WitherTargetHighestDamage.hpp
+ * @file  WitherTargetHighestDamage.hpp
  *
  */
 #pragma once

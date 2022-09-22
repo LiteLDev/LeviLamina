@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockIntersectionConstraint.hpp
+ * @file  BlockIntersectionConstraint.hpp
  *
  */
 #pragma once

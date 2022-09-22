@@ -1,5 +1,5 @@
 /**
- * @file  MC/Shareable.hpp
+ * @file  Shareable.hpp
  *
  */
 #pragma once

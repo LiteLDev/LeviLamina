@@ -1,5 +1,5 @@
 /**
- * @file  MC/BedHelper.hpp
+ * @file  BedHelper.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MaterialReducerContainerManagerModel.hpp
+ * @file  MaterialReducerContainerManagerModel.hpp
  *
  */
 #pragma once

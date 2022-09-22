@@ -1,5 +1,5 @@
 /**
- * @file  MC/personaDefault.hpp
+ * @file  personaDefault.hpp
  *
  */
 #pragma once

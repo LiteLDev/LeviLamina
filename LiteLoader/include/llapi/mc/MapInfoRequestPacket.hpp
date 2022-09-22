@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapInfoRequestPacket.hpp
+ * @file  MapInfoRequestPacket.hpp
  *
  */
 #pragma once

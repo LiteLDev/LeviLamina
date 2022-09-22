@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcGUIOffset.hpp
+ * @file  NpcGUIOffset.hpp
  *
  */
 #pragma once

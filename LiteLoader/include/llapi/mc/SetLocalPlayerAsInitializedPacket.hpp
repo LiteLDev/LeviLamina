@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetLocalPlayerAsInitializedPacket.hpp
+ * @file  SetLocalPlayerAsInitializedPacket.hpp
  *
  */
 #pragma once

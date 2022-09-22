@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureBlockActor.hpp
+ * @file  StructureBlockActor.hpp
  *
  */
 #pragma once

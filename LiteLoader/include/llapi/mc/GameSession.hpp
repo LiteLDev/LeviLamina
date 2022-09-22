@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameSession.hpp
+ * @file  GameSession.hpp
  *
  */
 #pragma once

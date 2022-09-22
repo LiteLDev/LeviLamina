@@ -1,5 +1,5 @@
 /**
- * @file  MC/StoneCutterInputContainerValidation.hpp
+ * @file  StoneCutterInputContainerValidation.hpp
  *
  */
 #pragma once

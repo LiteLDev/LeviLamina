@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptingEventListener.hpp
+ * @file  ScriptingEventListener.hpp
  *
  */
 #pragma once

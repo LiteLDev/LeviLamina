@@ -1,5 +1,5 @@
 /**
- * @file  MC/OreBlock.hpp
+ * @file  OreBlock.hpp
  *
  */
 #pragma once

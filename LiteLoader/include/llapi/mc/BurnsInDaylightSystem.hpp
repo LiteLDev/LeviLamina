@@ -1,5 +1,5 @@
 /**
- * @file  MC/BurnsInDaylightSystem.hpp
+ * @file  BurnsInDaylightSystem.hpp
  *
  */
 #pragma once

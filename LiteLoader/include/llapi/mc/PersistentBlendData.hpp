@@ -1,5 +1,5 @@
 /**
- * @file  MC/PersistentBlendData.hpp
+ * @file  PersistentBlendData.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/WitherBossSpawnUtilities.hpp
+ * @file  WitherBossSpawnUtilities.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompoundCreatorInputValidation.hpp
+ * @file  CompoundCreatorInputValidation.hpp
  *
  */
 #pragma once

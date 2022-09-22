@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExpressionOpBitField.hpp
+ * @file  ExpressionOpBitField.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SharedAmplifiers.hpp
+ * @file  SharedAmplifiers.hpp
  *
  */
 #pragma once

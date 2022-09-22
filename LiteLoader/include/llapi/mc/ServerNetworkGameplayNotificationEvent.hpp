@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerNetworkGameplayNotificationEvent.hpp
+ * @file  ServerNetworkGameplayNotificationEvent.hpp
  *
  */
 #pragma once

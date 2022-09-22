@@ -1,5 +1,5 @@
 /**
- * @file  MC/FullPlayerInventoryWrapper.hpp
+ * @file  FullPlayerInventoryWrapper.hpp
  *
  */
 #pragma once

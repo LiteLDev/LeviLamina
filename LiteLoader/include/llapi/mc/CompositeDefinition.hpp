@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompositeDefinition.hpp
+ * @file  CompositeDefinition.hpp
  *
  */
 #pragma once

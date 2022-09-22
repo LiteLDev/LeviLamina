@@ -1,5 +1,5 @@
 /**
- * @file  MC/FireworksRecipe.hpp
+ * @file  FireworksRecipe.hpp
  *
  */
 #pragma once

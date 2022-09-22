@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShowStoreOfferPacket.hpp
+ * @file  ShowStoreOfferPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimWanderGoal.hpp
+ * @file  SwimWanderGoal.hpp
  *
  */
 #pragma once

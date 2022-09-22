@@ -1,5 +1,5 @@
 /**
- * @file  MC/UseItemGoalUtility.hpp
+ * @file  UseItemGoalUtility.hpp
  *
  */
 #pragma once

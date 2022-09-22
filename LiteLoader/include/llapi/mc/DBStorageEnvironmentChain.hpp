@@ -1,5 +1,5 @@
 /**
- * @file  MC/DBStorageEnvironmentChain.hpp
+ * @file  DBStorageEnvironmentChain.hpp
  *
  */
 #pragma once

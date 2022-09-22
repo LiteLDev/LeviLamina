@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPlacementFilterDescription.hpp
+ * @file  BlockPlacementFilterDescription.hpp
  *
  */
 #pragma once

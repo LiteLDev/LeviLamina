@@ -1,5 +1,5 @@
 /**
- * @file  MC/DecoratorDefinition.hpp
+ * @file  DecoratorDefinition.hpp
  *
  */
 #pragma once

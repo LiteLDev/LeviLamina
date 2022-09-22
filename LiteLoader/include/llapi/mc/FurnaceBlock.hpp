@@ -1,5 +1,5 @@
 /**
- * @file  MC/FurnaceBlock.hpp
+ * @file  FurnaceBlock.hpp
  *
  */
 #pragma once

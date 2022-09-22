@@ -1,5 +1,5 @@
 /**
- * @file  MC/SneakingSystem.hpp
+ * @file  SneakingSystem.hpp
  *
  */
 #pragma once

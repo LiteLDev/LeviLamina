@@ -1,5 +1,5 @@
 /**
- * @file  MC/AABBShapeComponent.hpp
+ * @file  AABBShapeComponent.hpp
  *
  */
 #pragma once

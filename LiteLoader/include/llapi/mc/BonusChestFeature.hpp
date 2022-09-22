@@ -1,5 +1,5 @@
 /**
- * @file  MC/BonusChestFeature.hpp
+ * @file  BonusChestFeature.hpp
  *
  */
 #pragma once

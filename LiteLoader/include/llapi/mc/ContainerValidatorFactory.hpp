@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerValidatorFactory.hpp
+ * @file  ContainerValidatorFactory.hpp
  *
  */
 #pragma once

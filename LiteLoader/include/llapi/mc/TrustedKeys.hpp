@@ -1,5 +1,5 @@
 /**
- * @file  MC/TrustedKeys.hpp
+ * @file  TrustedKeys.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnPointCommand.hpp
+ * @file  SpawnPointCommand.hpp
  *
  */
 #pragma once

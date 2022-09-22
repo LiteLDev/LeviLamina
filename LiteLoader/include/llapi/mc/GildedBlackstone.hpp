@@ -1,5 +1,5 @@
 /**
- * @file  MC/GildedBlackstone.hpp
+ * @file  GildedBlackstone.hpp
  *
  */
 #pragma once

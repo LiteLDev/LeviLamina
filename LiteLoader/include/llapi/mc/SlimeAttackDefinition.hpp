@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeAttackDefinition.hpp
+ * @file  SlimeAttackDefinition.hpp
  *
  */
 #pragma once

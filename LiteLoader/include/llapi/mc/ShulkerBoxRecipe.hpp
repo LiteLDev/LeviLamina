@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShulkerBoxRecipe.hpp
+ * @file  ShulkerBoxRecipe.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerFormCloseEvent.hpp
+ * @file  PlayerFormCloseEvent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobSpawnerPermutation.hpp
+ * @file  MobSpawnerPermutation.hpp
  *
  */
 #pragma once

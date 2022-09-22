@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateEntityAfterFallOnActorProxy.hpp
+ * @file  UpdateEntityAfterFallOnActorProxy.hpp
  *
  */
 #pragma once

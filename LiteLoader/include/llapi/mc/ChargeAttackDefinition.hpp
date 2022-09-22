@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChargeAttackDefinition.hpp
+ * @file  ChargeAttackDefinition.hpp
  *
  */
 #pragma once

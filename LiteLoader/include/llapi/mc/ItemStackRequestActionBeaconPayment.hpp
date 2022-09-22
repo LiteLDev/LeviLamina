@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestActionBeaconPayment.hpp
+ * @file  ItemStackRequestActionBeaconPayment.hpp
  *
  */
 #pragma once

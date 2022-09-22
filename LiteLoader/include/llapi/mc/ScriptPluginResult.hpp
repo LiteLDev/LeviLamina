@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptPluginResult.hpp
+ * @file  ScriptPluginResult.hpp
  *
  */
 #pragma once

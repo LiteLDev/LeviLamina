@@ -1,5 +1,5 @@
 /**
- * @file  MC/StorageItemComponent.hpp
+ * @file  StorageItemComponent.hpp
  *
  */
 #pragma once

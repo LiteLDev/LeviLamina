@@ -1,5 +1,5 @@
 /**
- * @file  MC/OpenDoorGoal.hpp
+ * @file  OpenDoorGoal.hpp
  *
  */
 #pragma once

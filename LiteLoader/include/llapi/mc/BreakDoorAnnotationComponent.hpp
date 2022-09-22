@@ -1,5 +1,5 @@
 /**
- * @file  MC/BreakDoorAnnotationComponent.hpp
+ * @file  BreakDoorAnnotationComponent.hpp
  *
  */
 #pragma once

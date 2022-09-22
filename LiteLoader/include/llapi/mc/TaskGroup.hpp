@@ -1,5 +1,5 @@
 /**
- * @file  MC/TaskGroup.hpp
+ * @file  TaskGroup.hpp
  *
  */
 #pragma once

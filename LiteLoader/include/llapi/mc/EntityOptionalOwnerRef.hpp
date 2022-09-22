@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityOptionalOwnerRef.hpp
+ * @file  EntityOptionalOwnerRef.hpp
  *
  */
 #pragma once

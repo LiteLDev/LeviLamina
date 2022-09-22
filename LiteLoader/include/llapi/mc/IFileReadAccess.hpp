@@ -1,5 +1,5 @@
 /**
- * @file  MC/IFileReadAccess.hpp
+ * @file  IFileReadAccess.hpp
  *
  */
 #pragma once

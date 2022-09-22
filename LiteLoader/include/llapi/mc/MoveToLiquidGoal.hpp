@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveToLiquidGoal.hpp
+ * @file  MoveToLiquidGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SitComponent.hpp
+ * @file  SitComponent.hpp
  *
  */
 #pragma once

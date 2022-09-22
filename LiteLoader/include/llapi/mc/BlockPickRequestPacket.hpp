@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPickRequestPacket.hpp
+ * @file  BlockPickRequestPacket.hpp
  *
  */
 #pragma once

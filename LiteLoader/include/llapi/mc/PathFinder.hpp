@@ -1,5 +1,5 @@
 /**
- * @file  MC/PathFinder.hpp
+ * @file  PathFinder.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EmergeGoal.hpp
+ * @file  EmergeGoal.hpp
  *
  */
 #pragma once

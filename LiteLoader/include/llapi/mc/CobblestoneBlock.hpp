@@ -1,5 +1,5 @@
 /**
- * @file  MC/CobblestoneBlock.hpp
+ * @file  CobblestoneBlock.hpp
  *
  */
 #pragma once

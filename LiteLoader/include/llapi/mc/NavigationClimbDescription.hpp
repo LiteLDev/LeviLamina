@@ -1,5 +1,5 @@
 /**
- * @file  MC/NavigationClimbDescription.hpp
+ * @file  NavigationClimbDescription.hpp
  *
  */
 #pragma once

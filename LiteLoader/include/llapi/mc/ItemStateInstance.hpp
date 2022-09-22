@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStateInstance.hpp
+ * @file  ItemStateInstance.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptMessagePacket.hpp
+ * @file  ScriptMessagePacket.hpp
  *
  */
 #pragma once

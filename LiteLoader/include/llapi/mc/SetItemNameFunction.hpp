@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetItemNameFunction.hpp
+ * @file  SetItemNameFunction.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorGriefingBlockEvent.hpp
+ * @file  ActorGriefingBlockEvent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/JumpPreventionUtility.hpp
+ * @file  JumpPreventionUtility.hpp
  *
  */
 #pragma once

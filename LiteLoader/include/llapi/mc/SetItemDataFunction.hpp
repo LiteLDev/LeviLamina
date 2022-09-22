@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetItemDataFunction.hpp
+ * @file  SetItemDataFunction.hpp
  *
  */
 #pragma once

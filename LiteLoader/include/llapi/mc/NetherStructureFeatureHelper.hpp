@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherStructureFeatureHelper.hpp
+ * @file  NetherStructureFeatureHelper.hpp
  *
  */
 #pragma once

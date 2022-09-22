@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourcePackChunkRequestPacket.hpp
+ * @file  ResourcePackChunkRequestPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsBabyDefinition.hpp
+ * @file  IsBabyDefinition.hpp
  *
  */
 #pragma once

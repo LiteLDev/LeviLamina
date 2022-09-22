@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeightedPressurePlateBlock.hpp
+ * @file  WeightedPressurePlateBlock.hpp
  *
  */
 #pragma once

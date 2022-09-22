@@ -1,5 +1,5 @@
 /**
- * @file  MC/KillCommand.hpp
+ * @file  KillCommand.hpp
  *
  */
 #pragma once

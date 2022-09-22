@@ -1,5 +1,5 @@
 /**
- * @file  MC/BasaltPillarFeature.hpp
+ * @file  BasaltPillarFeature.hpp
  *
  */
 #pragma once

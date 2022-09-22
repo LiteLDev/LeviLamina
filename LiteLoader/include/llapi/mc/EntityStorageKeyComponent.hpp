@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityStorageKeyComponent.hpp
+ * @file  EntityStorageKeyComponent.hpp
  *
  */
 #pragma once

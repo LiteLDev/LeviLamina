@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobSpawnHerdInfo.hpp
+ * @file  MobSpawnHerdInfo.hpp
  *
  */
 #pragma once

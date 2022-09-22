@@ -1,5 +1,5 @@
 /**
- * @file  MC/PositionTrackingDBServerBroadcastPacket.hpp
+ * @file  PositionTrackingDBServerBroadcastPacket.hpp
  *
  */
 #pragma once

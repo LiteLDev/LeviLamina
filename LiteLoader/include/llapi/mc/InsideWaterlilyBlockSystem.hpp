@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideWaterlilyBlockSystem.hpp
+ * @file  InsideWaterlilyBlockSystem.hpp
  *
  */
 #pragma once

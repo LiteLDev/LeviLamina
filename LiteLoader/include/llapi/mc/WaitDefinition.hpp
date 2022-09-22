@@ -1,5 +1,5 @@
 /**
- * @file  MC/WaitDefinition.hpp
+ * @file  WaitDefinition.hpp
  *
  */
 #pragma once

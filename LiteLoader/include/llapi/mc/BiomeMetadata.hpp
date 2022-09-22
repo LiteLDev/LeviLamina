@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeMetadata.hpp
+ * @file  BiomeMetadata.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ListenerInfo.hpp
+ * @file  ListenerInfo.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkConsts.hpp
+ * @file  SculkConsts.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TickingSystemWithInfo.hpp
+ * @file  TickingSystemWithInfo.hpp
  *
  */
 #pragma once

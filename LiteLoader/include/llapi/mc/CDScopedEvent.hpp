@@ -1,5 +1,5 @@
 /**
- * @file  MC/CDScopedEvent.hpp
+ * @file  CDScopedEvent.hpp
  *
  */
 #pragma once

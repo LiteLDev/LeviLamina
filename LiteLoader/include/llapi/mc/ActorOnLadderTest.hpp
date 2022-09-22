@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorOnLadderTest.hpp
+ * @file  ActorOnLadderTest.hpp
  *
  */
 #pragma once

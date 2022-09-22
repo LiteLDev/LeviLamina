@@ -1,5 +1,5 @@
 /**
- * @file  MC/TickingArea.hpp
+ * @file  TickingArea.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MonumentBuilding.hpp
+ * @file  MonumentBuilding.hpp
  *
  */
 #pragma once

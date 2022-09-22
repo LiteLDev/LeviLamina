@@ -1,5 +1,5 @@
 /**
- * @file  MC/FreezingSystemInternal.hpp
+ * @file  FreezingSystemInternal.hpp
  *
  */
 #pragma once

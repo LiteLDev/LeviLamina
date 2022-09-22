@@ -1,5 +1,5 @@
 /**
- * @file  MC/AmbientSoundComponent.hpp
+ * @file  AmbientSoundComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TeleportCommand.hpp
+ * @file  TeleportCommand.hpp
  *
  */
 #pragma once

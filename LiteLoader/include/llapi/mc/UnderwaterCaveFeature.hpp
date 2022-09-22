@@ -1,5 +1,5 @@
 /**
- * @file  MC/UnderwaterCaveFeature.hpp
+ * @file  UnderwaterCaveFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnFallOnTriggerDescription.hpp
+ * @file  OnFallOnTriggerDescription.hpp
  *
  */
 #pragma once

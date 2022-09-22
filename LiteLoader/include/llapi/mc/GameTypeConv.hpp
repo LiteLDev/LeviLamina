@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameTypeConv.hpp
+ * @file  GameTypeConv.hpp
  *
  */
 #pragma once

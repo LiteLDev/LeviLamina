@@ -1,5 +1,5 @@
 /**
- * @file  MC/InstantDespawnComponent.hpp
+ * @file  InstantDespawnComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ZipPackAccessStrategy.hpp
+ * @file  ZipPackAccessStrategy.hpp
  *
  */
 #pragma once

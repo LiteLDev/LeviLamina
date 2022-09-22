@@ -1,5 +1,5 @@
 /**
- * @file  MC/FloatWanderGoal.hpp
+ * @file  FloatWanderGoal.hpp
  *
  */
 #pragma once

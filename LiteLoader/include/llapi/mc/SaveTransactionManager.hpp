@@ -1,5 +1,5 @@
 /**
- * @file  MC/SaveTransactionManager.hpp
+ * @file  SaveTransactionManager.hpp
  *
  */
 #pragma once

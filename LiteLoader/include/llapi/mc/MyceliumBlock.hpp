@@ -1,5 +1,5 @@
 /**
- * @file  MC/MyceliumBlock.hpp
+ * @file  MyceliumBlock.hpp
  *
  */
 #pragma once

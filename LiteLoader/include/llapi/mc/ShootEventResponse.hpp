@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShootEventResponse.hpp
+ * @file  ShootEventResponse.hpp
  *
  */
 #pragma once

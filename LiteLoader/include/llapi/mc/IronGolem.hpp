@@ -1,5 +1,5 @@
 /**
- * @file  MC/IronGolem.hpp
+ * @file  IronGolem.hpp
  *
  */
 #pragma once

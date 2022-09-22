@@ -1,5 +1,5 @@
 /**
- * @file  MC/CaveFeatureUtils.hpp
+ * @file  CaveFeatureUtils.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Concurrency.hpp
+ * @file  Concurrency.hpp
  *
  */
 #pragma once

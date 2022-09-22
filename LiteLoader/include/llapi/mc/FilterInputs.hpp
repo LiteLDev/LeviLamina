@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterInputs.hpp
+ * @file  FilterInputs.hpp
  *
  */
 #pragma once

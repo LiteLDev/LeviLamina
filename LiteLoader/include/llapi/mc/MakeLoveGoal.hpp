@@ -1,5 +1,5 @@
 /**
- * @file  MC/MakeLoveGoal.hpp
+ * @file  MakeLoveGoal.hpp
  *
  */
 #pragma once

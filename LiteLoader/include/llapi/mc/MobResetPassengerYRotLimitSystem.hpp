@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobResetPassengerYRotLimitSystem.hpp
+ * @file  MobResetPassengerYRotLimitSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Mob.hpp
+ * @file  Mob.hpp
  *
  */
 #pragma once

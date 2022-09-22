@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeHeight.hpp
+ * @file  BiomeHeight.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AABBPred.hpp
+ * @file  AABBPred.hpp
  *
  */
 #pragma once

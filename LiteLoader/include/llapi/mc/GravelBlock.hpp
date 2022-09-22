@@ -1,5 +1,5 @@
 /**
- * @file  MC/GravelBlock.hpp
+ * @file  GravelBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/RangedAttackGoal.hpp
+ * @file  RangedAttackGoal.hpp
  *
  */
 #pragma once

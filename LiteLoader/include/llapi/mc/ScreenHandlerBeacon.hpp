@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScreenHandlerBeacon.hpp
+ * @file  ScreenHandlerBeacon.hpp
  *
  */
 #pragma once

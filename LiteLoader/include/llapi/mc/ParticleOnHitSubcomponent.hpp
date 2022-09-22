@@ -1,5 +1,5 @@
 /**
- * @file  MC/ParticleOnHitSubcomponent.hpp
+ * @file  ParticleOnHitSubcomponent.hpp
  *
  */
 #pragma once

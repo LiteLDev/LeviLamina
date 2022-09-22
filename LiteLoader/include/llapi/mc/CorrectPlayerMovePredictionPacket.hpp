@@ -1,5 +1,5 @@
 /**
- * @file  MC/CorrectPlayerMovePredictionPacket.hpp
+ * @file  CorrectPlayerMovePredictionPacket.hpp
  *
  */
 #pragma once

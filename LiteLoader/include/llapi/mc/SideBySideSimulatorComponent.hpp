@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideSimulatorComponent.hpp
+ * @file  SideBySideSimulatorComponent.hpp
  *
  */
 #pragma once

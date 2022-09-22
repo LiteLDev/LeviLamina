@@ -1,5 +1,5 @@
 /**
- * @file  MC/RedstoneTorchBlock.hpp
+ * @file  RedstoneTorchBlock.hpp
  *
  */
 #pragma once

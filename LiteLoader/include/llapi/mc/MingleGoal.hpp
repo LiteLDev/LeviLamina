@@ -1,5 +1,5 @@
 /**
- * @file  MC/MingleGoal.hpp
+ * @file  MingleGoal.hpp
  *
  */
 #pragma once

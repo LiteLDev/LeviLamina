@@ -1,5 +1,5 @@
 /**
- * @file  MC/InterpolatedRidingPositionCalculationHelper.hpp
+ * @file  InterpolatedRidingPositionCalculationHelper.hpp
  *
  */
 #pragma once

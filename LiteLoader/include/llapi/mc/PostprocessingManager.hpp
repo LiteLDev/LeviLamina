@@ -1,5 +1,5 @@
 /**
- * @file  MC/PostprocessingManager.hpp
+ * @file  PostprocessingManager.hpp
  *
  */
 #pragma once

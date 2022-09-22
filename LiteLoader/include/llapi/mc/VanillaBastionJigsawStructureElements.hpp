@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaBastionJigsawStructureElements.hpp
+ * @file  VanillaBastionJigsawStructureElements.hpp
  *
  */
 #pragma once

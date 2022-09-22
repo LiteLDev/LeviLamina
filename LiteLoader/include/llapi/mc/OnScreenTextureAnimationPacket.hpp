@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnScreenTextureAnimationPacket.hpp
+ * @file  OnScreenTextureAnimationPacket.hpp
  *
  */
 #pragma once

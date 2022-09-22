@@ -1,5 +1,5 @@
 /**
- * @file  MC/ManagedWanderingTraderComponent.hpp
+ * @file  ManagedWanderingTraderComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SearchFeature.hpp
+ * @file  SearchFeature.hpp
  *
  */
 #pragma once

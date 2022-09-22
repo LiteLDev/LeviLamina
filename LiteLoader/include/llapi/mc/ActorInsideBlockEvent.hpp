@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInsideBlockEvent.hpp
+ * @file  ActorInsideBlockEvent.hpp
  *
  */
 #pragma once

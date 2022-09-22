@@ -1,5 +1,5 @@
 /**
- * @file  MC/EatCarriedItemGoal.hpp
+ * @file  EatCarriedItemGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkLocalNoiseCache.hpp
+ * @file  ChunkLocalNoiseCache.hpp
  *
  */
 #pragma once

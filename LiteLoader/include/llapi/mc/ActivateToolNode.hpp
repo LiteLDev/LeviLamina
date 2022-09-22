@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActivateToolNode.hpp
+ * @file  ActivateToolNode.hpp
  *
  */
 #pragma once

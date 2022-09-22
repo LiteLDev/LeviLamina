@@ -1,5 +1,5 @@
 /**
- * @file  MC/Feature.hpp
+ * @file  Feature.hpp
  *
  */
 #pragma once

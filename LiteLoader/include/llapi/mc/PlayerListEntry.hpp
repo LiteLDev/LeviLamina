@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerListEntry.hpp
+ * @file  PlayerListEntry.hpp
  *
  */
 #pragma once

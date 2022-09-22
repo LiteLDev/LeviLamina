@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnvilBlock.hpp
+ * @file  AnvilBlock.hpp
  *
  */
 #pragma once

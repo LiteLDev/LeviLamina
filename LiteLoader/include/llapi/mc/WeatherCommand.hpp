@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeatherCommand.hpp
+ * @file  WeatherCommand.hpp
  *
  */
 #pragma once

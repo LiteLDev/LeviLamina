@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptPrintLogger.hpp
+ * @file  ScriptPrintLogger.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/VehicleComponent.hpp
+ * @file  VehicleComponent.hpp
  *
  */
 #pragma once

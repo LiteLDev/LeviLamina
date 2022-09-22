@@ -1,5 +1,5 @@
 /**
- * @file  MC/CatchFireSubcomponent.hpp
+ * @file  CatchFireSubcomponent.hpp
  *
  */
 #pragma once

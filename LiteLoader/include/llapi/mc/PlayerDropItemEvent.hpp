@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerDropItemEvent.hpp
+ * @file  PlayerDropItemEvent.hpp
  *
  */
 #pragma once

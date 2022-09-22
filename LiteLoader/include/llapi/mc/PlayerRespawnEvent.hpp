@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerRespawnEvent.hpp
+ * @file  PlayerRespawnEvent.hpp
  *
  */
 #pragma once

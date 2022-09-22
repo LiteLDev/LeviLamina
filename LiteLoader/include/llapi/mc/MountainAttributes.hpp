@@ -1,5 +1,5 @@
 /**
- * @file  MC/MountainAttributes.hpp
+ * @file  MountainAttributes.hpp
  *
  */
 #pragma once

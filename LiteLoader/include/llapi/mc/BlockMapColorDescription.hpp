@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockMapColorDescription.hpp
+ * @file  BlockMapColorDescription.hpp
  *
  */
 #pragma once

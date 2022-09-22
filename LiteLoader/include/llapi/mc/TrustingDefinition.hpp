@@ -1,5 +1,5 @@
 /**
- * @file  MC/TrustingDefinition.hpp
+ * @file  TrustingDefinition.hpp
  *
  */
 #pragma once

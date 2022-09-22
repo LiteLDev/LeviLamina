@@ -1,5 +1,5 @@
 /**
- * @file  MC/AbsorptionMobEffect.hpp
+ * @file  AbsorptionMobEffect.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TridentRiptideEnchant.hpp
+ * @file  TridentRiptideEnchant.hpp
  *
  */
 #pragma once

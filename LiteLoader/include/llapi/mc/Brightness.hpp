@@ -1,5 +1,5 @@
 /**
- * @file  MC/Brightness.hpp
+ * @file  Brightness.hpp
  *
  */
 #pragma once

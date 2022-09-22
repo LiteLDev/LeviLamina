@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorLimitedLifetimeComponent.hpp
+ * @file  ActorLimitedLifetimeComponent.hpp
  *
  */
 #pragma once

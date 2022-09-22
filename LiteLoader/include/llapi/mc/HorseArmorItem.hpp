@@ -1,5 +1,5 @@
 /**
- * @file  MC/HorseArmorItem.hpp
+ * @file  HorseArmorItem.hpp
  *
  */
 #pragma once

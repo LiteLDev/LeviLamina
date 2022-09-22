@@ -1,5 +1,5 @@
 /**
- * @file  MC/ImmutableWorldCommand.hpp
+ * @file  ImmutableWorldCommand.hpp
  *
  */
 #pragma once

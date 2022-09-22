@@ -1,5 +1,5 @@
 /**
- * @file  MC/FishingEnchant.hpp
+ * @file  FishingEnchant.hpp
  *
  */
 #pragma once

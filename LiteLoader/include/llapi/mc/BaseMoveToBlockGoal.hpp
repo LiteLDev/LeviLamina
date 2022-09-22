@@ -1,5 +1,5 @@
 /**
- * @file  MC/BaseMoveToBlockGoal.hpp
+ * @file  BaseMoveToBlockGoal.hpp
  *
  */
 #pragma once

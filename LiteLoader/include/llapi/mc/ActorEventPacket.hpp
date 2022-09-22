@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorEventPacket.hpp
+ * @file  ActorEventPacket.hpp
  *
  */
 #pragma once

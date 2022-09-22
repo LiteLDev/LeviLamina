@@ -1,5 +1,5 @@
 /**
- * @file  MC/EatMobGoal.hpp
+ * @file  EatMobGoal.hpp
  *
  */
 #pragma once

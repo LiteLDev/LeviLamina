@@ -1,5 +1,5 @@
 /**
- * @file  MC/IUIEventTelemetry.hpp
+ * @file  IUIEventTelemetry.hpp
  *
  */
 #pragma once

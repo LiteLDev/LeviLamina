@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveControlHoverDescription.hpp
+ * @file  MoveControlHoverDescription.hpp
  *
  */
 #pragma once

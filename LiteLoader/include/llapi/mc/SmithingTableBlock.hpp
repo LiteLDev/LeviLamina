@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmithingTableBlock.hpp
+ * @file  SmithingTableBlock.hpp
  *
  */
 #pragma once

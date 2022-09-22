@@ -1,5 +1,5 @@
 /**
- * @file  MC/GoalSelectorComponent.hpp
+ * @file  GoalSelectorComponent.hpp
  *
  */
 #pragma once

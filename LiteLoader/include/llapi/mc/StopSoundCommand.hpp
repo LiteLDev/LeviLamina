@@ -1,5 +1,5 @@
 /**
- * @file  MC/StopSoundCommand.hpp
+ * @file  StopSoundCommand.hpp
  *
  */
 #pragma once

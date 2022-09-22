@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetheriteArmorEquippedListener.hpp
+ * @file  NetheriteArmorEquippedListener.hpp
  *
  */
 #pragma once

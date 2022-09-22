@@ -1,5 +1,5 @@
 /**
- * @file  MC/StackResultStorageFeature.hpp
+ * @file  StackResultStorageFeature.hpp
  *
  */
 #pragma once

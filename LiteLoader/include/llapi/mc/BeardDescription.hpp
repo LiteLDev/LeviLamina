@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeardDescription.hpp
+ * @file  BeardDescription.hpp
  *
  */
 #pragma once

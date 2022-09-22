@@ -1,5 +1,5 @@
 /**
- * @file  MC/KnockbackRules.hpp
+ * @file  KnockbackRules.hpp
  *
  */
 #pragma once

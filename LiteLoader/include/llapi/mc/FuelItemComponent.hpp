@@ -1,5 +1,5 @@
 /**
- * @file  MC/FuelItemComponent.hpp
+ * @file  FuelItemComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TallGrass.hpp
+ * @file  TallGrass.hpp
  *
  */
 #pragma once

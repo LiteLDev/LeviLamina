@@ -1,5 +1,5 @@
 /**
- * @file  MC/BookCloningRecipe.hpp
+ * @file  BookCloningRecipe.hpp
  *
  */
 #pragma once

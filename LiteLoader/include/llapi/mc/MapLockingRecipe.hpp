@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapLockingRecipe.hpp
+ * @file  MapLockingRecipe.hpp
  *
  */
 #pragma once

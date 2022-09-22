@@ -1,5 +1,5 @@
 /**
- * @file  MC/MockUnknownBlockTypeRegistry.hpp
+ * @file  MockUnknownBlockTypeRegistry.hpp
  *
  */
 #pragma once

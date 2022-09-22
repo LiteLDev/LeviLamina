@@ -1,5 +1,5 @@
 /**
- * @file  MC/HashedString.hpp
+ * @file  HashedString.hpp
  *
  */
 #pragma once

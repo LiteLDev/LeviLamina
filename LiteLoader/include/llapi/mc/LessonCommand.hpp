@@ -1,5 +1,5 @@
 /**
- * @file  MC/LessonCommand.hpp
+ * @file  LessonCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlyingSpeedDefinition.hpp
+ * @file  FlyingSpeedDefinition.hpp
  *
  */
 #pragma once

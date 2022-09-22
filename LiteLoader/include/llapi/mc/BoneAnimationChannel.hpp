@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoneAnimationChannel.hpp
+ * @file  BoneAnimationChannel.hpp
  *
  */
 #pragma once

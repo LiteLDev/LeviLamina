@@ -1,5 +1,5 @@
 /**
- * @file  MC/DoublePlantBlock.hpp
+ * @file  DoublePlantBlock.hpp
  *
  */
 #pragma once

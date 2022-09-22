@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockEventDispatcherToken.hpp
+ * @file  BlockEventDispatcherToken.hpp
  *
  */
 #pragma once

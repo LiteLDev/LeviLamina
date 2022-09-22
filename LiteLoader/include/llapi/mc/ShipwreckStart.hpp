@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShipwreckStart.hpp
+ * @file  ShipwreckStart.hpp
  *
  */
 #pragma once

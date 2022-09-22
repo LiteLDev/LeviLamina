@@ -1,5 +1,5 @@
 /**
- * @file  MC/LayDownGoal.hpp
+ * @file  LayDownGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LeashFenceKnotActor.hpp
+ * @file  LeashFenceKnotActor.hpp
  *
  */
 #pragma once

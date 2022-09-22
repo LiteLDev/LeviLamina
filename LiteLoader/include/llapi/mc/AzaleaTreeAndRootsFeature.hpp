@@ -1,5 +1,5 @@
 /**
- * @file  MC/AzaleaTreeAndRootsFeature.hpp
+ * @file  AzaleaTreeAndRootsFeature.hpp
  *
  */
 #pragma once

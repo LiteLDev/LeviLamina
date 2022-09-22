@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldTemplatePackManifest.hpp
+ * @file  WorldTemplatePackManifest.hpp
  *
  */
 #pragma once

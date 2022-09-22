@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlaySoundPacket.hpp
+ * @file  PlaySoundPacket.hpp
  *
  */
 #pragma once

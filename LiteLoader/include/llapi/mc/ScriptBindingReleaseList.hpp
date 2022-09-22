@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptBindingReleaseList.hpp
+ * @file  ScriptBindingReleaseList.hpp
  *
  */
 #pragma once

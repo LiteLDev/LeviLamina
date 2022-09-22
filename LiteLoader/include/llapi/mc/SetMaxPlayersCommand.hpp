@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetMaxPlayersCommand.hpp
+ * @file  SetMaxPlayersCommand.hpp
  *
  */
 #pragma once

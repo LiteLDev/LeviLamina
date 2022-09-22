@@ -1,5 +1,5 @@
 /**
- * @file  MC/SettingsCommandPacket.hpp
+ * @file  SettingsCommandPacket.hpp
  *
  */
 #pragma once

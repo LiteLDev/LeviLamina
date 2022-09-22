@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContentLogEndPoint.hpp
+ * @file  ContentLogEndPoint.hpp
  *
  */
 #pragma once

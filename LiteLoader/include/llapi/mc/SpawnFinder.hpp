@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnFinder.hpp
+ * @file  SpawnFinder.hpp
  *
  */
 #pragma once

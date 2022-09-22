@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockGeometryDescription.hpp
+ * @file  BlockGeometryDescription.hpp
  *
  */
 #pragma once

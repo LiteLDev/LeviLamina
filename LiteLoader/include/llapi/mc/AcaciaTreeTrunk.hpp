@@ -1,5 +1,5 @@
 /**
- * @file  MC/AcaciaTreeTrunk.hpp
+ * @file  AcaciaTreeTrunk.hpp
  *
  */
 #pragma once

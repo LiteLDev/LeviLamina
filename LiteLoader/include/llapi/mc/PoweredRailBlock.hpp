@@ -1,5 +1,5 @@
 /**
- * @file  MC/PoweredRailBlock.hpp
+ * @file  PoweredRailBlock.hpp
  *
  */
 #pragma once

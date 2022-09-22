@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoostableRemovePassengerSystem.hpp
+ * @file  BoostableRemovePassengerSystem.hpp
  *
  */
 #pragma once

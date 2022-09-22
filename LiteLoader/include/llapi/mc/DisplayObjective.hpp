@@ -1,5 +1,5 @@
 /**
- * @file  MC/DisplayObjective.hpp
+ * @file  DisplayObjective.hpp
  *
  */
 #pragma once

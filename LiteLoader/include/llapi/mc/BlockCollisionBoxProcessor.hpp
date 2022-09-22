@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockCollisionBoxProcessor.hpp
+ * @file  BlockCollisionBoxProcessor.hpp
  *
  */
 #pragma once

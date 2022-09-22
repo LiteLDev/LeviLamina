@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsLeashedToTest.hpp
+ * @file  ActorIsLeashedToTest.hpp
  *
  */
 #pragma once

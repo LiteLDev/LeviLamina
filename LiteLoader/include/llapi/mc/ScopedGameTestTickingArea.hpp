@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScopedGameTestTickingArea.hpp
+ * @file  ScopedGameTestTickingArea.hpp
  *
  */
 #pragma once

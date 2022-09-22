@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwiftSneakEnchant.hpp
+ * @file  SwiftSneakEnchant.hpp
  *
  */
 #pragma once

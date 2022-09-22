@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeedItemComponentLegacy.hpp
+ * @file  SeedItemComponentLegacy.hpp
  *
  */
 #pragma once

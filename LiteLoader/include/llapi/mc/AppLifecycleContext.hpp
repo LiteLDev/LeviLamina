@@ -1,5 +1,5 @@
 /**
- * @file  MC/AppLifecycleContext.hpp
+ * @file  AppLifecycleContext.hpp
  *
  */
 #pragma once

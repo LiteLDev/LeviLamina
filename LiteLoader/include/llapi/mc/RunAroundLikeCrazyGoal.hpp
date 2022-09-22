@@ -1,5 +1,5 @@
 /**
- * @file  MC/RunAroundLikeCrazyGoal.hpp
+ * @file  RunAroundLikeCrazyGoal.hpp
  *
  */
 #pragma once

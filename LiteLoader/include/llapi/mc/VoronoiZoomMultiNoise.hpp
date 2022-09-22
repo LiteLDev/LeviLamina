@@ -1,5 +1,5 @@
 /**
- * @file  MC/VoronoiZoomMultiNoise.hpp
+ * @file  VoronoiZoomMultiNoise.hpp
  *
  */
 #pragma once

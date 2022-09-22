@@ -1,5 +1,5 @@
 /**
- * @file  MC/IntRange.hpp
+ * @file  IntRange.hpp
  *
  */
 #pragma once

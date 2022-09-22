@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeSurfaceSystem.hpp
+ * @file  BiomeSurfaceSystem.hpp
  *
  */
 #pragma once

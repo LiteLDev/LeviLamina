@@ -1,5 +1,5 @@
 /**
- * @file  MC/DripstoneUtils.hpp
+ * @file  DripstoneUtils.hpp
  *
  */
 #pragma once

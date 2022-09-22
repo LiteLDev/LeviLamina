@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExploreOutskirtsGoal.hpp
+ * @file  ExploreOutskirtsGoal.hpp
  *
  */
 #pragma once

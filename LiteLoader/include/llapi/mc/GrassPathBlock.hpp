@@ -1,5 +1,5 @@
 /**
- * @file  MC/GrassPathBlock.hpp
+ * @file  GrassPathBlock.hpp
  *
  */
 #pragma once

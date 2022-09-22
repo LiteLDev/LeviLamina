@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandWildcardInt.hpp
+ * @file  CommandWildcardInt.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SystemTiming.hpp
+ * @file  SystemTiming.hpp
  *
  */
 #pragma once

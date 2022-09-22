@@ -1,5 +1,5 @@
 /**
- * @file  MC/SharedModifiers.hpp
+ * @file  SharedModifiers.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TellRawCommand.hpp
+ * @file  TellRawCommand.hpp
  *
  */
 #pragma once

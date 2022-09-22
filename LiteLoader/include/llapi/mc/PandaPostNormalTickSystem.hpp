@@ -1,5 +1,5 @@
 /**
- * @file  MC/PandaPostNormalTickSystem.hpp
+ * @file  PandaPostNormalTickSystem.hpp
  *
  */
 #pragma once

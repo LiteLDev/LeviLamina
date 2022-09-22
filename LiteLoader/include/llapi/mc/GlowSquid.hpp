@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlowSquid.hpp
+ * @file  GlowSquid.hpp
  *
  */
 #pragma once

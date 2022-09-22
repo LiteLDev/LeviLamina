@@ -1,5 +1,5 @@
 /**
- * @file  MC/LiquidPhysicsSystem.hpp
+ * @file  LiquidPhysicsSystem.hpp
  *
  */
 #pragma once

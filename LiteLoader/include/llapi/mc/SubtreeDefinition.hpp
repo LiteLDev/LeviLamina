@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubtreeDefinition.hpp
+ * @file  SubtreeDefinition.hpp
  *
  */
 #pragma once

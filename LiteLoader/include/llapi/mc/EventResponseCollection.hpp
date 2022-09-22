@@ -1,5 +1,5 @@
 /**
- * @file  MC/EventResponseCollection.hpp
+ * @file  EventResponseCollection.hpp
  *
  */
 #pragma once

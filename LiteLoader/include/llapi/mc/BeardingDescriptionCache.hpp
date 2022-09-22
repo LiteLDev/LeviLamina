@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeardingDescriptionCache.hpp
+ * @file  BeardingDescriptionCache.hpp
  *
  */
 #pragma once

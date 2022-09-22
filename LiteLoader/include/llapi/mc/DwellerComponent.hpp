@@ -1,5 +1,5 @@
 /**
- * @file  MC/DwellerComponent.hpp
+ * @file  DwellerComponent.hpp
  *
  */
 #pragma once

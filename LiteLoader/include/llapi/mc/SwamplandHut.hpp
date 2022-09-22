@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwamplandHut.hpp
+ * @file  SwamplandHut.hpp
  *
  */
 #pragma once

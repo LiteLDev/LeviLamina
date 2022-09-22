@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlastFurnaceBlockActor.hpp
+ * @file  BlastFurnaceBlockActor.hpp
  *
  */
 #pragma once

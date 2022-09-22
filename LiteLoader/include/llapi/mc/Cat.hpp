@@ -1,5 +1,5 @@
 /**
- * @file  MC/Cat.hpp
+ * @file  Cat.hpp
  *
  */
 #pragma once

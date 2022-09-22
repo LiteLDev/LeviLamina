@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndGatewayBlockActor.hpp
+ * @file  EndGatewayBlockActor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompositePackSource.hpp
+ * @file  CompositePackSource.hpp
  *
  */
 #pragma once

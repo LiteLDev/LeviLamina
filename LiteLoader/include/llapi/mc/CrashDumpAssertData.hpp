@@ -1,5 +1,5 @@
 /**
- * @file  MC/CrashDumpAssertData.hpp
+ * @file  CrashDumpAssertData.hpp
  *
  */
 #pragma once

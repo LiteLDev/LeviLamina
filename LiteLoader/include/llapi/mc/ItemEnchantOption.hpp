@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemEnchantOption.hpp
+ * @file  ItemEnchantOption.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PauseManager.hpp
+ * @file  PauseManager.hpp
  *
  */
 #pragma once

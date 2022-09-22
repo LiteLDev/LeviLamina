@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangProgramBuildState.hpp
+ * @file  MolangProgramBuildState.hpp
  *
  */
 #pragma once

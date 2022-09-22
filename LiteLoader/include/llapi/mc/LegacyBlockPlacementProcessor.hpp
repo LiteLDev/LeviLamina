@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyBlockPlacementProcessor.hpp
+ * @file  LegacyBlockPlacementProcessor.hpp
  *
  */
 #pragma once

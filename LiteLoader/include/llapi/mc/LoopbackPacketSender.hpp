@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoopbackPacketSender.hpp
+ * @file  LoopbackPacketSender.hpp
  *
  */
 #pragma once

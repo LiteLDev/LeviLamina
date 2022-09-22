@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerShootArrowEvent.hpp
+ * @file  PlayerShootArrowEvent.hpp
  *
  */
 #pragma once

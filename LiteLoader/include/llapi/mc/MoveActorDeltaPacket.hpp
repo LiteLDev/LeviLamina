@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveActorDeltaPacket.hpp
+ * @file  MoveActorDeltaPacket.hpp
  *
  */
 #pragma once

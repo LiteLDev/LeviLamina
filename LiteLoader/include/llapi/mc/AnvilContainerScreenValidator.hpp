@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnvilContainerScreenValidator.hpp
+ * @file  AnvilContainerScreenValidator.hpp
  *
  */
 #pragma once

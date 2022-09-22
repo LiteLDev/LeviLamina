@@ -1,5 +1,5 @@
 /**
- * @file  MC/GrindstoneContainerScreenValidator.hpp
+ * @file  GrindstoneContainerScreenValidator.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/OSInformation.hpp
+ * @file  OSInformation.hpp
  *
  */
 #pragma once

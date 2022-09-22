@@ -1,5 +1,5 @@
 /**
- * @file  MC/ArrowEffectSubcomponent.hpp
+ * @file  ArrowEffectSubcomponent.hpp
  *
  */
 #pragma once

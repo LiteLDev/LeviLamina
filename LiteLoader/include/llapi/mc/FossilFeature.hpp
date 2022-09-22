@@ -1,5 +1,5 @@
 /**
- * @file  MC/FossilFeature.hpp
+ * @file  FossilFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTextPacket.hpp
+ * @file  FilterTextPacket.hpp
  *
  */
 #pragma once

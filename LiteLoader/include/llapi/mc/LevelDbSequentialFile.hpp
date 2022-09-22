@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelDbSequentialFile.hpp
+ * @file  LevelDbSequentialFile.hpp
  *
  */
 #pragma once

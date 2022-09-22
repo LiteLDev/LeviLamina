@@ -1,5 +1,5 @@
 /**
- * @file  MC/MingleComponent.hpp
+ * @file  MingleComponent.hpp
  *
  */
 #pragma once

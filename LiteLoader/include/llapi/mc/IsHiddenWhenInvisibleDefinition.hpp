@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsHiddenWhenInvisibleDefinition.hpp
+ * @file  IsHiddenWhenInvisibleDefinition.hpp
  *
  */
 #pragma once

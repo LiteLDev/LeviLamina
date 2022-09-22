@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangQueryFunction.hpp
+ * @file  MolangQueryFunction.hpp
  *
  */
 #pragma once

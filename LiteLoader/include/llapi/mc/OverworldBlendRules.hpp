@@ -1,5 +1,5 @@
 /**
- * @file  MC/OverworldBlendRules.hpp
+ * @file  OverworldBlendRules.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoneOrientation.hpp
+ * @file  BoneOrientation.hpp
  *
  */
 #pragma once

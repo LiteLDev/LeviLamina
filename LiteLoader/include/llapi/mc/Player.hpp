@@ -1,5 +1,5 @@
 /**
- * @file  MC/Player.hpp
+ * @file  Player.hpp
  *
  */
 #pragma once

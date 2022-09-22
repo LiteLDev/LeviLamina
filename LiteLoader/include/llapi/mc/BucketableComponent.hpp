@@ -1,5 +1,5 @@
 /**
- * @file  MC/BucketableComponent.hpp
+ * @file  BucketableComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PrivateKeyManager.hpp
+ * @file  PrivateKeyManager.hpp
  *
  */
 #pragma once

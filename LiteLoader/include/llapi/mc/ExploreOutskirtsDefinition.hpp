@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExploreOutskirtsDefinition.hpp
+ * @file  ExploreOutskirtsDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockBlobFeature.hpp
+ * @file  BlockBlobFeature.hpp
  *
  */
 #pragma once

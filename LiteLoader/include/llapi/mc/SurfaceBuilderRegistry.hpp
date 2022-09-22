@@ -1,5 +1,5 @@
 /**
- * @file  MC/SurfaceBuilderRegistry.hpp
+ * @file  SurfaceBuilderRegistry.hpp
  *
  */
 #pragma once

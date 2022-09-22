@@ -1,5 +1,5 @@
 /**
- * @file  MC/JigsawPlacement.hpp
+ * @file  JigsawPlacement.hpp
  *
  */
 #pragma once

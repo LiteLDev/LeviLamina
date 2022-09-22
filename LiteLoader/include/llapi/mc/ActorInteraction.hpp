@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInteraction.hpp
+ * @file  ActorInteraction.hpp
  *
  */
 #pragma once

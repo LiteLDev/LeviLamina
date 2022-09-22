@@ -1,5 +1,5 @@
 /**
- * @file  MC/MessagingCommand.hpp
+ * @file  MessagingCommand.hpp
  *
  */
 #pragma once

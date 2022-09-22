@@ -1,5 +1,5 @@
 /**
- * @file  MC/Automation.hpp
+ * @file  Automation.hpp
  *
  */
 #pragma once

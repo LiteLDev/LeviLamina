@@ -1,5 +1,5 @@
 /**
- * @file  MC/Certificate.hpp
+ * @file  Certificate.hpp
  *
  */
 #pragma once

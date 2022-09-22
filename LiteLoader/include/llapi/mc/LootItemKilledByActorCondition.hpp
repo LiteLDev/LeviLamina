@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootItemKilledByActorCondition.hpp
+ * @file  LootItemKilledByActorCondition.hpp
  *
  */
 #pragma once

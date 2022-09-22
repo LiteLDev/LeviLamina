@@ -1,5 +1,5 @@
 /**
- * @file  MC/DoorInteractGoal.hpp
+ * @file  DoorInteractGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DouseFireSubcomponent.hpp
+ * @file  DouseFireSubcomponent.hpp
  *
  */
 #pragma once

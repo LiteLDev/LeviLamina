@@ -1,5 +1,5 @@
 /**
- * @file  MC/Ocelot.hpp
+ * @file  Ocelot.hpp
  *
  */
 #pragma once

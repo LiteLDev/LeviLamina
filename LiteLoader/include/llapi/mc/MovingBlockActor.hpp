@@ -1,5 +1,5 @@
 /**
- * @file  MC/MovingBlockActor.hpp
+ * @file  MovingBlockActor.hpp
  *
  */
 #pragma once

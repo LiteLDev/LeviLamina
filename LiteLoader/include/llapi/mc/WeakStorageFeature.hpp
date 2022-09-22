@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeakStorageFeature.hpp
+ * @file  WeakStorageFeature.hpp
  *
  */
 #pragma once

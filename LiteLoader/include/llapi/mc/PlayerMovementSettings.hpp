@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerMovementSettings.hpp
+ * @file  PlayerMovementSettings.hpp
  *
  */
 #pragma once

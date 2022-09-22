@@ -1,5 +1,5 @@
 /**
- * @file  MC/PacketObserver.hpp
+ * @file  PacketObserver.hpp
  *
  */
 #pragma once

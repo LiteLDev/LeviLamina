@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBBridgeEndFiller.hpp
+ * @file  NBBridgeEndFiller.hpp
  *
  */
 #pragma once

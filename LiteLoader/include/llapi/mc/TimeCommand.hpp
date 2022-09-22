@@ -1,5 +1,5 @@
 /**
- * @file  MC/TimeCommand.hpp
+ * @file  TimeCommand.hpp
  *
  */
 #pragma once

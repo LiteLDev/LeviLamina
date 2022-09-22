@@ -1,5 +1,5 @@
 /**
- * @file  MC/DrinkMilkGoal.hpp
+ * @file  DrinkMilkGoal.hpp
  *
  */
 #pragma once

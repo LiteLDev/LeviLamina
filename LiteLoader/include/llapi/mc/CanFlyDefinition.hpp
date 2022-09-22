@@ -1,5 +1,5 @@
 /**
- * @file  MC/CanFlyDefinition.hpp
+ * @file  CanFlyDefinition.hpp
  *
  */
 #pragma once

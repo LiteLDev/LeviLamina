@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetControllingPlayerUtility.hpp
+ * @file  GetControllingPlayerUtility.hpp
  *
  */
 #pragma once

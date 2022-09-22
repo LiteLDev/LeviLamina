@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnderChestContainer.hpp
+ * @file  EnderChestContainer.hpp
  *
  */
 #pragma once

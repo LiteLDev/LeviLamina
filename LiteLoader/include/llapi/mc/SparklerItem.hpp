@@ -1,5 +1,5 @@
 /**
- * @file  MC/SparklerItem.hpp
+ * @file  SparklerItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TripodCameraDescription.hpp
+ * @file  TripodCameraDescription.hpp
  *
  */
 #pragma once

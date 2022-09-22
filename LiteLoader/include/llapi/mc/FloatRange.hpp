@@ -1,5 +1,5 @@
 /**
- * @file  MC/FloatRange.hpp
+ * @file  FloatRange.hpp
  *
  */
 #pragma once

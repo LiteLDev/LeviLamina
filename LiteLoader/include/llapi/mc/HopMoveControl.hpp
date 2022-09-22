@@ -1,5 +1,5 @@
 /**
- * @file  MC/HopMoveControl.hpp
+ * @file  HopMoveControl.hpp
  *
  */
 #pragma once

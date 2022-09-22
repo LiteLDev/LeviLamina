@@ -1,5 +1,5 @@
 /**
- * @file  MC/RemoveOnHitSubcomponent.hpp
+ * @file  RemoveOnHitSubcomponent.hpp
  *
  */
 #pragma once

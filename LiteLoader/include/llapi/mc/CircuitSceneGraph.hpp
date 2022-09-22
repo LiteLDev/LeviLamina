@@ -1,5 +1,5 @@
 /**
- * @file  MC/CircuitSceneGraph.hpp
+ * @file  CircuitSceneGraph.hpp
  *
  */
 #pragma once

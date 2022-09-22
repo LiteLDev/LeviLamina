@@ -1,5 +1,5 @@
 /**
- * @file  MC/KeyFrameLerpMode.hpp
+ * @file  KeyFrameLerpMode.hpp
  *
  */
 #pragma once

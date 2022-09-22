@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaBiomes.hpp
+ * @file  VanillaBiomes.hpp
  *
  */
 #pragma once

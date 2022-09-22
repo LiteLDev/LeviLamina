@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmokerContainerScreenValidator.hpp
+ * @file  SmokerContainerScreenValidator.hpp
  *
  */
 #pragma once

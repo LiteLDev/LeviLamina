@@ -1,5 +1,5 @@
 /**
- * @file  MC/ArmorContainerValidation.hpp
+ * @file  ArmorContainerValidation.hpp
  *
  */
 #pragma once

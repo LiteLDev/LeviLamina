@@ -1,5 +1,5 @@
 /**
- * @file  MC/CandleBlock.hpp
+ * @file  CandleBlock.hpp
  *
  */
 #pragma once

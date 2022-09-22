@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaWorldSystems.hpp
+ * @file  VanillaWorldSystems.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerNetworkEventCoordinator.hpp
+ * @file  ServerNetworkEventCoordinator.hpp
  *
  */
 #pragma once

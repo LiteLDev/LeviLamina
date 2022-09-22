@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyBlendedNoise.hpp
+ * @file  LegacyBlendedNoise.hpp
  *
  */
 #pragma once

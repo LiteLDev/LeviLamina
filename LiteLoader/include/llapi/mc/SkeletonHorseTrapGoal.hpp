@@ -1,5 +1,5 @@
 /**
- * @file  MC/SkeletonHorseTrapGoal.hpp
+ * @file  SkeletonHorseTrapGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerInstanceRequestResourceReload.hpp
+ * @file  ServerInstanceRequestResourceReload.hpp
  *
  */
 #pragma once

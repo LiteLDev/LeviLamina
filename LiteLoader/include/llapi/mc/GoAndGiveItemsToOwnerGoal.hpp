@@ -1,5 +1,5 @@
 /**
- * @file  MC/GoAndGiveItemsToOwnerGoal.hpp
+ * @file  GoAndGiveItemsToOwnerGoal.hpp
  *
  */
 #pragma once

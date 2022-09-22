@@ -1,5 +1,5 @@
 /**
- * @file  MC/InventoryContainerModel.hpp
+ * @file  InventoryContainerModel.hpp
  *
  */
 #pragma once

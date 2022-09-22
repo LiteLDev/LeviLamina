@@ -1,5 +1,5 @@
 /**
- * @file  MC/BrewingStandBlockActor.hpp
+ * @file  BrewingStandBlockActor.hpp
  *
  */
 #pragma once

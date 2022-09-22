@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerArmorExchangeEvent.hpp
+ * @file  PlayerArmorExchangeEvent.hpp
  *
  */
 #pragma once

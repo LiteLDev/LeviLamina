@@ -1,5 +1,5 @@
 /**
- * @file  MC/TextObjectSelector.hpp
+ * @file  TextObjectSelector.hpp
  *
  */
 #pragma once

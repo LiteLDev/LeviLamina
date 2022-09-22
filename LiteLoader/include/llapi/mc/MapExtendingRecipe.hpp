@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapExtendingRecipe.hpp
+ * @file  MapExtendingRecipe.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BehaviorDefinition.hpp
+ * @file  BehaviorDefinition.hpp
  *
  */
 #pragma once

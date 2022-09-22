@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkKey.hpp
+ * @file  ChunkKey.hpp
  *
  */
 #pragma once

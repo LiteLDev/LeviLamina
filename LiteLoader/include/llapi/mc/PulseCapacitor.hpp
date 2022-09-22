@@ -1,5 +1,5 @@
 /**
- * @file  MC/PulseCapacitor.hpp
+ * @file  PulseCapacitor.hpp
  *
  */
 #pragma once

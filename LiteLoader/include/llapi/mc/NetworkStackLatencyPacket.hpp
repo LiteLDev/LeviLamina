@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkStackLatencyPacket.hpp
+ * @file  NetworkStackLatencyPacket.hpp
  *
  */
 #pragma once

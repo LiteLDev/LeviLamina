@@ -1,5 +1,5 @@
 /**
- * @file  MC/Interaction.hpp
+ * @file  Interaction.hpp
  *
  */
 #pragma once

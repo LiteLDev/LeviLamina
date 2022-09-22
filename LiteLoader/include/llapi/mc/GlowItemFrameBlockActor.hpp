@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlowItemFrameBlockActor.hpp
+ * @file  GlowItemFrameBlockActor.hpp
  *
  */
 #pragma once

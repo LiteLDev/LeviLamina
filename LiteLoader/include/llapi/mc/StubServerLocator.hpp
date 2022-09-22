@@ -1,5 +1,5 @@
 /**
- * @file  MC/StubServerLocator.hpp
+ * @file  StubServerLocator.hpp
  *
  */
 #pragma once

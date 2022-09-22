@@ -1,5 +1,5 @@
 /**
- * @file  MC/CachedComponentData.hpp
+ * @file  CachedComponentData.hpp
  *
  */
 #pragma once

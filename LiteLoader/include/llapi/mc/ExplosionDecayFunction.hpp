@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExplosionDecayFunction.hpp
+ * @file  ExplosionDecayFunction.hpp
  *
  */
 #pragma once

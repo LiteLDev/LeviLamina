@@ -1,5 +1,5 @@
 /**
- * @file  MC/DragonStrafePlayerDefinition.hpp
+ * @file  DragonStrafePlayerDefinition.hpp
  *
  */
 #pragma once

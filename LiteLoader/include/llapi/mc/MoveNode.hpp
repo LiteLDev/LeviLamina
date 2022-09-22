@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveNode.hpp
+ * @file  MoveNode.hpp
  *
  */
 #pragma once

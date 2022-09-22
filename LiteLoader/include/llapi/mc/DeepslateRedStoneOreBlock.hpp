@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeepslateRedStoneOreBlock.hpp
+ * @file  DeepslateRedStoneOreBlock.hpp
  *
  */
 #pragma once

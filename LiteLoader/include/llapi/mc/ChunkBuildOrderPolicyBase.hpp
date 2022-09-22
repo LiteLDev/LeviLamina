@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunkBuildOrderPolicyBase.hpp
+ * @file  ChunkBuildOrderPolicyBase.hpp
  *
  */
 #pragma once

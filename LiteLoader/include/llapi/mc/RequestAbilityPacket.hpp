@@ -1,5 +1,5 @@
 /**
- * @file  MC/RequestAbilityPacket.hpp
+ * @file  RequestAbilityPacket.hpp
  *
  */
 #pragma once

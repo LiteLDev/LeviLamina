@@ -1,5 +1,5 @@
 /**
- * @file  MC/OutOfWorldSystem.hpp
+ * @file  OutOfWorldSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureTemplateDataResponsePacket.hpp
+ * @file  StructureTemplateDataResponsePacket.hpp
  *
  */
 #pragma once

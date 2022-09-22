@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaGoalUtility.hpp
+ * @file  VanillaGoalUtility.hpp
  *
  */
 #pragma once

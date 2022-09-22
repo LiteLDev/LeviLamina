@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeakStorageEntity.hpp
+ * @file  WeakStorageEntity.hpp
  *
  */
 #pragma once

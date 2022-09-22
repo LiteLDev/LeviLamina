@@ -1,5 +1,5 @@
 /**
- * @file  MC/CartographyTableBlock.hpp
+ * @file  CartographyTableBlock.hpp
  *
  */
 #pragma once

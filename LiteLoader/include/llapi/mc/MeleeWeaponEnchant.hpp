@@ -1,5 +1,5 @@
 /**
- * @file  MC/MeleeWeaponEnchant.hpp
+ * @file  MeleeWeaponEnchant.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ImprovedNoise.hpp
+ * @file  ImprovedNoise.hpp
  *
  */
 #pragma once

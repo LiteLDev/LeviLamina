@@ -1,5 +1,5 @@
 /**
- * @file  MC/CreativeItemGroupCategory.hpp
+ * @file  CreativeItemGroupCategory.hpp
  *
  */
 #pragma once

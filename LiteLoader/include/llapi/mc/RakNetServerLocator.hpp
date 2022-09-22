@@ -1,5 +1,5 @@
 /**
- * @file  MC/RakNetServerLocator.hpp
+ * @file  RakNetServerLocator.hpp
  *
  */
 #pragma once

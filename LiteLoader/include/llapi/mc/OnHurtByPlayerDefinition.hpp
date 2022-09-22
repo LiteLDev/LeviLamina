@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnHurtByPlayerDefinition.hpp
+ * @file  OnHurtByPlayerDefinition.hpp
  *
  */
 #pragma once

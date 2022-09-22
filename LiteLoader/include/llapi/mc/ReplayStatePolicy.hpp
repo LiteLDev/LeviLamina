@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReplayStatePolicy.hpp
+ * @file  ReplayStatePolicy.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/hc_websocket_impl.hpp
+ * @file  hc_websocket_impl.hpp
  *
  */
 #pragma once

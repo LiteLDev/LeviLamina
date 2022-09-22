@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInCloudsTest.hpp
+ * @file  ActorInCloudsTest.hpp
  *
  */
 #pragma once

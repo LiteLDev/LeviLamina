@@ -1,5 +1,5 @@
 /**
- * @file  MC/CircleAroundAnchorGoal.hpp
+ * @file  CircleAroundAnchorGoal.hpp
  *
  */
 #pragma once

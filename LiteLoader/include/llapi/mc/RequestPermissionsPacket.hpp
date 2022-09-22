@@ -1,5 +1,5 @@
 /**
- * @file  MC/RequestPermissionsPacket.hpp
+ * @file  RequestPermissionsPacket.hpp
  *
  */
 #pragma once

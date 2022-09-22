@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorSoundEffectEvent.hpp
+ * @file  ActorSoundEffectEvent.hpp
  *
  */
 #pragma once

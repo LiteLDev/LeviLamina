@@ -1,5 +1,5 @@
 /**
- * @file  MC/OutOfControlDefinition.hpp
+ * @file  OutOfControlDefinition.hpp
  *
  */
 #pragma once

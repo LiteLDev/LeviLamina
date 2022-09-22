@@ -1,5 +1,5 @@
 /**
- * @file  MC/FrogSpawnBlock.hpp
+ * @file  FrogSpawnBlock.hpp
  *
  */
 #pragma once

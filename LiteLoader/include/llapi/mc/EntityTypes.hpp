@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityTypes.hpp
+ * @file  EntityTypes.hpp
  *
  */
 #pragma once

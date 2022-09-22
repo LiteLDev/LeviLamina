@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestAltitude.hpp
+ * @file  FilterTestAltitude.hpp
  *
  */
 #pragma once

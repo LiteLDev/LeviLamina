@@ -1,5 +1,5 @@
 /**
- * @file  MC/RoleChecker.hpp
+ * @file  RoleChecker.hpp
  *
  */
 #pragma once

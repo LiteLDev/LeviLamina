@@ -1,5 +1,5 @@
 /**
- * @file  MC/BasaltColumnsFeature.hpp
+ * @file  BasaltColumnsFeature.hpp
  *
  */
 #pragma once

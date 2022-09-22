@@ -1,5 +1,5 @@
 /**
- * @file  MC/NullSoundPlayer.hpp
+ * @file  NullSoundPlayer.hpp
  *
  */
 #pragma once

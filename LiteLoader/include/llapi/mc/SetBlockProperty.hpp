@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetBlockProperty.hpp
+ * @file  SetBlockProperty.hpp
  *
  */
 #pragma once

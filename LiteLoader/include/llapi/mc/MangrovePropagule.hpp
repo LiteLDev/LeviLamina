@@ -1,5 +1,5 @@
 /**
- * @file  MC/MangrovePropagule.hpp
+ * @file  MangrovePropagule.hpp
  *
  */
 #pragma once

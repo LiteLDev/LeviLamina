@@ -1,5 +1,5 @@
 /**
- * @file  MC/UIProfanityContext.hpp
+ * @file  UIProfanityContext.hpp
  *
  */
 #pragma once

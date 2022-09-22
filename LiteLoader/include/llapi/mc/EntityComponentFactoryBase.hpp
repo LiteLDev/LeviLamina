@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityComponentFactoryBase.hpp
+ * @file  EntityComponentFactoryBase.hpp
  *
  */
 #pragma once

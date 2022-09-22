@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPosIterator.hpp
+ * @file  BlockPosIterator.hpp
  *
  */
 #pragma once

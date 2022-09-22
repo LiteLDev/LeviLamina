@@ -1,5 +1,5 @@
 /**
- * @file  MC/ITickingAreaView.hpp
+ * @file  ITickingAreaView.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlowStickItem.hpp
+ * @file  GlowStickItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MeleeAttackDefinition.hpp
+ * @file  MeleeAttackDefinition.hpp
  *
  */
 #pragma once

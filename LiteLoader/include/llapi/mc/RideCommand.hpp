@@ -1,5 +1,5 @@
 /**
- * @file  MC/RideCommand.hpp
+ * @file  RideCommand.hpp
  *
  */
 #pragma once

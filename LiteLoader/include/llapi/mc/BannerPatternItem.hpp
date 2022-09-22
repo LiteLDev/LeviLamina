@@ -1,5 +1,5 @@
 /**
- * @file  MC/BannerPatternItem.hpp
+ * @file  BannerPatternItem.hpp
  *
  */
 #pragma once

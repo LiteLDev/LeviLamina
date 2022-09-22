@@ -1,5 +1,5 @@
 /**
- * @file  MC/BedBlock.hpp
+ * @file  BedBlock.hpp
  *
  */
 #pragma once

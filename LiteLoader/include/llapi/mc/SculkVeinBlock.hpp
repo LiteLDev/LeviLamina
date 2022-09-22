@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkVeinBlock.hpp
+ * @file  SculkVeinBlock.hpp
  *
  */
 #pragma once

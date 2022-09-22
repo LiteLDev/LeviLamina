@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcDefinition.hpp
+ * @file  NpcDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EditorTickFilterSystem.hpp
+ * @file  EditorTickFilterSystem.hpp
  *
  */
 #pragma once

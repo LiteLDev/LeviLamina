@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveTowardsDwellingRestrictionGoal.hpp
+ * @file  MoveTowardsDwellingRestrictionGoal.hpp
  *
  */
 #pragma once

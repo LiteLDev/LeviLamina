@@ -1,5 +1,5 @@
 /**
- * @file  MC/DragonLandingGoal.hpp
+ * @file  DragonLandingGoal.hpp
  *
  */
 #pragma once

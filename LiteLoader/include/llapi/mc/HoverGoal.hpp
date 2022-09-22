@@ -1,5 +1,5 @@
 /**
- * @file  MC/HoverGoal.hpp
+ * @file  HoverGoal.hpp
  *
  */
 #pragma once

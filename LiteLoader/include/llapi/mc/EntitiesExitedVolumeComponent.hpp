@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntitiesExitedVolumeComponent.hpp
+ * @file  EntitiesExitedVolumeComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LayeredAbilities.hpp
+ * @file  LayeredAbilities.hpp
  *
  */
 #pragma once

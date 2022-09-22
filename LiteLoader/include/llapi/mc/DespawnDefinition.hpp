@@ -1,5 +1,5 @@
 /**
- * @file  MC/DespawnDefinition.hpp
+ * @file  DespawnDefinition.hpp
  *
  */
 #pragma once

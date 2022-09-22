@@ -1,5 +1,5 @@
 /**
- * @file  MC/EconomyTradeableComponent.hpp
+ * @file  EconomyTradeableComponent.hpp
  *
  */
 #pragma once

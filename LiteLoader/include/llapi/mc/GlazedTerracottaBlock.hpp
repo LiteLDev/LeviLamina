@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlazedTerracottaBlock.hpp
+ * @file  GlazedTerracottaBlock.hpp
  *
  */
 #pragma once

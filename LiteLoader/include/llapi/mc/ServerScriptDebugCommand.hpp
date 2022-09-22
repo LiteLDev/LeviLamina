@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerScriptDebugCommand.hpp
+ * @file  ServerScriptDebugCommand.hpp
  *
  */
 #pragma once

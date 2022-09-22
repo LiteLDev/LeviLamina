@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomDyeFunction.hpp
+ * @file  RandomDyeFunction.hpp
  *
  */
 #pragma once

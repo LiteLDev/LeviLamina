@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorRandomChanceTest.hpp
+ * @file  ActorRandomChanceTest.hpp
  *
  */
 #pragma once

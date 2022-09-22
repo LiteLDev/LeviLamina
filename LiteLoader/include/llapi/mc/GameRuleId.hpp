@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameRuleId.hpp
+ * @file  GameRuleId.hpp
  *
  */
 #pragma once

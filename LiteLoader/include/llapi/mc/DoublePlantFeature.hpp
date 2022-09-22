@@ -1,5 +1,5 @@
 /**
- * @file  MC/DoublePlantFeature.hpp
+ * @file  DoublePlantFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideEntityInsideBlocks.hpp
+ * @file  SideBySideEntityInsideBlocks.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockLegacy.hpp
+ * @file  BlockLegacy.hpp
  *
  */
 #pragma once

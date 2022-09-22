@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldPackHistory.hpp
+ * @file  WorldPackHistory.hpp
  *
  */
 #pragma once

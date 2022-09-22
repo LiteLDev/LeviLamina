@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExtendedStreamReadResult.hpp
+ * @file  ExtendedStreamReadResult.hpp
  *
  */
 #pragma once

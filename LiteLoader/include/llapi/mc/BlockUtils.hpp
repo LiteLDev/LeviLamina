@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockUtils.hpp
+ * @file  BlockUtils.hpp
  *
  */
 #pragma once

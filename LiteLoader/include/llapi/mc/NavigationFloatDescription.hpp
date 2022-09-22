@@ -1,5 +1,5 @@
 /**
- * @file  MC/NavigationFloatDescription.hpp
+ * @file  NavigationFloatDescription.hpp
  *
  */
 #pragma once

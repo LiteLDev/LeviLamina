@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelStorageWriteBatch.hpp
+ * @file  LevelStorageWriteBatch.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsChargedDefinition.hpp
+ * @file  IsChargedDefinition.hpp
  *
  */
 #pragma once

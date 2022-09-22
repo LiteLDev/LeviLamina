@@ -1,5 +1,5 @@
 /**
- * @file  MC/EducationSettingsPacket.hpp
+ * @file  EducationSettingsPacket.hpp
  *
  */
 #pragma once

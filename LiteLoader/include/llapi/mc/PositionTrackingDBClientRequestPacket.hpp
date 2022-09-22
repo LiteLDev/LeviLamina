@@ -1,5 +1,5 @@
 /**
- * @file  MC/PositionTrackingDBClientRequestPacket.hpp
+ * @file  PositionTrackingDBClientRequestPacket.hpp
  *
  */
 #pragma once

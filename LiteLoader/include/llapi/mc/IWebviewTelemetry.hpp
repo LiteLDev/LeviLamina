@@ -1,5 +1,5 @@
 /**
- * @file  MC/IWebviewTelemetry.hpp
+ * @file  IWebviewTelemetry.hpp
  *
  */
 #pragma once

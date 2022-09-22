@@ -1,5 +1,5 @@
 /**
- * @file  MC/Panda.hpp
+ * @file  Panda.hpp
  *
  */
 #pragma once

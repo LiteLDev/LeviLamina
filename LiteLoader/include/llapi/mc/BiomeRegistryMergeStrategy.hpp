@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeRegistryMergeStrategy.hpp
+ * @file  BiomeRegistryMergeStrategy.hpp
  *
  */
 #pragma once

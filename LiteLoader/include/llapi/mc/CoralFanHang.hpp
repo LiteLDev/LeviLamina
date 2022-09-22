@@ -1,5 +1,5 @@
 /**
- * @file  MC/CoralFanHang.hpp
+ * @file  CoralFanHang.hpp
  *
  */
 #pragma once

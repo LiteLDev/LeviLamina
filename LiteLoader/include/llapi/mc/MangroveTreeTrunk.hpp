@@ -1,5 +1,5 @@
 /**
- * @file  MC/MangroveTreeTrunk.hpp
+ * @file  MangroveTreeTrunk.hpp
  *
  */
 #pragma once

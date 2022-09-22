@@ -1,5 +1,5 @@
 /**
- * @file  MC/EquipmentTableDefinition.hpp
+ * @file  EquipmentTableDefinition.hpp
  *
  */
 #pragma once

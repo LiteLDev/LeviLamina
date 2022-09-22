@@ -1,5 +1,5 @@
 /**
- * @file  MC/EggItem.hpp
+ * @file  EggItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CombatRegenerationListener.hpp
+ * @file  CombatRegenerationListener.hpp
  *
  */
 #pragma once

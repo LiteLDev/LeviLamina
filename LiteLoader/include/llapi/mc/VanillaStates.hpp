@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaStates.hpp
+ * @file  VanillaStates.hpp
  *
  */
 #pragma once

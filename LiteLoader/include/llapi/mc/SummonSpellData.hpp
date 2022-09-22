@@ -1,5 +1,5 @@
 /**
- * @file  MC/SummonSpellData.hpp
+ * @file  SummonSpellData.hpp
  *
  */
 #pragma once

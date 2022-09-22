@@ -1,5 +1,5 @@
 /**
- * @file  MC/ComponentNetRelevancyRegistry.hpp
+ * @file  ComponentNetRelevancyRegistry.hpp
  *
  */
 #pragma once

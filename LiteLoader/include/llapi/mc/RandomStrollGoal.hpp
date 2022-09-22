@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomStrollGoal.hpp
+ * @file  RandomStrollGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PhysicsDefinition.hpp
+ * @file  PhysicsDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlintAndSteelItem.hpp
+ * @file  FlintAndSteelItem.hpp
  *
  */
 #pragma once

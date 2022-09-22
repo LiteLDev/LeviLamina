@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveTowardsHomeRestrictionGoal.hpp
+ * @file  MoveTowardsHomeRestrictionGoal.hpp
  *
  */
 #pragma once

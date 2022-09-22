@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeltaFeature.hpp
+ * @file  DeltaFeature.hpp
  *
  */
 #pragma once

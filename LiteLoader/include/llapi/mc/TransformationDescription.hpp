@@ -1,5 +1,5 @@
 /**
- * @file  MC/TransformationDescription.hpp
+ * @file  TransformationDescription.hpp
  *
  */
 #pragma once

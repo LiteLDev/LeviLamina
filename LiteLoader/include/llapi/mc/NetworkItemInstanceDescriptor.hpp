@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkItemInstanceDescriptor.hpp
+ * @file  NetworkItemInstanceDescriptor.hpp
  *
  */
 #pragma once

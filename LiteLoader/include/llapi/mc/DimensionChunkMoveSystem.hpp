@@ -1,5 +1,5 @@
 /**
- * @file  MC/DimensionChunkMoveSystem.hpp
+ * @file  DimensionChunkMoveSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LabTableContainerManagerModel.hpp
+ * @file  LabTableContainerManagerModel.hpp
  *
  */
 #pragma once

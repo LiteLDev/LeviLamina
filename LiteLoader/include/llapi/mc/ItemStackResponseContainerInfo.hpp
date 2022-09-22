@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackResponseContainerInfo.hpp
+ * @file  ItemStackResponseContainerInfo.hpp
  *
  */
 #pragma once

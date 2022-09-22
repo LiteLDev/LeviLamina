@@ -1,5 +1,5 @@
 /**
- * @file  MC/Wolf.hpp
+ * @file  Wolf.hpp
  *
  */
 #pragma once

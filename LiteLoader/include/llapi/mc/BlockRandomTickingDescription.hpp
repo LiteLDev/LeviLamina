@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockRandomTickingDescription.hpp
+ * @file  BlockRandomTickingDescription.hpp
  *
  */
 #pragma once

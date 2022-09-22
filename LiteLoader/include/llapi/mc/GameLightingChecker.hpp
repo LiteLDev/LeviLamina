@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameLightingChecker.hpp
+ * @file  GameLightingChecker.hpp
  *
  */
 #pragma once

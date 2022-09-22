@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerUseNameTagEvent.hpp
+ * @file  PlayerUseNameTagEvent.hpp
  *
  */
 #pragma once

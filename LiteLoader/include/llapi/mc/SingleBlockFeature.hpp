@@ -1,5 +1,5 @@
 /**
- * @file  MC/SingleBlockFeature.hpp
+ * @file  SingleBlockFeature.hpp
  *
  */
 #pragma once

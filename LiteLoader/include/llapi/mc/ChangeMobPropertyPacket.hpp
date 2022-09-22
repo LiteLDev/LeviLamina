@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChangeMobPropertyPacket.hpp
+ * @file  ChangeMobPropertyPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpatialActorNetworkData.hpp
+ * @file  SpatialActorNetworkData.hpp
  *
  */
 #pragma once

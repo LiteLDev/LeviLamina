@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShapelessRecipe.hpp
+ * @file  ShapelessRecipe.hpp
  *
  */
 #pragma once

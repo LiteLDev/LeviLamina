@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangDescriptor.hpp
+ * @file  MolangDescriptor.hpp
  *
  */
 #pragma once

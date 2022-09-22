@@ -1,5 +1,5 @@
 /**
- * @file  MC/TickingAreasManager.hpp
+ * @file  TickingAreasManager.hpp
  *
  */
 #pragma once

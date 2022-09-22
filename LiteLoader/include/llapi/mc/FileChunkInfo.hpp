@@ -1,5 +1,5 @@
 /**
- * @file  MC/FileChunkInfo.hpp
+ * @file  FileChunkInfo.hpp
  *
  */
 #pragma once

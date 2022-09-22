@@ -1,5 +1,5 @@
 /**
- * @file  MC/IndexSet.hpp
+ * @file  IndexSet.hpp
  *
  */
 #pragma once

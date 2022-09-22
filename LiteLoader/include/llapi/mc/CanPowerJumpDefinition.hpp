@@ -1,5 +1,5 @@
 /**
- * @file  MC/CanPowerJumpDefinition.hpp
+ * @file  CanPowerJumpDefinition.hpp
  *
  */
 #pragma once

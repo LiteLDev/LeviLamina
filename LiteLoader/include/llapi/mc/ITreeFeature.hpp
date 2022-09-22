@@ -1,5 +1,5 @@
 /**
- * @file  MC/ITreeFeature.hpp
+ * @file  ITreeFeature.hpp
  *
  */
 #pragma once

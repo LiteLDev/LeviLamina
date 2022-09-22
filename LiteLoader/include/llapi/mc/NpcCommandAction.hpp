@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcCommandAction.hpp
+ * @file  NpcCommandAction.hpp
  *
  */
 #pragma once

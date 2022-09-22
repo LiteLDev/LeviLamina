@@ -1,5 +1,5 @@
 /**
- * @file  MC/UnderwaterTorchBlock.hpp
+ * @file  UnderwaterTorchBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Abilities.hpp
+ * @file  Abilities.hpp
  *
  */
 #pragma once

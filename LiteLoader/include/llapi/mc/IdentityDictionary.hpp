@@ -1,5 +1,5 @@
 /**
- * @file  MC/IdentityDictionary.hpp
+ * @file  IdentityDictionary.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MobArmorEquipmentPacket.hpp
+ * @file  MobArmorEquipmentPacket.hpp
  *
  */
 #pragma once

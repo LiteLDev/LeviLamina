@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcRequestPacket.hpp
+ * @file  NpcRequestPacket.hpp
  *
  */
 #pragma once

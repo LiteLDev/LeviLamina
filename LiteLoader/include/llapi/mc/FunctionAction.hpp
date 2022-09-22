@@ -1,5 +1,5 @@
 /**
- * @file  MC/FunctionAction.hpp
+ * @file  FunctionAction.hpp
  *
  */
 #pragma once

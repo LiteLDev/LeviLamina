@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeaPickle.hpp
+ * @file  SeaPickle.hpp
  *
  */
 #pragma once

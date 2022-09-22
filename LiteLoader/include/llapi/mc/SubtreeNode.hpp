@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubtreeNode.hpp
+ * @file  SubtreeNode.hpp
  *
  */
 #pragma once

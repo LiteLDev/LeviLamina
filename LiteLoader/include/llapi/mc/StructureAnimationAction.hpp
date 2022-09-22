@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureAnimationAction.hpp
+ * @file  StructureAnimationAction.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestActionCraftLoom.hpp
+ * @file  ItemStackRequestActionCraftLoom.hpp
  *
  */
 #pragma once

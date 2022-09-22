@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChargeHeldItemDefinition.hpp
+ * @file  ChargeHeldItemDefinition.hpp
  *
  */
 #pragma once

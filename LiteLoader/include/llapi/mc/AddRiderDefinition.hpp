@@ -1,5 +1,5 @@
 /**
- * @file  MC/AddRiderDefinition.hpp
+ * @file  AddRiderDefinition.hpp
  *
  */
 #pragma once

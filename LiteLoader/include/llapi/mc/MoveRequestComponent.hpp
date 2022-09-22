@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveRequestComponent.hpp
+ * @file  MoveRequestComponent.hpp
  *
  */
 #pragma once

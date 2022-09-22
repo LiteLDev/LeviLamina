@@ -1,5 +1,5 @@
 /**
- * @file  MC/FeaturePoolElement.hpp
+ * @file  FeaturePoolElement.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/OverloadSyntaxInformation.hpp
+ * @file  OverloadSyntaxInformation.hpp
  *
  */
 #pragma once

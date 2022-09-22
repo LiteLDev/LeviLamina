@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideGenericBlockSystem.hpp
+ * @file  InsideGenericBlockSystem.hpp
  *
  */
 #pragma once

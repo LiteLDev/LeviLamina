@@ -1,5 +1,5 @@
 /**
- * @file  MC/WoolCarpetBlock.hpp
+ * @file  WoolCarpetBlock.hpp
  *
  */
 #pragma once

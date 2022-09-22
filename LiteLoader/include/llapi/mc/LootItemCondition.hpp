@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootItemCondition.hpp
+ * @file  LootItemCondition.hpp
  *
  */
 #pragma once

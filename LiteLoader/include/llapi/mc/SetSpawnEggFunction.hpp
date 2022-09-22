@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetSpawnEggFunction.hpp
+ * @file  SetSpawnEggFunction.hpp
  *
  */
 #pragma once

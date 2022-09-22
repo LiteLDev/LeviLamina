@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolBlockPredicateTrueIfFound.hpp
+ * @file  StructurePoolBlockPredicateTrueIfFound.hpp
  *
  */
 #pragma once

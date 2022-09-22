@@ -1,5 +1,5 @@
 /**
- * @file  MC/Motive.hpp
+ * @file  Motive.hpp
  *
  */
 #pragma once

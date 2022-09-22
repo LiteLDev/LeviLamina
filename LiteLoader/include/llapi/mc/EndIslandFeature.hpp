@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndIslandFeature.hpp
+ * @file  EndIslandFeature.hpp
  *
  */
 #pragma once

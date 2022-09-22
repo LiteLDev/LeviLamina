@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourceSignature.hpp
+ * @file  ResourceSignature.hpp
  *
  */
 #pragma once

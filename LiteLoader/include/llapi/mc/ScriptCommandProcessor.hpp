@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptCommandProcessor.hpp
+ * @file  ScriptCommandProcessor.hpp
  *
  */
 #pragma once

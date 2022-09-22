@@ -1,5 +1,5 @@
 /**
- * @file  MC/IcebergFeature.hpp
+ * @file  IcebergFeature.hpp
  *
  */
 #pragma once

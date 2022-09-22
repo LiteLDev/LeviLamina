@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClockItem.hpp
+ * @file  ClockItem.hpp
  *
  */
 #pragma once

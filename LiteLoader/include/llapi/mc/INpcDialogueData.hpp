@@ -1,5 +1,5 @@
 /**
- * @file  MC/INpcDialogueData.hpp
+ * @file  INpcDialogueData.hpp
  *
  */
 #pragma once

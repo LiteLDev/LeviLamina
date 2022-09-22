@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldGenClimateMappingAttributes.hpp
+ * @file  WorldGenClimateMappingAttributes.hpp
  *
  */
 #pragma once

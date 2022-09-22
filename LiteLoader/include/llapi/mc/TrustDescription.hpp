@@ -1,5 +1,5 @@
 /**
- * @file  MC/TrustDescription.hpp
+ * @file  TrustDescription.hpp
  *
  */
 #pragma once

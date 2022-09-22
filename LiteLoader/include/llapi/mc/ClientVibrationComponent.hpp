@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClientVibrationComponent.hpp
+ * @file  ClientVibrationComponent.hpp
  *
  */
 #pragma once

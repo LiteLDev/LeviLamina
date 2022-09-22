@@ -1,5 +1,5 @@
 /**
- * @file  MC/HopperSystem.hpp
+ * @file  HopperSystem.hpp
  *
  */
 #pragma once

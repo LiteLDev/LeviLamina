@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBCastleStalkRoom.hpp
+ * @file  NBCastleStalkRoom.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AvailableCommandsPacket.hpp
+ * @file  AvailableCommandsPacket.hpp
  *
  */
 #pragma once

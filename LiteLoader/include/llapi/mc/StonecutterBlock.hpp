@@ -1,5 +1,5 @@
 /**
- * @file  MC/StonecutterBlock.hpp
+ * @file  StonecutterBlock.hpp
  *
  */
 #pragma once

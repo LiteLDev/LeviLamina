@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClassroomModeListener.hpp
+ * @file  ClassroomModeListener.hpp
  *
  */
 #pragma once

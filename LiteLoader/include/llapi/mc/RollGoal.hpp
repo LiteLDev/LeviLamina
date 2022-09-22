@@ -1,5 +1,5 @@
 /**
- * @file  MC/RollGoal.hpp
+ * @file  RollGoal.hpp
  *
  */
 #pragma once

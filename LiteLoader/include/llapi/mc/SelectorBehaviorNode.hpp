@@ -1,5 +1,5 @@
 /**
- * @file  MC/SelectorBehaviorNode.hpp
+ * @file  SelectorBehaviorNode.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveToVillageGoal.hpp
+ * @file  MoveToVillageGoal.hpp
  *
  */
 #pragma once

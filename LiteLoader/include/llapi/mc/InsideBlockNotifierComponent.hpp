@@ -1,5 +1,5 @@
 /**
- * @file  MC/InsideBlockNotifierComponent.hpp
+ * @file  InsideBlockNotifierComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/InvestigateSuspiciousLocationGoal.hpp
+ * @file  InvestigateSuspiciousLocationGoal.hpp
  *
  */
 #pragma once

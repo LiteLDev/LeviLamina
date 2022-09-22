@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureTag.hpp
+ * @file  StructureTag.hpp
  *
  */
 #pragma once

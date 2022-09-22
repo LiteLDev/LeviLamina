@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelComponent.hpp
+ * @file  LevelComponent.hpp
  *
  */
 #pragma once

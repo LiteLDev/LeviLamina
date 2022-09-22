@@ -1,5 +1,5 @@
 /**
- * @file  MC/CoralCrustFeature.hpp
+ * @file  CoralCrustFeature.hpp
  *
  */
 #pragma once

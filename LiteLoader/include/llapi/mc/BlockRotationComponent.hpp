@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockRotationComponent.hpp
+ * @file  BlockRotationComponent.hpp
  *
  */
 #pragma once

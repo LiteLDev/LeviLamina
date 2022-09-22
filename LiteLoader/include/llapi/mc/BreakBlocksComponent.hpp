@@ -1,5 +1,5 @@
 /**
- * @file  MC/BreakBlocksComponent.hpp
+ * @file  BreakBlocksComponent.hpp
  *
  */
 #pragma once

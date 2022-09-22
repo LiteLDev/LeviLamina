@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockMaterialInstanceProxy.hpp
+ * @file  BlockMaterialInstanceProxy.hpp
  *
  */
 #pragma once

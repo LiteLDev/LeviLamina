@@ -1,5 +1,5 @@
 /**
- * @file  MC/LootItemActorHasVariantCondition.hpp
+ * @file  LootItemActorHasVariantCondition.hpp
  *
  */
 #pragma once

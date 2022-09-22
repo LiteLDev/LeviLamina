@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerSizeChangeListener.hpp
+ * @file  ContainerSizeChangeListener.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpatialQueryUtility.hpp
+ * @file  SpatialQueryUtility.hpp
  *
  */
 #pragma once

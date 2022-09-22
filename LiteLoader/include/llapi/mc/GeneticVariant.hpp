@@ -1,5 +1,5 @@
 /**
- * @file  MC/GeneticVariant.hpp
+ * @file  GeneticVariant.hpp
  *
  */
 #pragma once

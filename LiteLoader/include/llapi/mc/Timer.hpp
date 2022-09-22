@@ -1,5 +1,5 @@
 /**
- * @file  MC/Timer.hpp
+ * @file  Timer.hpp
  *
  */
 #pragma once

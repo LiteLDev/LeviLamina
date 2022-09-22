@@ -1,5 +1,5 @@
 /**
- * @file  MC/TransporterComponent.hpp
+ * @file  TransporterComponent.hpp
  *
  */
 #pragma once

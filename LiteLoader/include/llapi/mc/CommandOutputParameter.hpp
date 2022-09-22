@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandOutputParameter.hpp
+ * @file  CommandOutputParameter.hpp
  *
  */
 #pragma once

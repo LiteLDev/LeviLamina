@@ -1,5 +1,5 @@
 /**
- * @file  MC/snappy.hpp
+ * @file  snappy.hpp
  *
  */
 #pragma once

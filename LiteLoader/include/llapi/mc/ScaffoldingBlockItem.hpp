@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScaffoldingBlockItem.hpp
+ * @file  ScaffoldingBlockItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClipDefaults.hpp
+ * @file  ClipDefaults.hpp
  *
  */
 #pragma once

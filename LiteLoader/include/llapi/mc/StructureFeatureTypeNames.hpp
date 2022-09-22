@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureFeatureTypeNames.hpp
+ * @file  StructureFeatureTypeNames.hpp
  *
  */
 #pragma once

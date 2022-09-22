@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShapelessChemistryRecipe.hpp
+ * @file  ShapelessChemistryRecipe.hpp
  *
  */
 #pragma once

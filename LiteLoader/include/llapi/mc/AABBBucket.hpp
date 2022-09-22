@@ -1,5 +1,5 @@
 /**
- * @file  MC/AABBBucket.hpp
+ * @file  AABBBucket.hpp
  *
  */
 #pragma once

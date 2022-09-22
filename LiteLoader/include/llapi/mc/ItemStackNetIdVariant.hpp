@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackNetIdVariant.hpp
+ * @file  ItemStackNetIdVariant.hpp
  *
  */
 #pragma once

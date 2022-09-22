@@ -1,5 +1,5 @@
 /**
- * @file  MC/GuardianAttackDefinition.hpp
+ * @file  GuardianAttackDefinition.hpp
  *
  */
 #pragma once

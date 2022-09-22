@@ -1,5 +1,5 @@
 /**
- * @file  MC/BossComponent.hpp
+ * @file  BossComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChestContainerManagerModel.hpp
+ * @file  ChestContainerManagerModel.hpp
  *
  */
 #pragma once

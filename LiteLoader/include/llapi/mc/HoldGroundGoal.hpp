@@ -1,5 +1,5 @@
 /**
- * @file  MC/HoldGroundGoal.hpp
+ * @file  HoldGroundGoal.hpp
  *
  */
 #pragma once

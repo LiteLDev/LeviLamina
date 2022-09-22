@@ -1,5 +1,5 @@
 /**
- * @file  MC/BytesDataInput.hpp
+ * @file  BytesDataInput.hpp
  *
  */
 #pragma once

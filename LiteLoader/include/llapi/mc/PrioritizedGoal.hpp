@@ -1,5 +1,5 @@
 /**
- * @file  MC/PrioritizedGoal.hpp
+ * @file  PrioritizedGoal.hpp
  *
  */
 #pragma once

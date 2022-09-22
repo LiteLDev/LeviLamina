@@ -1,5 +1,5 @@
 /**
- * @file  MC/ColumnUtils.hpp
+ * @file  ColumnUtils.hpp
  *
  */
 #pragma once

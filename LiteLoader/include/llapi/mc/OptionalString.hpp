@@ -1,5 +1,5 @@
 /**
- * @file  MC/OptionalString.hpp
+ * @file  OptionalString.hpp
  *
  */
 #pragma once

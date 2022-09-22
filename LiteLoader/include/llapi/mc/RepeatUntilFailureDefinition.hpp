@@ -1,5 +1,5 @@
 /**
- * @file  MC/RepeatUntilFailureDefinition.hpp
+ * @file  RepeatUntilFailureDefinition.hpp
  *
  */
 #pragma once

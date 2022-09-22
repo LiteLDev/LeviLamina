@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaLevelChunkUpgrade.hpp
+ * @file  VanillaLevelChunkUpgrade.hpp
  *
  */
 #pragma once

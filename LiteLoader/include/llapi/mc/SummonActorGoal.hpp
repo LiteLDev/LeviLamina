@@ -1,5 +1,5 @@
 /**
- * @file  MC/SummonActorGoal.hpp
+ * @file  SummonActorGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReplayStateComponent.hpp
+ * @file  ReplayStateComponent.hpp
  *
  */
 #pragma once

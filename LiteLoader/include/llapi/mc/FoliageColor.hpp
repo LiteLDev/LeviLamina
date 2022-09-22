@@ -1,5 +1,5 @@
 /**
- * @file  MC/FoliageColor.hpp
+ * @file  FoliageColor.hpp
  *
  */
 #pragma once

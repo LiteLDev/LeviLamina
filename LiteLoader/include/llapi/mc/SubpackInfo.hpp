@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubpackInfo.hpp
+ * @file  SubpackInfo.hpp
  *
  */
 #pragma once

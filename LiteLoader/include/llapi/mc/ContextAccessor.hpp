@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContextAccessor.hpp
+ * @file  ContextAccessor.hpp
  *
  */
 #pragma once

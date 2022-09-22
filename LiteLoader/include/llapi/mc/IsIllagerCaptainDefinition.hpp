@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsIllagerCaptainDefinition.hpp
+ * @file  IsIllagerCaptainDefinition.hpp
  *
  */
 #pragma once

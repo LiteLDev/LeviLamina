@@ -1,5 +1,5 @@
 /**
- * @file  MC/HitResult.hpp
+ * @file  HitResult.hpp
  *
  */
 #pragma once

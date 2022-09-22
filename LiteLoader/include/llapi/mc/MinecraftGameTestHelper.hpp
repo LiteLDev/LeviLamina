@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecraftGameTestHelper.hpp
+ * @file  MinecraftGameTestHelper.hpp
  *
  */
 #pragma once

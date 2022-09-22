@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyFlowerFeature.hpp
+ * @file  LegacyFlowerFeature.hpp
  *
  */
 #pragma once

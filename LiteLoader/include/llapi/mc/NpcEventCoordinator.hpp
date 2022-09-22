@@ -1,5 +1,5 @@
 /**
- * @file  MC/NpcEventCoordinator.hpp
+ * @file  NpcEventCoordinator.hpp
  *
  */
 #pragma once

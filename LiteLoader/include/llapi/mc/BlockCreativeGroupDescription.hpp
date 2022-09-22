@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockCreativeGroupDescription.hpp
+ * @file  BlockCreativeGroupDescription.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CombinedHotbarAndInventoryContainerValidation.hpp
+ * @file  CombinedHotbarAndInventoryContainerValidation.hpp
  *
  */
 #pragma once

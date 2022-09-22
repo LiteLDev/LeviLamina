@@ -1,5 +1,5 @@
 /**
- * @file  MC/MineshaftData.hpp
+ * @file  MineshaftData.hpp
  *
  */
 #pragma once

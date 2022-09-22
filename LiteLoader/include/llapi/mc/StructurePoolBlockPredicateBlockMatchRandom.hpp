@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolBlockPredicateBlockMatchRandom.hpp
+ * @file  StructurePoolBlockPredicateBlockMatchRandom.hpp
  *
  */
 #pragma once

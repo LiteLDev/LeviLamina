@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemTransactionLogger.hpp
+ * @file  ItemTransactionLogger.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShearsItem.hpp
+ * @file  ShearsItem.hpp
  *
  */
 #pragma once

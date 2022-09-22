@@ -1,5 +1,5 @@
 /**
- * @file  MC/EducationMetadataError.hpp
+ * @file  EducationMetadataError.hpp
  *
  */
 #pragma once

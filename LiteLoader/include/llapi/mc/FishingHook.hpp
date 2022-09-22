@@ -1,5 +1,5 @@
 /**
- * @file  MC/FishingHook.hpp
+ * @file  FishingHook.hpp
  *
  */
 #pragma once

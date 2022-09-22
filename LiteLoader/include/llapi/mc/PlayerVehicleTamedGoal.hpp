@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerVehicleTamedGoal.hpp
+ * @file  PlayerVehicleTamedGoal.hpp
  *
  */
 #pragma once

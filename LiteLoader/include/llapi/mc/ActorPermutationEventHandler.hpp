@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorPermutationEventHandler.hpp
+ * @file  ActorPermutationEventHandler.hpp
  *
  */
 #pragma once

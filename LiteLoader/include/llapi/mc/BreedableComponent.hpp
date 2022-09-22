@@ -1,5 +1,5 @@
 /**
- * @file  MC/BreedableComponent.hpp
+ * @file  BreedableComponent.hpp
  *
  */
 #pragma once

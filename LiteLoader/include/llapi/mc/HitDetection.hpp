@@ -1,5 +1,5 @@
 /**
- * @file  MC/HitDetection.hpp
+ * @file  HitDetection.hpp
  *
  */
 #pragma once

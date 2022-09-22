@@ -1,5 +1,5 @@
 /**
- * @file  MC/WalkState.hpp
+ * @file  WalkState.hpp
  *
  */
 #pragma once

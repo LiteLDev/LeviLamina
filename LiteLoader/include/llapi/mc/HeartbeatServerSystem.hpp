@@ -1,5 +1,5 @@
 /**
- * @file  MC/HeartbeatServerSystem.hpp
+ * @file  HeartbeatServerSystem.hpp
  *
  */
 #pragma once

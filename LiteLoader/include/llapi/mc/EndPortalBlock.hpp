@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndPortalBlock.hpp
+ * @file  EndPortalBlock.hpp
  *
  */
 #pragma once

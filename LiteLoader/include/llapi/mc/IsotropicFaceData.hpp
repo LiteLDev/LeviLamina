@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsotropicFaceData.hpp
+ * @file  IsotropicFaceData.hpp
  *
  */
 #pragma once

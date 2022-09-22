@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetHealthPacket.hpp
+ * @file  SetHealthPacket.hpp
  *
  */
 #pragma once

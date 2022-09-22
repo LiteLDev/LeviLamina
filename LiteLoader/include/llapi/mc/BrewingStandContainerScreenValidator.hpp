@@ -1,5 +1,5 @@
 /**
- * @file  MC/BrewingStandContainerScreenValidator.hpp
+ * @file  BrewingStandContainerScreenValidator.hpp
  *
  */
 #pragma once

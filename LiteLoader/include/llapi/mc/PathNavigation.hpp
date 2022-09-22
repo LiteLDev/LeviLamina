@@ -1,5 +1,5 @@
 /**
- * @file  MC/PathNavigation.hpp
+ * @file  PathNavigation.hpp
  *
  */
 #pragma once

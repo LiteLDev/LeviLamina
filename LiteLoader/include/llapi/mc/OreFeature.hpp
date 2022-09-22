@@ -1,5 +1,5 @@
 /**
- * @file  MC/OreFeature.hpp
+ * @file  OreFeature.hpp
  *
  */
 #pragma once

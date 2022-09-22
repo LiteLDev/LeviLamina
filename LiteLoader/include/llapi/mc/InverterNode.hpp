@@ -1,5 +1,5 @@
 /**
- * @file  MC/InverterNode.hpp
+ * @file  InverterNode.hpp
  *
  */
 #pragma once

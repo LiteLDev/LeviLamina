@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerDestroyBlockEvent.hpp
+ * @file  PlayerDestroyBlockEvent.hpp
  *
  */
 #pragma once

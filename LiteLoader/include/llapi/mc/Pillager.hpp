@@ -1,5 +1,5 @@
 /**
- * @file  MC/Pillager.hpp
+ * @file  Pillager.hpp
  *
  */
 #pragma once

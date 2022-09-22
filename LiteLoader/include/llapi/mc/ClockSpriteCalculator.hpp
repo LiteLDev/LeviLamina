@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClockSpriteCalculator.hpp
+ * @file  ClockSpriteCalculator.hpp
  *
  */
 #pragma once

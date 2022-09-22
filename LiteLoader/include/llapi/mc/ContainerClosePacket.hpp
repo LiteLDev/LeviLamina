@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerClosePacket.hpp
+ * @file  ContainerClosePacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompoundCreatorContainerManagerModel.hpp
+ * @file  CompoundCreatorContainerManagerModel.hpp
  *
  */
 #pragma once

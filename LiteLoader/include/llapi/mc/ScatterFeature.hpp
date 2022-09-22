@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScatterFeature.hpp
+ * @file  ScatterFeature.hpp
  *
  */
 #pragma once

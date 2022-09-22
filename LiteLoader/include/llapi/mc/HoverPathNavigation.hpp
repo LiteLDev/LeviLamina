@@ -1,5 +1,5 @@
 /**
- * @file  MC/HoverPathNavigation.hpp
+ * @file  HoverPathNavigation.hpp
  *
  */
 #pragma once

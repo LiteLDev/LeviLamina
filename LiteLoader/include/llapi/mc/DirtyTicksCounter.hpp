@@ -1,5 +1,5 @@
 /**
- * @file  MC/DirtyTicksCounter.hpp
+ * @file  DirtyTicksCounter.hpp
  *
  */
 #pragma once

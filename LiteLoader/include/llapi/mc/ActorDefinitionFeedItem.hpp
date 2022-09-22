@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDefinitionFeedItem.hpp
+ * @file  ActorDefinitionFeedItem.hpp
  *
  */
 #pragma once

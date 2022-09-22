@@ -1,5 +1,5 @@
 /**
- * @file  MC/FrictionModifierDefinition.hpp
+ * @file  FrictionModifierDefinition.hpp
  *
  */
 #pragma once

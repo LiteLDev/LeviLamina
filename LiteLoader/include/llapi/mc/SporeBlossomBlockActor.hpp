@@ -1,5 +1,5 @@
 /**
- * @file  MC/SporeBlossomBlockActor.hpp
+ * @file  SporeBlossomBlockActor.hpp
  *
  */
 #pragma once

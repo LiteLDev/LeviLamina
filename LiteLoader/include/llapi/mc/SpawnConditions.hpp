@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnConditions.hpp
+ * @file  SpawnConditions.hpp
  *
  */
 #pragma once

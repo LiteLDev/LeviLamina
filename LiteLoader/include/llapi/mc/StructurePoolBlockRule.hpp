@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolBlockRule.hpp
+ * @file  StructurePoolBlockRule.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/KnockbackResistanceItemComponent.hpp
+ * @file  KnockbackResistanceItemComponent.hpp
  *
  */
 #pragma once

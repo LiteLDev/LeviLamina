@@ -1,5 +1,5 @@
 /**
- * @file  MC/FollowFlockGoal.hpp
+ * @file  FollowFlockGoal.hpp
  *
  */
 #pragma once

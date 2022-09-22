@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldSessionEndPoint.hpp
+ * @file  WorldSessionEndPoint.hpp
  *
  */
 #pragma once

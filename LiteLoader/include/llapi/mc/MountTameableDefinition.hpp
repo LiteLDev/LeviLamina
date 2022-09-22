@@ -1,5 +1,5 @@
 /**
- * @file  MC/MountTameableDefinition.hpp
+ * @file  MountTameableDefinition.hpp
  *
  */
 #pragma once

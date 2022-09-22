@@ -1,5 +1,5 @@
 /**
- * @file  MC/IScreenChangedEventing.hpp
+ * @file  IScreenChangedEventing.hpp
  *
  */
 #pragma once

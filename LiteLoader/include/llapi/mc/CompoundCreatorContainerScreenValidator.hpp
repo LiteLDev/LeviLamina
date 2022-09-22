@@ -1,5 +1,5 @@
 /**
- * @file  MC/CompoundCreatorContainerScreenValidator.hpp
+ * @file  CompoundCreatorContainerScreenValidator.hpp
  *
  */
 #pragma once

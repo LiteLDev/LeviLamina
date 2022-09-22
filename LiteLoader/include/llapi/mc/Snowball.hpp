@@ -1,5 +1,5 @@
 /**
- * @file  MC/Snowball.hpp
+ * @file  Snowball.hpp
  *
  */
 #pragma once

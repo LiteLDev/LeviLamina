@@ -1,5 +1,5 @@
 /**
- * @file  MC/DenyList.hpp
+ * @file  DenyList.hpp
  *
  */
 #pragma once

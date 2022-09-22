@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndPodiumFeature.hpp
+ * @file  EndPodiumFeature.hpp
  *
  */
 #pragma once

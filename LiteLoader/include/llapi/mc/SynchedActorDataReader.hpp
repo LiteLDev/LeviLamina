@@ -1,5 +1,5 @@
 /**
- * @file  MC/SynchedActorDataReader.hpp
+ * @file  SynchedActorDataReader.hpp
  *
  */
 #pragma once

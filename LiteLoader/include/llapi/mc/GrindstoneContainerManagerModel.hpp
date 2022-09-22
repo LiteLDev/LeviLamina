@@ -1,5 +1,5 @@
 /**
- * @file  MC/GrindstoneContainerManagerModel.hpp
+ * @file  GrindstoneContainerManagerModel.hpp
  *
  */
 #pragma once

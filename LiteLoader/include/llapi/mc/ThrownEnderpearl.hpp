@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThrownEnderpearl.hpp
+ * @file  ThrownEnderpearl.hpp
  *
  */
 #pragma once

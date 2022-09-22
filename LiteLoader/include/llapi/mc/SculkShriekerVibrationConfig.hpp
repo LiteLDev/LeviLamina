@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkShriekerVibrationConfig.hpp
+ * @file  SculkShriekerVibrationConfig.hpp
  *
  */
 #pragma once

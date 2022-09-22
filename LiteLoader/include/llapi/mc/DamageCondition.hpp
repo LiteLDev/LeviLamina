@@ -1,5 +1,5 @@
 /**
- * @file  MC/DamageCondition.hpp
+ * @file  DamageCondition.hpp
  *
  */
 #pragma once

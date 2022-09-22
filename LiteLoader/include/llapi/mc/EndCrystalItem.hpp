@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndCrystalItem.hpp
+ * @file  EndCrystalItem.hpp
  *
  */
 #pragma once

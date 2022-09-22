@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkBlock.hpp
+ * @file  SculkBlock.hpp
  *
  */
 #pragma once

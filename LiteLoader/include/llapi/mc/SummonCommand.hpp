@@ -1,5 +1,5 @@
 /**
- * @file  MC/SummonCommand.hpp
+ * @file  SummonCommand.hpp
  *
  */
 #pragma once

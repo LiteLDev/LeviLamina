@@ -1,5 +1,5 @@
 /**
- * @file  MC/I18n.hpp
+ * @file  I18n.hpp
  *
  */
 #pragma once

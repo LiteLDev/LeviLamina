@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityRegistry.hpp
+ * @file  EntityRegistry.hpp
  *
  */
 #pragma once

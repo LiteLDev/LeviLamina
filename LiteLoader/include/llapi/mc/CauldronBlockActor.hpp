@@ -1,5 +1,5 @@
 /**
- * @file  MC/CauldronBlockActor.hpp
+ * @file  CauldronBlockActor.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AttackCooldownSystem.hpp
+ * @file  AttackCooldownSystem.hpp
  *
  */
 #pragma once

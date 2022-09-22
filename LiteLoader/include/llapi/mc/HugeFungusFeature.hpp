@@ -1,5 +1,5 @@
 /**
- * @file  MC/HugeFungusFeature.hpp
+ * @file  HugeFungusFeature.hpp
  *
  */
 #pragma once

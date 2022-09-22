@@ -1,5 +1,5 @@
 /**
- * @file  MC/DimensionDefinitionGroup.hpp
+ * @file  DimensionDefinitionGroup.hpp
  *
  */
 #pragma once

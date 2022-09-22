@@ -1,5 +1,5 @@
 /**
- * @file  MC/RuinedPortalPiece.hpp
+ * @file  RuinedPortalPiece.hpp
  *
  */
 #pragma once

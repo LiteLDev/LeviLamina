@@ -1,5 +1,5 @@
 /**
- * @file  MC/IDataInput.hpp
+ * @file  IDataInput.hpp
  *
  */
 #pragma once

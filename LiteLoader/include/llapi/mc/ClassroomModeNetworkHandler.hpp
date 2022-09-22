@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClassroomModeNetworkHandler.hpp
+ * @file  ClassroomModeNetworkHandler.hpp
  *
  */
 #pragma once

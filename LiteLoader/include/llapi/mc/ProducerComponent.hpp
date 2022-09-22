@@ -1,5 +1,5 @@
 /**
- * @file  MC/ProducerComponent.hpp
+ * @file  ProducerComponent.hpp
  *
  */
 #pragma once

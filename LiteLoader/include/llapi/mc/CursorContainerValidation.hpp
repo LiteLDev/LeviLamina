@@ -1,5 +1,5 @@
 /**
- * @file  MC/CursorContainerValidation.hpp
+ * @file  CursorContainerValidation.hpp
  *
  */
 #pragma once

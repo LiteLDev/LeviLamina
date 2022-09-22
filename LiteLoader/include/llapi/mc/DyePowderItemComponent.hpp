@@ -1,5 +1,5 @@
 /**
- * @file  MC/DyePowderItemComponent.hpp
+ * @file  DyePowderItemComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LiquidBlockDynamic.hpp
+ * @file  LiquidBlockDynamic.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CanClimbDefinition.hpp
+ * @file  CanClimbDefinition.hpp
  *
  */
 #pragma once

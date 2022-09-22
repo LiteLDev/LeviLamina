@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExhaustionDefinition.hpp
+ * @file  ExhaustionDefinition.hpp
  *
  */
 #pragma once

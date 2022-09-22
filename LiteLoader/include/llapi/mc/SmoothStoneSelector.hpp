@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmoothStoneSelector.hpp
+ * @file  SmoothStoneSelector.hpp
  *
  */
 #pragma once

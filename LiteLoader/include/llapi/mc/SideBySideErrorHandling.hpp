@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideErrorHandling.hpp
+ * @file  SideBySideErrorHandling.hpp
  *
  */
 #pragma once

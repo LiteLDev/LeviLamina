@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockCraftingTableComponent.hpp
+ * @file  BlockCraftingTableComponent.hpp
  *
  */
 #pragma once

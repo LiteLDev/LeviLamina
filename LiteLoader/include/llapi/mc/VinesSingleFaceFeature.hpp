@@ -1,5 +1,5 @@
 /**
- * @file  MC/VinesSingleFaceFeature.hpp
+ * @file  VinesSingleFaceFeature.hpp
  *
  */
 #pragma once

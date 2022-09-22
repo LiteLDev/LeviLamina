@@ -1,5 +1,5 @@
 /**
- * @file  MC/BuoyancyDefinition.hpp
+ * @file  BuoyancyDefinition.hpp
  *
  */
 #pragma once

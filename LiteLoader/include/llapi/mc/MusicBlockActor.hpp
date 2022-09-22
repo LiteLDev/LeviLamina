@@ -1,5 +1,5 @@
 /**
- * @file  MC/MusicBlockActor.hpp
+ * @file  MusicBlockActor.hpp
  *
  */
 #pragma once

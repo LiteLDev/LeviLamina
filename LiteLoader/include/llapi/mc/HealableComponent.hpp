@@ -1,5 +1,5 @@
 /**
- * @file  MC/HealableComponent.hpp
+ * @file  HealableComponent.hpp
  *
  */
 #pragma once

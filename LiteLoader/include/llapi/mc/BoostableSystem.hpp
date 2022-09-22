@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoostableSystem.hpp
+ * @file  BoostableSystem.hpp
  *
  */
 #pragma once

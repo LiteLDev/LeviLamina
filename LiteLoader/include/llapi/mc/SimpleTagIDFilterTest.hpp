@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimpleTagIDFilterTest.hpp
+ * @file  SimpleTagIDFilterTest.hpp
  *
  */
 #pragma once

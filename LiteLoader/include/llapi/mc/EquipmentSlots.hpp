@@ -1,5 +1,5 @@
 /**
- * @file  MC/EquipmentSlots.hpp
+ * @file  EquipmentSlots.hpp
  *
  */
 #pragma once

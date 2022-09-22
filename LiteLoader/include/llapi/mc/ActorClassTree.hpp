@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorClassTree.hpp
+ * @file  ActorClassTree.hpp
  *
  */
 #pragma once

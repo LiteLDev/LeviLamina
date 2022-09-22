@@ -1,5 +1,5 @@
 /**
- * @file  MC/NearestAttackableTargetGoal.hpp
+ * @file  NearestAttackableTargetGoal.hpp
  *
  */
 #pragma once

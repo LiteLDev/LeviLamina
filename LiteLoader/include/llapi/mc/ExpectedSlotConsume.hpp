@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExpectedSlotConsume.hpp
+ * @file  ExpectedSlotConsume.hpp
  *
  */
 #pragma once

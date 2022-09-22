@@ -1,5 +1,5 @@
 /**
- * @file  MC/TestConfig.hpp
+ * @file  TestConfig.hpp
  *
  */
 #pragma once

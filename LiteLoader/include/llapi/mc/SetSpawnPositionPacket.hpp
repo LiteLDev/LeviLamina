@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetSpawnPositionPacket.hpp
+ * @file  SetSpawnPositionPacket.hpp
  *
  */
 #pragma once

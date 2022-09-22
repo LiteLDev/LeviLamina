@@ -1,5 +1,5 @@
 /**
- * @file  MC/PropertyBag.hpp
+ * @file  PropertyBag.hpp
  *
  */
 #pragma once

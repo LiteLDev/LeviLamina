@@ -1,5 +1,5 @@
 /**
- * @file  MC/HurtArmorPacket.hpp
+ * @file  HurtArmorPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ObserverBlock.hpp
+ * @file  ObserverBlock.hpp
  *
  */
 #pragma once

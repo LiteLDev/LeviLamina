@@ -1,5 +1,5 @@
 /**
- * @file  MC/LookAtDefinition.hpp
+ * @file  LookAtDefinition.hpp
  *
  */
 #pragma once

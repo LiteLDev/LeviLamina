@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityComponentFactoryCereal.hpp
+ * @file  EntityComponentFactoryCereal.hpp
  *
  */
 #pragma once

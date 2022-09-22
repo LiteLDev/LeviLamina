@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpikeFeature.hpp
+ * @file  SpikeFeature.hpp
  *
  */
 #pragma once

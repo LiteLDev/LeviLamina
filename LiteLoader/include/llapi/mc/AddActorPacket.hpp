@@ -1,5 +1,5 @@
 /**
- * @file  MC/AddActorPacket.hpp
+ * @file  AddActorPacket.hpp
  *
  */
 #pragma once

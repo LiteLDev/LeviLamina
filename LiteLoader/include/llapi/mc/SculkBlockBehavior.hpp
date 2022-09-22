@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkBlockBehavior.hpp
+ * @file  SculkBlockBehavior.hpp
  *
  */
 #pragma once

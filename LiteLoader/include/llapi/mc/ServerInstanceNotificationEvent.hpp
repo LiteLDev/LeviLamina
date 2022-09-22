@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerInstanceNotificationEvent.hpp
+ * @file  ServerInstanceNotificationEvent.hpp
  *
  */
 #pragma once

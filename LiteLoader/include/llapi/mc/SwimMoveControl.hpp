@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimMoveControl.hpp
+ * @file  SwimMoveControl.hpp
  *
  */
 #pragma once

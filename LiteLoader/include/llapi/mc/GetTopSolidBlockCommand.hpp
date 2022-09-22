@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetTopSolidBlockCommand.hpp
+ * @file  GetTopSolidBlockCommand.hpp
  *
  */
 #pragma once

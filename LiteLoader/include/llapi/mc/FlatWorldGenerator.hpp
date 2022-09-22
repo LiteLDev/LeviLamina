@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlatWorldGenerator.hpp
+ * @file  FlatWorldGenerator.hpp
  *
  */
 #pragma once

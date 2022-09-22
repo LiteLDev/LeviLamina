@@ -1,5 +1,5 @@
 /**
- * @file  MC/VolumeCreationDataComponent.hpp
+ * @file  VolumeCreationDataComponent.hpp
  *
  */
 #pragma once

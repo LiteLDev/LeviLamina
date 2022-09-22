@@ -1,5 +1,5 @@
 /**
- * @file  MC/SuspectTrackingComponent.hpp
+ * @file  SuspectTrackingComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AdultRidingHeightOffsetComponent.hpp
+ * @file  AdultRidingHeightOffsetComponent.hpp
  *
  */
 #pragma once

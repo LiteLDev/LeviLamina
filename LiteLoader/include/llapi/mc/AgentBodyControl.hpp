@@ -1,5 +1,5 @@
 /**
- * @file  MC/AgentBodyControl.hpp
+ * @file  AgentBodyControl.hpp
  *
  */
 #pragma once

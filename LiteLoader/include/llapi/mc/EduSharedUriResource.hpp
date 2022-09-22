@@ -1,5 +1,5 @@
 /**
- * @file  MC/EduSharedUriResource.hpp
+ * @file  EduSharedUriResource.hpp
  *
  */
 #pragma once

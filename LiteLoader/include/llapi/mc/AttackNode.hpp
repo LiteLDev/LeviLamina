@@ -1,5 +1,5 @@
 /**
- * @file  MC/AttackNode.hpp
+ * @file  AttackNode.hpp
  *
  */
 #pragma once

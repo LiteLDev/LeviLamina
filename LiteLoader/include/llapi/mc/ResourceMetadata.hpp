@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourceMetadata.hpp
+ * @file  ResourceMetadata.hpp
  *
  */
 #pragma once

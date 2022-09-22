@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemFrameBlockActor.hpp
+ * @file  ItemFrameBlockActor.hpp
  *
  */
 #pragma once

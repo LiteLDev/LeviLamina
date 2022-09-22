@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerContentKeyProvider.hpp
+ * @file  ServerContentKeyProvider.hpp
  *
  */
 #pragma once

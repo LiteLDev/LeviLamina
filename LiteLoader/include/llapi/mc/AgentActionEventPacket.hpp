@@ -1,5 +1,5 @@
 /**
- * @file  MC/AgentActionEventPacket.hpp
+ * @file  AgentActionEventPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsShearedDefinition.hpp
+ * @file  IsShearedDefinition.hpp
  *
  */
 #pragma once

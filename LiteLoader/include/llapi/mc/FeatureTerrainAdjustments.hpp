@@ -1,5 +1,5 @@
 /**
- * @file  MC/FeatureTerrainAdjustments.hpp
+ * @file  FeatureTerrainAdjustments.hpp
  *
  */
 #pragma once

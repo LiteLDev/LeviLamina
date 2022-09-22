@@ -1,5 +1,5 @@
 /**
- * @file  MC/RedstoneTorchCapacitor.hpp
+ * @file  RedstoneTorchCapacitor.hpp
  *
  */
 #pragma once

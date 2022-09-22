@@ -1,5 +1,5 @@
 /**
- * @file  MC/CraftHandlerCrafting.hpp
+ * @file  CraftHandlerCrafting.hpp
  *
  */
 #pragma once

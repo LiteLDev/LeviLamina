@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerInventory.hpp
+ * @file  PlayerInventory.hpp
  *
  */
 #pragma once

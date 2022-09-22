@@ -1,5 +1,5 @@
 /**
- * @file  MC/LightningRodUtil.hpp
+ * @file  LightningRodUtil.hpp
  *
  */
 #pragma once

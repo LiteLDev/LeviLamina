@@ -1,5 +1,5 @@
 /**
- * @file  MC/RedStoneWireBlock.hpp
+ * @file  RedStoneWireBlock.hpp
  *
  */
 #pragma once

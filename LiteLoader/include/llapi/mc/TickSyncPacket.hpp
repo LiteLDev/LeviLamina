@@ -1,5 +1,5 @@
 /**
- * @file  MC/TickSyncPacket.hpp
+ * @file  TickSyncPacket.hpp
  *
  */
 #pragma once

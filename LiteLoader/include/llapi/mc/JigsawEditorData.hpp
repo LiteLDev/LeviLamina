@@ -1,5 +1,5 @@
 /**
- * @file  MC/JigsawEditorData.hpp
+ * @file  JigsawEditorData.hpp
  *
  */
 #pragma once

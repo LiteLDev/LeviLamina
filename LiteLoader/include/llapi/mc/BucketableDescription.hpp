@@ -1,5 +1,5 @@
 /**
- * @file  MC/BucketableDescription.hpp
+ * @file  BucketableDescription.hpp
  *
  */
 #pragma once

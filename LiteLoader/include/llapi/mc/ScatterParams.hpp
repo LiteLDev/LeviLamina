@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScatterParams.hpp
+ * @file  ScatterParams.hpp
  *
  */
 #pragma once

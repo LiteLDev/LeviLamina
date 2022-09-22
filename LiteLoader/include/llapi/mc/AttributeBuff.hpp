@@ -1,5 +1,5 @@
 /**
- * @file  MC/AttributeBuff.hpp
+ * @file  AttributeBuff.hpp
  *
  */
 #pragma once

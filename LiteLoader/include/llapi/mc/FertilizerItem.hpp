@@ -1,5 +1,5 @@
 /**
- * @file  MC/FertilizerItem.hpp
+ * @file  FertilizerItem.hpp
  *
  */
 #pragma once

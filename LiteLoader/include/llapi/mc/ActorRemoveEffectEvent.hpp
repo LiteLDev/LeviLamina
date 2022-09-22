@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorRemoveEffectEvent.hpp
+ * @file  ActorRemoveEffectEvent.hpp
  *
  */
 #pragma once

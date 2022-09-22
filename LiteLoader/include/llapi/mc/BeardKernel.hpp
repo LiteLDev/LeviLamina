@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeardKernel.hpp
+ * @file  BeardKernel.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CSHA1.hpp
+ * @file  CSHA1.hpp
  *
  */
 #pragma once

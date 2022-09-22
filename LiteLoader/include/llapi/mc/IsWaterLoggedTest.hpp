@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsWaterLoggedTest.hpp
+ * @file  IsWaterLoggedTest.hpp
  *
  */
 #pragma once

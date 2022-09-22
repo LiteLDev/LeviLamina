@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunkPos.hpp
+ * @file  SubChunkPos.hpp
  *
  */
 #pragma once

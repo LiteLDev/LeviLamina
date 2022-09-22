@@ -1,5 +1,5 @@
 /**
- * @file  MC/FoodConstants.hpp
+ * @file  FoodConstants.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerAddExpEvent.hpp
+ * @file  PlayerAddExpEvent.hpp
  *
  */
 #pragma once

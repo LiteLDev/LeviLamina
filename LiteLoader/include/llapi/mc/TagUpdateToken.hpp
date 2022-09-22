@@ -1,5 +1,5 @@
 /**
- * @file  MC/TagUpdateToken.hpp
+ * @file  TagUpdateToken.hpp
  *
  */
 #pragma once

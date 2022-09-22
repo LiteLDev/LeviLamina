@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaInPackagePacks.hpp
+ * @file  VanillaInPackagePacks.hpp
  *
  */
 #pragma once

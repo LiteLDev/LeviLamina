@@ -1,5 +1,5 @@
 /**
- * @file  MC/OceanRuinFeature.hpp
+ * @file  OceanRuinFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestHourlyClock.hpp
+ * @file  FilterTestHourlyClock.hpp
  *
  */
 #pragma once

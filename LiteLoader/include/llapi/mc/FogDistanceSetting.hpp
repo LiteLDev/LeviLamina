@@ -1,5 +1,5 @@
 /**
- * @file  MC/FogDistanceSetting.hpp
+ * @file  FogDistanceSetting.hpp
  *
  */
 #pragma once

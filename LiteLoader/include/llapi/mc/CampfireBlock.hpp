@@ -1,5 +1,5 @@
 /**
- * @file  MC/CampfireBlock.hpp
+ * @file  CampfireBlock.hpp
  *
  */
 #pragma once

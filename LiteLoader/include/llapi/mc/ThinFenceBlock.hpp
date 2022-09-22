@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThinFenceBlock.hpp
+ * @file  ThinFenceBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/VariantParameterList.hpp
+ * @file  VariantParameterList.hpp
  *
  */
 #pragma once

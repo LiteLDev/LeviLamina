@@ -1,5 +1,5 @@
 /**
- * @file  MC/MemoryMappedFileAccess.hpp
+ * @file  MemoryMappedFileAccess.hpp
  *
  */
 #pragma once

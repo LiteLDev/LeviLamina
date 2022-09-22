@@ -1,5 +1,5 @@
 /**
- * @file  MC/RedStoneOreBlock.hpp
+ * @file  RedStoneOreBlock.hpp
  *
  */
 #pragma once

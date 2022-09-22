@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomScatteredLargeFeature.hpp
+ * @file  RandomScatteredLargeFeature.hpp
  *
  */
 #pragma once

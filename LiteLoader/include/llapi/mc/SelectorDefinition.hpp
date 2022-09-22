@@ -1,5 +1,5 @@
 /**
- * @file  MC/SelectorDefinition.hpp
+ * @file  SelectorDefinition.hpp
  *
  */
 #pragma once

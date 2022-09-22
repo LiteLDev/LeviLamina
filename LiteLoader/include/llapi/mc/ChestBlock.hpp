@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChestBlock.hpp
+ * @file  ChestBlock.hpp
  *
  */
 #pragma once

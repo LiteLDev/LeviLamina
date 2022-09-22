@@ -1,5 +1,5 @@
 /**
- * @file  MC/HitboxDefinition.hpp
+ * @file  HitboxDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MotionPredictionHintsPacket.hpp
+ * @file  MotionPredictionHintsPacket.hpp
  *
  */
 #pragma once

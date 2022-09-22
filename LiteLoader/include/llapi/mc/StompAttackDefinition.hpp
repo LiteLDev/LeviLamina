@@ -1,5 +1,5 @@
 /**
- * @file  MC/StompAttackDefinition.hpp
+ * @file  StompAttackDefinition.hpp
  *
  */
 #pragma once

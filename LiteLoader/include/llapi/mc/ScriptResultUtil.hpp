@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptResultUtil.hpp
+ * @file  ScriptResultUtil.hpp
  *
  */
 #pragma once

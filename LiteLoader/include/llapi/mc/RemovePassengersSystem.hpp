@@ -1,5 +1,5 @@
 /**
- * @file  MC/RemovePassengersSystem.hpp
+ * @file  RemovePassengersSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AttackDamageMobEffect.hpp
+ * @file  AttackDamageMobEffect.hpp
  *
  */
 #pragma once

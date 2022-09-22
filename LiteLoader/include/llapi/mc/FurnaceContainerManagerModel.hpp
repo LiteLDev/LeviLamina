@@ -1,5 +1,5 @@
 /**
- * @file  MC/FurnaceContainerManagerModel.hpp
+ * @file  FurnaceContainerManagerModel.hpp
  *
  */
 #pragma once

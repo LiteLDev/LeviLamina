@@ -1,5 +1,5 @@
 /**
- * @file  MC/Zombie.hpp
+ * @file  Zombie.hpp
  *
  */
 #pragma once

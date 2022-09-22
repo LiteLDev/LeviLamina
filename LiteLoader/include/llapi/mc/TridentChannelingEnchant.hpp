@@ -1,5 +1,5 @@
 /**
- * @file  MC/TridentChannelingEnchant.hpp
+ * @file  TridentChannelingEnchant.hpp
  *
  */
 #pragma once

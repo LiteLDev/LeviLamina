@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorHasMobEffect.hpp
+ * @file  ActorHasMobEffect.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/POIBlueprint.hpp
+ * @file  POIBlueprint.hpp
  *
  */
 #pragma once

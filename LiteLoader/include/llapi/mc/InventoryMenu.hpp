@@ -1,5 +1,5 @@
 /**
- * @file  MC/InventoryMenu.hpp
+ * @file  InventoryMenu.hpp
  *
  */
 #pragma once

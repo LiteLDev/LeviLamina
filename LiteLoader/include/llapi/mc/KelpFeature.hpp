@@ -1,5 +1,5 @@
 /**
- * @file  MC/KelpFeature.hpp
+ * @file  KelpFeature.hpp
  *
  */
 #pragma once

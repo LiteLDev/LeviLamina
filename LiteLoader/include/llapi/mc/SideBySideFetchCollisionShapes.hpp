@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideFetchCollisionShapes.hpp
+ * @file  SideBySideFetchCollisionShapes.hpp
  *
  */
 #pragma once

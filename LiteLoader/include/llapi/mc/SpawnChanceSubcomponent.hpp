@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnChanceSubcomponent.hpp
+ * @file  SpawnChanceSubcomponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DropperContainerManagerModel.hpp
+ * @file  DropperContainerManagerModel.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyPackIdVersion.hpp
+ * @file  LegacyPackIdVersion.hpp
  *
  */
 #pragma once

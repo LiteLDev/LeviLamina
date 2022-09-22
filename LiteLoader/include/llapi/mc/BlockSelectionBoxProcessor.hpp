@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockSelectionBoxProcessor.hpp
+ * @file  BlockSelectionBoxProcessor.hpp
  *
  */
 #pragma once

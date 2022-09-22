@@ -1,5 +1,5 @@
 /**
- * @file  MC/BowEnchant.hpp
+ * @file  BowEnchant.hpp
  *
  */
 #pragma once

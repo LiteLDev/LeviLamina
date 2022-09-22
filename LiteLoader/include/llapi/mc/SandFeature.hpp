@@ -1,5 +1,5 @@
 /**
- * @file  MC/SandFeature.hpp
+ * @file  SandFeature.hpp
  *
  */
 #pragma once

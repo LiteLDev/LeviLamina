@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorServerCommandOrigin.hpp
+ * @file  ActorServerCommandOrigin.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/GuardianAttackGoal.hpp
+ * @file  GuardianAttackGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantingInputContainerValidation.hpp
+ * @file  EnchantingInputContainerValidation.hpp
  *
  */
 #pragma once

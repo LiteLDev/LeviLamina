@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveControlFlyDescription.hpp
+ * @file  MoveControlFlyDescription.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EDUWorldsScreenCapabilities.hpp
+ * @file  EDUWorldsScreenCapabilities.hpp
  *
  */
 #pragma once

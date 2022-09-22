@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlastFurnaceContainerManagerModel.hpp
+ * @file  BlastFurnaceContainerManagerModel.hpp
  *
  */
 #pragma once

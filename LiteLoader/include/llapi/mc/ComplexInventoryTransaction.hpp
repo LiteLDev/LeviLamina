@@ -1,5 +1,5 @@
 /**
- * @file  MC/ComplexInventoryTransaction.hpp
+ * @file  ComplexInventoryTransaction.hpp
  *
  */
 #pragma once

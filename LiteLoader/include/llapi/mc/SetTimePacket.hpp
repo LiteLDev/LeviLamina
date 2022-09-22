@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetTimePacket.hpp
+ * @file  SetTimePacket.hpp
  *
  */
 #pragma once

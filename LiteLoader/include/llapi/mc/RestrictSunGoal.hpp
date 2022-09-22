@@ -1,5 +1,5 @@
 /**
- * @file  MC/RestrictSunGoal.hpp
+ * @file  RestrictSunGoal.hpp
  *
  */
 #pragma once

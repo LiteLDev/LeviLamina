@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChunksLoadedInfo.hpp
+ * @file  ChunksLoadedInfo.hpp
  *
  */
 #pragma once

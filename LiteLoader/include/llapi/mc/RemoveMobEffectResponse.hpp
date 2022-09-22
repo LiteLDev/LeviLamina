@@ -1,5 +1,5 @@
 /**
- * @file  MC/RemoveMobEffectResponse.hpp
+ * @file  RemoveMobEffectResponse.hpp
  *
  */
 #pragma once

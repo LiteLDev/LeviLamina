@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScreenCapabilitiesRepo.hpp
+ * @file  ScreenCapabilitiesRepo.hpp
  *
  */
 #pragma once

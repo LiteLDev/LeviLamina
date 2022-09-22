@@ -1,5 +1,5 @@
 /**
- * @file  MC/InstantaneousAttributeBuff.hpp
+ * @file  InstantaneousAttributeBuff.hpp
  *
  */
 #pragma once

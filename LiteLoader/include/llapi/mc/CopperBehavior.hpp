@@ -1,5 +1,5 @@
 /**
- * @file  MC/CopperBehavior.hpp
+ * @file  CopperBehavior.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EduAppConfigs.hpp
+ * @file  EduAppConfigs.hpp
  *
  */
 #pragma once

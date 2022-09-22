@@ -1,5 +1,5 @@
 /**
- * @file  MC/CerealSchemaUpgrade.hpp
+ * @file  CerealSchemaUpgrade.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorInContactWithWater.hpp
+ * @file  ActorInContactWithWater.hpp
  *
  */
 #pragma once

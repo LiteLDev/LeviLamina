@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnActorDefinition.hpp
+ * @file  SpawnActorDefinition.hpp
  *
  */
 #pragma once

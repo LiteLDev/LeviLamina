@@ -1,5 +1,5 @@
 /**
- * @file  MC/MushroomBlock.hpp
+ * @file  MushroomBlock.hpp
  *
  */
 #pragma once

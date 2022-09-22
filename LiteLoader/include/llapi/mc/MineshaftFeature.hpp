@@ -1,5 +1,5 @@
 /**
- * @file  MC/MineshaftFeature.hpp
+ * @file  MineshaftFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CraftingContainerScreenValidator.hpp
+ * @file  CraftingContainerScreenValidator.hpp
  *
  */
 #pragma once

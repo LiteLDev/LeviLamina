@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockEventCoordinator.hpp
+ * @file  BlockEventCoordinator.hpp
  *
  */
 #pragma once

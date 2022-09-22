@@ -1,5 +1,5 @@
 /**
- * @file  MC/SitGoal.hpp
+ * @file  SitGoal.hpp
  *
  */
 #pragma once

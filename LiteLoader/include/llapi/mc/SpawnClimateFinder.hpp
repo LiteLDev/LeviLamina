@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpawnClimateFinder.hpp
+ * @file  SpawnClimateFinder.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TargetBlock.hpp
+ * @file  TargetBlock.hpp
  *
  */
 #pragma once

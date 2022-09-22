@@ -1,5 +1,5 @@
 /**
- * @file  MC/RopePoints.hpp
+ * @file  RopePoints.hpp
  *
  */
 #pragma once

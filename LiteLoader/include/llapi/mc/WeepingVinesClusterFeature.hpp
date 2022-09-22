@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeepingVinesClusterFeature.hpp
+ * @file  WeepingVinesClusterFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChatEvent.hpp
+ * @file  ChatEvent.hpp
  *
  */
 #pragma once

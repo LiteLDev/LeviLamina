@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoundVolumeDefinition.hpp
+ * @file  SoundVolumeDefinition.hpp
  *
  */
 #pragma once

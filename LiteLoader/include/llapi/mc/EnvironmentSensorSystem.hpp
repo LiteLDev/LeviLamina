@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnvironmentSensorSystem.hpp
+ * @file  EnvironmentSensorSystem.hpp
  *
  */
 #pragma once

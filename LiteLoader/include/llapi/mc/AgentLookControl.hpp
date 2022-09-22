@@ -1,5 +1,5 @@
 /**
- * @file  MC/AgentLookControl.hpp
+ * @file  AgentLookControl.hpp
  *
  */
 #pragma once

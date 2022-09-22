@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeFilterGroup.hpp
+ * @file  BiomeFilterGroup.hpp
  *
  */
 #pragma once

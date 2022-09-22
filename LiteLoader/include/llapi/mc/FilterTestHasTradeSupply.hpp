@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestHasTradeSupply.hpp
+ * @file  FilterTestHasTradeSupply.hpp
  *
  */
 #pragma once

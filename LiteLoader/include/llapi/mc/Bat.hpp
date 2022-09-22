@@ -1,5 +1,5 @@
 /**
- * @file  MC/Bat.hpp
+ * @file  Bat.hpp
  *
  */
 #pragma once

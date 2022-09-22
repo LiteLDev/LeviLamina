@@ -1,5 +1,5 @@
 /**
- * @file  MC/OverworldBrightnessRamp.hpp
+ * @file  OverworldBrightnessRamp.hpp
  *
  */
 #pragma once

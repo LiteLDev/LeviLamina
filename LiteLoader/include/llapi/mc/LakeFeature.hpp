@@ -1,5 +1,5 @@
 /**
- * @file  MC/LakeFeature.hpp
+ * @file  LakeFeature.hpp
  *
  */
 #pragma once

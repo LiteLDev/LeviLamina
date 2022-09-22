@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReadOnlyBinaryStream.hpp
+ * @file  ReadOnlyBinaryStream.hpp
  *
  */
 #pragma once

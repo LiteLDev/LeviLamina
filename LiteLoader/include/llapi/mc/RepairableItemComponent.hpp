@@ -1,5 +1,5 @@
 /**
- * @file  MC/RepairableItemComponent.hpp
+ * @file  RepairableItemComponent.hpp
  *
  */
 #pragma once

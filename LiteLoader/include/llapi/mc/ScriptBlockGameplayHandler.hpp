@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptBlockGameplayHandler.hpp
+ * @file  ScriptBlockGameplayHandler.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPatternBuilder.hpp
+ * @file  BlockPatternBuilder.hpp
  *
  */
 #pragma once

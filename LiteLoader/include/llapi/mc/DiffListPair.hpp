@@ -1,5 +1,5 @@
 /**
- * @file  MC/DiffListPair.hpp
+ * @file  DiffListPair.hpp
  *
  */
 #pragma once

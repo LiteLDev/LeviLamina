@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkSensorBlockActor.hpp
+ * @file  SculkSensorBlockActor.hpp
  *
  */
 #pragma once

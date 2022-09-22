@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveHitboxSystem.hpp
+ * @file  MoveHitboxSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SniffGoal.hpp
+ * @file  SniffGoal.hpp
  *
  */
 #pragma once

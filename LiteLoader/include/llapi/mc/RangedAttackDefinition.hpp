@@ -1,5 +1,5 @@
 /**
- * @file  MC/RangedAttackDefinition.hpp
+ * @file  RangedAttackDefinition.hpp
  *
  */
 #pragma once

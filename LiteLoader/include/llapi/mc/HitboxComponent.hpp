@@ -1,5 +1,5 @@
 /**
- * @file  MC/HitboxComponent.hpp
+ * @file  HitboxComponent.hpp
  *
  */
 #pragma once

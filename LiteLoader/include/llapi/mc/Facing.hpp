@@ -1,5 +1,5 @@
 /**
- * @file  MC/Facing.hpp
+ * @file  Facing.hpp
  *
  */
 #pragma once

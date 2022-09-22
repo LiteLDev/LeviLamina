@@ -1,5 +1,5 @@
 /**
- * @file  MC/PackDiscoveryError.hpp
+ * @file  PackDiscoveryError.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerDamageEvent.hpp
+ * @file  PlayerDamageEvent.hpp
  *
  */
 #pragma once

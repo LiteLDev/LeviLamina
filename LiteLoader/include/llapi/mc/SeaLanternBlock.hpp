@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeaLanternBlock.hpp
+ * @file  SeaLanternBlock.hpp
  *
  */
 #pragma once

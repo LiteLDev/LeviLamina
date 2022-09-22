@@ -1,5 +1,5 @@
 /**
- * @file  MC/DamageOverTimeDefinition.hpp
+ * @file  DamageOverTimeDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChestBlockTryPairEvent.hpp
+ * @file  ChestBlockTryPairEvent.hpp
  *
  */
 #pragma once

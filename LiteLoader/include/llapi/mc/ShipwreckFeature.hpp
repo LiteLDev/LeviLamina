@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShipwreckFeature.hpp
+ * @file  ShipwreckFeature.hpp
  *
  */
 #pragma once

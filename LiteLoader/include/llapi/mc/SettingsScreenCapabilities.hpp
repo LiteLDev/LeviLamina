@@ -1,5 +1,5 @@
 /**
- * @file  MC/SettingsScreenCapabilities.hpp
+ * @file  SettingsScreenCapabilities.hpp
  *
  */
 #pragma once

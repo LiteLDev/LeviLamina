@@ -1,5 +1,5 @@
 /**
- * @file  MC/SquidFleeGoal.hpp
+ * @file  SquidFleeGoal.hpp
  *
  */
 #pragma once

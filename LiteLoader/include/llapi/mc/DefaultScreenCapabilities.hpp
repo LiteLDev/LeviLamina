@@ -1,5 +1,5 @@
 /**
- * @file  MC/DefaultScreenCapabilities.hpp
+ * @file  DefaultScreenCapabilities.hpp
  *
  */
 #pragma once

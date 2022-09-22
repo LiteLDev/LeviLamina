@@ -1,5 +1,5 @@
 /**
- * @file  MC/AvoidMobTypeDefinition.hpp
+ * @file  AvoidMobTypeDefinition.hpp
  *
  */
 #pragma once

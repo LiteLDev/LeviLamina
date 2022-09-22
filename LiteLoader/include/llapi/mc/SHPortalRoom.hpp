@@ -1,5 +1,5 @@
 /**
- * @file  MC/SHPortalRoom.hpp
+ * @file  SHPortalRoom.hpp
  *
  */
 #pragma once

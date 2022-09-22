@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsStackableDefinition.hpp
+ * @file  IsStackableDefinition.hpp
  *
  */
 #pragma once

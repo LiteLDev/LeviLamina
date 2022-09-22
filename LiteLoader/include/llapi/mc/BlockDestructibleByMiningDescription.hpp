@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockDestructibleByMiningDescription.hpp
+ * @file  BlockDestructibleByMiningDescription.hpp
  *
  */
 #pragma once

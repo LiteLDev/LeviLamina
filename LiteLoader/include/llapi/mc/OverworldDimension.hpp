@@ -1,5 +1,5 @@
 /**
- * @file  MC/OverworldDimension.hpp
+ * @file  OverworldDimension.hpp
  *
  */
 #pragma once

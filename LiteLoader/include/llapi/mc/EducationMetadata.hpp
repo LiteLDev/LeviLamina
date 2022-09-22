@@ -1,5 +1,5 @@
 /**
- * @file  MC/EducationMetadata.hpp
+ * @file  EducationMetadata.hpp
  *
  */
 #pragma once

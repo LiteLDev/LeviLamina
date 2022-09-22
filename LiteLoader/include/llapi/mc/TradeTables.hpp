@@ -1,5 +1,5 @@
 /**
- * @file  MC/TradeTables.hpp
+ * @file  TradeTables.hpp
  *
  */
 #pragma once

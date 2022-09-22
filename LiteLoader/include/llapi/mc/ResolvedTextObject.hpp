@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResolvedTextObject.hpp
+ * @file  ResolvedTextObject.hpp
  *
  */
 #pragma once

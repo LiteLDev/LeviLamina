@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockClimberDefinition.hpp
+ * @file  BlockClimberDefinition.hpp
  *
  */
 #pragma once

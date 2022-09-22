@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureHelpers.hpp
+ * @file  StructureHelpers.hpp
  *
  */
 #pragma once

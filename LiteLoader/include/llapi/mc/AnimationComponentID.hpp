@@ -1,5 +1,5 @@
 /**
- * @file  MC/AnimationComponentID.hpp
+ * @file  AnimationComponentID.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoulTorchBlock.hpp
+ * @file  SoulTorchBlock.hpp
  *
  */
 #pragma once

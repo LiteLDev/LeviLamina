@@ -1,5 +1,5 @@
 /**
- * @file  MC/NameableComponent.hpp
+ * @file  NameableComponent.hpp
  *
  */
 #pragma once

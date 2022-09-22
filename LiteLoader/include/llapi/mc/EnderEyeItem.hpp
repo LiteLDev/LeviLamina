@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnderEyeItem.hpp
+ * @file  EnderEyeItem.hpp
  *
  */
 #pragma once

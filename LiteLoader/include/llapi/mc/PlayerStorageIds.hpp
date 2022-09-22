@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerStorageIds.hpp
+ * @file  PlayerStorageIds.hpp
  *
  */
 #pragma once

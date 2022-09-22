@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorEquippedArmorEvent.hpp
+ * @file  ActorEquippedArmorEvent.hpp
  *
  */
 #pragma once

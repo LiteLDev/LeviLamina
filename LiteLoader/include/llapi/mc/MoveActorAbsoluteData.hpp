@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveActorAbsoluteData.hpp
+ * @file  MoveActorAbsoluteData.hpp
  *
  */
 #pragma once

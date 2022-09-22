@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlueFireBlock.hpp
+ * @file  BlueFireBlock.hpp
  *
  */
 #pragma once

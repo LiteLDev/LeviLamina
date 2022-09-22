@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeakEntityRef.hpp
+ * @file  WeakEntityRef.hpp
  *
  */
 #pragma once

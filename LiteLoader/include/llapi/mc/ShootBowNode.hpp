@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShootBowNode.hpp
+ * @file  ShootBowNode.hpp
  *
  */
 #pragma once

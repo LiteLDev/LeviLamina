@@ -1,5 +1,5 @@
 /**
- * @file  MC/LavaSlime.hpp
+ * @file  LavaSlime.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/HasItemFilter.hpp
+ * @file  HasItemFilter.hpp
  *
  */
 #pragma once

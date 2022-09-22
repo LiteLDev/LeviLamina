@@ -1,5 +1,5 @@
 /**
- * @file  MC/Easing.hpp
+ * @file  Easing.hpp
  *
  */
 #pragma once

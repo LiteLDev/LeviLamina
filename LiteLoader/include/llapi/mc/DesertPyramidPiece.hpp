@@ -1,5 +1,5 @@
 /**
- * @file  MC/DesertPyramidPiece.hpp
+ * @file  DesertPyramidPiece.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ValidatorRegistry.hpp
+ * @file  ValidatorRegistry.hpp
  *
  */
 #pragma once

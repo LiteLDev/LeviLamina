@@ -1,5 +1,5 @@
 /**
- * @file  MC/NavigationFlyDescription.hpp
+ * @file  NavigationFlyDescription.hpp
  *
  */
 #pragma once

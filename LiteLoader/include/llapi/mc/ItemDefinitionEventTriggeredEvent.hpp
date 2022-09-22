@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemDefinitionEventTriggeredEvent.hpp
+ * @file  ItemDefinitionEventTriggeredEvent.hpp
  *
  */
 #pragma once

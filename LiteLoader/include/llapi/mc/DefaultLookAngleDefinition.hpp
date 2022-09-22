@@ -1,5 +1,5 @@
 /**
- * @file  MC/DefaultLookAngleDefinition.hpp
+ * @file  DefaultLookAngleDefinition.hpp
  *
  */
 #pragma once

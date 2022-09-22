@@ -1,5 +1,5 @@
 /**
- * @file  MC/Ghast.hpp
+ * @file  Ghast.hpp
  *
  */
 #pragma once

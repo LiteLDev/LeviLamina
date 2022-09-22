@@ -1,5 +1,5 @@
 /**
- * @file  MC/SharedBuffs.hpp
+ * @file  SharedBuffs.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetItemDamageFunction.hpp
+ * @file  SetItemDamageFunction.hpp
  *
  */
 #pragma once

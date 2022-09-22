@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecraftCommands.hpp
+ * @file  MinecraftCommands.hpp
  *
  */
 #pragma once

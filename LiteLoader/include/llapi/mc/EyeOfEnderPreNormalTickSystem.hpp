@@ -1,5 +1,5 @@
 /**
- * @file  MC/EyeOfEnderPreNormalTickSystem.hpp
+ * @file  EyeOfEnderPreNormalTickSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerNetworkEventListener.hpp
+ * @file  ServerNetworkEventListener.hpp
  *
  */
 #pragma once

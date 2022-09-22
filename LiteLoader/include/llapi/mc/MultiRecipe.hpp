@@ -1,5 +1,5 @@
 /**
- * @file  MC/MultiRecipe.hpp
+ * @file  MultiRecipe.hpp
  *
  */
 #pragma once

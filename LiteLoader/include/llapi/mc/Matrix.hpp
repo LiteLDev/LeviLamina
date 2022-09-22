@@ -1,5 +1,5 @@
 /**
- * @file  MC/Matrix.hpp
+ * @file  Matrix.hpp
  *
  */
 #pragma once

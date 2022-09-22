@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeaconBlockActor.hpp
+ * @file  BeaconBlockActor.hpp
  *
  */
 #pragma once

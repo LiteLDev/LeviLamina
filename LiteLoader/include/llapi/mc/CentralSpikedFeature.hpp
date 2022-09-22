@@ -1,5 +1,5 @@
 /**
- * @file  MC/CentralSpikedFeature.hpp
+ * @file  CentralSpikedFeature.hpp
  *
  */
 #pragma once

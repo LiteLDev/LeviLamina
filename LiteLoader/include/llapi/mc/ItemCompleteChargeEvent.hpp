@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemCompleteChargeEvent.hpp
+ * @file  ItemCompleteChargeEvent.hpp
  *
  */
 #pragma once

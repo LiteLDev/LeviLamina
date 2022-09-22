@@ -1,5 +1,5 @@
 /**
- * @file  MC/ColoredTorchBlock.hpp
+ * @file  ColoredTorchBlock.hpp
  *
  */
 #pragma once

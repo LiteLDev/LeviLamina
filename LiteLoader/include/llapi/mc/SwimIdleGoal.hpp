@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimIdleGoal.hpp
+ * @file  SwimIdleGoal.hpp
  *
  */
 #pragma once

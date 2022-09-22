@@ -1,5 +1,5 @@
 /**
- * @file  MC/MapCloningRecipe.hpp
+ * @file  MapCloningRecipe.hpp
  *
  */
 #pragma once

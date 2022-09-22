@@ -1,5 +1,5 @@
 /**
- * @file  MC/SendPacketsComponent.hpp
+ * @file  SendPacketsComponent.hpp
  *
  */
 #pragma once

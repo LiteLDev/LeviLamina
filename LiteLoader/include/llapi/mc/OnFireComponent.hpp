@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnFireComponent.hpp
+ * @file  OnFireComponent.hpp
  *
  */
 #pragma once

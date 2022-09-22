@@ -1,5 +1,5 @@
 /**
- * @file  MC/FireBlock.hpp
+ * @file  FireBlock.hpp
  *
  */
 #pragma once

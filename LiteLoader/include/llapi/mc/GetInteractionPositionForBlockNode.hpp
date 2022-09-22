@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetInteractionPositionForBlockNode.hpp
+ * @file  GetInteractionPositionForBlockNode.hpp
  *
  */
 #pragma once

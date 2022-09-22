@@ -1,5 +1,5 @@
 /**
- * @file  MC/FogVolumetricCoefficientSetting.hpp
+ * @file  FogVolumetricCoefficientSetting.hpp
  *
  */
 #pragma once

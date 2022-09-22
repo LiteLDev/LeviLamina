@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActiveDirectoryIdentity.hpp
+ * @file  ActiveDirectoryIdentity.hpp
  *
  */
 #pragma once

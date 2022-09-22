@@ -1,5 +1,5 @@
 /**
- * @file  MC/FenceGateBlock.hpp
+ * @file  FenceGateBlock.hpp
  *
  */
 #pragma once

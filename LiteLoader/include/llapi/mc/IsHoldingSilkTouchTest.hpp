@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsHoldingSilkTouchTest.hpp
+ * @file  IsHoldingSilkTouchTest.hpp
  *
  */
 #pragma once

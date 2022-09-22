@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureBlock.hpp
+ * @file  StructureBlock.hpp
  *
  */
 #pragma once

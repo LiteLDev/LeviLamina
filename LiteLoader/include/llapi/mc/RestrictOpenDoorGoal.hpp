@@ -1,5 +1,5 @@
 /**
- * @file  MC/RestrictOpenDoorGoal.hpp
+ * @file  RestrictOpenDoorGoal.hpp
  *
  */
 #pragma once

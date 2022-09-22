@@ -1,5 +1,5 @@
 /**
- * @file  MC/VegetationPatchFeature.hpp
+ * @file  VegetationPatchFeature.hpp
  *
  */
 #pragma once

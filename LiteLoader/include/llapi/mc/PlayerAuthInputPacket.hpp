@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerAuthInputPacket.hpp
+ * @file  PlayerAuthInputPacket.hpp
  *
  */
 #pragma once

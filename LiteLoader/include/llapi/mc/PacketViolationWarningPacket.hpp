@@ -1,5 +1,5 @@
 /**
- * @file  MC/PacketViolationWarningPacket.hpp
+ * @file  PacketViolationWarningPacket.hpp
  *
  */
 #pragma once

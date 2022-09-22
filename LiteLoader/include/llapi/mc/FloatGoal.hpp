@@ -1,5 +1,5 @@
 /**
- * @file  MC/FloatGoal.hpp
+ * @file  FloatGoal.hpp
  *
  */
 #pragma once

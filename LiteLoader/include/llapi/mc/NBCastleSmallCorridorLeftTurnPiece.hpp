@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBCastleSmallCorridorLeftTurnPiece.hpp
+ * @file  NBCastleSmallCorridorLeftTurnPiece.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/WebSocketPacketData.hpp
+ * @file  WebSocketPacketData.hpp
  *
  */
 #pragma once

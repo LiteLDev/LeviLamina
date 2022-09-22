@@ -1,5 +1,5 @@
 /**
- * @file  MC/EmptyMapItem.hpp
+ * @file  EmptyMapItem.hpp
  *
  */
 #pragma once

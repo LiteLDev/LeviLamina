@@ -1,5 +1,5 @@
 /**
- * @file  MC/GoHomeGoal.hpp
+ * @file  GoHomeGoal.hpp
  *
  */
 #pragma once

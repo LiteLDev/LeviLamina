@@ -1,5 +1,5 @@
 /**
- * @file  MC/TradeContainerManagerModel.hpp
+ * @file  TradeContainerManagerModel.hpp
  *
  */
 #pragma once

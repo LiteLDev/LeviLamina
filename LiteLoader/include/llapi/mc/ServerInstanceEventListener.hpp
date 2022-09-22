@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerInstanceEventListener.hpp
+ * @file  ServerInstanceEventListener.hpp
  *
  */
 #pragma once

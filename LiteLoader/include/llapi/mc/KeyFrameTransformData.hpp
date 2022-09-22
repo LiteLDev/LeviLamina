@@ -1,5 +1,5 @@
 /**
- * @file  MC/KeyFrameTransformData.hpp
+ * @file  KeyFrameTransformData.hpp
  *
  */
 #pragma once

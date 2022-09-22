@@ -1,5 +1,5 @@
 /**
- * @file  MC/LibraryScreenCapabilities.hpp
+ * @file  LibraryScreenCapabilities.hpp
  *
  */
 #pragma once

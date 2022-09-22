@@ -1,5 +1,5 @@
 /**
- * @file  MC/Color2Definition.hpp
+ * @file  Color2Definition.hpp
  *
  */
 #pragma once

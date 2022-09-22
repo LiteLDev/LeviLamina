@@ -1,5 +1,5 @@
 /**
- * @file  MC/NullLogger.hpp
+ * @file  NullLogger.hpp
  *
  */
 #pragma once

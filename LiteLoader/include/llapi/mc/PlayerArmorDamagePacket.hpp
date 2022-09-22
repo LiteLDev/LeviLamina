@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerArmorDamagePacket.hpp
+ * @file  PlayerArmorDamagePacket.hpp
  *
  */
 #pragma once

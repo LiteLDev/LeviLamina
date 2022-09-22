@@ -1,5 +1,5 @@
 /**
- * @file  MC/JumpInfo.hpp
+ * @file  JumpInfo.hpp
  *
  */
 #pragma once

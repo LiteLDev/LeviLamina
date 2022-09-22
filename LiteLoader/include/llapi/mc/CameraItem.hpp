@@ -1,5 +1,5 @@
 /**
- * @file  MC/CameraItem.hpp
+ * @file  CameraItem.hpp
  *
  */
 #pragma once

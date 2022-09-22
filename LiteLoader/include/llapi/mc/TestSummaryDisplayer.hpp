@@ -1,5 +1,5 @@
 /**
- * @file  MC/TestSummaryDisplayer.hpp
+ * @file  TestSummaryDisplayer.hpp
  *
  */
 #pragma once

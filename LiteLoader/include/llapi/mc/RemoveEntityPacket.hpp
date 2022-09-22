@@ -1,5 +1,5 @@
 /**
- * @file  MC/RemoveEntityPacket.hpp
+ * @file  RemoveEntityPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyIceFeature.hpp
+ * @file  LegacyIceFeature.hpp
  *
  */
 #pragma once

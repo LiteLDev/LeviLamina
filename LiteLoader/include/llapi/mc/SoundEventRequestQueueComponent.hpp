@@ -1,5 +1,5 @@
 /**
- * @file  MC/SoundEventRequestQueueComponent.hpp
+ * @file  SoundEventRequestQueueComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacySmallMushroomsFeature.hpp
+ * @file  LegacySmallMushroomsFeature.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorKilledEvent.hpp
+ * @file  ActorKilledEvent.hpp
  *
  */
 #pragma once

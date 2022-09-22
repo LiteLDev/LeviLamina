@@ -1,5 +1,5 @@
 /**
- * @file  MC/IdentityDefinition.hpp
+ * @file  IdentityDefinition.hpp
  *
  */
 #pragma once

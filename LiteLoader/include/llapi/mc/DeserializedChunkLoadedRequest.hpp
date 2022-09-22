@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeserializedChunkLoadedRequest.hpp
+ * @file  DeserializedChunkLoadedRequest.hpp
  *
  */
 #pragma once

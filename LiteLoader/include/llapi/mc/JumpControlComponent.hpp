@@ -1,5 +1,5 @@
 /**
- * @file  MC/JumpControlComponent.hpp
+ * @file  JumpControlComponent.hpp
  *
  */
 #pragma once

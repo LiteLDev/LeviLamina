@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmithingTableContainerManagerModel.hpp
+ * @file  SmithingTableContainerManagerModel.hpp
  *
  */
 #pragma once

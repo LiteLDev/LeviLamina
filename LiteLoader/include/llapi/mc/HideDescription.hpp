@@ -1,5 +1,5 @@
 /**
- * @file  MC/HideDescription.hpp
+ * @file  HideDescription.hpp
  *
  */
 #pragma once

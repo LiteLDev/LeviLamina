@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandPosition.hpp
+ * @file  CommandPosition.hpp
  *
  */
 #pragma once

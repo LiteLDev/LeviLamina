@@ -1,5 +1,5 @@
 /**
- * @file  MC/CommandIntegerRange.hpp
+ * @file  CommandIntegerRange.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActiveDirectoryScreenCapabilities.hpp
+ * @file  ActiveDirectoryScreenCapabilities.hpp
  *
  */
 #pragma once

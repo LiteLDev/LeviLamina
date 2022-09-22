@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockReducer.hpp
+ * @file  BlockReducer.hpp
  *
  */
 #pragma once

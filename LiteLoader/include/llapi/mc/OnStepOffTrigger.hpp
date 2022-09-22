@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnStepOffTrigger.hpp
+ * @file  OnStepOffTrigger.hpp
  *
  */
 #pragma once

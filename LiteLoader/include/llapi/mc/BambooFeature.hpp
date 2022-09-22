@@ -1,5 +1,5 @@
 /**
- * @file  MC/BambooFeature.hpp
+ * @file  BambooFeature.hpp
  *
  */
 #pragma once

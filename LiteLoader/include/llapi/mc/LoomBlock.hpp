@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoomBlock.hpp
+ * @file  LoomBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThrownPotion.hpp
+ * @file  ThrownPotion.hpp
  *
  */
 #pragma once

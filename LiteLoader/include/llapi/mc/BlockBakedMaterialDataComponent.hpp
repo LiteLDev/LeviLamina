@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockBakedMaterialDataComponent.hpp
+ * @file  BlockBakedMaterialDataComponent.hpp
  *
  */
 #pragma once

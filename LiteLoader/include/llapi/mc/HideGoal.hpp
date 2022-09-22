@@ -1,5 +1,5 @@
 /**
- * @file  MC/HideGoal.hpp
+ * @file  HideGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PropertyGroupManager.hpp
+ * @file  PropertyGroupManager.hpp
  *
  */
 #pragma once

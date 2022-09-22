@@ -1,5 +1,5 @@
 /**
- * @file  MC/PickupItemsGoal.hpp
+ * @file  PickupItemsGoal.hpp
  *
  */
 #pragma once

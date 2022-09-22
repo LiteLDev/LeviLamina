@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemReleaseChargeEvent.hpp
+ * @file  ItemReleaseChargeEvent.hpp
  *
  */
 #pragma once

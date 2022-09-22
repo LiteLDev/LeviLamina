@@ -1,5 +1,5 @@
 /**
- * @file  MC/RaiderCelebrationGoal.hpp
+ * @file  RaiderCelebrationGoal.hpp
  *
  */
 #pragma once

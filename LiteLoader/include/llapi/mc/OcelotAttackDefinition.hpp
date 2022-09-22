@@ -1,5 +1,5 @@
 /**
- * @file  MC/OcelotAttackDefinition.hpp
+ * @file  OcelotAttackDefinition.hpp
  *
  */
 #pragma once

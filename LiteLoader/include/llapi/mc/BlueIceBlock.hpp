@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlueIceBlock.hpp
+ * @file  BlueIceBlock.hpp
  *
  */
 #pragma once

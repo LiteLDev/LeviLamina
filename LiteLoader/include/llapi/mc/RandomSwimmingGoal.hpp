@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomSwimmingGoal.hpp
+ * @file  RandomSwimmingGoal.hpp
  *
  */
 #pragma once

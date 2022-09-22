@@ -1,5 +1,5 @@
 /**
- * @file  MC/EconomyTradeableDescription.hpp
+ * @file  EconomyTradeableDescription.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/WanderingTraderScheduler.hpp
+ * @file  WanderingTraderScheduler.hpp
  *
  */
 #pragma once

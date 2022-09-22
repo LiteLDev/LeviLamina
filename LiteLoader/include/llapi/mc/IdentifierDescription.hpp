@@ -1,5 +1,5 @@
 /**
- * @file  MC/IdentifierDescription.hpp
+ * @file  IdentifierDescription.hpp
  *
  */
 #pragma once

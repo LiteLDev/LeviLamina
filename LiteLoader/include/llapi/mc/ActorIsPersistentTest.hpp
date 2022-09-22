@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsPersistentTest.hpp
+ * @file  ActorIsPersistentTest.hpp
  *
  */
 #pragma once

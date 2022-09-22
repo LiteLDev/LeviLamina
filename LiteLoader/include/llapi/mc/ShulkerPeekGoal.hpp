@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShulkerPeekGoal.hpp
+ * @file  ShulkerPeekGoal.hpp
  *
  */
 #pragma once

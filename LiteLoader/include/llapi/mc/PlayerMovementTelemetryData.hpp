@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerMovementTelemetryData.hpp
+ * @file  PlayerMovementTelemetryData.hpp
  *
  */
 #pragma once

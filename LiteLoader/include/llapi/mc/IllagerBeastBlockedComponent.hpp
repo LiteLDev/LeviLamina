@@ -1,5 +1,5 @@
 /**
- * @file  MC/IllagerBeastBlockedComponent.hpp
+ * @file  IllagerBeastBlockedComponent.hpp
  *
  */
 #pragma once

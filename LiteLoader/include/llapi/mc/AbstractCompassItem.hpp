@@ -1,5 +1,5 @@
 /**
- * @file  MC/AbstractCompassItem.hpp
+ * @file  AbstractCompassItem.hpp
  *
  */
 #pragma once

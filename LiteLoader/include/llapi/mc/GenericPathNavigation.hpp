@@ -1,5 +1,5 @@
 /**
- * @file  MC/GenericPathNavigation.hpp
+ * @file  GenericPathNavigation.hpp
  *
  */
 #pragma once

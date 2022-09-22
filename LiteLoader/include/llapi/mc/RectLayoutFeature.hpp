@@ -1,5 +1,5 @@
 /**
- * @file  MC/RectLayoutFeature.hpp
+ * @file  RectLayoutFeature.hpp
  *
  */
 #pragma once

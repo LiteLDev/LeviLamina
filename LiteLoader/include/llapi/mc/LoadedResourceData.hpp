@@ -1,5 +1,5 @@
 /**
- * @file  MC/LoadedResourceData.hpp
+ * @file  LoadedResourceData.hpp
  *
  */
 #pragma once

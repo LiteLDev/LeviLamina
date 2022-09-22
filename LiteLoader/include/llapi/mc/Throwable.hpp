@@ -1,5 +1,5 @@
 /**
- * @file  MC/Throwable.hpp
+ * @file  Throwable.hpp
  *
  */
 #pragma once

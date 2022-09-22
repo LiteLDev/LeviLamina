@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChannelTransform.hpp
+ * @file  ChannelTransform.hpp
  *
  */
 #pragma once

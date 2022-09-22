@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantRandomEquipmentFunction.hpp
+ * @file  EnchantRandomEquipmentFunction.hpp
  *
  */
 #pragma once

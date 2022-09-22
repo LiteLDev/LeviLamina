@@ -1,5 +1,5 @@
 /**
- * @file  MC/BeaconPaymentContainerValidation.hpp
+ * @file  BeaconPaymentContainerValidation.hpp
  *
  */
 #pragma once

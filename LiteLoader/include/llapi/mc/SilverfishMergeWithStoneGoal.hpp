@@ -1,5 +1,5 @@
 /**
- * @file  MC/SilverfishMergeWithStoneGoal.hpp
+ * @file  SilverfishMergeWithStoneGoal.hpp
  *
  */
 #pragma once

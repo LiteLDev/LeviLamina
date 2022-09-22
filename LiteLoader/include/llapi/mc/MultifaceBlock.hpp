@@ -1,5 +1,5 @@
 /**
- * @file  MC/MultifaceBlock.hpp
+ * @file  MultifaceBlock.hpp
  *
  */
 #pragma once

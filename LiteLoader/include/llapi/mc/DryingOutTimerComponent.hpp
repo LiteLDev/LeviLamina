@@ -1,5 +1,5 @@
 /**
- * @file  MC/DryingOutTimerComponent.hpp
+ * @file  DryingOutTimerComponent.hpp
  *
  */
 #pragma once

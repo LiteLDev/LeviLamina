@@ -1,5 +1,5 @@
 /**
- * @file  MC/DimensionBrightnessRamp.hpp
+ * @file  DimensionBrightnessRamp.hpp
  *
  */
 #pragma once

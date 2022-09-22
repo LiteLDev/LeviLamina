@@ -1,5 +1,5 @@
 /**
- * @file  MC/WitherRandomAttackPosGoal.hpp
+ * @file  WitherRandomAttackPosGoal.hpp
  *
  */
 #pragma once

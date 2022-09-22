@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityExitVolumeSystem.hpp
+ * @file  EntityExitVolumeSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CurrentSwimAmountSystem.hpp
+ * @file  CurrentSwimAmountSystem.hpp
  *
  */
 #pragma once

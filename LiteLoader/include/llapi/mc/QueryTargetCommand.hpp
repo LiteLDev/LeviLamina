@@ -1,5 +1,5 @@
 /**
- * @file  MC/QueryTargetCommand.hpp
+ * @file  QueryTargetCommand.hpp
  *
  */
 #pragma once

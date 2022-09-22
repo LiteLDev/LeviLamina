@@ -1,5 +1,5 @@
 /**
- * @file  MC/Localization.hpp
+ * @file  Localization.hpp
  *
  */
 #pragma once

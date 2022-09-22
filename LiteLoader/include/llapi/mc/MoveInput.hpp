@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveInput.hpp
+ * @file  MoveInput.hpp
  *
  */
 #pragma once

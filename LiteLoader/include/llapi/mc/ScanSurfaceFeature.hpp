@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScanSurfaceFeature.hpp
+ * @file  ScanSurfaceFeature.hpp
  *
  */
 #pragma once

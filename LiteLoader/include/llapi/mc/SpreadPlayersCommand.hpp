@@ -1,5 +1,5 @@
 /**
- * @file  MC/SpreadPlayersCommand.hpp
+ * @file  SpreadPlayersCommand.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExperienceOrb.hpp
+ * @file  ExperienceOrb.hpp
  *
  */
 #pragma once

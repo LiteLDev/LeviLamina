@@ -1,5 +1,5 @@
 /**
- * @file  MC/PrimedTnt.hpp
+ * @file  PrimedTnt.hpp
  *
  */
 #pragma once

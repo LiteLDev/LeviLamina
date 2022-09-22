@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangActorIdArrayPtr.hpp
+ * @file  MolangActorIdArrayPtr.hpp
  *
  */
 #pragma once

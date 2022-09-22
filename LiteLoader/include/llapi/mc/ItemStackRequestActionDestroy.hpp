@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestActionDestroy.hpp
+ * @file  ItemStackRequestActionDestroy.hpp
  *
  */
 #pragma once

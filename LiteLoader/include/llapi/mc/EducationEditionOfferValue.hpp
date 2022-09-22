@@ -1,5 +1,5 @@
 /**
- * @file  MC/EducationEditionOfferValue.hpp
+ * @file  EducationEditionOfferValue.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DragonFlamingDefinition.hpp
+ * @file  DragonFlamingDefinition.hpp
  *
  */
 #pragma once

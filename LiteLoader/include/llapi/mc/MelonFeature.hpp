@@ -1,5 +1,5 @@
 /**
- * @file  MC/MelonFeature.hpp
+ * @file  MelonFeature.hpp
  *
  */
 #pragma once

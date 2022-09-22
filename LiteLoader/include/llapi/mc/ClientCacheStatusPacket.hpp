@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClientCacheStatusPacket.hpp
+ * @file  ClientCacheStatusPacket.hpp
  *
  */
 #pragma once

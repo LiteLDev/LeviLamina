@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetScoreboardIdentityPacket.hpp
+ * @file  SetScoreboardIdentityPacket.hpp
  *
  */
 #pragma once

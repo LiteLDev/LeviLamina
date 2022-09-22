@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangTextureVariable.hpp
+ * @file  MolangTextureVariable.hpp
  *
  */
 #pragma once

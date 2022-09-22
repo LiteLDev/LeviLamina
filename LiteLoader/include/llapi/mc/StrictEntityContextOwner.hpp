@@ -1,5 +1,5 @@
 /**
- * @file  MC/StrictEntityContextOwner.hpp
+ * @file  StrictEntityContextOwner.hpp
  *
  */
 #pragma once

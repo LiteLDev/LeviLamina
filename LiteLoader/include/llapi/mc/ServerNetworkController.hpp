@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerNetworkController.hpp
+ * @file  ServerNetworkController.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TeleportToSubcomponent.hpp
+ * @file  TeleportToSubcomponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/Bounds.hpp
+ * @file  Bounds.hpp
  *
  */
 #pragma once

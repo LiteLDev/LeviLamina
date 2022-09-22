@@ -1,5 +1,5 @@
 /**
- * @file  MC/SendPacketsSystemImpl.hpp
+ * @file  SendPacketsSystemImpl.hpp
  *
  */
 #pragma once

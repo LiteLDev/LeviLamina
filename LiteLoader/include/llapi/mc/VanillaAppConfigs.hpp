@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaAppConfigs.hpp
+ * @file  VanillaAppConfigs.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ResourcePackClientResponsePacket.hpp
+ * @file  ResourcePackClientResponsePacket.hpp
  *
  */
 #pragma once

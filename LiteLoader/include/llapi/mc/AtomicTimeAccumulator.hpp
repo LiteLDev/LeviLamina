@@ -1,5 +1,5 @@
 /**
- * @file  MC/AtomicTimeAccumulator.hpp
+ * @file  AtomicTimeAccumulator.hpp
  *
  */
 #pragma once

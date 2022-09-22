@@ -1,5 +1,5 @@
 /**
- * @file  MC/BarrelContainerValidation.hpp
+ * @file  BarrelContainerValidation.hpp
  *
  */
 #pragma once

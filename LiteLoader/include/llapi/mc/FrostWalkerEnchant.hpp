@@ -1,5 +1,5 @@
 /**
- * @file  MC/FrostWalkerEnchant.hpp
+ * @file  FrostWalkerEnchant.hpp
  *
  */
 #pragma once

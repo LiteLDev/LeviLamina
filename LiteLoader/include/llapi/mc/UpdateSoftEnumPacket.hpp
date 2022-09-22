@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateSoftEnumPacket.hpp
+ * @file  UpdateSoftEnumPacket.hpp
  *
  */
 #pragma once

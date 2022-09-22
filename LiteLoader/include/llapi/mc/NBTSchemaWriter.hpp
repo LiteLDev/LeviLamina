@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBTSchemaWriter.hpp
+ * @file  NBTSchemaWriter.hpp
  *
  */
 #pragma once

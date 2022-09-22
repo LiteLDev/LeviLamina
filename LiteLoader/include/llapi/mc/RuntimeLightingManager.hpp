@@ -1,5 +1,5 @@
 /**
- * @file  MC/RuntimeLightingManager.hpp
+ * @file  RuntimeLightingManager.hpp
  *
  */
 #pragma once

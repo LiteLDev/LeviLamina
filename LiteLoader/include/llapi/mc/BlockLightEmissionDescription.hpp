@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockLightEmissionDescription.hpp
+ * @file  BlockLightEmissionDescription.hpp
  *
  */
 #pragma once

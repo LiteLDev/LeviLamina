@@ -1,5 +1,5 @@
 /**
- * @file  MC/TerrainBurstReactionComponent.hpp
+ * @file  TerrainBurstReactionComponent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntitiesInsideVolumeComponent.hpp
+ * @file  EntitiesInsideVolumeComponent.hpp
  *
  */
 #pragma once

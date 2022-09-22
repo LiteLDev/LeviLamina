@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerInstanceLeaveGameDoneEvent.hpp
+ * @file  ServerInstanceLeaveGameDoneEvent.hpp
  *
  */
 #pragma once

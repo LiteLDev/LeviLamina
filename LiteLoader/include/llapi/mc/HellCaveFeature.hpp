@@ -1,5 +1,5 @@
 /**
- * @file  MC/HellCaveFeature.hpp
+ * @file  HellCaveFeature.hpp
  *
  */
 #pragma once

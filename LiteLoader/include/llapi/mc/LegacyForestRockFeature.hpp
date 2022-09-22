@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyForestRockFeature.hpp
+ * @file  LegacyForestRockFeature.hpp
  *
  */
 #pragma once

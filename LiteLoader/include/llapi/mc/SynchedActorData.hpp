@@ -1,5 +1,5 @@
 /**
- * @file  MC/SynchedActorData.hpp
+ * @file  SynchedActorData.hpp
  *
  */
 #pragma once

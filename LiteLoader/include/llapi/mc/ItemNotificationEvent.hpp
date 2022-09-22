@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemNotificationEvent.hpp
+ * @file  ItemNotificationEvent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaAncientCityJigsawStructureBlockRules.hpp
+ * @file  VanillaAncientCityJigsawStructureBlockRules.hpp
  *
  */
 #pragma once

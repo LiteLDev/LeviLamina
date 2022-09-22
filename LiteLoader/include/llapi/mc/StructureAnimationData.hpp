@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureAnimationData.hpp
+ * @file  StructureAnimationData.hpp
  *
  */
 #pragma once

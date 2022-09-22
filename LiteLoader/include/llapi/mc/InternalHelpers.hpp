@@ -1,5 +1,5 @@
 /**
- * @file  MC/InternalHelpers.hpp
+ * @file  InternalHelpers.hpp
  *
  */
 #pragma once

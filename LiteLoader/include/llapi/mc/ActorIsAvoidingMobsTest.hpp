@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsAvoidingMobsTest.hpp
+ * @file  ActorIsAvoidingMobsTest.hpp
  *
  */
 #pragma once

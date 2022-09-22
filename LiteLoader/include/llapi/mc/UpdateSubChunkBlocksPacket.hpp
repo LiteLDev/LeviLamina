@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpdateSubChunkBlocksPacket.hpp
+ * @file  UpdateSubChunkBlocksPacket.hpp
  *
  */
 #pragma once

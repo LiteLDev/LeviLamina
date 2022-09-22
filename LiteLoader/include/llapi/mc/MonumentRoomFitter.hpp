@@ -1,5 +1,5 @@
 /**
- * @file  MC/MonumentRoomFitter.hpp
+ * @file  MonumentRoomFitter.hpp
  *
  */
 #pragma once

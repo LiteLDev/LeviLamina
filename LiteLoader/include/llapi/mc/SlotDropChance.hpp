@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlotDropChance.hpp
+ * @file  SlotDropChance.hpp
  *
  */
 #pragma once

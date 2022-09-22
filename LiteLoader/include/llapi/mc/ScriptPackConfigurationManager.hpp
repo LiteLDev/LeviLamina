@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptPackConfigurationManager.hpp
+ * @file  ScriptPackConfigurationManager.hpp
  *
  */
 #pragma once

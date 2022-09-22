@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetInteractionPositionForBlockDefinition.hpp
+ * @file  GetInteractionPositionForBlockDefinition.hpp
  *
  */
 #pragma once

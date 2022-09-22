@@ -1,5 +1,5 @@
 /**
- * @file  MC/RakWebSocket.hpp
+ * @file  RakWebSocket.hpp
  *
  */
 #pragma once

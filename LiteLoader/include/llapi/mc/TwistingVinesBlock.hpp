@@ -1,5 +1,5 @@
 /**
- * @file  MC/TwistingVinesBlock.hpp
+ * @file  TwistingVinesBlock.hpp
  *
  */
 #pragma once

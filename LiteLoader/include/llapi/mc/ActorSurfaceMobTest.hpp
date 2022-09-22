@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorSurfaceMobTest.hpp
+ * @file  ActorSurfaceMobTest.hpp
  *
  */
 #pragma once

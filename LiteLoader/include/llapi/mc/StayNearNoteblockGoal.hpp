@@ -1,5 +1,5 @@
 /**
- * @file  MC/StayNearNoteblockGoal.hpp
+ * @file  StayNearNoteblockGoal.hpp
  *
  */
 #pragma once

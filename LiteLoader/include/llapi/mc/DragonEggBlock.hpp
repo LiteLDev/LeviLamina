@@ -1,5 +1,5 @@
 /**
- * @file  MC/DragonEggBlock.hpp
+ * @file  DragonEggBlock.hpp
  *
  */
 #pragma once

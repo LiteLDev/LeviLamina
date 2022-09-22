@@ -1,5 +1,5 @@
 /**
- * @file  MC/DrinkPotionData.hpp
+ * @file  DrinkPotionData.hpp
  *
  */
 #pragma once

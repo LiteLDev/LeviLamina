@@ -1,5 +1,5 @@
 /**
- * @file  MC/RecipeCraftInputs.hpp
+ * @file  RecipeCraftInputs.hpp
  *
  */
 #pragma once

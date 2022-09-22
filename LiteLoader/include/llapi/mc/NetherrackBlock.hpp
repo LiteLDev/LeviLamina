@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherrackBlock.hpp
+ * @file  NetherrackBlock.hpp
  *
  */
 #pragma once

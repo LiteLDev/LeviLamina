@@ -1,5 +1,5 @@
 /**
- * @file  MC/TheEndDimension.hpp
+ * @file  TheEndDimension.hpp
  *
  */
 #pragma once

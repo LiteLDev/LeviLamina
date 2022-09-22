@@ -1,5 +1,5 @@
 /**
- * @file  MC/InitialTickFilterSystem.hpp
+ * @file  InitialTickFilterSystem.hpp
  *
  */
 #pragma once

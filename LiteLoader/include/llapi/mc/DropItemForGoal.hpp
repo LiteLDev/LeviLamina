@@ -1,5 +1,5 @@
 /**
- * @file  MC/DropItemForGoal.hpp
+ * @file  DropItemForGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnUseOnItemComponent.hpp
+ * @file  OnUseOnItemComponent.hpp
  *
  */
 #pragma once

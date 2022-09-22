@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyForestFoliageFeature.hpp
+ * @file  LegacyForestFoliageFeature.hpp
  *
  */
 #pragma once

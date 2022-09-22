@@ -1,5 +1,5 @@
 /**
- * @file  MC/AppPlatformWindows.hpp
+ * @file  AppPlatformWindows.hpp
  *
  */
 #pragma once

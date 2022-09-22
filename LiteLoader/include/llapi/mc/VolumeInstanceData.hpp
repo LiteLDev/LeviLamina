@@ -1,5 +1,5 @@
 /**
- * @file  MC/VolumeInstanceData.hpp
+ * @file  VolumeInstanceData.hpp
  *
  */
 #pragma once

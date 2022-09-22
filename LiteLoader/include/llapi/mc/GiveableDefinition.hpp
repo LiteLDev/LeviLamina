@@ -1,5 +1,5 @@
 /**
- * @file  MC/GiveableDefinition.hpp
+ * @file  GiveableDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetEduServerInfoCommand.hpp
+ * @file  GetEduServerInfoCommand.hpp
  *
  */
 #pragma once

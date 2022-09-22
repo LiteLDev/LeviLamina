@@ -1,5 +1,5 @@
 /**
- * @file  MC/Animal.hpp
+ * @file  Animal.hpp
  *
  */
 #pragma once

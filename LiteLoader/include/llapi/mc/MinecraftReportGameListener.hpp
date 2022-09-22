@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecraftReportGameListener.hpp
+ * @file  MinecraftReportGameListener.hpp
  *
  */
 #pragma once

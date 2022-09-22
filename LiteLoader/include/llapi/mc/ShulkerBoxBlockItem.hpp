@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShulkerBoxBlockItem.hpp
+ * @file  ShulkerBoxBlockItem.hpp
  *
  */
 #pragma once

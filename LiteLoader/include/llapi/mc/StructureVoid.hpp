@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureVoid.hpp
+ * @file  StructureVoid.hpp
  *
  */
 #pragma once

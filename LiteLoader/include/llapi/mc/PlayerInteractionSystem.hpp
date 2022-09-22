@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerInteractionSystem.hpp
+ * @file  PlayerInteractionSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MovementSoundDistanceOffsetDefinition.hpp
+ * @file  MovementSoundDistanceOffsetDefinition.hpp
  *
  */
 #pragma once

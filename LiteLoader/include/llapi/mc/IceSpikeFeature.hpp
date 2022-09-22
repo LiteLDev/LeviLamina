@@ -1,5 +1,5 @@
 /**
- * @file  MC/IceSpikeFeature.hpp
+ * @file  IceSpikeFeature.hpp
  *
  */
 #pragma once

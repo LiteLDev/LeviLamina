@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimplePlayerContainer.hpp
+ * @file  SimplePlayerContainer.hpp
  *
  */
 #pragma once

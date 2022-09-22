@@ -1,5 +1,5 @@
 /**
- * @file  MC/BrazeSDKManager.hpp
+ * @file  BrazeSDKManager.hpp
  *
  */
 #pragma once

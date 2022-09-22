@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorPlacerItem.hpp
+ * @file  ActorPlacerItem.hpp
  *
  */
 #pragma once

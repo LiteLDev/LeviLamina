@@ -1,5 +1,5 @@
 /**
- * @file  MC/SendLinkPacketOfPassengersSystem.hpp
+ * @file  SendLinkPacketOfPassengersSystem.hpp
  *
  */
 #pragma once

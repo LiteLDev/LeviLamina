@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptCustomEventPacket.hpp
+ * @file  ScriptCustomEventPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/OcelotAttackGoal.hpp
+ * @file  OcelotAttackGoal.hpp
  *
  */
 #pragma once

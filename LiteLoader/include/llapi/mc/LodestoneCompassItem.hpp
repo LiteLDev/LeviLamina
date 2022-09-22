@@ -1,5 +1,5 @@
 /**
- * @file  MC/LodestoneCompassItem.hpp
+ * @file  LodestoneCompassItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FogCommandUtil.hpp
+ * @file  FogCommandUtil.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelDbLogger.hpp
+ * @file  LevelDbLogger.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MountTamingComponent.hpp
+ * @file  MountTamingComponent.hpp
  *
  */
 #pragma once

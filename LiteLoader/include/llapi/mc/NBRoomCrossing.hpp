@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBRoomCrossing.hpp
+ * @file  NBRoomCrossing.hpp
  *
  */
 #pragma once

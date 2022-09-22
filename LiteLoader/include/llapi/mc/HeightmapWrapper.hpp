@@ -1,5 +1,5 @@
 /**
- * @file  MC/HeightmapWrapper.hpp
+ * @file  HeightmapWrapper.hpp
  *
  */
 #pragma once

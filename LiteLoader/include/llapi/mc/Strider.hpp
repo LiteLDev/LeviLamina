@@ -1,5 +1,5 @@
 /**
- * @file  MC/Strider.hpp
+ * @file  Strider.hpp
  *
  */
 #pragma once

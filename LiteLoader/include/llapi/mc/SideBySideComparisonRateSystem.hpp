@@ -1,5 +1,5 @@
 /**
- * @file  MC/SideBySideComparisonRateSystem.hpp
+ * @file  SideBySideComparisonRateSystem.hpp
  *
  */
 #pragma once

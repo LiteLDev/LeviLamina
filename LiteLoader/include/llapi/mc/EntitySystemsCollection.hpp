@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntitySystemsCollection.hpp
+ * @file  EntitySystemsCollection.hpp
  *
  */
 #pragma once

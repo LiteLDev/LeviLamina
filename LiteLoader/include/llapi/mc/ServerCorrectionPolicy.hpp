@@ -1,5 +1,5 @@
 /**
- * @file  MC/ServerCorrectionPolicy.hpp
+ * @file  ServerCorrectionPolicy.hpp
  *
  */
 #pragma once

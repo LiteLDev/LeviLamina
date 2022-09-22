@@ -1,5 +1,5 @@
 /**
- * @file  MC/UserEntityIdentifierComponent.hpp
+ * @file  UserEntityIdentifierComponent.hpp
  *
  */
 #pragma once

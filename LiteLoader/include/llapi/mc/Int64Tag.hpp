@@ -1,5 +1,5 @@
 /**
- * @file  MC/Int64Tag.hpp
+ * @file  Int64Tag.hpp
  *
  */
 #pragma once

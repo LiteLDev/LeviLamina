@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorAnimationGroupParseMetaData.hpp
+ * @file  ActorAnimationGroupParseMetaData.hpp
  *
  */
 #pragma once

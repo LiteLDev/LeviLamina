@@ -1,5 +1,5 @@
 /**
- * @file  MC/WASDControlledDefinition.hpp
+ * @file  WASDControlledDefinition.hpp
  *
  */
 #pragma once

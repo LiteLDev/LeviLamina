@@ -1,5 +1,5 @@
 /**
- * @file  MC/SculkCatalystBlockActor.hpp
+ * @file  SculkCatalystBlockActor.hpp
  *
  */
 #pragma once

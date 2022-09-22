@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockTypeRegistry.hpp
+ * @file  BlockTypeRegistry.hpp
  *
  */
 #pragma once

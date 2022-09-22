@@ -1,5 +1,5 @@
 /**
- * @file  MC/BushBlock.hpp
+ * @file  BushBlock.hpp
  *
  */
 #pragma once

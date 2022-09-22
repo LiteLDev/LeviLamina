@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChangeDimensionPacket.hpp
+ * @file  ChangeDimensionPacket.hpp
  *
  */
 #pragma once

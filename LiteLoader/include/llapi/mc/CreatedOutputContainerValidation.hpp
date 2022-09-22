@@ -1,5 +1,5 @@
 /**
- * @file  MC/CreatedOutputContainerValidation.hpp
+ * @file  CreatedOutputContainerValidation.hpp
  *
  */
 #pragma once

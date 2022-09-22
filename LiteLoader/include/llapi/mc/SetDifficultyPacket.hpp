@@ -1,5 +1,5 @@
 /**
- * @file  MC/SetDifficultyPacket.hpp
+ * @file  SetDifficultyPacket.hpp
  *
  */
 #pragma once

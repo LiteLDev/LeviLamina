@@ -1,5 +1,5 @@
 /**
- * @file  MC/RespawnPacket.hpp
+ * @file  RespawnPacket.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnewayPhysicsBlocksComponent.hpp
+ * @file  OnewayPhysicsBlocksComponent.hpp
  *
  */
 #pragma once

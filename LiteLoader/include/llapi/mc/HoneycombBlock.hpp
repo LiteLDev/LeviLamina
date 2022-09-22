@@ -1,5 +1,5 @@
 /**
- * @file  MC/HoneycombBlock.hpp
+ * @file  HoneycombBlock.hpp
  *
  */
 #pragma once

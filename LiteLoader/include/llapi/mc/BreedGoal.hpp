@@ -1,5 +1,5 @@
 /**
- * @file  MC/BreedGoal.hpp
+ * @file  BreedGoal.hpp
  *
  */
 #pragma once

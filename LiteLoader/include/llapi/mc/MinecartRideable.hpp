@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecartRideable.hpp
+ * @file  MinecartRideable.hpp
  *
  */
 #pragma once

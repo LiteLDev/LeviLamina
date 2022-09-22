@@ -1,5 +1,5 @@
 /**
- * @file  MC/DeepslateOreBlock.hpp
+ * @file  DeepslateOreBlock.hpp
  *
  */
 #pragma once

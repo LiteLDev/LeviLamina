@@ -1,5 +1,5 @@
 /**
- * @file  MC/PaddleBehaviorUtility.hpp
+ * @file  PaddleBehaviorUtility.hpp
  *
  */
 #pragma once

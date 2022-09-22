@@ -1,5 +1,5 @@
 /**
- * @file  MC/AmphibiousMoveControlDescription.hpp
+ * @file  AmphibiousMoveControlDescription.hpp
  *
  */
 #pragma once

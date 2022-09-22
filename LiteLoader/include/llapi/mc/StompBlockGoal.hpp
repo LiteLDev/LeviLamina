@@ -1,5 +1,5 @@
 /**
- * @file  MC/StompBlockGoal.hpp
+ * @file  StompBlockGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/AreaEffectCloud.hpp
+ * @file  AreaEffectCloud.hpp
  *
  */
 #pragma once

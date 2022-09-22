@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockUnitCubeDescription.hpp
+ * @file  BlockUnitCubeDescription.hpp
  *
  */
 #pragma once

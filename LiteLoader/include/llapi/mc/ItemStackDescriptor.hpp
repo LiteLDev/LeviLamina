@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackDescriptor.hpp
+ * @file  ItemStackDescriptor.hpp
  *
  */
 #pragma once

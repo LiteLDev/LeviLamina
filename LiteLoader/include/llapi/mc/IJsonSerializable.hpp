@@ -1,5 +1,5 @@
 /**
- * @file  MC/IJsonSerializable.hpp
+ * @file  IJsonSerializable.hpp
  *
  */
 #pragma once

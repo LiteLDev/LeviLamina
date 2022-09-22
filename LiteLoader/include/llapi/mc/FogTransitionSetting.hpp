@@ -1,5 +1,5 @@
 /**
- * @file  MC/FogTransitionSetting.hpp
+ * @file  FogTransitionSetting.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FireworksRocketActor.hpp
+ * @file  FireworksRocketActor.hpp
  *
  */
 #pragma once

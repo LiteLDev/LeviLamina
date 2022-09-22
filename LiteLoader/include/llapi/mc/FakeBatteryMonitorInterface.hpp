@@ -1,5 +1,5 @@
 /**
- * @file  MC/FakeBatteryMonitorInterface.hpp
+ * @file  FakeBatteryMonitorInterface.hpp
  *
  */
 #pragma once

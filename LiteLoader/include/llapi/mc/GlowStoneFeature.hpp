@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlowStoneFeature.hpp
+ * @file  GlowStoneFeature.hpp
  *
  */
 #pragma once

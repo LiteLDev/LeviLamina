@@ -1,5 +1,5 @@
 /**
- * @file  MC/DropperBlockActor.hpp
+ * @file  DropperBlockActor.hpp
  *
  */
 #pragma once

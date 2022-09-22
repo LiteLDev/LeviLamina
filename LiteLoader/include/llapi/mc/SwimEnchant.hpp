@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwimEnchant.hpp
+ * @file  SwimEnchant.hpp
  *
  */
 #pragma once

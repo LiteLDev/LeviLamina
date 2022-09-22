@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerCapabilities.hpp
+ * @file  PlayerCapabilities.hpp
  *
  */
 #pragma once

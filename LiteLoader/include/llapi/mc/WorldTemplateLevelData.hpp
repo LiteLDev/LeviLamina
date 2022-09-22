@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldTemplateLevelData.hpp
+ * @file  WorldTemplateLevelData.hpp
  *
  */
 #pragma once

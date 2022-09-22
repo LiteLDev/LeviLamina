@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScatterParamsMolangVariableIndices.hpp
+ * @file  ScatterParamsMolangVariableIndices.hpp
  *
  */
 #pragma once

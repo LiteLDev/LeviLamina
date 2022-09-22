@@ -1,5 +1,5 @@
 /**
- * @file  MC/Raid.hpp
+ * @file  Raid.hpp
  *
  */
 #pragma once

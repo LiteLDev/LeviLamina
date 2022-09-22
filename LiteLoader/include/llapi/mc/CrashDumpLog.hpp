@@ -1,5 +1,5 @@
 /**
- * @file  MC/CrashDumpLog.hpp
+ * @file  CrashDumpLog.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ContainerValidationCraftResult.hpp
+ * @file  ContainerValidationCraftResult.hpp
  *
  */
 #pragma once

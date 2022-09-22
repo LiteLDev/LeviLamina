@@ -1,5 +1,5 @@
 /**
- * @file  MC/RegistryKey.hpp
+ * @file  RegistryKey.hpp
  *
  */
 #pragma once

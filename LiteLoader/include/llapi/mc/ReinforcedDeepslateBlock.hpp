@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReinforcedDeepslateBlock.hpp
+ * @file  ReinforcedDeepslateBlock.hpp
  *
  */
 #pragma once

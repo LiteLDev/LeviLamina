@@ -1,5 +1,5 @@
 /**
- * @file  MC/ParticleEventRequestQueueComponent.hpp
+ * @file  ParticleEventRequestQueueComponent.hpp
  *
  */
 #pragma once

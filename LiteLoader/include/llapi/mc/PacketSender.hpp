@@ -1,5 +1,5 @@
 /**
- * @file  MC/PacketSender.hpp
+ * @file  PacketSender.hpp
  *
  */
 #pragma once

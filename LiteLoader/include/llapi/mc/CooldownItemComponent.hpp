@@ -1,5 +1,5 @@
 /**
- * @file  MC/CooldownItemComponent.hpp
+ * @file  CooldownItemComponent.hpp
  *
  */
 #pragma once

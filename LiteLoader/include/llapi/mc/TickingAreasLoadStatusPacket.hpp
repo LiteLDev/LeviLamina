@@ -1,5 +1,5 @@
 /**
- * @file  MC/TickingAreasLoadStatusPacket.hpp
+ * @file  TickingAreasLoadStatusPacket.hpp
  *
  */
 #pragma once

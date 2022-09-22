@@ -1,5 +1,5 @@
 /**
- * @file  MC/BreathableComponent.hpp
+ * @file  BreathableComponent.hpp
  *
  */
 #pragma once

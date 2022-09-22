@@ -1,5 +1,5 @@
 /**
- * @file  MC/SurvivalMode.hpp
+ * @file  SurvivalMode.hpp
  *
  */
 #pragma once

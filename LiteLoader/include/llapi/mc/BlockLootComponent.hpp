@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockLootComponent.hpp
+ * @file  BlockLootComponent.hpp
  *
  */
 #pragma once

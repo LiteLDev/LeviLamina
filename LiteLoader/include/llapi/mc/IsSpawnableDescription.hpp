@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsSpawnableDescription.hpp
+ * @file  IsSpawnableDescription.hpp
  *
  */
 #pragma once

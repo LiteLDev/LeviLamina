@@ -1,5 +1,5 @@
 /**
- * @file  MC/UndyedShulkerBoxBlock.hpp
+ * @file  UndyedShulkerBoxBlock.hpp
  *
  */
 #pragma once

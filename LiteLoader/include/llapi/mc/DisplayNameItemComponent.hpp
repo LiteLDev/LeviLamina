@@ -1,5 +1,5 @@
 /**
- * @file  MC/DisplayNameItemComponent.hpp
+ * @file  DisplayNameItemComponent.hpp
  *
  */
 #pragma once

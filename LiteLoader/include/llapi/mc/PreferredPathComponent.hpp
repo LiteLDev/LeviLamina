@@ -1,5 +1,5 @@
 /**
- * @file  MC/PreferredPathComponent.hpp
+ * @file  PreferredPathComponent.hpp
  *
  */
 #pragma once

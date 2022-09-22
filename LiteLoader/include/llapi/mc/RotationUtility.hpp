@@ -1,5 +1,5 @@
 /**
- * @file  MC/RotationUtility.hpp
+ * @file  RotationUtility.hpp
  *
  */
 #pragma once

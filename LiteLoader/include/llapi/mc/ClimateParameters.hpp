@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClimateParameters.hpp
+ * @file  ClimateParameters.hpp
  *
  */
 #pragma once

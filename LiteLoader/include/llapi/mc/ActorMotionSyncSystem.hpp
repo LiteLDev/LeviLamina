@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorMotionSyncSystem.hpp
+ * @file  ActorMotionSyncSystem.hpp
  *
  */
 #pragma once

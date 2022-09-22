@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlimeFloatGoal.hpp
+ * @file  SlimeFloatGoal.hpp
  *
  */
 #pragma once

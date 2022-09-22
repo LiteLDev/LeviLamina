@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerGameTypeUtility.hpp
+ * @file  PlayerGameTypeUtility.hpp
  *
  */
 #pragma once

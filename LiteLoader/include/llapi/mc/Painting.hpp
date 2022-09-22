@@ -1,5 +1,5 @@
 /**
- * @file  MC/Painting.hpp
+ * @file  Painting.hpp
  *
  */
 #pragma once

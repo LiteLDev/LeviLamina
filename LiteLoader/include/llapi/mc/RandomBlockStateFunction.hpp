@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomBlockStateFunction.hpp
+ * @file  RandomBlockStateFunction.hpp
  *
  */
 #pragma once

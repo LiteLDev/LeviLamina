@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockStateCommandParam.hpp
+ * @file  BlockStateCommandParam.hpp
  *
  */
 #pragma once

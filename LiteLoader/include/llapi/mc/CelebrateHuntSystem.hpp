@@ -1,5 +1,5 @@
 /**
- * @file  MC/CelebrateHuntSystem.hpp
+ * @file  CelebrateHuntSystem.hpp
  *
  */
 #pragma once

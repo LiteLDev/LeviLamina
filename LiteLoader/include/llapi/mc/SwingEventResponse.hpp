@@ -1,5 +1,5 @@
 /**
- * @file  MC/SwingEventResponse.hpp
+ * @file  SwingEventResponse.hpp
  *
  */
 #pragma once

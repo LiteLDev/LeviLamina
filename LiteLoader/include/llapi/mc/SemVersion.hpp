@@ -1,5 +1,5 @@
 /**
- * @file  MC/SemVersion.hpp
+ * @file  SemVersion.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DesertWellFeature.hpp
+ * @file  DesertWellFeature.hpp
  *
  */
 #pragma once

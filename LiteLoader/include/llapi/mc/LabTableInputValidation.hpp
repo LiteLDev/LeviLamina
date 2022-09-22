@@ -1,5 +1,5 @@
 /**
- * @file  MC/LabTableInputValidation.hpp
+ * @file  LabTableInputValidation.hpp
  *
  */
 #pragma once

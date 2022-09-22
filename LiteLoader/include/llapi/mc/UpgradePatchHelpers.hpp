@@ -1,5 +1,5 @@
 /**
- * @file  MC/UpgradePatchHelpers.hpp
+ * @file  UpgradePatchHelpers.hpp
  *
  */
 #pragma once

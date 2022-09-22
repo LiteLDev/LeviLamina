@@ -1,5 +1,5 @@
 /**
- * @file  MC/POIInstance.hpp
+ * @file  POIInstance.hpp
  *
  */
 #pragma once

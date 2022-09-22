@@ -1,5 +1,5 @@
 /**
- * @file  MC/FileInfo.hpp
+ * @file  FileInfo.hpp
  *
  */
 #pragma once

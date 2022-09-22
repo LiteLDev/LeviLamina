@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockSet.hpp
+ * @file  BlockSet.hpp
  *
  */
 #pragma once

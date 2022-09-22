@@ -1,5 +1,5 @@
 /**
- * @file  MC/ParticleCommand.hpp
+ * @file  ParticleCommand.hpp
  *
  */
 #pragma once

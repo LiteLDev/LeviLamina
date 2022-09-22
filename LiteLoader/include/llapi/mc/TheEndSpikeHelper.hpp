@@ -1,5 +1,5 @@
 /**
- * @file  MC/TheEndSpikeHelper.hpp
+ * @file  TheEndSpikeHelper.hpp
  *
  */
 #pragma once

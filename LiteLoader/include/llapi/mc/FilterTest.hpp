@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTest.hpp
+ * @file  FilterTest.hpp
  *
  */
 #pragma once

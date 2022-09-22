@@ -1,5 +1,5 @@
 /**
- * @file  MC/SnapshotEnv.hpp
+ * @file  SnapshotEnv.hpp
  *
  */
 #pragma once

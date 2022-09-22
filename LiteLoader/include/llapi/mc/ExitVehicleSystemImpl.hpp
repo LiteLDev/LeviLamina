@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExitVehicleSystemImpl.hpp
+ * @file  ExitVehicleSystemImpl.hpp
  *
  */
 #pragma once

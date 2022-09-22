@@ -1,5 +1,5 @@
 /**
- * @file  MC/GoalSelectorSystem.hpp
+ * @file  GoalSelectorSystem.hpp
  *
  */
 #pragma once

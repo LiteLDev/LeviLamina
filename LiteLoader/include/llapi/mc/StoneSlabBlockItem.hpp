@@ -1,5 +1,5 @@
 /**
- * @file  MC/StoneSlabBlockItem.hpp
+ * @file  StoneSlabBlockItem.hpp
  *
  */
 #pragma once

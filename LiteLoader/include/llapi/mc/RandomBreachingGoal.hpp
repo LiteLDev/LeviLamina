@@ -1,5 +1,5 @@
 /**
- * @file  MC/RandomBreachingGoal.hpp
+ * @file  RandomBreachingGoal.hpp
  *
  */
 #pragma once

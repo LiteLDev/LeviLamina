@@ -1,5 +1,5 @@
 /**
- * @file  MC/PickaxeItem.hpp
+ * @file  PickaxeItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunk.hpp
+ * @file  SubChunk.hpp
  *
  */
 #pragma once

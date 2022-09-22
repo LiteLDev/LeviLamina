@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoolOption.hpp
+ * @file  BoolOption.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EndCityFeature.hpp
+ * @file  EndCityFeature.hpp
  *
  */
 #pragma once

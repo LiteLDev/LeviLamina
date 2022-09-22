@@ -1,5 +1,5 @@
 /**
- * @file  MC/FreezingComponent.hpp
+ * @file  FreezingComponent.hpp
  *
  */
 #pragma once

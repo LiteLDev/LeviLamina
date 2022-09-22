@@ -1,5 +1,5 @@
 /**
- * @file  MC/CodebuilderComponent.hpp
+ * @file  CodebuilderComponent.hpp
  *
  */
 #pragma once

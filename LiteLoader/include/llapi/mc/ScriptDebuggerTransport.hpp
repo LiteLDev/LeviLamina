@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptDebuggerTransport.hpp
+ * @file  ScriptDebuggerTransport.hpp
  *
  */
 #pragma once

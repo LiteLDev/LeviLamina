@@ -1,5 +1,5 @@
 /**
- * @file  MC/BiomeSourceUtil.hpp
+ * @file  BiomeSourceUtil.hpp
  *
  */
 #pragma once

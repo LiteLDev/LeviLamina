@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPartVisibilityComponent.hpp
+ * @file  BlockPartVisibilityComponent.hpp
  *
  */
 #pragma once

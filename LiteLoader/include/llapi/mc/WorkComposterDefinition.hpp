@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorkComposterDefinition.hpp
+ * @file  WorkComposterDefinition.hpp
  *
  */
 #pragma once

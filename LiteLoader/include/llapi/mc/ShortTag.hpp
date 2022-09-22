@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShortTag.hpp
+ * @file  ShortTag.hpp
  *
  */
 #pragma once

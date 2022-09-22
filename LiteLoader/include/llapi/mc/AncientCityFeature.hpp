@@ -1,5 +1,5 @@
 /**
- * @file  MC/AncientCityFeature.hpp
+ * @file  AncientCityFeature.hpp
  *
  */
 #pragma once

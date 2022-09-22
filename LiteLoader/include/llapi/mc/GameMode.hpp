@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameMode.hpp
+ * @file  GameMode.hpp
  *
  */
 #pragma once

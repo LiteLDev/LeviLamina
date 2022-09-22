@@ -1,5 +1,5 @@
 /**
- * @file  MC/DistanceConstraint.hpp
+ * @file  DistanceConstraint.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityServerPacket.hpp
+ * @file  EntityServerPacket.hpp
  *
  */
 #pragma once

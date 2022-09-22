@@ -1,5 +1,5 @@
 /**
- * @file  MC/SeaPickleBlockItem.hpp
+ * @file  SeaPickleBlockItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestDistanceToNearestPlayer.hpp
+ * @file  FilterTestDistanceToNearestPlayer.hpp
  *
  */
 #pragma once

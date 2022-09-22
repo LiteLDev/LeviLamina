@@ -1,5 +1,5 @@
 /**
- * @file  MC/RabbitPanicGoal.hpp
+ * @file  RabbitPanicGoal.hpp
  *
  */
 #pragma once

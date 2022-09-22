@@ -1,5 +1,5 @@
 /**
- * @file  MC/WanderingTrader.hpp
+ * @file  WanderingTrader.hpp
  *
  */
 #pragma once

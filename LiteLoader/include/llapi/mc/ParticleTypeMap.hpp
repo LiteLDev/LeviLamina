@@ -1,5 +1,5 @@
 /**
- * @file  MC/ParticleTypeMap.hpp
+ * @file  ParticleTypeMap.hpp
  *
  */
 #pragma once

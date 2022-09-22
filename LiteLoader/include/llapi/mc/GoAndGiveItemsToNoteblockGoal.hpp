@@ -1,5 +1,5 @@
 /**
- * @file  MC/GoAndGiveItemsToNoteblockGoal.hpp
+ * @file  GoAndGiveItemsToNoteblockGoal.hpp
  *
  */
 #pragma once

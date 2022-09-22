@@ -1,5 +1,5 @@
 /**
- * @file  MC/Goat.hpp
+ * @file  Goat.hpp
  *
  */
 #pragma once

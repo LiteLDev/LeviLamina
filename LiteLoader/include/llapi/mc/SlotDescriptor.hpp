@@ -1,5 +1,5 @@
 /**
- * @file  MC/SlotDescriptor.hpp
+ * @file  SlotDescriptor.hpp
  *
  */
 #pragma once

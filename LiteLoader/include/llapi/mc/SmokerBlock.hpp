@@ -1,5 +1,5 @@
 /**
- * @file  MC/SmokerBlock.hpp
+ * @file  SmokerBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockItem.hpp
+ * @file  BlockItem.hpp
  *
  */
 #pragma once

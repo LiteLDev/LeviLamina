@@ -1,5 +1,5 @@
 /**
- * @file  MC/VillageFeature.hpp
+ * @file  VillageFeature.hpp
  *
  */
 #pragma once

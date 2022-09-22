@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClientboundMapItemDataPacket.hpp
+ * @file  ClientboundMapItemDataPacket.hpp
  *
  */
 #pragma once

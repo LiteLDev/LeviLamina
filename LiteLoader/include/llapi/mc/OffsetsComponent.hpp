@@ -1,5 +1,5 @@
 /**
- * @file  MC/OffsetsComponent.hpp
+ * @file  OffsetsComponent.hpp
  *
  */
 #pragma once

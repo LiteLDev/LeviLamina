@@ -1,5 +1,5 @@
 /**
- * @file  MC/BedrockBlockTypes.hpp
+ * @file  BedrockBlockTypes.hpp
  *
  */
 #pragma once

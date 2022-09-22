@@ -1,5 +1,5 @@
 /**
- * @file  MC/RakTcpProxy.hpp
+ * @file  RakTcpProxy.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/TakePictureCommand.hpp
+ * @file  TakePictureCommand.hpp
  *
  */
 #pragma once

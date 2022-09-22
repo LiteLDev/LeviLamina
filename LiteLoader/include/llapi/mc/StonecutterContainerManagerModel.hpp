@@ -1,5 +1,5 @@
 /**
- * @file  MC/StonecutterContainerManagerModel.hpp
+ * @file  StonecutterContainerManagerModel.hpp
  *
  */
 #pragma once

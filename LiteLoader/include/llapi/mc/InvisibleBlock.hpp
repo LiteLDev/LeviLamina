@@ -1,5 +1,5 @@
 /**
- * @file  MC/InvisibleBlock.hpp
+ * @file  InvisibleBlock.hpp
  *
  */
 #pragma once

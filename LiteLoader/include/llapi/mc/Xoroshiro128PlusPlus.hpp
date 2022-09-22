@@ -1,5 +1,5 @@
 /**
- * @file  MC/Xoroshiro128PlusPlus.hpp
+ * @file  Xoroshiro128PlusPlus.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MerchantRecipe.hpp
+ * @file  MerchantRecipe.hpp
  *
  */
 #pragma once

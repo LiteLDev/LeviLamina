@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecartCanSnapOnRailSystem.hpp
+ * @file  MinecartCanSnapOnRailSystem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/BegGoal.hpp
+ * @file  BegGoal.hpp
  *
  */
 #pragma once

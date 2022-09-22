@@ -1,5 +1,5 @@
 /**
- * @file  MC/CurseVanishingEnchant.hpp
+ * @file  CurseVanishingEnchant.hpp
  *
  */
 #pragma once

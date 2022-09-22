@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelChunkMetaDataInitializer.hpp
+ * @file  LevelChunkMetaDataInitializer.hpp
  *
  */
 #pragma once

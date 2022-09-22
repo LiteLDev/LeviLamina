@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetworkIdentifier.hpp
+ * @file  NetworkIdentifier.hpp
  *
  */
 #pragma once

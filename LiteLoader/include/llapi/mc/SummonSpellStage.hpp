@@ -1,5 +1,5 @@
 /**
- * @file  MC/SummonSpellStage.hpp
+ * @file  SummonSpellStage.hpp
  *
  */
 #pragma once

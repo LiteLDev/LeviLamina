@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterTestBrightness.hpp
+ * @file  FilterTestBrightness.hpp
  *
  */
 #pragma once

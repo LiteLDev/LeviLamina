@@ -1,5 +1,5 @@
 /**
- * @file  MC/Potion.hpp
+ * @file  Potion.hpp
  *
  */
 #pragma once

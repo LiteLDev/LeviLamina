@@ -1,5 +1,5 @@
 /**
- * @file  MC/DamageSensorDefinition.hpp
+ * @file  DamageSensorDefinition.hpp
  *
  */
 #pragma once

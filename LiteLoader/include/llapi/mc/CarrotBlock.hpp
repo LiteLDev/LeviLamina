@@ -1,5 +1,5 @@
 /**
- * @file  MC/CarrotBlock.hpp
+ * @file  CarrotBlock.hpp
  *
  */
 #pragma once

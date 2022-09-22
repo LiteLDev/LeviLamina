@@ -1,5 +1,5 @@
 /**
- * @file  MC/TagCommand.hpp
+ * @file  TagCommand.hpp
  *
  */
 #pragma once

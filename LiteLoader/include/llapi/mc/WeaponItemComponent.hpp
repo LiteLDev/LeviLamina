@@ -1,5 +1,5 @@
 /**
- * @file  MC/WeaponItemComponent.hpp
+ * @file  WeaponItemComponent.hpp
  *
  */
 #pragma once

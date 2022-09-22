@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityFactory.hpp
+ * @file  EntityFactory.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ImitateMobSoundsComponent.hpp
+ * @file  ImitateMobSoundsComponent.hpp
  *
  */
 #pragma once

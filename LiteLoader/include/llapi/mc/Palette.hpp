@@ -1,5 +1,5 @@
 /**
- * @file  MC/Palette.hpp
+ * @file  Palette.hpp
  *
  */
 #pragma once

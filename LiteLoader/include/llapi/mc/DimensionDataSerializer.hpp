@@ -1,5 +1,5 @@
 /**
- * @file  MC/DimensionDataSerializer.hpp
+ * @file  DimensionDataSerializer.hpp
  *
  */
 #pragma once

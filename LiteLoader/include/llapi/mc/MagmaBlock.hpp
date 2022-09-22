@@ -1,5 +1,5 @@
 /**
- * @file  MC/MagmaBlock.hpp
+ * @file  MagmaBlock.hpp
  *
  */
 #pragma once

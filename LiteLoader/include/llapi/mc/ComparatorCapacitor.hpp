@@ -1,5 +1,5 @@
 /**
- * @file  MC/ComparatorCapacitor.hpp
+ * @file  ComparatorCapacitor.hpp
  *
  */
 #pragma once

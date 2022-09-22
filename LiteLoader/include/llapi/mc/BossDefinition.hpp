@@ -1,5 +1,5 @@
 /**
- * @file  MC/BossDefinition.hpp
+ * @file  BossDefinition.hpp
  *
  */
 #pragma once

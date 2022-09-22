@@ -1,5 +1,5 @@
 /**
- * @file  MC/WorldGenContext.hpp
+ * @file  WorldGenContext.hpp
  *
  */
 #pragma once

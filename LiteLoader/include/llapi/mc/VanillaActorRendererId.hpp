@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaActorRendererId.hpp
+ * @file  VanillaActorRendererId.hpp
  *
  */
 #pragma once

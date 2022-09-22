@@ -1,5 +1,5 @@
 /**
- * @file  MC/TameableDefinition.hpp
+ * @file  TameableDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PingedCompatibleServer.hpp
+ * @file  PingedCompatibleServer.hpp
  *
  */
 #pragma once

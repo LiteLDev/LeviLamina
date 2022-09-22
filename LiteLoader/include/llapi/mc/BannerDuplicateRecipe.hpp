@@ -1,5 +1,5 @@
 /**
- * @file  MC/BannerDuplicateRecipe.hpp
+ * @file  BannerDuplicateRecipe.hpp
  *
  */
 #pragma once

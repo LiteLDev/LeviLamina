@@ -1,5 +1,5 @@
 /**
- * @file  MC/SubChunkBlockStorageUtil.hpp
+ * @file  SubChunkBlockStorageUtil.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CraftingEventPacket.hpp
+ * @file  CraftingEventPacket.hpp
  *
  */
 #pragma once

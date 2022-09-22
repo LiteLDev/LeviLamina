@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShareItemsGoal.hpp
+ * @file  ShareItemsGoal.hpp
  *
  */
 #pragma once

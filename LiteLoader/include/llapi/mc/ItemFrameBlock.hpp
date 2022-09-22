@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemFrameBlock.hpp
+ * @file  ItemFrameBlock.hpp
  *
  */
 #pragma once

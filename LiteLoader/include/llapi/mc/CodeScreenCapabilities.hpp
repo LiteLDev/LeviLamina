@@ -1,5 +1,5 @@
 /**
- * @file  MC/CodeScreenCapabilities.hpp
+ * @file  CodeScreenCapabilities.hpp
  *
  */
 #pragma once

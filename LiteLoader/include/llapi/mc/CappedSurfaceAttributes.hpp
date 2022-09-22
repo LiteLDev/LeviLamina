@@ -1,5 +1,5 @@
 /**
- * @file  MC/CappedSurfaceAttributes.hpp
+ * @file  CappedSurfaceAttributes.hpp
  *
  */
 #pragma once

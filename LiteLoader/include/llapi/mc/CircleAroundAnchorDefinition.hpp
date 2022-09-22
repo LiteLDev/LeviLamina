@@ -1,5 +1,5 @@
 /**
- * @file  MC/CircleAroundAnchorDefinition.hpp
+ * @file  CircleAroundAnchorDefinition.hpp
  *
  */
 #pragma once

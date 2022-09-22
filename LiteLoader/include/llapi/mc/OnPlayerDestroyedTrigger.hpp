@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnPlayerDestroyedTrigger.hpp
+ * @file  OnPlayerDestroyedTrigger.hpp
  *
  */
 #pragma once

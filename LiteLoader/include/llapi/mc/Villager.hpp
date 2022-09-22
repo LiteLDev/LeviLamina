@@ -1,5 +1,5 @@
 /**
- * @file  MC/Villager.hpp
+ * @file  Villager.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SecureStorage.hpp
+ * @file  SecureStorage.hpp
  *
  */
 #pragma once

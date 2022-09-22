@@ -1,5 +1,5 @@
 /**
- * @file  MC/TripodCameraActivatedComponent.hpp
+ * @file  TripodCameraActivatedComponent.hpp
  *
  */
 #pragma once

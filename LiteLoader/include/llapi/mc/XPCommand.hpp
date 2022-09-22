@@ -1,5 +1,5 @@
 /**
- * @file  MC/XPCommand.hpp
+ * @file  XPCommand.hpp
  *
  */
 #pragma once

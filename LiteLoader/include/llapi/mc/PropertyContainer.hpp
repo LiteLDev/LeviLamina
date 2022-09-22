@@ -1,5 +1,5 @@
 /**
- * @file  MC/PropertyContainer.hpp
+ * @file  PropertyContainer.hpp
  *
  */
 #pragma once

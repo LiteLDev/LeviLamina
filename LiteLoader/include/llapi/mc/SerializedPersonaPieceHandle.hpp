@@ -1,5 +1,5 @@
 /**
- * @file  MC/SerializedPersonaPieceHandle.hpp
+ * @file  SerializedPersonaPieceHandle.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LocateCommand.hpp
+ * @file  LocateCommand.hpp
  *
  */
 #pragma once

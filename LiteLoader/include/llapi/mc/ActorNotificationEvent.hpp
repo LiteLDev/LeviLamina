@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorNotificationEvent.hpp
+ * @file  ActorNotificationEvent.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/CoalItem.hpp
+ * @file  CoalItem.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyJigsawPlacement.hpp
+ * @file  LegacyJigsawPlacement.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/HealableDefinition.hpp
+ * @file  HealableDefinition.hpp
  *
  */
 #pragma once

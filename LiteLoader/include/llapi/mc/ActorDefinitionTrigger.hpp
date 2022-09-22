@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorDefinitionTrigger.hpp
+ * @file  ActorDefinitionTrigger.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/GuiDataPickItemPacket.hpp
+ * @file  GuiDataPickItemPacket.hpp
  *
  */
 #pragma once

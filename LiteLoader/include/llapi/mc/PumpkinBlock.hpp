@@ -1,5 +1,5 @@
 /**
- * @file  MC/PumpkinBlock.hpp
+ * @file  PumpkinBlock.hpp
  *
  */
 #pragma once

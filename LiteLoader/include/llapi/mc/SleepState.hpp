@@ -1,5 +1,5 @@
 /**
- * @file  MC/SleepState.hpp
+ * @file  SleepState.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/NbtIo.hpp
+ * @file  NbtIo.hpp
  *
  */
 #pragma once

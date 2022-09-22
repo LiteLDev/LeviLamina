@@ -1,5 +1,5 @@
 /**
- * @file  MC/PlayerOpenContainerEvent.hpp
+ * @file  PlayerOpenContainerEvent.hpp
  *
  */
 #pragma once

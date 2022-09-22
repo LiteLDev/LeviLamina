@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorIsSkinIDTest.hpp
+ * @file  ActorIsSkinIDTest.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveToWaterGoal.hpp
+ * @file  MoveToWaterGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PeekComponent.hpp
+ * @file  PeekComponent.hpp
  *
  */
 #pragma once

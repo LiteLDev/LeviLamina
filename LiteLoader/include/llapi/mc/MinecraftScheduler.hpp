@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecraftScheduler.hpp
+ * @file  MinecraftScheduler.hpp
  *
  */
 #pragma once

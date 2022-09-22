@@ -1,5 +1,5 @@
 /**
- * @file  MC/BucketItem.hpp
+ * @file  BucketItem.hpp
  *
  */
 #pragma once

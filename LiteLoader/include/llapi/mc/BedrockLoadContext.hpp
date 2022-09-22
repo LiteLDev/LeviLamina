@@ -1,5 +1,5 @@
 /**
- * @file  MC/BedrockLoadContext.hpp
+ * @file  BedrockLoadContext.hpp
  *
  */
 #pragma once

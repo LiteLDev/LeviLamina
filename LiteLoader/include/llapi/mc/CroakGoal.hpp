@@ -1,5 +1,5 @@
 /**
- * @file  MC/CroakGoal.hpp
+ * @file  CroakGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/StoneCutterContainerScreenValidator.hpp
+ * @file  StoneCutterContainerScreenValidator.hpp
  *
  */
 #pragma once

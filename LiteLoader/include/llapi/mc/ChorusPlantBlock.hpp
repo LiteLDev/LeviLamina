@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChorusPlantBlock.hpp
+ * @file  ChorusPlantBlock.hpp
  *
  */
 #pragma once

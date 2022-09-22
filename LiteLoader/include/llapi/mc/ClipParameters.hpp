@@ -1,5 +1,5 @@
 /**
- * @file  MC/ClipParameters.hpp
+ * @file  ClipParameters.hpp
  *
  */
 #pragma once

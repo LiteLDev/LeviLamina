@@ -1,5 +1,5 @@
 /**
- * @file  MC/MossStoneSelector.hpp
+ * @file  MossStoneSelector.hpp
  *
  */
 #pragma once

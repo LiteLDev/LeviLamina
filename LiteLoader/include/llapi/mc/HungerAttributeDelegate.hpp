@@ -1,5 +1,5 @@
 /**
- * @file  MC/HungerAttributeDelegate.hpp
+ * @file  HungerAttributeDelegate.hpp
  *
  */
 #pragma once

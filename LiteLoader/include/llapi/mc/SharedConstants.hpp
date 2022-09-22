@@ -1,5 +1,5 @@
 /**
- * @file  MC/SharedConstants.hpp
+ * @file  SharedConstants.hpp
  *
  */
 #pragma once

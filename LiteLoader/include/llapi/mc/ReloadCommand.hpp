@@ -1,5 +1,5 @@
 /**
- * @file  MC/ReloadCommand.hpp
+ * @file  ReloadCommand.hpp
  *
  */
 #pragma once

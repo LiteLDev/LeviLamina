@@ -1,5 +1,5 @@
 /**
- * @file  MC/NBMonsterThrone.hpp
+ * @file  NBMonsterThrone.hpp
  *
  */
 #pragma once

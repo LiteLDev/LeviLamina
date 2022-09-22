@@ -1,5 +1,5 @@
 /**
- * @file  MC/XoroshiroRandom.hpp
+ * @file  XoroshiroRandom.hpp
  *
  */
 #pragma once

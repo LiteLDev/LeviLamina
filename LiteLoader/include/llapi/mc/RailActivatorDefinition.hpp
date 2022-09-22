@@ -1,5 +1,5 @@
 /**
- * @file  MC/RailActivatorDefinition.hpp
+ * @file  RailActivatorDefinition.hpp
  *
  */
 #pragma once

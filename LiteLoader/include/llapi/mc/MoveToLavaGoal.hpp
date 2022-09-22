@@ -1,5 +1,5 @@
 /**
- * @file  MC/MoveToLavaGoal.hpp
+ * @file  MoveToLavaGoal.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DimensionStateComponent.hpp
+ * @file  DimensionStateComponent.hpp
  *
  */
 #pragma once

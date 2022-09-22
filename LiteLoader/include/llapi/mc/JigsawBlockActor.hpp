@@ -1,5 +1,5 @@
 /**
- * @file  MC/JigsawBlockActor.hpp
+ * @file  JigsawBlockActor.hpp
  *
  */
 #pragma once

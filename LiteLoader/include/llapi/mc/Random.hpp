@@ -1,5 +1,5 @@
 /**
- * @file  MC/Random.hpp
+ * @file  Random.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/PropertyMetadata.hpp
+ * @file  PropertyMetadata.hpp
  *
  */
 #pragma once

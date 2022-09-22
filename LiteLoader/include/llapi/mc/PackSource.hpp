@@ -1,5 +1,5 @@
 /**
- * @file  MC/PackSource.hpp
+ * @file  PackSource.hpp
  *
  */
 #pragma once

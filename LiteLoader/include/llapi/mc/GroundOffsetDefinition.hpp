@@ -1,5 +1,5 @@
 /**
- * @file  MC/GroundOffsetDefinition.hpp
+ * @file  GroundOffsetDefinition.hpp
  *
  */
 #pragma once

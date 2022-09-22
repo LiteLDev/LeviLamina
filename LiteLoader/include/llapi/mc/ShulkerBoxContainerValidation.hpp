@@ -1,5 +1,5 @@
 /**
- * @file  MC/ShulkerBoxContainerValidation.hpp
+ * @file  ShulkerBoxContainerValidation.hpp
  *
  */
 #pragma once

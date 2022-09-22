@@ -1,5 +1,5 @@
 /**
- * @file  MC/BannerBlockActor.hpp
+ * @file  BannerBlockActor.hpp
  *
  */
 #pragma once

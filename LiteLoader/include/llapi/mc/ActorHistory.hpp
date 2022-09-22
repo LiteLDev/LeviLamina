@@ -1,5 +1,5 @@
 /**
- * @file  MC/ActorHistory.hpp
+ * @file  ActorHistory.hpp
  *
  */
 #pragma once

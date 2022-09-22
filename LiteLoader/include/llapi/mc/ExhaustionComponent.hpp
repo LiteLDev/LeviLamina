@@ -1,5 +1,5 @@
 /**
- * @file  MC/ExhaustionComponent.hpp
+ * @file  ExhaustionComponent.hpp
  *
  */
 #pragma once

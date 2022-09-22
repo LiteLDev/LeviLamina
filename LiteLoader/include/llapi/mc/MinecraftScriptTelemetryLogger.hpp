@@ -1,5 +1,5 @@
 /**
- * @file  MC/MinecraftScriptTelemetryLogger.hpp
+ * @file  MinecraftScriptTelemetryLogger.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ListDCommand.hpp
+ * @file  ListDCommand.hpp
  *
  */
 #pragma once

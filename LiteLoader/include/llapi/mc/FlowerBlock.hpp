@@ -1,5 +1,5 @@
 /**
- * @file  MC/FlowerBlock.hpp
+ * @file  FlowerBlock.hpp
  *
  */
 #pragma once

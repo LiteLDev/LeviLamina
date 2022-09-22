@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThrownPotionEffectSubcomponent.hpp
+ * @file  ThrownPotionEffectSubcomponent.hpp
  *
  */
 #pragma once

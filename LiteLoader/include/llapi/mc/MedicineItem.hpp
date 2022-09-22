@@ -1,5 +1,5 @@
 /**
- * @file  MC/MedicineItem.hpp
+ * @file  MedicineItem.hpp
  *
  */
 #pragma once

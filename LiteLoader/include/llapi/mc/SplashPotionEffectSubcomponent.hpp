@@ -1,5 +1,5 @@
 /**
- * @file  MC/SplashPotionEffectSubcomponent.hpp
+ * @file  SplashPotionEffectSubcomponent.hpp
  *
  */
 #pragma once

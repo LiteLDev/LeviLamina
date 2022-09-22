@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThrowableItemComponent.hpp
+ * @file  ThrowableItemComponent.hpp
  *
  */
 #pragma once

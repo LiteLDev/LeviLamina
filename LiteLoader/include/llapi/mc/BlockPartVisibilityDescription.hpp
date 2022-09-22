@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockPartVisibilityDescription.hpp
+ * @file  BlockPartVisibilityDescription.hpp
  *
  */
 #pragma once

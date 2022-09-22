@@ -1,5 +1,5 @@
 /**
- * @file  MC/FilterStringMap.hpp
+ * @file  FilterStringMap.hpp
  *
  */
 #pragma once

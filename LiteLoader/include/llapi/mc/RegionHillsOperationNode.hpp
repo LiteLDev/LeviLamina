@@ -1,5 +1,5 @@
 /**
- * @file  MC/RegionHillsOperationNode.hpp
+ * @file  RegionHillsOperationNode.hpp
  *
  */
 #pragma once

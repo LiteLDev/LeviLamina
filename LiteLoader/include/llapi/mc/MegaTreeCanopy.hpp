@@ -1,5 +1,5 @@
 /**
- * @file  MC/MegaTreeCanopy.hpp
+ * @file  MegaTreeCanopy.hpp
  *
  */
 #pragma once

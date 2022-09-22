@@ -1,5 +1,5 @@
 /**
- * @file  MC/EntityEnterVolumeSystemUtil.hpp
+ * @file  EntityEnterVolumeSystemUtil.hpp
  *
  */
 #pragma once

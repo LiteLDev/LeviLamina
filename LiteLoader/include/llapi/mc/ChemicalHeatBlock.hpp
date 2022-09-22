@@ -1,5 +1,5 @@
 /**
- * @file  MC/ChemicalHeatBlock.hpp
+ * @file  ChemicalHeatBlock.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/DialogueCommand.hpp
+ * @file  DialogueCommand.hpp
  *
  */
 #pragma once

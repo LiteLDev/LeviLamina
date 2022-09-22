@@ -1,5 +1,5 @@
 /**
- * @file  MC/SerializerEnumMapping.hpp
+ * @file  SerializerEnumMapping.hpp
  *
  */
 #pragma once

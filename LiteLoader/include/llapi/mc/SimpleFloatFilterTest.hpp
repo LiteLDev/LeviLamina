@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimpleFloatFilterTest.hpp
+ * @file  SimpleFloatFilterTest.hpp
  *
  */
 #pragma once

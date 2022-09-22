@@ -1,5 +1,5 @@
 /**
- * @file  MC/StairBlock.hpp
+ * @file  StairBlock.hpp
  *
  */
 #pragma once

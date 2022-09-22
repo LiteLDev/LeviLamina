@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockLegacyPtrProxy.hpp
+ * @file  BlockLegacyPtrProxy.hpp
  *
  */
 #pragma once

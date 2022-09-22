@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherGenerator.hpp
+ * @file  NetherGenerator.hpp
  *
  */
 #pragma once

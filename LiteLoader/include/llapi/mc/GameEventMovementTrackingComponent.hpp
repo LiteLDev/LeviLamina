@@ -1,5 +1,5 @@
 /**
- * @file  MC/GameEventMovementTrackingComponent.hpp
+ * @file  GameEventMovementTrackingComponent.hpp
  *
  */
 #pragma once

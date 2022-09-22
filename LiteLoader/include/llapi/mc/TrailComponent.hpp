@@ -1,5 +1,5 @@
 /**
- * @file  MC/TrailComponent.hpp
+ * @file  TrailComponent.hpp
  *
  */
 #pragma once

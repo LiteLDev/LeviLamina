@@ -1,5 +1,5 @@
 /**
- * @file  MC/GetCollisionShapeActorProxy.hpp
+ * @file  GetCollisionShapeActorProxy.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptPluginPackSource.hpp
+ * @file  ScriptPluginPackSource.hpp
  *
  */
 #pragma once

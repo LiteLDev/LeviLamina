@@ -1,5 +1,5 @@
 /**
- * @file  MC/ObjectiveCriteria.hpp
+ * @file  ObjectiveCriteria.hpp
  *
  */
 #pragma once

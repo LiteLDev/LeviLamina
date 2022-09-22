@@ -1,5 +1,5 @@
 /**
- * @file  MC/NetherWartBlock.hpp
+ * @file  NetherWartBlock.hpp
  *
  */
 #pragma once

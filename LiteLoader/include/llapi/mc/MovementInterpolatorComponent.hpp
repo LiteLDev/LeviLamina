@@ -1,5 +1,5 @@
 /**
- * @file  MC/MovementInterpolatorComponent.hpp
+ * @file  MovementInterpolatorComponent.hpp
  *
  */
 #pragma once

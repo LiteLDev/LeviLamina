@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemControlDefinition.hpp
+ * @file  ItemControlDefinition.hpp
  *
  */
 #pragma once

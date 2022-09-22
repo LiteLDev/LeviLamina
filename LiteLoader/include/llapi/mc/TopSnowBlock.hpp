@@ -1,5 +1,5 @@
 /**
- * @file  MC/TopSnowBlock.hpp
+ * @file  TopSnowBlock.hpp
  *
  */
 #pragma once

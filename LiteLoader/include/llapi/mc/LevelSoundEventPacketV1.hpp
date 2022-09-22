@@ -1,5 +1,5 @@
 /**
- * @file  MC/LevelSoundEventPacketV1.hpp
+ * @file  LevelSoundEventPacketV1.hpp
  *
  */
 #pragma once

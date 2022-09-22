@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructureSettings.hpp
+ * @file  StructureSettings.hpp
  *
  */
 #pragma once

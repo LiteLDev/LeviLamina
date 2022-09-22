@@ -1,5 +1,5 @@
 /**
- * @file  MC/Option.hpp
+ * @file  Option.hpp
  *
  */
 #pragma once

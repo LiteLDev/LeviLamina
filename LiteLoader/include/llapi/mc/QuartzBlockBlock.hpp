@@ -1,5 +1,5 @@
 /**
- * @file  MC/QuartzBlockBlock.hpp
+ * @file  QuartzBlockBlock.hpp
  *
  */
 #pragma once

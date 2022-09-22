@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnActorLeaveVolumeDefinition.hpp
+ * @file  OnActorLeaveVolumeDefinition.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/FixedBiomeSource.hpp
+ * @file  FixedBiomeSource.hpp
  *
  */
 #pragma once

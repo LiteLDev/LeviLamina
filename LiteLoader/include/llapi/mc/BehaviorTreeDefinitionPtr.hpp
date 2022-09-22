@@ -1,5 +1,5 @@
 /**
- * @file  MC/BehaviorTreeDefinitionPtr.hpp
+ * @file  BehaviorTreeDefinitionPtr.hpp
  *
  */
 #pragma once

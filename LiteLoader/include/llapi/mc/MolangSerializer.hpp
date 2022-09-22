@@ -1,5 +1,5 @@
 /**
- * @file  MC/MolangSerializer.hpp
+ * @file  MolangSerializer.hpp
  *
  */
 #pragma once

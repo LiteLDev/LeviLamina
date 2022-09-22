@@ -1,5 +1,5 @@
 /**
- * @file  MC/ProfilerLite.hpp
+ * @file  ProfilerLite.hpp
  *
  */
 #pragma once

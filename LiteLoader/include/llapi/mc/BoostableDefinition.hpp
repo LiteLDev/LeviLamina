@@ -1,5 +1,5 @@
 /**
- * @file  MC/BoostableDefinition.hpp
+ * @file  BoostableDefinition.hpp
  *
  */
 #pragma once

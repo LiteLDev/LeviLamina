@@ -1,5 +1,5 @@
 /**
- * @file  MC/ItemStackRequestActionCraftGrindstone.hpp
+ * @file  ItemStackRequestActionCraftGrindstone.hpp
  *
  */
 #pragma once

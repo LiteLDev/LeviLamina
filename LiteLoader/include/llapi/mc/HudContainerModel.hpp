@@ -1,5 +1,5 @@
 /**
- * @file  MC/HudContainerModel.hpp
+ * @file  HudContainerModel.hpp
  *
  */
 #pragma once

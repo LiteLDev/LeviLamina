@@ -1,5 +1,5 @@
 /**
- * @file  MC/RoomDefinition.hpp
+ * @file  RoomDefinition.hpp
  *
  */
 #pragma once

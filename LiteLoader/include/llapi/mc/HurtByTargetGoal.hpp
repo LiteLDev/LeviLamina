@@ -1,5 +1,5 @@
 /**
- * @file  MC/HurtByTargetGoal.hpp
+ * @file  HurtByTargetGoal.hpp
  *
  */
 #pragma once

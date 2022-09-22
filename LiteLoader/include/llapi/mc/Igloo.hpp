@@ -1,5 +1,5 @@
 /**
- * @file  MC/Igloo.hpp
+ * @file  Igloo.hpp
  *
  */
 #pragma once

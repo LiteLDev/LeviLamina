@@ -1,5 +1,5 @@
 /**
- * @file  MC/ScriptingNotificationEvent.hpp
+ * @file  ScriptingNotificationEvent.hpp
  *
  */
 #pragma once

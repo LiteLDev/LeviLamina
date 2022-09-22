@@ -1,5 +1,5 @@
 /**
- * @file  MC/RepeaterBlock.hpp
+ * @file  RepeaterBlock.hpp
  *
  */
 #pragma once

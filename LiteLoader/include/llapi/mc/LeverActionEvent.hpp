@@ -1,5 +1,5 @@
 /**
- * @file  MC/LeverActionEvent.hpp
+ * @file  LeverActionEvent.hpp
  *
  */
 #pragma once

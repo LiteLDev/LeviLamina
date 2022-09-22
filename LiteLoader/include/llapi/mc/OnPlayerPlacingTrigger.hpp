@@ -1,5 +1,5 @@
 /**
- * @file  MC/OnPlayerPlacingTrigger.hpp
+ * @file  OnPlayerPlacingTrigger.hpp
  *
  */
 #pragma once

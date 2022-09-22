@@ -1,5 +1,5 @@
 /**
- * @file  MC/FeatureToggles.hpp
+ * @file  FeatureToggles.hpp
  *
  */
 #pragma once

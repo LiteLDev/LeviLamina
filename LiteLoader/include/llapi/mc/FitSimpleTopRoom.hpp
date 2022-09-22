@@ -1,5 +1,5 @@
 /**
- * @file  MC/FitSimpleTopRoom.hpp
+ * @file  FitSimpleTopRoom.hpp
  *
  */
 #pragma once

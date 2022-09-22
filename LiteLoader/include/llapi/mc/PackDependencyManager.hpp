@@ -1,5 +1,5 @@
 /**
- * @file  MC/PackDependencyManager.hpp
+ * @file  PackDependencyManager.hpp
  *
  */
 #pragma once

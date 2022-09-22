@@ -1,5 +1,5 @@
 /**
- * @file  MC/BlockFlammableDescription.hpp
+ * @file  BlockFlammableDescription.hpp
  *
  */
 #pragma once

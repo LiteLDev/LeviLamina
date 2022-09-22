@@ -1,5 +1,5 @@
 /**
- * @file  MC/IsSummonableDescription.hpp
+ * @file  IsSummonableDescription.hpp
  *
  */
 #pragma once

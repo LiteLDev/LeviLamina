@@ -1,5 +1,5 @@
 /**
- * @file  MC/PartiallyExposedBlobFeature.hpp
+ * @file  PartiallyExposedBlobFeature.hpp
  *
  */
 #pragma once

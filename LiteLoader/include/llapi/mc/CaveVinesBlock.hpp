@@ -1,5 +1,5 @@
 /**
- * @file  MC/CaveVinesBlock.hpp
+ * @file  CaveVinesBlock.hpp
  *
  */
 #pragma once

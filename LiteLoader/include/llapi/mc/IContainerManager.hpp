@@ -1,5 +1,5 @@
 /**
- * @file  MC/IContainerManager.hpp
+ * @file  IContainerManager.hpp
  *
  */
 #pragma once

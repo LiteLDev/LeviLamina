@@ -1,5 +1,5 @@
 /**
- * @file  MC/ThirdPartyInfo.hpp
+ * @file  ThirdPartyInfo.hpp
  *
  */
 #pragma once

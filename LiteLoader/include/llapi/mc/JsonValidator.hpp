@@ -1,5 +1,5 @@
 /**
- * @file  MC/JsonValidator.hpp
+ * @file  JsonValidator.hpp
  *
  */
 #pragma once

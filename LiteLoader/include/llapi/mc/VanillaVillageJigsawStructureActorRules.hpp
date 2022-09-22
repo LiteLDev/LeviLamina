@@ -1,5 +1,5 @@
 /**
- * @file  MC/VanillaVillageJigsawStructureActorRules.hpp
+ * @file  VanillaVillageJigsawStructureActorRules.hpp
  *
  */
 #pragma once

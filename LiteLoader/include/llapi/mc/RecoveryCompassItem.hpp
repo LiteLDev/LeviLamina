@@ -1,5 +1,5 @@
 /**
- * @file  MC/RecoveryCompassItem.hpp
+ * @file  RecoveryCompassItem.hpp
  *
  */
 #pragma once

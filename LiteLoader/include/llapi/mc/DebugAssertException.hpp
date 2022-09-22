@@ -1,5 +1,5 @@
 /**
- * @file  MC/DebugAssertException.hpp
+ * @file  DebugAssertException.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SimulationTypePacket.hpp
+ * @file  SimulationTypePacket.hpp
  *
  */
 #pragma once

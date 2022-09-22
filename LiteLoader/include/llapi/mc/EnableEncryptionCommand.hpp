@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnableEncryptionCommand.hpp
+ * @file  EnableEncryptionCommand.hpp
  *
  */
 #pragma once

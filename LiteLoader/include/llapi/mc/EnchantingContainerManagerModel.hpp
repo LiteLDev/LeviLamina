@@ -1,5 +1,5 @@
 /**
- * @file  MC/EnchantingContainerManagerModel.hpp
+ * @file  EnchantingContainerManagerModel.hpp
  *
  */
 #pragma once

@@ -1,5 +1,5 @@
 /**
- * @file  MC/SurfaceRelativeThresholdFeature.hpp
+ * @file  SurfaceRelativeThresholdFeature.hpp
  *
  */
 #pragma once

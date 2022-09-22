@@ -1,5 +1,5 @@
 /**
- * @file  MC/LegacyActorExtractApplySystem.hpp
+ * @file  LegacyActorExtractApplySystem.hpp
  *
  */
 #pragma once

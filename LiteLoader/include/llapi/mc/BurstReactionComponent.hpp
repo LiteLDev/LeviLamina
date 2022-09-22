@@ -1,5 +1,5 @@
 /**
- * @file  MC/BurstReactionComponent.hpp
+ * @file  BurstReactionComponent.hpp
  *
  */
 #pragma once

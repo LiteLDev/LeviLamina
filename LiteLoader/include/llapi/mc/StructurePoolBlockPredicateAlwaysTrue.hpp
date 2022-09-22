@@ -1,5 +1,5 @@
 /**
- * @file  MC/StructurePoolBlockPredicateAlwaysTrue.hpp
+ * @file  StructurePoolBlockPredicateAlwaysTrue.hpp
  *
  */
 #pragma once

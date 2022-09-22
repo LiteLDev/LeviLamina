@@ -1,5 +1,5 @@
 /**
- * @file  MC/WebToken.hpp
+ * @file  WebToken.hpp
  *
  */
 #pragma once

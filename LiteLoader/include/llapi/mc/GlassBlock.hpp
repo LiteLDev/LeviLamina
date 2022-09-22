@@ -1,5 +1,5 @@
 /**
- * @file  MC/GlassBlock.hpp
+ * @file  GlassBlock.hpp
  *
  */
 #pragma once

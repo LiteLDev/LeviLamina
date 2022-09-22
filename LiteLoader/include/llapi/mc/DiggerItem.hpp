@@ -1,5 +1,5 @@
 /**
- * @file  MC/DiggerItem.hpp
+ * @file  DiggerItem.hpp
  *
  */
 #pragma once
