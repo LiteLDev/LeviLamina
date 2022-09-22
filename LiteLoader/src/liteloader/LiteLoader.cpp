@@ -1,4 +1,4 @@
-#include <liteloader/LiteLoader.h>
+#include "liteloader/LiteLoader.h"
 
 #include <csignal>
 #include <minwindef.h>
@@ -6,23 +6,23 @@
 #include <string>
 #include <iostream>
 
-#include <llapi/utils/StringHelper.h>
-#include <llapi/utils/FileHelper.h>
-#include <llapi/utils/SehTranslator.h>
+#include "llapi/utils/StringHelper.h"
+#include "llapi/utils/FileHelper.h"
+#include "llapi/utils/SehTranslator.h"
 
-#include <llapi/LoggerAPI.h>
-#include <llapi/ServerAPI.h>
-#include <llapi/HookAPI.h>
-#include <llapi/EventAPI.h>
+#include "llapi/LoggerAPI.h"
+#include "llapi/ServerAPI.h"
+#include "llapi/HookAPI.h"
+#include "llapi/EventAPI.h"
 
-#include <llapi/mc/Minecraft.hpp>
+#include "llapi/mc/Minecraft.hpp"
 
-#include <liteloader/Config.h>
-#include <liteloader/Loader.h>
-#include <liteloader/CrashLogger.h>
-#include <liteloader/AddonsHelper.h>
-#include <liteloader/Version.h>
-#include <liteloader/SimpleServerLogger.h>
+#include "liteloader/Config.h"
+#include "liteloader/Loader.h"
+#include "liteloader/CrashLogger.h"
+#include "liteloader/AddonsHelper.h"
+#include "liteloader/Version.h"
+#include "liteloader/SimpleServerLogger.h"
 
 #include <windows.h>
 #include <TlHelp32.h>

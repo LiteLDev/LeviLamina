@@ -1,22 +1,22 @@
 ﻿#include <unordered_map>
 
-#include <liteloader/Config.h>
-#include <liteloader/LiteLoader.h>
-#include <llapi/HookAPI.h>
-#include <llapi/LoggerAPI.h>
+#include "liteloader/Config.h"
+#include "liteloader/LiteLoader.h"
+#include "llapi/HookAPI.h"
+#include "llapi/LoggerAPI.h"
 
-#include <llapi/mc/InventoryTransactionPacket.hpp>
-#include <llapi/mc/NetworkIdentifier.hpp>
-#include <llapi/mc/Player.hpp>
-#include <llapi/mc/ServerPlayer.hpp>
-#include <llapi/mc/ServerNetworkHandler.hpp>
-#include <llapi/mc/ClientCacheBlobStatusPacket.hpp>
-#include <llapi/mc/BinaryStream.hpp>
-#include <llapi/EventAPI.h>
+#include "llapi/mc/InventoryTransactionPacket.hpp"
+#include "llapi/mc/NetworkIdentifier.hpp"
+#include "llapi/mc/Player.hpp"
+#include "llapi/mc/ServerPlayer.hpp"
+#include "llapi/mc/ServerNetworkHandler.hpp"
+#include "llapi/mc/ClientCacheBlobStatusPacket.hpp"
+#include "llapi/mc/BinaryStream.hpp"
+#include "llapi/EventAPI.h"
 
-#include <llapi/mc/SharedConstants.hpp>
-#include <llapi/mc/PropertiesSettings.hpp>
-#include <llapi/ScheduleAPI.h>
+#include "llapi/mc/SharedConstants.hpp"
+#include "llapi/mc/PropertiesSettings.hpp"
+#include "llapi/ScheduleAPI.h"
 #include <Windows.h>
 
 using namespace ll;
@@ -72,11 +72,11 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
 }
 
 // Fix abnormal items
-#include <llapi/mc/InventoryTransaction.hpp>
-#include <llapi/mc/InventoryAction.hpp>
-#include <llapi/mc/Level.hpp>
-#include <llapi/mc/ElementBlock.hpp>
-#include <llapi/mc/IContainerManager.hpp>
+#include "llapi/mc/InventoryTransaction.hpp"
+#include "llapi/mc/InventoryAction.hpp"
+#include "llapi/mc/Level.hpp"
+#include "llapi/mc/ElementBlock.hpp"
+#include "llapi/mc/IContainerManager.hpp"
 
 inline bool itemMayFromReducer(ItemStack const& item) {
     return item.isNull() || (ElementBlock::isElement(item) && !item.hasUserData());
@@ -155,7 +155,7 @@ TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player) {
     movingViewPlayer = nullptr;
 }
 
-#include <llapi/mc/ChunkViewSource.hpp>
+#include "llapi/mc/ChunkViewSource.hpp"
 
 inline bool Interval(int a1) {
     if (a1 < 0x5ffffff && a1 > -0x5ffffff)
@@ -395,8 +395,8 @@ THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAV
     original(a1, self);
 }
 
-#include <llapi/mc/LevelChunk.hpp>
-#include <llapi/mc/ChunkSource.hpp>
+#include "llapi/mc/LevelChunk.hpp"
+#include "llapi/mc/ChunkSource.hpp"
 
 THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z", BlockSource* self, ChunkPos* a2) {
     if (ll::globalConfig.enableFixBDSCrash) {
@@ -432,9 +432,9 @@ TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", Ac
     return bs;
 }
 
-#include <llapi/mc/NetworkHandler.hpp>
-#include <llapi/mc/NetworkPeer.hpp>
-#include <llapi/mc/ReadOnlyBinaryStream.hpp>
+#include "llapi/mc/NetworkHandler.hpp"
+#include "llapi/mc/NetworkPeer.hpp"
+#include "llapi/mc/ReadOnlyBinaryStream.hpp"
 
 static inline bool checkPktId(unsigned int id) {
     id &= 0x3ff;

@@ -1,11 +1,11 @@
-#include <llapi/Global.h>
-#include <llapi/mc/SimulatedPlayer.hpp>
-#include <llapi/mc/BlockInstance.hpp>
-#include <llapi/mc/ServerNetworkHandler.hpp>
-#include <llapi/mc/Minecraft.hpp>
-#include <llapi/mc/StackResultStorageEntity.hpp>
-#include <llapi/mc/OwnerStorageEntity.hpp>
-#include <llapi/mc/Level.hpp>
+#include "llapi/Global.h"
+#include "llapi/mc/SimulatedPlayer.hpp"
+#include "llapi/mc/BlockInstance.hpp"
+#include "llapi/mc/ServerNetworkHandler.hpp"
+#include "llapi/mc/Minecraft.hpp"
+#include "llapi/mc/StackResultStorageEntity.hpp"
+#include "llapi/mc/OwnerStorageEntity.hpp"
+#include "llapi/mc/Level.hpp"
 // static_assert(sizeof(ScriptNavigationResult) == 32);
 
 // For compatibility

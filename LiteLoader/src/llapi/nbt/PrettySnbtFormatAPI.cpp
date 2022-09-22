@@ -1,5 +1,5 @@
-#include <llapi/mc/PrettySnbtFormat.hpp>
-#include <llapi/mc/ColorFormat.hpp>
+#include "llapi/mc/PrettySnbtFormat.hpp"
+#include "llapi/mc/ColorFormat.hpp"
 #include <magic_enum/magic_enum.hpp>
 
 #define ForEachTagType(op)    \

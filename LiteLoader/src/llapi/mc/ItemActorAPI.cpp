@@ -1,5 +1,5 @@
-#include <llapi/Global.h>
-#include <llapi/mc/ItemActor.hpp>
+#include "llapi/Global.h"
+#include "llapi/mc/ItemActor.hpp"
 
 ItemStack* ItemActor::getItemStack() {
     return (ItemStack*)((uintptr_t)this + 1568); // IDA Player::take
