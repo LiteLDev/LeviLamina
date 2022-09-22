@@ -16,20 +16,11 @@ set(SCRIPTENGINE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 file(
         GLOB_RECURSE SRC_FILES
-        ${SCRIPTENGINE_DIR}/src/main/*.cpp
-        ${SCRIPTENGINE_DIR}/src/main/*.hpp
-        ${SCRIPTENGINE_DIR}/src/main/*.h
-        ${SCRIPTENGINE_DIR}/src/api/*.cpp
-        ${SCRIPTENGINE_DIR}/src/api/*.hpp
-        ${SCRIPTENGINE_DIR}/src/api/*.h
-        ${SCRIPTENGINE_DIR}/src/engine/*.cpp
-        ${SCRIPTENGINE_DIR}/src/engine/*.hpp
-        ${SCRIPTENGINE_DIR}/src/engine/*.h
-        ${SCRIPTENGINE_DIR}/src/utils/*.cpp
-        ${SCRIPTENGINE_DIR}/src/utils/*.hpp
-        ${SCRIPTENGINE_DIR}/src/utils/*.h
-        ${SCRIPTENGINE_DIR}/src/res/*.rc
-        ${SCRIPTENGINE_DIR}/src/res/*.h
+        ${SCRIPTENGINE_DIR}/src/*.cpp
+        ${SCRIPTENGINE_DIR}/src/*.hpp
+        ${SCRIPTENGINE_DIR}/src/*.h
+        ${SCRIPTENGINE_DIR}/src/*.inc
+        ${SCRIPTENGINE_DIR}/src/*.rc
 )
 
 add_definitions(

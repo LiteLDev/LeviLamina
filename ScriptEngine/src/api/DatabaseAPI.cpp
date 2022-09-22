@@ -15,14 +15,14 @@ using namespace DB;
         logger.error("SEH Uncaught Exception Detected!");            \
         logger.error(TextEncoding::toUTF8(e.what()));                \
         PrintScriptStackTrace();                                     \
-        logger.error(std::string("In API: ") + __FUNCTION__);        \
+        logger.error("In API: " __FUNCTION__);        \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>();                                       \
     }                                                                \
     catch (...) {                                                    \
         logger.error("Uncaught Exception Detected!");                \
         PrintScriptStackTrace();                                     \
-        logger.error(std::string("In API: ") + __FUNCTION__);        \
+        logger.error("In API: "  __FUNCTION__);        \
         logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
         return Local<Value>();                                       \
     }

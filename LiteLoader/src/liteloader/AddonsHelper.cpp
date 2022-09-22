@@ -92,15 +92,15 @@ std::optional<Addon> parseAddonFromPath(const std::filesystem::path& addonPath) 
         return addon;
     } catch (const seh_exception& e) {
         addonLogger.error("Uncaught SEH Exception Detected!");
-        addonLogger.error(string() + "In " + __FUNCTION__ + " " + UTF82String(addonPath.u8string()));
+        addonLogger.error("In " __FUNCTION__ " " + UTF82String(addonPath.u8string()));
         addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
     } catch (const std::exception& e) {
         addonLogger.error("Uncaught C++ Exception Detected!");
-        addonLogger.error(string() + "In " + __FUNCTION__ + " " + UTF82String(addonPath.u8string()));
+        addonLogger.error("In " __FUNCTION__ " " + UTF82String(addonPath.u8string()));
         addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
     } catch (...) {
         addonLogger.error("Uncaught Exception Detected!");
-        addonLogger.error(string() + "In " + __FUNCTION__ + " " + UTF82String(addonPath.u8string()));
+        addonLogger.error("In " __FUNCTION__ " " + UTF82String(addonPath.u8string()));
     }
     return std::nullopt;
 }
@@ -303,15 +303,15 @@ bool AddonsManager::install(std::string packPath) {
         return true;
     } catch (const seh_exception& e) {
         addonLogger.error("Uncaught SEH Exception Detected!");
-        addonLogger.error("In {}", __FUNCTION__);
+        addonLogger.error("In " __FUNCTION__);
         addonLogger.error("Error: Code[{}] {}", e.code(), TextEncoding::toUTF8(e.what()));
     } catch (const std::exception& e) {
         addonLogger.error("Uncaught C++ Exception Detected!");
-        addonLogger.error("In {}", __FUNCTION__);
+        addonLogger.error("In " __FUNCTION__);
         addonLogger.error("Error: Code[{}] {}", -1, TextEncoding::toUTF8(e.what()));
     } catch (...) {
         addonLogger.error("Uncaught Exception Detected!");
-        addonLogger.error("In {}", __FUNCTION__);
+        addonLogger.error("In " __FUNCTION__);
     }
     return false;
 }

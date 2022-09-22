@@ -1,35 +1,19 @@
 ﻿#pragma once
-#include <ScriptX/ScriptX.h>
-using script::Arguments;
-using script::Array;
-using script::Boolean;
-using script::ByteBuffer;
-using script::ClassDefine;
-using script::defineClass;
-using script::EngineScope;
-using script::Exception;
-using script::ExitEngineScope;
-using script::Function;
-using script::Local;
-using script::Number;
-using script::Object;
-using script::ScriptClass;
-using script::ScriptEngine;
-using script::ScriptEngineImpl;
-using script::selectOverloadedFunc;
-using script::String;
-using script::Value;
-using script::ValueKind;
 
-#include "../main/Global.hpp"
-#include "../engine/EngineOwnData.h"
-#include "../utils/JsonHelper.h"
-#include <llapi/mc/Level.hpp>
 #include <string>
 #include <vector>
 #include <exception>
 #include <sstream>
+
 #include <magic_enum/magic_enum.hpp>
+
+#include <llapi/mc/Level.hpp>
+
+#include "../utils/UsingScriptX.inc"
+#include "../utils/JsonHelper.h"
+#include "../main/Global.hpp"
+#include "../engine/EngineOwnData.h"
+
 
 // 输出异常信息
 inline void PrintException(const script::Exception& e) {
@@ -61,9 +45,9 @@ std::string ValueKindToString(const ValueKind& kind);
 #if !defined(NEW_DEFINES)
 
 // 输出脚本调用堆栈，API名称，以及插件名
-#define LOG_ERROR_WITH_SCRIPT_INFO(...)       \
-    PrintScriptStackTrace(__VA_ARGS__);       \
-    logger.error("In API: {}", __FUNCTION__); \
+#define LOG_ERROR_WITH_SCRIPT_INFO(...)                                                                                \
+    PrintScriptStackTrace(__VA_ARGS__);                                                                                \
+    logger.error("In API: " __FUNCTION__);                                                                             \
     logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName)
 
 // 参数类型错误输出
@@ -76,182 +60,187 @@ std::string ValueKindToString(const ValueKind& kind);
 #define LOG_WRONG_ARGS_COUNT() LOG_ERROR_WITH_SCRIPT_INFO("Wrong number of arguments!");
 
 // 至少COUNT个参数
-#define CHECK_ARGS_COUNT(ARGS, COUNT) \
-    if (ARGS.size() < COUNT) {        \
-        LOG_TOO_FEW_ARGS();           \
-        return Local<Value>();        \
+#define CHECK_ARGS_COUNT(ARGS, COUNT)                                                                                  \
+    if (ARGS.size() < COUNT) {                                                                                         \
+        LOG_TOO_FEW_ARGS();                                                                                            \
+        return Local<Value>();                                                                                         \
     }
 
 // 检查是否TYPE类型
-#define CHECK_ARG_TYPE(ARG, TYPE) \
-    if (ARG.getKind() != TYPE) {  \
-        LOG_WRONG_ARG_TYPE();     \
-        return Local<Value>();    \
+#define CHECK_ARG_TYPE(ARG, TYPE)                                                                                      \
+    if (ARG.getKind() != TYPE) {                                                                                       \
+        LOG_WRONG_ARG_TYPE();                                                                                          \
+        return Local<Value>();                                                                                         \
     }
 
 // 截获引擎异常
-#define CATCH(LOG)                                                   \
-    catch (const script::Exception& e) {                             \
-        logger.error(LOG "\n");                                      \
-        PrintException(e);                                           \
-        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
-        return Local<Value>();                                       \
-    }                                                                \
-    catch (const std::exception& e) {                                \
-        logger.error("C++ Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return Local<Value>();                                       \
-    }                                                                \
-    catch (const seh_exception& e) {                                 \
-        logger.error("SEH Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return Local<Value>();                                       \
-    }                                                                \
-    catch (...) {                                                    \
-        logger.error("Uncaught Exception Detected!");                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return Local<Value>();                                       \
+#define CATCH(LOG)                                                                                                     \
+    catch (const script::Exception& e) {                                                                               \
+        logger.error(LOG "\n");                                                                                        \
+        PrintException(e);                                                                                             \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);                                                   \
+        return Local<Value>();                                                                                         \
+    }                                                                                                                  \
+    catch (const std::exception& e) {                                                                                  \
+        logger.error("C++ Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return Local<Value>();                                                                                         \
+    }                                                                                                                  \
+    catch (const seh_exception& e) {                                                                                   \
+        logger.error("SEH Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return Local<Value>();                                                                                         \
+    }                                                                                                                  \
+    catch (...) {                                                                                                      \
+        logger.error("Uncaught Exception Detected!");                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return Local<Value>();                                                                                         \
     }
 
 // 至少COUNT个参数_Constructor
-#define CHECK_ARGS_COUNT_C(ARGS, COUNT) \
-    if (ARGS.size() < COUNT) {          \
-        LOG_TOO_FEW_ARGS();             \
-        return nullptr;                 \
+#define CHECK_ARGS_COUNT_C(ARGS, COUNT)                                                                                \
+    if (ARGS.size() < COUNT) {                                                                                         \
+        LOG_TOO_FEW_ARGS();                                                                                            \
+        return nullptr;                                                                                                \
     }
 
 // 检查是否TYPE类型_Constructor
-#define CHECK_ARG_TYPE_C(ARG, TYPE) \
-    if (ARG.getKind() != TYPE) {    \
-        LOG_WRONG_ARG_TYPE();       \
-        return nullptr;             \
+#define CHECK_ARG_TYPE_C(ARG, TYPE)                                                                                    \
+    if (ARG.getKind() != TYPE) {                                                                                       \
+        LOG_WRONG_ARG_TYPE();                                                                                          \
+        return nullptr;                                                                                                \
     }
 
 // 检查是否TYPE类型_Setter
-#define CHECK_ARG_TYPE_S(ARG, TYPE) \
-    if (ARG.getKind() != TYPE) {    \
-        LOG_WRONG_ARG_TYPE();       \
-        return;                     \
+#define CHECK_ARG_TYPE_S(ARG, TYPE)                                                                                    \
+    if (ARG.getKind() != TYPE) {                                                                                       \
+        LOG_WRONG_ARG_TYPE();                                                                                          \
+        return;                                                                                                        \
     }
 
 // 截获引擎异常_Constructor
-#define CATCH_C(LOG)                                                 \
-    catch (const Exception& e) {                                     \
-        logger.error(LOG "\n");                                      \
-        PrintException(e);                                           \
-        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
-        return nullptr;                                              \
-    }                                                                \
-    catch (const std::exception& e) {                                \
-        logger.error("C++ Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return nullptr;                                              \
-    }                                                                \
-    catch (const seh_exception& e) {                                 \
-        logger.error("SEH Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return nullptr;                                              \
-    }                                                                \
-    catch (...) {                                                    \
-        logger.error("Uncaught Exception Detected!");                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return nullptr;                                              \
+#define CATCH_C(LOG)                                                                                                   \
+    catch (const Exception& e) {                                                                                       \
+        logger.error(LOG "\n");                                                                                        \
+        PrintException(e);                                                                                             \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);                                                   \
+        return nullptr;                                                                                                \
+    }                                                                                                                  \
+    catch (const std::exception& e) {                                                                                  \
+        logger.error("C++ Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return nullptr;                                                                                                \
+    }                                                                                                                  \
+    catch (const seh_exception& e) {                                                                                   \
+        logger.error("SEH Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return nullptr;                                                                                                \
+    }                                                                                                                  \
+    catch (...) {                                                                                                      \
+        logger.error("Uncaught Exception Detected!");                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return nullptr;                                                                                                \
     }
 
 // 截获引擎异常_Setter
-#define CATCH_S(LOG)                                                 \
-    catch (const Exception& e) {                                     \
-        logger.error(LOG "\n");                                      \
-        PrintException(e);                                           \
-        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
-        return;                                                      \
-    }                                                                \
-    catch (const std::exception& e) {                                \
-        logger.error("C++ Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return;                                                      \
-    }                                                                \
-    catch (const seh_exception& e) {                                 \
-        logger.error("SEH Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return;                                                      \
-    }                                                                \
-    catch (...) {                                                    \
-        logger.error("Uncaught Exception Detected!");                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-        return;                                                      \
+#define CATCH_S(LOG)                                                                                                   \
+    catch (const Exception& e) {                                                                                       \
+        logger.error(LOG "\n");                                                                                        \
+        PrintException(e);                                                                                             \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);                                                   \
+        return;                                                                                                        \
+    }                                                                                                                  \
+    catch (const std::exception& e) {                                                                                  \
+        logger.error("C++ Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return;                                                                                                        \
+    }                                                                                                                  \
+    catch (const seh_exception& e) {                                                                                   \
+        logger.error("SEH Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return;                                                                                                        \
+    }                                                                                                                  \
+    catch (...) {                                                                                                      \
+        logger.error("Uncaught Exception Detected!");                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+        return;                                                                                                        \
     }
 
 
 // 截获引擎异常_Constructor
-#define CATCH_WITHOUT_RETURN(LOG)                                    \
-    catch (const Exception& e) {                                     \
-        logger.error(LOG "\n");                                      \
-        PrintException(e);                                           \
-        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
-    }                                                                \
-    catch (const std::exception& e) {                                \
-        logger.error("C++ Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-    }                                                                \
-    catch (const seh_exception& e) {                                 \
-        logger.error("SEH Uncaught Exception Detected!");            \
-        logger.error(TextEncoding::toUTF8(e.what()));                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
-    }                                                                \
-    catch (...) {                                                    \
-        logger.error("Uncaught Exception Detected!");                \
-        LOG_ERROR_WITH_SCRIPT_INFO();                                \
+#define CATCH_WITHOUT_RETURN(LOG)                                                                                      \
+    catch (const Exception& e) {                                                                                       \
+        logger.error(LOG "\n");                                                                                        \
+        PrintException(e);                                                                                             \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);                                                   \
+    }                                                                                                                  \
+    catch (const std::exception& e) {                                                                                  \
+        logger.error("C++ Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+    }                                                                                                                  \
+    catch (const seh_exception& e) {                                                                                   \
+        logger.error("SEH Uncaught Exception Detected!");                                                              \
+        logger.error(TextEncoding::toUTF8(e.what()));                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
+    }                                                                                                                  \
+    catch (...) {                                                                                                      \
+        logger.error("Uncaught Exception Detected!");                                                                  \
+        LOG_ERROR_WITH_SCRIPT_INFO();                                                                                  \
     }
 
 // 截获回调函数异常
-#define CATCH_IN_CALLBACK(callback)                                  \
-    catch (const Exception& e) {                                     \
-        PrintException(e);                                           \
-        logger.error(std::string("In callback for ") + callback);    \
-        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName); \
+#define CATCH_IN_CALLBACK(callback)                                                                                    \
+    catch (const Exception& e) {                                                                                       \
+        PrintException(e);                                                                                             \
+        logger.error(std::string("In callback for ") + callback);                                                      \
+        logger.error("In Plugin: " + ENGINE_OWN_DATA()->pluginName);                                                   \
     }
 
 #else
 
 // 新的宏定义, 把异常抛入脚本层处理
 
-#define CATCH_AND_THROW                                        \
-    catch (const Exception& e) {                               \
-        throw e;                                               \
-    }                                                          \
-    catch (const std::exception& e) {                          \
-        throw Exception(e.what());                             \
-    }                                                          \
-    catch (...) {                                              \
-        throw Exception("Unknown exception in " __FUNCTION__); \
+#define CATCH_AND_THROW                                                                                                \
+    catch (const Exception& e) {                                                                                       \
+        throw e;                                                                                                       \
+    }                                                                                                                  \
+    catch (const std::exception& e) {                                                                                  \
+        throw Exception(e.what());                                                                                     \
+    }                                                                                                                  \
+    catch (...) {                                                                                                      \
+        throw Exception("Unknown exception in " __FUNCTION__);                                                         \
     }
 
-#define CHECK_ARGS_COUNT(count)                                                                                              \
-    if (args.size() != count) {                                                                                              \
-        throw Exception(fmt::format("Invalid arguments count: {}, expect {}, in API {}", args.size(), count, __FUNCTION__)); \
+#define CHECK_ARGS_COUNT(count)                                                                                        \
+    if (args.size() != count) {                                                                                        \
+        throw Exception(                                                                                               \
+            fmt::format("Invalid arguments count: {}, expect {}, in API {}", args.size(), count, __FUNCTION__));       \
     }
 
-#define CHECK_ARGS_LEAST_COUNT(count)                                                                                                 \
-    if (args.size() < count) {                                                                                                        \
-        throw Exception(fmt::format("Invalid arguments count: {}, expect at least {}, in API {}", args.size(), count, __FUNCTION__)); \
+#define CHECK_ARGS_LEAST_COUNT(count)                                                                                  \
+    if (args.size() < count) {                                                                                         \
+        throw Exception(fmt::format("Invalid arguments count: {}, expect at least {}, in API {}", args.size(), count,  \
+                                    __FUNCTION__));                                                                    \
     }
 
-#define CHECK_ARG_TYPE(index, type)                                                                                                                                                               \
-    if (args[index].getKind() != ValueKind::type) {                                                                                                                                               \
-        throw Exception(fmt::format("Wrong type of arguments[{}]: {}, expect {}, in API {}", index, ValueKindToString(args[index].getKind()), ValueKindToString(ValueKind::type), __FUNCTION__)); \
+#define CHECK_ARG_TYPE(index, type)                                                                                    \
+    if (args[index].getKind() != ValueKind::type) {                                                                    \
+        throw Exception(fmt::format("Wrong type of arguments[{}]: {}, expect {}, in API {}", index,                    \
+                                    ValueKindToString(args[index].getKind()), ValueKindToString(ValueKind::type),      \
+                                    __FUNCTION__));                                                                    \
     }
 
-#define CHECK_VAL_TYPE(val, type)                                                                                                                                          \
-    if (val.getKind() != ValueKind::type) {                                                                                                                                \
-        throw Exception(fmt::format("Wrong type of value: {}, expect {}, in API {}", ValueKindToString(val.getKind()), ValueKindToString(ValueKind::type), __FUNCTION__)); \
+#define CHECK_VAL_TYPE(val, type)                                                                                      \
+    if (val.getKind() != ValueKind::type) {                                                                            \
+        throw Exception(fmt::format("Wrong type of value: {}, expect {}, in API {}", ValueKindToString(val.getKind()), \
+                                    ValueKindToString(ValueKind::type), __FUNCTION__));                                \
     }
 
 #endif
@@ -278,6 +267,7 @@ struct EnumDefineBuilder {
     inline static Local<Value> serialize() {
         return Number::newNumber(static_cast<int>(val));
     }
+
     inline static Local<Value> keys() {
         try {
             auto arr = Array::newArray();
@@ -285,11 +275,10 @@ struct EnumDefineBuilder {
                 arr.add(String::newString(name));
             }
             return arr;
-        } catch (const std::exception&) {
-            logger.error("Error in {}", __FUNCTION__);
-        }
+        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
         return Local<Value>();
     }
+
     inline static Local<Value> toObject() {
         try {
             auto obj = Object::newObject();
@@ -297,11 +286,10 @@ struct EnumDefineBuilder {
                 obj.set(String::newString(name), Number::newNumber((int)value));
             }
             return obj;
-        } catch (const std::exception&) {
-            logger.error("Error in {}", __FUNCTION__);
-        }
+        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
         return Local<Value>();
     }
+
     inline static Local<Value> getName(const Arguments& args) {
         try {
             if (args.size() < 1)
@@ -311,21 +299,19 @@ struct EnumDefineBuilder {
             if (args[0].isNumber())
                 return String::newString(magic_enum::enum_name(static_cast<Type>(args[0].toInt())));
             return Local<Value>();
-        } catch (const std::exception&) {
-            logger.error("Error in {}", __FUNCTION__);
-        }
+        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
         return Local<Value>();
     }
 
     inline static Local<Value> toString() {
         try {
             return String::newString(typeid(Type).name() + 5);
-        } catch (const std::exception&) {
-            logger.error("Error in {}", __FUNCTION__);
-        }
+        } catch (const std::exception&) { logger.error("Error in " __FUNCTION__); }
         return Local<Value>();
     }
-    template <Type val, std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
+
+    template <Type val, std::enable_if_t<std::is_enum_v<Type>, char> max =
+                            static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
     inline static void buildBuilder(script::ClassDefineBuilder<void>& builder) {
         if constexpr (static_cast<char>(val) > max)
             return;
@@ -335,7 +321,9 @@ struct EnumDefineBuilder {
         }
         buildBuilder<static_cast<Type>((static_cast<char>(val) + 1)), max>(builder);
     }
-    template <std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
+
+    template <
+        std::enable_if_t<std::is_enum_v<Type>, char> max = static_cast<char>(*magic_enum::enum_values<Type>().rbegin())>
     inline static ClassDefine<void> build(std::string const& enumName) {
         script::ClassDefineBuilder<void> builder = defineClass(enumName);
         // fmt::print("枚举 {} 可能取值：\n", enumName);
@@ -348,9 +336,7 @@ struct EnumDefineBuilder {
             builder.property(std::string(name), [=]() -> Local<Value> {
                 try {
                     return Number::newNumber(static_cast<int>(_val));
-                } catch (const std::exception&) {
-                    logger.error("Error in get {}.{}", enumName, _name);
-                }
+                } catch (const std::exception&) { logger.error("Error in get {}.{}", enumName, _name); }
                 return Local<Value>();
             });
         }
