@@ -14,37 +14,16 @@
 #include "llapi/mc/BinaryStream.hpp"
 #include "llapi/EventAPI.h"
 
+#include "llapi/mc/NetworkHandler.hpp"
+#include "llapi/mc/NetworkPeer.hpp"
+#include "llapi/mc/ReadOnlyBinaryStream.hpp"
+
 #include "llapi/mc/SharedConstants.hpp"
 #include "llapi/mc/PropertiesSettings.hpp"
 #include "llapi/ScheduleAPI.h"
 #include <Windows.h>
 
 using namespace ll;
-
-// Fix bug
-TClasslessInstanceHook(bool,
-                       "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-                       ReadOnlyBinaryStream* a2) {
-    ReadOnlyBinaryStream pkt(a2->getData(), false);
-    pkt.getUnsignedVarInt();
-    if (pkt.getUnsignedVarInt() >= 0xfff)
-        return false;
-    if (pkt.getUnsignedVarInt() >= 0xfff)
-        return false;
-    return original(this, a2);
-}
-
-// Fix bug
-TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-                       ReadOnlyBinaryStream* a2) {
-    return (void*)1;
-}
-
-// Fix bug
-TClasslessInstanceHook(void*, "?_read@EduUriResourcePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-                       ReadOnlyBinaryStream* a2) {
-    return (void*)1;
-}
 
 // Fix the listening port twice
 TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
@@ -222,6 +201,70 @@ TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerP
     }
 }
 #endif
+
+static inline bool checkPktId(unsigned int id) {
+    id &= 0x3ff;
+    return id == 0x01 || id == 0x5e || id == 0xc1;
+}
+
+static inline bool& connState(void* conn) {
+    return *(bool*)(((char*)conn) + 266);
+}
+
+TInstanceHook(NetworkPeer::DataStatus,
+              "?receivePacket@Connection@NetworkHandler@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_"
+              "traits@D@std@@V?$allocator@D@2@@std@@AEAV2@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$"
+              "duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@6@@Z",
+              NetworkHandler::Connection, std::string* data) {
+    auto status = original(this, data);
+    if (status == NetworkPeer::DataStatus::HasData && !data->empty()) {
+        auto stream = ReadOnlyBinaryStream(*data, false);
+        auto packetId = stream.getUnsignedVarInt();
+        if (checkPktId(packetId)) {
+            connState(this) = true;
+        } else {
+            if (!connState(this)) {
+                data->clear();
+                return NetworkPeer::DataStatus::NoData;
+            }
+        }
+    }
+    return status;
+}
+
+THook(void*,
+      "??0Connection@NetworkHandler@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@"
+      "Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@4@_NV?$NonOwnerPointer@"
+      "VIPacketObserver@@@Bedrock@@AEAVScheduler@@@Z",
+      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
+    auto res = original(thi, a1, a2, a3, a4, a5, a6);
+    connState(thi) = false;
+    return res;
+}
+
+THook(void*, "?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+      ReadOnlyBinaryStream* bs, void* res) {
+    auto oldptr = bs->getReadPointer();
+    auto size = bs->getUnsignedVarInt();
+    if (size > 0x3fffff) {
+        new (res) std::string();
+        return res;
+    }
+    bs->setReadPointer(oldptr);
+    return original(bs, res);
+}
+
+THook(bool,
+      "?getString@ReadOnlyBinaryStream@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      ReadOnlyBinaryStream* bs, void* res) {
+    auto oldptr = bs->getReadPointer();
+    auto size = bs->getUnsignedVarInt();
+    if (size > 0x3fffff) {
+        return false;
+    }
+    bs->setReadPointer(oldptr);
+    return original(bs, res);
+}
 
 // Fix Fishing Hook changeDimension Crash
 TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z", Actor, unsigned int a1) {
@@ -432,75 +475,3 @@ TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", Ac
     return bs;
 }
 
-#include "llapi/mc/NetworkHandler.hpp"
-#include "llapi/mc/NetworkPeer.hpp"
-#include "llapi/mc/ReadOnlyBinaryStream.hpp"
-
-static inline bool checkPktId(unsigned int id) {
-    id &= 0x3ff;
-    // printf("id %d\n", id);
-    return id == 1 || id == 0x5e || id == 193;
-}
-
-static inline bool& connState(void* conn) {
-    return *(bool*)(((char*)conn) + 250);
-}
-
-TInstanceHook(NetworkPeer::DataStatus,
-              "?receivePacket@Connection@NetworkHandler@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_"
-              "traits@D@std@@V?$allocator@D@2@@std@@AEAV2@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$"
-              "duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@6@@Z",
-              NetworkHandler::Connection, std::string* data) {
-    auto status = original(this, data);
-    // printf("hi %d\n", status);
-    if (status == NetworkPeer::DataStatus::HasData && !data->empty()) {
-        auto stream = ReadOnlyBinaryStream(*data, false);
-        auto packetId = stream.getUnsignedVarInt();
-        if (checkPktId(packetId)) {
-            // is login packet,modify connection state
-            connState(this) = true;
-        } else {
-            if (!connState(this)) {
-                data->clear();
-                return NetworkPeer::DataStatus::NoData;
-            }
-        }
-    }
-    return status;
-}
-
-THook(void*,
-      "??0Connection@NetworkHandler@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@"
-      "Usteady_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@4@_NV?$NonOwnerPointer@"
-      "VIPacketObserver@@@Bedrock@@AEAVScheduler@@@Z",
-      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6) {
-    auto res = original(thi, a1, a2, a3, a4, a5, a6);
-    connState(thi) = false;
-    return res;
-}
-
-THook(void*, "?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
-      ReadOnlyBinaryStream* bs, void* res) {
-    auto oldptr = bs->getReadPointer();
-    auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
-        // reject
-        new (res) std::string();
-        return res;
-    }
-    bs->setReadPointer(oldptr);
-    return original(bs, res);
-}
-
-THook(bool,
-      "?getString@ReadOnlyBinaryStream@@QEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-      ReadOnlyBinaryStream* bs, void* res) {
-    auto oldptr = bs->getReadPointer();
-    auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
-        // reject
-        return false;
-    }
-    bs->setReadPointer(oldptr);
-    return original(bs, res);
-}
