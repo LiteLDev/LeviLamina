@@ -9,13 +9,12 @@
 //
 #include "winres.h"
 #include <liteloader/Version.h>
-#include "../main/Configs.h"
+#include "main/Configs.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ����(���壬�й�) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -94,7 +93,7 @@ BEGIN
     END
 END
 
-#endif    // ����(���壬�й�) resources
+#endif
 /////////////////////////////////////////////////////////////////////////////
 
 

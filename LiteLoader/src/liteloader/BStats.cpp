@@ -1,15 +1,15 @@
-﻿#include <liteloader/LiteLoader.h>
-#include <llapi/EventAPI.h>
-#include <llapi/Global.h>
-#include <llapi/ScheduleAPI.h>
-#include <llapi/ServerAPI.h>
-#include <llapi/utils/WinHelper.h>
-#include <llapi/utils/StringHelper.h>
-#include <llapi/utils/NetworkHelper.h>
-#include <llapi/mc/Level.hpp>
-#include <llapi/mc/PropertiesSettings.hpp>
-#include <llapi/mc/ServerNetworkHandler.hpp>
-#include <llapi/mc/ServerPlayer.hpp>
+﻿#include "liteloader/LiteLoader.h"
+#include "llapi/EventAPI.h"
+#include "llapi/Global.h"
+#include "llapi/ScheduleAPI.h"
+#include "llapi/ServerAPI.h"
+#include "llapi/utils/WinHelper.h"
+#include "llapi/utils/StringHelper.h"
+#include "llapi/utils/NetworkHelper.h"
+#include "llapi/mc/Level.hpp"
+#include "llapi/mc/PropertiesSettings.hpp"
+#include "llapi/mc/ServerNetworkHandler.hpp"
+#include "llapi/mc/ServerPlayer.hpp"
 #include <Nlohmann/json.hpp>
 
 #define BSTATS_JSON(key, val)                     \

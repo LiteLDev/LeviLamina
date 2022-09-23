@@ -3,7 +3,7 @@
 //       float result=actor->quickEvalMolangScript("(1+1)*233");
 //
 // example [advanced] for better performance (once the expression been compiled ,it could be used in many times):
-//      #include <llapi/mc/ExpressionNode.hpp>
+//      #include "llapi/mc/ExpressionNode.hpp"
 //      static local MolangInstance instance("(!query.is_in_water)&&query.is_in_water_or_rain")
 //  ...
 //      instance.evalAsFloat(actor);
@@ -18,13 +18,13 @@
 //      //     }
 
 
-#include <llapi/Global.h>
-#include <llapi/mc/ExpressionNode.hpp>
-#include <llapi/mc/Actor.hpp>
-#include <llapi/mc/MolangScriptArg.hpp>
-#include <llapi/mc/HashedString.hpp>
-#include <llapi/mc/RenderParams.hpp>
-#include <llapi/mc/MolangSerializer.hpp>
+#include "llapi/Global.h"
+#include "llapi/mc/ExpressionNode.hpp"
+#include "llapi/mc/Actor.hpp"
+#include "llapi/mc/MolangScriptArg.hpp"
+#include "llapi/mc/HashedString.hpp"
+#include "llapi/mc/RenderParams.hpp"
+#include "llapi/mc/MolangSerializer.hpp"
 
 #pragma region Hook
 THook(void*,

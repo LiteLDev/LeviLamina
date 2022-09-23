@@ -1,4 +1,4 @@
-#include <liteloader/Loader.h>
+#include "liteloader/Loader.h"
 
 #include <filesystem>
 #include <string>
@@ -6,21 +6,21 @@
 
 #include <ScriptEngine/src/main/Configs.h>
 
-#include <llapi/utils/StringHelper.h>
-#include <llapi/utils/WinHelper.h>
-#include <llapi/utils/DbgHelper.h>
-#include <llapi/utils/ShellLinkFile.h>
+#include "llapi/utils/StringHelper.h"
+#include "llapi/utils/WinHelper.h"
+#include "llapi/utils/DbgHelper.h"
+#include "llapi/utils/ShellLinkFile.h"
 
-#include <llapi/LoggerAPI.h>
-#include <llapi/PermissionAPI.h>
-#include <llapi/LLAPI.h>
-#include <llapi/I18nAPI.h>
-#include <llapi/ParticleAPI.h>
+#include "llapi/LoggerAPI.h"
+#include "llapi/PermissionAPI.h"
+#include "llapi/LLAPI.h"
+#include "llapi/I18nAPI.h"
+#include "llapi/ParticleAPI.h"
 
-#include <liteloader/PluginManager.h>
-#include <liteloader/LiteLoader.h>
-#include <liteloader/Config.h>
-#include <liteloader/Version.h>
+#include "liteloader/PluginManager.h"
+#include "liteloader/LiteLoader.h"
+#include "liteloader/Config.h"
+#include "liteloader/Version.h"
 
 #include <windows.h>
 

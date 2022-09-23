@@ -1,12 +1,12 @@
-#include "../api/APIHelp.h"
-#include "GlobalShareData.h"
+#include "api/APIHelp.h"
+#include "engine/GlobalShareData.h"
 #include <cstdlib>
 #include <ctime>
 #include <string>
 #include <vector>
 #include <map>
-#include "../main/Configs.h"
-#include "LocalShareData.h"
+#include "main/Configs.h"
+#include "engine/LocalShareData.h"
 #include <Windows.h>
 using namespace std;
 

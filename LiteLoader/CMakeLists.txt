@@ -19,9 +19,6 @@ file(
 # third-party source files
 file(GLOB_RECURSE THIRD_PARTY_SRC_FILES ${PROJECT_SOURCE_DIR}/third-party/src/*)
 
-# third-party library files
-file(GLOB_RECURSE THIRD_PARTY_LIB_FILES ${PROJECT_SOURCE_DIR}/third-party/lib/*.lib)
-
 add_library(LiteLoader SHARED ${SRC_FILES} ${THIRD_PARTY_SRC_FILES})
 
 # Replace Compile Flag /EHsc to /EHa
@@ -45,7 +42,17 @@ target_link_options(
 
 target_link_libraries(
         LiteLoader
-        ${THIRD_PARTY_LIB_FILES}
+        "${PROJECT_SOURCE_DIR}/third-party/lib/leveldb/leveldb.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/openssl/libcrypto.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/openssl/libssl.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/SQLiteCpp/SQLiteCpp.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/SQLiteCpp/sqlite3.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/mysql/mysqlclient.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/compact_enc_det/ced.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/dyncall/dyncall_s.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/dyncall/dyncallback_s.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/dyncall/dynload_s.lib"
+        "${PROJECT_SOURCE_DIR}/third-party/lib/dbghelp/dbghelp.lib"
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_api.lib"
         "${PROJECT_SOURCE_DIR}/Lib/bedrock_server_var.lib"

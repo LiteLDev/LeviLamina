@@ -1,4 +1,4 @@
-#include <llapi/mc/StringTag.hpp>
+#include "llapi/mc/StringTag.hpp"
 
 std::string& StringTag::value() {
     return dAccess<std::string, 8>(this);

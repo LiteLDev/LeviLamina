@@ -1,13 +1,19 @@
 #pragma once
-#include "../api/APIHelp.h"
+
 #include <fstream>
 #include <string>
 #include <fstream>
 #include <map>
 #include <unordered_map>
 #include <memory>
-#include <llapi/LoggerAPI.h>
+
 #include <dyncall/dyncall.h>
+
+#include <llapi/LoggerAPI.h>
+
+#include "main/Configs.h"
+#include "utils/UsingScriptX.inc"
+
 
 struct FormCallbackData {
     script::ScriptEngine* engine;

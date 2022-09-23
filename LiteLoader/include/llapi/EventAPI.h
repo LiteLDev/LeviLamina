@@ -16,18 +16,18 @@ copies or substantial portions of the Software.
 
 #pragma once
 
-#include "Global.h"
-#include "LoggerAPI.h"
-#include "mc/BlockInstance.hpp"
-#include "mc/MCRESULT.hpp"
+#include "llapi/Global.h"
+#include "llapi/LoggerAPI.h"
+#include "llapi/mc/BlockInstance.hpp"
+#include "llapi/mc/MCRESULT.hpp"
 #include <functional>
 #include <iterator>
 #include <list>
 #include <string>
 #include <unordered_map>
-#include "LLAPI.h"
-#include "utils/WinHelper.h"
-#include "mc/AABB.hpp"
+#include "llapi/LLAPI.h"
+#include "llapi/utils/WinHelper.h"
+#include "llapi/mc/AABB.hpp"
 
 class Actor;
 class ServerPlayer;

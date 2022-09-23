@@ -18,8 +18,8 @@ copies or substantial portions of the Software.
 
 #include <functional>
 
-#include "Global.h"
-#include "utils/WinHelper.h"
+#include "llapi/Global.h"
+#include "llapi/utils/WinHelper.h"
 
 /**
  * @brief The scheduled task

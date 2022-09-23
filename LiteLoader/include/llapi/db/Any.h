@@ -1,6 +1,6 @@
 #pragma once
-#include "../Global.h"
-#include "Types.h"
+#include "llapi/Global.h"
+#include "llapi/db/Types.h"
 
 #pragma region AnyConversion
 

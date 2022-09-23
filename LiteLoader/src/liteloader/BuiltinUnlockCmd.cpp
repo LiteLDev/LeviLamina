@@ -1,7 +1,7 @@
-#include <llapi/Global.h>
-#include <liteloader/Config.h>
-#include <llapi/mc/CommandParameterData.hpp>
-#include <llapi/LoggerAPI.h>
+#include "llapi/Global.h"
+#include "liteloader/Config.h"
+#include "llapi/mc/CommandParameterData.hpp"
+#include "llapi/LoggerAPI.h"
 #include <magic_enum/magic_enum.hpp>
 /////////////////// Built in UnlockCmd ///////////////////
 

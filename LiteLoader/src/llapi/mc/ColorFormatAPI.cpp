@@ -1,8 +1,8 @@
-﻿#include <llapi/mc/ColorFormat.hpp>
-#include <llapi/mc/Util.hpp>
-#include <llapi/LoggerAPI.h>
+﻿#include "llapi/mc/ColorFormat.hpp"
+#include "llapi/mc/Util.hpp"
+#include "llapi/LoggerAPI.h"
 
-#include <liteloader/LiteLoader.h>
+#include "liteloader/LiteLoader.h"
 
 using ll::logger;
 namespace ColorFormat {

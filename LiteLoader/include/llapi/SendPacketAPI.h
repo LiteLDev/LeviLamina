@@ -1,6 +1,6 @@
 #pragma once
-#include "mc/BinaryStream.hpp"
-#include "mc/Packet.hpp"
+#include "llapi/mc/BinaryStream.hpp"
+#include "llapi/mc/Packet.hpp"
 
 template <int pid, bool batching = true, bool compress = true>
 class NetworkPacket : public Packet {

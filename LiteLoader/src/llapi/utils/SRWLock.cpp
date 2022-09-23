@@ -1,5 +1,5 @@
 #include <windows.h>
-#include <llapi/utils/SRWLock.h>
+#include "llapi/utils/SRWLock.h"
 
 SRWLock::SRWLock() {
     if (!inited) {

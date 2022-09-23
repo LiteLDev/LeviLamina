@@ -1,23 +1,23 @@
-#include "../api/APIHelp.h"
-#include "Global.hpp"
-#include "Configs.h"
+#include "api/APIHelp.h"
+#include "main/Global.hpp"
+#include "main/Configs.h"
 #include <filesystem>
 #include <utility>
-#include "../engine/LocalShareData.h"
-#include "../engine/RemoteCall.h"
-#include "../engine/TimeTaskSystem.h"
-#include "../engine/EngineManager.h"
+#include "engine/LocalShareData.h"
+#include "engine/RemoteCall.h"
+#include "engine/TimeTaskSystem.h"
+#include "engine/EngineManager.h"
 #include <llapi/utils/STLHelper.h>
 #include <liteloader/PluginManager.h>
-#include "PluginManager.h"
-#include "Loader.h"
+#include "main/PluginManager.h"
+#include "main/Loader.h"
 #include <llapi/ScheduleAPI.h>
-#include "../api/CommandAPI.h"
-#include "../api/EventAPI.h"
+#include "api/CommandAPI.h"
+#include "api/EventAPI.h"
 #include <llapi/utils/Hash.h>
 #ifdef LLSE_BACKEND_NODEJS
 #pragma warning(disable : 4251)
-#include "NodeJsHelper.h"
+#include "main/NodeJsHelper.h"
 #endif
 #define H(x) do_hash(x)
 using namespace std;

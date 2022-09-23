@@ -1,13 +1,13 @@
 #define COMMAND_REGISTRY_EXTRA
 #include <vector>
 
-#include <llapi/mc/CommandRegistry.hpp>
-#include <llapi/mc/CommandParameterData.hpp>
-#include <llapi/mc/AvailableCommandsPacket.hpp>
-#include <llapi/RegCommandAPI.h>
-#include <llapi/LoggerAPI.h>
+#include "llapi/mc/CommandRegistry.hpp"
+#include "llapi/mc/CommandParameterData.hpp"
+#include "llapi/mc/AvailableCommandsPacket.hpp"
+#include "llapi/RegCommandAPI.h"
+#include "llapi/LoggerAPI.h"
 
-#include <liteloader/LiteLoader.h>
+#include "liteloader/LiteLoader.h"
 
 using ll::logger;
 static_assert(offsetof(CommandParameterData, options) == 73);
@@ -94,7 +94,7 @@ std::string CommandRegistry::getCommandFullName(std::string const& name) {
     return "";
 }
 
-#include <liteloader/Config.h>
+#include "liteloader/Config.h"
 bool CommandRegistry::unregisterCommand(std::string const& name) {
     if (!ll::globalConfig.debugMode) {
         logger.error("unregister command is only enabled in debug mode");

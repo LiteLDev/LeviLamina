@@ -7,8 +7,8 @@
  * 
  */
 #pragma once
-#include "Member.hpp"
-#include "Permission.hpp"
+#include "llapi/perm/Member.hpp"
+#include "llapi/perm/Permission.hpp"
 
 namespace ll::perm {
 

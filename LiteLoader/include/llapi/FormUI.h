@@ -70,7 +70,7 @@
 
 
 #include <utility>
-#include "Global.h"
+#include "llapi/Global.h"
 
 class ServerPlayer;
 class Player;

@@ -1,7 +1,7 @@
-#include "APIHelp.h"
-#include "BaseAPI.h"
-#include "McAPI.h"
-#include "NbtAPI.h"
+#include "api/APIHelp.h"
+#include "api/BaseAPI.h"
+#include "api/McAPI.h"
+#include "api/NbtAPI.h"
 #include <llapi/mc/ListTag.hpp>
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/Block.hpp>

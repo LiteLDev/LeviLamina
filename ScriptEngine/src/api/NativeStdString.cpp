@@ -1,5 +1,5 @@
-#include "NativeAPI.h"
-#include "NativeStdString.h"
+#include "api/NativeAPI.h"
+#include "api/NativeStdString.h"
 #include <string>
 using namespace std;
 

@@ -1,30 +1,30 @@
+#include "api/APIHelp.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <memory>
 #include <cmath>
-#include <sstream>
 
-#include "BaseAPI.h"
-#include "BlockAPI.h"
-#include "EntityAPI.h"
-#include "ItemAPI.h"
-#include "PlayerAPI.h"
-#include "DeviceAPI.h"
-#include "ItemAPI.h"
-#include "EntityAPI.h"
-#include "ContainerAPI.h"
-#include "NbtAPI.h"
-#include "GuiAPI.h"
-#include "DataAPI.h"
-#include "DatabaseAPI.h"
-#include "PlayerAPI.h"
-#include "NetworkAPI.h"
-#include "../main/Global.hpp"
-#include "../engine/EngineOwnData.h"
-#include "APIHelp.h"
+#include "api/BaseAPI.h"
+#include "api/BlockAPI.h"
+#include "api/EntityAPI.h"
+#include "api/ItemAPI.h"
+#include "api/PlayerAPI.h"
+#include "api/DeviceAPI.h"
+#include "api/ItemAPI.h"
+#include "api/EntityAPI.h"
+#include "api/ContainerAPI.h"
+#include "api/NbtAPI.h"
+#include "api/GuiAPI.h"
+#include "api/DataAPI.h"
+#include "api/DatabaseAPI.h"
+#include "api/PlayerAPI.h"
+#include "api/NetworkAPI.h"
+#include "main/Global.hpp"
+#include "engine/EngineOwnData.h"
 
-#include "NativeAPI.h"
+#include "api/NativeAPI.h"
 
 using namespace std;
 

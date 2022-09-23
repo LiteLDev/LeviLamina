@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Session.h"
+#include "llapi/db/Session.h"
 
 struct MYSQL;
 

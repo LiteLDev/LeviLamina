@@ -2,14 +2,15 @@
 
 # LiteLoader Release Note
 
-**Adapted to BDS-1.19.30.04**
+**Adapted to BDS-1.19.30 | ProtocolVersion 554**
 
 ## Bug Fixes
-
 - Fix ParticleSpawner bugs in LLSE (#780) @OEOTYAN
+- Fix player join server client lag (#825) @dreamguxiang
+- Fix player join server crash (#825,#827,#828,#829) @dreamguxiang
 
 ## New Features
-
+- Support BDS 1.19.30 (#819) @dreamguxiang
 - Add setScale API for LLSE (#762) @shishkevichd
 - Add PlayerUseBucket Event (#746) @quizhizhe
 - Add LLSE ItemAPI::setDisplayName (#766) @shishkevichd

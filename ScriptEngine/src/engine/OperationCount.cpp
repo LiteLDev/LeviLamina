@@ -1,7 +1,7 @@
-#include "GlobalShareData.h"
-#include "OperationCount.h"
+#include "engine/GlobalShareData.h"
+#include "engine/OperationCount.h"
 #include <liteloader/PluginManager.h>
-#include "../main/Configs.h"
+#include "main/Configs.h"
 #include <vector>
 
 OperationCount::OperationCount(const string& name)

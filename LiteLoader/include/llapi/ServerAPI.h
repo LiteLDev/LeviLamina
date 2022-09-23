@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Global.h"
+#include "llapi/Global.h"
 
 namespace ll {
 LIAPI std::string getBdsVersion();

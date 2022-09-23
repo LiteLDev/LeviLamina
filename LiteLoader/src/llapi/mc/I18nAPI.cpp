@@ -1,5 +1,5 @@
-#include <llapi/mc/I18n.hpp>
-#include <llapi/mc/Localization.hpp>
+#include "llapi/mc/I18n.hpp"
+#include "llapi/mc/Localization.hpp"
 
 Localization const* I18n::getLanguage(std::string const& languageCode) {
     auto loc = _findLocaleFor(languageCode);

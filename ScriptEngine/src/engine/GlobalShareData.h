@@ -1,5 +1,5 @@
-#include "../api/APIHelp.h"
-#include "EngineManager.h"
+#include "api/APIHelp.h"
+#include "engine/EngineManager.h"
 #include <vector>
 #include <list>
 #include <string>

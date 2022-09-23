@@ -1,12 +1,12 @@
-#include "APIHelp.h"
-#include "LoggerAPI.h"
-#include "PlayerAPI.h"
-#include "../engine/EngineOwnData.h"
+#include "api/APIHelp.h"
+#include "api/LoggerAPI.h"
+#include "api/PlayerAPI.h"
+#include "engine/EngineOwnData.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "../utils/Utils.h"
+#include "utils/Utils.h"
 #include <llapi/mc/Player.hpp>
 using namespace std;
 

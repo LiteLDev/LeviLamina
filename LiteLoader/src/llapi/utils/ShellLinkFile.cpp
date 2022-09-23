@@ -1,9 +1,9 @@
-#include <llapi/utils/ShellLinkFile.h>
+#include "llapi/utils/ShellLinkFile.h"
 
 #include <memory>
 #include <string>
 
-#include <llapi/utils/StringHelper.h>
+#include "llapi/utils/StringHelper.h"
 
 #include <ShlObj.h>
 

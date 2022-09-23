@@ -1,4 +1,4 @@
-#include <llapi/mc/BinaryStream.hpp>
+#include "llapi/mc/BinaryStream.hpp"
 
 void BinaryStream::reserve(size_t size) {
     writeBuf.reserve(size);
