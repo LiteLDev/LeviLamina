@@ -15,7 +15,6 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ����(���壬�й�) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -94,7 +93,7 @@ BEGIN
     END
 END
 
-#endif    // ����(���壬�й�) resources
+#endif
 /////////////////////////////////////////////////////////////////////////////
 
 
