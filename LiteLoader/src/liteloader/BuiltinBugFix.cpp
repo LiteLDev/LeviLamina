@@ -233,7 +233,7 @@ THook(void*, "?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_tr
       ReadOnlyBinaryStream* bs, void* res) {
     auto oldptr = bs->getReadPointer();
     auto size = bs->getUnsignedVarInt();
-    if (size > 0x5fffff) {
+    if (size > 0x3fffff) {
         new (res) std::string();
         return res;
     }
@@ -246,7 +246,7 @@ THook(bool,
       ReadOnlyBinaryStream* bs, void* res) {
     auto oldptr = bs->getReadPointer();
     auto size = bs->getUnsignedVarInt();
-    if (size > 0x5fffff) {
+    if (size > 0x3fffff) {
         return false;
     }
     bs->setReadPointer(oldptr);
@@ -391,18 +391,6 @@ THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z"
         return ptr;
     }
     return original(self, a2);
-}
-
-THook(__int64, "?getAvailableChunk@ChunkSource@@QEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z", __int64 a1,
-      __int64 a2) {
-    if (ll::globalConfig.enableFixBDSCrash) {
-        __int64 ptr = NULL;
-        try {
-            ptr = original(a1, a2);
-        } catch (...) { return NULL; }
-        return ptr;
-    }
-    return original(a1, a2);
 }
 
 TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", Actor) {
