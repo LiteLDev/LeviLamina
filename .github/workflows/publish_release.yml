@@ -20,9 +20,14 @@ jobs:
           fetch-depth: 1
           submodules: 'true'
 
-      - uses: rickstaa/action-create-tag@v1
-        with:
-          tag: ${{ github.event.inputs.tag }}
+      - name: Create tag
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag ${{ github.event.inputs.tag }}
+          git push --tags
+        shell: bash
 
       - name: Cache Bedrock Dedicated Server Library
         id: cache-bds-lib
