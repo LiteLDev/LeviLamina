@@ -14,6 +14,9 @@
 #include "llapi/mc/BinaryStream.hpp"
 #include "llapi/EventAPI.h"
 
+#include "llapi/mc/LevelChunk.hpp"
+#include "llapi/mc/ChunkSource.hpp"
+
 #include "llapi/mc/NetworkHandler.hpp"
 #include "llapi/mc/NetworkPeer.hpp"
 #include "llapi/mc/ReadOnlyBinaryStream.hpp"
@@ -186,22 +189,6 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
     this->kick("error move");
 }
 
-#if false
-TInstanceHook(void, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer , ActorDamageSource* ds)
-{
-    original(this, ds);
-    if (ll::globalConfig.enableFixMcBug)
-    {
-        auto name = getRealName();
-        Schedule::delay([name]() {
-            auto pl = Global<Level>->getPlayer(name);
-            if (pl)
-                pl->kill();
-        },1);
-    }
-}
-#endif
-
 static inline bool checkPktId(unsigned int id) {
     id &= 0x3ff;
     return id == 0x01 || id == 0x5e || id == 0xc1;
@@ -246,7 +233,7 @@ THook(void*, "?getString@ReadOnlyBinaryStream@@QEAA?AV?$basic_string@DU?$char_tr
       ReadOnlyBinaryStream* bs, void* res) {
     auto oldptr = bs->getReadPointer();
     auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
+    if (size > 0x5fffff) {
         new (res) std::string();
         return res;
     }
@@ -259,28 +246,11 @@ THook(bool,
       ReadOnlyBinaryStream* bs, void* res) {
     auto oldptr = bs->getReadPointer();
     auto size = bs->getUnsignedVarInt();
-    if (size > 0x3fffff) {
+    if (size > 0x5fffff) {
         return false;
     }
     bs->setReadPointer(oldptr);
     return original(bs, res);
-}
-
-// Fix Fishing Hook changeDimension Crash
-TInstanceHook(__int64, "?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z", Actor, unsigned int a1) {
-    if (!ll::globalConfig.enableFixMcBug)
-        return original(this, a1);
-    if ((int)this->getEntityTypeId() == 0x4D)
-        return 0;
-    return original(this, a1);
-}
-
-TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAVActor@@@Z", Actor* a1) {
-    if (!ll::globalConfig.enableFixMcBug)
-        return original(this, a1);
-    if ((int)a1->getEntityTypeId() == 0x4D)
-        return 0;
-    return original(this, a1);
 }
 
 // Fix wine stop
@@ -411,35 +381,6 @@ THook(void, "??1ScopedTimer@ImguiProfiler@@UEAA@XZ", void* self) {
     }
     return original(self);
 }
-
-SHook2("_tickDimensionTransition", __int64,
-       "40 53 55 41 56 41 57 48 ?? ?? ?? ?? ?? ?? 48 ?? ?? ?? ?? ?? ?? 48 33 "
-       "C4 48 89 ?? ?? ?? 48 8B C2 4C 8B F9 48 8B C8 33 D2 49 8B D9 49 8B E8 E8 ?? ?? ?? ?? 4C 8B F0 48 85 C0",
-       __int64 a1, ActorOwnerComponent* a2, __int64 a3, void* a4) {
-    if (ll::globalConfig.enableFixBDSCrash) {
-        auto ac = Actor::tryGetFromComponent(*a2, false);
-        if (ac) {
-            auto bs = &ac->getRegionConst();
-            if (bs == nullptr || !bs)
-                return NULL;
-        }
-    }
-    return original(a1, a2, a3, a4);
-}
-
-THook(void, "?_trackMovement@GameEventMovementTrackingSystem@@CAXAEAVActor@@AEAVGameEventMovementTrackingComponent@@@Z",
-      Actor* a1, void* self) {
-    if (ll::globalConfig.enableFixBDSCrash) {
-        auto bs = &a1->getRegionConst();
-        if (bs == nullptr || !bs) {
-            return;
-        }
-    }
-    original(a1, self);
-}
-
-#include "llapi/mc/LevelChunk.hpp"
-#include "llapi/mc/ChunkSource.hpp"
 
 THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z", BlockSource* self, ChunkPos* a2) {
     if (ll::globalConfig.enableFixBDSCrash) {
