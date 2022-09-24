@@ -110,6 +110,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("tell", &PlayerClass::tell)
         .instanceFunction("talkAs", &PlayerClass::talkAs)
         .instanceFunction("sendText", &PlayerClass::tell)
+        .instanceFunction("setTitle", &PlayerClass::setTitle)
         .instanceFunction("rename", &PlayerClass::rename)
         .instanceFunction("setFire", &PlayerClass::setFire)
         .instanceFunction("stopFire", &PlayerClass::stopFire)
@@ -1132,6 +1133,45 @@ Local<Value> PlayerClass::tell(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in tell!");
+}
+
+Local<Value> PlayerClass::setTitle(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        string content;
+        TitleType type = TitleType::SetTitle;
+        int fadeInTime = 10;
+        int stayTime = 70;
+        int fadeOutTime = 20;
+
+        if (args.size() >= 1)
+        {
+            CHECK_ARG_TYPE(args[0], ValueKind::kString);
+            content = args[0].toStr();
+        }
+        if (args.size() >= 2)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            type = (TitleType)args[1].toInt();
+        }
+        if (args.size() >= 5)
+        {
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
+            fadeInTime = args[2].toInt();
+            stayTime = args[3].toInt();
+            fadeOutTime = args[4].toInt();
+        }
+
+        return Boolean::newBoolean(player->sendTitlePacket(content,type,fadeInTime,stayTime,fadeOutTime));
+    }
+    CATCH("Fail in setTitle!");
 }
 
 Local<Value> PlayerClass::talkAs(const Arguments& args) {

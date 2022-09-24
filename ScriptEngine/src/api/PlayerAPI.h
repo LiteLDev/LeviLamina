@@ -85,6 +85,7 @@ public:
     Local<Value> kill(const Arguments& args);
     Local<Value> kick(const Arguments& args);
     Local<Value> tell(const Arguments& args);
+    Local<Value> setTitle(const Arguments& args);
     Local<Value> talkAs(const Arguments& args);
     Local<Value> talkTo(const Arguments& args);
     Local<Value> rename(const Arguments& args);
