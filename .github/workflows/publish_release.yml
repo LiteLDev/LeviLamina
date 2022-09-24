@@ -147,12 +147,12 @@ jobs:
         shell: bash
 
       - name: Create New Release
-        uses: softprops/action-gh-release@v0.1.14
+        uses: ncipollo/release-action@v1
         with:
           prerelease: ${{ github.ref != 'refs/heads/main' }}
-          tag_name: ${{ github.event.inputs.tag }}
-          body_path: ${{ github.workspace }}\CHANGELOG.md
-          files: |
+          tag: ${{ github.event.inputs.tag }}
+          bodyFile: ${{ github.workspace }}\CHANGELOG.md
+          artifacts: |
             ${{ github.workspace }}\LiteLoader-${{ github.event.inputs.tag }}.zip
             ${{ github.workspace }}\PDB.zip
         env:
