@@ -4,6 +4,7 @@
 #include "api/DeviceAPI.h"
 #include "api/EntityAPI.h"
 #include "api/PlayerAPI.h"
+#include "api/DataAPI.h"
 #include "api/McAPI.h"
 #include "api/ContainerAPI.h"
 #include "api/ItemAPI.h"
@@ -188,6 +189,8 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("setMoney", &PlayerClass::setMoney)
         .instanceFunction("addMoney", &PlayerClass::addMoney)
         .instanceFunction("reduceMoney", &PlayerClass::reduceMoney)
+        .instanceFunction("transMoney", &PlayerClass::transMoney)
+        .instanceFunction("getMoneyHistory", &PlayerClass::getMoneyHistory)
 
         // SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
@@ -2382,7 +2385,11 @@ Local<Value> PlayerClass::reduceMoney(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto xuid = player->getXuid();
-        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::reduceMoney(xuid,args[0].asNumber().toInt64()));
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::reduceMoney(
+                                                       xuid,
+                                                       args[0].asNumber().toInt64())
+                                                   );
     }
     CATCH("Fail in reduceMoney!");
 }
@@ -2396,7 +2403,10 @@ Local<Value> PlayerClass::setMoney(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto xuid = player->getXuid();
-        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::setMoney(xuid,args[0].asNumber().toInt64()));
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::setMoney(
+                                                       xuid,args[0].asNumber().toInt64())
+                                                   );
     }
     CATCH("Fail in setMoney!");
 }
@@ -2410,9 +2420,57 @@ Local<Value> PlayerClass::addMoney(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto xuid = player->getXuid();
-        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::addMoney(xuid,args[0].asNumber().toInt64()));
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::addMoney(
+                                                       xuid,
+                                                       args[0].asNumber().toInt64())
+                                                   );
     }
     CATCH("Fail in addMoney!");
+}
+
+Local<Value> PlayerClass::transMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        string targetXuid;
+        string note;
+        if (args[0].getKind() == ValueKind::kString)
+            targetXuid = args[0].toStr();
+        else
+            targetXuid = PlayerClass::extract(args[0])->getXuid();
+        if (args.size() >= 3)
+        {
+            CHECK_ARG_TYPE(args[2], ValueKind::kString);
+            note = args[2].toStr();
+        }
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::transMoney(
+                                                       xuid,
+                                                       targetXuid,args[0].asNumber().toInt64(),
+                                                       note)
+                                                   );
+    }
+    CATCH("Fail in transMoney!");
+}
+
+Local<Value> PlayerClass::getMoneyHistory(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : objectificationMoneyHistory(EconomySystem::getMoneyHist(xuid,args[0].toInt()));
+    }
+    CATCH("Fail in getMoneyHistory!");
 }
 
 //////////////////// For Compatibility ////////////////////

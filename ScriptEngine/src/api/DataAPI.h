@@ -27,6 +27,8 @@ public:
 };
 extern ClassDefine<void> DataClassBuilder;
 
+Local<Array> objectificationMoneyHistory(const string& res);
+
 
 //////////////////// Money Static ////////////////////
 

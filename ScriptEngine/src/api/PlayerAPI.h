@@ -168,6 +168,8 @@ public:
     Local<Value> setMoney(const Arguments& args);
     Local<Value> reduceMoney(const Arguments& args);
     Local<Value> addMoney(const Arguments& args);
+    Local<Value> transMoney(const Arguments& args);
+    Local<Value> getMoneyHistory(const Arguments& args);
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
 

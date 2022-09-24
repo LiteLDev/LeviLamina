@@ -634,6 +634,45 @@ Local<Value> MoneyClass::trans(const Arguments& args) {
     CATCH("Fail in MoneyTrans!");
 }
 
+Local<Array> objectificationMoneyHistory(const string& res)
+{
+    auto list = SplitStrWithPattern(res, "\n");
+    // from -> to money time (note)
+
+    Local<Array> arr = Array::newArray();
+
+    string from, to, time1, time2, note, tmp;
+    long long money;
+    for (auto& str : list) {
+        if (str.back() == '\n')
+            str.pop_back();
+
+        istringstream sin(str);
+        Local<Object> obj = Object::newObject();
+
+        note.clear();
+        sin >> from >> tmp >> to >> money >> time1 >> time2;
+        sin.get();
+        getline(sin, note);
+        if (note.front() == '(')
+            note.erase(0, 1);
+        if (note.back() == '\n')
+            note.pop_back();
+        if (note.back() == ')')
+            note.pop_back();
+
+        time1 += " " + time2;
+
+        obj.set("from", String::newString(from));
+        obj.set("to", String::newString(to));
+        obj.set("money", Number::newNumber(money));
+        obj.set("time", String::newString(time1));
+        obj.set("note", String::newString(note));
+        arr.add(obj);
+    }
+    return arr;
+}
+
 Local<Value> MoneyClass::getHistory(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
@@ -641,41 +680,7 @@ Local<Value> MoneyClass::getHistory(const Arguments& args) {
 
     try {
         string res{EconomySystem::getMoneyHist(args[0].toStr(), args[1].asNumber().toInt64())};
-        auto list = SplitStrWithPattern(res, "\n");
-        // from -> to money time (note)
-
-        Local<Array> arr = Array::newArray();
-
-        string from, to, time1, time2, note, tmp;
-        long long money;
-        for (auto& str : list) {
-            if (str.back() == '\n')
-                str.pop_back();
-
-            istringstream sin(str);
-            Local<Object> obj = Object::newObject();
-
-            note.clear();
-            sin >> from >> tmp >> to >> money >> time1 >> time2;
-            sin.get();
-            getline(sin, note);
-            if (note.front() == '(')
-                note.erase(0, 1);
-            if (note.back() == '\n')
-                note.pop_back();
-            if (note.back() == ')')
-                note.pop_back();
-
-            time1 += " " + time2;
-
-            obj.set("from", String::newString(from));
-            obj.set("to", String::newString(to));
-            obj.set("money", Number::newNumber(money));
-            obj.set("time", String::newString(time1));
-            obj.set("note", String::newString(note));
-            arr.add(obj);
-        }
-        return arr;
+        return objectificationMoneyHistory(res);
     } catch (const std::invalid_argument& e) {
         logger.error("Bad argument in MoneyGetHintory!");
         logger.error(TextEncoding::toUTF8(e.what()));
