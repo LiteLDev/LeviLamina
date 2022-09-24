@@ -99,6 +99,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("isCreative", &PlayerClass::isCreative)
         .instanceProperty("isFlying", &PlayerClass::isFlying)
         .instanceProperty("isSleeping", &PlayerClass::isSleeping)
+        .instanceProperty("isMoving", &PlayerClass::isMoving)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -968,6 +969,18 @@ Local<Value> PlayerClass::isSleeping() {
         return Boolean::newBoolean(player->isSleeping());
     }
     CATCH("Fail in isSleeping!")
+}
+
+Local<Value> PlayerClass::isMoving() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isMoving());
+    }
+    CATCH("Fail in isMoving!")
 }
 
 Local<Value> PlayerClass::teleport(const Arguments& args) {

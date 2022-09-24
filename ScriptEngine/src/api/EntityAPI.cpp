@@ -63,6 +63,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("isDancing", &EntityClass::isDancing)
         .instanceProperty("isSleeping", &EntityClass::isSleeping)
         .instanceProperty("isAngry", &EntityClass::isAngry)
+        .instanceProperty("isBaby", &EntityClass::isBaby)
+        .instanceProperty("isMoving", &EntityClass::isMoving)
 
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
@@ -325,6 +327,28 @@ Local<Value> EntityClass::isAngry() {
         return Boolean::newBoolean(entity->isAngry());
     }
     CATCH("Fail in isAngry!")
+}
+
+Local<Value> EntityClass::isBaby() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isBaby());
+    }
+    CATCH("Fail in isBaby!")
+}
+
+Local<Value> EntityClass::isMoving() {
+    try {
+        Actor* entity = get();
+        if (!entity)
+            return Local<Value>();
+
+        return Boolean::newBoolean(entity->isMoving());
+    }
+    CATCH("Fail in isMoving!")
 }
 
 #include <llapi/mc/CommandUtils.hpp>
