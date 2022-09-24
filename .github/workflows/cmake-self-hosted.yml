@@ -59,10 +59,14 @@ jobs:
           move bedrock_server_var.lib ..\LiteLoader\lib
         shell: cmd
 
+      - name: Get Short Sha
+        id: sha_short
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
       - name: Change LITELOADER_VERSION_COMMIT_SHA
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA  ${{ github.sha }}\r/' LiteLoader/include/liteloader/Version.h
+          sed -r -i 's/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA  ${{ steps.sha_short.outputs.sha_short }}\r/' LiteLoader/include/liteloader/Version.h
         shell: bash
 
       - name: Get MSVC Path
