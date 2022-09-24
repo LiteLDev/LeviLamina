@@ -984,6 +984,7 @@ TInstanceHook(void, "?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStac
 }
 
 /////////////////// PlayerMove ///////////////////
+/*
 TClasslessInstanceHook(void, "?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z",
                        Player* pl) {
     IF_LISTENED(PlayerMoveEvent) {
@@ -997,6 +998,7 @@ TClasslessInstanceHook(void, "?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVP
     IF_LISTENED_END(PlayerMoveEvent)
     return original(this, pl);
 }
+*/
 
 /////////////////// PlayerSprint ///////////////////
 TInstanceHook(void, "?setSprinting@Mob@@UEAAX_N@Z",
@@ -1018,7 +1020,7 @@ TInstanceHook(void, "?setSprinting@Mob@@UEAAX_N@Z",
 #include "llapi/mc/PlayerInventory.hpp"
 #include "llapi/mc/SimpleContainer.hpp"
 /////////////////// PlayerSetArmor ///////////////////
-TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
+TInstanceHook(void, "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
               Player, unsigned slot, ItemStack* it) {
     original(this, slot, it);
     IF_LISTENED(PlayerSetArmorEvent) {
@@ -1036,8 +1038,7 @@ TInstanceHook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
                     auto sp = Global<Level>->getPlayer(uid);
                     if (sp)
                         sp->refreshInventory();
-                },
-                                1);
+                },1);
             }
         }
     }
