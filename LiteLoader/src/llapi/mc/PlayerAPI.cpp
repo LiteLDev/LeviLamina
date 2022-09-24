@@ -46,6 +46,9 @@
 
 #include "liteloader/LiteLoader.h"
 
+#include "llapi/mc/CommandUtils.hpp"
+#include "llapi/mc/ItemInstance.hpp"
+
 using ll::logger;
 
 NetworkIdentifier* Player::getNetworkIdentifier() {
@@ -168,9 +171,31 @@ bool Player::talkAs(const std::string& msg) {
     return sendTextTalkPacket(msg);
 }
 
+
 bool Player::giveItem(ItemStack* item) {
-    if (!this->add(*item))
-        return false;
+    int temp;
+    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(item->getTypeName())), item->getCount(), temp);
+    for (auto& itemstack : itemlist) {
+        if (!itemstack.isNull()) {
+            if (!this->add(itemstack) && !this->isCreative()) {
+                this->drop(itemstack, 0);
+            }
+        }
+    }
+    refreshInventory();
+    return true;
+}
+
+bool Player::giveItem(string typeName, int count) {
+    int temp;
+    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(typeName)), count, temp);
+    for (auto& itemstack : itemlist) {
+        if (!itemstack.isNull()) {
+            if (!this->add(itemstack) && !this->isCreative()) {
+                this->drop(itemstack, 0);
+            }
+        }
+    }
     refreshInventory();
     return true;
 }

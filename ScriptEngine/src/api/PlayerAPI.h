@@ -75,6 +75,7 @@ public:
     Local<Value> isCreative();
     Local<Value> isFlying();
     Local<Value> isSleeping();
+    Local<Value> isMoving();
 
     Local<Value> isOP(const Arguments& args);
     Local<Value> setPermLevel(const Arguments& args);
@@ -85,6 +86,7 @@ public:
     Local<Value> kill(const Arguments& args);
     Local<Value> kick(const Arguments& args);
     Local<Value> tell(const Arguments& args);
+    Local<Value> setTitle(const Arguments& args);
     Local<Value> talkAs(const Arguments& args);
     Local<Value> talkTo(const Arguments& args);
     Local<Value> rename(const Arguments& args);
@@ -160,6 +162,15 @@ public:
 
     Local<Value> isSimulatedPlayer(const Arguments& args);
     Local<Value> quickEvalMolangScript(const Arguments& args);
+
+    // LLMoney
+
+    Local<Value> getMoney(const Arguments& args);
+    Local<Value> setMoney(const Arguments& args);
+    Local<Value> reduceMoney(const Arguments& args);
+    Local<Value> addMoney(const Arguments& args);
+    Local<Value> transMoney(const Arguments& args);
+    Local<Value> getMoneyHistory(const Arguments& args);
 
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
 

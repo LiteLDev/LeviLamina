@@ -4,6 +4,7 @@
 #include "api/DeviceAPI.h"
 #include "api/EntityAPI.h"
 #include "api/PlayerAPI.h"
+#include "api/DataAPI.h"
 #include "api/McAPI.h"
 #include "api/ContainerAPI.h"
 #include "api/ItemAPI.h"
@@ -13,6 +14,7 @@
 #include "api/NativeAPI.h"
 #include "engine/EngineOwnData.h"
 #include "engine/GlobalShareData.h"
+#include "main/EconomicSystem.h"
 #include <llapi/mc/Player.hpp>
 #include <llapi/mc/NetworkIdentifier.hpp>
 #include <llapi/mc/Actor.hpp>
@@ -97,6 +99,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("isCreative", &PlayerClass::isCreative)
         .instanceProperty("isFlying", &PlayerClass::isFlying)
         .instanceProperty("isSleeping", &PlayerClass::isSleeping)
+        .instanceProperty("isMoving", &PlayerClass::isMoving)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -110,6 +113,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("tell", &PlayerClass::tell)
         .instanceFunction("talkAs", &PlayerClass::talkAs)
         .instanceFunction("sendText", &PlayerClass::tell)
+        .instanceFunction("setTitle", &PlayerClass::setTitle)
         .instanceFunction("rename", &PlayerClass::rename)
         .instanceFunction("setFire", &PlayerClass::setFire)
         .instanceFunction("stopFire", &PlayerClass::stopFire)
@@ -181,6 +185,14 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getBlockFromViewVector", &PlayerClass::getBlockFromViewVector)
         .instanceFunction("quickEvalMolangScript", &PlayerClass::quickEvalMolangScript)
 
+        // LLMoney
+        .instanceFunction("getMoney", &PlayerClass::getMoney)
+        .instanceFunction("setMoney", &PlayerClass::setMoney)
+        .instanceFunction("addMoney", &PlayerClass::addMoney)
+        .instanceFunction("reduceMoney", &PlayerClass::reduceMoney)
+        .instanceFunction("transMoney", &PlayerClass::transMoney)
+        .instanceFunction("getMoneyHistory", &PlayerClass::getMoneyHistory)
+
         // SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
         .instanceFunction("simulateSneak", &PlayerClass::simulateSneak)
@@ -247,7 +259,7 @@ Local<Value> McClass::getPlayer(const Arguments& args) {
         Player* found = nullptr;
 
         for (Player* p : playerList) {
-            if (p->getXuid() == target)
+            if (p->getXuid() == target || std::to_string(p->getUniqueID().id) == target)
                 return PlayerClass::newPlayer(p);
 
             string pName = p->getName();
@@ -959,6 +971,18 @@ Local<Value> PlayerClass::isSleeping() {
     CATCH("Fail in isSleeping!")
 }
 
+Local<Value> PlayerClass::isMoving() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+
+        return Boolean::newBoolean(player->isMoving());
+    }
+    CATCH("Fail in isMoving!")
+}
+
 Local<Value> PlayerClass::teleport(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1)
 
@@ -1132,6 +1156,45 @@ Local<Value> PlayerClass::tell(const Arguments& args) {
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in tell!");
+}
+
+Local<Value> PlayerClass::setTitle(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        string content;
+        TitleType type = TitleType::SetTitle;
+        int fadeInTime = 10;
+        int stayTime = 70;
+        int fadeOutTime = 20;
+
+        if (args.size() >= 1)
+        {
+            CHECK_ARG_TYPE(args[0], ValueKind::kString);
+            content = args[0].toStr();
+        }
+        if (args.size() >= 2)
+        {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            type = (TitleType)args[1].toInt();
+        }
+        if (args.size() >= 5)
+        {
+            CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+            CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
+            fadeInTime = args[2].toInt();
+            stayTime = args[3].toInt();
+            fadeOutTime = args[4].toInt();
+        }
+
+        return Boolean::newBoolean(player->sendTitlePacket(content,type,fadeInTime,stayTime,fadeOutTime));
+    }
+    CATCH("Fail in setTitle!");
 }
 
 Local<Value> PlayerClass::talkAs(const Arguments& args) {
@@ -1548,7 +1611,7 @@ Local<Value> PlayerClass::getScore(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        return Number::newNumber(::Global<Scoreboard>->getScore(player, args[0].toStr()));
+        return Number::newNumber(Scoreboard::getScore(player, args[0].toStr()));
     }
     CATCH("Fail in getScore!");
 }
@@ -2313,6 +2376,116 @@ Local<Value> PlayerClass::quickEvalMolangScript(const Arguments& args) {
     CATCH("Fail in quickEvalMolangScript!");
 }
 
+//////////////////// For LLMoney ////////////////////
+
+Local<Value> PlayerClass::getMoney(const Arguments& args) {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::getMoney(xuid));
+    }
+    CATCH("Fail in getMoney!");
+}
+
+Local<Value> PlayerClass::reduceMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::reduceMoney(
+                                                       xuid,
+                                                       args[0].asNumber().toInt64())
+                                                   );
+    }
+    CATCH("Fail in reduceMoney!");
+}
+
+Local<Value> PlayerClass::setMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::setMoney(
+                                                       xuid,args[0].asNumber().toInt64())
+                                                   );
+    }
+    CATCH("Fail in setMoney!");
+}
+
+Local<Value> PlayerClass::addMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::addMoney(
+                                                       xuid,
+                                                       args[0].asNumber().toInt64())
+                                                   );
+    }
+    CATCH("Fail in addMoney!");
+}
+
+Local<Value> PlayerClass::transMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 2);
+    // nocheck: args[0] maybe Player or XUID.
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        string targetXuid;
+        string note;
+        if (args[0].getKind() == ValueKind::kString)
+            targetXuid = args[0].toStr();
+        else
+            targetXuid = PlayerClass::extract(args[0])->getXuid();
+        if (args.size() >= 3)
+        {
+            CHECK_ARG_TYPE(args[2], ValueKind::kString);
+            note = args[2].toStr();
+        }
+        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
+                                                   EconomySystem::transMoney(
+                                                       xuid,
+                                                       targetXuid,args[0].asNumber().toInt64(),
+                                                       note)
+                                                   );
+    }
+    CATCH("Fail in transMoney!");
+}
+
+Local<Value> PlayerClass::getMoneyHistory(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : objectificationMoneyHistory(EconomySystem::getMoneyHist(xuid,args[0].toInt()));
+    }
+    CATCH("Fail in getMoneyHistory!");
+}
 
 //////////////////// For Compatibility ////////////////////
 

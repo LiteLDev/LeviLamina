@@ -400,12 +400,6 @@ public:
     ItemStack* mNewItemStack;
 };
 
-class PlayerMoveEvent : public EventTemplate<PlayerMoveEvent> {
-public:
-    Player* mPlayer = nullptr;
-    Vec3 mPos;
-};
-
 class PlayerSprintEvent : public EventTemplate<PlayerSprintEvent> {
 public:
     Player* mPlayer = nullptr;

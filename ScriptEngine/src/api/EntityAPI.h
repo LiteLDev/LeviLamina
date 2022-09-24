@@ -58,6 +58,8 @@ public:
     Local<Value> isDancing();
     Local<Value> isSleeping();
     Local<Value> isAngry();
+    Local<Value> isBaby();
+    Local<Value> isMoving();
 
     Local<Value> teleport(const Arguments& args);
     Local<Value> kill(const Arguments& args);

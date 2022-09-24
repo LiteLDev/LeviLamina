@@ -72,6 +72,8 @@ std::string ll::Version::toString(bool needStatus) {
             res += " - Beta";
         else if (status == Status::Dev)
             res += " - Dev";
+        else
+            res += " - Release";
     }
     return res;
 }

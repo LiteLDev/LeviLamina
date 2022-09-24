@@ -12,6 +12,7 @@
 #include "llapi/mc/ServerNetworkHandler.hpp"
 #include "llapi/mc/ClientCacheBlobStatusPacket.hpp"
 #include "llapi/mc/BinaryStream.hpp"
+#include "llapi/mc/LevelData.hpp"
 #include "llapi/EventAPI.h"
 
 #include "llapi/mc/LevelChunk.hpp"
@@ -328,18 +329,18 @@ THook(std::wistream&,
 }
 
 // Fix server broadcast bug.
-TClasslessInstanceHook(bool, "?getLANBroadcast@LevelData@@QEBA_NXZ") {
+TInstanceHook(LevelData*,
+              "??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
+              "W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z",
+              LevelData, void* a2, __int64 a3, unsigned int a4, BlockPos* a5, char a6, int a7, int a8,
+              int a9) {
     if (ll::globalConfig.enableFixBroadcastBug) {
-        return true;
+        auto data = original(this, a2, a3, a4, a5, a6, a7, a8, a9);
+        data->setLANBroadcast(true);
+        data->setLANBroadcastIntent(true);
+        return data;
     }
-    return original(this);
-}
-
-TClasslessInstanceHook(bool, "?getLANBroadcastIntent@LevelData@@QEBA_NXZ") {
-    if (ll::globalConfig.enableFixBroadcastBug) {
-        return true;
-    }
-    return original(this);
+    return original(this, a2, a3, a4, a5, a6, a7, a8, a9);
 }
 
 // Disable 'Running AutoCompaction...' log.
