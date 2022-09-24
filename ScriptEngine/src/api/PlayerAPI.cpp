@@ -1611,7 +1611,7 @@ Local<Value> PlayerClass::getScore(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        return Number::newNumber(::Global<Scoreboard>->getScore(player, args[0].toStr()));
+        return Number::newNumber(Scoreboard::getScore(player, args[0].toStr()));
     }
     CATCH("Fail in getScore!");
 }
@@ -2444,6 +2444,7 @@ Local<Value> PlayerClass::addMoney(const Arguments& args) {
 
 Local<Value> PlayerClass::transMoney(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
+    // nocheck: args[0] maybe Player or XUID.
     CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
 
     try {

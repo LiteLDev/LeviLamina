@@ -176,7 +176,7 @@ LIAPI int Scoreboard::getScore(const std::string& objname, Player* player) {
 
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity)) {
-        throw std::runtime_error("Bad ScoreboardId");
+        Global<Scoreboard>->createScoreboardId(*player);
     }
 
     auto score = obj->getPlayerScore(identity);
