@@ -1,14 +1,14 @@
 name: "[ENG] Bug Report"
-description: "Report a bug to us to make LiteLoader better."
+description: "Report a bug to us to make LiteLoaderBDS better."
 labels: ["bug"]
 body:
 - type: markdown
   attributes:
     value: |
       Thanks for taking the time to fill out this bug report!
-      > **NOTICE**
-      > 1. Feedback issues should belong to LiteLoader.
-      > 2. Please do not report destructive Minecraft Bugs, please send a private message to the project developer in IM, and give feedback to Mojang in time.
+      - **NOTICE**
+        1. Feedback issues should belong to LiteLoaderBDS.
+        2. Please do not report destructive Minecraft Bugs, please send a private message to the project developer in IM, and give feedback to Mojang in time.
 
 - type: dropdown
   id: module
@@ -44,10 +44,10 @@ body:
 - type: input
   id: llversion
   attributes:
-    label: "LiteLoader version"
-    placeholder: Type your LiteLoader version.
+    label: "LiteLoaderBDS version"
+    placeholder: Type your LiteLoaderBDS version.
     description: |
-      If you are using a beta LiteLoader downloaded from Actions, please type the corresponding Actions run ID (starting with #) or commit hash.
+      If you are using a beta LiteLoaderBDS downloaded from Actions, please type the corresponding Actions run ID (starting with #) or commit hash.
       e.g. 2.1.0     Actions#1479     4f404a7
   validations:
     required: true
@@ -82,16 +82,16 @@ body:
   attributes:
     label: Relevant log output
     description: Please copy and paste any relevant log output.
-    render: shell
+    render: log
 - type: textarea
   id: plugins
   attributes:
     label: Plugin list
     description: Please copy the command output of `ll list`.
-    render: shell
+    render: log
 - type: markdown
   attributes:
     value: |
-      **If you have pictures or other content, please comment below. Screenshots,logs and dmp files are very important and helpful for solving your problem**
+      **If you have pictures or other content, please comment below. Screenshots, logs and dumps files are very important and helpful for solving your problem**
       ******
-      Thank you again for your contribution to LiteLoader!
+      Thank you again for your contribution to LiteLoaderBDS!

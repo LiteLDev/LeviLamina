@@ -1,14 +1,14 @@
 name: "[简体中文] 报告漏洞/问题"
-description: "向我们报告漏洞/问题以让LiteLoader变得更好"
+description: "向我们报告漏洞/问题以让LiteLoaderBDS变得更好"
 labels: ["bug"]
 body:
 - type: markdown
   attributes:
     value: |
-      感谢您花时间填写这份Bug反馈!
-      > **注意事项**
-      > 1. 请勿反馈非加载器问题
-      > 2. 请勿在这里反馈具有严重影响的游戏漏洞, 相关问题请在聊天软件内私聊项目开发者并向及时向Mojang反馈
+      感谢您花时间填写这份Bug反馈！
+      - **注意事项**
+        1. 请勿反馈非加载器问题
+        2. 请勿在这里反馈具有严重影响的游戏漏洞，相关问题请在聊天软件内私聊项目开发者并向及时向Mojang反馈
 
 - type: dropdown
   id: module
@@ -44,10 +44,10 @@ body:
 - type: input
   id: llversion
   attributes:
-    label: "LiteLoader版本"
-    placeholder: 输入您的LiteLoader版本
+    label: "LiteLoaderBDS版本"
+    placeholder: 输入您的LiteLoaderBDS版本
     description: |
-      如果您正在使用一个从Actions下载的beta版LiteLoader，请输入对应的Actions运行ID(#开头)或commit hash
+      如果您正在使用一个从Actions下载的测试版LiteLoaderBDS，请输入对应的Actions运行ID(#开头)或commit hash
       e.g. 2.1.0     Actions#1479     4f404a7
   validations:
     required: true
@@ -61,9 +61,9 @@ body:
 - type: textarea
   id: what-happened
   attributes:
-    label: 发生了什么?
+    label: 发生了什么？
     description: |
-      发生了什么?请描述你的问题. 并告诉我们, 您希望我们做什么
+      发生了什么？请描述你的问题。并告诉我们，您希望我们做什么
     placeholder: 清晰地描述你的问题
   validations:
     required: true
@@ -73,24 +73,24 @@ body:
     label: 复现此问题的步骤
     description: 尽可能清晰且详细的描述如何复现
     placeholder: |
-      1. Do something
-      2. ...
-      3. ...
+      1. 做了些什么
+      2. ……
+      3. ……
 - type: textarea
   id: logs
   attributes:
     label: 有关的日志/输出
     description: 请粘贴有关此问题的日志到此处
-    render: shell
+    render: log
 - type: textarea
   id: plugins
   attributes:
     label: 插件列表
     description: 请复制命令`ll list`的输出
-    render: shell
+    render: log
 - type: markdown
   attributes:
     value: |
-      **如果你有图片或其他内容，请在下面评论(comment)。截图，日志和dmp文件对解决你的问题很重要、很有帮助**
+      **如果你有图片或其他内容，请在下面评论（comment）。截图、日志和转储文件对解决你的问题很重要，很有帮助**
       ******
-      再次感谢您对LiteLoader的贡献!
+      再次感谢您对LiteLoaderBDS的贡献！
