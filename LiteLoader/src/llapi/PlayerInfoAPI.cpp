@@ -9,11 +9,16 @@
 
 constexpr auto PLAYER_DATABASE_PATH = "plugins/LiteLoader/PlayerDB.db";
 constexpr auto SQL_CREATE_PLAYER_TABLE = R"(
-CREATE TABLE IF NOT EXISTS player (
-    NAME TEXT PRIMARY KEY NOT NULL,
-    XUID TEXT NOT NULL,
+CREATE TABLE IF NOT EXISTS player_new (
+    XUID TEXT PRIMARY KEY NOT NULL,
+    NAME TEXT NOT NULL,
     UUID TEXT NOT NULL
 ) WITHOUT ROWID; )";
+constexpr auto SQL_UPDATE_PLAYER_TABLE = R"(
+INSERT INTO player_new (XUID, NAME, UUID)
+    SELECT XUID, NAME, UUID from player;
+DROP TABLE player;
+)";
 
 DB::SharedPointer<DB::Session> db;
 
@@ -130,6 +135,17 @@ PlayerInfo::Info row_to(const DB::Row& row) {
     };
 }
 
+void UpdatePlayerDatabase() {
+    auto query = db->query(R"(SELECT count(*) FROM sqlite_master WHERE type="table" AND name = "player")");
+    DB::Any res = query.data()->front();
+    if (res.is_number()) {
+        if (res.get_number<unsigned short>() > 0) {
+            ll::logger.warn("Converting old PlayerInfo to new one, please wait.");
+            db->execute(SQL_UPDATE_PLAYER_TABLE);
+        }
+    }
+}
+
 bool InitPlayerDatabase() {
     using namespace PlayerInfo;
     try {
@@ -137,7 +153,10 @@ bool InitPlayerDatabase() {
 
         db->execute(SQL_CREATE_PLAYER_TABLE);
 
-        PlayerInfo::data = db->prepare("select NAME, XUID, UUID from player")->execute()->fetchAll<Info>();
+        // Process old data
+        UpdatePlayerDatabase();
+
+        PlayerInfo::data = db->prepare("SELECT NAME, XUID, UUID FROM player_new")->execute()->fetchAll<Info>();
 
         // Event::ServerStartedEvent::subscribe([](const Event::ServerStartedEvent&) {
         //     if (Global<PropertiesSettings> && !Global<PropertiesSettings>->useOnlineAuthentication()) {
