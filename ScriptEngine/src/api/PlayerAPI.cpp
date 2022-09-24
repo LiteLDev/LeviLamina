@@ -255,7 +255,7 @@ Local<Value> McClass::getPlayer(const Arguments& args) {
         Player* found = nullptr;
 
         for (Player* p : playerList) {
-            if (p->getXuid() == target)
+            if (p->getXuid() == target || std::to_string(p->getUniqueID().id) == target)
                 return PlayerClass::newPlayer(p);
 
             string pName = p->getName();
