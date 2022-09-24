@@ -162,6 +162,13 @@ public:
     Local<Value> isSimulatedPlayer(const Arguments& args);
     Local<Value> quickEvalMolangScript(const Arguments& args);
 
+    // LLMoney
+
+    Local<Value> getMoney(const Arguments& args);
+    Local<Value> setMoney(const Arguments& args);
+    Local<Value> reduceMoney(const Arguments& args);
+    Local<Value> addMoney(const Arguments& args);
+
     // SimulatedPlayer API (API/SimulatedPlayerAPI.cpp)
 
     Local<Value> simulateSneak(const Arguments& args);

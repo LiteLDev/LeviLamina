@@ -13,6 +13,7 @@
 #include "api/NativeAPI.h"
 #include "engine/EngineOwnData.h"
 #include "engine/GlobalShareData.h"
+#include "main/EconomicSystem.h"
 #include <llapi/mc/Player.hpp>
 #include <llapi/mc/NetworkIdentifier.hpp>
 #include <llapi/mc/Actor.hpp>
@@ -181,6 +182,12 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getEntityFromViewVector", &PlayerClass::getEntityFromViewVector)
         .instanceFunction("getBlockFromViewVector", &PlayerClass::getBlockFromViewVector)
         .instanceFunction("quickEvalMolangScript", &PlayerClass::quickEvalMolangScript)
+
+        // LLMoney
+        .instanceFunction("getMoney", &PlayerClass::getMoney)
+        .instanceFunction("setMoney", &PlayerClass::setMoney)
+        .instanceFunction("addMoney", &PlayerClass::addMoney)
+        .instanceFunction("reduceMoney", &PlayerClass::reduceMoney)
 
         // SimulatedPlayer API
         .instanceFunction("isSimulatedPlayer", &PlayerClass::isSimulatedPlayer)
@@ -2353,6 +2360,60 @@ Local<Value> PlayerClass::quickEvalMolangScript(const Arguments& args) {
     CATCH("Fail in quickEvalMolangScript!");
 }
 
+//////////////////// For LLMoney ////////////////////
+
+Local<Value> PlayerClass::getMoney(const Arguments& args) {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::getMoney(xuid));
+    }
+    CATCH("Fail in getMoney!");
+}
+
+Local<Value> PlayerClass::reduceMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::reduceMoney(xuid,args[0].asNumber().toInt64()));
+    }
+    CATCH("Fail in reduceMoney!");
+}
+
+Local<Value> PlayerClass::setMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::setMoney(xuid,args[0].asNumber().toInt64()));
+    }
+    CATCH("Fail in setMoney!");
+}
+
+Local<Value> PlayerClass::addMoney(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+        auto xuid = player->getXuid();
+        return xuid.empty() ? Local<Value>() : Number::newNumber(EconomySystem::addMoney(xuid,args[0].asNumber().toInt64()));
+    }
+    CATCH("Fail in addMoney!");
+}
 
 //////////////////// For Compatibility ////////////////////
 
