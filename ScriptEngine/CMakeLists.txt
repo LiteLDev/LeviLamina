@@ -14,25 +14,13 @@ endif ()
 
 set(SCRIPTENGINE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
-set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64)
-
-set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release)
-
-file(GLOB_RECURSE SRC_FILES
-        ${SCRIPTENGINE_DIR}/Main/*.cpp
-        ${SCRIPTENGINE_DIR}/Main/*.hpp
-        ${SCRIPTENGINE_DIR}/Main/*.h
-        ${SCRIPTENGINE_DIR}/API/*.cpp
-        ${SCRIPTENGINE_DIR}/API/*.hpp
-        ${SCRIPTENGINE_DIR}/API/*.h
-        ${SCRIPTENGINE_DIR}/Engine/*.cpp
-        ${SCRIPTENGINE_DIR}/Engine/*.hpp
-        ${SCRIPTENGINE_DIR}/Engine/*.h
-        ${SCRIPTENGINE_DIR}/Tools/*.cpp
-        ${SCRIPTENGINE_DIR}/Tools/*.hpp
-        ${SCRIPTENGINE_DIR}/Tools/*.h
-        ${SCRIPTENGINE_DIR}/Resource/*.rc
-        ${SCRIPTENGINE_DIR}/Resource/*.h
+file(
+        GLOB_RECURSE SRC_FILES
+        ${SCRIPTENGINE_DIR}/src/*.cpp
+        ${SCRIPTENGINE_DIR}/src/*.hpp
+        ${SCRIPTENGINE_DIR}/src/*.h
+        ${SCRIPTENGINE_DIR}/src/*.inc
+        ${SCRIPTENGINE_DIR}/src/*.rc
 )
 
 add_definitions(
@@ -41,11 +29,14 @@ add_definitions(
         -D_WINDLL -D_UNICODE -DUNICODE -D "LLSE_BACKEND_${LLSE_BACKEND}" -DCMAKE
 )
 
+# Replace Compile Flag /EHsc to /EHa
+string(REPLACE "/EHsc" "/EHa" CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+
 add_compile_options(
         /permissive- /MP /GS /GL /W3 /Gy /Zc:wchar_t
         /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
         /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC
-        /EHa /nologo /diagnostics:column /utf-8
+        /nologo /diagnostics:column /utf-8
 )
 
 add_link_options(
@@ -58,38 +49,29 @@ add_link_options(
 
 add_library(${PROJECT_NAME} SHARED ${SRC_FILES})
 
-include_directories(${SCRIPTENGINE_DIR}/)
-include_directories(${SCRIPTENGINE_DIR}/Main)
-include_directories(${SCRIPTENGINE_DIR}/..)
-include_directories(${LiteLoader_SOURCE_DIR}/Header)
-include_directories(${LiteLoader_SOURCE_DIR}/Header/third-party)
-include_directories(${SCRIPTENGINE_DIR}/third-party)
-include_directories(${SCRIPTENGINE_DIR}/third-party/Lua/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/QuickJs/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include/ScriptX)
-include_directories(${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include)
-include_directories(${SCRIPTENGINE_DIR}/third-party/NodeJs/include/v8)
-include_directories(${SCRIPTENGINE_DIR}/third-party/gsl)
+target_include_directories(
+        ${PROJECT_NAME}
+        PRIVATE
+        ${CMAKE_SOURCE_DIR}
+        ${LiteLoader_SOURCE_DIR}/include/
+        ${LiteLoader_SOURCE_DIR}/third-party/include
+        ${SCRIPTENGINE_DIR}/src
+        ${SCRIPTENGINE_DIR}/third-party/include
+        ${SCRIPTENGINE_DIR}/third-party/ScriptX/src/include
+)
 
-link_directories(${SCRIPTENGINE_DIR}/)
-link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
+file(
+        GLOB_RECURSE SCRIPTENGINE_THIRD_PARTY_LIBS
+        ${SCRIPTENGINE_DIR}/third-party/lib/*.lib
+)
 
-add_library(base64 STATIC IMPORTED)
-
-target_link_libraries(${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY} SymDBHelper
-        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libcrypto.lib"
-        "${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party/openssl/libssl.lib"
-        "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdyncall_s.lib"
-        "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdyncallback_s.lib"
-        "${SCRIPTENGINE_DIR}/third-party/dyncall/lib/libdynload_s.lib"
-        "${SCRIPTENGINE_DIR}/third-party/LightWebSocketClient/lib/LightWSClient.lib"
-        "${SCRIPTENGINE_DIR}/third-party/NodeJs/lib/libnode.lib"
-        "${SCRIPTENGINE_DIR}/third-party/QuickJs/lib/quickjs.lib"
-        "${SCRIPTENGINE_DIR}/third-party/Lua/lib/lua.lib"
-        "${SCRIPTENGINE_DIR}/third-party/nbt-cpp/lib/nbt-cpp.lib"
+target_link_libraries(
+        ${PROJECT_NAME} LiteLoader ScriptX-${LLSE_BACKEND_LIBRARY}
+        "${LiteLoader_SOURCE_DIR}/third-party/lib/openssl/libcrypto.lib"
+        "${LiteLoader_SOURCE_DIR}/third-party/lib/openssl/libssl.lib"
+        ${SCRIPTENGINE_THIRD_PARTY_LIBS}
         # Please make sure that the BDS APIs ImportLibrary is at the bottom of the list to ensure proper linking.
-        "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_api.lib"
-        "${LiteLoader_SOURCE_DIR}/Lib/bedrock_server_var.lib"
+        "${LiteLoader_SOURCE_DIR}/lib/bedrock_server_api.lib"
+        "${LiteLoader_SOURCE_DIR}/lib/bedrock_server_var.lib"
+        SymDBHelper
 )

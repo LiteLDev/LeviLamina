@@ -1,0 +1,53 @@
+/**
+ * @file  SurfaceMaterialAdjustmentAttributes.hpp
+ *
+ */
+#pragma once
+#define AUTO_GENERATED
+#include "../Global.h"
+
+#define BEFORE_EXTRA
+// Include Headers or Declare Types Here
+
+#undef BEFORE_EXTRA
+
+/**
+ * @brief MC structure SurfaceMaterialAdjustmentAttributes.
+ *
+ */
+struct SurfaceMaterialAdjustmentAttributes {
+
+#define AFTER_EXTRA
+// Add Member There
+
+#undef AFTER_EXTRA
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTATTRIBUTES
+public:
+    struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes const &) = delete;
+    SurfaceMaterialAdjustmentAttributes(struct SurfaceMaterialAdjustmentAttributes const &) = delete;
+    SurfaceMaterialAdjustmentAttributes() = delete;
+#endif
+
+public:
+    /**
+     * @hash   -714357208
+     * @symbol ?evaluateAdjustments@SurfaceMaterialAdjustmentAttributes@@QEBA?AUSurfaceMaterialAdjustmentEvaluated@@AEAVRenderParams@@V?$not_null@PEAVPerlinSimplexNoise@@@gsl@@AEBVBlockPos@@HH@Z
+     */
+    MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(class RenderParams &, class gsl::not_null<class PerlinSimplexNoise *>, class BlockPos const &, int, int) const;
+    /**
+     * @hash   297449808
+     * @symbol ??4SurfaceMaterialAdjustmentAttributes@@QEAAAEAU0@$$QEAU0@@Z
+     */
+    MCAPI struct SurfaceMaterialAdjustmentAttributes & operator=(struct SurfaceMaterialAdjustmentAttributes &&);
+    /**
+     * @hash   -1339960736
+     * @symbol ?parseExpressionNodeFloat@SurfaceMaterialAdjustmentAttributes@@QEAAXAEBVCompoundTag@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1AEAVExpressionNode@@M@Z
+     */
+    MCAPI void parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
+    /**
+     * @hash   -1569099628
+     * @symbol ??1SurfaceMaterialAdjustmentAttributes@@QEAA@XZ
+     */
+    MCAPI ~SurfaceMaterialAdjustmentAttributes();
+
+};

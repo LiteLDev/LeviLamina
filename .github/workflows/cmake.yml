@@ -37,14 +37,14 @@ jobs:
           path: |
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_api.lib
             ${{ env.GITHUB_WORKSPACE }}LiteLoader/Lib/bedrock_server_var.lib
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('Scripts/LINK.txt') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('scripts/LINK.txt') }}
 
       - name: Download Server
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir Tools/Server
-          ServerLink=$(cat 'Scripts/LINK.txt')
+          ServerLink=$(cat 'scripts/LINK.txt')
           curl -L -o Tools/Server/server.zip "$ServerLink"
           unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
         shell: bash
@@ -55,23 +55,19 @@ jobs:
         run: |
           cd Tools
           LibraryBuilder.exe Server
+          mkdir ..\LiteLoader\lib
+          move bedrock_server_api.lib ..\LiteLoader\lib
+          move bedrock_server_var.lib ..\LiteLoader\lib
         shell: cmd
 
-      - name: Change LITELOADER_VERSION_STATUS_BETA
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: false == startsWith(github.ref, 'refs/tags/')
-        run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_BETA/' LiteLoader/Main/Version.h
-          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
-          cat LiteLoader/Main/Version.h
-        shell: bash
+      - name: Get Short Sha
+        id: sha_short
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
-      - name: Change LITELOADER_VERSION_STATUS_RELEASE
+      - name: Change LITELOADER_VERSION_COMMIT_SHA
         working-directory: ${{ env.GITHUB_WORKSPACE }}
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_STATUS\s+LITELOADER_VERSION_\w+/#define LITELOADER_VERSION_STATUS   LITELOADER_VERSION_RELEASE/' LiteLoader/Main/Version.h
-          sed -r -i 's/#define\s+LITELOADER_VERSION_ACTIONS\s+.*/#define LITELOADER_VERSION_ACTIONS  ${{ github.run_number }}\r/' LiteLoader/Main/Version.h
+          sed -r -i 's/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA  ${{ steps.sha_short.outputs.sha_short }}\r/' LiteLoader/include/liteloader/Version.h
         shell: bash
 
       - name: Get MSVC Path
@@ -89,6 +85,11 @@ jobs:
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
         shell: cmd
 
+      - name: Pack output
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
+        shell: cmd
+
       - name: Configure CMake(ClangCL)
         run: |
           cmake -B ${{github.workspace}}/build_clang -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
@@ -97,28 +98,14 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Pack Release
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          cd Scripts
-          ./PackRelease.cmd action
-        shell: cmd
-
-      - name: Move PDB to path
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          mkdir PDB
-          cp x64/Release/*.pdb PDB
-        shell: bash
-
       - name: Upload LiteLoader
         uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoader
-          path: ${{ github.workspace }}\RELEASE\
+          path: ${{ github.workspace }}\build\output\
 
       - name: Upload PDB
         uses: actions/upload-artifact@v3.1.0
         with:
           name: PDB
-          path: ${{ github.workspace }}\PDB
+          path: ${{ github.workspace }}\build\pdb\

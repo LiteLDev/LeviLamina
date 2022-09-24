@@ -1,36 +1,22 @@
-﻿x64/
-**/.vs/
-**/x64/
-**/*.user
-**/.vscode/
+﻿# Visual Studio related
+/.vs
+/CMakeSettings.json
+/out
 
+# Visual Studio Code related
+/.vscode
+/build
+
+# Idea related
+/.idea
+/cmake-build-*
+
+# Build related
 **/bedrock_server_api.lib
 **/bedrock_server_var.lib
-**/SymDB_DelayLoadHelper.lib
-LiteLoader/Lib/SymDBHelper.lib
-**/*.lastcodeanalysissucceeded
-*.zip
 
-/LiteLoader/out/
-LiteLoaderSDK/
+# Misc
+/LiteLoaderSDK
 
-RELEASE/*.dll
-RELEASE/LLPeEditor.exe
-!RELEASE/ChakraCore.dll
-RELEASE/plugins/LiteLoader/LiteLoader.*.dll
-RELEASE/plugins/LiteLoader/LiteLoader.*.pdb
-RELEASE/plugins/LiteLoader/pdb
-!RELEASE/plugins/LiteLoader/CrashLogger.dll
-
-.idea/**
-!.idea/cmake.xml
-
-cmake-build-release/
-/out
-LiteLoader/Lib/Demangler.pdb
-LiteLoader/Lib/Demangler.lib
-
-/build
-**/Directory.build.props
-RELEASE/plugins/lib/BaseLib.js
-RELEASE/plugins/lib/BaseLib.lua
+# Clangd cache
+/.cache

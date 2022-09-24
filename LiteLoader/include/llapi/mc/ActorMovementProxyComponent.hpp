@@ -1,0 +1,46 @@
+/**
+ * @file  ActorMovementProxyComponent.hpp
+ *
+ */
+#pragma once
+#define AUTO_GENERATED
+#include "../Global.h"
+
+#define BEFORE_EXTRA
+
+#undef BEFORE_EXTRA
+
+/**
+ * @brief MC class ActorMovementProxyComponent.
+ *
+ */
+class ActorMovementProxyComponent {
+
+#define AFTER_EXTRA
+
+#undef AFTER_EXTRA
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOVEMENTPROXYCOMPONENT
+public:
+    class ActorMovementProxyComponent& operator=(class ActorMovementProxyComponent const &) = delete;
+    ActorMovementProxyComponent(class ActorMovementProxyComponent const &) = delete;
+    ActorMovementProxyComponent() = delete;
+#endif
+
+public:
+    /**
+     * @hash   -489314156
+     * @symbol ??0ActorMovementProxyComponent@@QEAA@V?$not_null@V?$shared_ptr@UIActorMovementProxy@@@std@@@gsl@@@Z
+     */
+    MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
+    /**
+     * @hash   2141339443
+     * @symbol ?getMovementProxy@ActorMovementProxyComponent@@QEAA?AV?$shared_ptr@UIActorMovementProxy@@@std@@XZ
+     */
+    MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
+    /**
+     * @hash   -1861091961
+     * @symbol ?getMovementProxy@ActorMovementProxyComponent@@QEBA?AV?$shared_ptr@$$CBUIActorMovementProxy@@@std@@XZ
+     */
+    MCAPI class std::shared_ptr<struct IActorMovementProxy const> getMovementProxy() const;
+
+};
