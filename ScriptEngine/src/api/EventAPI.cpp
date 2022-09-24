@@ -75,7 +75,7 @@ enum class EVENT_TYPES : int {
     onOpenContainer,
     onCloseContainer,
     onInventoryChange,
-    onMove,
+    //onMove,
     onChangeSprinting,
     onSetArmor,
     onUseRespawnAnchor,
@@ -472,7 +472,7 @@ void EnableEventListener(int eventId) {
             });
             break;
 
-        case EVENT_TYPES::onMove:
+        /*case EVENT_TYPES::onMove:
             Event::PlayerMoveEvent::subscribe([](const PlayerMoveEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onMove) {
                     CallEvent(EVENT_TYPES::onMove, PlayerClass::newPlayer(ev.mPlayer),
@@ -480,7 +480,7 @@ void EnableEventListener(int eventId) {
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMove);
             });
-            break;
+            break;*/
 
         case EVENT_TYPES::onJump:
             Event::PlayerJumpEvent::subscribe([](const PlayerJumpEvent& ev) {

@@ -116,6 +116,7 @@ public:
      * @return True if the player is successfully given the items; otherwise false
      */
     LIAPI bool giveItem(ItemStack* item);
+    LIAPI bool giveItem(string typeName, int count);
 
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);

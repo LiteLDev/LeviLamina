@@ -24,6 +24,8 @@
 #include "llapi/mc/TextPacket.hpp"
 #include "llapi/mc/ScorePacketInfo.hpp"
 #include "llapi/mc/BinaryStream.hpp"
+#include "llapi/mc/CommandUtils.hpp"
+#include "llapi/mc/ItemInstance.hpp"
 #include "llapi/mc/TransferPacket.hpp"
 
 #include "llapi/mc/Level.hpp"
@@ -169,8 +171,29 @@ bool Player::talkAs(const std::string& msg) {
 }
 
 bool Player::giveItem(ItemStack* item) {
-    if (!this->add(*item))
-        return false;
+    int temp;
+    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(item->getTypeName())), item->getCount(), temp);
+    for (auto& itemstack : itemlist) {
+        if (!itemstack.isNull()) {
+            if (!this->add(itemstack) && !this->isCreative()) {
+                this->drop(itemstack, 0);
+            }
+        }
+    }
+    refreshInventory();
+    return true;
+}
+
+bool Player::giveItem(string typeName, int count) {
+    int temp;
+    auto itemlist = CommandUtils::createItemStacks(ItemInstance(*ItemStack::create(typeName)), count, temp);
+    for (auto& itemstack : itemlist) {
+        if (!itemstack.isNull()) {
+            if (!this->add(itemstack) && !this->isCreative()) {
+                this->drop(itemstack, 0);
+            }
+        }
+    }
     refreshInventory();
     return true;
 }
