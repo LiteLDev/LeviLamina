@@ -24,8 +24,6 @@
 #include "llapi/mc/TextPacket.hpp"
 #include "llapi/mc/ScorePacketInfo.hpp"
 #include "llapi/mc/BinaryStream.hpp"
-#include "llapi/mc/CommandUtils.hpp"
-#include "llapi/mc/ItemInstance.hpp"
 #include "llapi/mc/TransferPacket.hpp"
 
 #include "llapi/mc/Level.hpp"
@@ -47,6 +45,9 @@
 #include "llapi/EventAPI.h"
 
 #include "liteloader/LiteLoader.h"
+
+#include "llapi/mc/CommandUtils.hpp"
+#include "llapi/mc/ItemInstance.hpp"
 
 using ll::logger;
 
@@ -169,6 +170,7 @@ bool Player::sendText(const std::string& text, TextType type) {
 bool Player::talkAs(const std::string& msg) {
     return sendTextTalkPacket(msg);
 }
+
 
 bool Player::giveItem(ItemStack* item) {
     int temp;
