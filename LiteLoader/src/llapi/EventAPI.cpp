@@ -248,7 +248,6 @@ DECLARE_EVENT_DATA(PlayerStartDestroyBlockEvent);
 DECLARE_EVENT_DATA(PlayerOpenContainerEvent);
 DECLARE_EVENT_DATA(PlayerCloseContainerEvent);
 DECLARE_EVENT_DATA(PlayerInventoryChangeEvent);
-DECLARE_EVENT_DATA(PlayerMoveEvent);
 DECLARE_EVENT_DATA(PlayerSprintEvent);
 DECLARE_EVENT_DATA(PlayerSetArmorEvent);
 DECLARE_EVENT_DATA(PlayerUseRespawnAnchorEvent);

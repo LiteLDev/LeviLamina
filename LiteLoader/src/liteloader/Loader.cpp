@@ -65,6 +65,12 @@ inline void cleanOldScriptEngine() {
         filesystem::remove("plugins/LiteXLoader.Lua.dll", ec);
 }
 
+inline void cleanCrashLoggerDll() {
+    std::error_code ec;
+    if (filesystem::exists("plugins/LiteLoader/CrashLogger.dll", ec))
+        filesystem::remove("plugins/LiteLoader/CrashLogger.dll", ec);
+}
+
 constexpr auto DEFAULT_ROOT_PACKAGE_JSON =
     R"({
     "name": "llse-nodejs-root",
@@ -201,7 +207,7 @@ inline void loadParticleApi() {
 void ll::LoadMain() {
     ll::logger.info(tr("ll.loader.loadMain.start"));
     cleanOldScriptEngine();
-
+    cleanCrashLoggerDll();
     // Load plugins
     int pluginCount = 0;
     vector<std::string> preloadList = getPreloadList();
