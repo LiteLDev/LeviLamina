@@ -8,7 +8,9 @@
 
 - Fix ParticleSpawner bugs in LLSE (#780) @OEOTYAN
 - Fix player join server client lag (#825) @dreamguxiang
-- Fix player join server crash (#825,#827,#828,#829) @dreamguxiang
+- Fix player join server crash (#825,#827,#828,#829,#832) @dreamguxiang
+- Fix repeated XUID problem in `PlayerInfoAPI.cpp` @ShrBox
+- Fix PlayerClass::getScore Error (#791) @Redbeanw44602
 
 ## New Features
 
@@ -23,6 +25,10 @@
 - Add PlayerSwingEvent (#797) @OEOTYAN
 - Add stopFire API for PlayerAPI & EntityAPI for LLSE (#801) @shishkevichd
 - Add more properties in BlockAPI in LLSE (#816) @shishkevichd
+- Add some properties for PlayerAPI and EntityAPI for LLSE (#837) @shishkevichd
+- Add support mc.getPlayer() with uniqueId @Redbeanw44602
+- Add player.setTitle() to llse @Redbeanw44602
+- Add api for trans-money and money-history @Redbeanw44602
 
 ## APIs / ABIs Breaking Change list (for developer)
 
