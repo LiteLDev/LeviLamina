@@ -59,6 +59,12 @@ jobs:
           move bedrock_server_var.lib ..\LiteLoader\lib
         shell: cmd
 
+      - name: Change LITELOADER_VERSION_BUILD_ID
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          sed -r -i 's/#define\s+LITELOADER_VERSION_BUILD_ID\s+.*/#define LITELOADER_VERSION_BUILD_ID  ${{ github.run_number }}\r/' LiteLoader/include/liteloader/Version.h
+        shell: bash
+
       - name: Get MSVC Path
         working-directory: E:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
         run: echo "MSVC_VER=$(ls | tail -n 1)" >> $GITHUB_ENV
@@ -74,6 +80,12 @@ jobs:
           cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
         shell: cmd
 
+      - name: Pack output and SDK
+        run: |
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
+          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackSDK
+        shell: cmd
+
       - name: Configure CMake(ClangCL)
         run: |
           cmake -B ${{github.workspace}}/build_clang -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -T clangcl
@@ -82,16 +94,6 @@ jobs:
       - name: Build SymDBHelper
         run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
 
-      - name: Configure CMake(MSVC)
-        run: |
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-        shell: cmd
-
-      - name: Pack output and SDK
-        run: |
-          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackOutput
-          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target PackSDK
-        shell: cmd
 
       - name: Compress Resource Packs
         run: |
