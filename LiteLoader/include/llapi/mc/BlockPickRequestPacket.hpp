@@ -1,0 +1,67 @@
+/**
+ * @file  BlockPickRequestPacket.hpp
+ *
+ */
+#pragma once
+#define AUTO_GENERATED
+#include "../Global.h"
+#include "Packet.hpp"
+
+#define BEFORE_EXTRA
+// Include Headers or Declare Types Here
+
+#undef BEFORE_EXTRA
+
+/**
+ * @brief MC class BlockPickRequestPacket.
+ *
+ */
+class BlockPickRequestPacket : public Packet {
+
+#define AFTER_EXTRA
+// Add Member There
+
+#undef AFTER_EXTRA
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPICKREQUESTPACKET
+public:
+    class BlockPickRequestPacket& operator=(class BlockPickRequestPacket const &) = delete;
+    BlockPickRequestPacket(class BlockPickRequestPacket const &) = delete;
+#endif
+
+public:
+    /**
+     * @vftbl  0
+     * @symbol __unk_destructor_0
+     */
+    virtual ~BlockPickRequestPacket();
+    /**
+     * @hash   -1435142987
+     * @vftbl  1
+     * @symbol ?getId@BlockPickRequestPacket@@UEBA?AW4MinecraftPacketIds@@XZ
+     */
+    virtual enum MinecraftPacketIds getId() const;
+    /**
+     * @hash   -1907547294
+     * @vftbl  2
+     * @symbol ?getName@BlockPickRequestPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+     */
+    virtual std::string getName() const;
+    /**
+     * @hash   424085509
+     * @vftbl  3
+     * @symbol ?write@BlockPickRequestPacket@@UEBAXAEAVBinaryStream@@@Z
+     */
+    virtual void write(class BinaryStream &) const;
+    /**
+     * @hash   -1138034443
+     * @vftbl  6
+     * @symbol ?_read@BlockPickRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
+     */
+    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    /**
+     * @hash   -1897395291
+     * @symbol ??0BlockPickRequestPacket@@QEAA@XZ
+     */
+    MCAPI BlockPickRequestPacket();
+
+};

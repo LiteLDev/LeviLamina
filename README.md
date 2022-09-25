@@ -131,7 +131,7 @@ We do not recommend you to use Wine due to BDS 1.19.20+ on Wine has a performanc
 #### Installation script(Ubuntu)
 
 ```
-wget https://github.com/LiteLDev/LiteLoaderBDS/raw/beta/Scripts/install.sh
+wget https://github.com/LiteLDev/LiteLoaderBDS/raw/develop/scripts/install.sh
 chmod +x install.sh
 ./install.sh
 ```

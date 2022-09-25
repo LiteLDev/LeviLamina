@@ -1,97 +1,97 @@
 name: "[ENG] Bug Report"
 description: "Report a bug to us to make LiteLoader better."
-labels: ["bug"]
+labels: [ "bug" ]
 body:
-- type: markdown
-  attributes:
-    value: |
-      Thanks for taking the time to fill out this bug report!
-      > **NOTICE**
-      > 1. Feedback issues should belong to LiteLoader.
-      > 2. Please do not report destructive Minecraft Bugs, please send a private message to the project developer in IM, and give feedback to Mojang in time.
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+        > **NOTICE**
+        > 1. Feedback issues should belong to LiteLoader.
+        > 2. Please do not report destructive Minecraft Bugs, please send a private message to the project developer in IM, and give feedback to Mojang in time.
 
-- type: dropdown
-  id: module
-  attributes:
-    label: Exceptions module
-    description: The module with problems
-    options:
-      - Core
-      - ScriptEngine
-      - AddonsHelper
-      - PeEditor
-  validations:
-    required: true
-- type: dropdown
-  id: os
-  attributes:
-    label: Operating System
-    multiple: false
-    options:
-      - Windows Server 2022
-      - Windows Server 2019
-      - Windows Server 2016
-      - Windows Server 2012
-      - Other Windows Server
-      - Windows 11
-      - Windows 10
-      - Other Windows
-      - GNU/Linux with docker
-      - GNU/Linux with wine
-      - Other
-  validations:
-    required: true
-- type: input
-  id: llversion
-  attributes:
-    label: "LiteLoader version"
-    placeholder: Type your LiteLoader version.
-    description: |
-      If you are using a beta LiteLoader downloaded from Actions, please type the corresponding Actions run ID (starting with #) or commit hash.
-      e.g. 2.1.0     Actions#1479     4f404a7
-  validations:
-    required: true
-- type: input
-  id: bdsversion
-  attributes:
-    label: "BDS version"
-    placeholder: Type your BDS version.
-  validations:
-    required: true
-- type: textarea
-  id: what-happened
-  attributes:
-    label: What happened?
-    description: |
-      What happened? Please describe your problem.
-      Also tell us, what did you expect to happen?
-    placeholder: Describe your problem clearly.
-  validations:
-    required: true
-- type: textarea
-  id: reproduce
-  attributes:
-    label: Steps to reproduce?
-    description: Describe in as clear and detailed a manner as possible how to reproduce.
-    placeholder: |
-      1. Do something
-      2. ...
-      3. ...
-- type: textarea
-  id: logs
-  attributes:
-    label: Relevant log output
-    description: Please copy and paste any relevant log output.
-    render: shell
-- type: textarea
-  id: plugins
-  attributes:
-    label: Plugin list
-    description: Please copy the command output of `ll list`.
-    render: shell
-- type: markdown
-  attributes:
-    value: |
-      **If you have pictures or other content, please comment below. Screenshots,logs and dmp files are very important and helpful for solving your problem**
-      ******
-      Thank you again for your contribution to LiteLoader!
+  - type: dropdown
+    id: module
+    attributes:
+      label: Exceptions module
+      description: The module with problems
+      options:
+        - Core
+        - ScriptEngine
+        - AddonsHelper
+        - PeEditor
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      multiple: false
+      options:
+        - Windows Server 2022
+        - Windows Server 2019
+        - Windows Server 2016
+        - Windows Server 2012
+        - Other Windows Server
+        - Windows 11
+        - Windows 10
+        - Other Windows
+        - GNU/Linux with docker
+        - GNU/Linux with wine
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: llversion
+    attributes:
+      label: "LiteLoader version"
+      placeholder: Type your LiteLoader version.
+      description: |
+        If you are using a beta LiteLoader downloaded from Actions, please type the corresponding Actions run ID (starting with #) or commit hash.
+        e.g. 2.1.0     Actions#1479     4f404a7
+    validations:
+      required: true
+  - type: input
+    id: bdsversion
+    attributes:
+      label: "BDS version"
+      placeholder: Type your BDS version.
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: |
+        What happened? Please describe your problem.
+        Also tell us, what did you expect to happen?
+      placeholder: Describe your problem clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce?
+      description: Describe in as clear and detailed a manner as possible how to reproduce.
+      placeholder: |
+        1. Do something
+        2. ...
+        3. ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output.
+      render: raw
+  - type: textarea
+    id: plugins
+    attributes:
+      label: Plugin list
+      description: Please copy the command output of `ll list`.
+      render: raw
+  - type: markdown
+    attributes:
+      value: |
+        **If you have pictures or other content, please comment below. Screenshots, logs and dmp files are very important and helpful for solving your problem**
+        ******
+        Thank you again for your contribution to LiteLoader!
