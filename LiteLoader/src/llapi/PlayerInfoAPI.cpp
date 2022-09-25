@@ -71,7 +71,7 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
     if (!info.has_value()) {
         try {
             data.push_back({name, xuid, uuid});
-            db << "insert into player (NAME, XUID, UUID) values(?,?,?)", DB::use(DB::Row{name, xuid, uuid});
+            db << "insert into player_new (NAME, XUID, UUID) values(?,?,?)", DB::use(DB::Row{name, xuid, uuid});
         } catch (const std::exception& e) {
             ll::logger.error("PlayerDB Error: {}", e.what());
             return false;
@@ -83,7 +83,7 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
                     if (it.name != name || it.uuid != uuid) {
                         it.name = name;
                         it.uuid = uuid;
-                        db << "update player set NAME = ?, UUID = ? where XUID = ?", DB::use(DB::Row{name, uuid, xuid});
+                        db << "update player_new set NAME = ?, UUID = ? where XUID = ?", DB::use(DB::Row{name, uuid, xuid});
                     }
                 }
             }
