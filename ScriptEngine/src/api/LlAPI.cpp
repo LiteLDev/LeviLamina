@@ -403,13 +403,6 @@ Local<Value> LlClass::require(const Arguments& args) {
     CATCH("Fail in LLSERequire!")
 }
 
-Local<Value> LlClass::getScriptEngineVersionFunction(const Arguments& args) {
-    try {
-        return String::newString(EngineScope::currentEngine()->getEngineVersion());
-    }
-    CATCH("Fail in LLSEGetScriptEngineVerison")
-}
-
 Local<Value> LlClass::eval(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
@@ -458,4 +451,12 @@ Local<Value> LlClass::isDebugModeFunction(const Arguments& args) {
         return Boolean::newBoolean(ll::isDebugMode());
     }
     CATCH("Fail in LLSEGetIsDebugModeFunction")
+}
+
+// For Compatibility
+Local<Value> LlClass::getScriptEngineVersionFunction(const Arguments& args) {
+    try {
+        return String::newString(EngineScope::currentEngine()->getEngineVersion());
+    }
+    CATCH("Fail in LLSEGetScriptEngineVerison")
 }
