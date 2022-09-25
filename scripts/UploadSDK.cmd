@@ -65,7 +65,9 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     git add .
     if "%LL_SDK_NOW_BRANCH%" == "main" (
         git commit -m "From LiteLoader %LL_NOW_TAG%"
-        git tag %LL_NOW_TAG%
+        if [%2] == [release] (
+            git tag %LL_NOW_TAG%
+        )
     ) else (
         git commit -m "From LiteLoader %LL_NOW_TAG_LONG%"
     )
