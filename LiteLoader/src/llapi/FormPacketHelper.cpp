@@ -76,6 +76,8 @@ void SetCustomFormBuilderData(unsigned formId, std::shared_ptr<Form::CustomForm>
 void HandleFormPacket(Player* player, unsigned formId, const string& data) {
     if (formTypes.find(formId) == formTypes.end())
         return;
+    if (customFormBuilders.find(formId) == customFormBuilders.end())
+        return;
 
     if (formTypes[formId] == FormType::SimpleFormBuilder) {
         int chosen = data != "null" ? stoi(data) : -1;
