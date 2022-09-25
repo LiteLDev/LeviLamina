@@ -103,7 +103,7 @@ Local<Value> LlClass::getMajorVersion() {
 
 Local<Value> LlClass::getMinorVersion() {
     try {
-        return Number::newNumber(LITELOADER_VERSION_MAJOR);
+        return Number::newNumber(LITELOADER_VERSION_MINOR);
     }
     CATCH("Fail in LLSEGetMinorVersion")
 }
