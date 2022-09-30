@@ -71,7 +71,7 @@ public:
      * @hash   1841260622
      * @symbol ?getArmorTextureType@ArmorItemComponent@@QEBA?AW4ArmorTextureType@@XZ
      */
-    MCAPI enum ArmorTextureType getArmorTextureType() const;
+    MCAPI enum class ArmorTextureType getArmorTextureType() const;
     /**
      * @hash   651217926
      * @symbol ?getArmorValue@ArmorItemComponent@@QEBAHXZ

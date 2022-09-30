@@ -110,7 +110,7 @@ public:
      * @vftbl  136
      * @symbol ?_getActorType@ChestBoatItem@@EEBA?AW4ActorType@@XZ
      */
-    virtual enum ActorType _getActorType() const;
+    virtual enum class ActorType _getActorType() const;
     /**
      * @hash   -1140936175
      * @symbol ??0ChestBoatItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HH@Z

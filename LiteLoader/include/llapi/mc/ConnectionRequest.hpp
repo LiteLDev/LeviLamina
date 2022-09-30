@@ -102,7 +102,7 @@ public:
      * @hash   1357831808
      * @symbol ?getClientSubId@ConnectionRequest@@QEBA?AW4SubClientId@@XZ
      */
-    MCAPI enum SubClientId getClientSubId() const;
+    MCAPI enum class SubClientId getClientSubId() const;
     /**
      * @hash   -1146234438
      * @symbol ?getClientThirdPartyName@ConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -117,7 +117,7 @@ public:
      * @hash   381853240
      * @symbol ?getDeviceOS@ConnectionRequest@@QEBA?AW4BuildPlatform@@XZ
      */
-    MCAPI enum BuildPlatform getDeviceOS() const;
+    MCAPI enum class BuildPlatform getDeviceOS() const;
     /**
      * @hash   -1656872116
      * @symbol ?getPersonaPieces@ConnectionRequest@@QEBA?AV?$vector@VSerializedPersonaPieceHandle@@V?$allocator@VSerializedPersonaPieceHandle@@@std@@@std@@XZ
@@ -127,7 +127,7 @@ public:
      * @hash   -2130551191
      * @symbol ?getPieceTintColors@ConnectionRequest@@QEBA?AV?$unordered_map@W4PieceType@persona@@VTintMapColor@@U?$hash@W4PieceType@persona@@@std@@U?$equal_to@W4PieceType@persona@@@5@V?$allocator@U?$pair@$$CBW4PieceType@persona@@VTintMapColor@@@std@@@5@@std@@XZ
      */
-    MCAPI class std::unordered_map<enum persona::PieceType, class TintMapColor, struct std::hash<enum persona::PieceType>, struct std::equal_to<enum persona::PieceType>, class std::allocator<struct std::pair<enum persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
+    MCAPI class std::unordered_map<enum class persona::PieceType, class TintMapColor, struct std::hash<enum class persona::PieceType>, struct std::equal_to<enum class persona::PieceType>, class std::allocator<struct std::pair<enum class persona::PieceType const, class TintMapColor>>> getPieceTintColors() const;
     /**
      * @hash   -1109760996
      * @symbol ?getPlayFabId@ConnectionRequest@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ

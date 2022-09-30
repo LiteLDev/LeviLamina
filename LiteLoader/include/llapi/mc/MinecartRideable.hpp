@@ -146,7 +146,7 @@ public:
      * @vftbl  287
      * @symbol ?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ
      */
-    virtual enum MinecartType getType();
+    virtual enum class MinecartType getType();
     /**
      * @vftbl  289
      * @symbol __unk_vfn_289

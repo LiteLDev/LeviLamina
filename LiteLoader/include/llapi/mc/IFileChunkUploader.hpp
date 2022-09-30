@@ -69,7 +69,7 @@ public:
      * @vftbl  6
      * @symbol ?uploadStream@IFileChunkUploader@@UEAAXAEBUFileInfo@@_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$function@$$A6AXW4UploadStreamResult@IFileChunkUploader@@@Z@4@@Z
      */
-    virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum IFileChunkUploader::UploadStreamResult)>);
+    virtual void uploadStream(struct FileInfo const &, unsigned __int64, std::string const &, class std::function<void (enum class IFileChunkUploader::UploadStreamResult)>);
     /**
      * @hash   96491456
      * @vftbl  7
@@ -86,7 +86,7 @@ public:
      * @vftbl  9
      * @symbol ?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ
      */
-    virtual enum UploadError getInitErrorCode() const = 0;
+    virtual enum class UploadError getInitErrorCode() const = 0;
     /**
      * @hash   1597931761
      * @vftbl  10

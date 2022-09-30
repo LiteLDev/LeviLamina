@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?onEvent@?$EventListenerDispatcher@VActorEventListener@@@@MEAA?AW4EventResult@@AEBUActorNotificationEvent@@@Z
      */
-    virtual enum EventResult onEvent(struct ActorNotificationEvent const &);
+    virtual enum class EventResult onEvent(struct ActorNotificationEvent const &);
     /**
      * @vftbl  2
      * @symbol __unk_vfn_2
@@ -170,6 +170,6 @@ public:
      * @vftbl  27
      * @symbol ?onEvent@KnockbackArmorUpdater@@UEAA?AW4EventResult@@AEBUActorEquippedArmorEvent@@@Z
      */
-    virtual enum EventResult onEvent(struct ActorEquippedArmorEvent const &);
+    virtual enum class EventResult onEvent(struct ActorEquippedArmorEvent const &);
 
 };

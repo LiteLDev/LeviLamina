@@ -44,31 +44,31 @@ public:
      * @vftbl  1
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@@Z
      */
-    virtual void putKey(std::string const &, class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category);
+    virtual void putKey(std::string const &, class gsl::basic_string_span<char const, -1>, enum class DBHelpers::Category);
     /**
      * @hash   -118679576
      * @vftbl  2
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Category@DBHelpers@@@Z
      */
-    virtual void putKey(std::string const &, std::string const &, enum DBHelpers::Category);
+    virtual void putKey(std::string const &, std::string const &, enum class DBHelpers::Category);
     /**
      * @hash   1592833349
      * @vftbl  3
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV23@W4Category@DBHelpers@@@Z
      */
-    virtual void putKey(std::string const &, std::string &&, enum DBHelpers::Category);
+    virtual void putKey(std::string const &, std::string &&, enum class DBHelpers::Category);
     /**
      * @hash   2099035429
      * @vftbl  4
      * @symbol ?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z
      */
-    virtual void putKey(std::string const &, class std::shared_ptr<std::string>, enum DBHelpers::Category);
+    virtual void putKey(std::string const &, class std::shared_ptr<std::string>, enum class DBHelpers::Category);
     /**
      * @hash   1948192730
      * @vftbl  5
      * @symbol ?deleteKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z
      */
-    virtual void deleteKey(std::string const &, enum DBHelpers::Category);
+    virtual void deleteKey(std::string const &, enum class DBHelpers::Category);
     /**
      * @hash   -1539026044
      * @vftbl  6

@@ -112,7 +112,7 @@ public:
      * @hash   -1263842549
      * @symbol ??0InventoryContainerModel@@QEAA@W4ContainerEnumName@@HAEAVPlayer@@@Z
      */
-    MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player &);
+    MCAPI InventoryContainerModel(enum class ContainerEnumName, int, class Player &);
 
 //private:
     /**

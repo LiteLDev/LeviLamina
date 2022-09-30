@@ -157,7 +157,7 @@ public:
      * @vftbl  20
      * @symbol ?getItemColor@Item@@UEBA?AW4ItemColor@@XZ
      */
-    virtual enum ItemColor getItemColor() const;
+    virtual enum class ItemColor getItemColor() const;
     /**
      * @hash   1482663569
      * @vftbl  21
@@ -235,7 +235,7 @@ public:
      * @vftbl  33
      * @symbol ?setUseAnimation@Item@@UEAAAEAV1@W4UseAnimation@@@Z
      */
-    virtual class Item & setUseAnimation(enum UseAnimation);
+    virtual class Item & setUseAnimation(enum class UseAnimation);
     /**
      * @hash   428564171
      * @vftbl  34
@@ -295,7 +295,7 @@ public:
      * @vftbl  43
      * @symbol ?getBlockShape@Item@@UEBA?AW4BlockShape@@XZ
      */
-    virtual enum BlockShape getBlockShape() const;
+    virtual enum class BlockShape getBlockShape() const;
     /**
      * @hash   1275434339
      * @vftbl  44
@@ -550,7 +550,7 @@ public:
      * @vftbl  87
      * @symbol ?useTimeDepleted@Item@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
      */
-    virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @hash   -1799980315
      * @vftbl  88
@@ -688,13 +688,13 @@ public:
      * @vftbl  110
      * @symbol ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z
      */
-    virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
+    virtual enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemInstance const &, class ItemInstance const &, bool, bool) const;
     /**
      * @hash   -472721117
      * @vftbl  111
      * @symbol ?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z
      */
-    virtual enum InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
+    virtual enum class InHandUpdateType getInHandUpdateType(class Player const &, class ItemStack const &, class ItemStack const &, bool, bool) const;
     /**
      * @hash   725983914
      * @vftbl  112
@@ -712,13 +712,13 @@ public:
      * @vftbl  114
      * @symbol ?getEquipLocation@Item@@UEBA?AW4ActorLocation@@XZ
      */
-    virtual enum ActorLocation getEquipLocation() const;
+    virtual enum class ActorLocation getEquipLocation() const;
     /**
      * @hash   495550873
      * @vftbl  115
      * @symbol ?getEquipSound@Item@@UEBA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getEquipSound() const;
+    virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @hash   -1307957528
      * @vftbl  116
@@ -965,7 +965,7 @@ public:
      * @hash   1592131528
      * @symbol ?getCreativeCategory@Item@@QEBA?AW4CreativeItemCategory@@XZ
      */
-    MCAPI enum CreativeItemCategory getCreativeCategory() const;
+    MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @hash   -305202402
      * @symbol ?getCreativeGroup@Item@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -1025,7 +1025,7 @@ public:
      * @hash   -947775506
      * @symbol ?getUseAnimation@Item@@QEBA?AW4UseAnimation@@XZ
      */
-    MCAPI enum UseAnimation getUseAnimation() const;
+    MCAPI enum class UseAnimation getUseAnimation() const;
     /**
      * @symbol ?hasDamageValue@Item@@QEBA_NPEBVCompoundTag@@@Z
      */
@@ -1073,7 +1073,7 @@ public:
      * @hash   -1822011551
      * @symbol ?setCategory@Item@@QEAAAEAV1@W4CreativeItemCategory@@@Z
      */
-    MCAPI class Item & setCategory(enum CreativeItemCategory);
+    MCAPI class Item & setCategory(enum class CreativeItemCategory);
     /**
      * @hash   787304689
      * @symbol ?setCreativeGroup@Item@@QEAAAEAV1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1235,7 +1235,7 @@ public:
      * @hash   128973754
      * @symbol ?_helpChangeInventoryItemInPlace@Item@@IEBAXAEAVActor@@AEAVItemStack@@1W4ItemAcquisitionMethod@@@Z
      */
-    MCAPI void _helpChangeInventoryItemInPlace(class Actor &, class ItemStack &, class ItemStack &, enum ItemAcquisitionMethod) const;
+    MCAPI void _helpChangeInventoryItemInPlace(class Actor &, class ItemStack &, class ItemStack &, enum class ItemAcquisitionMethod) const;
 
 //private:
     /**

@@ -273,11 +273,11 @@ public:
      * @hash   -1442716073
      * @symbol ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@@Z
      */
-    MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &);
+    MCAPI CopperBlock(std::string const &, int, enum class CopperType, class WeakPtr<class BlockLegacy> &);
     /**
      * @hash   -147819609
      * @symbol ??0CopperBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CopperType@@AEAV?$WeakPtr@VBlockLegacy@@@@22@Z
      */
-    MCAPI CopperBlock(std::string const &, int, enum CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
+    MCAPI CopperBlock(std::string const &, int, enum class CopperType, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &, class WeakPtr<class BlockLegacy> &);
 
 };

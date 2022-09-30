@@ -321,7 +321,7 @@ public:
      * @hash   1795841471
      * @symbol ?addBreakingItemParticleEffect@Level@@UEAAXAEBVVec3@@W4ParticleType@@AEBUTextureUVCoordinateSet@@_N@Z
      */
-    MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum ParticleType, struct TextureUVCoordinateSet const &, bool);
+    MCVAPI void addBreakingItemParticleEffect(class Vec3 const &, enum class ParticleType, struct TextureUVCoordinateSet const &, bool);
     /**
      * @hash   -553835802
      * @symbol ?addChunkViewTracker@Level@@UEAAXV?$weak_ptr@VChunkViewSource@@@std@@@Z
@@ -351,7 +351,7 @@ public:
      * @hash   -520177389
      * @symbol ?addParticle@Level@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z
      */
-    MCVAPI class Particle * addParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
+    MCVAPI class Particle * addParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int, class CompoundTag const *, bool);
     /**
      * @hash   1166418607
      * @symbol ?addParticleEffect@Level@@UEAAXAEBVHashedString@@AEBVVec3@@AEBVMolangVariableMap@@@Z
@@ -386,7 +386,7 @@ public:
      * @hash   2031699008
      * @symbol ?applyLiquidPhysicsToActor@Level@@UEAAXPEAVActor@@W4MaterialType@@@Z
      */
-    MCVAPI void applyLiquidPhysicsToActor(class Actor *, enum MaterialType);
+    MCVAPI void applyLiquidPhysicsToActor(class Actor *, enum class MaterialType);
     /**
      * @hash   -456065230
      * @symbol ?areBossEventListenersReady@Level@@UEAA_NXZ
@@ -401,52 +401,52 @@ public:
      * @hash   1734725742
      * @symbol ?broadcastActorEvent@Level@@UEAAXAEAVActor@@W4ActorEvent@@H@Z
      */
-    MCVAPI void broadcastActorEvent(class Actor &, enum ActorEvent, int);
+    MCVAPI void broadcastActorEvent(class Actor &, enum class ActorEvent, int);
     /**
      * @hash   -1641857077
      * @symbol ?broadcastBossEvent@Level@@UEAAXW4BossEventUpdateType@@@Z
      */
-    MCVAPI void broadcastBossEvent(enum BossEventUpdateType);
+    MCVAPI void broadcastBossEvent(enum class BossEventUpdateType);
     /**
      * @hash   -412615484
      * @symbol ?broadcastBossEvent@Level@@UEAAXW4BossEventUpdateType@@AEBUActorUniqueID@@AEBVBossEventPacket@@@Z
      */
-    MCVAPI void broadcastBossEvent(enum BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &);
+    MCVAPI void broadcastBossEvent(enum class BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &);
     /**
      * @hash   844581929
      * @symbol ?broadcastLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVCompoundTag@@PEBVUserEntityIdentifierComponent@@@Z
      */
-    MCVAPI void broadcastLevelEvent(enum LevelEvent, class CompoundTag const &, class UserEntityIdentifierComponent const *);
+    MCVAPI void broadcastLevelEvent(enum class LevelEvent, class CompoundTag const &, class UserEntityIdentifierComponent const *);
     /**
      * @hash   -492699202
      * @symbol ?broadcastLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVVec3@@HPEBVUserEntityIdentifierComponent@@@Z
      */
-    MCVAPI void broadcastLevelEvent(enum LevelEvent, class Vec3 const &, int, class UserEntityIdentifierComponent const *);
+    MCVAPI void broadcastLevelEvent(enum class LevelEvent, class Vec3 const &, int, class UserEntityIdentifierComponent const *);
     /**
      * @hash   1141230887
      * @symbol ?broadcastLocalEvent@Level@@UEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@AEBVBlock@@@Z
      */
-    MCVAPI void broadcastLocalEvent(class BlockSource &, enum LevelEvent, class Vec3 const &, class Block const &);
+    MCVAPI void broadcastLocalEvent(class BlockSource &, enum class LevelEvent, class Vec3 const &, class Block const &);
     /**
      * @hash   1649065706
      * @symbol ?broadcastLocalEvent@Level@@UEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@H@Z
      */
-    MCVAPI void broadcastLocalEvent(class BlockSource &, enum LevelEvent, class Vec3 const &, int);
+    MCVAPI void broadcastLocalEvent(class BlockSource &, enum class LevelEvent, class Vec3 const &, int);
     /**
      * @hash   876604818
      * @symbol ?broadcastSoundEvent@Level@@UEAAXAEAVDimension@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
      */
-    MCVAPI void broadcastSoundEvent(class Dimension &, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void broadcastSoundEvent(class Dimension &, enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   241985520
      * @symbol ?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
      */
-    MCVAPI void broadcastSoundEvent(class BlockSource &, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void broadcastSoundEvent(class BlockSource &, enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   119985395
      * @symbol ?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N5@Z
      */
-    MCVAPI void broadcastSoundEvent(class BlockSource &, enum LevelSoundEvent, class Vec3 const &, class Block const &, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void broadcastSoundEvent(class BlockSource &, enum class LevelSoundEvent, class Vec3 const &, class Block const &, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   -1527472817
      * @symbol ?canUseSkin@Level@@UEBA_NAEBVSerializedSkin@@AEBVNetworkIdentifier@@AEBVUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -781,7 +781,7 @@ public:
      * @hash   -1346869289
      * @symbol ?getDefaultGameType@Level@@UEBA?AW4GameType@@XZ
      */
-    MCVAPI enum GameType getDefaultGameType() const;
+    MCVAPI enum class GameType getDefaultGameType() const;
     /**
      * @hash   -995890100
      * @symbol ?getDefaultPermissions@Level@@UEBAAEBVPermissionsHandler@@XZ
@@ -801,7 +801,7 @@ public:
      * @hash   -1087155902
      * @symbol ?getDifficulty@Level@@UEBA?AW4Difficulty@@XZ
      */
-    MCVAPI enum Difficulty getDifficulty() const;
+    MCVAPI enum class Difficulty getDifficulty() const;
     /**
      * @hash   -1101057292
      * @symbol ?getDimension@Level@@UEBAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z
@@ -1091,12 +1091,12 @@ public:
      * @hash   -1445862696
      * @symbol ?getPlatformBroadcastIntent@Level@@UEBA?AW4GamePublishSetting@Social@@XZ
      */
-    MCVAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
+    MCVAPI enum class Social::GamePublishSetting getPlatformBroadcastIntent() const;
     /**
      * @hash   -1739115617
      * @symbol ?getPlatformBroadcastMode@Level@@UEBA?AW4GamePublishSetting@Social@@XZ
      */
-    MCVAPI enum Social::GamePublishSetting getPlatformBroadcastMode() const;
+    MCVAPI enum class Social::GamePublishSetting getPlatformBroadcastMode() const;
     /**
      * @hash   -1012428599
      * @symbol ?getPlatformPlayer@Level@@UEBAPEAVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -1431,27 +1431,27 @@ public:
      * @hash   285283205
      * @symbol ?getXBLBroadcastIntent@Level@@UEBA?AW4GamePublishSetting@Social@@XZ
      */
-    MCVAPI enum Social::GamePublishSetting getXBLBroadcastIntent() const;
+    MCVAPI enum class Social::GamePublishSetting getXBLBroadcastIntent() const;
     /**
      * @hash   1967925132
      * @symbol ?getXBLBroadcastMode@Level@@UEBA?AW4GamePublishSetting@Social@@XZ
      */
-    MCVAPI enum Social::GamePublishSetting getXBLBroadcastMode() const;
+    MCVAPI enum class Social::GamePublishSetting getXBLBroadcastMode() const;
     /**
      * @hash   2119493885
      * @symbol ?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z
      */
-    MCVAPI void handleLevelEvent(enum LevelEvent, class CompoundTag const &);
+    MCVAPI void handleLevelEvent(enum class LevelEvent, class CompoundTag const &);
     /**
      * @hash   -1060340726
      * @symbol ?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z
      */
-    MCVAPI void handleLevelEvent(enum LevelEvent, class Vec3 const &, int);
+    MCVAPI void handleLevelEvent(enum class LevelEvent, class Vec3 const &, int);
     /**
      * @hash   2115585249
      * @symbol ?handleSoundEvent@Level@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
      */
-    MCVAPI void handleSoundEvent(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void handleSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   1640637900
      * @symbol ?handleSoundEvent@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z
@@ -1635,37 +1635,37 @@ public:
      * @hash   -887274295
      * @symbol ?playSound@Level@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z
      */
-    MCVAPI void playSound(enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   -1654303855
      * @symbol ?playSound@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
      */
-    MCVAPI void playSound(class BlockSource &, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void playSound(class BlockSource &, enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   -1877361475
      * @symbol ?playSound@Level@@UEAAXV?$AutomaticID@VDimension@@H@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
      */
-    MCVAPI void playSound(class AutomaticID<class Dimension, int>, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void playSound(class AutomaticID<class Dimension, int>, enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   -2141814171
      * @symbol ?playSound@Level@@UEAAXW4LevelSoundEvent@@AEBVVec3@@MM@Z
      */
-    MCVAPI void playSound(enum LevelSoundEvent, class Vec3 const &, float, float);
+    MCVAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, float, float);
     /**
      * @hash   -1569806392
      * @symbol ?playSynchronizedSound@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N5@Z
      */
-    MCVAPI void playSynchronizedSound(class BlockSource &, enum LevelSoundEvent, class Vec3 const &, class Block const &, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void playSynchronizedSound(class BlockSource &, enum class LevelSoundEvent, class Vec3 const &, class Block const &, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   1809248965
      * @symbol ?playSynchronizedSound@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
      */
-    MCVAPI void playSynchronizedSound(class BlockSource &, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void playSynchronizedSound(class BlockSource &, enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   -8794009
      * @symbol ?playSynchronizedSound@Level@@UEAAXAEAVDimension@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z
      */
-    MCVAPI void playSynchronizedSound(class Dimension &, enum LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    MCVAPI void playSynchronizedSound(class Dimension &, enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @hash   1993021340
      * @symbol ?potionSplash@Level@@UEAAXAEBVVec3@@AEBVColor@mce@@_N@Z
@@ -1765,12 +1765,12 @@ public:
      * @hash   -1093967340
      * @symbol ?runCommand@Level@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z
      */
-    MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum CommandOriginSystem, enum CurrentCmdVersion);
+    MCVAPI void runCommand(class HashedString const &, class CommandOrigin &, enum class CommandOriginSystem, enum class CurrentCmdVersion);
     /**
      * @hash   2019807341
      * @symbol ?runCommand@Level@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z
      */
-    MCVAPI void runCommand(class Command &, class CommandOrigin &, enum CommandOriginSystem);
+    MCVAPI void runCommand(class Command &, class CommandOrigin &, enum class CommandOriginSystem);
     /**
      * @hash   -741067872
      * @symbol ?save@Level@@UEAAXXZ
@@ -1835,7 +1835,7 @@ public:
      * @hash   -658065600
      * @symbol ?sendServerLegacyParticle@Level@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z
      */
-    MCVAPI void sendServerLegacyParticle(enum ParticleType, class Vec3 const &, class Vec3 const &, int);
+    MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
     /**
      * @hash   -1438682532
      * @symbol ?setActorEventCoordinator@Level@@UEAAX$$QEAV?$unique_ptr@VActorEventCoordinator@@U?$default_delete@VActorEventCoordinator@@@std@@@std@@@Z
@@ -1860,7 +1860,7 @@ public:
      * @hash   -1392950214
      * @symbol ?setDefaultGameType@Level@@UEAAXW4GameType@@@Z
      */
-    MCVAPI void setDefaultGameType(enum GameType);
+    MCVAPI void setDefaultGameType(enum class GameType);
     /**
      * @hash   1777480699
      * @symbol ?setDefaultSpawn@Level@@UEAAXAEBVBlockPos@@@Z
@@ -1870,7 +1870,7 @@ public:
      * @hash   626981257
      * @symbol ?setDifficulty@Level@@UEAAXW4Difficulty@@@Z
      */
-    MCVAPI void setDifficulty(enum Difficulty);
+    MCVAPI void setDifficulty(enum class Difficulty);
     /**
      * @hash   -876470943
      * @symbol ?setDisablePlayerInteractions@Level@@UEAAX_N@Z
@@ -1955,12 +1955,12 @@ public:
      * @hash   2040333425
      * @symbol ?setPlatformBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z
      */
-    MCVAPI void setPlatformBroadcastIntent(enum Social::GamePublishSetting);
+    MCVAPI void setPlatformBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @hash   -1392402470
      * @symbol ?setPlatformBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z
      */
-    MCVAPI void setPlatformBroadcastMode(enum Social::GamePublishSetting);
+    MCVAPI void setPlatformBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @hash   161023030
      * @symbol ?setPlayerAbilities@Level@@UEAAXAEBUActorUniqueID@@AEBVLayeredAbilities@@@Z
@@ -2015,12 +2015,12 @@ public:
      * @hash   1936419788
      * @symbol ?setXBLBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z
      */
-    MCVAPI void setXBLBroadcastIntent(enum Social::GamePublishSetting);
+    MCVAPI void setXBLBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @hash   1719068149
      * @symbol ?setXBLBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z
      */
-    MCVAPI void setXBLBroadcastMode(enum Social::GamePublishSetting);
+    MCVAPI void setXBLBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @hash   284662167
      * @symbol ?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z
@@ -2085,7 +2085,7 @@ public:
      * @hash   -1042790165
      * @symbol ?upgradeStorageVersion@Level@@UEAAXW4StorageVersion@@@Z
      */
-    MCVAPI void upgradeStorageVersion(enum StorageVersion);
+    MCVAPI void upgradeStorageVersion(enum class StorageVersion);
     /**
      * @hash   416212293
      * @symbol ?useMsaGamertagsOnly@Level@@UEBA_NXZ
@@ -2105,7 +2105,7 @@ public:
     /**
      * @symbol ??0Level@@QEAA@AEBV?$not_null@V?$NonOwnerPointer@VSoundPlayerInterface@@@Bedrock@@@gsl@@V?$unique_ptr@VLevelStorage@@U?$default_delete@VLevelStorage@@@std@@@std@@V?$unique_ptr@VLevelLooseFileStorage@@U?$default_delete@VLevelLooseFileStorage@@@std@@@4@AEAVIMinecraftEventing@@_NW4SubClientId@@AEAVScheduler@@V?$not_null@V?$NonOwnerPointer@VStructureManager@@@Bedrock@@@2@AEAVResourcePackManager@@AEBV?$not_null@V?$NonOwnerPointer@VIEntityRegistryOwner@@@Bedrock@@@2@V?$WeakRefT@UEntityRefTraits@@@@V?$unique_ptr@VBlockComponentFactory@@U?$default_delete@VBlockComponentFactory@@@std@@@4@V?$unique_ptr@VBlockDefinitionGroup@@U?$default_delete@VBlockDefinitionGroup@@@std@@@4@VItemRegistryRef@@V?$weak_ptr@VBlockTypeRegistry@@@4@4V?$optional@VDimensionDefinitionGroup@@@4@@Z
      */
-    MCAPI Level(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, bool, enum SubClientId, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, class std::weak_ptr<class BlockTypeRegistry>, bool, class std::optional<class DimensionDefinitionGroup>);
+    MCAPI Level(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, bool, enum class SubClientId, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, class std::weak_ptr<class BlockTypeRegistry>, bool, class std::optional<class DimensionDefinitionGroup>);
     /**
      * @hash   1149381606
      * @symbol ?getAdventureSettings@Level@@QEBAAEBUAdventureSettings@@XZ
@@ -2160,7 +2160,7 @@ public:
      * @hash   -2072800780
      * @symbol ?isFree@Level@@QEAA?AW4NodeType@@AEAVNavigationComponent@@AEAVActor@@AEBVBlockPos@@22W4CanJumpIntoNode@@@Z
      */
-    MCAPI enum NodeType isFree(class NavigationComponent &, class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum CanJumpIntoNode);
+    MCAPI enum class NodeType isFree(class NavigationComponent &, class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode);
     /**
      * @hash   -1146004208
      * @symbol ?setClientLevelEventCoordinator@Level@@QEAAX$$QEAV?$unique_ptr@VClientLevelEventCoordinator@@U?$default_delete@VClientLevelEventCoordinator@@@std@@@std@@@Z
@@ -2247,7 +2247,7 @@ public:
      * @hash   168625875
      * @symbol ?_getCrashDumpLogCategory@Level@@AEAA?AW4CrashDumpLogStringID@@XZ
      */
-    MCAPI enum CrashDumpLogStringID _getCrashDumpLogCategory();
+    MCAPI enum class CrashDumpLogStringID _getCrashDumpLogCategory();
     /**
      * @hash   -1605042939
      * @symbol ?_getValidatedPlayerName@Level@@AEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@@Z

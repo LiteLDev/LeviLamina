@@ -71,7 +71,7 @@ public:
      * @hash   -43184497
      * @symbol ?getPreValidationStatus@ItemStackRequestActionMineBlock@@QEBA?AW4PreValidationStatus@1@XZ
      */
-    MCAPI enum ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
+    MCAPI enum class ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     /**
      * @hash   1790784252
      * @symbol ?getPredictedDurability@ItemStackRequestActionMineBlock@@QEBAHXZ
@@ -86,6 +86,6 @@ public:
      * @hash   1510675875
      * @symbol ?setPreValidationStatus@ItemStackRequestActionMineBlock@@QEBAXW4PreValidationStatus@1@@Z
      */
-    MCAPI void setPreValidationStatus(enum ItemStackRequestActionMineBlock::PreValidationStatus) const;
+    MCAPI void setPreValidationStatus(enum class ItemStackRequestActionMineBlock::PreValidationStatus) const;
 
 };

@@ -81,6 +81,6 @@ public:
      * @hash   -1073083818
      * @symbol ??0ElementConstructorContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI ElementConstructorContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI ElementConstructorContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

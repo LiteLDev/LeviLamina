@@ -47,12 +47,12 @@ public:
      * @hash   370209679
      * @symbol ?broadcastBossEvent@BossComponent@@QEAAXAEAVActor@@W4BossEventUpdateType@@@Z
      */
-    MCAPI void broadcastBossEvent(class Actor &, enum BossEventUpdateType);
+    MCAPI void broadcastBossEvent(class Actor &, enum class BossEventUpdateType);
     /**
      * @hash   -1411549874
      * @symbol ?getColor@BossComponent@@QEBA?AW4BossBarColor@@XZ
      */
-    MCAPI enum BossBarColor getColor() const;
+    MCAPI enum class BossBarColor getColor() const;
     /**
      * @hash   405638414
      * @symbol ?getCreateWorldFog@BossComponent@@QEBA_NXZ
@@ -82,7 +82,7 @@ public:
      * @hash   210228932
      * @symbol ?getOverlay@BossComponent@@QEBA?AW4BossBarOverlay@@XZ
      */
-    MCAPI enum BossBarOverlay getOverlay() const;
+    MCAPI enum class BossBarOverlay getOverlay() const;
     /**
      * @hash   776400451
      * @symbol ?getPlayerParty@BossComponent@@QEBAAEBV?$unordered_map@VUUID@mce@@HU?$hash@VUUID@mce@@@std@@U?$equal_to@VUUID@mce@@@4@V?$allocator@U?$pair@$$CBVUUID@mce@@H@std@@@4@@std@@XZ
@@ -169,7 +169,7 @@ public:
      * @hash   115590802
      * @symbol ?_sendBossEvent@BossComponent@@AEAAXAEAVActor@@W4BossEventUpdateType@@PEAVPlayer@@@Z
      */
-    MCAPI void _sendBossEvent(class Actor &, enum BossEventUpdateType, class Player *);
+    MCAPI void _sendBossEvent(class Actor &, enum class BossEventUpdateType, class Player *);
 
 private:
 

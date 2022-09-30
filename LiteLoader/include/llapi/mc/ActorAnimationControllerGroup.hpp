@@ -67,7 +67,7 @@ public:
      * @hash   298131042
      * @symbol ?_loadActorAnimationController@ActorAnimationControllerGroup@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@W4CurrentCmdVersion@@@Z
      */
-    MCAPI void _loadActorAnimationController(std::string const &, class Core::Path const &, enum CurrentCmdVersion);
+    MCAPI void _loadActorAnimationController(std::string const &, class Core::Path const &, enum class CurrentCmdVersion);
     /**
      * @hash   -1620547445
      * @symbol ?_buildAnimationControllerFileSchema_v1_10_Or_Later@ActorAnimationControllerGroup@@CA?AV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UActorAnimationControllerGroupParseMetaData@@@JsonUtil@@@std@@AEBVSemVersion@@@Z

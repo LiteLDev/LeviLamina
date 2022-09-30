@@ -37,11 +37,11 @@ public:
      * @hash   625037849
      * @symbol ?getMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEBAAEBV?$vector@VMobSpawnerData@@V?$allocator@VMobSpawnerData@@@std@@@std@@W4HardcodedSpawnAreaType@@@Z
      */
-    MCAPI std::vector<class MobSpawnerData> const & getMobSpawnsForType(enum HardcodedSpawnAreaType) const;
+    MCAPI std::vector<class MobSpawnerData> const & getMobSpawnsForType(enum class HardcodedSpawnAreaType) const;
     /**
      * @hash   -1760284991
      * @symbol ?initMobSpawnsForType@HardcodedSpawnAreaRegistry@@QEAAXW4HardcodedSpawnAreaType@@$$QEAV?$vector@VMobSpawnerData@@V?$allocator@VMobSpawnerData@@@std@@@std@@@Z
      */
-    MCAPI void initMobSpawnsForType(enum HardcodedSpawnAreaType, std::vector<class MobSpawnerData> &&);
+    MCAPI void initMobSpawnsForType(enum class HardcodedSpawnAreaType, std::vector<class MobSpawnerData> &&);
 
 };

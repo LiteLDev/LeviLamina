@@ -63,6 +63,6 @@ public:
      * @hash   69421181
      * @symbol ??0HorseContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBUActorUniqueID@@@Z
      */
-    MCAPI HorseContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID const &);
+    MCAPI HorseContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
 
 };

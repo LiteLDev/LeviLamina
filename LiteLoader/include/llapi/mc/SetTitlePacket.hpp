@@ -40,7 +40,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@SetTitlePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   1309949933
      * @vftbl  2
@@ -58,7 +58,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@SetTitlePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   2028357217
      * @symbol ??0SetTitlePacket@@QEAA@AEBV0@@Z
@@ -73,17 +73,17 @@ public:
      * @hash   -1657646678
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBVResolvedTextObject@@@Z
      */
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const &);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, class ResolvedTextObject const &);
     /**
      * @hash   1633281104
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const &);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, std::string const &);
     /**
      * @hash   1785848041
      * @symbol ??0SetTitlePacket@@QEAA@W4TitleType@0@@Z
      */
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
      * @hash   1259888529
      * @symbol ??0SetTitlePacket@@QEAA@HHH@Z

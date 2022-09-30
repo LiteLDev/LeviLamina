@@ -51,6 +51,6 @@ public:
      * @hash   525494754
      * @symbol ??0PackDiscoveryError@@QEAA@W4PackParseErrorType@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
      */
-    MCAPI PackDiscoveryError(enum PackParseErrorType, std::vector<std::string> const &);
+    MCAPI PackDiscoveryError(enum class PackParseErrorType, std::vector<std::string> const &);
 
 };

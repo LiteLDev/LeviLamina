@@ -143,25 +143,25 @@ public:
      * @vftbl  8
      * @symbol ?reloadHardcoded@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   2099414292
      * @vftbl  9
      * @symbol ?reloadHardcodedClient@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   821197180
      * @vftbl  10
      * @symbol ?initializeComponents@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
      */
-    virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   -8295723
      * @vftbl  11
      * @symbol ?reloadComponents@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @hash   959328880
      * @vftbl  12
@@ -190,7 +190,7 @@ public:
      * @vftbl  16
      * @symbol ?getOwnerEntityType@Actor@@UEAA?AW4ActorType@@XZ
      */
-    virtual enum ActorType getOwnerEntityType();
+    virtual enum class ActorType getOwnerEntityType();
     /**
      * @hash   1013219174
      * @vftbl  17
@@ -238,7 +238,7 @@ public:
      * @vftbl  24
      * @symbol ?getAttachPos@Actor@@UEBA?AVVec3@@W4ActorLocation@@M@Z
      */
-    virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
+    virtual class Vec3 getAttachPos(enum class ActorLocation, float) const;
     /**
      * @hash   457371638
      * @vftbl  25
@@ -423,7 +423,7 @@ public:
      * @vftbl  55
      * @symbol ?getExitTip@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z
      */
-    virtual std::string getExitTip(std::string const &, enum InputMode) const;
+    virtual std::string getExitTip(std::string const &, enum class InputMode) const;
     /**
      * @hash   645789839
      * @vftbl  56
@@ -529,7 +529,7 @@ public:
      * @vftbl  73
      * @symbol ?isUnderLiquid@Actor@@UEBA_NW4MaterialType@@@Z
      */
-    virtual bool isUnderLiquid(enum MaterialType) const;
+    virtual bool isUnderLiquid(enum class MaterialType) const;
     /**
      * @hash   -2136052964
      * @vftbl  74
@@ -772,7 +772,7 @@ public:
      * @vftbl  115
      * @symbol ?attack@Actor@@UEAA_NAEAV1@AEBW4ActorDamageCause@@@Z
      */
-    virtual bool attack(class Actor &, enum ActorDamageCause const &);
+    virtual bool attack(class Actor &, enum class ActorDamageCause const &);
     /**
      * @hash   -2113537819
      * @vftbl  116
@@ -880,7 +880,7 @@ public:
      * @vftbl  133
      * @symbol ?getAmbientSound@Actor@@UEBA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getAmbientSound() const;
+    virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @hash   1704185491
      * @vftbl  134
@@ -892,7 +892,7 @@ public:
      * @vftbl  135
      * @symbol ?getBlockDamageCause@Actor@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z
      */
-    virtual enum ActorDamageCause getBlockDamageCause(class Block const &) const;
+    virtual enum class ActorDamageCause getBlockDamageCause(class Block const &) const;
     /**
      * @hash   1150148002
      * @vftbl  136
@@ -928,7 +928,7 @@ public:
      * @vftbl  141
      * @symbol ?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @hash   745857283
      * @vftbl  142
@@ -994,13 +994,13 @@ public:
      * @vftbl  152
      * @symbol ?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
      */
-    virtual void setArmor(enum ArmorSlot, class ItemStack const &);
+    virtual void setArmor(enum class ArmorSlot, class ItemStack const &);
     /**
      * @hash   -1028582569
      * @vftbl  153
      * @symbol ?getArmor@Actor@@UEBAAEBVItemStack@@W4ArmorSlot@@@Z
      */
-    virtual class ItemStack const & getArmor(enum ArmorSlot) const;
+    virtual class ItemStack const & getArmor(enum class ArmorSlot) const;
     /**
      * @hash   -1376481576
      * @vftbl  154
@@ -1012,31 +1012,31 @@ public:
      * @vftbl  155
      * @symbol ?getArmorMaterialTypeInSlot@Actor@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z
      */
-    virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    virtual enum class ArmorMaterialType getArmorMaterialTypeInSlot(enum class ArmorSlot) const;
     /**
      * @hash   -154367378
      * @vftbl  156
      * @symbol ?getArmorMaterialTextureTypeInSlot@Actor@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z
      */
-    virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    virtual enum class ArmorTextureType getArmorMaterialTextureTypeInSlot(enum class ArmorSlot) const;
     /**
      * @hash   -1705650584
      * @vftbl  157
      * @symbol ?getArmorColorInSlot@Actor@@UEBAMW4ArmorSlot@@H@Z
      */
-    virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    virtual float getArmorColorInSlot(enum class ArmorSlot, int) const;
     /**
      * @hash   133185022
      * @vftbl  158
      * @symbol ?getEquippedSlot@Actor@@UEBAAEBVItemStack@@W4EquipmentSlot@@@Z
      */
-    virtual class ItemStack const & getEquippedSlot(enum EquipmentSlot) const;
+    virtual class ItemStack const & getEquippedSlot(enum class EquipmentSlot) const;
     /**
      * @hash   -1125926457
      * @vftbl  159
      * @symbol ?setEquippedSlot@Actor@@UEAAXW4EquipmentSlot@@AEBVItemStack@@@Z
      */
-    virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const &);
+    virtual void setEquippedSlot(enum class EquipmentSlot, class ItemStack const &);
     /**
      * @hash   1693717479
      * @vftbl  160
@@ -1096,7 +1096,7 @@ public:
      * @vftbl  169
      * @symbol ?getEntityTypeId@Actor@@UEBA?AW4ActorType@@XZ
      */
-    virtual enum ActorType getEntityTypeId() const;
+    virtual enum class ActorType getEntityTypeId() const;
     /**
      * @hash   -15317912
      * @vftbl  170
@@ -1132,7 +1132,7 @@ public:
      * @vftbl  175
      * @symbol ?getLiquidAABB@Actor@@UEBA?AVAABB@@W4MaterialType@@@Z
      */
-    virtual class AABB getLiquidAABB(enum MaterialType) const;
+    virtual class AABB getLiquidAABB(enum class MaterialType) const;
     /**
      * @hash   1048332360
      * @vftbl  176
@@ -1203,13 +1203,13 @@ public:
      * @vftbl  187
      * @symbol ?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@_N@Z
      */
-    virtual void playSynchronizedSound(enum LevelSoundEvent, class Vec3 const &, class Block const &, bool);
+    virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &, bool);
     /**
      * @hash   1561997005
      * @vftbl  188
      * @symbol ?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@H_N@Z
      */
-    virtual void playSynchronizedSound(enum LevelSoundEvent, class Vec3 const &, int, bool);
+    virtual void playSynchronizedSound(enum class LevelSoundEvent, class Vec3 const &, int, bool);
     /**
      * @hash   -1123498541
      * @vftbl  189
@@ -1298,7 +1298,7 @@ public:
      * @vftbl  203
      * @symbol ?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ
      */
-    virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
+    virtual enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @hash   1197536191
      * @vftbl  204
@@ -1400,7 +1400,7 @@ public:
      * @vftbl  220
      * @symbol ?useItem@Actor@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z
      */
-    virtual void useItem(class ItemStackBase &, enum ItemUseMethod, bool);
+    virtual void useItem(class ItemStackBase &, enum class ItemUseMethod, bool);
     /**
      * @vftbl  221
      * @symbol __unk_vfn_221
@@ -1670,13 +1670,13 @@ public:
      * @vftbl  266
      * @symbol ?_shouldProvideFeedbackOnHandContainerItemSet@Actor@@MEBA_NW4HandSlot@@AEBVItemStack@@@Z
      */
-    virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum HandSlot, class ItemStack const &) const;
+    virtual bool _shouldProvideFeedbackOnHandContainerItemSet(enum class HandSlot, class ItemStack const &) const;
     /**
      * @hash   160216569
      * @vftbl  267
      * @symbol ?_shouldProvideFeedbackOnArmorSet@Actor@@MEBA_NW4ArmorSlot@@AEBVItemStack@@@Z
      */
-    virtual bool _shouldProvideFeedbackOnArmorSet(enum ArmorSlot, class ItemStack const &) const;
+    virtual bool _shouldProvideFeedbackOnArmorSet(enum class ArmorSlot, class ItemStack const &) const;
     /**
      * @hash   -2033882140
      * @vftbl  268
@@ -1711,7 +1711,7 @@ public:
      * @vftbl  273
      * @symbol ?_getAnimationComponent@Actor@@MEAAAEAVAnimationComponent@@AEAV?$shared_ptr@VAnimationComponent@@@std@@W4AnimationComponentGroupType@@@Z
      */
-    virtual class AnimationComponent & _getAnimationComponent(class std::shared_ptr<class AnimationComponent> &, enum AnimationComponentGroupType);
+    virtual class AnimationComponent & _getAnimationComponent(class std::shared_ptr<class AnimationComponent> &, enum class AnimationComponentGroupType);
     /**
      * @hash   1576618203
      * @vftbl  274
@@ -1908,7 +1908,7 @@ public:
      * @hash   787942090
      * @symbol ?_setActorTypeId@Actor@@QEAAXW4ActorType@@@Z
      */
-    MCAPI void _setActorTypeId(enum ActorType);
+    MCAPI void _setActorTypeId(enum class ActorType);
     /**
      * @hash   392957761
      * @symbol ?_setLevelPtr@Actor@@QEAAXPEAVLevel@@@Z
@@ -2107,7 +2107,7 @@ public:
      * @hash   -487739392
      * @symbol ?fetchNearbyActorsSorted@Actor@@QEAA?AV?$vector@UDistanceSortedActor@@V?$allocator@UDistanceSortedActor@@@std@@@std@@AEBVVec3@@W4ActorType@@@Z
      */
-    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const &, enum ActorType);
+    MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const &, enum class ActorType);
     /**
      * @hash   168248773
      * @symbol ?forEachLeashedActor@Actor@@QEAAXV?$function@$$A6AXV?$not_null@PEAVActor@@@gsl@@@Z@std@@@Z
@@ -2191,12 +2191,12 @@ public:
      * @hash   -1003018210
      * @symbol ?getColor@Actor@@QEBA?AW4PaletteColor@@XZ
      */
-    MCAPI enum PaletteColor getColor() const;
+    MCAPI enum class PaletteColor getColor() const;
     /**
      * @hash   1796986316
      * @symbol ?getColor2@Actor@@QEBA?AW4PaletteColor@@XZ
      */
-    MCAPI enum PaletteColor getColor2() const;
+    MCAPI enum class PaletteColor getColor2() const;
     /**
      * @hash   1539706250
      * @symbol ?getControllingSeat@Actor@@QEBAHXZ
@@ -2264,7 +2264,7 @@ public:
      * @hash   -501329589
      * @symbol ?getEquipmentSlotForItem@Actor@@QEBA?AW4EquipmentSlot@@AEBVItemStack@@@Z
      */
-    MCAPI enum EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
+    MCAPI enum class EquipmentSlot getEquipmentSlotForItem(class ItemStack const &) const;
     /**
      * @hash   -1853991356
      * @symbol ?getFirstAvailableSeatPos@Actor@@QEBA_NAEAV1@AEAVVec3@@@Z
@@ -2304,7 +2304,7 @@ public:
      * @hash   1219556614
      * @symbol ?getInitializationMethod@Actor@@QEAA?AW4InitializationMethod@1@XZ
      */
-    MCAPI enum Actor::InitializationMethod getInitializationMethod();
+    MCAPI enum class Actor::InitializationMethod getInitializationMethod();
     /**
      * @hash   -948087903
      * @symbol ?getInterpolatedPosition@Actor@@QEBA?AVVec3@@M@Z
@@ -2339,7 +2339,7 @@ public:
      * @hash   1521461284
      * @symbol ?getLastHurtCause@Actor@@QEBA?AW4ActorDamageCause@@XZ
      */
-    MCAPI enum ActorDamageCause getLastHurtCause() const;
+    MCAPI enum class ActorDamageCause getLastHurtCause() const;
     /**
      * @hash   -1869276054
      * @symbol ?getLastHurtDamage@Actor@@QEBAMXZ
@@ -2534,7 +2534,7 @@ public:
      * @hash   -898322159
      * @symbol ?getStatusFlag@Actor@@QEBA_NW4ActorFlags@@@Z
      */
-    MCAPI bool getStatusFlag(enum ActorFlags) const;
+    MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @hash   1439754630
      * @symbol ?getStrength@Actor@@QEBAHXZ
@@ -2639,7 +2639,7 @@ public:
      * @hash   1588153215
      * @symbol ?hasCategory@Actor@@QEBA_NW4ActorCategory@@@Z
      */
-    MCAPI bool hasCategory(enum ActorCategory) const;
+    MCAPI bool hasCategory(enum class ActorCategory) const;
     /**
      * @hash   791108649
      * @symbol ?hasDefinitionGroup@Actor@@QEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -2724,7 +2724,7 @@ public:
      * @hash   -891684425
      * @symbol ?hasType@Actor@@QEBA_NW4ActorType@@@Z
      */
-    MCAPI bool hasType(enum ActorType) const;
+    MCAPI bool hasType(enum class ActorType) const;
     /**
      * @hash   1301640788
      * @symbol ?hasUniqueID@Actor@@QEBA_NXZ
@@ -2764,7 +2764,7 @@ public:
      * @hash   679758932
      * @symbol ?isActorLocationInMaterial@Actor@@QEBA_NW4ActorLocation@@W4MaterialType@@@Z
      */
-    MCAPI bool isActorLocationInMaterial(enum ActorLocation, enum MaterialType) const;
+    MCAPI bool isActorLocationInMaterial(enum class ActorLocation, enum class MaterialType) const;
     /**
      * @hash   679988772
      * @symbol ?isAngry@Actor@@QEBA_NXZ
@@ -3064,7 +3064,7 @@ public:
      * @hash   -610934587
      * @symbol ?isType@Actor@@QEBA_NW4ActorType@@@Z
      */
-    MCAPI bool isType(enum ActorType) const;
+    MCAPI bool isType(enum class ActorType) const;
     /**
      * @hash   -92519820
      * @symbol ?isUseNewTradeScreen@Actor@@QEBA_NXZ
@@ -3164,12 +3164,12 @@ public:
      * @hash   -1794601724
      * @symbol ?playSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@@Z
      */
-    MCAPI void playSound(enum LevelSoundEvent, class Vec3 const &, class Block const &);
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &);
     /**
      * @hash   2118597188
      * @symbol ?playSound@Actor@@QEAAXW4LevelSoundEvent@@AEBVVec3@@H@Z
      */
-    MCAPI void playSound(enum LevelSoundEvent, class Vec3 const &, int);
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int);
     /**
      * @hash   1374709400
      * @symbol ?positionAllPassengers@Actor@@QEAAX_N@Z
@@ -3343,7 +3343,7 @@ public:
      * @hash   -221814528
      * @symbol ?setColor@Actor@@QEAAXW4PaletteColor@@@Z
      */
-    MCAPI void setColor(enum PaletteColor);
+    MCAPI void setColor(enum class PaletteColor);
     /**
      * @hash   -552607076
      * @symbol ?setControllingSeat@Actor@@QEAAXH@Z
@@ -3518,7 +3518,7 @@ public:
      * @hash   -780407607
      * @symbol ?setStatusFlag@Actor@@QEAAXW4ActorFlags@@_N@Z
      */
-    MCAPI void setStatusFlag(enum ActorFlags, bool);
+    MCAPI void setStatusFlag(enum class ActorFlags, bool);
     /**
      * @hash   -1682116096
      * @symbol ?setStrength@Actor@@QEAAXH@Z
@@ -3792,17 +3792,17 @@ public:
      * @hash   -476819782
      * @symbol ?getLiquidAABB@Actor@@SA?AVAABB@@AEBV2@W4MaterialType@@@Z
      */
-    MCAPI static class AABB getLiquidAABB(class AABB const &, enum MaterialType);
+    MCAPI static class AABB getLiquidAABB(class AABB const &, enum class MaterialType);
     /**
      * @hash   -1494179571
      * @symbol ?getLiquidFlowStrength@Actor@@SAMW4MaterialType@@@Z
      */
-    MCAPI static float getLiquidFlowStrength(enum MaterialType);
+    MCAPI static float getLiquidFlowStrength(enum class MaterialType);
     /**
      * @hash   619254656
      * @symbol ?getStatusFlag@Actor@@SA_NAEBVSynchedActorData@@W4ActorFlags@@@Z
      */
-    MCAPI static bool getStatusFlag(class SynchedActorData const &, enum ActorFlags);
+    MCAPI static bool getStatusFlag(class SynchedActorData const &, enum class ActorFlags);
     /**
      * @hash   -1488030937
      * @symbol ?getViewVector@Actor@@SA?AVVec3@@AEBVVec2@@0M@Z
@@ -3817,7 +3817,7 @@ public:
      * @hash   -6068751
      * @symbol ?hasSubBBIn@Actor@@SA_NAEBVIConstBlockSource@@AEBV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@W4MaterialType@@@Z
      */
-    MCAPI static bool hasSubBBIn(class IConstBlockSource const &, std::vector<class AABB> const &, enum MaterialType);
+    MCAPI static bool hasSubBBIn(class IConstBlockSource const &, std::vector<class AABB> const &, enum class MaterialType);
     /**
      * @hash   1408984659
      * @symbol ?isFree@Actor@@SA_NAEAUIActorMovementProxy@@AEBVVec3@@M@Z
@@ -3929,7 +3929,7 @@ public:
      * @hash   1592360139
      * @symbol ?_setHandContainerItem@Actor@@IEAAXAEBVItemStack@@W4HandSlot@@@Z
      */
-    MCAPI void _setHandContainerItem(class ItemStack const &, enum HandSlot);
+    MCAPI void _setHandContainerItem(class ItemStack const &, enum class HandSlot);
     /**
      * @hash   79128455
      * @symbol ?_setHeightOffset@Actor@@IEAAXM@Z

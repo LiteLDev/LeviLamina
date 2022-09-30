@@ -57,6 +57,6 @@ public:
      * @hash   1290955571
      * @symbol ??0ActorDamageByBlockSource@@QEAA@AEBVBlock@@W4ActorDamageCause@@@Z
      */
-    MCAPI ActorDamageByBlockSource(class Block const &, enum ActorDamageCause);
+    MCAPI ActorDamageByBlockSource(class Block const &, enum class ActorDamageCause);
 
 };

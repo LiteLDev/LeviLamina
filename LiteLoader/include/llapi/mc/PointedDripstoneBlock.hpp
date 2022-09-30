@@ -362,7 +362,7 @@ public:
      * @hash   1416310352
      * @symbol ?addDripParticle@PointedDripstoneBlock@@SAXAEAVBlockSource@@AEBVBlockPos@@W4ParticleType@@@Z
      */
-    MCAPI static void addDripParticle(class BlockSource &, class BlockPos const &, enum ParticleType);
+    MCAPI static void addDripParticle(class BlockSource &, class BlockPos const &, enum class ParticleType);
     /**
      * @hash   1289121567
      * @symbol ?canGrow@PointedDripstoneBlock@@SA_NAEAVBlockSource@@AEBVBlockPos@@1@Z
@@ -382,7 +382,7 @@ public:
      * @hash   1326862031
      * @symbol ?getCauldronFillLiquidType@PointedDripstoneBlock@@SA?AV?$optional@W4MaterialType@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
      */
-    MCAPI static class std::optional<enum MaterialType> getCauldronFillLiquidType(class BlockSource &, class BlockPos const &);
+    MCAPI static class std::optional<enum class MaterialType> getCauldronFillLiquidType(class BlockSource &, class BlockPos const &);
     /**
      * @hash   789591033
      * @symbol ?getStalactiteTipBelowFillSource@PointedDripstoneBlock@@SA?AV?$optional@VBlockPos@@@std@@AEAVBlockSource@@AEBVBlockPos@@@Z
@@ -409,7 +409,7 @@ public:
      * @hash   1269993650
      * @symbol ?_calculateDripstoneThickness@PointedDripstoneBlock@@CA?AW4DripstoneThickness@@AEAVBlockSource@@AEBVBlockPos@@E_N@Z
      */
-    MCAPI static enum DripstoneThickness _calculateDripstoneThickness(class BlockSource &, class BlockPos const &, unsigned char, bool);
+    MCAPI static enum class DripstoneThickness _calculateDripstoneThickness(class BlockSource &, class BlockPos const &, unsigned char, bool);
     /**
      * @hash   -1210612926
      * @symbol ?_canDrip@PointedDripstoneBlock@@CA_NAEAVBlockSource@@AEBVBlockPos@@@Z
@@ -429,7 +429,7 @@ public:
      * @hash   -625960814
      * @symbol ?_createDripstone@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlockPos@@EW4DripstoneThickness@@@Z
      */
-    MCAPI static void _createDripstone(class BlockSource &, class BlockPos const &, unsigned char, enum DripstoneThickness);
+    MCAPI static void _createDripstone(class BlockSource &, class BlockPos const &, unsigned char, enum class DripstoneThickness);
     /**
      * @hash   230971083
      * @symbol ?_createMergedTips@PointedDripstoneBlock@@CAXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@@Z

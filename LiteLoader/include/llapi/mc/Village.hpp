@@ -44,7 +44,7 @@ public:
      * @hash   -846055733
      * @symbol ?addActorToVillage@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@@Z
      */
-    MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const &);
+    MCAPI void addActorToVillage(enum class DwellerRole, struct ActorUniqueID const &);
     /**
      * @hash   101889862
      * @symbol ?addAggressor@Village@@QEAAXAEBVMob@@@Z
@@ -88,7 +88,7 @@ public:
      * @hash   2146341253
      * @symbol ?fetchOwnedPOI@Village@@QEAA?AV?$weak_ptr@VPOIInstance@@@std@@AEBUActorUniqueID@@W4POIType@@@Z
      */
-    MCAPI class std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const &, enum POIType);
+    MCAPI class std::weak_ptr<class POIInstance> fetchOwnedPOI(struct ActorUniqueID const &, enum class POIType);
     /**
      * @hash   -2139198985
      * @symbol ?fireSoundTheAlarm@Village@@QEAAXXZ
@@ -128,7 +128,7 @@ public:
      * @hash   2136384933
      * @symbol ?getClosestPOI@Village@@QEAA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@AEBVBlockPos@@@Z
      */
-    MCAPI class std::weak_ptr<class POIInstance> getClosestPOI(enum POIType, class BlockPos const &);
+    MCAPI class std::weak_ptr<class POIInstance> getClosestPOI(enum class POIType, class BlockPos const &);
     /**
      * @hash   1029633081
      * @symbol ?getRaid@Village@@QEBAPEBVRaid@@XZ
@@ -163,7 +163,7 @@ public:
      * @hash   -2133324418
      * @symbol ?hasInvalidRole@Village@@QEAA_NAEBUActorUniqueID@@AEBW4DwellerRole@@@Z
      */
-    MCAPI bool hasInvalidRole(struct ActorUniqueID const &, enum DwellerRole const &);
+    MCAPI bool hasInvalidRole(struct ActorUniqueID const &, enum class DwellerRole const &);
     /**
      * @hash   1165670678
      * @symbol ?hasRaid@Village@@QEBA_NXZ
@@ -173,7 +173,7 @@ public:
      * @hash   -347993196
      * @symbol ?hasSpecificDweller@Village@@QEBA_NW4DwellerRole@@AEBUActorUniqueID@@@Z
      */
-    MCAPI bool hasSpecificDweller(enum DwellerRole, struct ActorUniqueID const &) const;
+    MCAPI bool hasSpecificDweller(enum class DwellerRole, struct ActorUniqueID const &) const;
     /**
      * @hash   2096712211
      * @symbol ?loadDataByKey@Village@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCompoundTag@@@Z
@@ -188,7 +188,7 @@ public:
      * @hash   483226090
      * @symbol ?removeActorFromVillage@Village@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBUActorUniqueID@@UDwellerData@Village@@@std@@@std@@@std@@@std@@W4DwellerRole@@AEBUActorUniqueID@@@Z
      */
-    MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>> removeActorFromVillage(enum DwellerRole, struct ActorUniqueID const &);
+    MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>> removeActorFromVillage(enum class DwellerRole, struct ActorUniqueID const &);
     /**
      * @hash   -784897352
      * @symbol ?removeAllInstancesofActorFromVillage@Village@@QEAAXAEBUActorUniqueID@@@Z
@@ -203,7 +203,7 @@ public:
      * @hash   725927739
      * @symbol ?resetDwellerTimer@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@@Z
      */
-    MCAPI void resetDwellerTimer(enum DwellerRole, struct ActorUniqueID const &);
+    MCAPI void resetDwellerTimer(enum class DwellerRole, struct ActorUniqueID const &);
     /**
      * @hash   -797444841
      * @symbol ?resetNoBreedTimer@Village@@QEAAXXZ
@@ -223,7 +223,7 @@ public:
      * @hash   1803055620
      * @symbol ?setSavedDwellerPosition@Village@@QEAAXW4DwellerRole@@AEBUActorUniqueID@@VBlockPos@@@Z
      */
-    MCAPI void setSavedDwellerPosition(enum DwellerRole, struct ActorUniqueID const &, class BlockPos);
+    MCAPI void setSavedDwellerPosition(enum class DwellerRole, struct ActorUniqueID const &, class BlockPos);
     /**
      * @hash   1589099609
      * @symbol ?tick@Village@@QEAAXUTick@@AEAVBlockSource@@@Z
@@ -384,7 +384,7 @@ public:
      * @hash   -1805828217
      * @symbol ?_playSoundFrom@Village@@AEAAXAEBVVec3@@W4LevelSoundEvent@@@Z
      */
-    MCAPI void _playSoundFrom(class Vec3 const &, enum LevelSoundEvent);
+    MCAPI void _playSoundFrom(class Vec3 const &, enum class LevelSoundEvent);
     /**
      * @hash   -66975233
      * @symbol ?_readyRaidGroup@Village@@AEAAXAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z

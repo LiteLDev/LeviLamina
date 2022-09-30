@@ -327,17 +327,17 @@ public:
      * @hash   1475508155
      * @symbol ??0CommandBlock@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4CommandBlockMode@@@Z
      */
-    MCAPI CommandBlock(std::string const &, int, enum CommandBlockMode);
+    MCAPI CommandBlock(std::string const &, int, enum class CommandBlockMode);
     /**
      * @hash   1432348508
      * @symbol ?getMode@CommandBlock@@QEBA?AW4CommandBlockMode@@XZ
      */
-    MCAPI enum CommandBlockMode getMode() const;
+    MCAPI enum class CommandBlockMode getMode() const;
     /**
      * @hash   -1008378139
      * @symbol ?updateBlock@CommandBlock@@QEBAXAEAVBlockSource@@AEBVBlockPos@@W4CommandBlockMode@@_N@Z
      */
-    MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum CommandBlockMode, bool) const;
+    MCAPI void updateBlock(class BlockSource &, class BlockPos const &, enum class CommandBlockMode, bool) const;
 
 //private:
     /**

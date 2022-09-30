@@ -81,7 +81,7 @@ public:
      * @hash   1158889297
      * @symbol ??0EnchantingContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI EnchantingContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI EnchantingContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @hash   16740348
      * @symbol ?getEnchantOptions@EnchantingContainerManagerModel@@QEBAAEBV?$vector@VItemEnchantOption@@V?$allocator@VItemEnchantOption@@@std@@@std@@XZ

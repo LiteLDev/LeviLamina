@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@NBStairsRoom@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   1989387982
      * @vftbl  3

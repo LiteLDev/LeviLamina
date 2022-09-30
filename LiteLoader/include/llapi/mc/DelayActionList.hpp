@@ -37,7 +37,7 @@ public:
      * @hash   1869724186
      * @symbol ?queueRequestOrExecuteAction@DelayActionList@@QEAA?AW4QueueRequestResult@@VDelayRequest@@AEAVServerLevel@@AEAVDimension@@_K_N@Z
      */
-    MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, unsigned __int64, bool);
+    MCAPI enum class QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel &, class Dimension &, unsigned __int64, bool);
     /**
      * @hash   -675410779
      * @symbol ?tick@DelayActionList@@QEAAXAEAVServerLevel@@AEAVDimension@@_K@Z

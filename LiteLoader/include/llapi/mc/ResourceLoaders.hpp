@@ -60,7 +60,7 @@ namespace ResourceLoaders {
      * @hash   -656524159
      * @symbol ?loaders@ResourceLoaders@@3V?$map@W4ResourceFileSystem@@V?$unique_ptr@VResourceLoader@@U?$default_delete@VResourceLoader@@@std@@@std@@U?$less@W4ResourceFileSystem@@@3@V?$allocator@U?$pair@$$CBW4ResourceFileSystem@@V?$unique_ptr@VResourceLoader@@U?$default_delete@VResourceLoader@@@std@@@std@@@std@@@3@@std@@A
      */
-    MCAPI extern class std::map<enum ResourceFileSystem, std::unique_ptr<class ResourceLoader>, struct std::less<enum ResourceFileSystem>, class std::allocator<struct std::pair<enum ResourceFileSystem const, std::unique_ptr<class ResourceLoader>>>> loaders;
+    MCAPI extern class std::map<enum class ResourceFileSystem, std::unique_ptr<class ResourceLoader>, struct std::less<enum class ResourceFileSystem>, class std::allocator<struct std::pair<enum class ResourceFileSystem const, std::unique_ptr<class ResourceLoader>>>> loaders;
     /**
      * @hash   1978307056
      * @symbol ?supportedImageExtensions@ResourceLoaders@@3V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@B

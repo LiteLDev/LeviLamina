@@ -55,7 +55,7 @@ public:
      * @hash   -1260978944
      * @symbol ?_clearSimpleContainerItem@FullPlayerInventoryWrapper@@AEAAHAEAVSimpleContainer@@W4ContainerID@@H@Z
      */
-    MCAPI int _clearSimpleContainerItem(class SimpleContainer &, enum ContainerID, int);
+    MCAPI int _clearSimpleContainerItem(class SimpleContainer &, enum class ContainerID, int);
     /**
      * @hash   -408118917
      * @symbol ?_getSimpleContainerItemCount@FullPlayerInventoryWrapper@@AEAAHAEAVSimpleContainer@@HV?$function@$$A6A_NAEBVItemStack@@@Z@std@@@Z
@@ -70,7 +70,7 @@ public:
      * @hash   1320863098
      * @symbol ?_removeSimpleContainerItem@FullPlayerInventoryWrapper@@AEAAHAEAVSimpleContainer@@W4ContainerID@@HAEBVItemStack@@_NH@Z
      */
-    MCAPI int _removeSimpleContainerItem(class SimpleContainer &, enum ContainerID, int, class ItemStack const &, bool, int);
+    MCAPI int _removeSimpleContainerItem(class SimpleContainer &, enum class ContainerID, int, class ItemStack const &, bool, int);
     /**
      * @hash   1398374023
      * @symbol ?_sendCursorSlotPacket@FullPlayerInventoryWrapper@@AEBAXXZ

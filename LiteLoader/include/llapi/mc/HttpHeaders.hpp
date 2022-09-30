@@ -50,7 +50,7 @@ public:
      * @hash   -714240253
      * @symbol ?getState@HttpHeaders@@QEAA?AW4ParseState@1@XZ
      */
-    MCAPI enum HttpHeaders::ParseState getState();
+    MCAPI enum class HttpHeaders::ParseState getState();
     /**
      * @hash   3511008
      * @symbol ?getStatusCode@HttpHeaders@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -60,7 +60,7 @@ public:
      * @hash   -338251478
      * @symbol ?parse@HttpHeaders@@QEAA?AW4ParseState@1@AEAVBitStream@RakNet@@@Z
      */
-    MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream &);
+    MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream &);
     /**
      * @hash   503882202
      * @symbol ??1HttpHeaders@@QEAA@XZ

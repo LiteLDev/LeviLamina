@@ -89,7 +89,7 @@ public:
      * @vftbl  9
      * @symbol ?getPermissionsLevel@PlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
      * @hash   1446178802
      * @vftbl  10
@@ -113,7 +113,7 @@ public:
      * @vftbl  15
      * @symbol ?canUseAbility@PlayerCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
      */
-    virtual bool canUseAbility(enum AbilitiesIndex) const;
+    virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @hash   -262686310
      * @vftbl  18
@@ -131,7 +131,7 @@ public:
      * @vftbl  20
      * @symbol ?getSourceSubId@PlayerCommandOrigin@@UEBA?AW4SubClientId@@XZ
      */
-    virtual enum SubClientId getSourceSubId() const;
+    virtual enum class SubClientId getSourceSubId() const;
     /**
      * @hash   1980824255
      * @vftbl  22
@@ -143,7 +143,7 @@ public:
      * @vftbl  23
      * @symbol ?getOriginType@PlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      */
-    virtual enum CommandOriginType getOriginType() const;
+    virtual enum class CommandOriginType getOriginType() const;
     /**
      * @hash   -392319288
      * @vftbl  29

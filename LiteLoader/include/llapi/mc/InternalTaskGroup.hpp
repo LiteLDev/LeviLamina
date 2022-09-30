@@ -59,7 +59,7 @@ public:
      * @vftbl  5
      * @symbol ?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ
      */
-    virtual enum TaskGroupState getState() const;
+    virtual enum class TaskGroupState getState() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
     /**
      * @hash   1190151028

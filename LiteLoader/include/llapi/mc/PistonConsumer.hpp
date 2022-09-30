@@ -67,7 +67,7 @@ public:
      * @vftbl  22
      * @symbol ?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ
      */
-    virtual enum CircuitComponentType getCircuitComponentType() const;
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @hash   -1463858005
      * @symbol ??0PistonConsumer@@QEAA@XZ

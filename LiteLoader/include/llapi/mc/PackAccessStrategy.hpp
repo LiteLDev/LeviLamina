@@ -117,7 +117,7 @@ public:
      * @vftbl  14
      * @symbol ?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ
      */
-    virtual enum PackAccessStrategyType getStrategyType() const = 0;
+    virtual enum class PackAccessStrategyType getStrategyType() const = 0;
     /**
      * @hash   -683046309
      * @vftbl  15
@@ -135,7 +135,7 @@ public:
      * @vftbl  17
      * @symbol ?generateAssetSet@PackAccessStrategy@@UEAA?AW4PackAccessAssetGenerationResult@@XZ
      */
-    virtual enum PackAccessAssetGenerationResult generateAssetSet();
+    virtual enum class PackAccessAssetGenerationResult generateAssetSet();
     /**
      * @hash   -310713737
      * @vftbl  18

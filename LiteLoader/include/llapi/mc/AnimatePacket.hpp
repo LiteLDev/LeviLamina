@@ -53,7 +53,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@AnimatePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -309879166
      * @vftbl  2
@@ -71,7 +71,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@AnimatePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -762177467
      * @symbol ??0AnimatePacket@@QEAA@XZ
@@ -81,16 +81,16 @@ public:
      * @hash   -1910661103
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@M@Z
      */
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID, float);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID, float);
     /**
      * @hash   -2133479536
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@VActorRuntimeID@@@Z
      */
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class ActorRuntimeID);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID);
     /**
      * @hash   -1620136214
      * @symbol ??0AnimatePacket@@QEAA@W4Action@0@AEAVActor@@@Z
      */
-    MCAPI AnimatePacket(enum AnimatePacket::Action, class Actor &);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor &);
 
 };

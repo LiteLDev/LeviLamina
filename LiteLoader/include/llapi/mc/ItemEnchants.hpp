@@ -69,7 +69,7 @@ public:
      * @hash   930657033
      * @symbol ?getEnchantment@ItemEnchants@@QEAA?AVEnchantmentInstance@@W4Type@Enchant@@@Z
      */
-    MCAPI class EnchantmentInstance getEnchantment(enum Enchant::Type);
+    MCAPI class EnchantmentInstance getEnchantment(enum class Enchant::Type);
     /**
      * @hash   852231567
      * @symbol ?getEnchants@ItemEnchants@@QEBAAEBV?$vector@VEnchantmentInstance@@V?$allocator@VEnchantmentInstance@@@std@@@std@@H@Z
@@ -89,7 +89,7 @@ public:
      * @hash   1352252885
      * @symbol ?hasEnchant@ItemEnchants@@QEBAHW4Type@Enchant@@@Z
      */
-    MCAPI int hasEnchant(enum Enchant::Type) const;
+    MCAPI int hasEnchant(enum class Enchant::Type) const;
     /**
      * @hash   192295212
      * @symbol ?isEmpty@ItemEnchants@@QEBA_NXZ
@@ -104,7 +104,7 @@ public:
      * @hash   2053077042
      * @symbol ?removeEnchantment@ItemEnchants@@QEAAXW4Type@Enchant@@@Z
      */
-    MCAPI void removeEnchantment(enum Enchant::Type);
+    MCAPI void removeEnchantment(enum class Enchant::Type);
     /**
      * @hash   -477965481
      * @symbol ??1ItemEnchants@@QEAA@XZ

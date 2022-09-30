@@ -119,7 +119,7 @@ public:
      * @hash   -2122645616
      * @symbol ?getReadCompleteResult@ReadOnlyBinaryStream@@QEBA?AW4StreamReadResult@@XZ
      */
-    MCAPI enum StreamReadResult getReadCompleteResult() const;
+    MCAPI enum class StreamReadResult getReadCompleteResult() const;
     /**
      * @hash   -202674344
      * @symbol ?getSignedBigEndianInt@ReadOnlyBinaryStream@@QEAAHXZ

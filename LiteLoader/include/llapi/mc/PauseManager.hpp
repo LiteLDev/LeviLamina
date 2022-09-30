@@ -33,11 +33,11 @@ public:
      * @hash   1703347193
      * @symbol ?DEFAULT_SIMULATION_TYPE@PauseManager@@2W4SimulationType@@B
      */
-    MCAPI static enum SimulationType const DEFAULT_SIMULATION_TYPE;
+    MCAPI static enum class SimulationType const DEFAULT_SIMULATION_TYPE;
     /**
      * @hash   -1303672737
      * @symbol ?getSimulationType@PauseManager@@SA?AW4SimulationType@@V?$StackRefResultT@U?$SharePtrRefTraits@$$CBVPauseManager@@@@@@@Z
      */
-    MCAPI static enum SimulationType getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const>>);
+    MCAPI static enum class SimulationType getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const>>);
 
 };

@@ -133,7 +133,7 @@ public:
      * @hash   -677048141
      * @symbol ?TypeId@BeehiveBlockActor@@2W4BlockActorType@@B
      */
-    MCAPI static enum BlockActorType const TypeId;
+    MCAPI static enum class BlockActorType const TypeId;
     /**
      * @hash   934248009
      * @symbol ?TypeString@BeehiveBlockActor@@2V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@B

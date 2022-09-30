@@ -31,7 +31,7 @@ public:
      * @hash   -114615976
      * @symbol ?close@wspp_websocket_impl@@QEAAJW4HCWebSocketCloseStatus@@@Z
      */
-    MCAPI long close(enum HCWebSocketCloseStatus);
+    MCAPI long close(enum class HCWebSocketCloseStatus);
     /**
      * @hash   -10996809
      * @symbol ?connect@wspp_websocket_impl@@QEAAJPEAUXAsyncBlock@@@Z

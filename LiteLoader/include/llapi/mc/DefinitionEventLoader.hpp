@@ -34,14 +34,14 @@ public:
      * @hash   1625486693
      * @symbol ?loadEvent@DefinitionEventLoader@@SA?AVDefinitionEvent@@VValue@Json@@AEBVSemVersion@@W4TypeExecutingEvent@@PEBVEventResponseFactory@@@Z
      */
-    MCAPI static class DefinitionEvent loadEvent(class Json::Value, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
+    MCAPI static class DefinitionEvent loadEvent(class Json::Value, class SemVersion const &, enum class TypeExecutingEvent, class EventResponseFactory const *);
 
 //private:
     /**
      * @hash   728805352
      * @symbol ?_loadCollection@DefinitionEventLoader@@CAXAEAVDefinitionEvent@@AEBVValue@Json@@AEBVSemVersion@@W4TypeExecutingEvent@@PEBVEventResponseFactory@@@Z
      */
-    MCAPI static void _loadCollection(class DefinitionEvent &, class Json::Value const &, class SemVersion const &, enum TypeExecutingEvent, class EventResponseFactory const *);
+    MCAPI static void _loadCollection(class DefinitionEvent &, class Json::Value const &, class SemVersion const &, enum class TypeExecutingEvent, class EventResponseFactory const *);
 
 private:
 

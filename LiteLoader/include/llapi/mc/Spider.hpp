@@ -216,7 +216,7 @@ public:
      * @vftbl  369
      * @symbol ?getSpiderType@Spider@@UEBA?AW4Type@1@XZ
      */
-    virtual enum Spider::Type getSpiderType() const;
+    virtual enum class Spider::Type getSpiderType() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIDER
     /**
      * @hash   -1523540012

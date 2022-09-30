@@ -34,7 +34,7 @@ public:
      * @hash   -1581165067
      * @symbol ??0BiomeComponentFactory@@QEAA@W4FactoryScope@0@@Z
      */
-    MCAPI BiomeComponentFactory(enum BiomeComponentFactory::FactoryScope);
+    MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
     /**
      * @hash   237865298
      * @symbol ?processDataComponents@BiomeComponentFactory@@QEBAXAEAVBiome@@AEAVIWorldRegistriesProvider@@AEAVCompoundTag@@@Z

@@ -48,7 +48,7 @@ public:
      * @hash   -1461690524
      * @symbol ?sendActorDeath@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z
      */
-    MCAPI void sendActorDeath(class Actor &, class ActorDamageSource const &, enum ActorType);
+    MCAPI void sendActorDeath(class Actor &, class ActorDamageSource const &, enum class ActorType);
     /**
      * @hash   1235002925
      * @symbol ?sendActorMove@ActorEventCoordinator@@QEAAXAEAVActor@@AEBVVec3@@@Z
@@ -58,7 +58,7 @@ public:
      * @hash   -458295746
      * @symbol ?sendActorPredictedMove@ActorEventCoordinator@@QEAAXAEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z
      */
-    MCAPI void sendActorPredictedMove(class Actor &, enum MovePredictionType, class Vec3 const &);
+    MCAPI void sendActorPredictedMove(class Actor &, enum class MovePredictionType, class Vec3 const &);
     /**
      * @hash   -603991857
      * @symbol ?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z
@@ -98,12 +98,12 @@ public:
      * @hash   1474822445
      * @symbol ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@AEBV?$EventRef@U?$ActorGameplayEvent@W4CoordinatorResult@@@@@@@Z
      */
-    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum CoordinatorResult>> const &);
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum class CoordinatorResult>> const &);
     /**
      * @hash   1431924533
      * @symbol ?sendEvent@ActorEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableActorGameplayEvent@W4CoordinatorResult@@@@@@@Z
      */
-    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum CoordinatorResult>>);
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum class CoordinatorResult>>);
     /**
      * @hash   1196605336
      * @symbol ?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z

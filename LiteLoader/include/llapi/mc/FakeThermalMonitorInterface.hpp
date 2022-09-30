@@ -38,7 +38,7 @@ public:
      * @vftbl  1
      * @symbol ?getThermalState@FakeThermalMonitorInterface@@UEBA?AW4ThermalState@@XZ
      */
-    virtual enum ThermalState getThermalState() const;
+    virtual enum class ThermalState getThermalState() const;
     /**
      * @hash   749163
      * @vftbl  2

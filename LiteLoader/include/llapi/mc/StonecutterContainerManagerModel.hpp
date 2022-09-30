@@ -81,6 +81,6 @@ public:
      * @hash   589265836
      * @symbol ??0StonecutterContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI StonecutterContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI StonecutterContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

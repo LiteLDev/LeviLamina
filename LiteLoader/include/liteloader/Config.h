@@ -62,6 +62,7 @@ struct LLConfig {
     bool enableFixBDSCrash = true;
     bool enableParticleAPI = false;
     bool enablePermissionAPI = true;
+    bool enableClientChunkPreGeneration = true;
     std::vector<std::string> outputFilterRegex = {};
 };
 

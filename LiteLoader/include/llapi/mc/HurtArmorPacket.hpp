@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@HurtArmorPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   1812532787
      * @vftbl  2
@@ -57,7 +57,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@HurtArmorPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   1646998644
      * @symbol ??0HurtArmorPacket@@QEAA@XZ
@@ -67,6 +67,6 @@ public:
      * @hash   1550396961
      * @symbol ??0HurtArmorPacket@@QEAA@W4ActorDamageCause@@HV?$bitset@$03@std@@@Z
      */
-    MCAPI HurtArmorPacket(enum ActorDamageCause, int, class std::bitset<4>);
+    MCAPI HurtArmorPacket(enum class ActorDamageCause, int, class std::bitset<4>);
 
 };

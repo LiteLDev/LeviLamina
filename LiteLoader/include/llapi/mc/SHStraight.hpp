@@ -40,7 +40,7 @@ public:
      * @vftbl  2
      * @symbol ?getType@SHStraight@@UEBA?AW4StructurePieceType@@XZ
      */
-    virtual enum StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const;
     /**
      * @hash   -2123340140
      * @vftbl  3

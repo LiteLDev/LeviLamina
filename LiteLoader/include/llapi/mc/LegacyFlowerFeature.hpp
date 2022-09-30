@@ -45,6 +45,6 @@ public:
      * @hash   -287240843
      * @symbol ??0LegacyFlowerFeature@@QEAA@W4FlowerPlacementType@@@Z
      */
-    MCAPI LegacyFlowerFeature(enum FlowerPlacementType);
+    MCAPI LegacyFlowerFeature(enum class FlowerPlacementType);
 
 };

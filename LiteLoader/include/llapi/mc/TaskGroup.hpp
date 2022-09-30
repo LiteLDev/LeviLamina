@@ -64,7 +64,7 @@ public:
      * @vftbl  5
      * @symbol ?getState@TaskGroup@@UEBA?AW4TaskGroupState@@XZ
      */
-    virtual enum TaskGroupState getState() const;
+    virtual enum class TaskGroupState getState() const;
     /**
      * @hash   1347011895
      * @vftbl  6

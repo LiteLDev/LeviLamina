@@ -148,12 +148,12 @@ enum class FileAccessType;
      * @hash   -1628559639
      * @symbol ??ICore@@YA_KW4DirectoryIterationFlags@0@0@Z
      */
-    MCAPI unsigned __int64 operator&(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
+    MCAPI unsigned __int64 operator&(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
      * @hash   1187489555
      * @symbol ??UCore@@YA?AW4DirectoryIterationFlags@0@W410@0@Z
      */
-    MCAPI enum Core::DirectoryIterationFlags operator|(enum Core::DirectoryIterationFlags, enum Core::DirectoryIterationFlags);
+    MCAPI enum class Core::DirectoryIterationFlags operator|(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
      * @hash   -650198642
      * @symbol ?sRootStorageArea@Core@@3V?$shared_ptr@VFileStorageArea@Core@@@std@@A

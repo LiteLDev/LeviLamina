@@ -34,22 +34,22 @@ public:
      * @hash   1642259376
      * @symbol ?onObjectiveAdded@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI enum EventResult onObjectiveAdded(std::string const &);
+    MCVAPI enum class EventResult onObjectiveAdded(std::string const &);
     /**
      * @hash   2064057808
      * @symbol ?onObjectiveRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCVAPI enum EventResult onObjectiveRemoved(std::string const &);
+    MCVAPI enum class EventResult onObjectiveRemoved(std::string const &);
     /**
      * @hash   835716939
      * @symbol ?onScoreChanged@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z
      */
-    MCVAPI enum EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
+    MCVAPI enum class EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
      * @hash   1426696314
      * @symbol ?onScoreboardIdentityRemoved@ScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@@Z
      */
-    MCVAPI enum EventResult onScoreboardIdentityRemoved(struct ScoreboardId const &);
+    MCVAPI enum class EventResult onScoreboardIdentityRemoved(struct ScoreboardId const &);
 #endif
 
 };

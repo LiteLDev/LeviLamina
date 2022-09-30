@@ -77,7 +77,7 @@ public:
      * @hash   571620063
      * @symbol ?isExperimentEnabled@Experiments@@QEBA_NW4AllExperiments@@@Z
      */
-    MCAPI bool isExperimentEnabled(enum AllExperiments) const;
+    MCAPI bool isExperimentEnabled(enum class AllExperiments) const;
     /**
      * @hash   -1211830700
      * @symbol ?setTagData@Experiments@@QEBAXAEAVCompoundTag@@@Z
@@ -92,7 +92,7 @@ public:
      * @hash   782977291
      * @symbol ?getExperimentTextID@Experiments@@SAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4AllExperiments@@@Z
      */
-    MCAPI static std::string const & getExperimentTextID(enum AllExperiments);
+    MCAPI static std::string const & getExperimentTextID(enum class AllExperiments);
     /**
      * @hash   1060569473
      * @symbol ?getToggleNames@Experiments@@SAAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ

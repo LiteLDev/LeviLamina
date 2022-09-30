@@ -51,6 +51,6 @@ public:
      * @hash   -393439934
      * @symbol ??0EducationMetadataError@@QEAA@W4PackParseErrorType@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
      */
-    MCAPI EducationMetadataError(enum PackParseErrorType, std::vector<std::string> const &);
+    MCAPI EducationMetadataError(enum class PackParseErrorType, std::vector<std::string> const &);
 
 };

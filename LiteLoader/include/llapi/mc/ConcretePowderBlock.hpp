@@ -297,7 +297,7 @@ public:
      * @hash   -298821929
      * @symbol ?_tryTouchWater@ConcretePowderBlock@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@V?$optional@W4BlockColor@@@std@@@Z
      */
-    MCAPI bool _tryTouchWater(class BlockSource &, class BlockPos const &, class std::optional<enum BlockColor>) const;
+    MCAPI bool _tryTouchWater(class BlockSource &, class BlockPos const &, class std::optional<enum class BlockColor>) const;
 
 private:
 

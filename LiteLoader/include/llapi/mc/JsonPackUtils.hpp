@@ -36,7 +36,7 @@ namespace JsonPackUtils {
      * @hash   6689198
      * @symbol ?readRequiredValue@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@@Z
      */
-    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readRequiredValue(class Json::Value const &, std::string const &, enum Json::ValueType);
+    MCAPI struct std::pair<class Json::Value const, enum class PackParseErrorType> readRequiredValue(class Json::Value const &, std::string const &, enum class Json::ValueType);
     /**
      * @hash   598941905
      * @symbol ?readStringAndReport@JsonPackUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@AEBV23@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z
@@ -51,12 +51,12 @@ namespace JsonPackUtils {
      * @hash   -1414211564
      * @symbol ?readValue@JsonPackUtils@@YA?AU?$pair@PEBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z
      */
-    MCAPI struct std::pair<class Json::Value const *, enum PackParseErrorType> readValue(class Json::Value const &, std::string const &);
+    MCAPI struct std::pair<class Json::Value const *, enum class PackParseErrorType> readValue(class Json::Value const &, std::string const &);
     /**
      * @hash   -1015125384
      * @symbol ?readValueAndReportErrors@JsonPackUtils@@YA?AU?$pair@$$CBVValue@Json@@W4PackParseErrorType@@@std@@AEBVValue@Json@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4ValueType@5@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@AEAVPackReport@@_N@Z
      */
-    MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readValueAndReportErrors(class Json::Value const &, std::string const &, enum Json::ValueType, std::vector<std::string> &, class PackReport &, bool);
+    MCAPI struct std::pair<class Json::Value const, enum class PackParseErrorType> readValueAndReportErrors(class Json::Value const &, std::string const &, enum class Json::ValueType, std::vector<std::string> &, class PackReport &, bool);
     /**
      * @hash   537260955
      * @symbol ?stringizePath@JsonPackUtils@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z

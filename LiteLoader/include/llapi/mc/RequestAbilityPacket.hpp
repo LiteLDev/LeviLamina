@@ -37,7 +37,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@RequestAbilityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   1158751608
      * @vftbl  2
@@ -55,7 +55,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@RequestAbilityPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   363554847
      * @symbol ??0RequestAbilityPacket@@QEAA@XZ
@@ -65,12 +65,12 @@ public:
      * @hash   1785038611
      * @symbol ??0RequestAbilityPacket@@QEAA@W4AbilitiesIndex@@_N@Z
      */
-    MCAPI RequestAbilityPacket(enum AbilitiesIndex, bool);
+    MCAPI RequestAbilityPacket(enum class AbilitiesIndex, bool);
     /**
      * @hash   -635965372
      * @symbol ?getAbility@RequestAbilityPacket@@QEBA?AW4AbilitiesIndex@@XZ
      */
-    MCAPI enum AbilitiesIndex getAbility() const;
+    MCAPI enum class AbilitiesIndex getAbility() const;
     /**
      * @hash   -445845922
      * @symbol ?tryGetBool@RequestAbilityPacket@@QEBA_NAEA_N@Z

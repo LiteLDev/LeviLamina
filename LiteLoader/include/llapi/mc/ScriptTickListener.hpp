@@ -53,7 +53,7 @@ public:
      * @vftbl  4
      * @symbol ?onLevelRemovedPlayer@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z
      */
-    virtual enum EventResult onLevelRemovedPlayer(class Level &, class Player &);
+    virtual enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
      * @vftbl  5
      * @symbol __unk_vfn_5
@@ -68,7 +68,7 @@ public:
      * @vftbl  7
      * @symbol ?onLevelScriptTick@ScriptTickListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
      */
-    virtual enum EventResult onLevelScriptTick(class Level &);
+    virtual enum class EventResult onLevelScriptTick(class Level &);
     /**
      * @symbol ??0ScriptTickListener@@QEAA@AEAVScriptEngine@Scripting@@AEAVScriptFormPromiseTracker@@AEAVScriptCommandProcessor@@@Z
      */

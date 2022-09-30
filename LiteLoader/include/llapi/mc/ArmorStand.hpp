@@ -281,7 +281,7 @@ public:
      * @hash   111112580
      * @symbol ?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z
      */
-    MCAPI bool _trySwapItem(class Player &, enum EquipmentSlot);
+    MCAPI bool _trySwapItem(class Player &, enum class EquipmentSlot);
 
 private:
     /**

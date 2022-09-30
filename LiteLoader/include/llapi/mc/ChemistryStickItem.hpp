@@ -124,7 +124,7 @@ public:
      * @vftbl  87
      * @symbol ?useTimeDepleted@ChemistryStickItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
      */
-    virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @hash   1781454749
      * @vftbl  90
@@ -170,7 +170,7 @@ public:
      * @hash   1930391157
      * @symbol ?getColorType@ChemistryStickItem@@SA?AW4ItemColor@@H@Z
      */
-    MCAPI static enum ItemColor getColorType(int);
+    MCAPI static enum class ItemColor getColorType(int);
     /**
      * @hash   -899256827
      * @symbol ?isActive@ChemistryStickItem@@SA_NH@Z

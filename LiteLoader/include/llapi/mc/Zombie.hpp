@@ -38,7 +38,7 @@ public:
      * @vftbl  8
      * @symbol ?reloadHardcoded@Zombie@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol __unk_destructor_14
@@ -203,7 +203,7 @@ public:
      * @hash   -54284443
      * @symbol ?setZombieType@Zombie@@QEAAXW4ZombieType@1@@Z
      */
-    MCAPI void setZombieType(enum Zombie::ZombieType);
+    MCAPI void setZombieType(enum class Zombie::ZombieType);
 
 //protected:
 

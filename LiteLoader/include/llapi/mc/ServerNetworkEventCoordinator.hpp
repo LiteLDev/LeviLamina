@@ -43,7 +43,7 @@ public:
      * @hash   -107517519
      * @symbol ?sendEvent@ServerNetworkEventCoordinator@@QEAA?AW4CoordinatorResult@@V?$EventRef@U?$MutableServerNetworkGameplayEvent@W4CoordinatorResult@@@@@@@Z
      */
-    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum CoordinatorResult>>);
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>>);
     /**
      * @hash   -201619802
      * @symbol ?sendMessage@ServerNetworkEventCoordinator@@QEAAXAEAUMessageEvent@@@Z

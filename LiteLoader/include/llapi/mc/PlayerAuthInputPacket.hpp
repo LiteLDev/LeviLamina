@@ -41,7 +41,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@PlayerAuthInputPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -1486286046
      * @vftbl  2
@@ -59,7 +59,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@PlayerAuthInputPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   1453259973
      * @symbol ??0PlayerAuthInputPacket@@QEAA@XZ
@@ -74,7 +74,7 @@ public:
      * @hash   1216265313
      * @symbol ?getInput@PlayerAuthInputPacket@@QEBA_NW4InputData@1@@Z
      */
-    MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
+    MCAPI bool getInput(enum class PlayerAuthInputPacket::InputData) const;
     /**
      * @hash   -293367114
      * @symbol ??4PlayerAuthInputPacket@@QEAAAEAV0@$$QEAV0@@Z
@@ -89,7 +89,7 @@ public:
      * @hash   1722420647
      * @symbol ?setInput@PlayerAuthInputPacket@@QEAAXW4InputData@1@_N@Z
      */
-    MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
+    MCAPI void setInput(enum class PlayerAuthInputPacket::InputData, bool);
     /**
      * @hash   -1994206258
      * @symbol ?takeCopy@PlayerAuthInputPacket@@QEBA?AV1@XZ

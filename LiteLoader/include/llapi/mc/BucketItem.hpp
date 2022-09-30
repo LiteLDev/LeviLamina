@@ -142,7 +142,7 @@ public:
      * @vftbl  87
      * @symbol ?useTimeDepleted@BucketItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z
      */
-    virtual enum ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
     /**
      * @hash   983159455
      * @vftbl  88
@@ -213,7 +213,7 @@ public:
      * @hash   1678054818
      * @symbol ??0BucketItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4BucketFillType@@@Z
      */
-    MCAPI BucketItem(std::string const &, int, enum BucketFillType);
+    MCAPI BucketItem(std::string const &, int, enum class BucketFillType);
     /**
      * @hash   -758735955
      * @symbol ?DRINK_DURATION@BucketItem@@2HB
@@ -262,7 +262,7 @@ public:
      * @hash   -1375318387
      * @symbol ?_tryGetBlock@BucketItem@@AEBAPEBVBlockLegacy@@W4BucketFillType@@@Z
      */
-    MCAPI class BlockLegacy const * _tryGetBlock(enum BucketFillType) const;
+    MCAPI class BlockLegacy const * _tryGetBlock(enum class BucketFillType) const;
 
 protected:
 
@@ -271,6 +271,6 @@ private:
      * @hash   -1934307833
      * @symbol ?mFillTypeToEntityType@BucketItem@@0V?$vector@U?$pair@W4BucketFillType@@W4ActorType@@@std@@V?$allocator@U?$pair@W4BucketFillType@@W4ActorType@@@std@@@2@@std@@B
      */
-    MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
+    MCAPI static std::vector<struct std::pair<enum class BucketFillType, enum class ActorType>> const mFillTypeToEntityType;
 
 };

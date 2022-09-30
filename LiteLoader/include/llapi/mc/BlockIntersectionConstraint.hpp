@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?isSatisfied@BlockIntersectionConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z
      */
-    virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum Rotation const &) const;
+    virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum class Rotation const &) const;
     /**
      * @hash   1905253808
      * @symbol ??0BlockIntersectionConstraint@@QEAA@AEAVStructureTemplate@@@Z

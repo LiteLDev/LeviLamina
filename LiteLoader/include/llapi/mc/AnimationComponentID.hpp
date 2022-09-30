@@ -31,7 +31,7 @@ public:
      * @hash   220914156
      * @symbol ??0AnimationComponentID@@QEAA@AEBUActorUniqueID@@GW4AttachableSlotIndex@@@Z
      */
-    MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum AttachableSlotIndex);
+    MCAPI AnimationComponentID(struct ActorUniqueID const &, unsigned short, enum class AttachableSlotIndex);
     /**
      * @hash   -1906929653
      * @symbol ?getHash@AnimationComponentID@@QEBA_KXZ

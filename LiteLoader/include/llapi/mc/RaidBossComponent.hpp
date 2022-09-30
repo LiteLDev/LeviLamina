@@ -38,7 +38,7 @@ public:
      * @hash   2056926626
      * @symbol ?getColor@RaidBossComponent@@QEAA?AW4BossBarColor@@XZ
      */
-    MCAPI enum BossBarColor getColor();
+    MCAPI enum class BossBarColor getColor();
     /**
      * @hash   -1054441236
      * @symbol ?getHealthPercent@RaidBossComponent@@QEAAMXZ
@@ -144,12 +144,12 @@ public:
      * @hash   2107640446
      * @symbol ?_broadcastBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVActor@@@Z
      */
-    MCAPI void _broadcastBossEvent(enum BossEventUpdateType, class Actor &);
+    MCAPI void _broadcastBossEvent(enum class BossEventUpdateType, class Actor &);
     /**
      * @hash   928284573
      * @symbol ?_sendBossEvent@RaidBossComponent@@AEAAXW4BossEventUpdateType@@AEAVPlayer@@@Z
      */
-    MCAPI void _sendBossEvent(enum BossEventUpdateType, class Player &);
+    MCAPI void _sendBossEvent(enum class BossEventUpdateType, class Player &);
 
 private:
 

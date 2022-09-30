@@ -50,7 +50,7 @@ public:
      * @hash   -880254824
      * @symbol ?getMode@NpcAction@@QEBA?AW4NpcActionMode@@XZ
      */
-    MCAPI enum NpcActionMode getMode() const;
+    MCAPI enum class NpcActionMode getMode() const;
     /**
      * @hash   969877092
      * @symbol ?getText@NpcAction@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -60,7 +60,7 @@ public:
      * @hash   2066274776
      * @symbol ?getType@NpcAction@@QEBA?AW4NpcActionType@@XZ
      */
-    MCAPI enum NpcActionType getType() const;
+    MCAPI enum class NpcActionType getType() const;
     /**
      * @hash   311192229
      * @symbol ??9NpcAction@@QEBA_NAEBV0@@Z
@@ -80,7 +80,7 @@ public:
      * @hash   -1405853080
      * @symbol ?setMode@NpcAction@@QEAAXW4NpcActionMode@@@Z
      */
-    MCAPI void setMode(enum NpcActionMode);
+    MCAPI void setMode(enum class NpcActionMode);
     /**
      * @hash   -1092541298
      * @symbol ?setText@NpcAction@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z

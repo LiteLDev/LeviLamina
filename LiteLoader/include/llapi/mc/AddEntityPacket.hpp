@@ -39,7 +39,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@AddEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   -1963759121
      * @vftbl  2

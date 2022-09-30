@@ -130,6 +130,6 @@ public:
      * @hash   -132234937
      * @symbol ??0BannerPatternItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4Type@0@@Z
      */
-    MCAPI BannerPatternItem(std::string const &, int, enum BannerPatternItem::Type);
+    MCAPI BannerPatternItem(std::string const &, int, enum class BannerPatternItem::Type);
 
 };

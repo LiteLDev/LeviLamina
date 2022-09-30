@@ -70,13 +70,13 @@ public:
      * @vftbl  14
      * @symbol ?getEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ
      */
-    virtual enum ActorType getEntityType() const;
+    virtual enum class ActorType getEntityType() const;
     /**
      * @hash   -369846877
      * @vftbl  15
      * @symbol ?getEntityCategories@ActorDamageByActorSource@@UEBA?AW4ActorCategory@@XZ
      */
-    virtual enum ActorCategory getEntityCategories() const;
+    virtual enum class ActorCategory getEntityCategories() const;
     /**
      * @hash   -1823504859
      * @vftbl  18
@@ -88,7 +88,7 @@ public:
      * @vftbl  19
      * @symbol ?getDamagingEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ
      */
-    virtual enum ActorType getDamagingEntityType() const;
+    virtual enum class ActorType getDamagingEntityType() const;
     /**
      * @hash   937217409
      * @vftbl  21
@@ -99,6 +99,6 @@ public:
      * @hash   775768521
      * @symbol ??0ActorDamageByActorSource@@QEAA@AEAVActor@@W4ActorDamageCause@@@Z
      */
-    MCAPI ActorDamageByActorSource(class Actor &, enum ActorDamageCause);
+    MCAPI ActorDamageByActorSource(class Actor &, enum class ActorDamageCause);
 
 };

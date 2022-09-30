@@ -77,7 +77,7 @@ public:
      * @hash   -1412339572
      * @symbol ?getCommandPermissionLevel@NpcComponent@@QEBA?AW4CommandPermissionLevel@@XZ
      */
-    MCAPI enum CommandPermissionLevel getCommandPermissionLevel() const;
+    MCAPI enum class CommandPermissionLevel getCommandPermissionLevel() const;
     /**
      * @hash   -1615262075
      * @symbol ?getInteraction@NpcComponent@@QEAA_NAEAVActor@@AEAVPlayer@@AEAVActorInteraction@@@Z
@@ -199,7 +199,7 @@ public:
      * @hash   866431620
      * @symbol ?_defineEntityDataString@NpcComponent@@AEAAXAEAVActor@@W4ActorDataIDs@@@Z
      */
-    MCAPI void _defineEntityDataString(class Actor &, enum ActorDataIDs);
+    MCAPI void _defineEntityDataString(class Actor &, enum class ActorDataIDs);
     /**
      * @hash   -1441035510
      * @symbol ?_deserializeData@NpcComponent@@AEAAXXZ

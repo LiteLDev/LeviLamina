@@ -99,7 +99,7 @@ public:
      * @vftbl  9
      * @symbol ?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ
      */
-    virtual enum CommandPermissionLevel getPermissionsLevel() const = 0;
+    virtual enum class CommandPermissionLevel getPermissionsLevel() const = 0;
     /**
      * @hash   -297328276
      * @vftbl  10
@@ -135,7 +135,7 @@ public:
      * @vftbl  15
      * @symbol ?canUseAbility@CommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z
      */
-    virtual bool canUseAbility(enum AbilitiesIndex) const;
+    virtual bool canUseAbility(enum class AbilitiesIndex) const;
     /**
      * @hash   2093908122
      * @vftbl  16
@@ -165,7 +165,7 @@ public:
      * @vftbl  20
      * @symbol ?getSourceSubId@CommandOrigin@@UEBA?AW4SubClientId@@XZ
      */
-    virtual enum SubClientId getSourceSubId() const;
+    virtual enum class SubClientId getSourceSubId() const;
     /**
      * @hash   145469105
      * @vftbl  21
@@ -183,7 +183,7 @@ public:
      * @vftbl  23
      * @symbol ?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ
      */
-    virtual enum CommandOriginType getOriginType() const = 0;
+    virtual enum class CommandOriginType getOriginType() const = 0;
     /**
      * @hash   461762814
      * @vftbl  24
@@ -261,7 +261,7 @@ public:
      * @hash   1174831933
      * @symbol ?fromCommandOriginData@CommandOrigin@@SA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBUCommandOriginData@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEBVNetworkIdentifier@@W4SubClientId@@@Z
      */
-    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, enum SubClientId);
+    MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const &, class Bedrock::NonOwnerPointer<class ILevel> const &, class NetworkIdentifier const &, enum class SubClientId);
 
 //protected:
 

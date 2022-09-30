@@ -68,7 +68,7 @@ public:
      * @vftbl  7
      * @symbol ?onLevelScriptTick@GameTestLevelListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z
      */
-    virtual enum EventResult onLevelScriptTick(class Level &);
+    virtual enum class EventResult onLevelScriptTick(class Level &);
     /**
      * @vftbl  8
      * @symbol __unk_vfn_8
@@ -84,7 +84,7 @@ public:
      * @vftbl  10
      * @symbol ?onEvent@GameTestLevelListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z
      */
-    virtual enum EventResult onEvent(struct LevelNotificationEvent const &);
+    virtual enum class EventResult onEvent(struct LevelNotificationEvent const &);
     /**
      * @hash   -1401613663
      * @symbol ??0GameTestLevelListener@@QEAA@AEAVGameTestTicker@gametest@@@Z

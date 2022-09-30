@@ -43,7 +43,7 @@ public:
      * @hash   -798296191
      * @symbol ?createDataPacket@EconomyTradeableComponent@@QEAA?AVUpdateTradePacket@@W4ContainerID@@@Z
      */
-    MCAPI class UpdateTradePacket createDataPacket(enum ContainerID);
+    MCAPI class UpdateTradePacket createDataPacket(enum class ContainerID);
     /**
      * @hash   1263075033
      * @symbol ?fixVillagerTierToMatchTradeList@EconomyTradeableComponent@@QEAAXPEAVMerchantRecipeList@@@Z

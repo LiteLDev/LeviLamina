@@ -119,13 +119,13 @@ public:
      * @vftbl  133
      * @symbol ?getAmbientSound@Wolf@@UEBA?AW4LevelSoundEvent@@XZ
      */
-    virtual enum LevelSoundEvent getAmbientSound() const;
+    virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
      * @hash   1319928372
      * @vftbl  141
      * @symbol ?handleEntityEvent@Wolf@@UEAAXW4ActorEvent@@H@Z
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @hash   941475481
      * @vftbl  167

@@ -37,6 +37,6 @@ public:
      * @hash   804301925
      * @symbol ?setDimensionState@DimensionStateSystem@@SAXAEAVEntityContext@@W4DimensionState@DimensionStateComponent@@@Z
      */
-    MCAPI static void setDimensionState(class EntityContext &, enum DimensionStateComponent::DimensionState);
+    MCAPI static void setDimensionState(class EntityContext &, enum class DimensionStateComponent::DimensionState);
 
 };

@@ -81,7 +81,7 @@ public:
      * @hash   -2113036265
      * @symbol ??0SmithingTableContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI SmithingTableContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI SmithingTableContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @hash   1257590221
      * @symbol ?INPUT_SLOT@SmithingTableContainerManagerModel@@2HB

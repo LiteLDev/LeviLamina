@@ -129,11 +129,11 @@ public:
      * @hash   -1720759792
      * @symbol ??0FertilizerItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HW4FertilizerType@@@Z
      */
-    MCAPI FertilizerItem(std::string const &, int, enum FertilizerType);
+    MCAPI FertilizerItem(std::string const &, int, enum class FertilizerType);
     /**
      * @hash   -1091974790
      * @symbol ?getFertilizerType@FertilizerItem@@QEBA?AW4FertilizerType@@XZ
      */
-    MCAPI enum FertilizerType getFertilizerType() const;
+    MCAPI enum class FertilizerType getFertilizerType() const;
 
 };

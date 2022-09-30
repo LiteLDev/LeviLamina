@@ -39,7 +39,7 @@ public:
      * @vftbl  8
      * @symbol ?reloadHardcoded@ItemActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol __unk_destructor_14
@@ -146,7 +146,7 @@ public:
      * @vftbl  141
      * @symbol ?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @hash   303033380
      * @vftbl  171
@@ -158,7 +158,7 @@ public:
      * @vftbl  175
      * @symbol ?getLiquidAABB@ItemActor@@UEBA?AVAABB@@W4MaterialType@@@Z
      */
-    virtual class AABB getLiquidAABB(enum MaterialType) const;
+    virtual class AABB getLiquidAABB(enum class MaterialType) const;
     /**
      * @vftbl  181
      * @symbol __unk_vfn_181

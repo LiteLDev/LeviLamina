@@ -99,7 +99,7 @@ public:
      * @hash   1635141400
      * @symbol ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAV?$vector@W4LevelSoundEvent@@V?$allocator@W4LevelSoundEvent@@@std@@@std@@PEBD3@Z
      */
-    MCAPI static void parse(class Json::Value const &, class SemVersion const &, std::vector<enum LevelSoundEvent> &, char const *, char const *);
+    MCAPI static void parse(class Json::Value const &, class SemVersion const &, std::vector<enum class LevelSoundEvent> &, char const *, char const *);
     /**
      * @hash   -1648232548
      * @symbol ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAVBlockDescriptor@@@Z
@@ -124,17 +124,17 @@ public:
      * @hash   -1725450244
      * @symbol ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAW4ActorType@@PEBD3@Z
      */
-    MCAPI static void parse(class Json::Value const &, class SemVersion const &, enum ActorType &, char const *, char const *);
+    MCAPI static void parse(class Json::Value const &, class SemVersion const &, enum class ActorType &, char const *, char const *);
     /**
      * @hash   -1517185524
      * @symbol ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAW4Difficulty@@PEBD3@Z
      */
-    MCAPI static void parse(class Json::Value const &, class SemVersion const &, enum Difficulty &, char const *, char const *);
+    MCAPI static void parse(class Json::Value const &, class SemVersion const &, enum class Difficulty &, char const *, char const *);
     /**
      * @hash   109948188
      * @symbol ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEAW4ParticleType@@PEBD3@Z
      */
-    MCAPI static void parse(class Json::Value const &, class SemVersion const &, enum ParticleType &, char const *, char const *);
+    MCAPI static void parse(class Json::Value const &, class SemVersion const &, enum class ParticleType &, char const *, char const *);
     /**
      * @hash   655995188
      * @symbol ?parse@Parser@@SAXAEBVValue@Json@@AEBVSemVersion@@AEA_NPEBD_N@Z
@@ -174,7 +174,7 @@ public:
      * @hash   18264843
      * @symbol ?parse@Parser@@SA_NAEBVValue@Json@@AEBVSemVersion@@AEAW4FilterSubject@@PEBD3@Z
      */
-    MCAPI static bool parse(class Json::Value const &, class SemVersion const &, enum FilterSubject &, char const *, char const *);
+    MCAPI static bool parse(class Json::Value const &, class SemVersion const &, enum class FilterSubject &, char const *, char const *);
     /**
      * @hash   2132569029
      * @symbol ?serialize@Parser@@SAXAEBUActorDefinitionIdentifier@@AEAVValue@Json@@PEBD@Z
@@ -209,7 +209,7 @@ public:
      * @hash   -892185319
      * @symbol ?serialize@Parser@@SAXAEBV?$vector@W4LevelSoundEvent@@V?$allocator@W4LevelSoundEvent@@@std@@@std@@AEAVValue@Json@@PEBD@Z
      */
-    MCAPI static void serialize(std::vector<enum LevelSoundEvent> const &, class Json::Value &, char const *);
+    MCAPI static void serialize(std::vector<enum class LevelSoundEvent> const &, class Json::Value &, char const *);
     /**
      * @hash   -1441125763
      * @symbol ?serialize@Parser@@SAXAEBVActorDefinitionTrigger@@AEAVValue@Json@@PEBD@Z
@@ -234,21 +234,21 @@ public:
      * @hash   -520765415
      * @symbol ?serialize@Parser@@SAXAEBW4ActorType@@AEAVValue@Json@@PEBD@Z
      */
-    MCAPI static void serialize(enum ActorType const &, class Json::Value &, char const *);
+    MCAPI static void serialize(enum class ActorType const &, class Json::Value &, char const *);
     /**
      * @hash   -1775377979
      * @symbol ?serialize@Parser@@SAXAEBW4Difficulty@@AEAVValue@Json@@PEBD@Z
      */
-    MCAPI static void serialize(enum Difficulty const &, class Json::Value &, char const *);
+    MCAPI static void serialize(enum class Difficulty const &, class Json::Value &, char const *);
     /**
      * @hash   -1311535969
      * @symbol ?serialize@Parser@@SAXAEBW4FilterSubject@@AEAVValue@Json@@PEBD@Z
      */
-    MCAPI static void serialize(enum FilterSubject const &, class Json::Value &, char const *);
+    MCAPI static void serialize(enum class FilterSubject const &, class Json::Value &, char const *);
     /**
      * @hash   136150651
      * @symbol ?serialize@Parser@@SAXAEBW4ParticleType@@AEAVValue@Json@@PEBD@Z
      */
-    MCAPI static void serialize(enum ParticleType const &, class Json::Value &, char const *);
+    MCAPI static void serialize(enum class ParticleType const &, class Json::Value &, char const *);
 
 };

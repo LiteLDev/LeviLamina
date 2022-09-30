@@ -41,7 +41,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@SimpleEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @hash   2058083211
      * @vftbl  2
@@ -59,7 +59,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@SimpleEventPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @hash   -1937596388
      * @symbol ??0SimpleEventPacket@@QEAA@XZ
@@ -69,11 +69,11 @@ public:
      * @hash   728695503
      * @symbol ??0SimpleEventPacket@@QEAA@AEBW4Subtype@0@@Z
      */
-    MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const &);
+    MCAPI SimpleEventPacket(enum class SimpleEventPacket::Subtype const &);
     /**
      * @hash   151323023
      * @symbol ?getSubtype@SimpleEventPacket@@QEBAAEBW4Subtype@1@XZ
      */
-    MCAPI enum SimpleEventPacket::Subtype const & getSubtype() const;
+    MCAPI enum class SimpleEventPacket::Subtype const & getSubtype() const;
 
 };

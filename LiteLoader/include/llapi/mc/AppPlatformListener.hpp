@@ -93,7 +93,7 @@ public:
      * @hash   622137304
      * @symbol ?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z
      */
-    MCVAPI void onOperationModeChanged(enum OperationMode);
+    MCVAPI void onOperationModeChanged(enum class OperationMode);
     /**
      * @hash   -1023701811
      * @symbol ?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z

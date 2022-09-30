@@ -149,7 +149,7 @@ public:
      * @vftbl  136
      * @symbol ?getPotionType@SplashPotionItem@@UEBA?AW4PotionType@Potion@@XZ
      */
-    virtual enum Potion::PotionType getPotionType() const;
+    virtual enum class Potion::PotionType getPotionType() const;
     /**
      * @hash   2058965211
      * @symbol ??0SplashPotionItem@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z

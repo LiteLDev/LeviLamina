@@ -120,7 +120,7 @@ public:
      * @hash   -1193796499
      * @symbol ?_runOneTask@BackgroundWorker@@AEAA?AW4RunOneResult@1@XZ
      */
-    MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
+    MCAPI enum class BackgroundWorker::RunOneResult _runOneTask();
 
 private:
     /**

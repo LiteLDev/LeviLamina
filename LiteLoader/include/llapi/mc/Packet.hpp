@@ -77,7 +77,7 @@ public:
      * @vftbl  1
      * @symbol ?getId@UpdateTradePacket@@UEBA?AW4MinecraftPacketIds@@XZ
      */
-    virtual enum MinecraftPacketIds getId() const = 0;
+    virtual enum class MinecraftPacketIds getId() const = 0;
     /**
      * @hash   -21487858
      * @vftbl  2
@@ -107,7 +107,7 @@ public:
      * @vftbl  6
      * @symbol ?_read@UpdateTradePacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z
      */
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
+    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
     /**
      * @hash   -943725859
      * @symbol ?handle@Packet@@QEAAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z
@@ -117,11 +117,11 @@ public:
      * @hash   2105829311
      * @symbol ?readNoHeader@Packet@@QEAA_NAEAVReadOnlyBinaryStream@@AEBW4SubClientId@@AEAUExtendedStreamReadResult@@@Z
      */
-    MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum SubClientId const &, struct ExtendedStreamReadResult &);
+    MCAPI bool readNoHeader(class ReadOnlyBinaryStream &, enum class SubClientId const &, struct ExtendedStreamReadResult &);
     /**
      * @hash   360376525
      * @symbol ?writeWithHeader@Packet@@QEBAXW4SubClientId@@AEAVBinaryStream@@@Z
      */
-    MCAPI void writeWithHeader(enum SubClientId, class BinaryStream &) const;
+    MCAPI void writeWithHeader(enum class SubClientId, class BinaryStream &) const;
 
 };

@@ -61,7 +61,7 @@ public:
      * @hash   -1992565600
      * @symbol ?getCause@AttributeBuff@@QEBA?AW4ActorDamageCause@@XZ
      */
-    MCAPI enum ActorDamageCause getCause() const;
+    MCAPI enum class ActorDamageCause getCause() const;
     /**
      * @hash   1419561211
      * @symbol ?getId@AttributeBuff@@QEBA_KXZ
@@ -81,7 +81,7 @@ public:
      * @hash   -508821464
      * @symbol ?getType@AttributeBuff@@QEBA?AW4AttributeBuffType@@XZ
      */
-    MCAPI enum AttributeBuffType getType() const;
+    MCAPI enum class AttributeBuffType getType() const;
     /**
      * @hash   -521311896
      * @symbol ??8AttributeBuff@@QEBA_NAEBV0@@Z
@@ -116,14 +116,14 @@ public:
      * @hash   -2012249419
      * @symbol ?buffTypeToDamageCause@AttributeBuff@@SA?AW4ActorDamageCause@@W4AttributeBuffType@@@Z
      */
-    MCAPI static enum ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType);
+    MCAPI static enum class ActorDamageCause buffTypeToDamageCause(enum class AttributeBuffType);
 
 //protected:
     /**
      * @hash   1664036289
      * @symbol ??0AttributeBuff@@IEAA@MHW4AttributeBuffType@@@Z
      */
-    MCAPI AttributeBuff(float, int, enum AttributeBuffType);
+    MCAPI AttributeBuff(float, int, enum class AttributeBuffType);
 
 protected:
 

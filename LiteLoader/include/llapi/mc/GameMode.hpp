@@ -94,7 +94,7 @@ public:
      * @vftbl  10
      * @symbol ?getPickRange@GameMode@@UEAAMAEBW4InputMode@@_N@Z
      */
-    virtual float getPickRange(enum InputMode const &, bool);
+    virtual float getPickRange(enum class InputMode const &, bool);
     /**
      * @hash   461881081
      * @vftbl  11

@@ -192,7 +192,7 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
 
 static inline bool checkPktId(unsigned int id) {
     id &= 0x3ff;
-    return id == 0x01 || id == 0x5e || id == 0xc1;
+    return id==0 || id == 0x01 || id == 0x5e || id == 0xc1;
 }
 
 static inline bool& connState(void* conn) {
@@ -203,17 +203,23 @@ TInstanceHook(NetworkPeer::DataStatus,
               "?receivePacket@Connection@NetworkHandler@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_"
               "traits@D@std@@V?$allocator@D@2@@std@@AEAV2@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$"
               "duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@6@@Z",
-              NetworkHandler::Connection, std::string* data) {
-    auto status = original(this, data);
-    if (status == NetworkPeer::DataStatus::HasData && !data->empty()) {
+              NetworkHandler::Connection, string* data, __int64 a3, __int64** a4) {
+    auto status = original(this, data, a3, a4);	
+    if (status == NetworkPeer::DataStatus::HasData) {
         auto stream = ReadOnlyBinaryStream(*data, false);
         auto packetId = stream.getUnsignedVarInt();
-        if (checkPktId(packetId)) {
-            connState(this) = true;
-        } else {
-            if (!connState(this)) {
-                data->clear();
-                return NetworkPeer::DataStatus::NoData;
+        if (packetId == 0) {
+            data->clear();
+            return NetworkPeer::DataStatus::NoData;
+        }
+        if (!data->empty()) {
+            if (checkPktId(packetId)) {
+                connState(this) = true;
+            } else {
+                if (!connState(this)) {
+                    data->clear();
+                    return NetworkPeer::DataStatus::NoData;
+                }
             }
         }
     }
@@ -405,3 +411,18 @@ TInstanceHook(BlockSource*, "?getRegionConst@Actor@@QEBAAEBVBlockSource@@XZ", Ac
     return bs;
 }
 
+THook(void*, "?write@StartGamePacket@@UEBAXAEAVBinaryStream@@@Z", void* a, void* b) {
+    if (!ll::globalConfig.enableClientChunkPreGeneration) {
+        dAccess<bool, 1280>(a) = false;
+    }
+    return original(a, b);
+}
+
+THook(bool, "?isEnabled@FeatureToggles@@QEBA_NW4FeatureOptionID@@@Z", __int64 a1, int a2) {
+    if (!ll::globalConfig.enableClientChunkPreGeneration) {
+        if (a2 == 59) {
+            return 0;
+        }
+    }
+    return original(a1, a2);
+}

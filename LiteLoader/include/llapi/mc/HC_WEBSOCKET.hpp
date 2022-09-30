@@ -76,7 +76,7 @@ public:
      * @hash   590858384
      * @symbol ?CloseFunc@HC_WEBSOCKET@@SAXPEAU1@W4HCWebSocketCloseStatus@@PEAX@Z
      */
-    MCAPI static void CloseFunc(struct HC_WEBSOCKET *, enum HCWebSocketCloseStatus, void *);
+    MCAPI static void CloseFunc(struct HC_WEBSOCKET *, enum class HCWebSocketCloseStatus, void *);
     /**
      * @hash   -864957427
      * @symbol ?MessageFunc@HC_WEBSOCKET@@SAXPEAU1@PEBDPEAX@Z

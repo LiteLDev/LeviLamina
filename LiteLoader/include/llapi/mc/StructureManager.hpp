@@ -43,12 +43,12 @@ public:
      * @hash   207489968
      * @symbol ?createStructureDataExportPacket@StructureManager@@QEAA?AVStructureTemplateDataResponsePacket@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBVResourcePackManager@@PEAVLevelStorage@@W4StructureTemplateResponseType@@@Z
      */
-    MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(std::string const &, class ResourcePackManager const *, class LevelStorage *, enum StructureTemplateResponseType);
+    MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(std::string const &, class ResourcePackManager const *, class LevelStorage *, enum class StructureTemplateResponseType);
     /**
      * @hash   675013012
      * @symbol ?deleteStructure@StructureManager@@QEAA?AW4StructureDeleteResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVLevelStorage@@@Z
      */
-    MCAPI enum StructureDeleteResult deleteStructure(std::string const &, class LevelStorage &);
+    MCAPI enum class StructureDeleteResult deleteStructure(std::string const &, class LevelStorage &);
     /**
      * @hash   -964664811
      * @symbol ?getOrCreate@StructureManager@@QEAAAEAVStructureTemplate@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -103,7 +103,7 @@ public:
      * @hash   -1580955679
      * @symbol ?tryPlaceStructureInWorld@StructureManager@@QEAA?AW4QueueRequestResult@@V?$unique_ptr@VCommandArea@@U?$default_delete@VCommandArea@@@std@@@std@@AEAVServerLevel@@AEAVDimension@@AEBVBoundingBox@@AEBVBlockPos@@AEBVStructureSettings@@AEBVStructureTemplate@@V?$unique_ptr@VStructureAnimationData@@U?$default_delete@VStructureAnimationData@@@std@@@4@@Z
      */
-    MCAPI enum QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel &, class Dimension &, class BoundingBox const &, class BlockPos const &, class StructureSettings const &, class StructureTemplate const &, std::unique_ptr<class StructureAnimationData>);
+    MCAPI enum class QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel &, class Dimension &, class BoundingBox const &, class BlockPos const &, class StructureSettings const &, class StructureTemplate const &, std::unique_ptr<class StructureAnimationData>);
     /**
      * @hash   -981668091
      * @symbol ?getStructurePath@StructureManager@@SA?AV?$PathBuffer@V?$StackString@D$0EAA@@Core@@@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z
@@ -125,7 +125,7 @@ public:
      * @hash   1118631776
      * @symbol ?_placeSegment@StructureManager@@AEAA_NAEAVDimension@@AEAVStructureAnimationData@@AEAVChunkLoadActionList@@AEBVBoundingBox@@AEBV?$function@$$A6A?AW4ChunksLoadedStatus@@UTick@@@Z@std@@@Z
      */
-    MCAPI bool _placeSegment(class Dimension &, class StructureAnimationData &, class ChunkLoadActionList &, class BoundingBox const &, class std::function<enum ChunksLoadedStatus (struct Tick)> const &);
+    MCAPI bool _placeSegment(class Dimension &, class StructureAnimationData &, class ChunkLoadActionList &, class BoundingBox const &, class std::function<enum class ChunksLoadedStatus (struct Tick)> const &);
     /**
      * @hash   -695502774
      * @symbol ?_placeSegment@StructureManager@@AEAA_NAEAVStructureAnimationData@@@Z

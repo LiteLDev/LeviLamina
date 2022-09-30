@@ -37,7 +37,7 @@ public:
      * @hash   -352446832
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@W4ActorType@@@Z
      */
-    MCAPI ActorDefinitionIdentifier(enum ActorType);
+    MCAPI ActorDefinitionIdentifier(enum class ActorType);
     /**
      * @hash   -1685728858
      * @symbol ??0ActorDefinitionIdentifier@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z
@@ -67,7 +67,7 @@ public:
      * @hash   -1485955878
      * @symbol ?_getLegacyActorType@ActorDefinitionIdentifier@@QEBA?AW4ActorType@@XZ
      */
-    MCAPI enum ActorType _getLegacyActorType() const;
+    MCAPI enum class ActorType _getLegacyActorType() const;
     /**
      * @hash   -319265729
      * @symbol ?clear@ActorDefinitionIdentifier@@QEAAXXZ

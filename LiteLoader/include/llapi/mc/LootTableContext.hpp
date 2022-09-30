@@ -48,7 +48,7 @@ public:
      * @hash   85613110
      * @symbol ?getEntity@LootTableContext@@QEBAPEAVActor@@W4ActorTarget@@@Z
      */
-    MCAPI class Actor * getEntity(enum ActorTarget) const;
+    MCAPI class Actor * getEntity(enum class ActorTarget) const;
     /**
      * @hash   701065670
      * @symbol ?getExplosionRadius@LootTableContext@@QEBAMXZ

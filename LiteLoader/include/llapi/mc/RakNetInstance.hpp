@@ -183,7 +183,7 @@ public:
      * @hash   -1565325282
      * @symbol ?_changeNatState@RakNetInstance@@AEAAXW4NATState@1@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const &);
+    MCAPI void _changeNatState(enum class RakNetInstance::NATState, int, std::string const &);
     /**
      * @hash   120408888
      * @symbol ?_createPeer@RakNetInstance@@AEAA?AV?$shared_ptr@VRakNetNetworkPeer@RakNetInstance@@@std@@AEBVNetworkIdentifier@@@Z

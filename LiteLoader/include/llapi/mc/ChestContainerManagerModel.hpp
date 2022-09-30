@@ -51,11 +51,11 @@ public:
      * @hash   1425725967
      * @symbol ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@UActorUniqueID@@@Z
      */
-    MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, struct ActorUniqueID);
+    MCAPI ChestContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID);
     /**
      * @hash   -991217378
      * @symbol ??0ChestContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@W4BlockActorType@@@Z
      */
-    MCAPI ChestContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &, enum BlockActorType);
+    MCAPI ChestContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &, enum class BlockActorType);
 
 };

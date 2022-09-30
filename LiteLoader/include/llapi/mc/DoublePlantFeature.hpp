@@ -45,6 +45,6 @@ public:
      * @hash   -36853028
      * @symbol ?place@DoublePlantFeature@@QEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@W4DoublePlantType@@@Z
      */
-    MCAPI bool place(class BlockSource &, class BlockPos const &, class Random &, enum DoublePlantType) const;
+    MCAPI bool place(class BlockSource &, class BlockPos const &, class Random &, enum class DoublePlantType) const;
 
 };

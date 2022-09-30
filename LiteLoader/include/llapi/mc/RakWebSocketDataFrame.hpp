@@ -38,7 +38,7 @@ public:
      * @hash   -2014757016
      * @symbol ?getCloseCode@RakWebSocketDataFrame@@QEBA?AW4CloseStatusCode@@XZ
      */
-    MCAPI enum CloseStatusCode getCloseCode() const;
+    MCAPI enum class CloseStatusCode getCloseCode() const;
     /**
      * @hash   -402159728
      * @symbol ?getHeader@RakWebSocketDataFrame@@QEBAAEBURakWebSocketDataFrameHeader@@XZ
@@ -48,12 +48,12 @@ public:
      * @hash   1167801124
      * @symbol ?getMessageType@RakWebSocketDataFrame@@QEBA?AW4WebSocketMessageType@@XZ
      */
-    MCAPI enum WebSocketMessageType getMessageType() const;
+    MCAPI enum class WebSocketMessageType getMessageType() const;
     /**
      * @hash   -220644965
      * @symbol ?getParseState@RakWebSocketDataFrame@@QEBA?AW4ParseState@1@XZ
      */
-    MCAPI enum RakWebSocketDataFrame::ParseState getParseState() const;
+    MCAPI enum class RakWebSocketDataFrame::ParseState getParseState() const;
     /**
      * @hash   2113310348
      * @symbol ?getPayload@RakWebSocketDataFrame@@QEBAAEBVBitStream@RakNet@@XZ
@@ -73,7 +73,7 @@ public:
      * @hash   -924120282
      * @symbol ?writeFrameToStream@RakWebSocketDataFrame@@SAXAEAVBitStream@RakNet@@PEBEIW4OpCode@@_NI@Z
      */
-    MCAPI static void writeFrameToStream(class RakNet::BitStream &, unsigned char const *, unsigned int, enum OpCode, bool, unsigned int);
+    MCAPI static void writeFrameToStream(class RakNet::BitStream &, unsigned char const *, unsigned int, enum class OpCode, bool, unsigned int);
 
 //private:
     /**

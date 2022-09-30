@@ -53,7 +53,7 @@ public:
      * @hash   -981034058
      * @symbol ?getIdentityType@ScoreboardIdentityRef@@QEBA?AW4Type@IdentityDefinition@@XZ
      */
-    MCAPI enum IdentityDefinition::Type getIdentityType() const;
+    MCAPI enum class IdentityDefinition::Type getIdentityType() const;
     /**
      * @hash   -2019088626
      * @symbol ?getName@ScoreboardIdentityRef@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$function@$$A6AAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@UActorUniqueID@@@Z@3@@Z
@@ -78,7 +78,7 @@ public:
      * @hash   -1115659777
      * @symbol ?modifyScoreInObjective@ScoreboardIdentityRef@@QEAA_NAEAHAEAVObjective@@HW4PlayerScoreSetFunction@@@Z
      */
-    MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum PlayerScoreSetFunction);
+    MCAPI bool modifyScoreInObjective(int &, class Objective &, int, enum class PlayerScoreSetFunction);
     /**
      * @hash   -413584740
      * @symbol ?removeFromObjective@ScoreboardIdentityRef@@QEAA_NAEAVScoreboard@@AEAVObjective@@@Z

@@ -81,7 +81,7 @@ public:
      * @hash   409625385
      * @symbol ??0LoomContainerManagerModel@@QEAA@W4ContainerID@@AEAVPlayer@@AEBVBlockPos@@@Z
      */
-    MCAPI LoomContainerManagerModel(enum ContainerID, class Player &, class BlockPos const &);
+    MCAPI LoomContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
     /**
      * @hash   135619651
      * @symbol ?BANNER_SLOT@LoomContainerManagerModel@@2HB

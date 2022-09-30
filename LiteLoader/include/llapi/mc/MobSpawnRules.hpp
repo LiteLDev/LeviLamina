@@ -181,7 +181,7 @@ public:
      * @hash   488416265
      * @symbol ?setDifficultyRange@MobSpawnRules@@QEAAAEAV1@W4Difficulty@@0@Z
      */
-    MCAPI class MobSpawnRules & setDifficultyRange(enum Difficulty, enum Difficulty);
+    MCAPI class MobSpawnRules & setDifficultyRange(enum class Difficulty, enum class Difficulty);
     /**
      * @hash   -1923671367
      * @symbol ?setExperimentalGameplay@MobSpawnRules@@QEAAAEAV1@XZ

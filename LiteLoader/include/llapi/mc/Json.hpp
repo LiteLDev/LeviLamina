@@ -69,7 +69,7 @@ class Value {
 public:
     class CZString {
     public:
-        enum DuplicationPolicy { noDuplication = 0,
+        enum class DuplicationPolicy { noDuplication = 0,
                                  duplicate,
                                  duplicateOnCopy };
         inline CZString(ArrayIndex index)
@@ -78,7 +78,7 @@ public:
         }
         CZString(char const* str, unsigned length, DuplicationPolicy allocate)
             : cstr_(str) {
-            storage_.policy_ = allocate & 0x3;
+            storage_.policy_ = (int)allocate & 0x3;
             storage_.length_ = length & 0x3FFFFFFF;
         }
         MCAPI CZString(CZString const& other);
@@ -118,7 +118,7 @@ public:
             return cstr_;
         }
         bool isStaticString() const {
-            return storage_.policy_ == noDuplication;
+            return storage_.policy_ == (unsigned)DuplicationPolicy::noDuplication;
         }
 
     private:

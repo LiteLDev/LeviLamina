@@ -44,7 +44,7 @@ public:
      * @hash   586830699
      * @symbol ?close@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
      */
-    MCAPI class leveldb::Status close(enum InMemoryAccessMode);
+    MCAPI class leveldb::Status close(enum class InMemoryAccessMode);
     /**
      * @hash   -2028728863
      * @symbol ?flushToDisk@InMemoryFile@@QEAA?AVStatus@leveldb@@PEAVEnv@3@@Z
@@ -74,7 +74,7 @@ public:
      * @hash   -974406343
      * @symbol ?open@InMemoryFile@@QEAA?AVStatus@leveldb@@W4InMemoryAccessMode@@@Z
      */
-    MCAPI class leveldb::Status open(enum InMemoryAccessMode);
+    MCAPI class leveldb::Status open(enum class InMemoryAccessMode);
     /**
      * @hash   -1209578926
      * @symbol ?read@InMemoryFile@@QEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEADAEA_K@Z

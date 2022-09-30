@@ -33,7 +33,7 @@ public:
      * @hash   78483906
      * @symbol ??0CrashDumpKeyValueData@@QEAA@W4CrashDumpLogStringID@@0H_K@Z
      */
-    MCAPI CrashDumpKeyValueData(enum CrashDumpLogStringID, enum CrashDumpLogStringID, int, unsigned __int64);
+    MCAPI CrashDumpKeyValueData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, int, unsigned __int64);
     /**
      * @hash   -1485433709
      * @symbol ?kFormat@CrashDumpKeyValueData@@2QBUCrashDumpFormatEntryImpl@@B

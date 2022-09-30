@@ -37,7 +37,7 @@ public:
      * @vftbl  11
      * @symbol ?reloadComponents@VillagerBase@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z
      */
-    virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void reloadComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
      * @vftbl  14
      * @symbol __unk_destructor_14
@@ -114,7 +114,7 @@ public:
      * @vftbl  141
      * @symbol ?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z
      */
-    virtual void handleEntityEvent(enum ActorEvent, int);
+    virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
      * @vftbl  181
      * @symbol __unk_vfn_181
@@ -260,14 +260,14 @@ public:
      * @hash   127678963
      * @symbol ?BiomeStrToEnum@VillagerBase@@SA?AW4BiomeType@1@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
      */
-    MCAPI static enum VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
+    MCAPI static enum class VillagerBase::BiomeType BiomeStrToEnum(std::string const &);
 
 //private:
     /**
      * @hash   1633688531
      * @symbol ?_addParticlesAroundSelf@VillagerBase@@AEAAXW4ParticleType@@@Z
      */
-    MCAPI void _addParticlesAroundSelf(enum ParticleType);
+    MCAPI void _addParticlesAroundSelf(enum class ParticleType);
 
 private:
 

@@ -59,7 +59,7 @@ public:
      * @hash   2113941824
      * @symbol ?getBuildPlatform@AppPlatform_win32@@UEBA?AW4BuildPlatform@@XZ
      */
-    MCVAPI enum BuildPlatform getBuildPlatform() const;
+    MCVAPI enum class BuildPlatform getBuildPlatform() const;
     /**
      * @hash   81253727
      * @symbol ?getDisplayHeight@AppPlatform_win32@@UEAAHXZ
@@ -99,7 +99,7 @@ public:
      * @hash   1606546528
      * @symbol ?getOSVersion@AppPlatform_win32@@UEBA?AW4OsVersion@@XZ
      */
-    MCVAPI enum OsVersion getOSVersion() const;
+    MCVAPI enum class OsVersion getOSVersion() const;
     /**
      * @hash   -294998199
      * @symbol ?getPackageFamilyName@AppPlatform_win32@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
@@ -129,12 +129,12 @@ public:
      * @hash   -295420250
      * @symbol ?getPlatformType@AppPlatform_win32@@UEBA?AW4PlatformType@@XZ
      */
-    MCVAPI enum PlatformType getPlatformType() const;
+    MCVAPI enum class PlatformType getPlatformType() const;
     /**
      * @hash   1983536747
      * @symbol ?getPlatformUIScalingRules@AppPlatform_win32@@EEBA?AW4UIScalingRules@@XZ
      */
-    MCVAPI enum UIScalingRules getPlatformUIScalingRules() const;
+    MCVAPI enum class UIScalingRules getPlatformUIScalingRules() const;
     /**
      * @hash   -1427719670
      * @symbol ?getRenderSurfaceParameters@AppPlatform_win32@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ
@@ -219,7 +219,7 @@ public:
      * @hash   1199137583
      * @symbol ?setFullscreenMode@AppPlatform_win32@@UEAAXW4FullscreenMode@@@Z
      */
-    MCVAPI void setFullscreenMode(enum FullscreenMode);
+    MCVAPI void setFullscreenMode(enum class FullscreenMode);
     /**
      * @hash   -211887578
      * @symbol ?setScreenSize@AppPlatform_win32@@UEAAXHH@Z
