@@ -7,10 +7,9 @@
 
 ## Bug Fixes
 
-- Fix crash caused by form is nullptr @ShrBox
-- Fix all abnormal packet vulnerability caused by BDS @dreamguxiang
+- Fix abnormal packet vulnerability caused by BDS @dreamguxiang
 
 ## New Features
 
-- Add `enableClientChunkPreGeneration` option in configuration file
+- Add `enableClientChunkPreGeneration` option in configuration file @dreamguxiang
 - Refactor LLSE's `LLAPI` @shishkevichd
